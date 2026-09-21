@@ -111,7 +111,8 @@ const CalloutFrameImpl = Container.styleable<CalloutContextProps>(
           theme={theme}
           position="relative"
           variant="elevated"
-          borderWidth={3}>
+          borderWidth={3}
+          borderColor="$accent">
           <CalloutBackgroundLowGradient theme={theme} />
           <CalloutBackgroundHighGradient theme={theme} />
           <CalloutBackgroundDiagonal theme={theme}>
@@ -202,7 +203,7 @@ const CalloutEyebrowImpl = CalloutEyebrow.styleable(
 const CalloutBody = styled(BodyText, {
   name: "CalloutBody",
 
-  color: "$inkEmphasis",
+  color: "$accent",
   zIndex: "$20",
   paddingVertical: 0
 });

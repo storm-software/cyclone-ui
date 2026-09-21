@@ -88,16 +88,21 @@ type Story = StoryObj<typeof meta> & {
   args: Parameters<typeof Accordion>[0];
 };
 
-type LayoutElement = {
-  getBoundingClientRect: () => { left: number; right: number };
+interface LayoutElement {
+  getBoundingClientRect: () => {
+    bottom: number;
+    left: number;
+    right: number;
+    top: number;
+  };
   querySelector: (selector: string) => LayoutElement | null;
-};
+}
 
-export const Default: Story = {
+export const Base: Story = {
   args: {
     children: "Some collapsed content"
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
     const header = canvas.getByRole("button", {
       name: "Accordion Heading 1"
@@ -121,6 +126,47 @@ export const Single: Story = {
   args: {
     single: true,
     children: "Some collapsed content"
+  }
+};
+
+export const DirectionDown: Story = {
+  args: {
+    defaultValue: ["item1"],
+    direction: "down"
+  },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    const header = canvas.getByRole("button", {
+      name: "Accordion Heading 1"
+    }) as unknown as LayoutElement;
+    const content = canvas.getByText(
+      /Cold showers can help reduce inflammation/
+    ) as unknown as LayoutElement;
+
+    await expect(header.getBoundingClientRect().bottom).toBeLessThan(
+      content.getBoundingClientRect().top
+    );
+  }
+};
+
+export const DirectionUp: Story = {
+  args: {
+    defaultValue: ["item1"],
+    direction: "up",
+    icon: "chevron"
+  },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    const header = canvas.getByRole("button", {
+      name: "Accordion Heading 1"
+    }) as unknown as LayoutElement;
+    const content = canvas.getByText(
+      /Cold showers can help reduce inflammation/
+    ) as unknown as LayoutElement;
+
+    await expect(content.getBoundingClientRect().bottom).toBeLessThanOrEqual(
+      header.getBoundingClientRect().top
+    );
   }
 };
 
@@ -178,7 +224,7 @@ export const IconLeft: Story = {
     iconDirection: "left",
     children: "Some collapsed content"
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
     const header = canvas.getByRole("button", {
       name: "Accordion Heading 1"
@@ -203,7 +249,7 @@ export const IconRight: Story = {
     iconDirection: "right",
     children: "Some collapsed content"
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
     const header = canvas.getByRole("button", {
       name: "Accordion Heading 1"

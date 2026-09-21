@@ -10,12 +10,12 @@
   --color-neutral-2: #f1f1f1; /** Very light gray. */
   --color-neutral-3: #eaeaea; /** Light gray. */
   --color-neutral-4: #e1e1e1; /** Soft light gray. */
-  --color-neutral-5: #dcdcdc; /** Pale gray. */
-  --color-neutral-6: #bebebe; /** Light-medium gray. */
-  --color-neutral-7: #9f9f9f; /** Medium gray. */
-  --color-neutral-8: #616161; /** Dark medium gray. */
-  --color-neutral-9: #484848; /** Deep gray. */
-  --color-neutral-10: #3a3a3a; /** Charcoal gray. */
+  --color-neutral-5: #cacacb; /** Pale gray. */
+  --color-neutral-6: #b0b0b1; /** Light-medium gray. */
+  --color-neutral-7: #959698; /** Medium gray. */
+  --color-neutral-8: #7b7b7e; /** Dark medium gray. */
+  --color-neutral-9: #606164; /** Deep gray. */
+  --color-neutral-10: #46464a; /** Charcoal gray. */
   --color-neutral-11: #2b2c30; /** Dark charcoal gray. */
   --color-neutral-12: #242528; /** Deep graphite gray. */
   --color-neutral-13: #1f1f21; /** Near-black graphite. */
@@ -83,9 +83,10 @@
   --color-pink-7: #c25c9b; /** Deep fuchsia pink. */
   --color-pink-8: #904272; /** Deep berry pink. */
   --color-pink-9: #482039; /** Dark plum pink. */
-  --color-ink-emphasis: #eaeaea; /** Primary text and icon color for high-emphasis content. */
-  --color-ink-body: #bebebe; /** Default text and icon color for standard content. */
-  --color-ink-subtle: #484848; /** Text and icon color for supporting content. */
+  --color-ink-emphasis: #e1e1e1; /** Primary text and icon color for high-emphasis content. */
+  --color-ink-body: #cacacb; /** Default text and icon color for standard content. */
+  --color-ink-subtle: #959698; /** Softer text and icon color for supporting content. */
+  --color-ink-subtlest: #7b7b7e; /** Softest text and icon color for supporting content. */
   --color-surface-sunken: #0c0c0d; /** Recessed surface for inset controls and grouped content. */
   --color-surface-canvas: #151518; /** Base application canvas surface. */
   --color-surface-elevated: #1f1f21; /** Raised surface for cards and controls. */
@@ -113,7 +114,7 @@
   --color-surface-overlay-disabled: #2b2c2f; /** Topmost surface for transient overlays. (disabled, 80% saturation) */
   --color-required: #cf2d56; /** Indicator color for required form fields. */
   --color-link: #2e7aff; /** Interactive color for links and linked text. */
-  --color-hairline: #484848; /** Subtle color for hairline borders and separators. */
+  --color-hairline: #606164; /** Subtle color for hairline borders and separators. */
   --color-accent-base: #fafafa; /** Primary neutral accent for emphasized controls and content. */
   --color-accent-brand: #3be4be; /** Brand accent for primary actions and emphasis. */
   --color-accent-danger: #cf2d56; /** Danger accent for destructive actions and critical states. */
@@ -250,7 +251,7 @@
   --color-muted-discovery-inactive: #3c1875; /** Generated discovery muted background for the dark theme (inactive, 20% darker) */
   --color-muted-discovery-disabled: #4f3982; /** Generated discovery muted background for the dark theme (disabled, 80% saturation) */
   --color-overlay-background: #2b2c30; /** Surface color for floating overlays. */
-  --color-overlay-border: #616161; /** Border color that defines floating overlays. */
+  --color-overlay-border: #7b7b7e; /** Border color that defines floating overlays. */
   --color-overlay-backdrop: rgba(13, 12, 7, 0.4); /** Backdrop color that separates overlays from page content. */
   --color-shadow-resting-xsmall: 0px 1px 0px 0px #0000000d; /** Color used by the extra-small resting shadow. */
   --color-shadow-resting-small: 0px 1px 2px 0px #0000000d; /** Color used by the small resting shadow. */
@@ -281,9 +282,9 @@
   --color-link-hover: #59a7ff; /** Interactive color for links and linked text. (hover, 23% brighter) */
   --color-link-active: #4490ff; /** Interactive color for links and linked text. (active, 11% brighter) */
   --color-link-inactive: #0052d4; /** Interactive color for links and linked text. (inactive, 20% darker) */
-  --color-hairline-hover: #616161; /** Subtle color for hairline borders and separators. (hover, 23% brighter) */
-  --color-hairline-active: #515151; /** Subtle color for hairline borders and separators. (active, 8% brighter) */
-  --color-hairline-inactive: #333333; /** Subtle color for hairline borders and separators. (inactive, 20% darker) */
+  --color-hairline-hover: #808184; /** Subtle color for hairline borders and separators. (hover, 23% brighter) */
+  --color-hairline-active: #6b6c6f; /** Subtle color for hairline borders and separators. (active, 8% brighter) */
+  --color-hairline-inactive: #454649; /** Subtle color for hairline borders and separators. (inactive, 20% darker) */
   --color-on-muted-base: #fafafa; /** Generated base foreground on muted backgrounds */
   --color-on-muted-brand: #3be4be; /** Generated brand foreground on muted backgrounds */
   --color-on-muted-danger: #ff96a3; /** Generated danger foreground on muted backgrounds */

@@ -9,7 +9,24 @@ describe("Accordion backgrounds", () => {
     const source = readComponent();
 
     expect(source).toMatch(
-      /<AccordionGroup\s+variant=\{variant\}\s+backgroundColor=\{backgroundColor\}>/
+      /<AccordionGroup\s+variant=\{variant\}\s+bordered=\{bordered\}\s+backgroundColor=\{backgroundColor\}>/
+    );
+  });
+
+  it("keeps chevron state independent of upward content direction", () => {
+    const source = readComponent();
+
+    expect(source).toMatch(
+      /rotate=\{open \? "180deg" : "0deg"\}/
+    );
+    expect(source).toMatch(
+      /useState<string\[\]>\(\(\) =>\s*getOpenValues\(value \?\? defaultValue\)\s*\)/
+    );
+    expect(source).toMatch(
+      /const isOpen = open\.includes\(value\);[\s\S]*<AccordionItem[\s\S]*open=\{isOpen\}/
+    );
+    expect(source).toMatch(
+      /direction: \{\s*up: \{\s*paddingTop: "\$3xl",\s*paddingBottom: 0/
     );
   });
 });

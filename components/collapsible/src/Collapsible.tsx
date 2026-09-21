@@ -19,10 +19,9 @@
 import type {
   AccordionItemContentProps,
   AccordionItemHeaderProps,
-  AccordionVariant
+  AccordionProps
 } from "@cyclone-ui/accordion";
 import { Accordion } from "@cyclone-ui/accordion";
-import type { AccordionSingleProps } from "@tamagui/accordion";
 import type { TamaguiElement } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
 import type { ReactNode } from "react";
@@ -30,36 +29,28 @@ import { forwardRef } from "react";
 
 const DEFAULT_ITEM_VALUE = "collapsible";
 
-/**
- * A single-item Accordion. Use `itemValue` when controlling the expanded
- * state with `value`, `defaultValue`, or `onValueChange`.
- */
 export type CollapsibleProps = Omit<
-  AccordionSingleProps,
-  "children" | "collapsible" | "type"
+  AccordionProps,
+  "children" | "value" | "defaultValue" | "collapsible" | "type"
 > & {
   children?: ReactNode;
-  itemValue?: string;
-  bordered?: boolean;
-  numbered?: boolean;
-  variant?: AccordionVariant;
+  value?: boolean;
+  defaultValue?: boolean;
 };
 
 const CollapsibleFrame = forwardRef<TamaguiElement, CollapsibleProps>(
-  (
-    { children, itemValue = DEFAULT_ITEM_VALUE, bordered = true, ...props },
-    forwardedRef
-  ) => {
+  ({ children, value, defaultValue, ...props }, forwardedRef) => {
     return (
       <Accordion
         ref={forwardedRef}
         icon="chevron"
         {...(props as any)}
-        bordered={bordered}
-        collapsible
-        single
-        type="single">
-        <Accordion.Item value={itemValue}>{children}</Accordion.Item>
+        collapsible={true}
+        single={true}
+        type="single"
+        value={value ? DEFAULT_ITEM_VALUE : undefined}
+        defaultValue={defaultValue ? DEFAULT_ITEM_VALUE : undefined}>
+        <Accordion.Item value={DEFAULT_ITEM_VALUE}>{children}</Accordion.Item>
       </Accordion>
     );
   }

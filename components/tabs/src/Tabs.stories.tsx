@@ -76,15 +76,36 @@ export const Floating: Story = {
   }
 };
 
+export const FloatingBorderless: Story = {
+  args: {
+    variant: "floating",
+    bordered: false
+  }
+};
+
 export const Underline: Story = {
   args: {
     variant: "underline"
   }
 };
 
+export const UnderlineBorderless: Story = {
+  args: {
+    variant: "underline",
+    bordered: false
+  }
+};
+
 export const Tabbed: Story = {
   args: {
     variant: "tabbed"
+  }
+};
+
+export const TabbedBorderless: Story = {
+  args: {
+    variant: "tabbed",
+    bordered: false
   }
 };
 

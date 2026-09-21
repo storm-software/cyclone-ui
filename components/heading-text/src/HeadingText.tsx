@@ -25,50 +25,64 @@ const BaseHeadingText = styled(SizableText, {
   render: "span",
   role: "heading",
 
-  color: "$accent",
-  fontFamily: "$display-md"
+  fontFamily: "$display-md",
+  color: "$accent"
 });
 
 export const HeadingHeroText = styled(BaseHeadingText, {
   name: "HeadingHeroText",
   render: "h1",
-  fontFamily: "$display-hero"
+
+  fontFamily: "$display-hero",
+  color: "$accent"
 });
 
 export const HeadingTitleText = styled(BaseHeadingText, {
   name: "HeadingTitleText",
   render: "h1",
-  fontFamily: "$display-title"
+
+  fontFamily: "$display-title",
+  color: "$inkEmphasis"
 });
 
 export const HeadingExtraLargeText = styled(BaseHeadingText, {
   name: "HeadingExtraLargeText",
   render: "h2",
-  fontFamily: "$display-xl"
+
+  fontFamily: "$display-xl",
+  color: "$inkEmphasis"
 });
 
 export const HeadingLargeText = styled(BaseHeadingText, {
   name: "HeadingLargeText",
   render: "h3",
-  fontFamily: "$display-lg"
+
+  fontFamily: "$display-lg",
+  color: "$inkEmphasis"
 });
 
 export const HeadingMediumText = styled(BaseHeadingText, {
   name: "HeadingMediumText",
   render: "h4",
-  fontFamily: "$display-md"
+
+  fontFamily: "$display-md",
+  color: "$inkEmphasis"
 });
 
 export const HeadingSmallText = styled(BaseHeadingText, {
   name: "HeadingSmallText",
   render: "h5",
-  fontFamily: "$display-sm"
+
+  fontFamily: "$display-sm",
+  color: "$inkEmphasis"
 });
 
 export const HeadingExtraSmallText = styled(BaseHeadingText, {
   name: "HeadingExtraSmallText",
   render: "span",
-  fontFamily: "$display-xs"
+
+  fontFamily: "$display-xs",
+  color: "$inkEmphasis"
 });
 
 export type HeadingTextProps = GetProps<typeof BaseHeadingText>;

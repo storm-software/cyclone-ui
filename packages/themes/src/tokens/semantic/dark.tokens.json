@@ -5,20 +5,26 @@
       "emphasis": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.3}",
+        "$value": "{color.neutral.4}",
         "$description": "Primary text and icon color for high-emphasis content."
       },
       "body": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.6}",
+        "$value": "{color.neutral.5}",
         "$description": "Default text and icon color for standard content."
       },
       "subtle": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.9}",
-        "$description": "Text and icon color for supporting content."
+        "$value": "{color.neutral.7}",
+        "$description": "Softer text and icon color for supporting content."
+      },
+      "subtlest": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.neutral.8}",
+        "$description": "Softest text and icon color for supporting content."
       }
     },
     "surface": {

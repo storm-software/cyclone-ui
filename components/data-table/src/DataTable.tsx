@@ -542,7 +542,7 @@ export function DataTable<TData extends RowData>({
                             borderRightColor={
                               header.column.getIsResizing() ||
                               hoveredResizer === header.id
-                                ? "$accentActive"
+                                ? "$hairline"
                                 : "transparent"
                             }
                           />
@@ -937,7 +937,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 circular={true}
                 noPadding={true}
                 color="$accent"
-                padding="$sm">
+                padding="$none">
                 <Button.Icon>
                   <Filter size="$2xl" />
                 </Button.Icon>

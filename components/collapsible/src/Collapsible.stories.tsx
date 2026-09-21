@@ -18,6 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, within } from "storybook/test";
 import { Collapsible } from "./Collapsible";
 
 const meta = {
@@ -50,11 +51,53 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+interface LayoutElement {
+  getBoundingClientRect: () => { bottom: number; top: number };
+}
+
+export const Base: Story = {};
 
 export const Open: Story = {
   args: {
-    defaultValue: "collapsible"
+    defaultValue: true
+  }
+};
+
+export const DirectionDown: Story = {
+  args: {
+    direction: "down"
+  },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    const header = canvas.getByRole("button", {
+      name: "Collapsible Heading"
+    }) as unknown as LayoutElement;
+    const content = canvas.getByText(
+      /Cold showers can help reduce inflammation/
+    ) as unknown as LayoutElement;
+
+    await expect(header.getBoundingClientRect().bottom).toBeLessThan(
+      content.getBoundingClientRect().top
+    );
+  }
+};
+
+export const DirectionUp: Story = {
+  args: {
+    direction: "up"
+  },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    const header = canvas.getByRole("button", {
+      name: "Collapsible Heading"
+    }) as unknown as LayoutElement;
+    const content = canvas.getByText(
+      /Cold showers can help reduce inflammation/
+    ) as unknown as LayoutElement;
+
+    await expect(content.getBoundingClientRect().bottom).toBeLessThanOrEqual(
+      header.getBoundingClientRect().top
+    );
   }
 };
 

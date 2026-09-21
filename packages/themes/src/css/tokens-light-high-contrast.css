@@ -10,12 +10,12 @@
   --color-neutral-2: #ffffff; /** Very light gray. */
   --color-neutral-3: #ffffff; /** Light gray. */
   --color-neutral-4: #ffffff; /** Soft light gray. */
-  --color-neutral-5: #ffffff; /** Pale gray. */
-  --color-neutral-6: #dadada; /** Light-medium gray. */
-  --color-neutral-7: #adadad; /** Medium gray. */
-  --color-neutral-8: #535353; /** Dark medium gray. */
-  --color-neutral-9: #2f2f2f; /** Deep gray. */
-  --color-neutral-10: #1b1b1b; /** Charcoal gray. */
+  --color-neutral-5: #ebebed; /** Pale gray. */
+  --color-neutral-6: #c3c3ca; /** Light-medium gray. */
+  --color-neutral-7: #9a9fa7; /** Medium gray. */
+  --color-neutral-8: #737383; /** Dark medium gray. */
+  --color-neutral-9: #4e515b; /** Deep gray. */
+  --color-neutral-10: #2b2b33; /** Charcoal gray. */
   --color-neutral-11: #08080a; /** Dark charcoal gray. */
   --color-neutral-12: #000000; /** Deep graphite gray. */
   --color-neutral-13: #000000; /** Near-black graphite. */
@@ -84,8 +84,9 @@
   --color-pink-8: #932b6b; /** Deep berry pink. */
   --color-pink-9: #1c0815; /** Dark plum pink. */
   --color-ink-emphasis: #08080a; /** Primary text and icon color for high-emphasis content. */
-  --color-ink-body: #2f2f2f; /** Default text and icon color for standard content. */
-  --color-ink-subtle: #535353; /** Text and icon color for supporting content. */
+  --color-ink-body: #4e515b; /** Default text and icon color for standard content. */
+  --color-ink-subtle: #c3c3ca; /** Softer text and icon color for supporting content. */
+  --color-ink-subtlest: #ebebed; /** Softest text and icon color for supporting content. */
   --color-surface-sunken: #ffffff; /** Recessed surface for inset controls and grouped content. */
   --color-surface-canvas: #ffffff; /** Base application canvas surface. */
   --color-surface-elevated: #ffffff; /** Raised surface for cards and controls. */
@@ -113,9 +114,9 @@
   --color-surface-overlay-disabled: rgba(255, 255, 255, 0.4); /** Topmost surface for transient overlays. (disabled, 40% opacity) */
   --color-required: #840929; /** Indicator color for required form fields. */
   --color-link: #0145be; /** Interactive color for links and linked text. */
-  --color-hairline: #dadada; /** Subtle color for hairline borders and separators. */
+  --color-hairline: #c3c3ca; /** Subtle color for hairline borders and separators. */
   --color-accent-base: #000000; /** Primary neutral accent for emphasized controls and content. */
-  --color-accent-brand: #0145be; /** Brand accent for primary actions and emphasis. */
+  --color-accent-brand: #00bcad; /** Brand accent for primary actions and emphasis. */
   --color-accent-danger: #840929; /** Danger accent for destructive actions and critical states. */
   --color-accent-negative: #840929; /** Negative accent for error states and invalid input. */
   --color-accent-warning: #583902; /** Warning accent for cautionary states. */
@@ -127,10 +128,10 @@
   --color-accent-base-active: #000000; /** Primary neutral accent for emphasized controls and content. (active, light base primitive) */
   --color-accent-base-inactive: #000000; /** Primary neutral accent for emphasized controls and content. (inactive, 40% darker) */
   --color-accent-base-disabled: #000000; /** Primary neutral accent for emphasized controls and content. (disabled, 80% saturation) */
-  --color-accent-brand-hover: #00235e; /** Brand accent for primary actions and emphasis. (hover, 23% darker) */
-  --color-accent-brand-active: #00348e; /** Brand accent for primary actions and emphasis. (active, 11% darker) */
-  --color-accent-brand-inactive: #216df4; /** Brand accent for primary actions and emphasis. (inactive, 20% brighter) */
-  --color-accent-brand-disabled: #1449a9; /** Brand accent for primary actions and emphasis. (disabled, 80% saturation) */
+  --color-accent-brand-hover: #004a44; /** Brand accent for primary actions and emphasis. (hover, 23% darker) */
+  --color-accent-brand-active: #006d64; /** Brand accent for primary actions and emphasis. (active, 11% darker) */
+  --color-accent-brand-inactive: #5cfbeb; /** Brand accent for primary actions and emphasis. (inactive, 20% brighter) */
+  --color-accent-brand-disabled: #35c4b5; /** Brand accent for primary actions and emphasis. (disabled, 80% saturation) */
   --color-accent-danger-hover: #2d000f; /** Danger accent for destructive actions and critical states. (hover, 23% darker) */
   --color-accent-danger-active: #5a001b; /** Danger accent for destructive actions and critical states. (active, 11% darker) */
   --color-accent-danger-inactive: #bc2445; /** Danger accent for destructive actions and critical states. (inactive, 20% brighter) */
@@ -205,15 +206,15 @@
   --color-on-accent-discovery-inactive: #ffffff; /** Discovery accent for new or exploratory content. (inactive, 20% brighter) */
   --color-on-accent-discovery-disabled: rgba(255, 255, 255, 0.4); /** Discovery accent for new or exploratory content. (disabled, 40% opacity) */
   --color-muted-base: #ffffff; /** Muted neutral accent background for low-emphasis states. */
-  --color-muted-brand: #f8fbff; /** Muted brand accent background for low-emphasis states. */
+  --color-muted-brand: #75fff1; /** Muted brand accent background for low-emphasis states. */
   --color-muted-base-hover: #999999; /** Muted neutral accent background for low-emphasis states. (hover, 30% darker) */
   --color-muted-base-active: #ececec; /** Muted neutral accent background for low-emphasis states. (active, 10% darker) */
   --color-muted-base-inactive: #000000; /** Muted neutral accent background for low-emphasis states. (inactive, 40% darker) */
   --color-muted-base-disabled: rgba(255, 255, 255, 0.4); /** Muted neutral accent background for low-emphasis states. (disabled, 40% opacity) */
-  --color-muted-brand-hover: #7297d9; /** Muted brand accent background for low-emphasis states. (hover, 23% darker) */
-  --color-muted-brand-active: #a9c5f6; /** Muted brand accent background for low-emphasis states. (active, 11% darker) */
-  --color-muted-brand-inactive: #ffffff; /** Muted brand accent background for low-emphasis states. (inactive, 20% brighter) */
-  --color-muted-brand-disabled: #f1f6ff; /** Muted brand accent background for low-emphasis states. (disabled, 80% saturation) */
+  --color-muted-brand-hover: #008e84; /** Muted brand accent background for low-emphasis states. (hover, 23% darker) */
+  --color-muted-brand-active: #2ae6d5; /** Muted brand accent background for low-emphasis states. (active, 11% darker) */
+  --color-muted-brand-inactive: #e1ffff; /** Muted brand accent background for low-emphasis states. (inactive, 20% brighter) */
+  --color-muted-brand-disabled: #9cfaf0; /** Muted brand accent background for low-emphasis states. (disabled, 80% saturation) */
   --color-muted-danger: #fc7d94; /** Generated danger muted background for the light theme */
   --color-muted-negative: #fc7d94; /** Generated negative muted background for the light theme */
   --color-muted-warning: #d6a252; /** Generated warning muted background for the light theme */
@@ -250,7 +251,7 @@
   --color-muted-discovery-inactive: #ffffff; /** Generated discovery muted background for the light theme (inactive, 20% brighter) */
   --color-muted-discovery-disabled: #b3a4ee; /** Generated discovery muted background for the light theme (disabled, 80% saturation) */
   --color-overlay-background: #ffffff; /** Surface color for floating overlays. */
-  --color-overlay-border: #dadada; /** Border color that defines floating overlays. */
+  --color-overlay-border: #c3c3ca; /** Border color that defines floating overlays. */
   --color-overlay-backdrop: rgba(0, 0, 0, 0.4); /** Backdrop color that separates overlays from page content. */
   --color-shadow-resting-xsmall: 0px 1px 0px 0px #0000000d; /** Color used by the extra-small resting shadow. */
   --color-shadow-resting-small: 0px 1px 2px 0px #0000000d; /** Color used by the small resting shadow. */
@@ -260,7 +261,7 @@
   --color-shadow-floating-large: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a; /** Color used by the large floating shadow. */
   --color-shadow-floating-xlarge: 0px 25px 50px -12px #00000040; /** Color used by the extra-large floating shadow. */
   --color-shadow-inset: inset 0px 1px 1px 0px #0000000d; /** Color used by the inset shadow. */
-  --color-data-neutral-emphasis: #2f2f2f; /** High-emphasis neutral data-series color. */
+  --color-data-neutral-emphasis: #4e515b; /** High-emphasis neutral data-series color. */
   --color-data-neutral-subtle: #ffffff; /** Low-emphasis neutral data-series color. */
   --color-data-brand-emphasis: #0145be; /** High-emphasis brand data-series color. */
   --color-data-brand-subtle: #9ec1ff; /** Low-emphasis brand data-series color. */
@@ -281,11 +282,11 @@
   --color-link-hover: #00235e; /** Interactive color for links and linked text. (hover, 23% darker) */
   --color-link-active: #00348e; /** Interactive color for links and linked text. (active, 11% darker) */
   --color-link-inactive: #216df4; /** Interactive color for links and linked text. (inactive, 20% brighter) */
-  --color-hairline-hover: #898989; /** Subtle color for hairline borders and separators. (hover, 23% darker) */
-  --color-hairline-active: #bdbdbd; /** Subtle color for hairline borders and separators. (active, 8% darker) */
+  --color-hairline-hover: #747482; /** Subtle color for hairline borders and separators. (hover, 23% darker) */
+  --color-hairline-active: #a6a6b0; /** Subtle color for hairline borders and separators. (active, 8% darker) */
   --color-hairline-inactive: #ffffff; /** Subtle color for hairline borders and separators. (inactive, 20% brighter) */
   --color-on-muted-base: #000000; /** Generated base foreground on muted backgrounds */
-  --color-on-muted-brand: #0145be; /** Generated brand foreground on muted backgrounds */
+  --color-on-muted-brand: #00bcad; /** Generated brand foreground on muted backgrounds */
   --color-on-muted-danger: #000000; /** Generated danger foreground on muted backgrounds */
   --color-on-muted-negative: #000000; /** Generated negative foreground on muted backgrounds */
   --color-on-muted-warning: #000000; /** Generated warning foreground on muted backgrounds */
@@ -297,10 +298,10 @@
   --color-on-muted-base-active: #000000; /** Generated base foreground on muted backgrounds (active, light base primitive) */
   --color-on-muted-base-inactive: #000000; /** Generated base foreground on muted backgrounds (inactive, 40% darker) */
   --color-on-muted-base-disabled: #000000; /** Generated base foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-brand-hover: #00235e; /** Generated brand foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-brand-active: #00348e; /** Generated brand foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-brand-inactive: #216df4; /** Generated brand foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-brand-disabled: #1449a9; /** Generated brand foreground on muted backgrounds (disabled, 80% saturation) */
+  --color-on-muted-brand-hover: #004a44; /** Generated brand foreground on muted backgrounds (hover, 23% darker) */
+  --color-on-muted-brand-active: #006d64; /** Generated brand foreground on muted backgrounds (active, 11% darker) */
+  --color-on-muted-brand-inactive: #5cfbeb; /** Generated brand foreground on muted backgrounds (inactive, 20% brighter) */
+  --color-on-muted-brand-disabled: #35c4b5; /** Generated brand foreground on muted backgrounds (disabled, 80% saturation) */
   --color-on-muted-danger-hover: #000000; /** Generated danger foreground on muted backgrounds (hover, 23% brighter) */
   --color-on-muted-danger-active: #000000; /** Generated danger foreground on muted backgrounds (active, 11% brighter) */
   --color-on-muted-danger-inactive: #000000; /** Generated danger foreground on muted backgrounds (inactive, 20% darker) */
@@ -522,10 +523,10 @@
   --ring-base-subtle: 0px 0px 0px 1px #15151813; /** The base subtle ring variant */
   --ring-base-offset: 0px 0px 0px 3px #ffffff, 0px 0px 0px 6px #15151813; /** The base ring variant with a 3px offset */
   --ring-base-subtle-offset: 0px 0px 0px 3px #ffffff, 0px 0px 0px 4px #15151813; /** The base subtle ring variant with a 3px offset */
-  --ring-brand: 0px 0px 0px 3px #2055b320; /** The brand ring variant */
-  --ring-brand-subtle: 0px 0px 0px 1px #2055b320; /** The brand subtle ring variant */
-  --ring-brand-offset: 0px 0px 0px 3px #ffffff, 0px 0px 0px 6px #2055b320; /** The brand ring variant with a 3px offset */
-  --ring-brand-subtle-offset: 0px 0px 0px 3px #ffffff, 0px 0px 0px 4px #2055b320; /** The brand subtle ring variant with a 3px offset */
+  --ring-brand: 0px 0px 0px 3px #1fb2a620; /** The brand ring variant */
+  --ring-brand-subtle: 0px 0px 0px 1px #1fb2a620; /** The brand subtle ring variant */
+  --ring-brand-offset: 0px 0px 0px 3px #ffffff, 0px 0px 0px 6px #1fb2a620; /** The brand ring variant with a 3px offset */
+  --ring-brand-subtle-offset: 0px 0px 0px 3px #ffffff, 0px 0px 0px 4px #1fb2a620; /** The brand subtle ring variant with a 3px offset */
   --ring-danger: 0px 0px 0px 3px #8e223e20; /** The danger ring variant */
   --ring-danger-subtle: 0px 0px 0px 1px #8e223e20; /** The danger subtle ring variant */
   --ring-danger-offset: 0px 0px 0px 3px #ffffff, 0px 0px 0px 6px #8e223e20; /** The danger ring variant with a 3px offset */

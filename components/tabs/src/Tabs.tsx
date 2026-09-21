@@ -110,6 +110,13 @@ export interface TabsContextProps {
   variant: TabVariant;
 
   /**
+   * Whether the tabs display their variant-owned borders
+   *
+   * @default true
+   */
+  bordered: boolean;
+
+  /**
    * The size of the tabs
    *
    * @default "$true"
@@ -125,6 +132,7 @@ export const TabsContext = createStyledContext<TabsContextProps>({
   onInteraction: (_type: any, _layout: any) => {},
   orientation: "horizontal",
   variant: "floating",
+  bordered: true,
   size: "$true"
 });
 
@@ -153,12 +161,17 @@ const TabsFrame = styled(TamaguiTabs, {
       underline: {},
       floating: {},
       tabbed: {}
+    },
+
+    bordered: {
+      false: {}
     }
   } as const,
 
   defaultVariants: {
     size: "$true",
-    variant: "floating"
+    variant: "floating",
+    bordered: true
   }
 });
 
@@ -168,6 +181,7 @@ const TabsFrameImpl = TabsFrame.styleable(
       children,
       orientation = "horizontal",
       variant = "floating",
+      bordered = true,
       size = "$true",
       onValueChange,
       theme,
@@ -225,12 +239,14 @@ const TabsFrameImpl = TabsFrame.styleable(
         theme={theme}
         size={size}
         variant={variant}
+        bordered={bordered}
         orientation={orientation}>
         <TabsFrame
           ref={forwardedRef}
           value={currentTab}
           size={size}
           {...rest}
+          bordered={bordered}
           onValueChange={handleSetCurrentTab}
           variant={variant}
           flexDirection={orientation === "horizontal" ? "column" : "row"}
@@ -319,6 +335,12 @@ const TabsRovingIndicator = styled(YStack, {
         justifyContent: "center"
       },
       tabbed: {}
+    },
+
+    bordered: {
+      false: {
+        borderWidth: 0
+      }
     }
   } as const,
 
@@ -433,6 +455,13 @@ const TabsHeaderList = styled(YStack, {
         borderWidth: 0,
         padding: 0
       }
+    },
+
+    bordered: {
+      false: {
+        borderWidth: 0,
+        borderBottomWidth: 0
+      }
     }
   } as const,
 
@@ -447,7 +476,8 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
     const {
       state: { activeAt, intentAt, prevActiveAt },
       orientation,
-      variant
+      variant,
+      bordered
     } = TabsContext.useStyledContext();
 
     // 1 = right, 0 = nowhere, -1 = left
@@ -467,6 +497,7 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
         ref={forwardedRef}
         orientation={orientation}
         variant={variant}
+        bordered={bordered}
         {...rest}>
         {variant !== "tabbed" && (
           <>
@@ -479,6 +510,7 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
                 opacity={0}
                 orientation={orientation}
                 variant={variant}
+                bordered={bordered}
                 $group-tabs-hover={{
                   intent: Boolean(intentAt),
                   opacity: intentAt ? 1 : 0
@@ -495,6 +527,7 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
                   active={true}
                   orientation={orientation}
                   variant={variant}
+                  bordered={bordered}
                 />
               )}
             </AnimatePresence>
@@ -635,6 +668,12 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
               borderRightColor: "$surfaceElevated"
             };
       }
+    },
+
+    bordered: {
+      false: {
+        borderWidth: 0
+      }
     }
   } as const,
 
@@ -654,7 +693,8 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
       state: { currentTab },
       size,
       orientation,
-      variant
+      variant,
+      bordered
     } = TabsContext.useStyledContext();
 
     useLayoutEffect(() => {
@@ -668,6 +708,7 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
         size={size}
         orientation={orientation}
         variant={variant}
+        bordered={bordered}
         selected={currentTab === value}
 
         {...rest}
@@ -722,6 +763,12 @@ const TabsContentList = styled(View, {
               borderTopRightRadius: "$container",
               borderBottomRightRadius: "$container"
             }
+    },
+
+    bordered: {
+      false: {
+        borderWidth: 0
+      }
     }
   } as const,
 

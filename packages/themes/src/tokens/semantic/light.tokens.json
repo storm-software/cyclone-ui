@@ -17,8 +17,14 @@
       "subtle": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.8}",
-        "$description": "Text and icon color for supporting content."
+        "$value": "{color.neutral.6}",
+        "$description": "Softer text and icon color for supporting content."
+      },
+      "subtlest": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.neutral.5}",
+        "$description": "Softest text and icon color for supporting content."
       }
     },
     "surface": {
@@ -84,7 +90,7 @@
       "brand": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.blue.7}",
+        "$value": "oklch(0.6897 0.1156 186.1)",
         "$description": "Brand accent for primary actions and emphasis.",
         "theme": "brand"
       },
@@ -158,7 +164,7 @@
       "brand": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.blue.1}",
+        "$value": "oklch(0.8559 0.1156 186.1)",
         "$description": "Muted brand accent background for low-emphasis states.",
         "theme": "brand"
       }

@@ -217,6 +217,7 @@ export const Container = ContainerFrame.styleable(
       borderWidth,
       borderRadius = "$container",
       backgroundColor,
+      borderColor,
       children,
       ...props
     },
@@ -241,7 +242,8 @@ export const Container = ContainerFrame.styleable(
           borderWidth={bordered ? borderWidth : 0}
           noPadding={noPadding}
           borderRadius={borderRadius}
-          backgroundColor={backgroundColor}>
+          backgroundColor={backgroundColor}
+          borderColor={borderColor}>
           {children}
         </ContainerFrame>
       </ContainerGroup>

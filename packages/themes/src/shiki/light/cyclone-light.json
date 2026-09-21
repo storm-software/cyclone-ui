@@ -7,7 +7,7 @@
         "punctuation.definition.comment"
       ],
       "settings": {
-        "foreground": "{color.neutral.8}",
+        "foreground": "{color.neutral.6}",
         "fontStyle": "italic"
       }
     },
@@ -37,7 +37,7 @@
         "storage.type"
       ],
       "settings": {
-        "foreground": "{color.blue.7}"
+        "foreground": "#1fb2a6"
       }
     },
     {
@@ -46,7 +46,7 @@
         "support.function"
       ],
       "settings": {
-        "foreground": "{color.blue.7}"
+        "foreground": "#1fb2a6"
       }
     },
     {
@@ -65,7 +65,7 @@
         "meta.tag"
       ],
       "settings": {
-        "foreground": "{color.blue.7}"
+        "foreground": "#1fb2a6"
       }
     },
     {
@@ -92,7 +92,7 @@
         "meta.brace"
       ],
       "settings": {
-        "foreground": "{color.neutral.8}"
+        "foreground": "{color.neutral.6}"
       }
     },
     {
@@ -113,12 +113,12 @@
     "editor.background": "{color.neutral.3}",
     "editor.foreground": "{color.neutral.11}",
     "editorCursor.foreground": "{color.blue.7}",
-    "editor.selectionBackground": "{color.blue.1}",
+    "editor.selectionBackground": "#68e8db",
     "editor.inactiveSelectionBackground": "{color.neutral.4}",
-    "editorLineNumber.foreground": "{color.neutral.8}",
+    "editorLineNumber.foreground": "{color.neutral.6}",
     "editorLineNumber.activeForeground": "{color.neutral.9}",
     "editorIndentGuide.background1": "{color.neutral.6}",
-    "editorIndentGuide.activeBackground1": "{color.neutral.8}",
-    "editorWhitespace.foreground": "{color.neutral.8}"
+    "editorIndentGuide.activeBackground1": "{color.neutral.6}",
+    "editorWhitespace.foreground": "{color.neutral.6}"
   }
 }

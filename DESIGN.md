@@ -7,8 +7,9 @@ colors:
   black: "#0c0c0d"
   white: "#ffffff"
   ink-emphasis: "#2b2c30"
-  ink-body: "#484848"
-  ink-subtle: "#616161"
+  ink-body: "#606164"
+  ink-subtle: "#b0b0b1"
+  ink-subtlest: "#cacacb"
   surface-sunken: "#e1e1e1"
   surface-canvas: "#eaeaea"
   surface-elevated: "#f1f1f1"
@@ -36,9 +37,9 @@ colors:
   surface-overlay-disabled: "#ffffff66"
   required: "#8e223e"
   link: "#2055b3"
-  hairline: "#bebebe"
+  hairline: "#b0b0b1"
   accent-base: "#151518"
-  accent-brand: "#2055b3"
+  accent-brand: "#1fb2a6"
   accent-danger: "#8e223e"
   accent-negative: "#8e223e"
   accent-warning: "#765417"
@@ -50,10 +51,10 @@ colors:
   accent-base-active: "#0c0c0d"
   accent-base-inactive: "#030303"
   accent-base-disabled: "#151517"
-  accent-brand-hover: "#003590"
-  accent-brand-active: "#0f45a2"
-  accent-brand-inactive: "#3b72d3"
-  accent-brand-disabled: "#2f58a2"
+  accent-brand-hover: "#008277"
+  accent-brand-active: "#009a8e"
+  accent-brand-inactive: "#5ddfd2"
+  accent-brand-disabled: "#4daea4"
   accent-danger-hover: "#6e0025"
   accent-danger-active: "#7e0f31"
   accent-danger-inactive: "#ab3e56"
@@ -128,15 +129,15 @@ colors:
   on-accent-discovery-inactive: "#ffffff"
   on-accent-discovery-disabled: "#fafafa66"
   muted-base: "#eaeaea"
-  muted-brand: "#abcaff"
+  muted-brand: "#68e8db"
   muted-base-hover: "#919191"
   muted-base-active: "#cacaca"
   muted-base-inactive: "#030303"
   muted-base-disabled: "#eaeaea66"
-  muted-brand-hover: "#728fc1"
-  muted-brand-active: "#8eacdf"
-  muted-brand-inactive: "#e0ffff"
-  muted-brand-disabled: "#b1caf4"
+  muted-brand-hover: "#08a99e"
+  muted-brand-active: "#43c8bc"
+  muted-brand-inactive: "#9bffff"
+  muted-brand-disabled: "#84e3d9"
   muted-danger: "#e37085"
   muted-negative: "#e37085"
   muted-warning: "#bd985e"
@@ -173,9 +174,9 @@ colors:
   muted-discovery-inactive: "#c9b5ff"
   muted-discovery-disabled: "#9d8ed6"
   overlay-background: "#ffffff"
-  overlay-border: "#bebebe"
+  overlay-border: "#b0b0b1"
   overlay-backdrop: "#1a1c1f66"
-  data-neutral-emphasis: "#484848"
+  data-neutral-emphasis: "#606164"
   data-neutral-subtle: "#eaeaea"
   data-brand-emphasis: "#2055b3"
   data-brand-subtle: "#6da2ff"
@@ -196,11 +197,11 @@ colors:
   link-hover: "#003590"
   link-active: "#0f45a2"
   link-inactive: "#3b72d3"
-  hairline-hover: "#868686"
-  hairline-active: "#aaaaaa"
-  hairline-inactive: "#f2f2f2"
+  hairline-hover: "#7c7c7d"
+  hairline-active: "#9d9d9e"
+  hairline-inactive: "#e1e1e2"
   on-muted-base: "#151518"
-  on-muted-brand: "#2055b3"
+  on-muted-brand: "#1fb2a6"
   on-muted-danger: "#2f000c"
   on-muted-negative: "#2f000c"
   on-muted-warning: "#2d1c00"
@@ -212,10 +213,10 @@ colors:
   on-muted-base-active: "#0c0c0d"
   on-muted-base-inactive: "#030303"
   on-muted-base-disabled: "#151517"
-  on-muted-brand-hover: "#003590"
-  on-muted-brand-active: "#0f45a2"
-  on-muted-brand-inactive: "#3b72d3"
-  on-muted-brand-disabled: "#2f58a2"
+  on-muted-brand-hover: "#008277"
+  on-muted-brand-active: "#009a8e"
+  on-muted-brand-inactive: "#5ddfd2"
+  on-muted-brand-disabled: "#4daea4"
   on-muted-danger-hover: "#3b0916"
   on-muted-danger-active: "#350411"
   on-muted-danger-inactive: "#240005"
@@ -348,7 +349,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 241 color tokens, 14 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 242 color tokens, 14 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -356,8 +357,9 @@ Cyclone UI design tokens — 241 color tokens, 14 typography tokens, 28 spacing 
 - **Black (#0c0c0d):** Near-black neutral.
 - **White (#ffffff):** Pure white.
 - **Ink Emphasis (#2b2c30):** Primary text and icon color for high-emphasis content.
-- **Ink Body (#484848):** Default text and icon color for standard content.
-- **Ink Subtle (#616161):** Text and icon color for supporting content.
+- **Ink Body (#606164):** Default text and icon color for standard content.
+- **Ink Subtle (#b0b0b1):** Softer text and icon color for supporting content.
+- **Ink Subtlest (#cacacb):** Softest text and icon color for supporting content.
 - **Surface Sunken (#e1e1e1):** Recessed surface for inset controls and grouped content.
 - **Surface Canvas (#eaeaea):** Base application canvas surface.
 - **Surface Elevated (#f1f1f1):** Raised surface for cards and controls.
@@ -385,9 +387,9 @@ Cyclone UI design tokens — 241 color tokens, 14 typography tokens, 28 spacing 
 - **Surface Overlay Disabled (#ffffff66):** Topmost surface for transient overlays. (disabled, 40% opacity)
 - **Required (#8e223e):** Indicator color for required form fields.
 - **Link (#2055b3):** Interactive color for links and linked text.
-- **Hairline (#bebebe):** Subtle color for hairline borders and separators.
+- **Hairline (#b0b0b1):** Subtle color for hairline borders and separators.
 - **Accent Base (#151518):** Primary neutral accent for emphasized controls and content.
-- **Accent Brand (#2055b3):** Brand accent for primary actions and emphasis.
+- **Accent Brand (#1fb2a6):** Brand accent for primary actions and emphasis.
 - **Accent Danger (#8e223e):** Danger accent for destructive actions and critical states.
 - **Accent Negative (#8e223e):** Negative accent for error states and invalid input.
 - **Accent Warning (#765417):** Warning accent for cautionary states.
@@ -399,10 +401,10 @@ Cyclone UI design tokens — 241 color tokens, 14 typography tokens, 28 spacing 
 - **Accent Base Active (#0c0c0d):** Primary neutral accent for emphasized controls and content. (active, light base primitive)
 - **Accent Base Inactive (#030303):** Primary neutral accent for emphasized controls and content. (inactive, 40% darker)
 - **Accent Base Disabled (#151517):** Primary neutral accent for emphasized controls and content. (disabled, 80% saturation)
-- **Accent Brand Hover (#003590):** Brand accent for primary actions and emphasis. (hover, 23% darker)
-- **Accent Brand Active (#0f45a2):** Brand accent for primary actions and emphasis. (active, 11% darker)
-- **Accent Brand Inactive (#3b72d3):** Brand accent for primary actions and emphasis. (inactive, 20% brighter)
-- **Accent Brand Disabled (#2f58a2):** Brand accent for primary actions and emphasis. (disabled, 80% saturation)
+- **Accent Brand Hover (#008277):** Brand accent for primary actions and emphasis. (hover, 23% darker)
+- **Accent Brand Active (#009a8e):** Brand accent for primary actions and emphasis. (active, 11% darker)
+- **Accent Brand Inactive (#5ddfd2):** Brand accent for primary actions and emphasis. (inactive, 20% brighter)
+- **Accent Brand Disabled (#4daea4):** Brand accent for primary actions and emphasis. (disabled, 80% saturation)
 - **Accent Danger Hover (#6e0025):** Danger accent for destructive actions and critical states. (hover, 23% darker)
 - **Accent Danger Active (#7e0f31):** Danger accent for destructive actions and critical states. (active, 11% darker)
 - **Accent Danger Inactive (#ab3e56):** Danger accent for destructive actions and critical states. (inactive, 20% brighter)
@@ -477,15 +479,15 @@ Cyclone UI design tokens — 241 color tokens, 14 typography tokens, 28 spacing 
 - **On Accent Discovery Inactive (#ffffff):** Discovery accent for new or exploratory content. (inactive, 20% brighter)
 - **On Accent Discovery Disabled (#fafafa66):** Discovery accent for new or exploratory content. (disabled, 40% opacity)
 - **Muted Base (#eaeaea):** Muted neutral accent background for low-emphasis states.
-- **Muted Brand (#abcaff):** Muted brand accent background for low-emphasis states.
+- **Muted Brand (#68e8db):** Muted brand accent background for low-emphasis states.
 - **Muted Base Hover (#919191):** Muted neutral accent background for low-emphasis states. (hover, 30% darker)
 - **Muted Base Active (#cacaca):** Muted neutral accent background for low-emphasis states. (active, 10% darker)
 - **Muted Base Inactive (#030303):** Muted neutral accent background for low-emphasis states. (inactive, 40% darker)
 - **Muted Base Disabled (#eaeaea66):** Muted neutral accent background for low-emphasis states. (disabled, 40% opacity)
-- **Muted Brand Hover (#728fc1):** Muted brand accent background for low-emphasis states. (hover, 23% darker)
-- **Muted Brand Active (#8eacdf):** Muted brand accent background for low-emphasis states. (active, 11% darker)
-- **Muted Brand Inactive (#e0ffff):** Muted brand accent background for low-emphasis states. (inactive, 20% brighter)
-- **Muted Brand Disabled (#b1caf4):** Muted brand accent background for low-emphasis states. (disabled, 80% saturation)
+- **Muted Brand Hover (#08a99e):** Muted brand accent background for low-emphasis states. (hover, 23% darker)
+- **Muted Brand Active (#43c8bc):** Muted brand accent background for low-emphasis states. (active, 11% darker)
+- **Muted Brand Inactive (#9bffff):** Muted brand accent background for low-emphasis states. (inactive, 20% brighter)
+- **Muted Brand Disabled (#84e3d9):** Muted brand accent background for low-emphasis states. (disabled, 80% saturation)
 - **Muted Danger (#e37085):** Generated danger muted background for the light theme
 - **Muted Negative (#e37085):** Generated negative muted background for the light theme
 - **Muted Warning (#bd985e):** Generated warning muted background for the light theme
@@ -522,9 +524,9 @@ Cyclone UI design tokens — 241 color tokens, 14 typography tokens, 28 spacing 
 - **Muted Discovery Inactive (#c9b5ff):** Generated discovery muted background for the light theme (inactive, 20% brighter)
 - **Muted Discovery Disabled (#9d8ed6):** Generated discovery muted background for the light theme (disabled, 80% saturation)
 - **Overlay Background (#ffffff):** Surface color for floating overlays.
-- **Overlay Border (#bebebe):** Border color that defines floating overlays.
+- **Overlay Border (#b0b0b1):** Border color that defines floating overlays.
 - **Overlay Backdrop (#1a1c1f66):** Backdrop color that separates overlays from page content.
-- **Data Neutral Emphasis (#484848):** High-emphasis neutral data-series color.
+- **Data Neutral Emphasis (#606164):** High-emphasis neutral data-series color.
 - **Data Neutral Subtle (#eaeaea):** Low-emphasis neutral data-series color.
 - **Data Brand Emphasis (#2055b3):** High-emphasis brand data-series color.
 - **Data Brand Subtle (#6da2ff):** Low-emphasis brand data-series color.
@@ -545,11 +547,11 @@ Cyclone UI design tokens — 241 color tokens, 14 typography tokens, 28 spacing 
 - **Link Hover (#003590):** Interactive color for links and linked text. (hover, 23% darker)
 - **Link Active (#0f45a2):** Interactive color for links and linked text. (active, 11% darker)
 - **Link Inactive (#3b72d3):** Interactive color for links and linked text. (inactive, 20% brighter)
-- **Hairline Hover (#868686):** Subtle color for hairline borders and separators. (hover, 23% darker)
-- **Hairline Active (#aaaaaa):** Subtle color for hairline borders and separators. (active, 8% darker)
-- **Hairline Inactive (#f2f2f2):** Subtle color for hairline borders and separators. (inactive, 20% brighter)
+- **Hairline Hover (#7c7c7d):** Subtle color for hairline borders and separators. (hover, 23% darker)
+- **Hairline Active (#9d9d9e):** Subtle color for hairline borders and separators. (active, 8% darker)
+- **Hairline Inactive (#e1e1e2):** Subtle color for hairline borders and separators. (inactive, 20% brighter)
 - **On Muted Base (#151518):** Generated base foreground on muted backgrounds
-- **On Muted Brand (#2055b3):** Generated brand foreground on muted backgrounds
+- **On Muted Brand (#1fb2a6):** Generated brand foreground on muted backgrounds
 - **On Muted Danger (#2f000c):** Generated danger foreground on muted backgrounds
 - **On Muted Negative (#2f000c):** Generated negative foreground on muted backgrounds
 - **On Muted Warning (#2d1c00):** Generated warning foreground on muted backgrounds
@@ -561,10 +563,10 @@ Cyclone UI design tokens — 241 color tokens, 14 typography tokens, 28 spacing 
 - **On Muted Base Active (#0c0c0d):** Generated base foreground on muted backgrounds (active, light base primitive)
 - **On Muted Base Inactive (#030303):** Generated base foreground on muted backgrounds (inactive, 40% darker)
 - **On Muted Base Disabled (#151517):** Generated base foreground on muted backgrounds (disabled, 80% saturation)
-- **On Muted Brand Hover (#003590):** Generated brand foreground on muted backgrounds (hover, 23% darker)
-- **On Muted Brand Active (#0f45a2):** Generated brand foreground on muted backgrounds (active, 11% darker)
-- **On Muted Brand Inactive (#3b72d3):** Generated brand foreground on muted backgrounds (inactive, 20% brighter)
-- **On Muted Brand Disabled (#2f58a2):** Generated brand foreground on muted backgrounds (disabled, 80% saturation)
+- **On Muted Brand Hover (#008277):** Generated brand foreground on muted backgrounds (hover, 23% darker)
+- **On Muted Brand Active (#009a8e):** Generated brand foreground on muted backgrounds (active, 11% darker)
+- **On Muted Brand Inactive (#5ddfd2):** Generated brand foreground on muted backgrounds (inactive, 20% brighter)
+- **On Muted Brand Disabled (#4daea4):** Generated brand foreground on muted backgrounds (disabled, 80% saturation)
 - **On Muted Danger Hover (#3b0916):** Generated danger foreground on muted backgrounds (hover, 23% brighter)
 - **On Muted Danger Active (#350411):** Generated danger foreground on muted backgrounds (active, 11% brighter)
 - **On Muted Danger Inactive (#240005):** Generated danger foreground on muted backgrounds (inactive, 20% darker)

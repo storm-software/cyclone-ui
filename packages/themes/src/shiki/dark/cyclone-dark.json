@@ -7,7 +7,7 @@
         "punctuation.definition.comment"
       ],
       "settings": {
-        "foreground": "{color.neutral.9}",
+        "foreground": "{color.neutral.7}",
         "fontStyle": "italic"
       }
     },
@@ -83,7 +83,7 @@
         "identifier"
       ],
       "settings": {
-        "foreground": "{color.neutral.6}"
+        "foreground": "{color.neutral.5}"
       }
     },
     {
@@ -92,7 +92,7 @@
         "meta.brace"
       ],
       "settings": {
-        "foreground": "{color.neutral.9}"
+        "foreground": "{color.neutral.7}"
       }
     },
     {
@@ -107,18 +107,18 @@
   ],
   "displayName": "Cyclone Dark",
   "type": "dark",
-  "fg": "{color.neutral.3}",
+  "fg": "{color.neutral.4}",
   "bg": "{color.neutral.14}",
   "colors": {
     "editor.background": "{color.neutral.14}",
-    "editor.foreground": "{color.neutral.3}",
+    "editor.foreground": "{color.neutral.4}",
     "editorCursor.foreground": "{color.blue.5}",
     "editor.selectionBackground": "#007e5e",
     "editor.inactiveSelectionBackground": "{color.black}",
-    "editorLineNumber.foreground": "{color.neutral.9}",
-    "editorLineNumber.activeForeground": "{color.neutral.6}",
+    "editorLineNumber.foreground": "{color.neutral.7}",
+    "editorLineNumber.activeForeground": "{color.neutral.5}",
     "editorIndentGuide.background1": "{color.neutral.9}",
-    "editorIndentGuide.activeBackground1": "{color.neutral.9}",
-    "editorWhitespace.foreground": "{color.neutral.9}"
+    "editorIndentGuide.activeBackground1": "{color.neutral.7}",
+    "editorWhitespace.foreground": "{color.neutral.7}"
   }
 }

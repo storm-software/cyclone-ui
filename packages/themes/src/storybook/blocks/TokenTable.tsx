@@ -80,7 +80,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.5",
       type: "color",
-      value: "#dcdcdc",
+      value: "#cacacb",
       cssVar: "--rw-color-neutral-5",
       description: "Pale gray.",
       theme: undefined,
@@ -89,7 +89,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.6",
       type: "color",
-      value: "#bebebe",
+      value: "#b0b0b1",
       cssVar: "--rw-color-neutral-6",
       description: "Light-medium gray.",
       theme: undefined,
@@ -98,7 +98,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.7",
       type: "color",
-      value: "#9f9f9f",
+      value: "#959698",
       cssVar: "--rw-color-neutral-7",
       description: "Medium gray.",
       theme: undefined,
@@ -107,7 +107,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.8",
       type: "color",
-      value: "#616161",
+      value: "#7b7b7e",
       cssVar: "--rw-color-neutral-8",
       description: "Dark medium gray.",
       theme: undefined,
@@ -116,7 +116,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#484848",
+      value: "#606164",
       cssVar: "--rw-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -125,7 +125,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.10",
       type: "color",
-      value: "#3a3a3a",
+      value: "#46464a",
       cssVar: "--rw-color-neutral-10",
       description: "Charcoal gray.",
       theme: undefined,
@@ -737,7 +737,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.emphasis",
       type: "color",
-      value: "#eaeaea",
+      value: "#e1e1e1",
       cssVar: "--rw-color-ink-emphasis",
       description: "Primary text and icon color for high-emphasis content.",
       theme: undefined,
@@ -746,7 +746,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#bebebe",
+      value: "#cacacb",
       cssVar: "--rw-color-ink-body",
       description: "Default text and icon color for standard content.",
       theme: undefined,
@@ -755,9 +755,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.subtle",
       type: "color",
-      value: "#484848",
+      value: "#959698",
       cssVar: "--rw-color-ink-subtle",
-      description: "Text and icon color for supporting content.",
+      description: "Softer text and icon color for supporting content.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.ink.subtlest",
+      type: "color",
+      value: "#7b7b7e",
+      cssVar: "--rw-color-ink-subtlest",
+      description: "Softest text and icon color for supporting content.",
       theme: undefined,
       typography: false
     },
@@ -1007,7 +1016,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#484848",
+      value: "#606164",
       cssVar: "--rw-color-hairline",
       description: "Subtle color for hairline borders and separators.",
       theme: undefined,
@@ -2240,7 +2249,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border",
       type: "color",
-      value: "#616161",
+      value: "#7b7b7e",
       cssVar: "--rw-color-overlay-border",
       description: "Border color that defines floating overlays.",
       theme: undefined,
@@ -2519,7 +2528,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#616161",
+      value: "#808184",
       cssVar: "--rw-color-hairline-hover",
       description: "Subtle color for hairline borders and separators. (hover, 23% brighter)",
       theme: undefined,
@@ -2528,7 +2537,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#515151",
+      value: "#6b6c6f",
       cssVar: "--rw-color-hairline-active",
       description: "Subtle color for hairline borders and separators. (active, 8% brighter)",
       theme: undefined,
@@ -2537,7 +2546,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-inactive",
       type: "color",
-      value: "#333333",
+      value: "#454649",
       cssVar: "--rw-color-hairline-inactive",
       description: "Subtle color for hairline borders and separators. (inactive, 20% darker)",
       theme: undefined,
@@ -5167,7 +5176,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.5",
       type: "color",
-      value: "#c0c0c0",
+      value: "#b4b4b4",
       cssVar: "--rw-color-neutral-5",
       description: "Pale gray.",
       theme: undefined,
@@ -5176,7 +5185,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.6",
       type: "color",
-      value: "#ababab",
+      value: "#a1a1a2",
       cssVar: "--rw-color-neutral-6",
       description: "Light-medium gray.",
       theme: undefined,
@@ -5185,7 +5194,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.7",
       type: "color",
-      value: "#969696",
+      value: "#8f8f90",
       cssVar: "--rw-color-neutral-7",
       description: "Medium gray.",
       theme: undefined,
@@ -5194,7 +5203,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.8",
       type: "color",
-      value: "#6a6a6a",
+      value: "#7d7d7e",
       cssVar: "--rw-color-neutral-8",
       description: "Dark medium gray.",
       theme: undefined,
@@ -5203,7 +5212,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#595959",
+      value: "#6a6a6c",
       cssVar: "--rw-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -5212,7 +5221,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.10",
       type: "color",
-      value: "#4f4f4f",
+      value: "#57575a",
       cssVar: "--rw-color-neutral-10",
       description: "Charcoal gray.",
       theme: undefined,
@@ -5824,7 +5833,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.emphasis",
       type: "color",
-      value: "#cacaca",
+      value: "#c4c4c4",
       cssVar: "--rw-color-ink-emphasis",
       description: "Primary text and icon color for high-emphasis content.",
       theme: undefined,
@@ -5833,7 +5842,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#ababab",
+      value: "#b4b4b4",
       cssVar: "--rw-color-ink-body",
       description: "Default text and icon color for standard content.",
       theme: undefined,
@@ -5842,9 +5851,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.subtle",
       type: "color",
-      value: "#595959",
+      value: "#8f8f90",
       cssVar: "--rw-color-ink-subtle",
-      description: "Text and icon color for supporting content.",
+      description: "Softer text and icon color for supporting content.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.ink.subtlest",
+      type: "color",
+      value: "#7d7d7e",
+      cssVar: "--rw-color-ink-subtlest",
+      description: "Softest text and icon color for supporting content.",
       theme: undefined,
       typography: false
     },
@@ -6094,7 +6112,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#595959",
+      value: "#6a6a6c",
       cssVar: "--rw-color-hairline",
       description: "Subtle color for hairline borders and separators.",
       theme: undefined,
@@ -7327,7 +7345,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border",
       type: "color",
-      value: "#6a6a6a",
+      value: "#7d7d7e",
       cssVar: "--rw-color-overlay-border",
       description: "Border color that defines floating overlays.",
       theme: undefined,
@@ -7606,7 +7624,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#6a6a6a",
+      value: "#808182",
       cssVar: "--rw-color-hairline-hover",
       description: "Subtle color for hairline borders and separators. (hover, 23% brighter)",
       theme: undefined,
@@ -7615,7 +7633,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#5f5f5f",
+      value: "#717274",
       cssVar: "--rw-color-hairline-active",
       description: "Subtle color for hairline borders and separators. (active, 8% brighter)",
       theme: undefined,
@@ -7624,7 +7642,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-inactive",
       type: "color",
-      value: "#4a4a4a",
+      value: "#575759",
       cssVar: "--rw-color-hairline-inactive",
       description: "Subtle color for hairline borders and separators. (inactive, 20% darker)",
       theme: undefined,
@@ -10254,7 +10272,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.5",
       type: "color",
-      value: "#ffffff",
+      value: "#ebebed",
       cssVar: "--rw-color-neutral-5",
       description: "Pale gray.",
       theme: undefined,
@@ -10263,7 +10281,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.6",
       type: "color",
-      value: "#dadada",
+      value: "#c3c3ca",
       cssVar: "--rw-color-neutral-6",
       description: "Light-medium gray.",
       theme: undefined,
@@ -10272,7 +10290,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.7",
       type: "color",
-      value: "#adadad",
+      value: "#9a9fa7",
       cssVar: "--rw-color-neutral-7",
       description: "Medium gray.",
       theme: undefined,
@@ -10281,7 +10299,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.8",
       type: "color",
-      value: "#535353",
+      value: "#737383",
       cssVar: "--rw-color-neutral-8",
       description: "Dark medium gray.",
       theme: undefined,
@@ -10290,7 +10308,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#2f2f2f",
+      value: "#4e515b",
       cssVar: "--rw-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -10299,7 +10317,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.10",
       type: "color",
-      value: "#1b1b1b",
+      value: "#2b2b33",
       cssVar: "--rw-color-neutral-10",
       description: "Charcoal gray.",
       theme: undefined,
@@ -10920,7 +10938,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#dadada",
+      value: "#ebebed",
       cssVar: "--rw-color-ink-body",
       description: "Default text and icon color for standard content.",
       theme: undefined,
@@ -10929,9 +10947,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.subtle",
       type: "color",
-      value: "#2f2f2f",
+      value: "#9a9fa7",
       cssVar: "--rw-color-ink-subtle",
-      description: "Text and icon color for supporting content.",
+      description: "Softer text and icon color for supporting content.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.ink.subtlest",
+      type: "color",
+      value: "#737383",
+      cssVar: "--rw-color-ink-subtlest",
+      description: "Softest text and icon color for supporting content.",
       theme: undefined,
       typography: false
     },
@@ -11181,7 +11208,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#2f2f2f",
+      value: "#4e515b",
       cssVar: "--rw-color-hairline",
       description: "Subtle color for hairline borders and separators.",
       theme: undefined,
@@ -12414,7 +12441,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border",
       type: "color",
-      value: "#535353",
+      value: "#737383",
       cssVar: "--rw-color-overlay-border",
       description: "Border color that defines floating overlays.",
       theme: undefined,
@@ -12693,7 +12720,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#535353",
+      value: "#7a7f8c",
       cssVar: "--rw-color-hairline-hover",
       description: "Subtle color for hairline borders and separators. (hover, 23% brighter)",
       theme: undefined,
@@ -12702,7 +12729,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#3c3c3c",
+      value: "#5d616c",
       cssVar: "--rw-color-hairline-active",
       description: "Subtle color for hairline borders and separators. (active, 8% brighter)",
       theme: undefined,
@@ -12711,7 +12738,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-inactive",
       type: "color",
-      value: "#111111",
+      value: "#2a2c32",
       cssVar: "--rw-color-hairline-inactive",
       description: "Subtle color for hairline borders and separators. (inactive, 20% darker)",
       theme: undefined,
@@ -15341,7 +15368,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.5",
       type: "color",
-      value: "#dcdcdc",
+      value: "#cacacb",
       cssVar: "--rw-color-neutral-5",
       description: "Pale gray.",
       theme: undefined,
@@ -15350,7 +15377,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.6",
       type: "color",
-      value: "#bebebe",
+      value: "#b0b0b1",
       cssVar: "--rw-color-neutral-6",
       description: "Light-medium gray.",
       theme: undefined,
@@ -15359,7 +15386,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.7",
       type: "color",
-      value: "#9f9f9f",
+      value: "#959698",
       cssVar: "--rw-color-neutral-7",
       description: "Medium gray.",
       theme: undefined,
@@ -15368,7 +15395,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.8",
       type: "color",
-      value: "#616161",
+      value: "#7b7b7e",
       cssVar: "--rw-color-neutral-8",
       description: "Dark medium gray.",
       theme: undefined,
@@ -15377,7 +15404,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#484848",
+      value: "#606164",
       cssVar: "--rw-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -15386,7 +15413,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.10",
       type: "color",
-      value: "#3a3a3a",
+      value: "#46464a",
       cssVar: "--rw-color-neutral-10",
       description: "Charcoal gray.",
       theme: undefined,
@@ -16007,7 +16034,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#484848",
+      value: "#606164",
       cssVar: "--rw-color-ink-body",
       description: "Default text and icon color for standard content.",
       theme: undefined,
@@ -16016,9 +16043,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.subtle",
       type: "color",
-      value: "#616161",
+      value: "#b0b0b1",
       cssVar: "--rw-color-ink-subtle",
-      description: "Text and icon color for supporting content.",
+      description: "Softer text and icon color for supporting content.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.ink.subtlest",
+      type: "color",
+      value: "#cacacb",
+      cssVar: "--rw-color-ink-subtlest",
+      description: "Softest text and icon color for supporting content.",
       theme: undefined,
       typography: false
     },
@@ -16268,7 +16304,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#bebebe",
+      value: "#b0b0b1",
       cssVar: "--rw-color-hairline",
       description: "Subtle color for hairline borders and separators.",
       theme: undefined,
@@ -16286,7 +16322,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand",
       type: "color",
-      value: "#2055b3",
+      value: "#1fb2a6",
       cssVar: "--rw-color-accent-brand",
       description: "Brand accent for primary actions and emphasis.",
       theme: undefined,
@@ -16394,7 +16430,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-hover",
       type: "color",
-      value: "#003590",
+      value: "#008277",
       cssVar: "--rw-color-accent-brand-hover",
       description: "Brand accent for primary actions and emphasis. (hover, 23% darker)",
       theme: undefined,
@@ -16403,7 +16439,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-active",
       type: "color",
-      value: "#0f45a2",
+      value: "#009a8e",
       cssVar: "--rw-color-accent-brand-active",
       description: "Brand accent for primary actions and emphasis. (active, 11% darker)",
       theme: undefined,
@@ -16412,7 +16448,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-inactive",
       type: "color",
-      value: "#3b72d3",
+      value: "#5ddfd2",
       cssVar: "--rw-color-accent-brand-inactive",
       description: "Brand accent for primary actions and emphasis. (inactive, 20% brighter)",
       theme: undefined,
@@ -16421,7 +16457,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-disabled",
       type: "color",
-      value: "#2f58a2",
+      value: "#4daea4",
       cssVar: "--rw-color-accent-brand-disabled",
       description: "Brand accent for primary actions and emphasis. (disabled, 80% saturation)",
       theme: undefined,
@@ -17096,7 +17132,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand",
       type: "color",
-      value: "#abcaff",
+      value: "#68e8db",
       cssVar: "--rw-color-muted-brand",
       description: "Muted brand accent background for low-emphasis states.",
       theme: undefined,
@@ -17141,7 +17177,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-hover",
       type: "color",
-      value: "#728fc1",
+      value: "#08a99e",
       cssVar: "--rw-color-muted-brand-hover",
       description: "Muted brand accent background for low-emphasis states. (hover, 23% darker)",
       theme: undefined,
@@ -17150,7 +17186,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-active",
       type: "color",
-      value: "#8eacdf",
+      value: "#43c8bc",
       cssVar: "--rw-color-muted-brand-active",
       description: "Muted brand accent background for low-emphasis states. (active, 11% darker)",
       theme: undefined,
@@ -17159,7 +17195,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-inactive",
       type: "color",
-      value: "#e0ffff",
+      value: "#9bffff",
       cssVar: "--rw-color-muted-brand-inactive",
       description: "Muted brand accent background for low-emphasis states. (inactive, 20% brighter)",
       theme: undefined,
@@ -17168,7 +17204,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-disabled",
       type: "color",
-      value: "#b1caf4",
+      value: "#84e3d9",
       cssVar: "--rw-color-muted-brand-disabled",
       description: "Muted brand accent background for low-emphasis states. (disabled, 80% saturation)",
       theme: undefined,
@@ -17501,7 +17537,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border",
       type: "color",
-      value: "#bebebe",
+      value: "#b0b0b1",
       cssVar: "--rw-color-overlay-border",
       description: "Border color that defines floating overlays.",
       theme: undefined,
@@ -17591,7 +17627,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.neutral.emphasis",
       type: "color",
-      value: "#484848",
+      value: "#606164",
       cssVar: "--rw-color-data-neutral-emphasis",
       description: "High-emphasis neutral data-series color.",
       theme: undefined,
@@ -17780,7 +17816,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#868686",
+      value: "#7c7c7d",
       cssVar: "--rw-color-hairline-hover",
       description: "Subtle color for hairline borders and separators. (hover, 23% darker)",
       theme: undefined,
@@ -17789,7 +17825,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#aaaaaa",
+      value: "#9d9d9e",
       cssVar: "--rw-color-hairline-active",
       description: "Subtle color for hairline borders and separators. (active, 8% darker)",
       theme: undefined,
@@ -17798,7 +17834,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-inactive",
       type: "color",
-      value: "#f2f2f2",
+      value: "#e1e1e2",
       cssVar: "--rw-color-hairline-inactive",
       description: "Subtle color for hairline borders and separators. (inactive, 20% brighter)",
       theme: undefined,
@@ -17816,7 +17852,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand",
       type: "color",
-      value: "#2055b3",
+      value: "#1fb2a6",
       cssVar: "--rw-color-on-muted-brand",
       description: "Generated brand foreground on muted backgrounds",
       theme: undefined,
@@ -17924,7 +17960,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-hover",
       type: "color",
-      value: "#003590",
+      value: "#008277",
       cssVar: "--rw-color-on-muted-brand-hover",
       description: "Generated brand foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -17933,7 +17969,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-active",
       type: "color",
-      value: "#0f45a2",
+      value: "#009a8e",
       cssVar: "--rw-color-on-muted-brand-active",
       description: "Generated brand foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -17942,7 +17978,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-inactive",
       type: "color",
-      value: "#3b72d3",
+      value: "#5ddfd2",
       cssVar: "--rw-color-on-muted-brand-inactive",
       description: "Generated brand foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -17951,7 +17987,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-disabled",
       type: "color",
-      value: "#2f58a2",
+      value: "#4daea4",
       cssVar: "--rw-color-on-muted-brand-disabled",
       description: "Generated brand foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -19949,7 +19985,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #2055b320",
+      value: "0px 0px 0px 3px #1fb2a620",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: undefined,
@@ -19958,7 +19994,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #2055b320",
+      value: "0px 0px 0px 1px #1fb2a620",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: undefined,
@@ -19967,7 +20003,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b320",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a620",
       cssVar: "--rw-ring-brand-offset",
       description: "The brand ring variant with a 3px offset",
       theme: undefined,
@@ -19976,7 +20012,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b320",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a620",
       cssVar: "--rw-ring-brand-subtle-offset",
       description: "The brand subtle ring variant with a 3px offset",
       theme: undefined,
@@ -20428,7 +20464,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.5",
       type: "color",
-      value: "#c0c0c0",
+      value: "#b4b4b4",
       cssVar: "--rw-color-neutral-5",
       description: "Pale gray.",
       theme: undefined,
@@ -20437,7 +20473,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.6",
       type: "color",
-      value: "#ababab",
+      value: "#a1a1a2",
       cssVar: "--rw-color-neutral-6",
       description: "Light-medium gray.",
       theme: undefined,
@@ -20446,7 +20482,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.7",
       type: "color",
-      value: "#969696",
+      value: "#8f8f90",
       cssVar: "--rw-color-neutral-7",
       description: "Medium gray.",
       theme: undefined,
@@ -20455,7 +20491,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.8",
       type: "color",
-      value: "#6a6a6a",
+      value: "#7d7d7e",
       cssVar: "--rw-color-neutral-8",
       description: "Dark medium gray.",
       theme: undefined,
@@ -20464,7 +20500,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#595959",
+      value: "#6a6a6c",
       cssVar: "--rw-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -20473,7 +20509,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.10",
       type: "color",
-      value: "#4f4f4f",
+      value: "#57575a",
       cssVar: "--rw-color-neutral-10",
       description: "Charcoal gray.",
       theme: undefined,
@@ -21094,7 +21130,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#595959",
+      value: "#6a6a6c",
       cssVar: "--rw-color-ink-body",
       description: "Default text and icon color for standard content.",
       theme: undefined,
@@ -21103,9 +21139,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.subtle",
       type: "color",
-      value: "#6a6a6a",
+      value: "#a1a1a2",
       cssVar: "--rw-color-ink-subtle",
-      description: "Text and icon color for supporting content.",
+      description: "Softer text and icon color for supporting content.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.ink.subtlest",
+      type: "color",
+      value: "#b4b4b4",
+      cssVar: "--rw-color-ink-subtlest",
+      description: "Softest text and icon color for supporting content.",
       theme: undefined,
       typography: false
     },
@@ -21355,7 +21400,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#ababab",
+      value: "#a1a1a2",
       cssVar: "--rw-color-hairline",
       description: "Subtle color for hairline borders and separators.",
       theme: undefined,
@@ -21373,7 +21418,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand",
       type: "color",
-      value: "#45649b",
+      value: "#449a93",
       cssVar: "--rw-color-accent-brand",
       description: "Brand accent for primary actions and emphasis.",
       theme: undefined,
@@ -21481,7 +21526,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-hover",
       type: "color",
-      value: "#284c89",
+      value: "#26827a",
       cssVar: "--rw-color-accent-brand-hover",
       description: "Brand accent for primary actions and emphasis. (hover, 23% darker)",
       theme: undefined,
@@ -21490,7 +21535,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-active",
       type: "color",
-      value: "#365892",
+      value: "#298f87",
       cssVar: "--rw-color-accent-brand-active",
       description: "Brand accent for primary actions and emphasis. (active, 11% darker)",
       theme: undefined,
@@ -21499,7 +21544,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-inactive",
       type: "color",
-      value: "#5a79af",
+      value: "#6ebcb4",
       cssVar: "--rw-color-accent-brand-inactive",
       description: "Brand accent for primary actions and emphasis. (inactive, 20% brighter)",
       theme: undefined,
@@ -21508,7 +21553,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-disabled",
       type: "color",
-      value: "#4e6691",
+      value: "#639993",
       cssVar: "--rw-color-accent-brand-disabled",
       description: "Brand accent for primary actions and emphasis. (disabled, 80% saturation)",
       theme: undefined,
@@ -22183,7 +22228,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand",
       type: "color",
-      value: "#96b2e1",
+      value: "#74c4bc",
       cssVar: "--rw-color-muted-brand",
       description: "Muted brand accent background for low-emphasis states.",
       theme: undefined,
@@ -22228,7 +22273,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-hover",
       type: "color",
-      value: "#7a8ba9",
+      value: "#32968f",
       cssVar: "--rw-color-muted-brand-hover",
       description: "Muted brand accent background for low-emphasis states. (hover, 23% darker)",
       theme: undefined,
@@ -22237,7 +22282,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-active",
       type: "color",
-      value: "#8b9fc1",
+      value: "#5fa9a2",
       cssVar: "--rw-color-muted-brand-active",
       description: "Muted brand accent background for low-emphasis states. (active, 11% darker)",
       theme: undefined,
@@ -22246,7 +22291,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-inactive",
       type: "color",
-      value: "#b3e9e9",
+      value: "#8ddede",
       cssVar: "--rw-color-muted-brand-inactive",
       description: "Muted brand accent background for low-emphasis states. (inactive, 20% brighter)",
       theme: undefined,
@@ -22255,7 +22300,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-disabled",
       type: "color",
-      value: "#9db2d6",
+      value: "#84c3bd",
       cssVar: "--rw-color-muted-brand-disabled",
       description: "Muted brand accent background for low-emphasis states. (disabled, 80% saturation)",
       theme: undefined,
@@ -22588,7 +22633,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border",
       type: "color",
-      value: "#ababab",
+      value: "#a1a1a2",
       cssVar: "--rw-color-overlay-border",
       description: "Border color that defines floating overlays.",
       theme: undefined,
@@ -22678,7 +22723,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.neutral.emphasis",
       type: "color",
-      value: "#595959",
+      value: "#6a6a6c",
       cssVar: "--rw-color-data-neutral-emphasis",
       description: "High-emphasis neutral data-series color.",
       theme: undefined,
@@ -22867,7 +22912,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#848484",
+      value: "#7d7d7e",
       cssVar: "--rw-color-hairline-hover",
       description: "Subtle color for hairline borders and separators. (hover, 23% darker)",
       theme: undefined,
@@ -22876,7 +22921,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#9d9d9d",
+      value: "#949495",
       cssVar: "--rw-color-hairline-active",
       description: "Subtle color for hairline borders and separators. (active, 8% darker)",
       theme: undefined,
@@ -22885,7 +22930,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-inactive",
       type: "color",
-      value: "#d0d0d0",
+      value: "#c4c4c5",
       cssVar: "--rw-color-hairline-inactive",
       description: "Subtle color for hairline borders and separators. (inactive, 20% brighter)",
       theme: undefined,
@@ -22903,7 +22948,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand",
       type: "color",
-      value: "#45649b",
+      value: "#449a93",
       cssVar: "--rw-color-on-muted-brand",
       description: "Generated brand foreground on muted backgrounds",
       theme: undefined,
@@ -23011,7 +23056,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-hover",
       type: "color",
-      value: "#284c89",
+      value: "#26827a",
       cssVar: "--rw-color-on-muted-brand-hover",
       description: "Generated brand foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -23020,7 +23065,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-active",
       type: "color",
-      value: "#365892",
+      value: "#298f87",
       cssVar: "--rw-color-on-muted-brand-active",
       description: "Generated brand foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -23029,7 +23074,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-inactive",
       type: "color",
-      value: "#5a79af",
+      value: "#6ebcb4",
       cssVar: "--rw-color-on-muted-brand-inactive",
       description: "Generated brand foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -23038,7 +23083,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-disabled",
       type: "color",
-      value: "#4e6691",
+      value: "#639993",
       cssVar: "--rw-color-on-muted-brand-disabled",
       description: "Generated brand foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -25036,7 +25081,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #2055b320",
+      value: "0px 0px 0px 3px #1fb2a620",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: undefined,
@@ -25045,7 +25090,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #2055b320",
+      value: "0px 0px 0px 1px #1fb2a620",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: undefined,
@@ -25054,7 +25099,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b320",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a620",
       cssVar: "--rw-ring-brand-offset",
       description: "The brand ring variant with a 3px offset",
       theme: undefined,
@@ -25063,7 +25108,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b320",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a620",
       cssVar: "--rw-ring-brand-subtle-offset",
       description: "The brand subtle ring variant with a 3px offset",
       theme: undefined,
@@ -25515,7 +25560,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.5",
       type: "color",
-      value: "#ffffff",
+      value: "#ebebed",
       cssVar: "--rw-color-neutral-5",
       description: "Pale gray.",
       theme: undefined,
@@ -25524,7 +25569,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.6",
       type: "color",
-      value: "#dadada",
+      value: "#c3c3ca",
       cssVar: "--rw-color-neutral-6",
       description: "Light-medium gray.",
       theme: undefined,
@@ -25533,7 +25578,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.7",
       type: "color",
-      value: "#adadad",
+      value: "#9a9fa7",
       cssVar: "--rw-color-neutral-7",
       description: "Medium gray.",
       theme: undefined,
@@ -25542,7 +25587,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.8",
       type: "color",
-      value: "#535353",
+      value: "#737383",
       cssVar: "--rw-color-neutral-8",
       description: "Dark medium gray.",
       theme: undefined,
@@ -25551,7 +25596,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#2f2f2f",
+      value: "#4e515b",
       cssVar: "--rw-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -25560,7 +25605,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.10",
       type: "color",
-      value: "#1b1b1b",
+      value: "#2b2b33",
       cssVar: "--rw-color-neutral-10",
       description: "Charcoal gray.",
       theme: undefined,
@@ -26181,7 +26226,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#2f2f2f",
+      value: "#4e515b",
       cssVar: "--rw-color-ink-body",
       description: "Default text and icon color for standard content.",
       theme: undefined,
@@ -26190,9 +26235,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.subtle",
       type: "color",
-      value: "#535353",
+      value: "#c3c3ca",
       cssVar: "--rw-color-ink-subtle",
-      description: "Text and icon color for supporting content.",
+      description: "Softer text and icon color for supporting content.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.ink.subtlest",
+      type: "color",
+      value: "#ebebed",
+      cssVar: "--rw-color-ink-subtlest",
+      description: "Softest text and icon color for supporting content.",
       theme: undefined,
       typography: false
     },
@@ -26442,7 +26496,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#dadada",
+      value: "#c3c3ca",
       cssVar: "--rw-color-hairline",
       description: "Subtle color for hairline borders and separators.",
       theme: undefined,
@@ -26460,7 +26514,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand",
       type: "color",
-      value: "#0145be",
+      value: "#00bcad",
       cssVar: "--rw-color-accent-brand",
       description: "Brand accent for primary actions and emphasis.",
       theme: undefined,
@@ -26568,7 +26622,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-hover",
       type: "color",
-      value: "#00235e",
+      value: "#004a44",
       cssVar: "--rw-color-accent-brand-hover",
       description: "Brand accent for primary actions and emphasis. (hover, 23% darker)",
       theme: undefined,
@@ -26577,7 +26631,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-active",
       type: "color",
-      value: "#00348e",
+      value: "#006d64",
       cssVar: "--rw-color-accent-brand-active",
       description: "Brand accent for primary actions and emphasis. (active, 11% darker)",
       theme: undefined,
@@ -26586,7 +26640,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-inactive",
       type: "color",
-      value: "#216df4",
+      value: "#5cfbeb",
       cssVar: "--rw-color-accent-brand-inactive",
       description: "Brand accent for primary actions and emphasis. (inactive, 20% brighter)",
       theme: undefined,
@@ -26595,7 +26649,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-disabled",
       type: "color",
-      value: "#1449a9",
+      value: "#35c4b5",
       cssVar: "--rw-color-accent-brand-disabled",
       description: "Brand accent for primary actions and emphasis. (disabled, 80% saturation)",
       theme: undefined,
@@ -27270,7 +27324,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand",
       type: "color",
-      value: "#f8fbff",
+      value: "#75fff1",
       cssVar: "--rw-color-muted-brand",
       description: "Muted brand accent background for low-emphasis states.",
       theme: undefined,
@@ -27315,7 +27369,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-hover",
       type: "color",
-      value: "#7297d9",
+      value: "#008e84",
       cssVar: "--rw-color-muted-brand-hover",
       description: "Muted brand accent background for low-emphasis states. (hover, 23% darker)",
       theme: undefined,
@@ -27324,7 +27378,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-active",
       type: "color",
-      value: "#a9c5f6",
+      value: "#2ae6d5",
       cssVar: "--rw-color-muted-brand-active",
       description: "Muted brand accent background for low-emphasis states. (active, 11% darker)",
       theme: undefined,
@@ -27333,7 +27387,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-inactive",
       type: "color",
-      value: "#ffffff",
+      value: "#e1ffff",
       cssVar: "--rw-color-muted-brand-inactive",
       description: "Muted brand accent background for low-emphasis states. (inactive, 20% brighter)",
       theme: undefined,
@@ -27342,7 +27396,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-disabled",
       type: "color",
-      value: "#f1f6ff",
+      value: "#9cfaf0",
       cssVar: "--rw-color-muted-brand-disabled",
       description: "Muted brand accent background for low-emphasis states. (disabled, 80% saturation)",
       theme: undefined,
@@ -27675,7 +27729,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border",
       type: "color",
-      value: "#dadada",
+      value: "#c3c3ca",
       cssVar: "--rw-color-overlay-border",
       description: "Border color that defines floating overlays.",
       theme: undefined,
@@ -27765,7 +27819,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.neutral.emphasis",
       type: "color",
-      value: "#2f2f2f",
+      value: "#4e515b",
       cssVar: "--rw-color-data-neutral-emphasis",
       description: "High-emphasis neutral data-series color.",
       theme: undefined,
@@ -27954,7 +28008,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#898989",
+      value: "#747482",
       cssVar: "--rw-color-hairline-hover",
       description: "Subtle color for hairline borders and separators. (hover, 23% darker)",
       theme: undefined,
@@ -27963,7 +28017,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#bdbdbd",
+      value: "#a6a6b0",
       cssVar: "--rw-color-hairline-active",
       description: "Subtle color for hairline borders and separators. (active, 8% darker)",
       theme: undefined,
@@ -27990,7 +28044,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand",
       type: "color",
-      value: "#0145be",
+      value: "#00bcad",
       cssVar: "--rw-color-on-muted-brand",
       description: "Generated brand foreground on muted backgrounds",
       theme: undefined,
@@ -28098,7 +28152,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-hover",
       type: "color",
-      value: "#00235e",
+      value: "#004a44",
       cssVar: "--rw-color-on-muted-brand-hover",
       description: "Generated brand foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -28107,7 +28161,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-active",
       type: "color",
-      value: "#00348e",
+      value: "#006d64",
       cssVar: "--rw-color-on-muted-brand-active",
       description: "Generated brand foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -28116,7 +28170,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-inactive",
       type: "color",
-      value: "#216df4",
+      value: "#5cfbeb",
       cssVar: "--rw-color-on-muted-brand-inactive",
       description: "Generated brand foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -28125,7 +28179,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-disabled",
       type: "color",
-      value: "#1449a9",
+      value: "#35c4b5",
       cssVar: "--rw-color-on-muted-brand-disabled",
       description: "Generated brand foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -30123,7 +30177,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #2055b320",
+      value: "0px 0px 0px 3px #1fb2a620",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: undefined,
@@ -30132,7 +30186,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #2055b320",
+      value: "0px 0px 0px 1px #1fb2a620",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: undefined,
@@ -30141,7 +30195,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b320",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a620",
       cssVar: "--rw-ring-brand-offset",
       description: "The brand ring variant with a 3px offset",
       theme: undefined,
@@ -30150,7 +30204,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b320",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a620",
       cssVar: "--rw-ring-brand-subtle-offset",
       description: "The brand subtle ring variant with a 3px offset",
       theme: undefined,

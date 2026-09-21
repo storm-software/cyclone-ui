@@ -47,11 +47,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.accent.base-disabled` | `color` | `#000000` | Primary neutral accent for emphasized controls and content. (disabled, 80% saturation) |
 | `color.accent.base-hover` | `color` | `#000000` | Primary neutral accent for emphasized controls and content. (hover, 30% brighter) |
 | `color.accent.base-inactive` | `color` | `#000000` | Primary neutral accent for emphasized controls and content. (inactive, 40% darker) |
-| `color.accent.brand` | `color` | `var(--color-blue-7)` | Brand accent for primary actions and emphasis. |
-| `color.accent.brand-active` | `color` | `#00348e` | Brand accent for primary actions and emphasis. (active, 11% darker) |
-| `color.accent.brand-disabled` | `color` | `#1449a9` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
-| `color.accent.brand-hover` | `color` | `#00235e` | Brand accent for primary actions and emphasis. (hover, 23% darker) |
-| `color.accent.brand-inactive` | `color` | `#216df4` | Brand accent for primary actions and emphasis. (inactive, 20% brighter) |
+| `color.accent.brand` | `color` | `#00bcad` | Brand accent for primary actions and emphasis. |
+| `color.accent.brand-active` | `color` | `#006d64` | Brand accent for primary actions and emphasis. (active, 11% darker) |
+| `color.accent.brand-disabled` | `color` | `#35c4b5` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
+| `color.accent.brand-hover` | `color` | `#004a44` | Brand accent for primary actions and emphasis. (hover, 23% darker) |
+| `color.accent.brand-inactive` | `color` | `#5cfbeb` | Brand accent for primary actions and emphasis. (inactive, 20% brighter) |
 | `color.accent.danger` | `color` | `var(--color-red-7)` | Danger accent for destructive actions and critical states. |
 | `color.accent.danger-active` | `color` | `#5a001b` | Danger accent for destructive actions and critical states. (active, 11% darker) |
 | `color.accent.danger-disabled` | `color` | `#7b182d` | Danger accent for destructive actions and critical states. (disabled, 80% saturation) |
@@ -125,12 +125,13 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.green.8` | `color` | `#031611` | Deep forest green. |
 | `color.green.9` | `color` | `#000000` | Dark emerald green. |
 | `color.hairline` | `color` | `var(--color-neutral-6)` | Subtle color for hairline borders and separators. |
-| `color.hairline-active` | `color` | `#bdbdbd` | Subtle color for hairline borders and separators. (active, 8% darker) |
-| `color.hairline-hover` | `color` | `#898989` | Subtle color for hairline borders and separators. (hover, 23% darker) |
+| `color.hairline-active` | `color` | `#a6a6b0` | Subtle color for hairline borders and separators. (active, 8% darker) |
+| `color.hairline-hover` | `color` | `#747482` | Subtle color for hairline borders and separators. (hover, 23% darker) |
 | `color.hairline-inactive` | `color` | `#ffffff` | Subtle color for hairline borders and separators. (inactive, 20% brighter) |
 | `color.ink.body` | `color` | `var(--color-neutral-9)` | Default text and icon color for standard content. |
 | `color.ink.emphasis` | `color` | `var(--color-neutral-11)` | Primary text and icon color for high-emphasis content. |
-| `color.ink.subtle` | `color` | `var(--color-neutral-8)` | Text and icon color for supporting content. |
+| `color.ink.subtle` | `color` | `var(--color-neutral-6)` | Softer text and icon color for supporting content. |
+| `color.ink.subtlest` | `color` | `var(--color-neutral-5)` | Softest text and icon color for supporting content. |
 | `color.link` | `color` | `var(--color-blue-7)` | Interactive color for links and linked text. |
 | `color.link-active` | `color` | `#00348e` | Interactive color for links and linked text. (active, 11% darker) |
 | `color.link-hover` | `color` | `#00235e` | Interactive color for links and linked text. (hover, 23% darker) |
@@ -140,11 +141,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.base-disabled` | `color` | `#ffffff66` | Muted neutral accent background for low-emphasis states. (disabled, 40% opacity) |
 | `color.muted.base-hover` | `color` | `#999999` | Muted neutral accent background for low-emphasis states. (hover, 30% darker) |
 | `color.muted.base-inactive` | `color` | `#000000` | Muted neutral accent background for low-emphasis states. (inactive, 40% darker) |
-| `color.muted.brand` | `color` | `var(--color-blue-1)` | Muted brand accent background for low-emphasis states. |
-| `color.muted.brand-active` | `color` | `#a9c5f6` | Muted brand accent background for low-emphasis states. (active, 11% darker) |
-| `color.muted.brand-disabled` | `color` | `#f1f6ff` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
-| `color.muted.brand-hover` | `color` | `#7297d9` | Muted brand accent background for low-emphasis states. (hover, 23% darker) |
-| `color.muted.brand-inactive` | `color` | `#ffffff` | Muted brand accent background for low-emphasis states. (inactive, 20% brighter) |
+| `color.muted.brand` | `color` | `#75fff1` | Muted brand accent background for low-emphasis states. |
+| `color.muted.brand-active` | `color` | `#2ae6d5` | Muted brand accent background for low-emphasis states. (active, 11% darker) |
+| `color.muted.brand-disabled` | `color` | `#9cfaf0` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
+| `color.muted.brand-hover` | `color` | `#008e84` | Muted brand accent background for low-emphasis states. (hover, 23% darker) |
+| `color.muted.brand-inactive` | `color` | `#e1ffff` | Muted brand accent background for low-emphasis states. (inactive, 20% brighter) |
 | `color.muted.danger` | `color` | `#fc7d94` | Generated danger muted background for the light theme |
 | `color.muted.danger-active` | `color` | `#e34c69` | Generated danger muted background for the light theme (active, 11% darker) |
 | `color.muted.danger-disabled` | `color` | `#ef8697` | Generated danger muted background for the light theme (disabled, 80% saturation) |
@@ -181,7 +182,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.warning-hover` | `color` | `#865c15` | Generated warning muted background for the light theme (hover, 23% darker) |
 | `color.muted.warning-inactive` | `color` | `#ffddaa` | Generated warning muted background for the light theme (inactive, 20% brighter) |
 | `color.neutral.1` | `color` | `#ffffff` | Bright off-white gray. |
-| `color.neutral.10` | `color` | `#1b1b1b` | Charcoal gray. |
+| `color.neutral.10` | `color` | `#2b2b33` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#08080a` | Dark charcoal gray. |
 | `color.neutral.12` | `color` | `#000000` | Deep graphite gray. |
 | `color.neutral.13` | `color` | `#000000` | Near-black graphite. |
@@ -189,11 +190,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.2` | `color` | `#ffffff` | Very light gray. |
 | `color.neutral.3` | `color` | `#ffffff` | Light gray. |
 | `color.neutral.4` | `color` | `#ffffff` | Soft light gray. |
-| `color.neutral.5` | `color` | `#ffffff` | Pale gray. |
-| `color.neutral.6` | `color` | `#dadada` | Light-medium gray. |
-| `color.neutral.7` | `color` | `#adadad` | Medium gray. |
-| `color.neutral.8` | `color` | `#535353` | Dark medium gray. |
-| `color.neutral.9` | `color` | `#2f2f2f` | Deep gray. |
+| `color.neutral.5` | `color` | `#ebebed` | Pale gray. |
+| `color.neutral.6` | `color` | `#c3c3ca` | Light-medium gray. |
+| `color.neutral.7` | `color` | `#9a9fa7` | Medium gray. |
+| `color.neutral.8` | `color` | `#737383` | Dark medium gray. |
+| `color.neutral.9` | `color` | `#4e515b` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-2)` | Content color placed on neutral accent backgrounds. |
 | `color.on-accent.base-active` | `color` | `#000000` | Content color placed on neutral accent backgrounds. (active, light base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#ffffff66` | Content color placed on neutral accent backgrounds. (disabled, 40% opacity) |
@@ -244,11 +245,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-muted.base-disabled` | `color` | `#000000` | Generated base foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.base-hover` | `color` | `#000000` | Generated base foreground on muted backgrounds (hover, 30% brighter) |
 | `color.on-muted.base-inactive` | `color` | `#000000` | Generated base foreground on muted backgrounds (inactive, 40% darker) |
-| `color.on-muted.brand` | `color` | `var(--color-blue-7)` | Generated brand foreground on muted backgrounds |
-| `color.on-muted.brand-active` | `color` | `#00348e` | Generated brand foreground on muted backgrounds (active, 11% darker) |
-| `color.on-muted.brand-disabled` | `color` | `#1449a9` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.brand-hover` | `color` | `#00235e` | Generated brand foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.brand-inactive` | `color` | `#216df4` | Generated brand foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.brand` | `color` | `#00bcad` | Generated brand foreground on muted backgrounds |
+| `color.on-muted.brand-active` | `color` | `#006d64` | Generated brand foreground on muted backgrounds (active, 11% darker) |
+| `color.on-muted.brand-disabled` | `color` | `#35c4b5` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.brand-hover` | `color` | `#004a44` | Generated brand foreground on muted backgrounds (hover, 23% darker) |
+| `color.on-muted.brand-inactive` | `color` | `#5cfbeb` | Generated brand foreground on muted backgrounds (inactive, 20% brighter) |
 | `color.on-muted.danger` | `color` | `#000000` | Generated danger foreground on muted backgrounds |
 | `color.on-muted.danger-active` | `color` | `#000000` | Generated danger foreground on muted backgrounds (active, 11% brighter) |
 | `color.on-muted.danger-disabled` | `color` | `#000000` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
@@ -487,10 +488,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151813` | The base ring variant with a 3px offset |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #15151813` | The base subtle ring variant |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151813` | The base subtle ring variant with a 3px offset |
-| `ring.brand` | `shadow` | `0px 0px 0px 3px #2055b320` | The brand ring variant |
-| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b320` | The brand ring variant with a 3px offset |
-| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #2055b320` | The brand subtle ring variant |
-| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b320` | The brand subtle ring variant with a 3px offset |
+| `ring.brand` | `shadow` | `0px 0px 0px 3px #1fb2a620` | The brand ring variant |
+| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a620` | The brand ring variant with a 3px offset |
+| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #1fb2a620` | The brand subtle ring variant |
+| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a620` | The brand subtle ring variant with a 3px offset |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e20` | The danger ring variant |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e20` | The danger ring variant with a 3px offset |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e20` | The danger subtle ring variant |
@@ -705,11 +706,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.accent.base-disabled` | `color` | `#343437` | Primary neutral accent for emphasized controls and content. (disabled, 80% saturation) |
 | `color.accent.base-hover` | `color` | `#3e3e41` | Primary neutral accent for emphasized controls and content. (hover, 30% brighter) |
 | `color.accent.base-inactive` | `color` | `#282828` | Primary neutral accent for emphasized controls and content. (inactive, 40% darker) |
-| `color.accent.brand` | `color` | `var(--color-blue-7)` | Brand accent for primary actions and emphasis. |
-| `color.accent.brand-active` | `color` | `#365892` | Brand accent for primary actions and emphasis. (active, 11% darker) |
-| `color.accent.brand-disabled` | `color` | `#4e6691` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
-| `color.accent.brand-hover` | `color` | `#284c89` | Brand accent for primary actions and emphasis. (hover, 23% darker) |
-| `color.accent.brand-inactive` | `color` | `#5a79af` | Brand accent for primary actions and emphasis. (inactive, 20% brighter) |
+| `color.accent.brand` | `color` | `#449a93` | Brand accent for primary actions and emphasis. |
+| `color.accent.brand-active` | `color` | `#298f87` | Brand accent for primary actions and emphasis. (active, 11% darker) |
+| `color.accent.brand-disabled` | `color` | `#639993` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
+| `color.accent.brand-hover` | `color` | `#26827a` | Brand accent for primary actions and emphasis. (hover, 23% darker) |
+| `color.accent.brand-inactive` | `color` | `#6ebcb4` | Brand accent for primary actions and emphasis. (inactive, 20% brighter) |
 | `color.accent.danger` | `color` | `var(--color-red-7)` | Danger accent for destructive actions and critical states. |
 | `color.accent.danger-active` | `color` | `#7e3249` | Danger accent for destructive actions and critical states. (active, 11% darker) |
 | `color.accent.danger-disabled` | `color` | `#7f4c56` | Danger accent for destructive actions and critical states. (disabled, 80% saturation) |
@@ -783,12 +784,13 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.green.8` | `color` | `#325d52` | Deep forest green. |
 | `color.green.9` | `color` | `#284b41` | Dark emerald green. |
 | `color.hairline` | `color` | `var(--color-neutral-6)` | Subtle color for hairline borders and separators. |
-| `color.hairline-active` | `color` | `#9d9d9d` | Subtle color for hairline borders and separators. (active, 8% darker) |
-| `color.hairline-hover` | `color` | `#848484` | Subtle color for hairline borders and separators. (hover, 23% darker) |
-| `color.hairline-inactive` | `color` | `#d0d0d0` | Subtle color for hairline borders and separators. (inactive, 20% brighter) |
+| `color.hairline-active` | `color` | `#949495` | Subtle color for hairline borders and separators. (active, 8% darker) |
+| `color.hairline-hover` | `color` | `#7d7d7e` | Subtle color for hairline borders and separators. (hover, 23% darker) |
+| `color.hairline-inactive` | `color` | `#c4c4c5` | Subtle color for hairline borders and separators. (inactive, 20% brighter) |
 | `color.ink.body` | `color` | `var(--color-neutral-9)` | Default text and icon color for standard content. |
 | `color.ink.emphasis` | `color` | `var(--color-neutral-11)` | Primary text and icon color for high-emphasis content. |
-| `color.ink.subtle` | `color` | `var(--color-neutral-8)` | Text and icon color for supporting content. |
+| `color.ink.subtle` | `color` | `var(--color-neutral-6)` | Softer text and icon color for supporting content. |
+| `color.ink.subtlest` | `color` | `var(--color-neutral-5)` | Softest text and icon color for supporting content. |
 | `color.link` | `color` | `var(--color-blue-7)` | Interactive color for links and linked text. |
 | `color.link-active` | `color` | `#365892` | Interactive color for links and linked text. (active, 11% darker) |
 | `color.link-hover` | `color` | `#284c89` | Interactive color for links and linked text. (hover, 23% darker) |
@@ -798,11 +800,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.base-disabled` | `color` | `#cacaca66` | Muted neutral accent background for low-emphasis states. (disabled, 40% opacity) |
 | `color.muted.base-hover` | `color` | `#8c8c8c` | Muted neutral accent background for low-emphasis states. (hover, 30% darker) |
 | `color.muted.base-inactive` | `color` | `#282828` | Muted neutral accent background for low-emphasis states. (inactive, 40% darker) |
-| `color.muted.brand` | `color` | `var(--color-blue-1)` | Muted brand accent background for low-emphasis states. |
-| `color.muted.brand-active` | `color` | `#8b9fc1` | Muted brand accent background for low-emphasis states. (active, 11% darker) |
-| `color.muted.brand-disabled` | `color` | `#9db2d6` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
-| `color.muted.brand-hover` | `color` | `#7a8ba9` | Muted brand accent background for low-emphasis states. (hover, 23% darker) |
-| `color.muted.brand-inactive` | `color` | `#b3e9e9` | Muted brand accent background for low-emphasis states. (inactive, 20% brighter) |
+| `color.muted.brand` | `color` | `#74c4bc` | Muted brand accent background for low-emphasis states. |
+| `color.muted.brand-active` | `color` | `#5fa9a2` | Muted brand accent background for low-emphasis states. (active, 11% darker) |
+| `color.muted.brand-disabled` | `color` | `#84c3bd` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
+| `color.muted.brand-hover` | `color` | `#32968f` | Muted brand accent background for low-emphasis states. (hover, 23% darker) |
+| `color.muted.brand-inactive` | `color` | `#8ddede` | Muted brand accent background for low-emphasis states. (inactive, 20% brighter) |
 | `color.muted.danger` | `color` | `#c17986` | Generated danger muted background for the light theme |
 | `color.muted.danger-active` | `color` | `#ab6b78` | Generated danger muted background for the light theme (active, 11% darker) |
 | `color.muted.danger-disabled` | `color` | `#b97f88` | Generated danger muted background for the light theme (disabled, 80% saturation) |
@@ -839,7 +841,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.warning-hover` | `color` | `#846f4b` | Generated warning muted background for the light theme (hover, 23% darker) |
 | `color.muted.warning-inactive` | `color` | `#caaf87` | Generated warning muted background for the light theme (inactive, 20% brighter) |
 | `color.neutral.1` | `color` | `#d5d5d5` | Bright off-white gray. |
-| `color.neutral.10` | `color` | `#4f4f4f` | Charcoal gray. |
+| `color.neutral.10` | `color` | `#57575a` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#444548` | Dark charcoal gray. |
 | `color.neutral.12` | `color` | `#3f4043` | Deep graphite gray. |
 | `color.neutral.13` | `color` | `#3c3c3e` | Near-black graphite. |
@@ -847,11 +849,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.2` | `color` | `#cfcfcf` | Very light gray. |
 | `color.neutral.3` | `color` | `#cacaca` | Light gray. |
 | `color.neutral.4` | `color` | `#c4c4c4` | Soft light gray. |
-| `color.neutral.5` | `color` | `#c0c0c0` | Pale gray. |
-| `color.neutral.6` | `color` | `#ababab` | Light-medium gray. |
-| `color.neutral.7` | `color` | `#969696` | Medium gray. |
-| `color.neutral.8` | `color` | `#6a6a6a` | Dark medium gray. |
-| `color.neutral.9` | `color` | `#595959` | Deep gray. |
+| `color.neutral.5` | `color` | `#b4b4b4` | Pale gray. |
+| `color.neutral.6` | `color` | `#a1a1a2` | Light-medium gray. |
+| `color.neutral.7` | `color` | `#8f8f90` | Medium gray. |
+| `color.neutral.8` | `color` | `#7d7d7e` | Dark medium gray. |
+| `color.neutral.9` | `color` | `#6a6a6c` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-2)` | Content color placed on neutral accent backgrounds. |
 | `color.on-accent.base-active` | `color` | `#2e2e30` | Content color placed on neutral accent backgrounds. (active, light base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#cfcfcf66` | Content color placed on neutral accent backgrounds. (disabled, 40% opacity) |
@@ -902,11 +904,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-muted.base-disabled` | `color` | `#343437` | Generated base foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.base-hover` | `color` | `#3e3e41` | Generated base foreground on muted backgrounds (hover, 30% brighter) |
 | `color.on-muted.base-inactive` | `color` | `#282828` | Generated base foreground on muted backgrounds (inactive, 40% darker) |
-| `color.on-muted.brand` | `color` | `var(--color-blue-7)` | Generated brand foreground on muted backgrounds |
-| `color.on-muted.brand-active` | `color` | `#365892` | Generated brand foreground on muted backgrounds (active, 11% darker) |
-| `color.on-muted.brand-disabled` | `color` | `#4e6691` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.brand-hover` | `color` | `#284c89` | Generated brand foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.brand-inactive` | `color` | `#5a79af` | Generated brand foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.brand` | `color` | `#449a93` | Generated brand foreground on muted backgrounds |
+| `color.on-muted.brand-active` | `color` | `#298f87` | Generated brand foreground on muted backgrounds (active, 11% darker) |
+| `color.on-muted.brand-disabled` | `color` | `#639993` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.brand-hover` | `color` | `#26827a` | Generated brand foreground on muted backgrounds (hover, 23% darker) |
+| `color.on-muted.brand-inactive` | `color` | `#6ebcb4` | Generated brand foreground on muted backgrounds (inactive, 20% brighter) |
 | `color.on-muted.danger` | `color` | `#551928` | Generated danger foreground on muted backgrounds |
 | `color.on-muted.danger-active` | `color` | `#561f2d` | Generated danger foreground on muted backgrounds (active, 11% brighter) |
 | `color.on-muted.danger-disabled` | `color` | `#4f1f2a` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
@@ -1145,10 +1147,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151813` | The base ring variant with a 3px offset |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #15151813` | The base subtle ring variant |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151813` | The base subtle ring variant with a 3px offset |
-| `ring.brand` | `shadow` | `0px 0px 0px 3px #2055b320` | The brand ring variant |
-| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b320` | The brand ring variant with a 3px offset |
-| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #2055b320` | The brand subtle ring variant |
-| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b320` | The brand subtle ring variant with a 3px offset |
+| `ring.brand` | `shadow` | `0px 0px 0px 3px #1fb2a620` | The brand ring variant |
+| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a620` | The brand ring variant with a 3px offset |
+| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #1fb2a620` | The brand subtle ring variant |
+| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a620` | The brand subtle ring variant with a 3px offset |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e20` | The danger ring variant |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e20` | The danger ring variant with a 3px offset |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e20` | The danger subtle ring variant |
@@ -1363,11 +1365,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.accent.base-disabled` | `color` | `#151517` | Primary neutral accent for emphasized controls and content. (disabled, 80% saturation) |
 | `color.accent.base-hover` | `color` | `#232326` | Primary neutral accent for emphasized controls and content. (hover, 30% brighter) |
 | `color.accent.base-inactive` | `color` | `#030303` | Primary neutral accent for emphasized controls and content. (inactive, 40% darker) |
-| `color.accent.brand` | `color` | `var(--color-blue-7)` | Brand accent for primary actions and emphasis. |
-| `color.accent.brand-active` | `color` | `#0f45a2` | Brand accent for primary actions and emphasis. (active, 11% darker) |
-| `color.accent.brand-disabled` | `color` | `#2f58a2` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
-| `color.accent.brand-hover` | `color` | `#003590` | Brand accent for primary actions and emphasis. (hover, 23% darker) |
-| `color.accent.brand-inactive` | `color` | `#3b72d3` | Brand accent for primary actions and emphasis. (inactive, 20% brighter) |
+| `color.accent.brand` | `color` | `#1fb2a6` | Brand accent for primary actions and emphasis. |
+| `color.accent.brand-active` | `color` | `#009a8e` | Brand accent for primary actions and emphasis. (active, 11% darker) |
+| `color.accent.brand-disabled` | `color` | `#4daea4` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
+| `color.accent.brand-hover` | `color` | `#008277` | Brand accent for primary actions and emphasis. (hover, 23% darker) |
+| `color.accent.brand-inactive` | `color` | `#5ddfd2` | Brand accent for primary actions and emphasis. (inactive, 20% brighter) |
 | `color.accent.danger` | `color` | `var(--color-red-7)` | Danger accent for destructive actions and critical states. |
 | `color.accent.danger-active` | `color` | `#7e0f31` | Danger accent for destructive actions and critical states. (active, 11% darker) |
 | `color.accent.danger-disabled` | `color` | `#843142` | Danger accent for destructive actions and critical states. (disabled, 80% saturation) |
@@ -1441,12 +1443,13 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.green.8` | `color` | `#164a3c` | Deep forest green. |
 | `color.green.9` | `color` | `#0c2a22` | Dark emerald green. |
 | `color.hairline` | `color` | `var(--color-neutral-6)` | Subtle color for hairline borders and separators. |
-| `color.hairline-active` | `color` | `#aaaaaa` | Subtle color for hairline borders and separators. (active, 8% darker) |
-| `color.hairline-hover` | `color` | `#868686` | Subtle color for hairline borders and separators. (hover, 23% darker) |
-| `color.hairline-inactive` | `color` | `#f2f2f2` | Subtle color for hairline borders and separators. (inactive, 20% brighter) |
+| `color.hairline-active` | `color` | `#9d9d9e` | Subtle color for hairline borders and separators. (active, 8% darker) |
+| `color.hairline-hover` | `color` | `#7c7c7d` | Subtle color for hairline borders and separators. (hover, 23% darker) |
+| `color.hairline-inactive` | `color` | `#e1e1e2` | Subtle color for hairline borders and separators. (inactive, 20% brighter) |
 | `color.ink.body` | `color` | `var(--color-neutral-9)` | Default text and icon color for standard content. |
 | `color.ink.emphasis` | `color` | `var(--color-neutral-11)` | Primary text and icon color for high-emphasis content. |
-| `color.ink.subtle` | `color` | `var(--color-neutral-8)` | Text and icon color for supporting content. |
+| `color.ink.subtle` | `color` | `var(--color-neutral-6)` | Softer text and icon color for supporting content. |
+| `color.ink.subtlest` | `color` | `var(--color-neutral-5)` | Softest text and icon color for supporting content. |
 | `color.link` | `color` | `var(--color-blue-7)` | Interactive color for links and linked text. |
 | `color.link-active` | `color` | `#0f45a2` | Interactive color for links and linked text. (active, 11% darker) |
 | `color.link-hover` | `color` | `#003590` | Interactive color for links and linked text. (hover, 23% darker) |
@@ -1456,11 +1459,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.base-disabled` | `color` | `#eaeaea66` | Muted neutral accent background for low-emphasis states. (disabled, 40% opacity) |
 | `color.muted.base-hover` | `color` | `#919191` | Muted neutral accent background for low-emphasis states. (hover, 30% darker) |
 | `color.muted.base-inactive` | `color` | `#030303` | Muted neutral accent background for low-emphasis states. (inactive, 40% darker) |
-| `color.muted.brand` | `color` | `var(--color-blue-1)` | Muted brand accent background for low-emphasis states. |
-| `color.muted.brand-active` | `color` | `#8eacdf` | Muted brand accent background for low-emphasis states. (active, 11% darker) |
-| `color.muted.brand-disabled` | `color` | `#b1caf4` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
-| `color.muted.brand-hover` | `color` | `#728fc1` | Muted brand accent background for low-emphasis states. (hover, 23% darker) |
-| `color.muted.brand-inactive` | `color` | `#e0ffff` | Muted brand accent background for low-emphasis states. (inactive, 20% brighter) |
+| `color.muted.brand` | `color` | `#68e8db` | Muted brand accent background for low-emphasis states. |
+| `color.muted.brand-active` | `color` | `#43c8bc` | Muted brand accent background for low-emphasis states. (active, 11% darker) |
+| `color.muted.brand-disabled` | `color` | `#84e3d9` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
+| `color.muted.brand-hover` | `color` | `#08a99e` | Muted brand accent background for low-emphasis states. (hover, 23% darker) |
+| `color.muted.brand-inactive` | `color` | `#9bffff` | Muted brand accent background for low-emphasis states. (inactive, 20% brighter) |
 | `color.muted.danger` | `color` | `#e37085` | Generated danger muted background for the light theme |
 | `color.muted.danger-active` | `color` | `#c8586e` | Generated danger muted background for the light theme (active, 11% darker) |
 | `color.muted.danger-disabled` | `color` | `#d67a89` | Generated danger muted background for the light theme (disabled, 80% saturation) |
@@ -1497,7 +1500,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.warning-hover` | `color` | `#8c692e` | Generated warning muted background for the light theme (hover, 23% darker) |
 | `color.muted.warning-inactive` | `color` | `#ebc489` | Generated warning muted background for the light theme (inactive, 20% brighter) |
 | `color.neutral.1` | `color` | `#fafafa` | Bright off-white gray. |
-| `color.neutral.10` | `color` | `#3a3a3a` | Charcoal gray. |
+| `color.neutral.10` | `color` | `#46464a` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#2b2c30` | Dark charcoal gray. |
 | `color.neutral.12` | `color` | `#242528` | Deep graphite gray. |
 | `color.neutral.13` | `color` | `#1f1f21` | Near-black graphite. |
@@ -1505,11 +1508,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.2` | `color` | `#f1f1f1` | Very light gray. |
 | `color.neutral.3` | `color` | `#eaeaea` | Light gray. |
 | `color.neutral.4` | `color` | `#e1e1e1` | Soft light gray. |
-| `color.neutral.5` | `color` | `#dcdcdc` | Pale gray. |
-| `color.neutral.6` | `color` | `#bebebe` | Light-medium gray. |
-| `color.neutral.7` | `color` | `#9f9f9f` | Medium gray. |
-| `color.neutral.8` | `color` | `#616161` | Dark medium gray. |
-| `color.neutral.9` | `color` | `#484848` | Deep gray. |
+| `color.neutral.5` | `color` | `#cacacb` | Pale gray. |
+| `color.neutral.6` | `color` | `#b0b0b1` | Light-medium gray. |
+| `color.neutral.7` | `color` | `#959698` | Medium gray. |
+| `color.neutral.8` | `color` | `#7b7b7e` | Dark medium gray. |
+| `color.neutral.9` | `color` | `#606164` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-2)` | Content color placed on neutral accent backgrounds. |
 | `color.on-accent.base-active` | `color` | `#0c0c0d` | Content color placed on neutral accent backgrounds. (active, light base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#f1f1f166` | Content color placed on neutral accent backgrounds. (disabled, 40% opacity) |
@@ -1560,11 +1563,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-muted.base-disabled` | `color` | `#151517` | Generated base foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.base-hover` | `color` | `#232326` | Generated base foreground on muted backgrounds (hover, 30% brighter) |
 | `color.on-muted.base-inactive` | `color` | `#030303` | Generated base foreground on muted backgrounds (inactive, 40% darker) |
-| `color.on-muted.brand` | `color` | `var(--color-blue-7)` | Generated brand foreground on muted backgrounds |
-| `color.on-muted.brand-active` | `color` | `#0f45a2` | Generated brand foreground on muted backgrounds (active, 11% darker) |
-| `color.on-muted.brand-disabled` | `color` | `#2f58a2` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.brand-hover` | `color` | `#003590` | Generated brand foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.brand-inactive` | `color` | `#3b72d3` | Generated brand foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.brand` | `color` | `#1fb2a6` | Generated brand foreground on muted backgrounds |
+| `color.on-muted.brand-active` | `color` | `#009a8e` | Generated brand foreground on muted backgrounds (active, 11% darker) |
+| `color.on-muted.brand-disabled` | `color` | `#4daea4` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.brand-hover` | `color` | `#008277` | Generated brand foreground on muted backgrounds (hover, 23% darker) |
+| `color.on-muted.brand-inactive` | `color` | `#5ddfd2` | Generated brand foreground on muted backgrounds (inactive, 20% brighter) |
 | `color.on-muted.danger` | `color` | `#2f000c` | Generated danger foreground on muted backgrounds |
 | `color.on-muted.danger-active` | `color` | `#350411` | Generated danger foreground on muted backgrounds (active, 11% brighter) |
 | `color.on-muted.danger-disabled` | `color` | `#2b050e` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
@@ -1803,10 +1806,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151813` | The base ring variant with a 3px offset |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #15151813` | The base subtle ring variant |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151813` | The base subtle ring variant with a 3px offset |
-| `ring.brand` | `shadow` | `0px 0px 0px 3px #2055b320` | The brand ring variant |
-| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b320` | The brand ring variant with a 3px offset |
-| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #2055b320` | The brand subtle ring variant |
-| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b320` | The brand subtle ring variant with a 3px offset |
+| `ring.brand` | `shadow` | `0px 0px 0px 3px #1fb2a620` | The brand ring variant |
+| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a620` | The brand ring variant with a 3px offset |
+| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #1fb2a620` | The brand subtle ring variant |
+| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a620` | The brand subtle ring variant with a 3px offset |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e20` | The danger ring variant |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e20` | The danger ring variant with a 3px offset |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e20` | The danger subtle ring variant |
@@ -2099,12 +2102,13 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.green.8` | `color` | `#031611` | Deep forest green. |
 | `color.green.9` | `color` | `#000000` | Dark emerald green. |
 | `color.hairline` | `color` | `var(--color-neutral-9)` | Subtle color for hairline borders and separators. |
-| `color.hairline-active` | `color` | `#3c3c3c` | Subtle color for hairline borders and separators. (active, 8% brighter) |
-| `color.hairline-hover` | `color` | `#535353` | Subtle color for hairline borders and separators. (hover, 23% brighter) |
-| `color.hairline-inactive` | `color` | `#111111` | Subtle color for hairline borders and separators. (inactive, 20% darker) |
-| `color.ink.body` | `color` | `var(--color-neutral-6)` | Default text and icon color for standard content. |
-| `color.ink.emphasis` | `color` | `var(--color-neutral-3)` | Primary text and icon color for high-emphasis content. |
-| `color.ink.subtle` | `color` | `var(--color-neutral-9)` | Text and icon color for supporting content. |
+| `color.hairline-active` | `color` | `#5d616c` | Subtle color for hairline borders and separators. (active, 8% brighter) |
+| `color.hairline-hover` | `color` | `#7a7f8c` | Subtle color for hairline borders and separators. (hover, 23% brighter) |
+| `color.hairline-inactive` | `color` | `#2a2c32` | Subtle color for hairline borders and separators. (inactive, 20% darker) |
+| `color.ink.body` | `color` | `var(--color-neutral-5)` | Default text and icon color for standard content. |
+| `color.ink.emphasis` | `color` | `var(--color-neutral-4)` | Primary text and icon color for high-emphasis content. |
+| `color.ink.subtle` | `color` | `var(--color-neutral-7)` | Softer text and icon color for supporting content. |
+| `color.ink.subtlest` | `color` | `var(--color-neutral-8)` | Softest text and icon color for supporting content. |
 | `color.link` | `color` | `var(--color-blue-5)` | Interactive color for links and linked text. |
 | `color.link-active` | `color` | `#63a2ff` | Interactive color for links and linked text. (active, 11% brighter) |
 | `color.link-hover` | `color` | `#81bcff` | Interactive color for links and linked text. (hover, 23% brighter) |
@@ -2155,7 +2159,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.warning-hover` | `color` | `#b17415` | Generated warning muted background for the dark theme (hover, 23% brighter) |
 | `color.muted.warning-inactive` | `color` | `#211300` | Generated warning muted background for the dark theme (inactive, 20% darker) |
 | `color.neutral.1` | `color` | `#ffffff` | Bright off-white gray. |
-| `color.neutral.10` | `color` | `#1b1b1b` | Charcoal gray. |
+| `color.neutral.10` | `color` | `#2b2b33` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#08080a` | Dark charcoal gray. |
 | `color.neutral.12` | `color` | `#000000` | Deep graphite gray. |
 | `color.neutral.13` | `color` | `#000000` | Near-black graphite. |
@@ -2163,11 +2167,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.2` | `color` | `#ffffff` | Very light gray. |
 | `color.neutral.3` | `color` | `#ffffff` | Light gray. |
 | `color.neutral.4` | `color` | `#ffffff` | Soft light gray. |
-| `color.neutral.5` | `color` | `#ffffff` | Pale gray. |
-| `color.neutral.6` | `color` | `#dadada` | Light-medium gray. |
-| `color.neutral.7` | `color` | `#adadad` | Medium gray. |
-| `color.neutral.8` | `color` | `#535353` | Dark medium gray. |
-| `color.neutral.9` | `color` | `#2f2f2f` | Deep gray. |
+| `color.neutral.5` | `color` | `#ebebed` | Pale gray. |
+| `color.neutral.6` | `color` | `#c3c3ca` | Light-medium gray. |
+| `color.neutral.7` | `color` | `#9a9fa7` | Medium gray. |
+| `color.neutral.8` | `color` | `#737383` | Dark medium gray. |
+| `color.neutral.9` | `color` | `#4e515b` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-14)` | Content color placed on neutral accent backgrounds. |
 | `color.on-accent.base-active` | `color` | `#ffffff` | Content color placed on neutral accent backgrounds. (active, dark base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#000000` | Content color placed on neutral accent backgrounds. (disabled, 80% saturation) |
@@ -2757,12 +2761,13 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.green.8` | `color` | `#325d52` | Deep forest green. |
 | `color.green.9` | `color` | `#284b41` | Dark emerald green. |
 | `color.hairline` | `color` | `var(--color-neutral-9)` | Subtle color for hairline borders and separators. |
-| `color.hairline-active` | `color` | `#5f5f5f` | Subtle color for hairline borders and separators. (active, 8% brighter) |
-| `color.hairline-hover` | `color` | `#6a6a6a` | Subtle color for hairline borders and separators. (hover, 23% brighter) |
-| `color.hairline-inactive` | `color` | `#4a4a4a` | Subtle color for hairline borders and separators. (inactive, 20% darker) |
-| `color.ink.body` | `color` | `var(--color-neutral-6)` | Default text and icon color for standard content. |
-| `color.ink.emphasis` | `color` | `var(--color-neutral-3)` | Primary text and icon color for high-emphasis content. |
-| `color.ink.subtle` | `color` | `var(--color-neutral-9)` | Text and icon color for supporting content. |
+| `color.hairline-active` | `color` | `#717274` | Subtle color for hairline borders and separators. (active, 8% brighter) |
+| `color.hairline-hover` | `color` | `#808182` | Subtle color for hairline borders and separators. (hover, 23% brighter) |
+| `color.hairline-inactive` | `color` | `#575759` | Subtle color for hairline borders and separators. (inactive, 20% darker) |
+| `color.ink.body` | `color` | `var(--color-neutral-5)` | Default text and icon color for standard content. |
+| `color.ink.emphasis` | `color` | `var(--color-neutral-4)` | Primary text and icon color for high-emphasis content. |
+| `color.ink.subtle` | `color` | `var(--color-neutral-7)` | Softer text and icon color for supporting content. |
+| `color.ink.subtlest` | `color` | `var(--color-neutral-8)` | Softest text and icon color for supporting content. |
 | `color.link` | `color` | `var(--color-blue-5)` | Interactive color for links and linked text. |
 | `color.link-active` | `color` | `#5e8dd0` | Interactive color for links and linked text. (active, 11% brighter) |
 | `color.link-hover` | `color` | `#6a9bd4` | Interactive color for links and linked text. (hover, 23% brighter) |
@@ -2813,7 +2818,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.warning-hover` | `color` | `#947950` | Generated warning muted background for the dark theme (hover, 23% brighter) |
 | `color.muted.warning-inactive` | `color` | `#735121` | Generated warning muted background for the dark theme (inactive, 20% darker) |
 | `color.neutral.1` | `color` | `#d5d5d5` | Bright off-white gray. |
-| `color.neutral.10` | `color` | `#4f4f4f` | Charcoal gray. |
+| `color.neutral.10` | `color` | `#57575a` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#444548` | Dark charcoal gray. |
 | `color.neutral.12` | `color` | `#3f4043` | Deep graphite gray. |
 | `color.neutral.13` | `color` | `#3c3c3e` | Near-black graphite. |
@@ -2821,11 +2826,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.2` | `color` | `#cfcfcf` | Very light gray. |
 | `color.neutral.3` | `color` | `#cacaca` | Light gray. |
 | `color.neutral.4` | `color` | `#c4c4c4` | Soft light gray. |
-| `color.neutral.5` | `color` | `#c0c0c0` | Pale gray. |
-| `color.neutral.6` | `color` | `#ababab` | Light-medium gray. |
-| `color.neutral.7` | `color` | `#969696` | Medium gray. |
-| `color.neutral.8` | `color` | `#6a6a6a` | Dark medium gray. |
-| `color.neutral.9` | `color` | `#595959` | Deep gray. |
+| `color.neutral.5` | `color` | `#b4b4b4` | Pale gray. |
+| `color.neutral.6` | `color` | `#a1a1a2` | Light-medium gray. |
+| `color.neutral.7` | `color` | `#8f8f90` | Medium gray. |
+| `color.neutral.8` | `color` | `#7d7d7e` | Dark medium gray. |
+| `color.neutral.9` | `color` | `#6a6a6c` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-14)` | Content color placed on neutral accent backgrounds. |
 | `color.on-accent.base-active` | `color` | `#d9d9d9` | Content color placed on neutral accent backgrounds. (active, dark base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#343437` | Content color placed on neutral accent backgrounds. (disabled, 80% saturation) |
@@ -3415,12 +3420,13 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.green.8` | `color` | `#164a3c` | Deep forest green. |
 | `color.green.9` | `color` | `#0c2a22` | Dark emerald green. |
 | `color.hairline` | `color` | `var(--color-neutral-9)` | Subtle color for hairline borders and separators. |
-| `color.hairline-active` | `color` | `#515151` | Subtle color for hairline borders and separators. (active, 8% brighter) |
-| `color.hairline-hover` | `color` | `#616161` | Subtle color for hairline borders and separators. (hover, 23% brighter) |
-| `color.hairline-inactive` | `color` | `#333333` | Subtle color for hairline borders and separators. (inactive, 20% darker) |
-| `color.ink.body` | `color` | `var(--color-neutral-6)` | Default text and icon color for standard content. |
-| `color.ink.emphasis` | `color` | `var(--color-neutral-3)` | Primary text and icon color for high-emphasis content. |
-| `color.ink.subtle` | `color` | `var(--color-neutral-9)` | Text and icon color for supporting content. |
+| `color.hairline-active` | `color` | `#6b6c6f` | Subtle color for hairline borders and separators. (active, 8% brighter) |
+| `color.hairline-hover` | `color` | `#808184` | Subtle color for hairline borders and separators. (hover, 23% brighter) |
+| `color.hairline-inactive` | `color` | `#454649` | Subtle color for hairline borders and separators. (inactive, 20% darker) |
+| `color.ink.body` | `color` | `var(--color-neutral-5)` | Default text and icon color for standard content. |
+| `color.ink.emphasis` | `color` | `var(--color-neutral-4)` | Primary text and icon color for high-emphasis content. |
+| `color.ink.subtle` | `color` | `var(--color-neutral-7)` | Softer text and icon color for supporting content. |
+| `color.ink.subtlest` | `color` | `var(--color-neutral-8)` | Softest text and icon color for supporting content. |
 | `color.link` | `color` | `var(--color-blue-5)` | Interactive color for links and linked text. |
 | `color.link-active` | `color` | `#4490ff` | Interactive color for links and linked text. (active, 11% brighter) |
 | `color.link-hover` | `color` | `#59a7ff` | Interactive color for links and linked text. (hover, 23% brighter) |
@@ -3471,7 +3477,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.warning-hover` | `color` | `#a77931` | Generated warning muted background for the dark theme (hover, 23% brighter) |
 | `color.muted.warning-inactive` | `color` | `#663c00` | Generated warning muted background for the dark theme (inactive, 20% darker) |
 | `color.neutral.1` | `color` | `#fafafa` | Bright off-white gray. |
-| `color.neutral.10` | `color` | `#3a3a3a` | Charcoal gray. |
+| `color.neutral.10` | `color` | `#46464a` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#2b2c30` | Dark charcoal gray. |
 | `color.neutral.12` | `color` | `#242528` | Deep graphite gray. |
 | `color.neutral.13` | `color` | `#1f1f21` | Near-black graphite. |
@@ -3479,11 +3485,11 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.2` | `color` | `#f1f1f1` | Very light gray. |
 | `color.neutral.3` | `color` | `#eaeaea` | Light gray. |
 | `color.neutral.4` | `color` | `#e1e1e1` | Soft light gray. |
-| `color.neutral.5` | `color` | `#dcdcdc` | Pale gray. |
-| `color.neutral.6` | `color` | `#bebebe` | Light-medium gray. |
-| `color.neutral.7` | `color` | `#9f9f9f` | Medium gray. |
-| `color.neutral.8` | `color` | `#616161` | Dark medium gray. |
-| `color.neutral.9` | `color` | `#484848` | Deep gray. |
+| `color.neutral.5` | `color` | `#cacacb` | Pale gray. |
+| `color.neutral.6` | `color` | `#b0b0b1` | Light-medium gray. |
+| `color.neutral.7` | `color` | `#959698` | Medium gray. |
+| `color.neutral.8` | `color` | `#7b7b7e` | Dark medium gray. |
+| `color.neutral.9` | `color` | `#606164` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-14)` | Content color placed on neutral accent backgrounds. |
 | `color.on-accent.base-active` | `color` | `#ffffff` | Content color placed on neutral accent backgrounds. (active, dark base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#151517` | Content color placed on neutral accent backgrounds. (disabled, 80% saturation) |

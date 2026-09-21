@@ -42,12 +42,19 @@ import {
   useState
 } from "react";
 
-type BaseAccordionProps = AccordionSingleProps | AccordionMultipleProps;
+type BaseAccordionProps = Omit<
+  Partial<AccordionSingleProps | AccordionMultipleProps>,
+  "direction"
+>;
 
 export type AccordionVariant = "default" | "separated" | "bordered" | "ghost";
 
 export type AccordionIcon = "toggle" | "chevron";
 export type AccordionIconDirection = "left" | "right";
+export type AccordionDirection = "up" | "down";
+
+const getOpenValues = (value?: string | string[]) =>
+  isString(value) ? [value] : (value ?? []);
 
 export interface AccordionContextProps {
   open: string[];
@@ -58,6 +65,7 @@ export interface AccordionContextProps {
   numbered: boolean;
   icon: AccordionIcon;
   iconDirection: AccordionIconDirection;
+  direction: AccordionDirection;
 }
 
 export const AccordionContext = createStyledContext<AccordionContextProps>({
@@ -68,7 +76,8 @@ export const AccordionContext = createStyledContext<AccordionContextProps>({
   single: false,
   numbered: false,
   icon: "toggle",
-  iconDirection: "right"
+  iconDirection: "right",
+  direction: "down"
 });
 
 const AccordionGroup = styled(YGroup, {
@@ -114,13 +123,14 @@ const AccordionGroup = styled(YGroup, {
 // eslint-disable-next-line react-refresh/only-export-components
 const AccordionFrameImpl = forwardRef<
   TamaguiElement,
-  Partial<BaseAccordionProps> & {
+  BaseAccordionProps & {
     variant?: AccordionVariant;
     bordered?: boolean;
     single?: boolean;
     numbered?: boolean;
     icon?: AccordionIcon;
     iconDirection?: AccordionIconDirection;
+    direction?: AccordionDirection;
   }
 >(
   (
@@ -133,14 +143,19 @@ const AccordionFrameImpl = forwardRef<
       numbered = false,
       icon = "toggle",
       iconDirection = "right",
+      direction = "down",
+      defaultValue,
       onValueChange,
       backgroundColor,
+      value,
       ...props
     },
     forwardedRef
   ) => {
     const isSingle = single || type === "single";
-    const [open, setOpen] = useState<string[]>([]);
+    const [open, setOpen] = useState<string[]>(() =>
+      getOpenValues(value ?? defaultValue)
+    );
 
     const handleValueChange = useCallback(
       (next: string | string[]) => {
@@ -157,7 +172,7 @@ const AccordionFrameImpl = forwardRef<
           setOpen(next ?? []);
         }
 
-        onValueChange?.(next as string & string[]);
+        onValueChange?.(next);
       },
       [isSingle, onValueChange]
     );
@@ -171,14 +186,17 @@ const AccordionFrameImpl = forwardRef<
         single={isSingle}
         numbered={numbered}
         icon={icon}
-        iconDirection={iconDirection}>
+        iconDirection={iconDirection}
+        direction={direction}>
         <TamaguiAccordion
           ref={forwardedRef}
           type={isSingle ? "single" : "multiple"}
           theme="base"
           unstyled
           {...props}
+          defaultValue={defaultValue as never}
           borderRadius="$container"
+          value={value as never}
           width="100%"
           onValueChange={handleValueChange}>
           <AccordionGroup
@@ -247,15 +265,34 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
         backgroundColor: "transparent"
       }
     },
+
     last: {
       true: {
         borderBottomWidth: 0
       }
     },
+
     bordered: {
       false: {
         borderWidth: 0,
         borderBottomWidth: 0
+      }
+    },
+
+    direction: {
+      up: {
+        paddingTop: "$3xl"
+      },
+      down: {
+        paddingBottom: "$3xl"
+      }
+    },
+
+    open: {
+      true: {},
+      false: {
+        paddingTop: 0,
+        paddingBottom: 0
       }
     }
   } as const
@@ -263,19 +300,20 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
 
 const AccordionItemImpl = AccordionItem.styleable<{ index?: number }>(
   ({ children, index = 0, value, ...props }, forwardedRef) => {
-    const { open } = AccordionContext.useStyledContext();
+    const { direction, open } = AccordionContext.useStyledContext();
+    const isOpen = open.includes(value);
 
     return (
       <YGroup.Item>
-        <AccordionItemContext.Provider
-          open={open.includes(value)}
-          index={index}>
+        <AccordionItemContext.Provider open={isOpen} index={index}>
           <AccordionItem
             ref={forwardedRef as Ref<TamaguiElement>}
             key={value}
             value={value}
             unstyled={true}
-            {...props}>
+            {...props}
+            open={isOpen}
+            flexDirection={direction === "up" ? "column-reverse" : "column"}>
             {children}
           </AccordionItem>
         </AccordionItemContext.Provider>
@@ -357,7 +395,7 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
 
 const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { numbered, icon, iconDirection } =
+    const { numbered, direction, icon, iconDirection } =
       AccordionContext.useStyledContext();
     const { index, open } = AccordionItemContext.useStyledContext();
 
@@ -396,7 +434,11 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
           <View
             transition="200ms"
             transformOrigin="center"
-            rotate={open ? "180deg" : "0deg"}
+            rotate={
+              (open && direction !== "up") || (!open && direction === "up")
+                ? "180deg"
+                : "0deg"
+            }
             alignItems="center"
             justifyContent="center"
             pointerEvents="none">
@@ -444,8 +486,6 @@ const AccordionItemHeaderHeading = HeadingSmallText.styleable(
 const AccordionItemContent = styled(TamaguiAccordion.Content, {
   name: "AccordionContent",
   context: AccordionContext,
-  padding: "$3xl",
-  paddingTop: 0,
   zIndex: "$50",
 
   variants: {
@@ -467,11 +507,23 @@ const AccordionItemContent = styled(TamaguiAccordion.Content, {
         paddingTop: "$3xl",
         backgroundColor: "transparent"
       }
+    },
+
+    direction: {
+      up: {
+        paddingTop: "$3xl",
+        paddingBottom: 0
+      },
+      down: {
+        paddingTop: 0,
+        paddingBottom: "$3xl"
+      }
     }
   } as const,
 
   defaultVariants: {
-    variant: "default"
+    variant: "default",
+    direction: "down"
   }
 });
 
