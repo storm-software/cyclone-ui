@@ -16,13 +16,18 @@
 
  ------------------------------------------------------------------- */
 
-import { getSized } from "@cyclone-ui/helpers";
-import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
+import {
+  getFormFontScale,
+  getFormSizeToken,
+  getSized,
+  type FormControlSize
+} from "@cyclone-ui/helpers";
+import type { VariantSpreadExtras } from "@tamagui/core";
 import { createStyledContext } from "@tamagui/core";
 import type { SelectContextProps } from "./types";
 
 export const SelectContext = createStyledContext<SelectContextProps>({
-  size: "$true",
+  size: "md",
   circular: false,
   disabled: false,
   focused: false,
@@ -31,7 +36,7 @@ export const SelectContext = createStyledContext<SelectContextProps>({
 });
 
 export const getSelectSize = (
-  val: SizeTokens | number,
+  val: FormControlSize,
   extras: VariantSpreadExtras<any>
 ) => {
   const { props } = extras;
@@ -39,7 +44,7 @@ export const getSelectSize = (
     return;
   }
 
-  const size = val === "$true" || String(val) === "true" ? "$10xl" : val;
+  const size = getFormSizeToken(val);
   const height = props.variant === "floating" ? getSized(size) + 3 : size;
 
   return {
@@ -66,13 +71,13 @@ export const getSelectVisualFocus = (
   open: boolean
 ) => Boolean(focused) || open;
 
-export const getSelectContentSize = (val: SizeTokens | number = "$true") => {
-  const size = val === "$true" || String(val) === "true" ? "$10xl" : val;
+export const getSelectContentSize = (val: FormControlSize = "md") => {
+  const size = getFormSizeToken(val);
   const scale = getSized(size) / DEFAULT_SELECT_SIZE;
 
   return {
-    fontSize: scaleSelectMetric(16, scale, 12),
-    lineHeight: scaleSelectMetric(24, scale, 18),
+    fontSize: 16 * getFormFontScale(val),
+    lineHeight: 24 * getFormFontScale(val),
     valuePaddingLeft: scaleSelectMetric(3.5, scale, 1),
     valuePaddingRight: scaleSelectMetric(1, scale),
     itemPaddingVertical: scaleSelectMetric(4, scale, 2),
@@ -82,7 +87,7 @@ export const getSelectContentSize = (val: SizeTokens | number = "$true") => {
     itemPaddingHorizontal: scaleSelectMetric(5, scale, 2),
     dividerInset: scaleSelectMetric(10, scale, 4),
     indicatorWidth: scaleSelectMetric(20, scale, 14),
-    indicatorIconSize: scaleSelectMetric(16, scale, 12),
+    indicatorIconSize: 16 * getFormFontScale(val),
     scrollButtonHeight: scaleSelectMetric(18, scale, 14),
     scrollIconSize: scaleSelectMetric(20, scale, 14),
     viewportPadding: scaleSelectMetric(7, scale, 3),

@@ -565,8 +565,10 @@
   --typography-eyebrow-lg: 800 1.125rem/1.1475 Manrope; /** The large eyebrow typography variant */
   --typography-eyebrow-sm: 900 1rem/1.1475 Manrope; /** The small eyebrow typography variant */
   --typography-button: 900 1.125rem/1.1475 Manrope; /** The button typography variant */
+  --typography-body-xl: 600 1.25rem/1.051875 Manrope; /** The body large typography variant */
   --typography-body-lg: 600 1.125rem/1.051875 Manrope; /** The body large typography variant */
   --typography-body-md: 500 1.125rem/1.1475 Manrope; /** The body typography variant */
   --typography-body-sm: 400 0.875rem/1.1475 Manrope; /** The body small typography variant */
+  --typography-body-xs: 400 0.75rem/1.1475 Manrope; /** The body small typography variant */
   --typography-code: 400 1.125rem/1.1475 'Geist Mono'; /** The code typography variant */
 }

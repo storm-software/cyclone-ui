@@ -21,7 +21,12 @@ import {
   useFieldShouldShowPlaceholder,
   useFieldVariant
 } from "@cyclone-ui/field";
-import { getSized, getSpaced } from "@cyclone-ui/helpers";
+import {
+  getFormSizeScale,
+  getFormSizeToken,
+  getSized,
+  getSpaced
+} from "@cyclone-ui/helpers";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { Theme, useComposedRefs, withStaticProperties } from "@tamagui/core";
@@ -70,14 +75,13 @@ const InputFieldGroup = Field.styleable((props, forwardedRef) => {
 
 const InputFieldLabel = Field.Label.styleable((props, forwardedRef) => {
   const field = FieldApi.use();
-  const size = field.size.get() ?? "$true";
+  const size = field.size.get() ?? "md";
   const { hasStartIcon } = use(InputFieldPresentationContext);
-  const controlSize =
-    size === "$true" || String(size) === "true" ? "$10xl" : size;
+  const controlSize = getFormSizeToken(size);
   const floatingLabelLeft = hasStartIcon
-    ? getSpaced("$4xl") +
+    ? getSpaced("$4xl") * getFormSizeScale(size) +
       getSized(controlSize, { shift: -2 }) +
-      getSpaced("$2xl") * 2
+      getSpaced("$2xl") * 2 * getFormSizeScale(size)
     : undefined;
 
   return (

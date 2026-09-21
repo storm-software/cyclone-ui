@@ -17,9 +17,15 @@
  ------------------------------------------------------------------- */
 
 import { Field, useFieldHasValidationMessage } from "@cyclone-ui/field";
-import { getSpaced } from "@cyclone-ui/helpers";
+import {
+  formSizeVariants,
+  getFormSizeScale,
+  getFormSizeToken,
+  getSpaced,
+  type FormControlSize
+} from "@cyclone-ui/helpers";
 import { ControlUnderline } from "@cyclone-ui/input";
-import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
+import type { GetProps, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { ChevronDown } from "@tamagui/lucide-icons-2";
@@ -36,7 +42,7 @@ import {
 } from "./utilities";
 
 const getSelectFrameSize = (
-  val: SizeTokens | number,
+  val: FormControlSize,
   extras: VariantSpreadExtras<any>
 ) => ({
   ...getSelectSize(val, extras),
@@ -111,10 +117,7 @@ const SelectGroup = styled(XGroup, {
       }
     },
 
-    frameSize: {
-      ":string": getSelectFrameSize,
-      ":number": getSelectFrameSize
-    },
+    frameSize: formSizeVariants(getSelectFrameSize),
 
     disabled: {
       true: {
@@ -140,7 +143,7 @@ const SelectGroup = styled(XGroup, {
   } as const,
 
   defaultVariants: {
-    frameSize: "$10xl",
+    frameSize: "md",
     disabled: false,
     focused: false,
     variant: "default"
@@ -220,12 +223,13 @@ type SelectTriggerProps = GetProps<typeof Field.Icon>;
 
 const SelectTrigger = Field.Icon.styleable(
   (props: SelectTriggerProps, forwardedRef: ForwardedRef<unknown>) => {
-    const { focused } = SelectContext.useStyledContext();
+    const { focused, size } = SelectContext.useStyledContext();
 
     return (
       <Field.Icon
         ref={forwardedRef}
         {...props}
+        controlSize={size}
         render="span"
         role={undefined}
         pointerEvents="none">
@@ -237,7 +241,10 @@ const SelectTrigger = Field.Icon.styleable(
           rotate={focused ? "180deg" : "0deg"}
           alignItems="center"
           justifyContent="center">
-          <ChevronDown color="currentColor" />
+          <ChevronDown
+            size={24 * getFormSizeScale(size)}
+            color="currentColor"
+          />
         </View>
       </Field.Icon>
     );
@@ -247,7 +254,6 @@ const SelectTrigger = Field.Icon.styleable(
 
 const BaseSelect = styled(TamaguiSelect, {
   name: "Select",
-  context: SelectContext,
 
   transition: "200ms",
   cursor: "pointer",
@@ -277,8 +283,7 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
       SelectContext.useStyledContext();
     const hasValidationMessage = useFieldHasValidationMessage();
     const [locallyActive, setLocallyActive] = useState(false);
-    const frameSize =
-      size === "$true" || String(size) === "true" ? "$10xl" : size;
+    const frameSize = size;
     const underlineActive = focused || locallyActive;
     const idleColor = hasValidationMessage ? "$accent" : "$hairline";
     const focusColor = hasValidationMessage
@@ -307,7 +312,9 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
           }
         }}
         transition="200ms">
-        <SelectTextBox {...props} paddingLeft={getSpaced(frameSize) * 0.25}>
+        <SelectTextBox
+          {...props}
+          paddingLeft={getSpaced(getFormSizeToken(frameSize)) * 0.25}>
           <XGroup.Item flex={1} minWidth={0} height="100%">
             <View flex={1} minWidth={0} flexDirection="row" alignItems="center">
               {children}
@@ -360,7 +367,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
       onFocus,
       onBlur,
       onChange,
-      size = "$true",
+      size = "md",
       ...props
     },
     forwardedRef
@@ -368,8 +375,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
     const [open, setOpen] = useState(false);
     const hasValidationMessage = useFieldHasValidationMessage();
     const visualFocus = getSelectVisualFocus(focused, open);
-    const resolvedSize =
-      size === "$true" || String(size) === "true" ? "$10xl" : size;
+    const resolvedSize = size;
 
     const handleOpenChanged = useCallback(
       (nextOpen: boolean, _via?: "hover" | "press") => {
@@ -417,7 +423,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
           onOpenChange={handleOpenChanged}
           open={open}
           disabled={disabled}
-          size={resolvedSize}>
+          size={getFormSizeToken(resolvedSize)}>
           {children}
         </BaseSelect>
       </SelectContext.Provider>

@@ -17,13 +17,43 @@
   },
   "references": [
     {
+      "path": "../../components/text-area-field"
+    },
+    {
+      "path": "../../components/switch-field"
+    },
+    {
+      "path": "../../components/select-field"
+    },
+    {
+      "path": "../../components/radio-group-field"
+    },
+    {
+      "path": "../../components/otp-input-field"
+    },
+    {
+      "path": "../../components/input-field"
+    },
+    {
+      "path": "../../components/file-picker-field"
+    },
+    {
+      "path": "../../components/date-picker-field"
+    },
+    {
+      "path": "../../components/checkbox-field"
+    },
+    {
+      "path": "../../components/form"
+    },
+    {
       "path": "../../packages/helpers"
     },
     {
-      "path": "../../packages/state/tsconfig.lib.json"
+      "path": "../../packages/themes"
     },
     {
-      "path": "../../packages/themes"
+      "path": "../../packages/state/tsconfig.lib.json"
     }
   ],
   "include": [

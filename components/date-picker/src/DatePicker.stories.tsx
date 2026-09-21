@@ -62,7 +62,7 @@ const meta: Meta<typeof DatePicker> = {
           format={handleFormat}
           parse={handleParse}>
           <Field.Label>Label Text</Field.Label>
-          <DatePicker variant={variant}>
+          <DatePicker variant={variant} size={props.size}>
             <DatePicker.TextBox>
               <DatePicker.TextBox.Value />
             </DatePicker.TextBox>
@@ -196,3 +196,9 @@ export const Success: Story = {
     validate: validation("success")
   }
 };
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };

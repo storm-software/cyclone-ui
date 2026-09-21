@@ -34,7 +34,7 @@ const meta: Meta<typeof Input> = {
     <Form name="formName" initialValues={{ inputName: defaultValue }}>
       <Field name="inputName" {...props} variant={variant}>
         <Field.Label>Label Text</Field.Label>
-        <Input variant={variant}>
+        <Input variant={variant} size={props.size}>
           <Input.TextBox>
             <Input.TextBox.Value placeholder="email@example.com" />
           </Input.TextBox>
@@ -131,3 +131,9 @@ export const Success: Story = {
     validate: validation("success")
   }
 };
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };

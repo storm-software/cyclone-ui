@@ -19,6 +19,11 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Field, useFieldHasValidationMessage } from "@cyclone-ui/field";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import {
+  formSizeVariants,
+  getFormFontScale,
+  getFormFontSize
+} from "@cyclone-ui/helpers";
 import { RadioGroup, RadioGroupContext } from "@cyclone-ui/radio-group";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
 import type { SelectOption } from "@stryke/types/form";
@@ -42,6 +47,7 @@ const RadioGroupFieldGroup = Field.styleable(
 
 const RadioGroupItemValue = styled(Label, {
   name: "RadioGroupItemValue",
+  context: RadioGroupContext,
   render: "label",
 
   transition: "200ms",
@@ -54,6 +60,7 @@ const RadioGroupItemValue = styled(Label, {
   verticalAlign: "middle",
 
   variants: {
+    size: formSizeVariants(size => ({ fontSize: 18 * getFormFontScale(size) })),
     selected: {
       true: {
         fontWeight: "$black"
@@ -98,6 +105,9 @@ const RadioGroupItemDetails = styled(BodyText, {
   fontSize: "$md",
 
   variants: {
+    size: formSizeVariants((size, extras) =>
+      getFormFontSize(size, extras, "$md")
+    ),
     disabled: {
       true: {
         color: "$accentDisabled",
@@ -201,6 +211,7 @@ const RadioGroupFieldControl = RadioGroup.styleable((props, forwardedRef) => {
     <RadioGroup
       ref={forwardedRef}
       {...props}
+      size={field.size.get()}
       name={name}
       disabled={disabled}
       onFocus={focus}

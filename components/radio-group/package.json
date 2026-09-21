@@ -27,7 +27,8 @@
     "@tamagui/radio-group": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/web": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "^15.15.5",
+    "@cyclone-ui/helpers": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",

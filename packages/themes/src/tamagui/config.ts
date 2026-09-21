@@ -998,6 +998,42 @@ const bodySmFont = createFont({
   }
 });
 
+const bodyXlFont = createFont({
+  family: "Manrope",
+  size: {
+    lg: 20,
+    true: 20
+  },
+  lineHeight: {
+    lg: 21.037,
+    snug: 21.037,
+    true: 21.037
+  },
+  weight: {
+    lg: "600",
+    semibold: "600",
+    true: "600"
+  }
+});
+
+const bodyXsFont = createFont({
+  family: "Manrope",
+  size: {
+    true: 12,
+    xxs: 12
+  },
+  lineHeight: {
+    normal: 13.77,
+    true: 13.77,
+    xxs: 13.77
+  },
+  weight: {
+    normal: "400",
+    true: "400",
+    xxs: "400"
+  }
+});
+
 const buttonFont = createFont({
   family: "Manrope",
   size: {
@@ -1308,6 +1344,8 @@ export const config = createTamagui({
      "body-lg": bodyLgFont,
     "body-md": bodyMdFont,
     "body-sm": bodySmFont,
+    "body-xl": bodyXlFont,
+    "body-xs": bodyXsFont,
     button: buttonFont,
     code: codeFont,
     "display-hero": displayHeroFont,

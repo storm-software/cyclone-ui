@@ -44,7 +44,8 @@
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
     "@cyclone-ui/body-text": "workspace:*",
-    "@cyclone-ui/popover": "workspace:*"
+    "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",

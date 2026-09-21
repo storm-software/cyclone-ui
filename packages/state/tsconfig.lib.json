@@ -5,7 +5,7 @@
     "jsx": "preserve",
     "outDir": "./out-tsc"
   },
-  "references": [],
+  "references": [{ "path": "../helpers" }],
   "include": [
     "src/**/*.ts",
     "src/**/*.js",

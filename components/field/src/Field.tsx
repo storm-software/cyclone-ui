@@ -18,7 +18,16 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import { getSized } from "@cyclone-ui/helpers";
+import {
+  formSizeVariants,
+  getFormFontScale,
+  getFormFontSize,
+  getFormSizeScale,
+  getFormSizeToken,
+  getSized,
+  getSpaced,
+  type FormControlSize
+} from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import { Spinner } from "@cyclone-ui/spinner";
@@ -215,12 +224,21 @@ const FieldValidationText = styled(ValidationText, {
   name: "FieldDetails",
 
   fontStyle: "italic",
+  fontFamily: "$body-sm",
   marginTop: "$md",
 
   variants: {
-    size: {
-      "...size": getFieldDetailsFontSize
-    },
+    size: formSizeVariants((size, extras) => {
+      const style = getFieldDetailsFontSize("$true", extras);
+      const scale = getFormFontScale(size);
+      return style
+        ? {
+            ...style,
+            fontSize: style.fontSize * scale,
+            lineHeight: style.lineHeight * scale
+          }
+        : {};
+    }),
 
     disabled: {
       true: {
@@ -231,9 +249,8 @@ const FieldValidationText = styled(ValidationText, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
-    disabled: false,
-    variant: "sm"
+    size: "md",
+    disabled: false
   }
 });
 
@@ -360,6 +377,7 @@ const FieldDetails = styled(BodyText, {
   },
 
   variants: {
+    controlSize: formSizeVariants(getFormFontSize),
     disabled: {
       true: {
         color: "$accentDisabled",
@@ -403,7 +421,7 @@ const FieldDetailsImpl = FieldDetails.styleable(
         ref={forwardedRef}
         {...rest}
         theme={theme}
-        size={size}
+        controlSize={size}
         disabled={disabled}
         color={
           disabled
@@ -430,6 +448,7 @@ const FieldLabelText = styled(LabelText, {
   wordWrap: "normal",
 
   variants: {
+    controlSize: formSizeVariants(getFormFontSize),
     disabled: {
       true: {
         color: "$accentDisabled",
@@ -571,12 +590,11 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     const fieldDisabled = field.disabled.get();
     const name = field.name.get();
     const size = field.size.get();
-    const controlSize =
-      size === "$true" || String(size) === "true" ? "$10xl" : size;
+    const controlSize = getFormSizeToken(size);
     const labelTop =
       variant === "floating"
         ? floating
-          ? 4
+          ? 4 * getFormSizeScale(size)
           : getSized(controlSize, { scale: 0.5 })
         : undefined;
 
@@ -590,6 +608,11 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
       <FieldLabelPositioner
         variant={variant}
         top={labelTop}
+        left={
+          variant === "floating"
+            ? getSpaced("$4xl") * getFormSizeScale(size)
+            : undefined
+        }
         {...(variant === "floating" && floatingLabelLeft !== undefined
           ? { left: floatingLabelLeft }
           : {})}>
@@ -605,6 +628,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                   {...props}
                   disabled={disabled}
                   floating={floating}
+                  controlSize={size}
                   color={disabled ? "$accentDisabled" : "$accent"}>
                   {children}
                 </FieldLabelText>
@@ -635,6 +659,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                           disabled={disabled}
                           floating={floating}
                           size={floating ? "$true" : "sm"}
+                          controlSize={size}
                           color={disabled ? "$inkSubtle" : "$inkSubtle"}
                           $group-field-hover={{
                             color: disabled ? "$inkSubtle" : "$inkSubtle"
@@ -762,18 +787,23 @@ const FieldLink = Link.styleable(
 
 const FieldIconButtonImpl = Button.styleable<{
   position?: "start" | "end";
+  controlSize?: FormControlSize;
+  size?: FormControlSize;
 }>(
-  ({ children, position, ...props }, forwardedRef) => {
+  (
+    { children, position, controlSize, size: sizeProp, ...props },
+    forwardedRef
+  ) => {
     const field = FieldApi.use();
-    const size = field.size.get() ?? "$true";
+    const fieldSize = field.size.get();
+    const size = controlSize ?? sizeProp ?? fieldSize ?? "md";
     const disabled = field.disabled.get();
     const focused = field.focused.get();
-    const idleColor = field.theme.get() === "base" ? "$hairline" : "$accent";
-    const focusColor =
-      field.theme.get() === "base" ? "$hairlineActive" : "$accentActive";
+    const theme = field.theme.get();
+    const idleColor = theme === "base" ? "$hairline" : "$accent";
+    const focusColor = theme === "base" ? "$hairlineActive" : "$accentActive";
     const { variant } = use(FieldPresentationContext);
-    const frameSize =
-      size === "$true" || String(size) === "true" ? "$10xl" : size;
+    const frameSize = getFormSizeToken(size);
 
     const adjusted = useMemo(
       () => getSized(frameSize, { shift: -2 }),
@@ -786,16 +816,18 @@ const FieldIconButtonImpl = Button.styleable<{
         : idleColor;
     const hoverIconColor = disabled
       ? "$hairlineInactive"
-      : field.theme.get() === "base"
+      : theme === "base"
         ? "$hairlineHover"
         : "$accentHover";
     const icon = isValidElement<{
       color?: string;
+      size?: number;
       "$group-field-hover"?: { color?: string };
     }>(children)
       ? // eslint-disable-next-line react/no-clone-element
         cloneElement(children, {
           color: "currentColor",
+          size: 24 * getFormSizeScale(size),
           "$group-field-hover": undefined
         })
       : children;
@@ -807,7 +839,7 @@ const FieldIconButtonImpl = Button.styleable<{
         flexDirection="row"
         flexShrink={0}
         height="100%"
-        paddingHorizontal="$2xl"
+        paddingHorizontal={getSpaced("$2xl") * getFormSizeScale(size)}
         position="relative">
         {position && variant !== "underline" && (
           <View

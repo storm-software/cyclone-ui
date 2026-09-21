@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import type { SizeTokens } from "@tamagui/core";
+import { formSizeVariants, type FormControlSize } from "@cyclone-ui/helpers";
 import { styled, View } from "@tamagui/core";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { getSelectContentSize, SelectContext } from "./utilities";
@@ -44,19 +44,17 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   },
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        const { fontSize, lineHeight, valuePaddingLeft, valuePaddingRight } =
-          getSelectContentSize(val);
+    size: formSizeVariants((val: FormControlSize) => {
+      const { fontSize, lineHeight, valuePaddingLeft, valuePaddingRight } =
+        getSelectContentSize(val);
 
-        return {
-          fontSize,
-          lineHeight,
-          paddingLeft: valuePaddingLeft,
-          paddingRight: valuePaddingRight
-        };
-      }
-    },
+      return {
+        fontSize,
+        lineHeight,
+        paddingLeft: valuePaddingLeft,
+        paddingRight: valuePaddingRight
+      };
+    }),
 
     variant: {
       default: {},
@@ -95,7 +93,7 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
+    size: "md",
     variant: "default",
     disabled: false,
     placeholding: false
@@ -118,7 +116,12 @@ export const SelectValue = SelectValueFrame.styleable<{
           variant={variant}
           disabled={disabled}
           placeholding={!!placeholder && !disabled}>
-          <BodyText render="span">{children}</BodyText>
+          <BodyText
+            render="span"
+            fontSize={getSelectContentSize(size).fontSize}
+            lineHeight={getSelectContentSize(size).lineHeight}>
+            {children}
+          </BodyText>
         </SelectValueFrame>
       </View>
     );

@@ -20,6 +20,15 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Field } from "@cyclone-ui/field";
 import { HeadingLargeText, HeadingMediumText } from "@cyclone-ui/heading-text";
+import {
+  formSizeVariants,
+  getFormFontScale,
+  getFormFontSize,
+  getFormSizeScale,
+  getFormSizeToken,
+  getSized,
+  getSpaced
+} from "@cyclone-ui/helpers";
 import type { InputContextProps } from "@cyclone-ui/input";
 import { Input } from "@cyclone-ui/input";
 import { Popover } from "@cyclone-ui/popover";
@@ -127,7 +136,7 @@ export type DatePickerContextProps = Omit<
 export const DatePickerContext = createStyledContext<DatePickerContextProps>({
   mode: "single",
   separator: ".",
-  size: "$true",
+  size: "md",
   circular: false,
   disabled: false,
   focused: false,
@@ -163,8 +172,19 @@ const MONTH_NAMES = [
   "December"
 ] as const;
 
-const CALENDAR_WIDTH = "$38xl";
-const CALENDAR_CELL_SIZE = "$10xl";
+const CalendarBodyText = styled(BodyText, {
+  context: DatePickerContext,
+  variants: { controlSize: formSizeVariants(getFormFontSize) }
+});
+const CalendarHeading = styled(HeadingLargeText, {
+  context: DatePickerContext,
+  variants: { controlSize: formSizeVariants(getFormFontSize) }
+});
+const CalendarRangeHeading = styled(HeadingMediumText, {
+  context: DatePickerContext,
+  variants: { controlSize: formSizeVariants(getFormFontSize) }
+});
+
 const EMPTY_DATES: Date[] = [];
 
 const getMonthIndex = (month?: string | null) => {
@@ -313,6 +333,8 @@ function useDateAnimation({
 }
 
 const DayPicker = () => {
+  const { size } = DatePickerContext.useStyledContext();
+  const cellSize = getFormSizeToken(size);
   const {
     data: { calendars, weekDays },
     propGetters: { dayButton }
@@ -352,16 +374,17 @@ const DayPicker = () => {
           {weekDays.map(day => (
             <View
               key={day}
-              width={CALENDAR_CELL_SIZE}
+              width={cellSize}
               alignItems="center"
               justifyContent="center">
-              <BodyText
+              <CalendarBodyText
+                controlSize={size}
                 variant="lg"
                 textAlign="center"
                 size="$sm"
                 color="$inkBody">
                 {day}
-              </BodyText>
+              </CalendarBodyText>
             </View>
           ))}
         </XStack>
@@ -391,14 +414,16 @@ const DayPicker = () => {
                     }
                     ghostOpacity={0.75}
                     borderColor={day.now ? "$hairline" : undefined}
-                    size={CALENDAR_CELL_SIZE}
-                    width={CALENDAR_CELL_SIZE}
+                    size={cellSize}
+                    width={cellSize}
                     flexGrow={0}
                     flexShrink={0}
                     noPadding={true}
                     borderRadius="$button"
                     disabled={!day.inCurrentMonth}>
-                    <Button.Text>{day.day}</Button.Text>
+                    <Button.Text fontSize={16 * getFormFontScale(size)}>
+                      {day.day}
+                    </Button.Text>
                   </Button>
                 ))}
               </XStack>
@@ -411,6 +436,9 @@ const DayPicker = () => {
 };
 
 function YearRangeSlider() {
+  const { size } = DatePickerContext.useStyledContext();
+  const cellSize = getFormSizeToken(size);
+  const scale = getFormSizeScale(size);
   const {
     data: { years },
     propGetters: { previousYearsButton, nextYearsButton }
@@ -421,14 +449,14 @@ function YearRangeSlider() {
       flexDirection="row"
       gap="$3xl"
       width="100%"
-      height={40}
+      height={40 * scale}
       alignItems="center"
       justifyContent="space-between">
       <Button
         variant="ghost"
         ghostOpacity={0.75}
-        size="$10xl"
-        width="$10xl"
+        size={cellSize}
+        width={cellSize}
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
@@ -445,19 +473,20 @@ function YearRangeSlider() {
         minWidth={0}
         flexDirection="column"
         alignItems="center">
-        <HeadingMediumText
+        <CalendarRangeHeading
+          controlSize={size}
           color="$accent"
           textAlign="center"
           userSelect="auto"
           tabIndex={0}>
           {`${years[0]?.year} - ${years[years.length - 1]?.year}`}
-        </HeadingMediumText>
+        </CalendarRangeHeading>
       </View>
       <Button
         variant="ghost"
         ghostOpacity={0.75}
-        size="$10xl"
-        width="$10xl"
+        size={cellSize}
+        width={cellSize}
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
@@ -471,6 +500,9 @@ function YearRangeSlider() {
 }
 
 function YearSlider() {
+  const { size } = DatePickerContext.useStyledContext();
+  const cellSize = getFormSizeToken(size);
+  const scale = getFormSizeScale(size);
   const {
     data: { calendars },
     propGetters: { subtractOffset }
@@ -483,14 +515,14 @@ function YearSlider() {
       flexDirection="row"
       gap="$3xl"
       width="100%"
-      height={40}
+      height={40 * scale}
       alignItems="center"
       justifyContent="space-between">
       <Button
         variant="ghost"
         ghostOpacity={0.75}
-        size="$10xl"
-        width="$10xl"
+        size={cellSize}
+        width={cellSize}
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
@@ -500,7 +532,8 @@ function YearSlider() {
         </Button.Icon>
       </Button>
       <View flexGrow={1} flexShrink={1} flexBasis={0} minWidth={0}>
-        <BodyText
+        <CalendarBodyText
+          controlSize={size}
           variant="lg"
           onPress={() => setHeader("year")}
           userSelect="text"
@@ -513,13 +546,13 @@ function YearSlider() {
             color: "$accentHover"
           }}>
           {year}
-        </BodyText>
+        </CalendarBodyText>
       </View>
       <Button
         variant="ghost"
         ghostOpacity={0.75}
-        size="$10xl"
-        width="$10xl"
+        size={cellSize}
+        width={cellSize}
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
@@ -533,6 +566,8 @@ function YearSlider() {
 }
 
 const CalendarHeader = () => {
+  const { size } = DatePickerContext.useStyledContext();
+  const cellSize = getFormSizeToken(size);
   const {
     data: { calendars },
     propGetters: { subtractOffset }
@@ -559,8 +594,8 @@ const CalendarHeader = () => {
       <Button
         variant="ghost"
         ghostOpacity={0.75}
-        size="$10xl"
-        width="$10xl"
+        size={cellSize}
+        width={cellSize}
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
@@ -575,7 +610,8 @@ const CalendarHeader = () => {
         flexShrink={1}
         flexBasis={0}
         minWidth={0}>
-        <BodyText
+        <CalendarBodyText
+          controlSize={size}
           variant="lg"
           transition="200ms"
           onPress={() => setHeader("year")}
@@ -587,8 +623,9 @@ const CalendarHeader = () => {
             color: "$accentHover"
           }}>
           {year}
-        </BodyText>
-        <HeadingLargeText
+        </CalendarBodyText>
+        <CalendarHeading
+          controlSize={size}
           transition="200ms"
           onPress={() => setHeader("month")}
           userSelect="auto"
@@ -599,13 +636,13 @@ const CalendarHeader = () => {
             color: "$accentHover"
           }}>
           {month}
-        </HeadingLargeText>
+        </CalendarHeading>
       </YStack>
       <Button
         variant="ghost"
         ghostOpacity={0.75}
-        size="$10xl"
-        width="$10xl"
+        size={cellSize}
+        width={cellSize}
         flexGrow={0}
         flexShrink={0}
         noPadding={true}
@@ -631,14 +668,18 @@ const ItemPicker = ({
   children,
   ...rest
 }: ItemPickerProps) => {
+  const { size } = DatePickerContext.useStyledContext();
   return (
     <Button
+      size={getFormSizeToken(size)}
       variant={active ? "inverse" : "ghost"}
       ghostOpacity={0.75}
       flexGrow={1}
       flexBasis={flexBasis ?? "unset"}
       {...rest}>
-      <Button.Text>{children}</Button.Text>
+      <Button.Text fontSize={16 * getFormFontScale(size)}>
+        {children}
+      </Button.Text>
     </Button>
   );
 };
@@ -732,13 +773,21 @@ function YearPicker({
 }
 
 const DatePickerPopoverBody = () => {
+  const { size } = DatePickerContext.useStyledContext();
+  const scale = getFormSizeScale(size);
   const [header, setHeader] = useState<"day" | "month" | "year">("day");
 
   return (
     <Theme name="base">
       <HeaderTypeProvider type={header} setHeader={setHeader}>
         <XStack justifyContent="center">
-          <YStack width={CALENDAR_WIDTH} alignItems="center" gap="$2xl">
+          <YStack
+            width={
+              getSized(getFormSizeToken(size)) * 7 +
+              getSpaced("$md") * 6 * scale
+            }
+            alignItems="center"
+            gap="$2xl">
             <CalendarHeader />
             {header === "month" && (
               <MonthPicker onChange={() => setHeader("day")} />
@@ -767,7 +816,7 @@ const DatePickerTextBox = Input.TextBox.styleable(
 
 const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
   ({ children, placeholder, ...props }, forwardedRef) => {
-    const { mode, separator } = DatePickerContext.useStyledContext();
+    const { mode, separator, size } = DatePickerContext.useStyledContext();
 
     return (
       <Input.TextBox.Value
@@ -781,7 +830,7 @@ const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
                 : getDateFormat(separator)
               : placeholder
         }
-        nativePaddingInline={16}
+        nativePaddingInline={16 * getFormSizeScale(size)}
         {...props}>
         {children}
       </Input.TextBox.Value>
@@ -794,7 +843,15 @@ type DatePickerTriggerProps = GetProps<typeof Field.Icon>;
 
 const DatePickerTrigger = Field.Icon.styleable(
   (props: DatePickerTriggerProps, forwardedRef: ForwardedRef<unknown>) => {
-    return <Field.Icon ref={forwardedRef} {...props} pointerEvents="none" />;
+    const { size } = DatePickerContext.useStyledContext();
+    return (
+      <Field.Icon
+        ref={forwardedRef}
+        {...props}
+        controlSize={size}
+        pointerEvents="none"
+      />
+    );
   },
   { staticConfig: { componentName: "DatePickerTrigger" } }
 );

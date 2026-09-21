@@ -45,6 +45,7 @@ const FilePickerFieldControl = FilePicker.styleable(
       <FilePicker
         ref={forwardedRef}
         {...props}
+        size={field.size.get()}
         max={options.max}
         disabled={disabled}
         files={value ?? []}

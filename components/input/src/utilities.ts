@@ -17,12 +17,16 @@
  ------------------------------------------------------------------- */
 
 import {
-  getFontSizedFromSize,
+  formSizeVariants,
+  getFormFontScale,
+  getFormFontSize,
+  getFormSizeToken,
   getSized,
   getSpaced,
-  sizeToSpace
+  sizeToSpace,
+  type FormControlSize
 } from "@cyclone-ui/helpers";
-import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
+import type { VariantSpreadExtras } from "@tamagui/core";
 import {
   createStyledContext,
   stylePropsTextOnly,
@@ -30,7 +34,7 @@ import {
 } from "@tamagui/core";
 import type { InputContextProps } from "./types";
 export const InputContext = createStyledContext<InputContextProps>({
-  size: "$true",
+  size: "md",
   circular: false,
   disabled: false,
   focused: false,
@@ -80,33 +84,20 @@ export const baseInputStyle: BaseInputStyle = [
         }
       },
 
-      size: {
-        "...size": (
-          val: SizeTokens | number,
-          extras: VariantSpreadExtras<any>
-        ) => {
-          if (typeof val === "number") {
-            const space = sizeToSpace(val);
-
-            return {
-              ...getFontSizedFromSize(val, extras),
-              paddingHorizontal: Math.round(space * 0.4)
-            };
-          }
-
-          const size = getSized(val);
-          const space = sizeToSpace(size);
-
-          return {
-            ...getFontSizedFromSize(val, extras),
-            paddingHorizontal: Math.round(space * 0.4)
-          };
-        }
-      }
+      size: formSizeVariants((size, extras) => ({
+        ...getFormFontSize(size, extras),
+        "$platform-web": {
+          fontSize: 16 * getFormFontScale(size),
+          lineHeight: size === "md" ? "normal" : 24 * getFormFontScale(size)
+        },
+        paddingHorizontal: Math.round(
+          sizeToSpace(getSized(getFormSizeToken(size))) * 0.4
+        )
+      }))
     } as const,
 
     defaultVariants: {
-      size: "$true",
+      size: "md",
       disabled: false
     }
   },
@@ -124,31 +115,13 @@ export const baseInputStyle: BaseInputStyle = [
 ];
 
 export const getInputSize = (
-  val: SizeTokens | number,
-  extras: VariantSpreadExtras<any>
+  val: FormControlSize,
+  { props }: VariantSpreadExtras<any>
 ) => {
-  const { props } = extras;
-  if (!val) {
-    return;
-  }
-
-  if (typeof val === "number") {
-    return {
-      paddingHorizontal: val * 0.25,
-      height: val,
-      minHeight: val,
-      borderRadius: props.circular ? 100_000 : "$control"
-    };
-  }
-
-  // The generated size scale has no `$true` CSS variable. Resolve Tamagui's
-  // default variant to the standard control size before using it as a height.
-  const size = val === "$true" || String(val) === "true" ? "$10xl" : val;
-  const xSize = getSpaced(size);
-  const height = props.variant === "floating" ? getSized(size) + 3 : size;
-
+  const token = getFormSizeToken(val);
+  const height = props.variant === "floating" ? getSized(token) + 3 : token;
   return {
-    paddingHorizontal: xSize,
+    paddingHorizontal: getSpaced(token),
     height,
     minHeight: height,
     borderRadius: props.circular ? 100_000 : "$control"

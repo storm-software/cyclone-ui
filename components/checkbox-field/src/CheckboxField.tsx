@@ -72,6 +72,7 @@ const CheckboxFieldControl = Checkbox.styleable(
       <Checkbox
         ref={forwardedRef}
         {...props}
+        size={field.size.get()}
         name={name}
         onFocus={focus}
         onBlur={blur}

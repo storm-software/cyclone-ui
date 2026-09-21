@@ -24,6 +24,20 @@
         "default": "./dist/index.mjs"
       }
     },
+    "./form-size": {
+      "require": {
+        "types": "./dist/form-size.d.cts",
+        "default": "./dist/form-size.cjs"
+      },
+      "import": {
+        "types": "./dist/form-size.d.mts",
+        "default": "./dist/form-size.mjs"
+      },
+      "default": {
+        "types": "./dist/form-size.d.mts",
+        "default": "./dist/form-size.mjs"
+      }
+    },
     "./get-button-sized": {
       "require": {
         "types": "./dist/get-button-sized.d.cts",

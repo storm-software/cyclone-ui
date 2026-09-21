@@ -32,7 +32,7 @@ const meta = {
     <Form name="formName" initialValues={{ checkboxName: defaultValue }}>
       <Field name="checkboxName" {...props}>
         <XStack gap="$3xl" alignContent="center" alignItems="center">
-          <Checkbox />
+          <Checkbox size={props.size} />
           <Field.Label paddingBottom={0}>
             This is an example label message for a checkbox
           </Field.Label>
@@ -127,3 +127,9 @@ export const Success: Story = {
     validate: validation("success")
   }
 };
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };

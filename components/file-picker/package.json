@@ -42,7 +42,8 @@
     "@cyclone-ui/bytes-text": "workspace:*",
     "@cyclone-ui/label-text": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
-    "@cyclone-ui/state": "workspace:*"
+    "@cyclone-ui/state": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",

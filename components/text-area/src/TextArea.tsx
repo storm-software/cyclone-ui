@@ -17,6 +17,12 @@
  ------------------------------------------------------------------- */
 
 import { useFieldHasValidationMessage } from "@cyclone-ui/field";
+import {
+  formSizeVariants,
+  getFormFontScale,
+  getFormSizeScale
+} from "@cyclone-ui/helpers";
+import type { InputContextProps } from "@cyclone-ui/input";
 import { ControlUnderline } from "@cyclone-ui/input";
 import { InputValue } from "@cyclone-ui/input/InputValue";
 import type { GetProps } from "@tamagui/core";
@@ -54,6 +60,13 @@ const TextAreaFrame = styled(InputValue, {
   },
 
   variants: {
+    size: formSizeVariants(size => ({
+      fontSize: 16 * getFormFontScale(size),
+      ...(size === "md" ? {} : { lineHeight: 24 * getFormFontScale(size) }),
+      minHeight: 122 * getFormSizeScale(size),
+      paddingHorizontal: 16 * getFormSizeScale(size),
+      paddingVertical: 7 * getFormSizeScale(size)
+    })),
     focused: {
       true: {
         boxShadow: "$ringOffset",
@@ -72,9 +85,9 @@ const TextAreaFrame = styled(InputValue, {
 
     variant: {
       default: {},
-      floating: {
-        paddingTop: "$2xl"
-      },
+      floating: (_val, { props }) => ({
+        paddingTop: 10 * getFormSizeScale(props.size)
+      }),
       underline: {
         borderWidth: 0,
         borderBottomWidth: 1,
@@ -125,7 +138,9 @@ const TextAreaUnderlineFrame = styled(View, {
  * A multiline Cyclone Input value with the same tokens and state behavior as
  * the standard Input control.
  */
-export const TextArea = TextAreaFrame.styleable(
+export const TextArea = TextAreaFrame.styleable<
+  Partial<Pick<InputContextProps, "size" | "focused" | "variant" | "disabled">>
+>(
   (
     {
       rows = 3,

@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { Field } from "@cyclone-ui/field";
+import { getFormSizeToken } from "@cyclone-ui/helpers";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
 import { styled, View, withStaticProperties } from "@tamagui/core";
@@ -95,8 +96,7 @@ const OtpInputFieldControl = OtpInputFieldControlFrame.styleable(
     const [hasFocus, setHasFocus] = useState(false);
     const firstInputRef = useRef<HTMLInputElement>(null);
     const inputSlotsRef = useRef<Array<HTMLInputElement | null>>([]);
-    const slotSize =
-      size === "$true" || String(size) === "true" ? "$10xl" : size;
+    const slotSize = getFormSizeToken(size);
     const digits = value.replace(/\D/g, "").slice(0, length).split("");
 
     useLayoutEffect(() => {

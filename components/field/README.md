@@ -45,6 +45,7 @@ A Next Button component meant to be shared in many other components
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Installing](#installing)
@@ -115,6 +116,28 @@ Run `nx test field` to execute the unit tests via
 ### Linting
 
 Run `nx lint field` to run [ESLint](https://eslint.org/) on the package.
+
+## Form control sizes
+
+Form controls and their field wrappers accept `size="sm"`, `size="md"`, or
+`size="lg"`. Omitting `size` uses `md`, preserving the existing default appearance.
+Set size on the field root to size its control, labels, icons, supporting text,
+and popover content together:
+
+```tsx
+<InputField name="email" size="sm">
+  <InputField.Label>Email</InputField.Label>
+  <InputField.Control>
+    <InputField.Control.TextBox>
+      <InputField.Control.TextBox.Value />
+    </InputField.Control.TextBox>
+  </InputField.Control>
+</InputField>
+```
+
+Standalone controls also accept these sizes. Replace previous numeric or Tamagui
+token values (such as `$true` or `$10xl`) with one of the three names. Generic
+buttons, icons, and layout primitives retain their own sizing APIs.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

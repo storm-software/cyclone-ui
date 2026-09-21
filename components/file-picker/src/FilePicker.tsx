@@ -21,6 +21,16 @@ import { Button } from "@cyclone-ui/button";
 import { BytesText } from "@cyclone-ui/bytes-text";
 import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import {
+  formSizeVariants,
+  getFormFontScale,
+  getFormFontSize,
+  getFormSizeScale,
+  getFormSizeToken,
+  getSized,
+  getSpaced,
+  type FormControlSize
+} from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import type { ClientFileResult } from "@cyclone-ui/state";
@@ -28,7 +38,7 @@ import { formatDate } from "@stryke/date/format";
 import { useComposedRefs } from "@stryke/hooks";
 import type { FileStatus } from "@stryke/types/file";
 import { AnimatePresence } from "@tamagui/animate-presence";
-import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
+import type { ColorTokens } from "@tamagui/core";
 import {
   createStyledContext,
   styled,
@@ -46,7 +56,7 @@ import { MediaTypeOptions } from "./file-picker-types";
 import { useFilePicker } from "./useFilePicker";
 
 export interface FilePickerContextProps {
-  size: FontSizeTokens;
+  size: FormControlSize;
   typeOfPicker: "image" | "file";
   max: number;
   mediaTypes: MediaTypeOptions[];
@@ -65,7 +75,7 @@ export interface FilePickerContextProps {
 }
 
 export const FilePickerContext = createStyledContext<FilePickerContextProps>({
-  size: "$10xl",
+  size: "md",
   typeOfPicker: "file",
   mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
   max: 1,
@@ -112,6 +122,10 @@ const FilePickerGroupFrame = styled(View, {
   },
 
   variants: {
+    size: formSizeVariants(size => ({
+      minHeight: getSized("$17xl") * getFormSizeScale(size),
+      paddingVertical: getSpaced("$5xl") * getFormSizeScale(size)
+    })),
     active: {
       true: {
         borderColor: "$hairline",
@@ -166,6 +180,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
   (
     {
       children,
+      size = "md",
       files = [],
       onChange,
       disabled = false,
@@ -252,6 +267,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
       <FilePickerGroupFrame
         {...props}
         {...rootProps}
+        size={size}
         ref={composedRef}
         group={"file-picker" as any}
         active={Boolean(dragStatus?.isDragActive)}
@@ -259,6 +275,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
         onClick={handleOpen}
         onPress={handleOpen}>
         <FilePickerContext.Provider
+          size={size}
           name={name}
           files={files}
           onOpen={onOpen}
@@ -289,7 +306,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
 
 const FilePickerTrigger = YStack.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, active, files, max } =
+    const { disabled, active, files, max, size } =
       FilePickerContext.useStyledContext();
 
     if (files.length >= max) {
@@ -307,7 +324,7 @@ const FilePickerTrigger = YStack.styleable(
         {...props}>
         {files.length === 0 && (
           <Upload
-            size="$9xl"
+            size={getSized("$9xl") * getFormSizeScale(size)}
             color={disabled ? "$inkSubtleDisabled" : "$inkSubtle"}
             $group-file-picker-hover={{
               color: disabled
@@ -333,7 +350,7 @@ const FilePickerTrigger = YStack.styleable(
 
 const FilePickerTriggerButton = Button.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, files, max, onOpen } =
+    const { disabled, files, max, onOpen, size } =
       FilePickerContext.useStyledContext();
 
     if (disabled) {
@@ -343,6 +360,7 @@ const FilePickerTriggerButton = Button.styleable(
     return (
       <Button
         ref={forwardedRef}
+        size={getFormSizeToken(size)}
         group={"link" as any}
         width="100%"
         variant="link"
@@ -353,6 +371,7 @@ const FilePickerTriggerButton = Button.styleable(
         }}
         {...props}>
         <Button.Text
+          fontSize={16 * getFormFontScale(size)}
           color="$link"
           textDecorationColor="$link"
           $group-link-hover={{
@@ -392,14 +411,26 @@ const FilePickerFiles = YStack.styleable(
   }
 );
 
+const FilePickerNameText = styled(HeadingSmallText, {
+  variants: { controlSize: formSizeVariants(getFormFontSize) }
+});
+const FilePickerMetadataText = styled(BodyText, {
+  variants: { controlSize: formSizeVariants(getFormFontSize) }
+});
+const FilePickerBytesText = styled(BytesText, {
+  variants: { controlSize: formSizeVariants(getFormFontSize) }
+});
+
 const FilePickerViewLink = ({
   uri,
   children,
   ...props
 }: PropsWithChildren<{ uri?: string }>) => {
+  const { size } = FilePickerContext.useStyledContext();
   if (uri) {
     return (
       <Link
+        fontSize={18 * getFormFontScale(size)}
         width="100%"
         textAlign="center"
         {...props}
@@ -417,7 +448,9 @@ const FilePickerViewLink = ({
       width="100%"
       textAlign="center"
       {...props}>
-      <HeadingSmallText color="$onAccent">{children}</HeadingSmallText>
+      <FilePickerNameText controlSize={size} color="$onAccent">
+        {children}
+      </FilePickerNameText>
     </LabelText>
   );
 };
@@ -432,7 +465,13 @@ const FilePickerFile = ({
   lastModified,
   mimeType
 }: FilePickerFileProps) => {
-  const { disabled, onChange, files } = FilePickerContext.useStyledContext();
+  const {
+    disabled,
+    onChange,
+    files,
+    size: controlSize
+  } = FilePickerContext.useStyledContext();
+  const scale = getFormSizeScale(controlSize);
 
   const handleRemove = useCallback(
     () => onChange(files.filter(file => file.id !== id)),
@@ -446,7 +485,7 @@ const FilePickerFile = ({
       transition="200ms"
       opacity={1}
       scale={1}
-      height={100}
+      height={100 * scale}
       width="100%"
       overflow="hidden"
       position="relative"
@@ -489,7 +528,7 @@ const FilePickerFile = ({
         transition="100ms"
         position="absolute"
         zIndex="$30"
-        left={16}
+        left={16 * scale}
         top="50%"
         y="-50%"
         opacity={0}
@@ -503,7 +542,7 @@ const FilePickerFile = ({
             download={name}
             variant="ghost"
             ghostOpacity={0.75}
-            size="$13xl"
+            size={getSized("$13xl") * scale}
             padding="$xl"
             circular={true}>
             <Button.Icon $group-button-hover={{ color: "$accentHover" }}>
@@ -518,7 +557,7 @@ const FilePickerFile = ({
           transition="200ms"
           position="absolute"
           zIndex="$30"
-          right={16}
+          right={16 * scale}
           top="50%"
           y="-50%"
           opacity={0}
@@ -529,7 +568,7 @@ const FilePickerFile = ({
             variant="ghost"
             ghostOpacity={0.75}
             onPress={handleRemove}
-            size="$13xl"
+            size={getSized("$13xl") * scale}
             padding="$xl"
             circular={true}>
             <Button.Icon $group-button-hover={{ color: "$accentHover" }}>
@@ -560,19 +599,29 @@ const FilePickerFile = ({
             </FilePickerViewLink>
           </View>
           <XStack gap="$lg" justifyContent="center" alignItems="center">
-            <BytesText zIndex="$30">{size}</BytesText>
-
-            {lastModified && <Dot size="$6xl" color="$inkBody" />}
+            <FilePickerBytesText controlSize={controlSize} zIndex="$30">
+              {size}
+            </FilePickerBytesText>
 
             {lastModified && (
-              <BodyText zIndex="$30">
-                {formatDate(new Date(lastModified), "MM-DD-YYYY HH:mm:ss")}
-              </BodyText>
+              <Dot size={getSized("$6xl") * scale} color="$inkBody" />
             )}
 
-            {mimeType && <Dot size="$6xl" color="$inkBody" />}
+            {lastModified && (
+              <FilePickerMetadataText controlSize={controlSize} zIndex="$30">
+                {formatDate(new Date(lastModified), "MM-DD-YYYY HH:mm:ss")}
+              </FilePickerMetadataText>
+            )}
 
-            {mimeType && <BodyText zIndex="$30">{mimeType}</BodyText>}
+            {mimeType && (
+              <Dot size={getSized("$6xl") * scale} color="$inkBody" />
+            )}
+
+            {mimeType && (
+              <FilePickerMetadataText controlSize={controlSize} zIndex="$30">
+                {mimeType}
+              </FilePickerMetadataText>
+            )}
           </XStack>
         </YStack>
       </View>

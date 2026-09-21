@@ -31,7 +31,7 @@ const meta: Meta<typeof Switch> = {
     <Form name="formName" initialValues={{ switchName: false }}>
       <Field name="switchName" {...props}>
         <XStack gap="$3xl" alignContent="center" alignItems="center">
-          <Switch />
+          <Switch size={props.size} />
           <Field.Label paddingBottom={0}>
             This is an example label message for a switch
           </Field.Label>
@@ -148,3 +148,9 @@ export const Success: Story = {
     validate: validation("success")
   }
 };
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };

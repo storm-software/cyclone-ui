@@ -18,6 +18,11 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
+import {
+  getFormFontScale,
+  getFormSizeScale,
+  getFormSizeToken
+} from "@cyclone-ui/helpers";
 import { Input } from "@cyclone-ui/input";
 import { InputField } from "@cyclone-ui/input-field";
 import { Popover } from "@cyclone-ui/popover";
@@ -206,6 +211,7 @@ const CountryListItem = memo(
     onSelect,
     showCountryName
   }: CountryListItemProps): JSX.Element => {
+    const size = FieldApi.use().size.get();
     const handlePress = useCallback(
       (): void => onSelect(country),
       [country, onSelect]
@@ -233,7 +239,7 @@ const CountryListItem = memo(
             cursor="inherit"
             flexDirection="row"
             alignItems="center"
-            minHeight="$5xl"
+            minHeight={22 * getFormSizeScale(size)}
             width="100%"
             paddingHorizontal="$2xl"
             paddingBottom="$xs"
@@ -251,7 +257,7 @@ const CountryListItem = memo(
                 flex={1}
                 minWidth={0}
                 color="$accentInactive"
-                fontSize="$md"
+                fontSize={18 * getFormFontScale(size)}
                 fontWeight="$light"
                 $group-button-hover={{ color: "$accentHover" }}
                 $group-button-focus={{ color: "$accentHover" }}>
@@ -265,7 +271,7 @@ const CountryListItem = memo(
               marginLeft="auto"
               textAlign="left"
               color="$accentInactive"
-              fontSize="$md"
+              fontSize={18 * getFormFontScale(size)}
               fontWeight="$light"
               $group-button-hover={{ color: "$accentHover" }}
               $group-button-focus={{ color: "$accentHover" }}>
@@ -308,7 +314,7 @@ const CountryCodeSelector = (): JSX.Element => {
   const field = FieldApi.use();
   const { width: viewportWidth } = useWindowDimensions();
   const disabled: boolean = field.disabled.get();
-  const size: string = field.size.get();
+  const size = field.size.get();
   const countrySearchFieldName = `${field.name.get()}__countrySearch`;
 
   const { change } = useFieldActions();
@@ -361,7 +367,7 @@ const CountryCodeSelector = (): JSX.Element => {
     <Popover
       open={open}
       onOpenChange={handleOpenChange}
-      size={size}
+      size={getFormSizeToken(size)}
       placement="bottom-start"
       shouldAdapt={false}>
       <Popover.Trigger
@@ -379,7 +385,9 @@ const CountryCodeSelector = (): JSX.Element => {
             opacity={0}>
             {`Select country code, currently ${selectedCountry.name} +${selectedCountry.callingCode}`}
           </SizableText>
-          <SizableText aria-hidden={true} fontSize="$xl">
+          <SizableText
+            aria-hidden={true}
+            fontSize={20 * getFormFontScale(size)}>
             {selectedCountry.flag}
           </SizableText>
         </InputField.Control.Trigger>

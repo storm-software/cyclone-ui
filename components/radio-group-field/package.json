@@ -27,7 +27,8 @@
     "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/radio-group": "workspace:*",
-    "@cyclone-ui/state": "workspace:*"
+    "@cyclone-ui/state": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/form": "workspace:*",

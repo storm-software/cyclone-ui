@@ -68,6 +68,7 @@ const SwitchFieldControl = Switch.styleable(
       <Switch
         ref={forwardedRef}
         {...props}
+        size={field.size.get()}
         name={name}
         onFocus={focus}
         onBlur={blur}

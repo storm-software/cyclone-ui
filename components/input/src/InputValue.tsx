@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { getFormSizeScale } from "@cyclone-ui/helpers";
 import { styled, useComposedRefs, useEvent, useTheme } from "@tamagui/core";
 import { registerFocusable } from "@tamagui/focusable";
 import type { TamaguiWebElement } from "@tamagui/web";
@@ -44,7 +45,8 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
       onInput: contextOnInput,
       onBlur: contextOnBlur,
       onFocus: contextOnFocus,
-      variant
+      variant,
+      size: contextSize
     } = InputContext.useStyledContext();
 
     const {
@@ -235,7 +237,9 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
                 flex: 1,
                 minWidth: 0,
                 margin: 0,
-                paddingInline: nativePaddingInline ?? "var(--t-space-4xl)"
+                paddingInline:
+                  nativePaddingInline ??
+                  `calc(var(--t-space-4xl) * ${getFormSizeScale(inProps.size ?? contextSize)})`
               }}
               onChange={handleInput}
               onBlur={(inputOnBlur ?? contextOnBlur) as any}
@@ -251,8 +255,13 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
                 minWidth: 0,
                 margin: 0,
                 padding: 0,
-                paddingTop: variant === "floating" ? 7 : 0,
-                paddingInline: nativePaddingInline ?? "var(--t-space-4xl)"
+                paddingTop:
+                  variant === "floating"
+                    ? 7 * getFormSizeScale(inProps.size ?? contextSize)
+                    : 0,
+                paddingInline:
+                  nativePaddingInline ??
+                  `calc(var(--t-space-4xl) * ${getFormSizeScale(inProps.size ?? contextSize)})`
               }}
               onChange={handleInput}
               onBlur={(inputOnBlur ?? contextOnBlur) as any}

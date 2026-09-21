@@ -16,9 +16,9 @@
 
  ------------------------------------------------------------------- */
 
+import { type FormControlSize } from "@cyclone-ui/helpers";
 import type {
   ColorTokens,
-  SizeTokens,
   TamaguiComponentPropsBase,
   TextProps,
   ViewProps
@@ -127,6 +127,7 @@ export type InputComponentProps = ViewProps &
     /**
      * @deprecated - use `rows` instead
      */
+    size?: FormControlSize;
     numberOfLines?: number;
   };
 
@@ -146,7 +147,7 @@ export interface InputContextProps {
   /**
    * The input's current size.
    */
-  size: SizeTokens;
+  size: FormControlSize;
 
   /**
    * The input's current circular status value.

@@ -17,11 +17,14 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { getSized } from "@cyclone-ui/helpers";
+import {
+  formSizeVariants,
+  getSized,
+  type FormControlSize
+} from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
 import { Adapt } from "@tamagui/adapt";
 import { useIsomorphicLayoutEffect } from "@tamagui/constants";
-import type { SizeTokens } from "@tamagui/core";
 import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { Check, ChevronDown, ChevronUp, Lock } from "@tamagui/lucide-icons-2";
@@ -238,17 +241,15 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   },
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        const { itemFramePaddingHorizontal, itemPaddingVertical } =
-          getSelectContentSize(val);
+    size: formSizeVariants((val: FormControlSize) => {
+      const { itemFramePaddingHorizontal, itemPaddingVertical } =
+        getSelectContentSize(val);
 
-        return {
-          paddingHorizontal: itemFramePaddingHorizontal,
-          paddingVertical: itemPaddingVertical
-        };
-      }
-    },
+      return {
+        paddingHorizontal: itemFramePaddingHorizontal,
+        paddingVertical: itemPaddingVertical
+      };
+    }),
 
     selected: {
       true: {
@@ -283,7 +284,7 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
+    size: "md",
     disabled: false,
     selected: false
   }
@@ -310,13 +311,11 @@ const SelectItemBackground = styled(View, {
   },
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        const inset = getSelectContentSize(val).itemPaddingVertical;
+    size: formSizeVariants((val: FormControlSize) => {
+      const inset = getSelectContentSize(val).itemPaddingVertical;
 
-        return { top: inset, bottom: inset };
-      }
-    },
+      return { top: inset, bottom: inset };
+    }),
 
     disabled: {
       true: {
@@ -332,7 +331,7 @@ const SelectItemBackground = styled(View, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
+    size: "md",
     disabled: false
   }
 });
@@ -348,17 +347,15 @@ const SelectItemDivider = styled(View, {
   pointerEvents: "none",
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        const inset = getSelectContentSize(val).dividerInset;
+    size: formSizeVariants((val: FormControlSize) => {
+      const inset = getSelectContentSize(val).dividerInset;
 
-        return { left: inset, right: inset };
-      }
-    }
+      return { left: inset, right: inset };
+    })
   } as const,
 
   defaultVariants: {
-    size: "$true"
+    size: "md"
   }
 });
 
@@ -384,20 +381,18 @@ const SelectItemGroup = styled(XStack, {
   width: "max-content",
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        const { lineHeight, itemPaddingHorizontal } = getSelectContentSize(val);
+    size: formSizeVariants((val: FormControlSize) => {
+      const { lineHeight, itemPaddingHorizontal } = getSelectContentSize(val);
 
-        return {
-          minHeight: lineHeight,
-          paddingHorizontal: itemPaddingHorizontal
-        };
-      }
-    }
+      return {
+        minHeight: lineHeight,
+        paddingHorizontal: itemPaddingHorizontal
+      };
+    })
   } as const,
 
   defaultVariants: {
-    size: "$true"
+    size: "md"
   }
 });
 
@@ -410,27 +405,25 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   whiteSpace: "nowrap",
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        const {
-          fontSize,
-          lineHeight,
-          itemTextPaddingVertical,
-          itemTextPaddingHorizontal
-        } = getSelectContentSize(val);
+    size: formSizeVariants((val: FormControlSize) => {
+      const {
+        fontSize,
+        lineHeight,
+        itemTextPaddingVertical,
+        itemTextPaddingHorizontal
+      } = getSelectContentSize(val);
 
-        return {
-          fontSize,
-          lineHeight,
-          paddingVertical: itemTextPaddingVertical,
-          paddingHorizontal: itemTextPaddingHorizontal
-        };
-      }
-    }
+      return {
+        fontSize,
+        lineHeight,
+        paddingVertical: itemTextPaddingVertical,
+        paddingHorizontal: itemTextPaddingHorizontal
+      };
+    })
   } as const,
 
   defaultVariants: {
-    size: "$true"
+    size: "md"
   }
 });
 
@@ -443,13 +436,11 @@ const SelectItemValue = styled(BodyText, {
   cursor: "inherit",
   color: "currentColor",
   variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        const { fontSize, lineHeight } = getSelectContentSize(val);
+    size: formSizeVariants((val: FormControlSize) => {
+      const { fontSize, lineHeight } = getSelectContentSize(val);
 
-        return { fontSize, lineHeight };
-      }
-    },
+      return { fontSize, lineHeight };
+    }),
 
     selected: {
       true: {
@@ -462,7 +453,7 @@ const SelectItemValue = styled(BodyText, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
+    size: "md",
     selected: false
   }
 });

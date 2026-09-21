@@ -18,8 +18,13 @@
 
 import { Button } from "@cyclone-ui/button";
 import { useFieldHasValidationMessage } from "@cyclone-ui/field";
-import { getSized } from "@cyclone-ui/helpers";
-import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
+import {
+  formSizeVariants,
+  getFormSizeToken,
+  getSized,
+  type FormControlSize
+} from "@cyclone-ui/helpers";
+import type { GetProps, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { XStack } from "@tamagui/stacks";
@@ -29,7 +34,7 @@ import type { InputContextProps } from "./types";
 import { getInputSize, InputContext } from "./utilities";
 
 const getInputFrameSize = (
-  val: SizeTokens | number,
+  val: FormControlSize,
   extras: VariantSpreadExtras<any>
 ) => ({
   ...getInputSize(val, extras),
@@ -134,10 +139,7 @@ const InputGroup = styled(XGroup, {
 
     // Keep frame dimensions separate from Tamagui's special `size` prop. A
     // `$true` size is consumed before spread variants run, leaving no height.
-    frameSize: {
-      ":string": getInputFrameSize,
-      ":number": getInputFrameSize
-    },
+    frameSize: formSizeVariants(getInputFrameSize),
 
     disabled: {
       true: {
@@ -167,7 +169,7 @@ const InputGroup = styled(XGroup, {
   } as const,
 
   defaultVariants: {
-    frameSize: "$5xl",
+    frameSize: "md",
     disabled: false,
     focused: false,
     circular: false,
@@ -179,7 +181,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
   (props, forwardedRef) => {
     const {
       children,
-      size = "$true",
+      size = "md",
       variant = "default",
       onChange,
       onInput,
@@ -190,8 +192,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
       ...rest
     } = props;
     const [locallyActive, setLocallyActive] = useState(false);
-    const frameSize =
-      size === "$true" || String(size) === "true" ? "$10xl" : size;
+    const frameSize = size;
     const handleFocus = useCallback(
       (event: any) => {
         setLocallyActive(true);
@@ -411,11 +412,14 @@ const InputValueImpl = InputValue.styleable(
 
 const InputTrigger = Button.styleable<{
   forcePlacement?: GetProps<typeof XGroup.Item>["forcePlacement"];
+  size?: FormControlSize;
 }>(
-  ({ children, flexBasis: _flexBasis, ...props }, forwardedRef) => {
+  (
+    { children, size: sizeProp, flexBasis: _flexBasis, ...props },
+    forwardedRef
+  ) => {
     const { circular, size } = InputContext.useStyledContext();
-    const controlSize =
-      size === "$true" || String(size) === "true" ? "$10xl" : size;
+    const controlSize = getFormSizeToken(sizeProp ?? size);
     const frameSize = useMemo(() => getSized(controlSize), [controlSize]);
 
     const adjustedTrigger = useMemo(

@@ -19,6 +19,7 @@
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { View } from "@tamagui/core";
 import { FilePicker } from "./FilePicker";
 
 const meta: Meta<typeof FilePicker> = {
@@ -29,7 +30,7 @@ const meta: Meta<typeof FilePicker> = {
     <Form name="formName" defaultValues={{ filePickerName: defaultValue }}>
       <Field name="filePickerName" {...props} disabled={disabled} width="500px">
         <Field.Label>Label Text</Field.Label>
-        <FilePicker width="500px" disabled={disabled}>
+        <FilePicker size={props.size} width="500px" disabled={disabled}>
           <FilePicker.Trigger>
             <FilePicker.Trigger.Button />
           </FilePicker.Trigger>
@@ -125,4 +126,38 @@ export const Success: Story = {
   args: {
     validate: validation("success")
   }
+};
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };
+
+const previewFile = {
+  id: 1,
+  status: "initialized" as const,
+  name: "sample.svg",
+  size: 1024,
+  mimeType: "image/svg+xml",
+  uri: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='100'%3E%3Crect width='400' height='100' fill='%23424264'/%3E%3C/svg%3E"
+};
+
+export const PopulatedSizes: Story = {
+  render: () => (
+    <View backgroundColor="$background" padding={24} minHeight="100vh">
+      <Form name="file-preview-sizes">
+        {(["sm", "md", "lg"] as const).map(size => (
+          <Field key={size} name={size} size={size}>
+            <Field.Label>{size}</Field.Label>
+            <FilePicker size={size} files={[previewFile]} width={400}>
+              <FilePicker.Files>
+                <FilePicker.Files.File {...previewFile} />
+              </FilePicker.Files>
+            </FilePicker>
+          </Field>
+        ))}
+      </Form>
+    </View>
+  )
 };

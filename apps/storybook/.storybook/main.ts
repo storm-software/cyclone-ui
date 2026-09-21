@@ -196,6 +196,7 @@ const profiling = isProduction && {
 
 const config: StorybookConfig = {
   stories: [
+    "../src/**/*.stories.@(js|jsx|ts|tsx|mdx)",
     "../../../packages/themes/src/storybook/**/*.mdx",
     "../../../components/**/*.stories.@(js|jsx|ts|tsx|mdx)"
   ],

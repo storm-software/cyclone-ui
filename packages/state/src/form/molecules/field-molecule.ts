@@ -47,7 +47,7 @@ import { FormApi } from "./form-molecule";
 
 export const DEFAULT_FIELD_OPTIONS: FieldOptionsState = {
   theme: "base",
-  size: "$true",
+  size: "md",
   debounceMs: 100,
   isEqual,
   required: false,
@@ -256,7 +256,7 @@ export const FieldApi = createMoleculeApi(
     const sizeAtom = atomWithDefault(get => {
       const options = get(optionsAtom);
 
-      return options.size ?? "$true";
+      return options.size ?? "md";
     });
 
     const previousValueAtom = atom(get => {

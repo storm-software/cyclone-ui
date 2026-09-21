@@ -73,13 +73,14 @@ export const Base: Story = {
     const input = canvas.getByRole("textbox");
     const label = canvas.getByText("Label Text").closest("label");
 
-    await expect(input).toHaveStyle({ height: "40px" });
+    await expect(input).toHaveStyle({ height: "43px" });
     await expect(label).not.toBeNull();
     await expect(
       Math.abs(
         label!.getBoundingClientRect().top +
           label!.getBoundingClientRect().height / 2 -
-          input.getBoundingClientRect().top
+          (input.getBoundingClientRect().top +
+            input.getBoundingClientRect().height / 2)
       )
     ).toBeLessThan(2);
     await userEvent.type(input, "input value");
@@ -447,3 +448,9 @@ export const NegativeUnderline: Story = {
     variant: "underline"
   }
 };
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };

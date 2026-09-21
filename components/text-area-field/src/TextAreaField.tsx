@@ -80,7 +80,7 @@ const TextAreaFieldControl = TextArea.styleable((props, forwardedRef) => {
         name={name}
         size={size}
         focused={focused}
-        variant={variant}
+        variant={variant === "normal" ? "default" : variant}
         disabled={disabled}
         placeholder={shouldShowPlaceholder ? props.placeholder : undefined}
         value={formattedValue}

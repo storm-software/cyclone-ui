@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { type FormControlSize } from "@cyclone-ui/helpers";
 import type { MaskitoOptions } from "@maskito/core";
 import type { MaybePromise } from "@stryke/types/base";
 import type { SelectOption, SelectOptionValue } from "@stryke/types/form";
@@ -466,13 +467,9 @@ export interface FieldOptions<TFieldValue> {
   /**
    * The default size of the field.
    *
-   * @defaultValue "$true"
+   * @defaultValue "md"
    */
-  size?:
-    | `$${string}`
-    | `$${string}.${string}`
-    | `$${string}.${number}`
-    | `$${number}`;
+  size?: FormControlSize;
 
   /**
    * The default required status of the field.
@@ -678,21 +675,7 @@ export interface FieldAtoms<TFieldValue> {
     void
   >;
 
-  size: WritableAtom<
-    | `$${string}`
-    | `$${string}.${string}`
-    | `$${string}.${number}`
-    | `$${number}`,
-    [
-      SetStateAction<
-        | `$${string}`
-        | `$${string}.${string}`
-        | `$${string}.${number}`
-        | `$${number}`
-      >
-    ],
-    void
-  >;
+  size: WritableAtom<FormControlSize, [SetStateAction<FormControlSize>], void>;
 
   errors: Atom<ValidationDetails<"danger">[]>;
   warnings: Atom<ValidationDetails<"warning">[]>;

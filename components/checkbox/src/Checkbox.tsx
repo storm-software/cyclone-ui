@@ -17,11 +17,17 @@
  ------------------------------------------------------------------- */
 
 import { useFieldHasValidationMessage } from "@cyclone-ui/field";
-import { getSpaced } from "@cyclone-ui/helpers";
+import {
+  formSizeVariants,
+  getFormSizeToken,
+  getSized,
+  getSpaced,
+  type FormControlSize
+} from "@cyclone-ui/helpers";
 import { Check } from "@cyclone-ui/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
-import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
-import { getVariableValue, styled, View } from "@tamagui/core";
+import type { GetProps, VariantSpreadExtras } from "@tamagui/core";
+import { styled, View } from "@tamagui/core";
 import { Minus } from "@tamagui/lucide-icons-2";
 
 const CheckboxGroupFrame = styled(View, {
@@ -56,16 +62,13 @@ const CheckboxGroupFrame = styled(View, {
   },
 
   variants: {
-    size: {
-      "...size": (
-        val: SizeTokens | number,
-        { props, tokens }: VariantSpreadExtras<any>
-      ) => {
-        if (!val || props.circular) {
+    size: formSizeVariants(
+      (val: FormControlSize, { props }: VariantSpreadExtras<any>) => {
+        if (!val) {
           return;
         }
 
-        const size = getVariableValue((tokens.size as any)[val] ?? val) * 0.8;
+        const size = getSized(getFormSizeToken(val, "compact")) * 0.8;
 
         return {
           height: size,
@@ -74,7 +77,7 @@ const CheckboxGroupFrame = styled(View, {
           borderRadius: props.circular ? 100_000 : "$control"
         };
       }
-    },
+    ),
 
     circular: {
       true: {
@@ -119,7 +122,7 @@ const CheckboxGroupFrame = styled(View, {
   } as const,
 
   defaultVariants: {
-    size: "$6xl",
+    size: "md",
     circular: false,
     focused: false,
     disabled: false
@@ -138,19 +141,19 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   width: "100%",
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        if (!val) {
-          return;
-        }
-
-        const space = getSpaced(val, { scale: 0.05 });
-
-        return {
-          padding: space
-        };
+    size: formSizeVariants((val: FormControlSize) => {
+      if (!val) {
+        return;
       }
-    },
+
+      const space = getSpaced(getFormSizeToken(val, "compact"), {
+        scale: 0.05
+      });
+
+      return {
+        padding: space
+      };
+    }),
 
     disabled: {
       true: {
@@ -160,7 +163,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   } as const,
 
   defaultVariants: {
-    size: "$6xl",
+    size: "md",
     disabled: false
   }
 });
@@ -183,16 +186,10 @@ const MinusIcon = styled(Minus, {
 
 export const Checkbox = BaseCheckbox.styleable<{
   focused?: CheckboxGroupFrameProps["focused"];
+  size?: FormControlSize;
 }>(
   (
-    {
-      focused = false,
-      disabled,
-      name,
-      size = "$6xl",
-      checked = true,
-      ...props
-    },
+    { focused = false, disabled, name, size = "md", checked = true, ...props },
     forwardedRef
   ) => {
     const hasValidationMessage = useFieldHasValidationMessage();
@@ -247,7 +244,11 @@ export const Checkbox = BaseCheckbox.styleable<{
                 <MinusIcon color={focused ? focusColor : "$accent"} />
               </View>
             ) : (
-              <CheckboxIcon color={focused ? focusColor : "$accent"} />
+              <CheckboxIcon
+                width={getSized(getFormSizeToken(size, "compact")) * 0.6}
+                height={getSized(getFormSizeToken(size, "compact")) * 0.6}
+                color={focused ? focusColor : "$accent"}
+              />
             )}
           </TamaguiCheckbox.Indicator>
         </BaseCheckbox>

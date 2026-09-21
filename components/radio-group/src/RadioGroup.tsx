@@ -17,23 +17,27 @@
  ------------------------------------------------------------------- */
 
 import { useFieldHasValidationMessage } from "@cyclone-ui/field";
+import {
+  formSizeVariants,
+  getFormSizeScale,
+  getSized,
+  getSpaced,
+  type FormControlSize
+} from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
-import { isWeb } from "@tamagui/constants";
-import type { ColorTokens, FontSizeTokens, SizeTokens } from "@tamagui/core";
+import type { ColorTokens } from "@tamagui/core";
 import {
   createStyledContext,
   styled,
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { getFontSized } from "@tamagui/get-font-sized";
-import { getSize, getSpace } from "@tamagui/get-token";
 import { RadioGroup as TamaguiRadioGroup } from "@tamagui/radio-group";
 import { XStack, YStack } from "@tamagui/stacks";
 
 export interface RadioGroupContextProps {
   name?: string;
-  size: FontSizeTokens;
+  size: FormControlSize;
   color?: ColorTokens | string;
   disabled: boolean;
   required: boolean;
@@ -41,7 +45,7 @@ export interface RadioGroupContextProps {
 }
 
 export const RadioGroupContext = createStyledContext<RadioGroupContextProps>({
-  size: "$true",
+  size: "md",
   disabled: false,
   required: false,
   hasValidationMessage: false
@@ -64,29 +68,10 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   minWidth: 0,
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        if (!val) {
-          return;
-        }
-        if (val === "$true" || String(val) === "true") {
-          return;
-        }
-        if (typeof val === "number") {
-          return {
-            height: val * 0.75,
-            width: val * 0.75
-          };
-        }
-
-        const size = getSize(val);
-
-        return {
-          height: size.val * 0.75,
-          width: size.val * 0.75
-        };
-      }
-    },
+    size: formSizeVariants(size => ({
+      height: getSized("$5xl") * getFormSizeScale(size),
+      width: getSized("$5xl") * getFormSizeScale(size)
+    })),
 
     disabled: {
       true: {
@@ -110,7 +95,7 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
+    size: "md",
     disabled: false
   }
 });
@@ -193,26 +178,11 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   },
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        if (!val) {
-          return;
-        }
-        if (typeof val === "number") {
-          return {
-            paddingHorizontal: val,
-            paddingVertical: val * 0.85
-          };
-        }
-
-        const space = getSpace(val);
-
-        return {
-          paddingHorizontal: space.val,
-          paddingVertical: space.val * 0.85
-        };
-      }
-    },
+    size: formSizeVariants(size => ({
+      paddingHorizontal: getSpaced("$3xl") * getFormSizeScale(size),
+      paddingVertical: getSpaced("$2xl") * getFormSizeScale(size),
+      gap: getSpaced("$3xl") * getFormSizeScale(size)
+    })),
 
     hasValidationMessage: {
       true: {
@@ -262,7 +232,9 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
   ) => {
     const { size } = RadioGroupContext.useStyledContext();
     const hasValidationMessage = useFieldHasValidationMessage();
-    const focusColor = hasValidationMessage ? "$accentActive" : "$hairlineActive";
+    const focusColor = hasValidationMessage
+      ? "$accentActive"
+      : "$hairlineActive";
 
     return (
       <RadioGroupItemContainerFrame
@@ -312,19 +284,9 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
   width: "100%",
 
   variants: {
-    size: {
-      "...size": (val = "$true", extras) => {
-        const fontStyle = getFontSized(val as any, extras as any);
-        // lineHeight messes up select on native
-        if (!isWeb && fontStyle) {
-          delete fontStyle.lineHeight;
-        }
-
-        return {
-          ...fontStyle
-        };
-      }
-    },
+    size: formSizeVariants(size => ({
+      gap: getSpaced("$2xl") * getFormSizeScale(size)
+    })),
 
     disabled: {
       true: {
@@ -341,17 +303,10 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
 
 const RadioGroupImpl = RadioGroupFrame.styleable<{
   defaultValue?: string | null;
+  size?: FormControlSize;
 }>(
   (
-    {
-      children,
-      name,
-      required,
-      disabled,
-      value,
-      defaultValue,
-      ...props
-    },
+    { children, name, required, disabled, value, defaultValue, ...props },
     forwardedRef
   ) => {
     const { size } = RadioGroupContext.useStyledContext();

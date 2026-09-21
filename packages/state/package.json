@@ -139,7 +139,8 @@
     "maska": "catalog:",
     "optics-ts": "catalog:",
     "react-native-safe-area-context": "catalog:",
-    "valibot": "catalog:"
+    "valibot": "catalog:",
+    "@cyclone-ui/helpers": "workspace:*"
   },
   "devDependencies": {
     "@powerlines/plugin-tsdown": "catalog:",

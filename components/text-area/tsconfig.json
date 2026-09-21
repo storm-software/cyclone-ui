@@ -17,6 +17,9 @@
       "path": "../field"
     },
     {
+      "path": "../../packages/helpers"
+    },
+    {
       "path": "../input"
     }
   ],

@@ -135,21 +135,21 @@ export const DefaultValue: Story = {
 
 export const Small: Story = {
   args: {
-    size: "$6xl",
+    size: "sm",
     defaultValue: "Blackberry"
   }
 };
 
 export const Large: Story = {
   args: {
-    size: "$12xl",
+    size: "lg",
     defaultValue: "Blackberry"
   }
 };
 
 export const LongValue: Story = {
   args: {
-    size: "$9xl",
+    size: "sm",
     defaultValue: "Yellow dragon fruit"
   }
 };
@@ -189,3 +189,9 @@ export const Success: Story = {
     validate: validation("success")
   }
 };
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };

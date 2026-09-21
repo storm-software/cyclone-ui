@@ -17,10 +17,16 @@
  ------------------------------------------------------------------- */
 
 import { useFieldHasValidationMessage } from "@cyclone-ui/field";
-import { getSized, getSpaced } from "@cyclone-ui/helpers";
+import {
+  formSizeVariants,
+  getFormSizeToken,
+  getSized,
+  getSpaced,
+  type FormControlSize
+} from "@cyclone-ui/helpers";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
-import type { ColorTokens, SizeTokens } from "@tamagui/core";
+import type { ColorTokens } from "@tamagui/core";
 import {
   createStyledContext,
   getVariableValue,
@@ -33,7 +39,7 @@ import { createSwitch } from "@tamagui/switch";
 import { useMemo } from "react";
 
 export interface SwitchContextProps {
-  size: SizeTokens;
+  size: FormControlSize;
   name: string;
   checked: boolean;
   required: boolean;
@@ -42,7 +48,7 @@ export interface SwitchContextProps {
 }
 
 export const SwitchContext = createStyledContext<SwitchContextProps>({
-  size: "$6xl",
+  size: "md",
   name: "",
   checked: false,
   required: false,
@@ -50,10 +56,10 @@ export const SwitchContext = createStyledContext<SwitchContextProps>({
   hasValidationMessage: false
 });
 
-const getSwitchHeight = (val: SizeTokens) =>
-  Math.round(getVariableValue(getSize(val)));
+const getSwitchHeight = (val: FormControlSize) =>
+  Math.round(getVariableValue(getSize(getFormSizeToken(val, "compact"))));
 
-const getSwitchWidth = (val: SizeTokens) => getSwitchHeight(val) * 2;
+const getSwitchWidth = (val: FormControlSize) => getSwitchHeight(val) * 2;
 
 const SwitchFrame = styled(View, {
   name: "Switch",
@@ -83,18 +89,16 @@ const SwitchFrame = styled(View, {
   },
 
   variants: {
-    size: {
-      "...size": val => {
-        const height = getSwitchHeight(val);
-        const width = getSwitchWidth(val);
+    size: formSizeVariants(val => {
+      const height = getSwitchHeight(val);
+      const width = getSwitchWidth(val);
 
-        return {
-          height,
-          minHeight: height,
-          width
-        };
-      }
-    },
+      return {
+        height,
+        minHeight: height,
+        width
+      };
+    }),
 
     hasValidationMessage: {
       true: {
@@ -127,7 +131,7 @@ const SwitchFrame = styled(View, {
   } as const,
 
   defaultVariants: {
-    size: "$6xl",
+    size: "md",
     disabled: false
   }
 });
@@ -150,20 +154,18 @@ const SwitchThumb = styled(View, {
       }
     },
 
-    size: {
-      "...size": val => {
-        const height = getSwitchHeight(val);
+    size: formSizeVariants(val => {
+      const height = getSwitchHeight(val);
 
-        return {
-          height: height - 2,
-          width: height - 2
-        };
-      }
-    }
+      return {
+        height: height - 2,
+        width: height - 2
+      };
+    })
   } as const,
 
   defaultVariants: {
-    size: "$6xl",
+    size: "md",
     checked: false
   }
 });
@@ -186,23 +188,37 @@ const SwitchIconFrame = styled(View, {
 
   variants: {
     size: {
-      "...size": {} as any
+      sm: {},
+      md: {},
+      lg: {}
     },
 
     placement: {
       right: (_, { props }) => {
-        const space = getSpaced((props as any).size, {
-          scale: 0.35
-        });
+        const space = getSpaced(
+          getFormSizeToken(
+            (props as { size?: FormControlSize }).size,
+            "compact"
+          ),
+          {
+            scale: 0.35
+          }
+        );
 
         return {
           right: space
         };
       },
       left: (_, { props }) => {
-        const space = getSpaced((props as any).size, {
-          scale: 0.35
-        });
+        const space = getSpaced(
+          getFormSizeToken(
+            (props as { size?: FormControlSize }).size,
+            "compact"
+          ),
+          {
+            scale: 0.35
+          }
+        );
 
         return {
           left: space
@@ -217,13 +233,16 @@ const SwitchIconFrame = styled(View, {
 });
 
 const SwitchIcon = SwitchIconFrame.styleable<{
-  size?: SizeTokens;
+  size?: FormControlSize;
   color?: ColorTokens;
 }>(
   ({ children, size, color, ...props }, forwardedRef) => {
     const { disabled, size: contextSize } = SwitchContext.useStyledContext();
     const adjusted = useMemo(
-      () => getSized(size ?? contextSize, { shift: -6 }),
+      () =>
+        getSized(getFormSizeToken(size ?? contextSize, "compact"), {
+          shift: -6
+        }),
       [size, contextSize]
     );
 
@@ -268,11 +287,14 @@ const BaseSwitch = createSwitch({
   Thumb: SwitchThumbImpl
 });
 
-const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
+const BaseSwitchImpl = BaseSwitch.styleable<{
+  focused?: boolean;
+  size?: FormControlSize;
+}>(
   (
     {
       name,
-      size = "$6xl",
+      size = "md",
       disabled = false,
       checked = false,
       focused = false,

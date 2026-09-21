@@ -1,14 +1,30 @@
 import { describe, expect, it, vi } from "vitest";
 
-vi.mock("@cyclone-ui/helpers", () => ({
-  getSized: () => 42
+vi.mock("@cyclone-ui/helpers", async () => ({
+  ...(await import("../../../packages/helpers/src/form-size")),
+  getSized: (token: string) => ({ $8xl: 32, $10xl: 42, $12xl: 52 })[token]
 }));
 
 import { getSelectContentSize, shouldCenterSelectItemText } from "./utilities";
 
 describe("getSelectContentSize", () => {
+  it("scales menu text, spacing and indicators with the control", () => {
+    const small = getSelectContentSize("sm");
+    const medium = getSelectContentSize("md");
+    const large = getSelectContentSize("lg");
+    expect(medium.fontSize).toBe(16);
+    for (const metric of [
+      "fontSize",
+      "lineHeight",
+      "indicatorIconSize",
+      "itemFramePaddingHorizontal"
+    ] as const) {
+      expect(small[metric]).toBeLessThan(medium[metric]);
+      expect(large[metric]).toBeGreaterThan(medium[metric]);
+    }
+  });
   it("uses the small space token for option text vertical padding", () => {
-    expect(getSelectContentSize("$10xl").itemTextPaddingVertical).toBe("$sm");
+    expect(getSelectContentSize("md").itemTextPaddingVertical).toBe("$sm");
   });
 });
 

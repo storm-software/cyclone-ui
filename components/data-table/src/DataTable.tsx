@@ -1107,7 +1107,7 @@ export function DataTablePagination<TData extends RowData>({
                   name="pageSize"
                   variant="normal"
                   items={pageSizes}
-                  size="$9xl"
+                  size="sm"
                   onChange={handlePageSizeChange}>
                   <XStack alignItems="center" gap="$3xl">
                     <SelectField.Label hideOptional={true} flexShrink={0}>

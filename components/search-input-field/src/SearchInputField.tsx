@@ -16,6 +16,11 @@
 
  ------------------------------------------------------------------- */
 
+import {
+  getFormFontScale,
+  getFormSizeScale,
+  getSized
+} from "@cyclone-ui/helpers";
 import type { InputValueProps } from "@cyclone-ui/input";
 import { InputField } from "@cyclone-ui/input-field";
 import { Popover } from "@cyclone-ui/popover";
@@ -135,6 +140,7 @@ const SearchInputFieldControlTextBox =
     ): JSX.Element => {
       const field = FieldApi.use();
       const disabled = field.disabled.get();
+      const size = field.size.get();
       const value = field.formattedValue.get();
       const suggestions = use(SearchInputFieldContext);
       const { change } = useFieldActions<string>();
@@ -263,9 +269,9 @@ const SearchInputFieldControlTextBox =
                       aria-selected={index === activeIndex}
                       cursor="pointer"
                       width="100%"
-                      minHeight="$8xl"
+                      minHeight={getSized("$8xl") * getFormSizeScale(size)}
                       padding="$xs"
-                      paddingHorizontal="$2xl"
+                      paddingHorizontal={10 * getFormSizeScale(size)}
                       borderWidth={1}
                       borderColor={
                         index === activeIndex ? "$accent" : "transparent"
@@ -283,7 +289,11 @@ const SearchInputFieldControlTextBox =
                       justifyContent="center"
                       onMouseDown={preserveInputFocus}
                       onPress={() => handleSelect(suggestion)}>
-                      <Text textTransform="none">{suggestion}</Text>
+                      <Text
+                        fontSize={16 * getFormFontScale(size)}
+                        textTransform="none">
+                        {suggestion}
+                      </Text>
                     </View>
                   ))}
                 </div>

@@ -296,6 +296,11 @@ typography:
     fontSize: "1.125rem"
     fontWeight: "900"
     lineHeight: "1.1475"
+  body-xl:
+    fontFamily: Manrope
+    fontSize: "1.25rem"
+    fontWeight: "600"
+    lineHeight: "1.051875"
   body-lg:
     fontFamily: Manrope
     fontSize: "1.125rem"
@@ -309,6 +314,11 @@ typography:
   body-sm:
     fontFamily: Manrope
     fontSize: "0.875rem"
+    fontWeight: "400"
+    lineHeight: "1.1475"
+  body-xs:
+    fontFamily: Manrope
+    fontSize: "0.75rem"
     fontWeight: "400"
     lineHeight: "1.1475"
   code:
@@ -349,7 +359,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 242 color tokens, 14 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 242 color tokens, 16 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -608,9 +618,11 @@ Cyclone UI design tokens — 242 color tokens, 14 typography tokens, 28 spacing 
 - **eyebrow-lg:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.1475
 - **eyebrow-sm:** fontFamily: Manrope, fontSize: 1rem, fontWeight: 900, lineHeight: 1.1475
 - **button:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 900, lineHeight: 1.1475
+- **body-xl:** fontFamily: Manrope, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.051875
 - **body-lg:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.051875
 - **body-md:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.1475
 - **body-sm:** fontFamily: Manrope, fontSize: 0.875rem, fontWeight: 400, lineHeight: 1.1475
+- **body-xs:** fontFamily: Manrope, fontSize: 0.75rem, fontWeight: 400, lineHeight: 1.1475
 - **code:** fontFamily: Geist Mono, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.1475
 
 ## Layout
