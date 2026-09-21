@@ -145,6 +145,7 @@ devenv.local.nix
 .nx/migrate-runs
 
 .claude/worktrees
+.worktrees/
 
 .claude/settings.local.json
 
