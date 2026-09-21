@@ -250,9 +250,14 @@ typography:
     fontSize: "3.75rem"
     fontWeight: "400"
     lineHeight: "1.1475"
-  display-xl:
+  display-title:
     fontFamily: "Space Grotesk"
     fontSize: "3rem"
+    fontWeight: "400"
+    lineHeight: "1.051875"
+  display-xl:
+    fontFamily: "Space Grotesk"
+    fontSize: "1.875rem"
     fontWeight: "400"
     lineHeight: "1.051875"
   display-lg:
@@ -333,7 +338,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 241 color tokens, 11 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 241 color tokens, 12 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -582,7 +587,8 @@ Cyclone UI design tokens — 241 color tokens, 11 typography tokens, 28 spacing 
 ## Typography
 
 - **display-hero:** fontFamily: Space Grotesk, fontSize: 3.75rem, fontWeight: 400, lineHeight: 1.1475
-- **display-xl:** fontFamily: Space Grotesk, fontSize: 3rem, fontWeight: 400, lineHeight: 1.051875
+- **display-title:** fontFamily: Space Grotesk, fontSize: 3rem, fontWeight: 400, lineHeight: 1.051875
+- **display-xl:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 400, lineHeight: 1.051875
 - **display-lg:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 500, lineHeight: 0.95625
 - **display-md:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.051875
 - **display-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 700, lineHeight: 1.051875

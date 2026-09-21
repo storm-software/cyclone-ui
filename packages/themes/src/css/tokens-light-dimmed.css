@@ -555,7 +555,8 @@
   --ring-negative-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #8e223e20; /** The negative ring variant with a 3px offset */
   --ring-negative-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #8e223e20; /** The negative subtle ring variant with a 3px offset */
   --typography-display-hero: 400 3.75rem/1.1475 'Space Grotesk'; /** The display - hero typography variant */
-  --typography-display-xl: 400 3rem/1.051875 'Space Grotesk'; /** The display - extra large typography variant */
+  --typography-display-title: 400 3rem/1.051875 'Space Grotesk'; /** The display - extra large typography variant */
+  --typography-display-xl: 400 1.875rem/1.051875 'Space Grotesk'; /** The display - extra large typography variant */
   --typography-display-lg: 500 1.5rem/0.95625 'Space Grotesk'; /** The display - large typography variant */
   --typography-display-md: 700 1.25rem/1.051875 'Space Grotesk'; /** The display - medium typography variant */
   --typography-display-sm: 700 1.125rem/1.051875 'Space Grotesk'; /** The display - small typography variant */

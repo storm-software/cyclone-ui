@@ -4983,9 +4983,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.display-xl",
+      path: "typography.display-title",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-title",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,
@@ -10043,9 +10052,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.display-xl",
+      path: "typography.display-title",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-title",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,
@@ -15103,9 +15121,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.display-xl",
+      path: "typography.display-title",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-title",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,
@@ -20163,9 +20190,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.display-xl",
+      path: "typography.display-title",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-title",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,
@@ -25223,9 +25259,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.display-xl",
+      path: "typography.display-title",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-title",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,
@@ -30283,9 +30328,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.display-xl",
+      path: "typography.display-title",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-title",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,

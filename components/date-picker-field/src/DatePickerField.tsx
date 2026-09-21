@@ -25,7 +25,11 @@ import {
   type DatePickerMode,
   type DateSeparator
 } from "@cyclone-ui/date-picker";
-import { Field, useFieldVariant } from "@cyclone-ui/field";
+import {
+  Field,
+  useFieldShouldShowPlaceholder,
+  useFieldVariant
+} from "@cyclone-ui/field";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import type { MaskitoOptions, MaskitoPostprocessor } from "@maskito/core";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
@@ -338,6 +342,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         (mode === "range" ? getDateRangeFormat(separator) : DEFAULT_DATE_FORMAT)
     );
     const [inputValue, setInputValue] = useState(formattedValue);
+    const shouldShowPlaceholder = useFieldShouldShowPlaceholder(inputValue);
     const selectionRef = useRef<{ end: number; start: number } | null>(null);
     const selectedDates = useMemo(
       () =>
@@ -493,6 +498,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
           <DatePicker.TextBox.Value
             ref={ref as RefObject<HTMLInputElement>}
             {...props}
+            placeholder={shouldShowPlaceholder ? props.placeholder : undefined}
             value={inputValue}
             onKeyDown={handleKeyDown}
           />

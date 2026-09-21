@@ -1104,7 +1104,7 @@ const displaySmFont = createFont({
   }
 });
 
-const displayXlFont = createFont({
+const displayTitleFont = createFont({
   family: "Space Grotesk",
   size: {
     "4xl": 48,
@@ -1117,6 +1117,24 @@ const displayXlFont = createFont({
   },
   weight: {
     "4xl": "400",
+    normal: "400",
+    true: "400"
+  }
+});
+
+const displayXlFont = createFont({
+  family: "Space Grotesk",
+  size: {
+    "2xl": 30,
+    true: 30
+  },
+  lineHeight: {
+    "2xl": 31.556,
+    snug: 31.556,
+    true: 31.556
+  },
+  weight: {
+    "2xl": "400",
     normal: "400",
     true: "400"
   }
@@ -1257,6 +1275,7 @@ export const config = createTamagui({
     "display-lg": displayLgFont,
     "display-md": displayMdFont,
     "display-sm": displaySmFont,
+    "display-title": displayTitleFont,
     "display-xl": displayXlFont,
     eyebrow: eyebrowFont
    },

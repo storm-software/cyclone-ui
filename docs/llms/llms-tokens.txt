@@ -636,7 +636,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
 | `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
 | `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
-| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-title` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 
 ## Z Index
@@ -1291,7 +1292,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
 | `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
 | `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
-| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-title` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 
 ## Z Index
@@ -1946,7 +1948,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
 | `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
 | `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
-| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-title` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 
 ## Z Index
@@ -2601,7 +2604,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
 | `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
 | `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
-| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-title` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 
 ## Z Index
@@ -3256,7 +3260,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
 | `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
 | `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
-| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-title` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 
 ## Z Index
@@ -3911,7 +3916,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
 | `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
 | `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
-| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-title` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
+| `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 
 ## Z Index

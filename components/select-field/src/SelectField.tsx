@@ -16,7 +16,11 @@
 
  ------------------------------------------------------------------- */
 
-import { Field, useFieldVariant } from "@cyclone-ui/field";
+import {
+  Field,
+  useFieldShouldShowPlaceholder,
+  useFieldVariant
+} from "@cyclone-ui/field";
 import { Select } from "@cyclone-ui/select";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import type { SelectOption } from "@stryke/types/form";
@@ -72,6 +76,7 @@ const SelectFieldControl = Select.styleable<
   const initialValue = field.initialValue.get();
   const displayValue = formattedValue || String(value ?? initialValue ?? "");
   const variant = useFieldVariant(placeholder);
+  const shouldShowPlaceholder = useFieldShouldShowPlaceholder(displayValue);
 
   const selectRef = useFieldRef();
   useLayoutEffect(() => {
@@ -96,9 +101,9 @@ const SelectFieldControl = Select.styleable<
         {children}
         <Select.TextBox.Value
           ref={selectRef}
-          placeholder={displayValue ? undefined : placeholder}
-          placeholding={!displayValue}>
-          {displayValue}
+          placeholder={shouldShowPlaceholder ? placeholder : undefined}
+          placeholding={shouldShowPlaceholder}>
+          {shouldShowPlaceholder ? placeholder : displayValue}
         </Select.TextBox.Value>
 
         <Field.ThemeIcon position="end" render="span" role={undefined} />

@@ -11,7 +11,7 @@
       "body": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.6}",
+        "$value": "{color.neutral.7}",
         "$description": "Default text and icon color for standard content."
       },
       "subtle": {

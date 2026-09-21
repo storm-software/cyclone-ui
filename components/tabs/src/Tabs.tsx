@@ -470,19 +470,21 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
         {...rest}>
         {variant !== "tabbed" && (
           <>
-            <TabsRovingIndicatorImpl
-              width={intentAt?.width ?? 0}
-              height={intentAt?.height ?? 0}
-              x={intentAt?.x ?? 0}
-              y={intentAt?.y ?? 0}
-              opacity={0}
-              orientation={orientation}
-              variant={variant}
-              $group-tabs-hover={{
-                intent: Boolean(intentAt),
-                opacity: intentAt ? 1 : 0
-              }}
-            />
+            {variant !== "floating" && (
+              <TabsRovingIndicatorImpl
+                width={intentAt?.width ?? 0}
+                height={intentAt?.height ?? 0}
+                x={intentAt?.x ?? 0}
+                y={intentAt?.y ?? 0}
+                opacity={0}
+                orientation={orientation}
+                variant={variant}
+                $group-tabs-hover={{
+                  intent: Boolean(intentAt),
+                  opacity: intentAt ? 1 : 0
+                }}
+              />
+            )}
             <AnimatePresence>
               {activeAt && (
                 <TabsRovingIndicatorImpl

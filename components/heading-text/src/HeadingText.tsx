@@ -35,6 +35,12 @@ export const HeadingHeroText = styled(BaseHeadingText, {
   fontFamily: "$display-hero"
 });
 
+export const HeadingTitleText = styled(BaseHeadingText, {
+  name: "HeadingTitleText",
+  render: "h1",
+  fontFamily: "$display-title"
+});
+
 export const HeadingExtraLargeText = styled(BaseHeadingText, {
   name: "HeadingExtraLargeText",
   render: "h2",
@@ -62,7 +68,7 @@ export const HeadingSmallText = styled(BaseHeadingText, {
 export type HeadingTextProps = GetProps<typeof BaseHeadingText>;
 
 export const HeadingText = BaseHeadingText.styleable<{
-  level?: 1 | 2 | 3 | 4 | 5 | "hero" | "xl" | "lg" | "md" | "sm";
+  level?: 1 | 2 | 3 | 4 | 5 | "hero" | "title" | "xl" | "lg" | "md" | "sm";
 }>(
   ({ children, level, ...props }, forwardedRef) => {
     if (level === 1 || level === "hero") {
@@ -70,6 +76,12 @@ export const HeadingText = BaseHeadingText.styleable<{
         <HeadingHeroText ref={forwardedRef} {...props}>
           {children}
         </HeadingHeroText>
+      );
+    } else if (level === "title") {
+      return (
+        <HeadingTitleText ref={forwardedRef} {...props}>
+          {children}
+        </HeadingTitleText>
       );
     } else if (level === 2 || level === "xl") {
       return (

@@ -66,15 +66,19 @@ export type FieldVariant = "default" | "floating" | "underline";
 
 interface FieldPresentationContextValue {
   variant: FieldVariant;
+  hasLabel: boolean;
   hasPlaceholder: boolean;
   hasValidationMessage: boolean;
+  setHasLabel: (hasLabel: boolean) => void;
   setHasPlaceholder: (hasPlaceholder: boolean) => void;
 }
 
 const FieldPresentationContext = createContext<FieldPresentationContextValue>({
   variant: "default",
+  hasLabel: false,
   hasPlaceholder: false,
   hasValidationMessage: false,
+  setHasLabel: () => undefined,
   setHasPlaceholder: () => undefined
 });
 
@@ -104,6 +108,17 @@ export const useFieldVariant = (
 
 export const useFieldHasValidationMessage = () =>
   use(FieldPresentationContext).hasValidationMessage;
+
+export const useFieldShouldShowPlaceholder = (value: unknown) => {
+  const field = FieldApi.use();
+  const focused = field.focused.get();
+  const { variant, hasLabel } = use(FieldPresentationContext);
+  const hasValue = value !== undefined && value !== null && value !== "";
+
+  return (
+    variant !== "floating" || (!hasValue && (!hasLabel || Boolean(focused)))
+  );
+};
 
 const FieldDetailsContext = createContext<ReactNode>(null);
 const FieldDetailsSetterContext = createContext<(details: ReactNode) => void>(
@@ -299,15 +314,18 @@ export type FieldProps<TFieldValue = any> =
 const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
   (props, forwardedRef) => {
     const { children, variant = "default", ...rest } = props;
+    const [hasLabel, setHasLabel] = useState(false);
     const [hasPlaceholder, setHasPlaceholder] = useState(false);
     const presentation = useMemo(
       () => ({
         variant,
+        hasLabel,
         hasPlaceholder,
         hasValidationMessage: false,
+        setHasLabel,
         setHasPlaceholder
       }),
-      [variant, hasPlaceholder]
+      [variant, hasLabel, hasPlaceholder]
     );
 
     return (
@@ -640,14 +658,18 @@ const FieldLabel = FieldLabelText.styleable<{
     const required = field.required.get();
     const focused = field.focused.get();
     const formattedValue = field.formattedValue.get();
-    const { variant, hasPlaceholder } = use(FieldPresentationContext);
+    const { variant, setHasLabel } = use(FieldPresentationContext);
     const hasValue =
       formattedValue !== undefined &&
       formattedValue !== null &&
       formattedValue !== "";
-    const floating =
-      variant === "floating" &&
-      (hasPlaceholder || hasValue || Boolean(focused));
+    const floating = variant === "floating" && (hasValue || Boolean(focused));
+
+    useLayoutEffect(() => {
+      setHasLabel(true);
+
+      return () => setHasLabel(false);
+    }, [setHasLabel]);
 
     return (
       <FieldLabelTextImpl

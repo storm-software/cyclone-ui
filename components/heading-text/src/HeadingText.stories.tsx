@@ -45,27 +45,39 @@ export const Base: Story = {
   args: {}
 };
 
+export const HeadingHero: Story = {
+  args: {
+    level: "hero"
+  }
+};
+
+export const HeadingTitle: Story = {
+  args: {
+    level: "title"
+  }
+};
+
 export const HeadingExtraLarge: Story = {
   args: {
-    level: 1
+    level: "xl"
   }
 };
 
 export const HeadingLarge: Story = {
   args: {
-    level: 2
+    level: "lg"
   }
 };
 
 export const HeadingMedium: Story = {
   args: {
-    level: 3
+    level: "md"
   }
 };
 
 export const HeadingSmall: Story = {
   args: {
-    level: 4
+    level: "sm"
   }
 };
 

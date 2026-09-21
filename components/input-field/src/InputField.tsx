@@ -16,7 +16,11 @@
 
  ------------------------------------------------------------------- */
 
-import { Field, useFieldVariant } from "@cyclone-ui/field";
+import {
+  Field,
+  useFieldShouldShowPlaceholder,
+  useFieldVariant
+} from "@cyclone-ui/field";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { Theme, useComposedRefs, withStaticProperties } from "@tamagui/core";
@@ -133,6 +137,7 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
     const formattedValue = field.formattedValue.get();
     const textBox = use(InputFieldTextBoxContext);
     useFieldVariant(props.placeholder);
+    const shouldShowPlaceholder = useFieldShouldShowPlaceholder(formattedValue);
 
     const { mount } = useFieldActions();
     const inputRef = useFieldRef(
@@ -145,7 +150,12 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
 
     return (
       <Theme name={theme}>
-        <Input.TextBox.Value ref={inputRef} {...props} value={formattedValue} />
+        <Input.TextBox.Value
+          ref={inputRef}
+          {...props}
+          placeholder={shouldShowPlaceholder ? props.placeholder : undefined}
+          value={formattedValue}
+        />
       </Theme>
     );
   }

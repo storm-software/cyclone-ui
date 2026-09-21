@@ -56,7 +56,7 @@ const TableContext = createStyledContext<TableContextProps>({
   sizing: "fixed",
   alignHeaderCells: { x: "start", y: "center" },
   alignCells: { x: "center", y: "center" },
-  borderColor: "$accent"
+  borderColor: "$hairline"
 });
 
 export const TABLE_NAME = "Table";
@@ -70,7 +70,7 @@ const TableRow = styled(ThemeableStack, {
 
   flexDirection: "row",
   borderWidth: 0,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   borderStyle: "solid",
   justifyContent: "flex-start",
   position: "relative",
@@ -113,7 +113,7 @@ const TableRowImpl = TableRow.styleable(
   ({ children, header = false, ...props }, forwardRef) => {
     const { sizing } = TableContext.useStyledContext();
     const rowChildren = header
-      ? Children.toArray(children).map((child, index, childrenArray) => {
+      ? Children.toArray(children).map(async (child, index, childrenArray) => {
           if (
             !isValidElement<GetProps<typeof TableHeaderCell>>(child) ||
             child.type !== TableHeaderCell
@@ -176,7 +176,7 @@ const TableCell = styled(ThemeableStack, {
   flexShrink: 1,
   borderWidth: 0,
   borderBottomWidth: 1,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   justifyContent: "flex-start",
   paddingHorizontal: "$xl",
   boxShadow: "none",
@@ -236,7 +236,7 @@ const TableHeaderCell = styled(ThemeableStack, {
   flexShrink: 1,
   borderWidth: 0,
   borderBottomWidth: 1,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   justifyContent: "flex-start",
   paddingVertical: "$md",
   paddingHorizontal: "$sm",
@@ -403,7 +403,7 @@ const TableFrame = styled(ThemeableStack, {
   render: "table",
 
   borderWidth: 1,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   borderRadius: "$container",
   borderStyle: "solid",
   maxWidth: "100%",
