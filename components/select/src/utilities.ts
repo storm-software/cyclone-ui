@@ -55,6 +55,17 @@ const DEFAULT_SELECT_SIZE = 42;
 const scaleSelectMetric = (value: number, scale: number, minimum = 1): number =>
   Math.max(minimum, Math.round(value * scale));
 
+export const shouldCenterSelectItemText = (
+  viewportWidth: number,
+  narrowViewportWidth: number,
+  hasItemAdornment: boolean
+) => viewportWidth < narrowViewportWidth && !hasItemAdornment;
+
+export const getSelectVisualFocus = (
+  focused: boolean | undefined,
+  open: boolean
+) => Boolean(focused) || open;
+
 export const getSelectContentSize = (val: SizeTokens | number = "$true") => {
   const size = val === "$true" || String(val) === "true" ? "$10xl" : val;
   const scale = getSized(size) / DEFAULT_SELECT_SIZE;

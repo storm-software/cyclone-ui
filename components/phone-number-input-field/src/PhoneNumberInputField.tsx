@@ -215,7 +215,7 @@ const CountryListItem = memo(
       <View position="relative" paddingVertical="$xl">
         <Button
           variant="ghost"
-          bordered={false}
+          noPadding={true}
           animate={false}
           width="100%"
           height="auto"
@@ -242,8 +242,7 @@ const CountryListItem = memo(
               render="span"
               aria-hidden={true}
               flexShrink={0}
-              minWidth="$4xl"
-              fontSize="$xl">
+              minWidth="$4xl">
               {country.flag}
             </BodyText>
             {showCountryName && (

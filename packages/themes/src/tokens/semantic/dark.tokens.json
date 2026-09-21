@@ -5,19 +5,19 @@
       "emphasis": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.2}",
+        "$value": "{color.neutral.3}",
         "$description": "Primary text and icon color for high-emphasis content."
       },
       "body": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.7}",
+        "$value": "{color.neutral.6}",
         "$description": "Default text and icon color for standard content."
       },
       "subtle": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.8}",
+        "$value": "{color.neutral.9}",
         "$description": "Text and icon color for supporting content."
       }
     },
@@ -69,7 +69,7 @@
     "hairline": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.8}",
+      "$value": "{color.neutral.9}",
       "$description": "Subtle color for hairline borders and separators."
     },
     "accent": {

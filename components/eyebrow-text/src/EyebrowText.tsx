@@ -25,9 +25,24 @@ export const EyebrowText = styled(SizableText, {
   render: "h5",
 
   color: "$inkSubtle",
-  fontFamily: "$eyebrow",
+  fontFamily: "$eyebrow-lg",
   size: "$true",
-  textTransform: "uppercase"
+  textTransform: "uppercase",
+
+  variants: {
+    variant: {
+      lg: {
+        fontFamily: "$eyebrow-lg"
+      },
+      sm: {
+        fontFamily: "$eyebrow-sm"
+      }
+    }
+  },
+
+  defaultVariants: {
+    variant: "lg"
+  }
 });
 
 export type EyebrowTextProps = GetProps<typeof EyebrowText>;

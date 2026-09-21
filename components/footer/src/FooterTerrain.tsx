@@ -154,7 +154,7 @@ export const FooterTerrain = ({ animate = true }: { animate?: boolean }) => {
         <Path
           d={animate ? path : terrainPath}
           fill="none"
-          stroke={getVariableValue(theme.foreground, "color")}
+          stroke={getVariableValue(theme.accent, "color")}
           strokeWidth={0.7}
           strokeOpacity={0.1}
         />

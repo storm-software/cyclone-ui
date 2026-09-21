@@ -18,6 +18,7 @@
 
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Search } from "@tamagui/lucide-icons-2";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { InputField } from "./InputField";
 
@@ -150,6 +151,55 @@ export const Floating: Story = {
 export const FloatingWithPlaceholder: Story = {
   args: {
     variant: "floating"
+  }
+};
+
+export const FloatingWithStartIcon: Story = {
+  args: {
+    variant: "floating"
+  },
+  render: props => (
+    <Form name="formName" initialValues={{ inputFieldName: "" }}>
+      <InputField name="inputFieldName" {...props}>
+        <InputField.Label>Search</InputField.Label>
+        <InputField.Control>
+          <InputField.Control.TextBox>
+            <InputField.Icon position="start" aria-label="Search icon">
+              <Search aria-hidden={true} />
+            </InputField.Icon>
+            <InputField.Control.TextBox.Value />
+          </InputField.Control.TextBox>
+        </InputField.Control>
+      </InputField>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+    const label = canvas.getByText("Search").closest("label");
+    const inputTextLeft =
+      input.getBoundingClientRect().left +
+      Number.parseFloat(getComputedStyle(input).paddingLeft);
+
+    await expect(label).not.toBeNull();
+    await waitFor(async () => {
+      await expect(
+        Math.abs(label!.getBoundingClientRect().left - inputTextLeft)
+      ).toBeLessThan(2);
+    });
+
+    await userEvent.click(input);
+    await waitFor(async () => {
+      await expect(
+        Math.abs(label!.getBoundingClientRect().left - inputTextLeft)
+      ).toBeLessThan(2);
+    });
+  }
+};
+
+export const Normal: Story = {
+  args: {
+    variant: "normal"
   }
 };
 

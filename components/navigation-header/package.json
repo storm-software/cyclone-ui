@@ -18,6 +18,7 @@
   "dependencies": {
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/eyebrow-text": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/lucide-icons-2": "catalog:"
   },

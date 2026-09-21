@@ -19,7 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Container } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
-import { HeadingLargeText } from "@cyclone-ui/heading-text";
+import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
 import { getSpaced } from "@cyclone-ui/helpers";
 import { Link } from "@cyclone-ui/link";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
@@ -115,7 +115,7 @@ const CardBackgroundGradient = styled(LinearGradient, {
   end: [1.0, 1.0],
 
   "$group-card-hover": {
-    opacity: 0.25
+    opacity: 0.1
   }
 });
 
@@ -237,7 +237,7 @@ const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
   );
 };
 
-const CardHeading = styled(HeadingLargeText, {
+const CardHeading = styled(HeadingExtraLargeText, {
   name: "CardHeading",
   context: CardContext,
 
@@ -267,7 +267,7 @@ const CardEyebrow = styled(EyebrowText, {
   context: CardContext,
 
   zIndex: "$20",
-  color: "$muted"
+  color: "$inkBody"
 });
 
 const CardEyebrowImpl = CardEyebrow.styleable(
@@ -353,7 +353,7 @@ const CardLinkImpl = Link.styleable(
             x: 10
           }}>
           <CardLinkArrowRight
-            size="$7xl"
+            height="$4xl"
             $group-card-hover={{
               color: "$accentHover"
             }}

@@ -461,6 +461,16 @@ const THEME_COLOR_STATE_ACTIVE: ColorStateVariant = {
   brightness: 1.1125
 };
 
+const REDUCED_BASE_COLOR_STATE_ACTIVE: ColorStateVariant = {
+  name: "active",
+  brightness: 1.105
+};
+
+const REDUCED_THEME_COLOR_STATE_ACTIVE: ColorStateVariant = {
+  name: "active",
+  brightness: 1.07875
+};
+
 const COLOR_STATE_INACTIVE: ColorStateVariant = {
   name: "inactive",
   brightness: 0.8
@@ -468,7 +478,7 @@ const COLOR_STATE_INACTIVE: ColorStateVariant = {
 
 const BASE_COLOR_STATE_INACTIVE: ColorStateVariant = {
   name: "inactive",
-  brightness: 0.8,
+  brightness: 0.6,
   useBaseThemePrimitive: true
 };
 
@@ -506,6 +516,16 @@ const ACCENT_COLOR_STATE_VARIANTS: ThemeColorStateVariants = {
   ]
 };
 
+const MUTED_COLOR_STATE_VARIANTS: ThemeColorStateVariants = {
+  base: [
+    COLOR_STATE_HOVER,
+    REDUCED_BASE_COLOR_STATE_ACTIVE,
+    BASE_COLOR_STATE_INACTIVE,
+    COLOR_STATE_DISABLED
+  ],
+  theme: ACCENT_COLOR_STATE_VARIANTS.theme
+};
+
 const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
   surface: {
     base: BASE_COLOR_STATE_VARIANTS,
@@ -518,7 +538,7 @@ const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
   },
   accent: ACCENT_COLOR_STATE_VARIANTS,
   "on-accent": ACCENT_COLOR_STATE_VARIANTS,
-  muted: ACCENT_COLOR_STATE_VARIANTS,
+  muted: MUTED_COLOR_STATE_VARIANTS,
   "on-muted": ACCENT_COLOR_STATE_VARIANTS
 };
 
@@ -534,10 +554,14 @@ const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
     ]
   },
   hairline: {
-    base: BASE_COLOR_STATE_TOKEN_VARIANTS,
+    base: [
+      COLOR_STATE_HOVER,
+      REDUCED_BASE_COLOR_STATE_ACTIVE,
+      BASE_COLOR_STATE_INACTIVE
+    ],
     theme: [
       THEME_COLOR_STATE_HOVER,
-      THEME_COLOR_STATE_ACTIVE,
+      REDUCED_THEME_COLOR_STATE_ACTIVE,
       COLOR_STATE_INACTIVE
     ]
   }

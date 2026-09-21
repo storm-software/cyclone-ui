@@ -421,6 +421,35 @@ describe("tamaguiPreprocessor", () => {
     });
   });
 
+  it("reduces hairline and base muted active brightness by 30 percent", () => {
+    const baseResult = tamaguiPreprocessor({
+      color: {
+        hairline: colorToken("#333333", "base"),
+        muted: {
+          base: colorToken("#333333", "base")
+        }
+      }
+    }) as any;
+    const themeResult = tamaguiPreprocessor({
+      color: {
+        hairline: colorToken("#333333", "brand"),
+        muted: { brand: colorToken("#333333", "brand") }
+      }
+    }) as any;
+
+    expect({
+      hairlineBase: baseResult.color["hairline-active"].$description,
+      hairlineTheme: themeResult.color["hairline-active"].$description,
+      mutedBase: baseResult.color.muted["base-active"].$description,
+      mutedTheme: themeResult.color.muted["brand-active"].$description
+    }).toEqual({
+      hairlineBase: "active state at 10% brighter",
+      hairlineTheme: "active state at 8% brighter",
+      mutedBase: "active state at 10% brighter",
+      mutedTheme: "active state at 11% brighter"
+    });
+  });
+
   it("directs state brightness from the dark or light parent theme", () => {
     const themedColor = colorToken("#777777", "base");
     const result = tamaguiPreprocessor({

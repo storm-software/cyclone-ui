@@ -1254,6 +1254,9 @@ importers:
 
   components/badge:
     dependencies:
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@tamagui/core':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -2808,6 +2811,9 @@ importers:
 
   components/navigation-header:
     dependencies:
+      '@cyclone-ui/eyebrow-text':
+        specifier: workspace:*
+        version: link:../eyebrow-text
       '@cyclone-ui/heading-text':
         specifier: workspace:*
         version: link:../heading-text
@@ -13210,8 +13216,8 @@ packages:
   '@yuku-toolchain/types@0.8.7':
     resolution: {integrity: sha512-2Z53dNxAJL6UvFoIrDZvYf3zlO8s4VJK4O2hhaB4mXVwwpX/7ajtss3cmfqKvamlNLWyt9FSWs4eoYdlbxpnHA==}
 
-  '@zip.js/zip.js@2.15.0':
-    resolution: {integrity: sha512-hYAuHAaWjt0axbofaDL5XUlmrQPsBDcK3f45ApZuh6N+8UGVk26GoGdtGDvcvzahsHytTQ6DtBVXwG9IcCMjjQ==}
+  '@zip.js/zip.js@2.16.0':
+    resolution: {integrity: sha512-D2DZ0Gdn4TP0HlIERuLLRyzKd65C7YUqxF2A6tpthM9TAcWBE+oWGvN52tJ12smenv6vo9J2tXVX4Obzh6skuA==}
     engines: {bun: '>=0.7.0', deno: '>=1.0.0', node: '>=18.0.0'}
 
   '@zkochan/js-yaml@0.0.7':
@@ -41986,7 +41992,7 @@ snapshots:
 
   '@yuku-toolchain/types@0.8.7': {}
 
-  '@zip.js/zip.js@2.15.0': {}
+  '@zip.js/zip.js@2.16.0': {}
 
   '@zkochan/js-yaml@0.0.7':
     dependencies:
@@ -55553,7 +55559,7 @@ snapshots:
       '@bundled-es-modules/deepmerge': 4.3.2
       '@bundled-es-modules/glob': 13.0.6
       '@bundled-es-modules/memfs': 4.17.0
-      '@zip.js/zip.js': 2.15.0
+      '@zip.js/zip.js': 2.16.0
       chalk: 5.6.2
       change-case: 5.4.4
       colorjs.io: 0.5.2

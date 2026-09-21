@@ -27,8 +27,15 @@ import {
 } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
-import type { KeyboardEvent, ReactNode } from "react";
-import { useState } from "react";
+import {
+  cloneElement,
+  createContext,
+  isValidElement,
+  useContext,
+  useState,
+  type KeyboardEvent,
+  type ReactNode
+} from "react";
 
 const FileTreeFrame = styled(YStack, {
   name: "FileTree",
@@ -37,7 +44,7 @@ const FileTreeFrame = styled(YStack, {
   gap: "$lg",
   padding: "$5xl",
   borderWidth: 1,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   borderRadius: "$container",
   backgroundColor: "$surfaceElevated"
 });
@@ -46,12 +53,10 @@ const TreeNode = styled(XStack, {
   name: "FileTreeNode",
   alignItems: "center",
   minHeight: "$7xl",
-  gap: "$lg",
+  gap: "$xl",
   paddingHorizontal: "$lg",
   paddingVertical: "$xs",
   borderRadius: "$sm",
-  color: "$inkSubtle",
-
   hoverStyle: { backgroundColor: "$mutedHover" },
 
   focusVisibleStyle: {
@@ -63,7 +68,6 @@ const TreeNode = styled(XStack, {
 
 const TreeLabel = styled(SizableText, {
   name: "FileTreeLabel",
-  color: "$accent",
   fontFamily: "$code",
   size: "$true"
 });
@@ -74,19 +78,22 @@ const TreeChildren = styled(YStack, {
   marginLeft: "$2xl",
   paddingLeft: "$2xl",
   borderLeftWidth: 1,
-  borderLeftColor: "$accent",
+  borderLeftColor: "$hairline",
   gap: "$lg"
 });
 
-const defaultFileIcon = <FileIcon aria-hidden color="$inkSubtle" size="$2xl" />;
+const FileTreeOpenContext = createContext(false);
 
-const defaultFolderIcon = (
-  <FolderIcon aria-hidden color="$inkSubtle" size="$2xl" />
-);
+const defaultFileIcon = <FileIcon aria-hidden size="$2xl" />;
 
-const defaultFolderOpenIcon = (
-  <FolderOpenIcon aria-hidden color="$accent" size="$2xl" />
-);
+const defaultFolderIcon = <FolderIcon aria-hidden size="$2xl" />;
+
+const defaultFolderOpenIcon = <FolderOpenIcon aria-hidden size="$2xl" />;
+
+const getTreeIcon = (icon: ReactNode, color: string): ReactNode =>
+  isValidElement<{ color?: string }>(icon)
+    ? cloneElement(icon, { color })
+    : icon;
 
 export type FileTreeProps = GetProps<typeof FileTreeFrame>;
 
@@ -101,12 +108,21 @@ export interface FileProps {
 }
 
 /** Leaf in FileTree. */
-export const File = ({ name, icon = defaultFileIcon }: FileProps) => (
-  <TreeNode role="treeitem">
-    {icon}
-    <TreeLabel>{name}</TreeLabel>
-  </TreeNode>
-);
+export const File = ({ name, icon = defaultFileIcon }: FileProps) => {
+  const parentOpen = useContext(FileTreeOpenContext);
+  const [hovered, setHovered] = useState(false);
+  const color = hovered || parentOpen ? "$accent" : "$inkSubtle";
+
+  return (
+    <TreeNode
+      role="treeitem"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}>
+      {getTreeIcon(icon, color)}
+      <TreeLabel color={color}>{name}</TreeLabel>
+    </TreeNode>
+  );
+};
 
 export interface FolderProps {
   /** Folder name displayed in tree. */
@@ -129,7 +145,10 @@ export const Folder = ({
   icon = defaultFolderIcon,
   openIcon
 }: FolderProps) => {
+  const parentOpen = useContext(FileTreeOpenContext);
   const [open, setOpen] = useState(defaultOpen);
+  const [hovered, setHovered] = useState(false);
+  const color = open || hovered || parentOpen ? "$accent" : "$inkSubtle";
 
   const toggle = () => setOpen(value => !value);
   const onKeyDown = (event: KeyboardEvent<HTMLElement>) => {
@@ -147,23 +166,34 @@ export const Folder = ({
         tabIndex={0}
         cursor="pointer"
         onPress={toggle}
-        onKeyDown={onKeyDown}>
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onKeyDown={event =>
+          onKeyDown(event as unknown as KeyboardEvent<HTMLElement>)
+        }>
         <ChevronRight
           transition="400ms"
           aria-hidden
-          color={open ? "$accent" : "$inkSubtle"}
+          color={color}
           size="$lg"
           rotate={open ? "90deg" : "0deg"}
         />
         <XStack
           aria-hidden
           data-file-tree-folder-icon={open ? "open" : "closed"}>
-          {open ? (openIcon ?? defaultFolderOpenIcon) : icon}
+          {getTreeIcon(
+            open ? (openIcon ?? defaultFolderOpenIcon) : icon,
+            color
+          )}
         </XStack>
-        <TreeLabel>{name}</TreeLabel>
+        <TreeLabel color={color}>{name}</TreeLabel>
       </TreeNode>
       <AnimatePresence>
-        {open ? <TreeChildren>{children}</TreeChildren> : null}
+        {open ? (
+          <FileTreeOpenContext.Provider value={open || parentOpen}>
+            <TreeChildren>{children}</TreeChildren>
+          </FileTreeOpenContext.Provider>
+        ) : null}
       </AnimatePresence>
     </YStack>
   );

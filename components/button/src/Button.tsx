@@ -707,13 +707,17 @@ const hoverColorForVariant = (
     return "$accentDisabled";
   }
 
-  if (variant === "ghost" || isReverseCascadeVariant(variant)) {
+  if (
+    variant === "ghost" ||
+    (variant === "subtle" && themeName?.endsWith("base")) ||
+    isReverseCascadeVariant(variant)
+  ) {
     return "$accent";
   }
 
   if (
     variant === "inverse" ||
-    (variant === "subtle" && !themeName?.endsWith("base")) ||
+    variant === "subtle" ||
     isCascadeVariant(variant)
   ) {
     return "$onAccent";

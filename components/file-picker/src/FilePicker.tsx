@@ -308,12 +308,10 @@ const FilePickerTrigger = YStack.styleable(
         {files.length === 0 && (
           <Upload
             size="$9xl"
-            color={
-              disabled ? "$accentDisabled" : active ? "$hairline" : "$accent"
-            }
+            color={disabled ? "$inkSubtleDisabled" : "$inkSubtle"}
             $group-file-picker-hover={{
               color: disabled
-                ? "$accentDisabled"
+                ? "$inkSubtleDisabled"
                 : active
                   ? "$hairlineHover"
                   : "$accentHover"
@@ -402,14 +400,12 @@ const FilePickerViewLink = ({
   if (uri) {
     return (
       <Link
-        fontSize="$xl"
-        fontWeight="$true"
         width="100%"
         textAlign="center"
         {...props}
         href={uri}
         target="_blank">
-        <HeadingSmallText>{children}</HeadingSmallText>
+        {children}
       </Link>
     );
   }
@@ -447,7 +443,7 @@ const FilePickerFile = ({
     <View
       group={"file" as any}
       flexDirection="column"
-      transition="100ms"
+      transition="200ms"
       opacity={1}
       scale={1}
       height={100}
@@ -473,7 +469,7 @@ const FilePickerFile = ({
       onClick={event => event.stopPropagation()}
       onPress={event => event.stopPropagation()}>
       <View
-        transition="100ms"
+        transition="200ms"
         position="absolute"
         top={0}
         bottom={0}
@@ -519,7 +515,7 @@ const FilePickerFile = ({
 
       {!disabled && (
         <View
-          transition="100ms"
+          transition="200ms"
           position="absolute"
           zIndex="$30"
           right={16}
@@ -544,7 +540,7 @@ const FilePickerFile = ({
       )}
 
       <View
-        transition="100ms"
+        transition="200ms"
         position="absolute"
         zIndex="$20"
         top={0}

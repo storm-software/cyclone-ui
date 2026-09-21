@@ -7,7 +7,7 @@
         "punctuation.definition.comment"
       ],
       "settings": {
-        "foreground": "{color.neutral.8}",
+        "foreground": "{color.neutral.9}",
         "fontStyle": "italic"
       }
     },
@@ -92,7 +92,7 @@
         "meta.brace"
       ],
       "settings": {
-        "foreground": "{color.neutral.8}"
+        "foreground": "{color.neutral.9}"
       }
     },
     {
@@ -107,18 +107,18 @@
   ],
   "displayName": "Cyclone Light",
   "type": "darkDimmed",
-  "fg": "{color.neutral.2}",
+  "fg": "{color.neutral.3}",
   "bg": "{color.neutral.14}",
   "colors": {
     "editor.background": "{color.neutral.14}",
-    "editor.foreground": "{color.neutral.2}",
+    "editor.foreground": "{color.neutral.3}",
     "editorCursor.foreground": "{color.blue.5}",
     "editor.selectionBackground": "#258069",
     "editor.inactiveSelectionBackground": "{color.black}",
-    "editorLineNumber.foreground": "{color.neutral.8}",
+    "editorLineNumber.foreground": "{color.neutral.9}",
     "editorLineNumber.activeForeground": "{color.neutral.6}",
-    "editorIndentGuide.background1": "{color.neutral.8}",
-    "editorIndentGuide.activeBackground1": "{color.neutral.8}",
-    "editorWhitespace.foreground": "{color.neutral.8}"
+    "editorIndentGuide.background1": "{color.neutral.9}",
+    "editorIndentGuide.activeBackground1": "{color.neutral.9}",
+    "editorWhitespace.foreground": "{color.neutral.9}"
   }
 }

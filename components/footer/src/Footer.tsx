@@ -53,7 +53,7 @@ const FooterContainer = styled(View, {
   width: "100%",
   maxWidth: 1440,
   marginHorizontal: "auto",
-  paddingTop: 280,
+  paddingTop: 300,
   paddingHorizontal: "$4xl",
   paddingBottom: "$7xl",
   gap: "$10xl",
@@ -244,7 +244,7 @@ const FooterCopyright = styled(BodyText, {
   render: "span",
 
   color: "$accent",
-  fontSize: "$xs",
+  fontSize: "$md",
   opacity: 0.85
 });
 

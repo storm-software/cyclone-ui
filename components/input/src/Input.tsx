@@ -210,6 +210,10 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
     );
     const underlineActive = focused || locallyActive;
     const hasValidationMessage = useFieldHasValidationMessage();
+    const idleColor = hasValidationMessage ? "$accent" : "$hairline";
+    const focusColor = hasValidationMessage
+      ? "$accentActive"
+      : "$hairlineActive";
 
     return (
       <InputContext.Provider
@@ -231,11 +235,20 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
           focused={focused}
           hasValidationMessage={hasValidationMessage}
           disabled={disabled}
+          borderColor={focused ? focusColor : idleColor}
+          focusVisibleStyle={{
+            boxShadow: variant === "underline" ? "none" : "$ringOffset",
+            borderColor: focusColor
+          }}
           onFocus={handleFocus}
           onBlur={handleBlur}
           transition="200ms"
           $group-field-hover={{
-            borderColor: "$accentHover"
+            borderColor: disabled
+              ? "$accentDisabled"
+              : focused
+                ? focusColor
+                : "$accentHover"
           }}>
           {children}
           {variant === "underline" && (
@@ -243,6 +256,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
               bottom={-1}
               focused={underlineActive}
               disabled={disabled}
+              backgroundColor={disabled ? "$accentDisabled" : focusColor}
             />
           )}
         </InputGroup>
@@ -280,7 +294,7 @@ const InputSeparator = styled(View, {
     },
 
     hasValidationMessage: {
-      true: { borderColor: "$hairlineActive" }
+      true: { borderColor: "$accent" }
     },
 
     variant: {
@@ -321,6 +335,11 @@ const InputSeparatorImpl = InputSeparator.styleable(
   (props, forwardedRef) => {
     const { disabled, focused, hasValidationMessage } =
       InputContext.useStyledContext();
+    const idleColor = hasValidationMessage ? "$accent" : "$hairline";
+    const focusColor = hasValidationMessage
+      ? "$accentActive"
+      : "$hairlineActive";
+    const hoverColor = hasValidationMessage ? "$accentHover" : "$hairlineHover";
 
     return (
       <XGroup.Item>
@@ -330,9 +349,10 @@ const InputSeparatorImpl = InputSeparator.styleable(
             borderColor: disabled
               ? "$hairlineInactive"
               : focused
-                ? "$hairlineActive"
-                : "$hairlineHover"
+                ? focusColor
+                : hoverColor
           }}
+          borderColor={focused ? focusColor : idleColor}
           hasValidationMessage={hasValidationMessage}
           {...props}
         />

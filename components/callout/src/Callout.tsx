@@ -19,7 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Container } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
-import { HeadingMediumText } from "@cyclone-ui/heading-text";
+import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
 import type { ColorThemeName } from "@cyclone-ui/state/theme";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
@@ -157,7 +157,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
   );
 };
 
-const CalloutHeading = styled(HeadingMediumText, {
+const CalloutHeading = styled(HeadingExtraLargeText, {
   name: "CalloutHeading",
 
   color: "$accent",
@@ -202,7 +202,7 @@ const CalloutEyebrowImpl = CalloutEyebrow.styleable(
 const CalloutBody = styled(BodyText, {
   name: "CalloutBody",
 
-  color: "$accent",
+  color: "$inkEmphasis",
   zIndex: "$20",
   paddingVertical: 0
 });

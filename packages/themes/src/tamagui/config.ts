@@ -285,22 +285,22 @@ const childThemeExtras: {
       accentActive: "#0c0c0d",
       accentDisabled: "#151517",
       accentHover: "#232326",
-      accentInactive: "#060607",
+      accentInactive: "#030303",
       muted: tokens.color.neutral3.val,
-      mutedActive: "#0c0c0d",
+      mutedActive: "#cacaca",
       mutedDisabled: "#eaeaea66",
       mutedHover: "#919191",
-      mutedInactive: "#060607",
+      mutedInactive: "#030303",
       onAccent: tokens.color.neutral2.val,
       onAccentActive: "#0c0c0d",
       onAccentDisabled: "#f1f1f166",
       onAccentHover: "#959595",
-      onAccentInactive: "#060607",
+      onAccentInactive: "#030303",
       onMuted: tokens.color.neutral14.val,
       onMutedActive: "#0c0c0d",
       onMutedDisabled: "#151517",
       onMutedHover: "#232326",
-      onMutedInactive: "#060607",
+      onMutedInactive: "#030303",
       ring: "0px 0px 0px 3px #15151813",
       ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #15151813",
       ringSubtle: "0px 0px 0px 1px #15151813",
@@ -521,22 +521,22 @@ const childThemeExtras: {
       accentActive: "#ffffff",
       accentDisabled: "#fafafa66",
       accentHover: "#9b9b9b",
-      accentInactive: "#bebebe",
+      accentInactive: "#808080",
       muted: tokens.color.neutral11.val,
-      mutedActive: "#ffffff",
+      mutedActive: "#333438",
       mutedDisabled: "#2b2c2f",
       mutedHover: "#414347",
-      mutedInactive: "#bebebe",
+      mutedInactive: "#808080",
       onAccent: tokens.color.neutral14.val,
       onAccentActive: "#ffffff",
       onAccentDisabled: "#151517",
       onAccentHover: "#232326",
-      onAccentInactive: "#bebebe",
+      onAccentInactive: "#808080",
       onMuted: tokens.color.neutral1.val,
       onMutedActive: "#ffffff",
       onMutedDisabled: "#fafafa66",
       onMutedHover: "#9b9b9b",
-      onMutedInactive: "#bebebe",
+      onMutedInactive: "#808080",
       ring: "0px 0px 0px 3px #fafafa13",
       ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #fafafa13",
       ringSubtle: "0px 0px 0px 1px #fafafa13",
@@ -812,7 +812,7 @@ const themes = createThemes({
         dataYellowEmphasis: tokens.color.yellow9.val,
         dataYellowSubtle: tokens.color.yellow3.val,
         hairline: tokens.color.neutral6.val,
-        hairlineActive: "#a2a2a2",
+        hairlineActive: "#aaaaaa",
         hairlineHover: "#868686",
         hairlineInactive: "#f2f2f2",
         inkBody: tokens.color.neutral9.val,
@@ -874,13 +874,13 @@ const themes = createThemes({
         dataRedSubtle: tokens.color.red9.val,
         dataYellowEmphasis: tokens.color.yellow5.val,
         dataYellowSubtle: tokens.color.yellow9.val,
-        hairline: tokens.color.neutral8.val,
-        hairlineActive: "#717171",
-        hairlineHover: "#818181",
-        hairlineInactive: "#464646",
+        hairline: tokens.color.neutral9.val,
+        hairlineActive: "#515151",
+        hairlineHover: "#616161",
+        hairlineInactive: "#333333",
         inkBody: tokens.color.neutral6.val,
-        inkEmphasis: tokens.color.neutral2.val,
-        inkSubtle: tokens.color.neutral8.val,
+        inkEmphasis: tokens.color.neutral3.val,
+        inkSubtle: tokens.color.neutral9.val,
         link: tokens.color.blue5.val,
         linkActive: "#4490ff",
         linkHover: "#59a7ff",
@@ -1125,22 +1125,40 @@ const displayTitleFont = createFont({
 const displayXlFont = createFont({
   family: "Space Grotesk",
   size: {
-    "2xl": 30,
-    true: 30
+    "3xl": 36,
+    true: 36
   },
   lineHeight: {
-    "2xl": 31.556,
-    snug: 31.556,
-    true: 31.556
+    "3xl": 37.867,
+    snug: 37.867,
+    true: 37.867
   },
   weight: {
-    "2xl": "400",
-    normal: "400",
-    true: "400"
+    "3xl": "700",
+    bold: "700",
+    true: "700"
   }
 });
 
-const eyebrowFont = createFont({
+const displayXsFont = createFont({
+  family: "Space Grotesk",
+  size: {
+    true: 14,
+    xs: 14
+  },
+  lineHeight: {
+    snug: 14.726,
+    true: 14.726,
+    xs: 14.726
+  },
+  weight: {
+    black: "900",
+    true: "900",
+    xs: "900"
+  }
+});
+
+const eyebrowLgFont = createFont({
   family: "Manrope",
   size: {
     md: 18,
@@ -1155,6 +1173,24 @@ const eyebrowFont = createFont({
     extrabold: "800",
     md: "800",
     true: "800"
+  }
+});
+
+const eyebrowSmFont = createFont({
+  family: "Manrope",
+  size: {
+    sm: 16,
+    true: 16
+  },
+  lineHeight: {
+    normal: 18.36,
+    sm: 18.36,
+    true: 18.36
+  },
+  weight: {
+    black: "900",
+    sm: "900",
+    true: "900"
   }
 });
 
@@ -1277,7 +1313,9 @@ export const config = createTamagui({
     "display-sm": displaySmFont,
     "display-title": displayTitleFont,
     "display-xl": displayXlFont,
-    eyebrow: eyebrowFont
+    "display-xs": displayXsFont,
+    "eyebrow-lg": eyebrowLgFont,
+    "eyebrow-sm": eyebrowSmFont
    },
   defaultFont: "Space Grotesk"
 , ...userConfig 

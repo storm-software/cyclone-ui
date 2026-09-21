@@ -89,3 +89,14 @@ describe("floating field label visibility", () => {
     expect(label).toContain("(hasValue || Boolean(focused))");
   });
 });
+
+describe("floating required field labels", () => {
+  it("reserves the required marker width so the border mask covers the asterisk", () => {
+    const label = getDeclaration(
+      readComponent("./Field.tsx"),
+      "FieldLabelTextImpl"
+    );
+
+    expect(label).toContain('width={floating ? "$md" : "$xl"}');
+  });
+});

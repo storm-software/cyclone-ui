@@ -124,9 +124,9 @@ export const Single: Story = {
   }
 };
 
-export const Surface: Story = {
+export const BackgroundColor: Story = {
   args: {
-    variant: "surface",
+    backgroundColor: "$surfaceCanvas",
     children: "Some collapsed content"
   }
 };
@@ -141,6 +141,13 @@ export const Separated: Story = {
 export const Bordered: Story = {
   args: {
     variant: "bordered",
+    children: "Some collapsed content"
+  }
+};
+
+export const Borderless: Story = {
+  args: {
+    bordered: false,
     children: "Some collapsed content"
   }
 };

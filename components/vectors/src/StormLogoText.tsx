@@ -32,7 +32,7 @@ const ThemedIcon = ({ color: colorProp, ...rest }: IconProps) => {
   const explicitColor = useCurrentColor((colorProp ?? "$accent") as any);
   const color = colorProp
     ? explicitColor
-    : (theme.foreground?.get() ?? theme.color?.get());
+    : (theme.accent?.get() ?? theme.color?.get());
 
   return (
     <Svg

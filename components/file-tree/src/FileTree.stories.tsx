@@ -53,26 +53,26 @@ const renderFileTree = (args: ComponentProps<typeof FileTree>) => (
   </FileTree>
 );
 
+const getFolderIcon = (node: unknown, state: "open" | "closed") =>
+  (
+    node as {
+      querySelector: (selector: string) => unknown;
+    }
+  ).querySelector(`[data-file-tree-folder-icon="${state}"]`);
+
 export const Base: Story = { render: renderFileTree };
 
 export const TogglesFolder: Story = {
   render: renderFileTree,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const components = canvas
-      .getByText("components")
-      .closest('[role="treeitem"]');
+    const components = canvas.getByRole("treeitem", { name: "components" });
 
-    await expect(components).not.toBeNull();
     await expect(components).toHaveAttribute("aria-expanded", "false");
-    await expect(
-      components?.querySelector('[data-file-tree-folder-icon="closed"]')
-    ).not.toBeNull();
+    await expect(getFolderIcon(components, "closed")).not.toBeNull();
     await userEvent.click(components);
     await expect(components).toHaveAttribute("aria-expanded", "true");
-    await expect(
-      components?.querySelector('[data-file-tree-folder-icon="open"]')
-    ).not.toBeNull();
+    await expect(getFolderIcon(components, "open")).not.toBeNull();
     await expect(canvas.getByText("button.tsx")).toBeVisible();
   }
 };

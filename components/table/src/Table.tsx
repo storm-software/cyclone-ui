@@ -84,7 +84,7 @@ const TableRow = styled(ThemeableStack, {
 
   focusVisibleStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$accentActive"
+    borderColor: "$hairlineActive"
   },
 
   variants: {
@@ -113,7 +113,7 @@ const TableRowImpl = TableRow.styleable(
   ({ children, header = false, ...props }, forwardRef) => {
     const { sizing } = TableContext.useStyledContext();
     const rowChildren = header
-      ? Children.toArray(children).map(async (child, index, childrenArray) => {
+      ? Children.toArray(children).map((child, index, childrenArray) => {
           if (
             !isValidElement<GetProps<typeof TableHeaderCell>>(child) ||
             child.type !== TableHeaderCell
@@ -182,7 +182,7 @@ const TableCell = styled(ThemeableStack, {
   boxShadow: "none",
 
   focusVisibleStyle: {
-    borderColor: "$accentActive",
+    borderColor: "$hairlineActive",
     boxShadow: "$ringOffset"
   },
 

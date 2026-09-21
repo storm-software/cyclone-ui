@@ -26,7 +26,7 @@ import { NavigationHeader } from "./NavigationHeader";
 
 const StoryCanvas = styled(View, {
   minHeight: "100vh",
-  backgroundColor: "$muted"
+  backgroundColor: "$surfaceCanvas"
 });
 
 const StoryContent = styled(View, {
@@ -116,7 +116,7 @@ const StoryLogo = () => (
       borderRadius="$full">
       <Zap size={16} color="$muted" fill="$muted" />
     </View>
-    <SizableText color="$accent" fontWeight="$bold" fontSize="$md">
+    <SizableText color="$accent" fontWeight="$bold" fontSize="$xl">
       Storm
     </SizableText>
   </View>

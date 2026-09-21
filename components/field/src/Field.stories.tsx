@@ -81,6 +81,12 @@ export const Base: Story = {
   args: {}
 };
 
+export const Normal: Story = {
+  args: {
+    variant: "normal"
+  }
+};
+
 export const Underline: Story = {
   args: {
     variant: "underline"

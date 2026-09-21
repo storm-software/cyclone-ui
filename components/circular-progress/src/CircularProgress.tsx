@@ -74,7 +74,7 @@ export const CircularProgress = TamaguiProgress.styleable<{
       theme[color as any] ?? color,
       "color"
     );
-    const trackColor = getVariableValue(theme.backgroundLowest, "color");
+    const trackColor = getVariableValue(theme.surfaceSunken, "color");
     const progressRatio = getProgressRatio(value, max);
 
     return (

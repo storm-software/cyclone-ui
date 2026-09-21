@@ -29,11 +29,15 @@ import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
 import { XStack, YStack } from "@tamagui/stacks";
 import { useCallback, useState } from "react";
-import { getSelectContentSize, SelectContext } from "./utilities";
+import {
+  getSelectContentSize,
+  SelectContext,
+  shouldCenterSelectItemText
+} from "./utilities";
 
 const SELECT_VIEWPORT_PADDING = 10;
 const SELECT_VIEWPORT_POSITION_CLASS = "is_SelectViewportPositioned";
-const SELECT_NARROW_VIEWPORT_CLASS = "is_SelectViewportNarrow";
+const SELECT_CENTERED_VIEWPORT_CLASS = "is_SelectViewportContentCentered";
 const SELECT_NARROW_VIEWPORT_WIDTH = getSized("$20xl");
 
 const useSelectViewportPosition = () => {
@@ -83,11 +87,11 @@ const useSelectViewportPosition = () => {
         outline-width: 0 !important;
       }
 
-      .${SELECT_NARROW_VIEWPORT_CLASS} [data-select-item-unadorned] [data-select-item-group] {
+      .${SELECT_CENTERED_VIEWPORT_CLASS} [data-select-item-group] {
         justify-content: center !important;
       }
 
-      .${SELECT_NARROW_VIEWPORT_CLASS} [data-select-item-unadorned] [data-select-item-text] {
+      .${SELECT_CENTERED_VIEWPORT_CLASS} [data-select-item-text] {
         flex: 0 1 auto !important;
         text-align: center;
       }
@@ -143,14 +147,21 @@ const useSelectViewportPosition = () => {
           `${viewportLeft - (offsetParentRect?.left ?? 0)}px`
         );
         viewport.classList.toggle(
-          SELECT_NARROW_VIEWPORT_CLASS,
-          width < SELECT_NARROW_VIEWPORT_WIDTH
+          SELECT_CENTERED_VIEWPORT_CLASS,
+          shouldCenterSelectItemText(
+            width,
+            SELECT_NARROW_VIEWPORT_WIDTH,
+            viewport.querySelector("[data-select-item-adorned]") !== null
+          )
         );
         viewport.classList.add(SELECT_VIEWPORT_POSITION_CLASS);
       });
     };
 
     const resizeObserver = new viewportWindow.ResizeObserver(updatePosition);
+    const mutationObserver = new viewportWindow.MutationObserver(
+      updatePosition
+    );
     const handleScroll = (event: Event) => {
       // The menu's own scroll position does not affect its placement. Avoid
       // feeding each wheel/touch scroll back into layout while still tracking
@@ -162,6 +173,11 @@ const useSelectViewportPosition = () => {
 
     resizeObserver.observe(viewport);
     resizeObserver.observe(trigger);
+    mutationObserver.observe(viewport, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["data-select-item-adorned"]
+    });
     viewportWindow.addEventListener("resize", updatePosition);
     viewportWindow.addEventListener("scroll", handleScroll, true);
     updatePosition();
@@ -172,13 +188,14 @@ const useSelectViewportPosition = () => {
       }
 
       viewport.classList.remove(SELECT_VIEWPORT_POSITION_CLASS);
-      viewport.classList.remove(SELECT_NARROW_VIEWPORT_CLASS);
+      viewport.classList.remove(SELECT_CENTERED_VIEWPORT_CLASS);
       viewport.style.removeProperty("--select-viewport-top");
       viewport.style.removeProperty("--select-viewport-height");
       viewport.style.removeProperty("--select-viewport-width");
       viewport.style.removeProperty("--select-viewport-left");
       style.remove();
       resizeObserver.disconnect();
+      mutationObserver.disconnect();
       viewportWindow.removeEventListener("resize", updatePosition);
       viewportWindow.removeEventListener("scroll", handleScroll, true);
     };
@@ -460,7 +477,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
       <SelectItemFrame
         {...props}
         data-select-item
-        data-select-item-unadorned={!disabled && !isSelected ? true : undefined}
+        data-select-item-adorned={disabled || isSelected ? true : undefined}
         group={"item" as any}
         ref={forwardedRef}
         value={String(value)}

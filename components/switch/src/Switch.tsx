@@ -275,12 +275,17 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
       size = "$6xl",
       disabled = false,
       checked = false,
+      focused = false,
       children,
       ...props
     },
     forwardedRef
   ) => {
     const hasValidationMessage = useFieldHasValidationMessage();
+    const idleColor = hasValidationMessage ? "$accent" : "$hairline";
+    const focusColor = hasValidationMessage
+      ? "$accentActive"
+      : "$hairlineActive";
 
     return (
       <SwitchContext.Provider
@@ -298,10 +303,20 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
           id={name}
           size={size}
           checked={checked}
+          borderColor={focused ? focusColor : idleColor}
+          focusStyle={{ borderColor: focusColor, boxShadow: "$ringOffset" }}
+          focusVisibleStyle={{
+            borderColor: focusColor,
+            boxShadow: "$ringOffset"
+          }}
           hasValidationMessage={hasValidationMessage}
           disabled={disabled}
           $group-field-hover={{
-            borderColor: disabled ? "$accentDisabled" : "$accentHover"
+            borderColor: disabled
+              ? "$accentDisabled"
+              : focused
+                ? focusColor
+                : "$accentHover"
           }}>
           {children}
           <BaseSwitch.Thumb />

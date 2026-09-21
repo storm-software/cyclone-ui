@@ -196,6 +196,10 @@ export const Checkbox = BaseCheckbox.styleable<{
     forwardedRef
   ) => {
     const hasValidationMessage = useFieldHasValidationMessage();
+    const idleColor = hasValidationMessage ? "$accent" : "$hairline";
+    const focusColor = hasValidationMessage
+      ? "$accentActive"
+      : "$hairlineActive";
 
     return (
       <CheckboxGroupFrame
@@ -203,8 +207,14 @@ export const Checkbox = BaseCheckbox.styleable<{
         hasValidationMessage={hasValidationMessage}
         disabled={disabled}
         size={size}
+        borderColor={focused ? focusColor : idleColor}
+        focusStyle={{ boxShadow: "$ringOffset", borderColor: focusColor }}
+        focusVisibleStyle={{
+          boxShadow: "$ringOffset",
+          borderColor: focusColor
+        }}
         $group-field-hover={{
-          borderColor: "$accentHover"
+          borderColor: focused ? focusColor : "$accentHover"
         }}>
         <BaseCheckbox
           ref={forwardedRef}
@@ -234,10 +244,10 @@ export const Checkbox = BaseCheckbox.styleable<{
                   y: -10,
                   opacity: 0.5
                 }}>
-                <MinusIcon color="$accent" />
+                <MinusIcon color={focused ? focusColor : "$accent"} />
               </View>
             ) : (
-              <CheckboxIcon />
+              <CheckboxIcon color={focused ? focusColor : "$accent"} />
             )}
           </TamaguiCheckbox.Indicator>
         </BaseCheckbox>

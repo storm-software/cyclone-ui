@@ -58,15 +58,21 @@ export const Open: Story = {
   }
 };
 
-export const Surface: Story = {
+export const BackgroundColor: Story = {
   args: {
-    variant: "surface"
+    backgroundColor: "$surfaceCanvas"
   }
 };
 
 export const Bordered: Story = {
   args: {
     variant: "bordered"
+  }
+};
+
+export const Borderless: Story = {
+  args: {
+    bordered: false
   }
 };
 

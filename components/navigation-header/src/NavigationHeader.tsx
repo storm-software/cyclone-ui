@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { BodyText } from "@cyclone-ui/body-text";
+import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
 import { Link } from "@cyclone-ui/link";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
@@ -177,7 +177,7 @@ const NavigationHeaderItemFrame = styled(View, {
   display: "block",
   width: "fit-content",
   flexShrink: 0,
-  borderBottomWidth: 3,
+  borderBottomWidth: 2,
   borderBottomColor: "$transparent",
 
   variants: {
@@ -208,7 +208,7 @@ const NavigationHeaderItemLink = styled(Link, {
   justifyContent: "center",
   display: "flex",
   color: "$inkBody",
-  fontSize: "$sm",
+  fontSize: "$5xl",
   fontWeight: "$medium",
   textDecorationLine: "none",
 
@@ -299,11 +299,12 @@ const NavigationHeaderDropdownGroup = styled(View, {
   gap: "$lg"
 });
 
-const NavigationHeaderDropdownGroupLabel = styled(BodyText, {
+const NavigationHeaderDropdownGroupLabel = styled(EyebrowText, {
   name: "NavigationHeaderDropdownGroupLabel",
 
   marginBottom: "$xl",
-  color: "$inkBody"
+  variant: "sm",
+  color: "$inkSubtle"
 });
 
 const NavigationHeaderDropdownLink = styled(Link, {
@@ -315,7 +316,7 @@ const NavigationHeaderDropdownLink = styled(Link, {
   justifyContent: "flex-start",
   display: "flex",
   color: "$inkBody",
-  fontSize: "$sm",
+  fontSize: "$5xl",
   fontWeight: "$medium",
   textDecorationLine: "none",
   borderRadius: "$md",
@@ -326,11 +327,7 @@ const NavigationHeaderDropdownLink = styled(Link, {
   },
 
   focusVisibleStyle: {
-    color: "$accent",
-    outlineColor: "$accent",
-    outlineOffset: -2,
-    outlineStyle: "solid",
-    outlineWidth: 2
+    color: "$accent"
   },
 
   variants: {

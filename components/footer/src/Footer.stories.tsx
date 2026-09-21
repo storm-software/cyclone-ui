@@ -29,7 +29,7 @@ import { Footer } from "./Footer";
 
 const StoryCanvas = styled(View, {
   minHeight: "100vh",
-  backgroundColor: "$muted"
+  backgroundColor: "$surfaceCanvas"
 });
 
 const StoryContent = styled(View, {
@@ -212,9 +212,9 @@ const FooterExample = (props: ComponentProps<typeof Footer>) => (
               <Footer.Section.Title>{section.title}</Footer.Section.Title>
               <Footer.Section.Links>
                 {section.links.map(({ label, ...link }) => (
-                  <Footer.Link key={link.href} {...link}>
+                  <Link group={false} key={link.href} {...link}>
                     {label}
-                  </Footer.Link>
+                  </Link>
                 ))}
               </Footer.Section.Links>
             </Footer.Section>
@@ -231,9 +231,15 @@ const FooterExample = (props: ComponentProps<typeof Footer>) => (
         </Footer.Brand>
 
         <Footer.LegalNavigation aria-label="Legal">
-          <Footer.Rail.Link href="#privacy">Privacy</Footer.Rail.Link>
-          <Footer.Rail.Link href="#terms">Terms</Footer.Rail.Link>
-          <Footer.Rail.Link href="#licenses">Licenses</Footer.Rail.Link>
+          <Link group={false} href="#privacy">
+            Privacy
+          </Link>
+          <Link group={false} href="#terms">
+            Terms
+          </Link>
+          <Link group={false} href="#licenses">
+            Licenses
+          </Link>
         </Footer.LegalNavigation>
       </Footer.Rail>
     </Footer.Container>

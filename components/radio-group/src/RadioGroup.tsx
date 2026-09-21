@@ -262,6 +262,7 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
   ) => {
     const { size } = RadioGroupContext.useStyledContext();
     const hasValidationMessage = useFieldHasValidationMessage();
+    const focusColor = hasValidationMessage ? "$accentActive" : "$hairlineActive";
 
     return (
       <RadioGroupItemContainerFrame
@@ -270,6 +271,11 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
         {...props}
         size={size}
         hasValidationMessage={hasValidationMessage}
+        focusStyle={{ boxShadow: "$ringOffset", borderColor: focusColor }}
+        focusVisibleStyle={{
+          boxShadow: "$ringOffset",
+          borderColor: focusColor
+        }}
         onPress={onPress}
         disabled={disabled}>
         {children}
@@ -337,7 +343,15 @@ const RadioGroupImpl = RadioGroupFrame.styleable<{
   defaultValue?: string | null;
 }>(
   (
-    { children, name, required, disabled, value, defaultValue, ...props },
+    {
+      children,
+      name,
+      required,
+      disabled,
+      value,
+      defaultValue,
+      ...props
+    },
     forwardedRef
   ) => {
     const { size } = RadioGroupContext.useStyledContext();

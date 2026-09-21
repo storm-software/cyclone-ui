@@ -62,7 +62,7 @@ import {
   useState
 } from "react";
 
-export type FieldVariant = "default" | "floating" | "underline";
+export type FieldVariant = "normal" | "floating" | "underline";
 
 interface FieldPresentationContextValue {
   variant: FieldVariant;
@@ -74,7 +74,7 @@ interface FieldPresentationContextValue {
 }
 
 const FieldPresentationContext = createContext<FieldPresentationContextValue>({
-  variant: "default",
+  variant: "normal",
   hasLabel: false,
   hasPlaceholder: false,
   hasValidationMessage: false,
@@ -175,7 +175,7 @@ const FieldGroupFrame = styled(ThemeableStack, {
   defaultVariants: {
     orientation: "vertical",
     disabled: false,
-    variant: "default"
+    variant: "normal"
   }
 });
 
@@ -215,6 +215,7 @@ const FieldValidationText = styled(ValidationText, {
   name: "FieldDetails",
 
   fontStyle: "italic",
+  marginTop: "$md",
 
   variants: {
     size: {
@@ -269,7 +270,7 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
 
 const FieldGroupInnerImpl = FieldGroupFrame.styleable(
   (props, forwardedRef) => {
-    const { children, variant = "default", ...rest } = props;
+    const { children, variant = "normal", ...rest } = props;
 
     const field = FieldApi.use();
     const theme = field.theme.get();
@@ -313,7 +314,7 @@ export type FieldProps<TFieldValue = any> =
 
 const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
   (props, forwardedRef) => {
-    const { children, variant = "default", ...rest } = props;
+    const { children, variant = "normal", ...rest } = props;
     const [hasLabel, setHasLabel] = useState(false);
     const [hasPlaceholder, setHasPlaceholder] = useState(false);
     const presentation = useMemo(
@@ -465,7 +466,7 @@ const FieldLabelPositioner = styled(View, {
   } as const,
 
   defaultVariants: {
-    variant: "default"
+    variant: "normal"
   }
 });
 
@@ -548,6 +549,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
   hideAsterisk?: boolean;
   hideOptional?: boolean;
   floating?: boolean;
+  floatingLabelLeft?: GetProps<typeof FieldLabelPositioner>["left"];
   variant?: FieldVariant;
 }>(
   (
@@ -557,7 +559,8 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
       hideAsterisk = false,
       hideOptional = false,
       floating = false,
-      variant = "default",
+      floatingLabelLeft,
+      variant = "normal",
       required,
       ...props
     },
@@ -584,7 +587,12 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     const baseTheme = theme?.startsWith("light") ? "light_base" : "dark_base";
 
     return (
-      <FieldLabelPositioner variant={variant} top={labelTop}>
+      <FieldLabelPositioner
+        variant={variant}
+        top={labelTop}
+        {...(variant === "floating" && floatingLabelLeft !== undefined
+          ? { left: floatingLabelLeft }
+          : {})}>
         <TamaguiLabel
           ref={forwardedRef}
           htmlFor={name}
@@ -606,7 +614,10 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                   {required ? (
                     <>
                       {hideAsterisk !== true && (
-                        <View position="relative" alignSelf="stretch">
+                        <View
+                          position="relative"
+                          alignSelf="stretch"
+                          width={floating ? "$md" : "$xl"}>
                           <Asterisk
                             color="$required"
                             size={floating ? "$md" : "$xl"}
@@ -650,6 +661,7 @@ const FieldLabel = FieldLabelText.styleable<{
   hideRequired?: boolean;
   hideAsterisk?: boolean;
   hideOptional?: boolean;
+  floatingLabelLeft?: GetProps<typeof FieldLabelPositioner>["left"];
 }>(
   ({ children, ...props }, forwardedRef) => {
     const field = FieldApi.use();
@@ -756,6 +768,9 @@ const FieldIconButtonImpl = Button.styleable<{
     const size = field.size.get() ?? "$true";
     const disabled = field.disabled.get();
     const focused = field.focused.get();
+    const idleColor = field.theme.get() === "base" ? "$hairline" : "$accent";
+    const focusColor =
+      field.theme.get() === "base" ? "$hairlineActive" : "$accentActive";
     const { variant } = use(FieldPresentationContext);
     const frameSize =
       size === "$true" || String(size) === "true" ? "$10xl" : size;
@@ -767,9 +782,13 @@ const FieldIconButtonImpl = Button.styleable<{
     const iconColor = disabled
       ? "$hairlineInactive"
       : focused
-        ? "$hairlineActive"
-        : "$hairline";
-    const hoverIconColor = disabled ? "$hairlineInactive" : "$hairlineHover";
+        ? focusColor
+        : idleColor;
+    const hoverIconColor = disabled
+      ? "$hairlineInactive"
+      : field.theme.get() === "base"
+        ? "$hairlineHover"
+        : "$accentHover";
     const icon = isValidElement<{
       color?: string;
       "$group-field-hover"?: { color?: string };
@@ -799,14 +818,10 @@ const FieldIconButtonImpl = Button.styleable<{
               ? { left: 0, borderLeftWidth: 1 }
               : { right: 0, borderRightWidth: 1 })}
             borderColor={
-              disabled
-                ? "$hairlineInactive"
-                : focused
-                  ? "$hairlineActive"
-                  : "$hairline"
+              disabled ? "$hairlineInactive" : focused ? focusColor : idleColor
             }
             $group-field-hover={{
-              borderColor: disabled ? "$hairlineInactive" : "$hairlineHover"
+              borderColor: hoverIconColor
             }}
           />
         )}

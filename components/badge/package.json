@@ -1,21 +1,32 @@
 {
   "name": "@cyclone-ui/badge",
   "version": "0.3.4",
-  "type": "module",
+  "private": false,
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/badge"
   },
-  "private": false,
-  "files": ["dist"],
-  "peerDependencies": {
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-native": "catalog:"
+  "sideEffects": ["*.css"],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Badge": {
+      "import": "./dist/Badge.mjs",
+      "require": "./dist/Badge.cjs"
+    },
+    "./*": "./*"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "files": ["dist"],
   "dependencies": {
+    "@cyclone-ui/heading-text": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/font-size": "catalog:",
     "@tamagui/get-font-sized": "catalog:",
@@ -30,23 +41,13 @@
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
-  "module:jsx": "dist/jsx",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    },
-    "./Badge": {
-      "import": "./dist/Badge.mjs",
-      "require": "./dist/Badge.cjs"
-    },
-    "./*": "./*"
-  }
+  "module:jsx": "dist/jsx"
 }

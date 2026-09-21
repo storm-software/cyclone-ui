@@ -17,7 +17,7 @@
   "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "references": [
     {
-      "path": "../body-text"
+      "path": "../heading-text"
     }
   ]
 }

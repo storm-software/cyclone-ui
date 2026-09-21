@@ -410,7 +410,7 @@ function TableOfContentsRail({
         <path
           d={geometry.path}
           fill="none"
-          stroke="var(--borderSubtle)"
+          stroke="var(--hairline)"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
@@ -434,7 +434,7 @@ function TableOfContentsRail({
           <path
             d={geometry.path}
             fill="none"
-            stroke="var(--foreground)"
+            stroke="var(--accent)"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
@@ -451,7 +451,7 @@ function TableOfContentsRail({
           width: ACTIVE_MARKER_SIZE,
           height: ACTIVE_MARKER_SIZE,
           borderRadius: "50%",
-          backgroundColor: "var(--foreground)",
+          backgroundColor: "var(--accent)",
           offsetPath: `path("${geometry.path}")`,
           offsetDistance: `${geometry.markerDistances[activeIndex] ?? 0}px`,
           offsetRotate: "0deg",

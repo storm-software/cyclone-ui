@@ -15,10 +15,13 @@
   },
   "references": [
     {
-      "path": "../input"
+      "path": "../../packages/helpers"
     },
     {
       "path": "../../packages/state"
+    },
+    {
+      "path": "../input"
     },
     {
       "path": "../field"

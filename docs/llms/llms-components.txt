@@ -165,6 +165,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/heading-text`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/font-size`: `catalog:`
 - `@tamagui/get-font-sized`: `catalog:`
@@ -1432,6 +1433,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/eyebrow-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -2379,7 +2381,6 @@ A repository containing the core front-end components used by Storm Software acr
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/components/table/dist/index.cjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/dist/index.mjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-native/index.js` | `file` |  |
@@ -2899,6 +2900,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/heading-text`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/font-size`: `catalog:`
 - `@tamagui/get-font-sized`: `catalog:`
@@ -4166,6 +4168,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/eyebrow-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -5113,7 +5116,6 @@ A repository containing the core front-end components used by Storm Software acr
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/components/table/dist/index.cjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/dist/index.mjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-native/index.js` | `file` |  |
@@ -5633,6 +5635,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/heading-text`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/font-size`: `catalog:`
 - `@tamagui/get-font-sized`: `catalog:`
@@ -6900,6 +6903,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/eyebrow-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -7847,7 +7851,6 @@ A repository containing the core front-end components used by Storm Software acr
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/components/table/dist/index.cjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/dist/index.mjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-native/index.js` | `file` |  |
@@ -8367,6 +8370,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/heading-text`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/font-size`: `catalog:`
 - `@tamagui/get-font-sized`: `catalog:`
@@ -9634,6 +9638,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/eyebrow-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -10581,7 +10586,6 @@ A repository containing the core front-end components used by Storm Software acr
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/components/table/dist/index.cjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/dist/index.mjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-native/index.js` | `file` |  |
@@ -11101,6 +11105,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/heading-text`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/font-size`: `catalog:`
 - `@tamagui/get-font-sized`: `catalog:`
@@ -12368,6 +12373,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/eyebrow-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -13315,7 +13321,6 @@ A repository containing the core front-end components used by Storm Software acr
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/components/table/dist/index.cjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/dist/index.mjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-native/index.js` | `file` |  |
@@ -13835,6 +13840,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/heading-text`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/font-size`: `catalog:`
 - `@tamagui/get-font-sized`: `catalog:`
@@ -15102,6 +15108,7 @@ A repository containing the core front-end components used by Storm Software acr
 
 ### Dependencies
 
+- `@cyclone-ui/eyebrow-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -16049,7 +16056,6 @@ A repository containing the core front-end components used by Storm Software acr
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/components/table/dist/index.cjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/dist/index.mjs` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/table/node_modules/react-native/index.js` | `file` |  |

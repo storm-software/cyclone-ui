@@ -16,13 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { BodyText } from "@cyclone-ui/body-text";
-import type {
-  ColorTokens,
-  FontSizeTokens,
-  SizeTokens,
-  VariantSpreadExtras
-} from "@tamagui/core";
+import { HeadingExtraSmallText } from "@cyclone-ui/heading-text";
+import type { ColorTokens, FontSizeTokens, SizeTokens } from "@tamagui/core";
 import { View, createStyledContext, styled } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
 import { getFontSized } from "@tamagui/get-font-sized";
@@ -46,6 +41,7 @@ const BadgeFrame = styled(View, {
   boxShadow: "none",
   borderRadius: "$button",
   paddingHorizontal: "$3xl",
+  paddingVertical: "$lg",
   justifyContent: "center",
   alignItems: "center",
 
@@ -99,37 +95,43 @@ const BadgeFrame = styled(View, {
   }
 });
 
-const BadgeText = styled(BodyText, {
+const BadgeTextFrame = styled(HeadingExtraSmallText, {
   name: BADGE_NAME,
   context: BadgeContext,
   color: "$onAccent",
-  variant: "lg",
 
   variants: {
-    outlined: {
-      true: {
-        color: "$accent"
-      }
-    },
-
-    pressable: {
-      true: (_val: boolean, { props }: VariantSpreadExtras<any>) => ({
-        hoverStyle: {
-          color: props.outlined ? "$accentHover" : "$onAccentHover"
-        }
-      }),
-      false: {}
-    },
-
     size: {
       "...fontSize": getFontSized
     }
-  } as const,
-
-  defaultVariants: {
-    pressable: false
-  }
+  } as const
 });
+
+const BadgeText = BadgeTextFrame.styleable(
+  ({ children, color, hoverStyle, ...props }, forwardedRef) => {
+    const { outlined, pressable } = BadgeContext.useStyledContext();
+
+    return (
+      <BadgeTextFrame
+        ref={forwardedRef}
+        {...props}
+        color={color ?? (outlined ? "$accent" : "$onAccent")}
+        hoverStyle={
+          pressable
+            ? {
+                color: outlined ? "$accentHover" : "$onAccentHover",
+                ...hoverStyle
+              }
+            : hoverStyle
+        }>
+        {children}
+      </BadgeTextFrame>
+    );
+  },
+  {
+    staticConfig: { componentName: BADGE_NAME }
+  }
+);
 
 interface BadgeIconProps {
   color?: ColorTokens | string;
@@ -241,7 +243,34 @@ const ButtonComp = styled(View, {
   } as const
 });
 
-export const Badge = withStaticProperties(BadgeFrame, {
+const BadgeFrameImpl = BadgeFrame.styleable(
+  (
+    { children, outlined = false, pressable = false, size = "$true", ...props },
+    forwardedRef
+  ) => {
+    return (
+      <BadgeContext.Provider
+        {...props}
+        outlined={outlined}
+        pressable={pressable}
+        size={size}>
+        <BadgeFrame
+          ref={forwardedRef}
+          {...props}
+          outlined={outlined}
+          pressable={pressable}
+          size={size}>
+          {children}
+        </BadgeFrame>
+      </BadgeContext.Provider>
+    );
+  },
+  {
+    staticConfig: { componentName: BADGE_NAME }
+  }
+);
+
+export const Badge = withStaticProperties(BadgeFrameImpl, {
   Text: BadgeText,
   Icon: BadgeIcon,
   Button: ButtonComp

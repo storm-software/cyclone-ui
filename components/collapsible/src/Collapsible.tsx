@@ -40,17 +40,22 @@ export type CollapsibleProps = Omit<
 > & {
   children?: ReactNode;
   itemValue?: string;
+  bordered?: boolean;
   numbered?: boolean;
   variant?: AccordionVariant;
 };
 
 const CollapsibleFrame = forwardRef<TamaguiElement, CollapsibleProps>(
-  ({ children, itemValue = DEFAULT_ITEM_VALUE, ...props }, forwardedRef) => {
+  (
+    { children, itemValue = DEFAULT_ITEM_VALUE, bordered = true, ...props },
+    forwardedRef
+  ) => {
     return (
       <Accordion
         ref={forwardedRef}
         icon="chevron"
         {...(props as any)}
+        bordered={bordered}
         collapsible
         single
         type="single">

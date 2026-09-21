@@ -649,8 +649,8 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   return (
     <BodyText
       transition="200ms"
-      color="$accent"
-      $group-row-hover={{ color: "$accentHover" }}>
+      color="$inkBody"
+      $group-row-hover={{ color: "$inkBodyHover" }}>
       {value}
     </BodyText>
   );
@@ -936,11 +936,10 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 theme="base"
                 circular={true}
                 noPadding={true}
-                bordered={false}
                 color="$accent"
-                padding="$xs">
+                padding="$sm">
                 <Button.Icon>
-                  <Filter size="$4xl" />
+                  <Filter size="$2xl" />
                 </Button.Icon>
               </Button>
             </Popover.Trigger>
@@ -1101,6 +1100,7 @@ export function DataTablePagination<TData extends RowData>({
               <View width="$30xl">
                 <SelectField
                   name="pageSize"
+                  variant="normal"
                   items={pageSizes}
                   size="$9xl"
                   onChange={handlePageSizeChange}>
@@ -1109,7 +1109,7 @@ export function DataTablePagination<TData extends RowData>({
                       Per page:
                     </SelectField.Label>
                     <View width="$18xl" flexShrink={0}>
-                      <SelectField.Control placeholder="Size" />
+                      <SelectField.Control />
                     </View>
                   </XStack>
                 </SelectField>

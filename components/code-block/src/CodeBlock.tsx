@@ -66,10 +66,10 @@ const CODE_BLOCK_STYLES = `
 .cyclone-code-block-viewport .diff.remove { background: color-mix(in srgb, #ef4444 14%, transparent); opacity: .7; }
 .cyclone-code-block-viewport .highlighted.error { background: color-mix(in srgb, #ef4444 14%, transparent); }
 .cyclone-code-block-viewport .highlighted.warning { background: color-mix(in srgb, #eab308 14%, transparent); }
-.cyclone-code-block-tabs-trigger[data-state="active"] { background-color: var(--backgroundFloating) !important; border-bottom-color: var(--backgroundFloating) !important; }
-.cyclone-code-block-tabs-trigger[data-state="active"]:hover { background-color: var(--backgroundFloating) !important; }
-.cyclone-code-block-tabs-trigger[data-state="active"]::after { position: absolute; right: 1px; bottom: -1px; left: 1px; height: 2px; background-color: var(--backgroundFloating); content: ""; }
-.cyclone-code-block-tabs-trigger[data-state="active"] > * { color: var(--foreground); }
+.cyclone-code-block-tabs-trigger[data-state="active"] { background-color: var(--surfaceFloating) !important; border-bottom-color: var(--surfaceFloating) !important; }
+.cyclone-code-block-tabs-trigger[data-state="active"]:hover { background-color: var(--surfaceFloating) !important; }
+.cyclone-code-block-tabs-trigger[data-state="active"]::after { position: absolute; right: 1px; bottom: -1px; left: 1px; height: 2px; background-color: var(--surfaceFloating); content: ""; }
+.cyclone-code-block-tabs-trigger[data-state="active"] > * { color: var(--accent); }
 `;
 
 export interface CodeBlockActionsProps {
@@ -116,7 +116,7 @@ const CodeBlockFrame = styled(View, {
   marginVertical: "$4xl",
   overflow: "hidden",
   borderWidth: 1,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   borderRadius: "$container",
   backgroundColor: "$surfaceElevated"
 });
@@ -147,8 +147,8 @@ const CodeBlockHeaderHeading = styled(BodyText, {
   flex: 1,
   minWidth: 0,
   paddingVertical: 0,
-  color: "$inkSubtle",
-  variant: "lg",
+  color: "$inkBody",
+  variant: "sm",
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis"
@@ -163,7 +163,7 @@ const CodeBlockViewport = styled(View, {
   overflow: "unset",
   borderRadius: "$container",
   backgroundColor: "$surfaceFloating",
-  borderColor: "$accent",
+  borderColor: "$hairline",
   borderWidth: 1,
   borderStyle: "solid"
 });
@@ -282,11 +282,10 @@ export const CodeBlockCopyButton = ({
       accessibilityLabel={copied ? "Copied text" : "Copy text"}
       data-checked={copied || undefined}
       variant="ghost"
-      ghostOpacity={0.75}
+      ghostOpacity={0.5}
       size="$8xl"
-      color={copied ? "$accent" : "$inkSubtle"}
+      color={copied ? "$accent" : "$inkBody"}
       circular={true}
-      bordered={false}
       flexGrow={0}
       onPress={handleCopy}>
       <Button.Icon size="$8xl">
@@ -434,7 +433,7 @@ export const CodeBlockTabs = forwardRef<TamaguiElement, CodeBlockTabsProps>(
       marginVertical="$4xl"
       overflow="hidden"
       borderWidth={1}
-      borderColor="$accent"
+      borderColor="$hairline"
       borderRadius="$container"
       backgroundColor="$surfaceElevated"
       padding="$xl"
@@ -478,8 +477,8 @@ export const CodeBlockTabsTrigger = forwardRef<
     position="relative"
     zIndex={2}
     borderWidth={1}
-    borderColor="$accent"
-    borderBottomColor="$accent"
+    borderColor="$hairline"
+    borderBottomColor="$hairline"
     borderTopLeftRadius="$container"
     borderTopRightRadius="$container"
     borderBottomLeftRadius={0}
@@ -490,12 +489,13 @@ export const CodeBlockTabsTrigger = forwardRef<
       backgroundColor: "$surfaceCanvasHover"
     }}>
     <HeadingSmallText
-      color="$inkSubtle"
+      color="$inkBody"
       fontSize="$lg"
-      fontWeight="$semibold"
+      fontWeight="$normal"
       lineHeight="$lg"
       textAlign="center"
-      whiteSpace="nowrap">
+      whiteSpace="nowrap"
+      marginVertical="$md">
       {children}
     </HeadingSmallText>
   </TamaguiTabs.Tab>
@@ -513,7 +513,7 @@ export const CodeBlockTab = forwardRef<TamaguiElement, CodeBlockTabProps>(
       marginTop={-1}
       borderWidth={1}
       borderTopWidth={1}
-      borderColor="$accent"
+      borderColor="$hairline"
       borderBottomLeftRadius="$container"
       borderBottomRightRadius="$container"
       overflow="hidden"

@@ -142,6 +142,11 @@ export const TextArea = TextAreaFrame.styleable(
   ) => {
     const [focused, setActive] = useState(false);
     const hasValidationMessage = useFieldHasValidationMessage();
+    const idleColor = hasValidationMessage ? "$accent" : "$hairline";
+    const focusColor = hasValidationMessage
+      ? "$accentActive"
+      : "$hairlineActive";
+    const isFocused = focusedProp ?? focused;
     const handleFocus = useCallback(
       (event: FocusEvent<HTMLElement>) => {
         setActive(true);
@@ -165,10 +170,22 @@ export const TextArea = TextAreaFrame.styleable(
         rows={rows}
         {...props}
         placeholderTextColor={placeholderTextColor}
-        focused={focusedProp ?? focused}
+        focused={isFocused}
         hasValidationMessage={hasValidationMessage}
         variant={variant}
         disabled={disabled}
+        borderColor={isFocused ? focusColor : idleColor}
+        hoverStyle={{
+          borderColor: disabled
+            ? "$accentDisabled"
+            : isFocused
+              ? focusColor
+              : "$accentHover"
+        }}
+        focusVisibleStyle={{
+          boxShadow: variant === "underline" ? "none" : "$ringOffset",
+          borderColor: focusColor
+        }}
         $group-field-hover={{
           borderColor: disabled ? "$accentDisabled" : "$accentHover"
         }}
@@ -185,8 +202,9 @@ export const TextArea = TextAreaFrame.styleable(
       <TextAreaUnderlineFrame>
         {textArea}
         <ControlUnderline
-          focused={focusedProp ?? focused}
+          focused={isFocused}
           disabled={disabled}
+          backgroundColor={disabled ? "$accentDisabled" : focusColor}
         />
       </TextAreaUnderlineFrame>
     );

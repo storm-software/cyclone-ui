@@ -737,7 +737,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.emphasis",
       type: "color",
-      value: "#f1f1f1",
+      value: "#eaeaea",
       cssVar: "--rw-color-ink-emphasis",
       description: "Primary text and icon color for high-emphasis content.",
       theme: undefined,
@@ -755,7 +755,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.subtle",
       type: "color",
-      value: "#616161",
+      value: "#484848",
       cssVar: "--rw-color-ink-subtle",
       description: "Text and icon color for supporting content.",
       theme: undefined,
@@ -1007,7 +1007,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#616161",
+      value: "#484848",
       cssVar: "--rw-color-hairline",
       description: "Subtle color for hairline borders and separators.",
       theme: undefined,
@@ -1115,9 +1115,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-inactive",
       type: "color",
-      value: "#bebebe",
+      value: "#808080",
       cssVar: "--rw-color-accent-base-inactive",
-      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% darker)",
+      description: "Primary neutral accent for emphasized controls and content. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1448,9 +1448,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-inactive",
       type: "color",
-      value: "#bebebe",
+      value: "#808080",
       cssVar: "--rw-color-on-accent-base-inactive",
-      description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
+      description: "Content color placed on neutral accent backgrounds. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1853,18 +1853,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#ffffff",
+      value: "#333438",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, dark base primitive)",
+      description: "Muted neutral accent background for low-emphasis states. (active, 10% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.muted.base-inactive",
       type: "color",
-      value: "#bebebe",
+      value: "#808080",
       cssVar: "--rw-color-muted-base-inactive",
-      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
+      description: "Muted neutral accent background for low-emphasis states. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -2519,7 +2519,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#818181",
+      value: "#616161",
       cssVar: "--rw-color-hairline-hover",
       description: "Subtle color for hairline borders and separators. (hover, 23% brighter)",
       theme: undefined,
@@ -2528,16 +2528,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#717171",
+      value: "#515151",
       cssVar: "--rw-color-hairline-active",
-      description: "Subtle color for hairline borders and separators. (active, 11% brighter)",
+      description: "Subtle color for hairline borders and separators. (active, 8% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.hairline-inactive",
       type: "color",
-      value: "#464646",
+      value: "#333333",
       cssVar: "--rw-color-hairline-inactive",
       description: "Subtle color for hairline borders and separators. (inactive, 20% darker)",
       theme: undefined,
@@ -2645,9 +2645,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-inactive",
       type: "color",
-      value: "#bebebe",
+      value: "#808080",
       cssVar: "--rw-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -4994,7 +4994,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,
@@ -5028,11 +5028,29 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.eyebrow",
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xs",
+      description: "The display - extra small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-lg",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow",
-      description: "The eyebrow typography variant",
+      cssVar: "--rw-typography-eyebrow-lg",
+      description: "The large eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-sm",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow-sm",
+      description: "The small eyebrow typography variant",
       theme: undefined,
       typography: true
     },
@@ -5806,7 +5824,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.emphasis",
       type: "color",
-      value: "#cfcfcf",
+      value: "#cacaca",
       cssVar: "--rw-color-ink-emphasis",
       description: "Primary text and icon color for high-emphasis content.",
       theme: undefined,
@@ -5824,7 +5842,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.subtle",
       type: "color",
-      value: "#6a6a6a",
+      value: "#595959",
       cssVar: "--rw-color-ink-subtle",
       description: "Text and icon color for supporting content.",
       theme: undefined,
@@ -6076,7 +6094,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#6a6a6a",
+      value: "#595959",
       cssVar: "--rw-color-hairline",
       description: "Subtle color for hairline borders and separators.",
       theme: undefined,
@@ -6184,9 +6202,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-inactive",
       type: "color",
-      value: "#ababab",
+      value: "#808080",
       cssVar: "--rw-color-accent-base-inactive",
-      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% darker)",
+      description: "Primary neutral accent for emphasized controls and content. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -6517,9 +6535,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-inactive",
       type: "color",
-      value: "#ababab",
+      value: "#808080",
       cssVar: "--rw-color-on-accent-base-inactive",
-      description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
+      description: "Content color placed on neutral accent backgrounds. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -6922,18 +6940,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#d9d9d9",
+      value: "#4a4b4e",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, dark base primitive)",
+      description: "Muted neutral accent background for low-emphasis states. (active, 10% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.muted.base-inactive",
       type: "color",
-      value: "#ababab",
+      value: "#808080",
       cssVar: "--rw-color-muted-base-inactive",
-      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
+      description: "Muted neutral accent background for low-emphasis states. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -7588,7 +7606,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#818181",
+      value: "#6a6a6a",
       cssVar: "--rw-color-hairline-hover",
       description: "Subtle color for hairline borders and separators. (hover, 23% brighter)",
       theme: undefined,
@@ -7597,16 +7615,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#757575",
+      value: "#5f5f5f",
       cssVar: "--rw-color-hairline-active",
-      description: "Subtle color for hairline borders and separators. (active, 11% brighter)",
+      description: "Subtle color for hairline borders and separators. (active, 8% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.hairline-inactive",
       type: "color",
-      value: "#575757",
+      value: "#4a4a4a",
       cssVar: "--rw-color-hairline-inactive",
       description: "Subtle color for hairline borders and separators. (inactive, 20% darker)",
       theme: undefined,
@@ -7714,9 +7732,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-inactive",
       type: "color",
-      value: "#ababab",
+      value: "#808080",
       cssVar: "--rw-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -10063,7 +10081,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,
@@ -10097,11 +10115,29 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.eyebrow",
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xs",
+      description: "The display - extra small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-lg",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow",
-      description: "The eyebrow typography variant",
+      cssVar: "--rw-typography-eyebrow-lg",
+      description: "The large eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-sm",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow-sm",
+      description: "The small eyebrow typography variant",
       theme: undefined,
       typography: true
     },
@@ -10893,7 +10929,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.subtle",
       type: "color",
-      value: "#535353",
+      value: "#2f2f2f",
       cssVar: "--rw-color-ink-subtle",
       description: "Text and icon color for supporting content.",
       theme: undefined,
@@ -11145,7 +11181,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#535353",
+      value: "#2f2f2f",
       cssVar: "--rw-color-hairline",
       description: "Subtle color for hairline borders and separators.",
       theme: undefined,
@@ -11253,9 +11289,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-inactive",
       type: "color",
-      value: "#dadada",
+      value: "#808080",
       cssVar: "--rw-color-accent-base-inactive",
-      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% darker)",
+      description: "Primary neutral accent for emphasized controls and content. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -11586,9 +11622,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-inactive",
       type: "color",
-      value: "#dadada",
+      value: "#808080",
       cssVar: "--rw-color-on-accent-base-inactive",
-      description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
+      description: "Content color placed on neutral accent backgrounds. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -11991,18 +12027,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#ffffff",
+      value: "#121316",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, dark base primitive)",
+      description: "Muted neutral accent background for low-emphasis states. (active, 10% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.muted.base-inactive",
       type: "color",
-      value: "#dadada",
+      value: "#808080",
       cssVar: "--rw-color-muted-base-inactive",
-      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
+      description: "Muted neutral accent background for low-emphasis states. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -12657,7 +12693,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#828282",
+      value: "#535353",
       cssVar: "--rw-color-hairline-hover",
       description: "Subtle color for hairline borders and separators. (hover, 23% brighter)",
       theme: undefined,
@@ -12666,16 +12702,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#6a6a6a",
+      value: "#3c3c3c",
       cssVar: "--rw-color-hairline-active",
-      description: "Subtle color for hairline borders and separators. (active, 11% brighter)",
+      description: "Subtle color for hairline borders and separators. (active, 8% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.hairline-inactive",
       type: "color",
-      value: "#2c2c2c",
+      value: "#111111",
       cssVar: "--rw-color-hairline-inactive",
       description: "Subtle color for hairline borders and separators. (inactive, 20% darker)",
       theme: undefined,
@@ -12783,9 +12819,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-inactive",
       type: "color",
-      value: "#dadada",
+      value: "#808080",
       cssVar: "--rw-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -15132,7 +15168,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,
@@ -15166,11 +15202,29 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.eyebrow",
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xs",
+      description: "The display - extra small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-lg",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow",
-      description: "The eyebrow typography variant",
+      cssVar: "--rw-typography-eyebrow-lg",
+      description: "The large eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-sm",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow-sm",
+      description: "The small eyebrow typography variant",
       theme: undefined,
       typography: true
     },
@@ -16322,9 +16376,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-inactive",
       type: "color",
-      value: "#060607",
+      value: "#030303",
       cssVar: "--rw-color-accent-base-inactive",
-      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% darker)",
+      description: "Primary neutral accent for emphasized controls and content. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -16655,9 +16709,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-inactive",
       type: "color",
-      value: "#060607",
+      value: "#030303",
       cssVar: "--rw-color-on-accent-base-inactive",
-      description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
+      description: "Content color placed on neutral accent backgrounds. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -17060,18 +17114,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#0c0c0d",
+      value: "#cacaca",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, light base primitive)",
+      description: "Muted neutral accent background for low-emphasis states. (active, 10% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.muted.base-inactive",
       type: "color",
-      value: "#060607",
+      value: "#030303",
       cssVar: "--rw-color-muted-base-inactive",
-      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
+      description: "Muted neutral accent background for low-emphasis states. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -17735,9 +17789,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#a2a2a2",
+      value: "#aaaaaa",
       cssVar: "--rw-color-hairline-active",
-      description: "Subtle color for hairline borders and separators. (active, 11% darker)",
+      description: "Subtle color for hairline borders and separators. (active, 8% darker)",
       theme: undefined,
       typography: false
     },
@@ -17852,9 +17906,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-inactive",
       type: "color",
-      value: "#060607",
+      value: "#030303",
       cssVar: "--rw-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -20201,7 +20255,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,
@@ -20235,11 +20289,29 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.eyebrow",
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xs",
+      description: "The display - extra small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-lg",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow",
-      description: "The eyebrow typography variant",
+      cssVar: "--rw-typography-eyebrow-lg",
+      description: "The large eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-sm",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow-sm",
+      description: "The small eyebrow typography variant",
       theme: undefined,
       typography: true
     },
@@ -21391,9 +21463,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-inactive",
       type: "color",
-      value: "#29292d",
+      value: "#282828",
       cssVar: "--rw-color-accent-base-inactive",
-      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% darker)",
+      description: "Primary neutral accent for emphasized controls and content. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -21724,9 +21796,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-inactive",
       type: "color",
-      value: "#29292d",
+      value: "#282828",
       cssVar: "--rw-color-on-accent-base-inactive",
-      description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
+      description: "Content color placed on neutral accent backgrounds. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -22129,18 +22201,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#2e2e30",
+      value: "#b4b4b4",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, light base primitive)",
+      description: "Muted neutral accent background for low-emphasis states. (active, 10% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.muted.base-inactive",
       type: "color",
-      value: "#29292d",
+      value: "#282828",
       cssVar: "--rw-color-muted-base-inactive",
-      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
+      description: "Muted neutral accent background for low-emphasis states. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -22804,9 +22876,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#989898",
+      value: "#9d9d9d",
       cssVar: "--rw-color-hairline-active",
-      description: "Subtle color for hairline borders and separators. (active, 11% darker)",
+      description: "Subtle color for hairline borders and separators. (active, 8% darker)",
       theme: undefined,
       typography: false
     },
@@ -22921,9 +22993,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-inactive",
       type: "color",
-      value: "#29292d",
+      value: "#282828",
       cssVar: "--rw-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -25270,7 +25342,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,
@@ -25304,11 +25376,29 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.eyebrow",
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xs",
+      description: "The display - extra small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-lg",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow",
-      description: "The eyebrow typography variant",
+      cssVar: "--rw-typography-eyebrow-lg",
+      description: "The large eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-sm",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow-sm",
+      description: "The small eyebrow typography variant",
       theme: undefined,
       typography: true
     },
@@ -26462,7 +26552,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-accent-base-inactive",
-      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% darker)",
+      description: "Primary neutral accent for emphasized controls and content. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -26795,7 +26885,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-on-accent-base-inactive",
-      description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
+      description: "Content color placed on neutral accent backgrounds. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -27198,9 +27288,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#000000",
+      value: "#ececec",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, light base primitive)",
+      description: "Muted neutral accent background for low-emphasis states. (active, 10% darker)",
       theme: undefined,
       typography: false
     },
@@ -27209,7 +27299,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-muted-base-inactive",
-      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
+      description: "Muted neutral accent background for low-emphasis states. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -27873,9 +27963,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#b2b2b2",
+      value: "#bdbdbd",
       cssVar: "--rw-color-hairline-active",
-      description: "Subtle color for hairline borders and separators. (active, 11% darker)",
+      description: "Subtle color for hairline borders and separators. (active, 8% darker)",
       theme: undefined,
       typography: false
     },
@@ -27992,7 +28082,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -30339,7 +30429,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
       theme: undefined,
@@ -30373,11 +30463,29 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.eyebrow",
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xs",
+      description: "The display - extra small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-lg",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow",
-      description: "The eyebrow typography variant",
+      cssVar: "--rw-typography-eyebrow-lg",
+      description: "The large eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow-sm",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow-sm",
+      description: "The small eyebrow typography variant",
       theme: undefined,
       typography: true
     },

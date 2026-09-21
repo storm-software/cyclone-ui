@@ -29,7 +29,11 @@ import { useCallback, useState } from "react";
 import { SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
 import type { SelectContextProps } from "./types";
-import { getSelectSize, SelectContext } from "./utilities";
+import {
+  getSelectSize,
+  getSelectVisualFocus,
+  SelectContext
+} from "./utilities";
 
 const getSelectFrameSize = (
   val: SizeTokens | number,
@@ -174,7 +178,7 @@ const SelectSeparator = styled(View, {
 
     hasValidationMessage: {
       true: {
-        borderColor: "$hairlineActive"
+        borderColor: "$accent"
       }
     },
 
@@ -276,6 +280,11 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
     const frameSize =
       size === "$true" || String(size) === "true" ? "$10xl" : size;
     const underlineActive = focused || locallyActive;
+    const idleColor = hasValidationMessage ? "$accent" : "$hairline";
+    const focusColor = hasValidationMessage
+      ? "$accentActive"
+      : "$hairlineActive";
+    const hoverColor = hasValidationMessage ? "$accentHover" : "$hairlineHover";
 
     return (
       <SelectGroup
@@ -285,6 +294,12 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
         variant={variant}
         frameSize={frameSize}
         disabled={disabled}
+        borderColor={focused ? focusColor : idleColor}
+        hoverStyle={{ borderColor: focused ? focusColor : "$accentHover" }}
+        focusVisibleStyle={{
+          boxShadow: variant === "underline" ? "none" : "$ringOffset",
+          borderColor: focusColor
+        }}
         onFocus={() => setLocallyActive(true)}
         onBlur={(event: any) => {
           if (!event.currentTarget?.contains?.(event.relatedTarget)) {
@@ -309,9 +324,10 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
                 borderColor: disabled
                   ? "$hairlineInactive"
                   : focused
-                    ? "$hairlineActive"
-                    : "$hairlineHover"
+                    ? focusColor
+                    : hoverColor
               }}
+              borderColor={focused ? focusColor : idleColor}
             />
           </XGroup.Item>
 
@@ -324,6 +340,7 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
             bottom={-1}
             focused={underlineActive}
             disabled={disabled}
+            backgroundColor={disabled ? "$accentDisabled" : focusColor}
           />
         )}
       </SelectGroup>
@@ -350,6 +367,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
   ) => {
     const [open, setOpen] = useState(false);
     const hasValidationMessage = useFieldHasValidationMessage();
+    const visualFocus = getSelectVisualFocus(focused, open);
     const resolvedSize =
       size === "$true" || String(size) === "true" ? "$10xl" : size;
 
@@ -383,7 +401,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
         {...props}
         name={name}
         disabled={disabled}
-        focused={focused ?? open}
+        focused={visualFocus}
         hasValidationMessage={hasValidationMessage}
         variant={variant}
         size={resolvedSize}

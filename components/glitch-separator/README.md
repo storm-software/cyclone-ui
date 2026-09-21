@@ -45,8 +45,8 @@ A decorative, seeded square-grid transition between sections. The default layout
 
 ```tsx
 <GlitchSeparator
-  topColor="$backgroundPage"
-  bottomColor="$background"
+  topColor="$surfaceCanvas"
+  bottomColor="$access"
   animate="scroll"
 />
 ```

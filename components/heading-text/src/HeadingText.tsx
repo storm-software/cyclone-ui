@@ -65,10 +65,17 @@ export const HeadingSmallText = styled(BaseHeadingText, {
   fontFamily: "$display-sm"
 });
 
+export const HeadingExtraSmallText = styled(BaseHeadingText, {
+  name: "HeadingExtraSmallText",
+  render: "span",
+  fontFamily: "$display-xs"
+});
+
 export type HeadingTextProps = GetProps<typeof BaseHeadingText>;
 
 export const HeadingText = BaseHeadingText.styleable<{
-  level?: 1 | 2 | 3 | 4 | 5 | "hero" | "title" | "xl" | "lg" | "md" | "sm";
+  level?:
+    1 | 2 | 3 | 4 | 5 | 6 | "hero" | "title" | "xl" | "lg" | "md" | "sm" | "xs";
 }>(
   ({ children, level, ...props }, forwardedRef) => {
     if (level === 1 || level === "hero") {
@@ -106,6 +113,12 @@ export const HeadingText = BaseHeadingText.styleable<{
         <HeadingSmallText ref={forwardedRef} {...props}>
           {children}
         </HeadingSmallText>
+      );
+    } else if (level === 6 || level === "xs") {
+      return (
+        <HeadingExtraSmallText ref={forwardedRef} {...props}>
+          {children}
+        </HeadingExtraSmallText>
       );
     }
 

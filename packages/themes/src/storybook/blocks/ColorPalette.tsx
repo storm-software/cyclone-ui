@@ -158,7 +158,7 @@ const COLOR_VARIANTS = {
             "discovery": "#9277da",
             "base-hover": "#9b9b9b",
             "base-active": "#ffffff",
-            "base-inactive": "#bebebe",
+            "base-inactive": "#808080",
             "base-disabled": "#fafafa66",
             "brand-hover": "#00a785",
             "brand-active": "#00c5a1",
@@ -201,8 +201,8 @@ const COLOR_VARIANTS = {
             "base": "#2b2c30",
             "brand": "#007e5e",
             "base-hover": "#414347",
-            "base-active": "#ffffff",
-            "base-inactive": "#bebebe",
+            "base-active": "#333438",
+            "base-inactive": "#808080",
             "base-disabled": "#2b2c2f",
             "brand-hover": "#3da280",
             "brand-active": "#26906f",
@@ -252,7 +252,7 @@ const COLOR_VARIANTS = {
             "base": "#151518",
             "base-hover": "#232326",
             "base-active": "#ffffff",
-            "base-inactive": "#bebebe",
+            "base-inactive": "#808080",
             "base-disabled": "#151517",
             "brand": "#151518",
             "danger": "#FAFAFA",
@@ -311,7 +311,7 @@ const COLOR_VARIANTS = {
             "discovery": "#d3c7ff",
             "base-hover": "#9b9b9b",
             "base-active": "#ffffff",
-            "base-inactive": "#bebebe",
+            "base-inactive": "#808080",
             "base-disabled": "#fafafa66",
             "brand-hover": "#00a785",
             "brand-active": "#00c5a1",
@@ -387,37 +387,37 @@ const COLOR_VARIANTS = {
       title={"color.hairline"}
       subtitle={"Subtle color for hairline borders and separators."}
       colors={{
-            "hairline": "#616161"
+            "hairline": "#484848"
       }}
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 11% brighter)"}
+      subtitle={"Subtle color for hairline borders and separators. (active, 8% brighter)"}
       colors={{
-            "hairline-active": "#717171"
+            "hairline-active": "#515151"
       }}
     />
           <ColorItem
       title={"color.hairline-hover"}
       subtitle={"Subtle color for hairline borders and separators. (hover, 23% brighter)"}
       colors={{
-            "hairline-hover": "#818181"
+            "hairline-hover": "#616161"
       }}
     />
           <ColorItem
       title={"color.hairline-inactive"}
       subtitle={"Subtle color for hairline borders and separators. (inactive, 20% darker)"}
       colors={{
-            "hairline-inactive": "#464646"
+            "hairline-inactive": "#333333"
       }}
     />
           <ColorItem
       title={"color.ink"}
       subtitle={"Primary text and icon color for high-emphasis content."}
       colors={{
-            "emphasis": "#f1f1f1",
+            "emphasis": "#eaeaea",
             "body": "#bebebe",
-            "subtle": "#616161"
+            "subtle": "#484848"
       }}
     />
           <ColorItem
@@ -663,7 +663,7 @@ const COLOR_VARIANTS = {
             "discovery": "#8e7dbb",
             "base-hover": "#939393",
             "base-active": "#d9d9d9",
-            "base-inactive": "#ababab",
+            "base-inactive": "#808080",
             "base-disabled": "#d5d5d566",
             "brand-hover": "#2c9680",
             "brand-active": "#30a691",
@@ -706,8 +706,8 @@ const COLOR_VARIANTS = {
             "base": "#444548",
             "brand": "#258069",
             "base-hover": "#545558",
-            "base-active": "#d9d9d9",
-            "base-inactive": "#ababab",
+            "base-active": "#4a4b4e",
+            "base-inactive": "#808080",
             "base-disabled": "#444547",
             "brand-hover": "#57917e",
             "brand-active": "#458772",
@@ -757,7 +757,7 @@ const COLOR_VARIANTS = {
             "base": "#343438",
             "base-hover": "#3e3e41",
             "base-active": "#d9d9d9",
-            "base-inactive": "#ababab",
+            "base-inactive": "#808080",
             "base-disabled": "#343437",
             "brand": "#343438",
             "danger": "#d5d5d5",
@@ -816,7 +816,7 @@ const COLOR_VARIANTS = {
             "discovery": "#b3a5e5",
             "base-hover": "#939393",
             "base-active": "#d9d9d9",
-            "base-inactive": "#ababab",
+            "base-inactive": "#808080",
             "base-disabled": "#d5d5d566",
             "brand-hover": "#2c9680",
             "brand-active": "#30a691",
@@ -892,37 +892,37 @@ const COLOR_VARIANTS = {
       title={"color.hairline"}
       subtitle={"Subtle color for hairline borders and separators."}
       colors={{
-            "hairline": "#6a6a6a"
+            "hairline": "#595959"
       }}
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 11% brighter)"}
+      subtitle={"Subtle color for hairline borders and separators. (active, 8% brighter)"}
       colors={{
-            "hairline-active": "#757575"
+            "hairline-active": "#5f5f5f"
       }}
     />
           <ColorItem
       title={"color.hairline-hover"}
       subtitle={"Subtle color for hairline borders and separators. (hover, 23% brighter)"}
       colors={{
-            "hairline-hover": "#818181"
+            "hairline-hover": "#6a6a6a"
       }}
     />
           <ColorItem
       title={"color.hairline-inactive"}
       subtitle={"Subtle color for hairline borders and separators. (inactive, 20% darker)"}
       colors={{
-            "hairline-inactive": "#575757"
+            "hairline-inactive": "#4a4a4a"
       }}
     />
           <ColorItem
       title={"color.ink"}
       subtitle={"Primary text and icon color for high-emphasis content."}
       colors={{
-            "emphasis": "#cfcfcf",
+            "emphasis": "#cacaca",
             "body": "#ababab",
-            "subtle": "#6a6a6a"
+            "subtle": "#595959"
       }}
     />
           <ColorItem
@@ -1168,7 +1168,7 @@ const COLOR_VARIANTS = {
             "discovery": "#a283f3",
             "base-hover": "#a7a7a7",
             "base-active": "#ffffff",
-            "base-inactive": "#dadada",
+            "base-inactive": "#808080",
             "base-disabled": "#ffffff66",
             "brand-hover": "#007f65",
             "brand-active": "#00ab8c",
@@ -1211,8 +1211,8 @@ const COLOR_VARIANTS = {
             "base": "#08080a",
             "brand": "#004433",
             "base-hover": "#25282e",
-            "base-active": "#ffffff",
-            "base-inactive": "#dadada",
+            "base-active": "#121316",
+            "base-inactive": "#808080",
             "base-disabled": "#070709",
             "brand-hover": "#23ad7f",
             "brand-active": "#0c8962",
@@ -1262,7 +1262,7 @@ const COLOR_VARIANTS = {
             "base": "#000000",
             "base-hover": "#000000",
             "base-active": "#ffffff",
-            "base-inactive": "#dadada",
+            "base-inactive": "#808080",
             "base-disabled": "#000000",
             "brand": "#000000",
             "danger": "#ffffff",
@@ -1321,7 +1321,7 @@ const COLOR_VARIANTS = {
             "discovery": "#ffffff",
             "base-hover": "#a7a7a7",
             "base-active": "#ffffff",
-            "base-inactive": "#dadada",
+            "base-inactive": "#808080",
             "base-disabled": "#ffffff66",
             "brand-hover": "#007f65",
             "brand-active": "#00ab8c",
@@ -1397,28 +1397,28 @@ const COLOR_VARIANTS = {
       title={"color.hairline"}
       subtitle={"Subtle color for hairline borders and separators."}
       colors={{
-            "hairline": "#535353"
+            "hairline": "#2f2f2f"
       }}
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 11% brighter)"}
+      subtitle={"Subtle color for hairline borders and separators. (active, 8% brighter)"}
       colors={{
-            "hairline-active": "#6a6a6a"
+            "hairline-active": "#3c3c3c"
       }}
     />
           <ColorItem
       title={"color.hairline-hover"}
       subtitle={"Subtle color for hairline borders and separators. (hover, 23% brighter)"}
       colors={{
-            "hairline-hover": "#828282"
+            "hairline-hover": "#535353"
       }}
     />
           <ColorItem
       title={"color.hairline-inactive"}
       subtitle={"Subtle color for hairline borders and separators. (inactive, 20% darker)"}
       colors={{
-            "hairline-inactive": "#2c2c2c"
+            "hairline-inactive": "#111111"
       }}
     />
           <ColorItem
@@ -1427,7 +1427,7 @@ const COLOR_VARIANTS = {
       colors={{
             "emphasis": "#ffffff",
             "body": "#dadada",
-            "subtle": "#535353"
+            "subtle": "#2f2f2f"
       }}
     />
           <ColorItem
@@ -1673,7 +1673,7 @@ const COLOR_VARIANTS = {
             "discovery": "#594395",
             "base-hover": "#232326",
             "base-active": "#0c0c0d",
-            "base-inactive": "#060607",
+            "base-inactive": "#030303",
             "base-disabled": "#151517",
             "brand-hover": "#003590",
             "brand-active": "#0f45a2",
@@ -1716,8 +1716,8 @@ const COLOR_VARIANTS = {
             "base": "#eaeaea",
             "brand": "#abcaff",
             "base-hover": "#919191",
-            "base-active": "#0c0c0d",
-            "base-inactive": "#060607",
+            "base-active": "#cacaca",
+            "base-inactive": "#030303",
             "base-disabled": "#eaeaea66",
             "brand-hover": "#728fc1",
             "brand-active": "#8eacdf",
@@ -1767,7 +1767,7 @@ const COLOR_VARIANTS = {
             "base": "#f1f1f1",
             "base-hover": "#959595",
             "base-active": "#0c0c0d",
-            "base-inactive": "#060607",
+            "base-inactive": "#030303",
             "base-disabled": "#f1f1f166",
             "brand": "#FAFAFA",
             "danger": "#FAFAFA",
@@ -1826,7 +1826,7 @@ const COLOR_VARIANTS = {
             "discovery": "#20004c",
             "base-hover": "#232326",
             "base-active": "#0c0c0d",
-            "base-inactive": "#060607",
+            "base-inactive": "#030303",
             "base-disabled": "#151517",
             "brand-hover": "#003590",
             "brand-active": "#0f45a2",
@@ -1907,9 +1907,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 11% darker)"}
+      subtitle={"Subtle color for hairline borders and separators. (active, 8% darker)"}
       colors={{
-            "hairline-active": "#a2a2a2"
+            "hairline-active": "#aaaaaa"
       }}
     />
           <ColorItem
@@ -2178,7 +2178,7 @@ const COLOR_VARIANTS = {
             "discovery": "#675a8a",
             "base-hover": "#3e3e41",
             "base-active": "#2e2e30",
-            "base-inactive": "#29292d",
+            "base-inactive": "#282828",
             "base-disabled": "#343437",
             "brand-hover": "#284c89",
             "brand-active": "#365892",
@@ -2221,8 +2221,8 @@ const COLOR_VARIANTS = {
             "base": "#cacaca",
             "brand": "#96b2e1",
             "base-hover": "#8c8c8c",
-            "base-active": "#2e2e30",
-            "base-inactive": "#29292d",
+            "base-active": "#b4b4b4",
+            "base-inactive": "#282828",
             "base-disabled": "#cacaca66",
             "brand-hover": "#7a8ba9",
             "brand-active": "#8b9fc1",
@@ -2272,7 +2272,7 @@ const COLOR_VARIANTS = {
             "base": "#cfcfcf",
             "base-hover": "#8f8f8f",
             "base-active": "#2e2e30",
-            "base-inactive": "#29292d",
+            "base-inactive": "#282828",
             "base-disabled": "#cfcfcf66",
             "brand": "#d5d5d5",
             "danger": "#d5d5d5",
@@ -2331,7 +2331,7 @@ const COLOR_VARIANTS = {
             "discovery": "#3b1d65",
             "base-hover": "#3e3e41",
             "base-active": "#2e2e30",
-            "base-inactive": "#29292d",
+            "base-inactive": "#282828",
             "base-disabled": "#343437",
             "brand-hover": "#284c89",
             "brand-active": "#365892",
@@ -2412,9 +2412,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 11% darker)"}
+      subtitle={"Subtle color for hairline borders and separators. (active, 8% darker)"}
       colors={{
-            "hairline-active": "#989898"
+            "hairline-active": "#9d9d9d"
       }}
     />
           <ColorItem
@@ -2726,7 +2726,7 @@ const COLOR_VARIANTS = {
             "base": "#ffffff",
             "brand": "#f8fbff",
             "base-hover": "#999999",
-            "base-active": "#000000",
+            "base-active": "#ececec",
             "base-inactive": "#000000",
             "base-disabled": "#ffffff66",
             "brand-hover": "#7297d9",
@@ -2917,9 +2917,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 11% darker)"}
+      subtitle={"Subtle color for hairline borders and separators. (active, 8% darker)"}
       colors={{
-            "hairline-active": "#b2b2b2"
+            "hairline-active": "#bdbdbd"
       }}
     />
           <ColorItem

@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, within } from "storybook/test";
 
 import { Badge } from "./Badge";
 
@@ -52,6 +53,15 @@ export const Outlined: Story = {
   args: {
     children: "Badge Text",
     outlined: true
+  },
+  play: async ({ canvasElement }) => {
+    const text = within(canvasElement).getByText("Badge Text");
+    const frame = text.parentElement;
+
+    await expect(frame).not.toBeNull();
+    await expect(getComputedStyle(text).color).toBe(
+      getComputedStyle(frame!).borderColor
+    );
   }
 };
 

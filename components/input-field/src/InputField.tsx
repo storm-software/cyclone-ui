@@ -21,6 +21,7 @@ import {
   useFieldShouldShowPlaceholder,
   useFieldVariant
 } from "@cyclone-ui/field";
+import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { Theme, useComposedRefs, withStaticProperties } from "@tamagui/core";
@@ -31,8 +32,15 @@ import {
   use,
   useCallback,
   useLayoutEffect,
-  useRef
+  useMemo,
+  useRef,
+  useState
 } from "react";
+
+const InputFieldPresentationContext = createContext({
+  hasStartIcon: false,
+  registerStartIcon: () => () => undefined
+});
 
 const InputFieldTextBoxContext = createContext<{
   inputElementRef: RefObject<HTMLInputElement | null>;
@@ -40,12 +48,59 @@ const InputFieldTextBoxContext = createContext<{
 
 const InputFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, variant = "floating", ...rest } = props;
+  const [startIconCount, setStartIconCount] = useState(0);
+  const registerStartIcon = useCallback(() => {
+    setStartIconCount(count => count + 1);
+
+    return () => setStartIconCount(count => Math.max(0, count - 1));
+  }, []);
+  const presentation = useMemo(
+    () => ({ hasStartIcon: startIconCount > 0, registerStartIcon }),
+    [registerStartIcon, startIconCount]
+  );
 
   return (
-    <Field ref={forwardedRef} {...rest} variant={variant}>
-      {children}
-    </Field>
+    <InputFieldPresentationContext value={presentation}>
+      <Field ref={forwardedRef} {...rest} variant={variant}>
+        {children}
+      </Field>
+    </InputFieldPresentationContext>
   );
+});
+
+const InputFieldLabel = Field.Label.styleable((props, forwardedRef) => {
+  const field = FieldApi.use();
+  const size = field.size.get() ?? "$true";
+  const { hasStartIcon } = use(InputFieldPresentationContext);
+  const controlSize =
+    size === "$true" || String(size) === "true" ? "$10xl" : size;
+  const floatingLabelLeft = hasStartIcon
+    ? getSpaced("$4xl") +
+      getSized(controlSize, { shift: -2 }) +
+      getSpaced("$2xl") * 2
+    : undefined;
+
+  return (
+    <Field.Label
+      ref={forwardedRef}
+      {...props}
+      floatingLabelLeft={floatingLabelLeft}
+    />
+  );
+});
+
+const InputFieldIcon = Field.Icon.styleable<{
+  position?: "start" | "end";
+}>(({ position, ...props }, forwardedRef) => {
+  const { registerStartIcon } = use(InputFieldPresentationContext);
+
+  useLayoutEffect(() => {
+    if (position === "start") {
+      return registerStartIcon();
+    }
+  }, [position, registerStartIcon]);
+
+  return <Field.Icon ref={forwardedRef} {...props} position={position} />;
 });
 
 const InputFieldControl = Input.styleable(
@@ -175,7 +230,7 @@ const InputFieldControlTrigger = Input.Trigger.styleable(
 );
 
 export const InputField = withStaticProperties(InputFieldGroup, {
-  Label: Field.Label,
+  Label: InputFieldLabel,
   Link: Field.Link,
   Control: withStaticProperties(InputFieldControl, {
     TextBox: withStaticProperties(InputFieldControlTextBox, {
@@ -187,5 +242,5 @@ export const InputField = withStaticProperties(InputFieldGroup, {
     })
   }),
   Details: Field.Details,
-  Icon: Field.Icon
+  Icon: InputFieldIcon
 });

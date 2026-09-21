@@ -110,7 +110,7 @@ export const createNodesV2: CreateNodes<StorybookPluginOptions> = [
           const buildOutputs = getOutputs();
           const targets: Record<string, TargetConfiguration> = {};
 
-          targets.prepare = prepareTarget(contextV2.workspaceRoot);
+          targets.prepare = prepareTarget(context.workspaceRoot);
           targets[normalizedOptions.buildStorybookTargetName] = buildTarget(
             buildOutputs,
             projectRoot,
@@ -212,10 +212,10 @@ function prepareTarget(workspaceRoot: string): TargetConfiguration {
     options: {
       cwd: workspaceRoot,
       commands: [
-        { command: "nx run monorepo:generate-tokens" },
+        { command: "pnpm exec nx run monorepo:generate-tokens" },
         // `main.ts` aliases component and package imports to source. The theme
         // export is the exception: Storybook loads it while compiling config.
-        { command: "nx run themes:build" }
+        { command: "pnpm exec nx run themes:build" }
       ],
       parallel: false
     }
