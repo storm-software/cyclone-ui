@@ -68,6 +68,16 @@ export const Base: Story = {
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
     const input = canvas.getByRole("textbox");
+    const label = canvas.getByText("Label Text").closest("label");
+
+    await expect(label).not.toBeNull();
+    await expect(
+      Math.abs(
+        label!.getBoundingClientRect().top +
+          label!.getBoundingClientRect().height / 2 -
+          input.getBoundingClientRect().top
+      )
+    ).toBeLessThan(2);
 
     await userEvent.click(input);
     input.setSelectionRange(1, 1);

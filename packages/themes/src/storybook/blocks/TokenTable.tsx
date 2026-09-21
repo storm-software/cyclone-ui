@@ -4994,7 +4994,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,
@@ -10054,7 +10054,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,
@@ -15114,7 +15114,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,
@@ -20174,7 +20174,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,
@@ -25234,7 +25234,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,
@@ -30294,7 +30294,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,

@@ -591,9 +591,9 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                         <View position="relative" alignSelf="stretch">
                           <Asterisk
                             color="$required"
-                            size="$lg"
+                            size={floating ? "$md" : "$xl"}
                             position="absolute"
-                            top={2}
+                            top={floating ? -1 : -1}
                           />
                         </View>
                       )}

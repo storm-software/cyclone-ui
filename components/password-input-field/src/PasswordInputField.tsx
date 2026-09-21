@@ -130,7 +130,10 @@ const PasswordInputFieldStrength = PasswordStrengthFrame.styleable(
 );
 
 const PasswordInputFieldGroup = Field.styleable(
-  ({ children, theme, validate, ...props }, forwardedRef) => {
+  (
+    { children, theme, validate, variant = "floating", ...props },
+    forwardedRef
+  ) => {
     const [passwordVisible, setPasswordVisible] = useState(false);
 
     const togglePasswordVisibility = useCallback(() => {
@@ -157,6 +160,7 @@ const PasswordInputFieldGroup = Field.styleable(
           ref={forwardedRef}
           {...props}
           theme={theme}
+          variant={variant}
           validate={validation}
           width="100%">
           <YStack gap="$3xl">

@@ -98,6 +98,18 @@ export const Base: Story = {
     await expect(strength).toHaveAttribute("aria-valuenow", "0");
     await expect(strength).toHaveTextContent("Password strength");
 
+    await userEvent.click(input);
+    await waitFor(() => {
+      const label = canvas.getByText("New Password");
+      const labelBounds = label.getBoundingClientRect();
+      const inputBounds = input.getBoundingClientRect();
+
+      expect(labelBounds.top + labelBounds.height / 2).toBeCloseTo(
+        inputBounds.top,
+        1
+      );
+    });
+
     await userEvent.type(input, "OrangeBoatTree1234");
     await expect(strength).toHaveAttribute("aria-valuenow", "4");
     await expect(strength).toHaveTextContent("Strong");

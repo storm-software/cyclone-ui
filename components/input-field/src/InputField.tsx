@@ -35,10 +35,10 @@ const InputFieldTextBoxContext = createContext<{
 } | null>(null);
 
 const InputFieldGroup = Field.styleable((props, forwardedRef) => {
-  const { children, ...rest } = props;
+  const { children, variant = "floating", ...rest } = props;
 
   return (
-    <Field ref={forwardedRef} {...rest}>
+    <Field ref={forwardedRef} {...rest} variant={variant}>
       {children}
     </Field>
   );

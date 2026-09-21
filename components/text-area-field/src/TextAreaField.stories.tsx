@@ -63,8 +63,17 @@ export const Base: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const textArea = canvas.getByRole("textbox");
+    const label = canvas.getByText("Label Text").closest("label");
 
     await expect(textArea.tagName).toBe("TEXTAREA");
+    await expect(label).not.toBeNull();
+    await expect(
+      Math.abs(
+        label!.getBoundingClientRect().top +
+          label!.getBoundingClientRect().height / 2 -
+          textArea.getBoundingClientRect().top
+      )
+    ).toBeLessThan(2);
     await expect(getComputedStyle(textArea).color).not.toBe("rgba(0, 0, 0, 0)");
     await expect(getComputedStyle(textArea, "::placeholder").color).not.toBe(
       "rgba(0, 0, 0, 0)"

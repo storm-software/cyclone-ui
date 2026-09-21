@@ -1053,18 +1053,18 @@ const displayHeroFont = createFont({
 const displayLgFont = createFont({
   family: "Space Grotesk",
   size: {
-    "2xl": 30,
-    true: 30
+    true: 24,
+    xl: 24
   },
   lineHeight: {
-    "2xl": 28.688,
-    tight: 28.688,
-    true: 28.688
+    tight: 22.95,
+    true: 22.95,
+    xl: 22.95
   },
   weight: {
-    "2xl": "500",
     medium: "500",
-    true: "500"
+    true: "500",
+    xl: "500"
   }
 });
 

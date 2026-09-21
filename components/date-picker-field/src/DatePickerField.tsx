@@ -273,7 +273,13 @@ const DatePickerFieldGroup = Field.styleable<{
   mode?: DatePickerMode;
   separator?: DateSeparator;
 }>((props, forwardedRef) => {
-  const { children, mode = "single", separator = ".", ...rest } = props;
+  const {
+    children,
+    mode = "single",
+    separator = ".",
+    variant = "floating",
+    ...rest
+  } = props;
 
   const handleFormat = useCallback(
     (value: any) =>
@@ -295,6 +301,7 @@ const DatePickerFieldGroup = Field.styleable<{
       <Field
         ref={forwardedRef}
         {...rest}
+        variant={variant}
         format={handleFormat}
         parse={handleParse}
         mask={

@@ -18,6 +18,7 @@
 
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, within } from "storybook/test";
 import { SelectField } from "./SelectField";
 
 const meta: Meta<typeof SelectField> = {
@@ -86,7 +87,21 @@ const items = [
 ];
 
 export const Base: Story = {
-  args: {}
+  args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("combobox");
+    const label = canvas.getByText("Label Text").closest("label");
+
+    await expect(label).not.toBeNull();
+    await expect(
+      Math.abs(
+        label!.getBoundingClientRect().top +
+          label!.getBoundingClientRect().height / 2 -
+          input.getBoundingClientRect().top
+      )
+    ).toBeLessThan(2);
+  }
 };
 
 export const Floating: Story = {

@@ -257,7 +257,7 @@ typography:
     lineHeight: "1.051875"
   display-lg:
     fontFamily: "Space Grotesk"
-    fontSize: "1.875rem"
+    fontSize: "1.5rem"
     fontWeight: "500"
     lineHeight: "0.95625"
   display-md:
@@ -583,7 +583,7 @@ Cyclone UI design tokens — 241 color tokens, 11 typography tokens, 28 spacing 
 
 - **display-hero:** fontFamily: Space Grotesk, fontSize: 3.75rem, fontWeight: 400, lineHeight: 1.1475
 - **display-xl:** fontFamily: Space Grotesk, fontSize: 3rem, fontWeight: 400, lineHeight: 1.051875
-- **display-lg:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 500, lineHeight: 0.95625
+- **display-lg:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 500, lineHeight: 0.95625
 - **display-md:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.051875
 - **display-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 700, lineHeight: 1.051875
 - **eyebrow:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.1475
