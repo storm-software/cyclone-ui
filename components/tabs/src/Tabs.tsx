@@ -314,7 +314,7 @@ const TabsRovingIndicator = styled(YStack, {
       floating: {
         borderRadius: "$button",
         borderWidth: 1,
-        borderColor: "$accent",
+        borderColor: "$hairline",
         alignItems: "center",
         justifyContent: "center"
       },
@@ -425,7 +425,7 @@ const TabsHeaderList = styled(YStack, {
       floating: {
         backgroundColor: "$surfaceSunken",
         borderRadius: "$container",
-        borderColor: "$accent",
+        borderColor: "$hairline",
         borderWidth: 1
       },
       tabbed: {
@@ -527,6 +527,7 @@ const TabsHeaderItemHeading = styled(HeadingSmallText, {
 
   transition: "200ms",
   textAlign: "center",
+  paddingVertical: "$xl",
 
   variants: {
     size: {
@@ -586,7 +587,7 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
         config.props.orientation === "horizontal"
           ? {
               backgroundColor: "$surfaceCanvas",
-              borderColor: "$accent",
+              borderColor: "$hairline",
               borderWidth: 1,
               borderTopLeftRadius: "$container",
               borderTopRightRadius: "$container",
@@ -597,7 +598,7 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
             }
           : {
               backgroundColor: "$surfaceCanvas",
-              borderColor: "$accent",
+              borderColor: "$hairline",
               borderWidth: 1,
               borderTopLeftRadius: "$container",
               borderBottomLeftRadius: "$container",
@@ -656,7 +657,7 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
 
     useLayoutEffect(() => {
       setState(next => ({ ...next, steps: [...next.steps, value] }));
-    }, []);
+    }, [setState, value]);
 
     return (
       <TabsHeaderItem
@@ -674,7 +675,7 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
           size={size}
           selected={currentTab === value}
           $group-hover={{
-            color: "$accentHover"
+            color: "$accent"
           }}>
           {children}
         </TabsHeaderItemHeading>
@@ -707,14 +708,14 @@ const TabsContentList = styled(View, {
         config.props.orientation === "horizontal"
           ? {
               backgroundColor: "$surfaceElevated",
-              borderColor: "$accent",
+              borderColor: "$hairline",
               borderWidth: 1,
               borderBottomLeftRadius: "$container",
               borderBottomRightRadius: "$container"
             }
           : {
               backgroundColor: "$surfaceElevated",
-              borderColor: "$accent",
+              borderColor: "$hairline",
               borderWidth: 1,
               borderTopRightRadius: "$container",
               borderBottomRightRadius: "$container"

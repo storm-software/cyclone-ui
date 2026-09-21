@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
@@ -37,6 +38,7 @@ export interface SwitchContextProps {
   checked: boolean;
   required: boolean;
   disabled: boolean;
+  hasValidationMessage: boolean;
 }
 
 export const SwitchContext = createStyledContext<SwitchContextProps>({
@@ -44,7 +46,8 @@ export const SwitchContext = createStyledContext<SwitchContextProps>({
   name: "",
   checked: false,
   required: false,
-  disabled: false
+  disabled: false,
+  hasValidationMessage: false
 });
 
 const getSwitchHeight = (val: SizeTokens) =>
@@ -61,7 +64,7 @@ const SwitchFrame = styled(View, {
   borderRadius: 100_000,
   backgroundColor: "$surfaceElevated",
   borderWidth: 1,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   boxShadow: "none",
   tabIndex: 0,
 
@@ -90,6 +93,15 @@ const SwitchFrame = styled(View, {
           minHeight: height,
           width
         };
+      }
+    },
+
+    hasValidationMessage: {
+      true: {
+        borderColor: "$accent",
+        hoverStyle: {
+          borderColor: "$accentHover"
+        }
       }
     },
 
@@ -125,7 +137,7 @@ const SwitchThumb = styled(View, {
 
   theme: "base",
   transition: "200ms",
-  backgroundColor: "$surfaceFloating",
+  backgroundColor: "$muted",
   borderRadius: 100_000,
   borderWidth: 0,
   justifyContent: "center",
@@ -134,7 +146,7 @@ const SwitchThumb = styled(View, {
   variants: {
     checked: {
       true: {
-        backgroundColor: "$surfaceFloating"
+        backgroundColor: "$muted"
       }
     },
 
@@ -268,22 +280,29 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
     },
     forwardedRef
   ) => {
+    const hasValidationMessage = useFieldHasValidationMessage();
+
     return (
       <SwitchContext.Provider
         name={name}
         size={size}
         checked={checked}
+        hasValidationMessage={hasValidationMessage}
         disabled={disabled}>
         <BaseSwitch
           ref={forwardedRef}
           activeStyle={{
-            backgroundColor: "$muted"
+            backgroundColor: "$accent"
           }}
           {...props}
           id={name}
           size={size}
           checked={checked}
-          disabled={disabled}>
+          hasValidationMessage={hasValidationMessage}
+          disabled={disabled}
+          $group-field-hover={{
+            borderColor: disabled ? "$accentDisabled" : "$accentHover"
+          }}>
           {children}
           <BaseSwitch.Thumb />
         </BaseSwitch>

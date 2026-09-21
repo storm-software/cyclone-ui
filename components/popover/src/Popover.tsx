@@ -89,7 +89,7 @@ const PopoverArrow = styled(TamaguiPopover.Arrow, {
   backgroundColor: "$surfaceFloating",
   borderWidth: 2,
   borderColor: "$accent",
-  top: -11
+  top: -16
 });
 
 const PopoverContent = styled(TamaguiPopover.Content, {
@@ -137,7 +137,7 @@ interface PopoverContentExtraProps {
 }
 
 const PopoverContentImpl = PopoverContent.styleable<PopoverContentExtraProps>(
-  ({ children, hasArrow = true, ...props }, forwardedRef) => {
+  ({ children, hasArrow = false, ...props }, forwardedRef) => {
     return (
       <PopoverContent ref={forwardedRef} {...props}>
         {hasArrow && <PopoverArrow />}

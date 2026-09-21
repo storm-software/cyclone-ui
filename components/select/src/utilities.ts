@@ -26,6 +26,7 @@ export const SelectContext = createStyledContext<SelectContextProps>({
   circular: false,
   disabled: false,
   focused: false,
+  hasValidationMessage: false,
   variant: "default"
 });
 
@@ -65,7 +66,7 @@ export const getSelectContentSize = (val: SizeTokens | number = "$true") => {
     valuePaddingRight: scaleSelectMetric(1, scale),
     itemPaddingVertical: scaleSelectMetric(4, scale, 2),
     itemFramePaddingHorizontal: 18.4 * scale,
-    itemTextPaddingVertical: scaleSelectMetric(7, scale, 2),
+    itemTextPaddingVertical: "$sm",
     itemTextPaddingHorizontal: 0.8 * scale,
     itemPaddingHorizontal: scaleSelectMetric(5, scale, 2),
     dividerInset: scaleSelectMetric(10, scale, 4),

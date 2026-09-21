@@ -34,6 +34,7 @@ export const InputContext = createStyledContext<InputContextProps>({
   circular: false,
   disabled: false,
   focused: false,
+  hasValidationMessage: false,
   variant: "default"
 });
 

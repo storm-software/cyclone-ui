@@ -47,8 +47,8 @@ colors:
   accent-info: "#2055b3"
   accent-discovery: "#594395"
   accent-base-hover: "#232326"
-  accent-base-active: "#1c1c1f"
-  accent-base-inactive: "#0c0c0f"
+  accent-base-active: "#0c0c0d"
+  accent-base-inactive: "#060607"
   accent-base-disabled: "#151517"
   accent-brand-hover: "#003590"
   accent-brand-active: "#0f45a2"
@@ -84,8 +84,8 @@ colors:
   accent-discovery-disabled: "#584889"
   on-accent-base: "#f1f1f1"
   on-accent-base-hover: "#959595"
-  on-accent-base-active: "#c2c2c2"
-  on-accent-base-inactive: "#ffffff"
+  on-accent-base-active: "#0c0c0d"
+  on-accent-base-inactive: "#060607"
   on-accent-base-disabled: "#f1f1f166"
   on-accent-brand: "#FAFAFA"
   on-accent-danger: "#FAFAFA"
@@ -130,8 +130,8 @@ colors:
   muted-base: "#eaeaea"
   muted-brand: "#abcaff"
   muted-base-hover: "#919191"
-  muted-base-active: "#bcbcbc"
-  muted-base-inactive: "#ffffff"
+  muted-base-active: "#0c0c0d"
+  muted-base-inactive: "#060607"
   muted-base-disabled: "#eaeaea66"
   muted-brand-hover: "#728fc1"
   muted-brand-active: "#8eacdf"
@@ -209,8 +209,8 @@ colors:
   on-muted-info: "#001c54"
   on-muted-discovery: "#20004c"
   on-muted-base-hover: "#232326"
-  on-muted-base-active: "#1c1c1f"
-  on-muted-base-inactive: "#0c0c0f"
+  on-muted-base-active: "#0c0c0d"
+  on-muted-base-inactive: "#060607"
   on-muted-base-disabled: "#151517"
   on-muted-brand-hover: "#003590"
   on-muted-brand-active: "#0f45a2"
@@ -262,12 +262,12 @@ typography:
     lineHeight: "0.95625"
   display-md:
     fontFamily: "Space Grotesk"
-    fontSize: "1.5rem"
+    fontSize: "1.25rem"
     fontWeight: "700"
     lineHeight: "1.051875"
   display-sm:
     fontFamily: "Space Grotesk"
-    fontSize: "1.25rem"
+    fontSize: "1.125rem"
     fontWeight: "700"
     lineHeight: "1.051875"
   eyebrow:
@@ -282,9 +282,9 @@ typography:
     lineHeight: "1.1475"
   body-lg:
     fontFamily: Manrope
-    fontSize: "1.25rem"
-    fontWeight: "700"
-    lineHeight: "1.1475"
+    fontSize: "1.125rem"
+    fontWeight: "600"
+    lineHeight: "1.051875"
   body-md:
     fontFamily: Manrope
     fontSize: "1.125rem"
@@ -292,7 +292,7 @@ typography:
     lineHeight: "1.1475"
   body-sm:
     fontFamily: Manrope
-    fontSize: "1rem"
+    fontSize: "0.875rem"
     fontWeight: "400"
     lineHeight: "1.1475"
   code:
@@ -381,8 +381,8 @@ Cyclone UI design tokens — 241 color tokens, 11 typography tokens, 28 spacing 
 - **Accent Info (#2055b3):** Informational accent for guidance and neutral status.
 - **Accent Discovery (#594395):** Discovery accent for new or exploratory content.
 - **Accent Base Hover (#232326):** Primary neutral accent for emphasized controls and content. (hover, 30% brighter)
-- **Accent Base Active (#1c1c1f):** Primary neutral accent for emphasized controls and content. (active, 15% brighter)
-- **Accent Base Inactive (#0c0c0f):** Primary neutral accent for emphasized controls and content. (inactive, 20% darker)
+- **Accent Base Active (#0c0c0d):** Primary neutral accent for emphasized controls and content. (active, light base primitive)
+- **Accent Base Inactive (#060607):** Primary neutral accent for emphasized controls and content. (inactive, 20% darker)
 - **Accent Base Disabled (#151517):** Primary neutral accent for emphasized controls and content. (disabled, 80% saturation)
 - **Accent Brand Hover (#003590):** Brand accent for primary actions and emphasis. (hover, 23% darker)
 - **Accent Brand Active (#0f45a2):** Brand accent for primary actions and emphasis. (active, 11% darker)
@@ -418,8 +418,8 @@ Cyclone UI design tokens — 241 color tokens, 11 typography tokens, 28 spacing 
 - **Accent Discovery Disabled (#584889):** Discovery accent for new or exploratory content. (disabled, 80% saturation)
 - **On Accent Base (#f1f1f1):** Content color placed on neutral accent backgrounds.
 - **On Accent Base Hover (#959595):** Content color placed on neutral accent backgrounds. (hover, 30% darker)
-- **On Accent Base Active (#c2c2c2):** Content color placed on neutral accent backgrounds. (active, 15% darker)
-- **On Accent Base Inactive (#ffffff):** Content color placed on neutral accent backgrounds. (inactive, 20% brighter)
+- **On Accent Base Active (#0c0c0d):** Content color placed on neutral accent backgrounds. (active, light base primitive)
+- **On Accent Base Inactive (#060607):** Content color placed on neutral accent backgrounds. (inactive, 20% darker)
 - **On Accent Base Disabled (#f1f1f166):** Content color placed on neutral accent backgrounds. (disabled, 40% opacity)
 - **On Accent Brand (#FAFAFA):** Brand accent for primary actions and emphasis.
 - **On Accent Danger (#FAFAFA):** Danger accent for destructive actions and critical states.
@@ -464,8 +464,8 @@ Cyclone UI design tokens — 241 color tokens, 11 typography tokens, 28 spacing 
 - **Muted Base (#eaeaea):** Muted neutral accent background for low-emphasis states.
 - **Muted Brand (#abcaff):** Muted brand accent background for low-emphasis states.
 - **Muted Base Hover (#919191):** Muted neutral accent background for low-emphasis states. (hover, 30% darker)
-- **Muted Base Active (#bcbcbc):** Muted neutral accent background for low-emphasis states. (active, 15% darker)
-- **Muted Base Inactive (#ffffff):** Muted neutral accent background for low-emphasis states. (inactive, 20% brighter)
+- **Muted Base Active (#0c0c0d):** Muted neutral accent background for low-emphasis states. (active, light base primitive)
+- **Muted Base Inactive (#060607):** Muted neutral accent background for low-emphasis states. (inactive, 20% darker)
 - **Muted Base Disabled (#eaeaea66):** Muted neutral accent background for low-emphasis states. (disabled, 40% opacity)
 - **Muted Brand Hover (#728fc1):** Muted brand accent background for low-emphasis states. (hover, 23% darker)
 - **Muted Brand Active (#8eacdf):** Muted brand accent background for low-emphasis states. (active, 11% darker)
@@ -543,8 +543,8 @@ Cyclone UI design tokens — 241 color tokens, 11 typography tokens, 28 spacing 
 - **On Muted Info (#001c54):** Generated info foreground on muted backgrounds
 - **On Muted Discovery (#20004c):** Generated discovery foreground on muted backgrounds
 - **On Muted Base Hover (#232326):** Generated base foreground on muted backgrounds (hover, 30% brighter)
-- **On Muted Base Active (#1c1c1f):** Generated base foreground on muted backgrounds (active, 15% brighter)
-- **On Muted Base Inactive (#0c0c0f):** Generated base foreground on muted backgrounds (inactive, 20% darker)
+- **On Muted Base Active (#0c0c0d):** Generated base foreground on muted backgrounds (active, light base primitive)
+- **On Muted Base Inactive (#060607):** Generated base foreground on muted backgrounds (inactive, 20% darker)
 - **On Muted Base Disabled (#151517):** Generated base foreground on muted backgrounds (disabled, 80% saturation)
 - **On Muted Brand Hover (#003590):** Generated brand foreground on muted backgrounds (hover, 23% darker)
 - **On Muted Brand Active (#0f45a2):** Generated brand foreground on muted backgrounds (active, 11% darker)
@@ -584,13 +584,13 @@ Cyclone UI design tokens — 241 color tokens, 11 typography tokens, 28 spacing 
 - **display-hero:** fontFamily: Space Grotesk, fontSize: 3.75rem, fontWeight: 400, lineHeight: 1.1475
 - **display-xl:** fontFamily: Space Grotesk, fontSize: 3rem, fontWeight: 400, lineHeight: 1.051875
 - **display-lg:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 500, lineHeight: 0.95625
-- **display-md:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.051875
-- **display-sm:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.051875
+- **display-md:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.051875
+- **display-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 700, lineHeight: 1.051875
 - **eyebrow:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.1475
 - **button:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 900, lineHeight: 1.1475
-- **body-lg:** fontFamily: Manrope, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.1475
+- **body-lg:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.051875
 - **body-md:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.1475
-- **body-sm:** fontFamily: Manrope, fontSize: 1rem, fontWeight: 400, lineHeight: 1.1475
+- **body-sm:** fontFamily: Manrope, fontSize: 0.875rem, fontWeight: 400, lineHeight: 1.1475
 - **code:** fontFamily: Geist Mono, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.1475
 
 ## Layout

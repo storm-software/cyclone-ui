@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import { getSpaced } from "@cyclone-ui/helpers";
 import { Check } from "@cyclone-ui/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
@@ -32,7 +33,7 @@ const CheckboxGroupFrame = styled(View, {
   backgroundColor: "$surfaceElevated",
   boxShadow: "none",
   borderWidth: 1,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   outlineStyle: "none",
   tabIndex: 0,
 
@@ -84,6 +85,15 @@ const CheckboxGroupFrame = styled(View, {
     focused: {
       true: {
         borderColor: "$accentActive"
+      }
+    },
+
+    hasValidationMessage: {
+      true: {
+        borderColor: "$accent",
+        hoverStyle: {
+          borderColor: "$accentHover"
+        }
       }
     },
 
@@ -185,9 +195,12 @@ export const Checkbox = BaseCheckbox.styleable<{
     },
     forwardedRef
   ) => {
+    const hasValidationMessage = useFieldHasValidationMessage();
+
     return (
       <CheckboxGroupFrame
         focused={focused}
+        hasValidationMessage={hasValidationMessage}
         disabled={disabled}
         size={size}
         $group-field-hover={{

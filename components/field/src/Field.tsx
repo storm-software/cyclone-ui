@@ -67,12 +67,14 @@ export type FieldVariant = "default" | "floating" | "underline";
 interface FieldPresentationContextValue {
   variant: FieldVariant;
   hasPlaceholder: boolean;
+  hasValidationMessage: boolean;
   setHasPlaceholder: (hasPlaceholder: boolean) => void;
 }
 
 const FieldPresentationContext = createContext<FieldPresentationContextValue>({
   variant: "default",
   hasPlaceholder: false,
+  hasValidationMessage: false,
   setHasPlaceholder: () => undefined
 });
 
@@ -100,6 +102,9 @@ export const useFieldVariant = (
   return variant;
 };
 
+export const useFieldHasValidationMessage = () =>
+  use(FieldPresentationContext).hasValidationMessage;
+
 const FieldDetailsContext = createContext<ReactNode>(null);
 const FieldDetailsSetterContext = createContext<(details: ReactNode) => void>(
   () => undefined
@@ -120,7 +125,7 @@ const FieldGroupFrame = styled(ThemeableStack, {
     orientation: {
       vertical: {
         flexDirection: "column",
-        gap: "$md"
+        gap: "$xl"
       },
       horizontal: {
         flexDirection: "row",
@@ -254,24 +259,32 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
     const field = FieldApi.use();
     const theme = field.theme.get();
     const disabled = field.disabled.get();
+    const messages = field.messages.get();
+    const presentation = use(FieldPresentationContext);
     const [details, setDetails] = useState<ReactNode>(null);
+    const resolvedPresentation = useMemo(
+      () => ({ ...presentation, hasValidationMessage: messages.length > 0 }),
+      [messages.length, presentation]
+    );
 
     return (
       <Theme name={theme}>
-        <FieldDetailsSetterContext.Provider value={setDetails}>
-          <FieldDetailsContext.Provider value={details}>
-            <YStack group={"field" as any} disabled={disabled} gap="$lg">
-              <FieldGroupFrame
-                ref={forwardedRef}
-                {...rest}
-                disabled={disabled}
-                variant={variant}>
-                {children}
-              </FieldGroupFrame>
-              <FieldValidationTextImpl />
-            </YStack>
-          </FieldDetailsContext.Provider>
-        </FieldDetailsSetterContext.Provider>
+        <FieldPresentationContext.Provider value={resolvedPresentation}>
+          <FieldDetailsSetterContext.Provider value={setDetails}>
+            <FieldDetailsContext.Provider value={details}>
+              <YStack group={"field" as any} disabled={disabled} gap="$lg">
+                <FieldGroupFrame
+                  ref={forwardedRef}
+                  {...rest}
+                  disabled={disabled}
+                  variant={variant}>
+                  {children}
+                </FieldGroupFrame>
+                <FieldValidationTextImpl />
+              </YStack>
+            </FieldDetailsContext.Provider>
+          </FieldDetailsSetterContext.Provider>
+        </FieldPresentationContext.Provider>
       </Theme>
     );
   },
@@ -288,7 +301,12 @@ const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
     const { children, variant = "default", ...rest } = props;
     const [hasPlaceholder, setHasPlaceholder] = useState(false);
     const presentation = useMemo(
-      () => ({ variant, hasPlaceholder, setHasPlaceholder }),
+      () => ({
+        variant,
+        hasPlaceholder,
+        hasValidationMessage: false,
+        setHasPlaceholder
+      }),
       [variant, hasPlaceholder]
     );
 
@@ -586,7 +604,8 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                         <FieldOptionalLabelText
                           {...props}
                           disabled={disabled}
-                          size="sm"
+                          floating={floating}
+                          size={floating ? "$true" : "sm"}
                           color={disabled ? "$inkSubtle" : "$inkSubtle"}
                           $group-field-hover={{
                             color: disabled ? "$inkSubtle" : "$inkSubtle"
@@ -724,11 +743,11 @@ const FieldIconButtonImpl = Button.styleable<{
       [frameSize]
     );
     const iconColor = disabled
-      ? "$accentDisabled"
+      ? "$hairlineInactive"
       : focused
-        ? "$accentActive"
-        : "$accent";
-    const hoverIconColor = disabled ? "$accentDisabled" : "$accentHover";
+        ? "$hairlineActive"
+        : "$hairline";
+    const hoverIconColor = disabled ? "$hairlineInactive" : "$hairlineHover";
     const icon = isValidElement<{
       color?: string;
       "$group-field-hover"?: { color?: string };
@@ -759,13 +778,13 @@ const FieldIconButtonImpl = Button.styleable<{
               : { right: 0, borderRightWidth: 1 })}
             borderColor={
               disabled
-                ? "$accentDisabled"
+                ? "$hairlineInactive"
                 : focused
-                  ? "$accentActive"
-                  : "$accent"
+                  ? "$hairlineActive"
+                  : "$hairline"
             }
             $group-field-hover={{
-              borderColor: disabled ? "$accentDisabled" : "$accentHover"
+              borderColor: disabled ? "$hairlineInactive" : "$hairlineHover"
             }}
           />
         )}

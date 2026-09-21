@@ -19,6 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { BytesText } from "@cyclone-ui/bytes-text";
+import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
@@ -59,6 +60,7 @@ export interface FilePickerContextProps {
   required: boolean;
   disabled: boolean;
   active: boolean;
+  hasValidationMessage: boolean;
   theme: string;
 }
 
@@ -77,6 +79,7 @@ export const FilePickerContext = createStyledContext<FilePickerContextProps>({
   required: false,
   disabled: false,
   active: false,
+  hasValidationMessage: false,
   theme: "base"
 });
 
@@ -99,7 +102,7 @@ const FilePickerGroupFrame = styled(View, {
   borderStyle: "dashed",
   borderWidth: 2,
   borderRadius: "$container",
-  borderColor: "$accent",
+  borderColor: "$hairline",
   backgroundColor: "$surfaceElevated",
   tabIndex: 0,
 
@@ -117,6 +120,15 @@ const FilePickerGroupFrame = styled(View, {
         hoverStyle: {
           borderColor: "$hairlineHover",
           backgroundColor: "$surfaceElevatedHover"
+        }
+      }
+    },
+
+    hasValidationMessage: {
+      true: {
+        borderColor: "$accent",
+        hoverStyle: {
+          borderColor: "$accentHover"
         }
       }
     },
@@ -165,6 +177,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
     },
     forwardedRef
   ) => {
+    const hasValidationMessage = useFieldHasValidationMessage();
     const handlePick = useCallback(
       async ({ webFiles, nativeFiles }: PickFileProps) => {
         if (onChange) {
@@ -242,6 +255,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
         ref={composedRef}
         group={"file-picker" as any}
         active={Boolean(dragStatus?.isDragActive)}
+        hasValidationMessage={hasValidationMessage}
         onClick={handleOpen}
         onPress={handleOpen}>
         <FilePickerContext.Provider
@@ -252,6 +266,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
           onChange={onChange}
           disabled={disabled}
           active={Boolean(dragStatus?.isDragActive)}
+          hasValidationMessage={hasValidationMessage}
           typeOfPicker={typeOfPicker}
           mediaTypes={mediaTypes}
           max={max}>

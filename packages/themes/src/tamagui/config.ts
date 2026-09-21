@@ -282,25 +282,25 @@ const childThemeExtras: {
   light: {
     base: {
       accent: tokens.color.neutral14.val,
-      accentActive: "#1c1c1f",
+      accentActive: "#0c0c0d",
       accentDisabled: "#151517",
       accentHover: "#232326",
-      accentInactive: "#0c0c0f",
+      accentInactive: "#060607",
       muted: tokens.color.neutral3.val,
-      mutedActive: "#bcbcbc",
+      mutedActive: "#0c0c0d",
       mutedDisabled: "#eaeaea66",
       mutedHover: "#919191",
-      mutedInactive: "#ffffff",
+      mutedInactive: "#060607",
       onAccent: tokens.color.neutral2.val,
-      onAccentActive: "#c2c2c2",
+      onAccentActive: "#0c0c0d",
       onAccentDisabled: "#f1f1f166",
       onAccentHover: "#959595",
-      onAccentInactive: "#ffffff",
+      onAccentInactive: "#060607",
       onMuted: tokens.color.neutral14.val,
-      onMutedActive: "#1c1c1f",
+      onMutedActive: "#0c0c0d",
       onMutedDisabled: "#151517",
       onMutedHover: "#232326",
-      onMutedInactive: "#0c0c0f",
+      onMutedInactive: "#060607",
       ring: "0px 0px 0px 3px #15151813",
       ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #15151813",
       ringSubtle: "0px 0px 0px 1px #15151813",
@@ -518,25 +518,25 @@ const childThemeExtras: {
   dark: {
     base: {
       accent: tokens.color.neutral1.val,
-      accentActive: "#c9c9c9",
+      accentActive: "#ffffff",
       accentDisabled: "#fafafa66",
       accentHover: "#9b9b9b",
-      accentInactive: "#ffffff",
+      accentInactive: "#bebebe",
       muted: tokens.color.neutral11.val,
-      mutedActive: "#36373b",
+      mutedActive: "#ffffff",
       mutedDisabled: "#2b2c2f",
       mutedHover: "#414347",
-      mutedInactive: "#1d1e22",
+      mutedInactive: "#bebebe",
       onAccent: tokens.color.neutral14.val,
-      onAccentActive: "#1c1c1f",
+      onAccentActive: "#ffffff",
       onAccentDisabled: "#151517",
       onAccentHover: "#232326",
-      onAccentInactive: "#0c0c0f",
+      onAccentInactive: "#bebebe",
       onMuted: tokens.color.neutral1.val,
-      onMutedActive: "#c9c9c9",
+      onMutedActive: "#ffffff",
       onMutedDisabled: "#fafafa66",
       onMutedHover: "#9b9b9b",
-      onMutedInactive: "#ffffff",
+      onMutedInactive: "#bebebe",
       ring: "0px 0px 0px 3px #fafafa13",
       ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #fafafa13",
       ringSubtle: "0px 0px 0px 1px #fafafa13",
@@ -945,18 +945,18 @@ const themes = createThemes({
 const bodyLgFont = createFont({
   family: "Manrope",
   size: {
-    lg: 20,
-    true: 20
+    md: 18,
+    true: 18
   },
   lineHeight: {
-    lg: 22.95,
-    normal: 22.95,
-    true: 22.95
+    md: 18.934,
+    snug: 18.934,
+    true: 18.934
   },
   weight: {
-    bold: "700",
-    lg: "700",
-    true: "700"
+    md: "600",
+    semibold: "600",
+    true: "600"
   }
 });
 
@@ -981,18 +981,18 @@ const bodyMdFont = createFont({
 const bodySmFont = createFont({
   family: "Manrope",
   size: {
-    sm: 16,
-    true: 16
+    true: 14,
+    xs: 14
   },
   lineHeight: {
-    normal: 18.36,
-    sm: 18.36,
-    true: 18.36
+    normal: 16.065,
+    true: 16.065,
+    xs: 16.065
   },
   weight: {
     normal: "400",
-    sm: "400",
-    true: "400"
+    true: "400",
+    xs: "400"
   }
 });
 
@@ -1071,24 +1071,6 @@ const displayLgFont = createFont({
 const displayMdFont = createFont({
   family: "Space Grotesk",
   size: {
-    true: 24,
-    xl: 24
-  },
-  lineHeight: {
-    snug: 25.245,
-    true: 25.245,
-    xl: 25.245
-  },
-  weight: {
-    bold: "700",
-    true: "700",
-    xl: "700"
-  }
-});
-
-const displaySmFont = createFont({
-  family: "Space Grotesk",
-  size: {
     lg: 20,
     true: 20
   },
@@ -1100,6 +1082,24 @@ const displaySmFont = createFont({
   weight: {
     bold: "700",
     lg: "700",
+    true: "700"
+  }
+});
+
+const displaySmFont = createFont({
+  family: "Space Grotesk",
+  size: {
+    md: 18,
+    true: 18
+  },
+  lineHeight: {
+    md: 18.934,
+    snug: 18.934,
+    true: 18.934
+  },
+  weight: {
+    bold: "700",
+    md: "700",
     true: "700"
   }
 });

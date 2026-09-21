@@ -1106,18 +1106,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#ffffff",
       cssVar: "--rw-color-accent-base-active",
-      description: "Primary neutral accent for emphasized controls and content. (active, 15% darker)",
+      description: "Primary neutral accent for emphasized controls and content. (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.accent.base-inactive",
       type: "color",
-      value: "#ffffff",
+      value: "#bebebe",
       cssVar: "--rw-color-accent-base-inactive",
-      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% brighter)",
+      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -1439,16 +1439,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-active",
       type: "color",
-      value: "#1c1c1f",
+      value: "#ffffff",
       cssVar: "--rw-color-on-accent-base-active",
-      description: "Content color placed on neutral accent backgrounds. (active, 15% brighter)",
+      description: "Content color placed on neutral accent backgrounds. (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.base-inactive",
       type: "color",
-      value: "#0c0c0f",
+      value: "#bebebe",
       cssVar: "--rw-color-on-accent-base-inactive",
       description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
       theme: undefined,
@@ -1853,16 +1853,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#36373b",
+      value: "#ffffff",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, 15% brighter)",
+      description: "Muted neutral accent background for low-emphasis states. (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.muted.base-inactive",
       type: "color",
-      value: "#1d1e22",
+      value: "#bebebe",
       cssVar: "--rw-color-muted-base-inactive",
       description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
       theme: undefined,
@@ -2636,18 +2636,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, 15% darker)",
+      description: "Generated base foreground on muted backgrounds (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.base-inactive",
       type: "color",
-      value: "#ffffff",
+      value: "#bebebe",
       cssVar: "--rw-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated base foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -5003,7 +5003,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -5012,7 +5012,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
@@ -5039,7 +5039,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -5057,7 +5057,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,
@@ -6166,18 +6166,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#d9d9d9",
       cssVar: "--rw-color-accent-base-active",
-      description: "Primary neutral accent for emphasized controls and content. (active, 15% darker)",
+      description: "Primary neutral accent for emphasized controls and content. (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.accent.base-inactive",
       type: "color",
-      value: "#d9d9d9",
+      value: "#ababab",
       cssVar: "--rw-color-accent-base-inactive",
-      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% brighter)",
+      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -6499,16 +6499,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-active",
       type: "color",
-      value: "#39393d",
+      value: "#d9d9d9",
       cssVar: "--rw-color-on-accent-base-active",
-      description: "Content color placed on neutral accent backgrounds. (active, 15% brighter)",
+      description: "Content color placed on neutral accent backgrounds. (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.base-inactive",
       type: "color",
-      value: "#2d2d33",
+      value: "#ababab",
       cssVar: "--rw-color-on-accent-base-inactive",
       description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
       theme: undefined,
@@ -6913,16 +6913,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#4c4d50",
+      value: "#d9d9d9",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, 15% brighter)",
+      description: "Muted neutral accent background for low-emphasis states. (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.muted.base-inactive",
       type: "color",
-      value: "#3a3b3f",
+      value: "#ababab",
       cssVar: "--rw-color-muted-base-inactive",
       description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
       theme: undefined,
@@ -7696,18 +7696,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#d9d9d9",
       cssVar: "--rw-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, 15% darker)",
+      description: "Generated base foreground on muted backgrounds (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.base-inactive",
       type: "color",
-      value: "#d9d9d9",
+      value: "#ababab",
       cssVar: "--rw-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated base foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -10063,7 +10063,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -10072,7 +10072,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
@@ -10099,7 +10099,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -10117,7 +10117,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,
@@ -11226,18 +11226,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#ffffff",
       cssVar: "--rw-color-accent-base-active",
-      description: "Primary neutral accent for emphasized controls and content. (active, 15% darker)",
+      description: "Primary neutral accent for emphasized controls and content. (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.accent.base-inactive",
       type: "color",
-      value: "#ffffff",
+      value: "#dadada",
       cssVar: "--rw-color-accent-base-inactive",
-      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% brighter)",
+      description: "Primary neutral accent for emphasized controls and content. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -11559,16 +11559,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-active",
       type: "color",
-      value: "#000000",
+      value: "#ffffff",
       cssVar: "--rw-color-on-accent-base-active",
-      description: "Content color placed on neutral accent backgrounds. (active, 15% brighter)",
+      description: "Content color placed on neutral accent backgrounds. (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.base-inactive",
       type: "color",
-      value: "#000000",
+      value: "#dadada",
       cssVar: "--rw-color-on-accent-base-inactive",
       description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
       theme: undefined,
@@ -11973,16 +11973,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#16171b",
+      value: "#ffffff",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, 15% brighter)",
+      description: "Muted neutral accent background for low-emphasis states. (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.muted.base-inactive",
       type: "color",
-      value: "#000000",
+      value: "#dadada",
       cssVar: "--rw-color-muted-base-inactive",
       description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
       theme: undefined,
@@ -12756,18 +12756,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, 15% darker)",
+      description: "Generated base foreground on muted backgrounds (active, dark base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.base-inactive",
       type: "color",
-      value: "#ffffff",
+      value: "#dadada",
       cssVar: "--rw-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated base foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -15123,7 +15123,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -15132,7 +15132,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
@@ -15159,7 +15159,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -15177,7 +15177,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,
@@ -16286,16 +16286,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-active",
       type: "color",
-      value: "#1c1c1f",
+      value: "#0c0c0d",
       cssVar: "--rw-color-accent-base-active",
-      description: "Primary neutral accent for emphasized controls and content. (active, 15% brighter)",
+      description: "Primary neutral accent for emphasized controls and content. (active, light base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.accent.base-inactive",
       type: "color",
-      value: "#0c0c0f",
+      value: "#060607",
       cssVar: "--rw-color-accent-base-inactive",
       description: "Primary neutral accent for emphasized controls and content. (inactive, 20% darker)",
       theme: undefined,
@@ -16619,18 +16619,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#0c0c0d",
       cssVar: "--rw-color-on-accent-base-active",
-      description: "Content color placed on neutral accent backgrounds. (active, 15% darker)",
+      description: "Content color placed on neutral accent backgrounds. (active, light base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.base-inactive",
       type: "color",
-      value: "#ffffff",
+      value: "#060607",
       cssVar: "--rw-color-on-accent-base-inactive",
-      description: "Content color placed on neutral accent backgrounds. (inactive, 20% brighter)",
+      description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -17033,18 +17033,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#bcbcbc",
+      value: "#0c0c0d",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, 15% darker)",
+      description: "Muted neutral accent background for low-emphasis states. (active, light base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.muted.base-inactive",
       type: "color",
-      value: "#ffffff",
+      value: "#060607",
       cssVar: "--rw-color-muted-base-inactive",
-      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% brighter)",
+      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -17816,16 +17816,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-active",
       type: "color",
-      value: "#1c1c1f",
+      value: "#0c0c0d",
       cssVar: "--rw-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, 15% brighter)",
+      description: "Generated base foreground on muted backgrounds (active, light base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.base-inactive",
       type: "color",
-      value: "#0c0c0f",
+      value: "#060607",
       cssVar: "--rw-color-on-muted-base-inactive",
       description: "Generated base foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
@@ -20183,7 +20183,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -20192,7 +20192,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
@@ -20219,7 +20219,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -20237,7 +20237,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,
@@ -21346,16 +21346,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-active",
       type: "color",
-      value: "#39393d",
+      value: "#2e2e30",
       cssVar: "--rw-color-accent-base-active",
-      description: "Primary neutral accent for emphasized controls and content. (active, 15% brighter)",
+      description: "Primary neutral accent for emphasized controls and content. (active, light base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.accent.base-inactive",
       type: "color",
-      value: "#2d2d33",
+      value: "#29292d",
       cssVar: "--rw-color-accent-base-inactive",
       description: "Primary neutral accent for emphasized controls and content. (inactive, 20% darker)",
       theme: undefined,
@@ -21679,18 +21679,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-active",
       type: "color",
-      value: "#aeaeae",
+      value: "#2e2e30",
       cssVar: "--rw-color-on-accent-base-active",
-      description: "Content color placed on neutral accent backgrounds. (active, 15% darker)",
+      description: "Content color placed on neutral accent backgrounds. (active, light base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.base-inactive",
       type: "color",
-      value: "#d9d9d9",
+      value: "#29292d",
       cssVar: "--rw-color-on-accent-base-inactive",
-      description: "Content color placed on neutral accent backgrounds. (inactive, 20% brighter)",
+      description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -22093,18 +22093,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#aaaaaa",
+      value: "#2e2e30",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, 15% darker)",
+      description: "Muted neutral accent background for low-emphasis states. (active, light base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.muted.base-inactive",
       type: "color",
-      value: "#d9d9d9",
+      value: "#29292d",
       cssVar: "--rw-color-muted-base-inactive",
-      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% brighter)",
+      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -22876,16 +22876,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-active",
       type: "color",
-      value: "#39393d",
+      value: "#2e2e30",
       cssVar: "--rw-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, 15% brighter)",
+      description: "Generated base foreground on muted backgrounds (active, light base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.base-inactive",
       type: "color",
-      value: "#2d2d33",
+      value: "#29292d",
       cssVar: "--rw-color-on-muted-base-inactive",
       description: "Generated base foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
@@ -25243,7 +25243,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -25252,7 +25252,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
@@ -25279,7 +25279,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -25297,7 +25297,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,
@@ -26408,7 +26408,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-accent-base-active",
-      description: "Primary neutral accent for emphasized controls and content. (active, 15% brighter)",
+      description: "Primary neutral accent for emphasized controls and content. (active, light base primitive)",
       theme: undefined,
       typography: false
     },
@@ -26739,18 +26739,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-active",
       type: "color",
-      value: "#e0e0e0",
+      value: "#000000",
       cssVar: "--rw-color-on-accent-base-active",
-      description: "Content color placed on neutral accent backgrounds. (active, 15% darker)",
+      description: "Content color placed on neutral accent backgrounds. (active, light base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.base-inactive",
       type: "color",
-      value: "#ffffff",
+      value: "#000000",
       cssVar: "--rw-color-on-accent-base-inactive",
-      description: "Content color placed on neutral accent backgrounds. (inactive, 20% brighter)",
+      description: "Content color placed on neutral accent backgrounds. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -27153,18 +27153,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-active",
       type: "color",
-      value: "#d7d7d7",
+      value: "#000000",
       cssVar: "--rw-color-muted-base-active",
-      description: "Muted neutral accent background for low-emphasis states. (active, 15% darker)",
+      description: "Muted neutral accent background for low-emphasis states. (active, light base primitive)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.muted.base-inactive",
       type: "color",
-      value: "#ffffff",
+      value: "#000000",
       cssVar: "--rw-color-muted-base-inactive",
-      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% brighter)",
+      description: "Muted neutral accent background for low-emphasis states. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -27938,7 +27938,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, 15% brighter)",
+      description: "Generated base foreground on muted backgrounds (active, light base primitive)",
       theme: undefined,
       typography: false
     },
@@ -30303,7 +30303,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -30312,7 +30312,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
@@ -30339,7 +30339,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -30357,7 +30357,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,

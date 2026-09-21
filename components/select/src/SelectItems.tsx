@@ -197,6 +197,7 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   backgroundColor: "transparent",
   color: "$accentInactive",
   position: "relative",
+  justifyContent: "center",
   width: "max-content",
   minWidth: "100%",
   borderWidth: 0,
@@ -394,10 +395,16 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   variants: {
     size: {
       "...size": (val: SizeTokens | number) => {
-        const { itemTextPaddingVertical, itemTextPaddingHorizontal } =
-          getSelectContentSize(val);
+        const {
+          fontSize,
+          lineHeight,
+          itemTextPaddingVertical,
+          itemTextPaddingHorizontal
+        } = getSelectContentSize(val);
 
         return {
+          fontSize,
+          lineHeight,
           paddingVertical: itemTextPaddingVertical,
           paddingHorizontal: itemTextPaddingHorizontal
         };

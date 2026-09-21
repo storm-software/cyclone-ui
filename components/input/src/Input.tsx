@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
+import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import { getSized } from "@cyclone-ui/helpers";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
@@ -78,7 +79,7 @@ const InputGroup = styled(XGroup, {
   alignItems: "center",
   backgroundColor: "$surfaceElevated",
   borderWidth: 1,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   outlineWidth: 0,
   outlineColor: "transparent",
   boxShadow: "none",
@@ -103,13 +104,20 @@ const InputGroup = styled(XGroup, {
       })
     },
 
+    hasValidationMessage: {
+      true: {
+        borderColor: "$accent",
+        hoverStyle: { borderColor: "$accentHover" }
+      }
+    },
+
     variant: {
       default: {},
       floating: {},
       underline: {
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "$accent",
+        borderColor: "$hairline",
         borderRadius: 0,
         boxShadow: "none",
 
@@ -201,6 +209,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
       [onBlur]
     );
     const underlineActive = focused || locallyActive;
+    const hasValidationMessage = useFieldHasValidationMessage();
 
     return (
       <InputContext.Provider
@@ -208,6 +217,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
         size={size}
         variant={variant}
         focused={focused}
+        hasValidationMessage={hasValidationMessage}
         disabled={disabled}
         onChange={onChange}
         onInput={onInput}
@@ -219,6 +229,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
           frameSize={frameSize}
           variant={variant}
           focused={focused}
+          hasValidationMessage={hasValidationMessage}
           disabled={disabled}
           onFocus={handleFocus}
           onBlur={handleBlur}
@@ -251,17 +262,25 @@ const InputSeparator = styled(View, {
   borderRightWidth: 0,
   borderTopWidth: 0,
   borderBottomWidth: 0,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   width: 0,
   flexShrink: 0,
   height: "60%",
   marginVertical: "$none",
 
+  hoverStyle: {
+    borderColor: "$hairlineHover"
+  },
+
   variants: {
     focused: {
       true: {
-        borderColor: "$accentActive"
+        borderColor: "$hairlineActive"
       }
+    },
+
+    hasValidationMessage: {
+      true: { borderColor: "$hairlineActive" }
     },
 
     variant: {
@@ -274,18 +293,18 @@ const InputSeparator = styled(View, {
 
     disabled: {
       true: {
-        borderColor: "$accentDisabled",
+        borderColor: "$hairlineInactive",
 
         hoverStyle: {
-          borderColor: "$accentDisabled"
+          borderColor: "$hairlineInactive"
         },
 
         focusStyle: {
-          borderColor: "$accentDisabled"
+          borderColor: "$hairlineInactive"
         },
 
         pressStyle: {
-          borderColor: "$accentDisabled"
+          borderColor: "$hairlineInactive"
         }
       }
     }
@@ -300,7 +319,8 @@ const InputSeparator = styled(View, {
 
 const InputSeparatorImpl = InputSeparator.styleable(
   (props, forwardedRef) => {
-    const { disabled, focused } = InputContext.useStyledContext();
+    const { disabled, focused, hasValidationMessage } =
+      InputContext.useStyledContext();
 
     return (
       <XGroup.Item>
@@ -308,11 +328,12 @@ const InputSeparatorImpl = InputSeparator.styleable(
           ref={forwardedRef}
           $group-field-hover={{
             borderColor: disabled
-              ? "$accentDisabled"
+              ? "$hairlineInactive"
               : focused
-                ? "$accentActive"
-                : "$accentHover"
+                ? "$hairlineActive"
+                : "$hairlineHover"
           }}
+          hasValidationMessage={hasValidationMessage}
           {...props}
         />
       </XGroup.Item>

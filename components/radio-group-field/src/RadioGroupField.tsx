@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { Field } from "@cyclone-ui/field";
+import { Field, useFieldHasValidationMessage } from "@cyclone-ui/field";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { RadioGroup, RadioGroupContext } from "@cyclone-ui/radio-group";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
@@ -128,6 +128,7 @@ const RadioGroupItemDetails = styled(BodyText, {
 const RadioGroupItem = (props: { itemAtom: Atom<SelectOption> }) => {
   const item = useAtomValue(props.itemAtom);
   const { value, selected, disabled, name, description } = item;
+  const hasValidationMessage = useFieldHasValidationMessage();
 
   const { change } = useFieldActions();
   const handlePress = useCallback(() => {
@@ -143,7 +144,13 @@ const RadioGroupItem = (props: { itemAtom: Atom<SelectOption> }) => {
       onPress={handlePress}
       cursor="pointer"
       backgroundColor={selected ? "$surfaceElevatedActive" : "$surfaceElevated"}
-      borderColor={selected ? "$accentHover" : "$accent"}
+      borderColor={
+        selected
+          ? "$accentHover"
+          : hasValidationMessage
+            ? "$accent"
+            : "$hairline"
+      }
       borderWidth={1}
       borderRadius="$control"
       hoverStyle={{ backgroundColor: "$surfaceElevatedHover" }}>

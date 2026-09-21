@@ -178,7 +178,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
         ...(selectionColor && {
           "--selectionColor": theme[selectionColor]?.variable || selectionColor
         }),
-        "--autofillBackgroundColor": theme.backgroundElevated.variable
+        "--autofillBackgroundColor": theme.surfaceElevated.variable
       }
     };
 

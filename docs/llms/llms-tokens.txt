@@ -43,7 +43,7 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `color.accent.base` | `color` | `var(--color-neutral-14)` | Primary neutral accent for emphasized controls and content. |
-| `color.accent.base-active` | `color` | `#000000` | Primary neutral accent for emphasized controls and content. (active, 15% brighter) |
+| `color.accent.base-active` | `color` | `#000000` | Primary neutral accent for emphasized controls and content. (active, light base primitive) |
 | `color.accent.base-disabled` | `color` | `#000000` | Primary neutral accent for emphasized controls and content. (disabled, 80% saturation) |
 | `color.accent.base-hover` | `color` | `#000000` | Primary neutral accent for emphasized controls and content. (hover, 30% brighter) |
 | `color.accent.base-inactive` | `color` | `#000000` | Primary neutral accent for emphasized controls and content. (inactive, 20% darker) |
@@ -136,10 +136,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.link-hover` | `color` | `#00235e` | Interactive color for links and linked text. (hover, 23% darker) |
 | `color.link-inactive` | `color` | `#216df4` | Interactive color for links and linked text. (inactive, 20% brighter) |
 | `color.muted.base` | `color` | `var(--color-neutral-3)` | Muted neutral accent background for low-emphasis states. |
-| `color.muted.base-active` | `color` | `#d7d7d7` | Muted neutral accent background for low-emphasis states. (active, 15% darker) |
+| `color.muted.base-active` | `color` | `#000000` | Muted neutral accent background for low-emphasis states. (active, light base primitive) |
 | `color.muted.base-disabled` | `color` | `#ffffff66` | Muted neutral accent background for low-emphasis states. (disabled, 40% opacity) |
 | `color.muted.base-hover` | `color` | `#999999` | Muted neutral accent background for low-emphasis states. (hover, 30% darker) |
-| `color.muted.base-inactive` | `color` | `#ffffff` | Muted neutral accent background for low-emphasis states. (inactive, 20% brighter) |
+| `color.muted.base-inactive` | `color` | `#000000` | Muted neutral accent background for low-emphasis states. (inactive, 20% darker) |
 | `color.muted.brand` | `color` | `var(--color-blue-1)` | Muted brand accent background for low-emphasis states. |
 | `color.muted.brand-active` | `color` | `#a9c5f6` | Muted brand accent background for low-emphasis states. (active, 11% darker) |
 | `color.muted.brand-disabled` | `color` | `#f1f6ff` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
@@ -195,10 +195,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.8` | `color` | `#535353` | Dark medium gray. |
 | `color.neutral.9` | `color` | `#2f2f2f` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-2)` | Content color placed on neutral accent backgrounds. |
-| `color.on-accent.base-active` | `color` | `#e0e0e0` | Content color placed on neutral accent backgrounds. (active, 15% darker) |
+| `color.on-accent.base-active` | `color` | `#000000` | Content color placed on neutral accent backgrounds. (active, light base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#ffffff66` | Content color placed on neutral accent backgrounds. (disabled, 40% opacity) |
 | `color.on-accent.base-hover` | `color` | `#9f9f9f` | Content color placed on neutral accent backgrounds. (hover, 30% darker) |
-| `color.on-accent.base-inactive` | `color` | `#ffffff` | Content color placed on neutral accent backgrounds. (inactive, 20% brighter) |
+| `color.on-accent.base-inactive` | `color` | `#000000` | Content color placed on neutral accent backgrounds. (inactive, 20% darker) |
 | `color.on-accent.brand` | `color` | `#ffffff` | Brand accent for primary actions and emphasis. |
 | `color.on-accent.brand-active` | `color` | `#fbfbfb` | Brand accent for primary actions and emphasis. (active, 11% darker) |
 | `color.on-accent.brand-disabled` | `color` | `#ffffff66` | Brand accent for primary actions and emphasis. (disabled, 40% opacity) |
@@ -240,7 +240,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-accent.warning-hover` | `color` | `#c9c9c9` | Warning accent for cautionary states. (hover, 23% darker) |
 | `color.on-accent.warning-inactive` | `color` | `#ffffff` | Warning accent for cautionary states. (inactive, 20% brighter) |
 | `color.on-muted.base` | `color` | `var(--color-neutral-14)` | Generated base foreground on muted backgrounds |
-| `color.on-muted.base-active` | `color` | `#000000` | Generated base foreground on muted backgrounds (active, 15% brighter) |
+| `color.on-muted.base-active` | `color` | `#000000` | Generated base foreground on muted backgrounds (active, light base primitive) |
 | `color.on-muted.base-disabled` | `color` | `#000000` | Generated base foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.base-hover` | `color` | `#000000` | Generated base foreground on muted backgrounds (hover, 30% brighter) |
 | `color.on-muted.base-inactive` | `color` | `#000000` | Generated base foreground on muted backgrounds (inactive, 20% darker) |
@@ -627,15 +627,15 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
-| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
-| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
+| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
+| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
 | `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 
@@ -698,10 +698,10 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `color.accent.base` | `color` | `var(--color-neutral-14)` | Primary neutral accent for emphasized controls and content. |
-| `color.accent.base-active` | `color` | `#39393d` | Primary neutral accent for emphasized controls and content. (active, 15% brighter) |
+| `color.accent.base-active` | `color` | `#2e2e30` | Primary neutral accent for emphasized controls and content. (active, light base primitive) |
 | `color.accent.base-disabled` | `color` | `#343437` | Primary neutral accent for emphasized controls and content. (disabled, 80% saturation) |
 | `color.accent.base-hover` | `color` | `#3e3e41` | Primary neutral accent for emphasized controls and content. (hover, 30% brighter) |
-| `color.accent.base-inactive` | `color` | `#2d2d33` | Primary neutral accent for emphasized controls and content. (inactive, 20% darker) |
+| `color.accent.base-inactive` | `color` | `#29292d` | Primary neutral accent for emphasized controls and content. (inactive, 20% darker) |
 | `color.accent.brand` | `color` | `var(--color-blue-7)` | Brand accent for primary actions and emphasis. |
 | `color.accent.brand-active` | `color` | `#365892` | Brand accent for primary actions and emphasis. (active, 11% darker) |
 | `color.accent.brand-disabled` | `color` | `#4e6691` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
@@ -791,10 +791,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.link-hover` | `color` | `#284c89` | Interactive color for links and linked text. (hover, 23% darker) |
 | `color.link-inactive` | `color` | `#5a79af` | Interactive color for links and linked text. (inactive, 20% brighter) |
 | `color.muted.base` | `color` | `var(--color-neutral-3)` | Muted neutral accent background for low-emphasis states. |
-| `color.muted.base-active` | `color` | `#aaaaaa` | Muted neutral accent background for low-emphasis states. (active, 15% darker) |
+| `color.muted.base-active` | `color` | `#2e2e30` | Muted neutral accent background for low-emphasis states. (active, light base primitive) |
 | `color.muted.base-disabled` | `color` | `#cacaca66` | Muted neutral accent background for low-emphasis states. (disabled, 40% opacity) |
 | `color.muted.base-hover` | `color` | `#8c8c8c` | Muted neutral accent background for low-emphasis states. (hover, 30% darker) |
-| `color.muted.base-inactive` | `color` | `#d9d9d9` | Muted neutral accent background for low-emphasis states. (inactive, 20% brighter) |
+| `color.muted.base-inactive` | `color` | `#29292d` | Muted neutral accent background for low-emphasis states. (inactive, 20% darker) |
 | `color.muted.brand` | `color` | `var(--color-blue-1)` | Muted brand accent background for low-emphasis states. |
 | `color.muted.brand-active` | `color` | `#8b9fc1` | Muted brand accent background for low-emphasis states. (active, 11% darker) |
 | `color.muted.brand-disabled` | `color` | `#9db2d6` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
@@ -850,10 +850,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.8` | `color` | `#6a6a6a` | Dark medium gray. |
 | `color.neutral.9` | `color` | `#595959` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-2)` | Content color placed on neutral accent backgrounds. |
-| `color.on-accent.base-active` | `color` | `#aeaeae` | Content color placed on neutral accent backgrounds. (active, 15% darker) |
+| `color.on-accent.base-active` | `color` | `#2e2e30` | Content color placed on neutral accent backgrounds. (active, light base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#cfcfcf66` | Content color placed on neutral accent backgrounds. (disabled, 40% opacity) |
 | `color.on-accent.base-hover` | `color` | `#8f8f8f` | Content color placed on neutral accent backgrounds. (hover, 30% darker) |
-| `color.on-accent.base-inactive` | `color` | `#d9d9d9` | Content color placed on neutral accent backgrounds. (inactive, 20% brighter) |
+| `color.on-accent.base-inactive` | `color` | `#29292d` | Content color placed on neutral accent backgrounds. (inactive, 20% darker) |
 | `color.on-accent.brand` | `color` | `#d5d5d5` | Brand accent for primary actions and emphasis. |
 | `color.on-accent.brand-active` | `color` | `#bbbbbb` | Brand accent for primary actions and emphasis. (active, 11% darker) |
 | `color.on-accent.brand-disabled` | `color` | `#d5d5d566` | Brand accent for primary actions and emphasis. (disabled, 40% opacity) |
@@ -895,10 +895,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-accent.warning-hover` | `color` | `#a3a3a3` | Warning accent for cautionary states. (hover, 23% darker) |
 | `color.on-accent.warning-inactive` | `color` | `#d9d9d9` | Warning accent for cautionary states. (inactive, 20% brighter) |
 | `color.on-muted.base` | `color` | `var(--color-neutral-14)` | Generated base foreground on muted backgrounds |
-| `color.on-muted.base-active` | `color` | `#39393d` | Generated base foreground on muted backgrounds (active, 15% brighter) |
+| `color.on-muted.base-active` | `color` | `#2e2e30` | Generated base foreground on muted backgrounds (active, light base primitive) |
 | `color.on-muted.base-disabled` | `color` | `#343437` | Generated base foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.base-hover` | `color` | `#3e3e41` | Generated base foreground on muted backgrounds (hover, 30% brighter) |
-| `color.on-muted.base-inactive` | `color` | `#2d2d33` | Generated base foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.base-inactive` | `color` | `#29292d` | Generated base foreground on muted backgrounds (inactive, 20% darker) |
 | `color.on-muted.brand` | `color` | `var(--color-blue-7)` | Generated brand foreground on muted backgrounds |
 | `color.on-muted.brand-active` | `color` | `#365892` | Generated brand foreground on muted backgrounds (active, 11% darker) |
 | `color.on-muted.brand-disabled` | `color` | `#4e6691` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
@@ -1282,15 +1282,15 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
-| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
-| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
+| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
+| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
 | `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 
@@ -1353,10 +1353,10 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `color.accent.base` | `color` | `var(--color-neutral-14)` | Primary neutral accent for emphasized controls and content. |
-| `color.accent.base-active` | `color` | `#1c1c1f` | Primary neutral accent for emphasized controls and content. (active, 15% brighter) |
+| `color.accent.base-active` | `color` | `#0c0c0d` | Primary neutral accent for emphasized controls and content. (active, light base primitive) |
 | `color.accent.base-disabled` | `color` | `#151517` | Primary neutral accent for emphasized controls and content. (disabled, 80% saturation) |
 | `color.accent.base-hover` | `color` | `#232326` | Primary neutral accent for emphasized controls and content. (hover, 30% brighter) |
-| `color.accent.base-inactive` | `color` | `#0c0c0f` | Primary neutral accent for emphasized controls and content. (inactive, 20% darker) |
+| `color.accent.base-inactive` | `color` | `#060607` | Primary neutral accent for emphasized controls and content. (inactive, 20% darker) |
 | `color.accent.brand` | `color` | `var(--color-blue-7)` | Brand accent for primary actions and emphasis. |
 | `color.accent.brand-active` | `color` | `#0f45a2` | Brand accent for primary actions and emphasis. (active, 11% darker) |
 | `color.accent.brand-disabled` | `color` | `#2f58a2` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
@@ -1446,10 +1446,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.link-hover` | `color` | `#003590` | Interactive color for links and linked text. (hover, 23% darker) |
 | `color.link-inactive` | `color` | `#3b72d3` | Interactive color for links and linked text. (inactive, 20% brighter) |
 | `color.muted.base` | `color` | `var(--color-neutral-3)` | Muted neutral accent background for low-emphasis states. |
-| `color.muted.base-active` | `color` | `#bcbcbc` | Muted neutral accent background for low-emphasis states. (active, 15% darker) |
+| `color.muted.base-active` | `color` | `#0c0c0d` | Muted neutral accent background for low-emphasis states. (active, light base primitive) |
 | `color.muted.base-disabled` | `color` | `#eaeaea66` | Muted neutral accent background for low-emphasis states. (disabled, 40% opacity) |
 | `color.muted.base-hover` | `color` | `#919191` | Muted neutral accent background for low-emphasis states. (hover, 30% darker) |
-| `color.muted.base-inactive` | `color` | `#ffffff` | Muted neutral accent background for low-emphasis states. (inactive, 20% brighter) |
+| `color.muted.base-inactive` | `color` | `#060607` | Muted neutral accent background for low-emphasis states. (inactive, 20% darker) |
 | `color.muted.brand` | `color` | `var(--color-blue-1)` | Muted brand accent background for low-emphasis states. |
 | `color.muted.brand-active` | `color` | `#8eacdf` | Muted brand accent background for low-emphasis states. (active, 11% darker) |
 | `color.muted.brand-disabled` | `color` | `#b1caf4` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
@@ -1505,10 +1505,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.8` | `color` | `#616161` | Dark medium gray. |
 | `color.neutral.9` | `color` | `#484848` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-2)` | Content color placed on neutral accent backgrounds. |
-| `color.on-accent.base-active` | `color` | `#c2c2c2` | Content color placed on neutral accent backgrounds. (active, 15% darker) |
+| `color.on-accent.base-active` | `color` | `#0c0c0d` | Content color placed on neutral accent backgrounds. (active, light base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#f1f1f166` | Content color placed on neutral accent backgrounds. (disabled, 40% opacity) |
 | `color.on-accent.base-hover` | `color` | `#959595` | Content color placed on neutral accent backgrounds. (hover, 30% darker) |
-| `color.on-accent.base-inactive` | `color` | `#ffffff` | Content color placed on neutral accent backgrounds. (inactive, 20% brighter) |
+| `color.on-accent.base-inactive` | `color` | `#060607` | Content color placed on neutral accent backgrounds. (inactive, 20% darker) |
 | `color.on-accent.brand` | `color` | `#FAFAFA` | Brand accent for primary actions and emphasis. |
 | `color.on-accent.brand-active` | `color` | `#d5d5d5` | Brand accent for primary actions and emphasis. (active, 11% darker) |
 | `color.on-accent.brand-disabled` | `color` | `#fafafa66` | Brand accent for primary actions and emphasis. (disabled, 40% opacity) |
@@ -1550,10 +1550,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-accent.warning-hover` | `color` | `#b2b2b2` | Warning accent for cautionary states. (hover, 23% darker) |
 | `color.on-accent.warning-inactive` | `color` | `#ffffff` | Warning accent for cautionary states. (inactive, 20% brighter) |
 | `color.on-muted.base` | `color` | `var(--color-neutral-14)` | Generated base foreground on muted backgrounds |
-| `color.on-muted.base-active` | `color` | `#1c1c1f` | Generated base foreground on muted backgrounds (active, 15% brighter) |
+| `color.on-muted.base-active` | `color` | `#0c0c0d` | Generated base foreground on muted backgrounds (active, light base primitive) |
 | `color.on-muted.base-disabled` | `color` | `#151517` | Generated base foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.base-hover` | `color` | `#232326` | Generated base foreground on muted backgrounds (hover, 30% brighter) |
-| `color.on-muted.base-inactive` | `color` | `#0c0c0f` | Generated base foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.base-inactive` | `color` | `#060607` | Generated base foreground on muted backgrounds (inactive, 20% darker) |
 | `color.on-muted.brand` | `color` | `var(--color-blue-7)` | Generated brand foreground on muted backgrounds |
 | `color.on-muted.brand-active` | `color` | `#0f45a2` | Generated brand foreground on muted backgrounds (active, 11% darker) |
 | `color.on-muted.brand-disabled` | `color` | `#2f58a2` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
@@ -1937,15 +1937,15 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
-| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
-| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
+| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
+| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
 | `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 
@@ -2008,10 +2008,10 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `color.accent.base` | `color` | `var(--color-neutral-1)` | Primary neutral accent for emphasized controls and content. |
-| `color.accent.base-active` | `color` | `#eaeaea` | Primary neutral accent for emphasized controls and content. (active, 15% darker) |
+| `color.accent.base-active` | `color` | `#ffffff` | Primary neutral accent for emphasized controls and content. (active, dark base primitive) |
 | `color.accent.base-disabled` | `color` | `#ffffff66` | Primary neutral accent for emphasized controls and content. (disabled, 40% opacity) |
 | `color.accent.base-hover` | `color` | `#a7a7a7` | Primary neutral accent for emphasized controls and content. (hover, 30% darker) |
-| `color.accent.base-inactive` | `color` | `#ffffff` | Primary neutral accent for emphasized controls and content. (inactive, 20% brighter) |
+| `color.accent.base-inactive` | `color` | `#dadada` | Primary neutral accent for emphasized controls and content. (inactive, 20% darker) |
 | `color.accent.brand` | `color` | `#2effd0` | Brand accent for primary actions and emphasis. |
 | `color.accent.brand-active` | `color` | `#00ab8c` | Brand accent for primary actions and emphasis. (active, 11% darker) |
 | `color.accent.brand-disabled` | `color` | `#71f9d5` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
@@ -2101,10 +2101,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.link-hover` | `color` | `#81bcff` | Interactive color for links and linked text. (hover, 23% brighter) |
 | `color.link-inactive` | `color` | `#004bc1` | Interactive color for links and linked text. (inactive, 20% darker) |
 | `color.muted.base` | `color` | `var(--color-neutral-11)` | Muted neutral accent background for low-emphasis states. |
-| `color.muted.base-active` | `color` | `#16171b` | Muted neutral accent background for low-emphasis states. (active, 15% brighter) |
+| `color.muted.base-active` | `color` | `#ffffff` | Muted neutral accent background for low-emphasis states. (active, dark base primitive) |
 | `color.muted.base-disabled` | `color` | `#070709` | Muted neutral accent background for low-emphasis states. (disabled, 80% saturation) |
 | `color.muted.base-hover` | `color` | `#25282e` | Muted neutral accent background for low-emphasis states. (hover, 30% brighter) |
-| `color.muted.base-inactive` | `color` | `#000000` | Muted neutral accent background for low-emphasis states. (inactive, 20% darker) |
+| `color.muted.base-inactive` | `color` | `#dadada` | Muted neutral accent background for low-emphasis states. (inactive, 20% darker) |
 | `color.muted.brand` | `color` | `#004433` | Muted brand accent background for low-emphasis states. |
 | `color.muted.brand-active` | `color` | `#0c8962` | Muted brand accent background for low-emphasis states. (active, 11% brighter) |
 | `color.muted.brand-disabled` | `color` | `#176d4f` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
@@ -2160,10 +2160,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.8` | `color` | `#535353` | Dark medium gray. |
 | `color.neutral.9` | `color` | `#2f2f2f` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-14)` | Content color placed on neutral accent backgrounds. |
-| `color.on-accent.base-active` | `color` | `#000000` | Content color placed on neutral accent backgrounds. (active, 15% brighter) |
+| `color.on-accent.base-active` | `color` | `#ffffff` | Content color placed on neutral accent backgrounds. (active, dark base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#000000` | Content color placed on neutral accent backgrounds. (disabled, 80% saturation) |
 | `color.on-accent.base-hover` | `color` | `#000000` | Content color placed on neutral accent backgrounds. (hover, 30% brighter) |
-| `color.on-accent.base-inactive` | `color` | `#000000` | Content color placed on neutral accent backgrounds. (inactive, 20% darker) |
+| `color.on-accent.base-inactive` | `color` | `#dadada` | Content color placed on neutral accent backgrounds. (inactive, 20% darker) |
 | `color.on-accent.brand` | `color` | `#000000` | Brand accent for primary actions and emphasis. |
 | `color.on-accent.brand-active` | `color` | `#000000` | Brand accent for primary actions and emphasis. (active, 11% brighter) |
 | `color.on-accent.brand-disabled` | `color` | `#000000` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
@@ -2205,10 +2205,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-accent.warning-hover` | `color` | `#000000` | Warning accent for cautionary states. (hover, 23% brighter) |
 | `color.on-accent.warning-inactive` | `color` | `#000000` | Warning accent for cautionary states. (inactive, 20% darker) |
 | `color.on-muted.base` | `color` | `var(--color-neutral-1)` | Generated base foreground on muted backgrounds |
-| `color.on-muted.base-active` | `color` | `#eaeaea` | Generated base foreground on muted backgrounds (active, 15% darker) |
+| `color.on-muted.base-active` | `color` | `#ffffff` | Generated base foreground on muted backgrounds (active, dark base primitive) |
 | `color.on-muted.base-disabled` | `color` | `#ffffff66` | Generated base foreground on muted backgrounds (disabled, 40% opacity) |
 | `color.on-muted.base-hover` | `color` | `#a7a7a7` | Generated base foreground on muted backgrounds (hover, 30% darker) |
-| `color.on-muted.base-inactive` | `color` | `#ffffff` | Generated base foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.base-inactive` | `color` | `#dadada` | Generated base foreground on muted backgrounds (inactive, 20% darker) |
 | `color.on-muted.brand` | `color` | `#2effd0` | Generated brand foreground on muted backgrounds |
 | `color.on-muted.brand-active` | `color` | `#00ab8c` | Generated brand foreground on muted backgrounds (active, 11% darker) |
 | `color.on-muted.brand-disabled` | `color` | `#71f9d5` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
@@ -2592,15 +2592,15 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
-| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
-| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
+| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
+| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
 | `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 
@@ -2663,10 +2663,10 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `color.accent.base` | `color` | `var(--color-neutral-1)` | Primary neutral accent for emphasized controls and content. |
-| `color.accent.base-active` | `color` | `#b3b3b3` | Primary neutral accent for emphasized controls and content. (active, 15% darker) |
+| `color.accent.base-active` | `color` | `#d9d9d9` | Primary neutral accent for emphasized controls and content. (active, dark base primitive) |
 | `color.accent.base-disabled` | `color` | `#d5d5d566` | Primary neutral accent for emphasized controls and content. (disabled, 40% opacity) |
 | `color.accent.base-hover` | `color` | `#939393` | Primary neutral accent for emphasized controls and content. (hover, 30% darker) |
-| `color.accent.base-inactive` | `color` | `#d9d9d9` | Primary neutral accent for emphasized controls and content. (inactive, 20% brighter) |
+| `color.accent.base-inactive` | `color` | `#ababab` | Primary neutral accent for emphasized controls and content. (inactive, 20% darker) |
 | `color.accent.brand` | `color` | `#5abba5` | Brand accent for primary actions and emphasis. |
 | `color.accent.brand-active` | `color` | `#30a691` | Brand accent for primary actions and emphasis. (active, 11% darker) |
 | `color.accent.brand-disabled` | `color` | `#75beaa` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
@@ -2756,10 +2756,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.link-hover` | `color` | `#6a9bd4` | Interactive color for links and linked text. (hover, 23% brighter) |
 | `color.link-inactive` | `color` | `#3362ae` | Interactive color for links and linked text. (inactive, 20% darker) |
 | `color.muted.base` | `color` | `var(--color-neutral-11)` | Muted neutral accent background for low-emphasis states. |
-| `color.muted.base-active` | `color` | `#4c4d50` | Muted neutral accent background for low-emphasis states. (active, 15% brighter) |
+| `color.muted.base-active` | `color` | `#d9d9d9` | Muted neutral accent background for low-emphasis states. (active, dark base primitive) |
 | `color.muted.base-disabled` | `color` | `#444547` | Muted neutral accent background for low-emphasis states. (disabled, 80% saturation) |
 | `color.muted.base-hover` | `color` | `#545558` | Muted neutral accent background for low-emphasis states. (hover, 30% brighter) |
-| `color.muted.base-inactive` | `color` | `#3a3b3f` | Muted neutral accent background for low-emphasis states. (inactive, 20% darker) |
+| `color.muted.base-inactive` | `color` | `#ababab` | Muted neutral accent background for low-emphasis states. (inactive, 20% darker) |
 | `color.muted.brand` | `color` | `#258069` | Muted brand accent background for low-emphasis states. |
 | `color.muted.brand-active` | `color` | `#458772` | Muted brand accent background for low-emphasis states. (active, 11% brighter) |
 | `color.muted.brand-disabled` | `color` | `#4a7a69` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
@@ -2815,10 +2815,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.8` | `color` | `#6a6a6a` | Dark medium gray. |
 | `color.neutral.9` | `color` | `#595959` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-14)` | Content color placed on neutral accent backgrounds. |
-| `color.on-accent.base-active` | `color` | `#39393d` | Content color placed on neutral accent backgrounds. (active, 15% brighter) |
+| `color.on-accent.base-active` | `color` | `#d9d9d9` | Content color placed on neutral accent backgrounds. (active, dark base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#343437` | Content color placed on neutral accent backgrounds. (disabled, 80% saturation) |
 | `color.on-accent.base-hover` | `color` | `#3e3e41` | Content color placed on neutral accent backgrounds. (hover, 30% brighter) |
-| `color.on-accent.base-inactive` | `color` | `#2d2d33` | Content color placed on neutral accent backgrounds. (inactive, 20% darker) |
+| `color.on-accent.base-inactive` | `color` | `#ababab` | Content color placed on neutral accent backgrounds. (inactive, 20% darker) |
 | `color.on-accent.brand` | `color` | `#343438` | Brand accent for primary actions and emphasis. |
 | `color.on-accent.brand-active` | `color` | `#38383b` | Brand accent for primary actions and emphasis. (active, 11% brighter) |
 | `color.on-accent.brand-disabled` | `color` | `#343437` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
@@ -2860,10 +2860,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-accent.warning-hover` | `color` | `#3b3b3f` | Warning accent for cautionary states. (hover, 23% brighter) |
 | `color.on-accent.warning-inactive` | `color` | `#2d2d33` | Warning accent for cautionary states. (inactive, 20% darker) |
 | `color.on-muted.base` | `color` | `var(--color-neutral-1)` | Generated base foreground on muted backgrounds |
-| `color.on-muted.base-active` | `color` | `#b3b3b3` | Generated base foreground on muted backgrounds (active, 15% darker) |
+| `color.on-muted.base-active` | `color` | `#d9d9d9` | Generated base foreground on muted backgrounds (active, dark base primitive) |
 | `color.on-muted.base-disabled` | `color` | `#d5d5d566` | Generated base foreground on muted backgrounds (disabled, 40% opacity) |
 | `color.on-muted.base-hover` | `color` | `#939393` | Generated base foreground on muted backgrounds (hover, 30% darker) |
-| `color.on-muted.base-inactive` | `color` | `#d9d9d9` | Generated base foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.base-inactive` | `color` | `#ababab` | Generated base foreground on muted backgrounds (inactive, 20% darker) |
 | `color.on-muted.brand` | `color` | `#5abba5` | Generated brand foreground on muted backgrounds |
 | `color.on-muted.brand-active` | `color` | `#30a691` | Generated brand foreground on muted backgrounds (active, 11% darker) |
 | `color.on-muted.brand-disabled` | `color` | `#75beaa` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
@@ -3247,15 +3247,15 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
-| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
-| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
+| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
+| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
 | `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 
@@ -3318,10 +3318,10 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `color.accent.base` | `color` | `var(--color-neutral-1)` | Primary neutral accent for emphasized controls and content. |
-| `color.accent.base-active` | `color` | `#c9c9c9` | Primary neutral accent for emphasized controls and content. (active, 15% darker) |
+| `color.accent.base-active` | `color` | `#ffffff` | Primary neutral accent for emphasized controls and content. (active, dark base primitive) |
 | `color.accent.base-disabled` | `color` | `#fafafa66` | Primary neutral accent for emphasized controls and content. (disabled, 40% opacity) |
 | `color.accent.base-hover` | `color` | `#9b9b9b` | Primary neutral accent for emphasized controls and content. (hover, 30% darker) |
-| `color.accent.base-inactive` | `color` | `#ffffff` | Primary neutral accent for emphasized controls and content. (inactive, 20% brighter) |
+| `color.accent.base-inactive` | `color` | `#bebebe` | Primary neutral accent for emphasized controls and content. (inactive, 20% darker) |
 | `color.accent.brand` | `color` | `#3be4be` | Brand accent for primary actions and emphasis. |
 | `color.accent.brand-active` | `color` | `#00c5a1` | Brand accent for primary actions and emphasis. (active, 11% darker) |
 | `color.accent.brand-disabled` | `color` | `#6adfc0` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
@@ -3411,10 +3411,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.link-hover` | `color` | `#59a7ff` | Interactive color for links and linked text. (hover, 23% brighter) |
 | `color.link-inactive` | `color` | `#0052d4` | Interactive color for links and linked text. (inactive, 20% darker) |
 | `color.muted.base` | `color` | `var(--color-neutral-11)` | Muted neutral accent background for low-emphasis states. |
-| `color.muted.base-active` | `color` | `#36373b` | Muted neutral accent background for low-emphasis states. (active, 15% brighter) |
+| `color.muted.base-active` | `color` | `#ffffff` | Muted neutral accent background for low-emphasis states. (active, dark base primitive) |
 | `color.muted.base-disabled` | `color` | `#2b2c2f` | Muted neutral accent background for low-emphasis states. (disabled, 80% saturation) |
 | `color.muted.base-hover` | `color` | `#414347` | Muted neutral accent background for low-emphasis states. (hover, 30% brighter) |
-| `color.muted.base-inactive` | `color` | `#1d1e22` | Muted neutral accent background for low-emphasis states. (inactive, 20% darker) |
+| `color.muted.base-inactive` | `color` | `#bebebe` | Muted neutral accent background for low-emphasis states. (inactive, 20% darker) |
 | `color.muted.brand` | `color` | `#007e5e` | Muted brand accent background for low-emphasis states. |
 | `color.muted.brand-active` | `color` | `#26906f` | Muted brand accent background for low-emphasis states. (active, 11% brighter) |
 | `color.muted.brand-disabled` | `color` | `#2f7b61` | Muted brand accent background for low-emphasis states. (disabled, 80% saturation) |
@@ -3470,10 +3470,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.neutral.8` | `color` | `#616161` | Dark medium gray. |
 | `color.neutral.9` | `color` | `#484848` | Deep gray. |
 | `color.on-accent.base` | `color` | `var(--color-neutral-14)` | Content color placed on neutral accent backgrounds. |
-| `color.on-accent.base-active` | `color` | `#1c1c1f` | Content color placed on neutral accent backgrounds. (active, 15% brighter) |
+| `color.on-accent.base-active` | `color` | `#ffffff` | Content color placed on neutral accent backgrounds. (active, dark base primitive) |
 | `color.on-accent.base-disabled` | `color` | `#151517` | Content color placed on neutral accent backgrounds. (disabled, 80% saturation) |
 | `color.on-accent.base-hover` | `color` | `#232326` | Content color placed on neutral accent backgrounds. (hover, 30% brighter) |
-| `color.on-accent.base-inactive` | `color` | `#0c0c0f` | Content color placed on neutral accent backgrounds. (inactive, 20% darker) |
+| `color.on-accent.base-inactive` | `color` | `#bebebe` | Content color placed on neutral accent backgrounds. (inactive, 20% darker) |
 | `color.on-accent.brand` | `color` | `#151518` | Brand accent for primary actions and emphasis. |
 | `color.on-accent.brand-active` | `color` | `#1a1a1d` | Brand accent for primary actions and emphasis. (active, 11% brighter) |
 | `color.on-accent.brand-disabled` | `color` | `#151517` | Brand accent for primary actions and emphasis. (disabled, 80% saturation) |
@@ -3515,10 +3515,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-accent.warning-hover` | `color` | `#1f1f22` | Warning accent for cautionary states. (hover, 23% brighter) |
 | `color.on-accent.warning-inactive` | `color` | `#0c0c0f` | Warning accent for cautionary states. (inactive, 20% darker) |
 | `color.on-muted.base` | `color` | `var(--color-neutral-1)` | Generated base foreground on muted backgrounds |
-| `color.on-muted.base-active` | `color` | `#c9c9c9` | Generated base foreground on muted backgrounds (active, 15% darker) |
+| `color.on-muted.base-active` | `color` | `#ffffff` | Generated base foreground on muted backgrounds (active, dark base primitive) |
 | `color.on-muted.base-disabled` | `color` | `#fafafa66` | Generated base foreground on muted backgrounds (disabled, 40% opacity) |
 | `color.on-muted.base-hover` | `color` | `#9b9b9b` | Generated base foreground on muted backgrounds (hover, 30% darker) |
-| `color.on-muted.base-inactive` | `color` | `#ffffff` | Generated base foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.base-inactive` | `color` | `#bebebe` | Generated base foreground on muted backgrounds (inactive, 20% darker) |
 | `color.on-muted.brand` | `color` | `#3be4be` | Generated brand foreground on muted backgrounds |
 | `color.on-muted.brand-active` | `color` | `#00c5a1` | Generated brand foreground on muted backgrounds (active, 11% darker) |
 | `color.on-muted.brand-disabled` | `color` | `#6adfc0` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
@@ -3902,15 +3902,15 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |
 | `typography.display-lg` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.medium}","fontSize":"{font-size.2xl}","lineHeight":"{line-height.tight}"}` | The display - large typography variant |
-| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
-| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
+| `typography.display-md` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The display - medium typography variant |
+| `typography.display-sm` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The display - small typography variant |
 | `typography.display-xl` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.4xl}","lineHeight":"{line-height.snug}"}` | The display - extra large typography variant |
 | `typography.eyebrow` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The eyebrow typography variant |
 

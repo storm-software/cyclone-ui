@@ -20,6 +20,7 @@ import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack } from "@tamagui/stacks";
+import { expect, userEvent, within } from "storybook/test";
 import { Switch } from "./Switch";
 
 const meta: Meta<typeof Switch> = {
@@ -65,7 +66,33 @@ const validation = (
 });
 
 export const Base: Story = {
-  args: {}
+  args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const switchControl = canvas.getByRole("switch");
+    const label = canvas.getByText(
+      "This is an example label message for a switch"
+    );
+    const getStyles = (
+      globalThis as unknown as {
+        getComputedStyle: (element: unknown) => {
+          borderColor: string;
+          color: string;
+        };
+      }
+    ).getComputedStyle;
+    const restingBorderColor = getStyles(switchControl).borderColor;
+
+    await userEvent.hover(label);
+    await new Promise(resolve => setTimeout(resolve, 250));
+
+    await expect(getStyles(switchControl).borderColor).not.toBe(
+      restingBorderColor
+    );
+    await expect(getStyles(switchControl).borderColor).toBe(
+      getStyles(label).color
+    );
+  }
 };
 
 export const Required: Story = {

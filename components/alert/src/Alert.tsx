@@ -106,6 +106,7 @@ const AlertFrameImpl = ({
       <Container
         {...props}
         variant="high"
+        backgroundColor="$surfaceOverlay"
         themeShallow={true}
         bordered={false}
         noPadding={true}

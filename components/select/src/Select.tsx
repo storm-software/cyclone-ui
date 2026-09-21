@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { Field } from "@cyclone-ui/field";
+import { Field, useFieldHasValidationMessage } from "@cyclone-ui/field";
 import { getSpaced } from "@cyclone-ui/helpers";
 import { ControlUnderline } from "@cyclone-ui/input";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
@@ -50,7 +50,7 @@ const SelectGroup = styled(XGroup, {
   cursor: "pointer",
   backgroundColor: "$surfaceElevated",
   borderWidth: 1,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   outlineStyle: "none",
   boxShadow: "none",
   gap: "$none",
@@ -77,13 +77,22 @@ const SelectGroup = styled(XGroup, {
       }
     },
 
+    hasValidationMessage: {
+      true: {
+        borderColor: "$accent",
+        hoverStyle: {
+          borderColor: "$accentHover"
+        }
+      }
+    },
+
     variant: {
       default: {},
       floating: {},
       underline: {
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "$accent",
+        borderColor: "$hairline",
         borderRadius: 0,
         boxShadow: "none",
 
@@ -146,16 +155,26 @@ const SelectSeparator = styled(View, {
   borderRightWidth: 0,
   borderTopWidth: 0,
   borderBottomWidth: 0,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   width: 0,
   flexShrink: 0,
   height: "60%",
   marginVertical: "$none",
 
+  hoverStyle: {
+    borderColor: "$hairlineHover"
+  },
+
   variants: {
     focused: {
       true: {
-        borderColor: "$accentActive"
+        borderColor: "$hairlineActive"
+      }
+    },
+
+    hasValidationMessage: {
+      true: {
+        borderColor: "$hairlineActive"
       }
     },
 
@@ -169,18 +188,18 @@ const SelectSeparator = styled(View, {
 
     disabled: {
       true: {
-        borderColor: "$accentDisabled",
+        borderColor: "$hairlineInactive",
 
         hoverStyle: {
-          borderColor: "$accentDisabled"
+          borderColor: "$hairlineInactive"
         },
 
         focusStyle: {
-          borderColor: "$accentDisabled"
+          borderColor: "$hairlineInactive"
         },
 
         pressStyle: {
-          borderColor: "$accentDisabled"
+          borderColor: "$hairlineInactive"
         }
       }
     }
@@ -252,6 +271,7 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
   ({ children, ...props }, forwardedRef) => {
     const { focused, disabled, size, variant } =
       SelectContext.useStyledContext();
+    const hasValidationMessage = useFieldHasValidationMessage();
     const [locallyActive, setLocallyActive] = useState(false);
     const frameSize =
       size === "$true" || String(size) === "true" ? "$10xl" : size;
@@ -261,6 +281,7 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
       <SelectGroup
         group={"field" as any}
         focused={focused}
+        hasValidationMessage={hasValidationMessage}
         variant={variant}
         frameSize={frameSize}
         disabled={disabled}
@@ -282,13 +303,14 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
             <SelectSeparator
               ref={forwardedRef}
               focused={focused}
+              hasValidationMessage={hasValidationMessage}
               disabled={disabled}
               $group-field-hover={{
                 borderColor: disabled
-                  ? "$accentDisabled"
+                  ? "$hairlineInactive"
                   : focused
-                    ? "$accentActive"
-                    : "$accentHover"
+                    ? "$hairlineActive"
+                    : "$hairlineHover"
               }}
             />
           </XGroup.Item>
@@ -327,6 +349,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
     forwardedRef
   ) => {
     const [open, setOpen] = useState(false);
+    const hasValidationMessage = useFieldHasValidationMessage();
     const resolvedSize =
       size === "$true" || String(size) === "true" ? "$10xl" : size;
 
@@ -361,6 +384,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
         name={name}
         disabled={disabled}
         focused={focused ?? open}
+        hasValidationMessage={hasValidationMessage}
         variant={variant}
         size={resolvedSize}
         onFocus={onFocus}

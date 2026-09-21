@@ -10,6 +10,9 @@
   },
   "private": false,
   "files": ["dist"],
+  "dependencies": {
+    "@cyclone-ui/field": "workspace:*"
+  },
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",

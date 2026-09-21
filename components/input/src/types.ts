@@ -163,6 +163,9 @@ export interface InputContextProps {
    */
   focused: boolean;
 
+  /** @internal Whether the surrounding Field displays validation text. */
+  hasValidationMessage: boolean;
+
   /**
    * Callback that is called when the text input's text changes.
    *

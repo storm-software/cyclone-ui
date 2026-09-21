@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import type { SelectOption } from "@stryke/types/form";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens, SizeTokens } from "@tamagui/core";
@@ -36,12 +37,14 @@ export interface RadioGroupContextProps {
   color?: ColorTokens | string;
   disabled: boolean;
   required: boolean;
+  hasValidationMessage: boolean;
 }
 
 export const RadioGroupContext = createStyledContext<RadioGroupContextProps>({
   size: "$true",
   disabled: false,
-  required: false
+  required: false,
+  hasValidationMessage: false
 });
 
 const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
@@ -171,7 +174,7 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   boxShadow: "none",
   borderRadius: "$control",
   borderWidth: 1,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   paddingHorizontal: "$3xl",
   paddingVertical: "$2xl",
   alignItems: "center",
@@ -208,6 +211,15 @@ const RadioGroupItemContainerFrame = styled(XStack, {
           paddingHorizontal: space.val,
           paddingVertical: space.val * 0.85
         };
+      }
+    },
+
+    hasValidationMessage: {
+      true: {
+        borderColor: "$accent",
+        hoverStyle: {
+          borderColor: "$accentHover"
+        }
       }
     },
 
@@ -249,6 +261,7 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
     forwardedRef
   ) => {
     const { size } = RadioGroupContext.useStyledContext();
+    const hasValidationMessage = useFieldHasValidationMessage();
 
     return (
       <RadioGroupItemContainerFrame
@@ -256,6 +269,7 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
         ref={forwardedRef}
         {...props}
         size={size}
+        hasValidationMessage={hasValidationMessage}
         onPress={onPress}
         disabled={disabled}>
         {children}

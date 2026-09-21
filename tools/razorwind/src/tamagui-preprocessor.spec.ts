@@ -456,16 +456,63 @@ describe("tamaguiPreprocessor", () => {
       lightInactive: light["base-inactive"].$description
     }).toEqual({
       darkHover: "hover state at 30% brighter",
-      darkActive: "active state at 15% brighter",
+      darkActive: "active state at dark base primitive",
       darkInactive: "inactive state at 20% darker",
       lightHover: "hover state at 30% darker",
-      lightActive: "active state at 15% darker",
-      lightInactive: "inactive state at 20% brighter"
+      lightActive: "active state at light base primitive",
+      lightInactive: "inactive state at 20% darker"
     });
     expect(channel(dark["base-hover"].$value)).toBeGreaterThan(0x77);
-    expect(channel(dark["base-inactive"].$value)).toBeLessThan(0x77);
+    expect(dark["base-active"].$value).toBe("#ffffff");
+    expect(relativeLuminance(dark["base-inactive"].$value)).toBeLessThan(
+      relativeLuminance(dark["base-active"].$value)
+    );
     expect(channel(light["base-hover"].$value)).toBeLessThan(0x77);
-    expect(channel(light["base-inactive"].$value)).toBeGreaterThan(0x77);
+    expect(light["base-active"].$value).toBe("#0c0c0d");
+    expect(relativeLuminance(light["base-inactive"].$value)).toBeLessThan(
+      relativeLuminance(light["base-active"].$value)
+    );
+  });
+
+  it("uses resolved primitives for base active states and dims their inactive states", () => {
+    const result = tamaguiPreprocessor({
+      dark: {
+        color: {
+          $description: "The dark theme colors",
+          accent: { base: colorToken("#777777", "base") }
+        }
+      },
+      light: {
+        color: {
+          $description: "The light theme colors",
+          accent: { base: colorToken("#777777", "base") }
+        }
+      }
+    }) as any;
+    const dark = result.dark.color.accent;
+    const light = result.light.color.accent;
+
+    expect(dark["base-active"].$value).toBe("#ffffff");
+    expect(light["base-active"].$value).toBe("#0c0c0d");
+    expect(relativeLuminance(dark["base-inactive"].$value)).toBeLessThan(
+      relativeLuminance(dark["base-active"].$value)
+    );
+    expect(relativeLuminance(light["base-inactive"].$value)).toBeLessThan(
+      relativeLuminance(light["base-active"].$value)
+    );
+  });
+
+  it("reserves base primitives for colors explicitly themed as base", () => {
+    const result = tamaguiPreprocessor({
+      dark: {
+        color: {
+          $description: "The dark theme colors",
+          accent: { base: colorToken("#777777") }
+        }
+      }
+    }) as any;
+
+    expect(result.dark.color.accent["base-active"].$value).not.toBe("#ffffff");
   });
 
   it("generates states only for surface, link, hairline, and accent colors", () => {

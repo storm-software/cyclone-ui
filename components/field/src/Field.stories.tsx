@@ -18,8 +18,10 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Form } from "@cyclone-ui/form";
+import { useFieldActions } from "@cyclone-ui/state/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Field } from "./Field";
+import { expect, userEvent, within } from "storybook/test";
+import { Field, useFieldHasValidationMessage } from "./Field";
 
 const meta: Meta<typeof Field> = {
   title: "Form/Field",
@@ -58,6 +60,22 @@ const validation = (
     ]
   ]
 });
+
+const MessageStateProbe = () => {
+  const hasValidationMessage = useFieldHasValidationMessage();
+  const { change } = useFieldActions<string>();
+
+  return (
+    <>
+      <button type="button" onClick={() => void change("value")}>
+        Validate field
+      </button>
+      <output data-testid="field-message-state">
+        {String(hasValidationMessage)}
+      </output>
+    </>
+  );
+};
 
 export const Base: Story = {
   args: {}
@@ -106,6 +124,26 @@ export const Brand: Story = {
   }
 };
 
+export const BrandWithoutMessage: Story = {
+  args: {
+    theme: "brand"
+  },
+  render: props => (
+    <Form name="formName" defaultValues={{ fieldName: "" }}>
+      <Field name="fieldName" {...props}>
+        <MessageStateProbe />
+      </Field>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await expect(canvas.getByTestId("field-message-state")).toHaveTextContent(
+      "false"
+    );
+  }
+};
+
 export const Discovery: Story = {
   args: {
     validate: validation("discovery")
@@ -121,6 +159,32 @@ export const Error: Story = {
 export const Warning: Story = {
   args: {
     validate: validation("warning")
+  }
+};
+
+export const WarningMessageState: Story = {
+  args: {
+    validate: validation("warning")
+  },
+  render: props => (
+    <Form name="formName" defaultValues={{ fieldName: "" }}>
+      <Field name="fieldName" {...props}>
+        <MessageStateProbe />
+      </Field>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await expect(canvas.getByTestId("field-message-state")).toHaveTextContent(
+      "false"
+    );
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Validate field" })
+    );
+    await expect(canvas.getByTestId("field-message-state")).toHaveTextContent(
+      "true"
+    );
   }
 };
 

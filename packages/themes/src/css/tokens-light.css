@@ -124,8 +124,8 @@
   --color-accent-info: #2055b3; /** Informational accent for guidance and neutral status. */
   --color-accent-discovery: #594395; /** Discovery accent for new or exploratory content. */
   --color-accent-base-hover: #232326; /** Primary neutral accent for emphasized controls and content. (hover, 30% brighter) */
-  --color-accent-base-active: #1c1c1f; /** Primary neutral accent for emphasized controls and content. (active, 15% brighter) */
-  --color-accent-base-inactive: #0c0c0f; /** Primary neutral accent for emphasized controls and content. (inactive, 20% darker) */
+  --color-accent-base-active: #0c0c0d; /** Primary neutral accent for emphasized controls and content. (active, light base primitive) */
+  --color-accent-base-inactive: #060607; /** Primary neutral accent for emphasized controls and content. (inactive, 20% darker) */
   --color-accent-base-disabled: #151517; /** Primary neutral accent for emphasized controls and content. (disabled, 80% saturation) */
   --color-accent-brand-hover: #003590; /** Brand accent for primary actions and emphasis. (hover, 23% darker) */
   --color-accent-brand-active: #0f45a2; /** Brand accent for primary actions and emphasis. (active, 11% darker) */
@@ -161,8 +161,8 @@
   --color-accent-discovery-disabled: #584889; /** Discovery accent for new or exploratory content. (disabled, 80% saturation) */
   --color-on-accent-base: #f1f1f1; /** Content color placed on neutral accent backgrounds. */
   --color-on-accent-base-hover: #959595; /** Content color placed on neutral accent backgrounds. (hover, 30% darker) */
-  --color-on-accent-base-active: #c2c2c2; /** Content color placed on neutral accent backgrounds. (active, 15% darker) */
-  --color-on-accent-base-inactive: #ffffff; /** Content color placed on neutral accent backgrounds. (inactive, 20% brighter) */
+  --color-on-accent-base-active: #0c0c0d; /** Content color placed on neutral accent backgrounds. (active, light base primitive) */
+  --color-on-accent-base-inactive: #060607; /** Content color placed on neutral accent backgrounds. (inactive, 20% darker) */
   --color-on-accent-base-disabled: rgba(241, 241, 241, 0.4); /** Content color placed on neutral accent backgrounds. (disabled, 40% opacity) */
   --color-on-accent-brand: #fafafa; /** Brand accent for primary actions and emphasis. */
   --color-on-accent-danger: #fafafa; /** Danger accent for destructive actions and critical states. */
@@ -207,8 +207,8 @@
   --color-muted-base: #eaeaea; /** Muted neutral accent background for low-emphasis states. */
   --color-muted-brand: #abcaff; /** Muted brand accent background for low-emphasis states. */
   --color-muted-base-hover: #919191; /** Muted neutral accent background for low-emphasis states. (hover, 30% darker) */
-  --color-muted-base-active: #bcbcbc; /** Muted neutral accent background for low-emphasis states. (active, 15% darker) */
-  --color-muted-base-inactive: #ffffff; /** Muted neutral accent background for low-emphasis states. (inactive, 20% brighter) */
+  --color-muted-base-active: #0c0c0d; /** Muted neutral accent background for low-emphasis states. (active, light base primitive) */
+  --color-muted-base-inactive: #060607; /** Muted neutral accent background for low-emphasis states. (inactive, 20% darker) */
   --color-muted-base-disabled: rgba(234, 234, 234, 0.4); /** Muted neutral accent background for low-emphasis states. (disabled, 40% opacity) */
   --color-muted-brand-hover: #728fc1; /** Muted brand accent background for low-emphasis states. (hover, 23% darker) */
   --color-muted-brand-active: #8eacdf; /** Muted brand accent background for low-emphasis states. (active, 11% darker) */
@@ -294,8 +294,8 @@
   --color-on-muted-info: #001c54; /** Generated info foreground on muted backgrounds */
   --color-on-muted-discovery: #20004c; /** Generated discovery foreground on muted backgrounds */
   --color-on-muted-base-hover: #232326; /** Generated base foreground on muted backgrounds (hover, 30% brighter) */
-  --color-on-muted-base-active: #1c1c1f; /** Generated base foreground on muted backgrounds (active, 15% brighter) */
-  --color-on-muted-base-inactive: #0c0c0f; /** Generated base foreground on muted backgrounds (inactive, 20% darker) */
+  --color-on-muted-base-active: #0c0c0d; /** Generated base foreground on muted backgrounds (active, light base primitive) */
+  --color-on-muted-base-inactive: #060607; /** Generated base foreground on muted backgrounds (inactive, 20% darker) */
   --color-on-muted-base-disabled: #151517; /** Generated base foreground on muted backgrounds (disabled, 80% saturation) */
   --color-on-muted-brand-hover: #003590; /** Generated brand foreground on muted backgrounds (hover, 23% darker) */
   --color-on-muted-brand-active: #0f45a2; /** Generated brand foreground on muted backgrounds (active, 11% darker) */
@@ -557,12 +557,12 @@
   --typography-display-hero: 400 3.75rem/1.1475 'Space Grotesk'; /** The display - hero typography variant */
   --typography-display-xl: 400 3rem/1.051875 'Space Grotesk'; /** The display - extra large typography variant */
   --typography-display-lg: 500 1.875rem/0.95625 'Space Grotesk'; /** The display - large typography variant */
-  --typography-display-md: 700 1.5rem/1.051875 'Space Grotesk'; /** The display - medium typography variant */
-  --typography-display-sm: 700 1.25rem/1.051875 'Space Grotesk'; /** The display - small typography variant */
+  --typography-display-md: 700 1.25rem/1.051875 'Space Grotesk'; /** The display - medium typography variant */
+  --typography-display-sm: 700 1.125rem/1.051875 'Space Grotesk'; /** The display - small typography variant */
   --typography-eyebrow: 800 1.125rem/1.1475 Manrope; /** The eyebrow typography variant */
   --typography-button: 900 1.125rem/1.1475 Manrope; /** The button typography variant */
-  --typography-body-lg: 700 1.25rem/1.1475 Manrope; /** The body large typography variant */
+  --typography-body-lg: 600 1.125rem/1.051875 Manrope; /** The body large typography variant */
   --typography-body-md: 500 1.125rem/1.1475 Manrope; /** The body typography variant */
-  --typography-body-sm: 400 1rem/1.1475 Manrope; /** The body small typography variant */
+  --typography-body-sm: 400 0.875rem/1.1475 Manrope; /** The body small typography variant */
   --typography-code: 400 1.125rem/1.1475 'Geist Mono'; /** The code typography variant */
 }

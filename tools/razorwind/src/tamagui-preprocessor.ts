@@ -403,9 +403,16 @@ interface ColorStateVariant {
    * is determined by the source color and its parent theme.
    */
   brightness?: number;
+  /** Resolve base-state colors from the parent theme's contrast primitive. */
+  useBaseThemePrimitive?: boolean;
 }
 
 type ParentTheme = "dark" | "light";
+
+const BASE_THEME_ACTIVE_PRIMITIVES: Record<ParentTheme, string> = {
+  dark: "#ffffff",
+  light: "#0c0c0d"
+};
 
 function parentThemeFromDescription(
   description: unknown
@@ -438,9 +445,10 @@ const COLOR_STATE_HOVER: ColorStateVariant = {
   brightness: 1.3
 };
 
-const COLOR_STATE_ACTIVE: ColorStateVariant = {
+const BASE_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
-  brightness: 1.15
+  brightness: 1.15,
+  useBaseThemePrimitive: true
 };
 
 const THEME_COLOR_STATE_HOVER: ColorStateVariant = {
@@ -458,11 +466,30 @@ const COLOR_STATE_INACTIVE: ColorStateVariant = {
   brightness: 0.8
 };
 
+const BASE_COLOR_STATE_INACTIVE: ColorStateVariant = {
+  name: "inactive",
+  brightness: 0.8,
+  useBaseThemePrimitive: true
+};
+
 const COLOR_STATE_DISABLED: ColorStateVariant = {
   name: "disabled",
   opacity: 0.4,
   saturation: 0.8
 };
+
+const BASE_COLOR_STATE_VARIANTS = [
+  COLOR_STATE_HOVER,
+  BASE_COLOR_STATE_ACTIVE,
+  BASE_COLOR_STATE_INACTIVE,
+  COLOR_STATE_DISABLED
+] as const;
+
+const BASE_COLOR_STATE_TOKEN_VARIANTS = [
+  COLOR_STATE_HOVER,
+  BASE_COLOR_STATE_ACTIVE,
+  BASE_COLOR_STATE_INACTIVE
+] as const;
 
 interface ThemeColorStateVariants {
   base: readonly ColorStateVariant[];
@@ -470,12 +497,7 @@ interface ThemeColorStateVariants {
 }
 
 const ACCENT_COLOR_STATE_VARIANTS: ThemeColorStateVariants = {
-  base: [
-    COLOR_STATE_HOVER,
-    COLOR_STATE_ACTIVE,
-    COLOR_STATE_INACTIVE,
-    COLOR_STATE_DISABLED
-  ],
+  base: BASE_COLOR_STATE_VARIANTS,
   theme: [
     THEME_COLOR_STATE_HOVER,
     THEME_COLOR_STATE_ACTIVE,
@@ -486,12 +508,7 @@ const ACCENT_COLOR_STATE_VARIANTS: ThemeColorStateVariants = {
 
 const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
   surface: {
-    base: [
-      COLOR_STATE_HOVER,
-      COLOR_STATE_ACTIVE,
-      COLOR_STATE_INACTIVE,
-      COLOR_STATE_DISABLED
-    ],
+    base: BASE_COLOR_STATE_VARIANTS,
     theme: [
       THEME_COLOR_STATE_HOVER,
       THEME_COLOR_STATE_ACTIVE,
@@ -509,7 +526,7 @@ const COLOR_STATE_GROUP_KEYS = new Set(Object.keys(COLOR_STATE_VARIANTS));
 
 const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
   link: {
-    base: [COLOR_STATE_HOVER, COLOR_STATE_ACTIVE, COLOR_STATE_INACTIVE],
+    base: BASE_COLOR_STATE_TOKEN_VARIANTS,
     theme: [
       THEME_COLOR_STATE_HOVER,
       THEME_COLOR_STATE_ACTIVE,
@@ -517,7 +534,7 @@ const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
     ]
   },
   hairline: {
-    base: [COLOR_STATE_HOVER, COLOR_STATE_ACTIVE, COLOR_STATE_INACTIVE],
+    base: BASE_COLOR_STATE_TOKEN_VARIANTS,
     theme: [
       THEME_COLOR_STATE_HOVER,
       THEME_COLOR_STATE_ACTIVE,
@@ -872,6 +889,15 @@ function directedBrightnessFactor(
   return isDarkColor(hex, parentTheme) ? factor : 2 - factor;
 }
 
+function baseThemePrimitive(
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
+): string | undefined {
+  return variant.useBaseThemePrimitive && parentTheme
+    ? BASE_THEME_ACTIVE_PRIMITIVES[parentTheme]
+    : undefined;
+}
+
 function stateBrightnessFactor(
   hex: string,
   variant: ColorStateVariant,
@@ -879,6 +905,10 @@ function stateBrightnessFactor(
 ): number {
   if (variant.brightness === undefined) {
     return 1;
+  }
+
+  if (baseThemePrimitive(variant, parentTheme)) {
+    return variant.name === "active" ? 1 : variant.brightness;
   }
 
   return directedBrightnessFactor(hex, variant.brightness, parentTheme);
@@ -889,9 +919,13 @@ function applyStateTransform(
   variant: ColorStateVariant,
   parentTheme?: ParentTheme
 ): string {
-  let transformed = hex;
+  const primitive = baseThemePrimitive(variant, parentTheme);
+  let transformed = primitive ?? hex;
 
-  if (variant.brightness !== undefined) {
+  if (
+    variant.brightness !== undefined &&
+    !(primitive && variant.name === "active")
+  ) {
     transformed = applyBrightness(
       transformed,
       stateBrightnessFactor(transformed, variant, parentTheme)
@@ -915,8 +949,11 @@ function variantDetail(
   parentTheme?: ParentTheme
 ): string {
   const details: string[] = [];
+  const primitive = baseThemePrimitive(variant, parentTheme);
 
-  if (variant.brightness !== undefined) {
+  if (primitive && variant.name === "active") {
+    details.push(`${parentTheme} base primitive`);
+  } else if (variant.brightness !== undefined) {
     const factor = stateBrightnessFactor(hex, variant, parentTheme);
     const percent = Math.round((factor - 1) * 100);
 
@@ -986,7 +1023,7 @@ function addColorStateTokens(
 
     const tokenVariants =
       "base" in variants
-        ? variants[token.theme === "base" || name === "base" ? "base" : "theme"]
+        ? variants[token.theme === "base" ? "base" : "theme"]
         : variants;
     const tokenParentTheme =
       parentThemeFromDescription(token.$description) ?? parentTheme;

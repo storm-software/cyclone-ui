@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import { ControlUnderline } from "@cyclone-ui/input";
 import { InputValue } from "@cyclone-ui/input/InputValue";
 import type { GetProps } from "@tamagui/core";
@@ -37,7 +38,7 @@ const TextAreaFrame = styled(InputValue, {
   backgroundColor: "$surfaceElevated",
   color: "$accent",
   borderWidth: 1,
-  borderColor: "$accent",
+  borderColor: "$hairline",
   borderRadius: "$control",
   boxShadow: "none",
   outlineWidth: 0,
@@ -60,6 +61,15 @@ const TextAreaFrame = styled(InputValue, {
       }
     },
 
+    hasValidationMessage: {
+      true: {
+        borderColor: "$accent",
+        hoverStyle: {
+          borderColor: "$accentHover"
+        }
+      }
+    },
+
     variant: {
       default: {},
       floating: {
@@ -68,7 +78,7 @@ const TextAreaFrame = styled(InputValue, {
       underline: {
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "$accent",
+        borderColor: "$hairline",
         borderRadius: 0,
         boxShadow: "none",
 
@@ -131,6 +141,7 @@ export const TextArea = TextAreaFrame.styleable(
     forwardedRef
   ) => {
     const [focused, setActive] = useState(false);
+    const hasValidationMessage = useFieldHasValidationMessage();
     const handleFocus = useCallback(
       (event: FocusEvent<HTMLElement>) => {
         setActive(true);
@@ -155,6 +166,7 @@ export const TextArea = TextAreaFrame.styleable(
         {...props}
         placeholderTextColor={placeholderTextColor}
         focused={focusedProp ?? focused}
+        hasValidationMessage={hasValidationMessage}
         variant={variant}
         disabled={disabled}
         $group-field-hover={{

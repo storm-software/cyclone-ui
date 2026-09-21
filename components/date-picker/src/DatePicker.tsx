@@ -19,10 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Field } from "@cyclone-ui/field";
-import {
-  HeadingExtraLargeText,
-  HeadingMediumText
-} from "@cyclone-ui/heading-text";
+import { HeadingLargeText, HeadingMediumText } from "@cyclone-ui/heading-text";
 import type { InputContextProps } from "@cyclone-ui/input";
 import { Input } from "@cyclone-ui/input";
 import { Popover } from "@cyclone-ui/popover";
@@ -45,6 +42,7 @@ import { XStack, YStack } from "@tamagui/stacks";
 import type { ForwardedRef, PropsWithChildren } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { DimensionValue } from "react-native";
+
 export type DatePickerMode = "single" | "range";
 
 export type DatePickerChangeEventHandler = (
@@ -133,7 +131,8 @@ export const DatePickerContext = createStyledContext<DatePickerContextProps>({
   circular: false,
   disabled: false,
   focused: false,
-  variant: "default"
+  variant: "default",
+  hasValidationMessage: false
 });
 
 export const DEFAULT_DATE_FORMAT = "MM.DD.YYYY";
@@ -589,7 +588,7 @@ const CalendarHeader = () => {
           }}>
           {year}
         </BodyText>
-        <HeadingExtraLargeText
+        <HeadingLargeText
           transition="200ms"
           onPress={() => setHeader("month")}
           userSelect="auto"
@@ -600,7 +599,7 @@ const CalendarHeader = () => {
             color: "$accentHover"
           }}>
           {month}
-        </HeadingExtraLargeText>
+        </HeadingLargeText>
       </YStack>
       <Button
         variant="ghost"
