@@ -19,6 +19,7 @@
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
     "@cyclone-ui/themeable-icon": "workspace:*",
     "@cyclone-ui/vectors": "workspace:*",
     "@tamagui/core": "catalog:",

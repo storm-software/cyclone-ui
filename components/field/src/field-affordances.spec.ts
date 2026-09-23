@@ -100,3 +100,16 @@ describe("floating required field labels", () => {
     expect(label).toContain('width={floating ? "$md" : "$xl"}');
   });
 });
+
+describe("floating field label masks", () => {
+  it("keeps the border mask content-sized instead of stretching it across the control", () => {
+    const field = readComponent("./Field.tsx");
+    const labelStack = getDeclaration(field, "LabelXStack");
+    const labelContent = getDeclaration(field, "FieldLabelContent");
+    const label = getDeclaration(field, "FieldLabelTextImpl");
+
+    expect(labelStack).not.toContain("flex: 1");
+    expect(labelContent).not.toContain("flex: 1");
+    expect(label).not.toContain('width="100%"');
+  });
+});

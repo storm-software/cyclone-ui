@@ -228,10 +228,10 @@ const tokens = createTokens({
     "15xl": px(384),
     lg: px(20),
     md: px(18),
-    sm: px(16),
+    sm: px(17.2),
     xl: px(24),
-    xs: px(14),
-    xxs: px(12)
+    xs: px(16),
+    xxs: px(14)
   },
   shadow: {
     "2xl": "0px 25px 50px -12px #00000040",
@@ -951,9 +951,9 @@ const bodyLgFont = createFont({
     true: 18
   },
   lineHeight: {
-    md: 18.934,
-    snug: 18.934,
-    true: 18.934
+    md: 20.655,
+    normal: 20.655,
+    true: 20.655
   },
   weight: {
     md: "600",
@@ -983,18 +983,18 @@ const bodyMdFont = createFont({
 const bodySmFont = createFont({
   family: "Manrope",
   size: {
-    true: 14,
-    xs: 14
+    sm: 17.2,
+    true: 17.2
   },
   lineHeight: {
-    normal: 16.065,
-    true: 16.065,
-    xs: 16.065
+    normal: 19.737,
+    sm: 19.737,
+    true: 19.737
   },
   weight: {
     normal: "400",
-    true: "400",
-    xs: "400"
+    sm: "400",
+    true: "400"
   }
 });
 
@@ -1005,9 +1005,9 @@ const bodyXlFont = createFont({
     true: 20
   },
   lineHeight: {
-    lg: 21.037,
-    snug: 21.037,
-    true: 21.037
+    lg: 22.95,
+    normal: 22.95,
+    true: 22.95
   },
   weight: {
     lg: "600",
@@ -1019,18 +1019,18 @@ const bodyXlFont = createFont({
 const bodyXsFont = createFont({
   family: "Manrope",
   size: {
-    true: 12,
-    xxs: 12
+    true: 16,
+    xs: 16
   },
   lineHeight: {
-    normal: 13.77,
-    true: 13.77,
-    xxs: 13.77
+    normal: 18.36,
+    true: 18.36,
+    xs: 18.36
   },
   weight: {
     normal: "400",
     true: "400",
-    xxs: "400"
+    xs: "400"
   }
 });
 
@@ -1181,13 +1181,13 @@ const displayXlFont = createFont({
 const displayXsFont = createFont({
   family: "Space Grotesk",
   size: {
-    true: 14,
-    xs: 14
+    true: 16,
+    xs: 16
   },
   lineHeight: {
-    snug: 14.726,
-    true: 14.726,
-    xs: 14.726
+    snug: 16.83,
+    true: 16.83,
+    xs: 16.83
   },
   weight: {
     black: "900",
@@ -1217,13 +1217,13 @@ const eyebrowLgFont = createFont({
 const eyebrowSmFont = createFont({
   family: "Manrope",
   size: {
-    sm: 16,
-    true: 16
+    sm: 17.2,
+    true: 17.2
   },
   lineHeight: {
-    normal: 18.36,
-    sm: 18.36,
-    true: 18.36
+    normal: 19.737,
+    sm: 19.737,
+    true: 19.737
   },
   weight: {
     black: "900",

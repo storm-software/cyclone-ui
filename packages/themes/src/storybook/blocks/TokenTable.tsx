@@ -3689,27 +3689,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.75rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "0.875rem",
+      value: "1rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (1rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1rem",
+      value: "1.075rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1rem)",
+      description: "Small font size (1.075rem)",
       theme: undefined,
       typography: true
     },
@@ -5075,7 +5075,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xl",
       description: "The body large typography variant",
       theme: undefined,
@@ -5084,7 +5084,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -5102,7 +5102,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,
@@ -5111,7 +5111,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xs",
       description: "The body small typography variant",
       theme: undefined,
@@ -8803,27 +8803,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.75rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "0.875rem",
+      value: "1rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (1rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1rem",
+      value: "1.075rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1rem)",
+      description: "Small font size (1.075rem)",
       theme: undefined,
       typography: true
     },
@@ -10189,7 +10189,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xl",
       description: "The body large typography variant",
       theme: undefined,
@@ -10198,7 +10198,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -10216,7 +10216,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,
@@ -10225,7 +10225,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xs",
       description: "The body small typography variant",
       theme: undefined,
@@ -13917,27 +13917,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.75rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "0.875rem",
+      value: "1rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (1rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1rem",
+      value: "1.075rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1rem)",
+      description: "Small font size (1.075rem)",
       theme: undefined,
       typography: true
     },
@@ -15303,7 +15303,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xl",
       description: "The body large typography variant",
       theme: undefined,
@@ -15312,7 +15312,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -15330,7 +15330,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,
@@ -15339,7 +15339,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xs",
       description: "The body small typography variant",
       theme: undefined,
@@ -19031,27 +19031,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.75rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "0.875rem",
+      value: "1rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (1rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1rem",
+      value: "1.075rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1rem)",
+      description: "Small font size (1.075rem)",
       theme: undefined,
       typography: true
     },
@@ -20417,7 +20417,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xl",
       description: "The body large typography variant",
       theme: undefined,
@@ -20426,7 +20426,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -20444,7 +20444,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,
@@ -20453,7 +20453,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xs",
       description: "The body small typography variant",
       theme: undefined,
@@ -24145,27 +24145,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.75rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "0.875rem",
+      value: "1rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (1rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1rem",
+      value: "1.075rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1rem)",
+      description: "Small font size (1.075rem)",
       theme: undefined,
       typography: true
     },
@@ -25531,7 +25531,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xl",
       description: "The body large typography variant",
       theme: undefined,
@@ -25540,7 +25540,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -25558,7 +25558,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,
@@ -25567,7 +25567,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xs",
       description: "The body small typography variant",
       theme: undefined,
@@ -29259,27 +29259,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.75rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.75rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "0.875rem",
+      value: "1rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (1rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1rem",
+      value: "1.075rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1rem)",
+      description: "Small font size (1.075rem)",
       theme: undefined,
       typography: true
     },
@@ -30645,7 +30645,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xl",
       description: "The body large typography variant",
       theme: undefined,
@@ -30654,7 +30654,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-lg",
       description: "The body large typography variant",
       theme: undefined,
@@ -30672,7 +30672,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-sm",
       description: "The body small typography variant",
       theme: undefined,
@@ -30681,7 +30681,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-body-xs",
       description: "The body small typography variant",
       theme: undefined,

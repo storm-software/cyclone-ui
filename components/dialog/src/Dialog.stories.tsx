@@ -21,6 +21,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { DialogProps } from "./Dialog";
 import { Dialog } from "./Dialog";
+
 const meta: Meta<typeof Dialog> = {
   title: "Containers/Dialog",
   component: Dialog,

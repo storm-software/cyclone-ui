@@ -69,7 +69,7 @@
     "link": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.blue.5}",
+      "$value": "{color.blue.3}",
       "$description": "Interactive color for links and linked text."
     },
     "hairline": {

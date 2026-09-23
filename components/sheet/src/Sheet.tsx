@@ -346,7 +346,7 @@ const SheetScrollView: FC<SheetScrollViewProps> = ({
       {children}
     </SheetSheetScrollView>
   ) : (
-    <ScrollView flex={1} className={className} {...(props as any)}>
+    <ScrollView flex={1} size="lg" className={className} {...(props as any)}>
       {children}
     </ScrollView>
   );

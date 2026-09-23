@@ -18,6 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
+import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
   getFormFontScale,
@@ -25,8 +26,7 @@ import {
   getFormSizeScale,
   getFormSizeToken,
   getSized,
-  getSpaced,
-  type FormControlSize
+  getSpaced
 } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
@@ -70,6 +70,7 @@ import {
   useRef,
   useState
 } from "react";
+import { StyleSheet } from "react-native";
 
 export type FieldVariant = "normal" | "floating" | "underline";
 
@@ -78,8 +79,10 @@ interface FieldPresentationContextValue {
   hasLabel: boolean;
   hasPlaceholder: boolean;
   hasValidationMessage: boolean;
+  endIconCount: number;
   setHasLabel: (hasLabel: boolean) => void;
   setHasPlaceholder: (hasPlaceholder: boolean) => void;
+  registerEndIcon: () => () => void;
 }
 
 const FieldPresentationContext = createContext<FieldPresentationContextValue>({
@@ -87,8 +90,10 @@ const FieldPresentationContext = createContext<FieldPresentationContextValue>({
   hasLabel: false,
   hasPlaceholder: false,
   hasValidationMessage: false,
+  endIconCount: 0,
   setHasLabel: () => undefined,
-  setHasPlaceholder: () => undefined
+  setHasPlaceholder: () => undefined,
+  registerEndIcon: () => () => undefined
 });
 
 const FIELD_PLACEHOLDER_UNSET = Symbol("field-placeholder-unset");
@@ -231,6 +236,7 @@ const FieldValidationText = styled(ValidationText, {
     size: formSizeVariants((size, extras) => {
       const style = getFieldDetailsFontSize("$true", extras);
       const scale = getFormFontScale(size);
+
       return style
         ? {
             ...style,
@@ -334,16 +340,24 @@ const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
     const { children, variant = "normal", ...rest } = props;
     const [hasLabel, setHasLabel] = useState(false);
     const [hasPlaceholder, setHasPlaceholder] = useState(false);
+    const [endIconCount, setEndIconCount] = useState(0);
+    const registerEndIcon = useCallback(() => {
+      setEndIconCount(count => count + 1);
+
+      return () => setEndIconCount(count => Math.max(0, count - 1));
+    }, []);
     const presentation = useMemo(
       () => ({
         variant,
         hasLabel,
         hasPlaceholder,
         hasValidationMessage: false,
+        endIconCount,
         setHasLabel,
-        setHasPlaceholder
+        setHasPlaceholder,
+        registerEndIcon
       }),
-      [variant, hasLabel, hasPlaceholder]
+      [variant, hasLabel, hasPlaceholder, endIconCount, registerEndIcon]
     );
 
     return (
@@ -446,6 +460,9 @@ const FieldLabelText = styled(LabelText, {
   transition: "200ms",
   cursor: "pointer",
   wordWrap: "normal",
+  flexShrink: 1,
+  minWidth: 0,
+  ellipsis: true,
 
   variants: {
     controlSize: formSizeVariants(getFormFontSize),
@@ -518,7 +535,6 @@ const LabelXStack = styled(XStack, {
   transition: "200ms",
   position: "relative",
   cursor: "pointer",
-  flex: 1,
   alignItems: "center",
 
   variants: {
@@ -558,7 +574,8 @@ const FieldLabelContent = styled(XStack, {
   position: "relative",
   zIndex: 1,
   gap: "$sm",
-  alignItems: "center"
+  alignItems: "center",
+  minWidth: 0
 });
 
 const FieldLabelTextImpl = FieldLabelText.styleable<{
@@ -581,12 +598,20 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
       floatingLabelLeft,
       variant = "normal",
       required,
+      style,
       ...props
     },
     forwardedRef
   ) => {
     const field = FieldApi.use();
     const theme = useThemeName();
+    const { endIconCount } = use(FieldPresentationContext);
+    const labelContentRef = useRef<HTMLElement>(null);
+    const labelTextRef = useRef<HTMLElement>(null);
+    const optionalLabelRef = useRef<HTMLElement>(null);
+    const optionalLabelWidthRef = useRef(0);
+    const [hideOptionalForOverflow, setHideOptionalForOverflow] =
+      useState(false);
     const fieldDisabled = field.disabled.get();
     const name = field.name.get();
     const size = field.size.get();
@@ -597,6 +622,80 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
           ? 4 * getFormSizeScale(size)
           : getSized(controlSize, { scale: 0.5 })
         : undefined;
+    const endIconWidth =
+      getSized(controlSize, { shift: -2 }) +
+      getSpaced("$2xl") * 2 * getFormSizeScale(size);
+    const floatingLabelRight =
+      getSpaced("$4xl") * getFormSizeScale(size) + endIconCount * endIconWidth;
+    const hasOptionalLabel =
+      hideRequired !== true && required !== true && hideOptional !== true;
+    const updateOptionalLabelVisibility = useCallback(() => {
+      const labelContent = labelContentRef.current;
+      const labelText = labelTextRef.current;
+      const optionalLabel = optionalLabelRef.current;
+
+      if (
+        !labelContent ||
+        !labelText ||
+        typeof getComputedStyle === "undefined"
+      ) {
+        return;
+      }
+
+      if (optionalLabel) {
+        const optionalStyle = getComputedStyle(optionalLabel);
+        optionalLabelWidthRef.current =
+          optionalLabel.scrollWidth +
+          Number.parseFloat(optionalStyle.marginLeft || "0");
+      }
+
+      if (optionalLabelWidthRef.current === 0) {
+        return;
+      }
+
+      const gap = Number.parseFloat(
+        getComputedStyle(labelContent).columnGap || "0"
+      );
+      const nextHidden =
+        labelText.scrollWidth + optionalLabelWidthRef.current + gap >
+        labelContent.clientWidth;
+
+      setHideOptionalForOverflow(current =>
+        current === nextHidden ? current : nextHidden
+      );
+    }, []);
+
+    useLayoutEffect(() => {
+      if (!hasOptionalLabel) {
+        setHideOptionalForOverflow(false);
+        return;
+      }
+
+      updateOptionalLabelVisibility();
+
+      if (typeof ResizeObserver === "undefined") {
+        return;
+      }
+
+      const resizeObserver = new ResizeObserver(updateOptionalLabelVisibility);
+      const labelContent = labelContentRef.current;
+      const labelText = labelTextRef.current;
+
+      if (labelContent) {
+        resizeObserver.observe(labelContent);
+      }
+      if (labelText) {
+        resizeObserver.observe(labelText);
+      }
+
+      return () => resizeObserver.disconnect();
+    }, [
+      children,
+      endIconCount,
+      hasOptionalLabel,
+      size,
+      updateOptionalLabelVisibility
+    ]);
 
     const disabled = useMemo(
       () => Boolean(fieldDisabled || props.disabled),
@@ -608,6 +707,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
       <FieldLabelPositioner
         variant={variant}
         top={labelTop}
+        right={variant === "floating" ? floatingLabelRight : undefined}
         left={
           variant === "floating"
             ? getSpaced("$4xl") * getFormSizeScale(size)
@@ -620,12 +720,29 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
           ref={forwardedRef}
           htmlFor={name}
           marginLeft={variant === "floating" ? "$none" : "$md"}>
-          <LabelXStack disabled={disabled} floating={floating}>
+          <LabelXStack disabled={disabled} floating={floating} minWidth={0}>
             {floating && <FieldLabelBorderMask />}
-            <FieldLabelContent>
+            <FieldLabelContent ref={labelContentRef}>
               <Theme name={baseTheme}>
                 <FieldLabelText
+                  ref={labelTextRef}
                   {...props}
+                  style={StyleSheet.flatten([
+                    style,
+                    {
+                      flexShrink: 1,
+                      minWidth: 0,
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      whiteSpace: "nowrap"
+                    }
+                  ])}
+                  ellipsis={true}
+                  flexShrink={1}
+                  minWidth={0}
+                  overflow="hidden"
+                  textOverflow="ellipsis"
+                  whiteSpace="nowrap"
                   disabled={disabled}
                   floating={floating}
                   controlSize={size}
@@ -653,8 +770,9 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                     </>
                   ) : (
                     <>
-                      {hideOptional !== true && (
+                      {hideOptional !== true && !hideOptionalForOverflow && (
                         <FieldOptionalLabelText
+                          ref={optionalLabelRef}
                           {...props}
                           disabled={disabled}
                           floating={floating}
@@ -802,8 +920,16 @@ const FieldIconButtonImpl = Button.styleable<{
     const theme = field.theme.get();
     const idleColor = theme === "base" ? "$hairline" : "$accent";
     const focusColor = theme === "base" ? "$hairlineActive" : "$accentActive";
-    const { variant } = use(FieldPresentationContext);
+    const { registerEndIcon, variant } = use(FieldPresentationContext);
     const frameSize = getFormSizeToken(size);
+
+    useLayoutEffect(() => {
+      if (position === "start") {
+        return;
+      }
+
+      return registerEndIcon();
+    }, [position, registerEndIcon]);
 
     const adjusted = useMemo(
       () => getSized(frameSize, { shift: -2 }),

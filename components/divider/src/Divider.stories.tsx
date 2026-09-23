@@ -16,52 +16,59 @@
 
  ------------------------------------------------------------------- */
 
-import { Diagonal } from "@cyclone-ui/vectors";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
-import { ScrollView } from "./ScrollView";
+import { Divider } from "./Divider";
 
-const meta = {
-  title: "Base/ScrollView",
-  component: ScrollView,
+const meta: Meta<typeof Divider> = {
+  title: "Base/Divider",
+  component: Divider,
   tags: ["autodocs"],
   args: {
-    size: "sm",
-    maxHeight: 400
+    color: "$hairline",
+    direction: "horizontal",
+    size: "sm"
   },
-  render: args => (
-    <View alignItems="center" height={500} padding="$4" width="100%">
-      <ScrollView {...args}>
-        <Diagonal width="100%" height={2000} />
-      </ScrollView>
-    </View>
-  )
-} satisfies Meta<typeof ScrollView>;
+  decorators: [
+    Story => (
+      <View width={320} gap="$md">
+        <Story />
+      </View>
+    )
+  ]
+};
 
 export default meta;
-
 type Story = StoryObj<typeof meta>;
 
-export const SmallSize: Story = {};
+export const Horizontal: Story = {};
 
-export const LargeSize: Story = {
-  args: { size: "lg" }
-};
-
-export const FitsWithinMaxHeight: Story = {
+export const Vertical: Story = {
+  args: {
+    direction: "vertical",
+    size: "md"
+  },
   render: args => (
-    <View alignItems="center" height={500} padding="$4" width="100%">
-      <ScrollView {...args}>
-        <Diagonal width="100%" height={200} />
-      </ScrollView>
+    <View flexDirection="row" height={96} paddingHorizontal="$xl">
+      <Divider {...args} />
     </View>
   )
 };
 
-export const ScrollingDisabled: Story = {
-  args: { scrollEnabled: false }
+export const Small: Story = {
+  args: {
+    size: "sm"
+  }
 };
 
-export const Fullscreen: Story = {
-  args: { fullscreen: true }
+export const Medium: Story = {
+  args: {
+    size: "md"
+  }
+};
+
+export const Large: Story = {
+  args: {
+    size: "lg"
+  }
 };

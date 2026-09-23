@@ -19,6 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import { ScrollView } from "@cyclone-ui/scroll-view";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { Check } from "@cyclone-ui/vectors";
 import type { TamaguiElement } from "@tamagui/core";
@@ -52,10 +53,9 @@ const CODE_BLOCK_STYLES = `
 @media (prefers-color-scheme: dark) { .cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-dark-bg); } }
 .cyclone-code-block-icon, .cyclone-code-block-icon svg { display: block; width: 1rem; height: 1rem; }
 .cyclone-code-block-viewport:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }
-.cyclone-code-block-viewport { scrollbar-gutter: stable; }
 .cyclone-code-block-viewport, .cyclone-code-block-viewport pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: .8125rem; line-height: 1.25rem; }
 .cyclone-code-block-viewport pre { tab-size: 2; }
-.cyclone-code-block-viewport > pre > code { display: grid; min-width: 100%; }
+.cyclone-code-block-viewport pre > code { display: grid; min-width: 100%; }
 .cyclone-code-block-viewport > pre > code:not(:has(> [data-line])) { padding-inline: 1rem 4rem; }
 .cyclone-code-block-viewport [data-line] { position: relative; display: inline-block; min-width: 100%; padding-inline: 1rem 4rem; }
 .cyclone-code-block[data-line-numbers] .cyclone-code-block-viewport [data-line] { padding-inline-start: 3.5rem; }
@@ -154,13 +154,14 @@ const CodeBlockHeaderHeading = styled(BodyText, {
   textOverflow: "ellipsis"
 });
 
-const CodeBlockViewport = styled(View, {
+const CodeBlockViewport = styled(ScrollView, {
   name: "CodeBlockViewport",
-  render: "div",
+  size: "lg",
   position: "relative",
   maxHeight: 600,
   paddingVertical: "$3xl",
-  overflow: "unset",
+  overflowX: "auto",
+  overflowY: "auto",
   borderRadius: "$container",
   backgroundColor: "$surfaceFloating",
   borderColor: "$hairline",
@@ -403,7 +404,7 @@ const CodeBlockImpl = CodeBlockFrame.styleable<CodeBlockProps>(
           </XStack>
         ) : null}
         <CodeBlockViewport
-          {...(viewportProps as ViewProps)}
+          {...(viewportProps as any)}
           ref={areaRef as any}
           role="region"
           aria-label={typeof title === "string" ? title : "Code"}
@@ -411,7 +412,8 @@ const CodeBlockImpl = CodeBlockFrame.styleable<CodeBlockProps>(
           className={`cyclone-code-block-viewport${
             viewportProps.className ? ` ${viewportProps.className}` : ""
           }`}
-          style={viewportStyle}>
+          maxHeight={(viewportProps.style?.maxHeight ?? 600) as any}
+          style={viewportStyle as any}>
           {contentChildren}
         </CodeBlockViewport>
       </CodeBlockFrame>

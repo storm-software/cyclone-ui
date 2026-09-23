@@ -418,10 +418,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `font-size.9xl` | `dimension` | `10rem` | 9X large font size (10rem) |
 | `font-size.lg` | `dimension` | `1.25rem` | Large font size (1.25rem) |
 | `font-size.md` | `dimension` | `1.125rem` | Medium font size (1.125rem) |
-| `font-size.sm` | `dimension` | `1rem` | Small font size (1rem) |
+| `font-size.sm` | `dimension` | `1.075rem` | Small font size (1.075rem) |
 | `font-size.xl` | `dimension` | `1.5rem` | Extra large font size (1.5rem) |
-| `font-size.xs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
-| `font-size.xxs` | `dimension` | `0.75rem` | Extra small font size (0.75rem) |
+| `font-size.xs` | `dimension` | `1rem` | Extra small font size (1rem) |
+| `font-size.xxs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
 
 ## Font Weight
 
@@ -628,11 +628,11 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
-| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
-| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xxs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |
@@ -1079,10 +1079,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `font-size.9xl` | `dimension` | `10rem` | 9X large font size (10rem) |
 | `font-size.lg` | `dimension` | `1.25rem` | Large font size (1.25rem) |
 | `font-size.md` | `dimension` | `1.125rem` | Medium font size (1.125rem) |
-| `font-size.sm` | `dimension` | `1rem` | Small font size (1rem) |
+| `font-size.sm` | `dimension` | `1.075rem` | Small font size (1.075rem) |
 | `font-size.xl` | `dimension` | `1.5rem` | Extra large font size (1.5rem) |
-| `font-size.xs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
-| `font-size.xxs` | `dimension` | `0.75rem` | Extra small font size (0.75rem) |
+| `font-size.xs` | `dimension` | `1rem` | Extra small font size (1rem) |
+| `font-size.xxs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
 
 ## Font Weight
 
@@ -1289,11 +1289,11 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
-| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
-| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xxs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |
@@ -1740,10 +1740,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `font-size.9xl` | `dimension` | `10rem` | 9X large font size (10rem) |
 | `font-size.lg` | `dimension` | `1.25rem` | Large font size (1.25rem) |
 | `font-size.md` | `dimension` | `1.125rem` | Medium font size (1.125rem) |
-| `font-size.sm` | `dimension` | `1rem` | Small font size (1rem) |
+| `font-size.sm` | `dimension` | `1.075rem` | Small font size (1.075rem) |
 | `font-size.xl` | `dimension` | `1.5rem` | Extra large font size (1.5rem) |
-| `font-size.xs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
-| `font-size.xxs` | `dimension` | `0.75rem` | Extra small font size (0.75rem) |
+| `font-size.xs` | `dimension` | `1rem` | Extra small font size (1rem) |
+| `font-size.xxs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
 
 ## Font Weight
 
@@ -1950,11 +1950,11 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
-| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
-| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xxs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |
@@ -2401,10 +2401,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `font-size.9xl` | `dimension` | `10rem` | 9X large font size (10rem) |
 | `font-size.lg` | `dimension` | `1.25rem` | Large font size (1.25rem) |
 | `font-size.md` | `dimension` | `1.125rem` | Medium font size (1.125rem) |
-| `font-size.sm` | `dimension` | `1rem` | Small font size (1rem) |
+| `font-size.sm` | `dimension` | `1.075rem` | Small font size (1.075rem) |
 | `font-size.xl` | `dimension` | `1.5rem` | Extra large font size (1.5rem) |
-| `font-size.xs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
-| `font-size.xxs` | `dimension` | `0.75rem` | Extra small font size (0.75rem) |
+| `font-size.xs` | `dimension` | `1rem` | Extra small font size (1rem) |
+| `font-size.xxs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
 
 ## Font Weight
 
@@ -2611,11 +2611,11 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
-| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
-| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xxs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |
@@ -3062,10 +3062,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `font-size.9xl` | `dimension` | `10rem` | 9X large font size (10rem) |
 | `font-size.lg` | `dimension` | `1.25rem` | Large font size (1.25rem) |
 | `font-size.md` | `dimension` | `1.125rem` | Medium font size (1.125rem) |
-| `font-size.sm` | `dimension` | `1rem` | Small font size (1rem) |
+| `font-size.sm` | `dimension` | `1.075rem` | Small font size (1.075rem) |
 | `font-size.xl` | `dimension` | `1.5rem` | Extra large font size (1.5rem) |
-| `font-size.xs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
-| `font-size.xxs` | `dimension` | `0.75rem` | Extra small font size (0.75rem) |
+| `font-size.xs` | `dimension` | `1rem` | Extra small font size (1rem) |
+| `font-size.xxs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
 
 ## Font Weight
 
@@ -3272,11 +3272,11 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
-| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
-| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xxs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |
@@ -3723,10 +3723,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `font-size.9xl` | `dimension` | `10rem` | 9X large font size (10rem) |
 | `font-size.lg` | `dimension` | `1.25rem` | Large font size (1.25rem) |
 | `font-size.md` | `dimension` | `1.125rem` | Medium font size (1.125rem) |
-| `font-size.sm` | `dimension` | `1rem` | Small font size (1rem) |
+| `font-size.sm` | `dimension` | `1.075rem` | Small font size (1.075rem) |
 | `font-size.xl` | `dimension` | `1.5rem` | Extra large font size (1.5rem) |
-| `font-size.xs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
-| `font-size.xxs` | `dimension` | `0.75rem` | Extra small font size (0.75rem) |
+| `font-size.xs` | `dimension` | `1rem` | Extra small font size (1rem) |
+| `font-size.xxs` | `dimension` | `0.875rem` | Extra small font size (0.875rem) |
 
 ## Font Weight
 
@@ -3933,11 +3933,11 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
+| `typography.body-lg` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
 | `typography.body-md` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The body typography variant |
-| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
-| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | The body large typography variant |
-| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xxs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-sm` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
+| `typography.body-xl` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.lg}","lineHeight":"{line-height.normal}"}` | The body large typography variant |
+| `typography.body-xs` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.normal}","fontSize":"{font-size.xs}","lineHeight":"{line-height.normal}"}` | The body small typography variant |
 | `typography.button` | `typography` | `{"fontFamily":"Manrope","fontWeight":"{font-weight.black}","fontSize":"{font-size.md}","lineHeight":"{line-height.normal}"}` | The button typography variant |
 | `typography.code` | `typography` | `{"fontFamily":"Geist Mono","fontWeight":"{font-weight.medium}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | The code typography variant |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Space Grotesk","fontWeight":"{font-weight.normal}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.normal}"}` | The display - hero typography variant |

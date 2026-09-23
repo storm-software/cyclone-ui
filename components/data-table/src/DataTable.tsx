@@ -730,7 +730,7 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
           </SearchInputField.Control>
         </SearchInputField>
 
-        <Popover.Content.ScrollView maxHeight="$30xl">
+        <Popover.Content.ScrollView size="lg" maxHeight="$30xl">
           <YStack gap="$xl" width="100%" minWidth="$28xl" paddingLeft="$xl">
             <CheckboxField name={SELECT_ALL_FIELD_NAME}>
               <XStack

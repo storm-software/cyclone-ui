@@ -278,7 +278,7 @@ typography:
     lineHeight: "1.051875"
   display-xs:
     fontFamily: "Space Grotesk"
-    fontSize: "0.875rem"
+    fontSize: "1rem"
     fontWeight: "900"
     lineHeight: "1.051875"
   eyebrow-lg:
@@ -288,7 +288,7 @@ typography:
     lineHeight: "1.1475"
   eyebrow-sm:
     fontFamily: Manrope
-    fontSize: "1rem"
+    fontSize: "1.075rem"
     fontWeight: "900"
     lineHeight: "1.1475"
   button:
@@ -300,12 +300,12 @@ typography:
     fontFamily: Manrope
     fontSize: "1.25rem"
     fontWeight: "600"
-    lineHeight: "1.051875"
+    lineHeight: "1.1475"
   body-lg:
     fontFamily: Manrope
     fontSize: "1.125rem"
     fontWeight: "600"
-    lineHeight: "1.051875"
+    lineHeight: "1.1475"
   body-md:
     fontFamily: Manrope
     fontSize: "1.125rem"
@@ -313,12 +313,12 @@ typography:
     lineHeight: "1.1475"
   body-sm:
     fontFamily: Manrope
-    fontSize: "0.875rem"
+    fontSize: "1.075rem"
     fontWeight: "400"
     lineHeight: "1.1475"
   body-xs:
     fontFamily: Manrope
-    fontSize: "0.75rem"
+    fontSize: "1rem"
     fontWeight: "400"
     lineHeight: "1.1475"
   code:
@@ -614,15 +614,15 @@ Cyclone UI design tokens — 242 color tokens, 16 typography tokens, 28 spacing 
 - **display-lg:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 500, lineHeight: 0.95625
 - **display-md:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.051875
 - **display-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 700, lineHeight: 1.051875
-- **display-xs:** fontFamily: Space Grotesk, fontSize: 0.875rem, fontWeight: 900, lineHeight: 1.051875
+- **display-xs:** fontFamily: Space Grotesk, fontSize: 1rem, fontWeight: 900, lineHeight: 1.051875
 - **eyebrow-lg:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.1475
-- **eyebrow-sm:** fontFamily: Manrope, fontSize: 1rem, fontWeight: 900, lineHeight: 1.1475
+- **eyebrow-sm:** fontFamily: Manrope, fontSize: 1.075rem, fontWeight: 900, lineHeight: 1.1475
 - **button:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 900, lineHeight: 1.1475
-- **body-xl:** fontFamily: Manrope, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.051875
-- **body-lg:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.051875
+- **body-xl:** fontFamily: Manrope, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.1475
+- **body-lg:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.1475
 - **body-md:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.1475
-- **body-sm:** fontFamily: Manrope, fontSize: 0.875rem, fontWeight: 400, lineHeight: 1.1475
-- **body-xs:** fontFamily: Manrope, fontSize: 0.75rem, fontWeight: 400, lineHeight: 1.1475
+- **body-sm:** fontFamily: Manrope, fontSize: 1.075rem, fontWeight: 400, lineHeight: 1.1475
+- **body-xs:** fontFamily: Manrope, fontSize: 1rem, fontWeight: 400, lineHeight: 1.1475
 - **code:** fontFamily: Geist Mono, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.051875
 
 ## Layout

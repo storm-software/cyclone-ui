@@ -257,6 +257,9 @@
     },
     {
       "path": "./components/redacted-animation"
+    },
+    {
+      "path": "./components/divider"
     }
   ],
   "files": []

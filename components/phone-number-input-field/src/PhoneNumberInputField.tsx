@@ -413,7 +413,10 @@ const CountryCodeSelector = (): JSX.Element => {
             </SearchInputField.Control>
           </SearchInputField>
 
-          <Popover.Content.ScrollView maxHeight="$32xl" paddingRight="$3xl">
+          <Popover.Content.ScrollView
+            size="lg"
+            maxHeight="$32xl"
+            paddingRight="$3xl">
             <View width="100%">
               {countries.map(country => (
                 <CountryListItem

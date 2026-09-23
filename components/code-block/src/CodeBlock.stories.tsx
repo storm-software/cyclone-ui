@@ -47,6 +47,11 @@ const TypeScriptCode = () => (
   </Pre>
 );
 
+const overflowingCode = Array.from(
+  { length: 48 },
+  (_, index) => `const codeBlockLine${index} = "${"x".repeat(120)}";\n`
+).join("");
+
 const meta = {
   title: "Docs/CodeBlock",
   component: CodeBlock,
@@ -125,6 +130,60 @@ export const KeepShikiBackground: Story = {
       <TypeScriptCode />
     </CodeBlock>
   )
+};
+
+export const ScrollbarsWhenContentOverflows: Story = {
+  render: args => (
+    <CodeBlock
+      {...args}
+      title="overflow.ts"
+      viewportProps={{ style: { maxHeight: 120 } }}>
+      <Pre>
+        <code>{overflowingCode}</code>
+      </Pre>
+    </CodeBlock>
+  ),
+  play: async ({ canvasElement }) => {
+    const viewport = canvasElement.querySelector<HTMLElement>(
+      ".cyclone-code-block-viewport"
+    );
+
+    await expect(viewport).not.toBeNull();
+    await expect(viewport).toHaveClass("cyclone-scroll-view");
+    await expect(getComputedStyle(viewport!).overflowX).toBe("auto");
+    await expect(getComputedStyle(viewport!).overflowY).toBe("auto");
+    await expect(viewport!.scrollWidth).toBeGreaterThan(viewport!.clientWidth);
+    await expect(viewport!.scrollHeight).toBeGreaterThan(
+      viewport!.clientHeight
+    );
+  }
+};
+
+export const NoScrollbarsWhenContentFits: Story = {
+  render: args => (
+    <CodeBlock
+      {...args}
+      title="fits.ts"
+      viewportProps={{ style: { maxHeight: 120 } }}>
+      <TypeScriptCode />
+    </CodeBlock>
+  ),
+  play: async ({ canvasElement }) => {
+    const viewport = canvasElement.querySelector<HTMLElement>(
+      ".cyclone-code-block-viewport"
+    );
+
+    await expect(viewport).not.toBeNull();
+    await expect(viewport).toHaveClass("cyclone-scroll-view");
+    await expect(getComputedStyle(viewport!).overflowX).toBe("auto");
+    await expect(getComputedStyle(viewport!).overflowY).toBe("auto");
+    await expect(viewport!.scrollWidth).toBeLessThanOrEqual(
+      viewport!.clientWidth
+    );
+    await expect(viewport!.scrollHeight).toBeLessThanOrEqual(
+      viewport!.clientHeight
+    );
+  }
 };
 
 export const Tabs: Story = {

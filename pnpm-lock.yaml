@@ -1714,6 +1714,9 @@ importers:
       '@cyclone-ui/heading-text':
         specifier: workspace:*
         version: link:../heading-text
+      '@cyclone-ui/scroll-view':
+        specifier: workspace:*
+        version: link:../scroll-view
       '@cyclone-ui/themeable-icon':
         specifier: workspace:*
         version: link:../themeable-icon
@@ -2156,6 +2159,28 @@ importers:
       '@storybook/react-vite':
         specifier: 'catalog:'
         version: 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@4.63.5)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.9)(react@19.3.0))(typescript@6.0.3)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      react:
+        specifier: 'catalog:'
+        version: 19.3.0
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.3.0(react@19.3.0)
+      react-native:
+        specifier: 'catalog:'
+        version: 0.87.1(@babel/core@8.0.6)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0)
+
+  components/divider:
+    dependencies:
+      '@tamagui/core':
+        specifier: 'catalog:'
+        version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@tamagui/text':
+        specifier: 'catalog:'
+        version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+    devDependencies:
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@4.63.4)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.8)(react@19.3.0))(typescript@6.0.3)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       react:
         specifier: 'catalog:'
         version: 19.3.0
@@ -50680,7 +50705,7 @@ snapshots:
   micromark-factory-space@2.0.1:
     dependencies:
       micromark-util-character: 2.1.1
-      micromark-util-types: 2.0.2
+      micromark-util-types: 2.0.1
 
   micromark-factory-title@1.1.0:
     dependencies:
@@ -50738,7 +50763,7 @@ snapshots:
     dependencies:
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.2
+      micromark-util-types: 2.0.1
 
   micromark-util-combine-extensions@1.1.0:
     dependencies:
@@ -50815,7 +50840,7 @@ snapshots:
 
   micromark-util-resolve-all@2.0.1:
     dependencies:
-      micromark-util-types: 2.0.2
+      micromark-util-types: 2.0.1
 
   micromark-util-sanitize-uri@1.2.0:
     dependencies:
@@ -50841,7 +50866,7 @@ snapshots:
       devlop: 1.1.0
       micromark-util-chunked: 2.0.1
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.2
+      micromark-util-types: 2.0.1
 
   micromark-util-symbol@1.1.0: {}
 

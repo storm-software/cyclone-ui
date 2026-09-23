@@ -258,7 +258,7 @@ const SearchInputFieldControlTextBox =
             disableFocusScope={true}
             minWidth="$20xl"
             paddingHorizontal="$4xl">
-            <Popover.Content.ScrollView maxHeight="$36xl">
+            <Popover.Content.ScrollView size="lg" maxHeight="$36xl">
               <View asChild={true} gap="$xxs" width="100%">
                 <div id={listBoxId} role="listbox">
                   {filteredSuggestions.map((suggestion, index) => (

@@ -18,7 +18,7 @@
 
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Search } from "@tamagui/lucide-icons-2";
+import { Lock, Search } from "@tamagui/lucide-icons-2";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { InputField } from "./InputField";
 
@@ -194,6 +194,56 @@ export const FloatingWithStartIcon: Story = {
       await expect(
         Math.abs(label!.getBoundingClientRect().left - inputTextLeft)
       ).toBeLessThan(2);
+    });
+  }
+};
+
+export const FloatingWithEndIconTruncation: Story = {
+  args: {
+    variant: "floating"
+  },
+  render: props => (
+    <Form name="formName" initialValues={{ inputFieldName: "" }}>
+      <div style={{ width: 240 }}>
+        <InputField name="inputFieldName" {...props}>
+          <InputField.Label>
+            An intentionally long field label that must not overlap the icon
+          </InputField.Label>
+          <InputField.Control>
+            <InputField.Control.TextBox>
+              <InputField.Control.TextBox.Value />
+              <InputField.Icon position="end" aria-label="Lock field">
+                <Lock aria-hidden={true} />
+              </InputField.Icon>
+            </InputField.Control.TextBox>
+          </InputField.Control>
+        </InputField>
+      </div>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const labelText = canvas.getByText(
+      "An intentionally long field label that must not overlap the icon",
+      { exact: true }
+    );
+    const icon = canvasElement.querySelector("svg");
+
+    if (!icon) {
+      throw new Error("Expected the inline icon to render");
+    }
+
+    await waitFor(async () => {
+      await expect(
+        canvas.queryByText("(Optional)", { exact: true })
+      ).not.toBeInTheDocument();
+      await expect(labelText.scrollWidth).toBeGreaterThan(
+        labelText.clientWidth
+      );
+      await expect(getComputedStyle(labelText).textOverflow).toBe("ellipsis");
+      await expect(labelText.getBoundingClientRect().right).toBeLessThanOrEqual(
+        icon.getBoundingClientRect().left
+      );
     });
   }
 };
