@@ -121,6 +121,9 @@
       "path": "./components/body-text"
     },
     {
+      "path": "./components/inline-code-text"
+    },
+    {
       "path": "./components/container"
     },
     {

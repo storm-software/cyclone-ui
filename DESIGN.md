@@ -324,8 +324,8 @@ typography:
   code:
     fontFamily: "Geist Mono"
     fontSize: "1.125rem"
-    fontWeight: "400"
-    lineHeight: "1.1475"
+    fontWeight: "500"
+    lineHeight: "1.051875"
 spacing:
   none: "0px"
   xxs: "0.5px"
@@ -623,7 +623,7 @@ Cyclone UI design tokens — 242 color tokens, 16 typography tokens, 28 spacing 
 - **body-md:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.1475
 - **body-sm:** fontFamily: Manrope, fontSize: 0.875rem, fontWeight: 400, lineHeight: 1.1475
 - **body-xs:** fontFamily: Manrope, fontSize: 0.75rem, fontWeight: 400, lineHeight: 1.1475
-- **code:** fontFamily: Geist Mono, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.1475
+- **code:** fontFamily: Geist Mono, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.051875
 
 ## Layout
 

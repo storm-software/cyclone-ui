@@ -1,5 +1,5 @@
 import { ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
-import { useThemeVariant } from "./ThemeVariant";
+import { resolveThemeVariant } from "./ThemeVariant";
 
 
 /**
@@ -3047,12 +3047,12 @@ const COLOR_VARIANTS = {
 };
 
 export interface ColorPaletteBlockProps {
-  /** Generated token-set name. Defaults to Storybook's `theme` global. */
+  /** Generated token-set name. Defaults to the first generated variant. */
   theme?: string;
 }
 
 export function ColorPaletteBlock({ theme }: ColorPaletteBlockProps = {}) {
-  const activeTheme = useThemeVariant(COLOR_VARIANTS, "dark", theme);
+  const activeTheme = resolveThemeVariant(COLOR_VARIANTS, "dark", theme);
 
   return COLOR_VARIANTS[activeTheme];
 }

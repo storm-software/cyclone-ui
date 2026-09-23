@@ -1059,14 +1059,14 @@ const codeFont = createFont({
     true: 18
   },
   lineHeight: {
-    md: 20.655,
-    normal: 20.655,
-    true: 20.655
+    md: 18.934,
+    snug: 18.934,
+    true: 18.934
   },
   weight: {
-    md: "400",
-    normal: "400",
-    true: "400"
+    md: "500",
+    medium: "500",
+    true: "500"
   }
 });
 

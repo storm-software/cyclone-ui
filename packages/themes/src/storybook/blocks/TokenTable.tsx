@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactElement } from "react";
-import { useThemeVariant } from "./ThemeVariant";
+import { resolveThemeVariant } from "./ThemeVariant";
 
 
 export interface TokenTableRow {
@@ -5120,7 +5120,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -10234,7 +10234,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -15348,7 +15348,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -20462,7 +20462,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -25576,7 +25576,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -30690,7 +30690,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -30730,7 +30730,7 @@ export interface TokenTableBlockProps {
   type?: string;
   /** Restrict rows to tokens used to define typography. */
   typography?: boolean;
-  /** Generated token-set name. Defaults to Storybook's `theme` global. */
+  /** Generated token-set name. Defaults to the first generated variant. */
   theme?: string;
 }
 
@@ -30743,7 +30743,7 @@ export function TokenTableBlock({
   typography,
   theme
 }: TokenTableBlockProps = {}): ReactElement {
-  const activeTheme = useThemeVariant(TOKEN_VARIANTS, "dark", theme);
+  const activeTheme = resolveThemeVariant(TOKEN_VARIANTS, "dark", theme);
   const rows = TOKEN_VARIANTS[activeTheme].filter(token => {
     const filters = typeof filter === "string" ? [filter] : filter;
     if (

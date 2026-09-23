@@ -41,8 +41,9 @@ const Icon = ({ isComplete = true, size = 24, ...props }: AlertCircleProps) => {
 
   const motionCircle = useMotionValue(circumference);
   const playbackCircle = animate(motionCircle, 0, {
-    ease: "linear",
-    duration: 0.75
+    type: "spring",
+    duration: 0.75,
+    bounce: 0
   });
 
   const [strokeDashoffset, setStrokeDashoffset] = useState(circumference);
@@ -52,8 +53,9 @@ const Icon = ({ isComplete = true, size = 24, ...props }: AlertCircleProps) => {
 
   const motionLine1 = useMotionValue(0);
   const playbackLine1 = animate(motionLine1, -upperLineLength, {
-    ease: "linear",
-    duration: 0.5
+    type: "spring",
+    duration: 0.5,
+    bounce: 0
   });
 
   const [line1, setLine1] = useState(0);

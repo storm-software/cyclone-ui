@@ -401,6 +401,7 @@ const CountryCodeSelector = (): JSX.Element => {
         <View gap="$3xl" width="100%">
           <SearchInputField
             name={countrySearchFieldName}
+            size="sm"
             clearable={false}
             onChange={handleSearchChange}>
             <CountrySearchReset open={open} />

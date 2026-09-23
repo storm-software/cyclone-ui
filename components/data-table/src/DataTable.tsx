@@ -723,6 +723,7 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
       <YStack gap="$4xl">
         <SearchInputField
           name={SEARCH_FIELD_NAME}
+          size="sm"
           onChange={handleSearchChange}>
           <SearchInputField.Control>
             <SearchInputField.Control.TextBox placeholder="Filter..." />

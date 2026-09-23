@@ -1211,6 +1211,36 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/heading-text/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/heading-text/src/index.ts` | `file` |  |
 
+## @cyclone-ui/inline-code-text
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/inline-code-text`
+- **Type:** `component`
+- **Version:** `0.5.4`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+- `@tamagui/text`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/input
 
 A repository containing the core front-end components used by Storm Software across many platforms
@@ -3955,6 +3985,36 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-native/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/heading-text/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/heading-text/src/index.ts` | `file` |  |
+
+## @cyclone-ui/inline-code-text
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/inline-code-text`
+- **Type:** `component`
+- **Version:** `0.5.4`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+- `@tamagui/text`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/input
 
@@ -6701,6 +6761,36 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/heading-text/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/heading-text/src/index.ts` | `file` |  |
 
+## @cyclone-ui/inline-code-text
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/inline-code-text`
+- **Type:** `component`
+- **Version:** `0.5.4`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+- `@tamagui/text`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/input
 
 A repository containing the core front-end components used by Storm Software across many platforms
@@ -9445,6 +9535,36 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-native/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/heading-text/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/heading-text/src/index.ts` | `file` |  |
+
+## @cyclone-ui/inline-code-text
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/inline-code-text`
+- **Type:** `component`
+- **Version:** `0.5.4`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+- `@tamagui/text`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/input
 
@@ -12191,6 +12311,36 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/heading-text/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/heading-text/src/index.ts` | `file` |  |
 
+## @cyclone-ui/inline-code-text
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/inline-code-text`
+- **Type:** `component`
+- **Version:** `0.5.4`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+- `@tamagui/text`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/input
 
 A repository containing the core front-end components used by Storm Software across many platforms
@@ -14935,6 +15085,36 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-native/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/heading-text/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/heading-text/src/index.ts` | `file` |  |
+
+## @cyclone-ui/inline-code-text
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/inline-code-text`
+- **Type:** `component`
+- **Version:** `0.5.4`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+- `@tamagui/text`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/inline-code-text/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/input
 
