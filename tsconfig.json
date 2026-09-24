@@ -260,6 +260,9 @@
     },
     {
       "path": "./components/divider"
+    },
+    {
+      "path": "./components/type-table"
     }
   ],
   "files": []

@@ -156,6 +156,7 @@
     "tsdown": "catalog:",
     "tslib": "catalog:",
     "typescript": "^6.0.3",
+    "ui-ux-pro-max-cli": "catalog:",
     "verdaccio": "catalog:",
     "vite": "catalog:",
     "vitest": "catalog:",

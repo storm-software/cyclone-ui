@@ -18,7 +18,6 @@
 
 import { media } from "@tamagui/config/v5";
 import { shorthands as base } from "@tamagui/shorthands";
-import type { AppTheme } from "./config";
 
 export const shorthands = {
   ...base,
@@ -45,10 +44,14 @@ export const shorthands = {
   minw: "minWidth"
 } as const;
 
-const selectionStyles = (theme: AppTheme) => ({
-  backgroundColor: theme.accent,
-  color: theme.onAccent
-});
+const selectionStyles = (theme: any) => {
+  console.log(theme);
+
+  return {
+    backgroundColor: theme.neutral2,
+    color: theme.neutral14
+  };
+};
 
 export default {
   media,

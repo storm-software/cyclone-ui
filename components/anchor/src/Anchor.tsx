@@ -64,15 +64,7 @@ export interface AnchorExtraProps {
 
 export const Anchor = AnchorFrame.styleable<AnchorExtraProps>(
   (
-    {
-      children,
-      href,
-      target,
-      rel,
-      download,
-      permalinkLabel = "Permalink",
-      ...props
-    },
+    { children, href, target, rel, download, permalinkLabel, ...props },
     forwardedRef
   ) => (
     <AnchorFrame group={"anchor" as any} ref={forwardedRef} {...props}>

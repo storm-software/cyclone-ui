@@ -112,7 +112,7 @@
   "colors": {
     "editor.background": "{color.neutral.14}",
     "editor.foreground": "{color.neutral.4}",
-    "editorCursor.foreground": "{color.blue.5}",
+    "editorCursor.foreground": "{color.blue.3}",
     "editor.selectionBackground": "#004433",
     "editor.inactiveSelectionBackground": "{color.black}",
     "editorLineNumber.foreground": "{color.neutral.7}",

@@ -26,8 +26,10 @@ import type { TamaguiElement } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
-
-const DEFAULT_ITEM_VALUE = "collapsible";
+import {
+  COLLAPSIBLE_ITEM_VALUE,
+  getCollapsibleValue
+} from "./get-collapsible-value";
 
 export type CollapsibleProps = Omit<
   AccordionProps,
@@ -48,9 +50,11 @@ const CollapsibleFrame = forwardRef<TamaguiElement, CollapsibleProps>(
         collapsible={true}
         single={true}
         type="single"
-        value={value ? DEFAULT_ITEM_VALUE : undefined}
-        defaultValue={defaultValue ? DEFAULT_ITEM_VALUE : undefined}>
-        <Accordion.Item value={DEFAULT_ITEM_VALUE}>{children}</Accordion.Item>
+        value={getCollapsibleValue(value)}
+        defaultValue={getCollapsibleValue(defaultValue)}>
+        <Accordion.Item value={COLLAPSIBLE_ITEM_VALUE}>
+          {children}
+        </Accordion.Item>
       </Accordion>
     );
   }

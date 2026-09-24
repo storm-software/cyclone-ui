@@ -1007,7 +1007,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link",
       type: "color",
-      value: "#2e7aff",
+      value: "#6da2ff",
       cssVar: "--rw-color-link",
       description: "Interactive color for links and linked text.",
       theme: undefined,
@@ -2501,7 +2501,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link-hover",
       type: "color",
-      value: "#59a7ff",
+      value: "#9ed6ff",
       cssVar: "--rw-color-link-hover",
       description: "Interactive color for links and linked text. (hover, 23% brighter)",
       theme: undefined,
@@ -2510,7 +2510,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link-active",
       type: "color",
-      value: "#4490ff",
+      value: "#85bcff",
       cssVar: "--rw-color-link-active",
       description: "Interactive color for links and linked text. (active, 11% brighter)",
       theme: undefined,
@@ -2519,7 +2519,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link-inactive",
       type: "color",
-      value: "#0052d4",
+      value: "#4375ce",
       cssVar: "--rw-color-link-inactive",
       description: "Interactive color for links and linked text. (inactive, 20% darker)",
       theme: undefined,
@@ -6121,7 +6121,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link",
       type: "color",
-      value: "#527fcd",
+      value: "#7598d7",
       cssVar: "--rw-color-link",
       description: "Interactive color for links and linked text.",
       theme: undefined,
@@ -7615,7 +7615,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link-hover",
       type: "color",
-      value: "#6a9bd4",
+      value: "#8fbddf",
       cssVar: "--rw-color-link-hover",
       description: "Interactive color for links and linked text. (hover, 23% brighter)",
       theme: undefined,
@@ -7624,7 +7624,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link-active",
       type: "color",
-      value: "#5e8dd0",
+      value: "#82aadb",
       cssVar: "--rw-color-link-active",
       description: "Interactive color for links and linked text. (active, 11% brighter)",
       theme: undefined,
@@ -7633,7 +7633,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link-inactive",
       type: "color",
-      value: "#3362ae",
+      value: "#5f7bad",
       cssVar: "--rw-color-link-inactive",
       description: "Interactive color for links and linked text. (inactive, 20% darker)",
       theme: undefined,
@@ -11235,7 +11235,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link",
       type: "color",
-      value: "#4387ff",
+      value: "#9ec1ff",
       cssVar: "--rw-color-link",
       description: "Interactive color for links and linked text.",
       theme: undefined,
@@ -12729,7 +12729,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link-hover",
       type: "color",
-      value: "#81bcff",
+      value: "#e5f4ff",
       cssVar: "--rw-color-link-hover",
       description: "Interactive color for links and linked text. (hover, 23% brighter)",
       theme: undefined,
@@ -12738,7 +12738,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link-active",
       type: "color",
-      value: "#63a2ff",
+      value: "#c1ddff",
       cssVar: "--rw-color-link-active",
       description: "Interactive color for links and linked text. (active, 11% brighter)",
       theme: undefined,
@@ -12747,7 +12747,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.link-inactive",
       type: "color",
-      value: "#004bc1",
+      value: "#2c72ed",
       cssVar: "--rw-color-link-inactive",
       description: "Interactive color for links and linked text. (inactive, 20% darker)",
       theme: undefined,

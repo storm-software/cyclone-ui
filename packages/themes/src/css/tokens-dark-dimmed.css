@@ -113,7 +113,7 @@
   --color-surface-overlay-inactive: #3a3b3f; /** Topmost surface for transient overlays. (inactive, 20% darker) */
   --color-surface-overlay-disabled: #444547; /** Topmost surface for transient overlays. (disabled, 80% saturation) */
   --color-required: #ab5268; /** Indicator color for required form fields. */
-  --color-link: #527fcd; /** Interactive color for links and linked text. */
+  --color-link: #7598d7; /** Interactive color for links and linked text. */
   --color-hairline: #6a6a6c; /** Subtle color for hairline borders and separators. */
   --color-accent-base: #d5d5d5; /** Primary neutral accent for emphasized controls and content. */
   --color-accent-brand: #5abba5; /** Brand accent for primary actions and emphasis. */
@@ -279,9 +279,9 @@
   --color-data-purple-subtle: #4c416a; /** Low-emphasis purple data-series color. */
   --color-data-pink-emphasis: #be77a3; /** High-emphasis pink data-series color. */
   --color-data-pink-subtle: #5a3b4f; /** Low-emphasis pink data-series color. */
-  --color-link-hover: #6a9bd4; /** Interactive color for links and linked text. (hover, 23% brighter) */
-  --color-link-active: #5e8dd0; /** Interactive color for links and linked text. (active, 11% brighter) */
-  --color-link-inactive: #3362ae; /** Interactive color for links and linked text. (inactive, 20% darker) */
+  --color-link-hover: #8fbddf; /** Interactive color for links and linked text. (hover, 23% brighter) */
+  --color-link-active: #82aadb; /** Interactive color for links and linked text. (active, 11% brighter) */
+  --color-link-inactive: #5f7bad; /** Interactive color for links and linked text. (inactive, 20% darker) */
   --color-hairline-hover: #808182; /** Subtle color for hairline borders and separators. (hover, 23% brighter) */
   --color-hairline-active: #717274; /** Subtle color for hairline borders and separators. (active, 8% brighter) */
   --color-hairline-inactive: #575759; /** Subtle color for hairline borders and separators. (inactive, 20% darker) */

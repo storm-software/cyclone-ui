@@ -216,6 +216,22 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
         color: var(--placeholderColor) !important;
       }
 
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes cyclone-placeholder-fade-in {
+          from {
+            opacity: 0.65;
+          }
+
+          to {
+            opacity: 1;
+          }
+        }
+
+        input::placeholder, textarea::placeholder {
+          animation: cyclone-placeholder-fade-in 180ms ease-out both;
+        }
+      }
+
       input.cyclone-input-value:-webkit-autofill {
         background-color: var(--autofillBackgroundColor) !important;
         -webkit-box-shadow: 0 0 0 1000px var(--autofillBackgroundColor) inset !important;

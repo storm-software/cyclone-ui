@@ -2115,10 +2115,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.ink.emphasis` | `color` | `var(--color-neutral-4)` | Primary text and icon color for high-emphasis content. |
 | `color.ink.subtle` | `color` | `var(--color-neutral-7)` | Softer text and icon color for supporting content. |
 | `color.ink.subtlest` | `color` | `var(--color-neutral-8)` | Softest text and icon color for supporting content. |
-| `color.link` | `color` | `var(--color-blue-5)` | Interactive color for links and linked text. |
-| `color.link-active` | `color` | `#63a2ff` | Interactive color for links and linked text. (active, 11% brighter) |
-| `color.link-hover` | `color` | `#81bcff` | Interactive color for links and linked text. (hover, 23% brighter) |
-| `color.link-inactive` | `color` | `#004bc1` | Interactive color for links and linked text. (inactive, 20% darker) |
+| `color.link` | `color` | `var(--color-blue-3)` | Interactive color for links and linked text. |
+| `color.link-active` | `color` | `#c1ddff` | Interactive color for links and linked text. (active, 11% brighter) |
+| `color.link-hover` | `color` | `#e5f4ff` | Interactive color for links and linked text. (hover, 23% brighter) |
+| `color.link-inactive` | `color` | `#2c72ed` | Interactive color for links and linked text. (inactive, 20% darker) |
 | `color.muted.base` | `color` | `var(--color-neutral-11)` | Muted neutral accent background for low-emphasis states. |
 | `color.muted.base-active` | `color` | `#121316` | Muted neutral accent background for low-emphasis states. (active, 10% brighter) |
 | `color.muted.base-disabled` | `color` | `#070709` | Muted neutral accent background for low-emphasis states. (disabled, 80% saturation) |
@@ -2776,10 +2776,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.ink.emphasis` | `color` | `var(--color-neutral-4)` | Primary text and icon color for high-emphasis content. |
 | `color.ink.subtle` | `color` | `var(--color-neutral-7)` | Softer text and icon color for supporting content. |
 | `color.ink.subtlest` | `color` | `var(--color-neutral-8)` | Softest text and icon color for supporting content. |
-| `color.link` | `color` | `var(--color-blue-5)` | Interactive color for links and linked text. |
-| `color.link-active` | `color` | `#5e8dd0` | Interactive color for links and linked text. (active, 11% brighter) |
-| `color.link-hover` | `color` | `#6a9bd4` | Interactive color for links and linked text. (hover, 23% brighter) |
-| `color.link-inactive` | `color` | `#3362ae` | Interactive color for links and linked text. (inactive, 20% darker) |
+| `color.link` | `color` | `var(--color-blue-3)` | Interactive color for links and linked text. |
+| `color.link-active` | `color` | `#82aadb` | Interactive color for links and linked text. (active, 11% brighter) |
+| `color.link-hover` | `color` | `#8fbddf` | Interactive color for links and linked text. (hover, 23% brighter) |
+| `color.link-inactive` | `color` | `#5f7bad` | Interactive color for links and linked text. (inactive, 20% darker) |
 | `color.muted.base` | `color` | `var(--color-neutral-11)` | Muted neutral accent background for low-emphasis states. |
 | `color.muted.base-active` | `color` | `#4a4b4e` | Muted neutral accent background for low-emphasis states. (active, 10% brighter) |
 | `color.muted.base-disabled` | `color` | `#444547` | Muted neutral accent background for low-emphasis states. (disabled, 80% saturation) |
@@ -3437,10 +3437,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.ink.emphasis` | `color` | `var(--color-neutral-4)` | Primary text and icon color for high-emphasis content. |
 | `color.ink.subtle` | `color` | `var(--color-neutral-7)` | Softer text and icon color for supporting content. |
 | `color.ink.subtlest` | `color` | `var(--color-neutral-8)` | Softest text and icon color for supporting content. |
-| `color.link` | `color` | `var(--color-blue-5)` | Interactive color for links and linked text. |
-| `color.link-active` | `color` | `#4490ff` | Interactive color for links and linked text. (active, 11% brighter) |
-| `color.link-hover` | `color` | `#59a7ff` | Interactive color for links and linked text. (hover, 23% brighter) |
-| `color.link-inactive` | `color` | `#0052d4` | Interactive color for links and linked text. (inactive, 20% darker) |
+| `color.link` | `color` | `var(--color-blue-3)` | Interactive color for links and linked text. |
+| `color.link-active` | `color` | `#85bcff` | Interactive color for links and linked text. (active, 11% brighter) |
+| `color.link-hover` | `color` | `#9ed6ff` | Interactive color for links and linked text. (hover, 23% brighter) |
+| `color.link-inactive` | `color` | `#4375ce` | Interactive color for links and linked text. (inactive, 20% darker) |
 | `color.muted.base` | `color` | `var(--color-neutral-11)` | Muted neutral accent background for low-emphasis states. |
 | `color.muted.base-active` | `color` | `#333438` | Muted neutral accent background for low-emphasis states. (active, 10% brighter) |
 | `color.muted.base-disabled` | `color` | `#2b2c2f` | Muted neutral accent background for low-emphasis states. (disabled, 80% saturation) |

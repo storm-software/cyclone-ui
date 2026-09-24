@@ -425,28 +425,28 @@ const COLOR_VARIANTS = {
       title={"color.link"}
       subtitle={"Interactive color for links and linked text."}
       colors={{
-            "link": "#2e7aff"
+            "link": "#6da2ff"
       }}
     />
           <ColorItem
       title={"color.link-active"}
       subtitle={"Interactive color for links and linked text. (active, 11% brighter)"}
       colors={{
-            "link-active": "#4490ff"
+            "link-active": "#85bcff"
       }}
     />
           <ColorItem
       title={"color.link-hover"}
       subtitle={"Interactive color for links and linked text. (hover, 23% brighter)"}
       colors={{
-            "link-hover": "#59a7ff"
+            "link-hover": "#9ed6ff"
       }}
     />
           <ColorItem
       title={"color.link-inactive"}
       subtitle={"Interactive color for links and linked text. (inactive, 20% darker)"}
       colors={{
-            "link-inactive": "#0052d4"
+            "link-inactive": "#4375ce"
       }}
     />
           <ColorItem
@@ -931,28 +931,28 @@ const COLOR_VARIANTS = {
       title={"color.link"}
       subtitle={"Interactive color for links and linked text."}
       colors={{
-            "link": "#527fcd"
+            "link": "#7598d7"
       }}
     />
           <ColorItem
       title={"color.link-active"}
       subtitle={"Interactive color for links and linked text. (active, 11% brighter)"}
       colors={{
-            "link-active": "#5e8dd0"
+            "link-active": "#82aadb"
       }}
     />
           <ColorItem
       title={"color.link-hover"}
       subtitle={"Interactive color for links and linked text. (hover, 23% brighter)"}
       colors={{
-            "link-hover": "#6a9bd4"
+            "link-hover": "#8fbddf"
       }}
     />
           <ColorItem
       title={"color.link-inactive"}
       subtitle={"Interactive color for links and linked text. (inactive, 20% darker)"}
       colors={{
-            "link-inactive": "#3362ae"
+            "link-inactive": "#5f7bad"
       }}
     />
           <ColorItem
@@ -1437,28 +1437,28 @@ const COLOR_VARIANTS = {
       title={"color.link"}
       subtitle={"Interactive color for links and linked text."}
       colors={{
-            "link": "#4387ff"
+            "link": "#9ec1ff"
       }}
     />
           <ColorItem
       title={"color.link-active"}
       subtitle={"Interactive color for links and linked text. (active, 11% brighter)"}
       colors={{
-            "link-active": "#63a2ff"
+            "link-active": "#c1ddff"
       }}
     />
           <ColorItem
       title={"color.link-hover"}
       subtitle={"Interactive color for links and linked text. (hover, 23% brighter)"}
       colors={{
-            "link-hover": "#81bcff"
+            "link-hover": "#e5f4ff"
       }}
     />
           <ColorItem
       title={"color.link-inactive"}
       subtitle={"Interactive color for links and linked text. (inactive, 20% darker)"}
       colors={{
-            "link-inactive": "#004bc1"
+            "link-inactive": "#2c72ed"
       }}
     />
           <ColorItem

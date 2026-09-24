@@ -44,6 +44,10 @@
       "import": "./dist/Collapsible.mjs",
       "require": "./dist/Collapsible.cjs"
     },
+    "./get-collapsible-value": {
+      "import": "./dist/get-collapsible-value.mjs",
+      "require": "./dist/get-collapsible-value.cjs"
+    },
     "./*": "./*"
   }
 }

@@ -124,3 +124,10 @@ export const Ghost: Story = {
     variant: "ghost"
   }
 };
+
+export const GhostBorderless: Story = {
+  args: {
+    bordered: false,
+    variant: "ghost"
+  }
+};

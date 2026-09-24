@@ -588,6 +588,9 @@ catalogs:
     tslib:
       specifier: ^2.8.1
       version: 2.8.1
+    ui-ux-pro-max-cli:
+      specifier: ^2.15.0
+      version: 2.15.0
     untyped:
       specifier: ^2.0.0
       version: 2.0.0
@@ -881,6 +884,9 @@ importers:
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
+      ui-ux-pro-max-cli:
+        specifier: 'catalog:'
+        version: 2.15.0
       verdaccio:
         specifier: 'catalog:'
         version: 6.7.2(encoding@0.1.13)(typanion@3.14.0)
@@ -2180,7 +2186,7 @@ importers:
     devDependencies:
       '@storybook/react-vite':
         specifier: 'catalog:'
-        version: 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@4.63.4)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.8)(react@19.3.0))(typescript@6.0.3)(vite@8.3.0(@types/node@26.6.2)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+        version: 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@4.63.5)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.9)(react@19.3.0))(typescript@6.0.3)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       react:
         specifier: 'catalog:'
         version: 19.3.0
@@ -4256,6 +4262,46 @@ importers:
       '@storybook/react-vite':
         specifier: 'catalog:'
         version: 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@4.63.5)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.9)(react@19.3.0))(typescript@6.0.3)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      react:
+        specifier: 'catalog:'
+        version: 19.3.0
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.3.0(react@19.3.0)
+      react-native:
+        specifier: 'catalog:'
+        version: 0.87.1(@babel/core@8.0.6)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0)
+
+  components/type-table:
+    dependencies:
+      '@cyclone-ui/body-text':
+        specifier: workspace:*
+        version: link:../body-text
+      '@cyclone-ui/collapsible':
+        specifier: workspace:*
+        version: link:../collapsible
+      '@cyclone-ui/container':
+        specifier: workspace:*
+        version: link:../container
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
+      '@cyclone-ui/inline-code-text':
+        specifier: workspace:*
+        version: link:../inline-code-text
+      '@cyclone-ui/link':
+        specifier: workspace:*
+        version: link:../link
+      '@tamagui/core':
+        specifier: 'catalog:'
+        version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+    devDependencies:
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@4.63.5)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.9)(react@19.3.0))(typescript@6.0.3)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      '@vitejs/plugin-react-swc':
+        specifier: 'catalog:'
+        version: 3.11.0(@swc/helpers@0.5.23)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       react:
         specifier: 'catalog:'
         version: 19.3.0
@@ -23311,6 +23357,10 @@ packages:
     engines: {node: '>=0.8.0'}
     hasBin: true
 
+  ui-ux-pro-max-cli@2.15.0:
+    resolution: {integrity: sha512-D0J/C40xrzzi5si6ZLtRGbEE5v3QjL7d4wJNnasmP3yfDSrGiuqVCdwQiqCNnIkbqOuVoA/uonR2o1WKXh3urw==}
+    hasBin: true
+
   unbash@2.2.0:
     resolution: {integrity: sha512-X2wH19RAPZE3+ldGicOkoj/SIA83OIxcJ6Cuaw23hf8Xc6fQpvZXY0SftE2JgS0QhYLUG4uwodSI3R53keyh7w==}
     engines: {node: '>=14'}
@@ -29486,8 +29536,8 @@ snapshots:
       '@log4brains/cli-common': 1.1.0
       '@log4brains/core': 1.1.0
       '@material-ui/core': 4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@material-ui/icons': 4.11.3(@material-ui/core@4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@material-ui/lab': 4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@material-ui/icons': 4.11.3(@material-ui/core@4.12.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@material-ui/lab': 4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@next/bundle-analyzer': 10.2.3
       '@types/node': 15.14.9
       '@types/react': 17.0.4
@@ -29607,7 +29657,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 17.0.4
 
-  '@material-ui/icons@4.11.3(@material-ui/core@4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@material-ui/icons@4.11.3(@material-ui/core@4.12.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@material-ui/core': 4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -29616,7 +29666,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 17.0.4
 
-  '@material-ui/lab@4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@material-ui/lab@4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@material-ui/core': 4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -41729,6 +41779,14 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-beta.27
       '@swc/core': 1.16.2(@swc/helpers@0.5.23)
       vite: 8.3.1(@types/node@26.6.3)(esbuild@0.27.7)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+    transitivePeerDependencies:
+      - '@swc/helpers'
+
+  '@vitejs/plugin-react-swc@3.11.0(@swc/helpers@0.5.23)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))':
+    dependencies:
+      '@rolldown/pluginutils': 1.0.0-beta.27
+      '@swc/core': 1.16.2(@swc/helpers@0.5.23)
+      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
     transitivePeerDependencies:
       - '@swc/helpers'
 
@@ -56332,6 +56390,13 @@ snapshots:
 
   uglify-js@3.19.3:
     optional: true
+
+  ui-ux-pro-max-cli@2.15.0:
+    dependencies:
+      chalk: 5.6.2
+      commander: 12.1.0
+      ora: 8.2.0
+      prompts: 2.4.2
 
   unbash@2.2.0: {}
 
