@@ -49,7 +49,8 @@ export default defineConfig({
       animations: "motion",
       defaultFont: "Space Grotesk",
       importConfig: "./default-config",
-      outputPath: "packages/themes/src/tamagui/config.ts"
+      outputPath: "packages/themes/src/tamagui/config.ts",
+      target: "v3"
     }),
     designMD(),
     shiki({

@@ -88,7 +88,7 @@ const InputGroup = styled(XGroup, {
   outlineWidth: 0,
   outlineColor: "transparent",
   boxShadow: "none",
-  gap: "$none",
+  gap: "$zero",
   tabIndex: 0,
   borderRadius: "$control",
   overflow: "hidden",
@@ -281,7 +281,7 @@ const InputSeparator = styled(View, {
   width: 0,
   flexShrink: 0,
   height: "60%",
-  marginVertical: "$none",
+  marginVertical: "$zero",
 
   hoverStyle: {
     borderColor: "$hairlineHover"
@@ -371,7 +371,7 @@ const InputTextBox = styled(XStack, {
   flex: 1,
   minWidth: 0,
   alignItems: "center",
-  gap: "$none"
+  gap: "$zero"
 });
 
 const InputTextBoxImpl = InputTextBox.styleable(

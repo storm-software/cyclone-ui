@@ -719,7 +719,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
         <TamaguiLabel
           ref={forwardedRef}
           htmlFor={name}
-          marginLeft={variant === "floating" ? "$none" : "$md"}>
+          marginLeft={variant === "floating" ? "$zero" : "$md"}>
           <LabelXStack disabled={disabled} floating={floating} minWidth={0}>
             {floating && <FieldLabelBorderMask />}
             <FieldLabelContent ref={labelContentRef}>

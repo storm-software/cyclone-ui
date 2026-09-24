@@ -32,60 +32,60 @@ catalog:
   "@storybook/react": ^10.6.0
   "@storybook/react-vite": ^10.6.0
   "@stryke/date": ^0.0.28
-  "@tamagui/accordion": ^2.7.7
-  "@tamagui/adapt": ^2.7.7
-  "@tamagui/alert-dialog": ^2.7.7
-  "@tamagui/animate-presence": ^2.7.7
+  "@tamagui/accordion": 3.0.0-beta.1422.1
+  "@tamagui/adapt": 3.0.0-beta.1422.1
+  "@tamagui/alert-dialog": 3.0.0-beta.1422.1
+  "@tamagui/animate-presence": 3.0.0-beta.1422.1
   "@tamagui/animations-moti": ^2.7.7
-  "@tamagui/avatar": ^2.7.7
-  "@tamagui/button": ^2.7.7
-  "@tamagui/checkbox": ^2.7.7
-  "@tamagui/checkbox-headless": ^2.7.7
-  "@tamagui/collapsible": ^2.7.7
-  "@tamagui/compose-refs": ^2.7.7
-  "@tamagui/config": ^2.7.7
-  "@tamagui/constants": ^2.7.7
-  "@tamagui/core": ^2.7.7
-  "@tamagui/create-context": ^2.7.7
-  "@tamagui/dialog": ^2.7.7
-  "@tamagui/focusable": ^2.7.7
-  "@tamagui/font-size": ^2.7.7
-  "@tamagui/floating": ^2.7.7
-  "@tamagui/get-font-sized": ^2.7.7
-  "@tamagui/get-token": ^2.7.7
-  "@tamagui/group": ^2.7.7
-  "@tamagui/helpers": ^2.7.7
-  "@tamagui/helpers-icon": ^2.7.7
-  "@tamagui/helpers-tamagui": ^2.7.7
-  "@tamagui/image": ^2.7.7
-  "@tamagui/label": ^2.7.7
-  "@tamagui/linear-gradient": ^2.7.7
-  "@tamagui/list-item": ^2.7.7
+  "@tamagui/avatar": 3.0.0-beta.1422.1
+  "@tamagui/button": 3.0.0-beta.1422.1
+  "@tamagui/checkbox": 3.0.0-beta.1422.1
+  "@tamagui/checkbox-headless": 3.0.0-beta.1422.1
+  "@tamagui/collapsible": 3.0.0-beta.1422.1
+  "@tamagui/compose-refs": 3.0.0-beta.1422.1
+  "@tamagui/config": 3.0.0-beta.1422.1
+  "@tamagui/constants": 3.0.0-beta.1422.1
+  "@tamagui/core": 3.0.0-beta.1422.1
+  "@tamagui/create-context": 3.0.0-beta.1422.1
+  "@tamagui/dialog": 3.0.0-beta.1422.1
+  "@tamagui/focusable": 3.0.0-beta.1422.1
+  "@tamagui/font-size": 3.0.0-beta.1422.1
+  "@tamagui/floating": 3.0.0-beta.1422.1
+  "@tamagui/get-font-sized": 3.0.0-beta.1422.1
+  "@tamagui/get-token": 3.0.0-beta.1422.1
+  "@tamagui/group": 3.0.0-beta.1422.1
+  "@tamagui/helpers": 3.0.0-beta.1422.1
+  "@tamagui/helpers-icon": 3.0.0-beta.1422.1
+  "@tamagui/helpers-tamagui": 3.0.0-beta.1422.1
+  "@tamagui/image": 3.0.0-beta.1422.1
+  "@tamagui/label": 3.0.0-beta.1422.1
+  "@tamagui/linear-gradient": 3.0.0-beta.1422.1
+  "@tamagui/list-item": 3.0.0-beta.1422.1
   "@tamagui/lucide-icons-2": ^2.7.7
-  "@tamagui/popover": ^2.7.7
-  "@tamagui/popper": ^2.7.7
-  "@tamagui/portal": ^2.7.7
-  "@tamagui/progress": ^2.7.7
-  "@tamagui/proxy-worm": ^2.7.7
-  "@tamagui/radio-group": ^2.7.7
-  "@tamagui/react-native-svg": ^2.7.7
-  "@tamagui/select": ^2.7.7
-  "@tamagui/separator": ^2.7.7
-  "@tamagui/shapes": ^2.7.7
-  "@tamagui/sheet": ^2.7.7
-  "@tamagui/shorthands": ^2.7.7
-  "@tamagui/stacks": ^2.7.7
-  "@tamagui/static": ^2.7.7
-  "@tamagui/switch": ^2.7.7
-  "@tamagui/switch-headless": ^2.7.7
-  "@tamagui/tabs": ^2.7.7
-  "@tamagui/text": ^2.7.7
-  "@tamagui/toast": ^2.7.7
-  "@tamagui/tooltip": ^2.7.7
-  "@tamagui/use-controllable-state": ^2.7.7
-  "@tamagui/use-presence": ^2.7.7
-  "@tamagui/vite-plugin": 1.96.0
-  "@tamagui/web": ^2.7.7
+  "@tamagui/popover": 3.0.0-beta.1422.1
+  "@tamagui/popper": 3.0.0-beta.1422.1
+  "@tamagui/portal": 3.0.0-beta.1422.1
+  "@tamagui/progress": 3.0.0-beta.1422.1
+  "@tamagui/proxy-worm": 3.0.0-beta.1422.1
+  "@tamagui/radio-group": 3.0.0-beta.1422.1
+  "@tamagui/react-native-svg": 3.0.0-beta.1422.1
+  "@tamagui/select": 3.0.0-beta.1422.1
+  "@tamagui/separator": 3.0.0-beta.1422.1
+  "@tamagui/shapes": 3.0.0-beta.1422.1
+  "@tamagui/sheet": 3.0.0-beta.1422.1
+  "@tamagui/shorthands": 3.0.0-beta.1422.1
+  "@tamagui/stacks": 3.0.0-beta.1422.1
+  "@tamagui/static": 3.0.0-beta.1422.1
+  "@tamagui/switch": 3.0.0-beta.1422.1
+  "@tamagui/switch-headless": 3.0.0-beta.1422.1
+  "@tamagui/tabs": 3.0.0-beta.1422.1
+  "@tamagui/text": 3.0.0-beta.1422.1
+  "@tamagui/toast": 3.0.0-beta.1422.1
+  "@tamagui/tooltip": 3.0.0-beta.1422.1
+  "@tamagui/use-controllable-state": 3.0.0-beta.1422.1
+  "@tamagui/use-presence": 3.0.0-beta.1422.1
+  "@tamagui/vite-plugin": 3.0.0-beta.1422.1
+  "@tamagui/web": 3.0.0-beta.1422.1
   "@taplo/cli": ^0.7.0
   "@nx/devkit": 23.1.1
   "@nx/eslint-plugin": 23.1.1
@@ -181,7 +181,7 @@ catalog:
   sherif: ^1.13.0
   solito: ^4.4.1
   storybook: ^10.6.0
-  tamagui: ^2.7.7
+  tamagui: 3.0.0-beta.1422.1
   tslib: ^2.8.1
   tsdown: ^0.22.14
   copyfiles: ^2.4.1
@@ -202,7 +202,7 @@ catalog:
   playwright: ^1.63.0
   "@tamagui/theme-builder": ^2.7.7
   style-dictionary: ^5.5.5
-  "@tamagui/dismissable": ^2.7.7
+  "@tamagui/dismissable": 3.0.0-beta.1422.1
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
   "@razorwind/shiki": ^0.0.49

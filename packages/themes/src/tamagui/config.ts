@@ -118,11 +118,11 @@ const tokens = createTokens({
     "22xl": 186,
     lg: 4,
     md: 2,
-    none: 0,
     sm: 1.5,
     xl: 7,
     xs: 1,
-    xxs: 0.5
+    xxs: 0.5,
+    zero: 0
   },
   size: {
     "2xl": 16,
@@ -163,11 +163,11 @@ const tokens = createTokens({
     "37xl": 284,
     lg: 12,
     md: 10,
-    none: 0,
     sm: 8,
     xl: 14,
     xs: 4,
-    xxs: 2
+    xxs: 2,
+    zero: 0
   },
   radius: {
     "2xl": 16,
@@ -182,13 +182,13 @@ const tokens = createTokens({
     full: "100%",
     lg: 8,
     md: 6,
-    none: 0,
     popover: 4,
     sheet: 0,
     sm: 4,
     tooltip: 4,
     xl: 12,
-    xs: 2
+    xs: 2,
+    zero: 0
   },
   zIndex: {
     "0": 0,
@@ -1358,13 +1358,14 @@ export const config = createTamagui({
     "eyebrow-lg": eyebrowLgFont,
     "eyebrow-sm": eyebrowSmFont
    },
-  defaultFont: "Space Grotesk"
+  defaultFont: "Space Grotesk",
+  settings: { styleValueSyntax: "string", legacyConditionObjects: false }
 , ...userConfig 
 });
 
 export type AppConfig = typeof config;
 
-declare module "@tamagui/core" {
+declare module "tamagui" {
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   interface TamaguiCustomConfig extends AppConfig {}
 }

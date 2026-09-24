@@ -63,7 +63,7 @@ const SelectGroup = styled(XGroup, {
   borderColor: "$hairline",
   outlineStyle: "none",
   boxShadow: "none",
-  gap: "$none",
+  gap: "$zero",
   tabIndex: 0,
   borderRadius: "$control",
 
@@ -166,7 +166,7 @@ const SelectSeparator = styled(View, {
   width: 0,
   flexShrink: 0,
   height: "60%",
-  marginVertical: "$none",
+  marginVertical: "$zero",
 
   hoverStyle: {
     borderColor: "$hairlineHover"

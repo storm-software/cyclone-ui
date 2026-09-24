@@ -286,7 +286,7 @@ const OtpInputFieldControl = OtpInputFieldControlFrame.styleable(
                 type="text"
                 value={digits[index] ?? ""}
                 textAlign="center"
-                paddingHorizontal="$none"
+                paddingHorizontal="$zero"
                 tabIndex={0}
                 onKeyDown={event =>
                   handleKeyDown(
