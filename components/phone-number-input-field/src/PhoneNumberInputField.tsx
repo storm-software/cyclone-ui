@@ -257,7 +257,7 @@ const CountryListItem = memo(
               render="span"
               aria-hidden={true}
               flexShrink={0}
-              minWidth="4xl">
+              minWidth="2xl">
               {country.flag}
             </BodyText>
             {showCountryName && (

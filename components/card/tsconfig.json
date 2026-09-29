@@ -14,6 +14,9 @@
   },
   "references": [
     {
+      "path": "../icons"
+    },
+    {
       "path": "../themeable-icon"
     },
     {

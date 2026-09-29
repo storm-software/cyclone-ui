@@ -81,6 +81,10 @@ const semanticColors = (prefix: string) => ({
       info: color(`${prefix}-accent-info`),
       discovery: color(`${prefix}-accent-discovery`)
     },
+    "on-accent": {
+      base: color(`${prefix}-on-accent-base`),
+      brand: color(`${prefix}-on-accent-brand`)
+    },
     muted: { brand: color(`${prefix}-muted-brand`) }
   }
 });
@@ -120,7 +124,8 @@ describe("Shiki theme mapping", () => {
     expect(dark.colors).toMatchObject({
       "editor.background": "dark-surface-canvas",
       "editorCursor.foreground": "dark-link",
-      "editor.selectionBackground": "dark-muted-brand",
+      "editor.selectionBackground": "dark-accent-brand",
+      "editor.selectionForeground": "dark-on-accent-brand",
       "editor.inactiveSelectionBackground": "dark-surface-sunken",
       "editorIndentGuide.background1": "dark-hairline",
       "editorIndentGuide.activeBackground1": "dark-ink-subtle"

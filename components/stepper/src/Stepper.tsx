@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { HeadingText } from "@cyclone-ui/heading-text";
+import { CheckCircle, Lock, PencilSimpleLine } from "@cyclone-ui/icons";
 import type { NextButtonProps } from "@cyclone-ui/next-button";
 import { NextButton } from "@cyclone-ui/next-button";
 import type { PreviousButtonProps } from "@cyclone-ui/previous-button";
@@ -35,7 +36,6 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { CheckCircle, Edit3, Lock } from "@tamagui/lucide-icons-2";
 import { Circle } from "@tamagui/shapes";
 import { XStack, YStack } from "@tamagui/stacks";
 import type {
@@ -309,7 +309,7 @@ export const StepperHeaderItem = createStyledHOC(
               <CheckCircle transition="200ms" color="accent" size="4xl" />
             )}
             {index === currentIndex && (
-              <Edit3 transition="200ms" color="accent" size="4xl" />
+              <PencilSimpleLine transition="200ms" color="accent" size="4xl" />
             )}
             {isVisitedFutureStep && (
               <CheckCircle transition="200ms" color="hairline" size="4xl" />

@@ -18,10 +18,10 @@
 
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
+import { Calendar } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { formatDate } from "@stryke/date/format";
 import type { GetProps } from "@tamagui/core";
-import { Calendar } from "@tamagui/lucide-icons-2";
 import { useCallback, useState } from "react";
 import { DATE_RANGE_SEPARATOR, DatePicker } from "./DatePicker";
 

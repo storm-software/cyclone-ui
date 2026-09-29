@@ -287,7 +287,12 @@ const InputGroupImpl = createStyledHOC(InputGroup,
 const InputSeparator = styled(View, {
   displayName: "Input",
   context: InputContext,
-  transition: "200ms",
+  // Fades in over 200ms when the separator mounts. The object form with an
+  // `enter` key keeps a hover/focus restyle during the fade from snapping it
+  // to full opacity: Tamagui only re-renders (instead of emitting styles with
+  // the mount-time "no animation" flag) when `transition` names `enter`.
+  transition: { duration: "200ms", enter: "200ms" },
+  opacity: "enter:0",
   // Drawn as a filled 1px bar rather than a left border: `XGroup.Item` zeroes
   // `borderLeftWidth` on every non-first item, which hid the line.
   backgroundColor: "hairline hover:hairlineHover",

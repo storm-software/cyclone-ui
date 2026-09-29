@@ -34,7 +34,6 @@ Use only documented font families and roles when selecting typography.
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |
@@ -80,7 +79,6 @@ Use only documented font families and roles when selecting typography.
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |
@@ -126,7 +124,6 @@ Use only documented font families and roles when selecting typography.
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |
@@ -172,7 +169,6 @@ Use only documented font families and roles when selecting typography.
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |
@@ -218,7 +214,6 @@ Use only documented font families and roles when selecting typography.
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |
@@ -264,7 +259,6 @@ Use only documented font families and roles when selecting typography.
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
 | `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |

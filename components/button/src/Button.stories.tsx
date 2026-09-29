@@ -16,8 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import { X } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { X } from "@tamagui/lucide-icons-2";
 import type { ComponentProps, ReactNode } from "react";
 import { Button } from "./Button";
 
@@ -1110,15 +1110,22 @@ export const CascadeBottomRounded: Story = withRounded(CascadeBottom);
 export const CascadeRightRounded: Story = withRounded(CascadeRight);
 export const DiagonalCascadeRounded: Story = withRounded(DiagonalCascade);
 export const DiagonalCascadeTopRounded: Story = withRounded(DiagonalCascadeTop);
-export const DiagonalCascadeLeftRounded: Story = withRounded(DiagonalCascadeLeft);
-export const DiagonalCascadeBottomRounded: Story = withRounded(DiagonalCascadeBottom);
-export const DiagonalCascadeRightRounded: Story = withRounded(DiagonalCascadeRight);
+export const DiagonalCascadeLeftRounded: Story =
+  withRounded(DiagonalCascadeLeft);
+export const DiagonalCascadeBottomRounded: Story = withRounded(
+  DiagonalCascadeBottom
+);
+export const DiagonalCascadeRightRounded: Story =
+  withRounded(DiagonalCascadeRight);
 export const ReverseCascadeRounded: Story = withRounded(ReverseCascade);
-export const ReverseDoubleCascadeRounded: Story = withRounded(ReverseDoubleCascade);
+export const ReverseDoubleCascadeRounded: Story =
+  withRounded(ReverseDoubleCascade);
 export const ReverseCascadeTopRounded: Story = withRounded(ReverseCascadeTop);
 export const ReverseCascadeLeftRounded: Story = withRounded(ReverseCascadeLeft);
-export const ReverseCascadeBottomRounded: Story = withRounded(ReverseCascadeBottom);
-export const ReverseCascadeRightRounded: Story = withRounded(ReverseCascadeRight);
+export const ReverseCascadeBottomRounded: Story =
+  withRounded(ReverseCascadeBottom);
+export const ReverseCascadeRightRounded: Story =
+  withRounded(ReverseCascadeRight);
 export const ReverseDiagonalCascadeRounded: Story = withRounded(
   ReverseDiagonalCascade
 );

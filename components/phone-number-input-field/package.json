@@ -27,7 +27,6 @@
     "@maskito/core": "catalog:",
     "@maskito/phone": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/text": "catalog:",
     "libphonenumber-js": "catalog:"
   },

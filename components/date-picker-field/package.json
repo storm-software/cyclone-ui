@@ -20,7 +20,7 @@
     "@maskito/kit": "^3.11.1",
     "@stryke/date": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
+    "@cyclone-ui/icons": "workspace:*",
     "react-native-svg": "^15.15.5",
     "@cyclone-ui/date-picker": "workspace:*",
     "@cyclone-ui/field": "workspace:*",

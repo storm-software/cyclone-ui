@@ -16,9 +16,9 @@
 
  ------------------------------------------------------------------- */
 
+import { Link as AnchorIcon } from "@cyclone-ui/icons";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
-import { Link as AnchorIcon } from "@tamagui/lucide-icons-2";
 import { useState } from "react";
 import { Linking, Platform } from "react-native";
 
@@ -99,7 +99,6 @@ export const Anchor = createStyledHOC(
             color={isIconHovered ? "accent" : "neutral7"}
             height="90%"
             maxHeight="6xl"
-            strokeWidth={2.3}
           />
         </Permalink>
       </AnchorFrame>

@@ -20,6 +20,9 @@
       "path": "../../packages/helpers"
     },
     {
+      "path": "../icons"
+    },
+    {
       "path": "../form"
     },
     {

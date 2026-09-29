@@ -16,12 +16,12 @@
 
  ------------------------------------------------------------------- */
 
+import { ArrowUpRight } from "@cyclone-ui/icons";
 import { LinkText } from "@cyclone-ui/link-text";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
 import type { FontSizeTokens, GetProps } from "@tamagui/core";
 import { createStyledHOC, styled } from "@tamagui/core";
-import { ArrowUpRight } from "@tamagui/lucide-icons-2";
 import { Linking } from "react-native";
 
 const LinkFrame = styled(LinkText, {

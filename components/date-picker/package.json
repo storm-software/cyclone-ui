@@ -32,7 +32,7 @@
     "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
     "@tamagui/label": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
+    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/popover": "catalog:",
     "@tamagui/separator": "catalog:",
     "@tamagui/sheet": "catalog:",

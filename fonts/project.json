@@ -40,7 +40,11 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build-regular", "build-italic"],
       "options": {
-        "command": "pnpm copyfiles --up=2 \"./fonts/dist/**/*\" dist/fonts"
+        "commands": [
+          "pnpm copyfiles --up=1 \"./fonts/dist/**/*\" dist/fonts",
+          "pnpm copyfiles --up=1 \"./fonts/fonts.css\" dist/fonts"
+        ],
+        "parallel": false
       },
       "outputs": ["{workspaceRoot}/dist/fonts"]
     }

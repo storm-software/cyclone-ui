@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import type { GetProps } from "@tamagui/core";
 import {
   Field,
   useFieldShouldShowPlaceholder,
@@ -28,15 +27,16 @@ import {
   getSized,
   getSpaced
 } from "@cyclone-ui/helpers";
+import { X } from "@cyclone-ui/icons";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
+import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
   Theme,
   useComposedRefs,
   withStaticProperties
 } from "@tamagui/core";
-import { X } from "@tamagui/lucide-icons-2";
 import type { RefObject } from "react";
 import {
   createContext,
@@ -102,23 +102,33 @@ const InputFieldLabel = createStyledHOC(Field.Label, (props, forwardedRef) => {
   );
 });
 
-const InputFieldIcon = createStyledHOC(Field.Icon, ({ position, ...props }: GetProps<typeof Field.Icon> & {
-  position?: "start" | "end";
-}, forwardedRef) => {
-  const { registerStartIcon } = use(InputFieldPresentationContext);
+const InputFieldIcon = createStyledHOC(
+  Field.Icon,
+  (
+    {
+      position,
+      ...props
+    }: GetProps<typeof Field.Icon> & {
+      position?: "start" | "end";
+    },
+    forwardedRef
+  ) => {
+    const { registerStartIcon } = use(InputFieldPresentationContext);
 
-  useLayoutEffect(() => {
-    if (position === "start") {
-      return registerStartIcon();
-    }
+    useLayoutEffect(() => {
+      if (position === "start") {
+        return registerStartIcon();
+      }
 
-    return undefined;
-  }, [position, registerStartIcon]);
+      return undefined;
+    }, [position, registerStartIcon]);
 
-  return <Field.Icon ref={forwardedRef} {...props} position={position} />;
-});
+    return <Field.Icon ref={forwardedRef} {...props} position={position} />;
+  }
+);
 
-const InputFieldControl = createStyledHOC(Input, 
+const InputFieldControl = createStyledHOC(
+  Input,
   ({ children, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const name = field.name.get();
@@ -167,7 +177,8 @@ const InputFieldControl = createStyledHOC(Input,
   }
 );
 
-const InputFieldControlTextBox = createStyledHOC(Input.TextBox, 
+const InputFieldControlTextBox = createStyledHOC(
+  Input.TextBox,
   ({ children, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const clearable = field.clearable.get();
@@ -201,7 +212,8 @@ const InputFieldControlTextBox = createStyledHOC(Input.TextBox,
   }
 );
 
-const InputFieldControlTextBoxValue = createStyledHOC(Input.TextBox.Value, 
+const InputFieldControlTextBoxValue = createStyledHOC(
+  Input.TextBox.Value,
   (props, forwardedRef) => {
     const field = FieldApi.use();
     const theme = field.theme.get();
@@ -232,7 +244,8 @@ const InputFieldControlTextBoxValue = createStyledHOC(Input.TextBox.Value,
   }
 );
 
-const InputFieldControlTrigger = createStyledHOC(Input.Trigger, 
+const InputFieldControlTrigger = createStyledHOC(
+  Input.Trigger,
   ({ children, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const disabled = field.disabled.get();

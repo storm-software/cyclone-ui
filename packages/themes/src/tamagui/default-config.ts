@@ -44,14 +44,10 @@ export const shorthands = {
   minw: "minWidth"
 } as const;
 
-const selectionStyles = (theme: any) => {
-  console.log(theme);
-
-  return {
-    backgroundColor: theme.neutral2,
-    color: theme.neutral14
-  };
-};
+const selectionStyles = (theme: any) => ({
+  backgroundColor: theme.selectionBackground,
+  color: theme.selectionForeground
+});
 
 export default {
   media,

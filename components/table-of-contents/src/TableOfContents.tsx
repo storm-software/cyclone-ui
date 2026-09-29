@@ -17,9 +17,9 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
+import { ListBullets } from "@cyclone-ui/icons";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
-import { List } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
@@ -155,16 +155,26 @@ const TableOfContentsLinkFrame = styled(View, {
   boxShadow: "focus:ringSubtle"
 });
 
-const TableOfContentsLink = createStyledHOC(TableOfContentsLinkFrame, ({ href, style, ...props }: GetProps<typeof TableOfContentsLinkFrame> & {
-  href: string;
-}, forwardedRef) => (
-  <TableOfContentsLinkFrame
-    ref={forwardedRef}
-    {...props}
-    {...({ href } as any)}
-    style={[{ textDecoration: "none" }, style]}
-  />
-));
+const TableOfContentsLink = createStyledHOC(
+  TableOfContentsLinkFrame,
+  (
+    {
+      href,
+      style,
+      ...props
+    }: GetProps<typeof TableOfContentsLinkFrame> & {
+      href: string;
+    },
+    forwardedRef
+  ) => (
+    <TableOfContentsLinkFrame
+      ref={forwardedRef}
+      {...props}
+      {...({ href } as any)}
+      style={[{ textDecoration: "none" }, style]}
+    />
+  )
+);
 
 const TableOfContentsLinkText = styled(BodyText, {
   render: "span",
@@ -450,152 +460,149 @@ function TableOfContentsRail({
   );
 }
 
-export const TableOfContents =
-  createStyledHOC(TableOfContentsFrame, 
-    ({ items, children = "On this page", ...props }: GetProps<typeof TableOfContentsFrame> & TableOfContentsExtraProps, forwardedRef) => {
-      const [activeUrl, setActiveUrl] = useState(items[0]?.url ?? "");
-      const prefersReducedMotion = usePrefersReducedMotion();
-      const activeIndex = Math.max(
-        0,
-        items.findIndex(item => item.url === activeUrl)
-      );
-      const minDepth = items.length ? Math.min(...items.map(getItemDepth)) : 0;
-      const activePathIndexes = useMemo(() => {
-        const result = new Set([activeIndex]);
-        const activeItem = items[activeIndex];
-        let depth = activeItem ? getItemDepth(activeItem) : minDepth;
+export const TableOfContents = createStyledHOC(
+  TableOfContentsFrame,
+  (
+    {
+      items,
+      children = "On this page",
+      ...props
+    }: GetProps<typeof TableOfContentsFrame> & TableOfContentsExtraProps,
+    forwardedRef
+  ) => {
+    const [activeUrl, setActiveUrl] = useState(items[0]?.url ?? "");
+    const prefersReducedMotion = usePrefersReducedMotion();
+    const activeIndex = Math.max(
+      0,
+      items.findIndex(item => item.url === activeUrl)
+    );
+    const minDepth = items.length ? Math.min(...items.map(getItemDepth)) : 0;
+    const activePathIndexes = useMemo(() => {
+      const result = new Set([activeIndex]);
+      const activeItem = items[activeIndex];
+      let depth = activeItem ? getItemDepth(activeItem) : minDepth;
 
-        for (let index = activeIndex - 1; index >= 0; index -= 1) {
-          const item = items[index];
-          if (item && getItemDepth(item) < depth) {
-            result.add(index);
-            depth = getItemDepth(item);
+      for (let index = activeIndex - 1; index >= 0; index -= 1) {
+        const item = items[index];
+        if (item && getItemDepth(item) < depth) {
+          result.add(index);
+          depth = getItemDepth(item);
+        }
+      }
+
+      return result;
+    }, [activeIndex, items, minDepth]);
+    const activeStartIndex = Math.min(...activePathIndexes);
+
+    useEffect(() => {
+      const { window: browserWindow, document: browserDocument } =
+        getBrowserGlobals();
+      if (
+        Platform.OS !== "web" ||
+        !browserWindow ||
+        !browserDocument ||
+        items.length === 0
+      ) {
+        return;
+      }
+
+      const targets = items.flatMap(item => {
+        const id = getHashId(item.url);
+        const element = id ? browserDocument.getElementById(id) : null;
+
+        return element ? [{ element, url: item.url }] : [];
+      });
+
+      if (targets.length === 0) return;
+
+      let frame = 0;
+      const updateActiveItem = () => {
+        frame = 0;
+        const activationLine = Math.min(browserWindow.innerHeight * 0.35, 180);
+        let next = targets[0];
+
+        for (const target of targets) {
+          if (target.element.getBoundingClientRect().top <= activationLine) {
+            next = target;
+          } else {
+            break;
           }
         }
 
-        return result;
-      }, [activeIndex, items, minDepth]);
-      const activeStartIndex = Math.min(...activePathIndexes);
-
-      useEffect(() => {
-        const { window: browserWindow, document: browserDocument } =
-          getBrowserGlobals();
-        if (
-          Platform.OS !== "web" ||
-          !browserWindow ||
-          !browserDocument ||
-          items.length === 0
-        ) {
-          return;
+        if (next) {
+          setActiveUrl(current => (current === next.url ? current : next.url));
         }
+      };
+      const scheduleUpdate = () => {
+        if (!frame) {
+          frame = browserWindow.requestAnimationFrame(updateActiveItem);
+        }
+      };
 
-        const targets = items.flatMap(item => {
-          const id = getHashId(item.url);
-          const element = id ? browserDocument.getElementById(id) : null;
+      updateActiveItem();
+      browserWindow.addEventListener("scroll", scheduleUpdate, true);
+      browserWindow.addEventListener("resize", scheduleUpdate, {
+        passive: true
+      });
+      browserWindow.addEventListener("hashchange", scheduleUpdate);
 
-          return element ? [{ element, url: item.url }] : [];
-        });
+      return () => {
+        browserWindow.cancelAnimationFrame(frame);
+        browserWindow.removeEventListener("scroll", scheduleUpdate, true);
+        browserWindow.removeEventListener("resize", scheduleUpdate);
+        browserWindow.removeEventListener("hashchange", scheduleUpdate);
+      };
+    }, [items]);
 
-        if (targets.length === 0) return;
+    if (items.length === 0) return null;
 
-        let frame = 0;
-        const updateActiveItem = () => {
-          frame = 0;
-          const activationLine = Math.min(
-            browserWindow.innerHeight * 0.35,
-            180
-          );
-          let next = targets[0];
+    return (
+      <TableOfContentsFrame
+        ref={forwardedRef}
+        aria-label="Table of contents"
+        {...props}>
+        <TableOfContentsHeading>
+          <ListBullets aria-hidden={true} color="inkSubtle" size="5xl" />
+          <TableOfContentsHeadingText>{children}</TableOfContentsHeadingText>
+        </TableOfContentsHeading>
 
-          for (const target of targets) {
-            if (target.element.getBoundingClientRect().top <= activationLine) {
-              next = target;
-            } else {
-              break;
-            }
-          }
+        <TableOfContentsItems>
+          <TableOfContentsRail
+            items={items}
+            activeIndex={activeIndex}
+            activeStartIndex={activeStartIndex}
+            minDepth={minDepth}
+            prefersReducedMotion={prefersReducedMotion}
+          />
 
-          if (next) {
-            setActiveUrl(current =>
-              current === next.url ? current : next.url
-            );
-          }
-        };
-        const scheduleUpdate = () => {
-          if (!frame) {
-            frame = browserWindow.requestAnimationFrame(updateActiveItem);
-          }
-        };
+          <TableOfContentsList style={{ listStyle: "none" }}>
+            {items.map((item, index) => {
+              const depth = getItemDepth(item) - minDepth;
+              const active = index === activeIndex;
 
-        updateActiveItem();
-        browserWindow.addEventListener("scroll", scheduleUpdate, true);
-        browserWindow.addEventListener("resize", scheduleUpdate, {
-          passive: true
-        });
-        browserWindow.addEventListener("hashchange", scheduleUpdate);
-
-        return () => {
-          browserWindow.cancelAnimationFrame(frame);
-          browserWindow.removeEventListener("scroll", scheduleUpdate, true);
-          browserWindow.removeEventListener("resize", scheduleUpdate);
-          browserWindow.removeEventListener("hashchange", scheduleUpdate);
-        };
-      }, [items]);
-
-      if (items.length === 0) return null;
-
-      return (
-        <TableOfContentsFrame
-          ref={forwardedRef}
-          aria-label="Table of contents"
-          {...props}>
-          <TableOfContentsHeading>
-            <List
-              aria-hidden={true}
-              color="inkSubtle"
-              size="5xl"
-              strokeWidth={2.2}
-            />
-            <TableOfContentsHeadingText>{children}</TableOfContentsHeadingText>
-          </TableOfContentsHeading>
-
-          <TableOfContentsItems>
-            <TableOfContentsRail
-              items={items}
-              activeIndex={activeIndex}
-              activeStartIndex={activeStartIndex}
-              minDepth={minDepth}
-              prefersReducedMotion={prefersReducedMotion}
-            />
-
-            <TableOfContentsList style={{ listStyle: "none" }}>
-              {items.map((item, index) => {
-                const depth = getItemDepth(item) - minDepth;
-                const active = index === activeIndex;
-
-                return (
-                  <TableOfContentsListItem key={`${item.url}-${index}`}>
-                    <TableOfContentsLink
-                      group={"tableOfContentsItem" as any}
-                      href={item.url}
-                      aria-current={active ? "location" : undefined}
-                      paddingLeft={RAIL_LEFT + depth * LEVEL_INDENT + LABEL_GAP}
-                      onPress={() => setActiveUrl(item.url)}>
-                      <TableOfContentsLinkText
-                        active={activePathIndexes.has(index)}
-                        reducedMotion={prefersReducedMotion}>
-                        {item.title}
-                      </TableOfContentsLinkText>
-                    </TableOfContentsLink>
-                  </TableOfContentsListItem>
-                );
-              })}
-            </TableOfContentsList>
-          </TableOfContentsItems>
-        </TableOfContentsFrame>
-      );
-    },
-    { displayName: "TableOfContents" }
-  );
+              return (
+                <TableOfContentsListItem key={`${item.url}-${index}`}>
+                  <TableOfContentsLink
+                    group={"tableOfContentsItem" as any}
+                    href={item.url}
+                    aria-current={active ? "location" : undefined}
+                    paddingLeft={RAIL_LEFT + depth * LEVEL_INDENT + LABEL_GAP}
+                    onPress={() => setActiveUrl(item.url)}>
+                    <TableOfContentsLinkText
+                      active={activePathIndexes.has(index)}
+                      reducedMotion={prefersReducedMotion}>
+                      {item.title}
+                    </TableOfContentsLinkText>
+                  </TableOfContentsLink>
+                </TableOfContentsListItem>
+              );
+            })}
+          </TableOfContentsList>
+        </TableOfContentsItems>
+      </TableOfContentsFrame>
+    );
+  },
+  { displayName: "TableOfContents" }
+);
 
 export type TableOfContentsProps = GetProps<typeof TableOfContents>;

@@ -20,6 +20,9 @@
       "path": "../themeable-icon"
     },
     {
+      "path": "../../packages/state"
+    },
+    {
       "path": "../heading-text"
     },
     {
@@ -29,10 +32,10 @@
       "path": "../container"
     },
     {
-      "path": "../../packages/state"
+      "path": "../body-text"
     },
     {
-      "path": "../body-text"
+      "path": "../icons"
     }
   ],
   "files": [],

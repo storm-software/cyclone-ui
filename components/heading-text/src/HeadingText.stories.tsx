@@ -57,12 +57,6 @@ export const HeadingTitle: Story = {
   }
 };
 
-export const HeadingExtraLarge: Story = {
-  args: {
-    level: "xl"
-  }
-};
-
 export const HeadingLarge: Story = {
   args: {
     level: "lg"

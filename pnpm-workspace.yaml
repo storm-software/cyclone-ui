@@ -17,7 +17,7 @@ catalog:
   "@powerlines/plugin-tsdown": ^0.1.614
   "@powerlines/plugin-tamagui": ^0.1.665
   "@powerlines/plugin-env": ^0.16.422
-  "@razorwind/color-variants": ^0.0.54
+  "@razorwind/color-variants": ^0.0.55
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
   "@react-native-community/cli-platform-ios": 18.0.1
@@ -67,7 +67,6 @@ catalog:
   "@tamagui/language-service": 3.0.0-beta.1422.1
   "@tamagui/linear-gradient": 3.0.0-beta.1422.1
   "@tamagui/list-item": 3.0.0-beta.1422.1
-  "@tamagui/lucide-icons-2": 3.0.0-beta.1398.1
   "@tamagui/popover": 3.0.0-beta.1422.1
   "@tamagui/popper": 3.0.0-beta.1422.1
   "@tamagui/portal": 3.0.0-beta.1422.1
@@ -76,6 +75,7 @@ catalog:
   "@tamagui/radio-group": 3.0.0-beta.1422.1
   "@tamagui/react-native-svg": 3.0.0-beta.1422.1
   "@tamagui/react-native-types": 3.0.0-beta.1422.1
+  "@tamagui/scroll-view": 3.0.0-beta.1422.1
   "@tamagui/select": 3.0.0-beta.1422.1
   "@tamagui/separator": 3.0.0-beta.1422.1
   "@tamagui/shapes": 3.0.0-beta.1422.1
@@ -105,14 +105,14 @@ catalog:
   "@nx/storybook": 23.1.1
   "@nx/vite": 23.1.1
   "@nx/vitest": 23.1.1
-  "@razorwind/core": ^0.0.76
-  "@razorwind/css": ^0.0.59
-  "@razorwind/design-md": ^0.0.73
-  "@razorwind/nx": ^0.0.72
-  "@razorwind/storybook": ^0.0.74
-  "@razorwind/style-dictionary": ^0.0.62
-  "@razorwind/shadcn": ^0.0.72
-  "@razorwind/tamagui": ^0.0.77
+  "@razorwind/core": ^0.0.77
+  "@razorwind/css": ^0.0.60
+  "@razorwind/design-md": ^0.0.74
+  "@razorwind/nx": ^0.0.73
+  "@razorwind/storybook": ^0.0.75
+  "@razorwind/style-dictionary": ^0.0.63
+  "@razorwind/shadcn": ^0.0.73
+  "@razorwind/tamagui": ^0.0.78
   "@storm-software/cloudflare-tools": ^0.71.294
   "@storm-software/config": ^1.138.82
   "@storm-software/config-tools": ^1.190.146
@@ -212,10 +212,12 @@ catalog:
   "@tamagui/dismissable": 3.0.0-beta.1422.1
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
-  "@razorwind/shiki": ^0.0.50
-  "@razorwind/llms": ^0.0.11
-  "@razorwind/docgen": ^0.0.72
+  "@razorwind/shiki": ^0.0.51
+  "@razorwind/llms": ^0.0.12
+  "@razorwind/docgen": ^0.0.73
   ui-ux-pro-max-cli: ^2.15.0
+  "@power-plant/core": ^0.0.93
+  "@phosphor-icons/core": ^2.1.1
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true

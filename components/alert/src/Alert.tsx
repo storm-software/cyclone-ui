@@ -21,6 +21,7 @@ import { Button } from "@cyclone-ui/button";
 import type { ContainerProps } from "@cyclone-ui/container";
 import { Container } from "@cyclone-ui/container";
 import { HeadingMediumText } from "@cyclone-ui/heading-text";
+import { WarningCircle, X } from "@cyclone-ui/icons";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import {
   createStyledContext,
@@ -31,7 +32,6 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { AlertCircle, X } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
 
@@ -170,7 +170,7 @@ const AlertIcon = createStyledHOC(
                 {...(type ? { color: "accent" } : {})}
                 size="10xl">
                 {children || getIconByTheme({ theme: colorTheme }) || (
-                  <AlertCircle />
+                  <WarningCircle />
                 )}
               </ThemeableIcon>
             </AlertIconBackground>

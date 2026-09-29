@@ -447,7 +447,7 @@ const COLOR_STATE_HOVER: ColorStateVariant = {
 
 const BASE_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
-  brightness: 1.15,
+  brightness: 1.2,
   useBaseThemePrimitive: true
 };
 
@@ -458,7 +458,7 @@ const THEME_COLOR_STATE_HOVER: ColorStateVariant = {
 
 const THEME_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
-  brightness: 1.1125
+  brightness: 1.185
 };
 
 const REDUCED_BASE_COLOR_STATE_ACTIVE: ColorStateVariant = {
@@ -567,8 +567,8 @@ const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
   }
 };
 
-const BASE_RING_OPACITY = 0.075;
-const THEME_RING_OPACITY = 0.125;
+const BASE_RING_OPACITY = 0.08;
+const THEME_RING_OPACITY = 0.15;
 const MINIMUM_MUTED_CONTRAST_RATIO = 6;
 const MINIMUM_INVERSE_CONTRAST_RATIO = 2;
 const MUTED_COLOR_LIGHTNESS_STEP = 0.01;

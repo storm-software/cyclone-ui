@@ -19,6 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import { formSizeVariants, getSized } from "@cyclone-ui/helpers";
+import { CaretDown, CaretUp, Check, Lock } from "@cyclone-ui/icons";
 import type { SelectOption } from "@stryke/types/form";
 import type { AdaptProps } from "@tamagui/adapt";
 import { Adapt } from "@tamagui/adapt";
@@ -32,7 +33,6 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { Check, ChevronDown, ChevronUp, Lock } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
 import { XStack, YStack } from "@tamagui/stacks";
@@ -476,18 +476,14 @@ export const SelectItem = createStyledHOC(
           {(disabled || isSelected) && (
             <View width={indicatorWidth} justifyContent="center">
               {disabled && (
-                <Lock
-                  size={indicatorIconSize}
-                  color="accentDisabled"
-                  strokeWidth={2}
-                />
+                <Lock size={indicatorIconSize} color="accentDisabled" />
               )}
               {isSelected && (
                 <View aria-hidden={true}>
                   <Check
                     size={indicatorIconSize}
                     color="accentActive"
-                    strokeWidth={3}
+                    weight="bold"
                   />
                 </View>
               )}
@@ -557,7 +553,7 @@ const SelectItemsGroup = createStyledHOC(
               position="relative"
               height={scrollButtonHeight}>
               <YStack zIndex="10">
-                <ChevronUp size={scrollIconSize} color="accent" />
+                <CaretUp size={scrollIconSize} color="accent" />
               </YStack>
               <LinearGradient
                 start={[0, 0]}
@@ -605,7 +601,7 @@ const SelectItemsGroup = createStyledHOC(
               width="100%"
               height={scrollButtonHeight}>
               <YStack zIndex="10">
-                <ChevronDown size={scrollIconSize} color="accent" />
+                <CaretDown size={scrollIconSize} color="accent" />
               </YStack>
               <LinearGradient
                 start={[0, 0]}

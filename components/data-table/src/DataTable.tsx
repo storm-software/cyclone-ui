@@ -22,6 +22,7 @@ import { Checkbox } from "@cyclone-ui/checkbox";
 import { CheckboxField } from "@cyclone-ui/checkbox-field";
 import { Form } from "@cyclone-ui/form";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import { Funnel, SortAscending, SortDescending } from "@cyclone-ui/icons";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
@@ -42,7 +43,6 @@ import {
   styled,
   View
 } from "@tamagui/core";
-import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type {
   CellContext,
@@ -897,7 +897,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         </DataTableColumnHeading>
         {isSorted && !desc && (
           <XStack gap="xxs" alignItems="center">
-            <ArrowDownAZ size="4xl" color="accent" />
+            <SortAscending size="4xl" color="accent" />
             <DataTableColumnHeading
               transition="200ms"
               fontWeight={600}
@@ -908,7 +908,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         )}
         {isSorted && desc && (
           <XStack gap="xxs" alignItems="center">
-            <ArrowUpZA size="4xl" color="accent" />
+            <SortDescending size="4xl" color="accent" />
             <DataTableColumnHeading
               transition="200ms"
               fontWeight={600}
@@ -937,7 +937,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 size="6xl"
                 padding="lg">
                 <Button.Icon>
-                  <Filter size="2xl" />
+                  <Funnel size="2xl" />
                 </Button.Icon>
               </Button>
             </Popover.Trigger>

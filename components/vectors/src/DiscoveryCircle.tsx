@@ -17,9 +17,9 @@
  ------------------------------------------------------------------- */
 
 import { getSized } from "@cyclone-ui/helpers";
+import { Lightbulb } from "@cyclone-ui/icons";
 import type { IconProps } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
-import { Lightbulb } from "@tamagui/lucide-icons-2";
 import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useMemo, useState } from "react";
 import type { SvgProps } from "react-native-svg";
@@ -130,7 +130,7 @@ const Icon = ({
               size={isSmall ? diameter : lightBulbSize}
               x={isSmall ? 0 : lightBulbOffset}
               y={isSmall ? 0 : lightBulbOffset}
-              strokeWidth={3}
+              weight="bold"
               color={color}
             />
           </G>

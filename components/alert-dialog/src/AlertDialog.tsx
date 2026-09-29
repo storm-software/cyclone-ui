@@ -18,6 +18,7 @@
 
 import type { DialogProps } from "@cyclone-ui/dialog";
 import { Dialog, DialogContext } from "@cyclone-ui/dialog";
+import { WarningCircle } from "@cyclone-ui/icons";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import {
   createStyledHOC,
@@ -25,7 +26,6 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { AlertCircle } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
 
@@ -70,7 +70,7 @@ const AlertDialogIcon = createStyledHOC(
                 theme={theme}
                 color="accent"
                 size="14xl">
-                {children || getIconByTheme({ theme }) || <AlertCircle />}
+                {children || getIconByTheme({ theme }) || <WarningCircle />}
               </ThemeableIcon>
             </View>
           </Theme>

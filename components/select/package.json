@@ -27,7 +27,7 @@
     "@tamagui/helpers-icon": "catalog:",
     "@tamagui/linear-gradient": "catalog:",
     "@tamagui/list-item": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
+    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/select": "catalog:",
     "@tamagui/separator": "catalog:",
     "@tamagui/sheet": "catalog:",

@@ -30,12 +30,11 @@ export type ContainerVariant =
   | "primary"
   | "secondary"
   | "tertiary"
-  | "lowest"
-  | "page"
+  | "sunken"
+  | "canvas"
   | "elevated"
   | "floating"
-  | "high"
-  | "highest"
+  | "overlay"
   | "outlined"
   | "glass";
 
@@ -51,6 +50,7 @@ const ContainerFrame = styled(View, {
   outline: "focus-visible:none",
   outlineWidth: "focus-visible:0px",
   outlineColor: "focus-visible:transparent",
+  
   variants: {
     variant: {
       primary: {
@@ -71,13 +71,13 @@ const ContainerFrame = styled(View, {
         borderColor: "hairline"
       },
 
-      lowest: {
+      sunken: {
         backgroundColor: "surfaceSunken",
         borderWidth: 1,
         borderColor: "hairline"
       },
 
-      page: {
+      canvas: {
         backgroundColor: "surfaceCanvas",
         borderWidth: 1,
         borderColor: "hairline"
@@ -95,7 +95,7 @@ const ContainerFrame = styled(View, {
         borderColor: "hairline"
       },
 
-      highest: {
+      overlay: {
         backgroundColor: "surfaceOverlay",
         borderWidth: 1,
         borderColor: "hairline"
@@ -144,6 +144,7 @@ const ContainerFrame = styled(View, {
       }
     }
   } as const,
+
   defaultVariants: {
     variant: "elevated",
     size: true,
@@ -188,7 +189,7 @@ export const Container = createStyledHOC(
   ContainerFrame,
   (
     {
-      variant = "tertiary",
+      variant = "elevated",
       size = true,
       shadowed = false,
       circular = false,

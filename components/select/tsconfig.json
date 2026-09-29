@@ -30,6 +30,9 @@
       "path": "../body-text"
     },
     {
+      "path": "../icons"
+    },
+    {
       "path": "../form"
     }
   ],

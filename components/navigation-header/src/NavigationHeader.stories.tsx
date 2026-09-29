@@ -17,9 +17,9 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
+import { Lightning, User } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { styled, View } from "@tamagui/core";
-import { UserRound, Zap } from "@tamagui/lucide-icons-2";
 import { SizableText } from "@tamagui/text";
 import type { ReactNode } from "react";
 import { NavigationHeader } from "./NavigationHeader";
@@ -109,7 +109,7 @@ const StoryLogo = () => (
       justifyContent="center"
       backgroundColor="accent"
       borderRadius="full">
-      <Zap size={16} color="muted" fill="muted" />
+      <Lightning size={16} color="muted" weight="fill" />
     </View>
     <SizableText color="accent" fontWeight="bold" fontSize="xl">
       Storm
@@ -270,7 +270,7 @@ export const SignedIn: Story = {
             flexGrow={0}
             size="10xl">
             <Button.Icon>
-              <UserRound aria-hidden={true} />
+              <User aria-hidden={true} />
             </Button.Icon>
           </Button>
         </NavigationHeader.Actions>

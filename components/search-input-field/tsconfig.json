@@ -15,10 +15,13 @@
   },
   "references": [
     {
-      "path": "../input-field"
+      "path": "../../packages/state"
     },
     {
       "path": "../popover"
+    },
+    {
+      "path": "../input-field"
     },
     {
       "path": "../input"
@@ -27,7 +30,7 @@
       "path": "../../packages/helpers"
     },
     {
-      "path": "../../packages/state"
+      "path": "../icons"
     },
     {
       "path": "../form"

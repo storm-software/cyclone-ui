@@ -16,17 +16,25 @@
 
  ------------------------------------------------------------------- */
 
-import type { GetProps } from "@tamagui/core";
+import { Minus, Plus } from "@cyclone-ui/icons";
 import { InputField } from "@cyclone-ui/input-field";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
+import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, withStaticProperties } from "@tamagui/core";
-import { Minus, Plus } from "@tamagui/lucide-icons-2";
 import { createContext, use, useCallback } from "react";
 
 const NumberInputFieldContext = createContext({ increment: 1 });
 
-const NumberInputFieldGroup = createStyledHOC(InputField, 
-  ({ children, increment = 1, ...props }: GetProps<typeof InputField> & { increment?: number }, forwardedRef) => {
+const NumberInputFieldGroup = createStyledHOC(
+  InputField,
+  (
+    {
+      children,
+      increment = 1,
+      ...props
+    }: GetProps<typeof InputField> & { increment?: number },
+    forwardedRef
+  ) => {
     return (
       <NumberInputFieldContext value={{ increment }}>
         <InputField ref={forwardedRef} {...props}>
@@ -37,7 +45,8 @@ const NumberInputFieldGroup = createStyledHOC(InputField,
   }
 );
 
-const NumberInputFieldControlTextBox = createStyledHOC(InputField.Control.TextBox, 
+const NumberInputFieldControlTextBox = createStyledHOC(
+  InputField.Control.TextBox,
   ({ children, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const disabled = field.disabled.get();
@@ -78,8 +87,9 @@ const NumberInputFieldControlTextBox = createStyledHOC(InputField.Control.TextBo
   }
 );
 
-const NumberInputFieldControlTextBoxValue =
-  createStyledHOC(InputField.Control.TextBox.Value, (props, forwardedRef) => {
+const NumberInputFieldControlTextBoxValue = createStyledHOC(
+  InputField.Control.TextBox.Value,
+  (props, forwardedRef) => {
     const { change } = useFieldActions();
     const handleChange = useCallback(
       (event: CustomEvent<string>) => {
@@ -96,7 +106,8 @@ const NumberInputFieldControlTextBoxValue =
         type="number"
       />
     );
-  });
+  }
+);
 
 export const NumberInputField = withStaticProperties(NumberInputFieldGroup, {
   Label: InputField.Label,

@@ -21,7 +21,7 @@
     "@cyclone-ui/visually-hidden": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/input-field": "workspace:*",
     "@cyclone-ui/state": "workspace:*",
     "@cyclone-ui/validation-text": "workspace:*"

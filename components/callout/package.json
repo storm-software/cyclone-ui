@@ -20,7 +20,7 @@
     "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
     "@tamagui/linear-gradient": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
+    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@tamagui/web": "catalog:",

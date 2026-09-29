@@ -21,6 +21,9 @@
     },
     {
       "path": "../../packages/helpers"
+    },
+    {
+      "path": "../icons"
     }
   ],
   "files": [],

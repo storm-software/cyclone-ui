@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import type { GetProps } from "@tamagui/core";
 import {
   DATE_RANGE_SEPARATOR,
   DatePicker,
@@ -31,12 +30,17 @@ import {
   useFieldShouldShowPlaceholder,
   useFieldVariant
 } from "@cyclone-ui/field";
+import { Calendar } from "@cyclone-ui/icons";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import type { MaskitoOptions, MaskitoPostprocessor } from "@maskito/core";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
 import { formatDate } from "@stryke/date/format";
-import { createStyledHOC, useComposedRefs, withStaticProperties } from "@tamagui/core";
-import { Calendar } from "@tamagui/lucide-icons-2";
+import type { GetProps } from "@tamagui/core";
+import {
+  createStyledHOC,
+  useComposedRefs,
+  withStaticProperties
+} from "@tamagui/core";
 import type { RefObject } from "react";
 import {
   createContext,
@@ -277,57 +281,66 @@ export const parseRange = (value: any, separator: DateSeparator = ".") => {
   return dates.length === 2 && dates[1]! < dates[0]! ? null : dates;
 };
 
-const DatePickerFieldGroup = createStyledHOC(Field, (props: GetProps<typeof Field> & {
-  mode?: DatePickerMode;
-  separator?: DateSeparator;
-}, forwardedRef) => {
-  const {
-    children,
-    mode = "single",
-    separator = ".",
-    variant = "floating",
-    ...rest
-  } = props;
+const DatePickerFieldGroup = createStyledHOC(
+  Field,
+  (
+    props: GetProps<typeof Field> & {
+      mode?: DatePickerMode;
+      separator?: DateSeparator;
+    },
+    forwardedRef
+  ) => {
+    const {
+      children,
+      mode = "single",
+      separator = ".",
+      variant = "floating",
+      ...rest
+    } = props;
 
-  const handleFormat = useCallback(
-    (value: any) =>
-      mode === "range"
-        ? formatRange(value, separator)
-        : format(value, separator),
-    [mode, separator]
-  );
-  const handleParse = useCallback(
-    (value: any) =>
-      mode === "range" ? parseRange(value, separator) : parse(value, separator),
-    [mode, separator]
-  );
+    const handleFormat = useCallback(
+      (value: any) =>
+        mode === "range"
+          ? formatRange(value, separator)
+          : format(value, separator),
+      [mode, separator]
+    );
+    const handleParse = useCallback(
+      (value: any) =>
+        mode === "range"
+          ? parseRange(value, separator)
+          : parse(value, separator),
+      [mode, separator]
+    );
 
-  const config = useMemo(() => ({ mode, separator }), [mode, separator]);
+    const config = useMemo(() => ({ mode, separator }), [mode, separator]);
 
-  return (
-    <DatePickerFieldContext.Provider value={config}>
-      <Field
-        ref={forwardedRef}
-        {...rest}
-        variant={variant}
-        format={handleFormat}
-        parse={handleParse}
-        mask={
-          mode === "range"
-            ? separator === "."
-              ? DATE_RANGE_MASK_DOT
-              : DATE_RANGE_MASK_SLASH
-            : separator === "."
-              ? DATE_MASK_DOT
-              : DATE_MASK_SLASH
-        }>
-        {children}
-      </Field>
-    </DatePickerFieldContext.Provider>
-  );
-});
+    return (
+      <DatePickerFieldContext.Provider value={config}>
+        <Field
+          ref={forwardedRef}
+          {...rest}
+          variant={variant}
+          format={handleFormat}
+          parse={handleParse}
+          mask={
+            mode === "range"
+              ? separator === "."
+                ? DATE_RANGE_MASK_DOT
+                : DATE_RANGE_MASK_SLASH
+              : separator === "."
+                ? DATE_MASK_DOT
+                : DATE_MASK_SLASH
+          }>
+          {children}
+        </Field>
+      </DatePickerFieldContext.Provider>
+    );
+  }
+);
 
-const DatePickerFieldControl = createStyledHOC(DatePicker.TextBox.Value, 
+const DatePickerFieldControl = createStyledHOC(
+  DatePicker.TextBox.Value,
   ({ children, onKeyDown, ...props }, forwardedRef) => {
     const { blur, change, focus } = useFieldActions();
     const inputRef = useRef<HTMLInputElement>(null);

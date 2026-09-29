@@ -37,6 +37,37 @@ describe("field affordance color states", () => {
     }
   });
 
+  it("fades every textbox divider in over 200ms on mount", () => {
+    const inputSeparator = getDeclaration(
+      readComponent("../../input/src/Input.tsx"),
+      "InputSeparator"
+    );
+    const selectSeparator = getDeclaration(
+      readComponent("../../select/src/Select.tsx"),
+      "SelectSeparator"
+    );
+    const fieldIcon = getDeclaration(
+      readComponent("./Field.tsx"),
+      "FieldIconButtonImpl"
+    );
+
+    for (const separator of [inputSeparator, selectSeparator]) {
+      expect(separator).toContain(
+        'transition: { duration: "200ms", enter: "200ms" }'
+      );
+      expect(separator).toContain('opacity: "enter:0"');
+    }
+
+    const iconDivider = fieldIcon.slice(
+      fieldIcon.indexOf('position="absolute"'),
+      fieldIcon.indexOf("<Button")
+    );
+    expect(iconDivider).toContain('opacity="enter:0"');
+    expect(iconDivider).toContain(
+      'transition={{ duration: "200ms", enter: "200ms" }}'
+    );
+  });
+
   it("colors field icons accent when themed or validated, otherwise hairline", () => {
     const field = readComponent("./Field.tsx");
     const iconColor = getDeclaration(field, "useFieldIconColor");

@@ -21,7 +21,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import { ScrollView } from "./ScrollView";
 
-const meta = {
+const meta: Meta<typeof ScrollView> = {
   title: "Base/ScrollView",
   component: ScrollView,
   tags: ["autodocs"],
@@ -36,7 +36,7 @@ const meta = {
       </ScrollView>
     </View>
   )
-} satisfies Meta<typeof ScrollView>;
+};
 
 export default meta;
 

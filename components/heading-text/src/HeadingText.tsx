@@ -48,37 +48,23 @@ export const HeadingTitleText = styled(BaseHeadingText, {
   color: "inkEmphasis"
 });
 
-export const HeadingExtraLargeText = styled(BaseHeadingText, {
-  displayName: "HeadingExtraLargeText",
+export const HeadingLargeText = styled(BaseHeadingText, {
+  displayName: "HeadingLargeText",
   render: "h2",
   fontFamily: "display-lg",
   color: "inkEmphasis"
 });
 
-export const HeadingLargeText = styled(BaseHeadingText, {
-  displayName: "HeadingLargeText",
+export const HeadingMediumText = styled(BaseHeadingText, {
+  displayName: "HeadingMediumText",
   render: "h3",
   fontFamily: "display-md",
   color: "inkEmphasis"
 });
 
-export const HeadingMediumText = styled(BaseHeadingText, {
-  displayName: "HeadingMediumText",
-  render: "h4",
-  fontFamily: "display-sm",
-  color: "inkEmphasis"
-});
-
 export const HeadingSmallText = styled(BaseHeadingText, {
   displayName: "HeadingSmallText",
-  render: "h5",
-  fontFamily: "display-sm",
-  color: "inkEmphasis"
-});
-
-export const HeadingExtraSmallText = styled(BaseHeadingText, {
-  displayName: "HeadingExtraSmallText",
-  render: "span",
+  render: "h4",
   fontFamily: "display-sm",
   color: "inkEmphasis"
 });
@@ -98,59 +84,43 @@ export const HeadingText = createStyledHOC(
         | 2
         | 3
         | 4
-        | 5
-        | 6
         | "hero"
         | "title"
-        | "xl"
         | "lg"
         | "md"
-        | "sm"
-        | "xs";
+        | "sm";
     },
     forwardedRef
   ) => {
-    if (level === 1 || level === "hero") {
+    if (level === "hero") {
       return (
         <HeadingHeroText ref={forwardedRef} {...props}>
           {children}
         </HeadingHeroText>
       );
-    } else if (level === "title") {
+    } else if (level === 1 || level === "title") {
       return (
         <HeadingTitleText ref={forwardedRef} {...props}>
           {children}
         </HeadingTitleText>
       );
-    } else if (level === 2 || level === "xl") {
-      return (
-        <HeadingExtraLargeText ref={forwardedRef} {...props}>
-          {children}
-        </HeadingExtraLargeText>
-      );
-    } else if (level === 3 || level === "lg") {
+    } else if (level === 2 || level === "lg") {
       return (
         <HeadingLargeText ref={forwardedRef} {...props}>
           {children}
         </HeadingLargeText>
       );
-    } else if (level === 4 || level === "md") {
+    } else if (level === 3 || level === "md") {
       return (
         <HeadingMediumText ref={forwardedRef} {...props}>
           {children}
         </HeadingMediumText>
       );
-    } else if (level === 5 || level === "sm") {
+    } else if (level === 4 || level === "sm") {
       return (
         <HeadingSmallText ref={forwardedRef} {...props}>
           {children}
         </HeadingSmallText>
-      );
-    } else if (level === 6 || level === "xs") {
-      return (
-        <HeadingExtraSmallText ref={forwardedRef} {...props}>
-          {children}
-        </HeadingExtraSmallText>
       );
     }
 

@@ -16,15 +16,15 @@
 
  ------------------------------------------------------------------- */
 
-import { AnimatePresence } from "@tamagui/animate-presence";
-import type { FontSizeTokens, GetProps } from "@tamagui/core";
-import { styled } from "@tamagui/core";
 import {
-  ChevronRight,
+  CaretRight,
   File as FileIcon,
   Folder as FolderIcon,
   FolderOpen as FolderOpenIcon
-} from "@tamagui/lucide-icons-2";
+} from "@cyclone-ui/icons";
+import { AnimatePresence } from "@tamagui/animate-presence";
+import type { FontSizeTokens, GetProps } from "@tamagui/core";
+import { styled } from "@tamagui/core";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 import {
@@ -170,7 +170,7 @@ export const Folder = ({
         onKeyDown={event =>
           onKeyDown(event as unknown as KeyboardEvent<HTMLElement>)
         }>
-        <ChevronRight
+        <CaretRight
           transition="400ms"
           color={color}
           size="lg"

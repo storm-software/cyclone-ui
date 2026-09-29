@@ -18,7 +18,6 @@
   "dependencies": {
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
     "react-native-svg": "^15.15.5",
     "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/file-picker": "workspace:*",

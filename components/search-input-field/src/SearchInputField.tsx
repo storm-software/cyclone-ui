@@ -21,6 +21,7 @@ import {
   getFormSizeScale,
   getSized
 } from "@cyclone-ui/helpers";
+import { MagnifyingGlass } from "@cyclone-ui/icons";
 import type { InputValueProps } from "@cyclone-ui/input";
 import { InputField } from "@cyclone-ui/input-field";
 import { Popover } from "@cyclone-ui/popover";
@@ -31,7 +32,6 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { Search } from "@tamagui/lucide-icons-2";
 import type { JSX, KeyboardEvent, MouseEvent } from "react";
 import {
   createContext,
@@ -151,6 +151,7 @@ const SearchInputFieldControlTextBox =
       const disabled = field.disabled.get();
       const size = field.size.get();
       const value = field.formattedValue.get();
+
       const suggestions = use(SearchInputFieldContext);
       const { change } = useFieldActions<string>();
       const listBoxId = `${useId()}-suggestions`;
@@ -239,7 +240,7 @@ const SearchInputFieldControlTextBox =
           <Popover.Anchor asChild={true}>
             <InputField.Control.TextBox ref={forwardedRef} {...props}>
               <InputField.Icon position="start">
-                <Search />
+                <MagnifyingGlass />
               </InputField.Icon>
 
               <InputField.Control.TextBox.Value

@@ -18,6 +18,7 @@
 
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
+import { CaretDown, List, X } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
 import {
@@ -26,7 +27,6 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { ChevronDown, Menu, X } from "@tamagui/lucide-icons-2";
 import type { KeyboardEvent, ReactElement, ReactNode } from "react";
 import {
   Children,
@@ -605,275 +605,151 @@ const getNavigationHeaderItems = (
     }
   );
 
-const NavigationHeaderRoot =
-  createStyledHOC(NavigationHeaderFrame, 
-    ({ children, onBlur, onMouseLeave, ...props }: GetProps<typeof NavigationHeaderFrame> & NavigationHeaderProps, forwardedRef) => {
-      const [menuOpen, setMenuOpen] = useState(false);
-      const [openItemIndex, setOpenItemIndex] = useState<number | null>(null);
-      const [hoveredItemIndex, setHoveredItemIndex] = useState<number | null>(
-        null
-      );
-      const [hoveredDropdownItem, setHoveredDropdownItem] =
-        useState<NavigationHeaderDropdownHover | null>(null);
-      const isAtTop = useIsAtTop();
-      const prefersReducedMotion = usePrefersReducedMotion();
-      const mobileNavigationId = useId();
-      const logo = getSlot<NavigationHeaderLogoProps>(
-        children,
-        NavigationHeaderLogoSlot
-      )?.props.children;
-      const actions = getSlot<NavigationHeaderActionsProps>(
-        children,
-        NavigationHeaderActionsSlot
-      )?.props.children;
-      const navigation = getSlot<NavigationHeaderNavigationProps>(
-        children,
-        NavigationHeaderNavigationSlot
-      );
-      const menuButton = getSlot<NavigationHeaderMenuButtonProps>(
-        children,
-        NavigationHeaderMenuButtonSlotComponent
-      );
-      const items = getNavigationHeaderItems(navigation?.props.children);
-      const navigationLabel = navigation?.props.label ?? "Primary navigation";
-      const menuLabel = menuButton?.props.label ?? "Navigation menu";
-      const openItem =
-        openItemIndex === null ? undefined : items[openItemIndex];
-      const submenuOpen = Boolean(openItem?.children?.length);
-      const { contentRef: dropdownContentRef, height: dropdownHeight } =
-        useNavigationHeaderDropdownHeight(submenuOpen, openItemIndex);
-      const scaleStyle = {
-        transform: isAtTop ? "scale(1.25)" : "none",
-        transition: prefersReducedMotion
-          ? "none"
-          : "transform 200ms ease-in-out"
-      };
-      const navigationStyle = {
-        ...scaleStyle,
-        // Keep each item's border-bottom in the same transformed navigation row.
-        transform: `${isAtTop ? "scale(1.25) " : ""}translateY(-15%)`
-      };
+const NavigationHeaderRoot = createStyledHOC(
+  NavigationHeaderFrame,
+  (
+    {
+      children,
+      onBlur,
+      onMouseLeave,
+      ...props
+    }: GetProps<typeof NavigationHeaderFrame> & NavigationHeaderProps,
+    forwardedRef
+  ) => {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [openItemIndex, setOpenItemIndex] = useState<number | null>(null);
+    const [hoveredItemIndex, setHoveredItemIndex] = useState<number | null>(
+      null
+    );
+    const [hoveredDropdownItem, setHoveredDropdownItem] =
+      useState<NavigationHeaderDropdownHover | null>(null);
+    const isAtTop = useIsAtTop();
+    const prefersReducedMotion = usePrefersReducedMotion();
+    const mobileNavigationId = useId();
+    const logo = getSlot<NavigationHeaderLogoProps>(
+      children,
+      NavigationHeaderLogoSlot
+    )?.props.children;
+    const actions = getSlot<NavigationHeaderActionsProps>(
+      children,
+      NavigationHeaderActionsSlot
+    )?.props.children;
+    const navigation = getSlot<NavigationHeaderNavigationProps>(
+      children,
+      NavigationHeaderNavigationSlot
+    );
+    const menuButton = getSlot<NavigationHeaderMenuButtonProps>(
+      children,
+      NavigationHeaderMenuButtonSlotComponent
+    );
+    const items = getNavigationHeaderItems(navigation?.props.children);
+    const navigationLabel = navigation?.props.label ?? "Primary navigation";
+    const menuLabel = menuButton?.props.label ?? "Navigation menu";
+    const openItem = openItemIndex === null ? undefined : items[openItemIndex];
+    const submenuOpen = Boolean(openItem?.children?.length);
+    const { contentRef: dropdownContentRef, height: dropdownHeight } =
+      useNavigationHeaderDropdownHeight(submenuOpen, openItemIndex);
+    const scaleStyle = {
+      transform: isAtTop ? "scale(1.25)" : "none",
+      transition: prefersReducedMotion ? "none" : "transform 200ms ease-in-out"
+    };
+    const navigationStyle = {
+      ...scaleStyle,
+      // Keep each item's border-bottom in the same transformed navigation row.
+      transform: `${isAtTop ? "scale(1.25) " : ""}translateY(-15%)`
+    };
 
-      return (
-        <NavigationHeaderFrame
-          ref={forwardedRef}
-          {...props}
-          onMouseLeave={event => {
-            onMouseLeave?.(event);
+    return (
+      <NavigationHeaderFrame
+        ref={forwardedRef}
+        {...props}
+        onMouseLeave={event => {
+          onMouseLeave?.(event);
+          setOpenItemIndex(null);
+          setHoveredItemIndex(null);
+          setHoveredDropdownItem(null);
+        }}
+        onBlur={event => {
+          onBlur?.(event);
+          if (
+            !(
+              event.currentTarget as unknown as {
+                contains: (node: unknown) => boolean;
+              }
+            ).contains(event.relatedTarget)
+          ) {
             setOpenItemIndex(null);
             setHoveredItemIndex(null);
             setHoveredDropdownItem(null);
-          }}
-          onBlur={event => {
-            onBlur?.(event);
-            if (
-              !(
-                event.currentTarget as unknown as {
-                  contains: (node: unknown) => boolean;
-                }
-              ).contains(event.relatedTarget)
-            ) {
-              setOpenItemIndex(null);
-              setHoveredItemIndex(null);
-              setHoveredDropdownItem(null);
-            }
-          }}>
-          <NavigationHeaderBar>
-            <NavigationHeaderLogo>
-              <NavigationHeaderLogoContent style={scaleStyle}>
-                {logo}
-              </NavigationHeaderLogoContent>
-            </NavigationHeaderLogo>
+          }
+        }}>
+        <NavigationHeaderBar>
+          <NavigationHeaderLogo>
+            <NavigationHeaderLogoContent style={scaleStyle}>
+              {logo}
+            </NavigationHeaderLogoContent>
+          </NavigationHeaderLogo>
 
-            <NavigationHeaderNavigation
-              aria-label={navigationLabel}
-              style={navigationStyle}>
-              {items.map((item, index) => {
-                const hasChildren = Boolean(item.children?.length);
-                const active =
-                  item.active ?? item.children?.some(child => child.active);
-                const navigationItemColor =
-                  hoveredItemIndex === null
-                    ? undefined
-                    : hoveredItemIndex === index
-                      ? "accentActive"
-                      : "accentInactive";
-                const dropdownId = `${mobileNavigationId}-submenu-${index}`;
+          <NavigationHeaderNavigation
+            aria-label={navigationLabel}
+            style={navigationStyle}>
+            {items.map((item, index) => {
+              const hasChildren = Boolean(item.children?.length);
+              const active =
+                item.active ?? item.children?.some(child => child.active);
+              const navigationItemColor =
+                hoveredItemIndex === null
+                  ? undefined
+                  : hoveredItemIndex === index
+                    ? "accentActive"
+                    : "accentInactive";
+              const dropdownId = `${mobileNavigationId}-submenu-${index}`;
 
-                return (
-                  <NavigationHeaderItemFrame
-                    key={`${item.href ?? "navigation-item"}-${index}`}
-                    active={active}
-                    borderBottomColor={
-                      active
-                        ? (navigationItemColor ?? "accent")
-                        : "transparent"
-                    }
-                    position="relative"
-                    onMouseEnter={() => {
-                      setHoveredItemIndex(index);
-                      setHoveredDropdownItem(null);
-                    }}>
-                    {hasChildren ? (
-                      <>
-                        <NavigationHeaderItemLink
-                          group={false}
-                          color={navigationItemColor}
-                          gap="lg"
-                          inverse={true}
-                          underline="none"
-                          render="button"
-                          role="button"
-                          aria-controls={dropdownId}
-                          aria-expanded={openItemIndex === index}
-                          aria-haspopup="true"
-                          active={active}
-                          onMouseEnter={() => setOpenItemIndex(index)}
-                          onFocus={() => setOpenItemIndex(index)}
-                          onKeyDown={(
-                                                    event: KeyboardEvent<HTMLButtonElement>
-                                                  ) => {
-                                                    if (event.key === "Escape") {
-                                                      setOpenItemIndex(null);
-                                                    }
-                                                  }}
-                          onPress={() => setOpenItemIndex(index)}>
-                          {item.label}
-                          <ChevronDown
-                            aria-hidden={true}
-                            color="currentColor"
-                            size={16}
-                          />
-                        </NavigationHeaderItemLink>
-                      </>
-                    ) : (
+              return (
+                <NavigationHeaderItemFrame
+                  key={`${item.href ?? "navigation-item"}-${index}`}
+                  active={active}
+                  borderBottomColor={
+                    active ? (navigationItemColor ?? "accent") : "transparent"
+                  }
+                  position="relative"
+                  onMouseEnter={() => {
+                    setHoveredItemIndex(index);
+                    setHoveredDropdownItem(null);
+                  }}>
+                  {hasChildren ? (
+                    <>
                       <NavigationHeaderItemLink
                         group={false}
+                        color={navigationItemColor}
+                        gap="lg"
                         inverse={true}
                         underline="none"
-                        href={item.href}
-                        target={item.target}
-                        external={item.external}
-                        active={item.active}
-                        color={navigationItemColor}
-                        aria-current={item.active ? "page" : undefined}
-                        onMouseEnter={() => setOpenItemIndex(null)}
-                        onPress={item.onPress}>
+                        render="button"
+                        role="button"
+                        aria-controls={dropdownId}
+                        aria-expanded={openItemIndex === index}
+                        aria-haspopup="true"
+                        active={active}
+                        onMouseEnter={() => setOpenItemIndex(index)}
+                        onFocus={() => setOpenItemIndex(index)}
+                        onKeyDown={(
+                          event: KeyboardEvent<HTMLButtonElement>
+                        ) => {
+                          if (event.key === "Escape") {
+                            setOpenItemIndex(null);
+                          }
+                        }}
+                        onPress={() => setOpenItemIndex(index)}>
                         {item.label}
+                        <CaretDown
+                          aria-hidden={true}
+                          color="currentColor"
+                          size={16}
+                        />
                       </NavigationHeaderItemLink>
-                    )}
-                  </NavigationHeaderItemFrame>
-                );
-              })}
-            </NavigationHeaderNavigation>
-
-            {actions ? (
-              <NavigationHeaderActions>{actions}</NavigationHeaderActions>
-            ) : (
-              <NavigationHeaderEdge />
-            )}
-
-            <NavigationHeaderMenuButtonSlot>
-              <NavigationHeaderMenuButton
-                aria-controls={mobileNavigationId}
-                aria-expanded={menuOpen}
-                aria-label={
-                  menuOpen ? `Close ${menuLabel}` : `Open ${menuLabel}`
-                }
-                onPress={() => setMenuOpen(open => !open)}>
-                {menuOpen ? (
-                  <X aria-hidden={true} />
-                ) : (
-                  <Menu aria-hidden={true} />
-                )}
-              </NavigationHeaderMenuButton>
-            </NavigationHeaderMenuButtonSlot>
-          </NavigationHeaderBar>
-
-          <NavigationHeaderDropdown
-            id={
-              openItemIndex === null
-                ? undefined
-                : `${mobileNavigationId}-submenu-${openItemIndex}`
-            }
-            open={submenuOpen}
-            aria-hidden={!submenuOpen}
-            height={dropdownHeight}
-            transition={prefersReducedMotion ? "none" : dropdownTransition}
-            onMouseLeave={() => setHoveredDropdownItem(null)}>
-            {openItem?.children?.length ? (
-              <NavigationHeaderDropdownContent ref={dropdownContentRef}>
-                {groupNavigationHeaderChildren(openItem.children).map(
-                  (group, groupIndex) => (
-                    <NavigationHeaderDropdownGroup
-                      key={`${group.label ?? "navigation-group"}-${groupIndex}`}>
-                      {group.label ? (
-                        <NavigationHeaderDropdownGroupLabel>
-                          {group.label}
-                        </NavigationHeaderDropdownGroupLabel>
-                      ) : null}
-
-                      {group.items.map((child, childIndex) => {
-                        const scope = group.featured ? "featured" : "standard";
-                        const hovered = hoveredDropdownItem?.scope === scope;
-                        const color = hovered
-                          ? hoveredDropdownItem.groupIndex === groupIndex &&
-                            hoveredDropdownItem.childIndex === childIndex
-                            ? "accentActive"
-                            : "accentInactive"
-                          : undefined;
-
-                        return (
-                          <NavigationHeaderDropdownLink
-                            key={`${child.href ?? "navigation-child"}-${childIndex}`}
-                            group={false}
-                            inverse={true}
-                            underline="none"
-                            featured={child.featured}
-                            href={child.href}
-                            target={child.target}
-                            external={child.external}
-                            color={color}
-                            aria-current={child.active ? "page" : undefined}
-                            onMouseEnter={() =>
-                              setHoveredDropdownItem({
-                                scope,
-                                groupIndex,
-                                childIndex
-                              })
-                            }
-                            onPress={(event: NavigationHeaderPressEvent) => {
-                              child.onPress?.(event);
-                              setOpenItemIndex(null);
-                            }}>
-                            {child.featured ? (
-                              <HeadingExtraLargeText>
-                                {child.label}
-                              </HeadingExtraLargeText>
-                            ) : (
-                              child.label
-                            )}
-                          </NavigationHeaderDropdownLink>
-                        );
-                      })}
-                    </NavigationHeaderDropdownGroup>
-                  )
-                )}
-              </NavigationHeaderDropdownContent>
-            ) : null}
-          </NavigationHeaderDropdown>
-
-          <NavigationHeaderMobilePanel id={mobileNavigationId} open={menuOpen}>
-            <NavigationHeaderMobileNavigation aria-label={navigationLabel}>
-              {items.map((item, index) => (
-                <View
-                  key={`${item.href ?? "mobile-navigation-item"}-${index}`}
-                  width="100%">
-                  <NavigationHeaderItemFrame
-                    active={
-                      item.active ?? item.children?.some(child => child.active)
-                    }
-                    mobile={true}>
+                    </>
+                  ) : (
                     <NavigationHeaderItemLink
                       group={false}
                       inverse={true}
@@ -882,68 +758,191 @@ const NavigationHeaderRoot =
                       target={item.target}
                       external={item.external}
                       active={item.active}
-                      mobile={true}
+                      color={navigationItemColor}
                       aria-current={item.active ? "page" : undefined}
-                      onPress={(event: NavigationHeaderPressEvent) => {
-                        item.onPress?.(event);
-                        setMenuOpen(false);
-                      }}>
+                      onMouseEnter={() => setOpenItemIndex(null)}
+                      onPress={item.onPress}>
                       {item.label}
                     </NavigationHeaderItemLink>
-                  </NavigationHeaderItemFrame>
+                  )}
+                </NavigationHeaderItemFrame>
+              );
+            })}
+          </NavigationHeaderNavigation>
 
-                  {item.children?.length ? (
-                    <NavigationHeaderMobileChildren>
-                      {groupNavigationHeaderChildren(item.children).map(
-                        (group, groupIndex) => (
-                          <View
-                            key={`${group.label ?? "mobile-navigation-group"}-${groupIndex}`}
-                            width="100%">
-                            {group.label ? (
-                              <NavigationHeaderMobileGroupLabel>
-                                {group.label}
-                              </NavigationHeaderMobileGroupLabel>
-                            ) : null}
+          {actions ? (
+            <NavigationHeaderActions>{actions}</NavigationHeaderActions>
+          ) : (
+            <NavigationHeaderEdge />
+          )}
 
-                            {group.items.map((child, childIndex) => (
-                              <NavigationHeaderMobileChildLink
-                                key={`${child.href ?? "mobile-navigation-child"}-${childIndex}`}
-                                group={false}
-                                inverse={true}
-                                underline="none"
-                                href={child.href}
-                                target={child.target}
-                                external={child.external}
-                                aria-current={child.active ? "page" : undefined}
-                                onPress={(
-                                  event: NavigationHeaderPressEvent
-                                ) => {
-                                  child.onPress?.(event);
-                                  setMenuOpen(false);
-                                }}>
-                                {child.label}
-                              </NavigationHeaderMobileChildLink>
-                            ))}
-                          </View>
-                        )
-                      )}
-                    </NavigationHeaderMobileChildren>
-                  ) : null}
-                </View>
-              ))}
-            </NavigationHeaderMobileNavigation>
+          <NavigationHeaderMenuButtonSlot>
+            <NavigationHeaderMenuButton
+              aria-controls={mobileNavigationId}
+              aria-expanded={menuOpen}
+              aria-label={menuOpen ? `Close ${menuLabel}` : `Open ${menuLabel}`}
+              onPress={() => setMenuOpen(open => !open)}>
+              {menuOpen ? (
+                <X aria-hidden={true} />
+              ) : (
+                <List aria-hidden={true} />
+              )}
+            </NavigationHeaderMenuButton>
+          </NavigationHeaderMenuButtonSlot>
+        </NavigationHeaderBar>
 
-            {actions && (
-              <NavigationHeaderMobileActions>
-                {actions}
-              </NavigationHeaderMobileActions>
-            )}
-          </NavigationHeaderMobilePanel>
-        </NavigationHeaderFrame>
-      );
-    },
-    { displayName: "NavigationHeader" }
-  );
+        <NavigationHeaderDropdown
+          id={
+            openItemIndex === null
+              ? undefined
+              : `${mobileNavigationId}-submenu-${openItemIndex}`
+          }
+          open={submenuOpen}
+          aria-hidden={!submenuOpen}
+          height={dropdownHeight}
+          transition={prefersReducedMotion ? "none" : dropdownTransition}
+          onMouseLeave={() => setHoveredDropdownItem(null)}>
+          {openItem?.children?.length ? (
+            <NavigationHeaderDropdownContent ref={dropdownContentRef}>
+              {groupNavigationHeaderChildren(openItem.children).map(
+                (group, groupIndex) => (
+                  <NavigationHeaderDropdownGroup
+                    key={`${group.label ?? "navigation-group"}-${groupIndex}`}>
+                    {group.label ? (
+                      <NavigationHeaderDropdownGroupLabel>
+                        {group.label}
+                      </NavigationHeaderDropdownGroupLabel>
+                    ) : null}
+
+                    {group.items.map((child, childIndex) => {
+                      const scope = group.featured ? "featured" : "standard";
+                      const hovered = hoveredDropdownItem?.scope === scope;
+                      const color = hovered
+                        ? hoveredDropdownItem.groupIndex === groupIndex &&
+                          hoveredDropdownItem.childIndex === childIndex
+                          ? "accentActive"
+                          : "accentInactive"
+                        : undefined;
+
+                      return (
+                        <NavigationHeaderDropdownLink
+                          key={`${child.href ?? "navigation-child"}-${childIndex}`}
+                          group={false}
+                          inverse={true}
+                          underline="none"
+                          featured={child.featured}
+                          href={child.href}
+                          target={child.target}
+                          external={child.external}
+                          color={color}
+                          aria-current={child.active ? "page" : undefined}
+                          onMouseEnter={() =>
+                            setHoveredDropdownItem({
+                              scope,
+                              groupIndex,
+                              childIndex
+                            })
+                          }
+                          onPress={(event: NavigationHeaderPressEvent) => {
+                            child.onPress?.(event);
+                            setOpenItemIndex(null);
+                          }}>
+                          {child.featured ? (
+                            <HeadingExtraLargeText>
+                              {child.label}
+                            </HeadingExtraLargeText>
+                          ) : (
+                            child.label
+                          )}
+                        </NavigationHeaderDropdownLink>
+                      );
+                    })}
+                  </NavigationHeaderDropdownGroup>
+                )
+              )}
+            </NavigationHeaderDropdownContent>
+          ) : null}
+        </NavigationHeaderDropdown>
+
+        <NavigationHeaderMobilePanel id={mobileNavigationId} open={menuOpen}>
+          <NavigationHeaderMobileNavigation aria-label={navigationLabel}>
+            {items.map((item, index) => (
+              <View
+                key={`${item.href ?? "mobile-navigation-item"}-${index}`}
+                width="100%">
+                <NavigationHeaderItemFrame
+                  active={
+                    item.active ?? item.children?.some(child => child.active)
+                  }
+                  mobile={true}>
+                  <NavigationHeaderItemLink
+                    group={false}
+                    inverse={true}
+                    underline="none"
+                    href={item.href}
+                    target={item.target}
+                    external={item.external}
+                    active={item.active}
+                    mobile={true}
+                    aria-current={item.active ? "page" : undefined}
+                    onPress={(event: NavigationHeaderPressEvent) => {
+                      item.onPress?.(event);
+                      setMenuOpen(false);
+                    }}>
+                    {item.label}
+                  </NavigationHeaderItemLink>
+                </NavigationHeaderItemFrame>
+
+                {item.children?.length ? (
+                  <NavigationHeaderMobileChildren>
+                    {groupNavigationHeaderChildren(item.children).map(
+                      (group, groupIndex) => (
+                        <View
+                          key={`${group.label ?? "mobile-navigation-group"}-${groupIndex}`}
+                          width="100%">
+                          {group.label ? (
+                            <NavigationHeaderMobileGroupLabel>
+                              {group.label}
+                            </NavigationHeaderMobileGroupLabel>
+                          ) : null}
+
+                          {group.items.map((child, childIndex) => (
+                            <NavigationHeaderMobileChildLink
+                              key={`${child.href ?? "mobile-navigation-child"}-${childIndex}`}
+                              group={false}
+                              inverse={true}
+                              underline="none"
+                              href={child.href}
+                              target={child.target}
+                              external={child.external}
+                              aria-current={child.active ? "page" : undefined}
+                              onPress={(event: NavigationHeaderPressEvent) => {
+                                child.onPress?.(event);
+                                setMenuOpen(false);
+                              }}>
+                              {child.label}
+                            </NavigationHeaderMobileChildLink>
+                          ))}
+                        </View>
+                      )
+                    )}
+                  </NavigationHeaderMobileChildren>
+                ) : null}
+              </View>
+            ))}
+          </NavigationHeaderMobileNavigation>
+
+          {actions && (
+            <NavigationHeaderMobileActions>
+              {actions}
+            </NavigationHeaderMobileActions>
+          )}
+        </NavigationHeaderMobilePanel>
+      </NavigationHeaderFrame>
+    );
+  },
+  { displayName: "NavigationHeader" }
+);
 
 export const NavigationHeader = withStaticProperties(NavigationHeaderRoot, {
   Logo: NavigationHeaderLogoSlot,

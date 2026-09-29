@@ -18,11 +18,11 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { HeadingHeroText, HeadingSmallText } from "@cyclone-ui/heading-text";
+import { Lightning } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import { StormLogoText } from "@cyclone-ui/vectors";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { styled, Text, View } from "@tamagui/core";
-import { Zap } from "@tamagui/lucide-icons-2";
 import type { ComponentProps, ReactNode } from "react";
 import type { FooterProps } from "./Footer";
 import { Footer } from "./Footer";
@@ -128,7 +128,7 @@ const StoryBrand = () => (
       justifyContent="center"
       backgroundColor="muted"
       borderRadius="full">
-      <Zap aria-hidden={true} size={16} color="accent" fill="accent" />
+      <Lightning aria-hidden={true} size={16} color="accent" weight="fill" />
     </View>
     <HeadingSmallText color="accent" fontSize="md">
       Cyclone UI

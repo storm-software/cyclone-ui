@@ -28,6 +28,7 @@ import {
   getSized,
   getSpaced
 } from "@cyclone-ui/helpers";
+import { Asterisk } from "@cyclone-ui/icons";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import type { SpinnerProps } from "@cyclone-ui/spinner";
@@ -58,7 +59,6 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { Label as TamaguiLabel } from "@tamagui/label";
-import { Asterisk } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { ReactNode } from "react";
 import {
@@ -750,10 +750,11 @@ const FieldLabelTextImpl = createStyledHOC(
                         <View
                           position="relative"
                           alignSelf="stretch"
-                          width={`${floating ? "md" : "xl"}`}>
+                          width={`${floating ? "md" : "lg"}`}>
                           <Asterisk
+                            transition="200ms"
                             color="required"
-                            size={floating ? "sm" : "xl"}
+                            size={floating ? "sm" : "lg"}
                             position="absolute"
                             top={floating ? -2 : -1}
                           />
@@ -779,7 +780,7 @@ const FieldLabelTextImpl = createStyledHOC(
                             hideOptionalForOverflow ? "none" : undefined
                           }
                           size={floating ? true : "sm"}
-                          color={`${disabled ? "inkSubtle" : "inkSubtle"} group-hover/field:${disabled ? "inkSubtle" : "inkSubtle"}`}
+                          color={`${disabled ? "inkSubtle" : "inkSubtlest"} group-hover/field:${disabled ? "inkSubtle" : "inkSubtle"}`}
                           disabled={disabled}
                           floating={floating}
                           controlSize={size}>
@@ -1015,6 +1016,11 @@ const FieldIconButtonImpl = createStyledHOC(
               ? { left: 0, borderLeftWidth: 1 }
               : { right: 0, borderRightWidth: 1 })}
             borderColor={`${iconColor} group-hover/field:${hoverIconColor}`}
+            // Fades in with the same 200ms entrance as the Input and Select
+            // separators; see `InputSeparator` for why `transition` names
+            // `enter`.
+            opacity="enter:0"
+            transition={{ duration: "200ms", enter: "200ms" }}
           />
         )}
         <Button
@@ -1093,16 +1099,18 @@ const InnerFieldThemeIcon = createStyledHOC(
           }
           arrowBorderColor={isNeutral ? "hairline" : "accent"}>
           <Theme name="base">
-            {messages && messages.length > 0 ? (
-              <ValidationText
-                color="accent"
-                messages={messages}
-                disabled={disabled}
-                theme="base"
-              />
-            ) : (
-              details || <ValidationText color="accent" disabled={disabled} />
-            )}
+            <View paddingVertical="2xl" paddingHorizontal="3xl">
+              {messages && messages.length > 0 ? (
+                <ValidationText
+                  color="accent"
+                  messages={messages}
+                  disabled={disabled}
+                  theme="base"
+                />
+              ) : (
+                details || <ValidationText color="accent" disabled={disabled} />
+              )}
+            </View>
           </Theme>
         </Tooltip.Content>
       </Tooltip>

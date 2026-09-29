@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { getFontSized, getSpaced } from "@cyclone-ui/helpers";
+import { CaretDoubleRight, CaretRight, LineSegment } from "@cyclone-ui/icons";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import type {
@@ -34,28 +35,34 @@ import {
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
-import { ChevronRight, ChevronsRight, Slash } from "@tamagui/lucide-icons-2";
 import { XStack } from "@tamagui/stacks";
 import type { TextContextStyles } from "@tamagui/text";
 
 export type BreadcrumbVariant = "chevron" | "double" | "slash";
 
-export type BreadcrumbContextProps = TextContextStyles &
-  { theme?: ThemeName | null } & {
-    size: FontSizeTokens;
-    variant: BreadcrumbVariant;
-    inverse: boolean;
-  };
+export type BreadcrumbContextProps = TextContextStyles & {
+  theme?: ThemeName | null;
+} & {
+  size: FontSizeTokens;
+  variant: BreadcrumbVariant;
+  inverse: boolean;
+};
 
-export const BreadcrumbContext = createStyledContext<BreadcrumbContextProps, "size" | "variant" | "inverse">({
-  size: true,
-  variant: "slash",
-  inverse: false
-} as BreadcrumbContextProps, {
-  // Only the keys that styled consumers declare as variants; v3 forwards every
-  // injected context key that is not a variant to the DOM element.
-  keys: ["size"]
-});
+export const BreadcrumbContext = createStyledContext<
+  BreadcrumbContextProps,
+  "size" | "variant" | "inverse"
+>(
+  {
+    size: true,
+    variant: "slash",
+    inverse: false
+  } as BreadcrumbContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: ["size"]
+  }
+);
 
 // A plain stack rather than `styled(XGroup)`, which never hands `transition`
 // to the rendered frame; the group lives in a `display: contents` `XGroup`.
@@ -99,10 +106,19 @@ const BreadcrumbCurrent = styled(LabelText, {
   } as const
 });
 
-const BreadcrumbImpl = createStyledHOC(BreadcrumbFrame, 
-  ({ children, currentName, ...props }: GetProps<typeof BreadcrumbFrame> & Partial<BreadcrumbContextProps> & {
-    currentName: string;
-  }, forwardRef) => {
+const BreadcrumbImpl = createStyledHOC(
+  BreadcrumbFrame,
+  (
+    {
+      children,
+      currentName,
+      ...props
+    }: GetProps<typeof BreadcrumbFrame> &
+      Partial<BreadcrumbContextProps> & {
+        currentName: string;
+      },
+    forwardRef
+  ) => {
     const { theme } = BreadcrumbContext.useStyledContext();
 
     return (
@@ -128,7 +144,8 @@ const BreadcrumbLink = styled(Link, {
   transition: "200ms"
 });
 
-const BreadcrumbItemImpl = createStyledHOC(BreadcrumbLink, 
+const BreadcrumbItemImpl = createStyledHOC(
+  BreadcrumbLink,
   ({ children, ...props }, forwardRef) => {
     const { size, variant, inverse } = BreadcrumbContext.useStyledContext();
 
@@ -145,13 +162,13 @@ const BreadcrumbItemImpl = createStyledHOC(BreadcrumbLink,
         </View>
 
         {variant === "chevron" && (
-          <ChevronRight color="inkSubtle" size="4xl" strokeWidth={3} />
+          <CaretRight color="inkSubtle" size="4xl" weight="bold" />
         )}
         {variant === "double" && (
-          <ChevronsRight color="inkSubtle" size="4xl" strokeWidth={2} />
+          <CaretDoubleRight color="inkSubtle" size="4xl" />
         )}
         {variant === "slash" && (
-          <Slash color="inkSubtle" size="lg" strokeWidth={3.5} />
+          <LineSegment color="inkSubtle" size="lg" weight="bold" />
         )}
       </XGroup.Item>
     );

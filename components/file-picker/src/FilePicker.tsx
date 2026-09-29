@@ -32,6 +32,7 @@ import {
   type FormControlSize,
   type StyleEnv
 } from "@cyclone-ui/helpers";
+import { Dot, DownloadSimple, Trash, UploadSimple } from "@cyclone-ui/icons";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import type { ClientFileResult } from "@cyclone-ui/state";
@@ -49,7 +50,6 @@ import {
 } from "@tamagui/core";
 import { Image } from "@tamagui/image";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { Dot, Download, Trash2, Upload } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { DocumentPickerResult } from "expo-document-picker";
 import type { PropsWithChildren } from "react";
@@ -75,27 +75,47 @@ export interface FilePickerContextProps {
   hasValidationMessage: boolean;
 }
 
-export const FilePickerContext = createStyledContext<FilePickerContextProps, "size" | "typeOfPicker" | "mediaTypes" | "max" | "onPick" | "onOpen" | "onChange" | "files" | "name" | "scaleIcon" | "color" | "required" | "disabled" | "active" | "hasValidationMessage">({
-  size: "md",
-  typeOfPicker: "file",
-  mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
-  max: 1,
-  onPick: (_props: PickFileProps) => {},
-  onOpen: () => {},
-  onChange: (_files: ClientFileResult[]) => {},
-  files: [] as ClientFileResult[],
-  name: "",
-  scaleIcon: 1.3,
-  color: undefined,
-  required: false,
-  disabled: false,
-  active: false,
-  hasValidationMessage: false
-} as FilePickerContextProps, {
-  // Only the keys that styled consumers declare as variants; v3 forwards every
+export const FilePickerContext = createStyledContext<
+  FilePickerContextProps,
+  | "size"
+  | "typeOfPicker"
+  | "mediaTypes"
+  | "max"
+  | "onPick"
+  | "onOpen"
+  | "onChange"
+  | "files"
+  | "name"
+  | "scaleIcon"
+  | "color"
+  | "required"
+  | "disabled"
+  | "active"
+  | "hasValidationMessage"
+>(
+  {
+    size: "md",
+    typeOfPicker: "file",
+    mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
+    max: 1,
+    onPick: (_props: PickFileProps) => {},
+    onOpen: () => {},
+    onChange: (_files: ClientFileResult[]) => {},
+    files: [] as ClientFileResult[],
+    name: "",
+    scaleIcon: 1.3,
+    color: undefined,
+    required: false,
+    disabled: false,
+    active: false,
+    hasValidationMessage: false
+  } as FilePickerContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
     // injected context key that is not a variant to the DOM element.
     keys: ["size", "active", "disabled", "hasValidationMessage"]
-});
+  }
+);
 
 const MAX_DISPLAYABLE_FILE_NAME_LENGTH = 150;
 
@@ -163,7 +183,8 @@ export interface PickFileProps {
   nativeFiles?: DocumentPickerResult[] | null;
 }
 
-const FilePickerGroup = createStyledHOC(FilePickerGroupFrame, 
+const FilePickerGroup = createStyledHOC(
+  FilePickerGroupFrame,
   (
     {
       children,
@@ -294,7 +315,8 @@ const FilePickerGroup = createStyledHOC(FilePickerGroupFrame,
   }
 );
 
-const FilePickerTrigger = createStyledHOC(YStack, 
+const FilePickerTrigger = createStyledHOC(
+  YStack,
   ({ children, ...props }, forwardedRef) => {
     const { disabled, active, files, max, size } =
       FilePickerContext.useStyledContext();
@@ -313,7 +335,7 @@ const FilePickerTrigger = createStyledHOC(YStack,
         cursor={disabled ? "not-allowed" : "pointer"}
         {...props}>
         {files.length === 0 && (
-          <Upload
+          <UploadSimple
             size={getSized("9xl") * getFormSizeScale(size)}
             color={`${disabled ? "inkSubtleDisabled" : "inkSubtle"} group-hover/file-picker:${disabled ? "inkSubtleDisabled" : active ? "hairlineHover" : "accentHover"}`}
             transition="100ms"
@@ -327,7 +349,8 @@ const FilePickerTrigger = createStyledHOC(YStack,
   }
 );
 
-const FilePickerTriggerButton = createStyledHOC(Button, 
+const FilePickerTriggerButton = createStyledHOC(
+  Button,
   ({ children, ...props }, forwardedRef) => {
     const { disabled, files, max, onOpen, size } =
       FilePickerContext.useStyledContext();
@@ -363,7 +386,8 @@ const FilePickerTriggerButton = createStyledHOC(Button,
   }
 );
 
-const FilePickerFiles = createStyledHOC(YStack, 
+const FilePickerFiles = createStyledHOC(
+  YStack,
   ({ children, ...props }, forwardedRef) => {
     const { files } = FilePickerContext.useStyledContext();
 
@@ -440,11 +464,7 @@ const FilePickerViewLink = ({
   }
 
   return (
-    <LabelText
-      color="onAccent"
-      width="100%"
-      textAlign="center"
-      {...props}>
+    <LabelText color="onAccent" width="100%" textAlign="center" {...props}>
       <FilePickerNameText controlSize={size} color="onAccent">
         {children}
       </FilePickerNameText>
@@ -525,7 +545,7 @@ const FilePickerFile = ({
             padding="xl"
             circular={true}>
             <Button.Icon color="group-hover/button:accentHover">
-              <Download />
+              <DownloadSimple />
             </Button.Icon>
           </Button>
         )}
@@ -548,7 +568,7 @@ const FilePickerFile = ({
             padding="xl"
             circular={true}>
             <Button.Icon color="group-hover/button:accentHover">
-              <Trash2 />
+              <Trash />
             </Button.Icon>
           </Button>
         </View>
@@ -589,9 +609,7 @@ const FilePickerFile = ({
               </FilePickerMetadataText>
             )}
 
-            {mimeType && (
-              <Dot size={getSized("6xl") * scale} color="inkBody" />
-            )}
+            {mimeType && <Dot size={getSized("6xl") * scale} color="inkBody" />}
 
             {mimeType && (
               <FilePickerMetadataText controlSize={controlSize} zIndex="30">

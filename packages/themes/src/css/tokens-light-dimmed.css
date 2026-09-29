@@ -168,14 +168,6 @@
 
 @font-face {
   font-family: Fonts;
-  src: url("./fonts/StormSans-SemiBoldItalic.ttf") format("truetype");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
   src: url("./fonts/StormSans-Text.otf") format("opentype");
   font-display: swap;
 }
@@ -241,568 +233,571 @@
  */
 
 :root {
-  --color-transparent: rgba(217, 217, 217, 0); /** Fully transparent white. */
-  --color-black: #2e2e30; /** Near-black neutral. */
-  --color-white: #d9d9d9; /** Pure white. */
-  --color-neutral-1: #d5d5d5; /** Bright off-white gray. */
-  --color-neutral-2: #cfcfcf; /** Very light gray. */
-  --color-neutral-3: #cacaca; /** Light gray. */
-  --color-neutral-4: #c4c4c4; /** Soft light gray. */
-  --color-neutral-5: #b4b4b4; /** Pale gray. */
-  --color-neutral-6: #a1a1a2; /** Light-medium gray. */
-  --color-neutral-7: #8f8f90; /** Medium gray. */
-  --color-neutral-8: #7d7d7e; /** Dark medium gray. */
-  --color-neutral-9: #6a6a6c; /** Deep gray. */
-  --color-neutral-10: #57575a; /** Charcoal gray. */
-  --color-neutral-11: #444548; /** Dark charcoal gray. */
-  --color-neutral-12: #3f4043; /** Deep graphite gray. */
-  --color-neutral-13: #3c3c3e; /** Near-black graphite. */
-  --color-neutral-14: #343438; /** Almost black gray. */
-  --color-red-1: #c28393; /** Pale coral red. */
-  --color-red-2: #bc7788; /** Light coral red. */
-  --color-red-3: #b76a7e; /** Soft coral red. */
-  --color-red-4: #b15e73; /** Warm salmon red. */
-  --color-red-5: #ab5268; /** Muted raspberry red. */
-  --color-red-6: #984a5e; /** Deep raspberry red. */
-  --color-red-7: #864254; /** Rich raspberry red. */
-  --color-red-8: #733a49; /** Dark burgundy red. */
-  --color-red-9: #61323e; /** Deep wine red. */
-  --color-orange-1: #d7ad96; /** Pale peach orange. */
-  --color-orange-2: #d2a287; /** Light apricot orange. */
-  --color-orange-3: #cc9678; /** Soft sandy orange. */
-  --color-orange-4: #c78a69; /** Light peach orange. */
-  --color-orange-5: #c17f5a; /** Muted warm orange. */
-  --color-orange-6: #b4714b; /** Medium tangerine orange. */
-  --color-orange-7: #a26238; /** Bright amber orange. */
-  --color-orange-8: #92542a; /** Rich burnt orange. */
-  --color-orange-9: #814825; /** Deep burnt orange. */
-  --color-yellow-1: #d5b67d; /** Pale wheat yellow. */
-  --color-yellow-2: #d0ad6d; /** Light sandy yellow. */
-  --color-yellow-3: #caa45c; /** Soft golden yellow. */
-  --color-yellow-4: #c59b4d; /** Muted amber yellow. */
-  --color-yellow-5: #c0984d; /** Medium honey yellow. */
-  --color-yellow-6: #b5904d; /** Warm wheat yellow. */
-  --color-yellow-7: #a58549; /** Rich golden yellow. */
-  --color-yellow-8: #917542; /** Deep honey yellow. */
-  --color-yellow-9: #786137; /** Dark ochre yellow. */
-  --color-green-1: #b2d5b8; /** Pale mint green. */
-  --color-green-2: #97c6a5; /** Light spring green. */
-  --color-green-3: #7bb796; /** Soft leaf green. */
-  --color-green-4: #60a88a; /** Muted leaf green. */
-  --color-green-5: #55957d; /** Cool mint green. */
-  --color-green-6: #49836f; /** Medium jade green. */
-  --color-green-7: #3e7160; /** Rich jade green. */
-  --color-green-8: #325d52; /** Deep forest green. */
-  --color-green-9: #284b41; /** Dark emerald green. */
-  --color-blue-1: #96b2e1; /** Pale periwinkle blue. */
-  --color-blue-2: #85a5dc; /** Light periwinkle blue. */
-  --color-blue-3: #7598d7; /** Light sky blue. */
-  --color-blue-4: #638cd2; /** Soft cornflower blue. */
-  --color-blue-5: #527fcd; /** Bright cobalt blue. */
-  --color-blue-6: #4f73b1; /** Medium azure blue. */
-  --color-blue-7: #45649b; /** Deep azure blue. */
-  --color-blue-8: #3b5685; /** Vivid cerulean blue. */
-  --color-blue-9: #31486f; /** Rich cerulean blue. */
-  --color-purple-1: #b4a9d2; /** Pale lavender purple. */
-  --color-purple-2: #a79acb; /** Light periwinkle purple. */
-  --color-purple-3: #9b8cc3; /** Soft lavender purple. */
-  --color-purple-4: #8e7dbb; /** Soft violet purple. */
-  --color-purple-5: #8272aa; /** Muted indigo purple. */
-  --color-purple-6: #756799; /** Medium periwinkle purple. */
-  --color-purple-7: #675a8a; /** Deep periwinkle purple. */
-  --color-purple-8: #594d7a; /** Vivid indigo purple. */
-  --color-purple-9: #4c416a; /** Rich slate indigo. */
-  --color-pink-1: #d9aac8; /** Pale blush pink. */
-  --color-pink-2: #d492b9; /** Light blush pink. */
-  --color-pink-3: #ca87b0; /** Soft rose pink. */
-  --color-pink-4: #c57ba8; /** Bright fuchsia pink. */
-  --color-pink-5: #c079a5; /** Vivid fuchsia pink. */
-  --color-pink-6: #be77a3; /** Rich magenta pink. */
-  --color-pink-7: #a86d91; /** Deep fuchsia pink. */
-  --color-pink-8: #875975; /** Deep berry pink. */
-  --color-pink-9: #5a3b4f; /** Dark plum pink. */
-  --color-ink-emphasis: #444548; /** Primary text and icon color for high-emphasis content. */
-  --color-ink-body: #6a6a6c; /** Default text and icon color for standard content. */
-  --color-ink-subtle: #a1a1a2; /** Softer text and icon color for supporting content. */
-  --color-ink-subtlest: #b4b4b4; /** Softest text and icon color for supporting content. */
-  --color-surface-sunken: #c4c4c4; /** Recessed surface for inset controls and grouped content. */
-  --color-surface-canvas: #cacaca; /** Base application canvas surface. */
-  --color-surface-elevated: #cfcfcf; /** Raised surface for cards and controls. */
-  --color-surface-floating: #d5d5d5; /** Floating surface for menus, popovers, and dialogs. */
-  --color-surface-overlay: #d9d9d9; /** Topmost surface for transient overlays. */
-  --color-surface-sunken-hover: #969696; /** Recessed surface for inset controls and grouped content. (hover, 23% darker) */
-  --color-surface-sunken-active: #adadad; /** Recessed surface for inset controls and grouped content. (active, 11% darker) */
-  --color-surface-sunken-inactive: #d9d9d9; /** Recessed surface for inset controls and grouped content. (inactive, 20% brighter) */
-  --color-surface-sunken-disabled: rgba(196, 196, 196, 0.4); /** Recessed surface for inset controls and grouped content. (disabled, 40% opacity) */
-  --color-surface-canvas-hover: #9a9a9a; /** Base application canvas surface. (hover, 23% darker) */
-  --color-surface-canvas-active: #b2b2b2; /** Base application canvas surface. (active, 11% darker) */
-  --color-surface-canvas-inactive: #d9d9d9; /** Base application canvas surface. (inactive, 20% brighter) */
-  --color-surface-canvas-disabled: rgba(202, 202, 202, 0.4); /** Base application canvas surface. (disabled, 40% opacity) */
-  --color-surface-elevated-hover: #9e9e9e; /** Raised surface for cards and controls. (hover, 23% darker) */
-  --color-surface-elevated-active: #b6b6b6; /** Raised surface for cards and controls. (active, 11% darker) */
-  --color-surface-elevated-inactive: #d9d9d9; /** Raised surface for cards and controls. (inactive, 20% brighter) */
-  --color-surface-elevated-disabled: rgba(207, 207, 207, 0.4); /** Raised surface for cards and controls. (disabled, 40% opacity) */
-  --color-surface-floating-hover: #a3a3a3; /** Floating surface for menus, popovers, and dialogs. (hover, 23% darker) */
-  --color-surface-floating-active: #bbbbbb; /** Floating surface for menus, popovers, and dialogs. (active, 11% darker) */
-  --color-surface-floating-inactive: #d9d9d9; /** Floating surface for menus, popovers, and dialogs. (inactive, 20% brighter) */
-  --color-surface-floating-disabled: rgba(213, 213, 213, 0.4); /** Floating surface for menus, popovers, and dialogs. (disabled, 40% opacity) */
-  --color-surface-overlay-hover: #a6a6a6; /** Topmost surface for transient overlays. (hover, 23% darker) */
-  --color-surface-overlay-active: #bfbfbf; /** Topmost surface for transient overlays. (active, 11% darker) */
-  --color-surface-overlay-inactive: #d9d9d9; /** Topmost surface for transient overlays. (inactive, 20% brighter) */
-  --color-surface-overlay-disabled: rgba(217, 217, 217, 0.4); /** Topmost surface for transient overlays. (disabled, 40% opacity) */
-  --color-required: #864254; /** Indicator color for required form fields. */
-  --color-link: #45649b; /** Interactive color for links and linked text. */
-  --color-hairline: #a1a1a2; /** Subtle color for hairline borders and separators. */
-  --color-accent-base: #343438; /** Primary neutral accent for emphasized controls and content. */
-  --color-accent-brand: #449a93; /** Brand accent for primary actions and emphasis. */
-  --color-accent-danger: #864254; /** Danger accent for destructive actions and critical states. */
-  --color-accent-negative: #864254; /** Negative accent for error states and invalid input. */
-  --color-accent-warning: #786137; /** Warning accent for cautionary states. */
-  --color-accent-success: #3e7160; /** Success accent for confirmed states. */
-  --color-accent-positive: #3e7160; /** Positive accent for favorable states. */
-  --color-accent-info: #45649b; /** Informational accent for guidance and neutral status. */
-  --color-accent-discovery: #675a8a; /** Discovery accent for new or exploratory content. */
-  --color-accent-base-hover: #3e3e41; /** Primary neutral accent for emphasized controls and content. (hover, 30% brighter) */
-  --color-accent-base-active: #2e2e30; /** Primary neutral accent for emphasized controls and content. (active, light base primitive) */
-  --color-accent-base-inactive: #282828; /** Primary neutral accent for emphasized controls and content. (inactive, 40% darker) */
-  --color-accent-base-disabled: #343437; /** Primary neutral accent for emphasized controls and content. (disabled, 80% saturation) */
-  --color-accent-brand-hover: #26827a; /** Brand accent for primary actions and emphasis. (hover, 23% darker) */
-  --color-accent-brand-active: #298f87; /** Brand accent for primary actions and emphasis. (active, 11% darker) */
-  --color-accent-brand-inactive: #6ebcb4; /** Brand accent for primary actions and emphasis. (inactive, 20% brighter) */
-  --color-accent-brand-disabled: #639993; /** Brand accent for primary actions and emphasis. (disabled, 80% saturation) */
-  --color-accent-danger-hover: #77233f; /** Danger accent for destructive actions and critical states. (hover, 23% darker) */
-  --color-accent-danger-active: #7e3249; /** Danger accent for destructive actions and critical states. (active, 11% darker) */
-  --color-accent-danger-inactive: #975967; /** Danger accent for destructive actions and critical states. (inactive, 20% brighter) */
-  --color-accent-danger-disabled: #7f4c56; /** Danger accent for destructive actions and critical states. (disabled, 80% saturation) */
-  --color-accent-negative-hover: #77233f; /** Negative accent for error states and invalid input. (hover, 23% darker) */
-  --color-accent-negative-active: #7e3249; /** Negative accent for error states and invalid input. (active, 11% darker) */
-  --color-accent-negative-inactive: #975967; /** Negative accent for error states and invalid input. (inactive, 20% brighter) */
-  --color-accent-negative-disabled: #7f4c56; /** Negative accent for error states and invalid input. (disabled, 80% saturation) */
-  --color-accent-warning-hover: #6a4f1f; /** Warning accent for cautionary states. (hover, 23% darker) */
-  --color-accent-warning-active: #735821; /** Warning accent for cautionary states. (active, 11% darker) */
-  --color-accent-warning-inactive: #887351; /** Warning accent for cautionary states. (inactive, 20% brighter) */
-  --color-accent-warning-disabled: #746245; /** Warning accent for cautionary states. (disabled, 80% saturation) */
-  --color-accent-success-hover: #1d6550; /** Success accent for confirmed states. (hover, 23% darker) */
-  --color-accent-success-active: #286b58; /** Success accent for confirmed states. (active, 11% darker) */
-  --color-accent-success-inactive: #578172; /** Success accent for confirmed states. (inactive, 20% brighter) */
-  --color-accent-success-disabled: #4b6e61; /** Success accent for confirmed states. (disabled, 80% saturation) */
-  --color-accent-positive-hover: #1d6550; /** Positive accent for favorable states. (hover, 23% darker) */
-  --color-accent-positive-active: #286b58; /** Positive accent for favorable states. (active, 11% darker) */
-  --color-accent-positive-inactive: #578172; /** Positive accent for favorable states. (inactive, 20% brighter) */
-  --color-accent-positive-disabled: #4b6e61; /** Positive accent for favorable states. (disabled, 80% saturation) */
-  --color-accent-info-hover: #284c89; /** Informational accent for guidance and neutral status. (hover, 23% darker) */
-  --color-accent-info-active: #365892; /** Informational accent for guidance and neutral status. (active, 11% darker) */
-  --color-accent-info-inactive: #5a79af; /** Informational accent for guidance and neutral status. (inactive, 20% brighter) */
-  --color-accent-info-disabled: #4e6691; /** Informational accent for guidance and neutral status. (disabled, 80% saturation) */
-  --color-accent-discovery-hover: #534377; /** Discovery accent for new or exploratory content. (hover, 23% darker) */
-  --color-accent-discovery-active: #5d4e80; /** Discovery accent for new or exploratory content. (active, 11% darker) */
-  --color-accent-discovery-inactive: #796d9d; /** Discovery accent for new or exploratory content. (inactive, 20% brighter) */
-  --color-accent-discovery-disabled: #665c82; /** Discovery accent for new or exploratory content. (disabled, 80% saturation) */
-  --color-on-accent-base: #cfcfcf; /** Content color placed on neutral accent backgrounds. */
-  --color-on-accent-base-hover: #8f8f8f; /** Content color placed on neutral accent backgrounds. (hover, 30% darker) */
-  --color-on-accent-base-active: #2e2e30; /** Content color placed on neutral accent backgrounds. (active, light base primitive) */
-  --color-on-accent-base-inactive: #282828; /** Content color placed on neutral accent backgrounds. (inactive, 40% darker) */
-  --color-on-accent-base-disabled: rgba(207, 207, 207, 0.4); /** Content color placed on neutral accent backgrounds. (disabled, 40% opacity) */
-  --color-on-accent-brand: #d5d5d5; /** Brand accent for primary actions and emphasis. */
-  --color-on-accent-danger: #d5d5d5; /** Danger accent for destructive actions and critical states. */
-  --color-on-accent-negative: #d5d5d5; /** Negative accent for error states and invalid input. */
-  --color-on-accent-warning: #d5d5d5; /** Warning accent for cautionary states. */
-  --color-on-accent-success: #d5d5d5; /** Success accent for confirmed states. */
-  --color-on-accent-positive: #d5d5d5; /** Positive accent for favorable states. */
-  --color-on-accent-info: #d5d5d5; /** Informational accent for guidance and neutral status. */
-  --color-on-accent-discovery: #d5d5d5; /** Discovery accent for new or exploratory content. */
-  --color-on-accent-brand-hover: #a3a3a3; /** Brand accent for primary actions and emphasis. (hover, 23% darker) */
-  --color-on-accent-brand-active: #bbbbbb; /** Brand accent for primary actions and emphasis. (active, 11% darker) */
-  --color-on-accent-brand-inactive: #d9d9d9; /** Brand accent for primary actions and emphasis. (inactive, 20% brighter) */
-  --color-on-accent-brand-disabled: rgba(213, 213, 213, 0.4); /** Brand accent for primary actions and emphasis. (disabled, 40% opacity) */
-  --color-on-accent-danger-hover: #a3a3a3; /** Danger accent for destructive actions and critical states. (hover, 23% darker) */
-  --color-on-accent-danger-active: #bbbbbb; /** Danger accent for destructive actions and critical states. (active, 11% darker) */
-  --color-on-accent-danger-inactive: #d9d9d9; /** Danger accent for destructive actions and critical states. (inactive, 20% brighter) */
-  --color-on-accent-danger-disabled: rgba(213, 213, 213, 0.4); /** Danger accent for destructive actions and critical states. (disabled, 40% opacity) */
-  --color-on-accent-negative-hover: #a3a3a3; /** Negative accent for error states and invalid input. (hover, 23% darker) */
-  --color-on-accent-negative-active: #bbbbbb; /** Negative accent for error states and invalid input. (active, 11% darker) */
-  --color-on-accent-negative-inactive: #d9d9d9; /** Negative accent for error states and invalid input. (inactive, 20% brighter) */
-  --color-on-accent-negative-disabled: rgba(213, 213, 213, 0.4); /** Negative accent for error states and invalid input. (disabled, 40% opacity) */
-  --color-on-accent-warning-hover: #a3a3a3; /** Warning accent for cautionary states. (hover, 23% darker) */
-  --color-on-accent-warning-active: #bbbbbb; /** Warning accent for cautionary states. (active, 11% darker) */
-  --color-on-accent-warning-inactive: #d9d9d9; /** Warning accent for cautionary states. (inactive, 20% brighter) */
-  --color-on-accent-warning-disabled: rgba(213, 213, 213, 0.4); /** Warning accent for cautionary states. (disabled, 40% opacity) */
-  --color-on-accent-success-hover: #a3a3a3; /** Success accent for confirmed states. (hover, 23% darker) */
-  --color-on-accent-success-active: #bbbbbb; /** Success accent for confirmed states. (active, 11% darker) */
-  --color-on-accent-success-inactive: #d9d9d9; /** Success accent for confirmed states. (inactive, 20% brighter) */
-  --color-on-accent-success-disabled: rgba(213, 213, 213, 0.4); /** Success accent for confirmed states. (disabled, 40% opacity) */
-  --color-on-accent-positive-hover: #a3a3a3; /** Positive accent for favorable states. (hover, 23% darker) */
-  --color-on-accent-positive-active: #bbbbbb; /** Positive accent for favorable states. (active, 11% darker) */
-  --color-on-accent-positive-inactive: #d9d9d9; /** Positive accent for favorable states. (inactive, 20% brighter) */
-  --color-on-accent-positive-disabled: rgba(213, 213, 213, 0.4); /** Positive accent for favorable states. (disabled, 40% opacity) */
-  --color-on-accent-info-hover: #a3a3a3; /** Informational accent for guidance and neutral status. (hover, 23% darker) */
-  --color-on-accent-info-active: #bbbbbb; /** Informational accent for guidance and neutral status. (active, 11% darker) */
-  --color-on-accent-info-inactive: #d9d9d9; /** Informational accent for guidance and neutral status. (inactive, 20% brighter) */
-  --color-on-accent-info-disabled: rgba(213, 213, 213, 0.4); /** Informational accent for guidance and neutral status. (disabled, 40% opacity) */
-  --color-on-accent-discovery-hover: #a3a3a3; /** Discovery accent for new or exploratory content. (hover, 23% darker) */
-  --color-on-accent-discovery-active: #bbbbbb; /** Discovery accent for new or exploratory content. (active, 11% darker) */
-  --color-on-accent-discovery-inactive: #d9d9d9; /** Discovery accent for new or exploratory content. (inactive, 20% brighter) */
-  --color-on-accent-discovery-disabled: rgba(213, 213, 213, 0.4); /** Discovery accent for new or exploratory content. (disabled, 40% opacity) */
-  --color-muted-base: #cacaca; /** Muted neutral accent background for low-emphasis states. */
-  --color-muted-brand: #74c4bc; /** Muted brand accent background for low-emphasis states. */
-  --color-muted-base-hover: #8c8c8c; /** Muted neutral accent background for low-emphasis states. (hover, 30% darker) */
-  --color-muted-base-active: #b4b4b4; /** Muted neutral accent background for low-emphasis states. (active, 10% darker) */
-  --color-muted-base-inactive: #282828; /** Muted neutral accent background for low-emphasis states. (inactive, 40% darker) */
-  --color-muted-base-disabled: rgba(202, 202, 202, 0.4); /** Muted neutral accent background for low-emphasis states. (disabled, 40% opacity) */
-  --color-muted-brand-hover: #32968f; /** Muted brand accent background for low-emphasis states. (hover, 23% darker) */
-  --color-muted-brand-active: #5fa9a2; /** Muted brand accent background for low-emphasis states. (active, 11% darker) */
-  --color-muted-brand-inactive: #8ddede; /** Muted brand accent background for low-emphasis states. (inactive, 20% brighter) */
-  --color-muted-brand-disabled: #84c3bd; /** Muted brand accent background for low-emphasis states. (disabled, 80% saturation) */
-  --color-muted-danger: #c17986; /** Generated danger muted background for the light theme */
-  --color-muted-negative: #c17986; /** Generated negative muted background for the light theme */
-  --color-muted-warning: #a48f6e; /** Generated warning muted background for the light theme */
-  --color-muted-success: #759e8e; /** Generated success muted background for the light theme */
-  --color-muted-positive: #759e8e; /** Generated positive muted background for the light theme */
-  --color-muted-info: #7095d6; /** Generated info muted background for the light theme */
-  --color-muted-discovery: #9588c5; /** Generated discovery muted background for the light theme */
-  --color-muted-danger-hover: #985b68; /** Generated danger muted background for the light theme (hover, 23% darker) */
-  --color-muted-danger-active: #ab6b78; /** Generated danger muted background for the light theme (active, 11% darker) */
-  --color-muted-danger-inactive: #de8d9e; /** Generated danger muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-danger-disabled: #b97f88; /** Generated danger muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-negative-hover: #985b68; /** Generated negative muted background for the light theme (hover, 23% darker) */
-  --color-muted-negative-active: #ab6b78; /** Generated negative muted background for the light theme (active, 11% darker) */
-  --color-muted-negative-inactive: #de8d9e; /** Generated negative muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-negative-disabled: #b97f88; /** Generated negative muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-warning-hover: #846f4b; /** Generated warning muted background for the light theme (hover, 23% darker) */
-  --color-muted-warning-active: #937e5e; /** Generated warning muted background for the light theme (active, 11% darker) */
-  --color-muted-warning-inactive: #caaf87; /** Generated warning muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-warning-disabled: #a29177; /** Generated warning muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-success-hover: #517d6d; /** Generated success muted background for the light theme (hover, 23% darker) */
-  --color-muted-success-active: #648c7d; /** Generated success muted background for the light theme (active, 11% darker) */
-  --color-muted-success-inactive: #90c2ae; /** Generated success muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-success-disabled: #7d9d90; /** Generated success muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-positive-hover: #517d6d; /** Generated positive muted background for the light theme (hover, 23% darker) */
-  --color-muted-positive-active: #648c7d; /** Generated positive muted background for the light theme (active, 11% darker) */
-  --color-muted-positive-inactive: #90c2ae; /** Generated positive muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-positive-disabled: #7d9d90; /** Generated positive muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-info-hover: #5875a8; /** Generated info muted background for the light theme (hover, 23% darker) */
-  --color-muted-info-active: #6585be; /** Generated info muted background for the light theme (active, 11% darker) */
-  --color-muted-info-inactive: #87b5dc; /** Generated info muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-info-disabled: #7996c8; /** Generated info muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-discovery-hover: #786c9c; /** Generated discovery muted background for the light theme (hover, 23% darker) */
-  --color-muted-discovery-active: #877aaf; /** Generated discovery muted background for the light theme (active, 11% darker) */
-  --color-muted-discovery-inactive: #af9ce2; /** Generated discovery muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-discovery-disabled: #958bbb; /** Generated discovery muted background for the light theme (disabled, 80% saturation) */
-  --color-overlay-background: #d9d9d9; /** Surface color for floating overlays. */
-  --color-overlay-border: #a1a1a2; /** Border color that defines floating overlays. */
-  --color-overlay-backdrop: rgba(55, 58, 61, 0.4); /** Backdrop color that separates overlays from page content. */
-  --color-shadow-resting-xsmall: 0px 1px 0px 0px #0000000d; /** Color used by the extra-small resting shadow. */
-  --color-shadow-resting-small: 0px 1px 2px 0px #0000000d; /** Color used by the small resting shadow. */
-  --color-shadow-resting-medium: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** Color used by the medium resting shadow. */
-  --color-shadow-floating-small: 0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a; /** Color used by the small floating shadow. */
-  --color-shadow-floating-medium: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a; /** Color used by the medium floating shadow. */
-  --color-shadow-floating-large: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a; /** Color used by the large floating shadow. */
-  --color-shadow-floating-xlarge: 0px 25px 50px -12px #00000040; /** Color used by the extra-large floating shadow. */
-  --color-shadow-inset: inset 0px 1px 1px 0px #0000000d; /** Color used by the inset shadow. */
-  --color-data-neutral-emphasis: #6a6a6c; /** High-emphasis neutral data-series color. */
-  --color-data-neutral-subtle: #cacaca; /** Low-emphasis neutral data-series color. */
-  --color-data-brand-emphasis: #45649b; /** High-emphasis brand data-series color. */
-  --color-data-brand-subtle: #7598d7; /** Low-emphasis brand data-series color. */
-  --color-data-red-emphasis: #864254; /** High-emphasis red data-series color. */
-  --color-data-red-subtle: #bc7788; /** Low-emphasis red data-series color. */
-  --color-data-orange-emphasis: #92542a; /** High-emphasis orange data-series color. */
-  --color-data-orange-subtle: #cc9678; /** Low-emphasis orange data-series color. */
-  --color-data-yellow-emphasis: #786137; /** High-emphasis yellow data-series color. */
-  --color-data-yellow-subtle: #caa45c; /** Low-emphasis yellow data-series color. */
-  --color-data-green-emphasis: #3e7160; /** High-emphasis green data-series color. */
-  --color-data-green-subtle: #7bb796; /** Low-emphasis green data-series color. */
-  --color-data-blue-emphasis: #45649b; /** High-emphasis blue data-series color. */
-  --color-data-blue-subtle: #7598d7; /** Low-emphasis blue data-series color. */
-  --color-data-purple-emphasis: #675a8a; /** High-emphasis purple data-series color. */
-  --color-data-purple-subtle: #9b8cc3; /** Low-emphasis purple data-series color. */
-  --color-data-pink-emphasis: #875975; /** High-emphasis pink data-series color. */
-  --color-data-pink-subtle: #ca87b0; /** Low-emphasis pink data-series color. */
-  --color-link-hover: #284c89; /** Interactive color for links and linked text. (hover, 23% darker) */
-  --color-link-active: #365892; /** Interactive color for links and linked text. (active, 11% darker) */
-  --color-link-inactive: #5a79af; /** Interactive color for links and linked text. (inactive, 20% brighter) */
-  --color-hairline-hover: #7d7d7e; /** Subtle color for hairline borders and separators. (hover, 23% darker) */
-  --color-hairline-active: #949495; /** Subtle color for hairline borders and separators. (active, 8% darker) */
-  --color-hairline-inactive: #c4c4c5; /** Subtle color for hairline borders and separators. (inactive, 20% brighter) */
-  --color-on-muted-base: #343438; /** Generated base foreground on muted backgrounds */
-  --color-on-muted-brand: #449a93; /** Generated brand foreground on muted backgrounds */
-  --color-on-muted-danger: #551928; /** Generated danger foreground on muted backgrounds */
-  --color-on-muted-negative: #551928; /** Generated negative foreground on muted backgrounds */
-  --color-on-muted-warning: #543d18; /** Generated warning foreground on muted backgrounds */
-  --color-on-muted-success: #185341; /** Generated success foreground on muted backgrounds */
-  --color-on-muted-positive: #185341; /** Generated positive foreground on muted backgrounds */
-  --color-on-muted-info: #1e3769; /** Generated info foreground on muted backgrounds */
-  --color-on-muted-discovery: #3b1d65; /** Generated discovery foreground on muted backgrounds */
-  --color-on-muted-base-hover: #3e3e41; /** Generated base foreground on muted backgrounds (hover, 30% brighter) */
-  --color-on-muted-base-active: #2e2e30; /** Generated base foreground on muted backgrounds (active, light base primitive) */
-  --color-on-muted-base-inactive: #282828; /** Generated base foreground on muted backgrounds (inactive, 40% darker) */
-  --color-on-muted-base-disabled: #343437; /** Generated base foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-brand-hover: #26827a; /** Generated brand foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-brand-active: #298f87; /** Generated brand foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-brand-inactive: #6ebcb4; /** Generated brand foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-brand-disabled: #639993; /** Generated brand foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-danger-hover: #572532; /** Generated danger foreground on muted backgrounds (hover, 23% brighter) */
-  --color-on-muted-danger-active: #561f2d; /** Generated danger foreground on muted backgrounds (active, 11% brighter) */
-  --color-on-muted-danger-inactive: #4f171f; /** Generated danger foreground on muted backgrounds (inactive, 20% darker) */
-  --color-on-muted-danger-disabled: #4f1f2a; /** Generated danger foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-negative-hover: #572532; /** Generated negative foreground on muted backgrounds (hover, 23% brighter) */
-  --color-on-muted-negative-active: #561f2d; /** Generated negative foreground on muted backgrounds (active, 11% brighter) */
-  --color-on-muted-negative-inactive: #4f171f; /** Generated negative foreground on muted backgrounds (inactive, 20% darker) */
-  --color-on-muted-negative-disabled: #4f1f2a; /** Generated negative foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-warning-hover: #564428; /** Generated warning foreground on muted backgrounds (hover, 23% brighter) */
-  --color-on-muted-warning-active: #554220; /** Generated warning foreground on muted backgrounds (active, 11% brighter) */
-  --color-on-muted-warning-inactive: #4d3316; /** Generated warning foreground on muted backgrounds (inactive, 20% darker) */
-  --color-on-muted-warning-disabled: #4d3d22; /** Generated warning foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-success-hover: #164b35; /** Generated success foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-success-active: #174f3b; /** Generated success foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-success-inactive: #2b5345; /** Generated success foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-success-disabled: #274b3e; /** Generated success foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-positive-hover: #164b35; /** Generated positive foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-positive-active: #174f3b; /** Generated positive foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-positive-inactive: #2b5345; /** Generated positive foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-positive-disabled: #274b3e; /** Generated positive foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-info-hover: #1c2860; /** Generated info foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-info-active: #1d3065; /** Generated info foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-info-inactive: #2a436f; /** Generated info foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-info-disabled: #243a61; /** Generated info foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-discovery-hover: #442e68; /** Generated discovery foreground on muted backgrounds (hover, 23% brighter) */
-  --color-on-muted-discovery-active: #3f2566; /** Generated discovery foreground on muted backgrounds (active, 11% brighter) */
-  --color-on-muted-discovery-inactive: #331b5d; /** Generated discovery foreground on muted backgrounds (inactive, 20% darker) */
-  --color-on-muted-discovery-disabled: #39275b; /** Generated discovery foreground on muted backgrounds (disabled, 80% saturation) */
-  --size-zero: 0px; /** No size */
-  --size-xxs: 2px; /** A 2px xxs size step */
-  --size-xs: 4px; /** A 4px xs size step */
-  --size-sm: 8px; /** A 8px sm size step */
-  --size-md: 10px; /** A 10px md size step */
-  --size-lg: 12px; /** A 12px lg size step */
-  --size-xl: 14px; /** A 14px xl size step */
-  --size-2xl: 16px; /** A 16px 2xl size step */
-  --size-3xl: 18px; /** A 18px 3xl size step */
-  --size-4xl: 20px; /** A 20px 4xl size step */
-  --size-5xl: 22px; /** A 22px 5xl size step */
-  --size-6xl: 24px; /** A 24px 6xl size step */
-  --size-7xl: 26px; /** A 26px 7xl size step */
-  --size-8xl: 32px; /** A 32px 8xl size step */
-  --size-9xl: 37px; /** A 37px 9xl size step */
-  --size-10xl: 42px; /** A 42px 10xl size step */
-  --size-11xl: 47px; /** A 47px 11xl size step */
-  --size-12xl: 52px; /** A 52px 12xl size step */
-  --size-13xl: 62px; /** A 62px 13xl size step */
-  --size-14xl: 72px; /** A 72px 14xl size step */
-  --size-15xl: 82px; /** A 82px 15xl size step */
-  --size-16xl: 92px; /** A 92px 16xl size step */
-  --size-17xl: 102px; /** A 102px 17xl size step */
-  --size-18xl: 112px; /** A 112px 18xl size step */
-  --size-19xl: 112px; /** A 112px 19xl size step */
-  --size-20xl: 122px; /** A 122px 20xl size step */
-  --size-21xl: 132px; /** A 132px 21xl size step */
-  --size-22xl: 142px; /** A 142px 22xl size step */
-  --size-23xl: 152px; /** A 152px 23xl size step */
-  --size-24xl: 162px; /** A 162px 24xl size step */
-  --size-25xl: 172px; /** A 172px 25xl size step */
-  --size-26xl: 182px; /** A 182px 26xl size step */
-  --size-27xl: 192px; /** A 192px 27xl size step */
-  --size-28xl: 202px; /** A 202px 28xl size step */
-  --size-29xl: 212px; /** A 212px 29xl size step */
-  --size-30xl: 222px; /** A 222px 30xl size step */
-  --size-31xl: 232px; /** A 232px 31xl size step */
-  --size-32xl: 242px; /** A 242px 32xl size step */
-  --size-33xl: 252px; /** A 252px 33xl size step */
-  --size-34xl: 262px; /** A 262px 34xl size step */
-  --size-35xl: 272px; /** A 272px 35xl size step */
-  --size-36xl: 282px; /** A 282px 36xl size step */
-  --size-37xl: 284px; /** A 284px 37xl size step */
-  --z-index-0: 0; /** Base stacking level */
-  --z-index-10: 100; /** Low stacking level */
-  --z-index-20: 200; /** Raised stacking level */
-  --z-index-30: 300; /** Elevated stacking level */
-  --z-index-40: 400; /** High stacking level */
-  --z-index-50: 500; /** Overlay stacking level */
-  --z-index-60: 600; /** Modal stacking level */
-  --z-index-70: 700; /** Popover stacking level */
-  --z-index-80: 800; /** Toast stacking level */
-  --z-index-90: 900; /** Topmost stacking level */
-  --spacing-zero: 0px; /** No spacing */
-  --spacing-xxs: 0.5px; /** A 0.5px xxs spacing step (from size.xxs via sizeToSpace) */
-  --spacing-xs: 1px; /** A 1px xs spacing step (from size.xs via sizeToSpace) */
-  --spacing-sm: 1.5px; /** A 1.5px sm spacing step (from size.sm via sizeToSpace) */
-  --spacing-md: 2px; /** A 2px md spacing step (from size.md via sizeToSpace) */
-  --spacing-lg: 4px; /** A 4px lg spacing step (from size.lg via sizeToSpace) */
-  --spacing-xl: 7px; /** A 7px xl spacing step (from size.xl via sizeToSpace) */
-  --spacing-2xl: 10px; /** A 10px 2xl spacing step (from size.2xl via sizeToSpace) */
-  --spacing-3xl: 13px; /** A 13px 3xl spacing step (from size.3xl via sizeToSpace) */
-  --spacing-4xl: 16px; /** A 16px 4xl spacing step (from size.4xl via sizeToSpace) */
-  --spacing-5xl: 18px; /** A 18px 5xl spacing step (from size.5xl via sizeToSpace) */
-  --spacing-6xl: 21px; /** A 21px 6xl spacing step (from size.6xl via sizeToSpace) */
-  --spacing-7xl: 24px; /** A 24px 7xl spacing step (from size.7xl via sizeToSpace) */
-  --spacing-8xl: 32px; /** A 32px 8xl spacing step (from size.8xl via sizeToSpace) */
-  --spacing-9xl: 39px; /** A 39px 9xl spacing step (from size.9xl via sizeToSpace) */
-  --spacing-10xl: 46px; /** A 46px 10xl spacing step (from size.10xl via sizeToSpace) */
-  --spacing-11xl: 53px; /** A 53px 11xl spacing step (from size.11xl via sizeToSpace) */
-  --spacing-12xl: 60px; /** A 60px 12xl spacing step (from size.12xl via sizeToSpace) */
-  --spacing-13xl: 74px; /** A 74px 13xl spacing step (from size.13xl via sizeToSpace) */
-  --spacing-14xl: 88px; /** A 88px 14xl spacing step (from size.14xl via sizeToSpace) */
-  --spacing-15xl: 102px; /** A 102px 15xl spacing step (from size.15xl via sizeToSpace) */
-  --spacing-16xl: 116px; /** A 116px 16xl spacing step (from size.16xl via sizeToSpace) */
-  --spacing-17xl: 130px; /** A 130px 17xl spacing step (from size.17xl via sizeToSpace) */
-  --spacing-18xl: 144px; /** A 144px 18xl spacing step (from size.18xl via sizeToSpace) */
-  --spacing-19xl: 144px; /** A 144px 19xl spacing step (from size.19xl via sizeToSpace) */
-  --spacing-20xl: 158px; /** A 158px 20xl spacing step (from size.20xl via sizeToSpace) */
-  --spacing-21xl: 172px; /** A 172px 21xl spacing step (from size.21xl via sizeToSpace) */
-  --spacing-22xl: 186px; /** A 186px 22xl spacing step (from size.22xl via sizeToSpace) */
-  --font-size-xxs: 0.75rem; /** Extra small font size (0.75rem) */
-  --font-size-xs: 0.875rem; /** Extra small font size (0.875rem) */
-  --font-size-sm: 1rem; /** Small font size (1rem) */
-  --font-size-md: 1.125rem; /** Medium font size (1.125rem) */
-  --font-size-lg: 1.25rem; /** Large font size (1.25rem) */
-  --font-size-xl: 1.5rem; /** Extra large font size (1.5rem) */
-  --font-size-2xl: 1.875rem; /** 2X large font size (1.875rem) */
-  --font-size-3xl: 2.25rem; /** 3X large font size (2.25rem) */
-  --font-size-4xl: 3rem; /** 4X large font size (3rem) */
-  --font-size-5xl: 3.75rem; /** 5X large font size (3.75rem) */
-  --font-size-6xl: 4.5rem; /** 6X large font size (4.5rem) */
-  --font-size-7xl: 6rem; /** 7X large font size (6rem) */
-  --font-size-8xl: 8rem; /** 8X large font size (8rem) */
-  --font-size-9xl: 10rem; /** 9X large font size (10rem) */
-  --font-size-10xl: 12rem; /** 10X large font size (12rem) */
-  --font-size-11xl: 14rem; /** 11X large font size (14rem) */
-  --font-size-12xl: 16rem; /** 12X large font size (16rem) */
-  --font-size-13xl: 18rem; /** 13X large font size (18rem) */
-  --font-size-14xl: 20rem; /** 14X large font size (20rem) */
-  --font-size-15xl: 24rem; /** 15X large font size (24rem) */
-  --font-weight-thin: 100; /** Thin font weight (100) */
-  --font-weight-extralight: 200; /** Extra light font weight (200) */
-  --font-weight-light: 300; /** Light font weight (300) */
-  --font-weight-normal: 400; /** Normal font weight (400) */
-  --font-weight-medium: 500; /** Medium font weight (500) */
-  --font-weight-semibold: 600; /** Semibold font weight (600) */
-  --font-weight-bold: 700; /** Bold font weight (700) */
-  --font-weight-extrabold: 800; /** Extra bold font weight (800) */
-  --font-weight-black: 900; /** Black font weight (900) */
-  --letter-spacing-tighter: -0.05rem; /** Tighter letter spacing (-0.05em) */
-  --letter-spacing-tight: -0.025rem; /** Tight letter spacing (-0.025em) */
-  --letter-spacing-normal: 0rem; /** Normal letter spacing (0em) */
-  --letter-spacing-wide: 0.025rem; /** Wide letter spacing (0.025em) */
-  --letter-spacing-wider: 0.05rem; /** Wider letter spacing (0.05em) */
-  --letter-spacing-widest: 0.1rem; /** Widest letter spacing (0.1em) */
-  --line-height-none: 1; /** No extra line height (1) */
-  --line-height-tight: 1.25; /** Tight line height (1.25) */
-  --line-height-snug: 1.375; /** Snug line height (1.375) */
-  --line-height-normal: 1.5; /** Normal line height (1.5) */
-  --line-height-relaxed: 1.625; /** Relaxed line height (1.625) */
-  --line-height-loose: 2; /** Loose line height (2) */
-  --line-height-xs: 1.333333; /** Line height for text-xs (calc(1 / 0.75)) */
-  --line-height-sm: 1.428571; /** Line height for text-sm (calc(1.25 / 0.875)) */
-  --line-height-md: 1.5; /** Line height for text-md (calc(1.5 / 1)) */
-  --line-height-lg: 1.555556; /** Line height for text-lg (calc(1.75 / 1.125)) */
-  --line-height-xl: 1.4; /** Line height for text-xl (calc(1.75 / 1.25)) */
-  --line-height-2xl: 1.333333; /** Line height for text-2xl (calc(2 / 1.5)) */
-  --line-height-3xl: 1.2; /** Line height for text-3xl (calc(2.25 / 1.875)) */
-  --line-height-4xl: 1.111111; /** Line height for text-4xl (calc(2.5 / 2.25)) */
-  --line-height-5xl: 1; /** Line height for text-5xl (1) */
-  --line-height-6xl: 1; /** Line height for text-6xl (1) */
-  --line-height-7xl: 1; /** Line height for text-7xl (1) */
-  --line-height-8xl: 1; /** Line height for text-8xl (1) */
-  --line-height-9xl: 1; /** Line height for text-9xl (1) */
-  --line-height-10xl: 1; /** Line height for text-10xl (1) */
-  --border-radius-zero: 0rem; /** No radius */
-  --border-radius-xs: 0.125rem; /** Extra small radius (0.125rem) */
-  --border-radius-sm: 0.25rem; /** Small radius (0.25rem) */
-  --border-radius-md: 0.375rem; /** Medium radius (0.375rem) */
-  --border-radius-lg: 0.5rem; /** Large radius (0.5rem) */
-  --border-radius-xl: 0.75rem; /** Extra large radius (0.75rem) */
-  --border-radius-2xl: 1rem; /** 2X large radius (1rem) */
-  --border-radius-3xl: 1.5rem; /** 3X large radius (1.5rem) */
-  --border-radius-4xl: 2rem; /** 4X large radius (2rem) */
-  --border-radius-full: 100%; /** Full radius (100%) */
-  --border-radius-container: 0.5rem; /** The border radius use for large containers */
-  --border-radius-card: 0.375rem; /** The border radius use for cards */
-  --border-radius-button: 0.375rem; /** The border radius use for triggers, such as buttons and badges */
-  --border-radius-control: 0.375rem; /** The border radius use for controls, such as inputs and selects */
-  --border-radius-dialog: 0.75rem; /** The border radius use for dialogs */
-  --border-radius-sheet: 0rem; /** The border radius use for sheets (none) */
-  --border-radius-drawer: 2rem; /** The border radius use for drawers */
-  --border-radius-popover: 0.375rem; /** The border radius use for popovers */
-  --border-radius-tooltip: 0.375rem; /** The border radius use for tooltips */
-  --shadow-2xs: 0px 1px 0px 0px #0000000d; /** 2X small shadow */
-  --shadow-xs: 0px 1px 2px 0px #0000000d; /** Extra small shadow */
-  --shadow-sm: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** Small shadow */
-  --shadow-md: 0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a; /** Medium shadow */
-  --shadow-lg: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a; /** Large shadow */
-  --shadow-xl: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a; /** Extra large shadow */
-  --shadow-2xl: 0px 25px 50px -12px #00000040; /** 2X large shadow */
-  --inset-shadow-2xs: inset 0px 1px 0px 0px #0000000d; /** 2X small inset shadow */
-  --inset-shadow-xs: inset 0px 1px 1px 0px #0000000d; /** Extra small inset shadow */
-  --inset-shadow-sm: inset 0px 2px 4px 0px #0000000d; /** Small inset shadow */
-  --drop-shadow-xs: 0px 1px 1px 0px #0000000d; /** Extra small drop shadow */
-  --drop-shadow-sm: 0px 1px 2px 0px #00000026; /** Small drop shadow */
-  --drop-shadow-md: 0px 3px 3px 0px #0000001f; /** Medium drop shadow */
-  --drop-shadow-lg: 0px 4px 4px 0px #00000026; /** Large drop shadow */
-  --drop-shadow-xl: 0px 9px 7px 0px #0000001a; /** Extra large drop shadow */
-  --drop-shadow-2xl: 0px 25px 25px 0px #00000026; /** 2X large drop shadow */
-  --text-shadow-2xs: 0px 1px 0px 0px #00000026; /** 2X small text shadow */
-  --text-shadow-xs: 0px 1px 1px 0px #00000033; /** Extra small text shadow */
-  --text-shadow-sm: 0px 1px 0px 0px #00000013, 0px 1px 1px 0px #00000013, 0px 2px 2px 0px #00000013; /** Small text shadow */
-  --text-shadow-md: 0px 1px 1px 0px #0000001a, 0px 1px 2px 0px #0000001a, 0px 2px 4px 0px #0000001a; /** Medium text shadow */
-  --text-shadow-lg: 0px 1px 2px 0px #0000001a, 0px 3px 2px 0px #0000001a, 0px 4px 8px 0px #0000001a; /** Large text shadow */
-  --ease-in: cubic-bezier(0.4, 0, 1, 1); /** Ease-in cubic bezier */
-  --ease-out: cubic-bezier(0, 0, 0.2, 1); /** Ease-out cubic bezier */
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); /** Ease-in-out cubic bezier */
-  --durations-instant: [object Object]; /** Instant duration */
-  --durations-short: [object Object]; /** Short duration */
-  --durations-medium: [object Object]; /** Medium duration */
-  --durations-long: [object Object]; /** Long duration */
-  --blur-xs: 4px; /** Extra small blur (4px) */
-  --blur-sm: 8px; /** Small blur (8px) */
-  --blur-md: 12px; /** Medium blur (12px) */
-  --blur-lg: 16px; /** Large blur (16px) */
-  --blur-xl: 24px; /** Extra large blur (24px) */
-  --blur-2xl: 40px; /** 2X large blur (40px) */
-  --blur-3xl: 64px; /** 3X large blur (64px) */
-  --ring-base: 0px 0px 0px 3px #15151813; /** The base ring variant */
-  --ring-base-subtle: 0px 0px 0px 1px #15151813; /** The base subtle ring variant */
-  --ring-base-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #15151813; /** The base ring variant with a 3px offset */
-  --ring-base-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #15151813; /** The base subtle ring variant with a 3px offset */
-  --ring-brand: 0px 0px 0px 3px #1fb2a620; /** The brand ring variant */
-  --ring-brand-subtle: 0px 0px 0px 1px #1fb2a620; /** The brand subtle ring variant */
-  --ring-brand-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #1fb2a620; /** The brand ring variant with a 3px offset */
-  --ring-brand-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #1fb2a620; /** The brand subtle ring variant with a 3px offset */
-  --ring-danger: 0px 0px 0px 3px #8e223e20; /** The danger ring variant */
-  --ring-danger-subtle: 0px 0px 0px 1px #8e223e20; /** The danger subtle ring variant */
-  --ring-danger-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #8e223e20; /** The danger ring variant with a 3px offset */
-  --ring-danger-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #8e223e20; /** The danger subtle ring variant with a 3px offset */
-  --ring-warning: 0px 0px 0px 3px #76541720; /** The warning ring variant */
-  --ring-warning-subtle: 0px 0px 0px 1px #76541720; /** The warning subtle ring variant */
-  --ring-warning-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #76541720; /** The warning ring variant with a 3px offset */
-  --ring-warning-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #76541720; /** The warning subtle ring variant with a 3px offset */
-  --ring-success: 0px 0px 0px 3px #216b5320; /** The success ring variant */
-  --ring-success-subtle: 0px 0px 0px 1px #216b5320; /** The success subtle ring variant */
-  --ring-success-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #216b5320; /** The success ring variant with a 3px offset */
-  --ring-success-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #216b5320; /** The success subtle ring variant with a 3px offset */
-  --ring-info: 0px 0px 0px 3px #2055b320; /** The info ring variant */
-  --ring-info-subtle: 0px 0px 0px 1px #2055b320; /** The info subtle ring variant */
-  --ring-info-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #2055b320; /** The info ring variant with a 3px offset */
-  --ring-info-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #2055b320; /** The info subtle ring variant with a 3px offset */
-  --ring-discovery: 0px 0px 0px 3px #59439520; /** The discovery ring variant */
-  --ring-discovery-subtle: 0px 0px 0px 1px #59439520; /** The discovery subtle ring variant */
-  --ring-discovery-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #59439520; /** The discovery ring variant with a 3px offset */
-  --ring-discovery-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #59439520; /** The discovery subtle ring variant with a 3px offset */
-  --ring-positive: 0px 0px 0px 3px #216b5320; /** The positive ring variant */
-  --ring-positive-subtle: 0px 0px 0px 1px #216b5320; /** The positive subtle ring variant */
-  --ring-positive-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #216b5320; /** The positive ring variant with a 3px offset */
-  --ring-positive-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #216b5320; /** The positive subtle ring variant with a 3px offset */
-  --ring-negative: 0px 0px 0px 3px #8e223e20; /** The negative ring variant */
-  --ring-negative-subtle: 0px 0px 0px 1px #8e223e20; /** The negative subtle ring variant */
-  --ring-negative-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #8e223e20; /** The negative ring variant with a 3px offset */
-  --ring-negative-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #8e223e20; /** The negative subtle ring variant with a 3px offset */
-  --typography-display-hero: 600 3.75rem/1.375 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - hero typography variant */
-  --typography-display-lg: 600 2.25rem/1.375 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - large typography variant */
-  --typography-display-md: 700 1.5rem/1.5 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - medium typography variant */
-  --typography-display-sm: 700 1.25rem/1.5 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - small typography variant */
-  --typography-title-lg: 500 1.25rem/1.5 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The title large typography variant */
-  --typography-title-sm: 500 0.875rem/1.5 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The title small typography variant */
-  --typography-body: 400 1.125rem/1.5 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The body typography variant */
-  --typography-caption: italic 400 1rem/1.5 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The caption typography variant */
-  --typography-eyebrow: 600 1.125rem/1.5 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The eyebrow typography variant */
-  --typography-button: 600 1.125rem/1.5 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The button typography variant */
-  --typography-code: 400 1.25rem/1.375 'Google Sans Code'; /** The code typography variant */
+  --cu-color-transparent: rgba(217, 217, 217, 0); /** Fully transparent white. */
+  --cu-color-black: #2e2e30; /** Near-black neutral. */
+  --cu-color-white: #d9d9d9; /** Pure white. */
+  --cu-color-neutral-1: #d5d5d5; /** Bright off-white gray. */
+  --cu-color-neutral-2: #cfcfcf; /** Very light gray. */
+  --cu-color-neutral-3: #cacaca; /** Light gray. */
+  --cu-color-neutral-4: #c4c4c4; /** Soft light gray. */
+  --cu-color-neutral-5: #b4b4b4; /** Pale gray. */
+  --cu-color-neutral-6: #a1a1a2; /** Light-medium gray. */
+  --cu-color-neutral-7: #8f8f90; /** Medium gray. */
+  --cu-color-neutral-8: #7d7d7e; /** Dark medium gray. */
+  --cu-color-neutral-9: #6a6a6c; /** Deep gray. */
+  --cu-color-neutral-10: #57575a; /** Charcoal gray. */
+  --cu-color-neutral-11: #444548; /** Dark charcoal gray. */
+  --cu-color-neutral-12: #3f4043; /** Deep graphite gray. */
+  --cu-color-neutral-13: #3c3c3e; /** Near-black graphite. */
+  --cu-color-neutral-14: #343438; /** Almost black gray. */
+  --cu-color-red-1: #c28393; /** Pale coral red. */
+  --cu-color-red-2: #bc7788; /** Light coral red. */
+  --cu-color-red-3: #b76a7e; /** Soft coral red. */
+  --cu-color-red-4: #b15e73; /** Warm salmon red. */
+  --cu-color-red-5: #ab5268; /** Muted raspberry red. */
+  --cu-color-red-6: #984a5e; /** Deep raspberry red. */
+  --cu-color-red-7: #864254; /** Rich raspberry red. */
+  --cu-color-red-8: #733a49; /** Dark burgundy red. */
+  --cu-color-red-9: #61323e; /** Deep wine red. */
+  --cu-color-orange-1: #d7ad96; /** Pale peach orange. */
+  --cu-color-orange-2: #d2a287; /** Light apricot orange. */
+  --cu-color-orange-3: #cc9678; /** Soft sandy orange. */
+  --cu-color-orange-4: #c78a69; /** Light peach orange. */
+  --cu-color-orange-5: #c17f5a; /** Muted warm orange. */
+  --cu-color-orange-6: #b4714b; /** Medium tangerine orange. */
+  --cu-color-orange-7: #a26238; /** Bright amber orange. */
+  --cu-color-orange-8: #92542a; /** Rich burnt orange. */
+  --cu-color-orange-9: #814825; /** Deep burnt orange. */
+  --cu-color-yellow-1: #d5b67d; /** Pale wheat yellow. */
+  --cu-color-yellow-2: #d0ad6d; /** Light sandy yellow. */
+  --cu-color-yellow-3: #caa45c; /** Soft golden yellow. */
+  --cu-color-yellow-4: #c59b4d; /** Muted amber yellow. */
+  --cu-color-yellow-5: #c0984d; /** Medium honey yellow. */
+  --cu-color-yellow-6: #b5904d; /** Warm wheat yellow. */
+  --cu-color-yellow-7: #a58549; /** Rich golden yellow. */
+  --cu-color-yellow-8: #917542; /** Deep honey yellow. */
+  --cu-color-yellow-9: #786137; /** Dark ochre yellow. */
+  --cu-color-green-1: #b2d5b8; /** Pale mint green. */
+  --cu-color-green-2: #97c6a5; /** Light spring green. */
+  --cu-color-green-3: #7bb796; /** Soft leaf green. */
+  --cu-color-green-4: #60a88a; /** Muted leaf green. */
+  --cu-color-green-5: #55957d; /** Cool mint green. */
+  --cu-color-green-6: #49836f; /** Medium jade green. */
+  --cu-color-green-7: #3e7160; /** Rich jade green. */
+  --cu-color-green-8: #325d52; /** Deep forest green. */
+  --cu-color-green-9: #284b41; /** Dark emerald green. */
+  --cu-color-blue-1: #96b2e1; /** Pale periwinkle blue. */
+  --cu-color-blue-2: #85a5dc; /** Light periwinkle blue. */
+  --cu-color-blue-3: #7598d7; /** Light sky blue. */
+  --cu-color-blue-4: #638cd2; /** Soft cornflower blue. */
+  --cu-color-blue-5: #527fcd; /** Bright cobalt blue. */
+  --cu-color-blue-6: #4f73b1; /** Medium azure blue. */
+  --cu-color-blue-7: #45649b; /** Deep azure blue. */
+  --cu-color-blue-8: #3b5685; /** Vivid cerulean blue. */
+  --cu-color-blue-9: #31486f; /** Rich cerulean blue. */
+  --cu-color-purple-1: #b4a9d2; /** Pale lavender purple. */
+  --cu-color-purple-2: #a79acb; /** Light periwinkle purple. */
+  --cu-color-purple-3: #9b8cc3; /** Soft lavender purple. */
+  --cu-color-purple-4: #8e7dbb; /** Soft violet purple. */
+  --cu-color-purple-5: #8272aa; /** Muted indigo purple. */
+  --cu-color-purple-6: #756799; /** Medium periwinkle purple. */
+  --cu-color-purple-7: #675a8a; /** Deep periwinkle purple. */
+  --cu-color-purple-8: #594d7a; /** Vivid indigo purple. */
+  --cu-color-purple-9: #4c416a; /** Rich slate indigo. */
+  --cu-color-pink-1: #d9aac8; /** Pale blush pink. */
+  --cu-color-pink-2: #d492b9; /** Light blush pink. */
+  --cu-color-pink-3: #ca87b0; /** Soft rose pink. */
+  --cu-color-pink-4: #c57ba8; /** Bright fuchsia pink. */
+  --cu-color-pink-5: #c079a5; /** Vivid fuchsia pink. */
+  --cu-color-pink-6: #be77a3; /** Rich magenta pink. */
+  --cu-color-pink-7: #a86d91; /** Deep fuchsia pink. */
+  --cu-color-pink-8: #875975; /** Deep berry pink. */
+  --cu-color-pink-9: #5a3b4f; /** Dark plum pink. */
+  --cu-color-ink-emphasis: #444548; /** Primary text and icon color for high-emphasis content. */
+  --cu-color-ink-body: #6a6a6c; /** Default text and icon color for standard content. */
+  --cu-color-ink-subtle: #a1a1a2; /** Softer text and icon color for supporting content. */
+  --cu-color-ink-subtlest: #b4b4b4; /** Softest text and icon color for supporting content. */
+  --cu-color-surface-sunken: #c4c4c4; /** Recessed surface for inset controls and grouped content. */
+  --cu-color-surface-canvas: #cacaca; /** Base application canvas surface. */
+  --cu-color-surface-elevated: #cfcfcf; /** Raised surface for cards and controls. */
+  --cu-color-surface-floating: #d5d5d5; /** Floating surface for menus, popovers, and dialogs. */
+  --cu-color-surface-overlay: #d9d9d9; /** Topmost surface for transient overlays. */
+  --cu-color-surface-sunken-hover: #969696; /** Recessed surface for inset controls and grouped content. (hover, 23% darker) */
+  --cu-color-surface-sunken-active: #9e9e9e; /** Recessed surface for inset controls and grouped content. (active, 19% darker) */
+  --cu-color-surface-sunken-inactive: #d9d9d9; /** Recessed surface for inset controls and grouped content. (inactive, 20% brighter) */
+  --cu-color-surface-sunken-disabled: rgba(196, 196, 196, 0.4); /** Recessed surface for inset controls and grouped content. (disabled, 40% opacity) */
+  --cu-color-surface-canvas-hover: #9a9a9a; /** Base application canvas surface. (hover, 23% darker) */
+  --cu-color-surface-canvas-active: #a3a3a3; /** Base application canvas surface. (active, 19% darker) */
+  --cu-color-surface-canvas-inactive: #d9d9d9; /** Base application canvas surface. (inactive, 20% brighter) */
+  --cu-color-surface-canvas-disabled: rgba(202, 202, 202, 0.4); /** Base application canvas surface. (disabled, 40% opacity) */
+  --cu-color-surface-elevated-hover: #9e9e9e; /** Raised surface for cards and controls. (hover, 23% darker) */
+  --cu-color-surface-elevated-active: #a6a6a6; /** Raised surface for cards and controls. (active, 19% darker) */
+  --cu-color-surface-elevated-inactive: #d9d9d9; /** Raised surface for cards and controls. (inactive, 20% brighter) */
+  --cu-color-surface-elevated-disabled: rgba(207, 207, 207, 0.4); /** Raised surface for cards and controls. (disabled, 40% opacity) */
+  --cu-color-surface-floating-hover: #a3a3a3; /** Floating surface for menus, popovers, and dialogs. (hover, 23% darker) */
+  --cu-color-surface-floating-active: #ababab; /** Floating surface for menus, popovers, and dialogs. (active, 19% darker) */
+  --cu-color-surface-floating-inactive: #d9d9d9; /** Floating surface for menus, popovers, and dialogs. (inactive, 20% brighter) */
+  --cu-color-surface-floating-disabled: rgba(213, 213, 213, 0.4); /** Floating surface for menus, popovers, and dialogs. (disabled, 40% opacity) */
+  --cu-color-surface-overlay-hover: #a6a6a6; /** Topmost surface for transient overlays. (hover, 23% darker) */
+  --cu-color-surface-overlay-active: #aeaeae; /** Topmost surface for transient overlays. (active, 19% darker) */
+  --cu-color-surface-overlay-inactive: #d9d9d9; /** Topmost surface for transient overlays. (inactive, 20% brighter) */
+  --cu-color-surface-overlay-disabled: rgba(217, 217, 217, 0.4); /** Topmost surface for transient overlays. (disabled, 40% opacity) */
+  --cu-color-required: #864254; /** Indicator color for required form fields. */
+  --cu-color-link: #45649b; /** Interactive color for links and linked text. */
+  --cu-color-hairline: #a1a1a2; /** Subtle color for hairline borders and separators. */
+  --cu-color-selection-background: #449a93; /** Background color of selected text, using the brand accent. */
+  --cu-color-selection-foreground: #d5d5d5; /** Color of selected text, placed on the brand accent. */
+  --cu-color-accent-base: #343438; /** Primary neutral accent for emphasized controls and content. */
+  --cu-color-accent-brand: #449a93; /** Brand accent for primary actions and emphasis. */
+  --cu-color-accent-danger: #864254; /** Danger accent for destructive actions and critical states. */
+  --cu-color-accent-negative: #864254; /** Negative accent for error states and invalid input. */
+  --cu-color-accent-warning: #786137; /** Warning accent for cautionary states. */
+  --cu-color-accent-success: #3e7160; /** Success accent for confirmed states. */
+  --cu-color-accent-positive: #3e7160; /** Positive accent for favorable states. */
+  --cu-color-accent-info: #45649b; /** Informational accent for guidance and neutral status. */
+  --cu-color-accent-discovery: #675a8a; /** Discovery accent for new or exploratory content. */
+  --cu-color-accent-base-hover: #3e3e41; /** Primary neutral accent for emphasized controls and content. (hover, 30% brighter) */
+  --cu-color-accent-base-active: #2e2e30; /** Primary neutral accent for emphasized controls and content. (active, light base primitive) */
+  --cu-color-accent-base-inactive: #282828; /** Primary neutral accent for emphasized controls and content. (inactive, 40% darker) */
+  --cu-color-accent-base-disabled: #343437; /** Primary neutral accent for emphasized controls and content. (disabled, 80% saturation) */
+  --cu-color-accent-brand-hover: #26827a; /** Brand accent for primary actions and emphasis. (hover, 23% darker) */
+  --cu-color-accent-brand-active: #27867f; /** Brand accent for primary actions and emphasis. (active, 19% darker) */
+  --cu-color-accent-brand-inactive: #6ebcb4; /** Brand accent for primary actions and emphasis. (inactive, 20% brighter) */
+  --cu-color-accent-brand-disabled: #639993; /** Brand accent for primary actions and emphasis. (disabled, 80% saturation) */
+  --cu-color-accent-danger-hover: #77233f; /** Danger accent for destructive actions and critical states. (hover, 23% darker) */
+  --cu-color-accent-danger-active: #7a2342; /** Danger accent for destructive actions and critical states. (active, 19% darker) */
+  --cu-color-accent-danger-inactive: #975967; /** Danger accent for destructive actions and critical states. (inactive, 20% brighter) */
+  --cu-color-accent-danger-disabled: #7f4c56; /** Danger accent for destructive actions and critical states. (disabled, 80% saturation) */
+  --cu-color-accent-negative-hover: #77233f; /** Negative accent for error states and invalid input. (hover, 23% darker) */
+  --cu-color-accent-negative-active: #7a2342; /** Negative accent for error states and invalid input. (active, 19% darker) */
+  --cu-color-accent-negative-inactive: #975967; /** Negative accent for error states and invalid input. (inactive, 20% brighter) */
+  --cu-color-accent-negative-disabled: #7f4c56; /** Negative accent for error states and invalid input. (disabled, 80% saturation) */
+  --cu-color-accent-warning-hover: #6a4f1f; /** Warning accent for cautionary states. (hover, 23% darker) */
+  --cu-color-accent-warning-active: #6e5220; /** Warning accent for cautionary states. (active, 19% darker) */
+  --cu-color-accent-warning-inactive: #887351; /** Warning accent for cautionary states. (inactive, 20% brighter) */
+  --cu-color-accent-warning-disabled: #746245; /** Warning accent for cautionary states. (disabled, 80% saturation) */
+  --cu-color-accent-success-hover: #1d6550; /** Success accent for confirmed states. (hover, 23% darker) */
+  --cu-color-accent-success-active: #1e6853; /** Success accent for confirmed states. (active, 19% darker) */
+  --cu-color-accent-success-inactive: #578172; /** Success accent for confirmed states. (inactive, 20% brighter) */
+  --cu-color-accent-success-disabled: #4b6e61; /** Success accent for confirmed states. (disabled, 80% saturation) */
+  --cu-color-accent-positive-hover: #1d6550; /** Positive accent for favorable states. (hover, 23% darker) */
+  --cu-color-accent-positive-active: #1e6853; /** Positive accent for favorable states. (active, 19% darker) */
+  --cu-color-accent-positive-inactive: #578172; /** Positive accent for favorable states. (inactive, 20% brighter) */
+  --cu-color-accent-positive-disabled: #4b6e61; /** Positive accent for favorable states. (disabled, 80% saturation) */
+  --cu-color-accent-info-hover: #284c89; /** Informational accent for guidance and neutral status. (hover, 23% darker) */
+  --cu-color-accent-info-active: #2b508c; /** Informational accent for guidance and neutral status. (active, 19% darker) */
+  --cu-color-accent-info-inactive: #5a79af; /** Informational accent for guidance and neutral status. (inactive, 20% brighter) */
+  --cu-color-accent-info-disabled: #4e6691; /** Informational accent for guidance and neutral status. (disabled, 80% saturation) */
+  --cu-color-accent-discovery-hover: #534377; /** Discovery accent for new or exploratory content. (hover, 23% darker) */
+  --cu-color-accent-discovery-active: #56477a; /** Discovery accent for new or exploratory content. (active, 19% darker) */
+  --cu-color-accent-discovery-inactive: #796d9d; /** Discovery accent for new or exploratory content. (inactive, 20% brighter) */
+  --cu-color-accent-discovery-disabled: #665c82; /** Discovery accent for new or exploratory content. (disabled, 80% saturation) */
+  --cu-color-on-accent-base: #cfcfcf; /** Content color placed on neutral accent backgrounds. */
+  --cu-color-on-accent-base-hover: #8f8f8f; /** Content color placed on neutral accent backgrounds. (hover, 30% darker) */
+  --cu-color-on-accent-base-active: #2e2e30; /** Content color placed on neutral accent backgrounds. (active, light base primitive) */
+  --cu-color-on-accent-base-inactive: #282828; /** Content color placed on neutral accent backgrounds. (inactive, 40% darker) */
+  --cu-color-on-accent-base-disabled: rgba(207, 207, 207, 0.4); /** Content color placed on neutral accent backgrounds. (disabled, 40% opacity) */
+  --cu-color-on-accent-brand: #d5d5d5; /** Brand accent for primary actions and emphasis. */
+  --cu-color-on-accent-danger: #d5d5d5; /** Danger accent for destructive actions and critical states. */
+  --cu-color-on-accent-negative: #d5d5d5; /** Negative accent for error states and invalid input. */
+  --cu-color-on-accent-warning: #d5d5d5; /** Warning accent for cautionary states. */
+  --cu-color-on-accent-success: #d5d5d5; /** Success accent for confirmed states. */
+  --cu-color-on-accent-positive: #d5d5d5; /** Positive accent for favorable states. */
+  --cu-color-on-accent-info: #d5d5d5; /** Informational accent for guidance and neutral status. */
+  --cu-color-on-accent-discovery: #d5d5d5; /** Discovery accent for new or exploratory content. */
+  --cu-color-on-accent-brand-hover: #a3a3a3; /** Brand accent for primary actions and emphasis. (hover, 23% darker) */
+  --cu-color-on-accent-brand-active: #ababab; /** Brand accent for primary actions and emphasis. (active, 19% darker) */
+  --cu-color-on-accent-brand-inactive: #d9d9d9; /** Brand accent for primary actions and emphasis. (inactive, 20% brighter) */
+  --cu-color-on-accent-brand-disabled: rgba(213, 213, 213, 0.4); /** Brand accent for primary actions and emphasis. (disabled, 40% opacity) */
+  --cu-color-on-accent-danger-hover: #a3a3a3; /** Danger accent for destructive actions and critical states. (hover, 23% darker) */
+  --cu-color-on-accent-danger-active: #ababab; /** Danger accent for destructive actions and critical states. (active, 19% darker) */
+  --cu-color-on-accent-danger-inactive: #d9d9d9; /** Danger accent for destructive actions and critical states. (inactive, 20% brighter) */
+  --cu-color-on-accent-danger-disabled: rgba(213, 213, 213, 0.4); /** Danger accent for destructive actions and critical states. (disabled, 40% opacity) */
+  --cu-color-on-accent-negative-hover: #a3a3a3; /** Negative accent for error states and invalid input. (hover, 23% darker) */
+  --cu-color-on-accent-negative-active: #ababab; /** Negative accent for error states and invalid input. (active, 19% darker) */
+  --cu-color-on-accent-negative-inactive: #d9d9d9; /** Negative accent for error states and invalid input. (inactive, 20% brighter) */
+  --cu-color-on-accent-negative-disabled: rgba(213, 213, 213, 0.4); /** Negative accent for error states and invalid input. (disabled, 40% opacity) */
+  --cu-color-on-accent-warning-hover: #a3a3a3; /** Warning accent for cautionary states. (hover, 23% darker) */
+  --cu-color-on-accent-warning-active: #ababab; /** Warning accent for cautionary states. (active, 19% darker) */
+  --cu-color-on-accent-warning-inactive: #d9d9d9; /** Warning accent for cautionary states. (inactive, 20% brighter) */
+  --cu-color-on-accent-warning-disabled: rgba(213, 213, 213, 0.4); /** Warning accent for cautionary states. (disabled, 40% opacity) */
+  --cu-color-on-accent-success-hover: #a3a3a3; /** Success accent for confirmed states. (hover, 23% darker) */
+  --cu-color-on-accent-success-active: #ababab; /** Success accent for confirmed states. (active, 19% darker) */
+  --cu-color-on-accent-success-inactive: #d9d9d9; /** Success accent for confirmed states. (inactive, 20% brighter) */
+  --cu-color-on-accent-success-disabled: rgba(213, 213, 213, 0.4); /** Success accent for confirmed states. (disabled, 40% opacity) */
+  --cu-color-on-accent-positive-hover: #a3a3a3; /** Positive accent for favorable states. (hover, 23% darker) */
+  --cu-color-on-accent-positive-active: #ababab; /** Positive accent for favorable states. (active, 19% darker) */
+  --cu-color-on-accent-positive-inactive: #d9d9d9; /** Positive accent for favorable states. (inactive, 20% brighter) */
+  --cu-color-on-accent-positive-disabled: rgba(213, 213, 213, 0.4); /** Positive accent for favorable states. (disabled, 40% opacity) */
+  --cu-color-on-accent-info-hover: #a3a3a3; /** Informational accent for guidance and neutral status. (hover, 23% darker) */
+  --cu-color-on-accent-info-active: #ababab; /** Informational accent for guidance and neutral status. (active, 19% darker) */
+  --cu-color-on-accent-info-inactive: #d9d9d9; /** Informational accent for guidance and neutral status. (inactive, 20% brighter) */
+  --cu-color-on-accent-info-disabled: rgba(213, 213, 213, 0.4); /** Informational accent for guidance and neutral status. (disabled, 40% opacity) */
+  --cu-color-on-accent-discovery-hover: #a3a3a3; /** Discovery accent for new or exploratory content. (hover, 23% darker) */
+  --cu-color-on-accent-discovery-active: #ababab; /** Discovery accent for new or exploratory content. (active, 19% darker) */
+  --cu-color-on-accent-discovery-inactive: #d9d9d9; /** Discovery accent for new or exploratory content. (inactive, 20% brighter) */
+  --cu-color-on-accent-discovery-disabled: rgba(213, 213, 213, 0.4); /** Discovery accent for new or exploratory content. (disabled, 40% opacity) */
+  --cu-color-muted-base: #cacaca; /** Muted neutral accent background for low-emphasis states. */
+  --cu-color-muted-brand: #74c4bc; /** Muted brand accent background for low-emphasis states. */
+  --cu-color-muted-base-hover: #8c8c8c; /** Muted neutral accent background for low-emphasis states. (hover, 30% darker) */
+  --cu-color-muted-base-active: #b4b4b4; /** Muted neutral accent background for low-emphasis states. (active, 10% darker) */
+  --cu-color-muted-base-inactive: #282828; /** Muted neutral accent background for low-emphasis states. (inactive, 40% darker) */
+  --cu-color-muted-base-disabled: rgba(202, 202, 202, 0.4); /** Muted neutral accent background for low-emphasis states. (disabled, 40% opacity) */
+  --cu-color-muted-brand-hover: #32968f; /** Muted brand accent background for low-emphasis states. (hover, 23% darker) */
+  --cu-color-muted-brand-active: #499c95; /** Muted brand accent background for low-emphasis states. (active, 19% darker) */
+  --cu-color-muted-brand-inactive: #8ddede; /** Muted brand accent background for low-emphasis states. (inactive, 20% brighter) */
+  --cu-color-muted-brand-disabled: #84c3bd; /** Muted brand accent background for low-emphasis states. (disabled, 80% saturation) */
+  --cu-color-muted-danger: #c17986; /** Generated danger muted background for the light theme */
+  --cu-color-muted-negative: #c17986; /** Generated negative muted background for the light theme */
+  --cu-color-muted-warning: #a48f6e; /** Generated warning muted background for the light theme */
+  --cu-color-muted-success: #759e8e; /** Generated success muted background for the light theme */
+  --cu-color-muted-positive: #759e8e; /** Generated positive muted background for the light theme */
+  --cu-color-muted-info: #7095d6; /** Generated info muted background for the light theme */
+  --cu-color-muted-discovery: #9588c5; /** Generated discovery muted background for the light theme */
+  --cu-color-muted-danger-hover: #985b68; /** Generated danger muted background for the light theme (hover, 23% darker) */
+  --cu-color-muted-danger-active: #9e626e; /** Generated danger muted background for the light theme (active, 19% darker) */
+  --cu-color-muted-danger-inactive: #de8d9e; /** Generated danger muted background for the light theme (inactive, 20% brighter) */
+  --cu-color-muted-danger-disabled: #b97f88; /** Generated danger muted background for the light theme (disabled, 80% saturation) */
+  --cu-color-muted-negative-hover: #985b68; /** Generated negative muted background for the light theme (hover, 23% darker) */
+  --cu-color-muted-negative-active: #9e626e; /** Generated negative muted background for the light theme (active, 19% darker) */
+  --cu-color-muted-negative-inactive: #de8d9e; /** Generated negative muted background for the light theme (inactive, 20% brighter) */
+  --cu-color-muted-negative-disabled: #b97f88; /** Generated negative muted background for the light theme (disabled, 80% saturation) */
+  --cu-color-muted-warning-hover: #846f4b; /** Generated warning muted background for the light theme (hover, 23% darker) */
+  --cu-color-muted-warning-active: #897452; /** Generated warning muted background for the light theme (active, 19% darker) */
+  --cu-color-muted-warning-inactive: #caaf87; /** Generated warning muted background for the light theme (inactive, 20% brighter) */
+  --cu-color-muted-warning-disabled: #a29177; /** Generated warning muted background for the light theme (disabled, 80% saturation) */
+  --cu-color-muted-success-hover: #517d6d; /** Generated success muted background for the light theme (hover, 23% darker) */
+  --cu-color-muted-success-active: #588273; /** Generated success muted background for the light theme (active, 19% darker) */
+  --cu-color-muted-success-inactive: #90c2ae; /** Generated success muted background for the light theme (inactive, 20% brighter) */
+  --cu-color-muted-success-disabled: #7d9d90; /** Generated success muted background for the light theme (disabled, 80% saturation) */
+  --cu-color-muted-positive-hover: #517d6d; /** Generated positive muted background for the light theme (hover, 23% darker) */
+  --cu-color-muted-positive-active: #588273; /** Generated positive muted background for the light theme (active, 19% darker) */
+  --cu-color-muted-positive-inactive: #90c2ae; /** Generated positive muted background for the light theme (inactive, 20% brighter) */
+  --cu-color-muted-positive-disabled: #7d9d90; /** Generated positive muted background for the light theme (disabled, 80% saturation) */
+  --cu-color-muted-info-hover: #5875a8; /** Generated info muted background for the light theme (hover, 23% darker) */
+  --cu-color-muted-info-active: #5c7ab0; /** Generated info muted background for the light theme (active, 19% darker) */
+  --cu-color-muted-info-inactive: #87b5dc; /** Generated info muted background for the light theme (inactive, 20% brighter) */
+  --cu-color-muted-info-disabled: #7996c8; /** Generated info muted background for the light theme (disabled, 80% saturation) */
+  --cu-color-muted-discovery-hover: #786c9c; /** Generated discovery muted background for the light theme (hover, 23% darker) */
+  --cu-color-muted-discovery-active: #7d71a3; /** Generated discovery muted background for the light theme (active, 19% darker) */
+  --cu-color-muted-discovery-inactive: #af9ce2; /** Generated discovery muted background for the light theme (inactive, 20% brighter) */
+  --cu-color-muted-discovery-disabled: #958bbb; /** Generated discovery muted background for the light theme (disabled, 80% saturation) */
+  --cu-color-overlay-background: #d9d9d9; /** Surface color for floating overlays. */
+  --cu-color-overlay-border: #a1a1a2; /** Border color that defines floating overlays. */
+  --cu-color-overlay-backdrop: rgba(55, 58, 61, 0.4); /** Backdrop color that separates overlays from page content. */
+  --cu-color-shadow-resting-xsmall: 0px 1px 0px 0px #0000000d; /** Color used by the extra-small resting shadow. */
+  --cu-color-shadow-resting-small: 0px 1px 2px 0px #0000000d; /** Color used by the small resting shadow. */
+  --cu-color-shadow-resting-medium: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** Color used by the medium resting shadow. */
+  --cu-color-shadow-floating-small: 0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a; /** Color used by the small floating shadow. */
+  --cu-color-shadow-floating-medium: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a; /** Color used by the medium floating shadow. */
+  --cu-color-shadow-floating-large: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a; /** Color used by the large floating shadow. */
+  --cu-color-shadow-floating-xlarge: 0px 25px 50px -12px #00000040; /** Color used by the extra-large floating shadow. */
+  --cu-color-shadow-inset: inset 0px 1px 1px 0px #0000000d; /** Color used by the inset shadow. */
+  --cu-color-data-neutral-emphasis: #6a6a6c; /** High-emphasis neutral data-series color. */
+  --cu-color-data-neutral-subtle: #cacaca; /** Low-emphasis neutral data-series color. */
+  --cu-color-data-brand-emphasis: #45649b; /** High-emphasis brand data-series color. */
+  --cu-color-data-brand-subtle: #7598d7; /** Low-emphasis brand data-series color. */
+  --cu-color-data-red-emphasis: #864254; /** High-emphasis red data-series color. */
+  --cu-color-data-red-subtle: #bc7788; /** Low-emphasis red data-series color. */
+  --cu-color-data-orange-emphasis: #92542a; /** High-emphasis orange data-series color. */
+  --cu-color-data-orange-subtle: #cc9678; /** Low-emphasis orange data-series color. */
+  --cu-color-data-yellow-emphasis: #786137; /** High-emphasis yellow data-series color. */
+  --cu-color-data-yellow-subtle: #caa45c; /** Low-emphasis yellow data-series color. */
+  --cu-color-data-green-emphasis: #3e7160; /** High-emphasis green data-series color. */
+  --cu-color-data-green-subtle: #7bb796; /** Low-emphasis green data-series color. */
+  --cu-color-data-blue-emphasis: #45649b; /** High-emphasis blue data-series color. */
+  --cu-color-data-blue-subtle: #7598d7; /** Low-emphasis blue data-series color. */
+  --cu-color-data-purple-emphasis: #675a8a; /** High-emphasis purple data-series color. */
+  --cu-color-data-purple-subtle: #9b8cc3; /** Low-emphasis purple data-series color. */
+  --cu-color-data-pink-emphasis: #875975; /** High-emphasis pink data-series color. */
+  --cu-color-data-pink-subtle: #ca87b0; /** Low-emphasis pink data-series color. */
+  --cu-color-link-hover: #284c89; /** Interactive color for links and linked text. (hover, 23% darker) */
+  --cu-color-link-active: #2b508c; /** Interactive color for links and linked text. (active, 19% darker) */
+  --cu-color-link-inactive: #5a79af; /** Interactive color for links and linked text. (inactive, 20% brighter) */
+  --cu-color-hairline-hover: #7d7d7e; /** Subtle color for hairline borders and separators. (hover, 23% darker) */
+  --cu-color-hairline-active: #949495; /** Subtle color for hairline borders and separators. (active, 8% darker) */
+  --cu-color-hairline-inactive: #c4c4c5; /** Subtle color for hairline borders and separators. (inactive, 20% brighter) */
+  --cu-color-on-muted-base: #343438; /** Generated base foreground on muted backgrounds */
+  --cu-color-on-muted-brand: #449a93; /** Generated brand foreground on muted backgrounds */
+  --cu-color-on-muted-danger: #551928; /** Generated danger foreground on muted backgrounds */
+  --cu-color-on-muted-negative: #551928; /** Generated negative foreground on muted backgrounds */
+  --cu-color-on-muted-warning: #543d18; /** Generated warning foreground on muted backgrounds */
+  --cu-color-on-muted-success: #185341; /** Generated success foreground on muted backgrounds */
+  --cu-color-on-muted-positive: #185341; /** Generated positive foreground on muted backgrounds */
+  --cu-color-on-muted-info: #1e3769; /** Generated info foreground on muted backgrounds */
+  --cu-color-on-muted-discovery: #3b1d65; /** Generated discovery foreground on muted backgrounds */
+  --cu-color-on-muted-base-hover: #3e3e41; /** Generated base foreground on muted backgrounds (hover, 30% brighter) */
+  --cu-color-on-muted-base-active: #2e2e30; /** Generated base foreground on muted backgrounds (active, light base primitive) */
+  --cu-color-on-muted-base-inactive: #282828; /** Generated base foreground on muted backgrounds (inactive, 40% darker) */
+  --cu-color-on-muted-base-disabled: #343437; /** Generated base foreground on muted backgrounds (disabled, 80% saturation) */
+  --cu-color-on-muted-brand-hover: #26827a; /** Generated brand foreground on muted backgrounds (hover, 23% darker) */
+  --cu-color-on-muted-brand-active: #27867f; /** Generated brand foreground on muted backgrounds (active, 19% darker) */
+  --cu-color-on-muted-brand-inactive: #6ebcb4; /** Generated brand foreground on muted backgrounds (inactive, 20% brighter) */
+  --cu-color-on-muted-brand-disabled: #639993; /** Generated brand foreground on muted backgrounds (disabled, 80% saturation) */
+  --cu-color-on-muted-danger-hover: #572532; /** Generated danger foreground on muted backgrounds (hover, 23% brighter) */
+  --cu-color-on-muted-danger-active: #572330; /** Generated danger foreground on muted backgrounds (active, 19% brighter) */
+  --cu-color-on-muted-danger-inactive: #4f171f; /** Generated danger foreground on muted backgrounds (inactive, 20% darker) */
+  --cu-color-on-muted-danger-disabled: #4f1f2a; /** Generated danger foreground on muted backgrounds (disabled, 80% saturation) */
+  --cu-color-on-muted-negative-hover: #572532; /** Generated negative foreground on muted backgrounds (hover, 23% brighter) */
+  --cu-color-on-muted-negative-active: #572330; /** Generated negative foreground on muted backgrounds (active, 19% brighter) */
+  --cu-color-on-muted-negative-inactive: #4f171f; /** Generated negative foreground on muted backgrounds (inactive, 20% darker) */
+  --cu-color-on-muted-negative-disabled: #4f1f2a; /** Generated negative foreground on muted backgrounds (disabled, 80% saturation) */
+  --cu-color-on-muted-warning-hover: #564428; /** Generated warning foreground on muted backgrounds (hover, 23% brighter) */
+  --cu-color-on-muted-warning-active: #564325; /** Generated warning foreground on muted backgrounds (active, 19% brighter) */
+  --cu-color-on-muted-warning-inactive: #4d3316; /** Generated warning foreground on muted backgrounds (inactive, 20% darker) */
+  --cu-color-on-muted-warning-disabled: #4d3d22; /** Generated warning foreground on muted backgrounds (disabled, 80% saturation) */
+  --cu-color-on-muted-success-hover: #164b35; /** Generated success foreground on muted backgrounds (hover, 23% darker) */
+  --cu-color-on-muted-success-active: #164c37; /** Generated success foreground on muted backgrounds (active, 19% darker) */
+  --cu-color-on-muted-success-inactive: #2b5345; /** Generated success foreground on muted backgrounds (inactive, 20% brighter) */
+  --cu-color-on-muted-success-disabled: #274b3e; /** Generated success foreground on muted backgrounds (disabled, 80% saturation) */
+  --cu-color-on-muted-positive-hover: #164b35; /** Generated positive foreground on muted backgrounds (hover, 23% darker) */
+  --cu-color-on-muted-positive-active: #164c37; /** Generated positive foreground on muted backgrounds (active, 19% darker) */
+  --cu-color-on-muted-positive-inactive: #2b5345; /** Generated positive foreground on muted backgrounds (inactive, 20% brighter) */
+  --cu-color-on-muted-positive-disabled: #274b3e; /** Generated positive foreground on muted backgrounds (disabled, 80% saturation) */
+  --cu-color-on-muted-info-hover: #1c2860; /** Generated info foreground on muted backgrounds (hover, 23% darker) */
+  --cu-color-on-muted-info-active: #1c2b62; /** Generated info foreground on muted backgrounds (active, 19% darker) */
+  --cu-color-on-muted-info-inactive: #2a436f; /** Generated info foreground on muted backgrounds (inactive, 20% brighter) */
+  --cu-color-on-muted-info-disabled: #243a61; /** Generated info foreground on muted backgrounds (disabled, 80% saturation) */
+  --cu-color-on-muted-discovery-hover: #442e68; /** Generated discovery foreground on muted backgrounds (hover, 23% brighter) */
+  --cu-color-on-muted-discovery-active: #422c68; /** Generated discovery foreground on muted backgrounds (active, 19% brighter) */
+  --cu-color-on-muted-discovery-inactive: #331b5d; /** Generated discovery foreground on muted backgrounds (inactive, 20% darker) */
+  --cu-color-on-muted-discovery-disabled: #39275b; /** Generated discovery foreground on muted backgrounds (disabled, 80% saturation) */
+  --cu-size-zero: 0px; /** No size */
+  --cu-size-xxs: 2px; /** A 2px xxs size step */
+  --cu-size-xs: 4px; /** A 4px xs size step */
+  --cu-size-sm: 8px; /** A 8px sm size step */
+  --cu-size-md: 10px; /** A 10px md size step */
+  --cu-size-lg: 12px; /** A 12px lg size step */
+  --cu-size-xl: 14px; /** A 14px xl size step */
+  --cu-size-2xl: 16px; /** A 16px 2xl size step */
+  --cu-size-3xl: 18px; /** A 18px 3xl size step */
+  --cu-size-4xl: 20px; /** A 20px 4xl size step */
+  --cu-size-5xl: 22px; /** A 22px 5xl size step */
+  --cu-size-6xl: 24px; /** A 24px 6xl size step */
+  --cu-size-7xl: 26px; /** A 26px 7xl size step */
+  --cu-size-8xl: 32px; /** A 32px 8xl size step */
+  --cu-size-9xl: 37px; /** A 37px 9xl size step */
+  --cu-size-10xl: 42px; /** A 42px 10xl size step */
+  --cu-size-11xl: 47px; /** A 47px 11xl size step */
+  --cu-size-12xl: 52px; /** A 52px 12xl size step */
+  --cu-size-13xl: 62px; /** A 62px 13xl size step */
+  --cu-size-14xl: 72px; /** A 72px 14xl size step */
+  --cu-size-15xl: 82px; /** A 82px 15xl size step */
+  --cu-size-16xl: 92px; /** A 92px 16xl size step */
+  --cu-size-17xl: 102px; /** A 102px 17xl size step */
+  --cu-size-18xl: 112px; /** A 112px 18xl size step */
+  --cu-size-19xl: 112px; /** A 112px 19xl size step */
+  --cu-size-20xl: 122px; /** A 122px 20xl size step */
+  --cu-size-21xl: 132px; /** A 132px 21xl size step */
+  --cu-size-22xl: 142px; /** A 142px 22xl size step */
+  --cu-size-23xl: 152px; /** A 152px 23xl size step */
+  --cu-size-24xl: 162px; /** A 162px 24xl size step */
+  --cu-size-25xl: 172px; /** A 172px 25xl size step */
+  --cu-size-26xl: 182px; /** A 182px 26xl size step */
+  --cu-size-27xl: 192px; /** A 192px 27xl size step */
+  --cu-size-28xl: 202px; /** A 202px 28xl size step */
+  --cu-size-29xl: 212px; /** A 212px 29xl size step */
+  --cu-size-30xl: 222px; /** A 222px 30xl size step */
+  --cu-size-31xl: 232px; /** A 232px 31xl size step */
+  --cu-size-32xl: 242px; /** A 242px 32xl size step */
+  --cu-size-33xl: 252px; /** A 252px 33xl size step */
+  --cu-size-34xl: 262px; /** A 262px 34xl size step */
+  --cu-size-35xl: 272px; /** A 272px 35xl size step */
+  --cu-size-36xl: 282px; /** A 282px 36xl size step */
+  --cu-size-37xl: 284px; /** A 284px 37xl size step */
+  --cu-z-index-0: 0; /** Base stacking level */
+  --cu-z-index-10: 100; /** Low stacking level */
+  --cu-z-index-20: 200; /** Raised stacking level */
+  --cu-z-index-30: 300; /** Elevated stacking level */
+  --cu-z-index-40: 400; /** High stacking level */
+  --cu-z-index-50: 500; /** Overlay stacking level */
+  --cu-z-index-60: 600; /** Modal stacking level */
+  --cu-z-index-70: 700; /** Popover stacking level */
+  --cu-z-index-80: 800; /** Toast stacking level */
+  --cu-z-index-90: 900; /** Topmost stacking level */
+  --cu-spacing-zero: 0px; /** No spacing */
+  --cu-spacing-xxs: 0.5px; /** A 0.5px xxs spacing step (from size.xxs via sizeToSpace) */
+  --cu-spacing-xs: 1px; /** A 1px xs spacing step (from size.xs via sizeToSpace) */
+  --cu-spacing-sm: 1.5px; /** A 1.5px sm spacing step (from size.sm via sizeToSpace) */
+  --cu-spacing-md: 2px; /** A 2px md spacing step (from size.md via sizeToSpace) */
+  --cu-spacing-lg: 4px; /** A 4px lg spacing step (from size.lg via sizeToSpace) */
+  --cu-spacing-xl: 7px; /** A 7px xl spacing step (from size.xl via sizeToSpace) */
+  --cu-spacing-2xl: 10px; /** A 10px 2xl spacing step (from size.2xl via sizeToSpace) */
+  --cu-spacing-3xl: 13px; /** A 13px 3xl spacing step (from size.3xl via sizeToSpace) */
+  --cu-spacing-4xl: 16px; /** A 16px 4xl spacing step (from size.4xl via sizeToSpace) */
+  --cu-spacing-5xl: 18px; /** A 18px 5xl spacing step (from size.5xl via sizeToSpace) */
+  --cu-spacing-6xl: 21px; /** A 21px 6xl spacing step (from size.6xl via sizeToSpace) */
+  --cu-spacing-7xl: 24px; /** A 24px 7xl spacing step (from size.7xl via sizeToSpace) */
+  --cu-spacing-8xl: 32px; /** A 32px 8xl spacing step (from size.8xl via sizeToSpace) */
+  --cu-spacing-9xl: 39px; /** A 39px 9xl spacing step (from size.9xl via sizeToSpace) */
+  --cu-spacing-10xl: 46px; /** A 46px 10xl spacing step (from size.10xl via sizeToSpace) */
+  --cu-spacing-11xl: 53px; /** A 53px 11xl spacing step (from size.11xl via sizeToSpace) */
+  --cu-spacing-12xl: 60px; /** A 60px 12xl spacing step (from size.12xl via sizeToSpace) */
+  --cu-spacing-13xl: 74px; /** A 74px 13xl spacing step (from size.13xl via sizeToSpace) */
+  --cu-spacing-14xl: 88px; /** A 88px 14xl spacing step (from size.14xl via sizeToSpace) */
+  --cu-spacing-15xl: 102px; /** A 102px 15xl spacing step (from size.15xl via sizeToSpace) */
+  --cu-spacing-16xl: 116px; /** A 116px 16xl spacing step (from size.16xl via sizeToSpace) */
+  --cu-spacing-17xl: 130px; /** A 130px 17xl spacing step (from size.17xl via sizeToSpace) */
+  --cu-spacing-18xl: 144px; /** A 144px 18xl spacing step (from size.18xl via sizeToSpace) */
+  --cu-spacing-19xl: 144px; /** A 144px 19xl spacing step (from size.19xl via sizeToSpace) */
+  --cu-spacing-20xl: 158px; /** A 158px 20xl spacing step (from size.20xl via sizeToSpace) */
+  --cu-spacing-21xl: 172px; /** A 172px 21xl spacing step (from size.21xl via sizeToSpace) */
+  --cu-spacing-22xl: 186px; /** A 186px 22xl spacing step (from size.22xl via sizeToSpace) */
+  --cu-font-size-xxs: 0.75rem; /** Extra small font size (0.75rem) */
+  --cu-font-size-xs: 0.875rem; /** Extra small font size (0.875rem) */
+  --cu-font-size-sm: 1rem; /** Small font size (1rem) */
+  --cu-font-size-md: 1.125rem; /** Medium font size (1.125rem) */
+  --cu-font-size-lg: 1.25rem; /** Large font size (1.25rem) */
+  --cu-font-size-xl: 1.5rem; /** Extra large font size (1.5rem) */
+  --cu-font-size-2xl: 1.875rem; /** 2X large font size (1.875rem) */
+  --cu-font-size-3xl: 2.25rem; /** 3X large font size (2.25rem) */
+  --cu-font-size-4xl: 3rem; /** 4X large font size (3rem) */
+  --cu-font-size-5xl: 3.75rem; /** 5X large font size (3.75rem) */
+  --cu-font-size-6xl: 4.5rem; /** 6X large font size (4.5rem) */
+  --cu-font-size-7xl: 6rem; /** 7X large font size (6rem) */
+  --cu-font-size-8xl: 8rem; /** 8X large font size (8rem) */
+  --cu-font-size-9xl: 10rem; /** 9X large font size (10rem) */
+  --cu-font-size-10xl: 12rem; /** 10X large font size (12rem) */
+  --cu-font-size-11xl: 14rem; /** 11X large font size (14rem) */
+  --cu-font-size-12xl: 16rem; /** 12X large font size (16rem) */
+  --cu-font-size-13xl: 18rem; /** 13X large font size (18rem) */
+  --cu-font-size-14xl: 20rem; /** 14X large font size (20rem) */
+  --cu-font-size-15xl: 24rem; /** 15X large font size (24rem) */
+  --cu-font-weight-thin: 100; /** Thin font weight (100) */
+  --cu-font-weight-extralight: 200; /** Extra light font weight (200) */
+  --cu-font-weight-light: 300; /** Light font weight (300) */
+  --cu-font-weight-normal: 400; /** Normal font weight (400) */
+  --cu-font-weight-medium: 500; /** Medium font weight (500) */
+  --cu-font-weight-semibold: 600; /** Semibold font weight (600) */
+  --cu-font-weight-bold: 700; /** Bold font weight (700) */
+  --cu-font-weight-extrabold: 800; /** Extra bold font weight (800) */
+  --cu-font-weight-black: 900; /** Black font weight (900) */
+  --cu-letter-spacing-tighter: -0.05rem; /** Tighter letter spacing (-0.05em) */
+  --cu-letter-spacing-tight: -0.025rem; /** Tight letter spacing (-0.025em) */
+  --cu-letter-spacing-normal: 0rem; /** Normal letter spacing (0em) */
+  --cu-letter-spacing-wide: 0.025rem; /** Wide letter spacing (0.025em) */
+  --cu-letter-spacing-wider: 0.05rem; /** Wider letter spacing (0.05em) */
+  --cu-letter-spacing-widest: 0.1rem; /** Widest letter spacing (0.1em) */
+  --cu-line-height-none: 0.85; /** No extra line height (0.85) */
+  --cu-line-height-tight: 1; /** Tight line height (1) */
+  --cu-line-height-snug: 1.25; /** Snug line height (1.25) */
+  --cu-line-height-normal: 1.375; /** Normal line height (1.375) */
+  --cu-line-height-relaxed: 1.5; /** Relaxed line height (1.5) */
+  --cu-line-height-loose: 1.85; /** Loose line height (1.85) */
+  --cu-line-height-xs: 1.333333; /** Line height for text-xs (calc(1 / 0.75)) */
+  --cu-line-height-sm: 1.428571; /** Line height for text-sm (calc(1.25 / 0.875)) */
+  --cu-line-height-md: 1.5; /** Line height for text-md (calc(1.5 / 1)) */
+  --cu-line-height-lg: 1.555556; /** Line height for text-lg (calc(1.75 / 1.125)) */
+  --cu-line-height-xl: 1.4; /** Line height for text-xl (calc(1.75 / 1.25)) */
+  --cu-line-height-2xl: 1.333333; /** Line height for text-2xl (calc(2 / 1.5)) */
+  --cu-line-height-3xl: 1.2; /** Line height for text-3xl (calc(2.25 / 1.875)) */
+  --cu-line-height-4xl: 1.111111; /** Line height for text-4xl (calc(2.5 / 2.25)) */
+  --cu-line-height-5xl: 1; /** Line height for text-5xl (1) */
+  --cu-line-height-6xl: 1; /** Line height for text-6xl (1) */
+  --cu-line-height-7xl: 1; /** Line height for text-7xl (1) */
+  --cu-line-height-8xl: 1; /** Line height for text-8xl (1) */
+  --cu-line-height-9xl: 1; /** Line height for text-9xl (1) */
+  --cu-line-height-10xl: 1; /** Line height for text-10xl (1) */
+  --cu-border-radius-zero: 0rem; /** No radius */
+  --cu-border-radius-xs: 0.125rem; /** Extra small radius (0.125rem) */
+  --cu-border-radius-sm: 0.25rem; /** Small radius (0.25rem) */
+  --cu-border-radius-md: 0.375rem; /** Medium radius (0.375rem) */
+  --cu-border-radius-lg: 0.5rem; /** Large radius (0.5rem) */
+  --cu-border-radius-xl: 0.75rem; /** Extra large radius (0.75rem) */
+  --cu-border-radius-2xl: 1rem; /** 2X large radius (1rem) */
+  --cu-border-radius-3xl: 1.5rem; /** 3X large radius (1.5rem) */
+  --cu-border-radius-4xl: 2rem; /** 4X large radius (2rem) */
+  --cu-border-radius-full: 100%; /** Full radius (100%) */
+  --cu-border-radius-container: 0.5rem; /** The border radius use for large containers */
+  --cu-border-radius-card: 0.375rem; /** The border radius use for cards */
+  --cu-border-radius-button: 0.5rem; /** The border radius use for triggers, such as buttons and badges */
+  --cu-border-radius-control: 0.5rem; /** The border radius use for controls, such as inputs and selects */
+  --cu-border-radius-checkbox: 0.375rem; /** The border radius use for checkbox components */
+  --cu-border-radius-dialog: 0.75rem; /** The border radius use for dialogs */
+  --cu-border-radius-sheet: 0rem; /** The border radius use for sheets (none) */
+  --cu-border-radius-drawer: 2rem; /** The border radius use for drawers */
+  --cu-border-radius-popover: 0.375rem; /** The border radius use for popovers */
+  --cu-border-radius-tooltip: 0.375rem; /** The border radius use for tooltips */
+  --cu-shadow-2xs: 0px 1px 0px 0px #0000000d; /** 2X small shadow */
+  --cu-shadow-xs: 0px 1px 2px 0px #0000000d; /** Extra small shadow */
+  --cu-shadow-sm: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** Small shadow */
+  --cu-shadow-md: 0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a; /** Medium shadow */
+  --cu-shadow-lg: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a; /** Large shadow */
+  --cu-shadow-xl: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a; /** Extra large shadow */
+  --cu-shadow-2xl: 0px 25px 50px -12px #00000040; /** 2X large shadow */
+  --cu-inset-shadow-2xs: inset 0px 1px 0px 0px #0000000d; /** 2X small inset shadow */
+  --cu-inset-shadow-xs: inset 0px 1px 1px 0px #0000000d; /** Extra small inset shadow */
+  --cu-inset-shadow-sm: inset 0px 2px 4px 0px #0000000d; /** Small inset shadow */
+  --cu-drop-shadow-xs: 0px 1px 1px 0px #0000000d; /** Extra small drop shadow */
+  --cu-drop-shadow-sm: 0px 1px 2px 0px #00000026; /** Small drop shadow */
+  --cu-drop-shadow-md: 0px 3px 3px 0px #0000001f; /** Medium drop shadow */
+  --cu-drop-shadow-lg: 0px 4px 4px 0px #00000026; /** Large drop shadow */
+  --cu-drop-shadow-xl: 0px 9px 7px 0px #0000001a; /** Extra large drop shadow */
+  --cu-drop-shadow-2xl: 0px 25px 25px 0px #00000026; /** 2X large drop shadow */
+  --cu-text-shadow-2xs: 0px 1px 0px 0px #00000026; /** 2X small text shadow */
+  --cu-text-shadow-xs: 0px 1px 1px 0px #00000033; /** Extra small text shadow */
+  --cu-text-shadow-sm: 0px 1px 0px 0px #00000013, 0px 1px 1px 0px #00000013, 0px 2px 2px 0px #00000013; /** Small text shadow */
+  --cu-text-shadow-md: 0px 1px 1px 0px #0000001a, 0px 1px 2px 0px #0000001a, 0px 2px 4px 0px #0000001a; /** Medium text shadow */
+  --cu-text-shadow-lg: 0px 1px 2px 0px #0000001a, 0px 3px 2px 0px #0000001a, 0px 4px 8px 0px #0000001a; /** Large text shadow */
+  --cu-ease-in: cubic-bezier(0.4, 0, 1, 1); /** Ease-in cubic bezier */
+  --cu-ease-out: cubic-bezier(0, 0, 0.2, 1); /** Ease-out cubic bezier */
+  --cu-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); /** Ease-in-out cubic bezier */
+  --cu-durations-instant: [object Object]; /** Instant duration */
+  --cu-durations-short: [object Object]; /** Short duration */
+  --cu-durations-medium: [object Object]; /** Medium duration */
+  --cu-durations-long: [object Object]; /** Long duration */
+  --cu-blur-xs: 4px; /** Extra small blur (4px) */
+  --cu-blur-sm: 8px; /** Small blur (8px) */
+  --cu-blur-md: 12px; /** Medium blur (12px) */
+  --cu-blur-lg: 16px; /** Large blur (16px) */
+  --cu-blur-xl: 24px; /** Extra large blur (24px) */
+  --cu-blur-2xl: 40px; /** 2X large blur (40px) */
+  --cu-blur-3xl: 64px; /** 3X large blur (64px) */
+  --cu-ring-base: 0px 0px 0px 3px #15151814; /** The base ring variant */
+  --cu-ring-base-subtle: 0px 0px 0px 1px #15151814; /** The base subtle ring variant */
+  --cu-ring-base-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #15151814; /** The base ring variant with a 3px offset */
+  --cu-ring-base-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #15151814; /** The base subtle ring variant with a 3px offset */
+  --cu-ring-brand: 0px 0px 0px 3px #1fb2a626; /** The brand ring variant */
+  --cu-ring-brand-subtle: 0px 0px 0px 1px #1fb2a626; /** The brand subtle ring variant */
+  --cu-ring-brand-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #1fb2a626; /** The brand ring variant with a 3px offset */
+  --cu-ring-brand-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #1fb2a626; /** The brand subtle ring variant with a 3px offset */
+  --cu-ring-danger: 0px 0px 0px 3px #8e223e26; /** The danger ring variant */
+  --cu-ring-danger-subtle: 0px 0px 0px 1px #8e223e26; /** The danger subtle ring variant */
+  --cu-ring-danger-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #8e223e26; /** The danger ring variant with a 3px offset */
+  --cu-ring-danger-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #8e223e26; /** The danger subtle ring variant with a 3px offset */
+  --cu-ring-warning: 0px 0px 0px 3px #76541726; /** The warning ring variant */
+  --cu-ring-warning-subtle: 0px 0px 0px 1px #76541726; /** The warning subtle ring variant */
+  --cu-ring-warning-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #76541726; /** The warning ring variant with a 3px offset */
+  --cu-ring-warning-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #76541726; /** The warning subtle ring variant with a 3px offset */
+  --cu-ring-success: 0px 0px 0px 3px #216b5326; /** The success ring variant */
+  --cu-ring-success-subtle: 0px 0px 0px 1px #216b5326; /** The success subtle ring variant */
+  --cu-ring-success-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #216b5326; /** The success ring variant with a 3px offset */
+  --cu-ring-success-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #216b5326; /** The success subtle ring variant with a 3px offset */
+  --cu-ring-info: 0px 0px 0px 3px #2055b326; /** The info ring variant */
+  --cu-ring-info-subtle: 0px 0px 0px 1px #2055b326; /** The info subtle ring variant */
+  --cu-ring-info-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #2055b326; /** The info ring variant with a 3px offset */
+  --cu-ring-info-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #2055b326; /** The info subtle ring variant with a 3px offset */
+  --cu-ring-discovery: 0px 0px 0px 3px #59439526; /** The discovery ring variant */
+  --cu-ring-discovery-subtle: 0px 0px 0px 1px #59439526; /** The discovery subtle ring variant */
+  --cu-ring-discovery-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #59439526; /** The discovery ring variant with a 3px offset */
+  --cu-ring-discovery-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #59439526; /** The discovery subtle ring variant with a 3px offset */
+  --cu-ring-positive: 0px 0px 0px 3px #216b5326; /** The positive ring variant */
+  --cu-ring-positive-subtle: 0px 0px 0px 1px #216b5326; /** The positive subtle ring variant */
+  --cu-ring-positive-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #216b5326; /** The positive ring variant with a 3px offset */
+  --cu-ring-positive-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #216b5326; /** The positive subtle ring variant with a 3px offset */
+  --cu-ring-negative: 0px 0px 0px 3px #8e223e26; /** The negative ring variant */
+  --cu-ring-negative-subtle: 0px 0px 0px 1px #8e223e26; /** The negative subtle ring variant */
+  --cu-ring-negative-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #8e223e26; /** The negative ring variant with a 3px offset */
+  --cu-ring-negative-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #8e223e26; /** The negative subtle ring variant with a 3px offset */
+  --cu-typography-display-hero: 600 3.75rem/1.25 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - hero typography variant */
+  --cu-typography-display-lg: 600 2.25rem/1.25 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - large typography variant */
+  --cu-typography-display-md: 700 1.5rem/1.25 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - medium typography variant */
+  --cu-typography-display-sm: 700 1.25rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - small typography variant */
+  --cu-typography-title-lg: 500 1.125rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The button typography variant */
+  --cu-typography-title-sm: 400 0.75rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The title small typography variant */
+  --cu-typography-body: 400 1.125rem/1.375 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The body typography variant */
+  --cu-typography-caption: italic 400 1rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The caption typography variant */
+  --cu-typography-button: 600 1.125rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The button typography variant */
+  --cu-typography-eyebrow: 600 1.125rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The eyebrow typography variant */
+  --cu-typography-code: 400 1.25rem/1.25 'Google Sans Code'; /** The code typography variant */
 }

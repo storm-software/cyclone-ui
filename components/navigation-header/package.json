@@ -20,7 +20,7 @@
     "@cyclone-ui/link": "workspace:*",
     "@cyclone-ui/eyebrow-text": "workspace:*",
     "@tamagui/core": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:"
+    "@cyclone-ui/icons": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/button": "workspace:*",

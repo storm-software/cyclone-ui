@@ -18,6 +18,7 @@
   "dependencies": {
     "@tamagui/core": "catalog:",
     "@tamagui/constants": "catalog:",
+    "@tamagui/scroll-view": "catalog:",
     "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {

@@ -977,7 +977,7 @@ const ButtonContainerImpl = createStyledHOC(
       rounded = false,
       noPadding = false,
       ringed = false,
-      animate = false,
+      animate = true,
       children,
       onPress,
       onClick,

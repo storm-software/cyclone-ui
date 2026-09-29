@@ -31,11 +31,11 @@
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
-    "@cyclone-ui/themeable-icon": "workspace:*"
+    "@cyclone-ui/themeable-icon": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:",

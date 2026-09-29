@@ -18,6 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Field } from "@cyclone-ui/field";
+import { Eye, EyeSlash } from "@cyclone-ui/icons";
 import { InputField } from "@cyclone-ui/input-field";
 import type { Validator } from "@cyclone-ui/state/form";
 import { FieldApi, ValidationCause } from "@cyclone-ui/state/form";
@@ -28,7 +29,6 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { Eye, EyeOff } from "@tamagui/lucide-icons-2";
 import { YStack } from "@tamagui/stacks";
 import type { KeyboardEvent } from "react";
 import { createContext, use, useCallback, useMemo, useState } from "react";
@@ -96,7 +96,8 @@ const PasswordStrengthLabel = styled(BodyText, {
   marginRight: "md"
 });
 
-const PasswordInputFieldStrength = createStyledHOC(PasswordStrengthFrame, 
+const PasswordInputFieldStrength = createStyledHOC(
+  PasswordStrengthFrame,
   (props, forwardedRef) => {
     const field = FieldApi.use();
     const value = field.formattedValue.get();
@@ -135,7 +136,8 @@ const PasswordInputFieldStrength = createStyledHOC(PasswordStrengthFrame,
   }
 );
 
-const PasswordInputFieldGroup = createStyledHOC(Field, 
+const PasswordInputFieldGroup = createStyledHOC(
+  Field,
   (
     { children, theme, validate, variant = "floating", ...props },
     forwardedRef
@@ -179,8 +181,9 @@ const PasswordInputFieldGroup = createStyledHOC(Field,
   }
 );
 
-const PasswordInputFieldControlTextBoxValue =
-  createStyledHOC(InputField.Control.TextBox.Value, (props, forwardedRef) => {
+const PasswordInputFieldControlTextBoxValue = createStyledHOC(
+  InputField.Control.TextBox.Value,
+  (props, forwardedRef) => {
     const field = FieldApi.use();
     const setValidationResults = field.validationResults.set();
     const { passwordVisible } = use(PasswordInputFieldContext);
@@ -249,9 +252,11 @@ const PasswordInputFieldControlTextBoxValue =
         type={passwordVisible ? "text" : "password"}
       />
     );
-  });
+  }
+);
 
-const PasswordInputFieldControlTrigger = createStyledHOC(Field.Icon, 
+const PasswordInputFieldControlTrigger = createStyledHOC(
+  Field.Icon,
   ({ children, onPress, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const disabled = field.disabled.get();
@@ -281,7 +286,7 @@ const PasswordInputFieldControlTrigger = createStyledHOC(Field.Icon,
         onPress={handlePress}>
         {children ??
           (passwordVisible ? (
-            <EyeOff aria-hidden={true} />
+            <EyeSlash aria-hidden={true} />
           ) : (
             <Eye aria-hidden={true} />
           ))}

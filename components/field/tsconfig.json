@@ -15,12 +15,6 @@
   },
   "references": [
     {
-      "path": "../spinner"
-    },
-    {
-      "path": "../../packages/helpers"
-    },
-    {
       "path": "../validation-text"
     },
     {
@@ -33,10 +27,19 @@
       "path": "../../packages/state"
     },
     {
+      "path": "../spinner"
+    },
+    {
+      "path": "../../packages/helpers"
+    },
+    {
       "path": "../button"
     },
     {
       "path": "../body-text"
+    },
+    {
+      "path": "../icons"
     },
     {
       "path": "../link"

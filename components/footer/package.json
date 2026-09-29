@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
+    "@cyclone-ui/icons": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"

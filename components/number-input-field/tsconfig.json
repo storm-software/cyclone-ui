@@ -21,6 +21,9 @@
       "path": "../input-field"
     },
     {
+      "path": "../icons"
+    },
+    {
       "path": "../form"
     }
   ],

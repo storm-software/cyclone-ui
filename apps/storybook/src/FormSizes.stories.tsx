@@ -1,8 +1,26 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
 import { Form } from "@cyclone-ui/form";
 import type { FormControlSize } from "@cyclone-ui/helpers";
+import { MagnifyingGlass } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
-import { Search } from "@tamagui/lucide-icons-2";
 import { useId, useState } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { CheckboxField } from "../../../components/checkbox-field/src/CheckboxField";
@@ -23,6 +41,7 @@ const items = [
 
 function SizeComparison({ disabled = false }: { disabled?: boolean }) {
   const id = useId();
+
   return (
     <View
       backgroundColor="background"
@@ -54,7 +73,7 @@ function SizeComparison({ disabled = false }: { disabled?: boolean }) {
                 <InputField.Label>Floating input</InputField.Label>
                 <InputField.Control>
                   <InputField.Icon position="start">
-                    <Search />
+                    <MagnifyingGlass />
                   </InputField.Icon>
                   <InputField.Control.TextBox>
                     <InputField.Control.TextBox.Value
@@ -187,6 +206,7 @@ export const Disabled: Story = {
 function ChangingSize() {
   const [size, setSize] = useState<FormControlSize>("md");
   const id = useId();
+
   return (
     <>
       <button onClick={() => setSize("lg")}>Use large</button>
@@ -211,9 +231,13 @@ export const ChangingSizeProp: Story = {
     const input = canvas.getByLabelText("Resizable input");
     await userEvent.type(input, "Keep this value");
     await userEvent.click(canvas.getByText("Use large"));
-    await waitFor(() => expect(input.getBoundingClientRect().height).toBe(53));
+    await waitFor(async () =>
+      expect(input.getBoundingClientRect().height).toBe(53)
+    );
     await userEvent.click(canvas.getByText("Use small"));
-    await waitFor(() => expect(input.getBoundingClientRect().height).toBe(33));
+    await waitFor(async () =>
+      expect(input.getBoundingClientRect().height).toBe(33)
+    );
     await expect(input).toHaveValue("Keep this value");
   }
 };

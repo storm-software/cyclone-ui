@@ -19,6 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import { Clipboard } from "@cyclone-ui/icons";
 import { ScrollView } from "@cyclone-ui/scroll-view";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { Check } from "@cyclone-ui/vectors";
@@ -30,7 +31,6 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { Clipboard } from "@tamagui/lucide-icons-2";
 import { XStack } from "@tamagui/stacks";
 import { Tabs as TamaguiTabs } from "@tamagui/tabs";
 import type { GetProps, ViewProps } from "@tamagui/web";
@@ -313,7 +313,8 @@ const DefaultActions = ({ children, className }: CodeBlockActionsProps) =>
     </XStack>
   ) : null;
 
-const CodeBlockImpl = createStyledHOC(CodeBlockFrame, 
+const CodeBlockImpl = createStyledHOC(
+  CodeBlockFrame,
   (
     {
       title,
@@ -530,8 +531,8 @@ export const CodeBlockTab = forwardRef<TamaguiElement, CodeBlockTabProps>(
       backgroundColor="surfaceElevated"
       outlineStyle="none"
       className={`cyclone-code-block-tabs-content${
-            className ? ` ${className}` : ""
-          }`}
+        className ? ` ${className}` : ""
+      }`}
     />
   )
 );

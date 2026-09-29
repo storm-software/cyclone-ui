@@ -15,13 +15,16 @@
   },
   "references": [
     {
-      "path": "../scroll-view"
+      "path": "../icons"
     },
     {
       "path": "../vectors"
     },
     {
       "path": "../themeable-icon"
+    },
+    {
+      "path": "../scroll-view"
     },
     {
       "path": "../heading-text"

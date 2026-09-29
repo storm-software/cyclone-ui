@@ -78,6 +78,21 @@
       "$value": "{color.neutral.6}",
       "$description": "Subtle color for hairline borders and separators."
     },
+    "selection": {
+      "$description": "Colors applied to selected (highlighted) text.",
+      "background": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.accent.brand}",
+        "$description": "Background color of selected text, using the brand accent."
+      },
+      "foreground": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.on-accent.brand}",
+        "$description": "Color of selected text, placed on the brand accent."
+      }
+    },
     "accent": {
       "$description": "Accent colors for emphasis, actions, and status.",
       "base": {

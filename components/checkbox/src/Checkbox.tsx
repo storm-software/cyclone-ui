@@ -24,11 +24,11 @@ import {
   getSized,
   getSpaced
 } from "@cyclone-ui/helpers";
+import { Minus } from "@cyclone-ui/icons";
 import { Check } from "@cyclone-ui/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
-import { Minus } from "@tamagui/lucide-icons-2";
 
 const CheckboxGroupFrame = styled(View, {
   displayName: "Checkbox",
@@ -44,7 +44,7 @@ const CheckboxGroupFrame = styled(View, {
   outlineStyle: "none",
   // this fixes a flex bug where it overflows container
   minWidth: 0,
-  borderRadius: "control",
+  borderRadius: "checkbox",
   tabIndex: 0,
   variants: {
     // The v2 `borderRadius: props.circular ? 100_000 : "control"` from this

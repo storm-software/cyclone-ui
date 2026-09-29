@@ -81,6 +81,7 @@ export default defineConfig({
           const surface = tokenGroup(color.surface);
           const accent = tokenGroup(color.accent);
           const muted = tokenGroup(color.muted);
+          const onAccent = tokenGroup(color["on-accent"]);
 
           const base = tokenValue(
             ink.emphasis,
@@ -100,7 +101,14 @@ export default defineConfig({
             theme === "dark" ? "#222222" : "#fafafa"
           );
           const sunken = tokenValue(surface.sunken, page);
-          const selection = tokenValue(muted.brand, sunken);
+          const selection = tokenValue(
+            accent.brand,
+            tokenValue(muted.brand, sunken)
+          );
+          const onSelection = tokenValue(
+            onAccent.brand,
+            tokenValue(onAccent.base, base)
+          );
           const hairline = tokenValue(color.hairline, subtleInk);
 
           return {
@@ -114,6 +122,7 @@ export default defineConfig({
               "editor.foreground": base,
               "editorCursor.foreground": link,
               "editor.selectionBackground": selection,
+              "editor.selectionForeground": onSelection,
               "editor.inactiveSelectionBackground": sunken,
               "editorLineNumber.foreground": subtleInk,
               "editorLineNumber.activeForeground": body,

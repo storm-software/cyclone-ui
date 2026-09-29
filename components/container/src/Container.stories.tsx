@@ -5,7 +5,7 @@
  This code was released as part of the Cyclone UI project. Cyclone UI
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+ our licensing canvas at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/cyclone-ui
@@ -39,96 +39,6 @@ type Story = StoryObj<typeof Container>;
 export const Base: Story = {
   args: {
     children: "Container Text"
-  }
-};
-
-export const Lowest: Story = {
-  args: {
-    children: "Container Text",
-    variant: "lowest"
-  }
-};
-
-export const LowestNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "lowest",
-    bordered: false
-  }
-};
-
-export const Page: Story = {
-  args: {
-    children: "Container Text",
-    variant: "page"
-  }
-};
-
-export const PageNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "page",
-    bordered: false
-  }
-};
-
-export const Elevated: Story = {
-  args: {
-    children: "Container Text",
-    variant: "elevated"
-  }
-};
-
-export const ElevatedNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "elevated",
-    bordered: false
-  }
-};
-
-export const Floating: Story = {
-  args: {
-    children: "Container Text",
-    variant: "floating"
-  }
-};
-
-export const FloatingNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "floating",
-    bordered: false
-  }
-};
-
-export const High: Story = {
-  args: {
-    children: "Container Text",
-    variant: "high"
-  }
-};
-
-export const HighNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "high",
-    bordered: false
-  }
-};
-
-export const Highest: Story = {
-  args: {
-    children: "Container Text",
-    variant: "highest"
-  }
-};
-
-export const HighestNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "highest",
-    bordered: false
   }
 };
 
@@ -188,6 +98,81 @@ export const OutlinedNoBorder: Story = {
   args: {
     children: "Container Text",
     variant: "outlined",
+    bordered: false
+  }
+};
+
+export const Sunken: Story = {
+  args: {
+    children: "Container Text",
+    variant: "sunken"
+  }
+};
+
+export const SunkenNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "sunken",
+    bordered: false
+  }
+};
+
+export const Canvas: Story = {
+  args: {
+    children: "Container Text",
+    variant: "canvas"
+  }
+};
+
+export const CanvasNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "canvas",
+    bordered: false
+  }
+};
+
+export const Elevated: Story = {
+  args: {
+    children: "Container Text",
+    variant: "elevated"
+  }
+};
+
+export const ElevatedNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "elevated",
+    bordered: false
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    children: "Container Text",
+    variant: "floating"
+  }
+};
+
+export const FloatingNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "floating",
+    bordered: false
+  }
+};
+
+export const Overlay: Story = {
+  args: {
+    children: "Container Text",
+    variant: "overlay"
+  }
+};
+
+export const OverlayNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "overlay",
     bordered: false
   }
 };

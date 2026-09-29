@@ -16,8 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import { Question } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { HelpCircle } from "@tamagui/lucide-icons-2";
 import type { ComponentProps, ReactNode } from "react";
 import { Alert } from "./Alert";
 
@@ -57,7 +57,7 @@ export const Base: Story = {
 export const CustomIcon: Story = {
   args: {
     children: bodyText,
-    icon: <HelpCircle />
+    icon: <Question />
   }
 };
 

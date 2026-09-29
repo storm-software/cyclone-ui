@@ -29,7 +29,7 @@
     "@tamagui/group": "catalog:",
     "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
+    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/react-native-types": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/tabs": "catalog:",

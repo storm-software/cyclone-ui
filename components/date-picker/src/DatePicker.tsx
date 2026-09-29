@@ -16,10 +16,13 @@
 
  ------------------------------------------------------------------- */
 
-import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Field } from "@cyclone-ui/field";
-import { HeadingLargeText, HeadingMediumText } from "@cyclone-ui/heading-text";
+import {
+  HeadingLargeText,
+  HeadingMediumText,
+  HeadingSmallText
+} from "@cyclone-ui/heading-text";
 import type { FormControlSize, StyleEnv } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
@@ -30,6 +33,7 @@ import {
   getSized,
   getSpaced
 } from "@cyclone-ui/helpers";
+import { CaretLeft, CaretRight } from "@cyclone-ui/icons";
 import type { InputContextProps } from "@cyclone-ui/input";
 import { Input } from "@cyclone-ui/input";
 import { Popover } from "@cyclone-ui/popover";
@@ -48,7 +52,6 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { ChevronLeft, ChevronRight } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { PropsWithChildren } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -176,6 +179,9 @@ export const getDateRangeFormat = (separator: DateSeparator = ".") => {
   return `${dateFormat}${DATE_RANGE_SEPARATOR}${dateFormat}`;
 };
 
+// The month picker always renders a uniform grid of this many columns.
+const MONTH_PICKER_COLUMNS = 2;
+
 const MONTH_NAMES = [
   "January",
   "February",
@@ -216,14 +222,18 @@ const getFormFontStyle = (size: FormControlSize, env: StyleEnv) => {
   };
 };
 
-const CalendarBodyText = styled(BodyText, {
-  context: DatePickerContext,
-  variants: { controlSize: formSizeVariants(getFormFontStyle) }
-});
+
 const CalendarHeading = styled(HeadingLargeText, {
   context: DatePickerContext,
   variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
+
+const CalendarHeadingSmallText = styled(HeadingSmallText, {
+  context: DatePickerContext,
+  variants: { controlSize: formSizeVariants(getFormFontStyle) }
+});
+
+
 const CalendarRangeHeading = styled(HeadingMediumText, {
   context: DatePickerContext,
   variants: { controlSize: formSizeVariants(getFormFontStyle) }
@@ -405,14 +415,12 @@ const DayPicker = () => {
               width={cellSize}
               alignItems="center"
               justifyContent="center">
-              <CalendarBodyText
+              <CalendarHeadingSmallText
                 controlSize={size}
-                fontFamily="title-lg"
                 textAlign="center"
-                size="sm"
-                color="inkBody">
+                color="inkSubtle">
                 {day}
-              </CalendarBodyText>
+              </CalendarHeadingSmallText>
             </View>
           ))}
         </XStack>
@@ -490,7 +498,7 @@ function YearRangeSlider() {
         noPadding={true}
         {...swapOnClick(previousYearsButton())}>
         <Button.Icon>
-          <ChevronLeft />
+          <CaretLeft />
         </Button.Icon>
       </Button>
       <View
@@ -520,7 +528,7 @@ function YearRangeSlider() {
         noPadding={true}
         {...swapOnClick(nextYearsButton())}>
         <Button.Icon>
-          <ChevronRight />
+          <CaretRight />
         </Button.Icon>
       </Button>
     </View>
@@ -556,22 +564,20 @@ function YearSlider() {
         noPadding={true}
         {...swapOnClick(subtractOffset({ months: 12 }))}>
         <Button.Icon>
-          <ChevronLeft />
+          <CaretLeft />
         </Button.Icon>
       </Button>
       <View flexGrow={1} flexShrink={1} flexBasis={0} minWidth={0}>
-        <CalendarBodyText
+        <CalendarHeadingSmallText
           controlSize={size}
-          fontFamily="title-lg"
           onPress={() => setHeader("year")}
           userSelect="text"
-          size="6xl"
           textAlign="center"
           cursor="pointer"
           color="accent hover:accentHover"
           tabIndex={0}>
           {year}
-        </CalendarBodyText>
+        </CalendarHeadingSmallText>
       </View>
       <Button
         variant="ghost"
@@ -583,7 +589,7 @@ function YearSlider() {
         noPadding={true}
         {...swapOnClick(subtractOffset({ months: -12 }))}>
         <Button.Icon>
-          <ChevronRight />
+          <CaretRight />
         </Button.Icon>
       </Button>
     </View>
@@ -626,18 +632,14 @@ const CalendarHeader = () => {
         noPadding={true}
         {...swapOnClick(subtractOffset({ months: 1 }))}>
         <Button.Icon>
-          <ChevronLeft />
+          <CaretLeft />
         </Button.Icon>
       </Button>
       <YStack
         alignItems="center"
-        flexGrow={1}
-        flexShrink={1}
-        flexBasis={0}
         minWidth={0}>
-        <CalendarBodyText
+        <CalendarHeadingSmallText
           controlSize={size}
-          fontFamily="title-lg"
           transition="200ms"
           userSelect="auto"
           cursor="pointer"
@@ -645,7 +647,7 @@ const CalendarHeader = () => {
           onPress={() => setHeader("year")}
           tabIndex={0}>
           {year}
-        </CalendarBodyText>
+        </CalendarHeadingSmallText>
         <CalendarHeading
           controlSize={size}
           transition="200ms"
@@ -667,7 +669,7 @@ const CalendarHeader = () => {
         noPadding={true}
         {...swapOnClick(subtractOffset({ months: -1 }))}>
         <Button.Icon>
-          <ChevronRight />
+          <CaretRight />
         </Button.Icon>
       </Button>
     </XStack>
@@ -678,12 +680,16 @@ type ItemPickerProps = PropsWithChildren<
   DPPropGetter & {
     active: boolean;
     flexBasis?: "unset" | DimensionValue | undefined;
+    flexShrink?: number;
+    minWidth?: DimensionValue;
   }
 >;
 
 const ItemPicker = ({
   active,
   flexBasis,
+  flexShrink,
+  minWidth,
   children,
   ...rest
 }: ItemPickerProps) => {
@@ -696,6 +702,8 @@ const ItemPicker = ({
       ghostOpacity={0.75}
       flexGrow={1}
       flexBasis={flexBasis ?? "unset"}
+      flexShrink={flexShrink}
+      minWidth={minWidth}
       {...rest}>
       <Button.Text fontSize={16 * getFormFontScale(size)}>
         {children}
@@ -718,31 +726,47 @@ const MonthPicker = ({
     listenTo: "year"
   });
 
+  // Chunk into explicit rows so every row has the same number of equally
+  // sized cells, regardless of the length of each month's name.
+  const monthRows = useMemo(
+    () =>
+      months.reduce(
+        (ret, month, i) => {
+          if (i % MONTH_PICKER_COLUMNS === 0) {
+            ret.push([]);
+          }
+          ret[ret.length - 1]?.push(month);
+
+          return ret;
+        },
+        [] as (typeof months)[]
+      ),
+    [months]
+  );
+
   return (
     <AnimatePresence key={prevNextAnimationKey}>
-      <View
-        {...prevNextAnimation()}
-        display="flex"
-        flexDirection="row"
-        flexWrap="wrap"
-        gap="xl"
-        transition="100ms"
-        justifyContent="native:space-between"
-        width="native:100%">
-        {months.map(month => (
-          <ItemPicker
-            active={month.active}
-            key={month.$date.toString()}
-            flexBasis="30%"
-            {...swapOnClick(
-              monthButton(month, {
-                onClick: onChange as any
-              })
-            )}>
-            {month.month}
-          </ItemPicker>
+      <YStack {...prevNextAnimation()} gap="xl" transition="100ms" width="100%">
+        {monthRows.map((row, i) => (
+          <XStack key={row[0]?.$date.toString() ?? i} width="100%" gap="xl">
+            {row.map(month => (
+              <ItemPicker
+                active={month.active}
+                key={month.$date.toString()}
+                flexBasis={0}
+                flexShrink={1}
+                minWidth={0}
+                {...swapOnClick(
+                  monthButton(month, {
+                    onClick: onChange as any
+                  })
+                )}>
+                {month.month}
+              </ItemPicker>
+            ))}
+          </XStack>
         ))}
-      </View>
+      </YStack>
     </AnimatePresence>
   );
 };

@@ -1,0 +1,47 @@
+/**
+ * Storm Sans — self-hosted `@font-face` declarations for web applications.
+ *
+ * Uses the variable font builds, so every weight from 100 (Thin) to 700
+ * (Bold) is available from a single file per style. The referenced files are
+ * built from the `./storm-sans` UFO/designspace sources via the `fonts`
+ * project (requires `fontmake`):
+ *
+ *   nx run fonts:build
+ *
+ * URLs are relative to this file, so it works both from the source project
+ * (`fonts/fonts.css` -> `fonts/dist/*`) and from the build output
+ * (`dist/fonts/fonts.css` -> `dist/fonts/dist/*`).
+ *
+ * Bundled apps (Vite, webpack, Next.js) can import it directly:
+ *
+ *   import "@fonts/fonts.css";
+ *
+ * Unbundled apps can serve the build output and link it:
+ *
+ *   <link rel="stylesheet" href="/fonts/fonts.css" />
+ *
+ * Then apply the family, for example:
+ *
+ *   font-family: "Storm Sans", -apple-system, BlinkMacSystemFont, system-ui,
+ *     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+ */
+
+@font-face {
+  font-family: "Storm Sans";
+  src:
+    url("./dist/StormSans-VF.ttf") format("truetype") tech(variations),
+    url("./dist/StormSans-VF.ttf") format("truetype-variations");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src:
+    url("./dist/StormSans-Italic-VF.ttf") format("truetype") tech(variations),
+    url("./dist/StormSans-Italic-VF.ttf") format("truetype-variations");
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}

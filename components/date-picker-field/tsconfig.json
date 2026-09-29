@@ -15,16 +15,19 @@
   },
   "references": [
     {
-      "path": "../../packages/helpers"
+      "path": "../../packages/state"
     },
     {
-      "path": "../../packages/state"
+      "path": "../../packages/helpers"
     },
     {
       "path": "../field"
     },
     {
       "path": "../date-picker"
+    },
+    {
+      "path": "../icons"
     },
     {
       "path": "../form"

@@ -263,6 +263,9 @@
     },
     {
       "path": "./components/type-table"
+    },
+    {
+      "path": "./components/icons"
     }
   ],
   "files": []

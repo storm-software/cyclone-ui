@@ -47,6 +47,9 @@
       "path": "../../components/form"
     },
     {
+      "path": "../../components/icons"
+    },
+    {
       "path": "../../packages/helpers"
     },
     {

@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { getSized } from "@cyclone-ui/helpers";
+import { Lock, MinusCircle, PlusCircle } from "@cyclone-ui/icons";
 import {
   AlertCircle,
   CheckCircle,
@@ -34,8 +35,7 @@ import { createStyledHOC, styled, View } from "@tamagui/core";
 import type { IconProps } from "@tamagui/helpers-icon";
 import type { ColorProp } from "@tamagui/helpers-tamagui";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
-import { Lock, MinusCircle, PlusCircle } from "@tamagui/lucide-icons-2";
-import type { ComponentProps, PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import { useMemo } from "react";
 import type { OpaqueColorValue } from "react-native";
 
@@ -45,9 +45,6 @@ const ThemeableIconFrame = styled(View, {
   opacity: "enter:0 exit:0",
   scale: "enter:0.5 exit:0.5"
 });
-
-// `@tamagui/lucide-icons-2` still ships Tamagui v2 icon typings.
-type LucideIconProps = ComponentProps<typeof Lock>;
 
 type BaseThemeIconProps = {
   theme?: string | null;
@@ -60,7 +57,7 @@ export const getIconByTheme = ({
   ...props
 }: BaseThemeIconProps) => {
   if (disabled) {
-    return <Lock {...(props as LucideIconProps)} />;
+    return <Lock {...props} />;
   } else if (theme?.includes("danger")) {
     return <ErrorCircle {...props} />;
   } else if (theme?.includes("warning")) {
@@ -72,9 +69,9 @@ export const getIconByTheme = ({
   } else if (theme?.includes("success")) {
     return <CheckCircle {...props} />;
   } else if (theme?.includes("positive")) {
-    return <PlusCircle {...(props as LucideIconProps)} />;
+    return <PlusCircle {...props} />;
   } else if (theme?.includes("negative")) {
-    return <MinusCircle {...(props as LucideIconProps)} />;
+    return <MinusCircle {...props} />;
   }
 
   return null;

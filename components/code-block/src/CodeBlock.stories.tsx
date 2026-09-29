@@ -16,8 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import { FileCode, Terminal } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { FileCode2, Terminal } from "@tamagui/lucide-icons-2";
 import { expect, userEvent, within } from "storybook/test";
 import {
   CodeBlock,
@@ -70,10 +70,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {
   render: args => (
-    <CodeBlock
-      {...args}
-      title="example.ts"
-      icon={<FileCode2 color="inkBody" />}>
+    <CodeBlock {...args} title="example.ts" icon={<FileCode color="inkBody" />}>
       <TypeScriptCode />
     </CodeBlock>
   ),

@@ -22,7 +22,7 @@
     "@tamagui/core": "catalog:",
     "@tamagui/group": "catalog:",
     "@tamagui/helpers": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
+    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/stacks": "catalog:",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/vectors": "workspace:*"

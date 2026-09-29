@@ -27,6 +27,7 @@ import {
   getSpaced,
   type FormControlSize
 } from "@cyclone-ui/helpers";
+import { CaretDown } from "@cyclone-ui/icons";
 import { ControlUnderline } from "@cyclone-ui/input";
 import type { GetProps } from "@tamagui/core";
 import {
@@ -36,7 +37,6 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
-import { ChevronDown } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { XStack } from "@tamagui/stacks";
 import { useCallback, useState } from "react";
@@ -131,7 +131,12 @@ const SelectGroup = styled(XStack, {
 const SelectSeparator = styled(View, {
   displayName: "Select",
   context: SelectContext,
-  transition: "200ms",
+  // Fades in over 200ms when the separator mounts. The object form with an
+  // `enter` key keeps a hover/focus restyle during the fade from snapping it
+  // to full opacity: Tamagui only re-renders (instead of emitting styles with
+  // the mount-time "no animation" flag) when `transition` names `enter`.
+  transition: { duration: "200ms", enter: "200ms" },
+  opacity: "enter:0",
   // Tamagui's vertical Separator emits rules on both sides. Use the same
   // one-pixel left rule as Input so the Select and field-icon dividers match.
   borderWidth: 0,
@@ -203,10 +208,7 @@ const SelectTrigger = createStyledHOC(
           rotate={focused ? "180deg" : "0deg"}
           alignItems="center"
           justifyContent="center">
-          <ChevronDown
-            size={24 * getFormSizeScale(size)}
-            color={iconColor}
-          />
+          <CaretDown size={24 * getFormSizeScale(size)} color={iconColor} />
         </View>
       </Field.Icon>
     );
@@ -337,6 +339,7 @@ const SelectGroupImpl = createStyledHOC(
       onBlur,
       onChange,
       size = "md",
+      value,
       ...props
     }: GetProps<typeof BaseSelect> & Partial<SelectContextProps>,
     forwardedRef
@@ -360,10 +363,10 @@ const SelectGroupImpl = createStyledHOC(
     );
 
     const handleChanged = useCallback(
-      (value: string) => {
+      (nextValue: string) => {
         onChange?.(
           new CustomEvent("change", {
-            detail: value
+            detail: nextValue
           })
         );
         onBlur?.();
@@ -383,6 +386,7 @@ const SelectGroupImpl = createStyledHOC(
         hasValidationMessage={hasValidationMessage}
         variant={variant}
         size={resolvedSize}
+        value={value}
         onFocus={onFocus}
         onBlur={onBlur}
         onChange={onChange}>
@@ -391,6 +395,7 @@ const SelectGroupImpl = createStyledHOC(
           ref={forwardedRef}
           disablePreventBodyScroll={true}
           {...props}
+          value={value}
           onValueChange={handleChanged}
           onOpenChange={handleOpenChanged}
           open={open}

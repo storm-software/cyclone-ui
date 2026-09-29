@@ -17,9 +17,13 @@
  ------------------------------------------------------------------- */
 
 import { isWeb } from "@tamagui/constants";
-import type { GetProps } from "@tamagui/core";
+import type {
+  GetFinalProps,
+  GetProps,
+  TamaguiComponent
+} from "@tamagui/core";
 import { createStyledHOC, styled } from "@tamagui/core";
-import { ScrollView as ScrollViewNative } from "react-native";
+import { ScrollView as TamaguiScrollView } from "@tamagui/scroll-view";
 
 export const SCROLL_VIEW_CLASS_NAME = "cyclone-scroll-view";
 
@@ -32,8 +36,11 @@ export const SCROLL_VIEW_STYLES = `
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-button { display: none; }
 `;
 
+// Built on Tamagui's `ScrollView` (a DOM `WebScrollView` on web) rather than
+// React Native's: React Native Web drops `className`, so the
+// `SCROLL_VIEW_CLASS_NAME` selectors in `SCROLL_VIEW_STYLES` never matched.
 const ScrollViewFrame = styled(
-  ScrollViewNative,
+  TamaguiScrollView,
   {
     displayName: "ScrollView",
     scrollEnabled: true,
@@ -66,10 +73,37 @@ const ScrollViewFrame = styled(
   }
   // v2 passed `{ accept: { contentContainerStyle: "style" } }` here so
   // `contentContainerStyle` resolved Tamagui tokens. v3 removed `accept`, so
-  // `contentContainerStyle` is now passed to React Native unresolved.
+  // `contentContainerStyle` is now passed to the underlying scroll view
+  // unresolved.
 );
 
-export const ScrollView = createStyledHOC(
+type ScrollViewVariants = {
+  size?: "sm" | "lg";
+  fullscreen?: boolean;
+};
+
+// Spelled out because the inferred type references `WebScrollViewProps`,
+// which `@tamagui/scroll-view` does not export (TS2883).
+type ScrollViewComponent =
+  typeof TamaguiScrollView extends TamaguiComponent<
+    any,
+    infer Ref,
+    infer NonStyledProps,
+    infer BaseStyles,
+    any,
+    infer StaticProperties
+  >
+    ? TamaguiComponent<
+        GetFinalProps<NonStyledProps, BaseStyles, ScrollViewVariants>,
+        Ref,
+        NonStyledProps,
+        BaseStyles,
+        ScrollViewVariants,
+        StaticProperties
+      >
+    : never;
+
+export const ScrollView: ScrollViewComponent = createStyledHOC(
   ScrollViewFrame,
   ({ children, className, ...props }, forwardedRef) => (
     <ScrollViewFrame
@@ -83,6 +117,6 @@ export const ScrollView = createStyledHOC(
   { displayName: "ScrollView" }
 );
 
-export type ScrollView = ScrollViewNative;
+export type ScrollView = TamaguiScrollView;
 
 export type ScrollViewProps = GetProps<typeof ScrollView>;

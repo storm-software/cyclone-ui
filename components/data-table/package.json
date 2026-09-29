@@ -47,7 +47,7 @@
     "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/helpers": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
+    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@tanstack/react-table": "^8.21.3",

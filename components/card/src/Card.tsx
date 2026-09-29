@@ -21,6 +21,7 @@ import { Container } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
 import { getSpaced } from "@cyclone-ui/helpers";
+import { ArrowRight } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
@@ -43,7 +44,6 @@ import {
 import { getFontSized } from "@tamagui/get-font-sized";
 import { withStaticProperties } from "@tamagui/helpers";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { ArrowRight } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps, SizeTokens } from "@tamagui/web";
 import { createContext, use, useContext } from "react";

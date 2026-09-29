@@ -17,8 +17,8 @@
  ------------------------------------------------------------------- */
 
 import { Form } from "@cyclone-ui/form";
+import { Lock, MagnifyingGlass } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Lock, Search } from "@tamagui/lucide-icons-2";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { InputField } from "./InputField";
 
@@ -170,7 +170,7 @@ export const FloatingWithStartIcon: Story = {
         <InputField.Control>
           <InputField.Control.TextBox>
             <InputField.Icon position="start" aria-label="Search icon">
-              <Search aria-hidden={true} />
+              <MagnifyingGlass aria-hidden={true} />
             </InputField.Icon>
             <InputField.Control.TextBox.Value />
           </InputField.Control.TextBox>

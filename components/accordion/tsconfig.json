@@ -20,6 +20,9 @@
       "path": "../heading-text"
     },
     {
+      "path": "../icons"
+    },
+    {
       "path": "../body-text"
     }
   ],

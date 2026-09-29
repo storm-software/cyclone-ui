@@ -118,16 +118,15 @@ const TooltipContentImpl = createStyledHOC(
       children,
       hasArrow = true,
       arrowBorderColor,
+      borderColor = "hairline",
       ...props
     }: GetProps<typeof TooltipContent> & TooltipContentExtraProps,
     forwardedRef
   ) => {
     return (
-      <TooltipContent ref={forwardedRef} {...props}>
+      <TooltipContent ref={forwardedRef} {...props} borderColor={borderColor}>
         {hasArrow && (
-          <TooltipArrow
-            {...(arrowBorderColor ? { borderColor: arrowBorderColor } : null)}
-          />
+          <TooltipArrow borderColor={arrowBorderColor || borderColor} />
         )}
         {children}
       </TooltipContent>
