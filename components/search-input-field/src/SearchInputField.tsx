@@ -25,7 +25,12 @@ import type { InputValueProps } from "@cyclone-ui/input";
 import { InputField } from "@cyclone-ui/input-field";
 import { Popover } from "@cyclone-ui/popover";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
-import { Text, View, withStaticProperties } from "@tamagui/core";
+import {
+  createStyledHOC,
+  Text,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { Search } from "@tamagui/lucide-icons-2";
 import type { JSX, KeyboardEvent, MouseEvent } from "react";
 import {
@@ -51,13 +56,15 @@ type Styleable = <TProps>(
 ) => any;
 
 interface SearchInputFieldGroupProps extends SearchInputFieldExtraProps {
+  name: string;
   children?: React.ReactNode;
   [key: string]: any;
 }
 
-const styleableInputField = InputField.styleable as Styleable;
+const styleableInputField = ((render: any) =>
+  createStyledHOC(InputField as any, render)) as Styleable;
 
-const SearchInputFieldGroup = styleableInputField<SearchInputFieldExtraProps>(
+const SearchInputFieldGroup = styleableInputField<SearchInputFieldGroupProps>(
   (
     {
       children,
@@ -83,7 +90,8 @@ interface SearchInputFieldLabelProps {
   [key: string]: any;
 }
 
-const styleableInputFieldLabel = InputField.Label.styleable as Styleable;
+const styleableInputFieldLabel = ((render: any) =>
+  createStyledHOC(InputField.Label as any, render)) as Styleable;
 
 const SearchInputFieldLabel =
   styleableInputFieldLabel<SearchInputFieldLabelProps>(
@@ -104,7 +112,8 @@ interface SearchInputFieldControlProps {
   [key: string]: any;
 }
 
-const styleableInputFieldControl = InputField.Control.styleable as Styleable;
+const styleableInputFieldControl = ((render: any) =>
+  createStyledHOC(InputField.Control as any, render)) as Styleable;
 
 const SearchInputFieldControl =
   styleableInputFieldControl<SearchInputFieldControlProps>(
@@ -117,8 +126,8 @@ const SearchInputFieldControl =
     }
   );
 
-const styleableInputFieldTextBox = InputField.Control.TextBox
-  .styleable as Styleable;
+const styleableInputFieldTextBox = ((render: any) =>
+  createStyledHOC(InputField.Control.TextBox as any, render)) as Styleable;
 
 interface SearchInputFieldControlTextBoxProps extends Partial<
   Pick<InputValueProps, "aria-label" | "placeholder">
@@ -256,10 +265,10 @@ const SearchInputFieldControlTextBox =
           <Popover.Content
             hasArrow={false}
             disableFocusScope={true}
-            minWidth="$20xl"
-            paddingHorizontal="$4xl">
-            <Popover.Content.ScrollView size="lg" maxHeight="$36xl">
-              <View asChild={true} gap="$xxs" width="100%">
+            minWidth="20xl"
+            paddingHorizontal="4xl">
+            <Popover.Content.ScrollView size="lg" maxHeight="36xl">
+              <View asChild={true} gap="xxs" width="100%">
                 <div id={listBoxId} role="listbox">
                   {filteredSuggestions.map((suggestion, index) => (
                     <View
@@ -269,22 +278,13 @@ const SearchInputFieldControlTextBox =
                       aria-selected={index === activeIndex}
                       cursor="pointer"
                       width="100%"
-                      minHeight={getSized("$8xl") * getFormSizeScale(size)}
-                      padding="$xs"
+                      minHeight={getSized("8xl") * getFormSizeScale(size)}
+                      padding="xs"
                       paddingHorizontal={10 * getFormSizeScale(size)}
                       borderWidth={1}
-                      borderColor={
-                        index === activeIndex ? "$accent" : "transparent"
-                      }
-                      borderRadius="$button"
-                      backgroundColor={
-                        index === activeIndex
-                          ? "$surfaceFloatingActive"
-                          : "transparent"
-                      }
-                      hoverStyle={{
-                        backgroundColor: "$surfaceFloatingHover"
-                      }}
+                      borderColor={`${index === activeIndex ? "accent" : "transparent"}`}
+                      borderRadius="button"
+                      backgroundColor={`${index === activeIndex ? "surfaceFloatingActive" : "transparent"} hover:surfaceFloatingHover`}
                       alignItems="center"
                       justifyContent="center"
                       onMouseDown={preserveInputFocus}

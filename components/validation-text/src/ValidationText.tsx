@@ -16,32 +16,32 @@
 
  ------------------------------------------------------------------- */
 
+import type { GetProps } from "@tamagui/core";
 import { BodyText } from "@cyclone-ui/body-text";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import type { ValidationDetail as ValidationDetails } from "@stryke/types/validations";
-import { styled } from "@tamagui/core";
+import { createStyledHOC, styled, useThemeName } from "@tamagui/core";
 import { Dot } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 
 const ValidationBodyText = styled(BodyText, {
+  fontFamily: "caption",
   transition: "400ms",
-
-  enterStyle: {
-    opacity: 0,
-    y: 10
-  },
-
-  exitStyle: {
-    opacity: 0,
-    y: 10
-  }
+  opacity: "enter:0 exit:0",
+  y: "enter:10px exit:10px"
 });
 
-export const ValidationText = ValidationBodyText.styleable<{
+export const ValidationText = createStyledHOC(ValidationBodyText, ({ disabled, theme: themeProp, messages = [], ...props }: GetProps<typeof ValidationBodyText> & {
   messages?: ValidationDetails[];
   theme?: string;
   disabled?: boolean;
-}>(({ disabled, theme = "base", messages = [], ...props }, forwardedRef) => {
+}, forwardedRef) => {
+  // `createStyledHOC` consumes `theme` and wraps this render in that `Theme`,
+  // so read the active theme name rather than re-theming the text: forcing a
+  // `base` theme here resolved `accent` against the root theme.
+  const themeName = useThemeName();
+  const theme = themeProp ?? themeName;
+
   if ((messages.length === 1 && messages[0]?.message) || disabled) {
     const message =
       (disabled && (!theme || theme.endsWith("base"))) || messages.length === 0
@@ -49,7 +49,7 @@ export const ValidationText = ValidationBodyText.styleable<{
         : messages[0]?.message;
 
     return (
-      <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
+      <ValidationBodyText ref={forwardedRef} {...props}>
         {message}
       </ValidationBodyText>
     );
@@ -67,18 +67,18 @@ export const ValidationText = ValidationBodyText.styleable<{
   }
 
   return (
-    <YStack gap="$xs">
-      <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
+    <YStack gap="xs">
+      <ValidationBodyText ref={forwardedRef} {...props}>
         {heading}
       </ValidationBodyText>
       {messages
         .filter(message => message.message)
         .map(message => (
-          <XStack key={message.message} gap="$md" alignItems="center">
-            <ThemeableIcon color="$accent">
+          <XStack key={message.message} gap="md" alignItems="center">
+            <ThemeableIcon color="accent">
               <Dot />
             </ThemeableIcon>
-            <ValidationBodyText {...props} theme={theme}>
+            <ValidationBodyText {...props}>
               {message.message}
             </ValidationBodyText>
           </XStack>

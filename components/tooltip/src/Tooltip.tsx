@@ -16,82 +16,91 @@
 
  ------------------------------------------------------------------- */
 
-import type { SizeTokens } from "@tamagui/core";
+import type { GetProps, SizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
+  createStyledHOC,
   styled,
   withStaticProperties
 } from "@tamagui/core";
+import type { TooltipProps as TamaguiTooltipProps } from "@tamagui/tooltip";
 import { Tooltip as TamaguiTooltip } from "@tamagui/tooltip";
 
 export interface TooltipContextProps {
   size: SizeTokens;
 }
 
-export const TooltipContext = createStyledContext<TooltipContextProps>({
-  size: "$12xl"
-});
+export const TooltipContext = createStyledContext<TooltipContextProps, "size">(
+  {
+    size: "12xl"
+  } as TooltipContextProps,
+  {
+    keys: ["size"]
+  }
+);
 
 const TooltipFrame = styled(TamaguiTooltip, {
-  name: "Tooltip",
+  displayName: "Tooltip",
   context: TooltipContext
 });
 
-const TooltipFrameImpl = TooltipFrame.styleable<Partial<TooltipContextProps>>(
-  ({ children, size = "$true", ...props }, forwardedRef) => {
+const TooltipFrameImpl = createStyledHOC(
+  TooltipFrame,
+  (
+    {
+      children,
+      size = true,
+      ...props
+    }: TamaguiTooltipProps & Partial<TooltipContextProps>,
+    forwardedRef
+  ) => {
     return (
       <TooltipContext.Provider size={size}>
-        <TamaguiTooltip ref={forwardedRef} size={size} {...props}>
+        {/* v3's Tooltip (Popper) has no `size` prop; size lives in context. */}
+        <TamaguiTooltip ref={forwardedRef} {...props}>
           {children}
         </TamaguiTooltip>
       </TooltipContext.Provider>
     );
   },
-  { staticConfig: { componentName: "Tooltip" } }
+  { displayName: "Tooltip" }
 );
 
 const TooltipArrow = styled(TamaguiTooltip.Arrow, {
-  name: "Tooltip",
+  displayName: "Tooltip",
   context: TooltipContext,
-
-  backgroundColor: "$surfaceFloating",
+  backgroundColor: "surfaceFloating",
   borderWidth: 2,
-  borderColor: "$accent"
+  borderColor: "accent"
 });
 
 const TooltipContent = styled(TamaguiTooltip.Content, {
-  name: "Tooltip",
+  displayName: "Tooltip",
   context: TooltipContext,
-
   transition: "200ms",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: "$surfaceFloating",
-  paddingVertical: "$3xl",
-  paddingHorizontal: "$2xl",
+  backgroundColor: "surfaceFloating",
+  paddingVertical: "3xl",
+  paddingHorizontal: "2xl",
   borderWidth: 2,
-  borderColor: "$accent",
-  borderRadius: "$tooltip",
-
-  enterStyle: { x: 0, y: -5, opacity: 0, scale: 0.9 },
-  exitStyle: { x: 0, y: -5, opacity: 0, scale: 0.9 },
-
-  focusVisibleStyle: {
-    outlineColor: "$accentActive",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
-    borderColor: "$accentActive"
-  },
-
+  borderColor: "accent focus-visible:accentActive",
+  borderRadius: "tooltip",
+  x: "enter:0 exit:0",
+  y: "enter:-5px exit:-5px",
+  opacity: "enter:0 exit:0",
+  scale: "enter:0.9 exit:0.9",
+  outlineColor: "focus-visible:accentActive",
+  outlineWidth: "focus-visible:3px",
+  outlineOffset: "focus-visible:lg",
+  outlineStyle: "focus-visible:solid",
   variants: {
     elevated: {
       true: {
-        boxShadow: "0px 4px 30px $overlayBackdrop"
+        boxShadow: "0px 4px 30px overlayBackdrop"
       }
     }
   } as const,
-
   defaultVariants: {
     elevated: true
   }
@@ -99,18 +108,32 @@ const TooltipContent = styled(TamaguiTooltip.Content, {
 
 interface TooltipContentExtraProps {
   hasArrow?: boolean;
+  arrowBorderColor?: GetProps<typeof TooltipContent>["borderColor"];
 }
 
-const TooltipContentImpl = TooltipContent.styleable<TooltipContentExtraProps>(
-  ({ children, hasArrow = true, ...props }, forwardedRef) => {
+const TooltipContentImpl = createStyledHOC(
+  TooltipContent,
+  (
+    {
+      children,
+      hasArrow = true,
+      arrowBorderColor,
+      ...props
+    }: GetProps<typeof TooltipContent> & TooltipContentExtraProps,
+    forwardedRef
+  ) => {
     return (
       <TooltipContent ref={forwardedRef} {...props}>
-        {hasArrow && <TooltipArrow />}
+        {hasArrow && (
+          <TooltipArrow
+            {...(arrowBorderColor ? { borderColor: arrowBorderColor } : null)}
+          />
+        )}
         {children}
       </TooltipContent>
     );
   },
-  { staticConfig: { componentName: "Tooltip" } }
+  { displayName: "Tooltip" }
 );
 
 export const Tooltip = withStaticProperties(TooltipFrameImpl, {

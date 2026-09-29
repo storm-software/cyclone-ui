@@ -10,7 +10,7 @@ const storiesSource = readFileSync(
 describe("FileTree color states", () => {
   it("colors every part of an expanded folder as active", () => {
     expect(source).toContain(
-      'const color = open || hovered || parentOpen ? "$accent" : "$inkSubtle";'
+      'const color = open || hovered || parentOpen ? "accent" : "inkSubtle";'
     );
     expect(source).toContain(
       "getTreeIcon(\n            open ? (openIcon ?? defaultFolderOpenIcon) : icon,\n            color"
@@ -20,7 +20,7 @@ describe("FileTree color states", () => {
 
   it("colors each file tree row and its contents as active on hover", () => {
     expect(source).toContain(
-      'const color = hovered || parentOpen ? "$accent" : "$inkSubtle";'
+      'const color = hovered || parentOpen ? "accent" : "inkSubtle";'
     );
     expect(source).toContain(
       "const getTreeIcon = (icon: ReactNode, color: string): ReactNode =>"
@@ -37,7 +37,7 @@ describe("FileTree color states", () => {
       "const parentOpen = useContext(FileTreeOpenContext);"
     );
     expect(source).toContain(
-      'const color = hovered || parentOpen ? "$accent" : "$inkSubtle";'
+      'const color = hovered || parentOpen ? "accent" : "inkSubtle";'
     );
     expect(source).toContain(
       "<FileTreeOpenContext.Provider value={open || parentOpen}>"

@@ -16,17 +16,20 @@
 
  ------------------------------------------------------------------- */
 
-import { Field } from "@cyclone-ui/field";
+import { Field, type FieldProps } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { RadioGroup } from "./RadioGroup";
 
-const meta: Meta<typeof RadioGroup> = {
+// Story args configure the wrapping `Field`, not the `RadioGroup` itself.
+type RadioGroupStoryArgs = Omit<FieldProps<string>, "children" | "name">;
+
+const meta: Meta<RadioGroupStoryArgs> = {
   title: "Base/RadioGroup",
   component: RadioGroup,
   tags: ["autodocs"],
-  render: ({ defaultValue, ...props }: any) => (
-    <Form name="formName" defaultValues={{ selectName: defaultValue }}>
+  render: ({ defaultValue, ...props }: any, { id }: { id: string }) => (
+    <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
       <Field name="selectName" {...props}>
         <Field.Label>Label Text</Field.Label>
         <RadioGroup size={props.size} width="500px">
@@ -45,11 +48,11 @@ const meta: Meta<typeof RadioGroup> = {
       </Field>
     </Form>
   )
-} satisfies Meta<typeof RadioGroup>;
+} satisfies Meta<RadioGroupStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof RadioGroup>;
+type Story = StoryObj<RadioGroupStoryArgs>;
 
 const validation = (
   type:

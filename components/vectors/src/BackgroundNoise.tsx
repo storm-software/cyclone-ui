@@ -17,12 +17,13 @@
  ------------------------------------------------------------------- */
 
 import type { IconProps } from "@tamagui/helpers-icon";
-import { themed } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { memo } from "react";
 import type { SvgProps } from "react-native-svg";
 import * as ReactNativeSvg from "react-native-svg";
 import { Defs, Rect, Svg } from "react-native-svg";
+import type { ThemedIconBodyProps } from "./themed-icon";
+import { themedIcon } from "./themed-icon";
 
 const Filter = (ReactNativeSvg as any).Filter ?? "filter";
 const FeTurbulence = (ReactNativeSvg as any).FeTurbulence ?? "feTurbulence";
@@ -31,8 +32,8 @@ const FeSpecularLighting =
 const FeDistantLight =
   (ReactNativeSvg as any).FeDistantLight ?? "feDistantLight";
 
-const Icon = (props: IconProps) => {
-  const color = useCurrentColor((props.color || "$onAccent") as any);
+const Icon = (props: ThemedIconBodyProps<IconProps>) => {
+  const color = useCurrentColor((props.color || "onAccent") as any);
 
   return (
     <Svg
@@ -66,7 +67,7 @@ const Icon = (props: IconProps) => {
             surfaceScale="15"
             specularConstant="0.75"
             specularExponent="20"
-            lightingColor={color || "$muted"}
+            lightingColor={color || "muted"}
             x="0%"
             y="0%"
             width="100%"
@@ -81,7 +82,7 @@ const Icon = (props: IconProps) => {
       <Rect
         width="700"
         height="700"
-        fill={color || "$muted"}
+        fill={color || "muted"}
         filter="url(#noise-filter)"></Rect>
     </Svg>
   );
@@ -89,4 +90,4 @@ const Icon = (props: IconProps) => {
 
 Icon.displayName = "BackgroundNoise";
 
-export const BackgroundNoise = memo<IconProps>(themed(Icon));
+export const BackgroundNoise = memo<IconProps>(themedIcon(Icon));

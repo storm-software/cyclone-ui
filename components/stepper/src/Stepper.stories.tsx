@@ -26,7 +26,7 @@ const meta: Meta<typeof Stepper> = {
   component: Stepper,
   tags: ["autodocs"],
   render: ({ children, ...rest }: any) => (
-    <Stepper gap="$xl" {...rest}>
+    <Stepper gap="xl" {...rest}>
       <Stepper.Header>
         <Stepper.Header.Item value="tab1">Step One</Stepper.Header.Item>
         <Stepper.Header.Item value="tab2">Step Two</Stepper.Header.Item>
@@ -36,32 +36,32 @@ const meta: Meta<typeof Stepper> = {
 
       <Stepper.Content>
         <Stepper.Content.Item value="tab1">
-          <Text color="$inkBody">
+          <Text color="inkBody">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Text>
         </Stepper.Content.Item>
         <Stepper.Content.Item value="tab2">
-          <Text color="$inkBody">
+          <Text color="inkBody">
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.
           </Text>
         </Stepper.Content.Item>
         <Stepper.Content.Item value="tab3">
-          <Text color="$inkBody">
+          <Text color="inkBody">
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur.
           </Text>
         </Stepper.Content.Item>
         <Stepper.Content.Item value="tab4">
-          <Text color="$inkBody">
+          <Text color="inkBody">
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
             officia deserunt mollit anim id est laborum.
           </Text>
         </Stepper.Content.Item>
       </Stepper.Content>
 
-      <XStack gap="$xl">
+      <XStack gap="xl">
         <Stepper.PreviousButton />
         <Stepper.NextButton />
       </XStack>

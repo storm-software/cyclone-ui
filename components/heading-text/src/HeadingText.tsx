@@ -16,82 +16,100 @@
 
  ------------------------------------------------------------------- */
 
-import type { GetProps } from "@tamagui/core";
-import { styled } from "@tamagui/core";
+import type { FontSizeTokens, GetProps } from "@tamagui/core";
+import { createStyledHOC, styled } from "@tamagui/core";
+// Lets TypeScript name `GetFontSizedInput` (SizableText's `size` type) in
+// this package's declarations.
+import type {} from "@tamagui/get-font-sized";
 import { SizableText } from "@tamagui/text";
 
 const BaseHeadingText = styled(SizableText, {
-  name: "HeadingText",
+  displayName: "HeadingText",
   render: "span",
   role: "heading",
-
-  fontFamily: "$display-md",
-  color: "$accent"
+  fontFamily: "display-md",
+  // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
+  // only define `true` plus their own step, so name the default step explicitly.
+  size: "true" as FontSizeTokens,
+  color: "accent"
 });
 
 export const HeadingHeroText = styled(BaseHeadingText, {
-  name: "HeadingHeroText",
+  displayName: "HeadingHeroText",
   render: "h1",
-
-  fontFamily: "$display-hero",
-  color: "$accent"
+  fontFamily: "display-hero",
+  color: "accent"
 });
 
 export const HeadingTitleText = styled(BaseHeadingText, {
-  name: "HeadingTitleText",
+  displayName: "HeadingTitleText",
   render: "h1",
-
-  fontFamily: "$display-title",
-  color: "$inkEmphasis"
+  fontFamily: "display-lg",
+  color: "inkEmphasis"
 });
 
 export const HeadingExtraLargeText = styled(BaseHeadingText, {
-  name: "HeadingExtraLargeText",
+  displayName: "HeadingExtraLargeText",
   render: "h2",
-
-  fontFamily: "$display-xl",
-  color: "$inkEmphasis"
+  fontFamily: "display-lg",
+  color: "inkEmphasis"
 });
 
 export const HeadingLargeText = styled(BaseHeadingText, {
-  name: "HeadingLargeText",
+  displayName: "HeadingLargeText",
   render: "h3",
-
-  fontFamily: "$display-lg",
-  color: "$inkEmphasis"
+  fontFamily: "display-md",
+  color: "inkEmphasis"
 });
 
 export const HeadingMediumText = styled(BaseHeadingText, {
-  name: "HeadingMediumText",
+  displayName: "HeadingMediumText",
   render: "h4",
-
-  fontFamily: "$display-md",
-  color: "$inkEmphasis"
+  fontFamily: "display-sm",
+  color: "inkEmphasis"
 });
 
 export const HeadingSmallText = styled(BaseHeadingText, {
-  name: "HeadingSmallText",
+  displayName: "HeadingSmallText",
   render: "h5",
-
-  fontFamily: "$display-sm",
-  color: "$inkEmphasis"
+  fontFamily: "display-sm",
+  color: "inkEmphasis"
 });
 
 export const HeadingExtraSmallText = styled(BaseHeadingText, {
-  name: "HeadingExtraSmallText",
+  displayName: "HeadingExtraSmallText",
   render: "span",
-
-  fontFamily: "$display-xs",
-  color: "$inkEmphasis"
+  fontFamily: "display-sm",
+  color: "inkEmphasis"
 });
 
 export type HeadingTextProps = GetProps<typeof BaseHeadingText>;
 
-export const HeadingText = BaseHeadingText.styleable<{
-  level?:
-    1 | 2 | 3 | 4 | 5 | 6 | "hero" | "title" | "xl" | "lg" | "md" | "sm" | "xs";
-}>(
-  ({ children, level, ...props }, forwardedRef) => {
+export const HeadingText = createStyledHOC(
+  BaseHeadingText,
+  (
+    {
+      children,
+      level,
+      ...props
+    }: GetProps<typeof BaseHeadingText> & {
+      level?:
+        | 1
+        | 2
+        | 3
+        | 4
+        | 5
+        | 6
+        | "hero"
+        | "title"
+        | "xl"
+        | "lg"
+        | "md"
+        | "sm"
+        | "xs";
+    },
+    forwardedRef
+  ) => {
     if (level === 1 || level === "hero") {
       return (
         <HeadingHeroText ref={forwardedRef} {...props}>
@@ -142,5 +160,5 @@ export const HeadingText = BaseHeadingText.styleable<{
       </BaseHeadingText>
     );
   },
-  { staticConfig: { componentName: "HeadingText" } }
+  { displayName: "HeadingText" }
 );

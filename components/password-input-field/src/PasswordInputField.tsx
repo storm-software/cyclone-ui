@@ -21,7 +21,13 @@ import { Field } from "@cyclone-ui/field";
 import { InputField } from "@cyclone-ui/input-field";
 import type { Validator } from "@cyclone-ui/state/form";
 import { FieldApi, ValidationCause } from "@cyclone-ui/state/form";
-import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  Theme,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { Eye, EyeOff } from "@tamagui/lucide-icons-2";
 import { YStack } from "@tamagui/stacks";
 import type { KeyboardEvent } from "react";
@@ -68,29 +74,29 @@ const strengthLabels = [
 ] as const;
 
 const PasswordStrengthFrame = styled(View, {
-  name: "PasswordInputFieldStrength",
-  gap: "$xl"
+  displayName: "PasswordInputFieldStrength",
+  gap: "xl"
 });
 
 const PasswordStrengthSegments = styled(View, {
   flexDirection: "row",
-  gap: "$xl"
+  gap: "xl"
 });
 
 const PasswordStrengthSegment = styled(View, {
-  height: "$sm",
+  height: "sm",
   flex: 1,
   borderRadius: 100_000,
-  backgroundColor: "$surfaceElevated"
+  backgroundColor: "surfaceElevated"
 });
 
 const PasswordStrengthLabel = styled(BodyText, {
-  color: "$inkBody",
+  color: "inkBody",
   textAlign: "right",
-  marginRight: "$md"
+  marginRight: "md"
 });
 
-const PasswordInputFieldStrength = PasswordStrengthFrame.styleable(
+const PasswordInputFieldStrength = createStyledHOC(PasswordStrengthFrame, 
   (props, forwardedRef) => {
     const field = FieldApi.use();
     const value = field.formattedValue.get();
@@ -115,7 +121,7 @@ const PasswordInputFieldStrength = PasswordStrengthFrame.styleable(
             return (
               <Theme key={index} name={active ? activeTheme : "base"}>
                 <PasswordStrengthSegment
-                  backgroundColor={active ? "$accent" : "$surfaceElevated"}
+                  backgroundColor={`${active ? "accent" : "surfaceElevated"}`}
                 />
               </Theme>
             );
@@ -129,7 +135,7 @@ const PasswordInputFieldStrength = PasswordStrengthFrame.styleable(
   }
 );
 
-const PasswordInputFieldGroup = Field.styleable(
+const PasswordInputFieldGroup = createStyledHOC(Field, 
   (
     { children, theme, validate, variant = "floating", ...props },
     forwardedRef
@@ -163,8 +169,8 @@ const PasswordInputFieldGroup = Field.styleable(
           variant={variant}
           validate={validation}
           width="100%">
-          <YStack gap="$3xl">
-            <YStack gap="$lg">{children}</YStack>
+          <YStack gap="3xl">
+            <YStack gap="lg">{children}</YStack>
             <PasswordInputFieldStrength />
           </YStack>
         </Field>
@@ -174,7 +180,7 @@ const PasswordInputFieldGroup = Field.styleable(
 );
 
 const PasswordInputFieldControlTextBoxValue =
-  InputField.Control.TextBox.Value.styleable((props, forwardedRef) => {
+  createStyledHOC(InputField.Control.TextBox.Value, (props, forwardedRef) => {
     const field = FieldApi.use();
     const setValidationResults = field.validationResults.set();
     const { passwordVisible } = use(PasswordInputFieldContext);
@@ -209,15 +215,17 @@ const PasswordInputFieldControlTextBoxValue =
       },
       [setCapsLock]
     );
+    // Tamagui v3 types `onKeyDown`/`onKeyUp` as an intersection of the web
+    // and native handlers; these handlers read the web keyboard event.
     const handleKeyDown = useCallback(
-      (event: KeyboardEvent<HTMLInputElement>) => {
+      (event: any) => {
         handleKeyEvent(event);
         props.onKeyDown?.(event as any);
       },
       [handleKeyEvent, props]
     );
     const handleKeyUp = useCallback(
-      (event: KeyboardEvent<HTMLInputElement>) => {
+      (event: any) => {
         handleKeyEvent(event);
         props.onKeyUp?.(event as any);
       },
@@ -243,7 +251,7 @@ const PasswordInputFieldControlTextBoxValue =
     );
   });
 
-const PasswordInputFieldControlTrigger = Field.Icon.styleable(
+const PasswordInputFieldControlTrigger = createStyledHOC(Field.Icon, 
   ({ children, onPress, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const disabled = field.disabled.get();

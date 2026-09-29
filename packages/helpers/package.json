@@ -108,6 +108,20 @@
         "default": "./dist/get-sized.mjs"
       }
     },
+    "./get-token-relative": {
+      "require": {
+        "types": "./dist/get-token-relative.d.cts",
+        "default": "./dist/get-token-relative.cjs"
+      },
+      "import": {
+        "types": "./dist/get-token-relative.d.mts",
+        "default": "./dist/get-token-relative.mjs"
+      },
+      "default": {
+        "types": "./dist/get-token-relative.d.mts",
+        "default": "./dist/get-token-relative.mjs"
+      }
+    },
     "./package.json": "./package.json",
     "./token-value": {
       "require": {
@@ -145,7 +159,6 @@
     "@stryke/types": "catalog:",
     "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/get-token": "catalog:",
     "chroma-js": "catalog:"
   },
   "devDependencies": {

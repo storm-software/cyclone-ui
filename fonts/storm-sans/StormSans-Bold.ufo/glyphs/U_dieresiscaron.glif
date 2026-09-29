@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Udieresiscaron" format="2">
+  <advance width="694"/>
+  <unicode hex="01D9"/>
+  <anchor x="347.0" y="0.0" name="bottom"/>
+  <anchor x="455.0" y="0.0" name="bottomright"/>
+  <outline>
+    <component base="U"/>
+    <component base="dieresiscaron.case" xOffset="347"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -17,15 +17,20 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import {
-  formSizeVariants,
-  getSized,
-  type FormControlSize
-} from "@cyclone-ui/helpers";
+import type { FormControlSize } from "@cyclone-ui/helpers";
+import { formSizeVariants, getSized } from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
+import type { AdaptProps } from "@tamagui/adapt";
 import { Adapt } from "@tamagui/adapt";
 import { useIsomorphicLayoutEffect } from "@tamagui/constants";
-import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
+import type { GetProps } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  Theme,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { Check, ChevronDown, ChevronUp, Lock } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
@@ -41,7 +46,7 @@ import {
 const SELECT_VIEWPORT_PADDING = 10;
 const SELECT_VIEWPORT_POSITION_CLASS = "is_SelectViewportPositioned";
 const SELECT_CENTERED_VIEWPORT_CLASS = "is_SelectViewportContentCentered";
-const SELECT_NARROW_VIEWPORT_WIDTH = getSized("$20xl");
+const SELECT_NARROW_VIEWPORT_WIDTH = getSized("20xl");
 
 const useSelectViewportPosition = () => {
   const [viewport, setViewport] = useState<HTMLElement | null>(null);
@@ -62,7 +67,9 @@ const useSelectViewportPosition = () => {
     const document = viewport.ownerDocument;
     const viewportWindow = document.defaultView;
     const trigger = document.activeElement?.closest?.(
-      ".is_SelectTrigger[aria-expanded='true']"
+      // v3 no longer emits `is_<ComponentName>` classes, so the trigger is
+      // marked with a data attribute instead (see SelectTextBox).
+      "[data-select-trigger][aria-expanded='true']"
     );
 
     if (!viewportWindow || !(trigger instanceof viewportWindow.HTMLElement)) {
@@ -208,81 +215,55 @@ const useSelectViewportPosition = () => {
 };
 
 const SelectItemFrame = styled(TamaguiSelect.Item, {
-  name: "SelectItems",
+  displayName: "SelectItems",
   context: SelectContext,
-
-  unstyled: true,
   transition: "200ms",
   cursor: "pointer",
   backgroundColor: "transparent",
-  color: "$accentInactive",
+  color: "accentInactive hover:accent focus:accent focus-visible:accent",
   position: "relative",
   justifyContent: "center",
   width: "max-content",
   minWidth: "100%",
-  borderWidth: 0,
-  borderRadius: "$button",
-
-  focusStyle: {
-    color: "$accent"
-  },
-
-  hoverStyle: {
-    color: "$accent"
-  },
-
-  focusVisibleStyle: {
-    color: "$accent",
-    borderWidth: 0,
-    outlineStyle: "none",
-    outline: "none",
-    outlineWidth: 0,
-    outlineColor: "transparent"
-  },
-
+  borderWidth: "0px focus-visible:0px",
+  borderRadius: "button",
+  outlineStyle: "focus-visible:none",
+  outline: "focus-visible:none",
+  outlineWidth: "focus-visible:0px",
+  outlineColor: "focus-visible:transparent",
   variants: {
-    size: formSizeVariants((val: FormControlSize) => {
-      const { itemFramePaddingHorizontal, itemPaddingVertical } =
-        getSelectContentSize(val);
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        const { itemFramePaddingHorizontal, itemPaddingVertical } =
+          getSelectContentSize(val);
 
-      return {
-        paddingHorizontal: itemFramePaddingHorizontal,
-        paddingVertical: itemPaddingVertical
-      };
-    }),
+        return {
+          paddingHorizontal: itemFramePaddingHorizontal,
+          paddingVertical: itemPaddingVertical
+        };
+      })
+    ),
 
     selected: {
       true: {
-        color: "$accentActive"
+        color: "accentActive"
       },
       false: {
-        color: "$accentInactive"
+        color: "accentInactive"
       }
     },
 
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$accentDisabled",
-
-        hoverStyle: {
-          color: "$accentDisabled"
-        },
-
-        focusStyle: {
-          color: "$accentDisabled"
-        },
-
-        focusVisibleStyle: {
-          color: "$accentDisabled",
-          borderWidth: 0,
-          outlineStyle: "none",
-          outlineWidth: 0
-        }
+        color:
+          "accentDisabled hover:accentDisabled focus:accentDisabled focus-visible:accentDisabled",
+        borderWidth: "focus-visible:0px",
+        outlineStyle: "focus-visible:none",
+        outlineWidth: "focus-visible:0px"
       }
     }
   } as const,
-
   defaultVariants: {
     size: "md",
     disabled: false,
@@ -291,45 +272,32 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
 });
 
 const SelectItemBackground = styled(View, {
-  name: "SelectItems",
+  displayName: "SelectItems",
   context: SelectContext,
-
   transition: "200ms",
   position: "absolute",
   left: 0,
   right: 0,
-  borderRadius: "$button",
-  backgroundColor: "transparent",
+  borderRadius: "button",
+  backgroundColor:
+    "transparent group-hover/item:surfaceOverlayHover group-focus/item:surfaceOverlayHover",
   pointerEvents: "none",
-
-  "$group-item-hover": {
-    backgroundColor: "$surfaceOverlayHover"
-  },
-
-  "$group-item-focus": {
-    backgroundColor: "$surfaceOverlayHover"
-  },
-
   variants: {
-    size: formSizeVariants((val: FormControlSize) => {
-      const inset = getSelectContentSize(val).itemPaddingVertical;
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        const inset = getSelectContentSize(val).itemPaddingVertical;
 
-      return { top: inset, bottom: inset };
-    }),
+        return { top: inset, bottom: inset };
+      })
+    ),
 
     disabled: {
       true: {
-        "$group-item-hover": {
-          backgroundColor: "transparent"
-        },
-
-        "$group-item-focus": {
-          backgroundColor: "transparent"
-        }
+        backgroundColor:
+          "group-hover/item:transparent group-focus/item:transparent"
       }
     }
   } as const,
-
   defaultVariants: {
     size: "md",
     disabled: false
@@ -337,67 +305,64 @@ const SelectItemBackground = styled(View, {
 });
 
 const SelectItemDivider = styled(View, {
-  name: "SelectItems",
+  displayName: "SelectItems",
   context: SelectContext,
-
   position: "absolute",
   bottom: 0,
-  left: "$2xl",
-  right: "$2xl",
+  left: "2xl",
+  right: "2xl",
   pointerEvents: "none",
-
   variants: {
-    size: formSizeVariants((val: FormControlSize) => {
-      const inset = getSelectContentSize(val).dividerInset;
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        const inset = getSelectContentSize(val).dividerInset;
 
-      return { left: inset, right: inset };
-    })
+        return { left: inset, right: inset };
+      })
+    )
   } as const,
-
   defaultVariants: {
     size: "md"
   }
 });
 
 const SelectItemDividerLine = styled(View, {
-  name: "SelectItems",
+  displayName: "SelectItems",
   context: SelectContext,
-
   borderBottomWidth: 1,
-  borderBottomColor: "$hairline",
+  borderBottomColor: "hairline",
   pointerEvents: "none"
 });
 
 const SelectItemGroup = styled(XStack, {
-  name: "SelectItems",
+  displayName: "SelectItems",
   context: SelectContext,
-
   transition: "200ms",
   position: "relative",
   cursor: "inherit",
   alignItems: "center",
-  borderRadius: "$button",
+  borderRadius: "button",
   minWidth: "100%",
   width: "max-content",
-
   variants: {
-    size: formSizeVariants((val: FormControlSize) => {
-      const { lineHeight, itemPaddingHorizontal } = getSelectContentSize(val);
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        const { lineHeight, itemPaddingHorizontal } = getSelectContentSize(val);
 
-      return {
-        minHeight: lineHeight,
-        paddingHorizontal: itemPaddingHorizontal
-      };
-    })
+        return {
+          minHeight: lineHeight,
+          paddingHorizontal: itemPaddingHorizontal
+        };
+      })
+    )
   } as const,
-
   defaultVariants: {
     size: "md"
   }
 });
 
 const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
-  name: "SelectItems",
+  displayName: "SelectItems",
   context: SelectContext,
 
   flex: 1,
@@ -405,21 +370,23 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   whiteSpace: "nowrap",
 
   variants: {
-    size: formSizeVariants((val: FormControlSize) => {
-      const {
-        fontSize,
-        lineHeight,
-        itemTextPaddingVertical,
-        itemTextPaddingHorizontal
-      } = getSelectContentSize(val);
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        const {
+          fontSize,
+          lineHeight,
+          itemTextPaddingVertical,
+          itemTextPaddingHorizontal
+        } = getSelectContentSize(val);
 
-      return {
-        fontSize,
-        lineHeight,
-        paddingVertical: itemTextPaddingVertical,
-        paddingHorizontal: itemTextPaddingHorizontal
-      };
-    })
+        return {
+          fontSize,
+          lineHeight: `${lineHeight}px`,
+          paddingVertical: itemTextPaddingVertical,
+          paddingHorizontal: itemTextPaddingHorizontal
+        };
+      })
+    )
   } as const,
 
   defaultVariants: {
@@ -428,7 +395,7 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
 });
 
 const SelectItemValue = styled(BodyText, {
-  name: "SelectItems",
+  displayName: "SelectItems",
   render: "span",
   context: SelectContext,
 
@@ -436,18 +403,20 @@ const SelectItemValue = styled(BodyText, {
   cursor: "inherit",
   color: "currentColor",
   variants: {
-    size: formSizeVariants((val: FormControlSize) => {
-      const { fontSize, lineHeight } = getSelectContentSize(val);
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        const { fontSize, lineHeight } = getSelectContentSize(val);
 
-      return { fontSize, lineHeight };
-    }),
+        return { fontSize, lineHeight: `${lineHeight}px` };
+      })
+    ),
 
     selected: {
       true: {
-        fontWeight: "$bold"
+        fontWeight: "bold"
       },
       false: {
-        fontWeight: "$light"
+        fontWeight: 300
       }
     }
   } as const,
@@ -458,9 +427,26 @@ const SelectItemValue = styled(BodyText, {
   }
 });
 
-export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
-  ({ children, value, selected, disabled, ...props }, forwardedRef) => {
-    const { value: selectedValue, size } = SelectContext.useStyledContext();
+// Like v2 `.styleable<Custom>()`, the option fields replace the frame's
+// same-named props (`value` is stringified below).
+type SelectItemOption = Omit<SelectOption, "name">;
+type SelectItemProps = Omit<
+  GetProps<typeof SelectItemFrame>,
+  keyof SelectItemOption
+> &
+  SelectItemOption;
+
+export const SelectItem = createStyledHOC(
+  SelectItemFrame,
+  (
+    { children, value, selected, disabled, ...props }: SelectItemProps,
+    forwardedRef
+  ) => {
+    // The Select root forwards its `value` through the context provider.
+    const { value: selectedValue, size } =
+      SelectContext.useStyledContext() as ReturnType<
+        typeof SelectContext.useStyledContext
+      > & { value?: unknown };
     const isSelected = selectedValue === String(value);
     const { indicatorWidth, indicatorIconSize } = getSelectContentSize(size);
 
@@ -469,7 +455,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
         {...props}
         data-select-item
         data-select-item-adorned={disabled || isSelected ? true : undefined}
-        group={"item" as any}
+        group="item"
         ref={forwardedRef}
         value={String(value)}
         textValue={String(value)}
@@ -492,7 +478,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
               {disabled && (
                 <Lock
                   size={indicatorIconSize}
-                  color="$accentDisabled"
+                  color="accentDisabled"
                   strokeWidth={2}
                 />
               )}
@@ -500,7 +486,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
                 <View aria-hidden={true}>
                   <Check
                     size={indicatorIconSize}
-                    color="$accentActive"
+                    color="accentActive"
                     strokeWidth={3}
                   />
                 </View>
@@ -515,11 +501,12 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
     );
   },
   {
-    staticConfig: { componentName: "SelectItems" }
+    displayName: "SelectItems"
   }
 );
 
-const SelectItemsGroup = View.styleable(
+const SelectItemsGroup = createStyledHOC(
+  View,
   ({ children, ...props }, forwardedRef) => {
     const viewportRef = useSelectViewportPosition();
     const { size } = SelectContext.useStyledContext();
@@ -533,7 +520,12 @@ const SelectItemsGroup = View.styleable(
     return (
       <View ref={forwardedRef} flex={1} {...props}>
         <Theme name="base">
-          <Adapt when="max-sm" platform="touch">
+          {/* The app's media keys are not visible to this package's types (the
+              config augments "tamagui", not "@tamagui/web"), so `AdaptWhen`
+              narrows to booleans here. */}
+          <Adapt
+            when={"max-sm" as unknown as AdaptProps["when"]}
+            platform="touch">
             <Sheet
               modal={true}
               dismissOnSnapToBottom={true}
@@ -543,53 +535,58 @@ const SelectItemsGroup = View.styleable(
                 mass: 1.2,
                 stiffness: 250
               }}>
-              <Sheet.Frame>
+              <Sheet.Container>
+                <Sheet.Background />
                 <Sheet.ScrollView>
                   <Adapt.Contents />
                 </Sheet.ScrollView>
-              </Sheet.Frame>
-              <Sheet.Overlay
-                transition="lazy"
-                enterStyle={{ opacity: 0 }}
-                exitStyle={{ opacity: 0 }}
-              />
+              </Sheet.Container>
+              <Sheet.Overlay transition="lazy" opacity="enter:0 exit:0" />
             </Sheet>
           </Adapt>
 
-          <TamaguiSelect.Content zIndex="$90">
+          {/* v2's `zIndex` here fell through to FocusScope and was ignored; v3
+              types reject it. Portal z-index is set on the Select root. */}
+          <TamaguiSelect.Content>
             <TamaguiSelect.ScrollUpButton
-              transition="200ms"
-              animateOnly={["scale", "opacity"]}
-              enterStyle={{ opacity: 0.2, scale: 0.5 }}
+              transition={{ duration: "200ms", properties: "scale, opacity" }}
+              opacity="enter:0.2"
+              scale="enter:0.5"
               alignItems="center"
               justifyContent="center"
               position="relative"
               height={scrollButtonHeight}>
-              <YStack zIndex="$10">
-                <ChevronUp size={scrollIconSize} color="$accent" />
+              <YStack zIndex="10">
+                <ChevronUp size={scrollIconSize} color="accent" />
               </YStack>
               <LinearGradient
                 start={[0, 0]}
                 end={[0, 1]}
-                fullscreen={true}
-                colors={["$surfaceFloating", "transparent"]}
-                borderRadius="$popover"
+                borderRadius="popover"
                 marginTop={gradientMargin}
+                position="absolute"
+                inset={0}
+                colors={["surfaceFloating", "transparent"]}
               />
             </TamaguiSelect.ScrollUpButton>
 
             <TamaguiSelect.Viewport
               ref={viewportRef}
-              transition="200ms"
-              animateOnly={["transform", "scale", "opacity"]}
-              enterStyle={{ opacity: 0.5, scale: 0.9, y: -10 }}
-              exitStyle={{ opacity: 0.7, scale: 0.95, y: 10 }}
-              backgroundColor="$surfaceFloating"
+              transition={{
+                duration: "200ms",
+                properties: "transform, scale, opacity"
+              }}
+              opacity="enter:0.5 exit:0.7"
+              scale="enter:0.9 exit:0.95"
+              y="enter:-10px exit:10px"
+              backgroundColor="surfaceFloating"
               width="max-content"
-              minWidth="$12xl"
+              minWidth="12xl"
               maxWidth={`calc(100vw - ${SELECT_VIEWPORT_PADDING * 2}px)`}
-              borderRadius="$popover"
-              boxShadow="0px 4px 30px $overlayBackdrop">
+              borderRadius="popover"
+              borderColor="hairline"
+              borderWidth={1}
+              boxShadow="0px 4px 30px overlayBackdrop">
               <TamaguiSelect.Group
                 width="max-content"
                 minWidth="100%"
@@ -599,24 +596,25 @@ const SelectItemsGroup = View.styleable(
             </TamaguiSelect.Viewport>
 
             <TamaguiSelect.ScrollDownButton
-              transition="200ms"
-              animateOnly={["scale", "opacity"]}
-              enterStyle={{ opacity: 0.2, scale: 0.5 }}
+              transition={{ duration: "200ms", properties: "scale, opacity" }}
+              opacity="enter:0.2"
+              scale="enter:0.5"
               alignItems="center"
               justifyContent="center"
               position="relative"
               width="100%"
               height={scrollButtonHeight}>
-              <YStack zIndex="$10">
-                <ChevronDown size={scrollIconSize} color="$accent" />
+              <YStack zIndex="10">
+                <ChevronDown size={scrollIconSize} color="accent" />
               </YStack>
               <LinearGradient
                 start={[0, 0]}
                 end={[0, 1]}
-                fullscreen={true}
-                colors={["transparent", "$surfaceFloating"]}
-                borderRadius="$popover"
+                borderRadius="popover"
                 marginBottom={gradientMargin}
+                position="absolute"
+                inset={0}
+                colors={["transparent", "surfaceFloating"]}
               />
             </TamaguiSelect.ScrollDownButton>
           </TamaguiSelect.Content>
@@ -624,7 +622,7 @@ const SelectItemsGroup = View.styleable(
       </View>
     );
   },
-  { staticConfig: { componentName: "SelectItems" } }
+  { displayName: "SelectItems" }
 );
 
 export const SelectItems = withStaticProperties(SelectItemsGroup, {

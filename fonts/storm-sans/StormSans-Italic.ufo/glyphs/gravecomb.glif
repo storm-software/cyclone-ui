@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="gravecomb" format="2">
+  <unicode hex="0300"/>
+  <anchor x="0.0" y="540.0" name="_top"/>
+  <outline>
+    <component base="grave" xOffset="-290"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+OFFSET[R], $grave$, -290, 0
+CALL[], 27, 28, 88
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

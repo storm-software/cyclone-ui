@@ -19,40 +19,37 @@
 import { Button } from "@cyclone-ui/button";
 import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import {
-  formSizeVariants,
   getFormSizeToken,
   getSized,
   type FormControlSize
 } from "@cyclone-ui/helpers";
-import type { GetProps, VariantSpreadExtras } from "@tamagui/core";
-import { styled, View, withStaticProperties } from "@tamagui/core";
+import type { GetProps } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { XStack } from "@tamagui/stacks";
 import { useCallback, useMemo, useState } from "react";
 import { InputValue } from "./InputValue";
-import type { InputContextProps } from "./types";
+import type { InputContextProps, InputVariant } from "./types";
 import { getInputSize, InputContext } from "./utilities";
 
-const getInputFrameSize = (
-  val: FormControlSize,
-  extras: VariantSpreadExtras<any>
-) => ({
-  ...getInputSize(val, extras),
-  paddingHorizontal: 0
-});
+const isFormControlSize = (value: unknown): value is FormControlSize =>
+  value === "sm" || value === "md" || value === "lg";
 
 export const ControlUnderline = styled(View, {
-  name: "ControlUnderline",
-
+  displayName: "ControlUnderline",
   transition: "200ms",
   position: "absolute",
   left: 0,
   bottom: 0,
   width: 0,
-  height: "$xxs",
-  backgroundColor: "$accentActive",
+  height: "xxs",
+  backgroundColor: "accentActive",
   pointerEvents: "none",
-
   variants: {
     focused: {
       true: {
@@ -63,56 +60,50 @@ export const ControlUnderline = styled(View, {
     disabled: {
       true: {
         width: 0,
-        backgroundColor: "$accentDisabled"
+        backgroundColor: "accentDisabled"
       }
     }
   } as const,
-
   defaultVariants: {
     focused: false,
     disabled: false
   }
 });
 
-const InputGroup = styled(XGroup, {
-  name: "Input",
+// The frame is a plain stack rather than `styled(XGroup)`: a styled layer over
+// the `XGroup` HOC compiles its styles to classes and never hands `transition`
+// to the inner frame, so the border and focus ring snapped instead of
+// animating. The group behavior lives in a `display: contents` `XGroup` inside.
+const InputGroup = styled(XStack, {
+  displayName: "Input",
   context: InputContext,
-
   transition: "200ms",
   position: "relative",
   justifyContent: "space-between",
   alignItems: "center",
-  backgroundColor: "$surfaceElevated",
+  backgroundColor: "surfaceElevated",
   borderWidth: 1,
-  borderColor: "$hairline",
+  borderColor: "hairline",
   outlineWidth: 0,
   outlineColor: "transparent",
   boxShadow: "none",
-  gap: "$zero",
-  tabIndex: 0,
-  borderRadius: "$control",
+  gap: "zero",
+  borderRadius: "control",
   overflow: "hidden",
-
   // this fixes a flex bug where it overflows container
   minWidth: 0,
-
-  focusVisibleStyle: {
-    boxShadow: "$ringOffset",
-    borderColor: "$accentActive"
-  },
-
   variants: {
+    // The focus ring is styled by the `.resolve` below because it depends on
+    // `variant`.
     focused: {
-      true: (_val: boolean, { props }: VariantSpreadExtras<any>) => ({
-        boxShadow: props.variant === "underline" ? "none" : "$ringOffset",
-        borderColor: "$accentActive"
-      })
+      true: {
+        borderColor: "accentActive"
+      }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "$accent",
-        hoverStyle: { borderColor: "$accentHover" }
+        borderColor: "accent hover:accentHover"
       }
     },
 
@@ -122,42 +113,24 @@ const InputGroup = styled(XGroup, {
       underline: {
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "$hairline",
+        borderColor: "hairline hover:accentHover",
         borderRadius: 0,
-        boxShadow: "none",
-
-        hoverStyle: {
-          borderColor: "$accentHover"
-        },
-
-        focusVisibleStyle: {
-          borderColor: "$accent",
-          boxShadow: "none"
-        }
+        boxShadow: "none"
       }
     },
 
     // Keep frame dimensions separate from Tamagui's special `size` prop. A
     // `$true` size is consumed before spread variants run, leaving no height.
-    frameSize: formSizeVariants(getInputFrameSize),
+    // Styled by the `.resolve` below because the geometry depends on
+    // `variant` and `circular`.
+    frameSize: styled.dynamic<FormControlSize>(),
 
     disabled: {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$accentDisabled",
-
-        hoverStyle: {
-          borderColor: "$accentDisabled"
-        },
-
-        focusStyle: {
-          borderColor: "$accentDisabled"
-        },
-
-        pressStyle: {
-          borderColor: "$accentDisabled"
-        }
+        borderColor:
+          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled"
       }
     },
 
@@ -167,7 +140,6 @@ const InputGroup = styled(XGroup, {
       }
     }
   } as const,
-
   defaultVariants: {
     frameSize: "md",
     disabled: false,
@@ -175,18 +147,43 @@ const InputGroup = styled(XGroup, {
     circular: false,
     variant: "default"
   }
+}).resolve(props => {
+  const variant = (props.variant ?? "default") as InputVariant;
+  const frameSize = props.frameSize ?? "md";
+  const sized = isFormControlSize(frameSize)
+    ? getInputSize(frameSize, {
+        variant,
+        circular: Boolean(props.circular)
+      })
+    : undefined;
+
+  return {
+    // Focus ring: the `underline` variant keeps its flat `none` shadow.
+    boxShadow: props.focused && variant !== "underline" ? "ringOffset" : undefined,
+    paddingHorizontal: sized ? 0 : undefined,
+    height: sized?.height,
+    minHeight: sized?.minHeight,
+    // The `underline` variant owns the radius when set.
+    borderRadius: variant === "underline" ? undefined : sized?.borderRadius
+  };
 });
 
-const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
-  (props, forwardedRef) => {
+const InputGroupImpl = createStyledHOC(InputGroup, 
+  (
+    props: Omit<GetProps<typeof InputGroup>, "onChange" | "onInput"> &
+      Partial<InputContextProps>,
+    forwardedRef
+  ) => {
     const {
       children,
+      name,
       size = "md",
       variant = "default",
       onChange,
       onInput,
       onFocus,
       onBlur,
+      onMouseDown,
       focused = false,
       disabled = false,
       ...rest
@@ -209,19 +206,47 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
       },
       [onBlur]
     );
-    const underlineActive = focused || locallyActive;
+    // Clicking the frame's padding, separators, or icons focuses the text
+    // input, as the frame is not itself focusable.
+    const handleMouseDown = useCallback(
+      (event: any) => {
+        onMouseDown?.(event);
+        if (event.defaultPrevented || disabled) {
+          return;
+        }
+
+        const target = event.target as HTMLElement | null;
+        if (target?.closest?.("input, textarea, button, a, [tabindex]")) {
+          return;
+        }
+
+        const control = (
+          event.currentTarget as HTMLElement | null
+        )?.querySelector?.<HTMLElement>("input, textarea");
+        if (control) {
+          event.preventDefault();
+          control.focus();
+        }
+      },
+      [disabled, onMouseDown]
+    );
+    // The frame is not itself focusable, so it tracks focus of the inner
+    // input (via bubbling focus events) alongside the controlled `focused`.
+    const active = focused || locallyActive;
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "$accent" : "$hairline";
-    const focusColor = hasValidationMessage
-      ? "$accentActive"
-      : "$hairlineActive";
+    const idleColor = hasValidationMessage ? "accent" : "hairline";
+    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
 
     return (
       <InputContext.Provider
-        {...rest}
+        // Only context keys: a styled context treats every key in its value
+        // as a context prop, so spreading all props swallowed `aria-*` and
+        // other DOM attributes before they reached the element.
+        name={name}
+        circular={Boolean(rest.circular)}
         size={size}
         variant={variant}
-        focused={focused}
+        focused={active}
         hasValidationMessage={hasValidationMessage}
         disabled={disabled}
         onChange={onChange}
@@ -233,98 +258,71 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
           {...rest}
           frameSize={frameSize}
           variant={variant}
-          focused={focused}
+          focused={active}
           hasValidationMessage={hasValidationMessage}
           disabled={disabled}
-          borderColor={focused ? focusColor : idleColor}
-          focusVisibleStyle={{
-            boxShadow: variant === "underline" ? "none" : "$ringOffset",
-            borderColor: focusColor
-          }}
+          borderColor={`${active ? focusColor : idleColor} group-hover/field:${disabled ? "accentDisabled" : active ? focusColor : "accentHover"}`}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          transition="200ms"
-          $group-field-hover={{
-            borderColor: disabled
-              ? "$accentDisabled"
-              : focused
-                ? focusColor
-                : "$accentHover"
-          }}>
-          {children}
-          {variant === "underline" && (
-            <ControlUnderline
-              bottom={-1}
-              focused={underlineActive}
-              disabled={disabled}
-              backgroundColor={disabled ? "$accentDisabled" : focusColor}
-            />
-          )}
+          onMouseDown={handleMouseDown}
+          transition="200ms">
+          <XGroup display="contents" disabled={disabled}>
+            {children}
+            {variant === "underline" && (
+              <ControlUnderline
+                bottom={-1}
+                focused={active}
+                disabled={disabled}
+                backgroundColor={disabled ? "accentDisabled" : focusColor}
+              />
+            )}
+          </XGroup>
         </InputGroup>
       </InputContext.Provider>
     );
   },
-  { staticConfig: { componentName: "Input" } }
+  { displayName: "Input" }
 );
 
 const InputSeparator = styled(View, {
-  name: "Input",
+  displayName: "Input",
   context: InputContext,
-
   transition: "200ms",
-  borderWidth: 0,
-  borderLeftWidth: 1,
-  borderRightWidth: 0,
-  borderTopWidth: 0,
-  borderBottomWidth: 0,
-  borderColor: "$hairline",
-  width: 0,
+  // Drawn as a filled 1px bar rather than a left border: `XGroup.Item` zeroes
+  // `borderLeftWidth` on every non-first item, which hid the line.
+  backgroundColor: "hairline hover:hairlineHover",
+  width: 1,
   flexShrink: 0,
   height: "60%",
-  marginVertical: "$zero",
-
-  hoverStyle: {
-    borderColor: "$hairlineHover"
-  },
-
+  marginVertical: "zero",
   variants: {
     focused: {
       true: {
-        borderColor: "$hairlineActive"
+        backgroundColor: "hairlineActive"
       }
     },
 
     hasValidationMessage: {
-      true: { borderColor: "$accent" }
+      true: {
+        backgroundColor: "accent"
+      }
     },
 
     variant: {
       default: {},
       floating: {},
       underline: {
-        borderWidth: 0
+        width: 0
       }
     },
 
     disabled: {
       true: {
-        borderColor: "$hairlineInactive",
-
-        hoverStyle: {
-          borderColor: "$hairlineInactive"
-        },
-
-        focusStyle: {
-          borderColor: "$hairlineInactive"
-        },
-
-        pressStyle: {
-          borderColor: "$hairlineInactive"
-        }
+        backgroundColor:
+          "hairlineInactive hover:hairlineInactive press:hairlineInactive focus:hairlineInactive"
       }
     }
   } as const,
-
   defaultVariants: {
     disabled: false,
     focused: false,
@@ -332,49 +330,39 @@ const InputSeparator = styled(View, {
   }
 });
 
-const InputSeparatorImpl = InputSeparator.styleable(
+const InputSeparatorImpl = createStyledHOC(InputSeparator, 
   (props, forwardedRef) => {
     const { disabled, focused, hasValidationMessage } =
       InputContext.useStyledContext();
-    const idleColor = hasValidationMessage ? "$accent" : "$hairline";
-    const focusColor = hasValidationMessage
-      ? "$accentActive"
-      : "$hairlineActive";
-    const hoverColor = hasValidationMessage ? "$accentHover" : "$hairlineHover";
+    const idleColor = hasValidationMessage ? "accent" : "hairline";
+    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
+    const hoverColor = hasValidationMessage ? "accentHover" : "hairlineHover";
 
     return (
       <XGroup.Item>
         <InputSeparator
           ref={forwardedRef}
-          $group-field-hover={{
-            borderColor: disabled
-              ? "$hairlineInactive"
-              : focused
-                ? focusColor
-                : hoverColor
-          }}
-          borderColor={focused ? focusColor : idleColor}
+          backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "hairlineInactive" : focused ? focusColor : hoverColor}`}
           hasValidationMessage={hasValidationMessage}
           {...props}
         />
       </XGroup.Item>
     );
   },
-  { staticConfig: { componentName: "Input" } }
+  { displayName: "Input" }
 );
 
 const InputTextBox = styled(XStack, {
-  name: "Input",
+  displayName: "Input",
   context: InputContext,
-
   height: "100%",
   flex: 1,
   minWidth: 0,
   alignItems: "center",
-  gap: "$zero"
+  gap: "zero"
 });
 
-const InputTextBoxImpl = InputTextBox.styleable(
+const InputTextBoxImpl = createStyledHOC(InputTextBox, 
   ({ children, ...props }, forwardedRef) => {
     return (
       <XGroup.Item flex={1} minWidth={0}>
@@ -384,10 +372,10 @@ const InputTextBoxImpl = InputTextBox.styleable(
       </XGroup.Item>
     );
   },
-  { staticConfig: { componentName: "Input" } }
+  { displayName: "Input" }
 );
 
-const InputValueImpl = InputValue.styleable(
+const InputValueImpl = createStyledHOC(InputValue, 
   ({ children, enterKeyHint = "done", value, ...props }, forwardedRef) => {
     const { onChange: contextOnChange, onInput: contextOnInput } =
       InputContext.useStyledContext();
@@ -397,25 +385,25 @@ const InputValueImpl = InputValue.styleable(
         <InputValue
           ref={forwardedRef}
           {...props}
+          placeholderTextColor="onAccentDisabled"
           onChange={props.onChange ?? contextOnChange}
           onInput={props.onInput ?? contextOnInput}
           value={value}
-          enterKeyHint={enterKeyHint}
-          placeholderTextColor="$onAccentDisabled">
+          enterKeyHint={enterKeyHint}>
           {children}
         </InputValue>
       </View>
     );
   },
-  { staticConfig: { componentName: "InputValue" } }
+  { displayName: "InputValue" }
 );
 
-const InputTrigger = Button.styleable<{
+const InputTrigger = createStyledHOC(Button, 
+  (
+    { children, size: sizeProp, flexBasis: _flexBasis, ...props }: GetProps<typeof Button> & {
   forcePlacement?: GetProps<typeof XGroup.Item>["forcePlacement"];
   size?: FormControlSize;
-}>(
-  (
-    { children, size: sizeProp, flexBasis: _flexBasis, ...props },
+},
     forwardedRef
   ) => {
     const { circular, size } = InputContext.useStyledContext();
@@ -434,7 +422,7 @@ const InputTrigger = Button.styleable<{
         <View
           width={frameSize}
           minWidth={frameSize}
-          paddingHorizontal="$xl"
+          paddingHorizontal="xl"
           display="flex"
           flexShrink={0}
           alignItems="center"
@@ -442,9 +430,9 @@ const InputTrigger = Button.styleable<{
           <Button
             ref={forwardedRef}
             variant="link"
-            borderRadius={circular ? 100_000 : "$button"}
+            borderRadius={circular ? 100_000 : "button"}
             noPadding={true}
-            color="$onAccent"
+            color="onAccent"
             {...props}
             width={props.width ?? adjustedTrigger}
             minWidth={props.minWidth ?? props.width ?? adjustedTrigger}
@@ -455,7 +443,7 @@ const InputTrigger = Button.styleable<{
       </XGroup.Item>
     );
   },
-  { staticConfig: { componentName: "Input" } }
+  { displayName: "Input" }
 );
 
 export type InputValueProps = GetProps<typeof InputValue>;

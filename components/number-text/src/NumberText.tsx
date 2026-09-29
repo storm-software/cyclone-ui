@@ -16,10 +16,11 @@
 
  ------------------------------------------------------------------- */
 
+import { createStyledHOC } from "@tamagui/core";
 import { LabelText } from "@cyclone-ui/label-text";
 import NumberFlow from "@number-flow/react";
 import type { GetProps } from "@tamagui/core";
-export const NumberText = LabelText.styleable(
+export const NumberText = createStyledHOC(LabelText, 
   ({ children, ...props }, forwardedRef) => {
     let value = Number(children);
     if (Number.isNaN(value)) {

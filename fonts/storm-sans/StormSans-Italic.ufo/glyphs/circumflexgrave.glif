@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="circumflexgrave" format="2">
+  <anchor x="0.0" y="540.0" name="_top"/>
+  <outline>
+    <contour>
+      <point x="-109" y="700" type="line"/>
+      <point x="-65" y="721" type="line"/>
+      <point x="-126" y="891" type="line"/>
+      <point x="-194" y="860" type="line"/>
+    </contour>
+    <contour>
+      <point x="-9" y="745" type="line"/>
+      <point x="-138" y="613" type="line"/>
+      <point x="-97" y="581" type="line"/>
+      <point x="33" y="693" type="line"/>
+      <point x="128" y="581" type="line"/>
+      <point x="169" y="613" type="line"/>
+      <point x="85" y="745" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(7)
+YShift(7,9)
+ResYDist(7,8)
+ResYDist(8,5)
+YIPAnchor(7,0,5)
+ResYDist(0,2)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

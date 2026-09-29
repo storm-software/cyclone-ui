@@ -18,9 +18,9 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import type { FormControlSize } from "@cyclone-ui/helpers";
+import type { FormControlSize, StyleEnv } from "@cyclone-ui/helpers";
 import {
-  formSizeVariants,
+  getFontSized,
   getFormFontScale,
   getFormFontSize,
   getFormSizeScale,
@@ -30,6 +30,7 @@ import {
 } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
+import type { SpinnerProps } from "@cyclone-ui/spinner";
 import { Spinner } from "@cyclone-ui/spinner";
 import type { FieldProviderOptions } from "@cyclone-ui/state/form";
 import {
@@ -43,11 +44,12 @@ import { ValidationText } from "@cyclone-ui/validation-text";
 import type { ValidationDetail as ValidationDetails } from "@stryke/types/validations";
 import type {
   GetProps,
-  SizeTokens,
-  TextProps,
-  VariantSpreadExtras
+  TamaguiTextElement,
+  TamaguiWebElement
 } from "@tamagui/core";
 import {
+  createStyledHOC,
+  getVariableValue,
   styled,
   Theme,
   useComposedRefs,
@@ -57,8 +59,8 @@ import {
 } from "@tamagui/core";
 import { Label as TamaguiLabel } from "@tamagui/label";
 import { Asterisk } from "@tamagui/lucide-icons-2";
-import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
-import type { ForwardedRef, ReactNode } from "react";
+import { XStack, YStack } from "@tamagui/stacks";
+import type { ReactNode } from "react";
 import {
   cloneElement,
   createContext,
@@ -139,26 +141,23 @@ const FieldDetailsSetterContext = createContext<(details: ReactNode) => void>(
   () => undefined
 );
 
-const FieldGroupFrame = styled(ThemeableStack, {
-  name: "Field",
-
+const FieldGroupFrame = styled(YStack, {
+  displayName: "Field",
   transition: "200ms",
-
   // this fixes a flex bug where it overflows container
   minWidth: 0,
   display: "flex",
   position: "relative",
-  borderRadius: "$control",
-
+  borderRadius: "control",
   variants: {
     orientation: {
       vertical: {
         flexDirection: "column",
-        gap: "$xl"
+        gap: "xl"
       },
       horizontal: {
         flexDirection: "row",
-        gap: "$sm"
+        gap: "sm"
       }
     },
 
@@ -170,22 +169,13 @@ const FieldGroupFrame = styled(ThemeableStack, {
     },
 
     variant: {
-      default: {},
+      normal: {},
       floating: {},
       underline: {
-        boxShadow: "none",
-
-        focusStyle: {
-          boxShadow: "none"
-        },
-
-        focusVisibleStyle: {
-          boxShadow: "none"
-        }
+        boxShadow: "none focus:none focus-visible:none"
       }
     }
   } as const,
-
   defaultVariants: {
     orientation: "vertical",
     disabled: false,
@@ -193,57 +183,84 @@ const FieldGroupFrame = styled(ThemeableStack, {
   }
 });
 
-const getFieldDetailsFontSize = (
-  val: SizeTokens,
-  config: VariantSpreadExtras<TextProps>
-) => {
-  if (!config.font) {
+/**
+ * A local `styled.dynamic` carrier for the form size contract.
+ *
+ * @remarks
+ * `formSizeVariants` from `@cyclone-ui/helpers` is typed against the helpers
+ * package's own `@tamagui/core` copy, whose `styled.dynamic` brand does not
+ * match this package's copy, so its variants would not type here.
+ */
+const formSizeDynamic = (
+  style: (size: FormControlSize, env: StyleEnv) => object | null | undefined
+) =>
+  styled.dynamic<FormControlSize>((size, env) =>
+    size === "sm" || size === "md" || size === "lg"
+      ? (style(size, env) as Record<string, any> | null | undefined)
+      : undefined
+  );
+
+const getFieldDetailsFontSize = (env: StyleEnv) => {
+  if (!env.font) {
     return;
   }
 
-  let sizeToken = 1;
-  let heightToken = 1;
-  if (val !== undefined && val !== null) {
-    sizeToken = (config.font.size?.[val] as any)?.val;
-    heightToken = (config.font.lineHeight?.[val] as any)?.val;
-  }
-
-  const fontSize = (sizeToken ?? 1) * 0.6;
-  const lineHeight = Number(heightToken ?? 1) * 0.5;
-  const fontWeight = config.font.weight?.[val];
-  const letterSpacing = config.font.letterSpacing?.[val];
-  const textTransform = config.font.transform?.[val];
-  const fontStyle = config.font.style?.[val];
+  // Tamagui v3 has no `$true` font key; resolve the default size step of the
+  // `caption` typography token.
+  const font = getFontSized(true, env);
+  const fontSize = Number(getVariableValue(font.fontSize) ?? 1);
+  const lineHeight = Number(getVariableValue(font.lineHeight) ?? 1);
 
   return {
     fontSize,
     lineHeight,
-    fontWeight,
-    letterSpacing,
-    textTransform,
-    fontStyle
+    fontWeight: font.fontWeight,
+    letterSpacing: font.letterSpacing,
+    textTransform: font.textTransform,
+    fontStyle: font.fontStyle
+  };
+};
+
+/**
+ * Tamagui v3 reads a unitless `lineHeight` as a multiplier, so pin the form
+ * font's pixel leading explicitly.
+ */
+const getFormFontStyle = (size: FormControlSize, env: StyleEnv) => {
+  const style = getFormFontSize(size, env);
+
+  return {
+    fontFamily: style.fontFamily,
+    fontWeight: style.fontWeight,
+    fontStyle: style.fontStyle,
+    letterSpacing: style.letterSpacing,
+    textTransform: style.textTransform,
+    color: style.color,
+    fontSize: style.fontSize,
+    lineHeight:
+      typeof style.lineHeight === "number"
+        ? `${style.lineHeight}px`
+        : style.lineHeight
   };
 };
 
 const FieldValidationText = styled(ValidationText, {
-  name: "FieldDetails",
-
+  displayName: "FieldDetails",
   fontStyle: "italic",
-  fontFamily: "$body-sm",
-  marginTop: "$md",
-
+  fontFamily: "caption",
+  marginTop: "md",
   variants: {
-    size: formSizeVariants((size, extras) => {
-      const style = getFieldDetailsFontSize("$true", extras);
+    size: formSizeDynamic((size, env) => {
+      const style = getFieldDetailsFontSize(env);
       const scale = getFormFontScale(size);
 
-      return style
-        ? {
-            ...style,
-            fontSize: style.fontSize * scale,
-            lineHeight: style.lineHeight * scale
-          }
-        : {};
+      return {
+        fontWeight: style?.fontWeight,
+        letterSpacing: style?.letterSpacing,
+        textTransform: style?.textTransform,
+        fontStyle: style?.fontStyle,
+        fontSize: style ? style.fontSize * scale : undefined,
+        lineHeight: style ? `${style.lineHeight * scale}px` : undefined
+      };
     }),
 
     disabled: {
@@ -253,20 +270,20 @@ const FieldValidationText = styled(ValidationText, {
       }
     }
   } as const,
-
   defaultVariants: {
     size: "md",
     disabled: false
   }
 });
 
-const FieldValidationTextImpl = FieldValidationText.styleable(
+const FieldValidationTextImpl = createStyledHOC(
+  FieldValidationText,
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
     const field = FieldApi.use();
-    const theme = field.theme.get();
     const disabled = field.disabled.get();
+    const focused = field.focused.get();
     const size = field.size.get();
     const messages = field.messages.get();
 
@@ -274,24 +291,20 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
       <FieldValidationText
         ref={forwardedRef}
         {...rest}
-        messages={messages}
         size={size}
-        disabled={disabled}
-        color={
-          disabled
-            ? "$accentDisabled"
-            : theme !== "base"
-              ? "$accent"
-              : "$inkBody"
-        }>
+        // Track the control's border so the message reads as part of the field.
+        color={`${disabled ? "accentDisabled" : focused ? "accentActive" : "accent"} group-hover/field:${disabled ? "accentDisabled" : focused ? "accentActive" : "accentHover"}`}
+        messages={messages}
+        disabled={disabled}>
         {children}
       </FieldValidationText>
     );
   },
-  { staticConfig: { componentName: "FieldDetails" } }
+  { displayName: "FieldDetails" }
 );
 
-const FieldGroupInnerImpl = FieldGroupFrame.styleable(
+const FieldGroupInnerImpl = createStyledHOC(
+  FieldGroupFrame,
   (props, forwardedRef) => {
     const { children, variant = "normal", ...rest } = props;
 
@@ -311,7 +324,7 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
         <FieldPresentationContext.Provider value={resolvedPresentation}>
           <FieldDetailsSetterContext.Provider value={setDetails}>
             <FieldDetailsContext.Provider value={details}>
-              <YStack group={"field" as any} disabled={disabled} gap="$lg">
+              <YStack group={"field"} gap="lg" disabled={disabled}>
                 <FieldGroupFrame
                   ref={forwardedRef}
                   {...rest}
@@ -327,7 +340,7 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
       </Theme>
     );
   },
-  { staticConfig: { componentName: "Field" } }
+  { displayName: "Field" }
 );
 
 export type FieldProps<TFieldValue = any> =
@@ -335,8 +348,15 @@ export type FieldProps<TFieldValue = any> =
     variant?: FieldVariant;
   };
 
-const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
-  (props, forwardedRef) => {
+const FieldGroup = createStyledHOC(
+  FieldGroupFrame,
+  (
+    // Field options win over same-named frame props: v3 added a CSS `mask`
+    // style prop, which would otherwise intersect with the Maskito `mask`.
+    props: Omit<GetProps<typeof FieldGroupFrame>, keyof FieldProps> &
+      FieldProps,
+    forwardedRef
+  ) => {
     const { children, variant = "normal", ...rest } = props;
     const [hasLabel, setHasLabel] = useState(false);
     const [hasPlaceholder, setHasPlaceholder] = useState(false);
@@ -370,46 +390,33 @@ const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
       </FieldProvider>
     );
   },
-  { staticConfig: { componentName: "Field" } }
+  { displayName: "Field" }
 );
 
 const FieldDetails = styled(BodyText, {
-  name: "FieldDetails",
-
+  displayName: "FieldDetails",
   transition: "200ms",
-  color: "$accent",
+  color: "accent",
+  fontFamily: "caption",
   fontStyle: "italic",
-
-  enterStyle: {
-    opacity: 0,
-    x: 10
-  },
-
-  exitStyle: {
-    opacity: 0,
-    x: 10
-  },
-
+  opacity: "enter:0 exit:0",
+  x: "enter:10px exit:10px",
   variants: {
-    controlSize: formSizeVariants(getFormFontSize),
+    controlSize: formSizeDynamic(getFormFontStyle),
     disabled: {
       true: {
-        color: "$accentDisabled",
-        cursor: "not-allowed",
-
-        hoverStyle: {
-          color: "$accentDisabled"
-        }
+        color: "accentDisabled hover:accentDisabled",
+        cursor: "not-allowed"
       }
     }
   } as const,
-
   defaultVariants: {
     disabled: false
   }
 });
 
-const FieldDetailsImpl = FieldDetails.styleable(
+const FieldDetailsImpl = createStyledHOC(
+  FieldDetails,
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
@@ -434,28 +441,19 @@ const FieldDetailsImpl = FieldDetails.styleable(
       <FieldDetails
         ref={forwardedRef}
         {...rest}
+        color={`${disabled ? "accentDisabled" : theme !== "base" ? "accent" : "inkBody"} group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`}
         theme={theme}
         controlSize={size}
-        disabled={disabled}
-        color={
-          disabled
-            ? "$accentDisabled"
-            : theme !== "base"
-              ? "$accent"
-              : "$inkBody"
-        }
-        $group-field-hover={{
-          color: disabled ? "$accentDisabled" : "$accentHover"
-        }}>
+        disabled={disabled}>
         {children}
       </FieldDetails>
     );
   },
-  { staticConfig: { componentName: "FieldDetails" } }
+  { displayName: "FieldDetails" }
 );
 
 const FieldLabelText = styled(LabelText, {
-  name: "FieldLabel",
+  displayName: "FieldLabel",
 
   transition: "200ms",
   cursor: "pointer",
@@ -465,15 +463,11 @@ const FieldLabelText = styled(LabelText, {
   ellipsis: true,
 
   variants: {
-    controlSize: formSizeVariants(getFormFontSize),
+    controlSize: formSizeDynamic(getFormFontStyle),
     disabled: {
       true: {
-        color: "$accentDisabled",
-        cursor: "not-allowed",
-
-        hoverStyle: {
-          color: "$accentDisabled"
-        }
+        color: "accentDisabled hover:accentDisabled",
+        cursor: "not-allowed"
       }
     }
   } as const,
@@ -484,16 +478,16 @@ const FieldLabelText = styled(LabelText, {
 });
 
 const FieldLabelPositioner = styled(View, {
-  name: "FieldLabel",
+  displayName: "FieldLabel",
 
   transition: "200ms",
 
   variants: {
     variant: {
-      default: {},
+      normal: {},
       floating: {
         position: "absolute",
-        left: "$4xl",
+        left: "4xl",
         zIndex: 1,
         transform: [{ translateY: "-50%" }]
       },
@@ -508,29 +502,23 @@ const FieldLabelPositioner = styled(View, {
 
 const FieldOptionalLabelText = styled(FieldLabelText, {
   transition: "200ms",
-  color: "$inkSubtle",
-  marginLeft: "$lg",
-
+  color: "inkSubtle",
+  marginLeft: "lg",
   variants: {
     disabled: {
       true: {
-        color: "$inkSubtle",
-        cursor: "not-allowed",
-
-        hoverStyle: {
-          color: "$inkSubtle"
-        }
+        color: "inkSubtle hover:inkSubtle",
+        cursor: "not-allowed"
       }
     }
   } as const,
-
   defaultVariants: {
     disabled: false
   }
 });
 
 const LabelXStack = styled(XStack, {
-  name: "FieldLabel",
+  displayName: "FieldLabel",
 
   transition: "200ms",
   position: "relative",
@@ -556,38 +544,28 @@ const LabelXStack = styled(XStack, {
 });
 
 const FieldLabelBorderMask = styled(View, {
-  name: "FieldLabelMask",
-
+  displayName: "FieldLabelMask",
   position: "absolute",
   top: "50%",
   left: -2,
   right: -2,
   height: 10,
   transform: [{ translateY: "-50%" }],
-  backgroundColor: "$surfaceElevated",
+  backgroundColor: "surfaceElevated",
   pointerEvents: "none"
 });
 
 const FieldLabelContent = styled(XStack, {
-  name: "FieldLabelContent",
-
+  displayName: "FieldLabelContent",
   position: "relative",
   zIndex: 1,
-  gap: "$sm",
+  gap: "sm",
   alignItems: "center",
   minWidth: 0
 });
 
-const FieldLabelTextImpl = FieldLabelText.styleable<{
-  required?: boolean;
-  disabled?: boolean;
-  hideRequired?: boolean;
-  hideAsterisk?: boolean;
-  hideOptional?: boolean;
-  floating?: boolean;
-  floatingLabelLeft?: GetProps<typeof FieldLabelPositioner>["left"];
-  variant?: FieldVariant;
-}>(
+const FieldLabelTextImpl = createStyledHOC(
+  FieldLabelText,
   (
     {
       children,
@@ -600,16 +578,25 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
       required,
       style,
       ...props
+    }: GetProps<typeof FieldLabelText> & {
+      required?: boolean;
+      disabled?: boolean;
+      hideRequired?: boolean;
+      hideAsterisk?: boolean;
+      hideOptional?: boolean;
+      floating?: boolean;
+      floatingLabelLeft?: GetProps<typeof FieldLabelPositioner>["left"];
+      variant?: FieldVariant;
     },
     forwardedRef
   ) => {
     const field = FieldApi.use();
     const theme = useThemeName();
     const { endIconCount } = use(FieldPresentationContext);
-    const labelContentRef = useRef<HTMLElement>(null);
-    const labelTextRef = useRef<HTMLElement>(null);
-    const optionalLabelRef = useRef<HTMLElement>(null);
-    const optionalLabelWidthRef = useRef(0);
+    const labelPositionerRef = useRef<TamaguiWebElement>(null);
+    const labelContentRef = useRef<TamaguiWebElement>(null);
+    const labelTextRef = useRef<TamaguiWebElement>(null);
+    const optionalLabelRef = useRef<TamaguiWebElement>(null);
     const [hideOptionalForOverflow, setHideOptionalForOverflow] =
       useState(false);
     const fieldDisabled = field.disabled.get();
@@ -624,41 +611,41 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
         : undefined;
     const endIconWidth =
       getSized(controlSize, { shift: -2 }) +
-      getSpaced("$2xl") * 2 * getFormSizeScale(size);
+      getSpaced("2xl") * 2 * getFormSizeScale(size);
     const floatingLabelRight =
-      getSpaced("$4xl") * getFormSizeScale(size) + endIconCount * endIconWidth;
+      getSpaced("4xl") * getFormSizeScale(size) + endIconCount * endIconWidth;
     const hasOptionalLabel =
       hideRequired !== true && required !== true && hideOptional !== true;
     const updateOptionalLabelVisibility = useCallback(() => {
+      const labelPositioner = labelPositionerRef.current;
       const labelContent = labelContentRef.current;
       const labelText = labelTextRef.current;
       const optionalLabel = optionalLabelRef.current;
 
       if (
+        !labelPositioner ||
         !labelContent ||
         !labelText ||
+        !optionalLabel ||
         typeof getComputedStyle === "undefined"
       ) {
         return;
       }
 
-      if (optionalLabel) {
-        const optionalStyle = getComputedStyle(optionalLabel);
-        optionalLabelWidthRef.current =
-          optionalLabel.scrollWidth +
-          Number.parseFloat(optionalStyle.marginLeft || "0");
-      }
-
-      if (optionalLabelWidthRef.current === 0) {
-        return;
-      }
-
+      // The label content shrinks to fit its children, so its own width
+      // collapses once "(Optional)" is hidden. Measure against the
+      // positioner instead, whose width does not depend on the optional label.
+      const availableWidth =
+        labelPositioner.getBoundingClientRect().right -
+        labelContent.getBoundingClientRect().left;
+      const optionalWidth =
+        optionalLabel.scrollWidth +
+        Number.parseFloat(getComputedStyle(optionalLabel).marginLeft || "0");
       const gap = Number.parseFloat(
         getComputedStyle(labelContent).columnGap || "0"
       );
       const nextHidden =
-        labelText.scrollWidth + optionalLabelWidthRef.current + gap >
-        labelContent.clientWidth;
+        labelText.scrollWidth + optionalWidth + gap > availableWidth;
 
       setHideOptionalForOverflow(current =>
         current === nextHidden ? current : nextHidden
@@ -678,20 +665,22 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
       }
 
       const resizeObserver = new ResizeObserver(updateOptionalLabelVisibility);
-      const labelContent = labelContentRef.current;
-      const labelText = labelTextRef.current;
 
-      if (labelContent) {
-        resizeObserver.observe(labelContent);
-      }
-      if (labelText) {
-        resizeObserver.observe(labelText);
+      for (const element of [
+        labelPositionerRef.current,
+        labelTextRef.current,
+        optionalLabelRef.current
+      ]) {
+        if (element) {
+          resizeObserver.observe(element);
+        }
       }
 
       return () => resizeObserver.disconnect();
     }, [
       children,
       endIconCount,
+      floating,
       hasOptionalLabel,
       size,
       updateOptionalLabelVisibility
@@ -705,12 +694,13 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
 
     return (
       <FieldLabelPositioner
+        ref={labelPositionerRef}
         variant={variant}
         top={labelTop}
         right={variant === "floating" ? floatingLabelRight : undefined}
         left={
           variant === "floating"
-            ? getSpaced("$4xl") * getFormSizeScale(size)
+            ? getSpaced("4xl") * getFormSizeScale(size)
             : undefined
         }
         {...(variant === "floating" && floatingLabelLeft !== undefined
@@ -719,7 +709,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
         <TamaguiLabel
           ref={forwardedRef}
           htmlFor={name}
-          marginLeft={variant === "floating" ? "$zero" : "$md"}>
+          marginLeft={`${variant === "floating" ? "zero" : "md"}`}>
           <LabelXStack disabled={disabled} floating={floating} minWidth={0}>
             {floating && <FieldLabelBorderMask />}
             <FieldLabelContent ref={labelContentRef}>
@@ -727,8 +717,16 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                 <FieldLabelText
                   ref={labelTextRef}
                   {...props}
+                  flexShrink={1}
+                  minWidth={0}
+                  overflow="hidden"
+                  textOverflow="ellipsis"
+                  whiteSpace="nowrap"
+                  color={`${disabled ? "accentDisabled" : "accent"}`}
+                  // Web-only ellipsis styles are not part of React Native's
+                  // style types.
                   style={StyleSheet.flatten([
-                    style,
+                    style as any,
                     {
                       flexShrink: 1,
                       minWidth: 0,
@@ -736,17 +734,11 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                       textOverflow: "ellipsis",
                       whiteSpace: "nowrap"
                     }
-                  ])}
+                  ] as any)}
                   ellipsis={true}
-                  flexShrink={1}
-                  minWidth={0}
-                  overflow="hidden"
-                  textOverflow="ellipsis"
-                  whiteSpace="nowrap"
                   disabled={disabled}
                   floating={floating}
-                  controlSize={size}
-                  color={disabled ? "$accentDisabled" : "$accent"}>
+                  controlSize={size}>
                   {children}
                 </FieldLabelText>
               </Theme>
@@ -758,30 +750,39 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                         <View
                           position="relative"
                           alignSelf="stretch"
-                          width={floating ? "$md" : "$xl"}>
+                          width={`${floating ? "md" : "xl"}`}>
                           <Asterisk
-                            color="$required"
-                            size={floating ? "$md" : "$xl"}
+                            color="required"
+                            size={floating ? "sm" : "xl"}
                             position="absolute"
-                            top={floating ? -1 : -1}
+                            top={floating ? -2 : -1}
                           />
                         </View>
                       )}
                     </>
                   ) : (
                     <>
-                      {hideOptional !== true && !hideOptionalForOverflow && (
+                      {hideOptional !== true && (
+                        // Stays mounted while overflowing so its width can be
+                        // re-measured when there is room for it again.
                         <FieldOptionalLabelText
                           ref={optionalLabelRef}
                           {...props}
+                          aria-hidden={hideOptionalForOverflow || undefined}
+                          position={
+                            hideOptionalForOverflow ? "absolute" : undefined
+                          }
+                          visibility={
+                            hideOptionalForOverflow ? "hidden" : undefined
+                          }
+                          pointerEvents={
+                            hideOptionalForOverflow ? "none" : undefined
+                          }
+                          size={floating ? true : "sm"}
+                          color={`${disabled ? "inkSubtle" : "inkSubtle"} group-hover/field:${disabled ? "inkSubtle" : "inkSubtle"}`}
                           disabled={disabled}
                           floating={floating}
-                          size={floating ? "$true" : "sm"}
-                          controlSize={size}
-                          color={disabled ? "$inkSubtle" : "$inkSubtle"}
-                          $group-field-hover={{
-                            color: disabled ? "$inkSubtle" : "$inkSubtle"
-                          }}>
+                          controlSize={size}>
                           (Optional)
                         </FieldOptionalLabelText>
                       )}
@@ -795,18 +796,25 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
       </FieldLabelPositioner>
     );
   },
-  { staticConfig: { componentName: "FieldLabel" } }
+  { displayName: "FieldLabel" }
 );
 
 export type FieldLabelTextProps = GetProps<typeof FieldLabelText>;
 
-const FieldLabel = FieldLabelText.styleable<{
-  hideRequired?: boolean;
-  hideAsterisk?: boolean;
-  hideOptional?: boolean;
-  floatingLabelLeft?: GetProps<typeof FieldLabelPositioner>["left"];
-}>(
-  ({ children, ...props }, forwardedRef) => {
+const FieldLabel = createStyledHOC(
+  FieldLabelText,
+  (
+    {
+      children,
+      ...props
+    }: GetProps<typeof FieldLabelText> & {
+      hideRequired?: boolean;
+      hideAsterisk?: boolean;
+      hideOptional?: boolean;
+      floatingLabelLeft?: GetProps<typeof FieldLabelPositioner>["left"];
+    },
+    forwardedRef
+  ) => {
     const field = FieldApi.use();
     const name = field.name.get();
     const disabled = field.disabled.get();
@@ -828,7 +836,7 @@ const FieldLabel = FieldLabelText.styleable<{
 
     return (
       <FieldLabelTextImpl
-        ref={forwardedRef as ForwardedRef<any>}
+        ref={forwardedRef}
         {...props}
         htmlFor={name}
         disabled={disabled}
@@ -839,22 +847,22 @@ const FieldLabel = FieldLabelText.styleable<{
       </FieldLabelTextImpl>
     );
   },
-  { staticConfig: { componentName: "FieldLabel" } }
+  { displayName: "FieldLabel" }
 );
 
 export type FieldLabelProps = GetProps<typeof FieldLabel>;
 
 const FieldLinkFrame = styled(XStack, {
-  name: "FieldLink",
-
+  displayName: "FieldLink",
   position: "absolute",
   top: 0,
-  right: "$md"
+  right: "md"
 });
 
-const FieldLink = Link.styleable(
+const FieldLink = createStyledHOC(
+  Link,
   ({ children, ...props }, forwardedRef) => {
-    const linkRef = useRef<HTMLElement>(null);
+    const linkRef = useRef<HTMLElement | null>(null);
 
     const [width, setWidth] = useState<number>();
     const updateWidth = useCallback((element: HTMLElement) => {
@@ -865,7 +873,9 @@ const FieldLink = Link.styleable(
     }, []);
 
     const measureRef = useCallback(
-      (element: HTMLElement | null) => {
+      (node: TamaguiTextElement | null) => {
+        // Measured on web, where the rendered element is an HTMLElement.
+        const element = node as HTMLElement | null;
         linkRef.current = element;
         if (element) {
           updateWidth(element);
@@ -874,7 +884,10 @@ const FieldLink = Link.styleable(
       [updateWidth]
     );
 
-    const composedRef = useComposedRefs(forwardedRef, measureRef);
+    const composedRef = useComposedRefs<TamaguiTextElement>(
+      forwardedRef,
+      measureRef
+    );
 
     useLayoutEffect(() => {
       let cancelled = false;
@@ -900,26 +913,61 @@ const FieldLink = Link.styleable(
       </FieldLinkFrame>
     );
   },
-  { staticConfig: { componentName: "FieldLink" } }
+  { displayName: "FieldLink" }
 );
 
-const FieldIconButtonImpl = Button.styleable<{
-  position?: "start" | "end";
-  controlSize?: FormControlSize;
-  size?: FormControlSize;
-}>(
+/**
+ * Resolves the color tokens used by field icons (and their dividers): `accent`
+ * when the field has a non-base theme or a validation message, otherwise
+ * `hairline`. `iconColor` is a single theme key so it can be passed directly
+ * to Tamagui v3 icons, which do not resolve flat `group-hover/` values.
+ */
+export const useFieldIconColor = () => {
+  const field = FieldApi.use();
+  const disabled = field.disabled.get();
+  const focused = field.focused.get();
+  const theme = field.theme.get();
+  const messages = field.messages.get();
+  const isNeutral = (!theme || theme === "base") && messages.length === 0;
+
+  const iconColor = disabled
+    ? "hairlineInactive"
+    : isNeutral
+      ? focused
+        ? "hairlineActive"
+        : "hairline"
+      : focused
+        ? "accentActive"
+        : "accent";
+  const hoverIconColor = disabled
+    ? "hairlineInactive"
+    : isNeutral
+      ? "hairlineHover"
+      : "accentHover";
+
+  return { iconColor, hoverIconColor, isNeutral };
+};
+
+const FieldIconButtonImpl = createStyledHOC(
+  Button,
   (
-    { children, position, controlSize, size: sizeProp, ...props },
+    {
+      children,
+      position,
+      controlSize,
+      size: sizeProp,
+      ...props
+    }: GetProps<typeof Button> & {
+      position?: "start" | "end";
+      controlSize?: FormControlSize;
+      size?: FormControlSize;
+    },
     forwardedRef
   ) => {
     const field = FieldApi.use();
     const fieldSize = field.size.get();
     const size = controlSize ?? sizeProp ?? fieldSize ?? "md";
-    const disabled = field.disabled.get();
-    const focused = field.focused.get();
-    const theme = field.theme.get();
-    const idleColor = theme === "base" ? "$hairline" : "$accent";
-    const focusColor = theme === "base" ? "$hairlineActive" : "$accentActive";
+    const { iconColor, hoverIconColor } = useFieldIconColor();
     const { registerEndIcon, variant } = use(FieldPresentationContext);
     const frameSize = getFormSizeToken(size);
 
@@ -935,26 +983,17 @@ const FieldIconButtonImpl = Button.styleable<{
       () => getSized(frameSize, { shift: -2 }),
       [frameSize]
     );
-    const iconColor = disabled
-      ? "$hairlineInactive"
-      : focused
-        ? focusColor
-        : idleColor;
-    const hoverIconColor = disabled
-      ? "$hairlineInactive"
-      : theme === "base"
-        ? "$hairlineHover"
-        : "$accentHover";
     const icon = isValidElement<{
       color?: string;
       size?: number;
-      "$group-field-hover"?: { color?: string };
     }>(children)
       ? // eslint-disable-next-line react/no-clone-element
         cloneElement(children, {
-          color: "currentColor",
-          size: 24 * getFormSizeScale(size),
-          "$group-field-hover": undefined
+          // Tamagui v3's icon `themed` only resolves a single theme key, so
+          // `currentColor` or a flat `group-hover/field:` value would fall
+          // back to the inherited text color. Pass the resolved state token.
+          color: iconColor,
+          size: 24 * getFormSizeScale(size)
         })
       : children;
 
@@ -965,7 +1004,7 @@ const FieldIconButtonImpl = Button.styleable<{
         flexDirection="row"
         flexShrink={0}
         height="100%"
-        paddingHorizontal={getSpaced("$2xl") * getFormSizeScale(size)}
+        paddingHorizontal={getSpaced("2xl") * getFormSizeScale(size)}
         position="relative">
         {position && variant !== "underline" && (
           <View
@@ -975,12 +1014,7 @@ const FieldIconButtonImpl = Button.styleable<{
             {...(position === "end"
               ? { left: 0, borderLeftWidth: 1 }
               : { right: 0, borderRightWidth: 1 })}
-            borderColor={
-              disabled ? "$hairlineInactive" : focused ? focusColor : idleColor
-            }
-            $group-field-hover={{
-              borderColor: hoverIconColor
-            }}
+            borderColor={`${iconColor} group-hover/field:${hoverIconColor}`}
           />
         )}
         <Button
@@ -990,21 +1024,19 @@ const FieldIconButtonImpl = Button.styleable<{
           noPadding={true}
           animate={true}
           transition="200ms"
-          color={iconColor}
+          color={`${iconColor} group-hover/field:${hoverIconColor}`}
           ghostOpacity={0.25}
           {...props}
-          $group-field-hover={{
-            color: hoverIconColor
-          }}
           size={adjusted}>
           <Button.Icon
             // Keep the compact field button frame while matching the 20px
             // glyph size used by the other input affordances.
             size={frameSize}>
             <View
-              // @ts-expect-error View's web color style drives the nested SVG's currentColor.
-              color={iconColor}
-              $group-field-hover={{ color: hoverIconColor }}>
+              // View's web color style drove the nested SVG's currentColor in
+              // v2. Tamagui v3 drops `color` on a View, so the icon no longer
+              // follows this hover color; it needs its own color prop.
+              color={`${iconColor} group-hover/field:${hoverIconColor}`}>
               {icon}
             </View>
           </Button.Icon>
@@ -1012,15 +1044,28 @@ const FieldIconButtonImpl = Button.styleable<{
       </View>
     );
   },
-  { staticConfig: { componentName: "FieldIcon" } }
+  { displayName: "FieldIcon" }
 );
 
-const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
-  messages?: ValidationDetails[];
-  details?: ReactNode;
-  theme?: string;
-}>(
-  ({ children, messages, details, disabled, theme, ...rest }, forwardedRef) => {
+const InnerFieldThemeIcon = createStyledHOC(
+  FieldIconButtonImpl,
+  (
+    {
+      children,
+      messages,
+      details,
+      disabled,
+      theme,
+      ...rest
+    }: GetProps<typeof FieldIconButtonImpl> & {
+      messages?: ValidationDetails[];
+      details?: ReactNode;
+      theme?: string;
+    },
+    forwardedRef
+  ) => {
+    const { isNeutral } = useFieldIconColor();
+
     if ((!messages || messages.length === 0) && !details && !disabled) {
       return (
         <FieldIconButtonImpl ref={forwardedRef} {...rest}>
@@ -1037,27 +1082,37 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
           </FieldIconButtonImpl>
         </Tooltip.Trigger>
 
-        <Tooltip.Content>
+        <Tooltip.Content
+          // The content is portaled outside the field's `Theme`, so apply the
+          // field theme here or `accent` resolves against the root theme.
+          theme={theme}
+          borderColor={
+            isNeutral
+              ? "hairline focus-visible:hairlineActive"
+              : "accent focus-visible:accentActive"
+          }
+          arrowBorderColor={isNeutral ? "hairline" : "accent"}>
           <Theme name="base">
             {messages && messages.length > 0 ? (
               <ValidationText
-                color="$accent"
+                color="accent"
                 messages={messages}
                 disabled={disabled}
                 theme="base"
               />
             ) : (
-              details || <ValidationText color="$accent" disabled={disabled} />
+              details || <ValidationText color="accent" disabled={disabled} />
             )}
           </Theme>
         </Tooltip.Content>
       </Tooltip>
     );
   },
-  { staticConfig: { componentName: "FieldIcon" } }
+  { displayName: "FieldIcon" }
 );
 
-const FieldThemeIcon = InnerFieldThemeIcon.styleable(
+const FieldThemeIcon = createStyledHOC(
+  InnerFieldThemeIcon,
   ({ children, ...props }, forwardedRef) => {
     const { focus } = useFieldActions();
 
@@ -1078,7 +1133,9 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
     }
 
     if (validating) {
-      return <Spinner size="$md" theme="base" />;
+      // Spinner types `size` as "small" | "large"; the pre-existing "md" is
+      // kept as-is to preserve the current rendering.
+      return <Spinner size={"md" as SpinnerProps["size"]} theme="base" />;
     } else if (
       !theme?.includes("danger") &&
       !theme?.includes("warning") &&
@@ -1105,19 +1162,14 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
           theme,
           disabled,
           transition: "200ms",
-          color: disabled
-            ? "$accentDisabled"
-            : focused
-              ? "$accentActive"
-              : "$accent",
-          "$group-field-hover": {
-            color: disabled ? "$accentDisabled" : "$accentHover"
-          }
+          color: `${
+            disabled ? "accentDisabled" : focused ? "accentActive" : "accent"
+          } group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`
         })}
       </InnerFieldThemeIcon>
     );
   },
-  { staticConfig: { componentName: "FieldIcon" } }
+  { displayName: "FieldIcon" }
 );
 
 export const Field = withStaticProperties(FieldGroup, {

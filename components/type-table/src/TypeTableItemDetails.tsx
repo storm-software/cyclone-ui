@@ -22,34 +22,30 @@ import type { ReactNode } from "react";
 import type { TypeNode } from "./TypeTable";
 
 const TypeTableDetailsFrame = styled(View, {
-  name: "TypeTableDetails",
-
-  gap: "$4xl",
-  padding: "$3xl"
+  displayName: "TypeTableDetails",
+  gap: "4xl",
+  padding: "3xl"
 });
 
 const DetailRow = styled(View, {
-  name: "TypeTableDetailRow",
-
+  displayName: "TypeTableDetailRow",
   flexDirection: "row",
   alignItems: "flex-start",
-  gap: "$3xl"
+  gap: "3xl"
 });
 
 const DetailLabel = styled(BodyText, {
-  name: "TypeTableDetailLabel",
-
+  displayName: "TypeTableDetailLabel",
   width: "25%",
   flexShrink: 0,
-  color: "$inkSubtle",
-  variant: "lg"
+  color: "inkSubtle",
+  fontFamily: "title-lg"
 });
 
 const DetailValue = styled(BodyText, {
-  name: "TypeTableDetailValue",
-
+  displayName: "TypeTableDetailValue",
   flex: 1,
-  color: "$inkBody"
+  color: "inkBody"
 });
 
 const hasValue = (value: ReactNode) => value !== undefined && value !== null;
@@ -77,9 +73,9 @@ export const TypeTableItemDetails = ({ item }: { item: TypeNode }) => (
     {item.parameters && item.parameters.length > 0 ? (
       <DetailRow>
         <DetailLabel>Parameters</DetailLabel>
-        <View flex={1} gap="$2xl">
+        <View flex={1} gap="2xl">
           {item.parameters.map(parameter => (
-            <DetailRow key={parameter.name} gap="$xl">
+            <DetailRow key={parameter.name} gap="xl">
               <DetailValue flex={0}>{parameter.name}</DetailValue>
               <DetailValue>{renderValue(parameter.description)}</DetailValue>
             </DetailRow>

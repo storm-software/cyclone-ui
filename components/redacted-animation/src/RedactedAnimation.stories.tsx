@@ -36,14 +36,14 @@ const meta: Meta<typeof RedactedAnimation> = {
   },
   decorators: [
     Story => (
-      <View backgroundColor="$surfaceCanvas" padding="$6xl">
+      <View backgroundColor="surfaceCanvas" padding="6xl">
         <Story />
       </View>
     )
   ],
   args: {
     children: (
-      <HeadingExtraLargeText color="$accent">
+      <HeadingExtraLargeText color="accent">
         Presence-aware identity management
       </HeadingExtraLargeText>
     )

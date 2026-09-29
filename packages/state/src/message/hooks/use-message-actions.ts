@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { MessageDetails } from "@stryke/types/messages";
-import { toast } from "@tamagui/toast/v2";
+import { toast } from "@tamagui/toast";
 
 export type MessageOptions = Omit<MessageDetails, "message"> & {
   heading?: string;

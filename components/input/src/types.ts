@@ -19,7 +19,7 @@
 import { type FormControlSize } from "@cyclone-ui/helpers";
 import type {
   ColorTokens,
-  TamaguiComponentPropsBase,
+  TamaguiComponentPropsBaseBase,
   TextProps,
   ViewProps
 } from "@tamagui/web";
@@ -34,7 +34,7 @@ export type InputChangeEventHandler = (event: CustomEvent<string>) => any;
 
 export type InputVariant = "default" | "floating" | "underline";
 
-export type InputComponentProps = ViewProps &
+export type InputComponentProps = Omit<ViewProps, "onChange" | "onInput"> &
   Omit<
     DetailedInputProps,
     | "className"
@@ -89,7 +89,17 @@ export type InputComponentProps = ViewProps &
     /**
      * The HTML element to render when on web
      */
-    render?: TamaguiComponentPropsBase["render"];
+    render?: TamaguiComponentPropsBaseBase["render"];
+
+    /**
+     * Callback that is called when the text input's text changes.
+     */
+    onChange?: InputChangeEventHandler;
+
+    /**
+     * Callback that is called when the user provides input to the text field.
+     */
+    onInput?: InputChangeEventHandler;
 
     /**
      * The enter key to display in the mobile keyboard
@@ -117,7 +127,7 @@ export type InputComponentProps = ViewProps &
     /**
      * @deprecated - use `onChange` instead
      */
-    onChangeText?: TextInputProps["onChange"];
+    onChangeText?: TextInputProps["onChangeText"];
 
     /**
      * @deprecated - use `render='textarea'` instead

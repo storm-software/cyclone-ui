@@ -26,9 +26,10 @@ import {
 } from "@cyclone-ui/helpers";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
-import type { ColorTokens } from "@tamagui/core";
+import type { ColorTokens, GetProps } from "@tamagui/core";
 import {
   createStyledContext,
+  createStyledHOC,
   getVariableValue,
   styled,
   View,
@@ -47,14 +48,24 @@ export interface SwitchContextProps {
   hasValidationMessage: boolean;
 }
 
-export const SwitchContext = createStyledContext<SwitchContextProps>({
-  size: "md",
-  name: "",
-  checked: false,
-  required: false,
-  disabled: false,
-  hasValidationMessage: false
-});
+export const SwitchContext = createStyledContext<
+  SwitchContextProps,
+  "size" | "name" | "checked" | "required" | "disabled" | "hasValidationMessage"
+>(
+  {
+    size: "md",
+    name: "",
+    checked: false,
+    required: false,
+    disabled: false,
+    hasValidationMessage: false
+  } as SwitchContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: ["size", "disabled", "hasValidationMessage"]
+  }
+);
 
 const getSwitchHeight = (val: FormControlSize) =>
   Math.round(getVariableValue(getSize(getFormSizeToken(val, "compact"))));
@@ -62,50 +73,36 @@ const getSwitchHeight = (val: FormControlSize) =>
 const getSwitchWidth = (val: FormControlSize) => getSwitchHeight(val) * 2;
 
 const SwitchFrame = styled(View, {
-  name: "Switch",
+  displayName: "Switch",
   render: "button",
   context: SwitchContext,
-
   transition: "200ms",
   borderRadius: 100_000,
-  backgroundColor: "$surfaceElevated",
+  backgroundColor: "surfaceElevated",
   borderWidth: 1,
-  borderColor: "$hairline",
-  boxShadow: "none",
+  borderColor:
+    "hairline hover:accentHover focus:accentActive focus-visible:accentActive",
+  boxShadow: "none focus:ringOffset focus-visible:ringOffset",
   tabIndex: 0,
-
-  hoverStyle: {
-    borderColor: "$accentHover"
-  },
-
-  focusStyle: {
-    borderColor: "$accentActive",
-    boxShadow: "$ringOffset"
-  },
-
-  focusVisibleStyle: {
-    borderColor: "$accentActive",
-    boxShadow: "$ringOffset"
-  },
-
   variants: {
-    size: formSizeVariants(val => {
-      const height = getSwitchHeight(val);
-      const width = getSwitchWidth(val);
+    // `styled.dynamic` re-brands the helper's carrier with this package's
+    // `@tamagui/web` symbol type (runtime no-op; helpers resolves another copy).
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants(val => {
+        const height = getSwitchHeight(val);
+        const width = getSwitchWidth(val);
 
-      return {
-        height,
-        minHeight: height,
-        width
-      };
-    }),
+        return {
+          height,
+          minHeight: height,
+          width
+        };
+      })
+    ),
 
     hasValidationMessage: {
       true: {
-        borderColor: "$accent",
-        hoverStyle: {
-          borderColor: "$accentHover"
-        }
+        borderColor: "accent hover:accentHover"
       }
     },
 
@@ -113,23 +110,11 @@ const SwitchFrame = styled(View, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$accentDisabled",
-
-        hoverStyle: {
-          borderColor: "$accentDisabled"
-        },
-
-        focusStyle: {
-          borderColor: "$accentDisabled"
-        },
-
-        pressStyle: {
-          borderColor: "$accentDisabled"
-        }
+        borderColor:
+          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled"
       }
     }
   } as const,
-
   defaultVariants: {
     size: "md",
     disabled: false
@@ -137,45 +122,45 @@ const SwitchFrame = styled(View, {
 });
 
 const SwitchThumb = styled(View, {
-  name: "SwitchThumb",
-
+  displayName: "SwitchThumb",
   theme: "base",
   transition: "200ms",
-  backgroundColor: "$muted",
+  backgroundColor: "muted",
   borderRadius: 100_000,
   borderWidth: 0,
   justifyContent: "center",
   alignItems: "center",
-
   variants: {
     checked: {
       true: {
-        backgroundColor: "$muted"
+        backgroundColor: "muted"
       }
     },
 
-    size: formSizeVariants(val => {
-      const height = getSwitchHeight(val);
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants(val => {
+        const height = getSwitchHeight(val);
 
-      return {
-        height: height - 2,
-        width: height - 2
-      };
-    })
+        return {
+          height: height - 2,
+          width: height - 2
+        };
+      })
+    )
   } as const,
-
   defaultVariants: {
     size: "md",
     checked: false
   }
 });
 
-const SwitchThumbImpl = SwitchThumb.styleable(
+const SwitchThumbImpl = createStyledHOC(
+  SwitchThumb,
   (props, forwardedRef) => {
     return <SwitchThumb ref={forwardedRef} {...props} />;
   },
   {
-    staticConfig: { componentName: "SwitchThumb" }
+    displayName: "SwitchThumb"
   }
 );
 
@@ -193,50 +178,40 @@ const SwitchIconFrame = styled(View, {
       lg: {}
     },
 
-    placement: {
-      right: (_, { props }) => {
-        const space = getSpaced(
-          getFormSizeToken(
-            (props as { size?: FormControlSize }).size,
-            "compact"
-          ),
-          {
-            scale: 0.35
-          }
-        );
-
-        return {
-          right: space
-        };
-      },
-      left: (_, { props }) => {
-        const space = getSpaced(
-          getFormSizeToken(
-            (props as { size?: FormControlSize }).size,
-            "compact"
-          ),
-          {
-            scale: 0.35
-          }
-        );
-
-        return {
-          left: space
-        };
-      }
-    }
+    // Styled by the `.resolve` below because the offset depends on `size`.
+    placement: styled.dynamic<"right" | "left">()
   } as const,
 
   defaultVariants: {
     placement: "right"
   }
+}).resolve(props => {
+  const space = getSpaced(
+    getFormSizeToken(props.size as FormControlSize | undefined, "compact"),
+    {
+      scale: 0.35
+    }
+  );
+
+  return (props.placement ?? "right") === "left"
+    ? { left: space }
+    : { right: space };
 });
 
-const SwitchIcon = SwitchIconFrame.styleable<{
-  size?: FormControlSize;
-  color?: ColorTokens;
-}>(
-  ({ children, size, color, ...props }, forwardedRef) => {
+const SwitchIcon = createStyledHOC(
+  SwitchIconFrame,
+  (
+    {
+      children,
+      size,
+      color,
+      ...props
+    }: GetProps<typeof SwitchIconFrame> & {
+      size?: FormControlSize;
+      color?: ColorTokens;
+    },
+    forwardedRef
+  ) => {
     const { disabled, size: contextSize } = SwitchContext.useStyledContext();
     const adjusted = useMemo(
       () =>
@@ -250,14 +225,11 @@ const SwitchIcon = SwitchIconFrame.styleable<{
       <SwitchIconFrame
         theme="base"
         ref={forwardedRef}
-        zIndex="$20"
+        zIndex="20"
         alignItems="center"
-        // flexGrow 1 leads to inconsistent native style where text pushes to start of view
         flexGrow={0}
         flexShrink={1}
-        $group-field-hover={{
-          borderColor: "$hairlineHover"
-        }}>
+        borderColor="group-hover/field:hairlineHover">
         <ThemeableIcon
           {...props}
           theme="base"
@@ -266,19 +238,16 @@ const SwitchIcon = SwitchIconFrame.styleable<{
           color={
             (color ||
               (disabled
-                ? "$onAccentDisabled"
-                : "$onAccent")) as ThemeableIconProps["color"]
-          }
-          $group-switch-hover={{
-            color: disabled ? "$onAccentDisabled" : "$onAccentHover"
-          }}>
+                ? "onAccentDisabled"
+                : "onAccent")) as ThemeableIconProps["color"]
+          }>
           {children}
         </ThemeableIcon>
       </SwitchIconFrame>
     );
   },
   {
-    staticConfig: { componentName: "SwitchIcon" }
+    displayName: "SwitchIcon"
   }
 );
 
@@ -287,10 +256,8 @@ const BaseSwitch = createSwitch({
   Thumb: SwitchThumbImpl
 });
 
-const BaseSwitchImpl = BaseSwitch.styleable<{
-  focused?: boolean;
-  size?: FormControlSize;
-}>(
+const BaseSwitchImpl = createStyledHOC(
+  BaseSwitch,
   (
     {
       name,
@@ -300,14 +267,15 @@ const BaseSwitchImpl = BaseSwitch.styleable<{
       focused = false,
       children,
       ...props
+    }: GetProps<typeof BaseSwitch> & {
+      focused?: boolean;
+      size?: FormControlSize;
     },
     forwardedRef
   ) => {
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "$accent" : "$hairline";
-    const focusColor = hasValidationMessage
-      ? "$accentActive"
-      : "$hairlineActive";
+    const idleColor = hasValidationMessage ? "accent" : "hairline";
+    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
 
     return (
       <SwitchContext.Provider
@@ -319,27 +287,36 @@ const BaseSwitchImpl = BaseSwitch.styleable<{
         <BaseSwitch
           ref={forwardedRef}
           activeStyle={{
-            backgroundColor: "$accent"
+            backgroundColor: "accent"
           }}
           {...props}
           id={name}
           size={size}
           checked={checked}
-          borderColor={focused ? focusColor : idleColor}
-          focusStyle={{ borderColor: focusColor, boxShadow: "$ringOffset" }}
-          focusVisibleStyle={{
-            borderColor: focusColor,
-            boxShadow: "$ringOffset"
-          }}
-          hasValidationMessage={hasValidationMessage}
-          disabled={disabled}
-          $group-field-hover={{
-            borderColor: disabled
-              ? "$accentDisabled"
+          // In v2 the `hasValidationMessage` / `disabled` variants came after
+          // these props and replaced their base (and, for `disabled`, focus)
+          // color. v3 call-site values outrank variants, so leave those
+          // clauses out here and let the variants supply them.
+          borderColor={[
+            disabled || hasValidationMessage
+              ? undefined
               : focused
                 ? focusColor
-                : "$accentHover"
-          }}>
+                : idleColor,
+            // A call-site base replaces every lower-tier clause in v3, so the
+            // v2 frame/variant hover color is restated.
+            `hover:${disabled ? "accentDisabled" : "accentHover"}`,
+            `group-hover/field:${disabled ? "accentDisabled" : focused ? focusColor : "accentHover"}`,
+            disabled ? undefined : `focus:${focusColor}`,
+            `focus-visible:${focusColor}`
+          ]
+            .filter(Boolean)
+            .join(" ")}
+          boxShadow="focus:ringOffset focus-visible:ringOffset"
+          // `createSwitch` types its result with the default frame's props, but
+          // this `SwitchFrame` variant still reaches the frame at runtime.
+          {...({ hasValidationMessage } as object)}
+          disabled={disabled}>
           {children}
           <BaseSwitch.Thumb />
         </BaseSwitch>
@@ -347,7 +324,7 @@ const BaseSwitchImpl = BaseSwitch.styleable<{
     );
   },
   {
-    staticConfig: { componentName: "Switch" }
+    displayName: "Switch"
   }
 );
 

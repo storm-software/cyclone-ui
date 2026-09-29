@@ -103,7 +103,7 @@ export const DirectionUp: Story = {
 
 export const BackgroundColor: Story = {
   args: {
-    backgroundColor: "$surfaceCanvas"
+    backgroundColor: "surfaceCanvas"
   }
 };
 

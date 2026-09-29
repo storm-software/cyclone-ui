@@ -61,7 +61,7 @@ const meta: Meta<typeof TypeTable> = {
   },
   decorators: [
     Story => (
-      <View width="100%" minWidth={760} maxWidth={760} gap="$md">
+      <View width="100%" minWidth={760} maxWidth={760} gap="md">
         <Story />
       </View>
     )

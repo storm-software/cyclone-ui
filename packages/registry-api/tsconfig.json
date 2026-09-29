@@ -5,7 +5,7 @@
     "types": ["@cloudflare/workers-types"],
     "strict": true,
     "declaration": true,
-    "outDir": "../../dist/out-tsc",
+    "outDir": "../../dist/out-tsc/packages/registry-api",
     "ignoreDeprecations": "6.0"
   },
   "include": ["src/**/*", "powerlines.config.ts", "powerlines.d.ts"],

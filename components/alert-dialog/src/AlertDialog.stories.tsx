@@ -20,9 +20,15 @@ import { Button } from "@cyclone-ui/button";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HelpCircle } from "@tamagui/lucide-icons-2";
 import { XStack } from "@tamagui/stacks";
+import type { ComponentProps, ReactNode } from "react";
 import { AlertDialog } from "./AlertDialog";
 
-const meta: Meta<typeof AlertDialog> = {
+// `icon` is a story-only arg consumed by the custom `render` below.
+type AlertDialogStoryArgs = ComponentProps<typeof AlertDialog> & {
+  icon?: ReactNode;
+};
+
+const meta: Meta<AlertDialogStoryArgs> = {
   title: "Containers/AlertDialog",
   component: AlertDialog,
   tags: ["autodocs"],
@@ -44,7 +50,7 @@ const meta: Meta<typeof AlertDialog> = {
             {children}
           </AlertDialog.Container.Content.Body>
 
-          <XStack gap="$3xl" marginTop="$3xl" width="100%">
+          <XStack gap="3xl" marginTop="3xl" width="100%">
             <AlertDialog.Container.Close>
               <AlertDialog.Container.Close.Text>
                 Close
@@ -60,11 +66,11 @@ const meta: Meta<typeof AlertDialog> = {
       </AlertDialog.Container>
     </AlertDialog>
   )
-} satisfies Meta<typeof AlertDialog>;
+} satisfies Meta<AlertDialogStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof AlertDialog>;
+type Story = StoryObj<AlertDialogStoryArgs>;
 
 const bodyText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";

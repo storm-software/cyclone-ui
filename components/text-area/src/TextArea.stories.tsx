@@ -34,6 +34,11 @@ export default meta;
 
 type Story = StoryObj<typeof TextArea>;
 
+// This package's tsconfig omits the DOM lib, so reach the browser global
+// through `globalThis`.
+const getComputedStyle = (element: Element): { boxShadow: string } =>
+  (globalThis as any).getComputedStyle(element);
+
 export const Base: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

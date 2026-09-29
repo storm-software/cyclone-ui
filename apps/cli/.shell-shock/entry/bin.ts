@@ -150,10 +150,10 @@ async function main(): Promise<any | { error: string | Error }> {
 
   if (!command.startsWith("-")) {
     if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
     ) {
-      const handleInfo = await import("./info").then(m => m.handler);
-      return handleInfo(args);
+      const handleView = await import("./view").then(m => m.handler);
+      return handleView(args);
     } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
         "search" ||
@@ -162,10 +162,25 @@ async function main(): Promise<any | { error: string | Error }> {
       const handleSearch = await import("./search").then(m => m.handler);
       return handleSearch(args);
     } else if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
     ) {
-      const handleView = await import("./view").then(m => m.handler);
-      return handleView(args);
+      const handleInfo = await import("./info").then(m => m.handler);
+      return handleInfo(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
+    ) {
+      const handleDiff = await import("./diff").then(m => m.handler);
+      return handleDiff(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "docs"
+    ) {
+      const handleDocs = await import("./docs").then(m => m.handler);
+      return handleDocs(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "build"
+    ) {
+      const handleBuild = await import("./build").then(m => m.handler);
+      return handleBuild(args);
     } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
         "init" ||
@@ -173,21 +188,6 @@ async function main(): Promise<any | { error: string | Error }> {
     ) {
       const handleInit = await import("./init").then(m => m.handler);
       return handleInit(args);
-    } else if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "docs"
-    ) {
-      const handleDocs = await import("./docs").then(m => m.handler);
-      return handleDocs(args);
-    } else if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
-    ) {
-      const handleDiff = await import("./diff").then(m => m.handler);
-      return handleDiff(args);
-    } else if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "build"
-    ) {
-      const handleBuild = await import("./build").then(m => m.handler);
-      return handleBuild(args);
     } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "add"
     ) {
@@ -218,15 +218,15 @@ async function main(): Promise<any | { error: string | Error }> {
       return handleHelp(args);
     } else if (Boolean(command) && !command.startsWith("-")) {
       const suggestions = findSuggestions(command, [
-        "info",
+        "view",
         "search",
         "list",
-        "view",
+        "info",
+        "diff",
+        "docs",
+        "build",
         "init",
         "create",
-        "docs",
-        "diff",
-        "build",
         "add",
         "completions",
         "update",
@@ -247,10 +247,10 @@ async function main(): Promise<any | { error: string | Error }> {
       message: "Which command would you like to execute?",
       options: [
         {
-          value: ["info"],
-          label: "Project Information",
-          description: `(cyclone-ui info)`,
-          icon: "ⓘ"
+          value: ["view"],
+          label: "View Registry Components",
+          description: `(cyclone-ui view)`,
+          icon: "◉"
         },
         {
           value: ["search"],
@@ -259,22 +259,10 @@ async function main(): Promise<any | { error: string | Error }> {
           icon: "⌕"
         },
         {
-          value: ["view"],
-          label: "View Registry Components",
-          description: `(cyclone-ui view)`,
-          icon: "◉"
-        },
-        {
-          value: ["init"],
-          label: "Initialize",
-          description: `(cyclone-ui init)`,
-          icon: "🌀"
-        },
-        {
-          value: ["docs"],
-          label: "Component Documentation",
-          description: `(cyclone-ui docs)`,
-          icon: "🕮"
+          value: ["info"],
+          label: "Project Information",
+          description: `(cyclone-ui info)`,
+          icon: "ⓘ"
         },
         {
           value: ["diff"],
@@ -283,10 +271,22 @@ async function main(): Promise<any | { error: string | Error }> {
           icon: "±"
         },
         {
+          value: ["docs"],
+          label: "Component Documentation",
+          description: `(cyclone-ui docs)`,
+          icon: "🕮"
+        },
+        {
           value: ["build"],
           label: "Build Registry",
           description: `(cyclone-ui build)`,
           icon: "🏗"
+        },
+        {
+          value: ["init"],
+          label: "Initialize",
+          description: `(cyclone-ui init)`,
+          icon: "🌀"
         },
         {
           value: ["add"],
@@ -394,10 +394,10 @@ async function main(): Promise<any | { error: string | Error }> {
     args = context.inputArgs;
     if (!command.startsWith("-")) {
       if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
       ) {
-        const handleInfo = await import("./info").then(m => m.handler);
-        return handleInfo(args);
+        const handleView = await import("./view").then(m => m.handler);
+        return handleView(args);
       } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
           "search" ||
@@ -406,10 +406,26 @@ async function main(): Promise<any | { error: string | Error }> {
         const handleSearch = await import("./search").then(m => m.handler);
         return handleSearch(args);
       } else if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
       ) {
-        const handleView = await import("./view").then(m => m.handler);
-        return handleView(args);
+        const handleInfo = await import("./info").then(m => m.handler);
+        return handleInfo(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
+      ) {
+        const handleDiff = await import("./diff").then(m => m.handler);
+        return handleDiff(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "docs"
+      ) {
+        const handleDocs = await import("./docs").then(m => m.handler);
+        return handleDocs(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "build"
+      ) {
+        const handleBuild = await import("./build").then(m => m.handler);
+        return handleBuild(args);
       } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
           "init" ||
@@ -418,22 +434,6 @@ async function main(): Promise<any | { error: string | Error }> {
       ) {
         const handleInit = await import("./init").then(m => m.handler);
         return handleInit(args);
-      } else if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "docs"
-      ) {
-        const handleDocs = await import("./docs").then(m => m.handler);
-        return handleDocs(args);
-      } else if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
-      ) {
-        const handleDiff = await import("./diff").then(m => m.handler);
-        return handleDiff(args);
-      } else if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
-        "build"
-      ) {
-        const handleBuild = await import("./build").then(m => m.handler);
-        return handleBuild(args);
       } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "add"
       ) {
@@ -464,15 +464,15 @@ async function main(): Promise<any | { error: string | Error }> {
         return handleHelp(args);
       } else if (Boolean(command) && !command.startsWith("-")) {
         const suggestions = findSuggestions(command, [
-          "info",
+          "view",
           "search",
           "list",
-          "view",
+          "info",
+          "diff",
+          "docs",
+          "build",
           "init",
           "create",
-          "docs",
-          "diff",
-          "build",
           "add",
           "completions",
           "update",

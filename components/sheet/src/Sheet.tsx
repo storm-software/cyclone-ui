@@ -33,7 +33,7 @@ import {
 } from "@tamagui/dialog";
 import { withStaticProperties } from "@tamagui/helpers";
 import { Sheet as TamaguiSheet } from "@tamagui/sheet";
-import { XStack } from "@tamagui/stacks";
+import { XStack, YStack } from "@tamagui/stacks";
 import type { FC, ReactNode, PointerEvent as ReactPointerEvent } from "react";
 import {
   createContext,
@@ -98,12 +98,71 @@ const useSheetContext = () => {
   return context;
 };
 
-const sheetFrameStyles = {
-  backgroundColor: "$surfaceFloating",
+const sheetSurfaceStyles = {
+  backgroundColor: "surfaceFloating",
   borderWidth: 0,
-  borderColor: "transparent",
+  borderColor: "transparent"
+};
+
+const sheetLayoutStyles = {
   flexDirection: "column" as const,
   overflow: "hidden" as const
+};
+
+const sheetFrameStyles = {
+  ...sheetSurfaceStyles,
+  ...sheetLayoutStyles
+};
+
+// Tamagui v3 splits the old `Sheet.Frame` into `Sheet.Container` (layout) and
+// `Sheet.Background` (visual surface). These props move to the background.
+// Radius props stay on the container too, so it keeps clipping its content to
+// the same rounded shape as v2's single frame.
+const sheetSurfacePropKeys = new Set([
+  "backgroundColor",
+  "bg",
+  "borderColor",
+  "borderTopColor",
+  "borderRightColor",
+  "borderBottomColor",
+  "borderLeftColor",
+  "borderStartColor",
+  "borderEndColor",
+  "borderWidth",
+  "borderTopWidth",
+  "borderRightWidth",
+  "borderBottomWidth",
+  "borderLeftWidth",
+  "borderStartWidth",
+  "borderEndWidth",
+  "borderStyle",
+  "boxShadow",
+  "elevation",
+  "shadowColor",
+  "shadowOffset",
+  "shadowOpacity",
+  "shadowRadius"
+]);
+
+const isSheetRadiusProp = (key: string) =>
+  key === "rounded" || /^border.*Radius$/.test(key);
+
+const splitSheetFrameProps = (props: Record<string, unknown>) => {
+  const container: Record<string, unknown> = {};
+  const background: Record<string, unknown> = {};
+
+  for (const key of Object.keys(props)) {
+    if (sheetSurfacePropKeys.has(key)) {
+      background[key] = props[key];
+    } else if (isSheetRadiusProp(key)) {
+      background[key] = props[key];
+      container[key] = props[key];
+    } else {
+      container[key] = props[key];
+    }
+  }
+
+  return { container, background };
 };
 
 const sheetFrameDirectionStyles: Record<
@@ -116,8 +175,8 @@ const sheetFrameDirectionStyles: Record<
     right: 0,
     height: "80vh",
     maxHeight: "80vh",
-    borderBottomLeftRadius: "$sheet",
-    borderBottomRightRadius: "$sheet"
+    borderBottomLeftRadius: "sheet",
+    borderBottomRightRadius: "sheet"
   },
   right: {
     top: 0,
@@ -125,8 +184,8 @@ const sheetFrameDirectionStyles: Record<
     bottom: 0,
     width: "80vw",
     maxWidth: "80vw",
-    borderTopLeftRadius: "$sheet",
-    borderBottomLeftRadius: "$sheet"
+    borderTopLeftRadius: "sheet",
+    borderBottomLeftRadius: "sheet"
   },
   left: {
     top: 0,
@@ -134,70 +193,77 @@ const sheetFrameDirectionStyles: Record<
     bottom: 0,
     width: "80vw",
     maxWidth: "80vw",
-    borderTopRightRadius: "$sheet",
-    borderBottomRightRadius: "$sheet"
+    borderTopRightRadius: "sheet",
+    borderBottomRightRadius: "sheet"
   }
 };
 
-const SheetSheetFrame = styled(TamaguiSheet.Frame, {
-  name: "SheetFrame",
+const SheetSheetContainer = styled(TamaguiSheet.Container, {
+  displayName: "SheetFrame",
 
-  ...sheetFrameStyles
+  ...sheetLayoutStyles
+});
+
+const SheetSheetBackground = styled(TamaguiSheet.Background, {
+  displayName: "SheetBackground",
+
+  ...sheetSurfaceStyles
 });
 
 const SheetDialogFrame = styled(TamaguiDialogContent, {
-  name: "SheetDialogFrame",
+  displayName: "SheetDialogFrame",
 
   ...sheetFrameStyles,
   position: "absolute"
 });
 
+// Mirrors `Sheet.Background` for the dialog-based directions. The dialog
+// content frame sets a z-index, so `zIndex: -1` paints above the frame's own
+// background and below its in-flow children.
+const SheetDialogBackground = styled(YStack, {
+  displayName: "SheetBackground",
+  position: "absolute",
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  zIndex: -1,
+  pointerEvents: "none",
+
+  ...sheetSurfaceStyles
+});
+
 const SheetSheetOverlay = styled(TamaguiSheet.Overlay, {
-  name: "SheetOverlay",
-
-  backgroundColor: "$overlayBackdrop",
-  opacity: 0.6,
-
-  enterStyle: { opacity: 0 },
-  exitStyle: { opacity: 0 },
+  displayName: "SheetOverlay",
+  backgroundColor: "overlayBackdrop",
+  opacity: "0.6 enter:0 exit:0",
   transition: "200ms"
 });
 
 const SheetSheetHandle = styled(TamaguiSheet.Handle, {
-  name: "SheetHandle",
-
-  backgroundColor: "$hairline"
+  displayName: "SheetHandle",
+  backgroundColor: "hairline"
 });
 
 const SheetSheetScrollView = styled(TamaguiSheet.ScrollView, {
-  name: "SheetScrollView",
-
+  displayName: "SheetScrollView",
   scrollEnabled: true,
-  marginRight: "$xl",
-
+  marginRight: "xl",
   // Pass this web-only CSS property through React Native Web rather than
   // treating it as a Tamagui style prop.
   style: { scrollbarGutter: "stable" } as any
 });
 
 const SheetDialogHandle = styled(XStack, {
-  name: "SheetDialogHandle",
-
+  displayName: "SheetDialogHandle",
   position: "absolute",
-  backgroundColor: "$hairline",
+  backgroundColor: "hairline",
   borderRadius: 100,
-  cursor: "grab",
-  opacity: 0.5,
-  touchAction: "none",
+  cursor: "grab press:grabbing",
+  opacity: "0.5 hover:0.7",
   zIndex: 10,
-
-  hoverStyle: {
-    opacity: 0.7
-  },
-
-  pressStyle: {
-    cursor: "grabbing"
-  }
+  // Web-only CSS property that is not a Tamagui style prop.
+  style: { touchAction: "none" } as any
 });
 
 const sheetHandleDirectionStyles: Record<
@@ -228,18 +294,23 @@ const sheetFrameHandleInsetStyles: Record<
   SheetDirection,
   Record<string, unknown>
 > = {
-  top: { paddingBottom: "$5xl" },
-  right: { paddingLeft: "$5xl" },
-  bottom: { paddingTop: "$5xl" },
-  left: { paddingRight: "$5xl" }
+  top: { paddingBottom: "5xl" },
+  right: { paddingLeft: "5xl" },
+  bottom: { paddingTop: "5xl" },
+  left: { paddingRight: "5xl" }
 };
 
-export type SheetFrameProps = GetProps<typeof TamaguiSheet.Frame>;
+export type SheetContainerProps = GetProps<typeof TamaguiSheet.Container>;
+export type SheetBackgroundProps = GetProps<typeof TamaguiSheet.Background>;
+export type SheetFrameProps = SheetContainerProps;
 export type SheetOverlayProps = GetProps<typeof TamaguiSheet.Overlay>;
 export type SheetHandleProps = GetProps<typeof TamaguiSheet.Handle>;
 export type SheetScrollViewProps = GetProps<typeof TamaguiSheet.ScrollView>;
 
-const SheetFrame: FC<SheetFrameProps> = ({ children, ...props }) => {
+const SheetDialogContainer: FC<SheetContainerProps> = ({
+  children,
+  ...props
+}) => {
   const {
     direction,
     size,
@@ -248,40 +319,28 @@ const SheetFrame: FC<SheetFrameProps> = ({ children, ...props }) => {
     setFrameSize,
     transition: sheetTransition
   } = useSheetContext();
-
-  if (direction === "bottom") {
-    return (
-      <SheetSheetFrame
-        {...sheetFrameHandleInsetStyles.bottom}
-        {...(size ? sheetSizeStyles.bottom[size] : {})}
-        {...props}>
-        {children}
-      </SheetSheetFrame>
-    );
-  }
-
   const {
-    enterStyle,
-    exitStyle,
     onLayout,
     transition = sheetTransition ?? "400ms",
     ...frameProps
   } = props;
   const isVertical = direction === "top";
-  const presenceStyle = isVertical
-    ? { y: direction === "top" ? "-100%" : "100%" }
-    : { x: direction === "left" ? "-100%" : "100%" };
+  // v2 passed the presence offset as runtime `enterStyle`/`exitStyle` objects;
+  // in v3 it is an `enter:`/`exit:` clause on the dragged axis.
+  const presenceOffset =
+    direction === "top" || direction === "left" ? "-100%" : "100%";
+  const draggedOffset = `${dragOffset}px enter:${presenceOffset} exit:${presenceOffset}`;
 
   return (
     <SheetDialogFrame
-      {...sheetFrameDirectionStyles[direction]}
+      {...sheetFrameDirectionStyles[
+        direction as Exclude<SheetDirection, "bottom">
+      ]}
       {...(size ? sheetSizeStyles[direction][size] : {})}
       {...sheetFrameHandleInsetStyles[direction]}
       {...(frameProps as any)}
-      x={isVertical ? 0 : dragOffset}
-      y={isVertical ? dragOffset : 0}
-      enterStyle={(enterStyle as any) ?? presenceStyle}
-      exitStyle={(exitStyle as any) ?? presenceStyle}
+      x={isVertical ? 0 : draggedOffset}
+      y={isVertical ? draggedOffset : 0}
       transition={dragging ? "0ms" : transition}
       onLayout={event => {
         const { height, width } = event.nativeEvent.layout;
@@ -290,6 +349,55 @@ const SheetFrame: FC<SheetFrameProps> = ({ children, ...props }) => {
       }}>
       {children}
     </SheetDialogFrame>
+  );
+};
+
+const SheetContainer: FC<SheetContainerProps> = ({ children, ...props }) => {
+  const { direction, size } = useSheetContext();
+
+  if (direction !== "bottom") {
+    return <SheetDialogContainer {...props}>{children}</SheetDialogContainer>;
+  }
+
+  return (
+    <SheetSheetContainer
+      {...sheetFrameHandleInsetStyles.bottom}
+      {...(size ? sheetSizeStyles.bottom[size] : {})}
+      {...props}>
+      {children}
+    </SheetSheetContainer>
+  );
+};
+
+const SheetBackground: FC<SheetBackgroundProps> = props => {
+  const { direction } = useSheetContext();
+
+  return direction === "bottom" ? (
+    <SheetSheetBackground {...props} />
+  ) : (
+    <SheetDialogBackground {...(props as any)} />
+  );
+};
+
+/**
+ * v2-style single frame, kept for existing callers (e.g. `Drawer.Frame`).
+ * The bottom sheet splits it into `Sheet.Container` + `Sheet.Background`;
+ * the dialog-based directions keep every prop on the one dialog frame.
+ */
+const SheetFrame: FC<SheetFrameProps> = ({ children, ...props }) => {
+  const { direction } = useSheetContext();
+
+  if (direction !== "bottom") {
+    return <SheetDialogContainer {...props}>{children}</SheetDialogContainer>;
+  }
+
+  const { container, background } = splitSheetFrameProps(props);
+
+  return (
+    <SheetContainer {...(container as SheetContainerProps)}>
+      <SheetBackground {...(background as SheetBackgroundProps)} />
+      {children}
+    </SheetContainer>
   );
 };
 
@@ -302,10 +410,8 @@ const SheetOverlay: FC<SheetOverlayProps> = props => {
 
   return (
     <TamaguiDialogOverlay
-      backgroundColor="$overlayBackdrop"
-      opacity={0.6}
-      enterStyle={{ opacity: 0 }}
-      exitStyle={{ opacity: 0 }}
+      backgroundColor="overlayBackdrop"
+      opacity="0.6 enter:0 exit:0"
       transition="200ms"
       {...(props as any)}
     />
@@ -325,7 +431,10 @@ const SheetHandle: FC<SheetHandleProps> = props => {
       {...sheetHandleDirectionStyles[direction]}
       pointerEvents={disableDrag ? "none" : "auto"}
       {...(!disableDrag &&
-        (Platform.OS === "web" ? pointerHandlers : panHandlers))}
+        ((Platform.OS === "web" ? pointerHandlers : panHandlers) as Record<
+          string,
+          unknown
+        >))}
       {...props}
     />
   );
@@ -355,16 +464,14 @@ const SheetScrollView: FC<SheetScrollViewProps> = ({
 const SheetHeading: typeof HeadingExtraLargeText = styled(
   HeadingExtraLargeText,
   {
-    name: "SheetHeading",
-
-    color: "$accent"
+    displayName: "SheetHeading",
+    color: "accent"
   }
 );
 
 const SheetBody: typeof BodyText = styled(BodyText, {
-  name: "SheetBody",
-
-  color: "$inkBody",
+  displayName: "SheetBody",
+  color: "inkBody",
   flexGrow: 1
 });
 
@@ -372,16 +479,16 @@ const sheetFooterDirectionStyles: Record<
   SheetDirection,
   Record<string, unknown>
 > = {
-  top: { paddingBottom: "$4xl" },
-  right: { paddingLeft: "$4xl" },
-  bottom: { paddingTop: "$4xl" },
-  left: { paddingRight: "$4xl" }
+  top: { paddingBottom: "4xl" },
+  right: { paddingLeft: "4xl" },
+  bottom: { paddingTop: "4xl" },
+  left: { paddingRight: "4xl" }
 };
 
 const sheetFooterStyles = {
   alignItems: "center",
   justifyContent: "flex-end",
-  gap: "$3xl",
+  gap: "3xl",
   width: "100%"
 };
 
@@ -651,6 +758,8 @@ const SheetFrameImpl: FC<SheetProps> = ({
 
 export interface SheetComponent extends FC<SheetProps> {
   Frame: FC<SheetFrameProps>;
+  Container: FC<SheetContainerProps>;
+  Background: FC<SheetBackgroundProps>;
   Handle: FC<SheetHandleProps>;
   Overlay: FC<SheetOverlayProps>;
   ScrollView: FC<SheetScrollViewProps>;
@@ -661,6 +770,8 @@ export interface SheetComponent extends FC<SheetProps> {
 
 export const Sheet: SheetComponent = withStaticProperties(SheetFrameImpl, {
   Frame: SheetFrame,
+  Container: SheetContainer,
+  Background: SheetBackground,
   Handle: SheetHandle,
   Overlay: SheetOverlay,
   ScrollView: SheetScrollView,

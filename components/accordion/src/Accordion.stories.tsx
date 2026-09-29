@@ -21,7 +21,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, within } from "storybook/test";
 import { Accordion } from "./Accordion";
 
-const meta = {
+const meta: Meta<typeof Accordion> = {
   title: "Containers/Accordion",
   component: Accordion,
   tags: ["autodocs"],
@@ -172,7 +172,7 @@ export const DirectionUp: Story = {
 
 export const BackgroundColor: Story = {
   args: {
-    backgroundColor: "$surfaceCanvas",
+    backgroundColor: "surfaceCanvas",
     children: "Some collapsed content"
   }
 };

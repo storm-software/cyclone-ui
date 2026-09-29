@@ -21,8 +21,8 @@ import { Button } from "@cyclone-ui/button";
 import type { LeftArrowProps } from "@cyclone-ui/vectors";
 import { LeftArrow } from "@cyclone-ui/vectors";
 import { useHover } from "@stryke/hooks";
-import type { TamaguiElement } from "@tamagui/core";
-import { useComposedRefs } from "@tamagui/core";
+import type { TamaguiComponent, TamaguiElement } from "@tamagui/core";
+import { createStyledHOC, useComposedRefs } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
 import type { Ref } from "react";
 
@@ -31,9 +31,10 @@ export type PreviousButtonProps = ButtonProps &
     hideText?: boolean;
   };
 
-export const PreviousButton = Button.styleable<{
-  hideText?: boolean;
-}>(
+export const PreviousButton: TamaguiComponent<
+  PreviousButtonProps,
+  TamaguiElement
+> = createStyledHOC(Button, 
   (
     {
       children,
@@ -52,12 +53,12 @@ export const PreviousButton = Button.styleable<{
         aria-label="Previous"
         justifyContent="center"
         {...props}>
-        <XStack gap="$2xl" alignItems="center">
+        <XStack gap="2xl" alignItems="center">
           <Button.Icon>
             <LeftArrow
               isComplete={hovering}
               animateShrink={animateShrink}
-              size="$7xl"
+              size="7xl"
             />
           </Button.Icon>
           {!hideText && <Button.Text>{children || "Previous"}</Button.Text>}

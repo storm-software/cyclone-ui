@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="AE" format="2">
+  <advance width="886"/>
+  <unicode hex="00C6"/>
+  <anchor x="442.0" y="0.0" name="bottom"/>
+  <anchor x="650.0" y="698.0" name="top"/>
+  <outline>
+    <contour>
+      <point x="360" y="0" type="line"/>
+      <point x="788" y="0" type="line"/>
+      <point x="802" y="72" type="line"/>
+      <point x="456" y="72" type="line"/>
+      <point x="505" y="318" type="line"/>
+      <point x="802" y="318" type="line"/>
+      <point x="816" y="390" type="line"/>
+      <point x="520" y="390" type="line"/>
+      <point x="567" y="626" type="line"/>
+      <point x="896" y="626" type="line"/>
+      <point x="911" y="698" type="line"/>
+      <point x="440" y="698" type="line"/>
+      <point x="-42" y="0" type="line"/>
+      <point x="50" y="0" type="line"/>
+      <point x="189" y="205" type="line"/>
+      <point x="401" y="205" type="line"/>
+    </contour>
+    <contour>
+      <point x="487" y="631" type="line"/>
+      <point x="416" y="276" type="line"/>
+      <point x="239" y="276" type="line"/>
+      <point x="477" y="631" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(4,8)
+YShift(4,0)
+ResYDist(0,13)
+ResYAnchor(5,2)
+YIPAnchor(5,12,2,4)
+ResYDist(12,9)
+ResYDist(2,18)
+ResYDist(5,8)
+YShift(8,17)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

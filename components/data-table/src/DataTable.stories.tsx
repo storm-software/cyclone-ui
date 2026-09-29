@@ -20,11 +20,18 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Avatar } from "@tamagui/avatar";
 import { Text, View } from "@tamagui/core";
 import { createColumnHelper } from "@tanstack/react-table";
+import type { ComponentType } from "react";
+import type { DataTableOptions, DataTableProps } from "./DataTable";
 import { DataTable, DataTableCell, DataTableHeader } from "./DataTable";
 
-const meta: Meta<typeof DataTable> = {
+// Stories only pass `data`; the custom `render` below supplies `columns`.
+type DataTableStoryArgs = Omit<DataTableProps<Person>, "options"> & {
+  options: Partial<DataTableOptions<Person>>;
+};
+
+const meta: Meta<DataTableStoryArgs> = {
   title: "Tables/DataTable",
-  component: DataTable,
+  component: DataTable as unknown as ComponentType<DataTableStoryArgs>,
   tags: ["autodocs"],
   render: ({ options, ...props }: any) => {
     return (
@@ -40,11 +47,11 @@ const meta: Meta<typeof DataTable> = {
       />
     );
   }
-} satisfies Meta<typeof DataTable>;
+} satisfies Meta<DataTableStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof DataTable>;
+type Story = StoryObj<DataTableStoryArgs>;
 
 interface Person {
   fullName: string;
@@ -172,14 +179,14 @@ const StatusButton = ({ status }: { status: string }) => {
   return (
     <View
       borderRadius={1000_000_000}
-      backgroundColor="$accent"
-      theme={status?.toLocaleLowerCase() === "active" ? "success" : "danger"}
-      themeShallow={true}
-      height="$6xl"
-      paddingHorizontal="$xl"
+      backgroundColor="accent"
+      height="6xl"
+      paddingHorizontal="xl"
       alignItems="center"
-      justifyContent="center">
-      <Text color="$onAccent" paddingVertical="$md">
+      justifyContent="center"
+      theme={status?.toLocaleLowerCase() === "active" ? "success" : "danger"}
+      themeShallow={true}>
+      <Text color="onAccent" paddingVertical="md">
         {status}
       </Text>
     </View>
@@ -201,11 +208,11 @@ const columns = [
           <View
             flexDirection="row"
             alignItems="center"
-            gap="$3xl"
-            marginLeft="$xl">
-            <Avatar circular size="$12xl">
+            gap="3xl"
+            marginLeft="xl">
+            <Avatar circular size="12xl">
               <Avatar.Image aria-label="Profile image" src={image} />
-              <Avatar.Fallback backgroundColor="$gray6" />
+              <Avatar.Fallback backgroundColor="gray6" />
             </Avatar>
             <View flexDirection="column">
               <Text>{fullName}</Text>
@@ -216,7 +223,7 @@ const columns = [
       },
       header: DataTableHeader,
       id: "user_base",
-      meta: { facetFn: data => data.userName }
+      meta: { facetFn: (data: Person) => data.userName }
     }
   ),
   columnHelper.accessor("age", {

@@ -37,11 +37,11 @@ const meta: Meta<typeof Dialog> = {
       <Dialog.Portal>
         <Dialog.Overlay key="overlay" />
         <Dialog.Container key="content">
-          <YStack gap="$3xl" padding="$3xl">
+          <YStack gap="3xl" padding="3xl">
             <Dialog.Heading>Dialog Heading</Dialog.Heading>
             <Dialog.Body>{children}</Dialog.Body>
 
-            <XStack gap="$3xl" justifyContent="flex-end">
+            <XStack gap="3xl" justifyContent="flex-end">
               <Dialog.Close>
                 <Dialog.Close.Text>Cancel</Dialog.Close.Text>
               </Dialog.Close>

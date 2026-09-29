@@ -20,10 +20,10 @@ import { Checkbox } from "@cyclone-ui/checkbox";
 import { Field } from "@cyclone-ui/field";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
 import type { CheckedState } from "@tamagui/checkbox-headless";
-import { withStaticProperties } from "@tamagui/core";
+import { createStyledHOC, withStaticProperties } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
 
-const CheckboxFieldGroup = Field.styleable((props, forwardedRef) => {
+const CheckboxFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
   const { children, ...rest } = props;
 
   return (
@@ -33,13 +33,14 @@ const CheckboxFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
-const CheckboxFieldLabel = Field.Label.styleable(
+const CheckboxFieldLabel = createStyledHOC(
+  Field.Label,
   ({ children, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const disabled = field.disabled.get();
 
     return (
-      <XStack gap="$xs" alignContent="center">
+      <XStack gap="xs" alignContent="center">
         <Field.Label
           ref={forwardedRef}
           paddingBottom={0}
@@ -54,7 +55,8 @@ const CheckboxFieldLabel = Field.Label.styleable(
   }
 );
 
-const CheckboxFieldControl = Checkbox.styleable(
+const CheckboxFieldControl = createStyledHOC(
+  Checkbox,
   (
     { children, checked: controlledChecked, onCheckedChange, ...props },
     forwardedRef

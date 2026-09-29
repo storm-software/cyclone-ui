@@ -7,6 +7,18 @@
       "skillPath": "skills/3d-web-experience/SKILL.md",
       "computedHash": "e9ab44e2dd01d6dc161eb7433d0459d2100814d01d844c57b9e2f9226cf36a90"
     },
+    "algorithmic-art": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/algorithmic-art/SKILL.md",
+      "computedHash": "b2ca295de7f9c86c444f1fa21239e22e0eb7013ced1c652169b9402cc96ff744"
+    },
+    "canvas-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/canvas-design/SKILL.md",
+      "computedHash": "3fa7ea60170023ad8268bf9fd734ea75dd404279a2ef8ddf5abaa1102ad8e5f4"
+    },
     "caveman": {
       "source": "juliusbrussee/caveman",
       "sourceType": "github",
@@ -18,6 +30,12 @@
       "sourceType": "github",
       "skillPath": "skills/frontend-design/SKILL.md",
       "computedHash": "89496d5dd00f4810205f351759594fc2742bf8eea85a2f2b2d1de59f4bd91576"
+    },
+    "minimalist-ui": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/minimalist-skill/SKILL.md",
+      "computedHash": "08873a3131d3be27bef9bf3304b310b16b44ca6e3561aebe532797be3443f6bd"
     },
     "oklch-skill": {
       "source": "jakubkrehel/oklch-skill",
@@ -45,9 +63,17 @@
     },
     "tamagui": {
       "source": "tamagui/tamagui",
+      "ref": "v3-beta",
       "sourceType": "github",
-      "skillPath": "plans/tamagui-skill/skills/tamagui/SKILL.md",
-      "computedHash": "c16ef17b45cf188289a72600898110f6245c295c41cf5493b8ead3fd45027544"
+      "skillPath": "skills/tamagui/SKILL.md",
+      "computedHash": "96f9fa3b85671b74ab56861e659352eb7bfe35de9e6f3e309761d04664d2326e"
+    },
+    "tamagui-upgrade-v3": {
+      "source": "tamagui/tamagui",
+      "ref": "v3-beta",
+      "sourceType": "github",
+      "skillPath": "skills/tamagui-upgrade-v3/SKILL.md",
+      "computedHash": "8dc176e1fbedd2b0199908cfb7a52d19c27fe31cd0870e16edfdd6236cb670e4"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",

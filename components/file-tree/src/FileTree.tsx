@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { AnimatePresence } from "@tamagui/animate-presence";
-import type { GetProps } from "@tamagui/core";
+import type { FontSizeTokens, GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
 import {
   ChevronRight,
@@ -38,57 +38,56 @@ import {
 } from "react";
 
 const FileTreeFrame = styled(YStack, {
-  name: "FileTree",
+  displayName: "FileTree",
   role: "tree",
   width: "100%",
-  gap: "$lg",
-  padding: "$5xl",
+  gap: "lg",
+  padding: "5xl",
   borderWidth: 1,
-  borderColor: "$hairline",
-  borderRadius: "$container",
-  backgroundColor: "$surfaceElevated"
+  borderColor: "hairline",
+  borderRadius: "container",
+  backgroundColor: "surfaceElevated"
 });
 
 const TreeNode = styled(XStack, {
-  name: "FileTreeNode",
+  displayName: "FileTreeNode",
   alignItems: "center",
-  minHeight: "$7xl",
-  gap: "$xl",
-  paddingHorizontal: "$lg",
-  paddingVertical: "$xs",
-  borderRadius: "$sm",
-  hoverStyle: { backgroundColor: "$mutedHover" },
-
-  focusVisibleStyle: {
-    outlineColor: "$accentActive",
-    outlineWidth: 2,
-    outlineStyle: "solid"
-  }
+  minHeight: "7xl",
+  gap: "xl",
+  paddingHorizontal: "lg",
+  paddingVertical: "xs",
+  borderRadius: "sm",
+  backgroundColor: "hover:mutedHover",
+  outlineColor: "focus-visible:accentActive",
+  outlineWidth: "focus-visible:2px",
+  outlineStyle: "focus-visible:solid"
 });
 
 const TreeLabel = styled(SizableText, {
-  name: "FileTreeLabel",
-  fontFamily: "$code",
-  size: "$true"
+  displayName: "FileTreeLabel",
+  fontFamily: "code",
+  // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
+  // only define `true` plus their own step, so name the default step explicitly.
+  size: "true" as FontSizeTokens
 });
 
 const TreeChildren = styled(YStack, {
-  name: "FileTreeChildren",
+  displayName: "FileTreeChildren",
   role: "group",
-  marginLeft: "$2xl",
-  paddingLeft: "$2xl",
+  marginLeft: "2xl",
+  paddingLeft: "2xl",
   borderLeftWidth: 1,
-  borderLeftColor: "$hairline",
-  gap: "$lg"
+  borderLeftColor: "hairline",
+  gap: "lg"
 });
 
 const FileTreeOpenContext = createContext(false);
 
-const defaultFileIcon = <FileIcon aria-hidden size="$2xl" />;
+const defaultFileIcon = <FileIcon aria-hidden size="2xl" />;
 
-const defaultFolderIcon = <FolderIcon aria-hidden size="$2xl" />;
+const defaultFolderIcon = <FolderIcon aria-hidden size="2xl" />;
 
-const defaultFolderOpenIcon = <FolderOpenIcon aria-hidden size="$2xl" />;
+const defaultFolderOpenIcon = <FolderOpenIcon aria-hidden size="2xl" />;
 
 const getTreeIcon = (icon: ReactNode, color: string): ReactNode =>
   isValidElement<{ color?: string }>(icon)
@@ -111,7 +110,7 @@ export interface FileProps {
 export const File = ({ name, icon = defaultFileIcon }: FileProps) => {
   const parentOpen = useContext(FileTreeOpenContext);
   const [hovered, setHovered] = useState(false);
-  const color = hovered || parentOpen ? "$accent" : "$inkSubtle";
+  const color = hovered || parentOpen ? "accent" : "inkSubtle";
 
   return (
     <TreeNode
@@ -148,7 +147,7 @@ export const Folder = ({
   const parentOpen = useContext(FileTreeOpenContext);
   const [open, setOpen] = useState(defaultOpen);
   const [hovered, setHovered] = useState(false);
-  const color = open || hovered || parentOpen ? "$accent" : "$inkSubtle";
+  const color = open || hovered || parentOpen ? "accent" : "inkSubtle";
 
   const toggle = () => setOpen(value => !value);
   const onKeyDown = (event: KeyboardEvent<HTMLElement>) => {
@@ -173,10 +172,10 @@ export const Folder = ({
         }>
         <ChevronRight
           transition="400ms"
-          aria-hidden
           color={color}
-          size="$lg"
+          size="lg"
           rotate={open ? "90deg" : "0deg"}
+          aria-hidden
         />
         <XStack
           aria-hidden

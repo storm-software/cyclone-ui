@@ -10,7 +10,7 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc",
+    "outDir": "../../dist/out-tsc/components/select",
     "tsBuildInfoFile": "../../dist/out-tsc/components/select/tsconfig.tsbuildinfo"
   },
   "references": [

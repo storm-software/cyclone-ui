@@ -18,29 +18,28 @@
 
 import { isNumber } from "@stryke/type-checks/is-number";
 import type { Mutable } from "@stryke/types/base";
-import type {
-  FontSizeTokens,
-  GenericFont,
-  TextProps,
-  TextStyle,
-  VariantSpreadFunction
-} from "@tamagui/core";
+import type { FontSizeTokens, GenericFont, TextStyle } from "@tamagui/core";
 import { getTokens } from "@tamagui/core";
 import { getNearestToken } from "./get-nearest-token";
-import type { TokenValue } from "./token-value";
+import type { TokenInput } from "./token-value";
+import type { StyleEnv } from "./types";
 import { normalizeTokenValue } from "./token-value";
 
 /**
  * Get the font size related styles
  *
+ * @remarks
+ * Call-site `color` and `fontStyle` props take precedence over the values
+ * returned here because Tamagui v3 applies call-site props above variants.
+ *
  * @param sizeTokenIn - The size token to use
- * @param extras - The extra props
+ * @param env - The `styled.dynamic` environment
  * @returns The font size related styles
  */
-export const getFontSized: VariantSpreadFunction<
-  TextProps,
-  FontSizeTokens | TokenValue
-> = (sizeTokenIn = "$true", { font, fontFamily, props }) => {
+export const getFontSized = (
+  sizeTokenIn: FontSizeTokens | TokenInput = "true",
+  { font, fontFamily }: StyleEnv = {}
+): Mutable<TextStyle> => {
   const tokenValue = normalizeTokenValue(sizeTokenIn);
 
   if (!font) {
@@ -56,20 +55,23 @@ export const getFontSized: VariantSpreadFunction<
     };
   }
 
-  const sizeToken =
-    (tokenValue === "$true" ? getDefaultSizeToken(font) : tokenValue) ??
-    "$true";
+  const sizeToken = String(
+    (tokenValue === "true" ? getDefaultSizeToken(font) : tokenValue) ?? "true"
+  );
 
   const style: Mutable<TextStyle> = {};
+  const fontValue = (
+    group: Partial<Record<string, any>> | undefined
+  ): any => group?.[sizeToken];
 
   // size related, treat them as overrides
-  const fontSize = font.size[sizeToken];
-  const lineHeight = font.lineHeight?.[sizeToken];
-  const fontWeight = font.weight?.[sizeToken];
-  const letterSpacing = font.letterSpacing?.[sizeToken];
-  const textTransform = font.transform?.[sizeToken];
-  const fontStyle = props.fontStyle ?? font.style?.[sizeToken];
-  const color = props.color ?? font.color?.[sizeToken];
+  const fontSize = fontValue(font.size);
+  const lineHeight = fontValue(font.lineHeight);
+  const fontWeight = fontValue(font.weight);
+  const letterSpacing = fontValue(font.letterSpacing);
+  const textTransform = fontValue(font.transform);
+  const fontStyle = fontValue(font.style);
+  const color = fontValue(font.color);
 
   if (fontStyle) {
     style.fontStyle = fontStyle;
@@ -103,26 +105,26 @@ export const getFontSized: VariantSpreadFunction<
  * Get the font size related styles from a size token
  *
  * @param sizeTokenIn - The size token to use
- * @param extras - The extra props
+ * @param env - The `styled.dynamic` environment
  * @returns The font size related styles
  */
-export const getFontSizedFromSize: VariantSpreadFunction<
-  TextProps,
-  TokenValue
-> = (sizeTokenIn = "$true", extras) => {
-  const font = extras.font;
+export const getFontSizedFromSize = (
+  sizeTokenIn: TokenInput = "true",
+  env: StyleEnv = {}
+): Mutable<TextStyle> => {
+  const font = env.font;
+  const tokenValue = normalizeTokenValue(sizeTokenIn);
   if (!font) {
     return {
-      fontSize: sizeTokenIn
+      fontSize: tokenValue
     };
   }
 
-  const tokenValue = normalizeTokenValue(sizeTokenIn);
-  const sizeToken = (
-    isNumber(tokenValue) ? getNearestToken(tokenValue, "size") : tokenValue
-  ) as `$${string}`;
+  const sizeToken = isNumber(tokenValue)
+    ? getNearestToken<string>(tokenValue, "size")
+    : tokenValue;
 
-  return getFontSized(sizeToken, extras);
+  return getFontSized(sizeToken, env);
 };
 
 const cache = new WeakMap<any, FontSizeTokens>();
@@ -133,12 +135,13 @@ function getDefaultSizeToken(font: GenericFont): FontSizeTokens {
   }
 
   // use either font.size if it has true set, or fallback to tokens.size mapping to the same
-  const sizeTokens = "$true" in font.size ? font.size : getTokens().size;
-  const sizeDefault = sizeTokens.$true;
+  const sizeTokens: Record<string, any> =
+    "true" in font.size ? font.size : getTokens().size;
+  const sizeDefault = sizeTokens.true;
   const sizeDefaultSpecific = sizeDefault
     ? Object.keys(sizeTokens).find(
         x =>
-          x !== "$true" &&
+          x !== "true" &&
           (sizeTokens[x] as any).val === (sizeDefault as any).val
       )
     : null;

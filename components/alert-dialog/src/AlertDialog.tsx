@@ -19,7 +19,12 @@
 import type { DialogProps } from "@cyclone-ui/dialog";
 import { Dialog, DialogContext } from "@cyclone-ui/dialog";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
-import { Theme, View, withStaticProperties } from "@tamagui/core";
+import {
+  createStyledHOC,
+  Theme,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { AlertCircle } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
@@ -31,41 +36,40 @@ const AlertDialogFrame: React.FC<DialogProps> = ({
   return <Dialog {...props}>{children}</Dialog>;
 };
 
-const AlertDialogIcon = ThemeableIcon.styleable(
+const AlertDialogIcon = createStyledHOC(
+  ThemeableIcon,
   ({ children, ...props }, forwardedRef) => {
     const { theme } = DialogContext.useStyledContext();
 
-    const padding = theme?.includes("success") ? "$3xl" : "$xl";
+    const padding = theme?.includes("success") ? "3xl" : "xl";
 
     return (
       <YStack position="relative" minWidth="100%" alignItems="center">
         <View
           theme={theme}
           transition="400ms"
-          enterStyle={{
-            y: -100,
-            opacity: 0.6
-          }}
+          y="enter:-100px"
+          opacity="enter:0.6"
           position="absolute"
           display="block"
           width="100%"
           height="55%"
-          backgroundColor="$accent"
-          zIndex="$10"
+          backgroundColor="accent"
+          zIndex="10"
         />
 
-        <XStack zIndex="$20" justifyContent="center" paddingTop="$3xl">
+        <XStack zIndex="20" justifyContent="center" paddingTop="3xl">
           <Theme name={theme}>
             <View
               padding={padding}
-              backgroundColor="$surfaceFloating"
+              backgroundColor="surfaceFloating"
               borderRadius={1000_000_000}>
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}
                 theme={theme}
-                color="$accent"
-                size="$14xl">
+                color="accent"
+                size="14xl">
                 {children || getIconByTheme({ theme }) || <AlertCircle />}
               </ThemeableIcon>
             </View>
@@ -75,11 +79,12 @@ const AlertDialogIcon = ThemeableIcon.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AlertDialog" }
+    displayName: "AlertDialog"
   }
 );
 
-const AlertDialogContainer = Dialog.Container.styleable(
+const AlertDialogContainer = createStyledHOC(
+  Dialog.Container,
   ({ children, ...props }, forwardedRef) => {
     return (
       <Dialog.Portal>
@@ -96,19 +101,20 @@ const AlertDialogContainer = Dialog.Container.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AlertDialog" }
+    displayName: "AlertDialog"
   }
 );
 
-const AlertDialogContent = YStack.styleable(
+const AlertDialogContent = createStyledHOC(
+  YStack,
   ({ children, ...props }, forwardedRef) => {
     return (
       <YStack
         ref={forwardedRef}
-        paddingHorizontal="$7xl"
-        paddingTop="$xl"
-        paddingBottom="$7xl"
-        gap="$3xl"
+        paddingHorizontal="7xl"
+        paddingTop="xl"
+        paddingBottom="7xl"
+        gap="3xl"
         alignItems="center"
         {...props}>
         {children}
@@ -116,11 +122,12 @@ const AlertDialogContent = YStack.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AlertDialog" }
+    displayName: "AlertDialog"
   }
 );
 
-const AlertDialogHeading = Dialog.Heading.styleable(
+const AlertDialogHeading = createStyledHOC(
+  Dialog.Heading,
   ({ children, ...props }, forwardedRef) => {
     return (
       <Dialog.Heading ref={forwardedRef} {...props}>
@@ -129,24 +136,26 @@ const AlertDialogHeading = Dialog.Heading.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AlertDialogHeading" }
+    displayName: "AlertDialogHeading"
   }
 );
 
-const AlertDialogBody = Dialog.Body.styleable(
+const AlertDialogBody = createStyledHOC(
+  Dialog.Body,
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Dialog.Body ref={forwardedRef} color="$inkBody" size="$14xl" {...props}>
+      <Dialog.Body ref={forwardedRef} color="inkBody" size="14xl" {...props}>
         {children}
       </Dialog.Body>
     );
   },
   {
-    staticConfig: { componentName: "AlertDialogBody" }
+    displayName: "AlertDialogBody"
   }
 );
 
-const AlertDialogClose = Dialog.Close.styleable(
+const AlertDialogClose = createStyledHOC(
+  Dialog.Close,
   ({ children, ...props }, forwardedRef) => {
     return (
       <Dialog.Close ref={forwardedRef} variant="outlined" {...props}>
@@ -155,7 +164,7 @@ const AlertDialogClose = Dialog.Close.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AlertDialog" }
+    displayName: "AlertDialog"
   }
 );
 

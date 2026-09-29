@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uhornacute" format="2">
+  <advance width="565"/>
+  <unicode hex="1EE9"/>
+  <anchor x="256.0" y="0.0" name="bottom"/>
+  <outline>
+    <component base="uhorn"/>
+    <component base="acute" xOffset="32"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $uhorn$, 0, 0
+OFFSET[R], $acute$, 32, 0
+CALL[], 23, 24, 88
+SVTCA[Y]
+CALL[], 46, 36, 1, 1, -43, 86
+SHC[2], 1
+CALL[], 9
+CALL[], 47, 45, 15, 31, 44, 87
+SVTCA[X]
+SHC[2], 1
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

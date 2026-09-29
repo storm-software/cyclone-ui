@@ -16,23 +16,40 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { InputProps } from "./Input";
 import { Input } from "./Input";
 
-const meta: Meta<typeof Input> = {
+/**
+ * Story-only args consumed by the custom `render`: Field options plus the
+ * Input's own `variant`. Spreading every Input prop into the Field would also
+ * forward style props (such as the CSS `mask`) that clash with field options.
+ */
+type InputStoryArgs = Pick<
+  FieldProps,
+  "theme" | "size" | "disabled" | "required" | "validate"
+> & {
+  variant?: InputProps["variant"];
+  defaultValue?: string;
+};
+
+const meta: Meta<InputStoryArgs> = {
   title: "Base/Input",
   component: Input,
   tags: ["autodocs"],
-  render: ({
-    defaultValue,
-    variant,
-    ...props
-  }: InputProps & { defaultValue?: string }) => (
-    <Form name="formName" initialValues={{ inputName: defaultValue }}>
-      <Field name="inputName" {...props} variant={variant}>
+  render: (
+    { defaultValue, variant, ...props }: InputStoryArgs,
+    { id }: { id: string }
+  ) => (
+    <Form name={`formName-${id}`} initialValues={{ inputName: defaultValue }}>
+      <Field
+        name="inputName"
+        {...props}
+        // Field names the plain presentation `normal`; Input calls it `default`.
+        variant={variant === "default" ? "normal" : variant}>
         <Field.Label>Label Text</Field.Label>
         <Input variant={variant} size={props.size}>
           <Input.TextBox>
@@ -42,11 +59,11 @@ const meta: Meta<typeof Input> = {
       </Field>
     </Form>
   )
-} satisfies Meta<typeof Input>;
+} satisfies Meta<InputStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<InputStoryArgs>;
 
 const validation = (
   type:
@@ -57,7 +74,7 @@ const validation = (
     | "success"
     | "positive"
     | "negative"
-) => ({
+): NonNullable<FieldProps["validate"]> => ({
   onChange: [
     () => [
       {

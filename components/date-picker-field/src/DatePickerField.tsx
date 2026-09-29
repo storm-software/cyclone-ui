@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import type { GetProps } from "@tamagui/core";
 import {
   DATE_RANGE_SEPARATOR,
   DatePicker,
@@ -34,7 +35,7 @@ import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import type { MaskitoOptions, MaskitoPostprocessor } from "@maskito/core";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
 import { formatDate } from "@stryke/date/format";
-import { useComposedRefs, withStaticProperties } from "@tamagui/core";
+import { createStyledHOC, useComposedRefs, withStaticProperties } from "@tamagui/core";
 import { Calendar } from "@tamagui/lucide-icons-2";
 import type { RefObject } from "react";
 import {
@@ -183,7 +184,7 @@ export const DATE_MASK_DOT = {
   // Maskito's final date postprocessor normalizes impossible dates (for
   // example, 04.31 to 05.01). This field must reject them instead.
   postprocessors: [
-    DATE_MASK_OPTIONS_DOT.postprocessors[0],
+    ...DATE_MASK_OPTIONS_DOT.postprocessors.slice(0, 1),
     rejectInvalidDate(".")
   ]
 };
@@ -193,7 +194,7 @@ export const DATE_MASK_SLASH = {
   // Maskito's final date postprocessor normalizes impossible dates (for
   // example, 04.31 to 05.01). This field must reject them instead.
   postprocessors: [
-    DATE_MASK_OPTIONS_SLASH.postprocessors[0],
+    ...DATE_MASK_OPTIONS_SLASH.postprocessors.slice(0, 1),
     rejectInvalidDate("/")
   ]
 };
@@ -230,7 +231,10 @@ export const format = (value: any, separator: DateSeparator = ".") => {
     return "";
   }
 
-  return formatDate(date, getDateFormat(separator));
+  return formatDate(
+    date,
+    getDateFormat(separator) as Parameters<typeof formatDate>[1]
+  );
 };
 
 export const formatRange = (value: any, separator: DateSeparator = ".") => {
@@ -273,10 +277,10 @@ export const parseRange = (value: any, separator: DateSeparator = ".") => {
   return dates.length === 2 && dates[1]! < dates[0]! ? null : dates;
 };
 
-const DatePickerFieldGroup = Field.styleable<{
+const DatePickerFieldGroup = createStyledHOC(Field, (props: GetProps<typeof Field> & {
   mode?: DatePickerMode;
   separator?: DateSeparator;
-}>((props, forwardedRef) => {
+}, forwardedRef) => {
   const {
     children,
     mode = "single",
@@ -323,7 +327,7 @@ const DatePickerFieldGroup = Field.styleable<{
   );
 });
 
-const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
+const DatePickerFieldControl = createStyledHOC(DatePicker.TextBox.Value, 
   ({ children, onKeyDown, ...props }, forwardedRef) => {
     const { blur, change, focus } = useFieldActions();
     const inputRef = useRef<HTMLInputElement>(null);
@@ -484,7 +488,8 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         focused={focused}
         mode={mode}
         separator={separator}
-        variant={variant}
+        // Field's "normal" variant is Input's "default" (neither has styles).
+        variant={variant === "normal" ? "default" : variant}
         disabled={disabled}
         selectedDate={selectedDate}
         selectedDates={selectedDates}

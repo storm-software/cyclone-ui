@@ -16,8 +16,9 @@
 
  ------------------------------------------------------------------- */
 
+import type { GetProps } from "@tamagui/core";
 import type { Mutable } from "@stryke/types/base";
-import { styled, useComposedRefs } from "@tamagui/core";
+import { createStyledHOC, styled, useComposedRefs } from "@tamagui/core";
 import { registerFocusable } from "@tamagui/focusable";
 import type { ComponentProps, ComponentType } from "react";
 import { useEffect, useRef } from "react";
@@ -41,7 +42,7 @@ const BaseInputValue = styled(
 );
 
 export const InputValue: ComponentType<InputComponentProps> =
-  BaseInputValue.styleable<InputComponentProps>((inProps, forwardedRef) => {
+  createStyledHOC(BaseInputValue, (inProps: Omit<GetProps<typeof BaseInputValue>, "onChange" | "onInput"> & InputComponentProps, forwardedRef) => {
     const {
       disabled: contextDisabled,
       name: contextName,

@@ -17,10 +17,10 @@
  ------------------------------------------------------------------- */
 
 import { isNumber } from "@stryke/type-checks/is-number";
-import type { VariantSpreadExtras } from "@tamagui/core";
-import { getSize, getSpace } from "@tamagui/get-token";
-import type { TokenValue } from "./token-value";
+import { getTokenRelative } from "./get-token-relative";
+import type { TokenInput } from "./token-value";
 import { normalizeTokenValue } from "./token-value";
+import type { StyleEnv } from "./types";
 
 const FALLBACK_HEIGHT = 44;
 
@@ -49,29 +49,30 @@ const lookupToken = (group: unknown, key: string) => {
   return tokens[key] ?? tokens[`$${normalized}`] ?? tokens[normalized];
 };
 
-const resolveTokenKey = (val: TokenValue) => {
+const resolveTokenKey = (val: TokenInput) => {
   const rawKey = String(normalizeTokenValue(val));
 
-  return rawKey === "$true" || rawKey === "true" ? "$5xl" : rawKey;
+  return rawKey === "true" ? "5xl" : rawKey;
 };
 
 /**
  * Get the sizing related style values for a button component based on the size token or number
  *
  * @param val - The size token or number to use
- * @param param - The props to use
+ * @param env - The `styled.dynamic` environment
+ * @param circular - Whether the button is circular
  * @returns The style values for the button sizing
  */
 export const getButtonSized = (
-  val: TokenValue,
-  { props, tokens }: VariantSpreadExtras<any>
+  val: TokenInput,
+  { tokens }: StyleEnv = {},
+  circular = false
 ) => {
   if (!val) {
     return;
   }
 
-  const circular = Boolean(props.circular);
-  const borderRadius = circular ? 100_000 : "$button";
+  const borderRadius = circular ? 100_000 : "button";
 
   const tokenValue = normalizeTokenValue(val);
 
@@ -93,10 +94,10 @@ export const getButtonSized = (
   const height =
     tokenNumber(lookupToken(tokens?.size, tokenKey)) ??
     tokenNumber(lookupToken(tokens?.size, "5xl")) ??
-    tokenNumber(getSize(tokenKey)) ??
+    tokenNumber(getTokenRelative("size", tokenKey)) ??
     FALLBACK_HEIGHT;
   const space =
-    tokenNumber(getSpace(tokenKey, { shift: -1 })) ??
+    tokenNumber(getTokenRelative("space", tokenKey, { shift: -1 })) ??
     tokenNumber(lookupToken(tokens?.space, "2xl")) ??
     10;
 

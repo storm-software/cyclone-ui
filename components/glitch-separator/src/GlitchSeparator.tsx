@@ -16,9 +16,18 @@
 
  ------------------------------------------------------------------- */
 
-import type { ColorTokens, GetProps, ThemeTokens } from "@tamagui/core";
-import { getVariableValue, useTheme, View } from "@tamagui/core";
-import type { ElementRef } from "react";
+import type {
+  ColorTokens,
+  GetProps,
+  TamaguiElement,
+  ThemeTokens
+} from "@tamagui/core";
+import {
+  createStyledHOC,
+  getVariableValue,
+  useTheme,
+  View
+} from "@tamagui/core";
 import {
   useEffect,
   useImperativeHandle,
@@ -68,23 +77,24 @@ const resolveColor = (
 ) => getVariableValue(theme[color as keyof typeof theme] ?? color, "color");
 
 /** A square-grid transition, flush with the sections above and below it. */
-export const GlitchSeparator = View.styleable<GlitchSeparatorProps>(
+export const GlitchSeparator = createStyledHOC(
+  View,
   (
     {
-      topColor = "$surfaceCanvas",
-      bottomColor = "$muted",
+      topColor = "surfaceCanvas",
+      bottomColor = "muted",
       animate,
       animated,
       seed = DEFAULT_SEED,
       height,
       onLayout,
       ...props
-    },
+    }: GetProps<typeof View> & GlitchSeparatorProps,
     forwardedRef
   ) => {
     const theme = useTheme();
     const resolvedBottomColor = resolveColor(theme, bottomColor);
-    const frame = useRef<ElementRef<typeof View>>(null);
+    const frame = useRef<TamaguiElement>(null);
     useImperativeHandle(forwardedRef, () => frame.current!);
     const mode =
       animate ??
@@ -225,5 +235,5 @@ export const GlitchSeparator = View.styleable<GlitchSeparatorProps>(
       </View>
     );
   },
-  { staticConfig: { componentName: "GlitchSeparator" } }
+  { displayName: "GlitchSeparator" }
 );

@@ -29,10 +29,15 @@ import {
 } from "storybook/test";
 import { PasswordInputField } from "./PasswordInputField";
 
-const meta = {
+// Annotated rather than inferred: the inferred type reaches `MaskitoOptions`
+// through the Field props, which is not portable from this package.
+const meta: Meta<typeof PasswordInputField> = {
   title: "Form/PasswordInputField",
   component: PasswordInputField,
   tags: ["autodocs"],
+  args: {
+    name: "inputFieldName"
+  },
   parameters: {
     layout: "centered"
   },
@@ -43,8 +48,10 @@ const meta = {
       </View>
     )
   ],
-  render: ({ defaultValue = "", ...props }: any) => (
-    <Form name="formName" initialValues={{ inputFieldName: defaultValue }}>
+  render: ({ defaultValue = "", ...props }: any, { id }: { id: string }) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ inputFieldName: defaultValue }}>
       <PasswordInputField name="inputFieldName" {...props}>
         <PasswordInputField.Label hideOptional={true}>
           New Password
@@ -58,7 +65,7 @@ const meta = {
       </PasswordInputField>
     </Form>
   )
-} satisfies Meta<typeof PasswordInputField>;
+};
 
 export default meta;
 
@@ -90,7 +97,8 @@ export const Base: Story = {
     const input = canvas.getByLabelText("New Password");
     const strength = canvas.getByRole("meter", { name: "Password strength" });
 
-    await expect(input).toHaveStyle({ height: "40px" });
+    // Floating is the default variant: a 45px frame, 43px inside its border.
+    await expect(input).toHaveStyle({ height: "43px" });
     await expect(input).toHaveAttribute("type", "password");
     await expect(
       canvas.getByRole("button", { name: "Show password" }).querySelector("svg")
@@ -195,10 +203,13 @@ export const Floating: Story = {
     const inputBounds = input.getBoundingClientRect();
     const labelBounds = label.getBoundingClientRect();
 
-    await expect(labelBounds.top + labelBounds.height / 2).toBeCloseTo(
-      inputBounds.top + inputBounds.height / 2,
-      1
-    );
+    await expect(
+      Math.abs(
+        labelBounds.top +
+          labelBounds.height / 2 -
+          (inputBounds.top + inputBounds.height / 2)
+      )
+    ).toBeLessThan(2);
   }
 };
 

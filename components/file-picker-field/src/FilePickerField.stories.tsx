@@ -24,9 +24,9 @@ const meta: Meta<typeof FilePickerField> = {
   title: "Form/FilePickerField",
   component: FilePickerField,
   tags: ["autodocs"],
-  render: (props: any) => {
+  render: (props: any, { id }: { id: string }) => {
     return (
-      <Form name="formName" defaultValues={{ filePickerFieldName: "" }}>
+      <Form name={`formName-${id}`} initialValues={{ filePickerFieldName: "" }}>
         <FilePickerField name="filePickerFieldName" {...props}>
           <FilePickerField.Label>Label Text</FilePickerField.Label>
           <FilePickerField.Control />

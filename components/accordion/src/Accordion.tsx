@@ -27,7 +27,13 @@ import type {
 } from "@tamagui/accordion";
 import { Accordion as TamaguiAccordion } from "@tamagui/accordion";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
-import { createStyledContext, styled, Text, View } from "@tamagui/core";
+import {
+  createStyledContext,
+  createStyledHOC,
+  styled,
+  Text,
+  View
+} from "@tamagui/core";
 import { YGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
 import { ChevronDown } from "@tamagui/lucide-icons-2";
@@ -68,45 +74,61 @@ export interface AccordionContextProps {
   direction: AccordionDirection;
 }
 
-export const AccordionContext = createStyledContext<AccordionContextProps>({
-  open: [],
-  setOpen: (_open: string[]) => {},
-  variant: "default",
-  bordered: true,
-  single: false,
-  numbered: false,
-  icon: "toggle",
-  iconDirection: "right",
-  direction: "down"
-});
+export const AccordionContext = createStyledContext<
+  AccordionContextProps,
+  | "open"
+  | "setOpen"
+  | "variant"
+  | "bordered"
+  | "single"
+  | "numbered"
+  | "icon"
+  | "iconDirection"
+  | "direction"
+>(
+  {
+    open: [],
+    setOpen: (_open: string[]) => {},
+    variant: "default",
+    bordered: true,
+    single: false,
+    numbered: false,
+    icon: "toggle",
+    iconDirection: "right",
+    direction: "down"
+  } as AccordionContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: ["variant", "bordered", "direction"]
+  }
+);
 
 const AccordionGroup = styled(YGroup, {
-  name: "AccordionGroup",
+  displayName: "AccordionGroup",
   context: AccordionContext,
-
   width: "100%",
-  borderRadius: "$container",
+  borderRadius: "container",
   borderWidth: 0,
   borderColor: "transparent",
   backgroundColor: "transparent",
-
   variants: {
     variant: {
       default: {
         borderWidth: 1,
-        borderColor: "$hairline",
-        backgroundColor: "$surfaceElevated",
-        paddingHorizontal: "$6xl",
-        paddingVertical: "$lg",
+        borderColor: "hairline",
+        backgroundColor: "surfaceElevated",
+        paddingHorizontal: "6xl",
+        paddingVertical: "lg",
         overflow: "hidden"
       },
       separated: {
-        gap: "$lg",
+        gap: "lg",
         overflow: "visible",
         borderRadius: 0
       },
       bordered: {
-        gap: "$lg",
+        gap: "lg",
         overflow: "visible",
         borderRadius: 0
       },
@@ -172,7 +194,9 @@ const AccordionFrameImpl = forwardRef<
           setOpen(next ?? []);
         }
 
-        onValueChange?.(next);
+        (onValueChange as ((value: string | string[]) => void) | undefined)?.(
+          next
+        );
       },
       [isSingle, onValueChange]
     );
@@ -192,12 +216,11 @@ const AccordionFrameImpl = forwardRef<
           ref={forwardedRef}
           type={isSingle ? "single" : "multiple"}
           theme="base"
-          unstyled
           {...props}
-          defaultValue={defaultValue as never}
-          borderRadius="$container"
-          value={value as never}
+          borderRadius="container"
           width="100%"
+          defaultValue={defaultValue as never}
+          value={value as never}
           onValueChange={handleValueChange}>
           <AccordionGroup
             variant={variant}
@@ -229,35 +252,40 @@ export interface AccordionItemContextProps {
   index: number;
 }
 
-export const AccordionItemContext =
-  createStyledContext<AccordionItemContextProps>({
+export const AccordionItemContext = createStyledContext<
+  AccordionItemContextProps,
+  "open" | "index"
+>(
+  {
     open: false,
     index: 0
-  });
+  } as AccordionItemContextProps,
+  {
+    keys: ["open", "index"]
+  }
+);
 
 const AccordionItem = styled(TamaguiAccordion.Item, {
-  name: "Accordion",
+  displayName: "Accordion",
   context: AccordionContext,
-  unstyled: true,
-
   overflow: "hidden",
 
   variants: {
     variant: {
       default: {
         borderBottomWidth: 1,
-        borderBottomColor: "$hairline"
+        borderBottomColor: "hairline"
       },
       separated: {
-        borderRadius: "$container",
+        borderRadius: "container",
         borderWidth: 1,
-        borderColor: "$hairline",
-        backgroundColor: "$surfaceElevated"
+        borderColor: "hairline",
+        backgroundColor: "surfaceElevated"
       },
       bordered: {
-        borderRadius: "$container",
+        borderRadius: "container",
         borderWidth: 1,
-        borderColor: "$hairline",
+        borderColor: "hairline",
         backgroundColor: "transparent"
       },
       ghost: {
@@ -277,29 +305,21 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
         borderWidth: 0,
         borderBottomWidth: 0
       }
-    },
-
-    direction: {
-      up: {
-        paddingTop: "$3xl"
-      },
-      down: {
-        paddingBottom: "$3xl"
-      }
-    },
-
-    open: {
-      true: {},
-      false: {
-        paddingTop: 0,
-        paddingBottom: 0
-      }
     }
   } as const
 });
 
-const AccordionItemImpl = AccordionItem.styleable<{ index?: number }>(
-  ({ children, index = 0, value, ...props }, forwardedRef) => {
+const AccordionItemImpl = createStyledHOC(
+  AccordionItem,
+  (
+    {
+      children,
+      index = 0,
+      value,
+      ...props
+    }: GetProps<typeof AccordionItem> & { index?: number },
+    forwardedRef
+  ) => {
     const { direction, open } = AccordionContext.useStyledContext();
     const isOpen = open.includes(value);
 
@@ -310,9 +330,7 @@ const AccordionItemImpl = AccordionItem.styleable<{ index?: number }>(
             ref={forwardedRef as Ref<TamaguiElement>}
             key={value}
             value={value}
-            unstyled={true}
             {...props}
-            open={isOpen}
             flexDirection={direction === "up" ? "column-reverse" : "column"}>
             {children}
           </AccordionItem>
@@ -323,28 +341,19 @@ const AccordionItemImpl = AccordionItem.styleable<{ index?: number }>(
 );
 
 const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
-  name: "AccordionHeader",
+  displayName: "AccordionHeader",
   context: AccordionContext,
-
   transition: "250ms",
-  paddingHorizontal: "$3xl",
-  paddingVertical: "$2xl",
-  zIndex: "$60",
+  paddingHorizontal: "3xl",
+  paddingVertical: "2xl",
+  zIndex: "60",
   borderStyle: "solid",
   borderWidth: 0,
   borderColor: "transparent",
-  boxShadow: "none",
-
-  hoverStyle: {
-    cursor: "pointer"
-  },
-
-  focusVisibleStyle: {
-    outlineStyle: "none",
-    outlineWidth: 0,
-    boxShadow: "$ringOffset"
-  },
-
+  boxShadow: "none focus-visible:ringOffset",
+  cursor: "hover:pointer",
+  outlineStyle: "focus-visible:none",
+  outlineWidth: "focus-visible:0px",
   variants: {
     variant: {
       default: {
@@ -352,33 +361,21 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
         backgroundColor: "transparent"
       },
       separated: {
-        paddingHorizontal: "$4xl",
-        backgroundColor: "$surfaceElevated",
-
-        hoverStyle: {
-          backgroundColor: "$surfaceElevatedHover"
-        }
+        paddingHorizontal: "4xl",
+        backgroundColor: "surfaceElevated hover:surfaceElevatedHover"
       },
       bordered: {
-        paddingHorizontal: "$4xl",
-        backgroundColor: "transparent",
-
-        hoverStyle: {
-          backgroundColor: "$surfaceElevatedHover",
-          cursor: "pointer"
-        }
+        paddingHorizontal: "4xl",
+        backgroundColor: "transparent hover:surfaceElevatedHover",
+        cursor: "hover:pointer"
       },
       ghost: {
         paddingLeft: 0,
         paddingRight: 0,
         borderBottomWidth: 1,
-        borderBottomColor: "$hairline",
-        backgroundColor: "transparent",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          cursor: "pointer"
-        }
+        borderBottomColor: "hairline",
+        backgroundColor: "transparent hover:transparent",
+        cursor: "hover:pointer"
       }
     },
     bordered: {
@@ -387,17 +384,21 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
       }
     }
   } as const,
-
   defaultVariants: {
     variant: "default"
   }
 });
 
-const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
-  ({ children, ...props }, forwardedRef) => {
+const AccordionItemHeaderImpl = createStyledHOC(
+  AccordionItemHeader,
+  ({ children, onMouseEnter, onMouseLeave, ...props }, forwardedRef) => {
     const { numbered, direction, icon, iconDirection } =
       AccordionContext.useStyledContext();
     const { index, open } = AccordionItemContext.useStyledContext();
+    // The header icons are `themed` SVG icons, which resolve a single color
+    // value and cannot take a `group-hover/accordion:` clause.
+    const [hovered, setHovered] = useState(false);
+    const iconColor = hovered ? "accentHover" : "accent";
 
     return (
       <AccordionItemHeader
@@ -406,11 +407,18 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
         flexDirection={iconDirection === "left" ? "row-reverse" : "row"}
         justifyContent="space-between"
         alignItems="center"
-        unstyled
-        {...props}>
+        {...props}
+        onMouseEnter={event => {
+          setHovered(true);
+          onMouseEnter?.(event);
+        }}
+        onMouseLeave={event => {
+          setHovered(false);
+          onMouseLeave?.(event);
+        }}>
         {numbered ? (
-          <XStack alignItems="center" flex={1} gap="$6xl">
-            <Text color="$inkBody" fontFamily="$code">
+          <XStack alignItems="center" flex={1} gap="6xl">
+            <Text color="inkBody" fontFamily="code">
               {String(index + 1).padStart(2, "0")}
             </Text>
             {children}
@@ -421,13 +429,9 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
         {icon === "toggle" && (
           <AccordionToggle
             isExpanded={open}
-            color="$accent"
-            size="$6xl"
+            color={iconColor}
+            size="6xl"
             strokeWidth={2.5}
-            $group-accordion-hover={{
-              color: "$accentHover",
-              cursor: "pointer"
-            }}
           />
         )}
         {icon === "chevron" && (
@@ -444,13 +448,9 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
             pointerEvents="none">
             <ChevronDown
               aria-hidden={true}
-              color="$accent"
-              size="$6xl"
+              color={iconColor}
+              size="6xl"
               strokeWidth={2.5}
-              $group-accordion-hover={{
-                color: "$accentHover",
-                cursor: "pointer"
-              }}
             />
           </View>
         )}
@@ -458,36 +458,33 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AccordionHeader" }
+    displayName: "AccordionHeader"
   }
 );
 
-const AccordionItemHeaderHeading = HeadingSmallText.styleable(
+const AccordionItemHeaderHeading = createStyledHOC(
+  HeadingSmallText,
   ({ children, ...props }, forwardedRef) => {
     return (
       <HeadingSmallText
         ref={forwardedRef}
         transition="250ms"
-        color="$accent"
-        $group-accordion-hover={{
-          color: "$accentHover",
-          cursor: "pointer"
-        }}
+        color="accent group-hover/accordion:accentHover"
+        cursor="group-hover/accordion:pointer"
         {...props}>
         {children}
       </HeadingSmallText>
     );
   },
   {
-    staticConfig: { componentName: "AccordionHeader" }
+    displayName: "AccordionHeader"
   }
 );
 
 const AccordionItemContent = styled(TamaguiAccordion.Content, {
-  name: "AccordionContent",
+  displayName: "AccordionContent",
   context: AccordionContext,
-  zIndex: "$50",
-
+  zIndex: "50",
   variants: {
     variant: {
       default: {
@@ -495,47 +492,46 @@ const AccordionItemContent = styled(TamaguiAccordion.Content, {
         backgroundColor: "transparent"
       },
       separated: {
-        paddingHorizontal: "$4xl",
-        backgroundColor: "$surfaceElevated"
+        paddingHorizontal: "4xl",
+        backgroundColor: "surfaceElevated"
       },
       bordered: {
-        paddingHorizontal: "$4xl",
+        paddingHorizontal: "4xl",
         backgroundColor: "transparent"
       },
       ghost: {
         padding: 0,
-        paddingTop: "$3xl",
+        paddingTop: "3xl",
         backgroundColor: "transparent"
       }
     },
 
     direction: {
       up: {
-        paddingTop: "$3xl",
+        paddingTop: "2xl",
         paddingBottom: 0
       },
       down: {
         paddingTop: 0,
-        paddingBottom: "$3xl"
+        paddingBottom: "2xl"
       }
     }
   } as const,
-
   defaultVariants: {
     variant: "default",
     direction: "down"
   }
 });
 
-const AccordionItemContentImpl = AccordionItemContent.styleable(
+const AccordionItemContentImpl = createStyledHOC(
+  AccordionItemContent,
   ({ children, ...props }, forwardedRef) => {
     return (
       <TamaguiAccordion.HeightAnimator transition="250ms">
         <AccordionItemContent
           ref={forwardedRef}
           transition="250ms"
-          exitStyle={{ opacity: 0 }}
-          unstyled
+          opacity="exit:0"
           {...props}>
           {children}
         </AccordionItemContent>
@@ -543,7 +539,7 @@ const AccordionItemContentImpl = AccordionItemContent.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AccordionContent" }
+    displayName: "AccordionContent"
   }
 );
 

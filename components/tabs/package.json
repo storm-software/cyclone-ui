@@ -32,7 +32,8 @@
     "@tamagui/web": "catalog:",
     "react-native-svg": "^15.15.5",
     "@cyclone-ui/heading-text": "workspace:*",
-    "@cyclone-ui/helpers": "workspace:*"
+    "@cyclone-ui/helpers": "workspace:*",
+    "@tamagui/react-native-types": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/body-text": "workspace:*",

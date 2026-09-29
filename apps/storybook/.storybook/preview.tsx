@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { Preview } from "@storybook/react-vite";
+import "@fonts/storm-sans.css";
 import "@tamagui/core/reset.css";
 import "raf/polyfill";
 import { CycloneDocsContainer, withCycloneTheme } from "./preview-decorators";

@@ -49,8 +49,8 @@ const meta: Meta<typeof Table> = {
       <Table
         alignCells={{ x: "start", y: "center" }}
         alignHeaderCells={{ x: "start", y: "center" }}
-        cellWidth="$20xl"
-        cellHeight="$9xl"
+        cellWidth="20xl"
+        cellHeight="9xl"
         sizing="content"
         {...rest}>
         <Table.Header>
@@ -67,7 +67,7 @@ const meta: Meta<typeof Table> = {
                       : {
                           flexShrink: 3
                         })}>
-                    <HeadingSmallText color="$accent" size="$6xl">
+                    <HeadingSmallText color="accent">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -116,7 +116,7 @@ const meta: Meta<typeof Table> = {
             {columns.map((_, index) => (
               <Table.Cell key={index}>
                 {index === 0 && (
-                  <HeadingSmallText color="$accent" size="$6xl">
+                  <HeadingSmallText color="accent">
                     Table footer information is populated here
                   </HeadingSmallText>
                 )}
@@ -259,16 +259,14 @@ const StatusButton = ({ status }: { status: string }) => {
   return (
     <View
       borderRadius={1000_000_000}
-      backgroundColor={
-        status?.toLocaleLowerCase() === "active" ? "$muted" : "$base9"
-      }
-      paddingHorizontal="$xl">
+      backgroundColor={`${status?.toLocaleLowerCase() === "active" ? "muted" : "base9"}`}
+      paddingHorizontal="xl">
       <Text
-        color="$accent"
-        fontSize="$xs"
-        fontWeight="$extralight"
-        lineHeight="$xs"
-        paddingVertical="$md">
+        color="accent"
+        fontSize="xs"
+        fontWeight="extralight"
+        lineHeight="xs"
+        paddingVertical="md">
         {status}
       </Text>
     </View>
@@ -290,18 +288,18 @@ const columns = [
           <View
             flexDirection="row"
             alignItems="center"
-            gap="$3xl"
-            marginLeft="$xl">
-            <Avatar circular size="$12xl">
+            gap="3xl"
+            marginLeft="xl">
+            <Avatar circular size="12xl">
               <Avatar.Image aria-label="Profile image" src={image} />
-              <Avatar.Fallback backgroundColor="$gray6" />
+              <Avatar.Fallback backgroundColor="gray6" />
             </Avatar>
             <View flexDirection="column">
               <Text>{fullName}</Text>
               <Text
-                fontSize="$xs"
-                lineHeight="$sm"
-                fontWeight="$extralight"
+                fontSize="xs"
+                lineHeight="sm"
+                fontWeight="extralight"
                 theme="alt2">
                 {userName}
               </Text>

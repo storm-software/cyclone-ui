@@ -25,10 +25,12 @@ const meta: Meta<typeof SwitchField> = {
   title: "Form/SwitchField",
   component: SwitchField,
   tags: ["autodocs"],
-  render: ({ defaultValue, ...props }: any) => (
-    <Form name="formName" initialValues={{ switchFieldName: defaultValue }}>
+  render: ({ defaultValue, ...props }: any, { id }: { id: string }) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ switchFieldName: defaultValue }}>
       <SwitchField name="switchFieldName" {...props}>
-        <XStack gap="$2xl" alignContent="center" alignItems="center">
+        <XStack gap="2xl" alignContent="center" alignItems="center">
           <SwitchField.Control />
           <SwitchField.Label>
             This is an example label message for a switch field

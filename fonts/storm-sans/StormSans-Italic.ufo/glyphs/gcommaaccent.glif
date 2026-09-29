@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="gcommaaccent" format="2">
+  <advance width="510"/>
+  <unicode hex="0123"/>
+  <outline>
+    <component base="g.alt02"/>
+    <component base="commaturnedtop"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+OFFSET[R], $g.alt02$, 0, 0
+OFFSET[R], $commaturnedtop$, 0, 0
+CALL[], 23, 24, 88
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

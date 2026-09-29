@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "../../dist/out-tsc/components/inline-code-text/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
@@ -10,7 +9,8 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc"
+    "outDir": "../../dist/out-tsc/components/inline-code-text",
+    "tsBuildInfoFile": "../../dist/out-tsc/components/inline-code-text/tsconfig.tsbuildinfo"
   },
   "references": [
     {

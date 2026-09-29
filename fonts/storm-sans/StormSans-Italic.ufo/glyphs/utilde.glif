@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="utilde" format="2">
+  <advance width="562"/>
+  <unicode hex="0169"/>
+  <anchor x="258.0" y="0.0" name="bottom"/>
+  <anchor x="485.0" y="0.0" name="bottomright"/>
+  <outline>
+    <component base="u"/>
+    <component base="tilde" xOffset="37"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $u$, 0, 0
+OFFSET[R], $tilde$, 37, 0
+CALL[], 23, 24, 88
+SVTCA[Y]
+CALL[], 38, 15, 1, 1, 96, 86
+SHC[2], 1
+CALL[], 9
+CALL[], 48, 61, 34, 26, 18, 87
+SVTCA[X]
+SHC[2], 1
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

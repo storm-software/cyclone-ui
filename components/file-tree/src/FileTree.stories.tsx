@@ -21,7 +21,7 @@ import type { ComponentProps } from "react";
 import { expect, userEvent, within } from "storybook/test";
 import { File, FileTree, Folder } from "./FileTree";
 
-const meta = {
+const meta: Meta<typeof FileTree> = {
   title: "Docs/FileTree",
   component: FileTree,
   tags: ["autodocs"],
@@ -36,7 +36,7 @@ const meta = {
 } satisfies Meta<typeof FileTree>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof FileTree>;
 
 const renderFileTree = (args: ComponentProps<typeof FileTree>) => (
   <FileTree {...args}>

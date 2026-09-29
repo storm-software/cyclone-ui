@@ -26,20 +26,17 @@ import {
   sizeToSpace,
   type FormControlSize
 } from "@cyclone-ui/helpers";
-import type { VariantSpreadExtras } from "@tamagui/core";
-import {
-  createStyledContext,
-  stylePropsTextOnly,
-  validStyles
-} from "@tamagui/core";
-import type { InputContextProps } from "./types";
-export const InputContext = createStyledContext<InputContextProps>({
+import { createStyledContext, getVariableValue } from "@tamagui/core";
+import type { InputContextProps, InputVariant } from "./types";
+export const InputContext = createStyledContext<InputContextProps, "size" | "circular" | "disabled" | "focused" | "hasValidationMessage" | "variant">({
   size: "md",
   circular: false,
   disabled: false,
   focused: false,
   hasValidationMessage: false,
   variant: "default"
+} as InputContextProps, {
+  keys: ["size", "circular", "disabled", "focused", "hasValidationMessage", "variant"]
 });
 
 type BaseInputStyle = [Record<string, any>, Record<string, any>];
@@ -53,47 +50,53 @@ export const baseInputStyle: BaseInputStyle = [
     cursor: "pointer",
     height: "100%",
     flex: 1,
-    color: "$accent",
-    placeholderTextColor: "$accentDisabled",
-    selectionColor: "$color6",
-    fontFamily: "$body-md",
+    color: "accent hover:accentHover",
+    placeholderTextColor: "accentDisabled",
+    selectionColor: "color6",
+    fontFamily: "body",
     alignItems: "center",
     margin: 0,
     padding: 0,
-    paddingHorizontal: "$xl",
+    paddingHorizontal: "xl",
 
     tabIndex: 0,
 
     // this fixes a flex bug where it overflows container
     minWidth: 0,
 
-    hoverStyle: {
-      color: "$accentHover"
-    },
-
     variants: {
       disabled: {
         true: {
           cursor: "not-allowed",
-          color: "$accentDisabled",
-          placeholderTextColor: "$accentDisabled",
-
-          hoverStyle: {
-            color: "$accentDisabled"
-          }
+          color: "accentDisabled hover:accentDisabled",
+          placeholderTextColor: "accentDisabled"
         }
       },
 
-      size: formSizeVariants((size, extras) => ({
-        ...getFormFontSize(size, extras),
-        "$platform-web": {
-          fontSize: 16 * getFormFontScale(size),
-          lineHeight: size === "md" ? "normal" : 24 * getFormFontScale(size)
-        },
-        paddingHorizontal: Math.round(
-          sizeToSpace(getSized(getFormSizeToken(size))) * 0.4
-        )
-      }))
+      size: formSizeVariants((size, env) => {
+        const font = getFormFontSize(size, env);
+
+        return {
+          fontFamily: font.fontFamily,
+          fontWeight: font.fontWeight,
+          fontStyle: font.fontStyle,
+          letterSpacing: font.letterSpacing,
+          textTransform: font.textTransform,
+          color: font.color,
+          // Native keeps the font's size and leading; web pins them.
+          fontSize: joinFlatValues(
+            toFlatLength(font.fontSize),
+            `web:${16 * getFormFontScale(size)}px`
+          ),
+          lineHeight: joinFlatValues(
+            toFlatLength(font.lineHeight),
+            size === "md" ? "web:normal" : `web:${24 * getFormFontScale(size)}px`
+          ),
+          paddingHorizontal: Math.round(
+            sizeToSpace(getSized(getFormSizeToken(size))) * 0.4
+          )
+        };
+      })
     } as const,
 
     defaultVariants: {
@@ -102,28 +105,39 @@ export const baseInputStyle: BaseInputStyle = [
     }
   },
   {
-    isInput: true,
-    accept: {
-      placeholderTextColor: "color",
-      selectionColor: "color"
-    } as const,
-    validStyles: {
-      ...validStyles,
-      ...stylePropsTextOnly
-    }
+    // Tamagui v3 removed `accept`; `isInput` selects the input style props,
+    // which include `placeholderTextColor` and `selectionColor` as colors.
+    isInput: true
   }
 ];
 
+/** Join flat style values; later clauses win over earlier ones. */
+const joinFlatValues = (...values: unknown[]) =>
+  values.filter(value => value != null && value !== "").join(" ");
+
+/** Flat value strings need explicit units for numeric lengths. */
+const toFlatLength = (value: unknown) => {
+  if (value == null) {
+    return undefined;
+  }
+
+  const resolved = getVariableValue(value);
+  return typeof resolved === "number" ? `${resolved}px` : String(resolved);
+};
+
 export const getInputSize = (
   val: FormControlSize,
-  { props }: VariantSpreadExtras<any>
+  {
+    variant,
+    circular
+  }: { variant?: InputVariant | null; circular?: boolean | null } = {}
 ) => {
   const token = getFormSizeToken(val);
-  const height = props.variant === "floating" ? getSized(token) + 3 : token;
+  const height = variant === "floating" ? getSized(token) + 3 : token;
   return {
     paddingHorizontal: getSpaced(token),
     height,
     minHeight: height,
-    borderRadius: props.circular ? 100_000 : "$control"
+    borderRadius: circular ? 100_000 : "control"
   };
 };

@@ -22,12 +22,13 @@ import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import {
   formSizeVariants,
   getFormFontScale,
-  getFormFontSize
+  getFormFontSize,
+  type FormControlSize
 } from "@cyclone-ui/helpers";
 import { RadioGroup, RadioGroupContext } from "@cyclone-ui/radio-group";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
 import type { SelectOption } from "@stryke/types/form";
-import { styled, withStaticProperties } from "@tamagui/core";
+import { createStyledHOC, styled, withStaticProperties } from "@tamagui/core";
 import { Label } from "@tamagui/label";
 import { YStack } from "@tamagui/stacks";
 import type { Atom } from "jotai";
@@ -35,7 +36,8 @@ import { useAtomValue } from "jotai";
 import type { FocusEvent } from "react";
 import { useCallback } from "react";
 
-const RadioGroupFieldGroup = Field.styleable(
+const RadioGroupFieldGroup = createStyledHOC(
+  Field,
   ({ children, ...props }, forwardedRef) => {
     return (
       <Field ref={forwardedRef} {...props}>
@@ -46,49 +48,39 @@ const RadioGroupFieldGroup = Field.styleable(
 );
 
 const RadioGroupItemValue = styled(Label, {
-  name: "RadioGroupItemValue",
+  displayName: "RadioGroupItemValue",
   context: RadioGroupContext,
   render: "label",
-
   transition: "200ms",
   cursor: "pointer",
-  color: "$inkEmphasis",
-  fontSize: "$lg",
-  fontWeight: "$normal",
-  lineHeight: "$true",
+  color: "inkEmphasis",
+  fontWeight: "normal",
+  // v2 `$true`: every configured font defines a literal `true` line height
+  lineHeight: "true",
   wordWrap: "break-word",
   verticalAlign: "middle",
-
   variants: {
-    size: formSizeVariants(size => ({ fontSize: 18 * getFormFontScale(size) })),
+    // `styled.dynamic` re-brands the helper's carrier with this package's
+    // `@tamagui/web` symbol type (runtime no-op; helpers resolves another copy).
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants(size => ({ fontSize: 18 * getFormFontScale(size) }))
+    ),
     selected: {
       true: {
-        fontWeight: "$black"
+        fontWeight: 900
       }
     },
 
     disabled: {
       true: {
-        color: "$accentDisabled",
-        backgroundColor: "$surfaceElevatedDisabled",
+        color:
+          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled",
+        backgroundColor: "surfaceElevatedDisabled",
         userSelect: "none",
-        cursor: "not-allowed",
-
-        hoverStyle: {
-          color: "$accentDisabled"
-        },
-
-        focusStyle: {
-          color: "$accentDisabled"
-        },
-
-        pressStyle: {
-          color: "$accentDisabled"
-        }
+        cursor: "not-allowed"
       }
     }
   } as const,
-
   defaultVariants: {
     selected: false,
     disabled: false
@@ -96,40 +88,26 @@ const RadioGroupItemValue = styled(Label, {
 });
 
 const RadioGroupItemDetails = styled(BodyText, {
-  name: "RadioGroupItemDetails",
+  displayName: "RadioGroupItemDetails",
   context: RadioGroupContext,
-
   transition: "200ms",
   cursor: "pointer",
-  color: "$inkBody",
-  fontSize: "$md",
-
+  color: "inkBody",
+  fontSize: "md",
   variants: {
-    size: formSizeVariants((size, extras) =>
-      getFormFontSize(size, extras, "$md")
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((size, env) => getFormFontSize(size, env, "md"))
     ),
     disabled: {
       true: {
-        color: "$accentDisabled",
+        color:
+          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
-        cursor: "not-allowed",
-
-        hoverStyle: {
-          color: "$accentDisabled"
-        },
-
-        focusStyle: {
-          color: "$accentDisabled"
-        },
-
-        pressStyle: {
-          color: "$accentDisabled"
-        }
+        cursor: "not-allowed"
       }
     }
   } as const,
-
   defaultVariants: {
     disabled: false
   }
@@ -153,30 +131,29 @@ const RadioGroupItem = (props: { itemAtom: Atom<SelectOption> }) => {
       group={"item" as any}
       onPress={handlePress}
       cursor="pointer"
-      backgroundColor={selected ? "$surfaceElevatedActive" : "$surfaceElevated"}
-      borderColor={
+      backgroundColor={
         selected
-          ? "$accentHover"
-          : hasValidationMessage
-            ? "$accent"
-            : "$hairline"
+          ? "surfaceElevatedActive hover:surfaceElevatedHover"
+          : "surfaceElevated hover:surfaceElevatedHover"
+      }
+      borderColor={
+        selected ? "accentHover" : hasValidationMessage ? "accent" : "hairline"
       }
       borderWidth={1}
-      borderRadius="$control"
-      hoverStyle={{ backgroundColor: "$surfaceElevatedHover" }}>
-      <YStack gap="$md" justifyContent="flex-start" flex={1}>
+      borderRadius="control">
+      <YStack gap="md" justifyContent="flex-start" flex={1}>
         <RadioGroupItemValue
           htmlFor={String(value)}
           disabled={disabled}
           selected={selected}
-          $group-item-hover={{ color: "$inkEmphasis" }}>
+          color="group-hover/item:inkEmphasis">
           <HeadingSmallText>{name}</HeadingSmallText>
         </RadioGroupItemValue>
         {description && (
           <RadioGroupItemDetails
             disabled={disabled}
             display="flex"
-            $group-item-hover={{ color: "$inkEmphasis" }}>
+            color="group-hover/item:inkEmphasis">
             {description}
           </RadioGroupItemDetails>
         )}
@@ -187,45 +164,48 @@ const RadioGroupItem = (props: { itemAtom: Atom<SelectOption> }) => {
   );
 };
 
-const RadioGroupFieldControl = RadioGroup.styleable((props, forwardedRef) => {
-  const { focus, blur, change } = useFieldActions();
-  const handleBlur = useCallback(
-    (event: FocusEvent<HTMLElement>) => {
-      if (event.currentTarget.contains(event.relatedTarget)) {
-        return;
-      }
+const RadioGroupFieldControl = createStyledHOC(
+  RadioGroup,
+  (props, forwardedRef) => {
+    const { focus, blur, change } = useFieldActions();
+    const handleBlur = useCallback(
+      (event: FocusEvent<HTMLElement>) => {
+        if (event.currentTarget.contains(event.relatedTarget)) {
+          return;
+        }
 
-      void blur();
-    },
-    [blur]
-  );
+        void blur();
+      },
+      [blur]
+    );
 
-  const field = FieldApi.use();
-  const name = field.name.get();
-  const disabled = field.disabled.get();
-  const formattedValue = field.formattedValue.get();
-  const initialValue = field.initialValue.get();
-  const itemsAtoms = field.itemsAtoms.get();
+    const field = FieldApi.use();
+    const name = field.name.get();
+    const disabled = field.disabled.get();
+    const formattedValue = field.formattedValue.get();
+    const initialValue = field.initialValue.get();
+    const itemsAtoms = field.itemsAtoms.get();
 
-  return (
-    <RadioGroup
-      ref={forwardedRef}
-      {...props}
-      size={field.size.get()}
-      name={name}
-      disabled={disabled}
-      onFocus={focus}
-      onBlur={handleBlur}
-      onValueChange={change}
-      value={formattedValue}
-      defaultValue={initialValue}>
-      {itemsAtoms.map((itemAtom, i) => {
-        // eslint-disable-next-line react/no-array-index-key
-        return <RadioGroupItem key={i} itemAtom={itemAtom} />;
-      })}
-    </RadioGroup>
-  );
-});
+    return (
+      <RadioGroup
+        ref={forwardedRef}
+        {...props}
+        size={field.size.get()}
+        name={name}
+        disabled={disabled}
+        onFocus={focus}
+        onBlur={handleBlur}
+        onValueChange={change}
+        value={formattedValue}
+        defaultValue={initialValue}>
+        {itemsAtoms.map((itemAtom, i) => {
+          // eslint-disable-next-line react/no-array-index-key
+          return <RadioGroupItem key={i} itemAtom={itemAtom} />;
+        })}
+      </RadioGroup>
+    );
+  }
+);
 
 export const RadioGroupField = withStaticProperties(RadioGroupFieldGroup, {
   Label: Field.Label,

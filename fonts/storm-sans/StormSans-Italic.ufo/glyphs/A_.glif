@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="A" format="2">
+  <advance width="623"/>
+  <unicode hex="0041"/>
+  <anchor x="262.0" y="0.0" name="bottom"/>
+  <anchor x="547.0" y="0.0" name="bottomright"/>
+  <anchor x="395.0" y="698.0" name="top"/>
+  <outline>
+    <contour>
+      <point x="547" y="0" type="line"/>
+      <point x="453" y="698" type="line"/>
+      <point x="346" y="698" type="line"/>
+      <point x="-27" y="0" type="line"/>
+      <point x="59" y="0" type="line"/>
+      <point x="167" y="206" type="line"/>
+      <point x="438" y="206" type="line"/>
+      <point x="464" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="430" y="278" type="line"/>
+      <point x="204" y="278" type="line"/>
+      <point x="337" y="534" type="line"/>
+      <point x="382" y="621" type="line"/>
+      <point x="387" y="621" type="line"/>
+      <point x="398" y="536" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(5,8)
+YShift(5,1)
+ResYAnchor(6,2)
+YShift(6,10)
+YIPAnchor(6,3,5)
+ResYDist(3,13)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

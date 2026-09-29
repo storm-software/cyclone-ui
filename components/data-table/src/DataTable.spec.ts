@@ -28,7 +28,7 @@ describe("DataTable header filter", () => {
       )
     );
 
-    expect(filterTrigger).toContain('size="$5xl"');
+    expect(filterTrigger).toContain('size="5xl"');
   });
 });
 

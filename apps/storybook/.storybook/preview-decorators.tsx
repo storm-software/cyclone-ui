@@ -104,7 +104,7 @@ export const withCycloneTheme: Decorator = (Story, context) => {
         <Theme name={`${mode}_base`}>
           <PortalProvider>
             <MessageProvider>
-              <YStack padding="$8" width="100%" minHeight="100%">
+              <YStack width="100%" minHeight="100%">
                 <Story />
               </YStack>
             </MessageProvider>

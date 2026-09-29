@@ -25,9 +25,9 @@ const meta: Meta<typeof SelectField> = {
   title: "Form/SelectField",
   component: SelectField,
   tags: ["autodocs"],
-  render: ({ defaultValue, ...props }: any) => (
+  render: ({ defaultValue, ...props }: any, { id }: { id: string }) => (
     <Form
-      name="formName"
+      name={`formName-${id}`}
       initialValues={{ selectFieldName: defaultValue ?? "" }}>
       <SelectField name="selectFieldName" {...props} items={items}>
         <SelectField.Label>Label Text</SelectField.Label>
@@ -90,7 +90,7 @@ export const Base: Story = {
   args: {},
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const input = canvas.getByRole("combobox");
+    const input = canvas.getByRole("button", { name: /Label Text/ });
     const label = canvas.getByText("Label Text").closest("label");
 
     await expect(label).not.toBeNull();
@@ -98,7 +98,8 @@ export const Base: Story = {
       Math.abs(
         label!.getBoundingClientRect().top +
           label!.getBoundingClientRect().height / 2 -
-          input.getBoundingClientRect().top
+          (input.getBoundingClientRect().top +
+            input.getBoundingClientRect().height / 2)
       )
     ).toBeLessThan(2);
   }
@@ -108,9 +109,9 @@ export const Floating: Story = {
   args: {
     variant: "floating"
   },
-  render: props => (
-    <Form name="formName" initialValues={{ selectFieldName: "" }}>
-      <SelectField name="selectFieldName" {...props} items={items}>
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ selectFieldName: "" }}>
+      <SelectField {...props} name="selectFieldName" items={items}>
         <SelectField.Label>Label Text</SelectField.Label>
         <SelectField.Control />
       </SelectField>

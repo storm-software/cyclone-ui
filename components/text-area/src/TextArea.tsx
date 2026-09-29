@@ -17,117 +17,99 @@
  ------------------------------------------------------------------- */
 
 import { useFieldHasValidationMessage } from "@cyclone-ui/field";
-import {
-  formSizeVariants,
-  getFormFontScale,
-  getFormSizeScale
-} from "@cyclone-ui/helpers";
+import type { FormControlSize } from "@cyclone-ui/helpers";
+import { getFormFontScale, getFormSizeScale } from "@cyclone-ui/helpers";
 import type { InputContextProps } from "@cyclone-ui/input";
 import { ControlUnderline } from "@cyclone-ui/input";
 import { InputValue } from "@cyclone-ui/input/InputValue";
 import type { GetProps } from "@tamagui/core";
-import { styled, View } from "@tamagui/core";
-import type { FocusEvent } from "react";
+import { createStyledHOC, styled, View } from "@tamagui/core";
 import { useCallback, useState } from "react";
 
-const TextAreaFrame = styled(InputValue, {
-  name: "TextArea",
-  render: "textarea",
+const isFormControlSize = (value: unknown): value is FormControlSize =>
+  value === "sm" || value === "md" || value === "lg";
 
+const TextAreaFrame = styled(InputValue, {
+  displayName: "TextArea",
+  render: "textarea",
+  transition: "200ms",
   // This prevents Firefox from collapsing newline-only content.
   // @ts-ignore -- forwarded as a textarea style on web.
   whiteSpace: "pre-wrap",
-
   height: "auto",
-  minHeight: "$20xl",
-  paddingVertical: "$xl",
-  backgroundColor: "$surfaceElevated",
-  color: "$accent",
+  minHeight: "20xl",
+  paddingVertical: "xl",
+  backgroundColor: "surfaceElevated",
+  color: "accent",
   borderWidth: 1,
-  borderColor: "$hairline",
-  borderRadius: "$control",
-  boxShadow: "none",
+  borderColor: "hairline hover:accentHover focus-visible:accentActive",
+  borderRadius: "control",
+  boxShadow: "none focus-visible:ringOffset",
   outlineWidth: 0,
   outlineColor: "transparent",
-
-  hoverStyle: {
-    borderColor: "$accentHover"
-  },
-
-  focusVisibleStyle: {
-    boxShadow: "$ringOffset",
-    borderColor: "$accentActive"
-  },
-
   variants: {
-    size: formSizeVariants(size => ({
-      fontSize: 16 * getFormFontScale(size),
-      ...(size === "md" ? {} : { lineHeight: 24 * getFormFontScale(size) }),
-      minHeight: 122 * getFormSizeScale(size),
-      paddingHorizontal: 16 * getFormSizeScale(size),
-      paddingVertical: 7 * getFormSizeScale(size)
-    })),
+    // A local `styled.dynamic`: the helpers' `formSizeVariants` carrier is
+    // branded by another `@tamagui/core` copy and would not type here.
+    size: styled.dynamic<FormControlSize>(size =>
+      isFormControlSize(size)
+        ? {
+            fontSize: 16 * getFormFontScale(size),
+            lineHeight:
+              size === "md" ? undefined : `${24 * getFormFontScale(size)}px`,
+            minHeight: 122 * getFormSizeScale(size),
+            paddingHorizontal: 16 * getFormSizeScale(size),
+            paddingVertical: 7 * getFormSizeScale(size)
+          }
+        : undefined
+    ),
     focused: {
       true: {
-        boxShadow: "$ringOffset",
-        borderColor: "$accentActive"
+        boxShadow: "ringOffset",
+        borderColor: "accentActive"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "$accent",
-        hoverStyle: {
-          borderColor: "$accentHover"
-        }
+        borderColor: "accent hover:accentHover"
       }
     },
 
     variant: {
       default: {},
-      floating: (_val, { props }) => ({
-        paddingTop: 10 * getFormSizeScale(props.size)
-      }),
+      // Styled by the `.resolve` below because the inset depends on `size`.
+      floating: {},
       underline: {
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "$hairline",
+        borderColor: "hairline hover:accentHover focus-visible:accent",
         borderRadius: 0,
-        boxShadow: "none",
-
-        hoverStyle: {
-          borderColor: "$accentHover"
-        },
-
-        focusVisibleStyle: {
-          borderColor: "$accent",
-          boxShadow: "none"
-        }
+        boxShadow: "none focus-visible:none"
       }
     },
 
     disabled: {
       true: {
-        borderColor: "$accentDisabled",
-
-        hoverStyle: {
-          borderColor: "$accentDisabled"
-        },
-
-        focusStyle: {
-          borderColor: "$accentDisabled"
-        }
+        borderColor: "accentDisabled hover:accentDisabled focus:accentDisabled"
       }
     }
   } as const,
-
   defaultVariants: {
     variant: "default"
   }
-});
+}).resolve(props => ({
+  paddingTop:
+    props.variant === "floating"
+      ? 10 * getFormSizeScale(props.size as FormControlSize | undefined)
+      : undefined
+}));
+
+// Tamagui v3 types `onFocus`/`onBlur` as an intersection of the web and
+// native handlers, so accept either event (as `Input` does).
+type TextAreaFocusEvent = any;
 
 const TextAreaUnderlineFrame = styled(View, {
-  name: "TextAreaUnderlineFrame",
+  displayName: "TextAreaUnderlineFrame",
 
   position: "relative",
   width: "100%",
@@ -138,39 +120,37 @@ const TextAreaUnderlineFrame = styled(View, {
  * A multiline Cyclone Input value with the same tokens and state behavior as
  * the standard Input control.
  */
-export const TextArea = TextAreaFrame.styleable<
-  Partial<Pick<InputContextProps, "size" | "focused" | "variant" | "disabled">>
->(
+export const TextArea = createStyledHOC(TextAreaFrame, 
   (
     {
       rows = 3,
       render: _render,
       focused: focusedProp,
       disabled = false,
-      placeholderTextColor = "$onAccentDisabled",
+      placeholderTextColor = "onAccentDisabled",
       onBlur,
       onFocus,
       variant = "default",
       ...props
-    },
+    }: GetProps<typeof TextAreaFrame> & Partial<Pick<InputContextProps, "size" | "focused" | "variant" | "disabled">>,
     forwardedRef
   ) => {
     const [focused, setActive] = useState(false);
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "$accent" : "$hairline";
+    const idleColor = hasValidationMessage ? "accent" : "hairline";
     const focusColor = hasValidationMessage
-      ? "$accentActive"
-      : "$hairlineActive";
+      ? "accentActive"
+      : "hairlineActive";
     const isFocused = focusedProp ?? focused;
     const handleFocus = useCallback(
-      (event: FocusEvent<HTMLElement>) => {
+      (event: TextAreaFocusEvent) => {
         setActive(true);
         onFocus?.(event);
       },
       [onFocus]
     );
     const handleBlur = useCallback(
-      (event: FocusEvent<HTMLElement>) => {
+      (event: TextAreaFocusEvent) => {
         setActive(false);
         onBlur?.(event);
       },
@@ -189,21 +169,8 @@ export const TextArea = TextAreaFrame.styleable<
         hasValidationMessage={hasValidationMessage}
         variant={variant}
         disabled={disabled}
-        borderColor={isFocused ? focusColor : idleColor}
-        hoverStyle={{
-          borderColor: disabled
-            ? "$accentDisabled"
-            : isFocused
-              ? focusColor
-              : "$accentHover"
-        }}
-        focusVisibleStyle={{
-          boxShadow: variant === "underline" ? "none" : "$ringOffset",
-          borderColor: focusColor
-        }}
-        $group-field-hover={{
-          borderColor: disabled ? "$accentDisabled" : "$accentHover"
-        }}
+        borderColor={`${isFocused ? focusColor : idleColor} hover:${disabled ? "accentDisabled" : isFocused ? focusColor : "accentHover"} focus-visible:${focusColor} group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`}
+        boxShadow={`focus-visible:${variant === "underline" ? "none" : "ringOffset"}`}
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
@@ -219,12 +186,12 @@ export const TextArea = TextAreaFrame.styleable<
         <ControlUnderline
           focused={isFocused}
           disabled={disabled}
-          backgroundColor={disabled ? "$accentDisabled" : focusColor}
+          backgroundColor={disabled ? "accentDisabled" : focusColor}
         />
       </TextAreaUnderlineFrame>
     );
   },
-  { staticConfig: { componentName: "TextArea" } }
+  { displayName: "TextArea" }
 );
 
 export type TextAreaProps = GetProps<typeof TextArea>;

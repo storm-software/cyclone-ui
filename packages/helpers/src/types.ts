@@ -16,7 +16,22 @@
 
  ------------------------------------------------------------------- */
 
+import type { Font, FontFamilyTokens, TokensParsed } from "@tamagui/core";
 import type { Color } from "chroma-js";
+
+/**
+ * The subset of Tamagui v3's `styled.dynamic` environment these helpers read.
+ *
+ * @remarks
+ * Tamagui does not export its `StyledDynamicEnv` type; the environment it
+ * passes to `styled.dynamic` callbacks and `.resolve` resolvers is a superset
+ * of this shape. Unlike v2 variant extras, it never carries component props.
+ */
+export interface StyleEnv {
+  tokens?: TokensParsed;
+  font?: Font;
+  fontFamily?: FontFamilyTokens;
+}
 
 export type ColorScientificPalette =
   | "surrounding"

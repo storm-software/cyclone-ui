@@ -39,6 +39,7 @@ import {
   createStyledContext,
   getTokens,
   getVariableValue,
+  styled,
   View
 } from "@tamagui/core";
 import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons-2";
@@ -121,6 +122,11 @@ export interface DataTableProps<TData extends RowData> extends TableProps {
 }
 
 const SELECTION_COLUMN_ID = "__selection";
+
+const DataTableColumnHeading = styled(HeadingSmallText, {
+  displayName: "DataTableColumnHeading",
+  fontFamily: "title-lg"
+});
 
 const getSelectionColumn = <TData extends RowData>(): ColumnDef<TData> => ({
   id: SELECTION_COLUMN_ID,
@@ -320,9 +326,7 @@ const useInitialContentSizedColumns = <TData extends RowData>(
 
     measuredColumnsRef.current = columnIds;
 
-    const columnWidthPadding = getVariableValue(
-      getTokens({ prefixed: true }).space.$xl
-    );
+    const columnWidthPadding = getVariableValue(getTokens().space.xl);
 
     const widths = Array.from(
       tableElement.querySelectorAll("[data-column-id]")
@@ -452,14 +456,14 @@ export function DataTable<TData extends RowData>({
       setColumnFilters={setColumnFilters}
       pagination={pagination}
       setPagination={setPagination}>
-      <YStack gap="$3xl">
+      <YStack gap="3xl">
         <Table
           ref={tableRef as any}
           width={resizable ? table.getTotalSize() : "100%"}
           maxWidth="none"
           alignCells={{ x: "start", y: "center" }}
           alignHeaderCells={{ x: "start", y: "center" }}
-          {...({ sizing: "content" } as any)}
+          {...{ sizing: "content" }}
           {...rest}
           style={
             [
@@ -520,32 +524,31 @@ export function DataTable<TData extends RowData>({
                           top={0}
                           right={0}
                           bottom={0}
-                          width="$2xl"
-                          zIndex="$20"
+                          width="2xl"
+                          zIndex="20"
                           cursor="col-resize"
-                          touchAction="none"
                           userSelect="none"
+                          // Web-only CSS property that is not a Tamagui style prop.
+                          style={{ touchAction: "none" } as any}
+                          data-column-resizer={header.column.id}
                           onDoubleClick={() => header.column.resetSize()}
                           onMouseEnter={() => setHoveredResizer(header.id)}
                           onMouseLeave={() => setHoveredResizer(null)}
                           onMouseDown={header.getResizeHandler()}
-                          onTouchStart={header.getResizeHandler()}
-                          {...({
-                            "data-column-resizer": header.column.id
-                          } as any)}>
+                          onTouchStart={header.getResizeHandler()}>
                           <View
                             position="absolute"
-                            top="$xl"
+                            top="xl"
                             left="50%"
                             marginLeft={-1}
-                            bottom="$xl"
+                            bottom="xl"
                             borderWidth={0}
                             borderRightWidth={2}
                             borderStyle="dashed"
                             borderRightColor={
                               header.column.getIsResizing() ||
                               hoveredResizer === header.id
-                                ? "$hairline"
+                                ? "accent"
                                 : "transparent"
                             }
                           />
@@ -564,7 +567,7 @@ export function DataTable<TData extends RowData>({
                   key={row.id}
                   aria-selected={row.getIsSelected()}
                   backgroundColor={
-                    row.getIsSelected() ? "$mutedActive" : undefined
+                    row.getIsSelected() ? "mutedActive" : undefined
                   }>
                   {row.getVisibleCells().map(cell => (
                     <Table.Cell
@@ -594,8 +597,8 @@ export function DataTable<TData extends RowData>({
                     flex={1}
                     justifyContent="center"
                     alignItems="center"
-                    padding="$7xl">
-                    <LabelText size="$6xl">No data to display</LabelText>
+                    padding="7xl">
+                    <LabelText size="6xl">No data to display</LabelText>
                   </View>
                 </Table.Cell>
               </Table.Row>
@@ -650,10 +653,7 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   const value = props.value ? props.value : props.renderValue();
 
   return (
-    <BodyText
-      transition="200ms"
-      color="$inkBody"
-      $group-row-hover={{ color: "$inkBodyHover" }}>
+    <BodyText transition="200ms" color="inkBody group-hover/row:inkBodyHover">
       {value}
     </BodyText>
   );
@@ -714,13 +714,13 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
         overflow="hidden"
         opacity={0}
         pointerEvents="none"
-        paddingRight="$9xl"
+        paddingRight="9xl"
         maxWidth="100%"
         whiteSpace="pre">
         {intrinsicFilterLabels}
       </HeadingSmallText>
 
-      <YStack gap="$4xl">
+      <YStack gap="4xl">
         <SearchInputField
           name={SEARCH_FIELD_NAME}
           size="sm"
@@ -730,13 +730,10 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
           </SearchInputField.Control>
         </SearchInputField>
 
-        <Popover.Content.ScrollView size="lg" maxHeight="$30xl">
-          <YStack gap="$xl" width="100%" minWidth="$28xl" paddingLeft="$xl">
+        <Popover.Content.ScrollView size="lg" maxHeight="30xl">
+          <YStack gap="xl" width="100%" minWidth="28xl" paddingLeft="xl">
             <CheckboxField name={SELECT_ALL_FIELD_NAME}>
-              <XStack
-                gap="$3xl"
-                alignItems="center"
-                justifyContent="flex-start">
+              <XStack gap="3xl" alignItems="center" justifyContent="flex-start">
                 <CheckboxField.Control
                   checked={selectAll}
                   onCheckedChange={checked =>
@@ -750,7 +747,7 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
             {searchResults.map(searchResult => (
               <CheckboxField key={searchResult} name={searchResult}>
                 <XStack
-                  gap="$3xl"
+                  gap="3xl"
                   alignItems="center"
                   justifyContent="flex-start">
                   <CheckboxField.Control
@@ -842,7 +839,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         return;
       }
 
-      setFilterValue(current => {
+      setFilterValue((current: unknown) => {
         const filterValues = (current ?? []) as any[];
 
         return checked
@@ -886,42 +883,38 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
 
   return (
     <XStack
-      group={"header" as any}
+      group={"header"}
       flexGrow={1}
-      gap="$3xl"
+      gap="3xl"
       justifyContent="space-between"
       alignItems="center"
-      paddingRight="$3xl">
-      <XStack gap="$xl" onPress={handleSorting} flexShrink={0} cursor="pointer">
-        <HeadingSmallText
+      paddingRight="3xl">
+      <XStack gap="xl" flexShrink={0} cursor="pointer" onPress={handleSorting}>
+        <DataTableColumnHeading
           transition="200ms"
-          color="$accent"
-          size="$6xl"
-          $group-header-hover={{ color: "$accentHover" }}>
+          color="accent group-hover/header:accentHover">
           {titleCase(id)}
-        </HeadingSmallText>
+        </DataTableColumnHeading>
         {isSorted && !desc && (
-          <XStack gap="$xxs" alignItems="center">
-            <ArrowDownAZ size="$4xl" color="$accent" />
-            <HeadingSmallText
+          <XStack gap="xxs" alignItems="center">
+            <ArrowDownAZ size="4xl" color="accent" />
+            <DataTableColumnHeading
               transition="200ms"
-              fontWeight="$semibold"
-              color="$accent"
-              size="$xs">
+              fontWeight={600}
+              color="accent">
               {sortIndex + 1}
-            </HeadingSmallText>
+            </DataTableColumnHeading>
           </XStack>
         )}
         {isSorted && desc && (
-          <XStack gap="$xxs" alignItems="center">
-            <ArrowUpZA size="$4xl" color="$accent" />
-            <HeadingSmallText
+          <XStack gap="xxs" alignItems="center">
+            <ArrowUpZA size="4xl" color="accent" />
+            <DataTableColumnHeading
               transition="200ms"
-              fontWeight="$semibold"
-              color="$accent"
-              size="$xs">
+              fontWeight={600}
+              color="accent">
               {sortIndex + 1}
-            </HeadingSmallText>
+            </DataTableColumnHeading>
           </XStack>
         )}
       </XStack>
@@ -930,9 +923,8 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         <View
           transition="200ms"
           flexShrink={0}
-          paddingRight="$3xl"
-          opacity={filterValues.length > 0 ? 1 : 0}
-          $group-header-hover={{ opacity: 1 }}>
+          paddingRight="3xl"
+          opacity={`${filterValues.length > 0 ? 1 : 0} group-hover/header:1`}>
           <Popover allowFlip={true}>
             <Popover.Trigger asChild={true}>
               <Button
@@ -941,20 +933,20 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 ghostOpacity={0.4}
                 circular={true}
                 noPadding={true}
-                color="$accent"
-                size="$6xl"
-                padding="$lg">
+                color="accent"
+                size="6xl"
+                padding="lg">
                 <Button.Icon>
-                  <Filter size="$2xl" />
+                  <Filter size="2xl" />
                 </Button.Icon>
               </Button>
             </Popover.Trigger>
 
             <Popover.Content
               width="max-content"
-              minWidth="$30xl"
+              minWidth="30xl"
               maxWidth="90vw"
-              paddingVertical="$3xl">
+              paddingVertical="3xl">
               <Form name={`${id}_filter`} initialValues={initialValues}>
                 <DataTableHeaderFilterFields
                   valuesMap={valuesMap}
@@ -1090,31 +1082,31 @@ export function DataTablePagination<TData extends RowData>({
 
   return (
     <XStack
-      group={"header" as any}
+      group={"header"}
       flexGrow={1}
       justifyContent="space-between"
       alignItems="center"
-      paddingHorizontal="$xl">
+      paddingHorizontal="xl">
       <View flex={1}>
-        <XStack alignItems="center" gap="$xl">
-          <View width="$30xl" flexShrink={0}>
+        <XStack alignItems="center" gap="xl">
+          <View width="30xl" flexShrink={0}>
             <Form
               name="pageSizing"
               initialValues={{
                 pageSize
               }}>
-              <View width="$30xl">
+              <View width="30xl">
                 <SelectField
                   name="pageSize"
                   variant="normal"
                   items={pageSizes}
                   size="sm"
                   onChange={handlePageSizeChange}>
-                  <XStack alignItems="center" gap="$3xl">
+                  <XStack alignItems="center" gap="3xl">
                     <SelectField.Label hideOptional={true} flexShrink={0}>
                       Per page:
                     </SelectField.Label>
-                    <View width="$18xl" flexShrink={0}>
+                    <View width="18xl" flexShrink={0}>
                       <SelectField.Control />
                     </View>
                   </XStack>
@@ -1123,13 +1115,10 @@ export function DataTablePagination<TData extends RowData>({
             </Form>
           </View>
 
-          <YStack gap="$xs" justifyContent="center">
-            <XStack
-              justifyContent="space-between"
-              alignItems="center"
-              gap="$xl">
-              <LabelText size="$xs">Total:</LabelText>
-              <LabelText size="$xs">
+          <YStack gap="xs" justifyContent="center">
+            <XStack justifyContent="space-between" alignItems="center" gap="xl">
+              <LabelText size="xs">Total:</LabelText>
+              <LabelText size="xs">
                 {`${totalCount} ${totalCount === 1 ? "row" : "rows"}${selectedCount > 0 ? ` (${selectedCount} Selected)` : ""}`}
               </LabelText>
             </XStack>
@@ -1137,9 +1126,9 @@ export function DataTablePagination<TData extends RowData>({
               <XStack
                 justifyContent="space-between"
                 alignItems="center"
-                gap="$xl">
-                <LabelText size="$xs">Filtering:</LabelText>
-                <LabelText size="$xs">
+                gap="xl">
+                <LabelText size="xs">Filtering:</LabelText>
+                <LabelText size="xs">
                   {`${totalCount - unfilteredCount} ${totalCount - unfilteredCount === 1 ? "row" : "rows"}`}
                 </LabelText>
               </XStack>

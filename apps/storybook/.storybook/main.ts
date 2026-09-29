@@ -61,6 +61,43 @@ function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+/**
+ * `vite-plugin-react-native-web`'s `transform` hook matches every `.js`
+ * file (to strip Flow types from React Native packages) using `esbuild`
+ * directly, bypassing Vite's own SSR CJS-interop transform for that file.
+ * When Tamagui evaluates its config through an SSR-style module runner
+ * environment, this causes `react`/`react-dom`'s CommonJS entry files to be
+ * executed as plain ESM (`ReferenceError: module is not defined`) instead of
+ * being wrapped for interop. Skip those two packages; they never contain
+ * Flow syntax and don't need this transform.
+ */
+function scopedReactNativeWeb() {
+  const plugin = reactNativeWeb();
+  const untransformed =
+    /[/\\]node_modules[/\\](?:\.pnpm[/\\][^/\\]+[/\\]node_modules[/\\])?react(?:-dom)?[/\\]/;
+  const originalTransform = plugin.transform as (
+    this: import("vite").Rollup.TransformPluginContext,
+    code: string,
+    id: string
+  ) =>
+    | import("vite").Rollup.TransformResult
+    | Promise<import("vite").Rollup.TransformResult>;
+
+  plugin.transform = async function patchedTransform(
+    this: import("vite").Rollup.TransformPluginContext,
+    code: string,
+    id: string
+  ) {
+    if (untransformed.test(id.split("?")[0] ?? "")) {
+      return null;
+    }
+
+    return originalTransform.call(this, code, id);
+  };
+
+  return plugin;
+}
+
 function exportFilePath(value: unknown): string | undefined {
   if (typeof value === "string") {
     return value;
@@ -200,6 +237,9 @@ const config: StorybookConfig = {
     "../../../packages/themes/src/storybook/**/*.mdx",
     "../../../components/**/*.stories.@(js|jsx|ts|tsx|mdx)"
   ],
+  // Serve the shared monorepo assets (icons) at `/assets`. Fonts resolve
+  // through the `@fonts` alias (see `resolve.alias` below) to `./fonts`.
+  staticDirs: [{ from: "../../../assets", to: "/assets" }],
   addons: [
     getAbsolutePath("@storybook/addon-docs"),
     getAbsolutePath("@storybook/addon-vitest")
@@ -209,7 +249,6 @@ const config: StorybookConfig = {
     options: {}
   },
   async viteFinal(config, { configType }) {
-    const { tamaguiPlugin } = await import("@tamagui/vite-plugin");
     const { mergeConfig } = await import("vite");
 
     return mergeConfig(config, {
@@ -226,6 +265,12 @@ const config: StorybookConfig = {
 
       resolve: {
         alias: [
+          // `@fonts` resolves to the `./fonts` project (Storm Sans sources
+          // and built output). Mirrors the `paths` in `tsconfig.base.json`.
+          {
+            find: "@fonts",
+            replacement: join(workspaceRoot, "fonts")
+          },
           ...cycloneUiSourceAliases(),
           {
             find: "@stryke/env/runtime-checks",
@@ -311,14 +356,21 @@ const config: StorybookConfig = {
         exclude: ["@stryke/env/runtime-checks"]
       },
 
-      plugins: [
-        nxViteTsPaths({ debug: false }),
-        reactNativeWeb(),
-        tamaguiPlugin({
-          config: "packages/themes/src/tamagui/config.ts",
-          components: ["tamagui"]
-        })
-      ].filter(Boolean),
+      // `@tamagui/vite-plugin` is intentionally NOT used here. It evaluates
+      // the Tamagui config/components in a dedicated SSR-style "tamagui"
+      // Vite environment, and with the current vite@8/tamagui@3-beta
+      // combination that environment fails to externalize `react`'s
+      // CommonJS entry, executing it as plain ESM through the module
+      // runner and crashing with "ReferenceError: module is not defined"
+      // (https://github.com/storybookjs/storybook/issues/33010 is the same
+      // class of bug with a different plugin). Forcing `resolve.external`
+      // for that environment does not help either - react still gets
+      // inlined through the environment's module runner. Tamagui falls
+      // back to its full runtime (non-extracted) CSS-in-JS mode without
+      // the plugin, which is fine for local Storybook development.
+      plugins: [nxViteTsPaths({ debug: false }), scopedReactNativeWeb()].filter(
+        Boolean
+      ),
 
       define: {
         "process.env.STORYBOOK": JSON.stringify("true"),

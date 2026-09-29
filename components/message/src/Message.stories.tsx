@@ -20,9 +20,16 @@ import { Button } from "@cyclone-ui/button";
 import { useMessageActions } from "@cyclone-ui/state/message";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack, YStack } from "@tamagui/stacks";
+import type { ComponentProps } from "react";
 import { Message } from "./Message";
 
-const meta: Meta<typeof Message> = {
+// `message` and `type` are story-only args consumed by the custom `render`.
+type MessageStoryArgs = ComponentProps<typeof Message> & {
+  message?: string;
+  type?: string;
+};
+
+const meta: Meta<MessageStoryArgs> = {
   title: "Containers/Message",
   component: Message,
   tags: ["autodocs"],
@@ -33,7 +40,7 @@ const meta: Meta<typeof Message> = {
       <YStack alignItems="center" width="100%">
         <Message />
 
-        <XStack alignItems="center" gap="$5xl" marginTop="400px" width={400}>
+        <XStack alignItems="center" gap="5xl" marginTop="400px" width={400}>
           <Button
             variant="surface"
             onPress={() => {
@@ -55,11 +62,11 @@ const meta: Meta<typeof Message> = {
       </YStack>
     );
   }
-} satisfies Meta<typeof Message>;
+} satisfies Meta<MessageStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Message>;
+type Story = StoryObj<MessageStoryArgs>;
 
 export const Base: Story = {
   args: {

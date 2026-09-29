@@ -56,12 +56,19 @@ export const Outlined: Story = {
   },
   play: async ({ canvasElement }) => {
     const text = within(canvasElement).getByText("Badge Text");
-    const frame = text.parentElement;
+    const frame = (text as unknown as { parentElement: unknown | null })
+      .parentElement;
+    const getStyles = (
+      globalThis as unknown as {
+        getComputedStyle: (element: unknown) => {
+          borderColor: string;
+          color: string;
+        };
+      }
+    ).getComputedStyle;
 
     await expect(frame).not.toBeNull();
-    await expect(getComputedStyle(text).color).toBe(
-      getComputedStyle(frame!).borderColor
-    );
+    await expect(getStyles(text).color).toBe(getStyles(frame).borderColor);
   }
 };
 

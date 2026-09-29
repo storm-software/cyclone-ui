@@ -31,4 +31,6 @@ export * from "./get-colors";
 export * from "./get-font-sized";
 export * from "./get-nearest-token";
 export * from "./get-sized";
+export * from "./get-token-relative";
+export * from "./token-value";
 export * from "./types";

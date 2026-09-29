@@ -19,15 +19,32 @@
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { GetProps } from "@tamagui/core";
 import { View } from "@tamagui/core";
 import { FilePicker } from "./FilePicker";
 
-const meta: Meta<typeof FilePicker> = {
+type FilePickerValidation = {
+  onChange: (() => { message: string; type: string }[])[];
+};
+
+/** Story-only args consumed by the custom `render` (the Form and Field). */
+type FilePickerStoryArgs = GetProps<typeof FilePicker> & {
+  defaultValue?: unknown;
+  required?: boolean;
+  validate?: FilePickerValidation;
+};
+
+const meta: Meta<FilePickerStoryArgs> = {
   title: "Base/FilePicker",
   component: FilePicker,
   tags: ["autodocs"],
-  render: ({ defaultValue, disabled, children, ...props }: any) => (
-    <Form name="formName" defaultValues={{ filePickerName: defaultValue }}>
+  render: (
+    { defaultValue, disabled, children, ...props }: any,
+    { id }: { id: string }
+  ) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ filePickerName: defaultValue }}>
       <Field name="filePickerName" {...props} disabled={disabled} width="500px">
         <Field.Label>Label Text</Field.Label>
         <FilePicker size={props.size} width="500px" disabled={disabled}>
@@ -38,11 +55,11 @@ const meta: Meta<typeof FilePicker> = {
       </Field>
     </Form>
   )
-} satisfies Meta<typeof FilePicker>;
+} satisfies Meta<FilePickerStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof FilePicker>;
+type Story = StoryObj<FilePickerStoryArgs>;
 
 const validation = (
   type:
@@ -53,7 +70,7 @@ const validation = (
     | "success"
     | "positive"
     | "negative"
-) => ({
+): FilePickerValidation => ({
   onChange: [
     () => [
       {
@@ -145,7 +162,7 @@ const previewFile = {
 
 export const PopulatedSizes: Story = {
   render: () => (
-    <View backgroundColor="$background" padding={24} minHeight="100vh">
+    <View backgroundColor="background" padding={24} minHeight="100vh">
       <Form name="file-preview-sizes">
         {(["sm", "md", "lg"] as const).map(size => (
           <Field key={size} name={size} size={size}>

@@ -18,6 +18,7 @@
   "dependencies": {
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
     "@cyclone-ui/input-field": "workspace:*",
     "@cyclone-ui/popover": "workspace:*",

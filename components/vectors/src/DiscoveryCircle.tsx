@@ -18,13 +18,14 @@
 
 import { getSized } from "@cyclone-ui/helpers";
 import type { IconProps } from "@tamagui/helpers-icon";
-import { themed } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { Lightbulb } from "@tamagui/lucide-icons-2";
 import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useMemo, useState } from "react";
 import type { SvgProps } from "react-native-svg";
 import { Circle, G, Svg } from "react-native-svg";
+import type { ThemedIconBodyProps } from "./themed-icon";
+import { themedIcon } from "./themed-icon";
 
 export type DiscoveryCircleProps = IconProps & {
   isComplete?: boolean;
@@ -34,14 +35,14 @@ const Icon = ({
   isComplete = true,
   size = 24,
   ...props
-}: DiscoveryCircleProps) => {
-  const color = useCurrentColor((props.color || "$accent") as any);
+}: ThemedIconBodyProps<DiscoveryCircleProps>) => {
+  const color = useCurrentColor((props.color || "accent") as any);
 
   const diameter = 24;
   const strokeWidth = 2;
   const lightBulbScaleReferenceSize = 62;
   const resolvedSize = getSized(size);
-  const isSmall = resolvedSize < getSized("$10xl");
+  const isSmall = resolvedSize < getSized("10xl");
   const outerRadius = diameter / 2;
   const innerRadius = outerRadius - strokeWidth / 2;
   const circumference = 2 * Math.PI * innerRadius;
@@ -141,4 +142,4 @@ const Icon = ({
 
 Icon.displayName = "DiscoveryCircle";
 
-export const DiscoveryCircle = memo<DiscoveryCircleProps>(themed(Icon));
+export const DiscoveryCircle = memo<DiscoveryCircleProps>(themedIcon(Icon));

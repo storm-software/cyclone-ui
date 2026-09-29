@@ -17,9 +17,11 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
+    "@tamagui/get-font-sized": "catalog:",
     "@tamagui/text": "catalog:"
   },
   "devDependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

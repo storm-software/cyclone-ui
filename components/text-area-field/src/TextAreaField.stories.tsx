@@ -25,8 +25,10 @@ const meta: Meta<typeof TextAreaField> = {
   title: "Form/TextAreaField",
   component: TextAreaField,
   tags: ["autodocs"],
-  render: ({ defaultValue = "", ...props }: any) => (
-    <Form name="formName" initialValues={{ textAreaFieldName: defaultValue }}>
+  render: ({ defaultValue = "", ...props }: any, { id }: { id: string }) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ textAreaFieldName: defaultValue }}>
       <TextAreaField name="textAreaFieldName" {...props}>
         <TextAreaField.Label>Label Text</TextAreaField.Label>
         <TextAreaField.Control placeholder="Enter a message" rows={3} />
@@ -59,6 +61,21 @@ const validation = (
   ]
 });
 
+/** Vertical center of a textarea's first text line, in viewport pixels. */
+const firstLineCenter = (textArea: HTMLElement) => {
+  const style = getComputedStyle(textArea);
+  // `line-height: normal` computes to a keyword; browsers use about 1.2em.
+  const lineHeight =
+    parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.2;
+
+  return (
+    textArea.getBoundingClientRect().top +
+    parseFloat(style.borderTopWidth) +
+    parseFloat(style.paddingTop) +
+    lineHeight / 2
+  );
+};
+
 export const Base: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -71,7 +88,7 @@ export const Base: Story = {
       Math.abs(
         label!.getBoundingClientRect().top +
           label!.getBoundingClientRect().height / 2 -
-          textArea.getBoundingClientRect().top
+          firstLineCenter(textArea)
       )
     ).toBeLessThan(2);
     await expect(getComputedStyle(textArea).color).not.toBe("rgba(0, 0, 0, 0)");
@@ -87,9 +104,9 @@ export const Floating: Story = {
   args: {
     variant: "floating"
   },
-  render: props => (
-    <Form name="formName" initialValues={{ textAreaFieldName: "" }}>
-      <TextAreaField name="textAreaFieldName" {...props}>
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ textAreaFieldName: "" }}>
+      <TextAreaField {...props} name="textAreaFieldName">
         <TextAreaField.Label>Label Text</TextAreaField.Label>
         <TextAreaField.Control rows={3} />
       </TextAreaField>

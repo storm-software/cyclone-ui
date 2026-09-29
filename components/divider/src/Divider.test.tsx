@@ -23,10 +23,26 @@ const renderDivider = (props: DividerProps = {}) => {
   );
 };
 
-const getDividerClasses = (props: DividerProps = {}) =>
-  Array.from(renderDivider(props).matchAll(/<div[^>]*class="([^"]*)"/g))
+/**
+ * Resolve the divider's atomic classes to their CSS declarations. Tamagui v3
+ * hashes class names, so tests assert on the rendered CSS instead.
+ */
+const getDividerStyles = (props: DividerProps = {}) => {
+  const html = renderDivider(props);
+  const rules = Array.from(html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g))
     .map(match => match[1])
-    .join(" | ");
+    .join("\n");
+
+  return Array.from(html.matchAll(/<div[^>]*class="([^"]*)"/g))
+    .flatMap(match => match[1]!.split(/\s+/))
+    .map(className => {
+      const escaped = className.replace(/[.*+?^${}()|[\]\\-]/g, "\\$&");
+
+      return new RegExp(`\\.${escaped}\\{([^}]*)\\}`).exec(rules)?.[1];
+    })
+    .filter(Boolean)
+    .join(";");
+};
 
 const getDividerProps = (props: DividerProps = {}) =>
   (
@@ -45,33 +61,33 @@ const getDividerProps = (props: DividerProps = {}) =>
 describe("Divider", () => {
   it("defaults to a one-pixel horizontal hairline", () => {
     expect(getDividerProps()).toMatchObject({
-      backgroundColor: "$hairline",
+      backgroundColor: "hairline",
       height: 1,
       width: "100%"
     });
   });
 
   it.each([
-    ["horizontal", "sm", ["_h-1px", "_w-10037"]],
-    ["horizontal", "md", ["_h-2px", "_w-10037"]],
-    ["horizontal", "lg", ["_h-3px", "_w-10037"]],
-    ["vertical", "sm", ["_als-stretch", "_h-10037", "_w-1px"]],
-    ["vertical", "md", ["_als-stretch", "_h-10037", "_w-2px"]],
-    ["vertical", "lg", ["_als-stretch", "_h-10037", "_w-3px"]]
+    ["horizontal", "sm", ["height:1px", "width:100%"]],
+    ["horizontal", "md", ["height:2px", "width:100%"]],
+    ["horizontal", "lg", ["height:3px", "width:100%"]],
+    ["vertical", "sm", ["align-self:stretch", "height:100%", "width:1px"]],
+    ["vertical", "md", ["align-self:stretch", "height:100%", "width:2px"]],
+    ["vertical", "lg", ["align-self:stretch", "height:100%", "width:3px"]]
   ] as const)(
     "renders a %s %s divider on its intended axis",
-    (direction, size, expectedClasses) => {
-      const classes = getDividerClasses({ direction, size });
+    (direction, size, expectedStyles) => {
+      const styles = getDividerStyles({ direction, size });
 
-      for (const expectedClass of expectedClasses) {
-        expect(classes).toContain(expectedClass);
+      for (const expectedStyle of expectedStyles) {
+        expect(styles).toContain(expectedStyle);
       }
     }
   );
 
   it("uses a caller-provided color", () => {
-    expect(getDividerProps({ color: "$accent" })).toMatchObject({
-      backgroundColor: "$accent"
+    expect(getDividerProps({ color: "accent" })).toMatchObject({
+      backgroundColor: "accent"
     });
   });
 });

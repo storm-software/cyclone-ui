@@ -8,7 +8,7 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc",
+    "outDir": "../../dist/out-tsc/packages/helpers",
     "ignoreDeprecations": "6.0"
   },
   "references": [{ "path": "../themes" }],

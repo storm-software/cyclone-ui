@@ -2,7 +2,9 @@ import { describe, expect, it, vi } from "vitest";
 
 vi.mock("@cyclone-ui/helpers", async () => ({
   ...(await import("../../../packages/helpers/src/form-size")),
-  getSized: (token: string) => ({ $8xl: 32, $10xl: 42, $12xl: 52 })[token]
+  // v3 size tokens are keyed bare (no `$`).
+  getSized: (token: string) =>
+    ({ "8xl": 32, "10xl": 42, "12xl": 52 })[token]
 }));
 
 import { getSelectContentSize, shouldCenterSelectItemText } from "./utilities";
@@ -24,7 +26,7 @@ describe("getSelectContentSize", () => {
     }
   });
   it("uses the small space token for option text vertical padding", () => {
-    expect(getSelectContentSize("md").itemTextPaddingVertical).toBe("$sm");
+    expect(getSelectContentSize("md").itemTextPaddingVertical).toBe("sm");
   });
 });
 

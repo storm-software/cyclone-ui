@@ -25,8 +25,10 @@ const meta = {
   title: "Form/PhoneNumberInputField",
   component: PhoneNumberInputField,
   tags: ["autodocs"],
-  render: ({ defaultValue = "", ...props }: any) => (
-    <Form name="formName" initialValues={{ inputFieldName: defaultValue }}>
+  render: ({ defaultValue = "", ...props }: any, { id }: { id: string }) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ inputFieldName: defaultValue }}>
       <PhoneNumberInputField name="inputFieldName" {...props}>
         <PhoneNumberInputField.Label>Label Text</PhoneNumberInputField.Label>
         <PhoneNumberInputField.Control>
@@ -70,7 +72,8 @@ export const Base: Story = {
     const canvas = within(canvasElement);
 
     let input = canvas.getByRole("textbox");
-    await expect(input).toHaveStyle({ height: "40px" });
+    // Floating is the default variant: a 45px frame, 43px inside its border.
+    await expect(input).toHaveStyle({ height: "43px" });
     await expect(input).toHaveAttribute("type", "tel");
     await expect(input).toHaveValue("+1 ");
 
@@ -92,7 +95,10 @@ export const Base: Story = {
     const firstCountry = document.getByRole("button", {
       name: /AC\s+\+247/i
     });
-    const firstCountryLabel = firstCountry.firstElementChild as HTMLElement;
+    // The ghost button's first child is its hover background, so find the
+    // content row through the country name.
+    const firstCountryLabel = within(firstCountry).getByText("Ascension Island")
+      .parentElement as HTMLElement;
     const firstCountryLabelRange = firstCountry.ownerDocument.createRange();
     firstCountryLabelRange.selectNodeContents(firstCountryLabel);
 

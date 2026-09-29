@@ -18,8 +18,7 @@
 
 import { isWeb } from "@tamagui/constants";
 import type { GetProps } from "@tamagui/core";
-import { styled } from "@tamagui/core";
-import { fullscreenStyle } from "@tamagui/stacks";
+import { createStyledHOC, styled } from "@tamagui/core";
 import { ScrollView as ScrollViewNative } from "react-native";
 
 export const SCROLL_VIEW_CLASS_NAME = "cyclone-scroll-view";
@@ -36,7 +35,7 @@ export const SCROLL_VIEW_STYLES = `
 const ScrollViewFrame = styled(
   ScrollViewNative,
   {
-    name: "ScrollView",
+    displayName: "ScrollView",
     scrollEnabled: true,
     // Reserve the native scrollbar gutter even when `overflowY: "auto"`
     // hides its inactive scrollbar. `style` passes this web-only CSS property
@@ -53,22 +52,25 @@ const ScrollViewFrame = styled(
         }
       },
       fullscreen: {
-        true: fullscreenStyle
+        // v3 removed `fullscreenStyle`; this is its v2 value.
+        true: {
+          position: "absolute",
+          inset: 0
+        }
       }
     } as const,
 
     defaultVariants: {
       size: "sm"
     }
-  },
-  {
-    accept: {
-      contentContainerStyle: "style"
-    } as const
   }
+  // v2 passed `{ accept: { contentContainerStyle: "style" } }` here so
+  // `contentContainerStyle` resolved Tamagui tokens. v3 removed `accept`, so
+  // `contentContainerStyle` is now passed to React Native unresolved.
 );
 
-export const ScrollView = ScrollViewFrame.styleable(
+export const ScrollView = createStyledHOC(
+  ScrollViewFrame,
   ({ children, className, ...props }, forwardedRef) => (
     <ScrollViewFrame
       {...props}
@@ -78,7 +80,7 @@ export const ScrollView = ScrollViewFrame.styleable(
       {children}
     </ScrollViewFrame>
   ),
-  { staticConfig: { componentName: "ScrollView" } }
+  { displayName: "ScrollView" }
 );
 
 export type ScrollView = ScrollViewNative;

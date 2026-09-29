@@ -28,10 +28,12 @@ const meta = {
   title: "Base/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
-  render: ({ defaultValue, ...props }) => (
-    <Form name="formName" initialValues={{ checkboxName: defaultValue }}>
+  render: ({ defaultValue, ...props }, { id }: { id: string }) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ checkboxName: defaultValue }}>
       <Field name="checkboxName" {...props}>
-        <XStack gap="$3xl" alignContent="center" alignItems="center">
+        <XStack gap="3xl" alignContent="center" alignItems="center">
           <Checkbox size={props.size} />
           <Field.Label paddingBottom={0}>
             This is an example label message for a checkbox

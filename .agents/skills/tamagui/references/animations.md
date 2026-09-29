@@ -1,8 +1,10 @@
 # Animations Reference
 
-## Animation Drivers
+The animation prop is `transition` (renamed from `animation` in v2). It takes
+the name of a preset you configured, and drives whichever animation driver
+your config carries.
 
-Tamagui supports multiple animation drivers. Choose based on your platform:
+## Animation Drivers
 
 | Driver | Package | Best For |
 |--------|---------|----------|
@@ -13,17 +15,19 @@ Tamagui supports multiple animation drivers. Choose based on your platform:
 
 ## Configuration
 
+The v6 default config bundles no animations. Add a prebuilt preset set from a
+`@tamagui/config` sub-entry, or define your own with `createAnimations`:
+
 ```tsx
-// v5 config - import driver separately
-import { defaultConfig } from '@tamagui/config/v5'
-import { animations } from '@tamagui/config/v5-css'
-// or: '@tamagui/config/v5-motion'
-// or: '@tamagui/config/v5-rn'
-// or: '@tamagui/config/v5-reanimated'
+import { defaultConfig } from '@tamagui/config/v6'
+import { animationsCSS } from '@tamagui/config/animations-css'
+// or: '@tamagui/config/animations-rn'
+// or: '@tamagui/config/animations-reanimated'
+// or: '@tamagui/config/animations-motion'
 
 export const config = createTamagui({
   ...defaultConfig,
-  animations,
+  animations: animationsCSS,
 })
 ```
 
@@ -77,30 +81,20 @@ const animations = createAnimations({
 
 ```tsx
 <View
-  animation="medium"
+  transition="medium"
   opacity={isVisible ? 1 : 0}
   y={isVisible ? 0 : 10}
 />
 ```
 
-### Enter/Exit Styles
+### Enter/Exit Clauses
 
 ```tsx
 <View
-  animation="fast"
-  enterStyle={{
-    opacity: 0,
-    y: -20,
-    scale: 0.9,
-  }}
-  exitStyle={{
-    opacity: 0,
-    y: 20,
-    scale: 0.9,
-  }}
-  opacity={1}
-  y={0}
-  scale={1}
+  transition="fast"
+  opacity="1 enter:0 exit:0"
+  y="0 enter:-20px exit:20px"
+  scale="1 enter:0.9 exit:0.9"
 />
 ```
 
@@ -115,32 +109,38 @@ import { AnimatePresence } from 'tamagui'
   {show && (
     <View
       key="unique-key"  // key is required
-      animation="medium"
-      enterStyle={{ opacity: 0 }}
-      exitStyle={{ opacity: 0 }}
-      opacity={1}
+      transition="medium"
+      opacity="1 enter:0 exit:0"
     />
   )}
 </AnimatePresence>
 ```
 
-### Per-Property Animation
+### Per-Property Transition
 
-Override animation for specific properties:
+Override the transition for specific properties, or set distinct enter/exit
+transitions using the v3 TransitionConfig object:
 
 ```tsx
 <View
-  animation={[
-    'fast',
-    {
-      opacity: { type: 'timing', duration: 500 },
-      scale: { overshootClamping: true },
-    },
-  ]}
+  transition={{
+    preset: 'fast',
+    opacity: { duration: 500 },
+    scale: 'fast',
+  }}
   opacity={1}
   scale={1}
 />
+
+<View
+  transition={{ preset: 'fast', enter: 'medium', exit: 'quick', delay: 100 }}
+/>
 ```
+
+### Multiple Drivers
+
+A config's `animations` can map several drivers (`{ default, css, spring }`);
+pick per component with the `animatedBy` prop.
 
 ## Animatable Properties
 
@@ -160,15 +160,9 @@ State-based animations:
 
 ```tsx
 <Button
-  animation="fast"
-  hoverStyle={{
-    scale: 1.05,
-    backgroundColor: '$blue9',
-  }}
-  pressStyle={{
-    scale: 0.95,
-    backgroundColor: '$blue11',
-  }}
+  transition="fast"
+  scale="1 hover:1.05 press:0.95"
+  backgroundColor="background hover:blue-400 press:blue-600"
 />
 ```
 
@@ -176,7 +170,7 @@ State-based animations:
 
 ```tsx
 const AnimatedCard = styled(View, {
-  animation: 'medium',
+  transition: 'medium',
 
   variants: {
     visible: {
@@ -201,9 +195,8 @@ const AnimatedCard = styled(View, {
 
 ```tsx
 <View
-  animation="medium"
-  enterStyle={{ opacity: 0 }}
-  opacity={1}
+  transition="medium"
+  opacity="1 enter:0"
 />
 ```
 
@@ -211,10 +204,9 @@ const AnimatedCard = styled(View, {
 
 ```tsx
 <View
-  animation="fast"
-  enterStyle={{ opacity: 0, y: 20 }}
-  opacity={1}
-  y={0}
+  transition="fast"
+  opacity="1 enter:0"
+  y="0 enter:20px"
 />
 ```
 
@@ -222,10 +214,9 @@ const AnimatedCard = styled(View, {
 
 ```tsx
 <View
-  animation="bouncy"
-  enterStyle={{ opacity: 0, scale: 0.8 }}
-  opacity={1}
-  scale={1}
+  transition="bouncy"
+  opacity="1 enter:0"
+  scale="1 enter:0.8"
 />
 ```
 
@@ -233,10 +224,8 @@ const AnimatedCard = styled(View, {
 
 ```tsx
 <Dialog.Overlay
-  animation="fast"
-  enterStyle={{ opacity: 0 }}
-  exitStyle={{ opacity: 0 }}
-  opacity={0.5}
+  transition="fast"
+  opacity="0.5 enter:0 exit:0"
 />
 ```
 
@@ -244,19 +233,17 @@ const AnimatedCard = styled(View, {
 
 ```tsx
 <Dialog.Content
-  animation={['medium', { opacity: { overshootClamping: true } }]}
-  enterStyle={{ opacity: 0, y: -20, scale: 0.95 }}
-  exitStyle={{ opacity: 0, y: 10, scale: 0.98 }}
-  opacity={1}
-  y={0}
-  scale={1}
+  transition={{ preset: 'medium', opacity: 'fast' }}
+  opacity="1 enter:0 exit:0"
+  y="0 enter:-20px exit:10px"
+  scale="1 enter:0.95 exit:0.98"
 />
 ```
 
 ## Tips
 
 1. **Always provide key** in AnimatePresence children
-2. **Set final values** on the component, not just in enterStyle
+2. **Put the base value first** in every clause-bearing style string
 3. **Use overshootClamping** for opacity to prevent negative values
 4. **CSS driver** doesn't support spring physics - use easing strings
 5. **Test on device** - animation feel differs between web and native

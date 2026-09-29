@@ -17,18 +17,23 @@
  ------------------------------------------------------------------- */
 
 import type { IconProps } from "@tamagui/helpers-icon";
-import { themed } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
 import type { SvgProps } from "react-native-svg";
 import { Circle, Path, Svg } from "react-native-svg";
+import type { ThemedIconBodyProps } from "./themed-icon";
+import { themedIcon } from "./themed-icon";
 export type CheckCircleProps = IconProps & {
   isComplete?: boolean;
 };
 
-const Icon = ({ isComplete = true, size = 24, ...props }: CheckCircleProps) => {
-  const color = useCurrentColor((props.color || "$onAccent") as any);
+const Icon = ({
+  isComplete = true,
+  size = 24,
+  ...props
+}: ThemedIconBodyProps<CheckCircleProps>) => {
+  const color = useCurrentColor((props.color || "onAccent") as any);
 
   const diameter = 24;
   const strokeWidth = 2;
@@ -140,4 +145,4 @@ const Icon = ({ isComplete = true, size = 24, ...props }: CheckCircleProps) => {
 
 Icon.displayName = "CheckCircle";
 
-export const CheckCircle = memo<CheckCircleProps>(themed(Icon));
+export const CheckCircle = memo<CheckCircleProps>(themedIcon(Icon));

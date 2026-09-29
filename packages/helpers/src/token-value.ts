@@ -25,6 +25,12 @@
  */
 export type TokenValue = number | string;
 
+/**
+ * A helper input: a {@link TokenValue} or Tamagui v3's boolean `true`, which
+ * selects the default size.
+ */
+export type TokenInput = TokenValue | boolean;
+
 const ARBITRARY_DIMENSION = /^(-?(?:\d+(?:\.\d*)?|\.\d+))(px|rem)?$/i;
 const REM_IN_PIXELS = 16;
 
@@ -32,11 +38,18 @@ const REM_IN_PIXELS = 16;
  * Normalize a Tailwind-style token value for Tamagui's token lookup.
  *
  * Bare keys are token names, never pixel values: `"4"` resolves the `4`
- * token. A literal length must use Tailwind's explicit bracket form.
+ * token. A literal length must use Tailwind's explicit bracket form. Tamagui
+ * v3 keys its token maps without the `$` sigil, so a legacy `$`-prefixed key
+ * is returned bare.
  */
-export function normalizeTokenValue(value: TokenValue): TokenValue {
+export function normalizeTokenValue(value: TokenInput): TokenValue {
   if (typeof value === "number") {
     return value;
+  }
+
+  // Tamagui v3 spells the default size as the boolean `true`.
+  if (typeof value === "boolean") {
+    return "true";
   }
 
   const arbitraryValue = /^\[(.*)\]$/.exec(value.trim())?.[1]?.trim();
@@ -51,5 +64,5 @@ export function normalizeTokenValue(value: TokenValue): TokenValue {
     }
   }
 
-  return value.startsWith("$") ? value : `$${value}`;
+  return value.startsWith("$") ? value.slice(1) : value;
 }

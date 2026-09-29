@@ -5,10 +5,10 @@ import { normalizeTokenValue } from "../src/token-value";
 
 describe("normalizeTokenValue", () => {
   it.each([
-    ["4", "$4"],
-    ["px", "$px"],
-    ["-2", "$-2"],
-    ["$sm", "$sm"],
+    ["4", "4"],
+    ["px", "px"],
+    ["-2", "-2"],
+    ["$sm", "sm"],
     ["[12px]", 12],
     ["[1.5rem]", 24]
   ])("normalizes %s to %s", (value, expected) => {
@@ -32,5 +32,15 @@ describe("getSpaced", () => {
 
   it("uses the relative token resolver when shifting", () => {
     expect(getSpaced("$sm", { shift: 1 })).toBe(2);
+  });
+});
+
+describe("default size", () => {
+  it("normalizes the v3 boolean default to the `true` key", () => {
+    expect(normalizeTokenValue(true)).toBe("true");
+  });
+
+  it("resolves an unknown size key to the smallest token like v2", () => {
+    expect(getSpaced("true")).toBe(0);
   });
 });

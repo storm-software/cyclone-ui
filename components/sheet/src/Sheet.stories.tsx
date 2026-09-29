@@ -37,7 +37,8 @@ const meta: Meta<typeof Sheet> = {
         </Button>
         <Sheet {...props} open={open} onOpenChange={setOpen}>
           <Sheet.Overlay />
-          <Sheet.Frame padding="$5xl" gap="$3xl">
+          <Sheet.Container padding="5xl" gap="3xl">
+            <Sheet.Background />
             <Sheet.Handle />
             <Sheet.Heading>Sheet heading</Sheet.Heading>
             <Sheet.Body>{children}</Sheet.Body>
@@ -46,7 +47,7 @@ const meta: Meta<typeof Sheet> = {
                 <Button.Text>Close</Button.Text>
               </Button>
             </Sheet.Footer>
-          </Sheet.Frame>
+          </Sheet.Container>
         </Sheet>
       </>
     );
@@ -103,17 +104,18 @@ export const Scrollable: Story = {
         </Button>
         <Sheet {...props} open={open} onOpenChange={setOpen} snapPoints={[90]}>
           <Sheet.Overlay />
-          <Sheet.Frame>
+          <Sheet.Container>
+            <Sheet.Background />
             <Sheet.Handle />
-            <Sheet.ScrollView padding="$5xl">
-              <YStack gap="$3xl">
+            <Sheet.ScrollView padding="5xl">
+              <YStack gap="3xl">
                 <Sheet.Heading>Scrollable sheet</Sheet.Heading>
                 {Array.from({ length: 64 }, (_, index) => (
                   <Sheet.Body key={index}>{children}</Sheet.Body>
                 ))}
               </YStack>
             </Sheet.ScrollView>
-          </Sheet.Frame>
+          </Sheet.Container>
         </Sheet>
       </>
     );

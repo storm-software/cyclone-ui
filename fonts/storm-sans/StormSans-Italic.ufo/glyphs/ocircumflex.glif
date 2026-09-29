@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ocircumflex" format="2">
+  <advance width="550"/>
+  <unicode hex="00F4"/>
+  <anchor x="233.0" y="0.0" name="bottom"/>
+  <outline>
+    <component base="o"/>
+    <component base="circumflex" xOffset="28"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $o$, 0, 0
+OFFSET[R], $circumflex$, 28, 0
+CALL[], 23, 24, 88
+SVTCA[Y]
+CALL[], 49, 11, 1, 1, 62, 86
+SHC[2], 2
+CALL[], 9
+CALL[], 50, 46, 4, 29, 15, 87
+SVTCA[X]
+SHC[2], 2
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

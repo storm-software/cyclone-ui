@@ -16,15 +16,15 @@
 
  ------------------------------------------------------------------- */
 
-import type { VariantSpreadExtras } from "@tamagui/core";
-import { getVariableValue } from "@tamagui/core";
+import { getVariableValue, styled } from "@tamagui/core";
 import { getFontSized } from "./get-font-sized";
+import type { StyleEnv } from "./types";
 
 /** The public size contract shared by form controls and field state. */
 export type FormControlSize = "sm" | "md" | "lg";
 
-const controlTokens = { sm: "$8xl", md: "$10xl", lg: "$12xl" } as const;
-const compactTokens = { sm: "$4xl", md: "$6xl", lg: "$7xl" } as const;
+const controlTokens = { sm: "8xl", md: "10xl", lg: "12xl" } as const;
+const compactTokens = { sm: "4xl", md: "6xl", lg: "7xl" } as const;
 
 export const getFormSizeToken = (
   size: FormControlSize = "md",
@@ -43,16 +43,16 @@ export const getFormFontScale = (size: FormControlSize = "md") =>
  * Retain each typography role's medium font, weight and line height.
  *
  * @param size - The form control size.
- * @param extras - Additional variant spread extras.
+ * @param env - The `styled.dynamic` environment.
  * @param token - The font size token to use.
  * @returns The computed font size style object.
  */
 export const getFormFontSize = (
   size: FormControlSize,
-  extras: VariantSpreadExtras<any>,
-  token = "$true"
+  env: StyleEnv,
+  token = "true"
 ): ReturnType<typeof getFontSized> => {
-  const style = getFontSized(token, extras) ?? {};
+  const style = getFontSized(token, env) ?? {};
   if (size === "md") return style;
   const scale = getFormFontScale(size);
 
@@ -61,17 +61,22 @@ export const getFormFontSize = (
     ...(style.fontSize !== undefined
       ? { fontSize: Number(getVariableValue(style.fontSize)) * scale }
       : {}),
+    // Tamagui v3 reads a numeric `lineHeight` as a ratio; keep the pixel value.
     ...(style.lineHeight !== undefined
-      ? { lineHeight: Number(getVariableValue(style.lineHeight)) * scale }
+      ? { lineHeight: `${Number(getVariableValue(style.lineHeight)) * scale}px` }
       : {})
   };
 };
 
-/** Explicit variants keep arbitrary Tamagui tokens out of the public API. */
-export const formSizeVariants = <T>(
-  style: (size: FormControlSize, extras: VariantSpreadExtras<any>) => T
-) => ({
-  sm: (_: "sm", extras: VariantSpreadExtras<any>) => style("sm", extras),
-  md: (_: "md", extras: VariantSpreadExtras<any>) => style("md", extras),
-  lg: (_: "lg", extras: VariantSpreadExtras<any>) => style("lg", extras)
-});
+/** The `styled.dynamic` variant produced by {@link formSizeVariants}. */
+export type FormSizeVariant = ReturnType<
+  typeof styled.dynamic<FormControlSize>
+>;
+
+/** A typed dynamic variant keeps arbitrary Tamagui tokens out of the public API. */
+export const formSizeVariants = <T extends object>(
+  style: (size: FormControlSize, env: StyleEnv) => T | null | undefined
+): FormSizeVariant =>
+  styled.dynamic<FormControlSize>((size, env) =>
+    size === "sm" || size === "md" || size === "lg" ? style(size, env) : undefined
+  );

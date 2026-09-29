@@ -20,9 +20,9 @@ import { Field } from "@cyclone-ui/field";
 import { FilePicker } from "@cyclone-ui/file-picker";
 import type { ClientFileResult } from "@cyclone-ui/state";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
-import { withStaticProperties } from "@tamagui/core";
+import { createStyledHOC, withStaticProperties } from "@tamagui/core";
 
-const FilePickerFieldGroup = Field.styleable((props, forwardedRef) => {
+const FilePickerFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
   const { children, ...rest } = props;
 
   return (
@@ -32,7 +32,7 @@ const FilePickerFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
-const FilePickerFieldControl = FilePicker.styleable(
+const FilePickerFieldControl = createStyledHOC(FilePicker, 
   ({ children, ...props }, forwardedRef) => {
     const { change } = useFieldActions();
 

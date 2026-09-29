@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="macron" format="2">
+  <advance width="600"/>
+  <unicode hex="00AF"/>
+  <anchor x="300.0" y="540.0" name="_top"/>
+  <outline>
+    <contour>
+      <point x="147" y="624" type="line"/>
+      <point x="453" y="624" type="line"/>
+      <point x="453" y="727" type="line"/>
+      <point x="147" y="727" type="line"/>
+    </contour>
+  </outline>
+</glyph>

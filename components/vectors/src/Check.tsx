@@ -17,7 +17,6 @@
  ------------------------------------------------------------------- */
 
 import type { IconProps } from "@tamagui/helpers-icon";
-import { themed } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import {
   animate,
@@ -29,6 +28,8 @@ import { memo, useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import type { SvgProps } from "react-native-svg";
 import { Path, Svg } from "react-native-svg";
+import type { ThemedIconBodyProps } from "./themed-icon";
+import { themedIcon } from "./themed-icon";
 export type CheckProps = IconProps & {
   isComplete?: boolean;
 };
@@ -39,13 +40,13 @@ const Icon = ({
   strokeWidth = 3,
   style,
   ...props
-}: CheckProps) => {
-  const color = useCurrentColor((props.color || "$onAccent") as any);
+}: ThemedIconBodyProps<CheckProps>) => {
+  const color = useCurrentColor((props.color || "onAccent") as any);
 
   const motionLine1 = useMotionValue(0);
   const playbackLine1 = animate(motionLine1, 6, {
     type: "spring",
-    duration: 0.4,
+    duration: 0.3,
     bounce: 0
   });
 
@@ -93,7 +94,7 @@ const Icon = ({
 
         playbackLine2x.play();
         playbackLine2y.play();
-      }, 200);
+      }, 315);
     } else {
       playbackLine1.stop();
       motionLine1.set(0);
@@ -119,7 +120,7 @@ const Icon = ({
     <Svg
       width={size}
       height={size}
-      viewBox="-3 -2 20 21"
+      viewBox="-2 -1 20 18"
       fill="none"
       stroke={color}
       strokeLinecap="round"
@@ -141,4 +142,4 @@ const Icon = ({
 
 Icon.displayName = "Check";
 
-export const Check = memo<CheckProps>(themed(Icon));
+export const Check = memo<CheckProps>(themedIcon(Icon));

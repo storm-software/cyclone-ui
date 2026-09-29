@@ -26,36 +26,31 @@ import { NavigationHeader } from "./NavigationHeader";
 
 const StoryCanvas = styled(View, {
   minHeight: "100vh",
-  backgroundColor: "$surfaceCanvas"
+  backgroundColor: "surfaceCanvas"
 });
 
 const StoryContent = styled(View, {
   width: "100%",
   maxWidth: 1200,
   marginHorizontal: "auto",
-  paddingHorizontal: "$4xl",
-  paddingVertical: "$10xl",
-  gap: "$10xl",
-
-  "$max-md": {
-    paddingHorizontal: "$2xl"
-  }
+  paddingHorizontal: "4xl max-md:2xl",
+  paddingVertical: "10xl",
+  gap: "10xl"
 });
 
 const StorySection = styled(View, {
   minHeight: 320,
-  padding: "$7xl",
+  padding: "7xl",
   justifyContent: "center",
-  gap: "$xl",
-  backgroundColor: "$surfaceCanvas",
-  borderRadius: "$lg",
+  gap: "xl",
+  backgroundColor: "surfaceCanvas",
+  borderRadius: "lg",
   borderWidth: 1,
-  borderColor: "$hairline",
-
+  borderColor: "hairline",
   variants: {
     light: {
       true: {
-        backgroundColor: "$accent"
+        backgroundColor: "accent"
       }
     }
   }
@@ -66,37 +61,37 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
     {children}
     <StoryContent>
       <StorySection id="hero">
-        <SizableText color="$accent" fontSize="$10xl" fontWeight="$bold">
+        <SizableText color="accent" fontSize="10xl" fontWeight="bold">
           Build what matters
         </SizableText>
-        <SizableText color="$inkBody" fontSize="$lg" maxWidth={640}>
+        <SizableText color="inkBody" fontSize="lg" maxWidth={640}>
           Explore ideas, tools, and practical guidance for creating useful
           products with a thoughtful approach.
         </SizableText>
       </StorySection>
       <StorySection id="research" light={true}>
-        <SizableText color="$accent" fontSize="$7xl" fontWeight="$bold">
+        <SizableText color="accent" fontSize="7xl" fontWeight="bold">
           Research and discovery
         </SizableText>
-        <SizableText color="$inkBody" fontSize="$md" maxWidth={640}>
+        <SizableText color="inkBody" fontSize="md" maxWidth={640}>
           Learn from new perspectives and turn early questions into clear
           directions through careful research and experimentation.
         </SizableText>
       </StorySection>
       <StorySection id="products">
-        <SizableText color="$accent" fontSize="$7xl" fontWeight="$bold">
+        <SizableText color="accent" fontSize="7xl" fontWeight="bold">
           Products for every team
         </SizableText>
-        <SizableText color="$inkBody" fontSize="$md" maxWidth={640}>
+        <SizableText color="inkBody" fontSize="md" maxWidth={640}>
           Flexible tools help teams move from a first sketch to a finished
           experience while keeping the important details in view.
         </SizableText>
       </StorySection>
       <StorySection id="company">
-        <SizableText color="$accent" fontSize="$7xl" fontWeight="$bold">
+        <SizableText color="accent" fontSize="7xl" fontWeight="bold">
           A long-term perspective
         </SizableText>
-        <SizableText color="$inkBody" fontSize="$md" maxWidth={640}>
+        <SizableText color="inkBody" fontSize="md" maxWidth={640}>
           We share what we learn, listen to the people who use our work, and
           keep improving the systems that support them.
         </SizableText>
@@ -106,17 +101,17 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
 );
 
 const StoryLogo = () => (
-  <View alignItems="center" flexDirection="row" gap="$2xl">
+  <View alignItems="center" flexDirection="row" gap="2xl">
     <View
-      width="$8xl"
-      height="$8xl"
+      width="8xl"
+      height="8xl"
       alignItems="center"
       justifyContent="center"
-      backgroundColor="$accent"
-      borderRadius="$full">
-      <Zap size={16} color="$muted" fill="$muted" />
+      backgroundColor="accent"
+      borderRadius="full">
+      <Zap size={16} color="muted" fill="muted" />
     </View>
-    <SizableText color="$accent" fontWeight="$bold" fontSize="$xl">
+    <SizableText color="accent" fontWeight="bold" fontSize="xl">
       Storm
     </SizableText>
   </View>
@@ -127,10 +122,9 @@ const storyActions = (
     <Button
       variant="ghost"
       ghostOpacity={0.6}
-      bordered={false}
       flexGrow={0}
       width={96}
-      size="$10xl">
+      size="10xl">
       <Button.Text>Log in</Button.Text>
     </Button>
     <Button
@@ -138,7 +132,7 @@ const storyActions = (
       rounded={true}
       flexGrow={0}
       width={128}
-      size="$10xl">
+      size="10xl">
       <Button.Text>Get started</Button.Text>
     </Button>
   </>
@@ -272,10 +266,9 @@ export const SignedIn: Story = {
           <Button
             aria-label="Open profile"
             variant="ghost"
-            bordered={false}
             circular={true}
             flexGrow={0}
-            size="$10xl">
+            size="10xl">
             <Button.Icon>
               <UserRound aria-hidden={true} />
             </Button.Icon>

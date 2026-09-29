@@ -58,8 +58,8 @@ try {
   }
 
   proc =
-    $`pnpm nx run-many --target=build --projects=${projects} --configuration=${configuration} --outputStyle=dynamic-legacy --parallel=5`.timeout(
-      `${15 * 60}s`
+    $`pnpm nx run-many --target=build --projects=${projects} --configuration=${configuration} --outputStyle=dynamic-legacy --parallel=8`.timeout(
+      `${30 * 60}s`
     );
   proc.stdout.on("data", data => {
     echo`${data}`;

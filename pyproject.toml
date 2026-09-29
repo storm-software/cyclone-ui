@@ -1,0 +1,14 @@
+[project]
+name = "cyclone-ui"
+version = "0.0.0"
+description = "Python tooling for the Cyclone UI monorepo (font builds via fontmake)."
+# Matches the interpreter provided by storm-ops/devenv-modules/python (pkgs.python312).
+requires-python = ">=3.12"
+dependencies = [
+  # https://github.com/googlefonts/fontmake — compiles .glyphs/.designspace/.ufo sources into OTF/TTF/variable binaries.
+  "fontmake[json,lxml,pathops,repacker]>=3.12.1",
+]
+
+[tool.uv]
+# Tooling-only workspace; not an installable Python package.
+package = false

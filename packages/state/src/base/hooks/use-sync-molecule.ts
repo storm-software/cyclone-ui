@@ -20,9 +20,10 @@
 /* eslint-disable react-hooks/rules-of-hooks -- jotai atom maps require per-key hook calls */
 /* eslint-disable react/rules-of-hooks -- jotai atom maps require per-key hook calls */
 
+import { isEqual } from "@stryke/helpers/is-equal";
 import type { SetStateAction, WritableAtom } from "jotai";
 import { useAtomValue, useSetAtom } from "jotai";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import type { JotaiStore, WritableAtomRecord } from "../../types";
 import { isAtom } from "../utilities/is-atom";
 
@@ -32,7 +33,25 @@ export type UseSyncAtoms<T> = (
 ) => void;
 
 /**
+ * Keep the previous reference while `value` is deeply equal to it, so callers
+ * passing a fresh object literal each render do not re-trigger effects.
+ */
+const useDeepStable = <T>(value: T): T => {
+  const ref = useRef(value);
+  if (!isEqual(ref.current, value)) {
+    ref.current = value;
+  }
+
+  return ref.current;
+};
+
+/**
  * Update atoms with new values on changes.
+ *
+ * @remarks
+ * Values are compared deeply, so a provider that re-renders with equivalent
+ * `initialState` does not write to its atoms again. Without this, two
+ * providers sharing a molecule scope overwrite each other on every render.
  */
 export const useSyncMolecule = <T extends object>(
   atoms: WritableAtomRecord<T>,
@@ -44,9 +63,14 @@ export const useSyncMolecule = <T extends object>(
     if (isAtom(value)) {
       value = useAtomValue(value);
     }
+    value = useDeepStable(value);
 
     const setAtom = useSetAtom(
-      atoms[key] as WritableAtom<T[keyof T], [SetStateAction<T[keyof T]>], void>,
+      atoms[key] as WritableAtom<
+        T[keyof T],
+        [SetStateAction<T[keyof T]>],
+        void
+      >,
       { store }
     );
     useEffect(() => {

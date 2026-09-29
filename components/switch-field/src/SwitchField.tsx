@@ -19,10 +19,10 @@
 import { Field } from "@cyclone-ui/field";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
 import { Switch } from "@cyclone-ui/switch";
-import { withStaticProperties } from "@tamagui/core";
+import { createStyledHOC, withStaticProperties } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
 
-const SwitchFieldGroup = Field.styleable((props, forwardedRef) => {
+const SwitchFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
   const { children, ...rest } = props;
 
   return (
@@ -32,13 +32,14 @@ const SwitchFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
-const SwitchFieldLabel = Field.Label.styleable(
+const SwitchFieldLabel = createStyledHOC(
+  Field.Label,
   ({ children, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const disabled = field.disabled.get();
 
     return (
-      <XStack gap="$xs" alignContent="center">
+      <XStack gap="xs" alignContent="center">
         <Field.Label
           ref={forwardedRef}
           paddingBottom={0}
@@ -53,7 +54,8 @@ const SwitchFieldLabel = Field.Label.styleable(
   }
 );
 
-const SwitchFieldControl = Switch.styleable(
+const SwitchFieldControl = createStyledHOC(
+  Switch,
   ({ children, ...props }, forwardedRef) => {
     const { focus, change, blur } = useFieldActions<boolean>();
 

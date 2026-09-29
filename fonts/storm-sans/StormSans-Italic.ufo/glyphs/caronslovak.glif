@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="caronslovak" format="2">
+  <advance width="593"/>
+  <unicode hex="02BC"/>
+  <anchor x="290.0" y="740.0" name="_topright"/>
+  <outline>
+    <contour>
+      <point x="387" y="740" type="line"/>
+      <point x="294" y="740" type="line"/>
+      <point x="259" y="555" type="line"/>
+      <point x="312" y="555" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(1)
+ResYDist(1,0)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

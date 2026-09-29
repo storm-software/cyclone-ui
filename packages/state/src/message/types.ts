@@ -16,6 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import type { ToasterProps } from "@tamagui/toast/v2";
+import type { ToastRootProps } from "@tamagui/toast";
 
-export type BaseMessageViewportProps = ToasterProps;
+export type BaseMessageViewportProps = Partial<ToastRootProps>;

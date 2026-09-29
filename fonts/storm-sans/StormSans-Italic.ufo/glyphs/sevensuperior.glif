@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sevensuperior" format="2">
+  <advance width="344"/>
+  <unicode hex="2077"/>
+  <outline>
+    <contour>
+      <point x="174" y="329" type="line"/>
+      <point x="371" y="644" type="line"/>
+      <point x="382" y="698" type="line"/>
+      <point x="111" y="698" type="line"/>
+      <point x="87" y="579" type="line"/>
+      <point x="140" y="579" type="line"/>
+      <point x="154" y="649" type="line"/>
+      <point x="309" y="649" type="line"/>
+      <point x="106" y="329" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(0,153)
+YDelta(0,1@17)
+YDelta(0,1@28)
+YDelta(0,1@41)
+YDelta(0,-1@45)
+ResYAnchor(6,151)
+ResYDist(6,3)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

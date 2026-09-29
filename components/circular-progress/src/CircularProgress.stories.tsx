@@ -76,7 +76,7 @@ export const ExtraLarge: Story = {
 
 export const DataColor: Story = {
   args: {
-    color: "$dataPinkEmphasis"
+    color: "dataPinkEmphasis"
   }
 };
 

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="caron.case" format="2">
+  <advance width="593"/>
+  <anchor x="290.0" y="698.0" name="_top"/>
+  <outline>
+    <contour>
+      <point x="354" y="769" type="line"/>
+      <point x="493" y="912" type="line"/>
+      <point x="452" y="944" type="line"/>
+      <point x="312" y="827" type="line"/>
+      <point x="222" y="943" type="line"/>
+      <point x="178" y="912" type="line"/>
+      <point x="260" y="769" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(0)
+ResYDist(0,4)
+ResYDist(4,5)
+YShift(5,3)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

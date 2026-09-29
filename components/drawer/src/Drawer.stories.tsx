@@ -37,7 +37,7 @@ const meta: Meta<typeof Drawer> = {
         </Button>
         <Drawer {...props} open={open} onOpenChange={setOpen}>
           <Drawer.Overlay />
-          <Drawer.Frame padding="$5xl" gap="$3xl">
+          <Drawer.Frame padding="5xl" gap="3xl">
             <Drawer.Handle />
             <Drawer.Heading>Drawer heading</Drawer.Heading>
             <Drawer.Body>{children}</Drawer.Body>
@@ -126,8 +126,8 @@ export const Scrollable: Story = {
           <Drawer.Overlay />
           <Drawer.Frame>
             <Drawer.Handle />
-            <Drawer.ScrollView padding="$5xl">
-              <YStack gap="$3xl">
+            <Drawer.ScrollView padding="5xl">
+              <YStack gap="3xl">
                 <Drawer.Heading>Scrollable drawer</Drawer.Heading>
                 {Array.from({ length: 64 }, (_, index) => (
                   <Drawer.Body key={index}>{children}</Drawer.Body>

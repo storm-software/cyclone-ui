@@ -21,7 +21,12 @@ import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { Link } from "@cyclone-ui/link";
 import { BackgroundNoise } from "@cyclone-ui/vectors";
 import type { GetProps } from "@tamagui/core";
-import { styled, View, withStaticProperties } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { createContext, use, useId, useState } from "react";
 import { FooterTerrain } from "./FooterTerrain";
 
@@ -34,242 +39,175 @@ const FooterLinkHoverContext =
   createContext<FooterLinkHoverContextValue | null>(null);
 
 const FooterFrame = styled(View, {
-  name: "Footer",
+  displayName: "Footer",
   render: "footer",
-
   position: "relative",
   width: "100%",
   overflow: "hidden",
-  backgroundColor: "$muted",
+  backgroundColor: "muted",
   borderTopWidth: 1,
-  borderTopColor: "$hairline"
+  borderTopColor: "hairline"
 });
 
 const FooterContainer = styled(View, {
-  name: "FooterContainer",
-
+  displayName: "FooterContainer",
   position: "relative",
-  zIndex: "$10",
+  zIndex: "10",
   width: "100%",
   maxWidth: 1440,
   marginHorizontal: "auto",
-  paddingTop: 300,
-  paddingHorizontal: "$4xl",
-  paddingBottom: "$7xl",
-  gap: "$10xl",
-
-  "$max-md": {
-    paddingTop: 160,
-    paddingHorizontal: "$2xl",
-    paddingBottom: "$5xl",
-    gap: "$10xl"
-  }
+  paddingTop: "300px max-md:160px",
+  paddingHorizontal: "4xl max-md:2xl",
+  paddingBottom: "7xl max-md:5xl",
+  gap: "10xl max-md:10xl"
 });
 
 const FooterMain = styled(View, {
-  name: "FooterMain",
-
+  displayName: "FooterMain",
   width: "100%",
-  flexDirection: "row",
+  flexDirection: "row max-md:column",
   alignItems: "flex-start",
   justifyContent: "space-between",
-  gap: "$7xl",
-
-  "$max-md": {
-    flexDirection: "column",
-    gap: "$10xl"
-  }
+  gap: "7xl max-md:10xl"
 });
 
 const FooterIntroduction = styled(View, {
-  name: "FooterIntroduction",
-
-  flexBasis: 0,
+  displayName: "FooterIntroduction",
+  flexBasis: "0px max-md:auto",
   flexGrow: 1,
   minWidth: 0,
-  maxWidth: 440,
+  maxWidth: "440px max-md:none",
   flexShrink: 1,
-  gap: "$5xl",
-
-  "$max-md": {
-    flexBasis: "auto",
-    width: "100%",
-    maxWidth: "none",
-    gap: "$6xl"
-  }
+  gap: "5xl max-md:6xl",
+  width: "max-md:100%"
 });
 
 const FooterStatement = styled(HeadingSmallText, {
-  name: "FooterStatement",
+  displayName: "FooterStatement",
   render: "h2",
-
   margin: 0,
-  color: "$accent",
+  color: "accent",
   textTransform: "uppercase",
   letterSpacing: 2
 });
 
 const FooterDescription = styled(BodyText, {
-  name: "FooterDescription",
+  displayName: "FooterDescription",
   render: "p",
-
   maxWidth: 560,
   margin: 0,
-  color: "$accent",
-  variant: "md",
+  color: "accent",
   opacity: 0.85
 });
 
 const FooterAction = styled(View, {
-  name: "FooterAction",
-
-  flexBasis: 0,
+  displayName: "FooterAction",
+  flexBasis: "0px max-md:auto",
   flexGrow: 1,
   minWidth: 0,
-  alignItems: "center",
-
-  "$max-md": {
-    flexBasis: "auto",
-    width: "100%",
-    alignItems: "flex-start"
-  }
+  alignItems: "center max-md:flex-start",
+  width: "max-md:100%"
 });
 
 const FooterNavigation = styled(View, {
-  name: "FooterNavigation",
+  displayName: "FooterNavigation",
   render: "nav",
-
-  flexBasis: 0,
+  flexBasis: "0px max-md:auto",
   flexGrow: 1,
   minWidth: 0,
-  maxWidth: 440,
+  maxWidth: "440px max-md:none",
   flexDirection: "row",
   flexWrap: "wrap",
   alignItems: "flex-start",
-  justifyContent: "space-between",
-  gap: "$6xl",
-
-  "$max-md": {
-    width: "100%",
-    maxWidth: "none",
-    flexBasis: "auto",
-    justifyContent: "flex-start",
-    gap: "$8xl"
-  }
+  justifyContent: "space-between max-md:flex-start",
+  gap: "6xl max-md:8xl",
+  width: "max-md:100%"
 });
 
 const FooterSectionFrame = styled(View, {
-  name: "FooterSection",
-
-  minWidth: 120,
-  flexBasis: 120,
+  displayName: "FooterSection",
+  minWidth: "120px max-md:132px",
+  flexBasis: "120px max-md:132px",
   flexGrow: 1,
-  gap: "$4xl",
-
-  "$max-md": {
-    minWidth: 132,
-    flexBasis: 132
-  }
+  gap: "4xl"
 });
 
 const FooterSectionTitle = styled(HeadingSmallText, {
-  name: "FooterSectionTitle",
+  displayName: "FooterSectionTitle",
   render: "h3",
-
   margin: 0,
-  color: "$accent",
+  color: "accent",
   textTransform: "uppercase",
   letterSpacing: 2
 });
 
 const FooterSectionLinks = styled(View, {
-  name: "FooterSectionLinks",
-
+  displayName: "FooterSectionLinks",
   alignItems: "flex-start",
-  gap: "$2xl"
+  gap: "2xl"
 });
 
 const FooterLink = styled(Link, {
-  name: "FooterLink",
-
+  displayName: "FooterLink",
   width: "fit-content",
-  color: "$accent",
-  opacity: 0.85,
+  color: "accent hover:accentActive focus-visible:accentActive",
+  opacity: "0.85 hover:1 focus-visible:1",
   textDecorationLine: "none",
-
-  hoverStyle: {
-    x: 3,
-    color: "$accentActive",
-    opacity: 1
-  },
-
-  focusVisibleStyle: {
-    color: "$accentActive",
-    opacity: 1,
-    outlineColor: "$accent",
-    outlineOffset: 3,
-    outlineStyle: "solid",
-    outlineWidth: 2
-  }
+  x: "hover:3px",
+  outlineColor: "focus-visible:accent",
+  outlineOffset: "focus-visible:3px",
+  outlineStyle: "focus-visible:solid",
+  outlineWidth: "focus-visible:2px"
 });
 
 const FooterRail = styled(View, {
-  name: "FooterRail",
-
+  displayName: "FooterRail",
   width: "100%",
-  paddingTop: "$5xl",
-  flexDirection: "row",
-  alignItems: "center",
+  paddingTop: "5xl",
+  flexDirection: "row max-md:column",
+  alignItems: "center max-md:flex-start",
   justifyContent: "space-between",
-  gap: "$5xl",
-
-  "$max-md": {
-    alignItems: "flex-start",
-    flexDirection: "column"
-  }
+  gap: "5xl"
 });
 
 const FooterBrand = styled(View, {
-  name: "FooterBrand",
-
+  displayName: "FooterBrand",
   minWidth: 0,
   alignItems: "center",
   flexDirection: "row",
   flexWrap: "wrap",
-  gap: "$5xl"
+  gap: "5xl"
 });
 
 const FooterCopyright = styled(BodyText, {
-  name: "FooterCopyright",
+  displayName: "FooterCopyright",
   render: "span",
-
-  color: "$accent",
-  fontSize: "$md",
+  color: "accent",
+  fontSize: "md",
   opacity: 0.85
 });
 
 const FooterLegalNavigation = styled(View, {
-  name: "FooterLegalNavigation",
+  displayName: "FooterLegalNavigation",
   render: "nav",
-
   alignItems: "center",
   flexDirection: "row",
   flexWrap: "wrap",
-  gap: "$5xl"
+  gap: "5xl"
 });
 
 const FooterBackgroundLogo = styled(View, {
-  name: "FooterBackgroundLogo",
-
+  displayName: "FooterBackgroundLogo",
   display: "flex",
   alignItems: "center",
   position: "absolute",
-  top: "$2xl",
-  zIndex: "$40",
-  paddingHorizontal: "$9xl"
+  top: "2xl",
+  zIndex: "40",
+  paddingHorizontal: "9xl"
 });
 
-const FooterBackgroundLogoImpl = FooterBackgroundLogo.styleable(
+const FooterBackgroundLogoImpl = createStyledHOC(
+  FooterBackgroundLogo,
   ({ children, ...props }, forwardedRef) => (
     <FooterBackgroundLogo ref={forwardedRef} {...props}>
       <View opacity={0.075} display="flex" alignItems="center">
@@ -277,17 +215,16 @@ const FooterBackgroundLogoImpl = FooterBackgroundLogo.styleable(
       </View>
     </FooterBackgroundLogo>
   ),
-  { staticConfig: { componentName: "FooterBackgroundLogo" } }
+  { displayName: "FooterBackgroundLogo" }
 );
 
 const FooterNoise = styled(View, {
-  name: "FooterNoise",
-
+  displayName: "FooterNoise",
   position: "absolute",
   inset: 0,
   width: "100%",
   height: "100%",
-  zIndex: "$30",
+  zIndex: "30",
   opacity: 0.025,
   pointerEvents: "none"
 });
@@ -315,7 +252,8 @@ export type FooterBrandProps = GetProps<typeof FooterBrand>;
 export type FooterCopyrightProps = GetProps<typeof FooterCopyright>;
 export type FooterLegalNavigationProps = GetProps<typeof FooterLegalNavigation>;
 
-const FooterLinkImpl = FooterLink.styleable(
+const FooterLinkImpl = createStyledHOC(
+  FooterLink,
   ({ children, onMouseEnter, onMouseLeave, ...props }, forwardedRef) => {
     const linkId = useId();
     const hoverContext = use(FooterLinkHoverContext);
@@ -328,9 +266,9 @@ const FooterLinkImpl = FooterLink.styleable(
         group={false}
         underline="none"
         {...props}
-        color={
-          hovered ? (active ? "$accentActive" : "$accentInactive") : undefined
-        }
+        {...(hovered && {
+          color: active ? "accentActive" : "accentInactive"
+        })}
         onMouseEnter={(event: any) => {
           onMouseEnter?.(event);
           hoverContext?.setHoveredLinkId(linkId);
@@ -343,18 +281,28 @@ const FooterLinkImpl = FooterLink.styleable(
       </FooterLink>
     );
   },
-  { staticConfig: { componentName: "FooterLink" } }
+  { displayName: "FooterLink" }
 );
 
 const FooterRailLink = styled(FooterLinkImpl, {
-  name: "FooterRailLink",
-
-  underline: true,
-  fontSize: "$sm"
+  displayName: "FooterRailLink",
+  // v2 had `underline: true`, which matches no LinkText underline variant and
+  // so rendered without an underline (FooterLink sets `textDecorationLine:
+  // "none"`). v3 rejects the value; "none" keeps the rendered result.
+  underline: "none"
 });
 
-const FooterFrameImpl = FooterFrame.styleable<FooterProps>(
-  ({ children, animate = true, noise = true, ...props }, forwardedRef) => {
+const FooterFrameImpl = createStyledHOC(
+  FooterFrame,
+  (
+    {
+      children,
+      animate = true,
+      noise = true,
+      ...props
+    }: GetProps<typeof FooterFrame> & FooterProps,
+    forwardedRef
+  ) => {
     const [hoveredLinkId, setHoveredLinkId] = useState<string | null>(null);
 
     return (
@@ -372,7 +320,7 @@ const FooterFrameImpl = FooterFrame.styleable<FooterProps>(
       </FooterFrame>
     );
   },
-  { staticConfig: { componentName: "Footer" } }
+  { displayName: "Footer" }
 );
 
 export const Footer = withStaticProperties(FooterFrameImpl, {

@@ -41,8 +41,8 @@ export type DrawerScrollViewProps = SheetScrollViewProps;
 export type DrawerFooterProps = SheetFooterProps;
 
 const DrawerFrameImpl: FC<DrawerFrameProps> = ({
-  borderRadius = "$drawer",
-  borderColor = "$hairline",
+  borderRadius = "drawer",
+  borderColor = "hairline",
   ...props
 }) => (
   <Sheet.Frame
@@ -53,7 +53,7 @@ const DrawerFrameImpl: FC<DrawerFrameProps> = ({
     borderTopColor={borderColor}
     borderBottomColor={borderColor}
     borderWidth={1}
-    margin="$lg"
+    margin="lg"
     {...props}
   />
 );

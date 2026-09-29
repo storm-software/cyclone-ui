@@ -37,6 +37,7 @@ export default defineConfig({
   logo: "https://public.storm-cdn.com/cyclone-ui/assets/dark-logo.svg",
   verbose: true,
   splitThemes: true,
+  fontsPath: "fonts/dist",
   tokensPath: "packages/themes/src/tokens/**/*.json",
   componentsPath: ["components"],
   plugins: [
@@ -47,7 +48,7 @@ export default defineConfig({
     }),
     tamagui({
       animations: "motion",
-      defaultFont: "Space Grotesk",
+      defaultFont: "body",
       importConfig: "./default-config",
       outputPath: "packages/themes/src/tamagui/config.ts",
       target: "v3"

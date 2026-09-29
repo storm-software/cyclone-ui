@@ -9,7 +9,7 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc",
+    "outDir": "../../dist/out-tsc/components/visually-hidden",
     "tsBuildInfoFile": "../../dist/out-tsc/components/visually-hidden/tsconfig.tsbuildinfo"
   },
   "files": [],

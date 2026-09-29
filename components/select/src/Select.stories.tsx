@@ -16,17 +16,23 @@
 
  ------------------------------------------------------------------- */
 
-import { Field } from "@cyclone-ui/field";
+import { Field, type FieldProps } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Select } from "./Select";
 
-const meta: Meta<typeof Select> = {
+// Story args configure the wrapping `Field`, not the `Select` itself.
+type SelectStoryArgs = Omit<FieldProps<string>, "children" | "name">;
+
+const meta: Meta<SelectStoryArgs> = {
   title: "Base/Select",
   component: Select,
   tags: ["autodocs"],
-  render: ({ defaultValue, variant, ...props }: any) => (
-    <Form name="formName" defaultValues={{ selectName: defaultValue }}>
+  render: (
+    { defaultValue, variant, ...props }: any,
+    { id }: { id: string }
+  ) => (
+    <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
       <Field name="selectName" {...props} variant={variant}>
         <Field.Label>Label Text</Field.Label>
         <Select variant={variant} size={props.size}>
@@ -40,7 +46,7 @@ const meta: Meta<typeof Select> = {
                 key={option.value}
                 index={i}
                 value={option.value}
-                disabled={option.disabled}
+                disabled={option.disabled ?? false}
                 selected={false}>
                 {option.name}
               </Select.Items.Item>
@@ -50,11 +56,11 @@ const meta: Meta<typeof Select> = {
       </Field>
     </Form>
   )
-} satisfies Meta<typeof Select>;
+} satisfies Meta<SelectStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Select>;
+type Story = StoryObj<SelectStoryArgs>;
 
 const validation = (
   type:

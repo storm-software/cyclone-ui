@@ -70,19 +70,7 @@ const cacheSortedTokens: Map<
 > = new Map();
 
 export const getNearestToken = <
-  TToken extends
-    | number
-    | `$${string}`
-    | `$${number}`
-    | UnionableString
-    | `$${string}.${string}`
-    | `$${string}.${number}` =
-    | number
-    | `$${string}`
-    | `$${number}`
-    | UnionableString
-    | `$${string}.${string}`
-    | `$${string}.${number}`
+  TToken extends number | UnionableString = number | UnionableString
 >(
   value: number,
   type?: "size" | "space" | "zIndex" | "radius" | string,
@@ -92,13 +80,13 @@ export const getNearestToken = <
     // eslint-disable-next-line no-console
     console.warn("getNearestToken: type or tokensMap is required");
 
-    return "$true" as TToken;
+    return "true" as TToken;
   }
 
   let _type = type;
   if (!_type) {
     if (!tokensMap) {
-      return "$true" as TToken;
+      return "true" as TToken;
     }
 
     _type = tokensMapCacheKey(tokensMap);
@@ -114,12 +102,12 @@ export const getNearestToken = <
   if (!cacheSortedTokens.has(cacheSortedTokensKey)) {
     const tokens =
       tokensMap ??
-      (getTokens({ prefixed: true })[_type] as Record<
+      (getTokens()[_type as keyof ReturnType<typeof getTokens>] as Record<
         string,
         Variable<number>
       >);
     if (!tokens || Object.values(tokens).length === 0) {
-      return "$true" as TToken;
+      return "true" as TToken;
     }
 
     const deduplicated = Object.entries(tokens).reduce(
@@ -143,7 +131,7 @@ export const getNearestToken = <
 
   const sortedTokens = cacheSortedTokens.get(cacheSortedTokensKey);
   if (!sortedTokens) {
-    return "$true" as TToken;
+    return "true" as TToken;
   }
 
   const values = sortedTokens.map(token => token[1]);
@@ -154,7 +142,7 @@ export const getNearestToken = <
     sortedTokens.length <= index ||
     !sortedTokens[index]?.[0]
   ) {
-    return "$true" as TToken;
+    return "true" as TToken;
   }
 
   const result = sortedTokens[index][0];

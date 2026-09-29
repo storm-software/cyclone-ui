@@ -22,6 +22,9 @@
         "config": "tools/config/verdaccio.yml",
         "storage": "tmp/local-registry/storage"
       }
+    },
+    "generate-tokens": {
+      "dependsOn": ["fonts:build"]
     }
   }
 }

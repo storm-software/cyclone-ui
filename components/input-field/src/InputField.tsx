@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import type { GetProps } from "@tamagui/core";
 import {
   Field,
   useFieldShouldShowPlaceholder,
@@ -29,9 +30,14 @@ import {
 } from "@cyclone-ui/helpers";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
-import { Theme, useComposedRefs, withStaticProperties } from "@tamagui/core";
+import {
+  createStyledHOC,
+  Theme,
+  useComposedRefs,
+  withStaticProperties
+} from "@tamagui/core";
 import { X } from "@tamagui/lucide-icons-2";
-import type { FocusEvent, RefObject } from "react";
+import type { RefObject } from "react";
 import {
   createContext,
   use,
@@ -42,7 +48,10 @@ import {
   useState
 } from "react";
 
-const InputFieldPresentationContext = createContext({
+const InputFieldPresentationContext = createContext<{
+  hasStartIcon: boolean;
+  registerStartIcon: () => () => void;
+}>({
   hasStartIcon: false,
   registerStartIcon: () => () => undefined
 });
@@ -51,7 +60,7 @@ const InputFieldTextBoxContext = createContext<{
   inputElementRef: RefObject<HTMLInputElement | null>;
 } | null>(null);
 
-const InputFieldGroup = Field.styleable((props, forwardedRef) => {
+const InputFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
   const { children, variant = "floating", ...rest } = props;
   const [startIconCount, setStartIconCount] = useState(0);
   const registerStartIcon = useCallback(() => {
@@ -73,15 +82,15 @@ const InputFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
-const InputFieldLabel = Field.Label.styleable((props, forwardedRef) => {
+const InputFieldLabel = createStyledHOC(Field.Label, (props, forwardedRef) => {
   const field = FieldApi.use();
   const size = field.size.get() ?? "md";
   const { hasStartIcon } = use(InputFieldPresentationContext);
   const controlSize = getFormSizeToken(size);
   const floatingLabelLeft = hasStartIcon
-    ? getSpaced("$4xl") * getFormSizeScale(size) +
+    ? getSpaced("4xl") * getFormSizeScale(size) +
       getSized(controlSize, { shift: -2 }) +
-      getSpaced("$2xl") * 2 * getFormSizeScale(size)
+      getSpaced("2xl") * 2 * getFormSizeScale(size)
     : undefined;
 
   return (
@@ -93,21 +102,23 @@ const InputFieldLabel = Field.Label.styleable((props, forwardedRef) => {
   );
 });
 
-const InputFieldIcon = Field.Icon.styleable<{
+const InputFieldIcon = createStyledHOC(Field.Icon, ({ position, ...props }: GetProps<typeof Field.Icon> & {
   position?: "start" | "end";
-}>(({ position, ...props }, forwardedRef) => {
+}, forwardedRef) => {
   const { registerStartIcon } = use(InputFieldPresentationContext);
 
   useLayoutEffect(() => {
     if (position === "start") {
       return registerStartIcon();
     }
+
+    return undefined;
   }, [position, registerStartIcon]);
 
   return <Field.Icon ref={forwardedRef} {...props} position={position} />;
 });
 
-const InputFieldControl = Input.styleable(
+const InputFieldControl = createStyledHOC(Input, 
   ({ children, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const name = field.name.get();
@@ -124,8 +135,11 @@ const InputFieldControl = Input.styleable(
       [change]
     );
     const handleBlur = useCallback(
-      (event: FocusEvent<HTMLElement>) => {
-        if (event.currentTarget.contains(event.relatedTarget)) {
+      // Tamagui v3 types `onBlur` as an intersection of the web and native
+      // handlers (plus Input's context `() => any`); this handler reads the
+      // web focus event.
+      (event?: any) => {
+        if (event?.currentTarget?.contains(event.relatedTarget)) {
           return;
         }
 
@@ -140,7 +154,8 @@ const InputFieldControl = Input.styleable(
         {...props}
         name={name}
         focused={focused}
-        variant={variant}
+        // Field's "normal" variant is Input's "default" (neither has styles).
+        variant={variant === "normal" ? "default" : variant}
         disabled={disabled}
         size={size}
         onFocus={focus}
@@ -152,7 +167,7 @@ const InputFieldControl = Input.styleable(
   }
 );
 
-const InputFieldControlTextBox = Input.TextBox.styleable(
+const InputFieldControlTextBox = createStyledHOC(Input.TextBox, 
   ({ children, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const clearable = field.clearable.get();
@@ -172,13 +187,10 @@ const InputFieldControlTextBox = Input.TextBox.styleable(
       <InputFieldTextBoxContext value={{ inputElementRef }}>
         <Input.TextBox ref={forwardedRef} {...props}>
           {children}
-          {clearable && formattedValue && (
+          {clearable && Boolean(formattedValue) && (
             <Field.ThemeIcon position="end" onClick={handleClear}>
               <X
-                color={disabled ? "$accentDisabled" : "$accent"}
-                $group-field-hover={{
-                  color: disabled ? "$accentDisabled" : "$accentHover"
-                }}
+                color={`${disabled ? "accentDisabled" : "accent"} group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`}
               />
             </Field.ThemeIcon>
           )}
@@ -189,7 +201,7 @@ const InputFieldControlTextBox = Input.TextBox.styleable(
   }
 );
 
-const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
+const InputFieldControlTextBoxValue = createStyledHOC(Input.TextBox.Value, 
   (props, forwardedRef) => {
     const field = FieldApi.use();
     const theme = field.theme.get();
@@ -220,7 +232,7 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
   }
 );
 
-const InputFieldControlTrigger = Input.Trigger.styleable(
+const InputFieldControlTrigger = createStyledHOC(Input.Trigger, 
   ({ children, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const disabled = field.disabled.get();

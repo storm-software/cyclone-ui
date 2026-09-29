@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="macron" format="2">
+  <advance width="593"/>
+  <unicode hex="00AF"/>
+  <anchor x="290.0" y="540.0" name="_top"/>
+  <outline>
+    <contour>
+      <point x="174" y="639" type="line"/>
+      <point x="446" y="639" type="line"/>
+      <point x="460" y="705" type="line"/>
+      <point x="188" y="705" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(0)
+ResYDist(0,1)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

@@ -39,19 +39,19 @@ const meta: Meta<typeof Tabs> = {
       </Tabs.Header>
 
       <Tabs.Content>
-        <Tabs.Content.Item key="tab1" value="tab1" padding="$2xl">
+        <Tabs.Content.Item key="tab1" value="tab1" padding="2xl">
           <BodyText>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </BodyText>
         </Tabs.Content.Item>
-        <Tabs.Content.Item key="tab2" value="tab2" padding="$2xl">
+        <Tabs.Content.Item key="tab2" value="tab2" padding="2xl">
           <BodyText>
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.
           </BodyText>
         </Tabs.Content.Item>
-        <Tabs.Content.Item key="tab3" value="tab3" padding="$2xl">
+        <Tabs.Content.Item key="tab3" value="tab3" padding="2xl">
           <BodyText>
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur.

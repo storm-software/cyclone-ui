@@ -29,7 +29,8 @@ import {
   getFormSizeToken,
   getSized,
   getSpaced,
-  type FormControlSize
+  type FormControlSize,
+  type StyleEnv
 } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
@@ -38,9 +39,10 @@ import { formatDate } from "@stryke/date/format";
 import { useComposedRefs } from "@stryke/hooks";
 import type { FileStatus } from "@stryke/types/file";
 import { AnimatePresence } from "@tamagui/animate-presence";
-import type { ColorTokens } from "@tamagui/core";
+import type { ColorTokens, GetProps } from "@tamagui/core";
 import {
   createStyledContext,
+  createStyledHOC,
   styled,
   View,
   withStaticProperties
@@ -71,10 +73,9 @@ export interface FilePickerContextProps {
   disabled: boolean;
   active: boolean;
   hasValidationMessage: boolean;
-  theme: string;
 }
 
-export const FilePickerContext = createStyledContext<FilePickerContextProps>({
+export const FilePickerContext = createStyledContext<FilePickerContextProps, "size" | "typeOfPicker" | "mediaTypes" | "max" | "onPick" | "onOpen" | "onChange" | "files" | "name" | "scaleIcon" | "color" | "required" | "disabled" | "active" | "hasValidationMessage">({
   size: "md",
   typeOfPicker: "file",
   mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
@@ -89,8 +90,11 @@ export const FilePickerContext = createStyledContext<FilePickerContextProps>({
   required: false,
   disabled: false,
   active: false,
-  hasValidationMessage: false,
-  theme: "base"
+  hasValidationMessage: false
+} as FilePickerContextProps, {
+  // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: ["size", "active", "disabled", "hasValidationMessage"]
 });
 
 const MAX_DISPLAYABLE_FILE_NAME_LENGTH = 150;
@@ -98,85 +102,68 @@ const MAX_DISPLAYABLE_FILE_NAME_LENGTH = 150;
 export const FILE_PICKER_NAME = "FilePicker";
 
 const FilePickerGroupFrame = styled(View, {
-  name: FILE_PICKER_NAME,
+  displayName: FILE_PICKER_NAME,
   context: FilePickerContext,
-
-  transition: "400ms",
+  transition: "200ms",
   flexDirection: "column",
   width: "100%",
-  minHeight: "$17xl",
+  minHeight: "17xl",
   justifyContent: "center",
   alignItems: "center",
-  gap: "$md",
-  paddingVertical: "$5xl",
+  gap: "md",
+  paddingVertical: "5xl",
   borderStyle: "dashed",
   borderWidth: 2,
-  borderRadius: "$container",
-  borderColor: "$hairline",
-  backgroundColor: "$surfaceElevated",
+  borderRadius: "container",
+  borderColor: "hairline hover:accentHover",
+  backgroundColor: "surfaceElevated hover:surfaceElevatedHover",
   tabIndex: 0,
-
-  hoverStyle: {
-    borderColor: "$accentHover",
-    backgroundColor: "$surfaceElevatedHover"
-  },
-
   variants: {
-    size: formSizeVariants(size => ({
-      minHeight: getSized("$17xl") * getFormSizeScale(size),
-      paddingVertical: getSpaced("$5xl") * getFormSizeScale(size)
-    })),
+    // A local `styled.dynamic`: the helpers' `formSizeVariants` carrier is
+    // branded by another `@tamagui/core` copy and would not type here.
+    size: styled.dynamic<FormControlSize>(size =>
+      size === "sm" || size === "md" || size === "lg"
+        ? {
+            minHeight: getSized("17xl") * getFormSizeScale(size),
+            paddingVertical: getSpaced("5xl") * getFormSizeScale(size)
+          }
+        : undefined
+    ),
     active: {
       true: {
-        borderColor: "$hairline",
-        backgroundColor: "$surfaceElevatedActive",
-
-        hoverStyle: {
-          borderColor: "$hairlineHover",
-          backgroundColor: "$surfaceElevatedHover"
-        }
+        borderColor: "hairline hover:hairlineHover",
+        backgroundColor: "surfaceElevatedActive hover:surfaceElevatedHover"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "$accent",
-        hoverStyle: {
-          borderColor: "$accentHover"
-        }
+        borderColor: "accent hover:accentHover"
       }
     },
 
     disabled: {
       true: {
-        borderColor: "$accentDisabled",
-        backgroundColor: "$surfaceElevatedDisabled",
-
-        hoverStyle: {
-          borderColor: "$accentDisabled",
-          backgroundColor: "$surfaceElevatedDisabled"
-        }
+        borderColor: "accentDisabled hover:accentDisabled",
+        backgroundColor: "surfaceElevatedDisabled hover:surfaceElevatedDisabled"
       },
       false: {
         opacity: 1
       }
     }
   },
-
   defaultVariants: {
     active: false,
     disabled: false
   }
 });
 
-interface PickFileProps {
+export interface PickFileProps {
   webFiles?: File[] | null;
   nativeFiles?: DocumentPickerResult[] | null;
 }
 
-const FilePickerGroup = FilePickerGroupFrame.styleable<
-  Partial<FilePickerContextProps>
->(
+const FilePickerGroup = createStyledHOC(FilePickerGroupFrame, 
   (
     {
       children,
@@ -189,7 +176,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
       max = 1,
       name,
       ...props
-    },
+    }: GetProps<typeof FilePickerGroupFrame> & Partial<FilePickerContextProps>,
     forwardedRef
   ) => {
     const hasValidationMessage = useFieldHasValidationMessage();
@@ -230,7 +217,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
                         ...file.assets.map((asset, i) => ({
                           ...asset,
                           id: files.length + index + i,
-                          status: "initialized" satisfies FileStatus
+                          status: "initialized" as const satisfies FileStatus
                         }))
                       );
                     }
@@ -272,6 +259,9 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
         group={"file-picker" as any}
         active={Boolean(dragStatus?.isDragActive)}
         hasValidationMessage={hasValidationMessage}
+        // The animated frame writes Tamagui's implicit `solid` border default
+        // inline, which beats the `dashed` class from the styled config.
+        style={[props.style, { borderStyle: "dashed" }]}
         onClick={handleOpen}
         onPress={handleOpen}>
         <FilePickerContext.Provider
@@ -304,7 +294,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
   }
 );
 
-const FilePickerTrigger = YStack.styleable(
+const FilePickerTrigger = createStyledHOC(YStack, 
   ({ children, ...props }, forwardedRef) => {
     const { disabled, active, files, max, size } =
       FilePickerContext.useStyledContext();
@@ -318,28 +308,17 @@ const FilePickerTrigger = YStack.styleable(
         ref={forwardedRef}
         justifyContent="center"
         alignItems="center"
-        gap="$md"
+        gap="md"
         width="100%"
         cursor={disabled ? "not-allowed" : "pointer"}
         {...props}>
         {files.length === 0 && (
           <Upload
-            size={getSized("$9xl") * getFormSizeScale(size)}
-            color={disabled ? "$inkSubtleDisabled" : "$inkSubtle"}
-            $group-file-picker-hover={{
-              color: disabled
-                ? "$inkSubtleDisabled"
-                : active
-                  ? "$hairlineHover"
-                  : "$accentHover"
-            }}
+            size={getSized("9xl") * getFormSizeScale(size)}
+            color={`${disabled ? "inkSubtleDisabled" : "inkSubtle"} group-hover/file-picker:${disabled ? "inkSubtleDisabled" : active ? "hairlineHover" : "accentHover"}`}
             transition="100ms"
-            opacity={1}
-            scale={1}
-            exitStyle={{
-              opacity: 0,
-              scale: 0.5
-            }}
+            opacity="1 exit:0"
+            scale="1 exit:0.5"
           />
         )}
         {children}
@@ -348,7 +327,7 @@ const FilePickerTrigger = YStack.styleable(
   }
 );
 
-const FilePickerTriggerButton = Button.styleable(
+const FilePickerTriggerButton = createStyledHOC(Button, 
   ({ children, ...props }, forwardedRef) => {
     const { disabled, files, max, onOpen, size } =
       FilePickerContext.useStyledContext();
@@ -366,18 +345,12 @@ const FilePickerTriggerButton = Button.styleable(
         variant="link"
         disabled={disabled}
         onPress={onOpen}
-        $platform-native={{
-          display: "none"
-        }}
+        display="native:none"
         {...props}>
         <Button.Text
           fontSize={16 * getFormFontScale(size)}
-          color="$link"
-          textDecorationColor="$link"
-          $group-link-hover={{
-            color: "$linkHover",
-            textDecorationColor: "$linkHover"
-          }}>
+          color="link group-hover/link:linkHover"
+          textDecorationColor="link group-hover/link:linkHover">
           {children ||
             (max > 1
               ? files.length === 0
@@ -390,7 +363,7 @@ const FilePickerTriggerButton = Button.styleable(
   }
 );
 
-const FilePickerFiles = YStack.styleable(
+const FilePickerFiles = createStyledHOC(YStack, 
   ({ children, ...props }, forwardedRef) => {
     const { files } = FilePickerContext.useStyledContext();
 
@@ -399,8 +372,8 @@ const FilePickerFiles = YStack.styleable(
         {files && files.length > 0 && (
           <YStack
             ref={forwardedRef}
-            gap="$5xl"
-            paddingHorizontal="$5xl"
+            gap="5xl"
+            paddingHorizontal="5xl"
             width="100%"
             {...props}>
             {children}
@@ -411,14 +384,39 @@ const FilePickerFiles = YStack.styleable(
   }
 );
 
+/**
+ * The form font for a control size.
+ *
+ * @remarks
+ * Tamagui v3 reads a unitless `lineHeight` as a ratio, so the scaled pixel
+ * leading `getFormFontSize` returns for `sm`/`lg` is pinned in `px`.
+ */
+const getFormFontStyle = (size: FormControlSize, env: StyleEnv) => {
+  const style = getFormFontSize(size, env);
+
+  return {
+    fontFamily: style.fontFamily,
+    fontWeight: style.fontWeight,
+    fontStyle: style.fontStyle,
+    letterSpacing: style.letterSpacing,
+    textTransform: style.textTransform,
+    color: style.color,
+    fontSize: style.fontSize,
+    lineHeight:
+      typeof style.lineHeight === "number"
+        ? `${style.lineHeight}px`
+        : style.lineHeight
+  };
+};
+
 const FilePickerNameText = styled(HeadingSmallText, {
-  variants: { controlSize: formSizeVariants(getFormFontSize) }
+  variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
 const FilePickerMetadataText = styled(BodyText, {
-  variants: { controlSize: formSizeVariants(getFormFontSize) }
+  variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
 const FilePickerBytesText = styled(BytesText, {
-  variants: { controlSize: formSizeVariants(getFormFontSize) }
+  variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
 
 const FilePickerViewLink = ({
@@ -443,12 +441,11 @@ const FilePickerViewLink = ({
 
   return (
     <LabelText
-      fontSize="$xl"
-      color="$onAccent"
+      color="onAccent"
       width="100%"
       textAlign="center"
       {...props}>
-      <FilePickerNameText controlSize={size} color="$onAccent">
+      <FilePickerNameText controlSize={size} color="onAccent">
         {children}
       </FilePickerNameText>
     </LabelText>
@@ -483,28 +480,16 @@ const FilePickerFile = ({
       group={"file" as any}
       flexDirection="column"
       transition="200ms"
-      opacity={1}
-      scale={1}
+      opacity="1 enter:0 exit:0"
+      scale="1 enter:0.3 exit:0.5"
       height={100 * scale}
       width="100%"
       overflow="hidden"
       position="relative"
-      borderRadius="$card"
-      borderColor="$accent"
+      borderRadius="card"
+      borderColor="accent hover:accentHover"
       borderWidth={1}
-      boxShadow="none"
-      enterStyle={{
-        opacity: 0,
-        scale: 0.3
-      }}
-      exitStyle={{
-        opacity: 0,
-        scale: 0.5
-      }}
-      hoverStyle={{
-        borderColor: "$accentHover",
-        boxShadow: "$ringOffset"
-      }}
+      boxShadow="none hover:ringOffset"
       onClick={event => event.stopPropagation()}
       onPress={event => event.stopPropagation()}>
       <View
@@ -514,38 +499,32 @@ const FilePickerFile = ({
         bottom={0}
         left={0}
         right={0}
-        zIndex="$10"
-        backgroundColor="$black"
-        opacity={0.6}
-        $group-file-hover={{
-          opacity: 0.8,
-          style: {
-            filter: "blur(1px)"
-          }
-        }}
+        zIndex="10"
+        backgroundColor="black"
+        opacity="0.6 group-hover/file:0.8"
+        filter="group-hover/file:blur(1px)"
       />
       <View
         transition="100ms"
         position="absolute"
-        zIndex="$30"
+        zIndex="30"
         left={16 * scale}
         top="50%"
         y="-50%"
-        opacity={0}
-        $group-file-hover={{
-          opacity: 1
-        }}>
+        opacity="0 group-hover/file:1">
         {uri && (
           <Button
             render="a"
             href={uri}
-            download={name}
+            // Button types `download` as a boolean; the `<a>` attribute also
+            // accepts the suggested file name.
+            {...({ download: name } as object)}
             variant="ghost"
             ghostOpacity={0.75}
-            size={getSized("$13xl") * scale}
-            padding="$xl"
+            size={getSized("13xl") * scale}
+            padding="xl"
             circular={true}>
-            <Button.Icon $group-button-hover={{ color: "$accentHover" }}>
+            <Button.Icon color="group-hover/button:accentHover">
               <Download />
             </Button.Icon>
           </Button>
@@ -556,22 +535,19 @@ const FilePickerFile = ({
         <View
           transition="200ms"
           position="absolute"
-          zIndex="$30"
+          zIndex="30"
           right={16 * scale}
           top="50%"
           y="-50%"
-          opacity={0}
-          $group-file-hover={{
-            opacity: 1
-          }}>
+          opacity="0 group-hover/file:1">
           <Button
             variant="ghost"
             ghostOpacity={0.75}
             onPress={handleRemove}
-            size={getSized("$13xl") * scale}
-            padding="$xl"
+            size={getSized("13xl") * scale}
+            padding="xl"
             circular={true}>
-            <Button.Icon $group-button-hover={{ color: "$accentHover" }}>
+            <Button.Icon color="group-hover/button:accentHover">
               <Trash2 />
             </Button.Icon>
           </Button>
@@ -581,15 +557,15 @@ const FilePickerFile = ({
       <View
         transition="200ms"
         position="absolute"
-        zIndex="$20"
+        zIndex="20"
         top={0}
         bottom={0}
         left={0}
         right={0}
         alignItems="center"
         justifyContent="center">
-        <YStack width="75%" gap="$xl">
-          <View zIndex="$30" justifyContent="center" alignItems="center">
+        <YStack width="75%" gap="xl">
+          <View zIndex="30" justifyContent="center" alignItems="center">
             <FilePickerViewLink uri={uri}>
               {name
                 ? name.length > MAX_DISPLAYABLE_FILE_NAME_LENGTH
@@ -598,27 +574,27 @@ const FilePickerFile = ({
                 : "Unnamed File"}
             </FilePickerViewLink>
           </View>
-          <XStack gap="$lg" justifyContent="center" alignItems="center">
-            <FilePickerBytesText controlSize={controlSize} zIndex="$30">
+          <XStack gap="lg" justifyContent="center" alignItems="center">
+            <FilePickerBytesText controlSize={controlSize} zIndex="30">
               {size}
             </FilePickerBytesText>
 
             {lastModified && (
-              <Dot size={getSized("$6xl") * scale} color="$inkBody" />
+              <Dot size={getSized("6xl") * scale} color="inkBody" />
             )}
 
             {lastModified && (
-              <FilePickerMetadataText controlSize={controlSize} zIndex="$30">
+              <FilePickerMetadataText controlSize={controlSize} zIndex="30">
                 {formatDate(new Date(lastModified), "MM-DD-YYYY HH:mm:ss")}
               </FilePickerMetadataText>
             )}
 
             {mimeType && (
-              <Dot size={getSized("$6xl") * scale} color="$inkBody" />
+              <Dot size={getSized("6xl") * scale} color="inkBody" />
             )}
 
             {mimeType && (
-              <FilePickerMetadataText controlSize={controlSize} zIndex="$30">
+              <FilePickerMetadataText controlSize={controlSize} zIndex="30">
                 {mimeType}
               </FilePickerMetadataText>
             )}
@@ -628,16 +604,14 @@ const FilePickerFile = ({
 
       <LinearGradient
         transition="200ms"
-        fullscreen={true}
-        zIndex="$10"
-        colors={["transparent", "$surfaceCanvas"]}
-        locations={[0, 1.1]}
+        zIndex="10"
         start={[0, 0]}
         end={[1, 1]}
-        opacity={0}
-        $group-file-hover={{
-          opacity: 0.25
-        }}
+        opacity="0 group-hover/file:0.25"
+        position="absolute"
+        inset={0}
+        colors={["transparent", "surfaceCanvas"]}
+        locations={[0, 1.1]}
       />
 
       <View
@@ -646,11 +620,8 @@ const FilePickerFile = ({
         top={-240}
         left={0}
         right={0}
-        zIndex="$0"
-        scale={1}
-        $group-file-hover={{
-          scale: 1.2
-        }}>
+        zIndex="0"
+        scale="1 group-hover/file:1.2">
         <Image key={id} height={500} src={uri} />
       </View>
     </View>

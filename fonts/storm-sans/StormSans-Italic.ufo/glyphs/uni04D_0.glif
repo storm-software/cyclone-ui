@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni04D0" format="2">
+  <advance width="623"/>
+  <unicode hex="04D0"/>
+  <anchor x="262.0" y="0.0" name="bottom"/>
+  <anchor x="547.0" y="0.0" name="bottomright"/>
+  <outline>
+    <component base="A"/>
+    <component base="breve.cyrl_case" xOffset="95"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

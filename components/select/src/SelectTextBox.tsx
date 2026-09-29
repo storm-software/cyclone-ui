@@ -19,6 +19,8 @@
 import { useComposedRefs } from "@tamagui/compose-refs";
 import type { ViewProps } from "@tamagui/core";
 import {
+  createChangeEventDetails,
+  createStyledHOC,
   isClient,
   isWeb,
   styled,
@@ -34,9 +36,8 @@ const isPointerCoarse =
   isWeb && isClient ? window.matchMedia("(pointer:coarse)").matches : true;
 
 const BaseSelectTextBox = styled(View, {
-  name: "SelectTrigger",
+  displayName: "SelectTrigger",
   context: SelectContext,
-
   render: "button",
 
   transition: "200ms",
@@ -69,7 +70,8 @@ const BaseSelectTextBox = styled(View, {
   }
 });
 
-const SelectTextBoxImpl = BaseSelectTextBox.styleable(
+const SelectTextBoxImpl = createStyledHOC(
+  BaseSelectTextBox,
   (
     { scope, children, ...props }: SelectScopedProps<ViewProps>,
     forwardedRef
@@ -86,11 +88,24 @@ const SelectTextBoxImpl = BaseSelectTextBox.styleable(
       return null;
     }
 
+    // v3 replaced the item parent's `setOpen` with `requestOpenChange`, which
+    // takes change details, and moved `interactions` onto the select context.
+    const toggleOpen = (event?: any) =>
+      itemParentContext.requestOpenChange(
+        !context.open,
+        createChangeEventDetails(
+          "trigger-press",
+          event?.nativeEvent || event,
+          event?.currentTarget
+        )
+      );
+
     return (
       <BaseSelectTextBox
         type="button"
         id={itemParentContext.id}
         // aria-controls={context.contentId}
+        data-select-trigger
         aria-expanded={context.open}
         aria-autocomplete="none"
         dir={context.dir}
@@ -98,26 +113,25 @@ const SelectTextBoxImpl = BaseSelectTextBox.styleable(
         data-disabled={disabled ? "" : undefined}
         {...props}
         ref={composedRefs}
-        {...(process.env.TAMAGUI_TARGET === "web" &&
-        itemParentContext.interactions
+        {...(process.env.TAMAGUI_TARGET === "web" && context.interactions
           ? {
-              ...itemParentContext.interactions.getReferenceProps(),
+              ...context.interactions.getReferenceProps(),
               ...(isPointerCoarse
                 ? {
-                    onPress() {
-                      itemParentContext.setOpen(!context.open);
+                    onPress(event?: any) {
+                      toggleOpen(event);
                     }
                   }
                 : {
-                    onMouseDown() {
-                      context.floatingContext?.update();
-                      itemParentContext.setOpen(!context.open);
+                    onMouseDown(event?: any) {
+                      context.floatingContext?.update?.();
+                      toggleOpen(event);
                     }
                   })
             }
           : {
-              onPress() {
-                itemParentContext.setOpen(!context.open);
+              onPress(event?: any) {
+                toggleOpen(event);
               }
             })}>
         {children}
@@ -125,7 +139,7 @@ const SelectTextBoxImpl = BaseSelectTextBox.styleable(
     );
   },
   {
-    staticConfig: { componentName: "SelectTrigger" }
+    displayName: "SelectTrigger"
   }
 );
 

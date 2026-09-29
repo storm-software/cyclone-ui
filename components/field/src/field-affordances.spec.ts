@@ -26,15 +26,47 @@ describe("field affordance color states", () => {
     );
     const fieldIcon = getDeclaration(
       readComponent("./Field.tsx"),
-      "FieldIconButtonImpl"
+      "useFieldIconColor"
     );
 
     for (const affordance of [inputSeparator, selectSeparator, fieldIcon]) {
-      expect(affordance).toContain("$hairline");
-      expect(affordance).toContain("$hairlineHover");
-      expect(affordance).toContain("$hairlineActive");
-      expect(affordance).toContain("$hairlineInactive");
+      expect(affordance).toContain("hairline");
+      expect(affordance).toContain("hairlineHover");
+      expect(affordance).toContain("hairlineActive");
+      expect(affordance).toContain("hairlineInactive");
     }
+  });
+
+  it("colors field icons accent when themed or validated, otherwise hairline", () => {
+    const field = readComponent("./Field.tsx");
+    const iconColor = getDeclaration(field, "useFieldIconColor");
+    const fieldIcon = getDeclaration(field, "FieldIconButtonImpl");
+    const selectTrigger = getDeclaration(
+      readComponent("../../select/src/Select.tsx"),
+      "SelectTrigger"
+    );
+
+    expect(iconColor).toContain(
+      '(!theme || theme === "base") && messages.length === 0'
+    );
+    expect(iconColor).toContain('"accent"');
+    expect(fieldIcon).toContain("color: iconColor");
+    expect(fieldIcon).not.toContain('color: "currentColor"');
+    expect(selectTrigger).toContain("color={iconColor}");
+  });
+
+  it("themes the validation tooltip border to match the field icon", () => {
+    const themeIcon = getDeclaration(
+      readComponent("./Field.tsx"),
+      "InnerFieldThemeIcon"
+    );
+
+    expect(themeIcon).toContain("theme={theme}");
+    expect(themeIcon).toContain('"hairline focus-visible:hairlineActive"');
+    expect(themeIcon).toContain('"accent focus-visible:accentActive"');
+    expect(themeIcon).toContain(
+      'arrowBorderColor={isNeutral ? "hairline" : "accent"}'
+    );
   });
 });
 
@@ -48,7 +80,7 @@ describe("floating optional field labels", () => {
     const optionalLabel = label.slice(label.indexOf("<FieldOptionalLabelText"));
 
     expect(optionalLabel).toContain("floating={floating}");
-    expect(optionalLabel).toContain('size={floating ? "$true" : "sm"}');
+    expect(optionalLabel).toContain('size={floating ? true : "sm"}');
   });
 });
 
@@ -76,7 +108,7 @@ describe("floating field placeholder visibility", () => {
     }
 
     expect(controls[1]).toContain(
-      "{shouldShowPlaceholder ? placeholder : displayValue}"
+      "displayValue || (shouldShowPlaceholder ? placeholder : undefined)"
     );
   });
 });
@@ -97,7 +129,7 @@ describe("floating required field labels", () => {
       "FieldLabelTextImpl"
     );
 
-    expect(label).toContain('width={floating ? "$md" : "$xl"}');
+    expect(label).toContain('width={`${floating ? "md" : "xl"}`}');
   });
 });
 

@@ -24,8 +24,10 @@ const meta: Meta<typeof RadioGroupField> = {
   title: "Form/RadioGroupField",
   component: RadioGroupField,
   tags: ["autodocs"],
-  render: ({ defaultValue, ...props }: any) => (
-    <Form name="formName" defaultValues={{ selectFieldName: defaultValue }}>
+  render: ({ defaultValue, ...props }: any, { id }: { id: string }) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ selectFieldName: defaultValue }}>
       <RadioGroupField
         name="selectFieldName"
         {...props}

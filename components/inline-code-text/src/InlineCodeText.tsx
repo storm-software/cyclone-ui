@@ -16,22 +16,23 @@
 
  ------------------------------------------------------------------- */
 
-import type { GetProps } from "@tamagui/core";
+import type { FontSizeTokens, GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
 export const InlineCodeText = styled(SizableText, {
-  name: "InlineCodeText",
+  displayName: "InlineCodeText",
   render: "span",
-
-  backgroundColor: "$surfaceOverlay",
-  color: "$inkEmphasis",
+  backgroundColor: "surfaceOverlay",
+  color: "inkEmphasis",
   display: "inline-flex",
-  fontFamily: "$code",
-  paddingVertical: "$sm",
-  paddingHorizontal: "$xl",
-  size: "$true",
-  borderRadius: "$container"
+  fontFamily: "code",
+  paddingVertical: "sm",
+  paddingHorizontal: "xl",
+  // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
+  // only define `true` plus their own step, so name the default step explicitly.
+  size: "true" as FontSizeTokens,
+  borderRadius: "container"
 });
 
 export type InlineCodeTextProps = GetProps<typeof InlineCodeText>;

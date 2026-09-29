@@ -1,0 +1,48 @@
+{
+  "name": "fonts",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "fonts",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project fonts --web",
+  "// build": "fontmake's '-o' flag does NOT append: '-o variable -o otf -o ttf' parses as '-o ttf' only. Pass all formats to a single '-o'. 'variable' is incompatible with '-i', so variable and static builds run as separate invocations. '-a' is omitted: ttfautohint is not installed and fontmake hard-fails without it.",
+  "targets": {
+    "clean": {},
+    "build-regular": {
+      "cache": true,
+      "inputs": ["{projectRoot}/storm-sans"],
+      "outputs": ["{projectRoot}/dist"],
+      "executor": "nx:run-commands",
+      "dependsOn": ["clean"],
+      "options": {
+        "commands": [
+          "fontmake -m \"StormSans.designspace\" -o variable --output-dir \"../dist\"",
+          "fontmake -m \"StormSans.designspace\" -o otf ttf -i --output-dir \"../dist\""
+        ],
+        "cwd": "{projectRoot}/storm-sans"
+      }
+    },
+    "build-italic": {
+      "cache": true,
+      "inputs": ["{projectRoot}/storm-sans"],
+      "outputs": ["{projectRoot}/dist"],
+      "executor": "nx:run-commands",
+      "dependsOn": ["clean"],
+      "options": {
+        "commands": [
+          "fontmake -m \"StormSans-Italic.designspace\" -o variable --output-dir \"../dist\"",
+          "fontmake -m \"StormSans-Italic.designspace\" -o otf ttf -i --output-dir \"../dist\""
+        ],
+        "cwd": "{projectRoot}/storm-sans"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-regular", "build-italic"],
+      "options": {
+        "command": "pnpm copyfiles --up=2 \"./fonts/dist/**/*\" dist/fonts"
+      },
+      "outputs": ["{workspaceRoot}/dist/fonts"]
+    }
+  }
+}

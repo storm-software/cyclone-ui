@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Eth" format="2">
+  <advance width="655"/>
+  <unicode hex="00D0"/>
+  <anchor x="246.0" y="0.0" name="bottom"/>
+  <anchor x="380.0" y="698.0" name="top"/>
+  <outline>
+    <component base="Dcroat"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $Dcroat$, 0, 0
+CALL[], 21, 22, 88
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -24,9 +24,15 @@ import { getSpaced } from "@cyclone-ui/helpers";
 import { Link } from "@cyclone-ui/link";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
-import type { ColorTokens, ThemeTokens } from "@tamagui/core";
+import type {
+  ColorTokens,
+  FontSizeTokens,
+  SizeTokens as TamaguiSizeTokens,
+  ThemeTokens
+} from "@tamagui/core";
 import {
   createStyledContext,
+  createStyledHOC,
   getVariableValue,
   styled,
   Theme,
@@ -34,16 +40,12 @@ import {
   useThemeName,
   View
 } from "@tamagui/core";
+import { getFontSized } from "@tamagui/get-font-sized";
 import { withStaticProperties } from "@tamagui/helpers";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { ArrowRight } from "@tamagui/lucide-icons-2";
-import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
-import type {
-  GetProps,
-  SizeTokens,
-  VariantSpreadExtras,
-  ViewProps
-} from "@tamagui/web";
+import { XStack, YStack } from "@tamagui/stacks";
+import type { GetProps, SizeTokens } from "@tamagui/web";
 import { createContext, use, useContext } from "react";
 
 export interface CardContextProps {
@@ -51,113 +53,99 @@ export interface CardContextProps {
   theme: string | null | undefined;
 }
 
-export const CardContext = createStyledContext<CardContextProps>({
-  size: "$true" as SizeTokens,
-  theme: "base"
-});
+export const CardContext = createStyledContext<
+  CardContextProps,
+  "size" | "theme"
+>(
+  {
+    size: true as SizeTokens,
+    theme: "base"
+  } as CardContextProps,
+  {
+    keys: ["size", "theme"]
+  }
+);
+
+// v2 `"...size"` variant keys only matched keys of the size token scale; any
+// other value (numbers, the `true` default) kept the base gap and padding.
+const isSizeToken = (val: unknown, tokens: { size: object }): val is string =>
+  typeof val === "string" && val in tokens.size;
 
 const CardDataColorContext = createContext<
   ColorTokens | ThemeTokens | undefined
 >(undefined);
 
 const CardFrame = styled(Container, {
-  name: "Card",
+  displayName: "Card",
   context: CardContext,
-
   transition: "200ms",
   overflow: "hidden",
-  borderRadius: "$card",
-  borderColor: "$accent",
+  borderRadius: "card",
+  borderColor:
+    "accent hover:accentHover press:accentHover focus-visible:accentActive",
   cursor: "pointer",
-  backgroundColor: "$surfaceElevated",
-  position: "relative",
-
-  hoverStyle: {
-    backgroundColor: "$surfaceElevatedHover",
-    borderColor: "$accentHover"
-  },
-
-  pressStyle: {
-    borderColor: "$accentHover"
-  },
-
-  focusVisibleStyle: {
-    borderColor: "$accentActive"
-  }
+  backgroundColor: "surfaceElevated hover:surfaceElevatedHover",
+  position: "relative"
 });
 
 const CardDataBorder = styled(View, {
-  name: "Card",
-
+  displayName: "Card",
   position: "absolute",
   top: 0,
   right: 0,
   bottom: 0,
   left: 0,
-  borderRadius: "$card",
+  borderRadius: "card",
   borderWidth: 1,
   pointerEvents: "none",
-  zIndex: "$30"
+  zIndex: "30"
 });
 
+// `LinearGradient` is not a plain styled view; v3 `styled()` only keeps style
+// defaults for it, so the gradient geometry is passed as props at the call site.
 const CardBackgroundGradient = styled(LinearGradient, {
-  name: "Card",
-  context: CardContext,
-
+  displayName: "Card",
   transition: "200ms",
-  fullscreen: true,
   flexDirection: "row",
   overflow: "hidden",
   pointerEvents: "none",
-  opacity: 0,
+  opacity: "0 group-hover/card:0.1",
   zIndex: 5,
-  start: [0, 0],
-  end: [1.0, 1.0],
-
-  "$group-card-hover": {
-    opacity: 0.1
-  }
+  position: "absolute",
+  inset: 0
 });
 
 const CardContent = styled(YStack, {
-  name: "Card",
+  displayName: "Card",
   context: CardContext,
-
   transition: "200ms",
-  zIndex: "$20",
-  gap: "$2xl",
-  padding: "$2xl",
-
+  zIndex: "20",
+  gap: "2xl",
+  padding: "2xl",
   variants: {
-    size: {
-      "...size": (val: SizeTokens, _config: VariantSpreadExtras<ViewProps>) => {
-        const space = getSpaced(val);
+    size: styled.dynamic<TamaguiSizeTokens | number>((val, { tokens }) => {
+      const space = isSizeToken(val, tokens) ? getSpaced(val) : undefined;
 
-        return {
-          gap: space,
-          padding: space
-        };
-      }
-    }
+      return {
+        gap: space,
+        padding: space
+      };
+    })
   },
-
   defaultVariants: {
-    size: "$true"
+    size: true
   }
 });
 
-const CardFrameImpl = CardFrame.styleable<{
+type CardFrameImplProps = Omit<GetProps<typeof CardFrame>, "size"> & {
+  size?: SizeTokens;
   color?: ColorTokens | ThemeTokens;
-}>(
-  (props, forwardedRef) => {
-    const {
-      children,
-      color,
-      hoverStyle,
-      theme,
-      size = "$true",
-      ...rest
-    } = props;
+};
+
+const CardFrameImpl = createStyledHOC(
+  CardFrame,
+  (props: CardFrameImplProps, forwardedRef) => {
+    const { children, color, theme, size = true, ...rest } = props;
     const activeTheme = useTheme();
     const dataColor = color
       ? getVariableValue(activeTheme[color as any] ?? color, "color")
@@ -170,12 +158,13 @@ const CardFrameImpl = CardFrame.styleable<{
             ref={forwardedRef}
             group={"card" as any}
             {...rest}
-            hoverStyle={hoverStyle}
             theme={theme}
             size={size}>
             {dataColor && <CardDataBorder style={{ borderColor: dataColor }} />}
             <CardBackgroundGradient
-              colors={["transparent", color ?? "$accent"]}
+              start={[0, 0]}
+              end={[1.0, 1.0]}
+              colors={["transparent", color ?? "accent"]}
             />
             <CardContent size={size}>{children}</CardContent>
           </CardFrame>
@@ -184,35 +173,26 @@ const CardFrameImpl = CardFrame.styleable<{
     );
   },
   {
-    staticConfig: { componentName: "Card" }
+    displayName: "Card"
   }
 );
 
 export type CardProps = GetProps<typeof CardFrameImpl>;
 
 const CardHeader = styled(XStack, {
-  name: "CardHeader",
+  displayName: "CardHeader",
   context: CardContext,
-
   paddingBottom: 0,
-  zIndex: "$10",
+  zIndex: "10",
   alignItems: "center",
-  gap: "$2xl",
-
+  gap: "2xl",
   variants: {
-    size: {
-      "...size": (val: SizeTokens, _config: VariantSpreadExtras<ViewProps>) => {
-        const space = getSpaced(val);
-
-        return {
-          gap: space
-        };
-      }
-    }
+    size: styled.dynamic<TamaguiSizeTokens | number>((val, { tokens }) => ({
+      gap: isSizeToken(val, tokens) ? getSpaced(val) : undefined
+    }))
   },
-
   defaultVariants: {
-    size: "$true"
+    size: true
   }
 });
 
@@ -228,49 +208,68 @@ const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
   return (
     <ThemeableIcon
       theme={theme}
-      size="$13xl"
-      color={dataColor ?? "$accent"}
-      zIndex="$20"
+      size="13xl"
+      color={dataColor ?? "accent"}
+      zIndex="20"
       {...props}>
       {icon}
     </ThemeableIcon>
   );
 };
 
-const CardHeading = styled(HeadingExtraLargeText, {
-  name: "CardHeading",
-  context: CardContext,
+/**
+ * `CardContext` passes `size: true` to the text parts. Tamagui v3 maps `true`
+ * to the `sm` / `4` font key, which the typography fonts do not define, so
+ * resolve it (and any font size key) against the font's own `true` step.
+ */
+const cardTextSizeVariant = styled.dynamic<FontSizeTokens | number>(
+  (val, env) =>
+    val === true ||
+    (typeof val === "string" && !!env.font && val in env.font.size)
+      ? getFontSized(val === true ? ("true" as FontSizeTokens) : val, env)
+      : undefined
+);
 
-  zIndex: "$20",
+const CardHeading = styled(HeadingExtraLargeText, {
+  displayName: "CardHeading",
+  context: CardContext,
+  zIndex: "20",
   verticalAlign: "middle",
-  color: "$accent"
+  color: "accent",
+  variants: {
+    size: cardTextSizeVariant
+  } as const
 });
 
-const CardHeadingImpl = CardHeading.styleable(
+const CardHeadingImpl = createStyledHOC(
+  CardHeading,
   (props, forwardedRef) => {
     const { children, ...rest } = props;
     const dataColor = useContext(CardDataColorContext);
 
     return (
-      <CardHeading ref={forwardedRef} color={dataColor ?? "$accent"} {...rest}>
+      <CardHeading ref={forwardedRef} color={dataColor ?? "accent"} {...rest}>
         {children}
       </CardHeading>
     );
   },
   {
-    staticConfig: { componentName: "CardHeading" }
+    displayName: "CardHeading"
   }
 );
 
 const CardEyebrow = styled(EyebrowText, {
-  name: "CardEyebrow",
+  displayName: "CardEyebrow",
   context: CardContext,
-
-  zIndex: "$20",
-  color: "$inkBody"
+  zIndex: "20",
+  color: "inkBody",
+  variants: {
+    size: cardTextSizeVariant
+  } as const
 });
 
-const CardEyebrowImpl = CardEyebrow.styleable(
+const CardEyebrowImpl = createStyledHOC(
+  CardEyebrow,
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
@@ -283,19 +282,22 @@ const CardEyebrowImpl = CardEyebrow.styleable(
     );
   },
   {
-    staticConfig: { componentName: "CardEyebrow" }
+    displayName: "CardEyebrow"
   }
 );
 
 const CardBody = styled(BodyText, {
-  name: "CardBody",
+  displayName: "CardBody",
   context: CardContext,
-
-  zIndex: "$20",
-  paddingVertical: 0
+  zIndex: "20",
+  paddingVertical: 0,
+  variants: {
+    size: cardTextSizeVariant
+  } as const
 });
 
-const CardBodyImpl = CardBody.styleable(
+const CardBodyImpl = createStyledHOC(
+  CardBody,
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
@@ -308,62 +310,53 @@ const CardBodyImpl = CardBody.styleable(
     );
   },
   {
-    staticConfig: { componentName: "CardBody" }
+    displayName: "CardBody"
   }
 );
 
-const CardFooter = styled(ThemeableStack, {
-  name: "CardFooter",
+const CardFooter = styled(YStack, {
+  displayName: "CardFooter",
   context: CardContext,
-  zIndex: "$20"
+  zIndex: "20"
 });
 
 const CardLinkArrowRight = styled(ArrowRight, {
-  name: "CardLink",
+  displayName: "CardLink",
   context: CardContext,
-
-  zIndex: "$30",
-  color: "$accent",
-  marginTop: "$xs"
+  zIndex: "30",
+  color: "accent",
+  marginTop: "xs"
 });
 
-const CardLinkImpl = Link.styleable(
+const CardLinkImpl = createStyledHOC(
+  Link,
   (props, forwardedRef) => {
     const { children, ...rest } = props;
     const theme = useThemeName();
     const inverse = theme?.endsWith("base");
 
     return (
-      <XStack ref={forwardedRef} gap="$lg" alignItems="center">
+      <XStack ref={forwardedRef} gap="lg" alignItems="center">
         <Link
           {...rest}
           group={false}
           inverse={inverse}
-          zIndex="$30"
-          $group-card-hover={{
-            color: "$accentHover",
-            textDecorationColor: "$accentHover"
-          }}>
+          zIndex="30"
+          color="group-hover/card:accentHover"
+          textDecorationColor="group-hover/card:accentHover">
           {children}
         </Link>
-        <View
-          transition="200ms"
-          x={0}
-          $group-card-hover={{
-            x: 10
-          }}>
+        <View transition="200ms" x="0 group-hover/card:10px">
           <CardLinkArrowRight
-            height="$4xl"
-            $group-card-hover={{
-              color: "$accentHover"
-            }}
+            height="4xl"
+            color="group-hover/card:accentHover"
           />
         </View>
       </XStack>
     );
   },
   {
-    staticConfig: { componentName: "CardLink" }
+    displayName: "CardLink"
   }
 );
 

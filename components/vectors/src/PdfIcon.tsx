@@ -17,11 +17,12 @@
  ------------------------------------------------------------------- */
 
 import type { IconProps } from "@tamagui/helpers-icon";
-import { themed } from "@tamagui/helpers-icon";
 import { memo } from "react";
 import type { SvgProps } from "react-native-svg";
 import { G, Path, Svg } from "react-native-svg";
-const Icon = (props: IconProps) => {
+import type { ThemedIconBodyProps } from "./themed-icon";
+import { themedIcon } from "./themed-icon";
+const Icon = (props: ThemedIconBodyProps<IconProps>) => {
   return (
     <Svg viewBox="0 0 3800 4800" fill="none" {...(props as SvgProps)}>
       <G>
@@ -49,4 +50,4 @@ const Icon = (props: IconProps) => {
 
 Icon.displayName = "PdfIcon";
 
-export const PdfIcon = memo<IconProps>(themed(Icon));
+export const PdfIcon = memo<IconProps>(themedIcon(Icon));

@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { createStyledHOC } from "@tamagui/core";
 import { BodyText } from "@cyclone-ui/body-text";
 import type { Options } from "@stryke/string-format/pretty-bytes";
 import { prettyBytes } from "@stryke/string-format/pretty-bytes";
@@ -25,8 +26,8 @@ type BytesTextExtraProps = Options & {
   locale?: string;
 };
 
-export const BytesText = BodyText.styleable<BytesTextExtraProps>(
-  ({ children, ...props }, forwardedRef) => {
+export const BytesText = createStyledHOC(BodyText, 
+  ({ children, ...props }: GetProps<typeof BodyText> & BytesTextExtraProps, forwardedRef) => {
     let value = Number(children);
     if (Number.isNaN(value)) {
       value = 0;

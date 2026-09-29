@@ -21,8 +21,8 @@ import { Button } from "@cyclone-ui/button";
 import type { RightArrowProps } from "@cyclone-ui/vectors";
 import { RightArrow } from "@cyclone-ui/vectors";
 import { useHover } from "@stryke/hooks";
-import type { TamaguiElement } from "@tamagui/core";
-import { useComposedRefs, View } from "@tamagui/core";
+import type { TamaguiComponent, TamaguiElement } from "@tamagui/core";
+import { createStyledHOC, useComposedRefs, View } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
 import type { Ref } from "react";
 
@@ -31,9 +31,10 @@ export type NextButtonProps = ButtonProps &
     hideText?: boolean;
   };
 
-export const NextButton = Button.styleable<{
-  hideText?: boolean;
-}>(
+export const NextButton: TamaguiComponent<
+  NextButtonProps,
+  TamaguiElement
+> = createStyledHOC(Button, 
   (
     {
       children,
@@ -49,13 +50,13 @@ export const NextButton = Button.styleable<{
     return (
       <Button ref={ref} aria-label="Next" justifyContent="center" {...props}>
         <View display="unset">
-          <XStack gap="$2xl" alignItems="center">
+          <XStack gap="2xl" alignItems="center">
             {!hideText && <Button.Text>{children || "Next"}</Button.Text>}
             <Button.Icon>
               <RightArrow
                 isComplete={hovering}
                 animateShrink={animateShrink}
-                size="$7xl"
+                size="7xl"
               />
             </Button.Icon>
           </XStack>

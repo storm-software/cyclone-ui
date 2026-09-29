@@ -16,11 +16,17 @@
 
  ------------------------------------------------------------------- */
 
+import type { GetProps } from "@tamagui/core";
 import { Field } from "@cyclone-ui/field";
 import { getFormSizeToken } from "@cyclone-ui/helpers";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
-import { styled, View, withStaticProperties } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import type { ClipboardEvent, FocusEvent } from "react";
 import {
   createContext,
@@ -55,14 +61,14 @@ const OtpInputFieldContext = createContext<OtpInputFieldContextValue>({
 });
 
 const OtpInputFieldControlFrame = styled(View, {
-  name: "OtpInputFieldControl",
+  displayName: "OtpInputFieldControl",
   flexDirection: "row",
-  gap: "$2xl",
+  gap: "2xl",
   alignItems: "center"
 });
 
-const OtpInputFieldGroup = Field.styleable<OtpInputFieldProps>(
-  ({ children, length = 4, onComplete, ...props }, forwardedRef) => {
+const OtpInputFieldGroup = createStyledHOC(Field, 
+  ({ children, length = 4, onComplete, ...props }: GetProps<typeof Field> & OtpInputFieldProps, forwardedRef) => {
     const context = useMemo(
       () => ({
         length: Math.max(1, Math.floor(length)),
@@ -81,7 +87,7 @@ const OtpInputFieldGroup = Field.styleable<OtpInputFieldProps>(
   }
 );
 
-const OtpInputFieldControl = OtpInputFieldControlFrame.styleable(
+const OtpInputFieldControl = createStyledHOC(OtpInputFieldControlFrame, 
   ({ children: _children, ...props }, forwardedRef) => {
     const { length, onComplete } = use(OtpInputFieldContext);
     const field = FieldApi.use();
@@ -170,7 +176,7 @@ const OtpInputFieldControl = OtpInputFieldControlFrame.styleable(
       [applyInput]
     );
     const handlePaste = useCallback(
-      (index: number, event: ClipboardEvent<HTMLInputElement>) => {
+      (index: number, event: ClipboardEvent<HTMLElement>) => {
         const input = event.clipboardData.getData("text").replace(/\D/g, "");
 
         if (!input) {
@@ -286,7 +292,7 @@ const OtpInputFieldControl = OtpInputFieldControlFrame.styleable(
                 type="text"
                 value={digits[index] ?? ""}
                 textAlign="center"
-                paddingHorizontal="$zero"
+                paddingHorizontal="zero"
                 tabIndex={0}
                 onKeyDown={event =>
                   handleKeyDown(
@@ -311,7 +317,7 @@ const OtpInputFieldControl = OtpInputFieldControlFrame.styleable(
       </OtpInputFieldControlFrame>
     );
   },
-  { staticConfig: { componentName: "OtpInputFieldControl" } }
+  { displayName: "OtpInputFieldControl" }
 );
 
 export const OtpInputField = withStaticProperties(OtpInputFieldGroup, {

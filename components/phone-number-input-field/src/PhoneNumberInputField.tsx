@@ -31,7 +31,12 @@ import type { CallbackContext, FieldAtoms } from "@cyclone-ui/state/form";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
 import type { MaskitoOptions } from "@maskito/core";
 import { maskitoPhoneOptionsGenerator } from "@maskito/phone";
-import { View, createStyledContext, withStaticProperties } from "@tamagui/core";
+import {
+  createStyledContext,
+  createStyledHOC,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 import type { CountryCode } from "libphonenumber-js";
 import {
@@ -81,9 +86,11 @@ interface PhoneNumberContextValue {
   setCountryCode: (countryCode: CountryCode) => void;
 }
 
-const PhoneNumberContext = createStyledContext<PhoneNumberContextValue>({
+const PhoneNumberContext = createStyledContext<PhoneNumberContextValue, "countryCode" | "setCountryCode">({
   countryCode: "US",
   setCountryCode: () => undefined
+} as PhoneNumberContextValue, {
+  keys: ["countryCode", "setCountryCode"]
 });
 
 export interface PhoneNumberInputFieldExtraProps {
@@ -120,6 +127,7 @@ const PhoneNumberCountrySync = ({
 };
 
 interface PhoneNumberInputFieldGroupProps extends PhoneNumberInputFieldExtraProps {
+  name: string;
   children?: React.ReactNode;
   format?: (value: unknown) => string;
   mask?: any;
@@ -127,12 +135,13 @@ interface PhoneNumberInputFieldGroupProps extends PhoneNumberInputFieldExtraProp
   [key: string]: any;
 }
 
-const styleableInputField = InputField.styleable as <TProps>(
+const styleableInputField = ((render: any) =>
+  createStyledHOC(InputField as any, render)) as <TProps>(
   component: (props: TProps, forwardedRef: any) => JSX.Element
 ) => any;
 
 const PhoneNumberInputFieldGroup =
-  styleableInputField<PhoneNumberInputFieldExtraProps>(
+  styleableInputField<PhoneNumberInputFieldGroupProps>(
     (
       {
         children,
@@ -218,7 +227,7 @@ const CountryListItem = memo(
     );
 
     return (
-      <View position="relative" paddingVertical="$xl">
+      <View position="relative" paddingVertical="xl">
         <Button
           variant="ghost"
           noPadding={true}
@@ -235,20 +244,20 @@ const CountryListItem = memo(
           onPress={handlePress}>
           <View
             transition="200ms"
-            zIndex="$20"
+            zIndex="20"
             cursor="inherit"
             flexDirection="row"
             alignItems="center"
             minHeight={22 * getFormSizeScale(size)}
             width="100%"
-            paddingHorizontal="$2xl"
-            paddingBottom="$xs"
-            gap="$2xl">
+            paddingHorizontal="2xl"
+            paddingBottom="xs"
+            gap="2xl">
             <BodyText
               render="span"
               aria-hidden={true}
               flexShrink={0}
-              minWidth="$4xl">
+              minWidth="4xl">
               {country.flag}
             </BodyText>
             {showCountryName && (
@@ -256,37 +265,33 @@ const CountryListItem = memo(
                 render="span"
                 flex={1}
                 minWidth={0}
-                color="$accentInactive"
+                color="accentInactive group-hover/button:accentHover group-focus/button:accentHover"
                 fontSize={18 * getFormFontScale(size)}
-                fontWeight="$light"
-                $group-button-hover={{ color: "$accentHover" }}
-                $group-button-focus={{ color: "$accentHover" }}>
+                fontWeight={300}>
                 {country.name}
               </BodyText>
             )}
             <BodyText
               render="span"
               flexShrink={0}
-              width="$16xl"
+              width="16xl"
               marginLeft="auto"
               textAlign="left"
-              color="$accentInactive"
+              color="accentInactive group-hover/button:accentHover group-focus/button:accentHover"
               fontSize={18 * getFormFontScale(size)}
-              fontWeight="$light"
-              $group-button-hover={{ color: "$accentHover" }}
-              $group-button-focus={{ color: "$accentHover" }}>
+              fontWeight={300}>
               {`${country.code}  +${country.callingCode}`}
             </BodyText>
           </View>
         </Button>
         <View
-          zIndex="$20"
+          zIndex="20"
           position="absolute"
           bottom={0}
-          left="$2xl"
-          right="$2xl"
+          left="2xl"
+          right="2xl"
           borderBottomWidth={1}
-          borderBottomColor="$hairline"
+          borderBottomColor="hairline"
           pointerEvents="none"
         />
       </View>
@@ -396,9 +401,9 @@ const CountryCodeSelector = (): JSX.Element => {
       <Popover.Content
         width={COUNTRY_POPOVER_WIDTH}
         maxWidth="90vw"
-        padding="$3xl"
+        padding="3xl"
         hasArrow={false}>
-        <View gap="$3xl" width="100%">
+        <View gap="3xl" width="100%">
           <SearchInputField
             name={countrySearchFieldName}
             size="sm"
@@ -415,8 +420,8 @@ const CountryCodeSelector = (): JSX.Element => {
 
           <Popover.Content.ScrollView
             size="lg"
-            maxHeight="$32xl"
-            paddingRight="$3xl">
+            maxHeight="32xl"
+            paddingRight="3xl">
             <View width="100%">
               {countries.map(country => (
                 <CountryListItem
@@ -439,7 +444,7 @@ interface PhoneNumberInputFieldControlProps {
   [key: string]: any;
 }
 
-const PhoneNumberInputFieldControl = InputField.Control.styleable(
+const PhoneNumberInputFieldControl = createStyledHOC(InputField.Control, 
   (
     { children, ...props }: PhoneNumberInputFieldControlProps,
     forwardedRef: any
@@ -457,7 +462,7 @@ interface PhoneNumberInputFieldControlTextBoxValueProps {
 }
 
 const PhoneNumberInputFieldControlTextBoxValue =
-  InputField.Control.TextBox.Value.styleable(
+  createStyledHOC(InputField.Control.TextBox.Value, 
     (
       props: PhoneNumberInputFieldControlTextBoxValueProps,
       forwardedRef: any

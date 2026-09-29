@@ -22,7 +22,7 @@ import type {
   SizeTokens,
   ThemeTokens
 } from "@tamagui/core";
-import { getVariableValue, useTheme } from "@tamagui/core";
+import { createStyledHOC, getVariableValue, useTheme } from "@tamagui/core";
 import { Progress as TamaguiProgress } from "@tamagui/progress";
 import { Circle, Svg } from "react-native-svg";
 
@@ -32,10 +32,10 @@ const RADIUS = VIEWBOX_SIZE / 2 - STROKE_WIDTH / 2;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 const CIRCULAR_PROGRESS_SIZES = {
-  sm: "$10xl",
-  md: "$14xl",
-  lg: "$18xl",
-  xl: "$26xl"
+  sm: "10xl",
+  md: "14xl",
+  lg: "18xl",
+  xl: "26xl"
 } as const;
 
 export type CircularProgressSize = keyof typeof CIRCULAR_PROGRESS_SIZES;
@@ -55,20 +55,26 @@ const getProgressRatio = (value: number | null, max: number) => {
   return resolvedValue / resolvedMax;
 };
 
-export const CircularProgress = TamaguiProgress.styleable<{
-  color?: ColorTokens | ThemeTokens;
-  size?: CircularProgressSizeProp;
-}>(
+export const CircularProgress = createStyledHOC(
+  TamaguiProgress,
   (
-    { color = "$accent", size = "sm", value = 0, max = 100, ...props },
+    {
+      color = "accent",
+      size = "sm",
+      value = 0,
+      max = 100,
+      ...props
+    }: Omit<GetProps<typeof TamaguiProgress>, "color" | "size"> & {
+      color?: ColorTokens | ThemeTokens;
+      size?: CircularProgressSizeProp;
+    },
     forwardRef
   ) => {
-    const resolvedSize = Object.prototype.hasOwnProperty.call(
-      CIRCULAR_PROGRESS_SIZES,
-      size
-    )
-      ? CIRCULAR_PROGRESS_SIZES[size as CircularProgressSize]
-      : size;
+    const resolvedSize =
+      typeof size === "string" &&
+      Object.prototype.hasOwnProperty.call(CIRCULAR_PROGRESS_SIZES, size)
+        ? CIRCULAR_PROGRESS_SIZES[size as CircularProgressSize]
+        : size;
     const theme = useTheme();
     const indicatorColor = getVariableValue(
       theme[color as any] ?? color,
@@ -121,9 +127,7 @@ export const CircularProgress = TamaguiProgress.styleable<{
     );
   },
   {
-    staticConfig: {
-      componentName: "CircularProgress"
-    }
+    displayName: "CircularProgress"
   }
 );
 

@@ -17,15 +17,15 @@
  ------------------------------------------------------------------- */
 
 import type { GetProps } from "@tamagui/core";
-import { styled, View } from "@tamagui/core";
+import { createStyledHOC, styled, View } from "@tamagui/core";
 import { Link as AnchorIcon } from "@tamagui/lucide-icons-2";
-import type { GestureResponderEvent } from "react-native";
+import { useState } from "react";
 import { Linking, Platform } from "react-native";
 
 const isWeb = Platform.OS === "web";
 
 const AnchorFrame = styled(View, {
-  name: "Anchor",
+  displayName: "Anchor",
   render: "span",
 
   alignItems: "center",
@@ -34,24 +34,13 @@ const AnchorFrame = styled(View, {
 });
 
 const Permalink = styled(View, {
-  name: "AnchorPermalink",
+  displayName: "AnchorPermalink",
   render: "a",
-
   alignItems: "center",
-  marginLeft: "$xl",
-  opacity: 0,
+  marginLeft: "xl",
+  opacity: "0 focus:1 group-hover/anchor:1",
   transition: "opacity 150ms ease-out, transform 150ms ease-out",
-  x: 0,
-
-  focusStyle: {
-    opacity: 1,
-    x: 14
-  },
-
-  "$group-anchor-hover": {
-    opacity: 1,
-    x: 14
-  }
+  x: "0 focus:14px group-hover/anchor:14px"
 });
 
 export interface AnchorExtraProps {
@@ -62,45 +51,61 @@ export interface AnchorExtraProps {
   permalinkLabel?: string;
 }
 
-export const Anchor = AnchorFrame.styleable<AnchorExtraProps>(
+export const Anchor = createStyledHOC(
+  AnchorFrame,
   (
-    { children, href, target, rel, download, permalinkLabel, ...props },
+    {
+      children,
+      href,
+      target,
+      rel,
+      download,
+      permalinkLabel,
+      ...props
+    }: GetProps<typeof AnchorFrame> & AnchorExtraProps,
     forwardedRef
-  ) => (
-    <AnchorFrame group={"anchor" as any} ref={forwardedRef} {...props}>
-      {children}
+  ) => {
+    // Themed icons don't accept flat state clauses (e.g.
+    // `group-hover/anchorIcon:accent`), so track the permalink hover here.
+    const [isIconHovered, setIconHovered] = useState(false);
 
-      <Permalink
-        aria-label={href ? permalinkLabel : undefined}
-        {...(href &&
-          ({
-            cursor: "pointer",
-            title: permalinkLabel,
-            ...(isWeb
-              ? { href, target, rel, download }
-              : {
-                  onPress: (event: GestureResponderEvent) => {
-                    props.onPress?.(event);
-                    void Linking.openURL(href);
-                  }
-                })
-          } as any))}
-        group={"anchorIcon" as any}>
-        <AnchorIcon
-          aria-hidden={true}
-          transition="200ms"
-          color="$neutral7"
-          strokeWidth={2.3}
-          height="90%"
-          maxHeight="$6xl"
-          $group-anchorIcon-hover={{
-            color: "$accent"
-          }}
-        />
-      </Permalink>
-    </AnchorFrame>
-  ),
-  { staticConfig: { componentName: "Anchor" } }
+    return (
+      <AnchorFrame group={"anchor" as any} ref={forwardedRef} {...props}>
+        {children}
+
+        <Permalink
+          aria-label={href ? permalinkLabel : undefined}
+          {...(href &&
+            ({
+              cursor: "pointer",
+              title: permalinkLabel,
+              ...(isWeb
+                ? { href, target, rel, download }
+                : {
+                    onPress: (
+                      event: Parameters<NonNullable<typeof props.onPress>>[0]
+                    ) => {
+                      props.onPress?.(event);
+                      void Linking.openURL(href);
+                    }
+                  })
+            } as any))}
+          group={"anchorIcon" as any}
+          onMouseEnter={() => setIconHovered(true)}
+          onMouseLeave={() => setIconHovered(false)}>
+          <AnchorIcon
+            aria-hidden={true}
+            transition="200ms"
+            color={isIconHovered ? "accent" : "neutral7"}
+            height="90%"
+            maxHeight="6xl"
+            strokeWidth={2.3}
+          />
+        </Permalink>
+      </AnchorFrame>
+    );
+  },
+  { displayName: "Anchor" }
 );
 
 export type AnchorProps = GetProps<typeof Anchor>;

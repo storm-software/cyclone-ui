@@ -30,7 +30,7 @@ const meta = {
     maxHeight: 400
   },
   render: args => (
-    <View alignItems="center" height={500} padding="$4" width="100%">
+    <View alignItems="center" height={500} padding="4" width="100%">
       <ScrollView {...args}>
         <Diagonal width="100%" height={2000} />
       </ScrollView>
@@ -50,7 +50,7 @@ export const LargeSize: Story = {
 
 export const FitsWithinMaxHeight: Story = {
   render: args => (
-    <View alignItems="center" height={500} padding="$4" width="100%">
+    <View alignItems="center" height={500} padding="4" width="100%">
       <ScrollView {...args}>
         <Diagonal width="100%" height={200} />
       </ScrollView>

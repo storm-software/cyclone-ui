@@ -19,9 +19,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HelpCircle } from "@tamagui/lucide-icons-2";
 import { YStack } from "@tamagui/stacks";
+import type { ComponentProps, ReactNode } from "react";
 import { Callout } from "./Callout";
 
-const meta: Meta<typeof Callout> = {
+// `icon` is a story-only arg consumed by the custom `render` below.
+type CalloutStoryArgs = ComponentProps<typeof Callout> & { icon?: ReactNode };
+
+const meta: Meta<CalloutStoryArgs> = {
   title: "Containers/Callout",
   component: Callout,
   tags: ["autodocs"],
@@ -29,7 +33,7 @@ const meta: Meta<typeof Callout> = {
     <Callout {...rest}>
       <Callout.Header>
         <Callout.Header.Icon>{icon}</Callout.Header.Icon>
-        <YStack gap="$md">
+        <YStack gap="md">
           <Callout.Header.Eyebrow>Callout Eyebrow</Callout.Header.Eyebrow>
           <Callout.Header.Heading>Callout Heading</Callout.Header.Heading>
         </YStack>
@@ -38,11 +42,11 @@ const meta: Meta<typeof Callout> = {
       <Callout.Body>{children}</Callout.Body>
     </Callout>
   )
-} satisfies Meta<typeof Callout>;
+} satisfies Meta<CalloutStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Callout>;
+type Story = StoryObj<CalloutStoryArgs>;
 
 const bodyText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";

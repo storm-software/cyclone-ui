@@ -26,8 +26,10 @@ const meta: Meta<typeof InputField> = {
   title: "Form/InputField",
   component: InputField,
   tags: ["autodocs"],
-  render: ({ defaultValue = "", ...props }: any) => (
-    <Form name="formName" initialValues={{ inputFieldName: defaultValue }}>
+  render: ({ defaultValue = "", ...props }: any, { id }: { id: string }) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ inputFieldName: defaultValue }}>
       <InputField name="inputFieldName" {...props}>
         <InputField.Label>Label Text</InputField.Label>
         <InputField.Control>
@@ -92,9 +94,9 @@ export const Floating: Story = {
   args: {
     variant: "floating"
   },
-  render: props => (
-    <Form name="formName" initialValues={{ inputFieldName: "" }}>
-      <InputField name="inputFieldName" {...props}>
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ inputFieldName: "" }}>
+      <InputField {...props} name="inputFieldName">
         <InputField.Label>Label Text</InputField.Label>
         <InputField.Control>
           <InputField.Control.TextBox>
@@ -126,11 +128,12 @@ export const Floating: Story = {
     await userEvent.click(input);
     await waitFor(() => {
       const focusedLabelRect = label.getBoundingClientRect();
-      expect(
-        Math.abs(
-          focusedLabelRect.top + focusedLabelRect.height / 2 - inputRect.top
-        )
-      ).toBeLessThan(2);
+      // Field floats the label 4px below the frame's top edge, notching the
+      // border, so its centre sits just below the input's top.
+      const focusedLabelOffset =
+        focusedLabelRect.top + focusedLabelRect.height / 2 - inputRect.top;
+      expect(focusedLabelOffset).toBeGreaterThanOrEqual(0);
+      expect(focusedLabelOffset).toBeLessThan(5);
       expect(
         Number.parseFloat(getComputedStyle(labelText).fontSize)
       ).toBeLessThan(initialFontSize);
@@ -140,11 +143,12 @@ export const Floating: Story = {
     await userEvent.tab();
     await waitFor(() => {
       const valuedLabelRect = label.getBoundingClientRect();
-      expect(
-        Math.abs(
-          valuedLabelRect.top + valuedLabelRect.height / 2 - inputRect.top
-        )
-      ).toBeLessThan(2);
+      // Field floats the label 4px below the frame's top edge, notching the
+      // border, so its centre sits just below the input's top.
+      const valuedLabelOffset =
+        valuedLabelRect.top + valuedLabelRect.height / 2 - inputRect.top;
+      expect(valuedLabelOffset).toBeGreaterThanOrEqual(0);
+      expect(valuedLabelOffset).toBeLessThan(5);
     });
   }
 };
@@ -159,9 +163,9 @@ export const FloatingWithStartIcon: Story = {
   args: {
     variant: "floating"
   },
-  render: props => (
-    <Form name="formName" initialValues={{ inputFieldName: "" }}>
-      <InputField name="inputFieldName" {...props}>
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ inputFieldName: "" }}>
+      <InputField {...props} name="inputFieldName">
         <InputField.Label>Search</InputField.Label>
         <InputField.Control>
           <InputField.Control.TextBox>
@@ -202,10 +206,10 @@ export const FloatingWithEndIconTruncation: Story = {
   args: {
     variant: "floating"
   },
-  render: props => (
-    <Form name="formName" initialValues={{ inputFieldName: "" }}>
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ inputFieldName: "" }}>
       <div style={{ width: 240 }}>
-        <InputField name="inputFieldName" {...props}>
+        <InputField {...props} name="inputFieldName">
           <InputField.Label>
             An intentionally long field label that must not overlap the icon
           </InputField.Label>
@@ -230,13 +234,14 @@ export const FloatingWithEndIconTruncation: Story = {
     const icon = canvasElement.querySelector("svg");
 
     if (!icon) {
-      throw new Error("Expected the inline icon to render");
+      // `Error` is shadowed by the `Error` story export below.
+      throw new globalThis.Error("Expected the inline icon to render");
     }
 
     await waitFor(async () => {
       await expect(
-        canvas.queryByText("(Optional)", { exact: true })
-      ).not.toBeInTheDocument();
+        canvas.getByText("(Optional)", { exact: true })
+      ).not.toBeVisible();
       await expect(labelText.scrollWidth).toBeGreaterThan(
         labelText.clientWidth
       );
@@ -262,9 +267,9 @@ export const Underline: Story = {
 
 export const WithLink: Story = {
   args: {},
-  render: props => (
-    <Form name="formName" initialValues={{ inputFieldName: "" }}>
-      <InputField name="inputFieldName" {...props}>
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ inputFieldName: "" }}>
+      <InputField {...props} name="inputFieldName">
         <InputField.Label>Email</InputField.Label>
         <InputField.Link href="#input-field-link">Why we ask</InputField.Link>
         <InputField.Control>

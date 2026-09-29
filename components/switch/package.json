@@ -25,7 +25,8 @@
     "@tamagui/switch": "catalog:",
     "@tamagui/switch-headless": "catalog:",
     "@cyclone-ui/helpers": "workspace:*",
-    "@cyclone-ui/themeable-icon": "workspace:*"
+    "@cyclone-ui/themeable-icon": "workspace:*",
+    "@tamagui/react-native-types": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",

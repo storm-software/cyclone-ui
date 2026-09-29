@@ -21,21 +21,21 @@ import type { GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
 
 export const LabelText = styled(BodyText, {
-  name: "LabelText",
+  displayName: "LabelText",
   render: "label",
-
   transition: "400ms",
-  color: "$accent",
-  variant: "lg",
-
+  color: "accent",
+  fontFamily: "title-lg",
   variants: {
     floating: {
       true: {
-        variant: "sm"
+        fontFamily: "title-sm"
+      },
+      false: {
+        fontFamily: "title-lg"
       }
     }
-  },
-
+  } as const,
   defaultVariants: {
     floating: false
   }

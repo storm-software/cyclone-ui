@@ -49,36 +49,33 @@ export interface TypeTableProps extends ViewProps {
 }
 
 const TypeTableFrame = styled(Container, {
-  name: "TypeTable",
+  displayName: "TypeTable",
 
   width: "100%",
   overflow: "hidden"
 });
 
 const TypeTableRow = styled(View, {
-  name: "TypeTableRow",
-
+  displayName: "TypeTableRow",
   flexDirection: "row",
   alignItems: "center",
-  paddingHorizontal: "$3xl",
-  paddingVertical: "$2xl"
+  paddingHorizontal: "3xl",
+  paddingVertical: "2xl"
 });
 
 const PropertyColumn = styled(InlineCodeText, {
-  name: "TypeTablePropertyColumn",
-
+  displayName: "TypeTablePropertyColumn",
   width: "25%",
   minWidth: "fit-content",
-  paddingRight: "$2xl",
+  paddingRight: "2xl",
   paddingVertical: 0,
   paddingLeft: 0,
   backgroundColor: "transparent",
-  color: "$accent",
-
+  color: "accent",
   variants: {
     deprecated: {
       true: {
-        color: "$inkSubtle",
+        color: "inkSubtle",
         textDecorationLine: "line-through"
       }
     }
@@ -86,32 +83,23 @@ const PropertyColumn = styled(InlineCodeText, {
 });
 
 const TypeColumn = styled(BodyText, {
-  name: "TypeTableTypeColumn",
-
-  color: "$inkSubtle",
-  variant: "lg",
-
-  "$max-sm": {
-    display: "none"
-  }
+  displayName: "TypeTableTypeColumn",
+  color: "inkSubtle",
+  fontFamily: "title-lg",
+  display: "max-sm:none"
 });
 
 const TypeLink = styled(Link, {
-  name: "TypeTableTypeLink",
-
-  color: "$link",
+  displayName: "TypeTableTypeLink",
+  color: "link",
   textDecorationLine: "underline",
-
-  "$max-sm": {
-    display: "none"
-  }
+  display: "max-sm:none"
 });
 
 const ColumnLabel = styled(BodyText, {
-  name: "TypeTableColumnLabel",
-
-  color: "$inkSubtle",
-  variant: "lg"
+  displayName: "TypeTableColumnLabel",
+  color: "inkSubtle",
+  fontFamily: "title-lg"
 });
 
 const getItemId = (parentId: string | undefined, name: string) =>
@@ -173,12 +161,12 @@ const TypeTableItem = ({
       bordered={false}
       value={open}
       variant="ghost"
-      backgroundColor="$surfaceFloating"
+      backgroundColor="surfaceFloating"
       onValueChange={handleValueChange}>
       <Collapsible.Header
-        paddingHorizontal="$3xl"
-        paddingVertical="$2xl"
-        hoverStyle={{ backgroundColor: "$surfaceElevatedHover" }}>
+        paddingHorizontal="3xl"
+        paddingVertical="2xl"
+        backgroundColor="hover:surfaceElevatedHover">
         <TypeTableRow padding={0} flex={1}>
           <PropertyColumn deprecated={item.deprecated}>
             {`${name}${item.required ? "" : "?"}`}
@@ -190,7 +178,7 @@ const TypeTableItem = ({
           )}
         </TypeTableRow>
       </Collapsible.Header>
-      <Collapsible.Content padding={0} backgroundColor="$surfaceElevated">
+      <Collapsible.Content padding={0} backgroundColor="surfaceElevated">
         <TypeTableItemDetails item={item} />
       </Collapsible.Content>
     </Collapsible>

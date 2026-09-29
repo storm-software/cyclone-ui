@@ -17,18 +17,24 @@
  ------------------------------------------------------------------- */
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ComponentProps } from "react";
 import { Form } from "./Form";
 
-const meta: Meta<typeof Form> = {
+/** Story-only args spread onto `Form` by the custom `render`. */
+type FormStoryArgs = ComponentProps<typeof Form> & {
+  size?: "small" | "large";
+};
+
+const meta: Meta<FormStoryArgs> = {
   title: "Form/Form",
   component: Form,
   tags: ["autodocs"],
   render: (args: any) => <Form {...args} />
-} satisfies Meta<typeof Form>;
+} satisfies Meta<FormStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Form>;
+type Story = StoryObj<FormStoryArgs>;
 
 export const Base: Story = {
   args: {}

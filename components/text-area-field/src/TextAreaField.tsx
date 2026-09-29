@@ -23,11 +23,15 @@ import {
 } from "@cyclone-ui/field";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { TextArea } from "@cyclone-ui/text-area";
-import { Theme, useComposedRefs, withStaticProperties } from "@tamagui/core";
-import type { FocusEvent } from "react";
+import {
+  createStyledHOC,
+  Theme,
+  useComposedRefs,
+  withStaticProperties
+} from "@tamagui/core";
 import { useCallback, useLayoutEffect, useRef } from "react";
 
-const TextAreaFieldGroup = Field.styleable((props, forwardedRef) => {
+const TextAreaFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
   const { children, variant = "floating", ...rest } = props;
 
   return (
@@ -37,7 +41,7 @@ const TextAreaFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
-const TextAreaFieldControl = TextArea.styleable((props, forwardedRef) => {
+const TextAreaFieldControl = createStyledHOC(TextArea, (props, forwardedRef) => {
   const field = FieldApi.use();
   const name = field.name.get();
   const theme = field.theme.get();
@@ -58,7 +62,9 @@ const TextAreaFieldControl = TextArea.styleable((props, forwardedRef) => {
     [change]
   );
   const handleBlur = useCallback(
-    (event: FocusEvent<HTMLElement>) => {
+    // Tamagui v3 types `onBlur` as an intersection of the web and native
+    // handlers; this handler reads the web focus event.
+    (event: any) => {
       if (event.currentTarget.contains(event.relatedTarget)) {
         return;
       }

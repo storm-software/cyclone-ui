@@ -18,12 +18,13 @@
 
 import { View } from "@tamagui/core";
 import type { IconProps } from "@tamagui/helpers-icon";
-import { themed } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
 import type { SvgProps } from "react-native-svg";
 import { Circle, Path, Svg } from "react-native-svg";
+import type { ThemedIconBodyProps } from "./themed-icon";
+import { themedIcon } from "./themed-icon";
 export type BinaryProps = IconProps & {
   state?: "off" | "on";
 };
@@ -33,8 +34,8 @@ const Icon = ({
   size = 24,
   strokeWidth = 1,
   ...props
-}: BinaryProps) => {
-  const color = useCurrentColor((props.color || "$onAccent") as any);
+}: ThemedIconBodyProps<BinaryProps>) => {
+  const color = useCurrentColor((props.color || "onAccent") as any);
 
   // Line
 
@@ -177,7 +178,12 @@ const Icon = ({
 
 Icon.displayName = "Binary";
 
-const BinaryFrame = ({ height, width, size, ...props }: BinaryProps) => {
+const BinaryFrame = ({
+  height,
+  width,
+  size,
+  ...props
+}: ThemedIconBodyProps<BinaryProps>) => {
   return (
     <View height={width ?? size} width={height ?? size} rotate="-90deg">
       <Icon height={width} width={height} size={size} {...props} />
@@ -185,4 +191,4 @@ const BinaryFrame = ({ height, width, size, ...props }: BinaryProps) => {
   );
 };
 
-export const Binary = memo<BinaryProps>(themed(BinaryFrame));
+export const Binary = memo<BinaryProps>(themedIcon(BinaryFrame));

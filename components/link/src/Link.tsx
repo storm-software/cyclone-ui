@@ -19,47 +19,58 @@
 import { LinkText } from "@cyclone-ui/link-text";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
-import type { GetProps } from "@tamagui/core";
-import { styled } from "@tamagui/core";
+import type { FontSizeTokens, GetProps } from "@tamagui/core";
+import { createStyledHOC, styled } from "@tamagui/core";
 import { ArrowUpRight } from "@tamagui/lucide-icons-2";
-import type { GestureResponderEvent } from "react-native";
 import { Linking } from "react-native";
 
 const LinkFrame = styled(LinkText, {
-  name: "Link",
+  displayName: "Link",
   render: "a",
   role: "link",
 
   cursor: "pointer"
 });
 
+// `ThemeableIcon` is a styled HOC; v3 `styled()` only forwards style defaults to
+// it, so `size` is passed as a prop at the call site below.
 const ThemeableIconFrame = styled(ThemeableIcon, {
-  name: "Link",
+  displayName: "Link",
   render: "span",
-
-  size: "$4xl",
   display: "inline-flex",
-  marginBottom: "$md",
+  marginBottom: "md",
   color: "currentColor",
   cursor: "pointer"
 });
 
-export const Link = LinkFrame.styleable<{
-  href?: string;
-  target?: string;
-  rel?: string;
-  download?: string;
-  external?: boolean;
-}>(
+export const Link = createStyledHOC(
+  LinkFrame,
   (
-    { target, children, href, external, size = "$true", ...props },
+    {
+      target,
+      children,
+      href,
+      external,
+      // v3 `SizableText` maps `size: true` to a `sm` / `4` font key the fonts do
+      // not define; the string key selects the font's default step.
+      size = "true" as FontSizeTokens,
+      ...props
+    }: GetProps<typeof LinkFrame> & {
+      href?: string;
+      target?: string;
+      rel?: string;
+      download?: string;
+      external?: boolean;
+    },
     forwardedRef
   ) => {
     return (
       <LinkFrame
         group={"link" as any}
         ref={forwardedRef}
-        size={size}
+        // An explicit `size={true}` (e.g. from a parent context) needs the same
+        // mapping as the default.
+        size={size === true ? ("true" as FontSizeTokens) : size}
         {...props}
         {...(isWeb
           ? {
@@ -67,7 +78,9 @@ export const Link = LinkFrame.styleable<{
               target: external ? "_blank" : target
             }
           : {
-              onPress: (event: GestureResponderEvent) => {
+              onPress: (
+                event: Parameters<NonNullable<typeof props.onPress>>[0]
+              ) => {
                 props.onPress?.(event);
                 if (href !== undefined) {
                   void Linking.openURL(href);
@@ -78,18 +91,17 @@ export const Link = LinkFrame.styleable<{
 
         {external && (
           <ThemeableIconFrame
+            size="4xl"
             style={{ verticalAlign: "middle" }}
-            $group-link-hover={{
-              x: 2,
-              y: -2
-            }}>
+            x="group-hover/link:2px"
+            y="group-hover/link:-2px">
             <ArrowUpRight />
           </ThemeableIconFrame>
         )}
       </LinkFrame>
     );
   },
-  { staticConfig: { componentName: "Link" } }
+  { displayName: "Link" }
 );
 
 export type LinkProps = GetProps<typeof Link>;

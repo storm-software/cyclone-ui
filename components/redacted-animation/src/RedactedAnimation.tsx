@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { GetProps } from "@tamagui/core";
-import { styled, View } from "@tamagui/core";
+import { createStyledHOC, styled, View } from "@tamagui/core";
 import { useEffect, useState, useSyncExternalStore } from "react";
 
 const REDACTION_DELAY = 200;
@@ -62,7 +62,7 @@ const usePrefersReducedMotion = () =>
   );
 
 const RedactedAnimationFrame = styled(View, {
-  name: "RedactedAnimation",
+  displayName: "RedactedAnimation",
 
   position: "relative",
   alignSelf: "flex-start",
@@ -71,8 +71,7 @@ const RedactedAnimationFrame = styled(View, {
 });
 
 const Redaction = styled(View, {
-  name: "RedactedAnimationRedaction",
-
+  displayName: "RedactedAnimationRedaction",
   position: "absolute",
   top: 0,
   // Prevent a composited seam where the translated mask meets the clipped edge.
@@ -80,7 +79,7 @@ const Redaction = styled(View, {
   bottom: 0,
   left: -1,
   zIndex: 1,
-  backgroundColor: "$accent",
+  backgroundColor: "accent",
   pointerEvents: "none",
   x: 0
 });
@@ -95,8 +94,8 @@ export type RedactedAnimationProps = Omit<
 };
 
 export const RedactedAnimation =
-  RedactedAnimationFrame.styleable<RedactedAnimationProps>(
-    ({ children, direction = "left", ...props }, forwardedRef) => {
+  createStyledHOC(RedactedAnimationFrame, 
+    ({ children, direction = "left", ...props }: GetProps<typeof RedactedAnimationFrame> & RedactedAnimationProps, forwardedRef) => {
       const [isRevealed, setIsRevealed] = useState(false);
       const prefersReducedMotion = usePrefersReducedMotion();
       const isRedactionRevealed = prefersReducedMotion || isRevealed;
@@ -128,5 +127,5 @@ export const RedactedAnimation =
         </RedactedAnimationFrame>
       );
     },
-    { staticConfig: { componentName: "RedactedAnimation" } }
+    { displayName: "RedactedAnimation" }
   );

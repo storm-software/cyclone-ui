@@ -25,10 +25,10 @@ const meta: Meta<typeof SearchInputField> = {
   title: "Form/SearchInputField",
   component: SearchInputField,
   tags: ["autodocs"],
-  render: ({ defaultValue = "", ...props }: any) => (
+  render: ({ defaultValue = "", ...props }: any, { id }: { id: string }) => (
     <Form
-      name="formName"
-      defaultValues={{ searchInputFieldName: defaultValue }}>
+      name={`formName-${id}`}
+      initialValues={{ searchInputFieldName: defaultValue }}>
       <SearchInputField name="searchInputFieldName" {...props}>
         <SearchInputField.Label>Label Text</SearchInputField.Label>
         <SearchInputField.Control>
@@ -139,7 +139,9 @@ export const AutoComplete: Story = {
 
     await userEvent.clear(input);
     await userEvent.type(input, "bl");
-    await userEvent.keyboard("{ArrowDown}{Enter}");
+    // "bl" matches Blackberry then Blueberry; the first ArrowDown highlights
+    // Blackberry, the second moves on to Blueberry.
+    await userEvent.keyboard("{ArrowDown}{ArrowDown}{Enter}");
     await expect(input).toHaveValue("Blueberry");
   }
 };

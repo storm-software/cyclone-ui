@@ -29,36 +29,31 @@ import { Footer } from "./Footer";
 
 const StoryCanvas = styled(View, {
   minHeight: "100vh",
-  backgroundColor: "$surfaceCanvas"
+  backgroundColor: "surfaceCanvas"
 });
 
 const StoryContent = styled(View, {
   width: "100%",
   maxWidth: 1200,
   marginHorizontal: "auto",
-  paddingHorizontal: "$4xl",
-  paddingVertical: "$10xl",
-  gap: "$10xl",
-
-  "$max-md": {
-    paddingHorizontal: "$2xl"
-  }
+  paddingHorizontal: "4xl max-md:2xl",
+  paddingVertical: "10xl",
+  gap: "10xl"
 });
 
 const StorySection = styled(View, {
   minHeight: 320,
-  padding: "$7xl",
+  padding: "7xl",
   justifyContent: "center",
-  gap: "$xl",
-  backgroundColor: "$surfaceCanvas",
-  borderRadius: "$lg",
+  gap: "xl",
+  backgroundColor: "surfaceCanvas",
+  borderRadius: "lg",
   borderWidth: 1,
-  borderColor: "$hairline",
-
+  borderColor: "hairline",
   variants: {
     light: {
       true: {
-        backgroundColor: "$accent"
+        backgroundColor: "accent"
       }
     }
   }
@@ -68,37 +63,35 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
   <StoryCanvas>
     <StoryContent>
       <StorySection>
-        <Text color="$accent" fontFamily="$display-lg">
+        <Text color="accent" fontFamily="display-lg">
           Build what matters
         </Text>
-        <BodyText color="$inkBody" maxWidth={640}>
+        <BodyText color="inkBody" maxWidth={640}>
           Explore ideas, tools, and practical guidance for creating useful
           products with a thoughtful approach.
         </BodyText>
       </StorySection>
       <StorySection>
-        <HeadingHeroText color="$accent">
-          Research and discovery
-        </HeadingHeroText>
-        <BodyText color="$inkBody" maxWidth={640}>
+        <HeadingHeroText color="accent">Research and discovery</HeadingHeroText>
+        <BodyText color="inkBody" maxWidth={640}>
           Learn from new perspectives and turn early questions into clear
           directions through careful research and experimentation.
         </BodyText>
       </StorySection>
       <StorySection>
-        <HeadingHeroText color="$accent">
+        <HeadingHeroText color="accent">
           Products for every team
         </HeadingHeroText>
-        <BodyText color="$inkBody" maxWidth={640}>
+        <BodyText color="inkBody" maxWidth={640}>
           Flexible tools help teams move from a first sketch to a finished
           experience while keeping the important details in view.
         </BodyText>
       </StorySection>
       <StorySection>
-        <HeadingHeroText color="$accent">
+        <HeadingHeroText color="accent">
           A long-term perspective
         </HeadingHeroText>
-        <BodyText color="$inkBody" maxWidth={640}>
+        <BodyText color="inkBody" maxWidth={640}>
           We share what we learn, listen to the people who use our work, and
           keep improving the systems that support them.
         </BodyText>
@@ -110,43 +103,34 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
 
 const StoryAction = styled(Link, {
   width: "fit-content",
-  paddingVertical: "$5xl",
-  paddingHorizontal: "$7xl",
-  color: "$brand9",
-  backgroundColor: "$brand1",
+  paddingVertical: "5xl",
+  paddingHorizontal: "7xl",
+  color: "brand9 hover:brand9",
+  backgroundColor: "brand1 hover:brand2",
   maxWidth: "100%",
   textTransform: "uppercase",
   letterSpacing: 1.5,
-  borderRadius: "$4xl",
-  textDecorationLine: "none",
-
-  hoverStyle: {
-    x: 3,
-    color: "$brand9",
-    backgroundColor: "$brand2",
-    textDecorationLine: "none"
-  },
-
-  focusVisibleStyle: {
-    outlineColor: "$brand1",
-    outlineOffset: 3,
-    outlineStyle: "solid",
-    outlineWidth: 2
-  }
+  borderRadius: "4xl",
+  textDecorationLine: "none hover:none",
+  x: "hover:3px",
+  outlineColor: "focus-visible:brand1",
+  outlineOffset: "focus-visible:3px",
+  outlineStyle: "focus-visible:solid",
+  outlineWidth: "focus-visible:2px"
 });
 
 const StoryBrand = () => (
-  <View alignItems="center" flexDirection="row" gap="$2xl">
+  <View alignItems="center" flexDirection="row" gap="2xl">
     <View
-      width="$8xl"
-      height="$8xl"
+      width="8xl"
+      height="8xl"
       alignItems="center"
       justifyContent="center"
-      backgroundColor="$muted"
-      borderRadius="$full">
-      <Zap aria-hidden={true} size={16} color="$accent" fill="$accent" />
+      backgroundColor="muted"
+      borderRadius="full">
+      <Zap aria-hidden={true} size={16} color="accent" fill="accent" />
     </View>
-    <HeadingSmallText color="$accent" fontSize="$md">
+    <HeadingSmallText color="accent" fontSize="md">
       Cyclone UI
     </HeadingSmallText>
   </View>

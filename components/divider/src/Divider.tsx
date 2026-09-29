@@ -16,9 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import type { ColorTokens, ThemeTokens } from "@tamagui/core";
+import type { ColorTokens, TamaguiElement, ThemeTokens } from "@tamagui/core";
 import { View } from "@tamagui/core";
-import type { ElementRef } from "react";
 import { createElement, forwardRef } from "react";
 
 export type DividerDirection = "horizontal" | "vertical";
@@ -41,9 +40,9 @@ const dividerThickness = {
 } as const;
 
 /** A themed line that separates adjacent content. */
-export const Divider = forwardRef<ElementRef<typeof View>, DividerProps>(
+export const Divider = forwardRef<TamaguiElement, DividerProps>(
   (
-    { color = "$hairline", direction = "horizontal", size = "md", ...props },
+    { color = "hairline", direction = "horizontal", size = "md", ...props },
     forwardedRef
   ) => {
     const thickness = dividerThickness[size];

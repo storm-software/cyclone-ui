@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="odotbelow" format="2">
+  <advance width="550"/>
+  <unicode hex="1ECD"/>
+  <anchor x="318.0" y="540.0" name="top"/>
+  <outline>
+    <component base="o"/>
+    <component base="dotbelowcomb" xOffset="233"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $o$, 0, 0
+OFFSET[R], $dotbelowcomb$, 233, 0
+CALL[], 23, 24, 88
+SVTCA[Y]
+CALL[], 53, 0, 1, 1, -54, 86
+SHC[2], 2
+CALL[], 9
+CALL[], 47, 56, 4, 33, 15, 87
+SVTCA[X]
+SHC[2], 2
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

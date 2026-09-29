@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni215E" format="2">
+  <advance width="838"/>
+  <unicode hex="215E"/>
+  <outline>
+    <component base="sevensuperior"/>
+    <component base="fraction" xOffset="319"/>
+    <component base="eightinferior" xOffset="467"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+OFFSET[R], $sevensuperior$, 0, 0
+OFFSET[R], $fraction$, 319, 0
+OFFSET[R], $eightinferior$, 467, 0
+CALL[], 27, 28, 88
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

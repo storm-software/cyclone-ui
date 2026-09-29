@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="semicolon" format="2">
+  <advance width="293"/>
+  <unicode hex="003B"/>
+  <outline>
+    <component base="comma" xOffset="10"/>
+    <component base="period" xOffset="93" yOffset="411"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+OFFSET[R], $comma$, 10, 0
+OFFSET[R], $period$, 92, 406
+CALL[], 27, 28, 88
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Udieresis" format="2">
+  <advance width="656"/>
+  <unicode hex="00DC"/>
+  <anchor x="278.0" y="0.0" name="bottom"/>
+  <anchor x="369.0" y="0.0" name="bottomright"/>
+  <outline>
+    <component base="U"/>
+    <component base="dieresis.case" xOffset="118"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $U$, 0, 0
+OFFSET[R], $dieresis.case$, 118, 0
+CALL[], 21, 22, 88
+SVTCA[Y]
+CALL[], 27, 0, 1, 1, 89, 86
+SHC[2], 1
+SHC[2], 2
+CALL[], 9
+CALL[], 30, 57, 23, 30, 14, 87
+SVTCA[X]
+SHC[2], 1
+SHC[2], 2
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

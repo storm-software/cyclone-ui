@@ -25,8 +25,10 @@ const meta: Meta<typeof NumberInputField> = {
   title: "Form/NumberInputField",
   component: NumberInputField,
   tags: ["autodocs"],
-  render: ({ defaultValue = "", ...props }: any) => (
-    <Form name="formName" initialValues={{ inputFieldName: defaultValue }}>
+  render: ({ defaultValue = "", ...props }: any, { id }: { id: string }) => (
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ inputFieldName: defaultValue }}>
       <NumberInputField name="inputFieldName" {...props}>
         <NumberInputField.Label>Label Text</NumberInputField.Label>
         <NumberInputField.Control>
@@ -72,7 +74,8 @@ export const Base: Story = {
     const canvas = within(canvasElement);
 
     const input = canvas.getByRole("spinbutton");
-    await expect(input).toHaveStyle({ height: "40px" });
+    // Floating is the default variant: a 45px frame, 43px inside its border.
+    await expect(input).toHaveStyle({ height: "43px" });
     await expect(input).toHaveAttribute("type", "number");
     const decreaseButton = canvas.getByRole("button", {
       name: "Decrease value"

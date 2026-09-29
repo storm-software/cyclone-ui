@@ -13,8 +13,8 @@ describe("InlineCodeText", () => {
 
     expect(source).toMatch(/render:\s*"span"/);
     expect(source).toMatch(/display:\s*"inline-flex"/);
-    expect(source).toMatch(/backgroundColor:\s*"\$surfaceOverlay"/);
-    expect(source).toMatch(/paddingVertical:\s*"\$sm"/);
+    expect(source).toMatch(/backgroundColor:\s*"surfaceOverlay"/);
+    expect(source).toMatch(/paddingVertical:\s*"sm"/);
   });
 
   it("documents inline use between normal body text", () => {

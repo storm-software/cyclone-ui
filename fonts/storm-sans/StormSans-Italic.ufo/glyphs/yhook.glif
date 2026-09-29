@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="yhook" format="2">
+  <advance width="484"/>
+  <unicode hex="1EF7"/>
+  <anchor x="337.0" y="0.0" name="bottom"/>
+  <outline>
+    <component base="y"/>
+    <component base="hookcomb" xOffset="294"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $y$, 0, 0
+OFFSET[R], $hookcomb$, 294, 0
+CALL[], 23, 24, 88
+SVTCA[Y]
+CALL[], 25, 1, 1, 1, 61, 86
+SHC[2], 1
+CALL[], 9
+CALL[], 16, 21, 7, 26, 2, 87
+SVTCA[X]
+SHC[2], 1
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

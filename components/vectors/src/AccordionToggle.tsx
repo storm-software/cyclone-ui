@@ -18,15 +18,16 @@
 
 import { styled, View } from "@tamagui/core";
 import type { IconProps } from "@tamagui/helpers-icon";
-import { themed } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
 import type { SvgProps } from "react-native-svg";
 import { Path, Svg } from "react-native-svg";
+import type { ThemedIconBodyProps } from "./themed-icon";
+import { themedIcon } from "./themed-icon";
 
 const AccordionToggleContainer = styled(View, {
-  name: "AccordionToggle",
+  displayName: "AccordionToggle",
 
   transition: "250ms",
 
@@ -55,8 +56,8 @@ const Icon = ({
   size = 24,
   strokeWidth = 1.5,
   ...props
-}: AccordionToggleProps) => {
-  const color = useCurrentColor((props.color || "$accent") as any);
+}: ThemedIconBodyProps<AccordionToggleProps>) => {
+  const color = useCurrentColor((props.color || "accent") as any);
 
   const compressLengthPosition = useMotionValue(0);
   const compressLengthPlayback = animate(compressLengthPosition, 14, {
@@ -171,4 +172,4 @@ const Icon = ({
 
 Icon.displayName = "AccordionToggle";
 
-export const AccordionToggle = memo<AccordionToggleProps>(themed(Icon));
+export const AccordionToggle = memo<AccordionToggleProps>(themedIcon(Icon));

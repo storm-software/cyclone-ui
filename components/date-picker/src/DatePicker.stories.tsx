@@ -20,6 +20,7 @@ import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { formatDate } from "@stryke/date/format";
+import type { GetProps } from "@tamagui/core";
 import { Calendar } from "@tamagui/lucide-icons-2";
 import { useCallback, useState } from "react";
 import { DATE_RANGE_SEPARATOR, DatePicker } from "./DatePicker";
@@ -35,11 +36,21 @@ const toDate = (value: unknown) => {
   return Number.isNaN(date.getTime()) ? null : date;
 };
 
-const meta: Meta<typeof DatePicker> = {
+type DatePickerValidation = {
+  onChange: (() => { message: string; type: string }[])[];
+};
+
+/** Story-only args consumed by the custom `render` (the Form and Field). */
+type DatePickerStoryArgs = GetProps<typeof DatePicker> & {
+  required?: boolean;
+  validate?: DatePickerValidation;
+};
+
+const meta: Meta<DatePickerStoryArgs> = {
   title: "Base/DatePicker",
   component: DatePicker,
   tags: ["autodocs"],
-  render: ({ variant, ...props }: any) => {
+  render: ({ variant, ...props }: any, { id }: { id: string }) => {
     const handleFormat = useCallback((value: any) => {
       const date = toDate(value);
       if (!date) {
@@ -54,7 +65,7 @@ const meta: Meta<typeof DatePicker> = {
     }, []);
 
     return (
-      <Form name="formName" defaultValues={{ datePickerName: null }}>
+      <Form name={`formName-${id}`} initialValues={{ datePickerName: null }}>
         <Field
           name="datePickerName"
           {...props}
@@ -71,11 +82,11 @@ const meta: Meta<typeof DatePicker> = {
       </Form>
     );
   }
-} satisfies Meta<typeof DatePicker>;
+} satisfies Meta<DatePickerStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof DatePicker>;
+type Story = StoryObj<DatePickerStoryArgs>;
 
 const validation = (
   type:
@@ -86,7 +97,7 @@ const validation = (
     | "success"
     | "positive"
     | "negative"
-) => ({
+): DatePickerValidation => ({
   onChange: [
     () => [
       {

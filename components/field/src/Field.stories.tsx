@@ -20,15 +20,15 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { Form } from "@cyclone-ui/form";
 import { useFieldActions } from "@cyclone-ui/state/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Field, useFieldHasValidationMessage } from "./Field";
 
 const meta: Meta<typeof Field> = {
   title: "Form/Field",
   component: Field,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" defaultValues={{ fieldName: "" }}>
+  render: (props: any, { id }: { id: string }) => (
+    <Form name={`formName-${id}`} initialValues={{ fieldName: "" }}>
       <Field name="fieldName" {...props}>
         <Field.Label>Label Text</Field.Label>
         <BodyText>The form field can be added here</BodyText>
@@ -95,9 +95,9 @@ export const Underline: Story = {
 
 export const WithLink: Story = {
   args: {},
-  render: props => (
-    <Form name="formName" defaultValues={{ fieldName: "" }}>
-      <Field name="fieldName" {...props}>
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ fieldName: "" }}>
+      <Field {...props} name="fieldName">
         <Field.Label>Label Text</Field.Label>
         <Field.Link href="#field-link">Learn more</Field.Link>
         <BodyText>The form field can be added here</BodyText>
@@ -134,9 +134,9 @@ export const BrandWithoutMessage: Story = {
   args: {
     theme: "brand"
   },
-  render: props => (
-    <Form name="formName" defaultValues={{ fieldName: "" }}>
-      <Field name="fieldName" {...props}>
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ fieldName: "" }}>
+      <Field {...props} name="fieldName">
         <MessageStateProbe />
       </Field>
     </Form>
@@ -172,9 +172,9 @@ export const WarningMessageState: Story = {
   args: {
     validate: validation("warning")
   },
-  render: props => (
-    <Form name="formName" defaultValues={{ fieldName: "" }}>
-      <Field name="fieldName" {...props}>
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ fieldName: "" }}>
+      <Field {...props} name="fieldName">
         <MessageStateProbe />
       </Field>
     </Form>
@@ -188,8 +188,11 @@ export const WarningMessageState: Story = {
     await userEvent.click(
       canvas.getByRole("button", { name: "Validate field" })
     );
-    await expect(canvas.getByTestId("field-message-state")).toHaveTextContent(
-      "true"
+    // `onChange` validation is debounced (100ms by default).
+    await waitFor(() =>
+      expect(canvas.getByTestId("field-message-state")).toHaveTextContent(
+        "true"
+      )
     );
   }
 };

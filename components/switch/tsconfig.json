@@ -10,7 +10,7 @@
       "@nx/react/typings/image.d.ts",
       "vite/client"
     ],
-    "outDir": "../../dist/out-tsc",
+    "outDir": "../../dist/out-tsc/components/switch",
     "tsBuildInfoFile": "../../dist/out-tsc/components/switch/tsconfig.tsbuildinfo"
   },
   "references": [

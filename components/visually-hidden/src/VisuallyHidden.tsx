@@ -19,8 +19,6 @@
 import { styled, View } from "@tamagui/core";
 
 export const VisuallyHidden = styled(View, {
-  animateOnly: ["opacity"],
-
   variants: {
     preserveDimensions: {
       true: {
@@ -36,7 +34,7 @@ export const VisuallyHidden = styled(View, {
         width: "auto",
         height: "auto",
         margin: 0,
-        zIndex: "$0",
+        zIndex: "0",
         overflow: "visible",
         opacity: 1,
         pointerEvents: "auto"

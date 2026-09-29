@@ -152,9 +152,8 @@ export interface FormOptions<
   /**
    * The validations to run on the form when certain events occur.
    */
-  validate?: Record<
-    `on${Capitalize<ValidationCause>}`,
-    Validator<FormValuesState<TFormValues>>[] | undefined
+  validate?: Partial<
+    Record<`on${Capitalize<ValidationCause>}`, Validator<FormValuesState<TFormValues>>[] | undefined>
   >;
 
   /**
@@ -503,9 +502,8 @@ export interface FieldOptions<TFieldValue> {
   /**
    * The validations to run on the field when certain events occur.
    */
-  validate?: Record<
-    `on${Capitalize<ValidationCause>}`,
-    Validator<TFieldValue>[] | undefined
+  validate?: Partial<
+    Record<`on${Capitalize<ValidationCause>}`, Validator<TFieldValue>[] | undefined>
   >;
 
   /**

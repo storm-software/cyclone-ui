@@ -3,7 +3,7 @@
   "compilerOptions": {
     "ignoreDeprecations": "6.0",
     "tsBuildInfoFile": "../../dist/out-tsc/packages/themes/tsconfig.tsbuildinfo",
-    "outDir": "../../dist/out-tsc"
+    "outDir": "../../dist/out-tsc/packages/themes"
   },
   "include": [
     "src/**/*.ts",

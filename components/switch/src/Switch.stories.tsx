@@ -16,21 +16,24 @@
 
  ------------------------------------------------------------------- */
 
-import { Field } from "@cyclone-ui/field";
+import { Field, type FieldProps } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack } from "@tamagui/stacks";
 import { expect, userEvent, within } from "storybook/test";
 import { Switch } from "./Switch";
 
-const meta: Meta<typeof Switch> = {
+// Story args configure the wrapping `Field`, not the `Switch` itself.
+type SwitchStoryArgs = Omit<FieldProps<boolean>, "children" | "name">;
+
+const meta: Meta<SwitchStoryArgs> = {
   title: "Base/Switch",
   component: Switch,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" initialValues={{ switchName: false }}>
+  render: (props: any, { id }: { id: string }) => (
+    <Form name={`formName-${id}`} initialValues={{ switchName: false }}>
       <Field name="switchName" {...props}>
-        <XStack gap="$3xl" alignContent="center" alignItems="center">
+        <XStack gap="3xl" alignContent="center" alignItems="center">
           <Switch size={props.size} />
           <Field.Label paddingBottom={0}>
             This is an example label message for a switch
@@ -39,11 +42,11 @@ const meta: Meta<typeof Switch> = {
       </Field>
     </Form>
   )
-} satisfies Meta<typeof Switch>;
+} satisfies Meta<SwitchStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Switch>;
+type Story = StoryObj<SwitchStoryArgs>;
 
 const validation = (
   type:

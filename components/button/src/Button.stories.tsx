@@ -18,9 +18,13 @@
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { X } from "@tamagui/lucide-icons-2";
+import type { ComponentProps, ReactNode } from "react";
 import { Button } from "./Button";
 
-const meta: Meta<typeof Button> = {
+/** Story-only args: `icon` renders inside `Button.Icon`. */
+type ButtonStoryArgs = ComponentProps<typeof Button> & { icon?: ReactNode };
+
+const meta: Meta<ButtonStoryArgs> = {
   title: "Triggers/Button",
   component: Button,
   tags: ["autodocs"],
@@ -30,11 +34,11 @@ const meta: Meta<typeof Button> = {
       {icon && <Button.Icon>{icon}</Button.Icon>}
     </Button>
   )
-} satisfies Meta<typeof Button>;
+} satisfies Meta<ButtonStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<ButtonStoryArgs>;
 
 export const Default: Story = {
   args: {
@@ -53,7 +57,7 @@ export const Icon: Story = {
 export const Sized: Story = {
   args: {
     children: "Button Text",
-    size: "$13xl",
+    size: "13xl",
     animate: false
   }
 };
@@ -61,7 +65,7 @@ export const Sized: Story = {
 export const SizedIcon: Story = {
   args: {
     icon: <X />,
-    size: "$13xl",
+    size: "13xl",
     animate: false
   }
 };
@@ -1093,128 +1097,128 @@ const withRounded = (story: Story): Story => ({
   args: { ...story.args, rounded: true }
 });
 
-export const DefaultRounded = withRounded(Default);
-export const IconRounded = withRounded(Icon);
-export const SizedRounded = withRounded(Sized);
-export const SizedIconRounded = withRounded(SizedIcon);
-export const SurfaceRounded = withRounded(Surface);
-export const OutlinedRounded = withRounded(Outlined);
-export const CascadeRounded = withRounded(Cascade);
-export const CascadeTopRounded = withRounded(CascadeTop);
-export const CascadeLeftRounded = withRounded(CascadeLeft);
-export const CascadeBottomRounded = withRounded(CascadeBottom);
-export const CascadeRightRounded = withRounded(CascadeRight);
-export const DiagonalCascadeRounded = withRounded(DiagonalCascade);
-export const DiagonalCascadeTopRounded = withRounded(DiagonalCascadeTop);
-export const DiagonalCascadeLeftRounded = withRounded(DiagonalCascadeLeft);
-export const DiagonalCascadeBottomRounded = withRounded(DiagonalCascadeBottom);
-export const DiagonalCascadeRightRounded = withRounded(DiagonalCascadeRight);
-export const ReverseCascadeRounded = withRounded(ReverseCascade);
-export const ReverseDoubleCascadeRounded = withRounded(ReverseDoubleCascade);
-export const ReverseCascadeTopRounded = withRounded(ReverseCascadeTop);
-export const ReverseCascadeLeftRounded = withRounded(ReverseCascadeLeft);
-export const ReverseCascadeBottomRounded = withRounded(ReverseCascadeBottom);
-export const ReverseCascadeRightRounded = withRounded(ReverseCascadeRight);
-export const ReverseDiagonalCascadeRounded = withRounded(
+export const DefaultRounded: Story = withRounded(Default);
+export const IconRounded: Story = withRounded(Icon);
+export const SizedRounded: Story = withRounded(Sized);
+export const SizedIconRounded: Story = withRounded(SizedIcon);
+export const SurfaceRounded: Story = withRounded(Surface);
+export const OutlinedRounded: Story = withRounded(Outlined);
+export const CascadeRounded: Story = withRounded(Cascade);
+export const CascadeTopRounded: Story = withRounded(CascadeTop);
+export const CascadeLeftRounded: Story = withRounded(CascadeLeft);
+export const CascadeBottomRounded: Story = withRounded(CascadeBottom);
+export const CascadeRightRounded: Story = withRounded(CascadeRight);
+export const DiagonalCascadeRounded: Story = withRounded(DiagonalCascade);
+export const DiagonalCascadeTopRounded: Story = withRounded(DiagonalCascadeTop);
+export const DiagonalCascadeLeftRounded: Story = withRounded(DiagonalCascadeLeft);
+export const DiagonalCascadeBottomRounded: Story = withRounded(DiagonalCascadeBottom);
+export const DiagonalCascadeRightRounded: Story = withRounded(DiagonalCascadeRight);
+export const ReverseCascadeRounded: Story = withRounded(ReverseCascade);
+export const ReverseDoubleCascadeRounded: Story = withRounded(ReverseDoubleCascade);
+export const ReverseCascadeTopRounded: Story = withRounded(ReverseCascadeTop);
+export const ReverseCascadeLeftRounded: Story = withRounded(ReverseCascadeLeft);
+export const ReverseCascadeBottomRounded: Story = withRounded(ReverseCascadeBottom);
+export const ReverseCascadeRightRounded: Story = withRounded(ReverseCascadeRight);
+export const ReverseDiagonalCascadeRounded: Story = withRounded(
   ReverseDiagonalCascade
 );
-export const ReverseDoubleDiagonalCascadeRounded = withRounded(
+export const ReverseDoubleDiagonalCascadeRounded: Story = withRounded(
   ReverseDoubleDiagonalCascade
 );
-export const ReverseDiagonalCascadeTopRounded = withRounded(
+export const ReverseDiagonalCascadeTopRounded: Story = withRounded(
   ReverseDiagonalCascadeTop
 );
-export const ReverseDiagonalCascadeLeftRounded = withRounded(
+export const ReverseDiagonalCascadeLeftRounded: Story = withRounded(
   ReverseDiagonalCascadeLeft
 );
-export const ReverseDiagonalCascadeBottomRounded = withRounded(
+export const ReverseDiagonalCascadeBottomRounded: Story = withRounded(
   ReverseDiagonalCascadeBottom
 );
-export const ReverseDiagonalCascadeRightRounded = withRounded(
+export const ReverseDiagonalCascadeRightRounded: Story = withRounded(
   ReverseDiagonalCascadeRight
 );
-export const InverseRounded = withRounded(Inverse);
-export const SubtleRounded = withRounded(Subtle);
-export const GhostRounded = withRounded(Ghost);
-export const LinkRounded = withRounded(Link);
-export const DisabledRounded = withRounded(Disabled);
+export const InverseRounded: Story = withRounded(Inverse);
+export const SubtleRounded: Story = withRounded(Subtle);
+export const GhostRounded: Story = withRounded(Ghost);
+export const LinkRounded: Story = withRounded(Link);
+export const DisabledRounded: Story = withRounded(Disabled);
 
-export const BrandRounded = withRounded(Brand);
-export const BrandSurfaceRounded = withRounded(BrandSurface);
-export const BrandOutlinedRounded = withRounded(BrandOutlined);
-export const BrandCascadeRounded = withRounded(BrandCascade);
-export const BrandInverseRounded = withRounded(BrandInverse);
-export const BrandSubtleRounded = withRounded(BrandSubtle);
-export const BrandGhostRounded = withRounded(BrandGhost);
-export const BrandLinkRounded = withRounded(BrandLink);
-export const BrandDisabledRounded = withRounded(BrandDisabled);
+export const BrandRounded: Story = withRounded(Brand);
+export const BrandSurfaceRounded: Story = withRounded(BrandSurface);
+export const BrandOutlinedRounded: Story = withRounded(BrandOutlined);
+export const BrandCascadeRounded: Story = withRounded(BrandCascade);
+export const BrandInverseRounded: Story = withRounded(BrandInverse);
+export const BrandSubtleRounded: Story = withRounded(BrandSubtle);
+export const BrandGhostRounded: Story = withRounded(BrandGhost);
+export const BrandLinkRounded: Story = withRounded(BrandLink);
+export const BrandDisabledRounded: Story = withRounded(BrandDisabled);
 
-export const DangerRounded = withRounded(Danger);
-export const DangerSurfaceRounded = withRounded(DangerSurface);
-export const DangerOutlinedRounded = withRounded(DangerOutlined);
-export const DangerCascadeRounded = withRounded(DangerCascade);
-export const DangerInverseRounded = withRounded(DangerInverse);
-export const DangerSubtleRounded = withRounded(DangerSubtle);
-export const DangerGhostRounded = withRounded(DangerGhost);
-export const DangerLinkRounded = withRounded(DangerLink);
-export const DangerDisabledRounded = withRounded(DangerDisabled);
+export const DangerRounded: Story = withRounded(Danger);
+export const DangerSurfaceRounded: Story = withRounded(DangerSurface);
+export const DangerOutlinedRounded: Story = withRounded(DangerOutlined);
+export const DangerCascadeRounded: Story = withRounded(DangerCascade);
+export const DangerInverseRounded: Story = withRounded(DangerInverse);
+export const DangerSubtleRounded: Story = withRounded(DangerSubtle);
+export const DangerGhostRounded: Story = withRounded(DangerGhost);
+export const DangerLinkRounded: Story = withRounded(DangerLink);
+export const DangerDisabledRounded: Story = withRounded(DangerDisabled);
 
-export const WarningRounded = withRounded(Warning);
-export const WarningSurfaceRounded = withRounded(WarningSurface);
-export const WarningOutlinedRounded = withRounded(WarningOutlined);
-export const WarningCascadeRounded = withRounded(WarningCascade);
-export const WarningInverseRounded = withRounded(WarningInverse);
-export const WarningSubtleRounded = withRounded(WarningSubtle);
-export const WarningGhostRounded = withRounded(WarningGhost);
-export const WarningLinkRounded = withRounded(WarningLink);
-export const WarningDisabledRounded = withRounded(WarningDisabled);
+export const WarningRounded: Story = withRounded(Warning);
+export const WarningSurfaceRounded: Story = withRounded(WarningSurface);
+export const WarningOutlinedRounded: Story = withRounded(WarningOutlined);
+export const WarningCascadeRounded: Story = withRounded(WarningCascade);
+export const WarningInverseRounded: Story = withRounded(WarningInverse);
+export const WarningSubtleRounded: Story = withRounded(WarningSubtle);
+export const WarningGhostRounded: Story = withRounded(WarningGhost);
+export const WarningLinkRounded: Story = withRounded(WarningLink);
+export const WarningDisabledRounded: Story = withRounded(WarningDisabled);
 
-export const SuccessRounded = withRounded(Success);
-export const SuccessSurfaceRounded = withRounded(SuccessSurface);
-export const SuccessOutlinedRounded = withRounded(SuccessOutlined);
-export const SuccessCascadeRounded = withRounded(SuccessCascade);
-export const SuccessInverseRounded = withRounded(SuccessInverse);
-export const SuccessSubtleRounded = withRounded(SuccessSubtle);
-export const SuccessGhostRounded = withRounded(SuccessGhost);
-export const SuccessLinkRounded = withRounded(SuccessLink);
-export const SuccessDisabledRounded = withRounded(SuccessDisabled);
+export const SuccessRounded: Story = withRounded(Success);
+export const SuccessSurfaceRounded: Story = withRounded(SuccessSurface);
+export const SuccessOutlinedRounded: Story = withRounded(SuccessOutlined);
+export const SuccessCascadeRounded: Story = withRounded(SuccessCascade);
+export const SuccessInverseRounded: Story = withRounded(SuccessInverse);
+export const SuccessSubtleRounded: Story = withRounded(SuccessSubtle);
+export const SuccessGhostRounded: Story = withRounded(SuccessGhost);
+export const SuccessLinkRounded: Story = withRounded(SuccessLink);
+export const SuccessDisabledRounded: Story = withRounded(SuccessDisabled);
 
-export const InfoRounded = withRounded(Info);
-export const InfoSurfaceRounded = withRounded(InfoSurface);
-export const InfoOutlinedRounded = withRounded(InfoOutlined);
-export const InfoCascadeRounded = withRounded(InfoCascade);
-export const InfoInverseRounded = withRounded(InfoInverse);
-export const InfoSubtleRounded = withRounded(InfoSubtle);
-export const InfoGhostRounded = withRounded(InfoGhost);
-export const InfoLinkRounded = withRounded(InfoLink);
-export const InfoDisabledRounded = withRounded(InfoDisabled);
+export const InfoRounded: Story = withRounded(Info);
+export const InfoSurfaceRounded: Story = withRounded(InfoSurface);
+export const InfoOutlinedRounded: Story = withRounded(InfoOutlined);
+export const InfoCascadeRounded: Story = withRounded(InfoCascade);
+export const InfoInverseRounded: Story = withRounded(InfoInverse);
+export const InfoSubtleRounded: Story = withRounded(InfoSubtle);
+export const InfoGhostRounded: Story = withRounded(InfoGhost);
+export const InfoLinkRounded: Story = withRounded(InfoLink);
+export const InfoDisabledRounded: Story = withRounded(InfoDisabled);
 
-export const DiscoveryRounded = withRounded(Discovery);
-export const DiscoverySurfaceRounded = withRounded(DiscoverySurface);
-export const DiscoveryOutlinedRounded = withRounded(DiscoveryOutlined);
-export const DiscoveryCascadeRounded = withRounded(DiscoveryCascade);
-export const DiscoveryInverseRounded = withRounded(DiscoveryInverse);
-export const DiscoverySubtleRounded = withRounded(DiscoverySubtle);
-export const DiscoveryGhostRounded = withRounded(DiscoveryGhost);
-export const DiscoveryLinkRounded = withRounded(DiscoveryLink);
-export const DiscoveryDisabledRounded = withRounded(DiscoveryDisabled);
+export const DiscoveryRounded: Story = withRounded(Discovery);
+export const DiscoverySurfaceRounded: Story = withRounded(DiscoverySurface);
+export const DiscoveryOutlinedRounded: Story = withRounded(DiscoveryOutlined);
+export const DiscoveryCascadeRounded: Story = withRounded(DiscoveryCascade);
+export const DiscoveryInverseRounded: Story = withRounded(DiscoveryInverse);
+export const DiscoverySubtleRounded: Story = withRounded(DiscoverySubtle);
+export const DiscoveryGhostRounded: Story = withRounded(DiscoveryGhost);
+export const DiscoveryLinkRounded: Story = withRounded(DiscoveryLink);
+export const DiscoveryDisabledRounded: Story = withRounded(DiscoveryDisabled);
 
-export const PositiveRounded = withRounded(Positive);
-export const PositiveSurfaceRounded = withRounded(PositiveSurface);
-export const PositiveOutlinedRounded = withRounded(PositiveOutlined);
-export const PositiveCascadeRounded = withRounded(PositiveCascade);
-export const PositiveInverseRounded = withRounded(PositiveInverse);
-export const PositiveSubtleRounded = withRounded(PositiveSubtle);
-export const PositiveGhostRounded = withRounded(PositiveGhost);
-export const PositiveLinkRounded = withRounded(PositiveLink);
-export const PositiveDisabledRounded = withRounded(PositiveDisabled);
+export const PositiveRounded: Story = withRounded(Positive);
+export const PositiveSurfaceRounded: Story = withRounded(PositiveSurface);
+export const PositiveOutlinedRounded: Story = withRounded(PositiveOutlined);
+export const PositiveCascadeRounded: Story = withRounded(PositiveCascade);
+export const PositiveInverseRounded: Story = withRounded(PositiveInverse);
+export const PositiveSubtleRounded: Story = withRounded(PositiveSubtle);
+export const PositiveGhostRounded: Story = withRounded(PositiveGhost);
+export const PositiveLinkRounded: Story = withRounded(PositiveLink);
+export const PositiveDisabledRounded: Story = withRounded(PositiveDisabled);
 
-export const NegativeRounded = withRounded(Negative);
-export const NegativeSurfaceRounded = withRounded(NegativeSurface);
-export const NegativeOutlinedRounded = withRounded(NegativeOutlined);
-export const NegativeCascadeRounded = withRounded(NegativeCascade);
-export const NegativeInverseRounded = withRounded(NegativeInverse);
-export const NegativeSubtleRounded = withRounded(NegativeSubtle);
-export const NegativeGhostRounded = withRounded(NegativeGhost);
-export const NegativeLinkRounded = withRounded(NegativeLink);
-export const NegativeDisabledRounded = withRounded(NegativeDisabled);
+export const NegativeRounded: Story = withRounded(Negative);
+export const NegativeSurfaceRounded: Story = withRounded(NegativeSurface);
+export const NegativeOutlinedRounded: Story = withRounded(NegativeOutlined);
+export const NegativeCascadeRounded: Story = withRounded(NegativeCascade);
+export const NegativeInverseRounded: Story = withRounded(NegativeInverse);
+export const NegativeSubtleRounded: Story = withRounded(NegativeSubtle);
+export const NegativeGhostRounded: Story = withRounded(NegativeGhost);
+export const NegativeLinkRounded: Story = withRounded(NegativeLink);
+export const NegativeDisabledRounded: Story = withRounded(NegativeDisabled);

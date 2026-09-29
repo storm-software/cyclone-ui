@@ -17,18 +17,30 @@
  ------------------------------------------------------------------- */
 
 import type { IconProps } from "@tamagui/helpers-icon";
-import { themed } from "@tamagui/helpers-icon";
 import { memo } from "react";
+import { StyleSheet } from "react-native";
 import { AlertCircle } from "./AlertCircle";
+import type { ThemedIconBodyProps } from "./themed-icon";
+import { themedIcon } from "./themed-icon";
 
 export type InfoCircleProps = IconProps & {
   isComplete?: boolean;
 };
 
-const Icon = ({ ...props }: InfoCircleProps) => {
-  return <AlertCircle rotateX="180deg" {...props} />;
+const Icon = ({ style, ...props }: ThemedIconBodyProps<InfoCircleProps>) => {
+  // Tamagui v3's `themed` no longer resolves style props such as `rotateX`
+  // into the SVG `style`, so apply the flip as a transform directly.
+  return (
+    <AlertCircle
+      style={StyleSheet.flatten([
+        { transform: [{ rotateX: "180deg" }] },
+        style
+      ])}
+      {...props}
+    />
+  );
 };
 
 Icon.displayName = "InfoCircle";
 
-export const InfoCircle = memo<InfoCircleProps>(themed(Icon));
+export const InfoCircle = memo<InfoCircleProps>(themedIcon(Icon));

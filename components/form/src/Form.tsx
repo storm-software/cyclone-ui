@@ -19,14 +19,14 @@
 import type { FormProviderOptions } from "@cyclone-ui/state/form";
 import { FormApi, FormProvider, useFormActions } from "@cyclone-ui/state/form";
 import type { GetProps, ViewProps } from "@tamagui/core";
-import { View, styled } from "@tamagui/core";
+import { createStyledHOC, styled, View } from "@tamagui/core";
 import { composeEventHandlers, withStaticProperties } from "@tamagui/helpers";
 import type { FormHTMLAttributes } from "react";
 
 const FORM_NAME = "Form";
 
 const FormFrame = styled(View, {
-  name: FORM_NAME,
+  displayName: FORM_NAME,
   render: "form"
 });
 
@@ -42,7 +42,7 @@ type FormFrameExtraProps = Pick<
 >;
 type FormFrameProps = GetProps<typeof FormFrame> & FormFrameExtraProps;
 
-const FormImpl = FormFrame.styleable<FormFrameExtraProps>(
+const FormImpl = createStyledHOC(FormFrame, 
   ({ children, ...props }: FormFrameProps) => {
     const form = FormApi.use();
     const name = form.name.get();
@@ -88,12 +88,12 @@ const FormGroup = ({
 };
 
 const FormTriggerFrame = styled(View, {
-  name: FORM_NAME
+  displayName: FORM_NAME
 });
 
 export interface FormSubmitProps extends ViewProps {}
 
-export const FormSubmit = FormTriggerFrame.styleable(
+export const FormSubmit = createStyledHOC(FormTriggerFrame, 
   (props: FormSubmitProps, forwardedRef) => {
     const { children, onPress, ...triggerProps } = props;
 
@@ -115,7 +115,7 @@ export const FormSubmit = FormTriggerFrame.styleable(
   }
 );
 
-export const FormReset = FormTriggerFrame.styleable(
+export const FormReset = createStyledHOC(FormTriggerFrame, 
   (props: FormSubmitProps, forwardedRef) => {
     const { children, onPress, ...triggerProps } = props;
     const { reset } = useFormActions();

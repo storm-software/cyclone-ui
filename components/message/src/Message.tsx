@@ -18,8 +18,8 @@
 
 import type { AlertType } from "@cyclone-ui/alert";
 import { Alert } from "@cyclone-ui/alert";
-import type { ToastRootProps } from "@tamagui/toast/v2";
-import { Toast } from "@tamagui/toast/v2";
+import type { ToastRootProps } from "@tamagui/toast";
+import { Toast } from "@tamagui/toast";
 
 const getAlertType = (type: unknown): AlertType => {
   switch (type) {
@@ -54,12 +54,7 @@ export const Message = (props: MessageProps) => (
     <Toast.Viewport label="Messages">
       <Toast.List
         renderItem={({ handleClose, index, toast }) => (
-          <Toast.Item
-            index={index}
-            toast={toast}
-            unstyled={true}
-            width="100%"
-            maxWidth={800}>
+          <Toast.Item index={index} toast={toast} width="100%" maxWidth={800}>
             <Alert type={getAlertType(toast.data?.messageType ?? toast.type)}>
               <Alert.Icon>{toast.icon}</Alert.Icon>
               <Alert.Content>

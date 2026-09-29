@@ -73,7 +73,7 @@ export const Base: Story = {
     <CodeBlock
       {...args}
       title="example.ts"
-      icon={<FileCode2 color="$inkBody" />}>
+      icon={<FileCode2 color="inkBody" />}>
       <TypeScriptCode />
     </CodeBlock>
   ),

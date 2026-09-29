@@ -19,17 +19,21 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HelpCircle } from "@tamagui/lucide-icons-2";
 import { YStack } from "@tamagui/stacks";
+import type { ComponentProps, ReactNode } from "react";
 import { Card } from "./Card";
 
-const meta: Meta<typeof Card> = {
+// `icon` is a story-only arg consumed by the custom `render` below.
+type CardStoryArgs = ComponentProps<typeof Card> & { icon?: ReactNode };
+
+const meta: Meta<CardStoryArgs> = {
   title: "Containers/Card",
   component: Card,
   tags: ["autodocs"],
-  render: ({ icon, ...args }: any) => (
+  render: ({ icon, ...args }: CardStoryArgs) => (
     <Card {...args} width="500px">
       <Card.Header>
         <Card.Header.Icon>{icon}</Card.Header.Icon>
-        <YStack gap="$md">
+        <YStack gap="md">
           <Card.Header.Eyebrow>Card Eyebrow</Card.Header.Eyebrow>
           <Card.Header.Heading>Card Heading</Card.Header.Heading>
         </YStack>
@@ -40,11 +44,11 @@ const meta: Meta<typeof Card> = {
       </Card.Footer>
     </Card>
   )
-} satisfies Meta<typeof Card>;
+} satisfies Meta<CardStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Card>;
+type Story = StoryObj<CardStoryArgs>;
 
 export const Base: Story = {
   args: {
@@ -65,7 +69,7 @@ export const DataColor: Story = {
   args: {
     children:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    color: "$dataPinkEmphasis",
+    color: "dataPinkEmphasis",
     icon: <HelpCircle />
   }
 };

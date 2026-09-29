@@ -17,15 +17,22 @@
  ------------------------------------------------------------------- */
 
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
-import { getFontSizedFromSize, getSized, getSpaced } from "@cyclone-ui/helpers";
+import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import { AnimatePresence } from "@tamagui/animate-presence";
-import type { SizeTokens, VariantSpreadExtras, ViewProps } from "@tamagui/core";
+import type {
+  FontSizeTokens,
+  GetProps,
+  SizeTokens,
+  ViewProps
+} from "@tamagui/core";
 import {
   createStyledContext,
+  createStyledHOC,
   styled,
   View,
   withStaticProperties
 } from "@tamagui/core";
+import { getFontSized } from "@tamagui/get-font-sized";
 import { YStack } from "@tamagui/stacks";
 import type {
   TabLayout as TamaguiTabLayout,
@@ -119,12 +126,12 @@ export interface TabsContextProps {
   /**
    * The size of the tabs
    *
-   * @default "$true"
+   * @default true
    */
   size: SizeTokens;
 }
 
-export const TabsContext = createStyledContext<TabsContextProps>({
+export const TabsContext = createStyledContext<TabsContextProps, "state" | "setState" | "onInteraction" | "orientation" | "variant" | "bordered" | "size">({
   state: {
     ...initialState
   },
@@ -133,29 +140,30 @@ export const TabsContext = createStyledContext<TabsContextProps>({
   orientation: "horizontal",
   variant: "floating",
   bordered: true,
-  size: "$true"
+  size: true
+} as TabsContextProps, {
+  // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: ["orientation", "variant", "bordered", "size"]
 });
 
 const TabsFrame = styled(TamaguiTabs, {
-  name: "Tabs",
+  displayName: "Tabs",
   context: TabsContext,
-
   activationMode: "manual",
-  borderRadius: "$container",
+  borderRadius: "container",
   position: "relative",
   height: "100%",
   width: "100%",
-
   variants: {
-    size: {
-      "...size": (val: SizeTokens) => {
-        const size = getSized(val);
-
-        return {
-          size
-        };
-      }
-    },
+    // Only size tokens restyle the frame. `getSized(true)` clamps to the
+    // smallest token (0), which `TabsContext` would then hand to every header
+    // item as its size, so the `true` default is left alone.
+    size: styled.dynamic<SizeTokens>((val: SizeTokens, { tokens }) =>
+      typeof val === "string" && val in tokens.size
+        ? { size: getSized(val) }
+        : undefined
+    ),
 
     variant: {
       underline: {},
@@ -167,26 +175,34 @@ const TabsFrame = styled(TamaguiTabs, {
       false: {}
     }
   } as const,
-
   defaultVariants: {
-    size: "$true",
+    size: true,
     variant: "floating",
     bordered: true
   }
 });
 
-const TabsFrameImpl = TabsFrame.styleable(
+type TabsContextOwnedProps = "orientation" | "variant" | "bordered" | "size";
+
+/** Props the root shares through `TabsContext` take concrete values, not flat clauses. */
+export type TabsProps = Omit<
+  GetProps<typeof TabsFrame>,
+  TabsContextOwnedProps
+> &
+  Partial<Pick<TabsContextProps, TabsContextOwnedProps>>;
+
+const TabsFrameImpl = createStyledHOC(TabsFrame, 
   (
     {
       children,
       orientation = "horizontal",
       variant = "floating",
       bordered = true,
-      size = "$true",
+      size = true,
       onValueChange,
       theme,
       ...rest
-    },
+    }: TabsProps,
     forwardedRef
   ) => {
     const [state, setState] = useState<TabsState>({
@@ -259,68 +275,29 @@ const TabsFrameImpl = TabsFrame.styleable(
 );
 
 const TabsRovingIndicator = styled(YStack, {
-  name: "TabsIndicator",
+  displayName: "TabsIndicator",
   context: TabsContext,
-
   transition: "100ms",
   position: "absolute",
   pointerEvents: "none",
-
-  enterStyle: {
-    opacity: 0
-  },
-
-  exitStyle: {
-    opacity: 0
-  },
-
+  opacity: "enter:0 exit:0",
   variants: {
-    active: {
-      ":boolean": (val: boolean, config: VariantSpreadExtras<any>) => {
-        if (!val) {
-          return {};
-        }
+    // Styled by the `.resolve` below because the color depends on `variant`.
+    active: styled.dynamic<boolean>(),
 
-        return {
-          backgroundColor:
-            config.props.variant === "underline"
-              ? "$accent"
-              : "$surfaceElevated"
-        };
-      }
-    },
-
-    intent: {
-      ":boolean": (val: boolean, _config: VariantSpreadExtras<any>) => {
-        if (!val) {
-          return {};
-        }
-
-        return {
-          backgroundColor: "transparent",
-          borderColor: "transparent"
-        };
-      }
-    },
+    // Receives `"true"` from the `group-hover/tabs:true` clause.
+    intent: styled.dynamic<boolean | "true">(val => ({
+      backgroundColor: val === true || val === "true" ? "transparent" : undefined,
+      borderColor: val === true || val === "true" ? "transparent" : undefined
+    })),
 
     orientation: {
       horizontal: {},
       vertical: {}
     },
 
-    size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
-        const size = getSized(val);
-
-        return config.props.orientation === "horizontal"
-          ? {
-              height: size * 0.1
-            }
-          : {
-              width: size * 0.1
-            };
-      }
-    },
+    // Styled by the `.resolve` below because the axis depends on `orientation`.
+    size: styled.dynamic<SizeTokens>(),
 
     variant: {
       underline: {
@@ -328,9 +305,9 @@ const TabsRovingIndicator = styled(YStack, {
         borderColor: "transparent"
       },
       floating: {
-        borderRadius: "$button",
+        borderRadius: "button",
         borderWidth: 1,
-        borderColor: "$hairline",
+        borderColor: "hairline",
         alignItems: "center",
         justifyContent: "center"
       },
@@ -343,17 +320,34 @@ const TabsRovingIndicator = styled(YStack, {
       }
     }
   } as const,
-
   defaultVariants: {
-    size: "$true",
+    size: true,
     orientation: "horizontal",
     variant: "underline",
     active: false,
     intent: false
   }
+}).resolve(props => {
+  // A size token sets the indicator thickness; the default `true` leaves it to
+  // the explicit width/height props.
+  const thickness =
+    typeof props.size === "string" || typeof props.size === "number"
+      ? getSized(props.size) * 0.1
+      : undefined;
+  const horizontal = props.orientation !== "vertical";
+
+  return {
+    backgroundColor: props.active
+      ? (props.variant ?? "underline") === "underline"
+        ? "accent"
+        : "surfaceElevated"
+      : undefined,
+    height: horizontal ? thickness : undefined,
+    width: horizontal ? undefined : thickness
+  };
 });
 
-const TabsRovingIndicatorImpl = TabsRovingIndicator.styleable(
+const TabsRovingIndicatorImpl = createStyledHOC(TabsRovingIndicator, 
   ({ children, height, width, active, ...rest }, forwardedRef) => {
     const { orientation, variant } = TabsContext.useStyledContext();
     const isActiveUnderline =
@@ -371,7 +365,7 @@ const TabsRovingIndicatorImpl = TabsRovingIndicator.styleable(
         }
         height={
           isActiveUnderline
-            ? "$xs"
+            ? "xs"
             : orientation === "vertical" || variant === "floating"
               ? height
               : undefined
@@ -391,7 +385,7 @@ const TabsRovingIndicatorImpl = TabsRovingIndicator.styleable(
 );
 
 const AnimatedView = styled(View, {
-  name: "TabsIndicator",
+  displayName: "TabsIndicator",
   context: TabsContext,
 
   transition: "100ms",
@@ -404,54 +398,44 @@ const AnimatedView = styled(View, {
 
   variants: {
     // 1 = right, 0 = nowhere, -1 = left
-    direction: {
-      ":number": direction => ({
-        enterStyle: {
-          x: direction > 0 ? -50 : 50,
-          opacity: 0
-        },
-        exitStyle: {
-          zIndex: "$0",
-          x: direction < 0 ? -50 : 50,
-          opacity: 0
-        }
-      })
-    }
+    direction: styled.dynamic<number>(direction => ({
+              x: `enter:${direction > 0 ? -50 : 50}px exit:${direction < 0 ? -50 : 50}px`,
+              opacity: "enter:0 exit:0",
+              zIndex: "exit:0"
+            }))
   } as const
 });
 
 const TabsHeaderList = styled(YStack, {
-  name: "Tabs",
+  displayName: "Tabs",
   context: TabsContext,
-
   transition: "100ms",
   borderStyle: "solid",
   position: "relative",
-  padding: "$md",
-
+  padding: "md",
   variants: {
     orientation: {
       horizontal: {},
       vertical: {
-        minWidth: "$20xl"
+        minWidth: "20xl"
       }
     },
 
     variant: {
       underline: {
         borderColor: "transparent",
-        borderBottomColor: "$surfaceSunken",
-        borderBottomWidth: "$lg",
+        borderBottomColor: "surfaceSunken",
+        borderBottomWidth: "lg",
         borderRadius: 0
       },
       floating: {
-        backgroundColor: "$surfaceSunken",
-        borderRadius: "$container",
-        borderColor: "$hairline",
+        backgroundColor: "surfaceSunken",
+        borderRadius: "container",
+        borderColor: "hairline",
         borderWidth: 1
       },
       tabbed: {
-        backgroundColor: "$surfaceCanvas",
+        backgroundColor: "surfaceCanvas",
         borderWidth: 0,
         padding: 0
       }
@@ -464,14 +448,13 @@ const TabsHeaderList = styled(YStack, {
       }
     }
   } as const,
-
   defaultVariants: {
     orientation: "horizontal",
     variant: "floating"
   }
 });
 
-const TabsHeaderListImpl = TabsHeaderList.styleable(
+const TabsHeaderListImpl = createStyledHOC(TabsHeaderList, 
   ({ children, ...rest }: ViewProps, forwardedRef) => {
     const {
       state: { activeAt, intentAt, prevActiveAt },
@@ -507,14 +490,11 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
                 height={intentAt?.height ?? 0}
                 x={intentAt?.x ?? 0}
                 y={intentAt?.y ?? 0}
-                opacity={0}
+                opacity={`0 group-hover/tabs:${intentAt ? 1 : 0}`}
                 orientation={orientation}
                 variant={variant}
                 bordered={bordered}
-                $group-tabs-hover={{
-                  intent: Boolean(intentAt),
-                  opacity: intentAt ? 1 : 0
-                }}
+                intent={intentAt ? "group-hover/tabs:true" : undefined}
               />
             )}
             <AnimatePresence>
@@ -535,17 +515,14 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
         )}
 
         <TamaguiTabs.List
-          disablePassBorderRadius={
-            orientation === "horizontal" ? "bottom" : "end"
-          }
           loop={false}
           aria-label="Tabs"
-          gap="$md"
+          gap="md"
           position="relative"
           zIndex={1}
           backgroundColor="transparent">
           <AnimatePresence
-            exitBeforeEnter={true}
+            mode="wait"
             custom={{ direction }}
             initial={false}>
             {children}
@@ -557,44 +534,44 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
 );
 
 const TabsHeaderItemHeading = styled(HeadingSmallText, {
-  name: "TabsHeading",
+  displayName: "TabsHeading",
   context: TabsContext,
-
   transition: "200ms",
   textAlign: "center",
-  paddingVertical: "$xl",
-
+  paddingVertical: "xl",
   variants: {
-    size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
-        return getFontSizedFromSize(val, config);
-      }
-    },
+    // `TabsContext` passes `size: true`, which Tamagui v3 maps to the `sm` /
+    // `4` font key the typography fonts do not define; resolve it (and any
+    // font size key) against the font's own `true` step.
+    size: styled.dynamic<FontSizeTokens | SizeTokens | number>((val, env) =>
+      val === true ||
+      (typeof val === "string" && !!env.font && val in env.font.size)
+        ? getFontSized(val === true ? ("true" as FontSizeTokens) : val, env)
+        : undefined
+    ),
 
     selected: {
       true: {
-        color: "$accentActive",
-        fontWeight: "$bold"
+        color: "accentActive",
+        fontWeight: "bold"
       },
       false: {
-        color: "$accentInactive",
-        fontWeight: "$normal"
+        color: "accentInactive",
+        fontWeight: "normal"
       }
     }
   } as const,
-
   defaultVariants: {
-    size: "$true",
+    size: true,
     selected: false
   }
 });
 
 const TabsHeaderItem = styled(TamaguiTabs.Tab, {
-  name: "TabsHeading",
+  displayName: "TabsHeading",
   context: TabsContext,
 
   transition: "100ms",
-  unstyled: true,
 
   variants: {
     orientation: {
@@ -604,71 +581,24 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
       vertical: {}
     },
 
-    size: {
-      "...size": (val: SizeTokens, _config: VariantSpreadExtras<any>) => {
-        const space = getSpaced(val, { scale: 5 });
+    size: styled.dynamic<SizeTokens>(val => {
+      const space = getSpaced(val, { scale: 5 });
 
-        return {
-          paddingVertical: space,
-          paddingHorizontal: space
-        };
-      }
-    },
+      return {
+        paddingVertical: space,
+        paddingHorizontal: space
+      };
+    }),
 
     variant: {
       underline: {},
       floating: {},
-      tabbed: (_val: string, config: VariantSpreadExtras<any>) =>
-        config.props.orientation === "horizontal"
-          ? {
-              backgroundColor: "$surfaceCanvas",
-              borderColor: "$hairline",
-              borderWidth: 1,
-              borderTopLeftRadius: "$container",
-              borderTopRightRadius: "$container",
-              borderBottomLeftRadius: 0,
-              borderBottomRightRadius: 0,
-              marginBottom: -1,
-              zIndex: 2
-            }
-          : {
-              backgroundColor: "$surfaceCanvas",
-              borderColor: "$hairline",
-              borderWidth: 1,
-              borderTopLeftRadius: "$container",
-              borderBottomLeftRadius: "$container",
-              borderTopRightRadius: 0,
-              borderBottomRightRadius: 0,
-              marginRight: -1,
-              zIndex: 2
-            }
+      // Styled by the `.resolve` below because it depends on `orientation`.
+      tabbed: {}
     },
 
-    selected: {
-      ":boolean": (selected: boolean, config: VariantSpreadExtras<any>) => {
-        if (config.props.variant !== "tabbed") {
-          return {};
-        }
-
-        if (!selected) {
-          return {
-            hoverStyle: {
-              backgroundColor: "$surfaceCanvasHover"
-            }
-          };
-        }
-
-        return config.props.orientation === "horizontal"
-          ? {
-              backgroundColor: "$surfaceElevated",
-              borderBottomColor: "$surfaceElevated"
-            }
-          : {
-              backgroundColor: "$surfaceElevated",
-              borderRightColor: "$surfaceElevated"
-            };
-      }
-    },
+    // Styled by the `.resolve` below; it only applies to the tabbed variant.
+    selected: styled.dynamic<boolean>(),
 
     bordered: {
       false: {
@@ -679,13 +609,41 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
 
   defaultVariants: {
     orientation: "horizontal",
-    size: "$true",
+    size: true,
     variant: "floating",
     selected: false
   }
+}).resolve(props => {
+  if (props.variant !== "tabbed") {
+    return undefined;
+  }
+
+  const horizontal = props.orientation !== "vertical";
+  const borderWidth = props.bordered === false ? 0 : 1;
+
+  return {
+    backgroundColor: props.selected
+      ? "surfaceElevated"
+      : "surfaceCanvas hover:surfaceCanvasHover",
+    borderColor: "hairline",
+    borderWidth,
+    // Tamagui v3's Tabs.List is a Group that drops the connecting border on
+    // every tab but the first; tabbed tabs are spaced apart and keep it.
+    borderLeftWidth: horizontal ? borderWidth : undefined,
+    borderTopWidth: horizontal ? undefined : borderWidth,
+    borderTopLeftRadius: "container",
+    borderTopRightRadius: horizontal ? "container" : 0,
+    borderBottomLeftRadius: horizontal ? 0 : "container",
+    borderBottomRightRadius: 0,
+    borderBottomColor: props.selected && horizontal ? "surfaceElevated" : undefined,
+    borderRightColor: props.selected && !horizontal ? "surfaceElevated" : undefined,
+    marginBottom: horizontal ? -1 : undefined,
+    marginRight: horizontal ? undefined : -1,
+    zIndex: 2
+  };
 });
 
-const TabsHeaderItemImpl = TabsHeaderItem.styleable(
+const TabsHeaderItemImpl = createStyledHOC(TabsHeaderItem, 
   ({ children, value, ...rest }, forwardedRef) => {
     const {
       onInteraction,
@@ -715,11 +673,9 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
         value={value}
         onInteraction={onInteraction}>
         <TabsHeaderItemHeading
-          size={size}
-          selected={currentTab === value}
-          $group-hover={{
-            color: "$accent"
-          }}>
+          size={size === true ? ("true" as FontSizeTokens) : size}
+          color="group-hover:accent"
+          selected={currentTab === value}>
           {children}
         </TabsHeaderItemHeading>
       </TabsHeaderItem>
@@ -728,7 +684,7 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
 );
 
 const TabsContentList = styled(View, {
-  name: "TabsContent",
+  displayName: "TabsContent",
   context: TabsContext,
 
   position: "relative",
@@ -747,22 +703,8 @@ const TabsContentList = styled(View, {
     variant: {
       underline: {},
       floating: {},
-      tabbed: (_val: string, config: VariantSpreadExtras<any>) =>
-        config.props.orientation === "horizontal"
-          ? {
-              backgroundColor: "$surfaceElevated",
-              borderColor: "$hairline",
-              borderWidth: 1,
-              borderBottomLeftRadius: "$container",
-              borderBottomRightRadius: "$container"
-            }
-          : {
-              backgroundColor: "$surfaceElevated",
-              borderColor: "$hairline",
-              borderWidth: 1,
-              borderTopRightRadius: "$container",
-              borderBottomRightRadius: "$container"
-            }
+      // Styled by the `.resolve` below because it depends on `orientation`.
+      tabbed: {}
     },
 
     bordered: {
@@ -776,9 +718,24 @@ const TabsContentList = styled(View, {
     orientation: "horizontal",
     variant: "floating"
   }
+}).resolve(props => {
+  if (props.variant !== "tabbed") {
+    return undefined;
+  }
+
+  const horizontal = props.orientation !== "vertical";
+
+  return {
+    backgroundColor: "surfaceElevated",
+    borderColor: "hairline",
+    borderWidth: props.bordered === false ? 0 : 1,
+    borderTopRightRadius: horizontal ? undefined : "container",
+    borderBottomLeftRadius: horizontal ? "container" : undefined,
+    borderBottomRightRadius: "container"
+  };
 });
 
-const TabsContentItem = TamaguiTabs.Content.styleable(
+const TabsContentItem = createStyledHOC(TamaguiTabs.Content, 
   ({ children, value, ...rest }: TamaguiTabsContentProps, forwardedRef) => {
     const {
       state: { currentTab }

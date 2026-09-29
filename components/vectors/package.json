@@ -104,6 +104,10 @@
       "import": "./dist/StormLogoText.mjs",
       "require": "./dist/StormLogoText.cjs"
     },
+    "./themed-icon": {
+      "import": "./dist/themed-icon.mjs",
+      "require": "./dist/themed-icon.cjs"
+    },
     "./*": "./*"
   }
 }

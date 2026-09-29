@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import type { TokenValue } from "@cyclone-ui/helpers";
 import { getButtonSized, getSized } from "@cyclone-ui/helpers";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
@@ -23,24 +24,23 @@ import type {
   ColorTokens,
   GetProps,
   SizeTokens,
-  ThemeableProps,
+  ThemeName,
   UnionableNumber,
   UnionableString,
-  Variable,
-  VariantSpreadExtras
+  Variable
 } from "@tamagui/core";
 import {
-  Text,
-  View,
   createStyledContext,
+  createStyledHOC,
   styled,
-  useThemeName
+  Text,
+  useThemeName,
+  View
 } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
-import { ThemeableStack } from "@tamagui/stacks";
+import { YStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
 import { useCallback, useMemo } from "react";
-import type { GestureResponderEvent } from "react-native";
 
 type ButtonCascadeEffect =
   | "cascade"
@@ -124,39 +124,15 @@ const isDoubleCascadeVariant = (
   variant in doubleCascadeEffect;
 
 const cascadeFrameStyle = {
-  backgroundColor: "transparent",
-  borderWidth: 3,
-  borderColor: "$accent",
-
-  hoverStyle: {
-    backgroundColor: "transparent",
-    borderWidth: 1,
-    borderColor: "$accent"
-  },
-
-  pressStyle: {
-    backgroundColor: "transparent",
-    borderWidth: 1,
-    borderColor: "$accentActive"
-  }
+  backgroundColor: "transparent hover:transparent press:transparent",
+  borderWidth: "3px hover:1px press:1px",
+  borderColor: "accent hover:accent press:accentActive"
 } as const;
 
 const reverseCascadeFrameStyle = {
-  backgroundColor: "$accent",
-  borderWidth: 1,
-  borderColor: "$accent",
-
-  hoverStyle: {
-    backgroundColor: "transparent",
-    borderWidth: 3,
-    borderColor: "$accent"
-  },
-
-  pressStyle: {
-    backgroundColor: "transparent",
-    borderWidth: 3,
-    borderColor: "$accentActive"
-  }
+  backgroundColor: "accent hover:transparent press:transparent",
+  borderWidth: "1px hover:3px press:3px",
+  borderColor: "accent hover:accent press:accentActive"
 } as const;
 
 type BorderRadiusSizeTokens =
@@ -176,7 +152,7 @@ export type ButtonContextProps = TextContextStyles & {
   /**
    * The size of the button
    *
-   * @defaultValue "$5xl"
+   * @defaultValue "5xl"
    */
   size: SizeTokens;
 
@@ -190,7 +166,7 @@ export type ButtonContextProps = TextContextStyles & {
   /**
    * The radius of the button's border
    *
-   * @defaultValue "$button"
+   * @defaultValue "button"
    */
   borderRadius: BorderRadiusSizeTokens;
 
@@ -249,9 +225,9 @@ export type ButtonContextProps = TextContextStyles & {
   animate: boolean;
 };
 
-type ButtonExtraProps = TextParentStyles &
-  ThemeableProps &
-  Partial<ButtonContextProps> & {
+type ButtonExtraProps = TextParentStyles & {
+  theme?: ThemeName | null;
+} & Partial<ButtonContextProps> & {
     /**
      * An alternate way to provide an onPress handler
      */
@@ -275,21 +251,76 @@ type ButtonExtraProps = TextParentStyles &
     ghostOpacity?: number;
   };
 
-export const ButtonContext = createStyledContext<ButtonContextProps>({
-  size: "$10xl",
-  variant: "surface",
-  borderRadius: "$button",
-  unstyled: false,
-  circular: false,
-  rounded: false,
-  ringed: false,
-  disabled: false,
-  noPadding: false,
-  animate: true
-});
+export const ButtonContext = createStyledContext<
+  ButtonContextProps,
+  | "size"
+  | "variant"
+  | "borderRadius"
+  | "unstyled"
+  | "circular"
+  | "rounded"
+  | "ringed"
+  | "disabled"
+  | "noPadding"
+  | "animate"
+>(
+  {
+    size: "10xl",
+    variant: "surface",
+    borderRadius: "button",
+    unstyled: false,
+    circular: false,
+    rounded: false,
+    ringed: false,
+    disabled: false,
+    noPadding: false,
+    animate: true
+  } as ButtonContextProps,
+  {
+    keys: [
+      "size",
+      "variant",
+      "borderRadius",
+      "unstyled",
+      "circular",
+      "rounded",
+      "ringed",
+      "disabled",
+      "noPadding",
+      "animate"
+    ]
+  }
+);
+
+const getDisabledFrameStyle = (variant: ButtonVariant | undefined) => {
+  if (variant === "surface") {
+    return disabledFrameStyle("surfaceElevatedDisabled", "accentDisabled");
+  } else if (variant === "subtle") {
+    return disabledFrameStyle("mutedDisabled", "hairlineInactive");
+  } else if (variant === "inverse" || isReverseCascadeVariant(variant)) {
+    return disabledFrameStyle("mutedDisabled", "accentDisabled");
+  } else if (variant === "outlined" || isCascadeVariant(variant)) {
+    return disabledFrameStyle("transparent", "accentDisabled");
+  } else if (variant === "ghost" || variant === "link") {
+    return disabledFrameStyle("transparent", "transparent");
+  }
+
+  return disabledFrameStyle(undefined, undefined);
+};
+
+const disabledFrameStyle = (
+  backgroundColor: string | undefined,
+  borderColor: string | undefined
+) =>
+  ({
+    cursor: "not-allowed",
+    pointerEvents: "none",
+    backgroundColor,
+    borderColor
+  }) as const;
 
 const ButtonFrame = styled(View, {
-  name: "Button",
+  displayName: "Button",
   context: ButtonContext,
   render: "button",
   role: "button",
@@ -305,78 +336,35 @@ const ButtonFrame = styled(View, {
   flexWrap: "nowrap",
   flexDirection: "row",
   overflow: "hidden",
-  borderRadius: "$button",
+  borderRadius: "button",
   minWidth: "fit-content",
-  paddingHorizontal: "$2xl",
-
-  focusVisibleStyle: {
-    boxShadow: "$ringOffset"
-  },
-
+  paddingHorizontal: "2xl",
+  boxShadow: "focus-visible:ringOffset",
   variants: {
     variant: {
       surface: {
         borderWidth: 1,
-        borderColor: "$accent",
-        backgroundColor: "$surfaceElevated",
-
-        hoverStyle: {
-          backgroundColor: "$surfaceElevatedHover",
-          borderColor: "$accentHover"
-        },
-
-        pressStyle: {
-          backgroundColor: "$surfaceElevatedActive",
-          borderColor: "$accentActive"
-        }
+        borderColor: "accent hover:accentHover press:accentActive",
+        backgroundColor:
+          "surfaceElevated hover:surfaceElevatedHover press:surfaceElevatedActive"
       },
 
       subtle: {
         borderWidth: 0,
-        borderColor: "transparent",
-        backgroundColor: "$muted",
-
-        hoverStyle: {
-          backgroundColor: "$mutedHover",
-          borderColor: "transparent"
-        },
-
-        pressStyle: {
-          backgroundColor: "$mutedActive",
-          borderColor: "transparent"
-        }
+        borderColor: "transparent hover:transparent press:transparent",
+        backgroundColor: "muted hover:mutedHover press:mutedActive"
       },
 
       inverse: {
         borderWidth: 0,
-        borderColor: "transparent",
-        backgroundColor: "$accent",
-
-        hoverStyle: {
-          backgroundColor: "$accentHover",
-          borderColor: "transparent"
-        },
-
-        pressStyle: {
-          backgroundColor: "$accentActive",
-          borderColor: "transparent"
-        }
+        borderColor: "transparent hover:transparent press:transparent",
+        backgroundColor: "accent hover:accentHover press:accentActive"
       },
 
       outlined: {
-        backgroundColor: "transparent",
+        backgroundColor: "transparent hover:transparent press:transparent",
         borderWidth: 3,
-        borderColor: "$accent",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$accentHover"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$accentActive"
-        }
+        borderColor: "accent hover:accentHover press:accentActive"
       },
 
       cascade: cascadeFrameStyle,
@@ -405,88 +393,30 @@ const ButtonFrame = styled(View, {
       "reverse-diagonal-cascade-right": reverseCascadeFrameStyle,
 
       ghost: {
-        backgroundColor: "transparent",
-        borderWidth: 0,
-        borderColor: "transparent",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 0,
-          borderColor: "transparent"
-        },
-
-        pressStyle: {
-          backgroundColor: "$surfaceElevatedActive",
-          borderWidth: 0,
-          borderColor: "transparent"
-        }
+        backgroundColor:
+          "transparent hover:transparent press:surfaceElevatedActive",
+        borderWidth: "0px hover:0px press:0px",
+        borderColor: "transparent hover:transparent press:transparent"
       },
 
       link: {
-        backgroundColor: "transparent",
-        borderWidth: 0,
-        borderColor: "transparent",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 0,
-          borderColor: "transparent"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 0,
-          borderColor: "transparent"
-        }
+        backgroundColor: "transparent hover:transparent press:transparent",
+        borderWidth: "0px hover:0px press:0px",
+        borderColor: "transparent hover:transparent press:transparent"
       }
     },
 
     // Height/padding only. Avoid a `size` / `...size` variant — Tamagui (and its
     // compiler) treat those as a width+height shorthand and clip the label.
-    frameSize: {
-      ":string": getButtonSized,
-      ":number": getButtonSized,
-      true: (_val: boolean, extras: VariantSpreadExtras<any>) =>
-        getButtonSized("$10xl", extras)
-    },
+    // Styled by the `.resolve` below because the geometry depends on `circular`.
+    frameSize: styled.dynamic<SizeTokens | number | boolean>(),
 
-    disabled: {
-      true: (_val: boolean, { props }: VariantSpreadExtras<any>) => {
-        const result = {
-          cursor: "not-allowed",
-          pointerEvents: "none"
-        } as Partial<VariantSpreadExtras<any>>["props"];
-
-        const variant = props.variant as ButtonVariant | undefined;
-        if (variant === "surface") {
-          result.backgroundColor = "$surfaceElevatedDisabled";
-          result.borderColor = "$accentDisabled";
-        } else if (variant === "subtle") {
-          result.backgroundColor = "$mutedDisabled";
-          result.borderColor = "$hairlineInactive";
-        } else if (variant === "inverse" || isReverseCascadeVariant(variant)) {
-          result.backgroundColor = "$mutedDisabled";
-          result.borderColor = "$accentDisabled";
-        } else if (variant === "outlined" || isCascadeVariant(variant)) {
-          result.backgroundColor = "transparent";
-          result.borderColor = "$accentDisabled";
-        } else if (variant === "ghost" || variant === "link") {
-          result.backgroundColor = "transparent";
-          result.borderColor = "transparent";
-        }
-
-        return result;
-      }
-    },
+    // Styled by the `.resolve` below because the colors depend on `variant`.
+    disabled: styled.dynamic<boolean>(),
 
     ringed: {
       true: {
-        hoverStyle: {
-          boxShadow: "$ringOffset"
-        },
-        pressStyle: {
-          boxShadow: "$ringOffset"
-        }
+        boxShadow: "hover:ringOffset press:ringOffset"
       }
     },
 
@@ -510,29 +440,46 @@ const ButtonFrame = styled(View, {
 
     animate: {
       true: {
-        pressStyle: {
-          scale: 0.9
-        }
+        scale: "press:0.96"
+      },
+      false: {
+        scale: "1"
       }
     }
   } as const,
 
   defaultVariants: {
     variant: "surface",
-    frameSize: "$5xl",
+    frameSize: "5xl",
     disabled: false,
     ringed: false,
     circular: false,
     rounded: false,
     noPadding: false,
-    animate: false
+    animate: true
   }
+}).resolve((props, env) => {
+  const frameSize = props.frameSize === true ? "10xl" : props.frameSize;
+  const sized = frameSize
+    ? getButtonSized(frameSize as TokenValue, env, Boolean(props.circular))
+    : undefined;
+
+  return {
+    ...sized,
+    // The resolved padding would otherwise override the `noPadding` variant.
+    paddingHorizontal: props.noPadding ? 0 : sized?.paddingHorizontal,
+    // The `circular` and `rounded` variants own the radius when set.
+    borderRadius:
+      props.circular || props.rounded ? undefined : sized?.borderRadius,
+    ...(props.disabled
+      ? getDisabledFrameStyle(props.variant as ButtonVariant | undefined)
+      : undefined)
+  };
 });
 
 const ButtonTextFrame = styled(Text, {
-  name: "ButtonText",
+  displayName: "ButtonText",
   context: ButtonContext,
-
   render: "span",
   transition: "400ms",
   userSelect: "none",
@@ -541,105 +488,127 @@ const ButtonTextFrame = styled(Text, {
   textAlign: "center",
   textTransform: "capitalize",
   whiteSpace: "nowrap",
-  fontFamily: "$button",
-
-  hoverStyle: {
-    color: "$accent"
-  },
-
+  fontFamily: "button",
+  // v3 font classes no longer apply the font's default weight and leading.
+  fontWeight: "true",
+  lineHeight: "true",
+  color: "hover:accent",
   flexGrow: 0,
   flexShrink: 0,
   flexBasis: "auto",
   minWidth: "fit-content",
-  zIndex: "$20",
-
+  zIndex: "20",
   variants: {
     variant: {
       surface: {
-        color: "$accent"
+        color: "accent"
       },
 
       subtle: {
-        color: "$onAccent"
+        color: "onAccent"
       },
 
       inverse: {
-        color: "$onAccent"
+        color: "onAccent"
       },
 
       outlined: {
-        color: "$accent"
+        color: "accent"
       },
 
       cascade: {
-        color: "$accent"
+        color: "accent"
       },
 
       "double-cascade": {
-        color: "$accent"
+        color: "accent"
       },
 
       "cascade-top": {
-        color: "$accent"
+        color: "accent"
       },
 
       "cascade-left": {
-        color: "$accent"
+        color: "accent"
       },
 
       "cascade-bottom": {
-        color: "$accent"
+        color: "accent"
       },
 
       "cascade-right": {
-        color: "$accent"
+        color: "accent"
       },
 
       "diagonal-cascade": {
-        color: "$accent"
+        color: "accent"
       },
 
       "double-diagonal-cascade": {
-        color: "$accent"
+        color: "accent"
       },
 
       "diagonal-cascade-top": {
-        color: "$accent"
+        color: "accent"
       },
 
       "diagonal-cascade-left": {
-        color: "$accent"
+        color: "accent"
       },
 
       "diagonal-cascade-bottom": {
-        color: "$accent"
+        color: "accent"
       },
 
       "diagonal-cascade-right": {
-        color: "$accent"
+        color: "accent"
       },
 
-      "reverse-cascade": { color: "$onAccent" },
-      "reverse-double-cascade": { color: "$onAccent" },
-      "reverse-cascade-top": { color: "$onAccent" },
-      "reverse-cascade-left": { color: "$onAccent" },
-      "reverse-cascade-bottom": { color: "$onAccent" },
-      "reverse-cascade-right": { color: "$onAccent" },
-      "reverse-diagonal-cascade": { color: "$onAccent" },
-      "reverse-double-diagonal-cascade": { color: "$onAccent" },
-      "reverse-diagonal-cascade-top": { color: "$onAccent" },
-      "reverse-diagonal-cascade-left": { color: "$onAccent" },
-      "reverse-diagonal-cascade-bottom": { color: "$onAccent" },
-      "reverse-diagonal-cascade-right": { color: "$onAccent" },
+      "reverse-cascade": {
+        color: "onAccent"
+      },
+      "reverse-double-cascade": {
+        color: "onAccent"
+      },
+      "reverse-cascade-top": {
+        color: "onAccent"
+      },
+      "reverse-cascade-left": {
+        color: "onAccent"
+      },
+      "reverse-cascade-bottom": {
+        color: "onAccent"
+      },
+      "reverse-cascade-right": {
+        color: "onAccent"
+      },
+      "reverse-diagonal-cascade": {
+        color: "onAccent"
+      },
+      "reverse-double-diagonal-cascade": {
+        color: "onAccent"
+      },
+      "reverse-diagonal-cascade-top": {
+        color: "onAccent"
+      },
+      "reverse-diagonal-cascade-left": {
+        color: "onAccent"
+      },
+      "reverse-diagonal-cascade-bottom": {
+        color: "onAccent"
+      },
+      "reverse-diagonal-cascade-right": {
+        color: "onAccent"
+      },
 
       ghost: {
-        color: "$accent"
+        color: "accent"
       },
 
       link: {
-        color: "$accent",
+        color: "accent",
         textDecorationLine: "underline",
-        textDecorationColor: "$accent",
+        textDecorationColor: "accent",
         textDecorationStyle: "solid"
       }
     },
@@ -648,22 +617,11 @@ const ButtonTextFrame = styled(Text, {
       true: {
         cursor: "not-allowed",
         pointerEvents: "none",
-        color: "$accentDisabled",
-        textDecoration: "none",
-
-        hoverStyle: {
-          color: "$accentDisabled",
-          textDecoration: "none"
-        },
-
-        pressStyle: {
-          color: "$accentDisabled",
-          textDecoration: "none"
-        }
+        color: "accentDisabled hover:accentDisabled press:accentDisabled",
+        textDecoration: "none hover:none press:none"
       }
     }
   } as const,
-
   defaultVariants: {
     variant: "surface",
     disabled: false
@@ -682,12 +640,12 @@ const colorForVariant = (
     (variant === "subtle" && !themeName?.endsWith("base"))
   ) {
     return (
-      disabled ? "$onAccentDisabled" : (color ?? "$onAccent")
+      disabled ? "onAccentDisabled" : (color ?? "onAccent")
     ) as ThemeableIconProps["color"];
   }
 
   return (
-    disabled ? "$accentDisabled" : (color ?? "$accent")
+    disabled ? "accentDisabled" : (color ?? "accent")
   ) as ThemeableIconProps["color"];
 };
 
@@ -701,10 +659,10 @@ const hoverColorForVariant = (
       variant === "inverse" ||
       (variant === "subtle" && !themeName?.endsWith("base"))
     ) {
-      return "$onAccentDisabled";
+      return "onAccentDisabled";
     }
 
-    return "$accentDisabled";
+    return "accentDisabled";
   }
 
   if (
@@ -712,7 +670,7 @@ const hoverColorForVariant = (
     (variant === "subtle" && themeName?.endsWith("base")) ||
     isReverseCascadeVariant(variant)
   ) {
-    return "$accent";
+    return "accent";
   }
 
   if (
@@ -720,10 +678,10 @@ const hoverColorForVariant = (
     variant === "subtle" ||
     isCascadeVariant(variant)
   ) {
-    return "$onAccent";
+    return "onAccent";
   }
 
-  return "$accentHover";
+  return "accentHover";
 };
 
 const pressedColorForVariant = (
@@ -736,14 +694,14 @@ const pressedColorForVariant = (
       variant === "inverse" ||
       (variant === "subtle" && !themeName?.endsWith("base"))
     ) {
-      return "$onAccentDisabled";
+      return "onAccentDisabled";
     }
 
-    return "$accentDisabled";
+    return "accentDisabled";
   }
 
   if (isReverseCascadeVariant(variant)) {
-    return "$accentActive";
+    return "accentActive";
   }
 
   if (
@@ -751,47 +709,57 @@ const pressedColorForVariant = (
     variant === "subtle" ||
     isCascadeVariant(variant)
   ) {
-    return "$onAccentActive";
+    return "onAccentActive";
   }
 
-  return "$accentActive";
+  return "accentActive";
 };
 
-const ButtonText = ButtonTextFrame.styleable<{ size?: SizeTokens }>(
-  ({ children, size: _size, ...props }, forwardedRef) => {
+/** Join flat style values; later clauses win over earlier ones. */
+const joinFlatValues = (...values: unknown[]) =>
+  values.filter(value => value != null && value !== "").join(" ");
+
+const ButtonText = createStyledHOC(
+  ButtonTextFrame,
+  (
+    {
+      children,
+      size: _size,
+      ...props
+    }: GetProps<typeof ButtonTextFrame> & { size?: SizeTokens },
+    forwardedRef
+  ) => {
     const { variant, disabled, color } = ButtonContext.useStyledContext();
     const theme = useThemeName();
+    const hoverColor = hoverColorForVariant(variant, disabled, theme);
 
     return (
       <ButtonTextFrame
         ref={forwardedRef}
         variant={variant}
         disabled={disabled}
-        color={colorForVariant(variant, disabled, color, theme)}
+        color={`${String(colorForVariant(variant, disabled, color, theme))} group-hover/button:${hoverColor}`}
         {...props}
         borderRadius={0}
-        $group-button-hover={{
-          color: hoverColorForVariant(variant, disabled, theme),
-          textDecorationColor: hoverColorForVariant(variant, disabled, theme)
-        }}>
+        textDecorationColor={`group-hover/button:${hoverColor}`}>
         {children}
       </ButtonTextFrame>
     );
   },
   {
-    staticConfig: { componentName: "ButtonText" }
+    displayName: "ButtonText"
   }
 );
 
-const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
+const ButtonIcon = createStyledHOC(
+  View,
   (
     {
       children,
       size,
-      "$group-button-hover": groupButtonHover,
-      "$group-button-press": groupButtonPress,
+      color: colorProp,
       ...props
-    },
+    }: GetProps<typeof View> & { size?: SizeTokens },
     forwardedRef
   ) => {
     const {
@@ -804,55 +772,47 @@ const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
       () => getSized(size ?? contextSize, { shift: -6 }),
       [size, contextSize]
     );
+    const groupColor = `group-hover/button:${hoverColorForVariant(
+      variant,
+      disabled
+    )} group-press/button:${pressedColorForVariant(variant, disabled)}`;
 
     return (
       <View
         ref={forwardedRef}
-        zIndex="$20"
+        zIndex="20"
         alignItems="center"
         flexGrow={0}
-        flexShrink={0}
-        $group-button-hover={{
-          color: hoverColorForVariant(variant, disabled),
-          ...groupButtonHover
-        }}
-        $group-button-press={{
-          color: pressedColorForVariant(variant, disabled),
-          ...groupButtonPress
-        }}>
+        flexShrink={0}>
         <ThemeableIcon
           {...props}
           disabled={disabled}
           size={adjusted}
-          color={colorForVariant(variant, disabled, color)}
-          $group-button-hover={{
-            color: hoverColorForVariant(variant, disabled),
-            ...groupButtonHover
-          }}
-          $group-button-press={{
-            color: pressedColorForVariant(variant, disabled),
-            ...groupButtonPress
-          }}>
+          color={joinFlatValues(
+            colorForVariant(variant, disabled, color),
+            groupColor,
+            // Callers extend the icon color with their own flat clauses, e.g.
+            // `color="group-hover/button:accentHover"`.
+            colorProp
+          )}>
           {children}
         </ThemeableIcon>
       </View>
     );
   },
   {
-    staticConfig: { componentName: "ButtonIcon" }
+    displayName: "ButtonIcon"
   }
 );
 
-const ButtonHoverBackground = styled(ThemeableStack, {
-  name: "Button",
+const ButtonHoverBackground = styled(YStack, {
+  displayName: "Button",
   context: ButtonContext,
-
   transition: "500ms",
-  zIndex: "$10",
+  zIndex: "10",
   position: "absolute",
-  borderColor: "$accent",
+  borderColor: "accent",
   pointerEvents: "none",
-
   variants: {
     effect: {
       ghost: {
@@ -861,7 +821,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
         bottom: 0,
         left: 0,
         opacity: 0,
-        backgroundColor: "$mutedHover"
+        backgroundColor: "mutedHover"
       },
       cascade: {
         top: 0,
@@ -869,7 +829,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
         left: "-100%",
         width: "100%",
         opacity: 1,
-        backgroundColor: "$accent"
+        backgroundColor: "accent"
       },
       "cascade-left": {
         top: 0,
@@ -877,7 +837,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
         left: "-100%",
         width: "100%",
         opacity: 1,
-        backgroundColor: "$accent"
+        backgroundColor: "accent"
       },
       "cascade-top": {
         top: "-100%",
@@ -885,7 +845,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
         left: 0,
         height: "100%",
         opacity: 1,
-        backgroundColor: "$accent"
+        backgroundColor: "accent"
       },
       "cascade-bottom": {
         right: 0,
@@ -893,7 +853,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
         left: 0,
         height: "100%",
         opacity: 1,
-        backgroundColor: "$accent"
+        backgroundColor: "accent"
       },
       "cascade-right": {
         top: 0,
@@ -901,7 +861,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
         bottom: 0,
         width: "100%",
         opacity: 1,
-        backgroundColor: "$accent"
+        backgroundColor: "accent"
       },
       "diagonal-cascade": {
         top: 0,
@@ -909,7 +869,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
         left: "-125%",
         width: "125%",
         opacity: 1,
-        backgroundColor: "$accent",
+        backgroundColor: "accent",
         clipPath: "polygon(0 0, 80% 0, 100% 100%, 0 100%)"
       },
       "diagonal-cascade-left": {
@@ -918,7 +878,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
         left: "-125%",
         width: "125%",
         opacity: 1,
-        backgroundColor: "$accent",
+        backgroundColor: "accent",
         clipPath: "polygon(0 0, 80% 0, 100% 100%, 0 100%)"
       },
       "diagonal-cascade-top": {
@@ -927,7 +887,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
         left: 0,
         height: "400%",
         opacity: 1,
-        backgroundColor: "$accent",
+        backgroundColor: "accent",
         clipPath: "polygon(0 0, 100% 0, 100% 25%, 0 100%)"
       },
       "diagonal-cascade-bottom": {
@@ -936,7 +896,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
         left: 0,
         height: "400%",
         opacity: 1,
-        backgroundColor: "$accent",
+        backgroundColor: "accent",
         clipPath: "polygon(0 75%, 100% 0, 100% 100%, 0 100%)"
       },
       "diagonal-cascade-right": {
@@ -945,7 +905,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
         bottom: 0,
         width: "125%",
         opacity: 1,
-        backgroundColor: "$accent",
+        backgroundColor: "accent",
         clipPath: "polygon(20% 0, 100% 0, 100% 100%, 0 100%)"
       }
     },
@@ -968,7 +928,6 @@ const ButtonHoverBackground = styled(ThemeableStack, {
       }
     }
   } as const,
-
   defaultVariants: {
     effect: "ghost",
     slow: false,
@@ -977,14 +936,42 @@ const ButtonHoverBackground = styled(ThemeableStack, {
   }
 });
 
+type ButtonPressEvent = Parameters<
+  NonNullable<GetProps<typeof View>["onPress"]>
+>[0];
+
+type CascadePosition = Partial<
+  Record<"top" | "right" | "bottom" | "left", number | string>
+>;
+
+/**
+ * Combine a cascade layer's resting offset with the offset it slides to while
+ * the button group is hovered.
+ */
+const getCascadePositionStyle = (
+  base: CascadePosition | undefined,
+  hover: CascadePosition | undefined
+) => {
+  const style: Record<string, string> = {};
+  for (const [key, value] of Object.entries(base ?? {})) {
+    style[key] = String(value);
+  }
+  for (const [key, value] of Object.entries(hover ?? {})) {
+    style[key] = joinFlatValues(style[key], `group-hover/button:${value}`);
+  }
+
+  return style as Record<keyof CascadePosition, string>;
+};
+
 export type ButtonProps = ButtonExtraProps &
   Omit<GetProps<typeof ButtonFrame>, "frameSize" | "size">;
 
-const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
+const ButtonContainerImpl = createStyledHOC(
+  ButtonFrame,
   (
     {
       variant = "surface",
-      size = "$10xl",
+      size = "10xl",
       disabled = false,
       circular = false,
       rounded = false,
@@ -999,11 +986,11 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
       download,
       ghostOpacity = 0.75,
       ...props
-    },
+    }: GetProps<typeof ButtonFrame> & ButtonProps,
     forwardedRef
   ) => {
     const handlePress = useCallback(
-      (event: GestureResponderEvent) => {
+      (event: ButtonPressEvent) => {
         if (render !== "a") {
           event.preventDefault();
         }
@@ -1030,10 +1017,12 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
 
     const frame = (
       <ButtonFrame
-        group={"button" as any}
+        group={"button"}
         ref={forwardedRef}
         render={render}
-        href={href}
+        // Tamagui v3 no longer types `href` on View; it still reaches the
+        // rendered `<a>` element when `render="a"`.
+        {...({ href } as object)}
         download={download}
         {...props}
         onPress={handlePress}
@@ -1053,9 +1042,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
             rounded={rounded}
             position="absolute"
             width="100%"
-            $group-button-hover={{
-              opacity: disabled ? 0 : ghostOpacity
-            }}
+            opacity={`group-hover/button:${disabled ? 0 : ghostOpacity}`}
           />
         )}
         {cascadeState && (
@@ -1065,20 +1052,22 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
                 effect={doubleCascadeEffect[cascadeState.effect]}
                 circular={circular}
                 rounded={rounded}
-                slow
-                backgroundColor="$muted"
-                {...(cascadeState.reverse
-                  ? cascadeHoverStyle[doubleCascadeEffect[cascadeState.effect]]
-                  : {})}
-                $group-button-hover={
+                backgroundColor="muted"
+                {...getCascadePositionStyle(
+                  cascadeState.reverse
+                    ? cascadeHoverStyle[
+                        doubleCascadeEffect[cascadeState.effect]
+                      ]
+                    : undefined,
                   disabled
-                    ? {}
+                    ? undefined
                     : cascadeState.reverse
                       ? cascadeInitialStyle[
                           doubleCascadeEffect[cascadeState.effect]
                         ]
                       : { left: 0 }
-                }
+                )}
+                slow
               />
             )}
             <ButtonHoverBackground
@@ -1089,26 +1078,20 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
               }
               circular={circular}
               rounded={rounded}
-              slow={isDoubleCascadeVariant(cascadeState.effect)}
-              left={
-                !cascadeState.reverse &&
-                isDoubleCascadeVariant(cascadeState.effect)
-                  ? "-171.875%"
-                  : undefined
-              }
-              {...(cascadeState.reverse
-                ? cascadeHoverStyle[cascadeState.effect]
-                : {})}
-              $group-button-hover={
+              {...getCascadePositionStyle(
+                cascadeState.reverse
+                  ? cascadeHoverStyle[cascadeState.effect]
+                  : isDoubleCascadeVariant(cascadeState.effect)
+                    ? { left: "-171.875%" }
+                    : undefined,
                 disabled
-                  ? {}
+                  ? undefined
                   : cascadeState.reverse
                     ? cascadeInitialStyle[cascadeState.effect]
                     : cascadeHoverStyle[cascadeState.effect]
-              }
-              $group-button-press={{
-                backgroundColor: "$accentActive"
-              }}
+              )}
+              backgroundColor="group-press/button:accentActive"
+              slow={isDoubleCascadeVariant(cascadeState.effect)}
             />
           </>
         )}
@@ -1118,7 +1101,15 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
 
     return (
       <ButtonContext.Provider
-        {...props}
+        // Only context keys: a styled context treats every key in its value
+        // as a context prop, so spreading all props swallowed `aria-*` and
+        // other DOM attributes before they reached the element.
+        {...(props.borderRadius === undefined
+          ? null
+          : { borderRadius: props.borderRadius })}
+        {...(props.unstyled === undefined
+          ? null
+          : { unstyled: props.unstyled })}
         variant={variant}
         size={size}
         disabled={disabled}
@@ -1132,7 +1123,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
     );
   },
   {
-    staticConfig: { componentName: "Button" }
+    displayName: "Button"
   }
 );
 

@@ -173,19 +173,19 @@ const tokens = createTokens({
     "2xl": 16,
     "3xl": 24,
     "4xl": 32,
-    button: 4,
-    card: 4,
-    container: 6,
-    control: 4,
-    dialog: 8,
-    drawer: 16,
+    button: 6,
+    card: 6,
+    container: 8,
+    control: 6,
+    dialog: 12,
+    drawer: 32,
     full: "100%",
     lg: 8,
     md: 6,
-    popover: 4,
+    popover: 6,
     sheet: 0,
     sm: 4,
-    tooltip: 4,
+    tooltip: 6,
     xl: 12,
     xs: 2,
     zero: 0
@@ -228,10 +228,10 @@ const tokens = createTokens({
     "15xl": px(384),
     lg: px(20),
     md: px(18),
-    sm: px(17.2),
+    sm: px(16),
     xl: px(24),
-    xs: px(16),
-    xxs: px(14)
+    xs: px(14),
+    xxs: px(12)
   },
   shadow: {
     "2xl": "0px 25px 50px -12px #00000040",
@@ -944,16 +944,34 @@ const themes = createThemes({
   }
 });
 
-const bodyLgFont = createFont({
-  family: "Manrope",
+const bodyFont = createFont({
+  family: isWeb ? "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" : "Storm Sans",
   size: {
     md: 18,
     true: 18
   },
   lineHeight: {
-    md: 20.655,
-    normal: 20.655,
-    true: 20.655
+    md: 27,
+    normal: 27,
+    true: 27
+  },
+  weight: {
+    md: "400",
+    normal: "400",
+    true: "400"
+  }
+});
+
+const buttonFont = createFont({
+  family: isWeb ? "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" : "Storm Sans",
+  size: {
+    md: 18,
+    true: 18
+  },
+  lineHeight: {
+    md: 27,
+    normal: 27,
+    true: 27
   },
   weight: {
     md: "600",
@@ -962,34 +980,16 @@ const bodyLgFont = createFont({
   }
 });
 
-const bodyMdFont = createFont({
-  family: "Manrope",
+const captionFont = createFont({
+  family: isWeb ? "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" : "Storm Sans",
   size: {
-    md: 18,
-    true: 18
+    sm: 16,
+    true: 16
   },
   lineHeight: {
-    md: 20.655,
-    normal: 20.655,
-    true: 20.655
-  },
-  weight: {
-    md: "500",
-    medium: "500",
-    true: "500"
-  }
-});
-
-const bodySmFont = createFont({
-  family: "Manrope",
-  size: {
-    sm: 17.2,
-    true: 17.2
-  },
-  lineHeight: {
-    normal: 19.737,
-    sm: 19.737,
-    true: 19.737
+    normal: 24,
+    sm: 24,
+    true: 24
   },
   weight: {
     normal: "400",
@@ -998,124 +998,88 @@ const bodySmFont = createFont({
   }
 });
 
-const bodyXlFont = createFont({
-  family: "Manrope",
+const codeFont = createFont({
+  family: "Google Sans Code",
   size: {
     lg: 20,
     true: 20
   },
   lineHeight: {
-    lg: 22.95,
-    normal: 22.95,
-    true: 22.95
+    lg: 27.5,
+    snug: 27.5,
+    true: 27.5
   },
   weight: {
-    lg: "600",
-    semibold: "600",
-    true: "600"
-  }
-});
-
-const bodyXsFont = createFont({
-  family: "Manrope",
-  size: {
-    true: 16,
-    xs: 16
-  },
-  lineHeight: {
-    normal: 18.36,
-    true: 18.36,
-    xs: 18.36
-  },
-  weight: {
-    normal: "400",
-    true: "400",
-    xs: "400"
-  }
-});
-
-const buttonFont = createFont({
-  family: "Manrope",
-  size: {
-    md: 18,
-    true: 18
-  },
-  lineHeight: {
-    md: 20.655,
-    normal: 20.655,
-    true: 20.655
-  },
-  weight: {
-    black: "900",
-    md: "900",
-    true: "900"
-  }
-});
-
-const codeFont = createFont({
-  family: "Geist Mono",
-  size: {
-    md: 18,
-    true: 18
-  },
-  lineHeight: {
-    md: 18.934,
-    snug: 18.934,
-    true: 18.934
-  },
-  weight: {
-    md: "500",
-    medium: "500",
-    true: "500"
-  }
-});
-
-const displayHeroFont = createFont({
-  family: "Space Grotesk",
-  size: {
-    "5xl": 60,
-    true: 60
-  },
-  lineHeight: {
-    "5xl": 68.85,
-    normal: 68.85,
-    true: 68.85
-  },
-  weight: {
-    "5xl": "400",
+    lg: "400",
     normal: "400",
     true: "400"
   }
 });
 
+const displayHeroFont = createFont({
+  family: isWeb ? "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" : "Storm Sans",
+  size: {
+    "5xl": 60,
+    true: 60
+  },
+  lineHeight: {
+    "5xl": 82.5,
+    snug: 82.5,
+    true: 82.5
+  },
+  weight: {
+    "5xl": "600",
+    semibold: "600",
+    true: "600"
+  }
+});
+
 const displayLgFont = createFont({
-  family: "Space Grotesk",
+  family: isWeb ? "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" : "Storm Sans",
+  size: {
+    "3xl": 36,
+    true: 36
+  },
+  lineHeight: {
+    "3xl": 49.5,
+    snug: 49.5,
+    true: 49.5
+  },
+  weight: {
+    "3xl": "600",
+    semibold: "600",
+    true: "600"
+  }
+});
+
+const displayMdFont = createFont({
+  family: isWeb ? "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" : "Storm Sans",
   size: {
     true: 24,
     xl: 24
   },
   lineHeight: {
-    tight: 22.95,
-    true: 22.95,
-    xl: 22.95
+    normal: 36,
+    true: 36,
+    xl: 36
   },
   weight: {
-    medium: "500",
-    true: "500",
-    xl: "500"
+    bold: "700",
+    true: "700",
+    xl: "700"
   }
 });
 
-const displayMdFont = createFont({
-  family: "Space Grotesk",
+const displaySmFont = createFont({
+  family: isWeb ? "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" : "Storm Sans",
   size: {
     lg: 20,
     true: 20
   },
   lineHeight: {
-    lg: 21.037,
-    snug: 21.037,
-    true: 21.037
+    lg: 30,
+    normal: 30,
+    true: 30
   },
   weight: {
     bold: "700",
@@ -1124,111 +1088,82 @@ const displayMdFont = createFont({
   }
 });
 
-const displaySmFont = createFont({
-  family: "Space Grotesk",
+const eyebrowFont = createFont({
+  family: isWeb ? "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" : "Storm Sans",
   size: {
     md: 18,
     true: 18
   },
   lineHeight: {
-    md: 18.934,
-    snug: 18.934,
-    true: 18.934
+    md: 27,
+    normal: 27,
+    true: 27
   },
   weight: {
-    bold: "700",
-    md: "700",
-    true: "700"
+    md: "600",
+    semibold: "600",
+    true: "600"
   }
 });
 
-const displayTitleFont = createFont({
-  family: "Space Grotesk",
+const fontsFont = createFont({
+  family: "Fonts",
   size: {
-    "4xl": 48,
-    true: 48
+    1: 12,
+    2: 14,
+    3: 16,
+    4: 18,
+    5: 20,
+    6: 24,
+    7: 28,
+    8: 32,
+    9: 40,
+    10: 48
   },
-  lineHeight: {
-    "4xl": 50.49,
-    snug: 50.49,
-    true: 50.49
-  },
-  weight: {
-    "4xl": "400",
-    normal: "400",
-    true: "400"
+  face: {
+    100: { normal: "StormSans-Thin", italic: "StormSans-ThinItalic" },
+    200: { normal: "StormSans-ExtraLight", italic: "StormSans-ExtraLightItalic" },
+    300: { normal: "StormSans-Light", italic: "StormSans-LightItalic" },
+    400: { normal: "StormSans-VF", italic: "StormSans-TextItalic" },
+    500: { normal: "StormSans-Medium", italic: "StormSans-MediumItalic" },
+    600: { normal: "StormSans-SemiBold", italic: "StormSans-SemiBoldItalic" },
+    700: { normal: "StormSans-Bold", italic: "StormSans-BoldItalic" }
   }
 });
 
-const displayXlFont = createFont({
-  family: "Space Grotesk",
+const titleLgFont = createFont({
+  family: isWeb ? "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" : "Storm Sans",
   size: {
-    "3xl": 36,
-    true: 36
+    lg: 20,
+    true: 20
   },
   lineHeight: {
-    "3xl": 37.867,
-    snug: 37.867,
-    true: 37.867
+    lg: 30,
+    normal: 30,
+    true: 30
   },
   weight: {
-    "3xl": "700",
-    bold: "700",
-    true: "700"
+    lg: "500",
+    medium: "500",
+    true: "500"
   }
 });
 
-const displayXsFont = createFont({
-  family: "Space Grotesk",
+const titleSmFont = createFont({
+  family: isWeb ? "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" : "Storm Sans",
   size: {
-    true: 16,
-    xs: 16
+    true: 14,
+    xs: 14
   },
   lineHeight: {
-    snug: 16.83,
-    true: 16.83,
-    xs: 16.83
+    normal: 21,
+    true: 21,
+    xs: 21
   },
   weight: {
-    black: "900",
-    true: "900",
-    xs: "900"
-  }
-});
-
-const eyebrowLgFont = createFont({
-  family: "Manrope",
-  size: {
-    md: 18,
-    true: 18
-  },
-  lineHeight: {
-    md: 20.655,
-    normal: 20.655,
-    true: 20.655
-  },
-  weight: {
-    extrabold: "800",
-    md: "800",
-    true: "800"
-  }
-});
-
-const eyebrowSmFont = createFont({
-  family: "Manrope",
-  size: {
-    sm: 17.2,
-    true: 17.2
-  },
-  lineHeight: {
-    normal: 19.737,
-    sm: 19.737,
-    true: 19.737
-  },
-  weight: {
-    black: "900",
-    sm: "900",
-    true: "900"
+    medium: "500",
+    true: "500",
+    xs: "500"
   }
 });
 
@@ -1341,24 +1276,20 @@ export const config = createTamagui({
   tokens,
   themes,
   fonts: {
-     "body-lg": bodyLgFont,
-    "body-md": bodyMdFont,
-    "body-sm": bodySmFont,
-    "body-xl": bodyXlFont,
-    "body-xs": bodyXsFont,
+     body: bodyFont,
     button: buttonFont,
+    caption: captionFont,
     code: codeFont,
     "display-hero": displayHeroFont,
     "display-lg": displayLgFont,
     "display-md": displayMdFont,
     "display-sm": displaySmFont,
-    "display-title": displayTitleFont,
-    "display-xl": displayXlFont,
-    "display-xs": displayXsFont,
-    "eyebrow-lg": eyebrowLgFont,
-    "eyebrow-sm": eyebrowSmFont
+    eyebrow: eyebrowFont,
+    fonts: fontsFont,
+    "title-lg": titleLgFont,
+    "title-sm": titleSmFont
    },
-  defaultFont: "Space Grotesk",
+  defaultFont: "body",
   settings: { styleValueSyntax: "string", legacyConditionObjects: false }
 , ...userConfig 
 });

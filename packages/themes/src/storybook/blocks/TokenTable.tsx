@@ -2958,10 +2958,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "size.none",
+      path: "size.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-size-none",
+      cssVar: "--rw-size-zero",
       description: "No size",
       theme: undefined,
       typography: false
@@ -3435,10 +3435,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "spacing.none",
+      path: "spacing.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-spacing-none",
+      cssVar: "--rw-spacing-zero",
       description: "No spacing",
       theme: undefined,
       typography: false
@@ -3689,27 +3689,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.875rem",
+      value: "0.75rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (0.75rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "1rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (1rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1.075rem",
+      value: "1rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1.075rem)",
+      description: "Small font size (1rem)",
       theme: undefined,
       typography: true
     },
@@ -4002,9 +4002,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "line-height.none",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-none",
+      description: "No extra line height (1)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "line-height.tight",
       type: "number",
-      value: "0.95625",
+      value: "1.25",
       cssVar: "--rw-line-height-tight",
       description: "Tight line height (1.25)",
       theme: undefined,
@@ -4013,7 +4022,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.051875",
+      value: "1.375",
       cssVar: "--rw-line-height-snug",
       description: "Snug line height (1.375)",
       theme: undefined,
@@ -4022,7 +4031,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-normal",
       description: "Normal line height (1.5)",
       theme: undefined,
@@ -4031,7 +4040,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.243125",
+      value: "1.625",
       cssVar: "--rw-line-height-relaxed",
       description: "Relaxed line height (1.625)",
       theme: undefined,
@@ -4040,7 +4049,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.53",
+      value: "2",
       cssVar: "--rw-line-height-loose",
       description: "Loose line height (2)",
       theme: undefined,
@@ -4049,7 +4058,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-xs",
       description: "Line height for text-xs (calc(1 / 0.75))",
       theme: undefined,
@@ -4058,7 +4067,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.092857",
+      value: "1.428571",
       cssVar: "--rw-line-height-sm",
       description: "Line height for text-sm (calc(1.25 / 0.875))",
       theme: undefined,
@@ -4067,7 +4076,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.md",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-md",
       description: "Line height for text-md (calc(1.5 / 1))",
       theme: undefined,
@@ -4076,7 +4085,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.190001",
+      value: "1.555556",
       cssVar: "--rw-line-height-lg",
       description: "Line height for text-lg (calc(1.75 / 1.125))",
       theme: undefined,
@@ -4085,7 +4094,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.071",
+      value: "1.4",
       cssVar: "--rw-line-height-xl",
       description: "Line height for text-xl (calc(1.75 / 1.25))",
       theme: undefined,
@@ -4094,7 +4103,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-2xl",
       description: "Line height for text-2xl (calc(2 / 1.5))",
       theme: undefined,
@@ -4103,7 +4112,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.3xl",
       type: "number",
-      value: "0.918",
+      value: "1.2",
       cssVar: "--rw-line-height-3xl",
       description: "Line height for text-3xl (calc(2.25 / 1.875))",
       theme: undefined,
@@ -4112,7 +4121,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.4xl",
       type: "number",
-      value: "0.85",
+      value: "1.111111",
       cssVar: "--rw-line-height-4xl",
       description: "Line height for text-4xl (calc(2.5 / 2.25))",
       theme: undefined,
@@ -4121,62 +4130,62 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.5xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-5xl",
-      description: "Line height for text-5xl",
+      description: "Line height for text-5xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-6xl",
-      description: "Line height for text-6xl",
+      description: "Line height for text-6xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-7xl",
-      description: "Line height for text-7xl",
+      description: "Line height for text-7xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-8xl",
-      description: "Line height for text-8xl",
+      description: "Line height for text-8xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-9xl",
-      description: "Line height for text-9xl",
+      description: "Line height for text-9xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-10xl",
-      description: "Line height for text-10xl",
+      description: "Line height for text-10xl (1)",
       theme: undefined,
       typography: true
     },
     {
-      path: "border-radius.none",
+      path: "border-radius.zero",
       type: "dimension",
       value: "0rem",
-      cssVar: "--rw-border-radius-none",
+      cssVar: "--rw-border-radius-zero",
       description: "No radius",
       theme: undefined,
       typography: false
@@ -4265,7 +4274,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-container",
       description: "The border radius use for large containers",
       theme: undefined,
@@ -4274,7 +4283,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-card",
       description: "The border radius use for cards",
       theme: undefined,
@@ -4283,7 +4292,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-button",
       description: "The border radius use for triggers, such as buttons and badges",
       theme: undefined,
@@ -4292,7 +4301,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-control",
       description: "The border radius use for controls, such as inputs and selects",
       theme: undefined,
@@ -4301,7 +4310,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: undefined,
@@ -4310,7 +4319,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.sheet",
       type: "dimension",
-      value: "var(--border-radius-none)",
+      value: "var(--border-radius-zero)",
       cssVar: "--rw-border-radius-sheet",
       description: "The border radius use for sheets (none)",
       theme: undefined,
@@ -4319,7 +4328,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-4xl)",
       cssVar: "--rw-border-radius-drawer",
       description: "The border radius use for drawers",
       theme: undefined,
@@ -4328,7 +4337,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-popover",
       description: "The border radius use for popovers",
       theme: undefined,
@@ -4337,7 +4346,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-tooltip",
       description: "The border radius use for tooltips",
       theme: undefined,
@@ -4985,34 +4994,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-title",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-title",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.display-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xl",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,
@@ -5021,7 +5012,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -5030,97 +5021,70 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-xs",
+      path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xs",
-      description: "The display - extra small typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-lg",
+      description: "The title large typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-lg",
+      path: "typography.title-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-lg",
-      description: "The large eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-sm",
+      description: "The title small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-sm",
+      path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-sm",
-      description: "The small eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-body",
+      description: "The body typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.caption",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\",\"fontStyle\":\"italic\"}",
+      cssVar: "--rw-typography-caption",
+      description: "The caption typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.button",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-button",
       description: "The button typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.body-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xl",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-lg",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-md",
-      description: "The body typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-sm",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-xs",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xs",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -8072,10 +8036,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "size.none",
+      path: "size.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-size-none",
+      cssVar: "--rw-size-zero",
       description: "No size",
       theme: undefined,
       typography: false
@@ -8549,10 +8513,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "spacing.none",
+      path: "spacing.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-spacing-none",
+      cssVar: "--rw-spacing-zero",
       description: "No spacing",
       theme: undefined,
       typography: false
@@ -8803,27 +8767,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.875rem",
+      value: "0.75rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (0.75rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "1rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (1rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1.075rem",
+      value: "1rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1.075rem)",
+      description: "Small font size (1rem)",
       theme: undefined,
       typography: true
     },
@@ -9116,9 +9080,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "line-height.none",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-none",
+      description: "No extra line height (1)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "line-height.tight",
       type: "number",
-      value: "0.95625",
+      value: "1.25",
       cssVar: "--rw-line-height-tight",
       description: "Tight line height (1.25)",
       theme: undefined,
@@ -9127,7 +9100,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.051875",
+      value: "1.375",
       cssVar: "--rw-line-height-snug",
       description: "Snug line height (1.375)",
       theme: undefined,
@@ -9136,7 +9109,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-normal",
       description: "Normal line height (1.5)",
       theme: undefined,
@@ -9145,7 +9118,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.243125",
+      value: "1.625",
       cssVar: "--rw-line-height-relaxed",
       description: "Relaxed line height (1.625)",
       theme: undefined,
@@ -9154,7 +9127,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.53",
+      value: "2",
       cssVar: "--rw-line-height-loose",
       description: "Loose line height (2)",
       theme: undefined,
@@ -9163,7 +9136,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-xs",
       description: "Line height for text-xs (calc(1 / 0.75))",
       theme: undefined,
@@ -9172,7 +9145,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.092857",
+      value: "1.428571",
       cssVar: "--rw-line-height-sm",
       description: "Line height for text-sm (calc(1.25 / 0.875))",
       theme: undefined,
@@ -9181,7 +9154,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.md",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-md",
       description: "Line height for text-md (calc(1.5 / 1))",
       theme: undefined,
@@ -9190,7 +9163,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.190001",
+      value: "1.555556",
       cssVar: "--rw-line-height-lg",
       description: "Line height for text-lg (calc(1.75 / 1.125))",
       theme: undefined,
@@ -9199,7 +9172,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.071",
+      value: "1.4",
       cssVar: "--rw-line-height-xl",
       description: "Line height for text-xl (calc(1.75 / 1.25))",
       theme: undefined,
@@ -9208,7 +9181,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-2xl",
       description: "Line height for text-2xl (calc(2 / 1.5))",
       theme: undefined,
@@ -9217,7 +9190,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.3xl",
       type: "number",
-      value: "0.918",
+      value: "1.2",
       cssVar: "--rw-line-height-3xl",
       description: "Line height for text-3xl (calc(2.25 / 1.875))",
       theme: undefined,
@@ -9226,7 +9199,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.4xl",
       type: "number",
-      value: "0.85",
+      value: "1.111111",
       cssVar: "--rw-line-height-4xl",
       description: "Line height for text-4xl (calc(2.5 / 2.25))",
       theme: undefined,
@@ -9235,62 +9208,62 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.5xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-5xl",
-      description: "Line height for text-5xl",
+      description: "Line height for text-5xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-6xl",
-      description: "Line height for text-6xl",
+      description: "Line height for text-6xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-7xl",
-      description: "Line height for text-7xl",
+      description: "Line height for text-7xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-8xl",
-      description: "Line height for text-8xl",
+      description: "Line height for text-8xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-9xl",
-      description: "Line height for text-9xl",
+      description: "Line height for text-9xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-10xl",
-      description: "Line height for text-10xl",
+      description: "Line height for text-10xl (1)",
       theme: undefined,
       typography: true
     },
     {
-      path: "border-radius.none",
+      path: "border-radius.zero",
       type: "dimension",
       value: "0rem",
-      cssVar: "--rw-border-radius-none",
+      cssVar: "--rw-border-radius-zero",
       description: "No radius",
       theme: undefined,
       typography: false
@@ -9379,7 +9352,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-container",
       description: "The border radius use for large containers",
       theme: undefined,
@@ -9388,7 +9361,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-card",
       description: "The border radius use for cards",
       theme: undefined,
@@ -9397,7 +9370,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-button",
       description: "The border radius use for triggers, such as buttons and badges",
       theme: undefined,
@@ -9406,7 +9379,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-control",
       description: "The border radius use for controls, such as inputs and selects",
       theme: undefined,
@@ -9415,7 +9388,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: undefined,
@@ -9424,7 +9397,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.sheet",
       type: "dimension",
-      value: "var(--border-radius-none)",
+      value: "var(--border-radius-zero)",
       cssVar: "--rw-border-radius-sheet",
       description: "The border radius use for sheets (none)",
       theme: undefined,
@@ -9433,7 +9406,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-4xl)",
       cssVar: "--rw-border-radius-drawer",
       description: "The border radius use for drawers",
       theme: undefined,
@@ -9442,7 +9415,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-popover",
       description: "The border radius use for popovers",
       theme: undefined,
@@ -9451,7 +9424,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-tooltip",
       description: "The border radius use for tooltips",
       theme: undefined,
@@ -10099,34 +10072,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-title",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-title",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.display-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xl",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,
@@ -10135,7 +10090,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -10144,97 +10099,70 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-xs",
+      path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xs",
-      description: "The display - extra small typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-lg",
+      description: "The title large typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-lg",
+      path: "typography.title-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-lg",
-      description: "The large eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-sm",
+      description: "The title small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-sm",
+      path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-sm",
-      description: "The small eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-body",
+      description: "The body typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.caption",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\",\"fontStyle\":\"italic\"}",
+      cssVar: "--rw-typography-caption",
+      description: "The caption typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.button",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-button",
       description: "The button typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.body-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xl",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-lg",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-md",
-      description: "The body typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-sm",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-xs",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xs",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -13186,10 +13114,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "size.none",
+      path: "size.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-size-none",
+      cssVar: "--rw-size-zero",
       description: "No size",
       theme: undefined,
       typography: false
@@ -13663,10 +13591,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "spacing.none",
+      path: "spacing.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-spacing-none",
+      cssVar: "--rw-spacing-zero",
       description: "No spacing",
       theme: undefined,
       typography: false
@@ -13917,27 +13845,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.875rem",
+      value: "0.75rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (0.75rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "1rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (1rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1.075rem",
+      value: "1rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1.075rem)",
+      description: "Small font size (1rem)",
       theme: undefined,
       typography: true
     },
@@ -14230,9 +14158,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "line-height.none",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-none",
+      description: "No extra line height (1)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "line-height.tight",
       type: "number",
-      value: "0.95625",
+      value: "1.25",
       cssVar: "--rw-line-height-tight",
       description: "Tight line height (1.25)",
       theme: undefined,
@@ -14241,7 +14178,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.051875",
+      value: "1.375",
       cssVar: "--rw-line-height-snug",
       description: "Snug line height (1.375)",
       theme: undefined,
@@ -14250,7 +14187,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-normal",
       description: "Normal line height (1.5)",
       theme: undefined,
@@ -14259,7 +14196,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.243125",
+      value: "1.625",
       cssVar: "--rw-line-height-relaxed",
       description: "Relaxed line height (1.625)",
       theme: undefined,
@@ -14268,7 +14205,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.53",
+      value: "2",
       cssVar: "--rw-line-height-loose",
       description: "Loose line height (2)",
       theme: undefined,
@@ -14277,7 +14214,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-xs",
       description: "Line height for text-xs (calc(1 / 0.75))",
       theme: undefined,
@@ -14286,7 +14223,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.092857",
+      value: "1.428571",
       cssVar: "--rw-line-height-sm",
       description: "Line height for text-sm (calc(1.25 / 0.875))",
       theme: undefined,
@@ -14295,7 +14232,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.md",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-md",
       description: "Line height for text-md (calc(1.5 / 1))",
       theme: undefined,
@@ -14304,7 +14241,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.190001",
+      value: "1.555556",
       cssVar: "--rw-line-height-lg",
       description: "Line height for text-lg (calc(1.75 / 1.125))",
       theme: undefined,
@@ -14313,7 +14250,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.071",
+      value: "1.4",
       cssVar: "--rw-line-height-xl",
       description: "Line height for text-xl (calc(1.75 / 1.25))",
       theme: undefined,
@@ -14322,7 +14259,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-2xl",
       description: "Line height for text-2xl (calc(2 / 1.5))",
       theme: undefined,
@@ -14331,7 +14268,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.3xl",
       type: "number",
-      value: "0.918",
+      value: "1.2",
       cssVar: "--rw-line-height-3xl",
       description: "Line height for text-3xl (calc(2.25 / 1.875))",
       theme: undefined,
@@ -14340,7 +14277,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.4xl",
       type: "number",
-      value: "0.85",
+      value: "1.111111",
       cssVar: "--rw-line-height-4xl",
       description: "Line height for text-4xl (calc(2.5 / 2.25))",
       theme: undefined,
@@ -14349,62 +14286,62 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.5xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-5xl",
-      description: "Line height for text-5xl",
+      description: "Line height for text-5xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-6xl",
-      description: "Line height for text-6xl",
+      description: "Line height for text-6xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-7xl",
-      description: "Line height for text-7xl",
+      description: "Line height for text-7xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-8xl",
-      description: "Line height for text-8xl",
+      description: "Line height for text-8xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-9xl",
-      description: "Line height for text-9xl",
+      description: "Line height for text-9xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-10xl",
-      description: "Line height for text-10xl",
+      description: "Line height for text-10xl (1)",
       theme: undefined,
       typography: true
     },
     {
-      path: "border-radius.none",
+      path: "border-radius.zero",
       type: "dimension",
       value: "0rem",
-      cssVar: "--rw-border-radius-none",
+      cssVar: "--rw-border-radius-zero",
       description: "No radius",
       theme: undefined,
       typography: false
@@ -14493,7 +14430,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-container",
       description: "The border radius use for large containers",
       theme: undefined,
@@ -14502,7 +14439,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-card",
       description: "The border radius use for cards",
       theme: undefined,
@@ -14511,7 +14448,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-button",
       description: "The border radius use for triggers, such as buttons and badges",
       theme: undefined,
@@ -14520,7 +14457,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-control",
       description: "The border radius use for controls, such as inputs and selects",
       theme: undefined,
@@ -14529,7 +14466,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: undefined,
@@ -14538,7 +14475,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.sheet",
       type: "dimension",
-      value: "var(--border-radius-none)",
+      value: "var(--border-radius-zero)",
       cssVar: "--rw-border-radius-sheet",
       description: "The border radius use for sheets (none)",
       theme: undefined,
@@ -14547,7 +14484,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-4xl)",
       cssVar: "--rw-border-radius-drawer",
       description: "The border radius use for drawers",
       theme: undefined,
@@ -14556,7 +14493,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-popover",
       description: "The border radius use for popovers",
       theme: undefined,
@@ -14565,7 +14502,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-tooltip",
       description: "The border radius use for tooltips",
       theme: undefined,
@@ -15213,34 +15150,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-title",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-title",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.display-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xl",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,
@@ -15249,7 +15168,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -15258,97 +15177,70 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-xs",
+      path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xs",
-      description: "The display - extra small typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-lg",
+      description: "The title large typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-lg",
+      path: "typography.title-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-lg",
-      description: "The large eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-sm",
+      description: "The title small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-sm",
+      path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-sm",
-      description: "The small eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-body",
+      description: "The body typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.caption",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\",\"fontStyle\":\"italic\"}",
+      cssVar: "--rw-typography-caption",
+      description: "The caption typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.button",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-button",
       description: "The button typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.body-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xl",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-lg",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-md",
-      description: "The body typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-sm",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-xs",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xs",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -18300,10 +18192,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "size.none",
+      path: "size.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-size-none",
+      cssVar: "--rw-size-zero",
       description: "No size",
       theme: undefined,
       typography: false
@@ -18777,10 +18669,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "spacing.none",
+      path: "spacing.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-spacing-none",
+      cssVar: "--rw-spacing-zero",
       description: "No spacing",
       theme: undefined,
       typography: false
@@ -19031,27 +18923,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.875rem",
+      value: "0.75rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (0.75rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "1rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (1rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1.075rem",
+      value: "1rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1.075rem)",
+      description: "Small font size (1rem)",
       theme: undefined,
       typography: true
     },
@@ -19344,9 +19236,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "line-height.none",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-none",
+      description: "No extra line height (1)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "line-height.tight",
       type: "number",
-      value: "0.95625",
+      value: "1.25",
       cssVar: "--rw-line-height-tight",
       description: "Tight line height (1.25)",
       theme: undefined,
@@ -19355,7 +19256,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.051875",
+      value: "1.375",
       cssVar: "--rw-line-height-snug",
       description: "Snug line height (1.375)",
       theme: undefined,
@@ -19364,7 +19265,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-normal",
       description: "Normal line height (1.5)",
       theme: undefined,
@@ -19373,7 +19274,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.243125",
+      value: "1.625",
       cssVar: "--rw-line-height-relaxed",
       description: "Relaxed line height (1.625)",
       theme: undefined,
@@ -19382,7 +19283,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.53",
+      value: "2",
       cssVar: "--rw-line-height-loose",
       description: "Loose line height (2)",
       theme: undefined,
@@ -19391,7 +19292,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-xs",
       description: "Line height for text-xs (calc(1 / 0.75))",
       theme: undefined,
@@ -19400,7 +19301,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.092857",
+      value: "1.428571",
       cssVar: "--rw-line-height-sm",
       description: "Line height for text-sm (calc(1.25 / 0.875))",
       theme: undefined,
@@ -19409,7 +19310,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.md",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-md",
       description: "Line height for text-md (calc(1.5 / 1))",
       theme: undefined,
@@ -19418,7 +19319,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.190001",
+      value: "1.555556",
       cssVar: "--rw-line-height-lg",
       description: "Line height for text-lg (calc(1.75 / 1.125))",
       theme: undefined,
@@ -19427,7 +19328,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.071",
+      value: "1.4",
       cssVar: "--rw-line-height-xl",
       description: "Line height for text-xl (calc(1.75 / 1.25))",
       theme: undefined,
@@ -19436,7 +19337,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-2xl",
       description: "Line height for text-2xl (calc(2 / 1.5))",
       theme: undefined,
@@ -19445,7 +19346,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.3xl",
       type: "number",
-      value: "0.918",
+      value: "1.2",
       cssVar: "--rw-line-height-3xl",
       description: "Line height for text-3xl (calc(2.25 / 1.875))",
       theme: undefined,
@@ -19454,7 +19355,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.4xl",
       type: "number",
-      value: "0.85",
+      value: "1.111111",
       cssVar: "--rw-line-height-4xl",
       description: "Line height for text-4xl (calc(2.5 / 2.25))",
       theme: undefined,
@@ -19463,62 +19364,62 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.5xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-5xl",
-      description: "Line height for text-5xl",
+      description: "Line height for text-5xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-6xl",
-      description: "Line height for text-6xl",
+      description: "Line height for text-6xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-7xl",
-      description: "Line height for text-7xl",
+      description: "Line height for text-7xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-8xl",
-      description: "Line height for text-8xl",
+      description: "Line height for text-8xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-9xl",
-      description: "Line height for text-9xl",
+      description: "Line height for text-9xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-10xl",
-      description: "Line height for text-10xl",
+      description: "Line height for text-10xl (1)",
       theme: undefined,
       typography: true
     },
     {
-      path: "border-radius.none",
+      path: "border-radius.zero",
       type: "dimension",
       value: "0rem",
-      cssVar: "--rw-border-radius-none",
+      cssVar: "--rw-border-radius-zero",
       description: "No radius",
       theme: undefined,
       typography: false
@@ -19607,7 +19508,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-container",
       description: "The border radius use for large containers",
       theme: undefined,
@@ -19616,7 +19517,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-card",
       description: "The border radius use for cards",
       theme: undefined,
@@ -19625,7 +19526,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-button",
       description: "The border radius use for triggers, such as buttons and badges",
       theme: undefined,
@@ -19634,7 +19535,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-control",
       description: "The border radius use for controls, such as inputs and selects",
       theme: undefined,
@@ -19643,7 +19544,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: undefined,
@@ -19652,7 +19553,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.sheet",
       type: "dimension",
-      value: "var(--border-radius-none)",
+      value: "var(--border-radius-zero)",
       cssVar: "--rw-border-radius-sheet",
       description: "The border radius use for sheets (none)",
       theme: undefined,
@@ -19661,7 +19562,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-4xl)",
       cssVar: "--rw-border-radius-drawer",
       description: "The border radius use for drawers",
       theme: undefined,
@@ -19670,7 +19571,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-popover",
       description: "The border radius use for popovers",
       theme: undefined,
@@ -19679,7 +19580,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-tooltip",
       description: "The border radius use for tooltips",
       theme: undefined,
@@ -20327,34 +20228,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-title",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-title",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.display-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xl",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,
@@ -20363,7 +20246,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -20372,97 +20255,70 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-xs",
+      path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xs",
-      description: "The display - extra small typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-lg",
+      description: "The title large typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-lg",
+      path: "typography.title-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-lg",
-      description: "The large eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-sm",
+      description: "The title small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-sm",
+      path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-sm",
-      description: "The small eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-body",
+      description: "The body typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.caption",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\",\"fontStyle\":\"italic\"}",
+      cssVar: "--rw-typography-caption",
+      description: "The caption typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.button",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-button",
       description: "The button typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.body-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xl",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-lg",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-md",
-      description: "The body typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-sm",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-xs",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xs",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -23414,10 +23270,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "size.none",
+      path: "size.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-size-none",
+      cssVar: "--rw-size-zero",
       description: "No size",
       theme: undefined,
       typography: false
@@ -23891,10 +23747,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "spacing.none",
+      path: "spacing.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-spacing-none",
+      cssVar: "--rw-spacing-zero",
       description: "No spacing",
       theme: undefined,
       typography: false
@@ -24145,27 +24001,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.875rem",
+      value: "0.75rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (0.75rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "1rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (1rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1.075rem",
+      value: "1rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1.075rem)",
+      description: "Small font size (1rem)",
       theme: undefined,
       typography: true
     },
@@ -24458,9 +24314,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "line-height.none",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-none",
+      description: "No extra line height (1)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "line-height.tight",
       type: "number",
-      value: "0.95625",
+      value: "1.25",
       cssVar: "--rw-line-height-tight",
       description: "Tight line height (1.25)",
       theme: undefined,
@@ -24469,7 +24334,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.051875",
+      value: "1.375",
       cssVar: "--rw-line-height-snug",
       description: "Snug line height (1.375)",
       theme: undefined,
@@ -24478,7 +24343,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-normal",
       description: "Normal line height (1.5)",
       theme: undefined,
@@ -24487,7 +24352,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.243125",
+      value: "1.625",
       cssVar: "--rw-line-height-relaxed",
       description: "Relaxed line height (1.625)",
       theme: undefined,
@@ -24496,7 +24361,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.53",
+      value: "2",
       cssVar: "--rw-line-height-loose",
       description: "Loose line height (2)",
       theme: undefined,
@@ -24505,7 +24370,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-xs",
       description: "Line height for text-xs (calc(1 / 0.75))",
       theme: undefined,
@@ -24514,7 +24379,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.092857",
+      value: "1.428571",
       cssVar: "--rw-line-height-sm",
       description: "Line height for text-sm (calc(1.25 / 0.875))",
       theme: undefined,
@@ -24523,7 +24388,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.md",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-md",
       description: "Line height for text-md (calc(1.5 / 1))",
       theme: undefined,
@@ -24532,7 +24397,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.190001",
+      value: "1.555556",
       cssVar: "--rw-line-height-lg",
       description: "Line height for text-lg (calc(1.75 / 1.125))",
       theme: undefined,
@@ -24541,7 +24406,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.071",
+      value: "1.4",
       cssVar: "--rw-line-height-xl",
       description: "Line height for text-xl (calc(1.75 / 1.25))",
       theme: undefined,
@@ -24550,7 +24415,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-2xl",
       description: "Line height for text-2xl (calc(2 / 1.5))",
       theme: undefined,
@@ -24559,7 +24424,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.3xl",
       type: "number",
-      value: "0.918",
+      value: "1.2",
       cssVar: "--rw-line-height-3xl",
       description: "Line height for text-3xl (calc(2.25 / 1.875))",
       theme: undefined,
@@ -24568,7 +24433,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.4xl",
       type: "number",
-      value: "0.85",
+      value: "1.111111",
       cssVar: "--rw-line-height-4xl",
       description: "Line height for text-4xl (calc(2.5 / 2.25))",
       theme: undefined,
@@ -24577,62 +24442,62 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.5xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-5xl",
-      description: "Line height for text-5xl",
+      description: "Line height for text-5xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-6xl",
-      description: "Line height for text-6xl",
+      description: "Line height for text-6xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-7xl",
-      description: "Line height for text-7xl",
+      description: "Line height for text-7xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-8xl",
-      description: "Line height for text-8xl",
+      description: "Line height for text-8xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-9xl",
-      description: "Line height for text-9xl",
+      description: "Line height for text-9xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-10xl",
-      description: "Line height for text-10xl",
+      description: "Line height for text-10xl (1)",
       theme: undefined,
       typography: true
     },
     {
-      path: "border-radius.none",
+      path: "border-radius.zero",
       type: "dimension",
       value: "0rem",
-      cssVar: "--rw-border-radius-none",
+      cssVar: "--rw-border-radius-zero",
       description: "No radius",
       theme: undefined,
       typography: false
@@ -24721,7 +24586,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-container",
       description: "The border radius use for large containers",
       theme: undefined,
@@ -24730,7 +24595,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-card",
       description: "The border radius use for cards",
       theme: undefined,
@@ -24739,7 +24604,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-button",
       description: "The border radius use for triggers, such as buttons and badges",
       theme: undefined,
@@ -24748,7 +24613,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-control",
       description: "The border radius use for controls, such as inputs and selects",
       theme: undefined,
@@ -24757,7 +24622,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: undefined,
@@ -24766,7 +24631,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.sheet",
       type: "dimension",
-      value: "var(--border-radius-none)",
+      value: "var(--border-radius-zero)",
       cssVar: "--rw-border-radius-sheet",
       description: "The border radius use for sheets (none)",
       theme: undefined,
@@ -24775,7 +24640,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-4xl)",
       cssVar: "--rw-border-radius-drawer",
       description: "The border radius use for drawers",
       theme: undefined,
@@ -24784,7 +24649,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-popover",
       description: "The border radius use for popovers",
       theme: undefined,
@@ -24793,7 +24658,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-tooltip",
       description: "The border radius use for tooltips",
       theme: undefined,
@@ -25441,34 +25306,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-title",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-title",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.display-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xl",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,
@@ -25477,7 +25324,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -25486,97 +25333,70 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-xs",
+      path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xs",
-      description: "The display - extra small typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-lg",
+      description: "The title large typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-lg",
+      path: "typography.title-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-lg",
-      description: "The large eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-sm",
+      description: "The title small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-sm",
+      path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-sm",
-      description: "The small eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-body",
+      description: "The body typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.caption",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\",\"fontStyle\":\"italic\"}",
+      cssVar: "--rw-typography-caption",
+      description: "The caption typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.button",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-button",
       description: "The button typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.body-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xl",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-lg",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-md",
-      description: "The body typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-sm",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-xs",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xs",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -28528,10 +28348,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "size.none",
+      path: "size.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-size-none",
+      cssVar: "--rw-size-zero",
       description: "No size",
       theme: undefined,
       typography: false
@@ -29005,10 +28825,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "spacing.none",
+      path: "spacing.zero",
       type: "dimension",
       value: "0px",
-      cssVar: "--rw-spacing-none",
+      cssVar: "--rw-spacing-zero",
       description: "No spacing",
       theme: undefined,
       typography: false
@@ -29259,27 +29079,27 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "font-size.xxs",
       type: "dimension",
-      value: "0.875rem",
+      value: "0.75rem",
       cssVar: "--rw-font-size-xxs",
-      description: "Extra small font size (0.875rem)",
+      description: "Extra small font size (0.75rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.xs",
       type: "dimension",
-      value: "1rem",
+      value: "0.875rem",
       cssVar: "--rw-font-size-xs",
-      description: "Extra small font size (1rem)",
+      description: "Extra small font size (0.875rem)",
       theme: undefined,
       typography: true
     },
     {
       path: "font-size.sm",
       type: "dimension",
-      value: "1.075rem",
+      value: "1rem",
       cssVar: "--rw-font-size-sm",
-      description: "Small font size (1.075rem)",
+      description: "Small font size (1rem)",
       theme: undefined,
       typography: true
     },
@@ -29572,9 +29392,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "line-height.none",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-none",
+      description: "No extra line height (1)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "line-height.tight",
       type: "number",
-      value: "0.95625",
+      value: "1.25",
       cssVar: "--rw-line-height-tight",
       description: "Tight line height (1.25)",
       theme: undefined,
@@ -29583,7 +29412,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.051875",
+      value: "1.375",
       cssVar: "--rw-line-height-snug",
       description: "Snug line height (1.375)",
       theme: undefined,
@@ -29592,7 +29421,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-normal",
       description: "Normal line height (1.5)",
       theme: undefined,
@@ -29601,7 +29430,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.243125",
+      value: "1.625",
       cssVar: "--rw-line-height-relaxed",
       description: "Relaxed line height (1.625)",
       theme: undefined,
@@ -29610,7 +29439,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.53",
+      value: "2",
       cssVar: "--rw-line-height-loose",
       description: "Loose line height (2)",
       theme: undefined,
@@ -29619,7 +29448,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-xs",
       description: "Line height for text-xs (calc(1 / 0.75))",
       theme: undefined,
@@ -29628,7 +29457,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.092857",
+      value: "1.428571",
       cssVar: "--rw-line-height-sm",
       description: "Line height for text-sm (calc(1.25 / 0.875))",
       theme: undefined,
@@ -29637,7 +29466,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.md",
       type: "number",
-      value: "1.1475",
+      value: "1.5",
       cssVar: "--rw-line-height-md",
       description: "Line height for text-md (calc(1.5 / 1))",
       theme: undefined,
@@ -29646,7 +29475,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.190001",
+      value: "1.555556",
       cssVar: "--rw-line-height-lg",
       description: "Line height for text-lg (calc(1.75 / 1.125))",
       theme: undefined,
@@ -29655,7 +29484,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.071",
+      value: "1.4",
       cssVar: "--rw-line-height-xl",
       description: "Line height for text-xl (calc(1.75 / 1.25))",
       theme: undefined,
@@ -29664,7 +29493,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.02",
+      value: "1.333333",
       cssVar: "--rw-line-height-2xl",
       description: "Line height for text-2xl (calc(2 / 1.5))",
       theme: undefined,
@@ -29673,7 +29502,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.3xl",
       type: "number",
-      value: "0.918",
+      value: "1.2",
       cssVar: "--rw-line-height-3xl",
       description: "Line height for text-3xl (calc(2.25 / 1.875))",
       theme: undefined,
@@ -29682,7 +29511,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.4xl",
       type: "number",
-      value: "0.85",
+      value: "1.111111",
       cssVar: "--rw-line-height-4xl",
       description: "Line height for text-4xl (calc(2.5 / 2.25))",
       theme: undefined,
@@ -29691,62 +29520,62 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.5xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-5xl",
-      description: "Line height for text-5xl",
+      description: "Line height for text-5xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-6xl",
-      description: "Line height for text-6xl",
+      description: "Line height for text-6xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-7xl",
-      description: "Line height for text-7xl",
+      description: "Line height for text-7xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-8xl",
-      description: "Line height for text-8xl",
+      description: "Line height for text-8xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-9xl",
-      description: "Line height for text-9xl",
+      description: "Line height for text-9xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "0.765",
+      value: "1",
       cssVar: "--rw-line-height-10xl",
-      description: "Line height for text-10xl",
+      description: "Line height for text-10xl (1)",
       theme: undefined,
       typography: true
     },
     {
-      path: "border-radius.none",
+      path: "border-radius.zero",
       type: "dimension",
       value: "0rem",
-      cssVar: "--rw-border-radius-none",
+      cssVar: "--rw-border-radius-zero",
       description: "No radius",
       theme: undefined,
       typography: false
@@ -29835,7 +29664,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-container",
       description: "The border radius use for large containers",
       theme: undefined,
@@ -29844,7 +29673,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-card",
       description: "The border radius use for cards",
       theme: undefined,
@@ -29853,7 +29682,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-button",
       description: "The border radius use for triggers, such as buttons and badges",
       theme: undefined,
@@ -29862,7 +29691,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-control",
       description: "The border radius use for controls, such as inputs and selects",
       theme: undefined,
@@ -29871,7 +29700,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: undefined,
@@ -29880,7 +29709,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.sheet",
       type: "dimension",
-      value: "var(--border-radius-none)",
+      value: "var(--border-radius-zero)",
       cssVar: "--rw-border-radius-sheet",
       description: "The border radius use for sheets (none)",
       theme: undefined,
@@ -29889,7 +29718,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-4xl)",
       cssVar: "--rw-border-radius-drawer",
       description: "The border radius use for drawers",
       theme: undefined,
@@ -29898,7 +29727,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-popover",
       description: "The border radius use for popovers",
       theme: undefined,
@@ -29907,7 +29736,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-tooltip",
       description: "The border radius use for tooltips",
       theme: undefined,
@@ -30555,34 +30384,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-title",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-title",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.display-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xl",
-      description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display - large typography variant",
       theme: undefined,
@@ -30591,7 +30402,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display - medium typography variant",
       theme: undefined,
@@ -30600,97 +30411,70 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display-xs",
+      path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display-xs",
-      description: "The display - extra small typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-lg",
+      description: "The title large typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-lg",
+      path: "typography.title-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-lg",
-      description: "The large eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-title-sm",
+      description: "The title small typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.eyebrow-sm",
+      path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-eyebrow-sm",
-      description: "The small eyebrow typography variant",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-body",
+      description: "The body typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.caption",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\",\"fontStyle\":\"italic\"}",
+      cssVar: "--rw-typography-caption",
+      description: "The caption typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.eyebrow",
+      type: "typography",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.button",
       type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":[\"Storm Sans\",\"-apple-system\",\"BlinkMacSystemFont\",\"system-ui\",\"Segoe UI\",\"Roboto\",\"Helvetica Neue\",\"Arial\",\"sans-serif\"],\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-button",
       description: "The button typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.body-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xl",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-lg",
-      description: "The body large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-md",
-      description: "The body typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-sm",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.body-xs",
-      type: "typography",
-      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body-xs",
-      description: "The body small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,

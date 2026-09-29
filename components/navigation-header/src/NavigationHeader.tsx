@@ -20,7 +20,12 @@ import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
 import { Link } from "@cyclone-ui/link";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
-import { styled, View, withStaticProperties } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { ChevronDown, Menu, X } from "@tamagui/lucide-icons-2";
 import type { KeyboardEvent, ReactElement, ReactNode } from "react";
 import {
@@ -103,37 +108,31 @@ const usePrefersReducedMotion = () =>
   );
 
 const NavigationHeaderFrame = styled(View, {
-  name: "NavigationHeader",
+  displayName: "NavigationHeader",
   render: "header",
-
   position: "fixed",
   top: 0,
   left: 0,
   right: 0,
-  zIndex: "$40",
+  zIndex: "40",
   width: "100%",
-  backgroundColor: "$surfaceCanvas"
+  backgroundColor: "surfaceCanvas"
 });
 
 const NavigationHeaderBar = styled(View, {
-  name: "NavigationHeaderBar",
-
+  displayName: "NavigationHeaderBar",
   width: "100%",
   maxWidth: 1440,
   boxSizing: "border-box",
   marginHorizontal: "auto",
-  paddingHorizontal: "$4xl",
+  paddingHorizontal: "4xl max-md:2xl",
   alignItems: "center",
   flexDirection: "row",
-  gap: "$5xl",
-
-  "$max-md": {
-    paddingHorizontal: "$2xl"
-  }
+  gap: "5xl"
 });
 
 const NavigationHeaderEdge = styled(View, {
-  name: "NavigationHeaderEdge",
+  displayName: "NavigationHeaderEdge",
 
   minWidth: 0,
   flexBasis: 0,
@@ -144,53 +143,47 @@ const NavigationHeaderEdge = styled(View, {
 });
 
 const NavigationHeaderLogo = styled(NavigationHeaderEdge, {
-  name: "NavigationHeaderLogo",
+  displayName: "NavigationHeaderLogo",
   justifyContent: "flex-start"
 });
 
 const NavigationHeaderLogoContent = styled(View, {
-  name: "NavigationHeaderLogoContent",
+  displayName: "NavigationHeaderLogoContent",
 
   flexShrink: 0,
   transformOrigin: "left center"
 });
 
 const NavigationHeaderNavigation = styled(View, {
-  name: "NavigationHeaderNavigation",
+  displayName: "NavigationHeaderNavigation",
   render: "nav",
-
   height: "100%",
   alignItems: "center",
   justifyContent: "center",
   flexDirection: "row",
-  gap: "$6xl",
+  gap: "6xl",
   transformOrigin: "center",
-
-  "$max-md": {
-    display: "none"
-  }
+  display: "max-md:none"
 });
 
 const NavigationHeaderItemFrame = styled(View, {
-  name: "NavigationHeaderItem",
-
+  displayName: "NavigationHeaderItem",
   display: "block",
   width: "fit-content",
   flexShrink: 0,
   borderBottomWidth: 2,
-  borderBottomColor: "$transparent",
-
+  borderBottomColor: "transparent",
   variants: {
     active: {
       true: {
-        color: "$accent",
-        borderBottomColor: "$accent"
+        color: "accent",
+        borderBottomColor: "accent"
       }
     },
     mobile: {
       true: {
         width: "100%",
-        minHeight: "$11xl",
+        minHeight: "11xl",
         borderBottomWidth: 0
       }
     }
@@ -198,43 +191,31 @@ const NavigationHeaderItemFrame = styled(View, {
 });
 
 const NavigationHeaderItemLink = styled(Link, {
-  name: "NavigationHeaderItemLink",
-
+  displayName: "NavigationHeaderItemLink",
   width: "100%",
   minWidth: "fit-content",
-  paddingVertical: "$2xl",
+  paddingVertical: "2xl",
   paddingBottom: 5,
   alignItems: "center",
   justifyContent: "center",
   display: "flex",
-  color: "$inkBody",
-  fontSize: "$5xl",
-  fontWeight: "$medium",
-  textDecorationLine: "none",
-
-  hoverStyle: {
-    color: "$accent",
-    textDecorationLine: "none"
-  },
-
-  focusVisibleStyle: {
-    color: "$accent",
-    outlineColor: "$accent",
-    outlineOffset: -4,
-    outlineStyle: "solid",
-    outlineWidth: 2
-  },
-
+  color: "inkBody hover:accent focus-visible:accent",
+  fontWeight: 500,
+  textDecorationLine: "none hover:none",
+  outlineColor: "focus-visible:accent",
+  outlineOffset: "focus-visible:-4px",
+  outlineStyle: "focus-visible:solid",
+  outlineWidth: "focus-visible:2px",
   variants: {
     active: {
       true: {
-        color: "$accent"
+        color: "accent"
       }
     },
     mobile: {
       true: {
-        minHeight: "$11xl",
-        paddingHorizontal: "$5xl",
+        minHeight: "11xl",
+        paddingHorizontal: "5xl",
         paddingTop: 0,
         justifyContent: "flex-start"
       }
@@ -243,102 +224,82 @@ const NavigationHeaderItemLink = styled(Link, {
 });
 
 const NavigationHeaderDropdown = styled(View, {
-  name: "NavigationHeaderDropdown",
-
+  displayName: "NavigationHeaderDropdown",
   position: "absolute",
   top: "calc(100% - 1px)",
   left: 0,
   right: 0,
-  zIndex: "$50",
+  zIndex: "50",
   overflow: "hidden",
-  backgroundColor: "$surfaceCanvas",
+  backgroundColor: "surfaceCanvas",
   borderBottomWidth: 1,
-  borderBottomColor: "$hairline",
-
+  borderBottomColor: "hairline",
+  display: "max-md:none",
   variants: {
     open: {
       true: {
         pointerEvents: "auto",
         clipPath: "inset(0 0 0 0)",
-        borderBottomColor: "$hairline"
+        borderBottomColor: "hairline"
       },
       false: {
         pointerEvents: "none",
         clipPath: "inset(0 0 100% 0)",
-        borderBottomColor: "$transparent"
+        borderBottomColor: "transparent"
       }
     }
-  } as const,
-
-  "$max-md": {
-    display: "none"
-  }
+  } as const
 });
 
 const NavigationHeaderDropdownContent = styled(View, {
-  name: "NavigationHeaderDropdownContent",
-
+  displayName: "NavigationHeaderDropdownContent",
   width: "100%",
   maxWidth: 1440,
   marginHorizontal: "auto",
-  paddingHorizontal: "$7xl",
-  paddingTop: "$7xl",
-  paddingBottom: "$10xl",
+  paddingHorizontal: "7xl",
+  paddingTop: "7xl",
+  paddingBottom: "10xl",
   alignItems: "flex-start",
   flexDirection: "row",
-  gap: "$10xl"
+  gap: "10xl"
 });
 
 const NavigationHeaderDropdownGroup = styled(View, {
-  name: "NavigationHeaderDropdownGroup",
-
+  displayName: "NavigationHeaderDropdownGroup",
   minWidth: 0,
   flexBasis: 0,
   flexGrow: 1,
   flexDirection: "column",
-  gap: "$lg"
+  gap: "lg"
 });
 
 const NavigationHeaderDropdownGroupLabel = styled(EyebrowText, {
-  name: "NavigationHeaderDropdownGroupLabel",
-
-  marginBottom: "$xl",
-  variant: "sm",
-  color: "$inkSubtle"
+  displayName: "NavigationHeaderDropdownGroupLabel",
+  marginBottom: "xl",
+  color: "inkSubtle",
+  variant: "sm"
 });
 
 const NavigationHeaderDropdownLink = styled(Link, {
-  name: "NavigationHeaderDropdownLink",
-
+  displayName: "NavigationHeaderDropdownLink",
   width: "100%",
-  minHeight: "$10xl",
+  minHeight: "10xl",
   alignItems: "flex-start",
   justifyContent: "flex-start",
   display: "flex",
-  color: "$inkBody",
-  fontSize: "$5xl",
-  fontWeight: "$medium",
-  textDecorationLine: "none",
-  borderRadius: "$md",
-
-  hoverStyle: {
-    color: "$accent",
-    textDecorationLine: "none"
-  },
-
-  focusVisibleStyle: {
-    color: "$accent"
-  },
-
+  color: "inkBody hover:accent focus-visible:accent",
+  fontWeight: 500,
+  textDecorationLine: "none hover:none",
+  borderRadius: "md",
   variants: {
     featured: {
       true: {
-        minHeight: "$11xl",
+        minHeight: "11xl",
         paddingHorizontal: 0,
         fontSize: 30,
-        lineHeight: 36,
-        fontWeight: "$normal",
-        backgroundColor: "$transparent"
+        lineHeight: "36px",
+        fontWeight: "normal",
+        backgroundColor: "transparent"
       }
     }
   } as const
@@ -347,93 +308,68 @@ const NavigationHeaderDropdownLink = styled(Link, {
 const NavigationHeaderMobileGroupLabel = styled(
   NavigationHeaderDropdownGroupLabel,
   {
-    name: "NavigationHeaderMobileGroupLabel",
-
-    marginTop: "$2xl",
-    marginBottom: "$md",
-    paddingHorizontal: "$5xl"
+    displayName: "NavigationHeaderMobileGroupLabel",
+    marginTop: "2xl",
+    marginBottom: "md",
+    paddingHorizontal: "5xl"
   }
 );
 
 const NavigationHeaderActions = styled(NavigationHeaderEdge, {
-  name: "NavigationHeaderActions",
-
-  paddingVertical: "$2xl",
+  displayName: "NavigationHeaderActions",
+  paddingVertical: "2xl",
   justifyContent: "flex-end",
-  gap: "$2xl",
-
-  "$max-md": {
-    display: "none"
-  }
+  gap: "2xl",
+  display: "max-md:none"
 });
 
 const NavigationHeaderMenuButtonSlot = styled(View, {
-  name: "NavigationHeaderMenuButtonSlot",
-  display: "none",
-  marginLeft: "auto",
-
-  "$max-md": {
-    display: "flex"
-  }
+  displayName: "NavigationHeaderMenuButtonSlot",
+  display: "none max-md:flex",
+  marginLeft: "auto"
 });
 
 const NavigationHeaderMenuButton = styled(View, {
-  name: "NavigationHeaderMenuButton",
+  displayName: "NavigationHeaderMenuButton",
   render: "button",
   role: "button",
-
-  width: "$11xl",
-  height: "$11xl",
+  width: "11xl",
+  height: "11xl",
   padding: 0,
   alignItems: "center",
   justifyContent: "center",
   cursor: "pointer",
-  backgroundColor: "$transparent",
+  backgroundColor: "transparent hover:mutedHover press:mutedActive",
   borderWidth: 0,
-  borderRadius: "$full",
-
-  hoverStyle: {
-    backgroundColor: "$mutedHover"
-  },
-
-  pressStyle: {
-    backgroundColor: "$mutedActive"
-  },
-
-  focusVisibleStyle: {
-    boxShadow: "$ringOffset"
-  }
+  borderRadius: "full",
+  boxShadow: "focus-visible:ringOffset"
 });
 
 const NavigationHeaderMobilePanel = styled(View, {
-  name: "NavigationHeaderMobilePanel",
-
+  displayName: "NavigationHeaderMobilePanel",
   display: "none",
   position: "absolute",
   top: "100%",
   left: 0,
   right: 0,
   maxHeight: "calc(100vh - 52px)",
-  paddingVertical: "$2xl",
+  paddingVertical: "2xl",
   overflowY: "auto",
-  backgroundColor: "$surfaceCanvas",
+  backgroundColor: "surfaceCanvas",
   borderBottomWidth: 1,
-  borderBottomColor: "$hairline",
-  boxShadow: "$md",
-
+  borderBottomColor: "hairline",
+  boxShadow: "md",
   variants: {
     open: {
       true: {
-        "$max-md": {
-          display: "flex"
-        }
+        display: "max-md:flex"
       }
     }
   } as const
 });
 
 const NavigationHeaderMobileNavigation = styled(View, {
-  name: "NavigationHeaderMobileNavigation",
+  displayName: "NavigationHeaderMobileNavigation",
   render: "nav",
 
   width: "100%",
@@ -441,34 +377,31 @@ const NavigationHeaderMobileNavigation = styled(View, {
 });
 
 const NavigationHeaderMobileChildren = styled(View, {
-  name: "NavigationHeaderMobileChildren",
-
+  displayName: "NavigationHeaderMobileChildren",
   width: "100%",
-  paddingLeft: "$5xl",
-  paddingBottom: "$2xl",
+  paddingLeft: "5xl",
+  paddingBottom: "2xl",
   flexDirection: "column"
 });
 
 const NavigationHeaderMobileChildLink = styled(NavigationHeaderDropdownLink, {
-  name: "NavigationHeaderMobileChildLink",
-
-  minHeight: "$10xl",
-  paddingHorizontal: "$5xl",
-  backgroundColor: "$transparent"
+  displayName: "NavigationHeaderMobileChildLink",
+  minHeight: "10xl",
+  paddingHorizontal: "5xl",
+  backgroundColor: "transparent"
 });
 
 const NavigationHeaderMobileActions = styled(View, {
-  name: "NavigationHeaderMobileActions",
-
-  marginTop: "$2xl",
-  paddingTop: "$5xl",
-  paddingHorizontal: "$5xl",
-  paddingBottom: "$3xl",
+  displayName: "NavigationHeaderMobileActions",
+  marginTop: "2xl",
+  paddingTop: "5xl",
+  paddingHorizontal: "5xl",
+  paddingBottom: "3xl",
   alignItems: "stretch",
   flexDirection: "column",
-  gap: "$2xl",
+  gap: "2xl",
   borderTopWidth: 1,
-  borderTopColor: "$hairline"
+  borderTopColor: "hairline"
 });
 
 interface NavigationHeaderChildItem {
@@ -673,8 +606,8 @@ const getNavigationHeaderItems = (
   );
 
 const NavigationHeaderRoot =
-  NavigationHeaderFrame.styleable<NavigationHeaderProps>(
-    ({ children, onBlur, onMouseLeave, ...props }, forwardedRef) => {
+  createStyledHOC(NavigationHeaderFrame, 
+    ({ children, onBlur, onMouseLeave, ...props }: GetProps<typeof NavigationHeaderFrame> & NavigationHeaderProps, forwardedRef) => {
       const [menuOpen, setMenuOpen] = useState(false);
       const [openItemIndex, setOpenItemIndex] = useState<number | null>(null);
       const [hoveredItemIndex, setHoveredItemIndex] = useState<number | null>(
@@ -763,8 +696,8 @@ const NavigationHeaderRoot =
                   hoveredItemIndex === null
                     ? undefined
                     : hoveredItemIndex === index
-                      ? "$accentActive"
-                      : "$accentInactive";
+                      ? "accentActive"
+                      : "accentInactive";
                 const dropdownId = `${mobileNavigationId}-submenu-${index}`;
 
                 return (
@@ -773,8 +706,8 @@ const NavigationHeaderRoot =
                     active={active}
                     borderBottomColor={
                       active
-                        ? (navigationItemColor ?? "$accent")
-                        : "$transparent"
+                        ? (navigationItemColor ?? "accent")
+                        : "transparent"
                     }
                     position="relative"
                     onMouseEnter={() => {
@@ -785,6 +718,8 @@ const NavigationHeaderRoot =
                       <>
                         <NavigationHeaderItemLink
                           group={false}
+                          color={navigationItemColor}
+                          gap="lg"
                           inverse={true}
                           underline="none"
                           render="button"
@@ -793,17 +728,15 @@ const NavigationHeaderRoot =
                           aria-expanded={openItemIndex === index}
                           aria-haspopup="true"
                           active={active}
-                          color={navigationItemColor}
-                          gap="$lg"
                           onMouseEnter={() => setOpenItemIndex(index)}
                           onFocus={() => setOpenItemIndex(index)}
                           onKeyDown={(
-                            event: KeyboardEvent<HTMLButtonElement>
-                          ) => {
-                            if (event.key === "Escape") {
-                              setOpenItemIndex(null);
-                            }
-                          }}
+                                                    event: KeyboardEvent<HTMLButtonElement>
+                                                  ) => {
+                                                    if (event.key === "Escape") {
+                                                      setOpenItemIndex(null);
+                                                    }
+                                                  }}
                           onPress={() => setOpenItemIndex(index)}>
                           {item.label}
                           <ChevronDown
@@ -886,8 +819,8 @@ const NavigationHeaderRoot =
                         const color = hovered
                           ? hoveredDropdownItem.groupIndex === groupIndex &&
                             hoveredDropdownItem.childIndex === childIndex
-                            ? "$accentActive"
-                            : "$accentInactive"
+                            ? "accentActive"
+                            : "accentInactive"
                           : undefined;
 
                         return (
@@ -1009,7 +942,7 @@ const NavigationHeaderRoot =
         </NavigationHeaderFrame>
       );
     },
-    { staticConfig: { componentName: "NavigationHeader" } }
+    { displayName: "NavigationHeader" }
   );
 
 export const NavigationHeader = withStaticProperties(NavigationHeaderRoot, {

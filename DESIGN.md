@@ -247,87 +247,62 @@ colors:
   on-muted-discovery-disabled: "#1e0a42"
 typography:
   display-hero:
-    fontFamily: "Space Grotesk"
+    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
     fontSize: "3.75rem"
-    fontWeight: "400"
-    lineHeight: "1.1475"
-  display-title:
-    fontFamily: "Space Grotesk"
-    fontSize: "3rem"
-    fontWeight: "400"
-    lineHeight: "1.051875"
-  display-xl:
-    fontFamily: "Space Grotesk"
-    fontSize: "2.25rem"
-    fontWeight: "700"
-    lineHeight: "1.051875"
+    fontWeight: "600"
+    lineHeight: "1.375"
   display-lg:
-    fontFamily: "Space Grotesk"
-    fontSize: "1.5rem"
-    fontWeight: "500"
-    lineHeight: "0.95625"
+    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "2.25rem"
+    fontWeight: "600"
+    lineHeight: "1.375"
   display-md:
-    fontFamily: "Space Grotesk"
-    fontSize: "1.25rem"
+    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1.5rem"
     fontWeight: "700"
-    lineHeight: "1.051875"
+    lineHeight: "1.5"
   display-sm:
-    fontFamily: "Space Grotesk"
-    fontSize: "1.125rem"
-    fontWeight: "700"
-    lineHeight: "1.051875"
-  display-xs:
-    fontFamily: "Space Grotesk"
-    fontSize: "1rem"
-    fontWeight: "900"
-    lineHeight: "1.051875"
-  eyebrow-lg:
-    fontFamily: Manrope
-    fontSize: "1.125rem"
-    fontWeight: "800"
-    lineHeight: "1.1475"
-  eyebrow-sm:
-    fontFamily: Manrope
-    fontSize: "1.075rem"
-    fontWeight: "900"
-    lineHeight: "1.1475"
-  button:
-    fontFamily: Manrope
-    fontSize: "1.125rem"
-    fontWeight: "900"
-    lineHeight: "1.1475"
-  body-xl:
-    fontFamily: Manrope
+    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
     fontSize: "1.25rem"
-    fontWeight: "600"
-    lineHeight: "1.1475"
-  body-lg:
-    fontFamily: Manrope
-    fontSize: "1.125rem"
-    fontWeight: "600"
-    lineHeight: "1.1475"
-  body-md:
-    fontFamily: Manrope
-    fontSize: "1.125rem"
+    fontWeight: "700"
+    lineHeight: "1.5"
+  title-lg:
+    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1.25rem"
     fontWeight: "500"
-    lineHeight: "1.1475"
-  body-sm:
-    fontFamily: Manrope
-    fontSize: "1.075rem"
+    lineHeight: "1.5"
+  title-sm:
+    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.875rem"
+    fontWeight: "500"
+    lineHeight: "1.5"
+  body:
+    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1.125rem"
     fontWeight: "400"
-    lineHeight: "1.1475"
-  body-xs:
-    fontFamily: Manrope
+    lineHeight: "1.5"
+  caption:
+    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
     fontSize: "1rem"
     fontWeight: "400"
-    lineHeight: "1.1475"
-  code:
-    fontFamily: "Geist Mono"
+    lineHeight: "1.5"
+  eyebrow:
+    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
     fontSize: "1.125rem"
-    fontWeight: "500"
-    lineHeight: "1.051875"
+    fontWeight: "600"
+    lineHeight: "1.5"
+  button:
+    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1.125rem"
+    fontWeight: "600"
+    lineHeight: "1.5"
+  code:
+    fontFamily: "Google Sans Code"
+    fontSize: "1.25rem"
+    fontWeight: "400"
+    lineHeight: "1.375"
 spacing:
-  none: "0px"
+  zero: "0px"
   xxs: "0.5px"
   xs: "1px"
   sm: "1.5px"
@@ -359,7 +334,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 242 color tokens, 16 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 242 color tokens, 11 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -608,27 +583,22 @@ Cyclone UI design tokens — 242 color tokens, 16 typography tokens, 28 spacing 
 
 ## Typography
 
-- **display-hero:** fontFamily: Space Grotesk, fontSize: 3.75rem, fontWeight: 400, lineHeight: 1.1475
-- **display-title:** fontFamily: Space Grotesk, fontSize: 3rem, fontWeight: 400, lineHeight: 1.051875
-- **display-xl:** fontFamily: Space Grotesk, fontSize: 2.25rem, fontWeight: 700, lineHeight: 1.051875
-- **display-lg:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 500, lineHeight: 0.95625
-- **display-md:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.051875
-- **display-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 700, lineHeight: 1.051875
-- **display-xs:** fontFamily: Space Grotesk, fontSize: 1rem, fontWeight: 900, lineHeight: 1.051875
-- **eyebrow-lg:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.1475
-- **eyebrow-sm:** fontFamily: Manrope, fontSize: 1.075rem, fontWeight: 900, lineHeight: 1.1475
-- **button:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 900, lineHeight: 1.1475
-- **body-xl:** fontFamily: Manrope, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.1475
-- **body-lg:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.1475
-- **body-md:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.1475
-- **body-sm:** fontFamily: Manrope, fontSize: 1.075rem, fontWeight: 400, lineHeight: 1.1475
-- **body-xs:** fontFamily: Manrope, fontSize: 1rem, fontWeight: 400, lineHeight: 1.1475
-- **code:** fontFamily: Geist Mono, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.051875
+- **display-hero:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.375
+- **display-lg:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.375
+- **display-md:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.5
+- **display-sm:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.5
+- **title-lg:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.25rem, fontWeight: 500, lineHeight: 1.5
+- **title-sm:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 0.875rem, fontWeight: 500, lineHeight: 1.5
+- **body:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.5
+- **caption:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1rem, fontWeight: 400, lineHeight: 1.5
+- **eyebrow:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.5
+- **button:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.5
+- **code:** fontFamily: Google Sans Code, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.375
 
 ## Layout
 
 Spacing scale:
-- **none:** 0px
+- **zero:** 0px
 - **xxs:** 0.5px
 - **xs:** 1px
 - **sm:** 1.5px

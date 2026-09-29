@@ -25,13 +25,13 @@ const meta: Meta<typeof Divider> = {
   component: Divider,
   tags: ["autodocs"],
   args: {
-    color: "$hairline",
+    color: "hairline",
     direction: "horizontal",
     size: "sm"
   },
   decorators: [
     Story => (
-      <View width={320} gap="$md">
+      <View width={320} gap="md">
         <Story />
       </View>
     )
@@ -49,7 +49,7 @@ export const Vertical: Story = {
     size: "md"
   },
   render: args => (
-    <View flexDirection="row" height={96} paddingHorizontal="$xl">
+    <View flexDirection="row" height={96} paddingHorizontal="xl">
       <Divider {...args} />
     </View>
   )

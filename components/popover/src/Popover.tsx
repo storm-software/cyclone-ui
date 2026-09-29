@@ -17,10 +17,12 @@
  ------------------------------------------------------------------- */
 
 import { ScrollView } from "@cyclone-ui/scroll-view";
+import type { AdaptWhen } from "@tamagui/adapt";
 import { Adapt } from "@tamagui/adapt";
-import type { SizeTokens } from "@tamagui/core";
+import type { GetProps, SizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
+  createStyledHOC,
   styled,
   withStaticProperties
 } from "@tamagui/core";
@@ -31,12 +33,17 @@ export interface PopoverContextProps {
   size: SizeTokens;
 }
 
-export const PopoverContext = createStyledContext<PopoverContextProps>({
-  size: "$true"
-});
+export const PopoverContext = createStyledContext<PopoverContextProps, "size">(
+  {
+    size: true
+  } as PopoverContextProps,
+  {
+    keys: ["size"]
+  }
+);
 
 const PopoverFrame = styled(TamaguiPopover, {
-  name: "Popover",
+  displayName: "Popover",
   context: PopoverContext
 });
 
@@ -44,9 +51,15 @@ interface PopoverFrameExtraProps extends Partial<PopoverContextProps> {
   shouldAdapt?: boolean;
 }
 
-const PopoverFrameImpl = PopoverFrame.styleable<PopoverFrameExtraProps>(
+const PopoverFrameImpl = createStyledHOC(
+  PopoverFrame,
   (
-    { children, size = "$true", shouldAdapt = true, ...props },
+    {
+      children,
+      size = true,
+      shouldAdapt = true,
+      ...props
+    }: GetProps<typeof PopoverFrame> & PopoverFrameExtraProps,
     forwardedRef
   ) => {
     return (
@@ -59,19 +72,20 @@ const PopoverFrameImpl = PopoverFrame.styleable<PopoverFrameExtraProps>(
           {children}
 
           {shouldAdapt && (
-            <Adapt when="max-sm" platform="touch">
+            <Adapt
+              // The app's media keys are declared by the app config, which
+              // this package's typecheck doesn't load.
+              when={"max-sm" as unknown as AdaptWhen}
+              platform="touch">
               <Sheet
                 modal={true}
                 dismissOnSnapToBottom={true}
                 snapPointsMode="fit">
-                <Sheet.Frame padding="$5xl">
+                <Sheet.Container padding="5xl">
+                  <Sheet.Background />
                   <Adapt.Contents />
-                </Sheet.Frame>
-                <Sheet.Overlay
-                  transition="500ms"
-                  enterStyle={{ opacity: 0 }}
-                  exitStyle={{ opacity: 0 }}
-                />
+                </Sheet.Container>
+                <Sheet.Overlay transition="500ms" opacity="enter:0 exit:0" />
               </Sheet>
             </Adapt>
           )}
@@ -79,54 +93,40 @@ const PopoverFrameImpl = PopoverFrame.styleable<PopoverFrameExtraProps>(
       </PopoverContext.Provider>
     );
   },
-  { staticConfig: { componentName: "Popover" } }
+  { displayName: "Popover" }
 );
 
 const PopoverArrow = styled(TamaguiPopover.Arrow, {
-  name: "Popover",
+  displayName: "Popover",
   context: PopoverContext,
-
-  backgroundColor: "$surfaceFloating",
+  backgroundColor: "surfaceFloating",
   borderWidth: 2,
-  borderColor: "$accent",
+  borderColor: "accent",
   top: -16
 });
 
 const PopoverContent = styled(TamaguiPopover.Content, {
-  name: "Popover",
+  displayName: "Popover",
   context: PopoverContext,
-
-  backgroundColor: "$surfaceFloating",
-  padding: "$3xl",
+  backgroundColor: "surfaceFloating",
+  padding: "3xl",
   borderWidth: 2,
-  borderColor: "$overlayBorder",
-  borderRadius: "$popover",
+  borderColor: "overlayBorder focus-visible:accentActive",
+  borderRadius: "popover",
   marginHorizontal: "auto",
-
-  enterStyle: { y: -10, opacity: 0 },
-  exitStyle: { y: -10, opacity: 0 },
-
-  transition: [
-    "100ms",
-    {
-      opacity: {
-        overshootClamping: true
-      }
-    }
-  ],
-
-  focusVisibleStyle: {
-    borderColor: "$accentActive"
+  y: "enter:-10px exit:-10px",
+  opacity: "enter:0 exit:0",
+  transition: {
+    duration: "100ms",
+    opacity: { duration: "100ms", spring: { overshootClamping: true } }
   },
-
   variants: {
     elevated: {
       true: {
-        boxShadow: "0px 4px 30px $overlayBackdrop"
+        boxShadow: "0px 4px 30px overlayBackdrop"
       }
     }
   } as const,
-
   defaultVariants: {
     elevated: true
   }
@@ -136,8 +136,16 @@ interface PopoverContentExtraProps {
   hasArrow?: boolean;
 }
 
-const PopoverContentImpl = PopoverContent.styleable<PopoverContentExtraProps>(
-  ({ children, hasArrow = false, ...props }, forwardedRef) => {
+const PopoverContentImpl = createStyledHOC(
+  PopoverContent,
+  (
+    {
+      children,
+      hasArrow = false,
+      ...props
+    }: GetProps<typeof PopoverContent> & PopoverContentExtraProps,
+    forwardedRef
+  ) => {
     return (
       <PopoverContent ref={forwardedRef} {...props}>
         {hasArrow && <PopoverArrow />}
@@ -145,7 +153,7 @@ const PopoverContentImpl = PopoverContent.styleable<PopoverContentExtraProps>(
       </PopoverContent>
     );
   },
-  { staticConfig: { componentName: "Popover" } }
+  { displayName: "Popover" }
 );
 
 export const Popover = withStaticProperties(PopoverFrameImpl, {

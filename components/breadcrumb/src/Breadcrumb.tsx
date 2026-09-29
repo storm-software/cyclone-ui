@@ -16,93 +16,119 @@
 
  ------------------------------------------------------------------- */
 
-import { getSpaced } from "@cyclone-ui/helpers";
+import { getFontSized, getSpaced } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
-import type { FontSizeTokens, GetProps, ThemeableProps } from "@tamagui/core";
-import { createStyledContext, styled, Theme, View } from "@tamagui/core";
+import type {
+  FontSizeTokens,
+  GetProps,
+  SizeTokens,
+  ThemeName
+} from "@tamagui/core";
+import {
+  createStyledContext,
+  createStyledHOC,
+  styled,
+  Theme,
+  View
+} from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
 import { ChevronRight, ChevronsRight, Slash } from "@tamagui/lucide-icons-2";
+import { XStack } from "@tamagui/stacks";
 import type { TextContextStyles } from "@tamagui/text";
 
 export type BreadcrumbVariant = "chevron" | "double" | "slash";
 
 export type BreadcrumbContextProps = TextContextStyles &
-  ThemeableProps & {
+  { theme?: ThemeName | null } & {
     size: FontSizeTokens;
     variant: BreadcrumbVariant;
     inverse: boolean;
   };
 
-export const BreadcrumbContext = createStyledContext<BreadcrumbContextProps>({
-  size: "$true",
+export const BreadcrumbContext = createStyledContext<BreadcrumbContextProps, "size" | "variant" | "inverse">({
+  size: true,
   variant: "slash",
   inverse: false
+} as BreadcrumbContextProps, {
+  // Only the keys that styled consumers declare as variants; v3 forwards every
+  // injected context key that is not a variant to the DOM element.
+  keys: ["size"]
 });
 
-const BreadcrumbFrame = styled(XGroup, {
-  name: "Breadcrumb",
+// A plain stack rather than `styled(XGroup)`, which never hands `transition`
+// to the rendered frame; the group lives in a `display: contents` `XGroup`.
+const BreadcrumbFrame = styled(XStack, {
+  displayName: "Breadcrumb",
   context: BreadcrumbContext,
-
   transition: "200ms",
   alignItems: "center",
   flexWrap: "nowrap",
   flexShrink: 1,
-  gap: "$2xl",
-
+  gap: "2xl",
   variants: {
-    size: {
-      "...size": (val = "$true") => {
-        return {
-          gap: getSpaced(val) / 2
-        };
-      }
-    }
+    // v2 `"...size"` only matched keys of the size token scale; the `true`
+    // default kept the base gap.
+    size: styled.dynamic<SizeTokens>((val, { tokens }) =>
+      typeof val === "string" && val in tokens.size
+        ? { gap: getSpaced(val) / 2 }
+        : undefined
+    )
   }
 });
 
 const BreadcrumbCurrent = styled(LabelText, {
-  name: "BreadcrumbCurrent",
+  displayName: "BreadcrumbCurrent",
   context: BreadcrumbContext,
-
   transition: "200ms",
   cursor: "default",
-  color: "$inkSubtle",
-  fontWeight: "$lg",
-  verticalAlign: "middle"
+  color: "inkSubtle",
+  fontWeight: "semibold",
+  verticalAlign: "middle",
+  variants: {
+    // `BreadcrumbContext` passes `size: true`, which Tamagui v3 maps to the
+    // `sm` / `4` font key the typography fonts do not define; resolve it (and
+    // any font size key) against the font's own `true` step.
+    size: styled.dynamic<FontSizeTokens | number>((val, env) =>
+      val === true ||
+      (typeof val === "string" && !!env.font && val in env.font.size)
+        ? getFontSized(val === true ? ("true" as FontSizeTokens) : val, env)
+        : undefined
+    )
+  } as const
 });
 
-const BreadcrumbImpl = BreadcrumbFrame.styleable<
-  Partial<BreadcrumbContextProps> & {
+const BreadcrumbImpl = createStyledHOC(BreadcrumbFrame, 
+  ({ children, currentName, ...props }: GetProps<typeof BreadcrumbFrame> & Partial<BreadcrumbContextProps> & {
     currentName: string;
-  }
->(
-  ({ children, currentName, ...props }, forwardRef) => {
+  }, forwardRef) => {
     const { theme } = BreadcrumbContext.useStyledContext();
 
     return (
       <Theme name={theme}>
         <BreadcrumbFrame ref={forwardRef} theme={theme} {...props}>
-          {children}
-          <BreadcrumbCurrent>{currentName || "Current"}</BreadcrumbCurrent>
+          <XGroup display="contents">
+            {children}
+            <BreadcrumbCurrent>{currentName || "Current"}</BreadcrumbCurrent>
+          </XGroup>
         </BreadcrumbFrame>
       </Theme>
     );
   },
   {
-    staticConfig: { componentName: "Breadcrumb" }
+    displayName: "Breadcrumb"
   }
 );
 
 const BreadcrumbLink = styled(Link, {
-  name: "BreadcrumbItem",
+  displayName: "BreadcrumbItem",
   context: BreadcrumbContext,
 
   transition: "200ms"
 });
 
-const BreadcrumbItemImpl = BreadcrumbLink.styleable(
+const BreadcrumbItemImpl = createStyledHOC(BreadcrumbLink, 
   ({ children, ...props }, forwardRef) => {
     const { size, variant, inverse } = BreadcrumbContext.useStyledContext();
 
@@ -119,19 +145,19 @@ const BreadcrumbItemImpl = BreadcrumbLink.styleable(
         </View>
 
         {variant === "chevron" && (
-          <ChevronRight color="$inkSubtle" size="$4xl" strokeWidth={3} />
+          <ChevronRight color="inkSubtle" size="4xl" strokeWidth={3} />
         )}
         {variant === "double" && (
-          <ChevronsRight color="$inkSubtle" size="$4xl" strokeWidth={2} />
+          <ChevronsRight color="inkSubtle" size="4xl" strokeWidth={2} />
         )}
         {variant === "slash" && (
-          <Slash color="$inkSubtle" size="$lg" strokeWidth={3.5} />
+          <Slash color="inkSubtle" size="lg" strokeWidth={3.5} />
         )}
       </XGroup.Item>
     );
   },
   {
-    staticConfig: { componentName: "BreadcrumbItem" }
+    displayName: "BreadcrumbItem"
   }
 );
 

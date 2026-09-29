@@ -26,6 +26,7 @@ import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { Diagonal } from "@cyclone-ui/vectors";
 import {
   createStyledContext,
+  createStyledHOC,
   styled,
   Theme,
   useThemeName,
@@ -39,68 +40,68 @@ export interface CalloutContextProps {
   theme?: ColorThemeName;
 }
 
-export const CalloutContext = createStyledContext<CalloutContextProps>({
-  theme: undefined
-});
+export const CalloutContext = createStyledContext<CalloutContextProps, "theme">(
+  {
+    theme: undefined
+  } as CalloutContextProps,
+  {
+    keys: ["theme"]
+  }
+);
 
+// `LinearGradient` is not a plain styled view; v3 `styled()` only keeps style
+// defaults for it, so the gradient geometry is passed as props at the call site.
 const CalloutBackgroundLowGradient = styled(LinearGradient, {
-  name: "Callout",
-
-  fullscreen: true,
+  displayName: "Callout",
+  position: "absolute",
+  inset: 0,
   flexDirection: "row",
   transition: "200ms",
   overflow: "hidden",
   opacity: 1,
-  zIndex: "$0",
-  colors: ["transparent", "$accent"],
-  start: [1.0, 1.0],
-  end: [0, 0]
+  zIndex: 0
 });
 
 const CalloutBackgroundHighGradient = styled(LinearGradient, {
-  name: "Callout",
-
-  fullscreen: true,
+  displayName: "Callout",
+  position: "absolute",
+  inset: 0,
   flexDirection: "row",
   transition: "200ms",
   overflow: "hidden",
   opacity: 0.6,
-  zIndex: "$10",
-  colors: ["transparent", "$muted"],
-  start: [0, 1.0],
-  end: [0, 1.0]
+  zIndex: "10"
 });
 
 const CalloutBackgroundDiagonal = styled(YStack, {
-  name: "Callout",
-
+  displayName: "Callout",
   position: "absolute",
-  borderRadius: "$container",
+  borderRadius: "container",
   height: "100%",
   width: "100%",
   top: 0,
   left: 0,
   overflow: "hidden",
   pointerEvents: "none",
-  zIndex: "$10"
+  zIndex: "10"
 });
 
 const CalloutContent = styled(YStack, {
-  name: "Callout",
-
+  displayName: "Callout",
   transition: "200ms",
   position: "relative",
-  marginHorizontal: "$6xl",
-  marginVertical: "$4xl",
+  marginHorizontal: "6xl",
+  marginVertical: "4xl",
   flexDirection: "column",
   maxHeight: "fit-content",
-  zIndex: "$30",
-  gap: "$xl",
-  padding: "$md"
+  zIndex: "30",
+  gap: "xl",
+  padding: "md"
 });
 
-const CalloutFrameImpl = Container.styleable<CalloutContextProps>(
-  (props, forwardedRef) => {
+const CalloutFrameImpl = createStyledHOC(
+  Container,
+  (props: GetProps<typeof Container> & CalloutContextProps, forwardedRef) => {
     const { children, theme, ...rest } = props;
 
     return (
@@ -112,12 +113,22 @@ const CalloutFrameImpl = Container.styleable<CalloutContextProps>(
           position="relative"
           variant="elevated"
           borderWidth={3}
-          borderColor="$accent">
-          <CalloutBackgroundLowGradient theme={theme} />
-          <CalloutBackgroundHighGradient theme={theme} />
+          borderColor="accent">
+          <CalloutBackgroundLowGradient
+            theme={theme}
+            start={[1.0, 1.0]}
+            end={[0, 0]}
+            colors={["transparent", "accent"]}
+          />
+          <CalloutBackgroundHighGradient
+            theme={theme}
+            start={[0, 1.0]}
+            end={[0, 1.0]}
+            colors={["transparent", "muted"]}
+          />
           <CalloutBackgroundDiagonal theme={theme}>
             <Diagonal
-              color="$accent"
+              color="accent"
               height="100%"
               opacity={0.05}
               width="100%"
@@ -129,18 +140,17 @@ const CalloutFrameImpl = Container.styleable<CalloutContextProps>(
     );
   },
   {
-    staticConfig: { componentName: "Callout" }
+    displayName: "Callout"
   }
 );
 
 const CalloutHeader = styled(XStack, {
-  name: "Callout",
-
+  displayName: "Callout",
   paddingBottom: 0,
-  zIndex: "$10",
+  zIndex: "10",
   backgroundColor: "transparent",
   alignItems: "center",
-  gap: "$3xl"
+  gap: "3xl"
 });
 
 const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
@@ -152,20 +162,20 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
   }
 
   return (
-    <ThemeableIcon theme={theme} {...props} size="$13xl" color="$muted">
+    <ThemeableIcon theme={theme} {...props} size="13xl" color="muted">
       {icon}
     </ThemeableIcon>
   );
 };
 
 const CalloutHeading = styled(HeadingExtraLargeText, {
-  name: "CalloutHeading",
-
-  color: "$accent",
-  zIndex: "$20"
+  displayName: "CalloutHeading",
+  color: "accent",
+  zIndex: "20"
 });
 
-const CalloutHeadingImpl = CalloutHeading.styleable(
+const CalloutHeadingImpl = createStyledHOC(
+  CalloutHeading,
   ({ children, ...props }, forwardedRef) => {
     return (
       <Theme name="base">
@@ -176,18 +186,18 @@ const CalloutHeadingImpl = CalloutHeading.styleable(
     );
   },
   {
-    staticConfig: { componentName: "CalloutHeading" }
+    displayName: "CalloutHeading"
   }
 );
 
 const CalloutEyebrow = styled(EyebrowText, {
-  name: "CalloutEyebrow",
-
-  color: "$muted",
-  zIndex: "$20"
+  displayName: "CalloutEyebrow",
+  color: "muted",
+  zIndex: "20"
 });
 
-const CalloutEyebrowImpl = CalloutEyebrow.styleable(
+const CalloutEyebrowImpl = createStyledHOC(
+  CalloutEyebrow,
   ({ children, ...props }, forwardedRef) => {
     return (
       <CalloutEyebrow ref={forwardedRef} {...props}>
@@ -196,19 +206,19 @@ const CalloutEyebrowImpl = CalloutEyebrow.styleable(
     );
   },
   {
-    staticConfig: { componentName: "CalloutEyebrow" }
+    displayName: "CalloutEyebrow"
   }
 );
 
 const CalloutBody = styled(BodyText, {
-  name: "CalloutBody",
-
-  color: "$accent",
-  zIndex: "$20",
+  displayName: "CalloutBody",
+  color: "accent",
+  zIndex: "20",
   paddingVertical: 0
 });
 
-const CalloutBodyImpl = CalloutBody.styleable(
+const CalloutBodyImpl = createStyledHOC(
+  CalloutBody,
   ({ children, ...props }, forwardedRef) => {
     return (
       <Theme name="base">
@@ -219,7 +229,7 @@ const CalloutBodyImpl = CalloutBody.styleable(
     );
   },
   {
-    staticConfig: { componentName: "CalloutBody" }
+    displayName: "CalloutBody"
   }
 );
 

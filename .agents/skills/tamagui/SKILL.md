@@ -1,439 +1,204 @@
 ---
 name: tamagui
-description: |
-  Universal React UI framework for web and native. Use when building cross-platform apps with Tamagui,
-  creating styled components with `styled()`, configuring design tokens/themes, using Tamagui UI components,
-  or working with animations. Triggers: "tamagui", "styled()", "$token", "XStack/YStack", "useTheme",
-  "@tamagui/*" imports, "createStyledContext", "variants".
-version: 1.0.0
+description: Universal React UI framework for web and native with flat conditional values. Use when building cross-platform apps with Tamagui, writing styled components, or applying tokens, themes, animations, and media queries.
+metadata:
+  version: 3.0.0
 ---
 
 # Tamagui Skill
 
-Universal React UI framework for web and native with an optimizing compiler.
+Universal React UI framework for web and native. In v3, conditions are flat clauses in the style value, tokens and themes are bare names, and nested condition props such as `hoverStyle` are removed.
 
-## Getting Project-Specific Config
+## 1. Project Configuration First
 
-**Before writing Tamagui code**, get the project's actual configuration:
+Before writing Tamagui code, generate or read the project prompt:
 
 ```bash
 npx tamagui generate-prompt
 ```
 
-This outputs `tamagui-prompt.md` with the project's specific:
-- Design tokens (space, size, radius, color, zIndex)
-- Theme names and hierarchy
-- Available components
-- Media query breakpoints
-- Shorthand properties
-- Font families
+This writes `tamagui-prompt.md` containing the project's exact token names, theme keys, media breakpoints, shorthands, and components. In an existing app, always inspect and use the project's local component wrappers first before importing from raw packages.
 
-**Always reference this file for token/theme/media query names** rather than guessing or using defaults.
+## 2. Flat Value Grammar
 
----
+Every conditional style value follows this grammar:
 
-## Core Concepts
-
-### styled() Function
-
-Create components by extending existing ones:
-
-```tsx
-import { View, Text, styled } from '@tamagui/core'
-
-const Card = styled(View, {
-  padding: '$4',           // use tokens with $
-  backgroundColor: '$background',
-  borderRadius: '$4',
-
-  variants: {
-    size: {
-      small: { padding: '$2' },
-      large: { padding: '$6' },
-    },
-    elevated: {
-      true: {
-        shadowColor: '$shadowColor',
-        shadowRadius: 10,
-      },
-    },
-  } as const,  // required for type inference
-
-  defaultVariants: {
-    size: 'small',
-  },
-})
-
-// usage
-<Card size="large" elevated />
+```txt
+value  := base? clause*
+clause := modifier(:modifier)*:payload
 ```
 
-**Key rules:**
-- Always use `as const` on variants objects
-- Tokens use `$` prefix: `$4`, `$background`, `$color11`
-- Prop order matters - later props override earlier ones
-- Variants defined later in the object override earlier ones
+- Modifiers chain left-to-right: `dark:hover:navy` applies when both dark and hover match.
+- Payloads extend to the next top-level clause or end of string.
+- An empty payload is invalid. Clear a property with `none`, `transparent`, `initial`, or `unset`.
+- Do not author raw `transform` strings with clauses; use atomic transform props (`scale`, `rotate`, `x`, `y`).
 
-### Stack Components
+### Supported Modifiers
 
-```tsx
-import { XStack, YStack, ZStack } from 'tamagui'
+- Interaction: `hover:`, `press:`, `focus:`, `focus-visible:`, `focus-within:`, `disabled:`
+- Media: configured keys such as `sm:` (min-width), `max-sm:` (max-width), `md:`, `max-md:`
+- Theme: `dark:`, `light:`, and configured theme names
+- Platform: `web:`, `native:`, `ios:`, `android:`
+- Group: `group-hover:`, `group-hover/name:`, `group-press/name:`
+- Container: `@sm:`, `@sm/name:` (measures nearest query container)
+- Presence: `enter:`, `exit:` (requires `transition=`)
 
-// XStack = flexDirection: 'row'
-// YStack = flexDirection: 'column'
-// ZStack = position: 'relative' with absolute children
+### Rules
 
-<YStack gap="$4" padding="$4">
-  <XStack justifyContent="space-between" alignItems="center">
-    <Text>Label</Text>
-    <Button>Action</Button>
-  </XStack>
-</YStack>
-```
+1. **No `$` sigil**: tokens and theme names are bare: `bg="background"`, `p="4"`, not `bg="$background"`.
+2. **Kebab theme names**: built-in theme keys use kebab-case: `background-hover`, `background-press`, `border-color`, `border-color-hover`, `placeholder-color`, `shadow-color`.
+3. **Numbers are px**: a quoted number string `p="4"` resolves the configured space token. A raw numeric literal `p={4}` is literal 4px on web or 4 points on native.
+4. **Specificity precedence ladder**: when multiple clauses match, the winner is decided by specificity, not authored order:
+   - Platform rank (`ios:` > `native:` > bare)
+   - Condition count (more conditions win)
+   - Category rank: media (1) < container (65) < theme (129) < group (161) < state (225)
+   - Authored order breaks exact ties only.
+   - A chain supports at most five distinct non-platform conditions.
 
-### Themes
+## 3. Style Value Syntax
 
-Themes nest and combine hierarchically:
+Tamagui supports both string and object syntax. Projects can configure `settings.styleValueSyntax` to enforce one form.
 
-```tsx
-import { Theme } from 'tamagui'
-
-// base theme
-<Theme name="dark">
-  {/* sub-theme */}
-  <Theme name="blue">
-    {/* uses dark_blue theme */}
-    <Button>Blue button on dark</Button>
-  </Theme>
-</Theme>
-
-// access theme values
-const theme = useTheme()
-console.log(theme.background.val)  // actual color value
-console.log(theme.color11.val)     // high contrast text
-```
-
-**12-step color scale convention:**
-- `$color1-4`: backgrounds (subtle to emphasized)
-- `$color5-6`: borders, separators
-- `$color7-8`: hover/active states
-- `$color9-10`: solid backgrounds
-- `$color11-12`: text (low to high contrast)
-
-### Responsive Styles
-
-Use media query props (check your `tamagui-prompt.md` for actual breakpoint names):
+### String Form
 
 ```tsx
-<YStack
-  padding="$4"
-  $gtSm={{ padding: '$6' }}   // check your config for actual names
-  $gtMd={{ padding: '$8' }}
-  flexDirection="column"
-  $gtLg={{ flexDirection: 'row' }}
-/>
+import { View } from 'tamagui'
 
-// or with hook
-const media = useMedia()
-if (media.gtMd) {
-  // render for medium+ screens
+export function Demo() {
+  return (
+    <View
+      bg="background hover:background-hover dark:blue-500"
+      p="4 sm:6 max-sm:2"
+      w="100% md:50%"
+      opacity="web:0.9"
+      scale="1 enter:0.9 exit:0.9"
+      transition="quick"
+    />
+  )
 }
 ```
 
-### Animations
+### Object Form
 
 ```tsx
-import { AnimatePresence } from 'tamagui'
+import { View } from 'tamagui'
 
-<AnimatePresence>
-  {show && (
-    <YStack
-      key="modal"  // key required for exit animations
-      animation="quick"
-      enterStyle={{ opacity: 0, y: -20 }}
-      exitStyle={{ opacity: 0, y: 20 }}
-      opacity={1}
-      y={0}
+export function Demo() {
+  return (
+    <View
+      bg={{ default: 'background', hover: 'background-hover', dark: 'blue-500' }}
+      p={{ default: '4', sm: '6', 'max-sm': '2' }}
+      w={{ default: '100%', md: '50%' }}
+      opacity={{ web: 0.9 }}
+      scale={{ default: 1, enter: 0.9, exit: 0.9 }}
+      transition="quick"
     />
-  )}
-</AnimatePresence>
-```
-
-**Animation drivers:**
-- `@tamagui/animations-css` - web only, CSS transitions
-- `@tamagui/animations-react-native` - native Animated API
-- `@tamagui/animations-reanimated` - best native performance
-- `@tamagui/animations-motion` - spring physics
-
-CSS driver uses easing strings, others support spring physics.
-
----
-
-## Compound Components
-
-Use `createStyledContext` for components that share state:
-
-```tsx
-import { createStyledContext, styled, View, Text } from '@tamagui/core'
-import { withStaticProperties } from '@tamagui/helpers'
-
-const CardContext = createStyledContext({ size: 'medium' as 'small' | 'medium' | 'large' })
-
-const CardFrame = styled(View, {
-  context: CardContext,
-  padding: '$4',
-  backgroundColor: '$background',
-
-  variants: {
-    size: {
-      small: { padding: '$2' },
-      medium: { padding: '$4' },
-      large: { padding: '$6' },
-    },
-  } as const,
-})
-
-const CardTitle = styled(Text, {
-  context: CardContext,  // inherits size from parent
-  fontWeight: 'bold',
-
-  variants: {
-    size: {
-      small: { fontSize: '$4' },
-      medium: { fontSize: '$5' },
-      large: { fontSize: '$6' },
-    },
-  } as const,
-})
-
-export const Card = withStaticProperties(CardFrame, {
-  Title: CardTitle,
-})
-
-// usage - size cascades to children
-<Card size="large">
-  <Card.Title>Large Title</Card.Title>
-</Card>
-```
-
----
-
-## Common Patterns
-
-### Dialog with Adapt (Sheet on Mobile)
-
-```tsx
-import { Dialog, Sheet, Adapt, Button } from 'tamagui'
-
-<Dialog>
-  <Dialog.Trigger asChild>
-    <Button>Open</Button>
-  </Dialog.Trigger>
-
-  <Adapt when="sm" platform="touch">
-    <Sheet modal dismissOnSnapToBottom>
-      <Sheet.Frame padding="$4">
-        <Adapt.Contents />
-      </Sheet.Frame>
-      <Sheet.Overlay />
-    </Sheet>
-  </Adapt>
-
-  <Dialog.Portal>
-    <Dialog.Overlay
-      key="overlay"
-      animation="quick"
-      opacity={0.5}
-      enterStyle={{ opacity: 0 }}
-      exitStyle={{ opacity: 0 }}
-    />
-    <Dialog.Content
-      key="content"
-      animation="quick"
-      enterStyle={{ opacity: 0, scale: 0.95 }}
-      exitStyle={{ opacity: 0, scale: 0.95 }}
-    >
-      <Dialog.Title>Title</Dialog.Title>
-      <Dialog.Description>Description</Dialog.Description>
-      <Dialog.Close asChild>
-        <Button>Close</Button>
-      </Dialog.Close>
-    </Dialog.Content>
-  </Dialog.Portal>
-</Dialog>
-```
-
-### Form with Input/Label
-
-```tsx
-import { Input, Label, YStack, XStack, Button } from 'tamagui'
-
-<YStack gap="$4" padding="$4">
-  <YStack gap="$2">
-    <Label htmlFor="email">Email</Label>
-    <Input
-      id="email"
-      placeholder="email@example.com"
-      autoCapitalize="none"
-      keyboardType="email-address"
-    />
-  </YStack>
-
-  <XStack gap="$2" justifyContent="flex-end">
-    <Button variant="outlined">Cancel</Button>
-    <Button theme="blue">Submit</Button>
-  </XStack>
-</YStack>
-```
-
----
-
-## Anti-Patterns
-
-### ❌ Hardcoded values instead of tokens
-
-```tsx
-// bad
-<View padding={16} backgroundColor="#fff" />
-
-// good - uses design tokens
-<View padding="$4" backgroundColor="$background" />
-```
-
-### ❌ Missing `as const` on variants
-
-```tsx
-// bad - TypeScript can't infer variant types
-variants: {
-  size: { small: {...}, large: {...} }
-}
-
-// good
-variants: {
-  size: { small: {...}, large: {...} }
-} as const
-```
-
-### ❌ Platform detection in styled()
-
-```tsx
-// bad - won't be extracted by compiler
-const Box = styled(View, {
-  padding: Platform.OS === 'web' ? 10 : 20,
-})
-
-// good - use platform modifiers
-const Box = styled(View, {
-  padding: 20,
-  '$platform-web': { padding: 10 },
-})
-```
-
-### ❌ exitStyle without AnimatePresence
-
-```tsx
-// bad - exit animation won't work
-{show && <View exitStyle={{ opacity: 0 }} />}
-
-// good
-<AnimatePresence>
-  {show && <View key="box" exitStyle={{ opacity: 0 }} />}
-</AnimatePresence>
-```
-
-### ❌ Dynamic values that prevent extraction
-
-```tsx
-// bad - runtime variable prevents compiler extraction
-const dynamicPadding = isPremium ? '$6' : '$4'
-<View padding={dynamicPadding} />
-
-// good - inline ternary is extractable
-<View padding={isPremium ? '$6' : '$4'} />
-```
-
-### ❌ Wrong media query order
-
-```tsx
-// bad - base value overrides responsive
-<View $gtMd={{ padding: '$8' }} padding="$4" />
-
-// good - base first, then responsive overrides
-<View padding="$4" $gtMd={{ padding: '$8' }} />
-```
-
-### ❌ Spring animations with CSS driver
-
-```tsx
-// bad - CSS driver doesn't support spring physics
-import { createAnimations } from '@tamagui/animations-css'
-const anims = createAnimations({
-  bouncy: { type: 'spring', damping: 10 }  // won't work
-})
-
-// good for CSS driver - use easing strings
-const anims = createAnimations({
-  bouncy: 'cubic-bezier(0.68, -0.55, 0.265, 1.55) 300ms'
-})
-```
-
----
-
-## Compiler Optimization
-
-The Tamagui compiler extracts static styles to CSS at build time. For styles to be extracted:
-
-1. **Use tokens** - `$4` extracts, `16` may not
-2. **Inline ternaries** - `padding={x ? '$4' : '$2'}` extracts
-3. **Avoid runtime variables** - computed values don't extract
-4. **Use variants** - better than conditional props
-
-Check if extraction is working:
-- Look for `data-tamagui` attributes in dev mode
-- Bundle size should be smaller with compiler enabled
-- Styles should appear as CSS classes, not inline
-
----
-
-## TypeScript
-
-```tsx
-import { GetProps, styled, View } from '@tamagui/core'
-
-const MyComponent = styled(View, {
-  variants: {
-    size: { small: {}, large: {} }
-  } as const,
-})
-
-// extract props type
-type MyComponentProps = GetProps<typeof MyComponent>
-
-// extend with custom props
-interface ExtendedProps extends MyComponentProps {
-  onCustomEvent?: () => void
+  )
 }
 ```
 
----
+## 4. Shorthands vs Longhands
 
-## Quick Reference
+Check `onlyAllowShorthands` in `tamagui-prompt.md`. Under stock v6 it is `true`, meaning longhand property names are removed from types and will cause type errors. Always author using shorthands:
 
-| Pattern | Example |
-|---------|---------|
-| Token | `padding="$4"` |
-| Theme value | `backgroundColor="$background"` |
-| Color scale | `color="$color11"` (high contrast text) |
-| Responsive | `$gtSm={{ padding: '$6' }}` |
-| Variant | `<Button size="large" variant="outlined" />` |
-| Animation | `animation="quick" enterStyle={{ opacity: 0 }}` |
-| Theme switch | `<Theme name="dark"><Theme name="blue">` |
-| Compound | `<Card><Card.Title>` with `createStyledContext` |
+- `p`, `px`, `py`, `pt`, `pb`, `pl`, `pr`: padding
+- `m`, `mx`, `my`, `mt`, `mb`, `ml`, `mr`: margin
+- `w`, `h`, `minW`, `maxW`, `minH`, `maxH`: dimensions
+- `bg`: background
+- `color`: text color (unshortened in v6)
+- `rounded`: border radius
+- `items`: align items
+- `justify`: justify content
 
----
+## 5. Control Sizes
 
-## Resources
+With the v6 config, controls (Button, Input, Select, etc.) accept named sizes: `xs`, `sm`, `md`, `lg`, `xl`. The default is `md`.
 
-- Docs: https://tamagui.dev
-- GitHub: https://github.com/tamagui/tamagui
-- Discord: https://discord.gg/tamagui
+```tsx
+import { Button, YStack } from 'tamagui'
+
+export function Buttons() {
+  return (
+    <YStack gap="2">
+      <Button size="sm">Small</Button>
+      <Button size="md">Medium</Button>
+      <Button size="lg">Large</Button>
+    </YStack>
+  )
+}
+```
+
+Use named recipes for control sizes. Legacy token keys such as `size="4"` remain supported, but use the old height-based sizing model. `Spinner` has its own `small` and `large` sizes.
+
+## 6. Groups and Containers
+
+Declare `group` and `container` as props on the parent, then target them in children:
+
+```tsx
+import { Text, View } from 'tamagui'
+
+export function CardGroup() {
+  return (
+    <View group="card" container="card">
+      <Text color="color group-hover/card:color-focus @sm/card:color">Card title</Text>
+    </View>
+  )
+}
+```
+
+## 7. Animations and Presence
+
+The v3 animation prop is `transition` (not `animation`). For enter and exit transitions, specify `enter:` and `exit:` clauses and wrap unmounting components in `AnimatePresence` with an explicit `key`:
+
+```tsx
+import { AnimatePresence, View } from 'tamagui'
+
+export function Fade({ visible }: { visible: boolean }) {
+  return (
+    <AnimatePresence>
+      {visible && (
+        <View
+          key="fade-box"
+          opacity="1 enter:0 exit:0"
+          scale="1 enter:0.9 exit:0.9"
+          transition="quick"
+        />
+      )}
+    </AnimatePresence>
+  )
+}
+```
+
+## 8. Removed V2 APIs and Replacements
+
+| V2 API | V3 Replacement |
+|---|---|
+| `hoverStyle={{ ... }}` | `bg="background hover:background-hover"` or `bg={{ hover: '...' }}` |
+| `pressStyle={{ ... }}` | `press:` clause: `scale="1 press:0.95"` |
+| `focusStyle={{ ... }}` | `focus:` clause |
+| `enterStyle={{ ... }}` / `exitStyle={{ ... }}` | `enter:` / `exit:` clauses with `transition="preset"` |
+| `animation="fast"` | `transition="fast"` |
+| `$sm={{ ... }}` | `sm:` clause in style prop: `p="2 sm:4"` |
+| `Sheet.Frame` | `Sheet.Container` and `Sheet.Background` |
+| `Component.styleable(fn)` | `createStyledHOC(Component, fn)` |
+| `useProps`, `useStyle` | `splitStyleProps`, `getExpandedShorthand` |
+| `Select.Item index={i}` | `index` prop removed; use `<Select.Item value="val">` |
+
+## 9. Packages to Import
+
+- `tamagui`: styled components with skins (Button, Input, Dialog, Sheet, etc.)
+- `tamagui/unstyled` (`@tamagui/ui`): unstyled primitives with structural styles only
+- `@tamagui/core`: core styling runtime (`View`, `Text`, `styled`)
+- `html.*`: DOM elements with Tamagui flat value support (`html.div`, `html.span`)
+
+## 10. Verification
+
+Verify styles and syntax with:
+
+```bash
+npx tamagui check --strict
+```
+
+`settings.allowedStyleValues` controls type validation of single-token values. Conditional payloads and modifiers also need `tamagui check --strict`, which loads the project config on a fresh project.
+
+For detailed APIs, read [configuration](references/configuration.md), [components](references/components.md), and [animations](references/animations.md).

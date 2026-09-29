@@ -19,14 +19,15 @@
 import type { GetProps } from "@tamagui/core";
 import { styled, View } from "@tamagui/core";
 import type { IconProps } from "@tamagui/helpers-icon";
-import { themed } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
 import type { SvgProps } from "react-native-svg";
 import { Path, Svg } from "react-native-svg";
+import type { ThemedIconBodyProps } from "./themed-icon";
+import { themedIcon } from "./themed-icon";
 const ArrowContainer = styled(View, {
-  name: "Arrow",
+  displayName: "Arrow",
 
   variants: {
     pointing: {
@@ -62,8 +63,8 @@ const Icon = ({
   size = 24,
   pointing = "right",
   ...props
-}: ArrowProps) => {
-  const color = useCurrentColor((props.color || "$onAccent") as any);
+}: ThemedIconBodyProps<ArrowProps>) => {
+  const color = useCurrentColor((props.color || "onAccent") as any);
 
   const motionPosition = useMotionValue(1);
   const playback = animate(motionPosition, 24, {
@@ -102,13 +103,10 @@ const Icon = ({
   }, [playback, isComplete, playbackReverse, motionPosition, motionReverse]);
 
   return (
-    <ArrowContainer
-      pointing={pointing}
-      maxWidth={size}
-      maxHeight={(size as number) * 0.6}>
+    <ArrowContainer pointing={pointing} maxWidth={size} maxHeight={size * 0.6}>
       <Svg
         width={size}
-        height={(size as number) * 0.6}
+        height={size * 0.6}
         viewBox="-1 0 34 16"
         fill="none"
         stroke={color}
@@ -134,7 +132,7 @@ const Icon = ({
 
 Icon.displayName = "Arrow";
 
-export const Arrow = memo<ArrowProps>(themed(Icon));
+export const Arrow = memo<ArrowProps>(themedIcon(Icon));
 
 type DirectionalArrowProps = Omit<ArrowProps, "pointing">;
 

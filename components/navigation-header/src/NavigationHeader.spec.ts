@@ -8,15 +8,15 @@ const navigationHeaderSource = readFileSync(
 );
 
 describe("NavigationHeader typography", () => {
-  it("uses the $xl scale for desktop navigation labels", () => {
+  it("uses the xl scale for desktop navigation labels", () => {
     expect(navigationHeaderSource).toMatch(
-      /const NavigationHeaderItemLink = styled\(Link, \{[\s\S]*?fontSize: "\$xl"/
+      /const NavigationHeaderItemLink = styled\(Link, \{[\s\S]*?fontSize: "xl"/
     );
   });
 
-  it("uses the $xl scale for desktop dropdown links", () => {
+  it("uses the xl scale for desktop dropdown links", () => {
     expect(navigationHeaderSource).toMatch(
-      /const NavigationHeaderDropdownLink = styled\(Link, \{[\s\S]*?fontSize: "\$xl"/
+      /const NavigationHeaderDropdownLink = styled\(Link, \{[\s\S]*?fontSize: "xl"/
     );
   });
 });

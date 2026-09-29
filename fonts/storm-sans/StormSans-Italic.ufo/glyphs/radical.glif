@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="radical" format="2">
+  <advance width="600"/>
+  <unicode hex="221A"/>
+  <outline>
+    <contour>
+      <point x="312" y="0" type="line"/>
+      <point x="645" y="698" type="line"/>
+      <point x="566" y="698" type="line"/>
+      <point x="402" y="350" type="line"/>
+      <point x="272" y="66" type="line"/>
+      <point x="267" y="66" type="line"/>
+      <point x="251" y="350" type="line"/>
+      <point x="241" y="516" type="line"/>
+      <point x="91" y="516" type="line"/>
+      <point x="78" y="454" type="line"/>
+      <point x="173" y="454" type="line"/>
+      <point x="202" y="0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(1,18)
+YShift(1,7)
+ResYAnchor(4,6)
+ResYDist(4,3)
+ResYAnchor(11,16)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

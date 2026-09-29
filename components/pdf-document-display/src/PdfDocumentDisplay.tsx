@@ -24,7 +24,7 @@ import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
 import { isString } from "@stryke/type-checks/is-string";
 import type { FileResult } from "@stryke/types/file";
 import type { ViewProps } from "@tamagui/core";
-import { styled, View } from "@tamagui/core";
+import { createStyledHOC, styled, View } from "@tamagui/core";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import type {
@@ -45,8 +45,7 @@ const StyledPdfIcon = styled(PdfIcon, {
   position: "absolute",
   top: 0,
   left: 0,
-  zIndex: "$20",
-
+  zIndex: "20",
   variants: {
     visible: {
       true: {
@@ -57,7 +56,6 @@ const StyledPdfIcon = styled(PdfIcon, {
       }
     }
   },
-
   defaultVariants: {
     visible: true
   }
@@ -74,7 +72,7 @@ interface PdfDocumentDisplayExtraProps {
 
 export type PdfDocumentDisplayProps = PdfDocumentDisplayExtraProps & ViewProps;
 
-export const PdfDocumentDisplay = View.styleable<PdfDocumentDisplayExtraProps>(
+export const PdfDocumentDisplay = createStyledHOC(View, 
   (
     {
       src,
@@ -139,7 +137,7 @@ export const PdfDocumentDisplay = View.styleable<PdfDocumentDisplayExtraProps>(
             position="absolute"
             top="35%"
             margin="auto"
-            zIndex="$30"
+            zIndex="30"
           />
 
           <StyledPdfIcon visible={loading || error !== null} />

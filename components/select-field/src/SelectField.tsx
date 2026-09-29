@@ -25,13 +25,13 @@ import { Select } from "@cyclone-ui/select";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import type { SelectOption } from "@stryke/types/form";
 import type { GetProps } from "@tamagui/core";
-import { withStaticProperties } from "@tamagui/core";
+import { createStyledHOC, withStaticProperties } from "@tamagui/core";
 import type { Atom } from "jotai";
 import { useAtomValue } from "jotai";
 import type { PropsWithChildren } from "react";
 import { memo, useCallback, useLayoutEffect } from "react";
 
-const SelectFieldGroup = Field.styleable((props, forwardedRef) => {
+const SelectFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
   const { children, variant = "floating", ...rest } = props;
 
   return (
@@ -47,79 +47,96 @@ const SelectFieldItem = memo(
     const { value, name, index } = item;
 
     return (
-      <Select.Items.Item {...item} tabIndex={index} textValue={String(value)}>
+      <Select.Items.Item
+        {...item}
+        // `Select.Items.Item` stringifies `value` itself; its emitted typings
+        // only accept strings.
+        value={String(value)}
+        tabIndex={index}
+        textValue={String(value)}>
         {name}
       </Select.Items.Item>
     );
   }
 );
 
-const SelectFieldControl = Select.styleable<
-  Pick<GetProps<typeof Select.TextBox.Value>, "placeholder">
->(({ placeholder, children, ...props }, forwardedRef) => {
-  const { focus, blur, change, mount } = useFieldActions();
-  const handleChange = useCallback(
-    (event: CustomEvent<string | null>) => {
-      change(event.detail);
-    },
-    [change]
-  );
+const SelectFieldControl = createStyledHOC(
+  Select,
+  (
+    {
+      placeholder,
+      children,
+      ...props
+    }: GetProps<typeof Select> &
+      Pick<GetProps<typeof Select.TextBox.Value>, "placeholder">,
+    forwardedRef
+  ) => {
+    const { focus, blur, change, mount } = useFieldActions();
+    const handleChange = useCallback(
+      (event: CustomEvent<string | null>) => {
+        change(event.detail);
+      },
+      [change]
+    );
 
-  const field = FieldApi.use();
-  const name = field.name.get();
-  const disabled = field.disabled.get();
-  const focused = field.focused.get();
-  const size = field.size.get();
-  const itemsAtoms = field.itemsAtoms.get();
-  const value = field.value.get();
-  const formattedValue = field.formattedValue.get();
-  const initialValue = field.initialValue.get();
-  const displayValue = formattedValue || String(value ?? initialValue ?? "");
-  const variant = useFieldVariant(placeholder);
-  const shouldShowPlaceholder = useFieldShouldShowPlaceholder(displayValue);
-  const valueContent =
-    displayValue || (shouldShowPlaceholder ? placeholder : undefined);
-  const isPlaceholding = !displayValue && shouldShowPlaceholder;
+    const field = FieldApi.use();
+    const name = field.name.get();
+    const disabled = field.disabled.get();
+    const focused = field.focused.get();
+    const size = field.size.get();
+    const itemsAtoms = field.itemsAtoms.get();
+    const value = field.value.get();
+    const formattedValue = field.formattedValue.get();
+    const initialValue = field.initialValue.get();
+    const displayValue = formattedValue || String(value ?? initialValue ?? "");
+    const variant = useFieldVariant(placeholder);
+    const shouldShowPlaceholder = useFieldShouldShowPlaceholder(displayValue);
+    const valueContent =
+      displayValue || (shouldShowPlaceholder ? placeholder : undefined);
+    const isPlaceholding = !displayValue && shouldShowPlaceholder;
 
-  const selectRef = useFieldRef();
-  useLayoutEffect(() => {
-    mount(selectRef);
-  }, [mount]);
+    const selectRef = useFieldRef();
+    useLayoutEffect(() => {
+      mount(selectRef);
+    }, [mount]);
 
-  return (
-    <Select
-      ref={forwardedRef}
-      {...props}
-      name={name}
-      focused={focused}
-      variant={variant}
-      disabled={disabled}
-      size={size}
-      onFocus={focus}
-      onBlur={blur}
-      onChange={handleChange}
-      value={displayValue}
-      defaultValue={String(initialValue ?? "")}>
-      <Select.TextBox>
-        {children}
-        <Select.TextBox.Value
-          ref={selectRef}
-          placeholder={isPlaceholding ? placeholder : undefined}
-          placeholding={isPlaceholding}>
-          {valueContent}
-        </Select.TextBox.Value>
+    return (
+      <Select
+        ref={forwardedRef}
+        {...props}
+        name={name}
+        focused={focused}
+        // Field's "normal" variant has no Select styling, same as "default".
+        variant={variant === "normal" ? "default" : variant}
+        disabled={disabled}
+        size={size}
+        onFocus={focus}
+        onBlur={blur}
+        onChange={handleChange}
+        value={displayValue}
+        defaultValue={String(initialValue ?? "")}>
+        <Select.TextBox>
+          {children}
+          <Select.TextBox.Value
+            ref={selectRef}
+            // `Select.TextBox.Value` derives `placeholding` from `placeholder`
+            // (its own prop wins over a passed one), so it isn't passed here.
+            placeholder={isPlaceholding ? placeholder : undefined}>
+            {valueContent}
+          </Select.TextBox.Value>
 
-        <Field.ThemeIcon position="end" render="span" role={undefined} />
-      </Select.TextBox>
+          <Field.ThemeIcon position="end" render="span" role={undefined} />
+        </Select.TextBox>
 
-      <Select.Items>
-        {itemsAtoms.map((itemAtom, index) => (
-          <SelectFieldItem key={index} itemAtom={itemAtom} />
-        ))}
-      </Select.Items>
-    </Select>
-  );
-});
+        <Select.Items>
+          {itemsAtoms.map((itemAtom, index) => (
+            <SelectFieldItem key={index} itemAtom={itemAtom} />
+          ))}
+        </Select.Items>
+      </Select>
+    );
+  }
+);
 
 export const SelectField = withStaticProperties(SelectFieldGroup, {
   Label: Field.Label,

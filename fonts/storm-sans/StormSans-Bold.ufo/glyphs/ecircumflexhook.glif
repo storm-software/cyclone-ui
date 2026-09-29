@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ecircumflexhook" format="2">
+  <advance width="562"/>
+  <unicode hex="1EC3"/>
+  <anchor x="283.0" y="0.0" name="bottom"/>
+  <anchor x="383.0" y="0.0" name="bottomright"/>
+  <outline>
+    <component base="e"/>
+    <component base="circumflexhook" xOffset="287"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

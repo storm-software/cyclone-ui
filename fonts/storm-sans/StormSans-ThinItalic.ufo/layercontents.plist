@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <array>
+    <array>
+      <string>foreground</string>
+      <string>glyphs</string>
+    </array>
+    <array>
+      <string>Storm Sans-Thin Italic-39-eW</string>
+      <string>glyphs.I_B_M_ P_lex S_ans-T_hin I_talic-39-eW_</string>
+    </array>
+    <array>
+      <string>background</string>
+      <string>glyphs.background</string>
+    </array>
+  </array>
+</plist>

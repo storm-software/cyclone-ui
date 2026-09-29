@@ -15,6 +15,7 @@
     "@tamagui/animations-moti": "catalog:",
     "@tamagui/config": "catalog:",
     "@tamagui/core": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/portal": "catalog:",
     "@tamagui/proxy-worm": "catalog:",
     "@tamagui/react-native-svg": "catalog:",

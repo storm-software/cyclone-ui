@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="icaron" format="2">
+  <advance width="250"/>
+  <unicode hex="01D0"/>
+  <anchor x="125.0" y="0.0" name="bottom"/>
+  <anchor x="165.0" y="0.0" name="bottomright"/>
+  <outline>
+    <component base="dotlessi"/>
+    <component base="caron.alt01" xOffset="-175"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

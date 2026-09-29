@@ -16,34 +16,21 @@
 
  ------------------------------------------------------------------- */
 
-import type { GetProps } from "@tamagui/core";
+import type { FontSizeTokens, GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
+// Lets TypeScript name `GetFontSizedInput` (SizableText's `size` type) in
+// this package's declarations.
+import type {} from "@tamagui/get-font-sized";
 import { SizableText } from "@tamagui/text";
 
 export const BodyText = styled(SizableText, {
-  name: "BodyText",
+  displayName: "BodyText",
   render: "p",
-
-  color: "$inkBody",
-  fontFamily: "$body-md",
-
-  variants: {
-    variant: {
-      sm: {
-        fontFamily: "$body-sm"
-      },
-      md: {
-        fontFamily: "$body-md"
-      },
-      lg: {
-        fontFamily: "$body-lg"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    variant: "md"
-  }
+  color: "inkBody",
+  fontFamily: "body",
+  // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
+  // only define `true` plus their own step, so name the default step explicitly.
+  size: "true" as FontSizeTokens
 });
 
 export type BodyTextProps = GetProps<typeof BodyText>;

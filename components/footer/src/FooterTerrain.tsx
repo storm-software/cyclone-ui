@@ -22,12 +22,12 @@ import { AccessibilityInfo } from "react-native";
 import { Path, Svg } from "react-native-svg";
 
 const TerrainFrame = styled(View, {
-  name: "FooterTerrain",
+  displayName: "FooterTerrain",
   position: "absolute",
   inset: 0,
   overflow: "hidden",
   pointerEvents: "none",
-  zIndex: "$20"
+  zIndex: "20"
 });
 
 // Project a fixed height field once. Shared vertices keep the triangular mesh

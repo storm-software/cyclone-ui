@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<designspace format="3">
+  <axes>
+    <axis default="400" maximum="700" minimum="100" name="weight" tag="wght">
+      <map input="100" output="-925" />
+      <map input="200" output="-706" />
+      <map input="300" output="-360" />
+      <map input="400" output="0" />
+      <map input="450" output="191" />
+      <map input="500" output="427" />
+      <map input="600" output="705" />
+      <map input="700" output="1000" />
+    </axis>
+  </axes>
+  <sources>
+    <source familyname="Storm Sans" filename="StormSans-Thin.ufo" stylename="Thin">
+      <location>
+        <dimension name="weight" xvalue="-925" />
+      </location>
+    </source>
+    <source familyname="Storm Sans" filename="StormSans-Regular.ufo" stylename="Regular">
+      <lib copy="1" />
+      <groups copy="1" />
+      <info copy="1" />
+      <location>
+        <dimension name="weight" xvalue="0" />
+      </location>
+    </source>
+    <source familyname="Storm Sans" filename="StormSans-Bold.ufo" stylename="Bold">
+      <location>
+        <dimension name="weight" xvalue="1000" />
+      </location>
+    </source>
+  </sources>
+  <instances>
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-Thin" stylename="Thin" filename="instances/StormSans-Thin.ufo">
+      <location>
+        <dimension name="weight" xvalue="-925" />
+      </location>
+      <kerning />
+      <info />
+    </instance>
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-ExtraLight" stylename="ExtraLight" filename="instances/StormSans-ExtraLight.ufo">
+      <location>
+        <dimension name="weight" xvalue="-706" />
+      </location>
+      <kerning />
+      <info />
+    </instance>
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-Light" stylename="Light" filename="instances/StormSans-Light.ufo">
+      <location>
+        <dimension name="weight" xvalue="-360" />
+      </location>
+      <kerning />
+      <info />
+    </instance>
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-Regular" stylename="Regular" filename="instances/StormSans-Regular.ufo">
+      <location>
+        <dimension name="weight" xvalue="0" />
+      </location>
+      <kerning />
+      <info />
+    </instance>
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-Text" stylename="Text" filename="instances/StormSans-Text.ufo">
+      <location>
+        <dimension name="weight" xvalue="191" />
+      </location>
+      <kerning />
+      <info />
+    </instance>
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-Medium" stylename="Medium" filename="instances/StormSans-Medium.ufo">
+      <location>
+        <dimension name="weight" xvalue="427" />
+      </location>
+      <kerning />
+      <info />
+    </instance>
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-SemiBold" stylename="SemiBold" filename="instances/StormSans-SemiBold.ufo">
+      <location>
+        <dimension name="weight" xvalue="705" />
+      </location>
+      <kerning />
+      <info />
+    </instance>
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-Bold" stylename="Bold" filename="instances/StormSans-Bold.ufo">
+      <location>
+        <dimension name="weight" xvalue="1000" />
+      </location>
+      <kerning />
+      <info />
+    </instance>
+  </instances>
+  <rules>
+    <rule name="rvrn_01">
+      <conditionset>
+        <condition minimum="-925" maximum="-360" name="weight" />
+      </conditionset>
+      <sub name="naira" with="naira.rvrn" />
+      <sub name="won" with="won.rvrn" />
+    </rule>
+  </rules>
+  <lib>
+    <dict>
+      <key>org.statmake.additionalLocations</key>
+      <dict>
+        <key>Italic</key>
+        <integer>0</integer>
+      </dict>
+    </dict>
+  </lib>
+</designspace>

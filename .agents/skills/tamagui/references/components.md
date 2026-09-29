@@ -9,8 +9,8 @@ Quick reference for common Tamagui components. For full API, see https://tamagui
 ```tsx
 import { XStack, YStack, ZStack } from 'tamagui'
 
-<YStack gap="$4">        {/* column layout */}
-<XStack gap="$2">        {/* row layout */}
+<YStack gap="4">        {/* column layout */}
+<XStack gap="2">        {/* row layout */}
 <ZStack>                 {/* overlay/absolute positioning */}
 ```
 
@@ -23,8 +23,8 @@ Base components - all others extend these:
 ```tsx
 import { View, Text } from 'tamagui'
 
-<View padding="$4" backgroundColor="$background" />
-<Text color="$color" fontSize="$4">Hello</Text>
+<View padding="4" backgroundColor="background" />
+<Text color="color" fontSize="4">Hello</Text>
 ```
 
 ## Inputs
@@ -35,7 +35,7 @@ import { View, Text } from 'tamagui'
 import { Button } from 'tamagui'
 
 <Button>Default</Button>
-<Button size="$4">Sized</Button>
+<Button size="md">Sized</Button>
 <Button theme="blue">Themed</Button>
 <Button variant="outlined">Outlined</Button>
 <Button circular icon={Plus} />
@@ -48,7 +48,7 @@ import { Button } from 'tamagui'
 import { Input } from 'tamagui'
 
 <Input placeholder="Enter text" />
-<Input size="$4" />
+<Input size="md" />
 <Input secureTextEntry />  {/* password */}
 <Input keyboardType="email-address" />
 ```
@@ -137,15 +137,19 @@ import { Dialog } from 'tamagui'
 
 ### Sheet
 
+v3 splits the old `Sheet.Frame` into `Sheet.Container` (layout, gets the
+content) and `Sheet.Background` (the visual surface, rendered inside it):
+
 ```tsx
 import { Sheet } from 'tamagui'
 
 <Sheet open={open} onOpenChange={setOpen} snapPoints={[80]} dismissOnSnapToBottom>
   <Sheet.Overlay />
-  <Sheet.Frame padding="$4">
+  <Sheet.Container padding="4">
+    <Sheet.Background />
     <Sheet.Handle />
     {/* content */}
-  </Sheet.Frame>
+  </Sheet.Container>
 </Sheet>
 ```
 
@@ -209,10 +213,10 @@ import { Select } from 'tamagui'
   </Select.Trigger>
   <Select.Content>
     <Select.Viewport>
-      <Select.Item value="a" index={0}>
+      <Select.Item value="a">
         <Select.ItemText>Option A</Select.ItemText>
       </Select.Item>
-      <Select.Item value="b" index={1}>
+      <Select.Item value="b">
         <Select.ItemText>Option B</Select.ItemText>
       </Select.Item>
     </Select.Viewport>
@@ -245,7 +249,7 @@ import { Card } from 'tamagui'
 ```tsx
 import { Avatar } from 'tamagui'
 
-<Avatar circular size="$6">
+<Avatar circular size="6">
   <Avatar.Image src="..." />
   <Avatar.Fallback>AB</Avatar.Fallback>
 </Avatar>
@@ -266,7 +270,7 @@ import { Separator } from 'tamagui'
 import { Spinner } from 'tamagui'
 
 <Spinner />
-<Spinner size="large" color="$blue10" />
+<Spinner size="large" color="blue-500" />
 ```
 
 ### Progress
@@ -275,7 +279,7 @@ import { Spinner } from 'tamagui'
 import { Progress } from 'tamagui'
 
 <Progress value={60}>
-  <Progress.Indicator animation="bouncy" />
+  <Progress.Indicator transition="bouncy" />
 </Progress>
 ```
 
@@ -286,7 +290,7 @@ import { H1, H2, H3, H4, H5, H6, Paragraph, Text } from 'tamagui'
 
 <H1>Heading 1</H1>
 <Paragraph>Body text paragraph</Paragraph>
-<Text fontSize="$4" color="$color11">Custom text</Text>
+<Text fontSize="4" color="color-11">Custom text</Text>
 ```
 
 ## Utilities
@@ -311,7 +315,7 @@ import { Spacer } from 'tamagui'
   <Text>Right</Text>
 </XStack>
 
-<Spacer size="$4" />   {/* fixed size */}
+<Spacer size="4" />   {/* fixed size */}
 ```
 
 ### ScrollView
@@ -341,11 +345,13 @@ import { Adapt, Dialog, Sheet } from 'tamagui'
 
 <Dialog>
   {/* On small touch screens, render as Sheet instead */}
-  <Adapt when="sm" platform="touch">
-    <Sheet modal>
-      <Sheet.Frame>
+  <Adapt when="max-md" platform="touch">
+    <Sheet modal dismissOnSnapToBottom transition="medium">
+      <Sheet.Container padding="4">
+        <Sheet.Background />
         <Adapt.Contents />
-      </Sheet.Frame>
+      </Sheet.Container>
+      <Sheet.Overlay />
     </Sheet>
   </Adapt>
 
@@ -356,3 +362,6 @@ import { Adapt, Dialog, Sheet } from 'tamagui'
   </Dialog.Portal>
 </Dialog>
 ```
+
+Note `when` takes a media key; with v6 media that means a `max-*` key for
+"small screens" (`sm` alone is min-width 640 and would adapt on desktop).

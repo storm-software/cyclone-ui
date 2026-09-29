@@ -16,33 +16,35 @@
 
  ------------------------------------------------------------------- */
 
-import type { GetProps } from "@tamagui/core";
+import type { FontSizeTokens, GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
+// Lets TypeScript name `GetFontSizedInput` (SizableText's `size` type) in
+// this package's declarations.
+import type {} from "@tamagui/get-font-sized";
 import { SizableText } from "@tamagui/text";
 
 export const EyebrowText = styled(SizableText, {
-  name: "EyebrowText",
+  displayName: "EyebrowText",
   render: "h5",
-
-  color: "$inkSubtle",
-  fontFamily: "$eyebrow-lg",
-  size: "$true",
+  color: "inkSubtle",
+  fontFamily: "eyebrow",
+  // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
+  // only define `true` plus their own step, so name the default step explicitly.
+  size: "true" as FontSizeTokens,
   textTransform: "uppercase",
-
   variants: {
     variant: {
       lg: {
-        fontFamily: "$eyebrow-lg"
+        fontFamily: "eyebrow"
       },
+      // The `eyebrow` token has a single step; the small eyebrow uses the
+      // `caption` size with the eyebrow's semibold weight.
       sm: {
-        fontFamily: "$eyebrow-sm"
+        fontFamily: "caption",
+        fontWeight: "600"
       }
     }
-  },
-
-  defaultVariants: {
-    variant: "lg"
-  }
+  } as const
 });
 
 export type EyebrowTextProps = GetProps<typeof EyebrowText>;

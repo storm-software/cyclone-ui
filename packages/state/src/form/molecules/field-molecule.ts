@@ -107,8 +107,15 @@ export const FieldApi = createMoleculeApi(
       }
     );
 
+    // The scope is `${formName}-${name}`. Strip the known form name rather
+    // than splitting on the first "-": form and field names may contain "-".
+    const formPrefix = `${formScope}-`;
     const path = toPath(
-      scope.includes("-") ? scope.slice(scope.indexOf("-") + 1) : scope
+      scope.startsWith(formPrefix)
+        ? scope.slice(formPrefix.length)
+        : scope.includes("-")
+          ? scope.slice(scope.indexOf("-") + 1)
+          : scope
     );
     const pathAtom = atom(() => path);
 

@@ -25,9 +25,10 @@ import {
   type FormControlSize
 } from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
-import type { ColorTokens } from "@tamagui/core";
+import type { ColorTokens, GetProps } from "@tamagui/core";
 import {
   createStyledContext,
+  createStyledHOC,
   styled,
   View,
   withStaticProperties
@@ -44,56 +45,55 @@ export interface RadioGroupContextProps {
   hasValidationMessage: boolean;
 }
 
-export const RadioGroupContext = createStyledContext<RadioGroupContextProps>({
-  size: "md",
-  disabled: false,
-  required: false,
-  hasValidationMessage: false
-});
+export const RadioGroupContext = createStyledContext<
+  RadioGroupContextProps,
+  "size" | "disabled" | "required" | "hasValidationMessage"
+>(
+  {
+    size: "md",
+    disabled: false,
+    required: false,
+    hasValidationMessage: false
+  } as RadioGroupContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: ["size", "disabled", "hasValidationMessage"]
+  }
+);
 
+// `name` is a plain (form/DOM) prop in v3, so the primitives use `displayName`
 const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
-  name: "RadioGroupItem",
+  displayName: "RadioGroupItem",
   context: RadioGroupContext,
-
   transition: "200ms",
   borderRadius: 100_000,
-  unstyled: true,
   cursor: "pointer",
-  height: "$5xl",
-  width: "$5xl",
+  height: "5xl",
+  width: "5xl",
   alignItems: "center",
   justifyContent: "center",
-
   // this fixes a flex bug where it overflows container
   minWidth: 0,
-
   variants: {
-    size: formSizeVariants(size => ({
-      height: getSized("$5xl") * getFormSizeScale(size),
-      width: getSized("$5xl") * getFormSizeScale(size)
-    })),
+    // `styled.dynamic` re-brands the helper's carrier with this package's
+    // `@tamagui/web` symbol type (runtime no-op; helpers resolves another copy).
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants(size => ({
+        height: getSized("5xl") * getFormSizeScale(size),
+        width: getSized("5xl") * getFormSizeScale(size)
+      }))
+    ),
 
     disabled: {
       true: {
-        borderColor: "$accentDisabled",
+        borderColor:
+          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled",
         userSelect: "none",
-        cursor: "not-allowed",
-
-        hoverStyle: {
-          borderColor: "$accentDisabled"
-        },
-
-        focusStyle: {
-          borderColor: "$accentDisabled"
-        },
-
-        pressStyle: {
-          borderColor: "$accentDisabled"
-        }
+        cursor: "not-allowed"
       }
     }
   } as const,
-
   defaultVariants: {
     size: "md",
     disabled: false
@@ -101,140 +101,101 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
 });
 
 const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
-  name: "RadioGroupItemValue",
+  displayName: "RadioGroupItemValue",
   context: RadioGroupContext,
-
   transition: "200ms",
   cursor: "pointer",
   borderRadius: 100_000,
-  backgroundColor: "$accent",
+  backgroundColor: "accent",
   height: "65%",
   width: "65%",
-
-  enterStyle: {
-    scale: 0.4,
-    opacity: 0
-  },
-
-  exitStyle: {
-    scale: 0.8,
-    opacity: 0
-  },
-
+  scale: "enter:0.4 exit:0.8",
+  opacity: "enter:0 exit:0",
   variants: {
     disabled: {
       true: {
-        placeholderColor: "$accentDisabled",
-        backgroundColor: "$accentDisabled",
+        placeholderColor: "accentDisabled",
+        backgroundColor:
+          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled",
         userSelect: "none",
-        cursor: "not-allowed",
-
-        hoverStyle: {
-          backgroundColor: "$accentDisabled"
-        },
-
-        focusStyle: {
-          backgroundColor: "$accentDisabled"
-        },
-
-        pressStyle: {
-          backgroundColor: "$accentDisabled"
-        }
+        cursor: "not-allowed"
       }
     }
   } as const,
-
   defaultVariants: {
     disabled: false
   }
 });
 
 const RadioGroupItemContainerFrame = styled(XStack, {
-  name: "RadioGroupItem",
+  displayName: "RadioGroupItem",
   context: RadioGroupContext,
-
   transition: "200ms",
   cursor: "pointer",
-  gap: "$3xl",
-  boxShadow: "none",
-  borderRadius: "$control",
+  gap: "3xl",
+  boxShadow: "none press:ringOffset focus:ringOffset focus-visible:ringOffset",
+  borderRadius: "control",
   borderWidth: 1,
-  borderColor: "$hairline",
-  paddingHorizontal: "$3xl",
-  paddingVertical: "$2xl",
+  borderColor: "hairline",
+  paddingHorizontal: "3xl",
+  paddingVertical: "2xl",
   alignItems: "center",
   tabIndex: 0,
-
-  focusStyle: {
-    boxShadow: "$ringOffset"
-  },
-
-  pressStyle: {
-    boxShadow: "$ringOffset"
-  },
-
-  focusVisibleStyle: {
-    boxShadow: "$ringOffset"
-  },
-
   variants: {
-    size: formSizeVariants(size => ({
-      paddingHorizontal: getSpaced("$3xl") * getFormSizeScale(size),
-      paddingVertical: getSpaced("$2xl") * getFormSizeScale(size),
-      gap: getSpaced("$3xl") * getFormSizeScale(size)
-    })),
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants(size => ({
+        paddingHorizontal: getSpaced("3xl") * getFormSizeScale(size),
+        paddingVertical: getSpaced("2xl") * getFormSizeScale(size),
+        gap: getSpaced("3xl") * getFormSizeScale(size)
+      }))
+    ),
 
     hasValidationMessage: {
       true: {
-        borderColor: "$accent",
-        hoverStyle: {
-          borderColor: "$accentHover"
-        }
+        borderColor: "accent hover:accentHover"
       }
     },
 
     disabled: {
       true: {
-        borderColor: "$accentDisabled",
-        boxShadow: "none",
+        borderColor:
+          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled",
+        boxShadow: "none hover:none press:none focus:none",
         userSelect: "none",
-        cursor: "not-allowed",
-
-        hoverStyle: {
-          borderColor: "$accentDisabled",
-          boxShadow: "none"
-        },
-
-        focusStyle: {
-          borderColor: "$accentDisabled",
-          boxShadow: "none"
-        },
-
-        pressStyle: {
-          borderColor: "$accentDisabled",
-          boxShadow: "none"
-        }
+        cursor: "not-allowed"
       }
     }
   } as const,
-
   defaultVariants: {
     disabled: false
   }
 });
 
-const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
-  Omit<SelectOption, "name">
->(
+/** Append flat condition clauses to a (possibly absent) call-site value. */
+const withClauses = <T,>(base: T, clauses: string): T | string =>
+  base == null
+    ? clauses
+    : typeof base === "string"
+      ? `${base} ${clauses}`
+      : base;
+
+const RadioGroupItemContainer = createStyledHOC(
+  RadioGroupItemContainerFrame,
   (
-    { children, value, disabled, selected, onPress, ...props },
+    {
+      children,
+      value,
+      disabled,
+      selected,
+      onPress,
+      ...props
+    }: GetProps<typeof RadioGroupItemContainerFrame> &
+      Omit<SelectOption, "name">,
     forwardedRef
   ) => {
     const { size } = RadioGroupContext.useStyledContext();
     const hasValidationMessage = useFieldHasValidationMessage();
-    const focusColor = hasValidationMessage
-      ? "$accentActive"
-      : "$hairlineActive";
+    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
 
     return (
       <RadioGroupItemContainerFrame
@@ -243,11 +204,27 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
         {...props}
         size={size}
         hasValidationMessage={hasValidationMessage}
-        focusStyle={{ boxShadow: "$ringOffset", borderColor: focusColor }}
-        focusVisibleStyle={{
-          boxShadow: "$ringOffset",
-          borderColor: focusColor
-        }}
+        // v2 applied these as separate focus props after `{...props}`, and the
+        // later `hasValidationMessage` / `disabled` variants overrode the
+        // spread base. v3 call-site values replace the spread prop and outrank
+        // variants, so merge the caller's base in only where v2 kept it, and
+        // leave the property to the `disabled` variant while disabled.
+        boxShadow={
+          disabled
+            ? undefined
+            : withClauses(
+                props.boxShadow,
+                "focus:ringOffset focus-visible:ringOffset"
+              )
+        }
+        borderColor={
+          disabled
+            ? undefined
+            : withClauses(
+                hasValidationMessage ? undefined : props.borderColor,
+                `focus:${focusColor} focus-visible:${focusColor}`
+              )
+        }
         onPress={onPress}
         disabled={disabled}>
         {children}
@@ -256,22 +233,20 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
           <RadioGroupItem
             id={String(value)}
             size={size}
+            borderColor={`group-hover:${disabled ? "accentDisabled" : "accentHover"}`}
             value={String(value)}
-            disabled={disabled}
-            $group-hover={{
-              borderColor: disabled ? "$accentDisabled" : "$accentHover"
-            }}>
+            disabled={disabled}>
             {selected && <RadioGroupItemIndicator />}
           </RadioGroupItem>
         </View>
       </RadioGroupItemContainerFrame>
     );
   },
-  { staticConfig: { componentName: "RadioGroupItem" } }
+  { displayName: "RadioGroupItem" }
 );
 
 const RadioGroupFrame = styled(TamaguiRadioGroup, {
-  name: "RadioGroup",
+  displayName: "RadioGroup",
   context: RadioGroupContext,
 
   transition: "200ms",
@@ -284,9 +259,11 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
   width: "100%",
 
   variants: {
-    size: formSizeVariants(size => ({
-      gap: getSpaced("$2xl") * getFormSizeScale(size)
-    })),
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants(size => ({
+        gap: getSpaced("2xl") * getFormSizeScale(size)
+      }))
+    ),
 
     disabled: {
       true: {
@@ -301,12 +278,21 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
   }
 });
 
-const RadioGroupImpl = RadioGroupFrame.styleable<{
-  defaultValue?: string | null;
-  size?: FormControlSize;
-}>(
+const RadioGroupImpl = createStyledHOC(
+  RadioGroupFrame,
   (
-    { children, name, required, disabled, value, defaultValue, ...props },
+    {
+      children,
+      name,
+      required,
+      disabled,
+      value,
+      defaultValue,
+      ...props
+    }: GetProps<typeof RadioGroupFrame> & {
+      defaultValue?: string | null;
+      size?: FormControlSize;
+    },
     forwardedRef
   ) => {
     const { size } = RadioGroupContext.useStyledContext();
@@ -323,18 +309,16 @@ const RadioGroupImpl = RadioGroupFrame.styleable<{
         disabled={disabled}>
         <YStack
           justifyContent="flex-start"
-          gap="$2xl"
+          gap="2xl"
           width="100%"
-          $max-sm={{
-            paddingHorizontal: "$5xl",
-            paddingVertical: "$6xl"
-          }}>
+          paddingHorizontal="max-sm:5xl"
+          paddingVertical="max-sm:6xl">
           {children}
         </YStack>
       </RadioGroupFrame>
     );
   },
-  { staticConfig: { componentName: "RadioGroup" } }
+  { displayName: "RadioGroup" }
 );
 
 export const RadioGroup = withStaticProperties(RadioGroupImpl, {

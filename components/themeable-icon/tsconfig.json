@@ -9,7 +9,7 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc",
+    "outDir": "../../dist/out-tsc/components/themeable-icon",
     "tsBuildInfoFile": "../../dist/out-tsc/components/themeable-icon/tsconfig.tsbuildinfo"
   },
   "references": [

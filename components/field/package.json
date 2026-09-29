@@ -26,6 +26,8 @@
     "@tamagui/stacks": "catalog:",
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/spinner": "workspace:*",
     "@cyclone-ui/state": "workspace:*",
     "@cyclone-ui/themeable-icon": "workspace:*",
     "@cyclone-ui/tooltip": "workspace:*",

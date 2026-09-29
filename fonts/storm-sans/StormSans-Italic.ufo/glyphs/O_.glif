@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="O" format="2">
+  <advance width="679"/>
+  <unicode hex="004F"/>
+  <anchor x="289.0" y="0.0" name="bottom"/>
+  <anchor x="405.0" y="698.0" name="top"/>
+  <outline>
+    <contour>
+      <point x="298" y="-12" type="curve" smooth="yes"/>
+      <point x="479" y="-12"/>
+      <point x="601" y="134"/>
+      <point x="639" y="314" type="curve" smooth="yes"/>
+      <point x="648" y="354"/>
+      <point x="652" y="396"/>
+      <point x="652" y="438" type="curve" smooth="yes"/>
+      <point x="652" y="614"/>
+      <point x="548" y="710"/>
+      <point x="409" y="710" type="curve" smooth="yes"/>
+      <point x="228" y="710"/>
+      <point x="106" y="564"/>
+      <point x="68" y="384" type="curve" smooth="yes"/>
+      <point x="59" y="344"/>
+      <point x="55" y="302"/>
+      <point x="55" y="260" type="curve" smooth="yes"/>
+      <point x="55" y="84"/>
+      <point x="159" y="-12"/>
+    </contour>
+    <contour>
+      <point x="306" y="61" type="curve" smooth="yes"/>
+      <point x="198" y="61"/>
+      <point x="135" y="130"/>
+      <point x="135" y="236" type="curve" smooth="yes"/>
+      <point x="135" y="256"/>
+      <point x="137" y="280"/>
+      <point x="142" y="305" type="curve" smooth="yes"/>
+      <point x="162" y="405" type="line" smooth="yes"/>
+      <point x="191" y="550"/>
+      <point x="278" y="637"/>
+      <point x="401" y="637" type="curve" smooth="yes"/>
+      <point x="509" y="637"/>
+      <point x="572" y="568"/>
+      <point x="572" y="462" type="curve" smooth="yes"/>
+      <point x="572" y="442"/>
+      <point x="570" y="418"/>
+      <point x="565" y="393" type="curve" smooth="yes"/>
+      <point x="545" y="293" type="line" smooth="yes"/>
+      <point x="516" y="148"/>
+      <point x="429" y="61"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(0,9)
+ResYDist(0,24)
+ResYAnchor(12,3)
+ResYDist(12,35)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

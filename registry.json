@@ -7,20 +7,20 @@
       "title": "@cyclone-ui/accordion",
       "description": "A package containing the Accordion component used by Storm Software",
       "dependencies": [
-        "@stryke/type-checks@^0.6.48",
-        "@stryke/types@^0.12.43",
-        "@tamagui/accordion@^2.7.7",
-        "@tamagui/collapsible@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/group@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/vectors@0.5.4"
+        "@stryke/type-checks@^0.6.49",
+        "@stryke/types@^0.12.44",
+        "@tamagui/accordion@3.0.0-beta.1422.1",
+        "@tamagui/collapsible@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/group@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/vectors@0.5.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.4",
+        "@cyclone-ui/body-text@0.5.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -43,9 +43,9 @@
           "target": "components/accordion/dist/index.cjs"
         },
         {
-          "path": "components/accordion/node_modules/react-dom/index.js",
+          "path": "components/accordion/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/accordion/node_modules/react-dom/index.js"
+          "target": "components/accordion/node_modules/react-native/index.js"
         },
         {
           "path": "components/accordion/node_modules/react/index.js",
@@ -53,9 +53,9 @@
           "target": "components/accordion/node_modules/react/index.js"
         },
         {
-          "path": "components/accordion/node_modules/react-native/index.js",
+          "path": "components/accordion/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/accordion/node_modules/react-native/index.js"
+          "target": "components/accordion/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -65,20 +65,20 @@
       "title": "@cyclone-ui/alert",
       "description": "A package containing the Alert component used by Storm Software",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/group@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7",
-        "@cyclone-ui/helpers@0.3.4",
-        "@cyclone-ui/themeable-icon@0.6.4",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/container@0.6.4",
-        "@cyclone-ui/button@0.6.4"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/group@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/themeable-icon@0.6.5",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/container@0.6.5",
+        "@cyclone-ui/button@0.6.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -103,11 +103,6 @@
           "target": "components/alert/dist/index.cjs"
         },
         {
-          "path": "components/alert/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/alert/node_modules/react/index.js"
-        },
-        {
           "path": "components/alert/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/alert/node_modules/react-native/index.js"
@@ -116,6 +111,11 @@
           "path": "components/alert/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/alert/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/alert/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/alert/node_modules/react/index.js"
         }
       ]
     },
@@ -125,25 +125,30 @@
       "title": "@cyclone-ui/alert-dialog",
       "description": "A package containing the AlertDialog component used by Storm Software",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/group@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7",
-        "@cyclone-ui/dialog@0.3.4",
-        "@cyclone-ui/themeable-icon@0.6.4"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/group@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
+        "@cyclone-ui/dialog@0.3.5",
+        "@cyclone-ui/themeable-icon@0.6.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@0.6.4",
+        "@cyclone-ui/button@0.6.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/alert-dialog/src/index.ts",
+          "type": "registry:file",
+          "target": "components/alert-dialog/src/index.ts"
+        },
         {
           "path": "components/alert-dialog/dist/index.mjs",
           "type": "registry:file",
@@ -153,11 +158,6 @@
           "path": "components/alert-dialog/dist/index.cjs",
           "type": "registry:file",
           "target": "components/alert-dialog/dist/index.cjs"
-        },
-        {
-          "path": "components/alert-dialog/src/index.ts",
-          "type": "registry:file",
-          "target": "components/alert-dialog/src/index.ts"
         },
         {
           "path": "components/alert-dialog/node_modules/react/index.js",
@@ -182,13 +182,13 @@
       "title": "@cyclone-ui/anchor",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/heading-text@0.5.4",
+        "@cyclone-ui/heading-text@0.5.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -211,14 +211,14 @@
           "target": "components/anchor/dist/index.cjs"
         },
         {
-          "path": "components/anchor/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/anchor/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/anchor/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/anchor/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/anchor/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/anchor/node_modules/react-native/index.js"
         },
         {
           "path": "components/anchor/node_modules/react/index.js",
@@ -233,14 +233,14 @@
       "title": "@cyclone-ui/badge",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/heading-text@0.5.4",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/font-size@^2.7.7",
-        "@tamagui/get-font-sized@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7"
+        "@cyclone-ui/heading-text@0.5.5",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/font-size@3.0.0-beta.1422.1",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -265,9 +265,9 @@
           "target": "components/badge/dist/index.cjs"
         },
         {
-          "path": "components/badge/node_modules/react-dom/index.js",
+          "path": "components/badge/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/badge/node_modules/react-dom/index.js"
+          "target": "components/badge/node_modules/react-native/index.js"
         },
         {
           "path": "components/badge/node_modules/react/index.js",
@@ -275,9 +275,9 @@
           "target": "components/badge/node_modules/react/index.js"
         },
         {
-          "path": "components/badge/node_modules/react-native/index.js",
+          "path": "components/badge/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/badge/node_modules/react-native/index.js"
+          "target": "components/badge/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -287,9 +287,10 @@
       "title": "@cyclone-ui/body-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@cyclone-ui/helpers@0.3.4"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@cyclone-ui/helpers@0.3.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -298,11 +299,6 @@
         "react-native@^0.87.1"
       ],
       "files": [
-        {
-          "path": "components/body-text/src/index.ts",
-          "type": "registry:file",
-          "target": "components/body-text/src/index.ts"
-        },
         {
           "path": "components/body-text/dist/index.mjs",
           "type": "registry:file",
@@ -314,6 +310,16 @@
           "target": "components/body-text/dist/index.cjs"
         },
         {
+          "path": "components/body-text/src/index.ts",
+          "type": "registry:file",
+          "target": "components/body-text/src/index.ts"
+        },
+        {
+          "path": "components/body-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/body-text/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/body-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/body-text/node_modules/react/index.js"
@@ -322,11 +328,6 @@
           "path": "components/body-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/body-text/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/body-text/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/body-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -336,16 +337,16 @@
       "title": "@cyclone-ui/breadcrumb",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/group@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@cyclone-ui/helpers@0.3.4",
-        "@cyclone-ui/label-text@0.5.4",
-        "@cyclone-ui/link@0.5.4"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/group@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/label-text@0.5.5",
+        "@cyclone-ui/link@0.5.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -370,11 +371,6 @@
           "target": "components/breadcrumb/dist/index.cjs"
         },
         {
-          "path": "components/breadcrumb/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/breadcrumb/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/breadcrumb/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/breadcrumb/node_modules/react/index.js"
@@ -383,6 +379,11 @@
           "path": "components/breadcrumb/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/breadcrumb/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/breadcrumb/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/breadcrumb/node_modules/react-native/index.js"
         }
       ]
     },
@@ -392,23 +393,23 @@
       "title": "@cyclone-ui/button",
       "description": "Button component for Cyclone UI",
       "dependencies": [
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/font-size@^2.7.7",
-        "@tamagui/get-token@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/linear-gradient@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/helpers@0.3.4",
-        "@cyclone-ui/themeable-icon@0.6.4"
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/font-size@3.0.0-beta.1422.1",
+        "@tamagui/get-token@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/linear-gradient@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/themeable-icon@0.6.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
-        "@tamagui/lucide-icons-2@^2.7.7",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
@@ -430,14 +431,14 @@
           "target": "components/button/dist/index.cjs"
         },
         {
-          "path": "components/button/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/button/node_modules/react/index.js"
-        },
-        {
           "path": "components/button/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/button/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/button/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/button/node_modules/react/index.js"
         },
         {
           "path": "components/button/node_modules/react-dom/index.js",
@@ -452,9 +453,9 @@
       "title": "@cyclone-ui/bytes-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/string-format@^0.17.57",
-        "@tamagui/core@^2.7.7",
-        "@cyclone-ui/body-text@0.5.4"
+        "@stryke/string-format@^0.17.58",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@cyclone-ui/body-text@0.5.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -479,6 +480,11 @@
           "target": "components/bytes-text/dist/index.cjs"
         },
         {
+          "path": "components/bytes-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/bytes-text/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/bytes-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/bytes-text/node_modules/react-dom/index.js"
@@ -487,11 +493,6 @@
           "path": "components/bytes-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/bytes-text/node_modules/react/index.js"
-        },
-        {
-          "path": "components/bytes-text/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/bytes-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -501,21 +502,21 @@
       "title": "@cyclone-ui/callout",
       "description": "A package containing the Alert component used by Storm Software",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/linear-gradient@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/container@0.6.4",
-        "@cyclone-ui/eyebrow-text@0.5.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/state@0.0.5",
-        "@cyclone-ui/themeable-icon@0.6.4",
-        "@cyclone-ui/vectors@0.5.4"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/linear-gradient@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/container@0.6.5",
+        "@cyclone-ui/eyebrow-text@0.5.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/state@0.0.6",
+        "@cyclone-ui/themeable-icon@0.6.5",
+        "@cyclone-ui/vectors@0.5.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -524,6 +525,11 @@
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/callout/src/index.ts",
+          "type": "registry:file",
+          "target": "components/callout/src/index.ts"
+        },
         {
           "path": "components/callout/dist/index.mjs",
           "type": "registry:file",
@@ -535,14 +541,9 @@
           "target": "components/callout/dist/index.cjs"
         },
         {
-          "path": "components/callout/src/index.ts",
+          "path": "components/callout/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/callout/src/index.ts"
-        },
-        {
-          "path": "components/callout/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/callout/node_modules/react-dom/index.js"
+          "target": "components/callout/node_modules/react-native/index.js"
         },
         {
           "path": "components/callout/node_modules/react/index.js",
@@ -550,9 +551,9 @@
           "target": "components/callout/node_modules/react/index.js"
         },
         {
-          "path": "components/callout/node_modules/react-native/index.js",
+          "path": "components/callout/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/callout/node_modules/react-native/index.js"
+          "target": "components/callout/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -562,26 +563,26 @@
       "title": "@cyclone-ui/card",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/font-size@^2.7.7",
-        "@tamagui/get-font-sized@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/linear-gradient@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/container@0.6.4",
-        "@cyclone-ui/eyebrow-text@0.5.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/helpers@0.3.4",
-        "@cyclone-ui/link@0.5.4",
-        "@cyclone-ui/themeable-icon@0.6.4"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/font-size@3.0.0-beta.1422.1",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/linear-gradient@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/container@0.6.5",
+        "@cyclone-ui/eyebrow-text@0.5.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/link@0.5.5",
+        "@cyclone-ui/themeable-icon@0.6.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
-        "@tamagui/lucide-icons-2@^2.7.7",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1",
@@ -604,11 +605,6 @@
           "target": "components/card/dist/index.cjs"
         },
         {
-          "path": "components/card/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/card/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/card/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/card/node_modules/react/index.js"
@@ -617,6 +613,11 @@
           "path": "components/card/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/card/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/card/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/card/node_modules/react-native/index.js"
         }
       ]
     },
@@ -626,22 +627,22 @@
       "title": "@cyclone-ui/checkbox",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/checkbox@^2.7.7",
-        "@tamagui/checkbox-headless@^2.7.7",
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/get-token@^2.7.7",
-        "@tamagui/group@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
+        "@tamagui/checkbox@3.0.0-beta.1422.1",
+        "@tamagui/checkbox-headless@3.0.0-beta.1422.1",
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/get-token@3.0.0-beta.1422.1",
+        "@tamagui/group@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/helpers@0.3.4",
-        "@cyclone-ui/vectors@0.5.4"
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/vectors@0.5.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -664,11 +665,6 @@
           "target": "components/checkbox/dist/index.cjs"
         },
         {
-          "path": "components/checkbox/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/checkbox/node_modules/react/index.js"
-        },
-        {
           "path": "components/checkbox/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/checkbox/node_modules/react-dom/index.js"
@@ -677,6 +673,11 @@
           "path": "components/checkbox/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/checkbox/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/checkbox/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/checkbox/node_modules/react/index.js"
         }
       ]
     },
@@ -686,16 +687,16 @@
       "title": "@cyclone-ui/checkbox-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/types@^0.12.43",
-        "@tamagui/checkbox-headless@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@cyclone-ui/checkbox@0.5.4",
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/state@0.0.5"
+        "@stryke/types@^0.12.44",
+        "@tamagui/checkbox-headless@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@cyclone-ui/checkbox@0.5.5",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/state@0.0.6"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -718,9 +719,9 @@
           "target": "components/checkbox-field/dist/index.cjs"
         },
         {
-          "path": "components/checkbox-field/node_modules/react/index.js",
+          "path": "components/checkbox-field/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/checkbox-field/node_modules/react/index.js"
+          "target": "components/checkbox-field/node_modules/react-native/index.js"
         },
         {
           "path": "components/checkbox-field/node_modules/react-dom/index.js",
@@ -728,9 +729,9 @@
           "target": "components/checkbox-field/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/checkbox-field/node_modules/react-native/index.js",
+          "path": "components/checkbox-field/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/checkbox-field/node_modules/react-native/index.js"
+          "target": "components/checkbox-field/node_modules/react/index.js"
         }
       ]
     },
@@ -740,9 +741,9 @@
       "title": "@cyclone-ui/circular-progress",
       "description": "A circular progress component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/progress@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/progress@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
@@ -768,6 +769,11 @@
           "target": "components/circular-progress/dist/index.cjs"
         },
         {
+          "path": "components/circular-progress/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/circular-progress/node_modules/react-dom/index.js"
+        },
+        {
           "path": "components/circular-progress/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/circular-progress/node_modules/react/index.js"
@@ -776,11 +782,6 @@
           "path": "components/circular-progress/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/circular-progress/node_modules/react-native/index.js"
-        },
-        {
-          "path": "components/circular-progress/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/circular-progress/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -790,23 +791,25 @@
       "title": "@cyclone-ui/code-block",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/scroll-view@0.5.4",
-        "@cyclone-ui/themeable-icon@0.6.4",
-        "@cyclone-ui/vectors@0.5.4",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/font-size@^2.7.7",
-        "@tamagui/get-font-sized@^2.7.7",
-        "@tamagui/group@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/tabs@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7"
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/scroll-view@0.5.5",
+        "@cyclone-ui/themeable-icon@0.6.5",
+        "@cyclone-ui/vectors@0.5.5",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/font-size@3.0.0-beta.1422.1",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1",
+        "@tamagui/group@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/react-native-types@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/tabs@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -832,6 +835,11 @@
           "target": "components/code-block/dist/index.cjs"
         },
         {
+          "path": "components/code-block/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/code-block/node_modules/react/index.js"
+        },
+        {
           "path": "components/code-block/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/code-block/node_modules/react-dom/index.js"
@@ -840,11 +848,6 @@
           "path": "components/code-block/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/code-block/node_modules/react-native/index.js"
-        },
-        {
-          "path": "components/code-block/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/code-block/node_modules/react/index.js"
         }
       ]
     },
@@ -854,13 +857,13 @@
       "title": "@cyclone-ui/collapsible",
       "description": "A package containing the Collapsible component used by Storm Software",
       "dependencies": [
-        "@cyclone-ui/accordion@0.3.4",
-        "@tamagui/accordion@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/helpers@^2.7.7"
+        "@cyclone-ui/accordion@0.3.5",
+        "@tamagui/accordion@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.4",
+        "@cyclone-ui/body-text@0.5.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -883,11 +886,6 @@
           "target": "components/collapsible/dist/index.cjs"
         },
         {
-          "path": "components/collapsible/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/collapsible/node_modules/react/index.js"
-        },
-        {
           "path": "components/collapsible/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/collapsible/node_modules/react-native/index.js"
@@ -896,6 +894,11 @@
           "path": "components/collapsible/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/collapsible/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/collapsible/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/collapsible/node_modules/react/index.js"
         }
       ]
     },
@@ -905,10 +908,10 @@
       "title": "@cyclone-ui/container",
       "description": "Button component for Cyclone UI",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/linear-gradient@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@cyclone-ui/helpers@0.3.4"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/linear-gradient@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@cyclone-ui/helpers@0.3.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -955,36 +958,36 @@
       "title": "@cyclone-ui/data-table",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/checkbox@0.5.4",
-        "@cyclone-ui/checkbox-field@0.1.4",
-        "@cyclone-ui/form@0.9.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/label-text@0.5.4",
-        "@cyclone-ui/pagination@0.8.4",
-        "@cyclone-ui/popover@0.5.4",
-        "@cyclone-ui/search-input-field@0.1.4",
-        "@cyclone-ui/select-field@0.1.4",
-        "@cyclone-ui/state@0.0.5",
-        "@cyclone-ui/table@0.4.4",
-        "@stryke/helpers@^0.10.55",
-        "@stryke/string-format@^0.17.57",
-        "@stryke/type-checks@^0.6.48",
-        "@stryke/types@^0.12.43",
-        "@tamagui/adapt@^2.7.7",
-        "@tamagui/animate-presence@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/checkbox@0.5.5",
+        "@cyclone-ui/checkbox-field@0.1.5",
+        "@cyclone-ui/form@0.9.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/label-text@0.5.5",
+        "@cyclone-ui/pagination@0.8.5",
+        "@cyclone-ui/popover@0.5.5",
+        "@cyclone-ui/search-input-field@0.1.5",
+        "@cyclone-ui/select-field@0.1.5",
+        "@cyclone-ui/state@0.0.6",
+        "@cyclone-ui/table@0.4.5",
+        "@stryke/helpers@^0.10.56",
+        "@stryke/string-format@^0.17.58",
+        "@stryke/type-checks@^0.6.49",
+        "@stryke/types@^0.12.44",
+        "@tamagui/adapt@3.0.0-beta.1422.1",
+        "@tamagui/animate-presence@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
         "@tanstack/react-table@^8.21.3",
         "@tanstack/table-core@^8.21.3"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
-        "@tamagui/avatar@^2.7.7",
+        "@tamagui/avatar@3.0.0-beta.1422.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
@@ -1006,9 +1009,9 @@
           "target": "components/data-table/dist/index.cjs"
         },
         {
-          "path": "components/data-table/node_modules/react/index.js",
+          "path": "components/data-table/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/data-table/node_modules/react/index.js"
+          "target": "components/data-table/node_modules/react-native/index.js"
         },
         {
           "path": "components/data-table/node_modules/react-dom/index.js",
@@ -1016,9 +1019,9 @@
           "target": "components/data-table/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/data-table/node_modules/react-native/index.js",
+          "path": "components/data-table/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/data-table/node_modules/react-native/index.js"
+          "target": "components/data-table/node_modules/react/index.js"
         }
       ]
     },
@@ -1029,39 +1032,39 @@
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
         "@rehookify/datepicker@^6.6.8",
-        "@stryke/date@^0.0.27",
-        "@stryke/hooks@^0.4.132",
-        "@tamagui/adapt@^2.7.7",
-        "@tamagui/animate-presence@^2.7.7",
-        "@tamagui/compose-refs@^2.7.7",
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/focusable@^2.7.7",
-        "@tamagui/font-size@^2.7.7",
-        "@tamagui/get-token@^2.7.7",
-        "@tamagui/group@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/label@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/popover@^2.7.7",
-        "@tamagui/separator@^2.7.7",
-        "@tamagui/sheet@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/input@0.6.4",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/popover@0.5.4",
-        "@cyclone-ui/helpers@0.3.4"
+        "@stryke/date@^0.0.28",
+        "@stryke/hooks@^0.4.133",
+        "@tamagui/adapt@3.0.0-beta.1422.1",
+        "@tamagui/animate-presence@3.0.0-beta.1422.1",
+        "@tamagui/compose-refs@3.0.0-beta.1422.1",
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/focusable@3.0.0-beta.1422.1",
+        "@tamagui/font-size@3.0.0-beta.1422.1",
+        "@tamagui/get-token@3.0.0-beta.1422.1",
+        "@tamagui/group@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/label@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/popover@3.0.0-beta.1422.1",
+        "@tamagui/separator@3.0.0-beta.1422.1",
+        "@tamagui/sheet@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/input@0.6.5",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/popover@0.5.5",
+        "@cyclone-ui/helpers@0.3.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -1089,14 +1092,14 @@
           "target": "components/date-picker/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/date-picker/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/date-picker/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/date-picker/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/date-picker/node_modules/react/index.js"
+        },
+        {
+          "path": "components/date-picker/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/date-picker/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1108,17 +1111,17 @@
       "dependencies": [
         "@maskito/core@^3.11.1",
         "@maskito/kit@^3.11.1",
-        "@stryke/date@^0.0.27",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
+        "@stryke/date@^0.0.28",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/date-picker@0.5.4",
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/helpers@0.3.4",
-        "@cyclone-ui/state@0.0.5"
+        "@cyclone-ui/date-picker@0.5.5",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/state@0.0.6"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -1146,14 +1149,14 @@
           "target": "components/date-picker-field/node_modules/react/index.js"
         },
         {
-          "path": "components/date-picker-field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/date-picker-field/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/date-picker-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/date-picker-field/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/date-picker-field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/date-picker-field/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1163,27 +1166,27 @@
       "title": "@cyclone-ui/dialog",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/container@0.6.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@tamagui/alert-dialog@^2.7.7",
-        "@tamagui/compose-refs@^2.7.7",
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/dialog@^2.7.7",
-        "@tamagui/dismissable@^2.7.7",
-        "@tamagui/font-size@^2.7.7",
-        "@tamagui/get-font-sized@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/linear-gradient@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/use-controllable-state@^2.7.7",
-        "@tamagui/web@^2.7.7",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/container@0.6.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@tamagui/alert-dialog@3.0.0-beta.1422.1",
+        "@tamagui/compose-refs@3.0.0-beta.1422.1",
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/dialog@3.0.0-beta.1422.1",
+        "@tamagui/dismissable@3.0.0-beta.1422.1",
+        "@tamagui/font-size@3.0.0-beta.1422.1",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/linear-gradient@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/use-controllable-state@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
@@ -1209,11 +1212,6 @@
           "target": "components/dialog/dist/index.cjs"
         },
         {
-          "path": "components/dialog/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/dialog/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/dialog/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/dialog/node_modules/react/index.js"
@@ -1222,6 +1220,11 @@
           "path": "components/dialog/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/dialog/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/dialog/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/dialog/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1231,8 +1234,9 @@
       "title": "@cyclone-ui/divider",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/text@^2.7.7"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/react-native-types@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -1247,19 +1251,29 @@
           "target": "components/divider/src/index.ts"
         },
         {
+          "path": "components/divider/dist/index.mjs",
+          "type": "registry:file",
+          "target": "components/divider/dist/index.mjs"
+        },
+        {
+          "path": "components/divider/dist/index.cjs",
+          "type": "registry:file",
+          "target": "components/divider/dist/index.cjs"
+        },
+        {
           "path": "components/divider/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/divider/node_modules/react/index.js"
         },
         {
-          "path": "components/divider/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/divider/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/divider/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/divider/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/divider/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/divider/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1269,18 +1283,18 @@
       "title": "@cyclone-ui/drawer",
       "description": "A Sheet-based drawer component for Cyclone UI",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/scroll-view@0.5.4",
-        "@cyclone-ui/sheet@0.0.3",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/dialog@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/sheet@^2.7.7",
-        "@tamagui/stacks@^2.7.7"
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/scroll-view@0.5.5",
+        "@cyclone-ui/sheet@0.0.4",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/dialog@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/sheet@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@0.6.4",
+        "@cyclone-ui/button@0.6.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -1303,11 +1317,6 @@
           "target": "components/drawer/dist/index.cjs"
         },
         {
-          "path": "components/drawer/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/drawer/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/drawer/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/drawer/node_modules/react/index.js"
@@ -1316,6 +1325,11 @@
           "path": "components/drawer/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/drawer/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/drawer/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/drawer/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1325,8 +1339,9 @@
       "title": "@cyclone-ui/eyebrow-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/text@^2.7.7"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -1373,23 +1388,25 @@
       "title": "@cyclone-ui/field",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@cyclone-ui/label-text@0.5.4",
-        "@cyclone-ui/link@0.5.4",
-        "@stryke/types@^0.12.43",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/get-token@^2.7.7",
-        "@tamagui/label@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/state@0.0.5",
-        "@cyclone-ui/themeable-icon@0.6.4",
-        "@cyclone-ui/tooltip@0.5.4",
-        "@cyclone-ui/validation-text@0.5.4"
+        "@cyclone-ui/label-text@0.5.5",
+        "@cyclone-ui/link@0.5.5",
+        "@stryke/types@^0.12.44",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/get-token@3.0.0-beta.1422.1",
+        "@tamagui/label@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/spinner@0.5.5",
+        "@cyclone-ui/state@0.0.6",
+        "@cyclone-ui/themeable-icon@0.6.5",
+        "@cyclone-ui/tooltip@0.5.5",
+        "@cyclone-ui/validation-text@0.5.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -1412,11 +1429,6 @@
           "target": "components/field/dist/index.cjs"
         },
         {
-          "path": "components/field/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/field/node_modules/react/index.js"
-        },
-        {
           "path": "components/field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/field/node_modules/react-dom/index.js"
@@ -1425,6 +1437,11 @@
           "path": "components/field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/field/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/field/node_modules/react/index.js"
         }
       ]
     },
@@ -1434,38 +1451,38 @@
       "title": "@cyclone-ui/file-picker",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/date@^0.0.27",
-        "@stryke/hooks@^0.4.132",
-        "@stryke/types@^0.12.43",
-        "@tamagui/animate-presence@^2.7.7",
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/group@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/image@^2.7.7",
-        "@tamagui/linear-gradient@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/separator@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7",
+        "@stryke/date@^0.0.28",
+        "@stryke/hooks@^0.4.133",
+        "@stryke/types@^0.12.44",
+        "@tamagui/animate-presence@3.0.0-beta.1422.1",
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/group@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/image@3.0.0-beta.1422.1",
+        "@tamagui/linear-gradient@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/separator@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
         "expo-document-picker@^11.10.1",
         "expo-image-picker@^15.1.0",
         "react-dropzone@^14.4.1",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/bytes-text@0.5.4",
-        "@cyclone-ui/label-text@0.5.4",
-        "@cyclone-ui/link@0.5.4",
-        "@cyclone-ui/state@0.0.5",
-        "@cyclone-ui/helpers@0.3.4"
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/bytes-text@0.5.5",
+        "@cyclone-ui/label-text@0.5.5",
+        "@cyclone-ui/link@0.5.5",
+        "@cyclone-ui/state@0.0.6",
+        "@cyclone-ui/helpers@0.3.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -1488,9 +1505,9 @@
           "target": "components/file-picker/dist/index.cjs"
         },
         {
-          "path": "components/file-picker/node_modules/react-native/index.js",
+          "path": "components/file-picker/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/file-picker/node_modules/react-native/index.js"
+          "target": "components/file-picker/node_modules/react-dom/index.js"
         },
         {
           "path": "components/file-picker/node_modules/react/index.js",
@@ -1498,9 +1515,9 @@
           "target": "components/file-picker/node_modules/react/index.js"
         },
         {
-          "path": "components/file-picker/node_modules/react-dom/index.js",
+          "path": "components/file-picker/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/file-picker/node_modules/react-dom/index.js"
+          "target": "components/file-picker/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1510,16 +1527,16 @@
       "title": "@cyclone-ui/file-picker-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/types@^0.12.43",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
+        "@stryke/types@^0.12.44",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/file-picker@0.5.4",
-        "@cyclone-ui/state@0.0.5"
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/file-picker@0.5.5",
+        "@cyclone-ui/state@0.0.6"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -1542,9 +1559,9 @@
           "target": "components/file-picker-field/dist/index.cjs"
         },
         {
-          "path": "components/file-picker-field/node_modules/react/index.js",
+          "path": "components/file-picker-field/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/file-picker-field/node_modules/react/index.js"
+          "target": "components/file-picker-field/node_modules/react-native/index.js"
         },
         {
           "path": "components/file-picker-field/node_modules/react-dom/index.js",
@@ -1552,9 +1569,9 @@
           "target": "components/file-picker-field/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/file-picker-field/node_modules/react-native/index.js",
+          "path": "components/file-picker-field/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/file-picker-field/node_modules/react-native/index.js"
+          "target": "components/file-picker-field/node_modules/react/index.js"
         }
       ]
     },
@@ -1564,11 +1581,11 @@
       "title": "@cyclone-ui/file-tree",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/animate-presence@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7"
+        "@tamagui/animate-presence@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -1598,14 +1615,14 @@
           "target": "components/file-tree/node_modules/react/index.js"
         },
         {
-          "path": "components/file-tree/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/file-tree/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/file-tree/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/file-tree/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/file-tree/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/file-tree/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1615,21 +1632,26 @@
       "title": "@cyclone-ui/footer",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/link@0.5.4",
-        "@cyclone-ui/vectors@0.5.4",
-        "@tamagui/core@^2.7.7",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/link@0.5.5",
+        "@cyclone-ui/vectors@0.5.5",
+        "@tamagui/core@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
-        "@tamagui/lucide-icons-2@^2.7.7",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/footer/src/index.ts",
+          "type": "registry:file",
+          "target": "components/footer/src/index.ts"
+        },
         {
           "path": "components/footer/dist/index.mjs",
           "type": "registry:file",
@@ -1639,11 +1661,6 @@
           "path": "components/footer/dist/index.cjs",
           "type": "registry:file",
           "target": "components/footer/dist/index.cjs"
-        },
-        {
-          "path": "components/footer/src/index.ts",
-          "type": "registry:file",
-          "target": "components/footer/src/index.ts"
         },
         {
           "path": "components/footer/node_modules/react-native/index.js",
@@ -1668,9 +1685,9 @@
       "title": "@cyclone-ui/form",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@cyclone-ui/state@0.0.5"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@cyclone-ui/state@0.0.6"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -1695,6 +1712,11 @@
           "target": "components/form/dist/index.cjs"
         },
         {
+          "path": "components/form/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/form/node_modules/react/index.js"
+        },
+        {
           "path": "components/form/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/form/node_modules/react-native/index.js"
@@ -1703,11 +1725,6 @@
           "path": "components/form/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/form/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/form/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/form/node_modules/react/index.js"
         }
       ]
     },
@@ -1717,7 +1734,7 @@
       "title": "@cyclone-ui/glitch-separator",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
+        "@tamagui/core@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
@@ -1743,14 +1760,14 @@
           "target": "components/glitch-separator/dist/index.cjs"
         },
         {
-          "path": "components/glitch-separator/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/glitch-separator/node_modules/react/index.js"
-        },
-        {
           "path": "components/glitch-separator/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/glitch-separator/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/glitch-separator/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/glitch-separator/node_modules/react/index.js"
         },
         {
           "path": "components/glitch-separator/node_modules/react-dom/index.js",
@@ -1765,8 +1782,9 @@
       "title": "@cyclone-ui/heading-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/text@^2.7.7"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -1796,14 +1814,14 @@
           "target": "components/heading-text/node_modules/react/index.js"
         },
         {
-          "path": "components/heading-text/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/heading-text/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/heading-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/heading-text/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/heading-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/heading-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1813,10 +1831,12 @@
       "title": "@cyclone-ui/inline-code-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/text@^2.7.7"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
+        "@cyclone-ui/body-text@0.5.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -1839,14 +1859,14 @@
           "target": "components/inline-code-text/dist/index.cjs"
         },
         {
-          "path": "components/inline-code-text/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/inline-code-text/node_modules/react/index.js"
-        },
-        {
           "path": "components/inline-code-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/inline-code-text/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/inline-code-text/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/inline-code-text/node_modules/react/index.js"
         },
         {
           "path": "components/inline-code-text/node_modules/react-dom/index.js",
@@ -1861,23 +1881,24 @@
       "title": "@cyclone-ui/input",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/helpers@0.3.4",
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/focusable@^2.7.7",
-        "@tamagui/group@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/separator@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/web@^2.7.7"
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/helpers@0.3.5",
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/focusable@3.0.0-beta.1422.1",
+        "@tamagui/group@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/react-native-types@3.0.0-beta.1422.1",
+        "@tamagui/separator@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
-        "@stryke/types@^0.12.43",
+        "@stryke/types@^0.12.44",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
@@ -1899,6 +1920,11 @@
           "target": "components/input/dist/index.cjs"
         },
         {
+          "path": "components/input/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/input/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/input/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/input/node_modules/react/index.js"
@@ -1907,11 +1933,6 @@
           "path": "components/input/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/input/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/input/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/input/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1921,21 +1942,27 @@
       "title": "@cyclone-ui/input-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/input@0.6.4",
-        "@cyclone-ui/state@0.0.5"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/input@0.6.5",
+        "@cyclone-ui/state@0.0.6"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/input-field/src/index.ts",
+          "type": "registry:file",
+          "target": "components/input-field/src/index.ts"
+        },
         {
           "path": "components/input-field/dist/index.mjs",
           "type": "registry:file",
@@ -1947,16 +1974,6 @@
           "target": "components/input-field/dist/index.cjs"
         },
         {
-          "path": "components/input-field/src/index.ts",
-          "type": "registry:file",
-          "target": "components/input-field/src/index.ts"
-        },
-        {
-          "path": "components/input-field/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/input-field/node_modules/react/index.js"
-        },
-        {
           "path": "components/input-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/input-field/node_modules/react-dom/index.js"
@@ -1965,6 +1982,11 @@
           "path": "components/input-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/input-field/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/input-field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/input-field/node_modules/react/index.js"
         }
       ]
     },
@@ -1974,9 +1996,9 @@
       "title": "@cyclone-ui/label-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/helpers@0.3.4"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/helpers@0.3.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -2006,14 +2028,14 @@
           "target": "components/label-text/node_modules/react/index.js"
         },
         {
-          "path": "components/label-text/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/label-text/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/label-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/label-text/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/label-text/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/label-text/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2023,18 +2045,18 @@
       "title": "@cyclone-ui/link",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/shapes@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7",
-        "@cyclone-ui/link-text@0.5.4",
-        "@cyclone-ui/themeable-icon@0.6.4"
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/shapes@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
+        "@cyclone-ui/link-text@0.5.5",
+        "@cyclone-ui/themeable-icon@0.6.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.4",
+        "@cyclone-ui/body-text@0.5.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -2057,6 +2079,11 @@
           "target": "components/link/dist/index.cjs"
         },
         {
+          "path": "components/link/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/link/node_modules/react/index.js"
+        },
+        {
           "path": "components/link/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/link/node_modules/react-dom/index.js"
@@ -2065,11 +2092,6 @@
           "path": "components/link/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/link/node_modules/react-native/index.js"
-        },
-        {
-          "path": "components/link/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/link/node_modules/react/index.js"
         }
       ]
     },
@@ -2079,18 +2101,24 @@
       "title": "@cyclone-ui/link-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@cyclone-ui/state@0.0.5"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@cyclone-ui/state@0.0.6",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.4",
+        "@cyclone-ui/body-text@0.5.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/link-text/src/index.ts",
+          "type": "registry:file",
+          "target": "components/link-text/src/index.ts"
+        },
         {
           "path": "components/link-text/dist/index.mjs",
           "type": "registry:file",
@@ -2102,24 +2130,19 @@
           "target": "components/link-text/dist/index.cjs"
         },
         {
-          "path": "components/link-text/src/index.ts",
-          "type": "registry:file",
-          "target": "components/link-text/src/index.ts"
-        },
-        {
           "path": "components/link-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/link-text/node_modules/react/index.js"
         },
         {
-          "path": "components/link-text/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/link-text/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/link-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/link-text/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/link-text/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/link-text/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2129,15 +2152,15 @@
       "title": "@cyclone-ui/message",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/toast@^2.7.7",
-        "@tamagui/web@^2.7.7",
-        "@cyclone-ui/alert@0.4.4",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/state@0.0.5"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/toast@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
+        "@cyclone-ui/alert@0.4.5",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/state@0.0.6"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -2146,6 +2169,11 @@
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/message/src/index.ts",
+          "type": "registry:file",
+          "target": "components/message/src/index.ts"
+        },
         {
           "path": "components/message/dist/index.mjs",
           "type": "registry:file",
@@ -2157,19 +2185,14 @@
           "target": "components/message/dist/index.cjs"
         },
         {
-          "path": "components/message/src/index.ts",
+          "path": "components/message/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/message/src/index.ts"
+          "target": "components/message/node_modules/react-native/index.js"
         },
         {
           "path": "components/message/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/message/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/message/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/message/node_modules/react-native/index.js"
         },
         {
           "path": "components/message/node_modules/react/index.js",
@@ -2184,16 +2207,16 @@
       "title": "@cyclone-ui/navigation-header",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/link@0.5.4",
-        "@cyclone-ui/eyebrow-text@0.5.4",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7"
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/link@0.5.5",
+        "@cyclone-ui/eyebrow-text@0.5.5",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@0.6.4",
+        "@cyclone-ui/button@0.6.5",
         "@storybook/react-vite@^10.6.0",
-        "@tamagui/text@^2.7.7",
+        "@tamagui/text@3.0.0-beta.1422.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
@@ -2215,6 +2238,11 @@
           "target": "components/navigation-header/dist/index.cjs"
         },
         {
+          "path": "components/navigation-header/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/navigation-header/node_modules/react/index.js"
+        },
+        {
           "path": "components/navigation-header/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/navigation-header/node_modules/react-dom/index.js"
@@ -2223,11 +2251,6 @@
           "path": "components/navigation-header/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/navigation-header/node_modules/react-native/index.js"
-        },
-        {
-          "path": "components/navigation-header/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/navigation-header/node_modules/react/index.js"
         }
       ]
     },
@@ -2237,11 +2260,11 @@
       "title": "@cyclone-ui/next-button",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@stryke/hooks@^0.4.132",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/vectors@0.5.4"
+        "@stryke/hooks@^0.4.133",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/vectors@0.5.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -2266,6 +2289,11 @@
           "target": "components/next-button/dist/index.cjs"
         },
         {
+          "path": "components/next-button/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/next-button/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/next-button/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/next-button/node_modules/react/index.js"
@@ -2274,11 +2302,6 @@
           "path": "components/next-button/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/next-button/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/next-button/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/next-button/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2288,13 +2311,13 @@
       "title": "@cyclone-ui/number-input-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@cyclone-ui/input-field@0.1.4",
-        "@cyclone-ui/state@0.0.5"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@cyclone-ui/input-field@0.1.5",
+        "@cyclone-ui/state@0.0.6"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -2317,11 +2340,6 @@
           "target": "components/number-input-field/dist/index.cjs"
         },
         {
-          "path": "components/number-input-field/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/number-input-field/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/number-input-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/number-input-field/node_modules/react/index.js"
@@ -2330,6 +2348,11 @@
           "path": "components/number-input-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/number-input-field/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/number-input-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/number-input-field/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2340,8 +2363,8 @@
       "description": "A visually hidden component meant to be shared in many other components",
       "dependencies": [
         "@number-flow/react@^0.4.4",
-        "@tamagui/core@^2.7.7",
-        "@cyclone-ui/label-text@0.5.4"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@cyclone-ui/label-text@0.5.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -2366,11 +2389,6 @@
           "target": "components/number-text/dist/index.cjs"
         },
         {
-          "path": "components/number-text/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/number-text/node_modules/react/index.js"
-        },
-        {
           "path": "components/number-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/number-text/node_modules/react-native/index.js"
@@ -2379,6 +2397,11 @@
           "path": "components/number-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/number-text/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/number-text/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/number-text/node_modules/react/index.js"
         }
       ]
     },
@@ -2388,14 +2411,15 @@
       "title": "@cyclone-ui/otp-input-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@cyclone-ui/helpers@0.3.4",
-        "@cyclone-ui/input@0.6.4",
-        "@cyclone-ui/input-field@0.1.4",
-        "@cyclone-ui/state@0.0.5"
+        "@cyclone-ui/field@0.5.5",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/input@0.6.5",
+        "@cyclone-ui/input-field@0.1.5",
+        "@cyclone-ui/state@0.0.6"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -2418,14 +2442,14 @@
           "target": "components/otp-input-field/dist/index.cjs"
         },
         {
-          "path": "components/otp-input-field/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/otp-input-field/node_modules/react/index.js"
-        },
-        {
           "path": "components/otp-input-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/otp-input-field/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/otp-input-field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/otp-input-field/node_modules/react/index.js"
         },
         {
           "path": "components/otp-input-field/node_modules/react-dom/index.js",
@@ -2440,7 +2464,7 @@
       "title": "@cyclone-ui/package-command-code-block",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/code-block@0.6.4"
+        "@cyclone-ui/code-block@0.6.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -2466,14 +2490,14 @@
           "target": "components/package-command-code-block/dist/index.cjs"
         },
         {
-          "path": "components/package-command-code-block/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/package-command-code-block/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/package-command-code-block/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/package-command-code-block/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/package-command-code-block/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/package-command-code-block/node_modules/react-native/index.js"
         },
         {
           "path": "components/package-command-code-block/node_modules/react/index.js",
@@ -2488,15 +2512,15 @@
       "title": "@cyclone-ui/pagination",
       "description": "A component to support page navigation, next and previous links",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/next-button@0.5.4",
-        "@cyclone-ui/previous-button@0.5.4"
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/next-button@0.5.5",
+        "@cyclone-ui/previous-button@0.5.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -2521,9 +2545,9 @@
           "target": "components/pagination/dist/index.cjs"
         },
         {
-          "path": "components/pagination/node_modules/react-dom/index.js",
+          "path": "components/pagination/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/pagination/node_modules/react-dom/index.js"
+          "target": "components/pagination/node_modules/react-native/index.js"
         },
         {
           "path": "components/pagination/node_modules/react/index.js",
@@ -2531,9 +2555,9 @@
           "target": "components/pagination/node_modules/react/index.js"
         },
         {
-          "path": "components/pagination/node_modules/react-native/index.js",
+          "path": "components/pagination/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/pagination/node_modules/react-native/index.js"
+          "target": "components/pagination/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2543,24 +2567,29 @@
       "title": "@cyclone-ui/password-input-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/visually-hidden@0.5.4",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@cyclone-ui/input-field@0.1.4",
-        "@cyclone-ui/state@0.0.5",
-        "@cyclone-ui/validation-text@0.5.4"
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/visually-hidden@0.5.5",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@cyclone-ui/input-field@0.1.5",
+        "@cyclone-ui/state@0.0.6",
+        "@cyclone-ui/validation-text@0.5.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/password-input-field/src/index.ts",
+          "type": "registry:file",
+          "target": "components/password-input-field/src/index.ts"
+        },
         {
           "path": "components/password-input-field/dist/index.mjs",
           "type": "registry:file",
@@ -2572,24 +2601,19 @@
           "target": "components/password-input-field/dist/index.cjs"
         },
         {
-          "path": "components/password-input-field/src/index.ts",
-          "type": "registry:file",
-          "target": "components/password-input-field/src/index.ts"
-        },
-        {
           "path": "components/password-input-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/password-input-field/node_modules/react/index.js"
         },
         {
-          "path": "components/password-input-field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/password-input-field/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/password-input-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/password-input-field/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/password-input-field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/password-input-field/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2599,14 +2623,14 @@
       "title": "@cyclone-ui/pdf-document-display",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@stryke/type-checks@^0.6.48",
-        "@stryke/types@^0.12.43",
-        "@tamagui/core@^2.7.7",
+        "@stryke/type-checks@^0.6.49",
+        "@stryke/types@^0.12.44",
+        "@tamagui/core@3.0.0-beta.1422.1",
         "pdfjs-dist@^4.10.38",
         "react-pdf@^9.2.1",
-        "@cyclone-ui/spinner@0.5.4",
-        "@cyclone-ui/vectors@0.5.4",
-        "@cyclone-ui/visually-hidden@0.5.4"
+        "@cyclone-ui/spinner@0.5.5",
+        "@cyclone-ui/vectors@0.5.5",
+        "@cyclone-ui/visually-hidden@0.5.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -2631,6 +2655,11 @@
           "target": "components/pdf-document-display/dist/index.cjs"
         },
         {
+          "path": "components/pdf-document-display/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/pdf-document-display/node_modules/react-dom/index.js"
+        },
+        {
           "path": "components/pdf-document-display/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/pdf-document-display/node_modules/react-native/index.js"
@@ -2639,11 +2668,6 @@
           "path": "components/pdf-document-display/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/pdf-document-display/node_modules/react/index.js"
-        },
-        {
-          "path": "components/pdf-document-display/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/pdf-document-display/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2653,22 +2677,23 @@
       "title": "@cyclone-ui/phone-number-input-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/input@0.6.4",
-        "@cyclone-ui/input-field@0.1.4",
-        "@cyclone-ui/popover@0.5.4",
-        "@cyclone-ui/search-input-field@0.1.4",
-        "@cyclone-ui/state@0.0.5",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/input@0.6.5",
+        "@cyclone-ui/input-field@0.1.5",
+        "@cyclone-ui/popover@0.5.5",
+        "@cyclone-ui/search-input-field@0.1.5",
+        "@cyclone-ui/state@0.0.6",
         "@maskito/core@^3.11.1",
         "@maskito/phone@3.11.1",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/text@^2.7.7",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
         "libphonenumber-js@1.12.31"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -2696,14 +2721,14 @@
           "target": "components/phone-number-input-field/node_modules/react-native/index.js"
         },
         {
-          "path": "components/phone-number-input-field/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/phone-number-input-field/node_modules/react/index.js"
-        },
-        {
           "path": "components/phone-number-input-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/phone-number-input-field/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/phone-number-input-field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/phone-number-input-field/node_modules/react/index.js"
         },
         {
           "path": "components/phone-number-input-field/node_modules/libphonenumber-js/index.js",
@@ -2724,22 +2749,22 @@
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
         "@floating-ui/react@0.26.28",
-        "@tamagui/adapt@^2.7.7",
-        "@tamagui/animate-presence@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/popover@^2.7.7",
-        "@tamagui/popper@^2.7.7",
-        "@tamagui/sheet@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/floating@^2.7.7",
-        "@cyclone-ui/scroll-view@0.5.4"
+        "@tamagui/adapt@3.0.0-beta.1422.1",
+        "@tamagui/animate-presence@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/popover@3.0.0-beta.1422.1",
+        "@tamagui/popper@3.0.0-beta.1422.1",
+        "@tamagui/sheet@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/floating@3.0.0-beta.1422.1",
+        "@cyclone-ui/scroll-view@0.5.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/heading-text@0.5.4",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/heading-text@0.5.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -2762,9 +2787,9 @@
           "target": "components/popover/dist/index.cjs"
         },
         {
-          "path": "components/popover/node_modules/react/index.js",
+          "path": "components/popover/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/popover/node_modules/react/index.js"
+          "target": "components/popover/node_modules/react-native/index.js"
         },
         {
           "path": "components/popover/node_modules/react-dom/index.js",
@@ -2772,9 +2797,9 @@
           "target": "components/popover/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/popover/node_modules/react-native/index.js",
+          "path": "components/popover/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/popover/node_modules/react-native/index.js"
+          "target": "components/popover/node_modules/react/index.js"
         }
       ]
     },
@@ -2784,11 +2809,11 @@
       "title": "@cyclone-ui/previous-button",
       "description": "A Previous Button component meant to be shared in many other components",
       "dependencies": [
-        "@stryke/hooks@^0.4.132",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/vectors@0.5.4"
+        "@stryke/hooks@^0.4.133",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/vectors@0.5.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -2818,14 +2843,14 @@
           "target": "components/previous-button/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/previous-button/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/previous-button/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/previous-button/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/previous-button/node_modules/react/index.js"
+        },
+        {
+          "path": "components/previous-button/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/previous-button/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2835,9 +2860,9 @@
       "title": "@cyclone-ui/progress",
       "description": "A visually hidden component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/progress@^2.7.7",
-        "@tamagui/stacks@^2.7.7"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/progress@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -2846,6 +2871,11 @@
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/progress/src/index.ts",
+          "type": "registry:file",
+          "target": "components/progress/src/index.ts"
+        },
         {
           "path": "components/progress/dist/index.mjs",
           "type": "registry:file",
@@ -2857,9 +2887,9 @@
           "target": "components/progress/dist/index.cjs"
         },
         {
-          "path": "components/progress/src/index.ts",
+          "path": "components/progress/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/progress/src/index.ts"
+          "target": "components/progress/node_modules/react-native/index.js"
         },
         {
           "path": "components/progress/node_modules/react/index.js",
@@ -2870,11 +2900,6 @@
           "path": "components/progress/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/progress/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/progress/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/progress/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2884,23 +2909,23 @@
       "title": "@cyclone-ui/radio-group",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/hooks@^0.4.132",
-        "@stryke/types@^0.12.43",
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/get-font-sized@^2.7.7",
-        "@tamagui/get-token@^2.7.7",
-        "@tamagui/label@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/radio-group@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/web@^2.7.7",
+        "@stryke/hooks@^0.4.133",
+        "@stryke/types@^0.12.44",
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1",
+        "@tamagui/get-token@3.0.0-beta.1422.1",
+        "@tamagui/label@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/radio-group@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/helpers@0.3.4"
+        "@cyclone-ui/helpers@0.3.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -2945,21 +2970,21 @@
       "title": "@cyclone-ui/radio-group-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/hooks@^0.4.132",
-        "@stryke/types@^0.12.43",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/label@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
+        "@stryke/hooks@^0.4.133",
+        "@stryke/types@^0.12.44",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/label@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/radio-group@0.5.4",
-        "@cyclone-ui/state@0.0.5",
-        "@cyclone-ui/helpers@0.3.4"
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/radio-group@0.5.5",
+        "@cyclone-ui/state@0.0.6",
+        "@cyclone-ui/helpers@0.3.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "jotai@^2.20.3",
         "react@^19.3.0",
@@ -2983,9 +3008,9 @@
           "target": "components/radio-group-field/dist/index.cjs"
         },
         {
-          "path": "components/radio-group-field/node_modules/react/index.js",
+          "path": "components/radio-group-field/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/radio-group-field/node_modules/react/index.js"
+          "target": "components/radio-group-field/node_modules/react-native/index.js"
         },
         {
           "path": "components/radio-group-field/node_modules/react-dom/index.js",
@@ -2993,9 +3018,9 @@
           "target": "components/radio-group-field/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/radio-group-field/node_modules/react-native/index.js",
+          "path": "components/radio-group-field/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/radio-group-field/node_modules/react-native/index.js"
+          "target": "components/radio-group-field/node_modules/react/index.js"
         },
         {
           "path": "components/radio-group-field/node_modules/jotai/index.js",
@@ -3010,9 +3035,9 @@
       "title": "@cyclone-ui/redacted-animation",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/heading-text@0.5.4",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/text@^2.7.7"
+        "@cyclone-ui/heading-text@0.5.5",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -3042,14 +3067,14 @@
           "target": "components/redacted-animation/node_modules/react/index.js"
         },
         {
-          "path": "components/redacted-animation/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/redacted-animation/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/redacted-animation/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/redacted-animation/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/redacted-animation/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/redacted-animation/node_modules/react-native/index.js"
         }
       ]
     },
@@ -3059,12 +3084,12 @@
       "title": "@cyclone-ui/scroll-view",
       "description": "A visually hidden component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/stacks@^2.7.7"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/vectors@0.5.4",
+        "@cyclone-ui/vectors@0.5.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3087,11 +3112,6 @@
           "target": "components/scroll-view/dist/index.cjs"
         },
         {
-          "path": "components/scroll-view/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/scroll-view/node_modules/react/index.js"
-        },
-        {
           "path": "components/scroll-view/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/scroll-view/node_modules/react-native/index.js"
@@ -3100,6 +3120,11 @@
           "path": "components/scroll-view/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/scroll-view/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/scroll-view/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/scroll-view/node_modules/react/index.js"
         }
       ]
     },
@@ -3109,28 +3134,23 @@
       "title": "@cyclone-ui/search-input-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@cyclone-ui/helpers@0.3.4",
-        "@cyclone-ui/input@0.6.4",
-        "@cyclone-ui/input-field@0.1.4",
-        "@cyclone-ui/popover@0.5.4",
-        "@cyclone-ui/state@0.0.5"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/input@0.6.5",
+        "@cyclone-ui/input-field@0.1.5",
+        "@cyclone-ui/popover@0.5.5",
+        "@cyclone-ui/state@0.0.6"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
-        {
-          "path": "components/search-input-field/src/index.ts",
-          "type": "registry:file",
-          "target": "components/search-input-field/src/index.ts"
-        },
         {
           "path": "components/search-input-field/dist/index.mjs",
           "type": "registry:file",
@@ -3142,9 +3162,9 @@
           "target": "components/search-input-field/dist/index.cjs"
         },
         {
-          "path": "components/search-input-field/node_modules/react/index.js",
+          "path": "components/search-input-field/src/index.ts",
           "type": "registry:file",
-          "target": "components/search-input-field/node_modules/react/index.js"
+          "target": "components/search-input-field/src/index.ts"
         },
         {
           "path": "components/search-input-field/node_modules/react-dom/index.js",
@@ -3155,6 +3175,11 @@
           "path": "components/search-input-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/search-input-field/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/search-input-field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/search-input-field/node_modules/react/index.js"
         }
       ]
     },
@@ -3164,32 +3189,32 @@
       "title": "@cyclone-ui/select",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/types@^0.12.43",
-        "@tamagui/adapt@^2.7.7",
-        "@tamagui/compose-refs@^2.7.7",
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/focusable@^2.7.7",
-        "@tamagui/group@^2.7.7",
-        "@tamagui/helpers-icon@^2.7.7",
-        "@tamagui/linear-gradient@^2.7.7",
-        "@tamagui/list-item@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/select@^2.7.7",
-        "@tamagui/separator@^2.7.7",
-        "@tamagui/sheet@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/web@^2.7.7",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/button@0.6.4",
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/helpers@0.3.4",
-        "@cyclone-ui/input@0.6.4"
+        "@stryke/types@^0.12.44",
+        "@tamagui/adapt@3.0.0-beta.1422.1",
+        "@tamagui/compose-refs@3.0.0-beta.1422.1",
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/focusable@3.0.0-beta.1422.1",
+        "@tamagui/group@3.0.0-beta.1422.1",
+        "@tamagui/helpers-icon@3.0.0-beta.1422.1",
+        "@tamagui/linear-gradient@3.0.0-beta.1422.1",
+        "@tamagui/list-item@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/select@3.0.0-beta.1422.1",
+        "@tamagui/separator@3.0.0-beta.1422.1",
+        "@tamagui/sheet@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/button@0.6.5",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/input@0.6.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3212,6 +3237,11 @@
           "target": "components/select/dist/index.cjs"
         },
         {
+          "path": "components/select/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/select/node_modules/react/index.js"
+        },
+        {
           "path": "components/select/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/select/node_modules/react-dom/index.js"
@@ -3220,11 +3250,6 @@
           "path": "components/select/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/select/node_modules/react-native/index.js"
-        },
-        {
-          "path": "components/select/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/select/node_modules/react/index.js"
         }
       ]
     },
@@ -3234,17 +3259,17 @@
       "title": "@cyclone-ui/select-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/types@^0.12.43",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/web@^2.7.7",
+        "@stryke/types@^0.12.44",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/select@0.6.4",
-        "@cyclone-ui/state@0.0.5"
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/select@0.6.5",
+        "@cyclone-ui/state@0.0.6"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "jotai@^2.20.3",
         "react@^19.3.0",
@@ -3295,18 +3320,18 @@
       "title": "@cyclone-ui/sheet",
       "description": "A Sheet component for Cyclone UI",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/scroll-view@0.5.4",
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/dialog@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/sheet@^2.7.7",
-        "@tamagui/stacks@^2.7.7"
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/scroll-view@0.5.5",
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/dialog@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/sheet@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@0.6.4",
+        "@cyclone-ui/button@0.6.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3329,6 +3354,11 @@
           "target": "components/sheet/dist/index.cjs"
         },
         {
+          "path": "components/sheet/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/sheet/node_modules/react/index.js"
+        },
+        {
           "path": "components/sheet/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/sheet/node_modules/react-native/index.js"
@@ -3337,11 +3367,6 @@
           "path": "components/sheet/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/sheet/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/sheet/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/sheet/node_modules/react/index.js"
         }
       ]
     },
@@ -3351,8 +3376,8 @@
       "title": "@cyclone-ui/spinner",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/stacks@^2.7.7"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -3399,24 +3424,25 @@
       "title": "@cyclone-ui/stepper",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/next-button@0.5.4",
-        "@cyclone-ui/previous-button@0.5.4",
-        "@tamagui/animate-presence@^2.7.7",
-        "@tamagui/button@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/font-size@^2.7.7",
-        "@tamagui/get-font-sized@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/linear-gradient@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/shapes@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/tabs@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/use-controllable-state@^2.7.7",
-        "@tamagui/web@^2.7.7",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/next-button@0.5.5",
+        "@cyclone-ui/previous-button@0.5.5",
+        "@tamagui/animate-presence@3.0.0-beta.1422.1",
+        "@tamagui/button@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/font-size@3.0.0-beta.1422.1",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/linear-gradient@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/react-native-types@3.0.0-beta.1422.1",
+        "@tamagui/shapes@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/tabs@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/use-controllable-state@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
@@ -3442,6 +3468,11 @@
           "target": "components/stepper/dist/index.cjs"
         },
         {
+          "path": "components/stepper/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/stepper/node_modules/react/index.js"
+        },
+        {
           "path": "components/stepper/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/stepper/node_modules/react-native/index.js"
@@ -3450,11 +3481,6 @@
           "path": "components/stepper/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/stepper/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/stepper/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/stepper/node_modules/react/index.js"
         }
       ]
     },
@@ -3464,32 +3490,28 @@
       "title": "@cyclone-ui/switch",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/constants@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/get-token@^2.7.7",
-        "@tamagui/group@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/switch@^2.7.7",
-        "@tamagui/switch-headless@^2.7.7",
-        "@cyclone-ui/helpers@0.3.4",
-        "@cyclone-ui/themeable-icon@0.6.4"
+        "@tamagui/constants@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/get-token@3.0.0-beta.1422.1",
+        "@tamagui/group@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/switch@3.0.0-beta.1422.1",
+        "@tamagui/switch-headless@3.0.0-beta.1422.1",
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/themeable-icon@0.6.5",
+        "@tamagui/react-native-types@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
-        {
-          "path": "components/switch/src/index.ts",
-          "type": "registry:file",
-          "target": "components/switch/src/index.ts"
-        },
         {
           "path": "components/switch/dist/index.mjs",
           "type": "registry:file",
@@ -3501,9 +3523,14 @@
           "target": "components/switch/dist/index.cjs"
         },
         {
-          "path": "components/switch/node_modules/react/index.js",
+          "path": "components/switch/src/index.ts",
           "type": "registry:file",
-          "target": "components/switch/node_modules/react/index.js"
+          "target": "components/switch/src/index.ts"
+        },
+        {
+          "path": "components/switch/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/switch/node_modules/react-dom/index.js"
         },
         {
           "path": "components/switch/node_modules/react-native/index.js",
@@ -3511,9 +3538,9 @@
           "target": "components/switch/node_modules/react-native/index.js"
         },
         {
-          "path": "components/switch/node_modules/react-dom/index.js",
+          "path": "components/switch/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/switch/node_modules/react-dom/index.js"
+          "target": "components/switch/node_modules/react/index.js"
         }
       ]
     },
@@ -3523,16 +3550,16 @@
       "title": "@cyclone-ui/switch-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/types@^0.12.43",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/switch-headless@^2.7.7",
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/state@0.0.5",
-        "@cyclone-ui/switch@0.5.4"
+        "@stryke/types@^0.12.44",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/switch-headless@3.0.0-beta.1422.1",
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/state@0.0.6",
+        "@cyclone-ui/switch@0.5.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3577,21 +3604,21 @@
       "title": "@cyclone-ui/table",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/heading-text@0.5.4",
-        "@tamagui/animate-presence@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/linear-gradient@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/use-controllable-state@^2.7.7",
-        "@tamagui/web@^2.7.7",
+        "@cyclone-ui/heading-text@0.5.5",
+        "@tamagui/animate-presence@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/linear-gradient@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/use-controllable-state@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
-        "@tamagui/avatar@^2.7.7",
+        "@tamagui/avatar@3.0.0-beta.1422.1",
         "@tanstack/react-table@^8.21.3",
         "@tanstack/table-core@^8.21.3",
         "react@^19.3.0",
@@ -3637,11 +3664,11 @@
       "title": "@cyclone-ui/table-of-contents",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.4",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/text@^2.7.7"
+        "@cyclone-ui/body-text@0.5.5",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -3666,6 +3693,11 @@
           "target": "components/table-of-contents/dist/index.cjs"
         },
         {
+          "path": "components/table-of-contents/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/table-of-contents/node_modules/react-dom/index.js"
+        },
+        {
           "path": "components/table-of-contents/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/table-of-contents/node_modules/react-native/index.js"
@@ -3674,11 +3706,6 @@
           "path": "components/table-of-contents/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/table-of-contents/node_modules/react/index.js"
-        },
-        {
-          "path": "components/table-of-contents/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/table-of-contents/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -3688,26 +3715,27 @@
       "title": "@cyclone-ui/tabs",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/animate-presence@^2.7.7",
-        "@tamagui/button@^2.7.7",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/font-size@^2.7.7",
-        "@tamagui/get-font-sized@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/linear-gradient@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@tamagui/tabs@^2.7.7",
-        "@tamagui/text@^2.7.7",
-        "@tamagui/use-controllable-state@^2.7.7",
-        "@tamagui/web@^2.7.7",
+        "@tamagui/animate-presence@3.0.0-beta.1422.1",
+        "@tamagui/button@3.0.0-beta.1422.1",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/font-size@3.0.0-beta.1422.1",
+        "@tamagui/get-font-sized@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/linear-gradient@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@tamagui/tabs@3.0.0-beta.1422.1",
+        "@tamagui/text@3.0.0-beta.1422.1",
+        "@tamagui/use-controllable-state@3.0.0-beta.1422.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/heading-text@0.5.4",
-        "@cyclone-ui/helpers@0.3.4"
+        "@cyclone-ui/heading-text@0.5.5",
+        "@cyclone-ui/helpers@0.3.5",
+        "@tamagui/react-native-types@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.4",
+        "@cyclone-ui/body-text@0.5.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3730,11 +3758,6 @@
           "target": "components/tabs/dist/index.cjs"
         },
         {
-          "path": "components/tabs/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/tabs/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/tabs/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/tabs/node_modules/react/index.js"
@@ -3743,6 +3766,11 @@
           "path": "components/tabs/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/tabs/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/tabs/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/tabs/node_modules/react-native/index.js"
         }
       ]
     },
@@ -3752,10 +3780,10 @@
       "title": "@cyclone-ui/text-area",
       "description": "A multiline text input component for Cyclone UI",
       "dependencies": [
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/input@0.6.4",
-        "@tamagui/core@^2.7.7",
-        "@cyclone-ui/helpers@0.3.4"
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/input@0.6.5",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@cyclone-ui/helpers@0.3.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -3785,14 +3813,14 @@
           "target": "components/text-area/node_modules/react/index.js"
         },
         {
-          "path": "components/text-area/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/text-area/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/text-area/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/text-area/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/text-area/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/text-area/node_modules/react-native/index.js"
         }
       ]
     },
@@ -3802,13 +3830,13 @@
       "title": "@cyclone-ui/text-area-field",
       "description": "A textarea form field component for Cyclone UI",
       "dependencies": [
-        "@cyclone-ui/field@0.5.4",
-        "@cyclone-ui/state@0.0.5",
-        "@cyclone-ui/text-area@0.1.4",
-        "@tamagui/core@^2.7.7"
+        "@cyclone-ui/field@0.5.5",
+        "@cyclone-ui/state@0.0.6",
+        "@cyclone-ui/text-area@0.1.5",
+        "@tamagui/core@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.4",
+        "@cyclone-ui/form@0.9.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3853,10 +3881,10 @@
       "title": "@cyclone-ui/themeable-gradient",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/linear-gradient@^2.7.7",
-        "@cyclone-ui/helpers@0.3.4"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/linear-gradient@3.0.0-beta.1422.1",
+        "@cyclone-ui/helpers@0.3.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -3903,17 +3931,17 @@
       "title": "@cyclone-ui/themeable-icon",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^2.7.7",
-        "@tamagui/font-size@^2.7.7",
-        "@tamagui/get-token@^2.7.7",
-        "@tamagui/helpers@^2.7.7",
-        "@tamagui/helpers-icon@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/web@^2.7.7",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/font-size@3.0.0-beta.1422.1",
+        "@tamagui/get-token@3.0.0-beta.1422.1",
+        "@tamagui/helpers@3.0.0-beta.1422.1",
+        "@tamagui/helpers-icon@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/web@3.0.0-beta.1422.1",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/helpers@0.3.4",
-        "@cyclone-ui/vectors@0.5.4"
+        "@cyclone-ui/helpers@0.3.5",
+        "@cyclone-ui/vectors@0.5.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -3922,6 +3950,11 @@
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/themeable-icon/src/index.ts",
+          "type": "registry:file",
+          "target": "components/themeable-icon/src/index.ts"
+        },
         {
           "path": "components/themeable-icon/dist/index.mjs",
           "type": "registry:file",
@@ -3933,14 +3966,9 @@
           "target": "components/themeable-icon/dist/index.cjs"
         },
         {
-          "path": "components/themeable-icon/src/index.ts",
+          "path": "components/themeable-icon/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/themeable-icon/src/index.ts"
-        },
-        {
-          "path": "components/themeable-icon/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/themeable-icon/node_modules/react-dom/index.js"
+          "target": "components/themeable-icon/node_modules/react/index.js"
         },
         {
           "path": "components/themeable-icon/node_modules/react-native/index.js",
@@ -3948,9 +3976,9 @@
           "target": "components/themeable-icon/node_modules/react-native/index.js"
         },
         {
-          "path": "components/themeable-icon/node_modules/react/index.js",
+          "path": "components/themeable-icon/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/themeable-icon/node_modules/react/index.js"
+          "target": "components/themeable-icon/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -3961,15 +3989,15 @@
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
         "@floating-ui/react@0.26.28",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/create-context@^2.7.7",
-        "@tamagui/popover@^2.7.7",
-        "@tamagui/popper@^2.7.7",
-        "@tamagui/tooltip@^2.7.7"
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/create-context@3.0.0-beta.1422.1",
+        "@tamagui/popover@3.0.0-beta.1422.1",
+        "@tamagui/popper@3.0.0-beta.1422.1",
+        "@tamagui/tooltip@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/button@0.6.4",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/button@0.6.5",
         "@storybook/react-vite@^10.6.0",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3992,14 +4020,14 @@
           "target": "components/tooltip/dist/index.cjs"
         },
         {
-          "path": "components/tooltip/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/tooltip/node_modules/react/index.js"
-        },
-        {
           "path": "components/tooltip/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/tooltip/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/tooltip/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/tooltip/node_modules/react/index.js"
         },
         {
           "path": "components/tooltip/node_modules/react-dom/index.js",
@@ -4014,13 +4042,13 @@
       "title": "@cyclone-ui/type-table",
       "description": "A package containing the TypeTable component used by Storm Software",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/collapsible@0.0.1",
-        "@cyclone-ui/container@0.6.4",
-        "@cyclone-ui/heading-text@0.5.4",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/collapsible@0.3.1",
+        "@cyclone-ui/container@0.6.5",
+        "@cyclone-ui/heading-text@0.5.5",
         "@cyclone-ui/inline-code-text@0.5.4",
-        "@cyclone-ui/link@0.5.4",
-        "@tamagui/core@^2.7.7"
+        "@cyclone-ui/link@0.5.5",
+        "@tamagui/core@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -4051,14 +4079,14 @@
           "target": "components/type-table/node_modules/react/index.js"
         },
         {
-          "path": "components/type-table/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/type-table/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/type-table/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/type-table/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/type-table/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/type-table/node_modules/react-dom/index.js"
         },
         {
           "path": "components/type-table/node_modules/@vitejs/plugin-react-swc/index.js",
@@ -4078,12 +4106,12 @@
       "title": "@cyclone-ui/validation-text",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@stryke/types@^0.12.43",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
-        "@tamagui/stacks@^2.7.7",
-        "@cyclone-ui/body-text@0.5.4",
-        "@cyclone-ui/themeable-icon@0.6.4"
+        "@stryke/types@^0.12.44",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
+        "@tamagui/stacks@3.0.0-beta.1422.1",
+        "@cyclone-ui/body-text@0.5.5",
+        "@cyclone-ui/themeable-icon@0.6.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -4108,14 +4136,14 @@
           "target": "components/validation-text/dist/index.cjs"
         },
         {
-          "path": "components/validation-text/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/validation-text/node_modules/react/index.js"
-        },
-        {
           "path": "components/validation-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/validation-text/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/validation-text/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/validation-text/node_modules/react/index.js"
         },
         {
           "path": "components/validation-text/node_modules/react-dom/index.js",
@@ -4130,11 +4158,11 @@
       "title": "@cyclone-ui/vectors",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@cyclone-ui/helpers@0.3.4",
-        "@tamagui/core@^2.7.7",
-        "@tamagui/helpers-icon@^2.7.7",
-        "@tamagui/helpers-tamagui@^2.7.7",
-        "@tamagui/lucide-icons-2@^2.7.7",
+        "@cyclone-ui/helpers@0.3.5",
+        "@tamagui/core@3.0.0-beta.1422.1",
+        "@tamagui/helpers-icon@3.0.0-beta.1422.1",
+        "@tamagui/helpers-tamagui@3.0.0-beta.1422.1",
+        "@tamagui/lucide-icons-2@3.0.0-beta.1398.1",
         "motion@^11.18.2"
       ],
       "devDependencies": [
@@ -4151,14 +4179,14 @@
           "target": "components/vectors/src/index.ts"
         },
         {
-          "path": "components/vectors/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/vectors/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/vectors/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/vectors/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/vectors/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/vectors/node_modules/react-dom/index.js"
         },
         {
           "path": "components/vectors/node_modules/react/index.js",
@@ -4183,7 +4211,7 @@
       "title": "@cyclone-ui/visually-hidden",
       "description": "A visually hidden component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/core@^2.7.7"
+        "@tamagui/core@3.0.0-beta.1422.1"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.0",
@@ -4213,14 +4241,14 @@
           "target": "components/visually-hidden/node_modules/react/index.js"
         },
         {
-          "path": "components/visually-hidden/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/visually-hidden/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/visually-hidden/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/visually-hidden/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/visually-hidden/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/visually-hidden/node_modules/react-dom/index.js"
         }
       ]
     }

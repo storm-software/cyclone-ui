@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Acaron" format="2">
+  <advance width="641"/>
+  <unicode hex="01CD"/>
+  <anchor x="322.0" y="0.0" name="bottom"/>
+  <anchor x="618.0" y="0.0" name="bottomright"/>
+  <outline>
+    <component base="A"/>
+    <component base="caron.case" xOffset="22"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

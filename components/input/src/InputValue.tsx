@@ -16,8 +16,22 @@
 
  ------------------------------------------------------------------- */
 
+import type { FormControlSize } from "@cyclone-ui/helpers";
+import type {
+  GetProps,
+  TamaDefer,
+  TamaguiComponent,
+  TextNonStyleProps,
+  TextStylePropsBase
+} from "@tamagui/core";
 import { getFormSizeScale } from "@cyclone-ui/helpers";
-import { styled, useComposedRefs, useEvent, useTheme } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  useComposedRefs,
+  useEvent,
+  useTheme
+} from "@tamagui/core";
 import { registerFocusable } from "@tamagui/focusable";
 import type { TamaguiWebElement } from "@tamagui/web";
 import type { FormEvent } from "react";
@@ -29,15 +43,35 @@ import { InputContext, baseInputStyle } from "./utilities";
  * Native-only props are destructured so they are not forwarded to the web input.
  */
 
+// Tamagui v3 cannot infer props from a bare host tag, so describe the styled
+// `<input>` explicitly: text styles plus the variants from `baseInputStyle`.
+// The ref stays `any`, as v2 inferred from the `"input" as any` host, since
+// it may hold an `<input>` or a `<textarea>`.
+type BaseInputValueComponent = TamaguiComponent<
+  TamaDefer,
+  any,
+  // `onChange`/`onInput` carry `InputChangeEventHandler` (see `types.ts`).
+  Omit<TextNonStyleProps, "onChange" | "onInput">,
+  TextStylePropsBase,
+  { size?: FormControlSize; disabled?: boolean }
+>;
+
 const BaseInputValue = styled(
   "input" as any,
   baseInputStyle[0],
   baseInputStyle[1]
-);
+) as unknown as BaseInputValueComponent;
 const BaseInputValueImpl = BaseInputValue as any;
 
-export const InputValue = BaseInputValue.styleable<InputComponentProps>(
-  ({ autoComplete = "off", ...inProps }, forwardedRef) => {
+export const InputValue = createStyledHOC(BaseInputValue, 
+  (
+    {
+      autoComplete = "off",
+      ...inProps
+    }: Omit<GetProps<typeof BaseInputValue>, "onChange" | "onInput"> &
+      InputComponentProps,
+    forwardedRef
+  ) => {
     const {
       disabled: contextDisabled,
       name: contextName,
@@ -180,7 +214,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
         ...(selectionColor && {
           "--selectionColor": theme[selectionColor]?.variable || selectionColor
         }),
-        "--autofillBackgroundColor": theme.surfaceElevated.variable
+        "--autofillBackgroundColor": theme.surfaceElevated?.variable
       }
     };
 
@@ -248,6 +282,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
           {render === "textarea" ? (
             <textarea
               ref={composedRefs as any}
+              name={name}
               style={{
                 color: "var(--color)",
                 flex: 1,
@@ -265,6 +300,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
             <input
               className="cyclone-input-value"
               ref={composedRefs as any}
+              name={name}
               style={{
                 height: "100%",
                 flex: 1,
@@ -288,5 +324,5 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
       </>
     );
   },
-  { staticConfig: { componentName: "InputValue" } }
+  { displayName: "InputValue" }
 );

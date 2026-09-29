@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="fraction.rvrn" format="2">
+  <advance width="148"/>
+  <outline>
+    <contour>
+      <point x="134.0" y="434.0" type="line"/>
+      <point x="207.0" y="434.0" type="line"/>
+      <point x="437.0" y="698.0" type="line"/>
+      <point x="364.0" y="698.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="-245.0" y="0.0" type="line"/>
+      <point x="-172.0" y="0.0" type="line"/>
+      <point x="50.0" y="254.0" type="line"/>
+      <point x="-23.0" y="254.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.talk</key>
+      <string>
+
+/* Y direction */
+ResYAnchor(1,16)
+ResYAnchor(3)
+ResYAnchor(4,18)
+ResYAnchor(6)
+/* X direction */
+Smooth()
+</string>
+    </dict>
+  </lib>
+</glyph>

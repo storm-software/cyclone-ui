@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="arrowrightarrowleft" format="2">
+  <advance width="820"/>
+  <unicode hex="21C4"/>
+  <outline>
+    <component base="arrowright" yOffset="154"/>
+    <component base="arrowleft" yOffset="-154"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.type-invaders.vtt.assembly</key>
+      <string>
+
+USEMYMETRICS[]
+OFFSET[R], $arrowright$, 0, 154
+OFFSET[R], $arrowleft$, 0, -154
+CALL[], 27, 28, 88
+</string>
+      <key>com.type-invaders.vtt.talk</key>
+      <string></string>
+      <key>public.markColor</key>
+      <string>0.6,0.986,1,1</string>
+    </dict>
+  </lib>
+</glyph>

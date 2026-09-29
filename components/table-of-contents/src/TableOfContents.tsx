@@ -18,7 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import type { GetProps } from "@tamagui/core";
-import { styled, View } from "@tamagui/core";
+import { createStyledHOC, styled, View } from "@tamagui/core";
 import { List } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { ReactNode } from "react";
@@ -100,26 +100,24 @@ export interface TableOfContentsExtraProps {
 }
 
 const TableOfContentsFrame = styled(YStack, {
-  name: "TableOfContents",
+  displayName: "TableOfContents",
   render: "nav",
-
   width: "100%",
   minWidth: 240,
   maxWidth: 360,
-  gap: "$3xl"
+  gap: "3xl"
 });
 
 const TableOfContentsHeading = styled(XStack, {
   alignItems: "center",
-  gap: "$3xl",
-  minHeight: "$7xl"
+  gap: "3xl",
+  minHeight: "7xl"
 });
 
 const TableOfContentsHeadingText = styled(BodyText, {
   render: "span",
-  color: "$inkSubtle",
-  fontSize: "$lg",
-  fontWeight: "$md"
+  color: "inkSubtle",
+  fontWeight: "md"
 });
 
 const TableOfContentsItems = styled(View, {
@@ -144,26 +142,22 @@ const TableOfContentsListItem = styled(View, {
 });
 
 const TableOfContentsLinkFrame = styled(View, {
-  name: "TableOfContentsLink",
+  displayName: "TableOfContentsLink",
   render: "a",
-
   alignItems: "center",
   display: "flex",
   flexDirection: "row",
   height: "100%",
-  paddingRight: "$2xl",
-  borderRadius: "$xs",
+  paddingRight: "2xl",
+  borderRadius: "xs",
   cursor: "pointer",
-
-  focusStyle: {
-    outlineWidth: 0,
-    boxShadow: "$ringSubtle"
-  }
+  outlineWidth: "focus:0px",
+  boxShadow: "focus:ringSubtle"
 });
 
-const TableOfContentsLink = TableOfContentsLinkFrame.styleable<{
+const TableOfContentsLink = createStyledHOC(TableOfContentsLinkFrame, ({ href, style, ...props }: GetProps<typeof TableOfContentsLinkFrame> & {
   href: string;
-}>(({ href, style, ...props }, forwardedRef) => (
+}, forwardedRef) => (
   <TableOfContentsLinkFrame
     ref={forwardedRef}
     {...props}
@@ -175,18 +169,12 @@ const TableOfContentsLink = TableOfContentsLinkFrame.styleable<{
 const TableOfContentsLinkText = styled(BodyText, {
   render: "span",
   transition: "color 160ms ease-out",
-  color: "$accentInactive",
-  fontSize: "$lg",
-  fontWeight: "$normal",
-
-  "$group-tableOfContentsItem-hover": {
-    color: "$accentHover"
-  },
-
+  color: "accentInactive group-hover/tableOfContentsItem:accentHover",
+  fontWeight: "normal",
   variants: {
     active: {
       true: {
-        color: "$accent"
+        color: "accent"
       }
     },
     reducedMotion: {
@@ -391,7 +379,7 @@ function TableOfContentsRail({
         left={RAIL_LEFT}
         width={2}
         height={height}
-        backgroundColor="$hairline"
+        backgroundColor="hairline"
       />
     );
   }
@@ -463,8 +451,8 @@ function TableOfContentsRail({
 }
 
 export const TableOfContents =
-  TableOfContentsFrame.styleable<TableOfContentsExtraProps>(
-    ({ items, children = "On this page", ...props }, forwardedRef) => {
+  createStyledHOC(TableOfContentsFrame, 
+    ({ items, children = "On this page", ...props }: GetProps<typeof TableOfContentsFrame> & TableOfContentsExtraProps, forwardedRef) => {
       const [activeUrl, setActiveUrl] = useState(items[0]?.url ?? "");
       const prefersReducedMotion = usePrefersReducedMotion();
       const activeIndex = Math.max(
@@ -564,8 +552,8 @@ export const TableOfContents =
           <TableOfContentsHeading>
             <List
               aria-hidden={true}
-              color="$inkSubtle"
-              size="$5xl"
+              color="inkSubtle"
+              size="5xl"
               strokeWidth={2.2}
             />
             <TableOfContentsHeadingText>{children}</TableOfContentsHeadingText>
@@ -607,7 +595,7 @@ export const TableOfContents =
         </TableOfContentsFrame>
       );
     },
-    { staticConfig: { componentName: "TableOfContents" } }
+    { displayName: "TableOfContents" }
   );
 
 export type TableOfContentsProps = GetProps<typeof TableOfContents>;

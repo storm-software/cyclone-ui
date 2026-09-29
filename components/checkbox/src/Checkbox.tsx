@@ -17,53 +17,42 @@
  ------------------------------------------------------------------- */
 
 import { useFieldHasValidationMessage } from "@cyclone-ui/field";
+import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
   getFormSizeToken,
   getSized,
-  getSpaced,
-  type FormControlSize
+  getSpaced
 } from "@cyclone-ui/helpers";
 import { Check } from "@cyclone-ui/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
-import type { GetProps, VariantSpreadExtras } from "@tamagui/core";
-import { styled, View } from "@tamagui/core";
+import type { GetProps } from "@tamagui/core";
+import { createStyledHOC, styled, View } from "@tamagui/core";
 import { Minus } from "@tamagui/lucide-icons-2";
 
 const CheckboxGroupFrame = styled(View, {
-  name: "Checkbox",
-
+  displayName: "Checkbox",
   transition: "200ms",
   justifyContent: "space-between",
   alignContent: "center",
-  backgroundColor: "$surfaceElevated",
-  boxShadow: "none",
+  backgroundColor: "surfaceElevated",
+  // this fixes a flex bug where it overflows container
+  boxShadow: "none focus:ringOffset focus-visible:ringOffset",
   borderWidth: 1,
-  borderColor: "$hairline",
+  borderColor:
+    "hairline hover:accentHover focus:accentActive focus-visible:accentActive",
   outlineStyle: "none",
-  tabIndex: 0,
-
   // this fixes a flex bug where it overflows container
   minWidth: 0,
-  borderRadius: "$control",
-
-  hoverStyle: {
-    borderColor: "$accentHover"
-  },
-
-  focusStyle: {
-    boxShadow: "$ringOffset",
-    borderColor: "$accentActive"
-  },
-
-  focusVisibleStyle: {
-    boxShadow: "$ringOffset",
-    borderColor: "$accentActive"
-  },
-
+  borderRadius: "control",
+  tabIndex: 0,
   variants: {
-    size: formSizeVariants(
-      (val: FormControlSize, { props }: VariantSpreadExtras<any>) => {
+    // The v2 `borderRadius: props.circular ? 100_000 : "control"` from this
+    // variant is covered by the base `borderRadius` and the `circular` variant.
+    // `styled.dynamic` re-brands the helper's carrier with this package's
+    // `@tamagui/web` symbol type (runtime no-op; helpers resolves another copy).
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
         if (!val) {
           return;
         }
@@ -73,10 +62,9 @@ const CheckboxGroupFrame = styled(View, {
         return {
           height: size,
           minHeight: size,
-          width: size,
-          borderRadius: props.circular ? 100_000 : "$control"
+          width: size
         };
-      }
+      })
     ),
 
     circular: {
@@ -87,16 +75,13 @@ const CheckboxGroupFrame = styled(View, {
 
     focused: {
       true: {
-        borderColor: "$accentActive"
+        borderColor: "accentActive"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "$accent",
-        hoverStyle: {
-          borderColor: "$accentHover"
-        }
+        borderColor: "accent hover:accentHover"
       }
     },
 
@@ -104,23 +89,11 @@ const CheckboxGroupFrame = styled(View, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$accentDisabled",
-
-        hoverStyle: {
-          borderColor: "$accentDisabled"
-        },
-
-        focusStyle: {
-          borderColor: "$accentDisabled"
-        },
-
-        pressStyle: {
-          borderColor: "$accentDisabled"
-        }
+        borderColor:
+          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled"
       }
     }
   } as const,
-
   defaultVariants: {
     size: "md",
     circular: false,
@@ -132,28 +105,30 @@ const CheckboxGroupFrame = styled(View, {
 type CheckboxGroupFrameProps = GetProps<typeof CheckboxGroupFrame>;
 
 const BaseCheckbox = styled(TamaguiCheckbox, {
-  name: "Checkbox",
+  // `name` is a form prop on the v3 checkbox, so use `displayName` here
+  displayName: "Checkbox",
 
-  unstyled: true,
   display: "flex",
   alignItems: "center",
   height: "100%",
   width: "100%",
 
   variants: {
-    size: formSizeVariants((val: FormControlSize) => {
-      if (!val) {
-        return;
-      }
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        if (!val) {
+          return;
+        }
 
-      const space = getSpaced(getFormSizeToken(val, "compact"), {
-        scale: 0.05
-      });
+        const space = getSpaced(getFormSizeToken(val, "compact"), {
+          scale: 0.05
+        });
 
-      return {
-        padding: space
-      };
-    }),
+        return {
+          padding: space
+        };
+      })
+    ),
 
     disabled: {
       true: {
@@ -169,34 +144,39 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
 });
 
 const CheckboxIcon = styled(Check, {
-  name: "CheckboxIndicator",
-
-  color: "$accent",
+  displayName: "CheckboxIndicator",
+  color: "accent",
   strokeWidth: 3
 });
 
 const MinusIcon = styled(Minus, {
-  name: "CheckboxIndicator",
-
-  color: "$accent",
-  width: "92%",
+  displayName: "CheckboxIndicator",
+  color: "accent",
+  width: "100%",
   height: "100%",
-  strokeWidth: 6
+  marginHorizontal: "sm",
+  strokeWidth: 3
 });
 
-export const Checkbox = BaseCheckbox.styleable<{
-  focused?: CheckboxGroupFrameProps["focused"];
-  size?: FormControlSize;
-}>(
+export const Checkbox = createStyledHOC(
+  BaseCheckbox,
   (
-    { focused = false, disabled, name, size = "md", checked = true, ...props },
+    {
+      focused = false,
+      disabled,
+      name,
+      size = "md",
+      checked = true,
+      ...props
+    }: GetProps<typeof BaseCheckbox> & {
+      focused?: CheckboxGroupFrameProps["focused"];
+      size?: FormControlSize;
+    },
     forwardedRef
   ) => {
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "$accent" : "$hairline";
-    const focusColor = hasValidationMessage
-      ? "$accentActive"
-      : "$hairlineActive";
+    const idleColor = hasValidationMessage ? "accent" : "hairline";
+    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
 
     return (
       <CheckboxGroupFrame
@@ -204,15 +184,10 @@ export const Checkbox = BaseCheckbox.styleable<{
         hasValidationMessage={hasValidationMessage}
         disabled={disabled}
         size={size}
-        borderColor={focused ? focusColor : idleColor}
-        focusStyle={{ boxShadow: "$ringOffset", borderColor: focusColor }}
-        focusVisibleStyle={{
-          boxShadow: "$ringOffset",
-          borderColor: focusColor
-        }}
-        $group-field-hover={{
-          borderColor: focused ? focusColor : "$accentHover"
-        }}>
+        // A call-site base replaces every lower-tier clause for the property
+        // in v3, so restate the v2 frame/variant hover and disabled press here.
+        borderColor={`${focused ? focusColor : idleColor} hover:${disabled ? "accentDisabled" : "accentHover"}${disabled ? " press:accentDisabled" : ""} group-hover/field:${focused ? focusColor : "accentHover"} focus:${focusColor} focus-visible:${focusColor}`}
+        boxShadow="focus:ringOffset focus-visible:ringOffset">
         <BaseCheckbox
           ref={forwardedRef}
           {...props}
@@ -231,23 +206,16 @@ export const Checkbox = BaseCheckbox.styleable<{
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
-                enterStyle={{
-                  scale: 0.8,
-                  y: 10,
-                  opacity: 0.2
-                }}
-                exitStyle={{
-                  scale: 0.8,
-                  y: -10,
-                  opacity: 0.5
-                }}>
-                <MinusIcon color={focused ? focusColor : "$accent"} />
+                scale="enter:0.8 exit:0.8"
+                y="enter:10px exit:-10px"
+                opacity="enter:0.2 exit:0.5">
+                <MinusIcon color={focused ? focusColor : "accent"} />
               </View>
             ) : (
               <CheckboxIcon
                 width={getSized(getFormSizeToken(size, "compact")) * 0.6}
                 height={getSized(getFormSizeToken(size, "compact")) * 0.6}
-                color={focused ? focusColor : "$accent"}
+                color={focused ? focusColor : "accent"}
               />
             )}
           </TamaguiCheckbox.Indicator>
@@ -256,6 +224,6 @@ export const Checkbox = BaseCheckbox.styleable<{
     );
   },
   {
-    staticConfig: { componentName: "Checkbox" }
+    displayName: "Checkbox"
   }
 );

@@ -26,11 +26,12 @@ const meta = {
   component: OtpInputField,
   tags: ["autodocs"],
   args: {
+    name: "code",
     length: 4,
     onComplete: fn()
   },
-  render: ({ defaultValue = "", ...props }: any) => (
-    <Form name="formName" initialValues={{ code: defaultValue }}>
+  render: ({ defaultValue = "", ...props }: any, { id }: { id: string }) => (
+    <Form name={`formName-${id}`} initialValues={{ code: defaultValue }}>
       <OtpInputField name="code" {...props}>
         <OtpInputField.Label>Code</OtpInputField.Label>
         <OtpInputField.Control />

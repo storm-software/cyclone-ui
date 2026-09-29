@@ -20,6 +20,7 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Field } from "@cyclone-ui/field";
 import { HeadingLargeText, HeadingMediumText } from "@cyclone-ui/heading-text";
+import type { FormControlSize, StyleEnv } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
   getFormFontScale,
@@ -41,6 +42,7 @@ import { AnimatePresence } from "@tamagui/animate-presence";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledContext,
+  createStyledHOC,
   styled,
   Theme,
   View,
@@ -48,7 +50,7 @@ import {
 } from "@tamagui/core";
 import { ChevronLeft, ChevronRight } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
-import type { ForwardedRef, PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { DimensionValue } from "react-native";
 
@@ -133,16 +135,33 @@ export type DatePickerContextProps = Omit<
   onInput?: DatePickerInputEventHandler;
 };
 
-export const DatePickerContext = createStyledContext<DatePickerContextProps>({
-  mode: "single",
-  separator: ".",
-  size: "md",
-  circular: false,
-  disabled: false,
-  focused: false,
-  variant: "default",
-  hasValidationMessage: false
-});
+export const DatePickerContext = createStyledContext<
+  DatePickerContextProps,
+  | "mode"
+  | "separator"
+  | "size"
+  | "circular"
+  | "disabled"
+  | "focused"
+  | "variant"
+  | "hasValidationMessage"
+>(
+  {
+    mode: "single",
+    separator: ".",
+    size: "md",
+    circular: false,
+    disabled: false,
+    focused: false,
+    variant: "default",
+    hasValidationMessage: false
+  } as DatePickerContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
+    // injected context key that is not a variant to the DOM element.
+    keys: []
+  }
+);
 
 export const DEFAULT_DATE_FORMAT = "MM.DD.YYYY";
 
@@ -172,17 +191,42 @@ const MONTH_NAMES = [
   "December"
 ] as const;
 
+/**
+ * The form font for a control size.
+ *
+ * @remarks
+ * Tamagui v3 reads a unitless `lineHeight` as a ratio, so the scaled pixel
+ * leading `getFormFontSize` returns for `sm`/`lg` is pinned in `px`.
+ */
+const getFormFontStyle = (size: FormControlSize, env: StyleEnv) => {
+  const style = getFormFontSize(size, env);
+
+  return {
+    fontFamily: style.fontFamily,
+    fontWeight: style.fontWeight,
+    fontStyle: style.fontStyle,
+    letterSpacing: style.letterSpacing,
+    textTransform: style.textTransform,
+    color: style.color,
+    fontSize: style.fontSize,
+    lineHeight:
+      typeof style.lineHeight === "number"
+        ? `${style.lineHeight}px`
+        : style.lineHeight
+  };
+};
+
 const CalendarBodyText = styled(BodyText, {
   context: DatePickerContext,
-  variants: { controlSize: formSizeVariants(getFormFontSize) }
+  variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
 const CalendarHeading = styled(HeadingLargeText, {
   context: DatePickerContext,
-  variants: { controlSize: formSizeVariants(getFormFontSize) }
+  variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
 const CalendarRangeHeading = styled(HeadingMediumText, {
   context: DatePickerContext,
-  variants: { controlSize: formSizeVariants(getFormFontSize) }
+  variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
 
 const EMPTY_DATES: Date[] = [];
@@ -204,6 +248,13 @@ const swapOnClick = (d: any) => {
     onPress: onClick
   };
 };
+
+// Enter and exit offsets are flat `enter:`/`exit:` clauses; `exit:` applies
+// while AnimatePresence keeps the element mounted to exit.
+const slide = (offset: number) => ({
+  opacity: "enter:0 exit:0",
+  x: `enter:${offset}px exit:${offset}px`
+});
 
 function useDateAnimation({
   listenTo
@@ -236,27 +287,19 @@ function useDateAnimation({
     previousYearRef.current = year;
   });
 
-  const prevNextAnimation = useCallback(() => {
+  const prevNextAnimation = useCallback(():
+    ReturnType<typeof slide> | { opacity?: string } => {
     if (listenTo === "years") {
       if (previousYearsSum === null) {
-        return { enterStyle: { opacity: 0 } };
+        return { opacity: "enter:0" };
       }
 
-      return {
-        enterStyle: {
-          opacity: 0,
-          x: yearsSum < previousYearsSum ? -15 : 15
-        },
-        exitStyle: {
-          opacity: 0,
-          x: yearsSum < previousYearsSum ? -15 : 15
-        }
-      };
+      return slide(yearsSum < previousYearsSum ? -15 : 15);
     }
 
     if (listenTo === "month") {
       if (previousMonth === null) {
-        return { enterStyle: { opacity: 0 } };
+        return { opacity: "enter:0" };
       }
 
       const isPreviousDate =
@@ -272,26 +315,17 @@ function useDateAnimation({
         ).getTime();
 
       if (previousMonth === "December" && calendar?.month === "January") {
-        return {
-          enterStyle: { opacity: 0, x: 15 },
-          exitStyle: { opacity: 0, x: 15 }
-        };
+        return slide(15);
       }
       if (previousMonth === "January" && calendar?.month === "December") {
-        return {
-          enterStyle: { opacity: 0, x: -15 },
-          exitStyle: { opacity: 0, x: -15 }
-        };
+        return slide(-15);
       }
-      return {
-        enterStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 },
-        exitStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 }
-      };
+      return slide(isPreviousDate ? -15 : 15);
     }
 
     if (listenTo === "year") {
       if (previousYear === null) {
-        return { enterStyle: { opacity: 0 } };
+        return { opacity: "enter:0" };
       }
 
       const isPreviousDate =
@@ -306,16 +340,10 @@ function useDateAnimation({
           1
         ).getTime();
 
-      return {
-        enterStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 },
-        exitStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 }
-      };
+      return slide(isPreviousDate ? -15 : 15);
     }
 
-    return {
-      enterStyle: {},
-      exitStyle: {}
-    };
+    return {};
   }, [
     listenTo,
     yearsSum,
@@ -368,9 +396,9 @@ const DayPicker = () => {
       <YStack
         transition="200ms"
         justifyContent="center"
-        gap="$xl"
+        gap="xl"
         {...prevNextAnimation()}>
-        <XStack width="100%" gap="$md" justifyContent="space-between">
+        <XStack width="100%" gap="md" justifyContent="space-between">
           {weekDays.map(day => (
             <View
               key={day}
@@ -379,23 +407,23 @@ const DayPicker = () => {
               justifyContent="center">
               <CalendarBodyText
                 controlSize={size}
-                variant="lg"
+                fontFamily="title-lg"
                 textAlign="center"
-                size="$sm"
-                color="$inkBody">
+                size="sm"
+                color="inkBody">
                 {day}
               </CalendarBodyText>
             </View>
           ))}
         </XStack>
-        <YStack gap="$md" flexWrap="wrap">
+        <YStack gap="md" flexWrap="wrap">
           {subDays.map((days, i) => {
             return (
               <XStack
                 key={days[0]?.$date.toString() ?? i}
                 width="100%"
-                gap="$xs"
-                rowGap="$xs"
+                columnGap="xs"
+                rowGap="xs"
                 alignItems="center"
                 justifyContent="space-between">
                 {days.map(day => (
@@ -413,13 +441,13 @@ const DayPicker = () => {
                             : "ghost"
                     }
                     ghostOpacity={0.75}
-                    borderColor={day.now ? "$hairline" : undefined}
+                    borderColor={day.now ? "hairline" : undefined}
                     size={cellSize}
                     width={cellSize}
                     flexGrow={0}
                     flexShrink={0}
                     noPadding={true}
-                    borderRadius="$button"
+                    borderRadius="button"
                     disabled={!day.inCurrentMonth}>
                     <Button.Text fontSize={16 * getFormFontScale(size)}>
                       {day.day}
@@ -447,7 +475,7 @@ function YearRangeSlider() {
   return (
     <View
       flexDirection="row"
-      gap="$3xl"
+      gap="3xl"
       width="100%"
       height={40 * scale}
       alignItems="center"
@@ -475,7 +503,7 @@ function YearRangeSlider() {
         alignItems="center">
         <CalendarRangeHeading
           controlSize={size}
-          color="$accent"
+          color="accent"
           textAlign="center"
           userSelect="auto"
           tabIndex={0}>
@@ -513,7 +541,7 @@ function YearSlider() {
   return (
     <View
       flexDirection="row"
-      gap="$3xl"
+      gap="3xl"
       width="100%"
       height={40 * scale}
       alignItems="center"
@@ -534,17 +562,14 @@ function YearSlider() {
       <View flexGrow={1} flexShrink={1} flexBasis={0} minWidth={0}>
         <CalendarBodyText
           controlSize={size}
-          variant="lg"
+          fontFamily="title-lg"
           onPress={() => setHeader("year")}
           userSelect="text"
-          tabIndex={0}
-          size="$6xl"
+          size="6xl"
           textAlign="center"
           cursor="pointer"
-          color="$accent"
-          hoverStyle={{
-            color: "$accentHover"
-          }}>
+          color="accent hover:accentHover"
+          tabIndex={0}>
           {year}
         </CalendarBodyText>
       </View>
@@ -589,7 +614,7 @@ const CalendarHeader = () => {
     <XStack
       width="100%"
       alignItems="center"
-      gap="$3xl"
+      gap="3xl"
       justifyContent="space-between">
       <Button
         variant="ghost"
@@ -612,29 +637,23 @@ const CalendarHeader = () => {
         minWidth={0}>
         <CalendarBodyText
           controlSize={size}
-          variant="lg"
+          fontFamily="title-lg"
           transition="200ms"
-          onPress={() => setHeader("year")}
           userSelect="auto"
-          tabIndex={0}
           cursor="pointer"
-          color="$accent"
-          hoverStyle={{
-            color: "$accentHover"
-          }}>
+          color="accent hover:accentHover"
+          onPress={() => setHeader("year")}
+          tabIndex={0}>
           {year}
         </CalendarBodyText>
         <CalendarHeading
           controlSize={size}
           transition="200ms"
-          onPress={() => setHeader("month")}
           userSelect="auto"
           cursor="pointer"
-          tabIndex={0}
-          color="$accent"
-          hoverStyle={{
-            color: "$accentHover"
-          }}>
+          color="accent hover:accentHover"
+          onPress={() => setHeader("month")}
+          tabIndex={0}>
           {month}
         </CalendarHeading>
       </YStack>
@@ -669,6 +688,7 @@ const ItemPicker = ({
   ...rest
 }: ItemPickerProps) => {
   const { size } = DatePickerContext.useStyledContext();
+
   return (
     <Button
       size={getFormSizeToken(size)}
@@ -705,12 +725,10 @@ const MonthPicker = ({
         display="flex"
         flexDirection="row"
         flexWrap="wrap"
-        gap="$xl"
+        gap="xl"
         transition="100ms"
-        $platform-native={{
-          justifyContent: "space-between",
-          width: "100%"
-        }}>
+        justifyContent="native:space-between"
+        width="native:100%">
         {months.map(month => (
           <ItemPicker
             active={month.active}
@@ -751,7 +769,7 @@ function YearPicker({
         transition="100ms"
         flexDirection="row"
         flexWrap="wrap"
-        gap="$xl"
+        gap="xl"
         width="100%"
         justifyContent="space-between">
         {years.map(year => (
@@ -774,7 +792,6 @@ function YearPicker({
 
 const DatePickerPopoverBody = () => {
   const { size } = DatePickerContext.useStyledContext();
-  const scale = getFormSizeScale(size);
   const [header, setHeader] = useState<"day" | "month" | "year">("day");
 
   return (
@@ -782,12 +799,10 @@ const DatePickerPopoverBody = () => {
       <HeaderTypeProvider type={header} setHeader={setHeader}>
         <XStack justifyContent="center">
           <YStack
-            width={
-              getSized(getFormSizeToken(size)) * 7 +
-              getSpaced("$md") * 6 * scale
-            }
+            // Seven day cells plus the six unscaled gaps between them.
+            width={getSized(getFormSizeToken(size)) * 7 + getSpaced("md") * 6}
             alignItems="center"
-            gap="$2xl">
+            gap="2xl">
             <CalendarHeader />
             {header === "month" && (
               <MonthPicker onChange={() => setHeader("day")} />
@@ -803,7 +818,8 @@ const DatePickerPopoverBody = () => {
   );
 };
 
-const DatePickerTextBox = Input.TextBox.styleable(
+const DatePickerTextBox = createStyledHOC(
+  Input.TextBox,
   ({ children, ...props }, forwardedRef) => {
     return (
       <Input.TextBox ref={forwardedRef} {...props}>
@@ -811,10 +827,11 @@ const DatePickerTextBox = Input.TextBox.styleable(
       </Input.TextBox>
     );
   },
-  { staticConfig: { componentName: "DatePickerValue" } }
+  { displayName: "DatePickerValue" }
 );
 
-const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
+const DatePickerTextBoxValue = createStyledHOC(
+  Input.TextBox.Value,
   ({ children, placeholder, ...props }, forwardedRef) => {
     const { mode, separator, size } = DatePickerContext.useStyledContext();
 
@@ -836,14 +853,16 @@ const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
       </Input.TextBox.Value>
     );
   },
-  { staticConfig: { componentName: "DatePickerValue" } }
+  { displayName: "DatePickerValue" }
 );
 
 type DatePickerTriggerProps = GetProps<typeof Field.Icon>;
 
-const DatePickerTrigger = Field.Icon.styleable(
-  (props: DatePickerTriggerProps, forwardedRef: ForwardedRef<unknown>) => {
+const DatePickerTrigger = createStyledHOC(
+  Field.Icon,
+  (props: DatePickerTriggerProps, forwardedRef) => {
     const { size } = DatePickerContext.useStyledContext();
+
     return (
       <Field.Icon
         ref={forwardedRef}
@@ -853,7 +872,7 @@ const DatePickerTrigger = Field.Icon.styleable(
       />
     );
   },
-  { staticConfig: { componentName: "DatePickerTrigger" } }
+  { displayName: "DatePickerTrigger" }
 );
 
 type DatePickerProviderProps = PropsWithChildren<
@@ -969,13 +988,18 @@ const DatePickerProvider = ({
 };
 
 const { Provider: HeaderTypeProvider, useStyledContext: useHeaderType } =
-  createStyledContext({
-    type: "day",
-    setHeader: (_: "day" | "month" | "year") => {}
-  });
+  createStyledContext(
+    {
+      type: "day",
+      setHeader: (_: "day" | "month" | "year") => {}
+    },
+    {
+      keys: ["type", "setHeader"]
+    }
+  );
 
 const DatePickerPopoverContent = styled(Popover.Content, {
-  name: "DatePickerPopover",
+  displayName: "DatePickerPopover",
   context: DatePickerContext,
 
   flexBasis: "auto",
@@ -983,7 +1007,8 @@ const DatePickerPopoverContent = styled(Popover.Content, {
   flexShrink: 0
 });
 
-const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
+const DatePickerControlImpl = createStyledHOC(
+  Input,
   (
     {
       children,
@@ -999,11 +1024,13 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
       selectedDate,
       selectedDates,
       ...props
-    },
+    }: Omit<GetProps<typeof Input>, keyof DatePickerExtraProps> &
+      DatePickerExtraProps,
     forwardedRef
   ) => {
     const handleOpenChanged = useCallback(
       (open: boolean, _via?: "hover" | "press") => {
+        console.log("[DP] openChange", open, _via, "focused=", focused);
         if (open) {
           onFocus?.();
         } else {
@@ -1049,7 +1076,7 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
       </DatePickerProvider>
     );
   },
-  { staticConfig: { componentName: "DatePicker" } }
+  { displayName: "DatePicker" }
 );
 
 export const DatePicker = withStaticProperties(DatePickerControlImpl, {

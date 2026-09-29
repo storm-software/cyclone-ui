@@ -3,7 +3,7 @@ import type { FormControlSize } from "@cyclone-ui/helpers";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import { Search } from "@tamagui/lucide-icons-2";
-import { useState } from "react";
+import { useId, useState } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { CheckboxField } from "../../../components/checkbox-field/src/CheckboxField";
 import { DatePickerField } from "../../../components/date-picker-field/src/DatePickerField";
@@ -22,9 +22,10 @@ const items = [
 ];
 
 function SizeComparison({ disabled = false }: { disabled?: boolean }) {
+  const id = useId();
   return (
     <View
-      backgroundColor="$background"
+      backgroundColor="background"
       minHeight="100vh"
       flexDirection="row"
       flexWrap="wrap"
@@ -42,7 +43,7 @@ function SizeComparison({ disabled = false }: { disabled?: boolean }) {
           }}>
           <h2>{size}</h2>
           <Form
-            name={`sizes-${size}`}
+            name={`sizes-${size}-${id}`}
             initialValues={{
               date: new Date(2026, 0, 28),
               check: true,
@@ -185,11 +186,12 @@ export const Disabled: Story = {
 
 function ChangingSize() {
   const [size, setSize] = useState<FormControlSize>("md");
+  const id = useId();
   return (
     <>
       <button onClick={() => setSize("lg")}>Use large</button>
       <button onClick={() => setSize("sm")}>Use small</button>
-      <Form name="changing-size">
+      <Form name={`changing-size-${id}`}>
         <InputField name="value" size={size}>
           <InputField.Control>
             <InputField.Control.TextBox>

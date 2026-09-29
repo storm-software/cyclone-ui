@@ -25,10 +25,10 @@ const meta: Meta<typeof DatePickerField> = {
   title: "Form/DatePickerField",
   component: DatePickerField,
   tags: ["autodocs"],
-  render: (props: any) => {
+  render: (props: any, { id }: { id: string }) => {
     return (
       <Form
-        name="formName"
+        name={`formName-${id}`}
         initialValues={{ datePickerFieldName: new Date(2026, 0, 28) }}>
         <DatePickerField name="datePickerFieldName" {...props}>
           <DatePickerField.Label>Label Text</DatePickerField.Label>
@@ -67,7 +67,7 @@ export const Base: Story = {
   args: {},
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
-    const input = canvas.getByRole("textbox");
+    const input = canvas.getByRole("textbox") as HTMLInputElement;
     const label = canvas.getByText("Label Text").closest("label");
 
     await expect(label).not.toBeNull();
@@ -75,7 +75,8 @@ export const Base: Story = {
       Math.abs(
         label!.getBoundingClientRect().top +
           label!.getBoundingClientRect().height / 2 -
-          input.getBoundingClientRect().top
+          (input.getBoundingClientRect().top +
+            input.getBoundingClientRect().height / 2)
       )
     ).toBeLessThan(2);
 
@@ -100,28 +101,14 @@ export const Floating: Story = {
   args: {
     variant: "floating"
   },
-  render: props => (
-    <Form name="formName" initialValues={{ datePickerFieldName: null }}>
-      <DatePickerField name="datePickerFieldName" {...props}>
+  render: (props, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ datePickerFieldName: null }}>
+      <DatePickerField {...props} name="datePickerFieldName">
         <DatePickerField.Label>Label Text</DatePickerField.Label>
         <DatePickerField.Control />
       </DatePickerField>
     </Form>
-  ),
-  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
-    const input = within(canvasElement).getByRole("textbox");
-    const trigger = input.closest<HTMLElement>("[aria-expanded]");
-
-    await expect(input).toHaveValue("01.28.2026 – 02.03.2026");
-    await expect(trigger).not.toBeNull();
-    await userEvent.click(trigger!);
-    await userEvent.click(screen.getByText("10"));
-    await expect(trigger).toHaveAttribute("aria-expanded", "true");
-    await expect(input).toHaveValue("01.10.2026");
-    await userEvent.click(screen.getByText("15"));
-    await expect(trigger).toHaveAttribute("aria-expanded", "false");
-    await expect(input).toHaveValue("01.10.2026 – 01.15.2026");
-  }
+  )
 };
 
 export const Underline: Story = {
@@ -146,18 +133,32 @@ export const Range: Story = {
   args: {
     mode: "range"
   },
-  render: props => (
+  render: (props, { id }) => (
     <Form
-      name="formName"
+      name={`formName-${id}`}
       initialValues={{
         datePickerFieldName: [new Date(2026, 0, 28), new Date(2026, 1, 3)]
       }}>
-      <DatePickerField name="datePickerFieldName" {...props}>
+      <DatePickerField {...props} name="datePickerFieldName">
         <DatePickerField.Label>Travel dates</DatePickerField.Label>
         <DatePickerField.Control />
       </DatePickerField>
     </Form>
-  )
+  ),
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const input = within(canvasElement).getByRole("textbox");
+    const trigger = input.closest<HTMLElement>("[aria-expanded]");
+
+    await expect(input).toHaveValue("01.28.2026 – 02.03.2026");
+    await expect(trigger).not.toBeNull();
+    await userEvent.click(trigger!);
+    await userEvent.click(screen.getByText("10"));
+    await expect(trigger).toHaveAttribute("aria-expanded", "true");
+    await expect(input).toHaveValue("01.10.2026");
+    await userEvent.click(screen.getByText("15"));
+    await expect(trigger).toHaveAttribute("aria-expanded", "false");
+    await expect(input).toHaveValue("01.10.2026 – 01.15.2026");
+  }
 };
 
 export const Required: Story = {

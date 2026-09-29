@@ -24,6 +24,7 @@ import { HeadingMediumText } from "@cyclone-ui/heading-text";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import {
   createStyledContext,
+  createStyledHOC,
   styled,
   Theme,
   useThemeName,
@@ -49,34 +50,42 @@ export interface AlertContextProps {
   type?: AlertType;
 }
 
-export const AlertContext = createStyledContext<AlertContextProps>({
-  type: undefined
-});
+export const AlertContext = createStyledContext<AlertContextProps, "type">(
+  {
+    type: undefined
+  } as AlertContextProps,
+  {
+    keys: ["type"]
+  }
+);
 
+// `Button` is a styled HOC; v3 `styled()` only keeps style defaults for it, so
+// the behavioural props (`variant`, `circular`, `noPadding`, …) are passed at the
+// call site below.
 const AlertClose = styled(Button, {
-  name: "AlertTrigger",
-
-  theme: "base",
-  variant: "ghost",
-  ghostOpacity: 0.8,
-  position: "relative",
-  circular: true,
-  noPadding: true
+  displayName: "AlertTrigger",
+  position: "relative"
 });
 
-const AlertCloseImpl = AlertClose.styleable(
+const AlertCloseImpl = createStyledHOC(
+  AlertClose,
   ({ children, ...props }, forwardedRef) => {
     return (
       <XStack
         minHeight="100%"
         alignItems="center"
         flexBasis={50}
-        marginRight="$md">
+        marginRight="md">
         <AlertClose
           ref={forwardedRef}
+          theme="base"
+          variant="ghost"
+          ghostOpacity={0.8}
+          circular={true}
+          noPadding={true}
           {...props}
-          padding="$md"
-          size="$10xl"
+          padding="md"
+          size="10xl"
           flexGrow={0}>
           {children || (
             <Button.Icon position="absolute" inset={0} justifyContent="center">
@@ -88,7 +97,7 @@ const AlertCloseImpl = AlertClose.styleable(
     );
   },
   {
-    staticConfig: { componentName: "Alert" }
+    displayName: "Alert"
   }
 );
 
@@ -106,13 +115,13 @@ const AlertFrameImpl = ({
       <Container
         {...props}
         variant="high"
-        backgroundColor="$surfaceOverlay"
+        backgroundColor="surfaceOverlay"
         themeShallow={true}
         bordered={false}
         noPadding={true}
         overflow="hidden">
         <Theme name={type ?? theme}>
-          <XStack gap="$3xl" paddingRight="$md">
+          <XStack gap="3xl" paddingRight="md">
             {children}
           </XStack>
         </Theme>
@@ -122,15 +131,15 @@ const AlertFrameImpl = ({
 };
 
 const AlertIconBackground = styled(View, {
-  name: "Alert",
-
+  displayName: "Alert",
   theme: "base",
-  padding: "$xl",
-  backgroundColor: "$surfaceOverlay",
+  padding: "xl",
+  backgroundColor: "surfaceOverlay",
   borderRadius: 1000_000_000
 });
 
-const AlertIcon = ThemeableIcon.styleable(
+const AlertIcon = createStyledHOC(
+  ThemeableIcon,
   ({ children, ...props }, forwardedRef) => {
     const theme = useThemeName();
     const { type } = AlertContext.useStyledContext();
@@ -141,27 +150,25 @@ const AlertIcon = ThemeableIcon.styleable(
         <View
           theme={colorTheme}
           transition="500ms"
-          enterStyle={{
-            x: -200,
-            opacity: 0.6
-          }}
+          x="enter:-200px"
+          opacity="enter:0.6"
           position="absolute"
           display="block"
           height="100%"
           width="62%"
-          backgroundColor="$accent"
-          zIndex="$10"
+          backgroundColor="accent"
+          zIndex="10"
         />
 
-        <YStack zIndex="$20" justifyContent="center" paddingLeft="$3xl">
+        <YStack zIndex="20" justifyContent="center" paddingLeft="3xl">
           <Theme name={type ?? "base"}>
-            <AlertIconBackground backgroundColor="$surfaceOverlay">
+            <AlertIconBackground backgroundColor="surfaceOverlay">
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}
                 theme={colorTheme}
-                {...(type ? { color: "$accent" } : {})}
-                size="$10xl">
+                {...(type ? { color: "accent" } : {})}
+                size="10xl">
                 {children || getIconByTheme({ theme: colorTheme }) || (
                   <AlertCircle />
                 )}
@@ -173,43 +180,36 @@ const AlertIcon = ThemeableIcon.styleable(
     );
   },
   {
-    staticConfig: { componentName: "Alert" }
+    displayName: "Alert"
   }
 );
 
-const AlertContent = YStack.styleable(
+const AlertContent = createStyledHOC(
+  YStack,
   ({ children, ...props }, forwardedRef) => {
     return (
       <YStack
         ref={forwardedRef}
         flex={1}
-        gap="$xxs"
+        gap="xxs"
         {...props}
-        paddingVertical="$3xl">
+        paddingVertical="3xl">
         {children}
       </YStack>
     );
   },
   {
-    staticConfig: { componentName: "Alert" }
+    displayName: "Alert"
   }
 );
 
 const AlertHeading = styled(HeadingMediumText, {
-  name: "AlertHeading",
-
-  color: "$accent",
-
-  variants: {
-    size: {
-      default: {
-        fontSize: "$lg"
-      }
-    }
-  } as const
+  displayName: "AlertHeading",
+  color: "accent"
 });
 
-const AlertHeadingImpl = AlertHeading.styleable(
+const AlertHeadingImpl = createStyledHOC(
+  AlertHeading,
   ({ children, ...props }, forwardedRef) => {
     const { type } = AlertContext.useStyledContext();
 
@@ -222,17 +222,16 @@ const AlertHeadingImpl = AlertHeading.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AlertHeading" }
+    displayName: "AlertHeading"
   }
 );
 
 const AlertBody = styled(BodyText, {
-  name: "AlertBody",
-
-  fontSize: "$lg"
+  displayName: "AlertBody"
 });
 
-const AlertBodyImpl = AlertBody.styleable(
+const AlertBodyImpl = createStyledHOC(
+  AlertBody,
   ({ children, ...props }, forwardedRef) => {
     return (
       <Theme name="base">
@@ -243,7 +242,7 @@ const AlertBodyImpl = AlertBody.styleable(
     );
   },
   {
-    staticConfig: { componentName: "AlertBody" }
+    displayName: "AlertBody"
   }
 );
 

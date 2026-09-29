@@ -18,9 +18,13 @@
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HelpCircle } from "@tamagui/lucide-icons-2";
+import type { ComponentProps, ReactNode } from "react";
 import { Alert } from "./Alert";
 
-const meta: Meta<typeof Alert> = {
+// `icon` is a story-only arg consumed by the custom `render` below.
+type AlertStoryArgs = ComponentProps<typeof Alert> & { icon?: ReactNode };
+
+const meta: Meta<AlertStoryArgs> = {
   title: "Containers/Alert",
   component: Alert,
   tags: ["autodocs"],
@@ -35,11 +39,11 @@ const meta: Meta<typeof Alert> = {
       <Alert.Close />
     </Alert>
   )
-} satisfies Meta<typeof Alert>;
+} satisfies Meta<AlertStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Alert>;
+type Story = StoryObj<AlertStoryArgs>;
 
 const bodyText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.";

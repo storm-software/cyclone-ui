@@ -18,9 +18,14 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { LinkProps } from "./Link";
 import { Link } from "./Link";
 
-const meta: Meta<typeof Link> = {
+// `mixed` is not a Link prop (the mixed style is `variant="mixed"`); it is
+// kept as a story arg only.
+type LinkStoryArgs = LinkProps & { mixed?: boolean };
+
+const meta: Meta<LinkStoryArgs> = {
   title: "Triggers/Link",
   component: Link,
   tags: ["autodocs"],
@@ -29,11 +34,11 @@ const meta: Meta<typeof Link> = {
       Lorem ipsum <Link {...args}>dolor sit</Link> amet
     </BodyText>
   )
-} satisfies Meta<typeof Link>;
+} satisfies Meta<LinkStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Link>;
+type Story = StoryObj<LinkStoryArgs>;
 
 export const Base: Story = {
   args: {

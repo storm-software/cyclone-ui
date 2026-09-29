@@ -4,6 +4,8 @@ packages:
   - components/**
   - apps/**
   - docs/**
+  - "!**/out-tsc/**"
+  - "!**/dist/**"
 catalog:
   "@cloudflare/workers-types": ^4.20260702.1
   "@expo/cli": 54.0.25
@@ -15,7 +17,7 @@ catalog:
   "@powerlines/plugin-tsdown": ^0.1.614
   "@powerlines/plugin-tamagui": ^0.1.665
   "@powerlines/plugin-env": ^0.16.422
-  "@razorwind/color-variants": ^0.0.53
+  "@razorwind/color-variants": ^0.0.54
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
   "@react-native-community/cli-platform-ios": 18.0.1
@@ -26,7 +28,7 @@ catalog:
   "@shell-shock/eslint-plugin": ^0.0.90
   "@shell-shock/nx": ^0.0.99
   "@shell-shock/preset-cli": ^0.9.38
-  "@storm-software/eslint-plugin-pnpm": ^0.0.108
+  "@storm-software/eslint-plugin-pnpm": ^0.0.109
   "@storybook/addon-docs": ^10.6.0
   "@storybook/addon-vitest": ^10.6.0
   "@storybook/react": ^10.6.0
@@ -41,6 +43,8 @@ catalog:
   "@tamagui/button": 3.0.0-beta.1422.1
   "@tamagui/checkbox": 3.0.0-beta.1422.1
   "@tamagui/checkbox-headless": 3.0.0-beta.1422.1
+  "@tamagui/cli": 3.0.0-beta.1422.1
+  "@tamagui/codemod-flat-values": 3.0.0-beta.1422.1
   "@tamagui/collapsible": 3.0.0-beta.1422.1
   "@tamagui/compose-refs": 3.0.0-beta.1422.1
   "@tamagui/config": 3.0.0-beta.1422.1
@@ -48,6 +52,7 @@ catalog:
   "@tamagui/core": 3.0.0-beta.1422.1
   "@tamagui/create-context": 3.0.0-beta.1422.1
   "@tamagui/dialog": 3.0.0-beta.1422.1
+  "@tamagui/eslint-plugin": 3.0.0-beta.1422.1
   "@tamagui/focusable": 3.0.0-beta.1422.1
   "@tamagui/font-size": 3.0.0-beta.1422.1
   "@tamagui/floating": 3.0.0-beta.1422.1
@@ -59,9 +64,10 @@ catalog:
   "@tamagui/helpers-tamagui": 3.0.0-beta.1422.1
   "@tamagui/image": 3.0.0-beta.1422.1
   "@tamagui/label": 3.0.0-beta.1422.1
+  "@tamagui/language-service": 3.0.0-beta.1422.1
   "@tamagui/linear-gradient": 3.0.0-beta.1422.1
   "@tamagui/list-item": 3.0.0-beta.1422.1
-  "@tamagui/lucide-icons-2": ^2.7.7
+  "@tamagui/lucide-icons-2": 3.0.0-beta.1398.1
   "@tamagui/popover": 3.0.0-beta.1422.1
   "@tamagui/popper": 3.0.0-beta.1422.1
   "@tamagui/portal": 3.0.0-beta.1422.1
@@ -69,6 +75,7 @@ catalog:
   "@tamagui/proxy-worm": 3.0.0-beta.1422.1
   "@tamagui/radio-group": 3.0.0-beta.1422.1
   "@tamagui/react-native-svg": 3.0.0-beta.1422.1
+  "@tamagui/react-native-types": 3.0.0-beta.1422.1
   "@tamagui/select": 3.0.0-beta.1422.1
   "@tamagui/separator": 3.0.0-beta.1422.1
   "@tamagui/shapes": 3.0.0-beta.1422.1
@@ -98,28 +105,28 @@ catalog:
   "@nx/storybook": 23.1.1
   "@nx/vite": 23.1.1
   "@nx/vitest": 23.1.1
-  "@razorwind/core": ^0.0.75
-  "@razorwind/css": ^0.0.58
-  "@razorwind/design-md": ^0.0.72
-  "@razorwind/nx": ^0.0.71
-  "@razorwind/storybook": ^0.0.73
-  "@razorwind/style-dictionary": ^0.0.61
-  "@razorwind/shadcn": ^0.0.71
-  "@razorwind/tamagui": ^0.0.75
-  "@storm-software/cloudflare-tools": ^0.71.293
-  "@storm-software/config": ^1.138.81
-  "@storm-software/config-tools": ^1.190.145
-  "@storm-software/cspell": ^0.46.212
-  "@storm-software/eslint-config-react": ^0.0.102
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.108
-  "@storm-software/git-tools": ^2.132.2
-  "@storm-software/linting-tools": ^1.134.75
-  "@storm-software/markdownlint": ^0.30.300
-  "@storm-software/pnpm-tools": ^0.7.159
-  "@storm-software/prettier": ^0.59.198
-  "@storm-software/tsconfig": ^0.48.211
-  "@storm-software/untyped": ^0.24.287
-  "@storm-software/workspace-tools": ^1.297.14
+  "@razorwind/core": ^0.0.76
+  "@razorwind/css": ^0.0.59
+  "@razorwind/design-md": ^0.0.73
+  "@razorwind/nx": ^0.0.72
+  "@razorwind/storybook": ^0.0.74
+  "@razorwind/style-dictionary": ^0.0.62
+  "@razorwind/shadcn": ^0.0.72
+  "@razorwind/tamagui": ^0.0.77
+  "@storm-software/cloudflare-tools": ^0.71.294
+  "@storm-software/config": ^1.138.82
+  "@storm-software/config-tools": ^1.190.146
+  "@storm-software/cspell": ^0.46.213
+  "@storm-software/eslint-config-react": ^0.0.103
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.109
+  "@storm-software/git-tools": ^2.132.3
+  "@storm-software/linting-tools": ^1.134.76
+  "@storm-software/markdownlint": ^0.30.301
+  "@storm-software/pnpm-tools": ^0.7.160
+  "@storm-software/prettier": ^0.59.199
+  "@storm-software/tsconfig": ^0.48.212
+  "@storm-software/untyped": ^0.24.288
+  "@storm-software/workspace-tools": ^1.297.15
   "@stryke/async": ^0.1.44
   "@stryke/env": ^0.20.135
   "@stryke/helpers": ^0.10.56
@@ -196,7 +203,7 @@ catalog:
   wrangler: ^3.114.17
   zod: ^3.25.76
   zx: ^8.8.5
-  "@storm-software/tsdoc": ^0.13.297
+  "@storm-software/tsdoc": ^0.13.298
   sembear: ^0.7.0
   parse-github-url: ^1.0.4
   playwright: ^1.63.0
@@ -205,9 +212,9 @@ catalog:
   "@tamagui/dismissable": 3.0.0-beta.1422.1
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
-  "@razorwind/shiki": ^0.0.49
-  "@razorwind/llms": ^0.0.10
-  "@razorwind/docgen": ^0.0.71
+  "@razorwind/shiki": ^0.0.50
+  "@razorwind/llms": ^0.0.11
+  "@razorwind/docgen": ^0.0.72
   ui-ux-pro-max-cli: ^2.15.0
 cleanupUnusedCatalogs: true
 catalogMode: strict
