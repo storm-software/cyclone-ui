@@ -29,10 +29,10 @@ catalog:
   "@shell-shock/nx": ^0.0.99
   "@shell-shock/preset-cli": ^0.9.38
   "@storm-software/eslint-plugin-pnpm": ^0.0.109
-  "@storybook/addon-docs": ^10.6.0
-  "@storybook/addon-vitest": ^10.6.0
-  "@storybook/react": ^10.6.0
-  "@storybook/react-vite": ^10.6.0
+  "@storybook/addon-docs": ^10.6.1
+  "@storybook/addon-vitest": ^10.6.1
+  "@storybook/react": ^10.6.1
+  "@storybook/react-vite": ^10.6.1
   "@stryke/date": ^0.0.28
   "@tamagui/accordion": 3.0.0-beta.1422.1
   "@tamagui/adapt": 3.0.0-beta.1422.1
@@ -83,6 +83,7 @@ catalog:
   "@tamagui/shorthands": 3.0.0-beta.1422.1
   "@tamagui/stacks": 3.0.0-beta.1422.1
   "@tamagui/static": 3.0.0-beta.1422.1
+  "@tamagui/slider": 3.0.0-beta.1422.1
   "@tamagui/switch": 3.0.0-beta.1422.1
   "@tamagui/switch-headless": 3.0.0-beta.1422.1
   "@tamagui/tabs": 3.0.0-beta.1422.1
@@ -171,7 +172,7 @@ catalog:
   jotai-optics: ^0.4.0
   lefthook: ^1.13.6
   log4brains: ^1.1.0
-  maska: ^3.2.1
+  maska: ^3.2.2
   nx: 23.1.1
   optics-ts: ^2.4.1
   powerlines: ^0.47.213
@@ -187,7 +188,7 @@ catalog:
   react-refresh: ^0.10.0
   sherif: ^1.13.0
   solito: ^4.4.1
-  storybook: ^10.6.0
+  storybook: ^10.6.1
   tamagui: 3.0.0-beta.1422.1
   tslib: ^2.8.1
   tsdown: ^0.22.14

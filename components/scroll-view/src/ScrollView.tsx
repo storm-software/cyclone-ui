@@ -84,7 +84,7 @@ type ScrollViewVariants = {
 
 // Spelled out because the inferred type references `WebScrollViewProps`,
 // which `@tamagui/scroll-view` does not export (TS2883).
-type ScrollViewComponent =
+type ResolvedScrollViewComponent =
   typeof TamaguiScrollView extends TamaguiComponent<
     any,
     infer Ref,
@@ -102,6 +102,11 @@ type ScrollViewComponent =
         StaticProperties
       >
     : never;
+
+// An interface (unlike the conditional alias above) keeps its name in emitted
+// declarations, so dependents such as `Popover.Content.ScrollView` reference it
+// rather than expanding it back to `WebScrollViewProps`.
+export interface ScrollViewComponent extends ResolvedScrollViewComponent {}
 
 export const ScrollView: ScrollViewComponent = createStyledHOC(
   ScrollViewFrame,

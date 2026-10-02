@@ -266,6 +266,12 @@
     },
     {
       "path": "./components/icons"
+    },
+    {
+      "path": "./components/rating"
+    },
+    {
+      "path": "./components/slider"
     }
   ],
   "files": []

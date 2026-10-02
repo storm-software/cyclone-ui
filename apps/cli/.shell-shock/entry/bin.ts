@@ -150,17 +150,17 @@ async function main(): Promise<any | { error: string | Error }> {
 
   if (!command.startsWith("-")) {
     if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
-    ) {
-      const handleView = await import("./view").then(m => m.handler);
-      return handleView(args);
-    } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
         "search" ||
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "list"
     ) {
       const handleSearch = await import("./search").then(m => m.handler);
       return handleSearch(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
+    ) {
+      const handleView = await import("./view").then(m => m.handler);
+      return handleView(args);
     } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
     ) {
@@ -174,15 +174,15 @@ async function main(): Promise<any | { error: string | Error }> {
       const handleInit = await import("./init").then(m => m.handler);
       return handleInit(args);
     } else if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
-    ) {
-      const handleDiff = await import("./diff").then(m => m.handler);
-      return handleDiff(args);
-    } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "docs"
     ) {
       const handleDocs = await import("./docs").then(m => m.handler);
       return handleDocs(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
+    ) {
+      const handleDiff = await import("./diff").then(m => m.handler);
+      return handleDiff(args);
     } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "build"
     ) {
@@ -218,14 +218,14 @@ async function main(): Promise<any | { error: string | Error }> {
       return handleHelp(args);
     } else if (Boolean(command) && !command.startsWith("-")) {
       const suggestions = findSuggestions(command, [
-        "view",
         "search",
         "list",
+        "view",
         "info",
         "init",
         "create",
-        "diff",
         "docs",
+        "diff",
         "build",
         "add",
         "completions",
@@ -247,16 +247,16 @@ async function main(): Promise<any | { error: string | Error }> {
       message: "Which command would you like to execute?",
       options: [
         {
-          value: ["view"],
-          label: "View Registry Components",
-          description: `(cyclone-ui view)`,
-          icon: "◉"
-        },
-        {
           value: ["search"],
           label: "Search Registry",
           description: `(cyclone-ui search)`,
           icon: "⌕"
+        },
+        {
+          value: ["view"],
+          label: "View Registry Components",
+          description: `(cyclone-ui view)`,
+          icon: "◉"
         },
         {
           value: ["info"],
@@ -271,16 +271,16 @@ async function main(): Promise<any | { error: string | Error }> {
           icon: "🌀"
         },
         {
-          value: ["diff"],
-          label: "Diff Components",
-          description: `(cyclone-ui diff)`,
-          icon: "±"
-        },
-        {
           value: ["docs"],
           label: "Component Documentation",
           description: `(cyclone-ui docs)`,
           icon: "🕮"
+        },
+        {
+          value: ["diff"],
+          label: "Diff Components",
+          description: `(cyclone-ui diff)`,
+          icon: "±"
         },
         {
           value: ["build"],
@@ -394,17 +394,17 @@ async function main(): Promise<any | { error: string | Error }> {
     args = context.inputArgs;
     if (!command.startsWith("-")) {
       if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
-      ) {
-        const handleView = await import("./view").then(m => m.handler);
-        return handleView(args);
-      } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
           "search" ||
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "list"
       ) {
         const handleSearch = await import("./search").then(m => m.handler);
         return handleSearch(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
+      ) {
+        const handleView = await import("./view").then(m => m.handler);
+        return handleView(args);
       } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
       ) {
@@ -419,15 +419,15 @@ async function main(): Promise<any | { error: string | Error }> {
         const handleInit = await import("./init").then(m => m.handler);
         return handleInit(args);
       } else if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
-      ) {
-        const handleDiff = await import("./diff").then(m => m.handler);
-        return handleDiff(args);
-      } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "docs"
       ) {
         const handleDocs = await import("./docs").then(m => m.handler);
         return handleDocs(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
+      ) {
+        const handleDiff = await import("./diff").then(m => m.handler);
+        return handleDiff(args);
       } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
         "build"
@@ -464,14 +464,14 @@ async function main(): Promise<any | { error: string | Error }> {
         return handleHelp(args);
       } else if (Boolean(command) && !command.startsWith("-")) {
         const suggestions = findSuggestions(command, [
-          "view",
           "search",
           "list",
+          "view",
           "info",
           "init",
           "create",
-          "diff",
           "docs",
+          "diff",
           "build",
           "add",
           "completions",

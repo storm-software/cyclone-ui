@@ -2076,6 +2076,37 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/radio-group-field/src/index.ts` | `file` |  |
 
+## @cyclone-ui/rating
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/rating`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/redacted-animation
 
 A repository containing the core front-end components used by Storm Software across many platforms
@@ -2305,6 +2336,38 @@ A Sheet component for Cyclone UI
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react-native/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/src/index.ts` | `file` |  |
+
+## @cyclone-ui/slider
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/slider`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/slider`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/icons`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/spinner
 
@@ -4966,6 +5029,37 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/radio-group-field/src/index.ts` | `file` |  |
 
+## @cyclone-ui/rating
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/rating`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/redacted-animation
 
 A repository containing the core front-end components used by Storm Software across many platforms
@@ -5195,6 +5289,38 @@ A Sheet component for Cyclone UI
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react-native/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/src/index.ts` | `file` |  |
+
+## @cyclone-ui/slider
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/slider`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/slider`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/icons`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/spinner
 
@@ -7856,6 +7982,37 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/radio-group-field/src/index.ts` | `file` |  |
 
+## @cyclone-ui/rating
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/rating`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/redacted-animation
 
 A repository containing the core front-end components used by Storm Software across many platforms
@@ -8085,6 +8242,38 @@ A Sheet component for Cyclone UI
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react-native/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/src/index.ts` | `file` |  |
+
+## @cyclone-ui/slider
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/slider`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/slider`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/icons`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/spinner
 
@@ -10746,6 +10935,37 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/radio-group-field/src/index.ts` | `file` |  |
 
+## @cyclone-ui/rating
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/rating`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/redacted-animation
 
 A repository containing the core front-end components used by Storm Software across many platforms
@@ -10975,6 +11195,38 @@ A Sheet component for Cyclone UI
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react-native/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/src/index.ts` | `file` |  |
+
+## @cyclone-ui/slider
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/slider`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/slider`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/icons`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/spinner
 
@@ -13636,6 +13888,37 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/radio-group-field/src/index.ts` | `file` |  |
 
+## @cyclone-ui/rating
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/rating`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/redacted-animation
 
 A repository containing the core front-end components used by Storm Software across many platforms
@@ -13865,6 +14148,38 @@ A Sheet component for Cyclone UI
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react-native/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/src/index.ts` | `file` |  |
+
+## @cyclone-ui/slider
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/slider`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/slider`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/icons`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/spinner
 
@@ -16526,6 +16841,37 @@ A repository containing the core front-end components used by Storm Software acr
 | `/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/radio-group-field/src/index.ts` | `file` |  |
 
+## @cyclone-ui/rating
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/rating`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/rating/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/redacted-animation
 
 A repository containing the core front-end components used by Storm Software across many platforms
@@ -16755,6 +17101,38 @@ A Sheet component for Cyclone UI
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react-native/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/node_modules/react/index.js` | `file` |  |
 | `/home/development/repos/cyclone-ui/components/sheet/src/index.ts` | `file` |  |
+
+## @cyclone-ui/slider
+
+A repository containing the core front-end components used by Storm Software across many platforms
+
+- **Name:** `@cyclone-ui/slider`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/slider`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/icons`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.cjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/dist/index.mjs` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-dom/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react-native/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/node_modules/react/index.js` | `file` |  |
+| `/home/development/repos/cyclone-ui/components/slider/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/spinner
 
