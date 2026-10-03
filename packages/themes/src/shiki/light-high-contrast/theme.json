@@ -1,0 +1,125 @@
+{
+  "name": "cyclone-light-high-contrast",
+  "settings": [
+    {
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
+      "settings": {
+        "foreground": "#c3c3ca",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "string",
+        "constant.other.symbol"
+      ],
+      "settings": {
+        "foreground": "#0a4e38"
+      }
+    },
+    {
+      "scope": [
+        "constant",
+        "constant.numeric",
+        "constant.language"
+      ],
+      "settings": {
+        "foreground": "#583902"
+      }
+    },
+    {
+      "scope": [
+        "keyword",
+        "storage",
+        "storage.type"
+      ],
+      "settings": {
+        "foreground": "#00bcad"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function",
+        "support.function"
+      ],
+      "settings": {
+        "foreground": "#00bcad"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.type",
+        "entity.other.inherited-class",
+        "support.type"
+      ],
+      "settings": {
+        "foreground": "#492b9b"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag",
+        "meta.tag"
+      ],
+      "settings": {
+        "foreground": "#00bcad"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name",
+        "support.constant"
+      ],
+      "settings": {
+        "foreground": "#0145be"
+      }
+    },
+    {
+      "scope": [
+        "variable",
+        "identifier"
+      ],
+      "settings": {
+        "foreground": "#4e515b"
+      }
+    },
+    {
+      "scope": [
+        "punctuation",
+        "meta.brace"
+      ],
+      "settings": {
+        "foreground": "#c3c3ca"
+      }
+    },
+    {
+      "scope": [
+        "invalid",
+        "invalid.illegal"
+      ],
+      "settings": {
+        "foreground": "#840929"
+      }
+    }
+  ],
+  "displayName": "Cyclone Light",
+  "type": "lightHighContrast",
+  "fg": "#08080a",
+  "bg": "#ffffff",
+  "colors": {
+    "editor.background": "#ffffff",
+    "editor.foreground": "#08080a",
+    "editorCursor.foreground": "#0145be",
+    "editor.selectionBackground": "#00bcad",
+    "editor.selectionForeground": "#ffffff",
+    "editor.inactiveSelectionBackground": "#ffffff",
+    "editorLineNumber.foreground": "#c3c3ca",
+    "editorLineNumber.activeForeground": "#4e515b",
+    "editorIndentGuide.background1": "#c3c3ca",
+    "editorIndentGuide.activeBackground1": "#c3c3ca",
+    "editorWhitespace.foreground": "#c3c3ca"
+  }
+}

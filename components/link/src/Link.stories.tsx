@@ -61,6 +61,36 @@ export const Mixed: Story = {
   }
 };
 
+export const Subtle: Story = {
+  args: {
+    href: "#",
+    variant: "subtle"
+  }
+};
+
+export const SubtleExternal: Story = {
+  args: {
+    href: "#",
+    variant: "subtle",
+    external: true
+  }
+};
+
+export const Subtlest: Story = {
+  args: {
+    href: "#",
+    variant: "subtlest"
+  }
+};
+
+export const SubtlestExternal: Story = {
+  args: {
+    href: "#",
+    variant: "subtlest",
+    external: true
+  }
+};
+
 export const CallToAction: Story = {
   args: {
     href: "#",

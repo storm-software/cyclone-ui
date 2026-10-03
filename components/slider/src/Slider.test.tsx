@@ -108,6 +108,15 @@ describe("Slider", () => {
     expect(html).toContain('aria-valuetext="90 dollars"');
   });
 
+  it("labels every thumb with aria-labelledby", () => {
+    const html = renderSlider({
+      value: [10, 90],
+      "aria-labelledby": "price-label"
+    });
+
+    expect(count(html, 'aria-labelledby="price-label"')).toBe(2);
+  });
+
   it("removes a disabled slider's thumbs from the tab order", () => {
     const html = renderSlider({ defaultValue: 20, disabled: true });
 

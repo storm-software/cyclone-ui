@@ -50,6 +50,20 @@ export const Inverse: Story = {
   }
 };
 
+export const Subtle: Story = {
+  args: {
+    currentName: "Current Page",
+    subtle: true
+  }
+};
+
+export const Subtlest: Story = {
+  args: {
+    currentName: "Current Page",
+    subtlest: true
+  }
+};
+
 export const Slash: Story = {
   args: {
     currentName: "Current Page",

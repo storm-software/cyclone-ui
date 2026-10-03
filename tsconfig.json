@@ -272,6 +272,12 @@
     },
     {
       "path": "./components/slider"
+    },
+    {
+      "path": "./components/rating-field"
+    },
+    {
+      "path": "./components/slider-field"
     }
   ],
   "files": []

@@ -1,0 +1,41 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/slider-field",
+    "tsBuildInfoFile": "../../dist/out-tsc/components/slider-field/tsconfig.tsbuildinfo"
+  },
+  "references": [
+    {
+      "path": "../../packages/themes"
+    },
+    {
+      "path": "../../packages/state"
+    },
+    {
+      "path": "../slider"
+    },
+    {
+      "path": "../field"
+    },
+    {
+      "path": "../form"
+    }
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": [
+    "vitest.config.mts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.tsx"
+  ]
+}

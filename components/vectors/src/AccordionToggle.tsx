@@ -34,7 +34,7 @@ const AccordionToggleContainer = styled(View, {
   variants: {
     isExpanded: {
       true: {
-        rotate: "90deg"
+        rotate: "0deg"
       },
       false: {
         rotate: "-90deg"

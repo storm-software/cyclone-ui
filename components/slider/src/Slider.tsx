@@ -57,6 +57,8 @@ export interface SliderProps
   valueLabelDisplay?: "auto" | "on" | "off";
   /** A string, or a function of the value and thumb index, displayed in the value label. */
   valueLabelFormat?: string | ((value: number, index: number) => ReactNode);
+  /** The id of the element labelling the slider, applied to every thumb. */
+  "aria-labelledby"?: string;
   /** Build the accessible name of a thumb. */
   getAriaLabel?: (index: number) => string;
   /** Build the accessible description of a thumb's value. */
@@ -192,6 +194,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
       track = "normal",
       valueLabelDisplay = "off",
       valueLabelFormat,
+      "aria-labelledby": ariaLabelledBy,
       getAriaLabel,
       getAriaValueText,
       onChange,
@@ -475,6 +478,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
               // track bounds, so it lines up with the marks.
               {...(vertical ? {} : { x: (rtl ? 1 : -1) * (geometry.thumb / 2) })}
               aria-label={getAriaLabel?.(index)}
+              aria-labelledby={ariaLabelledBy}
               aria-valuetext={getAriaValueText?.(value, index)}
               onFocus={(event: any) => {
                 setFocusedThumb(index);

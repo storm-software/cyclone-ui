@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="L" format="2">
+  <advance width="1217"/>
+  <unicode hex="004C"/>
+  <anchor x="343" y="1394" name="UCtop"/>
+  <anchor x="679" y="1394" name="right"/>
+  <anchor x="617" y="0" name="bottom"/>
+  <anchor x="959" y="745" name="mid"/>
+  <outline>
+    <contour>
+      <point x="1093" y="-58" type="line"/>
+      <point x="1190" y="398" type="line"/>
+      <point x="1157" y="407" type="line"/>
+      <point x="931" y="48" type="line"/>
+      <point x="1079" y="76" type="line"/>
+      <point x="312" y="76" type="line"/>
+      <point x="312" y="0" type="line"/>
+      <point x="952" y="0" type="line"/>
+      <point x="1078" y="-58" type="line"/>
+    </contour>
+    <contour>
+      <point x="444" y="1315" type="line"/>
+      <point x="613" y="1361" type="line"/>
+      <point x="613" y="1394" type="line"/>
+      <point x="74" y="1394" type="line"/>
+      <point x="74" y="1361" type="line"/>
+      <point x="243" y="1315" type="line"/>
+      <point x="243" y="80" type="line"/>
+      <point x="74" y="33" type="line"/>
+      <point x="74" y="0" type="line"/>
+      <point x="444" y="0" type="line"/>
+    </contour>
+  </outline>
+</glyph>

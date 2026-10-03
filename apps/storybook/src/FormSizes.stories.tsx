@@ -29,7 +29,9 @@ import { FilePickerField } from "../../../components/file-picker-field/src/FileP
 import { InputField } from "../../../components/input-field/src/InputField";
 import { OtpInputField } from "../../../components/otp-input-field/src/OtpInputField";
 import { RadioGroupField } from "../../../components/radio-group-field/src/RadioGroupField";
+import { RatingField } from "../../../components/rating-field/src/RatingField";
 import { SelectField } from "../../../components/select-field/src/SelectField";
+import { SliderField } from "../../../components/slider-field/src/SliderField";
 import { SwitchField } from "../../../components/switch-field/src/SwitchField";
 import { TextAreaField } from "../../../components/text-area-field/src/TextAreaField";
 
@@ -66,7 +68,9 @@ function SizeComparison({ disabled = false }: { disabled?: boolean }) {
             initialValues={{
               date: new Date(2026, 0, 28),
               check: true,
-              text: "Example text"
+              text: "Example text",
+              rating: 3,
+              slider: 40
             }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
               <InputField name="text" size={size} disabled={disabled}>
@@ -139,6 +143,14 @@ function SizeComparison({ disabled = false }: { disabled?: boolean }) {
                 <RadioGroupField.Label>Radio group</RadioGroupField.Label>
                 <RadioGroupField.Control />
               </RadioGroupField>
+              <RatingField name="rating" size={size} disabled={disabled}>
+                <RatingField.Label>Rating</RatingField.Label>
+                <RatingField.Control />
+              </RatingField>
+              <SliderField name="slider" size={size} disabled={disabled}>
+                <SliderField.Label>Slider</SliderField.Label>
+                <SliderField.Control />
+              </SliderField>
               <OtpInputField
                 name="code"
                 size={size}

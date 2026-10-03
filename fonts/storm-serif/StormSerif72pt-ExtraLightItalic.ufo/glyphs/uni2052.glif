@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni2052" format="2">
+  <advance width="1275"/>
+  <unicode hex="2052"/>
+  <outline>
+    <component base="bullet" xOffset="16" yOffset="494"/>
+    <component base="fraction" xOffset="557"/>
+    <component base="bullet" xOffset="607" yOffset="-147"/>
+  </outline>
+</glyph>

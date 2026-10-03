@@ -122,6 +122,19 @@ export const useFieldVariant = (
   return variant;
 };
 
+/**
+ * Get the id of a field's label element.
+ *
+ * @remarks
+ * Controls that are not labelable HTML elements (for example a `role="slider"`
+ * thumb) cannot use the label's `htmlFor`, so they reference this id with
+ * `aria-labelledby` instead.
+ *
+ * @param name - The field name.
+ * @returns The label element id.
+ */
+export const getFieldLabelId = (name: string) => `${name}-label`;
+
 export const useFieldHasValidationMessage = () =>
   use(FieldPresentationContext).hasValidationMessage;
 
@@ -708,6 +721,7 @@ const FieldLabelTextImpl = createStyledHOC(
           : {})}>
         <TamaguiLabel
           ref={forwardedRef}
+          id={getFieldLabelId(name)}
           htmlFor={name}
           marginLeft={`${variant === "floating" ? "zero" : "md"}`}>
           <LabelXStack disabled={disabled} floating={floating} minWidth={0}>

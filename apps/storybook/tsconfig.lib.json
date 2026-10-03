@@ -23,10 +23,16 @@
       "path": "../../components/switch-field"
     },
     {
+      "path": "../../components/slider-field"
+    },
+    {
       "path": "../../components/select-field"
     },
     {
       "path": "../../components/radio-group-field"
+    },
+    {
+      "path": "../../components/rating-field"
     },
     {
       "path": "../../components/otp-input-field"

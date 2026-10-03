@@ -219,8 +219,8 @@ const AccordionFrameImpl = forwardRef<
           {...props}
           borderRadius="container"
           width="100%"
-          defaultValue={defaultValue as never}
-          value={value as never}
+          defaultValue={defaultValue}
+          value={value}
           onValueChange={handleValueChange}>
           <AccordionGroup
             variant={variant}
@@ -402,7 +402,7 @@ const AccordionItemHeaderImpl = createStyledHOC(
 
     return (
       <AccordionItemHeader
-        group={"accordion" as any}
+        group={"accordion"}
         ref={forwardedRef}
         flexDirection={iconDirection === "left" ? "row-reverse" : "row"}
         justifyContent="space-between"
@@ -431,7 +431,7 @@ const AccordionItemHeaderImpl = createStyledHOC(
             isExpanded={open}
             color={iconColor}
             size="6xl"
-            strokeWidth={2.5}
+            strokeWidth={3.25}
           />
         )}
         {icon === "chevron" && (

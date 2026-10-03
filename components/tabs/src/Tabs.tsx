@@ -131,21 +131,33 @@ export interface TabsContextProps {
   size: SizeTokens;
 }
 
-export const TabsContext = createStyledContext<TabsContextProps, "state" | "setState" | "onInteraction" | "orientation" | "variant" | "bordered" | "size">({
-  state: {
-    ...initialState
-  },
-  setState: ((_next: TabsState) => {}) as Dispatch<SetStateAction<TabsState>>,
-  onInteraction: (_type: any, _layout: any) => {},
-  orientation: "horizontal",
-  variant: "floating",
-  bordered: true,
-  size: true
-} as TabsContextProps, {
-  // Only the keys that styled consumers declare as variants; v3 forwards every
+export const TabsContext = createStyledContext<
+  TabsContextProps,
+  | "state"
+  | "setState"
+  | "onInteraction"
+  | "orientation"
+  | "variant"
+  | "bordered"
+  | "size"
+>(
+  {
+    state: {
+      ...initialState
+    },
+    setState: ((_next: TabsState) => {}) as Dispatch<SetStateAction<TabsState>>,
+    onInteraction: (_type: any, _layout: any) => {},
+    orientation: "horizontal",
+    variant: "floating",
+    bordered: true,
+    size: true
+  } as TabsContextProps,
+  {
+    // Only the keys that styled consumers declare as variants; v3 forwards every
     // injected context key that is not a variant to the DOM element.
     keys: ["orientation", "variant", "bordered", "size"]
-});
+  }
+);
 
 const TabsFrame = styled(TamaguiTabs, {
   displayName: "Tabs",
@@ -191,7 +203,8 @@ export type TabsProps = Omit<
 > &
   Partial<Pick<TabsContextProps, TabsContextOwnedProps>>;
 
-const TabsFrameImpl = createStyledHOC(TabsFrame, 
+const TabsFrameImpl = createStyledHOC(
+  TabsFrame,
   (
     {
       children,
@@ -287,7 +300,8 @@ const TabsRovingIndicator = styled(YStack, {
 
     // Receives `"true"` from the `group-hover/tabs:true` clause.
     intent: styled.dynamic<boolean | "true">(val => ({
-      backgroundColor: val === true || val === "true" ? "transparent" : undefined,
+      backgroundColor:
+        val === true || val === "true" ? "transparent" : undefined,
       borderColor: val === true || val === "true" ? "transparent" : undefined
     })),
 
@@ -347,7 +361,8 @@ const TabsRovingIndicator = styled(YStack, {
   };
 });
 
-const TabsRovingIndicatorImpl = createStyledHOC(TabsRovingIndicator, 
+const TabsRovingIndicatorImpl = createStyledHOC(
+  TabsRovingIndicator,
   ({ children, height, width, active, ...rest }, forwardedRef) => {
     const { orientation, variant } = TabsContext.useStyledContext();
     const isActiveUnderline =
@@ -399,10 +414,10 @@ const AnimatedView = styled(View, {
   variants: {
     // 1 = right, 0 = nowhere, -1 = left
     direction: styled.dynamic<number>(direction => ({
-              x: `enter:${direction > 0 ? -50 : 50}px exit:${direction < 0 ? -50 : 50}px`,
-              opacity: "enter:0 exit:0",
-              zIndex: "exit:0"
-            }))
+      x: `enter:${direction > 0 ? -50 : 50}px exit:${direction < 0 ? -50 : 50}px`,
+      opacity: "enter:0 exit:0",
+      zIndex: "exit:0"
+    }))
   } as const
 });
 
@@ -454,7 +469,8 @@ const TabsHeaderList = styled(YStack, {
   }
 });
 
-const TabsHeaderListImpl = createStyledHOC(TabsHeaderList, 
+const TabsHeaderListImpl = createStyledHOC(
+  TabsHeaderList,
   ({ children, ...rest }: ViewProps, forwardedRef) => {
     const {
       state: { activeAt, intentAt, prevActiveAt },
@@ -476,7 +492,7 @@ const TabsHeaderListImpl = createStyledHOC(TabsHeaderList,
 
     return (
       <TabsHeaderList
-        group={"tabs" as any}
+        group={"tabs"}
         ref={forwardedRef}
         orientation={orientation}
         variant={variant}
@@ -521,10 +537,7 @@ const TabsHeaderListImpl = createStyledHOC(TabsHeaderList,
           position="relative"
           zIndex={1}
           backgroundColor="transparent">
-          <AnimatePresence
-            mode="wait"
-            custom={{ direction }}
-            initial={false}>
+          <AnimatePresence mode="wait" custom={{ direction }} initial={false}>
             {children}
           </AnimatePresence>
         </TamaguiTabs.List>
@@ -533,16 +546,19 @@ const TabsHeaderListImpl = createStyledHOC(TabsHeaderList,
   }
 );
 
+// No `context: TabsContext` here: its `variant` key (underline / floating /
+// tabbed) would override `HeadingSmallText`'s own `variant` (base /
+// editorial) and drop the `display-sm` font. `TabsHeaderItemImpl` passes
+// `size` and `selected` explicitly instead.
 const TabsHeaderItemHeading = styled(HeadingSmallText, {
   displayName: "TabsHeading",
-  context: TabsContext,
   transition: "200ms",
   textAlign: "center",
   paddingVertical: "xl",
   variants: {
-    // `TabsContext` passes `size: true`, which Tamagui v3 maps to the `sm` /
-    // `4` font key the typography fonts do not define; resolve it (and any
-    // font size key) against the font's own `true` step.
+    // `size: true` maps in Tamagui v3 to the `sm` / `4` font key the
+    // typography fonts do not define; resolve it (and any font size key)
+    // against the font's own `true` step.
     size: styled.dynamic<FontSizeTokens | SizeTokens | number>((val, env) =>
       val === true ||
       (typeof val === "string" && !!env.font && val in env.font.size)
@@ -635,15 +651,18 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
     borderTopRightRadius: horizontal ? "container" : 0,
     borderBottomLeftRadius: horizontal ? 0 : "container",
     borderBottomRightRadius: 0,
-    borderBottomColor: props.selected && horizontal ? "surfaceElevated" : undefined,
-    borderRightColor: props.selected && !horizontal ? "surfaceElevated" : undefined,
+    borderBottomColor:
+      props.selected && horizontal ? "surfaceElevated" : undefined,
+    borderRightColor:
+      props.selected && !horizontal ? "surfaceElevated" : undefined,
     marginBottom: horizontal ? -1 : undefined,
     marginRight: horizontal ? undefined : -1,
     zIndex: 2
   };
 });
 
-const TabsHeaderItemImpl = createStyledHOC(TabsHeaderItem, 
+const TabsHeaderItemImpl = createStyledHOC(
+  TabsHeaderItem,
   ({ children, value, ...rest }, forwardedRef) => {
     const {
       onInteraction,
@@ -668,12 +687,11 @@ const TabsHeaderItemImpl = createStyledHOC(TabsHeaderItem,
         variant={variant}
         bordered={bordered}
         selected={currentTab === value}
-
         {...rest}
         value={value}
         onInteraction={onInteraction}>
         <TabsHeaderItemHeading
-          size={size === true ? ("true" as FontSizeTokens) : size}
+          size={size === true ? "true" : size}
           color="group-hover:accent"
           selected={currentTab === value}>
           {children}
@@ -735,7 +753,8 @@ const TabsContentList = styled(View, {
   };
 });
 
-const TabsContentItem = createStyledHOC(TamaguiTabs.Content, 
+const TabsContentItem = createStyledHOC(
+  TamaguiTabs.Content,
   ({ children, value, ...rest }: TamaguiTabsContentProps, forwardedRef) => {
     const {
       state: { currentTab }
@@ -761,6 +780,9 @@ const TabsContentItem = createStyledHOC(TamaguiTabs.Content,
         </TamaguiTabs.Content>
       </AnimatedView>
     );
+  },
+  {
+    displayName: "TabsContentItem"
   }
 );
 
