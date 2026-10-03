@@ -1,230 +1,512 @@
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Bold.otf") format("opentype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Bold.otf") format("opentype");
   font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Bold.ttf") format("truetype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Bold.ttf") format("truetype");
   font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-BoldItalic.otf") format("opentype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-BoldItalic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-ExtraLight.otf") format("opentype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-ExtraLight.otf") format("opentype");
   font-weight: 200;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-ExtraLight.ttf") format("truetype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-ExtraLight.ttf") format("truetype");
   font-weight: 200;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-ExtraLightItalic.otf") format("opentype");
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-ExtraLightItalic.ttf") format("truetype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.otf") format("opentype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Italic-VF.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Italic.otf") format("opentype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.ttf") format("truetype");
+  font-weight: 200;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Italic.ttf") format("truetype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Italic-VF.ttf") format("truetype");
+  font-weight: 100 700;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Light.otf") format("opentype");
-  font-weight: 300;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-LightItalic.otf") format("opentype");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-MediumItalic.otf") format("opentype");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-MediumItalic.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Regular.otf") format("opentype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Italic.otf") format("opentype");
   font-weight: 400;
+  font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Regular.ttf") format("truetype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Italic.ttf") format("truetype");
   font-weight: 400;
+  font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-SemiBold.otf") format("opentype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-SemiBold.otf") format("opentype");
   font-weight: 600;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-SemiBold.ttf") format("truetype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-SemiBoldItalic.otf") format("opentype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.otf") format("opentype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Text.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Text.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-TextItalic.otf") format("opentype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-TextItalic.ttf") format("truetype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Text.otf") format("opentype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Text.ttf") format("truetype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-TextItalic.otf") format("opentype");
+  font-weight: 450;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Thin.otf") format("opentype");
-  font-weight: 100;
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-TextItalic.ttf") format("truetype");
+  font-weight: 450;
+  font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-Thin.ttf") format("truetype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Thin.otf") format("opentype");
   font-weight: 100;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-ThinItalic.otf") format("opentype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-ThinItalic.otf") format("opentype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-ThinItalic.ttf") format("truetype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-ThinItalic.ttf") format("truetype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Fonts;
-  src: url("./fonts/StormSans-VF.ttf") format("truetype");
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/StormSans-VF.ttf") format("truetype");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-Italic-VF.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/StormSerif-VF.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -233,571 +515,576 @@
  */
 
 :root {
-  --cu-color-transparent: rgba(255, 255, 255, 0); /** Fully transparent white. */
-  --cu-color-black: #0c0c0d; /** Near-black neutral. */
-  --cu-color-white: #ffffff; /** Pure white. */
-  --cu-color-neutral-1: #fafafa; /** Bright off-white gray. */
-  --cu-color-neutral-2: #f1f1f1; /** Very light gray. */
-  --cu-color-neutral-3: #eaeaea; /** Light gray. */
-  --cu-color-neutral-4: #e1e1e1; /** Soft light gray. */
-  --cu-color-neutral-5: #cacacb; /** Pale gray. */
-  --cu-color-neutral-6: #b0b0b1; /** Light-medium gray. */
-  --cu-color-neutral-7: #959698; /** Medium gray. */
-  --cu-color-neutral-8: #7b7b7e; /** Dark medium gray. */
-  --cu-color-neutral-9: #606164; /** Deep gray. */
-  --cu-color-neutral-10: #46464a; /** Charcoal gray. */
-  --cu-color-neutral-11: #2b2c30; /** Dark charcoal gray. */
-  --cu-color-neutral-12: #242528; /** Deep graphite gray. */
-  --cu-color-neutral-13: #1f1f21; /** Near-black graphite. */
-  --cu-color-neutral-14: #151518; /** Almost black gray. */
-  --cu-color-red-1: #e2819a; /** Pale coral red. */
-  --cu-color-red-2: #dd6c89; /** Light coral red. */
-  --cu-color-red-3: #d95778; /** Soft coral red. */
-  --cu-color-red-4: #d44267; /** Warm salmon red. */
-  --cu-color-red-5: #cf2d56; /** Muted raspberry red. */
-  --cu-color-red-6: #ae284a; /** Deep raspberry red. */
-  --cu-color-red-7: #8e223e; /** Rich raspberry red. */
-  --cu-color-red-8: #6f1c31; /** Dark burgundy red. */
-  --cu-color-red-9: #501524; /** Deep wine red. */
-  --cu-color-orange-1: #f6c3a7; /** Pale peach orange. */
-  --cu-color-orange-2: #f4b18c; /** Light apricot orange. */
-  --cu-color-orange-3: #f19f71; /** Soft sandy orange. */
-  --cu-color-orange-4: #ef8c56; /** Light peach orange. */
-  --cu-color-orange-5: #ec7a3b; /** Muted warm orange. */
-  --cu-color-orange-6: #df6520; /** Medium tangerine orange. */
-  --cu-color-orange-7: #bf520b; /** Bright amber orange. */
-  --cu-color-orange-8: #9f4000; /** Rich burnt orange. */
-  --cu-color-orange-9: #803000; /** Deep burnt orange. */
-  --cu-color-yellow-1: #facd7b; /** Pale wheat yellow. */
-  --cu-color-yellow-2: #f9c25e; /** Light sandy yellow. */
-  --cu-color-yellow-3: #f8b740; /** Soft golden yellow. */
-  --cu-color-yellow-4: #f7ac23; /** Muted amber yellow. */
-  --cu-color-yellow-5: #f0a824; /** Medium honey yellow. */
-  --cu-color-yellow-6: #df9d24; /** Warm wheat yellow. */
-  --cu-color-yellow-7: #c58c22; /** Rich golden yellow. */
-  --cu-color-yellow-8: #a2731e; /** Deep honey yellow. */
-  --cu-color-yellow-9: #765417; /** Dark ochre yellow. */
-  --cu-color-green-1: #d1f1d6; /** Pale mint green. */
-  --cu-color-green-2: #a2e3b6; /** Light spring green. */
-  --cu-color-green-3: #74d59f; /** Soft leaf green. */
-  --cu-color-green-4: #45c791; /** Muted leaf green. */
-  --cu-color-green-5: #38a97e; /** Cool mint green. */
-  --cu-color-green-6: #2c8a69; /** Medium jade green. */
-  --cu-color-green-7: #216b53; /** Rich jade green. */
-  --cu-color-green-8: #164a3c; /** Deep forest green. */
-  --cu-color-green-9: #0c2a22; /** Dark emerald green. */
-  --cu-color-blue-1: #abcaff; /** Pale periwinkle blue. */
-  --cu-color-blue-2: #8cb6ff; /** Light periwinkle blue. */
-  --cu-color-blue-3: #6da2ff; /** Light sky blue. */
-  --cu-color-blue-4: #4d8eff; /** Soft cornflower blue. */
-  --cu-color-blue-5: #2e7aff; /** Bright cobalt blue. */
-  --cu-color-blue-6: #2768d9; /** Medium azure blue. */
-  --cu-color-blue-7: #2055b3; /** Deep azure blue. */
-  --cu-color-blue-8: #19438c; /** Vivid cerulean blue. */
-  --cu-color-blue-9: #123166; /** Rich cerulean blue. */
-  --cu-color-purple-1: #cec2ee; /** Pale lavender purple. */
-  --cu-color-purple-2: #baa9e8; /** Light periwinkle purple. */
-  --cu-color-purple-3: #a690e1; /** Soft lavender purple. */
-  --cu-color-purple-4: #9277da; /** Soft violet purple. */
-  --cu-color-purple-5: #7f64c4; /** Muted indigo purple. */
-  --cu-color-purple-6: #6c53ad; /** Medium periwinkle purple. */
-  --cu-color-purple-7: #594395; /** Deep periwinkle purple. */
-  --cu-color-purple-8: #47347c; /** Vivid indigo purple. */
-  --cu-color-purple-9: #362661; /** Rich slate indigo. */
-  --cu-color-pink-1: #f5c7e4; /** Pale blush pink. */
-  --cu-color-pink-2: #f49ed1; /** Light blush pink. */
-  --cu-color-pink-3: #eb89c5; /** Soft rose pink. */
-  --cu-color-pink-4: #e774bb; /** Bright fuchsia pink. */
-  --cu-color-pink-5: #e171b7; /** Vivid fuchsia pink. */
-  --cu-color-pink-6: #df6db3; /** Rich magenta pink. */
-  --cu-color-pink-7: #c25c9b; /** Deep fuchsia pink. */
-  --cu-color-pink-8: #904272; /** Deep berry pink. */
-  --cu-color-pink-9: #482039; /** Dark plum pink. */
-  --cu-color-ink-emphasis: #2b2c30; /** Primary text and icon color for high-emphasis content. */
-  --cu-color-ink-body: #606164; /** Default text and icon color for standard content. */
-  --cu-color-ink-subtle: #b0b0b1; /** Softer text and icon color for supporting content. */
-  --cu-color-ink-subtlest: #cacacb; /** Softest text and icon color for supporting content. */
-  --cu-color-surface-sunken: #e1e1e1; /** Recessed surface for inset controls and grouped content. */
-  --cu-color-surface-canvas: #eaeaea; /** Base application canvas surface. */
-  --cu-color-surface-elevated: #f1f1f1; /** Raised surface for cards and controls. */
-  --cu-color-surface-floating: #fafafa; /** Floating surface for menus, popovers, and dialogs. */
-  --cu-color-surface-overlay: #ffffff; /** Topmost surface for transient overlays. */
-  --cu-color-surface-sunken-hover: #a0a0a0; /** Recessed surface for inset controls and grouped content. (hover, 23% darker) */
-  --cu-color-surface-sunken-active: #ababab; /** Recessed surface for inset controls and grouped content. (active, 19% darker) */
-  --cu-color-surface-sunken-inactive: #ffffff; /** Recessed surface for inset controls and grouped content. (inactive, 20% brighter) */
-  --cu-color-surface-sunken-disabled: rgba(225, 225, 225, 0.4); /** Recessed surface for inset controls and grouped content. (disabled, 40% opacity) */
-  --cu-color-surface-canvas-hover: #a6a6a6; /** Base application canvas surface. (hover, 23% darker) */
-  --cu-color-surface-canvas-active: #b2b2b2; /** Base application canvas surface. (active, 19% darker) */
-  --cu-color-surface-canvas-inactive: #ffffff; /** Base application canvas surface. (inactive, 20% brighter) */
-  --cu-color-surface-canvas-disabled: rgba(234, 234, 234, 0.4); /** Base application canvas surface. (disabled, 40% opacity) */
-  --cu-color-surface-elevated-hover: #ababab; /** Raised surface for cards and controls. (hover, 23% darker) */
-  --cu-color-surface-elevated-active: #b7b7b7; /** Raised surface for cards and controls. (active, 19% darker) */
-  --cu-color-surface-elevated-inactive: #ffffff; /** Raised surface for cards and controls. (inactive, 20% brighter) */
-  --cu-color-surface-elevated-disabled: rgba(241, 241, 241, 0.4); /** Raised surface for cards and controls. (disabled, 40% opacity) */
-  --cu-color-surface-floating-hover: #b2b2b2; /** Floating surface for menus, popovers, and dialogs. (hover, 23% darker) */
-  --cu-color-surface-floating-active: #bebebe; /** Floating surface for menus, popovers, and dialogs. (active, 19% darker) */
-  --cu-color-surface-floating-inactive: #ffffff; /** Floating surface for menus, popovers, and dialogs. (inactive, 20% brighter) */
-  --cu-color-surface-floating-disabled: rgba(250, 250, 250, 0.4); /** Floating surface for menus, popovers, and dialogs. (disabled, 40% opacity) */
-  --cu-color-surface-overlay-hover: #b6b6b6; /** Topmost surface for transient overlays. (hover, 23% darker) */
-  --cu-color-surface-overlay-active: #c2c2c2; /** Topmost surface for transient overlays. (active, 19% darker) */
-  --cu-color-surface-overlay-inactive: #ffffff; /** Topmost surface for transient overlays. (inactive, 20% brighter) */
-  --cu-color-surface-overlay-disabled: rgba(255, 255, 255, 0.4); /** Topmost surface for transient overlays. (disabled, 40% opacity) */
-  --cu-color-required: #8e223e; /** Indicator color for required form fields. */
-  --cu-color-link: #2055b3; /** Interactive color for links and linked text. */
-  --cu-color-hairline: #b0b0b1; /** Subtle color for hairline borders and separators. */
-  --cu-color-selection-background: #1fb2a6; /** Background color of selected text, using the brand accent. */
-  --cu-color-selection-foreground: #fafafa; /** Color of selected text, placed on the brand accent. */
-  --cu-color-accent-base: #151518; /** Primary neutral accent for emphasized controls and content. */
-  --cu-color-accent-brand: #1fb2a6; /** Brand accent for primary actions and emphasis. */
-  --cu-color-accent-danger: #8e223e; /** Danger accent for destructive actions and critical states. */
-  --cu-color-accent-negative: #8e223e; /** Negative accent for error states and invalid input. */
-  --cu-color-accent-warning: #765417; /** Warning accent for cautionary states. */
-  --cu-color-accent-success: #216b53; /** Success accent for confirmed states. */
-  --cu-color-accent-positive: #216b53; /** Positive accent for favorable states. */
-  --cu-color-accent-info: #2055b3; /** Informational accent for guidance and neutral status. */
-  --cu-color-accent-discovery: #594395; /** Discovery accent for new or exploratory content. */
-  --cu-color-accent-base-hover: #232326; /** Primary neutral accent for emphasized controls and content. (hover, 30% brighter) */
-  --cu-color-accent-base-active: #0c0c0d; /** Primary neutral accent for emphasized controls and content. (active, light base primitive) */
-  --cu-color-accent-base-inactive: #030303; /** Primary neutral accent for emphasized controls and content. (inactive, 40% darker) */
-  --cu-color-accent-base-disabled: #151517; /** Primary neutral accent for emphasized controls and content. (disabled, 80% saturation) */
-  --cu-color-accent-brand-hover: #008277; /** Brand accent for primary actions and emphasis. (hover, 23% darker) */
-  --cu-color-accent-brand-active: #008a7f; /** Brand accent for primary actions and emphasis. (active, 19% darker) */
-  --cu-color-accent-brand-inactive: #5ddfd2; /** Brand accent for primary actions and emphasis. (inactive, 20% brighter) */
-  --cu-color-accent-brand-disabled: #4daea4; /** Brand accent for primary actions and emphasis. (disabled, 80% saturation) */
-  --cu-color-accent-danger-hover: #6e0025; /** Danger accent for destructive actions and critical states. (hover, 23% darker) */
-  --cu-color-accent-danger-active: #730029; /** Danger accent for destructive actions and critical states. (active, 19% darker) */
-  --cu-color-accent-danger-inactive: #ab3e56; /** Danger accent for destructive actions and critical states. (inactive, 20% brighter) */
-  --cu-color-accent-danger-disabled: #843142; /** Danger accent for destructive actions and critical states. (disabled, 80% saturation) */
-  --cu-color-accent-negative-hover: #6e0025; /** Negative accent for error states and invalid input. (hover, 23% darker) */
-  --cu-color-accent-negative-active: #730029; /** Negative accent for error states and invalid input. (active, 19% darker) */
-  --cu-color-accent-negative-inactive: #ab3e56; /** Negative accent for error states and invalid input. (inactive, 20% brighter) */
-  --cu-color-accent-negative-disabled: #843142; /** Negative accent for error states and invalid input. (disabled, 80% saturation) */
-  --cu-color-accent-warning-hover: #573700; /** Warning accent for cautionary states. (hover, 23% darker) */
-  --cu-color-accent-warning-active: #5d3c00; /** Warning accent for cautionary states. (active, 19% darker) */
-  --cu-color-accent-warning-inactive: #926f36; /** Warning accent for cautionary states. (inactive, 20% brighter) */
-  --cu-color-accent-warning-disabled: #71562a; /** Warning accent for cautionary states. (disabled, 80% saturation) */
-  --cu-color-accent-success-hover: #004d36; /** Success accent for confirmed states. (hover, 23% darker) */
-  --cu-color-accent-success-active: #00523b; /** Success accent for confirmed states. (active, 19% darker) */
-  --cu-color-accent-success-inactive: #40876e; /** Success accent for confirmed states. (inactive, 20% brighter) */
-  --cu-color-accent-success-disabled: #336855; /** Success accent for confirmed states. (disabled, 80% saturation) */
-  --cu-color-accent-positive-hover: #004d36; /** Positive accent for favorable states. (hover, 23% darker) */
-  --cu-color-accent-positive-active: #00523b; /** Positive accent for favorable states. (active, 19% darker) */
-  --cu-color-accent-positive-inactive: #40876e; /** Positive accent for favorable states. (inactive, 20% brighter) */
-  --cu-color-accent-positive-disabled: #336855; /** Positive accent for favorable states. (disabled, 80% saturation) */
-  --cu-color-accent-info-hover: #003590; /** Informational accent for guidance and neutral status. (hover, 23% darker) */
-  --cu-color-accent-info-active: #033a96; /** Informational accent for guidance and neutral status. (active, 19% darker) */
-  --cu-color-accent-info-inactive: #3b72d3; /** Informational accent for guidance and neutral status. (inactive, 20% brighter) */
-  --cu-color-accent-info-disabled: #2f58a2; /** Informational accent for guidance and neutral status. (disabled, 80% saturation) */
-  --cu-color-accent-discovery-hover: #3f2676; /** Discovery accent for new or exploratory content. (hover, 23% darker) */
-  --cu-color-accent-discovery-active: #432b7b; /** Discovery accent for new or exploratory content. (active, 19% darker) */
-  --cu-color-accent-discovery-inactive: #725db2; /** Discovery accent for new or exploratory content. (inactive, 20% brighter) */
-  --cu-color-accent-discovery-disabled: #584889; /** Discovery accent for new or exploratory content. (disabled, 80% saturation) */
-  --cu-color-on-accent-base: #f1f1f1; /** Content color placed on neutral accent backgrounds. */
-  --cu-color-on-accent-base-hover: #959595; /** Content color placed on neutral accent backgrounds. (hover, 30% darker) */
-  --cu-color-on-accent-base-active: #0c0c0d; /** Content color placed on neutral accent backgrounds. (active, light base primitive) */
-  --cu-color-on-accent-base-inactive: #030303; /** Content color placed on neutral accent backgrounds. (inactive, 40% darker) */
-  --cu-color-on-accent-base-disabled: rgba(241, 241, 241, 0.4); /** Content color placed on neutral accent backgrounds. (disabled, 40% opacity) */
-  --cu-color-on-accent-brand: #fafafa; /** Brand accent for primary actions and emphasis. */
-  --cu-color-on-accent-danger: #fafafa; /** Danger accent for destructive actions and critical states. */
-  --cu-color-on-accent-negative: #fafafa; /** Negative accent for error states and invalid input. */
-  --cu-color-on-accent-warning: #fafafa; /** Warning accent for cautionary states. */
-  --cu-color-on-accent-success: #fafafa; /** Success accent for confirmed states. */
-  --cu-color-on-accent-positive: #fafafa; /** Positive accent for favorable states. */
-  --cu-color-on-accent-info: #fafafa; /** Informational accent for guidance and neutral status. */
-  --cu-color-on-accent-discovery: #fafafa; /** Discovery accent for new or exploratory content. */
-  --cu-color-on-accent-brand-hover: #b2b2b2; /** Brand accent for primary actions and emphasis. (hover, 23% darker) */
-  --cu-color-on-accent-brand-active: #bebebe; /** Brand accent for primary actions and emphasis. (active, 19% darker) */
-  --cu-color-on-accent-brand-inactive: #ffffff; /** Brand accent for primary actions and emphasis. (inactive, 20% brighter) */
-  --cu-color-on-accent-brand-disabled: rgba(250, 250, 250, 0.4); /** Brand accent for primary actions and emphasis. (disabled, 40% opacity) */
-  --cu-color-on-accent-danger-hover: #b2b2b2; /** Danger accent for destructive actions and critical states. (hover, 23% darker) */
-  --cu-color-on-accent-danger-active: #bebebe; /** Danger accent for destructive actions and critical states. (active, 19% darker) */
-  --cu-color-on-accent-danger-inactive: #ffffff; /** Danger accent for destructive actions and critical states. (inactive, 20% brighter) */
-  --cu-color-on-accent-danger-disabled: rgba(250, 250, 250, 0.4); /** Danger accent for destructive actions and critical states. (disabled, 40% opacity) */
-  --cu-color-on-accent-negative-hover: #b2b2b2; /** Negative accent for error states and invalid input. (hover, 23% darker) */
-  --cu-color-on-accent-negative-active: #bebebe; /** Negative accent for error states and invalid input. (active, 19% darker) */
-  --cu-color-on-accent-negative-inactive: #ffffff; /** Negative accent for error states and invalid input. (inactive, 20% brighter) */
-  --cu-color-on-accent-negative-disabled: rgba(250, 250, 250, 0.4); /** Negative accent for error states and invalid input. (disabled, 40% opacity) */
-  --cu-color-on-accent-warning-hover: #b2b2b2; /** Warning accent for cautionary states. (hover, 23% darker) */
-  --cu-color-on-accent-warning-active: #bebebe; /** Warning accent for cautionary states. (active, 19% darker) */
-  --cu-color-on-accent-warning-inactive: #ffffff; /** Warning accent for cautionary states. (inactive, 20% brighter) */
-  --cu-color-on-accent-warning-disabled: rgba(250, 250, 250, 0.4); /** Warning accent for cautionary states. (disabled, 40% opacity) */
-  --cu-color-on-accent-success-hover: #b2b2b2; /** Success accent for confirmed states. (hover, 23% darker) */
-  --cu-color-on-accent-success-active: #bebebe; /** Success accent for confirmed states. (active, 19% darker) */
-  --cu-color-on-accent-success-inactive: #ffffff; /** Success accent for confirmed states. (inactive, 20% brighter) */
-  --cu-color-on-accent-success-disabled: rgba(250, 250, 250, 0.4); /** Success accent for confirmed states. (disabled, 40% opacity) */
-  --cu-color-on-accent-positive-hover: #b2b2b2; /** Positive accent for favorable states. (hover, 23% darker) */
-  --cu-color-on-accent-positive-active: #bebebe; /** Positive accent for favorable states. (active, 19% darker) */
-  --cu-color-on-accent-positive-inactive: #ffffff; /** Positive accent for favorable states. (inactive, 20% brighter) */
-  --cu-color-on-accent-positive-disabled: rgba(250, 250, 250, 0.4); /** Positive accent for favorable states. (disabled, 40% opacity) */
-  --cu-color-on-accent-info-hover: #b2b2b2; /** Informational accent for guidance and neutral status. (hover, 23% darker) */
-  --cu-color-on-accent-info-active: #bebebe; /** Informational accent for guidance and neutral status. (active, 19% darker) */
-  --cu-color-on-accent-info-inactive: #ffffff; /** Informational accent for guidance and neutral status. (inactive, 20% brighter) */
-  --cu-color-on-accent-info-disabled: rgba(250, 250, 250, 0.4); /** Informational accent for guidance and neutral status. (disabled, 40% opacity) */
-  --cu-color-on-accent-discovery-hover: #b2b2b2; /** Discovery accent for new or exploratory content. (hover, 23% darker) */
-  --cu-color-on-accent-discovery-active: #bebebe; /** Discovery accent for new or exploratory content. (active, 19% darker) */
-  --cu-color-on-accent-discovery-inactive: #ffffff; /** Discovery accent for new or exploratory content. (inactive, 20% brighter) */
-  --cu-color-on-accent-discovery-disabled: rgba(250, 250, 250, 0.4); /** Discovery accent for new or exploratory content. (disabled, 40% opacity) */
-  --cu-color-muted-base: #eaeaea; /** Muted neutral accent background for low-emphasis states. */
-  --cu-color-muted-brand: #68e8db; /** Muted brand accent background for low-emphasis states. */
-  --cu-color-muted-base-hover: #919191; /** Muted neutral accent background for low-emphasis states. (hover, 30% darker) */
-  --cu-color-muted-base-active: #cacaca; /** Muted neutral accent background for low-emphasis states. (active, 10% darker) */
-  --cu-color-muted-base-inactive: #030303; /** Muted neutral accent background for low-emphasis states. (inactive, 40% darker) */
-  --cu-color-muted-base-disabled: rgba(234, 234, 234, 0.4); /** Muted neutral accent background for low-emphasis states. (disabled, 40% opacity) */
-  --cu-color-muted-brand-hover: #08a99e; /** Muted brand accent background for low-emphasis states. (hover, 23% darker) */
-  --cu-color-muted-brand-active: #25b4a8; /** Muted brand accent background for low-emphasis states. (active, 19% darker) */
-  --cu-color-muted-brand-inactive: #9bffff; /** Muted brand accent background for low-emphasis states. (inactive, 20% brighter) */
-  --cu-color-muted-brand-disabled: #84e3d9; /** Muted brand accent background for low-emphasis states. (disabled, 80% saturation) */
-  --cu-color-muted-danger: #e37085; /** Generated danger muted background for the light theme */
-  --cu-color-muted-negative: #e37085; /** Generated negative muted background for the light theme */
-  --cu-color-muted-warning: #bd985e; /** Generated warning muted background for the light theme */
-  --cu-color-muted-success: #6ab196; /** Generated success muted background for the light theme */
-  --cu-color-muted-positive: #6ab196; /** Generated positive muted background for the light theme */
-  --cu-color-muted-info: #659dff; /** Generated info muted background for the light theme */
-  --cu-color-muted-discovery: #9e8ae4; /** Generated discovery muted background for the light theme */
-  --cu-color-muted-danger-hover: #ae4158; /** Generated danger muted background for the light theme (hover, 23% darker) */
-  --cu-color-muted-danger-active: #b74960; /** Generated danger muted background for the light theme (active, 19% darker) */
-  --cu-color-muted-danger-inactive: #ff9baf; /** Generated danger muted background for the light theme (inactive, 20% brighter) */
-  --cu-color-muted-danger-disabled: #d67a89; /** Generated danger muted background for the light theme (disabled, 80% saturation) */
-  --cu-color-muted-negative-hover: #ae4158; /** Generated negative muted background for the light theme (hover, 23% darker) */
-  --cu-color-muted-negative-active: #b74960; /** Generated negative muted background for the light theme (active, 19% darker) */
-  --cu-color-muted-negative-inactive: #ff9baf; /** Generated negative muted background for the light theme (inactive, 20% brighter) */
-  --cu-color-muted-negative-disabled: #d67a89; /** Generated negative muted background for the light theme (disabled, 80% saturation) */
-  --cu-color-muted-warning-hover: #8c692e; /** Generated warning muted background for the light theme (hover, 23% darker) */
-  --cu-color-muted-warning-active: #947137; /** Generated warning muted background for the light theme (active, 19% darker) */
-  --cu-color-muted-warning-inactive: #ebc489; /** Generated warning muted background for the light theme (inactive, 20% brighter) */
-  --cu-color-muted-warning-disabled: #b79a6d; /** Generated warning muted background for the light theme (disabled, 80% saturation) */
-  --cu-color-muted-success-hover: #388067; /** Generated success muted background for the light theme (hover, 23% darker) */
-  --cu-color-muted-success-active: #41896f; /** Generated success muted background for the light theme (active, 19% darker) */
-  --cu-color-muted-success-inactive: #96dfc2; /** Generated success muted background for the light theme (inactive, 20% brighter) */
-  --cu-color-muted-success-disabled: #77ae98; /** Generated success muted background for the light theme (disabled, 80% saturation) */
-  --cu-color-muted-positive-hover: #388067; /** Generated positive muted background for the light theme (hover, 23% darker) */
-  --cu-color-muted-positive-active: #41896f; /** Generated positive muted background for the light theme (active, 19% darker) */
-  --cu-color-muted-positive-inactive: #96dfc2; /** Generated positive muted background for the light theme (inactive, 20% brighter) */
-  --cu-color-muted-positive-disabled: #77ae98; /** Generated positive muted background for the light theme (disabled, 80% saturation) */
-  --cu-color-muted-info-hover: #376cc9; /** Generated info muted background for the light theme (hover, 23% darker) */
-  --cu-color-muted-info-active: #3f74d3; /** Generated info muted background for the light theme (active, 19% darker) */
-  --cu-color-muted-info-inactive: #90cbff; /** Generated info muted background for the light theme (inactive, 20% brighter) */
-  --cu-color-muted-info-disabled: #729fec; /** Generated info muted background for the light theme (disabled, 80% saturation) */
-  --cu-color-muted-discovery-hover: #715bb1; /** Generated discovery muted background for the light theme (hover, 23% darker) */
-  --cu-color-muted-discovery-active: #7863ba; /** Generated discovery muted background for the light theme (active, 19% darker) */
-  --cu-color-muted-discovery-inactive: #c9b5ff; /** Generated discovery muted background for the light theme (inactive, 20% brighter) */
-  --cu-color-muted-discovery-disabled: #9d8ed6; /** Generated discovery muted background for the light theme (disabled, 80% saturation) */
-  --cu-color-overlay-background: #ffffff; /** Surface color for floating overlays. */
-  --cu-color-overlay-border: #b0b0b1; /** Border color that defines floating overlays. */
-  --cu-color-overlay-backdrop: rgba(26, 28, 31, 0.4); /** Backdrop color that separates overlays from page content. */
-  --cu-color-shadow-resting-xsmall: 0px 1px 0px 0px #0000000d; /** Color used by the extra-small resting shadow. */
-  --cu-color-shadow-resting-small: 0px 1px 2px 0px #0000000d; /** Color used by the small resting shadow. */
-  --cu-color-shadow-resting-medium: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** Color used by the medium resting shadow. */
-  --cu-color-shadow-floating-small: 0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a; /** Color used by the small floating shadow. */
-  --cu-color-shadow-floating-medium: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a; /** Color used by the medium floating shadow. */
-  --cu-color-shadow-floating-large: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a; /** Color used by the large floating shadow. */
-  --cu-color-shadow-floating-xlarge: 0px 25px 50px -12px #00000040; /** Color used by the extra-large floating shadow. */
-  --cu-color-shadow-inset: inset 0px 1px 1px 0px #0000000d; /** Color used by the inset shadow. */
-  --cu-color-data-neutral-emphasis: #606164; /** High-emphasis neutral data-series color. */
-  --cu-color-data-neutral-subtle: #eaeaea; /** Low-emphasis neutral data-series color. */
-  --cu-color-data-brand-emphasis: #2055b3; /** High-emphasis brand data-series color. */
-  --cu-color-data-brand-subtle: #6da2ff; /** Low-emphasis brand data-series color. */
-  --cu-color-data-red-emphasis: #8e223e; /** High-emphasis red data-series color. */
-  --cu-color-data-red-subtle: #dd6c89; /** Low-emphasis red data-series color. */
-  --cu-color-data-orange-emphasis: #9f4000; /** High-emphasis orange data-series color. */
-  --cu-color-data-orange-subtle: #f19f71; /** Low-emphasis orange data-series color. */
-  --cu-color-data-yellow-emphasis: #765417; /** High-emphasis yellow data-series color. */
-  --cu-color-data-yellow-subtle: #f8b740; /** Low-emphasis yellow data-series color. */
-  --cu-color-data-green-emphasis: #216b53; /** High-emphasis green data-series color. */
-  --cu-color-data-green-subtle: #74d59f; /** Low-emphasis green data-series color. */
-  --cu-color-data-blue-emphasis: #2055b3; /** High-emphasis blue data-series color. */
-  --cu-color-data-blue-subtle: #6da2ff; /** Low-emphasis blue data-series color. */
-  --cu-color-data-purple-emphasis: #594395; /** High-emphasis purple data-series color. */
-  --cu-color-data-purple-subtle: #a690e1; /** Low-emphasis purple data-series color. */
-  --cu-color-data-pink-emphasis: #904272; /** High-emphasis pink data-series color. */
-  --cu-color-data-pink-subtle: #eb89c5; /** Low-emphasis pink data-series color. */
-  --cu-color-link-hover: #003590; /** Interactive color for links and linked text. (hover, 23% darker) */
-  --cu-color-link-active: #033a96; /** Interactive color for links and linked text. (active, 19% darker) */
-  --cu-color-link-inactive: #3b72d3; /** Interactive color for links and linked text. (inactive, 20% brighter) */
-  --cu-color-hairline-hover: #7c7c7d; /** Subtle color for hairline borders and separators. (hover, 23% darker) */
-  --cu-color-hairline-active: #9d9d9e; /** Subtle color for hairline borders and separators. (active, 8% darker) */
-  --cu-color-hairline-inactive: #e1e1e2; /** Subtle color for hairline borders and separators. (inactive, 20% brighter) */
-  --cu-color-on-muted-base: #151518; /** Generated base foreground on muted backgrounds */
-  --cu-color-on-muted-brand: #1fb2a6; /** Generated brand foreground on muted backgrounds */
-  --cu-color-on-muted-danger: #2f000c; /** Generated danger foreground on muted backgrounds */
-  --cu-color-on-muted-negative: #2f000c; /** Generated negative foreground on muted backgrounds */
-  --cu-color-on-muted-warning: #2d1c00; /** Generated warning foreground on muted backgrounds */
-  --cu-color-on-muted-success: #002b1e; /** Generated success foreground on muted backgrounds */
-  --cu-color-on-muted-positive: #002b1e; /** Generated positive foreground on muted backgrounds */
-  --cu-color-on-muted-info: #001c54; /** Generated info foreground on muted backgrounds */
-  --cu-color-on-muted-discovery: #20004c; /** Generated discovery foreground on muted backgrounds */
-  --cu-color-on-muted-base-hover: #232326; /** Generated base foreground on muted backgrounds (hover, 30% brighter) */
-  --cu-color-on-muted-base-active: #0c0c0d; /** Generated base foreground on muted backgrounds (active, light base primitive) */
-  --cu-color-on-muted-base-inactive: #030303; /** Generated base foreground on muted backgrounds (inactive, 40% darker) */
-  --cu-color-on-muted-base-disabled: #151517; /** Generated base foreground on muted backgrounds (disabled, 80% saturation) */
-  --cu-color-on-muted-brand-hover: #008277; /** Generated brand foreground on muted backgrounds (hover, 23% darker) */
-  --cu-color-on-muted-brand-active: #008a7f; /** Generated brand foreground on muted backgrounds (active, 19% darker) */
-  --cu-color-on-muted-brand-inactive: #5ddfd2; /** Generated brand foreground on muted backgrounds (inactive, 20% brighter) */
-  --cu-color-on-muted-brand-disabled: #4daea4; /** Generated brand foreground on muted backgrounds (disabled, 80% saturation) */
-  --cu-color-on-muted-danger-hover: #3b0916; /** Generated danger foreground on muted backgrounds (hover, 23% brighter) */
-  --cu-color-on-muted-danger-active: #390714; /** Generated danger foreground on muted backgrounds (active, 19% brighter) */
-  --cu-color-on-muted-danger-inactive: #240005; /** Generated danger foreground on muted backgrounds (inactive, 20% darker) */
-  --cu-color-on-muted-danger-disabled: #2b050e; /** Generated danger foreground on muted backgrounds (disabled, 80% saturation) */
-  --cu-color-on-muted-negative-hover: #3b0916; /** Generated negative foreground on muted backgrounds (hover, 23% brighter) */
-  --cu-color-on-muted-negative-active: #390714; /** Generated negative foreground on muted backgrounds (active, 19% brighter) */
-  --cu-color-on-muted-negative-inactive: #240005; /** Generated negative foreground on muted backgrounds (inactive, 20% darker) */
-  --cu-color-on-muted-negative-disabled: #2b050e; /** Generated negative foreground on muted backgrounds (disabled, 80% saturation) */
-  --cu-color-on-muted-warning-hover: #3b290c; /** Generated warning foreground on muted backgrounds (hover, 23% brighter) */
-  --cu-color-on-muted-warning-active: #392709; /** Generated warning foreground on muted backgrounds (active, 19% brighter) */
-  --cu-color-on-muted-warning-inactive: #211100; /** Generated warning foreground on muted backgrounds (inactive, 20% darker) */
-  --cu-color-on-muted-warning-disabled: #2a1d07; /** Generated warning foreground on muted backgrounds (disabled, 80% saturation) */
-  --cu-color-on-muted-success-hover: #001d11; /** Generated success foreground on muted backgrounds (hover, 23% darker) */
-  --cu-color-on-muted-success-active: #001f13; /** Generated success foreground on muted backgrounds (active, 19% darker) */
-  --cu-color-on-muted-success-inactive: #0f382a; /** Generated success foreground on muted backgrounds (inactive, 20% brighter) */
-  --cu-color-on-muted-success-disabled: #0b2a1f; /** Generated success foreground on muted backgrounds (disabled, 80% saturation) */
-  --cu-color-on-muted-positive-hover: #001d11; /** Generated positive foreground on muted backgrounds (hover, 23% darker) */
-  --cu-color-on-muted-positive-active: #001f13; /** Generated positive foreground on muted backgrounds (active, 19% darker) */
-  --cu-color-on-muted-positive-inactive: #0f382a; /** Generated positive foreground on muted backgrounds (inactive, 20% brighter) */
-  --cu-color-on-muted-positive-disabled: #0b2a1f; /** Generated positive foreground on muted backgrounds (disabled, 80% saturation) */
-  --cu-color-on-muted-info-hover: #000c44; /** Generated info foreground on muted backgrounds (hover, 23% darker) */
-  --cu-color-on-muted-info-active: #000f47; /** Generated info foreground on muted backgrounds (active, 19% darker) */
-  --cu-color-on-muted-info-inactive: #0a2a63; /** Generated info foreground on muted backgrounds (inactive, 20% brighter) */
-  --cu-color-on-muted-info-disabled: #071f4a; /** Generated info foreground on muted backgrounds (disabled, 80% saturation) */
-  --cu-color-on-muted-discovery-hover: #2b105a; /** Generated discovery foreground on muted backgrounds (hover, 23% brighter) */
-  --cu-color-on-muted-discovery-active: #290d58; /** Generated discovery foreground on muted backgrounds (active, 19% brighter) */
-  --cu-color-on-muted-discovery-inactive: #17003f; /** Generated discovery foreground on muted backgrounds (inactive, 20% darker) */
-  --cu-color-on-muted-discovery-disabled: #1e0a42; /** Generated discovery foreground on muted backgrounds (disabled, 80% saturation) */
-  --cu-size-zero: 0px; /** No size */
-  --cu-size-xxs: 2px; /** A 2px xxs size step */
-  --cu-size-xs: 4px; /** A 4px xs size step */
-  --cu-size-sm: 8px; /** A 8px sm size step */
-  --cu-size-md: 10px; /** A 10px md size step */
-  --cu-size-lg: 12px; /** A 12px lg size step */
-  --cu-size-xl: 14px; /** A 14px xl size step */
-  --cu-size-2xl: 16px; /** A 16px 2xl size step */
-  --cu-size-3xl: 18px; /** A 18px 3xl size step */
-  --cu-size-4xl: 20px; /** A 20px 4xl size step */
-  --cu-size-5xl: 22px; /** A 22px 5xl size step */
-  --cu-size-6xl: 24px; /** A 24px 6xl size step */
-  --cu-size-7xl: 26px; /** A 26px 7xl size step */
-  --cu-size-8xl: 32px; /** A 32px 8xl size step */
-  --cu-size-9xl: 37px; /** A 37px 9xl size step */
-  --cu-size-10xl: 42px; /** A 42px 10xl size step */
-  --cu-size-11xl: 47px; /** A 47px 11xl size step */
-  --cu-size-12xl: 52px; /** A 52px 12xl size step */
-  --cu-size-13xl: 62px; /** A 62px 13xl size step */
-  --cu-size-14xl: 72px; /** A 72px 14xl size step */
-  --cu-size-15xl: 82px; /** A 82px 15xl size step */
-  --cu-size-16xl: 92px; /** A 92px 16xl size step */
-  --cu-size-17xl: 102px; /** A 102px 17xl size step */
-  --cu-size-18xl: 112px; /** A 112px 18xl size step */
-  --cu-size-19xl: 112px; /** A 112px 19xl size step */
-  --cu-size-20xl: 122px; /** A 122px 20xl size step */
-  --cu-size-21xl: 132px; /** A 132px 21xl size step */
-  --cu-size-22xl: 142px; /** A 142px 22xl size step */
-  --cu-size-23xl: 152px; /** A 152px 23xl size step */
-  --cu-size-24xl: 162px; /** A 162px 24xl size step */
-  --cu-size-25xl: 172px; /** A 172px 25xl size step */
-  --cu-size-26xl: 182px; /** A 182px 26xl size step */
-  --cu-size-27xl: 192px; /** A 192px 27xl size step */
-  --cu-size-28xl: 202px; /** A 202px 28xl size step */
-  --cu-size-29xl: 212px; /** A 212px 29xl size step */
-  --cu-size-30xl: 222px; /** A 222px 30xl size step */
-  --cu-size-31xl: 232px; /** A 232px 31xl size step */
-  --cu-size-32xl: 242px; /** A 242px 32xl size step */
-  --cu-size-33xl: 252px; /** A 252px 33xl size step */
-  --cu-size-34xl: 262px; /** A 262px 34xl size step */
-  --cu-size-35xl: 272px; /** A 272px 35xl size step */
-  --cu-size-36xl: 282px; /** A 282px 36xl size step */
-  --cu-size-37xl: 284px; /** A 284px 37xl size step */
-  --cu-z-index-0: 0; /** Base stacking level */
-  --cu-z-index-10: 100; /** Low stacking level */
-  --cu-z-index-20: 200; /** Raised stacking level */
-  --cu-z-index-30: 300; /** Elevated stacking level */
-  --cu-z-index-40: 400; /** High stacking level */
-  --cu-z-index-50: 500; /** Overlay stacking level */
-  --cu-z-index-60: 600; /** Modal stacking level */
-  --cu-z-index-70: 700; /** Popover stacking level */
-  --cu-z-index-80: 800; /** Toast stacking level */
-  --cu-z-index-90: 900; /** Topmost stacking level */
-  --cu-spacing-zero: 0px; /** No spacing */
-  --cu-spacing-xxs: 0.5px; /** A 0.5px xxs spacing step (from size.xxs via sizeToSpace) */
-  --cu-spacing-xs: 1px; /** A 1px xs spacing step (from size.xs via sizeToSpace) */
-  --cu-spacing-sm: 1.5px; /** A 1.5px sm spacing step (from size.sm via sizeToSpace) */
-  --cu-spacing-md: 2px; /** A 2px md spacing step (from size.md via sizeToSpace) */
-  --cu-spacing-lg: 4px; /** A 4px lg spacing step (from size.lg via sizeToSpace) */
-  --cu-spacing-xl: 7px; /** A 7px xl spacing step (from size.xl via sizeToSpace) */
-  --cu-spacing-2xl: 10px; /** A 10px 2xl spacing step (from size.2xl via sizeToSpace) */
-  --cu-spacing-3xl: 13px; /** A 13px 3xl spacing step (from size.3xl via sizeToSpace) */
-  --cu-spacing-4xl: 16px; /** A 16px 4xl spacing step (from size.4xl via sizeToSpace) */
-  --cu-spacing-5xl: 18px; /** A 18px 5xl spacing step (from size.5xl via sizeToSpace) */
-  --cu-spacing-6xl: 21px; /** A 21px 6xl spacing step (from size.6xl via sizeToSpace) */
-  --cu-spacing-7xl: 24px; /** A 24px 7xl spacing step (from size.7xl via sizeToSpace) */
-  --cu-spacing-8xl: 32px; /** A 32px 8xl spacing step (from size.8xl via sizeToSpace) */
-  --cu-spacing-9xl: 39px; /** A 39px 9xl spacing step (from size.9xl via sizeToSpace) */
-  --cu-spacing-10xl: 46px; /** A 46px 10xl spacing step (from size.10xl via sizeToSpace) */
-  --cu-spacing-11xl: 53px; /** A 53px 11xl spacing step (from size.11xl via sizeToSpace) */
-  --cu-spacing-12xl: 60px; /** A 60px 12xl spacing step (from size.12xl via sizeToSpace) */
-  --cu-spacing-13xl: 74px; /** A 74px 13xl spacing step (from size.13xl via sizeToSpace) */
-  --cu-spacing-14xl: 88px; /** A 88px 14xl spacing step (from size.14xl via sizeToSpace) */
-  --cu-spacing-15xl: 102px; /** A 102px 15xl spacing step (from size.15xl via sizeToSpace) */
-  --cu-spacing-16xl: 116px; /** A 116px 16xl spacing step (from size.16xl via sizeToSpace) */
-  --cu-spacing-17xl: 130px; /** A 130px 17xl spacing step (from size.17xl via sizeToSpace) */
-  --cu-spacing-18xl: 144px; /** A 144px 18xl spacing step (from size.18xl via sizeToSpace) */
-  --cu-spacing-19xl: 144px; /** A 144px 19xl spacing step (from size.19xl via sizeToSpace) */
-  --cu-spacing-20xl: 158px; /** A 158px 20xl spacing step (from size.20xl via sizeToSpace) */
-  --cu-spacing-21xl: 172px; /** A 172px 21xl spacing step (from size.21xl via sizeToSpace) */
-  --cu-spacing-22xl: 186px; /** A 186px 22xl spacing step (from size.22xl via sizeToSpace) */
-  --cu-font-size-xxs: 0.75rem; /** Extra small font size (0.75rem) */
-  --cu-font-size-xs: 0.875rem; /** Extra small font size (0.875rem) */
-  --cu-font-size-sm: 1rem; /** Small font size (1rem) */
-  --cu-font-size-md: 1.125rem; /** Medium font size (1.125rem) */
-  --cu-font-size-lg: 1.25rem; /** Large font size (1.25rem) */
-  --cu-font-size-xl: 1.5rem; /** Extra large font size (1.5rem) */
-  --cu-font-size-2xl: 1.875rem; /** 2X large font size (1.875rem) */
-  --cu-font-size-3xl: 2.25rem; /** 3X large font size (2.25rem) */
-  --cu-font-size-4xl: 3rem; /** 4X large font size (3rem) */
-  --cu-font-size-5xl: 3.75rem; /** 5X large font size (3.75rem) */
-  --cu-font-size-6xl: 4.5rem; /** 6X large font size (4.5rem) */
-  --cu-font-size-7xl: 6rem; /** 7X large font size (6rem) */
-  --cu-font-size-8xl: 8rem; /** 8X large font size (8rem) */
-  --cu-font-size-9xl: 10rem; /** 9X large font size (10rem) */
-  --cu-font-size-10xl: 12rem; /** 10X large font size (12rem) */
-  --cu-font-size-11xl: 14rem; /** 11X large font size (14rem) */
-  --cu-font-size-12xl: 16rem; /** 12X large font size (16rem) */
-  --cu-font-size-13xl: 18rem; /** 13X large font size (18rem) */
-  --cu-font-size-14xl: 20rem; /** 14X large font size (20rem) */
-  --cu-font-size-15xl: 24rem; /** 15X large font size (24rem) */
-  --cu-font-weight-thin: 100; /** Thin font weight (100) */
-  --cu-font-weight-extralight: 200; /** Extra light font weight (200) */
-  --cu-font-weight-light: 300; /** Light font weight (300) */
-  --cu-font-weight-normal: 400; /** Normal font weight (400) */
-  --cu-font-weight-medium: 500; /** Medium font weight (500) */
-  --cu-font-weight-semibold: 600; /** Semibold font weight (600) */
-  --cu-font-weight-bold: 700; /** Bold font weight (700) */
-  --cu-font-weight-extrabold: 800; /** Extra bold font weight (800) */
-  --cu-font-weight-black: 900; /** Black font weight (900) */
-  --cu-letter-spacing-tighter: -0.05rem; /** Tighter letter spacing (-0.05em) */
-  --cu-letter-spacing-tight: -0.025rem; /** Tight letter spacing (-0.025em) */
-  --cu-letter-spacing-normal: 0rem; /** Normal letter spacing (0em) */
-  --cu-letter-spacing-wide: 0.025rem; /** Wide letter spacing (0.025em) */
-  --cu-letter-spacing-wider: 0.05rem; /** Wider letter spacing (0.05em) */
-  --cu-letter-spacing-widest: 0.1rem; /** Widest letter spacing (0.1em) */
-  --cu-line-height-none: 0.85; /** No extra line height (0.85) */
-  --cu-line-height-tight: 1; /** Tight line height (1) */
-  --cu-line-height-snug: 1.25; /** Snug line height (1.25) */
-  --cu-line-height-normal: 1.375; /** Normal line height (1.375) */
-  --cu-line-height-relaxed: 1.5; /** Relaxed line height (1.5) */
-  --cu-line-height-loose: 1.85; /** Loose line height (1.85) */
-  --cu-line-height-xs: 1.333333; /** Line height for text-xs (calc(1 / 0.75)) */
-  --cu-line-height-sm: 1.428571; /** Line height for text-sm (calc(1.25 / 0.875)) */
-  --cu-line-height-md: 1.5; /** Line height for text-md (calc(1.5 / 1)) */
-  --cu-line-height-lg: 1.555556; /** Line height for text-lg (calc(1.75 / 1.125)) */
-  --cu-line-height-xl: 1.4; /** Line height for text-xl (calc(1.75 / 1.25)) */
-  --cu-line-height-2xl: 1.333333; /** Line height for text-2xl (calc(2 / 1.5)) */
-  --cu-line-height-3xl: 1.2; /** Line height for text-3xl (calc(2.25 / 1.875)) */
-  --cu-line-height-4xl: 1.111111; /** Line height for text-4xl (calc(2.5 / 2.25)) */
-  --cu-line-height-5xl: 1; /** Line height for text-5xl (1) */
-  --cu-line-height-6xl: 1; /** Line height for text-6xl (1) */
-  --cu-line-height-7xl: 1; /** Line height for text-7xl (1) */
-  --cu-line-height-8xl: 1; /** Line height for text-8xl (1) */
-  --cu-line-height-9xl: 1; /** Line height for text-9xl (1) */
-  --cu-line-height-10xl: 1; /** Line height for text-10xl (1) */
-  --cu-border-radius-zero: 0rem; /** No radius */
-  --cu-border-radius-xs: 0.125rem; /** Extra small radius (0.125rem) */
-  --cu-border-radius-sm: 0.25rem; /** Small radius (0.25rem) */
-  --cu-border-radius-md: 0.375rem; /** Medium radius (0.375rem) */
-  --cu-border-radius-lg: 0.5rem; /** Large radius (0.5rem) */
-  --cu-border-radius-xl: 0.75rem; /** Extra large radius (0.75rem) */
-  --cu-border-radius-2xl: 1rem; /** 2X large radius (1rem) */
-  --cu-border-radius-3xl: 1.5rem; /** 3X large radius (1.5rem) */
-  --cu-border-radius-4xl: 2rem; /** 4X large radius (2rem) */
-  --cu-border-radius-full: 100%; /** Full radius (100%) */
-  --cu-border-radius-container: 0.5rem; /** The border radius use for large containers */
-  --cu-border-radius-card: 0.375rem; /** The border radius use for cards */
-  --cu-border-radius-button: 0.5rem; /** The border radius use for triggers, such as buttons and badges */
-  --cu-border-radius-control: 0.5rem; /** The border radius use for controls, such as inputs and selects */
-  --cu-border-radius-checkbox: 0.375rem; /** The border radius use for checkbox components */
-  --cu-border-radius-dialog: 0.75rem; /** The border radius use for dialogs */
-  --cu-border-radius-sheet: 0rem; /** The border radius use for sheets (none) */
-  --cu-border-radius-drawer: 2rem; /** The border radius use for drawers */
-  --cu-border-radius-popover: 0.375rem; /** The border radius use for popovers */
-  --cu-border-radius-tooltip: 0.375rem; /** The border radius use for tooltips */
-  --cu-shadow-2xs: 0px 1px 0px 0px #0000000d; /** 2X small shadow */
-  --cu-shadow-xs: 0px 1px 2px 0px #0000000d; /** Extra small shadow */
-  --cu-shadow-sm: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** Small shadow */
-  --cu-shadow-md: 0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a; /** Medium shadow */
-  --cu-shadow-lg: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a; /** Large shadow */
-  --cu-shadow-xl: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a; /** Extra large shadow */
-  --cu-shadow-2xl: 0px 25px 50px -12px #00000040; /** 2X large shadow */
-  --cu-inset-shadow-2xs: inset 0px 1px 0px 0px #0000000d; /** 2X small inset shadow */
-  --cu-inset-shadow-xs: inset 0px 1px 1px 0px #0000000d; /** Extra small inset shadow */
-  --cu-inset-shadow-sm: inset 0px 2px 4px 0px #0000000d; /** Small inset shadow */
-  --cu-drop-shadow-xs: 0px 1px 1px 0px #0000000d; /** Extra small drop shadow */
-  --cu-drop-shadow-sm: 0px 1px 2px 0px #00000026; /** Small drop shadow */
-  --cu-drop-shadow-md: 0px 3px 3px 0px #0000001f; /** Medium drop shadow */
-  --cu-drop-shadow-lg: 0px 4px 4px 0px #00000026; /** Large drop shadow */
-  --cu-drop-shadow-xl: 0px 9px 7px 0px #0000001a; /** Extra large drop shadow */
-  --cu-drop-shadow-2xl: 0px 25px 25px 0px #00000026; /** 2X large drop shadow */
-  --cu-text-shadow-2xs: 0px 1px 0px 0px #00000026; /** 2X small text shadow */
-  --cu-text-shadow-xs: 0px 1px 1px 0px #00000033; /** Extra small text shadow */
-  --cu-text-shadow-sm: 0px 1px 0px 0px #00000013, 0px 1px 1px 0px #00000013, 0px 2px 2px 0px #00000013; /** Small text shadow */
-  --cu-text-shadow-md: 0px 1px 1px 0px #0000001a, 0px 1px 2px 0px #0000001a, 0px 2px 4px 0px #0000001a; /** Medium text shadow */
-  --cu-text-shadow-lg: 0px 1px 2px 0px #0000001a, 0px 3px 2px 0px #0000001a, 0px 4px 8px 0px #0000001a; /** Large text shadow */
-  --cu-ease-in: cubic-bezier(0.4, 0, 1, 1); /** Ease-in cubic bezier */
-  --cu-ease-out: cubic-bezier(0, 0, 0.2, 1); /** Ease-out cubic bezier */
-  --cu-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); /** Ease-in-out cubic bezier */
-  --cu-durations-instant: [object Object]; /** Instant duration */
-  --cu-durations-short: [object Object]; /** Short duration */
-  --cu-durations-medium: [object Object]; /** Medium duration */
-  --cu-durations-long: [object Object]; /** Long duration */
-  --cu-blur-xs: 4px; /** Extra small blur (4px) */
-  --cu-blur-sm: 8px; /** Small blur (8px) */
-  --cu-blur-md: 12px; /** Medium blur (12px) */
-  --cu-blur-lg: 16px; /** Large blur (16px) */
-  --cu-blur-xl: 24px; /** Extra large blur (24px) */
-  --cu-blur-2xl: 40px; /** 2X large blur (40px) */
-  --cu-blur-3xl: 64px; /** 3X large blur (64px) */
-  --cu-ring-base: 0px 0px 0px 3px #15151814; /** The base ring variant */
-  --cu-ring-base-subtle: 0px 0px 0px 1px #15151814; /** The base subtle ring variant */
-  --cu-ring-base-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #15151814; /** The base ring variant with a 3px offset */
-  --cu-ring-base-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #15151814; /** The base subtle ring variant with a 3px offset */
-  --cu-ring-brand: 0px 0px 0px 3px #1fb2a626; /** The brand ring variant */
-  --cu-ring-brand-subtle: 0px 0px 0px 1px #1fb2a626; /** The brand subtle ring variant */
-  --cu-ring-brand-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #1fb2a626; /** The brand ring variant with a 3px offset */
-  --cu-ring-brand-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #1fb2a626; /** The brand subtle ring variant with a 3px offset */
-  --cu-ring-danger: 0px 0px 0px 3px #8e223e26; /** The danger ring variant */
-  --cu-ring-danger-subtle: 0px 0px 0px 1px #8e223e26; /** The danger subtle ring variant */
-  --cu-ring-danger-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #8e223e26; /** The danger ring variant with a 3px offset */
-  --cu-ring-danger-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #8e223e26; /** The danger subtle ring variant with a 3px offset */
-  --cu-ring-warning: 0px 0px 0px 3px #76541726; /** The warning ring variant */
-  --cu-ring-warning-subtle: 0px 0px 0px 1px #76541726; /** The warning subtle ring variant */
-  --cu-ring-warning-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #76541726; /** The warning ring variant with a 3px offset */
-  --cu-ring-warning-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #76541726; /** The warning subtle ring variant with a 3px offset */
-  --cu-ring-success: 0px 0px 0px 3px #216b5326; /** The success ring variant */
-  --cu-ring-success-subtle: 0px 0px 0px 1px #216b5326; /** The success subtle ring variant */
-  --cu-ring-success-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #216b5326; /** The success ring variant with a 3px offset */
-  --cu-ring-success-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #216b5326; /** The success subtle ring variant with a 3px offset */
-  --cu-ring-info: 0px 0px 0px 3px #2055b326; /** The info ring variant */
-  --cu-ring-info-subtle: 0px 0px 0px 1px #2055b326; /** The info subtle ring variant */
-  --cu-ring-info-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #2055b326; /** The info ring variant with a 3px offset */
-  --cu-ring-info-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #2055b326; /** The info subtle ring variant with a 3px offset */
-  --cu-ring-discovery: 0px 0px 0px 3px #59439526; /** The discovery ring variant */
-  --cu-ring-discovery-subtle: 0px 0px 0px 1px #59439526; /** The discovery subtle ring variant */
-  --cu-ring-discovery-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #59439526; /** The discovery ring variant with a 3px offset */
-  --cu-ring-discovery-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #59439526; /** The discovery subtle ring variant with a 3px offset */
-  --cu-ring-positive: 0px 0px 0px 3px #216b5326; /** The positive ring variant */
-  --cu-ring-positive-subtle: 0px 0px 0px 1px #216b5326; /** The positive subtle ring variant */
-  --cu-ring-positive-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #216b5326; /** The positive ring variant with a 3px offset */
-  --cu-ring-positive-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #216b5326; /** The positive subtle ring variant with a 3px offset */
-  --cu-ring-negative: 0px 0px 0px 3px #8e223e26; /** The negative ring variant */
-  --cu-ring-negative-subtle: 0px 0px 0px 1px #8e223e26; /** The negative subtle ring variant */
-  --cu-ring-negative-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #8e223e26; /** The negative ring variant with a 3px offset */
-  --cu-ring-negative-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #8e223e26; /** The negative subtle ring variant with a 3px offset */
-  --cu-typography-display-hero: 600 3.75rem/1.25 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - hero typography variant */
-  --cu-typography-display-lg: 600 2.25rem/1.25 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - large typography variant */
-  --cu-typography-display-md: 700 1.5rem/1.25 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - medium typography variant */
-  --cu-typography-display-sm: 700 1.25rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The display - small typography variant */
-  --cu-typography-title-lg: 500 1.125rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The button typography variant */
-  --cu-typography-title-sm: 400 0.75rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The title small typography variant */
-  --cu-typography-body: 400 1.125rem/1.375 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The body typography variant */
-  --cu-typography-caption: italic 400 1rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The caption typography variant */
-  --cu-typography-button: 600 1.125rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The button typography variant */
-  --cu-typography-eyebrow: 600 1.125rem/1 'Storm Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /** The eyebrow typography variant */
-  --cu-typography-code: 400 1.25rem/1.25 'Google Sans Code'; /** The code typography variant */
+  --storm-color-transparent: rgba(255, 255, 255, 0); /** Fully transparent white. */
+  --storm-color-black: #0c0c0d; /** Near-black neutral. */
+  --storm-color-white: #ffffff; /** Pure white. */
+  --storm-color-neutral-1: #fafafa; /** Bright off-white gray. */
+  --storm-color-neutral-2: #f1f1f1; /** Very light gray. */
+  --storm-color-neutral-3: #eaeaea; /** Light gray. */
+  --storm-color-neutral-4: #e1e1e1; /** Soft light gray. */
+  --storm-color-neutral-5: #cacacb; /** Pale gray. */
+  --storm-color-neutral-6: #b0b0b1; /** Light-medium gray. */
+  --storm-color-neutral-7: #959698; /** Medium gray. */
+  --storm-color-neutral-8: #7b7b7e; /** Dark medium gray. */
+  --storm-color-neutral-9: #606164; /** Deep gray. */
+  --storm-color-neutral-10: #46464a; /** Charcoal gray. */
+  --storm-color-neutral-11: #2b2c30; /** Dark charcoal gray. */
+  --storm-color-neutral-12: #242528; /** Deep graphite gray. */
+  --storm-color-neutral-13: #1f1f21; /** Near-black graphite. */
+  --storm-color-neutral-14: #151518; /** Almost black gray. */
+  --storm-color-red-1: #e2819a; /** Pale coral red. */
+  --storm-color-red-2: #dd6c89; /** Light coral red. */
+  --storm-color-red-3: #d95778; /** Soft coral red. */
+  --storm-color-red-4: #d44267; /** Warm salmon red. */
+  --storm-color-red-5: #cf2d56; /** Muted raspberry red. */
+  --storm-color-red-6: #ae284a; /** Deep raspberry red. */
+  --storm-color-red-7: #8e223e; /** Rich raspberry red. */
+  --storm-color-red-8: #6f1c31; /** Dark burgundy red. */
+  --storm-color-red-9: #501524; /** Deep wine red. */
+  --storm-color-orange-1: #f6c3a7; /** Pale peach orange. */
+  --storm-color-orange-2: #f4b18c; /** Light apricot orange. */
+  --storm-color-orange-3: #f19f71; /** Soft sandy orange. */
+  --storm-color-orange-4: #ef8c56; /** Light peach orange. */
+  --storm-color-orange-5: #ec7a3b; /** Muted warm orange. */
+  --storm-color-orange-6: #df6520; /** Medium tangerine orange. */
+  --storm-color-orange-7: #bf520b; /** Bright amber orange. */
+  --storm-color-orange-8: #9f4000; /** Rich burnt orange. */
+  --storm-color-orange-9: #803000; /** Deep burnt orange. */
+  --storm-color-yellow-1: #facd7b; /** Pale wheat yellow. */
+  --storm-color-yellow-2: #f9c25e; /** Light sandy yellow. */
+  --storm-color-yellow-3: #f8b740; /** Soft golden yellow. */
+  --storm-color-yellow-4: #f7ac23; /** Muted amber yellow. */
+  --storm-color-yellow-5: #f0a824; /** Medium honey yellow. */
+  --storm-color-yellow-6: #df9d24; /** Warm wheat yellow. */
+  --storm-color-yellow-7: #c58c22; /** Rich golden yellow. */
+  --storm-color-yellow-8: #a2731e; /** Deep honey yellow. */
+  --storm-color-yellow-9: #765417; /** Dark ochre yellow. */
+  --storm-color-green-1: #d1f1d6; /** Pale mint green. */
+  --storm-color-green-2: #a2e3b6; /** Light spring green. */
+  --storm-color-green-3: #74d59f; /** Soft leaf green. */
+  --storm-color-green-4: #45c791; /** Muted leaf green. */
+  --storm-color-green-5: #38a97e; /** Cool mint green. */
+  --storm-color-green-6: #2c8a69; /** Medium jade green. */
+  --storm-color-green-7: #216b53; /** Rich jade green. */
+  --storm-color-green-8: #164a3c; /** Deep forest green. */
+  --storm-color-green-9: #0c2a22; /** Dark emerald green. */
+  --storm-color-blue-1: #abcaff; /** Pale periwinkle blue. */
+  --storm-color-blue-2: #8cb6ff; /** Light periwinkle blue. */
+  --storm-color-blue-3: #6da2ff; /** Light sky blue. */
+  --storm-color-blue-4: #4d8eff; /** Soft cornflower blue. */
+  --storm-color-blue-5: #2e7aff; /** Bright cobalt blue. */
+  --storm-color-blue-6: #2768d9; /** Medium azure blue. */
+  --storm-color-blue-7: #2055b3; /** Deep azure blue. */
+  --storm-color-blue-8: #19438c; /** Vivid cerulean blue. */
+  --storm-color-blue-9: #123166; /** Rich cerulean blue. */
+  --storm-color-purple-1: #cec2ee; /** Pale lavender purple. */
+  --storm-color-purple-2: #baa9e8; /** Light periwinkle purple. */
+  --storm-color-purple-3: #a690e1; /** Soft lavender purple. */
+  --storm-color-purple-4: #9277da; /** Soft violet purple. */
+  --storm-color-purple-5: #7f64c4; /** Muted indigo purple. */
+  --storm-color-purple-6: #6c53ad; /** Medium periwinkle purple. */
+  --storm-color-purple-7: #594395; /** Deep periwinkle purple. */
+  --storm-color-purple-8: #47347c; /** Vivid indigo purple. */
+  --storm-color-purple-9: #362661; /** Rich slate indigo. */
+  --storm-color-pink-1: #f5c7e4; /** Pale blush pink. */
+  --storm-color-pink-2: #f49ed1; /** Light blush pink. */
+  --storm-color-pink-3: #eb89c5; /** Soft rose pink. */
+  --storm-color-pink-4: #e774bb; /** Bright fuchsia pink. */
+  --storm-color-pink-5: #e171b7; /** Vivid fuchsia pink. */
+  --storm-color-pink-6: #df6db3; /** Rich magenta pink. */
+  --storm-color-pink-7: #c25c9b; /** Deep fuchsia pink. */
+  --storm-color-pink-8: #904272; /** Deep berry pink. */
+  --storm-color-pink-9: #482039; /** Dark plum pink. */
+  --storm-color-ink-emphasis: #2b2c30; /** Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options. */
+  --storm-color-ink-body: #606164; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. */
+  --storm-color-ink-subtle: #b0b0b1; /** Lower-emphasis text and icon color for supporting content that should recede behind body copy. Use it for metadata, secondary labels and decorative icons. Used by Breadcrumb separators, EyebrowText, TableOfContents entries, FileTree, DatePicker, inactive Slider values and NavigationHeader links. */
+  --storm-color-ink-subtlest: #cacacb; /** Lowest-emphasis text and icon color, for content that should be legible but barely noticed. Use it for hints and optional markers. Used by Field for the `optional` marker beside a field label; avoid it for anything the user must read. */
+  --storm-color-surface-sunken: #e1e1e1; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. */
+  --storm-color-surface-canvas: #eaeaea; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. */
+  --storm-color-surface-elevated: #f1f1f1; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. */
+  --storm-color-surface-floating: #fafafa; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. */
+  --storm-color-surface-overlay: #ffffff; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. */
+  --storm-color-surface-sunken-hover: #a0a0a0; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hover, 23% darker) */
+  --storm-color-surface-sunken-active: #ababab; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 19% darker) */
+  --storm-color-surface-sunken-inactive: #ffffff; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 20% brighter) */
+  --storm-color-surface-sunken-disabled: rgba(225, 225, 225, 0.4); /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 40% opacity) */
+  --storm-color-surface-canvas-hover: #a6a6a6; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hover, 23% darker) */
+  --storm-color-surface-canvas-active: #b2b2b2; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 19% darker) */
+  --storm-color-surface-canvas-inactive: #ffffff; /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 20% brighter) */
+  --storm-color-surface-canvas-disabled: rgba(234, 234, 234, 0.4); /** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 40% opacity) */
+  --storm-color-surface-elevated-hover: #ababab; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hover, 23% darker) */
+  --storm-color-surface-elevated-active: #b7b7b7; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 19% darker) */
+  --storm-color-surface-elevated-inactive: #ffffff; /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 20% brighter) */
+  --storm-color-surface-elevated-disabled: rgba(241, 241, 241, 0.4); /** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 40% opacity) */
+  --storm-color-surface-floating-hover: #b2b2b2; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker) */
+  --storm-color-surface-floating-active: #bebebe; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker) */
+  --storm-color-surface-floating-inactive: #ffffff; /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter) */
+  --storm-color-surface-floating-disabled: rgba(250, 250, 250, 0.4); /** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 40% opacity) */
+  --storm-color-surface-overlay-hover: #b6b6b6; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hover, 23% darker) */
+  --storm-color-surface-overlay-active: #c2c2c2; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 19% darker) */
+  --storm-color-surface-overlay-inactive: #ffffff; /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 20% brighter) */
+  --storm-color-surface-overlay-disabled: rgba(255, 255, 255, 0.4); /** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 40% opacity) */
+  --storm-color-required: #8e223e; /** Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related. */
+  --storm-color-link: #2055b3; /** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. */
+  --storm-color-hairline: #b0b0b1; /** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. */
+  --storm-color-selection-background: #1fb2a6; /** Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme. */
+  --storm-color-selection-foreground: #fafafa; /** Text color of highlighted text, chosen to stay readable on the brand-accent selection background. */
+  --storm-color-accent-base: #151518; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. */
+  --storm-color-accent-brand: #1fb2a6; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. */
+  --storm-color-accent-danger: #8e223e; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. */
+  --storm-color-accent-negative: #8e223e; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. */
+  --storm-color-accent-warning: #765417; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. */
+  --storm-color-accent-success: #216b53; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. */
+  --storm-color-accent-positive: #216b53; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. */
+  --storm-color-accent-info: #2055b3; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. */
+  --storm-color-accent-discovery: #594395; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. */
+  --storm-color-accent-base-hover: #232326; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hover, 30% brighter) */
+  --storm-color-accent-base-active: #0c0c0d; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light base primitive) */
+  --storm-color-accent-base-inactive: #030303; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker) */
+  --storm-color-accent-base-disabled: #151517; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 80% saturation) */
+  --storm-color-accent-brand-hover: #008277; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker) */
+  --storm-color-accent-brand-active: #008a7f; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker) */
+  --storm-color-accent-brand-inactive: #5ddfd2; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter) */
+  --storm-color-accent-brand-disabled: #4daea4; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 80% saturation) */
+  --storm-color-accent-danger-hover: #6e0025; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker) */
+  --storm-color-accent-danger-active: #730029; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker) */
+  --storm-color-accent-danger-inactive: #ab3e56; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter) */
+  --storm-color-accent-danger-disabled: #843142; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 80% saturation) */
+  --storm-color-accent-negative-hover: #6e0025; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker) */
+  --storm-color-accent-negative-active: #730029; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker) */
+  --storm-color-accent-negative-inactive: #ab3e56; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter) */
+  --storm-color-accent-negative-disabled: #843142; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 80% saturation) */
+  --storm-color-accent-warning-hover: #573700; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker) */
+  --storm-color-accent-warning-active: #5d3c00; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker) */
+  --storm-color-accent-warning-inactive: #926f36; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter) */
+  --storm-color-accent-warning-disabled: #71562a; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 80% saturation) */
+  --storm-color-accent-success-hover: #004d36; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker) */
+  --storm-color-accent-success-active: #00523b; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker) */
+  --storm-color-accent-success-inactive: #40876e; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter) */
+  --storm-color-accent-success-disabled: #336855; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 80% saturation) */
+  --storm-color-accent-positive-hover: #004d36; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker) */
+  --storm-color-accent-positive-active: #00523b; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker) */
+  --storm-color-accent-positive-inactive: #40876e; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter) */
+  --storm-color-accent-positive-disabled: #336855; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 80% saturation) */
+  --storm-color-accent-info-hover: #003590; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker) */
+  --storm-color-accent-info-active: #033a96; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker) */
+  --storm-color-accent-info-inactive: #3b72d3; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter) */
+  --storm-color-accent-info-disabled: #2f58a2; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 80% saturation) */
+  --storm-color-accent-discovery-hover: #3f2676; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker) */
+  --storm-color-accent-discovery-active: #432b7b; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker) */
+  --storm-color-accent-discovery-inactive: #725db2; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter) */
+  --storm-color-accent-discovery-disabled: #584889; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 80% saturation) */
+  --storm-color-on-accent-base: #f1f1f1; /** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. */
+  --storm-color-on-accent-base-hover: #959595; /** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (hover, 30% darker) */
+  --storm-color-on-accent-base-active: #0c0c0d; /** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (active, light base primitive) */
+  --storm-color-on-accent-base-inactive: #030303; /** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (inactive, 40% darker) */
+  --storm-color-on-accent-base-disabled: rgba(241, 241, 241, 0.4); /** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 40% opacity) */
+  --storm-color-on-accent-brand: #fafafa; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. */
+  --storm-color-on-accent-danger: #fafafa; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. */
+  --storm-color-on-accent-negative: #fafafa; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. */
+  --storm-color-on-accent-warning: #fafafa; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. */
+  --storm-color-on-accent-success: #fafafa; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. */
+  --storm-color-on-accent-positive: #fafafa; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. */
+  --storm-color-on-accent-info: #fafafa; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. */
+  --storm-color-on-accent-discovery: #fafafa; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. */
+  --storm-color-on-accent-brand-hover: #b2b2b2; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker) */
+  --storm-color-on-accent-brand-active: #bebebe; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker) */
+  --storm-color-on-accent-brand-inactive: #ffffff; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter) */
+  --storm-color-on-accent-brand-disabled: rgba(250, 250, 250, 0.4); /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 40% opacity) */
+  --storm-color-on-accent-danger-hover: #b2b2b2; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker) */
+  --storm-color-on-accent-danger-active: #bebebe; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker) */
+  --storm-color-on-accent-danger-inactive: #ffffff; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter) */
+  --storm-color-on-accent-danger-disabled: rgba(250, 250, 250, 0.4); /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 40% opacity) */
+  --storm-color-on-accent-negative-hover: #b2b2b2; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker) */
+  --storm-color-on-accent-negative-active: #bebebe; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker) */
+  --storm-color-on-accent-negative-inactive: #ffffff; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter) */
+  --storm-color-on-accent-negative-disabled: rgba(250, 250, 250, 0.4); /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 40% opacity) */
+  --storm-color-on-accent-warning-hover: #b2b2b2; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker) */
+  --storm-color-on-accent-warning-active: #bebebe; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker) */
+  --storm-color-on-accent-warning-inactive: #ffffff; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter) */
+  --storm-color-on-accent-warning-disabled: rgba(250, 250, 250, 0.4); /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 40% opacity) */
+  --storm-color-on-accent-success-hover: #b2b2b2; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker) */
+  --storm-color-on-accent-success-active: #bebebe; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker) */
+  --storm-color-on-accent-success-inactive: #ffffff; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter) */
+  --storm-color-on-accent-success-disabled: rgba(250, 250, 250, 0.4); /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 40% opacity) */
+  --storm-color-on-accent-positive-hover: #b2b2b2; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker) */
+  --storm-color-on-accent-positive-active: #bebebe; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker) */
+  --storm-color-on-accent-positive-inactive: #ffffff; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter) */
+  --storm-color-on-accent-positive-disabled: rgba(250, 250, 250, 0.4); /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 40% opacity) */
+  --storm-color-on-accent-info-hover: #b2b2b2; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker) */
+  --storm-color-on-accent-info-active: #bebebe; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker) */
+  --storm-color-on-accent-info-inactive: #ffffff; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter) */
+  --storm-color-on-accent-info-disabled: rgba(250, 250, 250, 0.4); /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 40% opacity) */
+  --storm-color-on-accent-discovery-hover: #b2b2b2; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker) */
+  --storm-color-on-accent-discovery-active: #bebebe; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker) */
+  --storm-color-on-accent-discovery-inactive: #ffffff; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter) */
+  --storm-color-on-accent-discovery-disabled: rgba(250, 250, 250, 0.4); /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 40% opacity) */
+  --storm-color-muted-base: #eaeaea; /** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. */
+  --storm-color-muted-brand: #68e8db; /** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. */
+  --storm-color-muted-base-hover: #919191; /** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hover, 30% darker) */
+  --storm-color-muted-base-active: #cacaca; /** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 10% darker) */
+  --storm-color-muted-base-inactive: #030303; /** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker) */
+  --storm-color-muted-base-disabled: rgba(234, 234, 234, 0.4); /** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 40% opacity) */
+  --storm-color-muted-brand-hover: #08a99e; /** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% darker) */
+  --storm-color-muted-brand-active: #25b4a8; /** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (active, 19% darker) */
+  --storm-color-muted-brand-inactive: #9bffff; /** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% brighter) */
+  --storm-color-muted-brand-disabled: #84e3d9; /** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation) */
+  --storm-color-muted-danger: #e37085; /** Generated danger muted background for the light theme */
+  --storm-color-muted-negative: #e37085; /** Generated negative muted background for the light theme */
+  --storm-color-muted-warning: #bd985e; /** Generated warning muted background for the light theme */
+  --storm-color-muted-success: #6ab196; /** Generated success muted background for the light theme */
+  --storm-color-muted-positive: #6ab196; /** Generated positive muted background for the light theme */
+  --storm-color-muted-info: #659dff; /** Generated info muted background for the light theme */
+  --storm-color-muted-discovery: #9e8ae4; /** Generated discovery muted background for the light theme */
+  --storm-color-muted-danger-hover: #ae4158; /** Generated danger muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-danger-active: #b74960; /** Generated danger muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-danger-inactive: #ff9baf; /** Generated danger muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-danger-disabled: #d67a89; /** Generated danger muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-negative-hover: #ae4158; /** Generated negative muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-negative-active: #b74960; /** Generated negative muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-negative-inactive: #ff9baf; /** Generated negative muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-negative-disabled: #d67a89; /** Generated negative muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-warning-hover: #8c692e; /** Generated warning muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-warning-active: #947137; /** Generated warning muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-warning-inactive: #ebc489; /** Generated warning muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-warning-disabled: #b79a6d; /** Generated warning muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-success-hover: #388067; /** Generated success muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-success-active: #41896f; /** Generated success muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-success-inactive: #96dfc2; /** Generated success muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-success-disabled: #77ae98; /** Generated success muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-positive-hover: #388067; /** Generated positive muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-positive-active: #41896f; /** Generated positive muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-positive-inactive: #96dfc2; /** Generated positive muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-positive-disabled: #77ae98; /** Generated positive muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-info-hover: #376cc9; /** Generated info muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-info-active: #3f74d3; /** Generated info muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-info-inactive: #90cbff; /** Generated info muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-info-disabled: #729fec; /** Generated info muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-discovery-hover: #715bb1; /** Generated discovery muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-discovery-active: #7863ba; /** Generated discovery muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-discovery-inactive: #c9b5ff; /** Generated discovery muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-discovery-disabled: #9d8ed6; /** Generated discovery muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-overlay-background: #ffffff; /** Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page. */
+  --storm-color-overlay-border: #b0b0b1; /** Border color that outlines floating overlay panels against the content beneath them. Used for the Popover border. */
+  --storm-color-overlay-backdrop: rgba(26, 28, 31, 0.4); /** Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container. */
+  --storm-color-shadow-resting-xsmall: 0px 1px 0px 0px #0000000d; /** Smallest resting shadow (`shadow.2xs`): a single 1px edge under the element. Use it to give flat controls, such as inputs and segmented buttons, a hint of depth. */
+  --storm-color-shadow-resting-small: 0px 1px 2px 0px #0000000d; /** Small resting shadow (`shadow.xs`). Use it for cards, tiles and buttons sitting directly on the canvas. */
+  --storm-color-shadow-resting-medium: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** Medium resting shadow (`shadow.sm`). Use it for raised cards and panels that need more separation from the canvas than `resting.small`. */
+  --storm-color-shadow-floating-small: 0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a; /** Small floating shadow (`shadow.md`). Use it for compact floating content, such as tooltips and dropdown menus. */
+  --storm-color-shadow-floating-medium: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a; /** Medium floating shadow (`shadow.lg`). Use it for popovers, menus and other anchored panels. */
+  --storm-color-shadow-floating-large: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a; /** Large floating shadow (`shadow.xl`). Use it for dialogs, drawers and sheets that sit above the whole page. */
+  --storm-color-shadow-floating-xlarge: 0px 25px 50px -12px #00000040; /** Largest floating shadow (`shadow.2xl`). Use it for the highest-elevation content, such as full-screen modals or command palettes. */
+  --storm-color-shadow-inset: inset 0px 1px 1px 0px #0000000d; /** Inset shadow (`inset-shadow.xs`) for recessed elements. Use it for wells and pressed states that should read as sunken into their surface. */
+  --storm-color-data-neutral-emphasis: #606164; /** High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data. */
+  --storm-color-data-neutral-subtle: #eaeaea; /** Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series. */
+  --storm-color-data-brand-emphasis: #2055b3; /** High-emphasis brand data color. Use it for the primary mark of a brand series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-brand-subtle: #6da2ff; /** Low-emphasis brand data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `brand.emphasis` series. */
+  --storm-color-data-red-emphasis: #8e223e; /** High-emphasis red data color. Use it for the primary mark of a red series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-red-subtle: #dd6c89; /** Low-emphasis red data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `red.emphasis` series. */
+  --storm-color-data-orange-emphasis: #9f4000; /** High-emphasis orange data color. Use it for the primary mark of a orange series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-orange-subtle: #f19f71; /** Low-emphasis orange data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `orange.emphasis` series. */
+  --storm-color-data-yellow-emphasis: #765417; /** High-emphasis yellow data color. Use it for the primary mark of a yellow series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-yellow-subtle: #f8b740; /** Low-emphasis yellow data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `yellow.emphasis` series. */
+  --storm-color-data-green-emphasis: #216b53; /** High-emphasis green data color. Use it for the primary mark of a green series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-green-subtle: #74d59f; /** Low-emphasis green data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `green.emphasis` series. */
+  --storm-color-data-blue-emphasis: #2055b3; /** High-emphasis blue data color. Use it for the primary mark of a blue series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-blue-subtle: #6da2ff; /** Low-emphasis blue data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `blue.emphasis` series. */
+  --storm-color-data-purple-emphasis: #594395; /** High-emphasis purple data color. Use it for the primary mark of a purple series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-purple-subtle: #a690e1; /** Low-emphasis purple data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `purple.emphasis` series. */
+  --storm-color-data-pink-emphasis: #904272; /** High-emphasis pink data color. Use it for the primary mark of a pink series, such as lines, bars, points and legend swatches. */
+  --storm-color-data-pink-subtle: #eb89c5; /** Low-emphasis pink data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `pink.emphasis` series. */
+  --storm-color-link-hover: #003590; /** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% darker) */
+  --storm-color-link-active: #033a96; /** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% darker) */
+  --storm-color-link-inactive: #3b72d3; /** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% brighter) */
+  --storm-color-hairline-hover: #7c7c7d; /** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% darker) */
+  --storm-color-hairline-active: #9d9d9e; /** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker) */
+  --storm-color-hairline-inactive: #e1e1e2; /** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% brighter) */
+  --storm-color-on-muted-base: #151518; /** Generated base foreground on muted backgrounds */
+  --storm-color-on-muted-brand: #1fb2a6; /** Generated brand foreground on muted backgrounds */
+  --storm-color-on-muted-danger: #2f000c; /** Generated danger foreground on muted backgrounds */
+  --storm-color-on-muted-negative: #2f000c; /** Generated negative foreground on muted backgrounds */
+  --storm-color-on-muted-warning: #2d1c00; /** Generated warning foreground on muted backgrounds */
+  --storm-color-on-muted-success: #002b1e; /** Generated success foreground on muted backgrounds */
+  --storm-color-on-muted-positive: #002b1e; /** Generated positive foreground on muted backgrounds */
+  --storm-color-on-muted-info: #001c54; /** Generated info foreground on muted backgrounds */
+  --storm-color-on-muted-discovery: #20004c; /** Generated discovery foreground on muted backgrounds */
+  --storm-color-on-muted-base-hover: #232326; /** Generated base foreground on muted backgrounds (hover, 30% brighter) */
+  --storm-color-on-muted-base-active: #0c0c0d; /** Generated base foreground on muted backgrounds (active, light base primitive) */
+  --storm-color-on-muted-base-inactive: #030303; /** Generated base foreground on muted backgrounds (inactive, 40% darker) */
+  --storm-color-on-muted-base-disabled: #151517; /** Generated base foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-brand-hover: #008277; /** Generated brand foreground on muted backgrounds (hover, 23% darker) */
+  --storm-color-on-muted-brand-active: #008a7f; /** Generated brand foreground on muted backgrounds (active, 19% darker) */
+  --storm-color-on-muted-brand-inactive: #5ddfd2; /** Generated brand foreground on muted backgrounds (inactive, 20% brighter) */
+  --storm-color-on-muted-brand-disabled: #4daea4; /** Generated brand foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-danger-hover: #3b0916; /** Generated danger foreground on muted backgrounds (hover, 23% brighter) */
+  --storm-color-on-muted-danger-active: #390714; /** Generated danger foreground on muted backgrounds (active, 19% brighter) */
+  --storm-color-on-muted-danger-inactive: #240005; /** Generated danger foreground on muted backgrounds (inactive, 20% darker) */
+  --storm-color-on-muted-danger-disabled: #2b050e; /** Generated danger foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-negative-hover: #3b0916; /** Generated negative foreground on muted backgrounds (hover, 23% brighter) */
+  --storm-color-on-muted-negative-active: #390714; /** Generated negative foreground on muted backgrounds (active, 19% brighter) */
+  --storm-color-on-muted-negative-inactive: #240005; /** Generated negative foreground on muted backgrounds (inactive, 20% darker) */
+  --storm-color-on-muted-negative-disabled: #2b050e; /** Generated negative foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-warning-hover: #3b290c; /** Generated warning foreground on muted backgrounds (hover, 23% brighter) */
+  --storm-color-on-muted-warning-active: #392709; /** Generated warning foreground on muted backgrounds (active, 19% brighter) */
+  --storm-color-on-muted-warning-inactive: #211100; /** Generated warning foreground on muted backgrounds (inactive, 20% darker) */
+  --storm-color-on-muted-warning-disabled: #2a1d07; /** Generated warning foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-success-hover: #001d11; /** Generated success foreground on muted backgrounds (hover, 23% darker) */
+  --storm-color-on-muted-success-active: #001f13; /** Generated success foreground on muted backgrounds (active, 19% darker) */
+  --storm-color-on-muted-success-inactive: #0f382a; /** Generated success foreground on muted backgrounds (inactive, 20% brighter) */
+  --storm-color-on-muted-success-disabled: #0b2a1f; /** Generated success foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-positive-hover: #001d11; /** Generated positive foreground on muted backgrounds (hover, 23% darker) */
+  --storm-color-on-muted-positive-active: #001f13; /** Generated positive foreground on muted backgrounds (active, 19% darker) */
+  --storm-color-on-muted-positive-inactive: #0f382a; /** Generated positive foreground on muted backgrounds (inactive, 20% brighter) */
+  --storm-color-on-muted-positive-disabled: #0b2a1f; /** Generated positive foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-info-hover: #000c44; /** Generated info foreground on muted backgrounds (hover, 23% darker) */
+  --storm-color-on-muted-info-active: #000f47; /** Generated info foreground on muted backgrounds (active, 19% darker) */
+  --storm-color-on-muted-info-inactive: #0a2a63; /** Generated info foreground on muted backgrounds (inactive, 20% brighter) */
+  --storm-color-on-muted-info-disabled: #071f4a; /** Generated info foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-discovery-hover: #2b105a; /** Generated discovery foreground on muted backgrounds (hover, 23% brighter) */
+  --storm-color-on-muted-discovery-active: #290d58; /** Generated discovery foreground on muted backgrounds (active, 19% brighter) */
+  --storm-color-on-muted-discovery-inactive: #17003f; /** Generated discovery foreground on muted backgrounds (inactive, 20% darker) */
+  --storm-color-on-muted-discovery-disabled: #1e0a42; /** Generated discovery foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-size-zero: 0px; /** No size */
+  --storm-size-xxs: 2px; /** A 2px xxs size step */
+  --storm-size-xs: 4px; /** A 4px xs size step */
+  --storm-size-sm: 8px; /** A 8px sm size step */
+  --storm-size-md: 10px; /** A 10px md size step */
+  --storm-size-lg: 12px; /** A 12px lg size step */
+  --storm-size-xl: 14px; /** A 14px xl size step */
+  --storm-size-2xl: 16px; /** A 16px 2xl size step */
+  --storm-size-3xl: 18px; /** A 18px 3xl size step */
+  --storm-size-4xl: 20px; /** A 20px 4xl size step */
+  --storm-size-5xl: 22px; /** A 22px 5xl size step */
+  --storm-size-6xl: 24px; /** A 24px 6xl size step */
+  --storm-size-7xl: 26px; /** A 26px 7xl size step */
+  --storm-size-8xl: 32px; /** A 32px 8xl size step */
+  --storm-size-9xl: 37px; /** A 37px 9xl size step */
+  --storm-size-10xl: 42px; /** A 42px 10xl size step */
+  --storm-size-11xl: 47px; /** A 47px 11xl size step */
+  --storm-size-12xl: 52px; /** A 52px 12xl size step */
+  --storm-size-13xl: 62px; /** A 62px 13xl size step */
+  --storm-size-14xl: 72px; /** A 72px 14xl size step */
+  --storm-size-15xl: 82px; /** A 82px 15xl size step */
+  --storm-size-16xl: 92px; /** A 92px 16xl size step */
+  --storm-size-17xl: 102px; /** A 102px 17xl size step */
+  --storm-size-18xl: 112px; /** A 112px 18xl size step */
+  --storm-size-19xl: 112px; /** A 112px 19xl size step */
+  --storm-size-20xl: 122px; /** A 122px 20xl size step */
+  --storm-size-21xl: 132px; /** A 132px 21xl size step */
+  --storm-size-22xl: 142px; /** A 142px 22xl size step */
+  --storm-size-23xl: 152px; /** A 152px 23xl size step */
+  --storm-size-24xl: 162px; /** A 162px 24xl size step */
+  --storm-size-25xl: 172px; /** A 172px 25xl size step */
+  --storm-size-26xl: 182px; /** A 182px 26xl size step */
+  --storm-size-27xl: 192px; /** A 192px 27xl size step */
+  --storm-size-28xl: 202px; /** A 202px 28xl size step */
+  --storm-size-29xl: 212px; /** A 212px 29xl size step */
+  --storm-size-30xl: 222px; /** A 222px 30xl size step */
+  --storm-size-31xl: 232px; /** A 232px 31xl size step */
+  --storm-size-32xl: 242px; /** A 242px 32xl size step */
+  --storm-size-33xl: 252px; /** A 252px 33xl size step */
+  --storm-size-34xl: 262px; /** A 262px 34xl size step */
+  --storm-size-35xl: 272px; /** A 272px 35xl size step */
+  --storm-size-36xl: 282px; /** A 282px 36xl size step */
+  --storm-size-37xl: 284px; /** A 284px 37xl size step */
+  --storm-z-index-0: 0; /** Base stacking level */
+  --storm-z-index-10: 100; /** Low stacking level */
+  --storm-z-index-20: 200; /** Raised stacking level */
+  --storm-z-index-30: 300; /** Elevated stacking level */
+  --storm-z-index-40: 400; /** High stacking level */
+  --storm-z-index-50: 500; /** Overlay stacking level */
+  --storm-z-index-60: 600; /** Modal stacking level */
+  --storm-z-index-70: 700; /** Popover stacking level */
+  --storm-z-index-80: 800; /** Toast stacking level */
+  --storm-z-index-90: 900; /** Topmost stacking level */
+  --storm-spacing-zero: 0px; /** No spacing */
+  --storm-spacing-xxs: 0.5px; /** A 0.5px xxs spacing step (from size.xxs via sizeToSpace) */
+  --storm-spacing-xs: 1px; /** A 1px xs spacing step (from size.xs via sizeToSpace) */
+  --storm-spacing-sm: 1.5px; /** A 1.5px sm spacing step (from size.sm via sizeToSpace) */
+  --storm-spacing-md: 2px; /** A 2px md spacing step (from size.md via sizeToSpace) */
+  --storm-spacing-lg: 4px; /** A 4px lg spacing step (from size.lg via sizeToSpace) */
+  --storm-spacing-xl: 7px; /** A 7px xl spacing step (from size.xl via sizeToSpace) */
+  --storm-spacing-2xl: 10px; /** A 10px 2xl spacing step (from size.2xl via sizeToSpace) */
+  --storm-spacing-3xl: 13px; /** A 13px 3xl spacing step (from size.3xl via sizeToSpace) */
+  --storm-spacing-4xl: 16px; /** A 16px 4xl spacing step (from size.4xl via sizeToSpace) */
+  --storm-spacing-5xl: 18px; /** A 18px 5xl spacing step (from size.5xl via sizeToSpace) */
+  --storm-spacing-6xl: 21px; /** A 21px 6xl spacing step (from size.6xl via sizeToSpace) */
+  --storm-spacing-7xl: 24px; /** A 24px 7xl spacing step (from size.7xl via sizeToSpace) */
+  --storm-spacing-8xl: 32px; /** A 32px 8xl spacing step (from size.8xl via sizeToSpace) */
+  --storm-spacing-9xl: 39px; /** A 39px 9xl spacing step (from size.9xl via sizeToSpace) */
+  --storm-spacing-10xl: 46px; /** A 46px 10xl spacing step (from size.10xl via sizeToSpace) */
+  --storm-spacing-11xl: 53px; /** A 53px 11xl spacing step (from size.11xl via sizeToSpace) */
+  --storm-spacing-12xl: 60px; /** A 60px 12xl spacing step (from size.12xl via sizeToSpace) */
+  --storm-spacing-13xl: 74px; /** A 74px 13xl spacing step (from size.13xl via sizeToSpace) */
+  --storm-spacing-14xl: 88px; /** A 88px 14xl spacing step (from size.14xl via sizeToSpace) */
+  --storm-spacing-15xl: 102px; /** A 102px 15xl spacing step (from size.15xl via sizeToSpace) */
+  --storm-spacing-16xl: 116px; /** A 116px 16xl spacing step (from size.16xl via sizeToSpace) */
+  --storm-spacing-17xl: 130px; /** A 130px 17xl spacing step (from size.17xl via sizeToSpace) */
+  --storm-spacing-18xl: 144px; /** A 144px 18xl spacing step (from size.18xl via sizeToSpace) */
+  --storm-spacing-19xl: 144px; /** A 144px 19xl spacing step (from size.19xl via sizeToSpace) */
+  --storm-spacing-20xl: 158px; /** A 158px 20xl spacing step (from size.20xl via sizeToSpace) */
+  --storm-spacing-21xl: 172px; /** A 172px 21xl spacing step (from size.21xl via sizeToSpace) */
+  --storm-spacing-22xl: 186px; /** A 186px 22xl spacing step (from size.22xl via sizeToSpace) */
+  --storm-font-size-xxs: 0.75rem; /** Extra small font size (0.75rem) */
+  --storm-font-size-xs: 0.875rem; /** Extra small font size (0.875rem) */
+  --storm-font-size-sm: 1rem; /** Small font size (1rem) */
+  --storm-font-size-md: 1.125rem; /** Medium font size (1.125rem) */
+  --storm-font-size-lg: 1.25rem; /** Large font size (1.25rem) */
+  --storm-font-size-xl: 1.5rem; /** Extra large font size (1.5rem) */
+  --storm-font-size-2xl: 1.875rem; /** 2X large font size (1.875rem) */
+  --storm-font-size-3xl: 2.25rem; /** 3X large font size (2.25rem) */
+  --storm-font-size-4xl: 3rem; /** 4X large font size (3rem) */
+  --storm-font-size-5xl: 3.75rem; /** 5X large font size (3.75rem) */
+  --storm-font-size-6xl: 4.5rem; /** 6X large font size (4.5rem) */
+  --storm-font-size-7xl: 6rem; /** 7X large font size (6rem) */
+  --storm-font-size-8xl: 8rem; /** 8X large font size (8rem) */
+  --storm-font-size-9xl: 10rem; /** 9X large font size (10rem) */
+  --storm-font-size-10xl: 12rem; /** 10X large font size (12rem) */
+  --storm-font-size-11xl: 14rem; /** 11X large font size (14rem) */
+  --storm-font-size-12xl: 16rem; /** 12X large font size (16rem) */
+  --storm-font-size-13xl: 18rem; /** 13X large font size (18rem) */
+  --storm-font-size-14xl: 20rem; /** 14X large font size (20rem) */
+  --storm-font-size-15xl: 24rem; /** 15X large font size (24rem) */
+  --storm-font-weight-thin: 100; /** Thin font weight (100) */
+  --storm-font-weight-extralight: 200; /** Extra light font weight (200) */
+  --storm-font-weight-light: 300; /** Light font weight (300) */
+  --storm-font-weight-normal: 400; /** Normal font weight (400) */
+  --storm-font-weight-medium: 500; /** Medium font weight (500) */
+  --storm-font-weight-semibold: 600; /** Semibold font weight (600) */
+  --storm-font-weight-bold: 700; /** Bold font weight (700) */
+  --storm-font-weight-extrabold: 800; /** Extra bold font weight (800) */
+  --storm-font-weight-black: 900; /** Black font weight (900) */
+  --storm-letter-spacing-tighter: -0.05rem; /** Tighter letter spacing (-0.05em) */
+  --storm-letter-spacing-tight: -0.025rem; /** Tight letter spacing (-0.025em) */
+  --storm-letter-spacing-normal: 0rem; /** Normal letter spacing (0em) */
+  --storm-letter-spacing-wide: 0.025rem; /** Wide letter spacing (0.025em) */
+  --storm-letter-spacing-wider: 0.05rem; /** Wider letter spacing (0.05em) */
+  --storm-letter-spacing-widest: 0.1rem; /** Widest letter spacing (0.1em) */
+  --storm-line-height-none: 0.85; /** No extra line height (0.85) */
+  --storm-line-height-tight: 1; /** Tight line height (1) */
+  --storm-line-height-snug: 1.25; /** Snug line height (1.25) */
+  --storm-line-height-normal: 1.375; /** Normal line height (1.375) */
+  --storm-line-height-relaxed: 1.5; /** Relaxed line height (1.5) */
+  --storm-line-height-loose: 1.85; /** Loose line height (1.85) */
+  --storm-line-height-xs: 1.333333; /** Line height for text-xs (calc(1 / 0.75)) */
+  --storm-line-height-sm: 1.428571; /** Line height for text-sm (calc(1.25 / 0.875)) */
+  --storm-line-height-md: 1.5; /** Line height for text-md (calc(1.5 / 1)) */
+  --storm-line-height-lg: 1.555556; /** Line height for text-lg (calc(1.75 / 1.125)) */
+  --storm-line-height-xl: 1.4; /** Line height for text-xl (calc(1.75 / 1.25)) */
+  --storm-line-height-2xl: 1.333333; /** Line height for text-2xl (calc(2 / 1.5)) */
+  --storm-line-height-3xl: 1.2; /** Line height for text-3xl (calc(2.25 / 1.875)) */
+  --storm-line-height-4xl: 1.111111; /** Line height for text-4xl (calc(2.5 / 2.25)) */
+  --storm-line-height-5xl: 1; /** Line height for text-5xl (1) */
+  --storm-line-height-6xl: 1; /** Line height for text-6xl (1) */
+  --storm-line-height-7xl: 1; /** Line height for text-7xl (1) */
+  --storm-line-height-8xl: 1; /** Line height for text-8xl (1) */
+  --storm-line-height-9xl: 1; /** Line height for text-9xl (1) */
+  --storm-line-height-10xl: 1; /** Line height for text-10xl (1) */
+  --storm-border-radius-zero: 0rem; /** No radius */
+  --storm-border-radius-xs: 0.125rem; /** Extra small radius (0.125rem) */
+  --storm-border-radius-sm: 0.25rem; /** Small radius (0.25rem) */
+  --storm-border-radius-md: 0.375rem; /** Medium radius (0.375rem) */
+  --storm-border-radius-lg: 0.5rem; /** Large radius (0.5rem) */
+  --storm-border-radius-xl: 0.75rem; /** Extra large radius (0.75rem) */
+  --storm-border-radius-2xl: 1rem; /** 2X large radius (1rem) */
+  --storm-border-radius-3xl: 1.5rem; /** 3X large radius (1.5rem) */
+  --storm-border-radius-4xl: 2rem; /** 4X large radius (2rem) */
+  --storm-border-radius-full: 100%; /** Full radius (100%) */
+  --storm-border-radius-container: 0.5rem; /** Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Tabs, Stepper and InlineCodeText. */
+  --storm-border-radius-card: 0.375rem; /** Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker. */
+  --storm-border-radius-button: 0.5rem; /** Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInputField results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it. */
+  --storm-border-radius-control: 0.5rem; /** Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating. */
+  --storm-border-radius-checkbox: 0.375rem; /** Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox. */
+  --storm-border-radius-dialog: 0.75rem; /** Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog. */
+  --storm-border-radius-sheet: 0rem; /** Corner radius for sheets (0px, `border-radius.zero`). Sheets slide in flush against a viewport edge, so their corners stay square. Applied by Sheet to its exposed corners. */
+  --storm-border-radius-drawer: 2rem; /** Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer. */
+  --storm-border-radius-popover: 0.375rem; /** Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list. */
+  --storm-border-radius-tooltip: 0.375rem; /** Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip. */
+  --storm-shadow-2xs: 0px 1px 0px 0px #0000000d; /** 2X small shadow */
+  --storm-shadow-xs: 0px 1px 2px 0px #0000000d; /** Extra small shadow */
+  --storm-shadow-sm: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** Small shadow */
+  --storm-shadow-md: 0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a; /** Medium shadow */
+  --storm-shadow-lg: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a; /** Large shadow */
+  --storm-shadow-xl: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a; /** Extra large shadow */
+  --storm-shadow-2xl: 0px 25px 50px -12px #00000040; /** 2X large shadow */
+  --storm-inset-shadow-2xs: inset 0px 1px 0px 0px #0000000d; /** 2X small inset shadow */
+  --storm-inset-shadow-xs: inset 0px 1px 1px 0px #0000000d; /** Extra small inset shadow */
+  --storm-inset-shadow-sm: inset 0px 2px 4px 0px #0000000d; /** Small inset shadow */
+  --storm-drop-shadow-xs: 0px 1px 1px 0px #0000000d; /** Extra small drop shadow */
+  --storm-drop-shadow-sm: 0px 1px 2px 0px #00000026; /** Small drop shadow */
+  --storm-drop-shadow-md: 0px 3px 3px 0px #0000001f; /** Medium drop shadow */
+  --storm-drop-shadow-lg: 0px 4px 4px 0px #00000026; /** Large drop shadow */
+  --storm-drop-shadow-xl: 0px 9px 7px 0px #0000001a; /** Extra large drop shadow */
+  --storm-drop-shadow-2xl: 0px 25px 25px 0px #00000026; /** 2X large drop shadow */
+  --storm-text-shadow-2xs: 0px 1px 0px 0px #00000026; /** 2X small text shadow */
+  --storm-text-shadow-xs: 0px 1px 1px 0px #00000033; /** Extra small text shadow */
+  --storm-text-shadow-sm: 0px 1px 0px 0px #00000013, 0px 1px 1px 0px #00000013, 0px 2px 2px 0px #00000013; /** Small text shadow */
+  --storm-text-shadow-md: 0px 1px 1px 0px #0000001a, 0px 1px 2px 0px #0000001a, 0px 2px 4px 0px #0000001a; /** Medium text shadow */
+  --storm-text-shadow-lg: 0px 1px 2px 0px #0000001a, 0px 3px 2px 0px #0000001a, 0px 4px 8px 0px #0000001a; /** Large text shadow */
+  --storm-ease-in: cubic-bezier(0.4, 0, 1, 1); /** Ease-in cubic bezier */
+  --storm-ease-out: cubic-bezier(0, 0, 0.2, 1); /** Ease-out cubic bezier */
+  --storm-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); /** Ease-in-out cubic bezier */
+  --storm-durations-instant: [object Object]; /** Instant duration */
+  --storm-durations-short: [object Object]; /** Short duration */
+  --storm-durations-medium: [object Object]; /** Medium duration */
+  --storm-durations-long: [object Object]; /** Long duration */
+  --storm-blur-xs: 4px; /** Extra small blur (4px) */
+  --storm-blur-sm: 8px; /** Small blur (8px) */
+  --storm-blur-md: 12px; /** Medium blur (12px) */
+  --storm-blur-lg: 16px; /** Large blur (16px) */
+  --storm-blur-xl: 24px; /** Extra large blur (24px) */
+  --storm-blur-2xl: 40px; /** 2X large blur (40px) */
+  --storm-blur-3xl: 64px; /** 3X large blur (64px) */
+  --storm-ring-base: 0px 0px 0px 3px #15151814; /** Neutral 3px focus ring in the neutral accent (`accent.base`), drawn flush against the element with no gap. Exposed as the theme value `ring`. Container uses it for its focus-visible state, where an offset gap would clash with the surrounding layout. */
+  --storm-ring-base-subtle: 0px 0px 0px 1px #15151814; /** Neutral 1px hairline focus ring in the neutral accent (`accent.base`) with no gap. Exposed as the theme value `ringSubtle`. Suited to dense or text-level elements where a 3px ring is too heavy; TableOfContents uses it to mark the focused entry. */
+  --storm-ring-base-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #15151814; /** Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the neutral accent (`accent.base`), so the ring stays legible against the control's own border. Exposed as the theme value `ringOffset`. This is the default focus-visible ring for Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader, and the hover/press ring for `ringed` Buttons. */
+  --storm-ring-base-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #15151814; /** Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the neutral accent (`accent.base`). Exposed as the theme value `ringSubtleOffset`. A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours. */
+  --storm-ring-brand: 0px 0px 0px 3px #1fb2a626; /** Brand 3px focus ring in the brand accent (`accent.brand`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached. */
+  --storm-ring-brand-subtle: 0px 0px 0px 1px #1fb2a626; /** Brand 1px hairline focus ring in the brand accent (`accent.brand`) with no gap. Resolves from the theme value `ringSubtle` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links. */
+  --storm-ring-brand-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #1fb2a626; /** Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the brand accent (`accent.brand`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme. */
+  --storm-ring-brand-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #1fb2a626; /** Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the brand accent (`accent.brand`). Resolves from the theme value `ringSubtleOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours. */
+  --storm-ring-danger: 0px 0px 0px 3px #8e223e26; /** Danger 3px focus ring in the danger accent (`accent.danger`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached. */
+  --storm-ring-danger-subtle: 0px 0px 0px 1px #8e223e26; /** Danger 1px hairline focus ring in the danger accent (`accent.danger`) with no gap. Resolves from the theme value `ringSubtle` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links. */
+  --storm-ring-danger-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #8e223e26; /** Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the danger accent (`accent.danger`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme. */
+  --storm-ring-danger-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #8e223e26; /** Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the danger accent (`accent.danger`). Resolves from the theme value `ringSubtleOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours. */
+  --storm-ring-warning: 0px 0px 0px 3px #76541726; /** Warning 3px focus ring in the warning accent (`accent.warning`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached. */
+  --storm-ring-warning-subtle: 0px 0px 0px 1px #76541726; /** Warning 1px hairline focus ring in the warning accent (`accent.warning`) with no gap. Resolves from the theme value `ringSubtle` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links. */
+  --storm-ring-warning-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #76541726; /** Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the warning accent (`accent.warning`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme. */
+  --storm-ring-warning-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #76541726; /** Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the warning accent (`accent.warning`). Resolves from the theme value `ringSubtleOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours. */
+  --storm-ring-success: 0px 0px 0px 3px #216b5326; /** Success 3px focus ring in the success accent (`accent.success`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached. */
+  --storm-ring-success-subtle: 0px 0px 0px 1px #216b5326; /** Success 1px hairline focus ring in the success accent (`accent.success`) with no gap. Resolves from the theme value `ringSubtle` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links. */
+  --storm-ring-success-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #216b5326; /** Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the success accent (`accent.success`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme. */
+  --storm-ring-success-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #216b5326; /** Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the success accent (`accent.success`). Resolves from the theme value `ringSubtleOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours. */
+  --storm-ring-info: 0px 0px 0px 3px #2055b326; /** Info 3px focus ring in the info accent (`accent.info`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached. */
+  --storm-ring-info-subtle: 0px 0px 0px 1px #2055b326; /** Info 1px hairline focus ring in the info accent (`accent.info`) with no gap. Resolves from the theme value `ringSubtle` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links. */
+  --storm-ring-info-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #2055b326; /** Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the info accent (`accent.info`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme. */
+  --storm-ring-info-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #2055b326; /** Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the info accent (`accent.info`). Resolves from the theme value `ringSubtleOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours. */
+  --storm-ring-discovery: 0px 0px 0px 3px #59439526; /** Discovery 3px focus ring in the discovery accent (`accent.discovery`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached. */
+  --storm-ring-discovery-subtle: 0px 0px 0px 1px #59439526; /** Discovery 1px hairline focus ring in the discovery accent (`accent.discovery`) with no gap. Resolves from the theme value `ringSubtle` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links. */
+  --storm-ring-discovery-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #59439526; /** Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the discovery accent (`accent.discovery`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme. */
+  --storm-ring-discovery-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #59439526; /** Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the discovery accent (`accent.discovery`). Resolves from the theme value `ringSubtleOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours. */
+  --storm-ring-positive: 0px 0px 0px 3px #216b5326; /** Positive 3px focus ring in the positive accent (`accent.positive`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached. */
+  --storm-ring-positive-subtle: 0px 0px 0px 1px #216b5326; /** Positive 1px hairline focus ring in the positive accent (`accent.positive`) with no gap. Resolves from the theme value `ringSubtle` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links. */
+  --storm-ring-positive-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #216b5326; /** Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the positive accent (`accent.positive`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme. */
+  --storm-ring-positive-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #216b5326; /** Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the positive accent (`accent.positive`). Resolves from the theme value `ringSubtleOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours. */
+  --storm-ring-negative: 0px 0px 0px 3px #8e223e26; /** Negative 3px focus ring in the negative accent (`accent.negative`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached. */
+  --storm-ring-negative-subtle: 0px 0px 0px 1px #8e223e26; /** Negative 1px hairline focus ring in the negative accent (`accent.negative`) with no gap. Resolves from the theme value `ringSubtle` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links. */
+  --storm-ring-negative-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #8e223e26; /** Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the negative accent (`accent.negative`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme. */
+  --storm-ring-negative-subtle-offset: 0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #8e223e26; /** Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the negative accent (`accent.negative`). Resolves from the theme value `ringSubtleOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours. */
+  --storm-typography-display-hero: 600 3.75rem/1.25 'Storm Sans'; /** Largest display style: Storm Sans semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). */
+  --storm-typography-display-lg: 600 2.25rem/1.25 'Storm Sans'; /** Large display style: Storm Sans semibold at 36px (`font-size.3xl`) with snug line height. Use it for page titles and top-level section headings. HeadingText applies it for levels `1`/`title` (h1) and `2`/`lg` (h2). */
+  --storm-typography-display-md: 700 1.5rem/1.25 'Storm Sans'; /** Medium display style: Storm Sans bold at 24px (`font-size.xl`) with snug line height. Use it for section and card headings. HeadingText applies it for level `3`/`md` (h3) and as its default font. */
+  --storm-typography-display-sm: 700 1.25rem/1.25 'Storm Sans'; /** Small display style: Storm Sans bold at 20px (`font-size.lg`) with snug line height. Use it for subsection headings and dialog or panel titles. HeadingText applies it for level `4`/`sm` (h4). */
+  --storm-typography-editorial-hero: 600 3.75rem/1.25 'Storm Serif'; /** Largest editorial display style: Storm Serif semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). */
+  --storm-typography-editorial-lg: 600 2.25rem/1.25 'Storm Serif'; /** Large editorial display style: Storm Serif semibold at 36px (`font-size.3xl`) with snug line height. Use it for page titles and top-level section headings. HeadingText applies it for levels `1`/`title` (h1) and `2`/`lg` (h2). */
+  --storm-typography-editorial-md: 700 1.5rem/1.25 'Storm Serif'; /** Medium editorial display style: Storm Serif bold at 24px (`font-size.xl`) with snug line height. Use it for section and card headings. HeadingText applies it for level `3`/`md` (h3) and as its default font. */
+  --storm-typography-editorial-sm: 700 1.25rem/1.25 'Storm Serif'; /** Small editorial display style: Storm Serif bold at 20px (`font-size.lg`) with snug line height. Use it for subsection headings and dialog or panel titles. HeadingText applies it for level `4`/`sm` (h4). */
+  --storm-typography-title-lg: 500 1.125rem/1.25 'Storm Sans'; /** Large title style: Storm Sans medium at 18px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. */
+  --storm-typography-title-sm: 400 0.75rem/1.25 'Storm Sans'; /** Small title style: Storm Sans regular at 12px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border. */
+  --storm-typography-body-md: 400 1.125rem/1.375 'Storm Sans'; /** Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. */
+  --storm-typography-body-sm: 400 1rem/1.375 'Storm Sans'; /** Smaller body text style: Storm Sans regular at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. */
+  --storm-typography-caption: italic 400 1rem/1 'Storm Sans'; /** Caption style: Storm Sans regular italic at 16px (`font-size.sm`) with tight line height. Use it for helper text, annotations and small supporting labels. Used by Field helper and validation text, ValidationText, EyebrowText, Slider value labels and the CodeBlock header file name. */
+  --storm-typography-button: 600 1.125rem/1 'Storm Sans'; /** Button label style: Storm Sans semibold at 18px (`font-size.md`) with tight line height so labels center cleanly inside fixed-height controls. Use it for text inside actionable triggers. Used by Button and LinkText. */
+  --storm-typography-eyebrow: 600 1.125rem/1 'Storm Sans'; /** Eyebrow style: Storm Sans semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. */
+  --storm-typography-code: 400 1.25rem/1.25 'Google Sans Code'; /** Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion. */
 }

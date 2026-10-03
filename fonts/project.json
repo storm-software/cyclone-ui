@@ -8,10 +8,28 @@
   "// build": "fontmake's '-o' flag does NOT append: '-o variable -o otf -o ttf' parses as '-o ttf' only. Pass all formats to a single '-o'. 'variable' is incompatible with '-i', so variable and static builds run as separate invocations. '-a' (ttfautohint, provided by devenv.nix) hints the static TTFs only: ttfautohint does not support variable fonts and has no effect on OTF output.",
   "targets": {
     "clean": {},
-    "build-regular": {
+    "build-sans-regular": {
       "cache": true,
       "inputs": ["{projectRoot}/storm-sans"],
-      "outputs": ["{projectRoot}/dist"],
+      "outputs": [
+        "{projectRoot}/dist/StormSans-VF.ttf",
+        "{projectRoot}/dist/StormSans-Thin.otf",
+        "{projectRoot}/dist/StormSans-Thin.ttf",
+        "{projectRoot}/dist/StormSans-ExtraLight.otf",
+        "{projectRoot}/dist/StormSans-ExtraLight.ttf",
+        "{projectRoot}/dist/StormSans-Light.otf",
+        "{projectRoot}/dist/StormSans-Light.ttf",
+        "{projectRoot}/dist/StormSans-Regular.otf",
+        "{projectRoot}/dist/StormSans-Regular.ttf",
+        "{projectRoot}/dist/StormSans-Text.otf",
+        "{projectRoot}/dist/StormSans-Text.ttf",
+        "{projectRoot}/dist/StormSans-Medium.otf",
+        "{projectRoot}/dist/StormSans-Medium.ttf",
+        "{projectRoot}/dist/StormSans-SemiBold.otf",
+        "{projectRoot}/dist/StormSans-SemiBold.ttf",
+        "{projectRoot}/dist/StormSans-Bold.otf",
+        "{projectRoot}/dist/StormSans-Bold.ttf"
+      ],
       "executor": "nx:run-commands",
       "dependsOn": ["clean"],
       "options": {
@@ -22,10 +40,10 @@
         "cwd": "{projectRoot}/storm-sans"
       }
     },
-    "build-italic": {
+    "build-sans-italic": {
       "cache": true,
       "inputs": ["{projectRoot}/storm-sans"],
-      "outputs": ["{projectRoot}/dist"],
+      "outputs": ["{projectRoot}/dist/StormSans-*Italic*"],
       "executor": "nx:run-commands",
       "dependsOn": ["clean"],
       "options": {
@@ -36,9 +54,58 @@
         "cwd": "{projectRoot}/storm-sans"
       }
     },
+    "build-serif-regular": {
+      "cache": true,
+      "inputs": ["{projectRoot}/storm-serif"],
+      "outputs": [
+        "{projectRoot}/dist/StormSerif-VF.ttf",
+        "{projectRoot}/dist/StormSerif-ExtraLight.otf",
+        "{projectRoot}/dist/StormSerif-ExtraLight.ttf",
+        "{projectRoot}/dist/StormSerif-Light.otf",
+        "{projectRoot}/dist/StormSerif-Light.ttf",
+        "{projectRoot}/dist/StormSerif-Regular.otf",
+        "{projectRoot}/dist/StormSerif-Regular.ttf",
+        "{projectRoot}/dist/StormSerif-Medium.otf",
+        "{projectRoot}/dist/StormSerif-Medium.ttf",
+        "{projectRoot}/dist/StormSerif-SemiBold.otf",
+        "{projectRoot}/dist/StormSerif-SemiBold.ttf",
+        "{projectRoot}/dist/StormSerif-Bold.otf",
+        "{projectRoot}/dist/StormSerif-Bold.ttf",
+        "{projectRoot}/dist/StormSerif-ExtraBold.otf",
+        "{projectRoot}/dist/StormSerif-ExtraBold.ttf"
+      ],
+      "executor": "nx:run-commands",
+      "dependsOn": ["clean"],
+      "options": {
+        "commands": [
+          "fontmake -m \"StormSerif.designspace\" -o variable --output-dir \"../dist\"",
+          "fontmake -m \"StormSerif.designspace\" -o otf ttf -i -a --output-dir \"../dist\""
+        ],
+        "cwd": "{projectRoot}/storm-serif"
+      }
+    },
+    "build-serif-italic": {
+      "cache": true,
+      "inputs": ["{projectRoot}/storm-serif"],
+      "outputs": ["{projectRoot}/dist/StormSerif-*Italic*"],
+      "executor": "nx:run-commands",
+      "dependsOn": ["clean"],
+      "options": {
+        "commands": [
+          "fontmake -m \"StormSerif-Italic.designspace\" -o variable --output-dir \"../dist\"",
+          "fontmake -m \"StormSerif-Italic.designspace\" -o otf ttf -i -a --output-dir \"../dist\""
+        ],
+        "cwd": "{projectRoot}/storm-serif"
+      }
+    },
     "build": {
       "executor": "nx:run-commands",
-      "dependsOn": ["build-regular", "build-italic"],
+      "dependsOn": [
+        "build-sans-regular",
+        "build-sans-italic",
+        "build-serif-regular",
+        "build-serif-italic"
+      ],
       "options": {
         "commands": [
           "pnpm copyfiles --up=1 \"./fonts/dist/**/*\" dist/fonts",

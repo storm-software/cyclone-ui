@@ -2,269 +2,521 @@
 
 Use only documented font families and roles when selecting typography.
 
-## Fonts
+## Storm Sans
 
-- **Name:** `fonts`
+- **Name:** `storm-sans`
 - **Source:** `local`
-- **Family:** `Fonts`
+- **Family:** `Storm Sans`
 
 ### Files
 | Path | Format | Weight | Style | Unicode Range |
 | --- | --- | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.otf` | `opentype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.ttf` | `truetype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.otf` | `opentype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.ttf` | `truetype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic-VF.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.otf` | `opentype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.ttf` | `truetype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.otf` | `opentype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.ttf` | `truetype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.otf` | `opentype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.ttf` | `truetype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.otf` | `opentype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.ttf` | `truetype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-VF.ttf` | `truetype` |  |  |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.otf` | `opentype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.ttf` | `truetype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.otf` | `opentype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.ttf` | `truetype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.otf` | `opentype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.ttf` | `truetype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-VF.ttf` | `truetype` | `100 700` | `normal` |  |
+
+## Storm Serif
+
+- **Name:** `storm-serif`
+- **Source:** `local`
+- **Family:** `Storm Serif`
+
+### Files
+| Path | Format | Weight | Style | Unicode Range |
+| --- | --- | --- | --- | --- |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.otf` | `opentype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.ttf` | `truetype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.otf` | `opentype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-VF.ttf` | `truetype` | `200 800` | `normal` |  |
 # Cyclone UI (Light Dimmed) Fonts
 
 Use only documented font families and roles when selecting typography.
 
-## Fonts
+## Storm Sans
 
-- **Name:** `fonts`
+- **Name:** `storm-sans`
 - **Source:** `local`
-- **Family:** `Fonts`
+- **Family:** `Storm Sans`
 
 ### Files
 | Path | Format | Weight | Style | Unicode Range |
 | --- | --- | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.otf` | `opentype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.ttf` | `truetype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.otf` | `opentype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.ttf` | `truetype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic-VF.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.otf` | `opentype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.ttf` | `truetype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.otf` | `opentype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.ttf` | `truetype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.otf` | `opentype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.ttf` | `truetype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.otf` | `opentype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.ttf` | `truetype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-VF.ttf` | `truetype` |  |  |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.otf` | `opentype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.ttf` | `truetype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.otf` | `opentype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.ttf` | `truetype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.otf` | `opentype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.ttf` | `truetype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-VF.ttf` | `truetype` | `100 700` | `normal` |  |
+
+## Storm Serif
+
+- **Name:** `storm-serif`
+- **Source:** `local`
+- **Family:** `Storm Serif`
+
+### Files
+| Path | Format | Weight | Style | Unicode Range |
+| --- | --- | --- | --- | --- |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.otf` | `opentype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.ttf` | `truetype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.otf` | `opentype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-VF.ttf` | `truetype` | `200 800` | `normal` |  |
 # Cyclone UI (Light) Fonts
 
 Use only documented font families and roles when selecting typography.
 
-## Fonts
+## Storm Sans
 
-- **Name:** `fonts`
+- **Name:** `storm-sans`
 - **Source:** `local`
-- **Family:** `Fonts`
+- **Family:** `Storm Sans`
 
 ### Files
 | Path | Format | Weight | Style | Unicode Range |
 | --- | --- | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.otf` | `opentype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.ttf` | `truetype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.otf` | `opentype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.ttf` | `truetype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic-VF.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.otf` | `opentype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.ttf` | `truetype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.otf` | `opentype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.ttf` | `truetype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.otf` | `opentype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.ttf` | `truetype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.otf` | `opentype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.ttf` | `truetype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-VF.ttf` | `truetype` |  |  |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.otf` | `opentype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.ttf` | `truetype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.otf` | `opentype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.ttf` | `truetype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.otf` | `opentype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.ttf` | `truetype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-VF.ttf` | `truetype` | `100 700` | `normal` |  |
+
+## Storm Serif
+
+- **Name:** `storm-serif`
+- **Source:** `local`
+- **Family:** `Storm Serif`
+
+### Files
+| Path | Format | Weight | Style | Unicode Range |
+| --- | --- | --- | --- | --- |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.otf` | `opentype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.ttf` | `truetype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.otf` | `opentype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-VF.ttf` | `truetype` | `200 800` | `normal` |  |
 # Cyclone UI (Dark High Contrast) Fonts
 
 Use only documented font families and roles when selecting typography.
 
-## Fonts
+## Storm Sans
 
-- **Name:** `fonts`
+- **Name:** `storm-sans`
 - **Source:** `local`
-- **Family:** `Fonts`
+- **Family:** `Storm Sans`
 
 ### Files
 | Path | Format | Weight | Style | Unicode Range |
 | --- | --- | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.otf` | `opentype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.ttf` | `truetype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.otf` | `opentype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.ttf` | `truetype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic-VF.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.otf` | `opentype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.ttf` | `truetype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.otf` | `opentype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.ttf` | `truetype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.otf` | `opentype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.ttf` | `truetype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.otf` | `opentype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.ttf` | `truetype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-VF.ttf` | `truetype` |  |  |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.otf` | `opentype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.ttf` | `truetype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.otf` | `opentype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.ttf` | `truetype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.otf` | `opentype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.ttf` | `truetype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-VF.ttf` | `truetype` | `100 700` | `normal` |  |
+
+## Storm Serif
+
+- **Name:** `storm-serif`
+- **Source:** `local`
+- **Family:** `Storm Serif`
+
+### Files
+| Path | Format | Weight | Style | Unicode Range |
+| --- | --- | --- | --- | --- |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.otf` | `opentype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.ttf` | `truetype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.otf` | `opentype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-VF.ttf` | `truetype` | `200 800` | `normal` |  |
 # Cyclone UI (Dark Dimmed) Fonts
 
 Use only documented font families and roles when selecting typography.
 
-## Fonts
+## Storm Sans
 
-- **Name:** `fonts`
+- **Name:** `storm-sans`
 - **Source:** `local`
-- **Family:** `Fonts`
+- **Family:** `Storm Sans`
 
 ### Files
 | Path | Format | Weight | Style | Unicode Range |
 | --- | --- | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.otf` | `opentype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.ttf` | `truetype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.otf` | `opentype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.ttf` | `truetype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic-VF.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.otf` | `opentype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.ttf` | `truetype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.otf` | `opentype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.ttf` | `truetype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.otf` | `opentype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.ttf` | `truetype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.otf` | `opentype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.ttf` | `truetype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-VF.ttf` | `truetype` |  |  |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.otf` | `opentype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.ttf` | `truetype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.otf` | `opentype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.ttf` | `truetype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.otf` | `opentype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.ttf` | `truetype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-VF.ttf` | `truetype` | `100 700` | `normal` |  |
+
+## Storm Serif
+
+- **Name:** `storm-serif`
+- **Source:** `local`
+- **Family:** `Storm Serif`
+
+### Files
+| Path | Format | Weight | Style | Unicode Range |
+| --- | --- | --- | --- | --- |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.otf` | `opentype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.ttf` | `truetype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.otf` | `opentype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-VF.ttf` | `truetype` | `200 800` | `normal` |  |
 # Cyclone UI (Dark) Fonts
 
 Use only documented font families and roles when selecting typography.
 
-## Fonts
+## Storm Sans
 
-- **Name:** `fonts`
+- **Name:** `storm-sans`
 - **Source:** `local`
-- **Family:** `Fonts`
+- **Family:** `Storm Sans`
 
 ### Files
 | Path | Format | Weight | Style | Unicode Range |
 | --- | --- | --- | --- | --- |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.otf` | `opentype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Bold.ttf` | `truetype` | `700` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.otf` | `opentype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLight.ttf` | `truetype` | `200` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic-VF.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Italic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.otf` | `opentype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Light.ttf` | `truetype` | `300` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.otf` | `opentype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Medium.ttf` | `truetype` | `500` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.otf` | `opentype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Regular.ttf` | `truetype` | `400` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.otf` | `opentype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBold.ttf` | `truetype` | `600` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.otf` | `opentype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Text.ttf` | `truetype` |  |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.otf` | `opentype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-TextItalic.ttf` | `truetype` |  | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.otf` | `opentype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-Thin.ttf` | `truetype` | `100` |  |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `/home/development/repos/cyclone-ui/fonts/dist/StormSans-VF.ttf` | `truetype` |  |  |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.otf` | `opentype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Text.ttf` | `truetype` | `450` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.otf` | `opentype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-TextItalic.ttf` | `truetype` | `450` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.otf` | `opentype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-Thin.ttf` | `truetype` | `100` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.otf` | `opentype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSans-VF.ttf` | `truetype` | `100 700` | `normal` |  |
+
+## Storm Serif
+
+- **Name:** `storm-serif`
+- **Source:** `local`
+- **Family:** `Storm Serif`
+
+### Files
+| Path | Format | Weight | Style | Unicode Range |
+| --- | --- | --- | --- | --- |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.otf` | `opentype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Bold.ttf` | `truetype` | `700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.otf` | `opentype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.otf` | `opentype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.ttf` | `truetype` | `800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.otf` | `opentype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.otf` | `opentype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.otf` | `opentype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.otf` | `opentype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Italic.ttf` | `truetype` | `400` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.otf` | `opentype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Light.ttf` | `truetype` | `300` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.otf` | `opentype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-LightItalic.ttf` | `truetype` | `300` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.otf` | `opentype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Medium.ttf` | `truetype` | `500` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.otf` | `opentype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.ttf` | `truetype` | `500` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.otf` | `opentype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-Regular.ttf` | `truetype` | `400` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.otf` | `opentype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBold.ttf` | `truetype` | `600` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.otf` | `opentype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/StormSerif-VF.ttf` | `truetype` | `200 800` | `normal` |  |

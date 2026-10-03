@@ -30,6 +30,48 @@ import storybook from "@razorwind/storybook/generate";
 import tamagui from "@razorwind/tamagui/generate";
 import tamaguiPreprocessor from "./tools/razorwind/src/tamagui-preprocessor";
 
+const tamaguiPlugin = tamagui({
+  animations: "motion",
+  defaultFont: "body-md",
+  importConfig: "./default-config",
+  outputPath: "packages/themes/src/tamagui/config.ts",
+  target: "v3"
+});
+const generateTamagui = tamaguiPlugin.generate;
+
+const tamaguiWithStaticNativeFaces = {
+  ...tamaguiPlugin,
+  generate: async (
+    ...[spec, config]: Parameters<NonNullable<typeof generateTamagui>>
+  ) => {
+    if (!generateTamagui || !spec.fonts) {
+      return generateTamagui?.(spec, config) ?? {};
+    }
+
+    const fonts = Object.fromEntries(
+      Object.entries(spec.fonts).map(([name, font]) => {
+        if (font.source !== "local" || !font.files) {
+          return [name, font];
+        }
+
+        return [
+          name,
+          {
+            ...font,
+            files: font.files.filter(
+              file =>
+                typeof file.weight !== "string" ||
+                /^\d+(?:\.\d+)?$/u.test(file.weight.trim())
+            )
+          }
+        ];
+      })
+    ) as typeof spec.fonts;
+
+    return generateTamagui({ ...spec, fonts }, config);
+  }
+} satisfies typeof tamaguiPlugin;
+
 export default defineConfig({
   name: "cyclone-ui",
   title: "Cyclone UI",
@@ -38,6 +80,7 @@ export default defineConfig({
   verbose: true,
   splitThemes: true,
   fontsPath: "fonts/dist",
+  fontAssetBaseUrl: "https://public.storm-cdn.com/fonts",
   tokensPath: "packages/themes/src/tokens/**/*.json",
   componentsPath: ["components"],
   plugins: [
@@ -46,17 +89,52 @@ export default defineConfig({
     shadcn({
       configFile: "registry.json"
     }),
-    tamagui({
-      animations: "motion",
-      defaultFont: "body",
-      importConfig: "./default-config",
-      outputPath: "packages/themes/src/tamagui/config.ts",
-      target: "v3"
-    }),
+    tamaguiWithStaticNativeFaces,
     designMD(),
     shiki({
       outputPath: "packages/themes/src/shiki",
+      fileName: "theme.json",
       mapTheme: (spec: Schema) => {
+        const tokenGroup = (token: unknown): Record<string, unknown> =>
+          typeof token === "object" && token !== null
+            ? (token as Record<string, unknown>)
+            : {};
+
+        const resolveTokenValue = (
+          value: string,
+          resolvedPaths = new Set<string>()
+        ): string | undefined => {
+          const reference = /^\{([^{}]+)\}$/u.exec(value)?.[1];
+
+          if (!reference) {
+            return value;
+          }
+
+          if (resolvedPaths.has(reference)) {
+            return undefined;
+          }
+
+          let referencedToken: unknown = spec.tokens;
+
+          for (const pathPart of reference.split(".")) {
+            referencedToken = tokenGroup(referencedToken)[pathPart];
+          }
+
+          if (
+            typeof referencedToken !== "object" ||
+            referencedToken === null ||
+            !("$value" in referencedToken) ||
+            typeof referencedToken.$value !== "string"
+          ) {
+            return undefined;
+          }
+
+          return resolveTokenValue(
+            referencedToken.$value,
+            new Set([...resolvedPaths, reference])
+          );
+        };
+
         const tokenValue = (token: unknown, fallback: string) => {
           if (
             typeof token === "object" &&
@@ -64,16 +142,11 @@ export default defineConfig({
             "$value" in token &&
             typeof token.$value === "string"
           ) {
-            return token.$value;
+            return resolveTokenValue(token.$value) ?? fallback;
           }
 
           return fallback;
         };
-
-        const tokenGroup = (token: unknown): Record<string, unknown> =>
-          typeof token === "object" && token !== null
-            ? (token as Record<string, unknown>)
-            : {};
 
         const mapTheme = (theme: "dark" | "light"): ShikiTheme => {
           const color = tokenGroup(tokenGroup(spec.tokens).color);
@@ -112,7 +185,9 @@ export default defineConfig({
           const hairline = tokenValue(color.hairline, subtleInk);
 
           return {
-            name: `cyclone-${theme}`,
+            name: `cyclone-${theme
+              .replace(/([a-z0-9])([A-Z])/gu, "$1-$2")
+              .toLowerCase()}`,
             displayName: `Cyclone ${theme === "dark" ? "Dark" : "Light"}`,
             type: theme,
             bg: page,
@@ -189,13 +264,15 @@ export default defineConfig({
       }
     }),
     docgen({
-      outputPath: "docs/themes"
+      outputPath: "docs/themes",
+      cssVarPrefix: "storm"
     }),
     llms({
       outputPath: "docs/llms"
     }),
     css({
-      outputPath: "packages/themes/src/css/tokens.css"
+      outputPath: "packages/themes/src/css/tokens.css",
+      prefix: "storm"
     }),
     storybook({
       outputPath: "packages/themes/src/storybook",

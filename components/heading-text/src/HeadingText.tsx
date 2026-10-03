@@ -27,46 +27,131 @@ const BaseHeadingText = styled(SizableText, {
   displayName: "HeadingText",
   render: "span",
   role: "heading",
-  fontFamily: "display-md",
+
   // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
   // only define `true` plus their own step, so name the default step explicitly.
   size: "true" as FontSizeTokens,
-  color: "accent"
+  color: "accent",
+
+  variants: {
+    variant: {
+      base: {
+        fontFamily: "display-md"
+      },
+      editorial: {
+        fontFamily: "editorial-md"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    variant: "base"
+  }
 });
 
 export const HeadingHeroText = styled(BaseHeadingText, {
   displayName: "HeadingHeroText",
   render: "h1",
-  fontFamily: "display-hero",
-  color: "accent"
+  color: "accent",
+
+  variants: {
+    variant: {
+      base: {
+        fontFamily: "display-hero"
+      },
+      editorial: {
+        fontFamily: "editorial-hero"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    variant: "base"
+  }
 });
 
 export const HeadingTitleText = styled(BaseHeadingText, {
   displayName: "HeadingTitleText",
   render: "h1",
-  fontFamily: "display-lg",
-  color: "inkEmphasis"
+  color: "inkEmphasis",
+
+  variants: {
+    variant: {
+      base: {
+        fontFamily: "display-lg"
+      },
+      editorial: {
+        fontFamily: "editorial-lg"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    variant: "base"
+  }
 });
 
 export const HeadingLargeText = styled(BaseHeadingText, {
   displayName: "HeadingLargeText",
   render: "h2",
-  fontFamily: "display-lg",
-  color: "inkEmphasis"
+  color: "inkEmphasis",
+
+  variants: {
+    variant: {
+      base: {
+        fontFamily: "display-lg"
+      },
+      editorial: {
+        fontFamily: "editorial-lg"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    variant: "base"
+  }
 });
 
 export const HeadingMediumText = styled(BaseHeadingText, {
   displayName: "HeadingMediumText",
   render: "h3",
-  fontFamily: "display-md",
-  color: "inkEmphasis"
+  color: "inkEmphasis",
+
+  variants: {
+    variant: {
+      base: {
+        fontFamily: "display-md"
+      },
+      editorial: {
+        fontFamily: "editorial-md"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    variant: "base"
+  }
 });
 
 export const HeadingSmallText = styled(BaseHeadingText, {
   displayName: "HeadingSmallText",
   render: "h4",
-  fontFamily: "display-sm",
-  color: "inkEmphasis"
+  color: "inkEmphasis",
+
+  variants: {
+    variant: {
+      base: {
+        fontFamily: "display-sm"
+      },
+      editorial: {
+        fontFamily: "editorial-sm"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    variant: "base"
+  }
 });
 
 export type HeadingTextProps = GetProps<typeof BaseHeadingText>;
@@ -77,55 +162,47 @@ export const HeadingText = createStyledHOC(
     {
       children,
       level,
+      variant = "base",
       ...props
     }: GetProps<typeof BaseHeadingText> & {
-      level?:
-        | 1
-        | 2
-        | 3
-        | 4
-        | "hero"
-        | "title"
-        | "lg"
-        | "md"
-        | "sm";
+      level?: 1 | 2 | 3 | 4 | "hero" | "title" | "lg" | "md" | "sm";
     },
     forwardedRef
   ) => {
     if (level === "hero") {
       return (
-        <HeadingHeroText ref={forwardedRef} {...props}>
+        <HeadingHeroText ref={forwardedRef} variant={variant} {...props}>
           {children}
         </HeadingHeroText>
       );
     } else if (level === 1 || level === "title") {
       return (
-        <HeadingTitleText ref={forwardedRef} {...props}>
+        <HeadingTitleText ref={forwardedRef} variant={variant} {...props}>
           {children}
         </HeadingTitleText>
       );
     } else if (level === 2 || level === "lg") {
       return (
-        <HeadingLargeText ref={forwardedRef} {...props}>
+        <HeadingLargeText ref={forwardedRef} variant={variant} {...props}>
           {children}
         </HeadingLargeText>
       );
     } else if (level === 3 || level === "md") {
       return (
-        <HeadingMediumText ref={forwardedRef} {...props}>
+        <HeadingMediumText ref={forwardedRef} variant={variant} {...props}>
           {children}
         </HeadingMediumText>
       );
     } else if (level === 4 || level === "sm") {
       return (
-        <HeadingSmallText ref={forwardedRef} {...props}>
+        <HeadingSmallText ref={forwardedRef} variant={variant} {...props}>
           {children}
         </HeadingSmallText>
       );
     }
 
     return (
-      <BaseHeadingText ref={forwardedRef} {...props}>
+      <BaseHeadingText ref={forwardedRef} variant={variant} {...props}>
         {children}
       </BaseHeadingText>
     );

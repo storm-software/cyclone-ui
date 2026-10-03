@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="AE" format="2">
+  <advance width="2464"/>
+  <unicode hex="00C6"/>
+  <anchor x="1553" y="1414" name="UCtop"/>
+  <anchor x="1221" y="0" name="bottom"/>
+  <outline>
+    <contour>
+      <point x="337" y="162" type="line"/>
+      <point x="1268" y="1212" type="line"/>
+      <point x="1256" y="1219" type="line"/>
+      <point x="1005" y="169" type="line"/>
+      <point x="844" y="108" type="line"/>
+      <point x="819" y="0" type="line"/>
+      <point x="1468" y="0" type="line"/>
+      <point x="1804" y="1414" type="line"/>
+      <point x="781" y="1414" type="line"/>
+      <point x="757" y="1306" type="line"/>
+      <point x="978" y="1224" type="line"/>
+      <point x="33" y="162" type="line"/>
+      <point x="-113" y="108" type="line"/>
+      <point x="-141" y="0" type="line"/>
+      <point x="456" y="0" type="line"/>
+      <point x="483" y="108" type="line"/>
+    </contour>
+    <contour>
+      <point x="1980" y="-103" type="line"/>
+      <point x="2134" y="-103" type="line"/>
+      <point x="2417" y="493" type="line"/>
+      <point x="2225" y="493" type="line"/>
+      <point x="1847" y="92" type="line"/>
+      <point x="2082" y="234" type="line"/>
+      <point x="1286" y="234" type="line"/>
+      <point x="1234" y="0" type="line"/>
+      <point x="1940" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="515" y="408" type="line"/>
+      <point x="1245" y="408" type="line"/>
+      <point x="1306" y="631" type="line"/>
+      <point x="576" y="631" type="line"/>
+    </contour>
+    <contour>
+      <point x="1816" y="480" type="line"/>
+      <point x="1984" y="480" type="line"/>
+      <point x="2044" y="735" type="line"/>
+      <point x="2104" y="990" type="line"/>
+      <point x="1936" y="990" type="line"/>
+      <point x="1884" y="839" type="line"/>
+      <point x="1432" y="839" type="line"/>
+      <point x="1383" y="635" type="line"/>
+      <point x="1837" y="635" type="line"/>
+    </contour>
+    <contour>
+      <point x="2247" y="991" type="line"/>
+      <point x="2437" y="991" type="line"/>
+      <point x="2524" y="1512" type="line"/>
+      <point x="2392" y="1512" type="line"/>
+      <point x="2265" y="1414" type="line"/>
+      <point x="1566" y="1414" type="line"/>
+      <point x="1517" y="1180" type="line"/>
+      <point x="2286" y="1180" type="line"/>
+      <point x="2225" y="1329" type="line"/>
+    </contour>
+  </outline>
+</glyph>

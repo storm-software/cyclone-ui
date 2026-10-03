@@ -1,0 +1,13 @@
+[11:01:03.745] [INFO] storybook v10.6.1
+[11:01:04.236] [ERROR] [38;2;241;97;97mSB_CORE-SERVER_0018 (NoFreePortError): Unable to find a free port for Storybook's dev server (requested port: 6007).
+Your environment appears to block Storybook from listening on network ports.
+If you are running Storybook in a sandboxed or restricted shell, allow binding to localhost ports and try again.[39m
+    at file://./node_modules/.pnpm/storybook@10.6.1_@types+react@19.3.0_prettier@3.9.9_react@19.3.0/node_modules/storybook/dist/core-server/index.js:8988:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Promise.all (index 0)
+    at async buildDevStandalone (file://./node_modules/.pnpm/storybook@10.6.1_@types+react@19.3.0_prettier@3.9.9_react@19.3.0/node_modules/storybook/dist/core-server/index.js:9215:30)
+    at async withTelemetry (file://./node_modules/.pnpm/storybook@10.6.1_@types+react@19.3.0_prettier@3.9.9_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-IRB26IIA.js:142:12)
+    at async dev (file://./node_modules/.pnpm/storybook@10.6.1_@types+react@19.3.0_prettier@3.9.9_react@19.3.0/node_modules/storybook/dist/bin/core.js:4877:3)
+    at async _Command.<anonymous> (file://./node_modules/.pnpm/storybook@10.6.1_@types+react@19.3.0_prettier@3.9.9_react@19.3.0/node_modules/storybook/dist/bin/core.js:4985:3)
+[11:01:04.241] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.

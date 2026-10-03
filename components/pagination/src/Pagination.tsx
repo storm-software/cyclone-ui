@@ -129,7 +129,7 @@ export const Pagination = createStyledHOC(
         {currentPage > 3 && pageCount > 5 && (
           <SizableText
             color="accent"
-            fontFamily="body"
+            fontFamily="body-md"
             size={"true" as FontSizeTokens}
             paddingHorizontal="md">
             . . .
@@ -203,7 +203,7 @@ export const Pagination = createStyledHOC(
         {currentPage < pageCount - 2 && pageCount > 5 && (
           <SizableText
             color="accent"
-            fontFamily="body"
+            fontFamily="body-md"
             size={"true" as FontSizeTokens}
             paddingHorizontal="md">
             . . .

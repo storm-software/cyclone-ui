@@ -20,7 +20,7 @@ import { ArrowUpRight } from "@cyclone-ui/icons";
 import { LinkText } from "@cyclone-ui/link-text";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
-import type { FontSizeTokens, GetProps } from "@tamagui/core";
+import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled } from "@tamagui/core";
 import { Linking } from "react-native";
 
@@ -51,9 +51,7 @@ export const Link = createStyledHOC(
       children,
       href,
       external,
-      // v3 `SizableText` maps `size: true` to a `sm` / `4` font key the fonts do
-      // not define; the string key selects the font's default step.
-      size = "true" as FontSizeTokens,
+      size = "md",
       ...props
     }: GetProps<typeof LinkFrame> & {
       href?: string;
@@ -66,11 +64,9 @@ export const Link = createStyledHOC(
   ) => {
     return (
       <LinkFrame
-        group={"link" as any}
+        group={"link"}
         ref={forwardedRef}
-        // An explicit `size={true}` (e.g. from a parent context) needs the same
-        // mapping as the default.
-        size={size === true ? ("true" as FontSizeTokens) : size}
+        size={size}
         {...props}
         {...(isWeb
           ? {

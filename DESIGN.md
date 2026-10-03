@@ -249,52 +249,77 @@ colors:
   on-muted-discovery-disabled: "#1e0a42"
 typography:
   display-hero:
-    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Storm Sans"
     fontSize: "3.75rem"
     fontWeight: "600"
     lineHeight: "1.25"
   display-lg:
-    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Storm Sans"
     fontSize: "2.25rem"
     fontWeight: "600"
     lineHeight: "1.25"
   display-md:
-    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Storm Sans"
     fontSize: "1.5rem"
     fontWeight: "700"
     lineHeight: "1.25"
   display-sm:
-    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Storm Sans"
     fontSize: "1.25rem"
     fontWeight: "700"
-    lineHeight: "1"
+    lineHeight: "1.25"
+  editorial-hero:
+    fontFamily: "Storm Serif"
+    fontSize: "3.75rem"
+    fontWeight: "600"
+    lineHeight: "1.25"
+  editorial-lg:
+    fontFamily: "Storm Serif"
+    fontSize: "2.25rem"
+    fontWeight: "600"
+    lineHeight: "1.25"
+  editorial-md:
+    fontFamily: "Storm Serif"
+    fontSize: "1.5rem"
+    fontWeight: "700"
+    lineHeight: "1.25"
+  editorial-sm:
+    fontFamily: "Storm Serif"
+    fontSize: "1.25rem"
+    fontWeight: "700"
+    lineHeight: "1.25"
   title-lg:
-    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Storm Sans"
     fontSize: "1.125rem"
     fontWeight: "500"
-    lineHeight: "1"
+    lineHeight: "1.25"
   title-sm:
-    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Storm Sans"
     fontSize: "0.75rem"
     fontWeight: "400"
-    lineHeight: "1"
-  body:
-    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    lineHeight: "1.25"
+  body-md:
+    fontFamily: "Storm Sans"
     fontSize: "1.125rem"
     fontWeight: "400"
     lineHeight: "1.375"
+  body-sm:
+    fontFamily: "Storm Sans"
+    fontSize: "1rem"
+    fontWeight: "400"
+    lineHeight: "1.375"
   caption:
-    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Storm Sans"
     fontSize: "1rem"
     fontWeight: "400"
     lineHeight: "1"
   button:
-    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Storm Sans"
     fontSize: "1.125rem"
     fontWeight: "600"
     lineHeight: "1"
   eyebrow:
-    fontFamily: "Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Storm Sans"
     fontSize: "1.125rem"
     fontWeight: "600"
     lineHeight: "1"
@@ -336,147 +361,147 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 244 color tokens, 11 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 244 color tokens, 16 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
 - **Transparent (#ffffff00):** Fully transparent white.
 - **Black (#0c0c0d):** Near-black neutral.
 - **White (#ffffff):** Pure white.
-- **Ink Emphasis (#2b2c30):** Primary text and icon color for high-emphasis content.
-- **Ink Body (#606164):** Default text and icon color for standard content.
-- **Ink Subtle (#b0b0b1):** Softer text and icon color for supporting content.
-- **Ink Subtlest (#cacacb):** Softest text and icon color for supporting content.
-- **Surface Sunken (#e1e1e1):** Recessed surface for inset controls and grouped content.
-- **Surface Canvas (#eaeaea):** Base application canvas surface.
-- **Surface Elevated (#f1f1f1):** Raised surface for cards and controls.
-- **Surface Floating (#fafafa):** Floating surface for menus, popovers, and dialogs.
-- **Surface Overlay (#ffffff):** Topmost surface for transient overlays.
-- **Surface Sunken Hover (#a0a0a0):** Recessed surface for inset controls and grouped content. (hover, 23% darker)
-- **Surface Sunken Active (#ababab):** Recessed surface for inset controls and grouped content. (active, 19% darker)
-- **Surface Sunken Inactive (#ffffff):** Recessed surface for inset controls and grouped content. (inactive, 20% brighter)
-- **Surface Sunken Disabled (#e1e1e166):** Recessed surface for inset controls and grouped content. (disabled, 40% opacity)
-- **Surface Canvas Hover (#a6a6a6):** Base application canvas surface. (hover, 23% darker)
-- **Surface Canvas Active (#b2b2b2):** Base application canvas surface. (active, 19% darker)
-- **Surface Canvas Inactive (#ffffff):** Base application canvas surface. (inactive, 20% brighter)
-- **Surface Canvas Disabled (#eaeaea66):** Base application canvas surface. (disabled, 40% opacity)
-- **Surface Elevated Hover (#ababab):** Raised surface for cards and controls. (hover, 23% darker)
-- **Surface Elevated Active (#b7b7b7):** Raised surface for cards and controls. (active, 19% darker)
-- **Surface Elevated Inactive (#ffffff):** Raised surface for cards and controls. (inactive, 20% brighter)
-- **Surface Elevated Disabled (#f1f1f166):** Raised surface for cards and controls. (disabled, 40% opacity)
-- **Surface Floating Hover (#b2b2b2):** Floating surface for menus, popovers, and dialogs. (hover, 23% darker)
-- **Surface Floating Active (#bebebe):** Floating surface for menus, popovers, and dialogs. (active, 19% darker)
-- **Surface Floating Inactive (#ffffff):** Floating surface for menus, popovers, and dialogs. (inactive, 20% brighter)
-- **Surface Floating Disabled (#fafafa66):** Floating surface for menus, popovers, and dialogs. (disabled, 40% opacity)
-- **Surface Overlay Hover (#b6b6b6):** Topmost surface for transient overlays. (hover, 23% darker)
-- **Surface Overlay Active (#c2c2c2):** Topmost surface for transient overlays. (active, 19% darker)
-- **Surface Overlay Inactive (#ffffff):** Topmost surface for transient overlays. (inactive, 20% brighter)
-- **Surface Overlay Disabled (#ffffff66):** Topmost surface for transient overlays. (disabled, 40% opacity)
-- **Required (#8e223e):** Indicator color for required form fields.
-- **Link (#2055b3):** Interactive color for links and linked text.
-- **Hairline (#b0b0b1):** Subtle color for hairline borders and separators.
-- **Selection Background (#1fb2a6):** Background color of selected text, using the brand accent.
-- **Selection Foreground (#FAFAFA):** Color of selected text, placed on the brand accent.
-- **Accent Base (#151518):** Primary neutral accent for emphasized controls and content.
-- **Accent Brand (#1fb2a6):** Brand accent for primary actions and emphasis.
-- **Accent Danger (#8e223e):** Danger accent for destructive actions and critical states.
-- **Accent Negative (#8e223e):** Negative accent for error states and invalid input.
-- **Accent Warning (#765417):** Warning accent for cautionary states.
-- **Accent Success (#216b53):** Success accent for confirmed states.
-- **Accent Positive (#216b53):** Positive accent for favorable states.
-- **Accent Info (#2055b3):** Informational accent for guidance and neutral status.
-- **Accent Discovery (#594395):** Discovery accent for new or exploratory content.
-- **Accent Base Hover (#232326):** Primary neutral accent for emphasized controls and content. (hover, 30% brighter)
-- **Accent Base Active (#0c0c0d):** Primary neutral accent for emphasized controls and content. (active, light base primitive)
-- **Accent Base Inactive (#030303):** Primary neutral accent for emphasized controls and content. (inactive, 40% darker)
-- **Accent Base Disabled (#151517):** Primary neutral accent for emphasized controls and content. (disabled, 80% saturation)
-- **Accent Brand Hover (#008277):** Brand accent for primary actions and emphasis. (hover, 23% darker)
-- **Accent Brand Active (#008a7f):** Brand accent for primary actions and emphasis. (active, 19% darker)
-- **Accent Brand Inactive (#5ddfd2):** Brand accent for primary actions and emphasis. (inactive, 20% brighter)
-- **Accent Brand Disabled (#4daea4):** Brand accent for primary actions and emphasis. (disabled, 80% saturation)
-- **Accent Danger Hover (#6e0025):** Danger accent for destructive actions and critical states. (hover, 23% darker)
-- **Accent Danger Active (#730029):** Danger accent for destructive actions and critical states. (active, 19% darker)
-- **Accent Danger Inactive (#ab3e56):** Danger accent for destructive actions and critical states. (inactive, 20% brighter)
-- **Accent Danger Disabled (#843142):** Danger accent for destructive actions and critical states. (disabled, 80% saturation)
-- **Accent Negative Hover (#6e0025):** Negative accent for error states and invalid input. (hover, 23% darker)
-- **Accent Negative Active (#730029):** Negative accent for error states and invalid input. (active, 19% darker)
-- **Accent Negative Inactive (#ab3e56):** Negative accent for error states and invalid input. (inactive, 20% brighter)
-- **Accent Negative Disabled (#843142):** Negative accent for error states and invalid input. (disabled, 80% saturation)
-- **Accent Warning Hover (#573700):** Warning accent for cautionary states. (hover, 23% darker)
-- **Accent Warning Active (#5d3c00):** Warning accent for cautionary states. (active, 19% darker)
-- **Accent Warning Inactive (#926f36):** Warning accent for cautionary states. (inactive, 20% brighter)
-- **Accent Warning Disabled (#71562a):** Warning accent for cautionary states. (disabled, 80% saturation)
-- **Accent Success Hover (#004d36):** Success accent for confirmed states. (hover, 23% darker)
-- **Accent Success Active (#00523b):** Success accent for confirmed states. (active, 19% darker)
-- **Accent Success Inactive (#40876e):** Success accent for confirmed states. (inactive, 20% brighter)
-- **Accent Success Disabled (#336855):** Success accent for confirmed states. (disabled, 80% saturation)
-- **Accent Positive Hover (#004d36):** Positive accent for favorable states. (hover, 23% darker)
-- **Accent Positive Active (#00523b):** Positive accent for favorable states. (active, 19% darker)
-- **Accent Positive Inactive (#40876e):** Positive accent for favorable states. (inactive, 20% brighter)
-- **Accent Positive Disabled (#336855):** Positive accent for favorable states. (disabled, 80% saturation)
-- **Accent Info Hover (#003590):** Informational accent for guidance and neutral status. (hover, 23% darker)
-- **Accent Info Active (#033a96):** Informational accent for guidance and neutral status. (active, 19% darker)
-- **Accent Info Inactive (#3b72d3):** Informational accent for guidance and neutral status. (inactive, 20% brighter)
-- **Accent Info Disabled (#2f58a2):** Informational accent for guidance and neutral status. (disabled, 80% saturation)
-- **Accent Discovery Hover (#3f2676):** Discovery accent for new or exploratory content. (hover, 23% darker)
-- **Accent Discovery Active (#432b7b):** Discovery accent for new or exploratory content. (active, 19% darker)
-- **Accent Discovery Inactive (#725db2):** Discovery accent for new or exploratory content. (inactive, 20% brighter)
-- **Accent Discovery Disabled (#584889):** Discovery accent for new or exploratory content. (disabled, 80% saturation)
-- **On Accent Base (#f1f1f1):** Content color placed on neutral accent backgrounds.
-- **On Accent Base Hover (#959595):** Content color placed on neutral accent backgrounds. (hover, 30% darker)
-- **On Accent Base Active (#0c0c0d):** Content color placed on neutral accent backgrounds. (active, light base primitive)
-- **On Accent Base Inactive (#030303):** Content color placed on neutral accent backgrounds. (inactive, 40% darker)
-- **On Accent Base Disabled (#f1f1f166):** Content color placed on neutral accent backgrounds. (disabled, 40% opacity)
-- **On Accent Brand (#FAFAFA):** Brand accent for primary actions and emphasis.
-- **On Accent Danger (#FAFAFA):** Danger accent for destructive actions and critical states.
-- **On Accent Negative (#FAFAFA):** Negative accent for error states and invalid input.
-- **On Accent Warning (#FAFAFA):** Warning accent for cautionary states.
-- **On Accent Success (#FAFAFA):** Success accent for confirmed states.
-- **On Accent Positive (#FAFAFA):** Positive accent for favorable states.
-- **On Accent Info (#FAFAFA):** Informational accent for guidance and neutral status.
-- **On Accent Discovery (#FAFAFA):** Discovery accent for new or exploratory content.
-- **On Accent Brand Hover (#b2b2b2):** Brand accent for primary actions and emphasis. (hover, 23% darker)
-- **On Accent Brand Active (#bebebe):** Brand accent for primary actions and emphasis. (active, 19% darker)
-- **On Accent Brand Inactive (#ffffff):** Brand accent for primary actions and emphasis. (inactive, 20% brighter)
-- **On Accent Brand Disabled (#fafafa66):** Brand accent for primary actions and emphasis. (disabled, 40% opacity)
-- **On Accent Danger Hover (#b2b2b2):** Danger accent for destructive actions and critical states. (hover, 23% darker)
-- **On Accent Danger Active (#bebebe):** Danger accent for destructive actions and critical states. (active, 19% darker)
-- **On Accent Danger Inactive (#ffffff):** Danger accent for destructive actions and critical states. (inactive, 20% brighter)
-- **On Accent Danger Disabled (#fafafa66):** Danger accent for destructive actions and critical states. (disabled, 40% opacity)
-- **On Accent Negative Hover (#b2b2b2):** Negative accent for error states and invalid input. (hover, 23% darker)
-- **On Accent Negative Active (#bebebe):** Negative accent for error states and invalid input. (active, 19% darker)
-- **On Accent Negative Inactive (#ffffff):** Negative accent for error states and invalid input. (inactive, 20% brighter)
-- **On Accent Negative Disabled (#fafafa66):** Negative accent for error states and invalid input. (disabled, 40% opacity)
-- **On Accent Warning Hover (#b2b2b2):** Warning accent for cautionary states. (hover, 23% darker)
-- **On Accent Warning Active (#bebebe):** Warning accent for cautionary states. (active, 19% darker)
-- **On Accent Warning Inactive (#ffffff):** Warning accent for cautionary states. (inactive, 20% brighter)
-- **On Accent Warning Disabled (#fafafa66):** Warning accent for cautionary states. (disabled, 40% opacity)
-- **On Accent Success Hover (#b2b2b2):** Success accent for confirmed states. (hover, 23% darker)
-- **On Accent Success Active (#bebebe):** Success accent for confirmed states. (active, 19% darker)
-- **On Accent Success Inactive (#ffffff):** Success accent for confirmed states. (inactive, 20% brighter)
-- **On Accent Success Disabled (#fafafa66):** Success accent for confirmed states. (disabled, 40% opacity)
-- **On Accent Positive Hover (#b2b2b2):** Positive accent for favorable states. (hover, 23% darker)
-- **On Accent Positive Active (#bebebe):** Positive accent for favorable states. (active, 19% darker)
-- **On Accent Positive Inactive (#ffffff):** Positive accent for favorable states. (inactive, 20% brighter)
-- **On Accent Positive Disabled (#fafafa66):** Positive accent for favorable states. (disabled, 40% opacity)
-- **On Accent Info Hover (#b2b2b2):** Informational accent for guidance and neutral status. (hover, 23% darker)
-- **On Accent Info Active (#bebebe):** Informational accent for guidance and neutral status. (active, 19% darker)
-- **On Accent Info Inactive (#ffffff):** Informational accent for guidance and neutral status. (inactive, 20% brighter)
-- **On Accent Info Disabled (#fafafa66):** Informational accent for guidance and neutral status. (disabled, 40% opacity)
-- **On Accent Discovery Hover (#b2b2b2):** Discovery accent for new or exploratory content. (hover, 23% darker)
-- **On Accent Discovery Active (#bebebe):** Discovery accent for new or exploratory content. (active, 19% darker)
-- **On Accent Discovery Inactive (#ffffff):** Discovery accent for new or exploratory content. (inactive, 20% brighter)
-- **On Accent Discovery Disabled (#fafafa66):** Discovery accent for new or exploratory content. (disabled, 40% opacity)
-- **Muted Base (#eaeaea):** Muted neutral accent background for low-emphasis states.
-- **Muted Brand (#68e8db):** Muted brand accent background for low-emphasis states.
-- **Muted Base Hover (#919191):** Muted neutral accent background for low-emphasis states. (hover, 30% darker)
-- **Muted Base Active (#cacaca):** Muted neutral accent background for low-emphasis states. (active, 10% darker)
-- **Muted Base Inactive (#030303):** Muted neutral accent background for low-emphasis states. (inactive, 40% darker)
-- **Muted Base Disabled (#eaeaea66):** Muted neutral accent background for low-emphasis states. (disabled, 40% opacity)
-- **Muted Brand Hover (#08a99e):** Muted brand accent background for low-emphasis states. (hover, 23% darker)
-- **Muted Brand Active (#25b4a8):** Muted brand accent background for low-emphasis states. (active, 19% darker)
-- **Muted Brand Inactive (#9bffff):** Muted brand accent background for low-emphasis states. (inactive, 20% brighter)
-- **Muted Brand Disabled (#84e3d9):** Muted brand accent background for low-emphasis states. (disabled, 80% saturation)
+- **Ink Emphasis (#2b2c30):** Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options.
+- **Ink Body (#606164):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.
+- **Ink Subtle (#b0b0b1):** Lower-emphasis text and icon color for supporting content that should recede behind body copy. Use it for metadata, secondary labels and decorative icons. Used by Breadcrumb separators, EyebrowText, TableOfContents entries, FileTree, DatePicker, inactive Slider values and NavigationHeader links.
+- **Ink Subtlest (#cacacb):** Lowest-emphasis text and icon color, for content that should be legible but barely noticed. Use it for hints and optional markers. Used by Field for the `optional` marker beside a field label; avoid it for anything the user must read.
+- **Surface Sunken (#e1e1e1):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant.
+- **Surface Canvas (#eaeaea):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator.
+- **Surface Elevated (#f1f1f1):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree.
+- **Surface Floating (#fafafa):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant.
+- **Surface Overlay (#ffffff):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.
+- **Surface Sunken Hover (#a0a0a0):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hover, 23% darker)
+- **Surface Sunken Active (#ababab):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 19% darker)
+- **Surface Sunken Inactive (#ffffff):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 20% brighter)
+- **Surface Sunken Disabled (#e1e1e166):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 40% opacity)
+- **Surface Canvas Hover (#a6a6a6):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hover, 23% darker)
+- **Surface Canvas Active (#b2b2b2):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 19% darker)
+- **Surface Canvas Inactive (#ffffff):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 20% brighter)
+- **Surface Canvas Disabled (#eaeaea66):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 40% opacity)
+- **Surface Elevated Hover (#ababab):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hover, 23% darker)
+- **Surface Elevated Active (#b7b7b7):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 19% darker)
+- **Surface Elevated Inactive (#ffffff):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 20% brighter)
+- **Surface Elevated Disabled (#f1f1f166):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 40% opacity)
+- **Surface Floating Hover (#b2b2b2):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker)
+- **Surface Floating Active (#bebebe):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker)
+- **Surface Floating Inactive (#ffffff):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter)
+- **Surface Floating Disabled (#fafafa66):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 40% opacity)
+- **Surface Overlay Hover (#b6b6b6):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hover, 23% darker)
+- **Surface Overlay Active (#c2c2c2):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 19% darker)
+- **Surface Overlay Inactive (#ffffff):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 20% brighter)
+- **Surface Overlay Disabled (#ffffff66):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 40% opacity)
+- **Required (#8e223e):** Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.
+- **Link (#2055b3):** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links.
+- **Hairline (#b0b0b1):** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.
+- **Selection Background (#1fb2a6):** Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme.
+- **Selection Foreground (#FAFAFA):** Text color of highlighted text, chosen to stay readable on the brand-accent selection background.
+- **Accent Base (#151518):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.
+- **Accent Brand (#1fb2a6):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.
+- **Accent Danger (#8e223e):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.
+- **Accent Negative (#8e223e):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.
+- **Accent Warning (#765417):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.
+- **Accent Success (#216b53):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.
+- **Accent Positive (#216b53):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.
+- **Accent Info (#2055b3):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.
+- **Accent Discovery (#594395):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.
+- **Accent Base Hover (#232326):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hover, 30% brighter)
+- **Accent Base Active (#0c0c0d):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light base primitive)
+- **Accent Base Inactive (#030303):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)
+- **Accent Base Disabled (#151517):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 80% saturation)
+- **Accent Brand Hover (#008277):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)
+- **Accent Brand Active (#008a7f):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)
+- **Accent Brand Inactive (#5ddfd2):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)
+- **Accent Brand Disabled (#4daea4):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 80% saturation)
+- **Accent Danger Hover (#6e0025):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)
+- **Accent Danger Active (#730029):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)
+- **Accent Danger Inactive (#ab3e56):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)
+- **Accent Danger Disabled (#843142):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 80% saturation)
+- **Accent Negative Hover (#6e0025):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)
+- **Accent Negative Active (#730029):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)
+- **Accent Negative Inactive (#ab3e56):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)
+- **Accent Negative Disabled (#843142):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 80% saturation)
+- **Accent Warning Hover (#573700):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)
+- **Accent Warning Active (#5d3c00):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)
+- **Accent Warning Inactive (#926f36):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)
+- **Accent Warning Disabled (#71562a):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 80% saturation)
+- **Accent Success Hover (#004d36):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)
+- **Accent Success Active (#00523b):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)
+- **Accent Success Inactive (#40876e):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)
+- **Accent Success Disabled (#336855):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 80% saturation)
+- **Accent Positive Hover (#004d36):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)
+- **Accent Positive Active (#00523b):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)
+- **Accent Positive Inactive (#40876e):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)
+- **Accent Positive Disabled (#336855):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 80% saturation)
+- **Accent Info Hover (#003590):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)
+- **Accent Info Active (#033a96):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)
+- **Accent Info Inactive (#3b72d3):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)
+- **Accent Info Disabled (#2f58a2):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 80% saturation)
+- **Accent Discovery Hover (#3f2676):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)
+- **Accent Discovery Active (#432b7b):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)
+- **Accent Discovery Inactive (#725db2):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)
+- **Accent Discovery Disabled (#584889):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 80% saturation)
+- **On Accent Base (#f1f1f1):** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label.
+- **On Accent Base Hover (#959595):** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (hover, 30% darker)
+- **On Accent Base Active (#0c0c0d):** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (active, light base primitive)
+- **On Accent Base Inactive (#030303):** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (inactive, 40% darker)
+- **On Accent Base Disabled (#f1f1f166):** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 40% opacity)
+- **On Accent Brand (#FAFAFA):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.
+- **On Accent Danger (#FAFAFA):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.
+- **On Accent Negative (#FAFAFA):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.
+- **On Accent Warning (#FAFAFA):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.
+- **On Accent Success (#FAFAFA):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.
+- **On Accent Positive (#FAFAFA):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.
+- **On Accent Info (#FAFAFA):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.
+- **On Accent Discovery (#FAFAFA):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.
+- **On Accent Brand Hover (#b2b2b2):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)
+- **On Accent Brand Active (#bebebe):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)
+- **On Accent Brand Inactive (#ffffff):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)
+- **On Accent Brand Disabled (#fafafa66):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 40% opacity)
+- **On Accent Danger Hover (#b2b2b2):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)
+- **On Accent Danger Active (#bebebe):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)
+- **On Accent Danger Inactive (#ffffff):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)
+- **On Accent Danger Disabled (#fafafa66):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 40% opacity)
+- **On Accent Negative Hover (#b2b2b2):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)
+- **On Accent Negative Active (#bebebe):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)
+- **On Accent Negative Inactive (#ffffff):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)
+- **On Accent Negative Disabled (#fafafa66):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 40% opacity)
+- **On Accent Warning Hover (#b2b2b2):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)
+- **On Accent Warning Active (#bebebe):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)
+- **On Accent Warning Inactive (#ffffff):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)
+- **On Accent Warning Disabled (#fafafa66):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 40% opacity)
+- **On Accent Success Hover (#b2b2b2):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)
+- **On Accent Success Active (#bebebe):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)
+- **On Accent Success Inactive (#ffffff):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)
+- **On Accent Success Disabled (#fafafa66):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 40% opacity)
+- **On Accent Positive Hover (#b2b2b2):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)
+- **On Accent Positive Active (#bebebe):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)
+- **On Accent Positive Inactive (#ffffff):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)
+- **On Accent Positive Disabled (#fafafa66):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 40% opacity)
+- **On Accent Info Hover (#b2b2b2):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)
+- **On Accent Info Active (#bebebe):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)
+- **On Accent Info Inactive (#ffffff):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)
+- **On Accent Info Disabled (#fafafa66):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 40% opacity)
+- **On Accent Discovery Hover (#b2b2b2):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)
+- **On Accent Discovery Active (#bebebe):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)
+- **On Accent Discovery Inactive (#ffffff):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)
+- **On Accent Discovery Disabled (#fafafa66):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 40% opacity)
+- **Muted Base (#eaeaea):** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.
+- **Muted Brand (#68e8db):** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme.
+- **Muted Base Hover (#919191):** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hover, 30% darker)
+- **Muted Base Active (#cacaca):** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 10% darker)
+- **Muted Base Inactive (#030303):** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)
+- **Muted Base Disabled (#eaeaea66):** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 40% opacity)
+- **Muted Brand Hover (#08a99e):** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% darker)
+- **Muted Brand Active (#25b4a8):** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (active, 19% darker)
+- **Muted Brand Inactive (#9bffff):** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% brighter)
+- **Muted Brand Disabled (#84e3d9):** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation)
 - **Muted Danger (#e37085):** Generated danger muted background for the light theme
 - **Muted Negative (#e37085):** Generated negative muted background for the light theme
 - **Muted Warning (#bd985e):** Generated warning muted background for the light theme
@@ -512,33 +537,33 @@ Cyclone UI design tokens — 244 color tokens, 11 typography tokens, 28 spacing 
 - **Muted Discovery Active (#7863ba):** Generated discovery muted background for the light theme (active, 19% darker)
 - **Muted Discovery Inactive (#c9b5ff):** Generated discovery muted background for the light theme (inactive, 20% brighter)
 - **Muted Discovery Disabled (#9d8ed6):** Generated discovery muted background for the light theme (disabled, 80% saturation)
-- **Overlay Background (#ffffff):** Surface color for floating overlays.
-- **Overlay Border (#b0b0b1):** Border color that defines floating overlays.
-- **Overlay Backdrop (#1a1c1f66):** Backdrop color that separates overlays from page content.
-- **Data Neutral Emphasis (#606164):** High-emphasis neutral data-series color.
-- **Data Neutral Subtle (#eaeaea):** Low-emphasis neutral data-series color.
-- **Data Brand Emphasis (#2055b3):** High-emphasis brand data-series color.
-- **Data Brand Subtle (#6da2ff):** Low-emphasis brand data-series color.
-- **Data Red Emphasis (#8e223e):** High-emphasis red data-series color.
-- **Data Red Subtle (#dd6c89):** Low-emphasis red data-series color.
-- **Data Orange Emphasis (#9f4000):** High-emphasis orange data-series color.
-- **Data Orange Subtle (#f19f71):** Low-emphasis orange data-series color.
-- **Data Yellow Emphasis (#765417):** High-emphasis yellow data-series color.
-- **Data Yellow Subtle (#f8b740):** Low-emphasis yellow data-series color.
-- **Data Green Emphasis (#216b53):** High-emphasis green data-series color.
-- **Data Green Subtle (#74d59f):** Low-emphasis green data-series color.
-- **Data Blue Emphasis (#2055b3):** High-emphasis blue data-series color.
-- **Data Blue Subtle (#6da2ff):** Low-emphasis blue data-series color.
-- **Data Purple Emphasis (#594395):** High-emphasis purple data-series color.
-- **Data Purple Subtle (#a690e1):** Low-emphasis purple data-series color.
-- **Data Pink Emphasis (#904272):** High-emphasis pink data-series color.
-- **Data Pink Subtle (#eb89c5):** Low-emphasis pink data-series color.
-- **Link Hover (#003590):** Interactive color for links and linked text. (hover, 23% darker)
-- **Link Active (#033a96):** Interactive color for links and linked text. (active, 19% darker)
-- **Link Inactive (#3b72d3):** Interactive color for links and linked text. (inactive, 20% brighter)
-- **Hairline Hover (#7c7c7d):** Subtle color for hairline borders and separators. (hover, 23% darker)
-- **Hairline Active (#9d9d9e):** Subtle color for hairline borders and separators. (active, 8% darker)
-- **Hairline Inactive (#e1e1e2):** Subtle color for hairline borders and separators. (inactive, 20% brighter)
+- **Overlay Background (#ffffff):** Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page.
+- **Overlay Border (#b0b0b1):** Border color that outlines floating overlay panels against the content beneath them. Used for the Popover border.
+- **Overlay Backdrop (#1a1c1f66):** Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.
+- **Data Neutral Emphasis (#606164):** High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data.
+- **Data Neutral Subtle (#eaeaea):** Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.
+- **Data Brand Emphasis (#2055b3):** High-emphasis brand data color. Use it for the primary mark of a brand series, such as lines, bars, points and legend swatches.
+- **Data Brand Subtle (#6da2ff):** Low-emphasis brand data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `brand.emphasis` series.
+- **Data Red Emphasis (#8e223e):** High-emphasis red data color. Use it for the primary mark of a red series, such as lines, bars, points and legend swatches.
+- **Data Red Subtle (#dd6c89):** Low-emphasis red data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `red.emphasis` series.
+- **Data Orange Emphasis (#9f4000):** High-emphasis orange data color. Use it for the primary mark of a orange series, such as lines, bars, points and legend swatches.
+- **Data Orange Subtle (#f19f71):** Low-emphasis orange data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `orange.emphasis` series.
+- **Data Yellow Emphasis (#765417):** High-emphasis yellow data color. Use it for the primary mark of a yellow series, such as lines, bars, points and legend swatches.
+- **Data Yellow Subtle (#f8b740):** Low-emphasis yellow data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `yellow.emphasis` series.
+- **Data Green Emphasis (#216b53):** High-emphasis green data color. Use it for the primary mark of a green series, such as lines, bars, points and legend swatches.
+- **Data Green Subtle (#74d59f):** Low-emphasis green data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `green.emphasis` series.
+- **Data Blue Emphasis (#2055b3):** High-emphasis blue data color. Use it for the primary mark of a blue series, such as lines, bars, points and legend swatches.
+- **Data Blue Subtle (#6da2ff):** Low-emphasis blue data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `blue.emphasis` series.
+- **Data Purple Emphasis (#594395):** High-emphasis purple data color. Use it for the primary mark of a purple series, such as lines, bars, points and legend swatches.
+- **Data Purple Subtle (#a690e1):** Low-emphasis purple data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `purple.emphasis` series.
+- **Data Pink Emphasis (#904272):** High-emphasis pink data color. Use it for the primary mark of a pink series, such as lines, bars, points and legend swatches.
+- **Data Pink Subtle (#eb89c5):** Low-emphasis pink data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `pink.emphasis` series.
+- **Link Hover (#003590):** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% darker)
+- **Link Active (#033a96):** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% darker)
+- **Link Inactive (#3b72d3):** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% brighter)
+- **Hairline Hover (#7c7c7d):** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% darker)
+- **Hairline Active (#9d9d9e):** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker)
+- **Hairline Inactive (#e1e1e2):** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% brighter)
 - **On Muted Base (#151518):** Generated base foreground on muted backgrounds
 - **On Muted Brand (#1fb2a6):** Generated brand foreground on muted backgrounds
 - **On Muted Danger (#2f000c):** Generated danger foreground on muted backgrounds
@@ -587,16 +612,21 @@ Cyclone UI design tokens — 244 color tokens, 11 typography tokens, 28 spacing 
 
 ## Typography
 
-- **display-hero:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.25
-- **display-lg:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.25
-- **display-md:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.25
-- **display-sm:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1
-- **title-lg:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1
-- **title-sm:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 0.75rem, fontWeight: 400, lineHeight: 1
-- **body:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.375
-- **caption:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1rem, fontWeight: 400, lineHeight: 1
-- **button:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1
-- **eyebrow:** fontFamily: Storm Sans, -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1
+- **display-hero:** fontFamily: Storm Sans, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.25
+- **display-lg:** fontFamily: Storm Sans, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.25
+- **display-md:** fontFamily: Storm Sans, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.25
+- **display-sm:** fontFamily: Storm Sans, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.25
+- **editorial-hero:** fontFamily: Storm Serif, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.25
+- **editorial-lg:** fontFamily: Storm Serif, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.25
+- **editorial-md:** fontFamily: Storm Serif, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.25
+- **editorial-sm:** fontFamily: Storm Serif, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.25
+- **title-lg:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.25
+- **title-sm:** fontFamily: Storm Sans, fontSize: 0.75rem, fontWeight: 400, lineHeight: 1.25
+- **body-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.375
+- **body-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.375
+- **caption:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1
+- **button:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1
+- **eyebrow:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1
 - **code:** fontFamily: Google Sans Code, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.25
 
 ## Layout

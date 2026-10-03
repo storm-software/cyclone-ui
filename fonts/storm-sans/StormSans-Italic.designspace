@@ -33,21 +33,21 @@
     </source>
   </sources>
   <instances>
-    <instance familyname="Storm Sans" postscriptfontname="StormSans-ThinItalic" stylename="Thin Italic" filename="instances/StormSans-ThinItalic.ufo">
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-ThinItalic" stylename="Thin Italic" stylemapfamilyname="Storm Sans Thin" stylemapstylename="italic" filename="instances/StormSans-ThinItalic.ufo">
       <location>
         <dimension name="weight" xvalue="-925" />
       </location>
       <kerning />
       <info />
     </instance>
-    <instance familyname="Storm Sans" postscriptfontname="StormSans-ExtraLightItalic" stylename="ExtraLight Italic" filename="instances/StormSans-ExtraLightItalic.ufo">
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-ExtraLightItalic" stylename="ExtraLight Italic" stylemapfamilyname="Storm Sans ExtraLight" stylemapstylename="italic" filename="instances/StormSans-ExtraLightItalic.ufo">
       <location>
         <dimension name="weight" xvalue="-706" />
       </location>
       <kerning />
       <info />
     </instance>
-    <instance familyname="Storm Sans" postscriptfontname="StormSans-LightItalic" stylename="Light Italic" filename="instances/StormSans-LightItalic.ufo">
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-LightItalic" stylename="Light Italic" stylemapfamilyname="Storm Sans Light" stylemapstylename="italic" filename="instances/StormSans-LightItalic.ufo">
       <location>
         <dimension name="weight" xvalue="-360" />
       </location>
@@ -61,21 +61,21 @@
       <kerning />
       <info />
     </instance>
-    <instance familyname="Storm Sans" postscriptfontname="StormSans-TextItalic" stylename="Text Italic" filename="instances/StormSans-TextItalic.ufo">
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-TextItalic" stylename="Text Italic" stylemapfamilyname="Storm Sans Text" stylemapstylename="italic" filename="instances/StormSans-TextItalic.ufo">
       <location>
         <dimension name="weight" xvalue="191" />
       </location>
       <kerning />
       <info />
     </instance>
-    <instance familyname="Storm Sans" postscriptfontname="StormSans-MediumItalic" stylename="Medium Italic" filename="instances/StormSans-MediumItalic.ufo">
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-MediumItalic" stylename="Medium Italic" stylemapfamilyname="Storm Sans Medium" stylemapstylename="italic" filename="instances/StormSans-MediumItalic.ufo">
       <location>
         <dimension name="weight" xvalue="427" />
       </location>
       <kerning />
       <info />
     </instance>
-    <instance familyname="Storm Sans" postscriptfontname="StormSans-SemiBoldItalic" stylename="SemiBold Italic" filename="instances/StormSans-SemiBoldItalic.ufo">
+    <instance familyname="Storm Sans" postscriptfontname="StormSans-SemiBoldItalic" stylename="SemiBold Italic" stylemapfamilyname="Storm Sans SemiBold" stylemapstylename="italic" filename="instances/StormSans-SemiBoldItalic.ufo">
       <location>
         <dimension name="weight" xvalue="705" />
       </location>

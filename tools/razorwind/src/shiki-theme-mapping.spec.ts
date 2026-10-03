@@ -45,16 +45,17 @@ vi.mock("@razorwind/shiki/generate", () => ({
 }));
 
 type Token = { $value: string };
-type ShikiPlugin = {
-  mapTheme: (tokens: unknown) => Array<{
-    colors: Record<string, string>;
-    fg: string;
-    name: string;
-    settings: Array<{
-      scope: string[];
-      settings: { foreground: string };
-    }>;
+type MappedTheme = {
+  colors: Record<string, string>;
+  fg: string;
+  name: string;
+  settings: Array<{
+    scope: string[];
+    settings: { foreground: string };
   }>;
+};
+type ShikiPlugin = {
+  mapTheme: (tokens: unknown) => MappedTheme | MappedTheme[];
 };
 
 const color = ($value: string): Token => ({ $value });
@@ -90,7 +91,7 @@ const semanticColors = (prefix: string) => ({
 });
 
 const setting = (
-  theme: ReturnType<ShikiPlugin["mapTheme"]>[number],
+  theme: MappedTheme,
   scope: string
 ) =>
   theme.settings.find(candidate => candidate.scope.includes(scope))?.settings
@@ -111,14 +112,14 @@ describe("Shiki theme mapping", () => {
 
     expect(shikiPlugin).toBeDefined();
 
-    const themes = shikiPlugin!.mapTheme({
-      tokens: {
-        dark: semanticColors("dark"),
-        light: semanticColors("light")
-      }
-    });
-    const dark = themes.find(theme => theme.name === "cyclone-dark")!;
-    const light = themes.find(theme => theme.name === "cyclone-light")!;
+    const dark = shikiPlugin!.mapTheme({
+      theme: "dark",
+      tokens: semanticColors("dark")
+    }) as MappedTheme;
+    const light = shikiPlugin!.mapTheme({
+      theme: "light",
+      tokens: semanticColors("light")
+    }) as MappedTheme;
 
     expect(dark.fg).toBe("dark-ink-emphasis");
     expect(dark.colors).toMatchObject({
@@ -133,16 +134,43 @@ describe("Shiki theme mapping", () => {
     expect(setting(dark, "comment")).toBe("dark-ink-subtle");
     expect(setting(dark, "string")).toBe("dark-accent-success");
     expect(setting(dark, "constant")).toBe("dark-accent-warning");
-    expect(setting(dark, "keyword")).toBe("dark-accent-danger");
+    expect(setting(dark, "keyword")).toBe("dark-accent-brand");
     expect(setting(dark, "entity.name.function")).toBe("dark-accent-brand");
     expect(setting(dark, "entity.name.type")).toBe("dark-accent-discovery");
     expect(setting(dark, "entity.other.attribute-name")).toBe(
       "dark-accent-info"
     );
-    expect(setting(dark, "invalid")).toBe("dark-required");
+    expect(setting(dark, "invalid")).toBe("dark-accent-danger");
 
     expect(light.fg).toBe("light-ink-emphasis");
     expect(light.colors["editor.background"]).toBe("light-surface-canvas");
     expect(setting(light, "string")).toBe("light-accent-success");
+  });
+
+  it("resolves token aliases to literal colors", async () => {
+    const config = (await import("../../../razorwind.config")).default as {
+      plugins: unknown[];
+    };
+    const shikiPlugin = config.plugins.find(
+      (plugin): plugin is ShikiPlugin =>
+        typeof plugin === "object" &&
+        plugin !== null &&
+        "mapTheme" in plugin &&
+        typeof plugin.mapTheme === "function"
+    );
+    const tokens = semanticColors("light");
+
+    tokens.color.ink.subtle = color("{color.neutral.7}");
+    Object.assign(tokens.color, {
+      neutral: { 7: color("#959698") }
+    });
+
+    const light = shikiPlugin!.mapTheme({
+      theme: "light",
+      tokens
+    }) as MappedTheme;
+
+    expect(light.colors["editorLineNumber.foreground"]).toBe("#959698");
+    expect(setting(light, "comment")).toBe("#959698");
   });
 });

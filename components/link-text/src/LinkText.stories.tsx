@@ -39,6 +39,18 @@ export const Base: Story = {
   args: {}
 };
 
+export const Small: Story = {
+  args: {
+    size: "sm"
+  }
+};
+
+export const Medium: Story = {
+  args: {
+    size: "md"
+  }
+};
+
 export const Disabled: Story = {
   args: {
     disabled: true
@@ -89,6 +101,18 @@ export const ThemedInverseVariant: Story = {
   args: {
     variant: "themed",
     inverse: true
+  }
+};
+
+export const SubtleVariant: Story = {
+  args: {
+    variant: "subtle"
+  }
+};
+
+export const SubtlestVariant: Story = {
+  args: {
+    variant: "subtlest"
   }
 };
 

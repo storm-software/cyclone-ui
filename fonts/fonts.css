@@ -1,9 +1,13 @@
 /**
- * Storm Sans — self-hosted `@font-face` declarations for web applications.
+ * Storm Sans and Storm Serif — self-hosted `@font-face` declarations for web
+ * applications.
  *
- * Uses the variable font builds, so every weight from 100 (Thin) to 700
- * (Bold) is available from a single file per style. The referenced files are
- * built from the `./storm-sans` UFO/designspace sources via the `fonts`
+ * Uses the variable font builds, so every weight is available from a single
+ * file per style: 100 (Thin) to 700 (Bold) for Storm Sans, 200 (ExtraLight)
+ * to 800 (ExtraBold) for Storm Serif. Storm Serif also has an optical size
+ * axis (6-72), which browsers set from the font size automatically
+ * (`font-optical-sizing: auto`). The referenced files are built from the
+ * `./storm-sans` and `./storm-serif` UFO/designspace sources via the `fonts`
  * project (requires `fontmake`):
  *
  *   nx run fonts:build
@@ -24,6 +28,9 @@
  *
  *   font-family: "Storm Sans", -apple-system, BlinkMacSystemFont, system-ui,
  *     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+ *
+ *   font-family: "Storm Serif", Georgia, Cambria, "Times New Roman", Times,
+ *     serif;
  */
 
 @font-face {
@@ -42,6 +49,26 @@
     url("./dist/StormSans-Italic-VF.ttf") format("truetype") tech(variations),
     url("./dist/StormSans-Italic-VF.ttf") format("truetype-variations");
   font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src:
+    url("./dist/StormSerif-VF.ttf") format("truetype") tech(variations),
+    url("./dist/StormSerif-VF.ttf") format("truetype-variations");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src:
+    url("./dist/StormSerif-Italic-VF.ttf") format("truetype") tech(variations),
+    url("./dist/StormSerif-Italic-VF.ttf") format("truetype-variations");
+  font-weight: 200 800;
   font-style: italic;
   font-display: swap;
 }

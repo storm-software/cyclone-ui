@@ -24,7 +24,7 @@ try {
 
   // 1) Update @storm-software/*, @stryke/*, and @shell-shock/* packages to the latest version
   await echo`${chalk.whiteBright("Checking for storm-software, stryke, and shell-shock updates...")}`;
-  let proc = $`pnpm exec storm-pnpm update --all`.timeout(`${8 * 60}s`);
+  let proc = $`pnpm exec storm-pnpm update --all`.timeout(`${20 * 60}s`);
   proc.stdout.on("data", data => echo`${data}`);
   let result = await proc;
   if (result.exitCode !== 0) {
@@ -33,15 +33,15 @@ try {
     );
   }
 
-  // 2) Dedupe all workspace dependencies
-  proc = $`pnpm dedupe`.timeout(`${30 * 60}s`);
-  proc.stdout.on("data", data => echo`${data}`);
-  result = await proc;
-  if (result.exitCode !== 0) {
-    throw new Error(
-      `An error occurred while deduplicating workspace dependencies:\n\n${result.message}\n`
-    );
-  }
+  //   // 2) Dedupe all workspace dependencies
+  //   proc = $`pnpm dedupe`.timeout(`${30 * 60}s`);
+  //   proc.stdout.on("data", data => echo`${data}`);
+  //   result = await proc;
+  //   if (result.exitCode !== 0) {
+  //     throw new Error(
+  //       `An error occurred while deduplicating workspace dependencies:\n\n${result.message}\n`
+  //     );
+  //   }
 
   // 3) Ensure workspace:* links are up to date
   proc = $`pnpm update --recursive --workspace`.timeout(`${8 * 60}s`);
@@ -54,7 +54,7 @@ try {
   }
 
   // 4) Install git hooks to ensure that the correct versions of the CLI and other tools are used when running git commands
-  proc = $`pnpm exec storm-git prepare`.timeout(`${8 * 60}s`);
+  proc = $`pnpm exec storm-git prepare`.timeout(`${20 * 60}s`);
   proc.stdout.on("data", data => echo`${data}`);
   result = await proc;
   if (result.exitCode !== 0) {

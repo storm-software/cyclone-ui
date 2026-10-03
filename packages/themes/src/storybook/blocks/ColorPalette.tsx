@@ -145,7 +145,7 @@ const COLOR_VARIANTS = {
         <ColorPalette>
           <ColorItem
       title={"color.accent"}
-      subtitle={"Primary neutral accent for emphasized controls and content."}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
             "base": "#fafafa",
             "brand": "#3be4be",
@@ -196,7 +196,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.muted"}
-      subtitle={"Muted neutral accent background for low-emphasis states."}
+      subtitle={"Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
       colors={{
             "base": "#2b2c30",
             "brand": "#007e5e",
@@ -247,7 +247,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.on-accent"}
-      subtitle={"Content color placed on neutral accent backgrounds."}
+      subtitle={"Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label."}
       colors={{
             "base": "#151518",
             "base-hover": "#232326",
@@ -361,7 +361,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.data"}
-      subtitle={"High-emphasis neutral data-series color."}
+      subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
             "neutral.emphasis": "#fafafa",
             "neutral.subtle": "#151518",
@@ -385,35 +385,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline"}
-      subtitle={"Subtle color for hairline borders and separators."}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
             "hairline": "#606164"
       }}
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 8% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)"}
       colors={{
             "hairline-active": "#6b6c6f"
       }}
     />
           <ColorItem
       title={"color.hairline-hover"}
-      subtitle={"Subtle color for hairline borders and separators. (hover, 23% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% brighter)"}
       colors={{
             "hairline-hover": "#808184"
       }}
     />
           <ColorItem
       title={"color.hairline-inactive"}
-      subtitle={"Subtle color for hairline borders and separators. (inactive, 20% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% darker)"}
       colors={{
             "hairline-inactive": "#454649"
       }}
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Primary text and icon color for high-emphasis content."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
       colors={{
             "emphasis": "#e1e1e1",
             "body": "#cacacb",
@@ -423,35 +423,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.link"}
-      subtitle={"Interactive color for links and linked text."}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links."}
       colors={{
             "link": "#6da2ff"
       }}
     />
           <ColorItem
       title={"color.link-active"}
-      subtitle={"Interactive color for links and linked text. (active, 19% brighter)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% brighter)"}
       colors={{
             "link-active": "#95cdff"
       }}
     />
           <ColorItem
       title={"color.link-hover"}
-      subtitle={"Interactive color for links and linked text. (hover, 23% brighter)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% brighter)"}
       colors={{
             "link-hover": "#9ed6ff"
       }}
     />
           <ColorItem
       title={"color.link-inactive"}
-      subtitle={"Interactive color for links and linked text. (inactive, 20% darker)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% darker)"}
       colors={{
             "link-inactive": "#4375ce"
       }}
     />
           <ColorItem
       title={"color.overlay"}
-      subtitle={"Surface color for floating overlays."}
+      subtitle={"Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page."}
       colors={{
             "background": "#2b2c30",
             "border": "#7b7b7e",
@@ -460,14 +460,14 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.required"}
-      subtitle={"Indicator color for required form fields."}
+      subtitle={"Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related."}
       colors={{
             "required": "#cf2d56"
       }}
     />
           <ColorItem
       title={"color.selection"}
-      subtitle={"Background color of selected text, using the brand accent."}
+      subtitle={"Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme."}
       colors={{
             "background": "#3be4be",
             "foreground": "#151518"
@@ -475,7 +475,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.surface"}
-      subtitle={"Recessed surface for inset controls and grouped content."}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
       colors={{
             "sunken": "#0c0c0d",
             "canvas": "#151518",
@@ -659,7 +659,7 @@ const COLOR_VARIANTS = {
         <ColorPalette>
           <ColorItem
       title={"color.accent"}
-      subtitle={"Primary neutral accent for emphasized controls and content."}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
             "base": "#d5d5d5",
             "brand": "#5abba5",
@@ -710,7 +710,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.muted"}
-      subtitle={"Muted neutral accent background for low-emphasis states."}
+      subtitle={"Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
       colors={{
             "base": "#444548",
             "brand": "#258069",
@@ -761,7 +761,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.on-accent"}
-      subtitle={"Content color placed on neutral accent backgrounds."}
+      subtitle={"Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label."}
       colors={{
             "base": "#343438",
             "base-hover": "#3e3e41",
@@ -875,7 +875,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.data"}
-      subtitle={"High-emphasis neutral data-series color."}
+      subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
             "neutral.emphasis": "#d5d5d5",
             "neutral.subtle": "#343438",
@@ -899,35 +899,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline"}
-      subtitle={"Subtle color for hairline borders and separators."}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
             "hairline": "#6a6a6c"
       }}
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 8% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)"}
       colors={{
             "hairline-active": "#717274"
       }}
     />
           <ColorItem
       title={"color.hairline-hover"}
-      subtitle={"Subtle color for hairline borders and separators. (hover, 23% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% brighter)"}
       colors={{
             "hairline-hover": "#808182"
       }}
     />
           <ColorItem
       title={"color.hairline-inactive"}
-      subtitle={"Subtle color for hairline borders and separators. (inactive, 20% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% darker)"}
       colors={{
             "hairline-inactive": "#575759"
       }}
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Primary text and icon color for high-emphasis content."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
       colors={{
             "emphasis": "#c4c4c4",
             "body": "#b4b4b4",
@@ -937,35 +937,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.link"}
-      subtitle={"Interactive color for links and linked text."}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links."}
       colors={{
             "link": "#7598d7"
       }}
     />
           <ColorItem
       title={"color.link-active"}
-      subtitle={"Interactive color for links and linked text. (active, 19% brighter)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% brighter)"}
       colors={{
             "link-active": "#8ab6dd"
       }}
     />
           <ColorItem
       title={"color.link-hover"}
-      subtitle={"Interactive color for links and linked text. (hover, 23% brighter)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% brighter)"}
       colors={{
             "link-hover": "#8fbddf"
       }}
     />
           <ColorItem
       title={"color.link-inactive"}
-      subtitle={"Interactive color for links and linked text. (inactive, 20% darker)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% darker)"}
       colors={{
             "link-inactive": "#5f7bad"
       }}
     />
           <ColorItem
       title={"color.overlay"}
-      subtitle={"Surface color for floating overlays."}
+      subtitle={"Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page."}
       colors={{
             "background": "#444548",
             "border": "#7d7d7e",
@@ -974,14 +974,14 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.required"}
-      subtitle={"Indicator color for required form fields."}
+      subtitle={"Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related."}
       colors={{
             "required": "#ab5268"
       }}
     />
           <ColorItem
       title={"color.selection"}
-      subtitle={"Background color of selected text, using the brand accent."}
+      subtitle={"Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme."}
       colors={{
             "background": "#5abba5",
             "foreground": "#343438"
@@ -989,7 +989,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.surface"}
-      subtitle={"Recessed surface for inset controls and grouped content."}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
       colors={{
             "sunken": "#2e2e30",
             "canvas": "#343438",
@@ -1173,7 +1173,7 @@ const COLOR_VARIANTS = {
         <ColorPalette>
           <ColorItem
       title={"color.accent"}
-      subtitle={"Primary neutral accent for emphasized controls and content."}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
             "base": "#ffffff",
             "brand": "#2effd0",
@@ -1224,7 +1224,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.muted"}
-      subtitle={"Muted neutral accent background for low-emphasis states."}
+      subtitle={"Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
       colors={{
             "base": "#08080a",
             "brand": "#004433",
@@ -1275,7 +1275,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.on-accent"}
-      subtitle={"Content color placed on neutral accent backgrounds."}
+      subtitle={"Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label."}
       colors={{
             "base": "#000000",
             "base-hover": "#000000",
@@ -1389,7 +1389,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.data"}
-      subtitle={"High-emphasis neutral data-series color."}
+      subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
             "neutral.emphasis": "#ffffff",
             "neutral.subtle": "#000000",
@@ -1413,35 +1413,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline"}
-      subtitle={"Subtle color for hairline borders and separators."}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
             "hairline": "#4e515b"
       }}
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 8% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)"}
       colors={{
             "hairline-active": "#5d616c"
       }}
     />
           <ColorItem
       title={"color.hairline-hover"}
-      subtitle={"Subtle color for hairline borders and separators. (hover, 23% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% brighter)"}
       colors={{
             "hairline-hover": "#7a7f8c"
       }}
     />
           <ColorItem
       title={"color.hairline-inactive"}
-      subtitle={"Subtle color for hairline borders and separators. (inactive, 20% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% darker)"}
       colors={{
             "hairline-inactive": "#2a2c32"
       }}
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Primary text and icon color for high-emphasis content."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
       colors={{
             "emphasis": "#ffffff",
             "body": "#ebebed",
@@ -1451,35 +1451,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.link"}
-      subtitle={"Interactive color for links and linked text."}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links."}
       colors={{
             "link": "#9ec1ff"
       }}
     />
           <ColorItem
       title={"color.link-active"}
-      subtitle={"Interactive color for links and linked text. (active, 19% brighter)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% brighter)"}
       colors={{
             "link-active": "#d8edff"
       }}
     />
           <ColorItem
       title={"color.link-hover"}
-      subtitle={"Interactive color for links and linked text. (hover, 23% brighter)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% brighter)"}
       colors={{
             "link-hover": "#e5f4ff"
       }}
     />
           <ColorItem
       title={"color.link-inactive"}
-      subtitle={"Interactive color for links and linked text. (inactive, 20% darker)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% darker)"}
       colors={{
             "link-inactive": "#2c72ed"
       }}
     />
           <ColorItem
       title={"color.overlay"}
-      subtitle={"Surface color for floating overlays."}
+      subtitle={"Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page."}
       colors={{
             "background": "#08080a",
             "border": "#737383",
@@ -1488,14 +1488,14 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.required"}
-      subtitle={"Indicator color for required form fields."}
+      subtitle={"Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related."}
       colors={{
             "required": "#f00a45"
       }}
     />
           <ColorItem
       title={"color.selection"}
-      subtitle={"Background color of selected text, using the brand accent."}
+      subtitle={"Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme."}
       colors={{
             "background": "#2effd0",
             "foreground": "#000000"
@@ -1503,7 +1503,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.surface"}
-      subtitle={"Recessed surface for inset controls and grouped content."}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
       colors={{
             "sunken": "#000000",
             "canvas": "#000000",
@@ -1687,7 +1687,7 @@ const COLOR_VARIANTS = {
         <ColorPalette>
           <ColorItem
       title={"color.accent"}
-      subtitle={"Primary neutral accent for emphasized controls and content."}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
             "base": "#151518",
             "brand": "#1fb2a6",
@@ -1738,7 +1738,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.muted"}
-      subtitle={"Muted neutral accent background for low-emphasis states."}
+      subtitle={"Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
       colors={{
             "base": "#eaeaea",
             "brand": "#68e8db",
@@ -1789,7 +1789,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.on-accent"}
-      subtitle={"Content color placed on neutral accent backgrounds."}
+      subtitle={"Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label."}
       colors={{
             "base": "#f1f1f1",
             "base-hover": "#959595",
@@ -1903,7 +1903,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.data"}
-      subtitle={"High-emphasis neutral data-series color."}
+      subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
             "neutral.emphasis": "#606164",
             "neutral.subtle": "#eaeaea",
@@ -1927,35 +1927,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline"}
-      subtitle={"Subtle color for hairline borders and separators."}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
             "hairline": "#b0b0b1"
       }}
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 8% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker)"}
       colors={{
             "hairline-active": "#9d9d9e"
       }}
     />
           <ColorItem
       title={"color.hairline-hover"}
-      subtitle={"Subtle color for hairline borders and separators. (hover, 23% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% darker)"}
       colors={{
             "hairline-hover": "#7c7c7d"
       }}
     />
           <ColorItem
       title={"color.hairline-inactive"}
-      subtitle={"Subtle color for hairline borders and separators. (inactive, 20% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% brighter)"}
       colors={{
             "hairline-inactive": "#e1e1e2"
       }}
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Primary text and icon color for high-emphasis content."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
       colors={{
             "emphasis": "#2b2c30",
             "body": "#606164",
@@ -1965,35 +1965,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.link"}
-      subtitle={"Interactive color for links and linked text."}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links."}
       colors={{
             "link": "#2055b3"
       }}
     />
           <ColorItem
       title={"color.link-active"}
-      subtitle={"Interactive color for links and linked text. (active, 19% darker)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% darker)"}
       colors={{
             "link-active": "#033a96"
       }}
     />
           <ColorItem
       title={"color.link-hover"}
-      subtitle={"Interactive color for links and linked text. (hover, 23% darker)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% darker)"}
       colors={{
             "link-hover": "#003590"
       }}
     />
           <ColorItem
       title={"color.link-inactive"}
-      subtitle={"Interactive color for links and linked text. (inactive, 20% brighter)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% brighter)"}
       colors={{
             "link-inactive": "#3b72d3"
       }}
     />
           <ColorItem
       title={"color.overlay"}
-      subtitle={"Surface color for floating overlays."}
+      subtitle={"Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page."}
       colors={{
             "background": "#ffffff",
             "border": "#b0b0b1",
@@ -2002,14 +2002,14 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.required"}
-      subtitle={"Indicator color for required form fields."}
+      subtitle={"Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related."}
       colors={{
             "required": "#8e223e"
       }}
     />
           <ColorItem
       title={"color.selection"}
-      subtitle={"Background color of selected text, using the brand accent."}
+      subtitle={"Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme."}
       colors={{
             "background": "#1fb2a6",
             "foreground": "#FAFAFA"
@@ -2017,7 +2017,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.surface"}
-      subtitle={"Recessed surface for inset controls and grouped content."}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
       colors={{
             "sunken": "#e1e1e1",
             "canvas": "#eaeaea",
@@ -2201,7 +2201,7 @@ const COLOR_VARIANTS = {
         <ColorPalette>
           <ColorItem
       title={"color.accent"}
-      subtitle={"Primary neutral accent for emphasized controls and content."}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
             "base": "#343438",
             "brand": "#449a93",
@@ -2252,7 +2252,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.muted"}
-      subtitle={"Muted neutral accent background for low-emphasis states."}
+      subtitle={"Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
       colors={{
             "base": "#cacaca",
             "brand": "#74c4bc",
@@ -2303,7 +2303,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.on-accent"}
-      subtitle={"Content color placed on neutral accent backgrounds."}
+      subtitle={"Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label."}
       colors={{
             "base": "#cfcfcf",
             "base-hover": "#8f8f8f",
@@ -2417,7 +2417,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.data"}
-      subtitle={"High-emphasis neutral data-series color."}
+      subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
             "neutral.emphasis": "#6a6a6c",
             "neutral.subtle": "#cacaca",
@@ -2441,35 +2441,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline"}
-      subtitle={"Subtle color for hairline borders and separators."}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
             "hairline": "#a1a1a2"
       }}
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 8% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker)"}
       colors={{
             "hairline-active": "#949495"
       }}
     />
           <ColorItem
       title={"color.hairline-hover"}
-      subtitle={"Subtle color for hairline borders and separators. (hover, 23% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% darker)"}
       colors={{
             "hairline-hover": "#7d7d7e"
       }}
     />
           <ColorItem
       title={"color.hairline-inactive"}
-      subtitle={"Subtle color for hairline borders and separators. (inactive, 20% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% brighter)"}
       colors={{
             "hairline-inactive": "#c4c4c5"
       }}
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Primary text and icon color for high-emphasis content."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
       colors={{
             "emphasis": "#444548",
             "body": "#6a6a6c",
@@ -2479,35 +2479,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.link"}
-      subtitle={"Interactive color for links and linked text."}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links."}
       colors={{
             "link": "#45649b"
       }}
     />
           <ColorItem
       title={"color.link-active"}
-      subtitle={"Interactive color for links and linked text. (active, 19% darker)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% darker)"}
       colors={{
             "link-active": "#2b508c"
       }}
     />
           <ColorItem
       title={"color.link-hover"}
-      subtitle={"Interactive color for links and linked text. (hover, 23% darker)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% darker)"}
       colors={{
             "link-hover": "#284c89"
       }}
     />
           <ColorItem
       title={"color.link-inactive"}
-      subtitle={"Interactive color for links and linked text. (inactive, 20% brighter)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% brighter)"}
       colors={{
             "link-inactive": "#5a79af"
       }}
     />
           <ColorItem
       title={"color.overlay"}
-      subtitle={"Surface color for floating overlays."}
+      subtitle={"Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page."}
       colors={{
             "background": "#d9d9d9",
             "border": "#a1a1a2",
@@ -2516,14 +2516,14 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.required"}
-      subtitle={"Indicator color for required form fields."}
+      subtitle={"Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related."}
       colors={{
             "required": "#864254"
       }}
     />
           <ColorItem
       title={"color.selection"}
-      subtitle={"Background color of selected text, using the brand accent."}
+      subtitle={"Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme."}
       colors={{
             "background": "#449a93",
             "foreground": "#d5d5d5"
@@ -2531,7 +2531,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.surface"}
-      subtitle={"Recessed surface for inset controls and grouped content."}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
       colors={{
             "sunken": "#c4c4c4",
             "canvas": "#cacaca",
@@ -2715,7 +2715,7 @@ const COLOR_VARIANTS = {
         <ColorPalette>
           <ColorItem
       title={"color.accent"}
-      subtitle={"Primary neutral accent for emphasized controls and content."}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
             "base": "#000000",
             "brand": "#00bcad",
@@ -2766,7 +2766,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.muted"}
-      subtitle={"Muted neutral accent background for low-emphasis states."}
+      subtitle={"Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
       colors={{
             "base": "#ffffff",
             "brand": "#75fff1",
@@ -2817,7 +2817,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.on-accent"}
-      subtitle={"Content color placed on neutral accent backgrounds."}
+      subtitle={"Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label."}
       colors={{
             "base": "#ffffff",
             "base-hover": "#9f9f9f",
@@ -2931,7 +2931,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.data"}
-      subtitle={"High-emphasis neutral data-series color."}
+      subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
             "neutral.emphasis": "#4e515b",
             "neutral.subtle": "#ffffff",
@@ -2955,35 +2955,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline"}
-      subtitle={"Subtle color for hairline borders and separators."}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
             "hairline": "#c3c3ca"
       }}
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Subtle color for hairline borders and separators. (active, 8% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker)"}
       colors={{
             "hairline-active": "#a6a6b0"
       }}
     />
           <ColorItem
       title={"color.hairline-hover"}
-      subtitle={"Subtle color for hairline borders and separators. (hover, 23% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% darker)"}
       colors={{
             "hairline-hover": "#747482"
       }}
     />
           <ColorItem
       title={"color.hairline-inactive"}
-      subtitle={"Subtle color for hairline borders and separators. (inactive, 20% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% brighter)"}
       colors={{
             "hairline-inactive": "#ffffff"
       }}
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Primary text and icon color for high-emphasis content."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
       colors={{
             "emphasis": "#08080a",
             "body": "#4e515b",
@@ -2993,35 +2993,35 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.link"}
-      subtitle={"Interactive color for links and linked text."}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links."}
       colors={{
             "link": "#0145be"
       }}
     />
           <ColorItem
       title={"color.link-active"}
-      subtitle={"Interactive color for links and linked text. (active, 19% darker)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% darker)"}
       colors={{
             "link-active": "#00286b"
       }}
     />
           <ColorItem
       title={"color.link-hover"}
-      subtitle={"Interactive color for links and linked text. (hover, 23% darker)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% darker)"}
       colors={{
             "link-hover": "#00235e"
       }}
     />
           <ColorItem
       title={"color.link-inactive"}
-      subtitle={"Interactive color for links and linked text. (inactive, 20% brighter)"}
+      subtitle={"Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% brighter)"}
       colors={{
             "link-inactive": "#216df4"
       }}
     />
           <ColorItem
       title={"color.overlay"}
-      subtitle={"Surface color for floating overlays."}
+      subtitle={"Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page."}
       colors={{
             "background": "#ffffff",
             "border": "#c3c3ca",
@@ -3030,14 +3030,14 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.required"}
-      subtitle={"Indicator color for required form fields."}
+      subtitle={"Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related."}
       colors={{
             "required": "#840929"
       }}
     />
           <ColorItem
       title={"color.selection"}
-      subtitle={"Background color of selected text, using the brand accent."}
+      subtitle={"Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme."}
       colors={{
             "background": "#00bcad",
             "foreground": "#ffffff"
@@ -3045,7 +3045,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.surface"}
-      subtitle={"Recessed surface for inset controls and grouped content."}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
       colors={{
             "sunken": "#ffffff",
             "canvas": "#ffffff",

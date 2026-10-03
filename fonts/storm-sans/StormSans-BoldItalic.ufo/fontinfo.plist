@@ -33,15 +33,17 @@
 	<key>openTypeNameDesigner</key>
 	<string>Pat Sullivan</string>
 	<key>openTypeNameDesignerURL</key>
-	<string>http://www.stormsoftware.com</string>
+	<string>http://www.stormsoftware.com/</string>
+    <key>openTypeNameDescription</key>
+    <string>A modern sans-serif typeface that mixes smooth curves with monospace source code elements.</string>
 	<key>openTypeNameLicense</key>
 	<string>This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL</string>
 	<key>openTypeNameLicenseURL</key>
 	<string>http://scripts.sil.org/OFL</string>
 	<key>openTypeNameManufacturer</key>
-	<string>Bold Monday</string>
-	<key>openTypeNameManufacturerURL</key>
-	<string>http://www.boldmonday.com</string>
+    <string>Storm Software</string>
+    <key>openTypeNameManufacturerURL</key>
+    <string>http://www.stormsoftware.com/</string>
 	<key>openTypeNamePreferredFamilyName</key>
 	<string>Storm Sans</string>
 	<key>openTypeNamePreferredSubfamilyName</key>

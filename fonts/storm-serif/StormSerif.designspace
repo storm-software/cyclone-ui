@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<designspace format="4.1">
+  <axes>
+    <axis tag="wght" name="weight" minimum="200" maximum="800" default="400">
+      <labelname xml:lang="en">Weight</labelname>
+      <map input="200" output="100"/>
+      <map input="300" output="235"/>
+      <map input="400" output="400"/>
+      <map input="500" output="500"/>
+      <map input="600" output="612"/>
+      <map input="700" output="724"/>
+      <map input="800" output="900"/>
+    </axis>
+    <axis tag="opsz" name="optical" minimum="6" maximum="72" default="18">
+      <labelname xml:lang="en">Optical Size</labelname>
+      <map input="6" output="6"/>
+      <map input="18" output="16"/>
+      <map input="72" output="72"/>
+    </axis>
+  </axes>
+  <rules>
+    <rule name="currency">
+      <conditionset>
+        <condition name="optical" minimum="6" maximum="15"/>
+        <condition name="weight" minimum="401" maximum="900"/>
+      </conditionset>
+      <sub name="dollar" with="dollar.1"/>
+      <sub name="dollar.lf" with="dollar.lf.1"/>
+      <sub name="colonmonetary" with="colonmonetary.1"/>
+      <sub name="colonmonetary.lf" with="colonmonetary.lf.1"/>
+      <sub name="uni20A6" with="uni20A6.1"/>
+      <sub name="uni20A6.lf" with="uni20A6.lf.1"/>
+      <sub name="uni20A9" with="uni20A9.1"/>
+      <sub name="uni20A9.lf" with="uni20A9.lf.1"/>
+      <sub name="uni20B1" with="uni20B1.1"/>
+      <sub name="uni20B1.lf" with="uni20B1.lf.1"/>
+      <sub name="uni20B2" with="uni20B2.1"/>
+      <sub name="uni20B2.lf" with="uni20B2.lf.1"/>
+    </rule>
+  </rules>
+  <sources>
+    <source filename="StormSerif6pt-ExtraLight.ufo" familyname="Storm Serif" stylename="6pt ExtraLight">
+      <location>
+        <dimension name="weight" xvalue="100"/>
+        <dimension name="optical" xvalue="6"/>
+      </location>
+    </source>
+    <source filename="StormSerif6pt-Regular.ufo" familyname="Storm Serif" stylename="6pt Regular">
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="optical" xvalue="6"/>
+      </location>
+    </source>
+    <source filename="StormSerif6pt-ExtraBold.ufo" familyname="Storm Serif" stylename="6pt ExtraBold">
+      <location>
+        <dimension name="weight" xvalue="900"/>
+        <dimension name="optical" xvalue="6"/>
+      </location>
+    </source>
+    <source filename="StormSerif16pt-ExtraLight.ufo" familyname="Storm Serif" stylename="16pt ExtraLight">
+      <location>
+        <dimension name="weight" xvalue="100"/>
+        <dimension name="optical" xvalue="16"/>
+      </location>
+    </source>
+    <source filename="StormSerif16pt-Regular.ufo" familyname="Storm Serif" stylename="16pt Regular">
+      <lib copy="1"/>
+      <groups copy="1"/>
+      <features copy="1"/>
+      <info copy="1"/>
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="optical" xvalue="16"/>
+      </location>
+    </source>
+    <source filename="StormSerif16pt-ExtraBold.ufo" familyname="Storm Serif" stylename="16pt ExtraBold">
+      <location>
+        <dimension name="weight" xvalue="900"/>
+        <dimension name="optical" xvalue="16"/>
+      </location>
+    </source>
+    <source filename="StormSerif72pt-ExtraLight.ufo" familyname="Storm Serif" stylename="72pt ExtraLight">
+      <location>
+        <dimension name="weight" xvalue="100"/>
+        <dimension name="optical" xvalue="72"/>
+      </location>
+    </source>
+    <source filename="StormSerif72pt-Regular.ufo" familyname="Storm Serif" stylename="72pt Regular">
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="optical" xvalue="72"/>
+      </location>
+    </source>
+    <source filename="StormSerif72pt-ExtraBold.ufo" familyname="Storm Serif" stylename="72pt ExtraBold">
+      <location>
+        <dimension name="weight" xvalue="900"/>
+        <dimension name="optical" xvalue="72"/>
+      </location>
+    </source>
+  </sources>
+  <instances>
+    <instance familyname="Storm Serif" stylename="ExtraLight" filename="instances/StormSerif-ExtraLight.ufo" postscriptfontname="StormSerif-ExtraLight">
+      <location>
+        <dimension name="weight" xvalue="100"/>
+        <dimension name="optical" xvalue="16"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance familyname="Storm Serif" stylename="Light" filename="instances/StormSerif-Light.ufo" postscriptfontname="StormSerif-Light">
+      <location>
+        <dimension name="weight" xvalue="235"/>
+        <dimension name="optical" xvalue="16"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance familyname="Storm Serif" stylename="Regular" filename="instances/StormSerif-Regular.ufo" postscriptfontname="StormSerif-Regular">
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="optical" xvalue="16"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance familyname="Storm Serif" stylename="Medium" filename="instances/StormSerif-Medium.ufo" postscriptfontname="StormSerif-Medium">
+      <location>
+        <dimension name="weight" xvalue="500"/>
+        <dimension name="optical" xvalue="16"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance familyname="Storm Serif" stylename="SemiBold" filename="instances/StormSerif-SemiBold.ufo" postscriptfontname="StormSerif-SemiBold">
+      <location>
+        <dimension name="weight" xvalue="612"/>
+        <dimension name="optical" xvalue="16"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance familyname="Storm Serif" stylename="Bold" filename="instances/StormSerif-Bold.ufo" postscriptfontname="StormSerif-Bold">
+      <location>
+        <dimension name="weight" xvalue="724"/>
+        <dimension name="optical" xvalue="16"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance familyname="Storm Serif" stylename="ExtraBold" filename="instances/StormSerif-ExtraBold.ufo" postscriptfontname="StormSerif-ExtraBold">
+      <location>
+        <dimension name="weight" xvalue="900"/>
+        <dimension name="optical" xvalue="16"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+  </instances>
+  <lib>
+    <dict>
+      <key>com.letterror.mathModelPref</key>
+      <string>previewVarLib</string>
+      <key>com.letterror.skateboard.interactionSources</key>
+      <dict>
+        <key>horizontal</key>
+        <array>
+          <string>weight</string>
+        </array>
+        <key>ignore</key>
+        <array/>
+        <key>vertical</key>
+        <array>
+          <string>optical</string>
+        </array>
+      </dict>
+      <key>com.letterror.skateboard.previewLocation</key>
+      <dict>
+        <key>optical</key>
+        <real>8.208128403786295</real>
+        <key>weight</key>
+        <real>864.7864259163211</real>
+      </dict>
+      <key>com.letterror.skateboard.previewText</key>
+      <string>25$</string>
+      <key>org.statmake.additionalLocations</key>
+      <dict>
+        <key>Italic</key>
+        <integer>0</integer>
+      </dict>
+    </dict>
+  </lib>
+</designspace>

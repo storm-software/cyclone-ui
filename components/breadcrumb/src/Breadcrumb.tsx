@@ -16,9 +16,9 @@
 
  ------------------------------------------------------------------- */
 
-import { getFontSized, getSpaced } from "@cyclone-ui/helpers";
-import { CaretDoubleRight, CaretRight, LineSegment } from "@cyclone-ui/icons";
-import { LabelText } from "@cyclone-ui/label-text";
+import { BodyText } from "@cyclone-ui/body-text";
+import { getSpaced } from "@cyclone-ui/helpers";
+import { CaretDoubleRight, CaretRight } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import type {
   FontSizeTokens,
@@ -37,6 +37,7 @@ import { XGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
 import { XStack } from "@tamagui/stacks";
 import type { TextContextStyles } from "@tamagui/text";
+import { SizableText } from "@tamagui/text";
 
 export type BreadcrumbVariant = "chevron" | "double" | "slash";
 
@@ -46,16 +47,20 @@ export type BreadcrumbContextProps = TextContextStyles & {
   size: FontSizeTokens;
   variant: BreadcrumbVariant;
   inverse: boolean;
+  subtle: boolean;
+  subtlest: boolean;
 };
 
 export const BreadcrumbContext = createStyledContext<
   BreadcrumbContextProps,
-  "size" | "variant" | "inverse"
+  "size" | "variant" | "inverse" | "subtle" | "subtlest"
 >(
   {
     size: true,
     variant: "slash",
-    inverse: false
+    inverse: false,
+    subtle: false,
+    subtlest: false
   } as BreadcrumbContextProps,
   {
     // Only the keys that styled consumers declare as variants; v3 forwards every
@@ -85,7 +90,7 @@ const BreadcrumbFrame = styled(XStack, {
   }
 });
 
-const BreadcrumbCurrent = styled(LabelText, {
+const BreadcrumbCurrent = styled(BodyText, {
   displayName: "BreadcrumbCurrent",
   context: BreadcrumbContext,
   transition: "200ms",
@@ -93,17 +98,7 @@ const BreadcrumbCurrent = styled(LabelText, {
   color: "inkSubtle",
   fontWeight: "semibold",
   verticalAlign: "middle",
-  variants: {
-    // `BreadcrumbContext` passes `size: true`, which Tamagui v3 maps to the
-    // `sm` / `4` font key the typography fonts do not define; resolve it (and
-    // any font size key) against the font's own `true` step.
-    size: styled.dynamic<FontSizeTokens | number>((val, env) =>
-      val === true ||
-      (typeof val === "string" && !!env.font && val in env.font.size)
-        ? getFontSized(val === true ? ("true" as FontSizeTokens) : val, env)
-        : undefined
-    )
-  } as const
+  size: "sm"
 });
 
 const BreadcrumbImpl = createStyledHOC(
@@ -126,7 +121,9 @@ const BreadcrumbImpl = createStyledHOC(
         <BreadcrumbFrame ref={forwardRef} theme={theme} {...props}>
           <XGroup display="contents">
             {children}
-            <BreadcrumbCurrent>{currentName || "Current"}</BreadcrumbCurrent>
+            <BreadcrumbCurrent size="sm">
+              {currentName || "Current"}
+            </BreadcrumbCurrent>
           </XGroup>
         </BreadcrumbFrame>
       </Theme>
@@ -141,13 +138,15 @@ const BreadcrumbLink = styled(Link, {
   displayName: "BreadcrumbItem",
   context: BreadcrumbContext,
 
-  transition: "200ms"
+  transition: "200ms",
+  size: "sm"
 });
 
 const BreadcrumbItemImpl = createStyledHOC(
   BreadcrumbLink,
   ({ children, ...props }, forwardRef) => {
-    const { size, variant, inverse } = BreadcrumbContext.useStyledContext();
+    const { size, variant, inverse, subtle, subtlest } =
+      BreadcrumbContext.useStyledContext();
 
     return (
       <XGroup.Item>
@@ -156,19 +155,24 @@ const BreadcrumbItemImpl = createStyledHOC(
             ref={forwardRef}
             size={size}
             inverse={inverse}
+            {...(subtlest
+              ? { variant: "subtlest" as const }
+              : subtle && { variant: "subtle" as const })}
             {...props}>
             {children}
           </BreadcrumbLink>
         </View>
 
         {variant === "chevron" && (
-          <CaretRight color="inkSubtle" size="4xl" weight="bold" />
+          <CaretRight color="inkSubtle" size="2xl" weight="bold" />
         )}
         {variant === "double" && (
-          <CaretDoubleRight color="inkSubtle" size="4xl" />
+          <CaretDoubleRight color="inkSubtle" size="2xl" />
         )}
         {variant === "slash" && (
-          <LineSegment color="inkSubtle" size="lg" weight="bold" />
+          <SizableText color="inkSubtle" fontSize="body-sm" fontWeight="bold">
+            /
+          </SizableText>
         )}
       </XGroup.Item>
     );

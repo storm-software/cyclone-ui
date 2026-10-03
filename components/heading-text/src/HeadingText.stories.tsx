@@ -75,6 +75,41 @@ export const HeadingSmall: Story = {
   }
 };
 
+export const EditorialHero: Story = {
+  args: {
+    level: "hero",
+    variant: "editorial"
+  }
+};
+
+export const EditorialTitle: Story = {
+  args: {
+    level: "title",
+    variant: "editorial"
+  }
+};
+
+export const EditorialLarge: Story = {
+  args: {
+    level: "lg",
+    variant: "editorial"
+  }
+};
+
+export const EditorialMedium: Story = {
+  args: {
+    level: "md",
+    variant: "editorial"
+  }
+};
+
+export const EditorialSmall: Story = {
+  args: {
+    level: "sm",
+    variant: "editorial"
+  }
+};
+
 export const Brand: Story = {
   args: {
     theme: "brand"

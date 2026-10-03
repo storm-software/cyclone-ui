@@ -16,21 +16,40 @@
 
  ------------------------------------------------------------------- */
 
-import type { FontSizeTokens, GetProps } from "@tamagui/core";
+import type { GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
 // Lets TypeScript name `GetFontSizedInput` (SizableText's `size` type) in
 // this package's declarations.
 import type {} from "@tamagui/get-font-sized";
 import { SizableText } from "@tamagui/text";
 
+export type BodyTextSize = "md" | "sm";
+
 export const BodyText = styled(SizableText, {
   displayName: "BodyText",
   render: "p",
   color: "inkBody",
-  fontFamily: "body",
-  // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
-  // only define `true` plus their own step, so name the default step explicitly.
-  size: "true" as FontSizeTokens
+  fontFamily: "body-md",
+  size: "md",
+  variants: {
+    // Each size is its own typography token (`body-md` / `body-sm`), so switch
+    // the font family and read that font's metrics directly. `env.font` only
+    // reflects a family contributed earlier in the style walk, and this
+    // replaces SizableText's `getFontSized` variant outright.
+    size: styled.dynamic<BodyTextSize>((size, env) => {
+      const key: BodyTextSize = size === "sm" ? "sm" : "md";
+      const fontFamily = `body-${key}`;
+      const font = env.fonts[fontFamily];
+
+      return {
+        fontFamily,
+        fontSize: font?.size[key],
+        lineHeight: font?.lineHeight?.[key],
+        fontWeight: font?.weight?.[key],
+        letterSpacing: font?.letterSpacing?.[key]
+      };
+    })
+  } as const
 });
 
 export type BodyTextProps = GetProps<typeof BodyText>;

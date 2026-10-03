@@ -936,6 +936,17 @@ const ButtonHoverBackground = styled(YStack, {
   }
 });
 
+/**
+ * Cascade layers stay square regardless of the frame's radius — the frame's
+ * `overflow: hidden` clips them to its shape. Explicit props win over the
+ * `borderRadius`, `circular`, and `rounded` values inherited from context.
+ */
+const cascadeBackgroundShape = {
+  circular: false,
+  rounded: false,
+  borderRadius: 0
+} as const;
+
 type ButtonPressEvent = Parameters<
   NonNullable<GetProps<typeof View>["onPress"]>
 >[0];
@@ -1050,8 +1061,7 @@ const ButtonContainerImpl = createStyledHOC(
             {isDoubleCascadeVariant(cascadeState.effect) && (
               <ButtonHoverBackground
                 effect={doubleCascadeEffect[cascadeState.effect]}
-                circular={circular}
-                rounded={rounded}
+                {...cascadeBackgroundShape}
                 backgroundColor="muted"
                 {...getCascadePositionStyle(
                   cascadeState.reverse
@@ -1076,8 +1086,7 @@ const ButtonContainerImpl = createStyledHOC(
                   ? doubleCascadeEffect[cascadeState.effect]
                   : cascadeState.effect
               }
-              circular={circular}
-              rounded={rounded}
+              {...cascadeBackgroundShape}
               {...getCascadePositionStyle(
                 cascadeState.reverse
                   ? cascadeHoverStyle[cascadeState.effect]

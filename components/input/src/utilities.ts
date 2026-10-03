@@ -53,7 +53,7 @@ export const baseInputStyle: BaseInputStyle = [
     color: "accent hover:accentHover",
     placeholderTextColor: "accentDisabled",
     selectionColor: "color6",
-    fontFamily: "body",
+    fontFamily: "body-md",
     alignItems: "center",
     margin: 0,
     padding: 0,
