@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Anchor
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.5) (10/03/2026)
+
+### Features
+
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+- **monorepo:** Added `ui-ux-pro-max-cli` and UI component clean up ([72404ff9](https://github.com/storm-software/cyclone-ui/commit/72404ff9))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.6**
+- Updated **icons** to **v0.0.2**
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.4) (09/21/2026)
 
 ### Bug Fixes

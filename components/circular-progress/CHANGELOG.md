@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Circular Progress
 
+## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.4) (10/03/2026)
+
+### Features
+
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
 ## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.3) (09/21/2026)
 
 ### Bug Fixes

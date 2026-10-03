@@ -2,6 +2,27 @@
 
 # Changelog for Cyclone UI - Phone Number Input Field
 
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/phone-number-input-field%400.0.7) (10/03/2026)
+
+### Features
+
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+- **divider:** Added the `Divider` component package ([694276cf](https://github.com/storm-software/cyclone-ui/commit/694276cf))
+- **inline-code-text:** Added InlineCodeText component package ([482bad14](https://github.com/storm-software/cyclone-ui/commit/482bad14))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.6**
+- Updated **button** to **v0.6.6**
+- Updated **form** to **v0.9.6**
+- Updated **helpers** to **v0.3.6**
+- Updated **input** to **v0.6.6**
+- Updated **input-field** to **v0.1.6**
+- Updated **popover** to **v0.5.6**
+- Updated **search-input-field** to **v0.1.6**
+- Updated **state** to **v0.0.7**
+
 ## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/phone-number-input-field%400.0.6) (09/21/2026)
 
 ### Bug Fixes

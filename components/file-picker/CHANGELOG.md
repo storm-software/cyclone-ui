@@ -2,6 +2,27 @@
 
 # Changelog for Cyclone UI - File Picker
 
+## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.6) (10/03/2026)
+
+### Features
+
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.6**
+- Updated **button** to **v0.6.6**
+- Updated **bytes-text** to **v0.5.6**
+- Updated **field** to **v0.5.6**
+- Updated **form** to **v0.9.6**
+- Updated **heading-text** to **v0.5.6**
+- Updated **helpers** to **v0.3.6**
+- Updated **icons** to **v0.0.2**
+- Updated **label-text** to **v0.5.6**
+- Updated **link** to **v0.5.6**
+- Updated **state** to **v0.0.7**
+
 ## [0.5.5](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.5) (09/21/2026)
 
 ### Bug Fixes

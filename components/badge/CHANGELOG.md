@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Badge
 
+## [0.3.6](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.6) (10/03/2026)
+
+### Bug Fixes
+
+- **container:** Cleaned up the container display ([6d6132ff](https://github.com/storm-software/cyclone-ui/commit/6d6132ff))
+
+### Features
+
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.6**
+
 ## [0.3.5](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.5) (09/21/2026)
 
 ### Bug Fixes

@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Number Input Field
 
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/number-input-field%400.0.7) (10/03/2026)
+
+### Features
+
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **form** to **v0.9.6**
+- Updated **icons** to **v0.0.2**
+- Updated **input-field** to **v0.1.6**
+- Updated **state** to **v0.0.7**
+
 ## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/number-input-field%400.0.6) (09/21/2026)
 
 ### Bug Fixes

@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Popover
 
+## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.6) (10/03/2026)
+
+### Features
+
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.6**
+- Updated **button** to **v0.6.6**
+- Updated **heading-text** to **v0.5.6**
+- Updated **scroll-view** to **v0.5.6**
+
 ## [0.5.5](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.5) (09/21/2026)
 
 ### Bug Fixes

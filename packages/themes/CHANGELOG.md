@@ -2,6 +2,26 @@
 
 # Changelog for Cyclone UI - Themes
 
+## [0.3.6](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.6) (10/03/2026)
+
+### Miscellaneous
+
+- **deps:** upgrade Tamagui to v3 ([3e96fbd8](https://github.com/storm-software/cyclone-ui/commit/3e96fbd8))
+
+### Bug Fixes
+
+- **fonts:** Updates to Storm Sans font design ([e4b856ba](https://github.com/storm-software/cyclone-ui/commit/e4b856ba))
+- **container:** Cleaned up the container display ([6d6132ff](https://github.com/storm-software/cyclone-ui/commit/6d6132ff))
+
+### Features
+
+- **rating:** Added the `Rating` and `Slider` component ([db0f602f](https://github.com/storm-software/cyclone-ui/commit/db0f602f))
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+- **monorepo:** Added `ui-ux-pro-max-cli` and UI component clean up ([72404ff9](https://github.com/storm-software/cyclone-ui/commit/72404ff9))
+- **divider:** Added the `Divider` component package ([694276cf](https://github.com/storm-software/cyclone-ui/commit/694276cf))
+- **inline-code-text:** Added InlineCodeText component package ([482bad14](https://github.com/storm-software/cyclone-ui/commit/482bad14))
+
 ## [0.3.5](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.5) (09/21/2026)
 
 ### Miscellaneous

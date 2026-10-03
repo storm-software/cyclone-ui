@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Text Area
 
+## [0.1.6](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.6) (10/03/2026)
+
+### Features
+
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.6**
+- Updated **helpers** to **v0.3.6**
+- Updated **input** to **v0.6.6**
+
 ## [0.1.5](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.5) (09/21/2026)
 
 ### Bug Fixes

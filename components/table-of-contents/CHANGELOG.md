@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Table of Contents
 
+## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.3) (10/03/2026)
+
+### Features
+
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.6**
+- Updated **icons** to **v0.0.2**
+
 ## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.2) (09/21/2026)
 
 ### Bug Fixes

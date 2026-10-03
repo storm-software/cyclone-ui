@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.6](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.6) (10/03/2026)
+
+### Features
+
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.6**
+
 ## [0.3.5](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.5) (09/21/2026)
 
 ### Features

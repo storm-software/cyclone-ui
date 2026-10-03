@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Heading Text
 
+## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.6) (10/03/2026)
+
+### Bug Fixes
+
+- **fonts:** Updates to Storm Sans font design ([e4b856ba](https://github.com/storm-software/cyclone-ui/commit/e4b856ba))
+
+### Features
+
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
 ## [0.5.5](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.5) (09/21/2026)
 
 ### Bug Fixes

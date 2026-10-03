@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - OTP Input Field
 
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input-field%400.0.7) (10/03/2026)
+
+### Miscellaneous
+
+- **deps:** upgrade Tamagui to v3 ([3e96fbd8](https://github.com/storm-software/cyclone-ui/commit/3e96fbd8))
+
+### Features
+
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.6**
+- Updated **form** to **v0.9.6**
+- Updated **helpers** to **v0.3.6**
+- Updated **input** to **v0.6.6**
+- Updated **input-field** to **v0.1.6**
+- Updated **state** to **v0.0.7**
+
 ## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input-field%400.0.6) (09/21/2026)
 
 ### Features

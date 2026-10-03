@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Sheet
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.5) (10/03/2026)
+
+### Bug Fixes
+
+- **container:** Cleaned up the container display ([6d6132ff](https://github.com/storm-software/cyclone-ui/commit/6d6132ff))
+
+### Features
+
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+- **divider:** Added the `Divider` component package ([694276cf](https://github.com/storm-software/cyclone-ui/commit/694276cf))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.6**
+- Updated **button** to **v0.6.6**
+- Updated **heading-text** to **v0.5.6**
+- Updated **scroll-view** to **v0.5.6**
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.4) (09/21/2026)
 
 ### Bug Fixes

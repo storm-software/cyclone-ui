@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Code Block
 
+## [0.6.6](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.6) (10/03/2026)
+
+### Features
+
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+- **divider:** Added the `Divider` component package ([694276cf](https://github.com/storm-software/cyclone-ui/commit/694276cf))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.6**
+- Updated **button** to **v0.6.6**
+- Updated **heading-text** to **v0.5.6**
+- Updated **icons** to **v0.0.2**
+- Updated **scroll-view** to **v0.5.6**
+- Updated **themeable-icon** to **v0.6.6**
+- Updated **vectors** to **v0.5.6**
+
 ## [0.6.5](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.5) (09/21/2026)
 
 ### Bug Fixes

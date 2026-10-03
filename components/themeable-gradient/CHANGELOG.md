@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Themeable Gradient
 
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-gradient%400.0.7) (10/03/2026)
+
+### Features
+
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.6**
+
 ## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-gradient%400.0.6) (09/21/2026)
 
 ### Features

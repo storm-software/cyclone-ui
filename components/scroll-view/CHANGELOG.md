@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Scroll View
 
+## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.6) (10/03/2026)
+
+### Features
+
+- **rating:** Added the `Rating` and `Slider` component ([db0f602f](https://github.com/storm-software/cyclone-ui/commit/db0f602f))
+- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+- **divider:** Added the `Divider` component package ([694276cf](https://github.com/storm-software/cyclone-ui/commit/694276cf))
+
+### Updated Dependencies
+
+- Updated **vectors** to **v0.5.6**
+
 ## [0.5.5](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.5) (09/21/2026)
 
 ### Bug Fixes

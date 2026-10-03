@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Checkbox Field
 
+## [0.1.6](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox-field%400.1.6) (10/03/2026)
+
+### Features
+
+- **monorepo:** Update to Tamagui v3 and added Storm Sans font ([57dd719f](https://github.com/storm-software/cyclone-ui/commit/57dd719f))
+
+### Updated Dependencies
+
+- Updated **checkbox** to **v0.5.6**
+- Updated **field** to **v0.5.6**
+- Updated **form** to **v0.9.6**
+- Updated **state** to **v0.0.7**
+
 ## [0.1.5](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox-field%400.1.5) (09/21/2026)
 
 ### Features
