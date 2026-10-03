@@ -25,7 +25,7 @@ import type { RatingProps } from "./Rating";
 import { Rating } from "./Rating";
 
 const meta: Meta<typeof Rating> = {
-  title: "Form/Rating",
+  title: "Base/Rating",
   component: Rating,
   tags: ["autodocs"],
   args: {

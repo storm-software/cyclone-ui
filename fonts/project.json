@@ -5,7 +5,7 @@
   "projectType": "library",
   "tags": [],
   "// targets": "to see all targets run: nx show project fonts --web",
-  "// build": "fontmake's '-o' flag does NOT append: '-o variable -o otf -o ttf' parses as '-o ttf' only. Pass all formats to a single '-o'. 'variable' is incompatible with '-i', so variable and static builds run as separate invocations. '-a' is omitted: ttfautohint is not installed and fontmake hard-fails without it.",
+  "// build": "fontmake's '-o' flag does NOT append: '-o variable -o otf -o ttf' parses as '-o ttf' only. Pass all formats to a single '-o'. 'variable' is incompatible with '-i', so variable and static builds run as separate invocations. '-a' (ttfautohint, provided by devenv.nix) hints the static TTFs only: ttfautohint does not support variable fonts and has no effect on OTF output.",
   "targets": {
     "clean": {},
     "build-regular": {
@@ -17,7 +17,7 @@
       "options": {
         "commands": [
           "fontmake -m \"StormSans.designspace\" -o variable --output-dir \"../dist\"",
-          "fontmake -m \"StormSans.designspace\" -o otf ttf -i --output-dir \"../dist\""
+          "fontmake -m \"StormSans.designspace\" -o otf ttf -i -a --output-dir \"../dist\""
         ],
         "cwd": "{projectRoot}/storm-sans"
       }
@@ -31,7 +31,7 @@
       "options": {
         "commands": [
           "fontmake -m \"StormSans-Italic.designspace\" -o variable --output-dir \"../dist\"",
-          "fontmake -m \"StormSans-Italic.designspace\" -o otf ttf -i --output-dir \"../dist\""
+          "fontmake -m \"StormSans-Italic.designspace\" -o otf ttf -i -a --output-dir \"../dist\""
         ],
         "cwd": "{projectRoot}/storm-sans"
       }

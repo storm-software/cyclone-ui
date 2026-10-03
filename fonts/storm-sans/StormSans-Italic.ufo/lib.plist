@@ -1965,7 +1965,7 @@ ENDF[]
 
 FDEF[], 81
 
-   /* adjust advance width to compensate for rasterizer's rounding errors
+   /* adjust advance width to compensate for rasterizer's rounding errors 
 
    CALL[], &lt;rsb&gt;, 81 */
 
@@ -2811,7 +2811,7 @@ LTEQ[]
 CALL[]
 LT[]
 OR[]
-IF[] /* at or above ppem limit or rounding to less than a pixel */
+IF[] /* at or above ppem limit or rounding to less than a pixel */ 
 
     /* STACK: &lt;p&gt;, &lt;ch0&gt;, &lt;fraction&gt;, &lt;ch1&gt; */
 
@@ -2896,7 +2896,7 @@ LTEQ[]
 CALL[]
 LT[]
 OR[]
-IF[] /* at or above ppem limit or rounding to less than a pixel */
+IF[] /* at or above ppem limit or rounding to less than a pixel */ 
 
     /* STACK: &lt;ch&gt;, &lt;fraction&gt;, &lt;p&gt; */
 
@@ -4438,7 +4438,7 @@ FDEF[], 117
    dir: X = 0, Y = 1, X/ = 2
    X/ (italic) is not yet implemented; to do so properly will need to factor
    the italic phase optimization part out of fn 131 and make it available to
-   this fn.
+   this fn.   
 
    CALL[], &lt;dir&gt;, &lt;gp0&gt;, &lt;p0&gt;, &lt;c0&gt;, &lt;cvt0&gt;, &lt;p1&gt;, &lt;c1&gt;, &lt;cvt1&gt;, &lt;gp1&gt;, 117 */
 
@@ -6596,7 +6596,7 @@ SWAP[]
     POP[]
     #PUSH, 0, BZEnd /* End */
 
-    JMPR[], (BZEnd=#LEndFn)
+    JMPR[], (BZEnd=#LEndFn) 
 
   EIF[]
   ROLL[]

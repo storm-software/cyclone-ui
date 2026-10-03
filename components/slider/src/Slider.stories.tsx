@@ -25,7 +25,7 @@ import type { SliderMark, SliderProps, SliderValue } from "./Slider";
 import { Slider } from "./Slider";
 
 const meta: Meta<typeof Slider> = {
-  title: "Form/Slider",
+  title: "Base/Slider",
   component: Slider,
   tags: ["autodocs"],
   args: {
