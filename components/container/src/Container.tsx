@@ -17,9 +17,10 @@
  ------------------------------------------------------------------- */
 
 import { getSized, getSpaced } from "@cyclone-ui/helpers";
-import type { GetProps, SizeTokens } from "@tamagui/core";
-import { createStyledHOC, styled, View } from "@tamagui/core";
+import type { GetProps, SizeTokens, TamaguiElement } from "@tamagui/core";
+import { createStyledHOC, styled, useThemeName, View } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
+import type { Ref } from "react";
 
 // v2 `"...size"` variant keys only matched keys of the size token scale; any
 // other value (numbers, `true`) left the frame's styles untouched.
@@ -50,7 +51,7 @@ const ContainerFrame = styled(View, {
   outline: "focus-visible:none",
   outlineWidth: "focus-visible:0px",
   outlineColor: "focus-visible:transparent",
-  
+
   variants: {
     variant: {
       primary: {
@@ -142,6 +143,13 @@ const ContainerFrame = styled(View, {
         padding: 0,
         height: "fit-content"
       }
+    },
+
+    // Declared after `variant` so it overrides that variant's border color.
+    accentBordered: {
+      true: {
+        borderColor: "accent"
+      }
     }
   } as const,
 
@@ -151,9 +159,34 @@ const ContainerFrame = styled(View, {
     shadowed: false,
     circular: false,
     bordered: true,
-    noPadding: false
+    noPadding: false,
+    accentBordered: false
   }
 });
+
+type ContainerFrameProps = GetProps<typeof ContainerFrame>;
+
+// `createStyledHOC` strips `theme` before rendering and applies it with a
+// `<Theme>` around the result, so the active theme is only readable from a
+// component rendered inside that wrapper.
+const ContainerSurface = (
+  props: ContainerFrameProps & { ref?: Ref<TamaguiElement> }
+) => {
+  // e.g. `dark_brand` -> `brand`; `dark` and `dark_base` are uncolored.
+  const colorTheme = useThemeName()?.split("_")[1];
+
+  return (
+    <ContainerFrame
+      {...props}
+      accentBordered={
+        props.variant === "tertiary" &&
+        props.bordered !== false &&
+        !!colorTheme &&
+        colorTheme !== "base"
+      }
+    />
+  );
+};
 
 // `LinearGradient` is not a plain styled view; v3 `styled()` only keeps style
 // defaults for it, so the gradient geometry is passed as props at the call site.
@@ -195,10 +228,12 @@ export const Container = createStyledHOC(
       circular = false,
       bordered = true,
       noPadding = false,
-      borderWidth,
       borderRadius = "container",
-      backgroundColor,
-      borderColor,
+      // The `variant` and `bordered` variants own these, so they are dropped
+      // rather than forwarded over the variant styles.
+      backgroundColor: _backgroundColor,
+      borderColor: _borderColor,
+      borderWidth: _borderWidth,
       children,
       ...props
     },
@@ -219,7 +254,7 @@ export const Container = createStyledHOC(
             end={{ x: 0.9, y: 0.5 }}
           />
         )}
-        <ContainerFrame
+        <ContainerSurface
           ref={forwardedRef}
           {...props}
           variant={variant}
@@ -227,13 +262,10 @@ export const Container = createStyledHOC(
           shadowed={shadowed}
           circular={circular}
           bordered={bordered}
-          borderWidth={bordered ? borderWidth : 0}
           noPadding={noPadding}
-          borderRadius={borderRadius}
-          backgroundColor={backgroundColor}
-          borderColor={borderColor}>
+          borderRadius={borderRadius}>
           {children}
-        </ContainerFrame>
+        </ContainerSurface>
       </ContainerGroup>
     );
   },

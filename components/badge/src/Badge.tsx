@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { HeadingExtraSmallText } from "@cyclone-ui/heading-text";
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import type {
   ColorTokens,
   FontSizeTokens,
@@ -113,9 +113,10 @@ const BadgeFrame = styled(View, {
   }
 });
 
-const BadgeTextFrame = styled(HeadingExtraSmallText, {
+const BadgeTextFrame = styled(HeadingSmallText, {
   displayName: BADGE_NAME,
   context: BadgeContext,
+  render: "span",
   color: "onAccent",
   variants: {
     // v2 `"...fontSize"`: only font size keys (including the `true` default,

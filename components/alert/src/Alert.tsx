@@ -114,8 +114,7 @@ const AlertFrameImpl = ({
     <AlertContext.Provider type={type}>
       <Container
         {...props}
-        variant="high"
-        backgroundColor="surfaceOverlay"
+        variant="overlay"
         themeShallow={true}
         bordered={false}
         noPadding={true}

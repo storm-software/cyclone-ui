@@ -124,6 +124,14 @@
 
 @font-face {
   font-family: Fonts;
+  src: url("./fonts/StormSans-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Fonts;
   src: url("./fonts/StormSans-Regular.otf") format("opentype");
   font-weight: 400;
   font-display: swap;

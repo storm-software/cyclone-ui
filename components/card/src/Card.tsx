@@ -19,7 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Container } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
-import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
+import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import { getSpaced } from "@cyclone-ui/helpers";
 import { ArrowRight } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
@@ -230,7 +230,7 @@ const cardTextSizeVariant = styled.dynamic<FontSizeTokens | number>(
       : undefined
 );
 
-const CardHeading = styled(HeadingExtraLargeText, {
+const CardHeading = styled(HeadingLargeText, {
   displayName: "CardHeading",
   context: CardContext,
   zIndex: "20",

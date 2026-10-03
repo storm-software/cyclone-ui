@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
+import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import {
   SCROLL_VIEW_CLASS_NAME,
   SCROLL_VIEW_STYLES,
@@ -461,8 +461,8 @@ const SheetScrollView: FC<SheetScrollViewProps> = ({
   );
 };
 
-const SheetHeading: typeof HeadingExtraLargeText = styled(
-  HeadingExtraLargeText,
+const SheetHeading: typeof HeadingLargeText = styled(
+  HeadingLargeText,
   {
     displayName: "SheetHeading",
     color: "accent"
@@ -763,7 +763,7 @@ export interface SheetComponent extends FC<SheetProps> {
   Handle: FC<SheetHandleProps>;
   Overlay: FC<SheetOverlayProps>;
   ScrollView: FC<SheetScrollViewProps>;
-  Heading: typeof HeadingExtraLargeText;
+  Heading: typeof HeadingLargeText;
   Body: typeof BodyText;
   Footer: FC<SheetFooterProps>;
 }

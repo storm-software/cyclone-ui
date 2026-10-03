@@ -19,7 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Container } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
-import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
+import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import type { ColorThemeName } from "@cyclone-ui/state/theme";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
@@ -111,9 +111,7 @@ const CalloutFrameImpl = createStyledHOC(
           {...rest}
           theme={theme}
           position="relative"
-          variant="elevated"
-          borderWidth={3}
-          borderColor="accent">
+          variant="outlined">
           <CalloutBackgroundLowGradient
             theme={theme}
             start={[1.0, 1.0]}
@@ -168,7 +166,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
   );
 };
 
-const CalloutHeading = styled(HeadingExtraLargeText, {
+const CalloutHeading = styled(HeadingLargeText, {
   displayName: "CalloutHeading",
   color: "accent",
   zIndex: "20"

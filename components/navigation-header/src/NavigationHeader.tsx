@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
-import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
+import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import { CaretDown, List, X } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
@@ -848,9 +848,9 @@ const NavigationHeaderRoot = createStyledHOC(
                             setOpenItemIndex(null);
                           }}>
                           {child.featured ? (
-                            <HeadingExtraLargeText>
+                            <HeadingLargeText>
                               {child.label}
-                            </HeadingExtraLargeText>
+                            </HeadingLargeText>
                           ) : (
                             child.label
                           )}

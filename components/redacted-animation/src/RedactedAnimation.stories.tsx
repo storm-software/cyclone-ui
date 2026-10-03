@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
+import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import { Image } from "react-native";
@@ -43,9 +43,9 @@ const meta: Meta<typeof RedactedAnimation> = {
   ],
   args: {
     children: (
-      <HeadingExtraLargeText color="accent">
+      <HeadingLargeText color="accent">
         Presence-aware identity management
-      </HeadingExtraLargeText>
+      </HeadingLargeText>
     )
   }
 } satisfies Meta<typeof RedactedAnimation>;

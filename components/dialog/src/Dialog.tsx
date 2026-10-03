@@ -19,7 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Container } from "@cyclone-ui/container";
-import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
+import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledContext,
@@ -64,7 +64,7 @@ export const DialogContext = createStyledContext<
   }
 );
 
-const DialogHeading = styled(HeadingExtraLargeText, {
+const DialogHeading = styled(HeadingLargeText, {
   displayName: "DialogHeading",
   context: DialogContext,
   color: "accent"
