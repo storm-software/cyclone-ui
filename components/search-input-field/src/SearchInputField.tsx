@@ -16,35 +16,289 @@
 
  ------------------------------------------------------------------- */
 
-import {
-  getFormFontScale,
-  getFormSizeScale,
-  getSized
-} from "@cyclone-ui/helpers";
-import { MagnifyingGlass } from "@cyclone-ui/icons";
+import { BodyText } from "@cyclone-ui/body-text";
+import type { FormControlSize } from "@cyclone-ui/helpers";
+import { formSizeVariants } from "@cyclone-ui/helpers";
+import { CaretDown, CaretUp, MagnifyingGlass } from "@cyclone-ui/icons";
 import type { InputValueProps } from "@cyclone-ui/input";
 import { InputField } from "@cyclone-ui/input-field";
 import { Popover } from "@cyclone-ui/popover";
+import { getSelectContentSize } from "@cyclone-ui/select";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
 import {
   createStyledHOC,
-  Text,
+  styled,
+  Theme,
   View,
   withStaticProperties
 } from "@tamagui/core";
+import { LinearGradient } from "@tamagui/linear-gradient";
 import type { JSX, KeyboardEvent, MouseEvent } from "react";
 import {
   createContext,
   use,
   useCallback,
+  useEffect,
   useId,
+  useLayoutEffect,
   useMemo,
+  useRef,
   useState
 } from "react";
 
 const EMPTY_SUGGESTIONS: readonly string[] = [];
 const SearchInputFieldContext =
   createContext<readonly string[]>(EMPTY_SUGGESTIONS);
+
+// The suggestions popover mirrors `Select.Items` (see `SelectItems.tsx` in
+// `@cyclone-ui/select`) and shares its size metrics, so both menus look the
+// same. Tamagui's `Select` parts need a `Select` root, so they can't be reused
+// for a combobox that keeps focus in its text input.
+const SUGGESTIONS_VIEWPORT_PADDING = 10;
+const SUGGESTIONS_ATTRIBUTE = "data-search-input-field-suggestions";
+const SUGGESTIONS_STYLES = `
+[${SUGGESTIONS_ATTRIBUTE}] {
+  scrollbar-width: none;
+  overscroll-behavior: contain;
+}
+
+[${SUGGESTIONS_ATTRIBUTE}]::-webkit-scrollbar {
+  display: none;
+}
+`;
+
+const SuggestionFrame = styled(View, {
+  displayName: "SearchInputField",
+  transition: "200ms",
+  cursor: "pointer",
+  position: "relative",
+  justifyContent: "center",
+  width: "100%",
+  borderRadius: "button",
+  variants: {
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        const { itemFramePaddingHorizontal, itemPaddingVertical } =
+          getSelectContentSize(val);
+
+        return {
+          paddingHorizontal: itemFramePaddingHorizontal,
+          paddingVertical: itemPaddingVertical
+        };
+      })
+    )
+  } as const,
+  defaultVariants: {
+    size: "md"
+  }
+});
+
+const SuggestionBackground = styled(View, {
+  displayName: "SearchInputField",
+  transition: "200ms",
+  position: "absolute",
+  left: 0,
+  right: 0,
+  borderRadius: "button",
+  backgroundColor: "transparent group-hover/item:surfaceOverlayHover",
+  pointerEvents: "none",
+  variants: {
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        const inset = getSelectContentSize(val).itemPaddingVertical;
+
+        return { top: inset, bottom: inset };
+      })
+    ),
+
+    // The keyboard-highlighted option, matching a focused `Select` item.
+    active: {
+      true: {
+        backgroundColor: "surfaceOverlayHover"
+      }
+    }
+  } as const,
+  defaultVariants: {
+    size: "md",
+    active: false
+  }
+});
+
+const SuggestionDivider = styled(View, {
+  displayName: "SearchInputField",
+  position: "absolute",
+  bottom: 0,
+  pointerEvents: "none",
+  borderBottomWidth: 1,
+  borderBottomColor: "hairline",
+  variants: {
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        const inset = getSelectContentSize(val).dividerInset;
+
+        return { left: inset, right: inset };
+      })
+    )
+  } as const,
+  defaultVariants: {
+    size: "md"
+  }
+});
+
+const SuggestionGroup = styled(View, {
+  displayName: "SearchInputField",
+  position: "relative",
+  flexDirection: "row",
+  alignItems: "center",
+  cursor: "inherit",
+  variants: {
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        const { lineHeight, itemPaddingHorizontal } = getSelectContentSize(val);
+
+        return {
+          minHeight: lineHeight,
+          paddingHorizontal: itemPaddingHorizontal
+        };
+      })
+    )
+  } as const,
+  defaultVariants: {
+    size: "md"
+  }
+});
+
+const SuggestionText = styled(BodyText, {
+  displayName: "SearchInputField",
+  flex: 1,
+  cursor: "inherit",
+  // `Select` items inherit their text color rather than using `inkBody`.
+  color: "currentColor",
+  fontWeight: 300,
+  variants: {
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((val: FormControlSize) => {
+        const {
+          fontSize,
+          lineHeight,
+          itemTextPaddingVertical,
+          itemTextPaddingHorizontal
+        } = getSelectContentSize(val);
+
+        return {
+          fontSize,
+          lineHeight: `${lineHeight}px`,
+          paddingVertical: itemTextPaddingVertical,
+          paddingHorizontal: itemTextPaddingHorizontal
+        };
+      })
+    )
+  } as const,
+  defaultVariants: {
+    size: "md"
+  }
+});
+
+const preventFocusLoss = (event: MouseEvent<HTMLElement>) =>
+  event.preventDefault();
+
+interface SuggestionsScrollButtonProps {
+  direction: "up" | "down";
+  scrollElement: HTMLElement | null;
+  size: FormControlSize;
+}
+
+/**
+ * The caret and fade shown while the list can scroll further, matching
+ * `Select.ScrollUpButton` / `Select.ScrollDownButton`. Hovering it scrolls the
+ * list at the same speed.
+ */
+const SuggestionsScrollButton = ({
+  direction,
+  scrollElement,
+  size
+}: SuggestionsScrollButtonProps) => {
+  const frameRef = useRef<number | undefined>(undefined);
+  const { scrollButtonHeight, scrollIconSize, gradientMargin } =
+    getSelectContentSize(size);
+  const isUp = direction === "up";
+
+  const stop = useCallback(() => {
+    if (frameRef.current !== undefined) {
+      cancelAnimationFrame(frameRef.current);
+      frameRef.current = undefined;
+    }
+  }, []);
+  useEffect(() => stop, [stop]);
+
+  const start = useCallback(() => {
+    if (!scrollElement) {
+      return;
+    }
+
+    stop();
+    let previous = Date.now();
+
+    const step = () => {
+      const now = Date.now();
+      const distance = (now - previous) / 2;
+      previous = now;
+
+      scrollElement.scrollTop += isUp ? -distance : distance;
+      const remaining = isUp
+        ? scrollElement.scrollTop
+        : scrollElement.scrollHeight -
+          scrollElement.clientHeight -
+          scrollElement.scrollTop;
+
+      frameRef.current = remaining > 0 ? requestAnimationFrame(step) : undefined;
+    };
+
+    frameRef.current = requestAnimationFrame(step);
+  }, [isUp, scrollElement, stop]);
+
+  return (
+    <View
+      aria-hidden={true}
+      position="absolute"
+      left={0}
+      right={0}
+      {...(isUp ? { top: 0 } : { bottom: 0 })}
+      zIndex={1}
+      height={scrollButtonHeight}
+      alignItems="center"
+      justifyContent="center"
+      transition={{ duration: "200ms", properties: "scale, opacity" }}
+      opacity="enter:0.2"
+      scale="enter:0.5"
+      onMouseDown={preventFocusLoss}
+      onMouseEnter={start}
+      onMouseLeave={stop}>
+      <View zIndex={10}>
+        {isUp ? (
+          <CaretUp size={scrollIconSize} color="accent" />
+        ) : (
+          <CaretDown size={scrollIconSize} color="accent" />
+        )}
+      </View>
+      <LinearGradient
+        start={[0, 0]}
+        end={[0, 1]}
+        borderRadius="popover"
+        {...(isUp
+          ? { marginTop: gradientMargin }
+          : { marginBottom: gradientMargin })}
+        position="absolute"
+        inset={0}
+        colors={
+          isUp
+            ? ["surfaceFloating", "transparent"]
+            : ["transparent", "surfaceFloating"]
+        }
+      />
+    </View>
+  );
+};
 
 export interface SearchInputFieldExtraProps {
   /** Values offered while the user types. Matching is case-insensitive. */
@@ -226,16 +480,50 @@ const SearchInputFieldControlTextBox =
         },
         [activeSuggestion, filteredSuggestions.length, handleSelect, isOpen]
       );
-      const preserveInputFocus = useCallback(
-        (event: MouseEvent<HTMLElement>) => event.preventDefault(),
-        []
-      );
+      const { viewportPadding, scrollButtonHeight } =
+        getSelectContentSize(size);
+      const [listBox, setListBox] = useState<HTMLElement | null>(null);
+      const [canScroll, setCanScroll] = useState({ up: false, down: false });
+      const updateCanScroll = useCallback(() => {
+        if (!listBox) {
+          return;
+        }
+
+        const up = listBox.scrollTop > 0;
+        const down =
+          Math.ceil(listBox.scrollTop + listBox.clientHeight) <
+          listBox.scrollHeight;
+
+        setCanScroll(current =>
+          current.up === up && current.down === down ? current : { up, down }
+        );
+      }, [listBox]);
+
+      useLayoutEffect(() => {
+        if (!listBox) {
+          return;
+        }
+
+        updateCanScroll();
+        const resizeObserver = new ResizeObserver(updateCanScroll);
+        resizeObserver.observe(listBox);
+
+        return () => resizeObserver.disconnect();
+      }, [filteredSuggestions, listBox, updateCanScroll]);
+
+      useEffect(() => {
+        if (activeIndex >= 0 && listBox) {
+          listBox.ownerDocument
+            .getElementById(`${listBoxId}-option-${activeIndex}`)
+            ?.scrollIntoView({ block: "nearest" });
+        }
+      }, [activeIndex, listBox, listBoxId]);
 
       return (
         <Popover
           open={isOpen}
           onOpenChange={handleOpenChange}
-          placement="bottom-start"
+          placement="bottom"
           shouldAdapt={false}>
           <Popover.Anchor asChild={true}>
             <InputField.Control.TextBox ref={forwardedRef} {...props}>
@@ -263,44 +551,76 @@ const SearchInputFieldControlTextBox =
             </InputField.Control.TextBox>
           </Popover.Anchor>
 
-          <Popover.Content
-            hasArrow={false}
-            disableFocusScope={true}
-            minWidth="20xl"
-            paddingHorizontal="4xl">
-            <Popover.Content.ScrollView size="lg" maxHeight="36xl">
-              <View asChild={true} gap="xxs" width="100%">
-                <div id={listBoxId} role="listbox">
+          <Theme name="base">
+            <Popover.Content
+              hasArrow={false}
+              disableFocusScope={true}
+              // Like `Select.Items`: the trigger's width plus 4px on each side,
+              // and no taller than the space left below it.
+              width="calc(var(--tamagui-popper-anchor-width) + 8px)"
+              maxHeight={`calc(var(--tamagui-popper-available-height) - ${SUGGESTIONS_VIEWPORT_PADDING}px)`}
+              padding={0}
+              borderWidth={1}
+              borderColor="hairline"
+              overflow="hidden">
+              <style>{SUGGESTIONS_STYLES}</style>
+              {canScroll.up && (
+                <SuggestionsScrollButton
+                  direction="up"
+                  scrollElement={listBox}
+                  size={size}
+                />
+              )}
+              <View
+                asChild={true}
+                flexShrink={1}
+                minHeight={0}
+                overflowY="auto"
+                padding={viewportPadding}>
+                <div
+                  ref={setListBox}
+                  id={listBoxId}
+                  role="listbox"
+                  {...{ [SUGGESTIONS_ATTRIBUTE]: "" }}
+                  // Keeps keyboard-highlighted options clear of the scroll
+                  // buttons when they are scrolled into view.
+                  style={{ scrollPaddingBlock: scrollButtonHeight }}
+                  onScroll={updateCanScroll}>
                   {filteredSuggestions.map((suggestion, index) => (
-                    <View
+                    <SuggestionFrame
                       key={suggestion}
                       id={`${listBoxId}-option-${index}`}
                       role="option"
                       aria-selected={index === activeIndex}
-                      cursor="pointer"
-                      width="100%"
-                      minHeight={getSized("8xl") * getFormSizeScale(size)}
-                      padding="xs"
-                      paddingHorizontal={10 * getFormSizeScale(size)}
-                      borderWidth={1}
-                      borderColor={`${index === activeIndex ? "accent" : "transparent"}`}
-                      borderRadius="button"
-                      backgroundColor={`${index === activeIndex ? "surfaceFloatingActive" : "transparent"} hover:surfaceFloatingHover`}
-                      alignItems="center"
-                      justifyContent="center"
-                      onMouseDown={preserveInputFocus}
+                      group="item"
+                      size={size}
+                      onMouseDown={preventFocusLoss}
                       onPress={() => handleSelect(suggestion)}>
-                      <Text
-                        fontSize={16 * getFormFontScale(size)}
-                        textTransform="none">
-                        {suggestion}
-                      </Text>
-                    </View>
+                      <SuggestionBackground
+                        size={size}
+                        active={index === activeIndex}
+                      />
+                      <SuggestionGroup size={size}>
+                        <SuggestionText size={size} numberOfLines={1}>
+                          {suggestion}
+                        </SuggestionText>
+                      </SuggestionGroup>
+                      {index < filteredSuggestions.length - 1 && (
+                        <SuggestionDivider size={size} />
+                      )}
+                    </SuggestionFrame>
                   ))}
                 </div>
               </View>
-            </Popover.Content.ScrollView>
-          </Popover.Content>
+              {canScroll.down && (
+                <SuggestionsScrollButton
+                  direction="down"
+                  scrollElement={listBox}
+                  size={size}
+                />
+              )}
+            </Popover.Content>
+          </Theme>
         </Popover>
       );
     }

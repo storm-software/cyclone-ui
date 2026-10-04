@@ -1,0 +1,59 @@
+{
+  "name": "@cyclone-ui/tag",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/tag"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Tag": {
+      "import": "./dist/Tag.mjs",
+      "require": "./dist/Tag.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@tamagui/animate-presence": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/font-size": "catalog:",
+    "@tamagui/get-font-sized": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/helpers-tamagui": "catalog:",
+    "@tamagui/text": "catalog:",
+    "@tamagui/web": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "module:jsx": "dist/jsx"
+}

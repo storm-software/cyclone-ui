@@ -19,10 +19,16 @@
       "import": "./dist/Breadcrumb.mjs",
       "require": "./dist/Breadcrumb.cjs"
     },
+    "./utilities": {
+      "import": "./dist/utilities.mjs",
+      "require": "./dist/utilities.cjs"
+    },
     "./*": "./*"
   },
   "types": "./dist/index.d.cts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -38,7 +44,9 @@
     "@tamagui/text": "catalog:",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/label-text": "workspace:*",
-    "@cyclone-ui/link": "workspace:*"
+    "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
@@ -49,7 +57,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs"
 }

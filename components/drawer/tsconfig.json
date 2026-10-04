@@ -18,19 +18,19 @@
   "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "references": [
     {
-      "path": "../heading-text"
-    },
-    {
-      "path": "../button"
-    },
-    {
-      "path": "../body-text"
+      "path": "../sheet"
     },
     {
       "path": "../scroll-view"
     },
     {
-      "path": "../sheet"
+      "path": "../heading-text"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
+      "path": "../button"
     }
   ]
 }

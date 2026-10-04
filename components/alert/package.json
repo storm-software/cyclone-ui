@@ -32,6 +32,7 @@
     "@cyclone-ui/button": "workspace:*"
   },
   "devDependencies": {
+    "@tamagui/get-font-sized": "catalog:",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

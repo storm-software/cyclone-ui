@@ -21,6 +21,12 @@
       "path": "../popover"
     },
     {
+      "path": "../select"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
       "path": "../input-field"
     },
     {

@@ -4031,9 +4031,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.tight",
       type: "number",
-      value: "1",
+      value: "1.175",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1)",
+      description: "Tight line height (1.175)",
       theme: undefined,
       typography: true
     },
@@ -5055,6 +5055,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xs",
+      description: "Extra small display style: Storm Sans semibold at 16px (`font-size.md`) with snug line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xxs",
+      description: "Extra extra small display style: Storm Sans medium at 14px (`font-size.sm`) with tight line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.editorial-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -5082,18 +5100,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.editorial-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--cu-typography-editorial-sm",
-      description: "Small editorial display style: Storm Serif bold at 20px (`font-size.lg`) with snug line height. Use it for subsection headings and dialog or panel titles. HeadingText applies it for level `4`/`sm` (h4).",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Large title style: Storm Sans medium at 18px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -5147,9 +5156,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Storm Sans semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },
@@ -9181,9 +9190,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.tight",
       type: "number",
-      value: "1",
+      value: "1.175",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1)",
+      description: "Tight line height (1.175)",
       theme: undefined,
       typography: true
     },
@@ -10205,6 +10214,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xs",
+      description: "Extra small display style: Storm Sans semibold at 16px (`font-size.md`) with snug line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xxs",
+      description: "Extra extra small display style: Storm Sans medium at 14px (`font-size.sm`) with tight line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.editorial-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -10232,18 +10259,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.editorial-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--cu-typography-editorial-sm",
-      description: "Small editorial display style: Storm Serif bold at 20px (`font-size.lg`) with snug line height. Use it for subsection headings and dialog or panel titles. HeadingText applies it for level `4`/`sm` (h4).",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Large title style: Storm Sans medium at 18px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -10297,9 +10315,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Storm Sans semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },
@@ -14331,9 +14349,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.tight",
       type: "number",
-      value: "1",
+      value: "1.175",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1)",
+      description: "Tight line height (1.175)",
       theme: undefined,
       typography: true
     },
@@ -15355,6 +15373,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xs",
+      description: "Extra small display style: Storm Sans semibold at 16px (`font-size.md`) with snug line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xxs",
+      description: "Extra extra small display style: Storm Sans medium at 14px (`font-size.sm`) with tight line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.editorial-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -15382,18 +15418,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.editorial-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--cu-typography-editorial-sm",
-      description: "Small editorial display style: Storm Serif bold at 20px (`font-size.lg`) with snug line height. Use it for subsection headings and dialog or panel titles. HeadingText applies it for level `4`/`sm` (h4).",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Large title style: Storm Sans medium at 18px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -15447,9 +15474,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Storm Sans semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },
@@ -19481,9 +19508,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.tight",
       type: "number",
-      value: "1",
+      value: "1.175",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1)",
+      description: "Tight line height (1.175)",
       theme: undefined,
       typography: true
     },
@@ -20505,6 +20532,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xs",
+      description: "Extra small display style: Storm Sans semibold at 16px (`font-size.md`) with snug line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xxs",
+      description: "Extra extra small display style: Storm Sans medium at 14px (`font-size.sm`) with tight line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.editorial-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -20532,18 +20577,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.editorial-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--cu-typography-editorial-sm",
-      description: "Small editorial display style: Storm Serif bold at 20px (`font-size.lg`) with snug line height. Use it for subsection headings and dialog or panel titles. HeadingText applies it for level `4`/`sm` (h4).",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Large title style: Storm Sans medium at 18px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -20597,9 +20633,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Storm Sans semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },
@@ -24631,9 +24667,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.tight",
       type: "number",
-      value: "1",
+      value: "1.175",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1)",
+      description: "Tight line height (1.175)",
       theme: undefined,
       typography: true
     },
@@ -25655,6 +25691,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xs",
+      description: "Extra small display style: Storm Sans semibold at 16px (`font-size.md`) with snug line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xxs",
+      description: "Extra extra small display style: Storm Sans medium at 14px (`font-size.sm`) with tight line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.editorial-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -25682,18 +25736,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.editorial-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--cu-typography-editorial-sm",
-      description: "Small editorial display style: Storm Serif bold at 20px (`font-size.lg`) with snug line height. Use it for subsection headings and dialog or panel titles. HeadingText applies it for level `4`/`sm` (h4).",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Large title style: Storm Sans medium at 18px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -25747,9 +25792,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Storm Sans semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },
@@ -29781,9 +29826,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.tight",
       type: "number",
-      value: "1",
+      value: "1.175",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1)",
+      description: "Tight line height (1.175)",
       theme: undefined,
       typography: true
     },
@@ -30805,6 +30850,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.display-xs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xs",
+      description: "Extra small display style: Storm Sans semibold at 16px (`font-size.md`) with snug line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.tight}\"}",
+      cssVar: "--cu-typography-display-xxs",
+      description: "Extra extra small display style: Storm Sans medium at 14px (`font-size.sm`) with tight line height. Use it for minor headings and compact text elements. HeadingText applies it for level `5`/`xs` (h5).",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.editorial-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -30832,18 +30895,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.editorial-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Serif\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--cu-typography-editorial-sm",
-      description: "Small editorial display style: Storm Serif bold at 20px (`font-size.lg`) with snug line height. Use it for subsection headings and dialog or panel titles. HeadingText applies it for level `4`/`sm` (h4).",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Large title style: Storm Sans medium at 18px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -30897,9 +30951,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Storm Sans semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },

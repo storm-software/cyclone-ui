@@ -17,6 +17,12 @@
       "path": "../body-text"
     },
     {
+      "path": "../popover"
+    },
+    {
+      "path": "../button"
+    },
+    {
       "path": "../link"
     },
     {

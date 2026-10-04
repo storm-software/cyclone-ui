@@ -268,6 +268,16 @@ typography:
     fontSize: "1.25rem"
     fontWeight: "700"
     lineHeight: "1.25"
+  display-xs:
+    fontFamily: "Storm Sans"
+    fontSize: "1.125rem"
+    fontWeight: "600"
+    lineHeight: "1.175"
+  display-xxs:
+    fontFamily: "Storm Sans"
+    fontSize: "1rem"
+    fontWeight: "500"
+    lineHeight: "1.175"
   editorial-hero:
     fontFamily: "Storm Serif"
     fontSize: "3.75rem"
@@ -283,16 +293,11 @@ typography:
     fontSize: "1.5rem"
     fontWeight: "700"
     lineHeight: "1.25"
-  editorial-sm:
-    fontFamily: "Storm Serif"
-    fontSize: "1.25rem"
-    fontWeight: "700"
-    lineHeight: "1.25"
   title-lg:
     fontFamily: "Storm Sans"
     fontSize: "1.125rem"
     fontWeight: "500"
-    lineHeight: "1.25"
+    lineHeight: "1.175"
   title-sm:
     fontFamily: "Storm Sans"
     fontSize: "0.75rem"
@@ -312,17 +317,17 @@ typography:
     fontFamily: "Storm Sans"
     fontSize: "1rem"
     fontWeight: "400"
-    lineHeight: "1"
+    lineHeight: "1.175"
   button:
     fontFamily: "Storm Sans"
     fontSize: "1.125rem"
     fontWeight: "600"
-    lineHeight: "1"
+    lineHeight: "1.175"
   eyebrow:
-    fontFamily: "Storm Sans"
+    fontFamily: "Google Sans Code"
     fontSize: "1.125rem"
     fontWeight: "600"
-    lineHeight: "1"
+    lineHeight: "1.175"
   code:
     fontFamily: "Google Sans Code"
     fontSize: "1.25rem"
@@ -361,7 +366,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 244 color tokens, 16 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 244 color tokens, 17 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -616,17 +621,18 @@ Cyclone UI design tokens — 244 color tokens, 16 typography tokens, 28 spacing 
 - **display-lg:** fontFamily: Storm Sans, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.25
 - **display-md:** fontFamily: Storm Sans, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.25
 - **display-sm:** fontFamily: Storm Sans, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.25
+- **display-xs:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.175
+- **display-xxs:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 500, lineHeight: 1.175
 - **editorial-hero:** fontFamily: Storm Serif, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.25
 - **editorial-lg:** fontFamily: Storm Serif, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.25
 - **editorial-md:** fontFamily: Storm Serif, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.25
-- **editorial-sm:** fontFamily: Storm Serif, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.25
-- **title-lg:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.25
+- **title-lg:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.175
 - **title-sm:** fontFamily: Storm Sans, fontSize: 0.75rem, fontWeight: 400, lineHeight: 1.25
 - **body-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.375
 - **body-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.375
-- **caption:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1
-- **button:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1
-- **eyebrow:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1
+- **caption:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.175
+- **button:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.175
+- **eyebrow:** fontFamily: Google Sans Code, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.175
 - **code:** fontFamily: Google Sans Code, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.25
 
 ## Layout

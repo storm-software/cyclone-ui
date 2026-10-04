@@ -131,6 +131,7 @@
     "@vitest/coverage-v8": "catalog:",
     "bundlewatch": "catalog:",
     "copyfiles": "catalog:",
+    "defu": "catalog:",
     "eslint": "catalog:",
     "expo": "catalog:",
     "expo-av": "catalog:",

@@ -18,13 +18,13 @@
 
 import type { ButtonProps } from "@cyclone-ui/button";
 import { Button } from "@cyclone-ui/button";
+import { DotsThree } from "@cyclone-ui/icons";
 import { NextButton } from "@cyclone-ui/next-button";
 import { PreviousButton } from "@cyclone-ui/previous-button";
-import type { FontSizeTokens, SizeTokens } from "@tamagui/core";
+import type { SizeTokens } from "@tamagui/core";
 import { createStyledHOC } from "@tamagui/core";
 import type { XStackProps } from "@tamagui/stacks";
 import { XStack } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
 import { useCallback } from "react";
 
 interface ExtraPaginationProps {
@@ -127,13 +127,7 @@ export const Pagination = createStyledHOC(
         </Button>
 
         {currentPage > 3 && pageCount > 5 && (
-          <SizableText
-            color="accent"
-            fontFamily="body-md"
-            size={"true" as FontSizeTokens}
-            paddingHorizontal="md">
-            . . .
-          </SizableText>
+          <DotsThree color="accent" paddingHorizontal="md" />
         )}
 
         {pageCount > 1 && (
@@ -201,13 +195,7 @@ export const Pagination = createStyledHOC(
         )}
 
         {currentPage < pageCount - 2 && pageCount > 5 && (
-          <SizableText
-            color="accent"
-            fontFamily="body-md"
-            size={"true" as FontSizeTokens}
-            paddingHorizontal="md">
-            . . .
-          </SizableText>
+          <DotsThree color="accent" paddingHorizontal="md" />
         )}
 
         {pageCount > 4 && (

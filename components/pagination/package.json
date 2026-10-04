@@ -22,6 +22,7 @@
     "@tamagui/web": "catalog:",
     "react-native-svg": "^15.15.5",
     "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/next-button": "workspace:*",
     "@cyclone-ui/previous-button": "workspace:*"
   },

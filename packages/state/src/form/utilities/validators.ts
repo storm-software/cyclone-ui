@@ -18,5 +18,8 @@
 
 import type { MessageDetails } from "@stryke/types/messages";
 
+// An empty list (such as a tag select with no tags) is a missing value too.
 export const requiredValidator = (value): MessageDetails[] =>
-  value ? [] : [{ message: "This field is required", type: "error" }];
+  value && !(Array.isArray(value) && value.length === 0)
+    ? []
+    : [{ message: "This field is required", type: "error" }];

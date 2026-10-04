@@ -18,11 +18,14 @@
   "dependencies": {
     "@tamagui/core": "catalog:",
     "@tamagui/create-context": "catalog:",
+    "@tamagui/linear-gradient": "catalog:",
+    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
     "@cyclone-ui/input-field": "workspace:*",
     "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/select": "workspace:*",
     "@cyclone-ui/state": "workspace:*"
   },
   "devDependencies": {

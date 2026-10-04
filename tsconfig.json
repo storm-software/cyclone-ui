@@ -175,6 +175,9 @@
       "path": "./components/badge"
     },
     {
+      "path": "./components/tag"
+    },
+    {
       "path": "./components/field"
     },
     {
@@ -278,6 +281,12 @@
     },
     {
       "path": "./components/slider-field"
+    },
+    {
+      "path": "./components/tag-picker"
+    },
+    {
+      "path": "./components/tag-picker-field"
     }
   ],
   "files": []

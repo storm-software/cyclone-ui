@@ -17,3 +17,4 @@
  ------------------------------------------------------------------- */
 
 export * from "./Select";
+export { getSelectContentSize } from "./utilities";

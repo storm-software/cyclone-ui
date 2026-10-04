@@ -167,9 +167,10 @@ export const MaximumValue: Story = {
     await userEvent.tab();
     await userEvent.keyboard("{ArrowRight}");
     await waitFor(() => expect(slider).toHaveAttribute("aria-valuenow", "81"));
-    await expect(
-      await canvas.findByText("Values above 80 may be unstable")
-    ).toBeVisible();
+    // The message fades in, so wait for it to finish appearing.
+    await waitFor(() =>
+      expect(canvas.getByText("Values above 80 may be unstable")).toBeVisible()
+    );
   }
 };
 

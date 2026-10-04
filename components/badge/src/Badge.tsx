@@ -16,280 +16,331 @@
 
  ------------------------------------------------------------------- */
 
-import { HeadingSmallText } from "@cyclone-ui/heading-text";
-import type {
-  ColorTokens,
-  FontSizeTokens,
-  GetProps,
-  SizeTokens,
-  Variable
-} from "@tamagui/core";
-import {
-  createStyledContext,
-  createStyledHOC,
-  styled,
-  View
-} from "@tamagui/core";
-import { getFontSize } from "@tamagui/font-size";
-import { getFontSized } from "@tamagui/get-font-sized";
-import { withStaticProperties } from "@tamagui/helpers";
-import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
-
-const BadgeContext = createStyledContext(
-  {
-    size: true as SizeTokens | number,
-    outlined: false,
-    pressable: false
-  },
-  {
-    keys: ["size", "outlined", "pressable"]
-  }
-);
+import type { ColorThemeName } from "@cyclone-ui/state/theme";
+import type { GetProps } from "@tamagui/core";
+import { createStyledHOC, styled, Text, View } from "@tamagui/core";
+import type { ElementType, ReactNode } from "react";
+import { useState } from "react";
 
 const BADGE_NAME = "Badge";
 
-type BadgeTokens = { size: object; space: object };
-type BadgeSize = SizeTokens | number;
+/**
+ * The color of the badge: one of MUI's palette names, or any cyclone-ui color theme.
+ */
+export type BadgeColor =
+  | "default"
+  | "primary"
+  | "secondary"
+  | "error"
+  | "info"
+  | "success"
+  | "warning"
+  | ColorThemeName;
 
-// v2 `"...size"` variants only ran for keys of the size token scale, so every
-// other value (numbers, the `true` default) left the base styles untouched.
-const isSizeToken = (val: unknown, tokens: BadgeTokens): val is string =>
-  typeof val === "string" && val in tokens.size;
+export type BadgeVariant = "standard" | "dot";
 
-const getSpaceToken = (val: string, tokens: BadgeTokens) =>
-  (tokens.space as Record<string, Variable<number> | undefined>)[val];
+export type BadgeOverlap = "rectangular" | "circular";
 
-const getSpaceValue = (val: string, tokens: BadgeTokens): number =>
-  Number(getSpaceToken(val, tokens)?.val ?? 0);
+export type BadgeVerticalOrigin = "top" | "bottom";
 
-const BadgeFrame = styled(View, {
+export type BadgeHorizontalOrigin = "left" | "right";
+
+export interface BadgeOrigin {
+  /**
+   * The edge of the wrapped element the badge is centered on vertically
+   *
+   * @defaultValue "top"
+   */
+  vertical?: BadgeVerticalOrigin;
+
+  /**
+   * The edge of the wrapped element the badge is centered on horizontally
+   *
+   * @defaultValue "right"
+   */
+  horizontal?: BadgeHorizontalOrigin;
+}
+
+// MUI's palette names, mapped to the cyclone-ui theme with the same role.
+// `default` keeps the surrounding theme (`base`, unless a parent sets one).
+const BADGE_COLOR_THEMES: Record<string, ColorThemeName | undefined> = {
+  default: undefined,
+  primary: "brand",
+  secondary: "discovery",
+  error: "danger",
+  info: "info",
+  success: "success",
+  warning: "warning"
+};
+
+const getBadgeTheme = (color: BadgeColor): ColorThemeName | undefined =>
+  color in BADGE_COLOR_THEMES
+    ? BADGE_COLOR_THEMES[color]
+    : (color as ColorThemeName);
+
+const BadgeRootFrame = styled(View, {
   displayName: BADGE_NAME,
+  // A `span`, like MUI's root, so a badge can sit inside a `button` or text.
+  render: "span",
+  position: "relative",
+  display: "inline-flex",
   flexDirection: "row",
-  width: "fit-content",
-  backgroundColor: "accent",
-  boxShadow: "none",
-  borderRadius: "button",
-  paddingHorizontal: "3xl",
-  paddingVertical: "lg",
-  justifyContent: "center",
+  verticalAlign: "middle",
+  flexShrink: 0,
+  // Hugs the wrapped element inside a stretching parent (such as a `YStack`),
+  // so the badge lands on the element's corner instead of the parent's edge.
+  width: "fit-content"
+});
+
+const BadgeBadgeFrame = styled(View, {
+  displayName: BADGE_NAME,
+  render: "span",
+  position: "absolute",
+  zIndex: 1,
+  flexDirection: "row",
+  flexWrap: "wrap",
+  alignContent: "center",
   alignItems: "center",
-  context: BadgeContext,
+  justifyContent: "center",
+  boxSizing: "border-box",
+  borderRadius: 1000_000_000,
+  backgroundColor: "accent",
+
   variants: {
-    circular: {
-      true: {
-        borderRadius: 1000_000_000
+    variant: {
+      standard: {
+        height: "4xl",
+        minWidth: "4xl",
+        paddingHorizontal: 6
+      },
+      dot: {
+        height: "sm",
+        minWidth: "sm",
+        paddingHorizontal: 0
       }
     },
 
-    outlined: {
-      true: {
-        backgroundColor: "transparent",
-        borderColor: "accent",
-        borderWidth: 2
-      }
-    },
-
-    size: styled.dynamic<BadgeSize>((val, { tokens }) => {
-      const matched = isSizeToken(val, tokens);
-
-      return {
-        paddingHorizontal: matched ? getSpaceToken(val, tokens) : undefined,
-        paddingVertical: matched ? getSpaceValue(val, tokens) * 0.2 : undefined
-      };
-    }),
-
-    pressable: {
-      true: {
-        tabIndex: 0,
-        role: "button",
-        backgroundColor: "hover:mutedHover",
-        borderColor: "hover:accentHover",
-        boxShadow: "focus-visible:ringOffset"
-      }
-    }
+    // Styled by the `.resolve` below because the position and transform
+    // depend on the anchor, `overlap` and `invisible` together.
+    vertical: styled.dynamic<BadgeVerticalOrigin>(),
+    horizontal: styled.dynamic<BadgeHorizontalOrigin>(),
+    overlap: styled.dynamic<BadgeOverlap>(),
+    invisible: styled.dynamic<boolean>()
   } as const,
   defaultVariants: {
-    pressable: false
+    variant: "standard"
   }
-});
-
-const BadgeTextFrame = styled(HeadingSmallText, {
-  displayName: BADGE_NAME,
-  context: BadgeContext,
-  render: "span",
-  color: "onAccent",
-  variants: {
-    // v2 `"...fontSize"`: only font size keys (including the `true` default,
-    // which the font scale carries as its own `true` key) restyle the text.
-    size: styled.dynamic<FontSizeTokens | number>((val, env) =>
-      val === true ||
-      (typeof val === "string" && !!env.font && val in env.font.size)
-        ? getFontSized(val === true ? ("true" as FontSizeTokens) : val, env)
-        : undefined
-    )
-  } as const
-});
-
-const BadgeText = createStyledHOC(
-  BadgeTextFrame,
-  ({ children, color, ...props }, forwardedRef) => {
-    const { outlined, pressable } = BadgeContext.useStyledContext();
-    const baseColor = color ?? (outlined ? "accent" : "onAccent");
-
-    return (
-      <BadgeTextFrame
-        ref={forwardedRef}
-        {...props}
-        color={
-          // A caller-authored `hover:` clause wins, like v2's caller `hoverStyle`.
-          pressable &&
-          typeof baseColor === "string" &&
-          !baseColor.includes("hover:")
-            ? `${baseColor} hover:${outlined ? "accentHover" : "onAccentHover"}`
-            : baseColor
-        }>
-        {children}
-      </BadgeTextFrame>
-    );
-  },
-  {
-    displayName: BADGE_NAME
-  }
-);
-
-interface BadgeIconProps {
-  color?: ColorTokens | string;
-  scaleIcon?: number;
-  size?: SizeTokens;
-  children: React.ReactNode;
-}
-
-const BadgeIconFrame = styled(View, {
-  displayName: BADGE_NAME,
-  context: BadgeContext,
-
-  variants: {
-    size: styled.dynamic<BadgeSize>((val, { tokens }) => {
-      const padding = isSizeToken(val, tokens)
-        ? getSpaceValue(val, tokens) * 0.25
-        : undefined;
-
-      return {
-        paddingHorizontal: padding,
-        paddingVertical: padding
-      };
-    })
-  }
-});
-
-const BadgeIcon = createStyledHOC(
-  BadgeIconFrame,
-  (props: GetProps<typeof BadgeIconFrame> & BadgeIconProps, ref) => {
-    const { children, scaleIcon = 0.7, size, color, ...rest } = props;
-    const chipContext = BadgeContext.useStyledContext();
-    const finalSize = size || chipContext.size;
-
-    const iconSize =
-      (typeof finalSize === "number"
-        ? finalSize * 0.5
-        : getFontSize(finalSize as FontSizeTokens)) * scaleIcon;
-
-    const getThemedIcon = useGetThemedIcon({
-      size: iconSize,
-      color: color as any
-    });
-
-    return (
-      <BadgeIconFrame ref={ref} {...rest}>
-        {getThemedIcon(children)}
-      </BadgeIconFrame>
-    );
-  }
-);
-
-const ButtonComp = styled(View, {
-  displayName: BADGE_NAME,
-  context: BadgeContext,
-  tabIndex: 0,
-  role: "button",
-  borderRadius: 1000_000_000,
-  backgroundColor:
-    "accent hover:mutedHover press:surfaceFloating focus:surfaceElevated",
-  justifyContent: "center",
-  alignItems: "center",
-  borderColor: "hover:accentHover",
-  variants: {
-    size: styled.dynamic<BadgeSize>(),
-    // Styled by the `.resolve` below because the offset depends on `size`.
-    alignRight: styled.dynamic<boolean>(),
-    alignLeft: styled.dynamic<boolean>()
-  } as const
-}).resolve(({ size, alignRight, alignLeft }, { tokens }) => {
-  const getOffset = (factor: number) => {
-    if (typeof size === "number") {
-      return size * factor;
-    }
-
-    return isSizeToken(size, tokens)
-      ? getSpaceValue(size, tokens) * factor
-      : undefined;
-  };
+}).resolve(({ vertical, horizontal, overlap, invisible }) => {
+  // MUI's inset: circular children (avatars, icon buttons) pull the badge in
+  // to where their outline passes the corner.
+  const offset = overlap === "circular" ? "14%" : 0;
 
   return {
-    x: alignLeft ? getOffset(-0.55) : alignRight ? getOffset(0.55) : undefined
+    top: vertical === "bottom" ? undefined : offset,
+    bottom: vertical === "bottom" ? offset : undefined,
+    left: horizontal === "left" ? offset : undefined,
+    right: horizontal === "left" ? undefined : offset,
+    // Centers the badge on the anchor corner. Transforms apply in the order
+    // they are set, so translating before scaling keeps the badge centered on
+    // the corner while it scales about its own center.
+    x: horizontal === "left" ? "-50%" : "50%",
+    y: vertical === "bottom" ? "50%" : "-50%",
+    // Not 0: the motion driver animates the transform string with WAAPI, and
+    // a `scale(0)` matrix is singular, so the browser would flip it halfway
+    // through instead of interpolating.
+    scale: invisible ? 0.001 : 1
   };
 });
 
-interface BadgeContextProps {
-  size: BadgeSize;
-  outlined: boolean;
-  pressable: boolean;
+const BadgeText = styled(Text, {
+  displayName: BADGE_NAME,
+  color: "onAccent",
+  fontFamily: "caption",
+  fontSize: 12,
+  fontWeight: "500",
+  // Unitless, as in CSS: a multiple of `fontSize`.
+  lineHeight: 1
+});
+
+// MUI's `transitions.duration.enteringScreen` and `leavingScreen`.
+const BADGE_SHOW_TRANSITION = { duration: "225ms", easing: "ease-in-out" };
+const BADGE_HIDE_TRANSITION = { duration: "195ms", easing: "ease-in-out" };
+
+const isShallowEqual = <T extends object>(a: T, b: T) =>
+  (Object.keys(a) as (keyof T)[]).every(key => Object.is(a[key], b[key]));
+
+/**
+ * Returns `value` while the badge is visible, and the last visible `value`
+ * while it is hidden. Like MUI, a badge keeps its content, color and position
+ * while it scales out, instead of showing a `0` or jumping corners.
+ */
+const useLastVisible = <T extends object>(value: T, invisible: boolean): T => {
+  const [lastVisible, setLastVisible] = useState(value);
+
+  // Compared by field: `value` is a new object on every render, and React
+  // re-runs this render with the same props right after the update.
+  if (!invisible && !isShallowEqual(lastVisible, value)) {
+    setLastVisible(value);
+  }
+
+  return invisible ? lastVisible : value;
+};
+
+type BadgeRootProps = GetProps<typeof BadgeRootFrame>;
+
+type BadgeBadgeProps = Omit<
+  GetProps<typeof BadgeBadgeFrame>,
+  "vertical" | "horizontal" | "overlap" | "invisible" | "variant"
+>;
+
+export interface BadgeOwnProps {
+  /**
+   * The corner of the wrapped element the badge is centered on
+   *
+   * @defaultValue \{ vertical: "top", horizontal: "right" \}
+   */
+  anchorOrigin?: BadgeOrigin;
+
+  /**
+   * The content rendered within the badge
+   */
+  badgeContent?: ReactNode;
+
+  /**
+   * The element the badge is added to
+   */
+  children?: ReactNode;
+
+  /**
+   * The color of the badge
+   *
+   * @defaultValue "default"
+   */
+  color?: BadgeColor;
+
+  /**
+   * Should the badge be hidden
+   *
+   * @defaultValue false
+   */
+  invisible?: boolean;
+
+  /**
+   * The largest count to show; higher counts show as `${max}+`
+   *
+   * @defaultValue 99
+   */
+  max?: number;
+
+  /**
+   * The shape the badge overlaps
+   *
+   * @defaultValue "rectangular"
+   */
+  overlap?: BadgeOverlap;
+
+  /**
+   * Should the badge show when `badgeContent` is zero
+   *
+   * @defaultValue false
+   */
+  showZero?: boolean;
+
+  /**
+   * The variant to use
+   *
+   * @defaultValue "standard"
+   */
+  variant?: BadgeVariant;
+
+  /**
+   * The components used for each slot
+   */
+  slots?: {
+    root?: ElementType;
+    badge?: ElementType;
+  };
+
+  /**
+   * The props used for each slot
+   */
+  slotProps?: {
+    root?: Partial<BadgeRootProps>;
+    badge?: Partial<BadgeBadgeProps>;
+  };
 }
 
-export type BadgeProps = Omit<
-  GetProps<typeof BadgeFrame>,
-  keyof BadgeContextProps
-> &
-  Partial<BadgeContextProps>;
+export type BadgeProps = Omit<BadgeRootProps, keyof BadgeOwnProps> &
+  BadgeOwnProps;
 
-const BadgeFrameImpl = createStyledHOC(
-  BadgeFrame,
+export const Badge = createStyledHOC(
+  BadgeRootFrame,
   (
     {
+      anchorOrigin,
+      badgeContent,
       children,
-      outlined = false,
-      pressable = false,
-      size = true,
+      color = "default",
+      invisible: invisibleProp = false,
+      max = 99,
+      overlap = "rectangular",
+      showZero = false,
+      variant = "standard",
+      slots,
+      slotProps,
       ...props
     }: BadgeProps,
     forwardedRef
   ) => {
+    // MUI's `useBadge`: a zero count hides the badge unless `showZero`, and
+    // so does missing content, except on a dot.
+    const invisible =
+      invisibleProp ||
+      (badgeContent === 0 && !showZero) ||
+      (badgeContent == null && variant !== "dot");
+
+    const shown = useLastVisible(
+      {
+        color,
+        overlap,
+        variant,
+        vertical: anchorOrigin?.vertical ?? "top",
+        horizontal: anchorOrigin?.horizontal ?? "right",
+        content:
+          badgeContent && Number(badgeContent) > max ? `${max}+` : badgeContent
+      },
+      invisible
+    );
+
+    const RootSlot: ElementType = slots?.root ?? BadgeRootFrame;
+    const BadgeSlot: ElementType = slots?.badge ?? BadgeBadgeFrame;
+    const content = shown.variant === "dot" ? null : shown.content;
+
     return (
-      <BadgeContext.Provider
-        // Only context keys: a styled context treats every key in its value
-        // as a context prop, so spreading all props swallowed `aria-*` and
-        // other DOM attributes before they reached the element.
-        outlined={outlined}
-        pressable={pressable}
-        size={size}>
-        <BadgeFrame
-          ref={forwardedRef}
-          {...props}
-          outlined={outlined}
-          pressable={pressable}
-          size={size}>
-          {children}
-        </BadgeFrame>
-      </BadgeContext.Provider>
+      <RootSlot ref={forwardedRef} {...props} {...slotProps?.root}>
+        {children}
+        <BadgeSlot
+          // The count is decoration: describe it on the wrapped element
+          // instead, for example with an `aria-label`.
+          aria-hidden
+          theme={getBadgeTheme(shown.color)}
+          variant={shown.variant}
+          vertical={shown.vertical}
+          horizontal={shown.horizontal}
+          overlap={shown.overlap}
+          invisible={invisible}
+          transition={invisible ? BADGE_HIDE_TRANSITION : BADGE_SHOW_TRANSITION}
+          {...slotProps?.badge}>
+          {typeof content === "string" || typeof content === "number" ? (
+            <BadgeText>{content}</BadgeText>
+          ) : (
+            content
+          )}
+        </BadgeSlot>
+      </RootSlot>
     );
   },
   {
     displayName: BADGE_NAME
   }
 );
-
-export const Badge = withStaticProperties(BadgeFrameImpl, {
-  Text: BadgeText,
-  Icon: BadgeIcon,
-  Button: ButtonComp
-});

@@ -60,7 +60,7 @@ export const AlertContext = createStyledContext<AlertContextProps, "type">(
 );
 
 // `Button` is a styled HOC; v3 `styled()` only keeps style defaults for it, so
-// the behavioural props (`variant`, `circular`, `noPadding`, …) are passed at the
+// the behavioral props (`variant`, `circular`, `noPadding`, …) are passed at the
 // call site below.
 const AlertClose = styled(Button, {
   displayName: "AlertTrigger",

@@ -19,6 +19,7 @@
 import { Button } from "@cyclone-ui/button";
 import { Field } from "@cyclone-ui/field";
 import {
+  HeadingExtraSmallText,
   HeadingLargeText,
   HeadingMediumText,
   HeadingSmallText
@@ -222,20 +223,23 @@ const getFormFontStyle = (size: FormControlSize, env: StyleEnv) => {
   };
 };
 
-
+// Calendar headings take `controlSize` as a prop rather than reading
+// `DatePickerContext`: v3 merges every context value into a consumer's props,
+// so the picker's input `variant` ("default", "underline", ...) would replace
+// the heading's `variant: "base"` and drop its `display-*` font family.
 const CalendarHeading = styled(HeadingLargeText, {
-  context: DatePickerContext,
   variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
 
 const CalendarHeadingSmallText = styled(HeadingSmallText, {
-  context: DatePickerContext,
   variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
 
+const CalendarExtraSmallHeading = styled(HeadingExtraSmallText, {
+  variants: { controlSize: formSizeVariants(getFormFontStyle) }
+});
 
 const CalendarRangeHeading = styled(HeadingMediumText, {
-  context: DatePickerContext,
   variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
 
@@ -378,28 +382,27 @@ const DayPicker = () => {
     propGetters: { dayButton }
   } = useDatePickerContext();
 
-  const days = calendars[0]?.days ?? [];
   const { prevNextAnimation, prevNextAnimationKey } = useDateAnimation({
     listenTo: "month"
   });
 
   // divide days array into sub arrays that each has 7 days, for better stylings
-  const subDays = useMemo(
-    () =>
-      days.reduce((ret, day, i) => {
-        if (i % 7 === 0) {
-          ret.push([]);
-        }
+  const subDays = useMemo(() => {
+    const days = calendars[0]?.days ?? [];
 
-        if (ret.length > 0) {
-          ret[ret.length - 1] ??= [];
-          ret[ret.length - 1]?.push(day);
-        }
+    return days.reduce((ret, day, i) => {
+      if (i % 7 === 0) {
+        ret.push([]);
+      }
 
-        return ret;
-      }, [] as DPDay[][]),
-    [days]
-  );
+      if (ret.length > 0) {
+        ret[ret.length - 1] ??= [];
+        ret[ret.length - 1]?.push(day);
+      }
+
+      return ret;
+    }, [] as DPDay[][]);
+  }, [calendars]);
 
   return (
     <AnimatePresence key={prevNextAnimationKey}>
@@ -415,12 +418,12 @@ const DayPicker = () => {
               width={cellSize}
               alignItems="center"
               justifyContent="center">
-              <CalendarHeadingSmallText
+              <CalendarExtraSmallHeading
                 controlSize={size}
                 textAlign="center"
                 color="inkSubtle">
                 {day}
-              </CalendarHeadingSmallText>
+              </CalendarExtraSmallHeading>
             </View>
           ))}
         </XStack>
@@ -498,7 +501,7 @@ function YearRangeSlider() {
         noPadding={true}
         {...swapOnClick(previousYearsButton())}>
         <Button.Icon>
-          <CaretLeft />
+          <CaretLeft weight="bold" />
         </Button.Icon>
       </Button>
       <View
@@ -528,7 +531,7 @@ function YearRangeSlider() {
         noPadding={true}
         {...swapOnClick(nextYearsButton())}>
         <Button.Icon>
-          <CaretRight />
+          <CaretRight weight="bold" />
         </Button.Icon>
       </Button>
     </View>
@@ -635,9 +638,7 @@ const CalendarHeader = () => {
           <CaretLeft />
         </Button.Icon>
       </Button>
-      <YStack
-        alignItems="center"
-        minWidth={0}>
+      <YStack alignItems="center" minWidth={0}>
         <CalendarHeadingSmallText
           controlSize={size}
           transition="200ms"
@@ -1054,7 +1055,9 @@ const DatePickerControlImpl = createStyledHOC(
   ) => {
     const handleOpenChanged = useCallback(
       (open: boolean, _via?: "hover" | "press") => {
+        // eslint-disable-next-line no-console
         console.log("[DP] openChange", open, _via, "focused=", focused);
+
         if (open) {
           onFocus?.();
         } else {

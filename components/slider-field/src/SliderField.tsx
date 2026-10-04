@@ -58,7 +58,13 @@ const SliderFieldControl = forwardRef<TamaguiElement, SliderProps>(
     const handleBlur = useCallback(
       (event: FocusEvent<HTMLElement>) => {
         // Moving focus between the thumbs of a range slider stays in the field.
-        if (event.currentTarget.contains(event.relatedTarget)) {
+        if (
+          (
+            event.currentTarget as unknown as {
+              contains: (target: EventTarget | null) => boolean;
+            }
+          ).contains(event.relatedTarget)
+        ) {
           return;
         }
 

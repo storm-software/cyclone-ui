@@ -454,7 +454,9 @@ const FieldDetailsImpl = createStyledHOC(
       <FieldDetails
         ref={forwardedRef}
         {...rest}
-        color={`${disabled ? "accentDisabled" : theme !== "base" ? "accent" : "inkBody"} group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`}
+        color={`${
+          disabled ? "accentDisabled" : theme !== "base" ? "accent" : "inkBody"
+        } group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`}
         theme={theme}
         controlSize={size}
         disabled={disabled}>
@@ -501,8 +503,7 @@ const FieldLabelPositioner = styled(View, {
       floating: {
         position: "absolute",
         left: "4xl",
-        zIndex: 1,
-        transform: [{ translateY: "-50%" }]
+        zIndex: 1
       },
       underline: {}
     }
@@ -559,11 +560,11 @@ const LabelXStack = styled(XStack, {
 const FieldLabelBorderMask = styled(View, {
   displayName: "FieldLabelMask",
   position: "absolute",
-  top: "50%",
+  top: "45%",
   left: -2,
   right: -2,
-  height: 10,
-  transform: [{ translateY: "-50%" }],
+  height: 5,
+  transform: [{ translateY: "-45%" }],
   backgroundColor: "surfaceElevated",
   pointerEvents: "none"
 });
@@ -610,18 +611,23 @@ const FieldLabelTextImpl = createStyledHOC(
     const labelContentRef = useRef<TamaguiWebElement>(null);
     const labelTextRef = useRef<TamaguiWebElement>(null);
     const optionalLabelRef = useRef<TamaguiWebElement>(null);
+
     const [hideOptionalForOverflow, setHideOptionalForOverflow] =
       useState(false);
     const fieldDisabled = field.disabled.get();
     const name = field.name.get();
     const size = field.size.get();
     const controlSize = getFormSizeToken(size);
+
     const labelTop =
       variant === "floating"
         ? floating
           ? 4 * getFormSizeScale(size)
-          : getSized(controlSize, { scale: 0.5 })
+          : // Floating controls are 3px taller than the size token (see
+            // `getInputSize`), so center on the control's rendered height.
+            (getSized(controlSize) + 3) / 2
         : undefined;
+
     const endIconWidth =
       getSized(controlSize, { shift: -2 }) +
       getSpaced("2xl") * 2 * getFormSizeScale(size);
@@ -667,6 +673,7 @@ const FieldLabelTextImpl = createStyledHOC(
 
     useLayoutEffect(() => {
       if (!hasOptionalLabel) {
+        // eslint-disable-next-line react/set-state-in-effect
         setHideOptionalForOverflow(false);
         return;
       }
@@ -710,6 +717,13 @@ const FieldLabelTextImpl = createStyledHOC(
         ref={labelPositionerRef}
         variant={variant}
         top={labelTop}
+        // Floated labels sit slightly above the border so the mask covers it;
+        // resting labels are centered on the control's vertical midpoint.
+        transform={
+          variant === "floating"
+            ? [{ translateY: floating ? "-58%" : "-50%" }]
+            : undefined
+        }
         right={variant === "floating" ? floatingLabelRight : undefined}
         left={
           variant === "floating"
@@ -771,6 +785,7 @@ const FieldLabelTextImpl = createStyledHOC(
                             size={floating ? "sm" : "lg"}
                             position="absolute"
                             top={floating ? -2 : -1}
+                            weight="bold"
                           />
                         </View>
                       )}
@@ -1041,7 +1056,6 @@ const FieldIconButtonImpl = createStyledHOC(
           ref={forwardedRef}
           variant="ghost"
           circular={true}
-          noPadding={true}
           animate={true}
           transition="200ms"
           color={`${iconColor} group-hover/field:${hoverIconColor}`}
@@ -1050,7 +1064,7 @@ const FieldIconButtonImpl = createStyledHOC(
           size={adjusted}>
           <Button.Icon
             // Keep the compact field button frame while matching the 20px
-            // glyph size used by the other input affordances.
+            // glyph size used by the other input affordance.
             size={frameSize}>
             <View
               // View's web color style drove the nested SVG's currentColor in

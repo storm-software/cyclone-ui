@@ -47,10 +47,31 @@ export const Default: Story = {
   }
 };
 
+export const Animated: Story = {
+  args: {
+    children: "Button Text",
+    animate: true
+  }
+};
+
 export const Icon: Story = {
   args: {
     icon: <X />,
     animate: false
+  }
+};
+
+export const Rounded: Story = {
+  args: {
+    icon: <X />,
+    rounded: true
+  }
+};
+
+export const Circular: Story = {
+  args: {
+    icon: <X />,
+    circular: true
   }
 };
 

@@ -34,11 +34,10 @@ export interface SliderMark {
   label?: ReactNode;
 }
 
-export interface SliderProps
-  extends Omit<
-    TamaguiSliderProps,
-    "value" | "defaultValue" | "onValueChange" | "size" | "children" | "onChange"
-  > {
+export interface SliderProps extends Omit<
+  TamaguiSliderProps,
+  "value" | "defaultValue" | "onValueChange" | "size" | "children" | "onChange"
+> {
   /** The slider value. Pass an array for a range slider. Makes the slider controlled. */
   value?: SliderValue;
   /** The initial value when uncontrolled. Pass an array for a range slider. */
@@ -81,11 +80,8 @@ const SLIDER_GEOMETRY: Record<SliderSize, SliderGeometry> = {
   lg: { track: 6, thumb: 24, hit: 34 }
 };
 
-/** The halo extends this far past the thumb on hover and focus. */
-const HALO_SPREAD = 8;
-/** The halo extends this far past the thumb while dragging. */
-const HALO_ACTIVE_SPREAD = 14;
-const HALO_OPACITY = 0.16;
+/** The gap between the thumb and its value label, clearing the focus ring. */
+const VALUE_LABEL_GAP = 8;
 const RAIL_OPACITY = 0.38;
 /** Marks are only generated for each step up to this many. */
 const MAX_STEP_MARKS = 100;
@@ -252,7 +248,9 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
     const handleValueChange = useCallback(
       (next: number[]) => {
         const previous = valuesRef.current;
-        const changed = next.findIndex((item, index) => item !== previous[index]);
+        const changed = next.findIndex(
+          (item, index) => item !== previous[index]
+        );
         valuesRef.current = next;
 
         if (!controlled) {
@@ -335,7 +333,9 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
         onValueChange={handleValueChange}
         onSlideStart={handleSlideStart}
         onSlideEnd={handleSlideEnd}
-        cursor={disabled ? "not-allowed" : "pointer"}
+        // Keep the grabbing cursor while dragging, even once the pointer
+        // leaves the thumb.
+        cursor={disabled ? "not-allowed" : dragging ? "grabbing" : "pointer"}
         userSelect="none">
         <TamaguiSlider.Track
           position="absolute"
@@ -454,14 +454,13 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
           const focused = focusedThumb === index;
           const hovered = hoveredThumb === index;
           const active = dragging && focused;
-          const showHalo =
+          const showRing =
             !disabled && (active || hovered || focusVisibleThumb === index);
           const showValueLabel =
             valueLabelDisplay === "on" ||
             (valueLabelDisplay === "auto" &&
               !disabled &&
               (active || hovered || focusVisibleThumb === index));
-          const halo = geometry.thumb + HALO_SPREAD * 2;
 
           return (
             <TamaguiSlider.Thumb
@@ -473,10 +472,19 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
               backgroundColor="transparent"
               borderWidth={0}
               outlineStyle="none"
+              cursor={
+                disabled
+                  ? "not-allowed"
+                  : dragging
+                    ? "grabbing"
+                    : "grab press:grabbing"
+              }
               zIndex={active ? 2 : 1}
               // Centre the thumb on its value, rather than keeping it inside the
               // track bounds, so it lines up with the marks.
-              {...(vertical ? {} : { x: (rtl ? 1 : -1) * (geometry.thumb / 2) })}
+              {...(vertical
+                ? {}
+                : { x: (rtl ? 1 : -1) * (geometry.thumb / 2) })}
               aria-label={getAriaLabel?.(index)}
               aria-labelledby={ariaLabelledBy}
               aria-valuetext={getAriaValueText?.(value, index)}
@@ -502,33 +510,18 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                   which the Tamagui responder uses to tell a thumb from the track. */}
               <View
                 position="absolute"
-                top={-HALO_SPREAD}
-                left={-HALO_SPREAD}
-                width={halo}
-                height={halo}
-                borderRadius={100_000}
-                backgroundColor={fill}
-                pointerEvents="none"
-                transition="200ms"
-                opacity={showHalo ? HALO_OPACITY : 0}
-                scale={
-                  active
-                    ? (geometry.thumb + HALO_ACTIVE_SPREAD * 2) / halo
-                    : 1
-                }
-              />
-              <View
-                position="absolute"
                 inset={0}
                 borderRadius={100_000}
                 backgroundColor={fill}
                 pointerEvents="none"
+                transition="200ms"
+                boxShadow={showRing ? "ringOffset" : "none"}
               />
               {valueLabelDisplay !== "off" && (
                 <View
                   position="absolute"
                   bottom="100%"
-                  marginBottom={HALO_SPREAD}
+                  marginBottom={VALUE_LABEL_GAP}
                   left={geometry.thumb / 2 - LABEL_BOX / 2}
                   width={LABEL_BOX}
                   alignItems="center"

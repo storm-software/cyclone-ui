@@ -6,6 +6,9 @@ export default defineConfig(() => ({
   root: __dirname,
   cacheDir: "../../node_modules/.vite/components/slider",
   plugins: [nxViteTsPaths(), nxCopyAssetsPlugin(["*.md"])],
+  // The tsconfig preserves JSX for the build, so transform it here or the
+  // tests cannot import the component source.
+  oxc: { jsx: { runtime: "automatic" as const } },
   test: {
     name: "slider",
     watch: false,

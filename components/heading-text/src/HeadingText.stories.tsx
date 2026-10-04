@@ -75,6 +75,12 @@ export const HeadingSmall: Story = {
   }
 };
 
+export const HeadingExtraSmall: Story = {
+  args: {
+    level: "xs"
+  }
+};
+
 export const EditorialHero: Story = {
   args: {
     level: "hero",
@@ -106,6 +112,12 @@ export const EditorialMedium: Story = {
 export const EditorialSmall: Story = {
   args: {
     level: "sm",
+    variant: "editorial"
+  }
+};
+export const EditorialExtraSmall: Story = {
+  args: {
+    level: "xs",
     variant: "editorial"
   }
 };

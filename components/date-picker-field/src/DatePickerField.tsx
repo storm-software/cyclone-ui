@@ -16,21 +16,20 @@
 
  ------------------------------------------------------------------- */
 
+import type { DatePickerMode, DateSeparator } from "@cyclone-ui/date-picker";
 import {
   DATE_RANGE_SEPARATOR,
   DatePicker,
   DEFAULT_DATE_FORMAT,
   getDateFormat,
-  getDateRangeFormat,
-  type DatePickerMode,
-  type DateSeparator
+  getDateRangeFormat
 } from "@cyclone-ui/date-picker";
 import {
   Field,
   useFieldShouldShowPlaceholder,
   useFieldVariant
 } from "@cyclone-ui/field";
-import { Calendar } from "@cyclone-ui/icons";
+import { CalendarDots } from "@cyclone-ui/icons";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import type { MaskitoOptions, MaskitoPostprocessor } from "@maskito/core";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
@@ -44,8 +43,8 @@ import {
 import type { RefObject } from "react";
 import {
   createContext,
+  use,
   useCallback,
-  useContext,
   useEffect,
   useLayoutEffect,
   useMemo,
@@ -117,6 +116,7 @@ const parseInputDateRange = (
   }
 
   const endDate = parseInputDate(endValue, separator);
+
   return endDate && endDate >= startDate ? [startDate, endDate] : null;
 };
 
@@ -348,7 +348,7 @@ const DatePickerFieldControl = createStyledHOC(
     const ref = useFieldRef(composedRef);
 
     const field = FieldApi.use();
-    const { mode, separator } = useContext(DatePickerFieldContext);
+    const { mode, separator } = use(DatePickerFieldContext);
     const name = field.name.get();
     const size = field.size.get();
     const disabled = field.disabled.get();
@@ -391,8 +391,8 @@ const DatePickerFieldControl = createStyledHOC(
     const handleChange = useCallback(
       (event: CustomEvent<Date | null>) => {
         setInputValue(format(event.detail, separator));
-        change?.(event.detail);
-        blur?.();
+        void change?.(event.detail);
+        void blur?.();
       },
       [blur, change, separator]
     );
@@ -400,10 +400,10 @@ const DatePickerFieldControl = createStyledHOC(
     const handleDatesChange = useCallback(
       (event: CustomEvent<Date[]>) => {
         setInputValue(formatRange(event.detail, separator));
-        change?.(event.detail);
+        void change?.(event.detail);
 
         if (event.detail.length >= 2) {
-          blur?.();
+          void blur?.();
         }
       },
       [blur, change, separator]
@@ -419,7 +419,7 @@ const DatePickerFieldControl = createStyledHOC(
             ? parseInputDateRange(value, separator)
             : parseInputDate(value, separator);
         if (value === "" || parsedValue) {
-          change?.(value);
+          void change?.(value);
         }
       },
       [change, mode, separator]
@@ -427,7 +427,7 @@ const DatePickerFieldControl = createStyledHOC(
 
     const handleBlur = useCallback(() => {
       setInputValue(formattedValue);
-      blur?.();
+      void blur?.();
     }, [blur, formattedValue]);
 
     const handleKeyDown = useCallback(
@@ -485,10 +485,10 @@ const DatePickerFieldControl = createStyledHOC(
           }
 
           setInputValue(formatRange(nextDates, separator));
-          change?.(nextDates);
+          void change?.(nextDates);
         } else {
           setInputValue(format(nextDate, separator));
-          change?.(nextDate);
+          void change?.(nextDate);
         }
       },
       [change, mode, onKeyDown, separator]
@@ -525,7 +525,7 @@ const DatePickerFieldControl = createStyledHOC(
 
         <DatePicker.Separator />
         <DatePicker.Trigger>
-          <Calendar />
+          <CalendarDots />
         </DatePicker.Trigger>
       </DatePicker>
     );

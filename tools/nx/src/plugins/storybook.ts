@@ -24,8 +24,7 @@ import type {
   TargetConfiguration
 } from "@nx/devkit";
 import { createNodesFromFiles, joinPathFragments } from "@nx/devkit";
-import { globSync } from "glob";
-import { existsSync, readdirSync } from "node:fs";
+import { existsSync, readdirSync, globSync } from "node:fs";
 import { dirname, join } from "node:path";
 import type { ProjectConfiguration } from "nx/src/config/workspace-json-project-json";
 import { readJsonFile } from "nx/src/utils/fileutils";
@@ -186,7 +185,7 @@ function getComponentProjectNames(): string[] {
   try {
     const componentsGlob = "./components/**/project.json";
     const packageJsonPaths = globSync(componentsGlob, {
-      ignore: ["**/node_modules/**"]
+      exclude: ["**/node_modules/**"]
     });
 
     console.log(

@@ -156,7 +156,7 @@ catalog:
   bunshi: ^2.2.0
   chroma-js: ^2.6.0
   esbuild: ^0.24.2
-  eslint: ^10.11.0
+  eslint: ^10.12.0
   eslint-flat-config-utils: ^2.1.4
   expo: 54.0.35
   expo-av: ^13.10.6

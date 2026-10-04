@@ -1,16 +1,17 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/alert/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts"
+      "@nx/react/typings/image.d.ts",
+      "@tamagui/get-font-sized"
     ],
-    "outDir": "../../dist/out-tsc/components/alert",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/alert/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc/components/alert"
   },
   "references": [
     {

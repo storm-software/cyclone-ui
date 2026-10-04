@@ -73,7 +73,7 @@ export const HeadingHeroText = styled(BaseHeadingText, {
 export const HeadingTitleText = styled(BaseHeadingText, {
   displayName: "HeadingTitleText",
   render: "h1",
-  color: "inkEmphasis",
+  color: "accent",
 
   variants: {
     variant: {
@@ -144,7 +144,49 @@ export const HeadingSmallText = styled(BaseHeadingText, {
         fontFamily: "display-sm"
       },
       editorial: {
-        fontFamily: "editorial-sm"
+        fontFamily: "display-sm"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    variant: "base"
+  }
+});
+
+export const HeadingExtraSmallText = styled(BaseHeadingText, {
+  displayName: "HeadingExtraSmallText",
+  render: "h5",
+  color: "inkEmphasis",
+
+  variants: {
+    variant: {
+      base: {
+        fontFamily: "display-xs"
+      },
+      editorial: {
+        fontFamily: "display-xs"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    variant: "base"
+  }
+});
+
+export const HeadingExtraExtraSmallText = styled(BaseHeadingText, {
+  displayName: "HeadingExtraSmallText",
+  render: "h6",
+  color: "inkEmphasis",
+
+  variants: {
+    variant: {
+      base: {
+        fontFamily: "display-xxs"
+      },
+      editorial: {
+        fontFamily: "display-xxs"
       }
     }
   } as const,
@@ -165,7 +207,7 @@ export const HeadingText = createStyledHOC(
       variant = "base",
       ...props
     }: GetProps<typeof BaseHeadingText> & {
-      level?: 1 | 2 | 3 | 4 | "hero" | "title" | "lg" | "md" | "sm";
+      level?: 1 | 2 | 3 | 4 | 5 | 6 | "hero" | "title" | "lg" | "md" | "sm" | "xs" | "xxs";
     },
     forwardedRef
   ) => {
@@ -199,7 +241,19 @@ export const HeadingText = createStyledHOC(
           {children}
         </HeadingSmallText>
       );
-    }
+    } else if (level === 5 || level === "xs") {
+      return (
+        <HeadingExtraSmallText ref={forwardedRef} variant={variant} {...props}>
+          {children}
+        </HeadingExtraSmallText>
+      );
+    }  else if (level === 6 || level === "xxs") {
+      return (
+        <HeadingExtraExtraSmallText ref={forwardedRef} variant={variant} {...props}>
+          {children}
+        </HeadingExtraExtraSmallText>
+      );
+    } 
 
     return (
       <BaseHeadingText ref={forwardedRef} variant={variant} {...props}>
