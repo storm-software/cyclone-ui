@@ -25,7 +25,12 @@ import {
   writeInfo,
   writeSuccess
 } from "@storm-software/config-tools/logger/console";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
+import {
+  consistentFontVersion,
+  fontVersionToSemver
+} from "../../release/font-version";
 import type { FontPublishExecutorSchema } from "./schema";
 
 export default async function runExecutor(
@@ -47,6 +52,25 @@ export default async function runExecutor(
     if (!existsSync(outputPath)) {
       throw new Error(
         `The generated font output directory ${outputPath} does not exist. Run the ${projectName}:build target before publishing.`
+      );
+    }
+
+    const manifests = readdirSync(projectRoot, { withFileTypes: true })
+      .filter(entry => entry.isDirectory() && entry.name.endsWith(".ufo"))
+      .map(entry => {
+        const path = join(projectRoot, entry.name, "fontinfo.plist");
+
+        return { path, content: readFileSync(path, "utf8") };
+      });
+    const fontVersion = fontVersionToSemver(
+      await consistentFontVersion(manifests, projectName)
+    );
+    const packageVersion = JSON.parse(
+      readFileSync(join(projectRoot, "package.json"), "utf8")
+    ).version;
+    if (packageVersion !== fontVersion) {
+      throw new Error(
+        `The ${projectName} package.json version ${packageVersion} does not match the fontinfo.plist version ${fontVersion}.`
       );
     }
 

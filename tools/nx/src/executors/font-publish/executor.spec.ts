@@ -1,5 +1,5 @@
 import type { ExecutorContext } from "@nx/devkit";
-import { mkdir, mkdtemp, rm } from "node:fs/promises";
+import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -45,6 +45,29 @@ function createContext(root: string): ExecutorContext {
   } as ExecutorContext;
 }
 
+async function addFontSources(
+  root: string,
+  boldMinor = 0,
+  packageVersion = "1.0.0"
+) {
+  const projectRoot = join(root, "fonts/storm-sans");
+  for (const [style, minor] of [
+    ["Regular", 0],
+    ["Bold", boldMinor]
+  ] as const) {
+    const ufoRoot = join(projectRoot, `StormSans-${style}.ufo`);
+    await mkdir(ufoRoot, { recursive: true });
+    await writeFile(
+      join(ufoRoot, "fontinfo.plist"),
+      `<plist><dict><key>versionMajor</key><integer>1</integer><key>versionMinor</key><integer>${minor}</integer></dict></plist>`
+    );
+  }
+  await writeFile(
+    join(projectRoot, "package.json"),
+    JSON.stringify({ name: "fonts-storm-sans", version: packageVersion })
+  );
+}
+
 describe("font publish executor", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -63,6 +86,7 @@ describe("font publish executor", () => {
     const root = await mkdtemp(join(tmpdir(), "cyclone-font-publish-"));
     temporaryRoots.push(root);
     await mkdir(join(root, "fonts/storm-sans/dist"), { recursive: true });
+    await addFontSources(root);
     const context = createContext(root);
 
     await expect(runExecutor({ dryRun: true }, context)).resolves.toEqual({
@@ -79,6 +103,36 @@ describe("font publish executor", () => {
         writeMetaJson: false
       },
       context
+    );
+  });
+
+  it("refuses to upload a font project with inconsistent UFO versions", async () => {
+    const root = await mkdtemp(join(tmpdir(), "cyclone-font-publish-"));
+    temporaryRoots.push(root);
+    await mkdir(join(root, "fonts/storm-sans/dist"), { recursive: true });
+    await addFontSources(root, 1);
+
+    await expect(runExecutor({}, createContext(root))).resolves.toEqual({
+      success: false
+    });
+    expect(mocks.upload).not.toHaveBeenCalled();
+    expect(mocks.writeFatal).toHaveBeenCalledWith(
+      expect.stringContaining("Inconsistent font versions")
+    );
+  });
+
+  it("refuses to upload when the package version differs from the UFO version", async () => {
+    const root = await mkdtemp(join(tmpdir(), "cyclone-font-publish-"));
+    temporaryRoots.push(root);
+    await mkdir(join(root, "fonts/storm-sans/dist"), { recursive: true });
+    await addFontSources(root, 0, "0.0.1");
+
+    await expect(runExecutor({}, createContext(root))).resolves.toEqual({
+      success: false
+    });
+    expect(mocks.upload).not.toHaveBeenCalled();
+    expect(mocks.writeFatal).toHaveBeenCalledWith(
+      expect.stringContaining("package.json version")
     );
   });
 

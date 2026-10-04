@@ -24,6 +24,8 @@ describe("Cyclone UI fonts plugin", () => {
     const projectRoot = "fonts/storm-sans";
     const configFile = `${projectRoot}/project.json`;
     await mkdir(join(workspaceRoot, projectRoot), { recursive: true });
+    await mkdir(join(workspaceRoot, projectRoot, "StormSans-Regular.ufo"));
+    await mkdir(join(workspaceRoot, projectRoot, "StormSans-Bold.ufo"));
     await writeFile(
       join(workspaceRoot, configFile),
       JSON.stringify({
@@ -54,6 +56,16 @@ describe("Cyclone UI fonts plugin", () => {
               projectType: "library",
               root: projectRoot,
               sourceRoot: projectRoot,
+              release: {
+                version: {
+                  currentVersionResolver: "disk",
+                  manifestRootsToUpdate: [
+                    `${projectRoot}/StormSans-Bold.ufo`,
+                    `${projectRoot}/StormSans-Regular.ufo`
+                  ],
+                  versionActions: "tools/nx/src/release/font-version-actions.ts"
+                }
+              },
               targets: {
                 build: {
                   cache: true,

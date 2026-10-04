@@ -18,6 +18,7 @@
 
 import type { CreateNodes, CreateNodesResultArray } from "@nx/devkit";
 import { createNodesFromFiles, readJsonFile } from "@nx/devkit";
+import { readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import type { ProjectConfiguration } from "nx/src/config/workspace-json-project-json";
 
@@ -34,12 +35,30 @@ export const createNodes: CreateNodes<CycloneUIFontPluginOptions> = [
         const project = readJsonFile<ProjectConfiguration>(
           join(context.workspaceRoot, configFile)
         );
+        // Each UFO directory contains the fontinfo.plist manifest Nx versions.
+        const manifestRootsToUpdate = readdirSync(
+          join(context.workspaceRoot, projectRoot),
+          { withFileTypes: true }
+        )
+          .filter(entry => entry.isDirectory() && entry.name.endsWith(".ufo"))
+          .map(entry => join(projectRoot, entry.name))
+          .sort();
 
         return {
           projects: {
             [projectRoot]: {
               ...project,
               root: projectRoot,
+              release: {
+                ...project.release,
+                version: {
+                  currentVersionResolver: "disk",
+                  manifestRootsToUpdate,
+                  versionActions:
+                    "tools/nx/src/release/font-version-actions.ts",
+                  ...project.release?.version
+                }
+              },
               targets: {
                 ...project.targets,
                 clean: project.targets?.clean ?? {},
