@@ -84,15 +84,15 @@ export async function handler(args: string[] = useArgs()) {
           icon: "🖵"
         },
         {
-          value: ["completions", "zsh", "script"],
-          label: "Completions - Zsh Script",
-          description: `(cyclone-ui completions zsh script)`,
-          icon: "🖵"
-        },
-        {
           value: ["completions", "zsh", "config"],
           label: "Completions - Zsh Configuration",
           description: `(cyclone-ui completions zsh config)`,
+          icon: "🖵"
+        },
+        {
+          value: ["completions", "zsh", "script"],
+          label: "Completions - Zsh Script",
+          description: `(cyclone-ui completions zsh script)`,
           icon: "🖵"
         },
         {

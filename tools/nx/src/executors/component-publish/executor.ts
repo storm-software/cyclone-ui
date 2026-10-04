@@ -104,7 +104,9 @@ export default async function runExecutor(
     return result;
   } catch (error) {
     writeFatal(
-      `An error occurred while running the component registry publish executor. \n${error.message}`
+      `An error occurred while running the component registry publish executor. \n${
+        error instanceof Error ? error.message : String(error)
+      }`
     );
 
     return {

@@ -827,6 +827,7 @@ const themes = createThemes({
         overlayBackdrop: "#1a1c1f66",
         overlayBackground: "#ffffff",
         overlayBorder: tokens.color.neutral6.val,
+        rating: tokens.color.yellow7.val,
         required: tokens.color.red7.val,
         selectionBackground: "#1fb2a6",
         selectionForeground: "#FAFAFA",
@@ -893,6 +894,7 @@ const themes = createThemes({
         overlayBackdrop: "#0d0c0766",
         overlayBackground: tokens.color.neutral11.val,
         overlayBorder: tokens.color.neutral8.val,
+        rating: tokens.color.yellow7.val,
         required: tokens.color.red5.val,
         selectionBackground: "#3be4be",
         selectionForeground: "#151518",
@@ -1518,6 +1520,7 @@ export interface AppTheme {
   overlayBackdrop: string;
   overlayBackground: string;
   overlayBorder: string;
+  rating: string;
   required: string;
   ring: string;
   ringOffset: string;

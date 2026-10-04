@@ -3157,6 +3157,46 @@ importers:
         specifier: ^15.15.5
         version: 15.15.5(react-native@0.87.1(@babel/core@8.0.6)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
 
+  components/page:
+    dependencies:
+      '@cyclone-ui/body-text':
+        specifier: workspace:*
+        version: link:../body-text
+      '@cyclone-ui/icons':
+        specifier: workspace:*
+        version: link:../icons
+      '@cyclone-ui/scroll-view':
+        specifier: workspace:*
+        version: link:../scroll-view
+      '@tamagui/animate-presence':
+        specifier: 'catalog:'
+        version: 3.0.0-beta.1422.1(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.6)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.6)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.6)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
+      '@tamagui/constants':
+        specifier: 'catalog:'
+        version: 3.0.0-beta.1422.1(react@19.3.0)
+      '@tamagui/core':
+        specifier: 'catalog:'
+        version: 3.0.0-beta.1422.1(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.6)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.6)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.6)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
+    devDependencies:
+      '@cyclone-ui/button':
+        specifier: workspace:*
+        version: link:../button
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 10.6.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@4.64.0)(storybook@10.6.1(@types/react@19.3.0)(prettier@3.9.9)(react@19.3.0))(typescript@7.0.2)(vite@8.3.2(@types/node@26.6.4)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      react:
+        specifier: 'catalog:'
+        version: 19.3.0
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.3.0(react@19.3.0)
+      react-native:
+        specifier: 'catalog:'
+        version: 0.87.1(@babel/core@8.0.6)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0)
+
   components/pagination:
     dependencies:
       '@cyclone-ui/button':

@@ -20,9 +20,9 @@ import { defineUntypedSchema } from "untyped";
 
 export default defineUntypedSchema({
   $schema: {
-    id: "ComponentsPublishExecutorSchema",
-    title: "Components Publish Executor",
-    description: "A type definition for the Components Publish executor schema",
+    id: "ComponentPublishExecutorSchema",
+    title: "Component Publish Executor",
+    description: "A type definition for the Component Publish executor schema",
     requires: []
   },
   tag: {

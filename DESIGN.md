@@ -36,6 +36,7 @@ colors:
   surface-overlay-inactive: "#ffffff"
   surface-overlay-disabled: "#ffffff66"
   required: "#8e223e"
+  rating: "#c58c22"
   link: "#2055b3"
   hairline: "#b0b0b1"
   selection-background: "#1fb2a6"
@@ -366,7 +367,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 244 color tokens, 17 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 245 color tokens, 17 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -403,6 +404,7 @@ Cyclone UI design tokens — 244 color tokens, 17 typography tokens, 28 spacing 
 - **Surface Overlay Inactive (#ffffff):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 20% brighter)
 - **Surface Overlay Disabled (#ffffff66):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 40% opacity)
 - **Required (#8e223e):** Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.
+- **Rating (#c58c22):** Color for rating indicators, such as stars or other symbols representing user ratings.
 - **Link (#2055b3):** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links.
 - **Hairline (#b0b0b1):** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.
 - **Selection Background (#1fb2a6):** Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme.

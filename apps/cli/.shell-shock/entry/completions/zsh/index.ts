@@ -32,17 +32,17 @@ export async function handler(args: string[] = useArgs()) {
 
   if (!command.startsWith("-")) {
     if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "script"
-    ) {
-      const handleScript = await import("./script").then(m => m.handler);
-      return handleScript(args);
-    } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "config"
     ) {
       const handleConfig = await import("./config").then(m => m.handler);
       return handleConfig(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "script"
+    ) {
+      const handleScript = await import("./script").then(m => m.handler);
+      return handleScript(args);
     } else if (Boolean(command) && !command.startsWith("-")) {
-      const suggestions = findSuggestions(command, ["script", "config"]).slice(
+      const suggestions = findSuggestions(command, ["config", "script"]).slice(
         0,
         3
       );
@@ -59,15 +59,15 @@ export async function handler(args: string[] = useArgs()) {
       message: "Which command would you like to execute?",
       options: [
         {
-          value: ["completions", "zsh", "script"],
-          label: "Completions - Zsh Script",
-          description: `(cyclone-ui completions zsh script)`,
-          icon: "🖵"
-        },
-        {
           value: ["completions", "zsh", "config"],
           label: "Completions - Zsh Configuration",
           description: `(cyclone-ui completions zsh config)`,
+          icon: "🖵"
+        },
+        {
+          value: ["completions", "zsh", "script"],
+          label: "Completions - Zsh Script",
+          description: `(cyclone-ui completions zsh script)`,
           icon: "🖵"
         }
       ]
@@ -105,20 +105,20 @@ export async function handler(args: string[] = useArgs()) {
     if (!command.startsWith("-")) {
       if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
-        "script"
-      ) {
-        const handleScript = await import("./script").then(m => m.handler);
-        return handleScript(args);
-      } else if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
         "config"
       ) {
         const handleConfig = await import("./config").then(m => m.handler);
         return handleConfig(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "script"
+      ) {
+        const handleScript = await import("./script").then(m => m.handler);
+        return handleScript(args);
       } else if (Boolean(command) && !command.startsWith("-")) {
         const suggestions = findSuggestions(command, [
-          "script",
-          "config"
+          "config",
+          "script"
         ]).slice(0, 3);
         error(
           `Unknown command: "${command}"${suggestions && suggestions.length > 0 ? `, did you mean: ${suggestions.length === 1 ? `"${suggestions[0]}"` : suggestions.map((suggestion, i) => (i < suggestions.length - 1 ? `"${suggestion}", ` : `or "${suggestion}"`))}?` : ""} `

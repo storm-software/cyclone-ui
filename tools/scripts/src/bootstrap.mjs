@@ -48,6 +48,7 @@ try {
     build({
       entryPoints: [
         "tools/nx/src/plugins/components.ts",
+        "tools/nx/src/plugins/fonts.ts",
         "tools/nx/src/plugins/storybook.ts"
       ],
       target: "node22",

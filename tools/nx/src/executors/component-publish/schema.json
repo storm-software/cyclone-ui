@@ -1,7 +1,7 @@
 {
   "id": "#",
-  "title": "Components Publish Executor",
-  "description": "A type definition for the Components Publish executor schema",
+  "title": "Component Publish Executor",
+  "description": "A type definition for the Component Publish executor schema",
   "requires": [],
   "properties": {
     "tag": {

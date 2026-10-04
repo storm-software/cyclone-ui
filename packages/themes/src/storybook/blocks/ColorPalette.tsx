@@ -459,6 +459,13 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
+      title={"color.rating"}
+      subtitle={"Color for rating indicators, such as stars or other symbols representing user ratings."}
+      colors={{
+            "rating": "#c58c22"
+      }}
+    />
+          <ColorItem
       title={"color.required"}
       subtitle={"Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related."}
       colors={{
@@ -970,6 +977,13 @@ const COLOR_VARIANTS = {
             "background": "#444548",
             "border": "#7d7d7e",
             "backdrop": "#35322666"
+      }}
+    />
+          <ColorItem
+      title={"color.rating"}
+      subtitle={"Color for rating indicators, such as stars or other symbols representing user ratings."}
+      colors={{
+            "rating": "#a58549"
       }}
     />
           <ColorItem
@@ -1487,6 +1501,13 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
+      title={"color.rating"}
+      subtitle={"Color for rating indicators, such as stars or other symbols representing user ratings."}
+      colors={{
+            "rating": "#dc8f00"
+      }}
+    />
+          <ColorItem
       title={"color.required"}
       subtitle={"Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related."}
       colors={{
@@ -1998,6 +2019,13 @@ const COLOR_VARIANTS = {
             "background": "#ffffff",
             "border": "#b0b0b1",
             "backdrop": "#1a1c1f66"
+      }}
+    />
+          <ColorItem
+      title={"color.rating"}
+      subtitle={"Color for rating indicators, such as stars or other symbols representing user ratings."}
+      colors={{
+            "rating": "#c58c22"
       }}
     />
           <ColorItem
@@ -2515,6 +2543,13 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
+      title={"color.rating"}
+      subtitle={"Color for rating indicators, such as stars or other symbols representing user ratings."}
+      colors={{
+            "rating": "#a58549"
+      }}
+    />
+          <ColorItem
       title={"color.required"}
       subtitle={"Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related."}
       colors={{
@@ -3026,6 +3061,13 @@ const COLOR_VARIANTS = {
             "background": "#ffffff",
             "border": "#c3c3ca",
             "backdrop": "#00000066"
+      }}
+    />
+          <ColorItem
+      title={"color.rating"}
+      subtitle={"Color for rating indicators, such as stars or other symbols representing user ratings."}
+      colors={{
+            "rating": "#dc8f00"
       }}
     />
           <ColorItem

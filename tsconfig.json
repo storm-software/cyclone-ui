@@ -287,6 +287,9 @@
     },
     {
       "path": "./components/tag-picker-field"
+    },
+    {
+      "path": "./components/page"
     }
   ],
   "files": []

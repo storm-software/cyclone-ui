@@ -7,14 +7,15 @@
  * to 800 (ExtraBold) for Storm Serif. Storm Serif also has an optical size
  * axis (6-72), which browsers set from the font size automatically
  * (`font-optical-sizing: auto`). The referenced files are built from the
- * `./storm-sans` and `./storm-serif` UFO/designspace sources via the `fonts`
- * project (requires `fontmake`):
+ * `./storm-sans` and `./storm-serif` UFO/designspace sources by the
+ * `fonts-storm-sans` and `fonts-storm-serif` projects (requires `fontmake`).
+ * Build both projects with:
  *
- *   nx run fonts:build
+ *   nx run-many --target=build --projects=fonts-storm-sans,fonts-storm-serif
  *
- * URLs are relative to this file, so it works both from the source project
- * (`fonts/fonts.css` -> `fonts/dist/*`) and from the build output
- * (`dist/fonts/fonts.css` -> `dist/fonts/dist/*`).
+ * URLs are relative to this file, so it works both from the source projects
+ * (`fonts/fonts.css` -> `fonts/storm-sans/dist/*`) and from the build output
+ * (`dist/fonts/fonts.css` -> `dist/fonts/storm-sans/dist/*`).
  *
  * Bundled apps (Vite, webpack, Next.js) can import it directly:
  *
@@ -36,8 +37,9 @@
 @font-face {
   font-family: "Storm Sans";
   src:
-    url("./dist/StormSans-VF.ttf") format("truetype") tech(variations),
-    url("./dist/StormSans-VF.ttf") format("truetype-variations");
+    url("./storm-sans/dist/StormSans-VF.ttf") format("truetype")
+      tech(variations),
+    url("./storm-sans/dist/StormSans-VF.ttf") format("truetype-variations");
   font-weight: 100 700;
   font-style: normal;
   font-display: swap;
@@ -46,8 +48,10 @@
 @font-face {
   font-family: "Storm Sans";
   src:
-    url("./dist/StormSans-Italic-VF.ttf") format("truetype") tech(variations),
-    url("./dist/StormSans-Italic-VF.ttf") format("truetype-variations");
+    url("./storm-sans/dist/StormSans-Italic-VF.ttf") format("truetype")
+      tech(variations),
+    url("./storm-sans/dist/StormSans-Italic-VF.ttf")
+      format("truetype-variations");
   font-weight: 100 700;
   font-style: italic;
   font-display: swap;
@@ -56,8 +60,9 @@
 @font-face {
   font-family: "Storm Serif";
   src:
-    url("./dist/StormSerif-VF.ttf") format("truetype") tech(variations),
-    url("./dist/StormSerif-VF.ttf") format("truetype-variations");
+    url("./storm-serif/dist/StormSerif-VF.ttf") format("truetype")
+      tech(variations),
+    url("./storm-serif/dist/StormSerif-VF.ttf") format("truetype-variations");
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;
@@ -66,8 +71,10 @@
 @font-face {
   font-family: "Storm Serif";
   src:
-    url("./dist/StormSerif-Italic-VF.ttf") format("truetype") tech(variations),
-    url("./dist/StormSerif-Italic-VF.ttf") format("truetype-variations");
+    url("./storm-serif/dist/StormSerif-Italic-VF.ttf") format("truetype")
+      tech(variations),
+    url("./storm-serif/dist/StormSerif-Italic-VF.ttf")
+      format("truetype-variations");
   font-weight: 200 800;
   font-style: italic;
   font-display: swap;

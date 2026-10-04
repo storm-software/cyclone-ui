@@ -435,6 +435,7 @@ interface NavigationHeaderDropdownHover {
 }
 
 const dropdownTransition = "200ms";
+const scaleTransition = "300ms";
 
 const useNavigationHeaderDropdownHeight = (
   open: boolean,
@@ -649,15 +650,15 @@ const NavigationHeaderRoot = createStyledHOC(
     const submenuOpen = Boolean(openItem?.children?.length);
     const { contentRef: dropdownContentRef, height: dropdownHeight } =
       useNavigationHeaderDropdownHeight(submenuOpen, openItemIndex);
-    const scaleStyle = {
-      transform: isAtTop ? "scale(1.25)" : "none",
-      transition: prefersReducedMotion ? "none" : "transform 200ms ease-in-out"
+    // Tamagui's motion driver only animates its own transform props; a
+    // transition set through `style` is dropped.
+    const scaleProps = {
+      scale: isAtTop ? 1.25 : 1,
+      transition: prefersReducedMotion ? "none" : scaleTransition
     };
-    const navigationStyle = {
-      ...scaleStyle,
-      // Keep each item's border-bottom in the same transformed navigation row.
-      transform: `${isAtTop ? "scale(1.25) " : ""}translateY(-15%)`
-    };
+    // Keep each item's border-bottom in the same transformed navigation row.
+    // Tamagui translates before scaling, so scale the offset with the row.
+    const navigationY = isAtTop ? "-18.75%" : "-15%";
 
     return (
       <NavigationHeaderFrame
@@ -685,14 +686,15 @@ const NavigationHeaderRoot = createStyledHOC(
         }}>
         <NavigationHeaderBar>
           <NavigationHeaderLogo>
-            <NavigationHeaderLogoContent style={scaleStyle}>
+            <NavigationHeaderLogoContent {...scaleProps}>
               {logo}
             </NavigationHeaderLogoContent>
           </NavigationHeaderLogo>
 
           <NavigationHeaderNavigation
             aria-label={navigationLabel}
-            style={navigationStyle}>
+            y={navigationY}
+            {...scaleProps}>
             {items.map((item, index) => {
               const hasChildren = Boolean(item.children?.length);
               const active =

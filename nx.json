@@ -5,6 +5,10 @@
       "packages": {
         "projects": ["packages/*", "components/*", "!apps/registry-worker"],
         "projectsRelationship": "independent"
+      },
+      "fonts": {
+        "projects": ["fonts/*"],
+        "projectsRelationship": "independent"
       }
     }
   },
@@ -31,6 +35,7 @@
       }
     },
     "./dist/nx-plugins/components.js",
+    "./dist/nx-plugins/fonts.js",
     "./dist/nx-plugins/storybook.js"
   ],
   "sync": {

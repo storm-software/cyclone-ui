@@ -9,7 +9,7 @@ import { defineConfig } from "vitest/config";
 const projectRoot = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(() => ({
-  root: __dirname,
+  root: import.meta.dirname,
   cacheDir: "../../node_modules/.vite/apps/storybook",
   plugins: [nxViteTsPaths(), nxCopyAssetsPlugin(["*.md"])],
   test: {

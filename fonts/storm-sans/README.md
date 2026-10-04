@@ -14,7 +14,10 @@ Applied direction:
 
 Masters: Thin (100), Regular (400), Bold (700). The designspace retains the original IBM Plex weight mapping and normal-width instances only.
 
-Build with a UFO/designspace toolchain such as fontmake:
-  nx run fonts:build   (outputs StormSans-<Style>.{otf,ttf} and StormSans[-Italic]-VF.ttf to fonts/dist)
+This folder is its own Nx project, `fonts-storm-sans`. Its build script (`build.mjs`) compiles the designspaces with fontmake and outputs `StormSans-<Style>.{otf,ttf}` and `StormSans[-Italic]-VF.ttf` to `fonts/storm-sans/dist`. The Nx target also copies the output to `dist/fonts/storm-sans`:
+
+```bash
+nx run fonts-storm-sans:build
+```
 
 Review note: the source intentionally favors interpolation safety and clean outlines over literal copying of proprietary HashiCorp Sans glyphs.

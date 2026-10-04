@@ -316,6 +316,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.purple.7` | `color` | `#492b9b` | Deep periwinkle purple. |
 | `color.purple.8` | `color` | `#321c71` | Vivid indigo purple. |
 | `color.purple.9` | `color` | `#1d0f42` | Rich slate indigo. |
+| `color.rating` | `color` | `var(--color-yellow-7)` | Color for rating indicators, such as stars or other symbols representing user ratings. |
 | `color.red.1` | `color` | `#f997b0` | Pale coral red. |
 | `color.red.2` | `color` | `#f77395` | Light coral red. |
 | `color.red.3` | `color` | `#f6507a` | Soft coral red. |
@@ -982,6 +983,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.purple.7` | `color` | `#675a8a` | Deep periwinkle purple. |
 | `color.purple.8` | `color` | `#594d7a` | Vivid indigo purple. |
 | `color.purple.9` | `color` | `#4c416a` | Rich slate indigo. |
+| `color.rating` | `color` | `var(--color-yellow-7)` | Color for rating indicators, such as stars or other symbols representing user ratings. |
 | `color.red.1` | `color` | `#c28393` | Pale coral red. |
 | `color.red.2` | `color` | `#bc7788` | Light coral red. |
 | `color.red.3` | `color` | `#b76a7e` | Soft coral red. |
@@ -1648,6 +1650,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.purple.7` | `color` | `#594395` | Deep periwinkle purple. |
 | `color.purple.8` | `color` | `#47347c` | Vivid indigo purple. |
 | `color.purple.9` | `color` | `#362661` | Rich slate indigo. |
+| `color.rating` | `color` | `var(--color-yellow-7)` | Color for rating indicators, such as stars or other symbols representing user ratings. |
 | `color.red.1` | `color` | `#e2819a` | Pale coral red. |
 | `color.red.2` | `color` | `#dd6c89` | Light coral red. |
 | `color.red.3` | `color` | `#d95778` | Soft coral red. |
@@ -2314,6 +2317,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.purple.7` | `color` | `#492b9b` | Deep periwinkle purple. |
 | `color.purple.8` | `color` | `#321c71` | Vivid indigo purple. |
 | `color.purple.9` | `color` | `#1d0f42` | Rich slate indigo. |
+| `color.rating` | `color` | `var(--color-yellow-7)` | Color for rating indicators, such as stars or other symbols representing user ratings. |
 | `color.red.1` | `color` | `#f997b0` | Pale coral red. |
 | `color.red.2` | `color` | `#f77395` | Light coral red. |
 | `color.red.3` | `color` | `#f6507a` | Soft coral red. |
@@ -2980,6 +2984,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.purple.7` | `color` | `#675a8a` | Deep periwinkle purple. |
 | `color.purple.8` | `color` | `#594d7a` | Vivid indigo purple. |
 | `color.purple.9` | `color` | `#4c416a` | Rich slate indigo. |
+| `color.rating` | `color` | `var(--color-yellow-7)` | Color for rating indicators, such as stars or other symbols representing user ratings. |
 | `color.red.1` | `color` | `#c28393` | Pale coral red. |
 | `color.red.2` | `color` | `#bc7788` | Light coral red. |
 | `color.red.3` | `color` | `#b76a7e` | Soft coral red. |
@@ -3646,6 +3651,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.purple.7` | `color` | `#594395` | Deep periwinkle purple. |
 | `color.purple.8` | `color` | `#47347c` | Vivid indigo purple. |
 | `color.purple.9` | `color` | `#362661` | Rich slate indigo. |
+| `color.rating` | `color` | `var(--color-yellow-7)` | Color for rating indicators, such as stars or other symbols representing user ratings. |
 | `color.red.1` | `color` | `#e2819a` | Pale coral red. |
 | `color.red.2` | `color` | `#dd6c89` | Light coral red. |
 | `color.red.3` | `color` | `#d95778` | Soft coral red. |

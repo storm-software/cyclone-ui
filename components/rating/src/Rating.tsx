@@ -256,7 +256,7 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
               height={iconSize}
               transition="200ms"
               scale={hovered ? 1.2 : 1}
-              rotateY={hovered ? "15deg" : "0deg"}
+              rotateZ={hovered ? "45deg" : "0deg"}
               aria-hidden={true}>
               {fill < 1 && (
                 <EmptyIcon

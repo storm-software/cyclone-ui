@@ -15,10 +15,10 @@ Applied direction, roughly halfway between Newsreader and the specimen's measure
 
 Masters: 6pt, 16pt and 72pt × ExtraLight (200), Regular (400) and ExtraBold (800), upright and italic. Axes: `wght` 200–800 and `opsz` 6–72; the static instances are cut at opsz 16.
 
-Build with a UFO/designspace toolchain such as fontmake. This outputs `StormSerif-<Style>.{otf,ttf}` and `StormSerif[-Italic]-VF.ttf` to `fonts/dist`:
+This folder is its own Nx project, `fonts-storm-serif`. Its build script (`build.mjs`) compiles the designspaces with fontmake and outputs `StormSerif-<Style>.{otf,ttf}` and `StormSerif[-Italic]-VF.ttf` to `fonts/storm-serif/dist`. The Nx target also copies the output to `dist/fonts/storm-serif`:
 
 ```bash
-nx run fonts:build
+nx run fonts-storm-serif:build
 ```
 
 Source note: compared with upstream, every contour starts on an on-curve point and a duplicated anchor pair in `uni030B` (16pt ExtraLight Italic) is removed. fontmake 3's master compatibility check fails without these fixes.
