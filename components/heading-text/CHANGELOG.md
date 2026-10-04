@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Heading Text
 
+## [0.5.7](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.7) (10/04/2026)
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+- **fonts:** Added the Storm Serif font ([32daffcf](https://github.com/storm-software/cyclone-ui/commit/32daffcf))
+
 ## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.6) (10/03/2026)
 
 ### Bug Fixes

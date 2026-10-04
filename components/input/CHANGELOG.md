@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Input
 
+## [0.6.7](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.7) (10/04/2026)
+
+### Features
+
+- **fonts:** Added the Storm Serif font ([32daffcf](https://github.com/storm-software/cyclone-ui/commit/32daffcf))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.7**
+- Updated **field** to **v0.5.7**
+- Updated **form** to **v0.9.7**
+- Updated **helpers** to **v0.3.7**
+
 ## [0.6.6](https://github.com/storm-software/cyclone-ui/releases/tag/input%400.6.6) (10/03/2026)
 
 ### Miscellaneous

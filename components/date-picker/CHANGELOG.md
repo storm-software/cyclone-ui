@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Date Picker
 
+## [0.5.7](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.7) (10/04/2026)
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.7**
+- Updated **button** to **v0.6.7**
+- Updated **field** to **v0.5.7**
+- Updated **form** to **v0.9.7**
+- Updated **heading-text** to **v0.5.7**
+- Updated **helpers** to **v0.3.7**
+- Updated **icons** to **v0.0.3**
+- Updated **input** to **v0.6.7**
+- Updated **popover** to **v0.5.7**
+
 ## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.6) (10/03/2026)
 
 ### Features

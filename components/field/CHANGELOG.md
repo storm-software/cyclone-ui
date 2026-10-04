@@ -2,6 +2,31 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.7](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.7) (10/04/2026)
+
+### Bug Fixes
+
+- **fonts:** Added missing font files ([8ffd59e7](https://github.com/storm-software/cyclone-ui/commit/8ffd59e7))
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.7**
+- Updated **button** to **v0.6.7**
+- Updated **form** to **v0.9.7**
+- Updated **helpers** to **v0.3.7**
+- Updated **icons** to **v0.0.3**
+- Updated **label-text** to **v0.5.7**
+- Updated **link** to **v0.5.7**
+- Updated **spinner** to **v0.5.7**
+- Updated **state** to **v0.0.8**
+- Updated **themeable-icon** to **v0.6.7**
+- Updated **tooltip** to **v0.5.7**
+- Updated **validation-text** to **v0.5.7**
+
 ## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.6) (10/03/2026)
 
 ### Miscellaneous

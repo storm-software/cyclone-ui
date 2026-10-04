@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.7](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.7) (10/04/2026)
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.7**
+- Updated **button** to **v0.6.7**
+- Updated **heading-text** to **v0.5.7**
+- Updated **scroll-view** to **v0.5.7**
+- Updated **sheet** to **v0.0.6**
+
 ## [0.1.6](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.6) (10/03/2026)
 
 ### Features

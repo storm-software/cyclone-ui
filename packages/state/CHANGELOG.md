@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.8) (10/04/2026)
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.7**
+
 ## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.7) (10/03/2026)
 
 ### Features

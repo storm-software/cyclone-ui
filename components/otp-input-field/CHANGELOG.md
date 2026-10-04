@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - OTP Input Field
 
+## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input-field%400.0.8) (10/04/2026)
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.7**
+- Updated **form** to **v0.9.7**
+- Updated **helpers** to **v0.3.7**
+- Updated **input** to **v0.6.7**
+- Updated **input-field** to **v0.1.7**
+- Updated **state** to **v0.0.8**
+
 ## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input-field%400.0.7) (10/03/2026)
 
 ### Miscellaneous

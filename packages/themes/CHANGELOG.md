@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Themes
 
+## [0.3.7](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.7) (10/04/2026)
+
+### Bug Fixes
+
+- **fonts:** Added missing font files ([8ffd59e7](https://github.com/storm-software/cyclone-ui/commit/8ffd59e7))
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+- **fonts:** Added the Storm Serif font ([32daffcf](https://github.com/storm-software/cyclone-ui/commit/32daffcf))
+
 ## [0.3.6](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.6) (10/03/2026)
 
 ### Miscellaneous

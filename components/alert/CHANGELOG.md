@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Alert
 
+## [0.4.7](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.7) (10/04/2026)
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.7**
+- Updated **button** to **v0.6.7**
+- Updated **container** to **v0.6.7**
+- Updated **heading-text** to **v0.5.7**
+- Updated **helpers** to **v0.3.7**
+- Updated **icons** to **v0.0.3**
+- Updated **themeable-icon** to **v0.6.7**
+
 ## [0.4.6](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.6) (10/03/2026)
 
 ### Bug Fixes

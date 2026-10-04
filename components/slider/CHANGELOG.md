@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Slider
 
+## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/slider%400.0.3) (10/04/2026)
+
+### Bug Fixes
+
+- **fonts:** Added missing font files ([8ffd59e7](https://github.com/storm-software/cyclone-ui/commit/8ffd59e7))
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.7**
+- Updated **icons** to **v0.0.3**
+- Updated **themes** to **v0.3.7**
+
 ## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/slider%400.0.2) (10/03/2026)
 
 ### Bug Fixes

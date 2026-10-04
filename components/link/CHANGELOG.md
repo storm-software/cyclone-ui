@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Link
 
+## [0.5.7](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.7) (10/04/2026)
+
+### Bug Fixes
+
+- **fonts:** Added missing font files ([8ffd59e7](https://github.com/storm-software/cyclone-ui/commit/8ffd59e7))
+
+### Features
+
+- **fonts:** Added the Storm Serif font ([32daffcf](https://github.com/storm-software/cyclone-ui/commit/32daffcf))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.7**
+- Updated **icons** to **v0.0.3**
+- Updated **link-text** to **v0.5.7**
+- Updated **themeable-icon** to **v0.6.7**
+
 ## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.6) (10/03/2026)
 
 ### Features

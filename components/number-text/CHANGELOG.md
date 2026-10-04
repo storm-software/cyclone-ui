@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Number Text
 
+## [0.5.7](https://github.com/storm-software/cyclone-ui/releases/tag/number-text%400.5.7) (10/04/2026)
+
+### Updated Dependencies
+
+- Updated **label-text** to **v0.5.7**
+
 ## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/number-text%400.5.6) (10/03/2026)
 
 ### Features

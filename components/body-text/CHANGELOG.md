@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Body Text
 
+## [0.5.7](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.7) (10/04/2026)
+
+### Features
+
+- **fonts:** Added the Storm Serif font ([32daffcf](https://github.com/storm-software/cyclone-ui/commit/32daffcf))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.7**
+
 ## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.6) (10/03/2026)
 
 ### Features

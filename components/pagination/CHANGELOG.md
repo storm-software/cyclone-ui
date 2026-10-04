@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Pagination
 
+## [0.8.7](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.7) (10/04/2026)
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+- **fonts:** Added the Storm Serif font ([32daffcf](https://github.com/storm-software/cyclone-ui/commit/32daffcf))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.7**
+- Updated **icons** to **v0.0.3**
+- Updated **next-button** to **v0.5.7**
+- Updated **previous-button** to **v0.5.7**
+
 ## [0.8.6](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.6) (10/03/2026)
 
 ### Miscellaneous

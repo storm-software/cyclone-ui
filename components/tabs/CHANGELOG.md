@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Tabs
 
+## [0.3.7](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.7) (10/04/2026)
+
+### Bug Fixes
+
+- **fonts:** Added missing font files ([8ffd59e7](https://github.com/storm-software/cyclone-ui/commit/8ffd59e7))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.7**
+- Updated **heading-text** to **v0.5.7**
+- Updated **helpers** to **v0.3.7**
+
 ## [0.3.6](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.6) (10/03/2026)
 
 ### Features

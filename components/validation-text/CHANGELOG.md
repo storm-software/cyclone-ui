@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Validation Text
 
+## [0.5.7](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.7) (10/04/2026)
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.7**
+- Updated **icons** to **v0.0.3**
+- Updated **themeable-icon** to **v0.6.7**
+
 ## [0.5.6](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.6) (10/03/2026)
 
 ### Features

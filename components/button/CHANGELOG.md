@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.7](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.7) (10/04/2026)
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+- **fonts:** Added the Storm Serif font ([32daffcf](https://github.com/storm-software/cyclone-ui/commit/32daffcf))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.7**
+- Updated **helpers** to **v0.3.7**
+- Updated **icons** to **v0.0.3**
+- Updated **themeable-icon** to **v0.6.7**
+
 ## [0.6.6](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.6) (10/03/2026)
 
 ### Features

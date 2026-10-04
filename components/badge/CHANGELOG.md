@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Badge
 
+## [0.3.7](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.7) (10/04/2026)
+
+### Features
+
+- **tag-picker:** Added the Tag, TagPicker, and TagPickerField components ([01a2c188](https://github.com/storm-software/cyclone-ui/commit/01a2c188))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.7**
+- Updated **icons** to **v0.0.3**
+- Updated **state** to **v0.0.8**
+
 ## [0.3.6](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.6) (10/03/2026)
 
 ### Bug Fixes
