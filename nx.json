@@ -8,7 +8,8 @@
       },
       "fonts": {
         "projects": ["fonts/*"],
-        "projectsRelationship": "independent"
+        "projectsRelationship": "independent",
+        "skipFormatting": true
       }
     }
   },
