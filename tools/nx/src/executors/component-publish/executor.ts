@@ -88,8 +88,8 @@ export default async function runExecutor(
       {
         ...options,
         writeMetaJson: true,
-        bucketId: "cyclone-ui-registry",
-        bucketPath: `registry/components/${projectName}/${packageJson.version}`,
+        bucketId: "storm-public",
+        bucketPath: `cyclone-ui/registry/components/${projectName}/${packageJson.version}`,
         path: joinPathFragments(context.root, sourceRoot)
       },
       context

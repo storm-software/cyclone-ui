@@ -82,7 +82,7 @@ export default async function runExecutor(
     const result = await executor(
       {
         ...options,
-        bucketId: "storm-cdn-cyclone-ui",
+        bucketId: "storm-public",
         bucketPath: "fonts",
         clean: false,
         path: outputPath,
