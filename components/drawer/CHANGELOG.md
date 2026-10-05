@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.8](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.8) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve release workflow warnings ([e0f2b332](https://github.com/storm-software/cyclone-ui/commit/e0f2b332))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.8**
+- Updated **button** to **v0.6.8**
+- Updated **heading-text** to **v0.5.8**
+- Updated **scroll-view** to **v0.5.8**
+- Updated **sheet** to **v0.0.7**
+
 ## [0.1.7](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.7) (10/04/2026)
 
 ### Features

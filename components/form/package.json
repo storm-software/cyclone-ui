@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/form",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "type": "module",
   "description": "A Next Button component meant to be shared in many other components",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/form"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -29,7 +31,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

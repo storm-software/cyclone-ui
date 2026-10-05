@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/circular-progress",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "description": "A circular progress component meant to be shared in many other components",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/circular-progress"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -30,7 +32,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -2,6 +2,26 @@
 
 # Changelog for Cyclone UI - Type Table
 
+## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/type-table%400.0.4) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve release workflow warnings ([e0f2b332](https://github.com/storm-software/cyclone-ui/commit/e0f2b332))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.8**
+- Updated **collapsible** to **v0.3.4**
+- Updated **container** to **v0.6.8**
+- Updated **heading-text** to **v0.5.8**
+- Updated **inline-code-text** to **v0.5.7**
+- Updated **link** to **v0.5.8**
+- Updated **themes** to **v0.3.8**
+
 ## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/type-table%400.0.3) (10/04/2026)
 
 ### Updated Dependencies

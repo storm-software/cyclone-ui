@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Validation Text
 
+## [0.5.8](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.8) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve release workflow warnings ([e0f2b332](https://github.com/storm-software/cyclone-ui/commit/e0f2b332))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.8**
+- Updated **icons** to **v0.0.4**
+- Updated **themeable-icon** to **v0.6.8**
+
 ## [0.5.7](https://github.com/storm-software/cyclone-ui/releases/tag/validation-text%400.5.7) (10/04/2026)
 
 ### Features

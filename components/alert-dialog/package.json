@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/alert-dialog",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "type": "module",
   "description": "A package containing the AlertDialog component used by Storm Software",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/alert-dialog"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -37,7 +39,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

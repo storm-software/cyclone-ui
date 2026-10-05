@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/type-table",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "A package containing the TypeTable component used by Storm Software",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/type-table"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -34,7 +36,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "source": "src/index.ts",
   "main": "./dist/index.cjs",

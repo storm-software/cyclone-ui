@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/text-area",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "type": "module",
   "description": "A multiline text input component for Cyclone UI",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/text-area"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
@@ -30,7 +32,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

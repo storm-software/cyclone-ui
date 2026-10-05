@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Dialog
 
+## [0.3.8](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.8) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve release workflow warnings ([e0f2b332](https://github.com/storm-software/cyclone-ui/commit/e0f2b332))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.8**
+- Updated **button** to **v0.6.8**
+- Updated **container** to **v0.6.8**
+- Updated **heading-text** to **v0.5.8**
+
 ## [0.3.7](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.7) (10/04/2026)
 
 ### Updated Dependencies

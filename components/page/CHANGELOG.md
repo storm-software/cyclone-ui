@@ -1,8 +1,8 @@
 ![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
 
-# Changelog for Cyclone UI - Icons
+# Changelog for Cyclone UI - Page
 
-## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.4) (10/05/2026)
+## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/page%400.0.2) (10/05/2026)
 
 ### Bug Fixes
 
@@ -12,8 +12,10 @@
 
 - **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
 
-## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.2) (10/03/2026)
+### Updated Dependencies
 
-### Features
-
-- **icons:** Added icons library and removed lucid references ([45024ce8](https://github.com/storm-software/cyclone-ui/commit/45024ce8))
+- Updated **body-text** to **v0.5.8**
+- Updated **button** to **v0.6.8**
+- Updated **heading-text** to **v0.5.8**
+- Updated **icons** to **v0.0.4**
+- Updated **scroll-view** to **v0.5.8**

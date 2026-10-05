@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Rating
 
+## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.4) (10/05/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve release workflow warnings ([e0f2b332](https://github.com/storm-software/cyclone-ui/commit/e0f2b332))
+
+### Features
+
+- **page:** Added Page component for base layout ([0bc9835e](https://github.com/storm-software/cyclone-ui/commit/0bc9835e))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.8**
+- Updated **icons** to **v0.0.4**
+- Updated **themes** to **v0.3.8**
+
 ## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.3) (10/04/2026)
 
 ### Features
