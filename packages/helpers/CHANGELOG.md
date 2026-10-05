@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.9](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.9) (10/05/2026)
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.9**
+
 ## [0.3.8](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.8) (10/05/2026)
 
 ### Bug Fixes

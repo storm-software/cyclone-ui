@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Input Field
 
+## [0.1.9](https://github.com/storm-software/cyclone-ui/releases/tag/input-field%400.1.9) (10/05/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.9**
+- Updated **form** to **v0.9.9**
+- Updated **helpers** to **v0.3.9**
+- Updated **icons** to **v0.0.5**
+- Updated **input** to **v0.6.9**
+- Updated **state** to **v0.0.10**
+
 ## [0.1.8](https://github.com/storm-software/cyclone-ui/releases/tag/input-field%400.1.8) (10/05/2026)
 
 ### Bug Fixes
