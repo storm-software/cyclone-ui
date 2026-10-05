@@ -30,7 +30,7 @@
   },
   "license": "Apache-2.0",
   "private": true,
-  "packageManager": "pnpm@11.1.2",
+  "packageManager": "pnpm@11.9.0",
   "keywords": [
     "react",
     "react-native",
