@@ -1,6 +1,6 @@
 import { createTreeWithEmptyWorkspace } from "@nx/devkit/testing";
 import { describe, expect, it } from "vitest";
-import FontVersionActions from "./font-version-actions";
+import FontVersionActions from "./font-version-actions.mjs";
 
 const roots = [
   "fonts/storm-sans/StormSans-Bold.ufo",

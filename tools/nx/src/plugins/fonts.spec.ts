@@ -64,7 +64,8 @@ describe("Cyclone UI fonts plugin", () => {
                     `${projectRoot}/StormSans-Bold.ufo`,
                     `${projectRoot}/StormSans-Regular.ufo`
                   ],
-                  versionActions: "tools/nx/src/release/font-version-actions.ts"
+                  versionActions:
+                    "tools/nx/src/release/font-version-actions.mts"
                 }
               },
               targets: {

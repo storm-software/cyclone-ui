@@ -56,7 +56,7 @@ export const createNodes: CreateNodes<CycloneUIFontPluginOptions> = [
                   fallbackCurrentVersionResolver: "disk",
                   manifestRootsToUpdate,
                   versionActions:
-                    "tools/nx/src/release/font-version-actions.ts",
+                    "tools/nx/src/release/font-version-actions.mts",
                   ...project.release?.version
                 }
               },

@@ -25,7 +25,7 @@ import {
   fontVersionToSemver,
   semverToFontVersion,
   updateFontVersions
-} from "./font-version";
+} from "./font-version.ts";
 
 export default class FontVersionActions extends VersionActions {
   validManifestFilenames = ["fontinfo.plist"];

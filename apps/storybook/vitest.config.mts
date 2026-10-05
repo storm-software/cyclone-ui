@@ -1,4 +1,3 @@
-import { nxCopyAssetsPlugin } from "@nx/vite/plugins/nx-copy-assets.plugin";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import { playwright } from "@vitest/browser-playwright";
@@ -11,7 +10,7 @@ const projectRoot = dirname(fileURLToPath(import.meta.url));
 export default defineConfig(() => ({
   root: import.meta.dirname,
   cacheDir: "../../node_modules/.vite/apps/storybook",
-  plugins: [nxViteTsPaths(), nxCopyAssetsPlugin(["*.md"])],
+  plugins: [nxViteTsPaths()],
   test: {
     watch: false,
     projects: [

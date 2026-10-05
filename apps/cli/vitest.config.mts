@@ -1,4 +1,3 @@
-import { nxCopyAssetsPlugin } from "@nx/vite/plugins/nx-copy-assets.plugin";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import { defineConfig } from "vitest/config";
 
@@ -11,7 +10,7 @@ export default defineConfig(() => ({
         import.meta.resolve("../../packages/registry-api/src/client.ts")
     }
   },
-  plugins: [nxViteTsPaths(), nxCopyAssetsPlugin(["*.md"])],
+  plugins: [nxViteTsPaths()],
   test: {
     name: "cli",
     watch: false,

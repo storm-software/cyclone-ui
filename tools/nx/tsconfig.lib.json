@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "tsBuildInfoFile": "out-tsc/tsconfig.tsbuildinfo",
+    "rewriteRelativeImportExtensions": true,
     "rootDir": ".",
     "types": ["node"],
     "outDir": "./out-tsc"

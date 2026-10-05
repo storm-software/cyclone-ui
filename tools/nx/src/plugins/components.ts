@@ -225,7 +225,12 @@ export const createNodesV2: CreateNodes<CycloneUIComponentPluginOptions> = [
                   name: String(packageJson.name).replace(/^@cyclone-ui\//, ""),
                   // eslint-disable-next-line ts/no-unnecessary-type-assertion
                   projectType: "library" as ProjectType,
-                  sourceRoot: join(root, "src")
+                  sourceRoot: join(root, "src"),
+                  release: {
+                    version: {
+                      manifestRootsToUpdate: ["{projectRoot}"]
+                    }
+                  }
                 }
               )
             }
