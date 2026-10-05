@@ -15,7 +15,7 @@ afterEach(async () => {
 });
 
 describe("Cyclone UI fonts plugin", () => {
-  it("infers build and release targets for every font project", async () => {
+  it("infers release targets with conventional commit version resolution", async () => {
     const workspaceRoot = await mkdtemp(
       join(tmpdir(), "cyclone-fonts-plugin-")
     );
@@ -58,7 +58,8 @@ describe("Cyclone UI fonts plugin", () => {
               sourceRoot: projectRoot,
               release: {
                 version: {
-                  currentVersionResolver: "disk",
+                  currentVersionResolver: "git-tag",
+                  fallbackCurrentVersionResolver: "disk",
                   manifestRootsToUpdate: [
                     `${projectRoot}/StormSans-Bold.ufo`,
                     `${projectRoot}/StormSans-Regular.ufo`

@@ -3,12 +3,12 @@ import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig(() => ({
-  root: __dirname,
+  root: import.meta.dirname,
   cacheDir: "../../node_modules/.vite/apps/cli",
   resolve: {
     alias: {
       "@cyclone-ui/registry-api/client":
-        "../../packages/registry-api/src/client.ts"
+        import.meta.resolve("../../packages/registry-api/src/client.ts")
     }
   },
   plugins: [nxViteTsPaths(), nxCopyAssetsPlugin(["*.md"])],

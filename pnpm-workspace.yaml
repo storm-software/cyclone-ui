@@ -209,7 +209,7 @@ catalog:
   parse-github-url: ^1.0.4
   playwright: ^1.63.0
   "@tamagui/theme-builder": ^2.7.7
-  style-dictionary: ^5.5.5
+  style-dictionary: ^5.6.0
   "@tamagui/dismissable": 3.0.0-beta.1422.1
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
@@ -219,6 +219,10 @@ catalog:
   ui-ux-pro-max-cli: ^2.15.0
   "@power-plant/core": ^0.0.93
   "@phosphor-icons/core": ^2.1.1
+  '@shell-shock/plugin-mcp': ^0.1.4
+  '@shell-shock/plugin-skills': ^0.0.17
+  '@razorwind/eslint': ^0.0.3
+  '@razorwind/stylelint': ^0.0.3
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true

@@ -38,8 +38,15 @@
   },
   "license": "Apache-2.0",
   "private": false,
-  "files": ["dist"],
-  "keywords": ["cli", "cyclone-ui", "storm-software", "shell-shock"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "cyclone-ui",
+    "storm-software",
+    "shell-shock"
+  ],
   "dependencies": {
     "@cyclone-ui/registry-api": "workspace:*",
     "@powerlines/plugin-env": "catalog:",
@@ -48,11 +55,17 @@
   },
   "devDependencies": {
     "@shell-shock/eslint-plugin": "catalog:",
+    "@shell-shock/plugin-mcp": "catalog:",
+    "@shell-shock/plugin-skills": "catalog:",
     "@types/node": "catalog:"
   },
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "types": "./dist/index.d.cts",
-  "bin": { "cyclone-ui": "./dist/bin.mjs" },
+  "bin": {
+    "cyclone-ui": "./dist/bin.mjs"
+  },
   "exports": {
     "./add": "./dist/add.mjs",
     "./bin": "./dist/bin.mjs",
