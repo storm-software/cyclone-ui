@@ -233,8 +233,8 @@ const profiling = isProduction && {
 
 const config: StorybookConfig = {
   stories: [
-    "../src/**/*.stories.@(js|jsx|ts|tsx|mdx)",
-    "../../../packages/themes/src/storybook/**/*.mdx",
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
     "../../../components/**/*.stories.@(js|jsx|ts|tsx|mdx)"
   ],
   // Serve the shared monorepo assets (icons) at `/assets`. Fonts resolve

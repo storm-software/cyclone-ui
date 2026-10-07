@@ -36,6 +36,8 @@ export default defineConfig(
     ignores: [
       "**/*.d.ts",
       "**/*.toml",
+      ".design-sync",
+      ".ds-sync",
       "packages/themes/src/storybook/blocks/**/*.tsx"
     ]
   },

@@ -1,0 +1,18 @@
+{
+  "name": "shiki",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/shiki/src",
+  "targets": {
+    "build": {
+      "executor": "nx:command",
+      "options": {
+        "command": "cp -r packages/shiki/src packages/shiki/dist"
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  },
+  "implicitDependencies": ["fonts-storm-sans", "fonts-storm-serif"]
+}

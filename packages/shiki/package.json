@@ -1,0 +1,19 @@
+{
+  "name": "@cyclone-ui/shiki",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Cyclone UI Shiki themes package",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/shiki"
+  },
+  "private": false,
+  "exports": {
+    "./*/theme.json": "./dist/*/theme.json",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

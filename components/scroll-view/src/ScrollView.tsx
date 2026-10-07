@@ -17,11 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { isWeb } from "@tamagui/constants";
-import type {
-  GetFinalProps,
-  GetProps,
-  TamaguiComponent
-} from "@tamagui/core";
+import type { GetFinalProps, GetProps, TamaguiComponent } from "@tamagui/core";
 import { createStyledHOC, styled } from "@tamagui/core";
 import { ScrollView as TamaguiScrollView } from "@tamagui/scroll-view";
 
@@ -30,7 +26,7 @@ export const SCROLL_VIEW_CLASS_NAME = "cyclone-scroll-view";
 export const SCROLL_VIEW_STYLES = `
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar { width: 6px; height: 6px; background: transparent; }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-track { background: transparent; }
-.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar, .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-track { background: color-mix(in srgb, var(--surfaceSunken) 25%, transparent); }
+.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar, .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-track { background: color-mix(in srgb, var(--surfaceSunken) 10%, transparent); }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-thumb { background: var(--accentHover); border-radius: ${100_000}px }
 .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb { background: var(--accent); }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-button { display: none; }
@@ -52,7 +48,7 @@ const ScrollViewFrame = styled(
     variants: {
       size: {
         sm: {
-          width: "90%"
+          width: "84%"
         },
         lg: {
           width: "100%"
@@ -77,10 +73,10 @@ const ScrollViewFrame = styled(
   // unresolved.
 );
 
-type ScrollViewVariants = {
+interface ScrollViewVariants {
   size?: "sm" | "lg";
   fullscreen?: boolean;
-};
+}
 
 // Spelled out because the inferred type references `WebScrollViewProps`,
 // which `@tamagui/scroll-view` does not export (TS2883).

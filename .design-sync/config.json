@@ -1,5 +1,94 @@
 {
   "projectId": "ff43a5f9-51a9-4984-b2fe-72ef229c9195",
   "shape": "storybook",
-  "storybookConfigDir": "apps/storybook/.storybook"
+  "storybookConfigDir": "apps/storybook/.storybook",
+  "storybookStatic": ".design-sync/sb-reference",
+  "pkg": "@cyclone-ui/design-sync",
+  "globalName": "CycloneUI",
+  "entry": ".design-sync/pkg/dist/index.mjs",
+  "buildCmd": "devenv shell -- pnpm nx run-many -t build -p button,input,checkbox,switch,select,radio-group,badge,tag,card,alert,callout,dialog,tabs,tooltip,divider,spinner,progress,body-text,heading-text,label-text,link-text,state,themes && node .design-sync/pkg/build.mjs",
+  "storyImports": {
+    "shim": [
+      "/@tamagui/core/",
+      "/@tamagui/web/",
+      "/@tamagui/stacks/",
+      "/components/",
+      "/packages/state/"
+    ],
+    "loaders": {
+      ".mjs": "jsx"
+    }
+  },
+  "provider": {
+    "component": "SafeAreaProvider",
+    "props": {
+      "initialMetrics": {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "insets": {
+          "top": 0,
+          "left": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      }
+    },
+    "inner": {
+      "component": "TamaguiProvider",
+      "props": {
+        "config": {
+          "$ref": "tamaguiConfig"
+        },
+        "defaultTheme": "dark",
+        "disableInjectCSS": false
+      },
+      "inner": {
+        "component": "Theme",
+        "props": {
+          "name": "dark_base"
+        },
+        "inner": {
+          "component": "PortalProvider",
+          "props": {},
+          "inner": {
+            "component": "MessageProvider",
+            "props": {}
+          }
+        }
+      }
+    }
+  },
+  "overrides": {
+    "Checkbox": {
+      "cardMode": "column"
+    },
+    "RadioGroup": {
+      "cardMode": "column"
+    },
+    "Switch": {
+      "cardMode": "column"
+    },
+    "Card": {
+      "cardMode": "column"
+    },
+    "Dialog": {
+      "cardMode": "single"
+    },
+    "Callout": {
+      "cardMode": "column"
+    },
+    "Select": {
+      "cardMode": "single"
+    },
+    "Tag": {
+      "skip": [
+        "triggers-tag--removable"
+      ]
+    }
+  },
+  "readmeHeader": ".design-sync/conventions.md"
 }

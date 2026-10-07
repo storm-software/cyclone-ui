@@ -1,0 +1,9 @@
+{
+  "name": "@cyclone-ui/design-sync",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Aggregate entry re-exporting Cyclone UI component packages for claude.ai/design sync (not published).",
+  "module": "./dist/index.mjs",
+  "types": "./src/index.d.ts"
+}

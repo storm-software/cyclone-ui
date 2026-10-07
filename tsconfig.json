@@ -296,6 +296,9 @@
     },
     {
       "path": "./components/page"
+    },
+    {
+      "path": "./packages/shiki"
     }
   ],
   "files": []

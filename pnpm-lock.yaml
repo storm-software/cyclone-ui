@@ -4958,6 +4958,8 @@ importers:
         specifier: 'catalog:'
         version: 0.47.214(7dd5577c797fc98b438770c4ba8f130b)
 
+  packages/shiki: {}
+
   packages/state:
     dependencies:
       '@cyclone-ui/helpers':

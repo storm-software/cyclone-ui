@@ -177,7 +177,7 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
           </Popover.Content>
         </Popover>
 
-        <Divider direction="vertical" />
+        <Divider direction="vertical" marginVertical="auto" />
 
         <LikeButton
           size={size}

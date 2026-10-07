@@ -92,7 +92,7 @@ export default defineConfig({
     tamaguiWithStaticNativeFaces,
     designMD(),
     shiki({
-      outputPath: "packages/themes/src/shiki",
+      outputPath: "packages/shiki/src",
       fileName: "theme.json",
       mapTheme: (spec: Schema) => {
         const tokenGroup = (token: unknown): Record<string, unknown> =>
@@ -275,7 +275,7 @@ export default defineConfig({
       prefix: "storm"
     }),
     storybook({
-      outputPath: "packages/themes/src/storybook",
+      outputPath: "apps/storybook/src",
       mapTheme: (tokens: any) => {
         const tokenValue = (token: unknown) => {
           if (
