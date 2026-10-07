@@ -37,10 +37,10 @@ const Permalink = styled(View, {
   displayName: "AnchorPermalink",
   render: "a",
   alignItems: "center",
-  marginLeft: "xl",
+  marginLeft: "lg",
   opacity: "0 focus:1 group-hover/anchor:1",
-  transition: "opacity 150ms ease-out, transform 150ms ease-out",
-  x: "0 focus:14px group-hover/anchor:14px"
+  transition: "opacity 250ms ease-out, transform 250ms ease-out",
+  x: "0 focus:10px group-hover/anchor:10px"
 });
 
 export interface AnchorExtraProps {
@@ -98,7 +98,7 @@ export const Anchor = createStyledHOC(
             transition="200ms"
             color={isIconHovered ? "accent" : "neutral7"}
             height="90%"
-            maxHeight="6xl"
+            maxHeight="7xl"
             weight="bold"
           />
         </Permalink>

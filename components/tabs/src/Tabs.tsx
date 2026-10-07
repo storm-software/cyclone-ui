@@ -167,6 +167,7 @@ const TabsFrame = styled(TamaguiTabs, {
   position: "relative",
   height: "100%",
   width: "100%",
+
   variants: {
     // Only size tokens restyle the frame. `getSized(true)` clamps to the
     // smallest token (0), which `TabsContext` would then hand to every header
@@ -294,6 +295,7 @@ const TabsRovingIndicator = styled(YStack, {
   position: "absolute",
   pointerEvents: "none",
   opacity: "enter:0 exit:0",
+
   variants: {
     // Styled by the `.resolve` below because the color depends on `variant`.
     active: styled.dynamic<boolean>(),
@@ -319,7 +321,7 @@ const TabsRovingIndicator = styled(YStack, {
         borderColor: "transparent"
       },
       floating: {
-        borderRadius: "button",
+        borderRadius: "trigger",
         borderWidth: 1,
         borderColor: "hairline",
         alignItems: "center",
@@ -427,7 +429,8 @@ const TabsHeaderList = styled(YStack, {
   transition: "100ms",
   borderStyle: "solid",
   position: "relative",
-  padding: "md",
+  padding: "sm",
+
   variants: {
     orientation: {
       horizontal: {},
@@ -445,12 +448,12 @@ const TabsHeaderList = styled(YStack, {
       },
       floating: {
         backgroundColor: "surfaceSunken",
-        borderRadius: "container",
+        borderRadius: "trigger",
         borderColor: "hairline",
         borderWidth: 1
       },
       tabbed: {
-        backgroundColor: "surfaceCanvas",
+        backgroundColor: "transparent",
         borderWidth: 0,
         padding: 0
       }

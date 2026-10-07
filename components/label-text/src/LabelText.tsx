@@ -25,14 +25,15 @@ export const LabelText = styled(BodyText, {
   render: "label",
   transition: "400ms",
   color: "accent",
-  fontFamily: "title-lg",
+  fontFamily: "title-md",
+
   variants: {
     floating: {
       true: {
-        fontFamily: "title-sm"
+        fontFamily: "title-xs"
       },
       false: {
-        fontFamily: "title-lg"
+        fontFamily: "title-md"
       }
     }
   } as const,

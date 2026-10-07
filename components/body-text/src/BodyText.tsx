@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { GetProps } from "@tamagui/core";
+import type { GetProps, TamaguiConfig, TextStyle } from "@tamagui/core";
 import { styled } from "@tamagui/core";
 // Lets TypeScript name `GetFontSizedInput` (SizableText's `size` type) in
 // this package's declarations.
@@ -25,6 +25,28 @@ import { SizableText } from "@tamagui/text";
 
 export type BodyTextSize = "md" | "sm";
 
+// Each size (and weight) is its own typography token (`body-md`,
+// `body-sm-bold`, ...), so switch the font family and read that font's metrics
+// directly. `env.font` only reflects a family contributed earlier in the style
+// walk.
+const getBodyFont = (
+  size: BodyTextSize | undefined,
+  bold: boolean | undefined,
+  env: { fonts: TamaguiConfig["fonts"] }
+) => {
+  const key: BodyTextSize = size === "sm" ? "sm" : "md";
+  const fontFamily = `body-${key}${bold ? "-bold" : ""}`;
+  const font = env.fonts[fontFamily];
+
+  return {
+    fontFamily,
+    fontSize: font?.size[key],
+    lineHeight: font?.lineHeight?.[key],
+    fontWeight: font?.weight?.[key] as TextStyle["fontWeight"],
+    letterSpacing: font?.letterSpacing?.[key]
+  };
+};
+
 export const BodyText = styled(SizableText, {
   displayName: "BodyText",
   render: "p",
@@ -32,24 +54,20 @@ export const BodyText = styled(SizableText, {
   fontFamily: "body-md",
   size: "md",
   variants: {
-    // Each size is its own typography token (`body-md` / `body-sm`), so switch
-    // the font family and read that font's metrics directly. `env.font` only
-    // reflects a family contributed earlier in the style walk, and this
-    // replaces SizableText's `getFontSized` variant outright.
-    size: styled.dynamic<BodyTextSize>((size, env) => {
-      const key: BodyTextSize = size === "sm" ? "sm" : "md";
-      const fontFamily = `body-${key}`;
-      const font = env.fonts[fontFamily];
+    // Replaces SizableText's `getFontSized` variant outright.
+    size: styled.dynamic<BodyTextSize>((size, env) =>
+      getBodyFont(size, false, env)
+    ),
 
-      return {
-        fontFamily,
-        fontSize: font?.size[key],
-        lineHeight: font?.lineHeight?.[key],
-        fontWeight: font?.weight?.[key],
-        letterSpacing: font?.letterSpacing?.[key]
-      };
-    })
+    // Styled by the `.resolve` below because the font depends on `size`.
+    bold: styled.dynamic<boolean>()
   } as const
-});
+}).resolve((props, env) =>
+  // Only take over when bold, so subclasses that override `fontFamily` (such
+  // as LabelText) keep working.
+  props.bold
+    ? getBodyFont(props.size as BodyTextSize | undefined, true, env)
+    : undefined
+);
 
 export type BodyTextProps = GetProps<typeof BodyText>;

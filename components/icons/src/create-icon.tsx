@@ -24,12 +24,7 @@ import type { FC } from "react";
 import { memo } from "react";
 import type { NumberProp, SvgProps } from "react-native-svg";
 import { G, Svg } from "react-native-svg";
-import type {
-  IconComponent,
-  IconProps,
-  IconSize,
-  IconWeights
-} from "./types";
+import type { IconComponent, IconProps, IconSize, IconWeights } from "./types";
 
 /**
  * The props received by the inner icon component, after `themed` has resolved theme and token values.
@@ -76,10 +71,18 @@ export function resolveIconSize(
 }
 
 /**
+ * The stroke added around the `bold` paths to draw the `black` weight.
+ *
+ * @remarks
+ * Phosphor `bold` lines are 24 units wide on the 256x256 grid. Stroking the outline by 6 units (3 on each side) makes them 30 units wide, 25% thicker.
+ */
+const BLACK_STROKE_WIDTH = 6;
+
+/**
  * Create a themed Tamagui icon component from the SVG contents of each Phosphor weight.
  *
  * @remarks
- * Phosphor icons are drawn with fills (not strokes) on a 256x256 grid, so the resolved `color` is applied as the SVG `fill`. The `strokeWidth` prop supplied by `themed` is ignored.
+ * Phosphor icons are drawn with fills (not strokes) on a 256x256 grid, so the resolved `color` is applied as the SVG `fill`. The `strokeWidth` prop supplied by `themed` is ignored. The `black` weight renders the `bold` paths with an added stroke of the same color.
  *
  * @param displayName - The display name of the icon component.
  * @param weights - The SVG contents of the icon for each weight.
@@ -99,6 +102,20 @@ export function createIcon(
       ...otherProps
     } = props;
 
+    // ponytail: fill and stroke overlap, so a translucent `color` shows a darker band inside the edges of `black` icons; generate offset paths if that matters
+    const contents =
+      weight === "black" ? (
+        <G
+          stroke={color}
+          strokeWidth={BLACK_STROKE_WIDTH}
+          strokeLinejoin="round"
+          strokeLinecap="round">
+          {weights.bold}
+        </G>
+      ) : (
+        (weights[weight] ?? weights.regular)
+      );
+
     return (
       <Svg
         width={size}
@@ -107,11 +124,9 @@ export function createIcon(
         fill={color}
         {...otherProps}>
         {mirrored ? (
-          <G transform="matrix(-1 0 0 1 256 0)">
-            {weights[weight] ?? weights.regular}
-          </G>
+          <G transform="matrix(-1 0 0 1 256 0)">{contents}</G>
         ) : (
-          (weights[weight] ?? weights.regular)
+          contents
         )}
       </Svg>
     );

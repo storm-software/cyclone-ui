@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import { HeadingExtraSmallText } from "@cyclone-ui/heading-text";
 import { X } from "@cyclone-ui/icons";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import type {
@@ -37,6 +36,7 @@ import { getFontSize } from "@tamagui/font-size";
 import { getFontSized } from "@tamagui/get-font-sized";
 import { withStaticProperties } from "@tamagui/helpers";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
+import { SizableText } from "@tamagui/text";
 import { useCallback, useRef, useState } from "react";
 
 export type TagSize = SizeTokens | number;
@@ -142,6 +142,7 @@ const TagFrame = styled(View, {
   displayName: TAG_NAME,
   context: TagContext,
 
+  transition: "200ms",
   flexDirection: "row",
   width: "fit-content",
   boxShadow: "none",
@@ -213,10 +214,12 @@ const TagFrame = styled(View, {
 // frame's props, so the tag's `variant` ("primary") would replace
 // HeadingText's own `variant` ("base") and drop its font family. `TagText`
 // reads the context and passes `size` explicitly instead.
-const TagTextFrame = styled(HeadingExtraSmallText, {
+const TagTextFrame = styled(SizableText, {
   displayName: TAG_NAME,
   render: "span",
   color: "onAccent",
+  fontFamily: "title-sm",
+
   variants: {
     // v2 `"...fontSize"`: only font size keys (including the `true` default,
     // which the font scale carries as its own `true` key) restyle the text.
@@ -226,7 +229,11 @@ const TagTextFrame = styled(HeadingExtraSmallText, {
         ? getFontSized(val === true ? ("true" as FontSizeTokens) : val, env)
         : undefined
     )
-  } as const
+  } as const,
+
+  defaultVariants: {
+    size: "md"
+  }
 });
 
 const TagText = createStyledHOC(
@@ -243,7 +250,7 @@ const TagText = createStyledHOC(
       <TagTextFrame
         ref={forwardedRef}
         {...props}
-        size={size ?? context.size}
+        size={(size ?? context.size) as FontSizeTokens | number | true}
         color={
           // A caller-authored `hover:` clause wins, like v2's caller `hoverStyle`.
           context.pressable &&
@@ -503,7 +510,10 @@ const TagRemoveButtonFrame = styled(View, {
   cursor: "pointer",
   borderWidth: 0,
   padding: 0,
-  marginLeft: "md",
+  marginLeft: "2xl",
+  // Pulls the icon toward the frame's edge: the size variant's
+  // `paddingHorizontal` would override a frame `paddingRight`.
+  marginRight: -6,
   // No hover background: hovering (or focusing) the button turns the whole
   // tag to the `danger` theme instead.
   backgroundColor: "transparent",
@@ -530,7 +540,7 @@ const TagRemoveButton = createStyledHOC(
         }}>
         <TagIcon
           color={getTextColor(variant as TagVariant | undefined, outlined)}>
-          <X />
+          <X weight="black" />
         </TagIcon>
       </TagRemoveButtonFrame>
     );

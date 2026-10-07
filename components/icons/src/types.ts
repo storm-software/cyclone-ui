@@ -30,6 +30,7 @@ export const ICON_WEIGHTS = [
   "light",
   "regular",
   "bold",
+  "black",
   "fill",
   "duotone"
 ] as const;
@@ -72,6 +73,9 @@ export type IconComponent = ((props: IconProps) => JSX.Element) & {
 };
 
 /**
- * The SVG contents of an icon for each of the available weights.
+ * The SVG contents of an icon for each of the Phosphor weights.
+ *
+ * @remarks
+ * The `black` weight is derived from `bold` by `createIcon`, so it is not included.
  */
-export type IconWeights = Record<IconWeight, ReactElement>;
+export type IconWeights = Record<Exclude<IconWeight, "black">, ReactElement>;

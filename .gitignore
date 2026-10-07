@@ -9,6 +9,9 @@ tsconfig.tsbuildinfo
 .env.local
 __generated__
 
+.venv
+.pnpm-store
+.worktrees
 graphify-out
 SF-Pro.dmg
 

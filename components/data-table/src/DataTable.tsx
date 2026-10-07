@@ -125,7 +125,7 @@ const SELECTION_COLUMN_ID = "__selection";
 
 const DataTableColumnHeading = styled(HeadingSmallText, {
   displayName: "DataTableColumnHeading",
-  fontFamily: "title-lg"
+  fontFamily: "title-md"
 });
 
 const getSelectionColumn = <TData extends RowData>(): ColumnDef<TData> => ({

@@ -18,7 +18,6 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { Clipboard } from "@cyclone-ui/icons";
 import { ScrollView } from "@cyclone-ui/scroll-view";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
@@ -285,6 +284,10 @@ export const CodeBlockCopyButton = ({
     }
   }, [containerRef, copiedDuration]);
 
+  const onPress = useCallback(() => {
+        void handleCopy();
+      })
+
   return (
     <Button
       {...props}
@@ -298,7 +301,7 @@ export const CodeBlockCopyButton = ({
       color={copied ? "accent" : "inkBody"}
       circular={true}
       flexGrow={0}
-      onPress={handleCopy}>
+      onPress={onPress}>    
       <Button.Icon size="8xl">
         {copied ? <Check strokeWidth={3} /> : <Clipboard />}
       </Button.Icon>
@@ -416,7 +419,7 @@ const CodeBlockImpl = createStyledHOC(
         ) : null}
         <CodeBlockViewport
           {...codeBlockViewportDefaults}
-          {...(viewportProps as any)}
+          {...viewportProps}
           ref={areaRef as any}
           role="region"
           aria-label={typeof title === "string" ? title : "Code"}
@@ -425,7 +428,7 @@ const CodeBlockImpl = createStyledHOC(
             viewportProps.className ? ` ${viewportProps.className}` : ""
           }`}
           maxHeight={(viewportProps.style?.maxHeight ?? 600) as any}
-          style={viewportStyle as any}>
+          style={viewportStyle}>
           {contentChildren}
         </CodeBlockViewport>
       </CodeBlockFrame>
@@ -501,14 +504,14 @@ export const CodeBlockTabsTrigger = forwardRef<
     backgroundColor="surfaceCanvas hover:surfaceCanvasHover"
     cursor="pointer"
     className="cyclone-code-block-tabs-trigger">
-    <HeadingSmallText
+    <Text
       color="inkBody"
-      fontWeight="normal"
+      fontFamily="title-sm"
       textAlign="center"
       whiteSpace="nowrap"
-      marginVertical="md">
+      marginVertical="sm">
       {children}
-    </HeadingSmallText>
+    </Text>
   </TamaguiTabs.Tab>
 ));
 

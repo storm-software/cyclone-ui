@@ -39,7 +39,7 @@ const DetailLabel = styled(BodyText, {
   width: "25%",
   flexShrink: 0,
   color: "inkSubtle",
-  fontFamily: "title-lg"
+  fontFamily: "title-md"
 });
 
 const DetailValue = styled(BodyText, {

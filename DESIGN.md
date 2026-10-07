@@ -263,21 +263,6 @@ typography:
     fontSize: "1.5rem"
     fontWeight: "700"
     lineHeight: "1.25"
-  display-sm:
-    fontFamily: "Storm Sans"
-    fontSize: "1.25rem"
-    fontWeight: "700"
-    lineHeight: "1.25"
-  display-xs:
-    fontFamily: "Storm Sans"
-    fontSize: "1.125rem"
-    fontWeight: "600"
-    lineHeight: "1.175"
-  display-xxs:
-    fontFamily: "Storm Sans"
-    fontSize: "1rem"
-    fontWeight: "500"
-    lineHeight: "1.175"
   editorial-hero:
     fontFamily: "Storm Serif"
     fontSize: "3.75rem"
@@ -293,15 +278,30 @@ typography:
     fontSize: "1.5rem"
     fontWeight: "700"
     lineHeight: "1.25"
+  title-xl:
+    fontFamily: "Storm Sans"
+    fontSize: "1.25rem"
+    fontWeight: "600"
+    lineHeight: "1.175"
   title-lg:
     fontFamily: "Storm Sans"
     fontSize: "1.125rem"
-    fontWeight: "500"
+    fontWeight: "700"
     lineHeight: "1.175"
+  title-md:
+    fontFamily: "Storm Sans"
+    fontSize: "1.125rem"
+    fontWeight: "500"
+    lineHeight: "1.25"
   title-sm:
     fontFamily: "Storm Sans"
+    fontSize: "1rem"
+    fontWeight: "700"
+    lineHeight: "1.25"
+  title-xs:
+    fontFamily: "Storm Sans"
     fontSize: "0.75rem"
-    fontWeight: "400"
+    fontWeight: "500"
     lineHeight: "1.25"
   body-md:
     fontFamily: "Storm Sans"
@@ -311,7 +311,7 @@ typography:
   body-sm:
     fontFamily: "Storm Sans"
     fontSize: "1rem"
-    fontWeight: "400"
+    fontWeight: "500"
     lineHeight: "1.375"
   caption:
     fontFamily: "Storm Sans"
@@ -620,16 +620,16 @@ Cyclone UI design tokens — 244 color tokens, 17 typography tokens, 28 spacing 
 - **display-hero:** fontFamily: Storm Sans, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.25
 - **display-lg:** fontFamily: Storm Sans, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.25
 - **display-md:** fontFamily: Storm Sans, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.25
-- **display-sm:** fontFamily: Storm Sans, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.25
-- **display-xs:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.175
-- **display-xxs:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 500, lineHeight: 1.175
 - **editorial-hero:** fontFamily: Storm Serif, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.25
 - **editorial-lg:** fontFamily: Storm Serif, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.25
 - **editorial-md:** fontFamily: Storm Serif, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.25
-- **title-lg:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.175
-- **title-sm:** fontFamily: Storm Sans, fontSize: 0.75rem, fontWeight: 400, lineHeight: 1.25
+- **title-xl:** fontFamily: Storm Sans, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.175
+- **title-lg:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 700, lineHeight: 1.175
+- **title-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.25
+- **title-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 700, lineHeight: 1.25
+- **title-xs:** fontFamily: Storm Sans, fontSize: 0.75rem, fontWeight: 500, lineHeight: 1.25
 - **body-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.375
-- **body-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.375
+- **body-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 500, lineHeight: 1.375
 - **caption:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.175
 - **button:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.175
 - **eyebrow:** fontFamily: Google Sans Code, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.175

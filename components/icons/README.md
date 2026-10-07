@@ -111,10 +111,10 @@ import { ArrowRight } from "@cyclone-ui/icons/icons/ArrowRight";
 
 Every icon accepts the same props as the `@tamagui/lucide-icons-2` icons (`size`, `color`, `style`, `disableTheme`, and the other `react-native-svg` props), plus:
 
-| Prop       | Type                                                              | Default     | Description                                         |
-| ---------- | ----------------------------------------------------------------- | ----------- | --------------------------------------------------- |
-| `weight`   | `"thin" \| "light" \| "regular" \| "bold" \| "fill" \| "duotone"` | `"regular"` | The Phosphor weight (style) to render.              |
-| `mirrored` | `boolean`                                                         | `false`     | Flip the icon horizontally (for right-to-left UIs). |
+| Prop       | Type                                                                         | Default     | Description                                                                         |
+| ---------- | ---------------------------------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------- |
+| `weight`   | `"thin" \| "light" \| "regular" \| "bold" \| "black" \| "fill" \| "duotone"` | `"regular"` | The Phosphor weight (style) to render. `black` is `bold` with a 25% thicker stroke. |
+| `mirrored` | `boolean`                                                                    | `false`     | Flip the icon horizontally (for right-to-left UIs).                                 |
 
 The `size` prop accepts a number of pixels or a token. A string is resolved against the theme's `size` tokens first (for example `size="4xl"`; a legacy `$` prefix is ignored). If it is not a `size` token, it is treated as a font size token so the icon matches text at that size. The `resolveIconSize` export applies the same resolution.
 

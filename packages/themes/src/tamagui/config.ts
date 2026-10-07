@@ -187,6 +187,7 @@ const tokens = createTokens({
     sheet: 0,
     sm: 4,
     tooltip: 6,
+    trigger: 4,
     xl: 12,
     xs: 2,
     zero: 0
@@ -989,9 +990,9 @@ const bodySmFont = createFont({
     true: 22
   },
   weight: {
-    normal: "400",
-    sm: "400",
-    true: "400"
+    medium: "500",
+    sm: "500",
+    true: "500"
   },
   face: {
     100: { normal: "StormSans-Thin", italic: "StormSans-ThinItalic" },
@@ -1150,90 +1151,6 @@ const displayMdFont = createFont({
     bold: "700",
     true: "700",
     xl: "700"
-  },
-  face: {
-    100: { normal: "StormSans-Thin", italic: "StormSans-ThinItalic" },
-    200: { normal: "StormSans-ExtraLight", italic: "StormSans-ExtraLightItalic" },
-    300: { normal: "StormSans-Light", italic: "StormSans-LightItalic" },
-    400: { normal: "StormSans-Regular", italic: "StormSans-Italic" },
-    450: { normal: "StormSans-Text", italic: "StormSans-TextItalic" },
-    500: { normal: "StormSans-Medium", italic: "StormSans-MediumItalic" },
-    600: { normal: "StormSans-SemiBold", italic: "StormSans-SemiBoldItalic" },
-    700: { normal: "StormSans-Bold", italic: "StormSans-BoldItalic" }
-  }
-});
-
-const displaySmFont = createFont({
-  family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
-  size: {
-    lg: 20,
-    true: 20
-  },
-  lineHeight: {
-    lg: 25,
-    snug: 25,
-    true: 25
-  },
-  weight: {
-    bold: "700",
-    lg: "700",
-    true: "700"
-  },
-  face: {
-    100: { normal: "StormSans-Thin", italic: "StormSans-ThinItalic" },
-    200: { normal: "StormSans-ExtraLight", italic: "StormSans-ExtraLightItalic" },
-    300: { normal: "StormSans-Light", italic: "StormSans-LightItalic" },
-    400: { normal: "StormSans-Regular", italic: "StormSans-Italic" },
-    450: { normal: "StormSans-Text", italic: "StormSans-TextItalic" },
-    500: { normal: "StormSans-Medium", italic: "StormSans-MediumItalic" },
-    600: { normal: "StormSans-SemiBold", italic: "StormSans-SemiBoldItalic" },
-    700: { normal: "StormSans-Bold", italic: "StormSans-BoldItalic" }
-  }
-});
-
-const displayXsFont = createFont({
-  family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
-  size: {
-    md: 18,
-    true: 18
-  },
-  lineHeight: {
-    md: 21.15,
-    tight: 21.15,
-    true: 21.15
-  },
-  weight: {
-    md: "600",
-    semibold: "600",
-    true: "600"
-  },
-  face: {
-    100: { normal: "StormSans-Thin", italic: "StormSans-ThinItalic" },
-    200: { normal: "StormSans-ExtraLight", italic: "StormSans-ExtraLightItalic" },
-    300: { normal: "StormSans-Light", italic: "StormSans-LightItalic" },
-    400: { normal: "StormSans-Regular", italic: "StormSans-Italic" },
-    450: { normal: "StormSans-Text", italic: "StormSans-TextItalic" },
-    500: { normal: "StormSans-Medium", italic: "StormSans-MediumItalic" },
-    600: { normal: "StormSans-SemiBold", italic: "StormSans-SemiBoldItalic" },
-    700: { normal: "StormSans-Bold", italic: "StormSans-BoldItalic" }
-  }
-});
-
-const displayXxsFont = createFont({
-  family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
-  size: {
-    sm: 16,
-    true: 16
-  },
-  lineHeight: {
-    sm: 18.8,
-    tight: 18.8,
-    true: 18.8
-  },
-  weight: {
-    medium: "500",
-    sm: "500",
-    true: "500"
   },
   face: {
     100: { normal: "StormSans-Thin", italic: "StormSans-ThinItalic" },
@@ -1409,6 +1326,34 @@ const titleLgFont = createFont({
     true: 21.15
   },
   weight: {
+    bold: "700",
+    md: "700",
+    true: "700"
+  },
+  face: {
+    100: { normal: "StormSans-Thin", italic: "StormSans-ThinItalic" },
+    200: { normal: "StormSans-ExtraLight", italic: "StormSans-ExtraLightItalic" },
+    300: { normal: "StormSans-Light", italic: "StormSans-LightItalic" },
+    400: { normal: "StormSans-Regular", italic: "StormSans-Italic" },
+    450: { normal: "StormSans-Text", italic: "StormSans-TextItalic" },
+    500: { normal: "StormSans-Medium", italic: "StormSans-MediumItalic" },
+    600: { normal: "StormSans-SemiBold", italic: "StormSans-SemiBoldItalic" },
+    700: { normal: "StormSans-Bold", italic: "StormSans-BoldItalic" }
+  }
+});
+
+const titleMdFont = createFont({
+  family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
+  size: {
+    md: 18,
+    true: 18
+  },
+  lineHeight: {
+    md: 22.5,
+    snug: 22.5,
+    true: 22.5
+  },
+  weight: {
     md: "500",
     medium: "500",
     true: "500"
@@ -1428,6 +1373,62 @@ const titleLgFont = createFont({
 const titleSmFont = createFont({
   family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
   size: {
+    sm: 16,
+    true: 16
+  },
+  lineHeight: {
+    sm: 20,
+    snug: 20,
+    true: 20
+  },
+  weight: {
+    bold: "700",
+    sm: "700",
+    true: "700"
+  },
+  face: {
+    100: { normal: "StormSans-Thin", italic: "StormSans-ThinItalic" },
+    200: { normal: "StormSans-ExtraLight", italic: "StormSans-ExtraLightItalic" },
+    300: { normal: "StormSans-Light", italic: "StormSans-LightItalic" },
+    400: { normal: "StormSans-Regular", italic: "StormSans-Italic" },
+    450: { normal: "StormSans-Text", italic: "StormSans-TextItalic" },
+    500: { normal: "StormSans-Medium", italic: "StormSans-MediumItalic" },
+    600: { normal: "StormSans-SemiBold", italic: "StormSans-SemiBoldItalic" },
+    700: { normal: "StormSans-Bold", italic: "StormSans-BoldItalic" }
+  }
+});
+
+const titleXlFont = createFont({
+  family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
+  size: {
+    lg: 20,
+    true: 20
+  },
+  lineHeight: {
+    lg: 23.5,
+    tight: 23.5,
+    true: 23.5
+  },
+  weight: {
+    lg: "600",
+    semibold: "600",
+    true: "600"
+  },
+  face: {
+    100: { normal: "StormSans-Thin", italic: "StormSans-ThinItalic" },
+    200: { normal: "StormSans-ExtraLight", italic: "StormSans-ExtraLightItalic" },
+    300: { normal: "StormSans-Light", italic: "StormSans-LightItalic" },
+    400: { normal: "StormSans-Regular", italic: "StormSans-Italic" },
+    450: { normal: "StormSans-Text", italic: "StormSans-TextItalic" },
+    500: { normal: "StormSans-Medium", italic: "StormSans-MediumItalic" },
+    600: { normal: "StormSans-SemiBold", italic: "StormSans-SemiBoldItalic" },
+    700: { normal: "StormSans-Bold", italic: "StormSans-BoldItalic" }
+  }
+});
+
+const titleXsFont = createFont({
+  family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
+  size: {
     true: 12,
     xxs: 12
   },
@@ -1437,9 +1438,9 @@ const titleSmFont = createFont({
     xxs: 15
   },
   weight: {
-    normal: "400",
-    true: "400",
-    xxs: "400"
+    medium: "500",
+    true: "500",
+    xxs: "500"
   },
   face: {
     100: { normal: "StormSans-Thin", italic: "StormSans-ThinItalic" },
@@ -1572,9 +1573,6 @@ export const config = createTamagui({
     "display-hero": displayHeroFont,
     "display-lg": displayLgFont,
     "display-md": displayMdFont,
-    "display-sm": displaySmFont,
-    "display-xs": displayXsFont,
-    "display-xxs": displayXxsFont,
     "editorial-hero": editorialHeroFont,
     "editorial-lg": editorialLgFont,
     "editorial-md": editorialMdFont,
@@ -1582,7 +1580,10 @@ export const config = createTamagui({
     stormSans: stormSansFont,
     stormSerif: stormSerifFont,
     "title-lg": titleLgFont,
-    "title-sm": titleSmFont
+    "title-md": titleMdFont,
+    "title-sm": titleSmFont,
+    "title-xl": titleXlFont,
+    "title-xs": titleXsFont
    },
   defaultFont: "body-md",
   settings: { styleValueSyntax: "string", legacyConditionObjects: false }

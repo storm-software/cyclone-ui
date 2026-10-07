@@ -59,6 +59,7 @@
   "rust-analyzer.procMacro.ignored": {
     "napi-derive": ["napi"]
   },
+  "direnv.restart.automatic": true,
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nixd", // or "nil"
   "nix.serverSettings": {
@@ -249,5 +250,6 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "chat.mcp.gallery.enabled": true,
-  "typescript.native-preview.tsdk": "./node_modules/@typescript/native-preview"
+  "typescript.native-preview.tsdk": "./node_modules/@typescript/native-preview",
+  "python-envs.defaultEnvManager": "ms-python.python:system"
 }

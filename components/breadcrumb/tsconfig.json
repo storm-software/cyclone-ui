@@ -14,9 +14,6 @@
   },
   "references": [
     {
-      "path": "../body-text"
-    },
-    {
       "path": "../popover"
     },
     {

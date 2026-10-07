@@ -141,10 +141,10 @@ export const HeadingSmallText = styled(BaseHeadingText, {
   variants: {
     variant: {
       base: {
-        fontFamily: "display-sm"
+        fontFamily: "title-lg"
       },
       editorial: {
-        fontFamily: "display-sm"
+        fontFamily: "title-lg"
       }
     }
   } as const,
@@ -162,31 +162,10 @@ export const HeadingExtraSmallText = styled(BaseHeadingText, {
   variants: {
     variant: {
       base: {
-        fontFamily: "display-xs"
+        fontFamily: "title-md"
       },
       editorial: {
-        fontFamily: "display-xs"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    variant: "base"
-  }
-});
-
-export const HeadingExtraExtraSmallText = styled(BaseHeadingText, {
-  displayName: "HeadingExtraSmallText",
-  render: "h6",
-  color: "inkEmphasis",
-
-  variants: {
-    variant: {
-      base: {
-        fontFamily: "display-xxs"
-      },
-      editorial: {
-        fontFamily: "display-xxs"
+        fontFamily: "title-md"
       }
     }
   } as const,
@@ -207,7 +186,7 @@ export const HeadingText = createStyledHOC(
       variant = "base",
       ...props
     }: GetProps<typeof BaseHeadingText> & {
-      level?: 1 | 2 | 3 | 4 | 5 | 6 | "hero" | "title" | "lg" | "md" | "sm" | "xs" | "xxs";
+      level?: 1 | 2 | 3 | 4 | 5 | "hero" | "title" | "lg" | "md" | "sm" | "xs";
     },
     forwardedRef
   ) => {
@@ -247,13 +226,7 @@ export const HeadingText = createStyledHOC(
           {children}
         </HeadingExtraSmallText>
       );
-    }  else if (level === 6 || level === "xxs") {
-      return (
-        <HeadingExtraExtraSmallText ref={forwardedRef} variant={variant} {...props}>
-          {children}
-        </HeadingExtraExtraSmallText>
-      );
-    } 
+    }
 
     return (
       <BaseHeadingText ref={forwardedRef} variant={variant} {...props}>

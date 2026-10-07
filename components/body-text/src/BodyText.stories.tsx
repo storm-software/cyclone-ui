@@ -51,6 +51,19 @@ export const Small: Story = {
   }
 };
 
+export const Bold: Story = {
+  args: {
+    bold: true
+  }
+};
+
+export const SmallBold: Story = {
+  args: {
+    size: "sm",
+    bold: true
+  }
+};
+
 export const Brand: Story = {
   args: {
     theme: "brand"

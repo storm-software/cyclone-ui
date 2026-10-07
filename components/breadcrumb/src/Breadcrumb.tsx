@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { getSpaced } from "@cyclone-ui/helpers";
 import { CaretDoubleRight, CaretRight, DotsThree } from "@cyclone-ui/icons";
@@ -32,6 +31,7 @@ import {
   createStyledContext,
   createStyledHOC,
   styled,
+  Text,
   Theme,
   useThemeName,
   View
@@ -42,13 +42,7 @@ import { XStack, YStack } from "@tamagui/stacks";
 import type { TextContextStyles } from "@tamagui/text";
 import { SizableText } from "@tamagui/text";
 import type { ReactNode } from "react";
-import {
-  Children,
-  createContext,
-  use,
-  useCallback,
-  useState
-} from "react";
+import { Children, createContext, use, useCallback, useState } from "react";
 import { getBreadcrumbCollapse } from "./utilities";
 
 export type BreadcrumbVariant = "chevron" | "double" | "slash";
@@ -146,15 +140,31 @@ const BreadcrumbFrame = styled(XStack, {
   }
 });
 
-const BreadcrumbCurrent = styled(BodyText, {
+const BreadcrumbCurrent = styled(Text, {
   displayName: "BreadcrumbCurrent",
   context: BreadcrumbContext,
+
+  theme: "base",
   transition: "200ms",
   cursor: "default",
-  color: "inkEmphasis",
-  fontWeight: "semibold",
+  color: "accent",
   verticalAlign: "middle",
-  size: "sm"
+  fontFamily: "title-sm",
+
+  variants: {
+    size: {
+      sm: {
+        fontFamily: "title-sm"
+      },
+      md: {
+        fontSize: "title-md"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "sm"
+  }
 });
 
 /**
@@ -366,8 +376,8 @@ const BreadcrumbItemImpl = createStyledHOC(
           underline="none"
           {...(linkVariant && { variant: linkVariant })}
           {...props}
-          onPress={event => {
-            props.onPress?.(event);
+          onPress={(event: any) => {
+            (props as { onPress?: (event: any) => void }).onPress?.(event);
             closeMenu();
           }}>
           {children}

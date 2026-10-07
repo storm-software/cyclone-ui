@@ -85,7 +85,7 @@ const PropertyColumn = styled(InlineCodeText, {
 const TypeColumn = styled(BodyText, {
   displayName: "TypeTableTypeColumn",
   color: "inkSubtle",
-  fontFamily: "title-lg",
+  fontFamily: "title-md",
   display: "max-sm:none"
 });
 
@@ -99,7 +99,7 @@ const TypeLink = styled(Link, {
 const ColumnLabel = styled(BodyText, {
   displayName: "TypeTableColumnLabel",
   color: "inkSubtle",
-  fontFamily: "title-lg"
+  fontFamily: "title-md"
 });
 
 const getItemId = (parentId: string | undefined, name: string) =>
