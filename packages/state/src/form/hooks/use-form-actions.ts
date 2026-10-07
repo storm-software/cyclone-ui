@@ -157,21 +157,19 @@ export const useFormActions = <
 
         set(form.submitAttempts, prev => prev + 1);
 
-        const _options = get(form.options);
-
-        const _promises = [] as Promise<void>[];
-        const _values = get(form.values);
+        const options = get(form.options);
 
         // promises.push(validate(value, ValidationCause.SUBMIT));
         // await Promise.all(promises);
 
-        if (get(form.valid)) {
-          // await options.onSubmit?.(
-          //   get(form.values) as TFormValues
-          // );
+        try {
+          if (get(form.valid)) {
+            await options.onSubmit?.({ get, set, atoms: form });
+            set(form.submitted, true);
+          }
+        } finally {
+          set(form.submitting, false);
         }
-
-        set(form.submitting, false);
       } else if (get(form.invalid)) {
         if (get(form.invalid)) {
           // set(fieldStore.api.atom.touched, true);

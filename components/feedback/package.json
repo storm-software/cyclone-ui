@@ -1,0 +1,54 @@
+{
+  "name": "@cyclone-ui/feedback",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A feedback control with like and dislike toggles, where a dislike opens a popover (or sheet on small screens) for an optional comment",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/feedback"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/divider": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/like-button": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/text-area-field": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Feedback": {
+      "import": "./dist/Feedback.mjs",
+      "require": "./dist/Feedback.cjs"
+    },
+    "./*": "./*"
+  }
+}

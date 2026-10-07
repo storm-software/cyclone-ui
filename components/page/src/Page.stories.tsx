@@ -378,7 +378,7 @@ const StoryBanner = () => (
 );
 
 const meta = {
-  title: "Blocks/Page",
+  title: "Layouts/Page",
   component: Page,
   tags: ["autodocs"],
   parameters: {

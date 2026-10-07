@@ -15,9 +15,6 @@
   },
   "references": [
     {
-      "path": "../icons"
-    },
-    {
       "path": "../vectors"
     },
     {
@@ -27,13 +24,13 @@
       "path": "../scroll-view"
     },
     {
-      "path": "../heading-text"
-    },
-    {
       "path": "../button"
     },
     {
       "path": "../body-text"
+    },
+    {
+      "path": "../icons"
     }
   ],
   "files": [],

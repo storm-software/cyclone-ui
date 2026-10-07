@@ -14,9 +14,6 @@
   },
   "references": [
     {
-      "path": "../../packages/state"
-    },
-    {
       "path": "../body-text"
     }
   ],

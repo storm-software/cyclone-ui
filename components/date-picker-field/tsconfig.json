@@ -18,16 +18,13 @@
       "path": "../../packages/state"
     },
     {
-      "path": "../../packages/helpers"
+      "path": "../icons"
     },
     {
       "path": "../field"
     },
     {
       "path": "../date-picker"
-    },
-    {
-      "path": "../icons"
     },
     {
       "path": "../form"

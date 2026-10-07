@@ -107,7 +107,7 @@ export const FormSubmit = createStyledHOC(FormTriggerFrame,
         render="button"
         {...triggerProps}
         ref={forwardedRef}
-        disabled={canSubmit}
+        disabled={!canSubmit}
         onPress={composeEventHandlers(onPress, submit)}>
         {children}
       </FormTriggerFrame>
@@ -128,7 +128,7 @@ export const FormReset = createStyledHOC(FormTriggerFrame,
         render="button"
         {...triggerProps}
         ref={forwardedRef}
-        disabled={canSubmit}
+        disabled={!canSubmit}
         onPress={composeEventHandlers(onPress, reset)}>
         {children}
       </FormTriggerFrame>

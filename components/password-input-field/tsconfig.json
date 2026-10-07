@@ -15,9 +15,6 @@
   },
   "references": [
     {
-      "path": "../validation-text"
-    },
-    {
       "path": "../../packages/state"
     },
     {
@@ -27,13 +24,10 @@
       "path": "../icons"
     },
     {
-      "path": "../visually-hidden"
+      "path": "../field"
     },
     {
       "path": "../body-text"
-    },
-    {
-      "path": "../field"
     },
     {
       "path": "../form"

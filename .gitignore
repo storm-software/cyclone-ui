@@ -43,10 +43,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
-.nx/cache
-.nx/workspace-data
-.nx/data
-.nx/socket
+.nx
 
 # React Native
 

@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/breadcrumb/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
@@ -9,27 +10,23 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc/components/breadcrumb",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/breadcrumb/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc/components/breadcrumb"
   },
   "references": [
     {
       "path": "../popover"
     },
     {
-      "path": "../button"
-    },
-    {
       "path": "../link"
     },
     {
-      "path": "../label-text"
+      "path": "../icons"
     },
     {
       "path": "../../packages/helpers"
     },
     {
-      "path": "../icons"
+      "path": "../button"
     }
   ],
   "files": [],

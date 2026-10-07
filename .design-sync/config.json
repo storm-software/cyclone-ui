@@ -1,0 +1,5 @@
+{
+  "projectId": "ff43a5f9-51a9-4984-b2fe-72ef229c9195",
+  "shape": "storybook",
+  "storybookConfigDir": "apps/storybook/.storybook"
+}

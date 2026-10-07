@@ -15,16 +15,13 @@
   },
   "references": [
     {
-      "path": "../../packages/helpers"
-    },
-    {
       "path": "../popover"
     },
     {
-      "path": "../body-text"
+      "path": "../input"
     },
     {
-      "path": "../input"
+      "path": "../../packages/helpers"
     },
     {
       "path": "../heading-text"

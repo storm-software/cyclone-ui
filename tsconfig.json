@@ -274,6 +274,12 @@
       "path": "./components/rating"
     },
     {
+      "path": "./components/like-button"
+    },
+    {
+      "path": "./components/feedback"
+    },
+    {
       "path": "./components/slider"
     },
     {

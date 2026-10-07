@@ -100,7 +100,7 @@ const PopoverArrow = styled(TamaguiPopover.Arrow, {
   displayName: "Popover",
   context: PopoverContext,
   backgroundColor: "surfaceFloating",
-  borderWidth: 2,
+  borderWidth: 1,
   borderColor: "accent",
   top: -16
 });
@@ -110,16 +110,18 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   context: PopoverContext,
   backgroundColor: "surfaceFloating",
   padding: "3xl",
-  borderWidth: 2,
+  borderWidth: 1,
   borderColor: "overlayBorder focus-visible:accentActive",
   borderRadius: "popover",
   marginHorizontal: "auto",
   y: "enter:-10px exit:-10px",
   opacity: "enter:0 exit:0",
+
   transition: {
     duration: "100ms",
     opacity: { duration: "100ms", spring: { overshootClamping: true } }
   },
+
   variants: {
     elevated: {
       true: {
@@ -127,6 +129,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
       }
     }
   } as const,
+
   defaultVariants: {
     elevated: true
   }
