@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/page",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "A base page layout compound component (banner, top nav, side nav, main and panel) for Cyclone UI applications",
   "repository": {

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Themes
 
+## [0.3.10](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.10) (10/06/2026)
+
+### Bug Fixes
+
+- **cli:** Update CLI to use Razorwind plugins ([5e58c49c](https://github.com/storm-software/cyclone-ui/commit/5e58c49c))
+
 ## [0.3.8](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.8) (10/05/2026)
 
 ### Bug Fixes

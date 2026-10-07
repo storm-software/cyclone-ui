@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Slider Field
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/slider-field%400.0.5) (10/06/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.10**
+- Updated **form** to **v0.9.10**
+- Updated **slider** to **v0.0.6**
+- Updated **state** to **v0.0.11**
+- Updated **themes** to **v0.3.10**
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/slider-field%400.0.4) (10/05/2026)
 
 ### Updated Dependencies

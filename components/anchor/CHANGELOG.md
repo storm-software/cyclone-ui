@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Anchor
 
+## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.9) (10/06/2026)
+
+### Bug Fixes
+
+- **cli:** Update CLI to use Razorwind plugins ([5e58c49c](https://github.com/storm-software/cyclone-ui/commit/5e58c49c))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.10**
+- Updated **icons** to **v0.0.6**
+
 ## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.8) (10/05/2026)
 
 ### Updated Dependencies

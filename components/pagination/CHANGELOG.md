@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Pagination
 
+## [0.8.10](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.10) (10/06/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.10**
+- Updated **icons** to **v0.0.6**
+- Updated **next-button** to **v0.5.10**
+- Updated **previous-button** to **v0.5.10**
+
 ## [0.8.9](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.9) (10/05/2026)
 
 ### Updated Dependencies

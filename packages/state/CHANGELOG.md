@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.11) (10/06/2026)
+
+### Bug Fixes
+
+- **cli:** Update CLI to use Razorwind plugins ([5e58c49c](https://github.com/storm-software/cyclone-ui/commit/5e58c49c))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.10**
+
 ## [0.0.10](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.10) (10/05/2026)
 
 ### Updated Dependencies

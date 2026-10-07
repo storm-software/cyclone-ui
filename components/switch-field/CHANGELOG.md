@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Switch Field
 
+## [0.1.10](https://github.com/storm-software/cyclone-ui/releases/tag/switch-field%400.1.10) (10/06/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.10**
+- Updated **form** to **v0.9.10**
+- Updated **state** to **v0.0.11**
+- Updated **switch** to **v0.5.10**
+
 ## [0.1.9](https://github.com/storm-software/cyclone-ui/releases/tag/switch-field%400.1.9) (10/05/2026)
 
 ### Updated Dependencies
