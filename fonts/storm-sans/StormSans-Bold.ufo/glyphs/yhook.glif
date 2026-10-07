@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="yhook" format="2">
-  <advance width="534"/>
+  <advance width="596"/>
   <unicode hex="1EF7"/>
   <anchor x="432.0" y="0.0" name="bottom"/>
   <outline>
     <component base="y"/>
-    <component base="hookcomb" xOffset="271"/>
+    <component base="hookcomb" xOffset="295"/>
   </outline>
   <lib>
     <dict>

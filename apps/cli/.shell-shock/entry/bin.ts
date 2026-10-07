@@ -394,15 +394,15 @@ async function main(): Promise<any | { error: string | Error }> {
           icon: "➕"
         },
         {
-          value: ["completions", "bash", "script"],
-          label: "Completions - Bash Script",
-          description: `(cyclone-ui completions bash script)`,
-          icon: "🖵"
-        },
-        {
           value: ["completions", "bash", "config"],
           label: "Completions - Bash Configuration",
           description: `(cyclone-ui completions bash config)`,
+          icon: "🖵"
+        },
+        {
+          value: ["completions", "bash", "script"],
+          label: "Completions - Bash Script",
+          description: `(cyclone-ui completions bash script)`,
           icon: "🖵"
         },
         {

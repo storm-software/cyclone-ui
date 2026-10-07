@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="gdotaccent" format="2">
-  <advance width="510"/>
+  <advance width="572"/>
   <unicode hex="0121"/>
   <outline>
     <component base="g.alt02"/>
-    <component base="dotaccent" xOffset="10"/>
+    <component base="dotaccent" xOffset="24"/>
   </outline>
   <lib>
     <dict>
