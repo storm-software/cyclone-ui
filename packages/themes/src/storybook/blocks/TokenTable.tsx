@@ -1005,15 +1005,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.rating",
-      type: "color",
-      value: "#c58c22",
-      cssVar: "--cu-color-rating",
-      description: "Color for rating indicators, such as stars or other symbols representing user ratings.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.link",
       type: "color",
       value: "#6da2ff",
@@ -6169,15 +6160,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#ab5268",
       cssVar: "--cu-color-required",
       description: "Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.rating",
-      type: "color",
-      value: "#a58549",
-      cssVar: "--cu-color-rating",
-      description: "Color for rating indicators, such as stars or other symbols representing user ratings.",
       theme: undefined,
       typography: false
     },
@@ -11341,15 +11323,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.rating",
-      type: "color",
-      value: "#dc8f00",
-      cssVar: "--cu-color-rating",
-      description: "Color for rating indicators, such as stars or other symbols representing user ratings.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.link",
       type: "color",
       value: "#9ec1ff",
@@ -16505,15 +16478,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#8e223e",
       cssVar: "--cu-color-required",
       description: "Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.rating",
-      type: "color",
-      value: "#c58c22",
-      cssVar: "--cu-color-rating",
-      description: "Color for rating indicators, such as stars or other symbols representing user ratings.",
       theme: undefined,
       typography: false
     },
@@ -21677,15 +21641,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.rating",
-      type: "color",
-      value: "#a58549",
-      cssVar: "--cu-color-rating",
-      description: "Color for rating indicators, such as stars or other symbols representing user ratings.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.link",
       type: "color",
       value: "#45649b",
@@ -26841,15 +26796,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#840929",
       cssVar: "--cu-color-required",
       description: "Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.rating",
-      type: "color",
-      value: "#dc8f00",
-      cssVar: "--cu-color-rating",
-      description: "Color for rating indicators, such as stars or other symbols representing user ratings.",
       theme: undefined,
       typography: false
     },

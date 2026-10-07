@@ -2,12 +2,12 @@
 /* oxlint-disable */
 // biome-ignore lint: disable
 
-import { showBanner } from "banner/completions";
-import { error } from "console";
-import { showHelp } from "help/completions";
-import { isCancel, select, text } from "prompts";
-import { isHelp, useArgs, useGlobal } from "state";
-import { findSuggestions, isInteractive } from "utils";
+import { showBanner } from "shell-shock:banner/completions";
+import { error } from "shell-shock:console";
+import { showHelp } from "shell-shock:help/completions";
+import { isCancel, select, text } from "shell-shock:prompts";
+import { isHelp, useArgs, useGlobal } from "shell-shock:state";
+import { findSuggestions, isInteractive } from "shell-shock:utils";
 import { handler as handleBash } from "./bash";
 import { handler as handleFish } from "./fish";
 import { handler as handlePowershell } from "./powershell";
@@ -84,15 +84,15 @@ export async function handler(args: string[] = useArgs()) {
           icon: "🖵"
         },
         {
-          value: ["completions", "zsh", "config"],
-          label: "Completions - Zsh Configuration",
-          description: `(cyclone-ui completions zsh config)`,
-          icon: "🖵"
-        },
-        {
           value: ["completions", "zsh", "script"],
           label: "Completions - Zsh Script",
           description: `(cyclone-ui completions zsh script)`,
+          icon: "🖵"
+        },
+        {
+          value: ["completions", "zsh", "config"],
+          label: "Completions - Zsh Configuration",
+          description: `(cyclone-ui completions zsh config)`,
           icon: "🖵"
         },
         {

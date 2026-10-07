@@ -179,6 +179,21 @@ export function showHelp() {
     ],
     [
       {
+        value: textColors.body.primary("--quiet"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Suppress command decorations and diagnostic messages (default: false).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
         value: textColors.body.primary("--registry <registry>"),
         align: "right",
         border: "none",
@@ -241,7 +256,7 @@ export function showHelp() {
 
   writeLine(
     textColors.body.tertiary(
-      `More information can be found in the View Registry Components command documentation at ${link("https://docs.stormsoftware.com/projects/cyclone-ui/reference/cli/view")}${textColors.body.tertiary(".")}`
+      `More information can be found in the View Registry Components command documentation at ${link("https://docs.cyclone-ui.com/reference/cli/view")}${textColors.body.tertiary(".")}`
     ),
     { padding: 0 }
   );

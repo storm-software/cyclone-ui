@@ -2,32 +2,44 @@
 /* oxlint-disable */
 // biome-ignore lint: disable
 
-import { showHelp } from "help";
-import { showHelp as showHelpAdd } from "help/add";
-import { showHelp as showHelpBuild } from "help/build";
-import { showHelp as showHelpCompletions } from "help/completions";
-import { showHelp as showHelpCompletionsBash } from "help/completions/bash";
-import { showHelp as showHelpCompletionsBashConfig } from "help/completions/bash/config";
-import { showHelp as showHelpCompletionsBashScript } from "help/completions/bash/script";
-import { showHelp as showHelpCompletionsFish } from "help/completions/fish";
-import { showHelp as showHelpCompletionsFishConfig } from "help/completions/fish/config";
-import { showHelp as showHelpCompletionsFishScript } from "help/completions/fish/script";
-import { showHelp as showHelpCompletionsPowershell } from "help/completions/powershell";
-import { showHelp as showHelpCompletionsPowershellConfig } from "help/completions/powershell/config";
-import { showHelp as showHelpCompletionsPowershellScript } from "help/completions/powershell/script";
-import { showHelp as showHelpCompletionsZsh } from "help/completions/zsh";
-import { showHelp as showHelpCompletionsZshConfig } from "help/completions/zsh/config";
-import { showHelp as showHelpCompletionsZshScript } from "help/completions/zsh/script";
-import { showHelp as showHelpDiff } from "help/diff";
-import { showHelp as showHelpDocs } from "help/docs";
-import { showHelp as showHelpHelp } from "help/help";
-import { showHelp as showHelpInfo } from "help/info";
-import { showHelp as showHelpInit } from "help/init";
-import { showHelp as showHelpRegistry } from "help/registry";
-import { showHelp as showHelpRegistryValidate } from "help/registry/validate";
-import { showHelp as showHelpSearch } from "help/search";
-import { showHelp as showHelpUpdate } from "help/update";
-import { showHelp as showHelpView } from "help/view";
+import { showHelp } from "shell-shock:help";
+import { showHelp as showHelpAdd } from "shell-shock:help/add";
+import { showHelp as showHelpAnalyzeA11Y } from "shell-shock:help/analyze-a11y";
+import { showHelp as showHelpBuild } from "shell-shock:help/build";
+import { showHelp as showHelpCompletions } from "shell-shock:help/completions";
+import { showHelp as showHelpCompletionsBash } from "shell-shock:help/completions/bash";
+import { showHelp as showHelpCompletionsBashConfig } from "shell-shock:help/completions/bash/config";
+import { showHelp as showHelpCompletionsBashScript } from "shell-shock:help/completions/bash/script";
+import { showHelp as showHelpCompletionsFish } from "shell-shock:help/completions/fish";
+import { showHelp as showHelpCompletionsFishConfig } from "shell-shock:help/completions/fish/config";
+import { showHelp as showHelpCompletionsFishScript } from "shell-shock:help/completions/fish/script";
+import { showHelp as showHelpCompletionsPowershell } from "shell-shock:help/completions/powershell";
+import { showHelp as showHelpCompletionsPowershellConfig } from "shell-shock:help/completions/powershell/config";
+import { showHelp as showHelpCompletionsPowershellScript } from "shell-shock:help/completions/powershell/script";
+import { showHelp as showHelpCompletionsZsh } from "shell-shock:help/completions/zsh";
+import { showHelp as showHelpCompletionsZshConfig } from "shell-shock:help/completions/zsh/config";
+import { showHelp as showHelpCompletionsZshScript } from "shell-shock:help/completions/zsh/script";
+import { showHelp as showHelpDiff } from "shell-shock:help/diff";
+import { showHelp as showHelpDocs } from "shell-shock:help/docs";
+import { showHelp as showHelpGuidelines } from "shell-shock:help/guidelines";
+import { showHelp as showHelpHelp } from "shell-shock:help/help";
+import { showHelp as showHelpInfo } from "shell-shock:help/info";
+import { showHelp as showHelpInit } from "shell-shock:help/init";
+import { showHelp as showHelpListComponents } from "shell-shock:help/list-components";
+import { showHelp as showHelpListFonts } from "shell-shock:help/list-fonts";
+import { showHelp as showHelpListIcons } from "shell-shock:help/list-icons";
+import { showHelp as showHelpListTokens } from "shell-shock:help/list-tokens";
+import { showHelp as showHelpMcp } from "shell-shock:help/mcp";
+import { showHelp as showHelpPlan } from "shell-shock:help/plan";
+import { showHelp as showHelpRegistry } from "shell-shock:help/registry";
+import { showHelp as showHelpRegistryValidate } from "shell-shock:help/registry/validate";
+import { showHelp as showHelpSearch } from "shell-shock:help/search";
+import { showHelp as showHelpSearchComponents } from "shell-shock:help/search-components";
+import { showHelp as showHelpSearchFonts } from "shell-shock:help/search-fonts";
+import { showHelp as showHelpSearchIcons } from "shell-shock:help/search-icons";
+import { showHelp as showHelpSearchTokens } from "shell-shock:help/search-tokens";
+import { showHelp as showHelpUpdate } from "shell-shock:help/update";
+import { showHelp as showHelpView } from "shell-shock:help/view";
 
 // Generated by Power Plant
 // Please do not edit this file manually - it will be automatically overwritten
@@ -44,6 +56,8 @@ import { showHelp as showHelpView } from "help/view";
 export default async function handler(commands: string[] = []) {
   if (commands.join("/").toLowerCase() === "add") {
     showHelpAdd();
+  } else if (commands.join("/").toLowerCase() === "analyze-a11y") {
+    showHelpAnalyzeA11Y();
   } else if (commands.join("/").toLowerCase() === "build") {
     showHelpBuild();
   } else if (commands.join("/").toLowerCase() === "completions") {
@@ -80,18 +94,40 @@ export default async function handler(commands: string[] = []) {
     showHelpDiff();
   } else if (commands.join("/").toLowerCase() === "docs") {
     showHelpDocs();
+  } else if (commands.join("/").toLowerCase() === "guidelines") {
+    showHelpGuidelines();
   } else if (commands.join("/").toLowerCase() === "help") {
     showHelpHelp();
   } else if (commands.join("/").toLowerCase() === "info") {
     showHelpInfo();
   } else if (commands.join("/").toLowerCase() === "init") {
     showHelpInit();
+  } else if (commands.join("/").toLowerCase() === "list-components") {
+    showHelpListComponents();
+  } else if (commands.join("/").toLowerCase() === "list-fonts") {
+    showHelpListFonts();
+  } else if (commands.join("/").toLowerCase() === "list-icons") {
+    showHelpListIcons();
+  } else if (commands.join("/").toLowerCase() === "list-tokens") {
+    showHelpListTokens();
+  } else if (commands.join("/").toLowerCase() === "mcp") {
+    showHelpMcp();
+  } else if (commands.join("/").toLowerCase() === "plan") {
+    showHelpPlan();
   } else if (commands.join("/").toLowerCase() === "registry") {
     showHelpRegistry();
   } else if (commands.join("/").toLowerCase() === "registry/validate") {
     showHelpRegistryValidate();
   } else if (commands.join("/").toLowerCase() === "search") {
     showHelpSearch();
+  } else if (commands.join("/").toLowerCase() === "search-components") {
+    showHelpSearchComponents();
+  } else if (commands.join("/").toLowerCase() === "search-fonts") {
+    showHelpSearchFonts();
+  } else if (commands.join("/").toLowerCase() === "search-icons") {
+    showHelpSearchIcons();
+  } else if (commands.join("/").toLowerCase() === "search-tokens") {
+    showHelpSearchTokens();
   } else if (commands.join("/").toLowerCase() === "update") {
     showHelpUpdate();
   } else if (commands.join("/").toLowerCase() === "view") {

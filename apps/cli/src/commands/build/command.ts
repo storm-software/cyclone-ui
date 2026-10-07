@@ -13,6 +13,7 @@ import {
   buildRegistry,
   readRegistryManifest
 } from "../../utilities/local-registry";
+import { success } from "shell-shock:console";
 
 export const metadata = {
   title: "Build Registry",
@@ -43,7 +44,7 @@ async function handler(
     await mkdir(dirname(file.path), { recursive: true });
     await writeFile(file.path, file.content, "utf8");
   }
-  console.log(`Built ${files.length} registry items.`);
+  success(`Built ${files.length} registry items.`);
 }
 
 export default handler;

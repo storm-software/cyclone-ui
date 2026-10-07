@@ -9,6 +9,7 @@
 import type { CommandMetadata } from "@shell-shock/core";
 import { resolve } from "node:path";
 import { CONFIG_FILE, readConfig } from "../../utilities/config";
+import { writeLine, write } from "shell-shock:console";
 
 export const metadata = {
   title: "Project Information",
@@ -36,15 +37,15 @@ async function handler(options: InfoOptions) {
   };
 
   if (options.json) {
-    console.log(JSON.stringify(data, null, 2));
+    write(JSON.stringify(data, null, 2));
     return;
   }
 
-  console.log(`Project: ${data.root}`);
-  console.log(`Configuration: ${data.configFile ?? "not initialized"}`);
+  writeLine(`Project: ${data.root}`);
+  writeLine(`Configuration: ${data.configFile ?? "not initialized"}`);
   if (config) {
-    console.log(`Registry: ${config.registry}`);
-    console.log(
+    writeLine(`Registry: ${config.registry}`);
+    writeLine(
       `Components: ${Object.keys(config.components).join(", ") || "none"}`
     );
   }

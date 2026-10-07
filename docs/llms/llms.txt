@@ -8,6 +8,7 @@
 - [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
 - [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
 - [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+- [Guidelines](llms-guidelines.txt): Style-guide rules and usage guidelines grouped by topic.
 
 ## Project Resources
 
@@ -23,6 +24,7 @@
 - [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
 - [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
 - [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+- [Guidelines](llms-guidelines.txt): Style-guide rules and usage guidelines grouped by topic.
 
 ## Project Resources
 
@@ -38,6 +40,7 @@
 - [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
 - [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
 - [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+- [Guidelines](llms-guidelines.txt): Style-guide rules and usage guidelines grouped by topic.
 
 ## Project Resources
 
@@ -53,6 +56,7 @@
 - [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
 - [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
 - [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+- [Guidelines](llms-guidelines.txt): Style-guide rules and usage guidelines grouped by topic.
 
 ## Project Resources
 
@@ -68,6 +72,7 @@
 - [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
 - [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
 - [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+- [Guidelines](llms-guidelines.txt): Style-guide rules and usage guidelines grouped by topic.
 
 ## Project Resources
 
@@ -83,6 +88,7 @@
 - [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
 - [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
 - [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+- [Guidelines](llms-guidelines.txt): Style-guide rules and usage guidelines grouped by topic.
 
 ## Project Resources
 

@@ -87,9 +87,10 @@ export async function exit(options: ExitOptions = {}) {
     }
 
     const terminate = (force = false) => {
-      verbose(
-        `The Cyclone User Interface application exited ${options.exception ? `early due to an exception` : "successfully"}${options.startDate ? `. Total run time is ${Date.now() - options.startDate.getTime() > 5000 ? Math.floor((Date.now() - options.startDate.getTime()) / 1000) : Date.now() - options.startDate.getTime()} ${Date.now() - options.startDate.getTime() > 5000 ? "seconds" : "milliseconds"}` : ""}...`
-      );
+      if (!hasFlag("quiet"))
+        verbose(
+          `The Cyclone User Interface application exited ${options.exception ? `early due to an exception` : "successfully"}${options.startDate ? `. Total run time is ${Date.now() - options.startDate.getTime() > 5000 ? Math.floor((Date.now() - options.startDate.getTime()) / 1000) : Date.now() - options.startDate.getTime()} ${Date.now() - options.startDate.getTime() > 5000 ? "seconds" : "milliseconds"}` : ""}...`
+        );
       if (!options.skipProcessExit) {
         process.nextTick(() => process.exit(exitCode));
       }
@@ -169,6 +170,11 @@ async function main(): Promise<any | { error: string | Error }> {
       const handleInit = await import("./init").then(m => m.handler);
       return handleInit(args);
     } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
+    ) {
+      const handleInfo = await import("./info").then(m => m.handler);
+      return handleInfo(args);
+    } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "docs"
     ) {
       const handleDocs = await import("./docs").then(m => m.handler);
@@ -189,11 +195,6 @@ async function main(): Promise<any | { error: string | Error }> {
       const handleAdd = await import("./add").then(m => m.handler);
       return handleAdd(args);
     } else if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
-    ) {
-      const handleInfo = await import("./info").then(m => m.handler);
-      return handleInfo(args);
-    } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
       "completions"
     ) {
@@ -206,6 +207,92 @@ async function main(): Promise<any | { error: string | Error }> {
     ) {
       const handleUpdate = await import("./update").then(m => m.handler);
       return handleUpdate(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+      "searchtokens"
+    ) {
+      const handleSearchTokens = await import("./search-tokens").then(
+        m => m.handler
+      );
+      return handleSearchTokens(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+      "listtokens"
+    ) {
+      const handleListTokens = await import("./list-tokens").then(
+        m => m.handler
+      );
+      return handleListTokens(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+      "searchcomponents"
+    ) {
+      const handleSearchComponents = await import("./search-components").then(
+        m => m.handler
+      );
+      return handleSearchComponents(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+      "listcomponents"
+    ) {
+      const handleListComponents = await import("./list-components").then(
+        m => m.handler
+      );
+      return handleListComponents(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+      "searchicons"
+    ) {
+      const handleSearchIcons = await import("./search-icons").then(
+        m => m.handler
+      );
+      return handleSearchIcons(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+      "listicons"
+    ) {
+      const handleListIcons = await import("./list-icons").then(m => m.handler);
+      return handleListIcons(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+      "searchfonts"
+    ) {
+      const handleSearchFonts = await import("./search-fonts").then(
+        m => m.handler
+      );
+      return handleSearchFonts(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+      "listfonts"
+    ) {
+      const handleListFonts = await import("./list-fonts").then(m => m.handler);
+      return handleListFonts(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "plan"
+    ) {
+      const handlePlan = await import("./plan").then(m => m.handler);
+      return handlePlan(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+      "guidelines"
+    ) {
+      const handleGuidelines = await import("./guidelines").then(
+        m => m.handler
+      );
+      return handleGuidelines(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+      "analyzea11y"
+    ) {
+      const handleAnalyzeA11Y = await import("./analyze-a11y").then(
+        m => m.handler
+      );
+      return handleAnalyzeA11Y(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "mcp"
+    ) {
+      const handleMcp = await import("./mcp").then(m => m.handler);
+      return handleMcp(args);
     } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
       "registry"
@@ -223,14 +310,26 @@ async function main(): Promise<any | { error: string | Error }> {
         "list",
         "init",
         "create",
+        "info",
         "docs",
         "diff",
         "build",
         "add",
-        "info",
         "completions",
         "update",
         "upgrade",
+        "search-tokens",
+        "list-tokens",
+        "search-components",
+        "list-components",
+        "search-icons",
+        "list-icons",
+        "search-fonts",
+        "list-fonts",
+        "plan",
+        "guidelines",
+        "analyze-a11y",
+        "mcp",
         "registry",
         "help"
       ]).slice(0, 3);
@@ -265,6 +364,12 @@ async function main(): Promise<any | { error: string | Error }> {
           icon: "🌀"
         },
         {
+          value: ["info"],
+          label: "Project Information",
+          description: `(cyclone-ui info)`,
+          icon: "ⓘ"
+        },
+        {
           value: ["docs"],
           label: "Component Documentation",
           description: `(cyclone-ui docs)`,
@@ -289,12 +394,6 @@ async function main(): Promise<any | { error: string | Error }> {
           icon: "➕"
         },
         {
-          value: ["info"],
-          label: "Project Information",
-          description: `(cyclone-ui info)`,
-          icon: "ⓘ"
-        },
-        {
           value: ["completions", "bash", "script"],
           label: "Completions - Bash Script",
           description: `(cyclone-ui completions bash script)`,
@@ -307,15 +406,15 @@ async function main(): Promise<any | { error: string | Error }> {
           icon: "🖵"
         },
         {
-          value: ["completions", "zsh", "config"],
-          label: "Completions - Zsh Configuration",
-          description: `(cyclone-ui completions zsh config)`,
-          icon: "🖵"
-        },
-        {
           value: ["completions", "zsh", "script"],
           label: "Completions - Zsh Script",
           description: `(cyclone-ui completions zsh script)`,
+          icon: "🖵"
+        },
+        {
+          value: ["completions", "zsh", "config"],
+          label: "Completions - Zsh Configuration",
+          description: `(cyclone-ui completions zsh config)`,
           icon: "🖵"
         },
         {
@@ -347,6 +446,78 @@ async function main(): Promise<any | { error: string | Error }> {
           label: "Update",
           description: `(cyclone-ui update)`,
           icon: "🖒"
+        },
+        {
+          value: ["search-tokens"],
+          label: "Search Tokens",
+          description: `(cyclone-ui search-tokens)`,
+          icon: "🎨"
+        },
+        {
+          value: ["list-tokens"],
+          label: "List Tokens",
+          description: `(cyclone-ui list-tokens)`,
+          icon: "🎨"
+        },
+        {
+          value: ["search-components"],
+          label: "Search Components",
+          description: `(cyclone-ui search-components)`,
+          icon: "🧩"
+        },
+        {
+          value: ["list-components"],
+          label: "List Components",
+          description: `(cyclone-ui list-components)`,
+          icon: "🧩"
+        },
+        {
+          value: ["search-icons"],
+          label: "Search Icons",
+          description: `(cyclone-ui search-icons)`,
+          icon: "🖼"
+        },
+        {
+          value: ["list-icons"],
+          label: "List Icons",
+          description: `(cyclone-ui list-icons)`,
+          icon: "🖼"
+        },
+        {
+          value: ["search-fonts"],
+          label: "Search Fonts",
+          description: `(cyclone-ui search-fonts)`,
+          icon: "🔤"
+        },
+        {
+          value: ["list-fonts"],
+          label: "List Fonts",
+          description: `(cyclone-ui list-fonts)`,
+          icon: "🔤"
+        },
+        {
+          value: ["plan"],
+          label: "Plan",
+          description: `(cyclone-ui plan)`,
+          icon: "🗺"
+        },
+        {
+          value: ["guidelines"],
+          label: "Guidelines",
+          description: `(cyclone-ui guidelines)`,
+          icon: "📖"
+        },
+        {
+          value: ["analyze-a11y"],
+          label: "Analyze Accessibility",
+          description: `(cyclone-ui analyze-a11y)`,
+          icon: "♿"
+        },
+        {
+          value: ["mcp"],
+          label: "MCP Server",
+          description: `(cyclone-ui mcp)`,
+          icon: "🔌"
         },
         {
           value: ["registry", "validate"],
@@ -414,6 +585,11 @@ async function main(): Promise<any | { error: string | Error }> {
         const handleInit = await import("./init").then(m => m.handler);
         return handleInit(args);
       } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
+      ) {
+        const handleInfo = await import("./info").then(m => m.handler);
+        return handleInfo(args);
+      } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "docs"
       ) {
         const handleDocs = await import("./docs").then(m => m.handler);
@@ -435,11 +611,6 @@ async function main(): Promise<any | { error: string | Error }> {
         const handleAdd = await import("./add").then(m => m.handler);
         return handleAdd(args);
       } else if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
-      ) {
-        const handleInfo = await import("./info").then(m => m.handler);
-        return handleInfo(args);
-      } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
         "completions"
       ) {
@@ -452,6 +623,96 @@ async function main(): Promise<any | { error: string | Error }> {
       ) {
         const handleUpdate = await import("./update").then(m => m.handler);
         return handleUpdate(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "searchtokens"
+      ) {
+        const handleSearchTokens = await import("./search-tokens").then(
+          m => m.handler
+        );
+        return handleSearchTokens(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "listtokens"
+      ) {
+        const handleListTokens = await import("./list-tokens").then(
+          m => m.handler
+        );
+        return handleListTokens(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "searchcomponents"
+      ) {
+        const handleSearchComponents = await import("./search-components").then(
+          m => m.handler
+        );
+        return handleSearchComponents(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "listcomponents"
+      ) {
+        const handleListComponents = await import("./list-components").then(
+          m => m.handler
+        );
+        return handleListComponents(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "searchicons"
+      ) {
+        const handleSearchIcons = await import("./search-icons").then(
+          m => m.handler
+        );
+        return handleSearchIcons(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "listicons"
+      ) {
+        const handleListIcons = await import("./list-icons").then(
+          m => m.handler
+        );
+        return handleListIcons(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "searchfonts"
+      ) {
+        const handleSearchFonts = await import("./search-fonts").then(
+          m => m.handler
+        );
+        return handleSearchFonts(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "listfonts"
+      ) {
+        const handleListFonts = await import("./list-fonts").then(
+          m => m.handler
+        );
+        return handleListFonts(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "plan"
+      ) {
+        const handlePlan = await import("./plan").then(m => m.handler);
+        return handlePlan(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "guidelines"
+      ) {
+        const handleGuidelines = await import("./guidelines").then(
+          m => m.handler
+        );
+        return handleGuidelines(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "analyzea11y"
+      ) {
+        const handleAnalyzeA11Y = await import("./analyze-a11y").then(
+          m => m.handler
+        );
+        return handleAnalyzeA11Y(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "mcp"
+      ) {
+        const handleMcp = await import("./mcp").then(m => m.handler);
+        return handleMcp(args);
       } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
         "registry"
@@ -469,14 +730,26 @@ async function main(): Promise<any | { error: string | Error }> {
           "list",
           "init",
           "create",
+          "info",
           "docs",
           "diff",
           "build",
           "add",
-          "info",
           "completions",
           "update",
           "upgrade",
+          "search-tokens",
+          "list-tokens",
+          "search-components",
+          "list-components",
+          "search-icons",
+          "list-icons",
+          "search-fonts",
+          "list-fonts",
+          "plan",
+          "guidelines",
+          "analyze-a11y",
+          "mcp",
           "registry",
           "help"
         ]).slice(0, 3);
@@ -566,8 +839,6 @@ async function main(): Promise<any | { error: string | Error }> {
         error(result.error);
       }
     });
-
-    exit({ startDate });
   } catch (err) {
     exit({ startDate, exception: err as Error });
   }

@@ -1,0 +1,205 @@
+{
+  "$theme": "dark",
+  "colors": {
+    "text": {
+      "banner": {
+        "title": {
+          "primary": "#ffffff",
+          "secondary": "#ffffff",
+          "tertiary": "#333438"
+        },
+        "header": {
+          "primary": "#ffffff",
+          "secondary": "#333438",
+          "tertiary": "#333438"
+        },
+        "footer": {
+          "primary": "#333438",
+          "secondary": "#333438",
+          "tertiary": "#333438"
+        },
+        "command": {
+          "primary": "#ffffff",
+          "secondary": "#ffffff",
+          "tertiary": "#333438"
+        },
+        "description": {
+          "primary": "#e6edf3",
+          "secondary": "#333438",
+          "tertiary": "#333438"
+        },
+        "link": {
+          "primary": "#95cdff",
+          "secondary": "#95cdff",
+          "tertiary": "#95cdff"
+        }
+      },
+      "heading": {
+        "primary": "#ffffff",
+        "secondary": "#ffffff",
+        "tertiary": "#333438"
+      },
+      "body": {
+        "primary": "#e6edf3",
+        "secondary": "#333438",
+        "tertiary": "#333438",
+        "link": "#95cdff"
+      },
+      "message": {
+        "link": {
+          "help": "#95cdff",
+          "success": "#95cdff",
+          "info": "#95cdff",
+          "debug": "#95cdff",
+          "warning": "#95cdff",
+          "danger": "#95cdff",
+          "error": "#95cdff"
+        },
+        "header": {
+          "help": "#51328f",
+          "success": "#d1f1d6",
+          "info": "#0146b0",
+          "debug": "#fafafa",
+          "warning": "#845800",
+          "danger": "#6b0023",
+          "error": "#6b0023"
+        },
+        "footer": {
+          "help": "#333438",
+          "success": "#333438",
+          "info": "#333438",
+          "debug": "#333438",
+          "warning": "#333438",
+          "danger": "#333438",
+          "error": "#333438"
+        },
+        "description": {
+          "help": "#e6edf3",
+          "success": "#e6edf3",
+          "info": "#e6edf3",
+          "debug": "#e6edf3",
+          "warning": "#e6edf3",
+          "danger": "#e6edf3",
+          "error": "#e6edf3"
+        }
+      },
+      "usage": {
+        "bin": "#ffffff",
+        "command": "#ffffff",
+        "dynamic": "#333438",
+        "options": "#0146b0",
+        "args": "#845800",
+        "description": "#333438"
+      },
+      "prompt": {
+        "icon": {
+          "active": "#ffffff",
+          "warning": "#845800",
+          "error": "#6b0023",
+          "submitted": "#d1f1d6",
+          "cancelled": "#333438",
+          "disabled": "#333438"
+        },
+        "message": {
+          "active": "#e6edf3",
+          "warning": "#845800",
+          "error": "#6b0023",
+          "submitted": "#d1f1d6",
+          "cancelled": "#333438",
+          "disabled": "#333438"
+        },
+        "input": {
+          "active": "#e6edf3",
+          "warning": "#845800",
+          "error": "#6b0023",
+          "submitted": "#d1f1d6",
+          "cancelled": "#333438",
+          "disabled": "#333438",
+          "inactive": "#333438",
+          "placeholder": "#333438"
+        },
+        "description": {
+          "active": "#333438",
+          "warning": "#845800",
+          "error": "#6b0023",
+          "submitted": "#d1f1d6",
+          "cancelled": "#333438",
+          "disabled": "#333438",
+          "inactive": "#333438"
+        }
+      },
+      "spinner": {
+        "icon": {
+          "active": "#ffffff",
+          "error": "#6b0023",
+          "success": "#d1f1d6",
+          "help": "#51328f",
+          "info": "#0146b0",
+          "warning": "#845800"
+        },
+        "message": {
+          "active": "#e6edf3",
+          "error": "#6b0023",
+          "success": "#d1f1d6",
+          "help": "#51328f",
+          "info": "#0146b0",
+          "warning": "#845800"
+        }
+      },
+      "tags": {
+        "$default": "#ffffff"
+      }
+    },
+    "border": {
+      "app": {
+        "table": {
+          "primary": "#333438",
+          "secondary": "#333438",
+          "tertiary": "#333438"
+        },
+        "divider": {
+          "primary": "#333438",
+          "secondary": "#333438",
+          "tertiary": "#333438"
+        },
+        "blockquote": {
+          "primary": "#333438",
+          "secondary": "#333438",
+          "tertiary": "#333438"
+        }
+      },
+      "banner": {
+        "outline": {
+          "primary": "#ffffff",
+          "secondary": "#ffffff",
+          "tertiary": "#333438"
+        },
+        "divider": {
+          "primary": "#333438",
+          "secondary": "#333438",
+          "tertiary": "#333438"
+        }
+      },
+      "message": {
+        "outline": {
+          "help": "#51328f",
+          "success": "#d1f1d6",
+          "info": "#0146b0",
+          "debug": "#fafafa",
+          "warning": "#845800",
+          "danger": "#6b0023",
+          "error": "#6b0023"
+        },
+        "divider": {
+          "help": "#51328f",
+          "success": "#d1f1d6",
+          "info": "#0146b0",
+          "debug": "#fafafa",
+          "warning": "#845800",
+          "danger": "#6b0023",
+          "error": "#6b0023"
+        }
+      }
+    }
+  }
+}

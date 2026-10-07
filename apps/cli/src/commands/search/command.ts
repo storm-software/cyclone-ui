@@ -11,6 +11,7 @@ import { type CommandMetadata } from "@shell-shock/core";
 import { resolve } from "node:path";
 import { readConfig } from "../../utilities/config";
 import { registryClient } from "../../utilities/registry";
+import { write } from "shell-shock:console";
 
 export const metadata = {
   title: "Search Registry",
@@ -54,7 +55,7 @@ async function handler(options: SearchOptions) {
     )
     .slice(offset, offset + limit);
 
-  console.log(
+  write(
     options.json
       ? JSON.stringify(filtered, null, 2)
       : filtered

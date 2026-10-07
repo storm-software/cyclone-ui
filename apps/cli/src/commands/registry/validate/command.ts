@@ -9,6 +9,7 @@
 import type { CommandMetadata } from "@shell-shock/core";
 import { resolve } from "node:path";
 import { readRegistryManifest } from "../../../utilities/local-registry";
+import { success } from "shell-shock:console";
 
 export const metadata = {
   title: "Validate Registry",
@@ -28,7 +29,8 @@ async function handler(
 ) {
   const root = resolve(options.cwd ?? process.cwd());
   const manifest = await readRegistryManifest(resolve(root, registry));
-  console.log(`Registry is valid (${manifest.items.length} items).`);
+
+  success(`Registry is valid (${manifest.items.length} items).`);
 }
 
 export default handler;

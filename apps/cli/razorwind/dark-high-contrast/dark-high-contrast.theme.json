@@ -1,0 +1,205 @@
+{
+  "$theme": "dark-high-contrast",
+  "colors": {
+    "text": {
+      "banner": {
+        "title": {
+          "primary": "#ffffff",
+          "secondary": "#ffffff",
+          "tertiary": "#121316"
+        },
+        "header": {
+          "primary": "#ffffff",
+          "secondary": "#121316",
+          "tertiary": "#121316"
+        },
+        "footer": {
+          "primary": "#121316",
+          "secondary": "#121316",
+          "tertiary": "#121316"
+        },
+        "command": {
+          "primary": "#ffffff",
+          "secondary": "#ffffff",
+          "tertiary": "#121316"
+        },
+        "description": {
+          "primary": "#e6edf3",
+          "secondary": "#121316",
+          "tertiary": "#121316"
+        },
+        "link": {
+          "primary": "#d8edff",
+          "secondary": "#d8edff",
+          "tertiary": "#d8edff"
+        }
+      },
+      "heading": {
+        "primary": "#ffffff",
+        "secondary": "#ffffff",
+        "tertiary": "#121316"
+      },
+      "body": {
+        "primary": "#e6edf3",
+        "secondary": "#121316",
+        "tertiary": "#121316",
+        "link": "#d8edff"
+      },
+      "message": {
+        "link": {
+          "help": "#d8edff",
+          "success": "#d8edff",
+          "info": "#d8edff",
+          "debug": "#d8edff",
+          "warning": "#d8edff",
+          "danger": "#d8edff",
+          "error": "#d8edff"
+        },
+        "header": {
+          "help": "#3f198c",
+          "success": "#ffffff",
+          "info": "#00388e",
+          "debug": "#ffffff",
+          "warning": "#4d3300",
+          "danger": "#28000d",
+          "error": "#28000d"
+        },
+        "footer": {
+          "help": "#121316",
+          "success": "#121316",
+          "info": "#121316",
+          "debug": "#121316",
+          "warning": "#121316",
+          "danger": "#121316",
+          "error": "#121316"
+        },
+        "description": {
+          "help": "#e6edf3",
+          "success": "#e6edf3",
+          "info": "#e6edf3",
+          "debug": "#e6edf3",
+          "warning": "#e6edf3",
+          "danger": "#e6edf3",
+          "error": "#e6edf3"
+        }
+      },
+      "usage": {
+        "bin": "#ffffff",
+        "command": "#ffffff",
+        "dynamic": "#121316",
+        "options": "#00388e",
+        "args": "#4d3300",
+        "description": "#121316"
+      },
+      "prompt": {
+        "icon": {
+          "active": "#ffffff",
+          "warning": "#4d3300",
+          "error": "#28000d",
+          "submitted": "#ffffff",
+          "cancelled": "#121316",
+          "disabled": "#121316"
+        },
+        "message": {
+          "active": "#e6edf3",
+          "warning": "#4d3300",
+          "error": "#28000d",
+          "submitted": "#ffffff",
+          "cancelled": "#121316",
+          "disabled": "#121316"
+        },
+        "input": {
+          "active": "#e6edf3",
+          "warning": "#4d3300",
+          "error": "#28000d",
+          "submitted": "#ffffff",
+          "cancelled": "#121316",
+          "disabled": "#121316",
+          "inactive": "#121316",
+          "placeholder": "#121316"
+        },
+        "description": {
+          "active": "#121316",
+          "warning": "#4d3300",
+          "error": "#28000d",
+          "submitted": "#ffffff",
+          "cancelled": "#121316",
+          "disabled": "#121316",
+          "inactive": "#121316"
+        }
+      },
+      "spinner": {
+        "icon": {
+          "active": "#ffffff",
+          "error": "#28000d",
+          "success": "#ffffff",
+          "help": "#3f198c",
+          "info": "#00388e",
+          "warning": "#4d3300"
+        },
+        "message": {
+          "active": "#e6edf3",
+          "error": "#28000d",
+          "success": "#ffffff",
+          "help": "#3f198c",
+          "info": "#00388e",
+          "warning": "#4d3300"
+        }
+      },
+      "tags": {
+        "$default": "#ffffff"
+      }
+    },
+    "border": {
+      "app": {
+        "table": {
+          "primary": "#121316",
+          "secondary": "#121316",
+          "tertiary": "#121316"
+        },
+        "divider": {
+          "primary": "#121316",
+          "secondary": "#121316",
+          "tertiary": "#121316"
+        },
+        "blockquote": {
+          "primary": "#121316",
+          "secondary": "#121316",
+          "tertiary": "#121316"
+        }
+      },
+      "banner": {
+        "outline": {
+          "primary": "#ffffff",
+          "secondary": "#ffffff",
+          "tertiary": "#121316"
+        },
+        "divider": {
+          "primary": "#121316",
+          "secondary": "#121316",
+          "tertiary": "#121316"
+        }
+      },
+      "message": {
+        "outline": {
+          "help": "#3f198c",
+          "success": "#ffffff",
+          "info": "#00388e",
+          "debug": "#ffffff",
+          "warning": "#4d3300",
+          "danger": "#28000d",
+          "error": "#28000d"
+        },
+        "divider": {
+          "help": "#3f198c",
+          "success": "#ffffff",
+          "info": "#00388e",
+          "debug": "#ffffff",
+          "warning": "#4d3300",
+          "danger": "#28000d",
+          "error": "#28000d"
+        }
+      }
+    }
+  }
+}

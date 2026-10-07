@@ -8,6 +8,7 @@ import { env, isDebug, isDevelopment } from "shell-shock:env";
 import { showHelp } from "shell-shock:help/update";
 import {
   type GlobalOptions,
+  hasFlag,
   isHelp,
   useArgs,
   useGlobalOptions,
@@ -130,10 +131,12 @@ export async function handler(args: string[] = useArgs()) {
     }
   }
 
-  await showBanner();
-  await executeUpdate();
+  if (!hasFlag("quiet")) {
+    await showBanner();
+    await executeUpdate();
+  }
 
-  if (!isHelp()) {
+  if (!isHelp() && !hasFlag("quiet")) {
     writeLine("");
     if (isDevelopment || isDebug || env.LOG_LEVEL === "debug") {
       writeLine(

@@ -37,7 +37,7 @@ import { isUnicodeSupported } from "shell-shock:utils";
  */
 export function showHelp() {
   writeLine(
-    `${bold(textColors.heading.secondary("Tags: "))} ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.$default(inverse(" Utility "))}`,
+    `${bold(textColors.heading.secondary("Tags: "))} ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.default(inverse(" Utility "))}`,
     { padding: 0 }
   );
   writeLine(bold(textColors.heading.secondary("Common Options:")));
@@ -54,7 +54,7 @@ export function showHelp() {
   writeLine(
     textColors.heading.primary(
       (isUnicodeSupported ? " 🖵  " : "") +
-        `${underline("Completions - PowerShell Configuration")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.$default(inverse(" Utility "))}`
+        `${underline("Completions - PowerShell Configuration")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.default(inverse(" Utility "))}`
     )
   );
   writeLine("");
@@ -105,7 +105,7 @@ export function showHelp() {
   writeLine(
     textColors.heading.primary(
       (isUnicodeSupported ? " 🖵  " : "") +
-        `${underline("Completions - PowerShell Script")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.$default(inverse(" Utility "))}`
+        `${underline("Completions - PowerShell Script")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.default(inverse(" Utility "))}`
     )
   );
   writeLine("");
@@ -155,7 +155,7 @@ export function showHelp() {
   writeLine("");
   writeLine(
     textColors.body.tertiary(
-      `More information can be found in the Completions - PowerShell command documentation at ${link("https://docs.stormsoftware.com/projects/cyclone-ui/reference/cli/completions/powershell")}${textColors.body.tertiary(".")}`
+      `More information can be found in the Completions - PowerShell command documentation at ${link("https://docs.cyclone-ui.com/reference/cli/completions/powershell")}${textColors.body.tertiary(".")}`
     ),
     { padding: 0 }
   );

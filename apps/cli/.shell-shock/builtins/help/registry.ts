@@ -94,7 +94,7 @@ export function showHelp() {
   writeLine("");
   writeLine(
     textColors.body.tertiary(
-      `More information can be found in the Registry Commands command documentation at ${link("https://docs.stormsoftware.com/projects/cyclone-ui/reference/cli/registry")}${textColors.body.tertiary(".")}`
+      `More information can be found in the Registry Commands command documentation at ${link("https://docs.cyclone-ui.com/reference/cli/registry")}${textColors.body.tertiary(".")}`
     ),
     { padding: 0 }
   );

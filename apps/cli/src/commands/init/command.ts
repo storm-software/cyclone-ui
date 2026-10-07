@@ -21,6 +21,7 @@ import {
   writeConfig
 } from "../../utilities/config";
 import { registryClient } from "../../utilities/registry";
+import { success } from "shell-shock:console";
 
 export const metadata = {
   title: "Initialize",
@@ -73,7 +74,9 @@ async function handler(
     await writeConfig(root, config);
   }
 
-  if (!options.silent) console.log(`Initialized Cyclone UI in ${root}.`);
+  if (!options.silent) {
+    success(`Initialized Cyclone UI in ${root}.`);
+  }
 }
 
 export default handler;

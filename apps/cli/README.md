@@ -95,7 +95,10 @@ commands are available to assist in development.
 
 ### Building
 
-Run `nx build cli` to build the library.
+Run `nx build cli` to build the library. The Razorwind Shell Shock plugin
+extracts this repository's design system during the build and bakes its tokens,
+components, icons and fonts into CLI commands and MCP tools. No Razorwind
+configuration or generated snapshot is needed at runtime.
 
 ### Running unit tests
 

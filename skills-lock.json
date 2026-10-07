@@ -55,6 +55,18 @@
       "skillPath": "skills/react-email/SKILL.md",
       "computedHash": "da0feefc6ddf4aaeff930ab203d269774da464429e35b178d2403d69d2dc2fb3"
     },
+    "shell-shock-add-command": {
+      "source": "storm-software/shell-shock",
+      "sourceType": "github",
+      "skillPath": "skills/shell-shock-add-command/SKILL.md",
+      "computedHash": "a0b4f57398d2308c4d7a14d528a9830db064b7836fe0702069187bd9908da860"
+    },
+    "shell-shock-best-practices": {
+      "source": "storm-software/shell-shock",
+      "sourceType": "github",
+      "skillPath": "skills/shell-shock-best-practices/SKILL.md",
+      "computedHash": "6147e59888c6c11ffc83c096e20c307bab941d3adc617604463652d8438d25a2"
+    },
     "storybook": {
       "source": "dalestudy/skills",
       "sourceType": "github",

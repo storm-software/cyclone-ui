@@ -1187,7 +1187,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_ID
    * @alias SHELL_SHOCK_BUILD_ID
-   * @defaultValue "11aefde8-a1ce-4364-a0e5-7b3720932d0e"
+   * @defaultValue "7c3662a5-fcb1-443c-aefc-9a815bc8575f"
    */
   CYCLONE_UI_BUILD_ID: string;
 
@@ -1196,7 +1196,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_TIMESTAMP
    * @alias SHELL_SHOCK_BUILD_TIMESTAMP
-   * @defaultValue "2026-10-04T09:07:39.448Z"
+   * @defaultValue "2026-10-07T00:43:26.929Z"
    */
   CYCLONE_UI_BUILD_TIMESTAMP: string;
 
@@ -1205,7 +1205,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_CHECKSUM
    * @alias SHELL_SHOCK_BUILD_CHECKSUM
-   * @defaultValue "pEcBNw-CdC8NjKw4cObTI6bXN1r5Ell-"
+   * @defaultValue "MFRAG-79rcBY1dlZ7GiildNiZc8-tu2e"
    */
   CYCLONE_UI_BUILD_CHECKSUM: string;
 
@@ -1214,7 +1214,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias RELEASE_ID
    * @alias SHELL_SHOCK_RELEASE_ID
-   * @defaultValue "aefde8a1-ce33-44a0-a57b-3720932d0ef1"
+   * @defaultValue "3662a5fc-b1e4-4c2e-bc9a-815bc8575f45"
    */
   CYCLONE_UI_RELEASE_ID: string;
 
@@ -1310,7 +1310,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias MINIMAL
    * @alias SHELL_SHOCK_MINIMAL
-   *
+   * @defaultValue false
    */
   CYCLONE_UI_MINIMAL: boolean;
 
@@ -1319,7 +1319,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias NO_COLOR
    * @alias SHELL_SHOCK_NO_COLOR
-   *
+   * @defaultValue false
    */
   CYCLONE_UI_NO_COLOR: boolean;
 
@@ -1337,7 +1337,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias FORCE_HYPERLINK
    * @alias SHELL_SHOCK_FORCE_HYPERLINK
-   *
+   * @defaultValue false
    */
   CYCLONE_UI_FORCE_HYPERLINK: boolean;
 
@@ -1476,7 +1476,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias INCLUDE_ERROR_DATA
    * @alias SHELL_SHOCK_INCLUDE_ERROR_DATA
-   *
+   * @defaultValue false
    */
   CYCLONE_UI_INCLUDE_ERROR_DATA: boolean;
 
@@ -1526,7 +1526,7 @@ export interface Env extends UnprefixedEnv {
    * @alias CYCLONE_UI_CONTINUOUS_INTEGRATION
    * @alias SHELL_SHOCK_CI
    * @alias SHELL_SHOCK_CONTINUOUS_INTEGRATION
-   *
+   * @defaultValue false
    */
   CYCLONE_UI_CI: boolean;
 
@@ -2321,7 +2321,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_ID
    * @alias CYCLONE_UI_BUILD_ID
-   * @defaultValue "11aefde8-a1ce-4364-a0e5-7b3720932d0e"
+   * @defaultValue "7c3662a5-fcb1-443c-aefc-9a815bc8575f"
    */
   SHELL_SHOCK_BUILD_ID: string;
 
@@ -2330,7 +2330,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_TIMESTAMP
    * @alias CYCLONE_UI_BUILD_TIMESTAMP
-   * @defaultValue "2026-10-04T09:07:39.448Z"
+   * @defaultValue "2026-10-07T00:43:26.929Z"
    */
   SHELL_SHOCK_BUILD_TIMESTAMP: string;
 
@@ -2339,7 +2339,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_CHECKSUM
    * @alias CYCLONE_UI_BUILD_CHECKSUM
-   * @defaultValue "pEcBNw-CdC8NjKw4cObTI6bXN1r5Ell-"
+   * @defaultValue "MFRAG-79rcBY1dlZ7GiildNiZc8-tu2e"
    */
   SHELL_SHOCK_BUILD_CHECKSUM: string;
 
@@ -2348,7 +2348,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias RELEASE_ID
    * @alias CYCLONE_UI_RELEASE_ID
-   * @defaultValue "aefde8a1-ce33-44a0-a57b-3720932d0ef1"
+   * @defaultValue "3662a5fc-b1e4-4c2e-bc9a-815bc8575f45"
    */
   SHELL_SHOCK_RELEASE_ID: string;
 
@@ -2444,7 +2444,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias MINIMAL
    * @alias CYCLONE_UI_MINIMAL
-   *
+   * @defaultValue false
    */
   SHELL_SHOCK_MINIMAL: boolean;
 
@@ -2453,7 +2453,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias NO_COLOR
    * @alias CYCLONE_UI_NO_COLOR
-   *
+   * @defaultValue false
    */
   SHELL_SHOCK_NO_COLOR: boolean;
 
@@ -2471,7 +2471,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias FORCE_HYPERLINK
    * @alias CYCLONE_UI_FORCE_HYPERLINK
-   *
+   * @defaultValue false
    */
   SHELL_SHOCK_FORCE_HYPERLINK: boolean;
 
@@ -2610,7 +2610,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias INCLUDE_ERROR_DATA
    * @alias CYCLONE_UI_INCLUDE_ERROR_DATA
-   *
+   * @defaultValue false
    */
   SHELL_SHOCK_INCLUDE_ERROR_DATA: boolean;
 
@@ -2660,7 +2660,7 @@ export interface Env extends UnprefixedEnv {
    * @alias CYCLONE_UI_CI
    * @alias CYCLONE_UI_CONTINUOUS_INTEGRATION
    * @alias SHELL_SHOCK_CONTINUOUS_INTEGRATION
-   *
+   * @defaultValue false
    */
   SHELL_SHOCK_CI: boolean;
 
@@ -3481,6 +3481,18 @@ export const initialEnv: Partial<Env> = {
    */
   BUILD_TIMESTAMP: undefined,
   /**
+   * An indicator that specifies the current runtime is a continuous integration environment.
+   *
+   * @title Continuous Integration
+   * @alias CONTINUOUS_INTEGRATION
+   * @alias CYCLONE_UI_CI
+   * @alias CYCLONE_UI_CONTINUOUS_INTEGRATION
+   * @alias SHELL_SHOCK_CI
+   * @alias SHELL_SHOCK_CONTINUOUS_INTEGRATION
+   *
+   */
+  CI: undefined,
+  /**
    * Indicates if the application is running in debug mode.
    *
    * @alias CYCLONE_UI_DEBUG
@@ -3530,6 +3542,22 @@ export const initialEnv: Partial<Env> = {
    */
   FORCE_COLOR: undefined,
   /**
+   * An indicator that specifies the current runtime should force hyperlinks in terminal output. This variable is used to force hyperlinks in terminal output, even if the terminal does not support them. This is useful for debugging and development purposes.
+   *
+   * @alias CYCLONE_UI_FORCE_HYPERLINK
+   * @alias SHELL_SHOCK_FORCE_HYPERLINK
+   *
+   */
+  FORCE_HYPERLINK: undefined,
+  /**
+   * Indicates if error data should be included.
+   *
+   * @alias CYCLONE_UI_INCLUDE_ERROR_DATA
+   * @alias SHELL_SHOCK_INCLUDE_ERROR_DATA
+   *
+   */
+  INCLUDE_ERROR_DATA: undefined,
+  /**
    * The default lowest log level to accept. If `null`, the logger will reject all records.
    *
    * @alias CYCLONE_UI_LOG_LEVEL
@@ -3537,6 +3565,14 @@ export const initialEnv: Partial<Env> = {
    *
    */
   LOG_LEVEL: undefined,
+  /**
+   * An indicator that specifies the current runtime is a minimal environment.
+   *
+   * @alias CYCLONE_UI_MINIMAL
+   * @alias SHELL_SHOCK_MINIMAL
+   *
+   */
+  MINIMAL: undefined,
   /**
    * The mode in which the application is running.
    *
@@ -3554,6 +3590,14 @@ export const initialEnv: Partial<Env> = {
    *
    */
   MODE: undefined,
+  /**
+   * An indicator that specifies the current runtime is a no color environment.
+   *
+   * @alias CYCLONE_UI_NO_COLOR
+   * @alias SHELL_SHOCK_NO_COLOR
+   *
+   */
+  NO_COLOR: undefined,
   /**
    * The name of the organization that maintains the application. This variable is used to specify the name of the organization that maintains the application. If not provided in an environment, it will try to use the value in StormWorkspaceConfig.organization.
    *
@@ -3718,7 +3762,7 @@ export function parseSafe(
           envValue["BUILD_ID"];
         const buildIdPath = envPath + ".BUILD_ID";
         if (buildIdValue === undefined || buildIdValue === "") {
-          buildIdProperty = "11aefde8-a1ce-4364-a0e5-7b3720932d0e";
+          buildIdProperty = "7c3662a5-fcb1-443c-aefc-9a815bc8575f";
         } else {
           if (typeof buildIdValue === "string") {
             buildIdProperty = buildIdValue;
@@ -3737,7 +3781,7 @@ export function parseSafe(
         }
         envSchema["BUILD_ID"] = buildIdProperty;
       } else {
-        envSchema["BUILD_ID"] = "11aefde8-a1ce-4364-a0e5-7b3720932d0e";
+        envSchema["BUILD_ID"] = "7c3662a5-fcb1-443c-aefc-9a815bc8575f";
       }
       if (
         (envValue["CYCLONE_UI_BUILD_TIMESTAMP"] ||
@@ -3751,7 +3795,7 @@ export function parseSafe(
           envValue["BUILD_TIMESTAMP"];
         const buildTimestampPath = envPath + ".BUILD_TIMESTAMP";
         if (buildTimestampValue === undefined || buildTimestampValue === "") {
-          buildTimestampProperty = "2026-10-04T09:07:39.448Z";
+          buildTimestampProperty = "2026-10-07T00:43:26.929Z";
         } else {
           if (typeof buildTimestampValue === "string") {
             buildTimestampProperty = buildTimestampValue;
@@ -3770,7 +3814,7 @@ export function parseSafe(
         }
         envSchema["BUILD_TIMESTAMP"] = buildTimestampProperty;
       } else {
-        envSchema["BUILD_TIMESTAMP"] = "2026-10-04T09:07:39.448Z";
+        envSchema["BUILD_TIMESTAMP"] = "2026-10-07T00:43:26.929Z";
       }
       if (
         (envValue["CYCLONE_UI_BUILD_CHECKSUM"] ||
@@ -3784,7 +3828,7 @@ export function parseSafe(
           envValue["BUILD_CHECKSUM"];
         const buildChecksumPath = envPath + ".BUILD_CHECKSUM";
         if (buildChecksumValue === undefined || buildChecksumValue === "") {
-          buildChecksumProperty = "pEcBNw-CdC8NjKw4cObTI6bXN1r5Ell-";
+          buildChecksumProperty = "MFRAG-79rcBY1dlZ7GiildNiZc8-tu2e";
         } else {
           if (typeof buildChecksumValue === "string") {
             buildChecksumProperty = buildChecksumValue;
@@ -3803,7 +3847,7 @@ export function parseSafe(
         }
         envSchema["BUILD_CHECKSUM"] = buildChecksumProperty;
       } else {
-        envSchema["BUILD_CHECKSUM"] = "pEcBNw-CdC8NjKw4cObTI6bXN1r5Ell-";
+        envSchema["BUILD_CHECKSUM"] = "MFRAG-79rcBY1dlZ7GiildNiZc8-tu2e";
       }
       if (
         (envValue["CYCLONE_UI_RELEASE_ID"] ||
@@ -3817,7 +3861,7 @@ export function parseSafe(
           envValue["RELEASE_ID"];
         const releaseIdPath = envPath + ".RELEASE_ID";
         if (releaseIdValue === undefined || releaseIdValue === "") {
-          releaseIdProperty = "aefde8a1-ce33-44a0-a57b-3720932d0ef1";
+          releaseIdProperty = "3662a5fc-b1e4-4c2e-bc9a-815bc8575f45";
         } else {
           if (typeof releaseIdValue === "string") {
             releaseIdProperty = releaseIdValue;
@@ -3836,7 +3880,7 @@ export function parseSafe(
         }
         envSchema["RELEASE_ID"] = releaseIdProperty;
       } else {
-        envSchema["RELEASE_ID"] = "aefde8a1-ce33-44a0-a57b-3720932d0ef1";
+        envSchema["RELEASE_ID"] = "3662a5fc-b1e4-4c2e-bc9a-815bc8575f45";
       }
       if (
         (envValue["CYCLONE_UI_RELEASE_TAG"] ||
@@ -4170,8 +4214,7 @@ export function parseSafe(
           envValue["MINIMAL"];
         const minimalPath = envPath + ".MINIMAL";
         if (minimalValue === undefined) {
-          errors.push({ path: minimalPath, failure: "A value is required" });
-          minimalProperty = minimalValue;
+          minimalProperty = false;
         } else {
           if (typeof minimalValue === "boolean") {
             minimalProperty = minimalValue;
@@ -4207,10 +4250,7 @@ export function parseSafe(
         }
         envSchema["MINIMAL"] = minimalProperty;
       } else {
-        errors.push({
-          path: envPath + ".MINIMAL",
-          failure: "Required property is missing"
-        });
+        envSchema["MINIMAL"] = false;
       }
       if (
         (envValue["CYCLONE_UI_NO_COLOR"] ??
@@ -4224,8 +4264,7 @@ export function parseSafe(
           envValue["NO_COLOR"];
         const noColorPath = envPath + ".NO_COLOR";
         if (noColorValue === undefined) {
-          errors.push({ path: noColorPath, failure: "A value is required" });
-          noColorProperty = noColorValue;
+          noColorProperty = false;
         } else {
           if (typeof noColorValue === "boolean") {
             noColorProperty = noColorValue;
@@ -4261,10 +4300,7 @@ export function parseSafe(
         }
         envSchema["NO_COLOR"] = noColorProperty;
       } else {
-        errors.push({
-          path: envPath + ".NO_COLOR",
-          failure: "Required property is missing"
-        });
+        envSchema["NO_COLOR"] = false;
       }
       if (
         (envValue["CYCLONE_UI_FORCE_COLOR"] ??
@@ -4328,11 +4364,7 @@ export function parseSafe(
           envValue["FORCE_HYPERLINK"];
         const forceHyperlinkPath = envPath + ".FORCE_HYPERLINK";
         if (forceHyperlinkValue === undefined) {
-          errors.push({
-            path: forceHyperlinkPath,
-            failure: "A value is required"
-          });
-          forceHyperlinkProperty = forceHyperlinkValue;
+          forceHyperlinkProperty = false;
         } else {
           if (typeof forceHyperlinkValue === "boolean") {
             forceHyperlinkProperty = forceHyperlinkValue;
@@ -4369,10 +4401,7 @@ export function parseSafe(
         }
         envSchema["FORCE_HYPERLINK"] = forceHyperlinkProperty;
       } else {
-        errors.push({
-          path: envPath + ".FORCE_HYPERLINK",
-          failure: "Required property is missing"
-        });
+        envSchema["FORCE_HYPERLINK"] = false;
       }
       if (
         (envValue["CYCLONE_UI_AGENT_NAME"] ||
@@ -4417,8 +4446,9 @@ export function parseSafe(
           envValue["SHELL_SHOCK_COLORTERM"] ||
           envValue["COLORTERM"];
         const colortermPath = envPath + ".COLORTERM";
-        if (colortermValue === undefined || colortermValue === "") {
-          colortermProperty = "truecolor";
+        if (colortermValue === undefined) {
+          errors.push({ path: colortermPath, failure: "A value is required" });
+          colortermProperty = colortermValue;
         } else {
           if (typeof colortermValue === "string") {
             colortermProperty = colortermValue;
@@ -4436,8 +4466,6 @@ export function parseSafe(
           }
         }
         envSchema["COLORTERM"] = colortermProperty;
-      } else {
-        envSchema["COLORTERM"] = "truecolor";
       }
       if (
         (envValue["CYCLONE_UI_TERM"] ||
@@ -4450,8 +4478,9 @@ export function parseSafe(
           envValue["SHELL_SHOCK_TERM"] ||
           envValue["TERM"];
         const termPath = envPath + ".TERM";
-        if (termValue === undefined || termValue === "") {
-          termProperty = "xterm-256color";
+        if (termValue === undefined) {
+          errors.push({ path: termPath, failure: "A value is required" });
+          termProperty = termValue;
         } else {
           if (typeof termValue === "string") {
             termProperty = termValue;
@@ -4466,8 +4495,6 @@ export function parseSafe(
           }
         }
         envSchema["TERM"] = termProperty;
-      } else {
-        envSchema["TERM"] = "xterm-256color";
       }
       if (
         (envValue["CYCLONE_UI_TERM_PROGRAM"] ||
@@ -4821,11 +4848,7 @@ export function parseSafe(
           envValue["INCLUDE_ERROR_DATA"];
         const includeErrorDataPath = envPath + ".INCLUDE_ERROR_DATA";
         if (includeErrorDataValue === undefined) {
-          errors.push({
-            path: includeErrorDataPath,
-            failure: "A value is required"
-          });
-          includeErrorDataProperty = includeErrorDataValue;
+          includeErrorDataProperty = false;
         } else {
           if (typeof includeErrorDataValue === "boolean") {
             includeErrorDataProperty = includeErrorDataValue;
@@ -4863,10 +4886,7 @@ export function parseSafe(
         }
         envSchema["INCLUDE_ERROR_DATA"] = includeErrorDataProperty;
       } else {
-        errors.push({
-          path: envPath + ".INCLUDE_ERROR_DATA",
-          failure: "Required property is missing"
-        });
+        envSchema["INCLUDE_ERROR_DATA"] = false;
       }
       if (
         (envValue["CYCLONE_UI_ERROR_URL"] ||
@@ -5122,8 +5142,7 @@ export function parseSafe(
           envValue["CI"];
         const ciPath = envPath + ".CI";
         if (ciValue === undefined) {
-          errors.push({ path: ciPath, failure: "A value is required" });
-          ciProperty = ciValue;
+          ciProperty = false;
         } else {
           if (typeof ciValue === "boolean") {
             ciProperty = ciValue;
@@ -5156,10 +5175,7 @@ export function parseSafe(
         }
         envSchema["CI"] = ciProperty;
       } else {
-        errors.push({
-          path: envPath + ".CI",
-          failure: "Required property is missing"
-        });
+        envSchema["CI"] = false;
       }
       if (
         (envValue["CYCLONE_UI_RUN_ID"] ||
@@ -7178,8 +7194,12 @@ export function parseSafe(
           envValue["SHELL_SHOCK_XDG_RUNTIME_DIR"] ||
           envValue["XDG_RUNTIME_DIR"];
         const xdgRuntimeDirPath = envPath + ".XDG_RUNTIME_DIR";
-        if (xdgRuntimeDirValue === undefined || xdgRuntimeDirValue === "") {
-          xdgRuntimeDirProperty = "/run/user/1001";
+        if (xdgRuntimeDirValue === undefined) {
+          errors.push({
+            path: xdgRuntimeDirPath,
+            failure: "A value is required"
+          });
+          xdgRuntimeDirProperty = xdgRuntimeDirValue;
         } else {
           if (typeof xdgRuntimeDirValue === "string") {
             xdgRuntimeDirProperty = xdgRuntimeDirValue;
@@ -7197,8 +7217,6 @@ export function parseSafe(
           }
         }
         envSchema["XDG_RUNTIME_DIR"] = xdgRuntimeDirProperty;
-      } else {
-        envSchema["XDG_RUNTIME_DIR"] = "/run/user/1001";
       }
       if (
         (envValue["CYCLONE_UI_DEVENV_RUNTIME"] ||
@@ -7211,8 +7229,12 @@ export function parseSafe(
           envValue["SHELL_SHOCK_DEVENV_RUNTIME"] ||
           envValue["DEVENV_RUNTIME"];
         const devenvRuntimePath = envPath + ".DEVENV_RUNTIME";
-        if (devenvRuntimeValue === undefined || devenvRuntimeValue === "") {
-          devenvRuntimeProperty = "/run/user/1001/devenv-34e56cb";
+        if (devenvRuntimeValue === undefined) {
+          errors.push({
+            path: devenvRuntimePath,
+            failure: "A value is required"
+          });
+          devenvRuntimeProperty = devenvRuntimeValue;
         } else {
           if (typeof devenvRuntimeValue === "string") {
             devenvRuntimeProperty = devenvRuntimeValue;
@@ -7230,8 +7252,6 @@ export function parseSafe(
           }
         }
         envSchema["DEVENV_RUNTIME"] = devenvRuntimeProperty;
-      } else {
-        envSchema["DEVENV_RUNTIME"] = "/run/user/1001/devenv-34e56cb";
       }
       if (
         (envValue["CYCLONE_UI_PATHEXT"] ||
@@ -7276,9 +7296,9 @@ export function parseSafe(
           envValue["SHELL_SHOCK_PATH"] ||
           envValue["PATH"];
         const pathPath = envPath + ".PATH";
-        if (pathValue === undefined || pathValue === "") {
-          pathProperty =
-            "/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:./node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/repos/cyclone-ui/.devenv/profiles/development/state/venv/bin:node_modules/.bin:/nix/store/fq36i63v358zxc1s14in0r3bmwgxvsyy-bootstrap/bin:/nix/store/8mins7nnh17hyqwabw69wi4ckwllddkp-build/bin:/nix/store/s58zshchvg58lnyhmzvsb8lzl7cp7640-build-dev/bin:/nix/store/db91clmza06zk2mxii24jjbr18n91k8n-clean/bin:/nix/store/b75wkvcpq67z0g5j49p4q7zmb76npgzm-docs/bin:/nix/store/m5mb9pjlqyjhwxb1g2mfj7wgxfyyj8gr-format/bin:/nix/store/0463iqahjvrhih81qcm0h1lsiqqmnzf1-graphify-build/bin:/nix/store/pjlwvplvxjflqbzwffis62mnmcikk59r-graphify-query/bin:/nix/store/jprgvsan03ms50nsharfd58nb5ih131s-lint/bin:/nix/store/gq3zjkaciij77rg7k7hdanmg7xlg4mi3-nuke/bin:/nix/store/cix7ny6m9c7njjdavqhlygliagcshdfv-release/bin:/nix/store/vg18s9h9jzq09w19gdcf6m17zk97py7l-test/bin:/nix/store/9n80wciamx9i69q4wla500l7jf52iwia-test-ci/bin:/nix/store/1i3wvdwbv9yfzpwjfjwyyljhgb3qjabr-update-storm/bin:/nix/store/2ndah67h0z5m31v2wkdmg2md4380ggr5-bash-interactive-5.3p15/bin:/nix/store/8sn9azppydd6yax68013401q20ja7x9l-typescript-7.0.2/bin:/nix/store/nshn9c3q086sfcp31fa1v5hkiczd7ilw-typescript-language-server-5.3.0/bin:/nix/store/a1asapynnp86ib95wsx9ns6i1fi9i05y-python3-3.12.14-env/bin:/nix/store/gpc5h0d71izbwdqxvvxcmwdfr7f2zflx-uv-0.12.11/bin:/nix/store/blnnbjgvw0cqaq71zmi53h72acv2dsy5-pyright-1.1.412/bin:/nix/store/sq9vqxkxxspml01mihchj1h2v7j30rwk-statix-0.5.8-unstable-2026-07-17/bin:/nix/store/3jwyxlfn9mb5ykgqlsr0r7djxa1vf9lv-deadnix-1.3.2/bin:/nix/store/gc4vhif5msifbq74am4xl0g4hicif87h-vulnix/bin:/nix/store/qh88k1qajkqgi5j59n202bb9ap4rq33i-nixd-2.9.2/bin:/nix/store/2f655gixf0x7133dfg5gn182ss6l3hyw-cachix-1.12.1-bin/bin:/nix/store/cljg9zj541vjf2nh7y4cmv99y2jlxd8l-nodejs-slim-26.8.2-dev/bin:/nix/store/vhmrk3hh4nkaw62xmcl22961g64sn443-nodejs-slim-26.8.2/bin:/nix/store/igcspl7ysgfxzhxwz548ajwfkfh51hfw-pnpm-11.25.0/bin:/nix/store/5qwasqhflws6wqhw6vsh1qdvrkhiy1ax-ttfautohint-1.8.4/bin:/nix/store/9zib1q94gka8i5q530364cvy25504qz5-gawk-5.4.1/bin:/nix/store/0prm77nf3lpljd30wbvh7c3alv2glqc7-gnupg-2.4.9/bin:/nix/store/z3zlcdwf1ds46j2ixx01gg59j76ai57a-git-crypt-0.8.0/bin:/nix/store/m7a1nfhky8yfx4q06i6cqklfa86dichh-zizmor-1.30.1/bin:/nix/store/l67wwwpf7g1kr41d15js2rssld50ka6c-taplo-0.10.0/bin:/nix/store/mkbgr4kpllq6wqzy8mcnrcy2qy2wcqx3-typos-1.50.1/bin:/nix/store/jpcqlbhkwxwvq507mq0hkacpxbxcdwjj-rustfmt-1.98.1/bin:/nix/store/nsj69kqd45ij8fblnhspwwhhp3sk5cwf-nixfmt-1.5.0/bin:/nix/store/3ncxp29pkym7n38rldcjq9nyz1ankf2w-nixpkgs-fmt-1.3.0/bin:/nix/store/6jc63n11h604wlml5y59fgrkzzpsc7nb-python3.14-yamllint-1.37.1/bin:/nix/store/d64q19q1xjdwfhqx6czvrjgrhq0n3lcc-python3-3.14.7/bin:/nix/store/p15645hkjzi7jgp5hwk139lcjwb6jxg1-ls-lint-2.3.1/bin:/nix/store/29d1c5xk6w3rwl7yvdfwl90whslv5h54-pkg-config-wrapper-0.29.2/bin:/nix/store/h9wq5kdv1jc9hxmwgn9vh9bwsigmnsj6-patchelf-0.15.2/bin:/nix/store/z4c6k0mrlkwl3s4w9ysxc8vq1wylm3ms-gcc-wrapper-15.3.0/bin:/nix/store/8sjgd7q3mdks1rb7rbcv0sallhvrhai5-gcc-15.3.0/bin:/nix/store/fdpy1l72q9gvq8d9snrdq67gm0j5s1dg-glibc-2.42-84-bin/bin:/nix/store/xjl7p8dvyk2j53kqf7f43kdj4ypbxz7g-coreutils-9.11/bin:/nix/store/0fdc105g1896ganr8916rsjxhvr9qv5b-binutils-wrapper-2.46/bin:/nix/store/31gnwsgag5qa14hfblqi5hyn71pyx7py-binutils-2.46/bin:/nix/store/i9wgqa0l88aprvpwfaq5hkfa6pklhlv0-findutils-4.11.0/bin:/nix/store/b8xvzgd52jby5dfpi0pf46nisy6wma5d-diffutils-3.12/bin:/nix/store/qf2wzyq4irhgyhnq3s2hz0ldjq3w8a3x-gnused-4.10/bin:/nix/store/xmvbzzxm5snla5a2cyfhm7hjy9bifx7n-gnugrep-3.12/bin:/nix/store/41l3h8s1lr518n03bsrzv5vsf37bhnb9-gnutar-1.35/bin:/nix/store/l5sll8nxk70p73l5yqbsjy4mh0c3g0v5-gzip-1.14/bin:/nix/store/j3yz0ag9j442229n8harpmp9aa5qyvhn-bzip2-1.0.8-bin/bin:/nix/store/c011mk580m964s1zxjccvdax3fcmppnl-gnumake-4.4.1/bin:/nix/store/svx59425zxp552p2b8gm11qj5r09b56i-bash-5.3p15/bin:/nix/store/81zqbas7qc02yfdj7142fdcqhxgd3cgz-patch-2.8/bin:/nix/store/518dig8gpvqyac6pkksyjjfzvi9zn8vq-xz-5.8.3-bin/bin:/nix/store/fv9yl55hkskpc2cj9c0sdyq91car9kgl-file-5.48/bin:/nix/store/iblknv7l0xrsd7k8ipgjsssg09spwndr-devenv-2.4.0/bin:/nix/store/42h09kln3bqykxchmy778k0gjvxcf9n4-cachix-1.12.1-bin/bin:/nix/store/gjki15rdwwhncw81ixkyhyfzbjva9gdc-nixd-2.9.2/bin:/home/development/.config/carapace/bin:/home/development/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/development/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin";
+        if (pathValue === undefined) {
+          errors.push({ path: pathPath, failure: "A value is required" });
+          pathProperty = pathValue;
         } else {
           if (typeof pathValue === "string") {
             pathProperty = pathValue;
@@ -7293,9 +7313,6 @@ export function parseSafe(
           }
         }
         envSchema["PATH"] = pathProperty;
-      } else {
-        envSchema["PATH"] =
-          "/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:./node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/repos/cyclone-ui/.devenv/profiles/development/state/venv/bin:node_modules/.bin:/nix/store/fq36i63v358zxc1s14in0r3bmwgxvsyy-bootstrap/bin:/nix/store/8mins7nnh17hyqwabw69wi4ckwllddkp-build/bin:/nix/store/s58zshchvg58lnyhmzvsb8lzl7cp7640-build-dev/bin:/nix/store/db91clmza06zk2mxii24jjbr18n91k8n-clean/bin:/nix/store/b75wkvcpq67z0g5j49p4q7zmb76npgzm-docs/bin:/nix/store/m5mb9pjlqyjhwxb1g2mfj7wgxfyyj8gr-format/bin:/nix/store/0463iqahjvrhih81qcm0h1lsiqqmnzf1-graphify-build/bin:/nix/store/pjlwvplvxjflqbzwffis62mnmcikk59r-graphify-query/bin:/nix/store/jprgvsan03ms50nsharfd58nb5ih131s-lint/bin:/nix/store/gq3zjkaciij77rg7k7hdanmg7xlg4mi3-nuke/bin:/nix/store/cix7ny6m9c7njjdavqhlygliagcshdfv-release/bin:/nix/store/vg18s9h9jzq09w19gdcf6m17zk97py7l-test/bin:/nix/store/9n80wciamx9i69q4wla500l7jf52iwia-test-ci/bin:/nix/store/1i3wvdwbv9yfzpwjfjwyyljhgb3qjabr-update-storm/bin:/nix/store/2ndah67h0z5m31v2wkdmg2md4380ggr5-bash-interactive-5.3p15/bin:/nix/store/8sn9azppydd6yax68013401q20ja7x9l-typescript-7.0.2/bin:/nix/store/nshn9c3q086sfcp31fa1v5hkiczd7ilw-typescript-language-server-5.3.0/bin:/nix/store/a1asapynnp86ib95wsx9ns6i1fi9i05y-python3-3.12.14-env/bin:/nix/store/gpc5h0d71izbwdqxvvxcmwdfr7f2zflx-uv-0.12.11/bin:/nix/store/blnnbjgvw0cqaq71zmi53h72acv2dsy5-pyright-1.1.412/bin:/nix/store/sq9vqxkxxspml01mihchj1h2v7j30rwk-statix-0.5.8-unstable-2026-07-17/bin:/nix/store/3jwyxlfn9mb5ykgqlsr0r7djxa1vf9lv-deadnix-1.3.2/bin:/nix/store/gc4vhif5msifbq74am4xl0g4hicif87h-vulnix/bin:/nix/store/qh88k1qajkqgi5j59n202bb9ap4rq33i-nixd-2.9.2/bin:/nix/store/2f655gixf0x7133dfg5gn182ss6l3hyw-cachix-1.12.1-bin/bin:/nix/store/cljg9zj541vjf2nh7y4cmv99y2jlxd8l-nodejs-slim-26.8.2-dev/bin:/nix/store/vhmrk3hh4nkaw62xmcl22961g64sn443-nodejs-slim-26.8.2/bin:/nix/store/igcspl7ysgfxzhxwz548ajwfkfh51hfw-pnpm-11.25.0/bin:/nix/store/5qwasqhflws6wqhw6vsh1qdvrkhiy1ax-ttfautohint-1.8.4/bin:/nix/store/9zib1q94gka8i5q530364cvy25504qz5-gawk-5.4.1/bin:/nix/store/0prm77nf3lpljd30wbvh7c3alv2glqc7-gnupg-2.4.9/bin:/nix/store/z3zlcdwf1ds46j2ixx01gg59j76ai57a-git-crypt-0.8.0/bin:/nix/store/m7a1nfhky8yfx4q06i6cqklfa86dichh-zizmor-1.30.1/bin:/nix/store/l67wwwpf7g1kr41d15js2rssld50ka6c-taplo-0.10.0/bin:/nix/store/mkbgr4kpllq6wqzy8mcnrcy2qy2wcqx3-typos-1.50.1/bin:/nix/store/jpcqlbhkwxwvq507mq0hkacpxbxcdwjj-rustfmt-1.98.1/bin:/nix/store/nsj69kqd45ij8fblnhspwwhhp3sk5cwf-nixfmt-1.5.0/bin:/nix/store/3ncxp29pkym7n38rldcjq9nyz1ankf2w-nixpkgs-fmt-1.3.0/bin:/nix/store/6jc63n11h604wlml5y59fgrkzzpsc7nb-python3.14-yamllint-1.37.1/bin:/nix/store/d64q19q1xjdwfhqx6czvrjgrhq0n3lcc-python3-3.14.7/bin:/nix/store/p15645hkjzi7jgp5hwk139lcjwb6jxg1-ls-lint-2.3.1/bin:/nix/store/29d1c5xk6w3rwl7yvdfwl90whslv5h54-pkg-config-wrapper-0.29.2/bin:/nix/store/h9wq5kdv1jc9hxmwgn9vh9bwsigmnsj6-patchelf-0.15.2/bin:/nix/store/z4c6k0mrlkwl3s4w9ysxc8vq1wylm3ms-gcc-wrapper-15.3.0/bin:/nix/store/8sjgd7q3mdks1rb7rbcv0sallhvrhai5-gcc-15.3.0/bin:/nix/store/fdpy1l72q9gvq8d9snrdq67gm0j5s1dg-glibc-2.42-84-bin/bin:/nix/store/xjl7p8dvyk2j53kqf7f43kdj4ypbxz7g-coreutils-9.11/bin:/nix/store/0fdc105g1896ganr8916rsjxhvr9qv5b-binutils-wrapper-2.46/bin:/nix/store/31gnwsgag5qa14hfblqi5hyn71pyx7py-binutils-2.46/bin:/nix/store/i9wgqa0l88aprvpwfaq5hkfa6pklhlv0-findutils-4.11.0/bin:/nix/store/b8xvzgd52jby5dfpi0pf46nisy6wma5d-diffutils-3.12/bin:/nix/store/qf2wzyq4irhgyhnq3s2hz0ldjq3w8a3x-gnused-4.10/bin:/nix/store/xmvbzzxm5snla5a2cyfhm7hjy9bifx7n-gnugrep-3.12/bin:/nix/store/41l3h8s1lr518n03bsrzv5vsf37bhnb9-gnutar-1.35/bin:/nix/store/l5sll8nxk70p73l5yqbsjy4mh0c3g0v5-gzip-1.14/bin:/nix/store/j3yz0ag9j442229n8harpmp9aa5qyvhn-bzip2-1.0.8-bin/bin:/nix/store/c011mk580m964s1zxjccvdax3fcmppnl-gnumake-4.4.1/bin:/nix/store/svx59425zxp552p2b8gm11qj5r09b56i-bash-5.3p15/bin:/nix/store/81zqbas7qc02yfdj7142fdcqhxgd3cgz-patch-2.8/bin:/nix/store/518dig8gpvqyac6pkksyjjfzvi9zn8vq-xz-5.8.3-bin/bin:/nix/store/fv9yl55hkskpc2cj9c0sdyq91car9kgl-file-5.48/bin:/nix/store/iblknv7l0xrsd7k8ipgjsssg09spwndr-devenv-2.4.0/bin:/nix/store/42h09kln3bqykxchmy778k0gjvxcf9n4-cachix-1.12.1-bin/bin:/nix/store/gjki15rdwwhncw81ixkyhyfzbjva9gdc-nixd-2.9.2/bin:/home/development/.config/carapace/bin:/home/development/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/development/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin";
       }
       if (
         (envValue["CYCLONE_UI_npm_config_user_agent"] ||
@@ -7308,12 +7325,12 @@ export function parseSafe(
           envValue["SHELL_SHOCK_npm_config_user_agent"] ||
           envValue["npm_config_user_agent"];
         const npmConfigUserAgentPath = envPath + ".npm_config_user_agent";
-        if (
-          npmConfigUserAgentValue === undefined ||
-          npmConfigUserAgentValue === ""
-        ) {
-          npmConfigUserAgentProperty =
-            "pnpm/11.1.2 npm/? node/v26.8.2 linux x64";
+        if (npmConfigUserAgentValue === undefined) {
+          errors.push({
+            path: npmConfigUserAgentPath,
+            failure: "A value is required"
+          });
+          npmConfigUserAgentProperty = npmConfigUserAgentValue;
         } else {
           if (typeof npmConfigUserAgentValue === "string") {
             npmConfigUserAgentProperty = npmConfigUserAgentValue;
@@ -7331,9 +7348,6 @@ export function parseSafe(
           }
         }
         envSchema["npm_config_user_agent"] = npmConfigUserAgentProperty;
-      } else {
-        envSchema["npm_config_user_agent"] =
-          "pnpm/11.1.2 npm/? node/v26.8.2 linux x64";
       }
       if (
         (envValue["CYCLONE_UI_npm_config_fund"] ||
@@ -7381,9 +7395,12 @@ export function parseSafe(
           envValue["SHELL_SHOCK_npm_execpath"] ||
           envValue["npm_execpath"];
         const npmExecpathPath = envPath + ".npm_execpath";
-        if (npmExecpathValue === undefined || npmExecpathValue === "") {
-          npmExecpathProperty =
-            "/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/bin/pnpm.mjs";
+        if (npmExecpathValue === undefined) {
+          errors.push({
+            path: npmExecpathPath,
+            failure: "A value is required"
+          });
+          npmExecpathProperty = npmExecpathValue;
         } else {
           if (typeof npmExecpathValue === "string") {
             npmExecpathProperty = npmExecpathValue;
@@ -7401,9 +7418,6 @@ export function parseSafe(
           }
         }
         envSchema["npm_execpath"] = npmExecpathProperty;
-      } else {
-        envSchema["npm_execpath"] =
-          "/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/bin/pnpm.mjs";
       }
       if (
         (envValue["CYCLONE_UI_COMSPEC"] ||

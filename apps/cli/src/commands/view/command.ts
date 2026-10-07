@@ -11,6 +11,7 @@ import type { CommandMetadata } from "@shell-shock/core";
 import { resolve } from "node:path";
 import { readConfig } from "../../utilities/config";
 import { registryClient } from "../../utilities/registry";
+import { write } from "shell-shock:console";
 
 export const metadata = {
   title: "View Registry Components",
@@ -35,7 +36,7 @@ async function handler(
   const client = registryClient(
     options.registry ?? config?.registry ?? DEFAULT_REGISTRY_URL
   );
-  console.log(
+  write(
     JSON.stringify(
       await Promise.all(
         components.map(component => client.components.get.query(component))

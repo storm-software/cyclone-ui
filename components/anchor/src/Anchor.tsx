@@ -70,7 +70,7 @@ export const Anchor = createStyledHOC(
     const [isIconHovered, setIconHovered] = useState(false);
 
     return (
-      <AnchorFrame group={"anchor" as any} ref={forwardedRef} {...props}>
+      <AnchorFrame group="anchor" ref={forwardedRef} {...props}>
         {children}
 
         <Permalink
@@ -90,7 +90,7 @@ export const Anchor = createStyledHOC(
                     }
                   })
             } as any))}
-          group={"anchorIcon" as any}
+          group="anchorIcon"
           onMouseEnter={() => setIconHovered(true)}
           onMouseLeave={() => setIconHovered(false)}>
           <AnchorIcon
@@ -99,6 +99,7 @@ export const Anchor = createStyledHOC(
             color={isIconHovered ? "accent" : "neutral7"}
             height="90%"
             maxHeight="6xl"
+            weight="bold"
           />
         </Permalink>
       </AnchorFrame>

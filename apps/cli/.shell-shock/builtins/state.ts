@@ -33,6 +33,10 @@ export interface GlobalOptions {
    */
   verbose?: boolean | undefined;
   /**
+   * Suppress command decorations and diagnostic messages.
+   */
+  quiet?: boolean | undefined;
+  /**
    * Force colored terminal output.
    */
   color?: boolean | undefined;
@@ -378,6 +382,7 @@ export async function withGlobal(handler: () => any): Promise<Promise<void>> {
     help: false,
     version: false,
     verbose: env.CYCLONE_UI_VERBOSE ?? false,
+    quiet: false,
     color: env.CYCLONE_UI_COLOR ?? false,
     noColor: env.CYCLONE_UI_NO_COLOR ?? true,
     noBanner: env.CYCLONE_UI_NO_BANNER ?? false,
@@ -531,6 +536,47 @@ export async function withGlobal(handler: () => any): Promise<Promise<void>> {
             Number.parseFloat(value) > 0);
       } else {
         options.verbose = true;
+      }
+    } else if (
+      arg
+        .toLowerCase()
+        .replaceAll("-", "")
+        .replaceAll("_", "")
+        .startsWith("quiet=") ||
+      arg.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "quiet" ||
+      arg
+        .toLowerCase()
+        .replaceAll("-", "")
+        .replaceAll("_", "")
+        .startsWith("quiet=") ||
+      arg.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "quiet"
+    ) {
+      if (
+        /^--?(quiet)=/.test(
+          "-" + arg.toLowerCase().replaceAll("-", "").replaceAll("_", "")
+        )
+      ) {
+        const value = arg
+          .replace(/^--?(quiet)=/, "")
+          .trim()
+          .replace(/^("|')/, "")
+          .replace(/("|')$/, "")
+          .toLowerCase();
+        options.quiet =
+          !!value &&
+          value.toLowerCase() !== "false" &&
+          value.toLowerCase() !== "f" &&
+          value.toLowerCase() !== "no" &&
+          value !== "n" &&
+          value.toLowerCase() !== "0" &&
+          value.toLowerCase() !== "off" &&
+          value !== "disable" &&
+          value.toLowerCase() !== "disabled" &&
+          value.toLowerCase() !== "never" &&
+          (Number.isNaN(Number.parseFloat(value)) ||
+            Number.parseFloat(value) > 0);
+      } else {
+        options.quiet = true;
       }
     } else if (
       arg

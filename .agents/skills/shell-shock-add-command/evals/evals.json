@@ -1,0 +1,23 @@
+{
+  "skill_name": "shell-shock-add-command",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "add a `greet` command to my shell-shock cli that takes a name and a --shout flag",
+      "expected_output": "Asks for project location; given playground/minimal, writes src/greet/command.ts in the interface style matching siblings, builds, greet --help lists name and --shout.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I need a `db migrate` subcommand with --dry-run and an optional steps count. project is at playground/custom-commands-directory",
+      "expected_output": "No location question (path given); reads input: src/commands and writes src/commands/db/migrate/command.ts.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "new command `deploy <service> to <env>` where env is a path segment like `cli deploy api staging`",
+      "expected_output": "Asks for project location; uses a [service] dynamic segment folder and handler params in segment-then-args order.",
+      "files": []
+    }
+  ]
+}

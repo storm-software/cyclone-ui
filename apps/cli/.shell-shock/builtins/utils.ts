@@ -319,6 +319,10 @@ export function getColorSupportLevel(
 ) {
   const { ignoreFlags } = options;
 
+  if (env.NO_COLOR) {
+    return false;
+  }
+
   let forceColor: number | undefined;
   if (env.FORCE_COLOR !== undefined) {
     forceColor = !env.FORCE_COLOR

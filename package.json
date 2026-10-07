@@ -93,6 +93,7 @@
     "@razorwind/llms": "catalog:",
     "@razorwind/nx": "catalog:",
     "@razorwind/shadcn": "catalog:",
+    "@razorwind/shell-shock": "catalog:",
     "@razorwind/shiki": "catalog:",
     "@razorwind/storybook": "catalog:",
     "@razorwind/stylelint": "catalog:",
@@ -178,11 +179,7 @@
       }
     ],
     "ci": {
-      "trackBranches": [
-        "main",
-        "next",
-        "experimental"
-      ]
+      "trackBranches": ["main", "next", "experimental"]
     }
   },
   "licenses": [

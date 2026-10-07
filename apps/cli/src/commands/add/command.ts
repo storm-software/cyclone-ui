@@ -26,6 +26,7 @@ import {
 } from "../../utilities/components";
 import { requireConfig } from "../../utilities/config";
 import { registryClient } from "../../utilities/registry";
+import { write } from "shell-shock:console";
 
 export const metadata = {
   title: "Add",
@@ -79,13 +80,13 @@ async function handler(
   });
 
   if (options.diff) {
-    console.log(formatDiff(plan, root));
+    write(formatDiff(plan, root));
   } else if (options.view) {
-    console.log(
+    write(
       plan.files.map(file => `// ${file.path}\n${file.content}`).join("\n\n")
     );
   } else if (!options.silent) {
-    console.log(formatPlan(plan, root));
+    write(formatPlan(plan, root));
   }
 
   await applyInstallPlan(config, plan, {

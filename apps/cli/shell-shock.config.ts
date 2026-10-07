@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import razorwind from "@razorwind/shell-shock/plugin";
 import type { UserConfig } from "@shell-shock/core";
 import { defineConfig } from "@shell-shock/core/config";
 import preset from "@shell-shock/preset-cli";
@@ -31,9 +32,12 @@ const config: UserConfig = defineConfig({
     general: "debug",
     config: "trace"
   },
-  docs: "https://docs.stormsoftware.com/projects/cyclone-ui/reference/cli/{command}",
+  docs: "https://docs.cyclone-ui.com/reference/cli/{command}",
   plugins: [
-    preset({
+    preset(),
+    razorwind({
+      root: "../..",
+      themeId: "dark",
       theme: {
         icons: {
           banner: "⬤"

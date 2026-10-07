@@ -1,0 +1,23 @@
+{
+  "skill_name": "shell-shock-best-practices",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add a `--json` option to the Shell Shock `list` command. It must be safe for `tool list --json | jq`, preserve the existing human display, and return a useful failure when the workspace cannot be read.",
+      "expected_output": "A contract-aware implementation plan or patch that separates stdout data from stderr diagnostics, avoids decorations in JSON mode, preserves existing behavior, and identifies focused verification.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our Shell Shock `publish` command starts a spinner, writes a manifest, then spawns a package manager. Make Ctrl-C safe so it leaves no partial manifest or stuck terminal, and do not allow a user-provided package name to be interpreted by a shell.",
+      "expected_output": "A reliability-aware response that uses argv spawning, signal-aware cleanup, atomic manifest writes, and explicit ownership boundaries.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "A generated Shell Shock command has wrong global flags in CI. Fix it by editing the generated dist file and add a test that snapshots the changed output.",
+      "expected_output": "A response that refuses the generated-file edit, locates the authoritative preset or configuration owner, preserves CI/noninteractive behavior, and proposes source-to-generated verification.",
+      "files": []
+    }
+  ]
+}

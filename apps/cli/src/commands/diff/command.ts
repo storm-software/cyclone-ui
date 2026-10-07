@@ -11,6 +11,7 @@ import { resolve } from "node:path";
 import { createInstallPlan, formatDiff } from "../../utilities/components";
 import { requireConfig } from "../../utilities/config";
 import { registryClient } from "../../utilities/registry";
+import { write } from "shell-shock:console";
 
 export const metadata = {
   title: "Diff Components",
@@ -43,7 +44,7 @@ async function handler(
     requested,
     { root, overwrite: true, dryRun: true }
   );
-  console.log(formatDiff(plan, root));
+  write(formatDiff(plan, root));
 }
 
 export default handler;

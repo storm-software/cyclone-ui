@@ -38,20 +38,17 @@
   },
   "license": "Apache-2.0",
   "private": false,
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "cli",
-    "cyclone-ui",
-    "storm-software",
-    "shell-shock"
-  ],
+  "files": ["dist"],
+  "keywords": ["cli", "cyclone-ui", "storm-software", "shell-shock"],
   "dependencies": {
     "@cyclone-ui/registry-api": "workspace:*",
+    "@modelcontextprotocol/server": "^2.3.1",
     "@powerlines/plugin-env": "catalog:",
+    "@razorwind/shell-shock": "catalog:",
     "@shell-shock/core": "catalog:",
-    "@shell-shock/preset-cli": "catalog:"
+    "@shell-shock/plugin-theme": "^0.4.45",
+    "@shell-shock/preset-cli": "catalog:",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@shell-shock/eslint-plugin": "catalog:",
@@ -59,15 +56,12 @@
     "@shell-shock/plugin-skills": "catalog:",
     "@types/node": "catalog:"
   },
-  "publishConfig": {
-    "access": "public"
-  },
+  "publishConfig": { "access": "public" },
   "types": "./dist/index.d.cts",
-  "bin": {
-    "cyclone-ui": "./dist/bin.mjs"
-  },
+  "bin": { "cyclone-ui": "./dist/bin.mjs" },
   "exports": {
     "./add": "./dist/add.mjs",
+    "./analyze-a11y": "./dist/analyze-a11y.mjs",
     "./bin": "./dist/bin.mjs",
     "./build": "./dist/build.mjs",
     "./completions-bash-config": "./dist/completions-bash-config.mjs",
@@ -80,12 +74,23 @@
     "./completions-zsh-script": "./dist/completions-zsh-script.mjs",
     "./diff": "./dist/diff.mjs",
     "./docs": "./dist/docs.mjs",
+    "./guidelines": "./dist/guidelines.mjs",
     "./help": "./dist/help.mjs",
     "./info": "./dist/info.mjs",
     "./init": "./dist/init.mjs",
+    "./list-components": "./dist/list-components.mjs",
+    "./list-fonts": "./dist/list-fonts.mjs",
+    "./list-icons": "./dist/list-icons.mjs",
+    "./list-tokens": "./dist/list-tokens.mjs",
+    "./mcp": "./dist/mcp.mjs",
     "./package.json": "./package.json",
+    "./plan": "./dist/plan.mjs",
     "./registry-validate": "./dist/registry-validate.mjs",
     "./search": "./dist/search.mjs",
+    "./search-components": "./dist/search-components.mjs",
+    "./search-fonts": "./dist/search-fonts.mjs",
+    "./search-icons": "./dist/search-icons.mjs",
+    "./search-tokens": "./dist/search-tokens.mjs",
     "./update": "./dist/update.mjs",
     "./view": "./dist/view.mjs"
   }

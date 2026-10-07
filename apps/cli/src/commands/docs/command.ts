@@ -14,6 +14,7 @@ import {
   normalizeComponentName,
   registryClient
 } from "../../utilities/registry";
+import { write } from "shell-shock:console";
 
 export const metadata = {
   title: "Component Documentation",
@@ -52,7 +53,7 @@ async function handler(
     })
   );
 
-  console.log(
+  write(
     options.json
       ? JSON.stringify(result, null, 2)
       : result.map(item => `${item.name}: ${item.url}`).join("\n")

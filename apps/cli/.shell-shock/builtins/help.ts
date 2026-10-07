@@ -160,6 +160,21 @@ export function showHelp() {
     ],
     [
       {
+        value: textColors.body.primary("--quiet"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Suppress command decorations and diagnostic messages (default: false).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
         value: textColors.body.primary("-V, --verbose"),
         align: "right",
         border: "none",
@@ -373,6 +388,110 @@ export function showHelp() {
   writeLine("");
   writeLine(
     textColors.heading.primary(
+      (isUnicodeSupported ? " ♿  " : "") +
+        `${underline("Analyze Accessibility")} - ${textColors.tags.designSystem ? textColors.tags.designSystem(inverse(" Design System ")) : textColors.tags.default(inverse(" Design System "))} ${textColors.tags.accessibility ? textColors.tags.accessibility(inverse(" Accessibility ")) : textColors.tags.default(inverse(" Accessibility "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(
+        `Analyze a React/JSX source string (or file) for likely accessibility issues and hard-coded colors, suggesting the nearest design tokens for each color.`
+      )
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("analyze-a11y")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Options:")), { padding: 0 });
+  table([
+    [
+      {
+        value: textColors.body.primary("--code <code>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Source code of a React component or JSX snippet to analyze.`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--component-name <component_name>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Optional label for the component under review.`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--context <context>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Optional usage context (for example \"in a form\" or \"modal\").`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--file <file>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Path to a source file to analyze (alternative to --code).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--pattern-analysis"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Run regex-based heuristics (unlabeled buttons, missing alt, …) (default: true).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ]
+  ]);
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
       (isUnicodeSupported ? " 🏗  " : "") + `${underline("Build Registry")}`
     )
   );
@@ -564,6 +683,65 @@ export function showHelp() {
   writeLine("");
   writeLine(
     textColors.heading.primary(
+      (isUnicodeSupported ? " 📖  " : "") +
+        `${underline("Guidelines")} - ${textColors.tags.designSystem ? textColors.tags.designSystem(inverse(" Design System ")) : textColors.tags.default(inverse(" Design System "))} ${textColors.tags.docs ? textColors.tags.docs(inverse(" Docs ")) : textColors.tags.default(inverse(" Docs "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(
+        `Return design-system guidelines as Markdown: an overview of the token groups, one section per component (with usage examples), typography, the design-system style guidelines, and any bundled guideline documents. Pass --terms to search; omit for the full set.`
+      )
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("guidelines")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Options:")), { padding: 0 });
+  table([
+    [
+      {
+        value: textColors.body.primary("--limit <limit>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Maximum matches per term when searching (default: 1).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--terms <terms...>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Search terms matched against guideline keywords, titles and body (fuzzy).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ]
+  ]);
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
       (isUnicodeSupported ? " ⓘ  " : "") + `${underline("Project Information")}`
     )
   );
@@ -728,6 +906,196 @@ export function showHelp() {
   ]);
 
   writeLine("");
+  writeLine(
+    textColors.heading.primary(
+      (isUnicodeSupported ? " 🧩  " : "") +
+        `${underline("List Components")} - ${textColors.tags.designSystem ? textColors.tags.designSystem(inverse(" Design System ")) : textColors.tags.default(inverse(" Design System "))} ${textColors.tags.components ? textColors.tags.components(inverse(" Components ")) : textColors.tags.default(inverse(" Components "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(
+        `Return every design-system component record. Large output - prefer search-components for normal use.`
+      )
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("list-components")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
+      (isUnicodeSupported ? " 🔤  " : "") +
+        `${underline("List Fonts")} - ${textColors.tags.designSystem ? textColors.tags.designSystem(inverse(" Design System ")) : textColors.tags.default(inverse(" Design System "))} ${textColors.tags.fonts ? textColors.tags.fonts(inverse(" Fonts ")) : textColors.tags.default(inverse(" Fonts "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(`Return every design-system font record.`)
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("list-fonts")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
+      (isUnicodeSupported ? " 🖼  " : "") +
+        `${underline("List Icons")} - ${textColors.tags.designSystem ? textColors.tags.designSystem(inverse(" Design System ")) : textColors.tags.default(inverse(" Design System "))} ${textColors.tags.icons ? textColors.tags.icons(inverse(" Icons ")) : textColors.tags.default(inverse(" Icons "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(
+        `Return every design-system icon record. Large output - prefer search-icons for normal use.`
+      )
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("list-icons")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
+      (isUnicodeSupported ? " 🎨  " : "") +
+        `${underline("List Tokens")} - ${textColors.tags.designSystem ? textColors.tags.designSystem(inverse(" Design System ")) : textColors.tags.default(inverse(" Design System "))} ${textColors.tags.tokens ? textColors.tags.tokens(inverse(" Tokens ")) : textColors.tags.default(inverse(" Tokens "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(
+        `Return every design token (name, value, type, description, CSS variable). Large output - prefer search-tokens for normal use.`
+      )
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("list-tokens")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
+      (isUnicodeSupported ? " 🗺  " : "") +
+        `${underline("Plan")} - ${textColors.tags.designSystem ? textColors.tags.designSystem(inverse(" Design System ")) : textColors.tags.default(inverse(" Design System "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(
+        `Search tokens, icons, components and fonts in one call to plan what to build. Provide terms for at least one list.`
+      )
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("plan")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Options:")), { padding: 0 });
+  table([
+    [
+      {
+        value: textColors.body.primary("--components <components...>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(`Search terms for components.`),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--fonts <fonts...>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(`Search terms for fonts.`),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--icons <icons...>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(`Search terms for icons.`),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--limit <limit>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Maximum matches per term for each list (default: 2).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--tokens <tokens...>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(`Search terms for design tokens.`),
+        align: "left",
+        border: "none"
+      }
+    ]
+  ]);
+
+  writeLine("");
   writeLine(textColors.heading.primary(`${underline("Registry Commands")}`));
   writeLine("");
   writeLine(
@@ -880,6 +1248,257 @@ export function showHelp() {
   writeLine("");
   writeLine(
     textColors.heading.primary(
+      (isUnicodeSupported ? " 🧩  " : "") +
+        `${underline("Search Components")} - ${textColors.tags.designSystem ? textColors.tags.designSystem(inverse(" Design System ")) : textColors.tags.default(inverse(" Design System "))} ${textColors.tags.components ? textColors.tags.components(inverse(" Components ")) : textColors.tags.default(inverse(" Components "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(
+        `Search design-system components by name, title, category, description and tags. Returns name, files, dependencies and usage examples for each match.`
+      )
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("search-components")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Options:")), { padding: 0 });
+  table([
+    [
+      {
+        value: textColors.body.primary("--limit <limit>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Maximum matches per term (default: 2).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--terms <terms...>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `One or more search terms (fuzzy match).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ]
+  ]);
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
+      (isUnicodeSupported ? " 🔤  " : "") +
+        `${underline("Search Fonts")} - ${textColors.tags.designSystem ? textColors.tags.designSystem(inverse(" Design System ")) : textColors.tags.default(inverse(" Design System "))} ${textColors.tags.fonts ? textColors.tags.fonts(inverse(" Fonts ")) : textColors.tags.default(inverse(" Fonts "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(
+        `Search design-system fonts by name, family, role, tags and category. Returns the CSS font-family stack, weights and files for each match.`
+      )
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("search-fonts")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Options:")), { padding: 0 });
+  table([
+    [
+      {
+        value: textColors.body.primary("--limit <limit>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Maximum matches per term (default: 2).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--terms <terms...>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `One or more search terms (fuzzy match).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ]
+  ]);
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
+      (isUnicodeSupported ? " 🖼  " : "") +
+        `${underline("Search Icons")} - ${textColors.tags.designSystem ? textColors.tags.designSystem(inverse(" Design System ")) : textColors.tags.default(inverse(" Design System "))} ${textColors.tags.icons ? textColors.tags.icons(inverse(" Icons ")) : textColors.tags.default(inverse(" Icons "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(
+        `Search design-system icons by name, title, aliases, tags and category. Returns name and asset files for each match.`
+      )
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("search-icons")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Options:")), { padding: 0 });
+  table([
+    [
+      {
+        value: textColors.body.primary("--limit <limit>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Maximum matches per term (default: 2).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--terms <terms...>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `One or more search terms (fuzzy match).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ]
+  ]);
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
+      (isUnicodeSupported ? " 🎨  " : "") +
+        `${underline("Search Tokens")} - ${textColors.tags.designSystem ? textColors.tags.designSystem(inverse(" Design System ")) : textColors.tags.default(inverse(" Design System "))} ${textColors.tags.tokens ? textColors.tags.tokens(inverse(" Tokens ")) : textColors.tags.default(inverse(" Tokens "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(
+        `Search design tokens by name, path, description, type and value. Returns compact JSON records with name and value for each match; set --include-metadata for descriptions and CSS variables.`
+      )
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("search-tokens")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Options:")), { padding: 0 });
+  table([
+    [
+      {
+        value: textColors.body.primary("--include-metadata"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Include type, description, hex value and CSS variable in each result (default: false).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--limit <limit>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Maximum matches per term (default: 2).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ],
+    [
+      {
+        value: textColors.body.primary("--terms <terms...>"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `One or more search terms (fuzzy match). Example: [\"spacing\", \"color.`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ]
+  ]);
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
       (isUnicodeSupported ? " ◉  " : "") +
         `${underline("View Registry Components")}`
     )
@@ -941,7 +1560,7 @@ export function showHelp() {
   writeLine(
     textColors.heading.primary(
       (isUnicodeSupported ? " 🖵  " : "") +
-        `${underline("Completions")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.$default(inverse(" Utility "))}`
+        `${underline("Completions")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.default(inverse(" Utility "))}`
     )
   );
   writeLine("");
@@ -1022,7 +1641,7 @@ export function showHelp() {
   writeLine(
     textColors.heading.primary(
       (isUnicodeSupported ? " 🛈  " : "") +
-        `${underline("Help")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.$default(inverse(" Utility "))}`
+        `${underline("Help")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.default(inverse(" Utility "))}`
     )
   );
   writeLine("");
@@ -1052,8 +1671,52 @@ export function showHelp() {
   writeLine("");
   writeLine(
     textColors.heading.primary(
+      (isUnicodeSupported ? " 🔌  " : "") +
+        `${underline("MCP Server")} - ${textColors.tags.ai ? textColors.tags.ai(inverse(" AI ")) : textColors.tags.default(inverse(" AI "))} ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.default(inverse(" Utility "))} ${textColors.tags.mcp ? textColors.tags.mcp(inverse(" MCP ")) : textColors.tags.default(inverse(" MCP "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(
+        `Starts an MCP stdio server that exposes this Shell Shock application\'s commands as tools.`
+      )
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("mcp")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Options:")), { padding: 0 });
+  table([
+    [
+      {
+        value: textColors.body.primary("--include-self"),
+        align: "right",
+        border: "none",
+        maxWidth: "1/3"
+      },
+      {
+        value: textColors.body.tertiary(
+          `Whether to expose the MCP command itself as a tool in the generated server (default: false).`
+        ),
+        align: "left",
+        border: "none"
+      }
+    ]
+  ]);
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
       (isUnicodeSupported ? " 🖒  " : "") +
-        `${underline("Update")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.$default(inverse(" Utility "))}`
+        `${underline("Update")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.default(inverse(" Utility "))}`
     )
   );
   writeLine("");
@@ -1117,7 +1780,7 @@ export function showHelp() {
   writeLine("");
   writeLine(
     textColors.body.tertiary(
-      `More information can be found in the Cyclone User Interface documentation at ${link("https://docs.stormsoftware.com/projects/cyclone-ui/reference/cli")}${textColors.body.tertiary(".")}`
+      `More information can be found in the Cyclone User Interface documentation at ${link("https://docs.cyclone-ui.com/reference/cli")}${textColors.body.tertiary(".")}`
     ),
     { padding: 0 }
   );
