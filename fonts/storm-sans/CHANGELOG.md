@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Fonts Storm Sans
 
+## [1.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-sans%401.0.4) (10/07/2026)
+
+### Bug Fixes
+
+- **fonts-storm-sans:** Update the style of `g` and `y` characters ([d328d3d1](https://github.com/storm-software/cyclone-ui/commit/d328d3d1))
+
 ## [1.0.1](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-sans%401.0.1) (10/05/2026)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/state",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "type": "module",
   "description": "A state management package used to handle state in Storm Software applications.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "packages/state"
   },
   "private": false,
-  "keywords": ["jotai"],
+  "keywords": [
+    "jotai"
+  ],
   "exports": {
     ".": {
       "require": {

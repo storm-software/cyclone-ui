@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Heading Text
 
+## [0.5.11](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.11) (10/07/2026)
+
+### Bug Fixes
+
+- **themes:** Clean up typography tokens ([68aee6ad](https://github.com/storm-software/cyclone-ui/commit/68aee6ad))
+
 ## [0.5.8](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.8) (10/05/2026)
 
 ### Bug Fixes

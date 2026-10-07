@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/helpers",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "private": false,
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {

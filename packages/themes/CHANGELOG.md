@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Themes
 
+## [0.3.11](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.11) (10/07/2026)
+
+### Bug Fixes
+
+- **fonts-storm-sans:** Update the style of `g` and `y` characters ([d328d3d1](https://github.com/storm-software/cyclone-ui/commit/d328d3d1))
+- **themes:** Clean up typography tokens ([68aee6ad](https://github.com/storm-software/cyclone-ui/commit/68aee6ad))
+
 ## [0.3.10](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.10) (10/06/2026)
 
 ### Bug Fixes

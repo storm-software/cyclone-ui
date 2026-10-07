@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.7) (10/07/2026)
+
+### Bug Fixes
+
+- **themes:** Clean up typography tokens ([68aee6ad](https://github.com/storm-software/cyclone-ui/commit/68aee6ad))
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.4) (10/05/2026)
 
 ### Bug Fixes

@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Body Text
 
+## [0.5.11](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.11) (10/07/2026)
+
+### Bug Fixes
+
+- **themes:** Clean up typography tokens ([68aee6ad](https://github.com/storm-software/cyclone-ui/commit/68aee6ad))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.11**
+
 ## [0.5.10](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.10) (10/06/2026)
 
 ### Updated Dependencies

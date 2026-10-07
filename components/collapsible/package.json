@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/collapsible",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "type": "module",
   "description": "A package containing the Collapsible component used by Storm Software",
   "repository": {

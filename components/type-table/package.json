@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/type-table",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "description": "A package containing the TypeTable component used by Storm Software",
   "repository": {

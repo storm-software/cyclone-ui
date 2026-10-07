@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Divider
 
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.7) (10/07/2026)
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.11**
+
 ## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.6) (10/06/2026)
 
 ### Updated Dependencies

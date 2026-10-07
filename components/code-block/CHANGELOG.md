@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Code Block
 
+## [0.6.11](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.11) (10/07/2026)
+
+### Bug Fixes
+
+- **themes:** Clean up typography tokens ([68aee6ad](https://github.com/storm-software/cyclone-ui/commit/68aee6ad))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.11**
+- Updated **button** to **v0.6.11**
+- Updated **heading-text** to **v0.5.11**
+- Updated **icons** to **v0.0.7**
+- Updated **scroll-view** to **v0.5.11**
+- Updated **themeable-icon** to **v0.6.11**
+- Updated **vectors** to **v0.5.11**
+
 ## [0.6.10](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.10) (10/06/2026)
 
 ### Updated Dependencies

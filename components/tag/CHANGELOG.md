@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.6) (10/07/2026)
+
+### Bug Fixes
+
+- **themes:** Clean up typography tokens ([68aee6ad](https://github.com/storm-software/cyclone-ui/commit/68aee6ad))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.11**
+- Updated **icons** to **v0.0.7**
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.5) (10/06/2026)
 
 ### Updated Dependencies

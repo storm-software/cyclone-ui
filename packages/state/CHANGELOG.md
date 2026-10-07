@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.12) (10/07/2026)
+
+### Bug Fixes
+
+- **themes:** Clean up typography tokens ([68aee6ad](https://github.com/storm-software/cyclone-ui/commit/68aee6ad))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.11**
+
 ## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.11) (10/06/2026)
 
 ### Bug Fixes

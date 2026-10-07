@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/icons",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "description": "Tamagui (React Native and web) components for every icon in the Phosphor icon collection",
   "repository": {

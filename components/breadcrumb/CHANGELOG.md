@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Breadcrumb
 
+## [0.4.12](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.12) (10/07/2026)
+
+### Bug Fixes
+
+- **themes:** Clean up typography tokens ([68aee6ad](https://github.com/storm-software/cyclone-ui/commit/68aee6ad))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.11**
+- Updated **helpers** to **v0.3.11**
+- Updated **icons** to **v0.0.7**
+- Updated **label-text** to **v0.5.11**
+- Updated **link** to **v0.5.11**
+- Updated **popover** to **v0.5.11**
+
 ## [0.4.11](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.11) (10/06/2026)
 
 ### Updated Dependencies

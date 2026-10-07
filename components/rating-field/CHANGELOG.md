@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Rating Field
 
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/rating-field%400.0.6) (10/07/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.11**
+- Updated **form** to **v0.9.11**
+- Updated **icons** to **v0.0.7**
+- Updated **rating** to **v0.0.7**
+- Updated **state** to **v0.0.12**
+- Updated **themes** to **v0.3.11**
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/rating-field%400.0.5) (10/06/2026)
 
 ### Updated Dependencies
