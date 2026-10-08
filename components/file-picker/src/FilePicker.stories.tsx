@@ -18,14 +18,16 @@
 
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
+import type { ClientFileResult } from "@cyclone-ui/state";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { GetProps } from "@tamagui/core";
 import { View } from "@tamagui/core";
+import { useState } from "react";
 import { FilePicker } from "./FilePicker";
 
-type FilePickerValidation = {
+interface FilePickerValidation {
   onChange: (() => { message: string; type: string }[])[];
-};
+}
 
 /** Story-only args consumed by the custom `render` (the Form and Field). */
 type FilePickerStoryArgs = GetProps<typeof FilePicker> & {
@@ -47,7 +49,12 @@ const meta: Meta<FilePickerStoryArgs> = {
       initialValues={{ filePickerName: defaultValue }}>
       <Field name="filePickerName" {...props} disabled={disabled} width="500px">
         <Field.Label>Label Text</Field.Label>
-        <FilePicker size={props.size} width="500px" disabled={disabled}>
+        <FilePicker
+          size={props.size}
+          variant={props.variant}
+          max={props.max}
+          width="500px"
+          disabled={disabled}>
           <FilePicker.Trigger>
             <FilePicker.Trigger.Button />
           </FilePicker.Trigger>
@@ -83,6 +90,19 @@ const validation = (
 
 export const Base: Story = {
   args: {}
+};
+
+export const Simple: Story = {
+  args: {
+    variant: "simple"
+  }
+};
+
+export const SimpleDisabled: Story = {
+  args: {
+    variant: "simple",
+    disabled: true
+  }
 };
 
 export const Required: Story = {
@@ -177,4 +197,30 @@ export const PopulatedSizes: Story = {
       </Form>
     </View>
   )
+};
+
+export const SimplePopulated: Story = {
+  render: () => {
+    const [files, setFiles] = useState<ClientFileResult[]>([previewFile]);
+
+    return (
+      <View backgroundColor="background" padding={24}>
+        <Form name="file-simple-populated">
+          <Field name="simplePopulated">
+            <Field.Label>Upload file</Field.Label>
+            <FilePicker
+              variant="simple"
+              files={files}
+              // `onChange` intersects the DOM change handler with the files callback.
+              onChange={setFiles as never}
+              width={500}>
+              <FilePicker.Trigger>
+                <FilePicker.Trigger.Button />
+              </FilePicker.Trigger>
+            </FilePicker>
+          </Field>
+        </Form>
+      </View>
+    );
+  }
 };

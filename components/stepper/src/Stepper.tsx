@@ -241,7 +241,7 @@ export const StepperHeaderList = createStyledHOC(
           gap="3xl"
           backgroundColor="transparent">
           <AnimatePresence mode="wait" custom={{ direction }} initial={false}>
-            {Children.toArray(children).map((child, index) =>
+            {Children.toArray(children).map(async (child, index) =>
               isValidElement(child)
                 ? cloneElement(child, { index } as never)
                 : child
@@ -379,7 +379,7 @@ export const StepperNextButton: TamaguiComponent<
       <NextButton
         ref={forwardedRef}
         {...props}
-        disabled={disabled || !nextStep}
+        disabled={disabled ?? !nextStep}
         onPress={(
           event: Parameters<NonNullable<NextButtonProps["onPress"]>>[0]
         ) => {
@@ -410,7 +410,7 @@ export const StepperPreviousButton: TamaguiComponent<
       <PreviousButton
         ref={forwardedRef}
         {...props}
-        disabled={disabled || !previousStep}
+        disabled={disabled ?? !previousStep}
         onPress={(
           event: Parameters<NonNullable<PreviousButtonProps["onPress"]>>[0]
         ) => {

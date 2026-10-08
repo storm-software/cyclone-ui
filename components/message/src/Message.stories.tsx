@@ -42,14 +42,14 @@ const meta: Meta<MessageStoryArgs> = {
 
         <XStack alignItems="center" gap="5xl" marginTop="400px" width={400}>
           <Button
-            variant="surface"
+            variant="tertiary"
             onPress={() => {
               hide();
             }}>
             <Button.Text>Hide</Button.Text>
           </Button>
           <Button
-            variant="inverse"
+            variant="primary"
             onPress={() => {
               show(message, {
                 heading: "Message Heading",

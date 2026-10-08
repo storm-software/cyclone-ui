@@ -178,6 +178,9 @@
       "path": "./components/tag"
     },
     {
+      "path": "./components/toggle"
+    },
+    {
       "path": "./components/field"
     },
     {
@@ -185,6 +188,9 @@
     },
     {
       "path": "./components/stepper"
+    },
+    {
+      "path": "./components/timeline"
     },
     {
       "path": "./components/table"

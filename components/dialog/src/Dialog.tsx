@@ -117,7 +117,7 @@ const withFullBasisOnSmall = (flexBasis: unknown) =>
 const DialogAction = createStyledHOC(
   Button,
   (
-    { children, onPress, variant = "inverse", flexBasis, ...props },
+    { children, onPress, variant = "primary", flexBasis, ...props },
     forwardedRef
   ) => {
     return (

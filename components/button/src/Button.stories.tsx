@@ -91,10 +91,10 @@ export const SizedIcon: Story = {
   }
 };
 
-export const Surface: Story = {
+export const Tertiary: Story = {
   args: {
     children: "Button Text",
-    variant: "surface",
+    variant: "tertiary",
     disabled: false,
     animate: false
   }
@@ -325,19 +325,19 @@ export const ReverseDiagonalCascadeRight: Story = {
   }
 };
 
-export const Inverse: Story = {
+export const Primary: Story = {
   args: {
     children: "Button Text",
-    variant: "inverse",
+    variant: "primary",
     disabled: false,
     animate: false
   }
 };
 
-export const Subtle: Story = {
+export const Secondary: Story = {
   args: {
     children: "Button Text",
-    variant: "subtle",
+    variant: "secondary",
     disabled: false,
     animate: false
   }
@@ -364,7 +364,7 @@ export const Link: Story = {
 export const Disabled: Story = {
   args: {
     children: "Button Text",
-    variant: "inverse",
+    variant: "primary",
     disabled: true
   }
 };
@@ -377,17 +377,17 @@ export const Brand: Story = {
   args: {
     children: "Button Text",
     theme: "brand",
-    variant: "surface",
+    variant: "tertiary",
     disabled: false,
     animate: false
   }
 };
 
-export const BrandSurface: Story = {
+export const BrandTertiary: Story = {
   args: {
     children: "Button Text",
     theme: "brand",
-    variant: "surface",
+    variant: "tertiary",
     disabled: false,
     animate: false
   }
@@ -413,21 +413,21 @@ export const BrandCascade: Story = {
   }
 };
 
-export const BrandInverse: Story = {
+export const BrandPrimary: Story = {
   args: {
     children: "Button Text",
     theme: "brand",
-    variant: "inverse",
+    variant: "primary",
     disabled: false,
     animate: false
   }
 };
 
-export const BrandSubtle: Story = {
+export const BrandSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "brand",
-    variant: "subtle",
+    variant: "secondary",
     disabled: false,
     animate: false
   }
@@ -457,7 +457,7 @@ export const BrandDisabled: Story = {
   args: {
     children: "Button Text",
     theme: "brand",
-    variant: "inverse",
+    variant: "primary",
     disabled: true
   }
 };
@@ -476,11 +476,11 @@ export const Danger: Story = {
   }
 };
 
-export const DangerSurface: Story = {
+export const DangerTertiary: Story = {
   args: {
     children: "Button Text",
     theme: "danger",
-    variant: "surface",
+    variant: "tertiary",
     disabled: false,
     animate: false
   }
@@ -506,21 +506,21 @@ export const DangerCascade: Story = {
   }
 };
 
-export const DangerInverse: Story = {
+export const DangerPrimary: Story = {
   args: {
     children: "Button Text",
     theme: "danger",
-    variant: "inverse",
+    variant: "primary",
     disabled: false,
     animate: false
   }
 };
 
-export const DangerSubtle: Story = {
+export const DangerSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "danger",
-    variant: "subtle",
+    variant: "secondary",
     disabled: false,
     animate: false
   }
@@ -550,7 +550,7 @@ export const DangerDisabled: Story = {
   args: {
     children: "Button Text",
     theme: "danger",
-    variant: "inverse",
+    variant: "primary",
     disabled: true
   }
 };
@@ -569,11 +569,11 @@ export const Warning: Story = {
   }
 };
 
-export const WarningSurface: Story = {
+export const WarningTertiary: Story = {
   args: {
     children: "Button Text",
     theme: "warning",
-    variant: "surface",
+    variant: "tertiary",
     disabled: false,
     animate: false
   }
@@ -599,21 +599,21 @@ export const WarningCascade: Story = {
   }
 };
 
-export const WarningInverse: Story = {
+export const WarningPrimary: Story = {
   args: {
     children: "Button Text",
     theme: "warning",
-    variant: "inverse",
+    variant: "primary",
     disabled: false,
     animate: false
   }
 };
 
-export const WarningSubtle: Story = {
+export const WarningSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "warning",
-    variant: "subtle",
+    variant: "secondary",
     disabled: false,
     animate: false
   }
@@ -643,7 +643,7 @@ export const WarningDisabled: Story = {
   args: {
     children: "Button Text",
     theme: "warning",
-    variant: "inverse",
+    variant: "primary",
     disabled: true
   }
 };
@@ -662,11 +662,11 @@ export const Success: Story = {
   }
 };
 
-export const SuccessSurface: Story = {
+export const SuccessTertiary: Story = {
   args: {
     children: "Button Text",
     theme: "success",
-    variant: "surface",
+    variant: "tertiary",
     disabled: false,
     animate: false
   }
@@ -692,21 +692,21 @@ export const SuccessCascade: Story = {
   }
 };
 
-export const SuccessInverse: Story = {
+export const SuccessPrimary: Story = {
   args: {
     children: "Button Text",
     theme: "success",
-    variant: "inverse",
+    variant: "primary",
     disabled: false,
     animate: false
   }
 };
 
-export const SuccessSubtle: Story = {
+export const SuccessSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "success",
-    variant: "subtle",
+    variant: "secondary",
     disabled: false,
     animate: false
   }
@@ -736,7 +736,7 @@ export const SuccessDisabled: Story = {
   args: {
     children: "Button Text",
     theme: "success",
-    variant: "inverse",
+    variant: "primary",
     disabled: true
   }
 };
@@ -755,11 +755,11 @@ export const Info: Story = {
   }
 };
 
-export const InfoSurface: Story = {
+export const InfoTertiary: Story = {
   args: {
     children: "Button Text",
     theme: "info",
-    variant: "surface",
+    variant: "tertiary",
     disabled: false,
     animate: false
   }
@@ -785,21 +785,21 @@ export const InfoCascade: Story = {
   }
 };
 
-export const InfoInverse: Story = {
+export const InfoPrimary: Story = {
   args: {
     children: "Button Text",
     theme: "info",
-    variant: "inverse",
+    variant: "primary",
     disabled: false,
     animate: false
   }
 };
 
-export const InfoSubtle: Story = {
+export const InfoSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "info",
-    variant: "subtle",
+    variant: "secondary",
     disabled: false,
     animate: false
   }
@@ -829,7 +829,7 @@ export const InfoDisabled: Story = {
   args: {
     children: "Button Text",
     theme: "info",
-    variant: "inverse",
+    variant: "primary",
     disabled: true
   }
 };
@@ -848,11 +848,11 @@ export const Discovery: Story = {
   }
 };
 
-export const DiscoverySurface: Story = {
+export const DiscoveryTertiary: Story = {
   args: {
     children: "Button Text",
     theme: "discovery",
-    variant: "surface",
+    variant: "tertiary",
     disabled: false,
     animate: false
   }
@@ -878,21 +878,21 @@ export const DiscoveryCascade: Story = {
   }
 };
 
-export const DiscoveryInverse: Story = {
+export const DiscoveryPrimary: Story = {
   args: {
     children: "Button Text",
     theme: "discovery",
-    variant: "inverse",
+    variant: "primary",
     disabled: false,
     animate: false
   }
 };
 
-export const DiscoverySubtle: Story = {
+export const DiscoverySecondary: Story = {
   args: {
     children: "Button Text",
     theme: "discovery",
-    variant: "subtle",
+    variant: "secondary",
     disabled: false,
     animate: false
   }
@@ -922,7 +922,7 @@ export const DiscoveryDisabled: Story = {
   args: {
     children: "Button Text",
     theme: "discovery",
-    variant: "inverse",
+    variant: "primary",
     disabled: true
   }
 };
@@ -941,11 +941,11 @@ export const Positive: Story = {
   }
 };
 
-export const PositiveSurface: Story = {
+export const PositiveTertiary: Story = {
   args: {
     children: "Button Text",
     theme: "positive",
-    variant: "surface",
+    variant: "tertiary",
     disabled: false,
     animate: false
   }
@@ -971,21 +971,21 @@ export const PositiveCascade: Story = {
   }
 };
 
-export const PositiveInverse: Story = {
+export const PositivePrimary: Story = {
   args: {
     children: "Button Text",
     theme: "positive",
-    variant: "inverse",
+    variant: "primary",
     disabled: false,
     animate: false
   }
 };
 
-export const PositiveSubtle: Story = {
+export const PositiveSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "positive",
-    variant: "subtle",
+    variant: "secondary",
     disabled: false,
     animate: false
   }
@@ -1015,7 +1015,7 @@ export const PositiveDisabled: Story = {
   args: {
     children: "Button Text",
     theme: "positive",
-    variant: "inverse",
+    variant: "primary",
     disabled: true
   }
 };
@@ -1034,11 +1034,11 @@ export const Negative: Story = {
   }
 };
 
-export const NegativeSurface: Story = {
+export const NegativeTertiary: Story = {
   args: {
     children: "Button Text",
     theme: "negative",
-    variant: "surface",
+    variant: "tertiary",
     disabled: false,
     animate: false
   }
@@ -1064,21 +1064,21 @@ export const NegativeCascade: Story = {
   }
 };
 
-export const NegativeInverse: Story = {
+export const NegativePrimary: Story = {
   args: {
     children: "Button Text",
     theme: "negative",
-    variant: "inverse",
+    variant: "primary",
     disabled: false,
     animate: false
   }
 };
 
-export const NegativeSubtle: Story = {
+export const NegativeSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "negative",
-    variant: "subtle",
+    variant: "secondary",
     disabled: false,
     animate: false
   }
@@ -1108,7 +1108,7 @@ export const NegativeDisabled: Story = {
   args: {
     children: "Button Text",
     theme: "negative",
-    variant: "inverse",
+    variant: "primary",
     disabled: true
   }
 };
@@ -1122,7 +1122,7 @@ export const DefaultRounded: Story = withRounded(Default);
 export const IconRounded: Story = withRounded(Icon);
 export const SizedRounded: Story = withRounded(Sized);
 export const SizedIconRounded: Story = withRounded(SizedIcon);
-export const SurfaceRounded: Story = withRounded(Surface);
+export const TertiaryRounded: Story = withRounded(Tertiary);
 export const OutlinedRounded: Story = withRounded(Outlined);
 export const CascadeRounded: Story = withRounded(Cascade);
 export const CascadeTopRounded: Story = withRounded(CascadeTop);
@@ -1165,88 +1165,88 @@ export const ReverseDiagonalCascadeBottomRounded: Story = withRounded(
 export const ReverseDiagonalCascadeRightRounded: Story = withRounded(
   ReverseDiagonalCascadeRight
 );
-export const InverseRounded: Story = withRounded(Inverse);
-export const SubtleRounded: Story = withRounded(Subtle);
+export const PrimaryRounded: Story = withRounded(Primary);
+export const SecondaryRounded: Story = withRounded(Secondary);
 export const GhostRounded: Story = withRounded(Ghost);
 export const LinkRounded: Story = withRounded(Link);
 export const DisabledRounded: Story = withRounded(Disabled);
 
 export const BrandRounded: Story = withRounded(Brand);
-export const BrandSurfaceRounded: Story = withRounded(BrandSurface);
+export const BrandTertiaryRounded: Story = withRounded(BrandTertiary);
 export const BrandOutlinedRounded: Story = withRounded(BrandOutlined);
 export const BrandCascadeRounded: Story = withRounded(BrandCascade);
-export const BrandInverseRounded: Story = withRounded(BrandInverse);
-export const BrandSubtleRounded: Story = withRounded(BrandSubtle);
+export const BrandPrimaryRounded: Story = withRounded(BrandPrimary);
+export const BrandSecondaryRounded: Story = withRounded(BrandSecondary);
 export const BrandGhostRounded: Story = withRounded(BrandGhost);
 export const BrandLinkRounded: Story = withRounded(BrandLink);
 export const BrandDisabledRounded: Story = withRounded(BrandDisabled);
 
 export const DangerRounded: Story = withRounded(Danger);
-export const DangerSurfaceRounded: Story = withRounded(DangerSurface);
+export const DangerTertiaryRounded: Story = withRounded(DangerTertiary);
 export const DangerOutlinedRounded: Story = withRounded(DangerOutlined);
 export const DangerCascadeRounded: Story = withRounded(DangerCascade);
-export const DangerInverseRounded: Story = withRounded(DangerInverse);
-export const DangerSubtleRounded: Story = withRounded(DangerSubtle);
+export const DangerPrimaryRounded: Story = withRounded(DangerPrimary);
+export const DangerSecondaryRounded: Story = withRounded(DangerSecondary);
 export const DangerGhostRounded: Story = withRounded(DangerGhost);
 export const DangerLinkRounded: Story = withRounded(DangerLink);
 export const DangerDisabledRounded: Story = withRounded(DangerDisabled);
 
 export const WarningRounded: Story = withRounded(Warning);
-export const WarningSurfaceRounded: Story = withRounded(WarningSurface);
+export const WarningTertiaryRounded: Story = withRounded(WarningTertiary);
 export const WarningOutlinedRounded: Story = withRounded(WarningOutlined);
 export const WarningCascadeRounded: Story = withRounded(WarningCascade);
-export const WarningInverseRounded: Story = withRounded(WarningInverse);
-export const WarningSubtleRounded: Story = withRounded(WarningSubtle);
+export const WarningPrimaryRounded: Story = withRounded(WarningPrimary);
+export const WarningSecondaryRounded: Story = withRounded(WarningSecondary);
 export const WarningGhostRounded: Story = withRounded(WarningGhost);
 export const WarningLinkRounded: Story = withRounded(WarningLink);
 export const WarningDisabledRounded: Story = withRounded(WarningDisabled);
 
 export const SuccessRounded: Story = withRounded(Success);
-export const SuccessSurfaceRounded: Story = withRounded(SuccessSurface);
+export const SuccessTertiaryRounded: Story = withRounded(SuccessTertiary);
 export const SuccessOutlinedRounded: Story = withRounded(SuccessOutlined);
 export const SuccessCascadeRounded: Story = withRounded(SuccessCascade);
-export const SuccessInverseRounded: Story = withRounded(SuccessInverse);
-export const SuccessSubtleRounded: Story = withRounded(SuccessSubtle);
+export const SuccessPrimaryRounded: Story = withRounded(SuccessPrimary);
+export const SuccessSecondaryRounded: Story = withRounded(SuccessSecondary);
 export const SuccessGhostRounded: Story = withRounded(SuccessGhost);
 export const SuccessLinkRounded: Story = withRounded(SuccessLink);
 export const SuccessDisabledRounded: Story = withRounded(SuccessDisabled);
 
 export const InfoRounded: Story = withRounded(Info);
-export const InfoSurfaceRounded: Story = withRounded(InfoSurface);
+export const InfoTertiaryRounded: Story = withRounded(InfoTertiary);
 export const InfoOutlinedRounded: Story = withRounded(InfoOutlined);
 export const InfoCascadeRounded: Story = withRounded(InfoCascade);
-export const InfoInverseRounded: Story = withRounded(InfoInverse);
-export const InfoSubtleRounded: Story = withRounded(InfoSubtle);
+export const InfoPrimaryRounded: Story = withRounded(InfoPrimary);
+export const InfoSecondaryRounded: Story = withRounded(InfoSecondary);
 export const InfoGhostRounded: Story = withRounded(InfoGhost);
 export const InfoLinkRounded: Story = withRounded(InfoLink);
 export const InfoDisabledRounded: Story = withRounded(InfoDisabled);
 
 export const DiscoveryRounded: Story = withRounded(Discovery);
-export const DiscoverySurfaceRounded: Story = withRounded(DiscoverySurface);
+export const DiscoveryTertiaryRounded: Story = withRounded(DiscoveryTertiary);
 export const DiscoveryOutlinedRounded: Story = withRounded(DiscoveryOutlined);
 export const DiscoveryCascadeRounded: Story = withRounded(DiscoveryCascade);
-export const DiscoveryInverseRounded: Story = withRounded(DiscoveryInverse);
-export const DiscoverySubtleRounded: Story = withRounded(DiscoverySubtle);
+export const DiscoveryPrimaryRounded: Story = withRounded(DiscoveryPrimary);
+export const DiscoverySecondaryRounded: Story = withRounded(DiscoverySecondary);
 export const DiscoveryGhostRounded: Story = withRounded(DiscoveryGhost);
 export const DiscoveryLinkRounded: Story = withRounded(DiscoveryLink);
 export const DiscoveryDisabledRounded: Story = withRounded(DiscoveryDisabled);
 
 export const PositiveRounded: Story = withRounded(Positive);
-export const PositiveSurfaceRounded: Story = withRounded(PositiveSurface);
+export const PositiveTertiaryRounded: Story = withRounded(PositiveTertiary);
 export const PositiveOutlinedRounded: Story = withRounded(PositiveOutlined);
 export const PositiveCascadeRounded: Story = withRounded(PositiveCascade);
-export const PositiveInverseRounded: Story = withRounded(PositiveInverse);
-export const PositiveSubtleRounded: Story = withRounded(PositiveSubtle);
+export const PositivePrimaryRounded: Story = withRounded(PositivePrimary);
+export const PositiveSecondaryRounded: Story = withRounded(PositiveSecondary);
 export const PositiveGhostRounded: Story = withRounded(PositiveGhost);
 export const PositiveLinkRounded: Story = withRounded(PositiveLink);
 export const PositiveDisabledRounded: Story = withRounded(PositiveDisabled);
 
 export const NegativeRounded: Story = withRounded(Negative);
-export const NegativeSurfaceRounded: Story = withRounded(NegativeSurface);
+export const NegativeTertiaryRounded: Story = withRounded(NegativeTertiary);
 export const NegativeOutlinedRounded: Story = withRounded(NegativeOutlined);
 export const NegativeCascadeRounded: Story = withRounded(NegativeCascade);
-export const NegativeInverseRounded: Story = withRounded(NegativeInverse);
-export const NegativeSubtleRounded: Story = withRounded(NegativeSubtle);
+export const NegativePrimaryRounded: Story = withRounded(NegativePrimary);
+export const NegativeSecondaryRounded: Story = withRounded(NegativeSecondary);
 export const NegativeGhostRounded: Story = withRounded(NegativeGhost);
 export const NegativeLinkRounded: Story = withRounded(NegativeLink);
 export const NegativeDisabledRounded: Story = withRounded(NegativeDisabled);

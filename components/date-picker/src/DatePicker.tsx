@@ -448,7 +448,7 @@ const DayPicker = () => {
                         : !day.inCurrentMonth
                           ? "ghost"
                           : day.selected || day.range === "in-range"
-                            ? "inverse"
+                            ? "primary"
                             : "ghost"
                     }
                     ghostOpacity={0.75}
@@ -699,7 +699,7 @@ const ItemPicker = ({
   return (
     <Button
       size={getFormSizeToken(size)}
-      variant={active ? "inverse" : "ghost"}
+      variant={active ? "primary" : "ghost"}
       ghostOpacity={0.75}
       flexGrow={1}
       flexBasis={flexBasis ?? "unset"}

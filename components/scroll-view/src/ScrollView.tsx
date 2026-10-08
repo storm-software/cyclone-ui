@@ -26,7 +26,7 @@ export const SCROLL_VIEW_CLASS_NAME = "cyclone-scroll-view";
 export const SCROLL_VIEW_STYLES = `
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar { width: 6px; height: 6px; background: transparent; }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-track { background: transparent; }
-.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar, .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-track { background: color-mix(in srgb, var(--surfaceSunken) 10%, transparent); }
+.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar, .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-track { background: color-mix(in srgb, var(--surfaceSunken) 5%, transparent); }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-thumb { background: var(--accentHover); border-radius: ${100_000}px }
 .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb { background: var(--accent); }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-button { display: none; }

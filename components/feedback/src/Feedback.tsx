@@ -168,7 +168,7 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
                   <TextAreaField.Control rows={3} />
                 </TextAreaField>
                 <Form.Submit asChild={true}>
-                  <Button variant="inverse" alignSelf="flex-end">
+                  <Button variant="primary" alignSelf="flex-end">
                     <Button.Text>Send feedback</Button.Text>
                   </Button>
                 </Form.Submit>

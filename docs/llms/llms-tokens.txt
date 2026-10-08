@@ -148,41 +148,41 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.brand-disabled` | `color` | `#9cfaf0` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation) |
 | `color.muted.brand-hover` | `color` | `#008e84` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% darker) |
 | `color.muted.brand-inactive` | `color` | `#e1ffff` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% brighter) |
-| `color.muted.danger` | `color` | `#fc7d94` | Generated danger muted background for the light theme |
-| `color.muted.danger-active` | `color` | `#d13051` | Generated danger muted background for the light theme (active, 19% darker) |
-| `color.muted.danger-disabled` | `color` | `#ef8697` | Generated danger muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.danger-hover` | `color` | `#c12747` | Generated danger muted background for the light theme (hover, 23% darker) |
-| `color.muted.danger-inactive` | `color` | `#ffe1e7` | Generated danger muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.discovery` | `color` | `#b9a6fa` | Generated discovery muted background for the light theme |
-| `color.muted.discovery-active` | `color` | `#7659d2` | Generated discovery muted background for the light theme (active, 19% darker) |
-| `color.muted.discovery-disabled` | `color` | `#b3a4ee` | Generated discovery muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.discovery-hover` | `color` | `#6a4ac7` | Generated discovery muted background for the light theme (hover, 23% darker) |
+| `color.muted.danger` | `color` | `#ff849a` | Generated danger muted background for the light theme |
+| `color.muted.danger-active` | `color` | `#d53455` | Generated danger muted background for the light theme (active, 19% darker) |
+| `color.muted.danger-disabled` | `color` | `#f28c9d` | Generated danger muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.danger-hover` | `color` | `#c6294b` | Generated danger muted background for the light theme (hover, 23% darker) |
+| `color.muted.danger-inactive` | `color` | `#ffe7ec` | Generated danger muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.discovery` | `color` | `#bfaefc` | Generated discovery muted background for the light theme |
+| `color.muted.discovery-active` | `color` | `#7b5fd4` | Generated discovery muted background for the light theme (active, 19% darker) |
+| `color.muted.discovery-disabled` | `color` | `#b9abf0` | Generated discovery muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.discovery-hover` | `color` | `#6e4fca` | Generated discovery muted background for the light theme (hover, 23% darker) |
 | `color.muted.discovery-inactive` | `color` | `#ffffff` | Generated discovery muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.info` | `color` | `#92baff` | Generated info muted background for the light theme |
-| `color.muted.info-active` | `color` | `#2770f3` | Generated info muted background for the light theme (active, 19% darker) |
-| `color.muted.info-disabled` | `color` | `#8ab5ff` | Generated info muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.info-hover` | `color` | `#1864e9` | Generated info muted background for the light theme (hover, 23% darker) |
-| `color.muted.info-inactive` | `color` | `#d1e9ff` | Generated info muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.negative` | `color` | `#fc7d94` | Generated negative muted background for the light theme |
-| `color.muted.negative-active` | `color` | `#d13051` | Generated negative muted background for the light theme (active, 19% darker) |
-| `color.muted.negative-disabled` | `color` | `#ef8697` | Generated negative muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.negative-hover` | `color` | `#c12747` | Generated negative muted background for the light theme (hover, 23% darker) |
-| `color.muted.negative-inactive` | `color` | `#ffe1e7` | Generated negative muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.positive` | `color` | `#61c6a0` | Generated positive muted background for the light theme |
-| `color.muted.positive-active` | `color` | `#2a8866` | Generated positive muted background for the light theme (active, 19% darker) |
-| `color.muted.positive-disabled` | `color` | `#74c2a3` | Generated positive muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.positive-hover` | `color` | `#207859` | Generated positive muted background for the light theme (hover, 23% darker) |
-| `color.muted.positive-inactive` | `color` | `#b5f5dc` | Generated positive muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.success` | `color` | `#61c6a0` | Generated success muted background for the light theme |
-| `color.muted.success-active` | `color` | `#2a8866` | Generated success muted background for the light theme (active, 19% darker) |
-| `color.muted.success-disabled` | `color` | `#74c2a3` | Generated success muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.success-hover` | `color` | `#207859` | Generated success muted background for the light theme (hover, 23% darker) |
-| `color.muted.success-inactive` | `color` | `#b5f5dc` | Generated success muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.warning` | `color` | `#d6a252` | Generated warning muted background for the light theme |
-| `color.muted.warning-active` | `color` | `#96691e` | Generated warning muted background for the light theme (active, 19% darker) |
-| `color.muted.warning-disabled` | `color` | `#cda567` | Generated warning muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.warning-hover` | `color` | `#865c15` | Generated warning muted background for the light theme (hover, 23% darker) |
-| `color.muted.warning-inactive` | `color` | `#ffddaa` | Generated warning muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.info` | `color` | `#a1c4ff` | Generated info muted background for the light theme |
+| `color.muted.info-active` | `color` | `#3579f1` | Generated info muted background for the light theme (active, 19% darker) |
+| `color.muted.info-disabled` | `color` | `#9abfff` | Generated info muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.info-hover` | `color` | `#266be6` | Generated info muted background for the light theme (hover, 23% darker) |
+| `color.muted.info-inactive` | `color` | `#e1f2ff` | Generated info muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.negative` | `color` | `#ff849a` | Generated negative muted background for the light theme |
+| `color.muted.negative-active` | `color` | `#d53455` | Generated negative muted background for the light theme (active, 19% darker) |
+| `color.muted.negative-disabled` | `color` | `#f28c9d` | Generated negative muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.negative-hover` | `color` | `#c6294b` | Generated negative muted background for the light theme (hover, 23% darker) |
+| `color.muted.negative-inactive` | `color` | `#ffe7ec` | Generated negative muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.positive` | `color` | `#66caa4` | Generated positive muted background for the light theme |
+| `color.muted.positive-active` | `color` | `#2d8c6b` | Generated positive muted background for the light theme (active, 19% darker) |
+| `color.muted.positive-disabled` | `color` | `#79c6a7` | Generated positive muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.positive-hover` | `color` | `#237c5d` | Generated positive muted background for the light theme (hover, 23% darker) |
+| `color.muted.positive-inactive` | `color` | `#bdf8e1` | Generated positive muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.success` | `color` | `#66caa4` | Generated success muted background for the light theme |
+| `color.muted.success-active` | `color` | `#2d8c6b` | Generated success muted background for the light theme (active, 19% darker) |
+| `color.muted.success-disabled` | `color` | `#79c6a7` | Generated success muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.success-hover` | `color` | `#237c5d` | Generated success muted background for the light theme (hover, 23% darker) |
+| `color.muted.success-inactive` | `color` | `#bdf8e1` | Generated success muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.warning` | `color` | `#dcab5e` | Generated warning muted background for the light theme |
+| `color.muted.warning-active` | `color` | `#9f7124` | Generated warning muted background for the light theme (active, 19% darker) |
+| `color.muted.warning-disabled` | `color` | `#d4ae72` | Generated warning muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.warning-hover` | `color` | `#8f631b` | Generated warning muted background for the light theme (hover, 23% darker) |
+| `color.muted.warning-inactive` | `color` | `#ffe6bf` | Generated warning muted background for the light theme (inactive, 20% brighter) |
 | `color.neutral.1` | `color` | `#ffffff` | Bright off-white gray. |
 | `color.neutral.10` | `color` | `#2b2b33` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#08080a` | Dark charcoal gray. |
@@ -258,30 +258,30 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-muted.danger-hover` | `color` | `#000000` | Generated danger foreground on muted backgrounds (hover, 23% brighter) |
 | `color.on-muted.danger-inactive` | `color` | `#000000` | Generated danger foreground on muted backgrounds (inactive, 20% darker) |
 | `color.on-muted.discovery` | `color` | `#000000` | Generated discovery foreground on muted backgrounds |
-| `color.on-muted.discovery-active` | `color` | `#0c0020` | Generated discovery foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.discovery-active` | `color` | `#070013` | Generated discovery foreground on muted backgrounds (active, 19% brighter) |
 | `color.on-muted.discovery-disabled` | `color` | `#000000` | Generated discovery foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.discovery-hover` | `color` | `#0e0027` | Generated discovery foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.discovery-hover` | `color` | `#0a001b` | Generated discovery foreground on muted backgrounds (hover, 23% brighter) |
 | `color.on-muted.discovery-inactive` | `color` | `#000000` | Generated discovery foreground on muted backgrounds (inactive, 20% darker) |
-| `color.on-muted.info` | `color` | `#000207` | Generated info foreground on muted backgrounds |
-| `color.on-muted.info-active` | `color` | `#000000` | Generated info foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.info-disabled` | `color` | `#000103` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.info-hover` | `color` | `#000000` | Generated info foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.info-inactive` | `color` | `#00102b` | Generated info foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.info` | `color` | `#000000` | Generated info foreground on muted backgrounds |
+| `color.on-muted.info-active` | `color` | `#000816` | Generated info foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.info-disabled` | `color` | `#000000` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.info-hover` | `color` | `#000a1d` | Generated info foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.info-inactive` | `color` | `#000000` | Generated info foreground on muted backgrounds (inactive, 20% darker) |
 | `color.on-muted.negative` | `color` | `#000000` | Generated negative foreground on muted backgrounds |
 | `color.on-muted.negative-active` | `color` | `#000000` | Generated negative foreground on muted backgrounds (active, 19% brighter) |
 | `color.on-muted.negative-disabled` | `color` | `#000000` | Generated negative foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.negative-hover` | `color` | `#000000` | Generated negative foreground on muted backgrounds (hover, 23% brighter) |
 | `color.on-muted.negative-inactive` | `color` | `#000000` | Generated negative foreground on muted backgrounds (inactive, 20% darker) |
 | `color.on-muted.positive` | `color` | `#000000` | Generated positive foreground on muted backgrounds |
-| `color.on-muted.positive-active` | `color` | `#000000` | Generated positive foreground on muted backgrounds (active, 19% darker) |
+| `color.on-muted.positive-active` | `color` | `#000000` | Generated positive foreground on muted backgrounds (active, 19% brighter) |
 | `color.on-muted.positive-disabled` | `color` | `#000000` | Generated positive foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.positive-hover` | `color` | `#000000` | Generated positive foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.positive-inactive` | `color` | `#000000` | Generated positive foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.positive-hover` | `color` | `#000000` | Generated positive foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.positive-inactive` | `color` | `#000000` | Generated positive foreground on muted backgrounds (inactive, 20% darker) |
 | `color.on-muted.success` | `color` | `#000000` | Generated success foreground on muted backgrounds |
-| `color.on-muted.success-active` | `color` | `#000000` | Generated success foreground on muted backgrounds (active, 19% darker) |
+| `color.on-muted.success-active` | `color` | `#000000` | Generated success foreground on muted backgrounds (active, 19% brighter) |
 | `color.on-muted.success-disabled` | `color` | `#000000` | Generated success foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.success-hover` | `color` | `#000000` | Generated success foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.success-inactive` | `color` | `#000000` | Generated success foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.success-hover` | `color` | `#000000` | Generated success foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.success-inactive` | `color` | `#000000` | Generated success foreground on muted backgrounds (inactive, 20% darker) |
 | `color.on-muted.warning` | `color` | `#000000` | Generated warning foreground on muted backgrounds |
 | `color.on-muted.warning-active` | `color` | `#000000` | Generated warning foreground on muted backgrounds (active, 19% brighter) |
 | `color.on-muted.warning-disabled` | `color` | `#000000` | Generated warning foreground on muted backgrounds (disabled, 80% saturation) |
@@ -815,41 +815,41 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.brand-disabled` | `color` | `#84c3bd` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation) |
 | `color.muted.brand-hover` | `color` | `#32968f` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% darker) |
 | `color.muted.brand-inactive` | `color` | `#8ddede` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% brighter) |
-| `color.muted.danger` | `color` | `#c17986` | Generated danger muted background for the light theme |
-| `color.muted.danger-active` | `color` | `#9e626e` | Generated danger muted background for the light theme (active, 19% darker) |
-| `color.muted.danger-disabled` | `color` | `#b97f88` | Generated danger muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.danger-hover` | `color` | `#985b68` | Generated danger muted background for the light theme (hover, 23% darker) |
-| `color.muted.danger-inactive` | `color` | `#de8d9e` | Generated danger muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.discovery` | `color` | `#9588c5` | Generated discovery muted background for the light theme |
-| `color.muted.discovery-active` | `color` | `#7d71a3` | Generated discovery muted background for the light theme (active, 19% darker) |
-| `color.muted.discovery-disabled` | `color` | `#958bbb` | Generated discovery muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.discovery-hover` | `color` | `#786c9c` | Generated discovery muted background for the light theme (hover, 23% darker) |
-| `color.muted.discovery-inactive` | `color` | `#af9ce2` | Generated discovery muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.info` | `color` | `#7095d6` | Generated info muted background for the light theme |
-| `color.muted.info-active` | `color` | `#5c7ab0` | Generated info muted background for the light theme (active, 19% darker) |
-| `color.muted.info-disabled` | `color` | `#7996c8` | Generated info muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.info-hover` | `color` | `#5875a8` | Generated info muted background for the light theme (hover, 23% darker) |
-| `color.muted.info-inactive` | `color` | `#87b5dc` | Generated info muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.negative` | `color` | `#c17986` | Generated negative muted background for the light theme |
-| `color.muted.negative-active` | `color` | `#9e626e` | Generated negative muted background for the light theme (active, 19% darker) |
-| `color.muted.negative-disabled` | `color` | `#b97f88` | Generated negative muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.negative-hover` | `color` | `#985b68` | Generated negative muted background for the light theme (hover, 23% darker) |
-| `color.muted.negative-inactive` | `color` | `#de8d9e` | Generated negative muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.positive` | `color` | `#759e8e` | Generated positive muted background for the light theme |
-| `color.muted.positive-active` | `color` | `#588273` | Generated positive muted background for the light theme (active, 19% darker) |
-| `color.muted.positive-disabled` | `color` | `#7d9d90` | Generated positive muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.positive-hover` | `color` | `#517d6d` | Generated positive muted background for the light theme (hover, 23% darker) |
-| `color.muted.positive-inactive` | `color` | `#90c2ae` | Generated positive muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.success` | `color` | `#759e8e` | Generated success muted background for the light theme |
-| `color.muted.success-active` | `color` | `#588273` | Generated success muted background for the light theme (active, 19% darker) |
-| `color.muted.success-disabled` | `color` | `#7d9d90` | Generated success muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.success-hover` | `color` | `#517d6d` | Generated success muted background for the light theme (hover, 23% darker) |
-| `color.muted.success-inactive` | `color` | `#90c2ae` | Generated success muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.warning` | `color` | `#a48f6e` | Generated warning muted background for the light theme |
-| `color.muted.warning-active` | `color` | `#897452` | Generated warning muted background for the light theme (active, 19% darker) |
-| `color.muted.warning-disabled` | `color` | `#a29177` | Generated warning muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.warning-hover` | `color` | `#846f4b` | Generated warning muted background for the light theme (hover, 23% darker) |
-| `color.muted.warning-inactive` | `color` | `#caaf87` | Generated warning muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.danger` | `color` | `#c57a88` | Generated danger muted background for the light theme |
+| `color.muted.danger-active` | `color` | `#a16370` | Generated danger muted background for the light theme (active, 19% darker) |
+| `color.muted.danger-disabled` | `color` | `#bc818a` | Generated danger muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.danger-hover` | `color` | `#9a5d6a` | Generated danger muted background for the light theme (hover, 23% darker) |
+| `color.muted.danger-inactive` | `color` | `#df90a0` | Generated danger muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.discovery` | `color` | `#978ac8` | Generated discovery muted background for the light theme |
+| `color.muted.discovery-active` | `color` | `#7f74a5` | Generated discovery muted background for the light theme (active, 19% darker) |
+| `color.muted.discovery-disabled` | `color` | `#978dbd` | Generated discovery muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.discovery-hover` | `color` | `#7a6e9e` | Generated discovery muted background for the light theme (hover, 23% darker) |
+| `color.muted.discovery-inactive` | `color` | `#b19ee3` | Generated discovery muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.info` | `color` | `#7699d7` | Generated info muted background for the light theme |
+| `color.muted.info-active` | `color` | `#627eb0` | Generated info muted background for the light theme (active, 19% darker) |
+| `color.muted.info-disabled` | `color` | `#7e9acb` | Generated info muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.info-hover` | `color` | `#5d78a8` | Generated info muted background for the light theme (hover, 23% darker) |
+| `color.muted.info-inactive` | `color` | `#8dbbde` | Generated info muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.negative` | `color` | `#c57a88` | Generated negative muted background for the light theme |
+| `color.muted.negative-active` | `color` | `#a16370` | Generated negative muted background for the light theme (active, 19% darker) |
+| `color.muted.negative-disabled` | `color` | `#bc818a` | Generated negative muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.negative-hover` | `color` | `#9a5d6a` | Generated negative muted background for the light theme (hover, 23% darker) |
+| `color.muted.negative-inactive` | `color` | `#df90a0` | Generated negative muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.positive` | `color` | `#77a090` | Generated positive muted background for the light theme |
+| `color.muted.positive-active` | `color` | `#5a8475` | Generated positive muted background for the light theme (active, 19% darker) |
+| `color.muted.positive-disabled` | `color` | `#7f9f92` | Generated positive muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.positive-hover` | `color` | `#537e6f` | Generated positive muted background for the light theme (hover, 23% darker) |
+| `color.muted.positive-inactive` | `color` | `#92c5b1` | Generated positive muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.success` | `color` | `#77a090` | Generated success muted background for the light theme |
+| `color.muted.success-active` | `color` | `#5a8475` | Generated success muted background for the light theme (active, 19% darker) |
+| `color.muted.success-disabled` | `color` | `#7f9f92` | Generated success muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.success-hover` | `color` | `#537e6f` | Generated success muted background for the light theme (hover, 23% darker) |
+| `color.muted.success-inactive` | `color` | `#92c5b1` | Generated success muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.warning` | `color` | `#a99473` | Generated warning muted background for the light theme |
+| `color.muted.warning-active` | `color` | `#8c7856` | Generated warning muted background for the light theme (active, 19% darker) |
+| `color.muted.warning-disabled` | `color` | `#a6957b` | Generated warning muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.warning-hover` | `color` | `#86714f` | Generated warning muted background for the light theme (hover, 23% darker) |
+| `color.muted.warning-inactive` | `color` | `#d1b58a` | Generated warning muted background for the light theme (inactive, 20% brighter) |
 | `color.neutral.1` | `color` | `#d5d5d5` | Bright off-white gray. |
 | `color.neutral.10` | `color` | `#57575a` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#444548` | Dark charcoal gray. |
@@ -919,41 +919,41 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-muted.brand-disabled` | `color` | `#639993` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.brand-hover` | `color` | `#26827a` | Generated brand foreground on muted backgrounds (hover, 23% darker) |
 | `color.on-muted.brand-inactive` | `color` | `#6ebcb4` | Generated brand foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.danger` | `color` | `#551928` | Generated danger foreground on muted backgrounds |
-| `color.on-muted.danger-active` | `color` | `#572330` | Generated danger foreground on muted backgrounds (active, 19% brighter) |
-| `color.on-muted.danger-disabled` | `color` | `#4f1f2a` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.danger-hover` | `color` | `#572532` | Generated danger foreground on muted backgrounds (hover, 23% brighter) |
-| `color.on-muted.danger-inactive` | `color` | `#4f171f` | Generated danger foreground on muted backgrounds (inactive, 20% darker) |
-| `color.on-muted.discovery` | `color` | `#3b1d65` | Generated discovery foreground on muted backgrounds |
-| `color.on-muted.discovery-active` | `color` | `#422c68` | Generated discovery foreground on muted backgrounds (active, 19% brighter) |
-| `color.on-muted.discovery-disabled` | `color` | `#39275b` | Generated discovery foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.discovery-hover` | `color` | `#442e68` | Generated discovery foreground on muted backgrounds (hover, 23% brighter) |
-| `color.on-muted.discovery-inactive` | `color` | `#331b5d` | Generated discovery foreground on muted backgrounds (inactive, 20% darker) |
-| `color.on-muted.info` | `color` | `#1e3769` | Generated info foreground on muted backgrounds |
-| `color.on-muted.info-active` | `color` | `#1c2b62` | Generated info foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.info-disabled` | `color` | `#243a61` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.info-hover` | `color` | `#1c2860` | Generated info foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.info-inactive` | `color` | `#2a436f` | Generated info foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.negative` | `color` | `#551928` | Generated negative foreground on muted backgrounds |
-| `color.on-muted.negative-active` | `color` | `#572330` | Generated negative foreground on muted backgrounds (active, 19% brighter) |
-| `color.on-muted.negative-disabled` | `color` | `#4f1f2a` | Generated negative foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.negative-hover` | `color` | `#572532` | Generated negative foreground on muted backgrounds (hover, 23% brighter) |
-| `color.on-muted.negative-inactive` | `color` | `#4f171f` | Generated negative foreground on muted backgrounds (inactive, 20% darker) |
-| `color.on-muted.positive` | `color` | `#185341` | Generated positive foreground on muted backgrounds |
-| `color.on-muted.positive-active` | `color` | `#164c37` | Generated positive foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.positive-disabled` | `color` | `#274b3e` | Generated positive foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.positive-hover` | `color` | `#164b35` | Generated positive foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.positive-inactive` | `color` | `#2b5345` | Generated positive foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.success` | `color` | `#185341` | Generated success foreground on muted backgrounds |
-| `color.on-muted.success-active` | `color` | `#164c37` | Generated success foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.success-disabled` | `color` | `#274b3e` | Generated success foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.success-hover` | `color` | `#164b35` | Generated success foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.success-inactive` | `color` | `#2b5345` | Generated success foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.warning` | `color` | `#543d18` | Generated warning foreground on muted backgrounds |
-| `color.on-muted.warning-active` | `color` | `#564325` | Generated warning foreground on muted backgrounds (active, 19% brighter) |
-| `color.on-muted.warning-disabled` | `color` | `#4d3d22` | Generated warning foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.warning-hover` | `color` | `#564428` | Generated warning foreground on muted backgrounds (hover, 23% brighter) |
-| `color.on-muted.warning-inactive` | `color` | `#4d3316` | Generated warning foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.danger` | `color` | `#501725` | Generated danger foreground on muted backgrounds |
+| `color.on-muted.danger-active` | `color` | `#521f2c` | Generated danger foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.danger-disabled` | `color` | `#4b1d26` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.danger-hover` | `color` | `#53212d` | Generated danger foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.danger-inactive` | `color` | `#4c161d` | Generated danger foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.discovery` | `color` | `#391c61` | Generated discovery foreground on muted backgrounds |
+| `color.on-muted.discovery-active` | `color` | `#3f2964` | Generated discovery foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.discovery-disabled` | `color` | `#372558` | Generated discovery foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.discovery-hover` | `color` | `#402c65` | Generated discovery foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.discovery-inactive` | `color` | `#321a5b` | Generated discovery foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.info` | `color` | `#1d3464` | Generated info foreground on muted backgrounds |
+| `color.on-muted.info-active` | `color` | `#263e68` | Generated info foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.info-disabled` | `color` | `#21375d` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.info-hover` | `color` | `#28406a` | Generated info foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.info-inactive` | `color` | `#1b275d` | Generated info foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.negative` | `color` | `#501725` | Generated negative foreground on muted backgrounds |
+| `color.on-muted.negative-active` | `color` | `#521f2c` | Generated negative foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.negative-disabled` | `color` | `#4b1d26` | Generated negative foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.negative-hover` | `color` | `#53212d` | Generated negative foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.negative-inactive` | `color` | `#4c161d` | Generated negative foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.positive` | `color` | `#174f3f` | Generated positive foreground on muted backgrounds |
+| `color.on-muted.positive-active` | `color` | `#274f42` | Generated positive foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.positive-disabled` | `color` | `#23483c` | Generated positive foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.positive-hover` | `color` | `#295044` | Generated positive foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.positive-inactive` | `color` | `#154933` | Generated positive foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.success` | `color` | `#174f3f` | Generated success foreground on muted backgrounds |
+| `color.on-muted.success-active` | `color` | `#274f42` | Generated success foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.success-disabled` | `color` | `#23483c` | Generated success foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.success-hover` | `color` | `#295044` | Generated success foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.success-inactive` | `color` | `#154933` | Generated success foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.warning` | `color` | `#523c18` | Generated warning foreground on muted backgrounds |
+| `color.on-muted.warning-active` | `color` | `#534223` | Generated warning foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.warning-disabled` | `color` | `#4c3c20` | Generated warning foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.warning-hover` | `color` | `#544426` | Generated warning foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.warning-inactive` | `color` | `#4c3116` | Generated warning foreground on muted backgrounds (inactive, 20% darker) |
 | `color.orange.1` | `color` | `#d7ad96` | Pale peach orange. |
 | `color.orange.2` | `color` | `#d2a287` | Light apricot orange. |
 | `color.orange.3` | `color` | `#cc9678` | Soft sandy orange. |
@@ -1482,41 +1482,41 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.brand-disabled` | `color` | `#84e3d9` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation) |
 | `color.muted.brand-hover` | `color` | `#08a99e` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% darker) |
 | `color.muted.brand-inactive` | `color` | `#9bffff` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% brighter) |
-| `color.muted.danger` | `color` | `#e37085` | Generated danger muted background for the light theme |
-| `color.muted.danger-active` | `color` | `#b74960` | Generated danger muted background for the light theme (active, 19% darker) |
-| `color.muted.danger-disabled` | `color` | `#d67a89` | Generated danger muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.danger-hover` | `color` | `#ae4158` | Generated danger muted background for the light theme (hover, 23% darker) |
-| `color.muted.danger-inactive` | `color` | `#ff9baf` | Generated danger muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.discovery` | `color` | `#9e8ae4` | Generated discovery muted background for the light theme |
-| `color.muted.discovery-active` | `color` | `#7863ba` | Generated discovery muted background for the light theme (active, 19% darker) |
-| `color.muted.discovery-disabled` | `color` | `#9d8ed6` | Generated discovery muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.discovery-hover` | `color` | `#715bb1` | Generated discovery muted background for the light theme (hover, 23% darker) |
-| `color.muted.discovery-inactive` | `color` | `#c9b5ff` | Generated discovery muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.info` | `color` | `#659dff` | Generated info muted background for the light theme |
-| `color.muted.info-active` | `color` | `#3f74d3` | Generated info muted background for the light theme (active, 19% darker) |
-| `color.muted.info-disabled` | `color` | `#729fec` | Generated info muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.info-hover` | `color` | `#376cc9` | Generated info muted background for the light theme (hover, 23% darker) |
-| `color.muted.info-inactive` | `color` | `#90cbff` | Generated info muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.negative` | `color` | `#e37085` | Generated negative muted background for the light theme |
-| `color.muted.negative-active` | `color` | `#b74960` | Generated negative muted background for the light theme (active, 19% darker) |
-| `color.muted.negative-disabled` | `color` | `#d67a89` | Generated negative muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.negative-hover` | `color` | `#ae4158` | Generated negative muted background for the light theme (hover, 23% darker) |
-| `color.muted.negative-inactive` | `color` | `#ff9baf` | Generated negative muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.positive` | `color` | `#6ab196` | Generated positive muted background for the light theme |
-| `color.muted.positive-active` | `color` | `#41896f` | Generated positive muted background for the light theme (active, 19% darker) |
-| `color.muted.positive-disabled` | `color` | `#77ae98` | Generated positive muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.positive-hover` | `color` | `#388067` | Generated positive muted background for the light theme (hover, 23% darker) |
-| `color.muted.positive-inactive` | `color` | `#96dfc2` | Generated positive muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.success` | `color` | `#6ab196` | Generated success muted background for the light theme |
-| `color.muted.success-active` | `color` | `#41896f` | Generated success muted background for the light theme (active, 19% darker) |
-| `color.muted.success-disabled` | `color` | `#77ae98` | Generated success muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.success-hover` | `color` | `#388067` | Generated success muted background for the light theme (hover, 23% darker) |
-| `color.muted.success-inactive` | `color` | `#96dfc2` | Generated success muted background for the light theme (inactive, 20% brighter) |
-| `color.muted.warning` | `color` | `#bd985e` | Generated warning muted background for the light theme |
-| `color.muted.warning-active` | `color` | `#947137` | Generated warning muted background for the light theme (active, 19% darker) |
-| `color.muted.warning-disabled` | `color` | `#b79a6d` | Generated warning muted background for the light theme (disabled, 80% saturation) |
-| `color.muted.warning-hover` | `color` | `#8c692e` | Generated warning muted background for the light theme (hover, 23% darker) |
-| `color.muted.warning-inactive` | `color` | `#ebc489` | Generated warning muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.danger` | `color` | `#e77388` | Generated danger muted background for the light theme |
+| `color.muted.danger-active` | `color` | `#bb4b62` | Generated danger muted background for the light theme (active, 19% darker) |
+| `color.muted.danger-disabled` | `color` | `#da7d8c` | Generated danger muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.danger-hover` | `color` | `#b1435b` | Generated danger muted background for the light theme (hover, 23% darker) |
+| `color.muted.danger-inactive` | `color` | `#ff9fb3` | Generated danger muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.discovery` | `color` | `#a18ee7` | Generated discovery muted background for the light theme |
+| `color.muted.discovery-active` | `color` | `#7b67bc` | Generated discovery muted background for the light theme (active, 19% darker) |
+| `color.muted.discovery-disabled` | `color` | `#a092d9` | Generated discovery muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.discovery-hover` | `color` | `#735eb3` | Generated discovery muted background for the light theme (hover, 23% darker) |
+| `color.muted.discovery-inactive` | `color` | `#cdbaff` | Generated discovery muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.info` | `color` | `#6fa4ff` | Generated info muted background for the light theme |
+| `color.muted.info-active` | `color` | `#487ad2` | Generated info muted background for the light theme (active, 19% darker) |
+| `color.muted.info-disabled` | `color` | `#7ba5ee` | Generated info muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.info-hover` | `color` | `#4071c8` | Generated info muted background for the light theme (hover, 23% darker) |
+| `color.muted.info-inactive` | `color` | `#9bd3ff` | Generated info muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.negative` | `color` | `#e77388` | Generated negative muted background for the light theme |
+| `color.muted.negative-active` | `color` | `#bb4b62` | Generated negative muted background for the light theme (active, 19% darker) |
+| `color.muted.negative-disabled` | `color` | `#da7d8c` | Generated negative muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.negative-hover` | `color` | `#b1435b` | Generated negative muted background for the light theme (hover, 23% darker) |
+| `color.muted.negative-inactive` | `color` | `#ff9fb3` | Generated negative muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.positive` | `color` | `#6db499` | Generated positive muted background for the light theme |
+| `color.muted.positive-active` | `color` | `#448b72` | Generated positive muted background for the light theme (active, 19% darker) |
+| `color.muted.positive-disabled` | `color` | `#7ab19b` | Generated positive muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.positive-hover` | `color` | `#3b8269` | Generated positive muted background for the light theme (hover, 23% darker) |
+| `color.muted.positive-inactive` | `color` | `#9ae2c6` | Generated positive muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.success` | `color` | `#6db499` | Generated success muted background for the light theme |
+| `color.muted.success-active` | `color` | `#448b72` | Generated success muted background for the light theme (active, 19% darker) |
+| `color.muted.success-disabled` | `color` | `#7ab19b` | Generated success muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.success-hover` | `color` | `#3b8269` | Generated success muted background for the light theme (hover, 23% darker) |
+| `color.muted.success-inactive` | `color` | `#9ae2c6` | Generated success muted background for the light theme (inactive, 20% brighter) |
+| `color.muted.warning` | `color` | `#c39e65` | Generated warning muted background for the light theme |
+| `color.muted.warning-active` | `color` | `#99763d` | Generated warning muted background for the light theme (active, 19% darker) |
+| `color.muted.warning-disabled` | `color` | `#bda073` | Generated warning muted background for the light theme (disabled, 80% saturation) |
+| `color.muted.warning-hover` | `color` | `#906d34` | Generated warning muted background for the light theme (hover, 23% darker) |
+| `color.muted.warning-inactive` | `color` | `#f2cc91` | Generated warning muted background for the light theme (inactive, 20% brighter) |
 | `color.neutral.1` | `color` | `#fafafa` | Bright off-white gray. |
 | `color.neutral.10` | `color` | `#46464a` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#2b2c30` | Dark charcoal gray. |
@@ -1586,41 +1586,41 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-muted.brand-disabled` | `color` | `#4daea4` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.brand-hover` | `color` | `#008277` | Generated brand foreground on muted backgrounds (hover, 23% darker) |
 | `color.on-muted.brand-inactive` | `color` | `#5ddfd2` | Generated brand foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.danger` | `color` | `#2f000c` | Generated danger foreground on muted backgrounds |
-| `color.on-muted.danger-active` | `color` | `#390714` | Generated danger foreground on muted backgrounds (active, 19% brighter) |
-| `color.on-muted.danger-disabled` | `color` | `#2b050e` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.danger-hover` | `color` | `#3b0916` | Generated danger foreground on muted backgrounds (hover, 23% brighter) |
-| `color.on-muted.danger-inactive` | `color` | `#240005` | Generated danger foreground on muted backgrounds (inactive, 20% darker) |
-| `color.on-muted.discovery` | `color` | `#20004c` | Generated discovery foreground on muted backgrounds |
-| `color.on-muted.discovery-active` | `color` | `#290d58` | Generated discovery foreground on muted backgrounds (active, 19% brighter) |
-| `color.on-muted.discovery-disabled` | `color` | `#1e0a42` | Generated discovery foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.discovery-hover` | `color` | `#2b105a` | Generated discovery foreground on muted backgrounds (hover, 23% brighter) |
-| `color.on-muted.discovery-inactive` | `color` | `#17003f` | Generated discovery foreground on muted backgrounds (inactive, 20% darker) |
-| `color.on-muted.info` | `color` | `#001c54` | Generated info foreground on muted backgrounds |
-| `color.on-muted.info-active` | `color` | `#000f47` | Generated info foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.info-disabled` | `color` | `#071f4a` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.info-hover` | `color` | `#000c44` | Generated info foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.info-inactive` | `color` | `#0a2a63` | Generated info foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.negative` | `color` | `#2f000c` | Generated negative foreground on muted backgrounds |
-| `color.on-muted.negative-active` | `color` | `#390714` | Generated negative foreground on muted backgrounds (active, 19% brighter) |
-| `color.on-muted.negative-disabled` | `color` | `#2b050e` | Generated negative foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.negative-hover` | `color` | `#3b0916` | Generated negative foreground on muted backgrounds (hover, 23% brighter) |
-| `color.on-muted.negative-inactive` | `color` | `#240005` | Generated negative foreground on muted backgrounds (inactive, 20% darker) |
-| `color.on-muted.positive` | `color` | `#002b1e` | Generated positive foreground on muted backgrounds |
-| `color.on-muted.positive-active` | `color` | `#001f13` | Generated positive foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.positive-disabled` | `color` | `#0b2a1f` | Generated positive foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.positive-hover` | `color` | `#001d11` | Generated positive foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.positive-inactive` | `color` | `#0f382a` | Generated positive foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.success` | `color` | `#002b1e` | Generated success foreground on muted backgrounds |
-| `color.on-muted.success-active` | `color` | `#001f13` | Generated success foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.success-disabled` | `color` | `#0b2a1f` | Generated success foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.success-hover` | `color` | `#001d11` | Generated success foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.success-inactive` | `color` | `#0f382a` | Generated success foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.warning` | `color` | `#2d1c00` | Generated warning foreground on muted backgrounds |
-| `color.on-muted.warning-active` | `color` | `#392709` | Generated warning foreground on muted backgrounds (active, 19% brighter) |
-| `color.on-muted.warning-disabled` | `color` | `#2a1d07` | Generated warning foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.warning-hover` | `color` | `#3b290c` | Generated warning foreground on muted backgrounds (hover, 23% brighter) |
-| `color.on-muted.warning-inactive` | `color` | `#211100` | Generated warning foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.danger` | `color` | `#270009` | Generated danger foreground on muted backgrounds |
+| `color.on-muted.danger-active` | `color` | `#300510` | Generated danger foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.danger-disabled` | `color` | `#23040a` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.danger-hover` | `color` | `#320611` | Generated danger foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.danger-inactive` | `color` | `#1e0004` | Generated danger foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.discovery` | `color` | `#1d0046` | Generated discovery foreground on muted backgrounds |
+| `color.on-muted.discovery-active` | `color` | `#250b51` | Generated discovery foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.discovery-disabled` | `color` | `#1b093d` | Generated discovery foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.discovery-hover` | `color` | `#270e54` | Generated discovery foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.discovery-inactive` | `color` | `#15003a` | Generated discovery foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.info` | `color` | `#00184b` | Generated info foreground on muted backgrounds |
+| `color.on-muted.info-active` | `color` | `#072457` | Generated info foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.info-disabled` | `color` | `#051b42` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.info-hover` | `color` | `#09265a` | Generated info foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.info-inactive` | `color` | `#000b3e` | Generated info foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.negative` | `color` | `#270009` | Generated negative foreground on muted backgrounds |
+| `color.on-muted.negative-active` | `color` | `#300510` | Generated negative foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.negative-disabled` | `color` | `#23040a` | Generated negative foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.negative-hover` | `color` | `#320611` | Generated negative foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.negative-inactive` | `color` | `#1e0004` | Generated negative foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.positive` | `color` | `#00251a` | Generated positive foreground on muted backgrounds |
+| `color.on-muted.positive-active` | `color` | `#0b3024` | Generated positive foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.positive-disabled` | `color` | `#08241b` | Generated positive foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.positive-hover` | `color` | `#0d3227` | Generated positive foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.positive-inactive` | `color` | `#001a0f` | Generated positive foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.success` | `color` | `#00251a` | Generated success foreground on muted backgrounds |
+| `color.on-muted.success-active` | `color` | `#0b3024` | Generated success foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.success-disabled` | `color` | `#08241b` | Generated success foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.success-hover` | `color` | `#0d3227` | Generated success foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.success-inactive` | `color` | `#001a0f` | Generated success foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.warning` | `color` | `#291a00` | Generated warning foreground on muted backgrounds |
+| `color.on-muted.warning-active` | `color` | `#342408` | Generated warning foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.warning-disabled` | `color` | `#271b06` | Generated warning foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.warning-hover` | `color` | `#36270a` | Generated warning foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.warning-inactive` | `color` | `#1e0f00` | Generated warning foreground on muted backgrounds (inactive, 20% darker) |
 | `color.orange.1` | `color` | `#f6c3a7` | Pale peach orange. |
 | `color.orange.2` | `color` | `#f4b18c` | Light apricot orange. |
 | `color.orange.3` | `color` | `#f19f71` | Soft sandy orange. |
@@ -2149,41 +2149,41 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.brand-disabled` | `color` | `#176d4f` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation) |
 | `color.muted.brand-hover` | `color` | `#23ad7f` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% brighter) |
 | `color.muted.brand-inactive` | `color` | `#001710` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% darker) |
-| `color.muted.danger` | `color` | `#28000d` | Generated danger muted background for the dark theme |
-| `color.muted.danger-active` | `color` | `#69041c` | Generated danger muted background for the dark theme (active, 19% brighter) |
-| `color.muted.danger-disabled` | `color` | `#39030f` | Generated danger muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.danger-hover` | `color` | `#73081f` | Generated danger muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.danger-inactive` | `color` | `#080002` | Generated danger muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.discovery` | `color` | `#3f198c` | Generated discovery muted background for the dark theme |
-| `color.muted.discovery-active` | `color` | `#5930b8` | Generated discovery muted background for the dark theme (active, 19% brighter) |
-| `color.muted.discovery-disabled` | `color` | `#3c217b` | Generated discovery muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.discovery-hover` | `color` | `#6036c1` | Generated discovery muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.discovery-inactive` | `color` | `#230357` | Generated discovery muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.info` | `color` | `#00388e` | Generated info muted background for the dark theme |
-| `color.muted.info-active` | `color` | `#0053e2` | Generated info muted background for the dark theme (active, 19% brighter) |
-| `color.muted.info-disabled` | `color` | `#003898` | Generated info muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.info-hover` | `color` | `#0159f1` | Generated info muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.info-inactive` | `color` | `#001c64` | Generated info muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.negative` | `color` | `#28000d` | Generated negative muted background for the dark theme |
-| `color.muted.negative-active` | `color` | `#69041c` | Generated negative muted background for the dark theme (active, 19% brighter) |
-| `color.muted.negative-disabled` | `color` | `#39030f` | Generated negative muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.negative-hover` | `color` | `#73081f` | Generated negative muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.negative-inactive` | `color` | `#080002` | Generated negative muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.positive` | `color` | `#003121` | Generated positive muted background for the dark theme |
-| `color.muted.positive-active` | `color` | `#168757` | Generated positive muted background for the dark theme (active, 19% brighter) |
-| `color.muted.positive-disabled` | `color` | `#115739` | Generated positive muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.positive-hover` | `color` | `#1d9261` | Generated positive muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.positive-inactive` | `color` | `#000805` | Generated positive muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.success` | `color` | `#003121` | Generated success muted background for the dark theme |
-| `color.muted.success-active` | `color` | `#168757` | Generated success muted background for the dark theme (active, 19% brighter) |
-| `color.muted.success-disabled` | `color` | `#115739` | Generated success muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.success-hover` | `color` | `#1d9261` | Generated success muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.success-inactive` | `color` | `#000805` | Generated success muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.warning` | `color` | `#4d3300` | Generated warning muted background for the dark theme |
-| `color.muted.warning-active` | `color` | `#a46b0e` | Generated warning muted background for the dark theme (active, 19% brighter) |
-| `color.muted.warning-disabled` | `color` | `#6d470d` | Generated warning muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.warning-hover` | `color` | `#b17415` | Generated warning muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.warning-inactive` | `color` | `#211300` | Generated warning muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.danger` | `color` | `#21000b` | Generated danger muted background for the dark theme |
+| `color.muted.danger-active` | `color` | `#5e031a` | Generated danger muted background for the dark theme (active, 19% brighter) |
+| `color.muted.danger-disabled` | `color` | `#32020d` | Generated danger muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.danger-hover` | `color` | `#69071d` | Generated danger muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.danger-inactive` | `color` | `#030001` | Generated danger muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.discovery` | `color` | `var(--color-purple-9)` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. |
+| `color.muted.discovery-active` | `color` | `#2f1e64` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 19% brighter) |
+| `color.muted.discovery-disabled` | `color` | `#1b1138` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 80% saturation) |
+| `color.muted.discovery-hover` | `color` | `#33226c` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hover, 23% brighter) |
+| `color.muted.discovery-inactive` | `color` | `#0a0219` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker) |
+| `color.muted.info` | `color` | `var(--color-blue-8)` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. |
+| `color.muted.info-active` | `color` | `#114aab` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 19% brighter) |
+| `color.muted.info-disabled` | `color` | `#0c2f6e` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 80% saturation) |
+| `color.muted.info-hover` | `color` | `#164fb5` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hover, 23% brighter) |
+| `color.muted.info-inactive` | `color` | `#001437` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker) |
+| `color.muted.negative` | `color` | `#21000b` | Generated negative muted background for the dark theme |
+| `color.muted.negative-active` | `color` | `#5e031a` | Generated negative muted background for the dark theme (active, 19% brighter) |
+| `color.muted.negative-disabled` | `color` | `#32020d` | Generated negative muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.negative-hover` | `color` | `#69071d` | Generated negative muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.negative-inactive` | `color` | `#030001` | Generated negative muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.positive` | `color` | `#00271a` | Generated positive muted background for the dark theme |
+| `color.muted.positive-active` | `color` | `#12774e` | Generated positive muted background for the dark theme (active, 19% brighter) |
+| `color.muted.positive-disabled` | `color` | `#0f4b31` | Generated positive muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.positive-hover` | `color` | `#198356` | Generated positive muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.positive-inactive` | `color` | `#000101` | Generated positive muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.success` | `color` | `#00271a` | Generated success muted background for the dark theme |
+| `color.muted.success-active` | `color` | `#12774e` | Generated success muted background for the dark theme (active, 19% brighter) |
+| `color.muted.success-disabled` | `color` | `#0f4b31` | Generated success muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.success-hover` | `color` | `#198356` | Generated success muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.success-inactive` | `color` | `#000101` | Generated success muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.warning` | `color` | `#432c00` | Generated warning muted background for the dark theme |
+| `color.muted.warning-active` | `color` | `#96610d` | Generated warning muted background for the dark theme (active, 19% brighter) |
+| `color.muted.warning-disabled` | `color` | `#603f0b` | Generated warning muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.warning-hover` | `color` | `#a26a13` | Generated warning muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.warning-inactive` | `color` | `#1a0f00` | Generated warning muted background for the dark theme (inactive, 20% darker) |
 | `color.neutral.1` | `color` | `#ffffff` | Bright off-white gray. |
 | `color.neutral.10` | `color` | `#2b2b33` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#08080a` | Dark charcoal gray. |
@@ -2253,25 +2253,25 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-muted.brand-disabled` | `color` | `#71f9d5` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.brand-hover` | `color` | `#007f65` | Generated brand foreground on muted backgrounds (hover, 23% darker) |
 | `color.on-muted.brand-inactive` | `color` | `#bbfff9` | Generated brand foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.danger` | `color` | `#ffdade` | Generated danger foreground on muted backgrounds |
-| `color.on-muted.danger-active` | `color` | `#e7687a` | Generated danger foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.danger-disabled` | `color` | `#ffd4d8` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.danger-hover` | `color` | `#db5669` | Generated danger foreground on muted backgrounds (hover, 23% darker) |
+| `color.on-muted.danger` | `color` | `#ffe1e5` | Generated danger foreground on muted backgrounds |
+| `color.on-muted.danger-active` | `color` | `#e56f80` | Generated danger foreground on muted backgrounds (active, 19% darker) |
+| `color.on-muted.danger-disabled` | `color` | `#ffdbdf` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.danger-hover` | `color` | `#db5d6f` | Generated danger foreground on muted backgrounds (hover, 23% darker) |
 | `color.on-muted.danger-inactive` | `color` | `#ffffff` | Generated danger foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.discovery` | `color` | `#ffffff` | Generated discovery foreground on muted backgrounds |
-| `color.on-muted.discovery-active` | `color` | `#b5a8e2` | Generated discovery foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.discovery-disabled` | `color` | `#ffffff` | Generated discovery foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.discovery-hover` | `color` | `#a396d6` | Generated discovery foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.discovery-inactive` | `color` | `#ffffff` | Generated discovery foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.info` | `color` | `#ffffff` | Generated info foreground on muted backgrounds |
-| `color.on-muted.info-active` | `color` | `#a5bbe1` | Generated info foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.info-disabled` | `color` | `#ffffff` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.info-hover` | `color` | `#92aad4` | Generated info foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.info-inactive` | `color` | `#ffffff` | Generated info foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.negative` | `color` | `#ffdade` | Generated negative foreground on muted backgrounds |
-| `color.on-muted.negative-active` | `color` | `#e7687a` | Generated negative foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.negative-disabled` | `color` | `#ffd4d8` | Generated negative foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.negative-hover` | `color` | `#db5669` | Generated negative foreground on muted backgrounds (hover, 23% darker) |
+| `color.on-muted.discovery` | `color` | `var(--color-purple-4)` | Generated discovery foreground on muted backgrounds |
+| `color.on-muted.discovery-active` | `color` | `#eae2ff` | Generated discovery foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.discovery-disabled` | `color` | `#9c84e3` | Generated discovery foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.discovery-hover` | `color` | `#f3eeff` | Generated discovery foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.discovery-inactive` | `color` | `#643bc7` | Generated discovery foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.info` | `color` | `var(--color-blue-4)` | Generated info foreground on muted backgrounds |
+| `color.on-muted.info-active` | `color` | `#a5d1ff` | Generated info foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.info-disabled` | `color` | `#68a0ff` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.info-hover` | `color` | `#b1d9ff` | Generated info foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.info-inactive` | `color` | `#0159f1` | Generated info foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.negative` | `color` | `#ffe1e5` | Generated negative foreground on muted backgrounds |
+| `color.on-muted.negative-active` | `color` | `#e56f80` | Generated negative foreground on muted backgrounds (active, 19% darker) |
+| `color.on-muted.negative-disabled` | `color` | `#ffdbdf` | Generated negative foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.negative-hover` | `color` | `#db5d6f` | Generated negative foreground on muted backgrounds (hover, 23% darker) |
 | `color.on-muted.negative-inactive` | `color` | `#ffffff` | Generated negative foreground on muted backgrounds (inactive, 20% brighter) |
 | `color.on-muted.positive` | `color` | `#ffffff` | Generated positive foreground on muted backgrounds |
 | `color.on-muted.positive-active` | `color` | `#e0e0e0` | Generated positive foreground on muted backgrounds (active, 19% darker) |
@@ -2816,41 +2816,41 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.brand-disabled` | `color` | `#4a7a69` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation) |
 | `color.muted.brand-hover` | `color` | `#57917e` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% brighter) |
 | `color.muted.brand-inactive` | `color` | `#206f56` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% darker) |
-| `color.muted.danger` | `color` | `#75223d` | Generated danger muted background for the dark theme |
-| `color.muted.danger-active` | `color` | `#7d3b4b` | Generated danger muted background for the dark theme (active, 19% brighter) |
-| `color.muted.danger-disabled` | `color` | `#6c3541` | Generated danger muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.danger-hover` | `color` | `#80404e` | Generated danger muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.danger-inactive` | `color` | `#691f2f` | Generated danger muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.discovery` | `color` | `#604e86` | Generated discovery muted background for the dark theme |
-| `color.muted.discovery-active` | `color` | `#705f95` | Generated discovery muted background for the dark theme (active, 19% brighter) |
-| `color.muted.discovery-disabled` | `color` | `#5f517e` | Generated discovery muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.discovery-hover` | `color` | `#736398` | Generated discovery muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.discovery-inactive` | `color` | `#503877` | Generated discovery muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.info` | `color` | `#2e599b` | Generated info muted background for the dark theme |
-| `color.muted.info-active` | `color` | `#486ca9` | Generated info muted background for the dark theme (active, 19% brighter) |
-| `color.muted.info-disabled` | `color` | `#3f5c8f` | Generated info muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.info-hover` | `color` | `#4d70ac` | Generated info muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.info-inactive` | `color` | `#29458c` | Generated info muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.negative` | `color` | `#75223d` | Generated negative muted background for the dark theme |
-| `color.muted.negative-active` | `color` | `#7d3b4b` | Generated negative muted background for the dark theme (active, 19% brighter) |
-| `color.muted.negative-disabled` | `color` | `#6c3541` | Generated negative muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.negative-hover` | `color` | `#80404e` | Generated negative muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.negative-inactive` | `color` | `#691f2f` | Generated negative muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.positive` | `color` | `#23795d` | Generated positive muted background for the dark theme |
-| `color.muted.positive-active` | `color` | `#4b846c` | Generated positive muted background for the dark theme (active, 19% brighter) |
-| `color.muted.positive-disabled` | `color` | `#44725e` | Generated positive muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.positive-hover` | `color` | `#518870` | Generated positive muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.positive-inactive` | `color` | `#1f694b` | Generated positive muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.success` | `color` | `#23795d` | Generated success muted background for the dark theme |
-| `color.muted.success-active` | `color` | `#4b846c` | Generated success muted background for the dark theme (active, 19% brighter) |
-| `color.muted.success-disabled` | `color` | `#44725e` | Generated success muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.success-hover` | `color` | `#518870` | Generated success muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.success-inactive` | `color` | `#1f694b` | Generated success muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.warning` | `color` | `#836426` | Generated warning muted background for the dark theme |
-| `color.muted.warning-active` | `color` | `#90754a` | Generated warning muted background for the dark theme (active, 19% brighter) |
-| `color.muted.warning-disabled` | `color` | `#7c6543` | Generated warning muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.warning-hover` | `color` | `#947950` | Generated warning muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.warning-inactive` | `color` | `#735121` | Generated warning muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.danger` | `color` | `#73213c` | Generated danger muted background for the dark theme |
+| `color.muted.danger-active` | `color` | `#7a3949` | Generated danger muted background for the dark theme (active, 19% brighter) |
+| `color.muted.danger-disabled` | `color` | `#6a3340` | Generated danger muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.danger-hover` | `color` | `#7c3d4c` | Generated danger muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.danger-inactive` | `color` | `#671e2f` | Generated danger muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.discovery` | `color` | `var(--color-purple-9)` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. |
+| `color.muted.discovery-active` | `color` | `#584e75` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 19% brighter) |
+| `color.muted.discovery-disabled` | `color` | `#4b4364` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 80% saturation) |
+| `color.muted.discovery-hover` | `color` | `#5a5177` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hover, 23% brighter) |
+| `color.muted.discovery-inactive` | `color` | `#403160` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker) |
+| `color.muted.info` | `color` | `var(--color-blue-8)` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. |
+| `color.muted.info-active` | `color` | `#4d6692` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 19% brighter) |
+| `color.muted.info-disabled` | `color` | `#42577d` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 80% saturation) |
+| `color.muted.info-hover` | `color` | `#516995` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hover, 23% brighter) |
+| `color.muted.info-inactive` | `color` | `#254479` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker) |
+| `color.muted.negative` | `color` | `#73213c` | Generated negative muted background for the dark theme |
+| `color.muted.negative-active` | `color` | `#7a3949` | Generated negative muted background for the dark theme (active, 19% brighter) |
+| `color.muted.negative-disabled` | `color` | `#6a3340` | Generated negative muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.negative-hover` | `color` | `#7c3d4c` | Generated negative muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.negative-inactive` | `color` | `#671e2f` | Generated negative muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.positive` | `color` | `#227559` | Generated positive muted background for the dark theme |
+| `color.muted.positive-active` | `color` | `#487f68` | Generated positive muted background for the dark theme (active, 19% brighter) |
+| `color.muted.positive-disabled` | `color` | `#416e5b` | Generated positive muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.positive-hover` | `color` | `#4d826c` | Generated positive muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.positive-inactive` | `color` | `#1e6749` | Generated positive muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.success` | `color` | `#227559` | Generated success muted background for the dark theme |
+| `color.muted.success-active` | `color` | `#487f68` | Generated success muted background for the dark theme (active, 19% brighter) |
+| `color.muted.success-disabled` | `color` | `#416e5b` | Generated success muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.success-hover` | `color` | `#4d826c` | Generated success muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.success-inactive` | `color` | `#1e6749` | Generated success muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.warning` | `color` | `#7f6125` | Generated warning muted background for the dark theme |
+| `color.muted.warning-active` | `color` | `#8b7148` | Generated warning muted background for the dark theme (active, 19% brighter) |
+| `color.muted.warning-disabled` | `color` | `#786240` | Generated warning muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.warning-hover` | `color` | `#8f754d` | Generated warning muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.warning-inactive` | `color` | `#704f20` | Generated warning muted background for the dark theme (inactive, 20% darker) |
 | `color.neutral.1` | `color` | `#d5d5d5` | Bright off-white gray. |
 | `color.neutral.10` | `color` | `#57575a` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#444548` | Dark charcoal gray. |
@@ -2920,26 +2920,26 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-muted.brand-disabled` | `color` | `#75beaa` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.brand-hover` | `color` | `#2c9680` | Generated brand foreground on muted backgrounds (hover, 23% darker) |
 | `color.on-muted.brand-inactive` | `color` | `#7fdad2` | Generated brand foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.danger` | `color` | `#dd8b95` | Generated danger foreground on muted backgrounds |
-| `color.on-muted.danger-active` | `color` | `#b1757d` | Generated danger foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.danger-disabled` | `color` | `#d39299` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.danger-hover` | `color` | `#a87078` | Generated danger foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.danger-inactive` | `color` | `#e5a6b4` | Generated danger foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.discovery` | `color` | `#b3a5e5` | Generated discovery foreground on muted backgrounds |
-| `color.on-muted.discovery-active` | `color` | `#9890b2` | Generated discovery foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.discovery-disabled` | `color` | `#b4abda` | Generated discovery foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.discovery-hover` | `color` | `#908aaa` | Generated discovery foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.discovery-inactive` | `color` | `#ecbfec` | Generated discovery foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.info` | `color` | `#a5bde5` | Generated info foreground on muted backgrounds |
-| `color.on-muted.info-active` | `color` | `#8f9cb1` | Generated info foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.info-disabled` | `color` | `#abbedd` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.info-hover` | `color` | `#8894a8` | Generated info foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.info-inactive` | `color` | `#b9ebeb` | Generated info foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.negative` | `color` | `#dd8b95` | Generated negative foreground on muted backgrounds |
-| `color.on-muted.negative-active` | `color` | `#b1757d` | Generated negative foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.negative-disabled` | `color` | `#d39299` | Generated negative foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.negative-hover` | `color` | `#a87078` | Generated negative foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.negative-inactive` | `color` | `#e5a6b4` | Generated negative foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.danger` | `color` | `#de8d98` | Generated danger foreground on muted backgrounds |
+| `color.on-muted.danger-active` | `color` | `#b07880` | Generated danger foreground on muted backgrounds (active, 19% darker) |
+| `color.on-muted.danger-disabled` | `color` | `#d4959c` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.danger-hover` | `color` | `#a8727a` | Generated danger foreground on muted backgrounds (hover, 23% darker) |
+| `color.on-muted.danger-inactive` | `color` | `#e6a9b9` | Generated danger foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.discovery` | `color` | `var(--color-purple-4)` | Generated discovery foreground on muted backgrounds |
+| `color.on-muted.discovery-active` | `color` | `#a38ede` | Generated discovery foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.discovery-disabled` | `color` | `#8d80b1` | Generated discovery foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.discovery-hover` | `color` | `#a892df` | Generated discovery foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.discovery-inactive` | `color` | `#75669a` | Generated discovery foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.info` | `color` | `var(--color-blue-4)` | Generated info foreground on muted backgrounds |
+| `color.on-muted.info-active` | `color` | `#77a6d8` | Generated info foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.info-disabled` | `color` | `#6d8dc4` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.info-hover` | `color` | `#7cabd9` | Generated info foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.info-inactive` | `color` | `#4d70ac` | Generated info foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.negative` | `color` | `#de8d98` | Generated negative foreground on muted backgrounds |
+| `color.on-muted.negative-active` | `color` | `#b07880` | Generated negative foreground on muted backgrounds (active, 19% darker) |
+| `color.on-muted.negative-disabled` | `color` | `#d4959c` | Generated negative foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.negative-hover` | `color` | `#a8727a` | Generated negative foreground on muted backgrounds (hover, 23% darker) |
+| `color.on-muted.negative-inactive` | `color` | `#e6a9b9` | Generated negative foreground on muted backgrounds (inactive, 20% brighter) |
 | `color.on-muted.positive` | `color` | `#d9d9d9` | Generated positive foreground on muted backgrounds |
 | `color.on-muted.positive-active` | `color` | `#aeaeae` | Generated positive foreground on muted backgrounds (active, 19% darker) |
 | `color.on-muted.positive-disabled` | `color` | `#d9d9d966` | Generated positive foreground on muted backgrounds (disabled, 40% opacity) |
@@ -3483,41 +3483,41 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.muted.brand-disabled` | `color` | `#2f7b61` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation) |
 | `color.muted.brand-hover` | `color` | `#3da280` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% brighter) |
 | `color.muted.brand-inactive` | `color` | `#005f41` | Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% darker) |
-| `color.muted.danger` | `color` | `#6b0023` | Generated danger muted background for the dark theme |
-| `color.muted.danger-active` | `color` | `#7f1b33` | Generated danger muted background for the dark theme (active, 19% brighter) |
-| `color.muted.danger-disabled` | `color` | `#621727` | Generated danger muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.danger-hover` | `color` | `#842036` | Generated danger muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.danger-inactive` | `color` | `#550013` | Generated danger muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.discovery` | `color` | `#51328f` | Generated discovery muted background for the dark theme |
-| `color.muted.discovery-active` | `color` | `#6548a7` | Generated discovery muted background for the dark theme (active, 19% brighter) |
-| `color.muted.discovery-disabled` | `color` | `#4f3982` | Generated discovery muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.discovery-hover` | `color` | `#6a4dac` | Generated discovery muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.discovery-inactive` | `color` | `#3c1875` | Generated discovery muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.info` | `color` | `#0146b0` | Generated info muted background for the dark theme |
-| `color.muted.info-active` | `color` | `#205fcb` | Generated info muted background for the dark theme (active, 19% brighter) |
-| `color.muted.info-disabled` | `color` | `#1b4b9d` | Generated info muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.info-hover` | `color` | `#2564d1` | Generated info muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.info-inactive` | `color` | `#002a94` | Generated info muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.negative` | `color` | `#6b0023` | Generated negative muted background for the dark theme |
-| `color.muted.negative-active` | `color` | `#7f1b33` | Generated negative muted background for the dark theme (active, 19% brighter) |
-| `color.muted.negative-disabled` | `color` | `#621727` | Generated negative muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.negative-hover` | `color` | `#842036` | Generated negative muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.negative-inactive` | `color` | `#550013` | Generated negative muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.positive` | `color` | `#00714c` | Generated positive muted background for the dark theme |
-| `color.muted.positive-active` | `color` | `#2f8c65` | Generated positive muted background for the dark theme (active, 19% brighter) |
-| `color.muted.positive-disabled` | `color` | `#296e50` | Generated positive muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.positive-hover` | `color` | `#36926b` | Generated positive muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.positive-inactive` | `color` | `#005532` | Generated positive muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.success` | `color` | `#00714c` | Generated success muted background for the dark theme |
-| `color.muted.success-active` | `color` | `#2f8c65` | Generated success muted background for the dark theme (active, 19% brighter) |
-| `color.muted.success-disabled` | `color` | `#296e50` | Generated success muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.success-hover` | `color` | `#36926b` | Generated success muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.success-inactive` | `color` | `#005532` | Generated success muted background for the dark theme (inactive, 20% darker) |
-| `color.muted.warning` | `color` | `#845800` | Generated warning muted background for the dark theme |
-| `color.muted.warning-active` | `color` | `#a0732a` | Generated warning muted background for the dark theme (active, 19% brighter) |
-| `color.muted.warning-disabled` | `color` | `#7e5b25` | Generated warning muted background for the dark theme (disabled, 80% saturation) |
-| `color.muted.warning-hover` | `color` | `#a77931` | Generated warning muted background for the dark theme (hover, 23% brighter) |
-| `color.muted.warning-inactive` | `color` | `#663c00` | Generated warning muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.danger` | `color` | `#660022` | Generated danger muted background for the dark theme |
+| `color.muted.danger-active` | `color` | `#791931` | Generated danger muted background for the dark theme (active, 19% brighter) |
+| `color.muted.danger-disabled` | `color` | `#5e1526` | Generated danger muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.danger-hover` | `color` | `#7e1e34` | Generated danger muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.danger-inactive` | `color` | `#510013` | Generated danger muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.discovery` | `color` | `var(--color-purple-9)` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. |
+| `color.muted.discovery-active` | `color` | `#453673` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 19% brighter) |
+| `color.muted.discovery-disabled` | `color` | `#352a58` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 80% saturation) |
+| `color.muted.discovery-hover` | `color` | `#483a77` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hover, 23% brighter) |
+| `color.muted.discovery-inactive` | `color` | `#27144e` | Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker) |
+| `color.muted.info` | `color` | `var(--color-blue-8)` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. |
+| `color.muted.info-active` | `color` | `#2d59a4` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 19% brighter) |
+| `color.muted.info-disabled` | `color` | `#24457f` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 80% saturation) |
+| `color.muted.info-hover` | `color` | `#325da9` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hover, 23% brighter) |
+| `color.muted.info-inactive` | `color` | `#022c73` | Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker) |
+| `color.muted.negative` | `color` | `#660022` | Generated negative muted background for the dark theme |
+| `color.muted.negative-active` | `color` | `#791931` | Generated negative muted background for the dark theme (active, 19% brighter) |
+| `color.muted.negative-disabled` | `color` | `#5e1526` | Generated negative muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.negative-hover` | `color` | `#7e1e34` | Generated negative muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.negative-inactive` | `color` | `#510013` | Generated negative muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.positive` | `color` | `#006a47` | Generated positive muted background for the dark theme |
+| `color.muted.positive-active` | `color` | `#2b835f` | Generated positive muted background for the dark theme (active, 19% brighter) |
+| `color.muted.positive-disabled` | `color` | `#26674b` | Generated positive muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.positive-hover` | `color` | `#328964` | Generated positive muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.positive-inactive` | `color` | `#00502f` | Generated positive muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.success` | `color` | `#006a47` | Generated success muted background for the dark theme |
+| `color.muted.success-active` | `color` | `#2b835f` | Generated success muted background for the dark theme (active, 19% brighter) |
+| `color.muted.success-disabled` | `color` | `#26674b` | Generated success muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.success-hover` | `color` | `#328964` | Generated success muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.success-inactive` | `color` | `#00502f` | Generated success muted background for the dark theme (inactive, 20% darker) |
+| `color.muted.warning` | `color` | `#7d5300` | Generated warning muted background for the dark theme |
+| `color.muted.warning-active` | `color` | `#986c28` | Generated warning muted background for the dark theme (active, 19% brighter) |
+| `color.muted.warning-disabled` | `color` | `#775622` | Generated warning muted background for the dark theme (disabled, 80% saturation) |
+| `color.muted.warning-hover` | `color` | `#9e722e` | Generated warning muted background for the dark theme (hover, 23% brighter) |
+| `color.muted.warning-inactive` | `color` | `#613900` | Generated warning muted background for the dark theme (inactive, 20% darker) |
 | `color.neutral.1` | `color` | `#fafafa` | Bright off-white gray. |
 | `color.neutral.10` | `color` | `#46464a` | Charcoal gray. |
 | `color.neutral.11` | `color` | `#2b2c30` | Dark charcoal gray. |
@@ -3587,26 +3587,26 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.on-muted.brand-disabled` | `color` | `#6adfc0` | Generated brand foreground on muted backgrounds (disabled, 80% saturation) |
 | `color.on-muted.brand-hover` | `color` | `#00a785` | Generated brand foreground on muted backgrounds (hover, 23% darker) |
 | `color.on-muted.brand-inactive` | `color` | `#81fff4` | Generated brand foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.danger` | `color` | `#ff96a3` | Generated danger foreground on muted backgrounds |
-| `color.on-muted.danger-active` | `color` | `#cd6977` | Generated danger foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.danger-disabled` | `color` | `#f39ea7` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.danger-hover` | `color` | `#c2606e` | Generated danger foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.danger-inactive` | `color` | `#ffc9d5` | Generated danger foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.discovery` | `color` | `#d3c7ff` | Generated discovery foreground on muted backgrounds |
-| `color.on-muted.discovery-active` | `color` | `#a195ca` | Generated discovery foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.discovery-disabled` | `color` | `#d2c9f6` | Generated discovery foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.discovery-hover` | `color` | `#968bbf` | Generated discovery foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.discovery-inactive` | `color` | `#fff6ff` | Generated discovery foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.info` | `color` | `#c7dcff` | Generated info foreground on muted backgrounds |
-| `color.on-muted.info-active` | `color` | `#93a7c9` | Generated info foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.info-disabled` | `color` | `#cbdcf8` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.info-hover` | `color` | `#899cbd` | Generated info foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.info-inactive` | `color` | `#ebffff` | Generated info foreground on muted backgrounds (inactive, 20% brighter) |
-| `color.on-muted.negative` | `color` | `#ff96a3` | Generated negative foreground on muted backgrounds |
-| `color.on-muted.negative-active` | `color` | `#cd6977` | Generated negative foreground on muted backgrounds (active, 19% darker) |
-| `color.on-muted.negative-disabled` | `color` | `#f39ea7` | Generated negative foreground on muted backgrounds (disabled, 80% saturation) |
-| `color.on-muted.negative-hover` | `color` | `#c2606e` | Generated negative foreground on muted backgrounds (hover, 23% darker) |
-| `color.on-muted.negative-inactive` | `color` | `#ffc9d5` | Generated negative foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.danger` | `color` | `#ff9ba8` | Generated danger foreground on muted backgrounds |
+| `color.on-muted.danger-active` | `color` | `#cc6e7b` | Generated danger foreground on muted backgrounds (active, 19% darker) |
+| `color.on-muted.danger-disabled` | `color` | `#f3a3ac` | Generated danger foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.danger-hover` | `color` | `#c26472` | Generated danger foreground on muted backgrounds (hover, 23% darker) |
+| `color.on-muted.danger-inactive` | `color` | `#ffcedb` | Generated danger foreground on muted backgrounds (inactive, 20% brighter) |
+| `color.on-muted.discovery` | `color` | `var(--color-purple-4)` | Generated discovery foreground on muted backgrounds |
+| `color.on-muted.discovery-active` | `color` | `#b69cff` | Generated discovery foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.discovery-disabled` | `color` | `#907ccb` | Generated discovery foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.discovery-hover` | `color` | `#bea4ff` | Generated discovery foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.discovery-inactive` | `color` | `#6d51b0` | Generated discovery foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.info` | `color` | `var(--color-blue-4)` | Generated info foreground on muted backgrounds |
+| `color.on-muted.info-active` | `color` | `#72b6ff` | Generated info foreground on muted backgrounds (active, 19% brighter) |
+| `color.on-muted.info-disabled` | `color` | `#5d91ea` | Generated info foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.info-hover` | `color` | `#7abeff` | Generated info foreground on muted backgrounds (hover, 23% brighter) |
+| `color.on-muted.info-inactive` | `color` | `#2564d1` | Generated info foreground on muted backgrounds (inactive, 20% darker) |
+| `color.on-muted.negative` | `color` | `#ff9ba8` | Generated negative foreground on muted backgrounds |
+| `color.on-muted.negative-active` | `color` | `#cc6e7b` | Generated negative foreground on muted backgrounds (active, 19% darker) |
+| `color.on-muted.negative-disabled` | `color` | `#f3a3ac` | Generated negative foreground on muted backgrounds (disabled, 80% saturation) |
+| `color.on-muted.negative-hover` | `color` | `#c26472` | Generated negative foreground on muted backgrounds (hover, 23% darker) |
+| `color.on-muted.negative-inactive` | `color` | `#ffcedb` | Generated negative foreground on muted backgrounds (inactive, 20% brighter) |
 | `color.on-muted.positive` | `color` | `#ffffff` | Generated positive foreground on muted backgrounds |
 | `color.on-muted.positive-active` | `color` | `#c2c2c2` | Generated positive foreground on muted backgrounds (active, 19% darker) |
 | `color.on-muted.positive-disabled` | `color` | `#ffffff66` | Generated positive foreground on muted backgrounds (disabled, 40% opacity) |

@@ -34,7 +34,7 @@ There are no utility classes. Style through Tamagui props on components and on t
 Component intent goes through two props:
 
 - `theme`: `"brand" | "danger" | "warning" | "success" | "info" | "discovery" | "positive" | "negative"`.
-- `variant`: Button takes `"surface" | "outlined" | "ghost" | "subtle" | "inverse" | "link"`; Callout and Card take `"outlined" | "elevated" | "floating" | "sunken" | "glass"`, and more.
+- `variant`: Button takes `"primary" | "secondary" | "tertiary" | "outlined" | "ghost" | "link"`; Callout and Card take `"outlined" | "elevated" | "floating" | "sunken" | "glass"`, and more.
 
 Typography: use `HeadingText` (and `HeadingHeroText`, `HeadingTitleText`, `HeadingLargeText`, `HeadingMediumText`, `HeadingSmallText`), `BodyText`, `LabelText`, `LinkText`. Don't set fonts by hand; the families are Storm Sans and Storm Serif.
 
@@ -62,7 +62,7 @@ const { YStack, XStack, Card, Button } = window.CycloneUI;
     <Card.Body>Unlock unlimited projects and priority support.</Card.Body>
   </Card>
   <XStack gap="sm">
-    <Button theme="brand" variant="surface">
+    <Button theme="brand" variant="tertiary">
       <Button.Text>Upgrade</Button.Text>
     </Button>
     <Button variant="outlined">

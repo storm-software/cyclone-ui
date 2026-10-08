@@ -21,6 +21,7 @@ import { Button } from "@cyclone-ui/button";
 import { BytesText } from "@cyclone-ui/bytes-text";
 import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import type { FormControlSize, StyleEnv } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
   getFormFontScale,
@@ -28,11 +29,9 @@ import {
   getFormSizeScale,
   getFormSizeToken,
   getSized,
-  getSpaced,
-  type FormControlSize,
-  type StyleEnv
+  getSpaced
 } from "@cyclone-ui/helpers";
-import { Dot, DownloadSimple, Trash, UploadSimple } from "@cyclone-ui/icons";
+import { Dot, DownloadSimple, Trash, Upload, X } from "@cyclone-ui/icons";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import type { ClientFileResult } from "@cyclone-ui/state";
@@ -57,8 +56,11 @@ import { useCallback } from "react";
 import { MediaTypeOptions } from "./file-picker-types";
 import { useFilePicker } from "./useFilePicker";
 
+export type FilePickerVariant = "dropzone" | "simple";
+
 export interface FilePickerContextProps {
   size: FormControlSize;
+  variant: FilePickerVariant;
   typeOfPicker: "image" | "file";
   max: number;
   mediaTypes: MediaTypeOptions[];
@@ -78,6 +80,7 @@ export interface FilePickerContextProps {
 export const FilePickerContext = createStyledContext<
   FilePickerContextProps,
   | "size"
+  | "variant"
   | "typeOfPicker"
   | "mediaTypes"
   | "max"
@@ -95,6 +98,7 @@ export const FilePickerContext = createStyledContext<
 >(
   {
     size: "md",
+    variant: "dropzone",
     typeOfPicker: "file",
     mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
     max: 1,
@@ -139,16 +143,25 @@ const FilePickerGroupFrame = styled(View, {
   backgroundColor: "surfaceElevated hover:surfaceElevatedHover",
   tabIndex: 0,
   variants: {
-    // A local `styled.dynamic`: the helpers' `formSizeVariants` carrier is
-    // branded by another `@tamagui/core` copy and would not type here.
-    size: styled.dynamic<FormControlSize>(size =>
-      size === "sm" || size === "md" || size === "lg"
-        ? {
-            minHeight: getSized("17xl") * getFormSizeScale(size),
-            paddingVertical: getSpaced("5xl") * getFormSizeScale(size)
-          }
-        : undefined
-    ),
+    // Styled by the `.resolve` below because the geometry depends on
+    // `variant`.
+    size: styled.dynamic<FormControlSize>(),
+
+    variant: {
+      dropzone: {},
+      // A single-line control styled like `Input`.
+      simple: {
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        alignItems: "stretch",
+        gap: "zero",
+        paddingVertical: 0,
+        borderWidth: 1,
+        borderRadius: "control",
+        overflow: "hidden",
+        backgroundColor: "surfaceElevated"
+      }
+    },
     active: {
       true: {
         borderColor: "hairline hover:hairlineHover",
@@ -173,9 +186,24 @@ const FilePickerGroupFrame = styled(View, {
     }
   },
   defaultVariants: {
+    variant: "dropzone",
     active: false,
     disabled: false
   }
+}).resolve(props => {
+  const size: FormControlSize =
+    props.size === "sm" ? "sm" : props.size === "lg" ? "lg" : "md";
+
+  if (props.variant === "simple") {
+    const height = getSized(getFormSizeToken(size));
+
+    return { height, minHeight: height, paddingVertical: 0 };
+  }
+
+  return {
+    minHeight: getSized("17xl") * getFormSizeScale(size),
+    paddingVertical: getSpaced("5xl") * getFormSizeScale(size)
+  };
 });
 
 export interface PickFileProps {
@@ -189,6 +217,7 @@ const FilePickerGroup = createStyledHOC(
     {
       children,
       size = "md",
+      variant = "dropzone",
       files = [],
       onChange,
       disabled = false,
@@ -265,10 +294,12 @@ const FilePickerGroup = createStyledHOC(
     const { ref, ...rootProps } = getRootProps();
     const composedRef = useComposedRefs(forwardedRef, ref);
     const handleOpen = useCallback(() => {
-      if (!disabled && files.length < max) {
+      // The simple variant has no remove action, so picking again replaces
+      // the oldest files (`handlePick` keeps the last `max`).
+      if (!disabled && (variant === "simple" || files.length < max)) {
         onOpen();
       }
-    }, [disabled, files.length, max, onOpen]);
+    }, [disabled, variant, files.length, max, onOpen]);
 
     return (
       // @ts-ignore reason: getRootProps() which is web specific return some react-native incompatible props, but it's fine
@@ -276,17 +307,22 @@ const FilePickerGroup = createStyledHOC(
         {...props}
         {...rootProps}
         size={size}
+        variant={variant}
         ref={composedRef}
-        group={"file-picker" as any}
+        group={"file-picker"}
         active={Boolean(dragStatus?.isDragActive)}
         hasValidationMessage={hasValidationMessage}
         // The animated frame writes Tamagui's implicit `solid` border default
         // inline, which beats the `dashed` class from the styled config.
-        style={[props.style, { borderStyle: "dashed" }]}
+        style={[
+          props.style,
+          { borderStyle: variant === "simple" ? "solid" : "dashed" }
+        ]}
         onClick={handleOpen}
         onPress={handleOpen}>
         <FilePickerContext.Provider
           size={size}
+          variant={variant}
           name={name}
           files={files}
           onOpen={onOpen}
@@ -318,8 +354,60 @@ const FilePickerGroup = createStyledHOC(
 const FilePickerTrigger = createStyledHOC(
   YStack,
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, active, files, max, size } =
+    const { disabled, files, max, size, variant, onChange } =
       FilePickerContext.useStyledContext();
+
+    if (variant === "simple") {
+      const clearSize = getSized(getFormSizeToken(size), { shift: -2 });
+
+      return (
+        <XStack
+          ref={forwardedRef}
+          flex={1}
+          minWidth={0}
+          alignItems="stretch"
+          cursor={disabled ? "not-allowed" : "pointer"}
+          {...props}>
+          {children}
+          <FilePickerMetadataText
+            controlSize={size}
+            flex={1}
+            alignSelf="center"
+            paddingHorizontal={getSpaced(getFormSizeToken(size))}
+            numberOfLines={1}
+            color={disabled ? "inkBodyDisabled" : "inkBody"}>
+            {files.length === 0
+              ? max > 1
+                ? "No files chosen"
+                : "No file chosen"
+              : files.length === 1
+                ? files[0]?.name || "Unnamed File"
+                : `${files.length} files`}
+          </FilePickerMetadataText>
+          {!disabled && files.length > 0 && (
+            // Keep the press from bubbling to the frame, which opens the picker.
+            <View
+              flexShrink={0}
+              justifyContent="center"
+              paddingRight="md"
+              onClick={event => event.stopPropagation()}
+              onPress={event => event.stopPropagation()}>
+              <Button
+                variant="ghost"
+                circular={true}
+                noPadding={true}
+                size={clearSize}
+                aria-label={max > 1 ? "Remove files" : "Remove file"}
+                onPress={() => onChange([])}>
+                <Button.Icon color="inkBody group-hover/button:accentHover">
+                  <X />
+                </Button.Icon>
+              </Button>
+            </View>
+          )}
+        </XStack>
+      );
+    }
 
     if (files.length >= max) {
       return null;
@@ -335,9 +423,11 @@ const FilePickerTrigger = createStyledHOC(
         cursor={disabled ? "not-allowed" : "pointer"}
         {...props}>
         {files.length === 0 && (
-          <UploadSimple
+          <Upload
             size={getSized("9xl") * getFormSizeScale(size)}
-            color={`${disabled ? "inkSubtleDisabled" : "inkSubtle"} group-hover/file-picker:${disabled ? "inkSubtleDisabled" : active ? "hairlineHover" : "accentHover"}`}
+            // `themed` icons resolve only a plain theme key; a conditional
+            // value string falls through to the SVG as an invalid (black) fill.
+            color={disabled ? "inkBodyDisabled" : "hairline"}
             transition="100ms"
             opacity="1 exit:0"
             scale="1 exit:0.5"
@@ -352,8 +442,33 @@ const FilePickerTrigger = createStyledHOC(
 const FilePickerTriggerButton = createStyledHOC(
   Button,
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, files, max, onOpen, size } =
+    const { disabled, files, max, onOpen, size, variant } =
       FilePickerContext.useStyledContext();
+
+    if (variant === "simple") {
+      // The frame opens the picker on press, so this segment is presentational.
+      return (
+        <View
+          flexShrink={0}
+          justifyContent="center"
+          paddingHorizontal={getSpaced(getFormSizeToken(size))}
+          borderRightWidth={1}
+          borderColor={disabled ? "accentDisabled" : "hairline"}
+          backgroundColor={
+            disabled
+              ? "surfaceFloatingDisabled"
+              : "surfaceFloating group-hover/file-picker:surfaceFloatingHover"
+          }
+          transition="200ms">
+          <FilePickerMetadataText
+            controlSize={size}
+            fontWeight="500"
+            color={disabled ? "inkEmphasisDisabled" : "inkEmphasis"}>
+            {children || (max > 1 ? "Choose Files" : "Choose File")}
+          </FilePickerMetadataText>
+        </View>
+      );
+    }
 
     if (disabled) {
       return null;
@@ -363,7 +478,7 @@ const FilePickerTriggerButton = createStyledHOC(
       <Button
         ref={forwardedRef}
         size={getFormSizeToken(size)}
-        group={"link" as any}
+        group={"link"}
         width="100%"
         variant="link"
         disabled={disabled}
@@ -372,8 +487,8 @@ const FilePickerTriggerButton = createStyledHOC(
         {...props}>
         <Button.Text
           fontSize={16 * getFormFontScale(size)}
-          color="link group-hover/link:linkHover"
-          textDecorationColor="link group-hover/link:linkHover">
+          color="inkEmphasis"
+          textDecorationColor="inkEmphasis">
           {children ||
             (max > 1
               ? files.length === 0
@@ -389,7 +504,11 @@ const FilePickerTriggerButton = createStyledHOC(
 const FilePickerFiles = createStyledHOC(
   YStack,
   ({ children, ...props }, forwardedRef) => {
-    const { files } = FilePickerContext.useStyledContext();
+    const { files, variant } = FilePickerContext.useStyledContext();
+
+    if (variant === "simple") {
+      return null;
+    }
 
     return (
       <AnimatePresence>
@@ -497,7 +616,7 @@ const FilePickerFile = ({
 
   return (
     <View
-      group={"file" as any}
+      group={"file"}
       flexDirection="column"
       transition="200ms"
       opacity="1 enter:0 exit:0"

@@ -61,9 +61,9 @@ type ButtonReverseCascadeVariant = `reverse-${ButtonCascadeEffect}`;
 type ButtonCascadeVariant = ButtonCascadeEffect | ButtonReverseCascadeVariant;
 
 type ButtonVariant =
-  | "surface"
-  | "subtle"
-  | "inverse"
+  | "tertiary"
+  | "secondary"
+  | "primary"
   | "outlined"
   | ButtonCascadeVariant
   | "ghost"
@@ -159,7 +159,7 @@ export type ButtonContextProps = TextContextStyles & {
   /**
    * The variant style of the button
    *
-   * @defaultValue "surface"
+   * @defaultValue "tertiary"
    */
   variant: ButtonVariant;
 
@@ -269,7 +269,7 @@ export const ButtonContext = createStyledContext<
     // and `ButtonFrame` receives it as a call-site prop, which outranks the
     // `circular` / `rounded` variants. `ButtonFrame` defaults it to "button".
     size: "10xl",
-    variant: "surface",
+    variant: "tertiary",
     unstyled: false,
     circular: false,
     rounded: false,
@@ -295,11 +295,11 @@ export const ButtonContext = createStyledContext<
 );
 
 const getDisabledFrameStyle = (variant: ButtonVariant | undefined) => {
-  if (variant === "surface") {
+  if (variant === "tertiary") {
     return disabledFrameStyle("surfaceElevatedDisabled", "accentDisabled");
-  } else if (variant === "subtle") {
+  } else if (variant === "secondary") {
     return disabledFrameStyle("mutedDisabled", "hairlineInactive");
-  } else if (variant === "inverse" || isReverseCascadeVariant(variant)) {
+  } else if (variant === "primary" || isReverseCascadeVariant(variant)) {
     return disabledFrameStyle("mutedDisabled", "accentDisabled");
   } else if (variant === "outlined" || isCascadeVariant(variant)) {
     return disabledFrameStyle("transparent", "accentDisabled");
@@ -346,19 +346,19 @@ const ButtonFrame = styled(View, {
   // press point instead.
   variants: {
     variant: {
-      surface: {
+      tertiary: {
         borderWidth: 1,
         borderColor: "accent hover:accentHover press:accentActive",
         backgroundColor: "surfaceElevated hover:surfaceElevatedHover"
       },
 
-      subtle: {
+      secondary: {
         borderWidth: 0,
         borderColor: "transparent hover:transparent press:transparent",
         backgroundColor: "muted hover:mutedHover"
       },
 
-      inverse: {
+      primary: {
         borderWidth: 0,
         borderColor: "transparent hover:transparent press:transparent",
         backgroundColor: "accent hover:accentHover"
@@ -455,7 +455,7 @@ const ButtonFrame = styled(View, {
   } as const,
 
   defaultVariants: {
-    variant: "surface",
+    variant: "tertiary",
     frameSize: "5xl",
     disabled: false,
     ringed: false,
@@ -509,15 +509,15 @@ const ButtonTextFrame = styled(Text, {
   zIndex: "20",
   variants: {
     variant: {
-      surface: {
+      tertiary: {
         color: "accent"
       },
 
-      subtle: {
+      secondary: {
         color: "onAccent"
       },
 
-      inverse: {
+      primary: {
         color: "onAccent"
       },
 
@@ -632,7 +632,7 @@ const ButtonTextFrame = styled(Text, {
     }
   } as const,
   defaultVariants: {
-    variant: "surface",
+    variant: "tertiary",
     disabled: false
   }
 });
@@ -644,9 +644,9 @@ const colorForVariant = (
   themeName?: string | null | undefined
 ): ThemeableIconProps["color"] => {
   if (
-    variant === "inverse" ||
+    variant === "primary" ||
     isReverseCascadeVariant(variant) ||
-    (variant === "subtle" && !themeName?.endsWith("base"))
+    (variant === "secondary" && !themeName?.endsWith("base"))
   ) {
     return (
       disabled ? "onAccentDisabled" : (color ?? "onAccent")
@@ -665,8 +665,8 @@ const hoverColorForVariant = (
 ) => {
   if (disabled) {
     if (
-      variant === "inverse" ||
-      (variant === "subtle" && !themeName?.endsWith("base"))
+      variant === "primary" ||
+      (variant === "secondary" && !themeName?.endsWith("base"))
     ) {
       return "onAccentDisabled";
     }
@@ -676,15 +676,15 @@ const hoverColorForVariant = (
 
   if (
     variant === "ghost" ||
-    (variant === "subtle" && themeName?.endsWith("base")) ||
+    (variant === "secondary" && themeName?.endsWith("base")) ||
     isReverseCascadeVariant(variant)
   ) {
     return "accent";
   }
 
   if (
-    variant === "inverse" ||
-    variant === "subtle" ||
+    variant === "primary" ||
+    variant === "secondary" ||
     isCascadeVariant(variant)
   ) {
     return "onAccent";
@@ -700,8 +700,8 @@ const pressedColorForVariant = (
 ) => {
   if (disabled) {
     if (
-      variant === "inverse" ||
-      (variant === "subtle" && !themeName?.endsWith("base"))
+      variant === "primary" ||
+      (variant === "secondary" && !themeName?.endsWith("base"))
     ) {
       return "onAccentDisabled";
     }
@@ -714,8 +714,8 @@ const pressedColorForVariant = (
   }
 
   if (
-    variant === "inverse" ||
-    variant === "subtle" ||
+    variant === "primary" ||
+    variant === "secondary" ||
     isCascadeVariant(variant)
   ) {
     return "onAccentActive";
@@ -1116,7 +1116,7 @@ const ButtonContainerImpl = createStyledHOC(
   ButtonFrame,
   (
     {
-      variant = "surface",
+      variant = "tertiary",
       size = "10xl",
       disabled = false,
       circular = false,

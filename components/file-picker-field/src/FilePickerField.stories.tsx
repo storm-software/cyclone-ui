@@ -16,29 +16,40 @@
 
  ------------------------------------------------------------------- */
 
+import type { FilePickerVariant } from "@cyclone-ui/file-picker";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { GetProps } from "@tamagui/core";
 import { FilePickerField } from "./FilePickerField";
 
-const meta: Meta<typeof FilePickerField> = {
+/** Story-only args consumed by the custom `render` (the Control and Details). */
+type FilePickerFieldStoryArgs = GetProps<typeof FilePickerField> & {
+  pickerVariant?: FilePickerVariant;
+  details?: string;
+};
+
+const meta: Meta<FilePickerFieldStoryArgs> = {
   title: "Form/FilePickerField",
   component: FilePickerField,
   tags: ["autodocs"],
-  render: (props: any, { id }: { id: string }) => {
+  render: ({ pickerVariant, details, ...props }: any, { id }: { id: string }) => {
     return (
       <Form name={`formName-${id}`} initialValues={{ filePickerFieldName: "" }}>
         <FilePickerField name="filePickerFieldName" {...props}>
           <FilePickerField.Label>Label Text</FilePickerField.Label>
-          <FilePickerField.Control />
+          <FilePickerField.Control variant={pickerVariant} />
+          {details && (
+            <FilePickerField.Details>{details}</FilePickerField.Details>
+          )}
         </FilePickerField>
       </Form>
     );
   }
-} satisfies Meta<typeof FilePickerField>;
+} satisfies Meta<FilePickerFieldStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof FilePickerField>;
+type Story = StoryObj<FilePickerFieldStoryArgs>;
 
 const validation = (
   type:
@@ -80,6 +91,42 @@ export const Multiple: Story = {
   args: {
     max: 10
   }
+};
+
+export const Simple: Story = {
+  args: {
+    pickerVariant: "simple",
+    details: "SVG, PNG, JPG or GIF (MAX. 800x400px)."
+  }
+};
+
+export const SimpleMultiple: Story = {
+  args: {
+    pickerVariant: "simple",
+    max: 10
+  }
+};
+
+export const SimpleDisabled: Story = {
+  args: {
+    pickerVariant: "simple",
+    disabled: true
+  }
+};
+
+export const SimpleError: Story = {
+  args: {
+    pickerVariant: "simple",
+    validate: validation("danger")
+  }
+};
+
+export const SimpleSmallSize: Story = {
+  args: { pickerVariant: "simple", size: "sm" }
+};
+
+export const SimpleLargeSize: Story = {
+  args: { pickerVariant: "simple", size: "lg" }
 };
 
 // export const DefaultValue: Story = {

@@ -59,7 +59,7 @@
   "rust-analyzer.procMacro.ignored": {
     "napi-derive": ["napi"]
   },
-  "direnv.restart.automatic": true,
+  "direnv.restart.automatic": false,
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nixd", // or "nil"
   "nix.serverSettings": {

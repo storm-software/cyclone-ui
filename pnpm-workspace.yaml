@@ -208,7 +208,7 @@ catalog:
   "@storm-software/tsdoc": ^0.13.299
   sembear: ^0.7.0
   parse-github-url: ^1.0.4
-  playwright: ^1.63.0
+  playwright: ^1.64.0
   "@tamagui/theme-builder": ^2.7.7
   style-dictionary: ^5.6.0
   "@tamagui/dismissable": 3.0.0-beta.1670.1

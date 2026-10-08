@@ -729,41 +729,41 @@
   --storm-color-muted-brand-active: #499c95; /** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (active, 19% darker) */
   --storm-color-muted-brand-inactive: #8ddede; /** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% brighter) */
   --storm-color-muted-brand-disabled: #84c3bd; /** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation) */
-  --storm-color-muted-danger: #c17986; /** Generated danger muted background for the light theme */
-  --storm-color-muted-negative: #c17986; /** Generated negative muted background for the light theme */
-  --storm-color-muted-warning: #a48f6e; /** Generated warning muted background for the light theme */
-  --storm-color-muted-success: #759e8e; /** Generated success muted background for the light theme */
-  --storm-color-muted-positive: #759e8e; /** Generated positive muted background for the light theme */
-  --storm-color-muted-info: #7095d6; /** Generated info muted background for the light theme */
-  --storm-color-muted-discovery: #9588c5; /** Generated discovery muted background for the light theme */
-  --storm-color-muted-danger-hover: #985b68; /** Generated danger muted background for the light theme (hover, 23% darker) */
-  --storm-color-muted-danger-active: #9e626e; /** Generated danger muted background for the light theme (active, 19% darker) */
-  --storm-color-muted-danger-inactive: #de8d9e; /** Generated danger muted background for the light theme (inactive, 20% brighter) */
-  --storm-color-muted-danger-disabled: #b97f88; /** Generated danger muted background for the light theme (disabled, 80% saturation) */
-  --storm-color-muted-negative-hover: #985b68; /** Generated negative muted background for the light theme (hover, 23% darker) */
-  --storm-color-muted-negative-active: #9e626e; /** Generated negative muted background for the light theme (active, 19% darker) */
-  --storm-color-muted-negative-inactive: #de8d9e; /** Generated negative muted background for the light theme (inactive, 20% brighter) */
-  --storm-color-muted-negative-disabled: #b97f88; /** Generated negative muted background for the light theme (disabled, 80% saturation) */
-  --storm-color-muted-warning-hover: #846f4b; /** Generated warning muted background for the light theme (hover, 23% darker) */
-  --storm-color-muted-warning-active: #897452; /** Generated warning muted background for the light theme (active, 19% darker) */
-  --storm-color-muted-warning-inactive: #caaf87; /** Generated warning muted background for the light theme (inactive, 20% brighter) */
-  --storm-color-muted-warning-disabled: #a29177; /** Generated warning muted background for the light theme (disabled, 80% saturation) */
-  --storm-color-muted-success-hover: #517d6d; /** Generated success muted background for the light theme (hover, 23% darker) */
-  --storm-color-muted-success-active: #588273; /** Generated success muted background for the light theme (active, 19% darker) */
-  --storm-color-muted-success-inactive: #90c2ae; /** Generated success muted background for the light theme (inactive, 20% brighter) */
-  --storm-color-muted-success-disabled: #7d9d90; /** Generated success muted background for the light theme (disabled, 80% saturation) */
-  --storm-color-muted-positive-hover: #517d6d; /** Generated positive muted background for the light theme (hover, 23% darker) */
-  --storm-color-muted-positive-active: #588273; /** Generated positive muted background for the light theme (active, 19% darker) */
-  --storm-color-muted-positive-inactive: #90c2ae; /** Generated positive muted background for the light theme (inactive, 20% brighter) */
-  --storm-color-muted-positive-disabled: #7d9d90; /** Generated positive muted background for the light theme (disabled, 80% saturation) */
-  --storm-color-muted-info-hover: #5875a8; /** Generated info muted background for the light theme (hover, 23% darker) */
-  --storm-color-muted-info-active: #5c7ab0; /** Generated info muted background for the light theme (active, 19% darker) */
-  --storm-color-muted-info-inactive: #87b5dc; /** Generated info muted background for the light theme (inactive, 20% brighter) */
-  --storm-color-muted-info-disabled: #7996c8; /** Generated info muted background for the light theme (disabled, 80% saturation) */
-  --storm-color-muted-discovery-hover: #786c9c; /** Generated discovery muted background for the light theme (hover, 23% darker) */
-  --storm-color-muted-discovery-active: #7d71a3; /** Generated discovery muted background for the light theme (active, 19% darker) */
-  --storm-color-muted-discovery-inactive: #af9ce2; /** Generated discovery muted background for the light theme (inactive, 20% brighter) */
-  --storm-color-muted-discovery-disabled: #958bbb; /** Generated discovery muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-danger: #c57a88; /** Generated danger muted background for the light theme */
+  --storm-color-muted-negative: #c57a88; /** Generated negative muted background for the light theme */
+  --storm-color-muted-warning: #a99473; /** Generated warning muted background for the light theme */
+  --storm-color-muted-success: #77a090; /** Generated success muted background for the light theme */
+  --storm-color-muted-positive: #77a090; /** Generated positive muted background for the light theme */
+  --storm-color-muted-info: #7699d7; /** Generated info muted background for the light theme */
+  --storm-color-muted-discovery: #978ac8; /** Generated discovery muted background for the light theme */
+  --storm-color-muted-danger-hover: #9a5d6a; /** Generated danger muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-danger-active: #a16370; /** Generated danger muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-danger-inactive: #df90a0; /** Generated danger muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-danger-disabled: #bc818a; /** Generated danger muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-negative-hover: #9a5d6a; /** Generated negative muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-negative-active: #a16370; /** Generated negative muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-negative-inactive: #df90a0; /** Generated negative muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-negative-disabled: #bc818a; /** Generated negative muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-warning-hover: #86714f; /** Generated warning muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-warning-active: #8c7856; /** Generated warning muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-warning-inactive: #d1b58a; /** Generated warning muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-warning-disabled: #a6957b; /** Generated warning muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-success-hover: #537e6f; /** Generated success muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-success-active: #5a8475; /** Generated success muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-success-inactive: #92c5b1; /** Generated success muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-success-disabled: #7f9f92; /** Generated success muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-positive-hover: #537e6f; /** Generated positive muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-positive-active: #5a8475; /** Generated positive muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-positive-inactive: #92c5b1; /** Generated positive muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-positive-disabled: #7f9f92; /** Generated positive muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-info-hover: #5d78a8; /** Generated info muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-info-active: #627eb0; /** Generated info muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-info-inactive: #8dbbde; /** Generated info muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-info-disabled: #7e9acb; /** Generated info muted background for the light theme (disabled, 80% saturation) */
+  --storm-color-muted-discovery-hover: #7a6e9e; /** Generated discovery muted background for the light theme (hover, 23% darker) */
+  --storm-color-muted-discovery-active: #7f74a5; /** Generated discovery muted background for the light theme (active, 19% darker) */
+  --storm-color-muted-discovery-inactive: #b19ee3; /** Generated discovery muted background for the light theme (inactive, 20% brighter) */
+  --storm-color-muted-discovery-disabled: #978dbd; /** Generated discovery muted background for the light theme (disabled, 80% saturation) */
   --storm-color-overlay-background: #d9d9d9; /** Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page. */
   --storm-color-overlay-border: #a1a1a2; /** Border color that outlines floating overlay panels against the content beneath them. Used for the Popover border. */
   --storm-color-overlay-backdrop: rgba(55, 58, 61, 0.4); /** Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container. */
@@ -801,13 +801,13 @@
   --storm-color-hairline-inactive: #c4c4c5; /** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% brighter) */
   --storm-color-on-muted-base: #343438; /** Generated base foreground on muted backgrounds */
   --storm-color-on-muted-brand: #449a93; /** Generated brand foreground on muted backgrounds */
-  --storm-color-on-muted-danger: #551928; /** Generated danger foreground on muted backgrounds */
-  --storm-color-on-muted-negative: #551928; /** Generated negative foreground on muted backgrounds */
-  --storm-color-on-muted-warning: #543d18; /** Generated warning foreground on muted backgrounds */
-  --storm-color-on-muted-success: #185341; /** Generated success foreground on muted backgrounds */
-  --storm-color-on-muted-positive: #185341; /** Generated positive foreground on muted backgrounds */
-  --storm-color-on-muted-info: #1e3769; /** Generated info foreground on muted backgrounds */
-  --storm-color-on-muted-discovery: #3b1d65; /** Generated discovery foreground on muted backgrounds */
+  --storm-color-on-muted-danger: #501725; /** Generated danger foreground on muted backgrounds */
+  --storm-color-on-muted-negative: #501725; /** Generated negative foreground on muted backgrounds */
+  --storm-color-on-muted-warning: #523c18; /** Generated warning foreground on muted backgrounds */
+  --storm-color-on-muted-success: #174f3f; /** Generated success foreground on muted backgrounds */
+  --storm-color-on-muted-positive: #174f3f; /** Generated positive foreground on muted backgrounds */
+  --storm-color-on-muted-info: #1d3464; /** Generated info foreground on muted backgrounds */
+  --storm-color-on-muted-discovery: #391c61; /** Generated discovery foreground on muted backgrounds */
   --storm-color-on-muted-base-hover: #3e3e41; /** Generated base foreground on muted backgrounds (hover, 30% brighter) */
   --storm-color-on-muted-base-active: #2e2e30; /** Generated base foreground on muted backgrounds (active, light base primitive) */
   --storm-color-on-muted-base-inactive: #282828; /** Generated base foreground on muted backgrounds (inactive, 40% darker) */
@@ -816,34 +816,34 @@
   --storm-color-on-muted-brand-active: #27867f; /** Generated brand foreground on muted backgrounds (active, 19% darker) */
   --storm-color-on-muted-brand-inactive: #6ebcb4; /** Generated brand foreground on muted backgrounds (inactive, 20% brighter) */
   --storm-color-on-muted-brand-disabled: #639993; /** Generated brand foreground on muted backgrounds (disabled, 80% saturation) */
-  --storm-color-on-muted-danger-hover: #572532; /** Generated danger foreground on muted backgrounds (hover, 23% brighter) */
-  --storm-color-on-muted-danger-active: #572330; /** Generated danger foreground on muted backgrounds (active, 19% brighter) */
-  --storm-color-on-muted-danger-inactive: #4f171f; /** Generated danger foreground on muted backgrounds (inactive, 20% darker) */
-  --storm-color-on-muted-danger-disabled: #4f1f2a; /** Generated danger foreground on muted backgrounds (disabled, 80% saturation) */
-  --storm-color-on-muted-negative-hover: #572532; /** Generated negative foreground on muted backgrounds (hover, 23% brighter) */
-  --storm-color-on-muted-negative-active: #572330; /** Generated negative foreground on muted backgrounds (active, 19% brighter) */
-  --storm-color-on-muted-negative-inactive: #4f171f; /** Generated negative foreground on muted backgrounds (inactive, 20% darker) */
-  --storm-color-on-muted-negative-disabled: #4f1f2a; /** Generated negative foreground on muted backgrounds (disabled, 80% saturation) */
-  --storm-color-on-muted-warning-hover: #564428; /** Generated warning foreground on muted backgrounds (hover, 23% brighter) */
-  --storm-color-on-muted-warning-active: #564325; /** Generated warning foreground on muted backgrounds (active, 19% brighter) */
-  --storm-color-on-muted-warning-inactive: #4d3316; /** Generated warning foreground on muted backgrounds (inactive, 20% darker) */
-  --storm-color-on-muted-warning-disabled: #4d3d22; /** Generated warning foreground on muted backgrounds (disabled, 80% saturation) */
-  --storm-color-on-muted-success-hover: #164b35; /** Generated success foreground on muted backgrounds (hover, 23% darker) */
-  --storm-color-on-muted-success-active: #164c37; /** Generated success foreground on muted backgrounds (active, 19% darker) */
-  --storm-color-on-muted-success-inactive: #2b5345; /** Generated success foreground on muted backgrounds (inactive, 20% brighter) */
-  --storm-color-on-muted-success-disabled: #274b3e; /** Generated success foreground on muted backgrounds (disabled, 80% saturation) */
-  --storm-color-on-muted-positive-hover: #164b35; /** Generated positive foreground on muted backgrounds (hover, 23% darker) */
-  --storm-color-on-muted-positive-active: #164c37; /** Generated positive foreground on muted backgrounds (active, 19% darker) */
-  --storm-color-on-muted-positive-inactive: #2b5345; /** Generated positive foreground on muted backgrounds (inactive, 20% brighter) */
-  --storm-color-on-muted-positive-disabled: #274b3e; /** Generated positive foreground on muted backgrounds (disabled, 80% saturation) */
-  --storm-color-on-muted-info-hover: #1c2860; /** Generated info foreground on muted backgrounds (hover, 23% darker) */
-  --storm-color-on-muted-info-active: #1c2b62; /** Generated info foreground on muted backgrounds (active, 19% darker) */
-  --storm-color-on-muted-info-inactive: #2a436f; /** Generated info foreground on muted backgrounds (inactive, 20% brighter) */
-  --storm-color-on-muted-info-disabled: #243a61; /** Generated info foreground on muted backgrounds (disabled, 80% saturation) */
-  --storm-color-on-muted-discovery-hover: #442e68; /** Generated discovery foreground on muted backgrounds (hover, 23% brighter) */
-  --storm-color-on-muted-discovery-active: #422c68; /** Generated discovery foreground on muted backgrounds (active, 19% brighter) */
-  --storm-color-on-muted-discovery-inactive: #331b5d; /** Generated discovery foreground on muted backgrounds (inactive, 20% darker) */
-  --storm-color-on-muted-discovery-disabled: #39275b; /** Generated discovery foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-danger-hover: #53212d; /** Generated danger foreground on muted backgrounds (hover, 23% brighter) */
+  --storm-color-on-muted-danger-active: #521f2c; /** Generated danger foreground on muted backgrounds (active, 19% brighter) */
+  --storm-color-on-muted-danger-inactive: #4c161d; /** Generated danger foreground on muted backgrounds (inactive, 20% darker) */
+  --storm-color-on-muted-danger-disabled: #4b1d26; /** Generated danger foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-negative-hover: #53212d; /** Generated negative foreground on muted backgrounds (hover, 23% brighter) */
+  --storm-color-on-muted-negative-active: #521f2c; /** Generated negative foreground on muted backgrounds (active, 19% brighter) */
+  --storm-color-on-muted-negative-inactive: #4c161d; /** Generated negative foreground on muted backgrounds (inactive, 20% darker) */
+  --storm-color-on-muted-negative-disabled: #4b1d26; /** Generated negative foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-warning-hover: #544426; /** Generated warning foreground on muted backgrounds (hover, 23% brighter) */
+  --storm-color-on-muted-warning-active: #534223; /** Generated warning foreground on muted backgrounds (active, 19% brighter) */
+  --storm-color-on-muted-warning-inactive: #4c3116; /** Generated warning foreground on muted backgrounds (inactive, 20% darker) */
+  --storm-color-on-muted-warning-disabled: #4c3c20; /** Generated warning foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-success-hover: #295044; /** Generated success foreground on muted backgrounds (hover, 23% brighter) */
+  --storm-color-on-muted-success-active: #274f42; /** Generated success foreground on muted backgrounds (active, 19% brighter) */
+  --storm-color-on-muted-success-inactive: #154933; /** Generated success foreground on muted backgrounds (inactive, 20% darker) */
+  --storm-color-on-muted-success-disabled: #23483c; /** Generated success foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-positive-hover: #295044; /** Generated positive foreground on muted backgrounds (hover, 23% brighter) */
+  --storm-color-on-muted-positive-active: #274f42; /** Generated positive foreground on muted backgrounds (active, 19% brighter) */
+  --storm-color-on-muted-positive-inactive: #154933; /** Generated positive foreground on muted backgrounds (inactive, 20% darker) */
+  --storm-color-on-muted-positive-disabled: #23483c; /** Generated positive foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-info-hover: #28406a; /** Generated info foreground on muted backgrounds (hover, 23% brighter) */
+  --storm-color-on-muted-info-active: #263e68; /** Generated info foreground on muted backgrounds (active, 19% brighter) */
+  --storm-color-on-muted-info-inactive: #1b275d; /** Generated info foreground on muted backgrounds (inactive, 20% darker) */
+  --storm-color-on-muted-info-disabled: #21375d; /** Generated info foreground on muted backgrounds (disabled, 80% saturation) */
+  --storm-color-on-muted-discovery-hover: #402c65; /** Generated discovery foreground on muted backgrounds (hover, 23% brighter) */
+  --storm-color-on-muted-discovery-active: #3f2964; /** Generated discovery foreground on muted backgrounds (active, 19% brighter) */
+  --storm-color-on-muted-discovery-inactive: #321a5b; /** Generated discovery foreground on muted backgrounds (inactive, 20% darker) */
+  --storm-color-on-muted-discovery-disabled: #372558; /** Generated discovery foreground on muted backgrounds (disabled, 80% saturation) */
   --storm-size-zero: 0px; /** No size */
   --storm-size-xxs: 2px; /** A 2px xxs size step */
   --storm-size-xs: 4px; /** A 4px xs size step */

@@ -990,245 +990,245 @@ export const manifest = {
       "cssVar": "--storm-color-muted-danger",
       "type": "color",
       "category": "color",
-      "value": "#e37085"
+      "value": "#e77388"
     },
     {
       "path": "color.muted.danger-active",
       "cssVar": "--storm-color-muted-danger-active",
       "type": "color",
       "category": "color",
-      "value": "#b74960"
+      "value": "#bb4b62"
     },
     {
       "path": "color.muted.danger-disabled",
       "cssVar": "--storm-color-muted-danger-disabled",
       "type": "color",
       "category": "color",
-      "value": "#d67a89"
+      "value": "#da7d8c"
     },
     {
       "path": "color.muted.danger-hover",
       "cssVar": "--storm-color-muted-danger-hover",
       "type": "color",
       "category": "color",
-      "value": "#ae4158"
+      "value": "#b1435b"
     },
     {
       "path": "color.muted.danger-inactive",
       "cssVar": "--storm-color-muted-danger-inactive",
       "type": "color",
       "category": "color",
-      "value": "#ff9baf"
+      "value": "#ff9fb3"
     },
     {
       "path": "color.muted.discovery",
       "cssVar": "--storm-color-muted-discovery",
       "type": "color",
       "category": "color",
-      "value": "#9e8ae4"
+      "value": "#a18ee7"
     },
     {
       "path": "color.muted.discovery-active",
       "cssVar": "--storm-color-muted-discovery-active",
       "type": "color",
       "category": "color",
-      "value": "#7863ba"
+      "value": "#7b67bc"
     },
     {
       "path": "color.muted.discovery-disabled",
       "cssVar": "--storm-color-muted-discovery-disabled",
       "type": "color",
       "category": "color",
-      "value": "#9d8ed6"
+      "value": "#a092d9"
     },
     {
       "path": "color.muted.discovery-hover",
       "cssVar": "--storm-color-muted-discovery-hover",
       "type": "color",
       "category": "color",
-      "value": "#715bb1"
+      "value": "#735eb3"
     },
     {
       "path": "color.muted.discovery-inactive",
       "cssVar": "--storm-color-muted-discovery-inactive",
       "type": "color",
       "category": "color",
-      "value": "#c9b5ff"
+      "value": "#cdbaff"
     },
     {
       "path": "color.muted.info",
       "cssVar": "--storm-color-muted-info",
       "type": "color",
       "category": "color",
-      "value": "#659dff"
+      "value": "#6fa4ff"
     },
     {
       "path": "color.muted.info-active",
       "cssVar": "--storm-color-muted-info-active",
       "type": "color",
       "category": "color",
-      "value": "#3f74d3"
+      "value": "#487ad2"
     },
     {
       "path": "color.muted.info-disabled",
       "cssVar": "--storm-color-muted-info-disabled",
       "type": "color",
       "category": "color",
-      "value": "#729fec"
+      "value": "#7ba5ee"
     },
     {
       "path": "color.muted.info-hover",
       "cssVar": "--storm-color-muted-info-hover",
       "type": "color",
       "category": "color",
-      "value": "#376cc9"
+      "value": "#4071c8"
     },
     {
       "path": "color.muted.info-inactive",
       "cssVar": "--storm-color-muted-info-inactive",
       "type": "color",
       "category": "color",
-      "value": "#90cbff"
+      "value": "#9bd3ff"
     },
     {
       "path": "color.muted.negative",
       "cssVar": "--storm-color-muted-negative",
       "type": "color",
       "category": "color",
-      "value": "#e37085"
+      "value": "#e77388"
     },
     {
       "path": "color.muted.negative-active",
       "cssVar": "--storm-color-muted-negative-active",
       "type": "color",
       "category": "color",
-      "value": "#b74960"
+      "value": "#bb4b62"
     },
     {
       "path": "color.muted.negative-disabled",
       "cssVar": "--storm-color-muted-negative-disabled",
       "type": "color",
       "category": "color",
-      "value": "#d67a89"
+      "value": "#da7d8c"
     },
     {
       "path": "color.muted.negative-hover",
       "cssVar": "--storm-color-muted-negative-hover",
       "type": "color",
       "category": "color",
-      "value": "#ae4158"
+      "value": "#b1435b"
     },
     {
       "path": "color.muted.negative-inactive",
       "cssVar": "--storm-color-muted-negative-inactive",
       "type": "color",
       "category": "color",
-      "value": "#ff9baf"
+      "value": "#ff9fb3"
     },
     {
       "path": "color.muted.positive",
       "cssVar": "--storm-color-muted-positive",
       "type": "color",
       "category": "color",
-      "value": "#6ab196"
+      "value": "#6db499"
     },
     {
       "path": "color.muted.positive-active",
       "cssVar": "--storm-color-muted-positive-active",
       "type": "color",
       "category": "color",
-      "value": "#41896f"
+      "value": "#448b72"
     },
     {
       "path": "color.muted.positive-disabled",
       "cssVar": "--storm-color-muted-positive-disabled",
       "type": "color",
       "category": "color",
-      "value": "#77ae98"
+      "value": "#7ab19b"
     },
     {
       "path": "color.muted.positive-hover",
       "cssVar": "--storm-color-muted-positive-hover",
       "type": "color",
       "category": "color",
-      "value": "#388067"
+      "value": "#3b8269"
     },
     {
       "path": "color.muted.positive-inactive",
       "cssVar": "--storm-color-muted-positive-inactive",
       "type": "color",
       "category": "color",
-      "value": "#96dfc2"
+      "value": "#9ae2c6"
     },
     {
       "path": "color.muted.success",
       "cssVar": "--storm-color-muted-success",
       "type": "color",
       "category": "color",
-      "value": "#6ab196"
+      "value": "#6db499"
     },
     {
       "path": "color.muted.success-active",
       "cssVar": "--storm-color-muted-success-active",
       "type": "color",
       "category": "color",
-      "value": "#41896f"
+      "value": "#448b72"
     },
     {
       "path": "color.muted.success-disabled",
       "cssVar": "--storm-color-muted-success-disabled",
       "type": "color",
       "category": "color",
-      "value": "#77ae98"
+      "value": "#7ab19b"
     },
     {
       "path": "color.muted.success-hover",
       "cssVar": "--storm-color-muted-success-hover",
       "type": "color",
       "category": "color",
-      "value": "#388067"
+      "value": "#3b8269"
     },
     {
       "path": "color.muted.success-inactive",
       "cssVar": "--storm-color-muted-success-inactive",
       "type": "color",
       "category": "color",
-      "value": "#96dfc2"
+      "value": "#9ae2c6"
     },
     {
       "path": "color.muted.warning",
       "cssVar": "--storm-color-muted-warning",
       "type": "color",
       "category": "color",
-      "value": "#bd985e"
+      "value": "#c39e65"
     },
     {
       "path": "color.muted.warning-active",
       "cssVar": "--storm-color-muted-warning-active",
       "type": "color",
       "category": "color",
-      "value": "#947137"
+      "value": "#99763d"
     },
     {
       "path": "color.muted.warning-disabled",
       "cssVar": "--storm-color-muted-warning-disabled",
       "type": "color",
       "category": "color",
-      "value": "#b79a6d"
+      "value": "#bda073"
     },
     {
       "path": "color.muted.warning-hover",
       "cssVar": "--storm-color-muted-warning-hover",
       "type": "color",
       "category": "color",
-      "value": "#8c692e"
+      "value": "#906d34"
     },
     {
       "path": "color.muted.warning-inactive",
       "cssVar": "--storm-color-muted-warning-inactive",
       "type": "color",
       "category": "color",
-      "value": "#ebc489"
+      "value": "#f2cc91"
     },
     {
       "path": "color.neutral.1",
@@ -1720,245 +1720,245 @@ export const manifest = {
       "cssVar": "--storm-color-on-muted-danger",
       "type": "color",
       "category": "color",
-      "value": "#2f000c"
+      "value": "#270009"
     },
     {
       "path": "color.on-muted.danger-active",
       "cssVar": "--storm-color-on-muted-danger-active",
       "type": "color",
       "category": "color",
-      "value": "#390714"
+      "value": "#300510"
     },
     {
       "path": "color.on-muted.danger-disabled",
       "cssVar": "--storm-color-on-muted-danger-disabled",
       "type": "color",
       "category": "color",
-      "value": "#2b050e"
+      "value": "#23040a"
     },
     {
       "path": "color.on-muted.danger-hover",
       "cssVar": "--storm-color-on-muted-danger-hover",
       "type": "color",
       "category": "color",
-      "value": "#3b0916"
+      "value": "#320611"
     },
     {
       "path": "color.on-muted.danger-inactive",
       "cssVar": "--storm-color-on-muted-danger-inactive",
       "type": "color",
       "category": "color",
-      "value": "#240005"
+      "value": "#1e0004"
     },
     {
       "path": "color.on-muted.discovery",
       "cssVar": "--storm-color-on-muted-discovery",
       "type": "color",
       "category": "color",
-      "value": "#20004c"
+      "value": "#1d0046"
     },
     {
       "path": "color.on-muted.discovery-active",
       "cssVar": "--storm-color-on-muted-discovery-active",
       "type": "color",
       "category": "color",
-      "value": "#290d58"
+      "value": "#250b51"
     },
     {
       "path": "color.on-muted.discovery-disabled",
       "cssVar": "--storm-color-on-muted-discovery-disabled",
       "type": "color",
       "category": "color",
-      "value": "#1e0a42"
+      "value": "#1b093d"
     },
     {
       "path": "color.on-muted.discovery-hover",
       "cssVar": "--storm-color-on-muted-discovery-hover",
       "type": "color",
       "category": "color",
-      "value": "#2b105a"
+      "value": "#270e54"
     },
     {
       "path": "color.on-muted.discovery-inactive",
       "cssVar": "--storm-color-on-muted-discovery-inactive",
       "type": "color",
       "category": "color",
-      "value": "#17003f"
+      "value": "#15003a"
     },
     {
       "path": "color.on-muted.info",
       "cssVar": "--storm-color-on-muted-info",
       "type": "color",
       "category": "color",
-      "value": "#001c54"
+      "value": "#00184b"
     },
     {
       "path": "color.on-muted.info-active",
       "cssVar": "--storm-color-on-muted-info-active",
       "type": "color",
       "category": "color",
-      "value": "#000f47"
+      "value": "#072457"
     },
     {
       "path": "color.on-muted.info-disabled",
       "cssVar": "--storm-color-on-muted-info-disabled",
       "type": "color",
       "category": "color",
-      "value": "#071f4a"
+      "value": "#051b42"
     },
     {
       "path": "color.on-muted.info-hover",
       "cssVar": "--storm-color-on-muted-info-hover",
       "type": "color",
       "category": "color",
-      "value": "#000c44"
+      "value": "#09265a"
     },
     {
       "path": "color.on-muted.info-inactive",
       "cssVar": "--storm-color-on-muted-info-inactive",
       "type": "color",
       "category": "color",
-      "value": "#0a2a63"
+      "value": "#000b3e"
     },
     {
       "path": "color.on-muted.negative",
       "cssVar": "--storm-color-on-muted-negative",
       "type": "color",
       "category": "color",
-      "value": "#2f000c"
+      "value": "#270009"
     },
     {
       "path": "color.on-muted.negative-active",
       "cssVar": "--storm-color-on-muted-negative-active",
       "type": "color",
       "category": "color",
-      "value": "#390714"
+      "value": "#300510"
     },
     {
       "path": "color.on-muted.negative-disabled",
       "cssVar": "--storm-color-on-muted-negative-disabled",
       "type": "color",
       "category": "color",
-      "value": "#2b050e"
+      "value": "#23040a"
     },
     {
       "path": "color.on-muted.negative-hover",
       "cssVar": "--storm-color-on-muted-negative-hover",
       "type": "color",
       "category": "color",
-      "value": "#3b0916"
+      "value": "#320611"
     },
     {
       "path": "color.on-muted.negative-inactive",
       "cssVar": "--storm-color-on-muted-negative-inactive",
       "type": "color",
       "category": "color",
-      "value": "#240005"
+      "value": "#1e0004"
     },
     {
       "path": "color.on-muted.positive",
       "cssVar": "--storm-color-on-muted-positive",
       "type": "color",
       "category": "color",
-      "value": "#002b1e"
+      "value": "#00251a"
     },
     {
       "path": "color.on-muted.positive-active",
       "cssVar": "--storm-color-on-muted-positive-active",
       "type": "color",
       "category": "color",
-      "value": "#001f13"
+      "value": "#0b3024"
     },
     {
       "path": "color.on-muted.positive-disabled",
       "cssVar": "--storm-color-on-muted-positive-disabled",
       "type": "color",
       "category": "color",
-      "value": "#0b2a1f"
+      "value": "#08241b"
     },
     {
       "path": "color.on-muted.positive-hover",
       "cssVar": "--storm-color-on-muted-positive-hover",
       "type": "color",
       "category": "color",
-      "value": "#001d11"
+      "value": "#0d3227"
     },
     {
       "path": "color.on-muted.positive-inactive",
       "cssVar": "--storm-color-on-muted-positive-inactive",
       "type": "color",
       "category": "color",
-      "value": "#0f382a"
+      "value": "#001a0f"
     },
     {
       "path": "color.on-muted.success",
       "cssVar": "--storm-color-on-muted-success",
       "type": "color",
       "category": "color",
-      "value": "#002b1e"
+      "value": "#00251a"
     },
     {
       "path": "color.on-muted.success-active",
       "cssVar": "--storm-color-on-muted-success-active",
       "type": "color",
       "category": "color",
-      "value": "#001f13"
+      "value": "#0b3024"
     },
     {
       "path": "color.on-muted.success-disabled",
       "cssVar": "--storm-color-on-muted-success-disabled",
       "type": "color",
       "category": "color",
-      "value": "#0b2a1f"
+      "value": "#08241b"
     },
     {
       "path": "color.on-muted.success-hover",
       "cssVar": "--storm-color-on-muted-success-hover",
       "type": "color",
       "category": "color",
-      "value": "#001d11"
+      "value": "#0d3227"
     },
     {
       "path": "color.on-muted.success-inactive",
       "cssVar": "--storm-color-on-muted-success-inactive",
       "type": "color",
       "category": "color",
-      "value": "#0f382a"
+      "value": "#001a0f"
     },
     {
       "path": "color.on-muted.warning",
       "cssVar": "--storm-color-on-muted-warning",
       "type": "color",
       "category": "color",
-      "value": "#2d1c00"
+      "value": "#291a00"
     },
     {
       "path": "color.on-muted.warning-active",
       "cssVar": "--storm-color-on-muted-warning-active",
       "type": "color",
       "category": "color",
-      "value": "#392709"
+      "value": "#342408"
     },
     {
       "path": "color.on-muted.warning-disabled",
       "cssVar": "--storm-color-on-muted-warning-disabled",
       "type": "color",
       "category": "color",
-      "value": "#2a1d07"
+      "value": "#271b06"
     },
     {
       "path": "color.on-muted.warning-hover",
       "cssVar": "--storm-color-on-muted-warning-hover",
       "type": "color",
       "category": "color",
-      "value": "#3b290c"
+      "value": "#36270a"
     },
     {
       "path": "color.on-muted.warning-inactive",
       "cssVar": "--storm-color-on-muted-warning-inactive",
       "type": "color",
       "category": "color",
-      "value": "#211100"
+      "value": "#1e0f00"
     },
     {
       "path": "color.orange.1",
@@ -4657,6 +4657,20 @@ export const manifest = {
       "name": "@cyclone-ui/themeable-icon",
       "jsx": [
         "ThemeableIcon"
+      ],
+      "roles": []
+    },
+    {
+      "name": "@cyclone-ui/timeline",
+      "jsx": [
+        "Timeline"
+      ],
+      "roles": []
+    },
+    {
+      "name": "@cyclone-ui/toggle",
+      "jsx": [
+        "Toggle"
       ],
       "roles": []
     },

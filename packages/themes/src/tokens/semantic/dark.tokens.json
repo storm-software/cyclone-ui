@@ -182,6 +182,20 @@
         "$value": "oklch(0.5077 0.1448 173.56)",
         "$description": "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme.",
         "theme": "brand"
+      },
+      "info": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.blue.8}",
+        "$description": "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
+        "theme": "info"
+      },
+      "discovery": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.purple.9}",
+        "$description": "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
+        "theme": "discovery"
       }
     },
     "overlay": {

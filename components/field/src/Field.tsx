@@ -785,7 +785,7 @@ const FieldLabelTextImpl = createStyledHOC(
                             size={floating ? "sm" : "lg"}
                             position="absolute"
                             top={floating ? -2 : -1}
-                            weight="bold"
+                            weight="black"
                           />
                         </View>
                       )}
