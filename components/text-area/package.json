@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/text-area",
   "version": "0.1.11",
   "type": "module",
-  "description": "A multiline text input component for Cyclone UI",
+  "description": "A multiline text input that renders a textarea with 3 rows by default and uses the same tokens as the Cyclone UI Input. It has default, floating and underline variants, sm, md and lg sizes, and focus and disabled states, and its border reflects field validation messages.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

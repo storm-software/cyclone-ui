@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/label-text",
   "version": "0.5.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A text component that renders a label element using the title typography, built on BodyText. A floating variant switches it to a smaller font with an animated transition. Use it for form control labels and other short label text.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

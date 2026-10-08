@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/tag-picker-field",
   "version": "0.0.6",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A form field that wraps the TagPicker control so users can enter and remove multiple string tags. It connects to Cyclone UI form state for value, focus, blur, placeholder and validation, and also accepts a controlled value with an onChange callback. Compound parts are Label, Link, Control and Details.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

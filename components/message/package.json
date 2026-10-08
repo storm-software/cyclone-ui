@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/message",
   "version": "0.6.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A toast notification container built on Tamagui Toast that renders each queued toast as a dismissible Alert in the bottom-right corner. It maps the toast's message type (including error and help) to an alert theme, and toasts can be swiped away. Use it to show temporary app-wide notifications.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

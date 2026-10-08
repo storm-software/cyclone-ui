@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/card",
   "version": "0.6.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A themed card container with a gradient background and an optional accent color. Compound parts include Header (Eyebrow, Heading, Icon), Body and Footer.Link, and the footer link's arrow animates when the card is hovered. Use it to present a summary or feature with a call-to-action link.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

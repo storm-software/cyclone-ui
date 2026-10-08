@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/text-area-field",
   "version": "0.1.11",
   "type": "module",
-  "description": "A textarea form field component for Cyclone UI",
+  "description": "A form field for multi-line text that wraps TextArea, with Label, Control, Details, Link and Icon subcomponents. It uses the floating variant by default and binds value, size, theme, focus and disabled state to form state. Use it for longer free-text input.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

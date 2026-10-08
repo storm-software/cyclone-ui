@@ -6,14 +6,15 @@
   "pkg": "@cyclone-ui/design-sync",
   "globalName": "CycloneUI",
   "entry": ".design-sync/pkg/dist/index.mjs",
-  "buildCmd": "devenv shell -- pnpm nx run-many -t build -p button,input,checkbox,switch,select,radio-group,badge,tag,card,alert,callout,dialog,tabs,tooltip,divider,spinner,progress,body-text,heading-text,label-text,link-text,state,themes && node .design-sync/pkg/build.mjs",
+  "buildCmd": "devenv shell -- pnpm nx run-many -t build -p accordion,alert,alert-dialog,anchor,badge,body-text,breadcrumb,button,bytes-text,callout,card,checkbox,checkbox-field,circular-progress,code-block,collapsible,container,data-table,date-picker,date-picker-field,dialog,divider,drawer,eyebrow-text,feedback,field,file-picker,file-picker-field,file-tree,footer,form,glitch-separator,heading-text,icons,inline-code-text,input,input-field,label-text,like-button,link,link-text,message,navigation-header,next-button,number-input-field,number-text,otp-input-field,package-command-code-block,page,pagination,password-input-field,pdf-document-display,phone-number-input-field,popover,previous-button,progress,radio-group,radio-group-field,rating,rating-field,redacted-animation,scroll-view,search-input-field,select,select-field,sheet,slider,slider-field,spinner,stepper,switch,switch-field,table,table-of-contents,tabs,tag,tag-picker,tag-picker-field,text-area,text-area-field,themeable-gradient,themeable-icon,tooltip,type-table,validation-text,vectors,visually-hidden,state,themes && node .design-sync/pkg/build.mjs",
   "storyImports": {
     "shim": [
       "/@tamagui/core/",
       "/@tamagui/web/",
       "/@tamagui/stacks/",
       "/components/",
-      "/packages/state/"
+      "/packages/state/",
+      "@stryke/date"
     ],
     "loaders": {
       ".mjs": "jsx"
@@ -88,7 +89,131 @@
       "skip": [
         "triggers-tag--removable"
       ]
+    },
+    "Form": {
+      "skip": [
+        "form-sizing--all-sizes",
+        "form-sizing--disabled",
+        "form-sizing--changing-size-prop",
+        "form-form--base",
+        "form-form--small",
+        "form-form--large",
+        "form-form--brand",
+        "form-form--discovery",
+        "form-form--error",
+        "form-form--warning",
+        "form-form--info",
+        "form-form--success"
+      ]
+    },
+    "FilePicker": {
+      "cardMode": "column"
+    },
+    "TagPicker": {
+      "cardMode": "column"
+    },
+    "Stepper": {
+      "cardMode": "column"
+    },
+    "FileTree": {
+      "cardMode": "column"
+    },
+    "TableOfContents": {
+      "cardMode": "column"
+    },
+    "TypeTable": {
+      "cardMode": "column"
+    },
+    "CheckboxField": {
+      "cardMode": "column"
+    },
+    "PasswordInputField": {
+      "cardMode": "column"
+    },
+    "SwitchField": {
+      "cardMode": "column"
+    },
+    "TagPickerField": {
+      "cardMode": "column",
+      "skip": [
+        "form-tagpickerfield--base"
+      ]
+    },
+    "DataTable": {
+      "cardMode": "column"
+    },
+    "Table": {
+      "cardMode": "column"
+    },
+    "Breadcrumb": {
+      "cardMode": "column"
+    },
+    "CheckerBoard": {
+      "cardMode": "column"
+    },
+    "StormLogoIcon": {
+      "cardMode": "column"
+    },
+    "StormLogoText": {
+      "cardMode": "column"
+    },
+    "NavigationHeader": {
+      "cardMode": "single",
+      "primaryStory": "Default"
+    },
+    "Drawer": {
+      "cardMode": "single"
+    },
+    "DatePicker": {
+      "cardMode": "single"
+    },
+    "DatePickerField": {
+      "cardMode": "single"
+    },
+    "Message": {
+      "cardMode": "column"
+    },
+    "CodeBlock": {
+      "cardMode": "column"
+    },
+    "Page": {
+      "cardMode": "single",
+      "primaryStory": "Default"
+    },
+    "AlertDialog": {
+      "cardMode": "single"
+    },
+    "Sheet": {
+      "cardMode": "single"
+    },
+    "ThemeableIcon": {
+      "skip": [
+        "base-themeableicon--base",
+        "base-themeableicon--brand",
+        "base-themeableicon--discovery",
+        "base-themeableicon--error",
+        "base-themeableicon--warning",
+        "base-themeableicon--info",
+        "base-themeableicon--success",
+        "base-themeableicon--disabled"
+      ]
+    },
+    "VisuallyHidden": {
+      "skip": [
+        "base-visuallyhidden--base",
+        "base-visuallyhidden--animate"
+      ]
+    },
+    "SelectField": {
+      "cardMode": "single"
     }
   },
-  "readmeHeader": ".design-sync/conventions.md"
+  "readmeHeader": ".design-sync/conventions.md",
+  "titleMap": {
+    "Icons": null,
+    "Sizing": null
+  },
+  "libOverrides": {
+    "preview-gen-storybook.mjs": "ctx.id is unique per story so Field stories (<Form name={`formName-${id}`}>) get separate form stores in grid cards"
+  }
 }

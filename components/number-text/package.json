@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/number-text",
   "version": "0.5.11",
   "type": "module",
-  "description": "A visually hidden component meant to be shared in many other components",
+  "description": "A label-styled text component that renders its numeric children with NumberFlow, so changes in value are animated. Values that are not numbers fall back to 0. Use it for counters, statistics and other numbers that update in place.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

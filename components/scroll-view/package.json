@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/scroll-view",
   "version": "0.5.11",
   "type": "module",
-  "description": "A visually hidden component meant to be shared in many other components",
+  "description": "A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar on web that is highlighted on hover. It has sm and lg width sizes and a fullscreen variant that fills its parent. Use it for any scrollable area that should match the theme.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

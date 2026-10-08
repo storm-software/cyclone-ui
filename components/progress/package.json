@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/progress",
   "version": "0.5.11",
   "type": "module",
-  "description": "A visually hidden component meant to be shared in many other components",
+  "description": "A themed progress bar built on the Tamagui Progress, with an animated indicator. It accepts value, max, size and an indicator color token. Use it to show how far a task or loading process has gone.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

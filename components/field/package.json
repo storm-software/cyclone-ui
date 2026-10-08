@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/field",
   "version": "0.5.11",
   "type": "module",
-  "description": "A Next Button component meant to be shared in many other components",
+  "description": "A form field wrapper that connects a control to Cyclone UI form state and provides Field.Label, Field.Link, Field.Details, Field.Icon and Field.ThemeIcon parts. It shows validation messages automatically and supports normal, floating and underline label variants. Use it as the base for building labeled form inputs.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

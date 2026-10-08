@@ -299,6 +299,9 @@
     },
     {
       "path": "./packages/shiki"
+    },
+    {
+      "path": "./packages/eslint-plugin"
     }
   ],
   "files": []

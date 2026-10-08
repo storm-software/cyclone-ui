@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/slider-field",
   "version": "0.0.6",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A form field that wraps Slider, with Label, Control, Details and Link subcomponents. It supports single values and ranges, links the thumbs to the field label for accessibility, reports focus, change and blur to form state, and shows defaultValue or min until the form has a value.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

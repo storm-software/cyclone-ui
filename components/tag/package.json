@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/tag",
   "version": "0.0.6",
   "private": false,
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary and secondary variants, outlined, rounded, circular and pressable styles, and sizes. A removable tag has a remove button and an animated exit, with onBeforeRemove and onAfterRemove callbacks.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

@@ -4,16 +4,18 @@ Cyclone UI is a Tamagui v3 (react-native-web) design system. Every component and
 
 ## 1. Wrap the app in the provider chain
 
-Components read the Tamagui config and theme from context. Without `TamaguiProvider` nothing styles: you get `Can't find Tamagui configuration` or unstyled native elements. Without `PortalProvider`, `Dialog`, `Tooltip` and `Select` have nowhere to open.
+Components read the Tamagui config and theme from context. Without `TamaguiProvider` nothing styles: you get `Can't find Tamagui configuration` or unstyled native elements. Without `PortalProvider`, `Dialog`, `Tooltip` and `Select` have nowhere to open. `SafeAreaProvider` goes outermost: `Page` and `NavigationHeader` read safe-area insets from it.
 
 ```jsx
-const { TamaguiProvider, Theme, PortalProvider, tamaguiConfig } = window.CycloneUI;
+const { SafeAreaProvider, TamaguiProvider, Theme, PortalProvider, tamaguiConfig } = window.CycloneUI;
 
-<TamaguiProvider config={tamaguiConfig} defaultTheme="dark">
-  <Theme name="dark_base">
-    <PortalProvider>{app}</PortalProvider>
-  </Theme>
-</TamaguiProvider>
+<SafeAreaProvider>
+  <TamaguiProvider config={tamaguiConfig} defaultTheme="dark">
+    <Theme name="dark_base">
+      <PortalProvider>{app}</PortalProvider>
+    </Theme>
+  </TamaguiProvider>
+</SafeAreaProvider>
 ```
 
 - Themes: `dark` / `light`, each with sub-themes `_base`, `_brand`, `_danger`, `_warning`, `_success`, `_info`, `_discovery`, `_positive`, `_negative` (e.g. `dark_brand`). Dark is the reference look.

@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/file-tree",
   "version": "0.0.9",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A FileTree component that renders a hierarchical file structure using File leaves and expandable Folder branches. Folders animate open and closed, can start open with defaultOpen, accept custom icons and openIcon, and can be toggled with Enter or Space. It uses ARIA tree and treeitem roles. Use it to show directory or project structures.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

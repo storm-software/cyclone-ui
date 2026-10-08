@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/spinner",
   "version": "0.5.11",
   "type": "module",
-  "description": "A Next Button component meant to be shared in many other components",
+  "description": "A Spinner component that renders the React Native ActivityIndicator inside a Tamagui YStack. It takes a small or large size and a color, which can be a theme token or a raw value and defaults to the accent color. Use it to show that content or an action is loading.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

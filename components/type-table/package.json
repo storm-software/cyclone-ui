@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/type-table",
   "version": "0.0.7",
   "type": "module",
-  "description": "A package containing the TypeTable component used by Storm Software",
+  "description": "A documentation table that lists properties with their types. Each row expands to show the description, default, parameters and return value, and can link to a type description. Required and deprecated items are marked. Rows can be deep-linked through the URL hash.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/date-picker-field",
   "version": "0.5.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A form field for entering dates, made of a masked text input and a calendar trigger, with Label, Control, Details, Link and Icon subcomponents. It supports single and range modes, dot or slash separators, sizes, and floating or underline variants, and formats and parses values for form state.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

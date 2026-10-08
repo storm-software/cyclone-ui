@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/switch-field",
   "version": "0.1.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A form field that wraps a toggle Switch, with Label, Control, Details and Link subcomponents. It binds checked state, size, focus and disabled state to form state, hides the optional and required markers, and shows a disabled icon next to the label.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/phone-number-input-field",
   "version": "0.0.12",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A PhoneNumberInputField built on InputField that adds a searchable country-code picker with flags in a popover. Input is masked and formatted with libphonenumber-js and maskito, and the selected country updates from the entered value. It has a defaultCountry prop and the same Label, Control, Details and Icon parts as InputField. Use it for phone number entry inside a Form.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

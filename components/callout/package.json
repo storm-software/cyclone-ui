@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/callout",
   "version": "0.4.11",
   "type": "module",
-  "description": "A package containing the Alert component used by Storm Software",
+  "description": "A highlighted content panel with a theme-colored gradient and diagonal pattern background. Compound parts are Callout.Header (with Eyebrow, Heading and Icon) and Callout.Body, and the icon is picked from the theme by default. Use it to draw attention to important notes or featured content.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

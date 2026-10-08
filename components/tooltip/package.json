@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/tooltip",
   "version": "0.5.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The content is elevated, animates in and out, and shows an arrow by default, and the arrow and border colors can be customized. Use it to show short supplemental information on hover or focus.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

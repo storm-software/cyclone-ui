@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/table-of-contents",
   "version": "0.0.8",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A page navigation list built from an array of heading items, each with a title, a hash URL and a depth. On web it highlights the current section as the user scrolls and draws an indented rail showing the active heading path, and its motion respects reduced motion. Use it beside long documents.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

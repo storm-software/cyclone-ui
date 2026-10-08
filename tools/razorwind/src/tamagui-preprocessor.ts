@@ -447,7 +447,7 @@ const COLOR_STATE_HOVER: ColorStateVariant = {
 
 const BASE_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
-  brightness: 1.2,
+  brightness: 1.4,
   useBaseThemePrimitive: true
 };
 

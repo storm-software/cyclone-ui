@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/alert-dialog",
   "version": "0.4.11",
   "type": "module",
-  "description": "A package containing the AlertDialog component used by Storm Software",
+  "description": "A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-based status icon, and compound Trigger, Container, Icon, Content (Heading, Body), Action and Close parts. Use it to confirm a destructive action or show an important success, warning or error message.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

@@ -38,7 +38,9 @@ export default defineConfig(
       "**/*.toml",
       ".design-sync",
       ".ds-sync",
-      "packages/themes/src/storybook/blocks/**/*.tsx"
+      "apps/storybook/src/blocks/**/*.tsx",
+      "packages/eslint-plugin/src/*.ts",
+      "packages/stylelint-plugin/src/*.ts"
     ]
   },
   {

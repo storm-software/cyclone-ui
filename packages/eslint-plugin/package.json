@@ -1,0 +1,20 @@
+{
+  "name": "@cyclone-ui/eslint-plugin",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Cyclone UI ESLint plugin package",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/eslint-plugin"
+  },
+  "private": false,
+  "devDependencies": {
+    "@razorwind/eslint": "catalog:",
+    "@powerlines/plugin-tsdown": "catalog:",
+    "powerlines": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

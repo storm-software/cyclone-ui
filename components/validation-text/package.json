@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/validation-text",
   "version": "0.5.11",
   "type": "module",
-  "description": "A Next Button component meant to be shared in many other components",
+  "description": "A ValidationText component that shows field validation messages in caption text with an enter/exit animation. A single message is shown as plain text. Multiple messages are shown as a bulleted list under a heading that depends on the theme (errors, warnings or success), and a default notice is shown when the field is disabled. Use it below form fields.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

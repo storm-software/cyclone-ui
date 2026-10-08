@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/rating-field",
   "version": "0.0.6",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A form field that wraps the Rating control, with Label, Control, Details and Link subcomponents. It reads value, size and disabled state from the field, reports focus, change and blur to form state, accepts an optional controlled value, and uses the validation color for empty items.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

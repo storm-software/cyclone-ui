@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/link-text",
   "version": "0.5.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A LinkText component that renders styled, interactive link text. It has base, mixed, themed, subtle and subtlest color variants, an inverse mode, underline styles (static, hover, initial, none), sm and md sizes, a cta mode for uppercase button-style text, and a disabled state. Use it for inline and standalone hyperlinks.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

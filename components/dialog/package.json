@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/dialog",
   "version": "0.3.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A modal Dialog compound component built on Tamagui's dialog, with Trigger, Portal, Overlay, Container, Heading, Body, Close and Action parts. Close and Action are buttons with Text and Icon slots. It has an animated, blurred, theme-tinted overlay that can be turned off, a theme prop, and an animated floating container. Use it for confirmations and focused tasks.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

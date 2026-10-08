@@ -17,16 +17,19 @@
       "path": "../popover"
     },
     {
+      "path": "../button"
+    },
+    {
       "path": "../link"
     },
     {
-      "path": "../icons"
+      "path": "../label-text"
     },
     {
       "path": "../../packages/helpers"
     },
     {
-      "path": "../button"
+      "path": "../icons"
     }
   ],
   "files": [],

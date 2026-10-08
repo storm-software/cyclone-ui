@@ -18,6 +18,9 @@
   "references": [
     {
       "path": "../icons"
+    },
+    {
+      "path": "../heading-text"
     }
   ]
 }

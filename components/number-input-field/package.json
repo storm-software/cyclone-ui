@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/number-input-field",
   "version": "0.0.12",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A NumberInputField built on InputField that renders a type=number text box with decrease (minus) and increase (plus) buttons. The buttons change the form-bound value by a configurable increment. It has the same Label, Link, Control, Details and Icon parts as InputField. Use it for numeric entry inside a Form.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

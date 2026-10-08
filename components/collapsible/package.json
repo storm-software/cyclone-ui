@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/collapsible",
   "version": "0.3.7",
   "type": "module",
-  "description": "A package containing the Collapsible component used by Storm Software",
+  "description": "A single disclosure panel built on Accordion, with Collapsible.Header and Collapsible.Content subcomponents and a chevron icon. Open state can be controlled with a boolean value or left uncontrolled with defaultValue. Use it to show and hide one section of content.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

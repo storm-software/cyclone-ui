@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/eyebrow-text",
   "version": "0.5.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "An uppercase, muted heading (rendered as h5) that uses the eyebrow font. It has lg and sm variants. Use it as a short overline label above a main heading or section title.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

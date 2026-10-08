@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/sheet",
   "version": "0.0.10",
   "type": "module",
-  "description": "A Sheet component for Cyclone UI",
+  "description": "A modal panel that slides in from the top, right, bottom or left edge. It uses a draggable Tamagui Sheet for the bottom direction and a dialog for the other edges, can be dragged to dismiss, and supports sm, md and lg sizes. Parts include Overlay, Handle, ScrollView, Heading, Body and Footer.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

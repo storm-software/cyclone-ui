@@ -15,22 +15,25 @@
   },
   "references": [
     {
-      "path": "../body-text"
-    },
-    {
       "path": "../input"
-    },
-    {
-      "path": "../icons"
     },
     {
       "path": "../../packages/helpers"
     },
     {
-      "path": "../form"
+      "path": "../field"
     },
     {
-      "path": "../field"
+      "path": "../button"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../form"
     }
   ],
   "files": [],

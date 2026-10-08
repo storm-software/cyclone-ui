@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/like-button",
   "version": "0.0.1",
   "type": "module",
-  "description": "A like button component that allows the user to provide feedback by liking content",
+  "description": "A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChange) or uncontrolled (defaultLiked), and has sm, md and lg sizes. On the web, liking plays a thumb animation and a confetti burst unless the user prefers reduced motion. It sets aria-pressed for accessibility.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

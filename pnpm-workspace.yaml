@@ -17,7 +17,7 @@ catalog:
   "@powerlines/plugin-tsdown": ^0.1.615
   "@powerlines/plugin-tamagui": ^0.1.666
   "@powerlines/plugin-env": ^0.16.423
-  "@razorwind/color-variants": ^0.0.62
+  "@razorwind/color-variants": ^0.0.65
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
   "@react-native-community/cli-platform-ios": 18.0.1
@@ -34,66 +34,66 @@ catalog:
   "@storybook/react": ^10.6.1
   "@storybook/react-vite": ^10.6.1
   "@stryke/date": ^0.0.28
-  "@tamagui/accordion": 3.0.0-beta.1422.1
-  "@tamagui/adapt": 3.0.0-beta.1422.1
-  "@tamagui/alert-dialog": 3.0.0-beta.1422.1
-  "@tamagui/animate-presence": 3.0.0-beta.1422.1
+  "@tamagui/accordion": 3.0.0-beta.1670.1
+  "@tamagui/adapt": 3.0.0-beta.1670.1
+  "@tamagui/alert-dialog": 3.0.0-beta.1670.1
+  "@tamagui/animate-presence": 3.0.0-beta.1670.1
   "@tamagui/animations-moti": ^2.7.7
-  "@tamagui/avatar": 3.0.0-beta.1422.1
-  "@tamagui/button": 3.0.0-beta.1422.1
-  "@tamagui/checkbox": 3.0.0-beta.1422.1
-  "@tamagui/checkbox-headless": 3.0.0-beta.1422.1
-  "@tamagui/cli": 3.0.0-beta.1422.1
-  "@tamagui/codemod-flat-values": 3.0.0-beta.1422.1
-  "@tamagui/collapsible": 3.0.0-beta.1422.1
-  "@tamagui/compose-refs": 3.0.0-beta.1422.1
-  "@tamagui/config": 3.0.0-beta.1422.1
-  "@tamagui/constants": 3.0.0-beta.1422.1
-  "@tamagui/core": 3.0.0-beta.1422.1
-  "@tamagui/create-context": 3.0.0-beta.1422.1
-  "@tamagui/dialog": 3.0.0-beta.1422.1
-  "@tamagui/eslint-plugin": 3.0.0-beta.1422.1
-  "@tamagui/focusable": 3.0.0-beta.1422.1
-  "@tamagui/font-size": 3.0.0-beta.1422.1
-  "@tamagui/floating": 3.0.0-beta.1422.1
-  "@tamagui/get-font-sized": 3.0.0-beta.1422.1
-  "@tamagui/get-token": 3.0.0-beta.1422.1
-  "@tamagui/group": 3.0.0-beta.1422.1
-  "@tamagui/helpers": 3.0.0-beta.1422.1
-  "@tamagui/helpers-icon": 3.0.0-beta.1422.1
-  "@tamagui/helpers-tamagui": 3.0.0-beta.1422.1
-  "@tamagui/image": 3.0.0-beta.1422.1
-  "@tamagui/label": 3.0.0-beta.1422.1
-  "@tamagui/language-service": 3.0.0-beta.1422.1
-  "@tamagui/linear-gradient": 3.0.0-beta.1422.1
-  "@tamagui/list-item": 3.0.0-beta.1422.1
-  "@tamagui/popover": 3.0.0-beta.1422.1
-  "@tamagui/popper": 3.0.0-beta.1422.1
-  "@tamagui/portal": 3.0.0-beta.1422.1
-  "@tamagui/progress": 3.0.0-beta.1422.1
-  "@tamagui/proxy-worm": 3.0.0-beta.1422.1
-  "@tamagui/radio-group": 3.0.0-beta.1422.1
-  "@tamagui/react-native-svg": 3.0.0-beta.1422.1
-  "@tamagui/react-native-types": 3.0.0-beta.1422.1
-  "@tamagui/scroll-view": 3.0.0-beta.1422.1
-  "@tamagui/select": 3.0.0-beta.1422.1
-  "@tamagui/separator": 3.0.0-beta.1422.1
-  "@tamagui/shapes": 3.0.0-beta.1422.1
-  "@tamagui/sheet": 3.0.0-beta.1422.1
-  "@tamagui/shorthands": 3.0.0-beta.1422.1
-  "@tamagui/stacks": 3.0.0-beta.1422.1
-  "@tamagui/static": 3.0.0-beta.1422.1
-  "@tamagui/slider": 3.0.0-beta.1422.1
-  "@tamagui/switch": 3.0.0-beta.1422.1
-  "@tamagui/switch-headless": 3.0.0-beta.1422.1
-  "@tamagui/tabs": 3.0.0-beta.1422.1
-  "@tamagui/text": 3.0.0-beta.1422.1
-  "@tamagui/toast": 3.0.0-beta.1422.1
-  "@tamagui/tooltip": 3.0.0-beta.1422.1
-  "@tamagui/use-controllable-state": 3.0.0-beta.1422.1
-  "@tamagui/use-presence": 3.0.0-beta.1422.1
-  "@tamagui/vite-plugin": 3.0.0-beta.1422.1
-  "@tamagui/web": 3.0.0-beta.1422.1
+  "@tamagui/avatar": 3.0.0-beta.1670.1
+  "@tamagui/button": 3.0.0-beta.1670.1
+  "@tamagui/checkbox": 3.0.0-beta.1670.1
+  "@tamagui/checkbox-headless": 3.0.0-beta.1670.1
+  "@tamagui/cli": 3.0.0-beta.1670.1
+  "@tamagui/codemod-flat-values": 3.0.0-beta.1670.1
+  "@tamagui/collapsible": 3.0.0-beta.1670.1
+  "@tamagui/compose-refs": 3.0.0-beta.1670.1
+  "@tamagui/config": 3.0.0-beta.1670.1
+  "@tamagui/constants": 3.0.0-beta.1670.1
+  "@tamagui/core": 3.0.0-beta.1670.1
+  "@tamagui/create-context": 3.0.0-beta.1670.1
+  "@tamagui/dialog": 3.0.0-beta.1670.1
+  "@tamagui/eslint-plugin": 3.0.0-beta.1670.1
+  "@tamagui/focusable": 3.0.0-beta.1670.1
+  "@tamagui/font-size": 3.0.0-beta.1670.1
+  "@tamagui/floating": 3.0.0-beta.1670.1
+  "@tamagui/get-font-sized": 3.0.0-beta.1670.1
+  "@tamagui/get-token": 3.0.0-beta.1670.1
+  "@tamagui/group": 3.0.0-beta.1670.1
+  "@tamagui/helpers": 3.0.0-beta.1670.1
+  "@tamagui/helpers-icon": 3.0.0-beta.1670.1
+  "@tamagui/helpers-tamagui": 3.0.0-beta.1670.1
+  "@tamagui/image": 3.0.0-beta.1670.1
+  "@tamagui/label": 3.0.0-beta.1670.1
+  "@tamagui/language-service": 3.0.0-beta.1670.1
+  "@tamagui/linear-gradient": 3.0.0-beta.1670.1
+  "@tamagui/list-item": 3.0.0-beta.1670.1
+  "@tamagui/popover": 3.0.0-beta.1670.1
+  "@tamagui/popper": 3.0.0-beta.1670.1
+  "@tamagui/portal": 3.0.0-beta.1670.1
+  "@tamagui/progress": 3.0.0-beta.1670.1
+  "@tamagui/proxy-worm": 3.0.0-beta.1670.1
+  "@tamagui/radio-group": 3.0.0-beta.1670.1
+  "@tamagui/react-native-svg": 3.0.0-beta.1670.1
+  "@tamagui/react-native-types": 3.0.0-beta.1670.1
+  "@tamagui/scroll-view": 3.0.0-beta.1670.1
+  "@tamagui/select": 3.0.0-beta.1670.1
+  "@tamagui/separator": 3.0.0-beta.1670.1
+  "@tamagui/shapes": 3.0.0-beta.1670.1
+  "@tamagui/sheet": 3.0.0-beta.1670.1
+  "@tamagui/shorthands": 3.0.0-beta.1670.1
+  "@tamagui/stacks": 3.0.0-beta.1670.1
+  "@tamagui/static": 3.0.0-beta.1670.1
+  "@tamagui/slider": 3.0.0-beta.1670.1
+  "@tamagui/switch": 3.0.0-beta.1670.1
+  "@tamagui/switch-headless": 3.0.0-beta.1670.1
+  "@tamagui/tabs": 3.0.0-beta.1670.1
+  "@tamagui/text": 3.0.0-beta.1670.1
+  "@tamagui/toast": 3.0.0-beta.1670.1
+  "@tamagui/tooltip": 3.0.0-beta.1670.1
+  "@tamagui/use-controllable-state": 3.0.0-beta.1670.1
+  "@tamagui/use-presence": 3.0.0-beta.1670.1
+  "@tamagui/vite-plugin": 3.0.0-beta.1670.1
+  "@tamagui/web": 3.0.0-beta.1670.1
   "@taplo/cli": ^0.7.0
   "@nx/devkit": 23.1.1
   "@nx/eslint-plugin": 23.1.1
@@ -106,15 +106,15 @@ catalog:
   "@nx/storybook": 23.1.1
   "@nx/vite": 23.1.1
   "@nx/vitest": 23.1.1
-  "@razorwind/core": ^0.0.84
-  "@razorwind/css": ^0.0.67
-  "@razorwind/design-md": ^0.0.81
-  "@razorwind/nx": ^0.0.80
-  "@razorwind/storybook": ^0.0.83
-  "@razorwind/style-dictionary": ^0.0.70
-  "@razorwind/shadcn": ^0.0.80
-  "@razorwind/shell-shock": ^0.0.4
-  "@razorwind/tamagui": ^0.0.85
+  "@razorwind/core": ^0.0.87
+  "@razorwind/css": ^0.0.70
+  "@razorwind/design-md": ^0.0.84
+  "@razorwind/nx": ^0.0.83
+  "@razorwind/storybook": ^0.0.86
+  "@razorwind/style-dictionary": ^0.0.73
+  "@razorwind/shadcn": ^0.0.83
+  "@razorwind/shell-shock": ^0.0.7
+  "@razorwind/tamagui": ^0.0.90
   "@storm-software/cloudflare-tools": ^0.71.295
   "@storm-software/config": ^1.138.83
   "@storm-software/config-tools": ^1.190.147
@@ -190,7 +190,7 @@ catalog:
   sherif: ^1.13.0
   solito: ^4.4.1
   storybook: ^10.6.1
-  tamagui: 3.0.0-beta.1422.1
+  tamagui: 3.0.0-beta.1670.1
   tslib: ^2.8.1
   tsdown: ^0.22.14
   copyfiles: ^2.4.1
@@ -211,19 +211,19 @@ catalog:
   playwright: ^1.63.0
   "@tamagui/theme-builder": ^2.7.7
   style-dictionary: ^5.6.0
-  "@tamagui/dismissable": 3.0.0-beta.1422.1
+  "@tamagui/dismissable": 3.0.0-beta.1670.1
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
-  "@razorwind/shiki": ^0.0.58
-  "@razorwind/llms": ^0.0.19
-  "@razorwind/docgen": ^0.0.81
+  "@razorwind/shiki": ^0.0.61
+  "@razorwind/llms": ^0.0.22
+  "@razorwind/docgen": ^0.0.84
   ui-ux-pro-max-cli: ^2.15.0
   "@power-plant/core": ^0.0.93
   "@phosphor-icons/core": ^2.1.1
   "@shell-shock/plugin-mcp": ^0.1.10
   "@shell-shock/plugin-skills": ^0.0.23
-  "@razorwind/eslint": ^0.0.6
-  "@razorwind/stylelint": ^0.0.6
+  "@razorwind/eslint": ^0.0.13
+  "@razorwind/stylelint": ^0.0.13
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true
@@ -253,6 +253,134 @@ minimumReleaseAgeExclude:
   - "@shell-shock/schema@0.0.7 || 0.0.10 || 0.0.11"
   - "@shell-shock/unified@0.2.26 || 0.2.29 || 0.2.30"
   - conventional-changelog-storm-software@0.3.308
+  - "@tamagui/accordion@3.0.0-beta.1670.1"
+  - "@tamagui/adapt@3.0.0-beta.1670.1"
+  - "@tamagui/alert-dialog@3.0.0-beta.1670.1"
+  - "@tamagui/animate-presence@3.0.0-beta.1670.1"
+  - "@tamagui/animate@3.0.0-beta.1670.1"
+  - "@tamagui/animation-helpers@3.0.0-beta.1670.1"
+  - "@tamagui/animations-css@3.0.0-beta.1670.1"
+  - "@tamagui/animations-motion@3.0.0-beta.1670.1"
+  - "@tamagui/animations-react-native@3.0.0-beta.1670.1"
+  - "@tamagui/animations-reanimated@3.0.0-beta.1670.1"
+  - "@tamagui/avatar@3.0.0-beta.1670.1"
+  - "@tamagui/button@3.0.0-beta.1670.1"
+  - "@tamagui/card@3.0.0-beta.1670.1"
+  - "@tamagui/checkbox-headless@3.0.0-beta.1670.1"
+  - "@tamagui/checkbox@3.0.0-beta.1670.1"
+  - "@tamagui/cli-color@3.0.0-beta.1670.1"
+  - "@tamagui/cli@3.0.0-beta.1670.1"
+  - "@tamagui/codemod-flat-values@3.0.0-beta.1670.1"
+  - "@tamagui/collapsible@3.0.0-beta.1670.1"
+  - "@tamagui/collection@3.0.0-beta.1670.1"
+  - "@tamagui/compiler-core@3.0.0-beta.1670.1"
+  - "@tamagui/compose-refs@3.0.0-beta.1670.1"
+  - "@tamagui/config-default@3.0.0-beta.1670.1"
+  - "@tamagui/config@3.0.0-beta.1670.1"
+  - "@tamagui/constants@3.0.0-beta.1670.1"
+  - "@tamagui/context-menu@3.0.0-beta.1670.1"
+  - "@tamagui/core@3.0.0-beta.1670.1"
+  - "@tamagui/create-context@3.0.0-beta.1670.1"
+  - "@tamagui/create-menu@3.0.0-beta.1670.1"
+  - "@tamagui/create-system-font@3.0.0-beta.1670.1"
+  - "@tamagui/create-theme@3.0.0-beta.1670.1"
+  - "@tamagui/cubic-bezier-animator@3.0.0-beta.1670.1"
+  - "@tamagui/dialog@3.0.0-beta.1670.1"
+  - "@tamagui/dismissable@3.0.0-beta.1670.1"
+  - "@tamagui/dom@3.0.0-beta.1670.1"
+  - "@tamagui/element@3.0.0-beta.1670.1"
+  - "@tamagui/eslint-plugin@3.0.0-beta.1670.1"
+  - "@tamagui/fake-react-native@3.0.0-beta.1670.1"
+  - "@tamagui/field@3.0.0-beta.1670.1"
+  - "@tamagui/floating@3.0.0-beta.1670.1"
+  - "@tamagui/focus-guard@3.0.0-beta.1670.1"
+  - "@tamagui/focus-scope@3.0.0-beta.1670.1"
+  - "@tamagui/focusable@3.0.0-beta.1670.1"
+  - "@tamagui/font-size@3.0.0-beta.1670.1"
+  - "@tamagui/form@3.0.0-beta.1670.1"
+  - "@tamagui/generate-themes@3.0.0-beta.1670.1"
+  - "@tamagui/get-font-sized@3.0.0-beta.1670.1"
+  - "@tamagui/get-token@3.0.0-beta.1670.1"
+  - "@tamagui/group@3.0.0-beta.1670.1"
+  - "@tamagui/helpers-icon@3.0.0-beta.1670.1"
+  - "@tamagui/helpers-node@3.0.0-beta.1670.1"
+  - "@tamagui/helpers-tamagui@3.0.0-beta.1670.1"
+  - "@tamagui/helpers@3.0.0-beta.1670.1"
+  - "@tamagui/image@3.0.0-beta.1670.1"
+  - "@tamagui/input@3.0.0-beta.1670.1"
+  - "@tamagui/is-equal-shallow@3.0.0-beta.1670.1"
+  - "@tamagui/label@3.0.0-beta.1670.1"
+  - "@tamagui/language-service@3.0.0-beta.1670.1"
+  - "@tamagui/linear-gradient@3.0.0-beta.1670.1"
+  - "@tamagui/list-item@3.0.0-beta.1670.1"
+  - "@tamagui/menu@3.0.0-beta.1670.1"
+  - "@tamagui/metro-plugin@3.0.0-beta.1670.1"
+  - "@tamagui/native@3.0.0-beta.1670.1"
+  - "@tamagui/normalize-css-color@3.0.0-beta.1670.1"
+  - "@tamagui/polyfill-dev@3.0.0-beta.1670.1"
+  - "@tamagui/popover@3.0.0-beta.1670.1"
+  - "@tamagui/popper@3.0.0-beta.1670.1"
+  - "@tamagui/portal@3.0.0-beta.1670.1"
+  - "@tamagui/progress@3.0.0-beta.1670.1"
+  - "@tamagui/proxy-worm@3.0.0-beta.1670.1"
+  - "@tamagui/radio-group@3.0.0-beta.1670.1"
+  - "@tamagui/radio-headless@3.0.0-beta.1670.1"
+  - "@tamagui/react-native-media-driver@3.0.0-beta.1670.1"
+  - "@tamagui/react-native-pan-responder@3.0.0-beta.1670.1"
+  - "@tamagui/react-native-svg@3.0.0-beta.1670.1"
+  - "@tamagui/react-native-types@3.0.0-beta.1670.1"
+  - "@tamagui/react-native-use-pressable@3.0.0-beta.1670.1"
+  - "@tamagui/react-native-use-responder-events@3.0.0-beta.1670.1"
+  - "@tamagui/react-native-web-internals@3.0.0-beta.1670.1"
+  - "@tamagui/react-native-web-lite@3.0.0-beta.1670.1"
+  - "@tamagui/remove-scroll@3.0.0-beta.1670.1"
+  - "@tamagui/roving-focus@3.0.0-beta.1670.1"
+  - "@tamagui/scroll-view@3.0.0-beta.1670.1"
+  - "@tamagui/select@3.0.0-beta.1670.1"
+  - "@tamagui/separator@3.0.0-beta.1670.1"
+  - "@tamagui/shapes@3.0.0-beta.1670.1"
+  - "@tamagui/sheet@3.0.0-beta.1670.1"
+  - "@tamagui/shorthands@3.0.0-beta.1670.1"
+  - "@tamagui/simple-hash@3.0.0-beta.1670.1"
+  - "@tamagui/slider@3.0.0-beta.1670.1"
+  - "@tamagui/spacer@3.0.0-beta.1670.1"
+  - "@tamagui/spinner@3.0.0-beta.1670.1"
+  - "@tamagui/stacks@3.0.0-beta.1670.1"
+  - "@tamagui/start-transition@3.0.0-beta.1670.1"
+  - "@tamagui/static@3.0.0-beta.1670.1"
+  - "@tamagui/style-grammar@3.0.0-beta.1670.1"
+  - "@tamagui/switch-headless@3.0.0-beta.1670.1"
+  - "@tamagui/switch@3.0.0-beta.1670.1"
+  - "@tamagui/tabs-headless@3.0.0-beta.1670.1"
+  - "@tamagui/tabs@3.0.0-beta.1670.1"
+  - "@tamagui/text@3.0.0-beta.1670.1"
+  - "@tamagui/theme@3.0.0-beta.1670.1"
+  - "@tamagui/themes@3.0.0-beta.1670.1"
+  - "@tamagui/to-tailwind@3.0.0-beta.1670.1"
+  - "@tamagui/toast@3.0.0-beta.1670.1"
+  - "@tamagui/toggle-group@3.0.0-beta.1670.1"
+  - "@tamagui/tooltip@3.0.0-beta.1670.1"
+  - "@tamagui/types@3.0.0-beta.1670.1"
+  - "@tamagui/ui@3.0.0-beta.1670.1"
+  - "@tamagui/use-async@3.0.0-beta.1670.1"
+  - "@tamagui/use-callback-ref@3.0.0-beta.1670.1"
+  - "@tamagui/use-constant@3.0.0-beta.1670.1"
+  - "@tamagui/use-controllable-state@3.0.0-beta.1670.1"
+  - "@tamagui/use-debounce@3.0.0-beta.1670.1"
+  - "@tamagui/use-did-finish-ssr@3.0.0-beta.1670.1"
+  - "@tamagui/use-direction@3.0.0-beta.1670.1"
+  - "@tamagui/use-element-layout@3.0.0-beta.1670.1"
+  - "@tamagui/use-escape-keydown@3.0.0-beta.1670.1"
+  - "@tamagui/use-event@3.0.0-beta.1670.1"
+  - "@tamagui/use-force-update@3.0.0-beta.1670.1"
+  - "@tamagui/use-presence@3.0.0-beta.1670.1"
+  - "@tamagui/use-previous@3.0.0-beta.1670.1"
+  - "@tamagui/use-window-dimensions@3.0.0-beta.1670.1"
+  - "@tamagui/visually-hidden@3.0.0-beta.1670.1"
+  - "@tamagui/vite-plugin@3.0.0-beta.1670.1"
+  - "@tamagui/web@3.0.0-beta.1670.1"
+  - "@tamagui/z-index-stack@3.0.0-beta.1670.1"
+  - tamagui@3.0.0-beta.1670.1
 nodeVersion: 26.3.0
 allowBuilds:
   "@parcel/watcher": true

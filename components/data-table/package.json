@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/data-table",
   "version": "0.6.11",
   "private": false,
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A data grid built on TanStack Table and the Cyclone UI Table that takes table options (columns and data) and adds sorting, faceted column filtering, client-side pagination with a configurable page size, optional row selection checkboxes and resizable columns. Use it to display large, interactive datasets.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/icons",
   "version": "0.0.7",
   "type": "module",
-  "description": "Tamagui (React Native and web) components for every icon in the Phosphor icon collection",
+  "description": "Tamagui icon components for web and React Native covering every icon in the Phosphor collection, plus the createIcon factory used to build them. Each icon is themed and accepts color, size (pixels or tokens), mirrored, and a weight of thin, light, regular, bold, fill, duotone or black.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

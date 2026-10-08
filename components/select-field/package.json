@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/select-field",
   "version": "0.1.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A form-bound SelectField compound component (Label, Link, Control, Details, Icon) that connects a Select dropdown to the Cyclone UI form state. Options are rendered from the field's items, and it shows a floating label by default, a placeholder, formatted values, focus, size and disabled state. Use it to pick a single option inside a Form.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

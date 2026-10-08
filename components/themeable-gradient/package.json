@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/themeable-gradient",
   "version": "0.0.12",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A ThemeableGradient component that renders a diagonal LinearGradient. Its color stops are generated from a theme color (accent by default) using a scientific palette variant such as surrounding. An optional theme prop applies a specific theme. Use it for decorative backgrounds that follow the active theme.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

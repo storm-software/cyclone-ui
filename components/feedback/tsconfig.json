@@ -35,6 +35,9 @@
       "path": "../divider"
     },
     {
+      "path": "../body-text"
+    },
+    {
       "path": "../button"
     }
   ],

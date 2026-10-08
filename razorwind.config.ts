@@ -22,6 +22,7 @@ import type { Schema } from "@razorwind/core/schema";
 import css from "@razorwind/css/generate";
 import designMD from "@razorwind/design-md/generate";
 import docgen from "@razorwind/docgen/generate";
+import eslint from "@razorwind/eslint";
 import llms from "@razorwind/llms/generate";
 import shadcn from "@razorwind/shadcn/generate";
 import type { ShikiTheme } from "@razorwind/shiki/generate";
@@ -91,6 +92,13 @@ export default defineConfig({
     }),
     tamaguiWithStaticNativeFaces,
     designMD(),
+    eslint({
+      eslintPath: "packages/eslint-plugin/src/index.ts",
+      prefix: "cyclone-ui",
+      cssVarPrefix: "storm",
+      tamagui: true,
+      runtimeImport: "./runtime"
+    }),
     shiki({
       outputPath: "packages/shiki/src",
       fileName: "theme.json",

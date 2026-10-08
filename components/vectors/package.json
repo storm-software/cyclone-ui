@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/vectors",
   "version": "0.5.11",
   "type": "module",
-  "description": "A Next Button component meant to be shared in many other components",
+  "description": "A set of custom themed SVG graphics for Tamagui, including status circles (alert, check, error, info, discovery), arrows in four directions, check, accordion toggle and binary on/off indicators, background patterns (noise, checkerboard, diagonal), a PDF icon and Storm logos. Several have state props such as isExpanded, isComplete or state.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

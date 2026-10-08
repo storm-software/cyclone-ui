@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/button",
   "version": "0.6.11",
   "type": "module",
-  "description": "Button component for Cyclone UI",
+  "description": "A pressable button with Button.Text and Button.Icon subcomponents and surface, subtle, inverse, outlined, ghost, link and cascade hover variants. It supports sizes, circular and rounded shapes, ringed and disabled states, press ripples, and rendering as an anchor with href.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/pagination",
   "version": "0.8.11",
   "type": "module",
-  "description": "A component to support page navigation, next and previous links",
+  "description": "A page navigation bar with previous and next buttons, first and last page buttons, and a sliding window of page numbers with ellipses. It is controlled through the pageCount, pageIndex and setPageIndex props, with optional callbacks and a hideText option. Use it to move between pages of paged content.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

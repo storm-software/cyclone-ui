@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/drawer",
   "version": "0.1.11",
   "type": "module",
-  "description": "A Sheet-based drawer component for Cyclone UI",
+  "description": "A side panel built on the Cyclone UI Sheet that slides in from the right by default and comes in sm, md and lg sizes. It has Frame, Handle, Overlay, ScrollView, Heading, Body and Footer parts. Use it for navigation, filters or secondary content shown beside the main view.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

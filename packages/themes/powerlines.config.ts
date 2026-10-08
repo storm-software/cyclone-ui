@@ -21,7 +21,7 @@ import type { UserConfig } from "powerlines";
 import { defineConfig } from "powerlines/config";
 
 const config: UserConfig = defineConfig({
-  input: ["src/tamagui/index.ts", "src/storybook/theme.ts"],
+  input: ["src/tamagui/index.ts"],
   plugins: [
     tsdown({
       exports: false

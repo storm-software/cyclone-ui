@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/file-picker-field",
   "version": "0.5.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A form field that wraps FilePicker, with Label, Control, Details, Link and Icon subcomponents. It lists the selected files, provides an upload trigger button, and reads disabled state, size and the max file count from the field, writing changes back to form state.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

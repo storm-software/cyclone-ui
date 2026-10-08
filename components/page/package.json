@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/page",
   "version": "0.0.5",
   "type": "module",
-  "description": "A base page layout compound component (banner, top nav, side nav, main and panel) for Cyclone UI applications",
+  "description": "A Page layout compound component with Banner, TopNav (Start, Middle and End slots), SideNav, SideNavToggle, Main and Panel areas. The SideNav can be collapsed and resized; it shows as a hover flyout when collapsed on desktop and as an overlay on mobile. The Panel can also be resized. The page includes skip links and a Ctrl+[ shortcut. Use it as the shell of an application page.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

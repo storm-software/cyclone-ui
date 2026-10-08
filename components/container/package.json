@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/container",
   "version": "0.6.11",
   "type": "module",
-  "description": "Button component for Cyclone UI",
+  "description": "A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, sunken, canvas, elevated (the default), floating, overlay, outlined and glass, which adds a blurred gradient background. It also has size-based padding and bordered, shadowed, circular and noPadding options. Use it for cards and panels.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

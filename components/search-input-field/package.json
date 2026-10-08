@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/search-input-field",
   "version": "0.1.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A clearable search input field with a magnifying-glass icon. It shows a popover of case-insensitive suggestions that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. It provides Label, Control (TextBox, Trigger), Details and Icon parts.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

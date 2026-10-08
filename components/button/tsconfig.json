@@ -20,6 +20,9 @@
       "path": "../../packages/helpers"
     },
     {
+      "path": "../body-text"
+    },
+    {
       "path": "../icons"
     }
   ],

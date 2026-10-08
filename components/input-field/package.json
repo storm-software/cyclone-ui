@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/input-field",
   "version": "0.1.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A form-bound InputField compound component (Label, Link, Control with TextBox, Value and Trigger, Details, Icon) that connects an Input to the Cyclone UI form state. It uses a floating-label variant by default, supports start and end icons, has an optional clear button when the field is clearable, and syncs value, focus, size and disabled state. Use it for text inputs inside a Form.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

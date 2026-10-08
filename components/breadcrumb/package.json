@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/breadcrumb",
   "version": "0.4.12",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A breadcrumb trail of Breadcrumb.Item links followed by the current page name. It offers chevron, double-chevron or slash separators, inverse and subtle styles, and sizes. When the trail is longer than maxItems, the middle links collapse into a popover menu.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

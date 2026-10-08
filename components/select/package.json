@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/select",
   "version": "0.6.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. On small screens the item list opens in a bottom Sheet. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

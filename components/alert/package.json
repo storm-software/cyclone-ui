@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/alert",
   "version": "0.4.11",
   "type": "module",
-  "description": "A package containing the Alert component used by Storm Software",
+  "description": "An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, Alert.Content.Body, Alert.Close). Its type prop (base, brand, danger, warning, info, success, discovery, positive, negative) sets the color theme and default icon. Use it to show status or feedback messages in the page.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

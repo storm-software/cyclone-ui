@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/accordion",
   "version": "0.3.11",
   "type": "module",
-  "description": "A package containing the Accordion component used by Storm Software",
+  "description": "A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.Heading, Item.Content) built on Tamagui's accordion. It supports single or multiple open items, default, separated, bordered and ghost variants, numbered headers, toggle or chevron icons with a configurable side, and an up or down direction. Use it for FAQs or grouped sections that users expand.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

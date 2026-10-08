@@ -95,8 +95,6 @@ For parts that are held rather than tapped (instrument keys): use `pointerdown` 
 
 For text typed onto a screen: show only the tail of the buffer, clip with a `<clipPath>` matching the glass rect, and escape `&` and `<` before writing into the SVG.
 
-For sound: create the `AudioContext` inside the first press handler (browsers block it before a gesture), route through one master gain into an `AnalyserNode`, and draw the analyser's time-domain data as a `<polyline>` on the screen face each animation frame, starting from a rising zero crossing so the trace holds still.
-
 ## Look
 
 - Define every colour as a CSS custom property and provide both a dark and a light set; the drawing works in either. Dark: panel `#141516` on page `#0c0d0e`. Light: panel `#f6f6f5` on page `#e9eaea`.

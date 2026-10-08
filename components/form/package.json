@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/form",
   "version": "0.9.11",
   "type": "module",
-  "description": "A Next Button component meant to be shared in many other components",
+  "description": "A form root that renders a native form element and provides Cyclone UI form state through FormProvider. Form.Submit and Form.Reset buttons call the form's submit and reset actions and are disabled when the form cannot be submitted. Use it to wrap Cyclone UI field components.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",

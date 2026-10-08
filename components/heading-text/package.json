@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/heading-text",
   "version": "0.5.11",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "Themed heading text components: HeadingHeroText, HeadingTitleText, HeadingLargeText, HeadingMediumText, HeadingSmallText and HeadingExtraSmallText. Each renders the matching h1-h5 element and has base (display) and editorial font variants. HeadingText picks one of them from a level prop (1-5 or hero/title/lg/md/sm/xs). Use them for consistent page and section titles.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
