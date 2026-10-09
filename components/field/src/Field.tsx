@@ -809,7 +809,7 @@ const FieldLabelTextImpl = createStyledHOC(
                             hideOptionalForOverflow ? "none" : undefined
                           }
                           size={floating ? true : "sm"}
-                          color={`${disabled ? "inkSubtle" : "inkSubtlest"} group-hover/field:${disabled ? "inkSubtle" : "inkSubtle"}`}
+                          color={`${disabled ? "inkSubtlestDisable" : "inkSubtlest"}`}
                           disabled={disabled}
                           floating={floating}
                           controlSize={size}>

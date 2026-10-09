@@ -655,6 +655,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Dependencies
 
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/vectors`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
@@ -669,12 +670,44 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/container/dist/index.cjs` | `file` |  |
 | `../../components/container/dist/index.mjs` | `file` |  |
 | `../../components/container/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/container/node_modules/react-native/index.js` | `file` |  |
 | `../../components/container/node_modules/react/index.js` | `file` |  |
 | `../../components/container/src/index.ts` | `file` |  |
+
+## @cyclone-ui/context-menu
+
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+
+- **Name:** `@cyclone-ui/context-menu`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/context-menu/dist/index.cjs` | `file` |  |
+| `../../components/context-menu/dist/index.mjs` | `file` |  |
+| `../../components/context-menu/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react-native/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react/index.js` | `file` |  |
+| `../../components/context-menu/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/data-table
 
@@ -1065,7 +1098,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 ## @cyclone-ui/file-picker
 
-A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image preview.
+A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image, text or PDF preview.
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
@@ -1081,6 +1114,7 @@ A form-integrated file and image picker with a dashed drop zone that supports dr
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/pdf-document-display`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
@@ -1444,6 +1478,7 @@ A form-bound InputField compound component (Label, Link, Control with TextBox, V
 - `@cyclone-ui/state`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 
@@ -1957,7 +1992,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 - `@stryke/type-checks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
-- `pdfjs-dist`: `^4.10.38`
+- `pdfjs-dist`: `4.8.69`
 - `react-pdf`: `^9.2.1`
 
 ### Development Dependencies
@@ -1988,11 +2023,10 @@ A PhoneNumberInputField built on InputField that adds a searchable country-code 
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/input-field`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/search-input-field`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@maskito/core`: `catalog:`
@@ -2451,6 +2485,7 @@ A form-bound SelectField compound component (Label, Link, Control, Details, Icon
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 - `@tamagui/web`: `catalog:`
 - `react-native-svg`: `^15.15.5`
 
@@ -3004,6 +3039,7 @@ A form field for multi-line text that wraps TextArea, with Label, Control, Detai
 - `@cyclone-ui/state`: `workspace:*`
 - `@cyclone-ui/text-area`: `workspace:*`
 - `@tamagui/core`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 
@@ -4015,6 +4051,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Dependencies
 
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/vectors`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
@@ -4029,12 +4066,44 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/container/dist/index.cjs` | `file` |  |
 | `../../components/container/dist/index.mjs` | `file` |  |
 | `../../components/container/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/container/node_modules/react-native/index.js` | `file` |  |
 | `../../components/container/node_modules/react/index.js` | `file` |  |
 | `../../components/container/src/index.ts` | `file` |  |
+
+## @cyclone-ui/context-menu
+
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+
+- **Name:** `@cyclone-ui/context-menu`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/context-menu/dist/index.cjs` | `file` |  |
+| `../../components/context-menu/dist/index.mjs` | `file` |  |
+| `../../components/context-menu/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react-native/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react/index.js` | `file` |  |
+| `../../components/context-menu/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/data-table
 
@@ -4425,7 +4494,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 ## @cyclone-ui/file-picker
 
-A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image preview.
+A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image, text or PDF preview.
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
@@ -4441,6 +4510,7 @@ A form-integrated file and image picker with a dashed drop zone that supports dr
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/pdf-document-display`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
@@ -4804,6 +4874,7 @@ A form-bound InputField compound component (Label, Link, Control with TextBox, V
 - `@cyclone-ui/state`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 
@@ -5317,7 +5388,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 - `@stryke/type-checks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
-- `pdfjs-dist`: `^4.10.38`
+- `pdfjs-dist`: `4.8.69`
 - `react-pdf`: `^9.2.1`
 
 ### Development Dependencies
@@ -5348,11 +5419,10 @@ A PhoneNumberInputField built on InputField that adds a searchable country-code 
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/input-field`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/search-input-field`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@maskito/core`: `catalog:`
@@ -5811,6 +5881,7 @@ A form-bound SelectField compound component (Label, Link, Control, Details, Icon
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 - `@tamagui/web`: `catalog:`
 - `react-native-svg`: `^15.15.5`
 
@@ -6364,6 +6435,7 @@ A form field for multi-line text that wraps TextArea, with Label, Control, Detai
 - `@cyclone-ui/state`: `workspace:*`
 - `@cyclone-ui/text-area`: `workspace:*`
 - `@tamagui/core`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 
@@ -7375,6 +7447,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Dependencies
 
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/vectors`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
@@ -7389,12 +7462,44 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/container/dist/index.cjs` | `file` |  |
 | `../../components/container/dist/index.mjs` | `file` |  |
 | `../../components/container/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/container/node_modules/react-native/index.js` | `file` |  |
 | `../../components/container/node_modules/react/index.js` | `file` |  |
 | `../../components/container/src/index.ts` | `file` |  |
+
+## @cyclone-ui/context-menu
+
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+
+- **Name:** `@cyclone-ui/context-menu`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/context-menu/dist/index.cjs` | `file` |  |
+| `../../components/context-menu/dist/index.mjs` | `file` |  |
+| `../../components/context-menu/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react-native/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react/index.js` | `file` |  |
+| `../../components/context-menu/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/data-table
 
@@ -7785,7 +7890,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 ## @cyclone-ui/file-picker
 
-A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image preview.
+A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image, text or PDF preview.
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
@@ -7801,6 +7906,7 @@ A form-integrated file and image picker with a dashed drop zone that supports dr
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/pdf-document-display`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
@@ -8164,6 +8270,7 @@ A form-bound InputField compound component (Label, Link, Control with TextBox, V
 - `@cyclone-ui/state`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 
@@ -8677,7 +8784,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 - `@stryke/type-checks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
-- `pdfjs-dist`: `^4.10.38`
+- `pdfjs-dist`: `4.8.69`
 - `react-pdf`: `^9.2.1`
 
 ### Development Dependencies
@@ -8708,11 +8815,10 @@ A PhoneNumberInputField built on InputField that adds a searchable country-code 
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/input-field`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/search-input-field`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@maskito/core`: `catalog:`
@@ -9171,6 +9277,7 @@ A form-bound SelectField compound component (Label, Link, Control, Details, Icon
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 - `@tamagui/web`: `catalog:`
 - `react-native-svg`: `^15.15.5`
 
@@ -9724,6 +9831,7 @@ A form field for multi-line text that wraps TextArea, with Label, Control, Detai
 - `@cyclone-ui/state`: `workspace:*`
 - `@cyclone-ui/text-area`: `workspace:*`
 - `@tamagui/core`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 
@@ -10735,6 +10843,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Dependencies
 
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/vectors`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
@@ -10749,12 +10858,44 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/container/dist/index.cjs` | `file` |  |
 | `../../components/container/dist/index.mjs` | `file` |  |
 | `../../components/container/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/container/node_modules/react-native/index.js` | `file` |  |
 | `../../components/container/node_modules/react/index.js` | `file` |  |
 | `../../components/container/src/index.ts` | `file` |  |
+
+## @cyclone-ui/context-menu
+
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+
+- **Name:** `@cyclone-ui/context-menu`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/context-menu/dist/index.cjs` | `file` |  |
+| `../../components/context-menu/dist/index.mjs` | `file` |  |
+| `../../components/context-menu/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react-native/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react/index.js` | `file` |  |
+| `../../components/context-menu/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/data-table
 
@@ -11145,7 +11286,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 ## @cyclone-ui/file-picker
 
-A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image preview.
+A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image, text or PDF preview.
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
@@ -11161,6 +11302,7 @@ A form-integrated file and image picker with a dashed drop zone that supports dr
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/pdf-document-display`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
@@ -11524,6 +11666,7 @@ A form-bound InputField compound component (Label, Link, Control with TextBox, V
 - `@cyclone-ui/state`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 
@@ -12037,7 +12180,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 - `@stryke/type-checks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
-- `pdfjs-dist`: `^4.10.38`
+- `pdfjs-dist`: `4.8.69`
 - `react-pdf`: `^9.2.1`
 
 ### Development Dependencies
@@ -12068,11 +12211,10 @@ A PhoneNumberInputField built on InputField that adds a searchable country-code 
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/input-field`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/search-input-field`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@maskito/core`: `catalog:`
@@ -12531,6 +12673,7 @@ A form-bound SelectField compound component (Label, Link, Control, Details, Icon
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 - `@tamagui/web`: `catalog:`
 - `react-native-svg`: `^15.15.5`
 
@@ -13084,6 +13227,7 @@ A form field for multi-line text that wraps TextArea, with Label, Control, Detai
 - `@cyclone-ui/state`: `workspace:*`
 - `@cyclone-ui/text-area`: `workspace:*`
 - `@tamagui/core`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 
@@ -14095,6 +14239,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Dependencies
 
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/vectors`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
@@ -14109,12 +14254,44 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/container/dist/index.cjs` | `file` |  |
 | `../../components/container/dist/index.mjs` | `file` |  |
 | `../../components/container/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/container/node_modules/react-native/index.js` | `file` |  |
 | `../../components/container/node_modules/react/index.js` | `file` |  |
 | `../../components/container/src/index.ts` | `file` |  |
+
+## @cyclone-ui/context-menu
+
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+
+- **Name:** `@cyclone-ui/context-menu`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/context-menu/dist/index.cjs` | `file` |  |
+| `../../components/context-menu/dist/index.mjs` | `file` |  |
+| `../../components/context-menu/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react-native/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react/index.js` | `file` |  |
+| `../../components/context-menu/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/data-table
 
@@ -14505,7 +14682,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 ## @cyclone-ui/file-picker
 
-A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image preview.
+A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image, text or PDF preview.
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
@@ -14521,6 +14698,7 @@ A form-integrated file and image picker with a dashed drop zone that supports dr
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/pdf-document-display`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
@@ -14884,6 +15062,7 @@ A form-bound InputField compound component (Label, Link, Control with TextBox, V
 - `@cyclone-ui/state`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 
@@ -15397,7 +15576,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 - `@stryke/type-checks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
-- `pdfjs-dist`: `^4.10.38`
+- `pdfjs-dist`: `4.8.69`
 - `react-pdf`: `^9.2.1`
 
 ### Development Dependencies
@@ -15428,11 +15607,10 @@ A PhoneNumberInputField built on InputField that adds a searchable country-code 
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/input-field`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/search-input-field`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@maskito/core`: `catalog:`
@@ -15891,6 +16069,7 @@ A form-bound SelectField compound component (Label, Link, Control, Details, Icon
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 - `@tamagui/web`: `catalog:`
 - `react-native-svg`: `^15.15.5`
 
@@ -16444,6 +16623,7 @@ A form field for multi-line text that wraps TextArea, with Label, Control, Detai
 - `@cyclone-ui/state`: `workspace:*`
 - `@cyclone-ui/text-area`: `workspace:*`
 - `@tamagui/core`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 
@@ -17455,6 +17635,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Dependencies
 
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/vectors`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
@@ -17469,12 +17650,44 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/container/dist/index.cjs` | `file` |  |
 | `../../components/container/dist/index.mjs` | `file` |  |
 | `../../components/container/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/container/node_modules/react-native/index.js` | `file` |  |
 | `../../components/container/node_modules/react/index.js` | `file` |  |
 | `../../components/container/src/index.ts` | `file` |  |
+
+## @cyclone-ui/context-menu
+
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+
+- **Name:** `@cyclone-ui/context-menu`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/context-menu/dist/index.cjs` | `file` |  |
+| `../../components/context-menu/dist/index.mjs` | `file` |  |
+| `../../components/context-menu/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react-native/index.js` | `file` |  |
+| `../../components/context-menu/node_modules/react/index.js` | `file` |  |
+| `../../components/context-menu/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/data-table
 
@@ -17865,7 +18078,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 ## @cyclone-ui/file-picker
 
-A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image preview.
+A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image, text or PDF preview.
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
@@ -17881,6 +18094,7 @@ A form-integrated file and image picker with a dashed drop zone that supports dr
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/pdf-document-display`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
@@ -18244,6 +18458,7 @@ A form-bound InputField compound component (Label, Link, Control with TextBox, V
 - `@cyclone-ui/state`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 
@@ -18757,7 +18972,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 - `@stryke/type-checks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
-- `pdfjs-dist`: `^4.10.38`
+- `pdfjs-dist`: `4.8.69`
 - `react-pdf`: `^9.2.1`
 
 ### Development Dependencies
@@ -18788,11 +19003,10 @@ A PhoneNumberInputField built on InputField that adds a searchable country-code 
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/input-field`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/search-input-field`: `workspace:*`
 - `@cyclone-ui/state`: `workspace:*`
 - `@maskito/core`: `catalog:`
@@ -19251,6 +19465,7 @@ A form-bound SelectField compound component (Label, Link, Control, Details, Icon
 - `@stryke/types`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 - `@tamagui/web`: `catalog:`
 - `react-native-svg`: `^15.15.5`
 
@@ -19804,6 +20019,7 @@ A form field for multi-line text that wraps TextArea, with Label, Control, Detai
 - `@cyclone-ui/state`: `workspace:*`
 - `@cyclone-ui/text-area`: `workspace:*`
 - `@tamagui/core`: `catalog:`
+- `@tamagui/react-native-types`: `catalog:`
 
 ### Development Dependencies
 

@@ -44,6 +44,7 @@ import {
   createStyledContext,
   createStyledHOC,
   styled,
+  Text,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -52,8 +53,9 @@ import { LinearGradient } from "@tamagui/linear-gradient";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { DocumentPickerResult } from "expo-document-picker";
 import type { PropsWithChildren } from "react";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { MediaTypeOptions } from "./file-picker-types";
+import { FilePickerPdfPreview } from "./FilePickerPdfPreview";
 import { useFilePicker } from "./useFilePicker";
 
 export type FilePickerVariant = "dropzone" | "simple";
@@ -310,6 +312,7 @@ const FilePickerGroup = createStyledHOC(
         variant={variant}
         ref={composedRef}
         group={"file-picker"}
+        disabled={disabled}
         active={Boolean(dragStatus?.isDragActive)}
         hasValidationMessage={hasValidationMessage}
         // The animated frame writes Tamagui's implicit `solid` border default
@@ -427,7 +430,7 @@ const FilePickerTrigger = createStyledHOC(
             size={getSized("9xl") * getFormSizeScale(size)}
             // `themed` icons resolve only a plain theme key; a conditional
             // value string falls through to the SVG as an invalid (black) fill.
-            color={disabled ? "inkBodyDisabled" : "hairline"}
+            color={disabled ? "accentDisabled" : "hairline"}
             transition="100ms"
             opacity="1 exit:0"
             scale="1 exit:0.5"
@@ -484,6 +487,7 @@ const FilePickerTriggerButton = createStyledHOC(
         disabled={disabled}
         onPress={onOpen}
         display="native:none"
+        marginHorizontal="5xl"
         {...props}>
         <Button.Text
           fontSize={16 * getFormFontScale(size)}
@@ -591,6 +595,103 @@ const FilePickerViewLink = ({
   );
 };
 
+// Browsers often report source files as `video/mp2t` (`.ts`) or with no MIME
+// type at all, so the extension is checked too.
+const TEXT_MIME_TYPE =
+  /^text\/|json|xml|yaml|javascript|typescript|toml|x-sh|sql|graphql/i;
+const TEXT_EXTENSION =
+  /\.(?:txt|log|md|mdx|csv|tsv|json5?|jsonc|ya?ml|toml|ini|cfg|conf|env|xml|html?|css|scss|sass|less|[cm]?[jt]sx?|vue|svelte|astro|py|rb|go|rs|java|kts?|swift|c|h|cc|cpp|hpp|cs|php|lua|sh|bash|zsh|fish|ps1|sql|graphql|gql|proto|tf|nix|lock|gitignore|dockerfile)$/i;
+
+// ponytail: reads the whole file to show ~2 kB, so large files are skipped;
+// stream the first chunk instead if bigger text previews are ever needed.
+const MAX_TEXT_PREVIEW_FILE_SIZE = 1024 * 1024;
+const MAX_TEXT_PREVIEW_LENGTH = 2048;
+
+type FilePreviewKind = "image" | "text" | "pdf";
+
+const getFilePreviewKind = (
+  name?: string,
+  mimeType?: string
+): FilePreviewKind => {
+  if (mimeType?.startsWith("image/")) {
+    return "image";
+  }
+  if (mimeType === "application/pdf" || /\.pdf$/i.test(name ?? "")) {
+    return "pdf";
+  }
+  if (TEXT_MIME_TYPE.test(mimeType ?? "") || TEXT_EXTENSION.test(name ?? "")) {
+    return "text";
+  }
+
+  return "image";
+};
+
+const FilePickerTextPreview = ({
+  uri,
+  size
+}: {
+  uri: string;
+  size?: number;
+}) => {
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    if (size && size > MAX_TEXT_PREVIEW_FILE_SIZE) {
+      return;
+    }
+
+    let cancelled = false;
+    fetch(uri)
+      .then(async response => response.text())
+      .then(value => {
+        if (!cancelled) {
+          setText(value.slice(0, MAX_TEXT_PREVIEW_LENGTH));
+        }
+      })
+      // The preview is decorative, so an unreadable file just shows nothing.
+      .catch(() => {});
+
+    return () => {
+      cancelled = true;
+    };
+  }, [uri, size]);
+
+  return (
+    <Text
+      fontFamily="code"
+      fontSize={12}
+      lineHeight="18px"
+      color="inkBody"
+      padding="md"
+      whiteSpace="pre"
+      aria-hidden={true}>
+      {text}
+    </Text>
+  );
+};
+
+const FilePickerFilePreview = ({
+  kind,
+  uri,
+  size
+}: {
+  kind: FilePreviewKind;
+  uri?: string;
+  size?: number;
+}) => {
+  if (!uri) {
+    return null;
+  }
+  if (kind === "pdf") {
+    return <FilePickerPdfPreview uri={uri} />;
+  }
+  if (kind === "text") {
+    return <FilePickerTextPreview uri={uri} size={size} />;
+  }
+
+  return <Image height={500} src={uri} />;
+};
+
 export type FilePickerFileProps = PropsWithChildren<ClientFileResult>;
 
 const FilePickerFile = ({
@@ -608,6 +709,7 @@ const FilePickerFile = ({
     size: controlSize
   } = FilePickerContext.useStyledContext();
   const scale = getFormSizeScale(controlSize);
+  const previewKind = getFilePreviewKind(name, mimeType);
 
   const handleRemove = useCallback(
     () => onChange(files.filter(file => file.id !== id)),
@@ -626,7 +728,7 @@ const FilePickerFile = ({
       overflow="hidden"
       position="relative"
       borderRadius="card"
-      borderColor="accent hover:accentHover"
+      borderColor="hairline hover:hairlineHover"
       borderWidth={1}
       boxShadow="none hover:ringOffset"
       onClick={event => event.stopPropagation()}
@@ -641,8 +743,8 @@ const FilePickerFile = ({
         zIndex="10"
         backgroundColor="black"
         opacity="0.6 group-hover/file:0.8"
-        filter="group-hover/file:blur(1px)"
       />
+
       <View
         transition="100ms"
         position="absolute"
@@ -681,7 +783,8 @@ const FilePickerFile = ({
           opacity="0 group-hover/file:1">
           <Button
             variant="ghost"
-            ghostOpacity={0.75}
+            theme="danger"
+            ghostOpacity={0.25}
             onPress={handleRemove}
             size={getSized("13xl") * scale}
             padding="xl"
@@ -754,12 +857,20 @@ const FilePickerFile = ({
       <View
         transition="200ms"
         position="absolute"
-        top={-240}
+        // Images are offset so the card shows a band from their middle;
+        // documents show their first lines.
+        top={previewKind === "image" ? -240 : 0}
         left={0}
         right={0}
         zIndex="0"
-        scale="1 group-hover/file:1.2">
-        <Image key={id} height={500} src={uri} />
+        scale="1 group-hover/file:1.2"
+        backdropFilter="blur(10px) group-hover/file:blur(30px)">
+        <FilePickerFilePreview
+          key={id}
+          kind={previewKind}
+          uri={uri}
+          size={size}
+        />
       </View>
     </View>
   );

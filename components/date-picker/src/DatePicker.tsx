@@ -501,7 +501,7 @@ function YearRangeSlider() {
         noPadding={true}
         {...swapOnClick(previousYearsButton())}>
         <Button.Icon>
-          <CaretLeft weight="bold" />
+          <CaretLeft weight="black" />
         </Button.Icon>
       </Button>
       <View
@@ -531,7 +531,7 @@ function YearRangeSlider() {
         noPadding={true}
         {...swapOnClick(nextYearsButton())}>
         <Button.Icon>
-          <CaretRight weight="bold" />
+          <CaretRight weight="black" />
         </Button.Icon>
       </Button>
     </View>

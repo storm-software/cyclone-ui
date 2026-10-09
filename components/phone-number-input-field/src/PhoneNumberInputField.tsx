@@ -17,15 +17,10 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { Button } from "@cyclone-ui/button";
-import {
-  getFormFontScale,
-  getFormSizeScale,
-  getFormSizeToken
-} from "@cyclone-ui/helpers";
+import { ContextMenu } from "@cyclone-ui/context-menu";
+import { getFormFontScale } from "@cyclone-ui/helpers";
 import { Input } from "@cyclone-ui/input";
 import { InputField } from "@cyclone-ui/input-field";
-import { Popover } from "@cyclone-ui/popover";
 import { SearchInputField } from "@cyclone-ui/search-input-field";
 import type { CallbackContext, FieldAtoms } from "@cyclone-ui/state/form";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
@@ -86,12 +81,18 @@ interface PhoneNumberContextValue {
   setCountryCode: (countryCode: CountryCode) => void;
 }
 
-const PhoneNumberContext = createStyledContext<PhoneNumberContextValue, "countryCode" | "setCountryCode">({
-  countryCode: "US",
-  setCountryCode: () => undefined
-} as PhoneNumberContextValue, {
-  keys: ["countryCode", "setCountryCode"]
-});
+const PhoneNumberContext = createStyledContext<
+  PhoneNumberContextValue,
+  "countryCode" | "setCountryCode"
+>(
+  {
+    countryCode: "US",
+    setCountryCode: () => undefined
+  } as PhoneNumberContextValue,
+  {
+    keys: ["countryCode", "setCountryCode"]
+  }
+);
 
 export interface PhoneNumberInputFieldExtraProps {
   /** ISO 3166-1 alpha-2 country used until the value identifies a country. */
@@ -220,81 +221,36 @@ const CountryListItem = memo(
     onSelect,
     showCountryName
   }: CountryListItemProps): JSX.Element => {
-    const size = FieldApi.use().size.get();
     const handlePress = useCallback(
       (): void => onSelect(country),
       [country, onSelect]
     );
 
     return (
-      <View position="relative" paddingVertical="xl">
-        <Button
-          variant="ghost"
-          noPadding={true}
-          animate={false}
-          width="100%"
-          height="auto"
-          minHeight="unset"
-          padding={0}
-          justifyContent="flex-start"
-          position="relative"
-          overflow="visible"
-          aria-label={`${country.name} (${country.code}) +${country.callingCode}`}
-          accessibilityLabel={`${country.name} (${country.code}) +${country.callingCode}`}
-          onPress={handlePress}>
-          <View
-            transition="200ms"
-            zIndex="20"
-            cursor="inherit"
-            flexDirection="row"
-            alignItems="center"
-            minHeight={22 * getFormSizeScale(size)}
-            width="100%"
-            paddingHorizontal="2xl"
-            paddingBottom="xs"
-            gap="2xl">
-            <BodyText
-              render="span"
-              aria-hidden={true}
-              flexShrink={0}
-              minWidth="2xl">
-              {country.flag}
-            </BodyText>
-            {showCountryName && (
-              <BodyText
-                render="span"
-                flex={1}
-                minWidth={0}
-                color="accentInactive group-hover/button:accentHover group-focus/button:accentHover"
-                fontSize={18 * getFormFontScale(size)}
-                fontWeight={300}>
-                {country.name}
-              </BodyText>
-            )}
-            <BodyText
-              render="span"
-              flexShrink={0}
-              width="16xl"
-              marginLeft="auto"
-              textAlign="left"
-              color="accentInactive group-hover/button:accentHover group-focus/button:accentHover"
-              fontSize={18 * getFormFontScale(size)}
-              fontWeight={300}>
-              {`${country.code}  +${country.callingCode}`}
-            </BodyText>
-          </View>
-        </Button>
-        <View
-          zIndex="20"
-          position="absolute"
-          bottom={0}
-          left="2xl"
-          right="2xl"
-          borderBottomWidth={1}
-          borderBottomColor="hairline"
-          pointerEvents="none"
-        />
-      </View>
+      <ContextMenu.Item
+        aria-label={`${country.name} (${country.code}) +${country.callingCode}`}
+        accessibilityLabel={`${country.name} (${country.code}) +${country.callingCode}`}
+        onPress={handlePress}>
+        <BodyText
+          render="span"
+          aria-hidden={true}
+          flexShrink={0}
+          minWidth="2xl">
+          {country.flag}
+        </BodyText>
+        {showCountryName && (
+          <ContextMenu.Item.Text flex={1} minWidth={0}>
+            {country.name}
+          </ContextMenu.Item.Text>
+        )}
+        <ContextMenu.Item.Text
+          flexShrink={0}
+          width="16xl"
+          marginLeft="auto"
+          textAlign="left">
+          {`${country.code}  +${country.callingCode}`}
+        </ContextMenu.Item.Text>
+      </ContextMenu.Item>
     );
   }
 );
@@ -369,13 +325,8 @@ const CountryCodeSelector = (): JSX.Element => {
   );
 
   return (
-    <Popover
-      open={open}
-      onOpenChange={handleOpenChange}
-      size={getFormSizeToken(size)}
-      placement="bottom-start"
-      shouldAdapt={false}>
-      <Popover.Trigger
+    <ContextMenu open={open} onOpenChange={handleOpenChange} size={size}>
+      <ContextMenu.Trigger
         asChild={true}
         aria-label={`Select country code, currently ${selectedCountry.name} +${selectedCountry.callingCode}`}>
         <InputField.Control.Trigger
@@ -396,46 +347,37 @@ const CountryCodeSelector = (): JSX.Element => {
             {selectedCountry.flag}
           </SizableText>
         </InputField.Control.Trigger>
-      </Popover.Trigger>
+      </ContextMenu.Trigger>
 
-      <Popover.Content
-        width={COUNTRY_POPOVER_WIDTH}
-        maxWidth="90vw"
-        padding="3xl"
-        hasArrow={false}>
-        <View gap="3xl" width="100%">
-          <SearchInputField
-            name={countrySearchFieldName}
-            size="sm"
-            clearable={false}
-            onChange={handleSearchChange}>
-            <CountrySearchReset open={open} />
-            <SearchInputField.Control>
-              <SearchInputField.Control.TextBox
-                aria-label="Search countries"
-                placeholder="Search countries..."
+      <ContextMenu.Content width={COUNTRY_POPOVER_WIDTH}>
+        <SearchInputField
+          name={countrySearchFieldName}
+          size="sm"
+          clearable={false}
+          onChange={handleSearchChange}>
+          <CountrySearchReset open={open} />
+          <SearchInputField.Control>
+            <SearchInputField.Control.TextBox
+              aria-label="Search countries"
+              placeholder="Search countries..."
+            />
+          </SearchInputField.Control>
+        </SearchInputField>
+
+        <ContextMenu.Content.ScrollView>
+          <View width="100%">
+            {countries.map(country => (
+              <CountryListItem
+                key={country.code}
+                country={country}
+                onSelect={handleSelect}
+                showCountryName={showCountryName}
               />
-            </SearchInputField.Control>
-          </SearchInputField>
-
-          <Popover.Content.ScrollView
-            size="lg"
-            maxHeight="32xl"
-            paddingRight="3xl">
-            <View width="100%">
-              {countries.map(country => (
-                <CountryListItem
-                  key={country.code}
-                  country={country}
-                  onSelect={handleSelect}
-                  showCountryName={showCountryName}
-                />
-              ))}
-            </View>
-          </Popover.Content.ScrollView>
-        </View>
-      </Popover.Content>
-    </Popover>
+            ))}
+          </View>
+        </ContextMenu.Content.ScrollView>
+      </ContextMenu.Content>
+    </ContextMenu>
   );
 };
 
@@ -444,7 +386,8 @@ interface PhoneNumberInputFieldControlProps {
   [key: string]: any;
 }
 
-const PhoneNumberInputFieldControl = createStyledHOC(InputField.Control, 
+const PhoneNumberInputFieldControl = createStyledHOC(
+  InputField.Control,
   (
     { children, ...props }: PhoneNumberInputFieldControlProps,
     forwardedRef: any
@@ -461,26 +404,26 @@ interface PhoneNumberInputFieldControlTextBoxValueProps {
   [key: string]: any;
 }
 
-const PhoneNumberInputFieldControlTextBoxValue =
-  createStyledHOC(InputField.Control.TextBox.Value, 
-    (
-      props: PhoneNumberInputFieldControlTextBoxValueProps,
-      forwardedRef: any
-    ): JSX.Element => {
-      const { countryCode } = PhoneNumberContext.useStyledContext();
+const PhoneNumberInputFieldControlTextBoxValue = createStyledHOC(
+  InputField.Control.TextBox.Value,
+  (
+    props: PhoneNumberInputFieldControlTextBoxValueProps,
+    forwardedRef: any
+  ): JSX.Element => {
+    const { countryCode } = PhoneNumberContext.useStyledContext();
 
-      return (
-        <InputField.Control.TextBox.Value
-          key={countryCode}
-          ref={forwardedRef}
-          {...props}
-          autoComplete="tel"
-          inputMode="tel"
-          type="tel"
-        />
-      );
-    }
-  );
+    return (
+      <InputField.Control.TextBox.Value
+        key={countryCode}
+        ref={forwardedRef}
+        {...props}
+        autoComplete="tel"
+        inputMode="tel"
+        type="tel"
+      />
+    );
+  }
+);
 
 export const PhoneNumberInputField = withStaticProperties(
   PhoneNumberInputFieldGroup,

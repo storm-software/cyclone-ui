@@ -244,7 +244,7 @@ export const manifest = {
       "cssVar": "--storm-color-accent-base-disabled",
       "type": "color",
       "category": "color",
-      "value": "#151517"
+      "value": "#151518"
     },
     {
       "path": "color.accent.base-hover",
@@ -279,7 +279,7 @@ export const manifest = {
       "cssVar": "--storm-color-accent-brand-disabled",
       "type": "color",
       "category": "color",
-      "value": "#4daea4"
+      "value": "#44afa4"
     },
     {
       "path": "color.accent.brand-hover",
@@ -315,7 +315,7 @@ export const manifest = {
       "cssVar": "--storm-color-accent-danger-disabled",
       "type": "color",
       "category": "color",
-      "value": "#843142"
+      "value": "#862e41"
     },
     {
       "path": "color.accent.danger-hover",
@@ -351,7 +351,7 @@ export const manifest = {
       "cssVar": "--storm-color-accent-discovery-disabled",
       "type": "color",
       "category": "color",
-      "value": "#584889"
+      "value": "#58478c"
     },
     {
       "path": "color.accent.discovery-hover",
@@ -387,7 +387,7 @@ export const manifest = {
       "cssVar": "--storm-color-accent-info-disabled",
       "type": "color",
       "category": "color",
-      "value": "#2f58a2"
+      "value": "#2b58a6"
     },
     {
       "path": "color.accent.info-hover",
@@ -423,7 +423,7 @@ export const manifest = {
       "cssVar": "--storm-color-accent-negative-disabled",
       "type": "color",
       "category": "color",
-      "value": "#843142"
+      "value": "#862e41"
     },
     {
       "path": "color.accent.negative-hover",
@@ -459,7 +459,7 @@ export const manifest = {
       "cssVar": "--storm-color-accent-positive-disabled",
       "type": "color",
       "category": "color",
-      "value": "#336855"
+      "value": "#2f6954"
     },
     {
       "path": "color.accent.positive-hover",
@@ -495,7 +495,7 @@ export const manifest = {
       "cssVar": "--storm-color-accent-success-disabled",
       "type": "color",
       "category": "color",
-      "value": "#336855"
+      "value": "#2f6954"
     },
     {
       "path": "color.accent.success-hover",
@@ -531,7 +531,7 @@ export const manifest = {
       "cssVar": "--storm-color-accent-warning-disabled",
       "type": "color",
       "category": "color",
-      "value": "#71562a"
+      "value": "#725526"
     },
     {
       "path": "color.accent.warning-hover",
@@ -670,7 +670,7 @@ export const manifest = {
       "cssVar": "--storm-color-data-neutral-emphasis",
       "type": "color",
       "category": "color",
-      "value": "#606164",
+      "value": "#555659",
       "alias": true
     },
     {
@@ -858,7 +858,7 @@ export const manifest = {
       "cssVar": "--storm-color-ink-body",
       "type": "color",
       "category": "color",
-      "value": "#606164",
+      "value": "#555659",
       "alias": true
     },
     {
@@ -934,7 +934,7 @@ export const manifest = {
       "cssVar": "--storm-color-muted-base-disabled",
       "type": "color",
       "category": "color",
-      "value": "#eaeaea66"
+      "value": "#eaeaea40"
     },
     {
       "path": "color.muted.base-hover",
@@ -969,7 +969,7 @@ export const manifest = {
       "cssVar": "--storm-color-muted-brand-disabled",
       "type": "color",
       "category": "color",
-      "value": "#84e3d9"
+      "value": "#7ee5d9"
     },
     {
       "path": "color.muted.brand-hover",
@@ -1004,7 +1004,7 @@ export const manifest = {
       "cssVar": "--storm-color-muted-danger-disabled",
       "type": "color",
       "category": "color",
-      "value": "#da7d8c"
+      "value": "#dd7b8b"
     },
     {
       "path": "color.muted.danger-hover",
@@ -1039,7 +1039,7 @@ export const manifest = {
       "cssVar": "--storm-color-muted-discovery-disabled",
       "type": "color",
       "category": "color",
-      "value": "#a092d9"
+      "value": "#a091dc"
     },
     {
       "path": "color.muted.discovery-hover",
@@ -1074,7 +1074,7 @@ export const manifest = {
       "cssVar": "--storm-color-muted-info-disabled",
       "type": "color",
       "category": "color",
-      "value": "#7ba5ee"
+      "value": "#78a5f2"
     },
     {
       "path": "color.muted.info-hover",
@@ -1109,7 +1109,7 @@ export const manifest = {
       "cssVar": "--storm-color-muted-negative-disabled",
       "type": "color",
       "category": "color",
-      "value": "#da7d8c"
+      "value": "#dd7b8b"
     },
     {
       "path": "color.muted.negative-hover",
@@ -1144,7 +1144,7 @@ export const manifest = {
       "cssVar": "--storm-color-muted-positive-disabled",
       "type": "color",
       "category": "color",
-      "value": "#7ab19b"
+      "value": "#77b29b"
     },
     {
       "path": "color.muted.positive-hover",
@@ -1179,7 +1179,7 @@ export const manifest = {
       "cssVar": "--storm-color-muted-success-disabled",
       "type": "color",
       "category": "color",
-      "value": "#7ab19b"
+      "value": "#77b29b"
     },
     {
       "path": "color.muted.success-hover",
@@ -1214,7 +1214,7 @@ export const manifest = {
       "cssVar": "--storm-color-muted-warning-disabled",
       "type": "color",
       "category": "color",
-      "value": "#bda073"
+      "value": "#bf9f70"
     },
     {
       "path": "color.muted.warning-hover",
@@ -1291,7 +1291,7 @@ export const manifest = {
       "cssVar": "--storm-color-neutral-9",
       "type": "color",
       "category": "color",
-      "value": "#606164"
+      "value": "#555659"
     },
     {
       "path": "color.neutral.10",
@@ -1348,7 +1348,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-base-disabled",
       "type": "color",
       "category": "color",
-      "value": "#f1f1f166"
+      "value": "#f1f1f140"
     },
     {
       "path": "color.on-accent.base-hover",
@@ -1383,7 +1383,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-brand-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa66"
+      "value": "#fafafa40"
     },
     {
       "path": "color.on-accent.brand-hover",
@@ -1418,7 +1418,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-danger-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa66"
+      "value": "#fafafa40"
     },
     {
       "path": "color.on-accent.danger-hover",
@@ -1453,7 +1453,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-discovery-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa66"
+      "value": "#fafafa40"
     },
     {
       "path": "color.on-accent.discovery-hover",
@@ -1488,7 +1488,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-info-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa66"
+      "value": "#fafafa40"
     },
     {
       "path": "color.on-accent.info-hover",
@@ -1523,7 +1523,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-negative-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa66"
+      "value": "#fafafa40"
     },
     {
       "path": "color.on-accent.negative-hover",
@@ -1558,7 +1558,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-positive-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa66"
+      "value": "#fafafa40"
     },
     {
       "path": "color.on-accent.positive-hover",
@@ -1593,7 +1593,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-success-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa66"
+      "value": "#fafafa40"
     },
     {
       "path": "color.on-accent.success-hover",
@@ -1628,7 +1628,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-warning-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa66"
+      "value": "#fafafa40"
     },
     {
       "path": "color.on-accent.warning-hover",
@@ -1664,7 +1664,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-muted-base-disabled",
       "type": "color",
       "category": "color",
-      "value": "#151517"
+      "value": "#151518"
     },
     {
       "path": "color.on-muted.base-hover",
@@ -1699,7 +1699,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-muted-brand-disabled",
       "type": "color",
       "category": "color",
-      "value": "#4daea4"
+      "value": "#44afa4"
     },
     {
       "path": "color.on-muted.brand-hover",
@@ -1734,7 +1734,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-muted-danger-disabled",
       "type": "color",
       "category": "color",
-      "value": "#23040a"
+      "value": "#24030a"
     },
     {
       "path": "color.on-muted.danger-hover",
@@ -1769,7 +1769,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-muted-discovery-disabled",
       "type": "color",
       "category": "color",
-      "value": "#1b093d"
+      "value": "#1c073f"
     },
     {
       "path": "color.on-muted.discovery-hover",
@@ -1804,7 +1804,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-muted-info-disabled",
       "type": "color",
       "category": "color",
-      "value": "#051b42"
+      "value": "#041a44"
     },
     {
       "path": "color.on-muted.info-hover",
@@ -1839,7 +1839,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-muted-negative-disabled",
       "type": "color",
       "category": "color",
-      "value": "#23040a"
+      "value": "#24030a"
     },
     {
       "path": "color.on-muted.negative-hover",
@@ -1874,7 +1874,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-muted-positive-disabled",
       "type": "color",
       "category": "color",
-      "value": "#08241b"
+      "value": "#06241b"
     },
     {
       "path": "color.on-muted.positive-hover",
@@ -1909,7 +1909,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-muted-success-disabled",
       "type": "color",
       "category": "color",
-      "value": "#08241b"
+      "value": "#06241b"
     },
     {
       "path": "color.on-muted.success-hover",
@@ -1944,7 +1944,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-muted-warning-disabled",
       "type": "color",
       "category": "color",
-      "value": "#271b06"
+      "value": "#271b05"
     },
     {
       "path": "color.on-muted.warning-hover",
@@ -2343,7 +2343,7 @@ export const manifest = {
       "cssVar": "--storm-color-surface-canvas-disabled",
       "type": "color",
       "category": "color",
-      "value": "#eaeaea66"
+      "value": "#eaeaea40"
     },
     {
       "path": "color.surface.canvas-hover",
@@ -2379,7 +2379,7 @@ export const manifest = {
       "cssVar": "--storm-color-surface-elevated-disabled",
       "type": "color",
       "category": "color",
-      "value": "#f1f1f166"
+      "value": "#f1f1f140"
     },
     {
       "path": "color.surface.elevated-hover",
@@ -2415,7 +2415,7 @@ export const manifest = {
       "cssVar": "--storm-color-surface-floating-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa66"
+      "value": "#fafafa40"
     },
     {
       "path": "color.surface.floating-hover",
@@ -2451,7 +2451,7 @@ export const manifest = {
       "cssVar": "--storm-color-surface-overlay-disabled",
       "type": "color",
       "category": "color",
-      "value": "#ffffff66"
+      "value": "#ffffff40"
     },
     {
       "path": "color.surface.overlay-hover",
@@ -2487,7 +2487,7 @@ export const manifest = {
       "cssVar": "--storm-color-surface-sunken-disabled",
       "type": "color",
       "category": "color",
-      "value": "#e1e1e166"
+      "value": "#e1e1e140"
     },
     {
       "path": "color.surface.sunken-hover",
@@ -4201,6 +4201,13 @@ export const manifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/context-menu",
+      "jsx": [
+        "ContextMenu"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/data-table",
       "jsx": [
         "DataTable"
@@ -5090,7 +5097,6 @@ export const manifest = {
         "5xl",
         "lg",
         "md",
-        "normal",
         "sm",
         "snug",
         "tight",

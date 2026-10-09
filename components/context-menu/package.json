@@ -1,0 +1,50 @@
+{
+  "name": "@cyclone-ui/context-menu",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/context-menu"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./ContextMenu": {
+      "import": "./dist/ContextMenu.mjs",
+      "require": "./dist/ContextMenu.cjs"
+    },
+    "./*": "./*"
+  },
+  "module:jsx": "dist/jsx"
+}

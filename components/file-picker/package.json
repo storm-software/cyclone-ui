@@ -2,14 +2,16 @@
   "name": "@cyclone-ui/file-picker",
   "version": "0.5.11",
   "type": "module",
-  "description": "A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image preview.",
+  "description": "A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image, text or PDF preview.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/file-picker"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -42,6 +44,7 @@
     "@cyclone-ui/bytes-text": "workspace:*",
     "@cyclone-ui/label-text": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/pdf-document-display": "workspace:*",
     "@cyclone-ui/state": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*"
   },
@@ -56,7 +59,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -73,6 +78,10 @@
     "./FilePicker": {
       "import": "./dist/FilePicker.mjs",
       "require": "./dist/FilePicker.cjs"
+    },
+    "./FilePickerPdfPreview": {
+      "import": "./dist/FilePickerPdfPreview.mjs",
+      "require": "./dist/FilePickerPdfPreview.cjs"
     },
     "./useDropZone": {
       "import": "./dist/useDropZone.mjs",

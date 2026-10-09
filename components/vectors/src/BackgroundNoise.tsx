@@ -67,7 +67,7 @@ const Icon = (props: ThemedIconBodyProps<IconProps>) => {
             surfaceScale="15"
             specularConstant="0.75"
             specularExponent="20"
-            lightingColor={color || "muted"}
+            lightingColor={color}
             x="0%"
             y="0%"
             width="100%"
@@ -82,7 +82,7 @@ const Icon = (props: ThemedIconBodyProps<IconProps>) => {
       <Rect
         width="700"
         height="700"
-        fill={color || "muted"}
+        fill={color}
         filter="url(#noise-filter)"></Rect>
     </Svg>
   );

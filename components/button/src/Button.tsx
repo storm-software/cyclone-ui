@@ -1241,9 +1241,16 @@ const ButtonContainerImpl = createStyledHOC(
             />
           </>
         )}
-        {ripples.map(({ id, size, x, y }) => (
-          <ButtonRipple key={id} width={size} height={size} left={x} top={y} />
-        ))}
+        {variant !== "link" &&
+          ripples.map(({ id, size, x, y }) => (
+            <ButtonRipple
+              key={id}
+              width={size}
+              height={size}
+              left={x}
+              top={y}
+            />
+          ))}
         {children}
       </ButtonFrame>
     );

@@ -151,11 +151,7 @@ const CheckboxIcon = styled(Check, {
 
 const MinusIcon = styled(Minus, {
   displayName: "CheckboxIndicator",
-  color: "accent",
-  width: "100%",
-  height: "100%",
-  marginHorizontal: "sm",
-  strokeWidth: 3
+  color: "accent"
 });
 
 export const Checkbox = createStyledHOC(
@@ -209,7 +205,12 @@ export const Checkbox = createStyledHOC(
                 scale="enter:0.8 exit:0.8"
                 y="enter:10px exit:-10px"
                 opacity="enter:0.2 exit:0.5">
-                <MinusIcon color={focused ? focusColor : "accent"} />
+                <MinusIcon
+                  // Phosphor icons are filled paths, so `strokeWidth` has no effect
+                  weight="black"
+                  size={getSized(getFormSizeToken(size, "compact")) * 0.6}
+                  color={focused ? focusColor : "accent"}
+                />
               </View>
             ) : (
               <CheckboxIcon

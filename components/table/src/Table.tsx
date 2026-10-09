@@ -103,8 +103,7 @@ const TableRow = styled(YStack, {
 
     sizing: {
       content: {
-        display: "web:table-row",
-        backgroundColor: "hover:surfaceCanvasHover"
+        display: "web:table-row"
       }
     }
   },
@@ -145,6 +144,12 @@ const TableRowImpl = createStyledHOC(
         group={"row"}
         header={header}
         position="relative"
+        // Variant/context hover clauses don't reach the row, so set it here.
+        backgroundColor={
+          header || sizing === "fixed"
+            ? "transparent"
+            : "transparent hover:surfaceElevated"
+        }
         {...props}>
         {sizing === "fixed" && (
           <YStack
@@ -153,7 +158,7 @@ const TableRowImpl = createStyledHOC(
             pointerEvents="none"
             transition="200ms"
             opacity={`0 group-hover/row:${header ? 0 : 1}`}
-            backgroundColor="surfaceCanvasHover"
+            backgroundColor="surfaceElevated"
             style={{
               filter: "blur(1px)"
             }}
@@ -223,6 +228,7 @@ const TableHeaderCell = styled(YStack, {
   flexGrow: 0,
   flexShrink: 1,
   borderWidth: 0,
+  borderTopWidth: 1,
   borderBottomWidth: 1,
   borderColor: "hairline",
   justifyContent: "flex-start",
@@ -291,10 +297,6 @@ const TableHeader = styled(YStack, {
   flexDirection: "column",
   flexShrink: 1,
   borderWidth: 0,
-  borderTopLeftRadius: "container",
-  borderTopRightRadius: "container",
-  overflow: "hidden",
-  backgroundColor: "surfaceElevated",
   variants: {
     sizing: {
       content: {
@@ -331,10 +333,6 @@ const TableFooter = styled(YStack, {
   flexDirection: "column",
   flexShrink: 1,
   borderWidth: 0,
-  borderBottomLeftRadius: "container",
-  borderBottomRightRadius: "container",
-  overflow: "hidden",
-  backgroundColor: "surfaceElevated",
   variants: {
     sizing: {
       content: {
@@ -368,10 +366,7 @@ const TableFrame = styled(YStack, {
   displayName: TABLE_NAME,
   context: TableContext,
   render: "table",
-  borderWidth: 1,
-  borderColor: "hairline",
-  borderRadius: "container",
-  borderStyle: "solid",
+  borderWidth: 0,
   maxWidth: "100%",
   overflow: "hidden",
   style: {

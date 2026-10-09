@@ -82,10 +82,14 @@ const PopoverFrameImpl = createStyledHOC(
                 dismissOnSnapToBottom={true}
                 snapPointsMode="fit">
                 <Sheet.Container padding="5xl">
-                  <Sheet.Background />
+                  <Sheet.Background backgroundColor="surfaceFloating" />
                   <Adapt.Contents />
                 </Sheet.Container>
-                <Sheet.Overlay transition="500ms" opacity="enter:0 exit:0" />
+                <Sheet.Overlay
+                  backgroundColor="overlayBackdrop"
+                  transition="500ms"
+                  opacity="enter:0 exit:0"
+                />
               </Sheet>
             </Adapt>
           )}

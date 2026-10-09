@@ -1056,3 +1056,11 @@ export const NegativeCircularNoBorder: Story = {
     bordered: false
   }
 };
+
+export const Noise: Story = {
+  args: {
+    children: "Container Text",
+    variant: "elevated",
+    noise: true
+  }
+};

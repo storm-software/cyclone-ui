@@ -566,9 +566,10 @@ export function DataTable<TData extends RowData>({
                 <Table.Row
                   key={row.id}
                   aria-selected={row.getIsSelected()}
-                  backgroundColor={
-                    row.getIsSelected() ? "mutedActive" : undefined
-                  }>
+                  // An explicit `undefined` would wipe the row's hover background.
+                  {...(row.getIsSelected()
+                    ? { backgroundColor: "mutedActive" }
+                    : {})}>
                   {row.getVisibleCells().map(cell => (
                     <Table.Cell
                       key={cell.id}
@@ -609,6 +610,7 @@ export function DataTable<TData extends RowData>({
               <Table.Row header={true}>
                 <Table.Cell
                   borderBottomWidth={0}
+                  paddingTop="3xl"
                   {...({
                     colSpan: table.getVisibleLeafColumns().length
                   } as any)}>
@@ -892,7 +894,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       <XStack gap="xl" flexShrink={0} cursor="pointer" onPress={handleSorting}>
         <DataTableColumnHeading
           transition="200ms"
-          color="accent group-hover/header:accentHover">
+          color="inkEmphasis group-hover/header:accent">
           {titleCase(id)}
         </DataTableColumnHeading>
         {isSorted && !desc && (

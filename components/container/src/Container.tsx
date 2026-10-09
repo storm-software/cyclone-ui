@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { getSized, getSpaced } from "@cyclone-ui/helpers";
+import { BackgroundNoise } from "@cyclone-ui/vectors";
 import type { GetProps, SizeTokens, TamaguiElement } from "@tamagui/core";
 import { createStyledHOC, styled, useThemeName, View } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
@@ -170,21 +171,39 @@ type ContainerFrameProps = GetProps<typeof ContainerFrame>;
 // `<Theme>` around the result, so the active theme is only readable from a
 // component rendered inside that wrapper.
 const ContainerSurface = (
-  props: ContainerFrameProps & { ref?: Ref<TamaguiElement> }
+  props: ContainerFrameProps & { ref?: Ref<TamaguiElement>; noise?: boolean }
 ) => {
+  const { children, noise, ...frameProps } = props;
+
   // e.g. `dark_brand` -> `brand`; `dark` and `dark_base` are uncolored.
   const colorTheme = useThemeName()?.split("_")[1];
 
   return (
     <ContainerFrame
-      {...props}
+      {...frameProps}
+      // `zIndex: 0` makes the frame a stacking context, so the noise's
+      // negative `zIndex` paints above the frame's background but below the
+      // in-flow children; `overflow` clips the noise to the rounded frame.
+      {...(noise && { position: "relative", overflow: "hidden", zIndex: 0 })}
       accentBordered={
         props.variant === "tertiary" &&
         props.bordered !== false &&
         !!colorTheme &&
         colorTheme !== "base"
-      }
-    />
+      }>
+      {noise && (
+        <View position="absolute" inset={0} zIndex={-1} pointerEvents="none">
+          {/* `slice` scales the square noise to cover any aspect ratio */}
+          <BackgroundNoise
+            width="100%"
+            height="100%"
+            preserveAspectRatio="xMidYMid slice"
+            opacity={0.075}
+          />
+        </View>
+      )}
+      {children}
+    </ContainerFrame>
   );
 };
 
@@ -228,6 +247,7 @@ export const Container = createStyledHOC(
       circular = false,
       bordered = true,
       noPadding = false,
+      noise = false,
       borderRadius = "container",
       // The `variant` and `bordered` variants own these, so they are dropped
       // rather than forwarded over the variant styles.
@@ -236,7 +256,7 @@ export const Container = createStyledHOC(
       borderWidth: _borderWidth,
       children,
       ...props
-    },
+    }: ContainerFrameProps & { noise?: boolean },
     forwardedRef
   ) => {
     return (
@@ -263,6 +283,7 @@ export const Container = createStyledHOC(
           circular={circular}
           bordered={bordered}
           noPadding={noPadding}
+          noise={noise}
           borderRadius={borderRadius}>
           {children}
         </ContainerSurface>

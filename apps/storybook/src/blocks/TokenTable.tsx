@@ -116,7 +116,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#606164",
+      value: "#555659",
       cssVar: "--cu-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -847,7 +847,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#0c0c0d",
       cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 80% saturation)",
+      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -881,9 +881,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.canvas-disabled",
       type: "color",
-      value: "#151517",
+      value: "#151518",
       cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 80% saturation)",
+      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -919,7 +919,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#1f1f21",
       cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 80% saturation)",
+      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -953,9 +953,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.floating-disabled",
       type: "color",
-      value: "#242527",
+      value: "#242528",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 80% saturation)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -991,7 +991,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#2b2c2f",
       cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 80% saturation)",
+      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1016,7 +1016,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#606164",
+      value: "#555659",
       cssVar: "--cu-color-hairline",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
       theme: undefined,
@@ -1151,9 +1151,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 40% opacity)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1187,9 +1187,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-disabled",
       type: "color",
-      value: "#6adfc0",
+      value: "#61e0bf",
       cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 80% saturation)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1223,9 +1223,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.danger-disabled",
       type: "color",
-      value: "#c0455d",
+      value: "#c4405b",
       cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1259,9 +1259,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.negative-disabled",
       type: "color",
-      value: "#c0455d",
+      value: "#c4405b",
       cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 80% saturation)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1295,9 +1295,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.warning-disabled",
       type: "color",
-      value: "#ecb055",
+      value: "#efaf4c",
       cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1331,9 +1331,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.success-disabled",
       type: "color",
-      value: "#64c297",
+      value: "#5dc395",
       cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1367,9 +1367,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.positive-disabled",
       type: "color",
-      value: "#64c297",
+      value: "#5dc395",
       cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 80% saturation)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1403,9 +1403,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-disabled",
       type: "color",
-      value: "#5d91ea",
+      value: "#5990ef",
       cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1439,9 +1439,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.discovery-disabled",
       type: "color",
-      value: "#907ccb",
+      value: "#917bcf",
       cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 80% saturation)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1484,9 +1484,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-disabled",
       type: "color",
-      value: "#151517",
+      value: "#151518",
       cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 80% saturation)",
+      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1592,9 +1592,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.brand-disabled",
       type: "color",
-      value: "#151517",
+      value: "#151518",
       cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 80% saturation)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1628,9 +1628,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1664,9 +1664,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 40% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1700,9 +1700,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.warning-disabled",
       type: "color",
-      value: "#151517",
+      value: "#151518",
       cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1736,9 +1736,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1772,9 +1772,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 40% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1808,9 +1808,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1844,9 +1844,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 40% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1918,7 +1918,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#2b2c2f",
       cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 80% saturation)",
+      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1952,9 +1952,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-disabled",
       type: "color",
-      value: "#2f7b61",
+      value: "#287b60",
       cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation)",
+      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -1988,9 +1988,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#24457f",
+      value: "#224582",
       cssVar: "--cu-color-muted-info-disabled",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 80% saturation)",
+      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -2024,9 +2024,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#352a58",
+      value: "#35295a",
       cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 80% saturation)",
+      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -2105,9 +2105,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#5e1526",
+      value: "#601125",
       cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated danger muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -2141,9 +2141,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#5e1526",
+      value: "#601125",
       cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated negative muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -2177,9 +2177,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#775622",
+      value: "#78551d",
       cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated warning muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -2213,9 +2213,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#26674b",
+      value: "#20684a",
       cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated success muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -2249,9 +2249,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#26674b",
+      value: "#20684a",
       cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated positive muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -2546,7 +2546,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#808184",
+      value: "#727376",
       cssVar: "--cu-color-hairline-hover",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% brighter)",
       theme: undefined,
@@ -2555,7 +2555,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#6b6c6f",
+      value: "#5f6063",
       cssVar: "--cu-color-hairline-active",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)",
       theme: undefined,
@@ -2564,7 +2564,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-inactive",
       type: "color",
-      value: "#454649",
+      value: "#3d3e40",
       cssVar: "--cu-color-hairline-inactive",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% darker)",
       theme: undefined,
@@ -2681,9 +2681,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated base foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -2717,9 +2717,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-disabled",
       type: "color",
-      value: "#6adfc0",
+      value: "#61e0bf",
       cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -2753,9 +2753,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger-disabled",
       type: "color",
-      value: "#f3a3ac",
+      value: "#f6a1ab",
       cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -2789,9 +2789,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative-disabled",
       type: "color",
-      value: "#f3a3ac",
+      value: "#f6a1ab",
       cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -2825,9 +2825,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -2861,9 +2861,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated success foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -2897,9 +2897,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -2933,9 +2933,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-disabled",
       type: "color",
-      value: "#5d91ea",
+      value: "#5990ef",
       cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -2969,9 +2969,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-disabled",
       type: "color",
-      value: "#907ccb",
+      value: "#917bcf",
       cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -5129,7 +5129,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-md",
       description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
       theme: undefined,
@@ -5138,7 +5138,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-sm",
       description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
       theme: undefined,
@@ -5284,7 +5284,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#6a6a6c",
+      value: "#626364",
       cssVar: "--cu-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -6015,7 +6015,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#2e2e30",
       cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 80% saturation)",
+      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6049,9 +6049,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.canvas-disabled",
       type: "color",
-      value: "#343437",
+      value: "#343438",
       cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 80% saturation)",
+      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6087,7 +6087,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#3c3c3e",
       cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 80% saturation)",
+      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6121,9 +6121,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.floating-disabled",
       type: "color",
-      value: "#3f4042",
+      value: "#3f4043",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 80% saturation)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6159,7 +6159,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#444547",
       cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 80% saturation)",
+      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6184,7 +6184,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#6a6a6c",
+      value: "#626364",
       cssVar: "--cu-color-hairline",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
       theme: undefined,
@@ -6319,9 +6319,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 40% opacity)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -6355,9 +6355,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-disabled",
       type: "color",
-      value: "#75beaa",
+      value: "#70bda9",
       cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 80% saturation)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6391,9 +6391,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.danger-disabled",
       type: "color",
-      value: "#a4606d",
+      value: "#a65d6c",
       cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6427,9 +6427,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.negative-disabled",
       type: "color",
-      value: "#a4606d",
+      value: "#a65d6c",
       cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 80% saturation)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6463,9 +6463,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.warning-disabled",
       type: "color",
-      value: "#c4a069",
+      value: "#c59f64",
       cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6499,9 +6499,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.success-disabled",
       type: "color",
-      value: "#72a88f",
+      value: "#6ea88e",
       cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6535,9 +6535,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.positive-disabled",
       type: "color",
-      value: "#72a88f",
+      value: "#6ea88e",
       cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 80% saturation)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6571,9 +6571,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-disabled",
       type: "color",
-      value: "#6d8dc4",
+      value: "#6b8dc7",
       cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6607,9 +6607,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.discovery-disabled",
       type: "color",
-      value: "#8d80b1",
+      value: "#8d80b4",
       cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 80% saturation)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6652,9 +6652,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-disabled",
       type: "color",
-      value: "#343437",
+      value: "#343438",
       cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 80% saturation)",
+      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6760,9 +6760,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.brand-disabled",
       type: "color",
-      value: "#343437",
+      value: "#343438",
       cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 80% saturation)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6796,9 +6796,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -6832,9 +6832,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 40% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -6868,9 +6868,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.warning-disabled",
       type: "color",
-      value: "#343437",
+      value: "#343438",
       cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -6904,9 +6904,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -6940,9 +6940,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 40% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -6976,9 +6976,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -7012,9 +7012,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 40% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -7086,7 +7086,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#444547",
       cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 80% saturation)",
+      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7120,9 +7120,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-disabled",
       type: "color",
-      value: "#4a7a69",
+      value: "#457a69",
       cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation)",
+      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7156,9 +7156,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#42577d",
+      value: "#41577e",
       cssVar: "--cu-color-muted-info-disabled",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 80% saturation)",
+      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7192,9 +7192,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#4b4364",
+      value: "#4b4365",
       cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 80% saturation)",
+      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7273,9 +7273,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#6a3340",
+      value: "#6c303f",
       cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated danger muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7309,9 +7309,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#6a3340",
+      value: "#6c303f",
       cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated negative muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7345,9 +7345,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#786240",
+      value: "#79613c",
       cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated warning muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7381,9 +7381,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#416e5b",
+      value: "#3d6f5a",
       cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated success muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7417,9 +7417,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#416e5b",
+      value: "#3d6f5a",
       cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated positive muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7714,7 +7714,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#808182",
+      value: "#767779",
       cssVar: "--cu-color-hairline-hover",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% brighter)",
       theme: undefined,
@@ -7723,7 +7723,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#717274",
+      value: "#696a6b",
       cssVar: "--cu-color-hairline-active",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)",
       theme: undefined,
@@ -7732,7 +7732,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-inactive",
       type: "color",
-      value: "#575759",
+      value: "#515253",
       cssVar: "--cu-color-hairline-inactive",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% darker)",
       theme: undefined,
@@ -7849,9 +7849,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated base foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -7885,9 +7885,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-disabled",
       type: "color",
-      value: "#75beaa",
+      value: "#70bda9",
       cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7921,9 +7921,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger-disabled",
       type: "color",
-      value: "#d4959c",
+      value: "#d6939b",
       cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7957,9 +7957,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative-disabled",
       type: "color",
-      value: "#d4959c",
+      value: "#d6939b",
       cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -7993,9 +7993,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#d9d9d966",
+      value: "#d9d9d940",
       cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -8029,9 +8029,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#d9d9d966",
+      value: "#d9d9d940",
       cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated success foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -8065,9 +8065,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#d9d9d966",
+      value: "#d9d9d940",
       cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -8101,9 +8101,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-disabled",
       type: "color",
-      value: "#6d8dc4",
+      value: "#6b8dc7",
       cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -8137,9 +8137,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-disabled",
       type: "color",
-      value: "#8d80b1",
+      value: "#8d80b4",
       cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -10297,7 +10297,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-md",
       description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
       theme: undefined,
@@ -10306,7 +10306,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-sm",
       description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
       theme: undefined,
@@ -10452,7 +10452,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#4e515b",
+      value: "#3f424a",
       cssVar: "--cu-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -11183,7 +11183,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 80% saturation)",
+      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11219,7 +11219,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 80% saturation)",
+      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11255,7 +11255,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 80% saturation)",
+      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11291,7 +11291,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 80% saturation)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11327,7 +11327,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#070709",
       cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 80% saturation)",
+      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11352,7 +11352,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline",
       type: "color",
-      value: "#4e515b",
+      value: "#3f424a",
       cssVar: "--cu-color-hairline",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
       theme: undefined,
@@ -11487,9 +11487,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 40% opacity)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -11523,9 +11523,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-disabled",
       type: "color",
-      value: "#71f9d5",
+      value: "#63fcd4",
       cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 80% saturation)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11559,9 +11559,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.danger-disabled",
       type: "color",
-      value: "#dc2c4e",
+      value: "#e2254b",
       cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11595,9 +11595,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.negative-disabled",
       type: "color",
-      value: "#dc2c4e",
+      value: "#e2254b",
       cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 80% saturation)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11631,9 +11631,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.warning-disabled",
       type: "color",
-      value: "#ffc060",
+      value: "#ffbd57",
       cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11667,9 +11667,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.success-disabled",
       type: "color",
-      value: "#5ddba1",
+      value: "#52dd9e",
       cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11703,9 +11703,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.positive-disabled",
       type: "color",
-      value: "#5ddba1",
+      value: "#52dd9e",
       cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 80% saturation)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11739,9 +11739,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-disabled",
       type: "color",
-      value: "#68a0ff",
+      value: "#6aa1ff",
       cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11775,9 +11775,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.discovery-disabled",
       type: "color",
-      value: "#9c84e3",
+      value: "#9e84e8",
       cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 80% saturation)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11822,7 +11822,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 80% saturation)",
+      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11930,7 +11930,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 80% saturation)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -11964,9 +11964,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12000,9 +12000,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 40% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12038,7 +12038,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -12072,9 +12072,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12108,9 +12108,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 40% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12144,9 +12144,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12180,9 +12180,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 40% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12254,7 +12254,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#070709",
       cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 80% saturation)",
+      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -12288,9 +12288,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-disabled",
       type: "color",
-      value: "#176d4f",
+      value: "#106a4c",
       cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation)",
+      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -12324,9 +12324,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#0c2f6e",
+      value: "#0a3071",
       cssVar: "--cu-color-muted-info-disabled",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 80% saturation)",
+      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -12360,9 +12360,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#1b1138",
+      value: "#1b113a",
       cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 80% saturation)",
+      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -12441,9 +12441,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#32020d",
+      value: "#31000d",
       cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated danger muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -12477,9 +12477,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#32020d",
+      value: "#31000d",
       cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated negative muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -12513,9 +12513,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#603f0b",
+      value: "#5f3d06",
       cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated warning muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -12549,9 +12549,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#0f4b31",
+      value: "#0a492e",
       cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated success muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -12585,9 +12585,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#0f4b31",
+      value: "#0a492e",
       cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the dark theme (disabled, 80% saturation)",
+      description: "Generated positive muted background for the dark theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -12882,7 +12882,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-hover",
       type: "color",
-      value: "#7a7f8c",
+      value: "#676b77",
       cssVar: "--cu-color-hairline-hover",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% brighter)",
       theme: undefined,
@@ -12891,7 +12891,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#5d616c",
+      value: "#4d505a",
       cssVar: "--cu-color-hairline-active",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)",
       theme: undefined,
@@ -12900,7 +12900,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-inactive",
       type: "color",
-      value: "#2a2c32",
+      value: "#1f2024",
       cssVar: "--cu-color-hairline-inactive",
       description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% darker)",
       theme: undefined,
@@ -13017,9 +13017,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated base foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -13053,9 +13053,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-disabled",
       type: "color",
-      value: "#71f9d5",
+      value: "#63fcd4",
       cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -13089,9 +13089,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger-disabled",
       type: "color",
-      value: "#ffdbdf",
+      value: "#ffdce0",
       cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -13125,9 +13125,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative-disabled",
       type: "color",
-      value: "#ffdbdf",
+      value: "#ffdce0",
       cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -13161,9 +13161,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -13197,9 +13197,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated success foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -13233,9 +13233,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 40% opacity)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -13269,9 +13269,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-disabled",
       type: "color",
-      value: "#68a0ff",
+      value: "#6aa1ff",
       cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -13305,9 +13305,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-disabled",
       type: "color",
-      value: "#9c84e3",
+      value: "#9e84e8",
       cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -15465,7 +15465,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-md",
       description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
       theme: undefined,
@@ -15474,7 +15474,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-sm",
       description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
       theme: undefined,
@@ -15620,7 +15620,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#606164",
+      value: "#555659",
       cssVar: "--cu-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -16250,7 +16250,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#606164",
+      value: "#555659",
       cssVar: "--cu-color-ink-body",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
@@ -16349,9 +16349,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.sunken-disabled",
       type: "color",
-      value: "#e1e1e166",
+      value: "#e1e1e140",
       cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 40% opacity)",
+      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -16385,9 +16385,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.canvas-disabled",
       type: "color",
-      value: "#eaeaea66",
+      value: "#eaeaea40",
       cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 40% opacity)",
+      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -16421,9 +16421,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.elevated-disabled",
       type: "color",
-      value: "#f1f1f166",
+      value: "#f1f1f140",
       cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 40% opacity)",
+      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -16457,9 +16457,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.floating-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 40% opacity)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -16493,9 +16493,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.overlay-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 40% opacity)",
+      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -16655,9 +16655,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-disabled",
       type: "color",
-      value: "#151517",
+      value: "#151518",
       cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 80% saturation)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -16691,9 +16691,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-disabled",
       type: "color",
-      value: "#4daea4",
+      value: "#44afa4",
       cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 80% saturation)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -16727,9 +16727,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.danger-disabled",
       type: "color",
-      value: "#843142",
+      value: "#862e41",
       cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -16763,9 +16763,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.negative-disabled",
       type: "color",
-      value: "#843142",
+      value: "#862e41",
       cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 80% saturation)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -16799,9 +16799,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.warning-disabled",
       type: "color",
-      value: "#71562a",
+      value: "#725526",
       cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -16835,9 +16835,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.success-disabled",
       type: "color",
-      value: "#336855",
+      value: "#2f6954",
       cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -16871,9 +16871,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.positive-disabled",
       type: "color",
-      value: "#336855",
+      value: "#2f6954",
       cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 80% saturation)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -16907,9 +16907,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-disabled",
       type: "color",
-      value: "#2f58a2",
+      value: "#2b58a6",
       cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -16943,9 +16943,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.discovery-disabled",
       type: "color",
-      value: "#584889",
+      value: "#58478c",
       cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 80% saturation)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -16988,9 +16988,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-disabled",
       type: "color",
-      value: "#f1f1f166",
+      value: "#f1f1f140",
       cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 40% opacity)",
+      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17096,9 +17096,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.brand-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 40% opacity)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17132,9 +17132,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17168,9 +17168,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 40% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17204,9 +17204,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.warning-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17240,9 +17240,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17276,9 +17276,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 40% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17312,9 +17312,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17348,9 +17348,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#fafafa66",
+      value: "#fafafa40",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 40% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17402,9 +17402,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-disabled",
       type: "color",
-      value: "#eaeaea66",
+      value: "#eaeaea40",
       cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 40% opacity)",
+      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17438,9 +17438,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-disabled",
       type: "color",
-      value: "#84e3d9",
+      value: "#7ee5d9",
       cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation)",
+      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -17537,9 +17537,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#da7d8c",
+      value: "#dd7b8b",
       cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated danger muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -17573,9 +17573,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#da7d8c",
+      value: "#dd7b8b",
       cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated negative muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -17609,9 +17609,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#bda073",
+      value: "#bf9f70",
       cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated warning muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -17645,9 +17645,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#7ab19b",
+      value: "#77b29b",
       cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated success muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -17681,9 +17681,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#7ab19b",
+      value: "#77b29b",
       cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated positive muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -17717,9 +17717,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#7ba5ee",
+      value: "#78a5f2",
       cssVar: "--cu-color-muted-info-disabled",
-      description: "Generated info muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated info muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -17753,9 +17753,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#a092d9",
+      value: "#a091dc",
       cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Generated discovery muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated discovery muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -17861,7 +17861,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.neutral.emphasis",
       type: "color",
-      value: "#606164",
+      value: "#555659",
       cssVar: "--cu-color-data-neutral-emphasis",
       description: "High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data.",
       theme: undefined,
@@ -18185,9 +18185,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-disabled",
       type: "color",
-      value: "#151517",
+      value: "#151518",
       cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated base foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -18221,9 +18221,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-disabled",
       type: "color",
-      value: "#4daea4",
+      value: "#44afa4",
       cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -18257,9 +18257,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger-disabled",
       type: "color",
-      value: "#23040a",
+      value: "#24030a",
       cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -18293,9 +18293,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative-disabled",
       type: "color",
-      value: "#23040a",
+      value: "#24030a",
       cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -18329,9 +18329,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#271b06",
+      value: "#271b05",
       cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -18365,9 +18365,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#08241b",
+      value: "#06241b",
       cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated success foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -18401,9 +18401,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#08241b",
+      value: "#06241b",
       cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -18437,9 +18437,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-disabled",
       type: "color",
-      value: "#051b42",
+      value: "#041a44",
       cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -18473,9 +18473,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-disabled",
       type: "color",
-      value: "#1b093d",
+      value: "#1c073f",
       cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -20633,7 +20633,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-md",
       description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
       theme: undefined,
@@ -20642,7 +20642,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-sm",
       description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
       theme: undefined,
@@ -20788,7 +20788,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#6a6a6c",
+      value: "#626364",
       cssVar: "--cu-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -21418,7 +21418,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#6a6a6c",
+      value: "#626364",
       cssVar: "--cu-color-ink-body",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
@@ -21517,9 +21517,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.sunken-disabled",
       type: "color",
-      value: "#c4c4c466",
+      value: "#c4c4c440",
       cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 40% opacity)",
+      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -21553,9 +21553,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.canvas-disabled",
       type: "color",
-      value: "#cacaca66",
+      value: "#cacaca40",
       cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 40% opacity)",
+      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -21589,9 +21589,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.elevated-disabled",
       type: "color",
-      value: "#cfcfcf66",
+      value: "#cfcfcf40",
       cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 40% opacity)",
+      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -21625,9 +21625,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.floating-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 40% opacity)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -21661,9 +21661,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.overlay-disabled",
       type: "color",
-      value: "#d9d9d966",
+      value: "#d9d9d940",
       cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 40% opacity)",
+      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -21823,9 +21823,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-disabled",
       type: "color",
-      value: "#343437",
+      value: "#343438",
       cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 80% saturation)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -21859,9 +21859,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-disabled",
       type: "color",
-      value: "#639993",
+      value: "#5d9993",
       cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 80% saturation)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -21895,9 +21895,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.danger-disabled",
       type: "color",
-      value: "#7f4c56",
+      value: "#804a56",
       cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -21931,9 +21931,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.negative-disabled",
       type: "color",
-      value: "#7f4c56",
+      value: "#804a56",
       cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 80% saturation)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -21967,9 +21967,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.warning-disabled",
       type: "color",
-      value: "#746245",
+      value: "#756142",
       cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22003,9 +22003,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.success-disabled",
       type: "color",
-      value: "#4b6e61",
+      value: "#486f61",
       cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22039,9 +22039,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.positive-disabled",
       type: "color",
-      value: "#4b6e61",
+      value: "#486f61",
       cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 80% saturation)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22075,9 +22075,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-disabled",
       type: "color",
-      value: "#4e6691",
+      value: "#4b6693",
       cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22111,9 +22111,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.discovery-disabled",
       type: "color",
-      value: "#665c82",
+      value: "#665c84",
       cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 80% saturation)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22156,9 +22156,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-disabled",
       type: "color",
-      value: "#cfcfcf66",
+      value: "#cfcfcf40",
       cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 40% opacity)",
+      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22264,9 +22264,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.brand-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 40% opacity)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22300,9 +22300,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22336,9 +22336,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 40% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22372,9 +22372,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.warning-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22408,9 +22408,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22444,9 +22444,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 40% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22480,9 +22480,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22516,9 +22516,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#d5d5d566",
+      value: "#d5d5d540",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 40% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22570,9 +22570,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-disabled",
       type: "color",
-      value: "#cacaca66",
+      value: "#cacaca40",
       cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 40% opacity)",
+      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22606,9 +22606,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-disabled",
       type: "color",
-      value: "#84c3bd",
+      value: "#81c4bc",
       cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation)",
+      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22705,9 +22705,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#bc818a",
+      value: "#be7f8a",
       cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated danger muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22741,9 +22741,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#bc818a",
+      value: "#be7f8a",
       cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated negative muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22777,9 +22777,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#a6957b",
+      value: "#a89579",
       cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated warning muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22813,9 +22813,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#7f9f92",
+      value: "#7d9f92",
       cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated success muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22849,9 +22849,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#7f9f92",
+      value: "#7d9f92",
       cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated positive muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22885,9 +22885,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#7e9acb",
+      value: "#7c9ace",
       cssVar: "--cu-color-muted-info-disabled",
-      description: "Generated info muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated info muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -22921,9 +22921,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#978dbd",
+      value: "#978dbf",
       cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Generated discovery muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated discovery muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -23029,7 +23029,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.neutral.emphasis",
       type: "color",
-      value: "#6a6a6c",
+      value: "#626364",
       cssVar: "--cu-color-data-neutral-emphasis",
       description: "High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data.",
       theme: undefined,
@@ -23353,9 +23353,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-disabled",
       type: "color",
-      value: "#343437",
+      value: "#343438",
       cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated base foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -23389,9 +23389,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-disabled",
       type: "color",
-      value: "#639993",
+      value: "#5d9993",
       cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -23425,9 +23425,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger-disabled",
       type: "color",
-      value: "#4b1d26",
+      value: "#4c1c26",
       cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -23461,9 +23461,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative-disabled",
       type: "color",
-      value: "#4b1d26",
+      value: "#4c1c26",
       cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -23497,9 +23497,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#4c3c20",
+      value: "#4c3c1f",
       cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -23533,9 +23533,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#23483c",
+      value: "#204a3d",
       cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated success foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -23569,9 +23569,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#23483c",
+      value: "#204a3d",
       cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -23605,9 +23605,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-disabled",
       type: "color",
-      value: "#21375d",
+      value: "#20365e",
       cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -23641,9 +23641,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-disabled",
       type: "color",
-      value: "#372558",
+      value: "#38235a",
       cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -25801,7 +25801,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-md",
       description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
       theme: undefined,
@@ -25810,7 +25810,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-sm",
       description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
       theme: undefined,
@@ -25956,7 +25956,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.neutral.9",
       type: "color",
-      value: "#4e515b",
+      value: "#3f424a",
       cssVar: "--cu-color-neutral-9",
       description: "Deep gray.",
       theme: undefined,
@@ -26586,7 +26586,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#4e515b",
+      value: "#3f424a",
       cssVar: "--cu-color-ink-body",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
@@ -26685,9 +26685,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.sunken-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 40% opacity)",
+      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -26721,9 +26721,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.canvas-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 40% opacity)",
+      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -26757,9 +26757,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.elevated-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 40% opacity)",
+      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -26793,9 +26793,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.floating-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 40% opacity)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -26829,9 +26829,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.overlay-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 40% opacity)",
+      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -26993,7 +26993,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 80% saturation)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27027,9 +27027,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.brand-disabled",
       type: "color",
-      value: "#35c4b5",
+      value: "#2ac3b4",
       cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 80% saturation)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27063,9 +27063,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.danger-disabled",
       type: "color",
-      value: "#7b182d",
+      value: "#7d152c",
       cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27099,9 +27099,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.negative-disabled",
       type: "color",
-      value: "#7b182d",
+      value: "#7d152c",
       cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 80% saturation)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27135,9 +27135,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.warning-disabled",
       type: "color",
-      value: "#5c4012",
+      value: "#5b3e0f",
       cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27171,9 +27171,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.success-disabled",
       type: "color",
-      value: "#1b533f",
+      value: "#17533d",
       cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27207,9 +27207,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.positive-disabled",
       type: "color",
-      value: "#1b533f",
+      value: "#17533d",
       cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 80% saturation)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27243,9 +27243,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-disabled",
       type: "color",
-      value: "#1449a9",
+      value: "#0f49ae",
       cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 80% saturation)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27279,9 +27279,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.discovery-disabled",
       type: "color",
-      value: "#48328a",
+      value: "#48318f",
       cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 80% saturation)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27324,9 +27324,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 40% opacity)",
+      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27432,9 +27432,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.brand-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 40% opacity)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27468,9 +27468,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27504,9 +27504,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 40% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27540,9 +27540,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.warning-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27576,9 +27576,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27612,9 +27612,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 40% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27648,9 +27648,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 40% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27684,9 +27684,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 40% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27738,9 +27738,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-disabled",
       type: "color",
-      value: "#ffffff66",
+      value: "#ffffff40",
       cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 40% opacity)",
+      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 25% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27774,9 +27774,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.brand-disabled",
       type: "color",
-      value: "#9cfaf0",
+      value: "#94fcf0",
       cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 80% saturation)",
+      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27873,9 +27873,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#f28c9d",
+      value: "#f58b9c",
       cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated danger muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27909,9 +27909,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#f28c9d",
+      value: "#f58b9c",
       cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated negative muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27945,9 +27945,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#d4ae72",
+      value: "#d7ac6e",
       cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated warning muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -27981,9 +27981,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#79c6a7",
+      value: "#75c7a7",
       cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated success muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28017,9 +28017,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#79c6a7",
+      value: "#75c7a7",
       cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated positive muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28053,9 +28053,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#9abfff",
+      value: "#9bc0ff",
       cssVar: "--cu-color-muted-info-disabled",
-      description: "Generated info muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated info muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28089,9 +28089,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#b9abf0",
+      value: "#baacf3",
       cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Generated discovery muted background for the light theme (disabled, 80% saturation)",
+      description: "Generated discovery muted background for the light theme (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28197,7 +28197,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.neutral.emphasis",
       type: "color",
-      value: "#4e515b",
+      value: "#3f424a",
       cssVar: "--cu-color-data-neutral-emphasis",
       description: "High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data.",
       theme: undefined,
@@ -28523,7 +28523,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated base foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28557,9 +28557,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.brand-disabled",
       type: "color",
-      value: "#35c4b5",
+      value: "#2ac3b4",
       cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28595,7 +28595,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28631,7 +28631,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28667,7 +28667,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28703,7 +28703,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated success foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28739,7 +28739,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28775,7 +28775,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -28811,7 +28811,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -30969,7 +30969,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-md",
       description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
       theme: undefined,
@@ -30978,7 +30978,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.body-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-body-sm",
       description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
       theme: undefined,

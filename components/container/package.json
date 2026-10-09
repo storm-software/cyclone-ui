@@ -19,7 +19,8 @@
     "@tamagui/core": "catalog:",
     "@tamagui/linear-gradient": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@cyclone-ui/helpers": "workspace:*"
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

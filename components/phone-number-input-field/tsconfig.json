@@ -24,9 +24,6 @@
       "path": "../search-input-field"
     },
     {
-      "path": "../popover"
-    },
-    {
       "path": "../input-field"
     },
     {
@@ -36,13 +33,13 @@
       "path": "../../packages/helpers"
     },
     {
-      "path": "../button"
-    },
-    {
       "path": "../body-text"
     },
     {
       "path": "../form"
+    },
+    {
+      "path": "../context-menu"
     }
   ],
   "files": [],

@@ -490,8 +490,8 @@ const BASE_COLOR_STATE_INACTIVE: ColorStateVariant = {
 
 const COLOR_STATE_DISABLED: ColorStateVariant = {
   name: "disabled",
-  opacity: 0.4,
-  saturation: 0.8
+  opacity: 0.25,
+  saturation: 0.85
 };
 
 const BASE_COLOR_STATE_VARIANTS = [

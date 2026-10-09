@@ -83,7 +83,7 @@
         "identifier"
       ],
       "settings": {
-        "foreground": "#6a6a6c"
+        "foreground": "#626364"
       }
     },
     {
@@ -117,7 +117,7 @@
     "editor.selectionForeground": "#d5d5d5",
     "editor.inactiveSelectionBackground": "#c4c4c4",
     "editorLineNumber.foreground": "#a1a1a2",
-    "editorLineNumber.activeForeground": "#6a6a6c",
+    "editorLineNumber.activeForeground": "#626364",
     "editorIndentGuide.background1": "#a1a1a2",
     "editorIndentGuide.activeBackground1": "#a1a1a2",
     "editorWhitespace.foreground": "#a1a1a2"

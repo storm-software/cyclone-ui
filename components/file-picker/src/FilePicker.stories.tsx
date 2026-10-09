@@ -199,6 +199,51 @@ export const PopulatedSizes: Story = {
   )
 };
 
+const previewFiles: ClientFileResult[] = [
+  { ...previewFile, id: 1 },
+  {
+    id: 2,
+    status: "initialized",
+    name: "docker-compose.yml",
+    size: 2850,
+    mimeType: "application/yaml",
+    uri: `data:application/yaml,${encodeURIComponent(
+      Array.from(
+        { length: 12 },
+        (_, i) =>
+          `services:\n  service-${i}:\n    image: "storm/service:${i}"\n    restart: unless-stopped\n`
+      ).join("")
+    )}`
+  },
+  {
+    id: 3,
+    status: "initialized",
+    name: "tracemonkey.pdf",
+    size: 1016315,
+    mimeType: "application/pdf",
+    uri: "https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf"
+  }
+];
+
+export const PopulatedFileTypes: Story = {
+  render: () => (
+    <View backgroundColor="background" padding={24} minHeight="100vh">
+      <Form name="file-preview-types">
+        <Field name="fileTypes">
+          <Field.Label>Image, text and PDF previews</Field.Label>
+          <FilePicker files={previewFiles} max={5} width={600}>
+            <FilePicker.Files>
+              {previewFiles.map(file => (
+                <FilePicker.Files.File key={file.id} {...file} />
+              ))}
+            </FilePicker.Files>
+          </FilePicker>
+        </Field>
+      </Form>
+    </View>
+  )
+};
+
 export const SimplePopulated: Story = {
   render: () => {
     const [files, setFiles] = useState<ClientFileResult[]>([previewFile]);

@@ -109,14 +109,14 @@
           "target": "components/alert/node_modules/react-native/index.js"
         },
         {
-          "path": "components/alert/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/alert/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/alert/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/alert/node_modules/react/index.js"
+        },
+        {
+          "path": "components/alert/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/alert/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -166,14 +166,14 @@
           "target": "components/alert-dialog/node_modules/react-native/index.js"
         },
         {
-          "path": "components/alert-dialog/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/alert-dialog/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/alert-dialog/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/alert-dialog/node_modules/react/index.js"
+        },
+        {
+          "path": "components/alert-dialog/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/alert-dialog/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -212,14 +212,14 @@
           "target": "components/anchor/dist/index.cjs"
         },
         {
-          "path": "components/anchor/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/anchor/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/anchor/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/anchor/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/anchor/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/anchor/node_modules/react-native/index.js"
         },
         {
           "path": "components/anchor/node_modules/react/index.js",
@@ -248,6 +248,11 @@
       ],
       "files": [
         {
+          "path": "components/badge/src/index.ts",
+          "type": "registry:file",
+          "target": "components/badge/src/index.ts"
+        },
+        {
           "path": "components/badge/dist/index.mjs",
           "type": "registry:file",
           "target": "components/badge/dist/index.mjs"
@@ -256,11 +261,6 @@
           "path": "components/badge/dist/index.cjs",
           "type": "registry:file",
           "target": "components/badge/dist/index.cjs"
-        },
-        {
-          "path": "components/badge/src/index.ts",
-          "type": "registry:file",
-          "target": "components/badge/src/index.ts"
         },
         {
           "path": "components/badge/node_modules/react-native/index.js",
@@ -298,11 +298,6 @@
       ],
       "files": [
         {
-          "path": "components/body-text/src/index.ts",
-          "type": "registry:file",
-          "target": "components/body-text/src/index.ts"
-        },
-        {
           "path": "components/body-text/dist/index.mjs",
           "type": "registry:file",
           "target": "components/body-text/dist/index.mjs"
@@ -313,9 +308,9 @@
           "target": "components/body-text/dist/index.cjs"
         },
         {
-          "path": "components/body-text/node_modules/react-native/index.js",
+          "path": "components/body-text/src/index.ts",
           "type": "registry:file",
-          "target": "components/body-text/node_modules/react-native/index.js"
+          "target": "components/body-text/src/index.ts"
         },
         {
           "path": "components/body-text/node_modules/react/index.js",
@@ -326,6 +321,11 @@
           "path": "components/body-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/body-text/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/body-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/body-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -356,11 +356,6 @@
       ],
       "files": [
         {
-          "path": "components/breadcrumb/src/index.ts",
-          "type": "registry:file",
-          "target": "components/breadcrumb/src/index.ts"
-        },
-        {
           "path": "components/breadcrumb/dist/index.mjs",
           "type": "registry:file",
           "target": "components/breadcrumb/dist/index.mjs"
@@ -369,6 +364,11 @@
           "path": "components/breadcrumb/dist/index.cjs",
           "type": "registry:file",
           "target": "components/breadcrumb/dist/index.cjs"
+        },
+        {
+          "path": "components/breadcrumb/src/index.ts",
+          "type": "registry:file",
+          "target": "components/breadcrumb/src/index.ts"
         },
         {
           "path": "components/breadcrumb/node_modules/react-native/index.js",
@@ -480,6 +480,11 @@
           "target": "components/bytes-text/dist/index.cjs"
         },
         {
+          "path": "components/bytes-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/bytes-text/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/bytes-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/bytes-text/node_modules/react-dom/index.js"
@@ -488,11 +493,6 @@
           "path": "components/bytes-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/bytes-text/node_modules/react/index.js"
-        },
-        {
-          "path": "components/bytes-text/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/bytes-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -526,11 +526,6 @@
       ],
       "files": [
         {
-          "path": "components/callout/src/index.ts",
-          "type": "registry:file",
-          "target": "components/callout/src/index.ts"
-        },
-        {
           "path": "components/callout/dist/index.mjs",
           "type": "registry:file",
           "target": "components/callout/dist/index.mjs"
@@ -541,19 +536,24 @@
           "target": "components/callout/dist/index.cjs"
         },
         {
+          "path": "components/callout/src/index.ts",
+          "type": "registry:file",
+          "target": "components/callout/src/index.ts"
+        },
+        {
           "path": "components/callout/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/callout/node_modules/react-native/index.js"
         },
         {
-          "path": "components/callout/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/callout/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/callout/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/callout/node_modules/react/index.js"
+        },
+        {
+          "path": "components/callout/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/callout/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -610,14 +610,14 @@
           "target": "components/card/node_modules/react-native/index.js"
         },
         {
-          "path": "components/card/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/card/node_modules/react/index.js"
-        },
-        {
           "path": "components/card/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/card/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/card/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/card/node_modules/react/index.js"
         }
       ]
     },
@@ -754,11 +754,6 @@
       ],
       "files": [
         {
-          "path": "components/circular-progress/src/index.ts",
-          "type": "registry:file",
-          "target": "components/circular-progress/src/index.ts"
-        },
-        {
           "path": "components/circular-progress/dist/index.mjs",
           "type": "registry:file",
           "target": "components/circular-progress/dist/index.mjs"
@@ -767,6 +762,11 @@
           "path": "components/circular-progress/dist/index.cjs",
           "type": "registry:file",
           "target": "components/circular-progress/dist/index.cjs"
+        },
+        {
+          "path": "components/circular-progress/src/index.ts",
+          "type": "registry:file",
+          "target": "components/circular-progress/src/index.ts"
         },
         {
           "path": "components/circular-progress/node_modules/react-native/index.js",
@@ -840,14 +840,14 @@
           "target": "components/code-block/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/code-block/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/code-block/node_modules/react/index.js"
-        },
-        {
           "path": "components/code-block/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/code-block/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/code-block/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/code-block/node_modules/react/index.js"
         }
       ]
     },
@@ -891,14 +891,14 @@
           "target": "components/collapsible/node_modules/react-native/index.js"
         },
         {
-          "path": "components/collapsible/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/collapsible/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/collapsible/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/collapsible/node_modules/react/index.js"
+        },
+        {
+          "path": "components/collapsible/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/collapsible/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -938,14 +938,14 @@
           "target": "components/confetti-burst/node_modules/react-native/index.js"
         },
         {
-          "path": "components/confetti-burst/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/confetti-burst/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/confetti-burst/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/confetti-burst/node_modules/react/index.js"
+        },
+        {
+          "path": "components/confetti-burst/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/confetti-burst/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -958,7 +958,8 @@
         "@tamagui/core@3.0.0-beta.1670.1",
         "@tamagui/linear-gradient@3.0.0-beta.1670.1",
         "@tamagui/stacks@3.0.0-beta.1670.1",
-        "@cyclone-ui/helpers@0.3.11"
+        "@cyclone-ui/helpers@0.3.11",
+        "@cyclone-ui/vectors@0.5.11"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -978,11 +979,6 @@
           "target": "components/container/dist/index.mjs"
         },
         {
-          "path": "components/container/dist/index.cjs",
-          "type": "registry:file",
-          "target": "components/container/dist/index.cjs"
-        },
-        {
           "path": "components/container/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/container/node_modules/react-native/index.js"
@@ -996,6 +992,57 @@
           "path": "components/container/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/container/node_modules/react-dom/index.js"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/context-menu",
+      "type": "registry:component",
+      "title": "@cyclone-ui/context-menu",
+      "description": "A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.",
+      "dependencies": [
+        "@cyclone-ui/body-text@0.5.11",
+        "@cyclone-ui/button@0.6.11",
+        "@cyclone-ui/helpers@0.3.11",
+        "@cyclone-ui/popover@0.5.11",
+        "@tamagui/core@3.0.0-beta.1670.1"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.1",
+        "react@^19.3.0",
+        "react-dom@^19.3.0",
+        "react-native@^0.87.1"
+      ],
+      "files": [
+        {
+          "path": "components/context-menu/src/index.ts",
+          "type": "registry:file",
+          "target": "components/context-menu/src/index.ts"
+        },
+        {
+          "path": "components/context-menu/dist/index.mjs",
+          "type": "registry:file",
+          "target": "components/context-menu/dist/index.mjs"
+        },
+        {
+          "path": "components/context-menu/dist/index.cjs",
+          "type": "registry:file",
+          "target": "components/context-menu/dist/index.cjs"
+        },
+        {
+          "path": "components/context-menu/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/context-menu/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/context-menu/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/context-menu/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/context-menu/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/context-menu/node_modules/react/index.js"
         }
       ]
     },
@@ -1056,9 +1103,9 @@
           "target": "components/data-table/dist/index.cjs"
         },
         {
-          "path": "components/data-table/node_modules/react-native/index.js",
+          "path": "components/data-table/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/data-table/node_modules/react-native/index.js"
+          "target": "components/data-table/node_modules/react-dom/index.js"
         },
         {
           "path": "components/data-table/node_modules/react/index.js",
@@ -1066,9 +1113,9 @@
           "target": "components/data-table/node_modules/react/index.js"
         },
         {
-          "path": "components/data-table/node_modules/react-dom/index.js",
+          "path": "components/data-table/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/data-table/node_modules/react-dom/index.js"
+          "target": "components/data-table/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1191,14 +1238,14 @@
           "target": "components/date-picker-field/dist/index.cjs"
         },
         {
-          "path": "components/date-picker-field/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/date-picker-field/node_modules/react/index.js"
-        },
-        {
           "path": "components/date-picker-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/date-picker-field/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/date-picker-field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/date-picker-field/node_modules/react/index.js"
         },
         {
           "path": "components/date-picker-field/node_modules/react-dom/index.js",
@@ -1263,14 +1310,14 @@
           "target": "components/dialog/node_modules/react-native/index.js"
         },
         {
-          "path": "components/dialog/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/dialog/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/dialog/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/dialog/node_modules/react/index.js"
+        },
+        {
+          "path": "components/dialog/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/dialog/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1363,11 +1410,6 @@
           "target": "components/drawer/dist/index.cjs"
         },
         {
-          "path": "components/drawer/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/drawer/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/drawer/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/drawer/node_modules/react-dom/index.js"
@@ -1376,6 +1418,11 @@
           "path": "components/drawer/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/drawer/node_modules/react/index.js"
+        },
+        {
+          "path": "components/drawer/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/drawer/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1454,11 +1501,6 @@
       ],
       "files": [
         {
-          "path": "components/feedback/src/index.ts",
-          "type": "registry:file",
-          "target": "components/feedback/src/index.ts"
-        },
-        {
           "path": "components/feedback/dist/index.mjs",
           "type": "registry:file",
           "target": "components/feedback/dist/index.mjs"
@@ -1469,19 +1511,24 @@
           "target": "components/feedback/dist/index.cjs"
         },
         {
+          "path": "components/feedback/src/index.ts",
+          "type": "registry:file",
+          "target": "components/feedback/src/index.ts"
+        },
+        {
           "path": "components/feedback/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/feedback/node_modules/react-native/index.js"
         },
         {
-          "path": "components/feedback/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/feedback/node_modules/react/index.js"
-        },
-        {
           "path": "components/feedback/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/feedback/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/feedback/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/feedback/node_modules/react/index.js"
         }
       ]
     },
@@ -1537,14 +1584,14 @@
           "target": "components/field/node_modules/react-native/index.js"
         },
         {
-          "path": "components/field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/field/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/field/node_modules/react/index.js"
+        },
+        {
+          "path": "components/field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/field/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1552,7 +1599,7 @@
       "name": "@cyclone-ui/file-picker",
       "type": "registry:component",
       "title": "@cyclone-ui/file-picker",
-      "description": "A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image preview.",
+      "description": "A form-integrated file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image, text or PDF preview.",
       "dependencies": [
         "@stryke/date@^0.0.28",
         "@stryke/hooks@^0.4.133",
@@ -1580,6 +1627,7 @@
         "@cyclone-ui/bytes-text@0.5.11",
         "@cyclone-ui/label-text@0.5.11",
         "@cyclone-ui/link@0.5.11",
+        "@cyclone-ui/pdf-document-display@0.5.11",
         "@cyclone-ui/state@0.0.12",
         "@cyclone-ui/helpers@0.3.11"
       ],
@@ -1666,14 +1714,14 @@
           "target": "components/file-picker-field/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/file-picker-field/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/file-picker-field/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/file-picker-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/file-picker-field/node_modules/react/index.js"
+        },
+        {
+          "path": "components/file-picker-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/file-picker-field/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1697,6 +1745,11 @@
       ],
       "files": [
         {
+          "path": "components/file-tree/src/index.ts",
+          "type": "registry:file",
+          "target": "components/file-tree/src/index.ts"
+        },
+        {
           "path": "components/file-tree/dist/index.mjs",
           "type": "registry:file",
           "target": "components/file-tree/dist/index.mjs"
@@ -1707,16 +1760,6 @@
           "target": "components/file-tree/dist/index.cjs"
         },
         {
-          "path": "components/file-tree/src/index.ts",
-          "type": "registry:file",
-          "target": "components/file-tree/src/index.ts"
-        },
-        {
-          "path": "components/file-tree/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/file-tree/node_modules/react/index.js"
-        },
-        {
           "path": "components/file-tree/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/file-tree/node_modules/react-dom/index.js"
@@ -1725,6 +1768,11 @@
           "path": "components/file-tree/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/file-tree/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/file-tree/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/file-tree/node_modules/react/index.js"
         }
       ]
     },
@@ -1765,6 +1813,11 @@
           "target": "components/footer/dist/index.cjs"
         },
         {
+          "path": "components/footer/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/footer/node_modules/react-dom/index.js"
+        },
+        {
           "path": "components/footer/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/footer/node_modules/react-native/index.js"
@@ -1773,11 +1826,6 @@
           "path": "components/footer/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/footer/node_modules/react/index.js"
-        },
-        {
-          "path": "components/footer/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/footer/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1799,6 +1847,11 @@
       ],
       "files": [
         {
+          "path": "components/form/src/index.ts",
+          "type": "registry:file",
+          "target": "components/form/src/index.ts"
+        },
+        {
           "path": "components/form/dist/index.mjs",
           "type": "registry:file",
           "target": "components/form/dist/index.mjs"
@@ -1809,24 +1862,19 @@
           "target": "components/form/dist/index.cjs"
         },
         {
-          "path": "components/form/src/index.ts",
-          "type": "registry:file",
-          "target": "components/form/src/index.ts"
-        },
-        {
           "path": "components/form/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/form/node_modules/react-native/index.js"
         },
         {
-          "path": "components/form/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/form/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/form/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/form/node_modules/react/index.js"
+        },
+        {
+          "path": "components/form/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/form/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1862,9 +1910,9 @@
           "target": "components/glitch-separator/dist/index.cjs"
         },
         {
-          "path": "components/glitch-separator/node_modules/react-native/index.js",
+          "path": "components/glitch-separator/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/glitch-separator/node_modules/react-native/index.js"
+          "target": "components/glitch-separator/node_modules/react/index.js"
         },
         {
           "path": "components/glitch-separator/node_modules/react-dom/index.js",
@@ -1872,9 +1920,9 @@
           "target": "components/glitch-separator/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/glitch-separator/node_modules/react/index.js",
+          "path": "components/glitch-separator/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/glitch-separator/node_modules/react/index.js"
+          "target": "components/glitch-separator/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1911,6 +1959,11 @@
           "target": "components/heading-text/dist/index.cjs"
         },
         {
+          "path": "components/heading-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/heading-text/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/heading-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/heading-text/node_modules/react-dom/index.js"
@@ -1919,11 +1972,6 @@
           "path": "components/heading-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/heading-text/node_modules/react/index.js"
-        },
-        {
-          "path": "components/heading-text/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/heading-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1939,7 +1987,7 @@
       ],
       "devDependencies": [
         "@phosphor-icons/core@^2.1.1",
-        "@power-plant/core@^0.0.93",
+        "@power-plant/core@^0.0.94",
         "@storybook/react-vite@^10.6.1",
         "@types/node@^25.9.9",
         "prettier@^3.9.9",
@@ -1969,14 +2017,14 @@
           "target": "components/icons/node_modules/react-native/index.js"
         },
         {
-          "path": "components/icons/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/icons/node_modules/react/index.js"
-        },
-        {
           "path": "components/icons/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/icons/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/icons/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/icons/node_modules/react/index.js"
         },
         {
           "path": "components/icons/node_modules/prettier/index.mjs",
@@ -2029,14 +2077,14 @@
           "target": "components/inline-code-text/node_modules/react-native/index.js"
         },
         {
-          "path": "components/inline-code-text/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/inline-code-text/node_modules/react/index.js"
-        },
-        {
           "path": "components/inline-code-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/inline-code-text/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/inline-code-text/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/inline-code-text/node_modules/react/index.js"
         }
       ]
     },
@@ -2084,11 +2132,6 @@
           "target": "components/input/dist/index.cjs"
         },
         {
-          "path": "components/input/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/input/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/input/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/input/node_modules/react-dom/index.js"
@@ -2097,6 +2140,11 @@
           "path": "components/input/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/input/node_modules/react/index.js"
+        },
+        {
+          "path": "components/input/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/input/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2107,6 +2155,7 @@
       "description": "A form-bound InputField compound component (Label, Link, Control with TextBox, Value and Trigger, Details, Icon) that connects an Input to the Cyclone UI form state. It uses a floating-label variant by default, supports start and end icons, has an optional clear button when the field is clearable, and syncs value, focus, size and disabled state. Use it for text inputs inside a Form.",
       "dependencies": [
         "@tamagui/core@3.0.0-beta.1670.1",
+        "@tamagui/react-native-types@3.0.0-beta.1670.1",
         "@tamagui/create-context@3.0.0-beta.1670.1",
         "@cyclone-ui/icons@0.0.7",
         "@cyclone-ui/field@0.5.11",
@@ -2138,11 +2187,6 @@
           "target": "components/input-field/dist/index.cjs"
         },
         {
-          "path": "components/input-field/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/input-field/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/input-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/input-field/node_modules/react-dom/index.js"
@@ -2151,6 +2195,11 @@
           "path": "components/input-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/input-field/node_modules/react/index.js"
+        },
+        {
+          "path": "components/input-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/input-field/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2192,14 +2241,14 @@
           "target": "components/label-text/node_modules/react-native/index.js"
         },
         {
-          "path": "components/label-text/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/label-text/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/label-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/label-text/node_modules/react/index.js"
+        },
+        {
+          "path": "components/label-text/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/label-text/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2242,14 +2291,14 @@
           "target": "components/like-button/node_modules/react-native/index.js"
         },
         {
-          "path": "components/like-button/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/like-button/node_modules/react/index.js"
-        },
-        {
           "path": "components/like-button/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/like-button/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/like-button/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/like-button/node_modules/react/index.js"
         }
       ]
     },
@@ -2298,14 +2347,14 @@
           "target": "components/link/node_modules/react-native/index.js"
         },
         {
-          "path": "components/link/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/link/node_modules/react/index.js"
-        },
-        {
           "path": "components/link/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/link/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/link/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/link/node_modules/react/index.js"
         }
       ]
     },
@@ -2344,14 +2393,14 @@
           "target": "components/link-text/dist/index.cjs"
         },
         {
-          "path": "components/link-text/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/link-text/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/link-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/link-text/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/link-text/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/link-text/node_modules/react-dom/index.js"
         },
         {
           "path": "components/link-text/node_modules/react/index.js",
@@ -2398,11 +2447,6 @@
           "target": "components/message/dist/index.cjs"
         },
         {
-          "path": "components/message/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/message/node_modules/react/index.js"
-        },
-        {
           "path": "components/message/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/message/node_modules/react-dom/index.js"
@@ -2411,6 +2455,11 @@
           "path": "components/message/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/message/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/message/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/message/node_modules/react/index.js"
         }
       ]
     },
@@ -2456,14 +2505,14 @@
           "target": "components/navigation-header/node_modules/react-native/index.js"
         },
         {
-          "path": "components/navigation-header/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/navigation-header/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/navigation-header/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/navigation-header/node_modules/react/index.js"
+        },
+        {
+          "path": "components/navigation-header/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/navigation-header/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2538,6 +2587,11 @@
       ],
       "files": [
         {
+          "path": "components/number-input-field/src/index.ts",
+          "type": "registry:file",
+          "target": "components/number-input-field/src/index.ts"
+        },
+        {
           "path": "components/number-input-field/dist/index.mjs",
           "type": "registry:file",
           "target": "components/number-input-field/dist/index.mjs"
@@ -2548,24 +2602,19 @@
           "target": "components/number-input-field/dist/index.cjs"
         },
         {
-          "path": "components/number-input-field/src/index.ts",
-          "type": "registry:file",
-          "target": "components/number-input-field/src/index.ts"
-        },
-        {
           "path": "components/number-input-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/number-input-field/node_modules/react-native/index.js"
         },
         {
-          "path": "components/number-input-field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/number-input-field/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/number-input-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/number-input-field/node_modules/react/index.js"
+        },
+        {
+          "path": "components/number-input-field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/number-input-field/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2602,6 +2651,11 @@
           "target": "components/number-text/dist/index.cjs"
         },
         {
+          "path": "components/number-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/number-text/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/number-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/number-text/node_modules/react-dom/index.js"
@@ -2610,11 +2664,6 @@
           "path": "components/number-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/number-text/node_modules/react/index.js"
-        },
-        {
-          "path": "components/number-text/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/number-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2703,9 +2752,9 @@
           "target": "components/package-command-code-block/dist/index.cjs"
         },
         {
-          "path": "components/package-command-code-block/node_modules/react/index.js",
+          "path": "components/package-command-code-block/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/package-command-code-block/node_modules/react/index.js"
+          "target": "components/package-command-code-block/node_modules/react-native/index.js"
         },
         {
           "path": "components/package-command-code-block/node_modules/react-dom/index.js",
@@ -2713,9 +2762,9 @@
           "target": "components/package-command-code-block/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/package-command-code-block/node_modules/react-native/index.js",
+          "path": "components/package-command-code-block/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/package-command-code-block/node_modules/react-native/index.js"
+          "target": "components/package-command-code-block/node_modules/react/index.js"
         }
       ]
     },
@@ -2757,6 +2806,11 @@
           "target": "components/page/dist/index.cjs"
         },
         {
+          "path": "components/page/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/page/node_modules/react-dom/index.js"
+        },
+        {
           "path": "components/page/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/page/node_modules/react-native/index.js"
@@ -2765,11 +2819,6 @@
           "path": "components/page/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/page/node_modules/react/index.js"
-        },
-        {
-          "path": "components/page/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/page/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2812,11 +2861,6 @@
           "target": "components/pagination/dist/index.cjs"
         },
         {
-          "path": "components/pagination/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/pagination/node_modules/react/index.js"
-        },
-        {
           "path": "components/pagination/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/pagination/node_modules/react-native/index.js"
@@ -2825,6 +2869,11 @@
           "path": "components/pagination/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/pagination/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/pagination/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/pagination/node_modules/react/index.js"
         }
       ]
     },
@@ -2868,14 +2917,14 @@
           "target": "components/password-input-field/dist/index.cjs"
         },
         {
-          "path": "components/password-input-field/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/password-input-field/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/password-input-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/password-input-field/node_modules/react/index.js"
+        },
+        {
+          "path": "components/password-input-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/password-input-field/node_modules/react-native/index.js"
         },
         {
           "path": "components/password-input-field/node_modules/react-dom/index.js",
@@ -2893,7 +2942,7 @@
         "@stryke/type-checks@^0.6.49",
         "@stryke/types@^0.12.44",
         "@tamagui/core@3.0.0-beta.1670.1",
-        "pdfjs-dist@^4.10.38",
+        "pdfjs-dist@4.8.69",
         "react-pdf@^9.2.1",
         "@cyclone-ui/spinner@0.5.11",
         "@cyclone-ui/vectors@0.5.11",
@@ -2907,11 +2956,6 @@
       ],
       "files": [
         {
-          "path": "components/pdf-document-display/src/index.ts",
-          "type": "registry:file",
-          "target": "components/pdf-document-display/src/index.ts"
-        },
-        {
           "path": "components/pdf-document-display/dist/index.mjs",
           "type": "registry:file",
           "target": "components/pdf-document-display/dist/index.mjs"
@@ -2920,6 +2964,11 @@
           "path": "components/pdf-document-display/dist/index.cjs",
           "type": "registry:file",
           "target": "components/pdf-document-display/dist/index.cjs"
+        },
+        {
+          "path": "components/pdf-document-display/src/index.ts",
+          "type": "registry:file",
+          "target": "components/pdf-document-display/src/index.ts"
         },
         {
           "path": "components/pdf-document-display/node_modules/react/index.js",
@@ -2945,11 +2994,10 @@
       "description": "A PhoneNumberInputField built on InputField that adds a searchable country-code picker with flags in a popover. Input is masked and formatted with libphonenumber-js and maskito, and the selected country updates from the entered value. It has a defaultCountry prop and the same Label, Control, Details and Icon parts as InputField. Use it for phone number entry inside a Form.",
       "dependencies": [
         "@cyclone-ui/body-text@0.5.11",
-        "@cyclone-ui/button@0.6.11",
+        "@cyclone-ui/context-menu@0.0.1",
         "@cyclone-ui/helpers@0.3.11",
         "@cyclone-ui/input@0.6.11",
         "@cyclone-ui/input-field@0.1.11",
-        "@cyclone-ui/popover@0.5.11",
         "@cyclone-ui/search-input-field@0.1.11",
         "@cyclone-ui/state@0.0.12",
         "@maskito/core@^3.11.1",
@@ -2982,11 +3030,6 @@
           "target": "components/phone-number-input-field/dist/index.cjs"
         },
         {
-          "path": "components/phone-number-input-field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/phone-number-input-field/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/phone-number-input-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/phone-number-input-field/node_modules/react/index.js"
@@ -2995,6 +3038,11 @@
           "path": "components/phone-number-input-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/phone-number-input-field/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/phone-number-input-field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/phone-number-input-field/node_modules/react-dom/index.js"
         },
         {
           "path": "components/phone-number-input-field/node_modules/libphonenumber-js/index.js",
@@ -3053,11 +3101,6 @@
           "target": "components/popover/dist/index.cjs"
         },
         {
-          "path": "components/popover/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/popover/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/popover/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/popover/node_modules/react/index.js"
@@ -3066,6 +3109,11 @@
           "path": "components/popover/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/popover/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/popover/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/popover/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -3104,9 +3152,9 @@
           "target": "components/previous-button/dist/index.cjs"
         },
         {
-          "path": "components/previous-button/node_modules/react-native/index.js",
+          "path": "components/previous-button/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/previous-button/node_modules/react-native/index.js"
+          "target": "components/previous-button/node_modules/react/index.js"
         },
         {
           "path": "components/previous-button/node_modules/react-dom/index.js",
@@ -3114,9 +3162,9 @@
           "target": "components/previous-button/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/previous-button/node_modules/react/index.js",
+          "path": "components/previous-button/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/previous-button/node_modules/react/index.js"
+          "target": "components/previous-button/node_modules/react-native/index.js"
         }
       ]
     },
@@ -3273,14 +3321,14 @@
           "target": "components/radio-group-field/dist/index.cjs"
         },
         {
-          "path": "components/radio-group-field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/radio-group-field/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/radio-group-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/radio-group-field/node_modules/react/index.js"
+        },
+        {
+          "path": "components/radio-group-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/radio-group-field/node_modules/react-native/index.js"
         },
         {
           "path": "components/radio-group-field/node_modules/jotai/index.js",
@@ -3288,9 +3336,9 @@
           "target": "components/radio-group-field/node_modules/jotai/index.js"
         },
         {
-          "path": "components/radio-group-field/node_modules/react-native/index.js",
+          "path": "components/radio-group-field/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/radio-group-field/node_modules/react-native/index.js"
+          "target": "components/radio-group-field/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -3328,14 +3376,14 @@
           "target": "components/rating/dist/index.cjs"
         },
         {
-          "path": "components/rating/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/rating/node_modules/react/index.js"
-        },
-        {
           "path": "components/rating/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/rating/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/rating/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/rating/node_modules/react/index.js"
         },
         {
           "path": "components/rating/node_modules/react-native/index.js",
@@ -3380,9 +3428,9 @@
           "target": "components/rating-field/dist/index.cjs"
         },
         {
-          "path": "components/rating-field/node_modules/react/index.js",
+          "path": "components/rating-field/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/rating-field/node_modules/react/index.js"
+          "target": "components/rating-field/node_modules/react-native/index.js"
         },
         {
           "path": "components/rating-field/node_modules/react-dom/index.js",
@@ -3390,9 +3438,9 @@
           "target": "components/rating-field/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/rating-field/node_modules/react-native/index.js",
+          "path": "components/rating-field/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/rating-field/node_modules/react-native/index.js"
+          "target": "components/rating-field/node_modules/react/index.js"
         }
       ]
     },
@@ -3429,14 +3477,14 @@
           "target": "components/redacted-animation/dist/index.cjs"
         },
         {
-          "path": "components/redacted-animation/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/redacted-animation/node_modules/react/index.js"
-        },
-        {
           "path": "components/redacted-animation/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/redacted-animation/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/redacted-animation/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/redacted-animation/node_modules/react/index.js"
         },
         {
           "path": "components/redacted-animation/node_modules/react-native/index.js",
@@ -3480,11 +3528,6 @@
           "target": "components/scroll-view/dist/index.cjs"
         },
         {
-          "path": "components/scroll-view/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/scroll-view/node_modules/react/index.js"
-        },
-        {
           "path": "components/scroll-view/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/scroll-view/node_modules/react-native/index.js"
@@ -3493,6 +3536,11 @@
           "path": "components/scroll-view/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/scroll-view/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/scroll-view/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/scroll-view/node_modules/react/index.js"
         }
       ]
     },
@@ -3543,14 +3591,14 @@
           "target": "components/search-input-field/node_modules/react-native/index.js"
         },
         {
-          "path": "components/search-input-field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/search-input-field/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/search-input-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/search-input-field/node_modules/react/index.js"
+        },
+        {
+          "path": "components/search-input-field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/search-input-field/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -3608,11 +3656,6 @@
           "target": "components/select/dist/index.cjs"
         },
         {
-          "path": "components/select/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/select/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/select/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/select/node_modules/react/index.js"
@@ -3621,6 +3664,11 @@
           "path": "components/select/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/select/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/select/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/select/node_modules/react-native/index.js"
         }
       ]
     },
@@ -3632,6 +3680,7 @@
       "dependencies": [
         "@stryke/types@^0.12.44",
         "@tamagui/core@3.0.0-beta.1670.1",
+        "@tamagui/react-native-types@3.0.0-beta.1670.1",
         "@tamagui/create-context@3.0.0-beta.1670.1",
         "@tamagui/web@3.0.0-beta.1670.1",
         "react-native-svg@^15.15.5",
@@ -3649,6 +3698,11 @@
       ],
       "files": [
         {
+          "path": "components/select-field/src/index.ts",
+          "type": "registry:file",
+          "target": "components/select-field/src/index.ts"
+        },
+        {
           "path": "components/select-field/dist/index.mjs",
           "type": "registry:file",
           "target": "components/select-field/dist/index.mjs"
@@ -3659,19 +3713,14 @@
           "target": "components/select-field/dist/index.cjs"
         },
         {
-          "path": "components/select-field/src/index.ts",
-          "type": "registry:file",
-          "target": "components/select-field/src/index.ts"
-        },
-        {
           "path": "components/select-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/select-field/node_modules/react-native/index.js"
         },
         {
-          "path": "components/select-field/node_modules/jotai/index.js",
+          "path": "components/select-field/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/select-field/node_modules/jotai/index.js"
+          "target": "components/select-field/node_modules/react-dom/index.js"
         },
         {
           "path": "components/select-field/node_modules/react/index.js",
@@ -3679,9 +3728,9 @@
           "target": "components/select-field/node_modules/react/index.js"
         },
         {
-          "path": "components/select-field/node_modules/react-dom/index.js",
+          "path": "components/select-field/node_modules/jotai/index.js",
           "type": "registry:file",
-          "target": "components/select-field/node_modules/react-dom/index.js"
+          "target": "components/select-field/node_modules/jotai/index.js"
         }
       ]
     },
@@ -3725,11 +3774,6 @@
           "target": "components/sheet/dist/index.cjs"
         },
         {
-          "path": "components/sheet/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/sheet/node_modules/react/index.js"
-        },
-        {
           "path": "components/sheet/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/sheet/node_modules/react-native/index.js"
@@ -3738,6 +3782,11 @@
           "path": "components/sheet/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/sheet/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/sheet/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/sheet/node_modules/react/index.js"
         }
       ]
     },
@@ -3775,6 +3824,11 @@
           "target": "components/slider/dist/index.cjs"
         },
         {
+          "path": "components/slider/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/slider/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/slider/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/slider/node_modules/react-dom/index.js"
@@ -3783,11 +3837,6 @@
           "path": "components/slider/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/slider/node_modules/react/index.js"
-        },
-        {
-          "path": "components/slider/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/slider/node_modules/react-native/index.js"
         }
       ]
     },
@@ -3859,11 +3908,6 @@
       ],
       "files": [
         {
-          "path": "components/spinner/src/index.ts",
-          "type": "registry:file",
-          "target": "components/spinner/src/index.ts"
-        },
-        {
           "path": "components/spinner/dist/index.mjs",
           "type": "registry:file",
           "target": "components/spinner/dist/index.mjs"
@@ -3874,9 +3918,14 @@
           "target": "components/spinner/dist/index.cjs"
         },
         {
-          "path": "components/spinner/node_modules/react-native/index.js",
+          "path": "components/spinner/src/index.ts",
           "type": "registry:file",
-          "target": "components/spinner/node_modules/react-native/index.js"
+          "target": "components/spinner/src/index.ts"
+        },
+        {
+          "path": "components/spinner/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/spinner/node_modules/react/index.js"
         },
         {
           "path": "components/spinner/node_modules/react-dom/index.js",
@@ -3884,9 +3933,9 @@
           "target": "components/spinner/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/spinner/node_modules/react/index.js",
+          "path": "components/spinner/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/spinner/node_modules/react/index.js"
+          "target": "components/spinner/node_modules/react-native/index.js"
         }
       ]
     },
@@ -3940,9 +3989,9 @@
           "target": "components/stepper/dist/index.cjs"
         },
         {
-          "path": "components/stepper/node_modules/react/index.js",
+          "path": "components/stepper/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/stepper/node_modules/react/index.js"
+          "target": "components/stepper/node_modules/react-native/index.js"
         },
         {
           "path": "components/stepper/node_modules/react-dom/index.js",
@@ -3950,9 +3999,9 @@
           "target": "components/stepper/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/stepper/node_modules/react-native/index.js",
+          "path": "components/stepper/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/stepper/node_modules/react-native/index.js"
+          "target": "components/stepper/node_modules/react/index.js"
         }
       ]
     },
@@ -4004,14 +4053,14 @@
           "target": "components/switch/node_modules/react/index.js"
         },
         {
-          "path": "components/switch/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/switch/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/switch/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/switch/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/switch/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/switch/node_modules/react-native/index.js"
         }
       ]
     },
@@ -4053,6 +4102,11 @@
           "target": "components/switch-field/dist/index.cjs"
         },
         {
+          "path": "components/switch-field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/switch-field/node_modules/react-dom/index.js"
+        },
+        {
           "path": "components/switch-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/switch-field/node_modules/react/index.js"
@@ -4061,11 +4115,6 @@
           "path": "components/switch-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/switch-field/node_modules/react-native/index.js"
-        },
-        {
-          "path": "components/switch-field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/switch-field/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -4112,6 +4161,11 @@
           "target": "components/table/dist/index.cjs"
         },
         {
+          "path": "components/table/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/table/node_modules/react-dom/index.js"
+        },
+        {
           "path": "components/table/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/table/node_modules/react-native/index.js"
@@ -4120,11 +4174,6 @@
           "path": "components/table/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/table/node_modules/react/index.js"
-        },
-        {
-          "path": "components/table/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/table/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -4168,14 +4217,14 @@
           "target": "components/table-of-contents/node_modules/react-native/index.js"
         },
         {
-          "path": "components/table-of-contents/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/table-of-contents/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/table-of-contents/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/table-of-contents/node_modules/react/index.js"
+        },
+        {
+          "path": "components/table-of-contents/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/table-of-contents/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -4227,6 +4276,11 @@
           "target": "components/tabs/dist/index.cjs"
         },
         {
+          "path": "components/tabs/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/tabs/node_modules/react/index.js"
+        },
+        {
           "path": "components/tabs/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/tabs/node_modules/react-native/index.js"
@@ -4235,11 +4289,6 @@
           "path": "components/tabs/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/tabs/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/tabs/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/tabs/node_modules/react/index.js"
         }
       ]
     },
@@ -4283,9 +4332,9 @@
           "target": "components/tag/dist/index.cjs"
         },
         {
-          "path": "components/tag/node_modules/react-native/index.js",
+          "path": "components/tag/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/tag/node_modules/react-native/index.js"
+          "target": "components/tag/node_modules/react-dom/index.js"
         },
         {
           "path": "components/tag/node_modules/react/index.js",
@@ -4293,9 +4342,9 @@
           "target": "components/tag/node_modules/react/index.js"
         },
         {
-          "path": "components/tag/node_modules/react-dom/index.js",
+          "path": "components/tag/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/tag/node_modules/react-dom/index.js"
+          "target": "components/tag/node_modules/react-native/index.js"
         }
       ]
     },
@@ -4321,6 +4370,11 @@
       ],
       "files": [
         {
+          "path": "components/tag-picker/src/index.ts",
+          "type": "registry:file",
+          "target": "components/tag-picker/src/index.ts"
+        },
+        {
           "path": "components/tag-picker/dist/index.mjs",
           "type": "registry:file",
           "target": "components/tag-picker/dist/index.mjs"
@@ -4331,16 +4385,6 @@
           "target": "components/tag-picker/dist/index.cjs"
         },
         {
-          "path": "components/tag-picker/src/index.ts",
-          "type": "registry:file",
-          "target": "components/tag-picker/src/index.ts"
-        },
-        {
-          "path": "components/tag-picker/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/tag-picker/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/tag-picker/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/tag-picker/node_modules/react-dom/index.js"
@@ -4349,6 +4393,11 @@
           "path": "components/tag-picker/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/tag-picker/node_modules/react/index.js"
+        },
+        {
+          "path": "components/tag-picker/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/tag-picker/node_modules/react-native/index.js"
         }
       ]
     },
@@ -4372,11 +4421,6 @@
       ],
       "files": [
         {
-          "path": "components/tag-picker-field/src/index.ts",
-          "type": "registry:file",
-          "target": "components/tag-picker-field/src/index.ts"
-        },
-        {
           "path": "components/tag-picker-field/dist/index.mjs",
           "type": "registry:file",
           "target": "components/tag-picker-field/dist/index.mjs"
@@ -4387,9 +4431,14 @@
           "target": "components/tag-picker-field/dist/index.cjs"
         },
         {
-          "path": "components/tag-picker-field/node_modules/react-native/index.js",
+          "path": "components/tag-picker-field/src/index.ts",
           "type": "registry:file",
-          "target": "components/tag-picker-field/node_modules/react-native/index.js"
+          "target": "components/tag-picker-field/src/index.ts"
+        },
+        {
+          "path": "components/tag-picker-field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/tag-picker-field/node_modules/react-dom/index.js"
         },
         {
           "path": "components/tag-picker-field/node_modules/react/index.js",
@@ -4397,9 +4446,9 @@
           "target": "components/tag-picker-field/node_modules/react/index.js"
         },
         {
-          "path": "components/tag-picker-field/node_modules/react-dom/index.js",
+          "path": "components/tag-picker-field/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/tag-picker-field/node_modules/react-dom/index.js"
+          "target": "components/tag-picker-field/node_modules/react-native/index.js"
         }
       ]
     },
@@ -4437,14 +4486,14 @@
           "target": "components/text-area/dist/index.cjs"
         },
         {
-          "path": "components/text-area/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/text-area/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/text-area/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/text-area/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/text-area/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/text-area/node_modules/react-native/index.js"
         },
         {
           "path": "components/text-area/node_modules/react/index.js",
@@ -4462,7 +4511,8 @@
         "@cyclone-ui/field@0.5.11",
         "@cyclone-ui/state@0.0.12",
         "@cyclone-ui/text-area@0.1.11",
-        "@tamagui/core@3.0.0-beta.1670.1"
+        "@tamagui/core@3.0.0-beta.1670.1",
+        "@tamagui/react-native-types@3.0.0-beta.1670.1"
       ],
       "devDependencies": [
         "@cyclone-ui/form@0.9.11",
@@ -4472,11 +4522,6 @@
         "react-native@^0.87.1"
       ],
       "files": [
-        {
-          "path": "components/text-area-field/src/index.ts",
-          "type": "registry:file",
-          "target": "components/text-area-field/src/index.ts"
-        },
         {
           "path": "components/text-area-field/dist/index.mjs",
           "type": "registry:file",
@@ -4488,19 +4533,24 @@
           "target": "components/text-area-field/dist/index.cjs"
         },
         {
+          "path": "components/text-area-field/src/index.ts",
+          "type": "registry:file",
+          "target": "components/text-area-field/src/index.ts"
+        },
+        {
           "path": "components/text-area-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/text-area-field/node_modules/react-native/index.js"
         },
         {
-          "path": "components/text-area-field/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/text-area-field/node_modules/react/index.js"
-        },
-        {
           "path": "components/text-area-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/text-area-field/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/text-area-field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/text-area-field/node_modules/react/index.js"
         }
       ]
     },
@@ -4523,11 +4573,6 @@
       ],
       "files": [
         {
-          "path": "components/themeable-gradient/src/index.ts",
-          "type": "registry:file",
-          "target": "components/themeable-gradient/src/index.ts"
-        },
-        {
           "path": "components/themeable-gradient/dist/index.mjs",
           "type": "registry:file",
           "target": "components/themeable-gradient/dist/index.mjs"
@@ -4538,19 +4583,24 @@
           "target": "components/themeable-gradient/dist/index.cjs"
         },
         {
+          "path": "components/themeable-gradient/src/index.ts",
+          "type": "registry:file",
+          "target": "components/themeable-gradient/src/index.ts"
+        },
+        {
           "path": "components/themeable-gradient/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/themeable-gradient/node_modules/react-native/index.js"
         },
         {
-          "path": "components/themeable-gradient/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/themeable-gradient/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/themeable-gradient/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/themeable-gradient/node_modules/react/index.js"
+        },
+        {
+          "path": "components/themeable-gradient/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/themeable-gradient/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -4580,11 +4630,6 @@
       ],
       "files": [
         {
-          "path": "components/themeable-icon/src/index.ts",
-          "type": "registry:file",
-          "target": "components/themeable-icon/src/index.ts"
-        },
-        {
           "path": "components/themeable-icon/dist/index.mjs",
           "type": "registry:file",
           "target": "components/themeable-icon/dist/index.mjs"
@@ -4593,6 +4638,11 @@
           "path": "components/themeable-icon/dist/index.cjs",
           "type": "registry:file",
           "target": "components/themeable-icon/dist/index.cjs"
+        },
+        {
+          "path": "components/themeable-icon/src/index.ts",
+          "type": "registry:file",
+          "target": "components/themeable-icon/src/index.ts"
         },
         {
           "path": "components/themeable-icon/node_modules/react-native/index.js",
@@ -4699,14 +4749,14 @@
           "target": "components/toggle/node_modules/react-native/index.js"
         },
         {
-          "path": "components/toggle/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/toggle/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/toggle/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/toggle/node_modules/react/index.js"
+        },
+        {
+          "path": "components/toggle/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/toggle/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -4734,11 +4784,6 @@
           "target": "components/toggle-group/src/index.ts"
         },
         {
-          "path": "components/toggle-group/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/toggle-group/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/toggle-group/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/toggle-group/node_modules/react-dom/index.js"
@@ -4747,6 +4792,11 @@
           "path": "components/toggle-group/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/toggle-group/node_modules/react/index.js"
+        },
+        {
+          "path": "components/toggle-group/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/toggle-group/node_modules/react-native/index.js"
         }
       ]
     },
@@ -4793,14 +4843,14 @@
           "target": "components/tooltip/node_modules/react-native/index.js"
         },
         {
-          "path": "components/tooltip/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/tooltip/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/tooltip/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/tooltip/node_modules/react/index.js"
+        },
+        {
+          "path": "components/tooltip/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/tooltip/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -4847,14 +4897,14 @@
           "target": "components/type-table/node_modules/react-native/index.js"
         },
         {
-          "path": "components/type-table/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/type-table/node_modules/react/index.js"
-        },
-        {
           "path": "components/type-table/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/type-table/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/type-table/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/type-table/node_modules/react/index.js"
         },
         {
           "path": "components/type-table/node_modules/@vitejs/plugin-react-swc/index.js",
@@ -4947,16 +4997,6 @@
           "target": "components/vectors/src/index.ts"
         },
         {
-          "path": "components/vectors/dist/index.mjs",
-          "type": "registry:file",
-          "target": "components/vectors/dist/index.mjs"
-        },
-        {
-          "path": "components/vectors/dist/index.cjs",
-          "type": "registry:file",
-          "target": "components/vectors/dist/index.cjs"
-        },
-        {
           "path": "components/vectors/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/vectors/node_modules/react-dom/index.js"
@@ -4970,6 +5010,16 @@
           "path": "components/vectors/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/vectors/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/vectors/dist/index.mjs",
+          "type": "registry:file",
+          "target": "components/vectors/dist/index.mjs"
+        },
+        {
+          "path": "components/vectors/dist/index.cjs",
+          "type": "registry:file",
+          "target": "components/vectors/dist/index.cjs"
         }
       ]
     },
@@ -4989,11 +5039,6 @@
       ],
       "files": [
         {
-          "path": "components/visually-hidden/src/index.ts",
-          "type": "registry:file",
-          "target": "components/visually-hidden/src/index.ts"
-        },
-        {
           "path": "components/visually-hidden/dist/index.mjs",
           "type": "registry:file",
           "target": "components/visually-hidden/dist/index.mjs"
@@ -5004,14 +5049,19 @@
           "target": "components/visually-hidden/dist/index.cjs"
         },
         {
-          "path": "components/visually-hidden/node_modules/react-native/index.js",
+          "path": "components/visually-hidden/src/index.ts",
           "type": "registry:file",
-          "target": "components/visually-hidden/node_modules/react-native/index.js"
+          "target": "components/visually-hidden/src/index.ts"
         },
         {
           "path": "components/visually-hidden/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/visually-hidden/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/visually-hidden/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/visually-hidden/node_modules/react-native/index.js"
         },
         {
           "path": "components/visually-hidden/node_modules/react/index.js",

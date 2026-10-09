@@ -70,41 +70,48 @@ const TooltipArrow = styled(TamaguiTooltip.Arrow, {
   displayName: "Tooltip",
   context: TooltipContext,
   backgroundColor: "surfaceFloating",
-  borderWidth: 2,
+  borderWidth: 1,
   borderColor: "accent"
 });
 
-const TooltipContent = styled(TamaguiTooltip.Content, {
-  displayName: "Tooltip",
-  context: TooltipContext,
-  transition: "200ms",
-  justifyContent: "center",
-  alignItems: "center",
-  backgroundColor: "surfaceFloating",
-  paddingVertical: "3xl",
-  paddingHorizontal: "2xl",
-  borderWidth: 2,
-  borderColor: "accent focus-visible:accentActive",
-  borderRadius: "tooltip",
-  x: "enter:0 exit:0",
-  y: "enter:-5px exit:-5px",
-  opacity: "enter:0 exit:0",
-  scale: "enter:0.9 exit:0.9",
-  outlineColor: "focus-visible:accentActive",
-  outlineWidth: "focus-visible:3px",
-  outlineOffset: "focus-visible:lg",
-  outlineStyle: "focus-visible:solid",
-  variants: {
-    elevated: {
-      true: {
-        boxShadow: "0px 4px 30px overlayBackdrop"
+const TooltipContent = styled(
+  TamaguiTooltip.Content,
+  {
+    displayName: "Tooltip",
+    context: TooltipContext,
+    transition: "200ms",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "surfaceFloating",
+    paddingVertical: "3xl",
+    paddingHorizontal: "2xl",
+    borderWidth: 1,
+    borderColor: "accent focus-visible:accentActive",
+    borderRadius: "tooltip",
+    x: "enter:0 exit:0",
+    y: "enter:-5px exit:-5px",
+    opacity: "enter:0 exit:0",
+    scale: "enter:0.9 exit:0.9",
+    outlineColor: "focus-visible:accentActive",
+    outlineWidth: "focus-visible:3px",
+    outlineOffset: "focus-visible:lg",
+    outlineStyle: "focus-visible:solid",
+    variants: {
+      elevated: {
+        true: {
+          boxShadow: "0px 4px 30px overlayBackdrop"
+        }
       }
+    } as const,
+    defaultVariants: {
+      elevated: true
     }
-  } as const,
-  defaultVariants: {
-    elevated: true
-  }
-});
+  },
+  // Tamagui's `Tooltip.Content` HOC passes `backgroundColor="background"` to its
+  // inner content, and `styled()` turns ours into a class that loses to it, so
+  // forward it as a prop instead or the body won't match the arrow.
+  { inlineProps: new Set(["backgroundColor"]) }
+);
 
 interface TooltipContentExtraProps {
   hasArrow?: boolean;
@@ -119,14 +126,23 @@ const TooltipContentImpl = createStyledHOC(
       hasArrow = true,
       arrowBorderColor,
       borderColor = "hairline",
+      // Keep the arrow on the same background as the body
+      backgroundColor = "surfaceFloating",
       ...props
     }: GetProps<typeof TooltipContent> & TooltipContentExtraProps,
     forwardedRef
   ) => {
     return (
-      <TooltipContent ref={forwardedRef} {...props} borderColor={borderColor}>
+      <TooltipContent
+        ref={forwardedRef}
+        {...props}
+        backgroundColor={backgroundColor}
+        borderColor={borderColor}>
         {hasArrow && (
-          <TooltipArrow borderColor={arrowBorderColor || borderColor} />
+          <TooltipArrow
+            backgroundColor={backgroundColor}
+            borderColor={arrowBorderColor || borderColor}
+          />
         )}
         {children}
       </TooltipContent>

@@ -93,7 +93,7 @@ export const Base: Story = {
       name: "Search countries"
     });
     const firstCountry = document.getByRole("button", {
-      name: /AC\s+\+247/i
+      name: /\(AC\)\s+\+247/i
     });
     // The ghost button's first child is its hover background, so find the
     // content row through the country name.

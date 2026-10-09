@@ -40,7 +40,7 @@ const CheckboxFieldLabel = createStyledHOC(
     const disabled = field.disabled.get();
 
     return (
-      <XStack gap="xs" alignContent="center">
+      <XStack gap="xs" alignItems="center">
         <Field.Label
           ref={forwardedRef}
           paddingBottom={0}

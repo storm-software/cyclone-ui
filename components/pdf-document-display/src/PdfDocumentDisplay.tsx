@@ -26,6 +26,7 @@ import type { FileResult } from "@stryke/types/file";
 import type { ViewProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import type { PageProps } from "react-pdf";
 import { Document, Page, pdfjs } from "react-pdf";
 import type {
   DocumentCallback,
@@ -67,6 +68,8 @@ interface PdfDocumentDisplayExtraProps {
   onLoadSuccess?: OnDocumentLoadSuccess;
   onLoadError?: OnDocumentLoadError;
   pageNumber?: number;
+  /** Extra props forwarded to the rendered react-pdf `Page`. */
+  pageProps?: Omit<PageProps, "pageNumber">;
   hideContextMenu?: boolean;
 }
 
@@ -80,6 +83,7 @@ export const PdfDocumentDisplay = createStyledHOC(View,
       onLoadSuccess,
       onLoadError,
       pageNumber = 1,
+      pageProps,
       hideContextMenu = false,
       ...props
     }: PdfDocumentDisplayProps,
@@ -149,7 +153,7 @@ export const PdfDocumentDisplay = createStyledHOC(View,
             onLoadProgress={onLoadProgress}
             onLoadSuccess={handleLoadSuccess}
             onLoadError={handleLoadError}>
-            <Page pageNumber={pageNumber} />
+            <Page {...pageProps} pageNumber={pageNumber} />
           </Document>
         </VisuallyHidden>
       </View>

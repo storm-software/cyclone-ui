@@ -306,7 +306,9 @@ export const InputValue = createStyledHOC(BaseInputValue,
                 flex: 1,
                 minWidth: 0,
                 margin: 0,
-                padding: 0,
+                // No `padding` shorthand: merged style order varies by size,
+                // and a later shorthand would reset `paddingInline` to 0.
+                paddingBottom: 0,
                 paddingTop:
                   variant === "floating"
                     ? 7 * getFormSizeScale(inProps.size ?? contextSize)

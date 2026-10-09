@@ -18,11 +18,11 @@
 
 import type { CreateNodes, CreateNodesResultArray } from "@nx/devkit";
 import { createNodesFromFiles } from "@nx/devkit";
-import { getWorkspacePackageManagerCommand } from "@storm-software/workspace-tools";
 import {
   ProjectTagRegistryValue,
   ProjectTagVariant
 } from "@storm-software/workspace-tools/types";
+import { getWorkspacePackageManagerCommand } from "@storm-software/workspace-tools/utils/package-manager";
 import {
   getProjectConfigFromProjectRoot,
   getProjectRoot,

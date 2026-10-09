@@ -67,16 +67,16 @@ export function resolveIconSize(
     return value;
   }
 
-  return typeof size === "string" ? (size as FontSizeTokens) : undefined;
+  return typeof size === "string" ? size : undefined;
 }
 
 /**
  * The stroke added around the `bold` paths to draw the `black` weight.
  *
  * @remarks
- * Phosphor `bold` lines are 24 units wide on the 256x256 grid. Stroking the outline by 6 units (3 on each side) makes them 30 units wide, 25% thicker.
+ * Phosphor `bold` lines are 24 units wide on the 256x256 grid. Stroking the outline by 10 units (5 on each side) makes them 34 units wide, 41.67% thicker.
  */
-const BLACK_STROKE_WIDTH = 6;
+const BLACK_STROKE_WIDTH = 10;
 
 /**
  * Create a themed Tamagui icon component from the SVG contents of each Phosphor weight.
