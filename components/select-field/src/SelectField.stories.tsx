@@ -16,30 +16,40 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldLabelVariant } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { GetProps } from "@tamagui/core";
 import { expect, within } from "storybook/test";
 import { SelectField } from "./SelectField";
 
-const meta: Meta<typeof SelectField> = {
+/** Field props plus the story-only `labelVariant`, passed to `SelectField.Label`. */
+type SelectFieldStoryArgs = GetProps<typeof SelectField> & {
+  labelVariant?: FieldLabelVariant;
+};
+
+const meta: Meta<SelectFieldStoryArgs> = {
   title: "Form/SelectField",
   component: SelectField,
   tags: ["autodocs"],
-  render: ({ defaultValue, ...props }: any, { id }: { id: string }) => (
+  render: (
+    { defaultValue, labelVariant, ...props }: any,
+    { id }: { id: string }
+  ) => (
     <Form
       name={`formName-${id}`}
       initialValues={{ selectFieldName: defaultValue ?? "" }}>
       <SelectField name="selectFieldName" {...props} items={items}>
-        <SelectField.Label>Label Text</SelectField.Label>
+        <SelectField.Label variant={labelVariant}>Label Text</SelectField.Label>
         <SelectField.Control placeholder="email@example.com" />
       </SelectField>
     </Form>
   )
-} satisfies Meta<typeof SelectField>;
+} satisfies Meta<SelectFieldStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof SelectField>;
+type Story = StoryObj<SelectFieldStoryArgs>;
 
 const validation = (
   type:
@@ -107,12 +117,12 @@ export const Base: Story = {
 
 export const Floating: Story = {
   args: {
-    variant: "floating"
+    labelVariant: "floating"
   },
-  render: (props, { id }) => (
+  render: ({ labelVariant, ...props }, { id }) => (
     <Form name={`formName-${id}`} initialValues={{ selectFieldName: "" }}>
       <SelectField {...props} name="selectFieldName" items={items}>
-        <SelectField.Label>Label Text</SelectField.Label>
+        <SelectField.Label variant={labelVariant}>Label Text</SelectField.Label>
         <SelectField.Control />
       </SelectField>
     </Form>
@@ -121,13 +131,49 @@ export const Floating: Story = {
 
 export const FloatingWithPlaceholder: Story = {
   args: {
-    variant: "floating"
+    labelVariant: "floating"
   }
 };
 
-export const Underline: Story = {
+export const OutlinedFloating: Story = {
   args: {
-    variant: "underline"
+    variant: "outlined",
+    labelVariant: "floating"
+  }
+};
+
+export const UnderlinedFloating: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
   }
 };
 

@@ -16,7 +16,13 @@
 
  ------------------------------------------------------------------- */
 
-import { useFieldHasValidationMessage } from "@cyclone-ui/field";
+import type { FieldLabelPlacement } from "@cyclone-ui/field";
+import {
+  FieldNotchedOutline,
+  getFieldLabelInset,
+  useFieldHasValidationMessage,
+  useFieldLabelPlacement
+} from "@cyclone-ui/field";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import { getFormFontScale, getFormSizeScale } from "@cyclone-ui/helpers";
 import type { InputContextProps } from "@cyclone-ui/input";
@@ -76,17 +82,21 @@ const TextAreaFrame = styled(InputValue, {
     },
 
     variant: {
-      default: {},
-      // Styled by the `.resolve` below because the inset depends on `size`.
-      floating: {},
-      underline: {
+      outlined: {},
+      underlined: {
+        backgroundColor: "transparent",
         borderWidth: 0,
         borderBottomWidth: 1,
         borderColor: "hairline hover:accentHover focus-visible:accent",
-        borderRadius: 0,
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
         boxShadow: "none focus-visible:none"
-      }
+      },
+      inlined: {}
     },
+
+    // Styled by the `.resolve` below because the inset depends on `size`.
+    labelPlacement: styled.dynamic<FieldLabelPlacement>(),
 
     disabled: {
       true: {
@@ -95,21 +105,29 @@ const TextAreaFrame = styled(InputValue, {
     }
   } as const,
   defaultVariants: {
-    variant: "default"
+    variant: "outlined"
   }
 }).resolve(props => ({
-  paddingTop:
-    props.variant === "floating"
-      ? 10 * getFormSizeScale(props.size as FormControlSize | undefined)
-      : undefined
+  // An underlined control's text starts flush with its left edge.
+  paddingLeft: props.variant === "underlined" ? 0 : undefined,
+  // Drop the text under a floating label by the extra height an inset label
+  // adds over a border one (see `getFieldLabelInset`).
+  paddingTop: props.labelPlacement
+    ? 10 * getFormSizeScale(props.size as FormControlSize | undefined) +
+      getFieldLabelInset(
+        props.labelPlacement as FieldLabelPlacement,
+        (props.size ?? "md") as FormControlSize
+      ) -
+      getFieldLabelInset("border")
+    : undefined
 }));
 
 // Tamagui v3 types `onFocus`/`onBlur` as an intersection of the web and
 // native handlers, so accept either event (as `Input` does).
 type TextAreaFocusEvent = any;
 
-const TextAreaUnderlineFrame = styled(View, {
-  displayName: "TextAreaUnderlineFrame",
+const TextAreaDecorationFrame = styled(View, {
+  displayName: "TextAreaDecorationFrame",
 
   position: "relative",
   width: "100%",
@@ -117,10 +135,10 @@ const TextAreaUnderlineFrame = styled(View, {
 });
 
 /**
- * A multiline Cyclone Input value with the same tokens and state behavior as
- * the standard Input control.
+ * A multiline Cyclone Input value with the same tokens and state behavior as the standard Input control.
  */
-export const TextArea = createStyledHOC(TextAreaFrame, 
+export const TextArea = createStyledHOC(
+  TextAreaFrame,
   (
     {
       rows = 3,
@@ -130,18 +148,21 @@ export const TextArea = createStyledHOC(TextAreaFrame,
       placeholderTextColor = "onAccentDisabled",
       onBlur,
       onFocus,
-      variant = "default",
+      variant = "outlined",
       ...props
-    }: GetProps<typeof TextAreaFrame> & Partial<Pick<InputContextProps, "size" | "focused" | "variant" | "disabled">>,
+    }: GetProps<typeof TextAreaFrame> &
+      Partial<
+        Pick<InputContextProps, "size" | "focused" | "variant" | "disabled">
+      >,
     forwardedRef
   ) => {
     const [focused, setActive] = useState(false);
     const hasValidationMessage = useFieldHasValidationMessage();
+    const labelPlacement = useFieldLabelPlacement();
     const idleColor = hasValidationMessage ? "accent" : "hairline";
-    const focusColor = hasValidationMessage
-      ? "accentActive"
-      : "hairlineActive";
+    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
     const isFocused = focusedProp ?? focused;
+    const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "accentDisabled" : isFocused ? focusColor : "accentHover"} focus-visible:${focusColor} group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`;
     const handleFocus = useCallback(
       (event: TextAreaFocusEvent) => {
         setActive(true);
@@ -168,27 +189,37 @@ export const TextArea = createStyledHOC(TextAreaFrame,
         focused={isFocused}
         hasValidationMessage={hasValidationMessage}
         variant={variant}
+        labelPlacement={labelPlacement}
         disabled={disabled}
-        borderColor={`${isFocused ? focusColor : idleColor} hover:${disabled ? "accentDisabled" : isFocused ? focusColor : "accentHover"} focus-visible:${focusColor} group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`}
-        boxShadow={`focus-visible:${variant === "underline" ? "none" : "ringOffset"}`}
+        // `FieldNotchedOutline` draws a notched field's border instead.
+        borderColor={labelPlacement === "border" ? "transparent" : borderColor}
+        boxShadow={`focus-visible:${
+          variant === "outlined" || variant === "inlined"
+            ? "ringOffset"
+            : "none"
+        }`}
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
     );
 
-    if (variant !== "underline") {
+    if (variant === "outlined" && labelPlacement !== "border") {
       return textArea;
     }
 
     return (
-      <TextAreaUnderlineFrame>
+      <TextAreaDecorationFrame>
         {textArea}
-        <ControlUnderline
-          focused={isFocused}
-          disabled={disabled}
-          backgroundColor={disabled ? "accentDisabled" : focusColor}
-        />
-      </TextAreaUnderlineFrame>
+        {variant === "outlined" ? (
+          <FieldNotchedOutline borderColor={borderColor} />
+        ) : variant === "underlined" ? (
+          <ControlUnderline
+            focused={isFocused}
+            disabled={disabled}
+            backgroundColor={disabled ? "accentDisabled" : focusColor}
+          />
+        ) : null}
+      </TextAreaDecorationFrame>
     );
   },
   { displayName: "TextArea" }

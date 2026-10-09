@@ -16,7 +16,13 @@
 
  ------------------------------------------------------------------- */
 
-import { useFieldHasValidationMessage } from "@cyclone-ui/field";
+import type { FieldLabelPlacement } from "@cyclone-ui/field";
+import {
+  FieldNotchedOutline,
+  getFieldLabelInset,
+  useFieldHasValidationMessage,
+  useFieldLabelPlacement
+} from "@cyclone-ui/field";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   getFormFontScale,
@@ -106,18 +112,20 @@ const TagPickerFrame = styled(XStack, {
     focused: styled.dynamic<boolean>(),
 
     variant: {
-      default: {},
-      floating: {},
-      underline: {
+      outlined: {},
+      underlined: {
+        backgroundColor: "transparent",
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderRadius: 0,
-        boxShadow: "none"
-      }
+        borderRadius: 0
+      },
+      inlined: {}
     },
 
     // Kept apart from Tamagui's special `size` prop, as in `Input`.
     frameSize: styled.dynamic<FormControlSize>(),
+
+    labelPlacement: styled.dynamic<FieldLabelPlacement>(),
 
     disabled: {
       true: {
@@ -130,21 +138,32 @@ const TagPickerFrame = styled(XStack, {
     frameSize: "md",
     focused: false,
     disabled: false,
-    variant: "default"
+    variant: "outlined"
   }
 }).resolve(props => {
-  const variant = (props.variant ?? "default") as InputVariant;
+  const variant = (props.variant ?? "outlined") as InputVariant;
   const sized = isFormControlSize(props.frameSize)
-    ? getInputSize(props.frameSize, { variant })
+    ? getInputSize(props.frameSize, {
+        labelPlacement: props.labelPlacement as FieldLabelPlacement | undefined
+      })
     : undefined;
+  // `FieldNotchedOutline` draws a notched field's border instead; the
+  // padding keeps the content where the border left it.
+  const notched = props.labelPlacement === "border";
 
   return {
-    // Focus ring: the `underline` variant keeps its flat `none` shadow.
+    // Focus ring: underlined and inlined pickers show their underline instead.
     boxShadow:
-      props.focused && variant !== "underline" ? "ringOffset" : undefined,
+      props.focused && (variant === "outlined" || variant === "inlined")
+        ? "ringOffset"
+        : undefined,
     minHeight: sized?.minHeight,
-    // The `underline` variant owns the radius when set.
-    borderRadius: variant === "underline" ? undefined : sized?.borderRadius
+    borderWidth: notched ? 0 : undefined,
+    padding: notched ? 1 : undefined,
+    // underlined pickers round only their top corners; inlined ones own theirs.
+    ...(variant === "outlined" || variant === "inlined"
+      ? { borderRadius: sized?.borderRadius }
+      : {})
   };
 });
 
@@ -222,7 +241,9 @@ const TagPickerItem = ({
       height={geometry.tagHeight}
       paddingVertical={0}
       paddingLeft={geometry.tagPaddingLeft}
-      paddingRight={disabled ? geometry.tagPaddingLeft : geometry.tagPaddingRight}
+      paddingRight={
+        disabled ? geometry.tagPaddingLeft : geometry.tagPaddingRight
+      }
       opacity={disabled ? 0.6 : undefined}>
       <Tag.Text
         fontSize={geometry.fontSize}
@@ -270,9 +291,9 @@ export interface TagPickerOwnProps {
   size?: FormControlSize;
 
   /**
-   * The frame's presentation variant
+   * The frame's display style
    *
-   * @defaultValue "default"
+   * @defaultValue "outlined"
    */
   variant?: InputVariant;
 
@@ -327,7 +348,7 @@ const TagPickerImpl = createStyledHOC(
       name,
       placeholder,
       size = "md",
-      variant = "default",
+      variant = "outlined",
       disabled = false,
       focused = false,
       tagVariant = "secondary",
@@ -339,9 +360,9 @@ const TagPickerImpl = createStyledHOC(
       ...rest
     } = props;
 
-    const [uncontrolledTags, setUncontrolledTags] = useState<
-      readonly string[]
-    >(() => defaultValue ?? []);
+    const [uncontrolledTags, setUncontrolledTags] = useState<readonly string[]>(
+      () => defaultValue ?? []
+    );
     const tags = value ?? uncontrolledTags;
     const [draft, setDraft] = useState("");
     // Tags added from the text box, which spring in as they mount.
@@ -462,6 +483,7 @@ const TagPickerImpl = createStyledHOC(
 
     const active = focused || focusWithin;
     const hasValidationMessage = useFieldHasValidationMessage();
+    const labelPlacement = useFieldLabelPlacement();
     const idleColor = hasValidationMessage ? "accent" : "hairline";
     const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
     const hoverColor = disabled
@@ -469,16 +491,17 @@ const TagPickerImpl = createStyledHOC(
       : active
         ? focusColor
         : "accentHover";
+    const borderColor = `${active ? focusColor : idleColor} hover:${hoverColor} group-hover/field:${hoverColor}`;
 
     return (
       <InputContext.Provider
         // The text box takes its font size and disabled state from the input
-        // context. The frame lays out the `floating` variant itself, so the
-        // text box keeps the default inset.
+        // context. The frame makes room for a floating label itself, so the
+        // text box gets no `labelPlacement`.
         name={name}
         circular={false}
         size={size}
-        variant="default"
+        variant="outlined"
         focused={active}
         hasValidationMessage={hasValidationMessage}
         disabled={disabled}>
@@ -487,18 +510,23 @@ const TagPickerImpl = createStyledHOC(
           {...rest}
           frameSize={size}
           variant={variant}
+          labelPlacement={labelPlacement}
           focused={active}
           disabled={disabled}
-          borderColor={`${active ? focusColor : idleColor} hover:${hoverColor} group-hover/field:${hoverColor}`}
+          borderColor={borderColor}
           onFocus={handleFocus}
           onBlur={handleBlur}
           onMouseDown={handleMouseDown}>
           <TagPickerContent
             gap={geometry.padding}
             padding={geometry.padding}
-            // Floating frames are 3px taller (see `getInputSize`), which
-            // leaves room under the floated label.
-            paddingTop={geometry.padding + (variant === "floating" ? 3 : 0)}>
+            // An underlined picker's content starts flush with its left edge.
+            paddingLeft={variant === "underlined" ? 0 : geometry.padding}
+            // Frames with a floating label are taller (see `getInputSize`),
+            // which leaves room under the floated label.
+            paddingTop={
+              geometry.padding + getFieldLabelInset(labelPlacement, size)
+            }>
             <AnimatePresence>
               {tags.map(tag => (
                 <TagPickerItem
@@ -524,7 +552,11 @@ const TagPickerImpl = createStyledHOC(
                 placeholder={tags.length === 0 ? placeholder : undefined}
                 enterKeyHint="enter"
                 nativePaddingInline={
-                  tags.length === 0 ? geometry.inputInset : geometry.padding
+                  tags.length === 0
+                    ? variant === "underlined"
+                      ? 0
+                      : geometry.inputInset
+                    : geometry.padding
                 }
                 onChange={handleInput}
                 onKeyDown={handleKeyDown}
@@ -532,13 +564,16 @@ const TagPickerImpl = createStyledHOC(
             </View>
           </TagPickerContent>
           {children}
-          {variant === "underline" && (
+          {variant === "underlined" && (
             <ControlUnderline
               bottom={-1}
               focused={active}
               disabled={disabled}
               backgroundColor={disabled ? "accentDisabled" : focusColor}
             />
+          )}
+          {labelPlacement === "border" && (
+            <FieldNotchedOutline borderColor={borderColor} />
           )}
         </TagPickerFrame>
       </InputContext.Provider>

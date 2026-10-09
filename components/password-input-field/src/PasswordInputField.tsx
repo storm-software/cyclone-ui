@@ -138,10 +138,7 @@ const PasswordInputFieldStrength = createStyledHOC(
 
 const PasswordInputFieldGroup = createStyledHOC(
   Field,
-  (
-    { children, theme, validate, variant = "floating", ...props },
-    forwardedRef
-  ) => {
+  ({ children, theme, validate, ...props }, forwardedRef) => {
     const [passwordVisible, setPasswordVisible] = useState(false);
 
     const togglePasswordVisibility = useCallback(() => {
@@ -168,7 +165,6 @@ const PasswordInputFieldGroup = createStyledHOC(
           ref={forwardedRef}
           {...props}
           theme={theme}
-          variant={variant}
           validate={validation}
           width="100%">
           <YStack gap="3xl">

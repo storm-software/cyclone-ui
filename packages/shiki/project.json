@@ -5,7 +5,7 @@
   "sourceRoot": "packages/shiki/src",
   "targets": {
     "build": {
-      "executor": "nx:command",
+      "executor": "nx:run-commands",
       "options": {
         "command": "cp -r packages/shiki/src packages/shiki/dist"
       }

@@ -165,10 +165,11 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
               <View gap="3xl" width="100%">
                 <TextAreaField
                   name="comment"
-                  variant="normal"
                   required={true}
                   placeholder={commentPlaceholder}>
-                  <TextAreaField.Label>{commentLabel}</TextAreaField.Label>
+                  <TextAreaField.Label variant="above">
+                    {commentLabel}
+                  </TextAreaField.Label>
                   <TextAreaField.Control rows={3} />
                 </TextAreaField>
                 <Form.Submit asChild={true}>

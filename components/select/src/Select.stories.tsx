@@ -16,7 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { Field, type FieldProps } from "@cyclone-ui/field";
+import type { FieldProps } from "@cyclone-ui/field";
+import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, waitFor, within } from "storybook/test";
@@ -121,7 +122,9 @@ export const Base: Story = {
     )!;
 
     await userEvent.click(trigger);
-    await userEvent.click(await document.findByRole("option", { name: "Pear" }));
+    await userEvent.click(
+      await document.findByRole("option", { name: "Pear" })
+    );
     await waitFor(async () =>
       expect(document.queryByRole("listbox")).not.toBeInTheDocument()
     );
@@ -138,9 +141,45 @@ export const Base: Story = {
   }
 };
 
-export const Underline: Story = {
+export const OutlinedFloating: Story = {
   args: {
-    variant: "underline"
+    variant: "outlined",
+    labelVariant: "floating"
+  }
+};
+
+export const UnderlinedFloating: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
   }
 };
 

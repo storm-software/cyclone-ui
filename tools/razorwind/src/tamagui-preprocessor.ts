@@ -466,9 +466,9 @@ const REDUCED_BASE_COLOR_STATE_ACTIVE: ColorStateVariant = {
   brightness: 1.105
 };
 
-const REDUCED_THEME_COLOR_STATE_ACTIVE: ColorStateVariant = {
+const HAIRLINE_THEME_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
-  brightness: 1.07875
+  brightness: 1.4
 };
 
 const INCREASED_BASE_COLOR_STATE_ACTIVE: ColorStateVariant = {
@@ -567,7 +567,7 @@ const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
     ],
     theme: [
       THEME_COLOR_STATE_HOVER,
-      REDUCED_THEME_COLOR_STATE_ACTIVE,
+      HAIRLINE_THEME_COLOR_STATE_ACTIVE,
       COLOR_STATE_INACTIVE
     ]
   }
@@ -704,6 +704,76 @@ function applyRingOpacity(
   }
 
   return result;
+}
+
+function ringLayer(color: string, spread: number): Record<string, unknown> {
+  const zero = { value: 0, unit: "px" };
+
+  return {
+    color,
+    offsetX: zero,
+    offsetY: zero,
+    blur: zero,
+    spread: { value: spread, unit: "px" }
+  };
+}
+
+/**
+ * Add the default, subtle, offset, and subtle-offset ring tokens for each
+ * accent theme (e.g. `ring.base`, `ring.base-subtle`, `ring.base-offset`,
+ * `ring.base-subtle-offset`) unless they are already defined.
+ */
+function addMissingRingTokens(dictionary: unknown): unknown {
+  if (!isPlainObject(dictionary) || !isPlainObject(dictionary.color)) {
+    return dictionary;
+  }
+
+  const accent = colorGroup(dictionary.color, "accent");
+  const ring = isPlainObject(dictionary.ring) ? { ...dictionary.ring } : {};
+  let changed = false;
+
+  for (const [name, token] of Object.entries(accent)) {
+    if (!isTokenNode(token) || accentThemeName(token) !== name) {
+      continue;
+    }
+
+    const accentColor = `{color.accent.${name}}`;
+    const gap = ringLayer("{color.surface.elevated}", 3);
+    const variants: Record<string, [string, unknown[]]> = {
+      [name]: [
+        `${name} 3px focus ring with no gap`,
+        [ringLayer(accentColor, 3)]
+      ],
+      [`${name}-subtle`]: [
+        `${name} 1px hairline focus ring with no gap`,
+        [ringLayer(accentColor, 1)]
+      ],
+      [`${name}-offset`]: [
+        `${name} 3px focus ring with a 3px gap`,
+        [gap, ringLayer(accentColor, 6)]
+      ],
+      [`${name}-subtle-offset`]: [
+        `${name} 1px focus ring with a 3px gap`,
+        [gap, ringLayer(accentColor, 4)]
+      ]
+    };
+
+    for (const [key, [description, value]] of Object.entries(variants)) {
+      if (key in ring) {
+        continue;
+      }
+
+      ring[key] = {
+        $description: `Generated ${description}`,
+        $type: "shadow",
+        $value: value,
+        theme: name
+      };
+      changed = true;
+    }
+  }
+
+  return changed ? { ...dictionary, ring } : dictionary;
 }
 
 function isGreyscale(hex: string): boolean {
@@ -1297,7 +1367,9 @@ function injectColorStateVariants(
 export function tamaguiPreprocessor(
   dictionary: PreprocessedTokens
 ): PreprocessedTokens {
-  const converted = walk(dictionary) as PreprocessedTokens;
+  const converted = addMissingRingTokens(
+    walk(dictionary)
+  ) as PreprocessedTokens;
   const withRingOpacity = applyRingOpacity(
     converted,
     converted

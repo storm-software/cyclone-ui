@@ -17,6 +17,8 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
+import type { FieldLabelPlacement } from "@cyclone-ui/field";
+import { getFieldLabelInset, useFieldLabelPlacement } from "@cyclone-ui/field";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import { formSizeVariants } from "@cyclone-ui/helpers";
 import type { InputVariant } from "@cyclone-ui/input";
@@ -52,8 +54,10 @@ const SelectValueFrame = styled(Text, {
       })
     ),
 
-    // Styled by the `.resolve` below because `floating` depends on `size`.
     variant: styled.dynamic<InputVariant>(),
+
+    // Styled by the `.resolve` below because the inset depends on `size`.
+    labelPlacement: styled.dynamic<FieldLabelPlacement>(),
 
     placeholding: {
       true: {
@@ -74,19 +78,28 @@ const SelectValueFrame = styled(Text, {
   } as const,
   defaultVariants: {
     size: "md",
-    variant: "default",
+    variant: "outlined",
     disabled: false,
     placeholding: false
   }
-}).resolve(props =>
-  props.variant === "floating"
+}).resolve(props => ({
+  // An underlined control's text starts flush with its left edge.
+  paddingLeft: props.variant === "underlined" ? 0 : undefined,
+  ...(props.labelPlacement
     ? {
-        paddingTop: getSelectContentSize(
-          props.size as FormControlSize | undefined
-        ).valuePaddingLeft
+        // Drop the text under a floating label by the extra height an inset
+        // label adds over a border one (see `getFieldLabelInset`).
+        paddingTop:
+          getSelectContentSize(props.size as FormControlSize | undefined)
+            .valuePaddingLeft +
+          getFieldLabelInset(
+            props.labelPlacement as FieldLabelPlacement,
+            props.size as FormControlSize | undefined
+          ) -
+          getFieldLabelInset("border")
       }
-    : undefined
-);
+    : undefined)
+}));
 
 export const SelectValue = createStyledHOC(
   SelectValueFrame,
@@ -101,6 +114,7 @@ export const SelectValue = createStyledHOC(
     forwardedRef
   ) => {
     const { disabled, size, value, variant } = SelectContext.useStyledContext();
+    const labelPlacement = useFieldLabelPlacement();
     // Without children, the selected value itself, then the placeholder.
     const content = children ?? (value || placeholder);
 
@@ -112,6 +126,7 @@ export const SelectValue = createStyledHOC(
           {...props}
           size={size}
           variant={variant}
+          labelPlacement={labelPlacement}
           disabled={disabled}
           placeholding={!!placeholder && content === placeholder && !disabled}>
           <BodyText

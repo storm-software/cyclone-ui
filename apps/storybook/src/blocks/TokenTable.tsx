@@ -2555,9 +2555,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#5f6063",
+      value: "#898a8e",
       cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)",
+      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% brighter)",
       theme: undefined,
       typography: false
     },
@@ -5325,330 +5325,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.base",
-      type: "shadow",
-      value: "0px 0px 0px 3px #fafafa14",
-      cssVar: "--cu-ring-base",
-      description: "Neutral 3px focus ring in the neutral accent (`accent.base`), drawn flush against the element with no gap. Exposed as the theme value `ring`. Container uses it for its focus-visible state, where an offset gap would clash with the surrounding layout.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #fafafa14",
-      cssVar: "--cu-ring-base-subtle",
-      description: "Neutral 1px hairline focus ring in the neutral accent (`accent.base`) with no gap. Exposed as the theme value `ringSubtle`. Suited to dense or text-level elements where a 3px ring is too heavy; TableOfContents uses it to mark the focused entry.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #fafafa14",
-      cssVar: "--cu-ring-base-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the neutral accent (`accent.base`), so the ring stays legible against the control's own border. Exposed as the theme value `ringOffset`. This is the default focus-visible ring for Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader, and the hover/press ring for `ringed` Buttons.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #fafafa14",
-      cssVar: "--cu-ring-base-subtle-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the neutral accent (`accent.base`). Exposed as the theme value `ringSubtleOffset`. A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #3be4be26",
-      cssVar: "--cu-ring-brand",
-      description: "Brand 3px focus ring in the brand accent (`accent.brand`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Brand 1px hairline focus ring in the brand accent (`accent.brand`) with no gap. Resolves from the theme value `ringSubtle` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #3be4be26",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the brand accent (`accent.brand`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the brand accent (`accent.brand`). Resolves from the theme value `ringSubtleOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger",
-      type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
-      cssVar: "--cu-ring-danger",
-      description: "Danger 3px focus ring in the danger accent (`accent.danger`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
-      cssVar: "--cu-ring-danger-subtle",
-      description: "Danger 1px hairline focus ring in the danger accent (`accent.danger`) with no gap. Resolves from the theme value `ringSubtle` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
-      cssVar: "--cu-ring-danger-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the danger accent (`accent.danger`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
-      cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the danger accent (`accent.danger`). Resolves from the theme value `ringSubtleOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning",
-      type: "shadow",
-      value: "0px 0px 0px 3px #f7ac2326",
-      cssVar: "--cu-ring-warning",
-      description: "Warning 3px focus ring in the warning accent (`accent.warning`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #f7ac2326",
-      cssVar: "--cu-ring-warning-subtle",
-      description: "Warning 1px hairline focus ring in the warning accent (`accent.warning`) with no gap. Resolves from the theme value `ringSubtle` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f7ac2326",
-      cssVar: "--cu-ring-warning-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the warning accent (`accent.warning`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f7ac2326",
-      cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the warning accent (`accent.warning`). Resolves from the theme value `ringSubtleOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-success",
-      description: "Success 3px focus ring in the success accent (`accent.success`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Success 1px hairline focus ring in the success accent (`accent.success`) with no gap. Resolves from the theme value `ringSubtle` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-success-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the success accent (`accent.success`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the success accent (`accent.success`). Resolves from the theme value `ringSubtleOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info",
-      type: "shadow",
-      value: "0px 0px 0px 3px #4d8eff26",
-      cssVar: "--cu-ring-info",
-      description: "Info 3px focus ring in the info accent (`accent.info`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #4d8eff26",
-      cssVar: "--cu-ring-info-subtle",
-      description: "Info 1px hairline focus ring in the info accent (`accent.info`) with no gap. Resolves from the theme value `ringSubtle` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #4d8eff26",
-      cssVar: "--cu-ring-info-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the info accent (`accent.info`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #4d8eff26",
-      cssVar: "--cu-ring-info-subtle-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the info accent (`accent.info`). Resolves from the theme value `ringSubtleOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery",
-      type: "shadow",
-      value: "0px 0px 0px 3px #9277da26",
-      cssVar: "--cu-ring-discovery",
-      description: "Discovery 3px focus ring in the discovery accent (`accent.discovery`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #9277da26",
-      cssVar: "--cu-ring-discovery-subtle",
-      description: "Discovery 1px hairline focus ring in the discovery accent (`accent.discovery`) with no gap. Resolves from the theme value `ringSubtle` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #9277da26",
-      cssVar: "--cu-ring-discovery-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the discovery accent (`accent.discovery`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #9277da26",
-      cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the discovery accent (`accent.discovery`). Resolves from the theme value `ringSubtleOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-positive",
-      description: "Positive 3px focus ring in the positive accent (`accent.positive`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Positive 1px hairline focus ring in the positive accent (`accent.positive`) with no gap. Resolves from the theme value `ringSubtle` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the positive accent (`accent.positive`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the positive accent (`accent.positive`). Resolves from the theme value `ringSubtleOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
-      cssVar: "--cu-ring-negative",
-      description: "Negative 3px focus ring in the negative accent (`accent.negative`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Negative 1px hairline focus ring in the negative accent (`accent.negative`) with no gap. Resolves from the theme value `ringSubtle` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the negative accent (`accent.negative`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the negative accent (`accent.negative`). Resolves from the theme value `ringSubtleOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "typography.display-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -5800,6 +5476,330 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       description: "Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion.",
       theme: undefined,
       typography: true
+    },
+    {
+      path: "ring.base",
+      type: "shadow",
+      value: "0px 0px 0px 3px #fafafa14",
+      cssVar: "--cu-ring-base",
+      description: "Generated base 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #fafafa14",
+      cssVar: "--cu-ring-base-subtle",
+      description: "Generated base 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #fafafa14",
+      cssVar: "--cu-ring-base-offset",
+      description: "Generated base 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #fafafa14",
+      cssVar: "--cu-ring-base-subtle-offset",
+      description: "Generated base 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #3be4be26",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #3be4be26",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger",
+      type: "shadow",
+      value: "0px 0px 0px 3px #cf2d5626",
+      cssVar: "--cu-ring-danger",
+      description: "Generated danger 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #cf2d5626",
+      cssVar: "--cu-ring-danger-subtle",
+      description: "Generated danger 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
+      cssVar: "--cu-ring-danger-offset",
+      description: "Generated danger 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
+      cssVar: "--cu-ring-danger-subtle-offset",
+      description: "Generated danger 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative",
+      type: "shadow",
+      value: "0px 0px 0px 3px #cf2d5626",
+      cssVar: "--cu-ring-negative",
+      description: "Generated negative 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #cf2d5626",
+      cssVar: "--cu-ring-negative-subtle",
+      description: "Generated negative 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
+      cssVar: "--cu-ring-negative-offset",
+      description: "Generated negative 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
+      cssVar: "--cu-ring-negative-subtle-offset",
+      description: "Generated negative 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning",
+      type: "shadow",
+      value: "0px 0px 0px 3px #f7ac2326",
+      cssVar: "--cu-ring-warning",
+      description: "Generated warning 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #f7ac2326",
+      cssVar: "--cu-ring-warning-subtle",
+      description: "Generated warning 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f7ac2326",
+      cssVar: "--cu-ring-warning-offset",
+      description: "Generated warning 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f7ac2326",
+      cssVar: "--cu-ring-warning-subtle-offset",
+      description: "Generated warning 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #45c79126",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #45c79126",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive",
+      type: "shadow",
+      value: "0px 0px 0px 3px #45c79126",
+      cssVar: "--cu-ring-positive",
+      description: "Generated positive 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #45c79126",
+      cssVar: "--cu-ring-positive-subtle",
+      description: "Generated positive 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
+      cssVar: "--cu-ring-positive-offset",
+      description: "Generated positive 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
+      cssVar: "--cu-ring-positive-subtle-offset",
+      description: "Generated positive 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info",
+      type: "shadow",
+      value: "0px 0px 0px 3px #4d8eff26",
+      cssVar: "--cu-ring-info",
+      description: "Generated info 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #4d8eff26",
+      cssVar: "--cu-ring-info-subtle",
+      description: "Generated info 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #4d8eff26",
+      cssVar: "--cu-ring-info-offset",
+      description: "Generated info 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #4d8eff26",
+      cssVar: "--cu-ring-info-subtle-offset",
+      description: "Generated info 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery",
+      type: "shadow",
+      value: "0px 0px 0px 3px #9277da26",
+      cssVar: "--cu-ring-discovery",
+      description: "Generated discovery 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #9277da26",
+      cssVar: "--cu-ring-discovery-subtle",
+      description: "Generated discovery 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #9277da26",
+      cssVar: "--cu-ring-discovery-offset",
+      description: "Generated discovery 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #9277da26",
+      cssVar: "--cu-ring-discovery-subtle-offset",
+      description: "Generated discovery 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
     }
   ],
   "darkDimmed": [
@@ -8344,9 +8344,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#696a6b",
+      value: "#868789",
       cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)",
+      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% brighter)",
       theme: undefined,
       typography: false
     },
@@ -11114,330 +11114,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.base",
-      type: "shadow",
-      value: "0px 0px 0px 3px #fafafa14",
-      cssVar: "--cu-ring-base",
-      description: "Neutral 3px focus ring in the neutral accent (`accent.base`), drawn flush against the element with no gap. Exposed as the theme value `ring`. Container uses it for its focus-visible state, where an offset gap would clash with the surrounding layout.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #fafafa14",
-      cssVar: "--cu-ring-base-subtle",
-      description: "Neutral 1px hairline focus ring in the neutral accent (`accent.base`) with no gap. Exposed as the theme value `ringSubtle`. Suited to dense or text-level elements where a 3px ring is too heavy; TableOfContents uses it to mark the focused entry.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #fafafa14",
-      cssVar: "--cu-ring-base-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the neutral accent (`accent.base`), so the ring stays legible against the control's own border. Exposed as the theme value `ringOffset`. This is the default focus-visible ring for Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader, and the hover/press ring for `ringed` Buttons.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #fafafa14",
-      cssVar: "--cu-ring-base-subtle-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the neutral accent (`accent.base`). Exposed as the theme value `ringSubtleOffset`. A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #3be4be26",
-      cssVar: "--cu-ring-brand",
-      description: "Brand 3px focus ring in the brand accent (`accent.brand`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Brand 1px hairline focus ring in the brand accent (`accent.brand`) with no gap. Resolves from the theme value `ringSubtle` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #3be4be26",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the brand accent (`accent.brand`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the brand accent (`accent.brand`). Resolves from the theme value `ringSubtleOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger",
-      type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
-      cssVar: "--cu-ring-danger",
-      description: "Danger 3px focus ring in the danger accent (`accent.danger`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
-      cssVar: "--cu-ring-danger-subtle",
-      description: "Danger 1px hairline focus ring in the danger accent (`accent.danger`) with no gap. Resolves from the theme value `ringSubtle` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
-      cssVar: "--cu-ring-danger-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the danger accent (`accent.danger`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
-      cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the danger accent (`accent.danger`). Resolves from the theme value `ringSubtleOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning",
-      type: "shadow",
-      value: "0px 0px 0px 3px #f7ac2326",
-      cssVar: "--cu-ring-warning",
-      description: "Warning 3px focus ring in the warning accent (`accent.warning`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #f7ac2326",
-      cssVar: "--cu-ring-warning-subtle",
-      description: "Warning 1px hairline focus ring in the warning accent (`accent.warning`) with no gap. Resolves from the theme value `ringSubtle` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f7ac2326",
-      cssVar: "--cu-ring-warning-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the warning accent (`accent.warning`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f7ac2326",
-      cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the warning accent (`accent.warning`). Resolves from the theme value `ringSubtleOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-success",
-      description: "Success 3px focus ring in the success accent (`accent.success`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Success 1px hairline focus ring in the success accent (`accent.success`) with no gap. Resolves from the theme value `ringSubtle` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-success-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the success accent (`accent.success`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the success accent (`accent.success`). Resolves from the theme value `ringSubtleOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info",
-      type: "shadow",
-      value: "0px 0px 0px 3px #4d8eff26",
-      cssVar: "--cu-ring-info",
-      description: "Info 3px focus ring in the info accent (`accent.info`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #4d8eff26",
-      cssVar: "--cu-ring-info-subtle",
-      description: "Info 1px hairline focus ring in the info accent (`accent.info`) with no gap. Resolves from the theme value `ringSubtle` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #4d8eff26",
-      cssVar: "--cu-ring-info-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the info accent (`accent.info`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #4d8eff26",
-      cssVar: "--cu-ring-info-subtle-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the info accent (`accent.info`). Resolves from the theme value `ringSubtleOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery",
-      type: "shadow",
-      value: "0px 0px 0px 3px #9277da26",
-      cssVar: "--cu-ring-discovery",
-      description: "Discovery 3px focus ring in the discovery accent (`accent.discovery`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #9277da26",
-      cssVar: "--cu-ring-discovery-subtle",
-      description: "Discovery 1px hairline focus ring in the discovery accent (`accent.discovery`) with no gap. Resolves from the theme value `ringSubtle` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #9277da26",
-      cssVar: "--cu-ring-discovery-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the discovery accent (`accent.discovery`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #9277da26",
-      cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the discovery accent (`accent.discovery`). Resolves from the theme value `ringSubtleOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-positive",
-      description: "Positive 3px focus ring in the positive accent (`accent.positive`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Positive 1px hairline focus ring in the positive accent (`accent.positive`) with no gap. Resolves from the theme value `ringSubtle` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the positive accent (`accent.positive`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the positive accent (`accent.positive`). Resolves from the theme value `ringSubtleOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
-      cssVar: "--cu-ring-negative",
-      description: "Negative 3px focus ring in the negative accent (`accent.negative`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Negative 1px hairline focus ring in the negative accent (`accent.negative`) with no gap. Resolves from the theme value `ringSubtle` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the negative accent (`accent.negative`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the negative accent (`accent.negative`). Resolves from the theme value `ringSubtleOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "typography.display-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -11589,6 +11265,330 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       description: "Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion.",
       theme: undefined,
       typography: true
+    },
+    {
+      path: "ring.base",
+      type: "shadow",
+      value: "0px 0px 0px 3px #fafafa14",
+      cssVar: "--cu-ring-base",
+      description: "Generated base 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #fafafa14",
+      cssVar: "--cu-ring-base-subtle",
+      description: "Generated base 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #fafafa14",
+      cssVar: "--cu-ring-base-offset",
+      description: "Generated base 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #fafafa14",
+      cssVar: "--cu-ring-base-subtle-offset",
+      description: "Generated base 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #3be4be26",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #3be4be26",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger",
+      type: "shadow",
+      value: "0px 0px 0px 3px #cf2d5626",
+      cssVar: "--cu-ring-danger",
+      description: "Generated danger 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #cf2d5626",
+      cssVar: "--cu-ring-danger-subtle",
+      description: "Generated danger 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
+      cssVar: "--cu-ring-danger-offset",
+      description: "Generated danger 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
+      cssVar: "--cu-ring-danger-subtle-offset",
+      description: "Generated danger 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative",
+      type: "shadow",
+      value: "0px 0px 0px 3px #cf2d5626",
+      cssVar: "--cu-ring-negative",
+      description: "Generated negative 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #cf2d5626",
+      cssVar: "--cu-ring-negative-subtle",
+      description: "Generated negative 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
+      cssVar: "--cu-ring-negative-offset",
+      description: "Generated negative 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
+      cssVar: "--cu-ring-negative-subtle-offset",
+      description: "Generated negative 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning",
+      type: "shadow",
+      value: "0px 0px 0px 3px #f7ac2326",
+      cssVar: "--cu-ring-warning",
+      description: "Generated warning 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #f7ac2326",
+      cssVar: "--cu-ring-warning-subtle",
+      description: "Generated warning 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f7ac2326",
+      cssVar: "--cu-ring-warning-offset",
+      description: "Generated warning 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f7ac2326",
+      cssVar: "--cu-ring-warning-subtle-offset",
+      description: "Generated warning 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #45c79126",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #45c79126",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive",
+      type: "shadow",
+      value: "0px 0px 0px 3px #45c79126",
+      cssVar: "--cu-ring-positive",
+      description: "Generated positive 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #45c79126",
+      cssVar: "--cu-ring-positive-subtle",
+      description: "Generated positive 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
+      cssVar: "--cu-ring-positive-offset",
+      description: "Generated positive 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
+      cssVar: "--cu-ring-positive-subtle-offset",
+      description: "Generated positive 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info",
+      type: "shadow",
+      value: "0px 0px 0px 3px #4d8eff26",
+      cssVar: "--cu-ring-info",
+      description: "Generated info 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #4d8eff26",
+      cssVar: "--cu-ring-info-subtle",
+      description: "Generated info 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #4d8eff26",
+      cssVar: "--cu-ring-info-offset",
+      description: "Generated info 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #4d8eff26",
+      cssVar: "--cu-ring-info-subtle-offset",
+      description: "Generated info 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery",
+      type: "shadow",
+      value: "0px 0px 0px 3px #9277da26",
+      cssVar: "--cu-ring-discovery",
+      description: "Generated discovery 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #9277da26",
+      cssVar: "--cu-ring-discovery-subtle",
+      description: "Generated discovery 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #9277da26",
+      cssVar: "--cu-ring-discovery-offset",
+      description: "Generated discovery 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #9277da26",
+      cssVar: "--cu-ring-discovery-subtle-offset",
+      description: "Generated discovery 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
     }
   ],
   "darkHighContrast": [
@@ -14133,9 +14133,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#4d505a",
+      value: "#888c9a",
       cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)",
+      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% brighter)",
       theme: undefined,
       typography: false
     },
@@ -16903,330 +16903,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.base",
-      type: "shadow",
-      value: "0px 0px 0px 3px #fafafa14",
-      cssVar: "--cu-ring-base",
-      description: "Neutral 3px focus ring in the neutral accent (`accent.base`), drawn flush against the element with no gap. Exposed as the theme value `ring`. Container uses it for its focus-visible state, where an offset gap would clash with the surrounding layout.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #fafafa14",
-      cssVar: "--cu-ring-base-subtle",
-      description: "Neutral 1px hairline focus ring in the neutral accent (`accent.base`) with no gap. Exposed as the theme value `ringSubtle`. Suited to dense or text-level elements where a 3px ring is too heavy; TableOfContents uses it to mark the focused entry.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #fafafa14",
-      cssVar: "--cu-ring-base-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the neutral accent (`accent.base`), so the ring stays legible against the control's own border. Exposed as the theme value `ringOffset`. This is the default focus-visible ring for Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader, and the hover/press ring for `ringed` Buttons.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #fafafa14",
-      cssVar: "--cu-ring-base-subtle-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the neutral accent (`accent.base`). Exposed as the theme value `ringSubtleOffset`. A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #3be4be26",
-      cssVar: "--cu-ring-brand",
-      description: "Brand 3px focus ring in the brand accent (`accent.brand`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Brand 1px hairline focus ring in the brand accent (`accent.brand`) with no gap. Resolves from the theme value `ringSubtle` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #3be4be26",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the brand accent (`accent.brand`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the brand accent (`accent.brand`). Resolves from the theme value `ringSubtleOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger",
-      type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
-      cssVar: "--cu-ring-danger",
-      description: "Danger 3px focus ring in the danger accent (`accent.danger`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
-      cssVar: "--cu-ring-danger-subtle",
-      description: "Danger 1px hairline focus ring in the danger accent (`accent.danger`) with no gap. Resolves from the theme value `ringSubtle` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
-      cssVar: "--cu-ring-danger-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the danger accent (`accent.danger`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
-      cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the danger accent (`accent.danger`). Resolves from the theme value `ringSubtleOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning",
-      type: "shadow",
-      value: "0px 0px 0px 3px #f7ac2326",
-      cssVar: "--cu-ring-warning",
-      description: "Warning 3px focus ring in the warning accent (`accent.warning`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #f7ac2326",
-      cssVar: "--cu-ring-warning-subtle",
-      description: "Warning 1px hairline focus ring in the warning accent (`accent.warning`) with no gap. Resolves from the theme value `ringSubtle` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f7ac2326",
-      cssVar: "--cu-ring-warning-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the warning accent (`accent.warning`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f7ac2326",
-      cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the warning accent (`accent.warning`). Resolves from the theme value `ringSubtleOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-success",
-      description: "Success 3px focus ring in the success accent (`accent.success`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Success 1px hairline focus ring in the success accent (`accent.success`) with no gap. Resolves from the theme value `ringSubtle` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-success-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the success accent (`accent.success`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the success accent (`accent.success`). Resolves from the theme value `ringSubtleOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info",
-      type: "shadow",
-      value: "0px 0px 0px 3px #4d8eff26",
-      cssVar: "--cu-ring-info",
-      description: "Info 3px focus ring in the info accent (`accent.info`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #4d8eff26",
-      cssVar: "--cu-ring-info-subtle",
-      description: "Info 1px hairline focus ring in the info accent (`accent.info`) with no gap. Resolves from the theme value `ringSubtle` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #4d8eff26",
-      cssVar: "--cu-ring-info-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the info accent (`accent.info`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #4d8eff26",
-      cssVar: "--cu-ring-info-subtle-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the info accent (`accent.info`). Resolves from the theme value `ringSubtleOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery",
-      type: "shadow",
-      value: "0px 0px 0px 3px #9277da26",
-      cssVar: "--cu-ring-discovery",
-      description: "Discovery 3px focus ring in the discovery accent (`accent.discovery`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #9277da26",
-      cssVar: "--cu-ring-discovery-subtle",
-      description: "Discovery 1px hairline focus ring in the discovery accent (`accent.discovery`) with no gap. Resolves from the theme value `ringSubtle` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #9277da26",
-      cssVar: "--cu-ring-discovery-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the discovery accent (`accent.discovery`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #9277da26",
-      cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the discovery accent (`accent.discovery`). Resolves from the theme value `ringSubtleOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-positive",
-      description: "Positive 3px focus ring in the positive accent (`accent.positive`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Positive 1px hairline focus ring in the positive accent (`accent.positive`) with no gap. Resolves from the theme value `ringSubtle` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the positive accent (`accent.positive`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the positive accent (`accent.positive`). Resolves from the theme value `ringSubtleOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
-      cssVar: "--cu-ring-negative",
-      description: "Negative 3px focus ring in the negative accent (`accent.negative`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Negative 1px hairline focus ring in the negative accent (`accent.negative`) with no gap. Resolves from the theme value `ringSubtle` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the negative accent (`accent.negative`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the negative accent (`accent.negative`). Resolves from the theme value `ringSubtleOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "typography.display-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -17378,6 +17054,330 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       description: "Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion.",
       theme: undefined,
       typography: true
+    },
+    {
+      path: "ring.base",
+      type: "shadow",
+      value: "0px 0px 0px 3px #fafafa14",
+      cssVar: "--cu-ring-base",
+      description: "Generated base 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #fafafa14",
+      cssVar: "--cu-ring-base-subtle",
+      description: "Generated base 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #fafafa14",
+      cssVar: "--cu-ring-base-offset",
+      description: "Generated base 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #fafafa14",
+      cssVar: "--cu-ring-base-subtle-offset",
+      description: "Generated base 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #3be4be26",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #3be4be26",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger",
+      type: "shadow",
+      value: "0px 0px 0px 3px #cf2d5626",
+      cssVar: "--cu-ring-danger",
+      description: "Generated danger 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #cf2d5626",
+      cssVar: "--cu-ring-danger-subtle",
+      description: "Generated danger 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
+      cssVar: "--cu-ring-danger-offset",
+      description: "Generated danger 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
+      cssVar: "--cu-ring-danger-subtle-offset",
+      description: "Generated danger 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative",
+      type: "shadow",
+      value: "0px 0px 0px 3px #cf2d5626",
+      cssVar: "--cu-ring-negative",
+      description: "Generated negative 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #cf2d5626",
+      cssVar: "--cu-ring-negative-subtle",
+      description: "Generated negative 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
+      cssVar: "--cu-ring-negative-offset",
+      description: "Generated negative 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
+      cssVar: "--cu-ring-negative-subtle-offset",
+      description: "Generated negative 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning",
+      type: "shadow",
+      value: "0px 0px 0px 3px #f7ac2326",
+      cssVar: "--cu-ring-warning",
+      description: "Generated warning 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #f7ac2326",
+      cssVar: "--cu-ring-warning-subtle",
+      description: "Generated warning 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f7ac2326",
+      cssVar: "--cu-ring-warning-offset",
+      description: "Generated warning 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f7ac2326",
+      cssVar: "--cu-ring-warning-subtle-offset",
+      description: "Generated warning 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #45c79126",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #45c79126",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive",
+      type: "shadow",
+      value: "0px 0px 0px 3px #45c79126",
+      cssVar: "--cu-ring-positive",
+      description: "Generated positive 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #45c79126",
+      cssVar: "--cu-ring-positive-subtle",
+      description: "Generated positive 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
+      cssVar: "--cu-ring-positive-offset",
+      description: "Generated positive 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
+      cssVar: "--cu-ring-positive-subtle-offset",
+      description: "Generated positive 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info",
+      type: "shadow",
+      value: "0px 0px 0px 3px #4d8eff26",
+      cssVar: "--cu-ring-info",
+      description: "Generated info 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #4d8eff26",
+      cssVar: "--cu-ring-info-subtle",
+      description: "Generated info 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #4d8eff26",
+      cssVar: "--cu-ring-info-offset",
+      description: "Generated info 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #4d8eff26",
+      cssVar: "--cu-ring-info-subtle-offset",
+      description: "Generated info 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery",
+      type: "shadow",
+      value: "0px 0px 0px 3px #9277da26",
+      cssVar: "--cu-ring-discovery",
+      description: "Generated discovery 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #9277da26",
+      cssVar: "--cu-ring-discovery-subtle",
+      description: "Generated discovery 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #9277da26",
+      cssVar: "--cu-ring-discovery-offset",
+      description: "Generated discovery 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #9277da26",
+      cssVar: "--cu-ring-discovery-subtle-offset",
+      description: "Generated discovery 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
     }
   ],
   "light": [
@@ -19922,9 +19922,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#9d9d9e",
+      value: "#565657",
       cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker)",
+      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -22692,330 +22692,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.base",
-      type: "shadow",
-      value: "0px 0px 0px 3px #15151814",
-      cssVar: "--cu-ring-base",
-      description: "Neutral 3px focus ring in the neutral accent (`accent.base`), drawn flush against the element with no gap. Exposed as the theme value `ring`. Container uses it for its focus-visible state, where an offset gap would clash with the surrounding layout.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #15151814",
-      cssVar: "--cu-ring-base-subtle",
-      description: "Neutral 1px hairline focus ring in the neutral accent (`accent.base`) with no gap. Exposed as the theme value `ringSubtle`. Suited to dense or text-level elements where a 3px ring is too heavy; TableOfContents uses it to mark the focused entry.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151814",
-      cssVar: "--cu-ring-base-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the neutral accent (`accent.base`), so the ring stays legible against the control's own border. Exposed as the theme value `ringOffset`. This is the default focus-visible ring for Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader, and the hover/press ring for `ringed` Buttons.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151814",
-      cssVar: "--cu-ring-base-subtle-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the neutral accent (`accent.base`). Exposed as the theme value `ringSubtleOffset`. A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #1fb2a626",
-      cssVar: "--cu-ring-brand",
-      description: "Brand 3px focus ring in the brand accent (`accent.brand`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Brand 1px hairline focus ring in the brand accent (`accent.brand`) with no gap. Resolves from the theme value `ringSubtle` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a626",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the brand accent (`accent.brand`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the brand accent (`accent.brand`). Resolves from the theme value `ringSubtleOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger",
-      type: "shadow",
-      value: "0px 0px 0px 3px #8e223e26",
-      cssVar: "--cu-ring-danger",
-      description: "Danger 3px focus ring in the danger accent (`accent.danger`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #8e223e26",
-      cssVar: "--cu-ring-danger-subtle",
-      description: "Danger 1px hairline focus ring in the danger accent (`accent.danger`) with no gap. Resolves from the theme value `ringSubtle` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
-      cssVar: "--cu-ring-danger-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the danger accent (`accent.danger`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
-      cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the danger accent (`accent.danger`). Resolves from the theme value `ringSubtleOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning",
-      type: "shadow",
-      value: "0px 0px 0px 3px #76541726",
-      cssVar: "--cu-ring-warning",
-      description: "Warning 3px focus ring in the warning accent (`accent.warning`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #76541726",
-      cssVar: "--cu-ring-warning-subtle",
-      description: "Warning 1px hairline focus ring in the warning accent (`accent.warning`) with no gap. Resolves from the theme value `ringSubtle` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #76541726",
-      cssVar: "--cu-ring-warning-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the warning accent (`accent.warning`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #76541726",
-      cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the warning accent (`accent.warning`). Resolves from the theme value `ringSubtleOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-success",
-      description: "Success 3px focus ring in the success accent (`accent.success`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Success 1px hairline focus ring in the success accent (`accent.success`) with no gap. Resolves from the theme value `ringSubtle` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-success-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the success accent (`accent.success`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the success accent (`accent.success`). Resolves from the theme value `ringSubtleOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info",
-      type: "shadow",
-      value: "0px 0px 0px 3px #2055b326",
-      cssVar: "--cu-ring-info",
-      description: "Info 3px focus ring in the info accent (`accent.info`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #2055b326",
-      cssVar: "--cu-ring-info-subtle",
-      description: "Info 1px hairline focus ring in the info accent (`accent.info`) with no gap. Resolves from the theme value `ringSubtle` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b326",
-      cssVar: "--cu-ring-info-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the info accent (`accent.info`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b326",
-      cssVar: "--cu-ring-info-subtle-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the info accent (`accent.info`). Resolves from the theme value `ringSubtleOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery",
-      type: "shadow",
-      value: "0px 0px 0px 3px #59439526",
-      cssVar: "--cu-ring-discovery",
-      description: "Discovery 3px focus ring in the discovery accent (`accent.discovery`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #59439526",
-      cssVar: "--cu-ring-discovery-subtle",
-      description: "Discovery 1px hairline focus ring in the discovery accent (`accent.discovery`) with no gap. Resolves from the theme value `ringSubtle` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #59439526",
-      cssVar: "--cu-ring-discovery-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the discovery accent (`accent.discovery`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #59439526",
-      cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the discovery accent (`accent.discovery`). Resolves from the theme value `ringSubtleOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-positive",
-      description: "Positive 3px focus ring in the positive accent (`accent.positive`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Positive 1px hairline focus ring in the positive accent (`accent.positive`) with no gap. Resolves from the theme value `ringSubtle` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the positive accent (`accent.positive`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the positive accent (`accent.positive`). Resolves from the theme value `ringSubtleOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #8e223e26",
-      cssVar: "--cu-ring-negative",
-      description: "Negative 3px focus ring in the negative accent (`accent.negative`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Negative 1px hairline focus ring in the negative accent (`accent.negative`) with no gap. Resolves from the theme value `ringSubtle` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the negative accent (`accent.negative`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the negative accent (`accent.negative`). Resolves from the theme value `ringSubtleOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "typography.display-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -23167,6 +22843,330 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       description: "Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion.",
       theme: undefined,
       typography: true
+    },
+    {
+      path: "ring.base",
+      type: "shadow",
+      value: "0px 0px 0px 3px #15151814",
+      cssVar: "--cu-ring-base",
+      description: "Generated base 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #15151814",
+      cssVar: "--cu-ring-base-subtle",
+      description: "Generated base 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151814",
+      cssVar: "--cu-ring-base-offset",
+      description: "Generated base 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151814",
+      cssVar: "--cu-ring-base-subtle-offset",
+      description: "Generated base 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #1fb2a626",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a626",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger",
+      type: "shadow",
+      value: "0px 0px 0px 3px #8e223e26",
+      cssVar: "--cu-ring-danger",
+      description: "Generated danger 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #8e223e26",
+      cssVar: "--cu-ring-danger-subtle",
+      description: "Generated danger 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
+      cssVar: "--cu-ring-danger-offset",
+      description: "Generated danger 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
+      cssVar: "--cu-ring-danger-subtle-offset",
+      description: "Generated danger 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative",
+      type: "shadow",
+      value: "0px 0px 0px 3px #8e223e26",
+      cssVar: "--cu-ring-negative",
+      description: "Generated negative 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #8e223e26",
+      cssVar: "--cu-ring-negative-subtle",
+      description: "Generated negative 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
+      cssVar: "--cu-ring-negative-offset",
+      description: "Generated negative 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
+      cssVar: "--cu-ring-negative-subtle-offset",
+      description: "Generated negative 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning",
+      type: "shadow",
+      value: "0px 0px 0px 3px #76541726",
+      cssVar: "--cu-ring-warning",
+      description: "Generated warning 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #76541726",
+      cssVar: "--cu-ring-warning-subtle",
+      description: "Generated warning 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #76541726",
+      cssVar: "--cu-ring-warning-offset",
+      description: "Generated warning 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #76541726",
+      cssVar: "--cu-ring-warning-subtle-offset",
+      description: "Generated warning 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #216b5326",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #216b5326",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive",
+      type: "shadow",
+      value: "0px 0px 0px 3px #216b5326",
+      cssVar: "--cu-ring-positive",
+      description: "Generated positive 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #216b5326",
+      cssVar: "--cu-ring-positive-subtle",
+      description: "Generated positive 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
+      cssVar: "--cu-ring-positive-offset",
+      description: "Generated positive 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
+      cssVar: "--cu-ring-positive-subtle-offset",
+      description: "Generated positive 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info",
+      type: "shadow",
+      value: "0px 0px 0px 3px #2055b326",
+      cssVar: "--cu-ring-info",
+      description: "Generated info 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #2055b326",
+      cssVar: "--cu-ring-info-subtle",
+      description: "Generated info 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b326",
+      cssVar: "--cu-ring-info-offset",
+      description: "Generated info 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b326",
+      cssVar: "--cu-ring-info-subtle-offset",
+      description: "Generated info 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery",
+      type: "shadow",
+      value: "0px 0px 0px 3px #59439526",
+      cssVar: "--cu-ring-discovery",
+      description: "Generated discovery 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #59439526",
+      cssVar: "--cu-ring-discovery-subtle",
+      description: "Generated discovery 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #59439526",
+      cssVar: "--cu-ring-discovery-offset",
+      description: "Generated discovery 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #59439526",
+      cssVar: "--cu-ring-discovery-subtle-offset",
+      description: "Generated discovery 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
     }
   ],
   "lightDimmed": [
@@ -25711,9 +25711,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#949495",
+      value: "#626263",
       cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker)",
+      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -28481,330 +28481,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.base",
-      type: "shadow",
-      value: "0px 0px 0px 3px #15151814",
-      cssVar: "--cu-ring-base",
-      description: "Neutral 3px focus ring in the neutral accent (`accent.base`), drawn flush against the element with no gap. Exposed as the theme value `ring`. Container uses it for its focus-visible state, where an offset gap would clash with the surrounding layout.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #15151814",
-      cssVar: "--cu-ring-base-subtle",
-      description: "Neutral 1px hairline focus ring in the neutral accent (`accent.base`) with no gap. Exposed as the theme value `ringSubtle`. Suited to dense or text-level elements where a 3px ring is too heavy; TableOfContents uses it to mark the focused entry.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151814",
-      cssVar: "--cu-ring-base-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the neutral accent (`accent.base`), so the ring stays legible against the control's own border. Exposed as the theme value `ringOffset`. This is the default focus-visible ring for Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader, and the hover/press ring for `ringed` Buttons.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151814",
-      cssVar: "--cu-ring-base-subtle-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the neutral accent (`accent.base`). Exposed as the theme value `ringSubtleOffset`. A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #1fb2a626",
-      cssVar: "--cu-ring-brand",
-      description: "Brand 3px focus ring in the brand accent (`accent.brand`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Brand 1px hairline focus ring in the brand accent (`accent.brand`) with no gap. Resolves from the theme value `ringSubtle` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a626",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the brand accent (`accent.brand`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the brand accent (`accent.brand`). Resolves from the theme value `ringSubtleOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger",
-      type: "shadow",
-      value: "0px 0px 0px 3px #8e223e26",
-      cssVar: "--cu-ring-danger",
-      description: "Danger 3px focus ring in the danger accent (`accent.danger`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #8e223e26",
-      cssVar: "--cu-ring-danger-subtle",
-      description: "Danger 1px hairline focus ring in the danger accent (`accent.danger`) with no gap. Resolves from the theme value `ringSubtle` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
-      cssVar: "--cu-ring-danger-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the danger accent (`accent.danger`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
-      cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the danger accent (`accent.danger`). Resolves from the theme value `ringSubtleOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning",
-      type: "shadow",
-      value: "0px 0px 0px 3px #76541726",
-      cssVar: "--cu-ring-warning",
-      description: "Warning 3px focus ring in the warning accent (`accent.warning`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #76541726",
-      cssVar: "--cu-ring-warning-subtle",
-      description: "Warning 1px hairline focus ring in the warning accent (`accent.warning`) with no gap. Resolves from the theme value `ringSubtle` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #76541726",
-      cssVar: "--cu-ring-warning-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the warning accent (`accent.warning`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #76541726",
-      cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the warning accent (`accent.warning`). Resolves from the theme value `ringSubtleOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-success",
-      description: "Success 3px focus ring in the success accent (`accent.success`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Success 1px hairline focus ring in the success accent (`accent.success`) with no gap. Resolves from the theme value `ringSubtle` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-success-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the success accent (`accent.success`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the success accent (`accent.success`). Resolves from the theme value `ringSubtleOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info",
-      type: "shadow",
-      value: "0px 0px 0px 3px #2055b326",
-      cssVar: "--cu-ring-info",
-      description: "Info 3px focus ring in the info accent (`accent.info`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #2055b326",
-      cssVar: "--cu-ring-info-subtle",
-      description: "Info 1px hairline focus ring in the info accent (`accent.info`) with no gap. Resolves from the theme value `ringSubtle` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b326",
-      cssVar: "--cu-ring-info-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the info accent (`accent.info`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b326",
-      cssVar: "--cu-ring-info-subtle-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the info accent (`accent.info`). Resolves from the theme value `ringSubtleOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery",
-      type: "shadow",
-      value: "0px 0px 0px 3px #59439526",
-      cssVar: "--cu-ring-discovery",
-      description: "Discovery 3px focus ring in the discovery accent (`accent.discovery`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #59439526",
-      cssVar: "--cu-ring-discovery-subtle",
-      description: "Discovery 1px hairline focus ring in the discovery accent (`accent.discovery`) with no gap. Resolves from the theme value `ringSubtle` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #59439526",
-      cssVar: "--cu-ring-discovery-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the discovery accent (`accent.discovery`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #59439526",
-      cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the discovery accent (`accent.discovery`). Resolves from the theme value `ringSubtleOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-positive",
-      description: "Positive 3px focus ring in the positive accent (`accent.positive`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Positive 1px hairline focus ring in the positive accent (`accent.positive`) with no gap. Resolves from the theme value `ringSubtle` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the positive accent (`accent.positive`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the positive accent (`accent.positive`). Resolves from the theme value `ringSubtleOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #8e223e26",
-      cssVar: "--cu-ring-negative",
-      description: "Negative 3px focus ring in the negative accent (`accent.negative`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Negative 1px hairline focus ring in the negative accent (`accent.negative`) with no gap. Resolves from the theme value `ringSubtle` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the negative accent (`accent.negative`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the negative accent (`accent.negative`). Resolves from the theme value `ringSubtleOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "typography.display-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -28956,6 +28632,330 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       description: "Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion.",
       theme: undefined,
       typography: true
+    },
+    {
+      path: "ring.base",
+      type: "shadow",
+      value: "0px 0px 0px 3px #15151814",
+      cssVar: "--cu-ring-base",
+      description: "Generated base 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #15151814",
+      cssVar: "--cu-ring-base-subtle",
+      description: "Generated base 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151814",
+      cssVar: "--cu-ring-base-offset",
+      description: "Generated base 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151814",
+      cssVar: "--cu-ring-base-subtle-offset",
+      description: "Generated base 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #1fb2a626",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a626",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger",
+      type: "shadow",
+      value: "0px 0px 0px 3px #8e223e26",
+      cssVar: "--cu-ring-danger",
+      description: "Generated danger 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #8e223e26",
+      cssVar: "--cu-ring-danger-subtle",
+      description: "Generated danger 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
+      cssVar: "--cu-ring-danger-offset",
+      description: "Generated danger 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
+      cssVar: "--cu-ring-danger-subtle-offset",
+      description: "Generated danger 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative",
+      type: "shadow",
+      value: "0px 0px 0px 3px #8e223e26",
+      cssVar: "--cu-ring-negative",
+      description: "Generated negative 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #8e223e26",
+      cssVar: "--cu-ring-negative-subtle",
+      description: "Generated negative 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
+      cssVar: "--cu-ring-negative-offset",
+      description: "Generated negative 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
+      cssVar: "--cu-ring-negative-subtle-offset",
+      description: "Generated negative 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning",
+      type: "shadow",
+      value: "0px 0px 0px 3px #76541726",
+      cssVar: "--cu-ring-warning",
+      description: "Generated warning 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #76541726",
+      cssVar: "--cu-ring-warning-subtle",
+      description: "Generated warning 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #76541726",
+      cssVar: "--cu-ring-warning-offset",
+      description: "Generated warning 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #76541726",
+      cssVar: "--cu-ring-warning-subtle-offset",
+      description: "Generated warning 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #216b5326",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #216b5326",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive",
+      type: "shadow",
+      value: "0px 0px 0px 3px #216b5326",
+      cssVar: "--cu-ring-positive",
+      description: "Generated positive 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #216b5326",
+      cssVar: "--cu-ring-positive-subtle",
+      description: "Generated positive 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
+      cssVar: "--cu-ring-positive-offset",
+      description: "Generated positive 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
+      cssVar: "--cu-ring-positive-subtle-offset",
+      description: "Generated positive 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info",
+      type: "shadow",
+      value: "0px 0px 0px 3px #2055b326",
+      cssVar: "--cu-ring-info",
+      description: "Generated info 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #2055b326",
+      cssVar: "--cu-ring-info-subtle",
+      description: "Generated info 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b326",
+      cssVar: "--cu-ring-info-offset",
+      description: "Generated info 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b326",
+      cssVar: "--cu-ring-info-subtle-offset",
+      description: "Generated info 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery",
+      type: "shadow",
+      value: "0px 0px 0px 3px #59439526",
+      cssVar: "--cu-ring-discovery",
+      description: "Generated discovery 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #59439526",
+      cssVar: "--cu-ring-discovery-subtle",
+      description: "Generated discovery 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #59439526",
+      cssVar: "--cu-ring-discovery-offset",
+      description: "Generated discovery 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #59439526",
+      cssVar: "--cu-ring-discovery-subtle-offset",
+      description: "Generated discovery 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
     }
   ],
   "lightHighContrast": [
@@ -31500,9 +31500,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.hairline-active",
       type: "color",
-      value: "#a6a6b0",
+      value: "#404048",
       cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker)",
+      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -34270,330 +34270,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.base",
-      type: "shadow",
-      value: "0px 0px 0px 3px #15151814",
-      cssVar: "--cu-ring-base",
-      description: "Neutral 3px focus ring in the neutral accent (`accent.base`), drawn flush against the element with no gap. Exposed as the theme value `ring`. Container uses it for its focus-visible state, where an offset gap would clash with the surrounding layout.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #15151814",
-      cssVar: "--cu-ring-base-subtle",
-      description: "Neutral 1px hairline focus ring in the neutral accent (`accent.base`) with no gap. Exposed as the theme value `ringSubtle`. Suited to dense or text-level elements where a 3px ring is too heavy; TableOfContents uses it to mark the focused entry.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151814",
-      cssVar: "--cu-ring-base-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the neutral accent (`accent.base`), so the ring stays legible against the control's own border. Exposed as the theme value `ringOffset`. This is the default focus-visible ring for Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader, and the hover/press ring for `ringed` Buttons.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.base-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151814",
-      cssVar: "--cu-ring-base-subtle-offset",
-      description: "Neutral focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the neutral accent (`accent.base`). Exposed as the theme value `ringSubtleOffset`. A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #1fb2a626",
-      cssVar: "--cu-ring-brand",
-      description: "Brand 3px focus ring in the brand accent (`accent.brand`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Brand 1px hairline focus ring in the brand accent (`accent.brand`) with no gap. Resolves from the theme value `ringSubtle` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a626",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the brand accent (`accent.brand`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Brand focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the brand accent (`accent.brand`). Resolves from the theme value `ringSubtleOffset` inside the `brand` theme (used for primary actions and brand-styled content; Message falls back to this theme when no type is set). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger",
-      type: "shadow",
-      value: "0px 0px 0px 3px #8e223e26",
-      cssVar: "--cu-ring-danger",
-      description: "Danger 3px focus ring in the danger accent (`accent.danger`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #8e223e26",
-      cssVar: "--cu-ring-danger-subtle",
-      description: "Danger 1px hairline focus ring in the danger accent (`accent.danger`) with no gap. Resolves from the theme value `ringSubtle` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
-      cssVar: "--cu-ring-danger-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the danger accent (`accent.danger`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.danger-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
-      cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Danger focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the danger accent (`accent.danger`). Resolves from the theme value `ringSubtleOffset` inside the `danger` theme (used for destructive actions and errors, such as a `danger` Alert or an `error` Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning",
-      type: "shadow",
-      value: "0px 0px 0px 3px #76541726",
-      cssVar: "--cu-ring-warning",
-      description: "Warning 3px focus ring in the warning accent (`accent.warning`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #76541726",
-      cssVar: "--cu-ring-warning-subtle",
-      description: "Warning 1px hairline focus ring in the warning accent (`accent.warning`) with no gap. Resolves from the theme value `ringSubtle` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #76541726",
-      cssVar: "--cu-ring-warning-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the warning accent (`accent.warning`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.warning-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #76541726",
-      cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Warning focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the warning accent (`accent.warning`). Resolves from the theme value `ringSubtleOffset` inside the `warning` theme (used for cautionary states, such as a `warning` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-success",
-      description: "Success 3px focus ring in the success accent (`accent.success`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Success 1px hairline focus ring in the success accent (`accent.success`) with no gap. Resolves from the theme value `ringSubtle` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-success-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the success accent (`accent.success`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Success focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the success accent (`accent.success`). Resolves from the theme value `ringSubtleOffset` inside the `success` theme (used for completed or confirmed states, such as a `success` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info",
-      type: "shadow",
-      value: "0px 0px 0px 3px #2055b326",
-      cssVar: "--cu-ring-info",
-      description: "Info 3px focus ring in the info accent (`accent.info`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #2055b326",
-      cssVar: "--cu-ring-info-subtle",
-      description: "Info 1px hairline focus ring in the info accent (`accent.info`) with no gap. Resolves from the theme value `ringSubtle` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b326",
-      cssVar: "--cu-ring-info-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the info accent (`accent.info`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.info-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b326",
-      cssVar: "--cu-ring-info-subtle-offset",
-      description: "Info focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the info accent (`accent.info`). Resolves from the theme value `ringSubtleOffset` inside the `info` theme (used for neutral guidance, such as an `info` Alert, Message or ValidationText). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery",
-      type: "shadow",
-      value: "0px 0px 0px 3px #59439526",
-      cssVar: "--cu-ring-discovery",
-      description: "Discovery 3px focus ring in the discovery accent (`accent.discovery`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #59439526",
-      cssVar: "--cu-ring-discovery-subtle",
-      description: "Discovery 1px hairline focus ring in the discovery accent (`accent.discovery`) with no gap. Resolves from the theme value `ringSubtle` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #59439526",
-      cssVar: "--cu-ring-discovery-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the discovery accent (`accent.discovery`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.discovery-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #59439526",
-      cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Discovery focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the discovery accent (`accent.discovery`). Resolves from the theme value `ringSubtleOffset` inside the `discovery` theme (used for new features and help content, such as a `help` Message). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-positive",
-      description: "Positive 3px focus ring in the positive accent (`accent.positive`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Positive 1px hairline focus ring in the positive accent (`accent.positive`) with no gap. Resolves from the theme value `ringSubtle` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the positive accent (`accent.positive`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Positive focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the positive accent (`accent.positive`). Resolves from the theme value `ringSubtleOffset` inside the `positive` theme (used for favorable outcomes and values, such as a `positive` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #8e223e26",
-      cssVar: "--cu-ring-negative",
-      description: "Negative 3px focus ring in the negative accent (`accent.negative`), drawn flush against the element with no gap. Resolves from the theme value `ring` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Use it for focus indication on flush or full-bleed surfaces where an offset gap would look detached.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Negative 1px hairline focus ring in the negative accent (`accent.negative`) with no gap. Resolves from the theme value `ringSubtle` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Suited to dense or text-level elements where a 3px ring is too heavy, such as list items and inline links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 3px ring in the negative accent (`accent.negative`), so the ring stays legible against the control's own border. Resolves from the theme value `ringOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). Focusable controls such as Button, Input, TextArea, Select, Checkbox, RadioGroup, Switch, Rating, Badge, Accordion, Dialog, Table, FilePicker and NavigationHeader pick it up automatically when rendered in this theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Negative focus ring with a 3px gap: an inner band of the elevated surface color followed by a 1px ring in the negative accent (`accent.negative`). Resolves from the theme value `ringSubtleOffset` inside the `negative` theme (used for unfavorable outcomes and invalid values, such as a `negative` Alert). A lighter alternative to `ringOffset` for small or tightly packed controls, such as chips, icon buttons and table cells, where the full ring would crowd neighbours.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "typography.display-hero",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
@@ -34745,6 +34421,330 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       description: "Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion.",
       theme: undefined,
       typography: true
+    },
+    {
+      path: "ring.base",
+      type: "shadow",
+      value: "0px 0px 0px 3px #15151814",
+      cssVar: "--cu-ring-base",
+      description: "Generated base 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #15151814",
+      cssVar: "--cu-ring-base-subtle",
+      description: "Generated base 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151814",
+      cssVar: "--cu-ring-base-offset",
+      description: "Generated base 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.base-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151814",
+      cssVar: "--cu-ring-base-subtle-offset",
+      description: "Generated base 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #1fb2a626",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a626",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger",
+      type: "shadow",
+      value: "0px 0px 0px 3px #8e223e26",
+      cssVar: "--cu-ring-danger",
+      description: "Generated danger 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #8e223e26",
+      cssVar: "--cu-ring-danger-subtle",
+      description: "Generated danger 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
+      cssVar: "--cu-ring-danger-offset",
+      description: "Generated danger 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.danger-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
+      cssVar: "--cu-ring-danger-subtle-offset",
+      description: "Generated danger 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative",
+      type: "shadow",
+      value: "0px 0px 0px 3px #8e223e26",
+      cssVar: "--cu-ring-negative",
+      description: "Generated negative 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #8e223e26",
+      cssVar: "--cu-ring-negative-subtle",
+      description: "Generated negative 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
+      cssVar: "--cu-ring-negative-offset",
+      description: "Generated negative 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.negative-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
+      cssVar: "--cu-ring-negative-subtle-offset",
+      description: "Generated negative 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning",
+      type: "shadow",
+      value: "0px 0px 0px 3px #76541726",
+      cssVar: "--cu-ring-warning",
+      description: "Generated warning 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #76541726",
+      cssVar: "--cu-ring-warning-subtle",
+      description: "Generated warning 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #76541726",
+      cssVar: "--cu-ring-warning-offset",
+      description: "Generated warning 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.warning-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #76541726",
+      cssVar: "--cu-ring-warning-subtle-offset",
+      description: "Generated warning 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #216b5326",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #216b5326",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive",
+      type: "shadow",
+      value: "0px 0px 0px 3px #216b5326",
+      cssVar: "--cu-ring-positive",
+      description: "Generated positive 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #216b5326",
+      cssVar: "--cu-ring-positive-subtle",
+      description: "Generated positive 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
+      cssVar: "--cu-ring-positive-offset",
+      description: "Generated positive 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.positive-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
+      cssVar: "--cu-ring-positive-subtle-offset",
+      description: "Generated positive 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info",
+      type: "shadow",
+      value: "0px 0px 0px 3px #2055b326",
+      cssVar: "--cu-ring-info",
+      description: "Generated info 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #2055b326",
+      cssVar: "--cu-ring-info-subtle",
+      description: "Generated info 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2055b326",
+      cssVar: "--cu-ring-info-offset",
+      description: "Generated info 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.info-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2055b326",
+      cssVar: "--cu-ring-info-subtle-offset",
+      description: "Generated info 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery",
+      type: "shadow",
+      value: "0px 0px 0px 3px #59439526",
+      cssVar: "--cu-ring-discovery",
+      description: "Generated discovery 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #59439526",
+      cssVar: "--cu-ring-discovery-subtle",
+      description: "Generated discovery 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #59439526",
+      cssVar: "--cu-ring-discovery-offset",
+      description: "Generated discovery 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.discovery-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #59439526",
+      cssVar: "--cu-ring-discovery-subtle-offset",
+      description: "Generated discovery 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
     }
   ]
 };

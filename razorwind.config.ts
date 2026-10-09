@@ -28,6 +28,7 @@ import shadcn from "@razorwind/shadcn/generate";
 import type { ShikiTheme } from "@razorwind/shiki/generate";
 import shiki from "@razorwind/shiki/generate";
 import storybook from "@razorwind/storybook/generate";
+import stylelint from "@razorwind/stylelint";
 import tamagui from "@razorwind/tamagui/generate";
 import tamaguiPreprocessor from "./tools/razorwind/src/tamagui-preprocessor";
 
@@ -97,6 +98,12 @@ export default defineConfig({
       prefix: "cyclone-ui",
       cssVarPrefix: "storm",
       tamagui: true,
+      runtimeImport: "./runtime"
+    }),
+    stylelint({
+      stylelintPath: "packages/stylelint-plugin/src/index.ts",
+      prefix: "cyclone-ui",
+      cssVarPrefix: "storm",
       runtimeImport: "./runtime"
     }),
     shiki({

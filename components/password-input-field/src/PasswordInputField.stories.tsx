@@ -16,8 +16,10 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldLabelVariant } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { GetProps } from "@tamagui/core";
 import { View } from "@tamagui/core";
 import {
   createEvent,
@@ -29,9 +31,14 @@ import {
 } from "storybook/test";
 import { PasswordInputField } from "./PasswordInputField";
 
+/** Field props plus the story-only `labelVariant`, passed to `PasswordInputField.Label`. */
+type PasswordInputFieldStoryArgs = GetProps<typeof PasswordInputField> & {
+  labelVariant?: FieldLabelVariant;
+};
+
 // Annotated rather than inferred: the inferred type reaches `MaskitoOptions`
 // through the Field props, which is not portable from this package.
-const meta: Meta<typeof PasswordInputField> = {
+const meta: Meta<PasswordInputFieldStoryArgs> = {
   title: "Form/PasswordInputField",
   component: PasswordInputField,
   tags: ["autodocs"],
@@ -48,12 +55,15 @@ const meta: Meta<typeof PasswordInputField> = {
       </View>
     )
   ],
-  render: ({ defaultValue = "", ...props }: any, { id }: { id: string }) => (
+  render: (
+    { defaultValue = "", labelVariant, ...props }: any,
+    { id }: { id: string }
+  ) => (
     <Form
       name={`formName-${id}`}
       initialValues={{ inputFieldName: defaultValue }}>
       <PasswordInputField name="inputFieldName" {...props}>
-        <PasswordInputField.Label hideOptional={true}>
+        <PasswordInputField.Label variant={labelVariant}>
           New Password
         </PasswordInputField.Label>
         <PasswordInputField.Control>
@@ -69,7 +79,7 @@ const meta: Meta<typeof PasswordInputField> = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<PasswordInputFieldStoryArgs>;
 
 const validation = (
   type:
@@ -194,7 +204,7 @@ export const Disabled: Story = {
 
 export const Floating: Story = {
   args: {
-    variant: "floating"
+    labelVariant: "floating"
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -213,9 +223,45 @@ export const Floating: Story = {
   }
 };
 
-export const Underline: Story = {
+export const OutlinedFloating: Story = {
   args: {
-    variant: "underline"
+    variant: "outlined",
+    labelVariant: "floating"
+  }
+};
+
+export const UnderlinedFloating: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
   }
 };
 

@@ -81,15 +81,45 @@ export const Base: Story = {
   args: {}
 };
 
-export const Normal: Story = {
+export const OutlinedFloating: Story = {
   args: {
-    variant: "normal"
+    variant: "outlined",
+    labelVariant: "floating"
   }
 };
 
-export const Underline: Story = {
+export const UnderlinedFloating: Story = {
   args: {
-    variant: "underline"
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
   }
 };
 
@@ -189,7 +219,7 @@ export const WarningMessageState: Story = {
       canvas.getByRole("button", { name: "Validate field" })
     );
     // `onChange` validation is debounced (100ms by default).
-    await waitFor(() =>
+    await waitFor(async () =>
       expect(canvas.getByTestId("field-message-state")).toHaveTextContent(
         "true"
       )

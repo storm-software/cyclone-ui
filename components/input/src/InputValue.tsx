@@ -16,7 +16,9 @@
 
  ------------------------------------------------------------------- */
 
+import { getFieldLabelInset, useFieldHasStartIcon } from "@cyclone-ui/field";
 import type { FormControlSize } from "@cyclone-ui/helpers";
+import { getFormSizeScale } from "@cyclone-ui/helpers";
 import type {
   GetProps,
   TamaDefer,
@@ -24,7 +26,6 @@ import type {
   TextNonStyleProps,
   TextStylePropsBase
 } from "@tamagui/core";
-import { getFormSizeScale } from "@cyclone-ui/helpers";
 import {
   createStyledHOC,
   styled,
@@ -63,7 +64,8 @@ const BaseInputValue = styled(
 ) as unknown as BaseInputValueComponent;
 const BaseInputValueImpl = BaseInputValue as any;
 
-export const InputValue = createStyledHOC(BaseInputValue, 
+export const InputValue = createStyledHOC(
+  BaseInputValue,
   (
     {
       autoComplete = "off",
@@ -79,9 +81,13 @@ export const InputValue = createStyledHOC(BaseInputValue,
       onInput: contextOnInput,
       onBlur: contextOnBlur,
       onFocus: contextOnFocus,
-      variant,
-      size: contextSize
+      labelPlacement,
+      size: contextSize,
+      variant
     } = InputContext.useStyledContext();
+    // An underlined control's text starts flush with its left edge unless a
+    // start icon sits before it.
+    const flushStart = variant === "underlined" && !useFieldHasStartIcon();
 
     const {
       // some of destructed props are just to avoid passing them to ...rest because they are not in web.
@@ -145,6 +151,9 @@ export const InputValue = createStyledHOC(BaseInputValue,
     const theme = useTheme();
 
     const composedRefs = useComposedRefs(forwardedRef, ref);
+    const paddingInline =
+      nativePaddingInline ??
+      `calc(var(--t-space-4xl) * ${getFormSizeScale(inProps.size ?? contextSize)})`;
     const onChange = inputOnChange ?? contextOnChange;
     const onInput = inputOnInput ?? contextOnInput;
     const handleSelectionChange = useEvent(() => {
@@ -288,9 +297,8 @@ export const InputValue = createStyledHOC(BaseInputValue,
                 flex: 1,
                 minWidth: 0,
                 margin: 0,
-                paddingInline:
-                  nativePaddingInline ??
-                  `calc(var(--t-space-4xl) * ${getFormSizeScale(inProps.size ?? contextSize)})`
+                paddingInlineStart: flushStart ? 0 : paddingInline,
+                paddingInlineEnd: paddingInline
               }}
               onChange={handleInput}
               onBlur={(inputOnBlur ?? contextOnBlur) as any}
@@ -309,13 +317,18 @@ export const InputValue = createStyledHOC(BaseInputValue,
                 // No `padding` shorthand: merged style order varies by size,
                 // and a later shorthand would reset `paddingInline` to 0.
                 paddingBottom: 0,
-                paddingTop:
-                  variant === "floating"
-                    ? 7 * getFormSizeScale(inProps.size ?? contextSize)
-                    : 0,
-                paddingInline:
-                  nativePaddingInline ??
-                  `calc(var(--t-space-4xl) * ${getFormSizeScale(inProps.size ?? contextSize)})`
+                // Drop the text under a floating label by the extra height an
+                // inset label adds over a border one (see `getFieldLabelInset`).
+                paddingTop: labelPlacement
+                  ? 7 * getFormSizeScale(inProps.size ?? contextSize) +
+                    getFieldLabelInset(
+                      labelPlacement,
+                      inProps.size ?? contextSize
+                    ) -
+                    getFieldLabelInset("border")
+                  : 0,
+                paddingInlineStart: flushStart ? 0 : paddingInline,
+                paddingInlineEnd: paddingInline
               }}
               onChange={handleInput}
               onBlur={(inputOnBlur ?? contextOnBlur) as any}

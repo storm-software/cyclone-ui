@@ -116,14 +116,15 @@ describe("floating optional field labels", () => {
 });
 
 describe("floating field placeholder visibility", () => {
-  it("only exposes empty floating placeholders when the focused label is elevated or no label exists", () => {
+  it("only exposes empty floating placeholders when the focused label is elevated or no floating label exists", () => {
     const field = readComponent("./Field.tsx");
 
-    expect(field).toContain("hasLabel: boolean");
-    expect(field).toContain("setHasLabel: (hasLabel: boolean) => void");
+    expect(field).toContain("labelVariant: FieldLabelVariant | undefined");
     expect(field).toContain("export const useFieldShouldShowPlaceholder");
-    expect(field).toContain("!hasValue && (!hasLabel || Boolean(focused))");
-    expect(field).toContain("setHasLabel(true)");
+    expect(field).toContain(
+      'labelVariant !== "floating" || (!hasValue && Boolean(focused))'
+    );
+    expect(field).toContain("setLabelVariant(variant)");
   });
 
   it("applies the shared visibility decision in every floating field control", () => {
@@ -147,9 +148,9 @@ describe("floating field placeholder visibility", () => {
 describe("floating field label visibility", () => {
   it("returns empty blurred labels to their inline position even when a placeholder exists", () => {
     const field = readComponent("./Field.tsx");
-    const label = getDeclaration(field, "FieldLabel =");
+    const floated = getDeclaration(field, "useFieldLabelFloated");
 
-    expect(label).toContain("(hasValue || Boolean(focused))");
+    expect(floated).toContain("(hasValue || Boolean(focused))");
   });
 });
 

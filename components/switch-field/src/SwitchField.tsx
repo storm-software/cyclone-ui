@@ -26,7 +26,7 @@ const SwitchFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
   const { children, ...rest } = props;
 
   return (
-    <Field ref={forwardedRef} hideOptional={true} {...rest}>
+    <Field ref={forwardedRef} {...rest}>
       {children}
     </Field>
   );

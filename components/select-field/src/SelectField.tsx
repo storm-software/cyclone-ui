@@ -32,14 +32,21 @@ import type { PropsWithChildren, Ref } from "react";
 import { memo, useCallback, useLayoutEffect } from "react";
 
 const SelectFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
-  const { children, variant = "floating", ...rest } = props;
+  const { children, ...rest } = props;
 
   return (
-    <Field ref={forwardedRef} {...rest} variant={variant}>
+    <Field ref={forwardedRef} {...rest}>
       {children}
     </Field>
   );
 });
+
+const SelectFieldLabel = createStyledHOC(
+  Field.Label,
+  ({ variant = "floating", ...props }, forwardedRef) => (
+    <Field.Label ref={forwardedRef} {...props} variant={variant} />
+  )
+);
 
 const SelectFieldItem = memo(
   (props: PropsWithChildren<{ itemAtom: Atom<SelectOption> }>) => {
@@ -104,8 +111,7 @@ const SelectFieldControl = createStyledHOC(
         {...props}
         name={name}
         focused={focused}
-        // Field's "normal" variant has no Select styling, same as "default".
-        variant={variant === "normal" ? "default" : variant}
+        variant={variant}
         disabled={disabled}
         size={size}
         onFocus={focus}
@@ -138,7 +144,7 @@ const SelectFieldControl = createStyledHOC(
 );
 
 export const SelectField = withStaticProperties(SelectFieldGroup, {
-  Label: Field.Label,
+  Label: SelectFieldLabel,
   Link: Field.Link,
   Control: SelectFieldControl,
   Details: Field.Details,

@@ -60,7 +60,7 @@ import {
 } from "@tamagui/core";
 import { Label as TamaguiLabel } from "@tamagui/label";
 import { XStack, YStack } from "@tamagui/stacks";
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 import {
   cloneElement,
   createContext,
@@ -74,28 +74,50 @@ import {
 } from "react";
 import { StyleSheet } from "react-native";
 
-export type FieldVariant = "normal" | "floating" | "underline";
+/**
+ * The field's control style (see Material UI's `TextField` variants).
+ */
+export type FieldVariant = "outlined" | "underlined" | "inlined";
+
+/**
+ * Where the field's label is displayed: floating over the control (resting
+ * inside it until the field is focused or has a value), or above it.
+ */
+export type FieldLabelVariant = "floating" | "above";
+
+/**
+ * How a control makes room for its field's floating label: `"border"` when the
+ * label floats onto an outlined control's border, `"inset"` when it floats
+ * inside a underlined or inlined control.
+ */
+export type FieldLabelPlacement = "border" | "inset";
 
 interface FieldPresentationContextValue {
   variant: FieldVariant;
-  hasLabel: boolean;
+  labelVariant: FieldLabelVariant | undefined;
   hasPlaceholder: boolean;
   hasValidationMessage: boolean;
   endIconCount: number;
-  setHasLabel: (hasLabel: boolean) => void;
+  hasStartIcon: boolean;
+  labelContentRef: RefObject<TamaguiWebElement | null>;
+  setLabelVariant: (labelVariant: FieldLabelVariant | undefined) => void;
   setHasPlaceholder: (hasPlaceholder: boolean) => void;
   registerEndIcon: () => () => void;
+  registerStartIcon: () => () => void;
 }
 
 const FieldPresentationContext = createContext<FieldPresentationContextValue>({
-  variant: "normal",
-  hasLabel: false,
+  variant: "outlined",
+  labelVariant: undefined,
   hasPlaceholder: false,
   hasValidationMessage: false,
   endIconCount: 0,
-  setHasLabel: () => undefined,
+  hasStartIcon: false,
+  labelContentRef: { current: null },
+  setLabelVariant: () => undefined,
   setHasPlaceholder: () => undefined,
-  registerEndIcon: () => () => undefined
+  registerEndIcon: () => () => undefined,
+  registerStartIcon: () => () => undefined
 });
 
 const FIELD_PLACEHOLDER_UNSET = Symbol("field-placeholder-unset");
@@ -135,18 +157,52 @@ export const useFieldVariant = (
  */
 export const getFieldLabelId = (name: string) => `${name}-label`;
 
+/**
+ * Whether the enclosing field shows a `position="start"` icon before its
+ * control's text.
+ */
+export const useFieldHasStartIcon = () =>
+  use(FieldPresentationContext).hasStartIcon;
+
 export const useFieldHasValidationMessage = () =>
   use(FieldPresentationContext).hasValidationMessage;
+
+/**
+ * Get how the enclosing field's floating label needs its control to make room
+ * for it, or `undefined` outside a field or without a floating label.
+ */
+export const useFieldLabelPlacement = (): FieldLabelPlacement | undefined => {
+  const { variant, labelVariant } = use(FieldPresentationContext);
+
+  return labelVariant !== "floating"
+    ? undefined
+    : variant === "outlined"
+      ? "border"
+      : "inset";
+};
+
+/**
+ * Get the extra height (and top text inset) a control adds for a floating
+ * label: the label floats onto an outlined control's border, so it only
+ * needs a few pixels, but inside a underlined or inlined control it needs a row.
+ *
+ * @param placement - The field's label placement.
+ * @param size - The control size.
+ * @returns The extra height, in pixels.
+ */
+export const getFieldLabelInset = (
+  placement: FieldLabelPlacement | undefined,
+  size?: FormControlSize
+) =>
+  !placement ? 0 : placement === "border" ? 3 : 13 * getFormSizeScale(size);
 
 export const useFieldShouldShowPlaceholder = (value: unknown) => {
   const field = FieldApi.use();
   const focused = field.focused.get();
-  const { variant, hasLabel } = use(FieldPresentationContext);
+  const { labelVariant } = use(FieldPresentationContext);
   const hasValue = value !== undefined && value !== null && value !== "";
 
-  return (
-    variant !== "floating" || (!hasValue && (!hasLabel || Boolean(focused)))
-  );
+  return labelVariant !== "floating" || (!hasValue && Boolean(focused));
 };
 
 const FieldDetailsContext = createContext<ReactNode>(null);
@@ -182,17 +238,17 @@ const FieldGroupFrame = styled(YStack, {
     },
 
     variant: {
-      normal: {},
-      floating: {},
-      underline: {
+      outlined: {},
+      underlined: {
         boxShadow: "none focus:none focus-visible:none"
-      }
+      },
+      inlined: {}
     }
   } as const,
   defaultVariants: {
     orientation: "vertical",
     disabled: false,
-    variant: "normal"
+    variant: "outlined"
   }
 });
 
@@ -319,7 +375,7 @@ const FieldValidationTextImpl = createStyledHOC(
 const FieldGroupInnerImpl = createStyledHOC(
   FieldGroupFrame,
   (props, forwardedRef) => {
-    const { children, variant = "normal", ...rest } = props;
+    const { children, variant = "outlined", ...rest } = props;
 
     const field = FieldApi.use();
     const theme = field.theme.get();
@@ -370,8 +426,9 @@ const FieldGroup = createStyledHOC(
       FieldProps,
     forwardedRef
   ) => {
-    const { children, variant = "normal", ...rest } = props;
-    const [hasLabel, setHasLabel] = useState(false);
+    const { children, variant = "outlined", ...rest } = props;
+    const [labelVariant, setLabelVariant] = useState<FieldLabelVariant>();
+    const labelContentRef = useRef<TamaguiWebElement>(null);
     const [hasPlaceholder, setHasPlaceholder] = useState(false);
     const [endIconCount, setEndIconCount] = useState(0);
     const registerEndIcon = useCallback(() => {
@@ -379,18 +436,35 @@ const FieldGroup = createStyledHOC(
 
       return () => setEndIconCount(count => Math.max(0, count - 1));
     }, []);
+    const [startIconCount, setStartIconCount] = useState(0);
+    const registerStartIcon = useCallback(() => {
+      setStartIconCount(count => count + 1);
+
+      return () => setStartIconCount(count => Math.max(0, count - 1));
+    }, []);
     const presentation = useMemo(
       () => ({
         variant,
-        hasLabel,
+        labelVariant,
         hasPlaceholder,
         hasValidationMessage: false,
         endIconCount,
-        setHasLabel,
+        hasStartIcon: startIconCount > 0,
+        labelContentRef,
+        setLabelVariant,
         setHasPlaceholder,
-        registerEndIcon
+        registerEndIcon,
+        registerStartIcon
       }),
-      [variant, hasLabel, hasPlaceholder, endIconCount, registerEndIcon]
+      [
+        variant,
+        labelVariant,
+        hasPlaceholder,
+        endIconCount,
+        startIconCount,
+        registerEndIcon,
+        registerStartIcon
+      ]
     );
 
     return (
@@ -498,19 +572,18 @@ const FieldLabelPositioner = styled(View, {
   transition: "200ms",
 
   variants: {
-    variant: {
-      normal: {},
+    labelVariant: {
+      above: {},
       floating: {
         position: "absolute",
         left: "4xl",
         zIndex: 1
-      },
-      underline: {}
+      }
     }
   } as const,
 
   defaultVariants: {
-    variant: "normal"
+    labelVariant: "above"
   }
 });
 
@@ -557,18 +630,6 @@ const LabelXStack = styled(XStack, {
   }
 });
 
-const FieldLabelBorderMask = styled(View, {
-  displayName: "FieldLabelMask",
-  position: "absolute",
-  top: "45%",
-  left: -2,
-  right: -2,
-  height: 5,
-  transform: [{ translateY: "-45%" }],
-  backgroundColor: "surfaceElevated",
-  pointerEvents: "none"
-});
-
 const FieldLabelContent = styled(XStack, {
   displayName: "FieldLabelContent",
   position: "relative",
@@ -585,10 +646,10 @@ const FieldLabelTextImpl = createStyledHOC(
       children,
       hideRequired = false,
       hideAsterisk = false,
-      hideOptional = false,
+      showOptional = false,
       floating = false,
       floatingLabelLeft,
-      variant = "normal",
+      labelVariant = "above",
       required,
       style,
       ...props
@@ -597,18 +658,23 @@ const FieldLabelTextImpl = createStyledHOC(
       disabled?: boolean;
       hideRequired?: boolean;
       hideAsterisk?: boolean;
-      hideOptional?: boolean;
+      showOptional?: boolean;
       floating?: boolean;
       floatingLabelLeft?: GetProps<typeof FieldLabelPositioner>["left"];
-      variant?: FieldVariant;
+      labelVariant?: FieldLabelVariant;
     },
     forwardedRef
   ) => {
     const field = FieldApi.use();
     const theme = useThemeName();
-    const { endIconCount } = use(FieldPresentationContext);
+    const { variant, endIconCount, labelContentRef } = use(
+      FieldPresentationContext
+    );
+    // An underlined control's text starts flush with its left edge, and so
+    // does its label (`floatingLabelLeft` moves it past a start icon).
+    const underlined = variant === "underlined";
+    const placement = useFieldLabelPlacement();
     const labelPositionerRef = useRef<TamaguiWebElement>(null);
-    const labelContentRef = useRef<TamaguiWebElement>(null);
     const labelTextRef = useRef<TamaguiWebElement>(null);
     const optionalLabelRef = useRef<TamaguiWebElement>(null);
 
@@ -619,14 +685,25 @@ const FieldLabelTextImpl = createStyledHOC(
     const size = field.size.get();
     const controlSize = getFormSizeToken(size);
 
-    const labelTop =
-      variant === "floating"
-        ? floating
-          ? 4 * getFormSizeScale(size)
-          : // Floating controls are 3px taller than the size token (see
-            // `getInputSize`), so center on the control's rendered height.
-            (getSized(controlSize) + 3) / 2
-        : undefined;
+    const isFloatingVariant = labelVariant === "floating";
+    // A floated label sits on an outlined control's border, or in the row
+    // a underlined or inlined control adds above its text; a resting label is
+    // centered on the control, which is taller than the size token by the
+    // label's inset (see `getFieldLabelInset`). An underlined control's
+    // resting label drops onto its text line, which sits under the inset
+    // (see `InputValue`), so it reads as resting on the underline.
+    const labelTop = isFloatingVariant
+      ? floating
+        ? (placement === "inset" ? 14 : 4) * getFormSizeScale(size)
+        : (getSized(controlSize) +
+            getFieldLabelInset(placement, size) +
+            (underlined
+              ? 7 * getFormSizeScale(size) +
+                getFieldLabelInset(placement, size) -
+                getFieldLabelInset("border")
+              : 0)) /
+          2
+      : undefined;
 
     const endIconWidth =
       getSized(controlSize, { shift: -2 }) +
@@ -634,7 +711,7 @@ const FieldLabelTextImpl = createStyledHOC(
     const floatingLabelRight =
       getSpaced("4xl") * getFormSizeScale(size) + endIconCount * endIconWidth;
     const hasOptionalLabel =
-      hideRequired !== true && required !== true && hideOptional !== true;
+      hideRequired !== true && required !== true && showOptional === true;
     const updateOptionalLabelVisibility = useCallback(() => {
       const labelPositioner = labelPositionerRef.current;
       const labelContent = labelContentRef.current;
@@ -702,6 +779,7 @@ const FieldLabelTextImpl = createStyledHOC(
       endIconCount,
       floating,
       hasOptionalLabel,
+      labelContentRef,
       size,
       updateOptionalLabelVisibility
     ]);
@@ -715,31 +793,38 @@ const FieldLabelTextImpl = createStyledHOC(
     return (
       <FieldLabelPositioner
         ref={labelPositionerRef}
-        variant={variant}
+        labelVariant={labelVariant}
         top={labelTop}
-        // Floated labels sit slightly above the border so the mask covers it;
-        // resting labels are centered on the control's vertical midpoint.
+        // Labels floated onto a border sit slightly above it, centered on
+        // the notch `FieldNotchedOutline` opens; every other floating label
+        // is centered on its `top`.
         transform={
-          variant === "floating"
-            ? [{ translateY: floating ? "-58%" : "-50%" }]
+          isFloatingVariant
+            ? [
+                {
+                  translateY:
+                    floating && placement === "border" ? "-58%" : "-50%"
+                }
+              ]
             : undefined
         }
-        right={variant === "floating" ? floatingLabelRight : undefined}
+        right={isFloatingVariant ? floatingLabelRight : undefined}
         left={
-          variant === "floating"
-            ? getSpaced("4xl") * getFormSizeScale(size)
+          isFloatingVariant
+            ? underlined
+              ? 0
+              : getSpaced("4xl") * getFormSizeScale(size)
             : undefined
         }
-        {...(variant === "floating" && floatingLabelLeft !== undefined
+        {...(isFloatingVariant && floatingLabelLeft !== undefined
           ? { left: floatingLabelLeft }
           : {})}>
         <TamaguiLabel
           ref={forwardedRef}
           id={getFieldLabelId(name)}
           htmlFor={name}
-          marginLeft={`${variant === "floating" ? "zero" : "md"}`}>
+          marginLeft={`${isFloatingVariant || underlined ? "zero" : "md"}`}>
           <LabelXStack disabled={disabled} floating={floating} minWidth={0}>
-            {floating && <FieldLabelBorderMask />}
             <FieldLabelContent ref={labelContentRef}>
               <Theme name={baseTheme}>
                 <FieldLabelText
@@ -776,13 +861,14 @@ const FieldLabelTextImpl = createStyledHOC(
                     <>
                       {hideAsterisk !== true && (
                         <View
+                          transition="200ms"
                           position="relative"
                           alignSelf="stretch"
-                          width={`${floating ? "md" : "lg"}`}>
+                          width={`${floating ? "sm" : "md"}`}>
                           <Asterisk
                             transition="200ms"
                             color="required"
-                            size={floating ? "sm" : "lg"}
+                            size={floating ? "sm" : "md"}
                             position="absolute"
                             top={floating ? -2 : -1}
                             weight="black"
@@ -792,7 +878,7 @@ const FieldLabelTextImpl = createStyledHOC(
                     </>
                   ) : (
                     <>
-                      {hideOptional !== true && (
+                      {showOptional === true && (
                         // Stays mounted while overflowing so its width can be
                         // re-measured when there is room for it again.
                         <FieldOptionalLabelText
@@ -809,7 +895,7 @@ const FieldLabelTextImpl = createStyledHOC(
                             hideOptionalForOverflow ? "none" : undefined
                           }
                           size={floating ? true : "sm"}
-                          color={`${disabled ? "inkSubtlestDisable" : "inkSubtlest"}`}
+                          color="inkSubtlest"
                           disabled={disabled}
                           floating={floating}
                           controlSize={size}>
@@ -836,11 +922,19 @@ const FieldLabel = createStyledHOC(
   (
     {
       children,
+      variant = "above",
       ...props
     }: GetProps<typeof FieldLabelText> & {
+      /**
+       * Whether the label floats over the control (resting inside it until
+       * the field is focused or has a value) or sits above it.
+       *
+       * @defaultValue "above"
+       */
+      variant?: FieldLabelVariant;
       hideRequired?: boolean;
       hideAsterisk?: boolean;
-      hideOptional?: boolean;
+      showOptional?: boolean;
       floatingLabelLeft?: GetProps<typeof FieldLabelPositioner>["left"];
     },
     forwardedRef
@@ -849,20 +943,14 @@ const FieldLabel = createStyledHOC(
     const name = field.name.get();
     const disabled = field.disabled.get();
     const required = field.required.get();
-    const focused = field.focused.get();
-    const formattedValue = field.formattedValue.get();
-    const { variant, setHasLabel } = use(FieldPresentationContext);
-    const hasValue =
-      formattedValue !== undefined &&
-      formattedValue !== null &&
-      formattedValue !== "";
-    const floating = variant === "floating" && (hasValue || Boolean(focused));
+    const { setLabelVariant } = use(FieldPresentationContext);
+    const floating = useFieldLabelFloated(variant);
 
     useLayoutEffect(() => {
-      setHasLabel(true);
+      setLabelVariant(variant);
 
-      return () => setHasLabel(false);
-    }, [setHasLabel]);
+      return () => setLabelVariant(undefined);
+    }, [setLabelVariant, variant]);
 
     return (
       <FieldLabelTextImpl
@@ -871,7 +959,7 @@ const FieldLabel = createStyledHOC(
         htmlFor={name}
         disabled={disabled}
         required={required}
-        variant={variant}
+        labelVariant={variant}
         floating={floating}>
         {children}
       </FieldLabelTextImpl>
@@ -881,6 +969,118 @@ const FieldLabel = createStyledHOC(
 );
 
 export type FieldLabelProps = GetProps<typeof FieldLabel>;
+
+/**
+ * Whether a floating label is floated: the field is focused or has a value.
+ */
+const useFieldLabelFloated = (labelVariant: FieldLabelVariant | undefined) => {
+  const field = FieldApi.use();
+  const focused = field.focused.get();
+  const formattedValue = field.formattedValue.get();
+  const hasValue =
+    formattedValue !== undefined &&
+    formattedValue !== null &&
+    formattedValue !== "";
+
+  return labelVariant === "floating" && (hasValue || Boolean(focused));
+};
+
+const FieldNotchedOutlineFrame = styled(View, {
+  displayName: "FieldNotchedOutline",
+  render: "fieldset",
+  transition: "200ms",
+  position: "absolute",
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  margin: 0,
+  padding: 0,
+  minWidth: 0,
+  borderWidth: 1,
+  borderStyle: "solid",
+  borderRadius: "control",
+  pointerEvents: "none"
+});
+
+const FieldNotchedOutlineLegend = styled(View, {
+  displayName: "FieldNotchedOutline",
+  render: "legend",
+  transition: "100ms",
+  height: 0,
+  padding: 0,
+  overflow: "hidden"
+});
+
+/**
+ * The border of an outlined control whose field label floats onto it.
+ *
+ * @remarks
+ * Drawn as a native `fieldset` whose `legend` opens a gap in the border under
+ * the floated label, like Material UI's `NotchedOutline`. The label then needs
+ * no background color behind it, so the form can sit on any surface. Render it
+ * as the last child of the control's (positioned) frame, sized to the frame's
+ * border box, and drop the frame's own border.
+ */
+export const FieldNotchedOutline = createStyledHOC(
+  FieldNotchedOutlineFrame,
+  (props: GetProps<typeof FieldNotchedOutlineFrame>, forwardedRef) => {
+    const { labelContentRef, labelVariant } = use(FieldPresentationContext);
+    const field = FieldApi.use();
+    const size = field.size.get();
+    const floating = useFieldLabelFloated(labelVariant);
+    const outlineRef = useRef<TamaguiWebElement>(null);
+    const composedRef = useComposedRefs(forwardedRef, outlineRef);
+    const [notch, setNotch] = useState<{ left: number; width: number }>();
+
+    useLayoutEffect(() => {
+      const outline = outlineRef.current as HTMLElement | null;
+      const label = labelContentRef.current as HTMLElement | null;
+      if (!outline || !label) {
+        return;
+      }
+
+      // The label is a sibling of the control, so measure where it falls
+      // along the outline. It shrinks as it floats, which re-measures.
+      const update = () => {
+        const left =
+          label.getBoundingClientRect().left -
+          outline.getBoundingClientRect().left;
+        const width = label.getBoundingClientRect().width;
+
+        setNotch(current =>
+          current?.left === left && current.width === width
+            ? current
+            : { left, width }
+        );
+      };
+
+      update();
+      if (typeof ResizeObserver === "undefined") {
+        return;
+      }
+
+      const resizeObserver = new ResizeObserver(update);
+      resizeObserver.observe(outline);
+      resizeObserver.observe(label);
+
+      return () => resizeObserver.disconnect();
+    }, [labelContentRef, labelVariant]);
+
+    // Leave a little room on either side of the floated label's text.
+    const gap = getSpaced("sm") * getFormSizeScale(size);
+
+    return (
+      <FieldNotchedOutlineFrame ref={composedRef} aria-hidden {...props}>
+        <FieldNotchedOutlineLegend
+          marginLeft={Math.max(0, (notch?.left ?? 0) - gap)}
+          width={floating && notch ? notch.width + gap * 2 : 0}
+        />
+      </FieldNotchedOutlineFrame>
+    );
+  },
+  { displayName: "FieldNotchedOutline" }
+);
 
 const FieldLinkFrame = styled(XStack, {
   displayName: "FieldLink",
@@ -998,16 +1198,15 @@ const FieldIconButtonImpl = createStyledHOC(
     const fieldSize = field.size.get();
     const size = controlSize ?? sizeProp ?? fieldSize ?? "md";
     const { iconColor, hoverIconColor } = useFieldIconColor();
-    const { registerEndIcon, variant } = use(FieldPresentationContext);
+    const { registerEndIcon, registerStartIcon, variant } = use(
+      FieldPresentationContext
+    );
     const frameSize = getFormSizeToken(size);
 
-    useLayoutEffect(() => {
-      if (position === "start") {
-        return;
-      }
-
-      return registerEndIcon();
-    }, [position, registerEndIcon]);
+    useLayoutEffect(
+      () => (position === "start" ? registerStartIcon() : registerEndIcon()),
+      [position, registerEndIcon, registerStartIcon]
+    );
 
     const adjusted = useMemo(
       () => getSized(frameSize, { shift: -2 }),
@@ -1036,7 +1235,7 @@ const FieldIconButtonImpl = createStyledHOC(
         height="100%"
         paddingHorizontal={getSpaced("2xl") * getFormSizeScale(size)}
         position="relative">
-        {position && variant !== "underline" && (
+        {position && variant !== "underlined" && (
           <View
             position="absolute"
             top="20%"
@@ -1125,7 +1324,11 @@ const InnerFieldThemeIcon = createStyledHOC(
               ? "hairline focus-visible:hairlineActive"
               : "accent focus-visible:accentActive"
           }
-          arrowBorderColor={isNeutral ? "hairline" : "accent"}>
+          arrowBorderColor={
+            isNeutral
+              ? "hairline focus-visible:hairlineActive"
+              : "accent focus-visible:accentActive"
+          }>
           <Theme name="base">
             <View paddingVertical="2xl" paddingHorizontal="3xl">
               {messages && messages.length > 0 ? (

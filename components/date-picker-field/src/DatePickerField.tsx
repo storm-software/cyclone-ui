@@ -290,13 +290,7 @@ const DatePickerFieldGroup = createStyledHOC(
     },
     forwardedRef
   ) => {
-    const {
-      children,
-      mode = "single",
-      separator = ".",
-      variant = "floating",
-      ...rest
-    } = props;
+    const { children, mode = "single", separator = ".", ...rest } = props;
 
     const handleFormat = useCallback(
       (value: any) =>
@@ -320,7 +314,6 @@ const DatePickerFieldGroup = createStyledHOC(
         <Field
           ref={forwardedRef}
           {...rest}
-          variant={variant}
           format={handleFormat}
           parse={handleParse}
           mask={
@@ -501,8 +494,7 @@ const DatePickerFieldControl = createStyledHOC(
         focused={focused}
         mode={mode}
         separator={separator}
-        // Field's "normal" variant is Input's "default" (neither has styles).
-        variant={variant === "normal" ? "default" : variant}
+        variant={variant}
         disabled={disabled}
         selectedDate={selectedDate}
         selectedDates={selectedDates}
@@ -532,8 +524,15 @@ const DatePickerFieldControl = createStyledHOC(
   }
 );
 
+const DatePickerFieldLabel = createStyledHOC(
+  Field.Label,
+  ({ variant = "floating", ...props }, forwardedRef) => (
+    <Field.Label ref={forwardedRef} {...props} variant={variant} />
+  )
+);
+
 export const DatePickerField = withStaticProperties(DatePickerFieldGroup, {
-  Label: Field.Label,
+  Label: DatePickerFieldLabel,
   Link: Field.Link,
   Control: DatePickerFieldControl,
   Details: Field.Details,

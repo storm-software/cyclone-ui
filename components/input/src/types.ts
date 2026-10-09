@@ -16,7 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { type FormControlSize } from "@cyclone-ui/helpers";
+import type { FieldLabelPlacement } from "@cyclone-ui/field";
+import type { FormControlSize } from "@cyclone-ui/helpers";
 import type {
   ColorTokens,
   TamaguiComponentPropsBaseBase,
@@ -32,7 +33,7 @@ type DetailedInputProps = React.DetailedHTMLProps<
 
 export type InputChangeEventHandler = (event: CustomEvent<string>) => any;
 
-export type InputVariant = "default" | "floating" | "underline";
+export type InputVariant = "outlined" | "underlined" | "inlined";
 
 export type InputComponentProps = Omit<ViewProps, "onChange" | "onInput"> &
   Omit<
@@ -148,11 +149,16 @@ export interface InputContextProps {
   name?: string;
 
   /**
-   * The input's label presentation variant.
+   * The input's display style.
    *
-   * @defaultValue "default"
+   * @defaultValue "outlined"
    */
   variant: InputVariant;
+
+  /**
+   * How the input makes room for its field's floating label, if any.
+   */
+  labelPlacement?: FieldLabelPlacement;
 
   /**
    * The input's current size.

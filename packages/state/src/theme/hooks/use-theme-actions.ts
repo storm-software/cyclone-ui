@@ -27,25 +27,31 @@ export const useThemeActions = (opts?: MoleculeScopeOptions) => {
   const themeMolecule = ThemeApi.useMolecule(opts);
 
   const changeMode = useAtomCallback(
-    useCallback((get: Getter, set: Setter, mode: ColorThemeMode) => {
-      if (get(themeMolecule.mode) !== mode) {
-        set(themeMolecule.mode, mode);
-      }
-    }, [])
+    useCallback(
+      (get: Getter, set: Setter, mode: ColorThemeMode) => {
+        if (get(themeMolecule.mode) !== mode) {
+          set(themeMolecule.mode, mode);
+        }
+      },
+      [themeMolecule.mode]
+    )
   );
 
   const toggleMode = useAtomCallback(
     useCallback(
       (get: Getter) =>
         changeMode(get(themeMolecule.mode) === "light" ? "dark" : "light"),
-      [changeMode]
+      [changeMode, themeMolecule.mode]
     )
   );
 
   const reset = useAtomCallback(
-    useCallback((get: Getter, set: Setter) => {
-      set(themeMolecule.mode, RESET);
-    }, [])
+    useCallback(
+      (get: Getter, set: Setter) => {
+        set(themeMolecule.mode, RESET);
+      },
+      [themeMolecule.mode]
+    )
   );
 
   return {

@@ -87,12 +87,10 @@ function SizeComparison({ disabled = false }: { disabled?: boolean }) {
                 </InputField.Control>
                 <InputField.Details>Supporting text</InputField.Details>
               </InputField>
-              <InputField
-                name="normal"
-                size={size}
-                variant="normal"
-                disabled={disabled}>
-                <InputField.Label>Normal input</InputField.Label>
+              <InputField name="above" size={size} disabled={disabled}>
+                <InputField.Label variant="above">
+                  Label above input
+                </InputField.Label>
                 <InputField.Control>
                   <InputField.Control.TextBox>
                     <InputField.Control.TextBox.Value placeholder="Enter text" />
@@ -100,11 +98,35 @@ function SizeComparison({ disabled = false }: { disabled?: boolean }) {
                 </InputField.Control>
               </InputField>
               <InputField
-                name="underline"
+                name="outlined"
                 size={size}
-                variant="underline"
+                variant="outlined"
                 disabled={disabled}>
-                <InputField.Label>Underline input</InputField.Label>
+                <InputField.Label>Outlined input</InputField.Label>
+                <InputField.Control>
+                  <InputField.Control.TextBox>
+                    <InputField.Control.TextBox.Value placeholder="Enter text" />
+                  </InputField.Control.TextBox>
+                </InputField.Control>
+              </InputField>
+              <InputField
+                name="underlined"
+                size={size}
+                variant="underlined"
+                disabled={disabled}>
+                <InputField.Label>Underlined input</InputField.Label>
+                <InputField.Control>
+                  <InputField.Control.TextBox>
+                    <InputField.Control.TextBox.Value placeholder="Enter text" />
+                  </InputField.Control.TextBox>
+                </InputField.Control>
+              </InputField>
+              <InputField
+                name="inlined"
+                size={size}
+                variant="inlined"
+                disabled={disabled}>
+                <InputField.Label>Inlined input</InputField.Label>
                 <InputField.Control>
                   <InputField.Control.TextBox>
                     <InputField.Control.TextBox.Value placeholder="Enter text" />

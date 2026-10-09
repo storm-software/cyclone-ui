@@ -16,30 +16,42 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldLabelVariant } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { GetProps } from "@tamagui/core";
 import { expect, userEvent, within } from "storybook/test";
 import { TextAreaField } from "./TextAreaField";
 
-const meta: Meta<typeof TextAreaField> = {
+/** Field props plus the story-only `labelVariant`, passed to `TextAreaField.Label`. */
+type TextAreaFieldStoryArgs = GetProps<typeof TextAreaField> & {
+  labelVariant?: FieldLabelVariant;
+};
+
+const meta: Meta<TextAreaFieldStoryArgs> = {
   title: "Form/TextAreaField",
   component: TextAreaField,
   tags: ["autodocs"],
-  render: ({ defaultValue = "", ...props }: any, { id }: { id: string }) => (
+  render: (
+    { defaultValue = "", labelVariant, ...props }: any,
+    { id }: { id: string }
+  ) => (
     <Form
       name={`formName-${id}`}
       initialValues={{ textAreaFieldName: defaultValue }}>
       <TextAreaField name="textAreaFieldName" {...props}>
-        <TextAreaField.Label>Label Text</TextAreaField.Label>
+        <TextAreaField.Label variant={labelVariant}>
+          Label Text
+        </TextAreaField.Label>
         <TextAreaField.Control placeholder="Enter a message" rows={3} />
       </TextAreaField>
     </Form>
   )
-} satisfies Meta<typeof TextAreaField>;
+} satisfies Meta<TextAreaFieldStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof TextAreaField>;
+type Story = StoryObj<TextAreaFieldStoryArgs>;
 
 const validation = (
   type:
@@ -66,12 +78,13 @@ const firstLineCenter = (textArea: HTMLElement) => {
   const style = getComputedStyle(textArea);
   // `line-height: normal` computes to a keyword; browsers use about 1.2em.
   const lineHeight =
-    parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.2;
+    Number.parseFloat(style.lineHeight) ||
+    Number.parseFloat(style.fontSize) * 1.2;
 
   return (
     textArea.getBoundingClientRect().top +
-    parseFloat(style.borderTopWidth) +
-    parseFloat(style.paddingTop) +
+    Number.parseFloat(style.borderTopWidth) +
+    Number.parseFloat(style.paddingTop) +
     lineHeight / 2
   );
 };
@@ -102,12 +115,14 @@ export const Base: Story = {
 
 export const Floating: Story = {
   args: {
-    variant: "floating"
+    labelVariant: "floating"
   },
-  render: (props, { id }) => (
+  render: ({ labelVariant, ...props }, { id }) => (
     <Form name={`formName-${id}`} initialValues={{ textAreaFieldName: "" }}>
       <TextAreaField {...props} name="textAreaFieldName">
-        <TextAreaField.Label>Label Text</TextAreaField.Label>
+        <TextAreaField.Label variant={labelVariant}>
+          Label Text
+        </TextAreaField.Label>
         <TextAreaField.Control rows={3} />
       </TextAreaField>
     </Form>
@@ -116,13 +131,49 @@ export const Floating: Story = {
 
 export const FloatingWithPlaceholder: Story = {
   args: {
-    variant: "floating"
+    labelVariant: "floating"
   }
 };
 
-export const Underline: Story = {
+export const OutlinedFloating: Story = {
   args: {
-    variant: "underline"
+    variant: "outlined",
+    labelVariant: "floating"
+  }
+};
+
+export const UnderlinedFloating: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
   }
 };
 

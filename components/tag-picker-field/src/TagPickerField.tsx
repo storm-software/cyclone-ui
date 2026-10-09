@@ -87,8 +87,7 @@ const TagPickerFieldControl = forwardRef<TamaguiElement, TagPickerProps>(
         size={size}
         disabled={disabled}
         focused={focused}
-        // Field's "normal" variant is the tag select's "default".
-        variant={variant === "normal" ? "default" : variant}
+        variant={variant}
         value={controlledValue ?? value ?? NO_TAGS}
         placeholder={shouldShowPlaceholder ? placeholder : undefined}
         inputRef={inputRef}

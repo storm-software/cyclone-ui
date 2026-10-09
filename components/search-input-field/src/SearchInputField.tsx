@@ -340,7 +340,6 @@ const SearchInputFieldGroup = styleableInputField<SearchInputFieldGroupProps>(
 
 interface SearchInputFieldLabelProps {
   children?: React.ReactNode;
-  hideOptional?: boolean;
   [key: string]: any;
 }
 
@@ -349,12 +348,9 @@ const styleableInputFieldLabel = ((render: any) =>
 
 const SearchInputFieldLabel =
   styleableInputFieldLabel<SearchInputFieldLabelProps>(
-    ({ children, hideOptional = true, ...props }, forwardedRef: any) => {
+    ({ children, ...props }, forwardedRef: any) => {
       return (
-        <InputField.Label
-          ref={forwardedRef}
-          hideOptional={hideOptional}
-          {...props}>
+        <InputField.Label ref={forwardedRef} {...props}>
           {children}
         </InputField.Label>
       );

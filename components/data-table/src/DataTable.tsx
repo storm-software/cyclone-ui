@@ -1102,12 +1102,13 @@ export function DataTablePagination<TData extends RowData>({
               <View width="30xl">
                 <SelectField
                   name="pageSize"
-                  variant="normal"
                   items={pageSizes}
                   size="sm"
                   onChange={handlePageSizeChange}>
                   <XStack alignItems="center" gap="3xl">
-                    <SelectField.Label hideOptional={true} flexShrink={0}>
+                    <SelectField.Label
+                      variant="above"
+                      flexShrink={0}>
                       Per page:
                     </SelectField.Label>
                     <View width="18xl" flexShrink={0}>

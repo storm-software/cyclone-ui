@@ -837,7 +837,7 @@ export const manifest = {
       "cssVar": "--storm-color-hairline-active",
       "type": "color",
       "category": "color",
-      "value": "#9d9d9e"
+      "value": "#565657"
     },
     {
       "path": "color.hairline-hover",
@@ -5217,14 +5217,7 @@ export const manifest = {
     }
   ],
   "icons": [],
-  "fonts": [
-    {
-      "family": "Storm Sans"
-    },
-    {
-      "family": "Storm Serif"
-    }
-  ],
+  "fonts": [],
   "tamagui": {
     "name": "cyclone-ui",
     "version": "0.0.0",
@@ -5602,8 +5595,6 @@ export const manifest = {
         "editorial-lg",
         "editorial-md",
         "eyebrow",
-        "storm-sans",
-        "storm-serif",
         "title-lg",
         "title-md",
         "title-sm",
@@ -5611,18 +5602,8 @@ export const manifest = {
         "title-xs"
       ],
       "fontSize": [
-        "1",
-        "2",
-        "3",
         "3xl",
-        "4",
-        "5",
         "5xl",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
         "lg",
         "md",
         "sm",

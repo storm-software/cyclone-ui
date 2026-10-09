@@ -39,7 +39,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# ESLint Plugin
+# Cyclone UI - ESLint Plugin
 
 A package containing an [ESLint plugin](https://eslint.org/docs/developer-guide/working-with-plugins) for the Cyclone UI design system.
 
@@ -47,7 +47,7 @@ A package containing an [ESLint plugin](https://eslint.org/docs/developer-guide/
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [ESLint Plugin](#eslint-plugin)
+- [Cyclone UI - ESLint Plugin](#cyclone-ui---eslint-plugin)
   - [Table of Contents](#table-of-contents)
   - [Installing](#installing)
   - [Reduced Package Size](#reduced-package-size)

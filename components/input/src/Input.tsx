@@ -17,12 +17,14 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { useFieldHasValidationMessage } from "@cyclone-ui/field";
+import type { FieldLabelPlacement } from "@cyclone-ui/field";
 import {
-  getFormSizeToken,
-  getSized,
-  type FormControlSize
-} from "@cyclone-ui/helpers";
+  FieldNotchedOutline,
+  useFieldHasValidationMessage,
+  useFieldLabelPlacement
+} from "@cyclone-ui/field";
+import type { FormControlSize } from "@cyclone-ui/helpers";
+import { getFormSizeToken, getSized } from "@cyclone-ui/helpers";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
@@ -44,7 +46,9 @@ export const ControlUnderline = styled(View, {
   displayName: "ControlUnderline",
   transition: "200ms",
   position: "absolute",
-  left: 0,
+  // Grows outward from the center (MUI-style): `left` and `width` animate
+  // together. Not `scaleX`, which misanimates when it starts from 0.
+  left: "50%",
   bottom: 0,
   width: 0,
   height: "xxs",
@@ -53,12 +57,14 @@ export const ControlUnderline = styled(View, {
   variants: {
     focused: {
       true: {
+        left: 0,
         width: "100%"
       }
     },
 
     disabled: {
       true: {
+        left: "50%",
         width: 0,
         backgroundColor: "accentDisabled"
       }
@@ -107,23 +113,25 @@ const InputGroup = styled(XStack, {
       }
     },
 
+    // The radius and focus ring are styled by the `.resolve` below, as they
+    // depend on the size.
     variant: {
-      default: {},
-      floating: {},
-      underline: {
+      outlined: {},
+      underlined: {
+        backgroundColor: "transparent",
         borderWidth: 0,
-        borderBottomWidth: 1,
-        borderColor: "hairline hover:accentHover",
-        borderRadius: 0,
-        boxShadow: "none"
-      }
+        borderBottomWidth: 1
+      },
+      inlined: {}
     },
 
     // Keep frame dimensions separate from Tamagui's special `size` prop. A
     // `$true` size is consumed before spread variants run, leaving no height.
     // Styled by the `.resolve` below because the geometry depends on
-    // `variant` and `circular`.
+    // `variant`, `labelPlacement` and `circular`.
     frameSize: styled.dynamic<FormControlSize>(),
+
+    labelPlacement: styled.dynamic<FieldLabelPlacement>(),
 
     disabled: {
       true: {
@@ -145,30 +153,48 @@ const InputGroup = styled(XStack, {
     disabled: false,
     focused: false,
     circular: false,
-    variant: "default"
+    variant: "outlined"
   }
 }).resolve(props => {
-  const variant = (props.variant ?? "default") as InputVariant;
+  const variant = (props.variant ?? "outlined") as InputVariant;
   const frameSize = props.frameSize ?? "md";
   const sized = isFormControlSize(frameSize)
     ? getInputSize(frameSize, {
-        variant,
+        labelPlacement: props.labelPlacement as FieldLabelPlacement | undefined,
         circular: Boolean(props.circular)
       })
     : undefined;
+  // `FieldNotchedOutline` draws a notched field's border instead; the
+  // padding keeps the content where the border left it.
+  const notched = props.labelPlacement === "border";
 
   return {
-    // Focus ring: the `underline` variant keeps its flat `none` shadow.
-    boxShadow: props.focused && variant !== "underline" ? "ringOffset" : undefined,
-    paddingHorizontal: sized ? 0 : undefined,
+    // Focus ring: underlined and inlined inputs show their underline instead.
+    boxShadow:
+      props.focused && (variant === "outlined" || variant === "inlined")
+        ? "ringOffset"
+        : undefined,
+    paddingHorizontal: sized ? (notched ? 1 : 0) : undefined,
+    paddingVertical: notched ? 1 : undefined,
+    borderWidth: notched ? 0 : undefined,
     height: sized?.height,
     minHeight: sized?.minHeight,
-    // The `underline` variant owns the radius when set.
-    borderRadius: variant === "underline" ? undefined : sized?.borderRadius
+    // underlined inputs round only their top corners; inlined ones own theirs.
+    ...(variant === "outlined" || variant === "inlined"
+      ? { borderRadius: sized?.borderRadius }
+      : variant === "underlined"
+        ? {
+            borderTopLeftRadius: sized?.borderRadius,
+            borderTopRightRadius: sized?.borderRadius,
+            borderBottomLeftRadius: 0,
+            borderBottomRightRadius: 0
+          }
+        : {})
   };
 });
 
-const InputGroupImpl = createStyledHOC(InputGroup, 
+const InputGroupImpl = createStyledHOC(
+  InputGroup,
   (
     props: Omit<GetProps<typeof InputGroup>, "onChange" | "onInput"> &
       Partial<InputContextProps>,
@@ -178,7 +204,7 @@ const InputGroupImpl = createStyledHOC(InputGroup,
       children,
       name,
       size = "md",
-      variant = "default",
+      variant = "outlined",
       onChange,
       onInput,
       onFocus,
@@ -234,8 +260,10 @@ const InputGroupImpl = createStyledHOC(InputGroup,
     // input (via bubbling focus events) alongside the controlled `focused`.
     const active = focused || locallyActive;
     const hasValidationMessage = useFieldHasValidationMessage();
+    const labelPlacement = useFieldLabelPlacement();
     const idleColor = hasValidationMessage ? "accent" : "hairline";
     const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
+    const borderColor = `${active ? focusColor : idleColor} group-hover/field:${disabled ? "accentDisabled" : active ? focusColor : "accentHover"}`;
 
     return (
       <InputContext.Provider
@@ -246,6 +274,7 @@ const InputGroupImpl = createStyledHOC(InputGroup,
         circular={Boolean(rest.circular)}
         size={size}
         variant={variant}
+        labelPlacement={labelPlacement}
         focused={active}
         hasValidationMessage={hasValidationMessage}
         disabled={disabled}
@@ -258,22 +287,29 @@ const InputGroupImpl = createStyledHOC(InputGroup,
           {...rest}
           frameSize={frameSize}
           variant={variant}
+          labelPlacement={labelPlacement}
           focused={active}
           hasValidationMessage={hasValidationMessage}
           disabled={disabled}
-          borderColor={`${active ? focusColor : idleColor} group-hover/field:${disabled ? "accentDisabled" : active ? focusColor : "accentHover"}`}
+          borderColor={borderColor}
           onFocus={handleFocus}
           onBlur={handleBlur}
           onMouseDown={handleMouseDown}
           transition="200ms">
           <XGroup display="contents" disabled={disabled}>
             {children}
-            {variant === "underline" && (
+            {variant === "underlined" && (
               <ControlUnderline
                 bottom={-1}
                 focused={active}
                 disabled={disabled}
                 backgroundColor={disabled ? "accentDisabled" : focusColor}
+              />
+            )}
+            {labelPlacement === "border" && (
+              <FieldNotchedOutline
+                borderColor={borderColor}
+                borderRadius={rest.circular ? 100_000 : "control"}
               />
             )}
           </XGroup>
@@ -293,7 +329,7 @@ const InputSeparator = styled(View, {
   // the mount-time "no animation" flag) when `transition` names `enter`.
   transition: { duration: "200ms", enter: "200ms" },
   opacity: "enter:0",
-  // Drawn as a filled 1px bar rather than a left border: `XGroup.Item` zeroes
+  // Drawn as a underlined 1px bar rather than a left border: `XGroup.Item` zeroes
   // `borderLeftWidth` on every non-first item, which hid the line.
   backgroundColor: "hairline hover:hairlineHover",
   width: 1,
@@ -314,11 +350,11 @@ const InputSeparator = styled(View, {
     },
 
     variant: {
-      default: {},
-      floating: {},
-      underline: {
+      outlined: {},
+      underlined: {
         width: 0
-      }
+      },
+      inlined: {}
     },
 
     disabled: {
@@ -331,11 +367,12 @@ const InputSeparator = styled(View, {
   defaultVariants: {
     disabled: false,
     focused: false,
-    variant: "default"
+    variant: "outlined"
   }
 });
 
-const InputSeparatorImpl = createStyledHOC(InputSeparator, 
+const InputSeparatorImpl = createStyledHOC(
+  InputSeparator,
   (props, forwardedRef) => {
     const { disabled, focused, hasValidationMessage } =
       InputContext.useStyledContext();
@@ -367,7 +404,8 @@ const InputTextBox = styled(XStack, {
   gap: "zero"
 });
 
-const InputTextBoxImpl = createStyledHOC(InputTextBox, 
+const InputTextBoxImpl = createStyledHOC(
+  InputTextBox,
   ({ children, ...props }, forwardedRef) => {
     return (
       <XGroup.Item flex={1} minWidth={0}>
@@ -380,7 +418,8 @@ const InputTextBoxImpl = createStyledHOC(InputTextBox,
   { displayName: "Input" }
 );
 
-const InputValueImpl = createStyledHOC(InputValue, 
+const InputValueImpl = createStyledHOC(
+  InputValue,
   ({ children, enterKeyHint = "done", value, ...props }, forwardedRef) => {
     const { onChange: contextOnChange, onInput: contextOnInput } =
       InputContext.useStyledContext();
@@ -403,12 +442,18 @@ const InputValueImpl = createStyledHOC(InputValue,
   { displayName: "InputValue" }
 );
 
-const InputTrigger = createStyledHOC(Button, 
+const InputTrigger = createStyledHOC(
+  Button,
   (
-    { children, size: sizeProp, flexBasis: _flexBasis, ...props }: GetProps<typeof Button> & {
-  forcePlacement?: GetProps<typeof XGroup.Item>["forcePlacement"];
-  size?: FormControlSize;
-},
+    {
+      children,
+      size: sizeProp,
+      flexBasis: _flexBasis,
+      ...props
+    }: GetProps<typeof Button> & {
+      forcePlacement?: GetProps<typeof XGroup.Item>["forcePlacement"];
+      size?: FormControlSize;
+    },
     forwardedRef
   ) => {
     const { circular, size } = InputContext.useStyledContext();
@@ -416,7 +461,7 @@ const InputTrigger = createStyledHOC(Button,
     const frameSize = useMemo(() => getSized(controlSize), [controlSize]);
 
     const adjustedTrigger = useMemo(
-      // Button.Icon applies its standard six-step glyph reduction. A frame
+      // Button.Icon applies its inlined six-step glyph reduction. A frame
       // two steps below the control therefore matches Field.Icon glyphs.
       () => getSized(controlSize, { shift: -2 }),
       [controlSize]

@@ -16,32 +16,41 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldLabelVariant } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { GetProps } from "@tamagui/core";
 import { expect, screen, userEvent, within } from "storybook/test";
 import { DatePickerField } from "./DatePickerField";
 
-const meta: Meta<typeof DatePickerField> = {
+/** Field props plus the story-only `labelVariant`, passed to `DatePickerField.Label`. */
+type DatePickerFieldStoryArgs = GetProps<typeof DatePickerField> & {
+  labelVariant?: FieldLabelVariant;
+};
+
+const meta: Meta<DatePickerFieldStoryArgs> = {
   title: "Form/DatePickerField",
   component: DatePickerField,
   tags: ["autodocs"],
-  render: (props: any, { id }: { id: string }) => {
+  render: ({ labelVariant, ...props }: any, { id }: { id: string }) => {
     return (
       <Form
         name={`formName-${id}`}
         initialValues={{ datePickerFieldName: new Date(2026, 0, 28) }}>
         <DatePickerField name="datePickerFieldName" {...props}>
-          <DatePickerField.Label>Label Text</DatePickerField.Label>
+          <DatePickerField.Label variant={labelVariant}>
+            Label Text
+          </DatePickerField.Label>
           <DatePickerField.Control />
         </DatePickerField>
       </Form>
     );
   }
-} satisfies Meta<typeof DatePickerField>;
+} satisfies Meta<DatePickerFieldStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof DatePickerField>;
+type Story = StoryObj<DatePickerFieldStoryArgs>;
 
 const validation = (
   type:
@@ -99,21 +108,59 @@ export const Base: Story = {
 
 export const Floating: Story = {
   args: {
-    variant: "floating"
+    labelVariant: "floating"
   },
-  render: (props, { id }) => (
+  render: ({ labelVariant, ...props }, { id }) => (
     <Form name={`formName-${id}`} initialValues={{ datePickerFieldName: null }}>
       <DatePickerField {...props} name="datePickerFieldName">
-        <DatePickerField.Label>Label Text</DatePickerField.Label>
+        <DatePickerField.Label variant={labelVariant}>
+          Label Text
+        </DatePickerField.Label>
         <DatePickerField.Control />
       </DatePickerField>
     </Form>
   )
 };
 
-export const Underline: Story = {
+export const OutlinedFloating: Story = {
   args: {
-    variant: "underline"
+    variant: "outlined",
+    labelVariant: "floating"
+  }
+};
+
+export const UnderlinedFloating: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
   }
 };
 
@@ -133,14 +180,16 @@ export const Range: Story = {
   args: {
     mode: "range"
   },
-  render: (props, { id }) => (
+  render: ({ labelVariant, ...props }, { id }) => (
     <Form
       name={`formName-${id}`}
       initialValues={{
         datePickerFieldName: [new Date(2026, 0, 28), new Date(2026, 1, 3)]
       }}>
       <DatePickerField {...props} name="datePickerFieldName">
-        <DatePickerField.Label>Travel dates</DatePickerField.Label>
+        <DatePickerField.Label variant={labelVariant}>
+          Travel dates
+        </DatePickerField.Label>
         <DatePickerField.Control />
       </DatePickerField>
     </Form>

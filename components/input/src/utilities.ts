@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldLabelPlacement } from "@cyclone-ui/field";
+import { getFieldLabelInset } from "@cyclone-ui/field";
 import {
   formSizeVariants,
   getFormFontScale,
@@ -27,17 +29,35 @@ import {
   type FormControlSize
 } from "@cyclone-ui/helpers";
 import { createStyledContext, getVariableValue } from "@tamagui/core";
-import type { InputContextProps, InputVariant } from "./types";
-export const InputContext = createStyledContext<InputContextProps, "size" | "circular" | "disabled" | "focused" | "hasValidationMessage" | "variant">({
-  size: "md",
-  circular: false,
-  disabled: false,
-  focused: false,
-  hasValidationMessage: false,
-  variant: "default"
-} as InputContextProps, {
-  keys: ["size", "circular", "disabled", "focused", "hasValidationMessage", "variant"]
-});
+import type { InputContextProps } from "./types";
+export const InputContext = createStyledContext<
+  InputContextProps,
+  | "size"
+  | "circular"
+  | "disabled"
+  | "focused"
+  | "hasValidationMessage"
+  | "variant"
+>(
+  {
+    size: "md",
+    circular: false,
+    disabled: false,
+    focused: false,
+    hasValidationMessage: false,
+    variant: "outlined"
+  } as InputContextProps,
+  {
+    keys: [
+      "size",
+      "circular",
+      "disabled",
+      "focused",
+      "hasValidationMessage",
+      "variant"
+    ]
+  }
+);
 
 type BaseInputStyle = [Record<string, any>, Record<string, any>];
 
@@ -90,7 +110,9 @@ export const baseInputStyle: BaseInputStyle = [
           ),
           lineHeight: joinFlatValues(
             toFlatLength(font.lineHeight),
-            size === "md" ? "web:normal" : `web:${24 * getFormFontScale(size)}px`
+            size === "md"
+              ? "web:normal"
+              : `web:${24 * getFormFontScale(size)}px`
           ),
           paddingHorizontal: Math.round(
             sizeToSpace(getSized(getFormSizeToken(size))) * 0.4
@@ -128,12 +150,17 @@ const toFlatLength = (value: unknown) => {
 export const getInputSize = (
   val: FormControlSize,
   {
-    variant,
+    labelPlacement,
     circular
-  }: { variant?: InputVariant | null; circular?: boolean | null } = {}
+  }: {
+    labelPlacement?: FieldLabelPlacement | null;
+    circular?: boolean | null;
+  } = {}
 ) => {
   const token = getFormSizeToken(val);
-  const height = variant === "floating" ? getSized(token) + 3 : token;
+  const height = labelPlacement
+    ? getSized(token) + getFieldLabelInset(labelPlacement, val)
+    : token;
   return {
     paddingHorizontal: getSpaced(token),
     height,

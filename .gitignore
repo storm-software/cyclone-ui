@@ -10,6 +10,7 @@ tsconfig.tsbuildinfo
 __generated__
 
 .venv
+.playwright-mcp
 .pnpm-store
 .worktrees
 graphify-out
@@ -82,8 +83,7 @@ local.properties
 !debug.keystore
 
 # node.js
-#
-node_modules/
+node_modules
 npm-debug.log
 yarn-error.log
 

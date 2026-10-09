@@ -16,19 +16,26 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldLabelVariant } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { GetProps } from "@tamagui/core";
 import { View } from "@tamagui/core";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { TagPickerField } from "./TagPickerField";
 
-const meta: Meta<typeof TagPickerField> = {
+/** Field props plus the story-only `labelVariant`, passed to `TagPickerField.Label`. */
+type TagPickerFieldStoryArgs = GetProps<typeof TagPickerField> & {
+  labelVariant?: FieldLabelVariant;
+};
+
+const meta: Meta<TagPickerFieldStoryArgs> = {
   title: "Form/TagPickerField",
   component: TagPickerField,
   tags: ["autodocs"],
   // `control` holds props for `TagPickerField.Control`, such as `tagVariant`.
   render: (
-    { defaultValue = [], control, ...props }: any,
+    { defaultValue = [], control, labelVariant, ...props }: any,
     { id }: { id: string }
   ) => (
     <Form
@@ -36,18 +43,22 @@ const meta: Meta<typeof TagPickerField> = {
       initialValues={{ tagPickerFieldName: defaultValue }}>
       <View width={360}>
         <TagPickerField name="tagPickerFieldName" {...props}>
-          <TagPickerField.Label>Topics</TagPickerField.Label>
+          <TagPickerField.Label variant={labelVariant}>
+            Topics
+          </TagPickerField.Label>
           <TagPickerField.Control placeholder="Add a topic" {...control} />
-          <TagPickerField.Details>Press Enter to add a topic</TagPickerField.Details>
+          <TagPickerField.Details>
+            Press Enter to add a topic
+          </TagPickerField.Details>
         </TagPickerField>
       </View>
     </Form>
   )
-} satisfies Meta<typeof TagPickerField>;
+} satisfies Meta<TagPickerFieldStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof TagPickerField>;
+type Story = StoryObj<TagPickerFieldStoryArgs>;
 
 const validation = (
   type:
@@ -82,14 +93,20 @@ export const Base: Story = {
     // The control's value comes from the form, so pills only appear (and
     // leave) once a change reaches the form state.
     await userEvent.keyboard("Design{Enter}Research{Enter}");
-    await waitFor(() => expect(canvas.getByText("Research")).toBeTruthy());
+    await waitFor(async () =>
+      expect(canvas.getByText("Research")).toBeTruthy()
+    );
     await expect(canvas.getByText("Design")).toBeTruthy();
 
     await userEvent.keyboard("{Backspace}");
-    await waitFor(() => expect(canvas.queryByText("Research")).toBeNull());
+    await waitFor(async () =>
+      expect(canvas.queryByText("Research")).toBeNull()
+    );
 
-    await userEvent.click(canvas.getByRole("button", { name: "Remove Design" }));
-    await waitFor(() => expect(canvas.queryByText("Design")).toBeNull());
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Remove Design" })
+    );
+    await waitFor(async () => expect(canvas.queryByText("Design")).toBeNull());
     await expect(input).toHaveFocus();
   }
 };
@@ -137,7 +154,7 @@ export const MaxTags: Story = {
     await canvas.findByText("Choose at most 3 topics");
 
     await userEvent.keyboard("{Backspace}");
-    await waitFor(() =>
+    await waitFor(async () =>
       expect(canvas.queryByText("Choose at most 3 topics")).toBeNull()
     );
   }
@@ -145,7 +162,7 @@ export const MaxTags: Story = {
 
 export const Floating: Story = {
   args: {
-    variant: "floating"
+    labelVariant: "floating"
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -169,23 +186,60 @@ export const Floating: Story = {
     await userEvent.tab();
 
     // With tags the label stays floated after focus leaves.
-    await waitFor(() =>
-      expect(label.getBoundingClientRect().top).toBeLessThan(restingRect.top - 5)
+    await waitFor(async () =>
+      expect(label.getBoundingClientRect().top).toBeLessThan(
+        restingRect.top - 5
+      )
     );
   }
 };
 
 export const FloatingWithValue: Story = {
   args: {
-    variant: "floating",
+    labelVariant: "floating",
     defaultValue: ["Design", "Engineering"]
   }
 };
 
-export const Underline: Story = {
+export const OutlinedFloating: Story = {
   args: {
-    variant: "underline",
-    defaultValue: ["Design", "Engineering"]
+    variant: "outlined",
+    labelVariant: "floating"
+  }
+};
+
+export const UnderlinedFloating: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
   }
 };
 
@@ -221,7 +275,7 @@ export const Error: Story = {
 export const ErrorFloating: Story = {
   args: {
     validate: validation("danger"),
-    variant: "floating",
+    labelVariant: "floating",
     defaultValue: ["Design"]
   }
 };

@@ -33,14 +33,21 @@ import {
 import { useCallback, useLayoutEffect, useRef } from "react";
 
 const TextAreaFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
-  const { children, variant = "floating", ...rest } = props;
+  const { children, ...rest } = props;
 
   return (
-    <Field ref={forwardedRef} {...rest} variant={variant}>
+    <Field ref={forwardedRef} {...rest}>
       {children}
     </Field>
   );
 });
+
+const TextAreaFieldLabel = createStyledHOC(
+  Field.Label,
+  ({ variant = "floating", ...props }, forwardedRef) => (
+    <Field.Label ref={forwardedRef} {...props} variant={variant} />
+  )
+);
 
 // Typed as `TextArea`: wrapping an HOC-made component otherwise infers `any`
 // props, and the inferred type is not portable in declarations.
@@ -91,7 +98,7 @@ const TextAreaFieldControl: typeof TextArea = createStyledHOC(
           name={name}
           size={size}
           focused={focused}
-          variant={variant === "normal" ? "default" : variant}
+          variant={variant}
           disabled={disabled}
           placeholder={shouldShowPlaceholder ? props.placeholder : undefined}
           value={formattedValue}
@@ -105,7 +112,7 @@ const TextAreaFieldControl: typeof TextArea = createStyledHOC(
 );
 
 export const TextAreaField = withStaticProperties(TextAreaFieldGroup, {
-  Label: Field.Label,
+  Label: TextAreaFieldLabel,
   Link: Field.Link,
   Control: TextAreaFieldControl,
   Details: Field.Details,

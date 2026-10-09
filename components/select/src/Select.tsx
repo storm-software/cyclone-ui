@@ -17,10 +17,13 @@
  ------------------------------------------------------------------- */
 
 import { ContextMenu } from "@cyclone-ui/context-menu";
+import type { FieldLabelPlacement } from "@cyclone-ui/field";
 import {
   Field,
+  FieldNotchedOutline,
   useFieldHasValidationMessage,
-  useFieldIconColor
+  useFieldIconColor,
+  useFieldLabelPlacement
 } from "@cyclone-ui/field";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
@@ -84,21 +87,25 @@ const SelectGroup = styled(XStack, {
       }
     },
 
+    // The radius is styled by the `.resolve` below, as it depends on the
+    // size.
     variant: {
-      default: {},
-      floating: {},
-      underline: {
+      outlined: {},
+      underlined: {
+        backgroundColor: "transparent",
         borderWidth: 0,
         borderBottomWidth: 1,
         borderColor: "hairline hover:accentHover focus-visible:accent",
-        borderRadius: 0,
         boxShadow: "none focus-visible:none"
-      }
+      },
+      inlined: {}
     },
 
     // Styled by the `.resolve` below because the geometry depends on
-    // `variant` and `circular`.
+    // `variant`, `labelPlacement` and `circular`.
     frameSize: styled.dynamic<FormControlSize>(),
+
+    labelPlacement: styled.dynamic<FieldLabelPlacement>(),
 
     disabled: {
       true: {
@@ -114,18 +121,38 @@ const SelectGroup = styled(XStack, {
     frameSize: "md",
     disabled: false,
     focused: false,
-    variant: "default"
+    variant: "outlined"
   }
 }).resolve(props => {
   const sized = getSelectSize(
     (props.frameSize as FormControlSize | undefined) ?? "md",
     {
-      variant: props.variant as string | undefined,
+      labelPlacement: props.labelPlacement as FieldLabelPlacement | undefined,
       circular: (props as { circular?: boolean }).circular
     }
   );
+  // `FieldNotchedOutline` draws a notched field's border instead; the
+  // padding keeps the content where the border left it.
+  const notched = props.labelPlacement === "border";
 
-  return sized ? { ...sized, paddingHorizontal: 0 } : undefined;
+  return sized
+    ? {
+        height: sized.height,
+        minHeight: sized.minHeight,
+        paddingHorizontal: notched ? 1 : 0,
+        paddingVertical: notched ? 1 : undefined,
+        borderWidth: notched ? 0 : undefined,
+        // underlined selects round only their top corners; inlined ones none.
+        ...(props.variant === "underlined"
+          ? {
+              borderTopLeftRadius: sized.borderRadius,
+              borderTopRightRadius: sized.borderRadius,
+              borderBottomLeftRadius: 0,
+              borderBottomRightRadius: 0
+            }
+          : { borderRadius: sized.borderRadius })
+      }
+    : undefined;
 });
 
 const SelectSeparator = styled(View, {
@@ -163,11 +190,15 @@ const SelectSeparator = styled(View, {
     },
 
     variant: {
-      default: {},
-      floating: {},
-      underline: {
-        borderWidth: 0
-      }
+      outlined: {},
+      underlined: {
+        borderWidth: 0,
+        borderLeftWidth: 0,
+        borderRightWidth: 0,
+        borderTopWidth: 0,
+        borderBottomWidth: 0
+      },
+      inlined: {}
     },
 
     disabled: {
@@ -180,7 +211,7 @@ const SelectSeparator = styled(View, {
   defaultVariants: {
     disabled: false,
     focused: false,
-    variant: "default"
+    variant: "outlined"
   }
 });
 
@@ -208,7 +239,11 @@ const SelectTrigger = createStyledHOC(
           rotate={focused ? "180deg" : "0deg"}
           alignItems="center"
           justifyContent="center">
-          <CaretDown size={24 * getFormSizeScale(size)} color={iconColor} />
+          <CaretDown
+            size={24 * getFormSizeScale(size)}
+            color={iconColor}
+            weight="bold"
+          />
         </View>
       </Field.Icon>
     );
@@ -225,15 +260,21 @@ const SelectTextBoxImpl = createStyledHOC(
     }: GetProps<typeof SelectTextBox> & Partial<SelectContextProps>,
     forwardedRef
   ) => {
-    const { focused, disabled, size, variant } =
+    const { focused, disabled, size, variant, circular } =
       SelectContext.useStyledContext();
     const hasValidationMessage = useFieldHasValidationMessage();
+    const labelPlacement = useFieldLabelPlacement();
     const [locallyActive, setLocallyActive] = useState(false);
     const frameSize = size;
     const underlineActive = focused || locallyActive;
     const idleColor = hasValidationMessage ? "accent" : "hairline";
     const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
     const hoverColor = hasValidationMessage ? "accentHover" : "hairlineHover";
+    // A call-site base replaces every lower-tier clause in v3, so restate
+    // the `disabled` variant's press/focus colors that v2 kept.
+    // In a field the label overlays the frame without being inside it, so
+    // the frame never sees `hover`; follow the field group's hover too.
+    const borderColor = `${focused ? focusColor : idleColor} hover:${focused ? focusColor : "accentHover"} group-hover/field:${disabled ? "accentDisabled" : focused ? focusColor : "accentHover"}${disabled ? " press:accentDisabled focus:accentDisabled" : ""} focus-visible:${focusColor}`;
 
     return (
       <SelectGroup
@@ -242,14 +283,15 @@ const SelectTextBoxImpl = createStyledHOC(
         focused={focused}
         hasValidationMessage={hasValidationMessage}
         variant={variant}
+        labelPlacement={labelPlacement}
         frameSize={frameSize}
         disabled={disabled}
-        // A call-site base replaces every lower-tier clause in v3, so restate
-        // the `disabled` variant's press/focus colors that v2 kept.
-        // In a field the label overlays the frame without being inside it, so
-        // the frame never sees `hover`; follow the field group's hover too.
-        borderColor={`${focused ? focusColor : idleColor} hover:${focused ? focusColor : "accentHover"} group-hover/field:${disabled ? "accentDisabled" : focused ? focusColor : "accentHover"}${disabled ? " press:accentDisabled focus:accentDisabled" : ""} focus-visible:${focusColor}`}
-        boxShadow={`focus-visible:${variant === "underline" ? "none" : "ringOffset"}`}
+        borderColor={borderColor}
+        boxShadow={`focus-visible:${
+          variant === "outlined" || variant === "inlined"
+            ? "ringOffset"
+            : "none"
+        }`}
         onFocus={() => setLocallyActive(true)}
         onBlur={(event: any) => {
           if (!event.currentTarget?.contains?.(event.relatedTarget)) {
@@ -260,7 +302,11 @@ const SelectTextBoxImpl = createStyledHOC(
         <XGroup display="contents" disabled={disabled}>
           <SelectTextBox
             {...props}
-            paddingLeft={getSpaced(getFormSizeToken(frameSize)) * 0.25}>
+            paddingLeft={
+              variant === "underlined"
+                ? 0
+                : getSpaced(getFormSizeToken(frameSize)) * 0.25
+            }>
             <XGroup.Item flex={1} minWidth={0} height="100%">
               <View
                 flex={1}
@@ -285,12 +331,18 @@ const SelectTextBoxImpl = createStyledHOC(
               <SelectTrigger />
             </XGroup.Item>
           </SelectTextBox>
-          {variant === "underline" && (
+          {variant === "underlined" && (
             <ControlUnderline
               bottom={-1}
               focused={underlineActive}
               disabled={disabled}
               backgroundColor={disabled ? "accentDisabled" : focusColor}
+            />
+          )}
+          {labelPlacement === "border" && (
+            <FieldNotchedOutline
+              borderColor={borderColor}
+              borderRadius={circular ? 100_000 : "control"}
             />
           )}
         </XGroup>
@@ -307,7 +359,7 @@ const SelectGroupImpl = createStyledHOC(
       name,
       disabled,
       focused,
-      variant = "default",
+      variant = "outlined",
       children,
       onFocus,
       onBlur,

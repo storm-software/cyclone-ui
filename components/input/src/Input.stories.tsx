@@ -45,11 +45,7 @@ const meta: Meta<InputStoryArgs> = {
     { id }: { id: string }
   ) => (
     <Form name={`formName-${id}`} initialValues={{ inputName: defaultValue }}>
-      <Field
-        name="inputName"
-        {...props}
-        // Field names the plain presentation `normal`; Input calls it `default`.
-        variant={variant === "default" ? "normal" : variant}>
+      <Field name="inputName" {...props} variant={variant}>
         <Field.Label>Label Text</Field.Label>
         <Input variant={variant} size={props.size}>
           <Input.TextBox>
@@ -89,9 +85,45 @@ export const Base: Story = {
   args: {}
 };
 
-export const Underline: Story = {
+export const OutlinedFloating: Story = {
   args: {
-    variant: "underline"
+    variant: "outlined",
+    labelVariant: "floating"
+  }
+};
+
+export const UnderlinedFloating: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
   }
 };
 

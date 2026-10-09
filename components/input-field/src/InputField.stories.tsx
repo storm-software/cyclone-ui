@@ -16,22 +16,32 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldLabelVariant } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import { Lock, MagnifyingGlass } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { GetProps } from "@tamagui/core";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { InputField } from "./InputField";
 
-const meta: Meta<typeof InputField> = {
+/** Field props plus the story-only `labelVariant`, passed to `InputField.Label`. */
+type InputFieldStoryArgs = GetProps<typeof InputField> & {
+  labelVariant?: FieldLabelVariant;
+};
+
+const meta: Meta<InputFieldStoryArgs> = {
   title: "Form/InputField",
   component: InputField,
   tags: ["autodocs"],
-  render: ({ defaultValue = "", ...props }: any, { id }: { id: string }) => (
+  render: (
+    { defaultValue = "", labelVariant, ...props }: any,
+    { id }: { id: string }
+  ) => (
     <Form
       name={`formName-${id}`}
       initialValues={{ inputFieldName: defaultValue }}>
       <InputField name="inputFieldName" {...props}>
-        <InputField.Label>Label Text</InputField.Label>
+        <InputField.Label variant={labelVariant}>Label Text</InputField.Label>
         <InputField.Control>
           <InputField.Control.TextBox>
             <InputField.Control.TextBox.Value placeholder="email@example.com" />
@@ -40,11 +50,11 @@ const meta: Meta<typeof InputField> = {
       </InputField>
     </Form>
   )
-} satisfies Meta<typeof InputField>;
+} satisfies Meta<InputFieldStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof InputField>;
+type Story = StoryObj<InputFieldStoryArgs>;
 
 const validation = (
   type:
@@ -92,12 +102,12 @@ export const Base: Story = {
 
 export const Floating: Story = {
   args: {
-    variant: "floating"
+    labelVariant: "floating"
   },
-  render: (props, { id }) => (
+  render: ({ labelVariant, ...props }, { id }) => (
     <Form name={`formName-${id}`} initialValues={{ inputFieldName: "" }}>
       <InputField {...props} name="inputFieldName">
-        <InputField.Label>Label Text</InputField.Label>
+        <InputField.Label variant={labelVariant}>Label Text</InputField.Label>
         <InputField.Control>
           <InputField.Control.TextBox>
             <InputField.Control.TextBox.Value />
@@ -155,18 +165,18 @@ export const Floating: Story = {
 
 export const FloatingWithPlaceholder: Story = {
   args: {
-    variant: "floating"
+    labelVariant: "floating"
   }
 };
 
 export const FloatingWithStartIcon: Story = {
   args: {
-    variant: "floating"
+    labelVariant: "floating"
   },
-  render: (props, { id }) => (
+  render: ({ labelVariant, ...props }, { id }) => (
     <Form name={`formName-${id}`} initialValues={{ inputFieldName: "" }}>
       <InputField {...props} name="inputFieldName">
-        <InputField.Label>Search</InputField.Label>
+        <InputField.Label variant={labelVariant}>Search</InputField.Label>
         <InputField.Control>
           <InputField.Control.TextBox>
             <InputField.Icon position="start" aria-label="Search icon">
@@ -204,13 +214,13 @@ export const FloatingWithStartIcon: Story = {
 
 export const FloatingWithEndIconTruncation: Story = {
   args: {
-    variant: "floating"
+    labelVariant: "floating"
   },
-  render: (props, { id }) => (
+  render: ({ labelVariant, ...props }, { id }) => (
     <Form name={`formName-${id}`} initialValues={{ inputFieldName: "" }}>
       <div style={{ width: 240 }}>
         <InputField {...props} name="inputFieldName">
-          <InputField.Label>
+          <InputField.Label variant={labelVariant} showOptional={true}>
             An intentionally long field label that must not overlap the icon
           </InputField.Label>
           <InputField.Control>
@@ -235,7 +245,7 @@ export const FloatingWithEndIconTruncation: Story = {
 
     if (!icon) {
       // `Error` is shadowed by the `Error` story export below.
-      throw new globalThis.Error("Expected the inline icon to render");
+      throw new globalThis.Error("Expected the Inlined icon to render");
     }
 
     await waitFor(async () => {
@@ -253,24 +263,54 @@ export const FloatingWithEndIconTruncation: Story = {
   }
 };
 
-export const Normal: Story = {
+export const OutlinedFloating: Story = {
   args: {
-    variant: "normal"
+    variant: "outlined",
+    labelVariant: "floating"
   }
 };
 
-export const Underline: Story = {
+export const UnderlinedFloating: Story = {
   args: {
-    variant: "underline"
+    variant: "underlined",
+    labelVariant: "floating"
+  }
+};
+
+export const InlinedFloating: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "floating"
+  }
+};
+
+export const OutlinedAbove: Story = {
+  args: {
+    variant: "outlined",
+    labelVariant: "above"
+  }
+};
+
+export const UnderlinedAbove: Story = {
+  args: {
+    variant: "underlined",
+    labelVariant: "above"
+  }
+};
+
+export const InlinedAbove: Story = {
+  args: {
+    variant: "inlined",
+    labelVariant: "above"
   }
 };
 
 export const WithLink: Story = {
   args: {},
-  render: (props, { id }) => (
+  render: ({ labelVariant, ...props }, { id }) => (
     <Form name={`formName-${id}`} initialValues={{ inputFieldName: "" }}>
       <InputField {...props} name="inputFieldName">
-        <InputField.Label>Email</InputField.Label>
+        <InputField.Label variant={labelVariant}>Email</InputField.Label>
         <InputField.Link href="#input-field-link">Why we ask</InputField.Link>
         <InputField.Control>
           <InputField.Control.TextBox>
@@ -331,14 +371,14 @@ export const Brand: Story = {
 export const BrandFloating: Story = {
   args: {
     theme: "brand",
-    variant: "floating"
+    labelVariant: "floating"
   }
 };
 
-export const BrandUnderline: Story = {
+export const BrandUnderlined: Story = {
   args: {
     theme: "brand",
-    variant: "underline"
+    variant: "underlined"
   }
 };
 
@@ -351,14 +391,14 @@ export const Discovery: Story = {
 export const DiscoveryFloating: Story = {
   args: {
     validate: validation("discovery"),
-    variant: "floating"
+    labelVariant: "floating"
   }
 };
 
-export const DiscoveryUnderline: Story = {
+export const DiscoveryUnderlined: Story = {
   args: {
     validate: validation("discovery"),
-    variant: "underline"
+    variant: "underlined"
   }
 };
 
@@ -393,14 +433,14 @@ export const Error: Story = {
 export const ErrorFloating: Story = {
   args: {
     validate: validation("danger"),
-    variant: "floating"
+    labelVariant: "floating"
   }
 };
 
-export const ErrorUnderline: Story = {
+export const ErrorUnderlined: Story = {
   args: {
     validate: validation("danger"),
-    variant: "underline"
+    variant: "underlined"
   }
 };
 
@@ -413,14 +453,14 @@ export const Warning: Story = {
 export const WarningFloating: Story = {
   args: {
     validate: validation("warning"),
-    variant: "floating"
+    labelVariant: "floating"
   }
 };
 
-export const WarningUnderline: Story = {
+export const WarningUnderlined: Story = {
   args: {
     validate: validation("warning"),
-    variant: "underline"
+    variant: "underlined"
   }
 };
 
@@ -433,14 +473,14 @@ export const Info: Story = {
 export const InfoFloating: Story = {
   args: {
     validate: validation("info"),
-    variant: "floating"
+    labelVariant: "floating"
   }
 };
 
-export const InfoUnderline: Story = {
+export const InfoUnderlined: Story = {
   args: {
     validate: validation("info"),
-    variant: "underline"
+    variant: "underlined"
   }
 };
 
@@ -453,14 +493,14 @@ export const Success: Story = {
 export const SuccessFloating: Story = {
   args: {
     validate: validation("success"),
-    variant: "floating"
+    labelVariant: "floating"
   }
 };
 
-export const SuccessUnderline: Story = {
+export const SuccessUnderlined: Story = {
   args: {
     validate: validation("success"),
-    variant: "underline"
+    variant: "underlined"
   }
 };
 
@@ -473,14 +513,14 @@ export const Positive: Story = {
 export const PositiveFloating: Story = {
   args: {
     validate: validation("positive"),
-    variant: "floating"
+    labelVariant: "floating"
   }
 };
 
-export const PositiveUnderline: Story = {
+export const PositiveUnderlined: Story = {
   args: {
     validate: validation("positive"),
-    variant: "underline"
+    variant: "underlined"
   }
 };
 
@@ -493,14 +533,14 @@ export const Negative: Story = {
 export const NegativeFloating: Story = {
   args: {
     validate: validation("negative"),
-    variant: "floating"
+    labelVariant: "floating"
   }
 };
 
-export const NegativeUnderline: Story = {
+export const NegativeUnderlined: Story = {
   args: {
     validate: validation("negative"),
-    variant: "underline"
+    variant: "underlined"
   }
 };
 

@@ -317,6 +317,9 @@
     },
     {
       "path": "./components/confetti-burst"
+    },
+    {
+      "path": "./packages/stylelint-plugin"
     }
   ],
   "files": []

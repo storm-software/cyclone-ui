@@ -200,7 +200,7 @@ colors:
   link-active: "#033a96"
   link-inactive: "#3b72d3"
   hairline-hover: "#7c7c7d"
-  hairline-active: "#9d9d9e"
+  hairline-active: "#565657"
   hairline-inactive: "#e1e1e2"
   on-muted-base: "#151518"
   on-muted-brand: "#1fb2a6"
@@ -609,7 +609,7 @@ Cyclone UI design tokens — 244 color tokens, 17 typography tokens, 70 spacing 
 - **Link Active (#033a96):** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% darker)
 - **Link Inactive (#3b72d3):** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% brighter)
 - **Hairline Hover (#7c7c7d):** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% darker)
-- **Hairline Active (#9d9d9e):** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker)
+- **Hairline Active (#565657):** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% darker)
 - **Hairline Inactive (#e1e1e2):** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% brighter)
 - **On Muted Base (#151518):** Generated base foreground on muted backgrounds
 - **On Muted Brand (#1fb2a6):** Generated brand foreground on muted backgrounds

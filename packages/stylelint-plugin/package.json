@@ -1,0 +1,20 @@
+{
+  "name": "@cyclone-ui/stylelint-plugin",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Cyclone UI Stylelint plugin package",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/stylelint-plugin"
+  },
+  "private": false,
+  "devDependencies": {
+    "@razorwind/stylelint": "catalog:",
+    "@powerlines/plugin-tsdown": "catalog:",
+    "powerlines": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

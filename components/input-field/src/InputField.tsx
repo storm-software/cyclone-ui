@@ -18,6 +18,7 @@
 
 import {
   Field,
+  useFieldHasStartIcon,
   useFieldShouldShowPlaceholder,
   useFieldVariant
 } from "@cyclone-ui/field";
@@ -30,7 +31,6 @@ import {
 import { X } from "@cyclone-ui/icons";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
-import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
   Theme,
@@ -43,87 +43,34 @@ import {
   use,
   useCallback,
   useLayoutEffect,
-  useMemo,
-  useRef,
-  useState
+  useRef
 } from "react";
-
-const InputFieldPresentationContext = createContext<{
-  hasStartIcon: boolean;
-  registerStartIcon: () => () => void;
-}>({
-  hasStartIcon: false,
-  registerStartIcon: () => () => undefined
-});
 
 const InputFieldTextBoxContext = createContext<{
   inputElementRef: RefObject<HTMLInputElement | null>;
 } | null>(null);
 
-const InputFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
-  const { children, variant = "floating", ...rest } = props;
-  const [startIconCount, setStartIconCount] = useState(0);
-  const registerStartIcon = useCallback(() => {
-    setStartIconCount(count => count + 1);
+const InputFieldLabel = createStyledHOC(
+  Field.Label,
+  ({ variant = "floating", ...props }, forwardedRef) => {
+    const field = FieldApi.use();
+    const size = field.size.get() ?? "md";
+    const hasStartIcon = useFieldHasStartIcon();
+    const controlSize = getFormSizeToken(size);
+    const floatingLabelLeft = hasStartIcon
+      ? getSpaced("4xl") * getFormSizeScale(size) +
+        getSized(controlSize, { shift: -2 }) +
+        getSpaced("2xl") * 2 * getFormSizeScale(size)
+      : undefined;
 
-    return () => setStartIconCount(count => Math.max(0, count - 1));
-  }, []);
-  const presentation = useMemo(
-    () => ({ hasStartIcon: startIconCount > 0, registerStartIcon }),
-    [registerStartIcon, startIconCount]
-  );
-
-  return (
-    <InputFieldPresentationContext value={presentation}>
-      <Field ref={forwardedRef} {...rest} variant={variant}>
-        {children}
-      </Field>
-    </InputFieldPresentationContext>
-  );
-});
-
-const InputFieldLabel = createStyledHOC(Field.Label, (props, forwardedRef) => {
-  const field = FieldApi.use();
-  const size = field.size.get() ?? "md";
-  const { hasStartIcon } = use(InputFieldPresentationContext);
-  const controlSize = getFormSizeToken(size);
-  const floatingLabelLeft = hasStartIcon
-    ? getSpaced("4xl") * getFormSizeScale(size) +
-      getSized(controlSize, { shift: -2 }) +
-      getSpaced("2xl") * 2 * getFormSizeScale(size)
-    : undefined;
-
-  return (
-    <Field.Label
-      ref={forwardedRef}
-      {...props}
-      floatingLabelLeft={floatingLabelLeft}
-    />
-  );
-});
-
-const InputFieldIcon = createStyledHOC(
-  Field.Icon,
-  (
-    {
-      position,
-      ...props
-    }: GetProps<typeof Field.Icon> & {
-      position?: "start" | "end";
-    },
-    forwardedRef
-  ) => {
-    const { registerStartIcon } = use(InputFieldPresentationContext);
-
-    useLayoutEffect(() => {
-      if (position === "start") {
-        return registerStartIcon();
-      }
-
-      return undefined;
-    }, [position, registerStartIcon]);
-
-    return <Field.Icon ref={forwardedRef} {...props} position={position} />;
+    return (
+      <Field.Label
+        ref={forwardedRef}
+        {...props}
+        variant={variant}
+        floatingLabelLeft={floatingLabelLeft}
+      />
+    );
   }
 );
 
@@ -140,7 +87,7 @@ const InputFieldControl = createStyledHOC(
     const { focus, blur, change } = useFieldActions();
     const handleChange = useCallback(
       (event: CustomEvent<string>) => {
-        change(event.detail);
+        void change(event.detail);
       },
       [change]
     );
@@ -164,8 +111,7 @@ const InputFieldControl = createStyledHOC(
         {...props}
         name={name}
         focused={focused}
-        // Field's "normal" variant is Input's "default" (neither has styles).
-        variant={variant === "normal" ? "default" : variant}
+        variant={variant}
         disabled={disabled}
         size={size}
         onFocus={focus}
@@ -190,7 +136,7 @@ const InputFieldControlTextBox = createStyledHOC(
 
     const { change } = useFieldActions();
     const handleClear = useCallback(() => {
-      change(options?.defaultValue);
+      void change(options?.defaultValue);
       inputElementRef.current?.focus();
     }, [change, options?.defaultValue]);
 
@@ -228,7 +174,7 @@ const InputFieldControlTextBoxValue = createStyledHOC(
     );
 
     useLayoutEffect(() => {
-      mount(inputRef);
+      void mount(inputRef);
     }, [inputRef, mount]);
 
     return (
@@ -258,7 +204,7 @@ const InputFieldControlTrigger = createStyledHOC(
   }
 );
 
-export const InputField = withStaticProperties(InputFieldGroup, {
+export const InputField = withStaticProperties(Field, {
   Label: InputFieldLabel,
   Link: Field.Link,
   Control: withStaticProperties(InputFieldControl, {
@@ -271,5 +217,5 @@ export const InputField = withStaticProperties(InputFieldGroup, {
     })
   }),
   Details: Field.Details,
-  Icon: InputFieldIcon
+  Icon: Field.Icon
 });

@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldLabelPlacement } from "@cyclone-ui/field";
+import { getFieldLabelInset } from "@cyclone-ui/field";
 import {
   getFormSizeToken,
   getSized,
@@ -39,7 +41,7 @@ export const SelectContext = createStyledContext<
     disabled: false,
     focused: false,
     hasValidationMessage: false,
-    variant: "default"
+    variant: "outlined"
   } as SelectContextProps,
   {
     keys: [
@@ -56,21 +58,26 @@ export const SelectContext = createStyledContext<
 export const getSelectSize = (
   val: FormControlSize | undefined,
   {
-    variant,
+    labelPlacement,
     circular
-  }: { variant?: string | null; circular?: boolean | null } = {}
+  }: {
+    labelPlacement?: FieldLabelPlacement | null;
+    circular?: boolean | null;
+  } = {}
 ) => {
   if (!val) {
     return;
   }
 
   const size = getFormSizeToken(val);
-  const height = variant === "floating" ? getSized(size) + 3 : size;
+  const height = labelPlacement
+    ? getSized(size) + getFieldLabelInset(labelPlacement, val)
+    : size;
 
   return {
     height,
     minHeight: height,
-    borderRadius: variant === "underline" ? 0 : circular ? 100_000 : "control"
+    borderRadius: circular ? 100_000 : "control"
   };
 };
 

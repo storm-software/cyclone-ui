@@ -183,9 +183,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% brighter)"}
       colors={{
-            "hairline-active": "#5f6063"
+            "hairline-active": "#898a8e"
       }}
     />
           <ColorItem
@@ -932,9 +932,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% brighter)"}
       colors={{
-            "hairline-active": "#696a6b"
+            "hairline-active": "#868789"
       }}
     />
           <ColorItem
@@ -1681,9 +1681,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% brighter)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% brighter)"}
       colors={{
-            "hairline-active": "#4d505a"
+            "hairline-active": "#888c9a"
       }}
     />
           <ColorItem
@@ -2430,9 +2430,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% darker)"}
       colors={{
-            "hairline-active": "#9d9d9e"
+            "hairline-active": "#565657"
       }}
     />
           <ColorItem
@@ -3179,9 +3179,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% darker)"}
       colors={{
-            "hairline-active": "#949495"
+            "hairline-active": "#626263"
       }}
     />
           <ColorItem
@@ -3928,9 +3928,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.hairline-active"}
-      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 8% darker)"}
+      subtitle={"Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% darker)"}
       colors={{
-            "hairline-active": "#a6a6b0"
+            "hairline-active": "#404048"
       }}
     />
           <ColorItem

@@ -157,7 +157,7 @@ export const DatePickerContext = createStyledContext<
     circular: false,
     disabled: false,
     focused: false,
-    variant: "default",
+    variant: "outlined",
     hasValidationMessage: false
   } as DatePickerContextProps,
   {
@@ -225,7 +225,7 @@ const getFormFontStyle = (size: FormControlSize, env: StyleEnv) => {
 
 // Calendar headings take `controlSize` as a prop rather than reading
 // `DatePickerContext`: v3 merges every context value into a consumer's props,
-// so the picker's input `variant` ("default", "underline", ...) would replace
+// so the picker's input `variant` ("outlined", "inlined", ...) would replace
 // the heading's `variant: "base"` and drop its `display-*` font family.
 const CalendarHeading = styled(HeadingLargeText, {
   variants: { controlSize: formSizeVariants(getFormFontStyle) }
@@ -916,7 +916,7 @@ const DatePickerProvider = ({
   focused,
   mode = "single",
   separator = ".",
-  variant = "default",
+  variant = "outlined",
   selectedDate = null,
   selectedDates: controlledSelectedDates = EMPTY_DATES,
   ...props
@@ -935,7 +935,7 @@ const DatePickerProvider = ({
   );
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+    // eslint-disable-next-line react-hooks/set-state-in-effect, react/set-state-in-effect
     setDates(
       mode === "range"
         ? controlledSelectedDates
@@ -947,6 +947,7 @@ const DatePickerProvider = ({
     const firstDate =
       mode === "range" ? controlledSelectedDates[0] : selectedDate;
     if (firstDate) {
+      // eslint-disable-next-line react/set-state-in-effect
       setOffsetDate(firstDate);
     }
   }, [controlledSelectedDates, mode, selectedDate]);
@@ -1045,7 +1046,7 @@ const DatePickerControlImpl = createStyledHOC(
       focused,
       mode = "single",
       separator = ".",
-      variant = "default",
+      variant = "outlined",
       selectedDate,
       selectedDates,
       ...props
@@ -1084,7 +1085,8 @@ const DatePickerControlImpl = createStyledHOC(
         <Popover
           keepChildrenMounted={true}
           open={!!focused}
-          onOpenChange={handleOpenChanged}>
+          onOpenChange={handleOpenChanged}
+          offset={getSpaced("2xl")}>
           <Popover.Trigger asChild={true}>
             <Input
               ref={forwardedRef}

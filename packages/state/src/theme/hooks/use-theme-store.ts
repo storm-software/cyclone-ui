@@ -35,7 +35,7 @@ import {
  * - alternate
  * - accent
  * - link
- * - help
+ * - discovery
  * - info
  * - warning
  * - danger
@@ -61,7 +61,7 @@ export const useColorThemeName = (): ColorThemeName | undefined => {
  * - alternate
  * - accent
  * - link
- * - help
+ * - discovery
  * - info
  * - warning
  * - danger
