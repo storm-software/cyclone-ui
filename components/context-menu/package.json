@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/context-menu",
   "version": "0.0.1",
   "type": "module",
-  "description": "A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.",
+  "description": "A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -17,12 +17,13 @@
   },
   "dependencies": {
     "@cyclone-ui/body-text": "workspace:*",
-    "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/popover": "workspace:*",
     "@tamagui/core": "catalog:"
   },
   "devDependencies": {
+    "@cyclone-ui/button": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -43,6 +44,10 @@
     "./ContextMenu": {
       "import": "./dist/ContextMenu.mjs",
       "require": "./dist/ContextMenu.cjs"
+    },
+    "./utilities": {
+      "import": "./dist/utilities.mjs",
+      "require": "./dist/utilities.cjs"
     },
     "./*": "./*"
   },

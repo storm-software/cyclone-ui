@@ -65,7 +65,7 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
       defaultValue = null,
       onValueChange,
       onCommentSubmit,
-      commentLabel = "How can we improve?",
+      commentLabel = "What could we improve?",
       commentPlaceholder = "A suggestion to improve this content...",
       disabled = false,
       size = "md",
@@ -116,6 +116,18 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
         alignSelf="flex-start"
         gap="md"
         {...props}>
+        <LikeButton
+          size={size}
+          disabled={disabled}
+          liked={value === "like"}
+          onLikedChange={liked => {
+            setValue(liked ? "like" : null);
+            setOpen(false);
+          }}
+        />
+
+        <Divider direction="vertical" marginVertical="auto" />
+
         <Popover open={open} onOpenChange={setOpen} placement="bottom">
           <Popover.Anchor>
             <Toggle
@@ -150,7 +162,7 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
               initialValues={{ comment: "" }}
               onSubmit={handleSubmit}>
               {/* `Form` does not forward style props to its frame. */}
-              <View gap="2xl" width="100%">
+              <View gap="3xl" width="100%">
                 <TextAreaField
                   name="comment"
                   variant="normal"
@@ -168,18 +180,6 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
             </Form>
           </Popover.Content>
         </Popover>
-
-        <Divider direction="vertical" marginVertical="auto" />
-
-        <LikeButton
-          size={size}
-          disabled={disabled}
-          liked={value === "like"}
-          onLikedChange={liked => {
-            setValue(liked ? "like" : null);
-            setOpen(false);
-          }}
-        />
       </View>
     );
   }

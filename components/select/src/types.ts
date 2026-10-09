@@ -41,4 +41,9 @@ export type SelectContextProps = Omit<
    * This is called before `onChange` and is useful for cases where you want to prevent certain characters from being inputted.
    */
   onInput?: SelectChangeEventHandler;
+
+  /**
+   * The value of the selected item.
+   */
+  value?: string;
 };

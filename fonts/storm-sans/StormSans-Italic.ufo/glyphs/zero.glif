@@ -46,10 +46,10 @@
       <point x="362" y="59" />
     </contour>
     <contour>
-      <point x="174" y="57" type="line" />
-      <point x="527" y="606" type="line" />
-      <point x="473" y="641" type="line" />
-      <point x="120" y="92" type="line" />
+      <point x="128" y="161" type="line" />
+      <point x="532" y="498" type="line" />
+      <point x="501" y="537" type="line" />
+      <point x="97" y="200" type="line" />
     </contour>
   </outline>
   <lib>

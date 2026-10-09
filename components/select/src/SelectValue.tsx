@@ -21,11 +21,10 @@ import type { FormControlSize } from "@cyclone-ui/helpers";
 import { formSizeVariants } from "@cyclone-ui/helpers";
 import type { InputVariant } from "@cyclone-ui/input";
 import type { GetProps } from "@tamagui/core";
-import { createStyledHOC, styled, View } from "@tamagui/core";
-import { Select as TamaguiSelect } from "@tamagui/select";
+import { createStyledHOC, styled, Text, View } from "@tamagui/core";
 import { getSelectContentSize, SelectContext } from "./utilities";
 
-const SelectValueFrame = styled(TamaguiSelect.Value, {
+const SelectValueFrame = styled(Text, {
   // `name` is a plain prop in v3, so the primitive uses `displayName`
   displayName: "SelectValue",
   context: SelectContext,
@@ -101,23 +100,25 @@ export const SelectValue = createStyledHOC(
     },
     forwardedRef
   ) => {
-    const { disabled, name, size, variant } = SelectContext.useStyledContext();
+    const { disabled, size, value, variant } = SelectContext.useStyledContext();
+    // Without children, the selected value itself, then the placeholder.
+    const content = children ?? (value || placeholder);
 
     return (
       <View flex={1} minWidth={0}>
         <SelectValueFrame
-          id={name}
+          pointerEvents="none"
           ref={forwardedRef}
           {...props}
           size={size}
           variant={variant}
           disabled={disabled}
-          placeholding={!!placeholder && !disabled}>
+          placeholding={!!placeholder && content === placeholder && !disabled}>
           <BodyText
             render="span"
             fontSize={getSelectContentSize(size).fontSize}
             lineHeight={`${getSelectContentSize(size).lineHeight}px`}>
-            {children}
+            {content}
           </BodyText>
         </SelectValueFrame>
       </View>

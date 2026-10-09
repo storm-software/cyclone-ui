@@ -16,24 +16,16 @@
 
  ------------------------------------------------------------------- */
 
-import { useComposedRefs } from "@tamagui/compose-refs";
+import { ContextMenu } from "@cyclone-ui/context-menu";
 import type { ViewProps } from "@tamagui/core";
 import {
-  createChangeEventDetails,
   createStyledHOC,
-  isClient,
-  isWeb,
   styled,
   View,
   withStaticProperties
 } from "@tamagui/core";
-import type { SelectScopedProps } from "@tamagui/select";
-import { useSelectContext, useSelectItemParentContext } from "@tamagui/select";
 import { SelectValue } from "./SelectValue";
 import { SelectContext } from "./utilities";
-
-const isPointerCoarse =
-  isWeb && isClient ? window.matchMedia("(pointer:coarse)").matches : true;
 
 const BaseSelectTextBox = styled(View, {
   displayName: "SelectTrigger",
@@ -72,70 +64,27 @@ const BaseSelectTextBox = styled(View, {
 
 const SelectTextBoxImpl = createStyledHOC(
   BaseSelectTextBox,
-  (
-    { scope, children, ...props }: SelectScopedProps<ViewProps>,
-    forwardedRef
-  ) => {
-    const { disabled } = SelectContext.useStyledContext();
-    const context = useSelectContext(scope);
-    const itemParentContext = useSelectItemParentContext(scope);
-    const composedRefs = useComposedRefs(
-      forwardedRef,
-      context.floatingContext?.refs.setReference as any
-    );
-
-    if (itemParentContext.shouldRenderWebNative) {
-      return null;
-    }
-
-    // v3 replaced the item parent's `setOpen` with `requestOpenChange`, which
-    // takes change details, and moved `interactions` onto the select context.
-    const toggleOpen = (event?: any) =>
-      itemParentContext.requestOpenChange(
-        !context.open,
-        createChangeEventDetails(
-          "trigger-press",
-          event?.nativeEvent || event,
-          event?.currentTarget
-        )
-      );
+  ({ children, ...props }: ViewProps, forwardedRef) => {
+    const { disabled, name } = SelectContext.useStyledContext();
 
     return (
-      <BaseSelectTextBox
-        type="button"
-        id={itemParentContext.id}
-        // aria-controls={context.contentId}
-        data-select-trigger
-        aria-expanded={context.open}
-        aria-autocomplete="none"
-        dir={context.dir}
-        disabled={disabled}
-        data-disabled={disabled ? "" : undefined}
-        {...props}
-        ref={composedRefs}
-        {...(process.env.TAMAGUI_TARGET === "web" && context.interactions
-          ? {
-              ...context.interactions.getReferenceProps(),
-              ...(isPointerCoarse
-                ? {
-                    onPress(event?: any) {
-                      toggleOpen(event);
-                    }
-                  }
-                : {
-                    onMouseDown(event?: any) {
-                      context.floatingContext?.update?.();
-                      toggleOpen(event);
-                    }
-                  })
-            }
-          : {
-              onPress(event?: any) {
-                toggleOpen(event);
-              }
-            })}>
-        {children}
-      </BaseSelectTextBox>
+      <ContextMenu.Trigger asChild={true}>
+        <BaseSelectTextBox
+          // Not typed on a styled View; keeps the trigger from submitting a
+          // form.
+          {...({ type: "button" } as object)}
+          // The field label's `htmlFor` target: a resting floating label
+          // covers the text box, and only a labelable element (this button)
+          // receives the label's clicks.
+          id={name}
+          data-select-trigger
+          disabled={disabled}
+          data-disabled={disabled ? "" : undefined}
+          {...props}
+          ref={forwardedRef}>
+          {children}
+        </BaseSelectTextBox>
+      </ContextMenu.Trigger>
     );
   },
   {

@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/tag/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
@@ -9,21 +10,17 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc/components/tag",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/tag/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc/components/tag"
   },
-  "files": [],
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "references": [
     {
       "path": "../../tools/config"
     },
     {
       "path": "../icons"
-    },
-    {
-      "path": "../heading-text"
     }
-  ]
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

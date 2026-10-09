@@ -17,7 +17,6 @@
  ------------------------------------------------------------------- */
 
 import {
-  getFormFontScale,
   getFormSizeToken,
   getSized,
   type FormControlSize
@@ -75,44 +74,9 @@ export const getSelectSize = (
   };
 };
 
-const DEFAULT_SELECT_SIZE = 42;
-
-const scaleSelectMetric = (value: number, scale: number, minimum = 1): number =>
-  Math.max(minimum, Math.round(value * scale));
-
-export const shouldCenterSelectItemText = (
-  viewportWidth: number,
-  narrowViewportWidth: number,
-  hasItemAdornment: boolean
-) => viewportWidth < narrowViewportWidth && !hasItemAdornment;
-
 export const getSelectVisualFocus = (
   focused: boolean | undefined,
   open: boolean
 ) => Boolean(focused) || open;
 
-export const getSelectContentSize = (val: FormControlSize = "md") => {
-  const size = getFormSizeToken(val);
-  const scale = getSized(size) / DEFAULT_SELECT_SIZE;
-
-  return {
-    fontSize: 16 * getFormFontScale(val),
-    // Unitless pixels: v3 emits a numeric `lineHeight` as a unitless CSS
-    // multiplier (24 → 24 × font size), so style props must append `px`.
-    lineHeight: 24 * getFormFontScale(val),
-    valuePaddingLeft: scaleSelectMetric(3.5, scale, 1),
-    valuePaddingRight: scaleSelectMetric(1, scale),
-    itemPaddingVertical: scaleSelectMetric(4, scale, 2),
-    itemFramePaddingHorizontal: 18.4 * scale,
-    itemTextPaddingVertical: "sm",
-    itemTextPaddingHorizontal: 0.8 * scale,
-    itemPaddingHorizontal: scaleSelectMetric(5, scale, 2),
-    dividerInset: scaleSelectMetric(10, scale, 4),
-    indicatorWidth: scaleSelectMetric(20, scale, 14),
-    indicatorIconSize: 16 * getFormFontScale(val),
-    scrollButtonHeight: scaleSelectMetric(18, scale, 14),
-    scrollIconSize: scaleSelectMetric(20, scale, 14),
-    viewportPadding: scaleSelectMetric(7, scale, 3),
-    gradientMargin: scaleSelectMetric(1, scale)
-  };
-};
+export { getContextMenuSize as getSelectContentSize } from "@cyclone-ui/context-menu/utilities";

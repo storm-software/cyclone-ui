@@ -42,7 +42,15 @@ const meta: Meta<typeof ContextMenu> = {
     const [selected, setSelected] = useState<string>();
 
     return (
-      <ContextMenu {...args} open={open} onOpenChange={setOpen}>
+      <ContextMenu
+        {...args}
+        open={open}
+        onOpenChange={setOpen}
+        value={selected}
+        onValueChange={value => {
+          setSelected(value);
+          setOpen(false);
+        }}>
         <ContextMenu.Trigger asChild={true}>
           <Button>{selected ?? "Actions"}</Button>
         </ContextMenu.Trigger>
@@ -52,10 +60,8 @@ const meta: Meta<typeof ContextMenu> = {
               <ContextMenu.Item
                 key={action}
                 aria-label={action}
-                onPress={() => {
-                  setSelected(action);
-                  setOpen(false);
-                }}>
+                value={action}
+                disabled={action === "Delete"}>
                 <ContextMenu.Item.Text>{action}</ContextMenu.Item.Text>
               </ContextMenu.Item>
             ))}
@@ -83,6 +89,22 @@ export const Base: Story = {
         document.queryByRole("button", { name: "Archive" })
       ).not.toBeInTheDocument()
     );
+    await expect(canvas.getByRole("button", { name: "Rename" })).toBeVisible();
+
+    // Reopened, the selected item is adorned with a check mark, and the
+    // disabled one (adorned with a lock) doesn't close the menu.
+    await userEvent.click(canvas.getByRole("button", { name: "Rename" }));
+    const menuItem = async (name: string) =>
+      (await document.findAllByRole("button", { name })).find(element =>
+        element.hasAttribute("data-context-menu-item")
+      );
+    await expect(await menuItem("Rename")).toHaveAttribute(
+      "data-context-menu-item-adorned"
+    );
+    const remove = await menuItem("Delete");
+    await expect(remove).toHaveAttribute("aria-disabled", "true");
+    await userEvent.click(remove!);
+    await expect(await menuItem("Archive")).toBeInTheDocument();
     await expect(canvas.getByRole("button", { name: "Rename" })).toBeVisible();
   }
 };

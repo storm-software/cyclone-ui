@@ -21,6 +21,9 @@
       "path": "../input"
     },
     {
+      "path": "../context-menu"
+    },
+    {
       "path": "../../packages/helpers"
     },
     {

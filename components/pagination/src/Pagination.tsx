@@ -53,6 +53,7 @@ export const Pagination = createStyledHOC(
     pageIndex,
     theme,
     hideText = false,
+    buttonWidth,
     setPageIndex,
     onFirst,
     onLast,
@@ -112,6 +113,7 @@ export const Pagination = createStyledHOC(
           theme={theme}
           size="9xl"
           paddingHorizontal="zero"
+          width={buttonWidth}
           disabled={currentPage === 1}
           onClick={onPrevious ?? handlePrevious}
         />
@@ -122,6 +124,7 @@ export const Pagination = createStyledHOC(
           size="9xl"
           paddingHorizontal="zero"
           {...props}
+          width={buttonWidth}
           onClick={onFirst ?? handleFirst}>
           <Button.Text>1</Button.Text>
         </Button>
@@ -137,6 +140,7 @@ export const Pagination = createStyledHOC(
             size="9xl"
             paddingHorizontal="zero"
             {...props}
+            width={buttonWidth}
             onClick={handleSecond}>
             <Button.Text>
               {currentPage < 4
@@ -160,6 +164,7 @@ export const Pagination = createStyledHOC(
             size="9xl"
             paddingHorizontal="zero"
             {...props}
+            width={buttonWidth}
             onClick={handleThird}>
             <Button.Text>
               {currentPage < 4
@@ -183,6 +188,7 @@ export const Pagination = createStyledHOC(
             size="9xl"
             paddingHorizontal="zero"
             {...props}
+            width={buttonWidth}
             onClick={handleFourth}>
             <Button.Text>
               {currentPage < 4
@@ -205,6 +211,7 @@ export const Pagination = createStyledHOC(
             {...props}
             size="9xl"
             paddingHorizontal="zero"
+            width={buttonWidth}
             onClick={onLast ?? handleLast}>
             <Button.Text>{pageCount}</Button.Text>
           </Button>
@@ -216,6 +223,7 @@ export const Pagination = createStyledHOC(
           theme={theme}
           size="9xl"
           paddingHorizontal="zero"
+          width={buttonWidth}
           disabled={currentPage === pageCount}
           onClick={onNext ?? handleNext}
         />

@@ -144,7 +144,8 @@ const getSelectionColumn = <TData extends RowData>(): ColumnDef<TData> => ({
         : false;
 
     return (
-      <View width="100%" alignItems="center" justifyContent="center">
+      // Match the body checkbox center after the header's first-column inset.
+      <View width="100%" alignItems="center" justifyContent="center" x="-xs">
         <Checkbox
           name="data-table-select-all"
           aria-label="Select all rows on this page"
@@ -546,10 +547,11 @@ export function DataTable<TData extends RowData>({
                             borderRightWidth={2}
                             borderStyle="dashed"
                             borderRightColor={
-                              header.column.getIsResizing() ||
-                              hoveredResizer === header.id
-                                ? "accent"
-                                : "transparent"
+                              header.column.getIsResizing()
+                                ? "inkEmphasisActive"
+                                : hoveredResizer === header.id
+                                  ? "inkEmphasis"
+                                  : "transparent"
                             }
                           />
                         </View>
@@ -1142,6 +1144,7 @@ export function DataTablePagination<TData extends RowData>({
       {pageCount > 1 && (
         <Pagination
           hideText={true}
+          buttonWidth="9xl"
           pageIndex={pageIndex}
           pageCount={pageCount}
           setPageIndex={setPageIndex}

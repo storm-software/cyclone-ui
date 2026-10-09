@@ -32,6 +32,17 @@ describe("DataTable header filter", () => {
   });
 });
 
+describe("DataTable row selection", () => {
+  it("aligns the select-all control with the row selection controls", () => {
+    const selectionColumn = source.slice(
+      source.indexOf("const getSelectionColumn"),
+      source.indexOf("interface ContentSizedCell")
+    );
+
+    expect(selectionColumn).toContain('x="-xs"');
+  });
+});
+
 describe("DataTable pagination", () => {
   it("clamps the initial page size to the available row count", () => {
     const paginationInitialization = source.slice(
@@ -42,5 +53,9 @@ describe("DataTable pagination", () => {
     expect(paginationInitialization).toContain(
       "Math.min(pageSize, data.length)"
     );
+  });
+
+  it("gives the footer pagination controls a stable square width", () => {
+    expect(source).toContain('buttonWidth="9xl"');
   });
 });

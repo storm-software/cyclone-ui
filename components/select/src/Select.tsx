@@ -16,16 +16,17 @@
 
  ------------------------------------------------------------------- */
 
+import { ContextMenu } from "@cyclone-ui/context-menu";
 import {
   Field,
   useFieldHasValidationMessage,
   useFieldIconColor
 } from "@cyclone-ui/field";
+import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   getFormSizeScale,
   getFormSizeToken,
-  getSpaced,
-  type FormControlSize
+  getSpaced
 } from "@cyclone-ui/helpers";
 import { CaretDown } from "@cyclone-ui/icons";
 import { ControlUnderline } from "@cyclone-ui/input";
@@ -37,7 +38,6 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
-import { Select as TamaguiSelect } from "@tamagui/select";
 import { XStack } from "@tamagui/stacks";
 import { useCallback, useState } from "react";
 import { SelectItems } from "./SelectItems";
@@ -216,32 +216,6 @@ const SelectTrigger = createStyledHOC(
   { displayName: "Select" }
 );
 
-const BaseSelect = styled(TamaguiSelect, {
-  // `name` is the web form field name in v3, so use `displayName` here
-  displayName: "Select",
-
-  transition: "200ms",
-  cursor: "pointer",
-  justifyContent: "center",
-  alignItems: "center",
-  borderColor: "transparent",
-  backgroundColor: "transparent",
-
-  variants: {
-    disabled: {
-      true: {
-        cursor: "not-allowed",
-        color: "onAccentDisabled",
-        backgroundColor: "transparent"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    disabled: false
-  }
-});
-
 const SelectTextBoxImpl = createStyledHOC(
   SelectTextBox,
   (
@@ -327,7 +301,7 @@ const SelectTextBoxImpl = createStyledHOC(
 );
 
 const SelectGroupImpl = createStyledHOC(
-  BaseSelect,
+  ContextMenu,
   (
     {
       name,
@@ -340,17 +314,27 @@ const SelectGroupImpl = createStyledHOC(
       onChange,
       size = "md",
       value,
+      defaultValue,
       ...props
-    }: GetProps<typeof BaseSelect> & Partial<SelectContextProps>,
+    }: Omit<GetProps<typeof ContextMenu>, "value" | "onValueChange"> &
+      Partial<SelectContextProps> & {
+        value?: string;
+        defaultValue?: string;
+      },
     forwardedRef
   ) => {
     const [open, setOpen] = useState(false);
+    const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
     const hasValidationMessage = useFieldHasValidationMessage();
     const visualFocus = getSelectVisualFocus(focused, open);
-    const resolvedSize = size;
+    const resolvedValue = value ?? uncontrolledValue;
 
     const handleOpenChanged = useCallback(
       (nextOpen: boolean) => {
+        if (nextOpen && disabled) {
+          return;
+        }
+
         setOpen(nextOpen);
 
         if (nextOpen) {
@@ -359,19 +343,20 @@ const SelectGroupImpl = createStyledHOC(
           onBlur?.();
         }
       },
-      [onFocus, onBlur]
+      [disabled, onFocus, onBlur]
     );
 
     const handleChanged = useCallback(
       (nextValue: string) => {
+        setUncontrolledValue(nextValue);
         onChange?.(
           new CustomEvent("change", {
             detail: nextValue
           })
         );
-        onBlur?.();
+        handleOpenChanged(false);
       },
-      [onChange, onBlur]
+      [onChange, handleOpenChanged]
     );
 
     return (
@@ -385,24 +370,22 @@ const SelectGroupImpl = createStyledHOC(
         focused={visualFocus}
         hasValidationMessage={hasValidationMessage}
         variant={variant}
-        size={resolvedSize}
-        value={value}
+        size={size}
+        value={resolvedValue}
         onFocus={onFocus}
         onBlur={onBlur}
         onChange={onChange}>
-        <BaseSelect
-          id={name}
+        <ContextMenu
           ref={forwardedRef}
-          disablePreventBodyScroll={true}
+          placement="bottom"
           {...props}
-          value={value}
+          size={size}
+          value={resolvedValue}
           onValueChange={handleChanged}
-          onOpenChange={handleOpenChanged}
           open={open}
-          disabled={disabled}
-          size={getFormSizeToken(resolvedSize)}>
+          onOpenChange={handleOpenChanged}>
           {children}
-        </BaseSelect>
+        </ContextMenu>
       </SelectContext.Provider>
     );
   },

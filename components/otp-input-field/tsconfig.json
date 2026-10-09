@@ -21,9 +21,6 @@
       "path": "../../packages/state"
     },
     {
-      "path": "../input-field"
-    },
-    {
       "path": "../input"
     },
     {

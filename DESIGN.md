@@ -18,23 +18,23 @@ colors:
   surface-sunken-hover: "#a0a0a0"
   surface-sunken-active: "#ababab"
   surface-sunken-inactive: "#ffffff"
-  surface-sunken-disabled: "#e1e1e140"
+  surface-sunken-disabled: "#e1e1e120"
   surface-canvas-hover: "#a6a6a6"
   surface-canvas-active: "#b2b2b2"
   surface-canvas-inactive: "#ffffff"
-  surface-canvas-disabled: "#eaeaea40"
+  surface-canvas-disabled: "#eaeaea20"
   surface-elevated-hover: "#ababab"
   surface-elevated-active: "#b7b7b7"
   surface-elevated-inactive: "#ffffff"
-  surface-elevated-disabled: "#f1f1f140"
+  surface-elevated-disabled: "#f1f1f120"
   surface-floating-hover: "#b2b2b2"
   surface-floating-active: "#bebebe"
   surface-floating-inactive: "#ffffff"
-  surface-floating-disabled: "#fafafa40"
+  surface-floating-disabled: "#fafafa20"
   surface-overlay-hover: "#b6b6b6"
   surface-overlay-active: "#c2c2c2"
   surface-overlay-inactive: "#ffffff"
-  surface-overlay-disabled: "#ffffff40"
+  surface-overlay-disabled: "#ffffff20"
   required: "#8e223e"
   link: "#2055b3"
   hairline: "#b0b0b1"
@@ -89,7 +89,7 @@ colors:
   on-accent-base-hover: "#959595"
   on-accent-base-active: "#0c0c0d"
   on-accent-base-inactive: "#030303"
-  on-accent-base-disabled: "#f1f1f140"
+  on-accent-base-disabled: "#f1f1f120"
   on-accent-brand: "#FAFAFA"
   on-accent-danger: "#FAFAFA"
   on-accent-negative: "#FAFAFA"
@@ -101,41 +101,41 @@ colors:
   on-accent-brand-hover: "#b2b2b2"
   on-accent-brand-active: "#bebebe"
   on-accent-brand-inactive: "#ffffff"
-  on-accent-brand-disabled: "#fafafa40"
+  on-accent-brand-disabled: "#fafafa20"
   on-accent-danger-hover: "#b2b2b2"
   on-accent-danger-active: "#bebebe"
   on-accent-danger-inactive: "#ffffff"
-  on-accent-danger-disabled: "#fafafa40"
+  on-accent-danger-disabled: "#fafafa20"
   on-accent-negative-hover: "#b2b2b2"
   on-accent-negative-active: "#bebebe"
   on-accent-negative-inactive: "#ffffff"
-  on-accent-negative-disabled: "#fafafa40"
+  on-accent-negative-disabled: "#fafafa20"
   on-accent-warning-hover: "#b2b2b2"
   on-accent-warning-active: "#bebebe"
   on-accent-warning-inactive: "#ffffff"
-  on-accent-warning-disabled: "#fafafa40"
+  on-accent-warning-disabled: "#fafafa20"
   on-accent-success-hover: "#b2b2b2"
   on-accent-success-active: "#bebebe"
   on-accent-success-inactive: "#ffffff"
-  on-accent-success-disabled: "#fafafa40"
+  on-accent-success-disabled: "#fafafa20"
   on-accent-positive-hover: "#b2b2b2"
   on-accent-positive-active: "#bebebe"
   on-accent-positive-inactive: "#ffffff"
-  on-accent-positive-disabled: "#fafafa40"
+  on-accent-positive-disabled: "#fafafa20"
   on-accent-info-hover: "#b2b2b2"
   on-accent-info-active: "#bebebe"
   on-accent-info-inactive: "#ffffff"
-  on-accent-info-disabled: "#fafafa40"
+  on-accent-info-disabled: "#fafafa20"
   on-accent-discovery-hover: "#b2b2b2"
   on-accent-discovery-active: "#bebebe"
   on-accent-discovery-inactive: "#ffffff"
-  on-accent-discovery-disabled: "#fafafa40"
+  on-accent-discovery-disabled: "#fafafa20"
   muted-base: "#eaeaea"
   muted-brand: "#68e8db"
   muted-base-hover: "#919191"
   muted-base-active: "#cacaca"
   muted-base-inactive: "#030303"
-  muted-base-disabled: "#eaeaea40"
+  muted-base-disabled: "#eaeaea20"
   muted-brand-hover: "#08a99e"
   muted-brand-active: "#25b4a8"
   muted-brand-inactive: "#9bffff"
@@ -358,15 +358,57 @@ spacing:
   16xl: "116px"
   17xl: "130px"
   18xl: "144px"
-  19xl: "144px"
-  20xl: "158px"
-  21xl: "172px"
-  22xl: "186px"
+  19xl: "158px"
+  20xl: "172px"
+  21xl: "186px"
+  22xl: "200px"
+  23xl: "214px"
+  24xl: "228px"
+  25xl: "242px"
+  26xl: "256px"
+  27xl: "270px"
+  28xl: "284px"
+  29xl: "298px"
+  30xl: "312px"
+  31xl: "326px"
+  32xl: "340px"
+  33xl: "354px"
+  34xl: "368px"
+  35xl: "382px"
+  36xl: "396px"
+  37xl: "410px"
+  38xl: "424px"
+  39xl: "438px"
+  40xl: "452px"
+  41xl: "466px"
+  42xl: "480px"
+  43xl: "494px"
+  44xl: "508px"
+  45xl: "522px"
+  46xl: "536px"
+  47xl: "550px"
+  48xl: "564px"
+  49xl: "578px"
+  50xl: "592px"
+  51xl: "606px"
+  52xl: "620px"
+  53xl: "634px"
+  54xl: "648px"
+  55xl: "662px"
+  56xl: "676px"
+  57xl: "690px"
+  58xl: "704px"
+  59xl: "718px"
+  60xl: "732px"
+  61xl: "746px"
+  62xl: "760px"
+  63xl: "774px"
+  64xl: "788px"
 ---
 
 ## Overview
 
-Cyclone UI design tokens — 244 color tokens, 17 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 244 color tokens, 17 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -385,23 +427,23 @@ Cyclone UI design tokens — 244 color tokens, 17 typography tokens, 28 spacing 
 - **Surface Sunken Hover (#a0a0a0):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hover, 23% darker)
 - **Surface Sunken Active (#ababab):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 19% darker)
 - **Surface Sunken Inactive (#ffffff):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 20% brighter)
-- **Surface Sunken Disabled (#e1e1e140):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% opacity)
+- **Surface Sunken Disabled (#e1e1e120):** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 13% opacity)
 - **Surface Canvas Hover (#a6a6a6):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hover, 23% darker)
 - **Surface Canvas Active (#b2b2b2):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 19% darker)
 - **Surface Canvas Inactive (#ffffff):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 20% brighter)
-- **Surface Canvas Disabled (#eaeaea40):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% opacity)
+- **Surface Canvas Disabled (#eaeaea20):** Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 13% opacity)
 - **Surface Elevated Hover (#ababab):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hover, 23% darker)
 - **Surface Elevated Active (#b7b7b7):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 19% darker)
 - **Surface Elevated Inactive (#ffffff):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 20% brighter)
-- **Surface Elevated Disabled (#f1f1f140):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% opacity)
+- **Surface Elevated Disabled (#f1f1f120):** Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 13% opacity)
 - **Surface Floating Hover (#b2b2b2):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker)
 - **Surface Floating Active (#bebebe):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker)
 - **Surface Floating Inactive (#ffffff):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter)
-- **Surface Floating Disabled (#fafafa40):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% opacity)
+- **Surface Floating Disabled (#fafafa20):** Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)
 - **Surface Overlay Hover (#b6b6b6):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hover, 23% darker)
 - **Surface Overlay Active (#c2c2c2):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 19% darker)
 - **Surface Overlay Inactive (#ffffff):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 20% brighter)
-- **Surface Overlay Disabled (#ffffff40):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% opacity)
+- **Surface Overlay Disabled (#ffffff20):** Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 13% opacity)
 - **Required (#8e223e):** Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.
 - **Link (#2055b3):** Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links.
 - **Hairline (#b0b0b1):** Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.
@@ -456,7 +498,7 @@ Cyclone UI design tokens — 244 color tokens, 17 typography tokens, 28 spacing 
 - **On Accent Base Hover (#959595):** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (hover, 30% darker)
 - **On Accent Base Active (#0c0c0d):** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (active, light base primitive)
 - **On Accent Base Inactive (#030303):** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (inactive, 40% darker)
-- **On Accent Base Disabled (#f1f1f140):** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 25% opacity)
+- **On Accent Base Disabled (#f1f1f120):** Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 13% opacity)
 - **On Accent Brand (#FAFAFA):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.
 - **On Accent Danger (#FAFAFA):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.
 - **On Accent Negative (#FAFAFA):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.
@@ -468,41 +510,41 @@ Cyclone UI design tokens — 244 color tokens, 17 typography tokens, 28 spacing 
 - **On Accent Brand Hover (#b2b2b2):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)
 - **On Accent Brand Active (#bebebe):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)
 - **On Accent Brand Inactive (#ffffff):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)
-- **On Accent Brand Disabled (#fafafa40):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 25% opacity)
+- **On Accent Brand Disabled (#fafafa20):** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 13% opacity)
 - **On Accent Danger Hover (#b2b2b2):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)
 - **On Accent Danger Active (#bebebe):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)
 - **On Accent Danger Inactive (#ffffff):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)
-- **On Accent Danger Disabled (#fafafa40):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)
+- **On Accent Danger Disabled (#fafafa20):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)
 - **On Accent Negative Hover (#b2b2b2):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)
 - **On Accent Negative Active (#bebebe):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)
 - **On Accent Negative Inactive (#ffffff):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)
-- **On Accent Negative Disabled (#fafafa40):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)
+- **On Accent Negative Disabled (#fafafa20):** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)
 - **On Accent Warning Hover (#b2b2b2):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)
 - **On Accent Warning Active (#bebebe):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)
 - **On Accent Warning Inactive (#ffffff):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)
-- **On Accent Warning Disabled (#fafafa40):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 25% opacity)
+- **On Accent Warning Disabled (#fafafa20):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 13% opacity)
 - **On Accent Success Hover (#b2b2b2):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)
 - **On Accent Success Active (#bebebe):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)
 - **On Accent Success Inactive (#ffffff):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)
-- **On Accent Success Disabled (#fafafa40):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)
+- **On Accent Success Disabled (#fafafa20):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)
 - **On Accent Positive Hover (#b2b2b2):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)
 - **On Accent Positive Active (#bebebe):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)
 - **On Accent Positive Inactive (#ffffff):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)
-- **On Accent Positive Disabled (#fafafa40):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)
+- **On Accent Positive Disabled (#fafafa20):** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)
 - **On Accent Info Hover (#b2b2b2):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)
 - **On Accent Info Active (#bebebe):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)
 - **On Accent Info Inactive (#ffffff):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)
-- **On Accent Info Disabled (#fafafa40):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)
+- **On Accent Info Disabled (#fafafa20):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)
 - **On Accent Discovery Hover (#b2b2b2):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)
 - **On Accent Discovery Active (#bebebe):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)
 - **On Accent Discovery Inactive (#ffffff):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)
-- **On Accent Discovery Disabled (#fafafa40):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)
+- **On Accent Discovery Disabled (#fafafa20):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)
 - **Muted Base (#eaeaea):** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.
 - **Muted Brand (#68e8db):** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme.
 - **Muted Base Hover (#919191):** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hover, 30% darker)
 - **Muted Base Active (#cacaca):** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 10% darker)
 - **Muted Base Inactive (#030303):** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)
-- **Muted Base Disabled (#eaeaea40):** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 25% opacity)
+- **Muted Base Disabled (#eaeaea20):** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 13% opacity)
 - **Muted Brand Hover (#08a99e):** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% darker)
 - **Muted Brand Active (#25b4a8):** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (active, 19% darker)
 - **Muted Brand Inactive (#9bffff):** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% brighter)
@@ -662,7 +704,49 @@ Spacing scale:
 - **16xl:** 116px
 - **17xl:** 130px
 - **18xl:** 144px
-- **19xl:** 144px
-- **20xl:** 158px
-- **21xl:** 172px
-- **22xl:** 186px
+- **19xl:** 158px
+- **20xl:** 172px
+- **21xl:** 186px
+- **22xl:** 200px
+- **23xl:** 214px
+- **24xl:** 228px
+- **25xl:** 242px
+- **26xl:** 256px
+- **27xl:** 270px
+- **28xl:** 284px
+- **29xl:** 298px
+- **30xl:** 312px
+- **31xl:** 326px
+- **32xl:** 340px
+- **33xl:** 354px
+- **34xl:** 368px
+- **35xl:** 382px
+- **36xl:** 396px
+- **37xl:** 410px
+- **38xl:** 424px
+- **39xl:** 438px
+- **40xl:** 452px
+- **41xl:** 466px
+- **42xl:** 480px
+- **43xl:** 494px
+- **44xl:** 508px
+- **45xl:** 522px
+- **46xl:** 536px
+- **47xl:** 550px
+- **48xl:** 564px
+- **49xl:** 578px
+- **50xl:** 592px
+- **51xl:** 606px
+- **52xl:** 620px
+- **53xl:** 634px
+- **54xl:** 648px
+- **55xl:** 662px
+- **56xl:** 676px
+- **57xl:** 690px
+- **58xl:** 704px
+- **59xl:** 718px
+- **60xl:** 732px
+- **61xl:** 746px
+- **62xl:** 760px
+- **63xl:** 774px
+- **64xl:** 788px

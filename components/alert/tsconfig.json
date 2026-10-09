@@ -18,22 +18,19 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../button"
-    },
-    {
-      "path": "../container"
+      "path": "../themeable-icon"
     },
     {
       "path": "../heading-text"
     },
     {
+      "path": "../container"
+    },
+    {
+      "path": "../button"
+    },
+    {
       "path": "../body-text"
-    },
-    {
-      "path": "../themeable-icon"
-    },
-    {
-      "path": "../../packages/helpers"
     },
     {
       "path": "../icons"

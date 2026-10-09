@@ -20,19 +20,16 @@
       "path": "../popover"
     },
     {
-      "path": "../button"
-    },
-    {
       "path": "../link"
     },
     {
-      "path": "../label-text"
+      "path": "../icons"
     },
     {
       "path": "../../packages/helpers"
     },
     {
-      "path": "../icons"
+      "path": "../button"
     }
   ],
   "files": [],

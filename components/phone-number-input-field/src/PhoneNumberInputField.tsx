@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import { BodyText } from "@cyclone-ui/body-text";
 import { ContextMenu } from "@cyclone-ui/context-menu";
 import { getFormFontScale } from "@cyclone-ui/helpers";
 import { Input } from "@cyclone-ui/input";
@@ -29,7 +28,6 @@ import { maskitoPhoneOptionsGenerator } from "@maskito/phone";
 import {
   createStyledContext,
   createStyledHOC,
-  View,
   withStaticProperties
 } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
@@ -231,17 +229,9 @@ const CountryListItem = memo(
         aria-label={`${country.name} (${country.code}) +${country.callingCode}`}
         accessibilityLabel={`${country.name} (${country.code}) +${country.callingCode}`}
         onPress={handlePress}>
-        <BodyText
-          render="span"
-          aria-hidden={true}
-          flexShrink={0}
-          minWidth="2xl">
-          {country.flag}
-        </BodyText>
+        <ContextMenu.Item.Icon>{country.flag}</ContextMenu.Item.Icon>
         {showCountryName && (
-          <ContextMenu.Item.Text flex={1} minWidth={0}>
-            {country.name}
-          </ContextMenu.Item.Text>
+          <ContextMenu.Item.Label>{country.name}</ContextMenu.Item.Label>
         )}
         <ContextMenu.Item.Text
           flexShrink={0}
@@ -319,7 +309,7 @@ const CountryCodeSelector = (): JSX.Element => {
       setCountryCode(country.code);
       setOpen(false);
       setSearch("");
-      change("");
+      void change("");
     },
     [change, setCountryCode]
   );
@@ -365,16 +355,14 @@ const CountryCodeSelector = (): JSX.Element => {
         </SearchInputField>
 
         <ContextMenu.Content.ScrollView>
-          <View width="100%">
-            {countries.map(country => (
-              <CountryListItem
-                key={country.code}
-                country={country}
-                onSelect={handleSelect}
-                showCountryName={showCountryName}
-              />
-            ))}
-          </View>
+          {countries.map(country => (
+            <CountryListItem
+              key={country.code}
+              country={country}
+              onSelect={handleSelect}
+              showCountryName={showCountryName}
+            />
+          ))}
         </ContextMenu.Content.ScrollView>
       </ContextMenu.Content>
     </ContextMenu>

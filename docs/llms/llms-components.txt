@@ -678,7 +678,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -687,13 +687,14 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
 
+- `@cyclone-ui/button`: `workspace:*`
 - `@storybook/react-vite`: `catalog:`
 - `react`: `catalog:`
 - `react-dom`: `catalog:`
@@ -2419,7 +2420,7 @@ A clearable search input field with a magnifying-glass icon. It shows a popover 
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. On small screens the item list opens in a bottom Sheet. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
@@ -2429,24 +2430,19 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@stryke/types`: `catalog:`
-- `@tamagui/adapt`: `catalog:`
-- `@tamagui/compose-refs`: `catalog:`
-- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
 - `@tamagui/focusable`: `catalog:`
 - `@tamagui/group`: `catalog:`
 - `@tamagui/helpers-icon`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/list-item`: `catalog:`
-- `@tamagui/select`: `catalog:`
 - `@tamagui/separator`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tamagui/web`: `catalog:`
@@ -4074,7 +4070,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -4083,13 +4079,14 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
 
+- `@cyclone-ui/button`: `workspace:*`
 - `@storybook/react-vite`: `catalog:`
 - `react`: `catalog:`
 - `react-dom`: `catalog:`
@@ -5815,7 +5812,7 @@ A clearable search input field with a magnifying-glass icon. It shows a popover 
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. On small screens the item list opens in a bottom Sheet. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
@@ -5825,24 +5822,19 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@stryke/types`: `catalog:`
-- `@tamagui/adapt`: `catalog:`
-- `@tamagui/compose-refs`: `catalog:`
-- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
 - `@tamagui/focusable`: `catalog:`
 - `@tamagui/group`: `catalog:`
 - `@tamagui/helpers-icon`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/list-item`: `catalog:`
-- `@tamagui/select`: `catalog:`
 - `@tamagui/separator`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tamagui/web`: `catalog:`
@@ -7470,7 +7462,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -7479,13 +7471,14 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
 
+- `@cyclone-ui/button`: `workspace:*`
 - `@storybook/react-vite`: `catalog:`
 - `react`: `catalog:`
 - `react-dom`: `catalog:`
@@ -9211,7 +9204,7 @@ A clearable search input field with a magnifying-glass icon. It shows a popover 
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. On small screens the item list opens in a bottom Sheet. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
@@ -9221,24 +9214,19 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@stryke/types`: `catalog:`
-- `@tamagui/adapt`: `catalog:`
-- `@tamagui/compose-refs`: `catalog:`
-- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
 - `@tamagui/focusable`: `catalog:`
 - `@tamagui/group`: `catalog:`
 - `@tamagui/helpers-icon`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/list-item`: `catalog:`
-- `@tamagui/select`: `catalog:`
 - `@tamagui/separator`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tamagui/web`: `catalog:`
@@ -10866,7 +10854,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -10875,13 +10863,14 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
 
+- `@cyclone-ui/button`: `workspace:*`
 - `@storybook/react-vite`: `catalog:`
 - `react`: `catalog:`
 - `react-dom`: `catalog:`
@@ -12607,7 +12596,7 @@ A clearable search input field with a magnifying-glass icon. It shows a popover 
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. On small screens the item list opens in a bottom Sheet. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
@@ -12617,24 +12606,19 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@stryke/types`: `catalog:`
-- `@tamagui/adapt`: `catalog:`
-- `@tamagui/compose-refs`: `catalog:`
-- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
 - `@tamagui/focusable`: `catalog:`
 - `@tamagui/group`: `catalog:`
 - `@tamagui/helpers-icon`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/list-item`: `catalog:`
-- `@tamagui/select`: `catalog:`
 - `@tamagui/separator`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tamagui/web`: `catalog:`
@@ -14262,7 +14246,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -14271,13 +14255,14 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
 
+- `@cyclone-ui/button`: `workspace:*`
 - `@storybook/react-vite`: `catalog:`
 - `react`: `catalog:`
 - `react-dom`: `catalog:`
@@ -16003,7 +15988,7 @@ A clearable search input field with a magnifying-glass icon. It shows a popover 
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. On small screens the item list opens in a bottom Sheet. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
@@ -16013,24 +15998,19 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@stryke/types`: `catalog:`
-- `@tamagui/adapt`: `catalog:`
-- `@tamagui/compose-refs`: `catalog:`
-- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
 - `@tamagui/focusable`: `catalog:`
 - `@tamagui/group`: `catalog:`
 - `@tamagui/helpers-icon`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/list-item`: `catalog:`
-- `@tamagui/select`: `catalog:`
 - `@tamagui/separator`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tamagui/web`: `catalog:`
@@ -17658,7 +17638,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -17667,13 +17647,14 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 ### Dependencies
 
 - `@cyclone-ui/body-text`: `workspace:*`
-- `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
 
+- `@cyclone-ui/button`: `workspace:*`
 - `@storybook/react-vite`: `catalog:`
 - `react`: `catalog:`
 - `react-dom`: `catalog:`
@@ -19399,7 +19380,7 @@ A clearable search input field with a magnifying-glass icon. It shows a popover 
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. On small screens the item list opens in a bottom Sheet. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors inside a Field.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
@@ -19409,24 +19390,19 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@stryke/types`: `catalog:`
-- `@tamagui/adapt`: `catalog:`
-- `@tamagui/compose-refs`: `catalog:`
-- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
 - `@tamagui/focusable`: `catalog:`
 - `@tamagui/group`: `catalog:`
 - `@tamagui/helpers-icon`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 - `@tamagui/list-item`: `catalog:`
-- `@tamagui/select`: `catalog:`
 - `@tamagui/separator`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tamagui/web`: `catalog:`

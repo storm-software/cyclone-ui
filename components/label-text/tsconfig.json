@@ -17,9 +17,6 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../../packages/helpers"
-    },
-    {
       "path": "../body-text"
     }
   ],

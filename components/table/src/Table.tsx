@@ -125,6 +125,7 @@ const TableRowImpl = createStyledHOC(
             return child;
           }
 
+          // eslint-disable-next-line react/no-clone-element
           return cloneElement(child, {
             edgePadding:
               index === 0 && index === childrenArray.length - 1
@@ -228,7 +229,6 @@ const TableHeaderCell = styled(YStack, {
   flexGrow: 0,
   flexShrink: 1,
   borderWidth: 0,
-  borderTopWidth: 1,
   borderBottomWidth: 1,
   borderColor: "hairline",
   justifyContent: "flex-start",

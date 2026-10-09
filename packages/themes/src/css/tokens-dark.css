@@ -595,8 +595,8 @@
   --storm-color-pink-7: #c25c9b; /** Deep fuchsia pink. */
   --storm-color-pink-8: #904272; /** Deep berry pink. */
   --storm-color-pink-9: #482039; /** Dark plum pink. */
-  --storm-color-ink-emphasis: #e1e1e1; /** Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options. */
-  --storm-color-ink-body: #cacacb; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. */
+  --storm-color-ink-emphasis: #cacacb; /** Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options. */
+  --storm-color-ink-body: #b0b0b1; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. */
   --storm-color-ink-subtle: #959698; /** Lower-emphasis text and icon color for supporting content that should recede behind body copy. Use it for metadata, secondary labels and decorative icons. Used by Breadcrumb separators, EyebrowText, TableOfContents entries, FileTree, DatePicker, inactive Slider values and NavigationHeader links. */
   --storm-color-ink-subtlest: #7b7b7e; /** Lowest-emphasis text and icon color, for content that should be legible but barely noticed. Use it for hints and optional markers. Used by Field for the `optional` marker beside a field label; avoid it for anything the user must read. */
   --storm-color-surface-sunken: #0c0c0d; /** Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. */
@@ -641,7 +641,7 @@
   --storm-color-accent-base-hover: #9b9b9b; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hover, 30% darker) */
   --storm-color-accent-base-active: #ffffff; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark base primitive) */
   --storm-color-accent-base-inactive: #808080; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker) */
-  --storm-color-accent-base-disabled: rgba(250, 250, 250, 0.25098039215686274); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 25% opacity) */
+  --storm-color-accent-base-disabled: rgba(250, 250, 250, 0.12549019607843137); /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 13% opacity) */
   --storm-color-accent-brand-hover: #00a785; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker) */
   --storm-color-accent-brand-active: #00b28f; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker) */
   --storm-color-accent-brand-inactive: #81fff4; /** Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter) */
@@ -694,11 +694,11 @@
   --storm-color-on-accent-danger-hover: #b2b2b2; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker) */
   --storm-color-on-accent-danger-active: #bebebe; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker) */
   --storm-color-on-accent-danger-inactive: #ffffff; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter) */
-  --storm-color-on-accent-danger-disabled: rgba(250, 250, 250, 0.25098039215686274); /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity) */
+  --storm-color-on-accent-danger-disabled: rgba(250, 250, 250, 0.12549019607843137); /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity) */
   --storm-color-on-accent-negative-hover: #b2b2b2; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker) */
   --storm-color-on-accent-negative-active: #bebebe; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker) */
   --storm-color-on-accent-negative-inactive: #ffffff; /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter) */
-  --storm-color-on-accent-negative-disabled: rgba(250, 250, 250, 0.25098039215686274); /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity) */
+  --storm-color-on-accent-negative-disabled: rgba(250, 250, 250, 0.12549019607843137); /** Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity) */
   --storm-color-on-accent-warning-hover: #1f1f22; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% brighter) */
   --storm-color-on-accent-warning-active: #1d1d20; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% brighter) */
   --storm-color-on-accent-warning-inactive: #0c0c0f; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% darker) */
@@ -706,19 +706,19 @@
   --storm-color-on-accent-success-hover: #b2b2b2; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker) */
   --storm-color-on-accent-success-active: #bebebe; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker) */
   --storm-color-on-accent-success-inactive: #ffffff; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter) */
-  --storm-color-on-accent-success-disabled: rgba(250, 250, 250, 0.25098039215686274); /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity) */
+  --storm-color-on-accent-success-disabled: rgba(250, 250, 250, 0.12549019607843137); /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity) */
   --storm-color-on-accent-positive-hover: #b2b2b2; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker) */
   --storm-color-on-accent-positive-active: #bebebe; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker) */
   --storm-color-on-accent-positive-inactive: #ffffff; /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter) */
-  --storm-color-on-accent-positive-disabled: rgba(250, 250, 250, 0.25098039215686274); /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity) */
+  --storm-color-on-accent-positive-disabled: rgba(250, 250, 250, 0.12549019607843137); /** Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity) */
   --storm-color-on-accent-info-hover: #b2b2b2; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker) */
   --storm-color-on-accent-info-active: #bebebe; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker) */
   --storm-color-on-accent-info-inactive: #ffffff; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter) */
-  --storm-color-on-accent-info-disabled: rgba(250, 250, 250, 0.25098039215686274); /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity) */
+  --storm-color-on-accent-info-disabled: rgba(250, 250, 250, 0.12549019607843137); /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity) */
   --storm-color-on-accent-discovery-hover: #b2b2b2; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker) */
   --storm-color-on-accent-discovery-active: #bebebe; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker) */
   --storm-color-on-accent-discovery-inactive: #ffffff; /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter) */
-  --storm-color-on-accent-discovery-disabled: rgba(250, 250, 250, 0.25098039215686274); /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity) */
+  --storm-color-on-accent-discovery-disabled: rgba(250, 250, 250, 0.12549019607843137); /** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity) */
   --storm-color-muted-base: #2b2c30; /** Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. */
   --storm-color-muted-brand: #007e5e; /** Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. */
   --storm-color-muted-info: #19438c; /** Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. */
@@ -811,7 +811,7 @@
   --storm-color-on-muted-base-hover: #9b9b9b; /** Generated base foreground on muted backgrounds (hover, 30% darker) */
   --storm-color-on-muted-base-active: #ffffff; /** Generated base foreground on muted backgrounds (active, dark base primitive) */
   --storm-color-on-muted-base-inactive: #808080; /** Generated base foreground on muted backgrounds (inactive, 40% darker) */
-  --storm-color-on-muted-base-disabled: rgba(250, 250, 250, 0.25098039215686274); /** Generated base foreground on muted backgrounds (disabled, 25% opacity) */
+  --storm-color-on-muted-base-disabled: rgba(250, 250, 250, 0.12549019607843137); /** Generated base foreground on muted backgrounds (disabled, 13% opacity) */
   --storm-color-on-muted-brand-hover: #00a785; /** Generated brand foreground on muted backgrounds (hover, 23% darker) */
   --storm-color-on-muted-brand-active: #00b28f; /** Generated brand foreground on muted backgrounds (active, 19% darker) */
   --storm-color-on-muted-brand-inactive: #81fff4; /** Generated brand foreground on muted backgrounds (inactive, 20% brighter) */
@@ -827,15 +827,15 @@
   --storm-color-on-muted-warning-hover: #b6b6b6; /** Generated warning foreground on muted backgrounds (hover, 23% darker) */
   --storm-color-on-muted-warning-active: #c2c2c2; /** Generated warning foreground on muted backgrounds (active, 19% darker) */
   --storm-color-on-muted-warning-inactive: #ffffff; /** Generated warning foreground on muted backgrounds (inactive, 20% brighter) */
-  --storm-color-on-muted-warning-disabled: rgba(255, 255, 255, 0.25098039215686274); /** Generated warning foreground on muted backgrounds (disabled, 25% opacity) */
+  --storm-color-on-muted-warning-disabled: rgba(255, 255, 255, 0.12549019607843137); /** Generated warning foreground on muted backgrounds (disabled, 13% opacity) */
   --storm-color-on-muted-success-hover: #b6b6b6; /** Generated success foreground on muted backgrounds (hover, 23% darker) */
   --storm-color-on-muted-success-active: #c2c2c2; /** Generated success foreground on muted backgrounds (active, 19% darker) */
   --storm-color-on-muted-success-inactive: #ffffff; /** Generated success foreground on muted backgrounds (inactive, 20% brighter) */
-  --storm-color-on-muted-success-disabled: rgba(255, 255, 255, 0.25098039215686274); /** Generated success foreground on muted backgrounds (disabled, 25% opacity) */
+  --storm-color-on-muted-success-disabled: rgba(255, 255, 255, 0.12549019607843137); /** Generated success foreground on muted backgrounds (disabled, 13% opacity) */
   --storm-color-on-muted-positive-hover: #b6b6b6; /** Generated positive foreground on muted backgrounds (hover, 23% darker) */
   --storm-color-on-muted-positive-active: #c2c2c2; /** Generated positive foreground on muted backgrounds (active, 19% darker) */
   --storm-color-on-muted-positive-inactive: #ffffff; /** Generated positive foreground on muted backgrounds (inactive, 20% brighter) */
-  --storm-color-on-muted-positive-disabled: rgba(255, 255, 255, 0.25098039215686274); /** Generated positive foreground on muted backgrounds (disabled, 25% opacity) */
+  --storm-color-on-muted-positive-disabled: rgba(255, 255, 255, 0.12549019607843137); /** Generated positive foreground on muted backgrounds (disabled, 13% opacity) */
   --storm-color-on-muted-info-hover: #7abeff; /** Generated info foreground on muted backgrounds (hover, 23% brighter) */
   --storm-color-on-muted-info-active: #72b6ff; /** Generated info foreground on muted backgrounds (active, 19% brighter) */
   --storm-color-on-muted-info-inactive: #2564d1; /** Generated info foreground on muted backgrounds (inactive, 20% darker) */
@@ -868,25 +868,52 @@
   --storm-size-16xl: 92px; /** A 92px 16xl size step */
   --storm-size-17xl: 102px; /** A 102px 17xl size step */
   --storm-size-18xl: 112px; /** A 112px 18xl size step */
-  --storm-size-19xl: 112px; /** A 112px 19xl size step */
-  --storm-size-20xl: 122px; /** A 122px 20xl size step */
-  --storm-size-21xl: 132px; /** A 132px 21xl size step */
-  --storm-size-22xl: 142px; /** A 142px 22xl size step */
-  --storm-size-23xl: 152px; /** A 152px 23xl size step */
-  --storm-size-24xl: 162px; /** A 162px 24xl size step */
-  --storm-size-25xl: 172px; /** A 172px 25xl size step */
-  --storm-size-26xl: 182px; /** A 182px 26xl size step */
-  --storm-size-27xl: 192px; /** A 192px 27xl size step */
-  --storm-size-28xl: 202px; /** A 202px 28xl size step */
-  --storm-size-29xl: 212px; /** A 212px 29xl size step */
-  --storm-size-30xl: 222px; /** A 222px 30xl size step */
-  --storm-size-31xl: 232px; /** A 232px 31xl size step */
-  --storm-size-32xl: 242px; /** A 242px 32xl size step */
-  --storm-size-33xl: 252px; /** A 252px 33xl size step */
-  --storm-size-34xl: 262px; /** A 262px 34xl size step */
-  --storm-size-35xl: 272px; /** A 272px 35xl size step */
-  --storm-size-36xl: 282px; /** A 282px 36xl size step */
-  --storm-size-37xl: 284px; /** A 284px 37xl size step */
+  --storm-size-19xl: 122px; /** A 122px 19xl size step */
+  --storm-size-20xl: 132px; /** A 132px 20xl size step */
+  --storm-size-21xl: 142px; /** A 142px 21xl size step */
+  --storm-size-22xl: 152px; /** A 152px 22xl size step */
+  --storm-size-23xl: 162px; /** A 162px 23xl size step */
+  --storm-size-24xl: 172px; /** A 172px 24xl size step */
+  --storm-size-25xl: 182px; /** A 182px 25xl size step */
+  --storm-size-26xl: 192px; /** A 192px 26xl size step */
+  --storm-size-27xl: 202px; /** A 202px 27xl size step */
+  --storm-size-28xl: 212px; /** A 212px 28xl size step */
+  --storm-size-29xl: 222px; /** A 222px 29xl size step */
+  --storm-size-30xl: 232px; /** A 232px 30xl size step */
+  --storm-size-31xl: 242px; /** A 242px 31xl size step */
+  --storm-size-32xl: 252px; /** A 252px 32xl size step */
+  --storm-size-33xl: 262px; /** A 262px 33xl size step */
+  --storm-size-34xl: 272px; /** A 272px 34xl size step */
+  --storm-size-35xl: 282px; /** A 282px 35xl size step */
+  --storm-size-36xl: 292px; /** A 292px 36xl size step */
+  --storm-size-37xl: 302px; /** A 302px 37xl size step */
+  --storm-size-38xl: 312px; /** A 312px 38xl size step */
+  --storm-size-39xl: 322px; /** A 322px 39xl size step */
+  --storm-size-40xl: 332px; /** A 332px 40xl size step */
+  --storm-size-41xl: 342px; /** A 342px 41xl size step */
+  --storm-size-42xl: 352px; /** A 352px 42xl size step */
+  --storm-size-43xl: 362px; /** A 362px 43xl size step */
+  --storm-size-44xl: 372px; /** A 372px 44xl size step */
+  --storm-size-45xl: 382px; /** A 382px 45xl size step */
+  --storm-size-46xl: 392px; /** A 392px 46xl size step */
+  --storm-size-47xl: 402px; /** A 402px 47xl size step */
+  --storm-size-48xl: 412px; /** A 412px 48xl size step */
+  --storm-size-49xl: 422px; /** A 422px 49xl size step */
+  --storm-size-50xl: 432px; /** A 432px 50xl size step */
+  --storm-size-51xl: 442px; /** A 442px 51xl size step */
+  --storm-size-52xl: 452px; /** A 452px 52xl size step */
+  --storm-size-53xl: 462px; /** A 462px 53xl size step */
+  --storm-size-54xl: 472px; /** A 472px 54xl size step */
+  --storm-size-55xl: 482px; /** A 482px 55xl size step */
+  --storm-size-56xl: 492px; /** A 492px 56xl size step */
+  --storm-size-57xl: 502px; /** A 502px 57xl size step */
+  --storm-size-58xl: 512px; /** A 512px 58xl size step */
+  --storm-size-59xl: 522px; /** A 522px 59xl size step */
+  --storm-size-60xl: 532px; /** A 532px 60xl size step */
+  --storm-size-61xl: 542px; /** A 542px 61xl size step */
+  --storm-size-62xl: 552px; /** A 552px 62xl size step */
+  --storm-size-63xl: 562px; /** A 562px 63xl size step */
+  --storm-size-64xl: 572px; /** A 572px 64xl size step */
   --storm-z-index-0: 0; /** Base stacking level */
   --storm-z-index-10: 100; /** Low stacking level */
   --storm-z-index-20: 200; /** Raised stacking level */
@@ -921,10 +948,52 @@
   --storm-spacing-16xl: 116px; /** A 116px 16xl spacing step (from size.16xl via sizeToSpace) */
   --storm-spacing-17xl: 130px; /** A 130px 17xl spacing step (from size.17xl via sizeToSpace) */
   --storm-spacing-18xl: 144px; /** A 144px 18xl spacing step (from size.18xl via sizeToSpace) */
-  --storm-spacing-19xl: 144px; /** A 144px 19xl spacing step (from size.19xl via sizeToSpace) */
-  --storm-spacing-20xl: 158px; /** A 158px 20xl spacing step (from size.20xl via sizeToSpace) */
-  --storm-spacing-21xl: 172px; /** A 172px 21xl spacing step (from size.21xl via sizeToSpace) */
-  --storm-spacing-22xl: 186px; /** A 186px 22xl spacing step (from size.22xl via sizeToSpace) */
+  --storm-spacing-19xl: 158px; /** A 158px 19xl spacing step (from size.19xl via sizeToSpace) */
+  --storm-spacing-20xl: 172px; /** A 172px 20xl spacing step (from size.20xl via sizeToSpace) */
+  --storm-spacing-21xl: 186px; /** A 186px 21xl spacing step (from size.21xl via sizeToSpace) */
+  --storm-spacing-22xl: 200px; /** A 200px 22xl spacing step (from size.22xl via sizeToSpace) */
+  --storm-spacing-23xl: 214px; /** A 214px 23xl spacing step (from size.23xl via sizeToSpace) */
+  --storm-spacing-24xl: 228px; /** A 228px 24xl spacing step (from size.24xl via sizeToSpace) */
+  --storm-spacing-25xl: 242px; /** A 242px 25xl spacing step (from size.25xl via sizeToSpace) */
+  --storm-spacing-26xl: 256px; /** A 256px 26xl spacing step (from size.26xl via sizeToSpace) */
+  --storm-spacing-27xl: 270px; /** A 270px 27xl spacing step (from size.27xl via sizeToSpace) */
+  --storm-spacing-28xl: 284px; /** A 284px 28xl spacing step (from size.28xl via sizeToSpace) */
+  --storm-spacing-29xl: 298px; /** A 298px 29xl spacing step (from size.29xl via sizeToSpace) */
+  --storm-spacing-30xl: 312px; /** A 312px 30xl spacing step (from size.30xl via sizeToSpace) */
+  --storm-spacing-31xl: 326px; /** A 326px 31xl spacing step (from size.31xl via sizeToSpace) */
+  --storm-spacing-32xl: 340px; /** A 340px 32xl spacing step (from size.32xl via sizeToSpace) */
+  --storm-spacing-33xl: 354px; /** A 354px 33xl spacing step (from size.33xl via sizeToSpace) */
+  --storm-spacing-34xl: 368px; /** A 368px 34xl spacing step (from size.34xl via sizeToSpace) */
+  --storm-spacing-35xl: 382px; /** A 382px 35xl spacing step (from size.35xl via sizeToSpace) */
+  --storm-spacing-36xl: 396px; /** A 396px 36xl spacing step (from size.36xl via sizeToSpace) */
+  --storm-spacing-37xl: 410px; /** A 410px 37xl spacing step (from size.37xl via sizeToSpace) */
+  --storm-spacing-38xl: 424px; /** A 424px 38xl spacing step (from size.38xl via sizeToSpace) */
+  --storm-spacing-39xl: 438px; /** A 438px 39xl spacing step (from size.39xl via sizeToSpace) */
+  --storm-spacing-40xl: 452px; /** A 452px 40xl spacing step (from size.40xl via sizeToSpace) */
+  --storm-spacing-41xl: 466px; /** A 466px 41xl spacing step (from size.41xl via sizeToSpace) */
+  --storm-spacing-42xl: 480px; /** A 480px 42xl spacing step (from size.42xl via sizeToSpace) */
+  --storm-spacing-43xl: 494px; /** A 494px 43xl spacing step (from size.43xl via sizeToSpace) */
+  --storm-spacing-44xl: 508px; /** A 508px 44xl spacing step (from size.44xl via sizeToSpace) */
+  --storm-spacing-45xl: 522px; /** A 522px 45xl spacing step (from size.45xl via sizeToSpace) */
+  --storm-spacing-46xl: 536px; /** A 536px 46xl spacing step (from size.46xl via sizeToSpace) */
+  --storm-spacing-47xl: 550px; /** A 550px 47xl spacing step (from size.47xl via sizeToSpace) */
+  --storm-spacing-48xl: 564px; /** A 564px 48xl spacing step (from size.48xl via sizeToSpace) */
+  --storm-spacing-49xl: 578px; /** A 578px 49xl spacing step (from size.49xl via sizeToSpace) */
+  --storm-spacing-50xl: 592px; /** A 592px 50xl spacing step (from size.50xl via sizeToSpace) */
+  --storm-spacing-51xl: 606px; /** A 606px 51xl spacing step (from size.51xl via sizeToSpace) */
+  --storm-spacing-52xl: 620px; /** A 620px 52xl spacing step (from size.52xl via sizeToSpace) */
+  --storm-spacing-53xl: 634px; /** A 634px 53xl spacing step (from size.53xl via sizeToSpace) */
+  --storm-spacing-54xl: 648px; /** A 648px 54xl spacing step (from size.54xl via sizeToSpace) */
+  --storm-spacing-55xl: 662px; /** A 662px 55xl spacing step (from size.55xl via sizeToSpace) */
+  --storm-spacing-56xl: 676px; /** A 676px 56xl spacing step (from size.56xl via sizeToSpace) */
+  --storm-spacing-57xl: 690px; /** A 690px 57xl spacing step (from size.57xl via sizeToSpace) */
+  --storm-spacing-58xl: 704px; /** A 704px 58xl spacing step (from size.58xl via sizeToSpace) */
+  --storm-spacing-59xl: 718px; /** A 718px 59xl spacing step (from size.59xl via sizeToSpace) */
+  --storm-spacing-60xl: 732px; /** A 732px 60xl spacing step (from size.60xl via sizeToSpace) */
+  --storm-spacing-61xl: 746px; /** A 746px 61xl spacing step (from size.61xl via sizeToSpace) */
+  --storm-spacing-62xl: 760px; /** A 760px 62xl spacing step (from size.62xl via sizeToSpace) */
+  --storm-spacing-63xl: 774px; /** A 774px 63xl spacing step (from size.63xl via sizeToSpace) */
+  --storm-spacing-64xl: 788px; /** A 788px 64xl spacing step (from size.64xl via sizeToSpace) */
   --storm-font-size-xxs: 0.75rem; /** Extra small font size (0.75rem) */
   --storm-font-size-xs: 0.875rem; /** Extra small font size (0.875rem) */
   --storm-font-size-sm: 1rem; /** Small font size (1rem) */

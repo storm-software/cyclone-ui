@@ -66,7 +66,7 @@ export const Base: Story = {
 
     // The popover content is portalled outside the canvas.
     const comment = await screen.findByRole("textbox", {
-      name: "How can we improve?"
+      name: "What could we improve?"
     });
     await userEvent.type(comment, "Too long");
     await userEvent.click(

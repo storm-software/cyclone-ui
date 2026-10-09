@@ -206,8 +206,8 @@ const COLOR_VARIANTS = {
       title={"color.ink"}
       subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
       colors={{
-            "emphasis": "#e1e1e1",
-            "body": "#cacacb",
+            "emphasis": "#cacacb",
+            "body": "#b0b0b1",
             "subtle": "#959698",
             "subtlest": "#7b7b7e"
       }}
@@ -324,7 +324,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#9b9b9b",
               "base-active": "#ffffff",
               "base-inactive": "#808080",
-              "base-disabled": "#fafafa40"
+              "base-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -357,7 +357,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#9b9b9b",
               "base-active": "#ffffff",
               "base-inactive": "#808080",
-              "base-disabled": "#fafafa40"
+              "base-disabled": "#fafafa20"
       }}
     />
           </ColorPalette>
@@ -444,7 +444,7 @@ const COLOR_VARIANTS = {
               "danger-hover": "#b2b2b2",
               "danger-active": "#bebebe",
               "danger-inactive": "#ffffff",
-              "danger-disabled": "#fafafa40"
+              "danger-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -493,7 +493,7 @@ const COLOR_VARIANTS = {
               "discovery-hover": "#b2b2b2",
               "discovery-active": "#bebebe",
               "discovery-inactive": "#ffffff",
-              "discovery-disabled": "#fafafa40"
+              "discovery-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -542,7 +542,7 @@ const COLOR_VARIANTS = {
               "info-hover": "#b2b2b2",
               "info-active": "#bebebe",
               "info-inactive": "#ffffff",
-              "info-disabled": "#fafafa40"
+              "info-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -591,7 +591,7 @@ const COLOR_VARIANTS = {
               "negative-hover": "#b2b2b2",
               "negative-active": "#bebebe",
               "negative-inactive": "#ffffff",
-              "negative-disabled": "#fafafa40"
+              "negative-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -640,7 +640,7 @@ const COLOR_VARIANTS = {
               "positive-hover": "#b2b2b2",
               "positive-active": "#bebebe",
               "positive-inactive": "#ffffff",
-              "positive-disabled": "#fafafa40"
+              "positive-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -651,7 +651,7 @@ const COLOR_VARIANTS = {
               "positive-hover": "#b6b6b6",
               "positive-active": "#c2c2c2",
               "positive-inactive": "#ffffff",
-              "positive-disabled": "#ffffff40"
+              "positive-disabled": "#ffffff20"
       }}
     />
           </ColorPalette>
@@ -689,7 +689,7 @@ const COLOR_VARIANTS = {
               "success-hover": "#b2b2b2",
               "success-active": "#bebebe",
               "success-inactive": "#ffffff",
-              "success-disabled": "#fafafa40"
+              "success-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -700,7 +700,7 @@ const COLOR_VARIANTS = {
               "success-hover": "#b6b6b6",
               "success-active": "#c2c2c2",
               "success-inactive": "#ffffff",
-              "success-disabled": "#ffffff40"
+              "success-disabled": "#ffffff20"
       }}
     />
           </ColorPalette>
@@ -749,7 +749,7 @@ const COLOR_VARIANTS = {
               "warning-hover": "#b6b6b6",
               "warning-active": "#c2c2c2",
               "warning-inactive": "#ffffff",
-              "warning-disabled": "#ffffff40"
+              "warning-disabled": "#ffffff20"
       }}
     />
           </ColorPalette>
@@ -955,8 +955,8 @@ const COLOR_VARIANTS = {
       title={"color.ink"}
       subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
       colors={{
-            "emphasis": "#c4c4c4",
-            "body": "#b4b4b4",
+            "emphasis": "#b4b4b4",
+            "body": "#a1a1a2",
             "subtle": "#8f8f90",
             "subtlest": "#7d7d7e"
       }}
@@ -1073,7 +1073,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#939393",
               "base-active": "#d9d9d9",
               "base-inactive": "#808080",
-              "base-disabled": "#d5d5d540"
+              "base-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -1106,7 +1106,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#939393",
               "base-active": "#d9d9d9",
               "base-inactive": "#808080",
-              "base-disabled": "#d5d5d540"
+              "base-disabled": "#d5d5d520"
       }}
     />
           </ColorPalette>
@@ -1193,7 +1193,7 @@ const COLOR_VARIANTS = {
               "danger-hover": "#a3a3a3",
               "danger-active": "#ababab",
               "danger-inactive": "#d9d9d9",
-              "danger-disabled": "#d5d5d540"
+              "danger-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -1242,7 +1242,7 @@ const COLOR_VARIANTS = {
               "discovery-hover": "#a3a3a3",
               "discovery-active": "#ababab",
               "discovery-inactive": "#d9d9d9",
-              "discovery-disabled": "#d5d5d540"
+              "discovery-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -1291,7 +1291,7 @@ const COLOR_VARIANTS = {
               "info-hover": "#a3a3a3",
               "info-active": "#ababab",
               "info-inactive": "#d9d9d9",
-              "info-disabled": "#d5d5d540"
+              "info-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -1340,7 +1340,7 @@ const COLOR_VARIANTS = {
               "negative-hover": "#a3a3a3",
               "negative-active": "#ababab",
               "negative-inactive": "#d9d9d9",
-              "negative-disabled": "#d5d5d540"
+              "negative-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -1389,7 +1389,7 @@ const COLOR_VARIANTS = {
               "positive-hover": "#a3a3a3",
               "positive-active": "#ababab",
               "positive-inactive": "#d9d9d9",
-              "positive-disabled": "#d5d5d540"
+              "positive-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -1400,7 +1400,7 @@ const COLOR_VARIANTS = {
               "positive-hover": "#a6a6a6",
               "positive-active": "#aeaeae",
               "positive-inactive": "#d9d9d9",
-              "positive-disabled": "#d9d9d940"
+              "positive-disabled": "#d9d9d920"
       }}
     />
           </ColorPalette>
@@ -1438,7 +1438,7 @@ const COLOR_VARIANTS = {
               "success-hover": "#a3a3a3",
               "success-active": "#ababab",
               "success-inactive": "#d9d9d9",
-              "success-disabled": "#d5d5d540"
+              "success-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -1449,7 +1449,7 @@ const COLOR_VARIANTS = {
               "success-hover": "#a6a6a6",
               "success-active": "#aeaeae",
               "success-inactive": "#d9d9d9",
-              "success-disabled": "#d9d9d940"
+              "success-disabled": "#d9d9d920"
       }}
     />
           </ColorPalette>
@@ -1498,7 +1498,7 @@ const COLOR_VARIANTS = {
               "warning-hover": "#a6a6a6",
               "warning-active": "#aeaeae",
               "warning-inactive": "#d9d9d9",
-              "warning-disabled": "#d9d9d940"
+              "warning-disabled": "#d9d9d920"
       }}
     />
           </ColorPalette>
@@ -1704,8 +1704,8 @@ const COLOR_VARIANTS = {
       title={"color.ink"}
       subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
       colors={{
-            "emphasis": "#ffffff",
-            "body": "#ebebed",
+            "emphasis": "#ebebed",
+            "body": "#c3c3ca",
             "subtle": "#9a9fa7",
             "subtlest": "#737383"
       }}
@@ -1822,7 +1822,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#a7a7a7",
               "base-active": "#ffffff",
               "base-inactive": "#808080",
-              "base-disabled": "#ffffff40"
+              "base-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -1855,7 +1855,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#a7a7a7",
               "base-active": "#ffffff",
               "base-inactive": "#808080",
-              "base-disabled": "#ffffff40"
+              "base-disabled": "#ffffff20"
       }}
     />
           </ColorPalette>
@@ -1942,7 +1942,7 @@ const COLOR_VARIANTS = {
               "danger-hover": "#c9c9c9",
               "danger-active": "#dadada",
               "danger-inactive": "#ffffff",
-              "danger-disabled": "#ffffff40"
+              "danger-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -1991,7 +1991,7 @@ const COLOR_VARIANTS = {
               "discovery-hover": "#c9c9c9",
               "discovery-active": "#dadada",
               "discovery-inactive": "#ffffff",
-              "discovery-disabled": "#ffffff40"
+              "discovery-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -2040,7 +2040,7 @@ const COLOR_VARIANTS = {
               "info-hover": "#c9c9c9",
               "info-active": "#dadada",
               "info-inactive": "#ffffff",
-              "info-disabled": "#ffffff40"
+              "info-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -2089,7 +2089,7 @@ const COLOR_VARIANTS = {
               "negative-hover": "#c9c9c9",
               "negative-active": "#dadada",
               "negative-inactive": "#ffffff",
-              "negative-disabled": "#ffffff40"
+              "negative-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -2138,7 +2138,7 @@ const COLOR_VARIANTS = {
               "positive-hover": "#c9c9c9",
               "positive-active": "#dadada",
               "positive-inactive": "#ffffff",
-              "positive-disabled": "#ffffff40"
+              "positive-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -2149,7 +2149,7 @@ const COLOR_VARIANTS = {
               "positive-hover": "#cfcfcf",
               "positive-active": "#e0e0e0",
               "positive-inactive": "#ffffff",
-              "positive-disabled": "#ffffff40"
+              "positive-disabled": "#ffffff20"
       }}
     />
           </ColorPalette>
@@ -2187,7 +2187,7 @@ const COLOR_VARIANTS = {
               "success-hover": "#c9c9c9",
               "success-active": "#dadada",
               "success-inactive": "#ffffff",
-              "success-disabled": "#ffffff40"
+              "success-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -2198,7 +2198,7 @@ const COLOR_VARIANTS = {
               "success-hover": "#cfcfcf",
               "success-active": "#e0e0e0",
               "success-inactive": "#ffffff",
-              "success-disabled": "#ffffff40"
+              "success-disabled": "#ffffff20"
       }}
     />
           </ColorPalette>
@@ -2247,7 +2247,7 @@ const COLOR_VARIANTS = {
               "warning-hover": "#cfcfcf",
               "warning-active": "#e0e0e0",
               "warning-inactive": "#ffffff",
-              "warning-disabled": "#ffffff40"
+              "warning-disabled": "#ffffff20"
       }}
     />
           </ColorPalette>
@@ -2523,23 +2523,23 @@ const COLOR_VARIANTS = {
             "sunken-hover": "#a0a0a0",
             "sunken-active": "#ababab",
             "sunken-inactive": "#ffffff",
-            "sunken-disabled": "#e1e1e140",
+            "sunken-disabled": "#e1e1e120",
             "canvas-hover": "#a6a6a6",
             "canvas-active": "#b2b2b2",
             "canvas-inactive": "#ffffff",
-            "canvas-disabled": "#eaeaea40",
+            "canvas-disabled": "#eaeaea20",
             "elevated-hover": "#ababab",
             "elevated-active": "#b7b7b7",
             "elevated-inactive": "#ffffff",
-            "elevated-disabled": "#f1f1f140",
+            "elevated-disabled": "#f1f1f120",
             "floating-hover": "#b2b2b2",
             "floating-active": "#bebebe",
             "floating-inactive": "#ffffff",
-            "floating-disabled": "#fafafa40",
+            "floating-disabled": "#fafafa20",
             "overlay-hover": "#b6b6b6",
             "overlay-active": "#c2c2c2",
             "overlay-inactive": "#ffffff",
-            "overlay-disabled": "#ffffff40"
+            "overlay-disabled": "#ffffff20"
       }}
     />
           <ColorItem
@@ -2582,7 +2582,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#919191",
               "base-active": "#cacaca",
               "base-inactive": "#030303",
-              "base-disabled": "#eaeaea40"
+              "base-disabled": "#eaeaea20"
       }}
     />
             <ColorItem
@@ -2593,7 +2593,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#959595",
               "base-active": "#0c0c0d",
               "base-inactive": "#030303",
-              "base-disabled": "#f1f1f140"
+              "base-disabled": "#f1f1f120"
       }}
     />
             <ColorItem
@@ -2642,7 +2642,7 @@ const COLOR_VARIANTS = {
               "brand-hover": "#b2b2b2",
               "brand-active": "#bebebe",
               "brand-inactive": "#ffffff",
-              "brand-disabled": "#fafafa40"
+              "brand-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -2691,7 +2691,7 @@ const COLOR_VARIANTS = {
               "danger-hover": "#b2b2b2",
               "danger-active": "#bebebe",
               "danger-inactive": "#ffffff",
-              "danger-disabled": "#fafafa40"
+              "danger-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -2740,7 +2740,7 @@ const COLOR_VARIANTS = {
               "discovery-hover": "#b2b2b2",
               "discovery-active": "#bebebe",
               "discovery-inactive": "#ffffff",
-              "discovery-disabled": "#fafafa40"
+              "discovery-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -2789,7 +2789,7 @@ const COLOR_VARIANTS = {
               "info-hover": "#b2b2b2",
               "info-active": "#bebebe",
               "info-inactive": "#ffffff",
-              "info-disabled": "#fafafa40"
+              "info-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -2838,7 +2838,7 @@ const COLOR_VARIANTS = {
               "negative-hover": "#b2b2b2",
               "negative-active": "#bebebe",
               "negative-inactive": "#ffffff",
-              "negative-disabled": "#fafafa40"
+              "negative-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -2887,7 +2887,7 @@ const COLOR_VARIANTS = {
               "positive-hover": "#b2b2b2",
               "positive-active": "#bebebe",
               "positive-inactive": "#ffffff",
-              "positive-disabled": "#fafafa40"
+              "positive-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -2936,7 +2936,7 @@ const COLOR_VARIANTS = {
               "success-hover": "#b2b2b2",
               "success-active": "#bebebe",
               "success-inactive": "#ffffff",
-              "success-disabled": "#fafafa40"
+              "success-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -2985,7 +2985,7 @@ const COLOR_VARIANTS = {
               "warning-hover": "#b2b2b2",
               "warning-active": "#bebebe",
               "warning-inactive": "#ffffff",
-              "warning-disabled": "#fafafa40"
+              "warning-disabled": "#fafafa20"
       }}
     />
             <ColorItem
@@ -3272,23 +3272,23 @@ const COLOR_VARIANTS = {
             "sunken-hover": "#969696",
             "sunken-active": "#9e9e9e",
             "sunken-inactive": "#d9d9d9",
-            "sunken-disabled": "#c4c4c440",
+            "sunken-disabled": "#c4c4c420",
             "canvas-hover": "#9a9a9a",
             "canvas-active": "#a3a3a3",
             "canvas-inactive": "#d9d9d9",
-            "canvas-disabled": "#cacaca40",
+            "canvas-disabled": "#cacaca20",
             "elevated-hover": "#9e9e9e",
             "elevated-active": "#a6a6a6",
             "elevated-inactive": "#d9d9d9",
-            "elevated-disabled": "#cfcfcf40",
+            "elevated-disabled": "#cfcfcf20",
             "floating-hover": "#a3a3a3",
             "floating-active": "#ababab",
             "floating-inactive": "#d9d9d9",
-            "floating-disabled": "#d5d5d540",
+            "floating-disabled": "#d5d5d520",
             "overlay-hover": "#a6a6a6",
             "overlay-active": "#aeaeae",
             "overlay-inactive": "#d9d9d9",
-            "overlay-disabled": "#d9d9d940"
+            "overlay-disabled": "#d9d9d920"
       }}
     />
           <ColorItem
@@ -3331,7 +3331,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#8c8c8c",
               "base-active": "#b4b4b4",
               "base-inactive": "#282828",
-              "base-disabled": "#cacaca40"
+              "base-disabled": "#cacaca20"
       }}
     />
             <ColorItem
@@ -3342,7 +3342,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#8f8f8f",
               "base-active": "#2e2e30",
               "base-inactive": "#282828",
-              "base-disabled": "#cfcfcf40"
+              "base-disabled": "#cfcfcf20"
       }}
     />
             <ColorItem
@@ -3391,7 +3391,7 @@ const COLOR_VARIANTS = {
               "brand-hover": "#a3a3a3",
               "brand-active": "#ababab",
               "brand-inactive": "#d9d9d9",
-              "brand-disabled": "#d5d5d540"
+              "brand-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -3440,7 +3440,7 @@ const COLOR_VARIANTS = {
               "danger-hover": "#a3a3a3",
               "danger-active": "#ababab",
               "danger-inactive": "#d9d9d9",
-              "danger-disabled": "#d5d5d540"
+              "danger-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -3489,7 +3489,7 @@ const COLOR_VARIANTS = {
               "discovery-hover": "#a3a3a3",
               "discovery-active": "#ababab",
               "discovery-inactive": "#d9d9d9",
-              "discovery-disabled": "#d5d5d540"
+              "discovery-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -3538,7 +3538,7 @@ const COLOR_VARIANTS = {
               "info-hover": "#a3a3a3",
               "info-active": "#ababab",
               "info-inactive": "#d9d9d9",
-              "info-disabled": "#d5d5d540"
+              "info-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -3587,7 +3587,7 @@ const COLOR_VARIANTS = {
               "negative-hover": "#a3a3a3",
               "negative-active": "#ababab",
               "negative-inactive": "#d9d9d9",
-              "negative-disabled": "#d5d5d540"
+              "negative-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -3636,7 +3636,7 @@ const COLOR_VARIANTS = {
               "positive-hover": "#a3a3a3",
               "positive-active": "#ababab",
               "positive-inactive": "#d9d9d9",
-              "positive-disabled": "#d5d5d540"
+              "positive-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -3685,7 +3685,7 @@ const COLOR_VARIANTS = {
               "success-hover": "#a3a3a3",
               "success-active": "#ababab",
               "success-inactive": "#d9d9d9",
-              "success-disabled": "#d5d5d540"
+              "success-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -3734,7 +3734,7 @@ const COLOR_VARIANTS = {
               "warning-hover": "#a3a3a3",
               "warning-active": "#ababab",
               "warning-inactive": "#d9d9d9",
-              "warning-disabled": "#d5d5d540"
+              "warning-disabled": "#d5d5d520"
       }}
     />
             <ColorItem
@@ -4021,23 +4021,23 @@ const COLOR_VARIANTS = {
             "sunken-hover": "#afafaf",
             "sunken-active": "#bfbfbf",
             "sunken-inactive": "#ffffff",
-            "sunken-disabled": "#ffffff40",
+            "sunken-disabled": "#ffffff20",
             "canvas-hover": "#b7b7b7",
             "canvas-active": "#c9c9c9",
             "canvas-inactive": "#ffffff",
-            "canvas-disabled": "#ffffff40",
+            "canvas-disabled": "#ffffff20",
             "elevated-hover": "#bfbfbf",
             "elevated-active": "#d0d0d0",
             "elevated-inactive": "#ffffff",
-            "elevated-disabled": "#ffffff40",
+            "elevated-disabled": "#ffffff20",
             "floating-hover": "#c9c9c9",
             "floating-active": "#dadada",
             "floating-inactive": "#ffffff",
-            "floating-disabled": "#ffffff40",
+            "floating-disabled": "#ffffff20",
             "overlay-hover": "#cfcfcf",
             "overlay-active": "#e0e0e0",
             "overlay-inactive": "#ffffff",
-            "overlay-disabled": "#ffffff40"
+            "overlay-disabled": "#ffffff20"
       }}
     />
           <ColorItem
@@ -4080,7 +4080,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#999999",
               "base-active": "#ececec",
               "base-inactive": "#000000",
-              "base-disabled": "#ffffff40"
+              "base-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -4091,7 +4091,7 @@ const COLOR_VARIANTS = {
               "base-hover": "#9f9f9f",
               "base-active": "#000000",
               "base-inactive": "#000000",
-              "base-disabled": "#ffffff40"
+              "base-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -4140,7 +4140,7 @@ const COLOR_VARIANTS = {
               "brand-hover": "#c9c9c9",
               "brand-active": "#dadada",
               "brand-inactive": "#ffffff",
-              "brand-disabled": "#ffffff40"
+              "brand-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -4189,7 +4189,7 @@ const COLOR_VARIANTS = {
               "danger-hover": "#c9c9c9",
               "danger-active": "#dadada",
               "danger-inactive": "#ffffff",
-              "danger-disabled": "#ffffff40"
+              "danger-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -4238,7 +4238,7 @@ const COLOR_VARIANTS = {
               "discovery-hover": "#c9c9c9",
               "discovery-active": "#dadada",
               "discovery-inactive": "#ffffff",
-              "discovery-disabled": "#ffffff40"
+              "discovery-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -4287,7 +4287,7 @@ const COLOR_VARIANTS = {
               "info-hover": "#c9c9c9",
               "info-active": "#dadada",
               "info-inactive": "#ffffff",
-              "info-disabled": "#ffffff40"
+              "info-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -4336,7 +4336,7 @@ const COLOR_VARIANTS = {
               "negative-hover": "#c9c9c9",
               "negative-active": "#dadada",
               "negative-inactive": "#ffffff",
-              "negative-disabled": "#ffffff40"
+              "negative-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -4385,7 +4385,7 @@ const COLOR_VARIANTS = {
               "positive-hover": "#c9c9c9",
               "positive-active": "#dadada",
               "positive-inactive": "#ffffff",
-              "positive-disabled": "#ffffff40"
+              "positive-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -4434,7 +4434,7 @@ const COLOR_VARIANTS = {
               "success-hover": "#c9c9c9",
               "success-active": "#dadada",
               "success-inactive": "#ffffff",
-              "success-disabled": "#ffffff40"
+              "success-disabled": "#ffffff20"
       }}
     />
             <ColorItem
@@ -4483,7 +4483,7 @@ const COLOR_VARIANTS = {
               "warning-hover": "#c9c9c9",
               "warning-active": "#dadada",
               "warning-inactive": "#ffffff",
-              "warning-disabled": "#ffffff40"
+              "warning-disabled": "#ffffff20"
       }}
     />
             <ColorItem

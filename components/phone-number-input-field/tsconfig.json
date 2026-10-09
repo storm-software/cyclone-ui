@@ -33,13 +33,10 @@
       "path": "../../packages/helpers"
     },
     {
-      "path": "../body-text"
+      "path": "../context-menu"
     },
     {
       "path": "../form"
-    },
-    {
-      "path": "../context-menu"
     }
   ],
   "files": [],

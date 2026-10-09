@@ -24,11 +24,11 @@ import {
 import { Select } from "@cyclone-ui/select";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import type { SelectOption } from "@stryke/types/form";
-import type { GetProps } from "@tamagui/core";
+import type { GetProps, TamaguiTextElement } from "@tamagui/core";
 import { createStyledHOC, withStaticProperties } from "@tamagui/core";
 import type { Atom } from "jotai";
 import { useAtomValue } from "jotai";
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren, Ref } from "react";
 import { memo, useCallback, useLayoutEffect } from "react";
 
 const SelectFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
@@ -44,16 +44,14 @@ const SelectFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
 const SelectFieldItem = memo(
   (props: PropsWithChildren<{ itemAtom: Atom<SelectOption> }>) => {
     const item = useAtomValue(props.itemAtom);
-    const { value, name, index } = item;
+    const { value, name } = item;
 
     return (
       <Select.Items.Item
         {...item}
         // `Select.Items.Item` stringifies `value` itself; its emitted typings
         // only accept strings.
-        value={String(value)}
-        tabIndex={index}
-        textValue={String(value)}>
+        value={String(value)}>
         {name}
       </Select.Items.Item>
     );
@@ -118,7 +116,8 @@ const SelectFieldControl = createStyledHOC(
         <Select.TextBox>
           {children}
           <Select.TextBox.Value
-            ref={selectRef}
+            // The field's ref is typed for inputs; the value is a text node.
+            ref={selectRef as Ref<TamaguiTextElement>}
             // `Select.TextBox.Value` derives `placeholding` from `placeholder`
             // (its own prop wins over a passed one), so it isn't passed here.
             placeholder={isPlaceholding ? placeholder : undefined}>

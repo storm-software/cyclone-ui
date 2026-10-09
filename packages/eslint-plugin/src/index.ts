@@ -934,7 +934,7 @@ export const manifest = {
       "cssVar": "--storm-color-muted-base-disabled",
       "type": "color",
       "category": "color",
-      "value": "#eaeaea40"
+      "value": "#eaeaea20"
     },
     {
       "path": "color.muted.base-hover",
@@ -1348,7 +1348,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-base-disabled",
       "type": "color",
       "category": "color",
-      "value": "#f1f1f140"
+      "value": "#f1f1f120"
     },
     {
       "path": "color.on-accent.base-hover",
@@ -1383,7 +1383,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-brand-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa40"
+      "value": "#fafafa20"
     },
     {
       "path": "color.on-accent.brand-hover",
@@ -1418,7 +1418,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-danger-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa40"
+      "value": "#fafafa20"
     },
     {
       "path": "color.on-accent.danger-hover",
@@ -1453,7 +1453,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-discovery-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa40"
+      "value": "#fafafa20"
     },
     {
       "path": "color.on-accent.discovery-hover",
@@ -1488,7 +1488,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-info-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa40"
+      "value": "#fafafa20"
     },
     {
       "path": "color.on-accent.info-hover",
@@ -1523,7 +1523,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-negative-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa40"
+      "value": "#fafafa20"
     },
     {
       "path": "color.on-accent.negative-hover",
@@ -1558,7 +1558,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-positive-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa40"
+      "value": "#fafafa20"
     },
     {
       "path": "color.on-accent.positive-hover",
@@ -1593,7 +1593,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-success-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa40"
+      "value": "#fafafa20"
     },
     {
       "path": "color.on-accent.success-hover",
@@ -1628,7 +1628,7 @@ export const manifest = {
       "cssVar": "--storm-color-on-accent-warning-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa40"
+      "value": "#fafafa20"
     },
     {
       "path": "color.on-accent.warning-hover",
@@ -2343,7 +2343,7 @@ export const manifest = {
       "cssVar": "--storm-color-surface-canvas-disabled",
       "type": "color",
       "category": "color",
-      "value": "#eaeaea40"
+      "value": "#eaeaea20"
     },
     {
       "path": "color.surface.canvas-hover",
@@ -2379,7 +2379,7 @@ export const manifest = {
       "cssVar": "--storm-color-surface-elevated-disabled",
       "type": "color",
       "category": "color",
-      "value": "#f1f1f140"
+      "value": "#f1f1f120"
     },
     {
       "path": "color.surface.elevated-hover",
@@ -2415,7 +2415,7 @@ export const manifest = {
       "cssVar": "--storm-color-surface-floating-disabled",
       "type": "color",
       "category": "color",
-      "value": "#fafafa40"
+      "value": "#fafafa20"
     },
     {
       "path": "color.surface.floating-hover",
@@ -2451,7 +2451,7 @@ export const manifest = {
       "cssVar": "--storm-color-surface-overlay-disabled",
       "type": "color",
       "category": "color",
-      "value": "#ffffff40"
+      "value": "#ffffff20"
     },
     {
       "path": "color.surface.overlay-hover",
@@ -2487,7 +2487,7 @@ export const manifest = {
       "cssVar": "--storm-color-surface-sunken-disabled",
       "type": "color",
       "category": "color",
-      "value": "#e1e1e140"
+      "value": "#e1e1e120"
     },
     {
       "path": "color.surface.sunken-hover",
@@ -3484,133 +3484,322 @@ export const manifest = {
       "cssVar": "--storm-size-19xl",
       "type": "dimension",
       "category": "size",
-      "value": "112px"
+      "value": "122px"
     },
     {
       "path": "size.20xl",
       "cssVar": "--storm-size-20xl",
       "type": "dimension",
       "category": "size",
-      "value": "122px"
+      "value": "132px"
     },
     {
       "path": "size.21xl",
       "cssVar": "--storm-size-21xl",
       "type": "dimension",
       "category": "size",
-      "value": "132px"
+      "value": "142px"
     },
     {
       "path": "size.22xl",
       "cssVar": "--storm-size-22xl",
       "type": "dimension",
       "category": "size",
-      "value": "142px"
+      "value": "152px"
     },
     {
       "path": "size.23xl",
       "cssVar": "--storm-size-23xl",
       "type": "dimension",
       "category": "size",
-      "value": "152px"
+      "value": "162px"
     },
     {
       "path": "size.24xl",
       "cssVar": "--storm-size-24xl",
       "type": "dimension",
       "category": "size",
-      "value": "162px"
+      "value": "172px"
     },
     {
       "path": "size.25xl",
       "cssVar": "--storm-size-25xl",
       "type": "dimension",
       "category": "size",
-      "value": "172px"
+      "value": "182px"
     },
     {
       "path": "size.26xl",
       "cssVar": "--storm-size-26xl",
       "type": "dimension",
       "category": "size",
-      "value": "182px"
+      "value": "192px"
     },
     {
       "path": "size.27xl",
       "cssVar": "--storm-size-27xl",
       "type": "dimension",
       "category": "size",
-      "value": "192px"
+      "value": "202px"
     },
     {
       "path": "size.28xl",
       "cssVar": "--storm-size-28xl",
       "type": "dimension",
       "category": "size",
-      "value": "202px"
+      "value": "212px"
     },
     {
       "path": "size.29xl",
       "cssVar": "--storm-size-29xl",
       "type": "dimension",
       "category": "size",
-      "value": "212px"
+      "value": "222px"
     },
     {
       "path": "size.30xl",
       "cssVar": "--storm-size-30xl",
       "type": "dimension",
       "category": "size",
-      "value": "222px"
+      "value": "232px"
     },
     {
       "path": "size.31xl",
       "cssVar": "--storm-size-31xl",
       "type": "dimension",
       "category": "size",
-      "value": "232px"
+      "value": "242px"
     },
     {
       "path": "size.32xl",
       "cssVar": "--storm-size-32xl",
       "type": "dimension",
       "category": "size",
-      "value": "242px"
+      "value": "252px"
     },
     {
       "path": "size.33xl",
       "cssVar": "--storm-size-33xl",
       "type": "dimension",
       "category": "size",
-      "value": "252px"
+      "value": "262px"
     },
     {
       "path": "size.34xl",
       "cssVar": "--storm-size-34xl",
       "type": "dimension",
       "category": "size",
-      "value": "262px"
+      "value": "272px"
     },
     {
       "path": "size.35xl",
       "cssVar": "--storm-size-35xl",
       "type": "dimension",
       "category": "size",
-      "value": "272px"
+      "value": "282px"
     },
     {
       "path": "size.36xl",
       "cssVar": "--storm-size-36xl",
       "type": "dimension",
       "category": "size",
-      "value": "282px"
+      "value": "292px"
     },
     {
       "path": "size.37xl",
       "cssVar": "--storm-size-37xl",
       "type": "dimension",
       "category": "size",
-      "value": "284px"
+      "value": "302px"
+    },
+    {
+      "path": "size.38xl",
+      "cssVar": "--storm-size-38xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "312px"
+    },
+    {
+      "path": "size.39xl",
+      "cssVar": "--storm-size-39xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "322px"
+    },
+    {
+      "path": "size.40xl",
+      "cssVar": "--storm-size-40xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "332px"
+    },
+    {
+      "path": "size.41xl",
+      "cssVar": "--storm-size-41xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "342px"
+    },
+    {
+      "path": "size.42xl",
+      "cssVar": "--storm-size-42xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "352px"
+    },
+    {
+      "path": "size.43xl",
+      "cssVar": "--storm-size-43xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "362px"
+    },
+    {
+      "path": "size.44xl",
+      "cssVar": "--storm-size-44xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "372px"
+    },
+    {
+      "path": "size.45xl",
+      "cssVar": "--storm-size-45xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "382px"
+    },
+    {
+      "path": "size.46xl",
+      "cssVar": "--storm-size-46xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "392px"
+    },
+    {
+      "path": "size.47xl",
+      "cssVar": "--storm-size-47xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "402px"
+    },
+    {
+      "path": "size.48xl",
+      "cssVar": "--storm-size-48xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "412px"
+    },
+    {
+      "path": "size.49xl",
+      "cssVar": "--storm-size-49xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "422px"
+    },
+    {
+      "path": "size.50xl",
+      "cssVar": "--storm-size-50xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "432px"
+    },
+    {
+      "path": "size.51xl",
+      "cssVar": "--storm-size-51xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "442px"
+    },
+    {
+      "path": "size.52xl",
+      "cssVar": "--storm-size-52xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "452px"
+    },
+    {
+      "path": "size.53xl",
+      "cssVar": "--storm-size-53xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "462px"
+    },
+    {
+      "path": "size.54xl",
+      "cssVar": "--storm-size-54xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "472px"
+    },
+    {
+      "path": "size.55xl",
+      "cssVar": "--storm-size-55xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "482px"
+    },
+    {
+      "path": "size.56xl",
+      "cssVar": "--storm-size-56xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "492px"
+    },
+    {
+      "path": "size.57xl",
+      "cssVar": "--storm-size-57xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "502px"
+    },
+    {
+      "path": "size.58xl",
+      "cssVar": "--storm-size-58xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "512px"
+    },
+    {
+      "path": "size.59xl",
+      "cssVar": "--storm-size-59xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "522px"
+    },
+    {
+      "path": "size.60xl",
+      "cssVar": "--storm-size-60xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "532px"
+    },
+    {
+      "path": "size.61xl",
+      "cssVar": "--storm-size-61xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "542px"
+    },
+    {
+      "path": "size.62xl",
+      "cssVar": "--storm-size-62xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "552px"
+    },
+    {
+      "path": "size.63xl",
+      "cssVar": "--storm-size-63xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "562px"
+    },
+    {
+      "path": "size.64xl",
+      "cssVar": "--storm-size-64xl",
+      "type": "dimension",
+      "category": "size",
+      "value": "572px"
     },
     {
       "path": "size.lg",
@@ -3785,28 +3974,322 @@ export const manifest = {
       "cssVar": "--storm-spacing-19xl",
       "type": "dimension",
       "category": "space",
-      "value": "144px"
+      "value": "158px"
     },
     {
       "path": "spacing.20xl",
       "cssVar": "--storm-spacing-20xl",
       "type": "dimension",
       "category": "space",
-      "value": "158px"
+      "value": "172px"
     },
     {
       "path": "spacing.21xl",
       "cssVar": "--storm-spacing-21xl",
       "type": "dimension",
       "category": "space",
-      "value": "172px"
+      "value": "186px"
     },
     {
       "path": "spacing.22xl",
       "cssVar": "--storm-spacing-22xl",
       "type": "dimension",
       "category": "space",
-      "value": "186px"
+      "value": "200px"
+    },
+    {
+      "path": "spacing.23xl",
+      "cssVar": "--storm-spacing-23xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "214px"
+    },
+    {
+      "path": "spacing.24xl",
+      "cssVar": "--storm-spacing-24xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "228px"
+    },
+    {
+      "path": "spacing.25xl",
+      "cssVar": "--storm-spacing-25xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "242px"
+    },
+    {
+      "path": "spacing.26xl",
+      "cssVar": "--storm-spacing-26xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "256px"
+    },
+    {
+      "path": "spacing.27xl",
+      "cssVar": "--storm-spacing-27xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "270px"
+    },
+    {
+      "path": "spacing.28xl",
+      "cssVar": "--storm-spacing-28xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "284px"
+    },
+    {
+      "path": "spacing.29xl",
+      "cssVar": "--storm-spacing-29xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "298px"
+    },
+    {
+      "path": "spacing.30xl",
+      "cssVar": "--storm-spacing-30xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "312px"
+    },
+    {
+      "path": "spacing.31xl",
+      "cssVar": "--storm-spacing-31xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "326px"
+    },
+    {
+      "path": "spacing.32xl",
+      "cssVar": "--storm-spacing-32xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "340px"
+    },
+    {
+      "path": "spacing.33xl",
+      "cssVar": "--storm-spacing-33xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "354px"
+    },
+    {
+      "path": "spacing.34xl",
+      "cssVar": "--storm-spacing-34xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "368px"
+    },
+    {
+      "path": "spacing.35xl",
+      "cssVar": "--storm-spacing-35xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "382px"
+    },
+    {
+      "path": "spacing.36xl",
+      "cssVar": "--storm-spacing-36xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "396px"
+    },
+    {
+      "path": "spacing.37xl",
+      "cssVar": "--storm-spacing-37xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "410px"
+    },
+    {
+      "path": "spacing.38xl",
+      "cssVar": "--storm-spacing-38xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "424px"
+    },
+    {
+      "path": "spacing.39xl",
+      "cssVar": "--storm-spacing-39xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "438px"
+    },
+    {
+      "path": "spacing.40xl",
+      "cssVar": "--storm-spacing-40xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "452px"
+    },
+    {
+      "path": "spacing.41xl",
+      "cssVar": "--storm-spacing-41xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "466px"
+    },
+    {
+      "path": "spacing.42xl",
+      "cssVar": "--storm-spacing-42xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "480px"
+    },
+    {
+      "path": "spacing.43xl",
+      "cssVar": "--storm-spacing-43xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "494px"
+    },
+    {
+      "path": "spacing.44xl",
+      "cssVar": "--storm-spacing-44xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "508px"
+    },
+    {
+      "path": "spacing.45xl",
+      "cssVar": "--storm-spacing-45xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "522px"
+    },
+    {
+      "path": "spacing.46xl",
+      "cssVar": "--storm-spacing-46xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "536px"
+    },
+    {
+      "path": "spacing.47xl",
+      "cssVar": "--storm-spacing-47xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "550px"
+    },
+    {
+      "path": "spacing.48xl",
+      "cssVar": "--storm-spacing-48xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "564px"
+    },
+    {
+      "path": "spacing.49xl",
+      "cssVar": "--storm-spacing-49xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "578px"
+    },
+    {
+      "path": "spacing.50xl",
+      "cssVar": "--storm-spacing-50xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "592px"
+    },
+    {
+      "path": "spacing.51xl",
+      "cssVar": "--storm-spacing-51xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "606px"
+    },
+    {
+      "path": "spacing.52xl",
+      "cssVar": "--storm-spacing-52xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "620px"
+    },
+    {
+      "path": "spacing.53xl",
+      "cssVar": "--storm-spacing-53xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "634px"
+    },
+    {
+      "path": "spacing.54xl",
+      "cssVar": "--storm-spacing-54xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "648px"
+    },
+    {
+      "path": "spacing.55xl",
+      "cssVar": "--storm-spacing-55xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "662px"
+    },
+    {
+      "path": "spacing.56xl",
+      "cssVar": "--storm-spacing-56xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "676px"
+    },
+    {
+      "path": "spacing.57xl",
+      "cssVar": "--storm-spacing-57xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "690px"
+    },
+    {
+      "path": "spacing.58xl",
+      "cssVar": "--storm-spacing-58xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "704px"
+    },
+    {
+      "path": "spacing.59xl",
+      "cssVar": "--storm-spacing-59xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "718px"
+    },
+    {
+      "path": "spacing.60xl",
+      "cssVar": "--storm-spacing-60xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "732px"
+    },
+    {
+      "path": "spacing.61xl",
+      "cssVar": "--storm-spacing-61xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "746px"
+    },
+    {
+      "path": "spacing.62xl",
+      "cssVar": "--storm-spacing-62xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "760px"
+    },
+    {
+      "path": "spacing.63xl",
+      "cssVar": "--storm-spacing-63xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "774px"
+    },
+    {
+      "path": "spacing.64xl",
+      "cssVar": "--storm-spacing-64xl",
+      "type": "dimension",
+      "category": "space",
+      "value": "788px"
     },
     {
       "path": "spacing.lg",
@@ -4949,6 +5432,48 @@ export const manifest = {
         "20xl",
         "21xl",
         "22xl",
+        "23xl",
+        "24xl",
+        "25xl",
+        "26xl",
+        "27xl",
+        "28xl",
+        "29xl",
+        "30xl",
+        "31xl",
+        "32xl",
+        "33xl",
+        "34xl",
+        "35xl",
+        "36xl",
+        "37xl",
+        "38xl",
+        "39xl",
+        "40xl",
+        "41xl",
+        "42xl",
+        "43xl",
+        "44xl",
+        "45xl",
+        "46xl",
+        "47xl",
+        "48xl",
+        "49xl",
+        "50xl",
+        "51xl",
+        "52xl",
+        "53xl",
+        "54xl",
+        "55xl",
+        "56xl",
+        "57xl",
+        "58xl",
+        "59xl",
+        "60xl",
+        "61xl",
+        "62xl",
+        "63xl",
+        "64xl",
         "lg",
         "md",
         "sm",
@@ -4994,6 +5519,33 @@ export const manifest = {
         "35xl",
         "36xl",
         "37xl",
+        "38xl",
+        "39xl",
+        "40xl",
+        "41xl",
+        "42xl",
+        "43xl",
+        "44xl",
+        "45xl",
+        "46xl",
+        "47xl",
+        "48xl",
+        "49xl",
+        "50xl",
+        "51xl",
+        "52xl",
+        "53xl",
+        "54xl",
+        "55xl",
+        "56xl",
+        "57xl",
+        "58xl",
+        "59xl",
+        "60xl",
+        "61xl",
+        "62xl",
+        "63xl",
+        "64xl",
         "lg",
         "md",
         "sm",

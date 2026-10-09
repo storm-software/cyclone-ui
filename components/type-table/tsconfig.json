@@ -14,16 +14,10 @@
   },
   "references": [
     {
-      "path": "../../packages/themes"
-    },
-    {
       "path": "../link"
     },
     {
       "path": "../inline-code-text"
-    },
-    {
-      "path": "../heading-text"
     },
     {
       "path": "../container"
@@ -33,6 +27,9 @@
     },
     {
       "path": "../body-text"
+    },
+    {
+      "path": "../../packages/themes"
     }
   ],
   "files": [],

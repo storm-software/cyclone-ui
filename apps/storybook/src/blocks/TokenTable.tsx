@@ -737,7 +737,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.emphasis",
       type: "color",
-      value: "#e1e1e1",
+      value: "#cacacb",
       cssVar: "--cu-color-ink-emphasis",
       description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options.",
       theme: undefined,
@@ -746,7 +746,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#cacacb",
+      value: "#b0b0b1",
       cssVar: "--cu-color-ink-body",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
@@ -1151,9 +1151,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 25% opacity)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1628,9 +1628,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1664,9 +1664,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1736,9 +1736,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1772,9 +1772,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1808,9 +1808,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1844,9 +1844,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -2681,9 +2681,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated base foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -2825,9 +2825,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -2861,9 +2861,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated success foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -2897,9 +2897,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -3194,171 +3194,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "size.19xl",
       type: "dimension",
-      value: "112px",
+      value: "122px",
       cssVar: "--cu-size-19xl",
-      description: "A 112px 19xl size step",
+      description: "A 122px 19xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "122px",
+      value: "132px",
       cssVar: "--cu-size-20xl",
-      description: "A 122px 20xl size step",
+      description: "A 132px 20xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "132px",
+      value: "142px",
       cssVar: "--cu-size-21xl",
-      description: "A 132px 21xl size step",
+      description: "A 142px 21xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "142px",
+      value: "152px",
       cssVar: "--cu-size-22xl",
-      description: "A 142px 22xl size step",
+      description: "A 152px 22xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.23xl",
       type: "dimension",
-      value: "152px",
+      value: "162px",
       cssVar: "--cu-size-23xl",
-      description: "A 152px 23xl size step",
+      description: "A 162px 23xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.24xl",
       type: "dimension",
-      value: "162px",
+      value: "172px",
       cssVar: "--cu-size-24xl",
-      description: "A 162px 24xl size step",
+      description: "A 172px 24xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.25xl",
       type: "dimension",
-      value: "172px",
+      value: "182px",
       cssVar: "--cu-size-25xl",
-      description: "A 172px 25xl size step",
+      description: "A 182px 25xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.26xl",
       type: "dimension",
-      value: "182px",
+      value: "192px",
       cssVar: "--cu-size-26xl",
-      description: "A 182px 26xl size step",
+      description: "A 192px 26xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.27xl",
       type: "dimension",
-      value: "192px",
+      value: "202px",
       cssVar: "--cu-size-27xl",
-      description: "A 192px 27xl size step",
+      description: "A 202px 27xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.28xl",
       type: "dimension",
-      value: "202px",
+      value: "212px",
       cssVar: "--cu-size-28xl",
-      description: "A 202px 28xl size step",
+      description: "A 212px 28xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.29xl",
       type: "dimension",
-      value: "212px",
+      value: "222px",
       cssVar: "--cu-size-29xl",
-      description: "A 212px 29xl size step",
+      description: "A 222px 29xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.30xl",
       type: "dimension",
-      value: "222px",
+      value: "232px",
       cssVar: "--cu-size-30xl",
-      description: "A 222px 30xl size step",
+      description: "A 232px 30xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.31xl",
       type: "dimension",
-      value: "232px",
+      value: "242px",
       cssVar: "--cu-size-31xl",
-      description: "A 232px 31xl size step",
+      description: "A 242px 31xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.32xl",
       type: "dimension",
-      value: "242px",
+      value: "252px",
       cssVar: "--cu-size-32xl",
-      description: "A 242px 32xl size step",
+      description: "A 252px 32xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.33xl",
       type: "dimension",
-      value: "252px",
+      value: "262px",
       cssVar: "--cu-size-33xl",
-      description: "A 252px 33xl size step",
+      description: "A 262px 33xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.34xl",
       type: "dimension",
-      value: "262px",
+      value: "272px",
       cssVar: "--cu-size-34xl",
-      description: "A 262px 34xl size step",
+      description: "A 272px 34xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.35xl",
       type: "dimension",
-      value: "272px",
+      value: "282px",
       cssVar: "--cu-size-35xl",
-      description: "A 272px 35xl size step",
+      description: "A 282px 35xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.36xl",
       type: "dimension",
-      value: "282px",
+      value: "292px",
       cssVar: "--cu-size-36xl",
-      description: "A 282px 36xl size step",
+      description: "A 292px 36xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.37xl",
       type: "dimension",
-      value: "284px",
+      value: "302px",
       cssVar: "--cu-size-37xl",
-      description: "A 284px 37xl size step",
+      description: "A 302px 37xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.38xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-size-38xl",
+      description: "A 312px 38xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.39xl",
+      type: "dimension",
+      value: "322px",
+      cssVar: "--cu-size-39xl",
+      description: "A 322px 39xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.40xl",
+      type: "dimension",
+      value: "332px",
+      cssVar: "--cu-size-40xl",
+      description: "A 332px 40xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.41xl",
+      type: "dimension",
+      value: "342px",
+      cssVar: "--cu-size-41xl",
+      description: "A 342px 41xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.42xl",
+      type: "dimension",
+      value: "352px",
+      cssVar: "--cu-size-42xl",
+      description: "A 352px 42xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.43xl",
+      type: "dimension",
+      value: "362px",
+      cssVar: "--cu-size-43xl",
+      description: "A 362px 43xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.44xl",
+      type: "dimension",
+      value: "372px",
+      cssVar: "--cu-size-44xl",
+      description: "A 372px 44xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.45xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-size-45xl",
+      description: "A 382px 45xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.46xl",
+      type: "dimension",
+      value: "392px",
+      cssVar: "--cu-size-46xl",
+      description: "A 392px 46xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.47xl",
+      type: "dimension",
+      value: "402px",
+      cssVar: "--cu-size-47xl",
+      description: "A 402px 47xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.48xl",
+      type: "dimension",
+      value: "412px",
+      cssVar: "--cu-size-48xl",
+      description: "A 412px 48xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.49xl",
+      type: "dimension",
+      value: "422px",
+      cssVar: "--cu-size-49xl",
+      description: "A 422px 49xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.50xl",
+      type: "dimension",
+      value: "432px",
+      cssVar: "--cu-size-50xl",
+      description: "A 432px 50xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.51xl",
+      type: "dimension",
+      value: "442px",
+      cssVar: "--cu-size-51xl",
+      description: "A 442px 51xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.52xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-size-52xl",
+      description: "A 452px 52xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.53xl",
+      type: "dimension",
+      value: "462px",
+      cssVar: "--cu-size-53xl",
+      description: "A 462px 53xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.54xl",
+      type: "dimension",
+      value: "472px",
+      cssVar: "--cu-size-54xl",
+      description: "A 472px 54xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.55xl",
+      type: "dimension",
+      value: "482px",
+      cssVar: "--cu-size-55xl",
+      description: "A 482px 55xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.56xl",
+      type: "dimension",
+      value: "492px",
+      cssVar: "--cu-size-56xl",
+      description: "A 492px 56xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.57xl",
+      type: "dimension",
+      value: "502px",
+      cssVar: "--cu-size-57xl",
+      description: "A 502px 57xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.58xl",
+      type: "dimension",
+      value: "512px",
+      cssVar: "--cu-size-58xl",
+      description: "A 512px 58xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.59xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-size-59xl",
+      description: "A 522px 59xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.60xl",
+      type: "dimension",
+      value: "532px",
+      cssVar: "--cu-size-60xl",
+      description: "A 532px 60xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.61xl",
+      type: "dimension",
+      value: "542px",
+      cssVar: "--cu-size-61xl",
+      description: "A 542px 61xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.62xl",
+      type: "dimension",
+      value: "552px",
+      cssVar: "--cu-size-62xl",
+      description: "A 552px 62xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.63xl",
+      type: "dimension",
+      value: "562px",
+      cssVar: "--cu-size-63xl",
+      description: "A 562px 63xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.64xl",
+      type: "dimension",
+      value: "572px",
+      cssVar: "--cu-size-64xl",
+      description: "A 572px 64xl size step",
       theme: undefined,
       typography: false
     },
@@ -3671,36 +3914,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "spacing.19xl",
       type: "dimension",
-      value: "144px",
+      value: "158px",
       cssVar: "--cu-spacing-19xl",
-      description: "A 144px 19xl spacing step (from size.19xl via sizeToSpace)",
+      description: "A 158px 19xl spacing step (from size.19xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.20xl",
       type: "dimension",
-      value: "158px",
+      value: "172px",
       cssVar: "--cu-spacing-20xl",
-      description: "A 158px 20xl spacing step (from size.20xl via sizeToSpace)",
+      description: "A 172px 20xl spacing step (from size.20xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.21xl",
       type: "dimension",
-      value: "172px",
+      value: "186px",
       cssVar: "--cu-spacing-21xl",
-      description: "A 172px 21xl spacing step (from size.21xl via sizeToSpace)",
+      description: "A 186px 21xl spacing step (from size.21xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.22xl",
       type: "dimension",
-      value: "186px",
+      value: "200px",
       cssVar: "--cu-spacing-22xl",
-      description: "A 186px 22xl spacing step (from size.22xl via sizeToSpace)",
+      description: "A 200px 22xl spacing step (from size.22xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.23xl",
+      type: "dimension",
+      value: "214px",
+      cssVar: "--cu-spacing-23xl",
+      description: "A 214px 23xl spacing step (from size.23xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.24xl",
+      type: "dimension",
+      value: "228px",
+      cssVar: "--cu-spacing-24xl",
+      description: "A 228px 24xl spacing step (from size.24xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.25xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--cu-spacing-25xl",
+      description: "A 242px 25xl spacing step (from size.25xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.26xl",
+      type: "dimension",
+      value: "256px",
+      cssVar: "--cu-spacing-26xl",
+      description: "A 256px 26xl spacing step (from size.26xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.27xl",
+      type: "dimension",
+      value: "270px",
+      cssVar: "--cu-spacing-27xl",
+      description: "A 270px 27xl spacing step (from size.27xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.28xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--cu-spacing-28xl",
+      description: "A 284px 28xl spacing step (from size.28xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.29xl",
+      type: "dimension",
+      value: "298px",
+      cssVar: "--cu-spacing-29xl",
+      description: "A 298px 29xl spacing step (from size.29xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.30xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-spacing-30xl",
+      description: "A 312px 30xl spacing step (from size.30xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.31xl",
+      type: "dimension",
+      value: "326px",
+      cssVar: "--cu-spacing-31xl",
+      description: "A 326px 31xl spacing step (from size.31xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.32xl",
+      type: "dimension",
+      value: "340px",
+      cssVar: "--cu-spacing-32xl",
+      description: "A 340px 32xl spacing step (from size.32xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.33xl",
+      type: "dimension",
+      value: "354px",
+      cssVar: "--cu-spacing-33xl",
+      description: "A 354px 33xl spacing step (from size.33xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.34xl",
+      type: "dimension",
+      value: "368px",
+      cssVar: "--cu-spacing-34xl",
+      description: "A 368px 34xl spacing step (from size.34xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.35xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-spacing-35xl",
+      description: "A 382px 35xl spacing step (from size.35xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.36xl",
+      type: "dimension",
+      value: "396px",
+      cssVar: "--cu-spacing-36xl",
+      description: "A 396px 36xl spacing step (from size.36xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.37xl",
+      type: "dimension",
+      value: "410px",
+      cssVar: "--cu-spacing-37xl",
+      description: "A 410px 37xl spacing step (from size.37xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.38xl",
+      type: "dimension",
+      value: "424px",
+      cssVar: "--cu-spacing-38xl",
+      description: "A 424px 38xl spacing step (from size.38xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.39xl",
+      type: "dimension",
+      value: "438px",
+      cssVar: "--cu-spacing-39xl",
+      description: "A 438px 39xl spacing step (from size.39xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.40xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-spacing-40xl",
+      description: "A 452px 40xl spacing step (from size.40xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.41xl",
+      type: "dimension",
+      value: "466px",
+      cssVar: "--cu-spacing-41xl",
+      description: "A 466px 41xl spacing step (from size.41xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.42xl",
+      type: "dimension",
+      value: "480px",
+      cssVar: "--cu-spacing-42xl",
+      description: "A 480px 42xl spacing step (from size.42xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.43xl",
+      type: "dimension",
+      value: "494px",
+      cssVar: "--cu-spacing-43xl",
+      description: "A 494px 43xl spacing step (from size.43xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.44xl",
+      type: "dimension",
+      value: "508px",
+      cssVar: "--cu-spacing-44xl",
+      description: "A 508px 44xl spacing step (from size.44xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.45xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-spacing-45xl",
+      description: "A 522px 45xl spacing step (from size.45xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.46xl",
+      type: "dimension",
+      value: "536px",
+      cssVar: "--cu-spacing-46xl",
+      description: "A 536px 46xl spacing step (from size.46xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.47xl",
+      type: "dimension",
+      value: "550px",
+      cssVar: "--cu-spacing-47xl",
+      description: "A 550px 47xl spacing step (from size.47xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.48xl",
+      type: "dimension",
+      value: "564px",
+      cssVar: "--cu-spacing-48xl",
+      description: "A 564px 48xl spacing step (from size.48xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.49xl",
+      type: "dimension",
+      value: "578px",
+      cssVar: "--cu-spacing-49xl",
+      description: "A 578px 49xl spacing step (from size.49xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.50xl",
+      type: "dimension",
+      value: "592px",
+      cssVar: "--cu-spacing-50xl",
+      description: "A 592px 50xl spacing step (from size.50xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.51xl",
+      type: "dimension",
+      value: "606px",
+      cssVar: "--cu-spacing-51xl",
+      description: "A 606px 51xl spacing step (from size.51xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.52xl",
+      type: "dimension",
+      value: "620px",
+      cssVar: "--cu-spacing-52xl",
+      description: "A 620px 52xl spacing step (from size.52xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.53xl",
+      type: "dimension",
+      value: "634px",
+      cssVar: "--cu-spacing-53xl",
+      description: "A 634px 53xl spacing step (from size.53xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.54xl",
+      type: "dimension",
+      value: "648px",
+      cssVar: "--cu-spacing-54xl",
+      description: "A 648px 54xl spacing step (from size.54xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.55xl",
+      type: "dimension",
+      value: "662px",
+      cssVar: "--cu-spacing-55xl",
+      description: "A 662px 55xl spacing step (from size.55xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.56xl",
+      type: "dimension",
+      value: "676px",
+      cssVar: "--cu-spacing-56xl",
+      description: "A 676px 56xl spacing step (from size.56xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.57xl",
+      type: "dimension",
+      value: "690px",
+      cssVar: "--cu-spacing-57xl",
+      description: "A 690px 57xl spacing step (from size.57xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.58xl",
+      type: "dimension",
+      value: "704px",
+      cssVar: "--cu-spacing-58xl",
+      description: "A 704px 58xl spacing step (from size.58xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.59xl",
+      type: "dimension",
+      value: "718px",
+      cssVar: "--cu-spacing-59xl",
+      description: "A 718px 59xl spacing step (from size.59xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.60xl",
+      type: "dimension",
+      value: "732px",
+      cssVar: "--cu-spacing-60xl",
+      description: "A 732px 60xl spacing step (from size.60xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.61xl",
+      type: "dimension",
+      value: "746px",
+      cssVar: "--cu-spacing-61xl",
+      description: "A 746px 61xl spacing step (from size.61xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.62xl",
+      type: "dimension",
+      value: "760px",
+      cssVar: "--cu-spacing-62xl",
+      description: "A 760px 62xl spacing step (from size.62xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.63xl",
+      type: "dimension",
+      value: "774px",
+      cssVar: "--cu-spacing-63xl",
+      description: "A 774px 63xl spacing step (from size.63xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.64xl",
+      type: "dimension",
+      value: "788px",
+      cssVar: "--cu-spacing-64xl",
+      description: "A 788px 64xl spacing step (from size.64xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
@@ -5905,7 +6526,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.emphasis",
       type: "color",
-      value: "#c4c4c4",
+      value: "#b4b4b4",
       cssVar: "--cu-color-ink-emphasis",
       description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options.",
       theme: undefined,
@@ -5914,7 +6535,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#b4b4b4",
+      value: "#a1a1a2",
       cssVar: "--cu-color-ink-body",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
@@ -6319,9 +6940,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 25% opacity)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -6796,9 +7417,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -6832,9 +7453,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -6904,9 +7525,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -6940,9 +7561,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -6976,9 +7597,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -7012,9 +7633,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -7849,9 +8470,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated base foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -7993,9 +8614,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#d9d9d940",
+      value: "#d9d9d920",
       cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -8029,9 +8650,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#d9d9d940",
+      value: "#d9d9d920",
       cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated success foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -8065,9 +8686,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#d9d9d940",
+      value: "#d9d9d920",
       cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -8362,171 +8983,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "size.19xl",
       type: "dimension",
-      value: "112px",
+      value: "122px",
       cssVar: "--cu-size-19xl",
-      description: "A 112px 19xl size step",
+      description: "A 122px 19xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "122px",
+      value: "132px",
       cssVar: "--cu-size-20xl",
-      description: "A 122px 20xl size step",
+      description: "A 132px 20xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "132px",
+      value: "142px",
       cssVar: "--cu-size-21xl",
-      description: "A 132px 21xl size step",
+      description: "A 142px 21xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "142px",
+      value: "152px",
       cssVar: "--cu-size-22xl",
-      description: "A 142px 22xl size step",
+      description: "A 152px 22xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.23xl",
       type: "dimension",
-      value: "152px",
+      value: "162px",
       cssVar: "--cu-size-23xl",
-      description: "A 152px 23xl size step",
+      description: "A 162px 23xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.24xl",
       type: "dimension",
-      value: "162px",
+      value: "172px",
       cssVar: "--cu-size-24xl",
-      description: "A 162px 24xl size step",
+      description: "A 172px 24xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.25xl",
       type: "dimension",
-      value: "172px",
+      value: "182px",
       cssVar: "--cu-size-25xl",
-      description: "A 172px 25xl size step",
+      description: "A 182px 25xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.26xl",
       type: "dimension",
-      value: "182px",
+      value: "192px",
       cssVar: "--cu-size-26xl",
-      description: "A 182px 26xl size step",
+      description: "A 192px 26xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.27xl",
       type: "dimension",
-      value: "192px",
+      value: "202px",
       cssVar: "--cu-size-27xl",
-      description: "A 192px 27xl size step",
+      description: "A 202px 27xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.28xl",
       type: "dimension",
-      value: "202px",
+      value: "212px",
       cssVar: "--cu-size-28xl",
-      description: "A 202px 28xl size step",
+      description: "A 212px 28xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.29xl",
       type: "dimension",
-      value: "212px",
+      value: "222px",
       cssVar: "--cu-size-29xl",
-      description: "A 212px 29xl size step",
+      description: "A 222px 29xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.30xl",
       type: "dimension",
-      value: "222px",
+      value: "232px",
       cssVar: "--cu-size-30xl",
-      description: "A 222px 30xl size step",
+      description: "A 232px 30xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.31xl",
       type: "dimension",
-      value: "232px",
+      value: "242px",
       cssVar: "--cu-size-31xl",
-      description: "A 232px 31xl size step",
+      description: "A 242px 31xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.32xl",
       type: "dimension",
-      value: "242px",
+      value: "252px",
       cssVar: "--cu-size-32xl",
-      description: "A 242px 32xl size step",
+      description: "A 252px 32xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.33xl",
       type: "dimension",
-      value: "252px",
+      value: "262px",
       cssVar: "--cu-size-33xl",
-      description: "A 252px 33xl size step",
+      description: "A 262px 33xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.34xl",
       type: "dimension",
-      value: "262px",
+      value: "272px",
       cssVar: "--cu-size-34xl",
-      description: "A 262px 34xl size step",
+      description: "A 272px 34xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.35xl",
       type: "dimension",
-      value: "272px",
+      value: "282px",
       cssVar: "--cu-size-35xl",
-      description: "A 272px 35xl size step",
+      description: "A 282px 35xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.36xl",
       type: "dimension",
-      value: "282px",
+      value: "292px",
       cssVar: "--cu-size-36xl",
-      description: "A 282px 36xl size step",
+      description: "A 292px 36xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.37xl",
       type: "dimension",
-      value: "284px",
+      value: "302px",
       cssVar: "--cu-size-37xl",
-      description: "A 284px 37xl size step",
+      description: "A 302px 37xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.38xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-size-38xl",
+      description: "A 312px 38xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.39xl",
+      type: "dimension",
+      value: "322px",
+      cssVar: "--cu-size-39xl",
+      description: "A 322px 39xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.40xl",
+      type: "dimension",
+      value: "332px",
+      cssVar: "--cu-size-40xl",
+      description: "A 332px 40xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.41xl",
+      type: "dimension",
+      value: "342px",
+      cssVar: "--cu-size-41xl",
+      description: "A 342px 41xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.42xl",
+      type: "dimension",
+      value: "352px",
+      cssVar: "--cu-size-42xl",
+      description: "A 352px 42xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.43xl",
+      type: "dimension",
+      value: "362px",
+      cssVar: "--cu-size-43xl",
+      description: "A 362px 43xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.44xl",
+      type: "dimension",
+      value: "372px",
+      cssVar: "--cu-size-44xl",
+      description: "A 372px 44xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.45xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-size-45xl",
+      description: "A 382px 45xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.46xl",
+      type: "dimension",
+      value: "392px",
+      cssVar: "--cu-size-46xl",
+      description: "A 392px 46xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.47xl",
+      type: "dimension",
+      value: "402px",
+      cssVar: "--cu-size-47xl",
+      description: "A 402px 47xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.48xl",
+      type: "dimension",
+      value: "412px",
+      cssVar: "--cu-size-48xl",
+      description: "A 412px 48xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.49xl",
+      type: "dimension",
+      value: "422px",
+      cssVar: "--cu-size-49xl",
+      description: "A 422px 49xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.50xl",
+      type: "dimension",
+      value: "432px",
+      cssVar: "--cu-size-50xl",
+      description: "A 432px 50xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.51xl",
+      type: "dimension",
+      value: "442px",
+      cssVar: "--cu-size-51xl",
+      description: "A 442px 51xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.52xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-size-52xl",
+      description: "A 452px 52xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.53xl",
+      type: "dimension",
+      value: "462px",
+      cssVar: "--cu-size-53xl",
+      description: "A 462px 53xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.54xl",
+      type: "dimension",
+      value: "472px",
+      cssVar: "--cu-size-54xl",
+      description: "A 472px 54xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.55xl",
+      type: "dimension",
+      value: "482px",
+      cssVar: "--cu-size-55xl",
+      description: "A 482px 55xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.56xl",
+      type: "dimension",
+      value: "492px",
+      cssVar: "--cu-size-56xl",
+      description: "A 492px 56xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.57xl",
+      type: "dimension",
+      value: "502px",
+      cssVar: "--cu-size-57xl",
+      description: "A 502px 57xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.58xl",
+      type: "dimension",
+      value: "512px",
+      cssVar: "--cu-size-58xl",
+      description: "A 512px 58xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.59xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-size-59xl",
+      description: "A 522px 59xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.60xl",
+      type: "dimension",
+      value: "532px",
+      cssVar: "--cu-size-60xl",
+      description: "A 532px 60xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.61xl",
+      type: "dimension",
+      value: "542px",
+      cssVar: "--cu-size-61xl",
+      description: "A 542px 61xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.62xl",
+      type: "dimension",
+      value: "552px",
+      cssVar: "--cu-size-62xl",
+      description: "A 552px 62xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.63xl",
+      type: "dimension",
+      value: "562px",
+      cssVar: "--cu-size-63xl",
+      description: "A 562px 63xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.64xl",
+      type: "dimension",
+      value: "572px",
+      cssVar: "--cu-size-64xl",
+      description: "A 572px 64xl size step",
       theme: undefined,
       typography: false
     },
@@ -8839,36 +9703,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "spacing.19xl",
       type: "dimension",
-      value: "144px",
+      value: "158px",
       cssVar: "--cu-spacing-19xl",
-      description: "A 144px 19xl spacing step (from size.19xl via sizeToSpace)",
+      description: "A 158px 19xl spacing step (from size.19xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.20xl",
       type: "dimension",
-      value: "158px",
+      value: "172px",
       cssVar: "--cu-spacing-20xl",
-      description: "A 158px 20xl spacing step (from size.20xl via sizeToSpace)",
+      description: "A 172px 20xl spacing step (from size.20xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.21xl",
       type: "dimension",
-      value: "172px",
+      value: "186px",
       cssVar: "--cu-spacing-21xl",
-      description: "A 172px 21xl spacing step (from size.21xl via sizeToSpace)",
+      description: "A 186px 21xl spacing step (from size.21xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.22xl",
       type: "dimension",
-      value: "186px",
+      value: "200px",
       cssVar: "--cu-spacing-22xl",
-      description: "A 186px 22xl spacing step (from size.22xl via sizeToSpace)",
+      description: "A 200px 22xl spacing step (from size.22xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.23xl",
+      type: "dimension",
+      value: "214px",
+      cssVar: "--cu-spacing-23xl",
+      description: "A 214px 23xl spacing step (from size.23xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.24xl",
+      type: "dimension",
+      value: "228px",
+      cssVar: "--cu-spacing-24xl",
+      description: "A 228px 24xl spacing step (from size.24xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.25xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--cu-spacing-25xl",
+      description: "A 242px 25xl spacing step (from size.25xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.26xl",
+      type: "dimension",
+      value: "256px",
+      cssVar: "--cu-spacing-26xl",
+      description: "A 256px 26xl spacing step (from size.26xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.27xl",
+      type: "dimension",
+      value: "270px",
+      cssVar: "--cu-spacing-27xl",
+      description: "A 270px 27xl spacing step (from size.27xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.28xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--cu-spacing-28xl",
+      description: "A 284px 28xl spacing step (from size.28xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.29xl",
+      type: "dimension",
+      value: "298px",
+      cssVar: "--cu-spacing-29xl",
+      description: "A 298px 29xl spacing step (from size.29xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.30xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-spacing-30xl",
+      description: "A 312px 30xl spacing step (from size.30xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.31xl",
+      type: "dimension",
+      value: "326px",
+      cssVar: "--cu-spacing-31xl",
+      description: "A 326px 31xl spacing step (from size.31xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.32xl",
+      type: "dimension",
+      value: "340px",
+      cssVar: "--cu-spacing-32xl",
+      description: "A 340px 32xl spacing step (from size.32xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.33xl",
+      type: "dimension",
+      value: "354px",
+      cssVar: "--cu-spacing-33xl",
+      description: "A 354px 33xl spacing step (from size.33xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.34xl",
+      type: "dimension",
+      value: "368px",
+      cssVar: "--cu-spacing-34xl",
+      description: "A 368px 34xl spacing step (from size.34xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.35xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-spacing-35xl",
+      description: "A 382px 35xl spacing step (from size.35xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.36xl",
+      type: "dimension",
+      value: "396px",
+      cssVar: "--cu-spacing-36xl",
+      description: "A 396px 36xl spacing step (from size.36xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.37xl",
+      type: "dimension",
+      value: "410px",
+      cssVar: "--cu-spacing-37xl",
+      description: "A 410px 37xl spacing step (from size.37xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.38xl",
+      type: "dimension",
+      value: "424px",
+      cssVar: "--cu-spacing-38xl",
+      description: "A 424px 38xl spacing step (from size.38xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.39xl",
+      type: "dimension",
+      value: "438px",
+      cssVar: "--cu-spacing-39xl",
+      description: "A 438px 39xl spacing step (from size.39xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.40xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-spacing-40xl",
+      description: "A 452px 40xl spacing step (from size.40xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.41xl",
+      type: "dimension",
+      value: "466px",
+      cssVar: "--cu-spacing-41xl",
+      description: "A 466px 41xl spacing step (from size.41xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.42xl",
+      type: "dimension",
+      value: "480px",
+      cssVar: "--cu-spacing-42xl",
+      description: "A 480px 42xl spacing step (from size.42xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.43xl",
+      type: "dimension",
+      value: "494px",
+      cssVar: "--cu-spacing-43xl",
+      description: "A 494px 43xl spacing step (from size.43xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.44xl",
+      type: "dimension",
+      value: "508px",
+      cssVar: "--cu-spacing-44xl",
+      description: "A 508px 44xl spacing step (from size.44xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.45xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-spacing-45xl",
+      description: "A 522px 45xl spacing step (from size.45xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.46xl",
+      type: "dimension",
+      value: "536px",
+      cssVar: "--cu-spacing-46xl",
+      description: "A 536px 46xl spacing step (from size.46xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.47xl",
+      type: "dimension",
+      value: "550px",
+      cssVar: "--cu-spacing-47xl",
+      description: "A 550px 47xl spacing step (from size.47xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.48xl",
+      type: "dimension",
+      value: "564px",
+      cssVar: "--cu-spacing-48xl",
+      description: "A 564px 48xl spacing step (from size.48xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.49xl",
+      type: "dimension",
+      value: "578px",
+      cssVar: "--cu-spacing-49xl",
+      description: "A 578px 49xl spacing step (from size.49xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.50xl",
+      type: "dimension",
+      value: "592px",
+      cssVar: "--cu-spacing-50xl",
+      description: "A 592px 50xl spacing step (from size.50xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.51xl",
+      type: "dimension",
+      value: "606px",
+      cssVar: "--cu-spacing-51xl",
+      description: "A 606px 51xl spacing step (from size.51xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.52xl",
+      type: "dimension",
+      value: "620px",
+      cssVar: "--cu-spacing-52xl",
+      description: "A 620px 52xl spacing step (from size.52xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.53xl",
+      type: "dimension",
+      value: "634px",
+      cssVar: "--cu-spacing-53xl",
+      description: "A 634px 53xl spacing step (from size.53xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.54xl",
+      type: "dimension",
+      value: "648px",
+      cssVar: "--cu-spacing-54xl",
+      description: "A 648px 54xl spacing step (from size.54xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.55xl",
+      type: "dimension",
+      value: "662px",
+      cssVar: "--cu-spacing-55xl",
+      description: "A 662px 55xl spacing step (from size.55xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.56xl",
+      type: "dimension",
+      value: "676px",
+      cssVar: "--cu-spacing-56xl",
+      description: "A 676px 56xl spacing step (from size.56xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.57xl",
+      type: "dimension",
+      value: "690px",
+      cssVar: "--cu-spacing-57xl",
+      description: "A 690px 57xl spacing step (from size.57xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.58xl",
+      type: "dimension",
+      value: "704px",
+      cssVar: "--cu-spacing-58xl",
+      description: "A 704px 58xl spacing step (from size.58xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.59xl",
+      type: "dimension",
+      value: "718px",
+      cssVar: "--cu-spacing-59xl",
+      description: "A 718px 59xl spacing step (from size.59xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.60xl",
+      type: "dimension",
+      value: "732px",
+      cssVar: "--cu-spacing-60xl",
+      description: "A 732px 60xl spacing step (from size.60xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.61xl",
+      type: "dimension",
+      value: "746px",
+      cssVar: "--cu-spacing-61xl",
+      description: "A 746px 61xl spacing step (from size.61xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.62xl",
+      type: "dimension",
+      value: "760px",
+      cssVar: "--cu-spacing-62xl",
+      description: "A 760px 62xl spacing step (from size.62xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.63xl",
+      type: "dimension",
+      value: "774px",
+      cssVar: "--cu-spacing-63xl",
+      description: "A 774px 63xl spacing step (from size.63xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.64xl",
+      type: "dimension",
+      value: "788px",
+      cssVar: "--cu-spacing-64xl",
+      description: "A 788px 64xl spacing step (from size.64xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
@@ -11073,7 +12315,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.emphasis",
       type: "color",
-      value: "#ffffff",
+      value: "#ebebed",
       cssVar: "--cu-color-ink-emphasis",
       description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options.",
       theme: undefined,
@@ -11082,7 +12324,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#ebebed",
+      value: "#c3c3ca",
       cssVar: "--cu-color-ink-body",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
@@ -11487,9 +12729,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.base-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 25% opacity)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -11964,9 +13206,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12000,9 +13242,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12072,9 +13314,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12108,9 +13350,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12144,9 +13386,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12180,9 +13422,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -13017,9 +14259,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.base-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated base foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -13161,9 +14403,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -13197,9 +14439,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated success foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -13233,9 +14475,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 25% opacity)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -13530,171 +14772,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "size.19xl",
       type: "dimension",
-      value: "112px",
+      value: "122px",
       cssVar: "--cu-size-19xl",
-      description: "A 112px 19xl size step",
+      description: "A 122px 19xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "122px",
+      value: "132px",
       cssVar: "--cu-size-20xl",
-      description: "A 122px 20xl size step",
+      description: "A 132px 20xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "132px",
+      value: "142px",
       cssVar: "--cu-size-21xl",
-      description: "A 132px 21xl size step",
+      description: "A 142px 21xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "142px",
+      value: "152px",
       cssVar: "--cu-size-22xl",
-      description: "A 142px 22xl size step",
+      description: "A 152px 22xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.23xl",
       type: "dimension",
-      value: "152px",
+      value: "162px",
       cssVar: "--cu-size-23xl",
-      description: "A 152px 23xl size step",
+      description: "A 162px 23xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.24xl",
       type: "dimension",
-      value: "162px",
+      value: "172px",
       cssVar: "--cu-size-24xl",
-      description: "A 162px 24xl size step",
+      description: "A 172px 24xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.25xl",
       type: "dimension",
-      value: "172px",
+      value: "182px",
       cssVar: "--cu-size-25xl",
-      description: "A 172px 25xl size step",
+      description: "A 182px 25xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.26xl",
       type: "dimension",
-      value: "182px",
+      value: "192px",
       cssVar: "--cu-size-26xl",
-      description: "A 182px 26xl size step",
+      description: "A 192px 26xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.27xl",
       type: "dimension",
-      value: "192px",
+      value: "202px",
       cssVar: "--cu-size-27xl",
-      description: "A 192px 27xl size step",
+      description: "A 202px 27xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.28xl",
       type: "dimension",
-      value: "202px",
+      value: "212px",
       cssVar: "--cu-size-28xl",
-      description: "A 202px 28xl size step",
+      description: "A 212px 28xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.29xl",
       type: "dimension",
-      value: "212px",
+      value: "222px",
       cssVar: "--cu-size-29xl",
-      description: "A 212px 29xl size step",
+      description: "A 222px 29xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.30xl",
       type: "dimension",
-      value: "222px",
+      value: "232px",
       cssVar: "--cu-size-30xl",
-      description: "A 222px 30xl size step",
+      description: "A 232px 30xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.31xl",
       type: "dimension",
-      value: "232px",
+      value: "242px",
       cssVar: "--cu-size-31xl",
-      description: "A 232px 31xl size step",
+      description: "A 242px 31xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.32xl",
       type: "dimension",
-      value: "242px",
+      value: "252px",
       cssVar: "--cu-size-32xl",
-      description: "A 242px 32xl size step",
+      description: "A 252px 32xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.33xl",
       type: "dimension",
-      value: "252px",
+      value: "262px",
       cssVar: "--cu-size-33xl",
-      description: "A 252px 33xl size step",
+      description: "A 262px 33xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.34xl",
       type: "dimension",
-      value: "262px",
+      value: "272px",
       cssVar: "--cu-size-34xl",
-      description: "A 262px 34xl size step",
+      description: "A 272px 34xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.35xl",
       type: "dimension",
-      value: "272px",
+      value: "282px",
       cssVar: "--cu-size-35xl",
-      description: "A 272px 35xl size step",
+      description: "A 282px 35xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.36xl",
       type: "dimension",
-      value: "282px",
+      value: "292px",
       cssVar: "--cu-size-36xl",
-      description: "A 282px 36xl size step",
+      description: "A 292px 36xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.37xl",
       type: "dimension",
-      value: "284px",
+      value: "302px",
       cssVar: "--cu-size-37xl",
-      description: "A 284px 37xl size step",
+      description: "A 302px 37xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.38xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-size-38xl",
+      description: "A 312px 38xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.39xl",
+      type: "dimension",
+      value: "322px",
+      cssVar: "--cu-size-39xl",
+      description: "A 322px 39xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.40xl",
+      type: "dimension",
+      value: "332px",
+      cssVar: "--cu-size-40xl",
+      description: "A 332px 40xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.41xl",
+      type: "dimension",
+      value: "342px",
+      cssVar: "--cu-size-41xl",
+      description: "A 342px 41xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.42xl",
+      type: "dimension",
+      value: "352px",
+      cssVar: "--cu-size-42xl",
+      description: "A 352px 42xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.43xl",
+      type: "dimension",
+      value: "362px",
+      cssVar: "--cu-size-43xl",
+      description: "A 362px 43xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.44xl",
+      type: "dimension",
+      value: "372px",
+      cssVar: "--cu-size-44xl",
+      description: "A 372px 44xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.45xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-size-45xl",
+      description: "A 382px 45xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.46xl",
+      type: "dimension",
+      value: "392px",
+      cssVar: "--cu-size-46xl",
+      description: "A 392px 46xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.47xl",
+      type: "dimension",
+      value: "402px",
+      cssVar: "--cu-size-47xl",
+      description: "A 402px 47xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.48xl",
+      type: "dimension",
+      value: "412px",
+      cssVar: "--cu-size-48xl",
+      description: "A 412px 48xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.49xl",
+      type: "dimension",
+      value: "422px",
+      cssVar: "--cu-size-49xl",
+      description: "A 422px 49xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.50xl",
+      type: "dimension",
+      value: "432px",
+      cssVar: "--cu-size-50xl",
+      description: "A 432px 50xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.51xl",
+      type: "dimension",
+      value: "442px",
+      cssVar: "--cu-size-51xl",
+      description: "A 442px 51xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.52xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-size-52xl",
+      description: "A 452px 52xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.53xl",
+      type: "dimension",
+      value: "462px",
+      cssVar: "--cu-size-53xl",
+      description: "A 462px 53xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.54xl",
+      type: "dimension",
+      value: "472px",
+      cssVar: "--cu-size-54xl",
+      description: "A 472px 54xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.55xl",
+      type: "dimension",
+      value: "482px",
+      cssVar: "--cu-size-55xl",
+      description: "A 482px 55xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.56xl",
+      type: "dimension",
+      value: "492px",
+      cssVar: "--cu-size-56xl",
+      description: "A 492px 56xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.57xl",
+      type: "dimension",
+      value: "502px",
+      cssVar: "--cu-size-57xl",
+      description: "A 502px 57xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.58xl",
+      type: "dimension",
+      value: "512px",
+      cssVar: "--cu-size-58xl",
+      description: "A 512px 58xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.59xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-size-59xl",
+      description: "A 522px 59xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.60xl",
+      type: "dimension",
+      value: "532px",
+      cssVar: "--cu-size-60xl",
+      description: "A 532px 60xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.61xl",
+      type: "dimension",
+      value: "542px",
+      cssVar: "--cu-size-61xl",
+      description: "A 542px 61xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.62xl",
+      type: "dimension",
+      value: "552px",
+      cssVar: "--cu-size-62xl",
+      description: "A 552px 62xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.63xl",
+      type: "dimension",
+      value: "562px",
+      cssVar: "--cu-size-63xl",
+      description: "A 562px 63xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.64xl",
+      type: "dimension",
+      value: "572px",
+      cssVar: "--cu-size-64xl",
+      description: "A 572px 64xl size step",
       theme: undefined,
       typography: false
     },
@@ -14007,36 +15492,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "spacing.19xl",
       type: "dimension",
-      value: "144px",
+      value: "158px",
       cssVar: "--cu-spacing-19xl",
-      description: "A 144px 19xl spacing step (from size.19xl via sizeToSpace)",
+      description: "A 158px 19xl spacing step (from size.19xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.20xl",
       type: "dimension",
-      value: "158px",
+      value: "172px",
       cssVar: "--cu-spacing-20xl",
-      description: "A 158px 20xl spacing step (from size.20xl via sizeToSpace)",
+      description: "A 172px 20xl spacing step (from size.20xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.21xl",
       type: "dimension",
-      value: "172px",
+      value: "186px",
       cssVar: "--cu-spacing-21xl",
-      description: "A 172px 21xl spacing step (from size.21xl via sizeToSpace)",
+      description: "A 186px 21xl spacing step (from size.21xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.22xl",
       type: "dimension",
-      value: "186px",
+      value: "200px",
       cssVar: "--cu-spacing-22xl",
-      description: "A 186px 22xl spacing step (from size.22xl via sizeToSpace)",
+      description: "A 200px 22xl spacing step (from size.22xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.23xl",
+      type: "dimension",
+      value: "214px",
+      cssVar: "--cu-spacing-23xl",
+      description: "A 214px 23xl spacing step (from size.23xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.24xl",
+      type: "dimension",
+      value: "228px",
+      cssVar: "--cu-spacing-24xl",
+      description: "A 228px 24xl spacing step (from size.24xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.25xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--cu-spacing-25xl",
+      description: "A 242px 25xl spacing step (from size.25xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.26xl",
+      type: "dimension",
+      value: "256px",
+      cssVar: "--cu-spacing-26xl",
+      description: "A 256px 26xl spacing step (from size.26xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.27xl",
+      type: "dimension",
+      value: "270px",
+      cssVar: "--cu-spacing-27xl",
+      description: "A 270px 27xl spacing step (from size.27xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.28xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--cu-spacing-28xl",
+      description: "A 284px 28xl spacing step (from size.28xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.29xl",
+      type: "dimension",
+      value: "298px",
+      cssVar: "--cu-spacing-29xl",
+      description: "A 298px 29xl spacing step (from size.29xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.30xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-spacing-30xl",
+      description: "A 312px 30xl spacing step (from size.30xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.31xl",
+      type: "dimension",
+      value: "326px",
+      cssVar: "--cu-spacing-31xl",
+      description: "A 326px 31xl spacing step (from size.31xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.32xl",
+      type: "dimension",
+      value: "340px",
+      cssVar: "--cu-spacing-32xl",
+      description: "A 340px 32xl spacing step (from size.32xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.33xl",
+      type: "dimension",
+      value: "354px",
+      cssVar: "--cu-spacing-33xl",
+      description: "A 354px 33xl spacing step (from size.33xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.34xl",
+      type: "dimension",
+      value: "368px",
+      cssVar: "--cu-spacing-34xl",
+      description: "A 368px 34xl spacing step (from size.34xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.35xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-spacing-35xl",
+      description: "A 382px 35xl spacing step (from size.35xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.36xl",
+      type: "dimension",
+      value: "396px",
+      cssVar: "--cu-spacing-36xl",
+      description: "A 396px 36xl spacing step (from size.36xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.37xl",
+      type: "dimension",
+      value: "410px",
+      cssVar: "--cu-spacing-37xl",
+      description: "A 410px 37xl spacing step (from size.37xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.38xl",
+      type: "dimension",
+      value: "424px",
+      cssVar: "--cu-spacing-38xl",
+      description: "A 424px 38xl spacing step (from size.38xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.39xl",
+      type: "dimension",
+      value: "438px",
+      cssVar: "--cu-spacing-39xl",
+      description: "A 438px 39xl spacing step (from size.39xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.40xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-spacing-40xl",
+      description: "A 452px 40xl spacing step (from size.40xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.41xl",
+      type: "dimension",
+      value: "466px",
+      cssVar: "--cu-spacing-41xl",
+      description: "A 466px 41xl spacing step (from size.41xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.42xl",
+      type: "dimension",
+      value: "480px",
+      cssVar: "--cu-spacing-42xl",
+      description: "A 480px 42xl spacing step (from size.42xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.43xl",
+      type: "dimension",
+      value: "494px",
+      cssVar: "--cu-spacing-43xl",
+      description: "A 494px 43xl spacing step (from size.43xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.44xl",
+      type: "dimension",
+      value: "508px",
+      cssVar: "--cu-spacing-44xl",
+      description: "A 508px 44xl spacing step (from size.44xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.45xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-spacing-45xl",
+      description: "A 522px 45xl spacing step (from size.45xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.46xl",
+      type: "dimension",
+      value: "536px",
+      cssVar: "--cu-spacing-46xl",
+      description: "A 536px 46xl spacing step (from size.46xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.47xl",
+      type: "dimension",
+      value: "550px",
+      cssVar: "--cu-spacing-47xl",
+      description: "A 550px 47xl spacing step (from size.47xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.48xl",
+      type: "dimension",
+      value: "564px",
+      cssVar: "--cu-spacing-48xl",
+      description: "A 564px 48xl spacing step (from size.48xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.49xl",
+      type: "dimension",
+      value: "578px",
+      cssVar: "--cu-spacing-49xl",
+      description: "A 578px 49xl spacing step (from size.49xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.50xl",
+      type: "dimension",
+      value: "592px",
+      cssVar: "--cu-spacing-50xl",
+      description: "A 592px 50xl spacing step (from size.50xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.51xl",
+      type: "dimension",
+      value: "606px",
+      cssVar: "--cu-spacing-51xl",
+      description: "A 606px 51xl spacing step (from size.51xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.52xl",
+      type: "dimension",
+      value: "620px",
+      cssVar: "--cu-spacing-52xl",
+      description: "A 620px 52xl spacing step (from size.52xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.53xl",
+      type: "dimension",
+      value: "634px",
+      cssVar: "--cu-spacing-53xl",
+      description: "A 634px 53xl spacing step (from size.53xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.54xl",
+      type: "dimension",
+      value: "648px",
+      cssVar: "--cu-spacing-54xl",
+      description: "A 648px 54xl spacing step (from size.54xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.55xl",
+      type: "dimension",
+      value: "662px",
+      cssVar: "--cu-spacing-55xl",
+      description: "A 662px 55xl spacing step (from size.55xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.56xl",
+      type: "dimension",
+      value: "676px",
+      cssVar: "--cu-spacing-56xl",
+      description: "A 676px 56xl spacing step (from size.56xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.57xl",
+      type: "dimension",
+      value: "690px",
+      cssVar: "--cu-spacing-57xl",
+      description: "A 690px 57xl spacing step (from size.57xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.58xl",
+      type: "dimension",
+      value: "704px",
+      cssVar: "--cu-spacing-58xl",
+      description: "A 704px 58xl spacing step (from size.58xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.59xl",
+      type: "dimension",
+      value: "718px",
+      cssVar: "--cu-spacing-59xl",
+      description: "A 718px 59xl spacing step (from size.59xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.60xl",
+      type: "dimension",
+      value: "732px",
+      cssVar: "--cu-spacing-60xl",
+      description: "A 732px 60xl spacing step (from size.60xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.61xl",
+      type: "dimension",
+      value: "746px",
+      cssVar: "--cu-spacing-61xl",
+      description: "A 746px 61xl spacing step (from size.61xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.62xl",
+      type: "dimension",
+      value: "760px",
+      cssVar: "--cu-spacing-62xl",
+      description: "A 760px 62xl spacing step (from size.62xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.63xl",
+      type: "dimension",
+      value: "774px",
+      cssVar: "--cu-spacing-63xl",
+      description: "A 774px 63xl spacing step (from size.63xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.64xl",
+      type: "dimension",
+      value: "788px",
+      cssVar: "--cu-spacing-64xl",
+      description: "A 788px 64xl spacing step (from size.64xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
@@ -16349,9 +18212,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.sunken-disabled",
       type: "color",
-      value: "#e1e1e140",
+      value: "#e1e1e120",
       cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% opacity)",
+      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -16385,9 +18248,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.canvas-disabled",
       type: "color",
-      value: "#eaeaea40",
+      value: "#eaeaea20",
       cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% opacity)",
+      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -16421,9 +18284,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.elevated-disabled",
       type: "color",
-      value: "#f1f1f140",
+      value: "#f1f1f120",
       cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% opacity)",
+      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -16457,9 +18320,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.floating-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% opacity)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -16493,9 +18356,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.overlay-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% opacity)",
+      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -16988,9 +18851,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-disabled",
       type: "color",
-      value: "#f1f1f140",
+      value: "#f1f1f120",
       cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 25% opacity)",
+      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17096,9 +18959,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.brand-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 25% opacity)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17132,9 +18995,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17168,9 +19031,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17204,9 +19067,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.warning-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17240,9 +19103,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17276,9 +19139,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17312,9 +19175,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17348,9 +19211,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#fafafa40",
+      value: "#fafafa20",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17402,9 +19265,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-disabled",
       type: "color",
-      value: "#eaeaea40",
+      value: "#eaeaea20",
       cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 25% opacity)",
+      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -18698,171 +20561,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "size.19xl",
       type: "dimension",
-      value: "112px",
+      value: "122px",
       cssVar: "--cu-size-19xl",
-      description: "A 112px 19xl size step",
+      description: "A 122px 19xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "122px",
+      value: "132px",
       cssVar: "--cu-size-20xl",
-      description: "A 122px 20xl size step",
+      description: "A 132px 20xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "132px",
+      value: "142px",
       cssVar: "--cu-size-21xl",
-      description: "A 132px 21xl size step",
+      description: "A 142px 21xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "142px",
+      value: "152px",
       cssVar: "--cu-size-22xl",
-      description: "A 142px 22xl size step",
+      description: "A 152px 22xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.23xl",
       type: "dimension",
-      value: "152px",
+      value: "162px",
       cssVar: "--cu-size-23xl",
-      description: "A 152px 23xl size step",
+      description: "A 162px 23xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.24xl",
       type: "dimension",
-      value: "162px",
+      value: "172px",
       cssVar: "--cu-size-24xl",
-      description: "A 162px 24xl size step",
+      description: "A 172px 24xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.25xl",
       type: "dimension",
-      value: "172px",
+      value: "182px",
       cssVar: "--cu-size-25xl",
-      description: "A 172px 25xl size step",
+      description: "A 182px 25xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.26xl",
       type: "dimension",
-      value: "182px",
+      value: "192px",
       cssVar: "--cu-size-26xl",
-      description: "A 182px 26xl size step",
+      description: "A 192px 26xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.27xl",
       type: "dimension",
-      value: "192px",
+      value: "202px",
       cssVar: "--cu-size-27xl",
-      description: "A 192px 27xl size step",
+      description: "A 202px 27xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.28xl",
       type: "dimension",
-      value: "202px",
+      value: "212px",
       cssVar: "--cu-size-28xl",
-      description: "A 202px 28xl size step",
+      description: "A 212px 28xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.29xl",
       type: "dimension",
-      value: "212px",
+      value: "222px",
       cssVar: "--cu-size-29xl",
-      description: "A 212px 29xl size step",
+      description: "A 222px 29xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.30xl",
       type: "dimension",
-      value: "222px",
+      value: "232px",
       cssVar: "--cu-size-30xl",
-      description: "A 222px 30xl size step",
+      description: "A 232px 30xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.31xl",
       type: "dimension",
-      value: "232px",
+      value: "242px",
       cssVar: "--cu-size-31xl",
-      description: "A 232px 31xl size step",
+      description: "A 242px 31xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.32xl",
       type: "dimension",
-      value: "242px",
+      value: "252px",
       cssVar: "--cu-size-32xl",
-      description: "A 242px 32xl size step",
+      description: "A 252px 32xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.33xl",
       type: "dimension",
-      value: "252px",
+      value: "262px",
       cssVar: "--cu-size-33xl",
-      description: "A 252px 33xl size step",
+      description: "A 262px 33xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.34xl",
       type: "dimension",
-      value: "262px",
+      value: "272px",
       cssVar: "--cu-size-34xl",
-      description: "A 262px 34xl size step",
+      description: "A 272px 34xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.35xl",
       type: "dimension",
-      value: "272px",
+      value: "282px",
       cssVar: "--cu-size-35xl",
-      description: "A 272px 35xl size step",
+      description: "A 282px 35xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.36xl",
       type: "dimension",
-      value: "282px",
+      value: "292px",
       cssVar: "--cu-size-36xl",
-      description: "A 282px 36xl size step",
+      description: "A 292px 36xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.37xl",
       type: "dimension",
-      value: "284px",
+      value: "302px",
       cssVar: "--cu-size-37xl",
-      description: "A 284px 37xl size step",
+      description: "A 302px 37xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.38xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-size-38xl",
+      description: "A 312px 38xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.39xl",
+      type: "dimension",
+      value: "322px",
+      cssVar: "--cu-size-39xl",
+      description: "A 322px 39xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.40xl",
+      type: "dimension",
+      value: "332px",
+      cssVar: "--cu-size-40xl",
+      description: "A 332px 40xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.41xl",
+      type: "dimension",
+      value: "342px",
+      cssVar: "--cu-size-41xl",
+      description: "A 342px 41xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.42xl",
+      type: "dimension",
+      value: "352px",
+      cssVar: "--cu-size-42xl",
+      description: "A 352px 42xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.43xl",
+      type: "dimension",
+      value: "362px",
+      cssVar: "--cu-size-43xl",
+      description: "A 362px 43xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.44xl",
+      type: "dimension",
+      value: "372px",
+      cssVar: "--cu-size-44xl",
+      description: "A 372px 44xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.45xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-size-45xl",
+      description: "A 382px 45xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.46xl",
+      type: "dimension",
+      value: "392px",
+      cssVar: "--cu-size-46xl",
+      description: "A 392px 46xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.47xl",
+      type: "dimension",
+      value: "402px",
+      cssVar: "--cu-size-47xl",
+      description: "A 402px 47xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.48xl",
+      type: "dimension",
+      value: "412px",
+      cssVar: "--cu-size-48xl",
+      description: "A 412px 48xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.49xl",
+      type: "dimension",
+      value: "422px",
+      cssVar: "--cu-size-49xl",
+      description: "A 422px 49xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.50xl",
+      type: "dimension",
+      value: "432px",
+      cssVar: "--cu-size-50xl",
+      description: "A 432px 50xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.51xl",
+      type: "dimension",
+      value: "442px",
+      cssVar: "--cu-size-51xl",
+      description: "A 442px 51xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.52xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-size-52xl",
+      description: "A 452px 52xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.53xl",
+      type: "dimension",
+      value: "462px",
+      cssVar: "--cu-size-53xl",
+      description: "A 462px 53xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.54xl",
+      type: "dimension",
+      value: "472px",
+      cssVar: "--cu-size-54xl",
+      description: "A 472px 54xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.55xl",
+      type: "dimension",
+      value: "482px",
+      cssVar: "--cu-size-55xl",
+      description: "A 482px 55xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.56xl",
+      type: "dimension",
+      value: "492px",
+      cssVar: "--cu-size-56xl",
+      description: "A 492px 56xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.57xl",
+      type: "dimension",
+      value: "502px",
+      cssVar: "--cu-size-57xl",
+      description: "A 502px 57xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.58xl",
+      type: "dimension",
+      value: "512px",
+      cssVar: "--cu-size-58xl",
+      description: "A 512px 58xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.59xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-size-59xl",
+      description: "A 522px 59xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.60xl",
+      type: "dimension",
+      value: "532px",
+      cssVar: "--cu-size-60xl",
+      description: "A 532px 60xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.61xl",
+      type: "dimension",
+      value: "542px",
+      cssVar: "--cu-size-61xl",
+      description: "A 542px 61xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.62xl",
+      type: "dimension",
+      value: "552px",
+      cssVar: "--cu-size-62xl",
+      description: "A 552px 62xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.63xl",
+      type: "dimension",
+      value: "562px",
+      cssVar: "--cu-size-63xl",
+      description: "A 562px 63xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.64xl",
+      type: "dimension",
+      value: "572px",
+      cssVar: "--cu-size-64xl",
+      description: "A 572px 64xl size step",
       theme: undefined,
       typography: false
     },
@@ -19175,36 +21281,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "spacing.19xl",
       type: "dimension",
-      value: "144px",
+      value: "158px",
       cssVar: "--cu-spacing-19xl",
-      description: "A 144px 19xl spacing step (from size.19xl via sizeToSpace)",
+      description: "A 158px 19xl spacing step (from size.19xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.20xl",
       type: "dimension",
-      value: "158px",
+      value: "172px",
       cssVar: "--cu-spacing-20xl",
-      description: "A 158px 20xl spacing step (from size.20xl via sizeToSpace)",
+      description: "A 172px 20xl spacing step (from size.20xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.21xl",
       type: "dimension",
-      value: "172px",
+      value: "186px",
       cssVar: "--cu-spacing-21xl",
-      description: "A 172px 21xl spacing step (from size.21xl via sizeToSpace)",
+      description: "A 186px 21xl spacing step (from size.21xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.22xl",
       type: "dimension",
-      value: "186px",
+      value: "200px",
       cssVar: "--cu-spacing-22xl",
-      description: "A 186px 22xl spacing step (from size.22xl via sizeToSpace)",
+      description: "A 200px 22xl spacing step (from size.22xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.23xl",
+      type: "dimension",
+      value: "214px",
+      cssVar: "--cu-spacing-23xl",
+      description: "A 214px 23xl spacing step (from size.23xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.24xl",
+      type: "dimension",
+      value: "228px",
+      cssVar: "--cu-spacing-24xl",
+      description: "A 228px 24xl spacing step (from size.24xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.25xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--cu-spacing-25xl",
+      description: "A 242px 25xl spacing step (from size.25xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.26xl",
+      type: "dimension",
+      value: "256px",
+      cssVar: "--cu-spacing-26xl",
+      description: "A 256px 26xl spacing step (from size.26xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.27xl",
+      type: "dimension",
+      value: "270px",
+      cssVar: "--cu-spacing-27xl",
+      description: "A 270px 27xl spacing step (from size.27xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.28xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--cu-spacing-28xl",
+      description: "A 284px 28xl spacing step (from size.28xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.29xl",
+      type: "dimension",
+      value: "298px",
+      cssVar: "--cu-spacing-29xl",
+      description: "A 298px 29xl spacing step (from size.29xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.30xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-spacing-30xl",
+      description: "A 312px 30xl spacing step (from size.30xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.31xl",
+      type: "dimension",
+      value: "326px",
+      cssVar: "--cu-spacing-31xl",
+      description: "A 326px 31xl spacing step (from size.31xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.32xl",
+      type: "dimension",
+      value: "340px",
+      cssVar: "--cu-spacing-32xl",
+      description: "A 340px 32xl spacing step (from size.32xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.33xl",
+      type: "dimension",
+      value: "354px",
+      cssVar: "--cu-spacing-33xl",
+      description: "A 354px 33xl spacing step (from size.33xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.34xl",
+      type: "dimension",
+      value: "368px",
+      cssVar: "--cu-spacing-34xl",
+      description: "A 368px 34xl spacing step (from size.34xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.35xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-spacing-35xl",
+      description: "A 382px 35xl spacing step (from size.35xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.36xl",
+      type: "dimension",
+      value: "396px",
+      cssVar: "--cu-spacing-36xl",
+      description: "A 396px 36xl spacing step (from size.36xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.37xl",
+      type: "dimension",
+      value: "410px",
+      cssVar: "--cu-spacing-37xl",
+      description: "A 410px 37xl spacing step (from size.37xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.38xl",
+      type: "dimension",
+      value: "424px",
+      cssVar: "--cu-spacing-38xl",
+      description: "A 424px 38xl spacing step (from size.38xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.39xl",
+      type: "dimension",
+      value: "438px",
+      cssVar: "--cu-spacing-39xl",
+      description: "A 438px 39xl spacing step (from size.39xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.40xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-spacing-40xl",
+      description: "A 452px 40xl spacing step (from size.40xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.41xl",
+      type: "dimension",
+      value: "466px",
+      cssVar: "--cu-spacing-41xl",
+      description: "A 466px 41xl spacing step (from size.41xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.42xl",
+      type: "dimension",
+      value: "480px",
+      cssVar: "--cu-spacing-42xl",
+      description: "A 480px 42xl spacing step (from size.42xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.43xl",
+      type: "dimension",
+      value: "494px",
+      cssVar: "--cu-spacing-43xl",
+      description: "A 494px 43xl spacing step (from size.43xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.44xl",
+      type: "dimension",
+      value: "508px",
+      cssVar: "--cu-spacing-44xl",
+      description: "A 508px 44xl spacing step (from size.44xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.45xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-spacing-45xl",
+      description: "A 522px 45xl spacing step (from size.45xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.46xl",
+      type: "dimension",
+      value: "536px",
+      cssVar: "--cu-spacing-46xl",
+      description: "A 536px 46xl spacing step (from size.46xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.47xl",
+      type: "dimension",
+      value: "550px",
+      cssVar: "--cu-spacing-47xl",
+      description: "A 550px 47xl spacing step (from size.47xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.48xl",
+      type: "dimension",
+      value: "564px",
+      cssVar: "--cu-spacing-48xl",
+      description: "A 564px 48xl spacing step (from size.48xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.49xl",
+      type: "dimension",
+      value: "578px",
+      cssVar: "--cu-spacing-49xl",
+      description: "A 578px 49xl spacing step (from size.49xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.50xl",
+      type: "dimension",
+      value: "592px",
+      cssVar: "--cu-spacing-50xl",
+      description: "A 592px 50xl spacing step (from size.50xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.51xl",
+      type: "dimension",
+      value: "606px",
+      cssVar: "--cu-spacing-51xl",
+      description: "A 606px 51xl spacing step (from size.51xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.52xl",
+      type: "dimension",
+      value: "620px",
+      cssVar: "--cu-spacing-52xl",
+      description: "A 620px 52xl spacing step (from size.52xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.53xl",
+      type: "dimension",
+      value: "634px",
+      cssVar: "--cu-spacing-53xl",
+      description: "A 634px 53xl spacing step (from size.53xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.54xl",
+      type: "dimension",
+      value: "648px",
+      cssVar: "--cu-spacing-54xl",
+      description: "A 648px 54xl spacing step (from size.54xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.55xl",
+      type: "dimension",
+      value: "662px",
+      cssVar: "--cu-spacing-55xl",
+      description: "A 662px 55xl spacing step (from size.55xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.56xl",
+      type: "dimension",
+      value: "676px",
+      cssVar: "--cu-spacing-56xl",
+      description: "A 676px 56xl spacing step (from size.56xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.57xl",
+      type: "dimension",
+      value: "690px",
+      cssVar: "--cu-spacing-57xl",
+      description: "A 690px 57xl spacing step (from size.57xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.58xl",
+      type: "dimension",
+      value: "704px",
+      cssVar: "--cu-spacing-58xl",
+      description: "A 704px 58xl spacing step (from size.58xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.59xl",
+      type: "dimension",
+      value: "718px",
+      cssVar: "--cu-spacing-59xl",
+      description: "A 718px 59xl spacing step (from size.59xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.60xl",
+      type: "dimension",
+      value: "732px",
+      cssVar: "--cu-spacing-60xl",
+      description: "A 732px 60xl spacing step (from size.60xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.61xl",
+      type: "dimension",
+      value: "746px",
+      cssVar: "--cu-spacing-61xl",
+      description: "A 746px 61xl spacing step (from size.61xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.62xl",
+      type: "dimension",
+      value: "760px",
+      cssVar: "--cu-spacing-62xl",
+      description: "A 760px 62xl spacing step (from size.62xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.63xl",
+      type: "dimension",
+      value: "774px",
+      cssVar: "--cu-spacing-63xl",
+      description: "A 774px 63xl spacing step (from size.63xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.64xl",
+      type: "dimension",
+      value: "788px",
+      cssVar: "--cu-spacing-64xl",
+      description: "A 788px 64xl spacing step (from size.64xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
@@ -21517,9 +24001,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.sunken-disabled",
       type: "color",
-      value: "#c4c4c440",
+      value: "#c4c4c420",
       cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% opacity)",
+      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -21553,9 +24037,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.canvas-disabled",
       type: "color",
-      value: "#cacaca40",
+      value: "#cacaca20",
       cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% opacity)",
+      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -21589,9 +24073,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.elevated-disabled",
       type: "color",
-      value: "#cfcfcf40",
+      value: "#cfcfcf20",
       cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% opacity)",
+      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -21625,9 +24109,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.floating-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% opacity)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -21661,9 +24145,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.overlay-disabled",
       type: "color",
-      value: "#d9d9d940",
+      value: "#d9d9d920",
       cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% opacity)",
+      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22156,9 +24640,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-disabled",
       type: "color",
-      value: "#cfcfcf40",
+      value: "#cfcfcf20",
       cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 25% opacity)",
+      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22264,9 +24748,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.brand-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 25% opacity)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22300,9 +24784,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22336,9 +24820,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22372,9 +24856,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.warning-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22408,9 +24892,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22444,9 +24928,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22480,9 +24964,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22516,9 +25000,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#d5d5d540",
+      value: "#d5d5d520",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22570,9 +25054,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-disabled",
       type: "color",
-      value: "#cacaca40",
+      value: "#cacaca20",
       cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 25% opacity)",
+      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -23866,171 +26350,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "size.19xl",
       type: "dimension",
-      value: "112px",
+      value: "122px",
       cssVar: "--cu-size-19xl",
-      description: "A 112px 19xl size step",
+      description: "A 122px 19xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "122px",
+      value: "132px",
       cssVar: "--cu-size-20xl",
-      description: "A 122px 20xl size step",
+      description: "A 132px 20xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "132px",
+      value: "142px",
       cssVar: "--cu-size-21xl",
-      description: "A 132px 21xl size step",
+      description: "A 142px 21xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "142px",
+      value: "152px",
       cssVar: "--cu-size-22xl",
-      description: "A 142px 22xl size step",
+      description: "A 152px 22xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.23xl",
       type: "dimension",
-      value: "152px",
+      value: "162px",
       cssVar: "--cu-size-23xl",
-      description: "A 152px 23xl size step",
+      description: "A 162px 23xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.24xl",
       type: "dimension",
-      value: "162px",
+      value: "172px",
       cssVar: "--cu-size-24xl",
-      description: "A 162px 24xl size step",
+      description: "A 172px 24xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.25xl",
       type: "dimension",
-      value: "172px",
+      value: "182px",
       cssVar: "--cu-size-25xl",
-      description: "A 172px 25xl size step",
+      description: "A 182px 25xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.26xl",
       type: "dimension",
-      value: "182px",
+      value: "192px",
       cssVar: "--cu-size-26xl",
-      description: "A 182px 26xl size step",
+      description: "A 192px 26xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.27xl",
       type: "dimension",
-      value: "192px",
+      value: "202px",
       cssVar: "--cu-size-27xl",
-      description: "A 192px 27xl size step",
+      description: "A 202px 27xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.28xl",
       type: "dimension",
-      value: "202px",
+      value: "212px",
       cssVar: "--cu-size-28xl",
-      description: "A 202px 28xl size step",
+      description: "A 212px 28xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.29xl",
       type: "dimension",
-      value: "212px",
+      value: "222px",
       cssVar: "--cu-size-29xl",
-      description: "A 212px 29xl size step",
+      description: "A 222px 29xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.30xl",
       type: "dimension",
-      value: "222px",
+      value: "232px",
       cssVar: "--cu-size-30xl",
-      description: "A 222px 30xl size step",
+      description: "A 232px 30xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.31xl",
       type: "dimension",
-      value: "232px",
+      value: "242px",
       cssVar: "--cu-size-31xl",
-      description: "A 232px 31xl size step",
+      description: "A 242px 31xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.32xl",
       type: "dimension",
-      value: "242px",
+      value: "252px",
       cssVar: "--cu-size-32xl",
-      description: "A 242px 32xl size step",
+      description: "A 252px 32xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.33xl",
       type: "dimension",
-      value: "252px",
+      value: "262px",
       cssVar: "--cu-size-33xl",
-      description: "A 252px 33xl size step",
+      description: "A 262px 33xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.34xl",
       type: "dimension",
-      value: "262px",
+      value: "272px",
       cssVar: "--cu-size-34xl",
-      description: "A 262px 34xl size step",
+      description: "A 272px 34xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.35xl",
       type: "dimension",
-      value: "272px",
+      value: "282px",
       cssVar: "--cu-size-35xl",
-      description: "A 272px 35xl size step",
+      description: "A 282px 35xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.36xl",
       type: "dimension",
-      value: "282px",
+      value: "292px",
       cssVar: "--cu-size-36xl",
-      description: "A 282px 36xl size step",
+      description: "A 292px 36xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.37xl",
       type: "dimension",
-      value: "284px",
+      value: "302px",
       cssVar: "--cu-size-37xl",
-      description: "A 284px 37xl size step",
+      description: "A 302px 37xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.38xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-size-38xl",
+      description: "A 312px 38xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.39xl",
+      type: "dimension",
+      value: "322px",
+      cssVar: "--cu-size-39xl",
+      description: "A 322px 39xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.40xl",
+      type: "dimension",
+      value: "332px",
+      cssVar: "--cu-size-40xl",
+      description: "A 332px 40xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.41xl",
+      type: "dimension",
+      value: "342px",
+      cssVar: "--cu-size-41xl",
+      description: "A 342px 41xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.42xl",
+      type: "dimension",
+      value: "352px",
+      cssVar: "--cu-size-42xl",
+      description: "A 352px 42xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.43xl",
+      type: "dimension",
+      value: "362px",
+      cssVar: "--cu-size-43xl",
+      description: "A 362px 43xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.44xl",
+      type: "dimension",
+      value: "372px",
+      cssVar: "--cu-size-44xl",
+      description: "A 372px 44xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.45xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-size-45xl",
+      description: "A 382px 45xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.46xl",
+      type: "dimension",
+      value: "392px",
+      cssVar: "--cu-size-46xl",
+      description: "A 392px 46xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.47xl",
+      type: "dimension",
+      value: "402px",
+      cssVar: "--cu-size-47xl",
+      description: "A 402px 47xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.48xl",
+      type: "dimension",
+      value: "412px",
+      cssVar: "--cu-size-48xl",
+      description: "A 412px 48xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.49xl",
+      type: "dimension",
+      value: "422px",
+      cssVar: "--cu-size-49xl",
+      description: "A 422px 49xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.50xl",
+      type: "dimension",
+      value: "432px",
+      cssVar: "--cu-size-50xl",
+      description: "A 432px 50xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.51xl",
+      type: "dimension",
+      value: "442px",
+      cssVar: "--cu-size-51xl",
+      description: "A 442px 51xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.52xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-size-52xl",
+      description: "A 452px 52xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.53xl",
+      type: "dimension",
+      value: "462px",
+      cssVar: "--cu-size-53xl",
+      description: "A 462px 53xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.54xl",
+      type: "dimension",
+      value: "472px",
+      cssVar: "--cu-size-54xl",
+      description: "A 472px 54xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.55xl",
+      type: "dimension",
+      value: "482px",
+      cssVar: "--cu-size-55xl",
+      description: "A 482px 55xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.56xl",
+      type: "dimension",
+      value: "492px",
+      cssVar: "--cu-size-56xl",
+      description: "A 492px 56xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.57xl",
+      type: "dimension",
+      value: "502px",
+      cssVar: "--cu-size-57xl",
+      description: "A 502px 57xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.58xl",
+      type: "dimension",
+      value: "512px",
+      cssVar: "--cu-size-58xl",
+      description: "A 512px 58xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.59xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-size-59xl",
+      description: "A 522px 59xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.60xl",
+      type: "dimension",
+      value: "532px",
+      cssVar: "--cu-size-60xl",
+      description: "A 532px 60xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.61xl",
+      type: "dimension",
+      value: "542px",
+      cssVar: "--cu-size-61xl",
+      description: "A 542px 61xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.62xl",
+      type: "dimension",
+      value: "552px",
+      cssVar: "--cu-size-62xl",
+      description: "A 552px 62xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.63xl",
+      type: "dimension",
+      value: "562px",
+      cssVar: "--cu-size-63xl",
+      description: "A 562px 63xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.64xl",
+      type: "dimension",
+      value: "572px",
+      cssVar: "--cu-size-64xl",
+      description: "A 572px 64xl size step",
       theme: undefined,
       typography: false
     },
@@ -24343,36 +27070,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "spacing.19xl",
       type: "dimension",
-      value: "144px",
+      value: "158px",
       cssVar: "--cu-spacing-19xl",
-      description: "A 144px 19xl spacing step (from size.19xl via sizeToSpace)",
+      description: "A 158px 19xl spacing step (from size.19xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.20xl",
       type: "dimension",
-      value: "158px",
+      value: "172px",
       cssVar: "--cu-spacing-20xl",
-      description: "A 158px 20xl spacing step (from size.20xl via sizeToSpace)",
+      description: "A 172px 20xl spacing step (from size.20xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.21xl",
       type: "dimension",
-      value: "172px",
+      value: "186px",
       cssVar: "--cu-spacing-21xl",
-      description: "A 172px 21xl spacing step (from size.21xl via sizeToSpace)",
+      description: "A 186px 21xl spacing step (from size.21xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.22xl",
       type: "dimension",
-      value: "186px",
+      value: "200px",
       cssVar: "--cu-spacing-22xl",
-      description: "A 186px 22xl spacing step (from size.22xl via sizeToSpace)",
+      description: "A 200px 22xl spacing step (from size.22xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.23xl",
+      type: "dimension",
+      value: "214px",
+      cssVar: "--cu-spacing-23xl",
+      description: "A 214px 23xl spacing step (from size.23xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.24xl",
+      type: "dimension",
+      value: "228px",
+      cssVar: "--cu-spacing-24xl",
+      description: "A 228px 24xl spacing step (from size.24xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.25xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--cu-spacing-25xl",
+      description: "A 242px 25xl spacing step (from size.25xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.26xl",
+      type: "dimension",
+      value: "256px",
+      cssVar: "--cu-spacing-26xl",
+      description: "A 256px 26xl spacing step (from size.26xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.27xl",
+      type: "dimension",
+      value: "270px",
+      cssVar: "--cu-spacing-27xl",
+      description: "A 270px 27xl spacing step (from size.27xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.28xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--cu-spacing-28xl",
+      description: "A 284px 28xl spacing step (from size.28xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.29xl",
+      type: "dimension",
+      value: "298px",
+      cssVar: "--cu-spacing-29xl",
+      description: "A 298px 29xl spacing step (from size.29xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.30xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-spacing-30xl",
+      description: "A 312px 30xl spacing step (from size.30xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.31xl",
+      type: "dimension",
+      value: "326px",
+      cssVar: "--cu-spacing-31xl",
+      description: "A 326px 31xl spacing step (from size.31xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.32xl",
+      type: "dimension",
+      value: "340px",
+      cssVar: "--cu-spacing-32xl",
+      description: "A 340px 32xl spacing step (from size.32xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.33xl",
+      type: "dimension",
+      value: "354px",
+      cssVar: "--cu-spacing-33xl",
+      description: "A 354px 33xl spacing step (from size.33xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.34xl",
+      type: "dimension",
+      value: "368px",
+      cssVar: "--cu-spacing-34xl",
+      description: "A 368px 34xl spacing step (from size.34xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.35xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-spacing-35xl",
+      description: "A 382px 35xl spacing step (from size.35xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.36xl",
+      type: "dimension",
+      value: "396px",
+      cssVar: "--cu-spacing-36xl",
+      description: "A 396px 36xl spacing step (from size.36xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.37xl",
+      type: "dimension",
+      value: "410px",
+      cssVar: "--cu-spacing-37xl",
+      description: "A 410px 37xl spacing step (from size.37xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.38xl",
+      type: "dimension",
+      value: "424px",
+      cssVar: "--cu-spacing-38xl",
+      description: "A 424px 38xl spacing step (from size.38xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.39xl",
+      type: "dimension",
+      value: "438px",
+      cssVar: "--cu-spacing-39xl",
+      description: "A 438px 39xl spacing step (from size.39xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.40xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-spacing-40xl",
+      description: "A 452px 40xl spacing step (from size.40xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.41xl",
+      type: "dimension",
+      value: "466px",
+      cssVar: "--cu-spacing-41xl",
+      description: "A 466px 41xl spacing step (from size.41xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.42xl",
+      type: "dimension",
+      value: "480px",
+      cssVar: "--cu-spacing-42xl",
+      description: "A 480px 42xl spacing step (from size.42xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.43xl",
+      type: "dimension",
+      value: "494px",
+      cssVar: "--cu-spacing-43xl",
+      description: "A 494px 43xl spacing step (from size.43xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.44xl",
+      type: "dimension",
+      value: "508px",
+      cssVar: "--cu-spacing-44xl",
+      description: "A 508px 44xl spacing step (from size.44xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.45xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-spacing-45xl",
+      description: "A 522px 45xl spacing step (from size.45xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.46xl",
+      type: "dimension",
+      value: "536px",
+      cssVar: "--cu-spacing-46xl",
+      description: "A 536px 46xl spacing step (from size.46xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.47xl",
+      type: "dimension",
+      value: "550px",
+      cssVar: "--cu-spacing-47xl",
+      description: "A 550px 47xl spacing step (from size.47xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.48xl",
+      type: "dimension",
+      value: "564px",
+      cssVar: "--cu-spacing-48xl",
+      description: "A 564px 48xl spacing step (from size.48xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.49xl",
+      type: "dimension",
+      value: "578px",
+      cssVar: "--cu-spacing-49xl",
+      description: "A 578px 49xl spacing step (from size.49xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.50xl",
+      type: "dimension",
+      value: "592px",
+      cssVar: "--cu-spacing-50xl",
+      description: "A 592px 50xl spacing step (from size.50xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.51xl",
+      type: "dimension",
+      value: "606px",
+      cssVar: "--cu-spacing-51xl",
+      description: "A 606px 51xl spacing step (from size.51xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.52xl",
+      type: "dimension",
+      value: "620px",
+      cssVar: "--cu-spacing-52xl",
+      description: "A 620px 52xl spacing step (from size.52xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.53xl",
+      type: "dimension",
+      value: "634px",
+      cssVar: "--cu-spacing-53xl",
+      description: "A 634px 53xl spacing step (from size.53xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.54xl",
+      type: "dimension",
+      value: "648px",
+      cssVar: "--cu-spacing-54xl",
+      description: "A 648px 54xl spacing step (from size.54xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.55xl",
+      type: "dimension",
+      value: "662px",
+      cssVar: "--cu-spacing-55xl",
+      description: "A 662px 55xl spacing step (from size.55xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.56xl",
+      type: "dimension",
+      value: "676px",
+      cssVar: "--cu-spacing-56xl",
+      description: "A 676px 56xl spacing step (from size.56xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.57xl",
+      type: "dimension",
+      value: "690px",
+      cssVar: "--cu-spacing-57xl",
+      description: "A 690px 57xl spacing step (from size.57xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.58xl",
+      type: "dimension",
+      value: "704px",
+      cssVar: "--cu-spacing-58xl",
+      description: "A 704px 58xl spacing step (from size.58xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.59xl",
+      type: "dimension",
+      value: "718px",
+      cssVar: "--cu-spacing-59xl",
+      description: "A 718px 59xl spacing step (from size.59xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.60xl",
+      type: "dimension",
+      value: "732px",
+      cssVar: "--cu-spacing-60xl",
+      description: "A 732px 60xl spacing step (from size.60xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.61xl",
+      type: "dimension",
+      value: "746px",
+      cssVar: "--cu-spacing-61xl",
+      description: "A 746px 61xl spacing step (from size.61xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.62xl",
+      type: "dimension",
+      value: "760px",
+      cssVar: "--cu-spacing-62xl",
+      description: "A 760px 62xl spacing step (from size.62xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.63xl",
+      type: "dimension",
+      value: "774px",
+      cssVar: "--cu-spacing-63xl",
+      description: "A 774px 63xl spacing step (from size.63xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.64xl",
+      type: "dimension",
+      value: "788px",
+      cssVar: "--cu-spacing-64xl",
+      description: "A 788px 64xl spacing step (from size.64xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
@@ -26685,9 +29790,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.sunken-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 25% opacity)",
+      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -26721,9 +29826,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.canvas-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 25% opacity)",
+      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -26757,9 +29862,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.elevated-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 25% opacity)",
+      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -26793,9 +29898,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.floating-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 25% opacity)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -26829,9 +29934,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.overlay-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 25% opacity)",
+      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27324,9 +30429,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.base-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 25% opacity)",
+      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27432,9 +30537,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.brand-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 25% opacity)",
+      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27468,9 +30573,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.danger-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27504,9 +30609,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.negative-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 25% opacity)",
+      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27540,9 +30645,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.warning-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27576,9 +30681,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27612,9 +30717,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 25% opacity)",
+      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27648,9 +30753,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.info-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 25% opacity)",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27684,9 +30789,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.discovery-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 25% opacity)",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27738,9 +30843,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.base-disabled",
       type: "color",
-      value: "#ffffff40",
+      value: "#ffffff20",
       cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 25% opacity)",
+      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -29034,171 +32139,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "size.19xl",
       type: "dimension",
-      value: "112px",
+      value: "122px",
       cssVar: "--cu-size-19xl",
-      description: "A 112px 19xl size step",
+      description: "A 122px 19xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "122px",
+      value: "132px",
       cssVar: "--cu-size-20xl",
-      description: "A 122px 20xl size step",
+      description: "A 132px 20xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "132px",
+      value: "142px",
       cssVar: "--cu-size-21xl",
-      description: "A 132px 21xl size step",
+      description: "A 142px 21xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "142px",
+      value: "152px",
       cssVar: "--cu-size-22xl",
-      description: "A 142px 22xl size step",
+      description: "A 152px 22xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.23xl",
       type: "dimension",
-      value: "152px",
+      value: "162px",
       cssVar: "--cu-size-23xl",
-      description: "A 152px 23xl size step",
+      description: "A 162px 23xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.24xl",
       type: "dimension",
-      value: "162px",
+      value: "172px",
       cssVar: "--cu-size-24xl",
-      description: "A 162px 24xl size step",
+      description: "A 172px 24xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.25xl",
       type: "dimension",
-      value: "172px",
+      value: "182px",
       cssVar: "--cu-size-25xl",
-      description: "A 172px 25xl size step",
+      description: "A 182px 25xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.26xl",
       type: "dimension",
-      value: "182px",
+      value: "192px",
       cssVar: "--cu-size-26xl",
-      description: "A 182px 26xl size step",
+      description: "A 192px 26xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.27xl",
       type: "dimension",
-      value: "192px",
+      value: "202px",
       cssVar: "--cu-size-27xl",
-      description: "A 192px 27xl size step",
+      description: "A 202px 27xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.28xl",
       type: "dimension",
-      value: "202px",
+      value: "212px",
       cssVar: "--cu-size-28xl",
-      description: "A 202px 28xl size step",
+      description: "A 212px 28xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.29xl",
       type: "dimension",
-      value: "212px",
+      value: "222px",
       cssVar: "--cu-size-29xl",
-      description: "A 212px 29xl size step",
+      description: "A 222px 29xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.30xl",
       type: "dimension",
-      value: "222px",
+      value: "232px",
       cssVar: "--cu-size-30xl",
-      description: "A 222px 30xl size step",
+      description: "A 232px 30xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.31xl",
       type: "dimension",
-      value: "232px",
+      value: "242px",
       cssVar: "--cu-size-31xl",
-      description: "A 232px 31xl size step",
+      description: "A 242px 31xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.32xl",
       type: "dimension",
-      value: "242px",
+      value: "252px",
       cssVar: "--cu-size-32xl",
-      description: "A 242px 32xl size step",
+      description: "A 252px 32xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.33xl",
       type: "dimension",
-      value: "252px",
+      value: "262px",
       cssVar: "--cu-size-33xl",
-      description: "A 252px 33xl size step",
+      description: "A 262px 33xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.34xl",
       type: "dimension",
-      value: "262px",
+      value: "272px",
       cssVar: "--cu-size-34xl",
-      description: "A 262px 34xl size step",
+      description: "A 272px 34xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.35xl",
       type: "dimension",
-      value: "272px",
+      value: "282px",
       cssVar: "--cu-size-35xl",
-      description: "A 272px 35xl size step",
+      description: "A 282px 35xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.36xl",
       type: "dimension",
-      value: "282px",
+      value: "292px",
       cssVar: "--cu-size-36xl",
-      description: "A 282px 36xl size step",
+      description: "A 292px 36xl size step",
       theme: undefined,
       typography: false
     },
     {
       path: "size.37xl",
       type: "dimension",
-      value: "284px",
+      value: "302px",
       cssVar: "--cu-size-37xl",
-      description: "A 284px 37xl size step",
+      description: "A 302px 37xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.38xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-size-38xl",
+      description: "A 312px 38xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.39xl",
+      type: "dimension",
+      value: "322px",
+      cssVar: "--cu-size-39xl",
+      description: "A 322px 39xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.40xl",
+      type: "dimension",
+      value: "332px",
+      cssVar: "--cu-size-40xl",
+      description: "A 332px 40xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.41xl",
+      type: "dimension",
+      value: "342px",
+      cssVar: "--cu-size-41xl",
+      description: "A 342px 41xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.42xl",
+      type: "dimension",
+      value: "352px",
+      cssVar: "--cu-size-42xl",
+      description: "A 352px 42xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.43xl",
+      type: "dimension",
+      value: "362px",
+      cssVar: "--cu-size-43xl",
+      description: "A 362px 43xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.44xl",
+      type: "dimension",
+      value: "372px",
+      cssVar: "--cu-size-44xl",
+      description: "A 372px 44xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.45xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-size-45xl",
+      description: "A 382px 45xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.46xl",
+      type: "dimension",
+      value: "392px",
+      cssVar: "--cu-size-46xl",
+      description: "A 392px 46xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.47xl",
+      type: "dimension",
+      value: "402px",
+      cssVar: "--cu-size-47xl",
+      description: "A 402px 47xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.48xl",
+      type: "dimension",
+      value: "412px",
+      cssVar: "--cu-size-48xl",
+      description: "A 412px 48xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.49xl",
+      type: "dimension",
+      value: "422px",
+      cssVar: "--cu-size-49xl",
+      description: "A 422px 49xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.50xl",
+      type: "dimension",
+      value: "432px",
+      cssVar: "--cu-size-50xl",
+      description: "A 432px 50xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.51xl",
+      type: "dimension",
+      value: "442px",
+      cssVar: "--cu-size-51xl",
+      description: "A 442px 51xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.52xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-size-52xl",
+      description: "A 452px 52xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.53xl",
+      type: "dimension",
+      value: "462px",
+      cssVar: "--cu-size-53xl",
+      description: "A 462px 53xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.54xl",
+      type: "dimension",
+      value: "472px",
+      cssVar: "--cu-size-54xl",
+      description: "A 472px 54xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.55xl",
+      type: "dimension",
+      value: "482px",
+      cssVar: "--cu-size-55xl",
+      description: "A 482px 55xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.56xl",
+      type: "dimension",
+      value: "492px",
+      cssVar: "--cu-size-56xl",
+      description: "A 492px 56xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.57xl",
+      type: "dimension",
+      value: "502px",
+      cssVar: "--cu-size-57xl",
+      description: "A 502px 57xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.58xl",
+      type: "dimension",
+      value: "512px",
+      cssVar: "--cu-size-58xl",
+      description: "A 512px 58xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.59xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-size-59xl",
+      description: "A 522px 59xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.60xl",
+      type: "dimension",
+      value: "532px",
+      cssVar: "--cu-size-60xl",
+      description: "A 532px 60xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.61xl",
+      type: "dimension",
+      value: "542px",
+      cssVar: "--cu-size-61xl",
+      description: "A 542px 61xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.62xl",
+      type: "dimension",
+      value: "552px",
+      cssVar: "--cu-size-62xl",
+      description: "A 552px 62xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.63xl",
+      type: "dimension",
+      value: "562px",
+      cssVar: "--cu-size-63xl",
+      description: "A 562px 63xl size step",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "size.64xl",
+      type: "dimension",
+      value: "572px",
+      cssVar: "--cu-size-64xl",
+      description: "A 572px 64xl size step",
       theme: undefined,
       typography: false
     },
@@ -29511,36 +32859,414 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "spacing.19xl",
       type: "dimension",
-      value: "144px",
+      value: "158px",
       cssVar: "--cu-spacing-19xl",
-      description: "A 144px 19xl spacing step (from size.19xl via sizeToSpace)",
+      description: "A 158px 19xl spacing step (from size.19xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.20xl",
       type: "dimension",
-      value: "158px",
+      value: "172px",
       cssVar: "--cu-spacing-20xl",
-      description: "A 158px 20xl spacing step (from size.20xl via sizeToSpace)",
+      description: "A 172px 20xl spacing step (from size.20xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.21xl",
       type: "dimension",
-      value: "172px",
+      value: "186px",
       cssVar: "--cu-spacing-21xl",
-      description: "A 172px 21xl spacing step (from size.21xl via sizeToSpace)",
+      description: "A 186px 21xl spacing step (from size.21xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },
     {
       path: "spacing.22xl",
       type: "dimension",
-      value: "186px",
+      value: "200px",
       cssVar: "--cu-spacing-22xl",
-      description: "A 186px 22xl spacing step (from size.22xl via sizeToSpace)",
+      description: "A 200px 22xl spacing step (from size.22xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.23xl",
+      type: "dimension",
+      value: "214px",
+      cssVar: "--cu-spacing-23xl",
+      description: "A 214px 23xl spacing step (from size.23xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.24xl",
+      type: "dimension",
+      value: "228px",
+      cssVar: "--cu-spacing-24xl",
+      description: "A 228px 24xl spacing step (from size.24xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.25xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--cu-spacing-25xl",
+      description: "A 242px 25xl spacing step (from size.25xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.26xl",
+      type: "dimension",
+      value: "256px",
+      cssVar: "--cu-spacing-26xl",
+      description: "A 256px 26xl spacing step (from size.26xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.27xl",
+      type: "dimension",
+      value: "270px",
+      cssVar: "--cu-spacing-27xl",
+      description: "A 270px 27xl spacing step (from size.27xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.28xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--cu-spacing-28xl",
+      description: "A 284px 28xl spacing step (from size.28xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.29xl",
+      type: "dimension",
+      value: "298px",
+      cssVar: "--cu-spacing-29xl",
+      description: "A 298px 29xl spacing step (from size.29xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.30xl",
+      type: "dimension",
+      value: "312px",
+      cssVar: "--cu-spacing-30xl",
+      description: "A 312px 30xl spacing step (from size.30xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.31xl",
+      type: "dimension",
+      value: "326px",
+      cssVar: "--cu-spacing-31xl",
+      description: "A 326px 31xl spacing step (from size.31xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.32xl",
+      type: "dimension",
+      value: "340px",
+      cssVar: "--cu-spacing-32xl",
+      description: "A 340px 32xl spacing step (from size.32xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.33xl",
+      type: "dimension",
+      value: "354px",
+      cssVar: "--cu-spacing-33xl",
+      description: "A 354px 33xl spacing step (from size.33xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.34xl",
+      type: "dimension",
+      value: "368px",
+      cssVar: "--cu-spacing-34xl",
+      description: "A 368px 34xl spacing step (from size.34xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.35xl",
+      type: "dimension",
+      value: "382px",
+      cssVar: "--cu-spacing-35xl",
+      description: "A 382px 35xl spacing step (from size.35xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.36xl",
+      type: "dimension",
+      value: "396px",
+      cssVar: "--cu-spacing-36xl",
+      description: "A 396px 36xl spacing step (from size.36xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.37xl",
+      type: "dimension",
+      value: "410px",
+      cssVar: "--cu-spacing-37xl",
+      description: "A 410px 37xl spacing step (from size.37xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.38xl",
+      type: "dimension",
+      value: "424px",
+      cssVar: "--cu-spacing-38xl",
+      description: "A 424px 38xl spacing step (from size.38xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.39xl",
+      type: "dimension",
+      value: "438px",
+      cssVar: "--cu-spacing-39xl",
+      description: "A 438px 39xl spacing step (from size.39xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.40xl",
+      type: "dimension",
+      value: "452px",
+      cssVar: "--cu-spacing-40xl",
+      description: "A 452px 40xl spacing step (from size.40xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.41xl",
+      type: "dimension",
+      value: "466px",
+      cssVar: "--cu-spacing-41xl",
+      description: "A 466px 41xl spacing step (from size.41xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.42xl",
+      type: "dimension",
+      value: "480px",
+      cssVar: "--cu-spacing-42xl",
+      description: "A 480px 42xl spacing step (from size.42xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.43xl",
+      type: "dimension",
+      value: "494px",
+      cssVar: "--cu-spacing-43xl",
+      description: "A 494px 43xl spacing step (from size.43xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.44xl",
+      type: "dimension",
+      value: "508px",
+      cssVar: "--cu-spacing-44xl",
+      description: "A 508px 44xl spacing step (from size.44xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.45xl",
+      type: "dimension",
+      value: "522px",
+      cssVar: "--cu-spacing-45xl",
+      description: "A 522px 45xl spacing step (from size.45xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.46xl",
+      type: "dimension",
+      value: "536px",
+      cssVar: "--cu-spacing-46xl",
+      description: "A 536px 46xl spacing step (from size.46xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.47xl",
+      type: "dimension",
+      value: "550px",
+      cssVar: "--cu-spacing-47xl",
+      description: "A 550px 47xl spacing step (from size.47xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.48xl",
+      type: "dimension",
+      value: "564px",
+      cssVar: "--cu-spacing-48xl",
+      description: "A 564px 48xl spacing step (from size.48xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.49xl",
+      type: "dimension",
+      value: "578px",
+      cssVar: "--cu-spacing-49xl",
+      description: "A 578px 49xl spacing step (from size.49xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.50xl",
+      type: "dimension",
+      value: "592px",
+      cssVar: "--cu-spacing-50xl",
+      description: "A 592px 50xl spacing step (from size.50xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.51xl",
+      type: "dimension",
+      value: "606px",
+      cssVar: "--cu-spacing-51xl",
+      description: "A 606px 51xl spacing step (from size.51xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.52xl",
+      type: "dimension",
+      value: "620px",
+      cssVar: "--cu-spacing-52xl",
+      description: "A 620px 52xl spacing step (from size.52xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.53xl",
+      type: "dimension",
+      value: "634px",
+      cssVar: "--cu-spacing-53xl",
+      description: "A 634px 53xl spacing step (from size.53xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.54xl",
+      type: "dimension",
+      value: "648px",
+      cssVar: "--cu-spacing-54xl",
+      description: "A 648px 54xl spacing step (from size.54xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.55xl",
+      type: "dimension",
+      value: "662px",
+      cssVar: "--cu-spacing-55xl",
+      description: "A 662px 55xl spacing step (from size.55xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.56xl",
+      type: "dimension",
+      value: "676px",
+      cssVar: "--cu-spacing-56xl",
+      description: "A 676px 56xl spacing step (from size.56xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.57xl",
+      type: "dimension",
+      value: "690px",
+      cssVar: "--cu-spacing-57xl",
+      description: "A 690px 57xl spacing step (from size.57xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.58xl",
+      type: "dimension",
+      value: "704px",
+      cssVar: "--cu-spacing-58xl",
+      description: "A 704px 58xl spacing step (from size.58xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.59xl",
+      type: "dimension",
+      value: "718px",
+      cssVar: "--cu-spacing-59xl",
+      description: "A 718px 59xl spacing step (from size.59xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.60xl",
+      type: "dimension",
+      value: "732px",
+      cssVar: "--cu-spacing-60xl",
+      description: "A 732px 60xl spacing step (from size.60xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.61xl",
+      type: "dimension",
+      value: "746px",
+      cssVar: "--cu-spacing-61xl",
+      description: "A 746px 61xl spacing step (from size.61xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.62xl",
+      type: "dimension",
+      value: "760px",
+      cssVar: "--cu-spacing-62xl",
+      description: "A 760px 62xl spacing step (from size.62xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.63xl",
+      type: "dimension",
+      value: "774px",
+      cssVar: "--cu-spacing-63xl",
+      description: "A 774px 63xl spacing step (from size.63xl via sizeToSpace)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "spacing.64xl",
+      type: "dimension",
+      value: "788px",
+      cssVar: "--cu-spacing-64xl",
+      description: "A 788px 64xl spacing step (from size.64xl via sizeToSpace)",
       theme: undefined,
       typography: false
     },

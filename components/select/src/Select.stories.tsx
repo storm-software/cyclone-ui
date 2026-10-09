@@ -19,6 +19,7 @@
 import { Field, type FieldProps } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Select } from "./Select";
 
 // Story args configure the wrapping `Field`, not the `Select` itself.
@@ -112,7 +113,29 @@ const options = [
 ];
 
 export const Base: Story = {
-  args: {}
+  args: {},
+  play: async ({ canvasElement }) => {
+    const document = within(canvasElement.ownerDocument.body);
+    const trigger = canvasElement.querySelector<HTMLElement>(
+      "[data-select-trigger]"
+    )!;
+
+    await userEvent.click(trigger);
+    await userEvent.click(await document.findByRole("option", { name: "Pear" }));
+    await waitFor(async () =>
+      expect(document.queryByRole("listbox")).not.toBeInTheDocument()
+    );
+    await expect(trigger).toHaveTextContent("Pear");
+
+    // Reopened, the selected option is marked and disabled ones can't be
+    // chosen.
+    await userEvent.click(trigger);
+    await expect(
+      await document.findByRole("option", { name: "Pear" })
+    ).toHaveAttribute("aria-selected", "true");
+    await userEvent.click(document.getByRole("option", { name: "Melon" }));
+    await expect(document.getByRole("listbox")).toBeInTheDocument();
+  }
 };
 
 export const Underline: Story = {

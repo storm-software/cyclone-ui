@@ -47,7 +47,7 @@ const PopoverFrame = styled(TamaguiPopover, {
   context: PopoverContext
 });
 
-interface PopoverFrameExtraProps extends Partial<PopoverContextProps> {
+export interface PopoverFrameExtraProps extends Partial<PopoverContextProps> {
   shouldAdapt?: boolean;
 }
 
