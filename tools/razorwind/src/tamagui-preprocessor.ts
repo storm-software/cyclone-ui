@@ -471,6 +471,12 @@ const REDUCED_THEME_COLOR_STATE_ACTIVE: ColorStateVariant = {
   brightness: 1.07875
 };
 
+const INCREASED_BASE_COLOR_STATE_ACTIVE: ColorStateVariant = {
+  name: "active",
+  brightness: 1.8,
+  useBaseThemePrimitive: true
+};
+
 const COLOR_STATE_INACTIVE: ColorStateVariant = {
   name: "inactive",
   brightness: 0.8
@@ -556,7 +562,7 @@ const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
   hairline: {
     base: [
       COLOR_STATE_HOVER,
-      REDUCED_BASE_COLOR_STATE_ACTIVE,
+      INCREASED_BASE_COLOR_STATE_ACTIVE,
       BASE_COLOR_STATE_INACTIVE
     ],
     theme: [

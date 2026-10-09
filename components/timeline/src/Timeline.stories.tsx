@@ -62,7 +62,7 @@ const events: TimelineEvent[] = [
 ];
 
 const meta: Meta<TimelineProps<TimelineEvent>> = {
-  title: "Components/Timeline",
+  title: "Containers/Timeline",
   component: Timeline,
   tags: ["autodocs"],
   args: {

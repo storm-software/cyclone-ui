@@ -4675,6 +4675,13 @@ export const manifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/toggle-group",
+      "jsx": [
+        "ToggleGroup"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/tooltip",
       "jsx": [
         "Tooltip"

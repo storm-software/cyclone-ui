@@ -34,6 +34,10 @@ export type ToggleSize = FormControlSize;
 /** Gap between the frame and the inner indicator at the medium size. */
 const BASE_INSET = 2.5;
 
+/** The gap between the frame and the inner indicator at `size`. */
+export const getToggleInset = (size: FormControlSize) =>
+  BASE_INSET * getFormSizeScale(size);
+
 const ToggleFrame = styled(View, {
   displayName: "Toggle",
   render: "button",
@@ -62,7 +66,7 @@ const ToggleFrame = styled(View, {
         return {
           height,
           minHeight: height,
-          padding: BASE_INSET * getFormSizeScale(size)
+          padding: getToggleInset(size)
         };
       })
     ),
@@ -304,7 +308,7 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
           {...(borderless &&
             pressed && {
               backgroundColor:
-                "surfaceFloating group-hover/toggle:surfaceFloatingHover"
+                "surfaceOverlayActive group-hover/toggle:surfaceOverlayHover"
             })}>
           {typeof content === "string" || typeof content === "number" ? (
             <ToggleText textSize={size} active={pressed}>

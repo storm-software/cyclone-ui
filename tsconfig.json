@@ -181,6 +181,9 @@
       "path": "./components/toggle"
     },
     {
+      "path": "./components/toggle-group"
+    },
+    {
       "path": "./components/field"
     },
     {
