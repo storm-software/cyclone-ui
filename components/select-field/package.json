@@ -9,9 +9,7 @@
     "directory": "components/select-field"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "jotai": "catalog:",
     "react": "catalog:",
@@ -21,6 +19,7 @@
   "dependencies": {
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
+    "@tamagui/react-native-types": "catalog:",
     "@tamagui/create-context": "catalog:",
     "@tamagui/web": "catalog:",
     "react-native-svg": "^15.15.5",
@@ -39,9 +38,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

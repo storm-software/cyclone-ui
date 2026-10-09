@@ -9,9 +9,7 @@
     "directory": "components/input-field"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -19,6 +17,7 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
+    "@tamagui/react-native-types": "catalog:",
     "@tamagui/create-context": "catalog:",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/field": "workspace:*",
@@ -36,9 +35,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

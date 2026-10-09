@@ -45,6 +45,7 @@ import type {
   ExtractAtomRecordValues,
   IsResetAtom
 } from "../../types";
+import { useHydrateMolecule } from "../hooks/use-hydrate-molecule";
 import { useSyncMolecule } from "../hooks/use-sync-molecule";
 import { isAtom, isResetAtom, isWritableAtom } from "./is-atom";
 import { setAtomDebugLabel } from "./set-atom-debug";
@@ -263,6 +264,14 @@ export function createMoleculeApi<
     initialState: Partial<ExtractAtomRecordValues<TState>>;
   }) {
     const atoms = useMolecule();
+    // Hydrate during render so the first (and server) render sees the state;
+    // the sync effect keeps it current. Atom values are only read by the sync.
+    useHydrateMolecule(
+      atoms,
+      Object.fromEntries(
+        Object.entries(initialState).filter(([, value]) => !isAtom(value))
+      )
+    );
     useSyncMolecule(atoms, initialState);
 
     return null;

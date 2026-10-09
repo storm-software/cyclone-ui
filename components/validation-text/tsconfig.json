@@ -14,13 +14,16 @@
   },
   "references": [
     {
+      "path": "../../tools/config"
+    },
+    {
       "path": "../themeable-icon"
     },
     {
-      "path": "../body-text"
+      "path": "../icons"
     },
     {
-      "path": "../icons"
+      "path": "../body-text"
     }
   ],
   "files": [],

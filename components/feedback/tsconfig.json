@@ -14,6 +14,12 @@
   },
   "references": [
     {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../toggle"
+    },
+    {
       "path": "../text-area-field"
     },
     {

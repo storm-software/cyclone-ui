@@ -14,19 +14,22 @@
   },
   "references": [
     {
-      "path": "../body-text"
-    },
-    {
-      "path": "../icons"
+      "path": "../../tools/config"
     },
     {
       "path": "../scroll-view"
     },
     {
-      "path": "../button"
+      "path": "../icons"
     },
     {
       "path": "../heading-text"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../body-text"
     }
   ],
   "files": [],

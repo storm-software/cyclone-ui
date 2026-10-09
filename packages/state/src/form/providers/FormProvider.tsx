@@ -20,6 +20,7 @@
 
 import { delay } from "@stryke/async";
 import { useThemeName } from "@tamagui/core";
+import { useHydrateAtoms } from "jotai/utils";
 import type { PropsWithChildren } from "react";
 import { useEffect } from "react";
 import { useAtomEffect } from "../../base/hooks/use-atom-effect";
@@ -41,6 +42,10 @@ function FormStateManager<
   const theme = useThemeName();
 
   const setOptions = FormApi.use().options.set();
+  // Hydrate during render so the first (and server) render sees the options.
+  useHydrateAtoms([
+    [molecule.options, { theme, ...props } as FormOptions<Record<string, any>>]
+  ]);
   useEffect(() => {
     setOptions({ theme, ...props } as FormOptions<Record<string, any>>);
   }, [setOptions]);

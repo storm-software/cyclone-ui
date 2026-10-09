@@ -62,9 +62,27 @@ export const Base: Story = {
     await expect(rating).toHaveFocus();
     await userEvent.keyboard("{ArrowRight}");
     await expect(rating).toHaveAttribute("aria-valuenow", "3");
+    await expect(
+      within(rating).queryByTestId("rating-penultimate-confetti")
+    ).toBeInTheDocument();
+    await expect(
+      within(rating).queryByTestId("rating-highest-confetti")
+    ).toBeInTheDocument();
+
+    await userEvent.keyboard("{ArrowRight}");
+    await expect(rating).toHaveAttribute("aria-valuenow", "4");
+    await expect(
+      within(rating).getByTestId("rating-penultimate-confetti")
+    ).not.toBeEmptyDOMElement();
+    await expect(
+      within(rating).getByTestId("rating-highest-confetti")
+    ).toBeEmptyDOMElement();
 
     await userEvent.keyboard("{End}");
     await expect(rating).toHaveAttribute("aria-valuenow", "5");
+    await expect(
+      within(rating).getByTestId("rating-highest-confetti")
+    ).not.toBeEmptyDOMElement();
 
     await userEvent.keyboard("{Home}");
     await expect(rating).toHaveAttribute("aria-valuenow", "0");
@@ -97,6 +115,20 @@ export const HalfRatings: Story = {
   args: {
     defaultValue: 2.5,
     precision: 0.5
+  },
+  play: async ({ canvasElement }) => {
+    const rating = within(canvasElement).getByRole("slider");
+    rating.focus();
+    await userEvent.keyboard(
+      "{ArrowRight}{ArrowRight}{ArrowRight}{ArrowRight}"
+    );
+    await expect(rating).toHaveAttribute("aria-valuenow", "4.5");
+    await expect(
+      within(rating).getByTestId("rating-penultimate-confetti")
+    ).not.toBeEmptyDOMElement();
+    await expect(
+      within(rating).getByTestId("rating-highest-confetti")
+    ).toBeEmptyDOMElement();
   }
 };
 

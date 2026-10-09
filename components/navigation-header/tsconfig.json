@@ -14,16 +14,19 @@
   },
   "references": [
     {
-      "path": "../icons"
-    },
-    {
-      "path": "../eyebrow-text"
+      "path": "../../tools/config"
     },
     {
       "path": "../link"
     },
     {
       "path": "../heading-text"
+    },
+    {
+      "path": "../eyebrow-text"
+    },
+    {
+      "path": "../icons"
     },
     {
       "path": "../button"

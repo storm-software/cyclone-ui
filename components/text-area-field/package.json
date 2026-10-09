@@ -9,9 +9,7 @@
     "directory": "components/text-area-field"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -21,7 +19,8 @@
     "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/state": "workspace:*",
     "@cyclone-ui/text-area": "workspace:*",
-    "@tamagui/core": "catalog:"
+    "@tamagui/core": "catalog:",
+    "@tamagui/react-native-types": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/form": "workspace:*",
@@ -33,9 +32,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

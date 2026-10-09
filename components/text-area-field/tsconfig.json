@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/text-area-field/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "lib": ["ESnext", "DOM"],
     "ignoreDeprecations": "6.0",
@@ -10,10 +11,15 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc/components/text-area-field",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/text-area-field/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc/components/text-area-field"
   },
   "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../text-area"
+    },
     {
       "path": "../../packages/state"
     },
@@ -22,9 +28,6 @@
     },
     {
       "path": "../form"
-    },
-    {
-      "path": "../text-area"
     }
   ],
   "files": [],

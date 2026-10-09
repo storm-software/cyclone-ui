@@ -9,15 +9,14 @@
     "directory": "components/rating"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/confetti-burst": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@tamagui/core": "catalog:"

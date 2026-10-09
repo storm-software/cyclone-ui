@@ -14,13 +14,16 @@
   },
   "references": [
     {
-      "path": "../field"
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../input"
     },
     {
       "path": "../../packages/helpers"
     },
     {
-      "path": "../input"
+      "path": "../field"
     }
   ],
   "files": [],

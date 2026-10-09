@@ -116,7 +116,7 @@ export const manifest = {
       "cssVar": "--storm-border-radius-container",
       "type": "dimension",
       "category": "radius",
-      "value": "0.5rem",
+      "value": "0.375rem",
       "alias": true
     },
     {
@@ -124,7 +124,7 @@ export const manifest = {
       "cssVar": "--storm-border-radius-control",
       "type": "dimension",
       "category": "radius",
-      "value": "0.5rem",
+      "value": "0.375rem",
       "alias": true
     },
     {
@@ -4187,6 +4187,13 @@ export const manifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/confetti-burst",
+      "jsx": [
+        "ConfettiBurst"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/container",
       "jsx": [
         "Container"
@@ -5036,8 +5043,8 @@ export const manifest = {
         "editorial-lg",
         "editorial-md",
         "eyebrow",
-        "stormSans",
-        "stormSerif",
+        "storm-sans",
+        "storm-serif",
         "title-lg",
         "title-md",
         "title-sm",

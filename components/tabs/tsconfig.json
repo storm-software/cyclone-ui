@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/tabs/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
@@ -9,10 +10,12 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc/components/tabs",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/tabs/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc/components/tabs"
   },
   "references": [
+    {
+      "path": "../../tools/config"
+    },
     {
       "path": "../../packages/helpers"
     },

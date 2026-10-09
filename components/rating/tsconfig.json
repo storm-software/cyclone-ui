@@ -14,13 +14,19 @@
   },
   "references": [
     {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../../packages/helpers"
+    },
+    {
+      "path": "../confetti-burst"
+    },
+    {
       "path": "../../packages/themes"
     },
     {
       "path": "../icons"
-    },
-    {
-      "path": "../../packages/helpers"
     }
   ],
   "files": [],

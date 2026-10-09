@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/next-button/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
@@ -9,10 +10,12 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc/components/next-button",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/next-button/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc/components/next-button"
   },
   "references": [
+    {
+      "path": "../../tools/config"
+    },
     {
       "path": "../vectors"
     },

@@ -8,9 +8,7 @@
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/tag"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "type": "module",
   "exports": {
     ".": {
@@ -26,9 +24,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "dependencies": {
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",

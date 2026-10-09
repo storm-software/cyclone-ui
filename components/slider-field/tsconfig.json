@@ -14,16 +14,19 @@
   },
   "references": [
     {
-      "path": "../../packages/themes"
+      "path": "../../tools/config"
     },
     {
       "path": "../../packages/state"
     },
     {
-      "path": "../slider"
+      "path": "../field"
     },
     {
-      "path": "../field"
+      "path": "../../packages/themes"
+    },
+    {
+      "path": "../slider"
     },
     {
       "path": "../form"

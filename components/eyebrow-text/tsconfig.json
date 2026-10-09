@@ -12,7 +12,11 @@
     "outDir": "../../dist/out-tsc/components/eyebrow-text",
     "tsBuildInfoFile": "../../dist/out-tsc/components/eyebrow-text/tsconfig.tsbuildinfo"
   },
-  "references": [],
+  "references": [
+    {
+      "path": "../../tools/config"
+    }
+  ],
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]

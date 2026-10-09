@@ -8,7 +8,10 @@ describe("Collapsible bordered prop", () => {
   it("exposes and forwards bordered to its Accordion implementation", () => {
     const source = readComponent();
 
-    expect(source).toMatch(/bordered\?: boolean/);
-    expect(source).toMatch(/bordered=\{bordered\}/);
+    // `bordered` comes from `AccordionProps` (not omitted) and is spread
+    // through to `Accordion`, which defaults it to `true`.
+    expect(source).toMatch(/Omit<\s*AccordionProps,[^>]*>/);
+    expect(source).not.toMatch(/Omit<\s*AccordionProps,[^>]*"bordered"/);
+    expect(source).toMatch(/\{\.\.\.\(props as any\)\}/);
   });
 });

@@ -48,6 +48,16 @@ describe("Rating", () => {
     );
   });
 
+  it("places burst anchors on the highest two selectable steps", () => {
+    const html = renderRating({ max: 7, precision: 0.5 });
+
+    expect(html).toContain('data-testid="rating-penultimate-confetti"');
+    expect(html).toContain('data-testid="rating-highest-confetti"');
+    expect(
+      renderRating({ max: 7, precision: 0.5, readOnly: true })
+    ).not.toContain('data-testid="rating-highest-confetti"');
+  });
+
   it("exposes an interactive rating as a focusable slider", () => {
     const html = renderRating({ defaultValue: 4 });
 

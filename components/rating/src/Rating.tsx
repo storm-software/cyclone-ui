@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import type { ConfettiBurstHandle } from "@cyclone-ui/confetti-burst";
+import { ConfettiBurst } from "@cyclone-ui/confetti-burst";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import { getFormSizeScale } from "@cyclone-ui/helpers";
 import type { IconComponent, IconWeight } from "@cyclone-ui/icons";
@@ -27,7 +29,7 @@ import type {
   ViewProps
 } from "@tamagui/core";
 import { View } from "@tamagui/core";
-import { forwardRef, useCallback, useState } from "react";
+import { forwardRef, useCallback, useRef, useState } from "react";
 
 export type RatingSize = FormControlSize;
 export type RatingColor = ColorTokens | ThemeTokens | (string & {});
@@ -130,6 +132,8 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
   ) => {
     const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
     const [hover, setHover] = useState<number | null>(null);
+    const penultimateConfetti = useRef<ConfettiBurstHandle>(null);
+    const highestConfetti = useRef<ConfettiBurstHandle>(null);
 
     const controlled = valueProp !== undefined;
     const value = roundRatingValue(
@@ -141,15 +145,24 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
     const iconSize = Math.round(BASE_ICON_SIZE * getFormSizeScale(size));
     const segments = Math.max(1, Math.round(1 / precision));
     const decimals = getDecimalPrecision(precision);
+    const penultimateValue = roundRatingValue(max - precision, precision);
 
     const setValue = useCallback(
       (next: number | null) => {
+        if (next !== null && next !== value) {
+          if (next === max) {
+            highestConfetti.current?.burst();
+          } else if (next === penultimateValue) {
+            penultimateConfetti.current?.burst();
+          }
+        }
+
         if (!controlled) {
           setUncontrolledValue(next);
         }
         onChange?.(next);
       },
-      [controlled, onChange]
+      [controlled, max, onChange, penultimateValue, value]
     );
 
     const setHoverValue = useCallback(
@@ -296,8 +309,22 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
                       onMouseEnter={() => setHoverValue(segmentValue)}
                       onPress={() =>
                         setValue(segmentValue === value ? null : segmentValue)
-                      }
-                    />
+                      }>
+                      {segmentValue === penultimateValue && (
+                        <ConfettiBurst
+                          ref={penultimateConfetti}
+                          spread={20}
+                          testID="rating-penultimate-confetti"
+                        />
+                      )}
+                      {segmentValue === max && (
+                        <ConfettiBurst
+                          ref={highestConfetti}
+                          spread={38}
+                          testID="rating-highest-confetti"
+                        />
+                      )}
+                    </View>
                   );
                 })}
             </View>

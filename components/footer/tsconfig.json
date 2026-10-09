@@ -14,19 +14,22 @@
   },
   "references": [
     {
+      "path": "../../tools/config"
+    },
+    {
       "path": "../vectors"
     },
     {
       "path": "../link"
     },
     {
+      "path": "../icons"
+    },
+    {
       "path": "../heading-text"
     },
     {
       "path": "../body-text"
-    },
-    {
-      "path": "../icons"
     }
   ],
   "files": [],

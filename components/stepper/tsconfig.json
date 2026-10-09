@@ -17,13 +17,16 @@
   "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "references": [
     {
-      "path": "../icons"
+      "path": "../../tools/config"
     },
     {
       "path": "../previous-button"
     },
     {
       "path": "../next-button"
+    },
+    {
+      "path": "../icons"
     },
     {
       "path": "../heading-text"

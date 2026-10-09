@@ -14,13 +14,16 @@
   },
   "references": [
     {
+      "path": "../../tools/config"
+    },
+    {
       "path": "../vectors"
     },
     {
-      "path": "../../packages/helpers"
+      "path": "../icons"
     },
     {
-      "path": "../icons"
+      "path": "../../packages/helpers"
     },
     {
       "path": "../form"

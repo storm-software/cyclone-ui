@@ -25,6 +25,7 @@ import { ThumbsDown } from "@cyclone-ui/icons";
 import { LikeButton } from "@cyclone-ui/like-button";
 import { Popover } from "@cyclone-ui/popover";
 import { TextAreaField } from "@cyclone-ui/text-area-field";
+import { Toggle } from "@cyclone-ui/toggle";
 import type { TamaguiElement, ViewProps } from "@tamagui/core";
 import { View } from "@tamagui/core";
 import type { ComponentProps } from "react";
@@ -117,26 +118,17 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
         {...props}>
         <Popover open={open} onOpenChange={setOpen} placement="bottom">
           <Popover.Anchor>
-            <View
+            <Toggle
               aria-label="Dislike"
-              render="button"
-              transition="250ms"
-              alignItems="center"
-              justifyContent="center"
-              padding={0}
-              borderWidth={0}
-              backgroundColor="transparent"
-              borderRadius="control"
-              outlineStyle="none"
-              boxShadow="none focus-visible:ringOffset"
-              opacity={disabled ? 0.5 : 1}
-              cursor={disabled ? "not-allowed" : "pointer"}
+              borderless={true}
+              circular={true}
+              size={size}
               disabled={disabled}
-              aria-pressed={disliked}
+              pressed={disliked}
               aria-expanded={open}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              onPress={handleDislikePress}>
+              onPressedChange={handleDislikePress}>
               <ThumbsDown
                 aria-hidden={true}
                 size={Math.round(BASE_ICON_SIZE * getFormSizeScale(size))}
@@ -149,7 +141,7 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
                       : "color"
                 }
               />
-            </View>
+            </Toggle>
           </Popover.Anchor>
 
           <Popover.Content width={360} maxWidth="90vw">

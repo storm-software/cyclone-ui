@@ -9,9 +9,7 @@
     "directory": "components/icons"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "generate": "node ./scripts/generate.ts"
   },

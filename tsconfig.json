@@ -311,6 +311,9 @@
     },
     {
       "path": "./packages/eslint-plugin"
+    },
+    {
+      "path": "./components/confetti-burst"
     }
   ],
   "files": []

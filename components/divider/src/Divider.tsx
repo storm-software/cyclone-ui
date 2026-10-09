@@ -16,7 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-import type { ColorTokens, TamaguiElement, ThemeTokens } from "@tamagui/core";
+import type {
+  ColorTokens,
+  TamaguiElement,
+  ThemeTokens,
+  ViewProps
+} from "@tamagui/core";
 import { View } from "@tamagui/core";
 import { createElement, forwardRef } from "react";
 
@@ -24,7 +29,11 @@ export type DividerDirection = "horizontal" | "vertical";
 export type DividerSize = "sm" | "md" | "lg";
 export type DividerColor = ColorTokens | ThemeTokens | (string & {});
 
-export interface DividerProps {
+// Other view props (e.g. margins) are forwarded to the line.
+export interface DividerProps extends Omit<
+  ViewProps,
+  "children" | "direction" | "size" | "color"
+> {
   /** The direction in which the divider extends. */
   direction?: DividerDirection;
   /** The divider thickness: 1px, 2px, or 3px. */

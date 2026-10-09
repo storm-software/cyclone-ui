@@ -15,6 +15,9 @@
   },
   "references": [
     {
+      "path": "../../tools/config"
+    },
+    {
       "path": "../validation-text"
     },
     {
@@ -24,22 +27,7 @@
       "path": "../themeable-icon"
     },
     {
-      "path": "../../packages/state"
-    },
-    {
       "path": "../spinner"
-    },
-    {
-      "path": "../../packages/helpers"
-    },
-    {
-      "path": "../button"
-    },
-    {
-      "path": "../body-text"
-    },
-    {
-      "path": "../icons"
     },
     {
       "path": "../link"
@@ -48,7 +36,22 @@
       "path": "../label-text"
     },
     {
+      "path": "../icons"
+    },
+    {
+      "path": "../../packages/helpers"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../../packages/state"
+    },
+    {
       "path": "../form"
+    },
+    {
+      "path": "../body-text"
     }
   ],
   "files": [],

@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/number-input-field/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "lib": ["ESnext", "DOM"],
     "ignoreDeprecations": "6.0",
@@ -10,10 +11,12 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc/components/number-input-field",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/number-input-field/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc/components/number-input-field"
   },
   "references": [
+    {
+      "path": "../../tools/config"
+    },
     {
       "path": "../../packages/state"
     },

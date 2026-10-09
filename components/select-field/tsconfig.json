@@ -15,10 +15,13 @@
   },
   "references": [
     {
-      "path": "../select"
+      "path": "../../tools/config"
     },
     {
       "path": "../../packages/state"
+    },
+    {
+      "path": "../select"
     },
     {
       "path": "../field"

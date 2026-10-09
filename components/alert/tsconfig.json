@@ -15,6 +15,9 @@
   },
   "references": [
     {
+      "path": "../../tools/config"
+    },
+    {
       "path": "../button"
     },
     {

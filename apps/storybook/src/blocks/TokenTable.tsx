@@ -4292,7 +4292,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -4328,7 +4328,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
       theme: undefined,
@@ -9460,7 +9460,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -9496,7 +9496,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
       theme: undefined,
@@ -14628,7 +14628,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -14664,7 +14664,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
       theme: undefined,
@@ -19796,7 +19796,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -19832,7 +19832,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
       theme: undefined,
@@ -24964,7 +24964,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -25000,7 +25000,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
       theme: undefined,
@@ -30132,7 +30132,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -30168,7 +30168,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
       theme: undefined,

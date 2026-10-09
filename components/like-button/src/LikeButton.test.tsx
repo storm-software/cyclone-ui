@@ -19,7 +19,7 @@ describe("LikeButton", () => {
   it("renders a labelled toggle button", () => {
     const html = renderLikeButton();
 
-    expect(html).toMatch(/^<button/);
+    expect(html).toContain("<button");
     expect(html).toContain('aria-label="Like"');
     expect(html).toContain('aria-pressed="false"');
   });

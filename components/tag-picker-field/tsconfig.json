@@ -15,10 +15,13 @@
   },
   "references": [
     {
-      "path": "../../packages/state"
+      "path": "../../tools/config"
     },
     {
       "path": "../tag-picker"
+    },
+    {
+      "path": "../../packages/state"
     },
     {
       "path": "../field"

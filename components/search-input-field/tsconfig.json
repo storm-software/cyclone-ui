@@ -15,16 +15,16 @@
   },
   "references": [
     {
-      "path": "../../packages/state"
+      "path": "../../tools/config"
     },
     {
-      "path": "../popover"
+      "path": "../../packages/state"
     },
     {
       "path": "../select"
     },
     {
-      "path": "../body-text"
+      "path": "../popover"
     },
     {
       "path": "../input-field"
@@ -33,10 +33,13 @@
       "path": "../input"
     },
     {
+      "path": "../icons"
+    },
+    {
       "path": "../../packages/helpers"
     },
     {
-      "path": "../icons"
+      "path": "../body-text"
     },
     {
       "path": "../form"

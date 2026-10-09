@@ -615,6 +615,35 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/confetti-burst
+
+An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.
+
+- **Name:** `@cyclone-ui/confetti-burst`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/confetti-burst/dist/index.cjs` | `file` |  |
+| `../../components/confetti-burst/dist/index.mjs` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-native/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react/index.js` | `file` |  |
+| `../../components/confetti-burst/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/container
 
 A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, sunken, canvas, elevated (the default), floating, overlay, outlined and glass, which adds a blurred gradient background. It also has size-based padding and bordered, shadowed, circular and noPadding options. Use it for cards and panels.
@@ -969,6 +998,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 - `@cyclone-ui/like-button`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/text-area-field`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -1476,6 +1506,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -2192,6 +2223,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 ### Dependencies
 
+- `@cyclone-ui/confetti-burst`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -3943,6 +3975,35 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/confetti-burst
+
+An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.
+
+- **Name:** `@cyclone-ui/confetti-burst`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/confetti-burst/dist/index.cjs` | `file` |  |
+| `../../components/confetti-burst/dist/index.mjs` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-native/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react/index.js` | `file` |  |
+| `../../components/confetti-burst/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/container
 
 A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, sunken, canvas, elevated (the default), floating, overlay, outlined and glass, which adds a blurred gradient background. It also has size-based padding and bordered, shadowed, circular and noPadding options. Use it for cards and panels.
@@ -4297,6 +4358,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 - `@cyclone-ui/like-button`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/text-area-field`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -4804,6 +4866,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -5520,6 +5583,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 ### Dependencies
 
+- `@cyclone-ui/confetti-burst`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -7271,6 +7335,35 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/confetti-burst
+
+An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.
+
+- **Name:** `@cyclone-ui/confetti-burst`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/confetti-burst/dist/index.cjs` | `file` |  |
+| `../../components/confetti-burst/dist/index.mjs` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-native/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react/index.js` | `file` |  |
+| `../../components/confetti-burst/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/container
 
 A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, sunken, canvas, elevated (the default), floating, overlay, outlined and glass, which adds a blurred gradient background. It also has size-based padding and bordered, shadowed, circular and noPadding options. Use it for cards and panels.
@@ -7625,6 +7718,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 - `@cyclone-ui/like-button`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/text-area-field`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -8132,6 +8226,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -8848,6 +8943,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 ### Dependencies
 
+- `@cyclone-ui/confetti-burst`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -10599,6 +10695,35 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/confetti-burst
+
+An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.
+
+- **Name:** `@cyclone-ui/confetti-burst`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/confetti-burst/dist/index.cjs` | `file` |  |
+| `../../components/confetti-burst/dist/index.mjs` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-native/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react/index.js` | `file` |  |
+| `../../components/confetti-burst/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/container
 
 A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, sunken, canvas, elevated (the default), floating, overlay, outlined and glass, which adds a blurred gradient background. It also has size-based padding and bordered, shadowed, circular and noPadding options. Use it for cards and panels.
@@ -10953,6 +11078,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 - `@cyclone-ui/like-button`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/text-area-field`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -11460,6 +11586,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -12176,6 +12303,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 ### Dependencies
 
+- `@cyclone-ui/confetti-burst`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -13927,6 +14055,35 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/confetti-burst
+
+An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.
+
+- **Name:** `@cyclone-ui/confetti-burst`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/confetti-burst/dist/index.cjs` | `file` |  |
+| `../../components/confetti-burst/dist/index.mjs` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-native/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react/index.js` | `file` |  |
+| `../../components/confetti-burst/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/container
 
 A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, sunken, canvas, elevated (the default), floating, overlay, outlined and glass, which adds a blurred gradient background. It also has size-based padding and bordered, shadowed, circular and noPadding options. Use it for cards and panels.
@@ -14281,6 +14438,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 - `@cyclone-ui/like-button`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/text-area-field`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -14788,6 +14946,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -15504,6 +15663,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 ### Dependencies
 
+- `@cyclone-ui/confetti-burst`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@tamagui/core`: `catalog:`
@@ -17255,6 +17415,35 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/confetti-burst
+
+An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.
+
+- **Name:** `@cyclone-ui/confetti-burst`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/confetti-burst/dist/index.cjs` | `file` |  |
+| `../../components/confetti-burst/dist/index.mjs` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react-native/index.js` | `file` |  |
+| `../../components/confetti-burst/node_modules/react/index.js` | `file` |  |
+| `../../components/confetti-burst/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/container
 
 A themed surface Container that wraps content in a padded, rounded box. Variants include primary, secondary, tertiary, sunken, canvas, elevated (the default), floating, overlay, outlined and glass, which adds a blurred gradient background. It also has size-based padding and bordered, shadowed, circular and noPadding options. Use it for cards and panels.
@@ -17609,6 +17798,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 - `@cyclone-ui/like-button`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@cyclone-ui/text-area-field`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -18116,6 +18306,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/toggle`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -18832,6 +19023,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 ### Dependencies
 
+- `@cyclone-ui/confetti-burst`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@tamagui/core`: `catalog:`

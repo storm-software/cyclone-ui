@@ -19,22 +19,24 @@
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import { getFormSizeScale } from "@cyclone-ui/helpers";
 import { ThumbsUp } from "@cyclone-ui/icons";
-import type { TamaguiElement, ViewProps } from "@tamagui/core";
+import type { ToggleProps } from "@cyclone-ui/toggle";
+import { Toggle } from "@cyclone-ui/toggle";
+import type { TamaguiElement } from "@tamagui/core";
 import { View } from "@tamagui/core";
 import { forwardRef, useCallback, useRef, useState } from "react";
 
 export type LikeButtonSize = FormControlSize;
 
-export interface LikeButtonProps
-  extends Omit<ViewProps, "children" | "role" | "onPress"> {
+export interface LikeButtonProps extends Omit<
+  ToggleProps,
+  "children" | "pressed" | "defaultPressed" | "onPressedChange" | "size"
+> {
   /** Whether the content is liked. Makes the button controlled. */
   liked?: boolean;
   /** The initial liked state when uncontrolled. */
   defaultLiked?: boolean;
   /** Called with the new liked state when the button is toggled. */
   onLikedChange?: (liked: boolean) => void;
-  /** Disable the button. */
-  disabled?: boolean;
   /** The icon size. */
   size?: LikeButtonSize;
 }
@@ -145,48 +147,42 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
     const liked = controlled ? likedProp : uncontrolledLiked;
     const iconSize = Math.round(BASE_ICON_SIZE * getFormSizeScale(size));
 
-    const handlePress = useCallback(() => {
-      const next = !liked;
-      if (!controlled) {
-        setUncontrolledLiked(next);
-      }
-      onLikedChange?.(next);
+    const handlePress = useCallback(
+      (next: boolean) => {
+        if (!controlled) {
+          setUncontrolledLiked(next);
+        }
+        onLikedChange?.(next);
 
-      // ponytail: web-only (Web Animations API); native toggles without motion.
-      const thumb = thumbRef.current as unknown as BrowserElement | null;
-      const confetti = confettiRef.current as unknown as BrowserElement | null;
-      if (!next || !thumb?.animate || !confetti || prefersReducedMotion()) {
-        return;
-      }
+        // ponytail: web-only (Web Animations API); native toggles without motion.
+        const thumb = thumbRef.current as unknown as BrowserElement | null;
+        const confetti =
+          confettiRef.current as unknown as BrowserElement | null;
+        if (!next || !thumb?.animate || !confetti || prefersReducedMotion()) {
+          return;
+        }
 
-      thumb.animate(THUMB_KEYFRAMES, {
-        duration: THUMB_DURATION,
-        easing: "ease-out"
-      });
-      burstConfetti(confetti, iconSize);
-    }, [controlled, iconSize, liked, onLikedChange]);
+        thumb.animate(THUMB_KEYFRAMES, {
+          duration: THUMB_DURATION,
+          easing: "ease-out"
+        });
+        burstConfetti(confetti, iconSize);
+      },
+      [controlled, iconSize, onLikedChange]
+    );
 
     return (
-      <View
+      <Toggle
         aria-label="Like"
+        borderless={true}
+        circular={true}
         {...props}
-        ref={forwardedRef}
-        render="button"
-        transition="250ms"
+        // Anchors the confetti origin to the button centre.
         position="relative"
-        alignSelf="flex-start"
-        alignItems="center"
-        justifyContent="center"
-        padding={0}
-        borderWidth={0}
-        backgroundColor="transparent"
-        borderRadius="control"
-        outlineStyle="none"
-        boxShadow="none focus-visible:ringOffset"
-        opacity={disabled ? 0.5 : 1}
-        cursor={disabled ? "not-allowed" : "pointer"}
+        ref={forwardedRef}
+        size={size}
         disabled={disabled}
-        aria-pressed={liked}
+        pressed={liked}
         onMouseEnter={event => {
           setHovered(true);
           onMouseEnter?.(event);
@@ -195,7 +191,7 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
           setHovered(false);
           onMouseLeave?.(event);
         }}
-        onPress={handlePress}>
+        onPressedChange={handlePress}>
         <View ref={thumbRef} aria-hidden={true}>
           <ThumbsUp
             size={iconSize}
@@ -216,7 +212,7 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
           height={0}
           pointerEvents="none"
         />
-      </View>
+      </Toggle>
     );
   }
 );

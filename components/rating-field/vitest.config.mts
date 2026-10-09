@@ -1,10 +1,21 @@
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import { defineConfig } from "vitest/config";
+import {
+  componentDistJsx,
+  reactNativeWebAliases
+} from "../../tools/config/vitest.component";
 
 export default defineConfig(() => ({
   root: import.meta.dirname,
   cacheDir: "../../node_modules/.vite/components/rating-field",
-  plugins: [nxViteTsPaths()],
+  resolve: {
+    alias: reactNativeWebAliases,
+    // Inlined workspace dists must share one Tamagui instance with the test.
+    dedupe: ["@tamagui/core", "@tamagui/web", "react", "react-dom"]
+  },
+  plugins: [nxViteTsPaths(), componentDistJsx()],
+  // tsconfig uses `jsx: preserve`; tests need the JSX transformed.
+  oxc: { jsx: { runtime: "automatic" as const } },
   test: {
     name: "rating-field",
     watch: false,

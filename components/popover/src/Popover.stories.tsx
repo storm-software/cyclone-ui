@@ -66,6 +66,12 @@ export const Base: Story = {
   args: {}
 };
 
+export const Arrow: Story = {
+  args: {
+    hasArrow: true
+  }
+};
+
 export const Brand: Story = {
   args: {
     theme: "brand"

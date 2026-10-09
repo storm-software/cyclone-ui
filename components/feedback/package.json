@@ -25,6 +25,7 @@
     "@cyclone-ui/like-button": "workspace:*",
     "@cyclone-ui/popover": "workspace:*",
     "@cyclone-ui/text-area-field": "workspace:*",
+    "@cyclone-ui/toggle": "workspace:*",
     "@tamagui/core": "catalog:"
   },
   "devDependencies": {

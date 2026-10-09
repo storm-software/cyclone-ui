@@ -990,11 +990,11 @@
   --storm-border-radius-3xl: 1.5rem; /** 3X large radius (1.5rem) */
   --storm-border-radius-4xl: 2rem; /** 4X large radius (2rem) */
   --storm-border-radius-full: 100%; /** Full radius (100%) */
-  --storm-border-radius-container: 0.5rem; /** Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText. */
+  --storm-border-radius-container: 0.375rem; /** Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText. */
   --storm-border-radius-trigger: 0.25rem; /** Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators). */
   --storm-border-radius-card: 0.375rem; /** Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker. */
   --storm-border-radius-button: 0.5rem; /** Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInputField results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it. */
-  --storm-border-radius-control: 0.5rem; /** Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating. */
+  --storm-border-radius-control: 0.375rem; /** Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating. */
   --storm-border-radius-checkbox: 0.375rem; /** Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox. */
   --storm-border-radius-dialog: 0.75rem; /** Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog. */
   --storm-border-radius-sheet: 0rem; /** Corner radius for sheets (0px, `border-radius.zero`). Sheets slide in flush against a viewport edge, so their corners stay square. Applied by Sheet to its exposed corners. */

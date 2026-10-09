@@ -17,7 +17,7 @@ catalog:
   "@powerlines/plugin-tsdown": ^0.1.615
   "@powerlines/plugin-tamagui": ^0.1.666
   "@powerlines/plugin-env": ^0.16.423
-  "@razorwind/color-variants": ^0.0.65
+  "@razorwind/color-variants": ^0.0.66
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
   "@react-native-community/cli-platform-ios": 18.0.1
@@ -106,15 +106,15 @@ catalog:
   "@nx/storybook": 23.1.1
   "@nx/vite": 23.1.1
   "@nx/vitest": 23.1.1
-  "@razorwind/core": ^0.0.87
-  "@razorwind/css": ^0.0.70
-  "@razorwind/design-md": ^0.0.84
-  "@razorwind/nx": ^0.0.83
-  "@razorwind/storybook": ^0.0.86
-  "@razorwind/style-dictionary": ^0.0.73
-  "@razorwind/shadcn": ^0.0.83
-  "@razorwind/shell-shock": ^0.0.7
-  "@razorwind/tamagui": ^0.0.90
+  "@razorwind/core": ^0.0.88
+  "@razorwind/css": ^0.0.71
+  "@razorwind/design-md": ^0.0.85
+  "@razorwind/nx": ^0.0.84
+  "@razorwind/storybook": ^0.0.87
+  "@razorwind/style-dictionary": ^0.0.74
+  "@razorwind/shadcn": ^0.0.84
+  "@razorwind/shell-shock": ^0.0.8
+  "@razorwind/tamagui": ^0.0.91
   "@storm-software/cloudflare-tools": ^0.71.295
   "@storm-software/config": ^1.138.83
   "@storm-software/config-tools": ^1.190.147
@@ -214,16 +214,16 @@ catalog:
   "@tamagui/dismissable": 3.0.0-beta.1670.1
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
-  "@razorwind/shiki": ^0.0.61
-  "@razorwind/llms": ^0.0.22
-  "@razorwind/docgen": ^0.0.84
+  "@razorwind/shiki": ^0.0.62
+  "@razorwind/llms": ^0.0.23
+  "@razorwind/docgen": ^0.0.85
   ui-ux-pro-max-cli: ^2.15.0
-  "@power-plant/core": ^0.0.93
+  "@power-plant/core": ^0.0.94
   "@phosphor-icons/core": ^2.1.1
   "@shell-shock/plugin-mcp": ^0.1.10
   "@shell-shock/plugin-skills": ^0.0.23
-  "@razorwind/eslint": ^0.0.13
-  "@razorwind/stylelint": ^0.0.13
+  "@razorwind/eslint": ^0.0.14
+  "@razorwind/stylelint": ^0.0.14
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true
@@ -381,6 +381,8 @@ minimumReleaseAgeExclude:
   - "@tamagui/web@3.0.0-beta.1670.1"
   - "@tamagui/z-index-stack@3.0.0-beta.1670.1"
   - tamagui@3.0.0-beta.1670.1
+  - '@power-plant/core@0.0.94'
+  - '@power-plant/schema@0.0.92'
 nodeVersion: 26.3.0
 allowBuilds:
   "@parcel/watcher": true

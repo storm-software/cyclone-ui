@@ -1,10 +1,13 @@
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import { defineConfig } from "vitest/config";
+import { componentDistJsx } from "../../tools/config/vitest.component";
 
 export default defineConfig(() => ({
   root: import.meta.dirname,
   cacheDir: "../../node_modules/.vite/components/sheet",
-  plugins: [nxViteTsPaths()],
+  plugins: [nxViteTsPaths(), componentDistJsx()],
+  // tsconfig uses `jsx: preserve`; tests need the JSX transformed.
+  oxc: { jsx: { runtime: "automatic" as const } },
   test: {
     name: "sheet",
     watch: false,

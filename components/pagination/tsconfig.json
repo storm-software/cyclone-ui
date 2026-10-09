@@ -14,13 +14,16 @@
   },
   "references": [
     {
-      "path": "../icons"
+      "path": "../../tools/config"
     },
     {
       "path": "../previous-button"
     },
     {
       "path": "../next-button"
+    },
+    {
+      "path": "../icons"
     },
     {
       "path": "../button"

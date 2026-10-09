@@ -15,13 +15,16 @@
   },
   "references": [
     {
-      "path": "../../packages/helpers"
+      "path": "../../tools/config"
     },
     {
       "path": "../../packages/state"
     },
     {
       "path": "../radio-group"
+    },
+    {
+      "path": "../../packages/helpers"
     },
     {
       "path": "../heading-text"

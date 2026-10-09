@@ -12,7 +12,11 @@
     ],
     "outDir": "../../dist/out-tsc/components/icons"
   },
-  "references": [],
+  "references": [
+    {
+      "path": "../../tools/config"
+    }
+  ],
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [

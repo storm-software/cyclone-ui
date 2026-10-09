@@ -22,6 +22,7 @@ import {
   useFieldVariant
 } from "@cyclone-ui/field";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
+import type { TextAreaProps } from "@cyclone-ui/text-area";
 import { TextArea } from "@cyclone-ui/text-area";
 import {
   createStyledHOC,
@@ -41,62 +42,67 @@ const TextAreaFieldGroup = createStyledHOC(Field, (props, forwardedRef) => {
   );
 });
 
-const TextAreaFieldControl = createStyledHOC(TextArea, (props, forwardedRef) => {
-  const field = FieldApi.use();
-  const name = field.name.get();
-  const theme = field.theme.get();
-  const size = field.size.get();
-  const disabled = field.disabled.get();
-  const focused = field.focused.get();
-  const formattedValue = field.formattedValue.get();
-  const variant = useFieldVariant(props.placeholder);
-  const shouldShowPlaceholder = useFieldShouldShowPlaceholder(formattedValue);
+// Typed as `TextArea`: wrapping an HOC-made component otherwise infers `any`
+// props, and the inferred type is not portable in declarations.
+const TextAreaFieldControl: typeof TextArea = createStyledHOC(
+  TextArea,
+  (props: TextAreaProps, forwardedRef) => {
+    const field = FieldApi.use();
+    const name = field.name.get();
+    const theme = field.theme.get();
+    const size = field.size.get();
+    const disabled = field.disabled.get();
+    const focused = field.focused.get();
+    const formattedValue = field.formattedValue.get();
+    const variant = useFieldVariant(props.placeholder);
+    const shouldShowPlaceholder = useFieldShouldShowPlaceholder(formattedValue);
 
-  const { blur, change, focus, mount } = useFieldActions();
-  const elementRef = useRef<HTMLTextAreaElement>(null);
-  const controlRef = useFieldRef(useComposedRefs(forwardedRef, elementRef));
-  const handleChange = useCallback(
-    (event: CustomEvent<string>) => {
-      change(event.detail);
-    },
-    [change]
-  );
-  const handleBlur = useCallback(
-    // Tamagui v3 types `onBlur` as an intersection of the web and native
-    // handlers; this handler reads the web focus event.
-    (event: any) => {
-      if (event.currentTarget.contains(event.relatedTarget)) {
-        return;
-      }
+    const { blur, change, focus, mount } = useFieldActions();
+    const elementRef = useRef<HTMLTextAreaElement>(null);
+    const controlRef = useFieldRef(useComposedRefs(forwardedRef, elementRef));
+    const handleChange = useCallback(
+      (event: CustomEvent<string>) => {
+        change(event.detail);
+      },
+      [change]
+    );
+    const handleBlur = useCallback(
+      // Tamagui v3 types `onBlur` as an intersection of the web and native
+      // handlers; this handler reads the web focus event.
+      (event: any) => {
+        if (event.currentTarget.contains(event.relatedTarget)) {
+          return;
+        }
 
-      void blur();
-    },
-    [blur]
-  );
+        void blur();
+      },
+      [blur]
+    );
 
-  useLayoutEffect(() => {
-    mount(controlRef);
-  }, [controlRef, mount]);
+    useLayoutEffect(() => {
+      mount(controlRef);
+    }, [controlRef, mount]);
 
-  return (
-    <Theme name={theme}>
-      <TextArea
-        ref={controlRef}
-        {...props}
-        name={name}
-        size={size}
-        focused={focused}
-        variant={variant === "normal" ? "default" : variant}
-        disabled={disabled}
-        placeholder={shouldShowPlaceholder ? props.placeholder : undefined}
-        value={formattedValue}
-        onFocus={focus}
-        onBlur={handleBlur}
-        onChange={handleChange}
-      />
-    </Theme>
-  );
-});
+    return (
+      <Theme name={theme}>
+        <TextArea
+          ref={controlRef}
+          {...props}
+          name={name}
+          size={size}
+          focused={focused}
+          variant={variant === "normal" ? "default" : variant}
+          disabled={disabled}
+          placeholder={shouldShowPlaceholder ? props.placeholder : undefined}
+          value={formattedValue}
+          onFocus={focus}
+          onBlur={handleBlur}
+          onChange={handleChange}
+        />
+      </Theme>
+    );
+  }
+);
 
 export const TextAreaField = withStaticProperties(TextAreaFieldGroup, {
   Label: Field.Label,

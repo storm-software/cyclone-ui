@@ -14,16 +14,19 @@
   },
   "references": [
     {
-      "path": "../../packages/state"
+      "path": "../../tools/config"
     },
     {
-      "path": "../file-picker"
+      "path": "../../packages/state"
     },
     {
       "path": "../field"
     },
     {
       "path": "../form"
+    },
+    {
+      "path": "../file-picker"
     }
   ],
   "files": [],

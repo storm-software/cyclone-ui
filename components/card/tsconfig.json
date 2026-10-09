@@ -14,7 +14,7 @@
   },
   "references": [
     {
-      "path": "../icons"
+      "path": "../../tools/config"
     },
     {
       "path": "../themeable-icon"
@@ -36,6 +36,9 @@
     },
     {
       "path": "../body-text"
+    },
+    {
+      "path": "../icons"
     }
   ],
   "files": [],

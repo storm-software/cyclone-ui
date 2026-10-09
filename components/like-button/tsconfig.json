@@ -14,13 +14,19 @@
   },
   "references": [
     {
-      "path": "../../packages/themes"
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../toggle"
     },
     {
       "path": "../icons"
     },
     {
       "path": "../../packages/helpers"
+    },
+    {
+      "path": "../../packages/themes"
     }
   ],
   "files": [],
