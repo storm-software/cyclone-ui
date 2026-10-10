@@ -1,0 +1,57 @@
+{
+  "name": "@cyclone-ui/phone-number-input",
+  "version": "0.0.12",
+  "type": "module",
+  "description": "A headless phone number input built on Input that adds a searchable country-code picker with flags in a menu. Input is masked and formatted with libphonenumber-js and maskito, and the selected country updates from the initial value. It has a defaultCountry prop and TextBox (with Value) and Trigger parts. Use it on its own or inside a Field to connect it to a form.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/phone-number-input"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/context-menu": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/search-input": "workspace:*",
+    "@maskito/core": "catalog:",
+    "@maskito/phone": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/text": "catalog:",
+    "libphonenumber-js": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:",
+    "@cyclone-ui/field": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./PhoneNumberInput": {
+      "import": "./dist/PhoneNumberInput.mjs",
+      "require": "./dist/PhoneNumberInput.cjs"
+    },
+    "./*": "./*"
+  }
+}

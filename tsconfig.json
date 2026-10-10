@@ -31,19 +31,7 @@
       "path": "./components/pdf-document-display"
     },
     {
-      "path": "./components/search-input-field"
-    },
-    {
       "path": "./components/themeable-gradient"
-    },
-    {
-      "path": "./components/date-picker-field"
-    },
-    {
-      "path": "./components/file-picker-field"
-    },
-    {
-      "path": "./components/radio-group-field"
     },
     {
       "path": "./components/previous-button"
@@ -53,9 +41,6 @@
     },
     {
       "path": "./components/visually-hidden"
-    },
-    {
-      "path": "./components/checkbox-field"
     },
     {
       "path": "./components/themeable-icon"
@@ -70,19 +55,10 @@
       "path": "./components/heading-text"
     },
     {
-      "path": "./components/select-field"
-    },
-    {
-      "path": "./components/switch-field"
-    },
-    {
       "path": "./components/date-picker"
     },
     {
       "path": "./components/file-picker"
-    },
-    {
-      "path": "./components/input-field"
     },
     {
       "path": "./components/next-button"
@@ -211,22 +187,7 @@
       "path": "./components/tabs"
     },
     {
-      "path": "./components/password-input-field"
-    },
-    {
-      "path": "./components/number-input-field"
-    },
-    {
-      "path": "./components/otp-input-field"
-    },
-    {
-      "path": "./components/phone-number-input-field"
-    },
-    {
       "path": "./components/text-area"
-    },
-    {
-      "path": "./components/text-area-field"
     },
     {
       "path": "./components/sheet"
@@ -292,19 +253,10 @@
       "path": "./components/slider"
     },
     {
-      "path": "./components/rating-field"
-    },
-    {
-      "path": "./components/slider-field"
-    },
-    {
       "path": "./components/context-menu"
     },
     {
       "path": "./components/tag-picker"
-    },
-    {
-      "path": "./components/tag-picker-field"
     },
     {
       "path": "./components/page"
@@ -320,6 +272,21 @@
     },
     {
       "path": "./packages/stylelint-plugin"
+    },
+    {
+      "path": "./components/phone-number-input"
+    },
+    {
+      "path": "./components/password-input"
+    },
+    {
+      "path": "./components/number-input"
+    },
+    {
+      "path": "./components/search-input"
+    },
+    {
+      "path": "./components/otp-input"
     }
   ],
   "files": []

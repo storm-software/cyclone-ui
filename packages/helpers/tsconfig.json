@@ -3,6 +3,7 @@
   "compilerOptions": {
     "tsBuildInfoFile": "../../dist/out-tsc/packages/helpers/tsconfig.tsbuildinfo",
     "jsx": "react-jsx",
+    "lib": ["dom", "esnext"],
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",
@@ -15,6 +16,7 @@
   "files": [],
   "include": [
     "src/**/*.ts",
+    "src/**/*.tsx",
     "src/**/*.js",
     "powerlines.config.ts",
     "powerlines.d.ts"

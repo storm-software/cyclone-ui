@@ -2,21 +2,22 @@
   "name": "@cyclone-ui/tag-picker",
   "version": "0.0.6",
   "type": "module",
-  "description": "A TagPicker input that turns typed text into removable tags. Enter adds a trimmed, unique tag, Backspace removes the last tag, and each tag has an accessible remove button. It can be controlled or uncontrolled (value, defaultValue, onChange) and supports size, variant, tagVariant and disabled props, plus validation styling. The package also exports tag list helpers. Use it for free-form keyword or label entry.",
+  "description": "A TagPicker input that turns typed text into removable tags. Enter adds a trimmed, unique tag, Backspace removes the last tag, and each tag has an accessible remove button. It can be controlled or uncontrolled (value, defaultValue, onChange) and supports size, variant, tagVariant and disabled props, plus validation styling. The package also exports tag list helpers. Wrapped in a Field, it connects to the form, taking its tags, name, size, disabled and focus state from the field. Use it for free-form keyword or label entry.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/tag-picker"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
     "@cyclone-ui/tag": "workspace:*",
@@ -28,12 +29,16 @@
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "react-native": "catalog:"
+    "react-native": "catalog:",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*"
   },
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "preserve",
+    "lib": ["ESnext", "DOM"],
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
     "types": [
@@ -17,10 +18,13 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../../packages/helpers"
+    },
+    {
       "path": "../input"
     },
     {
-      "path": "../../packages/helpers"
+      "path": "../form"
     },
     {
       "path": "../field"

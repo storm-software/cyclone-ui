@@ -28,6 +28,9 @@
     },
     {
       "path": "../field"
+    },
+    {
+      "path": "../icons"
     }
   ],
   "files": [],

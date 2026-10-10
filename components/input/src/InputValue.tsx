@@ -16,9 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-import { getFieldLabelInset, useFieldHasStartIcon } from "@cyclone-ui/field";
 import type { FormControlSize } from "@cyclone-ui/helpers";
-import { getFormSizeScale } from "@cyclone-ui/helpers";
+import {
+  getFieldLabelInset,
+  getFormSizeScale,
+  useFieldHasStartIcon
+} from "@cyclone-ui/helpers";
 import type {
   GetProps,
   TamaDefer,

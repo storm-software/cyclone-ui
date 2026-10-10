@@ -17,16 +17,22 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../../packages/themes"
+    },
+    {
+      "path": "../icons"
+    },
+    {
       "path": "../../packages/helpers"
     },
     {
       "path": "../confetti-burst"
     },
     {
-      "path": "../../packages/themes"
+      "path": "../form"
     },
     {
-      "path": "../icons"
+      "path": "../field"
     }
   ],
   "files": [],

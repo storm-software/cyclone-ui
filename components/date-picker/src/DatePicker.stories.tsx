@@ -22,19 +22,8 @@ import { Calendar } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { formatDate } from "@stryke/date/format";
 import type { GetProps } from "@tamagui/core";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { DATE_RANGE_SEPARATOR, DatePicker } from "./DatePicker";
-
-const toDate = (value: unknown) => {
-  if (value == null || value === "") {
-    return null;
-  }
-
-  const date =
-    value instanceof Date ? value : new Date(value as string | number);
-
-  return Number.isNaN(date.getTime()) ? null : date;
-};
 
 interface DatePickerValidation {
   onChange: (() => { message: string; type: string }[])[];
@@ -51,27 +40,12 @@ const meta: Meta<DatePickerStoryArgs> = {
   component: DatePicker,
   tags: ["autodocs"],
   render: ({ variant, ...props }: any, { id }: { id: string }) => {
-    const handleFormat = useCallback((value: any) => {
-      const date = toDate(value);
-      if (!date) {
-        return "";
-      }
-
-      return formatDate(date, "MM.DD.YYYY");
-    }, []);
-
-    const handleParse = useCallback((value: any) => {
-      return toDate(value);
-    }, []);
-
     return (
       <Form name={`formName-${id}`} initialValues={{ datePickerName: null }}>
         <Field
           name="datePickerName"
           {...props}
-          variant={variant}
-          format={handleFormat}
-          parse={handleParse}>
+          variant={variant}>
           <Field.Label>Label Text</Field.Label>
           <DatePicker variant={variant} size={props.size}>
             <DatePicker.TextBox>

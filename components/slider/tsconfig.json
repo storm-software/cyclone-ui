@@ -17,10 +17,16 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../../packages/themes"
+    },
+    {
       "path": "../../packages/helpers"
     },
     {
-      "path": "../../packages/themes"
+      "path": "../form"
+    },
+    {
+      "path": "../field"
     },
     {
       "path": "../icons"

@@ -16,10 +16,10 @@
 
  ------------------------------------------------------------------- */
 
-import type { FieldLabelPlacement } from "@cyclone-ui/field";
-import { getFieldLabelInset } from "@cyclone-ui/field";
+import type { FieldLabelPlacement } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
+  getFieldLabelInset,
   getFormFontScale,
   getFormFontSize,
   getFormSizeToken,

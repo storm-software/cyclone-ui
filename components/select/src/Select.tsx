@@ -17,19 +17,22 @@
  ------------------------------------------------------------------- */
 
 import { ContextMenu } from "@cyclone-ui/context-menu";
-import type { FieldLabelPlacement } from "@cyclone-ui/field";
+import { Field } from "@cyclone-ui/field";
+import type {
+  FieldLabelPlacement,
+  FormControlSize
+} from "@cyclone-ui/helpers";
 import {
-  Field,
   FieldNotchedOutline,
-  useFieldHasValidationMessage,
-  useFieldIconColor,
-  useFieldLabelPlacement
-} from "@cyclone-ui/field";
-import type { FormControlSize } from "@cyclone-ui/helpers";
-import {
   getFormSizeScale,
   getFormSizeToken,
-  getSpaced
+  getSpaced,
+  useFieldHasValidationMessage,
+  useFieldIconColor,
+  useFieldLabelDefaults,
+  useFieldLabelPlacement,
+  useFieldVariant,
+  useFormControl
 } from "@cyclone-ui/helpers";
 import { CaretDown } from "@cyclone-ui/icons";
 import { ControlUnderline } from "@cyclone-ui/input";
@@ -42,15 +45,18 @@ import {
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { XStack } from "@tamagui/stacks";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
-import type { SelectContextProps } from "./types";
+import type { SelectChangeEventHandler, SelectContextProps } from "./types";
 import {
   getSelectSize,
   getSelectVisualFocus,
   SelectContext
 } from "./utilities";
+
+// Selects float their field label by default.
+const FLOATING_LABEL = { variant: "floating" } as const;
 
 // A plain stack rather than `styled(XGroup)` so `transition` reaches the
 // rendered frame and the border and focus ring animate; see `InputGroup`.
@@ -262,6 +268,7 @@ const SelectTextBoxImpl = createStyledHOC(
   ) => {
     const { focused, disabled, size, variant, circular } =
       SelectContext.useStyledContext();
+    const formControl = useFormControl();
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
     const [locallyActive, setLocallyActive] = useState(false);
@@ -314,6 +321,15 @@ const SelectTextBoxImpl = createStyledHOC(
                 flexDirection="row"
                 alignItems="center">
                 {children}
+                {formControl && (
+                  // The field's status icon; a span, as the text box is a
+                  // button.
+                  <Field.ThemeIcon
+                    position="end"
+                    render="span"
+                    role={undefined}
+                  />
+                )}
               </View>
             </XGroup.Item>
 
@@ -355,26 +371,50 @@ const SelectTextBoxImpl = createStyledHOC(
 const SelectGroupImpl = createStyledHOC(
   ContextMenu,
   (
-    {
-      name,
-      disabled,
-      focused,
-      variant = "outlined",
-      children,
-      onFocus,
-      onBlur,
-      onChange,
-      size = "md",
-      value,
-      defaultValue,
-      ...props
-    }: Omit<GetProps<typeof ContextMenu>, "value" | "onValueChange"> &
+    props: Omit<GetProps<typeof ContextMenu>, "value" | "onValueChange"> &
       Partial<SelectContextProps> & {
         value?: string;
         defaultValue?: string;
+
+        /**
+         * Shown while nothing is selected, by the value a `Select` renders
+         * inside a `Field` when it is given no children.
+         */
+        placeholder?: string;
       },
     forwardedRef
   ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the select to the form.
+    const formControl = useFormControl();
+    const fieldVariant = useFieldVariant();
+    useFieldLabelDefaults(FLOATING_LABEL);
+    const formDefaultValue = formControl?.defaultValue;
+    const {
+      name = formControl?.name,
+      disabled = formControl?.disabled,
+      focused = formControl?.focused,
+      variant = formControl ? fieldVariant : "outlined",
+      children,
+      onFocus = formControl?.onFocus,
+      onBlur = formControl?.onBlur,
+      onChange: onChangeProp,
+      size = formControl?.size ?? "md",
+      value = formControl
+        ? formControl.formattedValue ||
+          String(formControl.value ?? formDefaultValue ?? "")
+        : undefined,
+      defaultValue = formControl ? String(formDefaultValue ?? "") : undefined,
+      placeholder,
+      ...rest
+    } = props;
+    const formOnChange = formControl?.onChange;
+    const onChange = useMemo<SelectChangeEventHandler | undefined>(
+      () =>
+        onChangeProp ??
+        (formOnChange ? event => formOnChange(event.detail) : undefined),
+      [formOnChange, onChangeProp]
+    );
     const [open, setOpen] = useState(false);
     const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
     const hasValidationMessage = useFieldHasValidationMessage();
@@ -416,7 +456,7 @@ const SelectGroupImpl = createStyledHOC(
         // Only context keys: a styled context treats every key in its value
         // as a context prop, so spreading all props swallowed `aria-*` and
         // other DOM attributes before they reached the element.
-        circular={Boolean((props as { circular?: boolean }).circular)}
+        circular={Boolean((rest as { circular?: boolean }).circular)}
         name={name}
         disabled={disabled}
         focused={visualFocus}
@@ -430,13 +470,22 @@ const SelectGroupImpl = createStyledHOC(
         <ContextMenu
           ref={forwardedRef}
           placement="bottom"
-          {...props}
+          {...rest}
           size={size}
           value={resolvedValue}
           onValueChange={handleChanged}
           open={open}
           onOpenChange={handleOpenChanged}>
-          {children}
+          {children ??
+            // Without children, a select in a field renders the field's items.
+            (formControl && (
+              <>
+                <SelectTextBoxImpl>
+                  <SelectTextBox.Value placeholder={placeholder} />
+                </SelectTextBoxImpl>
+                <SelectItems />
+              </>
+            ))}
         </ContextMenu>
       </SelectContext.Provider>
     );

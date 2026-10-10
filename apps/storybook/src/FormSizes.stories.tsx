@@ -23,17 +23,18 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import { useId, useState } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
-import { CheckboxField } from "../../../components/checkbox-field/src/CheckboxField";
-import { DatePickerField } from "../../../components/date-picker-field/src/DatePickerField";
-import { FilePickerField } from "../../../components/file-picker-field/src/FilePickerField";
-import { InputField } from "../../../components/input-field/src/InputField";
-import { OtpInputField } from "../../../components/otp-input-field/src/OtpInputField";
-import { RadioGroupField } from "../../../components/radio-group-field/src/RadioGroupField";
-import { RatingField } from "../../../components/rating-field/src/RatingField";
-import { SelectField } from "../../../components/select-field/src/SelectField";
-import { SliderField } from "../../../components/slider-field/src/SliderField";
-import { SwitchField } from "../../../components/switch-field/src/SwitchField";
-import { TextAreaField } from "../../../components/text-area-field/src/TextAreaField";
+import { Checkbox } from "../../../components/checkbox/src/Checkbox";
+import { DatePicker } from "../../../components/date-picker/src/DatePicker";
+import { Field } from "../../../components/field/src/Field";
+import { FilePicker } from "../../../components/file-picker/src/FilePicker";
+import { Input } from "../../../components/input/src/Input";
+import { OtpInput } from "../../../components/otp-input/src/OtpInput";
+import { RadioGroup } from "../../../components/radio-group/src/RadioGroup";
+import { Rating } from "../../../components/rating/src/Rating";
+import { Select } from "../../../components/select/src/Select";
+import { Slider } from "../../../components/slider/src/Slider";
+import { Switch } from "../../../components/switch/src/Switch";
+import { TextArea } from "../../../components/text-area/src/TextArea";
 
 const sizes: FormControlSize[] = ["sm", "md", "lg"];
 const items = [
@@ -73,118 +74,105 @@ function SizeComparison({ disabled = false }: { disabled?: boolean }) {
               slider: 40
             }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-              <InputField name="text" size={size} disabled={disabled}>
-                <InputField.Label>Floating input</InputField.Label>
-                <InputField.Control>
-                  <InputField.Icon position="start">
-                    <MagnifyingGlass />
-                  </InputField.Icon>
-                  <InputField.Control.TextBox>
-                    <InputField.Control.TextBox.Value
-                      aria-label={`${size} input`}
-                    />
-                  </InputField.Control.TextBox>
-                </InputField.Control>
-                <InputField.Details>Supporting text</InputField.Details>
-              </InputField>
-              <InputField name="above" size={size} disabled={disabled}>
-                <InputField.Label variant="above">
-                  Label above input
-                </InputField.Label>
-                <InputField.Control>
-                  <InputField.Control.TextBox>
-                    <InputField.Control.TextBox.Value placeholder="Enter text" />
-                  </InputField.Control.TextBox>
-                </InputField.Control>
-              </InputField>
-              <InputField
+              <Field name="text" size={size} disabled={disabled}>
+                <Field.Label>Floating input</Field.Label>
+                <Input>
+                  <Input.TextBox>
+                    <Field.Icon position="start">
+                      <MagnifyingGlass />
+                    </Field.Icon>
+                    <Input.TextBox.Value aria-label={`${size} input`} />
+                  </Input.TextBox>
+                </Input>
+                <Field.Details>Supporting text</Field.Details>
+              </Field>
+              <Field
+                name="above"
+                size={size}
+                disabled={disabled}>
+                <Field.Label variant="above">Label above input</Field.Label>
+                <Input>
+                  <Input.TextBox>
+                    <Input.TextBox.Value placeholder="Enter text" />
+                  </Input.TextBox>
+                </Input>
+              </Field>
+              <Field
                 name="outlined"
                 size={size}
                 variant="outlined"
                 disabled={disabled}>
-                <InputField.Label>Outlined input</InputField.Label>
-                <InputField.Control>
-                  <InputField.Control.TextBox>
-                    <InputField.Control.TextBox.Value placeholder="Enter text" />
-                  </InputField.Control.TextBox>
-                </InputField.Control>
-              </InputField>
-              <InputField
+                <Field.Label>Outlined input</Field.Label>
+                <Input>
+                  <Input.TextBox>
+                    <Input.TextBox.Value placeholder="Enter text" />
+                  </Input.TextBox>
+                </Input>
+              </Field>
+              <Field
                 name="underlined"
                 size={size}
                 variant="underlined"
                 disabled={disabled}>
-                <InputField.Label>Underlined input</InputField.Label>
-                <InputField.Control>
-                  <InputField.Control.TextBox>
-                    <InputField.Control.TextBox.Value placeholder="Enter text" />
-                  </InputField.Control.TextBox>
-                </InputField.Control>
-              </InputField>
-              <InputField
+                <Field.Label>Underlined input</Field.Label>
+                <Input>
+                  <Input.TextBox>
+                    <Input.TextBox.Value placeholder="Enter text" />
+                  </Input.TextBox>
+                </Input>
+              </Field>
+              <Field
                 name="inlined"
                 size={size}
                 variant="inlined"
                 disabled={disabled}>
-                <InputField.Label>Inlined input</InputField.Label>
-                <InputField.Control>
-                  <InputField.Control.TextBox>
-                    <InputField.Control.TextBox.Value placeholder="Enter text" />
-                  </InputField.Control.TextBox>
-                </InputField.Control>
-              </InputField>
-              <SelectField
-                name="select"
-                size={size}
-                items={items}
-                disabled={disabled}>
-                <SelectField.Label>Select fruit</SelectField.Label>
-                <SelectField.Control placeholder="Choose fruit" />
-              </SelectField>
-              <DatePickerField name="date" size={size} disabled={disabled}>
-                <DatePickerField.Label>Date</DatePickerField.Label>
-                <DatePickerField.Control />
-              </DatePickerField>
-              <TextAreaField name="notes" size={size} disabled={disabled}>
-                <TextAreaField.Label>Notes</TextAreaField.Label>
-                <TextAreaField.Control placeholder="Write a note" />
-              </TextAreaField>
-              <CheckboxField name="check" size={size} disabled={disabled}>
-                <CheckboxField.Label>Checkbox</CheckboxField.Label>
-                <CheckboxField.Control />
-              </CheckboxField>
-              <SwitchField name="switch" size={size} disabled={disabled}>
-                <SwitchField.Label>Switch</SwitchField.Label>
-                <SwitchField.Control />
-              </SwitchField>
-              <RadioGroupField
-                name="radio"
-                size={size}
-                items={items}
-                disabled={disabled}>
-                <RadioGroupField.Label>Radio group</RadioGroupField.Label>
-                <RadioGroupField.Control />
-              </RadioGroupField>
-              <RatingField name="rating" size={size} disabled={disabled}>
-                <RatingField.Label>Rating</RatingField.Label>
-                <RatingField.Control />
-              </RatingField>
-              <SliderField name="slider" size={size} disabled={disabled}>
-                <SliderField.Label>Slider</SliderField.Label>
-                <SliderField.Control />
-              </SliderField>
-              <OtpInputField
-                name="code"
-                size={size}
-                length={4}
-                disabled={disabled}>
-                <OtpInputField.Label>Verification code</OtpInputField.Label>
-                <OtpInputField.Control />
-              </OtpInputField>
-              <FilePickerField name="file" size={size} disabled={disabled}>
-                <FilePickerField.Label>Upload</FilePickerField.Label>
-                <FilePickerField.Control />
-              </FilePickerField>
+                <Field.Label>Inlined input</Field.Label>
+                <Input>
+                  <Input.TextBox>
+                    <Input.TextBox.Value placeholder="Enter text" />
+                  </Input.TextBox>
+                </Input>
+              </Field>
+              <Field name="select" size={size} items={items} disabled={disabled}>
+                <Field.Label>Select fruit</Field.Label>
+                <Select placeholder="Choose fruit" />
+              </Field>
+              <Field name="date" size={size} disabled={disabled}>
+                <Field.Label>Date</Field.Label>
+                <DatePicker />
+              </Field>
+              <Field name="notes" size={size} disabled={disabled}>
+                <Field.Label>Notes</Field.Label>
+                <TextArea placeholder="Write a note" />
+              </Field>
+              <Field name="check" size={size} disabled={disabled}>
+                <Field.Label>Checkbox</Field.Label>
+                <Checkbox />
+              </Field>
+              <Field name="switch" size={size} disabled={disabled}>
+                <Field.Label>Switch</Field.Label>
+                <Switch />
+              </Field>
+              <Field name="radio" size={size} items={items} disabled={disabled}>
+                <Field.Label>Radio group</Field.Label>
+                <RadioGroup />
+              </Field>
+              <Field name="rating" size={size} disabled={disabled}>
+                <Field.Label>Rating</Field.Label>
+                <Rating />
+              </Field>
+              <Field name="slider" size={size} disabled={disabled}>
+                <Field.Label>Slider</Field.Label>
+                <Slider />
+              </Field>
+              <Field name="code" size={size} disabled={disabled}>
+                <Field.Label>Verification code</Field.Label>
+                <OtpInput length={4} />
+              </Field>
+              <Field name="file" size={size} disabled={disabled}>
+                <Field.Label>Upload</Field.Label>
+                <FilePicker />
+              </Field>
             </div>
           </Form>
         </div>
@@ -246,13 +234,13 @@ function ChangingSize() {
       <button onClick={() => setSize("lg")}>Use large</button>
       <button onClick={() => setSize("sm")}>Use small</button>
       <Form name={`changing-size-${id}`}>
-        <InputField name="value" size={size}>
-          <InputField.Control>
-            <InputField.Control.TextBox>
-              <InputField.Control.TextBox.Value aria-label="Resizable input" />
-            </InputField.Control.TextBox>
-          </InputField.Control>
-        </InputField>
+        <Field name="value" size={size}>
+          <Input>
+            <Input.TextBox>
+              <Input.TextBox.Value aria-label="Resizable input" />
+            </Input.TextBox>
+          </Input>
+        </Field>
       </Form>
     </>
   );

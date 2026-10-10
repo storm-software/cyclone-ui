@@ -8,7 +8,9 @@
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/data-table"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -24,19 +26,18 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/checkbox": "workspace:*",
-    "@cyclone-ui/checkbox-field": "workspace:*",
     "@cyclone-ui/form": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/label-text": "workspace:*",
     "@cyclone-ui/pagination": "workspace:*",
     "@cyclone-ui/popover": "workspace:*",
-    "@cyclone-ui/search-input-field": "workspace:*",
-    "@cyclone-ui/select-field": "workspace:*",
     "@cyclone-ui/state": "workspace:*",
     "@cyclone-ui/table": "workspace:*",
     "@stryke/helpers": "catalog:",
@@ -51,7 +52,10 @@
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@tanstack/react-table": "^8.21.3",
-    "@tanstack/table-core": "^8.21.3"
+    "@tanstack/table-core": "^8.21.3",
+    "@cyclone-ui/search-input": "workspace:*",
+    "@cyclone-ui/select": "workspace:*",
+    "@cyclone-ui/field": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

@@ -40,6 +40,8 @@ The following Storm Software ecosystems are maintained in **separate repositorie
 | **cyclone-ui** | [storm-software/cyclone-ui](https://github.com/storm-software/cyclone-ui) | Consumer configuration and integration owned by this repo (for example `powerlines.config.ts`, `razorwind.config.ts`, `shell-shock.config.ts`, `tools/razorwind/`, and cyclone-ui CLI command implementations under `apps/cli/src/`) |
 | **storm-ops** | [storm-software/storm-ops](https://github.com/storm-software/storm-ops) | Reusable workflows, devenv modules, Terraform modules, and other storm-ops artifacts consumed by reference |
 
+**Current repository exception:** You may make changes to files owned by the current repository, even when that repository appears in the table above. The restriction applies only to external packages and vendored layers whose upstream repository is elsewhere.
+
 **Allowed in this repository:** consumer configuration and integration owned by this repo (for example `powerlines.config.ts`, `razorwind.config.ts`, `shell-shock.config.ts`, `tools/razorwind/`, and cyclone-ui CLI command implementations under `apps/cli/src/`).
 
 When a bug or feature belongs in one of the ecosystems above:

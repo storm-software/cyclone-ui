@@ -17,27 +17,40 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import type { FieldLabelPlacement } from "@cyclone-ui/field";
+import type {
+  FieldLabelPlacement,
+  FormControlSize
+} from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
+  getFormSizeToken,
+  getSized,
   useFieldHasValidationMessage,
-  useFieldLabelPlacement
-} from "@cyclone-ui/field";
-import type { FormControlSize } from "@cyclone-ui/helpers";
-import { getFormSizeToken, getSized } from "@cyclone-ui/helpers";
+  useFieldLabelPlacement,
+  useFieldLabelDefaults,
+  useFieldShouldShowPlaceholder,
+  useFieldVariant,
+  useFormControl
+} from "@cyclone-ui/helpers";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
   styled,
+  Theme,
+  useComposedRefs,
   View,
   withStaticProperties
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { XStack } from "@tamagui/stacks";
 import { useCallback, useMemo, useState } from "react";
+import type { InputChangeEventHandler } from "./types";
 import { InputValue } from "./InputValue";
 import type { InputContextProps, InputVariant } from "./types";
 import { getInputSize, InputContext } from "./utilities";
+
+// Text inputs float their field label by default.
+const FLOATING_LABEL = { variant: "floating" } as const;
 
 const isFormControlSize = (value: unknown): value is FormControlSize =>
   value === "sm" || value === "md" || value === "lg";
@@ -200,20 +213,47 @@ const InputGroupImpl = createStyledHOC(
       Partial<InputContextProps>,
     forwardedRef
   ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the input to the form.
+    const formControl = useFormControl();
+    const fieldVariant = useFieldVariant();
+    useFieldLabelDefaults(FLOATING_LABEL);
     const {
       children,
-      name,
-      size = "md",
-      variant = "outlined",
-      onChange,
+      name = formControl?.name,
+      size = formControl?.size ?? "md",
+      variant = formControl ? fieldVariant : "outlined",
+      onChange: onChangeProp,
       onInput,
-      onFocus,
-      onBlur,
+      onFocus: onFocusProp,
+      onBlur: onBlurProp,
       onMouseDown,
-      focused = false,
-      disabled = false,
+      focused = formControl?.focused ?? false,
+      disabled = formControl?.disabled ?? false,
       ...rest
     } = props;
+    const formOnChange = formControl?.onChange;
+    const onChange = useMemo<InputChangeEventHandler | undefined>(
+      () =>
+        onChangeProp ??
+        (formOnChange ? event => formOnChange(event.detail) : undefined),
+      [formOnChange, onChangeProp]
+    );
+    const onFocus = onFocusProp ?? formControl?.onFocus;
+    const formOnBlur = formControl?.onBlur;
+    const onBlur = useMemo(
+      () =>
+        onBlurProp ??
+        (formOnBlur
+          ? // Focus moving within the input (to a trigger) is not a blur.
+            (event?: any) => {
+              if (!event?.currentTarget?.contains?.(event.relatedTarget)) {
+                formOnBlur();
+              }
+            }
+          : undefined),
+      [formOnBlur, onBlurProp]
+    );
     const [locallyActive, setLocallyActive] = useState(false);
     const frameSize = size;
     const handleFocus = useCallback(
@@ -407,10 +447,13 @@ const InputTextBox = styled(XStack, {
 const InputTextBoxImpl = createStyledHOC(
   InputTextBox,
   ({ children, ...props }, forwardedRef) => {
+    const formControl = useFormControl();
+
     return (
       <XGroup.Item flex={1} minWidth={0}>
         <InputTextBox ref={forwardedRef} {...props}>
           {children}
+          {formControl?.endAdornment}
         </InputTextBox>
       </XGroup.Item>
     );
@@ -420,15 +463,24 @@ const InputTextBoxImpl = createStyledHOC(
 
 const InputValueImpl = createStyledHOC(
   InputValue,
-  ({ children, enterKeyHint = "done", value, ...props }, forwardedRef) => {
+  (
+    { children, enterKeyHint = "done", value: valueProp, ...props },
+    forwardedRef
+  ) => {
     const { onChange: contextOnChange, onInput: contextOnInput } =
       InputContext.useStyledContext();
+    const formControl = useFormControl();
+    const value = valueProp ?? formControl?.formattedValue;
+    useFieldVariant(props.placeholder);
+    const shouldShowPlaceholder = useFieldShouldShowPlaceholder(value);
+    const ref = useComposedRefs(forwardedRef, formControl?.inputRef);
 
-    return (
+    const content = (
       <View position="relative" height="100%" flex={1} minWidth={0}>
         <InputValue
-          ref={forwardedRef}
+          ref={ref}
           {...props}
+          placeholder={shouldShowPlaceholder ? props.placeholder : undefined}
           placeholderTextColor="onAccentDisabled"
           onChange={props.onChange ?? contextOnChange}
           onInput={props.onInput ?? contextOnInput}
@@ -437,6 +489,12 @@ const InputValueImpl = createStyledHOC(
           {children}
         </InputValue>
       </View>
+    );
+
+    return formControl?.theme ? (
+      <Theme name={formControl.theme}>{content}</Theme>
+    ) : (
+      content
     );
   },
   { displayName: "InputValue" }
@@ -457,6 +515,7 @@ const InputTrigger = createStyledHOC(
     forwardedRef
   ) => {
     const { circular, size } = InputContext.useStyledContext();
+    const disabled = useFormControl()?.disabled;
     const controlSize = getFormSizeToken(sizeProp ?? size);
     const frameSize = useMemo(() => getSized(controlSize), [controlSize]);
 
@@ -483,6 +542,7 @@ const InputTrigger = createStyledHOC(
             borderRadius={circular ? 100_000 : "button"}
             noPadding={true}
             color="onAccent"
+            disabled={disabled}
             {...props}
             width={props.width ?? adjustedTrigger}
             minWidth={props.minWidth ?? props.width ?? adjustedTrigger}

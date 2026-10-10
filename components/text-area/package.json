@@ -2,16 +2,17 @@
   "name": "@cyclone-ui/text-area",
   "version": "0.1.11",
   "type": "module",
-  "description": "A multiline text input that renders a textarea with 3 rows by default and uses the same tokens as the Cyclone UI Input. It has default, floating and underline variants, sm, md and lg sizes, and focus and disabled states, and its border reflects field validation messages.",
+  "description": "A multiline text input that renders a textarea with 3 rows by default and uses the same tokens as the Cyclone UI Input. It has default, floating and underline variants, sm, md and lg sizes, and focus and disabled states, and its border reflects field validation messages. Wrapped in a Field, it connects to the form: it takes its name, value, size, disabled and focus state from the field and floats the field label by default.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/text-area"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
     "@tamagui/core": "catalog:",
     "@cyclone-ui/helpers": "workspace:*"
@@ -25,12 +26,16 @@
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "react-native": "catalog:"
+    "react-native": "catalog:",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*"
   },
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

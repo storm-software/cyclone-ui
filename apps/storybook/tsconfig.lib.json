@@ -17,37 +17,40 @@
   },
   "references": [
     {
-      "path": "../../components/text-area-field"
+      "path": "../../components/text-area"
     },
     {
-      "path": "../../components/switch-field"
+      "path": "../../components/switch"
     },
     {
-      "path": "../../components/slider-field"
+      "path": "../../components/slider"
     },
     {
-      "path": "../../components/select-field"
+      "path": "../../components/select"
     },
     {
-      "path": "../../components/radio-group-field"
+      "path": "../../components/rating"
     },
     {
-      "path": "../../components/rating-field"
+      "path": "../../components/radio-group"
     },
     {
-      "path": "../../components/otp-input-field"
+      "path": "../../components/otp-input"
     },
     {
-      "path": "../../components/input-field"
+      "path": "../../components/input"
     },
     {
-      "path": "../../components/file-picker-field"
+      "path": "../../components/file-picker"
     },
     {
-      "path": "../../components/date-picker-field"
+      "path": "../../components/field"
     },
     {
-      "path": "../../components/checkbox-field"
+      "path": "../../components/date-picker"
+    },
+    {
+      "path": "../../components/checkbox"
     },
     {
       "path": "../../components/form"

@@ -17,16 +17,22 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../field"
+    },
+    {
+      "path": "../select"
+    },
+    {
+      "path": "../search-input"
+    },
+    {
+      "path": "../icons"
+    },
+    {
       "path": "../table"
     },
     {
       "path": "../../packages/state"
-    },
-    {
-      "path": "../select-field"
-    },
-    {
-      "path": "../search-input-field"
     },
     {
       "path": "../popover"
@@ -38,16 +44,10 @@
       "path": "../label-text"
     },
     {
-      "path": "../icons"
-    },
-    {
       "path": "../heading-text"
     },
     {
       "path": "../form"
-    },
-    {
-      "path": "../checkbox-field"
     },
     {
       "path": "../checkbox"

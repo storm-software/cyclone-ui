@@ -16,19 +16,26 @@
 
  ------------------------------------------------------------------- */
 
-import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
   getFormSizeToken,
   getSized,
-  getSpaced
+  getSpaced,
+  useFieldHasValidationMessage,
+  useFieldLabelDefaults,
+  useFormControl
 } from "@cyclone-ui/helpers";
 import { Minus } from "@cyclone-ui/icons";
 import { Check } from "@cyclone-ui/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
+import type { CheckedState } from "@tamagui/checkbox-headless";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
+import { useCallback } from "react";
+
+// A checkbox's field label sits compactly beside it.
+const INLINE_LABEL = { inline: { alignItems: "center" } } as const;
 
 const CheckboxGroupFrame = styled(View, {
   displayName: "Checkbox",
@@ -157,19 +164,38 @@ const MinusIcon = styled(Minus, {
 export const Checkbox = createStyledHOC(
   BaseCheckbox,
   (
-    {
-      focused = false,
-      disabled,
-      name,
-      size = "md",
-      checked = true,
-      ...props
-    }: GetProps<typeof BaseCheckbox> & {
+    props: GetProps<typeof BaseCheckbox> & {
       focused?: CheckboxGroupFrameProps["focused"];
       size?: FormControlSize;
     },
     forwardedRef
   ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the checkbox to the form.
+    const formControl = useFormControl();
+    useFieldLabelDefaults(INLINE_LABEL);
+    const {
+      focused = formControl?.focused ?? false,
+      disabled = formControl?.disabled,
+      name = formControl?.name,
+      size = formControl?.size ?? "md",
+      checked = formControl ? formControl.value || false : true,
+      defaultChecked = formControl
+        ? formControl.defaultValue || false
+        : undefined,
+      onCheckedChange,
+      onFocus = formControl?.onFocus,
+      onBlur = formControl?.onBlur,
+      ...rest
+    } = props;
+    const formOnChange = formControl?.onChange;
+    const handleCheckedChange = useCallback(
+      (next: CheckedState) => {
+        formOnChange?.(next);
+        onCheckedChange?.(next);
+      },
+      [formOnChange, onCheckedChange]
+    );
     const hasValidationMessage = useFieldHasValidationMessage();
     const idleColor = hasValidationMessage ? "accent" : "hairline";
     const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
@@ -186,9 +212,15 @@ export const Checkbox = createStyledHOC(
         boxShadow="focus:ringOffset focus-visible:ringOffset">
         <BaseCheckbox
           ref={forwardedRef}
-          {...props}
+          {...rest}
           id={name}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          onCheckedChange={
+            formOnChange ? handleCheckedChange : onCheckedChange
+          }
           checked={checked}
+          defaultChecked={defaultChecked}
           size={size}
           disabled={disabled}>
           <TamaguiCheckbox.Indicator

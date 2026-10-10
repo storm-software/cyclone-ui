@@ -41,7 +41,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Tag Select
 
-A `TagPicker` form control for entering a list of free-form tags. Typing a value and pressing Enter appends it as a pill that springs in, each pill has a remove button, and pressing Backspace in the empty text box removes the last tag. The pills and the text box share one bordered frame, which highlights while focus is anywhere inside it. Use [`TagPickerField`](../tag-picker-field) to connect it to Cyclone UI form state.
+A `TagPicker` form control for entering a list of free-form tags. Typing a value and pressing Enter appends it as a pill that springs in, each pill has a remove button, and pressing Backspace in the empty text box removes the last tag. The pills and the text box share one bordered frame, which highlights while focus is anywhere inside it. Wrap it in a [`Field`](../field) to connect it to Cyclone UI form state.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -103,6 +103,22 @@ import { TagPicker } from "@cyclone-ui/tag-picker";
   defaultValue={["Design", "Engineering"]}
   onChange={tags => console.log(tags)}
 />;
+```
+
+Inside a [`Field`](../field), the picker connects to the form: any prop left unset (`value`, `name`, `size`, `disabled`, `focused`, `variant`) falls back to the field's state, and changes reach the form (an `onChange` prop is still called).
+
+```tsx
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
+import { TagPicker } from "@cyclone-ui/tag-picker";
+
+<Form name="profile" initialValues={{ topics: [] }}>
+  <Field name="topics">
+    <Field.Label>Topics</Field.Label>
+    <TagPicker placeholder="Add a topic" />
+    <Field.Details>Press Enter to add a topic</Field.Details>
+  </Field>
+</Form>;
 ```
 
 Pass `value` and `onChange` together for a controlled tag select. Tags are trimmed and unique: a blank or repeated entry adds nothing. Enter only adds a tag (and does not submit a surrounding form) when the text box holds a value.

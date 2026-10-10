@@ -16,8 +16,10 @@
 
  ------------------------------------------------------------------- */
 
-import type { FieldLabelPlacement } from "@cyclone-ui/field";
-import type { FormControlSize } from "@cyclone-ui/helpers";
+import type {
+  FieldLabelPlacement,
+  FormControlSize
+} from "@cyclone-ui/helpers";
 import type {
   ColorTokens,
   TamaguiComponentPropsBaseBase,

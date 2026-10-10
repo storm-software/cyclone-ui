@@ -24,6 +24,20 @@
         "default": "./dist/index.mjs"
       }
     },
+    "./form-control": {
+      "require": {
+        "types": "./dist/form-control.d.cts",
+        "default": "./dist/form-control.cjs"
+      },
+      "import": {
+        "types": "./dist/form-control.d.mts",
+        "default": "./dist/form-control.mjs"
+      },
+      "default": {
+        "types": "./dist/form-control.d.mts",
+        "default": "./dist/form-control.mjs"
+      }
+    },
     "./form-size": {
       "require": {
         "types": "./dist/form-size.d.cts",
@@ -165,10 +179,14 @@
     "@powerlines/plugin-tamagui": "catalog:",
     "@powerlines/plugin-tsdown": "catalog:",
     "@types/chroma-js": "catalog:",
-    "powerlines": "catalog:"
+    "powerlines": "catalog:",
+    "react": "catalog:"
   },
   "publishConfig": {
     "access": "public"
   },
-  "module": "./dist/index.mjs"
+  "module": "./dist/index.mjs",
+  "peerDependencies": {
+    "react": "catalog:"
+  }
 }

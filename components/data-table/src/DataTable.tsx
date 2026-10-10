@@ -19,15 +19,15 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Checkbox } from "@cyclone-ui/checkbox";
-import { CheckboxField } from "@cyclone-ui/checkbox-field";
+import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { Funnel, SortAscending, SortDescending } from "@cyclone-ui/icons";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
-import { SearchInputField } from "@cyclone-ui/search-input-field";
-import { SelectField } from "@cyclone-ui/select-field";
+import { SearchInput } from "@cyclone-ui/search-input";
+import { Select } from "@cyclone-ui/select";
 import type { CallbackContext, FieldAtoms } from "@cyclone-ui/state/form";
 import type { TableProps } from "@cyclone-ui/table";
 import { Table } from "@cyclone-ui/table";
@@ -725,36 +725,36 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
       </HeadingSmallText>
 
       <YStack gap="4xl">
-        <SearchInputField
+        <Field
           name={SEARCH_FIELD_NAME}
           size="sm"
           onChange={handleSearchChange}>
-          <SearchInputField.Control>
-            <SearchInputField.Control.TextBox placeholder="Filter..." />
-          </SearchInputField.Control>
-        </SearchInputField>
+          <SearchInput>
+            <SearchInput.TextBox placeholder="Filter..." />
+          </SearchInput>
+        </Field>
 
         <Popover.Content.ScrollView size="lg" maxHeight="30xl">
           <YStack gap="xl" width="100%" minWidth="28xl" paddingLeft="xl">
-            <CheckboxField name={SELECT_ALL_FIELD_NAME}>
+            <Field name={SELECT_ALL_FIELD_NAME}>
               <XStack gap="3xl" alignItems="center" justifyContent="flex-start">
-                <CheckboxField.Control
+                <Checkbox
                   checked={selectAll}
                   onCheckedChange={checked =>
                     handleFilterChange(SELECT_ALL_FIELD_NAME, checked)
                   }
                 />
-                <CheckboxField.Label>{"(Select All)"}</CheckboxField.Label>
+                <Field.Label>{"(Select All)"}</Field.Label>
               </XStack>
-            </CheckboxField>
+            </Field>
 
             {searchResults.map(searchResult => (
-              <CheckboxField key={searchResult} name={searchResult}>
+              <Field key={searchResult} name={searchResult}>
                 <XStack
                   gap="3xl"
                   alignItems="center"
                   justifyContent="flex-start">
-                  <CheckboxField.Control
+                  <Checkbox
                     checked={
                       !filterValues.some(filterValue =>
                         isEqual(filterValue, valuesMap.get(searchResult)?.value)
@@ -764,9 +764,9 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
                       handleFilterChange(searchResult, checked)
                     }
                   />
-                  <CheckboxField.Label>{`${searchResult} (${valuesMap.get(searchResult)?.count ?? 0})`}</CheckboxField.Label>
+                  <Field.Label>{`${searchResult} (${valuesMap.get(searchResult)?.count ?? 0})`}</Field.Label>
                 </XStack>
-              </CheckboxField>
+              </Field>
             ))}
           </YStack>
         </Popover.Content.ScrollView>
@@ -1100,22 +1100,22 @@ export function DataTablePagination<TData extends RowData>({
                 pageSize
               }}>
               <View width="30xl">
-                <SelectField
+                <Field
                   name="pageSize"
                   items={pageSizes}
                   size="sm"
                   onChange={handlePageSizeChange}>
                   <XStack alignItems="center" gap="3xl">
-                    <SelectField.Label
+                    <Field.Label
                       variant="above"
                       flexShrink={0}>
                       Per page:
-                    </SelectField.Label>
+                    </Field.Label>
                     <View width="18xl" flexShrink={0}>
-                      <SelectField.Control />
+                      <Select />
                     </View>
                   </XStack>
-                </SelectField>
+                </Field>
               </View>
             </Form>
           </View>

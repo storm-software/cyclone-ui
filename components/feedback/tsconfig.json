@@ -20,7 +20,10 @@
       "path": "../toggle"
     },
     {
-      "path": "../text-area-field"
+      "path": "../text-area"
+    },
+    {
+      "path": "../field"
     },
     {
       "path": "../popover"
@@ -39,6 +42,9 @@
     },
     {
       "path": "../divider"
+    },
+    {
+      "path": "../body-text"
     },
     {
       "path": "../button"

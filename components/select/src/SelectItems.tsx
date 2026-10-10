@@ -21,6 +21,7 @@ import type {
   ContextMenuItemProps
 } from "@cyclone-ui/context-menu";
 import { ContextMenu } from "@cyclone-ui/context-menu";
+import { useFormControl } from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
 import { Theme, withStaticProperties } from "@tamagui/core";
 import type { JSX } from "react";
@@ -62,19 +63,29 @@ export const SelectItem = ({
 const SelectItemsGroup = ({
   children,
   ...props
-}: ContextMenuContentProps): JSX.Element => (
-  // Keeps a validation theme on the field from tinting the options.
-  <Theme name="base">
-    <ContextMenu.Content
-      // At least the text box's width, plus 4px on each side.
-      minWidth="calc(var(--tamagui-popper-anchor-width) + 8px)"
-      {...props}>
-      <ContextMenu.Content.ScrollView role="listbox">
-        {children}
-      </ContextMenu.Content.ScrollView>
-    </ContextMenu.Content>
-  </Theme>
-);
+}: ContextMenuContentProps): JSX.Element => {
+  const items = useFormControl()?.items;
+
+  return (
+    // Keeps a validation theme on the field from tinting the options.
+    <Theme name="base">
+      <ContextMenu.Content
+        // At least the text box's width, plus 4px on each side.
+        minWidth="calc(var(--tamagui-popper-anchor-width) + 8px)"
+        {...props}>
+        <ContextMenu.Content.ScrollView role="listbox">
+          {children ??
+            // Without children, the enclosing field's items.
+            items?.map((item, index) => (
+              <SelectItem key={index} {...item} value={String(item.value)}>
+                {item.name}
+              </SelectItem>
+            ))}
+        </ContextMenu.Content.ScrollView>
+      </ContextMenu.Content>
+    </Theme>
+  );
+};
 
 export const SelectItems = withStaticProperties(SelectItemsGroup, {
   Item: SelectItem

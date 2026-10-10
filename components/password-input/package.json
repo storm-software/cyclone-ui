@@ -1,0 +1,63 @@
+{
+  "name": "@cyclone-ui/password-input",
+  "version": "0.0.10",
+  "type": "module",
+  "description": "A password input with a show/hide toggle and a caps-lock warning. A strength meter rates the password from very weak to strong, and inside a Field a built-in validator lists the missing criteria. It has the same TextBox, TextBox.Value and Trigger parts as Input. Use it on its own or wrap it in a Field to connect it to a Form.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/password-input"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/visually-hidden": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/validation-text": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/field": "workspace:*"
+  },
+  "devDependencies": {
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./password-strength": {
+      "import": "./dist/password-strength.mjs",
+      "require": "./dist/password-strength.cjs"
+    },
+    "./PasswordInput": {
+      "import": "./dist/PasswordInput.mjs",
+      "require": "./dist/PasswordInput.cjs"
+    },
+    "./*": "./*"
+  }
+}

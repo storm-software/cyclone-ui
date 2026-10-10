@@ -18,6 +18,9 @@
     },
     {
       "path": "../icons"
+    },
+    {
+      "path": "../heading-text"
     }
   ],
   "files": [],

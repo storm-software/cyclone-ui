@@ -2,8 +2,15 @@ import { readFileSync } from "node:fs";
 
 const fieldSource = () =>
   readFileSync(new URL("./Field.tsx", import.meta.url), "utf8");
+// The shared form control hooks live in `@cyclone-ui/helpers`.
+const formControlSource = () =>
+  readFileSync(
+    new URL("../../../packages/helpers/src/form-control.tsx", import.meta.url),
+    "utf8"
+  );
+
 const fieldIconColorSource = () => {
-  const source = fieldSource();
+  const source = formControlSource();
   const start = source.indexOf("export const useFieldIconColor");
 
   return source.slice(start, source.indexOf("\n};", start));
@@ -16,7 +23,7 @@ describe("field focus colors", () => {
     const source = fieldIconColorSource();
 
     expect(source).toContain(
-      '(!theme || theme === "base") && messages.length === 0'
+      '(!theme || theme === "base") && !formControl?.hasValidationMessage'
     );
     expect(source).toMatch(
       /isNeutral\s*\?\s*focused\s*\?\s*"hairlineActive"\s*:\s*"hairline"/

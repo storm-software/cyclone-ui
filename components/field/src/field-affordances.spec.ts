@@ -4,6 +4,10 @@ import { describe, expect, it } from "vitest";
 const readComponent = (path: string) =>
   readFileSync(new URL(path, import.meta.url), "utf8");
 
+// The shared form control hooks live in `@cyclone-ui/helpers`.
+const formControlSource = () =>
+  readComponent("../../../packages/helpers/src/form-control.tsx");
+
 const getDeclaration = (source: string, name: string) => {
   const start = source.indexOf(`const ${name}`);
   const nextDeclaration = source.indexOf("\nconst ", start + 1);
@@ -24,10 +28,7 @@ describe("field affordance color states", () => {
       readComponent("../../select/src/Select.tsx"),
       "SelectSeparator"
     );
-    const fieldIcon = getDeclaration(
-      readComponent("./Field.tsx"),
-      "useFieldIconColor"
-    );
+    const fieldIcon = getDeclaration(formControlSource(), "useFieldIconColor");
 
     for (const affordance of [inputSeparator, selectSeparator, fieldIcon]) {
       expect(affordance).toContain("hairline");
@@ -70,7 +71,7 @@ describe("field affordance color states", () => {
 
   it("colors field icons accent when themed or validated, otherwise hairline", () => {
     const field = readComponent("./Field.tsx");
-    const iconColor = getDeclaration(field, "useFieldIconColor");
+    const iconColor = getDeclaration(formControlSource(), "useFieldIconColor");
     const fieldIcon = getDeclaration(field, "FieldIconButtonImpl");
     const selectTrigger = getDeclaration(
       readComponent("../../select/src/Select.tsx"),
@@ -78,7 +79,7 @@ describe("field affordance color states", () => {
     );
 
     expect(iconColor).toContain(
-      '(!theme || theme === "base") && messages.length === 0'
+      '(!theme || theme === "base") && !formControl?.hasValidationMessage'
     );
     expect(iconColor).toContain('"accent"');
     expect(fieldIcon).toContain("color: iconColor");
@@ -95,8 +96,8 @@ describe("field affordance color states", () => {
     expect(themeIcon).toContain("theme={theme}");
     expect(themeIcon).toContain('"hairline focus-visible:hairlineActive"');
     expect(themeIcon).toContain('"accent focus-visible:accentActive"');
-    expect(themeIcon).toContain(
-      'arrowBorderColor={isNeutral ? "hairline" : "accent"}'
+    expect(themeIcon).toMatch(
+      /arrowBorderColor=\{\s*isNeutral\s*\?\s*"hairline focus-visible:hairlineActive"\s*:\s*"accent focus-visible:accentActive"\s*\}/
     );
   });
 });
@@ -117,40 +118,42 @@ describe("floating optional field labels", () => {
 
 describe("floating field placeholder visibility", () => {
   it("only exposes empty floating placeholders when the focused label is elevated or no floating label exists", () => {
-    const field = readComponent("./Field.tsx");
+    const formControl = formControlSource();
 
-    expect(field).toContain("labelVariant: FieldLabelVariant | undefined");
-    expect(field).toContain("export const useFieldShouldShowPlaceholder");
-    expect(field).toContain(
-      'labelVariant !== "floating" || (!hasValue && Boolean(focused))'
+    expect(formControl).toContain(
+      "labelVariant: FieldLabelVariant | undefined"
     );
-    expect(field).toContain("setLabelVariant(variant)");
+    expect(formControl).toContain(
+      "export const useFieldShouldShowPlaceholder"
+    );
+    expect(formControl).toMatch(
+      /formControl\?\.labelVariant !== "floating" \|\|\s*\(!hasFieldValue\(value\) && Boolean\(formControl\.focused\)\)/
+    );
+    expect(readComponent("./Field.tsx")).toContain("setLabelVariant(variant)");
   });
 
   it("applies the shared visibility decision in every floating field control", () => {
     const controls = [
-      readComponent("../../input-field/src/InputField.tsx"),
-      readComponent("../../select-field/src/SelectField.tsx"),
-      readComponent("../../date-picker-field/src/DatePickerField.tsx"),
-      readComponent("../../text-area-field/src/TextAreaField.tsx")
+      readComponent("../../input/src/Input.tsx"),
+      readComponent("../../select/src/SelectValue.tsx"),
+      readComponent("../../text-area/src/TextArea.tsx")
     ];
 
     for (const control of controls) {
       expect(control).toContain("useFieldShouldShowPlaceholder");
     }
 
-    expect(controls[1]).toContain(
-      "displayValue || (shouldShowPlaceholder ? placeholder : undefined)"
-    );
+    expect(controls[1]).toContain("!value && shouldShowPlaceholder");
   });
 });
 
 describe("floating field label visibility", () => {
   it("returns empty blurred labels to their inline position even when a placeholder exists", () => {
-    const field = readComponent("./Field.tsx");
-    const floated = getDeclaration(field, "useFieldLabelFloated");
+    const floated = getDeclaration(formControlSource(), "useFieldLabelFloated");
 
-    expect(floated).toContain("(hasValue || Boolean(focused))");
+    expect(floated).toContain(
+      "(hasFieldValue(formControl?.formattedValue) || Boolean(formControl?.focused))"
+    );
   });
 });
 
@@ -161,7 +164,7 @@ describe("floating required field labels", () => {
       "FieldLabelTextImpl"
     );
 
-    expect(label).toContain('width={`${floating ? "md" : "xl"}`}');
+    expect(label).toContain('width={`${floating ? "sm" : "md"}`}');
   });
 });
 

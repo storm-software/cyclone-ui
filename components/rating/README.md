@@ -109,6 +109,15 @@ import { Rating } from "@cyclone-ui/rating";
 
 // Custom icon and maximum
 <Rating icon={Heart} max={10} defaultValue={7} />
+
+// Connected to a form: inside a `Field`, the rating reads its value, size and
+// disabled state from the field, and `Field.Label` targets it
+<Form name="review" initialValues={{ rating: 3 }}>
+  <Field name="rating">
+    <Field.Label>Rating</Field.Label>
+    <Rating />
+  </Field>
+</Form>
 ```
 
 | Prop | Default | Description |

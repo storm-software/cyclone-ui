@@ -9,7 +9,9 @@
     "directory": "components/feedback"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -24,7 +26,8 @@
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/like-button": "workspace:*",
     "@cyclone-ui/popover": "workspace:*",
-    "@cyclone-ui/text-area-field": "workspace:*",
+    "@cyclone-ui/text-area": "workspace:*",
+    "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/toggle": "workspace:*",
     "@tamagui/core": "catalog:"
   },

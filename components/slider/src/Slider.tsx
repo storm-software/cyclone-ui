@@ -17,11 +17,12 @@
  ------------------------------------------------------------------- */
 
 import type { FormControlSize } from "@cyclone-ui/helpers";
+import { useFormControl } from "@cyclone-ui/helpers";
 import type { TamaguiElement } from "@tamagui/core";
 import { Text, View } from "@tamagui/core";
 import type { SliderProps as TamaguiSliderProps } from "@tamagui/slider";
 import { Slider as TamaguiSlider } from "@tamagui/slider";
-import type { ReactNode } from "react";
+import type { FocusEvent, ReactNode } from "react";
 import { forwardRef, useCallback, useMemo, useRef, useState } from "react";
 
 export type SliderSize = FormControlSize;
@@ -175,32 +176,77 @@ const isFilled = (
  * Tamagui `Slider`.
  */
 export const Slider = forwardRef<TamaguiElement, SliderProps>(
-  (
-    {
-      value: valueProp,
+  (allProps, forwardedRef) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the slider to the form.
+    const formControl = useFormControl();
+    const formOnChange = formControl?.onChange;
+    const formOnBlur = formControl?.onBlur;
+    const handleFormBlur = useCallback(
+      (event: FocusEvent<HTMLElement>) => {
+        // Moving focus between the thumbs of a range slider stays in the field.
+        if (
+          (
+            event.currentTarget as unknown as {
+              contains: (target: EventTarget | null) => boolean;
+            }
+          ).contains(event.relatedTarget)
+        ) {
+          return;
+        }
+
+        formOnBlur?.();
+      },
+      [formOnBlur]
+    );
+    const {
+      value: controlledValue,
       defaultValue,
       min = 0,
       max = 100,
       step = 1,
       orientation = "horizontal",
       dir,
-      disabled = false,
-      size = "md",
+      name = formControl?.name,
+      disabled = formControl?.disabled ?? false,
+      size = formControl?.size ?? "md",
       marks = false,
       track = "normal",
       valueLabelDisplay = "off",
       valueLabelFormat,
-      "aria-labelledby": ariaLabelledBy,
+      // The thumbs are not labelable elements, so they reference the field
+      // label by id rather than through its `htmlFor`.
+      "aria-labelledby": ariaLabelledBy = formControl
+        ? `${formControl.name}-label`
+        : undefined,
       getAriaLabel,
       getAriaValueText,
-      onChange,
+      onChange: onChangeProp,
       onChangeCommitted,
       onSlideStart,
       onSlideEnd,
+      onFocus = formControl?.onFocus,
+      onBlur = formOnBlur
+        ? (handleFormBlur as SliderProps["onBlur"])
+        : undefined,
       ...props
-    },
-    forwardedRef
-  ) => {
+    } = allProps;
+    // A slider always shows a value, so inside a form control it shows the
+    // control's value, then `defaultValue` (an array for a range), or the
+    // minimum.
+    const valueProp =
+      controlledValue ??
+      (formControl ? (formControl.value ?? defaultValue ?? min) : undefined);
+    const onChange = useMemo(
+      () =>
+        formOnChange
+          ? (next: SliderValue, activeThumb: number) => {
+              formOnChange(next);
+              onChangeProp?.(next, activeThumb);
+            }
+          : onChangeProp,
+      [formOnChange, onChangeProp]
+    );
     const range = Array.isArray(valueProp ?? defaultValue);
     const controlled = valueProp !== undefined;
     const [uncontrolledValues, setUncontrolledValues] = useState(
@@ -319,6 +365,9 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
         marginRight={labelled && vertical ? 44 : undefined}
         height={vertical ? 200 : undefined}
         {...props}
+        name={name}
+        onFocus={onFocus}
+        onBlur={onBlur}
         ref={forwardedRef}
         // The frame is the pressable area, and the track is centred inside it.
         {...(vertical ? { width: geometry.hit } : { height: geometry.hit })}

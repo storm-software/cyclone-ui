@@ -16,21 +16,37 @@
 
  ------------------------------------------------------------------- */
 
-import type { FieldLabelPlacement } from "@cyclone-ui/field";
+import type {
+  FieldLabelPlacement,
+  FormControlSize
+} from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
   getFieldLabelInset,
+  getFormFontScale,
+  getFormSizeScale,
   useFieldHasValidationMessage,
-  useFieldLabelPlacement
-} from "@cyclone-ui/field";
-import type { FormControlSize } from "@cyclone-ui/helpers";
-import { getFormFontScale, getFormSizeScale } from "@cyclone-ui/helpers";
+  useFieldLabelDefaults,
+  useFieldLabelPlacement,
+  useFieldShouldShowPlaceholder,
+  useFieldVariant,
+  useFormControl
+} from "@cyclone-ui/helpers";
 import type { InputContextProps } from "@cyclone-ui/input";
 import { ControlUnderline } from "@cyclone-ui/input";
 import { InputValue } from "@cyclone-ui/input/InputValue";
 import type { GetProps } from "@tamagui/core";
-import { createStyledHOC, styled, View } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  Theme,
+  useComposedRefs,
+  View
+} from "@tamagui/core";
 import { useCallback, useState } from "react";
+
+// Text areas float their field label by default.
+const FLOATING_LABEL = { variant: "floating" } as const;
 
 const isFormControlSize = (value: unknown): value is FormControlSize =>
   value === "sm" || value === "md" || value === "lg";
@@ -140,22 +156,48 @@ const TextAreaDecorationFrame = styled(View, {
 export const TextArea = createStyledHOC(
   TextAreaFrame,
   (
-    {
-      rows = 3,
-      render: _render,
-      focused: focusedProp,
-      disabled = false,
-      placeholderTextColor = "onAccentDisabled",
-      onBlur,
-      onFocus,
-      variant = "outlined",
-      ...props
-    }: GetProps<typeof TextAreaFrame> &
+    props: GetProps<typeof TextAreaFrame> &
       Partial<
         Pick<InputContextProps, "size" | "focused" | "variant" | "disabled">
       >,
     forwardedRef
   ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the text area to the form.
+    const formControl = useFormControl();
+    const fieldVariant = useFieldVariant(props.placeholder);
+    useFieldLabelDefaults(FLOATING_LABEL);
+    const formOnChange = formControl?.onChange;
+    const formOnBlur = formControl?.onBlur;
+    const {
+      rows = 3,
+      render: _render,
+      focused: focusedProp = formControl?.focused,
+      disabled = formControl?.disabled ?? false,
+      placeholderTextColor = "onAccentDisabled",
+      onBlur = formOnBlur
+        ? // Focus moving within the text area is not a blur.
+          (event: TextAreaFocusEvent) => {
+            if (!event?.currentTarget?.contains?.(event.relatedTarget)) {
+              formOnBlur();
+            }
+          }
+        : undefined,
+      onFocus = formControl?.onFocus,
+      onChange = formOnChange
+        ? (event: CustomEvent<string>) => formOnChange(event.detail)
+        : undefined,
+      variant = formControl ? fieldVariant : "outlined",
+      name = formControl?.name,
+      size = formControl?.size,
+      value = formControl?.formattedValue,
+      placeholder,
+      ...rest
+    } = props;
+    const shouldShowPlaceholder = useFieldShouldShowPlaceholder(
+      formControl?.formattedValue
+    );
+    const ref = useComposedRefs(forwardedRef, formControl?.inputRef);
     const [focused, setActive] = useState(false);
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
@@ -180,11 +222,16 @@ export const TextArea = createStyledHOC(
 
     const textArea = (
       <TextAreaFrame
-        ref={forwardedRef}
+        ref={ref}
         render="textarea"
         type="textarea"
         rows={rows}
-        {...props}
+        {...rest}
+        name={name}
+        size={size}
+        value={value}
+        onChange={onChange}
+        placeholder={shouldShowPlaceholder ? placeholder : undefined}
         placeholderTextColor={placeholderTextColor}
         focused={isFocused}
         hasValidationMessage={hasValidationMessage}
@@ -203,23 +250,28 @@ export const TextArea = createStyledHOC(
       />
     );
 
-    if (variant === "outlined" && labelPlacement !== "border") {
-      return textArea;
-    }
+    const content =
+      variant === "outlined" && labelPlacement !== "border" ? (
+        textArea
+      ) : (
+        <TextAreaDecorationFrame>
+          {textArea}
+          {variant === "outlined" ? (
+            <FieldNotchedOutline borderColor={borderColor} />
+          ) : variant === "underlined" ? (
+            <ControlUnderline
+              focused={isFocused}
+              disabled={disabled}
+              backgroundColor={disabled ? "accentDisabled" : focusColor}
+            />
+          ) : null}
+        </TextAreaDecorationFrame>
+      );
 
-    return (
-      <TextAreaDecorationFrame>
-        {textArea}
-        {variant === "outlined" ? (
-          <FieldNotchedOutline borderColor={borderColor} />
-        ) : variant === "underlined" ? (
-          <ControlUnderline
-            focused={isFocused}
-            disabled={disabled}
-            backgroundColor={disabled ? "accentDisabled" : focusColor}
-          />
-        ) : null}
-      </TextAreaDecorationFrame>
+    return formControl?.theme ? (
+      <Theme name={formControl.theme}>{content}</Theme>
+    ) : (
+      content
     );
   },
   { displayName: "TextArea" }

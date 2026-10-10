@@ -25,6 +25,7 @@
  * @packageDocumentation
  */
 
+export * from "./form-control";
 export * from "./form-size";
 export * from "./get-button-sized";
 export * from "./get-colors";

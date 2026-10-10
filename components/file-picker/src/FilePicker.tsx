@@ -19,7 +19,6 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { BytesText } from "@cyclone-ui/bytes-text";
-import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import type { FormControlSize, StyleEnv } from "@cyclone-ui/helpers";
 import {
@@ -29,7 +28,9 @@ import {
   getFormSizeScale,
   getFormSizeToken,
   getSized,
-  getSpaced
+  getSpaced,
+  useFieldHasValidationMessage,
+  useFormControl
 } from "@cyclone-ui/helpers";
 import { Dot, DownloadSimple, Trash, Upload, X } from "@cyclone-ui/icons";
 import { LabelText } from "@cyclone-ui/label-text";
@@ -216,21 +217,26 @@ export interface PickFileProps {
 const FilePickerGroup = createStyledHOC(
   FilePickerGroupFrame,
   (
-    {
+    props: GetProps<typeof FilePickerGroupFrame> &
+      Partial<FilePickerContextProps>,
+    forwardedRef
+  ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the picker to the form.
+    const formControl = useFormControl();
+    const {
       children,
-      size = "md",
+      size = formControl?.size ?? "md",
       variant = "dropzone",
-      files = [],
-      onChange,
-      disabled = false,
+      files = formControl?.value ?? [],
+      onChange = formControl?.onChange,
+      disabled = formControl?.disabled ?? false,
       typeOfPicker = "file",
       mediaTypes = [MediaTypeOptions.All],
       max = 1,
       name,
-      ...props
-    }: GetProps<typeof FilePickerGroupFrame> & Partial<FilePickerContextProps>,
-    forwardedRef
-  ) => {
+      ...rest
+    } = props;
     const hasValidationMessage = useFieldHasValidationMessage();
     const handlePick = useCallback(
       async ({ webFiles, nativeFiles }: PickFileProps) => {
@@ -306,7 +312,7 @@ const FilePickerGroup = createStyledHOC(
     return (
       // @ts-ignore reason: getRootProps() which is web specific return some react-native incompatible props, but it's fine
       <FilePickerGroupFrame
-        {...props}
+        {...rest}
         {...rootProps}
         size={size}
         variant={variant}
@@ -318,7 +324,7 @@ const FilePickerGroup = createStyledHOC(
         // The animated frame writes Tamagui's implicit `solid` border default
         // inline, which beats the `dashed` class from the styled config.
         style={[
-          props.style,
+          rest.style,
           { borderStyle: variant === "simple" ? "solid" : "dashed" }
         ]}
         onClick={handleOpen}
@@ -347,7 +353,20 @@ const FilePickerGroup = createStyledHOC(
             {...getInputProps()}
           />
 
-          {children}
+          {children ??
+            (formControl && (
+              <>
+                <FilePickerFiles>
+                  {files &&
+                    files.map(file => (
+                      <FilePickerFile key={file.id} {...file} />
+                    ))}
+                </FilePickerFiles>
+                <FilePickerTrigger>
+                  <FilePickerTriggerButton />
+                </FilePickerTrigger>
+              </>
+            ))}
         </FilePickerContext.Provider>
       </FilePickerGroupFrame>
     );

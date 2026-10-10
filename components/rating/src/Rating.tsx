@@ -19,7 +19,11 @@
 import type { ConfettiBurstHandle } from "@cyclone-ui/confetti-burst";
 import { ConfettiBurst } from "@cyclone-ui/confetti-burst";
 import type { FormControlSize } from "@cyclone-ui/helpers";
-import { getFormSizeScale } from "@cyclone-ui/helpers";
+import {
+  getFormSizeScale,
+  useFieldHasValidationMessage,
+  useFormControl
+} from "@cyclone-ui/helpers";
 import type { IconComponent, IconWeight } from "@cyclone-ui/icons";
 import { Star } from "@cyclone-ui/icons";
 import type {
@@ -29,7 +33,7 @@ import type {
   ViewProps
 } from "@tamagui/core";
 import { View } from "@tamagui/core";
-import { forwardRef, useCallback, useRef, useState } from "react";
+import { forwardRef, useCallback, useMemo, useRef, useState } from "react";
 
 export type RatingSize = FormControlSize;
 export type RatingColor = ColorTokens | ThemeTokens | (string & {});
@@ -105,31 +109,53 @@ const defaultGetLabelText = (value: number) =>
 
 /** A row of icons for displaying and selecting a rating. */
 export const Rating = forwardRef<TamaguiElement, RatingProps>(
-  (
-    {
-      value: valueProp,
+  (allProps, forwardedRef) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the rating to the form.
+    const formControl = useFormControl();
+    const hasValidationMessage = useFieldHasValidationMessage();
+    const formOnChange = formControl?.onChange;
+    const {
+      value: controlledValue,
       defaultValue = null,
       max = 5,
       precision = 1,
-      onChange,
+      onChange: onChangeProp,
       onChangeActive,
       readOnly = false,
-      disabled = false,
-      size = "md",
+      disabled = formControl?.disabled ?? false,
+      size = formControl?.size ?? "md",
       icon: Icon = Star,
       emptyIcon: EmptyIcon = Icon,
       iconWeight = "fill",
       emptyIconWeight = "regular",
       color = "accent",
-      emptyColor = "hairline",
+      emptyColor = hasValidationMessage ? "accent" : "hairline",
       highlightSelectedOnly = false,
       getLabelText = defaultGetLabelText,
       onKeyDown,
       onMouseLeave,
+      // The field label's `htmlFor` targets this id, and the Tamagui `Label`
+      // links it back to the rating with `aria-labelledby`.
+      id = formControl?.name,
+      onFocus = formControl?.onFocus,
+      onBlur = formControl?.onBlur,
       ...props
-    },
-    forwardedRef
-  ) => {
+    } = allProps;
+    const valueProp =
+      controlledValue === undefined && formControl
+        ? (formControl.value ?? null)
+        : controlledValue;
+    const onChange = useMemo(
+      () =>
+        formOnChange
+          ? (next: number | null) => {
+              formOnChange(next);
+              onChangeProp?.(next);
+            }
+          : onChangeProp,
+      [formOnChange, onChangeProp]
+    );
     const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
     const [hover, setHover] = useState<number | null>(null);
     const penultimateConfetti = useRef<ConfettiBurstHandle>(null);
@@ -230,6 +256,9 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
     return (
       <View
         {...props}
+        id={id}
+        onFocus={onFocus}
+        onBlur={onBlur}
         ref={forwardedRef}
         flexDirection="row"
         alignSelf="flex-start"

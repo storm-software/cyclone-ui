@@ -9,12 +9,48 @@
     "directory": "packages/stylelint-plugin"
   },
   "private": false,
+  "dependencies": {
+    "@razorwind/stylelint": "catalog:"
+  },
   "devDependencies": {
-    "@razorwind/stylelint": "catalog:",
     "@powerlines/plugin-tsdown": "catalog:",
     "powerlines": "catalog:"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./*": "./*",
+    "./runtime": {
+      "require": {
+        "types": "./dist/runtime.d.cts",
+        "default": "./dist/runtime.cjs"
+      },
+      "import": {
+        "types": "./dist/runtime.d.mts",
+        "default": "./dist/runtime.mjs"
+      },
+      "default": {
+        "types": "./dist/runtime.d.mts",
+        "default": "./dist/runtime.mjs"
+      }
+    }
   }
 }

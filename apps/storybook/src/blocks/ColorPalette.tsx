@@ -204,7 +204,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options."}
       colors={{
             "emphasis": "#cacacb",
             "body": "#b0b0b1",
@@ -953,7 +953,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options."}
       colors={{
             "emphasis": "#b4b4b4",
             "body": "#a1a1a2",
@@ -1702,7 +1702,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options."}
       colors={{
             "emphasis": "#ebebed",
             "body": "#c3c3ca",
@@ -2451,7 +2451,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options."}
       colors={{
             "emphasis": "#2b2c30",
             "body": "#555659",
@@ -3200,7 +3200,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options."}
       colors={{
             "emphasis": "#444548",
             "body": "#626364",
@@ -3949,7 +3949,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink"}
-      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options."}
+      subtitle={"Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options."}
       colors={{
             "emphasis": "#08080a",
             "body": "#3f424a",

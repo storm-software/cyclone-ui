@@ -17,13 +17,27 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import type { FieldLabelPlacement } from "@cyclone-ui/field";
-import { getFieldLabelInset, useFieldLabelPlacement } from "@cyclone-ui/field";
-import type { FormControlSize } from "@cyclone-ui/helpers";
-import { formSizeVariants } from "@cyclone-ui/helpers";
+import type {
+  FieldLabelPlacement,
+  FormControlSize
+} from "@cyclone-ui/helpers";
+import {
+  formSizeVariants,
+  getFieldLabelInset,
+  useFieldLabelPlacement,
+  useFieldShouldShowPlaceholder,
+  useFieldVariant,
+  useFormControl
+} from "@cyclone-ui/helpers";
 import type { InputVariant } from "@cyclone-ui/input";
 import type { GetProps } from "@tamagui/core";
-import { createStyledHOC, styled, Text, View } from "@tamagui/core";
+import {
+  createStyledHOC,
+  styled,
+  Text,
+  useComposedRefs,
+  View
+} from "@tamagui/core";
 import { getSelectContentSize, SelectContext } from "./utilities";
 
 const SelectValueFrame = styled(Text, {
@@ -106,7 +120,7 @@ export const SelectValue = createStyledHOC(
   (
     {
       children,
-      placeholder,
+      placeholder: placeholderProp,
       ...props
     }: GetProps<typeof SelectValueFrame> & {
       placeholder?: string;
@@ -115,6 +129,16 @@ export const SelectValue = createStyledHOC(
   ) => {
     const { disabled, size, value, variant } = SelectContext.useStyledContext();
     const labelPlacement = useFieldLabelPlacement();
+    // Inside a form control (such as `Field`), the value registers with the
+    // form, and a resting floating label hides the placeholder.
+    const formControl = useFormControl();
+    const ref = useComposedRefs(forwardedRef, formControl?.inputRef);
+    useFieldVariant(placeholderProp);
+    const shouldShowPlaceholder = useFieldShouldShowPlaceholder(value);
+    const placeholder =
+      !formControl || (!value && shouldShowPlaceholder)
+        ? placeholderProp
+        : undefined;
     // Without children, the selected value itself, then the placeholder.
     const content = children ?? (value || placeholder);
 
@@ -122,7 +146,7 @@ export const SelectValue = createStyledHOC(
       <View flex={1} minWidth={0}>
         <SelectValueFrame
           pointerEvents="none"
-          ref={forwardedRef}
+          ref={ref}
           {...props}
           size={size}
           variant={variant}

@@ -18,13 +18,16 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../../packages/helpers"
+    },
+    {
       "path": "../popover"
     },
     {
-      "path": "../input"
+      "path": "../body-text"
     },
     {
-      "path": "../../packages/helpers"
+      "path": "../input"
     },
     {
       "path": "../heading-text"

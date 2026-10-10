@@ -16,20 +16,23 @@
 
  ------------------------------------------------------------------- */
 
-import type { FieldLabelPlacement } from "@cyclone-ui/field";
+import type {
+  FieldLabelPlacement,
+  FormControlSize
+} from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
   getFieldLabelInset,
-  useFieldHasValidationMessage,
-  useFieldLabelPlacement
-} from "@cyclone-ui/field";
-import type { FormControlSize } from "@cyclone-ui/helpers";
-import {
   getFormFontScale,
   getFormSizeScale,
   getFormSizeToken,
   getSized,
-  getSpaced
+  getSpaced,
+  useFieldHasValidationMessage,
+  useFieldLabelPlacement,
+  useFieldShouldShowPlaceholder,
+  useFieldVariant,
+  useFormControl
 } from "@cyclone-ui/helpers";
 import type { InputVariant } from "@cyclone-ui/input";
 import {
@@ -60,6 +63,9 @@ import {
 } from "./utilities";
 
 const TAG_PICKER_NAME = "TagPicker";
+
+// A stable empty value while the form has no tags for the field.
+const NO_TAGS: string[] = [];
 
 const isFormControlSize = (value: unknown): value is FormControlSize =>
   value === "sm" || value === "md" || value === "lg";
@@ -340,25 +346,48 @@ export type TagPickerProps = Omit<
 const TagPickerImpl = createStyledHOC(
   TagPickerFrame,
   (props: TagPickerProps, forwardedRef) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the picker to the form. Its text
+    // box (`Input.TextBox.Value`) registers itself with the form.
+    const formControl = useFormControl();
+    const fieldVariant = useFieldVariant(props.placeholder);
+    const shouldShowPlaceholder = useFieldShouldShowPlaceholder(
+      formControl?.formattedValue
+    );
     const {
       children,
-      value,
+      value = formControl
+        ? ((formControl.value as string[] | null | undefined) ?? NO_TAGS)
+        : undefined,
       defaultValue,
-      onChange,
-      name,
-      placeholder,
-      size = "md",
-      variant = "outlined",
-      disabled = false,
-      focused = false,
+      onChange: onChangeProp,
+      name = formControl?.name,
+      placeholder: placeholderProp,
+      size = formControl?.size ?? "md",
+      variant = formControl ? fieldVariant : "outlined",
+      disabled = formControl?.disabled ?? false,
+      focused = formControl?.focused ?? false,
       tagVariant = "secondary",
       removeButtonLabel = getTagRemoveButtonLabel,
       inputRef: inputRefProp,
-      onFocus,
-      onBlur,
+      onFocus = formControl?.onFocus,
+      onBlur = formControl?.onBlur,
       onMouseDown,
       ...rest
     } = props;
+    const placeholder = shouldShowPlaceholder ? placeholderProp : undefined;
+    const formOnChange = formControl?.onChange;
+    // A field takes every change, and an `onChange` prop still hears them.
+    const onChange = useMemo(
+      () =>
+        formOnChange
+          ? (tags: string[]) => {
+              formOnChange(tags);
+              onChangeProp?.(tags);
+            }
+          : onChangeProp,
+      [formOnChange, onChangeProp]
+    );
 
     const [uncontrolledTags, setUncontrolledTags] = useState<readonly string[]>(
       () => defaultValue ?? []
@@ -564,6 +593,7 @@ const TagPickerImpl = createStyledHOC(
             </View>
           </TagPickerContent>
           {children}
+          {formControl?.endAdornment}
           {variant === "underlined" && (
             <ControlUnderline
               bottom={-1}

@@ -111,6 +111,15 @@ import { Slider } from "@cyclone-ui/slider";
 
 // Vertical (defaults to a 200px height)
 <Slider orientation="vertical" height={300} defaultValue={30} />
+
+// Connected to a form: inside a `Field`, the slider reads its value, size and
+// disabled state from the field and labels its thumbs with `Field.Label`
+<Form name="settings" initialValues={{ volume: 30 }}>
+  <Field name="volume">
+    <Field.Label>Volume</Field.Label>
+    <Slider />
+  </Field>
+</Form>
 ```
 
 | Prop | Default | Description |

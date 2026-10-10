@@ -739,7 +739,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#cacacb",
       cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options.",
+      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
       theme: undefined,
       typography: false
     },
@@ -802,7 +802,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#242528",
       cssVar: "--cu-color-surface-floating",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant.",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
       theme: undefined,
       typography: false
     },
@@ -928,7 +928,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#333437",
       cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% brighter)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
@@ -937,7 +937,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#303134",
       cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (active, 19% brighter)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% brighter)",
       theme: undefined,
       typography: false
     },
@@ -946,7 +946,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#18191b",
       cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% darker)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -955,7 +955,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#242528",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -4913,7 +4913,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -4922,7 +4922,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -4931,7 +4931,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -4940,25 +4940,25 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-button",
-      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInputField results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
+      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-control",
-      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
+      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -4967,7 +4967,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -4994,7 +4994,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -5003,7 +5003,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,
@@ -6528,7 +6528,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#b4b4b4",
       cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options.",
+      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
       theme: undefined,
       typography: false
     },
@@ -6591,7 +6591,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#3f4043",
       cssVar: "--cu-color-surface-floating",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant.",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
       theme: undefined,
       typography: false
     },
@@ -6717,7 +6717,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#4a4b4d",
       cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% brighter)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6726,7 +6726,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#48484b",
       cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (active, 19% brighter)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6735,7 +6735,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#36373a",
       cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% darker)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -6744,7 +6744,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#3f4043",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -10702,7 +10702,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -10711,7 +10711,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -10720,7 +10720,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -10729,25 +10729,25 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-button",
-      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInputField results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
+      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-control",
-      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
+      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -10756,7 +10756,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -10783,7 +10783,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -10792,7 +10792,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,
@@ -12317,7 +12317,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#ebebed",
       cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options.",
+      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
       theme: undefined,
       typography: false
     },
@@ -12380,7 +12380,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-surface-floating",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant.",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
       theme: undefined,
       typography: false
     },
@@ -12506,7 +12506,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#121215",
       cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% brighter)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12515,7 +12515,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#0e0e11",
       cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (active, 19% brighter)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12524,7 +12524,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% darker)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -12533,7 +12533,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
       theme: undefined,
       typography: false
     },
@@ -16491,7 +16491,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -16500,7 +16500,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -16509,7 +16509,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -16518,25 +16518,25 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-button",
-      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInputField results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
+      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-control",
-      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
+      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -16545,7 +16545,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -16572,7 +16572,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -16581,7 +16581,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,
@@ -18106,7 +18106,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#2b2c30",
       cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options.",
+      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
       theme: undefined,
       typography: false
     },
@@ -18169,7 +18169,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#fafafa",
       cssVar: "--cu-color-surface-floating",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant.",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
       theme: undefined,
       typography: false
     },
@@ -18295,7 +18295,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#b2b2b2",
       cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
@@ -18304,7 +18304,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#bebebe",
       cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker)",
       theme: undefined,
       typography: false
     },
@@ -18313,7 +18313,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#ffffff",
       cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
@@ -18322,7 +18322,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#fafafa20",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -22280,7 +22280,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -22289,7 +22289,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -22298,7 +22298,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -22307,25 +22307,25 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-button",
-      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInputField results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
+      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-control",
-      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
+      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -22334,7 +22334,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -22361,7 +22361,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -22370,7 +22370,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,
@@ -23895,7 +23895,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#444548",
       cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options.",
+      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
       theme: undefined,
       typography: false
     },
@@ -23958,7 +23958,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#d5d5d5",
       cssVar: "--cu-color-surface-floating",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant.",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
       theme: undefined,
       typography: false
     },
@@ -24084,7 +24084,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#a3a3a3",
       cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
@@ -24093,7 +24093,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#ababab",
       cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker)",
       theme: undefined,
       typography: false
     },
@@ -24102,7 +24102,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#d9d9d9",
       cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
@@ -24111,7 +24111,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#d5d5d520",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -28069,7 +28069,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -28078,7 +28078,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -28087,7 +28087,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -28096,25 +28096,25 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-button",
-      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInputField results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
+      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-control",
-      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
+      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -28123,7 +28123,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -28150,7 +28150,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -28159,7 +28159,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,
@@ -29684,7 +29684,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#08080a",
       cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroupField options.",
+      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
       theme: undefined,
       typography: false
     },
@@ -29747,7 +29747,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#ffffff",
       cssVar: "--cu-color-surface-floating",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant.",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
       theme: undefined,
       typography: false
     },
@@ -29873,7 +29873,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#c9c9c9",
       cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
@@ -29882,7 +29882,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#dadada",
       cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker)",
       theme: undefined,
       typography: false
     },
@@ -29891,7 +29891,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#ffffff",
       cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
@@ -29900,7 +29900,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#ffffff20",
       cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInputField results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
+      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
       theme: undefined,
       typography: false
     },
@@ -33858,7 +33858,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -33867,7 +33867,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -33876,7 +33876,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -33885,25 +33885,25 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-xl)",
       cssVar: "--cu-border-radius-button",
-      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInputField results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
+      description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-control",
-      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup, RadioGroupField and Rating.",
+      description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
       typography: false
     },
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -33912,7 +33912,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -33939,7 +33939,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -33948,7 +33948,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,

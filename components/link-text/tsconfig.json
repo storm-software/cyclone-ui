@@ -17,6 +17,9 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../../packages/state"
+    },
+    {
       "path": "../body-text"
     }
   ],

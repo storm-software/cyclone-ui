@@ -1,48 +1,14 @@
 {
   "name": "@cyclone-ui/checkbox",
   "version": "0.5.11",
-  "type": "module",
-  "description": "A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indicator for the indeterminate state. It supports form control sizes, circular, focused and disabled states, and validation colors when placed inside a Field.",
+  "private": false,
+  "description": "A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indicator for the indeterminate state. It supports form control sizes, circular, focused and disabled states, and validation colors. Wrapped in a Field, it connects to the form: it reads its checked state, size, disabled and focused states from the field and reports changes to it.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/checkbox"
   },
-  "private": false,
-  "peerDependencies": {
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-native": "catalog:"
-  },
-  "dependencies": {
-    "@tamagui/checkbox": "catalog:",
-    "@tamagui/checkbox-headless": "catalog:",
-    "@tamagui/constants": "catalog:",
-    "@tamagui/core": "catalog:",
-    "@tamagui/create-context": "catalog:",
-    "@tamagui/get-token": "catalog:",
-    "@tamagui/group": "catalog:",
-    "@cyclone-ui/icons": "workspace:*",
-    "@tamagui/stacks": "catalog:",
-    "react-native-svg": "^15.15.5",
-    "@cyclone-ui/helpers": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*"
-  },
-  "devDependencies": {
-    "@cyclone-ui/field": "workspace:*",
-    "@cyclone-ui/form": "workspace:*",
-    "@storybook/react-vite": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-native": "catalog:"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "source": "src/index.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -53,5 +19,39 @@
       "require": "./dist/Checkbox.cjs"
     },
     "./*": "./*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "source": "src/index.ts",
+  "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*",
+    "@tamagui/checkbox": "catalog:",
+    "@tamagui/checkbox-headless": "catalog:",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/create-context": "catalog:",
+    "@tamagui/get-token": "catalog:",
+    "@tamagui/group": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "react-native-svg": "^15.15.5"
+  },
+  "devDependencies": {
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

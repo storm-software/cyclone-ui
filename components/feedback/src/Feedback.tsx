@@ -18,13 +18,14 @@
 
 import { Button } from "@cyclone-ui/button";
 import { Divider } from "@cyclone-ui/divider";
+import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import { getFormSizeScale } from "@cyclone-ui/helpers";
 import { ThumbsDown } from "@cyclone-ui/icons";
 import { LikeButton } from "@cyclone-ui/like-button";
 import { Popover } from "@cyclone-ui/popover";
-import { TextAreaField } from "@cyclone-ui/text-area-field";
+import { TextArea } from "@cyclone-ui/text-area";
 import { Toggle } from "@cyclone-ui/toggle";
 import type { TamaguiElement, ViewProps } from "@tamagui/core";
 import { View } from "@tamagui/core";
@@ -163,15 +164,10 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
               onSubmit={handleSubmit}>
               {/* `Form` does not forward style props to its frame. */}
               <View gap="3xl" width="100%">
-                <TextAreaField
-                  name="comment"
-                  required={true}
-                  placeholder={commentPlaceholder}>
-                  <TextAreaField.Label variant="above">
-                    {commentLabel}
-                  </TextAreaField.Label>
-                  <TextAreaField.Control rows={3} />
-                </TextAreaField>
+                <Field name="comment" required={true}>
+                  <Field.Label variant="above">{commentLabel}</Field.Label>
+                  <TextArea placeholder={commentPlaceholder} rows={3} />
+                </Field>
                 <Form.Submit asChild={true}>
                   <Button variant="primary" alignSelf="flex-end">
                     <Button.Text>Send feedback</Button.Text>

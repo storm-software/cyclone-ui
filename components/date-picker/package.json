@@ -2,20 +2,24 @@
   "name": "@cyclone-ui/date-picker",
   "version": "0.5.11",
   "type": "module",
-  "description": "A date input with a masked text box and a calendar popover that has day, month and year views. It supports single-date or start/end range selection, a configurable separator, and onChange, onDatesChange and onInput callbacks.",
+  "description": "A date input with a masked text box and a calendar popover that has day, month and year views. It supports single-date or start/end range selection, a configurable separator, and onChange, onDatesChange and onInput callbacks. When wrapped in a Field it connects to the form, formatting, parsing and masking the field's value for its mode and separator.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/date-picker"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@maskito/core": "catalog:",
+    "@maskito/kit": "^3.11.1",
     "@rehookify/datepicker": "catalog:",
     "@stryke/date": "catalog:",
     "@stryke/hooks": "catalog:",
@@ -58,7 +62,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

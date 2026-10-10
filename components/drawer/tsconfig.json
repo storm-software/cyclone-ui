@@ -24,6 +24,15 @@
       "path": "../sheet"
     },
     {
+      "path": "../scroll-view"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
       "path": "../button"
     }
   ]

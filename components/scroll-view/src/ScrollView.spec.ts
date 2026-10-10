@@ -46,8 +46,6 @@ describe("ScrollView", () => {
     );
 
     for (const path of [
-      "../../phone-number-input-field/src/PhoneNumberInputField.tsx",
-      "../../search-input-field/src/SearchInputField.tsx",
       "../../data-table/src/DataTable.tsx"
     ]) {
       expect(readConsumer(path)).toMatch(

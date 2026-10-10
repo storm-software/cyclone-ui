@@ -1187,7 +1187,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_ID
    * @alias SHELL_SHOCK_BUILD_ID
-   * @defaultValue "0f9e4d38-9357-4837-852c-82cbc757c274"
+   * @defaultValue "0eedfc67-b3f5-4509-9068-b61864fe17b8"
    */
   CYCLONE_UI_BUILD_ID: string;
 
@@ -1196,7 +1196,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_TIMESTAMP
    * @alias SHELL_SHOCK_BUILD_TIMESTAMP
-   * @defaultValue "2026-10-07T08:40:44.267Z"
+   * @defaultValue "2026-10-10T22:21:13.146Z"
    */
   CYCLONE_UI_BUILD_TIMESTAMP: string;
 
@@ -1214,7 +1214,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias RELEASE_ID
    * @alias SHELL_SHOCK_RELEASE_ID
-   * @defaultValue "9e4d3893-5788-47c5-ac82-cbc757c27454"
+   * @defaultValue "edfc67b3-f5c5-4990-a8b6-1864fe17b84f"
    */
   CYCLONE_UI_RELEASE_ID: string;
 
@@ -2321,7 +2321,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_ID
    * @alias CYCLONE_UI_BUILD_ID
-   * @defaultValue "0f9e4d38-9357-4837-852c-82cbc757c274"
+   * @defaultValue "0eedfc67-b3f5-4509-9068-b61864fe17b8"
    */
   SHELL_SHOCK_BUILD_ID: string;
 
@@ -2330,7 +2330,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_TIMESTAMP
    * @alias CYCLONE_UI_BUILD_TIMESTAMP
-   * @defaultValue "2026-10-07T08:40:44.267Z"
+   * @defaultValue "2026-10-10T22:21:13.146Z"
    */
   SHELL_SHOCK_BUILD_TIMESTAMP: string;
 
@@ -2348,7 +2348,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias RELEASE_ID
    * @alias CYCLONE_UI_RELEASE_ID
-   * @defaultValue "9e4d3893-5788-47c5-ac82-cbc757c27454"
+   * @defaultValue "edfc67b3-f5c5-4990-a8b6-1864fe17b84f"
    */
   SHELL_SHOCK_RELEASE_ID: string;
 
@@ -3762,7 +3762,7 @@ export function parseSafe(
           envValue["BUILD_ID"];
         const buildIdPath = envPath + ".BUILD_ID";
         if (buildIdValue === undefined || buildIdValue === "") {
-          buildIdProperty = "0f9e4d38-9357-4837-852c-82cbc757c274";
+          buildIdProperty = "0eedfc67-b3f5-4509-9068-b61864fe17b8";
         } else {
           if (typeof buildIdValue === "string") {
             buildIdProperty = buildIdValue;
@@ -3781,7 +3781,7 @@ export function parseSafe(
         }
         envSchema["BUILD_ID"] = buildIdProperty;
       } else {
-        envSchema["BUILD_ID"] = "0f9e4d38-9357-4837-852c-82cbc757c274";
+        envSchema["BUILD_ID"] = "0eedfc67-b3f5-4509-9068-b61864fe17b8";
       }
       if (
         (envValue["CYCLONE_UI_BUILD_TIMESTAMP"] ||
@@ -3795,7 +3795,7 @@ export function parseSafe(
           envValue["BUILD_TIMESTAMP"];
         const buildTimestampPath = envPath + ".BUILD_TIMESTAMP";
         if (buildTimestampValue === undefined || buildTimestampValue === "") {
-          buildTimestampProperty = "2026-10-07T08:40:44.267Z";
+          buildTimestampProperty = "2026-10-10T22:21:13.146Z";
         } else {
           if (typeof buildTimestampValue === "string") {
             buildTimestampProperty = buildTimestampValue;
@@ -3814,7 +3814,7 @@ export function parseSafe(
         }
         envSchema["BUILD_TIMESTAMP"] = buildTimestampProperty;
       } else {
-        envSchema["BUILD_TIMESTAMP"] = "2026-10-07T08:40:44.267Z";
+        envSchema["BUILD_TIMESTAMP"] = "2026-10-10T22:21:13.146Z";
       }
       if (
         (envValue["CYCLONE_UI_BUILD_CHECKSUM"] ||
@@ -3861,7 +3861,7 @@ export function parseSafe(
           envValue["RELEASE_ID"];
         const releaseIdPath = envPath + ".RELEASE_ID";
         if (releaseIdValue === undefined || releaseIdValue === "") {
-          releaseIdProperty = "9e4d3893-5788-47c5-ac82-cbc757c27454";
+          releaseIdProperty = "edfc67b3-f5c5-4990-a8b6-1864fe17b84f";
         } else {
           if (typeof releaseIdValue === "string") {
             releaseIdProperty = releaseIdValue;
@@ -3880,7 +3880,7 @@ export function parseSafe(
         }
         envSchema["RELEASE_ID"] = releaseIdProperty;
       } else {
-        envSchema["RELEASE_ID"] = "9e4d3893-5788-47c5-ac82-cbc757c27454";
+        envSchema["RELEASE_ID"] = "edfc67b3-f5c5-4990-a8b6-1864fe17b84f";
       }
       if (
         (envValue["CYCLONE_UI_RELEASE_TAG"] ||
@@ -4314,7 +4314,7 @@ export function parseSafe(
           envValue["FORCE_COLOR"];
         const forceColorPath = envPath + ".FORCE_COLOR";
         if (forceColorValue === undefined) {
-          forceColorProperty = "3";
+          forceColorProperty = "1";
         } else {
           if (typeof forceColorValue === "boolean") {
             forceColorProperty = forceColorValue;
@@ -4350,7 +4350,7 @@ export function parseSafe(
         }
         envSchema["FORCE_COLOR"] = forceColorProperty;
       } else {
-        envSchema["FORCE_COLOR"] = "3";
+        envSchema["FORCE_COLOR"] = "1";
       }
       if (
         (envValue["CYCLONE_UI_FORCE_HYPERLINK"] ??

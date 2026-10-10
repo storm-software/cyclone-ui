@@ -9,8 +9,10 @@
     "directory": "packages/eslint-plugin"
   },
   "private": false,
+  "dependencies": {
+    "@razorwind/eslint": "catalog:"
+  },
   "devDependencies": {
-    "@razorwind/eslint": "catalog:",
     "@powerlines/plugin-tsdown": "catalog:",
     "powerlines": "catalog:"
   },

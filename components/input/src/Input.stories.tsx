@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { FieldProps } from "@cyclone-ui/field";
+import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
@@ -33,6 +33,7 @@ type InputStoryArgs = Pick<
   "theme" | "size" | "disabled" | "required" | "validate"
 > & {
   variant?: InputProps["variant"];
+  labelVariant?: FieldLabelVariant;
   defaultValue?: string;
 };
 
@@ -41,12 +42,12 @@ const meta: Meta<InputStoryArgs> = {
   component: Input,
   tags: ["autodocs"],
   render: (
-    { defaultValue, variant, ...props }: InputStoryArgs,
+    { defaultValue, variant, labelVariant, ...props }: InputStoryArgs,
     { id }: { id: string }
   ) => (
     <Form name={`formName-${id}`} initialValues={{ inputName: defaultValue }}>
       <Field name="inputName" {...props} variant={variant}>
-        <Field.Label>Label Text</Field.Label>
+        <Field.Label variant={labelVariant}>Label Text</Field.Label>
         <Input variant={variant} size={props.size}>
           <Input.TextBox>
             <Input.TextBox.Value placeholder="email@example.com" />

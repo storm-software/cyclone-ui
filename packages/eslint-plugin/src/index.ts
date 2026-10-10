@@ -7,9 +7,9 @@
 //     designSystem({ files: ["src/**/*.{ts,tsx}"] })
 //   ];
 
-import { createDesignSystemPlugin } from "./runtime";
+import { createDesignSystemPlugin, type DesignSystemManifest } from "./runtime";
 
-export const manifest = {
+export const manifest: DesignSystemManifest = {
   "name": "cyclone-ui",
   "version": "0.0.0",
   "prefix": "cyclone-ui",
@@ -92,7 +92,7 @@ export const manifest = {
       "cssVar": "--storm-border-radius-button",
       "type": "dimension",
       "category": "radius",
-      "value": "0.5rem",
+      "value": "0.75rem",
       "alias": true
     },
     {
@@ -100,7 +100,7 @@ export const manifest = {
       "cssVar": "--storm-border-radius-card",
       "type": "dimension",
       "category": "radius",
-      "value": "0.375rem",
+      "value": "0.75rem",
       "alias": true
     },
     {
@@ -108,7 +108,7 @@ export const manifest = {
       "cssVar": "--storm-border-radius-checkbox",
       "type": "dimension",
       "category": "radius",
-      "value": "0.375rem",
+      "value": "0.5rem",
       "alias": true
     },
     {
@@ -116,7 +116,7 @@ export const manifest = {
       "cssVar": "--storm-border-radius-container",
       "type": "dimension",
       "category": "radius",
-      "value": "0.375rem",
+      "value": "0.75rem",
       "alias": true
     },
     {
@@ -124,7 +124,7 @@ export const manifest = {
       "cssVar": "--storm-border-radius-control",
       "type": "dimension",
       "category": "radius",
-      "value": "0.375rem",
+      "value": "0.5rem",
       "alias": true
     },
     {
@@ -132,7 +132,7 @@ export const manifest = {
       "cssVar": "--storm-border-radius-dialog",
       "type": "dimension",
       "category": "radius",
-      "value": "0.75rem",
+      "value": "1rem",
       "alias": true
     },
     {
@@ -169,7 +169,7 @@ export const manifest = {
       "cssVar": "--storm-border-radius-popover",
       "type": "dimension",
       "category": "radius",
-      "value": "0.375rem",
+      "value": "0.5rem",
       "alias": true
     },
     {
@@ -192,7 +192,7 @@ export const manifest = {
       "cssVar": "--storm-border-radius-tooltip",
       "type": "dimension",
       "category": "radius",
-      "value": "0.375rem",
+      "value": "0.5rem",
       "alias": true
     },
     {
@@ -200,7 +200,7 @@ export const manifest = {
       "cssVar": "--storm-border-radius-trigger",
       "type": "dimension",
       "category": "radius",
-      "value": "0.25rem",
+      "value": "0.5rem",
       "alias": true
     },
     {
@@ -4640,13 +4640,6 @@ export const manifest = {
       ]
     },
     {
-      "name": "@cyclone-ui/checkbox-field",
-      "jsx": [
-        "CheckboxField"
-      ],
-      "roles": []
-    },
-    {
       "name": "@cyclone-ui/circular-progress",
       "jsx": [
         "CircularProgress"
@@ -4705,13 +4698,6 @@ export const manifest = {
       "roles": []
     },
     {
-      "name": "@cyclone-ui/date-picker-field",
-      "jsx": [
-        "DatePickerField"
-      ],
-      "roles": []
-    },
-    {
       "name": "@cyclone-ui/dialog",
       "jsx": [
         "Dialog"
@@ -4757,13 +4743,6 @@ export const manifest = {
       "name": "@cyclone-ui/file-picker",
       "jsx": [
         "FilePicker"
-      ],
-      "roles": []
-    },
-    {
-      "name": "@cyclone-ui/file-picker-field",
-      "jsx": [
-        "FilePickerField"
       ],
       "roles": []
     },
@@ -4826,13 +4805,6 @@ export const manifest = {
       ]
     },
     {
-      "name": "@cyclone-ui/input-field",
-      "jsx": [
-        "InputField"
-      ],
-      "roles": []
-    },
-    {
       "name": "@cyclone-ui/label-text",
       "jsx": [
         "LabelText"
@@ -4884,9 +4856,9 @@ export const manifest = {
       "roles": []
     },
     {
-      "name": "@cyclone-ui/number-input-field",
+      "name": "@cyclone-ui/number-input",
       "jsx": [
-        "NumberInputField"
+        "NumberInput"
       ],
       "roles": []
     },
@@ -4898,9 +4870,9 @@ export const manifest = {
       "roles": []
     },
     {
-      "name": "@cyclone-ui/otp-input-field",
+      "name": "@cyclone-ui/otp-input",
       "jsx": [
-        "OtpInputField"
+        "OtpInput"
       ],
       "roles": []
     },
@@ -4926,9 +4898,9 @@ export const manifest = {
       "roles": []
     },
     {
-      "name": "@cyclone-ui/password-input-field",
+      "name": "@cyclone-ui/password-input",
       "jsx": [
-        "PasswordInputField"
+        "PasswordInput"
       ],
       "roles": []
     },
@@ -4940,9 +4912,9 @@ export const manifest = {
       "roles": []
     },
     {
-      "name": "@cyclone-ui/phone-number-input-field",
+      "name": "@cyclone-ui/phone-number-input",
       "jsx": [
-        "PhoneNumberInputField"
+        "PhoneNumberInput"
       ],
       "roles": []
     },
@@ -4977,23 +4949,9 @@ export const manifest = {
       ]
     },
     {
-      "name": "@cyclone-ui/radio-group-field",
-      "jsx": [
-        "RadioGroupField"
-      ],
-      "roles": []
-    },
-    {
       "name": "@cyclone-ui/rating",
       "jsx": [
         "Rating"
-      ],
-      "roles": []
-    },
-    {
-      "name": "@cyclone-ui/rating-field",
-      "jsx": [
-        "RatingField"
       ],
       "roles": []
     },
@@ -5012,9 +4970,9 @@ export const manifest = {
       "roles": []
     },
     {
-      "name": "@cyclone-ui/search-input-field",
+      "name": "@cyclone-ui/search-input",
       "jsx": [
-        "SearchInputField"
+        "SearchInput"
       ],
       "roles": []
     },
@@ -5026,13 +4984,6 @@ export const manifest = {
       "roles": [
         "select"
       ]
-    },
-    {
-      "name": "@cyclone-ui/select-field",
-      "jsx": [
-        "SelectField"
-      ],
-      "roles": []
     },
     {
       "name": "@cyclone-ui/sheet",
@@ -5049,13 +5000,6 @@ export const manifest = {
       "roles": [
         "range"
       ]
-    },
-    {
-      "name": "@cyclone-ui/slider-field",
-      "jsx": [
-        "SliderField"
-      ],
-      "roles": []
     },
     {
       "name": "@cyclone-ui/spinner",
@@ -5075,13 +5019,6 @@ export const manifest = {
       "name": "@cyclone-ui/switch",
       "jsx": [
         "Switch"
-      ],
-      "roles": []
-    },
-    {
-      "name": "@cyclone-ui/switch-field",
-      "jsx": [
-        "SwitchField"
       ],
       "roles": []
     },
@@ -5121,13 +5058,6 @@ export const manifest = {
       "roles": []
     },
     {
-      "name": "@cyclone-ui/tag-picker-field",
-      "jsx": [
-        "TagPickerField"
-      ],
-      "roles": []
-    },
-    {
       "name": "@cyclone-ui/text-area",
       "jsx": [
         "TextArea"
@@ -5135,13 +5065,6 @@ export const manifest = {
       "roles": [
         "textarea"
       ]
-    },
-    {
-      "name": "@cyclone-ui/text-area-field",
-      "jsx": [
-        "TextAreaField"
-      ],
-      "roles": []
     },
     {
       "name": "@cyclone-ui/themeable-gradient",
@@ -5217,7 +5140,14 @@ export const manifest = {
     }
   ],
   "icons": [],
-  "fonts": [],
+  "fonts": [
+    {
+      "family": "Storm Sans"
+    },
+    {
+      "family": "Storm Serif"
+    }
+  ],
   "tamagui": {
     "name": "cyclone-ui",
     "version": "0.0.0",
@@ -5595,6 +5525,8 @@ export const manifest = {
         "editorial-lg",
         "editorial-md",
         "eyebrow",
+        "storm-sans",
+        "storm-serif",
         "title-lg",
         "title-md",
         "title-sm",
@@ -5602,8 +5534,18 @@ export const manifest = {
         "title-xs"
       ],
       "fontSize": [
+        "1",
+        "2",
+        "3",
         "3xl",
+        "4",
+        "5",
         "5xl",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
         "lg",
         "md",
         "sm",

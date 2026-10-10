@@ -16,12 +16,17 @@
 
  ------------------------------------------------------------------- */
 
-import { useFieldHasValidationMessage } from "@cyclone-ui/field";
+import { BodyText } from "@cyclone-ui/body-text";
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import {
   formSizeVariants,
+  getFormFontScale,
+  getFormFontSize,
   getFormSizeScale,
   getSized,
   getSpaced,
+  useFieldHasValidationMessage,
+  useFormControl,
   type FormControlSize
 } from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
@@ -33,8 +38,11 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
+import { Label } from "@tamagui/label";
 import { RadioGroup as TamaguiRadioGroup } from "@tamagui/radio-group";
 import { XStack, YStack } from "@tamagui/stacks";
+import type { FocusEvent } from "react";
+import { useCallback } from "react";
 
 export interface RadioGroupContextProps {
   name?: string;
@@ -245,6 +253,129 @@ const RadioGroupItemContainer = createStyledHOC(
   { displayName: "RadioGroupItem" }
 );
 
+const RadioGroupOptionValue = styled(Label, {
+  displayName: "RadioGroupItemValue",
+  context: RadioGroupContext,
+  render: "label",
+  transition: "200ms",
+  cursor: "pointer",
+  color: "inkEmphasis",
+  fontWeight: "normal",
+  // v2 `$true`: every configured font defines a literal `true` line height
+  lineHeight: "true",
+  wordWrap: "break-word",
+  verticalAlign: "middle",
+  variants: {
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants(size => ({ fontSize: 18 * getFormFontScale(size) }))
+    ),
+    selected: {
+      true: {
+        fontWeight: 900
+      }
+    },
+
+    disabled: {
+      true: {
+        color:
+          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled",
+        backgroundColor: "surfaceElevatedDisabled",
+        userSelect: "none",
+        cursor: "not-allowed"
+      }
+    }
+  } as const,
+  defaultVariants: {
+    selected: false,
+    disabled: false
+  }
+});
+
+const RadioGroupOptionDetails = styled(BodyText, {
+  displayName: "RadioGroupItemDetails",
+  context: RadioGroupContext,
+  transition: "200ms",
+  cursor: "pointer",
+  color: "inkBody",
+  fontSize: "md",
+  variants: {
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((size, env) => getFormFontSize(size, env, "md"))
+    ),
+    disabled: {
+      true: {
+        color:
+          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled",
+        backgroundColor: "transparent",
+        userSelect: "none",
+        cursor: "not-allowed"
+      }
+    }
+  } as const,
+  defaultVariants: {
+    disabled: false
+  }
+});
+
+/**
+ * An item rendered for one of the enclosing form control's `items`.
+ */
+const RadioGroupOption = ({
+  item,
+  onChange
+}: {
+  item: SelectOption;
+  onChange?: (value: unknown) => void;
+}) => {
+  const { value, selected, disabled, name, description } = item;
+  const hasValidationMessage = useFieldHasValidationMessage();
+  const statusIcon = useFormControl()?.statusIcon;
+
+  const handlePress = useCallback(() => {
+    if (!disabled) {
+      onChange?.(value);
+    }
+  }, [disabled, value, onChange]);
+
+  return (
+    <RadioGroupItemContainer
+      {...item}
+      group={"item" as any}
+      onPress={handlePress}
+      cursor="pointer"
+      backgroundColor={
+        selected
+          ? "surfaceElevatedActive hover:surfaceElevatedHover"
+          : "surfaceElevated hover:surfaceElevatedHover"
+      }
+      borderColor={
+        selected ? "accentHover" : hasValidationMessage ? "accent" : "hairline"
+      }
+      borderWidth={1}
+      borderRadius="control">
+      <YStack gap="md" justifyContent="flex-start" flex={1}>
+        <RadioGroupOptionValue
+          htmlFor={String(value)}
+          disabled={disabled}
+          selected={selected}
+          color="group-hover/item:inkEmphasis">
+          <HeadingSmallText>{name}</HeadingSmallText>
+        </RadioGroupOptionValue>
+        {description && (
+          <RadioGroupOptionDetails
+            disabled={disabled}
+            display="flex"
+            color="group-hover/item:inkEmphasis">
+            {description}
+          </RadioGroupOptionDetails>
+        )}
+      </YStack>
+
+      {disabled && statusIcon}
+    </RadioGroupItemContainer>
+  );
+};
+
 const RadioGroupFrame = styled(TamaguiRadioGroup, {
   displayName: "RadioGroup",
   context: RadioGroupContext,
@@ -281,28 +412,51 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
 const RadioGroupImpl = createStyledHOC(
   RadioGroupFrame,
   (
-    {
-      children,
-      name,
-      required,
-      disabled,
-      value,
-      defaultValue,
-      ...props
-    }: GetProps<typeof RadioGroupFrame> & {
+    props: GetProps<typeof RadioGroupFrame> & {
       defaultValue?: string | null;
       size?: FormControlSize;
     },
     forwardedRef
   ) => {
-    const { size } = RadioGroupContext.useStyledContext();
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the radio group to the form.
+    const formControl = useFormControl();
+    const { size: contextSize } = RadioGroupContext.useStyledContext();
+    const formOnBlur = formControl?.onBlur;
+    const handleBlur = useCallback(
+      (event: FocusEvent<HTMLElement>) => {
+        // Moving focus between the items stays in the field.
+        if (event.currentTarget.contains(event.relatedTarget)) {
+          return;
+        }
+
+        formOnBlur?.();
+      },
+      [formOnBlur]
+    );
+    const {
+      children,
+      name = formControl?.name,
+      required,
+      disabled = formControl?.disabled,
+      value = formControl?.formattedValue,
+      defaultValue = formControl?.defaultValue,
+      size = formControl?.size ?? contextSize,
+      onFocus = formControl?.onFocus,
+      onBlur = formOnBlur ? (handleBlur as typeof props.onBlur) : undefined,
+      onValueChange = formControl?.onChange,
+      ...rest
+    } = props;
 
     return (
       <RadioGroupFrame
         id={name}
         ref={forwardedRef}
         size={size}
-        {...props}
+        {...rest}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onValueChange={onValueChange}
         value={String(value ?? "")}
         defaultValue={String(defaultValue ?? "")}
         required={required}
@@ -313,7 +467,16 @@ const RadioGroupImpl = createStyledHOC(
           width="100%"
           paddingHorizontal="max-sm:5xl"
           paddingVertical="max-sm:6xl">
-          {children}
+          {/* Without children, the form control's items are rendered. */}
+          {children ??
+            formControl?.items?.map((item, i) => (
+              <RadioGroupOption
+                // eslint-disable-next-line react/no-array-index-key
+                key={i}
+                item={item}
+                onChange={formControl.onChange}
+              />
+            ))}
         </YStack>
       </RadioGroupFrame>
     );

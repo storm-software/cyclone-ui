@@ -16,12 +16,14 @@
 
  ------------------------------------------------------------------- */
 
-import { useFieldHasValidationMessage } from "@cyclone-ui/field";
 import {
   formSizeVariants,
   getFormSizeToken,
   getSized,
   getSpaced,
+  useFieldHasValidationMessage,
+  useFieldLabelDefaults,
+  useFormControl,
   type FormControlSize
 } from "@cyclone-ui/helpers";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
@@ -38,6 +40,9 @@ import {
 import { getSize } from "@tamagui/get-token";
 import { createSwitch } from "@tamagui/switch";
 import { useMemo } from "react";
+
+// A switch's field label sits compactly beside it.
+const INLINE_LABEL = { inline: { alignContent: "center" } } as const;
 
 export interface SwitchContextProps {
   size: FormControlSize;
@@ -259,20 +264,31 @@ const BaseSwitch = createSwitch({
 const BaseSwitchImpl = createStyledHOC(
   BaseSwitch,
   (
-    {
-      name,
-      size = "md",
-      disabled = false,
-      checked = false,
-      focused = false,
-      children,
-      ...props
-    }: GetProps<typeof BaseSwitch> & {
+    allProps: GetProps<typeof BaseSwitch> & {
       focused?: boolean;
       size?: FormControlSize;
     },
     forwardedRef
   ) => {
+    // Inside a form control (such as `Field`), any prop left unset falls back
+    // to the control's state, which connects the switch to the form.
+    const formControl = useFormControl();
+    useFieldLabelDefaults(INLINE_LABEL);
+    const {
+      name = formControl?.name,
+      size = formControl?.size ?? "md",
+      disabled = formControl?.disabled ?? false,
+      checked = formControl?.value || false,
+      defaultChecked = formControl
+        ? formControl.defaultValue || false
+        : undefined,
+      focused = formControl?.focused ?? false,
+      onCheckedChange = formControl?.onChange,
+      onFocus = formControl?.onFocus,
+      onBlur = formControl?.onBlur,
+      children,
+      ...props
+    } = allProps;
     const hasValidationMessage = useFieldHasValidationMessage();
     const idleColor = hasValidationMessage ? "accent" : "hairline";
     const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
@@ -293,6 +309,10 @@ const BaseSwitchImpl = createStyledHOC(
           id={name}
           size={size}
           checked={checked}
+          defaultChecked={defaultChecked}
+          onCheckedChange={onCheckedChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
           // In v2 the `hasValidationMessage` / `disabled` variants came after
           // these props and replaced their base (and, for `disabled`, focus)
           // color. v3 call-site values outrank variants, so leave those
