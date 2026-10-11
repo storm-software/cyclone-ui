@@ -101,7 +101,7 @@ const PasswordStrengthSegment = styled(View, {
 });
 
 const PasswordStrengthLabel = styled(BodyText, {
-  color: "inkBody",
+  color: "secondary",
   textAlign: "right",
   marginRight: "md"
 });

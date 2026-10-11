@@ -19,20 +19,20 @@ const readComponent = (path: string) =>
   readFileSync(new URL(path, import.meta.url), "utf8");
 
 describe("field focus colors", () => {
-  it("uses the active hairline token for an unvalidated base field", () => {
+  it("uses the active border token for an unvalidated base field", () => {
     const source = fieldIconColorSource();
 
     expect(source).toContain(
       '(!theme || theme === "base") && !formControl?.hasValidationMessage'
     );
     expect(source).toMatch(
-      /isNeutral\s*\?\s*focused\s*\?\s*"hairlineActive"\s*:\s*"hairline"/
+      /isNeutral\s*\?\s*focused\s*\?\s*"borderActive"\s*:\s*"border"/
     );
   });
 
   it("keeps the active accent token for a validation theme", () => {
     expect(fieldIconColorSource()).toMatch(
-      /:\s*focused\s*\?\s*"accentActive"\s*:\s*"accent";/
+      /:\s*focused\s*\?\s*"active"\s*:\s*"accent";/
     );
   });
 
@@ -50,12 +50,12 @@ describe("field focus colors", () => {
       readComponent("../../select/src/Select.tsx")
     ]) {
       expect(source).toContain(
-        'hasValidationMessage ? "accent" : "hairline"'
+        'hasValidationMessage ? "accent" : "border"'
       );
     }
   });
 
-  it("keeps the base hairline border when a field is not focused", () => {
+  it("keeps the base border when a field is not focused", () => {
     const fieldFrames = [
       [readComponent("../../input/src/Input.tsx"), "focused"],
       [readComponent("../../select/src/Select.tsx"), "focused"],
@@ -88,7 +88,7 @@ describe("field focus colors", () => {
 
     for (const source of components) {
       expect(source).toMatch(
-        /hasValidationMessage\s*\?\s*"accentActive"\s*:\s*"hairlineActive"/
+        /hasValidationMessage\s*\?\s*"active"\s*:\s*"borderActive"/
       );
     }
   });

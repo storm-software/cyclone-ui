@@ -199,7 +199,7 @@ const NavigationHeaderItemLink = styled(Link, {
   alignItems: "center",
   justifyContent: "center",
   display: "flex",
-  color: "inkBody hover:accent focus-visible:accent",
+  color: "secondary hover:accent focus-visible:accent",
   fontWeight: 500,
   textDecorationLine: "none hover:none",
   outlineColor: "focus-visible:accent",
@@ -233,14 +233,14 @@ const NavigationHeaderDropdown = styled(View, {
   overflow: "hidden",
   backgroundColor: "surfaceCanvas",
   borderBottomWidth: 1,
-  borderBottomColor: "hairline",
+  borderBottomColor: "border",
   display: "max-md:none",
   variants: {
     open: {
       true: {
         pointerEvents: "auto",
         clipPath: "inset(0 0 0 0)",
-        borderBottomColor: "hairline"
+        borderBottomColor: "border"
       },
       false: {
         pointerEvents: "none",
@@ -276,7 +276,7 @@ const NavigationHeaderDropdownGroup = styled(View, {
 const NavigationHeaderDropdownGroupLabel = styled(EyebrowText, {
   displayName: "NavigationHeaderDropdownGroupLabel",
   marginBottom: "xl",
-  color: "inkSubtle",
+  color: "tertiary",
   variant: "sm"
 });
 
@@ -287,7 +287,7 @@ const NavigationHeaderDropdownLink = styled(Link, {
   alignItems: "flex-start",
   justifyContent: "flex-start",
   display: "flex",
-  color: "inkBody hover:accent focus-visible:accent",
+  color: "secondary hover:accent focus-visible:accent",
   fontWeight: 500,
   textDecorationLine: "none hover:none",
   borderRadius: "md",
@@ -339,7 +339,7 @@ const NavigationHeaderMenuButton = styled(View, {
   alignItems: "center",
   justifyContent: "center",
   cursor: "pointer",
-  backgroundColor: "transparent hover:mutedHover press:mutedActive",
+  backgroundColor: "transparent hover:subtleActive press:subtleActive",
   borderWidth: 0,
   borderRadius: "full",
   boxShadow: "focus-visible:ringOffset"
@@ -357,7 +357,7 @@ const NavigationHeaderMobilePanel = styled(View, {
   overflowY: "auto",
   backgroundColor: "surfaceCanvas",
   borderBottomWidth: 1,
-  borderBottomColor: "hairline",
+  borderBottomColor: "border",
   boxShadow: "md",
   variants: {
     open: {
@@ -401,7 +401,7 @@ const NavigationHeaderMobileActions = styled(View, {
   flexDirection: "column",
   gap: "2xl",
   borderTopWidth: 1,
-  borderTopColor: "hairline"
+  borderTopColor: "border"
 });
 
 interface NavigationHeaderChildItem {
@@ -703,8 +703,8 @@ const NavigationHeaderRoot = createStyledHOC(
                 hoveredItemIndex === null
                   ? undefined
                   : hoveredItemIndex === index
-                    ? "accentActive"
-                    : "accentInactive";
+                    ? "active"
+                    : "inactive";
               const dropdownId = `${mobileNavigationId}-submenu-${index}`;
 
               return (
@@ -822,8 +822,8 @@ const NavigationHeaderRoot = createStyledHOC(
                       const color = hovered
                         ? hoveredDropdownItem.groupIndex === groupIndex &&
                           hoveredDropdownItem.childIndex === childIndex
-                          ? "accentActive"
-                          : "accentInactive"
+                          ? "active"
+                          : "inactive"
                         : undefined;
 
                       return (

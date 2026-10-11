@@ -278,7 +278,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
         : "marginLeft";
 
     const geometry = SLIDER_GEOMETRY[size] ?? SLIDER_GEOMETRY.md;
-    const fill = disabled ? "hairline" : "accent";
+    const fill = disabled ? "border" : "accent";
     const markList = useMemo(
       () => getSliderMarks(marks, min, max, step),
       [marks, min, max, step]
@@ -492,7 +492,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                   fontSize={14}
                   lineHeight={20}
                   textAlign="center"
-                  color={active && !disabled ? "inkEmphasis" : "inkSubtle"}>
+                  color={active && !disabled ? "primary" : "tertiary"}>
                   {mark.label}
                 </Text>
               </View>

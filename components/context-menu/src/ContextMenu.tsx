@@ -260,7 +260,7 @@ const ContextMenuItemBackground = styled(View, {
   // `focus-visible`, not `focus`: opening the menu focuses its first item,
   // which should only look highlighted when navigating by keyboard.
   backgroundColor:
-    "transparent group-hover/item:surfaceOverlayHover group-focus-visible/item:surfaceOverlayHover",
+    "transparent group-hover/item:tertiary group-focus-visible/item:tertiary",
   pointerEvents: "none",
   variants: {
     size: styled.dynamic<FormControlSize>(
@@ -289,7 +289,7 @@ const ContextMenuItemDivider = styled(View, {
   position: "absolute",
   bottom: 0,
   borderBottomWidth: 1,
-  borderBottomColor: "hairline",
+  borderBottomColor: "border",
   pointerEvents: "none",
   variants: {
     size: styled.dynamic<FormControlSize>(
@@ -393,13 +393,9 @@ const ContextMenuItem = ({
               alignItems="flex-end"
               justifyContent="center">
               {disabled ? (
-                <Lock size={indicatorIconSize} color="accentDisabled" />
+                <Lock size={indicatorIconSize} color="disabled" />
               ) : (
-                <Check
-                  size={indicatorIconSize}
-                  color="accentActive"
-                  weight="black"
-                />
+                <Check size={indicatorIconSize} color="active" weight="black" />
               )}
             </View>
           )}
@@ -428,10 +424,10 @@ const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
       // On the text: a View frame doesn't emit `color` for it to inherit.
       color={
         disabled
-          ? "accentDisabled"
+          ? "disabled"
           : selected
-            ? "accentActive"
-            : "accentInactive group-hover/item:accent group-focus-visible/item:accent"
+            ? "active"
+            : "inactive group-hover/item:accent group-focus-visible/item:accent"
       }
       fontSize={fontSize}
       lineHeight={`${lineHeight}px`}

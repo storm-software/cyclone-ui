@@ -34,7 +34,7 @@ const BurstButton = (args: ConfettiBurstProps) => {
       paddingHorizontal="xl"
       paddingVertical="md"
       borderWidth={1}
-      borderColor="hairline"
+      borderColor="border"
       borderRadius="control"
       backgroundColor="surfaceSunken"
       cursor="pointer"

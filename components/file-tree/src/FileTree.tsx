@@ -44,7 +44,7 @@ const FileTreeFrame = styled(YStack, {
   gap: "lg",
   padding: "5xl",
   borderWidth: 1,
-  borderColor: "hairline",
+  borderColor: "border",
   borderRadius: "container",
   backgroundColor: "surfaceElevated"
 });
@@ -57,8 +57,8 @@ const TreeNode = styled(XStack, {
   paddingHorizontal: "lg",
   paddingVertical: "xs",
   borderRadius: "sm",
-  backgroundColor: "hover:mutedHover",
-  outlineColor: "focus-visible:accentActive",
+  backgroundColor: "hover:subtleActive",
+  outlineColor: "focus-visible:active",
   outlineWidth: "focus-visible:2px",
   outlineStyle: "focus-visible:solid"
 });
@@ -77,7 +77,7 @@ const TreeChildren = styled(YStack, {
   marginLeft: "2xl",
   paddingLeft: "2xl",
   borderLeftWidth: 1,
-  borderLeftColor: "hairline",
+  borderLeftColor: "border",
   gap: "lg"
 });
 
@@ -110,7 +110,7 @@ export interface FileProps {
 export const File = ({ name, icon = defaultFileIcon }: FileProps) => {
   const parentOpen = useContext(FileTreeOpenContext);
   const [hovered, setHovered] = useState(false);
-  const color = hovered || parentOpen ? "accent" : "inkSubtle";
+  const color = hovered || parentOpen ? "accent" : "tertiary";
 
   return (
     <TreeNode
@@ -147,7 +147,7 @@ export const Folder = ({
   const parentOpen = useContext(FileTreeOpenContext);
   const [open, setOpen] = useState(defaultOpen);
   const [hovered, setHovered] = useState(false);
-  const color = open || hovered || parentOpen ? "accent" : "inkSubtle";
+  const color = open || hovered || parentOpen ? "accent" : "tertiary";
 
   const toggle = () => setOpen(value => !value);
   const onKeyDown = (event: KeyboardEvent<HTMLElement>) => {

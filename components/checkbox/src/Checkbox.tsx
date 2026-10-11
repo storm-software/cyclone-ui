@@ -47,7 +47,7 @@ const CheckboxGroupFrame = styled(View, {
   boxShadow: "none focus:ringOffset focus-visible:ringOffset",
   borderWidth: 1,
   borderColor:
-    "hairline hover:accentHover focus:accentActive focus-visible:accentActive",
+    "border hover:active focus:active focus-visible:active",
   outlineStyle: "none",
   // this fixes a flex bug where it overflows container
   minWidth: 0,
@@ -82,13 +82,13 @@ const CheckboxGroupFrame = styled(View, {
 
     focused: {
       true: {
-        borderColor: "accentActive"
+        borderColor: "active"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:accentHover"
+        borderColor: "accent hover:active"
       }
     },
 
@@ -97,7 +97,7 @@ const CheckboxGroupFrame = styled(View, {
         userSelect: "none",
         cursor: "not-allowed",
         borderColor:
-          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled"
+          "disabled hover:disabled press:disabled focus:disabled"
       }
     }
   } as const,
@@ -197,8 +197,8 @@ export const Checkbox = createStyledHOC(
       [formOnChange, onCheckedChange]
     );
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "accent" : "hairline";
-    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
+    const idleColor = hasValidationMessage ? "accent" : "border";
+    const focusColor = hasValidationMessage ? "active" : "borderActive";
 
     return (
       <CheckboxGroupFrame
@@ -208,7 +208,7 @@ export const Checkbox = createStyledHOC(
         size={size}
         // A call-site base replaces every lower-tier clause for the property
         // in v3, so restate the v2 frame/variant hover and disabled press here.
-        borderColor={`${focused ? focusColor : idleColor} hover:${disabled ? "accentDisabled" : "accentHover"}${disabled ? " press:accentDisabled" : ""} group-hover/field:${focused ? focusColor : "accentHover"} focus:${focusColor} focus-visible:${focusColor}`}
+        borderColor={`${focused ? focusColor : idleColor} hover:${disabled ? "disabled" : "active"}${disabled ? " press:disabled" : ""} group-hover/field:${focused ? focusColor : "active"} focus:${focusColor} focus-visible:${focusColor}`}
         boxShadow="focus:ringOffset focus-visible:ringOffset">
         <BaseCheckbox
           ref={forwardedRef}

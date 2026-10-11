@@ -23,8 +23,8 @@ import { SizableText } from "@tamagui/text";
 export const InlineCodeText = styled(SizableText, {
   displayName: "InlineCodeText",
   render: "span",
-  backgroundColor: "surfaceOverlay",
-  color: "inkEmphasis",
+  backgroundColor: "surfaceHighest",
+  color: "primary",
   display: "inline-flex",
   fontFamily: "code",
   paddingVertical: "sm",

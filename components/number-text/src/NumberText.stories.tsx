@@ -44,12 +44,6 @@ export const Base: Story = {
   args: {}
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
 export const Discovery: Story = {
   args: {
     theme: "discovery"
@@ -77,17 +71,5 @@ export const Warning: Story = {
 export const Danger: Story = {
   args: {
     theme: "danger"
-  }
-};
-
-export const Positive: Story = {
-  args: {
-    theme: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    theme: "negative"
   }
 };

@@ -190,55 +190,6 @@ export const SecondaryOutlined: Story = {
     expectOutlinedTextToMatchBorder(canvasElement)
 };
 
-export const Brand: Story = {
-  args: {
-    children: "Tag Text",
-    theme: "brand"
-  }
-};
-
-export const BrandRounded: Story = {
-  args: {
-    children: "Tag Text",
-    theme: "brand",
-    circular: true
-  }
-};
-
-export const BrandOutlined: Story = {
-  args: {
-    children: "Tag Text",
-    theme: "brand",
-    outlined: true
-  }
-};
-
-export const BrandSecondary: Story = {
-  args: {
-    children: "Tag Text",
-    theme: "brand",
-    variant: "secondary"
-  }
-};
-
-export const BrandSecondaryRounded: Story = {
-  args: {
-    children: "Tag Text",
-    theme: "brand",
-    variant: "secondary",
-    circular: true
-  }
-};
-
-export const BrandSecondaryOutlined: Story = {
-  args: {
-    children: "Tag Text",
-    theme: "brand",
-    variant: "secondary",
-    outlined: true
-  }
-};
-
 export const Discovery: Story = {
   args: {
     children: "Tag Text",

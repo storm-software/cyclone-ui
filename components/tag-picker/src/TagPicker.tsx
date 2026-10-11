@@ -104,7 +104,7 @@ const TagPickerFrame = styled(XStack, {
   alignItems: "stretch",
   backgroundColor: "surfaceElevated",
   borderWidth: 1,
-  borderColor: "hairline",
+  borderColor: "border",
   outlineWidth: 0,
   outlineColor: "transparent",
   boxShadow: "none",
@@ -513,13 +513,13 @@ const TagPickerImpl = createStyledHOC(
     const active = focused || focusWithin;
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
-    const idleColor = hasValidationMessage ? "accent" : "hairline";
-    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
+    const idleColor = hasValidationMessage ? "accent" : "border";
+    const focusColor = hasValidationMessage ? "active" : "borderActive";
     const hoverColor = disabled
-      ? "accentDisabled"
+      ? "disabled"
       : active
         ? focusColor
-        : "accentHover";
+        : "active";
     const borderColor = `${active ? focusColor : idleColor} hover:${hoverColor} group-hover/field:${hoverColor}`;
 
     return (
@@ -599,7 +599,7 @@ const TagPickerImpl = createStyledHOC(
               bottom={-1}
               focused={active}
               disabled={disabled}
-              backgroundColor={disabled ? "accentDisabled" : focusColor}
+              backgroundColor={disabled ? "disabled" : focusColor}
             />
           )}
           {labelPlacement === "border" && (

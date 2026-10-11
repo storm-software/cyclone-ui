@@ -36,7 +36,7 @@ const ToggleGroupFrame = styled(View, {
   alignItems: "stretch",
   width: "fit-content",
   borderWidth: 1,
-  borderColor: "hairline",
+  borderColor: "border",
   backgroundColor: "surfaceSunken",
   borderRadius: "control",
   gap: "lg",

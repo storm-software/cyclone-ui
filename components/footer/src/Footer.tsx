@@ -44,9 +44,9 @@ const FooterFrame = styled(View, {
   position: "relative",
   width: "100%",
   overflow: "hidden",
-  backgroundColor: "muted",
+  backgroundColor: "subtle",
   borderTopWidth: 1,
-  borderTopColor: "hairline"
+  borderTopColor: "border"
 });
 
 const FooterContainer = styled(View, {
@@ -150,7 +150,7 @@ const FooterSectionLinks = styled(View, {
 const FooterLink = styled(Link, {
   displayName: "FooterLink",
   width: "fit-content",
-  color: "accent hover:accentActive focus-visible:accentActive",
+  color: "accent hover:active focus-visible:active",
   opacity: "0.85 hover:1 focus-visible:1",
   textDecorationLine: "none",
   x: "hover:3px",
@@ -267,7 +267,7 @@ const FooterLinkImpl = createStyledHOC(
         underline="none"
         {...props}
         {...(hovered && {
-          color: active ? "accentActive" : "accentInactive"
+          color: active ? "active" : "inactive"
         })}
         onMouseEnter={(event: any) => {
           onMouseEnter?.(event);

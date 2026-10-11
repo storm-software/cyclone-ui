@@ -312,7 +312,7 @@ const PageSkipLinksFrame = styled(View, {
         padding: "2xl",
         backgroundColor: "surfaceFloating",
         borderWidth: 1,
-        borderColor: "hairline",
+        borderColor: "border",
         borderRadius: "md",
         boxShadow: "lg"
       },
@@ -334,7 +334,7 @@ const PageSkipLinksFrame = styled(View, {
 const PageSkipLinksLabel = styled(BodyText, {
   displayName: "PageSkipLinksLabel",
   render: "span",
-  color: "inkSubtle",
+  color: "tertiary",
   size: "sm",
   fontWeight: "600"
 });
@@ -345,7 +345,7 @@ const PageSkipLinkItem = styled(View, {
   paddingVertical: "lg",
   paddingHorizontal: "xl",
   borderRadius: "md",
-  backgroundColor: "transparent hover:muted",
+  backgroundColor: "transparent hover:subtle",
   boxShadow: "none focus-visible:ringOffset",
   outlineWidth: 0
 });
@@ -353,7 +353,7 @@ const PageSkipLinkItem = styled(View, {
 const PageSkipLinkText = styled(BodyText, {
   displayName: "PageSkipLinkText",
   render: "span",
-  color: "link",
+  color: "primary",
   size: "sm",
   textDecorationLine: "underline"
 });
@@ -404,7 +404,7 @@ const PageBackdrop = styled(View, {
   bottom: 0,
   zIndex: "20",
   display: "flex lg:none",
-  backgroundColor: "overlayBackdrop",
+  backgroundColor: "backdrop",
   opacity: "1 enter:0 exit:0",
   transition: {
     duration: "200ms",
@@ -856,7 +856,7 @@ const PageTopNavFrame = styled(View, {
   alignItems: "stretch",
   backgroundColor: "surfaceElevated",
   borderBottomWidth: 1,
-  borderBottomColor: "hairline",
+  borderBottomColor: "border",
   outlineWidth: 0
 });
 
@@ -928,7 +928,7 @@ const PageTopNavStartFrame = styled(View, {
       true: {
         marginBottom: "0px lg:-1px",
         borderRightWidth: "0px lg:1px",
-        borderRightColor: "hairline"
+        borderRightColor: "border"
       }
     }
   } as const
@@ -994,7 +994,7 @@ const PageSideNavToggleFrame = styled(View, {
   alignItems: "center",
   justifyContent: "center",
   cursor: "pointer",
-  backgroundColor: "transparent hover:mutedHover press:mutedActive",
+  backgroundColor: "transparent hover:subtleActive press:subtleActive",
   borderWidth: 0,
   borderRadius: "full",
   boxShadow: "focus-visible:ringOffset"
@@ -1054,7 +1054,7 @@ const PageSideNavToggle = createStyledHOC(
           onMouseLeave?.(event);
           page.endSideNavPeek();
         }}>
-        <SidebarSimple aria-hidden={true} size={20} color="inkBody" />
+        <SidebarSimple aria-hidden={true} size={20} color="secondary" />
       </PageSideNavToggleFrame>
     );
   },
@@ -1076,7 +1076,7 @@ const PageSideNavFrame = styled(View, {
   flexDirection: "column",
   backgroundColor: "surfaceElevated",
   borderRightWidth: 1,
-  borderRightColor: "hairline",
+  borderRightColor: "border",
   boxShadow: "none max-lg:lg",
   outlineWidth: 0,
   variants: {
@@ -1238,7 +1238,7 @@ const PageSectionFooter = styled(View, {
   gap: "2xl",
   padding: "4xl",
   borderTopWidth: 1,
-  borderTopColor: "hairline"
+  borderTopColor: "border"
 });
 
 const PageSplitterFrame = styled(View, {
@@ -1532,7 +1532,7 @@ const PageMainHeaderFrame = styled(View, {
   paddingVertical: "4xl",
   backgroundColor: "surfaceCanvas",
   borderBottomWidth: 1,
-  borderBottomColor: "hairline"
+  borderBottomColor: "border"
 });
 
 /** Stays at the top of main while its content scrolls. */
@@ -1585,7 +1585,7 @@ const PagePanelFrame = styled(View, {
   flexDirection: "column",
   backgroundColor: "surfaceElevated",
   borderLeftWidth: 1,
-  borderLeftColor: "hairline",
+  borderLeftColor: "border",
   boxShadow: "none max-lg:lg",
   outlineWidth: 0,
   opacity: "1 enter:0 exit:0",

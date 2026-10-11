@@ -116,7 +116,7 @@ const AccordionGroup = styled(YGroup, {
     variant: {
       default: {
         borderWidth: 1,
-        borderColor: "hairline",
+        borderColor: "border",
         backgroundColor: "surfaceElevated",
         paddingHorizontal: "6xl",
         paddingVertical: "lg",
@@ -274,18 +274,18 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
     variant: {
       default: {
         borderBottomWidth: 1,
-        borderBottomColor: "hairline"
+        borderBottomColor: "border"
       },
       separated: {
         borderRadius: "container",
         borderWidth: 1,
-        borderColor: "hairline",
+        borderColor: "border",
         backgroundColor: "surfaceElevated"
       },
       bordered: {
         borderRadius: "container",
         borderWidth: 1,
-        borderColor: "hairline",
+        borderColor: "border",
         backgroundColor: "transparent"
       },
       ghost: {
@@ -362,18 +362,18 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
       },
       separated: {
         paddingHorizontal: "4xl",
-        backgroundColor: "surfaceElevated hover:surfaceElevatedHover"
+        backgroundColor: "surfaceElevated hover:tertiary"
       },
       bordered: {
         paddingHorizontal: "4xl",
-        backgroundColor: "transparent hover:surfaceElevatedHover",
+        backgroundColor: "transparent hover:tertiary",
         cursor: "hover:pointer"
       },
       ghost: {
         paddingLeft: 0,
         paddingRight: 0,
         borderBottomWidth: 1,
-        borderBottomColor: "hairline",
+        borderBottomColor: "border",
         backgroundColor: "transparent hover:transparent",
         cursor: "hover:pointer"
       }
@@ -398,7 +398,7 @@ const AccordionItemHeaderImpl = createStyledHOC(
     // The header icons are `themed` SVG icons, which resolve a single color
     // value and cannot take a `group-hover/accordion:` clause.
     const [hovered, setHovered] = useState(false);
-    const iconColor = hovered ? "accentHover" : "accent";
+    const iconColor = hovered ? "active" : "accent";
 
     return (
       <AccordionItemHeader
@@ -418,7 +418,7 @@ const AccordionItemHeaderImpl = createStyledHOC(
         }}>
         {numbered ? (
           <XStack alignItems="center" flex={1} gap="6xl">
-            <Text color="inkBody" fontFamily="code">
+            <Text color="secondary" fontFamily="code">
               {String(index + 1).padStart(2, "0")}
             </Text>
             {children}
@@ -469,7 +469,7 @@ const AccordionItemHeaderHeading = createStyledHOC(
       <HeadingSmallText
         ref={forwardedRef}
         transition="250ms"
-        color="accent group-hover/accordion:accentHover"
+        color="accent group-hover/accordion:active"
         cursor="group-hover/accordion:pointer"
         {...props}>
         {children}

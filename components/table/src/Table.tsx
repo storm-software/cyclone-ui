@@ -66,7 +66,7 @@ const TableContext = createStyledContext<
     sizing: "fixed",
     alignHeaderCells: { x: "start", y: "center" },
     alignCells: { x: "center", y: "center" },
-    borderColor: "hairline"
+    borderColor: "border"
   } as TableContextProps,
   {
     keys: [
@@ -89,7 +89,7 @@ const TableRow = styled(YStack, {
   render: "tr",
   flexDirection: "row",
   borderWidth: 0,
-  borderColor: "hairline focus-visible:hairlineActive",
+  borderColor: "border focus-visible:borderActive",
   borderStyle: "solid",
   justifyContent: "flex-start",
   position: "relative",
@@ -183,7 +183,7 @@ const TableCell = styled(YStack, {
   flexShrink: 1,
   borderWidth: 0,
   borderBottomWidth: 1,
-  borderColor: "hairline focus-visible:hairlineActive",
+  borderColor: "border focus-visible:borderActive",
   justifyContent: "flex-start",
   paddingHorizontal: "xl",
   boxShadow: "none focus-visible:ringOffset",
@@ -230,7 +230,7 @@ const TableHeaderCell = styled(YStack, {
   flexShrink: 1,
   borderWidth: 0,
   borderBottomWidth: 1,
-  borderColor: "hairline",
+  borderColor: "border",
   justifyContent: "flex-start",
   paddingVertical: "xl",
   paddingHorizontal: "sm",

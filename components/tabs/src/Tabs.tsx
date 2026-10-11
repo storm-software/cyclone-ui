@@ -323,7 +323,7 @@ const TabsRovingIndicator = styled(YStack, {
       floating: {
         borderRadius: "trigger",
         borderWidth: 1,
-        borderColor: "hairline",
+        borderColor: "border",
         alignItems: "center",
         justifyContent: "center"
       },
@@ -449,7 +449,7 @@ const TabsHeaderList = styled(YStack, {
       floating: {
         backgroundColor: "surfaceSunken",
         borderRadius: "trigger",
-        borderColor: "hairline",
+        borderColor: "border",
         borderWidth: 1
       },
       tabbed: {
@@ -571,11 +571,11 @@ const TabsHeaderItemHeading = styled(HeadingSmallText, {
 
     selected: {
       true: {
-        color: "accentActive",
+        color: "active",
         fontWeight: "bold"
       },
       false: {
-        color: "accentInactive",
+        color: "inactive",
         fontWeight: "normal"
       }
     }
@@ -643,8 +643,8 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
   return {
     backgroundColor: props.selected
       ? "surfaceElevated"
-      : "surfaceCanvas hover:surfaceCanvasHover",
-    borderColor: "hairline",
+      : "surfaceCanvas hover:tertiary",
+    borderColor: "border",
     borderWidth,
     // Tamagui v3's Tabs.List is a Group that drops the connecting border on
     // every tab but the first; tabbed tabs are spaced apart and keep it.
@@ -748,7 +748,7 @@ const TabsContentList = styled(View, {
 
   return {
     backgroundColor: "surfaceElevated",
-    borderColor: "hairline",
+    borderColor: "border",
     borderWidth: props.bordered === false ? 0 : 1,
     borderTopRightRadius: horizontal ? undefined : "container",
     borderBottomLeftRadius: horizontal ? "container" : undefined,

@@ -181,9 +181,9 @@ const getBreadcrumbEllipsisColor = (
   }: Pick<BreadcrumbContextProps, "inverse" | "subtle" | "subtlest">
 ) => {
   if (subtlest) {
-    return "inkSubtle";
+    return "tertiary";
   } else if (subtle) {
-    return "inkBody";
+    return "secondary";
   }
 
   // `LinkText` collapses its color variants to `base` in the base theme.
@@ -193,20 +193,20 @@ const getBreadcrumbEllipsisColor = (
     themeName === "light" ||
     themeName.endsWith("base");
 
-  return isBaseTheme && !inverse ? "link" : "accent";
+  return isBaseTheme && !inverse ? "primary" : "accent";
 };
 
 const BreadcrumbSeparator = () => {
   const { variant } = BreadcrumbContext.useStyledContext();
 
   if (variant === "chevron") {
-    return <CaretRight color="inkSubtle" size="2xl" weight="bold" />;
+    return <CaretRight color="tertiary" size="2xl" weight="bold" />;
   } else if (variant === "double") {
-    return <CaretDoubleRight color="inkSubtle" size="2xl" />;
+    return <CaretDoubleRight color="tertiary" size="2xl" />;
   } else if (variant === "slash") {
     return (
       <SizableText
-        color="inkSubtle"
+        color="tertiary"
         fontFamily="body-sm"
         fontSize="sm"
         fontWeight="bold">
@@ -259,7 +259,7 @@ const BreadcrumbEllipsis = ({
         <Popover.Content
           padding="lg"
           borderWidth={1}
-          borderColor="hairline"
+          borderColor="border"
           maxWidth="90vw"
           maxHeight={`calc(var(--tamagui-popper-available-height) - ${BREADCRUMB_MENU_VIEWPORT_PADDING}px)`}
           overflow="hidden">
@@ -346,7 +346,7 @@ const BreadcrumbMenuLink = styled(Link, {
   paddingHorizontal: "3xl",
   paddingVertical: "xl",
   backgroundColor:
-    "transparent hover:surfaceOverlayHover focus-visible:surfaceOverlayHover",
+    "transparent hover:tertiary focus-visible:tertiary",
   size: "sm"
 });
 

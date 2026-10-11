@@ -48,8 +48,8 @@ const ToggleFrame = styled(View, {
   // Hug the content without overriding the parent's cross-axis alignment.
   width: "fit-content",
   borderWidth: 1,
-  borderColor: "hairline hover:hairlineHover",
-  backgroundColor: "surfaceSunken hover:surfaceSunkenHover",
+  borderColor: "border hover:borderActive",
+  backgroundColor: "surfaceSunken hover:tertiary",
   borderRadius: "control",
   outlineStyle: "none",
   boxShadow: "none focus-visible:ringOffset",
@@ -80,7 +80,7 @@ const ToggleFrame = styled(View, {
 
     invalid: {
       true: {
-        borderColor: "hairline hover:hairlineHover"
+        borderColor: "border hover:borderActive"
       }
     },
 
@@ -142,11 +142,10 @@ const ToggleIndicator = styled(View, {
   variants: {
     active: {
       true: {
-        backgroundColor:
-          "surfaceElevated group-hover/toggle:surfaceElevatedHover",
+        backgroundColor: "surfaceElevated group-hover/toggle:tertiary",
         boxShadow: "sm",
         borderWidth: 1,
-        borderColor: "hairline group-hover/toggle:hairlineHover"
+        borderColor: "border group-hover/toggle:borderActive"
       }
     },
 
@@ -183,7 +182,7 @@ export const ToggleText = styled(Text, {
   transition: "200ms",
   userSelect: "none",
   whiteSpace: "nowrap",
-  color: "inkSubtle group-hover/toggle:inkBody",
+  color: "tertiary group-hover/toggle:secondary",
 
   variants: {
     textSize: styled.dynamic<FormControlSize>(
@@ -192,7 +191,7 @@ export const ToggleText = styled(Text, {
 
         return {
           // The resolved `body` family isn't configured, so pin the button font.
-          fontFamily: "button",
+          fontFamily: "title-md",
           fontWeight: style.fontWeight,
           letterSpacing: style.letterSpacing,
           fontSize: style.fontSize,
@@ -207,7 +206,7 @@ export const ToggleText = styled(Text, {
 
     active: {
       true: {
-        color: "inkEmphasis"
+        color: "primary"
       }
     }
   } as const,
@@ -307,8 +306,7 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
           rounded={rounded}
           {...(borderless &&
             pressed && {
-              backgroundColor:
-                "surfaceOverlayActive group-hover/toggle:surfaceOverlayHover"
+              backgroundColor: "tertiary group-hover/toggle:tertiary"
             })}>
           {typeof content === "string" || typeof content === "number" ? (
             <ToggleText textSize={size} active={pressed}>

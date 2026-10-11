@@ -235,14 +235,14 @@ const SheetDialogBackground = styled(YStack, {
 
 const SheetSheetOverlay = styled(TamaguiSheet.Overlay, {
   displayName: "SheetOverlay",
-  backgroundColor: "overlayBackdrop",
+  backgroundColor: "backdrop",
   opacity: "0.6 enter:0 exit:0",
   transition: "200ms"
 });
 
 const SheetSheetHandle = styled(TamaguiSheet.Handle, {
   displayName: "SheetHandle",
-  backgroundColor: "hairline"
+  backgroundColor: "border"
 });
 
 const SheetSheetScrollView = styled(TamaguiSheet.ScrollView, {
@@ -257,7 +257,7 @@ const SheetSheetScrollView = styled(TamaguiSheet.ScrollView, {
 const SheetDialogHandle = styled(XStack, {
   displayName: "SheetDialogHandle",
   position: "absolute",
-  backgroundColor: "hairline",
+  backgroundColor: "border",
   borderRadius: 100,
   cursor: "grab press:grabbing",
   opacity: "0.5 hover:0.7",
@@ -410,7 +410,7 @@ const SheetOverlay: FC<SheetOverlayProps> = props => {
 
   return (
     <TamaguiDialogOverlay
-      backgroundColor="overlayBackdrop"
+      backgroundColor="backdrop"
       opacity="0.6 enter:0 exit:0"
       transition="200ms"
       {...(props as any)}
@@ -471,7 +471,7 @@ const SheetHeading: typeof HeadingLargeText = styled(
 
 const SheetBody: typeof BodyText = styled(BodyText, {
   displayName: "SheetBody",
-  color: "inkBody",
+  color: "secondary",
   flexGrow: 1
 });
 

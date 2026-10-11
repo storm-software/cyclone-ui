@@ -16,6 +16,7 @@ import { createTamagui, px, createTokens, createFont } from "@tamagui/core";
 
 const tokens = createTokens({
   color: {
+    black: "#0c0c0d",
     blue1: "#abcaff",
     blue2: "#8cb6ff",
     blue3: "#6da2ff",
@@ -84,6 +85,7 @@ const tokens = createTokens({
     red7: "#8e223e",
     red8: "#6f1c31",
     red9: "#501524",
+    white: "#ffffff",
     yellow1: "#facd7b",
     yellow2: "#f9c25e",
     yellow3: "#f8b740",
@@ -352,474 +354,198 @@ const childThemeExtras: {
 } = {
   light: {
     base: {
-      accent: tokens.color.neutral14.val,
-      accentActive: "#0c0c0d",
-      accentDisabled: "#151518",
-      accentHover: "#232326",
-      accentInactive: "#030303",
-      muted: tokens.color.neutral3.val,
-      mutedActive: "#cacaca",
-      mutedDisabled: "#eaeaea20",
-      mutedHover: "#919191",
-      mutedInactive: "#030303",
-      onAccent: tokens.color.neutral2.val,
-      onAccentActive: "#0c0c0d",
-      onAccentDisabled: "#f1f1f120",
-      onAccentHover: "#959595",
-      onAccentInactive: "#030303",
-      onMuted: tokens.color.neutral14.val,
-      onMutedActive: "#0c0c0d",
-      onMutedDisabled: "#151518",
-      onMutedHover: "#232326",
-      onMutedInactive: "#030303",
-      ring: "0px 0px 0px 3px #15151814",
-      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #15151814",
-      ringSubtle: "0px 0px 0px 1px #15151814",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #15151814"
-    },
-    brand: {
-      accent: "#1fb2a6",
-      accentActive: "#008a7f",
-      accentDisabled: "#44afa4",
-      accentHover: "#008277",
-      accentInactive: "#5ddfd2",
-      muted: "#68e8db",
-      mutedActive: "#25b4a8",
-      mutedDisabled: "#7ee5d9",
-      mutedHover: "#08a99e",
-      mutedInactive: "#9bffff",
+      accent: tokens.color.neutral13.val,
+      active: "#38383a",
+      disabled: "#363639",
+      inactive: "#030303",
       onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#1fb2a6",
-      onMutedActive: "#008a7f",
-      onMutedDisabled: "#44afa4",
-      onMutedHover: "#008277",
-      onMutedInactive: "#5ddfd2",
-      ring: "0px 0px 0px 3px #1fb2a626",
-      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #1fb2a626",
-      ringSubtle: "0px 0px 0px 1px #1fb2a626",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #1fb2a626"
+      onSubtle: "#151518",
+      ring: "0px 0px 0px 3px #1f1f2133",
+      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #1f1f2133",
+      ringSubtle: "0px 0px 0px 1px #1f1f2133",
+      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #1f1f2133",
+      subtle: tokens.color.neutral5.val,
+      subtleActive: "#a9a9aa",
+      subtleDisabled: "#727275",
+      subtleInactive: "#030303"
     },
     danger: {
       accent: tokens.color.red7.val,
-      accentActive: "#730029",
-      accentDisabled: "#862e41",
-      accentHover: "#6e0025",
-      accentInactive: "#ab3e56",
-      muted: "#e77388",
-      mutedActive: "#bb4b62",
-      mutedDisabled: "#dd7b8b",
-      mutedHover: "#b1435b",
-      mutedInactive: "#ff9fb3",
+      active: "#6a0022",
+      disabled: "#5a3c44",
+      inactive: "#ab3e56",
       onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#270009",
-      onMutedActive: "#300510",
-      onMutedDisabled: "#24030a",
-      onMutedHover: "#320611",
-      onMutedInactive: "#1e0004",
+      onSubtle: "#270009",
       ring: "0px 0px 0px 3px #8e223e26",
       ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #8e223e26",
       ringSubtle: "0px 0px 0px 1px #8e223e26",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #8e223e26"
+      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #8e223e26",
+      subtle: "#e77388",
+      subtleActive: "#ab3d56",
+      subtleDisabled: "#79575e",
+      subtleInactive: "#ff9fb3"
     },
     discovery: {
       accent: tokens.color.purple7.val,
-      accentActive: "#432b7b",
-      accentDisabled: "#58478c",
-      accentHover: "#3f2676",
-      accentInactive: "#725db2",
-      muted: "#a18ee7",
-      mutedActive: "#7b67bc",
-      mutedDisabled: "#a091dc",
-      mutedHover: "#735eb3",
-      mutedInactive: "#cdbaff",
+      active: "#3c2372",
+      disabled: "#4a445f",
+      inactive: "#725db2",
       onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#1d0046",
-      onMutedActive: "#250b51",
-      onMutedDisabled: "#1c073f",
-      onMutedHover: "#270e54",
-      onMutedInactive: "#15003a",
+      onSubtle: "#FAFAFA",
       ring: "0px 0px 0px 3px #59439526",
       ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #59439526",
       ringSubtle: "0px 0px 0px 1px #59439526",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #59439526"
+      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #59439526",
+      subtle: tokens.color.purple3.val,
+      subtleActive: "#725ba7",
+      subtleDisabled: "#655f79",
+      subtleInactive: "#d2bcff"
     },
     info: {
       accent: tokens.color.blue7.val,
-      accentActive: "#033a96",
-      accentDisabled: "#2b58a6",
-      accentHover: "#003590",
-      accentInactive: "#3b72d3",
-      muted: "#6fa4ff",
-      mutedActive: "#487ad2",
-      mutedDisabled: "#78a5f2",
-      mutedHover: "#4071c8",
-      mutedInactive: "#9bd3ff",
+      active: "#00318d",
+      disabled: "#3b4a68",
+      inactive: "#3b72d3",
       onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#00184b",
-      onMutedActive: "#072457",
-      onMutedDisabled: "#041a44",
-      onMutedHover: "#09265a",
-      onMutedInactive: "#000b3e",
+      onSubtle: "#FAFAFA",
       ring: "0px 0px 0px 3px #2055b326",
       ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #2055b326",
       ringSubtle: "0px 0px 0px 1px #2055b326",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #2055b326"
-    },
-    negative: {
-      accent: tokens.color.red7.val,
-      accentActive: "#730029",
-      accentDisabled: "#862e41",
-      accentHover: "#6e0025",
-      accentInactive: "#ab3e56",
-      muted: "#e77388",
-      mutedActive: "#bb4b62",
-      mutedDisabled: "#dd7b8b",
-      mutedHover: "#b1435b",
-      mutedInactive: "#ff9fb3",
-      onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#270009",
-      onMutedActive: "#300510",
-      onMutedDisabled: "#24030a",
-      onMutedHover: "#320611",
-      onMutedInactive: "#1e0004",
-      ring: "0px 0px 0px 3px #8e223e26",
-      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #8e223e26",
-      ringSubtle: "0px 0px 0px 1px #8e223e26",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #8e223e26"
-    },
-    positive: {
-      accent: tokens.color.green7.val,
-      accentActive: "#00523b",
-      accentDisabled: "#2f6954",
-      accentHover: "#004d36",
-      accentInactive: "#40876e",
-      muted: "#6db499",
-      mutedActive: "#448b72",
-      mutedDisabled: "#77b29b",
-      mutedHover: "#3b8269",
-      mutedInactive: "#9ae2c6",
-      onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#00251a",
-      onMutedActive: "#0b3024",
-      onMutedDisabled: "#06241b",
-      onMutedHover: "#0d3227",
-      onMutedInactive: "#001a0f",
-      ring: "0px 0px 0px 3px #216b5326",
-      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #216b5326",
-      ringSubtle: "0px 0px 0px 1px #216b5326",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #216b5326"
+      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #2055b326",
+      subtle: tokens.color.blue3.val,
+      subtleActive: "#396ac2",
+      subtleDisabled: "#556582",
+      subtleInactive: "#99d1ff"
     },
     success: {
       accent: tokens.color.green7.val,
-      accentActive: "#00523b",
-      accentDisabled: "#2f6954",
-      accentHover: "#004d36",
-      accentInactive: "#40876e",
-      muted: "#6db499",
-      mutedActive: "#448b72",
-      mutedDisabled: "#77b29b",
-      mutedHover: "#3b8269",
-      mutedInactive: "#9ae2c6",
+      active: "#004933",
+      disabled: "#3c504b",
+      inactive: "#40876e",
       onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#00251a",
-      onMutedActive: "#0b3024",
-      onMutedDisabled: "#06241b",
-      onMutedHover: "#0d3227",
-      onMutedInactive: "#001a0f",
+      onSubtle: "#00251a",
       ring: "0px 0px 0px 3px #216b5326",
       ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #216b5326",
       ringSubtle: "0px 0px 0px 1px #216b5326",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #216b5326"
+      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #216b5326",
+      subtle: "#6db499",
+      subtleActive: "#357d64",
+      subtleDisabled: "#556a64",
+      subtleInactive: "#9ae2c6"
     },
     warning: {
       accent: tokens.color.yellow9.val,
-      accentActive: "#5d3c00",
-      accentDisabled: "#725526",
-      accentHover: "#573700",
-      accentInactive: "#926f36",
-      muted: "#c39e65",
-      mutedActive: "#99763d",
-      mutedDisabled: "#bf9f70",
-      mutedHover: "#906d34",
-      mutedInactive: "#f2cc91",
+      active: "#543400",
+      disabled: "#53493b",
+      inactive: "#926f36",
       onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#291a00",
-      onMutedActive: "#342408",
-      onMutedDisabled: "#271b05",
-      onMutedHover: "#36270a",
-      onMutedInactive: "#1e0f00",
+      onSubtle: "#291a00",
       ring: "0px 0px 0px 3px #76541726",
       ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #76541726",
       ringSubtle: "0px 0px 0px 1px #76541726",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #76541726"
+      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #76541726",
+      subtle: "#c39e65",
+      subtleActive: "#8b682f",
+      subtleDisabled: "#6e6355",
+      subtleInactive: "#f2cc91"
     }
   },
   dark: {
     base: {
-      accent: tokens.color.neutral1.val,
-      accentActive: "#ffffff",
-      accentDisabled: "#fafafa20",
-      accentHover: "#9b9b9b",
-      accentInactive: "#808080",
-      muted: tokens.color.neutral11.val,
-      mutedActive: "#333438",
-      mutedDisabled: "#2b2c2f",
-      mutedHover: "#414347",
-      mutedInactive: "#808080",
-      onAccent: tokens.color.neutral14.val,
-      onAccentActive: "#ffffff",
-      onAccentDisabled: "#151518",
-      onAccentHover: "#232326",
-      onAccentInactive: "#808080",
-      onMuted: tokens.color.neutral1.val,
-      onMutedActive: "#ffffff",
-      onMutedDisabled: "#fafafa20",
-      onMutedHover: "#9b9b9b",
-      onMutedInactive: "#808080",
-      ring: "0px 0px 0px 3px #fafafa14",
-      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #fafafa14",
-      ringSubtle: "0px 0px 0px 1px #fafafa14",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #fafafa14"
-    },
-    brand: {
-      accent: "#3be4be",
-      accentActive: "#00b28f",
-      accentDisabled: "#61e0bf",
-      accentHover: "#00a785",
-      accentInactive: "#81fff4",
-      muted: "#007e5e",
-      mutedActive: "#359c7a",
-      mutedDisabled: "#287b60",
-      mutedHover: "#3da280",
-      mutedInactive: "#005f41",
+      accent: tokens.color.neutral2.val,
+      active: "#d0d0d0",
+      disabled: "#808082",
+      inactive: "#808080",
       onAccent: "#151518",
-      onAccentActive: "#1d1d20",
-      onAccentDisabled: "#151518",
-      onAccentHover: "#1f1f22",
-      onAccentInactive: "#0c0c0f",
-      onMuted: "#3be4be",
-      onMutedActive: "#00b28f",
-      onMutedDisabled: "#61e0bf",
-      onMutedHover: "#00a785",
-      onMutedInactive: "#81fff4",
-      ring: "0px 0px 0px 3px #3be4be26",
-      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #3be4be26",
-      ringSubtle: "0px 0px 0px 1px #3be4be26",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #3be4be26"
+      onSubtle: "#FAFAFA",
+      ring: "0px 0px 0px 3px #f1f1f133",
+      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #f1f1f133",
+      ringSubtle: "0px 0px 0px 1px #f1f1f133",
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #f1f1f133",
+      subtle: tokens.color.neutral10.val,
+      subtleActive: "#535358",
+      subtleDisabled: "#444447",
+      subtleInactive: "#808080"
     },
     danger: {
       accent: tokens.color.red5.val,
-      accentActive: "#f55474",
-      accentDisabled: "#c4405b",
-      accentHover: "#fd5b7b",
-      accentInactive: "#a70037",
-      muted: "#660022",
-      mutedActive: "#791931",
-      mutedDisabled: "#601125",
-      mutedHover: "#7e1e34",
-      mutedInactive: "#510013",
+      active: "#ff607f",
+      disabled: "#70424d",
+      inactive: "#a70037",
       onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#ff9ba8",
-      onMutedActive: "#cc6e7b",
-      onMutedDisabled: "#f6a1ab",
-      onMutedHover: "#c26472",
-      onMutedInactive: "#ffcedb",
+      onSubtle: "#ff9ba8",
       ring: "0px 0px 0px 3px #cf2d5626",
       ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #cf2d5626",
       ringSubtle: "0px 0px 0px 1px #cf2d5626",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #cf2d5626"
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #cf2d5626",
+      subtle: "#660022",
+      subtleActive: "#802136",
+      subtleDisabled: "#4d323a",
+      subtleInactive: "#510013"
     },
     discovery: {
       accent: tokens.color.purple4.val,
-      accentActive: "#b69cff",
-      accentDisabled: "#917bcf",
-      accentHover: "#bea4ff",
-      accentInactive: "#6d51b0",
-      muted: tokens.color.purple9.val,
-      mutedActive: "#453673",
-      mutedDisabled: "#35295a",
-      mutedHover: "#483a77",
-      mutedInactive: "#27144e",
+      active: "#c3a9ff",
+      disabled: "#5e5776",
+      inactive: "#6d51b0",
       onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: tokens.color.purple4.val,
-      onMutedActive: "#b69cff",
-      onMutedDisabled: "#917bcf",
-      onMutedHover: "#bea4ff",
-      onMutedInactive: "#6d51b0",
+      onSubtle: "#FAFAFA",
       ring: "0px 0px 0px 3px #9277da26",
       ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #9277da26",
       ringSubtle: "0px 0px 0px 1px #9277da26",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #9277da26"
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #9277da26",
+      subtle: tokens.color.purple9.val,
+      subtleActive: "#4b3c79",
+      subtleDisabled: "#3e3a4d",
+      subtleInactive: "#27144e"
     },
     info: {
       accent: tokens.color.blue4.val,
-      accentActive: "#72b6ff",
-      accentDisabled: "#5990ef",
-      accentHover: "#7abeff",
-      accentInactive: "#2564d1",
-      muted: tokens.color.blue8.val,
-      mutedActive: "#2d59a4",
-      mutedDisabled: "#224582",
-      mutedHover: "#325da9",
-      mutedInactive: "#022c73",
+      active: "#7fc4ff",
+      disabled: "#4b5e81",
+      inactive: "#2564d1",
       onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: tokens.color.blue4.val,
-      onMutedActive: "#72b6ff",
-      onMutedDisabled: "#5990ef",
-      onMutedHover: "#7abeff",
-      onMutedInactive: "#2564d1",
+      onSubtle: "#FAFAFA",
       ring: "0px 0px 0px 3px #4d8eff26",
       ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #4d8eff26",
       ringSubtle: "0px 0px 0px 1px #4d8eff26",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #4d8eff26"
-    },
-    negative: {
-      accent: tokens.color.red5.val,
-      accentActive: "#f55474",
-      accentDisabled: "#c4405b",
-      accentHover: "#fd5b7b",
-      accentInactive: "#a70037",
-      muted: "#660022",
-      mutedActive: "#791931",
-      mutedDisabled: "#601125",
-      mutedHover: "#7e1e34",
-      mutedInactive: "#510013",
-      onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#ff9ba8",
-      onMutedActive: "#cc6e7b",
-      onMutedDisabled: "#f6a1ab",
-      onMutedHover: "#c26472",
-      onMutedInactive: "#ffcedb",
-      ring: "0px 0px 0px 3px #cf2d5626",
-      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #cf2d5626",
-      ringSubtle: "0px 0px 0px 1px #cf2d5626",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #cf2d5626"
-    },
-    positive: {
-      accent: tokens.color.green4.val,
-      accentActive: "#78f5bc",
-      accentDisabled: "#5dc395",
-      accentHover: "#82ffc6",
-      accentInactive: "#009865",
-      muted: "#006a47",
-      mutedActive: "#2b835f",
-      mutedDisabled: "#20684a",
-      mutedHover: "#328964",
-      mutedInactive: "#00502f",
-      onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#ffffff",
-      onMutedActive: "#c2c2c2",
-      onMutedDisabled: "#ffffff20",
-      onMutedHover: "#b6b6b6",
-      onMutedInactive: "#ffffff",
-      ring: "0px 0px 0px 3px #45c79126",
-      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #45c79126",
-      ringSubtle: "0px 0px 0px 1px #45c79126",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #45c79126"
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #4d8eff26",
+      subtle: tokens.color.blue8.val,
+      subtleActive: "#3560ac",
+      subtleDisabled: "#37445b",
+      subtleInactive: "#022c73"
     },
     success: {
       accent: tokens.color.green4.val,
-      accentActive: "#78f5bc",
-      accentDisabled: "#5dc395",
-      accentHover: "#82ffc6",
-      accentInactive: "#009865",
-      muted: "#006a47",
-      mutedActive: "#2b835f",
-      mutedDisabled: "#20684a",
-      mutedHover: "#328964",
-      mutedInactive: "#00502f",
+      active: "#89ffcc",
+      disabled: "#4c7062",
+      inactive: "#009865",
       onAccent: "#FAFAFA",
-      onAccentActive: "#bebebe",
-      onAccentDisabled: "#fafafa20",
-      onAccentHover: "#b2b2b2",
-      onAccentInactive: "#ffffff",
-      onMuted: "#ffffff",
-      onMutedActive: "#c2c2c2",
-      onMutedDisabled: "#ffffff20",
-      onMutedHover: "#b6b6b6",
-      onMutedInactive: "#ffffff",
+      onSubtle: "#ffffff",
       ring: "0px 0px 0px 3px #45c79126",
       ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #45c79126",
       ringSubtle: "0px 0px 0px 1px #45c79126",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #45c79126"
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #45c79126",
+      subtle: "#006a47",
+      subtleActive: "#368d67",
+      subtleDisabled: "#375047",
+      subtleInactive: "#00502f"
     },
     warning: {
       accent: tokens.color.yellow4.val,
-      accentActive: "#c67d00",
-      accentDisabled: "#efaf4c",
-      accentHover: "#bb7400",
-      accentInactive: "#ffe067",
-      muted: "#7d5300",
-      mutedActive: "#986c28",
-      mutedDisabled: "#78551d",
-      mutedHover: "#9e722e",
-      mutedInactive: "#613900",
+      active: "#b56e00",
+      disabled: "#7f6948",
+      inactive: "#ffe067",
       onAccent: "#151518",
-      onAccentActive: "#1d1d20",
-      onAccentDisabled: "#151518",
-      onAccentHover: "#1f1f22",
-      onAccentInactive: "#0c0c0f",
-      onMuted: "#ffffff",
-      onMutedActive: "#c2c2c2",
-      onMutedDisabled: "#ffffff20",
-      onMutedHover: "#b6b6b6",
-      onMutedInactive: "#ffffff",
+      onSubtle: "#ffffff",
       ring: "0px 0px 0px 3px #f7ac2326",
       ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #f7ac2326",
       ringSubtle: "0px 0px 0px 1px #f7ac2326",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #f7ac2326"
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #f7ac2326",
+      subtle: "#7d5300",
+      subtleActive: "#a27632",
+      subtleDisabled: "#564938",
+      subtleInactive: "#613900"
     }
   }
 };
@@ -863,11 +589,13 @@ const themes = createThemes({
     },
     extra: {
       light: {
-        black: "#0c0c0d",
+        backdrop: "#1a1c1f66",
+        border: tokens.color.neutral6.val,
+        borderActive: "#0c0c0d",
+        borderDisabled: "#69696b",
+        borderInactive: "#030303",
         dataBlueEmphasis: tokens.color.blue7.val,
         dataBlueSubtle: tokens.color.blue3.val,
-        dataBrandEmphasis: tokens.color.blue7.val,
-        dataBrandSubtle: tokens.color.blue3.val,
         dataGreenEmphasis: tokens.color.green7.val,
         dataGreenSubtle: tokens.color.green3.val,
         dataNeutralEmphasis: tokens.color.neutral9.val,
@@ -882,58 +610,23 @@ const themes = createThemes({
         dataRedSubtle: tokens.color.red2.val,
         dataYellowEmphasis: tokens.color.yellow9.val,
         dataYellowSubtle: tokens.color.yellow3.val,
-        hairline: tokens.color.neutral6.val,
-        hairlineActive: "#565657",
-        hairlineHover: "#7c7c7d",
-        hairlineInactive: "#e1e1e2",
-        inkBody: tokens.color.neutral9.val,
-        inkEmphasis: tokens.color.neutral11.val,
-        inkSubtle: tokens.color.neutral6.val,
-        inkSubtlest: tokens.color.neutral5.val,
-        link: tokens.color.blue7.val,
-        linkActive: "#033a96",
-        linkHover: "#003590",
-        linkInactive: "#3b72d3",
-        overlayBackdrop: "#1a1c1f66",
-        overlayBackground: "#ffffff",
-        overlayBorder: tokens.color.neutral6.val,
-        required: tokens.color.red7.val,
-        selectionBackground: "#1fb2a6",
-        selectionForeground: "#FAFAFA",
+        primary: tokens.color.neutral13.val,
+        secondary: tokens.color.neutral9.val,
         surfaceCanvas: tokens.color.neutral3.val,
-        surfaceCanvasActive: "#b2b2b2",
-        surfaceCanvasDisabled: "#eaeaea20",
-        surfaceCanvasHover: "#a6a6a6",
-        surfaceCanvasInactive: "#ffffff",
         surfaceElevated: tokens.color.neutral2.val,
-        surfaceElevatedActive: "#b7b7b7",
-        surfaceElevatedDisabled: "#f1f1f120",
-        surfaceElevatedHover: "#ababab",
-        surfaceElevatedInactive: "#ffffff",
         surfaceFloating: tokens.color.neutral1.val,
-        surfaceFloatingActive: "#bebebe",
-        surfaceFloatingDisabled: "#fafafa20",
-        surfaceFloatingHover: "#b2b2b2",
-        surfaceFloatingInactive: "#ffffff",
-        surfaceOverlay: "#ffffff",
-        surfaceOverlayActive: "#c2c2c2",
-        surfaceOverlayDisabled: "#ffffff20",
-        surfaceOverlayHover: "#b6b6b6",
-        surfaceOverlayInactive: "#ffffff",
+        surfaceHighest: tokens.color.white.val,
         surfaceSunken: tokens.color.neutral4.val,
-        surfaceSunkenActive: "#ababab",
-        surfaceSunkenDisabled: "#e1e1e120",
-        surfaceSunkenHover: "#a0a0a0",
-        surfaceSunkenInactive: "#ffffff",
-        transparent: "#ffffff00",
-        white: "#ffffff"
+        tertiary: tokens.color.neutral5.val
       },
       dark: {
-        black: "#0c0c0d",
+        backdrop: "#0d0c0766",
+        border: tokens.color.neutral9.val,
+        borderActive: "#ffffff",
+        borderDisabled: "#494a4d",
+        borderInactive: "#808080",
         dataBlueEmphasis: tokens.color.blue7.val,
         dataBlueSubtle: tokens.color.blue9.val,
-        dataBrandEmphasis: tokens.color.blue2.val,
-        dataBrandSubtle: tokens.color.blue4.val,
         dataGreenEmphasis: tokens.color.green6.val,
         dataGreenSubtle: tokens.color.green7.val,
         dataNeutralEmphasis: tokens.color.neutral1.val,
@@ -948,62 +641,22 @@ const themes = createThemes({
         dataRedSubtle: tokens.color.red9.val,
         dataYellowEmphasis: tokens.color.yellow5.val,
         dataYellowSubtle: tokens.color.yellow9.val,
-        hairline: tokens.color.neutral9.val,
-        hairlineActive: "#898a8e",
-        hairlineHover: "#727376",
-        hairlineInactive: "#3d3e40",
-        inkBody: tokens.color.neutral6.val,
-        inkEmphasis: tokens.color.neutral5.val,
-        inkSubtle: tokens.color.neutral7.val,
-        inkSubtlest: tokens.color.neutral8.val,
-        link: tokens.color.blue3.val,
-        linkActive: "#95cdff",
-        linkHover: "#9ed6ff",
-        linkInactive: "#4375ce",
-        overlayBackdrop: "#0d0c0766",
-        overlayBackground: tokens.color.neutral11.val,
-        overlayBorder: tokens.color.neutral8.val,
-        required: tokens.color.red5.val,
-        selectionBackground: "#3be4be",
-        selectionForeground: "#151518",
+        primary: tokens.color.neutral2.val,
+        secondary: tokens.color.neutral5.val,
         surfaceCanvas: tokens.color.neutral14.val,
-        surfaceCanvasActive: "#1d1d20",
-        surfaceCanvasDisabled: "#151518",
-        surfaceCanvasHover: "#1f1f22",
-        surfaceCanvasInactive: "#0c0c0f",
         surfaceElevated: tokens.color.neutral13.val,
-        surfaceElevatedActive: "#2a2a2c",
-        surfaceElevatedDisabled: "#1f1f21",
-        surfaceElevatedHover: "#2c2c2e",
-        surfaceElevatedInactive: "#141416",
         surfaceFloating: tokens.color.neutral12.val,
-        surfaceFloatingActive: "#303134",
-        surfaceFloatingDisabled: "#242528",
-        surfaceFloatingHover: "#333437",
-        surfaceFloatingInactive: "#18191b",
-        surfaceOverlay: tokens.color.neutral11.val,
-        surfaceOverlayActive: "#393a3e",
-        surfaceOverlayDisabled: "#2b2c2f",
-        surfaceOverlayHover: "#3c3d41",
-        surfaceOverlayInactive: "#1d1e22",
-        surfaceSunken: "#0c0c0d",
-        surfaceSunkenActive: "#121213",
-        surfaceSunkenDisabled: "#0c0c0d",
-        surfaceSunkenHover: "#141415",
-        surfaceSunkenInactive: "#060607",
-        transparent: "#ffffff00",
-        white: "#ffffff"
+        surfaceHighest: tokens.color.neutral11.val,
+        surfaceSunken: tokens.color.black.val,
+        tertiary: tokens.color.neutral10.val
       }
     }
   },
   childrenThemes: {
     base: {},
-    brand: {},
     danger: {},
     discovery: {},
     info: {},
-    negative: {},
-    positive: {},
     success: {},
     warning: {}
   },
@@ -1058,27 +711,6 @@ const bodySmFont = createFont({
   },
   face: {
     500: { normal: "StormSans-Medium", italic: "StormSans-MediumItalic" }
-  }
-});
-
-const buttonFont = createFont({
-  family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
-  size: {
-    md: 18,
-    true: 18
-  },
-  lineHeight: {
-    md: 21.15,
-    tight: 21.15,
-    true: 21.15
-  },
-  weight: {
-    md: "600",
-    semibold: "600",
-    true: "600"
-  },
-  face: {
-    600: { normal: "StormSans-SemiBold", italic: "StormSans-SemiBoldItalic" }
   }
 });
 
@@ -1344,17 +976,17 @@ const titleMdFont = createFont({
     true: 18
   },
   lineHeight: {
-    md: 22.5,
-    snug: 22.5,
-    true: 22.5
+    md: 21.15,
+    tight: 21.15,
+    true: 21.15
   },
   weight: {
-    md: "500",
-    medium: "500",
-    true: "500"
+    md: "600",
+    semibold: "600",
+    true: "600"
   },
   face: {
-    500: { normal: "StormSans-Medium", italic: "StormSans-MediumItalic" }
+    600: { normal: "StormSans-SemiBold", italic: "StormSans-SemiBoldItalic" }
   }
 });
 
@@ -1433,15 +1065,14 @@ const titleXsFont = createFont({
  */
 export interface AppTheme {
   accent: string;
-  accentActive: string;
-  accentDisabled: string;
-  accentHover: string;
-  accentInactive: string;
-  black: string;
+  active: string;
+  backdrop: string;
+  border: string;
+  borderActive: string;
+  borderDisabled: string;
+  borderInactive: string;
   dataBlueEmphasis: string;
   dataBlueSubtle: string;
-  dataBrandEmphasis: string;
-  dataBrandSubtle: string;
   dataGreenEmphasis: string;
   dataGreenSubtle: string;
   dataNeutralEmphasis: string;
@@ -1456,70 +1087,26 @@ export interface AppTheme {
   dataRedSubtle: string;
   dataYellowEmphasis: string;
   dataYellowSubtle: string;
-  hairline: string;
-  hairlineActive: string;
-  hairlineHover: string;
-  hairlineInactive: string;
-  inkBody: string;
-  inkEmphasis: string;
-  inkSubtle: string;
-  inkSubtlest: string;
-  link: string;
-  linkActive: string;
-  linkHover: string;
-  linkInactive: string;
-  muted: string;
-  mutedActive: string;
-  mutedDisabled: string;
-  mutedHover: string;
-  mutedInactive: string;
+  disabled: string;
+  inactive: string;
   onAccent: string;
-  onAccentActive: string;
-  onAccentDisabled: string;
-  onAccentHover: string;
-  onAccentInactive: string;
-  onMuted: string;
-  onMutedActive: string;
-  onMutedDisabled: string;
-  onMutedHover: string;
-  onMutedInactive: string;
-  overlayBackdrop: string;
-  overlayBackground: string;
-  overlayBorder: string;
-  required: string;
+  onSubtle: string;
+  primary: string;
   ring: string;
   ringOffset: string;
   ringSubtle: string;
   ringSubtleOffset: string;
-  selectionBackground: string;
-  selectionForeground: string;
+  secondary: string;
+  subtle: string;
+  subtleActive: string;
+  subtleDisabled: string;
+  subtleInactive: string;
   surfaceCanvas: string;
-  surfaceCanvasActive: string;
-  surfaceCanvasDisabled: string;
-  surfaceCanvasHover: string;
-  surfaceCanvasInactive: string;
   surfaceElevated: string;
-  surfaceElevatedActive: string;
-  surfaceElevatedDisabled: string;
-  surfaceElevatedHover: string;
-  surfaceElevatedInactive: string;
   surfaceFloating: string;
-  surfaceFloatingActive: string;
-  surfaceFloatingDisabled: string;
-  surfaceFloatingHover: string;
-  surfaceFloatingInactive: string;
-  surfaceOverlay: string;
-  surfaceOverlayActive: string;
-  surfaceOverlayDisabled: string;
-  surfaceOverlayHover: string;
-  surfaceOverlayInactive: string;
+  surfaceHighest: string;
   surfaceSunken: string;
-  surfaceSunkenActive: string;
-  surfaceSunkenDisabled: string;
-  surfaceSunkenHover: string;
-  surfaceSunkenInactive: string;
-  transparent: string;
-  white: string;
+  tertiary: string;
 }
 
 /**
@@ -1534,7 +1121,6 @@ export const config = createTamagui({
   fonts: {
      "body-md": bodyMdFont,
     "body-sm": bodySmFont,
-    button: buttonFont,
     caption: captionFont,
     code: codeFont,
     "display-hero": displayHeroFont,

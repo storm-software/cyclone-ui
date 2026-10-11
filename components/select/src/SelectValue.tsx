@@ -46,7 +46,7 @@ const SelectValueFrame = styled(Text, {
   context: SelectContext,
   transition: "200ms",
   cursor: "pointer",
-  color: "accent hover:accentHover",
+  color: "accent hover:active",
   display: "flex",
   flexGrow: 1,
   alignItems: "center",
@@ -75,7 +75,7 @@ const SelectValueFrame = styled(Text, {
 
     placeholding: {
       true: {
-        color: "accentDisabled"
+        color: "disabled"
       }
     },
 
@@ -86,7 +86,7 @@ const SelectValueFrame = styled(Text, {
         // v2 also set `placeholderColor`, which is not a text style in v3
         // and had no effect on this text node.
         color:
-          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled"
+          "disabled hover:disabled press:disabled focus:disabled"
       }
     }
   } as const,

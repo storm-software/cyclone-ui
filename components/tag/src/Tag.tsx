@@ -121,10 +121,10 @@ const getSpaceValue = (val: string, tokens: TagTokens): number =>
 
 // The theme color a variant fills (or, when outlined, draws) the tag with.
 const getVariantColor = (variant: TagVariant | undefined) =>
-  variant === "secondary" ? "muted" : "accent";
+  variant === "secondary" ? "subtle" : "accent";
 
 // Outlined tags draw the text in the variant color, filled ones in the
-// matching `on*` color (`onAccent` / `onMuted`).
+// matching `on*` color (`onAccent` / `onSubtle`).
 const getTextColor = (
   variant: TagVariant | undefined,
   outlined: boolean | undefined
@@ -133,8 +133,8 @@ const getTextColor = (
 
   return outlined
     ? variantColor
-    : variantColor === "muted"
-      ? "onMuted"
+    : variantColor === "subtle"
+      ? "onSubtle"
       : "onAccent";
 };
 
@@ -198,7 +198,7 @@ const TagFrame = styled(View, {
   if (outlined) {
     return {
       backgroundColor: pressable
-        ? "transparent hover:mutedHover"
+        ? "transparent hover:subtleActive"
         : "transparent",
       borderColor: pressable ? `${color} hover:${color}Hover` : color,
       borderWidth: 2
@@ -206,7 +206,7 @@ const TagFrame = styled(View, {
   }
 
   return {
-    backgroundColor: pressable ? `${color} hover:mutedHover` : color
+    backgroundColor: pressable ? `${color} hover:subtleActive` : color
   };
 });
 
@@ -457,10 +457,10 @@ const TagButtonFrame = styled(View, {
   borderRadius: 1000_000_000,
   // No `press:` background color: a press draws a ripple from the press
   // point instead.
-  backgroundColor: "accent hover:mutedHover focus:surfaceElevated",
+  backgroundColor: "accent hover:subtleActive focus:surfaceElevated",
   justifyContent: "center",
   alignItems: "center",
-  borderColor: "hover:accentHover",
+  borderColor: "hover:active",
   variants: {
     size: styled.dynamic<TagSize>(),
     // Styled by the `.resolve` below because the offset depends on `size`.
@@ -486,7 +486,7 @@ const TagButtonFrame = styled(View, {
 const TagButton = createStyledHOC(
   TagButtonFrame,
   ({ children, onPress, ...props }, forwardedRef) => {
-    // `accent` shows on both backgrounds a press lands on: `mutedHover` under
+    // `accent` shows on both backgrounds a press lands on: `subtleActive` under
     // a pointer and `surfaceElevated` once the press focuses the button.
     const ripple = useTagRipples("accent", onPress);
 
@@ -599,7 +599,7 @@ const TagFrameImpl = createStyledHOC(
     }: TagProps,
     forwardedRef
   ) => {
-    // The text's color: it stays visible on the `mutedHover` background a
+    // The text's color: it stays visible on the `subtleActive` background a
     // pointer press lands on.
     const ripple = useTagRipples(getTextColor(variant, outlined), onPress);
 

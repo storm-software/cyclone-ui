@@ -250,13 +250,6 @@ export const PrimaryTags: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand",
-    defaultValue: ["Design", "Engineering"]
-  }
-};
-
 export const Error: Story = {
   args: {
     validate: validation("danger"),

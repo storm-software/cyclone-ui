@@ -82,9 +82,9 @@ const CardFrame = styled(Container, {
   overflow: "hidden",
   borderRadius: "card",
   borderColor:
-    "accent hover:accentHover press:accentHover focus-visible:accentActive",
+    "accent hover:active press:active focus-visible:active",
   cursor: "pointer",
-  backgroundColor: "surfaceElevated hover:surfaceElevatedHover",
+  backgroundColor: "surfaceElevated hover:tertiary",
   position: "relative"
 });
 
@@ -262,7 +262,7 @@ const CardEyebrow = styled(EyebrowText, {
   displayName: "CardEyebrow",
   context: CardContext,
   zIndex: "20",
-  color: "inkBody",
+  color: "secondary",
   variants: {
     size: cardTextSizeVariant
   } as const
@@ -342,14 +342,14 @@ const CardLinkImpl = createStyledHOC(
           group={false}
           inverse={inverse}
           zIndex="30"
-          color="group-hover/card:accentHover"
-          textDecorationColor="group-hover/card:accentHover">
+          color="group-hover/card:active"
+          textDecorationColor="group-hover/card:active">
           {children}
         </Link>
         <View transition="200ms" x="0 group-hover/card:10px">
           <CardLinkArrowRight
             height="4xl"
-            color="group-hover/card:accentHover"
+            color="group-hover/card:active"
           />
         </View>
       </XStack>

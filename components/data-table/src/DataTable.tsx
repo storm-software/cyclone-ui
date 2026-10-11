@@ -548,9 +548,9 @@ export function DataTable<TData extends RowData>({
                             borderStyle="dashed"
                             borderRightColor={
                               header.column.getIsResizing()
-                                ? "inkEmphasisActive"
+                                ? "active"
                                 : hoveredResizer === header.id
-                                  ? "inkEmphasis"
+                                  ? "primary"
                                   : "transparent"
                             }
                           />
@@ -570,7 +570,7 @@ export function DataTable<TData extends RowData>({
                   aria-selected={row.getIsSelected()}
                   // An explicit `undefined` would wipe the row's hover background.
                   {...(row.getIsSelected()
-                    ? { backgroundColor: "mutedActive" }
+                    ? { backgroundColor: "subtleActive" }
                     : {})}>
                   {row.getVisibleCells().map(cell => (
                     <Table.Cell
@@ -657,7 +657,7 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   const value = props.value ? props.value : props.renderValue();
 
   return (
-    <BodyText transition="200ms" color="inkBody group-hover/row:inkBodyHover">
+    <BodyText transition="200ms" color="secondary group-hover/row:inkBodyHover">
       {value}
     </BodyText>
   );
@@ -896,7 +896,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       <XStack gap="xl" flexShrink={0} cursor="pointer" onPress={handleSorting}>
         <DataTableColumnHeading
           transition="200ms"
-          color="inkEmphasis group-hover/header:accent">
+          color="primary group-hover/header:accent">
           {titleCase(id)}
         </DataTableColumnHeading>
         {isSorted && !desc && (

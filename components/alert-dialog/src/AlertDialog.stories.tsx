@@ -88,13 +88,6 @@ export const CustomIcon: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    children: bodyText,
-    theme: "brand"
-  }
-};
-
 export const Discovery: Story = {
   args: {
     children: bodyText,
@@ -127,19 +120,5 @@ export const Success: Story = {
   args: {
     children: bodyText,
     theme: "success"
-  }
-};
-
-export const Positive: Story = {
-  args: {
-    children: bodyText,
-    theme: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    children: bodyText,
-    theme: "negative"
   }
 };

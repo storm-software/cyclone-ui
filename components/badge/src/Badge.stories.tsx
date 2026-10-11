@@ -26,13 +26,13 @@ import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { BadgeColor, BadgeOrigin, BadgeProps } from "./Badge";
 import { Badge } from "./Badge";
 
-const MailIcon = () => <Envelope size={24} color="inkEmphasis" />;
+const MailIcon = () => <Envelope size={24} color="primary" />;
 
 const Shape = ({ circle = false }: { circle?: boolean }) => (
   <View
     width={40}
     height={40}
-    backgroundColor="inkSubtle"
+    backgroundColor="tertiary"
     borderRadius={circle ? 1000_000_000 : 0}
   />
 );
@@ -374,16 +374,9 @@ export const Customized: Story = {
         }
       }}
       {...args}>
-      <ShoppingCart size={24} color="inkEmphasis" />
+      <ShoppingCart size={24} color="primary" />
     </Badge>
   )
-};
-
-export const Brand: Story = {
-  args: {
-    badgeContent: 4,
-    theme: "brand"
-  }
 };
 
 export const Danger: Story = {

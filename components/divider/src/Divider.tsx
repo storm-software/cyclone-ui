@@ -38,7 +38,7 @@ export interface DividerProps extends Omit<
   direction?: DividerDirection;
   /** The divider thickness: 1px, 2px, or 3px. */
   size?: DividerSize;
-  /** The divider color. Defaults to the theme's hairline color. */
+  /** The divider color. Defaults to the theme's border color. */
   color?: DividerColor;
 }
 
@@ -51,7 +51,7 @@ const dividerThickness = {
 /** A themed line that separates adjacent content. */
 export const Divider = forwardRef<TamaguiElement, DividerProps>(
   (
-    { color = "hairline", direction = "horizontal", size = "md", ...props },
+    { color = "border", direction = "horizontal", size = "md", ...props },
     forwardedRef
   ) => {
     const thickness = dividerThickness[size];

@@ -7,7 +7,7 @@
         "punctuation.definition.comment"
       ],
       "settings": {
-        "foreground": "#c3c3ca",
+        "foreground": "#ebebed",
         "fontStyle": "italic"
       }
     },
@@ -37,7 +37,7 @@
         "storage.type"
       ],
       "settings": {
-        "foreground": "#00bcad"
+        "foreground": "#0145be"
       }
     },
     {
@@ -46,7 +46,7 @@
         "support.function"
       ],
       "settings": {
-        "foreground": "#00bcad"
+        "foreground": "#0145be"
       }
     },
     {
@@ -65,7 +65,7 @@
         "meta.tag"
       ],
       "settings": {
-        "foreground": "#00bcad"
+        "foreground": "#0145be"
       }
     },
     {
@@ -92,7 +92,7 @@
         "meta.brace"
       ],
       "settings": {
-        "foreground": "#c3c3ca"
+        "foreground": "#ebebed"
       }
     },
     {
@@ -107,19 +107,19 @@
   ],
   "displayName": "Cyclone Light",
   "type": "lightHighContrast",
-  "fg": "#08080a",
+  "fg": "#000000",
   "bg": "#ffffff",
   "colors": {
     "editor.background": "#ffffff",
-    "editor.foreground": "#08080a",
+    "editor.foreground": "#000000",
     "editorCursor.foreground": "#0145be",
-    "editor.selectionBackground": "#00bcad",
+    "editor.selectionBackground": "#000000",
     "editor.selectionForeground": "#ffffff",
     "editor.inactiveSelectionBackground": "#ffffff",
-    "editorLineNumber.foreground": "#c3c3ca",
+    "editorLineNumber.foreground": "#ebebed",
     "editorLineNumber.activeForeground": "#3f424a",
     "editorIndentGuide.background1": "#c3c3ca",
-    "editorIndentGuide.activeBackground1": "#c3c3ca",
-    "editorWhitespace.foreground": "#c3c3ca"
+    "editorIndentGuide.activeBackground1": "#ebebed",
+    "editorWhitespace.foreground": "#ebebed"
   }
 }

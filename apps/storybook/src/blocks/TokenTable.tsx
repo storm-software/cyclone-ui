@@ -15,15 +15,6 @@ export interface TokenTableRow {
 const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
   "dark": [
     {
-      path: "color.transparent",
-      type: "color",
-      value: "#ffffff00",
-      cssVar: "--cu-color-transparent",
-      description: "Fully transparent white.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.black",
       type: "color",
       value: "#0c0c0d",
@@ -735,43 +726,106 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.ink.emphasis",
+      path: "color.primary",
       type: "color",
-      value: "#cacacb",
-      cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
+      value: "#f1f1f1",
+      cssVar: "--cu-color-primary",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.body",
+      path: "color.secondary",
       type: "color",
-      value: "#b0b0b1",
-      cssVar: "--cu-color-ink-body",
+      value: "#cacacb",
+      cssVar: "--cu-color-secondary",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.subtle",
+      path: "color.tertiary",
       type: "color",
-      value: "#959698",
-      cssVar: "--cu-color-ink-subtle",
-      description: "Lower-emphasis text and icon color for supporting content that should recede behind body copy. Use it for metadata, secondary labels and decorative icons. Used by Breadcrumb separators, EyebrowText, TableOfContents entries, FileTree, DatePicker, inactive Slider values and NavigationHeader links.",
+      value: "#46464a",
+      cssVar: "--cu-color-tertiary",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.subtlest",
+      path: "color.border",
       type: "color",
-      value: "#7b7b7e",
-      cssVar: "--cu-color-ink-subtlest",
-      description: "Lowest-emphasis text and icon color, for content that should be legible but barely noticed. Use it for hints and optional markers. Used by Field for the `optional` marker beside a field label; avoid it for anything the user must read.",
+      value: "#555659",
+      cssVar: "--cu-color-border",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken",
+      path: "color.danger",
+      type: "color",
+      value: "#cf2d56",
+      cssVar: "--cu-color-danger",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning",
+      type: "color",
+      value: "#f7ac23",
+      cssVar: "--cu-color-warning",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info",
+      type: "color",
+      value: "#4d8eff",
+      cssVar: "--cu-color-info",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle",
+      type: "color",
+      value: "#19438c",
+      cssVar: "--cu-color-info-subtle",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery",
+      type: "color",
+      value: "#9277da",
+      cssVar: "--cu-color-discovery",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle",
+      type: "color",
+      value: "#362661",
+      cssVar: "--cu-color-discovery-subtle",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success",
+      type: "color",
+      value: "#45c791",
+      cssVar: "--cu-color-success",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.surface-sunken",
       type: "color",
       value: "#0c0c0d",
       cssVar: "--cu-color-surface-sunken",
@@ -780,7 +834,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.canvas",
+      path: "color.surface-canvas",
       type: "color",
       value: "#151518",
       cssVar: "--cu-color-surface-canvas",
@@ -789,7 +843,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.elevated",
+      path: "color.surface-elevated",
       type: "color",
       value: "#1f1f21",
       cssVar: "--cu-color-surface-elevated",
@@ -798,7 +852,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.floating",
+      path: "color.surface-floating",
       type: "color",
       value: "#242528",
       cssVar: "--cu-color-surface-floating",
@@ -807,1477 +861,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.overlay",
+      path: "color.surface-highest",
       type: "color",
       value: "#2b2c30",
-      cssVar: "--cu-color-surface-overlay",
+      cssVar: "--cu-color-surface-highest",
       description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken-hover",
-      type: "color",
-      value: "#141415",
-      cssVar: "--cu-color-surface-sunken-hover",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-active",
-      type: "color",
-      value: "#121213",
-      cssVar: "--cu-color-surface-sunken-active",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-inactive",
-      type: "color",
-      value: "#060607",
-      cssVar: "--cu-color-surface-sunken-inactive",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-disabled",
-      type: "color",
-      value: "#0c0c0d",
-      cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-hover",
-      type: "color",
-      value: "#1f1f22",
-      cssVar: "--cu-color-surface-canvas-hover",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-active",
-      type: "color",
-      value: "#1d1d20",
-      cssVar: "--cu-color-surface-canvas-active",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-inactive",
-      type: "color",
-      value: "#0c0c0f",
-      cssVar: "--cu-color-surface-canvas-inactive",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-disabled",
-      type: "color",
-      value: "#151518",
-      cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-hover",
-      type: "color",
-      value: "#2c2c2e",
-      cssVar: "--cu-color-surface-elevated-hover",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-active",
-      type: "color",
-      value: "#2a2a2c",
-      cssVar: "--cu-color-surface-elevated-active",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-inactive",
-      type: "color",
-      value: "#141416",
-      cssVar: "--cu-color-surface-elevated-inactive",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-disabled",
-      type: "color",
-      value: "#1f1f21",
-      cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-hover",
-      type: "color",
-      value: "#333437",
-      cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-active",
-      type: "color",
-      value: "#303134",
-      cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-inactive",
-      type: "color",
-      value: "#18191b",
-      cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-disabled",
-      type: "color",
-      value: "#242528",
-      cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-hover",
-      type: "color",
-      value: "#3c3d41",
-      cssVar: "--cu-color-surface-overlay-hover",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-active",
-      type: "color",
-      value: "#393a3e",
-      cssVar: "--cu-color-surface-overlay-active",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-inactive",
-      type: "color",
-      value: "#1d1e22",
-      cssVar: "--cu-color-surface-overlay-inactive",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-disabled",
-      type: "color",
-      value: "#2b2c2f",
-      cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.required",
-      type: "color",
-      value: "#cf2d56",
-      cssVar: "--cu-color-required",
-      description: "Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.link",
-      type: "color",
-      value: "#6da2ff",
-      cssVar: "--cu-color-link",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline",
-      type: "color",
-      value: "#555659",
-      cssVar: "--cu-color-hairline",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.background",
-      type: "color",
-      value: "#3be4be",
-      cssVar: "--cu-color-selection-background",
-      description: "Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.foreground",
-      type: "color",
-      value: "#151518",
-      cssVar: "--cu-color-selection-foreground",
-      description: "Text color of highlighted text, chosen to stay readable on the brand-accent selection background.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base",
-      type: "color",
-      value: "#fafafa",
-      cssVar: "--cu-color-accent-base",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand",
-      type: "color",
-      value: "#3be4be",
-      cssVar: "--cu-color-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger",
-      type: "color",
-      value: "#cf2d56",
-      cssVar: "--cu-color-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative",
-      type: "color",
-      value: "#cf2d56",
-      cssVar: "--cu-color-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning",
-      type: "color",
-      value: "#f7ac23",
-      cssVar: "--cu-color-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success",
-      type: "color",
-      value: "#45c791",
-      cssVar: "--cu-color-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive",
-      type: "color",
-      value: "#45c791",
-      cssVar: "--cu-color-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info",
-      type: "color",
-      value: "#4d8eff",
-      cssVar: "--cu-color-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery",
-      type: "color",
-      value: "#9277da",
-      cssVar: "--cu-color-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-hover",
-      type: "color",
-      value: "#9b9b9b",
-      cssVar: "--cu-color-accent-base-hover",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hover, 30% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-active",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-accent-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-inactive",
-      type: "color",
-      value: "#808080",
-      cssVar: "--cu-color-accent-base-inactive",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-hover",
-      type: "color",
-      value: "#00a785",
-      cssVar: "--cu-color-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-active",
-      type: "color",
-      value: "#00b28f",
-      cssVar: "--cu-color-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-inactive",
-      type: "color",
-      value: "#81fff4",
-      cssVar: "--cu-color-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-disabled",
-      type: "color",
-      value: "#61e0bf",
-      cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-hover",
-      type: "color",
-      value: "#fd5b7b",
-      cssVar: "--cu-color-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-active",
-      type: "color",
-      value: "#f55474",
-      cssVar: "--cu-color-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-inactive",
-      type: "color",
-      value: "#a70037",
-      cssVar: "--cu-color-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-disabled",
-      type: "color",
-      value: "#c4405b",
-      cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-hover",
-      type: "color",
-      value: "#fd5b7b",
-      cssVar: "--cu-color-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-active",
-      type: "color",
-      value: "#f55474",
-      cssVar: "--cu-color-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-inactive",
-      type: "color",
-      value: "#a70037",
-      cssVar: "--cu-color-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-disabled",
-      type: "color",
-      value: "#c4405b",
-      cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-hover",
-      type: "color",
-      value: "#bb7400",
-      cssVar: "--cu-color-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-active",
-      type: "color",
-      value: "#c67d00",
-      cssVar: "--cu-color-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-inactive",
-      type: "color",
-      value: "#ffe067",
-      cssVar: "--cu-color-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-disabled",
-      type: "color",
-      value: "#efaf4c",
-      cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-hover",
-      type: "color",
-      value: "#82ffc6",
-      cssVar: "--cu-color-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-active",
-      type: "color",
-      value: "#78f5bc",
-      cssVar: "--cu-color-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-inactive",
-      type: "color",
-      value: "#009865",
-      cssVar: "--cu-color-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-disabled",
-      type: "color",
-      value: "#5dc395",
-      cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-hover",
-      type: "color",
-      value: "#82ffc6",
-      cssVar: "--cu-color-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-active",
-      type: "color",
-      value: "#78f5bc",
-      cssVar: "--cu-color-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-inactive",
-      type: "color",
-      value: "#009865",
-      cssVar: "--cu-color-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-disabled",
-      type: "color",
-      value: "#5dc395",
-      cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-hover",
-      type: "color",
-      value: "#7abeff",
-      cssVar: "--cu-color-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-active",
-      type: "color",
-      value: "#72b6ff",
-      cssVar: "--cu-color-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-inactive",
-      type: "color",
-      value: "#2564d1",
-      cssVar: "--cu-color-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-disabled",
-      type: "color",
-      value: "#5990ef",
-      cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-hover",
-      type: "color",
-      value: "#bea4ff",
-      cssVar: "--cu-color-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-active",
-      type: "color",
-      value: "#b69cff",
-      cssVar: "--cu-color-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-inactive",
-      type: "color",
-      value: "#6d51b0",
-      cssVar: "--cu-color-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-disabled",
-      type: "color",
-      value: "#917bcf",
-      cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base",
-      type: "color",
-      value: "#151518",
-      cssVar: "--cu-color-on-accent-base",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-hover",
-      type: "color",
-      value: "#232326",
-      cssVar: "--cu-color-on-accent-base-hover",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (hover, 30% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-active",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-base-active",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (active, dark base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-inactive",
-      type: "color",
-      value: "#808080",
-      cssVar: "--cu-color-on-accent-base-inactive",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-disabled",
-      type: "color",
-      value: "#151518",
-      cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand",
-      type: "color",
-      value: "#151518",
-      cssVar: "--cu-color-on-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning",
-      type: "color",
-      value: "#151518",
-      cssVar: "--cu-color-on-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-hover",
-      type: "color",
-      value: "#1f1f22",
-      cssVar: "--cu-color-on-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-active",
-      type: "color",
-      value: "#1d1d20",
-      cssVar: "--cu-color-on-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-inactive",
-      type: "color",
-      value: "#0c0c0f",
-      cssVar: "--cu-color-on-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-disabled",
-      type: "color",
-      value: "#151518",
-      cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-hover",
-      type: "color",
-      value: "#1f1f22",
-      cssVar: "--cu-color-on-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-active",
-      type: "color",
-      value: "#1d1d20",
-      cssVar: "--cu-color-on-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-inactive",
-      type: "color",
-      value: "#0c0c0f",
-      cssVar: "--cu-color-on-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-disabled",
-      type: "color",
-      value: "#151518",
-      cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base",
-      type: "color",
-      value: "#2b2c30",
-      cssVar: "--cu-color-muted-base",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand",
-      type: "color",
-      value: "#007e5e",
-      cssVar: "--cu-color-muted-brand",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info",
-      type: "color",
-      value: "#19438c",
-      cssVar: "--cu-color-muted-info",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery",
-      type: "color",
-      value: "#362661",
-      cssVar: "--cu-color-muted-discovery",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-hover",
-      type: "color",
-      value: "#414347",
-      cssVar: "--cu-color-muted-base-hover",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hover, 30% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-active",
-      type: "color",
-      value: "#333438",
-      cssVar: "--cu-color-muted-base-active",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 10% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-inactive",
-      type: "color",
-      value: "#808080",
-      cssVar: "--cu-color-muted-base-inactive",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-disabled",
-      type: "color",
-      value: "#2b2c2f",
-      cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-hover",
-      type: "color",
-      value: "#3da280",
-      cssVar: "--cu-color-muted-brand-hover",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-active",
-      type: "color",
-      value: "#359c7a",
-      cssVar: "--cu-color-muted-brand-active",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-inactive",
-      type: "color",
-      value: "#005f41",
-      cssVar: "--cu-color-muted-brand-inactive",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-disabled",
-      type: "color",
-      value: "#287b60",
-      cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-hover",
-      type: "color",
-      value: "#325da9",
-      cssVar: "--cu-color-muted-info-hover",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-active",
-      type: "color",
-      value: "#2d59a4",
-      cssVar: "--cu-color-muted-info-active",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-inactive",
-      type: "color",
-      value: "#022c73",
-      cssVar: "--cu-color-muted-info-inactive",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-disabled",
-      type: "color",
-      value: "#224582",
-      cssVar: "--cu-color-muted-info-disabled",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-hover",
-      type: "color",
-      value: "#483a77",
-      cssVar: "--cu-color-muted-discovery-hover",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-active",
-      type: "color",
-      value: "#453673",
-      cssVar: "--cu-color-muted-discovery-active",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-inactive",
-      type: "color",
-      value: "#27144e",
-      cssVar: "--cu-color-muted-discovery-inactive",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-disabled",
-      type: "color",
-      value: "#35295a",
-      cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger",
-      type: "color",
-      value: "#660022",
-      cssVar: "--cu-color-muted-danger",
-      description: "Generated danger muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative",
-      type: "color",
-      value: "#660022",
-      cssVar: "--cu-color-muted-negative",
-      description: "Generated negative muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning",
-      type: "color",
-      value: "#7d5300",
-      cssVar: "--cu-color-muted-warning",
-      description: "Generated warning muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success",
-      type: "color",
-      value: "#006a47",
-      cssVar: "--cu-color-muted-success",
-      description: "Generated success muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive",
-      type: "color",
-      value: "#006a47",
-      cssVar: "--cu-color-muted-positive",
-      description: "Generated positive muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-hover",
-      type: "color",
-      value: "#7e1e34",
-      cssVar: "--cu-color-muted-danger-hover",
-      description: "Generated danger muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-active",
-      type: "color",
-      value: "#791931",
-      cssVar: "--cu-color-muted-danger-active",
-      description: "Generated danger muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-inactive",
-      type: "color",
-      value: "#510013",
-      cssVar: "--cu-color-muted-danger-inactive",
-      description: "Generated danger muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-disabled",
-      type: "color",
-      value: "#601125",
-      cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-hover",
-      type: "color",
-      value: "#7e1e34",
-      cssVar: "--cu-color-muted-negative-hover",
-      description: "Generated negative muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-active",
-      type: "color",
-      value: "#791931",
-      cssVar: "--cu-color-muted-negative-active",
-      description: "Generated negative muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-inactive",
-      type: "color",
-      value: "#510013",
-      cssVar: "--cu-color-muted-negative-inactive",
-      description: "Generated negative muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-disabled",
-      type: "color",
-      value: "#601125",
-      cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-hover",
-      type: "color",
-      value: "#9e722e",
-      cssVar: "--cu-color-muted-warning-hover",
-      description: "Generated warning muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-active",
-      type: "color",
-      value: "#986c28",
-      cssVar: "--cu-color-muted-warning-active",
-      description: "Generated warning muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-inactive",
-      type: "color",
-      value: "#613900",
-      cssVar: "--cu-color-muted-warning-inactive",
-      description: "Generated warning muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-disabled",
-      type: "color",
-      value: "#78551d",
-      cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-hover",
-      type: "color",
-      value: "#328964",
-      cssVar: "--cu-color-muted-success-hover",
-      description: "Generated success muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-active",
-      type: "color",
-      value: "#2b835f",
-      cssVar: "--cu-color-muted-success-active",
-      description: "Generated success muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-inactive",
-      type: "color",
-      value: "#00502f",
-      cssVar: "--cu-color-muted-success-inactive",
-      description: "Generated success muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-disabled",
-      type: "color",
-      value: "#20684a",
-      cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-hover",
-      type: "color",
-      value: "#328964",
-      cssVar: "--cu-color-muted-positive-hover",
-      description: "Generated positive muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-active",
-      type: "color",
-      value: "#2b835f",
-      cssVar: "--cu-color-muted-positive-active",
-      description: "Generated positive muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-inactive",
-      type: "color",
-      value: "#00502f",
-      cssVar: "--cu-color-muted-positive-inactive",
-      description: "Generated positive muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-disabled",
-      type: "color",
-      value: "#20684a",
-      cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.background",
-      type: "color",
-      value: "#2b2c30",
-      cssVar: "--cu-color-overlay-background",
-      description: "Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.border",
-      type: "color",
-      value: "#7b7b7e",
-      cssVar: "--cu-color-overlay-border",
-      description: "Border color that outlines floating overlay panels against the content beneath them. Used for the Popover border.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.backdrop",
+      path: "color.backdrop",
       type: "color",
       value: "#0d0c0766",
-      cssVar: "--cu-color-overlay-backdrop",
+      cssVar: "--cu-color-backdrop",
       description: "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
       theme: undefined,
       typography: false
@@ -2369,24 +965,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#151518",
       cssVar: "--cu-color-data-neutral-subtle",
       description: "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.emphasis",
-      type: "color",
-      value: "#8cb6ff",
-      cssVar: "--cu-color-data-brand-emphasis",
-      description: "High-emphasis brand data color. Use it for the primary mark of a brand series, such as lines, bars, points and legend swatches.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.subtle",
-      type: "color",
-      value: "#4d8eff",
-      cssVar: "--cu-color-data-brand-subtle",
-      description: "Low-emphasis brand data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `brand.emphasis` series.",
       theme: undefined,
       typography: false
     },
@@ -2517,461 +1095,560 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.link-hover",
+      path: "color.base",
       type: "color",
-      value: "#9ed6ff",
-      cssVar: "--cu-color-link-hover",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% brighter)",
+      value: "#f1f1f1",
+      cssVar: "--cu-color-base",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.link-active",
+      path: "color.base-subtle",
       type: "color",
-      value: "#95cdff",
-      cssVar: "--cu-color-link-active",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% brighter)",
+      value: "#46464a",
+      cssVar: "--cu-color-base-subtle",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.link-inactive",
+      path: "color.on-base-accent",
       type: "color",
-      value: "#4375ce",
-      cssVar: "--cu-color-link-inactive",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% darker)",
+      value: "#151518",
+      cssVar: "--cu-color-on-base-accent",
+      description: "Generated text and icon color on base backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.hairline-hover",
+      path: "color.base-accent",
       type: "color",
-      value: "#727376",
-      cssVar: "--cu-color-hairline-hover",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% brighter)",
+      value: "#f1f1f1",
+      cssVar: "--cu-color-base-accent",
+      description: "Alias of base for the base theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.hairline-active",
+      path: "color.on-base-subtle",
       type: "color",
-      value: "#898a8e",
-      cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% brighter)",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-base-subtle",
+      description: "Generated text and icon color on base-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.hairline-inactive",
+      path: "color.on-danger-accent",
       type: "color",
-      value: "#3d3e40",
-      cssVar: "--cu-color-hairline-inactive",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% darker)",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-danger-accent",
+      description: "Generated text and icon color on danger backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base",
+      path: "color.danger-accent",
       type: "color",
-      value: "#fafafa",
-      cssVar: "--cu-color-on-muted-base",
-      description: "Generated base foreground on muted backgrounds",
+      value: "#cf2d56",
+      cssVar: "--cu-color-danger-accent",
+      description: "Alias of danger for the danger theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand",
+      path: "color.danger-subtle",
       type: "color",
-      value: "#3be4be",
-      cssVar: "--cu-color-on-muted-brand",
-      description: "Generated brand foreground on muted backgrounds",
+      value: "#660022",
+      cssVar: "--cu-color-danger-subtle",
+      description: "Generated low-emphasis danger background for the dark theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger",
-      type: "color",
-      value: "#ff9ba8",
-      cssVar: "--cu-color-on-muted-danger",
-      description: "Generated danger foreground on muted backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.negative",
+      path: "color.on-danger-subtle",
       type: "color",
       value: "#ff9ba8",
-      cssVar: "--cu-color-on-muted-negative",
-      description: "Generated negative foreground on muted backgrounds",
+      cssVar: "--cu-color-on-danger-subtle",
+      description: "Generated text and icon color on danger-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning",
+      path: "color.on-warning-accent",
+      type: "color",
+      value: "#151518",
+      cssVar: "--cu-color-on-warning-accent",
+      description: "Generated text and icon color on warning backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-accent",
+      type: "color",
+      value: "#f7ac23",
+      cssVar: "--cu-color-warning-accent",
+      description: "Alias of warning for the warning theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle",
+      type: "color",
+      value: "#7d5300",
+      cssVar: "--cu-color-warning-subtle",
+      description: "Generated low-emphasis warning background for the dark theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-warning-subtle",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-on-muted-warning",
-      description: "Generated warning foreground on muted backgrounds",
+      cssVar: "--cu-color-on-warning-subtle",
+      description: "Generated text and icon color on warning-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success",
+      path: "color.on-info-accent",
       type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-muted-success",
-      description: "Generated success foreground on muted backgrounds",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-info-accent",
+      description: "Generated text and icon color on info backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-muted-positive",
-      description: "Generated positive foreground on muted backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info",
+      path: "color.info-accent",
       type: "color",
       value: "#4d8eff",
-      cssVar: "--cu-color-on-muted-info",
-      description: "Generated info foreground on muted backgrounds",
+      cssVar: "--cu-color-info-accent",
+      description: "Alias of info for the info theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery",
+      path: "color.on-info-subtle",
+      type: "color",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-info-subtle",
+      description: "Generated text and icon color on info-subtle backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-discovery-accent",
+      type: "color",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-discovery-accent",
+      description: "Generated text and icon color on discovery backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-accent",
       type: "color",
       value: "#9277da",
-      cssVar: "--cu-color-on-muted-discovery",
-      description: "Generated discovery foreground on muted backgrounds",
+      cssVar: "--cu-color-discovery-accent",
+      description: "Alias of discovery for the discovery theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-hover",
+      path: "color.on-discovery-subtle",
       type: "color",
-      value: "#9b9b9b",
-      cssVar: "--cu-color-on-muted-base-hover",
-      description: "Generated base foreground on muted backgrounds (hover, 30% darker)",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-discovery-subtle",
+      description: "Generated text and icon color on discovery-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-active",
+      path: "color.on-success-accent",
+      type: "color",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-success-accent",
+      description: "Generated text and icon color on success backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-accent",
+      type: "color",
+      value: "#45c791",
+      cssVar: "--cu-color-success-accent",
+      description: "Alias of success for the success theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle",
+      type: "color",
+      value: "#006a47",
+      cssVar: "--cu-color-success-subtle",
+      description: "Generated low-emphasis success background for the dark theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-success-subtle",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, dark base primitive)",
+      cssVar: "--cu-color-on-success-subtle",
+      description: "Generated text and icon color on success-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-inactive",
+      path: "color.border-active",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-border-active",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.border-inactive",
       type: "color",
       value: "#808080",
-      cssVar: "--cu-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
+      cssVar: "--cu-color-border-inactive",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-disabled",
+      path: "color.border-disabled",
       type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 13% opacity)",
+      value: "#494a4d",
+      cssVar: "--cu-color-border-disabled",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-hover",
+      path: "color.base-active",
       type: "color",
-      value: "#00a785",
-      cssVar: "--cu-color-on-muted-brand-hover",
-      description: "Generated brand foreground on muted backgrounds (hover, 23% darker)",
+      value: "#d0d0d0",
+      cssVar: "--cu-color-base-active",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-active",
+      path: "color.base-inactive",
       type: "color",
-      value: "#00b28f",
-      cssVar: "--cu-color-on-muted-brand-active",
-      description: "Generated brand foreground on muted backgrounds (active, 19% darker)",
+      value: "#808080",
+      cssVar: "--cu-color-base-inactive",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-inactive",
+      path: "color.base-disabled",
       type: "color",
-      value: "#81fff4",
-      cssVar: "--cu-color-on-muted-brand-inactive",
-      description: "Generated brand foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#808082",
+      cssVar: "--cu-color-base-disabled",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-disabled",
+      path: "color.base-subtle-active",
       type: "color",
-      value: "#61e0bf",
-      cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#535358",
+      cssVar: "--cu-color-base-subtle-active",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 13% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-hover",
+      path: "color.base-subtle-inactive",
       type: "color",
-      value: "#c26472",
-      cssVar: "--cu-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% darker)",
+      value: "#808080",
+      cssVar: "--cu-color-base-subtle-inactive",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-active",
+      path: "color.base-subtle-disabled",
       type: "color",
-      value: "#cc6e7b",
-      cssVar: "--cu-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 19% darker)",
+      value: "#444447",
+      cssVar: "--cu-color-base-subtle-disabled",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-inactive",
+      path: "color.danger-active",
       type: "color",
-      value: "#ffcedb",
-      cssVar: "--cu-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#ff607f",
+      cssVar: "--cu-color-danger-active",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-disabled",
+      path: "color.danger-inactive",
       type: "color",
-      value: "#f6a1ab",
-      cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#a70037",
+      cssVar: "--cu-color-danger-inactive",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-hover",
+      path: "color.danger-disabled",
       type: "color",
-      value: "#c26472",
-      cssVar: "--cu-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% darker)",
+      value: "#70424d",
+      cssVar: "--cu-color-danger-disabled",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-active",
+      path: "color.danger-subtle-active",
       type: "color",
-      value: "#cc6e7b",
-      cssVar: "--cu-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 19% darker)",
+      value: "#802136",
+      cssVar: "--cu-color-danger-subtle-active",
+      description: "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-inactive",
+      path: "color.danger-subtle-inactive",
       type: "color",
-      value: "#ffcedb",
-      cssVar: "--cu-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#510013",
+      cssVar: "--cu-color-danger-subtle-inactive",
+      description: "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-disabled",
+      path: "color.danger-subtle-disabled",
       type: "color",
-      value: "#f6a1ab",
-      cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#4d323a",
+      cssVar: "--cu-color-danger-subtle-disabled",
+      description: "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-hover",
+      path: "color.warning-active",
       type: "color",
-      value: "#b6b6b6",
-      cssVar: "--cu-color-on-muted-warning-hover",
-      description: "Generated warning foreground on muted backgrounds (hover, 23% darker)",
+      value: "#b56e00",
+      cssVar: "--cu-color-warning-active",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-active",
+      path: "color.warning-inactive",
       type: "color",
-      value: "#c2c2c2",
-      cssVar: "--cu-color-on-muted-warning-active",
-      description: "Generated warning foreground on muted backgrounds (active, 19% darker)",
+      value: "#ffe067",
+      cssVar: "--cu-color-warning-inactive",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-inactive",
+      path: "color.warning-disabled",
       type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-muted-warning-inactive",
-      description: "Generated warning foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#7f6948",
+      cssVar: "--cu-color-warning-disabled",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-disabled",
+      path: "color.warning-subtle-active",
       type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 13% opacity)",
+      value: "#a27632",
+      cssVar: "--cu-color-warning-subtle-active",
+      description: "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-hover",
+      path: "color.warning-subtle-inactive",
       type: "color",
-      value: "#b6b6b6",
-      cssVar: "--cu-color-on-muted-success-hover",
-      description: "Generated success foreground on muted backgrounds (hover, 23% darker)",
+      value: "#613900",
+      cssVar: "--cu-color-warning-subtle-inactive",
+      description: "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-active",
+      path: "color.warning-subtle-disabled",
       type: "color",
-      value: "#c2c2c2",
-      cssVar: "--cu-color-on-muted-success-active",
-      description: "Generated success foreground on muted backgrounds (active, 19% darker)",
+      value: "#564938",
+      cssVar: "--cu-color-warning-subtle-disabled",
+      description: "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-inactive",
+      path: "color.info-active",
       type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-muted-success-inactive",
-      description: "Generated success foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#7fc4ff",
+      cssVar: "--cu-color-info-active",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-hover",
-      type: "color",
-      value: "#b6b6b6",
-      cssVar: "--cu-color-on-muted-positive-hover",
-      description: "Generated positive foreground on muted backgrounds (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-active",
-      type: "color",
-      value: "#c2c2c2",
-      cssVar: "--cu-color-on-muted-positive-active",
-      description: "Generated positive foreground on muted backgrounds (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-muted-positive-inactive",
-      description: "Generated positive foreground on muted backgrounds (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-hover",
-      type: "color",
-      value: "#7abeff",
-      cssVar: "--cu-color-on-muted-info-hover",
-      description: "Generated info foreground on muted backgrounds (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-active",
-      type: "color",
-      value: "#72b6ff",
-      cssVar: "--cu-color-on-muted-info-active",
-      description: "Generated info foreground on muted backgrounds (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-inactive",
+      path: "color.info-inactive",
       type: "color",
       value: "#2564d1",
-      cssVar: "--cu-color-on-muted-info-inactive",
-      description: "Generated info foreground on muted backgrounds (inactive, 20% darker)",
+      cssVar: "--cu-color-info-inactive",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info-disabled",
+      path: "color.info-disabled",
       type: "color",
-      value: "#5990ef",
-      cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#4b5e81",
+      cssVar: "--cu-color-info-disabled",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-hover",
+      path: "color.info-subtle-active",
       type: "color",
-      value: "#bea4ff",
-      cssVar: "--cu-color-on-muted-discovery-hover",
-      description: "Generated discovery foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#3560ac",
+      cssVar: "--cu-color-info-subtle-active",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-active",
+      path: "color.info-subtle-inactive",
       type: "color",
-      value: "#b69cff",
-      cssVar: "--cu-color-on-muted-discovery-active",
-      description: "Generated discovery foreground on muted backgrounds (active, 19% brighter)",
+      value: "#022c73",
+      cssVar: "--cu-color-info-subtle-inactive",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-inactive",
+      path: "color.info-subtle-disabled",
+      type: "color",
+      value: "#37445b",
+      cssVar: "--cu-color-info-subtle-disabled",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-active",
+      type: "color",
+      value: "#c3a9ff",
+      cssVar: "--cu-color-discovery-active",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-inactive",
       type: "color",
       value: "#6d51b0",
-      cssVar: "--cu-color-on-muted-discovery-inactive",
-      description: "Generated discovery foreground on muted backgrounds (inactive, 20% darker)",
+      cssVar: "--cu-color-discovery-inactive",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-disabled",
+      path: "color.discovery-disabled",
       type: "color",
-      value: "#917bcf",
-      cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#5e5776",
+      cssVar: "--cu-color-discovery-disabled",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-active",
+      type: "color",
+      value: "#4b3c79",
+      cssVar: "--cu-color-discovery-subtle-active",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-inactive",
+      type: "color",
+      value: "#27144e",
+      cssVar: "--cu-color-discovery-subtle-inactive",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-disabled",
+      type: "color",
+      value: "#3e3a4d",
+      cssVar: "--cu-color-discovery-subtle-disabled",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-active",
+      type: "color",
+      value: "#89ffcc",
+      cssVar: "--cu-color-success-active",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-inactive",
+      type: "color",
+      value: "#009865",
+      cssVar: "--cu-color-success-inactive",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-disabled",
+      type: "color",
+      value: "#4c7062",
+      cssVar: "--cu-color-success-disabled",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-active",
+      type: "color",
+      value: "#368d67",
+      cssVar: "--cu-color-success-subtle-active",
+      description: "Generated low-emphasis success background for the dark theme (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-inactive",
+      type: "color",
+      value: "#00502f",
+      cssVar: "--cu-color-success-subtle-inactive",
+      description: "Generated low-emphasis success background for the dark theme (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-disabled",
+      type: "color",
+      value: "#375047",
+      cssVar: "--cu-color-success-subtle-disabled",
+      description: "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -5399,7 +4076,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-md",
       description: "Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -5451,15 +4128,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.button",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--cu-typography-button",
-      description: "Button label style: Storm Sans semibold at 18px (`font-size.md`) with tight line height so labels center cleanly inside fixed-height controls. Use it for text inside actionable triggers. Used by Button and LinkText.",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.eyebrow",
       type: "typography",
       value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
@@ -5480,7 +4148,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #fafafa14",
+      value: "0px 0px 0px 3px #f1f1f133",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -5489,7 +4157,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #fafafa14",
+      value: "0px 0px 0px 1px #f1f1f133",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -5498,7 +4166,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #fafafa14",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f133",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -5507,45 +4175,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #fafafa14",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f133",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #3be4be26",
-      cssVar: "--cu-ring-brand",
-      description: "Generated brand 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Generated brand 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #3be4be26",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Generated brand 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Generated brand 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -5586,42 +4218,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
-      cssVar: "--cu-ring-negative",
-      description: "Generated negative 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Generated negative 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Generated negative 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Generated negative 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "ring.warning",
       type: "shadow",
       value: "0px 0px 0px 3px #f7ac2326",
@@ -5654,78 +4250,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f7ac2326",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-success",
-      description: "Generated success 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Generated success 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-positive",
-      description: "Generated positive 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Generated positive 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Generated positive 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Generated positive 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -5798,21 +4322,48 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #9277da26",
       cssVar: "--cu-ring-discovery-subtle-offset",
       description: "Generated discovery 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #45c79126",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #45c79126",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     }
   ],
   "darkDimmed": [
     {
-      path: "color.transparent",
-      type: "color",
-      value: "#d9d9d900",
-      cssVar: "--cu-color-transparent",
-      description: "Fully transparent white.",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.black",
       type: "color",
       value: "#2e2e30",
@@ -6524,43 +5075,106 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.ink.emphasis",
+      path: "color.primary",
       type: "color",
-      value: "#b4b4b4",
-      cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
+      value: "#cfcfcf",
+      cssVar: "--cu-color-primary",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.body",
+      path: "color.secondary",
       type: "color",
-      value: "#a1a1a2",
-      cssVar: "--cu-color-ink-body",
+      value: "#b4b4b4",
+      cssVar: "--cu-color-secondary",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.subtle",
+      path: "color.tertiary",
       type: "color",
-      value: "#8f8f90",
-      cssVar: "--cu-color-ink-subtle",
-      description: "Lower-emphasis text and icon color for supporting content that should recede behind body copy. Use it for metadata, secondary labels and decorative icons. Used by Breadcrumb separators, EyebrowText, TableOfContents entries, FileTree, DatePicker, inactive Slider values and NavigationHeader links.",
+      value: "#57575a",
+      cssVar: "--cu-color-tertiary",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.subtlest",
+      path: "color.border",
       type: "color",
-      value: "#7d7d7e",
-      cssVar: "--cu-color-ink-subtlest",
-      description: "Lowest-emphasis text and icon color, for content that should be legible but barely noticed. Use it for hints and optional markers. Used by Field for the `optional` marker beside a field label; avoid it for anything the user must read.",
+      value: "#626364",
+      cssVar: "--cu-color-border",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken",
+      path: "color.danger",
+      type: "color",
+      value: "#ab5268",
+      cssVar: "--cu-color-danger",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning",
+      type: "color",
+      value: "#c59b4d",
+      cssVar: "--cu-color-warning",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info",
+      type: "color",
+      value: "#638cd2",
+      cssVar: "--cu-color-info",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle",
+      type: "color",
+      value: "#3b5685",
+      cssVar: "--cu-color-info-subtle",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery",
+      type: "color",
+      value: "#8e7dbb",
+      cssVar: "--cu-color-discovery",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle",
+      type: "color",
+      value: "#4c416a",
+      cssVar: "--cu-color-discovery-subtle",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success",
+      type: "color",
+      value: "#60a88a",
+      cssVar: "--cu-color-success",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.surface-sunken",
       type: "color",
       value: "#2e2e30",
       cssVar: "--cu-color-surface-sunken",
@@ -6569,7 +5183,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.canvas",
+      path: "color.surface-canvas",
       type: "color",
       value: "#343438",
       cssVar: "--cu-color-surface-canvas",
@@ -6578,7 +5192,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.elevated",
+      path: "color.surface-elevated",
       type: "color",
       value: "#3c3c3e",
       cssVar: "--cu-color-surface-elevated",
@@ -6587,7 +5201,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.floating",
+      path: "color.surface-floating",
       type: "color",
       value: "#3f4043",
       cssVar: "--cu-color-surface-floating",
@@ -6596,1477 +5210,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.overlay",
+      path: "color.surface-highest",
       type: "color",
       value: "#444548",
-      cssVar: "--cu-color-surface-overlay",
+      cssVar: "--cu-color-surface-highest",
       description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken-hover",
-      type: "color",
-      value: "#343435",
-      cssVar: "--cu-color-surface-sunken-hover",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-active",
-      type: "color",
-      value: "#323234",
-      cssVar: "--cu-color-surface-sunken-active",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-inactive",
-      type: "color",
-      value: "#29292d",
-      cssVar: "--cu-color-surface-sunken-inactive",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-disabled",
-      type: "color",
-      value: "#2e2e30",
-      cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-hover",
-      type: "color",
-      value: "#3b3b3f",
-      cssVar: "--cu-color-surface-canvas-hover",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-active",
-      type: "color",
-      value: "#3a3a3d",
-      cssVar: "--cu-color-surface-canvas-active",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-inactive",
-      type: "color",
-      value: "#2d2d33",
-      cssVar: "--cu-color-surface-canvas-inactive",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-disabled",
-      type: "color",
-      value: "#343438",
-      cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-hover",
-      type: "color",
-      value: "#454547",
-      cssVar: "--cu-color-surface-elevated-hover",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-active",
-      type: "color",
-      value: "#434345",
-      cssVar: "--cu-color-surface-elevated-active",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-inactive",
-      type: "color",
-      value: "#343436",
-      cssVar: "--cu-color-surface-elevated-inactive",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-disabled",
-      type: "color",
-      value: "#3c3c3e",
-      cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-hover",
-      type: "color",
-      value: "#4a4b4d",
-      cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-active",
-      type: "color",
-      value: "#48484b",
-      cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-inactive",
-      type: "color",
-      value: "#36373a",
-      cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-disabled",
-      type: "color",
-      value: "#3f4043",
-      cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-hover",
-      type: "color",
-      value: "#505154",
-      cssVar: "--cu-color-surface-overlay-hover",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-active",
-      type: "color",
-      value: "#4e4f52",
-      cssVar: "--cu-color-surface-overlay-active",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-inactive",
-      type: "color",
-      value: "#3a3b3f",
-      cssVar: "--cu-color-surface-overlay-inactive",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-disabled",
-      type: "color",
-      value: "#444547",
-      cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.required",
-      type: "color",
-      value: "#ab5268",
-      cssVar: "--cu-color-required",
-      description: "Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.link",
-      type: "color",
-      value: "#7598d7",
-      cssVar: "--cu-color-link",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline",
-      type: "color",
-      value: "#626364",
-      cssVar: "--cu-color-hairline",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.background",
-      type: "color",
-      value: "#5abba5",
-      cssVar: "--cu-color-selection-background",
-      description: "Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.foreground",
-      type: "color",
-      value: "#343438",
-      cssVar: "--cu-color-selection-foreground",
-      description: "Text color of highlighted text, chosen to stay readable on the brand-accent selection background.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-accent-base",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand",
-      type: "color",
-      value: "#5abba5",
-      cssVar: "--cu-color-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger",
-      type: "color",
-      value: "#ab5268",
-      cssVar: "--cu-color-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative",
-      type: "color",
-      value: "#ab5268",
-      cssVar: "--cu-color-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning",
-      type: "color",
-      value: "#c59b4d",
-      cssVar: "--cu-color-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success",
-      type: "color",
-      value: "#60a88a",
-      cssVar: "--cu-color-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive",
-      type: "color",
-      value: "#60a88a",
-      cssVar: "--cu-color-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info",
-      type: "color",
-      value: "#638cd2",
-      cssVar: "--cu-color-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery",
-      type: "color",
-      value: "#8e7dbb",
-      cssVar: "--cu-color-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-hover",
-      type: "color",
-      value: "#939393",
-      cssVar: "--cu-color-accent-base-hover",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hover, 30% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-active",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-accent-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-inactive",
-      type: "color",
-      value: "#808080",
-      cssVar: "--cu-color-accent-base-inactive",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-hover",
-      type: "color",
-      value: "#2c9680",
-      cssVar: "--cu-color-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-active",
-      type: "color",
-      value: "#2d9c86",
-      cssVar: "--cu-color-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-inactive",
-      type: "color",
-      value: "#7fdad2",
-      cssVar: "--cu-color-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-disabled",
-      type: "color",
-      value: "#70bda9",
-      cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-hover",
-      type: "color",
-      value: "#d26b7f",
-      cssVar: "--cu-color-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-active",
-      type: "color",
-      value: "#cb687b",
-      cssVar: "--cu-color-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-inactive",
-      type: "color",
-      value: "#962c4f",
-      cssVar: "--cu-color-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-disabled",
-      type: "color",
-      value: "#a65d6c",
-      cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-hover",
-      type: "color",
-      value: "#d26b7f",
-      cssVar: "--cu-color-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-active",
-      type: "color",
-      value: "#cb687b",
-      cssVar: "--cu-color-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-inactive",
-      type: "color",
-      value: "#962c4f",
-      cssVar: "--cu-color-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-disabled",
-      type: "color",
-      value: "#a65d6c",
-      cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-hover",
-      type: "color",
-      value: "#a1752f",
-      cssVar: "--cu-color-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-active",
-      type: "color",
-      value: "#a77b30",
-      cssVar: "--cu-color-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-inactive",
-      type: "color",
-      value: "#d6c171",
-      cssVar: "--cu-color-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-disabled",
-      type: "color",
-      value: "#c59f64",
-      cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-hover",
-      type: "color",
-      value: "#80dab1",
-      cssVar: "--cu-color-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-active",
-      type: "color",
-      value: "#7cd0aa",
-      cssVar: "--cu-color-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-inactive",
-      type: "color",
-      value: "#298e6c",
-      cssVar: "--cu-color-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-disabled",
-      type: "color",
-      value: "#6ea88e",
-      cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-hover",
-      type: "color",
-      value: "#80dab1",
-      cssVar: "--cu-color-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-active",
-      type: "color",
-      value: "#7cd0aa",
-      cssVar: "--cu-color-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-inactive",
-      type: "color",
-      value: "#298e6c",
-      cssVar: "--cu-color-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-disabled",
-      type: "color",
-      value: "#6ea88e",
-      cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-hover",
-      type: "color",
-      value: "#7cabd9",
-      cssVar: "--cu-color-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-active",
-      type: "color",
-      value: "#77a6d8",
-      cssVar: "--cu-color-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-inactive",
-      type: "color",
-      value: "#4d70ac",
-      cssVar: "--cu-color-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-disabled",
-      type: "color",
-      value: "#6b8dc7",
-      cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-hover",
-      type: "color",
-      value: "#a892df",
-      cssVar: "--cu-color-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-active",
-      type: "color",
-      value: "#a38ede",
-      cssVar: "--cu-color-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-inactive",
-      type: "color",
-      value: "#75669a",
-      cssVar: "--cu-color-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-disabled",
-      type: "color",
-      value: "#8d80b4",
-      cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base",
-      type: "color",
-      value: "#343438",
-      cssVar: "--cu-color-on-accent-base",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-hover",
-      type: "color",
-      value: "#3e3e41",
-      cssVar: "--cu-color-on-accent-base-hover",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (hover, 30% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-active",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-base-active",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (active, dark base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-inactive",
-      type: "color",
-      value: "#808080",
-      cssVar: "--cu-color-on-accent-base-inactive",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-disabled",
-      type: "color",
-      value: "#343438",
-      cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand",
-      type: "color",
-      value: "#343438",
-      cssVar: "--cu-color-on-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning",
-      type: "color",
-      value: "#343438",
-      cssVar: "--cu-color-on-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-hover",
-      type: "color",
-      value: "#3b3b3f",
-      cssVar: "--cu-color-on-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-active",
-      type: "color",
-      value: "#3a3a3d",
-      cssVar: "--cu-color-on-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-inactive",
-      type: "color",
-      value: "#2d2d33",
-      cssVar: "--cu-color-on-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-disabled",
-      type: "color",
-      value: "#343438",
-      cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-hover",
-      type: "color",
-      value: "#3b3b3f",
-      cssVar: "--cu-color-on-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-active",
-      type: "color",
-      value: "#3a3a3d",
-      cssVar: "--cu-color-on-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-inactive",
-      type: "color",
-      value: "#2d2d33",
-      cssVar: "--cu-color-on-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-disabled",
-      type: "color",
-      value: "#343438",
-      cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base",
-      type: "color",
-      value: "#444548",
-      cssVar: "--cu-color-muted-base",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand",
-      type: "color",
-      value: "#258069",
-      cssVar: "--cu-color-muted-brand",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info",
-      type: "color",
-      value: "#3b5685",
-      cssVar: "--cu-color-muted-info",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery",
-      type: "color",
-      value: "#4c416a",
-      cssVar: "--cu-color-muted-discovery",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-hover",
-      type: "color",
-      value: "#545558",
-      cssVar: "--cu-color-muted-base-hover",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hover, 30% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-active",
-      type: "color",
-      value: "#4a4b4e",
-      cssVar: "--cu-color-muted-base-active",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 10% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-inactive",
-      type: "color",
-      value: "#808080",
-      cssVar: "--cu-color-muted-base-inactive",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-disabled",
-      type: "color",
-      value: "#444547",
-      cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-hover",
-      type: "color",
-      value: "#57917e",
-      cssVar: "--cu-color-muted-brand-hover",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-active",
-      type: "color",
-      value: "#518e7a",
-      cssVar: "--cu-color-muted-brand-active",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-inactive",
-      type: "color",
-      value: "#206f56",
-      cssVar: "--cu-color-muted-brand-inactive",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-disabled",
-      type: "color",
-      value: "#457a69",
-      cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-hover",
-      type: "color",
-      value: "#516995",
-      cssVar: "--cu-color-muted-info-hover",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-active",
-      type: "color",
-      value: "#4d6692",
-      cssVar: "--cu-color-muted-info-active",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-inactive",
-      type: "color",
-      value: "#254479",
-      cssVar: "--cu-color-muted-info-inactive",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-disabled",
-      type: "color",
-      value: "#41577e",
-      cssVar: "--cu-color-muted-info-disabled",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-hover",
-      type: "color",
-      value: "#5a5177",
-      cssVar: "--cu-color-muted-discovery-hover",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-active",
-      type: "color",
-      value: "#584e75",
-      cssVar: "--cu-color-muted-discovery-active",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-inactive",
-      type: "color",
-      value: "#403160",
-      cssVar: "--cu-color-muted-discovery-inactive",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-disabled",
-      type: "color",
-      value: "#4b4365",
-      cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger",
-      type: "color",
-      value: "#73213c",
-      cssVar: "--cu-color-muted-danger",
-      description: "Generated danger muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative",
-      type: "color",
-      value: "#73213c",
-      cssVar: "--cu-color-muted-negative",
-      description: "Generated negative muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning",
-      type: "color",
-      value: "#7f6125",
-      cssVar: "--cu-color-muted-warning",
-      description: "Generated warning muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success",
-      type: "color",
-      value: "#227559",
-      cssVar: "--cu-color-muted-success",
-      description: "Generated success muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive",
-      type: "color",
-      value: "#227559",
-      cssVar: "--cu-color-muted-positive",
-      description: "Generated positive muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-hover",
-      type: "color",
-      value: "#7c3d4c",
-      cssVar: "--cu-color-muted-danger-hover",
-      description: "Generated danger muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-active",
-      type: "color",
-      value: "#7a3949",
-      cssVar: "--cu-color-muted-danger-active",
-      description: "Generated danger muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-inactive",
-      type: "color",
-      value: "#671e2f",
-      cssVar: "--cu-color-muted-danger-inactive",
-      description: "Generated danger muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-disabled",
-      type: "color",
-      value: "#6c303f",
-      cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-hover",
-      type: "color",
-      value: "#7c3d4c",
-      cssVar: "--cu-color-muted-negative-hover",
-      description: "Generated negative muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-active",
-      type: "color",
-      value: "#7a3949",
-      cssVar: "--cu-color-muted-negative-active",
-      description: "Generated negative muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-inactive",
-      type: "color",
-      value: "#671e2f",
-      cssVar: "--cu-color-muted-negative-inactive",
-      description: "Generated negative muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-disabled",
-      type: "color",
-      value: "#6c303f",
-      cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-hover",
-      type: "color",
-      value: "#8f754d",
-      cssVar: "--cu-color-muted-warning-hover",
-      description: "Generated warning muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-active",
-      type: "color",
-      value: "#8b7148",
-      cssVar: "--cu-color-muted-warning-active",
-      description: "Generated warning muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-inactive",
-      type: "color",
-      value: "#704f20",
-      cssVar: "--cu-color-muted-warning-inactive",
-      description: "Generated warning muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-disabled",
-      type: "color",
-      value: "#79613c",
-      cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-hover",
-      type: "color",
-      value: "#4d826c",
-      cssVar: "--cu-color-muted-success-hover",
-      description: "Generated success muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-active",
-      type: "color",
-      value: "#487f68",
-      cssVar: "--cu-color-muted-success-active",
-      description: "Generated success muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-inactive",
-      type: "color",
-      value: "#1e6749",
-      cssVar: "--cu-color-muted-success-inactive",
-      description: "Generated success muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-disabled",
-      type: "color",
-      value: "#3d6f5a",
-      cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-hover",
-      type: "color",
-      value: "#4d826c",
-      cssVar: "--cu-color-muted-positive-hover",
-      description: "Generated positive muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-active",
-      type: "color",
-      value: "#487f68",
-      cssVar: "--cu-color-muted-positive-active",
-      description: "Generated positive muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-inactive",
-      type: "color",
-      value: "#1e6749",
-      cssVar: "--cu-color-muted-positive-inactive",
-      description: "Generated positive muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-disabled",
-      type: "color",
-      value: "#3d6f5a",
-      cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.background",
-      type: "color",
-      value: "#444548",
-      cssVar: "--cu-color-overlay-background",
-      description: "Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.border",
-      type: "color",
-      value: "#7d7d7e",
-      cssVar: "--cu-color-overlay-border",
-      description: "Border color that outlines floating overlay panels against the content beneath them. Used for the Popover border.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.backdrop",
+      path: "color.backdrop",
       type: "color",
       value: "#35322666",
-      cssVar: "--cu-color-overlay-backdrop",
+      cssVar: "--cu-color-backdrop",
       description: "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
       theme: undefined,
       typography: false
@@ -8158,24 +5314,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#343438",
       cssVar: "--cu-color-data-neutral-subtle",
       description: "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.emphasis",
-      type: "color",
-      value: "#85a5dc",
-      cssVar: "--cu-color-data-brand-emphasis",
-      description: "High-emphasis brand data color. Use it for the primary mark of a brand series, such as lines, bars, points and legend swatches.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.subtle",
-      type: "color",
-      value: "#638cd2",
-      cssVar: "--cu-color-data-brand-subtle",
-      description: "Low-emphasis brand data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `brand.emphasis` series.",
       theme: undefined,
       typography: false
     },
@@ -8306,461 +5444,560 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.link-hover",
+      path: "color.base",
       type: "color",
-      value: "#8fbddf",
-      cssVar: "--cu-color-link-hover",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% brighter)",
+      value: "#cfcfcf",
+      cssVar: "--cu-color-base",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.link-active",
+      path: "color.base-subtle",
       type: "color",
-      value: "#8ab6dd",
-      cssVar: "--cu-color-link-active",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% brighter)",
+      value: "#57575a",
+      cssVar: "--cu-color-base-subtle",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.link-inactive",
+      path: "color.on-base-accent",
       type: "color",
-      value: "#5f7bad",
-      cssVar: "--cu-color-link-inactive",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% darker)",
+      value: "#343438",
+      cssVar: "--cu-color-on-base-accent",
+      description: "Generated text and icon color on base backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.hairline-hover",
+      path: "color.base-accent",
       type: "color",
-      value: "#767779",
-      cssVar: "--cu-color-hairline-hover",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% brighter)",
+      value: "#cfcfcf",
+      cssVar: "--cu-color-base-accent",
+      description: "Alias of base for the base theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.hairline-active",
-      type: "color",
-      value: "#868789",
-      cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline-inactive",
-      type: "color",
-      value: "#515253",
-      cssVar: "--cu-color-hairline-inactive",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.base",
+      path: "color.on-base-subtle",
       type: "color",
       value: "#d5d5d5",
-      cssVar: "--cu-color-on-muted-base",
-      description: "Generated base foreground on muted backgrounds",
+      cssVar: "--cu-color-on-base-subtle",
+      description: "Generated text and icon color on base-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand",
+      path: "color.on-danger-accent",
       type: "color",
-      value: "#5abba5",
-      cssVar: "--cu-color-on-muted-brand",
-      description: "Generated brand foreground on muted backgrounds",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-danger-accent",
+      description: "Generated text and icon color on danger backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger",
+      path: "color.danger-accent",
+      type: "color",
+      value: "#ab5268",
+      cssVar: "--cu-color-danger-accent",
+      description: "Alias of danger for the danger theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle",
+      type: "color",
+      value: "#73213c",
+      cssVar: "--cu-color-danger-subtle",
+      description: "Generated low-emphasis danger background for the dark theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-danger-subtle",
       type: "color",
       value: "#de8d98",
-      cssVar: "--cu-color-on-muted-danger",
-      description: "Generated danger foreground on muted backgrounds",
+      cssVar: "--cu-color-on-danger-subtle",
+      description: "Generated text and icon color on danger-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative",
+      path: "color.on-warning-accent",
       type: "color",
-      value: "#de8d98",
-      cssVar: "--cu-color-on-muted-negative",
-      description: "Generated negative foreground on muted backgrounds",
+      value: "#343438",
+      cssVar: "--cu-color-on-warning-accent",
+      description: "Generated text and icon color on warning backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning",
+      path: "color.warning-accent",
+      type: "color",
+      value: "#c59b4d",
+      cssVar: "--cu-color-warning-accent",
+      description: "Alias of warning for the warning theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle",
+      type: "color",
+      value: "#7f6125",
+      cssVar: "--cu-color-warning-subtle",
+      description: "Generated low-emphasis warning background for the dark theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-warning-subtle",
       type: "color",
       value: "#d9d9d9",
-      cssVar: "--cu-color-on-muted-warning",
-      description: "Generated warning foreground on muted backgrounds",
+      cssVar: "--cu-color-on-warning-subtle",
+      description: "Generated text and icon color on warning-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success",
+      path: "color.on-info-accent",
       type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-muted-success",
-      description: "Generated success foreground on muted backgrounds",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-info-accent",
+      description: "Generated text and icon color on info backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-muted-positive",
-      description: "Generated positive foreground on muted backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info",
+      path: "color.info-accent",
       type: "color",
       value: "#638cd2",
-      cssVar: "--cu-color-on-muted-info",
-      description: "Generated info foreground on muted backgrounds",
+      cssVar: "--cu-color-info-accent",
+      description: "Alias of info for the info theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery",
+      path: "color.on-info-subtle",
+      type: "color",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-info-subtle",
+      description: "Generated text and icon color on info-subtle backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-discovery-accent",
+      type: "color",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-discovery-accent",
+      description: "Generated text and icon color on discovery backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-accent",
       type: "color",
       value: "#8e7dbb",
-      cssVar: "--cu-color-on-muted-discovery",
-      description: "Generated discovery foreground on muted backgrounds",
+      cssVar: "--cu-color-discovery-accent",
+      description: "Alias of discovery for the discovery theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-hover",
+      path: "color.on-discovery-subtle",
       type: "color",
-      value: "#939393",
-      cssVar: "--cu-color-on-muted-base-hover",
-      description: "Generated base foreground on muted backgrounds (hover, 30% darker)",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-discovery-subtle",
+      description: "Generated text and icon color on discovery-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-active",
+      path: "color.on-success-accent",
+      type: "color",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-success-accent",
+      description: "Generated text and icon color on success backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-accent",
+      type: "color",
+      value: "#60a88a",
+      cssVar: "--cu-color-success-accent",
+      description: "Alias of success for the success theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle",
+      type: "color",
+      value: "#227559",
+      cssVar: "--cu-color-success-subtle",
+      description: "Generated low-emphasis success background for the dark theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-success-subtle",
       type: "color",
       value: "#d9d9d9",
-      cssVar: "--cu-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, dark base primitive)",
+      cssVar: "--cu-color-on-success-subtle",
+      description: "Generated text and icon color on success-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-inactive",
+      path: "color.border-active",
+      type: "color",
+      value: "#d9d9d9",
+      cssVar: "--cu-color-border-active",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.border-inactive",
       type: "color",
       value: "#808080",
-      cssVar: "--cu-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
+      cssVar: "--cu-color-border-inactive",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-disabled",
+      path: "color.border-disabled",
       type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 13% opacity)",
+      value: "#595a5c",
+      cssVar: "--cu-color-border-disabled",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-hover",
+      path: "color.base-active",
       type: "color",
-      value: "#2c9680",
-      cssVar: "--cu-color-on-muted-brand-hover",
-      description: "Generated brand foreground on muted backgrounds (hover, 23% darker)",
+      value: "#b8b8b8",
+      cssVar: "--cu-color-base-active",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-active",
+      path: "color.base-inactive",
       type: "color",
-      value: "#2d9c86",
-      cssVar: "--cu-color-on-muted-brand-active",
-      description: "Generated brand foreground on muted backgrounds (active, 19% darker)",
+      value: "#808080",
+      cssVar: "--cu-color-base-inactive",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-inactive",
+      path: "color.base-disabled",
       type: "color",
-      value: "#7fdad2",
-      cssVar: "--cu-color-on-muted-brand-inactive",
-      description: "Generated brand foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#808081",
+      cssVar: "--cu-color-base-disabled",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-disabled",
+      path: "color.base-subtle-active",
       type: "color",
-      value: "#70bda9",
-      cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#616164",
+      cssVar: "--cu-color-base-subtle-active",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 13% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-hover",
+      path: "color.base-subtle-inactive",
       type: "color",
-      value: "#a8727a",
-      cssVar: "--cu-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% darker)",
+      value: "#808080",
+      cssVar: "--cu-color-base-subtle-inactive",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-active",
+      path: "color.base-subtle-disabled",
       type: "color",
-      value: "#b07880",
-      cssVar: "--cu-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 19% darker)",
+      value: "#565658",
+      cssVar: "--cu-color-base-subtle-disabled",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-inactive",
+      path: "color.danger-active",
       type: "color",
-      value: "#e6a9b9",
-      cssVar: "--cu-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#d56d82",
+      cssVar: "--cu-color-danger-active",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-disabled",
+      path: "color.danger-inactive",
       type: "color",
-      value: "#d6939b",
-      cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#962c4f",
+      cssVar: "--cu-color-danger-inactive",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-hover",
+      path: "color.danger-disabled",
       type: "color",
-      value: "#a8727a",
-      cssVar: "--cu-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% darker)",
+      value: "#73565d",
+      cssVar: "--cu-color-danger-disabled",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-active",
+      path: "color.danger-subtle-active",
       type: "color",
-      value: "#b07880",
-      cssVar: "--cu-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 19% darker)",
+      value: "#7d404d",
+      cssVar: "--cu-color-danger-subtle-active",
+      description: "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-inactive",
+      path: "color.danger-subtle-inactive",
       type: "color",
-      value: "#e6a9b9",
-      cssVar: "--cu-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#671e2f",
+      cssVar: "--cu-color-danger-subtle-inactive",
+      description: "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-disabled",
+      path: "color.danger-subtle-disabled",
       type: "color",
-      value: "#d6939b",
-      cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#5c494f",
+      cssVar: "--cu-color-danger-subtle-disabled",
+      description: "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-hover",
+      path: "color.warning-active",
       type: "color",
-      value: "#a6a6a6",
-      cssVar: "--cu-color-on-muted-warning-hover",
-      description: "Generated warning foreground on muted backgrounds (hover, 23% darker)",
+      value: "#9d722e",
+      cssVar: "--cu-color-warning-active",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-active",
+      path: "color.warning-inactive",
       type: "color",
-      value: "#aeaeae",
-      cssVar: "--cu-color-on-muted-warning-active",
-      description: "Generated warning foreground on muted backgrounds (active, 19% darker)",
+      value: "#d6c171",
+      cssVar: "--cu-color-warning-inactive",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-inactive",
+      path: "color.warning-disabled",
       type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-muted-warning-inactive",
-      description: "Generated warning foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#7c6f5b",
+      cssVar: "--cu-color-warning-disabled",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-disabled",
+      path: "color.warning-subtle-active",
       type: "color",
-      value: "#d9d9d920",
-      cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 13% opacity)",
+      value: "#917750",
+      cssVar: "--cu-color-warning-subtle-active",
+      description: "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-hover",
+      path: "color.warning-subtle-inactive",
       type: "color",
-      value: "#a6a6a6",
-      cssVar: "--cu-color-on-muted-success-hover",
-      description: "Generated success foreground on muted backgrounds (hover, 23% darker)",
+      value: "#704f20",
+      cssVar: "--cu-color-warning-subtle-inactive",
+      description: "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-active",
+      path: "color.warning-subtle-disabled",
       type: "color",
-      value: "#aeaeae",
-      cssVar: "--cu-color-on-muted-success-active",
-      description: "Generated success foreground on muted backgrounds (active, 19% darker)",
+      value: "#62594e",
+      cssVar: "--cu-color-warning-subtle-disabled",
+      description: "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-inactive",
+      path: "color.info-active",
       type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-muted-success-inactive",
-      description: "Generated success foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#7eb0da",
+      cssVar: "--cu-color-info-active",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-disabled",
-      type: "color",
-      value: "#d9d9d920",
-      cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-hover",
-      type: "color",
-      value: "#a6a6a6",
-      cssVar: "--cu-color-on-muted-positive-hover",
-      description: "Generated positive foreground on muted backgrounds (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-active",
-      type: "color",
-      value: "#aeaeae",
-      cssVar: "--cu-color-on-muted-positive-active",
-      description: "Generated positive foreground on muted backgrounds (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-muted-positive-inactive",
-      description: "Generated positive foreground on muted backgrounds (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-disabled",
-      type: "color",
-      value: "#d9d9d920",
-      cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-hover",
-      type: "color",
-      value: "#7cabd9",
-      cssVar: "--cu-color-on-muted-info-hover",
-      description: "Generated info foreground on muted backgrounds (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-active",
-      type: "color",
-      value: "#77a6d8",
-      cssVar: "--cu-color-on-muted-info-active",
-      description: "Generated info foreground on muted backgrounds (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-inactive",
+      path: "color.info-inactive",
       type: "color",
       value: "#4d70ac",
-      cssVar: "--cu-color-on-muted-info-inactive",
-      description: "Generated info foreground on muted backgrounds (inactive, 20% darker)",
+      cssVar: "--cu-color-info-inactive",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info-disabled",
+      path: "color.info-disabled",
       type: "color",
-      value: "#6b8dc7",
-      cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#5e697e",
+      cssVar: "--cu-color-info-disabled",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-hover",
+      path: "color.info-subtle-active",
       type: "color",
-      value: "#a892df",
-      cssVar: "--cu-color-on-muted-discovery-hover",
-      description: "Generated discovery foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#536c97",
+      cssVar: "--cu-color-info-subtle-active",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-active",
+      path: "color.info-subtle-inactive",
       type: "color",
-      value: "#a38ede",
-      cssVar: "--cu-color-on-muted-discovery-active",
-      description: "Generated discovery foreground on muted backgrounds (active, 19% brighter)",
+      value: "#254479",
+      cssVar: "--cu-color-info-subtle-inactive",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-inactive",
+      path: "color.info-subtle-disabled",
+      type: "color",
+      value: "#4d5665",
+      cssVar: "--cu-color-info-subtle-disabled",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-active",
+      type: "color",
+      value: "#ac95e0",
+      cssVar: "--cu-color-discovery-active",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-inactive",
       type: "color",
       value: "#75669a",
-      cssVar: "--cu-color-on-muted-discovery-inactive",
-      description: "Generated discovery foreground on muted backgrounds (inactive, 20% darker)",
+      cssVar: "--cu-color-discovery-inactive",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-disabled",
+      path: "color.discovery-disabled",
       type: "color",
-      value: "#8d80b4",
-      cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#696577",
+      cssVar: "--cu-color-discovery-disabled",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-active",
+      type: "color",
+      value: "#5c5378",
+      cssVar: "--cu-color-discovery-subtle-active",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-inactive",
+      type: "color",
+      value: "#403160",
+      cssVar: "--cu-color-discovery-subtle-inactive",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-disabled",
+      type: "color",
+      value: "#524f5c",
+      cssVar: "--cu-color-discovery-subtle-disabled",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-active",
+      type: "color",
+      value: "#84dbb5",
+      cssVar: "--cu-color-success-active",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-inactive",
+      type: "color",
+      value: "#298e6c",
+      cssVar: "--cu-color-success-inactive",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-disabled",
+      type: "color",
+      value: "#5d736a",
+      cssVar: "--cu-color-success-disabled",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-active",
+      type: "color",
+      value: "#50856e",
+      cssVar: "--cu-color-success-subtle-active",
+      description: "Generated low-emphasis success background for the dark theme (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-inactive",
+      type: "color",
+      value: "#1e6749",
+      cssVar: "--cu-color-success-subtle-inactive",
+      description: "Generated low-emphasis success background for the dark theme (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-disabled",
+      type: "color",
+      value: "#4d5e58",
+      cssVar: "--cu-color-success-subtle-disabled",
+      description: "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -11188,7 +8425,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-md",
       description: "Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -11240,15 +8477,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.button",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--cu-typography-button",
-      description: "Button label style: Storm Sans semibold at 18px (`font-size.md`) with tight line height so labels center cleanly inside fixed-height controls. Use it for text inside actionable triggers. Used by Button and LinkText.",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.eyebrow",
       type: "typography",
       value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
@@ -11269,7 +8497,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #fafafa14",
+      value: "0px 0px 0px 3px #f1f1f133",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -11278,7 +8506,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #fafafa14",
+      value: "0px 0px 0px 1px #f1f1f133",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -11287,7 +8515,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #fafafa14",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f133",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -11296,45 +8524,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #fafafa14",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f133",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #3be4be26",
-      cssVar: "--cu-ring-brand",
-      description: "Generated brand 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Generated brand 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #3be4be26",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Generated brand 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Generated brand 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -11375,42 +8567,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
-      cssVar: "--cu-ring-negative",
-      description: "Generated negative 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Generated negative 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Generated negative 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Generated negative 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "ring.warning",
       type: "shadow",
       value: "0px 0px 0px 3px #f7ac2326",
@@ -11443,78 +8599,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f7ac2326",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-success",
-      description: "Generated success 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Generated success 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-positive",
-      description: "Generated positive 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Generated positive 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Generated positive 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Generated positive 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -11589,18 +8673,45 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       description: "Generated discovery 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
-    }
-  ],
-  "darkHighContrast": [
+    },
     {
-      path: "color.transparent",
-      type: "color",
-      value: "#ffffff00",
-      cssVar: "--cu-color-transparent",
-      description: "Fully transparent white.",
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #45c79126",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
       theme: undefined,
       typography: false
     },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #45c79126",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    }
+  ],
+  "darkHighContrast": [
     {
       path: "color.black",
       type: "color",
@@ -12313,43 +9424,106 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.ink.emphasis",
+      path: "color.primary",
       type: "color",
-      value: "#ebebed",
-      cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
+      value: "#ffffff",
+      cssVar: "--cu-color-primary",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.body",
+      path: "color.secondary",
       type: "color",
-      value: "#c3c3ca",
-      cssVar: "--cu-color-ink-body",
+      value: "#ebebed",
+      cssVar: "--cu-color-secondary",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.subtle",
+      path: "color.tertiary",
       type: "color",
-      value: "#9a9fa7",
-      cssVar: "--cu-color-ink-subtle",
-      description: "Lower-emphasis text and icon color for supporting content that should recede behind body copy. Use it for metadata, secondary labels and decorative icons. Used by Breadcrumb separators, EyebrowText, TableOfContents entries, FileTree, DatePicker, inactive Slider values and NavigationHeader links.",
+      value: "#2b2b33",
+      cssVar: "--cu-color-tertiary",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.subtlest",
+      path: "color.border",
       type: "color",
-      value: "#737383",
-      cssVar: "--cu-color-ink-subtlest",
-      description: "Lowest-emphasis text and icon color, for content that should be legible but barely noticed. Use it for hints and optional markers. Used by Field for the `optional` marker beside a field label; avoid it for anything the user must read.",
+      value: "#3f424a",
+      cssVar: "--cu-color-border",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken",
+      path: "color.danger",
+      type: "color",
+      value: "#f00a45",
+      cssVar: "--cu-color-danger",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning",
+      type: "color",
+      value: "#ffb327",
+      cssVar: "--cu-color-warning",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info",
+      type: "color",
+      value: "#70a4ff",
+      cssVar: "--cu-color-info",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle",
+      type: "color",
+      value: "#012e7c",
+      cssVar: "--cu-color-info-subtle",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery",
+      type: "color",
+      value: "#a283f3",
+      cssVar: "--cu-color-discovery",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle",
+      type: "color",
+      value: "#1d0f42",
+      cssVar: "--cu-color-discovery-subtle",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success",
+      type: "color",
+      value: "#2de498",
+      cssVar: "--cu-color-success",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.surface-sunken",
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-surface-sunken",
@@ -12358,7 +9532,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.canvas",
+      path: "color.surface-canvas",
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-surface-canvas",
@@ -12367,7 +9541,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.elevated",
+      path: "color.surface-elevated",
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-surface-elevated",
@@ -12376,7 +9550,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.floating",
+      path: "color.surface-floating",
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-surface-floating",
@@ -12385,1477 +9559,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.overlay",
+      path: "color.surface-highest",
       type: "color",
       value: "#08080a",
-      cssVar: "--cu-color-surface-overlay",
+      cssVar: "--cu-color-surface-highest",
       description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-sunken-hover",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-sunken-active",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-sunken-inactive",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-canvas-hover",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-canvas-active",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-canvas-inactive",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-hover",
-      type: "color",
-      value: "#070709",
-      cssVar: "--cu-color-surface-elevated-hover",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-active",
-      type: "color",
-      value: "#050505",
-      cssVar: "--cu-color-surface-elevated-active",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-elevated-inactive",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-hover",
-      type: "color",
-      value: "#121215",
-      cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-active",
-      type: "color",
-      value: "#0e0e11",
-      cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-hover",
-      type: "color",
-      value: "#1e1f25",
-      cssVar: "--cu-color-surface-overlay-hover",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-active",
-      type: "color",
-      value: "#1a1b20",
-      cssVar: "--cu-color-surface-overlay-active",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-surface-overlay-inactive",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-disabled",
-      type: "color",
-      value: "#070709",
-      cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.required",
-      type: "color",
-      value: "#f00a45",
-      cssVar: "--cu-color-required",
-      description: "Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.link",
-      type: "color",
-      value: "#9ec1ff",
-      cssVar: "--cu-color-link",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline",
-      type: "color",
-      value: "#3f424a",
-      cssVar: "--cu-color-hairline",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.background",
-      type: "color",
-      value: "#2effd0",
-      cssVar: "--cu-color-selection-background",
-      description: "Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.foreground",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-selection-foreground",
-      description: "Text color of highlighted text, chosen to stay readable on the brand-accent selection background.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-accent-base",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand",
-      type: "color",
-      value: "#2effd0",
-      cssVar: "--cu-color-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger",
-      type: "color",
-      value: "#f00a45",
-      cssVar: "--cu-color-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative",
-      type: "color",
-      value: "#f00a45",
-      cssVar: "--cu-color-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning",
-      type: "color",
-      value: "#ffb327",
-      cssVar: "--cu-color-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success",
-      type: "color",
-      value: "#2de498",
-      cssVar: "--cu-color-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive",
-      type: "color",
-      value: "#2de498",
-      cssVar: "--cu-color-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info",
-      type: "color",
-      value: "#70a4ff",
-      cssVar: "--cu-color-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery",
-      type: "color",
-      value: "#a283f3",
-      cssVar: "--cu-color-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-hover",
-      type: "color",
-      value: "#a7a7a7",
-      cssVar: "--cu-color-accent-base-hover",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hover, 30% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-active",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-accent-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-inactive",
-      type: "color",
-      value: "#808080",
-      cssVar: "--cu-color-accent-base-inactive",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-hover",
-      type: "color",
-      value: "#007f65",
-      cssVar: "--cu-color-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-active",
-      type: "color",
-      value: "#008f73",
-      cssVar: "--cu-color-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-inactive",
-      type: "color",
-      value: "#bbfff9",
-      cssVar: "--cu-color-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-disabled",
-      type: "color",
-      value: "#63fcd4",
-      cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-hover",
-      type: "color",
-      value: "#ff819a",
-      cssVar: "--cu-color-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-active",
-      type: "color",
-      value: "#ff6b89",
-      cssVar: "--cu-color-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-inactive",
-      type: "color",
-      value: "#7f002a",
-      cssVar: "--cu-color-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-disabled",
-      type: "color",
-      value: "#e2254b",
-      cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-hover",
-      type: "color",
-      value: "#ff819a",
-      cssVar: "--cu-color-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-active",
-      type: "color",
-      value: "#ff6b89",
-      cssVar: "--cu-color-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-inactive",
-      type: "color",
-      value: "#7f002a",
-      cssVar: "--cu-color-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-disabled",
-      type: "color",
-      value: "#e2254b",
-      cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-hover",
-      type: "color",
-      value: "#9c6100",
-      cssVar: "--cu-color-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-active",
-      type: "color",
-      value: "#ac6d00",
-      cssVar: "--cu-color-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-inactive",
-      type: "color",
-      value: "#ffe995",
-      cssVar: "--cu-color-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-disabled",
-      type: "color",
-      value: "#ffbd57",
-      cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-hover",
-      type: "color",
-      value: "#bdffe1",
-      cssVar: "--cu-color-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-active",
-      type: "color",
-      value: "#a0ffd3",
-      cssVar: "--cu-color-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-inactive",
-      type: "color",
-      value: "#006a46",
-      cssVar: "--cu-color-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-disabled",
-      type: "color",
-      value: "#52dd9e",
-      cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-hover",
-      type: "color",
-      value: "#bdffe1",
-      cssVar: "--cu-color-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-active",
-      type: "color",
-      value: "#a0ffd3",
-      cssVar: "--cu-color-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-inactive",
-      type: "color",
-      value: "#006a46",
-      cssVar: "--cu-color-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-disabled",
-      type: "color",
-      value: "#52dd9e",
-      cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-hover",
-      type: "color",
-      value: "#b1d9ff",
-      cssVar: "--cu-color-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-active",
-      type: "color",
-      value: "#a5d1ff",
-      cssVar: "--cu-color-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-inactive",
-      type: "color",
-      value: "#0159f1",
-      cssVar: "--cu-color-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-disabled",
-      type: "color",
-      value: "#6aa1ff",
-      cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-hover",
-      type: "color",
-      value: "#f3eeff",
-      cssVar: "--cu-color-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-active",
-      type: "color",
-      value: "#eae2ff",
-      cssVar: "--cu-color-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-inactive",
-      type: "color",
-      value: "#643bc7",
-      cssVar: "--cu-color-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-disabled",
-      type: "color",
-      value: "#9e84e8",
-      cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-base",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-base-hover",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (hover, 30% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-active",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-base-active",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (active, dark base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-inactive",
-      type: "color",
-      value: "#808080",
-      cssVar: "--cu-color-on-accent-base-inactive",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base",
-      type: "color",
-      value: "#08080a",
-      cssVar: "--cu-color-muted-base",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand",
-      type: "color",
-      value: "#004433",
-      cssVar: "--cu-color-muted-brand",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info",
-      type: "color",
-      value: "#012e7c",
-      cssVar: "--cu-color-muted-info",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery",
-      type: "color",
-      value: "#1d0f42",
-      cssVar: "--cu-color-muted-discovery",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-hover",
-      type: "color",
-      value: "#25282e",
-      cssVar: "--cu-color-muted-base-hover",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hover, 30% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-active",
-      type: "color",
-      value: "#121316",
-      cssVar: "--cu-color-muted-base-active",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 10% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-inactive",
-      type: "color",
-      value: "#808080",
-      cssVar: "--cu-color-muted-base-inactive",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-disabled",
-      type: "color",
-      value: "#070709",
-      cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-hover",
-      type: "color",
-      value: "#23ad7f",
-      cssVar: "--cu-color-muted-brand-hover",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-active",
-      type: "color",
-      value: "#1ba175",
-      cssVar: "--cu-color-muted-brand-active",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-inactive",
-      type: "color",
-      value: "#001710",
-      cssVar: "--cu-color-muted-brand-inactive",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-disabled",
-      type: "color",
-      value: "#106a4c",
-      cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-hover",
-      type: "color",
-      value: "#164fb5",
-      cssVar: "--cu-color-muted-info-hover",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-active",
-      type: "color",
-      value: "#114aab",
-      cssVar: "--cu-color-muted-info-active",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-inactive",
-      type: "color",
-      value: "#001437",
-      cssVar: "--cu-color-muted-info-inactive",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-disabled",
-      type: "color",
-      value: "#0a3071",
-      cssVar: "--cu-color-muted-info-disabled",
-      description: "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-hover",
-      type: "color",
-      value: "#33226c",
-      cssVar: "--cu-color-muted-discovery-hover",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-active",
-      type: "color",
-      value: "#2f1e64",
-      cssVar: "--cu-color-muted-discovery-active",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-inactive",
-      type: "color",
-      value: "#0a0219",
-      cssVar: "--cu-color-muted-discovery-inactive",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-disabled",
-      type: "color",
-      value: "#1b113a",
-      cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger",
-      type: "color",
-      value: "#21000b",
-      cssVar: "--cu-color-muted-danger",
-      description: "Generated danger muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative",
-      type: "color",
-      value: "#21000b",
-      cssVar: "--cu-color-muted-negative",
-      description: "Generated negative muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning",
-      type: "color",
-      value: "#432c00",
-      cssVar: "--cu-color-muted-warning",
-      description: "Generated warning muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success",
-      type: "color",
-      value: "#00271a",
-      cssVar: "--cu-color-muted-success",
-      description: "Generated success muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive",
-      type: "color",
-      value: "#00271a",
-      cssVar: "--cu-color-muted-positive",
-      description: "Generated positive muted background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-hover",
-      type: "color",
-      value: "#69071d",
-      cssVar: "--cu-color-muted-danger-hover",
-      description: "Generated danger muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-active",
-      type: "color",
-      value: "#5e031a",
-      cssVar: "--cu-color-muted-danger-active",
-      description: "Generated danger muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-inactive",
-      type: "color",
-      value: "#030001",
-      cssVar: "--cu-color-muted-danger-inactive",
-      description: "Generated danger muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-disabled",
-      type: "color",
-      value: "#31000d",
-      cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-hover",
-      type: "color",
-      value: "#69071d",
-      cssVar: "--cu-color-muted-negative-hover",
-      description: "Generated negative muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-active",
-      type: "color",
-      value: "#5e031a",
-      cssVar: "--cu-color-muted-negative-active",
-      description: "Generated negative muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-inactive",
-      type: "color",
-      value: "#030001",
-      cssVar: "--cu-color-muted-negative-inactive",
-      description: "Generated negative muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-disabled",
-      type: "color",
-      value: "#31000d",
-      cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-hover",
-      type: "color",
-      value: "#a26a13",
-      cssVar: "--cu-color-muted-warning-hover",
-      description: "Generated warning muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-active",
-      type: "color",
-      value: "#96610d",
-      cssVar: "--cu-color-muted-warning-active",
-      description: "Generated warning muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-inactive",
-      type: "color",
-      value: "#1a0f00",
-      cssVar: "--cu-color-muted-warning-inactive",
-      description: "Generated warning muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-disabled",
-      type: "color",
-      value: "#5f3d06",
-      cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-hover",
-      type: "color",
-      value: "#198356",
-      cssVar: "--cu-color-muted-success-hover",
-      description: "Generated success muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-active",
-      type: "color",
-      value: "#12774e",
-      cssVar: "--cu-color-muted-success-active",
-      description: "Generated success muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-inactive",
-      type: "color",
-      value: "#000101",
-      cssVar: "--cu-color-muted-success-inactive",
-      description: "Generated success muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-disabled",
-      type: "color",
-      value: "#0a492e",
-      cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-hover",
-      type: "color",
-      value: "#198356",
-      cssVar: "--cu-color-muted-positive-hover",
-      description: "Generated positive muted background for the dark theme (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-active",
-      type: "color",
-      value: "#12774e",
-      cssVar: "--cu-color-muted-positive-active",
-      description: "Generated positive muted background for the dark theme (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-inactive",
-      type: "color",
-      value: "#000101",
-      cssVar: "--cu-color-muted-positive-inactive",
-      description: "Generated positive muted background for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-disabled",
-      type: "color",
-      value: "#0a492e",
-      cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the dark theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.background",
-      type: "color",
-      value: "#08080a",
-      cssVar: "--cu-color-overlay-background",
-      description: "Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.border",
-      type: "color",
-      value: "#737383",
-      cssVar: "--cu-color-overlay-border",
-      description: "Border color that outlines floating overlay panels against the content beneath them. Used for the Popover border.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.backdrop",
+      path: "color.backdrop",
       type: "color",
       value: "#00000066",
-      cssVar: "--cu-color-overlay-backdrop",
+      cssVar: "--cu-color-backdrop",
       description: "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
       theme: undefined,
       typography: false
@@ -13947,24 +9663,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#000000",
       cssVar: "--cu-color-data-neutral-subtle",
       description: "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.emphasis",
-      type: "color",
-      value: "#cbdeff",
-      cssVar: "--cu-color-data-brand-emphasis",
-      description: "High-emphasis brand data color. Use it for the primary mark of a brand series, such as lines, bars, points and legend swatches.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.subtle",
-      type: "color",
-      value: "#70a4ff",
-      cssVar: "--cu-color-data-brand-subtle",
-      description: "Low-emphasis brand data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `brand.emphasis` series.",
       theme: undefined,
       typography: false
     },
@@ -14095,461 +9793,560 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.link-hover",
-      type: "color",
-      value: "#e5f4ff",
-      cssVar: "--cu-color-link-hover",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.link-active",
-      type: "color",
-      value: "#d8edff",
-      cssVar: "--cu-color-link-active",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.link-inactive",
-      type: "color",
-      value: "#2c72ed",
-      cssVar: "--cu-color-link-inactive",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline-hover",
-      type: "color",
-      value: "#676b77",
-      cssVar: "--cu-color-hairline-hover",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline-active",
-      type: "color",
-      value: "#888c9a",
-      cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline-inactive",
-      type: "color",
-      value: "#1f2024",
-      cssVar: "--cu-color-hairline-inactive",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.base",
+      path: "color.base",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-on-muted-base",
-      description: "Generated base foreground on muted backgrounds",
+      cssVar: "--cu-color-base",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand",
+      path: "color.base-subtle",
       type: "color",
-      value: "#2effd0",
-      cssVar: "--cu-color-on-muted-brand",
-      description: "Generated brand foreground on muted backgrounds",
+      value: "#2b2b33",
+      cssVar: "--cu-color-base-subtle",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger",
+      path: "color.on-base-accent",
+      type: "color",
+      value: "#000000",
+      cssVar: "--cu-color-on-base-accent",
+      description: "Generated text and icon color on base backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.base-accent",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-base-accent",
+      description: "Alias of base for the base theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-base-subtle",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-base-subtle",
+      description: "Generated text and icon color on base-subtle backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-danger-accent",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-danger-accent",
+      description: "Generated text and icon color on danger backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-accent",
+      type: "color",
+      value: "#f00a45",
+      cssVar: "--cu-color-danger-accent",
+      description: "Alias of danger for the danger theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle",
+      type: "color",
+      value: "#21000b",
+      cssVar: "--cu-color-danger-subtle",
+      description: "Generated low-emphasis danger background for the dark theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-danger-subtle",
       type: "color",
       value: "#ffe1e5",
-      cssVar: "--cu-color-on-muted-danger",
-      description: "Generated danger foreground on muted backgrounds",
+      cssVar: "--cu-color-on-danger-subtle",
+      description: "Generated text and icon color on danger-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative",
+      path: "color.on-warning-accent",
       type: "color",
-      value: "#ffe1e5",
-      cssVar: "--cu-color-on-muted-negative",
-      description: "Generated negative foreground on muted backgrounds",
+      value: "#000000",
+      cssVar: "--cu-color-on-warning-accent",
+      description: "Generated text and icon color on warning backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning",
+      path: "color.warning-accent",
+      type: "color",
+      value: "#ffb327",
+      cssVar: "--cu-color-warning-accent",
+      description: "Alias of warning for the warning theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle",
+      type: "color",
+      value: "#432c00",
+      cssVar: "--cu-color-warning-subtle",
+      description: "Generated low-emphasis warning background for the dark theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-warning-subtle",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-on-muted-warning",
-      description: "Generated warning foreground on muted backgrounds",
+      cssVar: "--cu-color-on-warning-subtle",
+      description: "Generated text and icon color on warning-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success",
+      path: "color.on-info-accent",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-on-muted-success",
-      description: "Generated success foreground on muted backgrounds",
+      cssVar: "--cu-color-on-info-accent",
+      description: "Generated text and icon color on info backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-muted-positive",
-      description: "Generated positive foreground on muted backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info",
+      path: "color.info-accent",
       type: "color",
       value: "#70a4ff",
-      cssVar: "--cu-color-on-muted-info",
-      description: "Generated info foreground on muted backgrounds",
+      cssVar: "--cu-color-info-accent",
+      description: "Alias of info for the info theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery",
+      path: "color.on-info-subtle",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-info-subtle",
+      description: "Generated text and icon color on info-subtle backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-discovery-accent",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-discovery-accent",
+      description: "Generated text and icon color on discovery backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-accent",
       type: "color",
       value: "#a283f3",
-      cssVar: "--cu-color-on-muted-discovery",
-      description: "Generated discovery foreground on muted backgrounds",
+      cssVar: "--cu-color-discovery-accent",
+      description: "Alias of discovery for the discovery theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-hover",
-      type: "color",
-      value: "#a7a7a7",
-      cssVar: "--cu-color-on-muted-base-hover",
-      description: "Generated base foreground on muted backgrounds (hover, 30% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.base-active",
+      path: "color.on-discovery-subtle",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, dark base primitive)",
+      cssVar: "--cu-color-on-discovery-subtle",
+      description: "Generated text and icon color on discovery-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-inactive",
+      path: "color.on-success-accent",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-success-accent",
+      description: "Generated text and icon color on success backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-accent",
+      type: "color",
+      value: "#2de498",
+      cssVar: "--cu-color-success-accent",
+      description: "Alias of success for the success theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle",
+      type: "color",
+      value: "#00271a",
+      cssVar: "--cu-color-success-subtle",
+      description: "Generated low-emphasis success background for the dark theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-success-subtle",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-success-subtle",
+      description: "Generated text and icon color on success-subtle backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.border-active",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-border-active",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.border-inactive",
       type: "color",
       value: "#808080",
-      cssVar: "--cu-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
+      cssVar: "--cu-color-border-inactive",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-disabled",
+      path: "color.border-disabled",
       type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 13% opacity)",
+      value: "#2f3138",
+      cssVar: "--cu-color-border-disabled",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-hover",
+      path: "color.base-active",
       type: "color",
-      value: "#007f65",
-      cssVar: "--cu-color-on-muted-brand-hover",
-      description: "Generated brand foreground on muted backgrounds (hover, 23% darker)",
+      value: "#f4f4f4",
+      cssVar: "--cu-color-base-active",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-active",
+      path: "color.base-inactive",
       type: "color",
-      value: "#008f73",
-      cssVar: "--cu-color-on-muted-brand-active",
-      description: "Generated brand foreground on muted backgrounds (active, 19% darker)",
+      value: "#808080",
+      cssVar: "--cu-color-base-inactive",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-inactive",
+      path: "color.base-disabled",
       type: "color",
-      value: "#bbfff9",
-      cssVar: "--cu-color-on-muted-brand-inactive",
-      description: "Generated brand foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#7a7a89",
+      cssVar: "--cu-color-base-disabled",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-disabled",
+      path: "color.base-subtle-active",
       type: "color",
-      value: "#63fcd4",
-      cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#3d3d49",
+      cssVar: "--cu-color-base-subtle-active",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 13% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-hover",
+      path: "color.base-subtle-inactive",
       type: "color",
-      value: "#db5d6f",
-      cssVar: "--cu-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% darker)",
+      value: "#808080",
+      cssVar: "--cu-color-base-subtle-inactive",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-active",
+      path: "color.base-subtle-disabled",
       type: "color",
-      value: "#e56f80",
-      cssVar: "--cu-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 19% darker)",
+      value: "#28282f",
+      cssVar: "--cu-color-base-subtle-disabled",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-inactive",
+      path: "color.danger-active",
       type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#ff8ba2",
+      cssVar: "--cu-color-danger-active",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-disabled",
+      path: "color.danger-inactive",
       type: "color",
-      value: "#ffdce0",
-      cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#7f002a",
+      cssVar: "--cu-color-danger-inactive",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-hover",
+      path: "color.danger-disabled",
       type: "color",
-      value: "#db5d6f",
-      cssVar: "--cu-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% darker)",
+      value: "#642b39",
+      cssVar: "--cu-color-danger-disabled",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-active",
+      path: "color.danger-subtle-active",
       type: "color",
-      value: "#e56f80",
-      cssVar: "--cu-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 19% darker)",
+      value: "#6e091f",
+      cssVar: "--cu-color-danger-subtle-active",
+      description: "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-inactive",
+      path: "color.danger-subtle-inactive",
       type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#030001",
+      cssVar: "--cu-color-danger-subtle-inactive",
+      description: "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-disabled",
+      path: "color.danger-subtle-disabled",
       type: "color",
-      value: "#ffdce0",
-      cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#2e171e",
+      cssVar: "--cu-color-danger-subtle-disabled",
+      description: "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-hover",
+      path: "color.warning-active",
       type: "color",
-      value: "#cfcfcf",
-      cssVar: "--cu-color-on-muted-warning-hover",
-      description: "Generated warning foreground on muted backgrounds (hover, 23% darker)",
+      value: "#945a00",
+      cssVar: "--cu-color-warning-active",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-active",
+      path: "color.warning-inactive",
       type: "color",
-      value: "#e0e0e0",
-      cssVar: "--cu-color-on-muted-warning-active",
-      description: "Generated warning foreground on muted backgrounds (active, 19% darker)",
+      value: "#ffe995",
+      cssVar: "--cu-color-warning-inactive",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-inactive",
+      path: "color.warning-disabled",
       type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-muted-warning-inactive",
-      description: "Generated warning foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#7c5e32",
+      cssVar: "--cu-color-warning-disabled",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-disabled",
+      path: "color.warning-subtle-active",
       type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 13% opacity)",
+      value: "#aa7017",
+      cssVar: "--cu-color-warning-subtle-active",
+      description: "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-hover",
+      path: "color.warning-subtle-inactive",
       type: "color",
-      value: "#cfcfcf",
-      cssVar: "--cu-color-on-muted-success-hover",
-      description: "Generated success foreground on muted backgrounds (hover, 23% darker)",
+      value: "#1a0f00",
+      cssVar: "--cu-color-warning-subtle-inactive",
+      description: "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-active",
+      path: "color.warning-subtle-disabled",
       type: "color",
-      value: "#e0e0e0",
-      cssVar: "--cu-color-on-muted-success-active",
-      description: "Generated success foreground on muted backgrounds (active, 19% darker)",
+      value: "#3d301e",
+      cssVar: "--cu-color-warning-subtle-disabled",
+      description: "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-inactive",
+      path: "color.info-active",
       type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-muted-success-inactive",
-      description: "Generated success foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#b8deff",
+      cssVar: "--cu-color-info-active",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-hover",
-      type: "color",
-      value: "#cfcfcf",
-      cssVar: "--cu-color-on-muted-positive-hover",
-      description: "Generated positive foreground on muted backgrounds (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-active",
-      type: "color",
-      value: "#e0e0e0",
-      cssVar: "--cu-color-on-muted-positive-active",
-      description: "Generated positive foreground on muted backgrounds (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-muted-positive-inactive",
-      description: "Generated positive foreground on muted backgrounds (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-hover",
-      type: "color",
-      value: "#b1d9ff",
-      cssVar: "--cu-color-on-muted-info-hover",
-      description: "Generated info foreground on muted backgrounds (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-active",
-      type: "color",
-      value: "#a5d1ff",
-      cssVar: "--cu-color-on-muted-info-active",
-      description: "Generated info foreground on muted backgrounds (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-inactive",
+      path: "color.info-inactive",
       type: "color",
       value: "#0159f1",
-      cssVar: "--cu-color-on-muted-info-inactive",
-      description: "Generated info foreground on muted backgrounds (inactive, 20% darker)",
+      cssVar: "--cu-color-info-inactive",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info-disabled",
+      path: "color.info-disabled",
       type: "color",
-      value: "#6aa1ff",
-      cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#36507f",
+      cssVar: "--cu-color-info-disabled",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-hover",
+      path: "color.info-subtle-active",
       type: "color",
-      value: "#f3eeff",
-      cssVar: "--cu-color-on-muted-discovery-hover",
-      description: "Generated discovery foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#1953bb",
+      cssVar: "--cu-color-info-subtle-active",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-active",
+      path: "color.info-subtle-inactive",
       type: "color",
-      value: "#eae2ff",
-      cssVar: "--cu-color-on-muted-discovery-active",
-      description: "Generated discovery foreground on muted backgrounds (active, 19% brighter)",
+      value: "#001437",
+      cssVar: "--cu-color-info-subtle-inactive",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-inactive",
+      path: "color.info-subtle-disabled",
+      type: "color",
+      value: "#1e2b43",
+      cssVar: "--cu-color-info-subtle-disabled",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-active",
+      type: "color",
+      value: "#f8f5ff",
+      cssVar: "--cu-color-discovery-active",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-inactive",
       type: "color",
       value: "#643bc7",
-      cssVar: "--cu-color-on-muted-discovery-inactive",
-      description: "Generated discovery foreground on muted backgrounds (inactive, 20% darker)",
+      cssVar: "--cu-color-discovery-inactive",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-disabled",
+      path: "color.discovery-disabled",
       type: "color",
-      value: "#9e84e8",
-      cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#4f4472",
+      cssVar: "--cu-color-discovery-disabled",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-active",
+      type: "color",
+      value: "#37256f",
+      cssVar: "--cu-color-discovery-subtle-active",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-inactive",
+      type: "color",
+      value: "#0a0219",
+      cssVar: "--cu-color-discovery-subtle-inactive",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-disabled",
+      type: "color",
+      value: "#231f32",
+      cssVar: "--cu-color-discovery-subtle-disabled",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-active",
+      type: "color",
+      value: "#c7ffe7",
+      cssVar: "--cu-color-success-active",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-inactive",
+      type: "color",
+      value: "#006a46",
+      cssVar: "--cu-color-success-inactive",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-disabled",
+      type: "color",
+      value: "#376754",
+      cssVar: "--cu-color-success-disabled",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-active",
+      type: "color",
+      value: "#1d8b5b",
+      cssVar: "--cu-color-success-subtle-active",
+      description: "Generated low-emphasis success background for the dark theme (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-inactive",
+      type: "color",
+      value: "#000101",
+      cssVar: "--cu-color-success-subtle-inactive",
+      description: "Generated low-emphasis success background for the dark theme (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-disabled",
+      type: "color",
+      value: "#1c352c",
+      cssVar: "--cu-color-success-subtle-disabled",
+      description: "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -16977,7 +12774,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-md",
       description: "Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -17029,15 +12826,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.button",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--cu-typography-button",
-      description: "Button label style: Storm Sans semibold at 18px (`font-size.md`) with tight line height so labels center cleanly inside fixed-height controls. Use it for text inside actionable triggers. Used by Button and LinkText.",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.eyebrow",
       type: "typography",
       value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
@@ -17058,7 +12846,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #fafafa14",
+      value: "0px 0px 0px 3px #f1f1f133",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -17067,7 +12855,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #fafafa14",
+      value: "0px 0px 0px 1px #f1f1f133",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -17076,7 +12864,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #fafafa14",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f133",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -17085,45 +12873,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #fafafa14",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f133",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #3be4be26",
-      cssVar: "--cu-ring-brand",
-      description: "Generated brand 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Generated brand 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #3be4be26",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Generated brand 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #3be4be26",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Generated brand 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -17164,42 +12916,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #cf2d5626",
-      cssVar: "--cu-ring-negative",
-      description: "Generated negative 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Generated negative 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Generated negative 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #cf2d5626",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Generated negative 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "ring.warning",
       type: "shadow",
       value: "0px 0px 0px 3px #f7ac2326",
@@ -17232,78 +12948,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f7ac2326",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-success",
-      description: "Generated success 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Generated success 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #45c79126",
-      cssVar: "--cu-ring-positive",
-      description: "Generated positive 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #45c79126",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Generated positive 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Generated positive 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Generated positive 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -17378,18 +13022,45 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       description: "Generated discovery 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
-    }
-  ],
-  "light": [
+    },
     {
-      path: "color.transparent",
-      type: "color",
-      value: "#ffffff00",
-      cssVar: "--cu-color-transparent",
-      description: "Fully transparent white.",
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #45c79126",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
       theme: undefined,
       typography: false
     },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #45c79126",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #45c79126",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #45c79126",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    }
+  ],
+  "light": [
     {
       path: "color.black",
       type: "color",
@@ -18102,43 +13773,106 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.ink.emphasis",
+      path: "color.primary",
       type: "color",
-      value: "#2b2c30",
-      cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
+      value: "#1f1f21",
+      cssVar: "--cu-color-primary",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.body",
+      path: "color.secondary",
       type: "color",
       value: "#555659",
-      cssVar: "--cu-color-ink-body",
+      cssVar: "--cu-color-secondary",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.subtle",
-      type: "color",
-      value: "#b0b0b1",
-      cssVar: "--cu-color-ink-subtle",
-      description: "Lower-emphasis text and icon color for supporting content that should recede behind body copy. Use it for metadata, secondary labels and decorative icons. Used by Breadcrumb separators, EyebrowText, TableOfContents entries, FileTree, DatePicker, inactive Slider values and NavigationHeader links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.ink.subtlest",
+      path: "color.tertiary",
       type: "color",
       value: "#cacacb",
-      cssVar: "--cu-color-ink-subtlest",
-      description: "Lowest-emphasis text and icon color, for content that should be legible but barely noticed. Use it for hints and optional markers. Used by Field for the `optional` marker beside a field label; avoid it for anything the user must read.",
+      cssVar: "--cu-color-tertiary",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken",
+      path: "color.border",
+      type: "color",
+      value: "#b0b0b1",
+      cssVar: "--cu-color-border",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger",
+      type: "color",
+      value: "#8e223e",
+      cssVar: "--cu-color-danger",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning",
+      type: "color",
+      value: "#765417",
+      cssVar: "--cu-color-warning",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info",
+      type: "color",
+      value: "#2055b3",
+      cssVar: "--cu-color-info",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle",
+      type: "color",
+      value: "#6da2ff",
+      cssVar: "--cu-color-info-subtle",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery",
+      type: "color",
+      value: "#594395",
+      cssVar: "--cu-color-discovery",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle",
+      type: "color",
+      value: "#a690e1",
+      cssVar: "--cu-color-discovery-subtle",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success",
+      type: "color",
+      value: "#216b53",
+      cssVar: "--cu-color-success",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.surface-sunken",
       type: "color",
       value: "#e1e1e1",
       cssVar: "--cu-color-surface-sunken",
@@ -18147,7 +13881,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.canvas",
+      path: "color.surface-canvas",
       type: "color",
       value: "#eaeaea",
       cssVar: "--cu-color-surface-canvas",
@@ -18156,7 +13890,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.elevated",
+      path: "color.surface-elevated",
       type: "color",
       value: "#f1f1f1",
       cssVar: "--cu-color-surface-elevated",
@@ -18165,7 +13899,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.floating",
+      path: "color.surface-floating",
       type: "color",
       value: "#fafafa",
       cssVar: "--cu-color-surface-floating",
@@ -18174,1477 +13908,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.overlay",
+      path: "color.surface-highest",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-surface-overlay",
+      cssVar: "--cu-color-surface-highest",
       description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken-hover",
-      type: "color",
-      value: "#a0a0a0",
-      cssVar: "--cu-color-surface-sunken-hover",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-surface-sunken-active",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-surface-sunken-inactive",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-disabled",
-      type: "color",
-      value: "#e1e1e120",
-      cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-hover",
-      type: "color",
-      value: "#a6a6a6",
-      cssVar: "--cu-color-surface-canvas-hover",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-active",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-surface-canvas-active",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-surface-canvas-inactive",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-disabled",
-      type: "color",
-      value: "#eaeaea20",
-      cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-hover",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-surface-elevated-hover",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-active",
-      type: "color",
-      value: "#b7b7b7",
-      cssVar: "--cu-color-surface-elevated-active",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-surface-elevated-inactive",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-disabled",
-      type: "color",
-      value: "#f1f1f120",
-      cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-hover",
-      type: "color",
-      value: "#b6b6b6",
-      cssVar: "--cu-color-surface-overlay-hover",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-active",
-      type: "color",
-      value: "#c2c2c2",
-      cssVar: "--cu-color-surface-overlay-active",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-surface-overlay-inactive",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.required",
-      type: "color",
-      value: "#8e223e",
-      cssVar: "--cu-color-required",
-      description: "Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.link",
-      type: "color",
-      value: "#2055b3",
-      cssVar: "--cu-color-link",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline",
-      type: "color",
-      value: "#b0b0b1",
-      cssVar: "--cu-color-hairline",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.background",
-      type: "color",
-      value: "#1fb2a6",
-      cssVar: "--cu-color-selection-background",
-      description: "Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.foreground",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-selection-foreground",
-      description: "Text color of highlighted text, chosen to stay readable on the brand-accent selection background.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base",
-      type: "color",
-      value: "#151518",
-      cssVar: "--cu-color-accent-base",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand",
-      type: "color",
-      value: "#1fb2a6",
-      cssVar: "--cu-color-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger",
-      type: "color",
-      value: "#8e223e",
-      cssVar: "--cu-color-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative",
-      type: "color",
-      value: "#8e223e",
-      cssVar: "--cu-color-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning",
-      type: "color",
-      value: "#765417",
-      cssVar: "--cu-color-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success",
-      type: "color",
-      value: "#216b53",
-      cssVar: "--cu-color-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive",
-      type: "color",
-      value: "#216b53",
-      cssVar: "--cu-color-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info",
-      type: "color",
-      value: "#2055b3",
-      cssVar: "--cu-color-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery",
-      type: "color",
-      value: "#594395",
-      cssVar: "--cu-color-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-hover",
-      type: "color",
-      value: "#232326",
-      cssVar: "--cu-color-accent-base-hover",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hover, 30% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-active",
-      type: "color",
-      value: "#0c0c0d",
-      cssVar: "--cu-color-accent-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-inactive",
-      type: "color",
-      value: "#030303",
-      cssVar: "--cu-color-accent-base-inactive",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-disabled",
-      type: "color",
-      value: "#151518",
-      cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-hover",
-      type: "color",
-      value: "#008277",
-      cssVar: "--cu-color-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-active",
-      type: "color",
-      value: "#008a7f",
-      cssVar: "--cu-color-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-inactive",
-      type: "color",
-      value: "#5ddfd2",
-      cssVar: "--cu-color-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-disabled",
-      type: "color",
-      value: "#44afa4",
-      cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-hover",
-      type: "color",
-      value: "#6e0025",
-      cssVar: "--cu-color-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-active",
-      type: "color",
-      value: "#730029",
-      cssVar: "--cu-color-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-inactive",
-      type: "color",
-      value: "#ab3e56",
-      cssVar: "--cu-color-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-disabled",
-      type: "color",
-      value: "#862e41",
-      cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-hover",
-      type: "color",
-      value: "#6e0025",
-      cssVar: "--cu-color-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-active",
-      type: "color",
-      value: "#730029",
-      cssVar: "--cu-color-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-inactive",
-      type: "color",
-      value: "#ab3e56",
-      cssVar: "--cu-color-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-disabled",
-      type: "color",
-      value: "#862e41",
-      cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-hover",
-      type: "color",
-      value: "#573700",
-      cssVar: "--cu-color-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-active",
-      type: "color",
-      value: "#5d3c00",
-      cssVar: "--cu-color-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-inactive",
-      type: "color",
-      value: "#926f36",
-      cssVar: "--cu-color-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-disabled",
-      type: "color",
-      value: "#725526",
-      cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-hover",
-      type: "color",
-      value: "#004d36",
-      cssVar: "--cu-color-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-active",
-      type: "color",
-      value: "#00523b",
-      cssVar: "--cu-color-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-inactive",
-      type: "color",
-      value: "#40876e",
-      cssVar: "--cu-color-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-disabled",
-      type: "color",
-      value: "#2f6954",
-      cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-hover",
-      type: "color",
-      value: "#004d36",
-      cssVar: "--cu-color-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-active",
-      type: "color",
-      value: "#00523b",
-      cssVar: "--cu-color-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-inactive",
-      type: "color",
-      value: "#40876e",
-      cssVar: "--cu-color-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-disabled",
-      type: "color",
-      value: "#2f6954",
-      cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-hover",
-      type: "color",
-      value: "#003590",
-      cssVar: "--cu-color-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-active",
-      type: "color",
-      value: "#033a96",
-      cssVar: "--cu-color-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-inactive",
-      type: "color",
-      value: "#3b72d3",
-      cssVar: "--cu-color-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-disabled",
-      type: "color",
-      value: "#2b58a6",
-      cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-hover",
-      type: "color",
-      value: "#3f2676",
-      cssVar: "--cu-color-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-active",
-      type: "color",
-      value: "#432b7b",
-      cssVar: "--cu-color-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-inactive",
-      type: "color",
-      value: "#725db2",
-      cssVar: "--cu-color-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-disabled",
-      type: "color",
-      value: "#58478c",
-      cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base",
-      type: "color",
-      value: "#f1f1f1",
-      cssVar: "--cu-color-on-accent-base",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-hover",
-      type: "color",
-      value: "#959595",
-      cssVar: "--cu-color-on-accent-base-hover",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (hover, 30% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-active",
-      type: "color",
-      value: "#0c0c0d",
-      cssVar: "--cu-color-on-accent-base-active",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (active, light base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-inactive",
-      type: "color",
-      value: "#030303",
-      cssVar: "--cu-color-on-accent-base-inactive",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-disabled",
-      type: "color",
-      value: "#f1f1f120",
-      cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery",
-      type: "color",
-      value: "#FAFAFA",
-      cssVar: "--cu-color-on-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-hover",
-      type: "color",
-      value: "#b2b2b2",
-      cssVar: "--cu-color-on-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-active",
-      type: "color",
-      value: "#bebebe",
-      cssVar: "--cu-color-on-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-disabled",
-      type: "color",
-      value: "#fafafa20",
-      cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base",
-      type: "color",
-      value: "#eaeaea",
-      cssVar: "--cu-color-muted-base",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand",
-      type: "color",
-      value: "#68e8db",
-      cssVar: "--cu-color-muted-brand",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-hover",
-      type: "color",
-      value: "#919191",
-      cssVar: "--cu-color-muted-base-hover",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hover, 30% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-active",
-      type: "color",
-      value: "#cacaca",
-      cssVar: "--cu-color-muted-base-active",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 10% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-inactive",
-      type: "color",
-      value: "#030303",
-      cssVar: "--cu-color-muted-base-inactive",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-disabled",
-      type: "color",
-      value: "#eaeaea20",
-      cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-hover",
-      type: "color",
-      value: "#08a99e",
-      cssVar: "--cu-color-muted-brand-hover",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-active",
-      type: "color",
-      value: "#25b4a8",
-      cssVar: "--cu-color-muted-brand-active",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-inactive",
-      type: "color",
-      value: "#9bffff",
-      cssVar: "--cu-color-muted-brand-inactive",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-disabled",
-      type: "color",
-      value: "#7ee5d9",
-      cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger",
-      type: "color",
-      value: "#e77388",
-      cssVar: "--cu-color-muted-danger",
-      description: "Generated danger muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative",
-      type: "color",
-      value: "#e77388",
-      cssVar: "--cu-color-muted-negative",
-      description: "Generated negative muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning",
-      type: "color",
-      value: "#c39e65",
-      cssVar: "--cu-color-muted-warning",
-      description: "Generated warning muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success",
-      type: "color",
-      value: "#6db499",
-      cssVar: "--cu-color-muted-success",
-      description: "Generated success muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive",
-      type: "color",
-      value: "#6db499",
-      cssVar: "--cu-color-muted-positive",
-      description: "Generated positive muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info",
-      type: "color",
-      value: "#6fa4ff",
-      cssVar: "--cu-color-muted-info",
-      description: "Generated info muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery",
-      type: "color",
-      value: "#a18ee7",
-      cssVar: "--cu-color-muted-discovery",
-      description: "Generated discovery muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-hover",
-      type: "color",
-      value: "#b1435b",
-      cssVar: "--cu-color-muted-danger-hover",
-      description: "Generated danger muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-active",
-      type: "color",
-      value: "#bb4b62",
-      cssVar: "--cu-color-muted-danger-active",
-      description: "Generated danger muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-inactive",
-      type: "color",
-      value: "#ff9fb3",
-      cssVar: "--cu-color-muted-danger-inactive",
-      description: "Generated danger muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-disabled",
-      type: "color",
-      value: "#dd7b8b",
-      cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-hover",
-      type: "color",
-      value: "#b1435b",
-      cssVar: "--cu-color-muted-negative-hover",
-      description: "Generated negative muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-active",
-      type: "color",
-      value: "#bb4b62",
-      cssVar: "--cu-color-muted-negative-active",
-      description: "Generated negative muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-inactive",
-      type: "color",
-      value: "#ff9fb3",
-      cssVar: "--cu-color-muted-negative-inactive",
-      description: "Generated negative muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-disabled",
-      type: "color",
-      value: "#dd7b8b",
-      cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-hover",
-      type: "color",
-      value: "#906d34",
-      cssVar: "--cu-color-muted-warning-hover",
-      description: "Generated warning muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-active",
-      type: "color",
-      value: "#99763d",
-      cssVar: "--cu-color-muted-warning-active",
-      description: "Generated warning muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-inactive",
-      type: "color",
-      value: "#f2cc91",
-      cssVar: "--cu-color-muted-warning-inactive",
-      description: "Generated warning muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-disabled",
-      type: "color",
-      value: "#bf9f70",
-      cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-hover",
-      type: "color",
-      value: "#3b8269",
-      cssVar: "--cu-color-muted-success-hover",
-      description: "Generated success muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-active",
-      type: "color",
-      value: "#448b72",
-      cssVar: "--cu-color-muted-success-active",
-      description: "Generated success muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-inactive",
-      type: "color",
-      value: "#9ae2c6",
-      cssVar: "--cu-color-muted-success-inactive",
-      description: "Generated success muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-disabled",
-      type: "color",
-      value: "#77b29b",
-      cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-hover",
-      type: "color",
-      value: "#3b8269",
-      cssVar: "--cu-color-muted-positive-hover",
-      description: "Generated positive muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-active",
-      type: "color",
-      value: "#448b72",
-      cssVar: "--cu-color-muted-positive-active",
-      description: "Generated positive muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-inactive",
-      type: "color",
-      value: "#9ae2c6",
-      cssVar: "--cu-color-muted-positive-inactive",
-      description: "Generated positive muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-disabled",
-      type: "color",
-      value: "#77b29b",
-      cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-hover",
-      type: "color",
-      value: "#4071c8",
-      cssVar: "--cu-color-muted-info-hover",
-      description: "Generated info muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-active",
-      type: "color",
-      value: "#487ad2",
-      cssVar: "--cu-color-muted-info-active",
-      description: "Generated info muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-inactive",
-      type: "color",
-      value: "#9bd3ff",
-      cssVar: "--cu-color-muted-info-inactive",
-      description: "Generated info muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-disabled",
-      type: "color",
-      value: "#78a5f2",
-      cssVar: "--cu-color-muted-info-disabled",
-      description: "Generated info muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-hover",
-      type: "color",
-      value: "#735eb3",
-      cssVar: "--cu-color-muted-discovery-hover",
-      description: "Generated discovery muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-active",
-      type: "color",
-      value: "#7b67bc",
-      cssVar: "--cu-color-muted-discovery-active",
-      description: "Generated discovery muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-inactive",
-      type: "color",
-      value: "#cdbaff",
-      cssVar: "--cu-color-muted-discovery-inactive",
-      description: "Generated discovery muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-disabled",
-      type: "color",
-      value: "#a091dc",
-      cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Generated discovery muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.background",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-overlay-background",
-      description: "Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.border",
-      type: "color",
-      value: "#b0b0b1",
-      cssVar: "--cu-color-overlay-border",
-      description: "Border color that outlines floating overlay panels against the content beneath them. Used for the Popover border.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.backdrop",
+      path: "color.backdrop",
       type: "color",
       value: "#1a1c1f66",
-      cssVar: "--cu-color-overlay-backdrop",
+      cssVar: "--cu-color-backdrop",
       description: "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
       theme: undefined,
       typography: false
@@ -19736,24 +14012,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#eaeaea",
       cssVar: "--cu-color-data-neutral-subtle",
       description: "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.emphasis",
-      type: "color",
-      value: "#2055b3",
-      cssVar: "--cu-color-data-brand-emphasis",
-      description: "High-emphasis brand data color. Use it for the primary mark of a brand series, such as lines, bars, points and legend swatches.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.subtle",
-      type: "color",
-      value: "#6da2ff",
-      cssVar: "--cu-color-data-brand-subtle",
-      description: "Low-emphasis brand data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `brand.emphasis` series.",
       theme: undefined,
       typography: false
     },
@@ -19884,461 +14142,560 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.link-hover",
+      path: "color.base",
       type: "color",
-      value: "#003590",
-      cssVar: "--cu-color-link-hover",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% darker)",
+      value: "#1f1f21",
+      cssVar: "--cu-color-base",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.link-active",
+      path: "color.base-subtle",
       type: "color",
-      value: "#033a96",
-      cssVar: "--cu-color-link-active",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% darker)",
+      value: "#cacacb",
+      cssVar: "--cu-color-base-subtle",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.link-inactive",
+      path: "color.on-base-accent",
       type: "color",
-      value: "#3b72d3",
-      cssVar: "--cu-color-link-inactive",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% brighter)",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-base-accent",
+      description: "Generated text and icon color on base backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.hairline-hover",
+      path: "color.base-accent",
       type: "color",
-      value: "#7c7c7d",
-      cssVar: "--cu-color-hairline-hover",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% darker)",
+      value: "#1f1f21",
+      cssVar: "--cu-color-base-accent",
+      description: "Alias of base for the base theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.hairline-active",
-      type: "color",
-      value: "#565657",
-      cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline-inactive",
-      type: "color",
-      value: "#e1e1e2",
-      cssVar: "--cu-color-hairline-inactive",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.base",
+      path: "color.on-base-subtle",
       type: "color",
       value: "#151518",
-      cssVar: "--cu-color-on-muted-base",
-      description: "Generated base foreground on muted backgrounds",
+      cssVar: "--cu-color-on-base-subtle",
+      description: "Generated text and icon color on base-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand",
+      path: "color.on-danger-accent",
       type: "color",
-      value: "#1fb2a6",
-      cssVar: "--cu-color-on-muted-brand",
-      description: "Generated brand foreground on muted backgrounds",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-danger-accent",
+      description: "Generated text and icon color on danger backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger",
+      path: "color.danger-accent",
+      type: "color",
+      value: "#8e223e",
+      cssVar: "--cu-color-danger-accent",
+      description: "Alias of danger for the danger theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle",
+      type: "color",
+      value: "#e77388",
+      cssVar: "--cu-color-danger-subtle",
+      description: "Generated low-emphasis danger background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-danger-subtle",
       type: "color",
       value: "#270009",
-      cssVar: "--cu-color-on-muted-danger",
-      description: "Generated danger foreground on muted backgrounds",
+      cssVar: "--cu-color-on-danger-subtle",
+      description: "Generated text and icon color on danger-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative",
+      path: "color.on-warning-accent",
       type: "color",
-      value: "#270009",
-      cssVar: "--cu-color-on-muted-negative",
-      description: "Generated negative foreground on muted backgrounds",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-warning-accent",
+      description: "Generated text and icon color on warning backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning",
+      path: "color.warning-accent",
+      type: "color",
+      value: "#765417",
+      cssVar: "--cu-color-warning-accent",
+      description: "Alias of warning for the warning theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle",
+      type: "color",
+      value: "#c39e65",
+      cssVar: "--cu-color-warning-subtle",
+      description: "Generated low-emphasis warning background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-warning-subtle",
       type: "color",
       value: "#291a00",
-      cssVar: "--cu-color-on-muted-warning",
-      description: "Generated warning foreground on muted backgrounds",
+      cssVar: "--cu-color-on-warning-subtle",
+      description: "Generated text and icon color on warning-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success",
+      path: "color.on-info-accent",
+      type: "color",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-info-accent",
+      description: "Generated text and icon color on info backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-accent",
+      type: "color",
+      value: "#2055b3",
+      cssVar: "--cu-color-info-accent",
+      description: "Alias of info for the info theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-info-subtle",
+      type: "color",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-info-subtle",
+      description: "Generated text and icon color on info-subtle backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-discovery-accent",
+      type: "color",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-discovery-accent",
+      description: "Generated text and icon color on discovery backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-accent",
+      type: "color",
+      value: "#594395",
+      cssVar: "--cu-color-discovery-accent",
+      description: "Alias of discovery for the discovery theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-discovery-subtle",
+      type: "color",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-discovery-subtle",
+      description: "Generated text and icon color on discovery-subtle backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-success-accent",
+      type: "color",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-on-success-accent",
+      description: "Generated text and icon color on success backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-accent",
+      type: "color",
+      value: "#216b53",
+      cssVar: "--cu-color-success-accent",
+      description: "Alias of success for the success theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle",
+      type: "color",
+      value: "#6db499",
+      cssVar: "--cu-color-success-subtle",
+      description: "Generated low-emphasis success background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-success-subtle",
       type: "color",
       value: "#00251a",
-      cssVar: "--cu-color-on-muted-success",
-      description: "Generated success foreground on muted backgrounds",
+      cssVar: "--cu-color-on-success-subtle",
+      description: "Generated text and icon color on success-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive",
-      type: "color",
-      value: "#00251a",
-      cssVar: "--cu-color-on-muted-positive",
-      description: "Generated positive foreground on muted backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info",
-      type: "color",
-      value: "#00184b",
-      cssVar: "--cu-color-on-muted-info",
-      description: "Generated info foreground on muted backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.discovery",
-      type: "color",
-      value: "#1d0046",
-      cssVar: "--cu-color-on-muted-discovery",
-      description: "Generated discovery foreground on muted backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.base-hover",
-      type: "color",
-      value: "#232326",
-      cssVar: "--cu-color-on-muted-base-hover",
-      description: "Generated base foreground on muted backgrounds (hover, 30% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.base-active",
+      path: "color.border-active",
       type: "color",
       value: "#0c0c0d",
-      cssVar: "--cu-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, light base primitive)",
+      cssVar: "--cu-color-border-active",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-inactive",
+      path: "color.border-inactive",
       type: "color",
       value: "#030303",
-      cssVar: "--cu-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
+      cssVar: "--cu-color-border-inactive",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-disabled",
+      path: "color.border-disabled",
       type: "color",
-      value: "#151518",
-      cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#69696b",
+      cssVar: "--cu-color-border-disabled",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-hover",
+      path: "color.base-active",
       type: "color",
-      value: "#008277",
-      cssVar: "--cu-color-on-muted-brand-hover",
-      description: "Generated brand foreground on muted backgrounds (hover, 23% darker)",
+      value: "#38383a",
+      cssVar: "--cu-color-base-active",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% lighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-active",
+      path: "color.base-inactive",
       type: "color",
-      value: "#008a7f",
-      cssVar: "--cu-color-on-muted-brand-active",
-      description: "Generated brand foreground on muted backgrounds (active, 19% darker)",
+      value: "#030303",
+      cssVar: "--cu-color-base-inactive",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-inactive",
+      path: "color.base-disabled",
       type: "color",
-      value: "#5ddfd2",
-      cssVar: "--cu-color-on-muted-brand-inactive",
-      description: "Generated brand foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#363639",
+      cssVar: "--cu-color-base-disabled",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-disabled",
+      path: "color.base-subtle-active",
       type: "color",
-      value: "#44afa4",
-      cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#a9a9aa",
+      cssVar: "--cu-color-base-subtle-active",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 12% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-hover",
+      path: "color.base-subtle-inactive",
       type: "color",
-      value: "#320611",
-      cssVar: "--cu-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#030303",
+      cssVar: "--cu-color-base-subtle-inactive",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-active",
+      path: "color.base-subtle-disabled",
       type: "color",
-      value: "#300510",
-      cssVar: "--cu-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 19% brighter)",
+      value: "#727275",
+      cssVar: "--cu-color-base-subtle-disabled",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-inactive",
+      path: "color.danger-active",
       type: "color",
-      value: "#1e0004",
-      cssVar: "--cu-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#6a0022",
+      cssVar: "--cu-color-danger-active",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-disabled",
+      path: "color.danger-inactive",
       type: "color",
-      value: "#24030a",
-      cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#ab3e56",
+      cssVar: "--cu-color-danger-inactive",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-hover",
+      path: "color.danger-disabled",
       type: "color",
-      value: "#320611",
-      cssVar: "--cu-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#5a3c44",
+      cssVar: "--cu-color-danger-disabled",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-active",
+      path: "color.danger-subtle-active",
       type: "color",
-      value: "#300510",
-      cssVar: "--cu-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 19% brighter)",
+      value: "#ab3d56",
+      cssVar: "--cu-color-danger-subtle-active",
+      description: "Generated low-emphasis danger background for the light theme (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-inactive",
+      path: "color.danger-subtle-inactive",
       type: "color",
-      value: "#1e0004",
-      cssVar: "--cu-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#ff9fb3",
+      cssVar: "--cu-color-danger-subtle-inactive",
+      description: "Generated low-emphasis danger background for the light theme (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-disabled",
+      path: "color.danger-subtle-disabled",
       type: "color",
-      value: "#24030a",
-      cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#79575e",
+      cssVar: "--cu-color-danger-subtle-disabled",
+      description: "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-hover",
+      path: "color.warning-active",
       type: "color",
-      value: "#36270a",
-      cssVar: "--cu-color-on-muted-warning-hover",
-      description: "Generated warning foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#543400",
+      cssVar: "--cu-color-warning-active",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-active",
+      path: "color.warning-inactive",
       type: "color",
-      value: "#342408",
-      cssVar: "--cu-color-on-muted-warning-active",
-      description: "Generated warning foreground on muted backgrounds (active, 19% brighter)",
+      value: "#926f36",
+      cssVar: "--cu-color-warning-inactive",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-inactive",
+      path: "color.warning-disabled",
       type: "color",
-      value: "#1e0f00",
-      cssVar: "--cu-color-on-muted-warning-inactive",
-      description: "Generated warning foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#53493b",
+      cssVar: "--cu-color-warning-disabled",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-disabled",
+      path: "color.warning-subtle-active",
       type: "color",
-      value: "#271b05",
-      cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#8b682f",
+      cssVar: "--cu-color-warning-subtle-active",
+      description: "Generated low-emphasis warning background for the light theme (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-hover",
+      path: "color.warning-subtle-inactive",
       type: "color",
-      value: "#0d3227",
-      cssVar: "--cu-color-on-muted-success-hover",
-      description: "Generated success foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#f2cc91",
+      cssVar: "--cu-color-warning-subtle-inactive",
+      description: "Generated low-emphasis warning background for the light theme (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-active",
+      path: "color.warning-subtle-disabled",
       type: "color",
-      value: "#0b3024",
-      cssVar: "--cu-color-on-muted-success-active",
-      description: "Generated success foreground on muted backgrounds (active, 19% brighter)",
+      value: "#6e6355",
+      cssVar: "--cu-color-warning-subtle-disabled",
+      description: "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-inactive",
+      path: "color.info-active",
       type: "color",
-      value: "#001a0f",
-      cssVar: "--cu-color-on-muted-success-inactive",
-      description: "Generated success foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#00318d",
+      cssVar: "--cu-color-info-active",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-disabled",
+      path: "color.info-inactive",
       type: "color",
-      value: "#06241b",
-      cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#3b72d3",
+      cssVar: "--cu-color-info-inactive",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive-hover",
+      path: "color.info-disabled",
       type: "color",
-      value: "#0d3227",
-      cssVar: "--cu-color-on-muted-positive-hover",
-      description: "Generated positive foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#3b4a68",
+      cssVar: "--cu-color-info-disabled",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive-active",
+      path: "color.info-subtle-active",
       type: "color",
-      value: "#0b3024",
-      cssVar: "--cu-color-on-muted-positive-active",
-      description: "Generated positive foreground on muted backgrounds (active, 19% brighter)",
+      value: "#396ac2",
+      cssVar: "--cu-color-info-subtle-active",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive-inactive",
+      path: "color.info-subtle-inactive",
       type: "color",
-      value: "#001a0f",
-      cssVar: "--cu-color-on-muted-positive-inactive",
-      description: "Generated positive foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#99d1ff",
+      cssVar: "--cu-color-info-subtle-inactive",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive-disabled",
+      path: "color.info-subtle-disabled",
       type: "color",
-      value: "#06241b",
-      cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#556582",
+      cssVar: "--cu-color-info-subtle-disabled",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info-hover",
+      path: "color.discovery-active",
       type: "color",
-      value: "#09265a",
-      cssVar: "--cu-color-on-muted-info-hover",
-      description: "Generated info foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#3c2372",
+      cssVar: "--cu-color-discovery-active",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info-active",
+      path: "color.discovery-inactive",
       type: "color",
-      value: "#072457",
-      cssVar: "--cu-color-on-muted-info-active",
-      description: "Generated info foreground on muted backgrounds (active, 19% brighter)",
+      value: "#725db2",
+      cssVar: "--cu-color-discovery-inactive",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info-inactive",
+      path: "color.discovery-disabled",
       type: "color",
-      value: "#000b3e",
-      cssVar: "--cu-color-on-muted-info-inactive",
-      description: "Generated info foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#4a445f",
+      cssVar: "--cu-color-discovery-disabled",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info-disabled",
+      path: "color.discovery-subtle-active",
       type: "color",
-      value: "#041a44",
-      cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#725ba7",
+      cssVar: "--cu-color-discovery-subtle-active",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-hover",
+      path: "color.discovery-subtle-inactive",
       type: "color",
-      value: "#270e54",
-      cssVar: "--cu-color-on-muted-discovery-hover",
-      description: "Generated discovery foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#d2bcff",
+      cssVar: "--cu-color-discovery-subtle-inactive",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-active",
+      path: "color.discovery-subtle-disabled",
       type: "color",
-      value: "#250b51",
-      cssVar: "--cu-color-on-muted-discovery-active",
-      description: "Generated discovery foreground on muted backgrounds (active, 19% brighter)",
+      value: "#655f79",
+      cssVar: "--cu-color-discovery-subtle-disabled",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-inactive",
+      path: "color.success-active",
       type: "color",
-      value: "#15003a",
-      cssVar: "--cu-color-on-muted-discovery-inactive",
-      description: "Generated discovery foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#004933",
+      cssVar: "--cu-color-success-active",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-disabled",
+      path: "color.success-inactive",
       type: "color",
-      value: "#1c073f",
-      cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#40876e",
+      cssVar: "--cu-color-success-inactive",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-disabled",
+      type: "color",
+      value: "#3c504b",
+      cssVar: "--cu-color-success-disabled",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-active",
+      type: "color",
+      value: "#357d64",
+      cssVar: "--cu-color-success-subtle-active",
+      description: "Generated low-emphasis success background for the light theme (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-inactive",
+      type: "color",
+      value: "#9ae2c6",
+      cssVar: "--cu-color-success-subtle-inactive",
+      description: "Generated low-emphasis success background for the light theme (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-disabled",
+      type: "color",
+      value: "#556a64",
+      cssVar: "--cu-color-success-subtle-disabled",
+      description: "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -22766,7 +17123,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-md",
       description: "Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -22818,15 +17175,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.button",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--cu-typography-button",
-      description: "Button label style: Storm Sans semibold at 18px (`font-size.md`) with tight line height so labels center cleanly inside fixed-height controls. Use it for text inside actionable triggers. Used by Button and LinkText.",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.eyebrow",
       type: "typography",
       value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
@@ -22847,7 +17195,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #15151814",
+      value: "0px 0px 0px 3px #1f1f2133",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -22856,7 +17204,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #15151814",
+      value: "0px 0px 0px 1px #1f1f2133",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -22865,7 +17213,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151814",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f2133",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -22874,45 +17222,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151814",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f2133",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #1fb2a626",
-      cssVar: "--cu-ring-brand",
-      description: "Generated brand 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Generated brand 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a626",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Generated brand 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Generated brand 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -22953,42 +17265,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #8e223e26",
-      cssVar: "--cu-ring-negative",
-      description: "Generated negative 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Generated negative 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Generated negative 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Generated negative 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "ring.warning",
       type: "shadow",
       value: "0px 0px 0px 3px #76541726",
@@ -23021,78 +17297,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #76541726",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-success",
-      description: "Generated success 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Generated success 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-positive",
-      description: "Generated positive 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Generated positive 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Generated positive 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Generated positive 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -23167,18 +17371,45 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       description: "Generated discovery 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
-    }
-  ],
-  "lightDimmed": [
+    },
     {
-      path: "color.transparent",
-      type: "color",
-      value: "#d9d9d900",
-      cssVar: "--cu-color-transparent",
-      description: "Fully transparent white.",
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #216b5326",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
       theme: undefined,
       typography: false
     },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #216b5326",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    }
+  ],
+  "lightDimmed": [
     {
       path: "color.black",
       type: "color",
@@ -23891,43 +18122,106 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.ink.emphasis",
+      path: "color.primary",
       type: "color",
-      value: "#444548",
-      cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
+      value: "#3c3c3e",
+      cssVar: "--cu-color-primary",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.body",
+      path: "color.secondary",
       type: "color",
       value: "#626364",
-      cssVar: "--cu-color-ink-body",
+      cssVar: "--cu-color-secondary",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.subtle",
-      type: "color",
-      value: "#a1a1a2",
-      cssVar: "--cu-color-ink-subtle",
-      description: "Lower-emphasis text and icon color for supporting content that should recede behind body copy. Use it for metadata, secondary labels and decorative icons. Used by Breadcrumb separators, EyebrowText, TableOfContents entries, FileTree, DatePicker, inactive Slider values and NavigationHeader links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.ink.subtlest",
+      path: "color.tertiary",
       type: "color",
       value: "#b4b4b4",
-      cssVar: "--cu-color-ink-subtlest",
-      description: "Lowest-emphasis text and icon color, for content that should be legible but barely noticed. Use it for hints and optional markers. Used by Field for the `optional` marker beside a field label; avoid it for anything the user must read.",
+      cssVar: "--cu-color-tertiary",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken",
+      path: "color.border",
+      type: "color",
+      value: "#a1a1a2",
+      cssVar: "--cu-color-border",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger",
+      type: "color",
+      value: "#864254",
+      cssVar: "--cu-color-danger",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning",
+      type: "color",
+      value: "#786137",
+      cssVar: "--cu-color-warning",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info",
+      type: "color",
+      value: "#45649b",
+      cssVar: "--cu-color-info",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle",
+      type: "color",
+      value: "#7598d7",
+      cssVar: "--cu-color-info-subtle",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery",
+      type: "color",
+      value: "#675a8a",
+      cssVar: "--cu-color-discovery",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle",
+      type: "color",
+      value: "#9b8cc3",
+      cssVar: "--cu-color-discovery-subtle",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success",
+      type: "color",
+      value: "#3e7160",
+      cssVar: "--cu-color-success",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.surface-sunken",
       type: "color",
       value: "#c4c4c4",
       cssVar: "--cu-color-surface-sunken",
@@ -23936,7 +18230,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.canvas",
+      path: "color.surface-canvas",
       type: "color",
       value: "#cacaca",
       cssVar: "--cu-color-surface-canvas",
@@ -23945,7 +18239,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.elevated",
+      path: "color.surface-elevated",
       type: "color",
       value: "#cfcfcf",
       cssVar: "--cu-color-surface-elevated",
@@ -23954,7 +18248,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.floating",
+      path: "color.surface-floating",
       type: "color",
       value: "#d5d5d5",
       cssVar: "--cu-color-surface-floating",
@@ -23963,1477 +18257,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.overlay",
+      path: "color.surface-highest",
       type: "color",
       value: "#d9d9d9",
-      cssVar: "--cu-color-surface-overlay",
+      cssVar: "--cu-color-surface-highest",
       description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken-hover",
-      type: "color",
-      value: "#969696",
-      cssVar: "--cu-color-surface-sunken-hover",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-active",
-      type: "color",
-      value: "#9e9e9e",
-      cssVar: "--cu-color-surface-sunken-active",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-surface-sunken-inactive",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-disabled",
-      type: "color",
-      value: "#c4c4c420",
-      cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-hover",
-      type: "color",
-      value: "#9a9a9a",
-      cssVar: "--cu-color-surface-canvas-hover",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-active",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-surface-canvas-active",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-surface-canvas-inactive",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-disabled",
-      type: "color",
-      value: "#cacaca20",
-      cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-hover",
-      type: "color",
-      value: "#9e9e9e",
-      cssVar: "--cu-color-surface-elevated-hover",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-active",
-      type: "color",
-      value: "#a6a6a6",
-      cssVar: "--cu-color-surface-elevated-active",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-surface-elevated-inactive",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-disabled",
-      type: "color",
-      value: "#cfcfcf20",
-      cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-hover",
-      type: "color",
-      value: "#a6a6a6",
-      cssVar: "--cu-color-surface-overlay-hover",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-active",
-      type: "color",
-      value: "#aeaeae",
-      cssVar: "--cu-color-surface-overlay-active",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-surface-overlay-inactive",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-disabled",
-      type: "color",
-      value: "#d9d9d920",
-      cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.required",
-      type: "color",
-      value: "#864254",
-      cssVar: "--cu-color-required",
-      description: "Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.link",
-      type: "color",
-      value: "#45649b",
-      cssVar: "--cu-color-link",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline",
-      type: "color",
-      value: "#a1a1a2",
-      cssVar: "--cu-color-hairline",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.background",
-      type: "color",
-      value: "#449a93",
-      cssVar: "--cu-color-selection-background",
-      description: "Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.foreground",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-selection-foreground",
-      description: "Text color of highlighted text, chosen to stay readable on the brand-accent selection background.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base",
-      type: "color",
-      value: "#343438",
-      cssVar: "--cu-color-accent-base",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand",
-      type: "color",
-      value: "#449a93",
-      cssVar: "--cu-color-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger",
-      type: "color",
-      value: "#864254",
-      cssVar: "--cu-color-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative",
-      type: "color",
-      value: "#864254",
-      cssVar: "--cu-color-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning",
-      type: "color",
-      value: "#786137",
-      cssVar: "--cu-color-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success",
-      type: "color",
-      value: "#3e7160",
-      cssVar: "--cu-color-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive",
-      type: "color",
-      value: "#3e7160",
-      cssVar: "--cu-color-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info",
-      type: "color",
-      value: "#45649b",
-      cssVar: "--cu-color-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery",
-      type: "color",
-      value: "#675a8a",
-      cssVar: "--cu-color-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-hover",
-      type: "color",
-      value: "#3e3e41",
-      cssVar: "--cu-color-accent-base-hover",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hover, 30% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-active",
-      type: "color",
-      value: "#2e2e30",
-      cssVar: "--cu-color-accent-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-inactive",
-      type: "color",
-      value: "#282828",
-      cssVar: "--cu-color-accent-base-inactive",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-disabled",
-      type: "color",
-      value: "#343438",
-      cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-hover",
-      type: "color",
-      value: "#26827a",
-      cssVar: "--cu-color-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-active",
-      type: "color",
-      value: "#27867f",
-      cssVar: "--cu-color-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-inactive",
-      type: "color",
-      value: "#6ebcb4",
-      cssVar: "--cu-color-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-disabled",
-      type: "color",
-      value: "#5d9993",
-      cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-hover",
-      type: "color",
-      value: "#77233f",
-      cssVar: "--cu-color-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-active",
-      type: "color",
-      value: "#7a2342",
-      cssVar: "--cu-color-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-inactive",
-      type: "color",
-      value: "#975967",
-      cssVar: "--cu-color-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-disabled",
-      type: "color",
-      value: "#804a56",
-      cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-hover",
-      type: "color",
-      value: "#77233f",
-      cssVar: "--cu-color-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-active",
-      type: "color",
-      value: "#7a2342",
-      cssVar: "--cu-color-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-inactive",
-      type: "color",
-      value: "#975967",
-      cssVar: "--cu-color-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-disabled",
-      type: "color",
-      value: "#804a56",
-      cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-hover",
-      type: "color",
-      value: "#6a4f1f",
-      cssVar: "--cu-color-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-active",
-      type: "color",
-      value: "#6e5220",
-      cssVar: "--cu-color-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-inactive",
-      type: "color",
-      value: "#887351",
-      cssVar: "--cu-color-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-disabled",
-      type: "color",
-      value: "#756142",
-      cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-hover",
-      type: "color",
-      value: "#1d6550",
-      cssVar: "--cu-color-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-active",
-      type: "color",
-      value: "#1e6853",
-      cssVar: "--cu-color-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-inactive",
-      type: "color",
-      value: "#578172",
-      cssVar: "--cu-color-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-disabled",
-      type: "color",
-      value: "#486f61",
-      cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-hover",
-      type: "color",
-      value: "#1d6550",
-      cssVar: "--cu-color-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-active",
-      type: "color",
-      value: "#1e6853",
-      cssVar: "--cu-color-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-inactive",
-      type: "color",
-      value: "#578172",
-      cssVar: "--cu-color-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-disabled",
-      type: "color",
-      value: "#486f61",
-      cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-hover",
-      type: "color",
-      value: "#284c89",
-      cssVar: "--cu-color-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-active",
-      type: "color",
-      value: "#2b508c",
-      cssVar: "--cu-color-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-inactive",
-      type: "color",
-      value: "#5a79af",
-      cssVar: "--cu-color-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-disabled",
-      type: "color",
-      value: "#4b6693",
-      cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-hover",
-      type: "color",
-      value: "#534377",
-      cssVar: "--cu-color-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-active",
-      type: "color",
-      value: "#56477a",
-      cssVar: "--cu-color-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-inactive",
-      type: "color",
-      value: "#796d9d",
-      cssVar: "--cu-color-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-disabled",
-      type: "color",
-      value: "#665c84",
-      cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base",
-      type: "color",
-      value: "#cfcfcf",
-      cssVar: "--cu-color-on-accent-base",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-hover",
-      type: "color",
-      value: "#8f8f8f",
-      cssVar: "--cu-color-on-accent-base-hover",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (hover, 30% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-active",
-      type: "color",
-      value: "#2e2e30",
-      cssVar: "--cu-color-on-accent-base-active",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (active, light base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-inactive",
-      type: "color",
-      value: "#282828",
-      cssVar: "--cu-color-on-accent-base-inactive",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-disabled",
-      type: "color",
-      value: "#cfcfcf20",
-      cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--cu-color-on-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-hover",
-      type: "color",
-      value: "#a3a3a3",
-      cssVar: "--cu-color-on-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-active",
-      type: "color",
-      value: "#ababab",
-      cssVar: "--cu-color-on-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-on-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-disabled",
-      type: "color",
-      value: "#d5d5d520",
-      cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base",
-      type: "color",
-      value: "#cacaca",
-      cssVar: "--cu-color-muted-base",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand",
-      type: "color",
-      value: "#74c4bc",
-      cssVar: "--cu-color-muted-brand",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-hover",
-      type: "color",
-      value: "#8c8c8c",
-      cssVar: "--cu-color-muted-base-hover",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hover, 30% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-active",
-      type: "color",
-      value: "#b4b4b4",
-      cssVar: "--cu-color-muted-base-active",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 10% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-inactive",
-      type: "color",
-      value: "#282828",
-      cssVar: "--cu-color-muted-base-inactive",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-disabled",
-      type: "color",
-      value: "#cacaca20",
-      cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-hover",
-      type: "color",
-      value: "#32968f",
-      cssVar: "--cu-color-muted-brand-hover",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-active",
-      type: "color",
-      value: "#499c95",
-      cssVar: "--cu-color-muted-brand-active",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-inactive",
-      type: "color",
-      value: "#8ddede",
-      cssVar: "--cu-color-muted-brand-inactive",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-disabled",
-      type: "color",
-      value: "#81c4bc",
-      cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger",
-      type: "color",
-      value: "#c57a88",
-      cssVar: "--cu-color-muted-danger",
-      description: "Generated danger muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative",
-      type: "color",
-      value: "#c57a88",
-      cssVar: "--cu-color-muted-negative",
-      description: "Generated negative muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning",
-      type: "color",
-      value: "#a99473",
-      cssVar: "--cu-color-muted-warning",
-      description: "Generated warning muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success",
-      type: "color",
-      value: "#77a090",
-      cssVar: "--cu-color-muted-success",
-      description: "Generated success muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive",
-      type: "color",
-      value: "#77a090",
-      cssVar: "--cu-color-muted-positive",
-      description: "Generated positive muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info",
-      type: "color",
-      value: "#7699d7",
-      cssVar: "--cu-color-muted-info",
-      description: "Generated info muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery",
-      type: "color",
-      value: "#978ac8",
-      cssVar: "--cu-color-muted-discovery",
-      description: "Generated discovery muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-hover",
-      type: "color",
-      value: "#9a5d6a",
-      cssVar: "--cu-color-muted-danger-hover",
-      description: "Generated danger muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-active",
-      type: "color",
-      value: "#a16370",
-      cssVar: "--cu-color-muted-danger-active",
-      description: "Generated danger muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-inactive",
-      type: "color",
-      value: "#df90a0",
-      cssVar: "--cu-color-muted-danger-inactive",
-      description: "Generated danger muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-disabled",
-      type: "color",
-      value: "#be7f8a",
-      cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-hover",
-      type: "color",
-      value: "#9a5d6a",
-      cssVar: "--cu-color-muted-negative-hover",
-      description: "Generated negative muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-active",
-      type: "color",
-      value: "#a16370",
-      cssVar: "--cu-color-muted-negative-active",
-      description: "Generated negative muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-inactive",
-      type: "color",
-      value: "#df90a0",
-      cssVar: "--cu-color-muted-negative-inactive",
-      description: "Generated negative muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-disabled",
-      type: "color",
-      value: "#be7f8a",
-      cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-hover",
-      type: "color",
-      value: "#86714f",
-      cssVar: "--cu-color-muted-warning-hover",
-      description: "Generated warning muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-active",
-      type: "color",
-      value: "#8c7856",
-      cssVar: "--cu-color-muted-warning-active",
-      description: "Generated warning muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-inactive",
-      type: "color",
-      value: "#d1b58a",
-      cssVar: "--cu-color-muted-warning-inactive",
-      description: "Generated warning muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-disabled",
-      type: "color",
-      value: "#a89579",
-      cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-hover",
-      type: "color",
-      value: "#537e6f",
-      cssVar: "--cu-color-muted-success-hover",
-      description: "Generated success muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-active",
-      type: "color",
-      value: "#5a8475",
-      cssVar: "--cu-color-muted-success-active",
-      description: "Generated success muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-inactive",
-      type: "color",
-      value: "#92c5b1",
-      cssVar: "--cu-color-muted-success-inactive",
-      description: "Generated success muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-disabled",
-      type: "color",
-      value: "#7d9f92",
-      cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-hover",
-      type: "color",
-      value: "#537e6f",
-      cssVar: "--cu-color-muted-positive-hover",
-      description: "Generated positive muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-active",
-      type: "color",
-      value: "#5a8475",
-      cssVar: "--cu-color-muted-positive-active",
-      description: "Generated positive muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-inactive",
-      type: "color",
-      value: "#92c5b1",
-      cssVar: "--cu-color-muted-positive-inactive",
-      description: "Generated positive muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-disabled",
-      type: "color",
-      value: "#7d9f92",
-      cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-hover",
-      type: "color",
-      value: "#5d78a8",
-      cssVar: "--cu-color-muted-info-hover",
-      description: "Generated info muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-active",
-      type: "color",
-      value: "#627eb0",
-      cssVar: "--cu-color-muted-info-active",
-      description: "Generated info muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-inactive",
-      type: "color",
-      value: "#8dbbde",
-      cssVar: "--cu-color-muted-info-inactive",
-      description: "Generated info muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-disabled",
-      type: "color",
-      value: "#7c9ace",
-      cssVar: "--cu-color-muted-info-disabled",
-      description: "Generated info muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-hover",
-      type: "color",
-      value: "#7a6e9e",
-      cssVar: "--cu-color-muted-discovery-hover",
-      description: "Generated discovery muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-active",
-      type: "color",
-      value: "#7f74a5",
-      cssVar: "--cu-color-muted-discovery-active",
-      description: "Generated discovery muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-inactive",
-      type: "color",
-      value: "#b19ee3",
-      cssVar: "--cu-color-muted-discovery-inactive",
-      description: "Generated discovery muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-disabled",
-      type: "color",
-      value: "#978dbf",
-      cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Generated discovery muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.background",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--cu-color-overlay-background",
-      description: "Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.border",
-      type: "color",
-      value: "#a1a1a2",
-      cssVar: "--cu-color-overlay-border",
-      description: "Border color that outlines floating overlay panels against the content beneath them. Used for the Popover border.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.backdrop",
+      path: "color.backdrop",
       type: "color",
       value: "#373a3d66",
-      cssVar: "--cu-color-overlay-backdrop",
+      cssVar: "--cu-color-backdrop",
       description: "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
       theme: undefined,
       typography: false
@@ -25525,24 +18361,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#cacaca",
       cssVar: "--cu-color-data-neutral-subtle",
       description: "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.emphasis",
-      type: "color",
-      value: "#45649b",
-      cssVar: "--cu-color-data-brand-emphasis",
-      description: "High-emphasis brand data color. Use it for the primary mark of a brand series, such as lines, bars, points and legend swatches.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.subtle",
-      type: "color",
-      value: "#7598d7",
-      cssVar: "--cu-color-data-brand-subtle",
-      description: "Low-emphasis brand data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `brand.emphasis` series.",
       theme: undefined,
       typography: false
     },
@@ -25673,461 +18491,560 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.link-hover",
+      path: "color.base",
       type: "color",
-      value: "#284c89",
-      cssVar: "--cu-color-link-hover",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% darker)",
+      value: "#3c3c3e",
+      cssVar: "--cu-color-base",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.link-active",
+      path: "color.base-subtle",
       type: "color",
-      value: "#2b508c",
-      cssVar: "--cu-color-link-active",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% darker)",
+      value: "#b4b4b4",
+      cssVar: "--cu-color-base-subtle",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.link-inactive",
+      path: "color.on-base-accent",
       type: "color",
-      value: "#5a79af",
-      cssVar: "--cu-color-link-inactive",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% brighter)",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-base-accent",
+      description: "Generated text and icon color on base backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.hairline-hover",
+      path: "color.base-accent",
       type: "color",
-      value: "#7d7d7e",
-      cssVar: "--cu-color-hairline-hover",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% darker)",
+      value: "#3c3c3e",
+      cssVar: "--cu-color-base-accent",
+      description: "Alias of base for the base theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.hairline-active",
-      type: "color",
-      value: "#626263",
-      cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline-inactive",
-      type: "color",
-      value: "#c4c4c5",
-      cssVar: "--cu-color-hairline-inactive",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.base",
+      path: "color.on-base-subtle",
       type: "color",
       value: "#343438",
-      cssVar: "--cu-color-on-muted-base",
-      description: "Generated base foreground on muted backgrounds",
+      cssVar: "--cu-color-on-base-subtle",
+      description: "Generated text and icon color on base-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand",
+      path: "color.on-danger-accent",
       type: "color",
-      value: "#449a93",
-      cssVar: "--cu-color-on-muted-brand",
-      description: "Generated brand foreground on muted backgrounds",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-danger-accent",
+      description: "Generated text and icon color on danger backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger",
+      path: "color.danger-accent",
+      type: "color",
+      value: "#864254",
+      cssVar: "--cu-color-danger-accent",
+      description: "Alias of danger for the danger theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle",
+      type: "color",
+      value: "#c57a88",
+      cssVar: "--cu-color-danger-subtle",
+      description: "Generated low-emphasis danger background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-danger-subtle",
       type: "color",
       value: "#501725",
-      cssVar: "--cu-color-on-muted-danger",
-      description: "Generated danger foreground on muted backgrounds",
+      cssVar: "--cu-color-on-danger-subtle",
+      description: "Generated text and icon color on danger-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative",
+      path: "color.on-warning-accent",
       type: "color",
-      value: "#501725",
-      cssVar: "--cu-color-on-muted-negative",
-      description: "Generated negative foreground on muted backgrounds",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-warning-accent",
+      description: "Generated text and icon color on warning backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning",
+      path: "color.warning-accent",
+      type: "color",
+      value: "#786137",
+      cssVar: "--cu-color-warning-accent",
+      description: "Alias of warning for the warning theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle",
+      type: "color",
+      value: "#a99473",
+      cssVar: "--cu-color-warning-subtle",
+      description: "Generated low-emphasis warning background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-warning-subtle",
       type: "color",
       value: "#523c18",
-      cssVar: "--cu-color-on-muted-warning",
-      description: "Generated warning foreground on muted backgrounds",
+      cssVar: "--cu-color-on-warning-subtle",
+      description: "Generated text and icon color on warning-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success",
+      path: "color.on-info-accent",
+      type: "color",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-info-accent",
+      description: "Generated text and icon color on info backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-accent",
+      type: "color",
+      value: "#45649b",
+      cssVar: "--cu-color-info-accent",
+      description: "Alias of info for the info theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-info-subtle",
+      type: "color",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-info-subtle",
+      description: "Generated text and icon color on info-subtle backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-discovery-accent",
+      type: "color",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-discovery-accent",
+      description: "Generated text and icon color on discovery backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-accent",
+      type: "color",
+      value: "#675a8a",
+      cssVar: "--cu-color-discovery-accent",
+      description: "Alias of discovery for the discovery theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-discovery-subtle",
+      type: "color",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-discovery-subtle",
+      description: "Generated text and icon color on discovery-subtle backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-success-accent",
+      type: "color",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-on-success-accent",
+      description: "Generated text and icon color on success backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-accent",
+      type: "color",
+      value: "#3e7160",
+      cssVar: "--cu-color-success-accent",
+      description: "Alias of success for the success theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle",
+      type: "color",
+      value: "#77a090",
+      cssVar: "--cu-color-success-subtle",
+      description: "Generated low-emphasis success background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-success-subtle",
       type: "color",
       value: "#174f3f",
-      cssVar: "--cu-color-on-muted-success",
-      description: "Generated success foreground on muted backgrounds",
+      cssVar: "--cu-color-on-success-subtle",
+      description: "Generated text and icon color on success-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive",
-      type: "color",
-      value: "#174f3f",
-      cssVar: "--cu-color-on-muted-positive",
-      description: "Generated positive foreground on muted backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info",
-      type: "color",
-      value: "#1d3464",
-      cssVar: "--cu-color-on-muted-info",
-      description: "Generated info foreground on muted backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.discovery",
-      type: "color",
-      value: "#391c61",
-      cssVar: "--cu-color-on-muted-discovery",
-      description: "Generated discovery foreground on muted backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.base-hover",
-      type: "color",
-      value: "#3e3e41",
-      cssVar: "--cu-color-on-muted-base-hover",
-      description: "Generated base foreground on muted backgrounds (hover, 30% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.base-active",
+      path: "color.border-active",
       type: "color",
       value: "#2e2e30",
-      cssVar: "--cu-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, light base primitive)",
+      cssVar: "--cu-color-border-active",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-inactive",
+      path: "color.border-inactive",
       type: "color",
       value: "#282828",
-      cssVar: "--cu-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
+      cssVar: "--cu-color-border-inactive",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-disabled",
+      path: "color.border-disabled",
       type: "color",
-      value: "#343438",
-      cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#707071",
+      cssVar: "--cu-color-border-disabled",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-hover",
+      path: "color.base-active",
       type: "color",
-      value: "#26827a",
-      cssVar: "--cu-color-on-muted-brand-hover",
-      description: "Generated brand foreground on muted backgrounds (hover, 23% darker)",
+      value: "#4d4d4f",
+      cssVar: "--cu-color-base-active",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% lighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-active",
+      path: "color.base-inactive",
       type: "color",
-      value: "#27867f",
-      cssVar: "--cu-color-on-muted-brand-active",
-      description: "Generated brand foreground on muted backgrounds (active, 19% darker)",
+      value: "#282828",
+      cssVar: "--cu-color-base-inactive",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-inactive",
+      path: "color.base-disabled",
       type: "color",
-      value: "#6ebcb4",
-      cssVar: "--cu-color-on-muted-brand-inactive",
-      description: "Generated brand foreground on muted backgrounds (inactive, 20% brighter)",
+      value: "#4c4c4e",
+      cssVar: "--cu-color-base-disabled",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-disabled",
+      path: "color.base-subtle-active",
       type: "color",
-      value: "#5d9993",
-      cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#9d9d9d",
+      cssVar: "--cu-color-base-subtle-active",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 12% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-hover",
+      path: "color.base-subtle-inactive",
       type: "color",
-      value: "#53212d",
-      cssVar: "--cu-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#282828",
+      cssVar: "--cu-color-base-subtle-inactive",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-active",
+      path: "color.base-subtle-disabled",
       type: "color",
-      value: "#521f2c",
-      cssVar: "--cu-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 19% brighter)",
+      value: "#767678",
+      cssVar: "--cu-color-base-subtle-disabled",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-inactive",
+      path: "color.danger-active",
       type: "color",
-      value: "#4c161d",
-      cssVar: "--cu-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#75223c",
+      cssVar: "--cu-color-danger-active",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.danger-disabled",
+      path: "color.danger-inactive",
       type: "color",
-      value: "#4c1c26",
-      cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#975967",
+      cssVar: "--cu-color-danger-inactive",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-hover",
+      path: "color.danger-disabled",
       type: "color",
-      value: "#53212d",
-      cssVar: "--cu-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#655156",
+      cssVar: "--cu-color-danger-disabled",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-active",
+      path: "color.danger-subtle-active",
       type: "color",
-      value: "#521f2c",
-      cssVar: "--cu-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 19% brighter)",
+      value: "#975866",
+      cssVar: "--cu-color-danger-subtle-active",
+      description: "Generated low-emphasis danger background for the light theme (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-inactive",
+      path: "color.danger-subtle-inactive",
       type: "color",
-      value: "#4c161d",
-      cssVar: "--cu-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#df90a0",
+      cssVar: "--cu-color-danger-subtle-inactive",
+      description: "Generated low-emphasis danger background for the light theme (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative-disabled",
+      path: "color.danger-subtle-disabled",
       type: "color",
-      value: "#4c1c26",
-      cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#796569",
+      cssVar: "--cu-color-danger-subtle-disabled",
+      description: "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-hover",
+      path: "color.warning-active",
       type: "color",
-      value: "#544426",
-      cssVar: "--cu-color-on-muted-warning-hover",
-      description: "Generated warning foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#694d1e",
+      cssVar: "--cu-color-warning-active",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-active",
+      path: "color.warning-inactive",
       type: "color",
-      value: "#534223",
-      cssVar: "--cu-color-on-muted-warning-active",
-      description: "Generated warning foreground on muted backgrounds (active, 19% brighter)",
+      value: "#887351",
+      cssVar: "--cu-color-warning-inactive",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-inactive",
+      path: "color.warning-disabled",
       type: "color",
-      value: "#4c3116",
-      cssVar: "--cu-color-on-muted-warning-inactive",
-      description: "Generated warning foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#605950",
+      cssVar: "--cu-color-warning-disabled",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning-disabled",
+      path: "color.warning-subtle-active",
       type: "color",
-      value: "#4c3c1f",
-      cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#836e4b",
+      cssVar: "--cu-color-warning-subtle-active",
+      description: "Generated low-emphasis warning background for the light theme (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-hover",
+      path: "color.warning-subtle-inactive",
       type: "color",
-      value: "#295044",
-      cssVar: "--cu-color-on-muted-success-hover",
-      description: "Generated success foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#d1b58a",
+      cssVar: "--cu-color-warning-subtle-inactive",
+      description: "Generated low-emphasis warning background for the light theme (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-active",
+      path: "color.warning-subtle-disabled",
       type: "color",
-      value: "#274f42",
-      cssVar: "--cu-color-on-muted-success-active",
-      description: "Generated success foreground on muted backgrounds (active, 19% brighter)",
+      value: "#726b63",
+      cssVar: "--cu-color-warning-subtle-disabled",
+      description: "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-inactive",
+      path: "color.info-active",
       type: "color",
-      value: "#154933",
-      cssVar: "--cu-color-on-muted-success-inactive",
-      description: "Generated success foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#274988",
+      cssVar: "--cu-color-info-active",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success-disabled",
+      path: "color.info-inactive",
       type: "color",
-      value: "#204a3d",
-      cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#5a79af",
+      cssVar: "--cu-color-info-inactive",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive-hover",
+      path: "color.info-disabled",
       type: "color",
-      value: "#295044",
-      cssVar: "--cu-color-on-muted-positive-hover",
-      description: "Generated positive foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#515a6e",
+      cssVar: "--cu-color-info-disabled",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive-active",
+      path: "color.info-subtle-active",
       type: "color",
-      value: "#274f42",
-      cssVar: "--cu-color-on-muted-positive-active",
-      description: "Generated positive foreground on muted backgrounds (active, 19% brighter)",
+      value: "#5873a4",
+      cssVar: "--cu-color-info-subtle-active",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive-inactive",
+      path: "color.info-subtle-inactive",
       type: "color",
-      value: "#154933",
-      cssVar: "--cu-color-on-muted-positive-inactive",
-      description: "Generated positive foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#8cb9de",
+      cssVar: "--cu-color-info-subtle-inactive",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive-disabled",
+      path: "color.info-subtle-disabled",
       type: "color",
-      value: "#204a3d",
-      cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#646e7f",
+      cssVar: "--cu-color-info-subtle-disabled",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info-hover",
+      path: "color.discovery-active",
       type: "color",
-      value: "#28406a",
-      cssVar: "--cu-color-on-muted-info-hover",
-      description: "Generated info foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#514075",
+      cssVar: "--cu-color-discovery-active",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info-active",
+      path: "color.discovery-inactive",
       type: "color",
-      value: "#263e68",
-      cssVar: "--cu-color-on-muted-info-active",
-      description: "Generated info foreground on muted backgrounds (active, 19% brighter)",
+      value: "#796d9d",
+      cssVar: "--cu-color-discovery-inactive",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info-inactive",
+      path: "color.discovery-disabled",
       type: "color",
-      value: "#1b275d",
-      cssVar: "--cu-color-on-muted-info-inactive",
-      description: "Generated info foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#5a5768",
+      cssVar: "--cu-color-discovery-disabled",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info-disabled",
+      path: "color.discovery-subtle-active",
       type: "color",
-      value: "#20365e",
-      cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#786c96",
+      cssVar: "--cu-color-discovery-subtle-active",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-hover",
+      path: "color.discovery-subtle-inactive",
       type: "color",
-      value: "#402c65",
-      cssVar: "--cu-color-on-muted-discovery-hover",
-      description: "Generated discovery foreground on muted backgrounds (hover, 23% brighter)",
+      value: "#b69fe3",
+      cssVar: "--cu-color-discovery-subtle-inactive",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-active",
+      path: "color.discovery-subtle-disabled",
       type: "color",
-      value: "#3f2964",
-      cssVar: "--cu-color-on-muted-discovery-active",
-      description: "Generated discovery foreground on muted backgrounds (active, 19% brighter)",
+      value: "#6e6a79",
+      cssVar: "--cu-color-discovery-subtle-disabled",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-inactive",
+      path: "color.success-active",
       type: "color",
-      value: "#321a5b",
-      cssVar: "--cu-color-on-muted-discovery-inactive",
-      description: "Generated discovery foreground on muted backgrounds (inactive, 20% darker)",
+      value: "#1d634e",
+      cssVar: "--cu-color-success-active",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery-disabled",
+      path: "color.success-inactive",
       type: "color",
-      value: "#38235a",
-      cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#578172",
+      cssVar: "--cu-color-success-inactive",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-disabled",
+      type: "color",
+      value: "#505e5b",
+      cssVar: "--cu-color-success-disabled",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-active",
+      type: "color",
+      value: "#4e7b6b",
+      cssVar: "--cu-color-success-subtle-active",
+      description: "Generated low-emphasis success background for the light theme (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-inactive",
+      type: "color",
+      value: "#92c5b1",
+      cssVar: "--cu-color-success-subtle-inactive",
+      description: "Generated low-emphasis success background for the light theme (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-disabled",
+      type: "color",
+      value: "#636f6c",
+      cssVar: "--cu-color-success-subtle-disabled",
+      description: "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -28555,7 +21472,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-md",
       description: "Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -28607,15 +21524,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.button",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--cu-typography-button",
-      description: "Button label style: Storm Sans semibold at 18px (`font-size.md`) with tight line height so labels center cleanly inside fixed-height controls. Use it for text inside actionable triggers. Used by Button and LinkText.",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.eyebrow",
       type: "typography",
       value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
@@ -28636,7 +21544,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #15151814",
+      value: "0px 0px 0px 3px #1f1f2133",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -28645,7 +21553,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #15151814",
+      value: "0px 0px 0px 1px #1f1f2133",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -28654,7 +21562,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151814",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f2133",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -28663,45 +21571,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151814",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f2133",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #1fb2a626",
-      cssVar: "--cu-ring-brand",
-      description: "Generated brand 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Generated brand 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a626",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Generated brand 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Generated brand 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -28742,42 +21614,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #8e223e26",
-      cssVar: "--cu-ring-negative",
-      description: "Generated negative 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Generated negative 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Generated negative 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Generated negative 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "ring.warning",
       type: "shadow",
       value: "0px 0px 0px 3px #76541726",
@@ -28810,78 +21646,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #76541726",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-success",
-      description: "Generated success 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Generated success 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-positive",
-      description: "Generated positive 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Generated positive 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Generated positive 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Generated positive 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -28956,18 +21720,45 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       description: "Generated discovery 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
-    }
-  ],
-  "lightHighContrast": [
+    },
     {
-      path: "color.transparent",
-      type: "color",
-      value: "#ffffff00",
-      cssVar: "--cu-color-transparent",
-      description: "Fully transparent white.",
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #216b5326",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
       theme: undefined,
       typography: false
     },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #216b5326",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    }
+  ],
+  "lightHighContrast": [
     {
       path: "color.black",
       type: "color",
@@ -29680,43 +22471,106 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.ink.emphasis",
+      path: "color.primary",
       type: "color",
-      value: "#08080a",
-      cssVar: "--cu-color-ink-emphasis",
-      description: "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options.",
+      value: "#000000",
+      cssVar: "--cu-color-primary",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.body",
+      path: "color.secondary",
       type: "color",
       value: "#3f424a",
-      cssVar: "--cu-color-ink-body",
+      cssVar: "--cu-color-secondary",
       description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.ink.subtle",
-      type: "color",
-      value: "#c3c3ca",
-      cssVar: "--cu-color-ink-subtle",
-      description: "Lower-emphasis text and icon color for supporting content that should recede behind body copy. Use it for metadata, secondary labels and decorative icons. Used by Breadcrumb separators, EyebrowText, TableOfContents entries, FileTree, DatePicker, inactive Slider values and NavigationHeader links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.ink.subtlest",
+      path: "color.tertiary",
       type: "color",
       value: "#ebebed",
-      cssVar: "--cu-color-ink-subtlest",
-      description: "Lowest-emphasis text and icon color, for content that should be legible but barely noticed. Use it for hints and optional markers. Used by Field for the `optional` marker beside a field label; avoid it for anything the user must read.",
+      cssVar: "--cu-color-tertiary",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken",
+      path: "color.border",
+      type: "color",
+      value: "#c3c3ca",
+      cssVar: "--cu-color-border",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger",
+      type: "color",
+      value: "#840929",
+      cssVar: "--cu-color-danger",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning",
+      type: "color",
+      value: "#583902",
+      cssVar: "--cu-color-warning",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info",
+      type: "color",
+      value: "#0145be",
+      cssVar: "--cu-color-info",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle",
+      type: "color",
+      value: "#9ec1ff",
+      cssVar: "--cu-color-info-subtle",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery",
+      type: "color",
+      value: "#492b9b",
+      cssVar: "--cu-color-discovery",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle",
+      type: "color",
+      value: "#c1adf7",
+      cssVar: "--cu-color-discovery-subtle",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success",
+      type: "color",
+      value: "#0a4e38",
+      cssVar: "--cu-color-success",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.surface-sunken",
       type: "color",
       value: "#ffffff",
       cssVar: "--cu-color-surface-sunken",
@@ -29725,7 +22579,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.canvas",
+      path: "color.surface-canvas",
       type: "color",
       value: "#ffffff",
       cssVar: "--cu-color-surface-canvas",
@@ -29734,7 +22588,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.elevated",
+      path: "color.surface-elevated",
       type: "color",
       value: "#ffffff",
       cssVar: "--cu-color-surface-elevated",
@@ -29743,7 +22597,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.floating",
+      path: "color.surface-floating",
       type: "color",
       value: "#ffffff",
       cssVar: "--cu-color-surface-floating",
@@ -29752,1477 +22606,19 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.overlay",
+      path: "color.surface-highest",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-surface-overlay",
+      cssVar: "--cu-color-surface-highest",
       description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.surface.sunken-hover",
-      type: "color",
-      value: "#afafaf",
-      cssVar: "--cu-color-surface-sunken-hover",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-active",
-      type: "color",
-      value: "#bfbfbf",
-      cssVar: "--cu-color-surface-sunken-active",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-surface-sunken-inactive",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.sunken-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-surface-sunken-disabled",
-      description: "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-hover",
-      type: "color",
-      value: "#b7b7b7",
-      cssVar: "--cu-color-surface-canvas-hover",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-active",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-surface-canvas-active",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-surface-canvas-inactive",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.canvas-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-surface-canvas-disabled",
-      description: "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-hover",
-      type: "color",
-      value: "#bfbfbf",
-      cssVar: "--cu-color-surface-elevated-hover",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-active",
-      type: "color",
-      value: "#d0d0d0",
-      cssVar: "--cu-color-surface-elevated-active",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-surface-elevated-inactive",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.elevated-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-surface-elevated-disabled",
-      description: "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-surface-floating-hover",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-surface-floating-active",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-surface-floating-inactive",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.floating-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-surface-floating-disabled",
-      description: "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-hover",
-      type: "color",
-      value: "#cfcfcf",
-      cssVar: "--cu-color-surface-overlay-hover",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-active",
-      type: "color",
-      value: "#e0e0e0",
-      cssVar: "--cu-color-surface-overlay-active",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-surface-overlay-inactive",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.overlay-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-surface-overlay-disabled",
-      description: "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.required",
-      type: "color",
-      value: "#840929",
-      cssVar: "--cu-color-required",
-      description: "Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.link",
-      type: "color",
-      value: "#0145be",
-      cssVar: "--cu-color-link",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline",
-      type: "color",
-      value: "#c3c3ca",
-      cssVar: "--cu-color-hairline",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.background",
-      type: "color",
-      value: "#00bcad",
-      cssVar: "--cu-color-selection-background",
-      description: "Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.selection.foreground",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-selection-foreground",
-      description: "Text color of highlighted text, chosen to stay readable on the brand-accent selection background.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-accent-base",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand",
-      type: "color",
-      value: "#00bcad",
-      cssVar: "--cu-color-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger",
-      type: "color",
-      value: "#840929",
-      cssVar: "--cu-color-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative",
-      type: "color",
-      value: "#840929",
-      cssVar: "--cu-color-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning",
-      type: "color",
-      value: "#583902",
-      cssVar: "--cu-color-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success",
-      type: "color",
-      value: "#0a4e38",
-      cssVar: "--cu-color-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive",
-      type: "color",
-      value: "#0a4e38",
-      cssVar: "--cu-color-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info",
-      type: "color",
-      value: "#0145be",
-      cssVar: "--cu-color-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery",
-      type: "color",
-      value: "#492b9b",
-      cssVar: "--cu-color-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-accent-base-hover",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hover, 30% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-accent-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-accent-base-inactive",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.base-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-accent-base-disabled",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-hover",
-      type: "color",
-      value: "#004a44",
-      cssVar: "--cu-color-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-active",
-      type: "color",
-      value: "#00554f",
-      cssVar: "--cu-color-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-inactive",
-      type: "color",
-      value: "#5cfbeb",
-      cssVar: "--cu-color-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.brand-disabled",
-      type: "color",
-      value: "#2ac3b4",
-      cssVar: "--cu-color-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-hover",
-      type: "color",
-      value: "#2d000f",
-      cssVar: "--cu-color-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-active",
-      type: "color",
-      value: "#340013",
-      cssVar: "--cu-color-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-inactive",
-      type: "color",
-      value: "#bc2445",
-      cssVar: "--cu-color-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.danger-disabled",
-      type: "color",
-      value: "#7d152c",
-      cssVar: "--cu-color-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-hover",
-      type: "color",
-      value: "#2d000f",
-      cssVar: "--cu-color-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-active",
-      type: "color",
-      value: "#340013",
-      cssVar: "--cu-color-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-inactive",
-      type: "color",
-      value: "#bc2445",
-      cssVar: "--cu-color-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.negative-disabled",
-      type: "color",
-      value: "#7d152c",
-      cssVar: "--cu-color-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-hover",
-      type: "color",
-      value: "#0b0700",
-      cssVar: "--cu-color-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-active",
-      type: "color",
-      value: "#140d00",
-      cssVar: "--cu-color-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-inactive",
-      type: "color",
-      value: "#92661d",
-      cssVar: "--cu-color-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.warning-disabled",
-      type: "color",
-      value: "#5b3e0f",
-      cssVar: "--cu-color-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-active",
-      type: "color",
-      value: "#000403",
-      cssVar: "--cu-color-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-inactive",
-      type: "color",
-      value: "#298565",
-      cssVar: "--cu-color-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.success-disabled",
-      type: "color",
-      value: "#17533d",
-      cssVar: "--cu-color-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-active",
-      type: "color",
-      value: "#000403",
-      cssVar: "--cu-color-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-inactive",
-      type: "color",
-      value: "#298565",
-      cssVar: "--cu-color-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.positive-disabled",
-      type: "color",
-      value: "#17533d",
-      cssVar: "--cu-color-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-hover",
-      type: "color",
-      value: "#00235e",
-      cssVar: "--cu-color-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-active",
-      type: "color",
-      value: "#00286b",
-      cssVar: "--cu-color-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-inactive",
-      type: "color",
-      value: "#216df4",
-      cssVar: "--cu-color-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.info-disabled",
-      type: "color",
-      value: "#0f49ae",
-      cssVar: "--cu-color-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-hover",
-      type: "color",
-      value: "#280e61",
-      cssVar: "--cu-color-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-active",
-      type: "color",
-      value: "#2d136b",
-      cssVar: "--cu-color-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-inactive",
-      type: "color",
-      value: "#6c4ec9",
-      cssVar: "--cu-color-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.accent.discovery-disabled",
-      type: "color",
-      value: "#48318f",
-      cssVar: "--cu-color-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-base",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-hover",
-      type: "color",
-      value: "#9f9f9f",
-      cssVar: "--cu-color-on-accent-base-hover",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (hover, 30% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-base-active",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (active, light base primitive)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-accent-base-inactive",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.base-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-base-disabled",
-      description: "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-brand",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-danger",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-negative",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-warning",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-success",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-positive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-info",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-discovery",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-brand-hover",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-brand-active",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-brand-inactive",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.brand-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-brand-disabled",
-      description: "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-danger-hover",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-danger-active",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-danger-inactive",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.danger-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-danger-disabled",
-      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-negative-hover",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-negative-active",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-negative-inactive",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.negative-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-negative-disabled",
-      description: "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-warning-hover",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-warning-active",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-warning-inactive",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.warning-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-warning-disabled",
-      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-success-hover",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-success-active",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-success-inactive",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.success-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-success-disabled",
-      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-positive-hover",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-positive-active",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-positive-inactive",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.positive-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-positive-disabled",
-      description: "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-info-hover",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-info-active",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-info-inactive",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.info-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-info-disabled",
-      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-hover",
-      type: "color",
-      value: "#c9c9c9",
-      cssVar: "--cu-color-on-accent-discovery-hover",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-active",
-      type: "color",
-      value: "#dadada",
-      cssVar: "--cu-color-on-accent-discovery-active",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-on-accent-discovery-inactive",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-accent.discovery-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-on-accent-discovery-disabled",
-      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-muted-base",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand",
-      type: "color",
-      value: "#75fff1",
-      cssVar: "--cu-color-muted-brand",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-hover",
-      type: "color",
-      value: "#999999",
-      cssVar: "--cu-color-muted-base-hover",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hover, 30% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-active",
-      type: "color",
-      value: "#ececec",
-      cssVar: "--cu-color-muted-base-active",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 10% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-muted-base-inactive",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.base-disabled",
-      type: "color",
-      value: "#ffffff20",
-      cssVar: "--cu-color-muted-base-disabled",
-      description: "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 13% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-hover",
-      type: "color",
-      value: "#008e84",
-      cssVar: "--cu-color-muted-brand-hover",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-active",
-      type: "color",
-      value: "#06c2b2",
-      cssVar: "--cu-color-muted-brand-active",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-inactive",
-      type: "color",
-      value: "#e1ffff",
-      cssVar: "--cu-color-muted-brand-inactive",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.brand-disabled",
-      type: "color",
-      value: "#94fcf0",
-      cssVar: "--cu-color-muted-brand-disabled",
-      description: "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme. (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger",
-      type: "color",
-      value: "#ff849a",
-      cssVar: "--cu-color-muted-danger",
-      description: "Generated danger muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative",
-      type: "color",
-      value: "#ff849a",
-      cssVar: "--cu-color-muted-negative",
-      description: "Generated negative muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning",
-      type: "color",
-      value: "#dcab5e",
-      cssVar: "--cu-color-muted-warning",
-      description: "Generated warning muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success",
-      type: "color",
-      value: "#66caa4",
-      cssVar: "--cu-color-muted-success",
-      description: "Generated success muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive",
-      type: "color",
-      value: "#66caa4",
-      cssVar: "--cu-color-muted-positive",
-      description: "Generated positive muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info",
-      type: "color",
-      value: "#a1c4ff",
-      cssVar: "--cu-color-muted-info",
-      description: "Generated info muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery",
-      type: "color",
-      value: "#bfaefc",
-      cssVar: "--cu-color-muted-discovery",
-      description: "Generated discovery muted background for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-hover",
-      type: "color",
-      value: "#c6294b",
-      cssVar: "--cu-color-muted-danger-hover",
-      description: "Generated danger muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-active",
-      type: "color",
-      value: "#d53455",
-      cssVar: "--cu-color-muted-danger-active",
-      description: "Generated danger muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-inactive",
-      type: "color",
-      value: "#ffe7ec",
-      cssVar: "--cu-color-muted-danger-inactive",
-      description: "Generated danger muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.danger-disabled",
-      type: "color",
-      value: "#f58b9c",
-      cssVar: "--cu-color-muted-danger-disabled",
-      description: "Generated danger muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-hover",
-      type: "color",
-      value: "#c6294b",
-      cssVar: "--cu-color-muted-negative-hover",
-      description: "Generated negative muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-active",
-      type: "color",
-      value: "#d53455",
-      cssVar: "--cu-color-muted-negative-active",
-      description: "Generated negative muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-inactive",
-      type: "color",
-      value: "#ffe7ec",
-      cssVar: "--cu-color-muted-negative-inactive",
-      description: "Generated negative muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.negative-disabled",
-      type: "color",
-      value: "#f58b9c",
-      cssVar: "--cu-color-muted-negative-disabled",
-      description: "Generated negative muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-hover",
-      type: "color",
-      value: "#8f631b",
-      cssVar: "--cu-color-muted-warning-hover",
-      description: "Generated warning muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-active",
-      type: "color",
-      value: "#9f7124",
-      cssVar: "--cu-color-muted-warning-active",
-      description: "Generated warning muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-inactive",
-      type: "color",
-      value: "#ffe6bf",
-      cssVar: "--cu-color-muted-warning-inactive",
-      description: "Generated warning muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.warning-disabled",
-      type: "color",
-      value: "#d7ac6e",
-      cssVar: "--cu-color-muted-warning-disabled",
-      description: "Generated warning muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-hover",
-      type: "color",
-      value: "#237c5d",
-      cssVar: "--cu-color-muted-success-hover",
-      description: "Generated success muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-active",
-      type: "color",
-      value: "#2d8c6b",
-      cssVar: "--cu-color-muted-success-active",
-      description: "Generated success muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-inactive",
-      type: "color",
-      value: "#bdf8e1",
-      cssVar: "--cu-color-muted-success-inactive",
-      description: "Generated success muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.success-disabled",
-      type: "color",
-      value: "#75c7a7",
-      cssVar: "--cu-color-muted-success-disabled",
-      description: "Generated success muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-hover",
-      type: "color",
-      value: "#237c5d",
-      cssVar: "--cu-color-muted-positive-hover",
-      description: "Generated positive muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-active",
-      type: "color",
-      value: "#2d8c6b",
-      cssVar: "--cu-color-muted-positive-active",
-      description: "Generated positive muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-inactive",
-      type: "color",
-      value: "#bdf8e1",
-      cssVar: "--cu-color-muted-positive-inactive",
-      description: "Generated positive muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.positive-disabled",
-      type: "color",
-      value: "#75c7a7",
-      cssVar: "--cu-color-muted-positive-disabled",
-      description: "Generated positive muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-hover",
-      type: "color",
-      value: "#266be6",
-      cssVar: "--cu-color-muted-info-hover",
-      description: "Generated info muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-active",
-      type: "color",
-      value: "#3579f1",
-      cssVar: "--cu-color-muted-info-active",
-      description: "Generated info muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-inactive",
-      type: "color",
-      value: "#e1f2ff",
-      cssVar: "--cu-color-muted-info-inactive",
-      description: "Generated info muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.info-disabled",
-      type: "color",
-      value: "#9bc0ff",
-      cssVar: "--cu-color-muted-info-disabled",
-      description: "Generated info muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-hover",
-      type: "color",
-      value: "#6e4fca",
-      cssVar: "--cu-color-muted-discovery-hover",
-      description: "Generated discovery muted background for the light theme (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-active",
-      type: "color",
-      value: "#7b5fd4",
-      cssVar: "--cu-color-muted-discovery-active",
-      description: "Generated discovery muted background for the light theme (active, 19% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-muted-discovery-inactive",
-      description: "Generated discovery muted background for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.muted.discovery-disabled",
-      type: "color",
-      value: "#baacf3",
-      cssVar: "--cu-color-muted-discovery-disabled",
-      description: "Generated discovery muted background for the light theme (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.background",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--cu-color-overlay-background",
-      description: "Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.border",
-      type: "color",
-      value: "#c3c3ca",
-      cssVar: "--cu-color-overlay-border",
-      description: "Border color that outlines floating overlay panels against the content beneath them. Used for the Popover border.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.overlay.backdrop",
+      path: "color.backdrop",
       type: "color",
       value: "#00000066",
-      cssVar: "--cu-color-overlay-backdrop",
+      cssVar: "--cu-color-backdrop",
       description: "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
       theme: undefined,
       typography: false
@@ -31314,24 +22710,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#ffffff",
       cssVar: "--cu-color-data-neutral-subtle",
       description: "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.emphasis",
-      type: "color",
-      value: "#0145be",
-      cssVar: "--cu-color-data-brand-emphasis",
-      description: "High-emphasis brand data color. Use it for the primary mark of a brand series, such as lines, bars, points and legend swatches.",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.data.brand.subtle",
-      type: "color",
-      value: "#9ec1ff",
-      cssVar: "--cu-color-data-brand-subtle",
-      description: "Low-emphasis brand data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `brand.emphasis` series.",
       theme: undefined,
       typography: false
     },
@@ -31462,461 +22840,560 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.link-hover",
+      path: "color.base",
       type: "color",
-      value: "#00235e",
-      cssVar: "--cu-color-link-hover",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (hover, 23% darker)",
+      value: "#000000",
+      cssVar: "--cu-color-base",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.link-active",
+      path: "color.base-subtle",
       type: "color",
-      value: "#00286b",
-      cssVar: "--cu-color-link-active",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (active, 19% darker)",
+      value: "#ebebed",
+      cssVar: "--cu-color-base-subtle",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.link-inactive",
-      type: "color",
-      value: "#216df4",
-      cssVar: "--cu-color-link-inactive",
-      description: "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links. (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline-hover",
-      type: "color",
-      value: "#747482",
-      cssVar: "--cu-color-hairline-hover",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hover, 23% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline-active",
-      type: "color",
-      value: "#404048",
-      cssVar: "--cu-color-hairline-active",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, 40% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.hairline-inactive",
+      path: "color.on-base-accent",
       type: "color",
       value: "#ffffff",
-      cssVar: "--cu-color-hairline-inactive",
-      description: "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 20% brighter)",
+      cssVar: "--cu-color-on-base-accent",
+      description: "Generated text and icon color on base backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base",
+      path: "color.base-accent",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-on-muted-base",
-      description: "Generated base foreground on muted backgrounds",
+      cssVar: "--cu-color-base-accent",
+      description: "Alias of base for the base theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand",
-      type: "color",
-      value: "#00bcad",
-      cssVar: "--cu-color-on-muted-brand",
-      description: "Generated brand foreground on muted backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.danger",
+      path: "color.on-base-subtle",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-on-muted-danger",
-      description: "Generated danger foreground on muted backgrounds",
+      cssVar: "--cu-color-on-base-subtle",
+      description: "Generated text and icon color on base-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.negative",
+      path: "color.on-danger-accent",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-danger-accent",
+      description: "Generated text and icon color on danger backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-accent",
+      type: "color",
+      value: "#840929",
+      cssVar: "--cu-color-danger-accent",
+      description: "Alias of danger for the danger theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle",
+      type: "color",
+      value: "#ff849a",
+      cssVar: "--cu-color-danger-subtle",
+      description: "Generated low-emphasis danger background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-danger-subtle",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-on-muted-negative",
-      description: "Generated negative foreground on muted backgrounds",
+      cssVar: "--cu-color-on-danger-subtle",
+      description: "Generated text and icon color on danger-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.warning",
+      path: "color.on-warning-accent",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-warning-accent",
+      description: "Generated text and icon color on warning backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-accent",
+      type: "color",
+      value: "#583902",
+      cssVar: "--cu-color-warning-accent",
+      description: "Alias of warning for the warning theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle",
+      type: "color",
+      value: "#dcab5e",
+      cssVar: "--cu-color-warning-subtle",
+      description: "Generated low-emphasis warning background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-warning-subtle",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-on-muted-warning",
-      description: "Generated warning foreground on muted backgrounds",
+      cssVar: "--cu-color-on-warning-subtle",
+      description: "Generated text and icon color on warning-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.success",
+      path: "color.on-info-accent",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-info-accent",
+      description: "Generated text and icon color on info backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-accent",
+      type: "color",
+      value: "#0145be",
+      cssVar: "--cu-color-info-accent",
+      description: "Alias of info for the info theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-info-subtle",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-info-subtle",
+      description: "Generated text and icon color on info-subtle backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-discovery-accent",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-discovery-accent",
+      description: "Generated text and icon color on discovery backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-accent",
+      type: "color",
+      value: "#492b9b",
+      cssVar: "--cu-color-discovery-accent",
+      description: "Alias of discovery for the discovery theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-discovery-subtle",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-discovery-subtle",
+      description: "Generated text and icon color on discovery-subtle backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-success-accent",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-on-success-accent",
+      description: "Generated text and icon color on success backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-accent",
+      type: "color",
+      value: "#0a4e38",
+      cssVar: "--cu-color-success-accent",
+      description: "Alias of success for the success theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle",
+      type: "color",
+      value: "#66caa4",
+      cssVar: "--cu-color-success-subtle",
+      description: "Generated low-emphasis success background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.on-success-subtle",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-on-muted-success",
-      description: "Generated success foreground on muted backgrounds",
+      cssVar: "--cu-color-on-success-subtle",
+      description: "Generated text and icon color on success-subtle backgrounds",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.positive",
+      path: "color.border-active",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-on-muted-positive",
-      description: "Generated positive foreground on muted backgrounds",
+      cssVar: "--cu-color-border-active",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.info",
+      path: "color.border-inactive",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-on-muted-info",
-      description: "Generated info foreground on muted backgrounds",
+      cssVar: "--cu-color-border-inactive",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.discovery",
+      path: "color.border-disabled",
+      type: "color",
+      value: "#5a5a66",
+      cssVar: "--cu-color-border-disabled",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.base-active",
+      type: "color",
+      value: "#17171b",
+      cssVar: "--cu-color-base-active",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% lighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.base-inactive",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-on-muted-discovery",
-      description: "Generated discovery foreground on muted backgrounds",
+      cssVar: "--cu-color-base-inactive",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-hover",
+      path: "color.base-disabled",
+      type: "color",
+      value: "#151519",
+      cssVar: "--cu-color-base-disabled",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.base-subtle-active",
+      type: "color",
+      value: "#b9b9c0",
+      cssVar: "--cu-color-base-subtle-active",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 12% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.base-subtle-inactive",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-on-muted-base-hover",
-      description: "Generated base foreground on muted backgrounds (hover, 30% brighter)",
+      cssVar: "--cu-color-base-subtle-inactive",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-active",
+      path: "color.base-subtle-disabled",
+      type: "color",
+      value: "#676776",
+      cssVar: "--cu-color-base-subtle-disabled",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-active",
+      type: "color",
+      value: "#27000c",
+      cssVar: "--cu-color-danger-active",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-inactive",
+      type: "color",
+      value: "#bc2445",
+      cssVar: "--cu-color-danger-inactive",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-disabled",
+      type: "color",
+      value: "#44232c",
+      cssVar: "--cu-color-danger-disabled",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle-active",
+      type: "color",
+      value: "#bb2245",
+      cssVar: "--cu-color-danger-subtle-active",
+      description: "Generated low-emphasis danger background for the light theme (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle-inactive",
+      type: "color",
+      value: "#ffe7ec",
+      cssVar: "--cu-color-danger-subtle-inactive",
+      description: "Generated low-emphasis danger background for the light theme (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle-disabled",
+      type: "color",
+      value: "#77444f",
+      cssVar: "--cu-color-danger-subtle-disabled",
+      description: "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-active",
+      type: "color",
+      value: "#070400",
+      cssVar: "--cu-color-warning-active",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-inactive",
+      type: "color",
+      value: "#92661d",
+      cssVar: "--cu-color-warning-inactive",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-disabled",
+      type: "color",
+      value: "#3a3021",
+      cssVar: "--cu-color-warning-disabled",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle-active",
+      type: "color",
+      value: "#855b16",
+      cssVar: "--cu-color-warning-subtle-active",
+      description: "Generated low-emphasis warning background for the light theme (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle-inactive",
+      type: "color",
+      value: "#ffe6bf",
+      cssVar: "--cu-color-warning-subtle-inactive",
+      description: "Generated low-emphasis warning background for the light theme (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle-disabled",
+      type: "color",
+      value: "#675641",
+      cssVar: "--cu-color-warning-subtle-disabled",
+      description: "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-active",
+      type: "color",
+      value: "#001f5a",
+      cssVar: "--cu-color-info-active",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-inactive",
+      type: "color",
+      value: "#216df4",
+      cssVar: "--cu-color-info-inactive",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-disabled",
+      type: "color",
+      value: "#233457",
+      cssVar: "--cu-color-info-disabled",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle-active",
+      type: "color",
+      value: "#1b61df",
+      cssVar: "--cu-color-info-subtle-active",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle-inactive",
+      type: "color",
+      value: "#def0ff",
+      cssVar: "--cu-color-info-subtle-inactive",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle-disabled",
+      type: "color",
+      value: "#425983",
+      cssVar: "--cu-color-info-subtle-disabled",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-active",
+      type: "color",
+      value: "#240c59",
+      cssVar: "--cu-color-discovery-active",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-inactive",
+      type: "color",
+      value: "#6c4ec9",
+      cssVar: "--cu-color-discovery-inactive",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-disabled",
+      type: "color",
+      value: "#342c4d",
+      cssVar: "--cu-color-discovery-disabled",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-active",
+      type: "color",
+      value: "#6b48bb",
+      cssVar: "--cu-color-discovery-subtle-active",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-inactive",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-discovery-subtle-inactive",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-disabled",
+      type: "color",
+      value: "#584e78",
+      cssVar: "--cu-color-discovery-subtle-disabled",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-active",
       type: "color",
       value: "#000000",
-      cssVar: "--cu-color-on-muted-base-active",
-      description: "Generated base foreground on muted backgrounds (active, light base primitive)",
+      cssVar: "--cu-color-success-active",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-inactive",
+      path: "color.success-inactive",
       type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-base-inactive",
-      description: "Generated base foreground on muted backgrounds (inactive, 40% darker)",
+      value: "#298565",
+      cssVar: "--cu-color-success-inactive",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.base-disabled",
+      path: "color.success-disabled",
       type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-base-disabled",
-      description: "Generated base foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#213731",
+      cssVar: "--cu-color-success-disabled",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-hover",
+      path: "color.success-subtle-active",
       type: "color",
-      value: "#004a44",
-      cssVar: "--cu-color-on-muted-brand-hover",
-      description: "Generated brand foreground on muted backgrounds (hover, 23% darker)",
+      value: "#1d7255",
+      cssVar: "--cu-color-success-subtle-active",
+      description: "Generated low-emphasis success background for the light theme (active, 25% darker)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-active",
+      path: "color.success-subtle-inactive",
       type: "color",
-      value: "#00554f",
-      cssVar: "--cu-color-on-muted-brand-active",
-      description: "Generated brand foreground on muted backgrounds (active, 19% darker)",
+      value: "#bdf8e1",
+      cssVar: "--cu-color-success-subtle-inactive",
+      description: "Generated low-emphasis success background for the light theme (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.on-muted.brand-inactive",
+      path: "color.success-subtle-disabled",
       type: "color",
-      value: "#5cfbeb",
-      cssVar: "--cu-color-on-muted-brand-inactive",
-      description: "Generated brand foreground on muted backgrounds (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.brand-disabled",
-      type: "color",
-      value: "#2ac3b4",
-      cssVar: "--cu-color-on-muted-brand-disabled",
-      description: "Generated brand foreground on muted backgrounds (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.danger-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.danger-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.danger-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.danger-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-danger-disabled",
-      description: "Generated danger foreground on muted backgrounds (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.negative-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.negative-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.negative-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.negative-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-negative-disabled",
-      description: "Generated negative foreground on muted backgrounds (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.warning-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-warning-hover",
-      description: "Generated warning foreground on muted backgrounds (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.warning-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-warning-active",
-      description: "Generated warning foreground on muted backgrounds (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.warning-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-warning-inactive",
-      description: "Generated warning foreground on muted backgrounds (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.warning-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.success-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-success-hover",
-      description: "Generated success foreground on muted backgrounds (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.success-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-success-active",
-      description: "Generated success foreground on muted backgrounds (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.success-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-success-inactive",
-      description: "Generated success foreground on muted backgrounds (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.success-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-positive-hover",
-      description: "Generated positive foreground on muted backgrounds (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-active",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-positive-active",
-      description: "Generated positive foreground on muted backgrounds (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-positive-inactive",
-      description: "Generated positive foreground on muted backgrounds (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.positive-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-hover",
-      type: "color",
-      value: "#000a1d",
-      cssVar: "--cu-color-on-muted-info-hover",
-      description: "Generated info foreground on muted backgrounds (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-active",
-      type: "color",
-      value: "#000816",
-      cssVar: "--cu-color-on-muted-info-active",
-      description: "Generated info foreground on muted backgrounds (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-info-inactive",
-      description: "Generated info foreground on muted backgrounds (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.info-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-info-disabled",
-      description: "Generated info foreground on muted backgrounds (disabled, 85% saturation)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.discovery-hover",
-      type: "color",
-      value: "#0a001b",
-      cssVar: "--cu-color-on-muted-discovery-hover",
-      description: "Generated discovery foreground on muted backgrounds (hover, 23% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.discovery-active",
-      type: "color",
-      value: "#070013",
-      cssVar: "--cu-color-on-muted-discovery-active",
-      description: "Generated discovery foreground on muted backgrounds (active, 19% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.discovery-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-discovery-inactive",
-      description: "Generated discovery foreground on muted backgrounds (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.on-muted.discovery-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--cu-color-on-muted-discovery-disabled",
-      description: "Generated discovery foreground on muted backgrounds (disabled, 85% saturation)",
+      value: "#416158",
+      cssVar: "--cu-color-success-subtle-disabled",
+      description: "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -34344,7 +25821,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-md",
       description: "Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -34396,15 +25873,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.button",
-      type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--cu-typography-button",
-      description: "Button label style: Storm Sans semibold at 18px (`font-size.md`) with tight line height so labels center cleanly inside fixed-height controls. Use it for text inside actionable triggers. Used by Button and LinkText.",
-      theme: undefined,
-      typography: true
-    },
-    {
       path: "typography.eyebrow",
       type: "typography",
       value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
@@ -34425,7 +25893,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #15151814",
+      value: "0px 0px 0px 3px #1f1f2133",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -34434,7 +25902,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #15151814",
+      value: "0px 0px 0px 1px #1f1f2133",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -34443,7 +25911,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #15151814",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f2133",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -34452,45 +25920,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #15151814",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f2133",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand",
-      type: "shadow",
-      value: "0px 0px 0px 3px #1fb2a626",
-      cssVar: "--cu-ring-brand",
-      description: "Generated brand 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle",
-      description: "Generated brand 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1fb2a626",
-      cssVar: "--cu-ring-brand-offset",
-      description: "Generated brand 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.brand-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1fb2a626",
-      cssVar: "--cu-ring-brand-subtle-offset",
-      description: "Generated brand 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -34531,42 +25963,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "ring.negative",
-      type: "shadow",
-      value: "0px 0px 0px 3px #8e223e26",
-      cssVar: "--cu-ring-negative",
-      description: "Generated negative 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle",
-      description: "Generated negative 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26",
-      cssVar: "--cu-ring-negative-offset",
-      description: "Generated negative 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.negative-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #8e223e26",
-      cssVar: "--cu-ring-negative-subtle-offset",
-      description: "Generated negative 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "ring.warning",
       type: "shadow",
       value: "0px 0px 0px 3px #76541726",
@@ -34599,78 +25995,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #76541726",
       cssVar: "--cu-ring-warning-subtle-offset",
       description: "Generated warning 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-success",
-      description: "Generated success 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-success-subtle",
-      description: "Generated success 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.success-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive",
-      type: "shadow",
-      value: "0px 0px 0px 3px #216b5326",
-      cssVar: "--cu-ring-positive",
-      description: "Generated positive 3px focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #216b5326",
-      cssVar: "--cu-ring-positive-subtle",
-      description: "Generated positive 1px hairline focus ring with no gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
-      cssVar: "--cu-ring-positive-offset",
-      description: "Generated positive 3px focus ring with a 3px gap",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "ring.positive-subtle-offset",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
-      cssVar: "--cu-ring-positive-subtle-offset",
-      description: "Generated positive 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -34743,6 +26067,42 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #59439526",
       cssVar: "--cu-ring-discovery-subtle-offset",
       description: "Generated discovery 1px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success",
+      type: "shadow",
+      value: "0px 0px 0px 3px #216b5326",
+      cssVar: "--cu-ring-success",
+      description: "Generated success 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #216b5326",
+      cssVar: "--cu-ring-success-subtle",
+      description: "Generated success 1px hairline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #216b5326",
+      cssVar: "--cu-ring-success-offset",
+      description: "Generated success 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.success-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #216b5326",
+      cssVar: "--cu-ring-success-subtle-offset",
+      description: "Generated success 1px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     }

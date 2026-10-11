@@ -85,7 +85,7 @@ const isDefaultSize = (size: SizeTokens | undefined) =>
  *
  * @remarks
  * Icons receive their color as an SVG `stroke` / `fill` attribute, which cannot
- * carry v3 state clauses such as `hover:accentHover`.
+ * carry v3 state clauses such as `hover:active`.
  */
 const getBaseColor = (color: ThemeableIconExtraProps["color"]) => {
   if (typeof color !== "string") {
@@ -123,7 +123,7 @@ export const ThemeableIcon = createStyledHOC(
     const getThemedIcon = useGetThemedIcon({
       // The `true` default keeps the icon's intrinsic size (24px), as in v2.
       size: isDefaultSize(size) ? undefined : getSized(size),
-      color: disabled ? "onAccentDisabled" : (getBaseColor(color) as ColorProp)
+      color: disabled ? "disabled" : (getBaseColor(color) as ColorProp)
     });
 
     return (

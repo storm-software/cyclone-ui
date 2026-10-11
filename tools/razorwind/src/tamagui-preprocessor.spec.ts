@@ -2,10 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import { tamaguiPreprocessor } from "./tamagui-preprocessor";
 
-const colorToken = (value: string, theme?: string) => ({
+const colorToken = (value: string) => ({
   $type: "color",
-  $value: value,
-  ...(theme ? { theme } : {})
+  $value: value
 });
 
 const relativeLuminance = (hex: string): number => {
@@ -57,511 +56,240 @@ const hueDistance = (first: number, second: number): number => {
 };
 
 describe("tamaguiPreprocessor", () => {
-  it("adds a white on-accent token for an accent theme with greater white contrast", () => {
+  it("generates missing on-* text colors for status colors", () => {
     const result = tamaguiPreprocessor({
       color: {
-        accent: { brand: colorToken("#336699", "brand") }
+        danger: colorToken("#336699"),
+        warning: colorToken("#ffee99")
       }
     }) as any;
 
-    expect(result.color["on-accent"].brand).toMatchObject({
-      $type: "color",
-      $value: "#ffffff",
-      theme: "brand"
+    expect(result.color["on-danger-accent"]).toMatchObject({
+      $value: "#FAFAFA",
+      $description: "Generated text and icon color on danger backgrounds"
     });
+    expect(result.color["on-warning-accent"].$value).toBe("#151518");
+    expect(result.color).not.toHaveProperty("on-danger");
   });
 
-  it("falls back to black when white does not meet the accessibility contrast threshold", () => {
-    const result = tamaguiPreprocessor({
-      color: {
-        accent: { brand: colorToken("#999999", "brand") }
-      }
-    }) as any;
-
-    expect(result.color["on-accent"].brand).toMatchObject({
-      $type: "color",
-      $value: "#000000",
-      theme: "brand"
-    });
-  });
-
-  it("preserves an explicit on-accent token", () => {
-    const result = tamaguiPreprocessor({
-      color: {
-        accent: {
-          brand: colorToken("#336699", "brand")
-        },
-        "on-accent": { brand: colorToken("#123456", "brand") }
-      }
-    }) as any;
-
-    expect(result.color["on-accent"].brand).toMatchObject({
-      $value: "#123456",
-      theme: "brand"
-    });
-  });
-
-  it("generates the closest accessible muted background for light and dark accent themes", () => {
-    const lightAccent = "#336699";
-    const darkAccent = "#99ccff";
+  it("generates missing *-muted backgrounds from the parent theme", () => {
+    const lightDanger = "#336699";
+    const darkDanger = "#99ccff";
     const result = tamaguiPreprocessor({
       light: {
         color: {
           $description: "The light theme colors",
-          accent: { brand: colorToken(lightAccent, "brand") }
+          danger: colorToken(lightDanger)
         }
       },
       dark: {
         color: {
           $description: "The dark theme colors",
-          accent: { brand: colorToken(darkAccent, "brand") }
+          danger: colorToken(darkDanger)
         }
       }
     }) as any;
-    const lightMuted = result.light.color.muted.brand;
-    const darkMuted = result.dark.color.muted.brand;
-    const lightOnMuted = result.light.color["on-muted"].brand;
-    const darkOnMuted = result.dark.color["on-muted"].brand;
-    const lightContrast = contrastRatio(lightOnMuted.$value, lightMuted.$value);
-    const darkContrast = contrastRatio(darkOnMuted.$value, darkMuted.$value);
+    const light = result.light.color["danger-muted"];
+    const dark = result.dark.color["danger-muted"];
 
-    expect(lightMuted).toMatchObject({
-      $description: "Generated brand muted background for the light theme",
-      theme: "brand"
-    });
-    expect(darkMuted).toMatchObject({
-      $description: "Generated brand muted background for the dark theme",
-      theme: "brand"
-    });
-    expect(relativeLuminance(lightMuted.$value)).toBeGreaterThan(
-      relativeLuminance(lightAccent)
+    expect(light.$description).toBe(
+      "Generated low-emphasis danger background for the light theme"
     );
-    expect(relativeLuminance(darkMuted.$value)).toBeLessThan(
-      relativeLuminance(darkAccent)
+    expect(dark.$description).toBe(
+      "Generated low-emphasis danger background for the dark theme"
     );
-    expect(relativeLuminance(lightOnMuted.$value)).toBeLessThan(
-      relativeLuminance(lightAccent)
+    expect(relativeLuminance(light.$value)).toBeGreaterThan(
+      relativeLuminance(lightDanger)
     );
-    expect(relativeLuminance(darkOnMuted.$value)).toBeGreaterThan(
-      relativeLuminance(darkAccent)
+    expect(relativeLuminance(dark.$value)).toBeLessThan(
+      relativeLuminance(darkDanger)
     );
-    expect(lightContrast).toBeGreaterThanOrEqual(4.5);
-    expect(lightContrast).toBeLessThan(5);
-    expect(darkContrast).toBeGreaterThanOrEqual(4.5);
-    expect(darkContrast).toBeLessThan(5);
-    expect(lightOnMuted).toMatchObject({
-      $description: "Generated brand foreground on muted backgrounds",
-      theme: "brand"
-    });
-    expect(darkOnMuted).toMatchObject({
-      $description: "Generated brand foreground on muted backgrounds",
-      theme: "brand"
-    });
-    expect(result.light.color.muted).toHaveProperty("brand-hover");
-    expect(result.dark.color.muted).toHaveProperty("brand-hover");
+    expect(
+      contrastRatio(light.$value, result.light.color["on-danger-muted"].$value)
+    ).toBeGreaterThanOrEqual(6.6);
   });
 
-  it("generates accent companions for hyphenated theme descriptions", () => {
-    const result = tamaguiPreprocessor({
-      color: {
-        $description:
-          "Semantic colors used throughout the dark-theme interface.",
-        accent: { brand: colorToken("#336699", "brand") }
-      }
-    }) as any;
-
-    expect(result.color.muted.brand).toMatchObject({
-      $description: "Generated brand muted background for the dark theme",
-      theme: "brand"
-    });
-    expect(result.color["on-muted"].brand).toMatchObject({
-      $description: "Generated brand foreground on muted backgrounds",
-      theme: "brand"
-    });
-    expect(result.color.muted).toHaveProperty("brand-hover");
-    expect(result.color["on-muted"]).toHaveProperty("brand-hover");
-  });
-
-  it("alternates muted and on-muted adjustments without exhausting either endpoint", () => {
-    const lightAccent = "#777777";
-    const darkAccent = "#336699";
-    const result = tamaguiPreprocessor({
-      light: {
-        color: {
-          $description: "The light theme colors",
-          accent: { brand: colorToken(lightAccent, "brand") }
-        }
-      },
-      dark: {
-        color: {
-          $description: "The dark theme colors",
-          accent: { brand: colorToken(darkAccent, "brand") }
-        }
-      }
-    }) as any;
-    const lightMuted = result.light.color.muted.brand.$value;
-    const darkMuted = result.dark.color.muted.brand.$value;
-    const lightOnMuted = result.light.color["on-muted"].brand.$value;
-    const darkOnMuted = result.dark.color["on-muted"].brand.$value;
-    const lightContrast = contrastRatio(lightOnMuted, lightMuted);
-    const darkContrast = contrastRatio(darkOnMuted, darkMuted);
-
-    expect(relativeLuminance(lightOnMuted)).toBeLessThan(
-      relativeLuminance(lightAccent)
-    );
-    expect(relativeLuminance(darkOnMuted)).toBeGreaterThan(
-      relativeLuminance(darkAccent)
-    );
-    expect(relativeLuminance(lightMuted)).toBeLessThan(1);
-    expect(relativeLuminance(darkMuted)).toBeGreaterThan(0.005);
-    expect(lightContrast).toBeGreaterThanOrEqual(4.5);
-    expect(lightContrast).toBeLessThan(5);
-    expect(darkContrast).toBeGreaterThanOrEqual(4.5);
-    expect(darkContrast).toBeLessThan(5);
-  });
-
-  it("preserves the accent hue when generated colors require gamut mapping", () => {
-    const accent = "#ff0000";
-    const result = tamaguiPreprocessor({
-      light: {
-        color: {
-          $description: "The light theme colors",
-          accent: { danger: colorToken(accent, "danger") }
-        }
-      },
-      dark: {
-        color: {
-          $description: "The dark theme colors",
-          accent: { danger: colorToken(accent, "danger") }
-        }
-      }
-    }) as any;
-    const accentHue = oklchHue(accent);
-    const generated = [
-      result.light.color.muted.danger.$value,
-      result.light.color["on-muted"].danger.$value,
-      result.dark.color.muted.danger.$value,
-      result.dark.color["on-muted"].danger.$value
-    ];
-
-    for (const color of generated) {
-      expect(hueDistance(oklchHue(color), accentHue)).toBeLessThanOrEqual(1);
-    }
-  });
-
-  it("resolves accent references before adjusting the generated pair", () => {
-    const result = tamaguiPreprocessor({
-      palette: { brand: colorToken("#336699") },
-      light: {
-        color: {
-          $description: "The light theme colors",
-          accent: { brand: colorToken("{palette.brand}", "brand") }
-        }
-      }
-    }) as any;
-
-    const muted = result.light.color.muted.brand.$value;
-    const onMuted = result.light.color["on-muted"].brand.$value;
-
-    expect(onMuted).toMatch(/^#[0-9a-f]{6}$/);
-    expect(onMuted).not.toBe("{palette.brand}");
-    expect(contrastRatio(onMuted, muted)).toBeGreaterThanOrEqual(4.5);
-  });
-
-  it("preserves explicit accent companion tokens", () => {
+  it("preserves explicit on-* and *-muted colors and skips primary companions", () => {
     const result = tamaguiPreprocessor({
       color: {
         $description: "The light theme colors",
-        accent: {
-          brand: colorToken("#336699", "brand")
-        },
-        muted: {
-          brand: {
-            ...colorToken("#f0f0f0", "brand"),
-            $description: "Custom muted brand"
-          }
-        },
-        "on-muted": {
-          brand: {
-            ...colorToken("#123456", "brand"),
-            $description: "Custom foreground on muted brand"
-          }
-        },
-        "on-accent": {
-          brand: colorToken("#ffffff", "brand")
+        primary: colorToken("#336699"),
+        info: colorToken("#336699"),
+        "on-info": colorToken("#f0f0f0"),
+        "info-muted": colorToken("#abcdef")
+      }
+    }) as any;
+
+    expect(result.color["on-info-accent"]).toMatchObject({
+      $value: "#f0f0f0",
+      theme: "info"
+    });
+    expect(result.color).not.toHaveProperty("on-info");
+    expect(result.color["info-muted"].$value).toBe("#abcdef");
+    expect(result.color).not.toHaveProperty("on-primary");
+    expect(result.color).not.toHaveProperty("primary-muted");
+  });
+
+  it("preserves the status hue when generated colors require gamut mapping", () => {
+    const danger = "#ff0000";
+    const result = tamaguiPreprocessor({
+      light: {
+        color: {
+          $description: "The light theme colors",
+          danger: colorToken(danger)
+        }
+      },
+      dark: {
+        color: {
+          $description: "The dark theme colors",
+          danger: colorToken(danger)
         }
       }
     }) as any;
 
-    expect(result.color.muted.brand).toMatchObject({
-      $description: "Custom muted brand",
-      $value: "#f0f0f0"
-    });
-    expect(result.color["on-muted"].brand).toMatchObject({
-      $description: "Custom foreground on muted brand",
-      $value: "#123456"
-    });
-    expect(result.color["on-accent"].brand).toMatchObject({
-      $value: "#ffffff"
+    for (const color of [
+      result.light.color["danger-muted"].$value,
+      result.dark.color["danger-muted"].$value
+    ]) {
+      expect(
+        hueDistance(oklchHue(color), oklchHue(danger))
+      ).toBeLessThanOrEqual(1);
+    }
+  });
+
+  it("resolves status references before generating companions", () => {
+    const result = tamaguiPreprocessor({
+      palette: { red: colorToken("#336699") },
+      light: {
+        color: {
+          $description: "The light theme colors",
+          danger: colorToken("{palette.red}")
+        }
+      }
+    }) as any;
+
+    expect(result.light.color["on-danger-accent"].$value).toBe("#FAFAFA");
+    expect(result.light.color["danger-muted"].$value).toMatch(/^#[0-9a-f]{6}$/);
+  });
+
+  it("derives low-saturation states from the contrast primitive and scales saturated colors", () => {
+    const color = {
+      primary: colorToken("#777777"),
+      danger: colorToken("#336699")
+    };
+    const result = tamaguiPreprocessor({
+      dark: { color: { $description: "The dark theme colors", ...color } },
+      light: { color: { $description: "The light theme colors", ...color } }
+    }) as any;
+    const dark = result.dark.color;
+    const light = result.light.color;
+
+    expect({
+      darkActive: dark["base-active"].$value,
+      lightActive: light["base-active"].$value,
+      darkActiveDescription: dark["base-active"].$description,
+      darkInactive: dark["base-inactive"].$description,
+      darkDanger: dark["danger-active"].$description,
+      lightDanger: light["danger-active"].$description,
+      dangerInactive: dark["danger-inactive"].$description
+    }).toEqual({
+      darkActive: "#ffffff",
+      lightActive: "#0c0c0d",
+      darkActiveDescription: "active state at dark contrast primitive",
+      darkInactive: "inactive state at 40% darker",
+      darkDanger: "active state at 19% brighter",
+      lightDanger: "active state at 19% darker",
+      dangerInactive: "inactive state at 20% darker"
     });
   });
 
-  it("keeps accent companion roles in sibling groups and generates their states", () => {
+  it("shifts active colors already near the contrast primitive toward the middle", () => {
     const result = tamaguiPreprocessor({
       dark: {
         color: {
           $description: "The dark theme colors",
-          accent: {
-            base: colorToken("#333333", "base"),
-            brand: colorToken("#336699", "brand")
-          },
-          "on-accent": {
-            base: colorToken("#222222", "base")
-          },
-          muted: {
-            base: colorToken("#444444", "base")
-          },
-          "on-muted": {
-            base: colorToken("#555555", "base")
-          }
+          primary: colorToken("#f1f1f1")
+        }
+      },
+      light: {
+        color: {
+          $description: "The light theme colors",
+          primary: colorToken("#1f1f21")
         }
       }
     }) as any;
-    const color = result.dark.color;
 
-    expect(color.accent).not.toHaveProperty("brand-on-accent");
-    expect(color.accent).not.toHaveProperty("brand-muted");
-    expect(color.accent).not.toHaveProperty("brand-on-muted");
-    expect(color["on-accent"]).toMatchObject({
-      base: { $value: "#222222" },
-      brand: { $value: "#ffffff", theme: "brand" }
+    expect({
+      dark: result.dark.color["base-active"].$description,
+      light: result.light.color["base-active"].$description
+    }).toEqual({
+      dark: "active state at 10% darker",
+      light: "active state at 10% lighter"
     });
-    expect(color.muted).toMatchObject({
-      base: { $value: "#444444" },
-      brand: {
-        $description: "Generated brand muted background for the dark theme",
-        theme: "brand"
-      }
-    });
-    expect(color["on-muted"]).toMatchObject({
-      base: { $value: "#555555" },
-      brand: {
-        $description: "Generated brand foreground on muted backgrounds",
-        theme: "brand"
-      }
-    });
-
-    for (const groupKey of ["on-accent", "muted", "on-muted"]) {
-      expect(color[groupKey]).toHaveProperty("base-hover");
-      expect(color[groupKey]).toHaveProperty("brand-hover");
-    }
+    expect(
+      relativeLuminance(result.dark.color["base-active"].$value)
+    ).toBeLessThan(relativeLuminance("#f1f1f1"));
+    expect(
+      relativeLuminance(result.light.color["base-active"].$value)
+    ).toBeGreaterThan(relativeLuminance("#1f1f21"));
   });
 
-  it("desaturates colored accent disabled variants while preserving alpha", () => {
-    const result = tamaguiPreprocessor({
-      color: { accent: { brand: colorToken("#ff000080", "brand") } }
-    });
-
-    expect(result).toMatchObject({
-      color: {
-        accent: {
-          "brand-disabled": {
-            $description: "disabled state at 80% saturation",
-            $value: expect.stringMatching(/^#(?!ff000080)[0-9a-f]{6}80$/)
-          }
-        }
-      }
-    });
-  });
-
-  it("reduces opacity for greyscale surface disabled variants", () => {
-    const result = tamaguiPreprocessor({
-      color: { surface: { canvas: colorToken("#808080") } }
-    });
-
-    expect(result).toMatchObject({
-      color: {
-        surface: {
-          "canvas-disabled": {
-            $description: "disabled state at 40% opacity",
-            $value: "#80808066"
-          }
-        }
-      }
-    });
-  });
-
-  it("uses base strength for the base accent and theme strength elsewhere", () => {
+  it("keeps low-saturation surface states subtler than other neutral colors", () => {
     const result = tamaguiPreprocessor({
       color: {
-        accent: {
-          base: colorToken("#333333", "base"),
-          brand: colorToken("#333333", "brand")
-        },
+        $description: "The dark theme colors",
+        primary: colorToken("#333333"),
         surface: { canvas: colorToken("#333333") }
       }
     }) as any;
 
     expect({
-      baseHover: result.color.accent["base-hover"].$value,
-      baseActive: result.color.accent["base-active"].$value,
-      brandHover: result.color.accent["brand-hover"].$description,
-      brandActive: result.color.accent["brand-active"].$description,
-      canvasHover: result.color.surface["canvas-hover"].$description,
-      baseInactive: result.color.accent["base-inactive"].$value,
-      brandInactive: result.color.accent["brand-inactive"].$value
+      primaryActive: result.color["base-active"].$value,
+      canvasActive: result.color.surface["canvas-active"].$description,
+      canvasInactive: result.color.surface["canvas-inactive"].$description
     }).toEqual({
-      baseHover: "#4c4c4c",
-      baseActive: "#3f3f3f",
-      brandHover: "hover state at 23% brighter",
-      brandActive: "active state at 11% brighter",
-      canvasHover: "hover state at 23% brighter",
-      baseInactive: "#232323",
-      brandInactive: "#232323"
+      primaryActive: "#ffffff",
+      canvasActive: "active state at 10% brighter",
+      canvasInactive: "inactive state at 20% darker"
     });
   });
 
-  it("reduces hairline and base muted active brightness by 30 percent", () => {
-    const baseResult = tamaguiPreprocessor({
+  it("increases outline active strength", () => {
+    const result = tamaguiPreprocessor({
       color: {
-        hairline: colorToken("#333333", "base"),
-        muted: {
-          base: colorToken("#333333", "base")
-        }
+        outline: colorToken("#333333")
       }
     }) as any;
-    const themeResult = tamaguiPreprocessor({
-      color: {
-        hairline: colorToken("#333333", "brand"),
-        muted: { brand: colorToken("#333333", "brand") }
-      }
+    const saturated = tamaguiPreprocessor({
+      color: { outline: colorToken("#336699") }
     }) as any;
 
     expect({
-      hairlineBase: baseResult.color["hairline-active"].$description,
-      hairlineTheme: themeResult.color["hairline-active"].$description,
-      mutedBase: baseResult.color.muted["base-active"].$description,
-      mutedTheme: themeResult.color.muted["brand-active"].$description
+      outline: result.color["outline-active"].$description,
+      outlineSaturated: saturated.color["outline-active"].$description
     }).toEqual({
-      hairlineBase: "active state at 10% brighter",
-      hairlineTheme: "active state at 8% brighter",
-      mutedBase: "active state at 10% brighter",
-      mutedTheme: "active state at 11% brighter"
+      outline: "active state at 80% brighter",
+      outlineSaturated: "active state at 40% brighter"
     });
   });
 
-  it("directs state brightness from the dark or light parent theme", () => {
-    const themedColor = colorToken("#777777", "base");
-    const result = tamaguiPreprocessor({
-      dark: {
-        color: {
-          $description: "The dark theme colors",
-          accent: {
-            base: themedColor,
-            "base-muted": colorToken("#000000", "base")
-          }
-        }
-      },
-      light: {
-        color: {
-          $description: "The light theme colors",
-          accent: {
-            base: themedColor,
-            "base-muted": colorToken("#ffffff", "base")
-          }
-        }
-      }
-    }) as any;
-    const channel = (value: string) => Number.parseInt(value.slice(1, 3), 16);
-    const dark = result.dark.color.accent;
-    const light = result.light.color.accent;
-
-    expect({
-      darkHover: dark["base-hover"].$description,
-      darkActive: dark["base-active"].$description,
-      darkInactive: dark["base-inactive"].$description,
-      lightHover: light["base-hover"].$description,
-      lightActive: light["base-active"].$description,
-      lightInactive: light["base-inactive"].$description
-    }).toEqual({
-      darkHover: "hover state at 30% brighter",
-      darkActive: "active state at dark base primitive",
-      darkInactive: "inactive state at 20% darker",
-      lightHover: "hover state at 30% darker",
-      lightActive: "active state at light base primitive",
-      lightInactive: "inactive state at 20% darker"
-    });
-    expect(channel(dark["base-hover"].$value)).toBeGreaterThan(0x77);
-    expect(dark["base-active"].$value).toBe("#ffffff");
-    expect(relativeLuminance(dark["base-inactive"].$value)).toBeLessThan(
-      relativeLuminance(dark["base-active"].$value)
-    );
-    expect(channel(light["base-hover"].$value)).toBeLessThan(0x77);
-    expect(light["base-active"].$value).toBe("#0c0c0d");
-    expect(relativeLuminance(light["base-inactive"].$value)).toBeLessThan(
-      relativeLuminance(light["base-active"].$value)
-    );
-  });
-
-  it("uses resolved primitives for base active states and dims their inactive states", () => {
-    const result = tamaguiPreprocessor({
-      dark: {
-        color: {
-          $description: "The dark theme colors",
-          accent: { base: colorToken("#777777", "base") }
-        }
-      },
-      light: {
-        color: {
-          $description: "The light theme colors",
-          accent: { base: colorToken("#777777", "base") }
-        }
-      }
-    }) as any;
-    const dark = result.dark.color.accent;
-    const light = result.light.color.accent;
-
-    expect(dark["base-active"].$value).toBe("#ffffff");
-    expect(light["base-active"].$value).toBe("#0c0c0d");
-    expect(relativeLuminance(dark["base-inactive"].$value)).toBeLessThan(
-      relativeLuminance(dark["base-active"].$value)
-    );
-    expect(relativeLuminance(light["base-inactive"].$value)).toBeLessThan(
-      relativeLuminance(light["base-active"].$value)
-    );
-  });
-
-  it("reserves base primitives for colors explicitly themed as base", () => {
-    const result = tamaguiPreprocessor({
-      dark: {
-        color: {
-          $description: "The dark theme colors",
-          accent: { base: colorToken("#777777") }
-        }
-      }
-    }) as any;
-
-    expect(result.dark.color.accent["base-active"].$value).not.toBe("#ffffff");
-  });
-
-  it("generates states only for surface, link, hairline, and accent colors", () => {
+  it("generates active, inactive, and disabled states only for target colors", () => {
     const result = tamaguiPreprocessor({
       color: {
-        ink: { emphasis: colorToken("#f5f5f5") },
         surface: {
           sunken: colorToken("#111111"),
           canvas: colorToken("#222222")
         },
-        required: colorToken("#ff0000"),
-        link: colorToken("#336699"),
-        hairline: colorToken("#777777"),
-        accent: {
-          base: colorToken("#f5f5f5", "base"),
-          brand: colorToken("#336699", "brand")
-        },
-        background: { base: colorToken("#333333", "base") },
-        overlay: { background: colorToken("#444444") },
-        data: { brand: { emphasis: colorToken("#555555") } }
+        primary: colorToken("#f5f5f5"),
+        "on-primary": colorToken("#111111"),
+        secondary: colorToken("#777777"),
+        tertiary: colorToken("#777777"),
+        outline: colorToken("#777777"),
+        danger: colorToken("#ff0000"),
+        "on-danger": colorToken("#ffffff"),
+        "danger-muted": colorToken("#330000"),
+        backdrop: colorToken("#00000066"),
+        data: { red: { emphasis: colorToken("#555555") } }
       }
     }) as any;
 
@@ -569,40 +297,34 @@ describe("tamaguiPreprocessor", () => {
       "canvas",
       "canvas-active",
       "canvas-disabled",
-      "canvas-hover",
       "canvas-inactive",
       "sunken",
       "sunken-active",
       "sunken-disabled",
-      "sunken-hover",
       "sunken-inactive"
     ]);
-    expect(Object.keys(result.color.accent).sort()).toEqual([
+    for (const key of [
       "base",
-      "base-active",
-      "base-disabled",
-      "base-hover",
-      "base-inactive",
-      "brand",
-      "brand-active",
-      "brand-disabled",
-      "brand-hover",
-      "brand-inactive"
-    ]);
-    expect(result.color).toHaveProperty("link-hover");
-    expect(result.color).toHaveProperty("link-active");
-    expect(result.color).toHaveProperty("link-inactive");
-    expect(result.color).not.toHaveProperty("link-disabled");
-    expect(result.color).toHaveProperty("hairline-hover");
-    expect(result.color).toHaveProperty("hairline-active");
-    expect(result.color).toHaveProperty("hairline-inactive");
-    expect(result.color).not.toHaveProperty("hairline-disabled");
+      "base-muted",
+      "outline",
+      "danger",
+      "danger-muted"
+    ]) {
+      for (const state of ["active", "inactive", "disabled"]) {
+        expect(result.color).toHaveProperty(`${key}-${state}`);
+      }
+      expect(result.color).not.toHaveProperty(`${key}-hover`);
+    }
 
-    expect(result.color.ink).not.toHaveProperty("emphasis-hover");
-    expect(result.color).not.toHaveProperty("required-hover");
-    expect(result.color.background).not.toHaveProperty("base-hover");
-    expect(result.color.overlay).not.toHaveProperty("background-hover");
-    expect(result.color.data.brand).not.toHaveProperty("emphasis-hover");
+    for (const key of ["primary", "secondary", "tertiary", "on-primary"]) {
+      expect(result.color).toHaveProperty(key);
+      expect(result.color).not.toHaveProperty(`${key}-active`);
+    }
+    expect(result.color).not.toHaveProperty("base-accent-active");
+    expect(result.color).not.toHaveProperty("on-base-accent-active");
+    expect(result.color).not.toHaveProperty("on-danger-active");
+    expect(result.color).not.toHaveProperty("backdrop-active");
+    expect(result.color.data.red).not.toHaveProperty("emphasis-active");
   });
 
   it("does not overwrite explicit state colors", () => {
@@ -610,15 +332,15 @@ describe("tamaguiPreprocessor", () => {
       color: {
         surface: {
           canvas: colorToken("#222222"),
-          "canvas-hover": colorToken("#abcdef")
+          "canvas-active": colorToken("#abcdef")
         },
-        link: colorToken("#336699"),
-        "link-hover": colorToken("#fedcba")
+        outline: colorToken("#336699"),
+        "outline-active": colorToken("#fedcba")
       }
     }) as any;
 
-    expect(result.color.surface["canvas-hover"].$value).toBe("#abcdef");
-    expect(result.color["link-hover"].$value).toBe("#fedcba");
+    expect(result.color.surface["canvas-active"].$value).toBe("#abcdef");
+    expect(result.color["outline-active"].$value).toBe("#fedcba");
   });
 
   it("does not generate states for non-color tokens in target groups", () => {
@@ -633,18 +355,126 @@ describe("tamaguiPreprocessor", () => {
       }
     }) as any;
 
-    expect(result.color.surface).not.toHaveProperty("shadow-hover");
+    expect(result.color.surface).not.toHaveProperty("shadow-active");
     expect(result.color.surface.shadow.$value.color).toBe("#336699");
   });
 
-  it("applies opacity by ring token theme and preserves offset masks", () => {
+  it("desaturates colored disabled variants and fades them over the disabled base", () => {
+    const result = tamaguiPreprocessor({
+      color: { danger: colorToken("#ff000080") }
+    }) as any;
+
+    expect(result.color["danger-disabled"]).toMatchObject({
+      $description:
+        "disabled state at 85% saturation, 13% over oklch(0.3839 0.0045 286.26)",
+      $value: expect.stringMatching(/^#[0-9a-f]{6}$/)
+    });
+  });
+
+  it("fades greyscale surface disabled variants over the disabled base", () => {
+    const result = tamaguiPreprocessor({
+      color: { surface: { canvas: colorToken("#ffffff") } }
+    }) as any;
+
+    expect(result.color.surface["canvas-disabled"]).toMatchObject({
+      $description: "disabled state at 13% over oklch(0.3839 0.0045 286.26)",
+      $value: "#5b5b5d"
+    });
+  });
+
+  it("assigns themes to base aliases and status colors", () => {
+    const result = tamaguiPreprocessor({
+      color: {
+        $description: "The dark theme colors",
+        primary: colorToken("#eeeeee"),
+        "on-primary": colorToken("#111111"),
+        tertiary: { ...colorToken("#444444"), theme: "custom" },
+        outline: colorToken("#777777"),
+        warning: colorToken("#ffee99")
+      }
+    }) as any;
+
+    expect(result.color.primary.theme).toBeUndefined();
+    expect(result.color["on-primary"].theme).toBeUndefined();
+    expect(result.color.base).toMatchObject({
+      $value: "#eeeeee",
+      theme: "base",
+      group: "base"
+    });
+    expect(result.color["base-accent"]).toMatchObject({
+      $value: "{color.base}",
+      theme: "base"
+    });
+    expect(result.color["base-active"].theme).toBe("base");
+    expect(result.color).not.toHaveProperty("on-base");
+    expect(result.color["on-base-accent"]).toMatchObject({
+      $value: "#111111",
+      theme: "base"
+    });
+    expect(result.color.tertiary.theme).toBe("custom");
+    expect(result.color).not.toHaveProperty("tertiary-disabled");
+    expect(result.color.outline.theme).toBeUndefined();
+    expect(result.color.warning.theme).toBe("warning");
+    expect(result.color["warning-accent"]).toMatchObject({
+      $value: "{color.warning}",
+      theme: "warning",
+      group: "warning"
+    });
+    expect(result.color["on-warning-accent"]).toMatchObject({
+      theme: "warning",
+      group: "warning"
+    });
+    expect(result.color["on-warning-muted"].theme).toBe("warning");
+    expect(result.color["warning-muted"].theme).toBe("warning");
+    expect(result.color["warning-muted-active"].theme).toBe("warning");
+    expect(result.color["warning-inactive"].theme).toBe("warning");
+  });
+
+  it("generates focus rings for base aliases and status colors", () => {
+    const result = tamaguiPreprocessor({
+      color: {
+        surface: { elevated: colorToken("#222222") },
+        primary: colorToken("#eeeeee"),
+        outline: colorToken("#777777"),
+        danger: colorToken("#336699")
+      }
+    }) as any;
+
+    expect(Object.keys(result.ring).sort()).toEqual([
+      "base",
+      "base-offset",
+      "base-subtle",
+      "base-subtle-offset",
+      "danger",
+      "danger-offset",
+      "danger-subtle",
+      "danger-subtle-offset"
+    ]);
+    expect(result.ring["base-offset"]).toMatchObject({ theme: "base" });
+    expect(result.ring.base).toMatchObject({
+      theme: "base",
+      $value: [{ color: "#eeeeee14", spread: { value: 3, unit: "px" } }]
+    });
+    expect(result.ring["danger-offset"]).toMatchObject({
+      theme: "danger",
+      $value: [
+        { color: "{color.surface-elevated}" },
+        { color: "#33669926", spread: { value: 6, unit: "px" } }
+      ]
+    });
+  });
+
+  it("applies ring opacity by saturation and preserves offset masks", () => {
     const result = tamaguiPreprocessor({
       color: { ink: { secondary: colorToken("#336699") } },
       semantic: {
         ring: {
-          base: {
+          neutral: {
             $type: "shadow",
-            theme: "base",
+            $value: { color: "#777777", offsetX: 0 }
+          },
+          saturated: {
+            $type: "shadow",
             $value: {
               color: "{color.ink.secondary}",
               offsetX: { value: 0, unit: "px" },
@@ -655,7 +485,6 @@ describe("tamaguiPreprocessor", () => {
           },
           layered: {
             $type: "shadow",
-            theme: "brand",
             $value: [
               { color: "#ff0000", offsetX: 0 },
               { color: "#00ff00", offsetX: 0 }
@@ -674,9 +503,10 @@ describe("tamaguiPreprocessor", () => {
     expect(result).toMatchObject({
       semantic: {
         ring: {
-          base: { $value: { color: "#33669999" } },
+          neutral: { $value: { color: "#77777714" } },
+          saturated: { $value: { color: "#33669926" } },
           layered: {
-            $value: [{ color: "#ff0000" }, { color: "#00ff00e6" }]
+            $value: [{ color: "#ff0000" }, { color: "#00ff0026" }]
           }
         },
         shadow: {

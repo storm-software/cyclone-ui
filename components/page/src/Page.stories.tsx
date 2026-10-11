@@ -79,7 +79,7 @@ const StoryNavItem = ({
     <BodyText
       render="span"
       size="sm"
-      color={active ? "inkEmphasis" : "inkBody"}
+      color={active ? "primary" : "secondary"}
       fontWeight={active ? "600" : undefined}>
       {children}
     </BodyText>
@@ -89,7 +89,7 @@ const StoryNavItem = ({
 const StoryNavGroupLabel = styled(BodyText, {
   render: "span",
   size: "sm",
-  color: "inkSubtle",
+  color: "tertiary",
   paddingHorizontal: "2xl",
   paddingTop: "4xl",
   paddingBottom: "lg"
@@ -126,7 +126,7 @@ const StoryLogo = () => (
       borderRadius="full">
       <Lightning size={14} color="onAccent" weight="fill" />
     </View>
-    <BodyText render="span" color="inkEmphasis" fontWeight="700">
+    <BodyText render="span" color="primary" fontWeight="700">
       Storm
     </BodyText>
   </View>
@@ -143,11 +143,11 @@ const StorySearch = () => (
     paddingHorizontal="3xl"
     backgroundColor="surfaceCanvas"
     borderWidth={1}
-    borderColor="hairline"
+    borderColor="border"
     borderRadius={1000}
     display="flex max-md:none">
-    <MagnifyingGlass aria-hidden={true} size={16} color="inkSubtle" />
-    <BodyText render="span" size="sm" color="inkSubtle">
+    <MagnifyingGlass aria-hidden={true} size={16} color="tertiary" />
+    <BodyText render="span" size="sm" color="tertiary">
       Search
     </BodyText>
   </View>
@@ -222,7 +222,7 @@ const StorySideNav = () => (
           height={32}
           alignItems="center"
           justifyContent="center"
-          backgroundColor="muted"
+          backgroundColor="subtle"
           borderRadius="md">
           <Kanban aria-hidden={true} size={18} color="accent" />
         </View>
@@ -230,11 +230,11 @@ const StorySideNav = () => (
           <BodyText
             render="span"
             size="sm"
-            color="inkEmphasis"
+            color="primary"
             fontWeight="600">
             Cyclone UI
           </BodyText>
-          <BodyText render="span" size="sm" color="inkSubtle">
+          <BodyText render="span" size="sm" color="tertiary">
             Design system
           </BodyText>
         </View>
@@ -278,7 +278,7 @@ const StorySection = styled(View, {
   padding: "7xl max-md:4xl",
   backgroundColor: "surfaceElevated",
   borderWidth: 1,
-  borderColor: "hairline",
+  borderColor: "border",
   borderRadius: "container"
 });
 
@@ -357,7 +357,7 @@ const StoryPanel = () => {
         </BodyText>
         {storySections.map(section => (
           <View key={section.title} gap="md" paddingTop="4xl">
-            <BodyText size="sm" color="inkEmphasis" fontWeight="600">
+            <BodyText size="sm" color="primary" fontWeight="600">
               {section.title}
             </BodyText>
             <BodyText size="sm">{section.body}</BodyText>

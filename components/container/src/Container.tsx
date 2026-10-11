@@ -58,49 +58,49 @@ const ContainerFrame = styled(View, {
       primary: {
         backgroundColor: "accent",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "border"
       },
 
       secondary: {
-        backgroundColor: "muted",
+        backgroundColor: "subtle",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "border"
       },
 
       tertiary: {
         backgroundColor: "surfaceElevated",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "border"
       },
 
       sunken: {
         backgroundColor: "surfaceSunken",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "border"
       },
 
       canvas: {
         backgroundColor: "surfaceCanvas",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "border"
       },
 
       elevated: {
         backgroundColor: "surfaceElevated",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "border"
       },
 
       floating: {
         backgroundColor: "surfaceFloating",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "border"
       },
 
       overlay: {
-        backgroundColor: "surfaceOverlay",
+        backgroundColor: "surfaceHighest",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "border"
       },
 
       outlined: {
@@ -112,7 +112,7 @@ const ContainerFrame = styled(View, {
       glass: {
         backgroundColor: "transparent",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "border"
       }
     },
 
@@ -128,7 +128,7 @@ const ContainerFrame = styled(View, {
 
     shadowed: {
       true: {
-        boxShadow: "0px 4px 30px overlayBackdrop"
+        boxShadow: "0px 4px 30px backdrop"
       }
     },
 

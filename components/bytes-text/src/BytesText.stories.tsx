@@ -61,13 +61,6 @@ export const GigaBytes: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand",
-    children: "1337"
-  }
-};
-
 export const Discovery: Story = {
   args: {
     theme: "discovery",

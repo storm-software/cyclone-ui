@@ -133,13 +133,6 @@ export const UnderlineNone: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    href: "#",
-    theme: "brand"
-  }
-};
-
 export const Discovery: Story = {
   args: {
     href: "#",
@@ -252,51 +245,5 @@ export const SuccessExternal: Story = {
     href: "#",
     external: true,
     theme: "success"
-  }
-};
-
-export const Positive: Story = {
-  args: {
-    href: "#",
-    theme: "positive"
-  }
-};
-
-export const PositiveCallToAction: Story = {
-  args: {
-    href: "#",
-    cta: true,
-    theme: "positive"
-  }
-};
-
-export const PositiveExternal: Story = {
-  args: {
-    href: "#",
-    external: true,
-    theme: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    href: "#",
-    theme: "negative"
-  }
-};
-
-export const NegativeCallToAction: Story = {
-  args: {
-    href: "#",
-    cta: true,
-    theme: "negative"
-  }
-};
-
-export const NegativeExternal: Story = {
-  args: {
-    href: "#",
-    external: true,
-    theme: "negative"
   }
 };

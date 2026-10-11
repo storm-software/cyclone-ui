@@ -86,20 +86,20 @@ const TooltipContent = styled(
     paddingVertical: "3xl",
     paddingHorizontal: "2xl",
     borderWidth: 1,
-    borderColor: "accent focus-visible:accentActive",
+    borderColor: "accent focus-visible:active",
     borderRadius: "tooltip",
     x: "enter:0 exit:0",
     y: "enter:-5px exit:-5px",
     opacity: "enter:0 exit:0",
     scale: "enter:0.9 exit:0.9",
-    outlineColor: "focus-visible:accentActive",
+    outlineColor: "focus-visible:active",
     outlineWidth: "focus-visible:3px",
     outlineOffset: "focus-visible:lg",
     outlineStyle: "focus-visible:solid",
     variants: {
       elevated: {
         true: {
-          boxShadow: "0px 4px 30px overlayBackdrop"
+          boxShadow: "0px 4px 30px backdrop"
         }
       }
     } as const,
@@ -125,7 +125,7 @@ const TooltipContentImpl = createStyledHOC(
       children,
       hasArrow = true,
       arrowBorderColor,
-      borderColor = "hairline",
+      borderColor = "border",
       // Keep the arrow on the same background as the body
       backgroundColor = "surfaceFloating",
       ...props

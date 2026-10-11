@@ -130,7 +130,7 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
       iconWeight = "fill",
       emptyIconWeight = "regular",
       color = "accent",
-      emptyColor = hasValidationMessage ? "accent" : "hairline",
+      emptyColor = hasValidationMessage ? "accent" : "border",
       highlightSelectedOnly = false,
       getLabelText = defaultGetLabelText,
       onKeyDown,

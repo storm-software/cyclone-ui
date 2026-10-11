@@ -117,7 +117,7 @@ const SuggestionBackground = styled(View, {
   left: 0,
   right: 0,
   borderRadius: "button",
-  backgroundColor: "transparent group-hover/item:surfaceOverlayHover",
+  backgroundColor: "transparent group-hover/item:tertiary",
   pointerEvents: "none",
   variants: {
     size: styled.dynamic<FormControlSize>(
@@ -131,7 +131,7 @@ const SuggestionBackground = styled(View, {
     // The keyboard-highlighted option, matching a focused `Select` item.
     active: {
       true: {
-        backgroundColor: "surfaceOverlayHover"
+        backgroundColor: "tertiary"
       }
     }
   } as const,
@@ -147,7 +147,7 @@ const SuggestionDivider = styled(View, {
   bottom: 0,
   pointerEvents: "none",
   borderBottomWidth: 1,
-  borderBottomColor: "hairline",
+  borderBottomColor: "border",
   variants: {
     size: styled.dynamic<FormControlSize>(
       formSizeVariants((val: FormControlSize) => {
@@ -189,7 +189,7 @@ const SuggestionText = styled(BodyText, {
   displayName: "SearchInput",
   flex: 1,
   cursor: "inherit",
-  // `Select` items inherit their text color rather than using `inkBody`.
+  // `Select` items inherit their text color rather than using `secondary`.
   color: "currentColor",
   fontWeight: 300,
   variants: {
@@ -554,7 +554,7 @@ const SearchInputTextBox = createStyledHOC(
             maxHeight={`calc(var(--tamagui-popper-available-height) - ${SUGGESTIONS_VIEWPORT_PADDING}px)`}
             padding={0}
             borderWidth={1}
-            borderColor="hairline"
+            borderColor="border"
             overflow="hidden">
             <style>{SUGGESTIONS_STYLES}</style>
             {canScroll.up && (

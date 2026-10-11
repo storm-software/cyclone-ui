@@ -290,15 +290,6 @@ export const Pagination: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand",
-    options: {
-      data: defaultData
-    }
-  }
-};
-
 export const Discovery: Story = {
   args: {
     theme: "discovery",

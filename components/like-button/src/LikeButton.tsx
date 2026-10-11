@@ -197,7 +197,7 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
             size={iconSize}
             weight={liked ? "fill" : "regular"}
             color={
-              hovered && !disabled ? "accentHover" : liked ? "accent" : "color"
+              hovered && !disabled ? "active" : liked ? "accent" : "color"
             }
           />
         </View>

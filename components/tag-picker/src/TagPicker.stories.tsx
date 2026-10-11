@@ -200,12 +200,6 @@ export const InlinedAbove: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
 const ControlledExample = () => {
   const [tags, setTags] = useState(["Design", "Engineering"]);
 
@@ -217,7 +211,7 @@ const ControlledExample = () => {
         value={tags}
         onChange={setTags}
       />
-      <Text color="inkBody" fontFamily="body-md">
+      <Text color="secondary" fontFamily="body-md">
         {`Value: ${JSON.stringify(tags)}`}
       </Text>
     </View>

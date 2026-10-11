@@ -96,6 +96,7 @@
     "@razorwind/shell-shock": "catalog:",
     "@razorwind/shiki": "catalog:",
     "@razorwind/storybook": "catalog:",
+    "@razorwind/style-dictionary": "catalog:",
     "@razorwind/stylelint": "catalog:",
     "@razorwind/tamagui": "catalog:",
     "@react-native-community/cli": "catalog:",

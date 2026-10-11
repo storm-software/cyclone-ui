@@ -403,13 +403,15 @@ interface ColorStateVariant {
    * is determined by the source color and its parent theme.
    */
   brightness?: number;
-  /** Resolve base-state colors from the parent theme's contrast primitive. */
-  useBaseThemePrimitive?: boolean;
+  /** Resolve state colors from the parent theme's contrast primitive. */
+  useContrastPrimitive?: boolean;
+  /** Composite the color at `opacity` over this opaque color. */
+  fadeOver?: string;
 }
 
 type ParentTheme = "dark" | "light";
 
-const BASE_THEME_ACTIVE_PRIMITIVES: Record<ParentTheme, string> = {
+const CONTRAST_PRIMITIVES: Record<ParentTheme, string> = {
   dark: "#ffffff",
   light: "#0c0c0d"
 };
@@ -440,41 +442,36 @@ function parentThemeFromDictionary(
   return parentThemeFromDescription(dictionary.color.$description);
 }
 
-const COLOR_STATE_HOVER: ColorStateVariant = {
-  name: "hover",
-  brightness: 1.3
-};
-
-const BASE_COLOR_STATE_ACTIVE: ColorStateVariant = {
+const LOW_SATURATION_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
-  brightness: 1.4,
-  useBaseThemePrimitive: true
+  brightness: 1.45,
+  useContrastPrimitive: true
 };
 
-const THEME_COLOR_STATE_HOVER: ColorStateVariant = {
-  name: "hover",
-  brightness: 1.225
-};
-
-const THEME_COLOR_STATE_ACTIVE: ColorStateVariant = {
+const COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
-  brightness: 1.185
+  brightness: 1.25
 };
 
-const REDUCED_BASE_COLOR_STATE_ACTIVE: ColorStateVariant = {
+const SURFACE_LOW_SATURATION_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
-  brightness: 1.105
+  brightness: 1.075
 };
 
-const HAIRLINE_THEME_COLOR_STATE_ACTIVE: ColorStateVariant = {
+const SUBTLE_LOW_SATURATION_COLOR_STATE_ACTIVE: ColorStateVariant = {
+  name: "active",
+  brightness: 1.125
+};
+
+const BORDER_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
   brightness: 1.4
 };
 
-const INCREASED_BASE_COLOR_STATE_ACTIVE: ColorStateVariant = {
+const INCREASED_LOW_SATURATION_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
   brightness: 1.8,
-  useBaseThemePrimitive: true
+  useContrastPrimitive: true
 };
 
 const COLOR_STATE_INACTIVE: ColorStateVariant = {
@@ -482,108 +479,125 @@ const COLOR_STATE_INACTIVE: ColorStateVariant = {
   brightness: 0.8
 };
 
-const BASE_COLOR_STATE_INACTIVE: ColorStateVariant = {
+const LOW_SATURATION_COLOR_STATE_INACTIVE: ColorStateVariant = {
   name: "inactive",
   brightness: 0.6,
-  useBaseThemePrimitive: true
+  useContrastPrimitive: true
 };
 
 const COLOR_STATE_DISABLED: ColorStateVariant = {
   name: "disabled",
-  opacity: 0.125,
-  saturation: 0.85
+  opacity: 0.35,
+  saturation: 0.85,
+  fadeOver: "oklch(0.3839 0.0045 286.26)"
 };
 
-const BASE_COLOR_STATE_VARIANTS = [
-  COLOR_STATE_HOVER,
-  BASE_COLOR_STATE_ACTIVE,
-  BASE_COLOR_STATE_INACTIVE,
-  COLOR_STATE_DISABLED
-] as const;
-
-const BASE_COLOR_STATE_TOKEN_VARIANTS = [
-  COLOR_STATE_HOVER,
-  BASE_COLOR_STATE_ACTIVE,
-  BASE_COLOR_STATE_INACTIVE
-] as const;
-
-interface ThemeColorStateVariants {
-  base: readonly ColorStateVariant[];
-  theme: readonly ColorStateVariant[];
+/** State variants for low-saturation (neutral) and saturated colors. */
+interface ColorStateVariants {
+  lowSaturation: readonly ColorStateVariant[];
+  saturated: readonly ColorStateVariant[];
 }
 
-const ACCENT_COLOR_STATE_VARIANTS: ThemeColorStateVariants = {
-  base: BASE_COLOR_STATE_VARIANTS,
-  theme: [
-    THEME_COLOR_STATE_HOVER,
-    THEME_COLOR_STATE_ACTIVE,
-    COLOR_STATE_INACTIVE,
-    COLOR_STATE_DISABLED
-  ]
-};
-
-const MUTED_COLOR_STATE_VARIANTS: ThemeColorStateVariants = {
-  base: [
-    COLOR_STATE_HOVER,
-    REDUCED_BASE_COLOR_STATE_ACTIVE,
-    BASE_COLOR_STATE_INACTIVE,
+const DEFAULT_COLOR_STATE_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    LOW_SATURATION_COLOR_STATE_ACTIVE,
+    LOW_SATURATION_COLOR_STATE_INACTIVE,
     COLOR_STATE_DISABLED
   ],
-  theme: ACCENT_COLOR_STATE_VARIANTS.theme
+  saturated: [COLOR_STATE_ACTIVE, COLOR_STATE_INACTIVE, COLOR_STATE_DISABLED]
 };
 
-const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
-  surface: {
-    base: BASE_COLOR_STATE_VARIANTS,
-    theme: [
-      THEME_COLOR_STATE_HOVER,
-      THEME_COLOR_STATE_ACTIVE,
+const SUBTLE_COLOR_STATE_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    SUBTLE_LOW_SATURATION_COLOR_STATE_ACTIVE,
+    LOW_SATURATION_COLOR_STATE_INACTIVE,
+    COLOR_STATE_DISABLED
+  ],
+  saturated: DEFAULT_COLOR_STATE_VARIANTS.saturated
+};
+
+/**
+ * Surfaces shift their own lightness instead of jumping to the contrast
+ * primitive, so their states stay subtler than other low-saturation colors.
+ */
+const SURFACE_COLOR_STATE_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    SURFACE_LOW_SATURATION_COLOR_STATE_ACTIVE,
+    COLOR_STATE_INACTIVE,
+    COLOR_STATE_DISABLED
+  ],
+  saturated: DEFAULT_COLOR_STATE_VARIANTS.saturated
+};
+
+/**
+ * Status colors that receive generated `on-*` (text) and `*-subtle`
+ * (low-emphasis background) companions when missing.
+ */
+const STATUS_COLOR_KEYS = [
+  "danger",
+  "warning",
+  "info",
+  "discovery",
+  "success"
+] as const;
+
+/**
+ * Primary and tertiary colors are copied into the `base` theme as `base` and
+ * `base-subtle`, so it is generated like a status theme (`accent`, `active`,
+ * `subtle`, `onAccent`, `ring`, …). Rings and states are generated for these
+ * copies, not for primary, secondary, or tertiary.
+ */
+const BASE_THEME_COLOR_NAMES: Record<string, string> = {
+  primary: "base",
+  tertiary: "base-subtle"
+};
+
+/**
+ * Colors that get their own Tamagui child theme, with generated companion,
+ * state, and focus ring tokens.
+ */
+const THEME_COLOR_KEYS = ["base", ...STATUS_COLOR_KEYS] as const;
+
+/** Every token in this group receives state variants. */
+const COLOR_STATE_GROUP_KEY = "surface";
+
+/** Standalone color tokens that receive state variants. */
+const COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
+  border: {
+    lowSaturation: [
+      INCREASED_LOW_SATURATION_COLOR_STATE_ACTIVE,
+      LOW_SATURATION_COLOR_STATE_INACTIVE,
+      COLOR_STATE_DISABLED
+    ],
+    saturated: [
+      BORDER_COLOR_STATE_ACTIVE,
       COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ]
   },
-  accent: ACCENT_COLOR_STATE_VARIANTS,
-  "on-accent": ACCENT_COLOR_STATE_VARIANTS,
-  muted: MUTED_COLOR_STATE_VARIANTS,
-  "on-muted": ACCENT_COLOR_STATE_VARIANTS
+  ...Object.fromEntries(
+    THEME_COLOR_KEYS.flatMap(key => [
+      [key, DEFAULT_COLOR_STATE_VARIANTS],
+      [`${key}-subtle`, SUBTLE_COLOR_STATE_VARIANTS]
+    ])
+  )
 };
 
-const COLOR_STATE_GROUP_KEYS = new Set(Object.keys(COLOR_STATE_VARIANTS));
+/** OKLCH chroma below which a color uses the low-saturation state variants. */
+const LOW_SATURATION_CHROMA = 0.02;
 
-const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
-  link: {
-    base: BASE_COLOR_STATE_TOKEN_VARIANTS,
-    theme: [
-      THEME_COLOR_STATE_HOVER,
-      THEME_COLOR_STATE_ACTIVE,
-      COLOR_STATE_INACTIVE
-    ]
-  },
-  hairline: {
-    base: [
-      COLOR_STATE_HOVER,
-      INCREASED_BASE_COLOR_STATE_ACTIVE,
-      BASE_COLOR_STATE_INACTIVE
-    ],
-    theme: [
-      THEME_COLOR_STATE_HOVER,
-      HAIRLINE_THEME_COLOR_STATE_ACTIVE,
-      COLOR_STATE_INACTIVE
-    ]
-  }
-};
-
-const BASE_RING_OPACITY = 0.08;
-const THEME_RING_OPACITY = 0.15;
-const MINIMUM_MUTED_CONTRAST_RATIO = 6.6;
+const LOW_SATURATION_RING_OPACITY = 0.2;
+const SATURATED_RING_OPACITY = 0.15;
+const MINIMUM_SUBTLE_CONTRAST_RATIO = 6.6;
 const MINIMUM_INVERSE_CONTRAST_RATIO = 2;
-const MUTED_COLOR_LIGHTNESS_STEP = 0.01;
-const MAX_MUTED_COLOR_ADJUSTMENTS = 100;
-const MUTED_COLOR_GAMUT_SEARCH_ITERATIONS = 32;
+const SUBTLE_COLOR_LIGHTNESS_STEP = 0.01;
+const MAX_SUBTLE_COLOR_ADJUSTMENTS = 100;
+const SUBTLE_COLOR_GAMUT_SEARCH_ITERATIONS = 32;
+/** OKLCH lightness shift for active colors already near the contrast primitive. */
+const CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT = 0.1;
 
 function isStateVariantKey(key: string): boolean {
   return (
-    key.toLowerCase().endsWith("-hover") ||
     key.toLowerCase().endsWith("-active") ||
     key.toLowerCase().endsWith("-inactive") ||
     key.toLowerCase().endsWith("-disabled")
@@ -649,6 +663,29 @@ function applyOpacity(hex: string, opacity: number): string {
   return `${rgb}${alphaHex(alpha)}`;
 }
 
+/** Alpha-composite `hex` at `opacity` over an opaque `background` (sRGB). */
+function applyFadeOver(
+  hex: string,
+  background: string,
+  opacity: number
+): string {
+  const foreground = expandHex(hex).toLowerCase();
+  const base = expandHex(convertColor(background) ?? background).toLowerCase();
+  const existingAlpha =
+    foreground.length === 9
+      ? Number.parseInt(foreground.slice(7, 9), 16) / 255
+      : 1;
+  const alpha = clamp01(existingAlpha * opacity);
+  const channel = (offset: number) =>
+    srgbHexChannel(
+      (Number.parseInt(foreground.slice(offset, offset + 2), 16) * alpha +
+        Number.parseInt(base.slice(offset, offset + 2), 16) * (1 - alpha)) /
+        255
+    );
+
+  return `#${channel(1)}${channel(3)}${channel(5)}`;
+}
+
 function applyRingOpacity(
   node: unknown,
   tree: unknown,
@@ -664,8 +701,6 @@ function applyRingOpacity(
 
   if (inRingGroup && isTokenNode(node) && resolveType(node) === "shadow") {
     const value = node.$value;
-    const opacity =
-      node.theme === "base" ? BASE_RING_OPACITY : THEME_RING_OPACITY;
     const applyToLayer = (layer: unknown): unknown => {
       if (!isPlainObject(layer) || !("color" in layer)) {
         return layer;
@@ -676,7 +711,12 @@ function applyRingOpacity(
       return color
         ? {
             ...layer,
-            color: applyOpacity(color, opacity)
+            color: applyOpacity(
+              color,
+              isLowSaturation(color)
+                ? LOW_SATURATION_RING_OPACITY
+                : SATURATED_RING_OPACITY
+            )
           }
         : layer;
     };
@@ -720,41 +760,38 @@ function ringLayer(color: string, spread: number): Record<string, unknown> {
 
 /**
  * Add the default, subtle, offset, and subtle-offset ring tokens for each
- * accent theme (e.g. `ring.base`, `ring.base-subtle`, `ring.base-offset`,
- * `ring.base-subtle-offset`) unless they are already defined.
+ * ring color (e.g. `ring.danger`, `ring.danger-subtle`, `ring.danger-offset`,
+ * `ring.danger-subtle-offset`) unless they are already defined.
  */
 function addMissingRingTokens(dictionary: unknown): unknown {
   if (!isPlainObject(dictionary) || !isPlainObject(dictionary.color)) {
     return dictionary;
   }
 
-  const accent = colorGroup(dictionary.color, "accent");
+  const color = dictionary.color;
   const ring = isPlainObject(dictionary.ring) ? { ...dictionary.ring } : {};
   let changed = false;
 
-  for (const [name, token] of Object.entries(accent)) {
-    if (!isTokenNode(token) || accentThemeName(token) !== name) {
+  for (const name of THEME_COLOR_KEYS) {
+    if (!isTokenNode(color[name])) {
       continue;
     }
 
-    const accentColor = `{color.accent.${name}}`;
-    const gap = ringLayer("{color.surface.elevated}", 3);
+    const ringColor = `{color.${name}}`;
+    const gap = ringLayer("{color.surface-elevated}", 3);
     const variants: Record<string, [string, unknown[]]> = {
-      [name]: [
-        `${name} 3px focus ring with no gap`,
-        [ringLayer(accentColor, 3)]
-      ],
+      [name]: [`${name} 3px focus ring with no gap`, [ringLayer(ringColor, 3)]],
       [`${name}-subtle`]: [
         `${name} 1px hairline focus ring with no gap`,
-        [ringLayer(accentColor, 1)]
+        [ringLayer(ringColor, 1)]
       ],
       [`${name}-offset`]: [
         `${name} 3px focus ring with a 3px gap`,
-        [gap, ringLayer(accentColor, 6)]
+        [gap, ringLayer(ringColor, 6)]
       ],
       [`${name}-subtle-offset`]: [
         `${name} 1px focus ring with a 3px gap`,
-        [gap, ringLayer(accentColor, 4)]
+        [gap, ringLayer(ringColor, 4)]
       ]
     };
 
@@ -767,13 +804,17 @@ function addMissingRingTokens(dictionary: unknown): unknown {
         $description: `Generated ${description}`,
         $type: "shadow",
         $value: value,
-        theme: name
+        theme: colorTokenTheme(name)
       };
       changed = true;
     }
   }
 
   return changed ? { ...dictionary, ring } : dictionary;
+}
+
+function isLowSaturation(hex: string): boolean {
+  return hexToOklch(hex).chroma < LOW_SATURATION_CHROMA;
 }
 
 function isGreyscale(hex: string): boolean {
@@ -858,7 +899,11 @@ function oklchToGamutMappedHex(
   let maximumChroma = chroma;
 
   // Find the highest in-gamut chroma while holding lightness and hue fixed.
-  for (let index = 0; index < MUTED_COLOR_GAMUT_SEARCH_ITERATIONS; index += 1) {
+  for (
+    let index = 0;
+    index < SUBTLE_COLOR_GAMUT_SEARCH_ITERATIONS;
+    index += 1
+  ) {
     const candidateChroma = (minimumChroma + maximumChroma) / 2;
     if (isInSrgbGamut(oklchToLinearSrgb(lightness, candidateChroma, hue))) {
       minimumChroma = candidateChroma;
@@ -874,6 +919,12 @@ function applyBrightness(hex: string, factor: number): string {
   const { lightness, chroma, hue, alpha } = hexToOklch(hex);
 
   return oklchToHex(clamp01(lightness * factor), chroma, hue, alpha);
+}
+
+function applyLightnessShift(hex: string, shift: number): string {
+  const { lightness, chroma, hue, alpha } = hexToOklch(hex);
+
+  return oklchToHex(clamp01(lightness + shift), chroma, hue, alpha);
 }
 
 function applySaturation(hex: string, factor: number): string {
@@ -902,7 +953,7 @@ function contrastRatio(first: string, second: string): number {
   return (lighter + 0.05) / (darker + 0.05);
 }
 
-function createOnAccentColor(hex: string): "#FAFAFA" | "#151518" {
+function createOnColor(hex: string): "#FAFAFA" | "#151518" {
   const whiteContrast = contrastRatio(hex, "#FAFAFA");
   if (whiteContrast >= MINIMUM_INVERSE_CONTRAST_RATIO) {
     return "#FAFAFA";
@@ -919,41 +970,41 @@ function createOnAccentColor(hex: string): "#FAFAFA" | "#151518" {
 function createMutedColor(
   hex: string,
   parentTheme: ParentTheme
-): { muted: string; onMuted?: string } {
+): { subtle: string; onMuted?: string } {
   const { lightness, chroma, hue, alpha } = hexToOklch(hex);
-  const mutedDirection = parentTheme === "light" ? 1 : -1;
-  const onMutedDirection = -mutedDirection;
-  let mutedLightness = lightness;
+  const subtleDirection = parentTheme === "light" ? 1 : -1;
+  const onMutedDirection = -subtleDirection;
+  let subtleLightness = lightness;
   let onMutedLightness = lightness;
-  let muted = hex;
+  let subtle = hex;
   let onMuted = hex;
 
-  for (let index = 0; index < MAX_MUTED_COLOR_ADJUSTMENTS; index += 1) {
-    mutedLightness = clamp01(
-      mutedLightness + mutedDirection * MUTED_COLOR_LIGHTNESS_STEP
+  for (let index = 0; index < MAX_SUBTLE_COLOR_ADJUSTMENTS; index += 1) {
+    subtleLightness = clamp01(
+      subtleLightness + subtleDirection * SUBTLE_COLOR_LIGHTNESS_STEP
     );
-    muted = oklchToGamutMappedHex(mutedLightness, chroma, hue, alpha);
-    if (contrastRatio(muted, onMuted) >= MINIMUM_MUTED_CONTRAST_RATIO) {
-      return onMuted === hex ? { muted } : { muted, onMuted };
+    subtle = oklchToGamutMappedHex(subtleLightness, chroma, hue, alpha);
+    if (contrastRatio(subtle, onMuted) >= MINIMUM_SUBTLE_CONTRAST_RATIO) {
+      return onMuted === hex ? { subtle } : { subtle, onMuted };
     }
 
     onMutedLightness = clamp01(
-      onMutedLightness + onMutedDirection * MUTED_COLOR_LIGHTNESS_STEP
+      onMutedLightness + onMutedDirection * SUBTLE_COLOR_LIGHTNESS_STEP
     );
     onMuted = oklchToGamutMappedHex(onMutedLightness, chroma, hue, alpha);
-    if (contrastRatio(muted, onMuted) >= MINIMUM_MUTED_CONTRAST_RATIO) {
-      return { muted, onMuted };
+    if (contrastRatio(subtle, onMuted) >= MINIMUM_SUBTLE_CONTRAST_RATIO) {
+      return { subtle, onMuted };
     }
 
     if (
-      (mutedLightness === 0 || mutedLightness === 1) &&
+      (subtleLightness === 0 || subtleLightness === 1) &&
       (onMutedLightness === 0 || onMutedLightness === 1)
     ) {
       break;
     }
   }
 
-  throw new Error(`Unable to generate an accessible muted pair for ${hex}`);
+  throw new Error(`Unable to generate an accessible subtle pair for ${hex}`);
 }
 
 function isLightColor(hex: string, parentTheme?: ParentTheme): boolean {
@@ -989,13 +1040,38 @@ function directedBrightnessFactor(
   return isDarkColor(hex, parentTheme) ? factor : 2 - factor;
 }
 
-function baseThemePrimitive(
+function contrastPrimitive(
   variant: ColorStateVariant,
   parentTheme?: ParentTheme
 ): string | undefined {
-  return variant.useBaseThemePrimitive && parentTheme
-    ? BASE_THEME_ACTIVE_PRIMITIVES[parentTheme]
+  return variant.useContrastPrimitive && parentTheme
+    ? CONTRAST_PRIMITIVES[parentTheme]
     : undefined;
+}
+
+/**
+ * Active colors that already sit near the parent theme's contrast primitive
+ * (near-white in dark themes, near-black in light themes) would barely change
+ * by jumping to it, so their lightness shifts toward the middle instead.
+ */
+function contrastSideLightnessShift(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
+): number | undefined {
+  if (variant.name !== "active" || !contrastPrimitive(variant, parentTheme)) {
+    return undefined;
+  }
+
+  if (parentTheme === "dark" && isWhiteColor(hex)) {
+    return -CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT;
+  }
+
+  if (parentTheme === "light" && isBlackColor(hex)) {
+    return CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT;
+  }
+
+  return undefined;
 }
 
 function stateBrightnessFactor(
@@ -1007,7 +1083,7 @@ function stateBrightnessFactor(
     return 1;
   }
 
-  if (baseThemePrimitive(variant, parentTheme)) {
+  if (contrastPrimitive(variant, parentTheme)) {
     return variant.name === "active" ? 1 : variant.brightness;
   }
 
@@ -1019,10 +1095,14 @@ function applyStateTransform(
   variant: ColorStateVariant,
   parentTheme?: ParentTheme
 ): string {
-  const primitive = baseThemePrimitive(variant, parentTheme);
+  const shift = contrastSideLightnessShift(hex, variant, parentTheme);
+  const primitive =
+    shift === undefined ? contrastPrimitive(variant, parentTheme) : undefined;
   let transformed = primitive ?? hex;
 
-  if (
+  if (shift !== undefined) {
+    transformed = applyLightnessShift(hex, shift);
+  } else if (
     variant.brightness !== undefined &&
     !(primitive && variant.name === "active")
   ) {
@@ -1033,7 +1113,14 @@ function applyStateTransform(
   }
 
   if (variant.saturation !== undefined && !isGreyscale(hex)) {
-    return applySaturation(transformed, variant.saturation);
+    transformed = applySaturation(transformed, variant.saturation);
+    if (variant.fadeOver === undefined) {
+      return transformed;
+    }
+  }
+
+  if (variant.fadeOver !== undefined) {
+    return applyFadeOver(transformed, variant.fadeOver, variant.opacity ?? 1);
   }
 
   if (variant.opacity !== undefined) {
@@ -1049,10 +1136,15 @@ function variantDetail(
   parentTheme?: ParentTheme
 ): string {
   const details: string[] = [];
-  const primitive = baseThemePrimitive(variant, parentTheme);
+  const shift = contrastSideLightnessShift(hex, variant, parentTheme);
+  const primitive = contrastPrimitive(variant, parentTheme);
 
-  if (primitive && variant.name === "active") {
-    details.push(`${parentTheme} base primitive`);
+  if (shift !== undefined) {
+    details.push(
+      `${Math.round(Math.abs(shift) * 100)}% ${shift < 0 ? "darker" : "lighter"}`
+    );
+  } else if (primitive && variant.name === "active") {
+    details.push(`${parentTheme} contrast primitive`);
   } else if (variant.brightness !== undefined) {
     const factor = stateBrightnessFactor(hex, variant, parentTheme);
     const percent = Math.round((factor - 1) * 100);
@@ -1064,7 +1156,16 @@ function variantDetail(
 
   if (variant.saturation !== undefined && !isGreyscale(hex)) {
     details.push(`${Math.round(variant.saturation * 100)}% saturation`);
-  } else if (variant.opacity !== undefined) {
+  }
+
+  if (variant.fadeOver !== undefined) {
+    details.push(
+      `${Math.round((variant.opacity ?? 1) * 100)}% over ${variant.fadeOver}`
+    );
+  } else if (
+    variant.opacity !== undefined &&
+    (variant.saturation === undefined || isGreyscale(hex))
+  ) {
     details.push(`${Math.round(variant.opacity * 100)}% opacity`);
   }
 
@@ -1094,7 +1195,7 @@ function createStateToken(
 function addColorStateTokens(
   group: Record<string, unknown>,
   tree: unknown,
-  variants: readonly ColorStateVariant[] | ThemeColorStateVariants,
+  variants: ColorStateVariants,
   onlyKey?: string,
   parentTheme?: ParentTheme
 ): Record<string, unknown> {
@@ -1121,10 +1222,9 @@ function addColorStateTokens(
       continue;
     }
 
-    const tokenVariants =
-      "base" in variants
-        ? variants[token.theme === "base" ? "base" : "theme"]
-        : variants;
+    const tokenVariants = isLowSaturation(hex)
+      ? variants.lowSaturation
+      : variants.saturated;
     const tokenParentTheme =
       parentThemeFromDescription(token.$description) ?? parentTheme;
 
@@ -1146,52 +1246,22 @@ function addColorStateTokens(
   return result;
 }
 
-function accentThemeName(token: Record<string, unknown>): string | undefined {
-  return typeof token.theme === "string"
-    ? token.theme
-    : typeof token.$theme === "string"
-      ? token.$theme
-      : undefined;
-}
-
-function colorGroup(
-  group: Record<string, unknown>,
-  key: string
-): Record<string, unknown> {
-  const value = group[key];
-
-  if (!isPlainObject(value) || isTokenNode(value)) {
-    return {};
-  }
-
-  return { ...(value as Record<string, unknown>) };
-}
-
-function addMissingAccentCompanionTokens(
+/**
+ * Add an `on-*-accent` text color (renamed from `on-*` when defined), an
+ * `*-accent` alias, a `*-subtle` low-emphasis background, and an `on-*-subtle`
+ * text color for each theme color (`base` and the status colors) that does
+ * not define them, so state variants can be generated for the subtle
+ * backgrounds.
+ */
+function addMissingStatusCompanionTokens(
   color: Record<string, unknown>,
   tree: unknown,
   parentTheme?: ParentTheme
 ): Record<string, unknown> {
-  const accent = colorGroup(color, "accent");
-  if (Object.keys(accent).length === 0) {
-    return color;
-  }
-
-  const onAccent = colorGroup(color, "on-accent");
-  const muted = colorGroup(color, "muted");
-  const onMuted = colorGroup(color, "on-muted");
-  let changed = false;
-
-  for (const [name, token] of Object.entries(accent)) {
-    if (
-      !isTokenNode(token) ||
-      name.startsWith("$") ||
-      isStateVariantKey(name)
-    ) {
-      continue;
-    }
-
-    if (accentThemeName(token) !== name) {
+  const result = { ...color };
+  for (const name of THEME_COLOR_KEYS) {
+    const token = color[name];
+    if (!isTokenNode(token)) {
       continue;
     }
 
@@ -1201,75 +1271,139 @@ function addMissingAccentCompanionTokens(
       continue;
     }
 
-    if (!(name in onAccent)) {
-      onAccent[name] = {
+    // Tamagui drops the theme name from child theme keys, so `danger` would be
+    // empty and `on-danger` would be `on`. The `*-accent` names become `accent`
+    // and `onAccent` in the `danger` theme; `on-danger` is renamed rather than
+    // aliased so it does not leak into the root themes.
+    const onToken = color[`on-${name}`];
+    delete result[`on-${name}`];
+    result[`on-${name}-accent`] ??= isTokenNode(onToken)
+      ? { ...onToken, theme: name, group: name }
+      : {
+          ...token,
+          $type: "color",
+          $value: createOnColor(hex),
+          $description: `Generated text and icon color on ${name} backgrounds`,
+          theme: name,
+          group: name
+        };
+
+    result[`${name}-accent`] ??= {
+      $type: "color",
+      $value: `{color.${name}}`,
+      $description: `Alias of ${name} for the ${name} theme`,
+      theme: name,
+      group: name
+    };
+
+    let onMuted: string | undefined;
+    if (parentTheme && !(`${name}-subtle` in color)) {
+      const pair = createMutedColor(hex, parentTheme);
+      result[`${name}-subtle`] = {
         ...token,
         $type: "color",
-        $value: createOnAccentColor(hex)
+        $value: pair.subtle,
+        $description: `Generated low-emphasis ${name} background for the ${parentTheme} theme`
       };
-      changed = true;
+      onMuted = pair.onMuted ?? hex;
+    } else if (isTokenNode(color[`${name}-subtle`])) {
+      const subtleHex = resolveColorHex(
+        (color[`${name}-subtle`] as Record<string, unknown>).$value,
+        tree
+      );
+      onMuted = subtleHex && createOnColor(subtleHex);
     }
 
-    if (!parentTheme) {
-      continue;
-    }
-
-    let generatedOnMuted: unknown = token.$value;
-    if (!(name in muted)) {
-      const generated = createMutedColor(hex, parentTheme);
-      generatedOnMuted = generated.onMuted ?? token.$value;
-      muted[name] = {
+    if (onMuted && !(`on-${name}-subtle` in color)) {
+      result[`on-${name}-subtle`] = {
         ...token,
         $type: "color",
-        $value: generated.muted,
-        $description: `Generated ${name} muted background for the ${parentTheme} theme`
+        $value: onMuted,
+        $description: `Generated text and icon color on ${name}-subtle backgrounds`
       };
-      changed = true;
-    }
-
-    if (!(name in onMuted)) {
-      onMuted[name] = {
-        ...token,
-        $type: "color",
-        $value: generatedOnMuted,
-        $description: `Generated ${name} foreground on muted backgrounds`
-      };
-      changed = true;
     }
   }
 
-  return changed
-    ? {
-        ...color,
-        "on-accent": onAccent,
-        muted,
-        "on-muted": onMuted
-      }
-    : color;
+  return result;
 }
 
-function addAccentCompanionStateVariants(
-  color: Record<string, unknown>,
-  tree: unknown,
-  parentTheme?: ParentTheme
+/** Strip the `on-` prefix and `-subtle` / state suffixes from a token name. */
+function colorTokenRoot(name: string): string {
+  return name
+    .replace(/^on-/, "")
+    .replace(/-(?:active|inactive|disabled)$/i, "")
+    .replace(/-subtle$/, "");
+}
+
+/**
+ * Resolve the Tamagui theme for a color token name: the theme color name for
+ * `base` and status colors (including their `on-*`, `*-subtle`, and state
+ * variants). Primary, secondary, and tertiary colors stay in the root light
+ * and dark themes so every child theme inherits them.
+ */
+function colorTokenTheme(name: string): string | undefined {
+  const root = colorTokenRoot(name);
+
+  return (THEME_COLOR_KEYS as readonly string[]).includes(root)
+    ? root
+    : undefined;
+}
+
+/**
+ * Copy each primary and secondary color (and its `on-*` color) into the
+ * `base` theme as `base` / `base-subtle`.
+ */
+function addBaseThemeAliases(
+  color: Record<string, unknown>
 ): Record<string, unknown> {
-  let result = color;
-  for (const groupKey of ["on-accent", "muted", "on-muted"]) {
-    const group = result[groupKey];
-    if (!isPlainObject(group) || isTokenNode(group)) {
+  const result = { ...color };
+  for (const [name, token] of Object.entries(color)) {
+    const root = colorTokenRoot(name);
+    const baseName = BASE_THEME_COLOR_NAMES[root];
+    if (!baseName || !isTokenNode(token)) {
       continue;
     }
 
-    result = {
-      ...result,
-      [groupKey]: addColorStateTokens(
-        group,
-        tree,
-        COLOR_STATE_VARIANTS[groupKey]!,
-        undefined,
-        parentTheme
-      )
+    // Copied rather than referenced so states resolve inside nested
+    // `light` / `dark` color groups.
+    result[name.replace(root, baseName)] ??= {
+      ...token,
+      theme: "base",
+      group: "base"
     };
+  }
+
+  return result;
+}
+
+/** Add a `theme` to each themed color token that does not define one. */
+function addColorTokenThemes(
+  color: Record<string, unknown>
+): Record<string, unknown> {
+  const result = { ...color };
+  for (const [name, token] of Object.entries(color)) {
+    const theme = colorTokenTheme(name);
+    if (theme && isTokenNode(token) && !("theme" in token)) {
+      result[name] = { ...token, theme };
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Add a `group` (the main token name) to each state, `on-*`, and `*-subtle`
+ * color token that does not define one, e.g. `border-active` → `border`.
+ */
+function addColorTokenGroups(
+  group: Record<string, unknown>
+): Record<string, unknown> {
+  const result = { ...group };
+  for (const [name, token] of Object.entries(group)) {
+    const root = colorTokenRoot(name);
+    if (root !== name && isTokenNode(token) && !("group" in token)) {
+      result[name] = { ...token, group: root };
+    }
   }
 
   return result;
@@ -1308,35 +1442,30 @@ function injectColorStateVariants(
     );
   }
 
-  if (key && COLOR_STATE_GROUP_KEYS.has(key)) {
-    return addColorStateTokens(
-      result,
-      tree,
-      COLOR_STATE_VARIANTS[key]!,
-      undefined,
-      parentTheme
+  if (key?.startsWith(`${COLOR_STATE_GROUP_KEY}-`)) {
+    return addColorTokenGroups(
+      addColorStateTokens(
+        result,
+        tree,
+        SURFACE_COLOR_STATE_VARIANTS,
+        undefined,
+        parentTheme
+      )
     );
   }
 
-  let withLoneTokens = result;
-  for (const groupKey of COLOR_STATE_GROUP_KEYS) {
-    if (isTokenNode(withLoneTokens[groupKey])) {
-      withLoneTokens = addColorStateTokens(
-        withLoneTokens,
-        tree,
-        COLOR_STATE_VARIANTS[groupKey]!,
-        groupKey,
-        parentTheme
-      );
-    }
-  }
-
-  for (const [tokenKey, variants] of Object.entries(
-    COLOR_STATE_TOKEN_VARIANTS
-  )) {
-    if (isTokenNode(withLoneTokens[tokenKey])) {
-      withLoneTokens = addColorStateTokens(
-        withLoneTokens,
+  let withStates =
+    key === "color"
+      ? addMissingStatusCompanionTokens(
+          addBaseThemeAliases(result),
+          tree,
+          parentTheme
+        )
+      : result;
+  for (const [tokenKey, variants] of Object.entries(COLOR_STATE_VARIANTS)) {
+    if (isTokenNode(withStates[tokenKey])) {
+      withStates = addColorStateTokens(
+        withStates,
         tree,
         variants,
         tokenKey,
@@ -1345,43 +1474,43 @@ function injectColorStateVariants(
     }
   }
 
-  if (key === "color") {
-    return addAccentCompanionStateVariants(
-      addMissingAccentCompanionTokens(withLoneTokens, tree, parentTheme),
-      tree,
-      parentTheme
-    );
-  }
-
-  return withLoneTokens;
+  return key === "color"
+    ? addColorTokenGroups(addColorTokenThemes(withStates))
+    : withStates;
 }
 
 /**
  * Style Dictionary preprocessor: rewrite color `$value`s (and nested shadow
  * colors) to hex so generators emit `#rrggbb` / `#rrggbbaa` instead of
- * `oklch()`. State variants are limited to surface and accent color groups,
- * plus the standalone link and hairline colors. Surface and accent colors
- * receive hover, active, inactive, and disabled variants; link and hairline
- * colors receive hover, active, and inactive variants.
+ * `oklch()`. Primary and secondary colors are first copied into the `base`
+ * theme as `base` / `base-subtle`; primary, secondary, and tertiary themselves
+ * stay in the root light and dark themes without rings or states. For `base`
+ * and each status color, missing `on-*-accent` text (Tamagui `onAccent`; any
+ * `on-*` color is renamed to it), `*-subtle` background, and `on-*-subtle`
+ * text colors are generated next, along with a `*-accent` alias (Tamagui
+ * `accent`), then active, inactive, and disabled variants are added to the
+ * surface colors, border, and each theme color and its `*-subtle` color.
+ * Low-saturation colors derive their states from the parent theme's contrast
+ * primitive (surfaces use a subtler shift of their own lightness, and active
+ * colors already near that primitive shift toward the middle); saturated
+ * colors scale their own lightness. Theme colors get their name as theme,
+ * unless one is already set. State, `on-*`, and `*-subtle` color tokens also
+ * get their main token name as `group` (e.g. `border-active` → `border`).
+ * Finally, focus rings are generated for `base` and each status color.
  */
 export function tamaguiPreprocessor(
   dictionary: PreprocessedTokens
 ): PreprocessedTokens {
-  const converted = addMissingRingTokens(
-    walk(dictionary)
-  ) as PreprocessedTokens;
-  const withRingOpacity = applyRingOpacity(
-    converted,
-    converted
-  ) as PreprocessedTokens;
+  const converted = walk(dictionary) as PreprocessedTokens;
   const withStateVariants = injectColorStateVariants(
-    withRingOpacity,
-    withRingOpacity,
+    converted,
+    converted,
     undefined,
-    parentThemeFromDictionary(withRingOpacity)
+    parentThemeFromDictionary(converted)
   ) as PreprocessedTokens;
+  const withRings = addMissingRingTokens(withStateVariants);
 
-  return withStateVariants;
+  return applyRingOpacity(withRings, withRings) as PreprocessedTokens;
 }
 
 export default definePlugin(() => ({

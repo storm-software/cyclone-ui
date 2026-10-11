@@ -157,13 +157,6 @@ export const MinimumRating: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand",
-    defaultValue: 3
-  }
-};
-
 export const Discovery: Story = {
   args: {
     validate: validation("discovery")

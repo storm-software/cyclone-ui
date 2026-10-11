@@ -75,7 +75,7 @@ const PropertyColumn = styled(InlineCodeText, {
   variants: {
     deprecated: {
       true: {
-        color: "inkSubtle",
+        color: "tertiary",
         textDecorationLine: "line-through"
       }
     }
@@ -84,21 +84,21 @@ const PropertyColumn = styled(InlineCodeText, {
 
 const TypeColumn = styled(BodyText, {
   displayName: "TypeTableTypeColumn",
-  color: "inkSubtle",
+  color: "tertiary",
   fontFamily: "title-md",
   display: "max-sm:none"
 });
 
 const TypeLink = styled(Link, {
   displayName: "TypeTableTypeLink",
-  color: "link",
+  color: "primary",
   textDecorationLine: "underline",
   display: "max-sm:none"
 });
 
 const ColumnLabel = styled(BodyText, {
   displayName: "TypeTableColumnLabel",
-  color: "inkSubtle",
+  color: "tertiary",
   fontFamily: "title-md"
 });
 
@@ -166,7 +166,7 @@ const TypeTableItem = ({
       <Collapsible.Header
         paddingHorizontal="3xl"
         paddingVertical="2xl"
-        backgroundColor="hover:surfaceElevatedHover">
+        backgroundColor="hover:tertiary">
         <TypeTableRow padding={0} flex={1}>
           <PropertyColumn deprecated={item.deprecated}>
             {`${name}${item.required ? "" : "?"}`}

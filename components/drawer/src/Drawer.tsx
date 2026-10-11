@@ -42,7 +42,7 @@ export type DrawerFooterProps = SheetFooterProps;
 
 const DrawerFrameImpl: FC<DrawerFrameProps> = ({
   borderRadius = "drawer",
-  borderColor = "hairline",
+  borderColor = "border",
   ...props
 }) => (
   <Sheet.Frame

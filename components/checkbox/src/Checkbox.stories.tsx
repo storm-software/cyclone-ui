@@ -94,12 +94,6 @@ export const Indeterminate: Story = {
   render: () => <Checkbox checked="indeterminate" />
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
 export const Discovery: Story = {
   args: {
     validate: validation("discovery")

@@ -26,7 +26,7 @@ import { SizableText } from "@tamagui/text";
 export const EyebrowText = styled(SizableText, {
   displayName: "EyebrowText",
   render: "h5",
-  color: "inkSubtle",
+  color: "tertiary",
   fontFamily: "eyebrow",
   // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
   // only define `true` plus their own step, so name the default step explicitly.

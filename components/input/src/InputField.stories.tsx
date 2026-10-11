@@ -363,26 +363,6 @@ export const DefaultValue: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
-export const BrandFloating: Story = {
-  args: {
-    theme: "brand",
-    labelVariant: "floating"
-  }
-};
-
-export const BrandUnderlined: Story = {
-  args: {
-    theme: "brand",
-    variant: "underlined"
-  }
-};
-
 export const Discovery: Story = {
   args: {
     validate: validation("discovery")
@@ -501,46 +481,6 @@ export const SuccessFloating: Story = {
 export const SuccessUnderlined: Story = {
   args: {
     validate: validation("success"),
-    variant: "underlined"
-  }
-};
-
-export const Positive: Story = {
-  args: {
-    validate: validation("positive")
-  }
-};
-
-export const PositiveFloating: Story = {
-  args: {
-    validate: validation("positive"),
-    labelVariant: "floating"
-  }
-};
-
-export const PositiveUnderlined: Story = {
-  args: {
-    validate: validation("positive"),
-    variant: "underlined"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    validate: validation("negative")
-  }
-};
-
-export const NegativeFloating: Story = {
-  args: {
-    validate: validation("negative"),
-    labelVariant: "floating"
-  }
-};
-
-export const NegativeUnderlined: Story = {
-  args: {
-    validate: validation("negative"),
     variant: "underlined"
   }
 };

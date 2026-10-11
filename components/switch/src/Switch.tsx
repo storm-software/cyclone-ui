@@ -86,7 +86,7 @@ const SwitchFrame = styled(View, {
   backgroundColor: "surfaceElevated",
   borderWidth: 1,
   borderColor:
-    "hairline hover:accentHover focus:accentActive focus-visible:accentActive",
+    "border hover:active focus:active focus-visible:active",
   boxShadow: "none focus:ringOffset focus-visible:ringOffset",
   tabIndex: 0,
   variants: {
@@ -107,7 +107,7 @@ const SwitchFrame = styled(View, {
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:accentHover"
+        borderColor: "accent hover:active"
       }
     },
 
@@ -116,7 +116,7 @@ const SwitchFrame = styled(View, {
         userSelect: "none",
         cursor: "not-allowed",
         borderColor:
-          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled"
+          "disabled hover:disabled press:disabled focus:disabled"
       }
     }
   } as const,
@@ -130,7 +130,7 @@ const SwitchThumb = styled(View, {
   displayName: "SwitchThumb",
   theme: "base",
   transition: "200ms",
-  backgroundColor: "muted",
+  backgroundColor: "subtle",
   borderRadius: 100_000,
   borderWidth: 0,
   justifyContent: "center",
@@ -138,7 +138,7 @@ const SwitchThumb = styled(View, {
   variants: {
     checked: {
       true: {
-        backgroundColor: "muted"
+        backgroundColor: "subtle"
       }
     },
 
@@ -234,7 +234,7 @@ const SwitchIcon = createStyledHOC(
         alignItems="center"
         flexGrow={0}
         flexShrink={1}
-        borderColor="group-hover/field:hairlineHover">
+        borderColor="group-hover/field:borderActive">
         <ThemeableIcon
           {...props}
           theme="base"
@@ -243,7 +243,7 @@ const SwitchIcon = createStyledHOC(
           color={
             (color ||
               (disabled
-                ? "onAccentDisabled"
+                ? "disabled"
                 : "onAccent")) as ThemeableIconProps["color"]
           }>
           {children}
@@ -290,8 +290,8 @@ const BaseSwitchImpl = createStyledHOC(
       ...props
     } = allProps;
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "accent" : "hairline";
-    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
+    const idleColor = hasValidationMessage ? "accent" : "border";
+    const focusColor = hasValidationMessage ? "active" : "borderActive";
 
     return (
       <SwitchContext.Provider
@@ -325,8 +325,8 @@ const BaseSwitchImpl = createStyledHOC(
                 : idleColor,
             // A call-site base replaces every lower-tier clause in v3, so the
             // v2 frame/variant hover color is restated.
-            `hover:${disabled ? "accentDisabled" : "accentHover"}`,
-            `group-hover/field:${disabled ? "accentDisabled" : focused ? focusColor : "accentHover"}`,
+            `hover:${disabled ? "disabled" : "active"}`,
+            `group-hover/field:${disabled ? "disabled" : focused ? focusColor : "active"}`,
             disabled ? undefined : `focus:${focusColor}`,
             `focus-visible:${focusColor}`
           ]

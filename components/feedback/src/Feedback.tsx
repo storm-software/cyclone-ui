@@ -148,7 +148,7 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
                 weight={disliked ? "fill" : "regular"}
                 color={
                   hovered && !disabled
-                    ? "accentHover"
+                    ? "active"
                     : disliked
                       ? "accent"
                       : "color"

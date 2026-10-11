@@ -56,7 +56,7 @@ const meta: Meta<typeof Toggle> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const iconColor = (pressed: boolean) => (pressed ? "inkEmphasis" : "inkSubtle");
+const iconColor = (pressed: boolean) => (pressed ? "primary" : "tertiary");
 
 export const Base: Story = {
   play: async ({ canvasElement }) => {

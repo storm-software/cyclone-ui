@@ -53,12 +53,6 @@ export const DisabledBase: Story = {
   render: args => <ValidationText {...args} />
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
 export const Discovery: Story = {
   args: {
     theme: "discovery"

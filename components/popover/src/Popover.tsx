@@ -64,11 +64,9 @@ const PopoverFrameImpl = createStyledHOC(
   ) => {
     return (
       <PopoverContext.Provider size={size}>
-        <PopoverFrame
-          ref={forwardedRef}
-          size={size}
-          allowFlip={true}
-          {...props}>
+        {/* Not `PopoverFrame`: a styled frame consumes `offset` as the CSS
+            `offset` style, so it never reaches the popper. */}
+        <TamaguiPopover ref={forwardedRef} allowFlip={true} {...props}>
           {children}
 
           {shouldAdapt && (
@@ -86,14 +84,14 @@ const PopoverFrameImpl = createStyledHOC(
                   <Adapt.Contents />
                 </Sheet.Container>
                 <Sheet.Overlay
-                  backgroundColor="overlayBackdrop"
+                  backgroundColor="backdrop"
                   transition="500ms"
                   opacity="enter:0 exit:0"
                 />
               </Sheet>
             </Adapt>
           )}
-        </PopoverFrame>
+        </TamaguiPopover>
       </PopoverContext.Provider>
     );
   },
@@ -114,7 +112,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   backgroundColor: "surfaceFloating",
   padding: "3xl",
   borderWidth: 1,
-  borderColor: "overlayBorder focus-visible:accentActive",
+  borderColor: "border focus-visible:active",
   borderRadius: "popover",
   marginHorizontal: "auto",
   y: "enter:-10px exit:-10px",
@@ -128,7 +126,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   variants: {
     elevated: {
       true: {
-        boxShadow: "0px 4px 30px overlayBackdrop"
+        boxShadow: "0px 4px 30px backdrop"
       }
     }
   } as const,

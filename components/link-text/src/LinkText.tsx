@@ -57,7 +57,7 @@ const LinkTextFrame = styled(SizableText, {
 
     cta: {
       true: {
-        fontFamily: "button",
+        fontFamily: "title-md",
         fontWeight: "true",
         textTransform: "uppercase"
       }
@@ -65,60 +65,50 @@ const LinkTextFrame = styled(SizableText, {
 
     variant: {
       base: {
-        color: "link hover:linkHover press:linkActive focus:linkActive",
-        textDecorationColor:
-          "link hover:linkHover press:linkActive focus:linkActive"
+        color: "primary hover:active press:active focus:active",
+        textDecorationColor: "primary hover:active press:active focus:active"
       },
       baseInverse: {
-        color: "accent hover:accentHover press:accentActive focus:accentActive",
-        textDecorationColor:
-          "accent hover:accentHover press:accentActive focus:accentActive"
+        color: "accent hover:active press:active focus:active",
+        textDecorationColor: "accent hover:active press:active focus:active"
       },
 
       mixed: {
-        color: "accent hover:accentHover press:accentActive focus:accentActive",
-        textDecorationColor:
-          "link hover:linkHover press:linkActive focus:linkActive"
+        color: "accent hover:active press:active focus:active",
+        textDecorationColor: "primary hover:active press:active focus:active"
       },
       mixedInverse: {
-        color: "link hover:accentHover press:linkActive focus:linkActive",
-        textDecorationColor:
-          "accent hover:accentHover press:accentActive focus:accentActive"
+        color: "primary hover:active press:active focus:active",
+        textDecorationColor: "accent hover:active press:active focus:active"
       },
 
       themed: {
-        color: "accent hover:accentHover press:accentActive focus:accentActive",
-        textDecorationColor:
-          "accent hover:accentHover press:accentActive focus:accentActive"
+        color: "accent hover:active press:active focus:active",
+        textDecorationColor: "accent hover:active press:active focus:active"
       },
       themedInverse: {
-        color: "accent hover:accentHover press:accentActive focus:accentActive",
-        textDecorationColor:
-          "accent hover:accentHover press:accentActive focus:accentActive"
+        color: "accent hover:active press:active focus:active",
+        textDecorationColor: "accent hover:active press:active focus:active"
       },
 
-      // Body ink at rest so the link recedes into running copy, then the theme
-      // accent on interaction. Hover steps to `accent` rather than `accentHover`,
-      // which is dimmer than `inkBody` in the dark base theme.
+      // Secondary ink at rest so the link recedes into running copy, then the
+      // theme accent on interaction.
       subtle: {
-        color: "inkBody hover:accent press:accentActive focus:accentActive",
-        textDecorationColor:
-          "inkSubtle hover:accent press:accentActive focus:accentActive"
+        color: "secondary hover:accent press:active focus:active",
+        textDecorationColor: "tertiary hover:accent press:active focus:active"
       },
 
-      // One step further down the ink scale. The text stops at `inkSubtle`,
-      // since `inkSubtlest` is not meant for content the user must read.
+      // One step further down the ink scale, with tertiary text.
       subtlest: {
-        color: "inkSubtle hover:accent press:accentActive focus:accentActive",
-        textDecorationColor:
-          "inkSubtlest hover:accent press:accentActive focus:accentActive"
+        color: "tertiary hover:accent press:active focus:active",
+        textDecorationColor: "tertiary hover:accent press:active focus:active"
       }
     },
 
     inverse: {
       true: {
-        color: "hover:accentHover",
-        textDecorationColor: "hover:accentHover"
+        color: "hover:active",
+        textDecorationColor: "hover:active"
       }
     },
 
@@ -134,7 +124,7 @@ const LinkTextFrame = styled(SizableText, {
     disabled: {
       true: {
         cursor: "default",
-        color: "linkInactive hover:linkInactive"
+        color: "inactive hover:inactive"
       }
     }
   } as const,
@@ -201,7 +191,7 @@ export const LinkText = createStyledHOC(
     }
 
     // `subtle` and `subtlest` have no inverse form: the `inverse` hover step
-    // (`accentHover`) would dim them in the dark base theme.
+    // (`active`) would dim them in the dark base theme.
     const subtle = variant === "subtle" || variant === "subtlest";
     if (inverse && !subtle) {
       variant = `${variant}Inverse` as BaseLinkTextVariant;

@@ -17,17 +17,14 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import type {
-  FieldLabelPlacement,
-  FormControlSize
-} from "@cyclone-ui/helpers";
+import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
   getFormSizeToken,
   getSized,
   useFieldHasValidationMessage,
-  useFieldLabelPlacement,
   useFieldLabelDefaults,
+  useFieldLabelPlacement,
   useFieldShouldShowPlaceholder,
   useFieldVariant,
   useFormControl
@@ -44,9 +41,12 @@ import {
 import { XGroup } from "@tamagui/group";
 import { XStack } from "@tamagui/stacks";
 import { useCallback, useMemo, useState } from "react";
-import type { InputChangeEventHandler } from "./types";
 import { InputValue } from "./InputValue";
-import type { InputContextProps, InputVariant } from "./types";
+import type {
+  InputChangeEventHandler,
+  InputContextProps,
+  InputVariant
+} from "./types";
 import { getInputSize, InputContext } from "./utilities";
 
 // Text inputs float their field label by default.
@@ -65,7 +65,7 @@ export const ControlUnderline = styled(View, {
   bottom: 0,
   width: 0,
   height: "xxs",
-  backgroundColor: "accentActive",
+  backgroundColor: "active",
   pointerEvents: "none",
   variants: {
     focused: {
@@ -79,7 +79,7 @@ export const ControlUnderline = styled(View, {
       true: {
         left: "50%",
         width: 0,
-        backgroundColor: "accentDisabled"
+        backgroundColor: "disabled"
       }
     }
   } as const,
@@ -102,7 +102,7 @@ const InputGroup = styled(XStack, {
   alignItems: "center",
   backgroundColor: "surfaceElevated",
   borderWidth: 1,
-  borderColor: "hairline",
+  borderColor: "border",
   outlineWidth: 0,
   outlineColor: "transparent",
   boxShadow: "none",
@@ -116,13 +116,13 @@ const InputGroup = styled(XStack, {
     // `variant`.
     focused: {
       true: {
-        borderColor: "accentActive"
+        borderColor: "active"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:accentHover"
+        borderColor: "accent hover:active"
       }
     },
 
@@ -150,8 +150,7 @@ const InputGroup = styled(XStack, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor:
-          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled"
+        borderColor: "disabled hover:disabled press:disabled focus:disabled"
       }
     },
 
@@ -301,9 +300,9 @@ const InputGroupImpl = createStyledHOC(
     const active = focused || locallyActive;
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
-    const idleColor = hasValidationMessage ? "accent" : "hairline";
-    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
-    const borderColor = `${active ? focusColor : idleColor} group-hover/field:${disabled ? "accentDisabled" : active ? focusColor : "accentHover"}`;
+    const idleColor = hasValidationMessage ? "accent" : "border";
+    const focusColor = hasValidationMessage ? "active" : "borderActive";
+    const borderColor = `${active ? focusColor : idleColor} group-hover/field:${disabled ? "disabled" : active ? focusColor : "active"}`;
 
     return (
       <InputContext.Provider
@@ -343,7 +342,7 @@ const InputGroupImpl = createStyledHOC(
                 bottom={-1}
                 focused={active}
                 disabled={disabled}
-                backgroundColor={disabled ? "accentDisabled" : focusColor}
+                backgroundColor={disabled ? "disabled" : focusColor}
               />
             )}
             {labelPlacement === "border" && (
@@ -371,7 +370,7 @@ const InputSeparator = styled(View, {
   opacity: "enter:0",
   // Drawn as a underlined 1px bar rather than a left border: `XGroup.Item` zeroes
   // `borderLeftWidth` on every non-first item, which hid the line.
-  backgroundColor: "hairline hover:hairlineHover",
+  backgroundColor: "border hover:borderActive",
   width: 1,
   flexShrink: 0,
   height: "60%",
@@ -379,7 +378,7 @@ const InputSeparator = styled(View, {
   variants: {
     focused: {
       true: {
-        backgroundColor: "hairlineActive"
+        backgroundColor: "borderActive"
       }
     },
 
@@ -400,7 +399,7 @@ const InputSeparator = styled(View, {
     disabled: {
       true: {
         backgroundColor:
-          "hairlineInactive hover:hairlineInactive press:hairlineInactive focus:hairlineInactive"
+          "borderInactive hover:borderInactive press:borderInactive focus:borderInactive"
       }
     }
   } as const,
@@ -416,15 +415,15 @@ const InputSeparatorImpl = createStyledHOC(
   (props, forwardedRef) => {
     const { disabled, focused, hasValidationMessage } =
       InputContext.useStyledContext();
-    const idleColor = hasValidationMessage ? "accent" : "hairline";
-    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
-    const hoverColor = hasValidationMessage ? "accentHover" : "hairlineHover";
+    const idleColor = hasValidationMessage ? "accent" : "border";
+    const focusColor = hasValidationMessage ? "active" : "borderActive";
+    const hoverColor = hasValidationMessage ? "active" : "borderActive";
 
     return (
       <XGroup.Item>
         <InputSeparator
           ref={forwardedRef}
-          backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "hairlineInactive" : focused ? focusColor : hoverColor}`}
+          backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "borderInactive" : focused ? focusColor : hoverColor}`}
           hasValidationMessage={hasValidationMessage}
           {...props}
         />
@@ -481,7 +480,7 @@ const InputValueImpl = createStyledHOC(
           ref={ref}
           {...props}
           placeholder={shouldShowPlaceholder ? props.placeholder : undefined}
-          placeholderTextColor="onAccentDisabled"
+          placeholderTextColor="disabled"
           onChange={props.onChange ?? contextOnChange}
           onInput={props.onInput ?? contextOnInput}
           value={value}

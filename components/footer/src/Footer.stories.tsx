@@ -49,7 +49,7 @@ const StorySection = styled(View, {
   backgroundColor: "surfaceCanvas",
   borderRadius: "lg",
   borderWidth: 1,
-  borderColor: "hairline",
+  borderColor: "border",
   variants: {
     light: {
       true: {
@@ -66,14 +66,14 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
         <Text color="accent" fontFamily="display-lg">
           Build what matters
         </Text>
-        <BodyText color="inkBody" maxWidth={640}>
+        <BodyText color="secondary" maxWidth={640}>
           Explore ideas, tools, and practical guidance for creating useful
           products with a thoughtful approach.
         </BodyText>
       </StorySection>
       <StorySection>
         <HeadingHeroText color="accent">Research and discovery</HeadingHeroText>
-        <BodyText color="inkBody" maxWidth={640}>
+        <BodyText color="secondary" maxWidth={640}>
           Learn from new perspectives and turn early questions into clear
           directions through careful research and experimentation.
         </BodyText>
@@ -82,7 +82,7 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
         <HeadingHeroText color="accent">
           Products for every team
         </HeadingHeroText>
-        <BodyText color="inkBody" maxWidth={640}>
+        <BodyText color="secondary" maxWidth={640}>
           Flexible tools help teams move from a first sketch to a finished
           experience while keeping the important details in view.
         </BodyText>
@@ -91,7 +91,7 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
         <HeadingHeroText color="accent">
           A long-term perspective
         </HeadingHeroText>
-        <BodyText color="inkBody" maxWidth={640}>
+        <BodyText color="secondary" maxWidth={640}>
           We share what we learn, listen to the people who use our work, and
           keep improving the systems that support them.
         </BodyText>
@@ -126,7 +126,7 @@ const StoryBrand = () => (
       height="8xl"
       alignItems="center"
       justifyContent="center"
-      backgroundColor="muted"
+      backgroundColor="subtle"
       borderRadius="full">
       <Lightning aria-hidden={true} size={16} color="accent" weight="fill" />
     </View>
@@ -250,12 +250,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-
-export const Brand: Story = {
-  args: {
-    theme: "brand"
-  }
-};
 
 export const Compact: Story = {
   parameters: {

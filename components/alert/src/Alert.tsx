@@ -133,7 +133,7 @@ const AlertIconBackground = styled(View, {
   displayName: "Alert",
   theme: "base",
   padding: "xl",
-  backgroundColor: "surfaceOverlay",
+  backgroundColor: "surfaceHighest",
   borderRadius: 1000_000_000
 });
 
@@ -161,7 +161,7 @@ const AlertIcon = createStyledHOC(
 
         <YStack zIndex="20" justifyContent="center" paddingLeft="3xl">
           <Theme name={type ?? "base"}>
-            <AlertIconBackground backgroundColor="surfaceOverlay">
+            <AlertIconBackground backgroundColor="surfaceHighest">
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}

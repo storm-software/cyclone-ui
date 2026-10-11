@@ -122,7 +122,7 @@ const CodeBlockFrame = styled(View, {
   marginVertical: "4xl",
   overflow: "hidden",
   borderWidth: 1,
-  borderColor: "hairline",
+  borderColor: "border",
   borderRadius: "container",
   backgroundColor: "surfaceElevated"
 });
@@ -153,7 +153,7 @@ const CodeBlockHeaderHeading = styled(BodyText, {
   flex: 1,
   minWidth: 0,
   paddingVertical: 0,
-  color: "inkBody",
+  color: "secondary",
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis",
@@ -173,7 +173,7 @@ const codeBlockViewportDefaults = {
   overflowY: "auto",
   borderRadius: "container",
   backgroundColor: "surfaceFloating",
-  borderColor: "hairline",
+  borderColor: "border",
   borderWidth: 1,
   borderStyle: "solid"
 } as const;
@@ -298,7 +298,7 @@ export const CodeBlockCopyButton = ({
       variant="ghost"
       ghostOpacity={0.5}
       size="8xl"
-      color={copied ? "accent" : "inkBody"}
+      color={copied ? "accent" : "secondary"}
       circular={true}
       flexGrow={0}
       onPress={onPress}>    
@@ -372,7 +372,7 @@ const CodeBlockImpl = createStyledHOC(
                 dangerouslySetInnerHTML={{ __html: icon }}
               />
             ) : (
-              <ThemeableIcon size="xl" color="inkSubtle">
+              <ThemeableIcon size="xl" color="tertiary">
                 {icon}
               </ThemeableIcon>
             )}
@@ -450,7 +450,7 @@ export const CodeBlockTabs = forwardRef<TamaguiElement, CodeBlockTabsProps>(
       marginVertical="4xl"
       overflow="hidden"
       borderWidth={1}
-      borderColor="hairline"
+      borderColor="border"
       borderRadius="container"
       backgroundColor="surfaceElevated"
       padding="xl"
@@ -493,19 +493,19 @@ export const CodeBlockTabsTrigger = forwardRef<
     position="relative"
     zIndex={2}
     borderWidth={1}
-    borderTopColor="hairline"
-    borderRightColor="hairline"
-    borderLeftColor="hairline"
-    borderBottomColor="hairline"
+    borderTopColor="border"
+    borderRightColor="border"
+    borderLeftColor="border"
+    borderBottomColor="border"
     borderTopLeftRadius="container"
     borderTopRightRadius="container"
     borderBottomLeftRadius={0}
     borderBottomRightRadius={0}
-    backgroundColor="surfaceCanvas hover:surfaceCanvasHover"
+    backgroundColor="surfaceCanvas hover:tertiary"
     cursor="pointer"
     className="cyclone-code-block-tabs-trigger">
     <Text
-      color="inkBody"
+      color="secondary"
       fontFamily="title-sm"
       textAlign="center"
       whiteSpace="nowrap"
@@ -527,7 +527,7 @@ export const CodeBlockTab = forwardRef<TamaguiElement, CodeBlockTabProps>(
       marginTop={-1}
       borderWidth={1}
       borderTopWidth={1}
-      borderColor="hairline"
+      borderColor="border"
       borderBottomLeftRadius="container"
       borderBottomRightRadius="container"
       overflow="hidden"

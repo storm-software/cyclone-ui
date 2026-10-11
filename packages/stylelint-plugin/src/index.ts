@@ -223,327 +223,77 @@ export const manifest: DesignSystemManifest = {
       "value": "0rem"
     },
     {
-      "path": "color.accent.base",
-      "cssVar": "--storm-color-accent-base",
+      "path": "color.backdrop",
+      "cssVar": "--storm-color-backdrop",
       "type": "color",
       "category": "color",
-      "value": "#151518",
+      "value": "#1a1c1f66"
+    },
+    {
+      "path": "color.base",
+      "cssVar": "--storm-color-base",
+      "type": "color",
+      "category": "color",
+      "value": "#1f1f21",
       "alias": true
     },
     {
-      "path": "color.accent.base-active",
-      "cssVar": "--storm-color-accent-base-active",
+      "path": "color.base-accent",
+      "cssVar": "--storm-color-base-accent",
       "type": "color",
       "category": "color",
-      "value": "#0c0c0d"
+      "value": "#1f1f21",
+      "alias": true
     },
     {
-      "path": "color.accent.base-disabled",
-      "cssVar": "--storm-color-accent-base-disabled",
+      "path": "color.base-active",
+      "cssVar": "--storm-color-base-active",
       "type": "color",
       "category": "color",
-      "value": "#151518"
+      "value": "#38383a"
     },
     {
-      "path": "color.accent.base-hover",
-      "cssVar": "--storm-color-accent-base-hover",
+      "path": "color.base-disabled",
+      "cssVar": "--storm-color-base-disabled",
       "type": "color",
       "category": "color",
-      "value": "#232326"
+      "value": "#363639"
     },
     {
-      "path": "color.accent.base-inactive",
-      "cssVar": "--storm-color-accent-base-inactive",
+      "path": "color.base-inactive",
+      "cssVar": "--storm-color-base-inactive",
       "type": "color",
       "category": "color",
       "value": "#030303"
     },
     {
-      "path": "color.accent.brand",
-      "cssVar": "--storm-color-accent-brand",
+      "path": "color.base-subtle",
+      "cssVar": "--storm-color-base-subtle",
       "type": "color",
       "category": "color",
-      "value": "#1fb2a6"
-    },
-    {
-      "path": "color.accent.brand-active",
-      "cssVar": "--storm-color-accent-brand-active",
-      "type": "color",
-      "category": "color",
-      "value": "#008a7f"
-    },
-    {
-      "path": "color.accent.brand-disabled",
-      "cssVar": "--storm-color-accent-brand-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#44afa4"
-    },
-    {
-      "path": "color.accent.brand-hover",
-      "cssVar": "--storm-color-accent-brand-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#008277"
-    },
-    {
-      "path": "color.accent.brand-inactive",
-      "cssVar": "--storm-color-accent-brand-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#5ddfd2"
-    },
-    {
-      "path": "color.accent.danger",
-      "cssVar": "--storm-color-accent-danger",
-      "type": "color",
-      "category": "color",
-      "value": "#8e223e",
+      "value": "#cacacb",
       "alias": true
     },
     {
-      "path": "color.accent.danger-active",
-      "cssVar": "--storm-color-accent-danger-active",
+      "path": "color.base-subtle-active",
+      "cssVar": "--storm-color-base-subtle-active",
       "type": "color",
       "category": "color",
-      "value": "#730029"
+      "value": "#a9a9aa"
     },
     {
-      "path": "color.accent.danger-disabled",
-      "cssVar": "--storm-color-accent-danger-disabled",
+      "path": "color.base-subtle-disabled",
+      "cssVar": "--storm-color-base-subtle-disabled",
       "type": "color",
       "category": "color",
-      "value": "#862e41"
+      "value": "#727275"
     },
     {
-      "path": "color.accent.danger-hover",
-      "cssVar": "--storm-color-accent-danger-hover",
+      "path": "color.base-subtle-inactive",
+      "cssVar": "--storm-color-base-subtle-inactive",
       "type": "color",
       "category": "color",
-      "value": "#6e0025"
-    },
-    {
-      "path": "color.accent.danger-inactive",
-      "cssVar": "--storm-color-accent-danger-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ab3e56"
-    },
-    {
-      "path": "color.accent.discovery",
-      "cssVar": "--storm-color-accent-discovery",
-      "type": "color",
-      "category": "color",
-      "value": "#594395",
-      "alias": true
-    },
-    {
-      "path": "color.accent.discovery-active",
-      "cssVar": "--storm-color-accent-discovery-active",
-      "type": "color",
-      "category": "color",
-      "value": "#432b7b"
-    },
-    {
-      "path": "color.accent.discovery-disabled",
-      "cssVar": "--storm-color-accent-discovery-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#58478c"
-    },
-    {
-      "path": "color.accent.discovery-hover",
-      "cssVar": "--storm-color-accent-discovery-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#3f2676"
-    },
-    {
-      "path": "color.accent.discovery-inactive",
-      "cssVar": "--storm-color-accent-discovery-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#725db2"
-    },
-    {
-      "path": "color.accent.info",
-      "cssVar": "--storm-color-accent-info",
-      "type": "color",
-      "category": "color",
-      "value": "#2055b3",
-      "alias": true
-    },
-    {
-      "path": "color.accent.info-active",
-      "cssVar": "--storm-color-accent-info-active",
-      "type": "color",
-      "category": "color",
-      "value": "#033a96"
-    },
-    {
-      "path": "color.accent.info-disabled",
-      "cssVar": "--storm-color-accent-info-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#2b58a6"
-    },
-    {
-      "path": "color.accent.info-hover",
-      "cssVar": "--storm-color-accent-info-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#003590"
-    },
-    {
-      "path": "color.accent.info-inactive",
-      "cssVar": "--storm-color-accent-info-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#3b72d3"
-    },
-    {
-      "path": "color.accent.negative",
-      "cssVar": "--storm-color-accent-negative",
-      "type": "color",
-      "category": "color",
-      "value": "#8e223e",
-      "alias": true
-    },
-    {
-      "path": "color.accent.negative-active",
-      "cssVar": "--storm-color-accent-negative-active",
-      "type": "color",
-      "category": "color",
-      "value": "#730029"
-    },
-    {
-      "path": "color.accent.negative-disabled",
-      "cssVar": "--storm-color-accent-negative-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#862e41"
-    },
-    {
-      "path": "color.accent.negative-hover",
-      "cssVar": "--storm-color-accent-negative-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#6e0025"
-    },
-    {
-      "path": "color.accent.negative-inactive",
-      "cssVar": "--storm-color-accent-negative-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ab3e56"
-    },
-    {
-      "path": "color.accent.positive",
-      "cssVar": "--storm-color-accent-positive",
-      "type": "color",
-      "category": "color",
-      "value": "#216b53",
-      "alias": true
-    },
-    {
-      "path": "color.accent.positive-active",
-      "cssVar": "--storm-color-accent-positive-active",
-      "type": "color",
-      "category": "color",
-      "value": "#00523b"
-    },
-    {
-      "path": "color.accent.positive-disabled",
-      "cssVar": "--storm-color-accent-positive-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#2f6954"
-    },
-    {
-      "path": "color.accent.positive-hover",
-      "cssVar": "--storm-color-accent-positive-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#004d36"
-    },
-    {
-      "path": "color.accent.positive-inactive",
-      "cssVar": "--storm-color-accent-positive-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#40876e"
-    },
-    {
-      "path": "color.accent.success",
-      "cssVar": "--storm-color-accent-success",
-      "type": "color",
-      "category": "color",
-      "value": "#216b53",
-      "alias": true
-    },
-    {
-      "path": "color.accent.success-active",
-      "cssVar": "--storm-color-accent-success-active",
-      "type": "color",
-      "category": "color",
-      "value": "#00523b"
-    },
-    {
-      "path": "color.accent.success-disabled",
-      "cssVar": "--storm-color-accent-success-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#2f6954"
-    },
-    {
-      "path": "color.accent.success-hover",
-      "cssVar": "--storm-color-accent-success-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#004d36"
-    },
-    {
-      "path": "color.accent.success-inactive",
-      "cssVar": "--storm-color-accent-success-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#40876e"
-    },
-    {
-      "path": "color.accent.warning",
-      "cssVar": "--storm-color-accent-warning",
-      "type": "color",
-      "category": "color",
-      "value": "#765417",
-      "alias": true
-    },
-    {
-      "path": "color.accent.warning-active",
-      "cssVar": "--storm-color-accent-warning-active",
-      "type": "color",
-      "category": "color",
-      "value": "#5d3c00"
-    },
-    {
-      "path": "color.accent.warning-disabled",
-      "cssVar": "--storm-color-accent-warning-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#725526"
-    },
-    {
-      "path": "color.accent.warning-hover",
-      "cssVar": "--storm-color-accent-warning-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#573700"
-    },
-    {
-      "path": "color.accent.warning-inactive",
-      "cssVar": "--storm-color-accent-warning-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#926f36"
+      "value": "#030303"
     },
     {
       "path": "color.black",
@@ -616,6 +366,100 @@ export const manifest: DesignSystemManifest = {
       "value": "#123166"
     },
     {
+      "path": "color.border",
+      "cssVar": "--storm-color-border",
+      "type": "color",
+      "category": "color",
+      "value": "#b0b0b1",
+      "alias": true
+    },
+    {
+      "path": "color.border-active",
+      "cssVar": "--storm-color-border-active",
+      "type": "color",
+      "category": "color",
+      "value": "#0c0c0d"
+    },
+    {
+      "path": "color.border-disabled",
+      "cssVar": "--storm-color-border-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#69696b"
+    },
+    {
+      "path": "color.border-inactive",
+      "cssVar": "--storm-color-border-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#030303"
+    },
+    {
+      "path": "color.danger",
+      "cssVar": "--storm-color-danger",
+      "type": "color",
+      "category": "color",
+      "value": "#8e223e",
+      "alias": true
+    },
+    {
+      "path": "color.danger-accent",
+      "cssVar": "--storm-color-danger-accent",
+      "type": "color",
+      "category": "color",
+      "value": "#8e223e",
+      "alias": true
+    },
+    {
+      "path": "color.danger-active",
+      "cssVar": "--storm-color-danger-active",
+      "type": "color",
+      "category": "color",
+      "value": "#6a0022"
+    },
+    {
+      "path": "color.danger-disabled",
+      "cssVar": "--storm-color-danger-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#5a3c44"
+    },
+    {
+      "path": "color.danger-inactive",
+      "cssVar": "--storm-color-danger-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#ab3e56"
+    },
+    {
+      "path": "color.danger-subtle",
+      "cssVar": "--storm-color-danger-subtle",
+      "type": "color",
+      "category": "color",
+      "value": "#e77388"
+    },
+    {
+      "path": "color.danger-subtle-active",
+      "cssVar": "--storm-color-danger-subtle-active",
+      "type": "color",
+      "category": "color",
+      "value": "#ab3d56"
+    },
+    {
+      "path": "color.danger-subtle-disabled",
+      "cssVar": "--storm-color-danger-subtle-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#79575e"
+    },
+    {
+      "path": "color.danger-subtle-inactive",
+      "cssVar": "--storm-color-danger-subtle-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#ff9fb3"
+    },
+    {
       "path": "color.data.blue.emphasis",
       "cssVar": "--storm-color-data-blue-emphasis",
       "type": "color",
@@ -626,22 +470,6 @@ export const manifest: DesignSystemManifest = {
     {
       "path": "color.data.blue.subtle",
       "cssVar": "--storm-color-data-blue-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#6da2ff",
-      "alias": true
-    },
-    {
-      "path": "color.data.brand.emphasis",
-      "cssVar": "--storm-color-data-brand-emphasis",
-      "type": "color",
-      "category": "color",
-      "value": "#2055b3",
-      "alias": true
-    },
-    {
-      "path": "color.data.brand.subtle",
-      "cssVar": "--storm-color-data-brand-subtle",
       "type": "color",
       "category": "color",
       "value": "#6da2ff",
@@ -760,6 +588,72 @@ export const manifest: DesignSystemManifest = {
       "alias": true
     },
     {
+      "path": "color.discovery",
+      "cssVar": "--storm-color-discovery",
+      "type": "color",
+      "category": "color",
+      "value": "#594395",
+      "alias": true
+    },
+    {
+      "path": "color.discovery-accent",
+      "cssVar": "--storm-color-discovery-accent",
+      "type": "color",
+      "category": "color",
+      "value": "#594395",
+      "alias": true
+    },
+    {
+      "path": "color.discovery-active",
+      "cssVar": "--storm-color-discovery-active",
+      "type": "color",
+      "category": "color",
+      "value": "#3c2372"
+    },
+    {
+      "path": "color.discovery-disabled",
+      "cssVar": "--storm-color-discovery-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#4a445f"
+    },
+    {
+      "path": "color.discovery-inactive",
+      "cssVar": "--storm-color-discovery-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#725db2"
+    },
+    {
+      "path": "color.discovery-subtle",
+      "cssVar": "--storm-color-discovery-subtle",
+      "type": "color",
+      "category": "color",
+      "value": "#a690e1",
+      "alias": true
+    },
+    {
+      "path": "color.discovery-subtle-active",
+      "cssVar": "--storm-color-discovery-subtle-active",
+      "type": "color",
+      "category": "color",
+      "value": "#725ba7"
+    },
+    {
+      "path": "color.discovery-subtle-disabled",
+      "cssVar": "--storm-color-discovery-subtle-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#655f79"
+    },
+    {
+      "path": "color.discovery-subtle-inactive",
+      "cssVar": "--storm-color-discovery-subtle-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#d2bcff"
+    },
+    {
       "path": "color.green.1",
       "cssVar": "--storm-color-green-1",
       "type": "color",
@@ -823,410 +717,70 @@ export const manifest: DesignSystemManifest = {
       "value": "#0c2a22"
     },
     {
-      "path": "color.hairline",
-      "cssVar": "--storm-color-hairline",
-      "type": "color",
-      "category": "color",
-      "value": "#b0b0b1",
-      "alias": true
-    },
-    {
-      "path": "color.hairline-active",
-      "cssVar": "--storm-color-hairline-active",
-      "type": "color",
-      "category": "color",
-      "value": "#565657"
-    },
-    {
-      "path": "color.hairline-hover",
-      "cssVar": "--storm-color-hairline-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#7c7c7d"
-    },
-    {
-      "path": "color.hairline-inactive",
-      "cssVar": "--storm-color-hairline-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#e1e1e2"
-    },
-    {
-      "path": "color.ink.body",
-      "cssVar": "--storm-color-ink-body",
-      "type": "color",
-      "category": "color",
-      "value": "#555659",
-      "alias": true
-    },
-    {
-      "path": "color.ink.emphasis",
-      "cssVar": "--storm-color-ink-emphasis",
-      "type": "color",
-      "category": "color",
-      "value": "#2b2c30",
-      "alias": true
-    },
-    {
-      "path": "color.ink.subtle",
-      "cssVar": "--storm-color-ink-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#b0b0b1",
-      "alias": true
-    },
-    {
-      "path": "color.ink.subtlest",
-      "cssVar": "--storm-color-ink-subtlest",
-      "type": "color",
-      "category": "color",
-      "value": "#cacacb",
-      "alias": true
-    },
-    {
-      "path": "color.link",
-      "cssVar": "--storm-color-link",
+      "path": "color.info",
+      "cssVar": "--storm-color-info",
       "type": "color",
       "category": "color",
       "value": "#2055b3",
       "alias": true
     },
     {
-      "path": "color.link-active",
-      "cssVar": "--storm-color-link-active",
+      "path": "color.info-accent",
+      "cssVar": "--storm-color-info-accent",
       "type": "color",
       "category": "color",
-      "value": "#033a96"
+      "value": "#2055b3",
+      "alias": true
     },
     {
-      "path": "color.link-hover",
-      "cssVar": "--storm-color-link-hover",
+      "path": "color.info-active",
+      "cssVar": "--storm-color-info-active",
       "type": "color",
       "category": "color",
-      "value": "#003590"
+      "value": "#00318d"
     },
     {
-      "path": "color.link-inactive",
-      "cssVar": "--storm-color-link-inactive",
+      "path": "color.info-disabled",
+      "cssVar": "--storm-color-info-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#3b4a68"
+    },
+    {
+      "path": "color.info-inactive",
+      "cssVar": "--storm-color-info-inactive",
       "type": "color",
       "category": "color",
       "value": "#3b72d3"
     },
     {
-      "path": "color.muted.base",
-      "cssVar": "--storm-color-muted-base",
+      "path": "color.info-subtle",
+      "cssVar": "--storm-color-info-subtle",
       "type": "color",
       "category": "color",
-      "value": "#eaeaea",
+      "value": "#6da2ff",
       "alias": true
     },
     {
-      "path": "color.muted.base-active",
-      "cssVar": "--storm-color-muted-base-active",
+      "path": "color.info-subtle-active",
+      "cssVar": "--storm-color-info-subtle-active",
       "type": "color",
       "category": "color",
-      "value": "#cacaca"
+      "value": "#396ac2"
     },
     {
-      "path": "color.muted.base-disabled",
-      "cssVar": "--storm-color-muted-base-disabled",
+      "path": "color.info-subtle-disabled",
+      "cssVar": "--storm-color-info-subtle-disabled",
       "type": "color",
       "category": "color",
-      "value": "#eaeaea20"
+      "value": "#556582"
     },
     {
-      "path": "color.muted.base-hover",
-      "cssVar": "--storm-color-muted-base-hover",
+      "path": "color.info-subtle-inactive",
+      "cssVar": "--storm-color-info-subtle-inactive",
       "type": "color",
       "category": "color",
-      "value": "#919191"
-    },
-    {
-      "path": "color.muted.base-inactive",
-      "cssVar": "--storm-color-muted-base-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#030303"
-    },
-    {
-      "path": "color.muted.brand",
-      "cssVar": "--storm-color-muted-brand",
-      "type": "color",
-      "category": "color",
-      "value": "#68e8db"
-    },
-    {
-      "path": "color.muted.brand-active",
-      "cssVar": "--storm-color-muted-brand-active",
-      "type": "color",
-      "category": "color",
-      "value": "#25b4a8"
-    },
-    {
-      "path": "color.muted.brand-disabled",
-      "cssVar": "--storm-color-muted-brand-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#7ee5d9"
-    },
-    {
-      "path": "color.muted.brand-hover",
-      "cssVar": "--storm-color-muted-brand-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#08a99e"
-    },
-    {
-      "path": "color.muted.brand-inactive",
-      "cssVar": "--storm-color-muted-brand-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#9bffff"
-    },
-    {
-      "path": "color.muted.danger",
-      "cssVar": "--storm-color-muted-danger",
-      "type": "color",
-      "category": "color",
-      "value": "#e77388"
-    },
-    {
-      "path": "color.muted.danger-active",
-      "cssVar": "--storm-color-muted-danger-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bb4b62"
-    },
-    {
-      "path": "color.muted.danger-disabled",
-      "cssVar": "--storm-color-muted-danger-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#dd7b8b"
-    },
-    {
-      "path": "color.muted.danger-hover",
-      "cssVar": "--storm-color-muted-danger-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b1435b"
-    },
-    {
-      "path": "color.muted.danger-inactive",
-      "cssVar": "--storm-color-muted-danger-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ff9fb3"
-    },
-    {
-      "path": "color.muted.discovery",
-      "cssVar": "--storm-color-muted-discovery",
-      "type": "color",
-      "category": "color",
-      "value": "#a18ee7"
-    },
-    {
-      "path": "color.muted.discovery-active",
-      "cssVar": "--storm-color-muted-discovery-active",
-      "type": "color",
-      "category": "color",
-      "value": "#7b67bc"
-    },
-    {
-      "path": "color.muted.discovery-disabled",
-      "cssVar": "--storm-color-muted-discovery-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#a091dc"
-    },
-    {
-      "path": "color.muted.discovery-hover",
-      "cssVar": "--storm-color-muted-discovery-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#735eb3"
-    },
-    {
-      "path": "color.muted.discovery-inactive",
-      "cssVar": "--storm-color-muted-discovery-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#cdbaff"
-    },
-    {
-      "path": "color.muted.info",
-      "cssVar": "--storm-color-muted-info",
-      "type": "color",
-      "category": "color",
-      "value": "#6fa4ff"
-    },
-    {
-      "path": "color.muted.info-active",
-      "cssVar": "--storm-color-muted-info-active",
-      "type": "color",
-      "category": "color",
-      "value": "#487ad2"
-    },
-    {
-      "path": "color.muted.info-disabled",
-      "cssVar": "--storm-color-muted-info-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#78a5f2"
-    },
-    {
-      "path": "color.muted.info-hover",
-      "cssVar": "--storm-color-muted-info-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#4071c8"
-    },
-    {
-      "path": "color.muted.info-inactive",
-      "cssVar": "--storm-color-muted-info-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#9bd3ff"
-    },
-    {
-      "path": "color.muted.negative",
-      "cssVar": "--storm-color-muted-negative",
-      "type": "color",
-      "category": "color",
-      "value": "#e77388"
-    },
-    {
-      "path": "color.muted.negative-active",
-      "cssVar": "--storm-color-muted-negative-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bb4b62"
-    },
-    {
-      "path": "color.muted.negative-disabled",
-      "cssVar": "--storm-color-muted-negative-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#dd7b8b"
-    },
-    {
-      "path": "color.muted.negative-hover",
-      "cssVar": "--storm-color-muted-negative-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b1435b"
-    },
-    {
-      "path": "color.muted.negative-inactive",
-      "cssVar": "--storm-color-muted-negative-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ff9fb3"
-    },
-    {
-      "path": "color.muted.positive",
-      "cssVar": "--storm-color-muted-positive",
-      "type": "color",
-      "category": "color",
-      "value": "#6db499"
-    },
-    {
-      "path": "color.muted.positive-active",
-      "cssVar": "--storm-color-muted-positive-active",
-      "type": "color",
-      "category": "color",
-      "value": "#448b72"
-    },
-    {
-      "path": "color.muted.positive-disabled",
-      "cssVar": "--storm-color-muted-positive-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#77b29b"
-    },
-    {
-      "path": "color.muted.positive-hover",
-      "cssVar": "--storm-color-muted-positive-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#3b8269"
-    },
-    {
-      "path": "color.muted.positive-inactive",
-      "cssVar": "--storm-color-muted-positive-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#9ae2c6"
-    },
-    {
-      "path": "color.muted.success",
-      "cssVar": "--storm-color-muted-success",
-      "type": "color",
-      "category": "color",
-      "value": "#6db499"
-    },
-    {
-      "path": "color.muted.success-active",
-      "cssVar": "--storm-color-muted-success-active",
-      "type": "color",
-      "category": "color",
-      "value": "#448b72"
-    },
-    {
-      "path": "color.muted.success-disabled",
-      "cssVar": "--storm-color-muted-success-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#77b29b"
-    },
-    {
-      "path": "color.muted.success-hover",
-      "cssVar": "--storm-color-muted-success-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#3b8269"
-    },
-    {
-      "path": "color.muted.success-inactive",
-      "cssVar": "--storm-color-muted-success-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#9ae2c6"
-    },
-    {
-      "path": "color.muted.warning",
-      "cssVar": "--storm-color-muted-warning",
-      "type": "color",
-      "category": "color",
-      "value": "#c39e65"
-    },
-    {
-      "path": "color.muted.warning-active",
-      "cssVar": "--storm-color-muted-warning-active",
-      "type": "color",
-      "category": "color",
-      "value": "#99763d"
-    },
-    {
-      "path": "color.muted.warning-disabled",
-      "cssVar": "--storm-color-muted-warning-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#bf9f70"
-    },
-    {
-      "path": "color.muted.warning-hover",
-      "cssVar": "--storm-color-muted-warning-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#906d34"
-    },
-    {
-      "path": "color.muted.warning-inactive",
-      "cssVar": "--storm-color-muted-warning-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#f2cc91"
+      "value": "#99d1ff"
     },
     {
       "path": "color.neutral.1",
@@ -1327,636 +881,88 @@ export const manifest: DesignSystemManifest = {
       "value": "#151518"
     },
     {
-      "path": "color.on-accent.base",
-      "cssVar": "--storm-color-on-accent-base",
-      "type": "color",
-      "category": "color",
-      "value": "#f1f1f1",
-      "alias": true
-    },
-    {
-      "path": "color.on-accent.base-active",
-      "cssVar": "--storm-color-on-accent-base-active",
-      "type": "color",
-      "category": "color",
-      "value": "#0c0c0d"
-    },
-    {
-      "path": "color.on-accent.base-disabled",
-      "cssVar": "--storm-color-on-accent-base-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#f1f1f120"
-    },
-    {
-      "path": "color.on-accent.base-hover",
-      "cssVar": "--storm-color-on-accent-base-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#959595"
-    },
-    {
-      "path": "color.on-accent.base-inactive",
-      "cssVar": "--storm-color-on-accent-base-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#030303"
-    },
-    {
-      "path": "color.on-accent.brand",
-      "cssVar": "--storm-color-on-accent-brand",
+      "path": "color.on-base-accent",
+      "cssVar": "--storm-color-on-base-accent",
       "type": "color",
       "category": "color",
       "value": "#FAFAFA"
     },
     {
-      "path": "color.on-accent.brand-active",
-      "cssVar": "--storm-color-on-accent-brand-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bebebe"
-    },
-    {
-      "path": "color.on-accent.brand-disabled",
-      "cssVar": "--storm-color-on-accent-brand-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa20"
-    },
-    {
-      "path": "color.on-accent.brand-hover",
-      "cssVar": "--storm-color-on-accent-brand-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b2b2b2"
-    },
-    {
-      "path": "color.on-accent.brand-inactive",
-      "cssVar": "--storm-color-on-accent-brand-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.on-accent.danger",
-      "cssVar": "--storm-color-on-accent-danger",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-accent.danger-active",
-      "cssVar": "--storm-color-on-accent-danger-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bebebe"
-    },
-    {
-      "path": "color.on-accent.danger-disabled",
-      "cssVar": "--storm-color-on-accent-danger-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa20"
-    },
-    {
-      "path": "color.on-accent.danger-hover",
-      "cssVar": "--storm-color-on-accent-danger-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b2b2b2"
-    },
-    {
-      "path": "color.on-accent.danger-inactive",
-      "cssVar": "--storm-color-on-accent-danger-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.on-accent.discovery",
-      "cssVar": "--storm-color-on-accent-discovery",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-accent.discovery-active",
-      "cssVar": "--storm-color-on-accent-discovery-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bebebe"
-    },
-    {
-      "path": "color.on-accent.discovery-disabled",
-      "cssVar": "--storm-color-on-accent-discovery-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa20"
-    },
-    {
-      "path": "color.on-accent.discovery-hover",
-      "cssVar": "--storm-color-on-accent-discovery-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b2b2b2"
-    },
-    {
-      "path": "color.on-accent.discovery-inactive",
-      "cssVar": "--storm-color-on-accent-discovery-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.on-accent.info",
-      "cssVar": "--storm-color-on-accent-info",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-accent.info-active",
-      "cssVar": "--storm-color-on-accent-info-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bebebe"
-    },
-    {
-      "path": "color.on-accent.info-disabled",
-      "cssVar": "--storm-color-on-accent-info-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa20"
-    },
-    {
-      "path": "color.on-accent.info-hover",
-      "cssVar": "--storm-color-on-accent-info-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b2b2b2"
-    },
-    {
-      "path": "color.on-accent.info-inactive",
-      "cssVar": "--storm-color-on-accent-info-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.on-accent.negative",
-      "cssVar": "--storm-color-on-accent-negative",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-accent.negative-active",
-      "cssVar": "--storm-color-on-accent-negative-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bebebe"
-    },
-    {
-      "path": "color.on-accent.negative-disabled",
-      "cssVar": "--storm-color-on-accent-negative-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa20"
-    },
-    {
-      "path": "color.on-accent.negative-hover",
-      "cssVar": "--storm-color-on-accent-negative-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b2b2b2"
-    },
-    {
-      "path": "color.on-accent.negative-inactive",
-      "cssVar": "--storm-color-on-accent-negative-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.on-accent.positive",
-      "cssVar": "--storm-color-on-accent-positive",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-accent.positive-active",
-      "cssVar": "--storm-color-on-accent-positive-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bebebe"
-    },
-    {
-      "path": "color.on-accent.positive-disabled",
-      "cssVar": "--storm-color-on-accent-positive-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa20"
-    },
-    {
-      "path": "color.on-accent.positive-hover",
-      "cssVar": "--storm-color-on-accent-positive-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b2b2b2"
-    },
-    {
-      "path": "color.on-accent.positive-inactive",
-      "cssVar": "--storm-color-on-accent-positive-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.on-accent.success",
-      "cssVar": "--storm-color-on-accent-success",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-accent.success-active",
-      "cssVar": "--storm-color-on-accent-success-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bebebe"
-    },
-    {
-      "path": "color.on-accent.success-disabled",
-      "cssVar": "--storm-color-on-accent-success-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa20"
-    },
-    {
-      "path": "color.on-accent.success-hover",
-      "cssVar": "--storm-color-on-accent-success-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b2b2b2"
-    },
-    {
-      "path": "color.on-accent.success-inactive",
-      "cssVar": "--storm-color-on-accent-success-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.on-accent.warning",
-      "cssVar": "--storm-color-on-accent-warning",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-accent.warning-active",
-      "cssVar": "--storm-color-on-accent-warning-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bebebe"
-    },
-    {
-      "path": "color.on-accent.warning-disabled",
-      "cssVar": "--storm-color-on-accent-warning-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa20"
-    },
-    {
-      "path": "color.on-accent.warning-hover",
-      "cssVar": "--storm-color-on-accent-warning-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b2b2b2"
-    },
-    {
-      "path": "color.on-accent.warning-inactive",
-      "cssVar": "--storm-color-on-accent-warning-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.on-muted.base",
-      "cssVar": "--storm-color-on-muted-base",
-      "type": "color",
-      "category": "color",
-      "value": "#151518",
-      "alias": true
-    },
-    {
-      "path": "color.on-muted.base-active",
-      "cssVar": "--storm-color-on-muted-base-active",
-      "type": "color",
-      "category": "color",
-      "value": "#0c0c0d"
-    },
-    {
-      "path": "color.on-muted.base-disabled",
-      "cssVar": "--storm-color-on-muted-base-disabled",
+      "path": "color.on-base-subtle",
+      "cssVar": "--storm-color-on-base-subtle",
       "type": "color",
       "category": "color",
       "value": "#151518"
     },
     {
-      "path": "color.on-muted.base-hover",
-      "cssVar": "--storm-color-on-muted-base-hover",
+      "path": "color.on-danger-accent",
+      "cssVar": "--storm-color-on-danger-accent",
       "type": "color",
       "category": "color",
-      "value": "#232326"
+      "value": "#FAFAFA"
     },
     {
-      "path": "color.on-muted.base-inactive",
-      "cssVar": "--storm-color-on-muted-base-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#030303"
-    },
-    {
-      "path": "color.on-muted.brand",
-      "cssVar": "--storm-color-on-muted-brand",
-      "type": "color",
-      "category": "color",
-      "value": "#1fb2a6"
-    },
-    {
-      "path": "color.on-muted.brand-active",
-      "cssVar": "--storm-color-on-muted-brand-active",
-      "type": "color",
-      "category": "color",
-      "value": "#008a7f"
-    },
-    {
-      "path": "color.on-muted.brand-disabled",
-      "cssVar": "--storm-color-on-muted-brand-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#44afa4"
-    },
-    {
-      "path": "color.on-muted.brand-hover",
-      "cssVar": "--storm-color-on-muted-brand-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#008277"
-    },
-    {
-      "path": "color.on-muted.brand-inactive",
-      "cssVar": "--storm-color-on-muted-brand-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#5ddfd2"
-    },
-    {
-      "path": "color.on-muted.danger",
-      "cssVar": "--storm-color-on-muted-danger",
+      "path": "color.on-danger-subtle",
+      "cssVar": "--storm-color-on-danger-subtle",
       "type": "color",
       "category": "color",
       "value": "#270009"
     },
     {
-      "path": "color.on-muted.danger-active",
-      "cssVar": "--storm-color-on-muted-danger-active",
+      "path": "color.on-discovery-accent",
+      "cssVar": "--storm-color-on-discovery-accent",
       "type": "color",
       "category": "color",
-      "value": "#300510"
+      "value": "#FAFAFA"
     },
     {
-      "path": "color.on-muted.danger-disabled",
-      "cssVar": "--storm-color-on-muted-danger-disabled",
+      "path": "color.on-discovery-subtle",
+      "cssVar": "--storm-color-on-discovery-subtle",
       "type": "color",
       "category": "color",
-      "value": "#24030a"
+      "value": "#FAFAFA"
     },
     {
-      "path": "color.on-muted.danger-hover",
-      "cssVar": "--storm-color-on-muted-danger-hover",
+      "path": "color.on-info-accent",
+      "cssVar": "--storm-color-on-info-accent",
       "type": "color",
       "category": "color",
-      "value": "#320611"
+      "value": "#FAFAFA"
     },
     {
-      "path": "color.on-muted.danger-inactive",
-      "cssVar": "--storm-color-on-muted-danger-inactive",
+      "path": "color.on-info-subtle",
+      "cssVar": "--storm-color-on-info-subtle",
       "type": "color",
       "category": "color",
-      "value": "#1e0004"
+      "value": "#FAFAFA"
     },
     {
-      "path": "color.on-muted.discovery",
-      "cssVar": "--storm-color-on-muted-discovery",
+      "path": "color.on-success-accent",
+      "cssVar": "--storm-color-on-success-accent",
       "type": "color",
       "category": "color",
-      "value": "#1d0046"
+      "value": "#FAFAFA"
     },
     {
-      "path": "color.on-muted.discovery-active",
-      "cssVar": "--storm-color-on-muted-discovery-active",
-      "type": "color",
-      "category": "color",
-      "value": "#250b51"
-    },
-    {
-      "path": "color.on-muted.discovery-disabled",
-      "cssVar": "--storm-color-on-muted-discovery-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#1c073f"
-    },
-    {
-      "path": "color.on-muted.discovery-hover",
-      "cssVar": "--storm-color-on-muted-discovery-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#270e54"
-    },
-    {
-      "path": "color.on-muted.discovery-inactive",
-      "cssVar": "--storm-color-on-muted-discovery-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#15003a"
-    },
-    {
-      "path": "color.on-muted.info",
-      "cssVar": "--storm-color-on-muted-info",
-      "type": "color",
-      "category": "color",
-      "value": "#00184b"
-    },
-    {
-      "path": "color.on-muted.info-active",
-      "cssVar": "--storm-color-on-muted-info-active",
-      "type": "color",
-      "category": "color",
-      "value": "#072457"
-    },
-    {
-      "path": "color.on-muted.info-disabled",
-      "cssVar": "--storm-color-on-muted-info-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#041a44"
-    },
-    {
-      "path": "color.on-muted.info-hover",
-      "cssVar": "--storm-color-on-muted-info-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#09265a"
-    },
-    {
-      "path": "color.on-muted.info-inactive",
-      "cssVar": "--storm-color-on-muted-info-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#000b3e"
-    },
-    {
-      "path": "color.on-muted.negative",
-      "cssVar": "--storm-color-on-muted-negative",
-      "type": "color",
-      "category": "color",
-      "value": "#270009"
-    },
-    {
-      "path": "color.on-muted.negative-active",
-      "cssVar": "--storm-color-on-muted-negative-active",
-      "type": "color",
-      "category": "color",
-      "value": "#300510"
-    },
-    {
-      "path": "color.on-muted.negative-disabled",
-      "cssVar": "--storm-color-on-muted-negative-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#24030a"
-    },
-    {
-      "path": "color.on-muted.negative-hover",
-      "cssVar": "--storm-color-on-muted-negative-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#320611"
-    },
-    {
-      "path": "color.on-muted.negative-inactive",
-      "cssVar": "--storm-color-on-muted-negative-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#1e0004"
-    },
-    {
-      "path": "color.on-muted.positive",
-      "cssVar": "--storm-color-on-muted-positive",
+      "path": "color.on-success-subtle",
+      "cssVar": "--storm-color-on-success-subtle",
       "type": "color",
       "category": "color",
       "value": "#00251a"
     },
     {
-      "path": "color.on-muted.positive-active",
-      "cssVar": "--storm-color-on-muted-positive-active",
+      "path": "color.on-warning-accent",
+      "cssVar": "--storm-color-on-warning-accent",
       "type": "color",
       "category": "color",
-      "value": "#0b3024"
+      "value": "#FAFAFA"
     },
     {
-      "path": "color.on-muted.positive-disabled",
-      "cssVar": "--storm-color-on-muted-positive-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#06241b"
-    },
-    {
-      "path": "color.on-muted.positive-hover",
-      "cssVar": "--storm-color-on-muted-positive-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#0d3227"
-    },
-    {
-      "path": "color.on-muted.positive-inactive",
-      "cssVar": "--storm-color-on-muted-positive-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#001a0f"
-    },
-    {
-      "path": "color.on-muted.success",
-      "cssVar": "--storm-color-on-muted-success",
-      "type": "color",
-      "category": "color",
-      "value": "#00251a"
-    },
-    {
-      "path": "color.on-muted.success-active",
-      "cssVar": "--storm-color-on-muted-success-active",
-      "type": "color",
-      "category": "color",
-      "value": "#0b3024"
-    },
-    {
-      "path": "color.on-muted.success-disabled",
-      "cssVar": "--storm-color-on-muted-success-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#06241b"
-    },
-    {
-      "path": "color.on-muted.success-hover",
-      "cssVar": "--storm-color-on-muted-success-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#0d3227"
-    },
-    {
-      "path": "color.on-muted.success-inactive",
-      "cssVar": "--storm-color-on-muted-success-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#001a0f"
-    },
-    {
-      "path": "color.on-muted.warning",
-      "cssVar": "--storm-color-on-muted-warning",
+      "path": "color.on-warning-subtle",
+      "cssVar": "--storm-color-on-warning-subtle",
       "type": "color",
       "category": "color",
       "value": "#291a00"
-    },
-    {
-      "path": "color.on-muted.warning-active",
-      "cssVar": "--storm-color-on-muted-warning-active",
-      "type": "color",
-      "category": "color",
-      "value": "#342408"
-    },
-    {
-      "path": "color.on-muted.warning-disabled",
-      "cssVar": "--storm-color-on-muted-warning-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#271b05"
-    },
-    {
-      "path": "color.on-muted.warning-hover",
-      "cssVar": "--storm-color-on-muted-warning-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#36270a"
-    },
-    {
-      "path": "color.on-muted.warning-inactive",
-      "cssVar": "--storm-color-on-muted-warning-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#1e0f00"
     },
     {
       "path": "color.orange.1",
@@ -2022,29 +1028,6 @@ export const manifest: DesignSystemManifest = {
       "value": "#803000"
     },
     {
-      "path": "color.overlay.backdrop",
-      "cssVar": "--storm-color-overlay-backdrop",
-      "type": "color",
-      "category": "color",
-      "value": "#1a1c1f66"
-    },
-    {
-      "path": "color.overlay.background",
-      "cssVar": "--storm-color-overlay-background",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff",
-      "alias": true
-    },
-    {
-      "path": "color.overlay.border",
-      "cssVar": "--storm-color-overlay-border",
-      "type": "color",
-      "category": "color",
-      "value": "#b0b0b1",
-      "alias": true
-    },
-    {
       "path": "color.pink.1",
       "cssVar": "--storm-color-pink-1",
       "type": "color",
@@ -2106,6 +1089,14 @@ export const manifest: DesignSystemManifest = {
       "type": "color",
       "category": "color",
       "value": "#482039"
+    },
+    {
+      "path": "color.primary",
+      "cssVar": "--storm-color-primary",
+      "type": "color",
+      "category": "color",
+      "value": "#1f1f21",
+      "alias": true
     },
     {
       "path": "color.purple.1",
@@ -2234,27 +1225,11 @@ export const manifest: DesignSystemManifest = {
       "value": "#501524"
     },
     {
-      "path": "color.required",
-      "cssVar": "--storm-color-required",
+      "path": "color.secondary",
+      "cssVar": "--storm-color-secondary",
       "type": "color",
       "category": "color",
-      "value": "#8e223e",
-      "alias": true
-    },
-    {
-      "path": "color.selection.background",
-      "cssVar": "--storm-color-selection-background",
-      "type": "color",
-      "category": "color",
-      "value": "#1fb2a6",
-      "alias": true
-    },
-    {
-      "path": "color.selection.foreground",
-      "cssVar": "--storm-color-selection-foreground",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA",
+      "value": "#555659",
       "alias": true
     },
     {
@@ -2322,7 +1297,72 @@ export const manifest: DesignSystemManifest = {
       "alias": true
     },
     {
-      "path": "color.surface.canvas",
+      "path": "color.success",
+      "cssVar": "--storm-color-success",
+      "type": "color",
+      "category": "color",
+      "value": "#216b53",
+      "alias": true
+    },
+    {
+      "path": "color.success-accent",
+      "cssVar": "--storm-color-success-accent",
+      "type": "color",
+      "category": "color",
+      "value": "#216b53",
+      "alias": true
+    },
+    {
+      "path": "color.success-active",
+      "cssVar": "--storm-color-success-active",
+      "type": "color",
+      "category": "color",
+      "value": "#004933"
+    },
+    {
+      "path": "color.success-disabled",
+      "cssVar": "--storm-color-success-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#3c504b"
+    },
+    {
+      "path": "color.success-inactive",
+      "cssVar": "--storm-color-success-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#40876e"
+    },
+    {
+      "path": "color.success-subtle",
+      "cssVar": "--storm-color-success-subtle",
+      "type": "color",
+      "category": "color",
+      "value": "#6db499"
+    },
+    {
+      "path": "color.success-subtle-active",
+      "cssVar": "--storm-color-success-subtle-active",
+      "type": "color",
+      "category": "color",
+      "value": "#357d64"
+    },
+    {
+      "path": "color.success-subtle-disabled",
+      "cssVar": "--storm-color-success-subtle-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#556a64"
+    },
+    {
+      "path": "color.success-subtle-inactive",
+      "cssVar": "--storm-color-success-subtle-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#9ae2c6"
+    },
+    {
+      "path": "color.surface-canvas",
       "cssVar": "--storm-color-surface-canvas",
       "type": "color",
       "category": "color",
@@ -2330,35 +1370,7 @@ export const manifest: DesignSystemManifest = {
       "alias": true
     },
     {
-      "path": "color.surface.canvas-active",
-      "cssVar": "--storm-color-surface-canvas-active",
-      "type": "color",
-      "category": "color",
-      "value": "#b2b2b2"
-    },
-    {
-      "path": "color.surface.canvas-disabled",
-      "cssVar": "--storm-color-surface-canvas-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#eaeaea20"
-    },
-    {
-      "path": "color.surface.canvas-hover",
-      "cssVar": "--storm-color-surface-canvas-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#a6a6a6"
-    },
-    {
-      "path": "color.surface.canvas-inactive",
-      "cssVar": "--storm-color-surface-canvas-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.surface.elevated",
+      "path": "color.surface-elevated",
       "cssVar": "--storm-color-surface-elevated",
       "type": "color",
       "category": "color",
@@ -2366,35 +1378,7 @@ export const manifest: DesignSystemManifest = {
       "alias": true
     },
     {
-      "path": "color.surface.elevated-active",
-      "cssVar": "--storm-color-surface-elevated-active",
-      "type": "color",
-      "category": "color",
-      "value": "#b7b7b7"
-    },
-    {
-      "path": "color.surface.elevated-disabled",
-      "cssVar": "--storm-color-surface-elevated-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#f1f1f120"
-    },
-    {
-      "path": "color.surface.elevated-hover",
-      "cssVar": "--storm-color-surface-elevated-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#ababab"
-    },
-    {
-      "path": "color.surface.elevated-inactive",
-      "cssVar": "--storm-color-surface-elevated-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.surface.floating",
+      "path": "color.surface-floating",
       "cssVar": "--storm-color-surface-floating",
       "type": "color",
       "category": "color",
@@ -2402,71 +1386,15 @@ export const manifest: DesignSystemManifest = {
       "alias": true
     },
     {
-      "path": "color.surface.floating-active",
-      "cssVar": "--storm-color-surface-floating-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bebebe"
-    },
-    {
-      "path": "color.surface.floating-disabled",
-      "cssVar": "--storm-color-surface-floating-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa20"
-    },
-    {
-      "path": "color.surface.floating-hover",
-      "cssVar": "--storm-color-surface-floating-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b2b2b2"
-    },
-    {
-      "path": "color.surface.floating-inactive",
-      "cssVar": "--storm-color-surface-floating-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.surface.overlay",
-      "cssVar": "--storm-color-surface-overlay",
+      "path": "color.surface-highest",
+      "cssVar": "--storm-color-surface-highest",
       "type": "color",
       "category": "color",
       "value": "#ffffff",
       "alias": true
     },
     {
-      "path": "color.surface.overlay-active",
-      "cssVar": "--storm-color-surface-overlay-active",
-      "type": "color",
-      "category": "color",
-      "value": "#c2c2c2"
-    },
-    {
-      "path": "color.surface.overlay-disabled",
-      "cssVar": "--storm-color-surface-overlay-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff20"
-    },
-    {
-      "path": "color.surface.overlay-hover",
-      "cssVar": "--storm-color-surface-overlay-hover",
-      "type": "color",
-      "category": "color",
-      "value": "#b6b6b6"
-    },
-    {
-      "path": "color.surface.overlay-inactive",
-      "cssVar": "--storm-color-surface-overlay-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
-    },
-    {
-      "path": "color.surface.sunken",
+      "path": "color.surface-sunken",
       "cssVar": "--storm-color-surface-sunken",
       "type": "color",
       "category": "color",
@@ -2474,39 +1402,77 @@ export const manifest: DesignSystemManifest = {
       "alias": true
     },
     {
-      "path": "color.surface.sunken-active",
-      "cssVar": "--storm-color-surface-sunken-active",
+      "path": "color.tertiary",
+      "cssVar": "--storm-color-tertiary",
       "type": "color",
       "category": "color",
-      "value": "#ababab"
+      "value": "#cacacb",
+      "alias": true
     },
     {
-      "path": "color.surface.sunken-disabled",
-      "cssVar": "--storm-color-surface-sunken-disabled",
+      "path": "color.warning",
+      "cssVar": "--storm-color-warning",
       "type": "color",
       "category": "color",
-      "value": "#e1e1e120"
+      "value": "#765417",
+      "alias": true
     },
     {
-      "path": "color.surface.sunken-hover",
-      "cssVar": "--storm-color-surface-sunken-hover",
+      "path": "color.warning-accent",
+      "cssVar": "--storm-color-warning-accent",
       "type": "color",
       "category": "color",
-      "value": "#a0a0a0"
+      "value": "#765417",
+      "alias": true
     },
     {
-      "path": "color.surface.sunken-inactive",
-      "cssVar": "--storm-color-surface-sunken-inactive",
+      "path": "color.warning-active",
+      "cssVar": "--storm-color-warning-active",
       "type": "color",
       "category": "color",
-      "value": "#ffffff"
+      "value": "#543400"
     },
     {
-      "path": "color.transparent",
-      "cssVar": "--storm-color-transparent",
+      "path": "color.warning-disabled",
+      "cssVar": "--storm-color-warning-disabled",
       "type": "color",
       "category": "color",
-      "value": "#ffffff00"
+      "value": "#53493b"
+    },
+    {
+      "path": "color.warning-inactive",
+      "cssVar": "--storm-color-warning-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#926f36"
+    },
+    {
+      "path": "color.warning-subtle",
+      "cssVar": "--storm-color-warning-subtle",
+      "type": "color",
+      "category": "color",
+      "value": "#c39e65"
+    },
+    {
+      "path": "color.warning-subtle-active",
+      "cssVar": "--storm-color-warning-subtle-active",
+      "type": "color",
+      "category": "color",
+      "value": "#8b682f"
+    },
+    {
+      "path": "color.warning-subtle-disabled",
+      "cssVar": "--storm-color-warning-subtle-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#6e6355"
+    },
+    {
+      "path": "color.warning-subtle-inactive",
+      "cssVar": "--storm-color-warning-subtle-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#f2cc91"
     },
     {
       "path": "color.white",
@@ -3080,7 +2046,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-ring-base",
       "type": "shadow",
       "category": "shadow",
-      "value": "0px 0px 0px 3px #15151814"
+      "value": "0px 0px 0px 3px #1f1f2133"
     },
     {
       "path": "ring.base-offset",
@@ -3093,37 +2059,11 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-ring-base-subtle",
       "type": "shadow",
       "category": "shadow",
-      "value": "0px 0px 0px 1px #15151814"
+      "value": "0px 0px 0px 1px #1f1f2133"
     },
     {
       "path": "ring.base-subtle-offset",
       "cssVar": "--storm-ring-base-subtle-offset",
-      "type": "shadow",
-      "category": "shadow"
-    },
-    {
-      "path": "ring.brand",
-      "cssVar": "--storm-ring-brand",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 3px #1fb2a626"
-    },
-    {
-      "path": "ring.brand-offset",
-      "cssVar": "--storm-ring-brand-offset",
-      "type": "shadow",
-      "category": "shadow"
-    },
-    {
-      "path": "ring.brand-subtle",
-      "cssVar": "--storm-ring-brand-subtle",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 1px #1fb2a626"
-    },
-    {
-      "path": "ring.brand-subtle-offset",
-      "cssVar": "--storm-ring-brand-subtle-offset",
       "type": "shadow",
       "category": "shadow"
     },
@@ -3202,58 +2142,6 @@ export const manifest: DesignSystemManifest = {
     {
       "path": "ring.info-subtle-offset",
       "cssVar": "--storm-ring-info-subtle-offset",
-      "type": "shadow",
-      "category": "shadow"
-    },
-    {
-      "path": "ring.negative",
-      "cssVar": "--storm-ring-negative",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 3px #8e223e26"
-    },
-    {
-      "path": "ring.negative-offset",
-      "cssVar": "--storm-ring-negative-offset",
-      "type": "shadow",
-      "category": "shadow"
-    },
-    {
-      "path": "ring.negative-subtle",
-      "cssVar": "--storm-ring-negative-subtle",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 1px #8e223e26"
-    },
-    {
-      "path": "ring.negative-subtle-offset",
-      "cssVar": "--storm-ring-negative-subtle-offset",
-      "type": "shadow",
-      "category": "shadow"
-    },
-    {
-      "path": "ring.positive",
-      "cssVar": "--storm-ring-positive",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 3px #216b5326"
-    },
-    {
-      "path": "ring.positive-offset",
-      "cssVar": "--storm-ring-positive-offset",
-      "type": "shadow",
-      "category": "shadow"
-    },
-    {
-      "path": "ring.positive-subtle",
-      "cssVar": "--storm-ring-positive-subtle",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 1px #216b5326"
-    },
-    {
-      "path": "ring.positive-subtle-offset",
-      "cssVar": "--storm-ring-positive-subtle-offset",
       "type": "shadow",
       "category": "shadow"
     },
@@ -4382,12 +3270,6 @@ export const manifest: DesignSystemManifest = {
     {
       "path": "typography.body-sm",
       "cssVar": "--storm-typography-body-sm",
-      "type": "typography",
-      "category": "typography"
-    },
-    {
-      "path": "typography.button",
-      "cssVar": "--storm-typography-button",
       "type": "typography",
       "category": "typography"
     },

@@ -283,7 +283,7 @@ const FieldValidationTextImpl = createStyledHOC(
         {...rest}
         size={size}
         // Track the control's border so the message reads as part of the field.
-        color={`${disabled ? "accentDisabled" : focused ? "accentActive" : "accent"} group-hover/field:${disabled ? "accentDisabled" : focused ? "accentActive" : "accentHover"}`}
+        color={`${disabled ? "disabled" : focused ? "active" : "accent"} group-hover/field:${disabled ? "disabled" : focused ? "active" : "active"}`}
         messages={messages}
         disabled={disabled}>
         {children}
@@ -314,6 +314,7 @@ const FieldGroupInnerImpl = createStyledHOC(
     const messages = field.messages.get();
     const presentation = useFieldPresentation();
     const [details, setDetails] = useState<ReactNode>(null);
+    const [hovered, setHovered] = useState(false);
 
     const { change, focus, blur, mount } = useFieldActions();
     const onChange = useCallback(
@@ -374,7 +375,7 @@ const FieldGroupInnerImpl = createStyledHOC(
           {clearable && Boolean(formattedValue) && (
             <FieldThemeIcon position="end" onClick={handleClear}>
               <X
-                color={`${disabled ? "accentDisabled" : "accent"} group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`}
+                color={`${disabled ? "disabled" : "accent"} group-hover/field:${disabled ? "disabled" : "active"}`}
               />
             </FieldThemeIcon>
           )}
@@ -399,6 +400,7 @@ const FieldGroupInnerImpl = createStyledHOC(
         disabled,
         required,
         focused,
+        hovered,
         clearable,
         hasValidationMessage,
         inputRef,
@@ -421,6 +423,7 @@ const FieldGroupInnerImpl = createStyledHOC(
         disabled,
         required,
         focused,
+        hovered,
         clearable,
         hasValidationMessage,
         inputRef,
@@ -438,7 +441,12 @@ const FieldGroupInnerImpl = createStyledHOC(
         <FormControlContext.Provider value={formControl}>
           <FieldDetailsSetterContext.Provider value={setDetails}>
             <FieldDetailsContext.Provider value={details}>
-              <YStack group={"field"} gap="lg" disabled={disabled}>
+              <YStack
+                group={"field"}
+                gap="lg"
+                disabled={disabled}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}>
                 <FieldGroupFrame
                   ref={forwardedRef}
                   {...rest}
@@ -474,8 +482,7 @@ const FieldGroup = createStyledHOC(
     const { children, variant = "outlined", ...rest } = props;
     const [labelVariant, setLabelVariant] = useState<FieldLabelVariant>();
     const [labelDefaults, setLabelDefaults] = useState<FieldLabelDefaults>();
-    const [controlOptions, setControlOptions] =
-      useState<FieldControlOptions>();
+    const [controlOptions, setControlOptions] = useState<FieldControlOptions>();
     const labelContentRef = useRef<TamaguiWebElement>(null);
     const [hasPlaceholder, setHasPlaceholder] = useState(false);
     const [endIconCount, setEndIconCount] = useState(0);
@@ -547,7 +554,7 @@ const FieldDetails = styled(BodyText, {
     controlSize: formSizeDynamic(getFormFontStyle),
     disabled: {
       true: {
-        color: "accentDisabled hover:accentDisabled",
+        color: "disabled hover:disabled",
         cursor: "not-allowed"
       }
     }
@@ -584,8 +591,8 @@ const FieldDetailsImpl = createStyledHOC(
         ref={forwardedRef}
         {...rest}
         color={`${
-          disabled ? "accentDisabled" : theme !== "base" ? "accent" : "inkBody"
-        } group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`}
+          disabled ? "disabled" : theme !== "base" ? "accent" : "secondary"
+        } group-hover/field:${disabled ? "disabled" : "active"}`}
         theme={theme}
         controlSize={size}
         disabled={disabled}>
@@ -610,7 +617,7 @@ const FieldLabelText = styled(LabelText, {
     controlSize: formSizeDynamic(getFormFontStyle),
     disabled: {
       true: {
-        color: "accentDisabled hover:accentDisabled",
+        color: "disabled hover:disabled",
         cursor: "not-allowed"
       }
     }
@@ -644,12 +651,12 @@ const FieldLabelPositioner = styled(View, {
 
 const FieldOptionalLabelText = styled(FieldLabelText, {
   transition: "200ms",
-  color: "inkSubtle",
+  color: "tertiary",
   marginLeft: "lg",
   variants: {
     disabled: {
       true: {
-        color: "inkSubtle hover:inkSubtle",
+        color: "tertiary hover:tertiary",
         cursor: "not-allowed"
       }
     }
@@ -897,7 +904,7 @@ const FieldLabelTextImpl = createStyledHOC(
                   overflow="hidden"
                   textOverflow="ellipsis"
                   whiteSpace="nowrap"
-                  color={`${disabled ? "accentDisabled" : "accent"}`}
+                  color={`${disabled ? "disabled" : "accent"}`}
                   // Web-only ellipsis styles are not part of React Native's
                   // style types.
                   style={StyleSheet.flatten([
@@ -927,14 +934,16 @@ const FieldLabelTextImpl = createStyledHOC(
                           position="relative"
                           alignSelf="stretch"
                           width={`${floating ? "sm" : "md"}`}>
-                          <Asterisk
-                            transition="200ms"
-                            color="required"
-                            size={floating ? "sm" : "md"}
-                            position="absolute"
-                            top={floating ? -2 : -1}
-                            weight="black"
-                          />
+                          <Theme name="danger">
+                            <Asterisk
+                              transition="200ms"
+                              color="accent"
+                              size={floating ? "sm" : "md"}
+                              position="absolute"
+                              top={floating ? -2 : -1}
+                              weight="black"
+                            />
+                          </Theme>
                         </View>
                       )}
                     </>
@@ -957,7 +966,7 @@ const FieldLabelTextImpl = createStyledHOC(
                             hideOptionalForOverflow ? "none" : undefined
                           }
                           size={floating ? true : "sm"}
-                          color="inkSubtlest"
+                          color="tertiary"
                           disabled={disabled}
                           floating={floating}
                           controlSize={size}>
@@ -1017,28 +1026,14 @@ const FieldLabel = createStyledHOC(
       return () => setLabelVariant(undefined);
     }, [setLabelVariant, variant]);
 
-    return (
-      inline ? (
-        // A compact label beside its control (checkbox, switch).
-        <XStack gap="xs" {...inline}>
-          <FieldLabelTextImpl
-            ref={forwardedRef}
-            paddingBottom={0}
-            hideRequired={true}
-            textAlign="center"
-            {...props}
-            htmlFor={name}
-            disabled={disabled}
-            required={required}
-            labelVariant={variant}
-            floating={floating}>
-            {children}
-          </FieldLabelTextImpl>
-          {disabled && <FieldThemeIcon disabled={true} />}
-        </XStack>
-      ) : (
+    return inline ? (
+      // A compact label beside its control (checkbox, switch).
+      <XStack gap="xs" {...inline}>
         <FieldLabelTextImpl
           ref={forwardedRef}
+          paddingBottom={0}
+          hideRequired={true}
+          textAlign="center"
           {...props}
           htmlFor={name}
           disabled={disabled}
@@ -1047,7 +1042,19 @@ const FieldLabel = createStyledHOC(
           floating={floating}>
           {children}
         </FieldLabelTextImpl>
-      )
+        {disabled && <FieldThemeIcon disabled={true} />}
+      </XStack>
+    ) : (
+      <FieldLabelTextImpl
+        ref={forwardedRef}
+        {...props}
+        htmlFor={name}
+        disabled={disabled}
+        required={required}
+        labelVariant={variant}
+        floating={floating}>
+        {children}
+      </FieldLabelTextImpl>
     );
   },
   { displayName: "FieldLabel" }
@@ -1144,6 +1151,16 @@ const FieldIconButtonImpl = createStyledHOC(
     const registerEndIcon = formControl?.registerEndIcon;
     const registerStartIcon = formControl?.registerStartIcon;
     const frameSize = getFormSizeToken(size);
+    // An underlined control's text (and resting label) drops under the
+    // floating label's inset; drop the icon by the same amount so it stays
+    // aligned with them (see `InputValue`).
+    const placement = useFieldLabelPlacement();
+    const underlinedOffset =
+      variant === "underlined" && placement
+        ? 7 * getFormSizeScale(size) +
+          getFieldLabelInset(placement, size) -
+          getFieldLabelInset("border")
+        : undefined;
 
     useLayoutEffect(
       () =>
@@ -1177,6 +1194,7 @@ const FieldIconButtonImpl = createStyledHOC(
         flexShrink={0}
         height="100%"
         paddingHorizontal={getSpaced("2xl") * getFormSizeScale(size)}
+        paddingTop={underlinedOffset}
         position="relative">
         {position && variant !== "underlined" && (
           <View
@@ -1264,13 +1282,13 @@ const InnerFieldThemeIcon = createStyledHOC(
           theme={theme}
           borderColor={
             isNeutral
-              ? "hairline focus-visible:hairlineActive"
-              : "accent focus-visible:accentActive"
+              ? "border focus-visible:borderActive"
+              : "accent focus-visible:active"
           }
           arrowBorderColor={
             isNeutral
-              ? "hairline focus-visible:hairlineActive"
-              : "accent focus-visible:accentActive"
+              ? "border focus-visible:borderActive"
+              : "accent focus-visible:active"
           }>
           <Theme name="base">
             <View paddingVertical="2xl" paddingHorizontal="3xl">
@@ -1345,8 +1363,8 @@ const FieldThemeIcon = createStyledHOC(
           disabled,
           transition: "200ms",
           color: `${
-            disabled ? "accentDisabled" : focused ? "accentActive" : "accent"
-          } group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`
+            disabled ? "disabled" : focused ? "active" : "accent"
+          } group-hover/field:${disabled ? "disabled" : "active"}`
         })}
       </InnerFieldThemeIcon>
     );

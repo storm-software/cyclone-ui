@@ -116,7 +116,7 @@ const TableOfContentsHeading = styled(XStack, {
 
 const TableOfContentsHeadingText = styled(BodyText, {
   render: "span",
-  color: "inkSubtle",
+  color: "tertiary",
   fontWeight: "md"
 });
 
@@ -179,7 +179,7 @@ const TableOfContentsLink = createStyledHOC(
 const TableOfContentsLinkText = styled(BodyText, {
   render: "span",
   transition: "color 160ms ease-out",
-  color: "accentInactive group-hover/tableOfContentsItem:accentHover",
+  color: "inactive group-hover/tableOfContentsItem:active",
   fontWeight: "normal",
   variants: {
     active: {
@@ -389,7 +389,7 @@ function TableOfContentsRail({
         left={RAIL_LEFT}
         width={2}
         height={height}
-        backgroundColor="hairline"
+        backgroundColor="border"
       />
     );
   }
@@ -408,7 +408,7 @@ function TableOfContentsRail({
         <path
           d={geometry.path}
           fill="none"
-          stroke="var(--hairline)"
+          stroke="var(--border)"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
@@ -562,7 +562,7 @@ export const TableOfContents = createStyledHOC(
         aria-label="Table of contents"
         {...props}>
         <TableOfContentsHeading>
-          <ListBullets aria-hidden={true} color="inkSubtle" size="5xl" />
+          <ListBullets aria-hidden={true} color="tertiary" size="5xl" />
           <TableOfContentsHeadingText>{children}</TableOfContentsHeadingText>
         </TableOfContentsHeading>
 

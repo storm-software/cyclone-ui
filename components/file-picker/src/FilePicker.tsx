@@ -142,8 +142,8 @@ const FilePickerGroupFrame = styled(View, {
   borderStyle: "dashed",
   borderWidth: 2,
   borderRadius: "container",
-  borderColor: "hairline hover:accentHover",
-  backgroundColor: "surfaceElevated hover:surfaceElevatedHover",
+  borderColor: "border hover:active",
+  backgroundColor: "surfaceElevated hover:tertiary",
   tabIndex: 0,
   variants: {
     // Styled by the `.resolve` below because the geometry depends on
@@ -167,21 +167,21 @@ const FilePickerGroupFrame = styled(View, {
     },
     active: {
       true: {
-        borderColor: "hairline hover:hairlineHover",
-        backgroundColor: "surfaceElevatedActive hover:surfaceElevatedHover"
+        borderColor: "border hover:borderActive",
+        backgroundColor: "tertiary hover:tertiary"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:accentHover"
+        borderColor: "accent hover:active"
       }
     },
 
     disabled: {
       true: {
-        borderColor: "accentDisabled hover:accentDisabled",
-        backgroundColor: "surfaceElevatedDisabled hover:surfaceElevatedDisabled"
+        borderColor: "disabled hover:disabled",
+        backgroundColor: "surfaceElevated hover:surfaceElevated"
       },
       false: {
         opacity: 1
@@ -397,7 +397,7 @@ const FilePickerTrigger = createStyledHOC(
             alignSelf="center"
             paddingHorizontal={getSpaced(getFormSizeToken(size))}
             numberOfLines={1}
-            color={disabled ? "inkBodyDisabled" : "inkBody"}>
+            color={disabled ? "disabled" : "secondary"}>
             {files.length === 0
               ? max > 1
                 ? "No files chosen"
@@ -421,7 +421,7 @@ const FilePickerTrigger = createStyledHOC(
                 size={clearSize}
                 aria-label={max > 1 ? "Remove files" : "Remove file"}
                 onPress={() => onChange([])}>
-                <Button.Icon color="inkBody group-hover/button:accentHover">
+                <Button.Icon color="secondary group-hover/button:active">
                   <X />
                 </Button.Icon>
               </Button>
@@ -449,7 +449,7 @@ const FilePickerTrigger = createStyledHOC(
             size={getSized("9xl") * getFormSizeScale(size)}
             // `themed` icons resolve only a plain theme key; a conditional
             // value string falls through to the SVG as an invalid (black) fill.
-            color={disabled ? "accentDisabled" : "hairline"}
+            color={disabled ? "disabled" : "border"}
             transition="100ms"
             opacity="1 exit:0"
             scale="1 exit:0.5"
@@ -475,17 +475,17 @@ const FilePickerTriggerButton = createStyledHOC(
           justifyContent="center"
           paddingHorizontal={getSpaced(getFormSizeToken(size))}
           borderRightWidth={1}
-          borderColor={disabled ? "accentDisabled" : "hairline"}
+          borderColor={disabled ? "disabled" : "border"}
           backgroundColor={
             disabled
-              ? "surfaceFloatingDisabled"
-              : "surfaceFloating group-hover/file-picker:surfaceFloatingHover"
+              ? "surfaceFloating"
+              : "surfaceFloating group-hover/file-picker:tertiary"
           }
           transition="200ms">
           <FilePickerMetadataText
             controlSize={size}
             fontWeight="500"
-            color={disabled ? "inkEmphasisDisabled" : "inkEmphasis"}>
+            color={disabled ? "disabled" : "primary"}>
             {children || (max > 1 ? "Choose Files" : "Choose File")}
           </FilePickerMetadataText>
         </View>
@@ -510,8 +510,8 @@ const FilePickerTriggerButton = createStyledHOC(
         {...props}>
         <Button.Text
           fontSize={16 * getFormFontScale(size)}
-          color="inkEmphasis"
-          textDecorationColor="inkEmphasis">
+          color="primary"
+          textDecorationColor="primary">
           {children ||
             (max > 1
               ? files.length === 0
@@ -680,7 +680,7 @@ const FilePickerTextPreview = ({
       fontFamily="code"
       fontSize={12}
       lineHeight="18px"
-      color="inkBody"
+      color="secondary"
       padding="md"
       whiteSpace="pre"
       aria-hidden={true}>
@@ -747,7 +747,7 @@ const FilePickerFile = ({
       overflow="hidden"
       position="relative"
       borderRadius="card"
-      borderColor="hairline hover:hairlineHover"
+      borderColor="border hover:borderActive"
       borderWidth={1}
       boxShadow="none hover:ringOffset"
       onClick={event => event.stopPropagation()}
@@ -784,7 +784,7 @@ const FilePickerFile = ({
             size={getSized("13xl") * scale}
             padding="xl"
             circular={true}>
-            <Button.Icon color="group-hover/button:accentHover">
+            <Button.Icon color="group-hover/button:active">
               <DownloadSimple />
             </Button.Icon>
           </Button>
@@ -808,7 +808,7 @@ const FilePickerFile = ({
             size={getSized("13xl") * scale}
             padding="xl"
             circular={true}>
-            <Button.Icon color="group-hover/button:accentHover">
+            <Button.Icon color="group-hover/button:active">
               <Trash />
             </Button.Icon>
           </Button>
@@ -841,7 +841,7 @@ const FilePickerFile = ({
             </FilePickerBytesText>
 
             {lastModified && (
-              <Dot size={getSized("6xl") * scale} color="inkBody" />
+              <Dot size={getSized("6xl") * scale} color="secondary" />
             )}
 
             {lastModified && (
@@ -850,7 +850,7 @@ const FilePickerFile = ({
               </FilePickerMetadataText>
             )}
 
-            {mimeType && <Dot size={getSized("6xl") * scale} color="inkBody" />}
+            {mimeType && <Dot size={getSized("6xl") * scale} color="secondary" />}
 
             {mimeType && (
               <FilePickerMetadataText controlSize={controlSize} zIndex="30">

@@ -88,7 +88,7 @@ const DialogHeadingImpl = createStyledHOC(
 
 const DialogBody = styled(BodyText, {
   displayName: "DialogBody",
-  color: "inkBody"
+  color: "secondary"
 });
 
 const DialogBodyImpl = createStyledHOC(
@@ -192,7 +192,7 @@ const DialogOverlayBackground = styled(TamaguiDialogOverlay, {
   opacity: "0.6 enter:0 exit:0",
   backdropFilter: "blur(35px)",
   filter: "blur(35px)",
-  backgroundColor: "overlayBackdrop",
+  backgroundColor: "backdrop",
   variants: {
     overlay: {
       false: {

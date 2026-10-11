@@ -116,12 +116,6 @@ export const SubtlestVariant: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
 export const Discovery: Story = {
   args: {
     theme: "discovery"
@@ -149,17 +143,5 @@ export const Info: Story = {
 export const Success: Story = {
   args: {
     theme: "success"
-  }
-};
-
-export const Positive: Story = {
-  args: {
-    theme: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    theme: "negative"
   }
 };

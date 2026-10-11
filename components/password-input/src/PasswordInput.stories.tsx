@@ -288,12 +288,6 @@ export const Good: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
 export const Discovery: Story = {
   args: {
     validate: validation("discovery")
@@ -321,18 +315,6 @@ export const Info: Story = {
 export const Success: Story = {
   args: {
     validate: validation("success")
-  }
-};
-
-export const Positive: Story = {
-  args: {
-    validate: validation("positive")
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    validate: validation("negative")
   }
 };
 

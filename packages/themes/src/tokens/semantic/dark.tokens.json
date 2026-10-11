@@ -1,226 +1,128 @@
 {
   "color": {
     "$description": "Semantic colors for the dark theme. Components reference these by role (ink, surface, accent and so on) rather than by raw palette value, so the same component renders correctly in every theme.",
-    "ink": {
-      "emphasis": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.5}",
-        "$description": "Highest-emphasis text and icon color. Use it for headings and content that must stand out from body copy. Used by HeadingText, InlineCodeText, the active Slider value and hovered RadioGroup options."
-      },
-      "body": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.6}",
-        "$description": "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."
-      },
-      "subtle": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.7}",
-        "$description": "Lower-emphasis text and icon color for supporting content that should recede behind body copy. Use it for metadata, secondary labels and decorative icons. Used by Breadcrumb separators, EyebrowText, TableOfContents entries, FileTree, DatePicker, inactive Slider values and NavigationHeader links."
-      },
-      "subtlest": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.8}",
-        "$description": "Lowest-emphasis text and icon color, for content that should be legible but barely noticed. Use it for hints and optional markers. Used by Field for the `optional` marker beside a field label; avoid it for anything the user must read."
-      }
-    },
-    "surface": {
-      "$description": "Background colors that establish elevation. From lowest to highest: sunken, canvas, elevated, floating, overlay. Each step reads as closer to the user.",
-      "sunken": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.black}",
-        "$description": "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."
-      },
-      "canvas": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.14}",
-        "$description": "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."
-      },
-      "elevated": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.13}",
-        "$description": "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."
-      },
-      "floating": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.12}",
-        "$description": "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."
-      },
-      "overlay": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.11}",
-        "$description": "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."
-      }
-    },
-    "required": {
+    "primary": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.red.5}",
-      "$description": "Indicator color for required form fields. Field uses it for the asterisk next to the label of a required input; keep it consistent with the danger accent so required and error states read as related."
+      "$value": "{color.neutral.2}",
+      "$description": "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
+      "semantic": true
     },
-    "link": {
+    "secondary": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.blue.3}",
-      "$description": "Color for hyperlinks and other inline navigation text, with generated hover and active states. Used by LinkText, `link` variant Buttons, FilePicker browse links and TypeTable type links."
+      "$value": "{color.neutral.5}",
+      "$description": "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
+      "semantic": true
     },
-    "hairline": {
+    "tertiary": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.neutral.10}",
+      "$description": "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
+      "semantic": true
+    },
+    "border": {
       "$type": "color",
       "colorSpace": "display-p3",
       "$value": "{color.neutral.9}",
-      "$description": "Low-contrast color for 1px borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."
+      "$description": "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
+      "semantic": true
     },
-    "selection": {
-      "$description": "Colors for text the user has highlighted with the cursor (the `::selection` pseudo-element). Applied globally through the theme config's selection styles rather than by individual components.",
-      "background": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.accent.brand}",
-        "$description": "Background color of highlighted text. Follows the brand accent so selection stays on brand in every theme."
-      },
-      "foreground": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.on-accent.brand}",
-        "$description": "Text color of highlighted text, chosen to stay readable on the brand-accent selection background."
-      }
+    "danger": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.red.5}",
+      "$description": "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
+      "semantic": true
     },
-    "accent": {
-      "$description": "Saturated colors for emphasis, primary actions and status. Each accent becomes the `accent` value of its sub-theme (base, brand, danger, and so on), so components reference `accent` and the active theme decides the color.",
-      "base": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.1}",
-        "$description": "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
-        "theme": "base"
-      },
-      "brand": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "oklch(0.8258 0.1448 173.56)",
-        "$description": "Brand accent (teal) used by the `brand` theme. Use it for primary calls to action and brand moments, and sparingly elsewhere so it keeps its weight. Also drives text selection and is the default theme for Message.",
-        "theme": "brand"
-      },
-      "danger": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.red.5}",
-        "$description": "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-        "theme": "danger"
-      },
-      "negative": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.red.5}",
-        "$description": "Negative accent used by the `negative` theme. Use it for unfavorable values and outcomes, such as a falling metric, where the tone is informational rather than destructive. Applied by Alert `negative`.",
-        "theme": "negative"
-      },
-      "warning": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.yellow.4}",
-        "$description": "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-        "theme": "warning"
-      },
-      "success": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.green.4}",
-        "$description": "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-        "theme": "success"
-      },
-      "positive": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.green.4}",
-        "$description": "Positive accent used by the `positive` theme. Use it for favorable values and outcomes, such as a rising metric, where the tone is informational rather than confirming an action. Applied by Alert `positive`.",
-        "theme": "positive"
-      },
-      "info": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.blue.4}",
-        "$description": "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-        "theme": "info"
-      },
-      "discovery": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.purple.4}",
-        "$description": "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-        "theme": "discovery"
-      }
+    "warning": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.yellow.4}",
+      "$description": "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
+      "semantic": true
     },
-    "on-accent": {
-      "base": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.14}",
-        "$description": "Text and icon color placed on top of a `base` accent fill, chosen for contrast against it. Exposed as `onAccent`; used for Button labels, Badge text, the Switch thumb icon and the active Slider thumb and value label.",
-        "theme": "base"
-      }
+    "info": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.blue.4}",
+      "$description": "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
+      "semantic": true
     },
-    "muted": {
-      "base": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.11}",
-        "$description": "Low-emphasis neutral background for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-        "theme": "base"
-      },
-      "brand": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "oklch(0.5077 0.1448 173.56)",
-        "$description": "Low-emphasis brand background for the `brand` theme. Exposed as `muted` inside that theme; use it for soft brand-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the brand theme.",
-        "theme": "brand"
-      },
-      "info": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.blue.8}",
-        "$description": "Low-emphasis info background for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
-        "theme": "info"
-      },
-      "discovery": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.purple.9}",
-        "$description": "Low-emphasis discovery background for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
-        "theme": "discovery"
-      }
+    "info-subtle": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.blue.8}",
+      "$description": "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
+      "semantic": true
     },
-    "overlay": {
-      "$description": "Colors used to compose modal and floating overlays: the overlay panel, its border and the page-dimming backdrop.",
-      "background": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.11}",
-        "$description": "Background color of a floating overlay panel, matching the topmost surface so overlays stand clear of the page."
-      },
-      "border": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.neutral.8}",
-        "$description": "Border color that outlines floating overlay panels against the content beneath them. Used for the Popover border."
-      },
-      "backdrop": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "#0D0C0766",
-        "$description": "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container."
-      }
+    "discovery": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.purple.4}",
+      "$description": "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
+      "semantic": true
+    },
+    "discovery-subtle": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.purple.9}",
+      "$description": "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
+      "semantic": true
+    },
+    "success": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.green.4}",
+      "$description": "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
+      "semantic": true
+    },
+    "surface-sunken": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.black}",
+      "$description": "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant.",
+      "semantic": true
+    },
+    "surface-canvas": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.neutral.14}",
+      "$description": "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator.",
+      "semantic": true
+    },
+    "surface-elevated": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.neutral.13}",
+      "$description": "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree.",
+      "semantic": true
+    },
+    "surface-floating": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.neutral.12}",
+      "$description": "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
+      "semantic": true
+    },
+    "surface-highest": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.neutral.11}",
+      "$description": "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
+      "semantic": true
+    },
+    "backdrop": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "#0D0C0766",
+      "$description": "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
+      "semantic": true
     },
     "shadow": {
       "$description": "Box-shadow presets for elevation. Resting shadows lift elements slightly off their surface; floating shadows separate content that sits above the page.",
+      "semantic": true,
       "resting": {
         "xsmall": {
           "$type": "shadow",
@@ -268,6 +170,7 @@
     },
     "data": {
       "$description": "Categorical colors for charts and data visualizations. Each hue has an `emphasis` value for the primary mark (line, bar, point) and a `subtle` value for fills, areas, ranges and backgrounds. Prefer these over accent colors so status meaning stays separate from data series.",
+      "semantic": true,
       "neutral": {
         "emphasis": {
           "$type": "color",
@@ -280,20 +183,6 @@
           "colorSpace": "display-p3",
           "$value": "{color.neutral.14}",
           "$description": "Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series."
-        }
-      },
-      "brand": {
-        "emphasis": {
-          "$type": "color",
-          "colorSpace": "display-p3",
-          "$value": "{color.blue.2}",
-          "$description": "High-emphasis brand data color. Use it for the primary mark of a brand series, such as lines, bars, points and legend swatches."
-        },
-        "subtle": {
-          "$type": "color",
-          "colorSpace": "display-p3",
-          "$value": "{color.blue.4}",
-          "$description": "Low-emphasis brand data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `brand.emphasis` series."
         }
       },
       "red": {

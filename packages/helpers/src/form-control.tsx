@@ -19,20 +19,9 @@
 import type { SelectOption } from "@stryke/types/form";
 import type { ValidationDetail } from "@stryke/types/validations";
 import type { GetProps, TamaguiWebElement } from "@tamagui/core";
-import {
-  createStyledHOC,
-  styled,
-  useComposedRefs,
-  View
-} from "@tamagui/core";
+import { createStyledHOC, styled, useComposedRefs, View } from "@tamagui/core";
 import type { ReactNode, Ref, RefObject } from "react";
-import {
-  createContext,
-  use,
-  useLayoutEffect,
-  useRef,
-  useState
-} from "react";
+import { createContext, use, useLayoutEffect, useRef, useState } from "react";
 import type { FormControlSize } from "./form-size";
 import { getFormSizeScale } from "./form-size";
 import { getSpaced } from "./get-sized";
@@ -87,6 +76,8 @@ export interface FormControlState {
   disabled?: boolean;
   required?: boolean;
   focused?: boolean;
+  /** Whether the pointer is over the field (mirrors `group-hover/field`). */
+  hovered?: boolean;
   clearable?: boolean;
   hasValidationMessage: boolean;
 
@@ -276,7 +267,8 @@ export const useFieldLabelPlacement = (): FieldLabelPlacement | undefined => {
 export const getFieldLabelInset = (
   placement: FieldLabelPlacement | undefined,
   size?: FormControlSize
-) => (!placement ? 0 : placement === "border" ? 3 : 13 * getFormSizeScale(size));
+) =>
+  !placement ? 0 : placement === "border" ? 3 : 13 * getFormSizeScale(size);
 
 const hasFieldValue = (value: unknown) =>
   value !== undefined && value !== null && value !== "";
@@ -307,14 +299,15 @@ export const useFieldLabelFloated = (
 
   return (
     (labelVariant ?? formControl?.labelVariant) === "floating" &&
-    (hasFieldValue(formControl?.formattedValue) || Boolean(formControl?.focused))
+    (hasFieldValue(formControl?.formattedValue) ||
+      Boolean(formControl?.focused))
   );
 };
 
 /**
  * Resolves the color tokens used by field icons (and their dividers): `accent`
  * when the field has a non-base theme or a validation message, otherwise
- * `hairline`. `iconColor` is a single theme key so it can be passed directly
+ * `border`. `iconColor` is a single theme key so it can be passed directly
  * to Tamagui v3 icons, which do not resolve flat `group-hover/` values.
  */
 export const useFieldIconColor = () => {
@@ -326,21 +319,31 @@ export const useFieldIconColor = () => {
     (!theme || theme === "base") && !formControl?.hasValidationMessage;
 
   const iconColor = disabled
-    ? "hairlineInactive"
+    ? isNeutral
+      ? "borderDisabled"
+      : "disabled"
     : isNeutral
       ? focused
-        ? "hairlineActive"
-        : "hairline"
+        ? "borderActive"
+        : "border"
       : focused
-        ? "accentActive"
+        ? "active"
         : "accent";
   const hoverIconColor = disabled
-    ? "hairlineInactive"
+    ? isNeutral
+      ? "borderDisabled"
+      : "disabled"
     : isNeutral
-      ? "hairlineHover"
-      : "accentHover";
+      ? "borderActive"
+      : "active";
 
-  return { iconColor, hoverIconColor, isNeutral };
+  return {
+    // Icons can't resolve `group-hover/field:`, so swap to the hover token
+    // while the field is hovered, in step with the border.
+    iconColor: formControl?.hovered ? hoverIconColor : iconColor,
+    hoverIconColor,
+    isNeutral
+  };
 };
 
 const FieldNotchedOutlineFrame = styled(View, {

@@ -61,13 +61,6 @@ export const CustomIcon: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    children: bodyText,
-    type: "brand"
-  }
-};
-
 export const Danger: Story = {
   args: {
     children: bodyText,
@@ -100,19 +93,5 @@ export const Discovery: Story = {
   args: {
     children: bodyText,
     type: "discovery"
-  }
-};
-
-export const Positive: Story = {
-  args: {
-    children: bodyText,
-    type: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    children: bodyText,
-    type: "negative"
   }
 };

@@ -62,31 +62,17 @@ const color = ($value: string): Token => ({ $value });
 
 const semanticColors = (prefix: string) => ({
   color: {
-    ink: {
-      emphasis: color(`${prefix}-ink-emphasis`),
-      body: color(`${prefix}-ink-body`),
-      subtle: color(`${prefix}-ink-subtle`)
-    },
-    surface: {
-      canvas: color(`${prefix}-surface-canvas`),
-      sunken: color(`${prefix}-surface-sunken`)
-    },
-    link: color(`${prefix}-link`),
-    hairline: color(`${prefix}-hairline`),
-    required: color(`${prefix}-required`),
-    accent: {
-      brand: color(`${prefix}-accent-brand`),
-      danger: color(`${prefix}-accent-danger`),
-      warning: color(`${prefix}-accent-warning`),
-      success: color(`${prefix}-accent-success`),
-      info: color(`${prefix}-accent-info`),
-      discovery: color(`${prefix}-accent-discovery`)
-    },
-    "on-accent": {
-      base: color(`${prefix}-on-accent-base`),
-      brand: color(`${prefix}-on-accent-brand`)
-    },
-    muted: { brand: color(`${prefix}-muted-brand`) }
+    primary: color(`${prefix}-primary`),
+    secondary: color(`${prefix}-secondary`),
+    tertiary: color(`${prefix}-tertiary`),
+    border: color(`${prefix}-border`),
+    "surface-canvas": color(`${prefix}-surface-canvas`),
+    "surface-sunken": color(`${prefix}-surface-sunken`),
+    danger: color(`${prefix}-danger`),
+    warning: color(`${prefix}-warning`),
+    success: color(`${prefix}-success`),
+    info: color(`${prefix}-info`),
+    discovery: color(`${prefix}-discovery`)
   }
 });
 
@@ -121,30 +107,28 @@ describe("Shiki theme mapping", () => {
       tokens: semanticColors("light")
     }) as MappedTheme;
 
-    expect(dark.fg).toBe("dark-ink-emphasis");
+    expect(dark.fg).toBe("dark-primary");
     expect(dark.colors).toMatchObject({
       "editor.background": "dark-surface-canvas",
-      "editorCursor.foreground": "dark-link",
-      "editor.selectionBackground": "dark-accent-brand",
-      "editor.selectionForeground": "dark-on-accent-brand",
+      "editorCursor.foreground": "dark-info",
+      "editor.selectionBackground": "dark-primary",
+      "editor.selectionForeground": "dark-surface-canvas",
       "editor.inactiveSelectionBackground": "dark-surface-sunken",
-      "editorIndentGuide.background1": "dark-hairline",
-      "editorIndentGuide.activeBackground1": "dark-ink-subtle"
+      "editorIndentGuide.background1": "dark-border",
+      "editorIndentGuide.activeBackground1": "dark-tertiary"
     });
-    expect(setting(dark, "comment")).toBe("dark-ink-subtle");
-    expect(setting(dark, "string")).toBe("dark-accent-success");
-    expect(setting(dark, "constant")).toBe("dark-accent-warning");
-    expect(setting(dark, "keyword")).toBe("dark-accent-brand");
-    expect(setting(dark, "entity.name.function")).toBe("dark-accent-brand");
-    expect(setting(dark, "entity.name.type")).toBe("dark-accent-discovery");
-    expect(setting(dark, "entity.other.attribute-name")).toBe(
-      "dark-accent-info"
-    );
-    expect(setting(dark, "invalid")).toBe("dark-accent-danger");
+    expect(setting(dark, "comment")).toBe("dark-tertiary");
+    expect(setting(dark, "string")).toBe("dark-success");
+    expect(setting(dark, "constant")).toBe("dark-warning");
+    expect(setting(dark, "keyword")).toBe("dark-info");
+    expect(setting(dark, "entity.name.function")).toBe("dark-info");
+    expect(setting(dark, "entity.name.type")).toBe("dark-discovery");
+    expect(setting(dark, "entity.other.attribute-name")).toBe("dark-info");
+    expect(setting(dark, "invalid")).toBe("dark-danger");
 
-    expect(light.fg).toBe("light-ink-emphasis");
+    expect(light.fg).toBe("light-primary");
     expect(light.colors["editor.background"]).toBe("light-surface-canvas");
-    expect(setting(light, "string")).toBe("light-accent-success");
+    expect(setting(light, "string")).toBe("light-success");
   });
 
   it("resolves token aliases to literal colors", async () => {
@@ -160,7 +144,7 @@ describe("Shiki theme mapping", () => {
     );
     const tokens = semanticColors("light");
 
-    tokens.color.ink.subtle = color("{color.neutral.7}");
+    tokens.color.tertiary = color("{color.neutral.7}");
     Object.assign(tokens.color, {
       neutral: { 7: color("#959698") }
     });

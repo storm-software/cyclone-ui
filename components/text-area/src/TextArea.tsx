@@ -64,7 +64,7 @@ const TextAreaFrame = styled(InputValue, {
   backgroundColor: "surfaceElevated",
   color: "accent",
   borderWidth: 1,
-  borderColor: "hairline hover:accentHover focus-visible:accentActive",
+  borderColor: "border hover:active focus-visible:active",
   borderRadius: "control",
   boxShadow: "none focus-visible:ringOffset",
   outlineWidth: 0,
@@ -87,13 +87,13 @@ const TextAreaFrame = styled(InputValue, {
     focused: {
       true: {
         boxShadow: "ringOffset",
-        borderColor: "accentActive"
+        borderColor: "active"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:accentHover"
+        borderColor: "accent hover:active"
       }
     },
 
@@ -103,7 +103,7 @@ const TextAreaFrame = styled(InputValue, {
         backgroundColor: "transparent",
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "hairline hover:accentHover focus-visible:accent",
+        borderColor: "border hover:active focus-visible:accent",
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         boxShadow: "none focus-visible:none"
@@ -116,7 +116,7 @@ const TextAreaFrame = styled(InputValue, {
 
     disabled: {
       true: {
-        borderColor: "accentDisabled hover:accentDisabled focus:accentDisabled"
+        borderColor: "disabled hover:disabled focus:disabled"
       }
     }
   } as const,
@@ -174,7 +174,7 @@ export const TextArea = createStyledHOC(
       render: _render,
       focused: focusedProp = formControl?.focused,
       disabled = formControl?.disabled ?? false,
-      placeholderTextColor = "onAccentDisabled",
+      placeholderTextColor = "disabled",
       onBlur = formOnBlur
         ? // Focus moving within the text area is not a blur.
           (event: TextAreaFocusEvent) => {
@@ -201,10 +201,10 @@ export const TextArea = createStyledHOC(
     const [focused, setActive] = useState(false);
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
-    const idleColor = hasValidationMessage ? "accent" : "hairline";
-    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
+    const idleColor = hasValidationMessage ? "accent" : "border";
+    const focusColor = hasValidationMessage ? "active" : "borderActive";
     const isFocused = focusedProp ?? focused;
-    const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "accentDisabled" : isFocused ? focusColor : "accentHover"} focus-visible:${focusColor} group-hover/field:${disabled ? "accentDisabled" : "accentHover"}`;
+    const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "disabled" : isFocused ? focusColor : "active"} focus-visible:${focusColor} group-hover/field:${disabled ? "disabled" : "active"}`;
     const handleFocus = useCallback(
       (event: TextAreaFocusEvent) => {
         setActive(true);
@@ -262,7 +262,7 @@ export const TextArea = createStyledHOC(
             <ControlUnderline
               focused={isFocused}
               disabled={disabled}
-              backgroundColor={disabled ? "accentDisabled" : focusColor}
+              backgroundColor={disabled ? "disabled" : focusColor}
             />
           ) : null}
         </TextAreaDecorationFrame>

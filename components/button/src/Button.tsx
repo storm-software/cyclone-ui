@@ -126,13 +126,13 @@ const isDoubleCascadeVariant = (
 const cascadeFrameStyle = {
   backgroundColor: "transparent hover:transparent press:transparent",
   borderWidth: "3px hover:1px press:1px",
-  borderColor: "accent hover:accent press:accentActive"
+  borderColor: "accent hover:accent press:active"
 } as const;
 
 const reverseCascadeFrameStyle = {
   backgroundColor: "accent hover:transparent press:transparent",
   borderWidth: "1px hover:3px press:3px",
-  borderColor: "accent hover:accent press:accentActive"
+  borderColor: "accent hover:accent press:active"
 } as const;
 
 type BorderRadiusSizeTokens =
@@ -267,7 +267,8 @@ export const ButtonContext = createStyledContext<
   {
     // No `borderRadius` default: the Provider merges defaults into the value
     // and `ButtonFrame` receives it as a call-site prop, which outranks the
-    // `circular` / `rounded` variants. `ButtonFrame` defaults it to "button".
+    // `circular` / `rounded` variants. `ButtonFrame`'s `.resolve` defaults it
+    // to "button".
     size: "10xl",
     variant: "tertiary",
     unstyled: false,
@@ -296,13 +297,13 @@ export const ButtonContext = createStyledContext<
 
 const getDisabledFrameStyle = (variant: ButtonVariant | undefined) => {
   if (variant === "tertiary") {
-    return disabledFrameStyle("surfaceElevatedDisabled", "accentDisabled");
+    return disabledFrameStyle("surfaceElevated", "disabled");
   } else if (variant === "secondary") {
-    return disabledFrameStyle("mutedDisabled", "hairlineInactive");
+    return disabledFrameStyle("subtleDisabled", "borderInactive");
   } else if (variant === "primary" || isReverseCascadeVariant(variant)) {
-    return disabledFrameStyle("mutedDisabled", "accentDisabled");
+    return disabledFrameStyle("subtleDisabled", "disabled");
   } else if (variant === "outlined" || isCascadeVariant(variant)) {
-    return disabledFrameStyle("transparent", "accentDisabled");
+    return disabledFrameStyle("transparent", "disabled");
   } else if (variant === "ghost" || variant === "link") {
     return disabledFrameStyle("transparent", "transparent");
   }
@@ -338,7 +339,9 @@ const ButtonFrame = styled(View, {
   flexWrap: "nowrap",
   flexDirection: "row",
   overflow: "hidden",
-  borderRadius: "button",
+  // No base `borderRadius`: a base style authored here replaces the
+  // `circular` / `rounded` variant output (same base tier). The `.resolve`
+  // below supplies the default "button" radius instead.
   minWidth: "fit-content",
   paddingHorizontal: "2xl",
   boxShadow: "focus-visible:ringOffset",
@@ -348,26 +351,26 @@ const ButtonFrame = styled(View, {
     variant: {
       tertiary: {
         borderWidth: 1,
-        borderColor: "accent hover:accentHover press:accentActive",
-        backgroundColor: "surfaceElevated hover:surfaceElevatedHover"
+        borderColor: "accent hover:active press:active",
+        backgroundColor: "surfaceElevated hover:tertiary"
       },
 
       secondary: {
         borderWidth: 0,
         borderColor: "transparent hover:transparent press:transparent",
-        backgroundColor: "muted hover:mutedHover"
+        backgroundColor: "subtle hover:subtleActive"
       },
 
       primary: {
         borderWidth: 0,
         borderColor: "transparent hover:transparent press:transparent",
-        backgroundColor: "accent hover:accentHover"
+        backgroundColor: "accent hover:active"
       },
 
       outlined: {
         backgroundColor: "transparent hover:transparent press:transparent",
         borderWidth: 3,
-        borderColor: "accent hover:accentHover press:accentActive"
+        borderColor: "accent hover:active press:active"
       },
 
       cascade: cascadeFrameStyle,
@@ -497,7 +500,7 @@ const ButtonTextFrame = styled(Text, {
   textAlign: "center",
   textTransform: "capitalize",
   whiteSpace: "nowrap",
-  fontFamily: "button",
+  fontFamily: "title-md",
   // v3 font classes no longer apply the font's default weight and leading.
   fontWeight: "true",
   lineHeight: "true",
@@ -626,7 +629,7 @@ const ButtonTextFrame = styled(Text, {
       true: {
         cursor: "not-allowed",
         pointerEvents: "none",
-        color: "accentDisabled hover:accentDisabled press:accentDisabled",
+        color: "disabled hover:disabled press:disabled",
         textDecoration: "none hover:none press:none"
       }
     }
@@ -649,12 +652,12 @@ const colorForVariant = (
     (variant === "secondary" && !themeName?.endsWith("base"))
   ) {
     return (
-      disabled ? "onAccentDisabled" : (color ?? "onAccent")
+      disabled ? "disabled" : (color ?? "onAccent")
     ) as ThemeableIconProps["color"];
   }
 
   return (
-    disabled ? "accentDisabled" : (color ?? "accent")
+    disabled ? "disabled" : (color ?? "accent")
   ) as ThemeableIconProps["color"];
 };
 
@@ -668,13 +671,14 @@ const hoverColorForVariant = (
       variant === "primary" ||
       (variant === "secondary" && !themeName?.endsWith("base"))
     ) {
-      return "onAccentDisabled";
+      return "disabled";
     }
 
-    return "accentDisabled";
+    return "disabled";
   }
 
   if (
+    variant === "tertiary" ||
     variant === "ghost" ||
     (variant === "secondary" && themeName?.endsWith("base")) ||
     isReverseCascadeVariant(variant)
@@ -690,7 +694,7 @@ const hoverColorForVariant = (
     return "onAccent";
   }
 
-  return "accentHover";
+  return "active";
 };
 
 const pressedColorForVariant = (
@@ -703,14 +707,14 @@ const pressedColorForVariant = (
       variant === "primary" ||
       (variant === "secondary" && !themeName?.endsWith("base"))
     ) {
-      return "onAccentDisabled";
+      return "disabled";
     }
 
-    return "accentDisabled";
+    return "disabled";
   }
 
   if (isReverseCascadeVariant(variant)) {
-    return "accentActive";
+    return "active";
   }
 
   if (
@@ -718,10 +722,10 @@ const pressedColorForVariant = (
     variant === "secondary" ||
     isCascadeVariant(variant)
   ) {
-    return "onAccentActive";
+    return "onAccent";
   }
 
-  return "accentActive";
+  return "active";
 };
 
 /** Join flat style values; later clauses win over earlier ones. */
@@ -801,7 +805,7 @@ const ButtonIcon = createStyledHOC(
             colorForVariant(variant, disabled, color),
             groupColor,
             // Callers extend the icon color with their own flat clauses, e.g.
-            // `color="group-hover/button:accentHover"`.
+            // `color="group-hover/button:active"`.
             colorProp
           )}>
           {children}
@@ -830,7 +834,7 @@ const ButtonHoverBackground = styled(YStack, {
         bottom: 0,
         left: 0,
         opacity: 0,
-        backgroundColor: "mutedHover"
+        backgroundColor: "subtleActive"
       },
       cascade: {
         top: 0,
@@ -1200,7 +1204,7 @@ const ButtonContainerImpl = createStyledHOC(
               <ButtonHoverBackground
                 effect={doubleCascadeEffect[cascadeState.effect]}
                 {...cascadeBackgroundShape}
-                backgroundColor="muted"
+                backgroundColor="subtle"
                 {...getCascadePositionStyle(
                   cascadeState.reverse
                     ? cascadeHoverStyle[

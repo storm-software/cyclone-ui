@@ -97,7 +97,7 @@ const VolumeSlider = (args: SliderProps) => {
 
   return (
     <View flexDirection="row" alignItems="center" gap="7xl">
-      <SpeakerLow size={24} color="inkBody" />
+      <SpeakerLow size={24} color="secondary" />
       <View flex={1}>
         <Slider
           {...args}
@@ -106,7 +106,7 @@ const VolumeSlider = (args: SliderProps) => {
           onChange={setValue}
         />
       </View>
-      <SpeakerHigh size={24} color="inkBody" />
+      <SpeakerHigh size={24} color="secondary" />
     </View>
   );
 };
@@ -188,7 +188,7 @@ const RangeSlider = (args: SliderProps) => {
         onChange={setValue}
         onChangeCommitted={setCommitted}
       />
-      <Text color="inkBody" fontFamily="caption">
+      <Text color="secondary" fontFamily="caption">
         Committed: {String(committed)}
       </Text>
     </View>

@@ -28,6 +28,7 @@ import shadcn from "@razorwind/shadcn/generate";
 import type { ShikiTheme } from "@razorwind/shiki/generate";
 import shiki from "@razorwind/shiki/generate";
 import storybook from "@razorwind/storybook/generate";
+import styleDictionary from "@razorwind/style-dictionary";
 import stylelint from "@razorwind/stylelint";
 import tamagui from "@razorwind/tamagui/generate";
 import tamaguiPreprocessor from "./tools/razorwind/src/tamagui-preprocessor";
@@ -165,39 +166,26 @@ export default defineConfig({
 
         const mapTheme = (theme: "dark" | "light"): ShikiTheme => {
           const color = tokenGroup(tokenGroup(spec.tokens).color);
-          const ink = tokenGroup(color.ink);
-          const surface = tokenGroup(color.surface);
-          const accent = tokenGroup(color.accent);
-          const muted = tokenGroup(color.muted);
-          const onAccent = tokenGroup(color["on-accent"]);
 
           const base = tokenValue(
-            ink.emphasis,
+            color.primary,
             theme === "dark" ? "#222222" : "#fafafa"
           );
-          const body = tokenValue(ink.body, base);
-          const subtleInk = tokenValue(ink.subtle, body);
-          const link = tokenValue(color.link, body);
-          const brand = tokenValue(accent.brand, link);
-          const danger = tokenValue(accent.danger, brand);
-          const warning = tokenValue(accent.warning, brand);
-          const success = tokenValue(accent.success, brand);
-          const info = tokenValue(accent.info, brand);
-          const discovery = tokenValue(accent.discovery, brand);
+          const body = tokenValue(color.secondary, base);
+          const subtleInk = tokenValue(color.tertiary, body);
+          const info = tokenValue(color.info, body);
+          const danger = tokenValue(color.danger, info);
+          const warning = tokenValue(color.warning, info);
+          const success = tokenValue(color.success, info);
+          const discovery = tokenValue(color.discovery, info);
           const page = tokenValue(
-            surface.canvas,
+            color["surface-canvas"],
             theme === "dark" ? "#222222" : "#fafafa"
           );
-          const sunken = tokenValue(surface.sunken, page);
-          const selection = tokenValue(
-            accent.brand,
-            tokenValue(muted.brand, sunken)
-          );
-          const onSelection = tokenValue(
-            onAccent.brand,
-            tokenValue(onAccent.base, base)
-          );
-          const hairline = tokenValue(color.hairline, subtleInk);
+          const sunken = tokenValue(color["surface-sunken"], page);
+          const selection = tokenValue(color.primary, sunken);
+          const onSelection = page;
+          const border = tokenValue(color.border, subtleInk);
 
           return {
             name: `cyclone-${theme
@@ -210,13 +198,13 @@ export default defineConfig({
             colors: {
               "editor.background": page,
               "editor.foreground": base,
-              "editorCursor.foreground": link,
+              "editorCursor.foreground": info,
               "editor.selectionBackground": selection,
               "editor.selectionForeground": onSelection,
               "editor.inactiveSelectionBackground": sunken,
               "editorLineNumber.foreground": subtleInk,
               "editorLineNumber.activeForeground": body,
-              "editorIndentGuide.background1": hairline,
+              "editorIndentGuide.background1": border,
               "editorIndentGuide.activeBackground1": subtleInk,
               "editorWhitespace.foreground": subtleInk
             },
@@ -235,11 +223,11 @@ export default defineConfig({
               },
               {
                 scope: ["keyword", "storage", "storage.type"],
-                settings: { foreground: brand }
+                settings: { foreground: info }
               },
               {
                 scope: ["entity.name.function", "support.function"],
-                settings: { foreground: brand }
+                settings: { foreground: info }
               },
               {
                 scope: [
@@ -251,7 +239,7 @@ export default defineConfig({
               },
               {
                 scope: ["entity.name.tag", "meta.tag"],
-                settings: { foreground: brand }
+                settings: { foreground: info }
               },
               {
                 scope: ["entity.other.attribute-name", "support.constant"],
@@ -289,6 +277,24 @@ export default defineConfig({
       outputPath: "packages/themes/src/css/tokens.css",
       prefix: "storm"
     }),
+    styleDictionary({
+      platforms: {
+        ts: {
+          transformGroup: "js",
+          buildPath: "packages/themes/src/js",
+          files: [
+            {
+              format: "javascript/module",
+              destination: "tokens.js"
+            },
+            {
+              format: "typescript/module-declarations",
+              destination: "tokens.d.ts"
+            }
+          ]
+        }
+      }
+    }),
     storybook({
       outputPath: "apps/storybook/src",
       mapTheme: (tokens: any) => {
@@ -306,41 +312,36 @@ export default defineConfig({
 
         const mapTheme = (theme: "dark" | "light", brandImage: string) => {
           const color = tokens?.[theme]?.color ?? {};
-          const ink = color.ink ?? {};
-          const surface = color.surface ?? {};
-          const accent = color.accent ?? {};
-          const muted = color.muted ?? {};
-          const onAccent = color["on-accent"] ?? {};
 
           return {
             base: theme,
-            colorPrimary: tokenValue(accent.brand),
-            colorSecondary: tokenValue(muted.base),
+            colorPrimary: tokenValue(color.primary),
+            colorSecondary: tokenValue(color.tertiary),
 
-            textColor: tokenValue(ink.emphasis),
-            textInverseColor: tokenValue(onAccent.base),
+            textColor: tokenValue(color.primary),
+            textInverseColor: tokenValue(color["surface-canvas"]),
 
-            appBg: tokenValue(surface.canvas),
-            appContentBg: tokenValue(surface.elevated),
-            appPreviewBg: tokenValue(surface.canvas),
-            appBorderColor: tokenValue(color.hairline),
+            appBg: tokenValue(color["surface-canvas"]),
+            appContentBg: tokenValue(color["surface-elevated"]),
+            appPreviewBg: tokenValue(color["surface-canvas"]),
+            appBorderColor: tokenValue(color.border),
             appBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
 
-            barTextColor: tokenValue(ink.body),
-            barSelectedColor: tokenValue(accent.brand),
-            barBg: tokenValue(surface.floating),
-            barHoverColor: tokenValue(muted.base),
+            barTextColor: tokenValue(color.secondary),
+            barSelectedColor: tokenValue(color.primary),
+            barBg: tokenValue(color["surface-floating"]),
+            barHoverColor: tokenValue(color.tertiary),
 
-            buttonBg: tokenValue(surface.elevated),
-            buttonBorder: tokenValue(color.hairline),
+            buttonBg: tokenValue(color["surface-elevated"]),
+            buttonBorder: tokenValue(color.border),
 
-            inputBg: tokenValue(surface.elevated),
-            inputBorder: tokenValue(color.hairline),
-            inputTextColor: tokenValue(ink.body),
+            inputBg: tokenValue(color["surface-elevated"]),
+            inputBorder: tokenValue(color.border),
+            inputTextColor: tokenValue(color.secondary),
             inputBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
 
-            booleanBg: tokenValue(surface.elevated),
-            booleanSelectedBg: tokenValue(muted.base),
+            booleanBg: tokenValue(color["surface-elevated"]),
+            booleanSelectedBg: tokenValue(color.tertiary),
 
             brandImage
           };

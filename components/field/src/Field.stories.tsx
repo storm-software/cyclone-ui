@@ -154,32 +154,6 @@ export const DefaultValue: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
-export const BrandWithoutMessage: Story = {
-  args: {
-    theme: "brand"
-  },
-  render: (props, { id }) => (
-    <Form name={`formName-${id}`} initialValues={{ fieldName: "" }}>
-      <Field {...props} name="fieldName">
-        <MessageStateProbe />
-      </Field>
-    </Form>
-  ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
-    await expect(canvas.getByTestId("field-message-state")).toHaveTextContent(
-      "false"
-    );
-  }
-};
-
 export const Discovery: Story = {
   args: {
     validate: validation("discovery")

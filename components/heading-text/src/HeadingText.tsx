@@ -94,7 +94,7 @@ export const HeadingTitleText = styled(BaseHeadingText, {
 export const HeadingLargeText = styled(BaseHeadingText, {
   displayName: "HeadingLargeText",
   render: "h2",
-  color: "inkEmphasis",
+  color: "primary",
 
   variants: {
     variant: {
@@ -115,7 +115,7 @@ export const HeadingLargeText = styled(BaseHeadingText, {
 export const HeadingMediumText = styled(BaseHeadingText, {
   displayName: "HeadingMediumText",
   render: "h3",
-  color: "inkEmphasis",
+  color: "primary",
 
   variants: {
     variant: {
@@ -136,7 +136,7 @@ export const HeadingMediumText = styled(BaseHeadingText, {
 export const HeadingSmallText = styled(BaseHeadingText, {
   displayName: "HeadingSmallText",
   render: "h4",
-  color: "inkEmphasis",
+  color: "primary",
 
   variants: {
     variant: {
@@ -157,7 +157,7 @@ export const HeadingSmallText = styled(BaseHeadingText, {
 export const HeadingExtraSmallText = styled(BaseHeadingText, {
   displayName: "HeadingExtraSmallText",
   render: "h5",
-  color: "inkEmphasis",
+  color: "primary",
 
   variants: {
     variant: {

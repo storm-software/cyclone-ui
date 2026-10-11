@@ -53,8 +53,8 @@ export const TimelineMarker = styled(View, {
   flexShrink: 0,
   borderRadius: "full",
   borderWidth: 2,
-  borderColor: "inkSubtle",
-  backgroundColor: "inkSubtle"
+  borderColor: "tertiary",
+  backgroundColor: "tertiary"
 });
 
 /** A list of events connected by a line, vertically or horizontally. */
@@ -125,7 +125,7 @@ export const Timeline = forwardRef(
                 {!last && (
                   <View
                     flex={1}
-                    backgroundColor="hairline"
+                    backgroundColor="border"
                     {...(vertical
                       ? { width: 2, marginVertical: "xl" as const }
                       : { height: 2, marginHorizontal: "xl" as const })}

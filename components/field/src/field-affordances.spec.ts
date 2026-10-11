@@ -19,7 +19,7 @@ const getDeclaration = (source: string, name: string) => {
 };
 
 describe("field affordance color states", () => {
-  it("uses the hairline token family for shared icons and separators", () => {
+  it("uses the border token family for shared icons and separators", () => {
     const inputSeparator = getDeclaration(
       readComponent("../../input/src/Input.tsx"),
       "InputSeparator"
@@ -31,10 +31,10 @@ describe("field affordance color states", () => {
     const fieldIcon = getDeclaration(formControlSource(), "useFieldIconColor");
 
     for (const affordance of [inputSeparator, selectSeparator, fieldIcon]) {
-      expect(affordance).toContain("hairline");
-      expect(affordance).toContain("hairlineHover");
-      expect(affordance).toContain("hairlineActive");
-      expect(affordance).toContain("hairlineInactive");
+      expect(affordance).toContain("border");
+      expect(affordance).toContain("borderActive");
+      expect(affordance).toContain("borderActive");
+      expect(affordance).toContain("borderInactive");
     }
   });
 
@@ -69,7 +69,7 @@ describe("field affordance color states", () => {
     );
   });
 
-  it("colors field icons accent when themed or validated, otherwise hairline", () => {
+  it("colors field icons accent when themed or validated, otherwise border", () => {
     const field = readComponent("./Field.tsx");
     const iconColor = getDeclaration(formControlSource(), "useFieldIconColor");
     const fieldIcon = getDeclaration(field, "FieldIconButtonImpl");
@@ -94,10 +94,10 @@ describe("field affordance color states", () => {
     );
 
     expect(themeIcon).toContain("theme={theme}");
-    expect(themeIcon).toContain('"hairline focus-visible:hairlineActive"');
-    expect(themeIcon).toContain('"accent focus-visible:accentActive"');
+    expect(themeIcon).toContain('"border focus-visible:borderActive"');
+    expect(themeIcon).toContain('"accent focus-visible:active"');
     expect(themeIcon).toMatch(
-      /arrowBorderColor=\{\s*isNeutral\s*\?\s*"hairline focus-visible:hairlineActive"\s*:\s*"accent focus-visible:accentActive"\s*\}/
+      /arrowBorderColor=\{\s*isNeutral\s*\?\s*"border focus-visible:borderActive"\s*:\s*"accent focus-visible:active"\s*\}/
     );
   });
 });

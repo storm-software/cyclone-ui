@@ -54,19 +54,13 @@ const token = ($value: string | number): Token => ({ $value });
 
 const semanticColors = (prefix: string) => ({
   color: {
-    ink: {
-      emphasis: token(`${prefix}-ink-emphasis`),
-      body: token(`${prefix}-ink-body`)
-    },
-    surface: {
-      canvas: token(`${prefix}-surface-canvas`),
-      elevated: token(`${prefix}-surface-elevated`),
-      floating: token(`${prefix}-surface-floating`)
-    },
-    hairline: token(`${prefix}-hairline`),
-    accent: { brand: token(`${prefix}-accent-brand`) },
-    muted: { base: token(`${prefix}-muted-base`) },
-    "on-accent": { base: token(`${prefix}-on-accent-base`) }
+    primary: token(`${prefix}-primary`),
+    secondary: token(`${prefix}-secondary`),
+    tertiary: token(`${prefix}-tertiary`),
+    border: token(`${prefix}-border`),
+    "surface-canvas": token(`${prefix}-surface-canvas`),
+    "surface-elevated": token(`${prefix}-surface-elevated`),
+    "surface-floating": token(`${prefix}-surface-floating`)
   },
   radius: { md: token(6) }
 });
@@ -81,7 +75,7 @@ describe("Storybook theme mapping", () => {
         typeof plugin === "object" &&
         plugin !== null &&
         "outputPath" in plugin &&
-        plugin.outputPath === "packages/themes/src/storybook" &&
+        plugin.outputPath === "apps/storybook/src" &&
         "mapTheme" in plugin &&
         typeof plugin.mapTheme === "function"
     );
@@ -95,30 +89,30 @@ describe("Storybook theme mapping", () => {
 
     expect(themes.dark).toMatchObject({
       base: "dark",
-      colorPrimary: "dark-accent-brand",
-      colorSecondary: "dark-muted-base",
-      textColor: "dark-ink-emphasis",
-      textInverseColor: "dark-on-accent-base",
+      colorPrimary: "dark-primary",
+      colorSecondary: "dark-tertiary",
+      textColor: "dark-primary",
+      textInverseColor: "dark-surface-canvas",
       appBg: "dark-surface-canvas",
       appContentBg: "dark-surface-elevated",
       appPreviewBg: "dark-surface-canvas",
-      appBorderColor: "dark-hairline",
+      appBorderColor: "dark-border",
       appBorderRadius: 6,
-      barTextColor: "dark-ink-body",
-      barSelectedColor: "dark-accent-brand",
+      barTextColor: "dark-secondary",
+      barSelectedColor: "dark-primary",
       barBg: "dark-surface-floating",
-      barHoverColor: "dark-muted-base",
+      barHoverColor: "dark-tertiary",
       buttonBg: "dark-surface-elevated",
-      buttonBorder: "dark-hairline",
+      buttonBorder: "dark-border",
       inputBg: "dark-surface-elevated",
-      inputBorder: "dark-hairline",
-      inputTextColor: "dark-ink-body",
+      inputBorder: "dark-border",
+      inputTextColor: "dark-secondary",
       inputBorderRadius: 6,
       booleanBg: "dark-surface-elevated",
-      booleanSelectedBg: "dark-muted-base"
+      booleanSelectedBg: "dark-tertiary"
     });
-    expect(themes.light.colorPrimary).toBe("light-accent-brand");
-    expect(themes.light.textColor).toBe("light-ink-emphasis");
+    expect(themes.light.colorPrimary).toBe("light-primary");
+    expect(themes.light.textColor).toBe("light-primary");
     expect(themes.light.appBg).toBe("light-surface-canvas");
   });
 });

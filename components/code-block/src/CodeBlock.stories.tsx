@@ -70,7 +70,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {
   render: args => (
-    <CodeBlock {...args} title="example.ts" icon={<FileCode color="inkBody" />}>
+    <CodeBlock {...args} title="example.ts" icon={<FileCode color="secondary" />}>
       <TypeScriptCode />
     </CodeBlock>
   ),

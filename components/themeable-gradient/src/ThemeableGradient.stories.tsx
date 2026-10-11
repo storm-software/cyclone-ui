@@ -36,12 +36,6 @@ export const Base: Story = {
   args: {}
 };
 
-export const Brand: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
 export const Discovery: Story = {
   args: {
     theme: "discovery"
@@ -69,25 +63,6 @@ export const Info: Story = {
 export const Success: Story = {
   args: {
     theme: "success"
-  }
-};
-
-export const Positive: Story = {
-  args: {
-    theme: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    theme: "negative"
-  }
-};
-
-export const AnalogousBrand: Story = {
-  args: {
-    theme: "brand",
-    variant: "analogous"
   }
 };
 
@@ -133,28 +108,7 @@ export const AnalogousSuccess: Story = {
   }
 };
 
-export const AnalogousPositive: Story = {
-  args: {
-    theme: "positive",
-    variant: "analogous"
-  }
-};
-
-export const AnalogousNegative: Story = {
-  args: {
-    theme: "negative",
-    variant: "analogous"
-  }
-};
-
 // Triadic variant
-
-export const TriadicBrand: Story = {
-  args: {
-    theme: "brand",
-    variant: "triadic"
-  }
-};
 
 export const TriadicSecondary: Story = {
   args: {
@@ -198,28 +152,7 @@ export const TriadicSuccess: Story = {
   }
 };
 
-export const TriadicPositive: Story = {
-  args: {
-    theme: "positive",
-    variant: "triadic"
-  }
-};
-
-export const TriadicNegative: Story = {
-  args: {
-    theme: "negative",
-    variant: "triadic"
-  }
-};
-
 // Tetradic variant
-
-export const TetradicBrand: Story = {
-  args: {
-    theme: "brand",
-    variant: "tetradic"
-  }
-};
 
 export const TetradicSecondary: Story = {
   args: {
@@ -263,28 +196,7 @@ export const TetradicSuccess: Story = {
   }
 };
 
-export const TetradicPositive: Story = {
-  args: {
-    theme: "positive",
-    variant: "tetradic"
-  }
-};
-
-export const TetradicNegative: Story = {
-  args: {
-    theme: "negative",
-    variant: "tetradic"
-  }
-};
-
 // Complementary variant
-
-export const ComplementaryBrand: Story = {
-  args: {
-    theme: "brand",
-    variant: "complementary"
-  }
-};
 
 export const ComplementarySecondary: Story = {
   args: {
@@ -328,28 +240,7 @@ export const ComplementarySuccess: Story = {
   }
 };
 
-export const ComplementaryPositive: Story = {
-  args: {
-    theme: "positive",
-    variant: "complementary"
-  }
-};
-
-export const ComplementaryNegative: Story = {
-  args: {
-    theme: "negative",
-    variant: "complementary"
-  }
-};
-
 // SplitComplementary variant
-
-export const SplitComplementaryBrand: Story = {
-  args: {
-    theme: "brand",
-    variant: "splitComplementary"
-  }
-};
 
 export const SplitComplementarySecondary: Story = {
   args: {
@@ -389,20 +280,6 @@ export const SplitComplementaryInfo: Story = {
 export const SplitComplementarySuccess: Story = {
   args: {
     theme: "success",
-    variant: "splitComplementary"
-  }
-};
-
-export const SplitComplementaryPositive: Story = {
-  args: {
-    theme: "positive",
-    variant: "splitComplementary"
-  }
-};
-
-export const SplitComplementaryNegative: Story = {
-  args: {
-    theme: "negative",
     variant: "splitComplementary"
   }
 };

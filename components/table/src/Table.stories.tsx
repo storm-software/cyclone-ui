@@ -259,7 +259,7 @@ const StatusButton = ({ status }: { status: string }) => {
   return (
     <View
       borderRadius={1000_000_000}
-      backgroundColor={`${status?.toLocaleLowerCase() === "active" ? "muted" : "base9"}`}
+      backgroundColor={`${status?.toLocaleLowerCase() === "active" ? "subtle" : "base9"}`}
       paddingHorizontal="xl">
       <Text
         color="accent"
@@ -335,14 +335,6 @@ export const Base: Story = {
   args: {
     children:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-  }
-};
-
-export const Brand: Story = {
-  args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "brand"
   }
 };
 

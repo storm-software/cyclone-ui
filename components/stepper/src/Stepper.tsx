@@ -289,7 +289,7 @@ export const StepperHeaderItem = createStyledHOC(
           <Circle
             height={75}
             width={3}
-            backgroundColor={index <= currentIndex ? "accent" : "hairline"}
+            backgroundColor={index <= currentIndex ? "accent" : "border"}
             marginLeft="7xl"
           />
         )}
@@ -301,7 +301,7 @@ export const StepperHeaderItem = createStyledHOC(
             padding="3xl"
             borderRadius={1000_000_000}
             borderWidth="md"
-            borderColor={isPastOrCurrent ? "accent" : "hairline"}
+            borderColor={isPastOrCurrent ? "accent" : "border"}
             {...rest}
             value={value}
             onInteraction={handleOnInteraction}>
@@ -312,22 +312,22 @@ export const StepperHeaderItem = createStyledHOC(
               <PencilSimpleLine transition="200ms" color="accent" size="4xl" />
             )}
             {isVisitedFutureStep && (
-              <CheckCircle transition="200ms" color="hairline" size="4xl" />
+              <CheckCircle transition="200ms" color="border" size="4xl" />
             )}
             {index > currentIndex && !isVisitedFutureStep && (
-              <Lock transition="200ms" color="hairline" size="4xl" />
+              <Lock transition="200ms" color="border" size="4xl" />
             )}
           </TamaguiTabs.Tab>
 
           {numbered && (
-            <SizableText color="inkBody" fontFamily="code">
+            <SizableText color="secondary" fontFamily="code">
               {String(itemIndex + 1).padStart(2, "0")}
             </SizableText>
           )}
 
           <HeadingText
             transition="200ms"
-            color={state.currentStep === value ? "accent" : "hairline"}>
+            color={state.currentStep === value ? "accent" : "border"}>
             {children}
           </HeadingText>
         </XStack>
@@ -450,7 +450,7 @@ const StepperRovingIndicator = styled(YStack, {
       true: {
         backgroundColor: "surfaceElevated",
         opacity: 1,
-        color: "inkBody"
+        color: "secondary"
       }
     }
   },

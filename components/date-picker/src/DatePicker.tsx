@@ -657,7 +657,7 @@ const DayPicker = () => {
               <CalendarExtraSmallHeading
                 controlSize={size}
                 textAlign="center"
-                color="inkSubtle">
+                color="tertiary">
                 {day}
               </CalendarExtraSmallHeading>
             </View>
@@ -688,7 +688,7 @@ const DayPicker = () => {
                             : "ghost"
                     }
                     ghostOpacity={0.75}
-                    borderColor={day.now ? "hairline" : undefined}
+                    borderColor={day.now ? "border" : undefined}
                     size={cellSize}
                     width={cellSize}
                     flexGrow={0}
@@ -813,7 +813,7 @@ function YearSlider() {
           userSelect="text"
           textAlign="center"
           cursor="pointer"
-          color="accent hover:accentHover"
+          color="accent hover:active"
           tabIndex={0}>
           {year}
         </CalendarHeadingSmallText>
@@ -880,7 +880,7 @@ const CalendarHeader = () => {
           transition="200ms"
           userSelect="auto"
           cursor="pointer"
-          color="accent hover:accentHover"
+          color="accent hover:active"
           onPress={() => setHeader("year")}
           tabIndex={0}>
           {year}
@@ -890,7 +890,7 @@ const CalendarHeader = () => {
           transition="200ms"
           userSelect="auto"
           cursor="pointer"
-          color="accent hover:accentHover"
+          color="accent hover:active"
           onPress={() => setHeader("month")}
           tabIndex={0}>
           {month}
@@ -1568,6 +1568,8 @@ const DatePickerControlImpl = createStyledHOC(
             keepChildrenMounted={true}
             open={!!focused}
             onOpenChange={handleOpenChanged}
+            placement="bottom"
+            // Floating UI applies the offset on whichever side the popover flips to.
             offset={getSpaced("2xl")}>
             <Popover.Trigger asChild={true}>
               <Input

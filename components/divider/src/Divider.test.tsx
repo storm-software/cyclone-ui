@@ -61,7 +61,7 @@ const getDividerProps = (props: DividerProps = {}) =>
 describe("Divider", () => {
   it("defaults to a two-pixel horizontal hairline", () => {
     expect(getDividerProps()).toMatchObject({
-      backgroundColor: "hairline",
+      backgroundColor: "border",
       height: 2,
       width: "100%"
     });

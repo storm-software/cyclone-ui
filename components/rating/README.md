@@ -131,7 +131,7 @@ import { Rating } from "@cyclone-ui/rating";
 | `size` | `"md"` | `"sm"`, `"md"`, or `"lg"`. |
 | `icon` / `emptyIcon` | `Star` | Any `@cyclone-ui/icons` component. |
 | `iconWeight` / `emptyIconWeight` | `"fill"` / `"regular"` | The icon weights. |
-| `color` / `emptyColor` | `"accent"` / `"hairline"` | The icon colors. Wrap in a `Theme` (for example `warning`) to change the accent. |
+| `color` / `emptyColor` | `"accent"` / `"border"` | The icon colors. Wrap in a `Theme` (for example `warning`) to change the accent. |
 | `highlightSelectedOnly` | `false` | Only fill the selected icon. |
 | `getLabelText` | `"N Stars"` | Builds the accessible value text. |
 

@@ -70,7 +70,7 @@ const SelectGroup = styled(XStack, {
   cursor: "pointer",
   backgroundColor: "surfaceElevated",
   borderWidth: 1,
-  borderColor: "hairline hover:accentHover focus-visible:accentActive",
+  borderColor: "border hover:active focus-visible:active",
   outlineStyle: "none",
   // this fixes a flex bug where it overflows container
   boxShadow: "none focus-visible:ringOffset",
@@ -83,13 +83,13 @@ const SelectGroup = styled(XStack, {
     focused: {
       true: {
         boxShadow: "ringOffset",
-        borderColor: "accentActive"
+        borderColor: "active"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:accentHover"
+        borderColor: "accent hover:active"
       }
     },
 
@@ -101,7 +101,7 @@ const SelectGroup = styled(XStack, {
         backgroundColor: "transparent",
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "hairline hover:accentHover focus-visible:accent",
+        borderColor: "border hover:active focus-visible:accent",
         boxShadow: "none focus-visible:none"
       },
       inlined: {}
@@ -116,7 +116,7 @@ const SelectGroup = styled(XStack, {
     disabled: {
       true: {
         borderColor:
-          "accentDisabled hover:accentDisabled press:accentDisabled focus:accentDisabled",
+          "disabled hover:disabled press:disabled focus:disabled",
         userSelect: "none",
         cursor: "not-allowed",
         outlineStyle: "press:none focus:none"
@@ -177,7 +177,7 @@ const SelectSeparator = styled(View, {
   borderRightWidth: 0,
   borderTopWidth: 0,
   borderBottomWidth: 0,
-  borderColor: "hairline hover:hairlineHover",
+  borderColor: "border hover:borderActive",
   width: 0,
   flexShrink: 0,
   height: "60%",
@@ -185,7 +185,7 @@ const SelectSeparator = styled(View, {
   variants: {
     focused: {
       true: {
-        borderColor: "hairlineActive"
+        borderColor: "borderActive"
       }
     },
 
@@ -210,7 +210,7 @@ const SelectSeparator = styled(View, {
     disabled: {
       true: {
         borderColor:
-          "hairlineInactive hover:hairlineInactive press:hairlineInactive focus:hairlineInactive"
+          "borderInactive hover:borderInactive press:borderInactive focus:borderInactive"
       }
     }
   } as const,
@@ -274,14 +274,14 @@ const SelectTextBoxImpl = createStyledHOC(
     const [locallyActive, setLocallyActive] = useState(false);
     const frameSize = size;
     const underlineActive = focused || locallyActive;
-    const idleColor = hasValidationMessage ? "accent" : "hairline";
-    const focusColor = hasValidationMessage ? "accentActive" : "hairlineActive";
-    const hoverColor = hasValidationMessage ? "accentHover" : "hairlineHover";
+    const idleColor = hasValidationMessage ? "accent" : "border";
+    const focusColor = hasValidationMessage ? "active" : "borderActive";
+    const hoverColor = hasValidationMessage ? "active" : "borderActive";
     // A call-site base replaces every lower-tier clause in v3, so restate
     // the `disabled` variant's press/focus colors that v2 kept.
     // In a field the label overlays the frame without being inside it, so
     // the frame never sees `hover`; follow the field group's hover too.
-    const borderColor = `${focused ? focusColor : idleColor} hover:${focused ? focusColor : "accentHover"} group-hover/field:${disabled ? "accentDisabled" : focused ? focusColor : "accentHover"}${disabled ? " press:accentDisabled focus:accentDisabled" : ""} focus-visible:${focusColor}`;
+    const borderColor = `${focused ? focusColor : idleColor} hover:${focused ? focusColor : "active"} group-hover/field:${disabled ? "disabled" : focused ? focusColor : "active"}${disabled ? " press:disabled focus:disabled" : ""} focus-visible:${focusColor}`;
 
     return (
       <SelectGroup
@@ -339,7 +339,7 @@ const SelectTextBoxImpl = createStyledHOC(
                 focused={focused}
                 hasValidationMessage={hasValidationMessage}
                 disabled={disabled}
-                borderColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "hairlineInactive" : focused ? focusColor : hoverColor}`}
+                borderColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "borderInactive" : focused ? focusColor : hoverColor}`}
               />
             </XGroup.Item>
 
@@ -352,7 +352,7 @@ const SelectTextBoxImpl = createStyledHOC(
               bottom={-1}
               focused={underlineActive}
               disabled={disabled}
-              backgroundColor={disabled ? "accentDisabled" : focusColor}
+              backgroundColor={disabled ? "disabled" : focusColor}
             />
           )}
           {labelPlacement === "border" && (

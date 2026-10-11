@@ -36,25 +36,25 @@ const meta: Meta<typeof Stepper> = {
 
       <Stepper.Content>
         <Stepper.Content.Item value="tab1">
-          <Text color="inkBody">
+          <Text color="secondary">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Text>
         </Stepper.Content.Item>
         <Stepper.Content.Item value="tab2">
-          <Text color="inkBody">
+          <Text color="secondary">
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.
           </Text>
         </Stepper.Content.Item>
         <Stepper.Content.Item value="tab3">
-          <Text color="inkBody">
+          <Text color="secondary">
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur.
           </Text>
         </Stepper.Content.Item>
         <Stepper.Content.Item value="tab4">
-          <Text color="inkBody">
+          <Text color="secondary">
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
             officia deserunt mollit anim id est laborum.
           </Text>
@@ -85,14 +85,6 @@ export const Numbered: Story = {
     numbered: true,
     children:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  }
-};
-
-export const Brand: Story = {
-  args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "brand"
   }
 };
 

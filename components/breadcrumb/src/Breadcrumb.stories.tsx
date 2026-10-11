@@ -85,13 +85,6 @@ export const DoubleChevron: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    currentName: "Current Page",
-    theme: "brand"
-  }
-};
-
 export const DiscoveryTheme: Story = {
   args: { currentName: "Current Page", theme: "discovery" }
 };
@@ -110,15 +103,4 @@ export const InfoTheme: Story = {
 
 export const SuccessTheme: Story = {
   args: { currentName: "Current Page", theme: "success" }
-};
-
-export const PositiveTheme: Story = {
-  args: {
-    currentName: "Current Page",
-    theme: "positive"
-  }
-};
-
-export const NegativeTheme: Story = {
-  args: { currentName: "Current Page", theme: "negative" }
 };

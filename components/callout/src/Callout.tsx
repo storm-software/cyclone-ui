@@ -69,7 +69,7 @@ const CalloutBackgroundHighGradient = styled(LinearGradient, {
   flexDirection: "row",
   transition: "200ms",
   overflow: "hidden",
-  opacity: 0.6,
+  opacity: 1,
   zIndex: "10"
 });
 
@@ -122,7 +122,7 @@ const CalloutFrameImpl = createStyledHOC(
             theme={theme}
             start={[0, 1.0]}
             end={[0, 1.0]}
-            colors={["transparent", "muted"]}
+            colors={["transparent", "subtle"]}
           />
           <CalloutBackgroundDiagonal theme={theme}>
             <Diagonal
@@ -160,7 +160,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
   }
 
   return (
-    <ThemeableIcon theme={theme} {...props} size="13xl" color="muted">
+    <ThemeableIcon theme={theme} {...props} size="13xl" color="subtle">
       {icon}
     </ThemeableIcon>
   );
@@ -190,7 +190,7 @@ const CalloutHeadingImpl = createStyledHOC(
 
 const CalloutEyebrow = styled(EyebrowText, {
   displayName: "CalloutEyebrow",
-  color: "muted",
+  color: "subtle",
   zIndex: "20"
 });
 
