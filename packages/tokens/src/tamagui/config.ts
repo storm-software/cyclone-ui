@@ -721,9 +721,9 @@ const captionFont = createFont({
     true: 16
   },
   lineHeight: {
-    sm: 16.92,
-    tight: 16.92,
-    true: 16.92
+    sm: 18,
+    snug: 18,
+    true: 18
   },
   weight: {
     normal: "400",
@@ -973,9 +973,9 @@ const titleMdFont = createFont({
     true: 18
   },
   lineHeight: {
-    md: 19.035,
-    tight: 19.035,
-    true: 19.035
+    md: 20.25,
+    snug: 20.25,
+    true: 20.25
   },
   weight: {
     md: "600",

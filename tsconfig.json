@@ -259,6 +259,9 @@
       "path": "./components/tag-picker"
     },
     {
+      "path": "./components/overlay"
+    },
+    {
       "path": "./components/page"
     },
     {

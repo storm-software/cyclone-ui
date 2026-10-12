@@ -16,7 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { Field, type FieldProps } from "@cyclone-ui/field";
+import type { FieldProps } from "@cyclone-ui/field";
+import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { RadioGroup } from "./RadioGroup";
@@ -25,7 +26,7 @@ import { RadioGroup } from "./RadioGroup";
 type RadioGroupStoryArgs = Omit<FieldProps<string>, "children" | "name">;
 
 const meta: Meta<RadioGroupStoryArgs> = {
-  title: "Base/RadioGroup",
+  title: "Form/RadioGroup",
   component: RadioGroup,
   tags: ["autodocs"],
   render: ({ defaultValue, ...props }: any, { id }: { id: string }) => (

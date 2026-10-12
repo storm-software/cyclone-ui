@@ -20,6 +20,8 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Container } from "@cyclone-ui/container";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
+import type { OverlayProps } from "@cyclone-ui/overlay";
+import { Overlay } from "@cyclone-ui/overlay";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledContext,
@@ -43,7 +45,6 @@ import {
   DialogTrigger as TamaguiDialogTrigger
 } from "@tamagui/dialog";
 import { withStaticProperties } from "@tamagui/helpers";
-import { LinearGradient } from "@tamagui/linear-gradient";
 import * as React from "react";
 
 export interface DialogContextProps {
@@ -160,39 +161,12 @@ const DialogClose = createStyledHOC(
   }
 );
 
-// `LinearGradient` is not a plain styled view; v3 `styled()` only keeps style
-// defaults for it, so the gradient geometry is passed as props at the call site.
-const DialogOverlayFrame = styled(LinearGradient, {
+// Tamagui's `DialogOverlay` owns presence and pointer-event handling; the
+// visual backdrop comes from the shared `Overlay` component.
+const DialogOverlayFrame = styled(TamaguiDialogOverlay, {
   displayName: "DialogOverlay",
   context: DialogContext,
   transition: "200ms",
-  pointerEvents: "auto",
-  opacity: "0.6 enter:0 exit:0",
-  backdropFilter: "blur(2px)",
-  filter: "blur(2px)",
-  position: "absolute",
-  inset: 0,
-  variants: {
-    overlay: {
-      false: {
-        display: "none"
-      }
-    }
-  } as const,
-  defaultVariants: {
-    overlay: true
-  }
-});
-
-const DialogOverlayBackground = styled(TamaguiDialogOverlay, {
-  displayName: "DialogOverlay",
-  context: DialogContext,
-  transition: "200ms",
-  pointerEvents: "auto",
-  opacity: "0.6 enter:0 exit:0",
-  backdropFilter: "blur(35px)",
-  filter: "blur(35px)",
-  backgroundColor: "backdrop",
   variants: {
     overlay: {
       false: {
@@ -206,20 +180,15 @@ const DialogOverlayBackground = styled(TamaguiDialogOverlay, {
 });
 
 const DialogOverlay = createStyledHOC(
-  DialogOverlayBackground,
+  Overlay,
   (
-    props: GetProps<typeof DialogOverlayBackground> & TamaguiDialogOverlayProps,
+    { forceMount, ...props }: OverlayProps & TamaguiDialogOverlayProps,
     forwardedRef
   ) => {
     return (
-      <DialogOverlayBackground ref={forwardedRef} {...props}>
-        <DialogOverlayFrame
-          start={[0, 0]}
-          end={[1, 1]}
-          colors={["accent", "transparent"]}
-          locations={[0.0, 1.0]}
-        />
-      </DialogOverlayBackground>
+      <DialogOverlayFrame forceMount={forceMount}>
+        <Overlay ref={forwardedRef} {...props} />
+      </DialogOverlayFrame>
     );
   },
   {

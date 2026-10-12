@@ -21,7 +21,7 @@ import { useEffect, useState } from "react";
 import { CircularProgress } from "./CircularProgress";
 
 const meta = {
-  title: "Base/CircularProgress",
+  title: "Display/CircularProgress",
   component: CircularProgress,
   tags: ["autodocs"],
   parameters: {

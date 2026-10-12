@@ -262,190 +262,190 @@ catalogs:
       specifier: 0.5.23
       version: 0.5.23
     '@tamagui/accordion':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/adapt':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/alert-dialog':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/animate-presence':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/animations-css':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/animations-motion':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/avatar':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/button':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/checkbox':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/checkbox-headless':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/cli':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/codemod-flat-values':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/collapsible':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/compose-refs':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/config':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/constants':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/core':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/create-context':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/dialog':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/dismissable':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/eslint-plugin':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/floating':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/focusable':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/font-size':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/get-font-sized':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/get-token':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/group':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/helpers':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/helpers-icon':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/helpers-tamagui':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/image':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/label':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/language-service':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/linear-gradient':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/list-item':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/popover':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/popper':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/portal':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/progress':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/proxy-worm':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/radio-group':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/react-native-svg':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/react-native-types':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/scroll-view':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/separator':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/shapes':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/sheet':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/shorthands':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/slider':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/stacks':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/static':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/switch':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/switch-headless':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/tabs':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/text':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/theme-builder':
       specifier: ^2.7.7
       version: 2.7.7
     '@tamagui/toast':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/tooltip':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/use-controllable-state':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/use-presence':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/vite-plugin':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@tamagui/web':
-      specifier: 3.0.2
+      specifier: ^3.0.2
       version: 3.0.2
     '@taplo/cli':
       specifier: ^0.7.0
@@ -618,9 +618,6 @@ catalogs:
     style-dictionary:
       specifier: ^5.6.1
       version: 5.6.1
-    tamagui:
-      specifier: 3.0.2
-      version: 3.0.2
     tsdown:
       specifier: ^0.22.14
       version: 0.22.14
@@ -1077,9 +1074,6 @@ importers:
       react-native-web:
         specifier: 'catalog:'
         version: 0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
-      tamagui:
-        specifier: 'catalog:'
-        version: 3.0.2(@babel/core@8.0.7)(@react-native/babel-preset@0.81.5(@babel/core@8.0.7))(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
       vite-plugin-react-native-web:
         specifier: 'catalog:'
         version: 1.2.0
@@ -2139,6 +2133,9 @@ importers:
       '@cyclone-ui/heading-text':
         specifier: workspace:*
         version: link:../heading-text
+      '@cyclone-ui/overlay':
+        specifier: workspace:*
+        version: link:../overlay
       '@tamagui/alert-dialog':
         specifier: 'catalog:'
         version: 3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
@@ -2170,9 +2167,6 @@ importers:
         specifier: 'catalog:'
         version: 3.0.2(react@19.3.0)
       '@tamagui/helpers-tamagui':
-        specifier: 'catalog:'
-        version: 3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
-      '@tamagui/linear-gradient':
         specifier: 'catalog:'
         version: 3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
       '@tamagui/stacks':
@@ -3109,6 +3103,34 @@ importers:
       '@cyclone-ui/form':
         specifier: workspace:*
         version: link:../form
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 10.6.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@4.64.5)(storybook@10.6.1(@types/react@19.3.0)(prettier@3.9.10)(react@19.3.0))(typescript@7.0.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      react:
+        specifier: 'catalog:'
+        version: 19.3.0
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.3.0(react@19.3.0)
+      react-native:
+        specifier: 'catalog:'
+        version: 0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0)
+
+  components/overlay:
+    dependencies:
+      '@tamagui/core':
+        specifier: 'catalog:'
+        version: 3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
+      '@tamagui/linear-gradient':
+        specifier: 'catalog:'
+        version: 3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
+      '@tamagui/stacks':
+        specifier: 'catalog:'
+        version: 3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
+      react-native-svg:
+        specifier: ^15.15.5
+        version: 15.15.5(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
+    devDependencies:
       '@storybook/react-vite':
         specifier: 'catalog:'
         version: 10.6.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@4.64.5)(storybook@10.6.1(@types/react@19.3.0)(prettier@3.9.10)(react@19.3.0))(typescript@7.0.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
@@ -25417,7 +25439,7 @@ snapshots:
 
   '@babel/generator@8.0.0-rc.6':
     dependencies:
-      '@babel/parser': 8.0.0-rc.6
+      '@babel/parser': 8.0.7
       '@babel/types': 8.0.6
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
@@ -29295,6 +29317,7 @@ snapshots:
       '@floating-ui/core': 1.8.0
       react: 19.3.0
       react-native: 0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0)
+    optional: true
 
   '@floating-ui/react-native@0.10.10(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -42906,6 +42929,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/accordion@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -42957,6 +42981,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/adapt@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -43055,6 +43080,7 @@ snapshots:
       - react-native-teleport
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/alert-dialog@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -43197,6 +43223,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/animate@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -43476,6 +43503,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/avatar@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -43549,6 +43577,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/button@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -43595,6 +43624,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/checkbox-headless@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -43622,6 +43652,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/checkbox-headless@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -43670,6 +43701,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/checkbox@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -43791,6 +43823,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/collapsible@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -43942,6 +43975,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/config-default@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.21.4(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -44053,6 +44087,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/core@1.144.4(react-dom@19.3.0(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -44234,6 +44269,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/create-system-font@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -44308,6 +44344,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/dialog@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -44419,6 +44456,7 @@ snapshots:
       '@tamagui/compose-refs': 3.0.2(react@19.3.0)
       '@tamagui/react-native-types': 3.0.2(react@19.3.0)
       react: 19.3.0
+    optional: true
 
   '@tamagui/eslint-plugin@3.0.2(eslint@10.12.0(jiti@2.7.0))':
     dependencies:
@@ -44453,6 +44491,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/floating@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -44463,6 +44502,7 @@ snapshots:
       react-dom: 19.3.0(react@19.3.0)
     transitivePeerDependencies:
       - react-native
+    optional: true
 
   '@tamagui/floating@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -44479,6 +44519,7 @@ snapshots:
       '@tamagui/compose-refs': 3.0.2(react@19.3.0)
       '@tamagui/use-event': 3.0.2(react@19.3.0)
       react: 19.3.0
+    optional: true
 
   '@tamagui/focus-scope@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -44503,6 +44544,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/focus-scope@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -44570,6 +44612,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/focusable@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -44700,6 +44743,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/generate-themes@1.144.4(esbuild@0.25.12)(react-dom@19.3.0(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -44813,6 +44857,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/get-token@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -44871,6 +44916,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/group@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -45087,6 +45133,7 @@ snapshots:
       - react-native-teleport
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/image@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -45157,6 +45204,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/is-equal-shallow@1.144.4(react@19.3.0)':
     dependencies:
@@ -45193,6 +45241,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/label@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -45267,6 +45316,7 @@ snapshots:
       - react-native-teleport
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/linear-gradient@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -45332,6 +45382,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/list-item@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -45383,6 +45434,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/metro-plugin@3.0.2(@babel/core@8.0.7)(@react-native/babel-preset@0.81.5(@babel/core@8.0.7))(encoding@0.1.13)(metro-resolver@0.87.1)(metro@0.87.1)(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -45519,6 +45571,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/popover@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -45616,6 +45669,7 @@ snapshots:
       - react-native-teleport
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/popper@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -45785,6 +45839,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/progress@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -45834,6 +45889,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/radio-group@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -45881,6 +45937,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/radio-headless@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46140,6 +46197,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/roving-focus@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46184,6 +46242,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/scroll-view@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46279,6 +46338,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/separator@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46298,6 +46358,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/separator@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46336,6 +46397,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/shapes@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46412,6 +46474,7 @@ snapshots:
       - react-native-teleport
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/sheet@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46585,6 +46648,7 @@ snapshots:
       - react-native-teleport
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/slider@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46632,6 +46696,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/spinner@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46651,6 +46716,7 @@ snapshots:
       - react-native-teleport
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/stacks@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46857,6 +46923,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/switch-headless@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46902,6 +46969,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/switch@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46944,6 +47012,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/tabs-headless@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -46990,6 +47059,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/tabs@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -47135,6 +47205,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/themes@3.0.2':
     dependencies:
@@ -47263,6 +47334,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/tooltip@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -47291,6 +47363,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/tooltip@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -47402,6 +47475,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   '@tamagui/use-async@3.0.2(react@19.3.0)':
     dependencies:
@@ -47668,6 +47742,7 @@ snapshots:
       '@tamagui/constants': 3.0.2(react@19.3.0)
       '@tamagui/react-native-types': 3.0.2(react@19.3.0)
       react: 19.3.0
+    optional: true
 
   '@tamagui/visually-hidden@3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -62550,7 +62625,8 @@ snapshots:
 
   setprototypeof@1.2.0: {}
 
-  sf-symbols-typescript@2.2.0: {}
+  sf-symbols-typescript@2.2.0:
+    optional: true
 
   sh-syntax@0.4.2:
     dependencies:
@@ -63491,6 +63567,7 @@ snapshots:
       - react-native-web
       - react-native-worklets-core
       - zeego
+    optional: true
 
   tapable@2.3.3: {}
 

@@ -19,7 +19,9 @@
 import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
+import { Lock, MagnifyingGlass } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { InputProps } from "./Input";
 import { Input } from "./Input";
 
@@ -30,7 +32,7 @@ import { Input } from "./Input";
  */
 type InputStoryArgs = Pick<
   FieldProps,
-  "theme" | "size" | "disabled" | "required" | "validate"
+  "theme" | "size" | "disabled" | "required" | "validate" | "clearable"
 > & {
   variant?: InputProps["variant"];
   labelVariant?: FieldLabelVariant;
@@ -38,7 +40,7 @@ type InputStoryArgs = Pick<
 };
 
 const meta: Meta<InputStoryArgs> = {
-  title: "Base/Input",
+  title: "Form/Input",
   component: Input,
   tags: ["autodocs"],
   render: (
@@ -75,7 +77,7 @@ const validation = (
   onChange: [
     () => [
       {
-        message: "This is an example validation message",
+        message: "This is an example detailed message for an input field",
         type
       }
     ]
@@ -83,7 +85,184 @@ const validation = (
 });
 
 export const Base: Story = {
-  args: {}
+  args: {},
+  tags: ["input-height-regression"],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+    const label = canvas.getByText("Label Text").closest("label");
+
+    await expect(input).toHaveStyle({ height: "43px" });
+    await expect(label).not.toBeNull();
+    await expect(
+      Math.abs(
+        label!.getBoundingClientRect().top +
+          label!.getBoundingClientRect().height / 2 -
+          (input.getBoundingClientRect().top +
+            input.getBoundingClientRect().height / 2)
+      )
+    ).toBeLessThan(2);
+    await userEvent.type(input, "input value");
+    await expect(input).toHaveValue("input value");
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    labelVariant: "floating"
+  },
+  render: ({ labelVariant, ...props }, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ inputName: "" }}>
+      <Field {...props} name="inputName">
+        <Field.Label variant={labelVariant}>Label Text</Field.Label>
+        <Input>
+          <Input.TextBox>
+            <Input.TextBox.Value />
+          </Input.TextBox>
+        </Input>
+      </Field>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+    const labelText = canvas.getByText("Label Text");
+    const label = labelText.closest("label") as HTMLLabelElement;
+    const initialFontSize = Number.parseFloat(
+      getComputedStyle(labelText).fontSize
+    );
+    const inputRect = input.getBoundingClientRect();
+    const labelRect = label.getBoundingClientRect();
+
+    await expect(
+      Math.abs(
+        labelRect.top +
+          labelRect.height / 2 -
+          (inputRect.top + inputRect.height / 2)
+      )
+    ).toBeLessThan(2);
+
+    await userEvent.click(input);
+    await waitFor(() => {
+      const focusedLabelRect = label.getBoundingClientRect();
+      const focusedLabelOffset =
+        focusedLabelRect.top + focusedLabelRect.height / 2 - inputRect.top;
+      expect(focusedLabelOffset).toBeGreaterThanOrEqual(0);
+      expect(focusedLabelOffset).toBeLessThan(5);
+      expect(
+        Number.parseFloat(getComputedStyle(labelText).fontSize)
+      ).toBeLessThan(initialFontSize);
+    });
+
+    await userEvent.type(input, "input value");
+    await userEvent.tab();
+    await waitFor(() => {
+      const valuedLabelRect = label.getBoundingClientRect();
+      const valuedLabelOffset =
+        valuedLabelRect.top + valuedLabelRect.height / 2 - inputRect.top;
+      expect(valuedLabelOffset).toBeGreaterThanOrEqual(0);
+      expect(valuedLabelOffset).toBeLessThan(5);
+    });
+  }
+};
+
+export const FloatingWithPlaceholder: Story = {
+  args: {
+    labelVariant: "floating"
+  }
+};
+
+export const FloatingWithStartIcon: Story = {
+  args: {
+    labelVariant: "floating"
+  },
+  render: ({ labelVariant, ...props }, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ inputName: "" }}>
+      <Field {...props} name="inputName">
+        <Field.Label variant={labelVariant}>Search</Field.Label>
+        <Input>
+          <Input.TextBox>
+            <Field.Icon position="start" aria-label="Search icon">
+              <MagnifyingGlass aria-hidden={true} />
+            </Field.Icon>
+            <Input.TextBox.Value />
+          </Input.TextBox>
+        </Input>
+      </Field>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+    const label = canvas.getByText("Search").closest("label");
+    const inputTextLeft =
+      input.getBoundingClientRect().left +
+      Number.parseFloat(getComputedStyle(input).paddingLeft);
+
+    await expect(label).not.toBeNull();
+    await waitFor(async () => {
+      await expect(
+        Math.abs(label!.getBoundingClientRect().left - inputTextLeft)
+      ).toBeLessThan(2);
+    });
+
+    await userEvent.click(input);
+    await waitFor(async () => {
+      await expect(
+        Math.abs(label!.getBoundingClientRect().left - inputTextLeft)
+      ).toBeLessThan(2);
+    });
+  }
+};
+
+export const FloatingWithEndIconTruncation: Story = {
+  args: {
+    labelVariant: "floating"
+  },
+  render: ({ labelVariant, ...props }, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ inputName: "" }}>
+      <div style={{ width: 240 }}>
+        <Field {...props} name="inputName">
+          <Field.Label variant={labelVariant} showOptional={true}>
+            An intentionally long field label that must not overlap the icon
+          </Field.Label>
+          <Input>
+            <Input.TextBox>
+              <Input.TextBox.Value />
+              <Field.Icon position="end" aria-label="Lock field">
+                <Lock aria-hidden={true} />
+              </Field.Icon>
+            </Input.TextBox>
+          </Input>
+        </Field>
+      </div>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const labelText = canvas.getByText(
+      "An intentionally long field label that must not overlap the icon",
+      { exact: true }
+    );
+    const icon = canvasElement.querySelector("svg");
+
+    if (!icon) {
+      throw new globalThis.Error("Expected the Inlined icon to render");
+    }
+
+    await waitFor(async () => {
+      await expect(
+        canvas.getByText("(Optional)", { exact: true })
+      ).not.toBeVisible();
+      await expect(labelText.scrollWidth).toBeGreaterThan(
+        labelText.clientWidth
+      );
+      await expect(getComputedStyle(labelText).textOverflow).toBe("ellipsis");
+      await expect(labelText.getBoundingClientRect().right).toBeLessThanOrEqual(
+        icon.getBoundingClientRect().left
+      );
+    });
+  }
 };
 
 export const OutlinedFloating: Story = {
@@ -128,9 +307,48 @@ export const InlinedAbove: Story = {
   }
 };
 
+export const WithLink: Story = {
+  args: {},
+  render: ({ labelVariant, ...props }, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ inputName: "" }}>
+      <Field {...props} name="inputName">
+        <Field.Label variant={labelVariant}>Email</Field.Label>
+        <Field.Link href="#input-field-link">Why we ask</Field.Link>
+        <Input>
+          <Input.TextBox>
+            <Input.TextBox.Value placeholder="email@example.com" />
+          </Input.TextBox>
+        </Input>
+      </Field>
+    </Form>
+  )
+};
+
 export const Required: Story = {
   args: {
     required: true
+  },
+  play: async ({ canvasElement }) => {
+    await expect(
+      within(canvasElement).queryByText("(Optional)")
+    ).not.toBeInTheDocument();
+  }
+};
+
+export const Clearable: Story = {
+  args: {
+    clearable: true
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+
+    await userEvent.type(input, "input value");
+    const clearButton = canvas.getByRole("button");
+    await expect(clearButton).toBeVisible();
+    await userEvent.click(clearButton);
+    await expect(input).toHaveValue("");
+    await expect(input).toHaveFocus();
   }
 };
 
@@ -152,9 +370,58 @@ export const Discovery: Story = {
   }
 };
 
+export const DiscoveryFloating: Story = {
+  args: {
+    validate: validation("discovery"),
+    labelVariant: "floating"
+  }
+};
+
+export const DiscoveryUnderlined: Story = {
+  args: {
+    validate: validation("discovery"),
+    variant: "underlined"
+  }
+};
+
 export const Error: Story = {
   args: {
     validate: validation("danger")
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await canvas.findByText(
+      "This is an example detailed message for an input field"
+    );
+    const iconButton = canvas.getAllByRole("button").at(-1)!;
+
+    await expect(iconButton).toHaveStyle({
+      flexShrink: "0",
+      width: "32px",
+      minWidth: "32px"
+    });
+
+    await userEvent.hover(iconButton);
+    const messages = await within(document.body).findAllByText(
+      "This is an example detailed message for an input field"
+    );
+    await waitFor(async () => {
+      await expect(messages.at(-1)!).toBeVisible();
+    });
+  }
+};
+
+export const ErrorFloating: Story = {
+  args: {
+    validate: validation("danger"),
+    labelVariant: "floating"
+  }
+};
+
+export const ErrorUnderlined: Story = {
+  args: {
+    validate: validation("danger"),
+    variant: "underlined"
   }
 };
 
@@ -164,15 +431,57 @@ export const Warning: Story = {
   }
 };
 
+export const WarningFloating: Story = {
+  args: {
+    validate: validation("warning"),
+    labelVariant: "floating"
+  }
+};
+
+export const WarningUnderlined: Story = {
+  args: {
+    validate: validation("warning"),
+    variant: "underlined"
+  }
+};
+
 export const Info: Story = {
   args: {
     validate: validation("info")
   }
 };
 
+export const InfoFloating: Story = {
+  args: {
+    validate: validation("info"),
+    labelVariant: "floating"
+  }
+};
+
+export const InfoUnderlined: Story = {
+  args: {
+    validate: validation("info"),
+    variant: "underlined"
+  }
+};
+
 export const Success: Story = {
   args: {
     validate: validation("success")
+  }
+};
+
+export const SuccessFloating: Story = {
+  args: {
+    validate: validation("success"),
+    labelVariant: "floating"
+  }
+};
+
+export const SuccessUnderlined: Story = {
+  args: {
+    validate: validation("success"),
+    variant: "underlined"
   }
 };
 

@@ -16,31 +16,92 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Text, View } from "@tamagui/core";
 import { useState } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
+import type { TagPickerProps } from "./TagPicker";
 import { TagPicker } from "./TagPicker";
 
-const meta: Meta<typeof TagPicker> = {
-  title: "Base/TagPicker",
+type TagPickerStoryArgs = Omit<TagPickerProps, "name"> &
+  Omit<FieldProps<string[]>, "children" | "name"> & {
+    labelVariant?: FieldLabelVariant;
+  };
+
+const meta: Meta<TagPickerStoryArgs> = {
+  title: "Form/TagPicker",
   component: TagPicker,
   tags: ["autodocs"],
   args: {
-    name: "tags",
     placeholder: "Add a tag",
     testID: "tag-picker"
   },
-  render: (args: any) => (
-    <View width={360}>
-      <TagPicker {...args} />
-    </View>
+  render: (
+    {
+      defaultValue = [],
+      disabled,
+      labelVariant,
+      required,
+      size,
+      tagVariant,
+      theme,
+      validate,
+      variant,
+      ...control
+    }: any,
+    { id }: { id: string }
+  ) => (
+    <Form name={`formName-${id}`} initialValues={{ tagPickerName: defaultValue }}>
+      <View width={360}>
+        <Field
+          name="tagPickerName"
+          disabled={disabled}
+          required={required}
+          size={size}
+          theme={theme}
+          validate={validate}
+          variant={variant}>
+          <Field.Label variant={labelVariant}>Topics</Field.Label>
+          <TagPicker
+            {...control}
+            disabled={disabled}
+            size={size}
+            tagVariant={tagVariant}
+            variant={variant}
+          />
+          <Field.Details>Press Enter to add a topic</Field.Details>
+        </Field>
+      </View>
+    </Form>
   )
-} satisfies Meta<typeof TagPicker>;
+} satisfies Meta<TagPickerStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof TagPicker>;
+type Story = StoryObj<TagPickerStoryArgs>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+): NonNullable<FieldProps["validate"]> => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example detailed message for a tag select field",
+        type
+      }
+    ]
+  ]
+});
 
 /** Waits until a removed pill has finished its exit animation. */
 const expectTagRemoved = async (canvasElement: HTMLElement, tag: string) =>
@@ -77,6 +138,17 @@ export const Base: Story = {
 export const DefaultValue: Story = {
   args: {
     defaultValue: ["Design", "Engineering", "Research"]
+  }
+};
+
+export const Required: Story = {
+  args: {
+    required: true
+  },
+  play: async ({ canvasElement }) => {
+    await expect(
+      within(canvasElement).queryByText("(Optional)")
+    ).not.toBeInTheDocument();
   }
 };
 
@@ -151,6 +223,70 @@ export const Disabled: Story = {
   }
 };
 
+export const MaxTags: Story = {
+  args: {
+    defaultValue: ["Design", "Engineering", "Research"],
+    validate: {
+      onChange: [
+        (tags: string[] | null) =>
+          (tags?.length ?? 0) > 3
+            ? [{ message: "Choose at most 3 topics", type: "warning" }]
+            : []
+      ]
+    }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.type(canvas.getByRole("textbox"), "Marketing{Enter}");
+    await canvas.findByText("Choose at most 3 topics");
+
+    await userEvent.keyboard("{Backspace}");
+    await waitFor(async () =>
+      expect(canvas.queryByText("Choose at most 3 topics")).toBeNull()
+    );
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    labelVariant: "floating"
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+    const label = canvas.getByText("Topics").closest("label")!;
+    const inputRect = input.getBoundingClientRect();
+    const restingRect = label.getBoundingClientRect();
+
+    await expect(
+      Math.abs(
+        restingRect.top +
+          restingRect.height / 2 -
+          (inputRect.top + inputRect.height / 2)
+      )
+    ).toBeLessThan(2);
+
+    await userEvent.click(input);
+    await userEvent.keyboard("Design{Enter}");
+    await userEvent.tab();
+    await userEvent.tab();
+
+    await waitFor(async () =>
+      expect(label.getBoundingClientRect().top).toBeLessThan(
+        restingRect.top - 5
+      )
+    );
+  }
+};
+
+export const FloatingWithValue: Story = {
+  args: {
+    labelVariant: "floating",
+    defaultValue: ["Design", "Engineering"]
+  }
+};
+
 export const PrimaryTags: Story = {
   args: {
     defaultValue: ["Design", "Engineering", "Research"],
@@ -197,6 +333,50 @@ export const InlinedAbove: Story = {
   args: {
     variant: "inlined",
     labelVariant: "above"
+  }
+};
+
+export const Error: Story = {
+  args: {
+    validate: validation("danger"),
+    defaultValue: ["Design"]
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.type(canvas.getByRole("textbox"), "Research{Enter}");
+    await canvas.findByText(
+      "This is an example detailed message for a tag select field"
+    );
+  }
+};
+
+export const ErrorFloating: Story = {
+  args: {
+    validate: validation("danger"),
+    labelVariant: "floating",
+    defaultValue: ["Design"]
+  }
+};
+
+export const Warning: Story = {
+  args: {
+    validate: validation("warning"),
+    defaultValue: ["Design"]
+  }
+};
+
+export const Info: Story = {
+  args: {
+    validate: validation("info"),
+    defaultValue: ["Design"]
+  }
+};
+
+export const Success: Story = {
+  args: {
+    validate: validation("success"),
+    defaultValue: ["Design"]
   }
 };
 

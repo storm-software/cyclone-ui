@@ -37,7 +37,7 @@ type FilePickerStoryArgs = GetProps<typeof FilePicker> & {
 };
 
 const meta: Meta<FilePickerStoryArgs> = {
-  title: "Base/FilePicker",
+  title: "Form/FilePicker",
   component: FilePicker,
   tags: ["autodocs"],
   render: (
@@ -98,11 +98,33 @@ export const Simple: Story = {
   }
 };
 
+export const SimpleMultiple: Story = {
+  args: {
+    variant: "simple",
+    max: 10
+  }
+};
+
 export const SimpleDisabled: Story = {
   args: {
     variant: "simple",
     disabled: true
   }
+};
+
+export const SimpleError: Story = {
+  args: {
+    variant: "simple",
+    validate: validation("danger")
+  }
+};
+
+export const SimpleSmallSize: Story = {
+  args: { variant: "simple", size: "sm" }
+};
+
+export const SimpleLargeSize: Story = {
+  args: { variant: "simple", size: "lg" }
 };
 
 export const Required: Story = {

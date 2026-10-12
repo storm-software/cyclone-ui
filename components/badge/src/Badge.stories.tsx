@@ -44,7 +44,7 @@ const Row = ({ children }: { children: React.ReactNode }) => (
 );
 
 const meta: Meta<typeof Badge> = {
-  title: "Base/Badge",
+  title: "Triggers/Badge",
   component: Badge,
   tags: ["autodocs"],
   render: (args: BadgeProps) => (

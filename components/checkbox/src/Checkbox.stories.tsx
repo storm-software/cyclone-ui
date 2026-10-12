@@ -16,7 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { Field, type FieldProps } from "@cyclone-ui/field";
+import type { FieldProps } from "@cyclone-ui/field";
+import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack } from "@tamagui/stacks";
@@ -25,7 +26,7 @@ import { Checkbox } from "./Checkbox";
 type CheckboxStoryArgs = Omit<FieldProps<boolean>, "children" | "name">;
 
 const meta = {
-  title: "Base/Checkbox",
+  title: "Form/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
   render: ({ defaultValue, ...props }, { id }: { id: string }) => (

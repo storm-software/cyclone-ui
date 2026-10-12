@@ -18,10 +18,7 @@
 
 import { ContextMenu } from "@cyclone-ui/context-menu";
 import { Field } from "@cyclone-ui/field";
-import type {
-  FieldLabelPlacement,
-  FormControlSize
-} from "@cyclone-ui/helpers";
+import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
   getFormSizeScale,
@@ -115,8 +112,7 @@ const SelectGroup = styled(XStack, {
 
     disabled: {
       true: {
-        borderColor:
-          "disabled hover:disabled press:disabled focus:disabled",
+        borderColor: "disabled hover:disabled press:disabled focus:disabled",
         userSelect: "none",
         cursor: "not-allowed",
         outlineStyle: "press:none focus:none"

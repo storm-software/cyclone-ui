@@ -16,7 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { Field, type FieldProps } from "@cyclone-ui/field";
+import type { FieldProps } from "@cyclone-ui/field";
+import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack } from "@tamagui/stacks";
@@ -27,7 +28,7 @@ import { Switch } from "./Switch";
 type SwitchStoryArgs = Omit<FieldProps<boolean>, "children" | "name">;
 
 const meta: Meta<SwitchStoryArgs> = {
-  title: "Base/Switch",
+  title: "Form/Switch",
   component: Switch,
   tags: ["autodocs"],
   render: (props: any, { id }: { id: string }) => (

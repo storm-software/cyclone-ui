@@ -21,7 +21,7 @@ import { useEffect, useState } from "react";
 import { Progress } from "./Progress";
 
 const meta: Meta<typeof Progress> = {
-  title: "Base/Progress",
+  title: "Display/Progress",
   component: Progress,
   tags: ["autodocs"],
   render: (args: any) => {

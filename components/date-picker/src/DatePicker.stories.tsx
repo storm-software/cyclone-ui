@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldLabelVariant } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import { Calendar } from "@cyclone-ui/icons";
@@ -31,23 +32,28 @@ interface DatePickerValidation {
 
 /** Story-only args consumed by the custom `render` (the Form and Field). */
 type DatePickerStoryArgs = GetProps<typeof DatePicker> & {
+  labelVariant?: FieldLabelVariant;
   required?: boolean;
   validate?: DatePickerValidation;
 };
 
 const meta: Meta<DatePickerStoryArgs> = {
-  title: "Base/DatePicker",
+  title: "Form/DatePicker",
   component: DatePicker,
   tags: ["autodocs"],
-  render: ({ variant, ...props }: any, { id }: { id: string }) => {
+  render: (
+    { labelVariant, mode, separator, variant, ...props }: any,
+    { id }: { id: string }
+  ) => {
     return (
       <Form name={`formName-${id}`} initialValues={{ datePickerName: null }}>
-        <Field
-          name="datePickerName"
-          {...props}
-          variant={variant}>
-          <Field.Label>Label Text</Field.Label>
-          <DatePicker variant={variant} size={props.size}>
+        <Field name="datePickerName" {...props} variant={variant}>
+          <Field.Label variant={labelVariant}>Label Text</Field.Label>
+          <DatePicker
+            mode={mode}
+            separator={separator}
+            variant={variant}
+            size={props.size}>
             <DatePicker.TextBox>
               <DatePicker.TextBox.Value />
             </DatePicker.TextBox>
@@ -84,6 +90,12 @@ const validation = (
 
 export const Base: Story = {
   args: {}
+};
+
+export const Floating: Story = {
+  args: {
+    labelVariant: "floating"
+  }
 };
 
 export const OutlinedFloating: Story = {
@@ -125,6 +137,18 @@ export const InlinedAbove: Story = {
   args: {
     variant: "inlined",
     labelVariant: "above"
+  }
+};
+
+export const Dot: Story = {
+  args: {
+    separator: "."
+  }
+};
+
+export const Slash: Story = {
+  args: {
+    separator: "/"
   }
 };
 

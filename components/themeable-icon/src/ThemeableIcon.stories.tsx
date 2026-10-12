@@ -20,7 +20,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ThemeableIcon } from "./ThemeableIcon";
 
 const meta: Meta<typeof ThemeableIcon> = {
-  title: "Base/ThemeableIcon",
+  title: "Display/ThemeableIcon",
   component: ThemeableIcon,
   tags: ["autodocs"],
   render: ({ ...rest }: any) => <ThemeableIcon {...rest} />

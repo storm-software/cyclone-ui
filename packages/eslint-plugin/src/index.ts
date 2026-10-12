@@ -3759,6 +3759,13 @@ export const manifest: DesignSystemManifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/overlay",
+      "jsx": [
+        "Overlay"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/package-command-code-block",
       "jsx": [
         "PackageCommandCodeBlock"

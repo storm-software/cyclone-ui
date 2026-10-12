@@ -24,7 +24,7 @@ import type { LikeButtonProps } from "./LikeButton";
 import { LikeButton } from "./LikeButton";
 
 const meta: Meta<typeof LikeButton> = {
-  title: "Base/LikeButton",
+  title: "Triggers/LikeButton",
   component: LikeButton,
   tags: ["autodocs"],
   args: {

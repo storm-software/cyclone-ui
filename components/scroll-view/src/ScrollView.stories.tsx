@@ -22,7 +22,7 @@ import { View } from "@tamagui/core";
 import { ScrollView } from "./ScrollView";
 
 const meta: Meta<typeof ScrollView> = {
-  title: "Base/ScrollView",
+  title: "Display/ScrollView",
   component: ScrollView,
   tags: ["autodocs"],
   args: {

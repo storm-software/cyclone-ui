@@ -34,66 +34,66 @@ catalog:
   "@storybook/react": ^10.6.1
   "@storybook/react-vite": ^10.6.1
   "@stryke/date": ^0.0.28
-  "@tamagui/accordion": 3.0.2
-  "@tamagui/adapt": 3.0.2
-  "@tamagui/alert-dialog": 3.0.2
-  "@tamagui/animate-presence": 3.0.2
-  "@tamagui/animations-css": 3.0.2
-  "@tamagui/animations-motion": 3.0.2
-  "@tamagui/avatar": 3.0.2
-  "@tamagui/button": 3.0.2
-  "@tamagui/checkbox": 3.0.2
-  "@tamagui/checkbox-headless": 3.0.2
-  "@tamagui/cli": 3.0.2
-  "@tamagui/codemod-flat-values": 3.0.2
-  "@tamagui/collapsible": 3.0.2
-  "@tamagui/compose-refs": 3.0.2
-  "@tamagui/config": 3.0.2
-  "@tamagui/constants": 3.0.2
-  "@tamagui/core": 3.0.2
-  "@tamagui/create-context": 3.0.2
-  "@tamagui/dialog": 3.0.2
-  "@tamagui/eslint-plugin": 3.0.2
-  "@tamagui/focusable": 3.0.2
-  "@tamagui/font-size": 3.0.2
-  "@tamagui/floating": 3.0.2
-  "@tamagui/get-font-sized": 3.0.2
-  "@tamagui/get-token": 3.0.2
-  "@tamagui/group": 3.0.2
-  "@tamagui/helpers": 3.0.2
-  "@tamagui/helpers-icon": 3.0.2
-  "@tamagui/helpers-tamagui": 3.0.2
-  "@tamagui/image": 3.0.2
-  "@tamagui/label": 3.0.2
-  "@tamagui/language-service": 3.0.2
-  "@tamagui/linear-gradient": 3.0.2
-  "@tamagui/list-item": 3.0.2
-  "@tamagui/popover": 3.0.2
-  "@tamagui/popper": 3.0.2
-  "@tamagui/portal": 3.0.2
-  "@tamagui/progress": 3.0.2
-  "@tamagui/proxy-worm": 3.0.2
-  "@tamagui/radio-group": 3.0.2
-  "@tamagui/react-native-svg": 3.0.2
-  "@tamagui/react-native-types": 3.0.2
-  "@tamagui/scroll-view": 3.0.2
-  "@tamagui/separator": 3.0.2
-  "@tamagui/shapes": 3.0.2
-  "@tamagui/sheet": 3.0.2
-  "@tamagui/shorthands": 3.0.2
-  "@tamagui/stacks": 3.0.2
-  "@tamagui/static": 3.0.2
-  "@tamagui/slider": 3.0.2
-  "@tamagui/switch": 3.0.2
-  "@tamagui/switch-headless": 3.0.2
-  "@tamagui/tabs": 3.0.2
-  "@tamagui/text": 3.0.2
-  "@tamagui/toast": 3.0.2
-  "@tamagui/tooltip": 3.0.2
-  "@tamagui/use-controllable-state": 3.0.2
-  "@tamagui/use-presence": 3.0.2
-  "@tamagui/vite-plugin": 3.0.2
-  "@tamagui/web": 3.0.2
+  "@tamagui/accordion": ^3.0.2
+  "@tamagui/adapt": ^3.0.2
+  "@tamagui/alert-dialog": ^3.0.2
+  "@tamagui/animate-presence": ^3.0.2
+  "@tamagui/animations-css": ^3.0.2
+  "@tamagui/animations-motion": ^3.0.2
+  "@tamagui/avatar": ^3.0.2
+  "@tamagui/button": ^3.0.2
+  "@tamagui/checkbox": ^3.0.2
+  "@tamagui/checkbox-headless": ^3.0.2
+  "@tamagui/cli": ^3.0.2
+  "@tamagui/codemod-flat-values": ^3.0.2
+  "@tamagui/collapsible": ^3.0.2
+  "@tamagui/compose-refs": ^3.0.2
+  "@tamagui/config": ^3.0.2
+  "@tamagui/constants": ^3.0.2
+  "@tamagui/core": ^3.0.2
+  "@tamagui/create-context": ^3.0.2
+  "@tamagui/dialog": ^3.0.2
+  "@tamagui/eslint-plugin": ^3.0.2
+  "@tamagui/focusable": ^3.0.2
+  "@tamagui/font-size": ^3.0.2
+  "@tamagui/floating": ^3.0.2
+  "@tamagui/get-font-sized": ^3.0.2
+  "@tamagui/get-token": ^3.0.2
+  "@tamagui/group": ^3.0.2
+  "@tamagui/helpers": ^3.0.2
+  "@tamagui/helpers-icon": ^3.0.2
+  "@tamagui/helpers-tamagui": ^3.0.2
+  "@tamagui/image": ^3.0.2
+  "@tamagui/label": ^3.0.2
+  "@tamagui/language-service": ^3.0.2
+  "@tamagui/linear-gradient": ^3.0.2
+  "@tamagui/list-item": ^3.0.2
+  "@tamagui/popover": ^3.0.2
+  "@tamagui/popper": ^3.0.2
+  "@tamagui/portal": ^3.0.2
+  "@tamagui/progress": ^3.0.2
+  "@tamagui/proxy-worm": ^3.0.2
+  "@tamagui/radio-group": ^3.0.2
+  "@tamagui/react-native-svg": ^3.0.2
+  "@tamagui/react-native-types": ^3.0.2
+  "@tamagui/scroll-view": ^3.0.2
+  "@tamagui/separator": ^3.0.2
+  "@tamagui/shapes": ^3.0.2
+  "@tamagui/sheet": ^3.0.2
+  "@tamagui/shorthands": ^3.0.2
+  "@tamagui/stacks": ^3.0.2
+  "@tamagui/static": ^3.0.2
+  "@tamagui/slider": ^3.0.2
+  "@tamagui/switch": ^3.0.2
+  "@tamagui/switch-headless": ^3.0.2
+  "@tamagui/tabs": ^3.0.2
+  "@tamagui/text": ^3.0.2
+  "@tamagui/toast": ^3.0.2
+  "@tamagui/tooltip": ^3.0.2
+  "@tamagui/use-controllable-state": ^3.0.2
+  "@tamagui/use-presence": ^3.0.2
+  "@tamagui/vite-plugin": ^3.0.2
+  "@tamagui/web": ^3.0.2
   "@taplo/cli": ^0.7.0
   "@nx/devkit": 23.1.1
   "@nx/eslint-plugin": 23.1.1
@@ -190,7 +190,6 @@ catalog:
   sherif: ^1.13.0
   solito: ^4.4.1
   storybook: ^10.6.1
-  tamagui: 3.0.2
   tslib: ^2.8.1
   tsdown: ^0.22.14
   copyfiles: ^2.4.1
@@ -211,7 +210,7 @@ catalog:
   playwright: ^1.64.0
   "@tamagui/theme-builder": ^2.7.7
   style-dictionary: ^5.6.1
-  "@tamagui/dismissable": 3.0.2
+  "@tamagui/dismissable": ^3.0.2
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
   "@razorwind/shiki": ^0.0.65

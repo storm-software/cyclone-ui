@@ -21,7 +21,7 @@ import { View } from "@tamagui/core";
 import { Divider } from "./Divider";
 
 const meta: Meta<typeof Divider> = {
-  title: "Base/Divider",
+  title: "Display/Divider",
   component: Divider,
   tags: ["autodocs"],
   args: {

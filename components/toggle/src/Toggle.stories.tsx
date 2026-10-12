@@ -31,7 +31,7 @@ import type { ToggleProps } from "./Toggle";
 import { Toggle, ToggleText } from "./Toggle";
 
 const meta: Meta<typeof Toggle> = {
-  title: "Base/Toggle",
+  title: "Triggers/Toggle",
   component: Toggle,
   tags: ["autodocs"],
   args: {

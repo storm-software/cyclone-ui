@@ -30,7 +30,7 @@ import type { ToggleGroupProps } from "./ToggleGroup";
 import { ToggleGroup } from "./ToggleGroup";
 
 const meta: Meta<typeof ToggleGroup> = {
-  title: "Base/ToggleGroup",
+  title: "Triggers/ToggleGroup",
   component: ToggleGroup,
   tags: ["autodocs"],
   args: {

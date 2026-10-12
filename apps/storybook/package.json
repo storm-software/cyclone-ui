@@ -35,7 +35,6 @@
     "react-native-reanimated": "catalog:",
     "react-native-safe-area-context": "catalog:",
     "react-native-web": "catalog:",
-    "tamagui": "catalog:",
     "vite-plugin-react-native-web": "catalog:"
   },
   "devDependencies": {

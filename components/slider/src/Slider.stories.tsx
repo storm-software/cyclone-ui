@@ -16,16 +16,22 @@
 
  ------------------------------------------------------------------- */
 
+import type { FieldProps } from "@cyclone-ui/field";
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
 import { SpeakerHigh, SpeakerLow } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Text, Theme, View } from "@tamagui/core";
 import { useState } from "react";
-import { expect, userEvent, within } from "storybook/test";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { SliderMark, SliderProps, SliderValue } from "./Slider";
 import { Slider } from "./Slider";
 
-const meta: Meta<typeof Slider> = {
-  title: "Base/Slider",
+type SliderStoryArgs = SliderProps &
+  Pick<FieldProps<SliderValue>, "required" | "theme" | "validate">;
+
+const meta: Meta<SliderStoryArgs> = {
+  title: "Form/Slider",
   component: Slider,
   tags: ["autodocs"],
   args: {
@@ -64,11 +70,56 @@ const meta: Meta<typeof Slider> = {
         <Story />
       </View>
     )
-  ]
+  ],
+  render: (
+    {
+      defaultValue,
+      disabled,
+      required,
+      size,
+      theme,
+      validate,
+      ...control
+    }: SliderStoryArgs,
+    { id }: { id: string }
+  ) => (
+    <Form name={`formName-${id}`} initialValues={{ sliderName: defaultValue }}>
+      <Field
+        name="sliderName"
+        disabled={disabled}
+        required={required}
+        size={size}
+        theme={theme}
+        validate={validate}>
+        <Field.Label>Label Text</Field.Label>
+        <Slider {...control} />
+      </Field>
+    </Form>
+  )
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<SliderStoryArgs>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+): NonNullable<FieldProps["validate"]> => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
 
 export const Base: Story = {
   args: {
@@ -89,6 +140,18 @@ export const Base: Story = {
 
     await userEvent.keyboard("{Home}");
     await expect(thumb).toHaveAttribute("aria-valuenow", "0");
+  }
+};
+
+export const NoInitialValue: Story = {
+  args: {
+    defaultValue: undefined
+  }
+};
+
+export const Required: Story = {
+  args: {
+    required: true
   }
 };
 
@@ -166,6 +229,24 @@ export const CustomMarks: Story = {
   }
 };
 
+export const Marks: Story = {
+  args: {
+    defaultValue: 20,
+    step: 10,
+    marks: true,
+    valueLabelDisplay: "auto"
+  }
+};
+
+export const LabelledMarks: Story = {
+  args: {
+    defaultValue: 37,
+    marks: temperatureMarks,
+    valueLabelDisplay: "auto",
+    valueLabelFormat: value => `${value}°C`
+  }
+};
+
 export const AlwaysVisibleLabel: Story = {
   args: {
     defaultValue: 80,
@@ -204,6 +285,35 @@ export const MinimumDistance: Story = {
   args: {
     defaultValue: [20, 40],
     minStepsBetweenThumbs: 10
+  }
+};
+
+/** Shows a warning above 80. */
+export const MaximumValue: Story = {
+  args: {
+    defaultValue: 80,
+    validate: {
+      onChange: [
+        (value: number) =>
+          value > 80
+            ? [{ message: "Values above 80 may be unstable", type: "warning" }]
+            : []
+      ]
+    }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const slider = await canvas.findByRole("slider");
+
+    await expect(canvas.queryByText("Values above 80 may be unstable")).toBe(
+      null
+    );
+    await userEvent.tab();
+    await userEvent.keyboard("{ArrowRight}");
+    await waitFor(() => expect(slider).toHaveAttribute("aria-valuenow", "81"));
+    await waitFor(() =>
+      expect(canvas.getByText("Values above 80 may be unstable")).toBeVisible()
+    );
   }
 };
 
@@ -266,3 +376,39 @@ export const Themes: Story = {
     </View>
   )
 };
+
+export const Discovery: Story = {
+  args: {
+    validate: validation("discovery")
+  }
+};
+
+export const Error: Story = {
+  args: {
+    validate: validation("danger")
+  }
+};
+
+export const Warning: Story = {
+  args: {
+    validate: validation("warning")
+  }
+};
+
+export const Info: Story = {
+  args: {
+    validate: validation("info")
+  }
+};
+
+export const Success: Story = {
+  args: {
+    validate: validation("success")
+  }
+};
+
+export const SmallSize: Story = { args: { size: "sm" } };
+
+export const MediumSize: Story = { args: { size: "md" } };
+
+export const LargeSize: Story = { args: { size: "lg" } };

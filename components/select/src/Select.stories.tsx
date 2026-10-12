@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { FieldProps } from "@cyclone-ui/field";
+import type { FieldLabelVariant, FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
@@ -24,19 +24,21 @@ import { expect, userEvent, waitFor, within } from "storybook/test";
 import { Select } from "./Select";
 
 // Story args configure the wrapping `Field`, not the `Select` itself.
-type SelectStoryArgs = Omit<FieldProps<string>, "children" | "name">;
+type SelectStoryArgs = Omit<FieldProps<string>, "children" | "name"> & {
+  labelVariant?: FieldLabelVariant;
+};
 
 const meta: Meta<SelectStoryArgs> = {
-  title: "Base/Select",
+  title: "Form/Select",
   component: Select,
   tags: ["autodocs"],
   render: (
-    { defaultValue, variant, ...props }: any,
+    { defaultValue, labelVariant, variant, ...props }: any,
     { id }: { id: string }
   ) => (
     <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
       <Field name="selectName" {...props} variant={variant}>
-        <Field.Label>Label Text</Field.Label>
+        <Field.Label variant={labelVariant}>Label Text</Field.Label>
         <Select variant={variant} size={props.size}>
           <Select.TextBox>
             <Select.TextBox.Value placeholder="email@example.com" />
@@ -138,6 +140,42 @@ export const Base: Story = {
     ).toHaveAttribute("aria-selected", "true");
     await userEvent.click(document.getByRole("option", { name: "Melon" }));
     await expect(document.getByRole("listbox")).toBeInTheDocument();
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    labelVariant: "floating"
+  },
+  render: ({ labelVariant, ...props }, { id }) => (
+    <Form name={`formName-${id}`} initialValues={{ selectName: "" }}>
+      <Field {...props} name="selectName">
+        <Field.Label variant={labelVariant}>Label Text</Field.Label>
+        <Select>
+          <Select.TextBox>
+            <Select.TextBox.Value />
+          </Select.TextBox>
+          <Select.Items>
+            {options.map((option, i) => (
+              <Select.Items.Item
+                key={option.value}
+                index={i}
+                value={option.value}
+                disabled={option.disabled ?? false}
+                selected={false}>
+                {option.name}
+              </Select.Items.Item>
+            ))}
+          </Select.Items>
+        </Select>
+      </Field>
+    </Form>
+  )
+};
+
+export const FloatingWithPlaceholder: Story = {
+  args: {
+    labelVariant: "floating"
   }
 };
 

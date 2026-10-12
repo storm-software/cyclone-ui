@@ -30,7 +30,7 @@ type GalleryArgs = IconProps & {
 };
 
 const meta: Meta<GalleryArgs> = {
-  title: "Base/Icons",
+  title: "Display/Icons",
   component: Acorn,
   tags: ["autodocs"],
   args: {

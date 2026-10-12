@@ -1,0 +1,49 @@
+{
+  "name": "@cyclone-ui/overlay",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A full-bleed backdrop that partially obscures background content with a blurred, theme-tinted gradient that fades in and out on enter/exit. Place it inside a positioned parent or a presence wrapper (for example a dialog or sheet overlay).",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/overlay"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@tamagui/core": "catalog:",
+    "@tamagui/linear-gradient": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "react-native-svg": "^15.15.5"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Overlay": {
+      "import": "./dist/Overlay.mjs",
+      "require": "./dist/Overlay.cjs"
+    },
+    "./*": "./*"
+  }
+}

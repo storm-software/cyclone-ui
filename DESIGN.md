@@ -143,7 +143,7 @@ typography:
     fontFamily: "Storm Sans"
     fontSize: "1.125rem"
     fontWeight: "600"
-    lineHeight: "1.0575"
+    lineHeight: "1.125"
   title-sm:
     fontFamily: "Storm Sans"
     fontSize: "1rem"
@@ -168,7 +168,7 @@ typography:
     fontFamily: "Storm Sans"
     fontSize: "1rem"
     fontWeight: "400"
-    lineHeight: "1.0575"
+    lineHeight: "1.125"
   eyebrow:
     fontFamily: "Google Sans Code"
     fontSize: "1.125rem"
@@ -364,12 +364,12 @@ Cyclone UI design tokens — 95 color tokens, 16 typography tokens, 70 spacing t
 - **editorial-md:** fontFamily: Storm Serif, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.125
 - **title-xl:** fontFamily: Storm Sans, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.0575
 - **title-lg:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.0575
-- **title-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.0575
+- **title-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.125
 - **title-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 700, lineHeight: 1.125
 - **title-xs:** fontFamily: Storm Sans, fontSize: 0.75rem, fontWeight: 500, lineHeight: 1.125
 - **body-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.125
 - **body-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 500, lineHeight: 1.125
-- **caption:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.0575
+- **caption:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.125
 - **eyebrow:** fontFamily: Google Sans Code, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.0575
 - **code:** fontFamily: Google Sans Code, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.125
 
