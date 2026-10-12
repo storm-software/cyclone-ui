@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Vectors
 
+## [0.5.13](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.13) (10/11/2026)
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.13**
+- Updated **icons** to **v0.0.9**
+
 ## [0.5.12](https://github.com/storm-software/cyclone-ui/releases/tag/vectors%400.5.12) (10/11/2026)
 
 ### Bug Fixes

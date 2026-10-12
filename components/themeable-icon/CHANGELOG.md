@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Themeable Icon
 
+## [0.6.13](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-icon%400.6.13) (10/11/2026)
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.13**
+- Updated **icons** to **v0.0.9**
+- Updated **vectors** to **v0.5.13**
+
 ## [0.6.12](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-icon%400.6.12) (10/11/2026)
 
 ### Bug Fixes

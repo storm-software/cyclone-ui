@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/cli",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "type": "module",
   "description": "🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.",
   "repository": {
@@ -77,6 +77,7 @@
     "./analyze-a11y": "./dist/analyze-a11y.mjs",
     "./bin": "./dist/bin.mjs",
     "./build": "./dist/build.mjs",
+    "./changelog": "./dist/changelog.mjs",
     "./completions-bash-config": "./dist/completions-bash-config.mjs",
     "./completions-bash-script": "./dist/completions-bash-script.mjs",
     "./completions-fish-config": "./dist/completions-fish-config.mjs",
