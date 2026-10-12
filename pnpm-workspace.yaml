@@ -28,7 +28,7 @@ catalog:
   "@shell-shock/eslint-plugin": ^0.0.96
   "@shell-shock/nx": ^0.0.105
   "@shell-shock/preset-cli": ^0.9.44
-  "@storm-software/eslint-plugin-pnpm": ^0.0.110
+  "@storm-software/eslint-plugin-pnpm": ^0.0.112
   "@storybook/addon-docs": ^10.6.1
   "@storybook/addon-vitest": ^10.6.1
   "@storybook/react": ^10.6.1
@@ -115,20 +115,20 @@ catalog:
   "@razorwind/shadcn": ^0.0.87
   "@razorwind/shell-shock": ^0.0.11
   "@razorwind/tamagui": ^0.0.94
-  "@storm-software/cloudflare-tools": ^0.71.295
-  "@storm-software/config": ^1.138.83
-  "@storm-software/config-tools": ^1.190.147
-  "@storm-software/cspell": ^0.46.214
-  "@storm-software/eslint-config-react": ^0.0.104
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.110
-  "@storm-software/git-tools": ^2.132.4
-  "@storm-software/linting-tools": ^1.134.77
-  "@storm-software/markdownlint": ^0.30.302
-  "@storm-software/pnpm-tools": ^0.7.161
-  "@storm-software/prettier": ^0.59.200
-  "@storm-software/tsconfig": ^0.48.213
-  "@storm-software/untyped": ^0.24.289
-  "@storm-software/workspace-tools": ^1.297.16
+  "@storm-software/cloudflare-tools": ^0.71.297
+  "@storm-software/config": ^1.138.85
+  "@storm-software/config-tools": ^1.190.149
+  "@storm-software/cspell": ^0.46.216
+  "@storm-software/eslint-config-react": ^0.0.106
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.112
+  "@storm-software/git-tools": ^2.132.6
+  "@storm-software/linting-tools": ^1.134.79
+  "@storm-software/markdownlint": ^0.30.304
+  "@storm-software/pnpm-tools": ^0.7.163
+  "@storm-software/prettier": ^0.59.202
+  "@storm-software/tsconfig": ^0.48.215
+  "@storm-software/untyped": ^0.24.291
+  "@storm-software/workspace-tools": ^1.297.18
   "@stryke/async": ^0.1.44
   "@stryke/env": ^0.20.135
   "@stryke/helpers": ^0.10.56
@@ -205,12 +205,12 @@ catalog:
   wrangler: ^3.114.17
   zod: ^3.25.76
   zx: ^8.8.5
-  "@storm-software/tsdoc": ^0.13.299
+  "@storm-software/tsdoc": ^0.13.301
   sembear: ^0.7.0
   parse-github-url: ^1.0.4
   playwright: ^1.64.0
   "@tamagui/theme-builder": ^2.7.7
-  style-dictionary: ^5.6.0
+  style-dictionary: ^5.6.1
   "@tamagui/dismissable": 3.0.2
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
@@ -252,7 +252,7 @@ minimumReleaseAgeExclude:
   - "@shell-shock/preset-script@0.6.83 || 0.6.86 || 0.6.87"
   - "@shell-shock/schema@0.0.7 || 0.0.10 || 0.0.11"
   - "@shell-shock/unified@0.2.26 || 0.2.29 || 0.2.30"
-  - conventional-changelog-storm-software@0.3.308
+  - conventional-changelog-storm-software@0.3.308 || 0.3.310
   - "@tamagui/accordion@3.0.2"
   - "@tamagui/adapt@3.0.2"
   - "@tamagui/alert-dialog@3.0.2"
