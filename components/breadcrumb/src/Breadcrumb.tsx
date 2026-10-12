@@ -128,7 +128,7 @@ const BreadcrumbFrame = styled(XStack, {
   alignItems: "center",
   flexWrap: "nowrap",
   flexShrink: 1,
-  gap: "2xl",
+  gap: "4xl",
   variants: {
     // v2 `"...size"` only matched keys of the size token scale; the `true`
     // default kept the base gap.
@@ -345,8 +345,7 @@ const BreadcrumbMenuLink = styled(Link, {
   borderRadius: "button",
   paddingHorizontal: "3xl",
   paddingVertical: "xl",
-  backgroundColor:
-    "transparent hover:tertiary focus-visible:tertiary",
+  backgroundColor: "transparent hover:tertiary focus-visible:tertiary",
   size: "sm"
 });
 

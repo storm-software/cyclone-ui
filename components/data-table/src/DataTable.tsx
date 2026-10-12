@@ -735,7 +735,7 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
         </Field>
 
         <Popover.Content.ScrollView size="lg" maxHeight="30xl">
-          <YStack gap="xl" width="100%" minWidth="28xl" paddingLeft="xl">
+          <YStack gap="xl" width="100%" minWidth="28xl" padding="xl">
             <Field name={SELECT_ALL_FIELD_NAME}>
               <XStack gap="3xl" alignItems="center" justifyContent="flex-start">
                 <Checkbox

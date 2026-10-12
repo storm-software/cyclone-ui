@@ -405,28 +405,28 @@ const COLOR_VARIANTS = {
       title={"color.danger-subtle"}
       subtitle={"Generated low-emphasis danger background for the dark theme"}
       colors={{
-              "danger-subtle": "#660022"
+              "danger-subtle": "#620020"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-active"}
       subtitle={"Generated low-emphasis danger background for the dark theme (active, 25% brighter)"}
       colors={{
-              "danger-subtle-active": "#802136"
+              "danger-subtle-active": "#7b1f34"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-disabled"}
       subtitle={"Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "danger-subtle-disabled": "#4d323a"
+              "danger-subtle-disabled": "#4c313a"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-inactive"}
       subtitle={"Generated low-emphasis danger background for the dark theme (inactive, 20% darker)"}
       colors={{
-              "danger-subtle-inactive": "#510013"
+              "danger-subtle-inactive": "#4e0011"
       }}
     />
             <ColorItem
@@ -440,7 +440,7 @@ const COLOR_VARIANTS = {
       title={"color.on-danger-subtle"}
       subtitle={"Generated text and icon color on danger-subtle backgrounds"}
       colors={{
-              "on-danger-subtle": "#ff9ba8"
+              "on-danger-subtle": "#ffa6b0"
       }}
     />
           </ColorPalette>
@@ -665,28 +665,28 @@ const COLOR_VARIANTS = {
       title={"color.success-subtle"}
       subtitle={"Generated low-emphasis success background for the dark theme"}
       colors={{
-              "success-subtle": "#006a47"
+              "success-subtle": "#006140"
       }}
     />
             <ColorItem
       title={"color.success-subtle-active"}
       subtitle={"Generated low-emphasis success background for the dark theme (active, 25% brighter)"}
       colors={{
-              "success-subtle-active": "#368d67"
+              "success-subtle-active": "#31815e"
       }}
     />
             <ColorItem
       title={"color.success-subtle-disabled"}
       subtitle={"Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "success-subtle-disabled": "#375047"
+              "success-subtle-disabled": "#354d45"
       }}
     />
             <ColorItem
       title={"color.success-subtle-inactive"}
       subtitle={"Generated low-emphasis success background for the dark theme (inactive, 20% darker)"}
       colors={{
-              "success-subtle-inactive": "#00502f"
+              "success-subtle-inactive": "#004829"
       }}
     />
           </ColorPalette>
@@ -747,28 +747,28 @@ const COLOR_VARIANTS = {
       title={"color.warning-subtle"}
       subtitle={"Generated low-emphasis warning background for the dark theme"}
       colors={{
-              "warning-subtle": "#7d5300"
+              "warning-subtle": "#764e00"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-active"}
       subtitle={"Generated low-emphasis warning background for the dark theme (active, 25% brighter)"}
       colors={{
-              "warning-subtle-active": "#a27632"
+              "warning-subtle-active": "#996f2f"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-disabled"}
       subtitle={"Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "warning-subtle-disabled": "#564938"
+              "warning-subtle-disabled": "#534837"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-inactive"}
       subtitle={"Generated low-emphasis warning background for the dark theme (inactive, 20% darker)"}
       colors={{
-              "warning-subtle-inactive": "#613900"
+              "warning-subtle-inactive": "#5b3500"
       }}
     />
           </ColorPalette>
@@ -1173,28 +1173,28 @@ const COLOR_VARIANTS = {
       title={"color.danger-subtle"}
       subtitle={"Generated low-emphasis danger background for the dark theme"}
       colors={{
-              "danger-subtle": "#73213c"
+              "danger-subtle": "#70213b"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-active"}
       subtitle={"Generated low-emphasis danger background for the dark theme (active, 25% brighter)"}
       colors={{
-              "danger-subtle-active": "#7d404d"
+              "danger-subtle-active": "#7a3e4c"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-disabled"}
       subtitle={"Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "danger-subtle-disabled": "#5c494f"
+              "danger-subtle-disabled": "#5c484f"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-inactive"}
       subtitle={"Generated low-emphasis danger background for the dark theme (inactive, 20% darker)"}
       colors={{
-              "danger-subtle-inactive": "#671e2f"
+              "danger-subtle-inactive": "#661d2d"
       }}
     />
             <ColorItem
@@ -1208,7 +1208,7 @@ const COLOR_VARIANTS = {
       title={"color.on-danger-subtle"}
       subtitle={"Generated text and icon color on danger-subtle backgrounds"}
       colors={{
-              "on-danger-subtle": "#de8d98"
+              "on-danger-subtle": "#e0939c"
       }}
     />
           </ColorPalette>
@@ -1433,28 +1433,28 @@ const COLOR_VARIANTS = {
       title={"color.success-subtle"}
       subtitle={"Generated low-emphasis success background for the dark theme"}
       colors={{
-              "success-subtle": "#227559"
+              "success-subtle": "#207055"
       }}
     />
             <ColorItem
       title={"color.success-subtle-active"}
       subtitle={"Generated low-emphasis success background for the dark theme (active, 25% brighter)"}
       colors={{
-              "success-subtle-active": "#50856e"
+              "success-subtle-active": "#4c7d68"
       }}
     />
             <ColorItem
       title={"color.success-subtle-disabled"}
       subtitle={"Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "success-subtle-disabled": "#4d5e58"
+              "success-subtle-disabled": "#4b5c57"
       }}
     />
             <ColorItem
       title={"color.success-subtle-inactive"}
       subtitle={"Generated low-emphasis success background for the dark theme (inactive, 20% darker)"}
       colors={{
-              "success-subtle-inactive": "#1e6749"
+              "success-subtle-inactive": "#1d6244"
       }}
     />
           </ColorPalette>
@@ -1515,28 +1515,28 @@ const COLOR_VARIANTS = {
       title={"color.warning-subtle"}
       subtitle={"Generated low-emphasis warning background for the dark theme"}
       colors={{
-              "warning-subtle": "#7f6125"
+              "warning-subtle": "#7b5e24"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-active"}
       subtitle={"Generated low-emphasis warning background for the dark theme (active, 25% brighter)"}
       colors={{
-              "warning-subtle-active": "#917750"
+              "warning-subtle-active": "#8c734d"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-disabled"}
       subtitle={"Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "warning-subtle-disabled": "#62594e"
+              "warning-subtle-disabled": "#60594d"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-inactive"}
       subtitle={"Generated low-emphasis warning background for the dark theme (inactive, 20% darker)"}
       colors={{
-              "warning-subtle-inactive": "#704f20"
+              "warning-subtle-inactive": "#6d4c20"
       }}
     />
           </ColorPalette>
@@ -1941,28 +1941,28 @@ const COLOR_VARIANTS = {
       title={"color.danger-subtle"}
       subtitle={"Generated low-emphasis danger background for the dark theme"}
       colors={{
-              "danger-subtle": "#21000b"
+              "danger-subtle": "#1b0009"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-active"}
       subtitle={"Generated low-emphasis danger background for the dark theme (active, 25% brighter)"}
       colors={{
-              "danger-subtle-active": "#6e091f"
+              "danger-subtle-active": "#65081d"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-disabled"}
       subtitle={"Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "danger-subtle-disabled": "#2e171e"
+              "danger-subtle-disabled": "#2d161d"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-inactive"}
       subtitle={"Generated low-emphasis danger background for the dark theme (inactive, 20% darker)"}
       colors={{
-              "danger-subtle-inactive": "#030001"
+              "danger-subtle-inactive": "#000000"
       }}
     />
             <ColorItem
@@ -1976,7 +1976,7 @@ const COLOR_VARIANTS = {
       title={"color.on-danger-subtle"}
       subtitle={"Generated text and icon color on danger-subtle backgrounds"}
       colors={{
-              "on-danger-subtle": "#ffe1e5"
+              "on-danger-subtle": "#fff1f2"
       }}
     />
           </ColorPalette>
@@ -2201,28 +2201,28 @@ const COLOR_VARIANTS = {
       title={"color.success-subtle"}
       subtitle={"Generated low-emphasis success background for the dark theme"}
       colors={{
-              "success-subtle": "#00271a"
+              "success-subtle": "#001a11"
       }}
     />
             <ColorItem
       title={"color.success-subtle-active"}
       subtitle={"Generated low-emphasis success background for the dark theme (active, 25% brighter)"}
       colors={{
-              "success-subtle-active": "#1d8b5b"
+              "success-subtle-active": "#19774e"
       }}
     />
             <ColorItem
       title={"color.success-subtle-disabled"}
       subtitle={"Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "success-subtle-disabled": "#1c352c"
+              "success-subtle-disabled": "#1a3029"
       }}
     />
             <ColorItem
       title={"color.success-subtle-inactive"}
       subtitle={"Generated low-emphasis success background for the dark theme (inactive, 20% darker)"}
       colors={{
-              "success-subtle-inactive": "#000101"
+              "success-subtle-inactive": "#000000"
       }}
     />
           </ColorPalette>
@@ -2283,28 +2283,28 @@ const COLOR_VARIANTS = {
       title={"color.warning-subtle"}
       subtitle={"Generated low-emphasis warning background for the dark theme"}
       colors={{
-              "warning-subtle": "#432c00"
+              "warning-subtle": "#382500"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-active"}
       subtitle={"Generated low-emphasis warning background for the dark theme (active, 25% brighter)"}
       colors={{
-              "warning-subtle-active": "#aa7017"
+              "warning-subtle-active": "#9b6615"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-disabled"}
       subtitle={"Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "warning-subtle-disabled": "#3d301e"
+              "warning-subtle-disabled": "#382e1d"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-inactive"}
       subtitle={"Generated low-emphasis warning background for the dark theme (inactive, 20% darker)"}
       colors={{
-              "warning-subtle-inactive": "#1a0f00"
+              "warning-subtle-inactive": "#110a00"
       }}
     />
           </ColorPalette>
@@ -2709,28 +2709,28 @@ const COLOR_VARIANTS = {
       title={"color.danger-subtle"}
       subtitle={"Generated low-emphasis danger background for the light theme"}
       colors={{
-              "danger-subtle": "#e77388"
+              "danger-subtle": "#ee7a8e"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-active"}
       subtitle={"Generated low-emphasis danger background for the light theme (active, 25% darker)"}
       colors={{
-              "danger-subtle-active": "#ab3d56"
+              "danger-subtle-active": "#b0435a"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-disabled"}
       subtitle={"Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "danger-subtle-disabled": "#79575e"
+              "danger-subtle-disabled": "#7b5960"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-inactive"}
       subtitle={"Generated low-emphasis danger background for the light theme (inactive, 20% brighter)"}
       colors={{
-              "danger-subtle-inactive": "#ff9fb3"
+              "danger-subtle-inactive": "#ffa7ba"
       }}
     />
             <ColorItem
@@ -2744,7 +2744,7 @@ const COLOR_VARIANTS = {
       title={"color.on-danger-subtle"}
       subtitle={"Generated text and icon color on danger-subtle backgrounds"}
       colors={{
-              "on-danger-subtle": "#270009"
+              "on-danger-subtle": "#200006"
       }}
     />
           </ColorPalette>
@@ -2927,7 +2927,7 @@ const COLOR_VARIANTS = {
       title={"color.on-success-subtle"}
       subtitle={"Generated text and icon color on success-subtle backgrounds"}
       colors={{
-              "on-success-subtle": "#00251a"
+              "on-success-subtle": "#002217"
       }}
     />
             <ColorItem
@@ -2969,28 +2969,28 @@ const COLOR_VARIANTS = {
       title={"color.success-subtle"}
       subtitle={"Generated low-emphasis success background for the light theme"}
       colors={{
-              "success-subtle": "#6db499"
+              "success-subtle": "#74ba9f"
       }}
     />
             <ColorItem
       title={"color.success-subtle-active"}
       subtitle={"Generated low-emphasis success background for the light theme (active, 25% darker)"}
       colors={{
-              "success-subtle-active": "#357d64"
+              "success-subtle-active": "#3b8168"
       }}
     />
             <ColorItem
       title={"color.success-subtle-disabled"}
       subtitle={"Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "success-subtle-disabled": "#556a64"
+              "success-subtle-disabled": "#586c66"
       }}
     />
             <ColorItem
       title={"color.success-subtle-inactive"}
       subtitle={"Generated low-emphasis success background for the light theme (inactive, 20% brighter)"}
       colors={{
-              "success-subtle-inactive": "#9ae2c6"
+              "success-subtle-inactive": "#a3eacd"
       }}
     />
           </ColorPalette>
@@ -3009,7 +3009,7 @@ const COLOR_VARIANTS = {
       title={"color.on-warning-subtle"}
       subtitle={"Generated text and icon color on warning-subtle backgrounds"}
       colors={{
-              "on-warning-subtle": "#291a00"
+              "on-warning-subtle": "#241500"
       }}
     />
             <ColorItem
@@ -3051,28 +3051,28 @@ const COLOR_VARIANTS = {
       title={"color.warning-subtle"}
       subtitle={"Generated low-emphasis warning background for the light theme"}
       colors={{
-              "warning-subtle": "#c39e65"
+              "warning-subtle": "#c7a168"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-active"}
       subtitle={"Generated low-emphasis warning background for the light theme (active, 25% darker)"}
       colors={{
-              "warning-subtle-active": "#8b682f"
+              "warning-subtle-active": "#8e6a31"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-disabled"}
       subtitle={"Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "warning-subtle-disabled": "#6e6355"
+              "warning-subtle-disabled": "#6f6456"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-inactive"}
       subtitle={"Generated low-emphasis warning background for the light theme (inactive, 20% brighter)"}
       colors={{
-              "warning-subtle-inactive": "#f2cc91"
+              "warning-subtle-inactive": "#f7d095"
       }}
     />
           </ColorPalette>
@@ -3477,28 +3477,28 @@ const COLOR_VARIANTS = {
       title={"color.danger-subtle"}
       subtitle={"Generated low-emphasis danger background for the light theme"}
       colors={{
-              "danger-subtle": "#c57a88"
+              "danger-subtle": "#cb7e8b"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-active"}
       subtitle={"Generated low-emphasis danger background for the light theme (active, 25% darker)"}
       colors={{
-              "danger-subtle-active": "#975866"
+              "danger-subtle-active": "#9a5d6a"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-disabled"}
       subtitle={"Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "danger-subtle-disabled": "#796569"
+              "danger-subtle-disabled": "#7a676b"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-inactive"}
       subtitle={"Generated low-emphasis danger background for the light theme (inactive, 20% brighter)"}
       colors={{
-              "danger-subtle-inactive": "#df90a0"
+              "danger-subtle-inactive": "#e094a4"
       }}
     />
             <ColorItem
@@ -3512,7 +3512,7 @@ const COLOR_VARIANTS = {
       title={"color.on-danger-subtle"}
       subtitle={"Generated text and icon color on danger-subtle backgrounds"}
       colors={{
-              "on-danger-subtle": "#501725"
+              "on-danger-subtle": "#4d1620"
       }}
     />
           </ColorPalette>
@@ -3695,7 +3695,7 @@ const COLOR_VARIANTS = {
       title={"color.on-success-subtle"}
       subtitle={"Generated text and icon color on success-subtle backgrounds"}
       colors={{
-              "on-success-subtle": "#174f3f"
+              "on-success-subtle": "#174e3c"
       }}
     />
             <ColorItem
@@ -3737,28 +3737,28 @@ const COLOR_VARIANTS = {
       title={"color.success-subtle"}
       subtitle={"Generated low-emphasis success background for the light theme"}
       colors={{
-              "success-subtle": "#77a090"
+              "success-subtle": "#7ba595"
       }}
     />
             <ColorItem
       title={"color.success-subtle-active"}
       subtitle={"Generated low-emphasis success background for the light theme (active, 25% darker)"}
       colors={{
-              "success-subtle-active": "#4e7b6b"
+              "success-subtle-active": "#537d6e"
       }}
     />
             <ColorItem
       title={"color.success-subtle-disabled"}
       subtitle={"Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "success-subtle-disabled": "#636f6c"
+              "success-subtle-disabled": "#65716d"
       }}
     />
             <ColorItem
       title={"color.success-subtle-inactive"}
       subtitle={"Generated low-emphasis success background for the light theme (inactive, 20% brighter)"}
       colors={{
-              "success-subtle-inactive": "#92c5b1"
+              "success-subtle-inactive": "#96ccb6"
       }}
     />
           </ColorPalette>
@@ -3777,7 +3777,7 @@ const COLOR_VARIANTS = {
       title={"color.on-warning-subtle"}
       subtitle={"Generated text and icon color on warning-subtle backgrounds"}
       colors={{
-              "on-warning-subtle": "#523c18"
+              "on-warning-subtle": "#4f3817"
       }}
     />
             <ColorItem
@@ -3819,28 +3819,28 @@ const COLOR_VARIANTS = {
       title={"color.warning-subtle"}
       subtitle={"Generated low-emphasis warning background for the light theme"}
       colors={{
-              "warning-subtle": "#a99473"
+              "warning-subtle": "#ac9674"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-active"}
       subtitle={"Generated low-emphasis warning background for the light theme (active, 25% darker)"}
       colors={{
-              "warning-subtle-active": "#836e4b"
+              "warning-subtle-active": "#856f4d"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-disabled"}
       subtitle={"Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "warning-subtle-disabled": "#726b63"
+              "warning-subtle-disabled": "#736c64"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-inactive"}
       subtitle={"Generated low-emphasis warning background for the light theme (inactive, 20% brighter)"}
       colors={{
-              "warning-subtle-inactive": "#d1b58a"
+              "warning-subtle-inactive": "#d6b88c"
       }}
     />
           </ColorPalette>
@@ -4245,28 +4245,28 @@ const COLOR_VARIANTS = {
       title={"color.danger-subtle"}
       subtitle={"Generated low-emphasis danger background for the light theme"}
       colors={{
-              "danger-subtle": "#ff849a"
+              "danger-subtle": "#ff98aa"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-active"}
       subtitle={"Generated low-emphasis danger background for the light theme (active, 25% darker)"}
       colors={{
-              "danger-subtle-active": "#bb2245"
+              "danger-subtle-active": "#c5294a"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-disabled"}
       subtitle={"Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "danger-subtle-disabled": "#77444f"
+              "danger-subtle-disabled": "#7a4751"
       }}
     />
             <ColorItem
       title={"color.danger-subtle-inactive"}
       subtitle={"Generated low-emphasis danger background for the light theme (inactive, 20% brighter)"}
       colors={{
-              "danger-subtle-inactive": "#ffe7ec"
+              "danger-subtle-inactive": "#fff2f5"
       }}
     />
             <ColorItem
@@ -4505,28 +4505,28 @@ const COLOR_VARIANTS = {
       title={"color.success-subtle"}
       subtitle={"Generated low-emphasis success background for the light theme"}
       colors={{
-              "success-subtle": "#66caa4"
+              "success-subtle": "#72d1ac"
       }}
     />
             <ColorItem
       title={"color.success-subtle-active"}
       subtitle={"Generated low-emphasis success background for the light theme (active, 25% darker)"}
       colors={{
-              "success-subtle-active": "#1d7255"
+              "success-subtle-active": "#237b5b"
       }}
     />
             <ColorItem
       title={"color.success-subtle-disabled"}
       subtitle={"Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "success-subtle-disabled": "#416158"
+              "success-subtle-disabled": "#45655b"
       }}
     />
             <ColorItem
       title={"color.success-subtle-inactive"}
       subtitle={"Generated low-emphasis success background for the light theme (inactive, 20% brighter)"}
       colors={{
-              "success-subtle-inactive": "#bdf8e1"
+              "success-subtle-inactive": "#d0fdea"
       }}
     />
           </ColorPalette>
@@ -4587,28 +4587,28 @@ const COLOR_VARIANTS = {
       title={"color.warning-subtle"}
       subtitle={"Generated low-emphasis warning background for the light theme"}
       colors={{
-              "warning-subtle": "#dcab5e"
+              "warning-subtle": "#e0af64"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-active"}
       subtitle={"Generated low-emphasis warning background for the light theme (active, 25% darker)"}
       colors={{
-              "warning-subtle-active": "#855b16"
+              "warning-subtle-active": "#8a5e18"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-disabled"}
       subtitle={"Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "warning-subtle-disabled": "#675641"
+              "warning-subtle-disabled": "#685843"
       }}
     />
             <ColorItem
       title={"color.warning-subtle-inactive"}
       subtitle={"Generated low-emphasis warning background for the light theme (inactive, 20% brighter)"}
       colors={{
-              "warning-subtle-inactive": "#ffe6bf"
+              "warning-subtle-inactive": "#ffebcc"
       }}
     />
           </ColorPalette>

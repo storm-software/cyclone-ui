@@ -595,10 +595,10 @@
   --storm-color-pink-8: #904272; /** Deep berry pink. */
   --storm-color-pink-9: #482039; /** Dark plum pink. */
   --storm-color-backdrop: rgba(13, 12, 7, 0.4); /** Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container. */
-  --storm-color-danger-subtle: #660022; /** Generated low-emphasis danger background for the dark theme */
-  --storm-color-on-danger-subtle: #ff9ba8; /** Generated text and icon color on danger-subtle backgrounds */
-  --storm-color-warning-subtle: #7d5300; /** Generated low-emphasis warning background for the dark theme */
-  --storm-color-success-subtle: #006a47; /** Generated low-emphasis success background for the dark theme */
+  --storm-color-danger-subtle: #620020; /** Generated low-emphasis danger background for the dark theme */
+  --storm-color-on-danger-subtle: #ffa6b0; /** Generated text and icon color on danger-subtle backgrounds */
+  --storm-color-warning-subtle: #764e00; /** Generated low-emphasis warning background for the dark theme */
+  --storm-color-success-subtle: #006140; /** Generated low-emphasis success background for the dark theme */
   --storm-color-border-inactive: #808080; /** Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker) */
   --storm-color-border-disabled: #494a4d; /** Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-base-active: #d0d0d0; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% darker) */
@@ -608,15 +608,15 @@
   --storm-color-danger-active: #ff607f; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter) */
   --storm-color-danger-inactive: #a70037; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker) */
   --storm-color-danger-disabled: #70424d; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-danger-subtle-active: #802136; /** Generated low-emphasis danger background for the dark theme (active, 25% brighter) */
-  --storm-color-danger-subtle-inactive: #510013; /** Generated low-emphasis danger background for the dark theme (inactive, 20% darker) */
-  --storm-color-danger-subtle-disabled: #4d323a; /** Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-danger-subtle-active: #7b1f34; /** Generated low-emphasis danger background for the dark theme (active, 25% brighter) */
+  --storm-color-danger-subtle-inactive: #4e0011; /** Generated low-emphasis danger background for the dark theme (inactive, 20% darker) */
+  --storm-color-danger-subtle-disabled: #4c313a; /** Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-warning-active: #b56e00; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker) */
   --storm-color-warning-inactive: #ffe067; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter) */
   --storm-color-warning-disabled: #7f6948; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-warning-subtle-active: #a27632; /** Generated low-emphasis warning background for the dark theme (active, 25% brighter) */
-  --storm-color-warning-subtle-inactive: #613900; /** Generated low-emphasis warning background for the dark theme (inactive, 20% darker) */
-  --storm-color-warning-subtle-disabled: #564938; /** Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-warning-subtle-active: #996f2f; /** Generated low-emphasis warning background for the dark theme (active, 25% brighter) */
+  --storm-color-warning-subtle-inactive: #5b3500; /** Generated low-emphasis warning background for the dark theme (inactive, 20% darker) */
+  --storm-color-warning-subtle-disabled: #534837; /** Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-info-active: #7fc4ff; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter) */
   --storm-color-info-inactive: #2564d1; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker) */
   --storm-color-info-disabled: #4b5e81; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
@@ -632,9 +632,9 @@
   --storm-color-success-active: #89ffcc; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% brighter) */
   --storm-color-success-inactive: #009865; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% darker) */
   --storm-color-success-disabled: #4c7062; /** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-success-subtle-active: #368d67; /** Generated low-emphasis success background for the dark theme (active, 25% brighter) */
-  --storm-color-success-subtle-inactive: #00502f; /** Generated low-emphasis success background for the dark theme (inactive, 20% darker) */
-  --storm-color-success-subtle-disabled: #375047; /** Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-success-subtle-active: #31815e; /** Generated low-emphasis success background for the dark theme (active, 25% brighter) */
+  --storm-color-success-subtle-inactive: #004829; /** Generated low-emphasis success background for the dark theme (inactive, 20% darker) */
+  --storm-color-success-subtle-disabled: #354d45; /** Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-size-zero: 0px; /** No size */
   --storm-size-xxs: 2px; /** A 2px xxs size step */
   --storm-size-xs: 4px; /** A 4px xs size step */
@@ -820,26 +820,26 @@
   --storm-letter-spacing-wide: 0.025rem; /** Wide letter spacing (0.025em) */
   --storm-letter-spacing-wider: 0.05rem; /** Wider letter spacing (0.05em) */
   --storm-letter-spacing-widest: 0.1rem; /** Widest letter spacing (0.1em) */
-  --storm-line-height-none: 0.85; /** No extra line height (0.85) */
-  --storm-line-height-tight: 1.175; /** Tight line height (1.175) */
-  --storm-line-height-snug: 1.25; /** Snug line height (1.25) */
-  --storm-line-height-normal: 1.375; /** Normal line height (1.375) */
-  --storm-line-height-relaxed: 1.5; /** Relaxed line height (1.5) */
-  --storm-line-height-loose: 1.85; /** Loose line height (1.85) */
-  --storm-line-height-xs: 1.333333; /** Line height for text-xs (calc(1 / 0.75)) */
-  --storm-line-height-sm: 1.428571; /** Line height for text-sm (calc(1.25 / 0.875)) */
-  --storm-line-height-md: 1.5; /** Line height for text-md (calc(1.5 / 1)) */
-  --storm-line-height-lg: 1.555556; /** Line height for text-lg (calc(1.75 / 1.125)) */
-  --storm-line-height-xl: 1.4; /** Line height for text-xl (calc(1.75 / 1.25)) */
-  --storm-line-height-2xl: 1.333333; /** Line height for text-2xl (calc(2 / 1.5)) */
-  --storm-line-height-3xl: 1.2; /** Line height for text-3xl (calc(2.25 / 1.875)) */
-  --storm-line-height-4xl: 1.111111; /** Line height for text-4xl (calc(2.5 / 2.25)) */
-  --storm-line-height-5xl: 1; /** Line height for text-5xl (1) */
-  --storm-line-height-6xl: 1; /** Line height for text-6xl (1) */
-  --storm-line-height-7xl: 1; /** Line height for text-7xl (1) */
-  --storm-line-height-8xl: 1; /** Line height for text-8xl (1) */
-  --storm-line-height-9xl: 1; /** Line height for text-9xl (1) */
-  --storm-line-height-10xl: 1; /** Line height for text-10xl (1) */
+  --storm-line-height-none: 0.765; /** No extra line height (0.765) */
+  --storm-line-height-tight: 1.0575; /** Tight line height (1.0575) */
+  --storm-line-height-snug: 1.125; /** Snug line height (1.125) */
+  --storm-line-height-normal: 1.2375; /** Normal line height (1.2375) */
+  --storm-line-height-relaxed: 1.35; /** Relaxed line height (1.35) */
+  --storm-line-height-loose: 1.665; /** Loose line height (1.665) */
+  --storm-line-height-xs: 1.2; /** Line height for text-xs (1.2) */
+  --storm-line-height-sm: 1.285714; /** Line height for text-sm (1.285714) */
+  --storm-line-height-md: 1.35; /** Line height for text-md (1.35) */
+  --storm-line-height-lg: 1.4; /** Line height for text-lg (1.4) */
+  --storm-line-height-xl: 1.26; /** Line height for text-xl (1.26) */
+  --storm-line-height-2xl: 1.2; /** Line height for text-2xl (1.2) */
+  --storm-line-height-3xl: 1.08; /** Line height for text-3xl (1.08) */
+  --storm-line-height-4xl: 1; /** Line height for text-4xl (1) */
+  --storm-line-height-5xl: 0.9; /** Line height for text-5xl (0.9) */
+  --storm-line-height-6xl: 0.9; /** Line height for text-6xl (0.9) */
+  --storm-line-height-7xl: 0.9; /** Line height for text-7xl (0.9) */
+  --storm-line-height-8xl: 0.9; /** Line height for text-8xl (0.9) */
+  --storm-line-height-9xl: 0.9; /** Line height for text-9xl (0.9) */
+  --storm-line-height-10xl: 0.9; /** Line height for text-10xl (0.9) */
   --storm-border-radius-zero: 0rem; /** No radius */
   --storm-border-radius-xs: 0.125rem; /** Extra small radius (0.125rem) */
   --storm-border-radius-sm: 0.25rem; /** Small radius (0.25rem) */
@@ -958,7 +958,7 @@
   --storm-border-radius-card: var(--storm-border-radius-xl); /** Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker. */
   --storm-border-radius-button: var(--storm-border-radius-xl); /** Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it. */
   --storm-border-radius-control: var(--storm-border-radius-lg); /** Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating. */
-  --storm-border-radius-checkbox: var(--storm-border-radius-lg); /** Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox. */
+  --storm-border-radius-checkbox: var(--storm-border-radius-sm); /** Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox. */
   --storm-border-radius-dialog: var(--storm-border-radius-2xl); /** Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog. */
   --storm-border-radius-sheet: var(--storm-border-radius-zero); /** Corner radius for sheets (0px, `border-radius.zero`). Sheets slide in flush against a viewport edge, so their corners stay square. Applied by Sheet to its exposed corners. */
   --storm-border-radius-drawer: var(--storm-border-radius-4xl); /** Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer. */
@@ -971,14 +971,14 @@
   --storm-typography-editorial-lg: var(--storm-font-weight-semibold) var(--storm-font-size-3xl)/var(--storm-line-height-snug) 'Storm Serif'; /** Large editorial display style: Storm Serif semibold at 36px (`font-size.3xl`) with snug line height. Use it for page titles and top-level section headings. HeadingText applies it for levels `1`/`title` (h1) and `2`/`lg` (h2). */
   --storm-typography-editorial-md: var(--storm-font-weight-bold) var(--storm-font-size-xl)/var(--storm-line-height-snug) 'Storm Serif'; /** Medium editorial display style: Storm Serif bold at 24px (`font-size.xl`) with snug line height. Use it for section and card headings. HeadingText applies it for level `3`/`md` (h3) and as its default font. */
   --storm-typography-title-xl: var(--storm-font-weight-semibold) var(--storm-font-size-lg)/var(--storm-line-height-tight) 'Storm Sans'; /** Large title style: Storm Sans semibold at 18px (`font-size.lg`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. */
-  --storm-typography-title-lg: var(--storm-font-weight-bold) var(--storm-font-size-md)/var(--storm-line-height-tight) 'Storm Sans'; /** Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. */
+  --storm-typography-title-lg: var(--storm-font-weight-extrabold) var(--storm-font-size-md)/var(--storm-line-height-tight) 'Storm Sans'; /** Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. */
   --storm-typography-title-md: var(--storm-font-weight-semibold) var(--storm-font-size-md)/var(--storm-line-height-tight) 'Storm Sans'; /** Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. */
   --storm-typography-title-sm: var(--storm-font-weight-bold) var(--storm-font-size-sm)/var(--storm-line-height-snug) 'Storm Sans'; /** Small title style: Storm Sans bold at 12px (`font-size.sm`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border. */
   --storm-typography-title-xs: var(--storm-font-weight-medium) var(--storm-font-size-xxs)/var(--storm-line-height-snug) 'Storm Sans'; /** Extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border. */
   --storm-typography-body-md: var(--storm-font-weight-normal) var(--storm-font-size-md)/var(--storm-line-height-snug) 'Storm Sans'; /** Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. */
   --storm-typography-body-sm: var(--storm-font-weight-medium) var(--storm-font-size-sm)/var(--storm-line-height-snug) 'Storm Sans'; /** Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. */
   --storm-typography-caption: italic var(--storm-font-weight-normal) var(--storm-font-size-sm)/var(--storm-line-height-tight) 'Storm Sans'; /** Caption style: Storm Sans regular italic at 16px (`font-size.sm`) with tight line height. Use it for helper text, annotations and small supporting labels. Used by Field helper and validation text, ValidationText, EyebrowText, Slider value labels and the CodeBlock header file name. */
-  --storm-typography-eyebrow: var(--storm-font-weight-semibold) var(--storm-font-size-md)/var(--storm-line-height-tight) 'Google Sans Code'; /** Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. */
+  --storm-typography-eyebrow: var(--storm-font-weight-extrabold) var(--storm-font-size-md)/var(--storm-line-height-tight) 'Google Sans Code'; /** Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. */
   --storm-typography-code: var(--storm-font-weight-normal) var(--storm-font-size-lg)/var(--storm-line-height-snug) 'Google Sans Code'; /** Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion. */
   --storm-color-base-accent: var(--storm-color-base); /** Alias of base for the base theme */
   --storm-color-danger-accent: var(--storm-color-danger); /** Alias of danger for the danger theme */

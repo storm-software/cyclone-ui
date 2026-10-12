@@ -161,7 +161,9 @@ const TagPickerFrame = styled(XStack, {
     // Focus ring: underlined and inlined pickers show their underline instead.
     boxShadow:
       props.focused && (variant === "outlined" || variant === "inlined")
-        ? "ringOffset"
+        ? props.frameSize === "sm"
+          ? "ringSubtleOffset"
+          : "ringOffset"
         : undefined,
     minHeight: sized?.minHeight,
     borderWidth: notched ? 0 : undefined,

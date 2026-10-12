@@ -262,10 +262,12 @@ export const InputValue = createStyledHOC(
         color: var(--placeholderColor) !important;
       }
 
+      /* A floating label's 200ms lift reveals the placeholder: start it after
+         the label begins clearing the text so it fades in, not pops. */
       @media (prefers-reduced-motion: no-preference) {
         @keyframes cyclone-placeholder-fade-in {
           from {
-            opacity: 0.65;
+            opacity: 0;
           }
 
           to {
@@ -274,7 +276,7 @@ export const InputValue = createStyledHOC(
         }
 
         input::placeholder, textarea::placeholder {
-          animation: cyclone-placeholder-fade-in 180ms ease-out both;
+          animation: cyclone-placeholder-fade-in 200ms ease-out 100ms both;
         }
       }
 

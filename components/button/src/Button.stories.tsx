@@ -75,6 +75,21 @@ export const Circular: Story = {
   }
 };
 
+export const Sizes: Story = {
+  render: () => (
+    <>
+      {(["sm", "md", "lg"] as const).map(size => (
+        <Button key={size} size={size} animate={false} flexGrow={0}>
+          <Button.Text>{`Size ${size}`}</Button.Text>
+          <Button.Icon>
+            <X />
+          </Button.Icon>
+        </Button>
+      ))}
+    </>
+  )
+};
+
 export const Sized: Story = {
   args: {
     children: "Button Text",

@@ -332,7 +332,11 @@ const BaseSwitchImpl = createStyledHOC(
           ]
             .filter(Boolean)
             .join(" ")}
-          boxShadow="focus:ringOffset focus-visible:ringOffset"
+          boxShadow={
+            size === "sm"
+              ? "focus:ringSubtleOffset focus-visible:ringSubtleOffset"
+              : "focus:ringOffset focus-visible:ringOffset"
+          }
           // `createSwitch` types its result with the default frame's props, but
           // this `SwitchFrame` variant still reaches the frame at runtime.
           {...({ hasValidationMessage } as object)}

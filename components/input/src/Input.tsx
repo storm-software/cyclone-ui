@@ -184,7 +184,9 @@ const InputGroup = styled(XStack, {
     // Focus ring: underlined and inlined inputs show their underline instead.
     boxShadow:
       props.focused && (variant === "outlined" || variant === "inlined")
-        ? "ringOffset"
+        ? frameSize === "sm"
+          ? "ringSubtleOffset"
+          : "ringOffset"
         : undefined,
     paddingHorizontal: sized ? (notched ? 1 : 0) : undefined,
     paddingVertical: notched ? 1 : undefined,

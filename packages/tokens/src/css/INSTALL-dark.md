@@ -4,7 +4,7 @@ The following instructions will guide you through configuring your application t
 
 ## Files
 
-- `packages/themes/src/css/tokens.css`
+- `packages/tokens/src/css/tokens.css`
 
 ## Setup
 
@@ -13,13 +13,13 @@ The following instructions will guide you through configuring your application t
 CSS example:
 
 ```ts
-import "./packages/themes/src/css/tokens.css";
+import "./packages/tokens/src/css/tokens.css";
 ```
 
 SCSS example:
 
 ```scss
-@import "packages/themes/src/css/tokens.css";
+@import "packages/tokens/src/css/tokens.css";
 ```
 
 2. Reference token variables from the generated file names above (e.g. CSS custom properties or SCSS variables).

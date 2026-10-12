@@ -148,6 +148,12 @@ export interface FieldLabelDefaults {
    * the alignment of the label's row.
    */
   inline?: { alignItems?: "center" } | { alignContent?: "center" };
+
+  /**
+   * Where a floating label rests, for a control with leading content other
+   * than a `Field.Icon` (such as a country code trigger).
+   */
+  floatingLabelLeft?: number;
 }
 
 /**

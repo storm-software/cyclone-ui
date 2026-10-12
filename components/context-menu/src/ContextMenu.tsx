@@ -133,15 +133,17 @@ const ContextMenuContent = ({
   children,
   ...props
 }: ContextMenuContentProps): JSX.Element => {
+  const { size } = ContextMenuContext.useStyledContext();
+  const { contentPadding } = getContextMenuSize(size);
   const [narrow, setNarrow] = useState(false);
 
   return (
-    <Popover.Content maxWidth="90vw" {...props}>
+    <Popover.Content maxWidth="90vw" padding={contentPadding} {...props}>
       {/* Adapted to a sheet, only the children render, so they carry the
           layout, styles and keyboard navigation. */}
       <View
         data-context-menu-narrow={narrow ? "" : undefined}
-        gap="3xl"
+        gap={contentPadding}
         width="100%"
         onLayout={event =>
           setNarrow(event.nativeEvent.layout.width < NARROW_MENU_WIDTH)
@@ -324,10 +326,17 @@ const ContextMenuItemGroup = styled(View, {
           paddingHorizontal: itemPaddingHorizontal
         };
       })
-    )
+    ),
+
+    disabled: {
+      true: {
+        opacity: 0.5
+      }
+    }
   } as const,
   defaultVariants: {
-    size: "md"
+    size: "md",
+    disabled: false
   }
 });
 
@@ -382,7 +391,10 @@ const ContextMenuItem = ({
           }
         }}>
         <ContextMenuItemBackground size={size} disabled={disabled} />
-        <ContextMenuItemGroup size={size} data-context-menu-item-group>
+        <ContextMenuItemGroup
+          size={size}
+          disabled={disabled}
+          data-context-menu-item-group>
           {children}
           {(selected || disabled) && (
             <View

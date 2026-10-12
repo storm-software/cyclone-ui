@@ -246,7 +246,7 @@ const tokens = createTokens({
     "4xl": 32,
     button: 12,
     card: 12,
-    checkbox: 8,
+    checkbox: 4,
     container: 12,
     control: 8,
     dialog: 16,
@@ -375,15 +375,15 @@ const childThemeExtras: {
       disabled: "#5a3c44",
       inactive: "#ab3e56",
       onAccent: "#FAFAFA",
-      onSubtle: "#270009",
+      onSubtle: "#200006",
       ring: "0px 0px 0px 3px #8e223e26",
       ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #8e223e26",
       ringSubtle: "0px 0px 0px 1px #8e223e26",
       ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #8e223e26",
-      subtle: "#e77388",
-      subtleActive: "#ab3d56",
-      subtleDisabled: "#79575e",
-      subtleInactive: "#ff9fb3"
+      subtle: "#ee7a8e",
+      subtleActive: "#b0435a",
+      subtleDisabled: "#7b5960",
+      subtleInactive: "#ffa7ba"
     },
     discovery: {
       accent: tokens.color.purple7.val,
@@ -423,15 +423,15 @@ const childThemeExtras: {
       disabled: "#3c504b",
       inactive: "#40876e",
       onAccent: "#FAFAFA",
-      onSubtle: "#00251a",
+      onSubtle: "#002217",
       ring: "0px 0px 0px 3px #216b5326",
       ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #216b5326",
       ringSubtle: "0px 0px 0px 1px #216b5326",
       ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #216b5326",
-      subtle: "#6db499",
-      subtleActive: "#357d64",
-      subtleDisabled: "#556a64",
-      subtleInactive: "#9ae2c6"
+      subtle: "#74ba9f",
+      subtleActive: "#3b8168",
+      subtleDisabled: "#586c66",
+      subtleInactive: "#a3eacd"
     },
     warning: {
       accent: tokens.color.yellow9.val,
@@ -439,15 +439,15 @@ const childThemeExtras: {
       disabled: "#53493b",
       inactive: "#926f36",
       onAccent: "#FAFAFA",
-      onSubtle: "#291a00",
+      onSubtle: "#241500",
       ring: "0px 0px 0px 3px #76541726",
       ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #76541726",
       ringSubtle: "0px 0px 0px 1px #76541726",
       ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #76541726",
-      subtle: "#c39e65",
-      subtleActive: "#8b682f",
-      subtleDisabled: "#6e6355",
-      subtleInactive: "#f2cc91"
+      subtle: "#c7a168",
+      subtleActive: "#8e6a31",
+      subtleDisabled: "#6f6456",
+      subtleInactive: "#f7d095"
     }
   },
   dark: {
@@ -473,15 +473,15 @@ const childThemeExtras: {
       disabled: "#70424d",
       inactive: "#a70037",
       onAccent: "#FAFAFA",
-      onSubtle: "#ff9ba8",
+      onSubtle: "#ffa6b0",
       ring: "0px 0px 0px 3px #cf2d5626",
       ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #cf2d5626",
       ringSubtle: "0px 0px 0px 1px #cf2d5626",
       ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #cf2d5626",
-      subtle: "#660022",
-      subtleActive: "#802136",
-      subtleDisabled: "#4d323a",
-      subtleInactive: "#510013"
+      subtle: "#620020",
+      subtleActive: "#7b1f34",
+      subtleDisabled: "#4c313a",
+      subtleInactive: "#4e0011"
     },
     discovery: {
       accent: tokens.color.purple4.val,
@@ -526,10 +526,10 @@ const childThemeExtras: {
       ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #45c79126",
       ringSubtle: "0px 0px 0px 1px #45c79126",
       ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #45c79126",
-      subtle: "#006a47",
-      subtleActive: "#368d67",
-      subtleDisabled: "#375047",
-      subtleInactive: "#00502f"
+      subtle: "#006140",
+      subtleActive: "#31815e",
+      subtleDisabled: "#354d45",
+      subtleInactive: "#004829"
     },
     warning: {
       accent: tokens.color.yellow4.val,
@@ -542,10 +542,10 @@ const childThemeExtras: {
       ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #f7ac2326",
       ringSubtle: "0px 0px 0px 1px #f7ac2326",
       ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #f7ac2326",
-      subtle: "#7d5300",
-      subtleActive: "#a27632",
-      subtleDisabled: "#564938",
-      subtleInactive: "#613900"
+      subtle: "#764e00",
+      subtleActive: "#996f2f",
+      subtleDisabled: "#534837",
+      subtleInactive: "#5b3500"
     }
   }
 };
@@ -679,9 +679,9 @@ const bodyMdFont = createFont({
     true: 18
   },
   lineHeight: {
-    md: 22.5,
-    snug: 22.5,
-    true: 22.5
+    md: 20.25,
+    snug: 20.25,
+    true: 20.25
   },
   weight: {
     md: "400",
@@ -700,9 +700,9 @@ const bodySmFont = createFont({
     true: 16
   },
   lineHeight: {
-    sm: 20,
-    snug: 20,
-    true: 20
+    sm: 18,
+    snug: 18,
+    true: 18
   },
   weight: {
     medium: "500",
@@ -721,9 +721,9 @@ const captionFont = createFont({
     true: 16
   },
   lineHeight: {
-    sm: 18.8,
-    tight: 18.8,
-    true: 18.8
+    sm: 16.92,
+    tight: 16.92,
+    true: 16.92
   },
   weight: {
     normal: "400",
@@ -742,9 +742,9 @@ const codeFont = createFont({
     true: 20
   },
   lineHeight: {
-    lg: 25,
-    snug: 25,
-    true: 25
+    lg: 22.5,
+    snug: 22.5,
+    true: 22.5
   },
   weight: {
     lg: "400",
@@ -760,9 +760,9 @@ const displayHeroFont = createFont({
     true: 60
   },
   lineHeight: {
-    "5xl": 75,
-    snug: 75,
-    true: 75
+    "5xl": 67.5,
+    snug: 67.5,
+    true: 67.5
   },
   weight: {
     "5xl": "600",
@@ -781,9 +781,9 @@ const displayLgFont = createFont({
     true: 36
   },
   lineHeight: {
-    "3xl": 45,
-    snug: 45,
-    true: 45
+    "3xl": 40.5,
+    snug: 40.5,
+    true: 40.5
   },
   weight: {
     "3xl": "600",
@@ -802,9 +802,9 @@ const displayMdFont = createFont({
     xl: 24
   },
   lineHeight: {
-    snug: 30,
-    true: 30,
-    xl: 30
+    snug: 27,
+    true: 27,
+    xl: 27
   },
   weight: {
     bold: "700",
@@ -823,9 +823,9 @@ const editorialHeroFont = createFont({
     true: 60
   },
   lineHeight: {
-    "5xl": 75,
-    snug: 75,
-    true: 75
+    "5xl": 67.5,
+    snug: 67.5,
+    true: 67.5
   },
   weight: {
     "5xl": "600",
@@ -844,9 +844,9 @@ const editorialLgFont = createFont({
     true: 36
   },
   lineHeight: {
-    "3xl": 45,
-    snug: 45,
-    true: 45
+    "3xl": 40.5,
+    snug: 40.5,
+    true: 40.5
   },
   weight: {
     "3xl": "600",
@@ -865,9 +865,9 @@ const editorialMdFont = createFont({
     xl: 24
   },
   lineHeight: {
-    snug: 30,
-    true: 30,
-    xl: 30
+    snug: 27,
+    true: 27,
+    xl: 27
   },
   weight: {
     bold: "700",
@@ -886,14 +886,14 @@ const eyebrowFont = createFont({
     true: 18
   },
   lineHeight: {
-    md: 21.15,
-    tight: 21.15,
-    true: 21.15
+    md: 19.035,
+    tight: 19.035,
+    true: 19.035
   },
   weight: {
-    md: "600",
-    semibold: "600",
-    true: "600"
+    extrabold: "800",
+    md: "800",
+    true: "800"
   }
 });
 
@@ -955,17 +955,14 @@ const titleLgFont = createFont({
     true: 18
   },
   lineHeight: {
-    md: 21.15,
-    tight: 21.15,
-    true: 21.15
+    md: 19.035,
+    tight: 19.035,
+    true: 19.035
   },
   weight: {
-    bold: "700",
-    md: "700",
-    true: "700"
-  },
-  face: {
-    700: { normal: "StormSans-Bold", italic: "StormSans-BoldItalic" }
+    extrabold: "800",
+    md: "800",
+    true: "800"
   }
 });
 
@@ -976,9 +973,9 @@ const titleMdFont = createFont({
     true: 18
   },
   lineHeight: {
-    md: 21.15,
-    tight: 21.15,
-    true: 21.15
+    md: 19.035,
+    tight: 19.035,
+    true: 19.035
   },
   weight: {
     md: "600",
@@ -997,9 +994,9 @@ const titleSmFont = createFont({
     true: 16
   },
   lineHeight: {
-    sm: 20,
-    snug: 20,
-    true: 20
+    sm: 18,
+    snug: 18,
+    true: 18
   },
   weight: {
     bold: "700",
@@ -1018,9 +1015,9 @@ const titleXlFont = createFont({
     true: 20
   },
   lineHeight: {
-    lg: 23.5,
-    tight: 23.5,
-    true: 23.5
+    lg: 21.15,
+    tight: 21.15,
+    true: 21.15
   },
   weight: {
     lg: "600",
@@ -1039,9 +1036,9 @@ const titleXsFont = createFont({
     xxs: 12
   },
   lineHeight: {
-    snug: 15,
-    true: 15,
-    xxs: 15
+    snug: 13.5,
+    true: 13.5,
+    xxs: 13.5
   },
   weight: {
     medium: "500",

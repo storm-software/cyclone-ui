@@ -41,6 +41,7 @@ import {
   styled,
   Theme,
   useComposedRefs,
+  useTheme,
   View
 } from "@tamagui/core";
 import { useCallback, useState } from "react";
@@ -124,6 +125,11 @@ const TextAreaFrame = styled(InputValue, {
     variant: "outlined"
   }
 }).resolve(props => ({
+  // The full 3px ring overwhelms a small text area, so use the 1px ring.
+  boxShadow:
+    props.focused && props.size === "sm" && props.variant !== "underlined"
+      ? "ringSubtleOffset"
+      : undefined,
   // An underlined control's text starts flush with its left edge.
   paddingLeft: props.variant === "underlined" ? 0 : undefined,
   // Drop the text under a floating label by the extra height an inset label
@@ -192,8 +198,10 @@ export const TextArea = createStyledHOC(
       size = formControl?.size,
       value = formControl?.formattedValue,
       placeholder,
+      style,
       ...rest
     } = props;
+    const theme = useTheme();
     const shouldShowPlaceholder = useFieldShouldShowPlaceholder(
       formControl?.formattedValue
     );
@@ -232,7 +240,14 @@ export const TextArea = createStyledHOC(
         value={value}
         onChange={onChange}
         placeholder={shouldShowPlaceholder ? placeholder : undefined}
-        placeholderTextColor={placeholderTextColor}
+        // The styled layer drops `placeholderTextColor` before it reaches
+        // `InputValue`, so set the variable its `::placeholder` rule reads.
+        style={{
+          ...(style as object),
+          "--placeholderColor":
+            theme[placeholderTextColor as string]?.variable ||
+            placeholderTextColor
+        } as typeof style}
         focused={isFocused}
         hasValidationMessage={hasValidationMessage}
         variant={variant}
@@ -242,7 +257,9 @@ export const TextArea = createStyledHOC(
         borderColor={labelPlacement === "border" ? "transparent" : borderColor}
         boxShadow={`focus-visible:${
           variant === "outlined" || variant === "inlined"
-            ? "ringOffset"
+            ? size === "sm"
+              ? "ringSubtleOffset"
+              : "ringOffset"
             : "none"
         }`}
         onFocus={handleFocus}

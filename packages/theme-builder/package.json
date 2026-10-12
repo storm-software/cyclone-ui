@@ -2,6 +2,9 @@
   "name": "@cyclone-ui/theme-builder",
   "version": "0.0.3",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "A package for building themes within the Cyclone UI project",
   "repository": {
     "type": "github",

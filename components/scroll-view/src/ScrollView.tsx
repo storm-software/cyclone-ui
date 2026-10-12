@@ -27,9 +27,14 @@ export const SCROLL_VIEW_STYLES = `
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar { width: 6px; height: 6px; background: transparent; }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-track { background: transparent; }
 .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar, .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-track { background: color-mix(in srgb, var(--surfaceSunken) 0%, transparent); }
-.${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-thumb { background: var(--active); border-radius: ${100_000}px }
-.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb { background: var(--accent); }
+.${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-thumb { background: transparent; border-radius: ${100_000}px }
+.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb { background: var(--active); }
+.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-button { display: none; }
+@supports not selector(::-webkit-scrollbar) {
+  .${SCROLL_VIEW_CLASS_NAME} { scrollbar-color: transparent transparent; }
+  .${SCROLL_VIEW_CLASS_NAME}:hover { scrollbar-color: var(--active) transparent; }
+}
 `;
 
 // Built on Tamagui's `ScrollView` (a DOM `WebScrollView` on web) rather than

@@ -9,9 +9,7 @@
     "directory": "components/phone-number-input"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -26,6 +24,7 @@
     "@maskito/core": "catalog:",
     "@maskito/phone": "catalog:",
     "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "libphonenumber-js": "catalog:"
   },
@@ -40,9 +39,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

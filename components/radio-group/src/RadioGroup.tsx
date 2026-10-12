@@ -222,7 +222,9 @@ const RadioGroupItemContainer = createStyledHOC(
             ? undefined
             : withClauses(
                 props.boxShadow,
-                "focus:ringOffset focus-visible:ringOffset"
+                size === "sm"
+                  ? "press:ringSubtleOffset focus:ringSubtleOffset focus-visible:ringSubtleOffset"
+                  : "focus:ringOffset focus-visible:ringOffset"
               )
         }
         borderColor={

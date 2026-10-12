@@ -16,8 +16,14 @@
 
  ------------------------------------------------------------------- */
 
-import type { TokenValue } from "@cyclone-ui/helpers";
-import { getButtonSized, getSized } from "@cyclone-ui/helpers";
+import type { FormControlSize, TokenValue } from "@cyclone-ui/helpers";
+import {
+  formSizeVariants,
+  getButtonSized,
+  getFormFontSize,
+  getFormSizeToken,
+  getSized
+} from "@cyclone-ui/helpers";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import type {
@@ -148,13 +154,23 @@ type BorderRadiusSizeTokens =
   | any
   | undefined;
 
+export type ButtonSize = FormControlSize | SizeTokens;
+
+const isFormControlSize = (value: unknown): value is FormControlSize =>
+  value === "sm" || value === "md" || value === "lg";
+
+/** Map a named `sm` / `md` / `lg` size onto its control size token. */
+const resolveSizeToken = (size: ButtonSize | undefined) =>
+  isFormControlSize(size) ? getFormSizeToken(size) : size;
+
 export type ButtonContextProps = TextContextStyles & {
   /**
-   * The size of the button
+   * The size of the button: `sm`, `md` or `lg` (which also scale the text and
+   * icon), or a raw size token
    *
-   * @defaultValue "5xl"
+   * @defaultValue "md"
    */
-  size: SizeTokens;
+  size: ButtonSize;
 
   /**
    * The variant style of the button
@@ -269,7 +285,7 @@ export const ButtonContext = createStyledContext<
     // and `ButtonFrame` receives it as a call-site prop, which outranks the
     // `circular` / `rounded` variants. `ButtonFrame`'s `.resolve` defaults it
     // to "button".
-    size: "10xl",
+    size: "md",
     variant: "tertiary",
     unstyled: false,
     circular: false,
@@ -511,6 +527,17 @@ const ButtonTextFrame = styled(Text, {
   minWidth: "fit-content",
   zIndex: "20",
   variants: {
+    // `md` keeps the font's default size and leading.
+    controlSize: formSizeVariants((size, env) => {
+      if (size === "md") {
+        return undefined;
+      }
+
+      const { fontSize, lineHeight } = getFormFontSize(size, env);
+
+      return { fontSize, lineHeight };
+    }),
+
     variant: {
       tertiary: {
         color: "accent"
@@ -737,12 +764,18 @@ const ButtonText = createStyledHOC(
   (
     {
       children,
-      size: _size,
+      size,
       ...props
-    }: GetProps<typeof ButtonTextFrame> & { size?: SizeTokens },
+    }: GetProps<typeof ButtonTextFrame> & { size?: ButtonSize },
     forwardedRef
   ) => {
-    const { variant, disabled, color } = ButtonContext.useStyledContext();
+    const {
+      variant,
+      disabled,
+      color,
+      size: contextSize
+    } = ButtonContext.useStyledContext();
+    const controlSize = size ?? contextSize;
     const theme = useThemeName();
     const hoverColor = hoverColorForVariant(variant, disabled, theme);
 
@@ -751,6 +784,7 @@ const ButtonText = createStyledHOC(
         ref={forwardedRef}
         variant={variant}
         disabled={disabled}
+        controlSize={isFormControlSize(controlSize) ? controlSize : undefined}
         color={`${String(colorForVariant(variant, disabled, color, theme))} group-hover/button:${hoverColor}`}
         {...props}
         borderRadius={0}
@@ -772,7 +806,7 @@ const ButtonIcon = createStyledHOC(
       size,
       color: colorProp,
       ...props
-    }: GetProps<typeof View> & { size?: SizeTokens },
+    }: GetProps<typeof View> & { size?: ButtonSize },
     forwardedRef
   ) => {
     const {
@@ -782,7 +816,7 @@ const ButtonIcon = createStyledHOC(
       size: contextSize
     } = ButtonContext.useStyledContext();
     const adjusted = useMemo(
-      () => getSized(size ?? contextSize, { shift: -6 }),
+      () => getSized(resolveSizeToken(size ?? contextSize), { shift: -6 }),
       [size, contextSize]
     );
     const groupColor = `group-hover/button:${hoverColorForVariant(
@@ -1121,7 +1155,7 @@ const ButtonContainerImpl = createStyledHOC(
   (
     {
       variant = "tertiary",
-      size = "10xl",
+      size = "md",
       disabled = false,
       circular = false,
       rounded = false,
@@ -1179,7 +1213,7 @@ const ButtonContainerImpl = createStyledHOC(
         download={download}
         {...props}
         onPress={handlePress}
-        frameSize={size}
+        frameSize={resolveSizeToken(size)}
         circular={circular}
         rounded={rounded}
         variant={variant}

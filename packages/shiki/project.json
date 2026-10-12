@@ -16,7 +16,10 @@
       }
     },
     "nx-release-publish": {
-      "executor": "@storm-software/workspace-tools:npm-publish"
+      "executor": "@storm-software/workspace-tools:npm-publish",
+      "options": {
+        "packageRoot": "packages/shiki"
+      }
     }
   },
   "implicitDependencies": ["tokens"]

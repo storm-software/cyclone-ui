@@ -699,9 +699,11 @@ const NavigationHeaderRoot = createStyledHOC(
               const hasChildren = Boolean(item.children?.length);
               const active =
                 item.active ?? item.children?.some(child => child.active);
+              // Always a plain color, like the dropdown links below, so Tamagui
+              // clears its hover state on mouse leave.
               const navigationItemColor =
                 hoveredItemIndex === null
-                  ? undefined
+                  ? "accent"
                   : hoveredItemIndex === index
                     ? "active"
                     : "inactive";
@@ -712,7 +714,7 @@ const NavigationHeaderRoot = createStyledHOC(
                   key={`${item.href ?? "navigation-item"}-${index}`}
                   active={active}
                   borderBottomColor={
-                    active ? (navigationItemColor ?? "accent") : "transparent"
+                    active ? navigationItemColor : "transparent"
                   }
                   position="relative"
                   onMouseEnter={() => {
@@ -819,12 +821,16 @@ const NavigationHeaderRoot = createStyledHOC(
                     {group.items.map((child, childIndex) => {
                       const scope = group.featured ? "featured" : "standard";
                       const hovered = hoveredDropdownItem?.scope === scope;
+                      // Always pass a plain color: switching between the link's
+                      // own `hover:` styles and an override mid-hover makes
+                      // Tamagui skip clearing its hover state on mouse leave,
+                      // leaving the previous link stuck highlighted.
                       const color = hovered
                         ? hoveredDropdownItem.groupIndex === groupIndex &&
                           hoveredDropdownItem.childIndex === childIndex
                           ? "active"
                           : "inactive"
-                        : undefined;
+                        : "accent";
 
                       return (
                         <NavigationHeaderDropdownLink
@@ -850,9 +856,7 @@ const NavigationHeaderRoot = createStyledHOC(
                             setOpenItemIndex(null);
                           }}>
                           {child.featured ? (
-                            <HeadingLargeText>
-                              {child.label}
-                            </HeadingLargeText>
+                            <HeadingLargeText>{child.label}</HeadingLargeText>
                           ) : (
                             child.label
                           )}

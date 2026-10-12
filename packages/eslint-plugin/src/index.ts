@@ -108,7 +108,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-border-radius-checkbox",
       "type": "dimension",
       "category": "radius",
-      "value": "0.5rem",
+      "value": "0.25rem",
       "alias": true
     },
     {
@@ -438,28 +438,28 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-danger-subtle",
       "type": "color",
       "category": "color",
-      "value": "#e77388"
+      "value": "#ee7a8e"
     },
     {
       "path": "color.danger-subtle-active",
       "cssVar": "--storm-color-danger-subtle-active",
       "type": "color",
       "category": "color",
-      "value": "#ab3d56"
+      "value": "#b0435a"
     },
     {
       "path": "color.danger-subtle-disabled",
       "cssVar": "--storm-color-danger-subtle-disabled",
       "type": "color",
       "category": "color",
-      "value": "#79575e"
+      "value": "#7b5960"
     },
     {
       "path": "color.danger-subtle-inactive",
       "cssVar": "--storm-color-danger-subtle-inactive",
       "type": "color",
       "category": "color",
-      "value": "#ff9fb3"
+      "value": "#ffa7ba"
     },
     {
       "path": "color.data.blue.emphasis",
@@ -908,7 +908,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-on-danger-subtle",
       "type": "color",
       "category": "color",
-      "value": "#270009"
+      "value": "#200006"
     },
     {
       "path": "color.on-discovery-accent",
@@ -950,7 +950,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-on-success-subtle",
       "type": "color",
       "category": "color",
-      "value": "#00251a"
+      "value": "#002217"
     },
     {
       "path": "color.on-warning-accent",
@@ -964,7 +964,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-on-warning-subtle",
       "type": "color",
       "category": "color",
-      "value": "#291a00"
+      "value": "#241500"
     },
     {
       "path": "color.orange.1",
@@ -1340,28 +1340,28 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-success-subtle",
       "type": "color",
       "category": "color",
-      "value": "#6db499"
+      "value": "#74ba9f"
     },
     {
       "path": "color.success-subtle-active",
       "cssVar": "--storm-color-success-subtle-active",
       "type": "color",
       "category": "color",
-      "value": "#357d64"
+      "value": "#3b8168"
     },
     {
       "path": "color.success-subtle-disabled",
       "cssVar": "--storm-color-success-subtle-disabled",
       "type": "color",
       "category": "color",
-      "value": "#556a64"
+      "value": "#586c66"
     },
     {
       "path": "color.success-subtle-inactive",
       "cssVar": "--storm-color-success-subtle-inactive",
       "type": "color",
       "category": "color",
-      "value": "#9ae2c6"
+      "value": "#a3eacd"
     },
     {
       "path": "color.surface-canvas",
@@ -1453,28 +1453,28 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-warning-subtle",
       "type": "color",
       "category": "color",
-      "value": "#c39e65"
+      "value": "#c7a168"
     },
     {
       "path": "color.warning-subtle-active",
       "cssVar": "--storm-color-warning-subtle-active",
       "type": "color",
       "category": "color",
-      "value": "#8b682f"
+      "value": "#8e6a31"
     },
     {
       "path": "color.warning-subtle-disabled",
       "cssVar": "--storm-color-warning-subtle-disabled",
       "type": "color",
       "category": "color",
-      "value": "#6e6355"
+      "value": "#6f6456"
     },
     {
       "path": "color.warning-subtle-inactive",
       "cssVar": "--storm-color-warning-subtle-inactive",
       "type": "color",
       "category": "color",
-      "value": "#f2cc91"
+      "value": "#f7d095"
     },
     {
       "path": "color.white",
@@ -1908,140 +1908,140 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-line-height-2xl",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.333333"
+      "value": "1.2"
     },
     {
       "path": "line-height.3xl",
       "cssVar": "--storm-line-height-3xl",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.2"
+      "value": "1.08"
     },
     {
       "path": "line-height.4xl",
       "cssVar": "--storm-line-height-4xl",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.111111"
+      "value": "1"
     },
     {
       "path": "line-height.5xl",
       "cssVar": "--storm-line-height-5xl",
       "type": "number",
       "category": "lineHeight",
-      "value": "1"
+      "value": "0.9"
     },
     {
       "path": "line-height.6xl",
       "cssVar": "--storm-line-height-6xl",
       "type": "number",
       "category": "lineHeight",
-      "value": "1"
+      "value": "0.9"
     },
     {
       "path": "line-height.7xl",
       "cssVar": "--storm-line-height-7xl",
       "type": "number",
       "category": "lineHeight",
-      "value": "1"
+      "value": "0.9"
     },
     {
       "path": "line-height.8xl",
       "cssVar": "--storm-line-height-8xl",
       "type": "number",
       "category": "lineHeight",
-      "value": "1"
+      "value": "0.9"
     },
     {
       "path": "line-height.9xl",
       "cssVar": "--storm-line-height-9xl",
       "type": "number",
       "category": "lineHeight",
-      "value": "1"
+      "value": "0.9"
     },
     {
       "path": "line-height.10xl",
       "cssVar": "--storm-line-height-10xl",
       "type": "number",
       "category": "lineHeight",
-      "value": "1"
+      "value": "0.9"
     },
     {
       "path": "line-height.lg",
       "cssVar": "--storm-line-height-lg",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.555556"
+      "value": "1.4"
     },
     {
       "path": "line-height.loose",
       "cssVar": "--storm-line-height-loose",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.85"
+      "value": "1.665"
     },
     {
       "path": "line-height.md",
       "cssVar": "--storm-line-height-md",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.5"
+      "value": "1.35"
     },
     {
       "path": "line-height.none",
       "cssVar": "--storm-line-height-none",
       "type": "number",
       "category": "lineHeight",
-      "value": "0.85"
+      "value": "0.765"
     },
     {
       "path": "line-height.normal",
       "cssVar": "--storm-line-height-normal",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.375"
+      "value": "1.2375"
     },
     {
       "path": "line-height.relaxed",
       "cssVar": "--storm-line-height-relaxed",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.5"
+      "value": "1.35"
     },
     {
       "path": "line-height.sm",
       "cssVar": "--storm-line-height-sm",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.428571"
+      "value": "1.285714"
     },
     {
       "path": "line-height.snug",
       "cssVar": "--storm-line-height-snug",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.25"
+      "value": "1.125"
     },
     {
       "path": "line-height.tight",
       "cssVar": "--storm-line-height-tight",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.175"
+      "value": "1.0575"
     },
     {
       "path": "line-height.xl",
       "cssVar": "--storm-line-height-xl",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.4"
+      "value": "1.26"
     },
     {
       "path": "line-height.xs",
       "cssVar": "--storm-line-height-xs",
       "type": "number",
       "category": "lineHeight",
-      "value": "1.333333"
+      "value": "1.2"
     },
     {
       "path": "ring.base",
@@ -4392,6 +4392,7 @@ export const manifest: DesignSystemManifest = {
         "3xl",
         "5xl",
         "bold",
+        "extrabold",
         "lg",
         "md",
         "medium",

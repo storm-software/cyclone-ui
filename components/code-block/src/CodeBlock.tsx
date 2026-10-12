@@ -52,17 +52,18 @@ import {
 
 const CODE_BLOCK_STYLES = `
 .cyclone-code-block-tabs .cyclone-code-block.cyclone-code-block { width: 100%; height: 100%; margin: 0; border-width: 0; border-radius: 0; }
-.cyclone-code-block-tabs-content .cyclone-code-block-viewport { border-width: 0 !important; border-radius: 0; }
+.cyclone-code-block-tabs-content .cyclone-code-block-viewport { border-width: 0 !important; border-radius: 0; padding-top: 1.25rem !important; }
+.cyclone-code-block-tabs-content .cyclone-code-block-floating-actions { margin-top: .4375rem; }
 .cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-light-bg); }
 .t_dark .cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-dark-bg); }
 @media (prefers-color-scheme: dark) { .cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-dark-bg); } }
 .cyclone-code-block-icon, .cyclone-code-block-icon svg { display: block; width: 1rem; height: 1rem; }
 .cyclone-code-block-viewport:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }
-.cyclone-code-block-viewport, .cyclone-code-block-viewport pre { font-size: .8125rem; line-height: 1.25rem; }
+.cyclone-code-block-viewport, .cyclone-code-block-viewport pre { font-size: .875rem; line-height: 1.5rem; }
 .cyclone-code-block-viewport pre { tab-size: 2; }
 .cyclone-code-block-viewport pre > code { display: grid; min-width: 100%; }
 .cyclone-code-block pre code { font-family: inherit; }
-.cyclone-code-block-viewport > pre > code:not(:has(> [data-line])) { padding-inline: 1rem 4rem; }
+.cyclone-code-block-viewport pre > code:not(:has(> [data-line])) { padding-inline: 1rem 4rem; }
 .cyclone-code-block-viewport [data-line] { position: relative; display: inline-block; min-width: 100%; padding-inline: 1rem 4rem; }
 .cyclone-code-block[data-line-numbers] .cyclone-code-block-viewport [data-line] { padding-inline-start: 3.5rem; }
 .cyclone-code-block[data-line-numbers] .cyclone-code-block-viewport [data-line]::before { position: absolute; left: 0; width: 2.75rem; padding-right: .75rem; color: currentColor; text-align: right; opacity: .45; content: counter(line); counter-increment: line; user-select: none; }
@@ -76,6 +77,7 @@ const CODE_BLOCK_STYLES = `
 .cyclone-code-block-tabs-trigger[data-state="active"]:hover { background-color: var(--surfaceFloating) !important; }
 .cyclone-code-block-tabs-trigger[data-state="active"]::after { position: absolute; right: 1px; bottom: -1px; left: 1px; height: 2px; background-color: var(--surfaceFloating); content: ""; }
 .cyclone-code-block-tabs-trigger[data-state="active"] > * { color: var(--accent); }
+.cyclone-code-block-tabs-trigger > * { text-box: trim-both cap alphabetic; }
 `;
 
 export interface CodeBlockActionsProps {
@@ -408,6 +410,7 @@ const CodeBlockImpl = createStyledHOC(
         {header}
         {!header ? (
           <XStack
+            className="cyclone-code-block-floating-actions"
             position="absolute"
             top="xl"
             right="xl"
@@ -509,7 +512,7 @@ export const CodeBlockTabsTrigger = forwardRef<
       fontFamily="title-sm"
       textAlign="center"
       whiteSpace="nowrap"
-      marginVertical="sm">
+      marginVertical="xl">
       {children}
     </Text>
   </TamaguiTabs.Tab>

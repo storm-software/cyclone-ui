@@ -564,7 +564,13 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                 backgroundColor={fill}
                 pointerEvents="none"
                 transition="200ms"
-                boxShadow={showRing ? "ringOffset" : "none"}
+                boxShadow={
+                  showRing
+                    ? size === "sm"
+                      ? "ringSubtleOffset"
+                      : "ringOffset"
+                    : "none"
+                }
               />
               {valueLabelDisplay !== "off" && (
                 <View

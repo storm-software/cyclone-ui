@@ -143,7 +143,7 @@ const FieldGroupFrame = styled(YStack, {
     orientation: {
       vertical: {
         flexDirection: "column",
-        gap: "xl"
+        gap: "2xl"
       },
       horizontal: {
         flexDirection: "row",
@@ -729,7 +729,8 @@ const FieldLabelTextImpl = createStyledHOC(
   ) => {
     const field = FieldApi.use();
     const theme = useThemeName();
-    const { variant, endIconCount, labelContentRef } = useFieldPresentation();
+    const { variant, endIconCount, labelContentRef, labelDefaults } =
+      useFieldPresentation();
     // An underlined control's text starts flush with its left edge, and so
     // does its label (`floatingLabelLeft` moves it past a start icon).
     const underlined = variant === "underlined";
@@ -744,10 +745,12 @@ const FieldLabelTextImpl = createStyledHOC(
     const name = field.name.get();
     const size = field.size.get();
     const controlSize = getFormSizeToken(size);
-    // A floating label rests past a start icon, unless placed explicitly.
+    // A floating label rests past a start icon (or the control's own leading
+    // content), unless placed explicitly.
     const hasStartIcon = useFieldHasStartIcon();
     const resolvedFloatingLabelLeft =
       floatingLabelLeft ??
+      labelDefaults?.floatingLabelLeft ??
       (hasStartIcon
         ? getSpaced("4xl") * getFormSizeScale(size) +
           getSized(controlSize, { shift: -2 }) +

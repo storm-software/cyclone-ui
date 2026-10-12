@@ -141,6 +141,7 @@ export const SelectValue = createStyledHOC(
         : undefined;
     // Without children, the selected value itself, then the placeholder.
     const content = children ?? (value || placeholder);
+    const placeholding = !!placeholder && content === placeholder && !disabled;
 
     return (
       <View flex={1} minWidth={0}>
@@ -152,8 +153,17 @@ export const SelectValue = createStyledHOC(
           variant={variant}
           labelPlacement={labelPlacement}
           disabled={disabled}
-          placeholding={!!placeholder && content === placeholder && !disabled}>
+          placeholding={placeholding}>
           <BodyText
+            // Remounts when the placeholder appears (e.g. as a floating label
+            // lifts), so it fades in with the field's 200ms entrance instead of
+            // popping in; see `InputSeparator` for why `transition` names
+            // `enter`.
+            key={placeholding ? "placeholder" : "value"}
+            {...(placeholding && {
+              opacity: "enter:0",
+              transition: { duration: "200ms", enter: "200ms" }
+            })}
             render="span"
             fontSize={getSelectContentSize(size).fontSize}
             lineHeight={`${getSelectContentSize(size).lineHeight}px`}>

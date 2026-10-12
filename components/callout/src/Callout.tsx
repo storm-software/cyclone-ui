@@ -69,14 +69,13 @@ const CalloutBackgroundHighGradient = styled(LinearGradient, {
   flexDirection: "row",
   transition: "200ms",
   overflow: "hidden",
-  opacity: 1,
+  opacity: 0.25,
   zIndex: "10"
 });
 
 const CalloutBackgroundDiagonal = styled(YStack, {
   displayName: "Callout",
   position: "absolute",
-  borderRadius: "container",
   height: "100%",
   width: "100%",
   top: 0,
@@ -111,12 +110,15 @@ const CalloutFrameImpl = createStyledHOC(
           {...rest}
           theme={theme}
           position="relative"
+          // Clip the background layers to the padding box so their corners
+          // follow the border's inner radius.
+          overflow="hidden"
           variant="outlined">
           <CalloutBackgroundLowGradient
             theme={theme}
             start={[1.0, 1.0]}
             end={[0, 0]}
-            colors={["transparent", "accent"]}
+            colors={["accent", "transparent"]}
           />
           <CalloutBackgroundHighGradient
             theme={theme}
@@ -210,7 +212,7 @@ const CalloutEyebrowImpl = createStyledHOC(
 
 const CalloutBody = styled(BodyText, {
   displayName: "CalloutBody",
-  color: "accent",
+  color: "secondary",
   zIndex: "20",
   paddingVertical: 0
 });

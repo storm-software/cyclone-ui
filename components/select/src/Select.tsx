@@ -143,6 +143,13 @@ const SelectGroup = styled(XStack, {
 
   return sized
     ? {
+        // The full 3px ring overwhelms a small select, so use the 1px ring.
+        boxShadow:
+          props.focused &&
+          props.frameSize === "sm" &&
+          props.variant !== "underlined"
+            ? "ringSubtleOffset"
+            : undefined,
         height: sized.height,
         minHeight: sized.minHeight,
         paddingHorizontal: notched ? 1 : 0,
@@ -296,7 +303,9 @@ const SelectTextBoxImpl = createStyledHOC(
         borderColor={borderColor}
         boxShadow={`focus-visible:${
           variant === "outlined" || variant === "inlined"
-            ? "ringOffset"
+            ? size === "sm"
+              ? "ringSubtleOffset"
+              : "ringOffset"
             : "none"
         }`}
         onFocus={() => setLocallyActive(true)}

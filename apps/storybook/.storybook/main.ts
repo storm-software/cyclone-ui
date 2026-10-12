@@ -374,6 +374,9 @@ const config: StorybookConfig = {
 
       define: {
         "process.env.STORYBOOK": JSON.stringify("true"),
+        // Set by Tamagui's bundler plugins in apps; without it, web-only
+        // branches (such as `InputValue`'s placeholder styles) never render.
+        "process.env.TAMAGUI_TARGET": JSON.stringify("web"),
         "process.env.TAMAGUI_BAIL_AFTER_SCANNING_X_CSS_RULES":
           JSON.stringify("false"),
         "process.env.NODE_ENV": JSON.stringify(

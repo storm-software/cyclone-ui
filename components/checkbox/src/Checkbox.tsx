@@ -26,7 +26,6 @@ import {
   useFieldLabelDefaults,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { Minus } from "@cyclone-ui/icons";
 import { Check } from "@cyclone-ui/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import type { CheckedState } from "@tamagui/checkbox-headless";
@@ -46,8 +45,7 @@ const CheckboxGroupFrame = styled(View, {
   // this fixes a flex bug where it overflows container
   boxShadow: "none focus:ringOffset focus-visible:ringOffset",
   borderWidth: 1,
-  borderColor:
-    "border hover:active focus:active focus-visible:active",
+  borderColor: "border hover:active focus:active focus-visible:active",
   outlineStyle: "none",
   // this fixes a flex bug where it overflows container
   minWidth: 0,
@@ -96,8 +94,7 @@ const CheckboxGroupFrame = styled(View, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor:
-          "disabled hover:disabled press:disabled focus:disabled"
+        borderColor: "disabled hover:disabled press:disabled focus:disabled"
       }
     }
   } as const,
@@ -156,9 +153,12 @@ const CheckboxIcon = styled(Check, {
   strokeWidth: 3
 });
 
-const MinusIcon = styled(Minus, {
+// A plain bar rather than an icon so its thickness can be tuned to read as
+// heavy as the check's stroke.
+const MinusIcon = styled(View, {
   displayName: "CheckboxIndicator",
-  color: "accent"
+  backgroundColor: "accent",
+  borderRadius: 9999
 });
 
 export const Checkbox = createStyledHOC(
@@ -199,6 +199,8 @@ export const Checkbox = createStyledHOC(
     const hasValidationMessage = useFieldHasValidationMessage();
     const idleColor = hasValidationMessage ? "accent" : "border";
     const focusColor = hasValidationMessage ? "active" : "borderActive";
+    // The full 3px ring overwhelms the small checkbox, so use the 1px ring.
+    const ring = size === "sm" ? "ringSubtleOffset" : "ringOffset";
 
     return (
       <CheckboxGroupFrame
@@ -209,16 +211,14 @@ export const Checkbox = createStyledHOC(
         // A call-site base replaces every lower-tier clause for the property
         // in v3, so restate the v2 frame/variant hover and disabled press here.
         borderColor={`${focused ? focusColor : idleColor} hover:${disabled ? "disabled" : "active"}${disabled ? " press:disabled" : ""} group-hover/field:${focused ? focusColor : "active"} focus:${focusColor} focus-visible:${focusColor}`}
-        boxShadow="focus:ringOffset focus-visible:ringOffset">
+        boxShadow={`focus:${ring} focus-visible:${ring}`}>
         <BaseCheckbox
           ref={forwardedRef}
           {...rest}
           id={name}
           onFocus={onFocus}
           onBlur={onBlur}
-          onCheckedChange={
-            formOnChange ? handleCheckedChange : onCheckedChange
-          }
+          onCheckedChange={formOnChange ? handleCheckedChange : onCheckedChange}
           checked={checked}
           defaultChecked={defaultChecked}
           size={size}
@@ -238,10 +238,9 @@ export const Checkbox = createStyledHOC(
                 y="enter:10px exit:-10px"
                 opacity="enter:0.2 exit:0.5">
                 <MinusIcon
-                  // Phosphor icons are filled paths, so `strokeWidth` has no effect
-                  weight="black"
-                  size={getSized(getFormSizeToken(size, "compact")) * 0.6}
-                  color={focused ? focusColor : "accent"}
+                  width={getSized(getFormSizeToken(size, "compact")) * 0.42}
+                  height={getSized(getFormSizeToken(size, "compact")) * 10}
+                  backgroundColor={focused ? focusColor : "accent"}
                 />
               </View>
             ) : (

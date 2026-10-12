@@ -43,12 +43,12 @@ colors:
   on-base-subtle: "#151518"
   on-danger-accent: "#FAFAFA"
   danger-accent: "#8e223e"
-  danger-subtle: "#e77388"
-  on-danger-subtle: "#270009"
+  danger-subtle: "#ee7a8e"
+  on-danger-subtle: "#200006"
   on-warning-accent: "#FAFAFA"
   warning-accent: "#765417"
-  warning-subtle: "#c39e65"
-  on-warning-subtle: "#291a00"
+  warning-subtle: "#c7a168"
+  on-warning-subtle: "#241500"
   on-info-accent: "#FAFAFA"
   info-accent: "#2055b3"
   on-info-subtle: "#FAFAFA"
@@ -57,8 +57,8 @@ colors:
   on-discovery-subtle: "#FAFAFA"
   on-success-accent: "#FAFAFA"
   success-accent: "#216b53"
-  success-subtle: "#6db499"
-  on-success-subtle: "#00251a"
+  success-subtle: "#74ba9f"
+  on-success-subtle: "#002217"
   border-active: "#0c0c0d"
   border-inactive: "#030303"
   border-disabled: "#69696b"
@@ -71,15 +71,15 @@ colors:
   danger-active: "#6a0022"
   danger-inactive: "#ab3e56"
   danger-disabled: "#5a3c44"
-  danger-subtle-active: "#ab3d56"
-  danger-subtle-inactive: "#ff9fb3"
-  danger-subtle-disabled: "#79575e"
+  danger-subtle-active: "#b0435a"
+  danger-subtle-inactive: "#ffa7ba"
+  danger-subtle-disabled: "#7b5960"
   warning-active: "#543400"
   warning-inactive: "#926f36"
   warning-disabled: "#53493b"
-  warning-subtle-active: "#8b682f"
-  warning-subtle-inactive: "#f2cc91"
-  warning-subtle-disabled: "#6e6355"
+  warning-subtle-active: "#8e6a31"
+  warning-subtle-inactive: "#f7d095"
+  warning-subtle-disabled: "#6f6456"
   info-active: "#00318d"
   info-inactive: "#3b72d3"
   info-disabled: "#3b4a68"
@@ -95,90 +95,90 @@ colors:
   success-active: "#004933"
   success-inactive: "#40876e"
   success-disabled: "#3c504b"
-  success-subtle-active: "#357d64"
-  success-subtle-inactive: "#9ae2c6"
-  success-subtle-disabled: "#556a64"
+  success-subtle-active: "#3b8168"
+  success-subtle-inactive: "#a3eacd"
+  success-subtle-disabled: "#586c66"
 typography:
   display-hero:
     fontFamily: "Storm Sans"
     fontSize: "3.75rem"
     fontWeight: "600"
-    lineHeight: "1.25"
+    lineHeight: "1.125"
   display-lg:
     fontFamily: "Storm Sans"
     fontSize: "2.25rem"
     fontWeight: "600"
-    lineHeight: "1.25"
+    lineHeight: "1.125"
   display-md:
     fontFamily: "Storm Sans"
     fontSize: "1.5rem"
     fontWeight: "700"
-    lineHeight: "1.25"
+    lineHeight: "1.125"
   editorial-hero:
     fontFamily: "Storm Serif"
     fontSize: "3.75rem"
     fontWeight: "600"
-    lineHeight: "1.25"
+    lineHeight: "1.125"
   editorial-lg:
     fontFamily: "Storm Serif"
     fontSize: "2.25rem"
     fontWeight: "600"
-    lineHeight: "1.25"
+    lineHeight: "1.125"
   editorial-md:
     fontFamily: "Storm Serif"
     fontSize: "1.5rem"
     fontWeight: "700"
-    lineHeight: "1.25"
+    lineHeight: "1.125"
   title-xl:
     fontFamily: "Storm Sans"
     fontSize: "1.25rem"
     fontWeight: "600"
-    lineHeight: "1.175"
+    lineHeight: "1.0575"
   title-lg:
     fontFamily: "Storm Sans"
     fontSize: "1.125rem"
-    fontWeight: "700"
-    lineHeight: "1.175"
+    fontWeight: "800"
+    lineHeight: "1.0575"
   title-md:
     fontFamily: "Storm Sans"
     fontSize: "1.125rem"
     fontWeight: "600"
-    lineHeight: "1.175"
+    lineHeight: "1.0575"
   title-sm:
     fontFamily: "Storm Sans"
     fontSize: "1rem"
     fontWeight: "700"
-    lineHeight: "1.25"
+    lineHeight: "1.125"
   title-xs:
     fontFamily: "Storm Sans"
     fontSize: "0.75rem"
     fontWeight: "500"
-    lineHeight: "1.25"
+    lineHeight: "1.125"
   body-md:
     fontFamily: "Storm Sans"
     fontSize: "1.125rem"
     fontWeight: "400"
-    lineHeight: "1.25"
+    lineHeight: "1.125"
   body-sm:
     fontFamily: "Storm Sans"
     fontSize: "1rem"
     fontWeight: "500"
-    lineHeight: "1.25"
+    lineHeight: "1.125"
   caption:
     fontFamily: "Storm Sans"
     fontSize: "1rem"
     fontWeight: "400"
-    lineHeight: "1.175"
+    lineHeight: "1.0575"
   eyebrow:
     fontFamily: "Google Sans Code"
     fontSize: "1.125rem"
-    fontWeight: "600"
-    lineHeight: "1.175"
+    fontWeight: "800"
+    lineHeight: "1.0575"
   code:
     fontFamily: "Google Sans Code"
     fontSize: "1.25rem"
     fontWeight: "400"
-    lineHeight: "1.25"
+    lineHeight: "1.125"
 spacing:
   zero: "0px"
   xxs: "0.5px"
@@ -298,12 +298,12 @@ Cyclone UI design tokens — 95 color tokens, 16 typography tokens, 70 spacing t
 - **On Base Subtle (#151518):** Generated text and icon color on base-subtle backgrounds
 - **On Danger Accent (#FAFAFA):** Generated text and icon color on danger backgrounds
 - **Danger Accent (#8e223e):** Alias of danger for the danger theme
-- **Danger Subtle (#e77388):** Generated low-emphasis danger background for the light theme
-- **On Danger Subtle (#270009):** Generated text and icon color on danger-subtle backgrounds
+- **Danger Subtle (#ee7a8e):** Generated low-emphasis danger background for the light theme
+- **On Danger Subtle (#200006):** Generated text and icon color on danger-subtle backgrounds
 - **On Warning Accent (#FAFAFA):** Generated text and icon color on warning backgrounds
 - **Warning Accent (#765417):** Alias of warning for the warning theme
-- **Warning Subtle (#c39e65):** Generated low-emphasis warning background for the light theme
-- **On Warning Subtle (#291a00):** Generated text and icon color on warning-subtle backgrounds
+- **Warning Subtle (#c7a168):** Generated low-emphasis warning background for the light theme
+- **On Warning Subtle (#241500):** Generated text and icon color on warning-subtle backgrounds
 - **On Info Accent (#FAFAFA):** Generated text and icon color on info backgrounds
 - **Info Accent (#2055b3):** Alias of info for the info theme
 - **On Info Subtle (#FAFAFA):** Generated text and icon color on info-subtle backgrounds
@@ -312,8 +312,8 @@ Cyclone UI design tokens — 95 color tokens, 16 typography tokens, 70 spacing t
 - **On Discovery Subtle (#FAFAFA):** Generated text and icon color on discovery-subtle backgrounds
 - **On Success Accent (#FAFAFA):** Generated text and icon color on success backgrounds
 - **Success Accent (#216b53):** Alias of success for the success theme
-- **Success Subtle (#6db499):** Generated low-emphasis success background for the light theme
-- **On Success Subtle (#00251a):** Generated text and icon color on success-subtle backgrounds
+- **Success Subtle (#74ba9f):** Generated low-emphasis success background for the light theme
+- **On Success Subtle (#002217):** Generated text and icon color on success-subtle backgrounds
 - **Border Active (#0c0c0d):** Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)
 - **Border Inactive (#030303):** Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)
 - **Border Disabled (#69696b):** Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
@@ -326,15 +326,15 @@ Cyclone UI design tokens — 95 color tokens, 16 typography tokens, 70 spacing t
 - **Danger Active (#6a0022):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)
 - **Danger Inactive (#ab3e56):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)
 - **Danger Disabled (#5a3c44):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
-- **Danger Subtle Active (#ab3d56):** Generated low-emphasis danger background for the light theme (active, 25% darker)
-- **Danger Subtle Inactive (#ff9fb3):** Generated low-emphasis danger background for the light theme (inactive, 20% brighter)
-- **Danger Subtle Disabled (#79575e):** Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Danger Subtle Active (#b0435a):** Generated low-emphasis danger background for the light theme (active, 25% darker)
+- **Danger Subtle Inactive (#ffa7ba):** Generated low-emphasis danger background for the light theme (inactive, 20% brighter)
+- **Danger Subtle Disabled (#7b5960):** Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Warning Active (#543400):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)
 - **Warning Inactive (#926f36):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)
 - **Warning Disabled (#53493b):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
-- **Warning Subtle Active (#8b682f):** Generated low-emphasis warning background for the light theme (active, 25% darker)
-- **Warning Subtle Inactive (#f2cc91):** Generated low-emphasis warning background for the light theme (inactive, 20% brighter)
-- **Warning Subtle Disabled (#6e6355):** Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Warning Subtle Active (#8e6a31):** Generated low-emphasis warning background for the light theme (active, 25% darker)
+- **Warning Subtle Inactive (#f7d095):** Generated low-emphasis warning background for the light theme (inactive, 20% brighter)
+- **Warning Subtle Disabled (#6f6456):** Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Info Active (#00318d):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)
 - **Info Inactive (#3b72d3):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)
 - **Info Disabled (#3b4a68):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
@@ -350,28 +350,28 @@ Cyclone UI design tokens — 95 color tokens, 16 typography tokens, 70 spacing t
 - **Success Active (#004933):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)
 - **Success Inactive (#40876e):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)
 - **Success Disabled (#3c504b):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
-- **Success Subtle Active (#357d64):** Generated low-emphasis success background for the light theme (active, 25% darker)
-- **Success Subtle Inactive (#9ae2c6):** Generated low-emphasis success background for the light theme (inactive, 20% brighter)
-- **Success Subtle Disabled (#556a64):** Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Success Subtle Active (#3b8168):** Generated low-emphasis success background for the light theme (active, 25% darker)
+- **Success Subtle Inactive (#a3eacd):** Generated low-emphasis success background for the light theme (inactive, 20% brighter)
+- **Success Subtle Disabled (#586c66):** Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 
 ## Typography
 
-- **display-hero:** fontFamily: Storm Sans, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.25
-- **display-lg:** fontFamily: Storm Sans, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.25
-- **display-md:** fontFamily: Storm Sans, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.25
-- **editorial-hero:** fontFamily: Storm Serif, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.25
-- **editorial-lg:** fontFamily: Storm Serif, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.25
-- **editorial-md:** fontFamily: Storm Serif, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.25
-- **title-xl:** fontFamily: Storm Sans, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.175
-- **title-lg:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 700, lineHeight: 1.175
-- **title-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.175
-- **title-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 700, lineHeight: 1.25
-- **title-xs:** fontFamily: Storm Sans, fontSize: 0.75rem, fontWeight: 500, lineHeight: 1.25
-- **body-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.25
-- **body-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 500, lineHeight: 1.25
-- **caption:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.175
-- **eyebrow:** fontFamily: Google Sans Code, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.175
-- **code:** fontFamily: Google Sans Code, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.25
+- **display-hero:** fontFamily: Storm Sans, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.125
+- **display-lg:** fontFamily: Storm Sans, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.125
+- **display-md:** fontFamily: Storm Sans, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.125
+- **editorial-hero:** fontFamily: Storm Serif, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.125
+- **editorial-lg:** fontFamily: Storm Serif, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.125
+- **editorial-md:** fontFamily: Storm Serif, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.125
+- **title-xl:** fontFamily: Storm Sans, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.0575
+- **title-lg:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.0575
+- **title-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.0575
+- **title-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 700, lineHeight: 1.125
+- **title-xs:** fontFamily: Storm Sans, fontSize: 0.75rem, fontWeight: 500, lineHeight: 1.125
+- **body-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.125
+- **body-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 500, lineHeight: 1.125
+- **caption:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.0575
+- **eyebrow:** fontFamily: Google Sans Code, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.0575
+- **code:** fontFamily: Google Sans Code, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.125
 
 ## Layout
 

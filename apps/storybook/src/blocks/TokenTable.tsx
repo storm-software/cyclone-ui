@@ -1160,7 +1160,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle",
       type: "color",
-      value: "#660022",
+      value: "#620020",
       cssVar: "--cu-color-danger-subtle",
       description: "Generated low-emphasis danger background for the dark theme",
       theme: undefined,
@@ -1169,7 +1169,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-danger-subtle",
       type: "color",
-      value: "#ff9ba8",
+      value: "#ffa6b0",
       cssVar: "--cu-color-on-danger-subtle",
       description: "Generated text and icon color on danger-subtle backgrounds",
       theme: undefined,
@@ -1196,7 +1196,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle",
       type: "color",
-      value: "#7d5300",
+      value: "#764e00",
       cssVar: "--cu-color-warning-subtle",
       description: "Generated low-emphasis warning background for the dark theme",
       theme: undefined,
@@ -1286,7 +1286,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle",
       type: "color",
-      value: "#006a47",
+      value: "#006140",
       cssVar: "--cu-color-success-subtle",
       description: "Generated low-emphasis success background for the dark theme",
       theme: undefined,
@@ -1412,7 +1412,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-active",
       type: "color",
-      value: "#802136",
+      value: "#7b1f34",
       cssVar: "--cu-color-danger-subtle-active",
       description: "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
       theme: undefined,
@@ -1421,7 +1421,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-inactive",
       type: "color",
-      value: "#510013",
+      value: "#4e0011",
       cssVar: "--cu-color-danger-subtle-inactive",
       description: "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -1430,7 +1430,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-disabled",
       type: "color",
-      value: "#4d323a",
+      value: "#4c313a",
       cssVar: "--cu-color-danger-subtle-disabled",
       description: "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -1466,7 +1466,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-active",
       type: "color",
-      value: "#a27632",
+      value: "#996f2f",
       cssVar: "--cu-color-warning-subtle-active",
       description: "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
       theme: undefined,
@@ -1475,7 +1475,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-inactive",
       type: "color",
-      value: "#613900",
+      value: "#5b3500",
       cssVar: "--cu-color-warning-subtle-inactive",
       description: "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -1484,7 +1484,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-disabled",
       type: "color",
-      value: "#564938",
+      value: "#534837",
       cssVar: "--cu-color-warning-subtle-disabled",
       description: "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -1628,7 +1628,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-active",
       type: "color",
-      value: "#368d67",
+      value: "#31815e",
       cssVar: "--cu-color-success-subtle-active",
       description: "Generated low-emphasis success background for the dark theme (active, 25% brighter)",
       theme: undefined,
@@ -1637,7 +1637,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-inactive",
       type: "color",
-      value: "#00502f",
+      value: "#004829",
       cssVar: "--cu-color-success-subtle-inactive",
       description: "Generated low-emphasis success background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -1646,7 +1646,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-disabled",
       type: "color",
-      value: "#375047",
+      value: "#354d45",
       cssVar: "--cu-color-success-subtle-disabled",
       description: "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -3320,180 +3320,180 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.none",
       type: "number",
-      value: "0.85",
+      value: "0.765",
       cssVar: "--cu-line-height-none",
-      description: "No extra line height (0.85)",
+      description: "No extra line height (0.765)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.tight",
       type: "number",
-      value: "1.175",
+      value: "1.0575",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1.175)",
+      description: "Tight line height (1.0575)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.25",
+      value: "1.125",
       cssVar: "--cu-line-height-snug",
-      description: "Snug line height (1.25)",
+      description: "Snug line height (1.125)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.375",
+      value: "1.2375",
       cssVar: "--cu-line-height-normal",
-      description: "Normal line height (1.375)",
+      description: "Normal line height (1.2375)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-relaxed",
-      description: "Relaxed line height (1.5)",
+      description: "Relaxed line height (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.85",
+      value: "1.665",
       cssVar: "--cu-line-height-loose",
-      description: "Loose line height (1.85)",
+      description: "Loose line height (1.665)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-xs",
-      description: "Line height for text-xs (calc(1 / 0.75))",
+      description: "Line height for text-xs (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.428571",
+      value: "1.285714",
       cssVar: "--cu-line-height-sm",
-      description: "Line height for text-sm (calc(1.25 / 0.875))",
+      description: "Line height for text-sm (1.285714)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.md",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-md",
-      description: "Line height for text-md (calc(1.5 / 1))",
+      description: "Line height for text-md (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.555556",
+      value: "1.4",
       cssVar: "--cu-line-height-lg",
-      description: "Line height for text-lg (calc(1.75 / 1.125))",
+      description: "Line height for text-lg (1.4)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.4",
+      value: "1.26",
       cssVar: "--cu-line-height-xl",
-      description: "Line height for text-xl (calc(1.75 / 1.25))",
+      description: "Line height for text-xl (1.26)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-2xl",
-      description: "Line height for text-2xl (calc(2 / 1.5))",
+      description: "Line height for text-2xl (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.3xl",
       type: "number",
-      value: "1.2",
+      value: "1.08",
       cssVar: "--cu-line-height-3xl",
-      description: "Line height for text-3xl (calc(2.25 / 1.875))",
+      description: "Line height for text-3xl (1.08)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.4xl",
       type: "number",
-      value: "1.111111",
+      value: "1",
       cssVar: "--cu-line-height-4xl",
-      description: "Line height for text-4xl (calc(2.5 / 2.25))",
+      description: "Line height for text-4xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.5xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-5xl",
-      description: "Line height for text-5xl (1)",
+      description: "Line height for text-5xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-6xl",
-      description: "Line height for text-6xl (1)",
+      description: "Line height for text-6xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-7xl",
-      description: "Line height for text-7xl (1)",
+      description: "Line height for text-7xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-8xl",
-      description: "Line height for text-8xl (1)",
+      description: "Line height for text-8xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-9xl",
-      description: "Line height for text-9xl (1)",
+      description: "Line height for text-9xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-10xl",
-      description: "Line height for text-10xl (1)",
+      description: "Line height for text-10xl (0.9)",
       theme: undefined,
       typography: true
     },
@@ -3635,7 +3635,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -4067,7 +4067,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -4130,7 +4130,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
       description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
@@ -5509,7 +5509,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle",
       type: "color",
-      value: "#73213c",
+      value: "#70213b",
       cssVar: "--cu-color-danger-subtle",
       description: "Generated low-emphasis danger background for the dark theme",
       theme: undefined,
@@ -5518,7 +5518,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-danger-subtle",
       type: "color",
-      value: "#de8d98",
+      value: "#e0939c",
       cssVar: "--cu-color-on-danger-subtle",
       description: "Generated text and icon color on danger-subtle backgrounds",
       theme: undefined,
@@ -5545,7 +5545,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle",
       type: "color",
-      value: "#7f6125",
+      value: "#7b5e24",
       cssVar: "--cu-color-warning-subtle",
       description: "Generated low-emphasis warning background for the dark theme",
       theme: undefined,
@@ -5635,7 +5635,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle",
       type: "color",
-      value: "#227559",
+      value: "#207055",
       cssVar: "--cu-color-success-subtle",
       description: "Generated low-emphasis success background for the dark theme",
       theme: undefined,
@@ -5761,7 +5761,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-active",
       type: "color",
-      value: "#7d404d",
+      value: "#7a3e4c",
       cssVar: "--cu-color-danger-subtle-active",
       description: "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
       theme: undefined,
@@ -5770,7 +5770,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-inactive",
       type: "color",
-      value: "#671e2f",
+      value: "#661d2d",
       cssVar: "--cu-color-danger-subtle-inactive",
       description: "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -5779,7 +5779,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-disabled",
       type: "color",
-      value: "#5c494f",
+      value: "#5c484f",
       cssVar: "--cu-color-danger-subtle-disabled",
       description: "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -5815,7 +5815,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-active",
       type: "color",
-      value: "#917750",
+      value: "#8c734d",
       cssVar: "--cu-color-warning-subtle-active",
       description: "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
       theme: undefined,
@@ -5824,7 +5824,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-inactive",
       type: "color",
-      value: "#704f20",
+      value: "#6d4c20",
       cssVar: "--cu-color-warning-subtle-inactive",
       description: "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -5833,7 +5833,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-disabled",
       type: "color",
-      value: "#62594e",
+      value: "#60594d",
       cssVar: "--cu-color-warning-subtle-disabled",
       description: "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -5977,7 +5977,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-active",
       type: "color",
-      value: "#50856e",
+      value: "#4c7d68",
       cssVar: "--cu-color-success-subtle-active",
       description: "Generated low-emphasis success background for the dark theme (active, 25% brighter)",
       theme: undefined,
@@ -5986,7 +5986,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-inactive",
       type: "color",
-      value: "#1e6749",
+      value: "#1d6244",
       cssVar: "--cu-color-success-subtle-inactive",
       description: "Generated low-emphasis success background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -5995,7 +5995,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-disabled",
       type: "color",
-      value: "#4d5e58",
+      value: "#4b5c57",
       cssVar: "--cu-color-success-subtle-disabled",
       description: "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -7669,180 +7669,180 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.none",
       type: "number",
-      value: "0.85",
+      value: "0.765",
       cssVar: "--cu-line-height-none",
-      description: "No extra line height (0.85)",
+      description: "No extra line height (0.765)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.tight",
       type: "number",
-      value: "1.175",
+      value: "1.0575",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1.175)",
+      description: "Tight line height (1.0575)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.25",
+      value: "1.125",
       cssVar: "--cu-line-height-snug",
-      description: "Snug line height (1.25)",
+      description: "Snug line height (1.125)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.375",
+      value: "1.2375",
       cssVar: "--cu-line-height-normal",
-      description: "Normal line height (1.375)",
+      description: "Normal line height (1.2375)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-relaxed",
-      description: "Relaxed line height (1.5)",
+      description: "Relaxed line height (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.85",
+      value: "1.665",
       cssVar: "--cu-line-height-loose",
-      description: "Loose line height (1.85)",
+      description: "Loose line height (1.665)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-xs",
-      description: "Line height for text-xs (calc(1 / 0.75))",
+      description: "Line height for text-xs (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.428571",
+      value: "1.285714",
       cssVar: "--cu-line-height-sm",
-      description: "Line height for text-sm (calc(1.25 / 0.875))",
+      description: "Line height for text-sm (1.285714)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.md",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-md",
-      description: "Line height for text-md (calc(1.5 / 1))",
+      description: "Line height for text-md (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.555556",
+      value: "1.4",
       cssVar: "--cu-line-height-lg",
-      description: "Line height for text-lg (calc(1.75 / 1.125))",
+      description: "Line height for text-lg (1.4)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.4",
+      value: "1.26",
       cssVar: "--cu-line-height-xl",
-      description: "Line height for text-xl (calc(1.75 / 1.25))",
+      description: "Line height for text-xl (1.26)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-2xl",
-      description: "Line height for text-2xl (calc(2 / 1.5))",
+      description: "Line height for text-2xl (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.3xl",
       type: "number",
-      value: "1.2",
+      value: "1.08",
       cssVar: "--cu-line-height-3xl",
-      description: "Line height for text-3xl (calc(2.25 / 1.875))",
+      description: "Line height for text-3xl (1.08)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.4xl",
       type: "number",
-      value: "1.111111",
+      value: "1",
       cssVar: "--cu-line-height-4xl",
-      description: "Line height for text-4xl (calc(2.5 / 2.25))",
+      description: "Line height for text-4xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.5xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-5xl",
-      description: "Line height for text-5xl (1)",
+      description: "Line height for text-5xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-6xl",
-      description: "Line height for text-6xl (1)",
+      description: "Line height for text-6xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-7xl",
-      description: "Line height for text-7xl (1)",
+      description: "Line height for text-7xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-8xl",
-      description: "Line height for text-8xl (1)",
+      description: "Line height for text-8xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-9xl",
-      description: "Line height for text-9xl (1)",
+      description: "Line height for text-9xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-10xl",
-      description: "Line height for text-10xl (1)",
+      description: "Line height for text-10xl (0.9)",
       theme: undefined,
       typography: true
     },
@@ -7984,7 +7984,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -8416,7 +8416,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -8479,7 +8479,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
       description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
@@ -9858,7 +9858,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle",
       type: "color",
-      value: "#21000b",
+      value: "#1b0009",
       cssVar: "--cu-color-danger-subtle",
       description: "Generated low-emphasis danger background for the dark theme",
       theme: undefined,
@@ -9867,7 +9867,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-danger-subtle",
       type: "color",
-      value: "#ffe1e5",
+      value: "#fff1f2",
       cssVar: "--cu-color-on-danger-subtle",
       description: "Generated text and icon color on danger-subtle backgrounds",
       theme: undefined,
@@ -9894,7 +9894,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle",
       type: "color",
-      value: "#432c00",
+      value: "#382500",
       cssVar: "--cu-color-warning-subtle",
       description: "Generated low-emphasis warning background for the dark theme",
       theme: undefined,
@@ -9984,7 +9984,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle",
       type: "color",
-      value: "#00271a",
+      value: "#001a11",
       cssVar: "--cu-color-success-subtle",
       description: "Generated low-emphasis success background for the dark theme",
       theme: undefined,
@@ -10110,7 +10110,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-active",
       type: "color",
-      value: "#6e091f",
+      value: "#65081d",
       cssVar: "--cu-color-danger-subtle-active",
       description: "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
       theme: undefined,
@@ -10119,7 +10119,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-inactive",
       type: "color",
-      value: "#030001",
+      value: "#000000",
       cssVar: "--cu-color-danger-subtle-inactive",
       description: "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -10128,7 +10128,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-disabled",
       type: "color",
-      value: "#2e171e",
+      value: "#2d161d",
       cssVar: "--cu-color-danger-subtle-disabled",
       description: "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -10164,7 +10164,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-active",
       type: "color",
-      value: "#aa7017",
+      value: "#9b6615",
       cssVar: "--cu-color-warning-subtle-active",
       description: "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
       theme: undefined,
@@ -10173,7 +10173,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-inactive",
       type: "color",
-      value: "#1a0f00",
+      value: "#110a00",
       cssVar: "--cu-color-warning-subtle-inactive",
       description: "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -10182,7 +10182,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-disabled",
       type: "color",
-      value: "#3d301e",
+      value: "#382e1d",
       cssVar: "--cu-color-warning-subtle-disabled",
       description: "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -10326,7 +10326,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-active",
       type: "color",
-      value: "#1d8b5b",
+      value: "#19774e",
       cssVar: "--cu-color-success-subtle-active",
       description: "Generated low-emphasis success background for the dark theme (active, 25% brighter)",
       theme: undefined,
@@ -10335,7 +10335,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-inactive",
       type: "color",
-      value: "#000101",
+      value: "#000000",
       cssVar: "--cu-color-success-subtle-inactive",
       description: "Generated low-emphasis success background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -10344,7 +10344,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-disabled",
       type: "color",
-      value: "#1c352c",
+      value: "#1a3029",
       cssVar: "--cu-color-success-subtle-disabled",
       description: "Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -12018,180 +12018,180 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.none",
       type: "number",
-      value: "0.85",
+      value: "0.765",
       cssVar: "--cu-line-height-none",
-      description: "No extra line height (0.85)",
+      description: "No extra line height (0.765)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.tight",
       type: "number",
-      value: "1.175",
+      value: "1.0575",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1.175)",
+      description: "Tight line height (1.0575)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.25",
+      value: "1.125",
       cssVar: "--cu-line-height-snug",
-      description: "Snug line height (1.25)",
+      description: "Snug line height (1.125)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.375",
+      value: "1.2375",
       cssVar: "--cu-line-height-normal",
-      description: "Normal line height (1.375)",
+      description: "Normal line height (1.2375)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-relaxed",
-      description: "Relaxed line height (1.5)",
+      description: "Relaxed line height (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.85",
+      value: "1.665",
       cssVar: "--cu-line-height-loose",
-      description: "Loose line height (1.85)",
+      description: "Loose line height (1.665)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-xs",
-      description: "Line height for text-xs (calc(1 / 0.75))",
+      description: "Line height for text-xs (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.428571",
+      value: "1.285714",
       cssVar: "--cu-line-height-sm",
-      description: "Line height for text-sm (calc(1.25 / 0.875))",
+      description: "Line height for text-sm (1.285714)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.md",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-md",
-      description: "Line height for text-md (calc(1.5 / 1))",
+      description: "Line height for text-md (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.555556",
+      value: "1.4",
       cssVar: "--cu-line-height-lg",
-      description: "Line height for text-lg (calc(1.75 / 1.125))",
+      description: "Line height for text-lg (1.4)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.4",
+      value: "1.26",
       cssVar: "--cu-line-height-xl",
-      description: "Line height for text-xl (calc(1.75 / 1.25))",
+      description: "Line height for text-xl (1.26)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-2xl",
-      description: "Line height for text-2xl (calc(2 / 1.5))",
+      description: "Line height for text-2xl (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.3xl",
       type: "number",
-      value: "1.2",
+      value: "1.08",
       cssVar: "--cu-line-height-3xl",
-      description: "Line height for text-3xl (calc(2.25 / 1.875))",
+      description: "Line height for text-3xl (1.08)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.4xl",
       type: "number",
-      value: "1.111111",
+      value: "1",
       cssVar: "--cu-line-height-4xl",
-      description: "Line height for text-4xl (calc(2.5 / 2.25))",
+      description: "Line height for text-4xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.5xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-5xl",
-      description: "Line height for text-5xl (1)",
+      description: "Line height for text-5xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-6xl",
-      description: "Line height for text-6xl (1)",
+      description: "Line height for text-6xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-7xl",
-      description: "Line height for text-7xl (1)",
+      description: "Line height for text-7xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-8xl",
-      description: "Line height for text-8xl (1)",
+      description: "Line height for text-8xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-9xl",
-      description: "Line height for text-9xl (1)",
+      description: "Line height for text-9xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-10xl",
-      description: "Line height for text-10xl (1)",
+      description: "Line height for text-10xl (0.9)",
       theme: undefined,
       typography: true
     },
@@ -12333,7 +12333,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -12765,7 +12765,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -12828,7 +12828,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
       description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
@@ -14207,7 +14207,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle",
       type: "color",
-      value: "#e77388",
+      value: "#ee7a8e",
       cssVar: "--cu-color-danger-subtle",
       description: "Generated low-emphasis danger background for the light theme",
       theme: undefined,
@@ -14216,7 +14216,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-danger-subtle",
       type: "color",
-      value: "#270009",
+      value: "#200006",
       cssVar: "--cu-color-on-danger-subtle",
       description: "Generated text and icon color on danger-subtle backgrounds",
       theme: undefined,
@@ -14243,7 +14243,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle",
       type: "color",
-      value: "#c39e65",
+      value: "#c7a168",
       cssVar: "--cu-color-warning-subtle",
       description: "Generated low-emphasis warning background for the light theme",
       theme: undefined,
@@ -14252,7 +14252,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-warning-subtle",
       type: "color",
-      value: "#291a00",
+      value: "#241500",
       cssVar: "--cu-color-on-warning-subtle",
       description: "Generated text and icon color on warning-subtle backgrounds",
       theme: undefined,
@@ -14333,7 +14333,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle",
       type: "color",
-      value: "#6db499",
+      value: "#74ba9f",
       cssVar: "--cu-color-success-subtle",
       description: "Generated low-emphasis success background for the light theme",
       theme: undefined,
@@ -14342,7 +14342,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-success-subtle",
       type: "color",
-      value: "#00251a",
+      value: "#002217",
       cssVar: "--cu-color-on-success-subtle",
       description: "Generated text and icon color on success-subtle backgrounds",
       theme: undefined,
@@ -14459,7 +14459,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-active",
       type: "color",
-      value: "#ab3d56",
+      value: "#b0435a",
       cssVar: "--cu-color-danger-subtle-active",
       description: "Generated low-emphasis danger background for the light theme (active, 25% darker)",
       theme: undefined,
@@ -14468,7 +14468,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-inactive",
       type: "color",
-      value: "#ff9fb3",
+      value: "#ffa7ba",
       cssVar: "--cu-color-danger-subtle-inactive",
       description: "Generated low-emphasis danger background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -14477,7 +14477,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-disabled",
       type: "color",
-      value: "#79575e",
+      value: "#7b5960",
       cssVar: "--cu-color-danger-subtle-disabled",
       description: "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -14513,7 +14513,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-active",
       type: "color",
-      value: "#8b682f",
+      value: "#8e6a31",
       cssVar: "--cu-color-warning-subtle-active",
       description: "Generated low-emphasis warning background for the light theme (active, 25% darker)",
       theme: undefined,
@@ -14522,7 +14522,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-inactive",
       type: "color",
-      value: "#f2cc91",
+      value: "#f7d095",
       cssVar: "--cu-color-warning-subtle-inactive",
       description: "Generated low-emphasis warning background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -14531,7 +14531,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-disabled",
       type: "color",
-      value: "#6e6355",
+      value: "#6f6456",
       cssVar: "--cu-color-warning-subtle-disabled",
       description: "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -14675,7 +14675,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-active",
       type: "color",
-      value: "#357d64",
+      value: "#3b8168",
       cssVar: "--cu-color-success-subtle-active",
       description: "Generated low-emphasis success background for the light theme (active, 25% darker)",
       theme: undefined,
@@ -14684,7 +14684,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-inactive",
       type: "color",
-      value: "#9ae2c6",
+      value: "#a3eacd",
       cssVar: "--cu-color-success-subtle-inactive",
       description: "Generated low-emphasis success background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -14693,7 +14693,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-disabled",
       type: "color",
-      value: "#556a64",
+      value: "#586c66",
       cssVar: "--cu-color-success-subtle-disabled",
       description: "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -16367,180 +16367,180 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.none",
       type: "number",
-      value: "0.85",
+      value: "0.765",
       cssVar: "--cu-line-height-none",
-      description: "No extra line height (0.85)",
+      description: "No extra line height (0.765)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.tight",
       type: "number",
-      value: "1.175",
+      value: "1.0575",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1.175)",
+      description: "Tight line height (1.0575)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.25",
+      value: "1.125",
       cssVar: "--cu-line-height-snug",
-      description: "Snug line height (1.25)",
+      description: "Snug line height (1.125)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.375",
+      value: "1.2375",
       cssVar: "--cu-line-height-normal",
-      description: "Normal line height (1.375)",
+      description: "Normal line height (1.2375)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-relaxed",
-      description: "Relaxed line height (1.5)",
+      description: "Relaxed line height (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.85",
+      value: "1.665",
       cssVar: "--cu-line-height-loose",
-      description: "Loose line height (1.85)",
+      description: "Loose line height (1.665)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-xs",
-      description: "Line height for text-xs (calc(1 / 0.75))",
+      description: "Line height for text-xs (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.428571",
+      value: "1.285714",
       cssVar: "--cu-line-height-sm",
-      description: "Line height for text-sm (calc(1.25 / 0.875))",
+      description: "Line height for text-sm (1.285714)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.md",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-md",
-      description: "Line height for text-md (calc(1.5 / 1))",
+      description: "Line height for text-md (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.555556",
+      value: "1.4",
       cssVar: "--cu-line-height-lg",
-      description: "Line height for text-lg (calc(1.75 / 1.125))",
+      description: "Line height for text-lg (1.4)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.4",
+      value: "1.26",
       cssVar: "--cu-line-height-xl",
-      description: "Line height for text-xl (calc(1.75 / 1.25))",
+      description: "Line height for text-xl (1.26)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-2xl",
-      description: "Line height for text-2xl (calc(2 / 1.5))",
+      description: "Line height for text-2xl (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.3xl",
       type: "number",
-      value: "1.2",
+      value: "1.08",
       cssVar: "--cu-line-height-3xl",
-      description: "Line height for text-3xl (calc(2.25 / 1.875))",
+      description: "Line height for text-3xl (1.08)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.4xl",
       type: "number",
-      value: "1.111111",
+      value: "1",
       cssVar: "--cu-line-height-4xl",
-      description: "Line height for text-4xl (calc(2.5 / 2.25))",
+      description: "Line height for text-4xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.5xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-5xl",
-      description: "Line height for text-5xl (1)",
+      description: "Line height for text-5xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-6xl",
-      description: "Line height for text-6xl (1)",
+      description: "Line height for text-6xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-7xl",
-      description: "Line height for text-7xl (1)",
+      description: "Line height for text-7xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-8xl",
-      description: "Line height for text-8xl (1)",
+      description: "Line height for text-8xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-9xl",
-      description: "Line height for text-9xl (1)",
+      description: "Line height for text-9xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-10xl",
-      description: "Line height for text-10xl (1)",
+      description: "Line height for text-10xl (0.9)",
       theme: undefined,
       typography: true
     },
@@ -16682,7 +16682,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -17114,7 +17114,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -17177,7 +17177,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
       description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
@@ -18556,7 +18556,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle",
       type: "color",
-      value: "#c57a88",
+      value: "#cb7e8b",
       cssVar: "--cu-color-danger-subtle",
       description: "Generated low-emphasis danger background for the light theme",
       theme: undefined,
@@ -18565,7 +18565,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-danger-subtle",
       type: "color",
-      value: "#501725",
+      value: "#4d1620",
       cssVar: "--cu-color-on-danger-subtle",
       description: "Generated text and icon color on danger-subtle backgrounds",
       theme: undefined,
@@ -18592,7 +18592,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle",
       type: "color",
-      value: "#a99473",
+      value: "#ac9674",
       cssVar: "--cu-color-warning-subtle",
       description: "Generated low-emphasis warning background for the light theme",
       theme: undefined,
@@ -18601,7 +18601,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-warning-subtle",
       type: "color",
-      value: "#523c18",
+      value: "#4f3817",
       cssVar: "--cu-color-on-warning-subtle",
       description: "Generated text and icon color on warning-subtle backgrounds",
       theme: undefined,
@@ -18682,7 +18682,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle",
       type: "color",
-      value: "#77a090",
+      value: "#7ba595",
       cssVar: "--cu-color-success-subtle",
       description: "Generated low-emphasis success background for the light theme",
       theme: undefined,
@@ -18691,7 +18691,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-success-subtle",
       type: "color",
-      value: "#174f3f",
+      value: "#174e3c",
       cssVar: "--cu-color-on-success-subtle",
       description: "Generated text and icon color on success-subtle backgrounds",
       theme: undefined,
@@ -18808,7 +18808,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-active",
       type: "color",
-      value: "#975866",
+      value: "#9a5d6a",
       cssVar: "--cu-color-danger-subtle-active",
       description: "Generated low-emphasis danger background for the light theme (active, 25% darker)",
       theme: undefined,
@@ -18817,7 +18817,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-inactive",
       type: "color",
-      value: "#df90a0",
+      value: "#e094a4",
       cssVar: "--cu-color-danger-subtle-inactive",
       description: "Generated low-emphasis danger background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -18826,7 +18826,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-disabled",
       type: "color",
-      value: "#796569",
+      value: "#7a676b",
       cssVar: "--cu-color-danger-subtle-disabled",
       description: "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -18862,7 +18862,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-active",
       type: "color",
-      value: "#836e4b",
+      value: "#856f4d",
       cssVar: "--cu-color-warning-subtle-active",
       description: "Generated low-emphasis warning background for the light theme (active, 25% darker)",
       theme: undefined,
@@ -18871,7 +18871,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-inactive",
       type: "color",
-      value: "#d1b58a",
+      value: "#d6b88c",
       cssVar: "--cu-color-warning-subtle-inactive",
       description: "Generated low-emphasis warning background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -18880,7 +18880,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-disabled",
       type: "color",
-      value: "#726b63",
+      value: "#736c64",
       cssVar: "--cu-color-warning-subtle-disabled",
       description: "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -19024,7 +19024,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-active",
       type: "color",
-      value: "#4e7b6b",
+      value: "#537d6e",
       cssVar: "--cu-color-success-subtle-active",
       description: "Generated low-emphasis success background for the light theme (active, 25% darker)",
       theme: undefined,
@@ -19033,7 +19033,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-inactive",
       type: "color",
-      value: "#92c5b1",
+      value: "#96ccb6",
       cssVar: "--cu-color-success-subtle-inactive",
       description: "Generated low-emphasis success background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -19042,7 +19042,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-disabled",
       type: "color",
-      value: "#636f6c",
+      value: "#65716d",
       cssVar: "--cu-color-success-subtle-disabled",
       description: "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -20716,180 +20716,180 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.none",
       type: "number",
-      value: "0.85",
+      value: "0.765",
       cssVar: "--cu-line-height-none",
-      description: "No extra line height (0.85)",
+      description: "No extra line height (0.765)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.tight",
       type: "number",
-      value: "1.175",
+      value: "1.0575",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1.175)",
+      description: "Tight line height (1.0575)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.25",
+      value: "1.125",
       cssVar: "--cu-line-height-snug",
-      description: "Snug line height (1.25)",
+      description: "Snug line height (1.125)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.375",
+      value: "1.2375",
       cssVar: "--cu-line-height-normal",
-      description: "Normal line height (1.375)",
+      description: "Normal line height (1.2375)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-relaxed",
-      description: "Relaxed line height (1.5)",
+      description: "Relaxed line height (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.85",
+      value: "1.665",
       cssVar: "--cu-line-height-loose",
-      description: "Loose line height (1.85)",
+      description: "Loose line height (1.665)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-xs",
-      description: "Line height for text-xs (calc(1 / 0.75))",
+      description: "Line height for text-xs (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.428571",
+      value: "1.285714",
       cssVar: "--cu-line-height-sm",
-      description: "Line height for text-sm (calc(1.25 / 0.875))",
+      description: "Line height for text-sm (1.285714)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.md",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-md",
-      description: "Line height for text-md (calc(1.5 / 1))",
+      description: "Line height for text-md (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.555556",
+      value: "1.4",
       cssVar: "--cu-line-height-lg",
-      description: "Line height for text-lg (calc(1.75 / 1.125))",
+      description: "Line height for text-lg (1.4)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.4",
+      value: "1.26",
       cssVar: "--cu-line-height-xl",
-      description: "Line height for text-xl (calc(1.75 / 1.25))",
+      description: "Line height for text-xl (1.26)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-2xl",
-      description: "Line height for text-2xl (calc(2 / 1.5))",
+      description: "Line height for text-2xl (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.3xl",
       type: "number",
-      value: "1.2",
+      value: "1.08",
       cssVar: "--cu-line-height-3xl",
-      description: "Line height for text-3xl (calc(2.25 / 1.875))",
+      description: "Line height for text-3xl (1.08)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.4xl",
       type: "number",
-      value: "1.111111",
+      value: "1",
       cssVar: "--cu-line-height-4xl",
-      description: "Line height for text-4xl (calc(2.5 / 2.25))",
+      description: "Line height for text-4xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.5xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-5xl",
-      description: "Line height for text-5xl (1)",
+      description: "Line height for text-5xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-6xl",
-      description: "Line height for text-6xl (1)",
+      description: "Line height for text-6xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-7xl",
-      description: "Line height for text-7xl (1)",
+      description: "Line height for text-7xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-8xl",
-      description: "Line height for text-8xl (1)",
+      description: "Line height for text-8xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-9xl",
-      description: "Line height for text-9xl (1)",
+      description: "Line height for text-9xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-10xl",
-      description: "Line height for text-10xl (1)",
+      description: "Line height for text-10xl (0.9)",
       theme: undefined,
       typography: true
     },
@@ -21031,7 +21031,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -21463,7 +21463,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -21526,7 +21526,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
       description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
@@ -22905,7 +22905,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle",
       type: "color",
-      value: "#ff849a",
+      value: "#ff98aa",
       cssVar: "--cu-color-danger-subtle",
       description: "Generated low-emphasis danger background for the light theme",
       theme: undefined,
@@ -22941,7 +22941,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle",
       type: "color",
-      value: "#dcab5e",
+      value: "#e0af64",
       cssVar: "--cu-color-warning-subtle",
       description: "Generated low-emphasis warning background for the light theme",
       theme: undefined,
@@ -23031,7 +23031,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle",
       type: "color",
-      value: "#66caa4",
+      value: "#72d1ac",
       cssVar: "--cu-color-success-subtle",
       description: "Generated low-emphasis success background for the light theme",
       theme: undefined,
@@ -23157,7 +23157,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-active",
       type: "color",
-      value: "#bb2245",
+      value: "#c5294a",
       cssVar: "--cu-color-danger-subtle-active",
       description: "Generated low-emphasis danger background for the light theme (active, 25% darker)",
       theme: undefined,
@@ -23166,7 +23166,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-inactive",
       type: "color",
-      value: "#ffe7ec",
+      value: "#fff2f5",
       cssVar: "--cu-color-danger-subtle-inactive",
       description: "Generated low-emphasis danger background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -23175,7 +23175,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.danger-subtle-disabled",
       type: "color",
-      value: "#77444f",
+      value: "#7a4751",
       cssVar: "--cu-color-danger-subtle-disabled",
       description: "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -23211,7 +23211,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-active",
       type: "color",
-      value: "#855b16",
+      value: "#8a5e18",
       cssVar: "--cu-color-warning-subtle-active",
       description: "Generated low-emphasis warning background for the light theme (active, 25% darker)",
       theme: undefined,
@@ -23220,7 +23220,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-inactive",
       type: "color",
-      value: "#ffe6bf",
+      value: "#ffebcc",
       cssVar: "--cu-color-warning-subtle-inactive",
       description: "Generated low-emphasis warning background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -23229,7 +23229,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning-subtle-disabled",
       type: "color",
-      value: "#675641",
+      value: "#685843",
       cssVar: "--cu-color-warning-subtle-disabled",
       description: "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -23373,7 +23373,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-active",
       type: "color",
-      value: "#1d7255",
+      value: "#237b5b",
       cssVar: "--cu-color-success-subtle-active",
       description: "Generated low-emphasis success background for the light theme (active, 25% darker)",
       theme: undefined,
@@ -23382,7 +23382,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-inactive",
       type: "color",
-      value: "#bdf8e1",
+      value: "#d0fdea",
       cssVar: "--cu-color-success-subtle-inactive",
       description: "Generated low-emphasis success background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -23391,7 +23391,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.success-subtle-disabled",
       type: "color",
-      value: "#416158",
+      value: "#45655b",
       cssVar: "--cu-color-success-subtle-disabled",
       description: "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
@@ -25065,180 +25065,180 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "line-height.none",
       type: "number",
-      value: "0.85",
+      value: "0.765",
       cssVar: "--cu-line-height-none",
-      description: "No extra line height (0.85)",
+      description: "No extra line height (0.765)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.tight",
       type: "number",
-      value: "1.175",
+      value: "1.0575",
       cssVar: "--cu-line-height-tight",
-      description: "Tight line height (1.175)",
+      description: "Tight line height (1.0575)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.snug",
       type: "number",
-      value: "1.25",
+      value: "1.125",
       cssVar: "--cu-line-height-snug",
-      description: "Snug line height (1.25)",
+      description: "Snug line height (1.125)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.normal",
       type: "number",
-      value: "1.375",
+      value: "1.2375",
       cssVar: "--cu-line-height-normal",
-      description: "Normal line height (1.375)",
+      description: "Normal line height (1.2375)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.relaxed",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-relaxed",
-      description: "Relaxed line height (1.5)",
+      description: "Relaxed line height (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.loose",
       type: "number",
-      value: "1.85",
+      value: "1.665",
       cssVar: "--cu-line-height-loose",
-      description: "Loose line height (1.85)",
+      description: "Loose line height (1.665)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xs",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-xs",
-      description: "Line height for text-xs (calc(1 / 0.75))",
+      description: "Line height for text-xs (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.sm",
       type: "number",
-      value: "1.428571",
+      value: "1.285714",
       cssVar: "--cu-line-height-sm",
-      description: "Line height for text-sm (calc(1.25 / 0.875))",
+      description: "Line height for text-sm (1.285714)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.md",
       type: "number",
-      value: "1.5",
+      value: "1.35",
       cssVar: "--cu-line-height-md",
-      description: "Line height for text-md (calc(1.5 / 1))",
+      description: "Line height for text-md (1.35)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.lg",
       type: "number",
-      value: "1.555556",
+      value: "1.4",
       cssVar: "--cu-line-height-lg",
-      description: "Line height for text-lg (calc(1.75 / 1.125))",
+      description: "Line height for text-lg (1.4)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.xl",
       type: "number",
-      value: "1.4",
+      value: "1.26",
       cssVar: "--cu-line-height-xl",
-      description: "Line height for text-xl (calc(1.75 / 1.25))",
+      description: "Line height for text-xl (1.26)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.2xl",
       type: "number",
-      value: "1.333333",
+      value: "1.2",
       cssVar: "--cu-line-height-2xl",
-      description: "Line height for text-2xl (calc(2 / 1.5))",
+      description: "Line height for text-2xl (1.2)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.3xl",
       type: "number",
-      value: "1.2",
+      value: "1.08",
       cssVar: "--cu-line-height-3xl",
-      description: "Line height for text-3xl (calc(2.25 / 1.875))",
+      description: "Line height for text-3xl (1.08)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.4xl",
       type: "number",
-      value: "1.111111",
+      value: "1",
       cssVar: "--cu-line-height-4xl",
-      description: "Line height for text-4xl (calc(2.5 / 2.25))",
+      description: "Line height for text-4xl (1)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.5xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-5xl",
-      description: "Line height for text-5xl (1)",
+      description: "Line height for text-5xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.6xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-6xl",
-      description: "Line height for text-6xl (1)",
+      description: "Line height for text-6xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.7xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-7xl",
-      description: "Line height for text-7xl (1)",
+      description: "Line height for text-7xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.8xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-8xl",
-      description: "Line height for text-8xl (1)",
+      description: "Line height for text-8xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.9xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-9xl",
-      description: "Line height for text-9xl (1)",
+      description: "Line height for text-9xl (0.9)",
       theme: undefined,
       typography: true
     },
     {
       path: "line-height.10xl",
       type: "number",
-      value: "1",
+      value: "0.9",
       cssVar: "--cu-line-height-10xl",
-      description: "Line height for text-10xl (1)",
+      description: "Line height for text-10xl (0.9)",
       theme: undefined,
       typography: true
     },
@@ -25380,7 +25380,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.checkbox",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
       theme: undefined,
@@ -25812,7 +25812,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-title-lg",
       description: "Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels.",
       theme: undefined,
@@ -25875,7 +25875,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
       cssVar: "--cu-typography-eyebrow",
       description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,

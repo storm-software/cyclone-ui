@@ -17,9 +17,15 @@
  ------------------------------------------------------------------- */
 
 import { ContextMenu } from "@cyclone-ui/context-menu";
+import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   FormControlContext,
   getFormFontScale,
+  getFormSizeScale,
+  getFormSizeToken,
+  getSized,
+  getSpaced,
+  useFieldLabelDefaults,
   useFieldOptions,
   useFormControl
 } from "@cyclone-ui/helpers";
@@ -33,8 +39,10 @@ import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
   useComposedRefs,
+  View,
   withStaticProperties
 } from "@tamagui/core";
+import { YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 import type { CountryCode } from "libphonenumber-js";
 import {
@@ -55,6 +63,7 @@ import {
   useState
 } from "react";
 import { useWindowDimensions } from "react-native";
+
 const COUNTRY_POPOVER_WIDTH = 520;
 const COUNTRY_NAME_MIN_VIEWPORT_WIDTH = Math.ceil(COUNTRY_POPOVER_WIDTH / 0.9);
 
@@ -146,17 +155,19 @@ const CountryListItem = memo(
         aria-label={`${country.name} (${country.code}) +${country.callingCode}`}
         accessibilityLabel={`${country.name} (${country.code}) +${country.callingCode}`}
         onPress={handlePress}>
-        <ContextMenu.Item.Icon>{country.flag}</ContextMenu.Item.Icon>
-        {showCountryName && (
-          <ContextMenu.Item.Label>{country.name}</ContextMenu.Item.Label>
-        )}
-        <ContextMenu.Item.Text
-          flexShrink={0}
-          width="16xl"
-          marginLeft="auto"
-          textAlign="left">
-          {`${country.code}  +${country.callingCode}`}
-        </ContextMenu.Item.Text>
+        <YStack gap="2xl">
+          <ContextMenu.Item.Icon>{country.flag}</ContextMenu.Item.Icon>
+          {showCountryName && (
+            <ContextMenu.Item.Label>{country.name}</ContextMenu.Item.Label>
+          )}
+          <ContextMenu.Item.Text
+            flexShrink={0}
+            width="16xl"
+            marginLeft="auto"
+            textAlign="left">
+            {`${country.code}  +${country.callingCode}`}
+          </ContextMenu.Item.Text>
+        </YStack>
       </ContextMenu.Item>
     );
   }
@@ -235,12 +246,16 @@ const CountryCodeSelector = (): JSX.Element => {
         {/* The country search is local UI state, not part of the phone
             number's field: hide the enclosing field from it. */}
         <FormControlContext value={undefined}>
-          <SearchInput size="sm" value={search} onChange={handleSearchChange}>
-            <SearchInput.TextBox
-              aria-label="Search countries"
-              placeholder="Search countries..."
-            />
-          </SearchInput>
+          {/* Its own `field` group: groups flow through context into the
+              portal, so it would otherwise follow the phone field's hover. */}
+          <View group="field">
+            <SearchInput size="sm" value={search} onChange={handleSearchChange}>
+              <SearchInput.TextBox
+                aria-label="Search countries"
+                placeholder="Search countries..."
+              />
+            </SearchInput>
+          </View>
         </FormControlContext>
 
         <ContextMenu.Content.ScrollView>
@@ -311,6 +326,22 @@ const PhoneNumberInputGroup = createStyledHOC(
       [formatPhoneNumber, parsePhoneNumber, phoneMask]
     );
     useFieldOptions(fieldOptions);
+
+    // Float the field's label past the country trigger and separator, where
+    // the number's text starts. Runs after `Input`'s own (floating) defaults,
+    // as a parent's layout effect follows its children's, so this one wins.
+    const size: FormControlSize = props.size ?? formControl?.size ?? "md";
+    const underlined = (props.variant ?? formControl?.variant) === "underlined";
+    const labelDefaults = useMemo(
+      () => ({
+        variant: "floating" as const,
+        floatingLabelLeft:
+          getSized(getFormSizeToken(size)) +
+          (underlined ? 0 : 1 + getSpaced("4xl") * getFormSizeScale(size))
+      }),
+      [size, underlined]
+    );
+    useFieldLabelDefaults(labelDefaults);
 
     // Uncontrolled outside a field: keep the (parsed) value here.
     const [localValue, setLocalValue] = useState<string>(defaultValue ?? "");
