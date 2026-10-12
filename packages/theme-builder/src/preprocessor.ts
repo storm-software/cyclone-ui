@@ -416,6 +416,12 @@ const CONTRAST_PRIMITIVES: Record<ParentTheme, string> = {
   light: "#0c0c0d"
 };
 
+/** Active colors already near the contrast primitive jump to these instead. */
+const PURE_CONTRAST_COLORS: Record<ParentTheme, string> = {
+  dark: "#ffffff",
+  light: "#000000"
+};
+
 function parentThemeFromDescription(
   description: unknown
 ): ParentTheme | undefined {
@@ -593,11 +599,12 @@ const MINIMUM_INVERSE_CONTRAST_RATIO = 2;
 const SUBTLE_COLOR_LIGHTNESS_STEP = 0.01;
 const MAX_SUBTLE_COLOR_ADJUSTMENTS = 100;
 const SUBTLE_COLOR_GAMUT_SEARCH_ITERATIONS = 32;
-/** OKLCH lightness shift for active colors already near the contrast primitive. */
-const CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT = 0.1;
+/** OKLCH lightness shift for hovered colors already near the contrast primitive. */
+const CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT = 0.25;
 
 function isStateVariantKey(key: string): boolean {
   return (
+    key.toLowerCase().endsWith("-hovered") ||
     key.toLowerCase().endsWith("-active") ||
     key.toLowerCase().endsWith("-inactive") ||
     key.toLowerCase().endsWith("-disabled")
@@ -1031,6 +1038,20 @@ function isBlackColor(hex: string): boolean {
   return hexToOklch(hex).lightness <= 0.25;
 }
 
+/** Hovered and active states share the contrast primitive behavior. */
+function isInteractionState(variant: ColorStateVariant): boolean {
+  return variant.name === "hovered" || variant.name === "active";
+}
+
+function isNearContrastPrimitive(
+  hex: string,
+  parentTheme?: ParentTheme
+): boolean {
+  return parentTheme === "dark"
+    ? isWhiteColor(hex)
+    : parentTheme === "light" && isBlackColor(hex);
+}
+
 /** Resolve a state multiplier from the source color and parent theme. */
 function directedBrightnessFactor(
   hex: string,
@@ -1050,7 +1071,7 @@ function contrastPrimitive(
 }
 
 /**
- * Active colors that already sit near the parent theme's contrast primitive
+ * Hovered colors that already sit near the parent theme's contrast primitive
  * (near-white in dark themes, near-black in light themes) would barely change
  * by jumping to it, so their lightness shifts toward the middle instead.
  */
@@ -1059,19 +1080,37 @@ function contrastSideLightnessShift(
   variant: ColorStateVariant,
   parentTheme?: ParentTheme
 ): number | undefined {
-  if (variant.name !== "active" || !contrastPrimitive(variant, parentTheme)) {
+  if (
+    variant.name !== "hovered" ||
+    !contrastPrimitive(variant, parentTheme) ||
+    !isNearContrastPrimitive(hex, parentTheme)
+  ) {
     return undefined;
   }
 
-  if (parentTheme === "dark" && isWhiteColor(hex)) {
-    return -CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT;
-  }
+  return parentTheme === "dark"
+    ? -CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT
+    : CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT;
+}
 
-  if (parentTheme === "light" && isBlackColor(hex)) {
-    return CONTRAST_SIDE_ACTIVE_LIGHTNESS_SHIFT;
-  }
+/**
+ * The color an interaction state jumps to. Active colors already near the
+ * contrast primitive go to pure white (dark) or pure black (light) so they
+ * never lose contrast.
+ */
+function stateContrastColor(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
+): string | undefined {
+  const primitive = contrastPrimitive(variant, parentTheme);
 
-  return undefined;
+  return primitive &&
+    parentTheme &&
+    variant.name === "active" &&
+    isNearContrastPrimitive(hex, parentTheme)
+    ? PURE_CONTRAST_COLORS[parentTheme]
+    : primitive;
 }
 
 function stateBrightnessFactor(
@@ -1084,7 +1123,7 @@ function stateBrightnessFactor(
   }
 
   if (contrastPrimitive(variant, parentTheme)) {
-    return variant.name === "active" ? 1 : variant.brightness;
+    return isInteractionState(variant) ? 1 : variant.brightness;
   }
 
   return directedBrightnessFactor(hex, variant.brightness, parentTheme);
@@ -1097,14 +1136,16 @@ function applyStateTransform(
 ): string {
   const shift = contrastSideLightnessShift(hex, variant, parentTheme);
   const primitive =
-    shift === undefined ? contrastPrimitive(variant, parentTheme) : undefined;
+    shift === undefined
+      ? stateContrastColor(hex, variant, parentTheme)
+      : undefined;
   let transformed = primitive ?? hex;
 
   if (shift !== undefined) {
     transformed = applyLightnessShift(hex, shift);
   } else if (
     variant.brightness !== undefined &&
-    !(primitive && variant.name === "active")
+    !(primitive && isInteractionState(variant))
   ) {
     transformed = applyBrightness(
       transformed,
@@ -1137,14 +1178,18 @@ function variantDetail(
 ): string {
   const details: string[] = [];
   const shift = contrastSideLightnessShift(hex, variant, parentTheme);
-  const primitive = contrastPrimitive(variant, parentTheme);
+  const primitive = stateContrastColor(hex, variant, parentTheme);
 
   if (shift !== undefined) {
     details.push(
       `${Math.round(Math.abs(shift) * 100)}% ${shift < 0 ? "darker" : "lighter"}`
     );
-  } else if (primitive && variant.name === "active") {
-    details.push(`${parentTheme} contrast primitive`);
+  } else if (primitive && isInteractionState(variant)) {
+    details.push(
+      parentTheme && primitive !== CONTRAST_PRIMITIVES[parentTheme]
+        ? `pure ${parentTheme === "dark" ? "white" : "black"}`
+        : `${parentTheme} contrast primitive`
+    );
   } else if (variant.brightness !== undefined) {
     const factor = stateBrightnessFactor(hex, variant, parentTheme);
     const percent = Math.round((factor - 1) * 100);
@@ -1222,9 +1267,14 @@ function addColorStateTokens(
       continue;
     }
 
-    const tokenVariants = isLowSaturation(hex)
-      ? variants.lowSaturation
-      : variants.saturated;
+    // Hovered states are generated from the matching active variant.
+    const tokenVariants = (
+      isLowSaturation(hex) ? variants.lowSaturation : variants.saturated
+    ).flatMap(variant =>
+      variant.name === "active"
+        ? [{ ...variant, name: "hovered" }, variant]
+        : [variant]
+    );
     const tokenParentTheme =
       parentThemeFromDescription(token.$description) ?? parentTheme;
 
@@ -1331,7 +1381,7 @@ function addMissingStatusCompanionTokens(
 function colorTokenRoot(name: string): string {
   return name
     .replace(/^on-/, "")
-    .replace(/-(?:active|inactive|disabled)$/i, "")
+    .replace(/-(?:hovered|active|inactive|disabled)$/i, "")
     .replace(/-subtle$/, "");
 }
 
@@ -1488,11 +1538,12 @@ function injectColorStateVariants(
  * and each status color, missing `on-*-accent` text (Tamagui `onAccent`; any
  * `on-*` color is renamed to it), `*-subtle` background, and `on-*-subtle`
  * text colors are generated next, along with a `*-accent` alias (Tamagui
- * `accent`), then active, inactive, and disabled variants are added to the
+ * `accent`), then hovered, active, inactive, and disabled variants are added to the
  * surface colors, border, and each theme color and its `*-subtle` color.
  * Low-saturation colors derive their states from the parent theme's contrast
- * primitive (surfaces use a subtler shift of their own lightness, and active
- * colors already near that primitive shift toward the middle); saturated
+ * primitive (surfaces use a subtler shift of their own lightness; hovered
+ * colors already near that primitive shift toward the middle, while active
+ * ones become pure white or black); saturated
  * colors scale their own lightness. Theme colors get their name as theme,
  * unless one is already set. State, `on-*`, and `*-subtle` color tokens also
  * get their main token name as `group` (e.g. `border-active` → `border`).

@@ -142,7 +142,7 @@ const FilePickerGroupFrame = styled(View, {
   borderStyle: "dashed",
   borderWidth: 2,
   borderRadius: "container",
-  borderColor: "border hover:active",
+  borderColor: "border hover:hovered",
   backgroundColor: "surfaceElevated hover:tertiary",
   tabIndex: 0,
   variants: {
@@ -167,14 +167,14 @@ const FilePickerGroupFrame = styled(View, {
     },
     active: {
       true: {
-        borderColor: "border hover:borderActive",
+        borderColor: "border hover:borderHovered",
         backgroundColor: "tertiary hover:tertiary"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:active"
+        borderColor: "accent hover:hovered"
       }
     },
 
@@ -421,7 +421,7 @@ const FilePickerTrigger = createStyledHOC(
                 size={clearSize}
                 aria-label={max > 1 ? "Remove files" : "Remove file"}
                 onPress={() => onChange([])}>
-                <Button.Icon color="secondary group-hover/button:active">
+                <Button.Icon color="secondary group-hover/button:hovered">
                   <X />
                 </Button.Icon>
               </Button>
@@ -747,7 +747,7 @@ const FilePickerFile = ({
       overflow="hidden"
       position="relative"
       borderRadius="card"
-      borderColor="border hover:borderActive"
+      borderColor="border hover:borderHovered"
       borderWidth={1}
       boxShadow="none hover:ringOffset"
       onClick={event => event.stopPropagation()}
@@ -784,7 +784,7 @@ const FilePickerFile = ({
             size={getSized("13xl") * scale}
             padding="xl"
             circular={true}>
-            <Button.Icon color="group-hover/button:active">
+            <Button.Icon color="group-hover/button:hovered">
               <DownloadSimple />
             </Button.Icon>
           </Button>
@@ -808,7 +808,7 @@ const FilePickerFile = ({
             size={getSized("13xl") * scale}
             padding="xl"
             circular={true}>
-            <Button.Icon color="group-hover/button:active">
+            <Button.Icon color="group-hover/button:hovered">
               <Trash />
             </Button.Icon>
           </Button>

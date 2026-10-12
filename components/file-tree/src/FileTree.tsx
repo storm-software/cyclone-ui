@@ -57,7 +57,7 @@ const TreeNode = styled(XStack, {
   paddingHorizontal: "lg",
   paddingVertical: "xs",
   borderRadius: "sm",
-  backgroundColor: "hover:subtleActive",
+  backgroundColor: "hover:subtleHovered",
   outlineColor: "focus-visible:active",
   outlineWidth: "focus-visible:2px",
   outlineStyle: "focus-visible:solid"

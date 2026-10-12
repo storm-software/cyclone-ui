@@ -86,7 +86,7 @@ const SwitchFrame = styled(View, {
   backgroundColor: "surfaceElevated",
   borderWidth: 1,
   borderColor:
-    "border hover:active focus:active focus-visible:active",
+    "border hover:hovered focus:active focus-visible:active",
   boxShadow: "none focus:ringOffset focus-visible:ringOffset",
   tabIndex: 0,
   variants: {
@@ -107,7 +107,7 @@ const SwitchFrame = styled(View, {
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:active"
+        borderColor: "accent hover:hovered"
       }
     },
 
@@ -325,8 +325,8 @@ const BaseSwitchImpl = createStyledHOC(
                 : idleColor,
             // A call-site base replaces every lower-tier clause in v3, so the
             // v2 frame/variant hover color is restated.
-            `hover:${disabled ? "disabled" : "active"}`,
-            `group-hover/field:${disabled ? "disabled" : focused ? focusColor : "active"}`,
+            `hover:${disabled ? "disabled" : "hovered"}`,
+            `group-hover/field:${disabled ? "disabled" : focused ? focusColor : "hovered"}`,
             disabled ? undefined : `focus:${focusColor}`,
             `focus-visible:${focusColor}`
           ]

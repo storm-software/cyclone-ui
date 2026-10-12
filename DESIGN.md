@@ -59,42 +59,55 @@ colors:
   success-accent: "#216b53"
   success-subtle: "#74ba9f"
   on-success-subtle: "#002217"
+  border-hovered: "#0c0c0d"
   border-active: "#0c0c0d"
   border-inactive: "#030303"
   border-disabled: "#69696b"
-  base-active: "#38383a"
+  base-hovered: "#606062"
+  base-active: "#000000"
   base-inactive: "#030303"
   base-disabled: "#363639"
+  base-subtle-hovered: "#a9a9aa"
   base-subtle-active: "#a9a9aa"
   base-subtle-inactive: "#030303"
   base-subtle-disabled: "#727275"
+  danger-hovered: "#6a0022"
   danger-active: "#6a0022"
   danger-inactive: "#ab3e56"
   danger-disabled: "#5a3c44"
+  danger-subtle-hovered: "#b0435a"
   danger-subtle-active: "#b0435a"
   danger-subtle-inactive: "#ffa7ba"
   danger-subtle-disabled: "#7b5960"
+  warning-hovered: "#543400"
   warning-active: "#543400"
   warning-inactive: "#926f36"
   warning-disabled: "#53493b"
+  warning-subtle-hovered: "#8e6a31"
   warning-subtle-active: "#8e6a31"
   warning-subtle-inactive: "#f7d095"
   warning-subtle-disabled: "#6f6456"
+  info-hovered: "#00318d"
   info-active: "#00318d"
   info-inactive: "#3b72d3"
   info-disabled: "#3b4a68"
+  info-subtle-hovered: "#396ac2"
   info-subtle-active: "#396ac2"
   info-subtle-inactive: "#99d1ff"
   info-subtle-disabled: "#556582"
+  discovery-hovered: "#3c2372"
   discovery-active: "#3c2372"
   discovery-inactive: "#725db2"
   discovery-disabled: "#4a445f"
+  discovery-subtle-hovered: "#725ba7"
   discovery-subtle-active: "#725ba7"
   discovery-subtle-inactive: "#d2bcff"
   discovery-subtle-disabled: "#655f79"
+  success-hovered: "#004933"
   success-active: "#004933"
   success-inactive: "#40876e"
   success-disabled: "#3c504b"
+  success-subtle-hovered: "#3b8168"
   success-subtle-active: "#3b8168"
   success-subtle-inactive: "#a3eacd"
   success-subtle-disabled: "#586c66"
@@ -254,7 +267,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 95 color tokens, 16 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 108 color tokens, 16 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -314,42 +327,55 @@ Cyclone UI design tokens — 95 color tokens, 16 typography tokens, 70 spacing t
 - **Success Accent (#216b53):** Alias of success for the success theme
 - **Success Subtle (#74ba9f):** Generated low-emphasis success background for the light theme
 - **On Success Subtle (#002217):** Generated text and icon color on success-subtle backgrounds
+- **Border Hovered (#0c0c0d):** Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)
 - **Border Active (#0c0c0d):** Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)
 - **Border Inactive (#030303):** Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)
 - **Border Disabled (#69696b):** Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
-- **Base Active (#38383a):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% lighter)
+- **Base Hovered (#606062):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)
+- **Base Active (#000000):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)
 - **Base Inactive (#030303):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)
 - **Base Disabled (#363639):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Base Subtle Hovered (#a9a9aa):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 12% darker)
 - **Base Subtle Active (#a9a9aa):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 12% darker)
 - **Base Subtle Inactive (#030303):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)
 - **Base Subtle Disabled (#727275):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Danger Hovered (#6a0022):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)
 - **Danger Active (#6a0022):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)
 - **Danger Inactive (#ab3e56):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)
 - **Danger Disabled (#5a3c44):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Danger Subtle Hovered (#b0435a):** Generated low-emphasis danger background for the light theme (hovered, 25% darker)
 - **Danger Subtle Active (#b0435a):** Generated low-emphasis danger background for the light theme (active, 25% darker)
 - **Danger Subtle Inactive (#ffa7ba):** Generated low-emphasis danger background for the light theme (inactive, 20% brighter)
 - **Danger Subtle Disabled (#7b5960):** Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Warning Hovered (#543400):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)
 - **Warning Active (#543400):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)
 - **Warning Inactive (#926f36):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)
 - **Warning Disabled (#53493b):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Warning Subtle Hovered (#8e6a31):** Generated low-emphasis warning background for the light theme (hovered, 25% darker)
 - **Warning Subtle Active (#8e6a31):** Generated low-emphasis warning background for the light theme (active, 25% darker)
 - **Warning Subtle Inactive (#f7d095):** Generated low-emphasis warning background for the light theme (inactive, 20% brighter)
 - **Warning Subtle Disabled (#6f6456):** Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Info Hovered (#00318d):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)
 - **Info Active (#00318d):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)
 - **Info Inactive (#3b72d3):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)
 - **Info Disabled (#3b4a68):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Info Subtle Hovered (#396ac2):** Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% darker)
 - **Info Subtle Active (#396ac2):** Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% darker)
 - **Info Subtle Inactive (#99d1ff):** Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% brighter)
 - **Info Subtle Disabled (#556582):** Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Discovery Hovered (#3c2372):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)
 - **Discovery Active (#3c2372):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)
 - **Discovery Inactive (#725db2):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)
 - **Discovery Disabled (#4a445f):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Discovery Subtle Hovered (#725ba7):** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)
 - **Discovery Subtle Active (#725ba7):** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% darker)
 - **Discovery Subtle Inactive (#d2bcff):** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter)
 - **Discovery Subtle Disabled (#655f79):** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Success Hovered (#004933):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)
 - **Success Active (#004933):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)
 - **Success Inactive (#40876e):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)
 - **Success Disabled (#3c504b):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Success Subtle Hovered (#3b8168):** Generated low-emphasis success background for the light theme (hovered, 25% darker)
 - **Success Subtle Active (#3b8168):** Generated low-emphasis success background for the light theme (active, 25% darker)
 - **Success Subtle Inactive (#a3eacd):** Generated low-emphasis success background for the light theme (inactive, 20% brighter)
 - **Success Subtle Disabled (#586c66):** Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))

@@ -85,7 +85,7 @@ const isDefaultSize = (size: SizeTokens | undefined) =>
  *
  * @remarks
  * Icons receive their color as an SVG `stroke` / `fill` attribute, which cannot
- * carry v3 state clauses such as `hover:active`.
+ * carry v3 state clauses such as `hover:hovered`.
  */
 const getBaseColor = (color: ThemeableIconExtraProps["color"]) => {
   if (typeof color !== "string") {

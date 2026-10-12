@@ -160,7 +160,7 @@ const RadioGroupItemContainerFrame = styled(XStack, {
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:active"
+        borderColor: "accent hover:hovered"
       }
     },
 
@@ -243,7 +243,7 @@ const RadioGroupItemContainer = createStyledHOC(
           <RadioGroupItem
             id={String(value)}
             size={size}
-            borderColor={`group-hover:${disabled ? "disabled" : "active"}`}
+            borderColor={`group-hover:${disabled ? "disabled" : "hovered"}`}
             value={String(value)}
             disabled={disabled}>
             {selected && <RadioGroupItemIndicator />}

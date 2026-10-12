@@ -46,7 +46,7 @@ const SelectValueFrame = styled(Text, {
   context: SelectContext,
   transition: "200ms",
   cursor: "pointer",
-  color: "accent hover:active",
+  color: "accent hover:hovered",
   display: "flex",
   flexGrow: 1,
   alignItems: "center",

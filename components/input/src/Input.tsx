@@ -122,7 +122,7 @@ const InputGroup = styled(XStack, {
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:active"
+        borderColor: "accent hover:hovered"
       }
     },
 
@@ -304,7 +304,7 @@ const InputGroupImpl = createStyledHOC(
     const labelPlacement = useFieldLabelPlacement();
     const idleColor = hasValidationMessage ? "accent" : "border";
     const focusColor = hasValidationMessage ? "active" : "borderActive";
-    const borderColor = `${active ? focusColor : idleColor} group-hover/field:${disabled ? "disabled" : active ? focusColor : "active"}`;
+    const borderColor = `${active ? focusColor : idleColor} group-hover/field:${disabled ? "disabled" : active ? focusColor : "hovered"}`;
 
     return (
       <InputContext.Provider
@@ -372,7 +372,7 @@ const InputSeparator = styled(View, {
   opacity: "enter:0",
   // Drawn as a underlined 1px bar rather than a left border: `XGroup.Item` zeroes
   // `borderLeftWidth` on every non-first item, which hid the line.
-  backgroundColor: "border hover:borderActive",
+  backgroundColor: "border hover:borderHovered",
   width: 1,
   flexShrink: 0,
   height: "60%",
@@ -419,7 +419,7 @@ const InputSeparatorImpl = createStyledHOC(
       InputContext.useStyledContext();
     const idleColor = hasValidationMessage ? "accent" : "border";
     const focusColor = hasValidationMessage ? "active" : "borderActive";
-    const hoverColor = hasValidationMessage ? "active" : "borderActive";
+    const hoverColor = hasValidationMessage ? "hovered" : "borderHovered";
 
     return (
       <XGroup.Item>

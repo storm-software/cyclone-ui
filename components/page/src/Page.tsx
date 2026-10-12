@@ -994,7 +994,7 @@ const PageSideNavToggleFrame = styled(View, {
   alignItems: "center",
   justifyContent: "center",
   cursor: "pointer",
-  backgroundColor: "transparent hover:subtleActive press:subtleActive",
+  backgroundColor: "transparent hover:subtleHovered press:subtleActive",
   borderWidth: 0,
   borderRadius: "full",
   boxShadow: "focus-visible:ringOffset"

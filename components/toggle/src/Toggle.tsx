@@ -48,7 +48,7 @@ const ToggleFrame = styled(View, {
   // Hug the content without overriding the parent's cross-axis alignment.
   width: "fit-content",
   borderWidth: 1,
-  borderColor: "border hover:borderActive",
+  borderColor: "border hover:borderHovered",
   backgroundColor: "surfaceSunken hover:tertiary",
   borderRadius: "control",
   outlineStyle: "none",
@@ -80,7 +80,7 @@ const ToggleFrame = styled(View, {
 
     invalid: {
       true: {
-        borderColor: "border hover:borderActive"
+        borderColor: "border hover:borderHovered"
       }
     },
 

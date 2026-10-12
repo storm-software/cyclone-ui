@@ -45,7 +45,7 @@ const CheckboxGroupFrame = styled(View, {
   // this fixes a flex bug where it overflows container
   boxShadow: "none focus:ringOffset focus-visible:ringOffset",
   borderWidth: 1,
-  borderColor: "border hover:active focus:active focus-visible:active",
+  borderColor: "border hover:hovered focus:active focus-visible:active",
   outlineStyle: "none",
   // this fixes a flex bug where it overflows container
   minWidth: 0,
@@ -86,7 +86,7 @@ const CheckboxGroupFrame = styled(View, {
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:active"
+        borderColor: "accent hover:hovered"
       }
     },
 
@@ -210,7 +210,7 @@ export const Checkbox = createStyledHOC(
         size={size}
         // A call-site base replaces every lower-tier clause for the property
         // in v3, so restate the v2 frame/variant hover and disabled press here.
-        borderColor={`${focused ? focusColor : idleColor} hover:${disabled ? "disabled" : "active"}${disabled ? " press:disabled" : ""} group-hover/field:${focused ? focusColor : "active"} focus:${focusColor} focus-visible:${focusColor}`}
+        borderColor={`${focused ? focusColor : idleColor} hover:${disabled ? "disabled" : "hovered"}${disabled ? " press:disabled" : ""} group-hover/field:${focused ? focusColor : "hovered"} focus:${focusColor} focus-visible:${focusColor}`}
         boxShadow={`focus:${ring} focus-visible:${ring}`}>
         <BaseCheckbox
           ref={forwardedRef}

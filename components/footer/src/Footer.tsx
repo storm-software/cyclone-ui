@@ -150,7 +150,7 @@ const FooterSectionLinks = styled(View, {
 const FooterLink = styled(Link, {
   displayName: "FooterLink",
   width: "fit-content",
-  color: "accent hover:active focus-visible:active",
+  color: "accent hover:hovered focus-visible:active",
   opacity: "0.85 hover:1 focus-visible:1",
   textDecorationLine: "none",
   x: "hover:3px",

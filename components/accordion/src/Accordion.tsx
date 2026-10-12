@@ -469,7 +469,7 @@ const AccordionItemHeaderHeading = createStyledHOC(
       <HeadingSmallText
         ref={forwardedRef}
         transition="250ms"
-        color="accent group-hover/accordion:active"
+        color="accent group-hover/accordion:hovered"
         cursor="group-hover/accordion:pointer"
         {...props}>
         {children}

@@ -367,26 +367,26 @@ const ButtonFrame = styled(View, {
     variant: {
       tertiary: {
         borderWidth: 1,
-        borderColor: "accent hover:active press:active",
+        borderColor: "accent hover:hovered press:active",
         backgroundColor: "surfaceElevated hover:tertiary"
       },
 
       secondary: {
         borderWidth: 0,
         borderColor: "transparent hover:transparent press:transparent",
-        backgroundColor: "subtle hover:subtleActive"
+        backgroundColor: "subtle hover:subtleHovered"
       },
 
       primary: {
         borderWidth: 0,
         borderColor: "transparent hover:transparent press:transparent",
-        backgroundColor: "accent hover:active"
+        backgroundColor: "accent hover:hovered"
       },
 
       outlined: {
         backgroundColor: "transparent hover:transparent press:transparent",
         borderWidth: 3,
-        borderColor: "accent hover:active press:active"
+        borderColor: "accent hover:hovered press:active"
       },
 
       cascade: cascadeFrameStyle,
@@ -721,7 +721,7 @@ const hoverColorForVariant = (
     return "onAccent";
   }
 
-  return "active";
+  return "hovered";
 };
 
 const pressedColorForVariant = (
@@ -839,7 +839,7 @@ const ButtonIcon = createStyledHOC(
             colorForVariant(variant, disabled, color),
             groupColor,
             // Callers extend the icon color with their own flat clauses, e.g.
-            // `color="group-hover/button:active"`.
+            // `color="group-hover/button:hovered"`.
             colorProp
           )}>
           {children}

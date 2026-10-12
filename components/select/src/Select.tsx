@@ -67,7 +67,7 @@ const SelectGroup = styled(XStack, {
   cursor: "pointer",
   backgroundColor: "surfaceElevated",
   borderWidth: 1,
-  borderColor: "border hover:active focus-visible:active",
+  borderColor: "border hover:hovered focus-visible:active",
   outlineStyle: "none",
   // this fixes a flex bug where it overflows container
   boxShadow: "none focus-visible:ringOffset",
@@ -86,7 +86,7 @@ const SelectGroup = styled(XStack, {
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:active"
+        borderColor: "accent hover:hovered"
       }
     },
 
@@ -98,7 +98,7 @@ const SelectGroup = styled(XStack, {
         backgroundColor: "transparent",
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "border hover:active focus-visible:accent",
+        borderColor: "border hover:hovered focus-visible:accent",
         boxShadow: "none focus-visible:none"
       },
       inlined: {}
@@ -180,7 +180,7 @@ const SelectSeparator = styled(View, {
   borderRightWidth: 0,
   borderTopWidth: 0,
   borderBottomWidth: 0,
-  borderColor: "border hover:borderActive",
+  borderColor: "border hover:borderHovered",
   width: 0,
   flexShrink: 0,
   height: "60%",
@@ -279,12 +279,12 @@ const SelectTextBoxImpl = createStyledHOC(
     const underlineActive = focused || locallyActive;
     const idleColor = hasValidationMessage ? "accent" : "border";
     const focusColor = hasValidationMessage ? "active" : "borderActive";
-    const hoverColor = hasValidationMessage ? "active" : "borderActive";
+    const hoverColor = hasValidationMessage ? "hovered" : "borderHovered";
     // A call-site base replaces every lower-tier clause in v3, so restate
     // the `disabled` variant's press/focus colors that v2 kept.
     // In a field the label overlays the frame without being inside it, so
     // the frame never sees `hover`; follow the field group's hover too.
-    const borderColor = `${focused ? focusColor : idleColor} hover:${focused ? focusColor : "active"} group-hover/field:${disabled ? "disabled" : focused ? focusColor : "active"}${disabled ? " press:disabled focus:disabled" : ""} focus-visible:${focusColor}`;
+    const borderColor = `${focused ? focusColor : idleColor} hover:${focused ? focusColor : "hovered"} group-hover/field:${disabled ? "disabled" : focused ? focusColor : "hovered"}${disabled ? " press:disabled focus:disabled" : ""} focus-visible:${focusColor}`;
 
     return (
       <SelectGroup

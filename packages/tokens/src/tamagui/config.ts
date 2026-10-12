@@ -355,8 +355,9 @@ const childThemeExtras: {
   light: {
     base: {
       accent: tokens.color.neutral13.val,
-      active: "#38383a",
+      active: "#000000",
       disabled: "#363639",
+      hovered: "#606062",
       inactive: "#030303",
       onAccent: "#FAFAFA",
       onSubtle: "#151518",
@@ -367,12 +368,14 @@ const childThemeExtras: {
       subtle: tokens.color.neutral5.val,
       subtleActive: "#a9a9aa",
       subtleDisabled: "#727275",
+      subtleHovered: "#a9a9aa",
       subtleInactive: "#030303"
     },
     danger: {
       accent: tokens.color.red7.val,
       active: "#6a0022",
       disabled: "#5a3c44",
+      hovered: "#6a0022",
       inactive: "#ab3e56",
       onAccent: "#FAFAFA",
       onSubtle: "#200006",
@@ -383,12 +386,14 @@ const childThemeExtras: {
       subtle: "#ee7a8e",
       subtleActive: "#b0435a",
       subtleDisabled: "#7b5960",
+      subtleHovered: "#b0435a",
       subtleInactive: "#ffa7ba"
     },
     discovery: {
       accent: tokens.color.purple7.val,
       active: "#3c2372",
       disabled: "#4a445f",
+      hovered: "#3c2372",
       inactive: "#725db2",
       onAccent: "#FAFAFA",
       onSubtle: "#FAFAFA",
@@ -399,12 +404,14 @@ const childThemeExtras: {
       subtle: tokens.color.purple3.val,
       subtleActive: "#725ba7",
       subtleDisabled: "#655f79",
+      subtleHovered: "#725ba7",
       subtleInactive: "#d2bcff"
     },
     info: {
       accent: tokens.color.blue7.val,
       active: "#00318d",
       disabled: "#3b4a68",
+      hovered: "#00318d",
       inactive: "#3b72d3",
       onAccent: "#FAFAFA",
       onSubtle: "#FAFAFA",
@@ -415,12 +422,14 @@ const childThemeExtras: {
       subtle: tokens.color.blue3.val,
       subtleActive: "#396ac2",
       subtleDisabled: "#556582",
+      subtleHovered: "#396ac2",
       subtleInactive: "#99d1ff"
     },
     success: {
       accent: tokens.color.green7.val,
       active: "#004933",
       disabled: "#3c504b",
+      hovered: "#004933",
       inactive: "#40876e",
       onAccent: "#FAFAFA",
       onSubtle: "#002217",
@@ -431,12 +440,14 @@ const childThemeExtras: {
       subtle: "#74ba9f",
       subtleActive: "#3b8168",
       subtleDisabled: "#586c66",
+      subtleHovered: "#3b8168",
       subtleInactive: "#a3eacd"
     },
     warning: {
       accent: tokens.color.yellow9.val,
       active: "#543400",
       disabled: "#53493b",
+      hovered: "#543400",
       inactive: "#926f36",
       onAccent: "#FAFAFA",
       onSubtle: "#241500",
@@ -447,14 +458,16 @@ const childThemeExtras: {
       subtle: "#c7a168",
       subtleActive: "#8e6a31",
       subtleDisabled: "#6f6456",
+      subtleHovered: "#8e6a31",
       subtleInactive: "#f7d095"
     }
   },
   dark: {
     base: {
       accent: tokens.color.neutral2.val,
-      active: "#d0d0d0",
+      active: "#ffffff",
       disabled: "#808082",
+      hovered: "#a1a1a1",
       inactive: "#808080",
       onAccent: "#151518",
       onSubtle: "#FAFAFA",
@@ -465,12 +478,14 @@ const childThemeExtras: {
       subtle: tokens.color.neutral10.val,
       subtleActive: "#535358",
       subtleDisabled: "#444447",
+      subtleHovered: "#535358",
       subtleInactive: "#808080"
     },
     danger: {
       accent: tokens.color.red5.val,
       active: "#ff607f",
       disabled: "#70424d",
+      hovered: "#ff607f",
       inactive: "#a70037",
       onAccent: "#FAFAFA",
       onSubtle: "#ffa6b0",
@@ -481,12 +496,14 @@ const childThemeExtras: {
       subtle: "#620020",
       subtleActive: "#7b1f34",
       subtleDisabled: "#4c313a",
+      subtleHovered: "#7b1f34",
       subtleInactive: "#4e0011"
     },
     discovery: {
       accent: tokens.color.purple4.val,
       active: "#c3a9ff",
       disabled: "#5e5776",
+      hovered: "#c3a9ff",
       inactive: "#6d51b0",
       onAccent: "#FAFAFA",
       onSubtle: "#FAFAFA",
@@ -497,12 +514,14 @@ const childThemeExtras: {
       subtle: tokens.color.purple9.val,
       subtleActive: "#4b3c79",
       subtleDisabled: "#3e3a4d",
+      subtleHovered: "#4b3c79",
       subtleInactive: "#27144e"
     },
     info: {
       accent: tokens.color.blue4.val,
       active: "#7fc4ff",
       disabled: "#4b5e81",
+      hovered: "#7fc4ff",
       inactive: "#2564d1",
       onAccent: "#FAFAFA",
       onSubtle: "#FAFAFA",
@@ -513,12 +532,14 @@ const childThemeExtras: {
       subtle: tokens.color.blue8.val,
       subtleActive: "#3560ac",
       subtleDisabled: "#37445b",
+      subtleHovered: "#3560ac",
       subtleInactive: "#022c73"
     },
     success: {
       accent: tokens.color.green4.val,
       active: "#89ffcc",
       disabled: "#4c7062",
+      hovered: "#89ffcc",
       inactive: "#009865",
       onAccent: "#FAFAFA",
       onSubtle: "#ffffff",
@@ -529,12 +550,14 @@ const childThemeExtras: {
       subtle: "#006140",
       subtleActive: "#31815e",
       subtleDisabled: "#354d45",
+      subtleHovered: "#31815e",
       subtleInactive: "#004829"
     },
     warning: {
       accent: tokens.color.yellow4.val,
       active: "#b56e00",
       disabled: "#7f6948",
+      hovered: "#b56e00",
       inactive: "#ffe067",
       onAccent: "#151518",
       onSubtle: "#ffffff",
@@ -545,6 +568,7 @@ const childThemeExtras: {
       subtle: "#764e00",
       subtleActive: "#996f2f",
       subtleDisabled: "#534837",
+      subtleHovered: "#996f2f",
       subtleInactive: "#5b3500"
     }
   }
@@ -593,6 +617,7 @@ const themes = createThemes({
         border: tokens.color.neutral6.val,
         borderActive: "#0c0c0d",
         borderDisabled: "#69696b",
+        borderHovered: "#0c0c0d",
         borderInactive: "#030303",
         dataBlueEmphasis: tokens.color.blue7.val,
         dataBlueSubtle: tokens.color.blue3.val,
@@ -624,6 +649,7 @@ const themes = createThemes({
         border: tokens.color.neutral9.val,
         borderActive: "#ffffff",
         borderDisabled: "#494a4d",
+        borderHovered: "#ffffff",
         borderInactive: "#808080",
         dataBlueEmphasis: tokens.color.blue7.val,
         dataBlueSubtle: tokens.color.blue9.val,
@@ -1067,6 +1093,7 @@ export interface AppTheme {
   border: string;
   borderActive: string;
   borderDisabled: string;
+  borderHovered: string;
   borderInactive: string;
   dataBlueEmphasis: string;
   dataBlueSubtle: string;
@@ -1085,6 +1112,7 @@ export interface AppTheme {
   dataYellowEmphasis: string;
   dataYellowSubtle: string;
   disabled: string;
+  hovered: string;
   inactive: string;
   onAccent: string;
   onSubtle: string;
@@ -1097,6 +1125,7 @@ export interface AppTheme {
   subtle: string;
   subtleActive: string;
   subtleDisabled: string;
+  subtleHovered: string;
   subtleInactive: string;
   surfaceCanvas: string;
   surfaceElevated: string;

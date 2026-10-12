@@ -1302,6 +1302,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.border-hovered",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-border-hovered",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.border-active",
       type: "color",
       value: "#ffffff",
@@ -1329,11 +1338,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base-hovered",
+      type: "color",
+      value: "#a1a1a1",
+      cssVar: "--cu-color-base-hovered",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base-active",
       type: "color",
-      value: "#d0d0d0",
+      value: "#ffffff",
       cssVar: "--cu-color-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% darker)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive)",
       theme: undefined,
       typography: false
     },
@@ -1352,6 +1370,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#808082",
       cssVar: "--cu-color-base-disabled",
       description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.base-subtle-hovered",
+      type: "color",
+      value: "#535358",
+      cssVar: "--cu-color-base-subtle-hovered",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1383,6 +1410,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.danger-hovered",
+      type: "color",
+      value: "#ff607f",
+      cssVar: "--cu-color-danger-hovered",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.danger-active",
       type: "color",
       value: "#ff607f",
@@ -1406,6 +1442,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#70424d",
       cssVar: "--cu-color-danger-disabled",
       description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle-hovered",
+      type: "color",
+      value: "#7b1f34",
+      cssVar: "--cu-color-danger-subtle-hovered",
+      description: "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1437,6 +1482,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning-hovered",
+      type: "color",
+      value: "#b56e00",
+      cssVar: "--cu-color-warning-hovered",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning-active",
       type: "color",
       value: "#b56e00",
@@ -1460,6 +1514,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7f6948",
       cssVar: "--cu-color-warning-disabled",
       description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle-hovered",
+      type: "color",
+      value: "#996f2f",
+      cssVar: "--cu-color-warning-subtle-hovered",
+      description: "Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1491,6 +1554,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.info-hovered",
+      type: "color",
+      value: "#7fc4ff",
+      cssVar: "--cu-color-info-hovered",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.info-active",
       type: "color",
       value: "#7fc4ff",
@@ -1514,6 +1586,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#4b5e81",
       cssVar: "--cu-color-info-disabled",
       description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle-hovered",
+      type: "color",
+      value: "#3560ac",
+      cssVar: "--cu-color-info-subtle-hovered",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1545,6 +1626,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery-hovered",
+      type: "color",
+      value: "#c3a9ff",
+      cssVar: "--cu-color-discovery-hovered",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery-active",
       type: "color",
       value: "#c3a9ff",
@@ -1568,6 +1658,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#5e5776",
       cssVar: "--cu-color-discovery-disabled",
       description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-hovered",
+      type: "color",
+      value: "#4b3c79",
+      cssVar: "--cu-color-discovery-subtle-hovered",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1599,6 +1698,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.success-hovered",
+      type: "color",
+      value: "#89ffcc",
+      cssVar: "--cu-color-success-hovered",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.success-active",
       type: "color",
       value: "#89ffcc",
@@ -1622,6 +1730,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#4c7062",
       cssVar: "--cu-color-success-disabled",
       description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-hovered",
+      type: "color",
+      value: "#31815e",
+      cssVar: "--cu-color-success-subtle-hovered",
+      description: "Generated low-emphasis success background for the dark theme (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -5651,6 +5768,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.border-hovered",
+      type: "color",
+      value: "#d9d9d9",
+      cssVar: "--cu-color-border-hovered",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.border-active",
       type: "color",
       value: "#d9d9d9",
@@ -5678,11 +5804,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base-hovered",
+      type: "color",
+      value: "#979797",
+      cssVar: "--cu-color-base-hovered",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base-active",
       type: "color",
-      value: "#b8b8b8",
+      value: "#d9d9d9",
       cssVar: "--cu-color-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% darker)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive)",
       theme: undefined,
       typography: false
     },
@@ -5701,6 +5836,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#808081",
       cssVar: "--cu-color-base-disabled",
       description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.base-subtle-hovered",
+      type: "color",
+      value: "#616164",
+      cssVar: "--cu-color-base-subtle-hovered",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -5732,6 +5876,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.danger-hovered",
+      type: "color",
+      value: "#d56d82",
+      cssVar: "--cu-color-danger-hovered",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.danger-active",
       type: "color",
       value: "#d56d82",
@@ -5755,6 +5908,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#73565d",
       cssVar: "--cu-color-danger-disabled",
       description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle-hovered",
+      type: "color",
+      value: "#7a3e4c",
+      cssVar: "--cu-color-danger-subtle-hovered",
+      description: "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -5786,6 +5948,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning-hovered",
+      type: "color",
+      value: "#9d722e",
+      cssVar: "--cu-color-warning-hovered",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning-active",
       type: "color",
       value: "#9d722e",
@@ -5809,6 +5980,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c6f5b",
       cssVar: "--cu-color-warning-disabled",
       description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle-hovered",
+      type: "color",
+      value: "#8c734d",
+      cssVar: "--cu-color-warning-subtle-hovered",
+      description: "Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -5840,6 +6020,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.info-hovered",
+      type: "color",
+      value: "#7eb0da",
+      cssVar: "--cu-color-info-hovered",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.info-active",
       type: "color",
       value: "#7eb0da",
@@ -5863,6 +6052,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#5e697e",
       cssVar: "--cu-color-info-disabled",
       description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle-hovered",
+      type: "color",
+      value: "#536c97",
+      cssVar: "--cu-color-info-subtle-hovered",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -5894,6 +6092,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery-hovered",
+      type: "color",
+      value: "#ac95e0",
+      cssVar: "--cu-color-discovery-hovered",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery-active",
       type: "color",
       value: "#ac95e0",
@@ -5917,6 +6124,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#696577",
       cssVar: "--cu-color-discovery-disabled",
       description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-hovered",
+      type: "color",
+      value: "#5c5378",
+      cssVar: "--cu-color-discovery-subtle-hovered",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -5948,6 +6164,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.success-hovered",
+      type: "color",
+      value: "#84dbb5",
+      cssVar: "--cu-color-success-hovered",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.success-active",
       type: "color",
       value: "#84dbb5",
@@ -5971,6 +6196,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#5d736a",
       cssVar: "--cu-color-success-disabled",
       description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-hovered",
+      type: "color",
+      value: "#4c7d68",
+      cssVar: "--cu-color-success-subtle-hovered",
+      description: "Generated low-emphasis success background for the dark theme (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -10000,6 +10234,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.border-hovered",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-border-hovered",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.border-active",
       type: "color",
       value: "#ffffff",
@@ -10027,11 +10270,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base-hovered",
+      type: "color",
+      value: "#b0b0b0",
+      cssVar: "--cu-color-base-hovered",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base-active",
       type: "color",
-      value: "#f4f4f4",
+      value: "#ffffff",
       cssVar: "--cu-color-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% darker)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive)",
       theme: undefined,
       typography: false
     },
@@ -10050,6 +10302,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7a7a89",
       cssVar: "--cu-color-base-disabled",
       description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.base-subtle-hovered",
+      type: "color",
+      value: "#3d3d49",
+      cssVar: "--cu-color-base-subtle-hovered",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 13% brighter)",
       theme: undefined,
       typography: false
     },
@@ -10081,6 +10342,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.danger-hovered",
+      type: "color",
+      value: "#ff8ba2",
+      cssVar: "--cu-color-danger-hovered",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.danger-active",
       type: "color",
       value: "#ff8ba2",
@@ -10104,6 +10374,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#642b39",
       cssVar: "--cu-color-danger-disabled",
       description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle-hovered",
+      type: "color",
+      value: "#65081d",
+      cssVar: "--cu-color-danger-subtle-hovered",
+      description: "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -10135,6 +10414,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning-hovered",
+      type: "color",
+      value: "#945a00",
+      cssVar: "--cu-color-warning-hovered",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning-active",
       type: "color",
       value: "#945a00",
@@ -10158,6 +10446,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c5e32",
       cssVar: "--cu-color-warning-disabled",
       description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle-hovered",
+      type: "color",
+      value: "#9b6615",
+      cssVar: "--cu-color-warning-subtle-hovered",
+      description: "Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -10189,6 +10486,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.info-hovered",
+      type: "color",
+      value: "#b8deff",
+      cssVar: "--cu-color-info-hovered",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.info-active",
       type: "color",
       value: "#b8deff",
@@ -10212,6 +10518,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#36507f",
       cssVar: "--cu-color-info-disabled",
       description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle-hovered",
+      type: "color",
+      value: "#1953bb",
+      cssVar: "--cu-color-info-subtle-hovered",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -10243,6 +10558,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery-hovered",
+      type: "color",
+      value: "#f8f5ff",
+      cssVar: "--cu-color-discovery-hovered",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery-active",
       type: "color",
       value: "#f8f5ff",
@@ -10266,6 +10590,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#4f4472",
       cssVar: "--cu-color-discovery-disabled",
       description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-hovered",
+      type: "color",
+      value: "#37256f",
+      cssVar: "--cu-color-discovery-subtle-hovered",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -10297,6 +10630,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.success-hovered",
+      type: "color",
+      value: "#c7ffe7",
+      cssVar: "--cu-color-success-hovered",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.success-active",
       type: "color",
       value: "#c7ffe7",
@@ -10320,6 +10662,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#376754",
       cssVar: "--cu-color-success-disabled",
       description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-hovered",
+      type: "color",
+      value: "#19774e",
+      cssVar: "--cu-color-success-subtle-hovered",
+      description: "Generated low-emphasis success background for the dark theme (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14349,6 +14700,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.border-hovered",
+      type: "color",
+      value: "#0c0c0d",
+      cssVar: "--cu-color-border-hovered",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.border-active",
       type: "color",
       value: "#0c0c0d",
@@ -14376,11 +14736,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base-hovered",
+      type: "color",
+      value: "#606062",
+      cssVar: "--cu-color-base-hovered",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base-active",
       type: "color",
-      value: "#38383a",
+      value: "#000000",
       cssVar: "--cu-color-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% lighter)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)",
       theme: undefined,
       typography: false
     },
@@ -14399,6 +14768,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#363639",
       cssVar: "--cu-color-base-disabled",
       description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.base-subtle-hovered",
+      type: "color",
+      value: "#a9a9aa",
+      cssVar: "--cu-color-base-subtle-hovered",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -14430,6 +14808,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.danger-hovered",
+      type: "color",
+      value: "#6a0022",
+      cssVar: "--cu-color-danger-hovered",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.danger-active",
       type: "color",
       value: "#6a0022",
@@ -14453,6 +14840,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#5a3c44",
       cssVar: "--cu-color-danger-disabled",
       description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle-hovered",
+      type: "color",
+      value: "#b0435a",
+      cssVar: "--cu-color-danger-subtle-hovered",
+      description: "Generated low-emphasis danger background for the light theme (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -14484,6 +14880,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning-hovered",
+      type: "color",
+      value: "#543400",
+      cssVar: "--cu-color-warning-hovered",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning-active",
       type: "color",
       value: "#543400",
@@ -14507,6 +14912,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#53493b",
       cssVar: "--cu-color-warning-disabled",
       description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle-hovered",
+      type: "color",
+      value: "#8e6a31",
+      cssVar: "--cu-color-warning-subtle-hovered",
+      description: "Generated low-emphasis warning background for the light theme (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -14538,6 +14952,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.info-hovered",
+      type: "color",
+      value: "#00318d",
+      cssVar: "--cu-color-info-hovered",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.info-active",
       type: "color",
       value: "#00318d",
@@ -14561,6 +14984,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#3b4a68",
       cssVar: "--cu-color-info-disabled",
       description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle-hovered",
+      type: "color",
+      value: "#396ac2",
+      cssVar: "--cu-color-info-subtle-hovered",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -14592,6 +15024,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery-hovered",
+      type: "color",
+      value: "#3c2372",
+      cssVar: "--cu-color-discovery-hovered",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery-active",
       type: "color",
       value: "#3c2372",
@@ -14615,6 +15056,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#4a445f",
       cssVar: "--cu-color-discovery-disabled",
       description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-hovered",
+      type: "color",
+      value: "#725ba7",
+      cssVar: "--cu-color-discovery-subtle-hovered",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -14646,6 +15096,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.success-hovered",
+      type: "color",
+      value: "#004933",
+      cssVar: "--cu-color-success-hovered",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.success-active",
       type: "color",
       value: "#004933",
@@ -14669,6 +15128,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#3c504b",
       cssVar: "--cu-color-success-disabled",
       description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-hovered",
+      type: "color",
+      value: "#3b8168",
+      cssVar: "--cu-color-success-subtle-hovered",
+      description: "Generated low-emphasis success background for the light theme (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -18698,6 +19166,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.border-hovered",
+      type: "color",
+      value: "#2e2e30",
+      cssVar: "--cu-color-border-hovered",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.border-active",
       type: "color",
       value: "#2e2e30",
@@ -18725,11 +19202,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base-hovered",
+      type: "color",
+      value: "#6a6a6b",
+      cssVar: "--cu-color-base-hovered",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base-active",
       type: "color",
-      value: "#4d4d4f",
+      value: "#262626",
       cssVar: "--cu-color-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% lighter)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)",
       theme: undefined,
       typography: false
     },
@@ -18748,6 +19234,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#4c4c4e",
       cssVar: "--cu-color-base-disabled",
       description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.base-subtle-hovered",
+      type: "color",
+      value: "#9d9d9d",
+      cssVar: "--cu-color-base-subtle-hovered",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -18779,6 +19274,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.danger-hovered",
+      type: "color",
+      value: "#75223c",
+      cssVar: "--cu-color-danger-hovered",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.danger-active",
       type: "color",
       value: "#75223c",
@@ -18802,6 +19306,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#655156",
       cssVar: "--cu-color-danger-disabled",
       description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle-hovered",
+      type: "color",
+      value: "#9a5d6a",
+      cssVar: "--cu-color-danger-subtle-hovered",
+      description: "Generated low-emphasis danger background for the light theme (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -18833,6 +19346,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning-hovered",
+      type: "color",
+      value: "#694d1e",
+      cssVar: "--cu-color-warning-hovered",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning-active",
       type: "color",
       value: "#694d1e",
@@ -18856,6 +19378,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#605950",
       cssVar: "--cu-color-warning-disabled",
       description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle-hovered",
+      type: "color",
+      value: "#856f4d",
+      cssVar: "--cu-color-warning-subtle-hovered",
+      description: "Generated low-emphasis warning background for the light theme (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -18887,6 +19418,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.info-hovered",
+      type: "color",
+      value: "#274988",
+      cssVar: "--cu-color-info-hovered",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.info-active",
       type: "color",
       value: "#274988",
@@ -18910,6 +19450,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#515a6e",
       cssVar: "--cu-color-info-disabled",
       description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle-hovered",
+      type: "color",
+      value: "#5873a4",
+      cssVar: "--cu-color-info-subtle-hovered",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -18941,6 +19490,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery-hovered",
+      type: "color",
+      value: "#514075",
+      cssVar: "--cu-color-discovery-hovered",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery-active",
       type: "color",
       value: "#514075",
@@ -18964,6 +19522,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#5a5768",
       cssVar: "--cu-color-discovery-disabled",
       description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-hovered",
+      type: "color",
+      value: "#786c96",
+      cssVar: "--cu-color-discovery-subtle-hovered",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -18995,6 +19562,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.success-hovered",
+      type: "color",
+      value: "#1d634e",
+      cssVar: "--cu-color-success-hovered",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.success-active",
       type: "color",
       value: "#1d634e",
@@ -19018,6 +19594,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#505e5b",
       cssVar: "--cu-color-success-disabled",
       description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-hovered",
+      type: "color",
+      value: "#537d6e",
+      cssVar: "--cu-color-success-subtle-hovered",
+      description: "Generated low-emphasis success background for the light theme (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -23047,6 +23632,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.border-hovered",
+      type: "color",
+      value: "#000000",
+      cssVar: "--cu-color-border-hovered",
+      description: "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.border-active",
       type: "color",
       value: "#000000",
@@ -23074,11 +23668,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.base-hovered",
+      type: "color",
+      value: "#4e4e59",
+      cssVar: "--cu-color-base-hovered",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.base-active",
       type: "color",
-      value: "#17171b",
+      value: "#000000",
       cssVar: "--cu-color-base-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, 10% lighter)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)",
       theme: undefined,
       typography: false
     },
@@ -23097,6 +23700,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#151519",
       cssVar: "--cu-color-base-disabled",
       description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.base-subtle-hovered",
+      type: "color",
+      value: "#b9b9c0",
+      cssVar: "--cu-color-base-subtle-hovered",
+      description: "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 12% darker)",
       theme: undefined,
       typography: false
     },
@@ -23128,6 +23740,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.danger-hovered",
+      type: "color",
+      value: "#27000c",
+      cssVar: "--cu-color-danger-hovered",
+      description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.danger-active",
       type: "color",
       value: "#27000c",
@@ -23151,6 +23772,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#44232c",
       cssVar: "--cu-color-danger-disabled",
       description: "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.danger-subtle-hovered",
+      type: "color",
+      value: "#c5294a",
+      cssVar: "--cu-color-danger-subtle-hovered",
+      description: "Generated low-emphasis danger background for the light theme (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -23182,6 +23812,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning-hovered",
+      type: "color",
+      value: "#070400",
+      cssVar: "--cu-color-warning-hovered",
+      description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning-active",
       type: "color",
       value: "#070400",
@@ -23205,6 +23844,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#3a3021",
       cssVar: "--cu-color-warning-disabled",
       description: "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.warning-subtle-hovered",
+      type: "color",
+      value: "#8a5e18",
+      cssVar: "--cu-color-warning-subtle-hovered",
+      description: "Generated low-emphasis warning background for the light theme (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -23236,6 +23884,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.info-hovered",
+      type: "color",
+      value: "#001f5a",
+      cssVar: "--cu-color-info-hovered",
+      description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.info-active",
       type: "color",
       value: "#001f5a",
@@ -23259,6 +23916,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#233457",
       cssVar: "--cu-color-info-disabled",
       description: "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.info-subtle-hovered",
+      type: "color",
+      value: "#1b61df",
+      cssVar: "--cu-color-info-subtle-hovered",
+      description: "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -23290,6 +23956,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.discovery-hovered",
+      type: "color",
+      value: "#240c59",
+      cssVar: "--cu-color-discovery-hovered",
+      description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.discovery-active",
       type: "color",
       value: "#240c59",
@@ -23313,6 +23988,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#342c4d",
       cssVar: "--cu-color-discovery-disabled",
       description: "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.discovery-subtle-hovered",
+      type: "color",
+      value: "#6b48bb",
+      cssVar: "--cu-color-discovery-subtle-hovered",
+      description: "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },
@@ -23344,6 +24028,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.success-hovered",
+      type: "color",
+      value: "#000000",
+      cssVar: "--cu-color-success-hovered",
+      description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.success-active",
       type: "color",
       value: "#000000",
@@ -23367,6 +24060,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#213731",
       cssVar: "--cu-color-success-disabled",
       description: "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.success-subtle-hovered",
+      type: "color",
+      value: "#237b5b",
+      cssVar: "--cu-color-success-subtle-hovered",
+      description: "Generated low-emphasis success background for the light theme (hovered, 25% darker)",
       theme: undefined,
       typography: false
     },

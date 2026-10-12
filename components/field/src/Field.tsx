@@ -283,7 +283,7 @@ const FieldValidationTextImpl = createStyledHOC(
         {...rest}
         size={size}
         // Track the control's border so the message reads as part of the field.
-        color={`${disabled ? "disabled" : focused ? "active" : "accent"} group-hover/field:${disabled ? "disabled" : focused ? "active" : "active"}`}
+        color={`${disabled ? "disabled" : focused ? "active" : "accent"} group-hover/field:${disabled ? "disabled" : focused ? "active" : "hovered"}`}
         messages={messages}
         disabled={disabled}>
         {children}
@@ -375,7 +375,7 @@ const FieldGroupInnerImpl = createStyledHOC(
           {clearable && Boolean(formattedValue) && (
             <FieldThemeIcon position="end" onClick={handleClear}>
               <X
-                color={`${disabled ? "disabled" : "accent"} group-hover/field:${disabled ? "disabled" : "active"}`}
+                color={`${disabled ? "disabled" : "accent"} group-hover/field:${disabled ? "disabled" : "hovered"}`}
               />
             </FieldThemeIcon>
           )}
@@ -592,7 +592,7 @@ const FieldDetailsImpl = createStyledHOC(
         {...rest}
         color={`${
           disabled ? "disabled" : theme !== "base" ? "accent" : "secondary"
-        } group-hover/field:${disabled ? "disabled" : "active"}`}
+        } group-hover/field:${disabled ? "disabled" : "hovered"}`}
         theme={theme}
         controlSize={size}
         disabled={disabled}>
@@ -1367,7 +1367,7 @@ const FieldThemeIcon = createStyledHOC(
           transition: "200ms",
           color: `${
             disabled ? "disabled" : focused ? "active" : "accent"
-          } group-hover/field:${disabled ? "disabled" : "active"}`
+          } group-hover/field:${disabled ? "disabled" : "hovered"}`
         })}
       </InnerFieldThemeIcon>
     );

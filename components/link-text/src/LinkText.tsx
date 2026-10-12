@@ -65,30 +65,30 @@ const LinkTextFrame = styled(SizableText, {
 
     variant: {
       base: {
-        color: "primary hover:active press:active focus:active",
-        textDecorationColor: "primary hover:active press:active focus:active"
+        color: "primary hover:hovered press:active focus:active",
+        textDecorationColor: "primary hover:hovered press:active focus:active"
       },
       baseInverse: {
-        color: "accent hover:active press:active focus:active",
-        textDecorationColor: "accent hover:active press:active focus:active"
+        color: "accent hover:hovered press:active focus:active",
+        textDecorationColor: "accent hover:hovered press:active focus:active"
       },
 
       mixed: {
-        color: "accent hover:active press:active focus:active",
-        textDecorationColor: "primary hover:active press:active focus:active"
+        color: "accent hover:hovered press:active focus:active",
+        textDecorationColor: "primary hover:hovered press:active focus:active"
       },
       mixedInverse: {
-        color: "primary hover:active press:active focus:active",
-        textDecorationColor: "accent hover:active press:active focus:active"
+        color: "primary hover:hovered press:active focus:active",
+        textDecorationColor: "accent hover:hovered press:active focus:active"
       },
 
       themed: {
-        color: "accent hover:active press:active focus:active",
-        textDecorationColor: "accent hover:active press:active focus:active"
+        color: "accent hover:hovered press:active focus:active",
+        textDecorationColor: "accent hover:hovered press:active focus:active"
       },
       themedInverse: {
-        color: "accent hover:active press:active focus:active",
-        textDecorationColor: "accent hover:active press:active focus:active"
+        color: "accent hover:hovered press:active focus:active",
+        textDecorationColor: "accent hover:hovered press:active focus:active"
       },
 
       // Secondary ink at rest so the link recedes into running copy, then the
@@ -107,8 +107,8 @@ const LinkTextFrame = styled(SizableText, {
 
     inverse: {
       true: {
-        color: "hover:active",
-        textDecorationColor: "hover:active"
+        color: "hover:hovered",
+        textDecorationColor: "hover:hovered"
       }
     },
 

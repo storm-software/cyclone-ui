@@ -82,7 +82,7 @@ const CardFrame = styled(Container, {
   overflow: "hidden",
   borderRadius: "card",
   borderColor:
-    "accent hover:active press:active focus-visible:active",
+    "accent hover:hovered press:active focus-visible:active",
   cursor: "pointer",
   backgroundColor: "surfaceElevated hover:tertiary",
   position: "relative"
@@ -342,14 +342,14 @@ const CardLinkImpl = createStyledHOC(
           group={false}
           inverse={inverse}
           zIndex="30"
-          color="group-hover/card:active"
-          textDecorationColor="group-hover/card:active">
+          color="group-hover/card:hovered"
+          textDecorationColor="group-hover/card:hovered">
           {children}
         </Link>
         <View transition="200ms" x="0 group-hover/card:10px">
           <CardLinkArrowRight
             height="4xl"
-            color="group-hover/card:active"
+            color="group-hover/card:hovered"
           />
         </View>
       </XStack>

@@ -813,7 +813,7 @@ function YearSlider() {
           userSelect="text"
           textAlign="center"
           cursor="pointer"
-          color="accent hover:active"
+          color="accent hover:hovered"
           tabIndex={0}>
           {year}
         </CalendarHeadingSmallText>
@@ -880,7 +880,7 @@ const CalendarHeader = () => {
           transition="200ms"
           userSelect="auto"
           cursor="pointer"
-          color="accent hover:active"
+          color="accent hover:hovered"
           onPress={() => setHeader("year")}
           tabIndex={0}>
           {year}
@@ -890,7 +890,7 @@ const CalendarHeader = () => {
           transition="200ms"
           userSelect="auto"
           cursor="pointer"
-          color="accent hover:active"
+          color="accent hover:hovered"
           onPress={() => setHeader("month")}
           tabIndex={0}>
           {month}

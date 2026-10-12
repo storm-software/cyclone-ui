@@ -521,7 +521,7 @@ const TagPickerImpl = createStyledHOC(
       ? "disabled"
       : active
         ? focusColor
-        : "active";
+        : "hovered";
     const borderColor = `${active ? focusColor : idleColor} hover:${hoverColor} group-hover/field:${hoverColor}`;
 
     return (

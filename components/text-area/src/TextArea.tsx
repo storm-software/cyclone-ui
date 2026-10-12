@@ -65,7 +65,7 @@ const TextAreaFrame = styled(InputValue, {
   backgroundColor: "surfaceElevated",
   color: "accent",
   borderWidth: 1,
-  borderColor: "border hover:active focus-visible:active",
+  borderColor: "border hover:hovered focus-visible:active",
   borderRadius: "control",
   boxShadow: "none focus-visible:ringOffset",
   outlineWidth: 0,
@@ -94,7 +94,7 @@ const TextAreaFrame = styled(InputValue, {
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:active"
+        borderColor: "accent hover:hovered"
       }
     },
 
@@ -104,7 +104,7 @@ const TextAreaFrame = styled(InputValue, {
         backgroundColor: "transparent",
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "border hover:active focus-visible:accent",
+        borderColor: "border hover:hovered focus-visible:accent",
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         boxShadow: "none focus-visible:none"
@@ -212,7 +212,7 @@ export const TextArea = createStyledHOC(
     const idleColor = hasValidationMessage ? "accent" : "border";
     const focusColor = hasValidationMessage ? "active" : "borderActive";
     const isFocused = focusedProp ?? focused;
-    const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "disabled" : isFocused ? focusColor : "active"} focus-visible:${focusColor} group-hover/field:${disabled ? "disabled" : "active"}`;
+    const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "disabled" : isFocused ? focusColor : "hovered"} focus-visible:${focusColor} group-hover/field:${disabled ? "disabled" : "hovered"}`;
     const handleFocus = useCallback(
       (event: TextAreaFocusEvent) => {
         setActive(true);

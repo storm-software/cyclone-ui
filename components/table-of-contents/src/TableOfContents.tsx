@@ -179,7 +179,7 @@ const TableOfContentsLink = createStyledHOC(
 const TableOfContentsLinkText = styled(BodyText, {
   render: "span",
   transition: "color 160ms ease-out",
-  color: "inactive group-hover/tableOfContentsItem:active",
+  color: "inactive group-hover/tableOfContentsItem:hovered",
   fontWeight: "normal",
   variants: {
     active: {

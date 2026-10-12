@@ -138,6 +138,14 @@ const getTextColor = (
       : "onAccent";
 };
 
+// The hovered counterpart of a variant color; the `on*` text colors have none.
+const getHoveredColor = (color: string) =>
+  color === "accent"
+    ? "hovered"
+    : color === "subtle"
+      ? "subtleHovered"
+      : undefined;
+
 const TagFrame = styled(View, {
   displayName: TAG_NAME,
   context: TagContext,
@@ -198,15 +206,17 @@ const TagFrame = styled(View, {
   if (outlined) {
     return {
       backgroundColor: pressable
-        ? "transparent hover:subtleActive"
+        ? "transparent hover:subtleHovered"
         : "transparent",
-      borderColor: pressable ? `${color} hover:${color}Hover` : color,
+      borderColor: pressable
+        ? `${color} hover:${getHoveredColor(color)}`
+        : color,
       borderWidth: 2
     };
   }
 
   return {
-    backgroundColor: pressable ? `${color} hover:subtleActive` : color
+    backgroundColor: pressable ? `${color} hover:subtleHovered` : color
   };
 });
 
@@ -245,6 +255,7 @@ const TagText = createStyledHOC(
       context.outlined
     );
     const baseColor = color ?? themeColor;
+    const hoveredColor = getHoveredColor(themeColor);
 
     return (
       <TagTextFrame
@@ -254,9 +265,10 @@ const TagText = createStyledHOC(
         color={
           // A caller-authored `hover:` clause wins, like v2's caller `hoverStyle`.
           context.pressable &&
+          hoveredColor &&
           typeof baseColor === "string" &&
           !baseColor.includes("hover:")
-            ? `${baseColor} hover:${themeColor}Hover`
+            ? `${baseColor} hover:${hoveredColor}`
             : baseColor
         }>
         {children}
@@ -457,10 +469,10 @@ const TagButtonFrame = styled(View, {
   borderRadius: 1000_000_000,
   // No `press:` background color: a press draws a ripple from the press
   // point instead.
-  backgroundColor: "accent hover:subtleActive focus:surfaceElevated",
+  backgroundColor: "accent hover:subtleHovered focus:surfaceElevated",
   justifyContent: "center",
   alignItems: "center",
-  borderColor: "hover:active",
+  borderColor: "hover:hovered",
   variants: {
     size: styled.dynamic<TagSize>(),
     // Styled by the `.resolve` below because the offset depends on `size`.
