@@ -885,8 +885,8 @@
   --storm-blur-xl: 24px; /** Extra large blur (24px) */
   --storm-blur-2xl: 40px; /** 2X large blur (40px) */
   --storm-blur-3xl: 64px; /** 3X large blur (64px) */
-  --storm-ring-base: 0px 0px 0px 3px #f1f1f133; /** Generated base 3px focus ring with no gap */
-  --storm-ring-base-subtle: 0px 0px 0px 1px #f1f1f133; /** Generated base 1px hairline focus ring with no gap */
+  --storm-ring-base: 0px 0px 0px 3px #f1f1f11a; /** Generated base 3px focus ring with no gap */
+  --storm-ring-base-subtle: 0px 0px 0px 1px #f1f1f11a; /** Generated base 1px hairline focus ring with no gap */
   --storm-ring-danger: 0px 0px 0px 3px #cf2d5626; /** Generated danger 3px focus ring with no gap */
   --storm-ring-danger-subtle: 0px 0px 0px 1px #cf2d5626; /** Generated danger 1px hairline focus ring with no gap */
   --storm-ring-warning: 0px 0px 0px 3px #f7ac2326; /** Generated warning 3px focus ring with no gap */
@@ -990,6 +990,8 @@
   --storm-typography-title-xs: var(--storm-font-weight-medium) var(--storm-font-size-xxs)/var(--storm-line-height-snug) 'Storm Sans'; /** Extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border. */
   --storm-typography-body-md: var(--storm-font-weight-normal) var(--storm-font-size-md)/var(--storm-line-height-snug) 'Storm Sans'; /** Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. */
   --storm-typography-body-sm: var(--storm-font-weight-medium) var(--storm-font-size-sm)/var(--storm-line-height-snug) 'Storm Sans'; /** Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. */
+  --storm-typography-body-md-bold: var(--storm-font-weight-bold) var(--storm-font-size-md)/var(--storm-line-height-snug) 'Storm Sans'; /** Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. */
+  --storm-typography-body-sm-bold: var(--storm-font-weight-bold) var(--storm-font-size-sm)/var(--storm-line-height-snug) 'Storm Sans'; /** Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. */
   --storm-typography-caption: italic var(--storm-font-weight-normal) var(--storm-font-size-sm)/var(--storm-line-height-snug) 'Storm Sans'; /** Caption style: Storm Sans regular italic at 16px (`font-size.sm`) with tight line height. Use it for helper text, annotations and small supporting labels. Used by Field helper and validation text, ValidationText, EyebrowText, Slider value labels and the CodeBlock header file name. */
   --storm-typography-eyebrow: var(--storm-font-weight-extrabold) var(--storm-font-size-md)/var(--storm-line-height-tight) 'Google Sans Code'; /** Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. */
   --storm-typography-code: var(--storm-font-weight-normal) var(--storm-font-size-lg)/var(--storm-line-height-snug) 'Google Sans Code'; /** Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion. */
@@ -999,8 +1001,8 @@
   --storm-color-info-accent: var(--storm-color-info); /** Alias of info for the info theme */
   --storm-color-discovery-accent: var(--storm-color-discovery); /** Alias of discovery for the discovery theme */
   --storm-color-success-accent: var(--storm-color-success); /** Alias of success for the success theme */
-  --storm-ring-base-offset: 0px 0px 0px 3px var(--storm-color-surface-elevated), 0px 0px 0px 6px #f1f1f133; /** Generated base 3px focus ring with a 3px gap */
-  --storm-ring-base-subtle-offset: 0px 0px 0px 3px var(--storm-color-surface-elevated), 0px 0px 0px 4px #f1f1f133; /** Generated base 1px focus ring with a 3px gap */
+  --storm-ring-base-offset: 0px 0px 0px 3px var(--storm-color-surface-elevated), 0px 0px 0px 6px #f1f1f11a; /** Generated base 3px focus ring with a 3px gap */
+  --storm-ring-base-subtle-offset: 0px 0px 0px 3px var(--storm-color-surface-elevated), 0px 0px 0px 4px #f1f1f11a; /** Generated base 1px focus ring with a 3px gap */
   --storm-ring-danger-offset: 0px 0px 0px 3px var(--storm-color-surface-elevated), 0px 0px 0px 6px #cf2d5626; /** Generated danger 3px focus ring with a 3px gap */
   --storm-ring-danger-subtle-offset: 0px 0px 0px 3px var(--storm-color-surface-elevated), 0px 0px 0px 4px #cf2d5626; /** Generated danger 1px focus ring with a 3px gap */
   --storm-ring-warning-offset: 0px 0px 0px 3px var(--storm-color-surface-elevated), 0px 0px 0px 6px #f7ac2326; /** Generated warning 3px focus ring with a 3px gap */

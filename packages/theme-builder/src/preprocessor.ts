@@ -592,7 +592,7 @@ const COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
 /** OKLCH chroma below which a color uses the low-saturation state variants. */
 const LOW_SATURATION_CHROMA = 0.02;
 
-const LOW_SATURATION_RING_OPACITY = 0.2;
+const LOW_SATURATION_RING_OPACITY = 0.1;
 const SATURATED_RING_OPACITY = 0.15;
 const MINIMUM_SUBTLE_CONTRAST_RATIO = 7.25;
 const MINIMUM_INVERSE_CONTRAST_RATIO = 2;

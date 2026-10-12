@@ -2137,7 +2137,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-ring-base",
       "type": "shadow",
       "category": "shadow",
-      "value": "0px 0px 0px 3px #1f1f2133"
+      "value": "0px 0px 0px 3px #1f1f211a"
     },
     {
       "path": "ring.base-offset",
@@ -2150,7 +2150,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-ring-base-subtle",
       "type": "shadow",
       "category": "shadow",
-      "value": "0px 0px 0px 1px #1f1f2133"
+      "value": "0px 0px 0px 1px #1f1f211a"
     },
     {
       "path": "ring.base-subtle-offset",
@@ -3359,8 +3359,20 @@ export const manifest: DesignSystemManifest = {
       "category": "typography"
     },
     {
+      "path": "typography.body-md-bold",
+      "cssVar": "--storm-typography-body-md-bold",
+      "type": "typography",
+      "category": "typography"
+    },
+    {
       "path": "typography.body-sm",
       "cssVar": "--storm-typography-body-sm",
+      "type": "typography",
+      "category": "typography"
+    },
+    {
+      "path": "typography.body-sm-bold",
+      "cssVar": "--storm-typography-body-sm-bold",
       "type": "typography",
       "category": "typography"
     },
@@ -3549,6 +3561,13 @@ export const manifest: DesignSystemManifest = {
       "roles": [
         "link"
       ]
+    },
+    {
+      "name": "@cyclone-ui/article-page",
+      "jsx": [
+        "ArticlePage"
+      ],
+      "roles": []
     },
     {
       "name": "@cyclone-ui/badge",

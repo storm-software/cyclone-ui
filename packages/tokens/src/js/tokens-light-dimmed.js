@@ -14072,6 +14072,72 @@ module.exports = {
       },
       path: ["typography", "body-sm"],
     },
+    "body-md-bold": {
+      key: "{typography.body-md-bold}",
+      $type: "typography",
+      $description:
+        "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
+      $value: {
+        fontFamily: "Storm Sans",
+        fontWeight: 700,
+        fontSize: "1.125rem",
+        lineHeight: 1.125,
+      },
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
+      isSource: true,
+      original: {
+        $type: "typography",
+        $description:
+          "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
+        $value: {
+          fontFamily: "Storm Sans",
+          fontWeight: "{font-weight.bold}",
+          fontSize: "{font-size.md}",
+          lineHeight: "{line-height.snug}",
+        },
+        key: "{typography.body-md-bold}",
+      },
+      name: "TypographyBodyMdBold",
+      attributes: {
+        category: "typography",
+        type: "body-md-bold",
+      },
+      path: ["typography", "body-md-bold"],
+    },
+    "body-sm-bold": {
+      key: "{typography.body-sm-bold}",
+      $type: "typography",
+      $description:
+        "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
+      $value: {
+        fontFamily: "Storm Sans",
+        fontWeight: 700,
+        fontSize: "1rem",
+        lineHeight: 1.125,
+      },
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
+      isSource: true,
+      original: {
+        $type: "typography",
+        $description:
+          "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
+        $value: {
+          fontFamily: "Storm Sans",
+          fontWeight: "{font-weight.bold}",
+          fontSize: "{font-size.sm}",
+          lineHeight: "{line-height.snug}",
+        },
+        key: "{typography.body-sm-bold}",
+      },
+      name: "TypographyBodySmBold",
+      attributes: {
+        category: "typography",
+        type: "body-sm-bold",
+      },
+      path: ["typography", "body-sm-bold"],
+    },
     caption: {
       key: "{typography.caption}",
       $type: "typography",
@@ -14181,7 +14247,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#1f1f2133",
+          color: "#1f1f211a",
           offsetX: {
             value: 0,
             unit: "px",
@@ -14206,7 +14272,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "#1f1f2133",
+            color: "#1f1f211a",
             offsetX: {
               value: 0,
               unit: "px",
@@ -14241,7 +14307,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#1f1f2133",
+          color: "#1f1f211a",
           offsetX: {
             value: 0,
             unit: "px",
@@ -14266,7 +14332,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "#1f1f2133",
+            color: "#1f1f211a",
             offsetX: {
               value: 0,
               unit: "px",
@@ -14320,7 +14386,7 @@ module.exports = {
           },
         },
         {
-          color: "#1f1f2133",
+          color: "#1f1f211a",
           offsetX: {
             value: 0,
             unit: "px",
@@ -14364,7 +14430,7 @@ module.exports = {
             },
           },
           {
-            color: "#1f1f2133",
+            color: "#1f1f211a",
             offsetX: {
               value: 0,
               unit: "px",
@@ -14418,7 +14484,7 @@ module.exports = {
           },
         },
         {
-          color: "#1f1f2133",
+          color: "#1f1f211a",
           offsetX: {
             value: 0,
             unit: "px",
@@ -14462,7 +14528,7 @@ module.exports = {
             },
           },
           {
-            color: "#1f1f2133",
+            color: "#1f1f211a",
             offsetX: {
               value: 0,
               unit: "px",

@@ -48,6 +48,10 @@
       "import": "./dist/TableOfContents.mjs",
       "require": "./dist/TableOfContents.cjs"
     },
+    "./utilities": {
+      "import": "./dist/utilities.mjs",
+      "require": "./dist/utilities.cjs"
+    },
     "./*": "./*"
   }
 }

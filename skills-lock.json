@@ -67,6 +67,18 @@
       "skillPath": "skills/shell-shock-best-practices/SKILL.md",
       "computedHash": "6147e59888c6c11ffc83c096e20c307bab941d3adc617604463652d8438d25a2"
     },
+    "sourcebook-adr": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-adr/SKILL.md",
+      "computedHash": "2f34fc6a69381d44f9e91865fd707f3dbd8425ea9bdbdc6a37a9978e6ad625ce"
+    },
+    "sourcebook-editor": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-editor/SKILL.md",
+      "computedHash": "a3d4a29e1183dfb420c4902de6cde205b32b6ae63d0cbc166e969949a3435673"
+    },
     "storybook": {
       "source": "dalestudy/skills",
       "sourceType": "github",

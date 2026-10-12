@@ -355,10 +355,10 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `ring.base` | `shadow` | `0px 0px 0px 3px #1f1f2133` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f2133` | Generated base 3px focus ring with a 3px gap |
-| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f2133` | Generated base 1px hairline focus ring with no gap |
-| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f2133` | Generated base 1px focus ring with a 3px gap |
+| `ring.base` | `shadow` | `0px 0px 0px 3px #1f1f211a` | Generated base 3px focus ring with no gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f211a` | Generated base 3px focus ring with a 3px gap |
+| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f211a` | Generated base 1px hairline focus ring with no gap |
+| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f211a` | Generated base 1px focus ring with a 3px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e26` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e26` | Generated danger 1px hairline focus ring with no gap |
@@ -557,7 +557,9 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `typography.body-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
+| `typography.body-md-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
 | `typography.body-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.medium}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
+| `typography.body-sm-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
 | `typography.caption` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}","fontStyle":"italic"}` | Caption style: Storm Sans regular italic at 16px (`font-size.sm`) with tight line height. Use it for helper text, annotations and small supporting labels. Used by Field helper and validation text, ValidationText, EyebrowText, Slider value labels and the CodeBlock header file name. |
 | `typography.code` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.normal}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion. |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest display style: Storm Sans semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |
@@ -944,10 +946,10 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `ring.base` | `shadow` | `0px 0px 0px 3px #1f1f2133` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f2133` | Generated base 3px focus ring with a 3px gap |
-| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f2133` | Generated base 1px hairline focus ring with no gap |
-| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f2133` | Generated base 1px focus ring with a 3px gap |
+| `ring.base` | `shadow` | `0px 0px 0px 3px #1f1f211a` | Generated base 3px focus ring with no gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f211a` | Generated base 3px focus ring with a 3px gap |
+| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f211a` | Generated base 1px hairline focus ring with no gap |
+| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f211a` | Generated base 1px focus ring with a 3px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e26` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e26` | Generated danger 1px hairline focus ring with no gap |
@@ -1146,7 +1148,9 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `typography.body-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
+| `typography.body-md-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
 | `typography.body-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.medium}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
+| `typography.body-sm-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
 | `typography.caption` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}","fontStyle":"italic"}` | Caption style: Storm Sans regular italic at 16px (`font-size.sm`) with tight line height. Use it for helper text, annotations and small supporting labels. Used by Field helper and validation text, ValidationText, EyebrowText, Slider value labels and the CodeBlock header file name. |
 | `typography.code` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.normal}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion. |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest display style: Storm Sans semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |
@@ -1533,10 +1537,10 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `ring.base` | `shadow` | `0px 0px 0px 3px #1f1f2133` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f2133` | Generated base 3px focus ring with a 3px gap |
-| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f2133` | Generated base 1px hairline focus ring with no gap |
-| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f2133` | Generated base 1px focus ring with a 3px gap |
+| `ring.base` | `shadow` | `0px 0px 0px 3px #1f1f211a` | Generated base 3px focus ring with no gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f211a` | Generated base 3px focus ring with a 3px gap |
+| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f211a` | Generated base 1px hairline focus ring with no gap |
+| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f211a` | Generated base 1px focus ring with a 3px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e26` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #8e223e26` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e26` | Generated danger 1px hairline focus ring with no gap |
@@ -1735,7 +1739,9 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `typography.body-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
+| `typography.body-md-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
 | `typography.body-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.medium}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
+| `typography.body-sm-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
 | `typography.caption` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}","fontStyle":"italic"}` | Caption style: Storm Sans regular italic at 16px (`font-size.sm`) with tight line height. Use it for helper text, annotations and small supporting labels. Used by Field helper and validation text, ValidationText, EyebrowText, Slider value labels and the CodeBlock header file name. |
 | `typography.code` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.normal}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion. |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest display style: Storm Sans semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |
@@ -2122,10 +2128,10 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `ring.base` | `shadow` | `0px 0px 0px 3px #f1f1f133` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f133` | Generated base 3px focus ring with a 3px gap |
-| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f133` | Generated base 1px hairline focus ring with no gap |
-| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f133` | Generated base 1px focus ring with a 3px gap |
+| `ring.base` | `shadow` | `0px 0px 0px 3px #f1f1f11a` | Generated base 3px focus ring with no gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f11a` | Generated base 3px focus ring with a 3px gap |
+| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f11a` | Generated base 1px hairline focus ring with no gap |
+| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f11a` | Generated base 1px focus ring with a 3px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #cf2d5626` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #cf2d5626` | Generated danger 1px hairline focus ring with no gap |
@@ -2324,7 +2330,9 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `typography.body-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
+| `typography.body-md-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
 | `typography.body-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.medium}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
+| `typography.body-sm-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
 | `typography.caption` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}","fontStyle":"italic"}` | Caption style: Storm Sans regular italic at 16px (`font-size.sm`) with tight line height. Use it for helper text, annotations and small supporting labels. Used by Field helper and validation text, ValidationText, EyebrowText, Slider value labels and the CodeBlock header file name. |
 | `typography.code` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.normal}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion. |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest display style: Storm Sans semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |
@@ -2711,10 +2719,10 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `ring.base` | `shadow` | `0px 0px 0px 3px #f1f1f133` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f133` | Generated base 3px focus ring with a 3px gap |
-| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f133` | Generated base 1px hairline focus ring with no gap |
-| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f133` | Generated base 1px focus ring with a 3px gap |
+| `ring.base` | `shadow` | `0px 0px 0px 3px #f1f1f11a` | Generated base 3px focus ring with no gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f11a` | Generated base 3px focus ring with a 3px gap |
+| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f11a` | Generated base 1px hairline focus ring with no gap |
+| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f11a` | Generated base 1px focus ring with a 3px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #cf2d5626` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #cf2d5626` | Generated danger 1px hairline focus ring with no gap |
@@ -2913,7 +2921,9 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `typography.body-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
+| `typography.body-md-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
 | `typography.body-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.medium}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
+| `typography.body-sm-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
 | `typography.caption` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}","fontStyle":"italic"}` | Caption style: Storm Sans regular italic at 16px (`font-size.sm`) with tight line height. Use it for helper text, annotations and small supporting labels. Used by Field helper and validation text, ValidationText, EyebrowText, Slider value labels and the CodeBlock header file name. |
 | `typography.code` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.normal}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion. |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest display style: Storm Sans semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |
@@ -3300,10 +3310,10 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `ring.base` | `shadow` | `0px 0px 0px 3px #f1f1f133` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f133` | Generated base 3px focus ring with a 3px gap |
-| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f133` | Generated base 1px hairline focus ring with no gap |
-| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f133` | Generated base 1px focus ring with a 3px gap |
+| `ring.base` | `shadow` | `0px 0px 0px 3px #f1f1f11a` | Generated base 3px focus ring with no gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f11a` | Generated base 3px focus ring with a 3px gap |
+| `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f11a` | Generated base 1px hairline focus ring with no gap |
+| `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f11a` | Generated base 1px focus ring with a 3px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #cf2d5626` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #cf2d5626` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #cf2d5626` | Generated danger 1px hairline focus ring with no gap |
@@ -3502,7 +3512,9 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `typography.body-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
+| `typography.body-md-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. |
 | `typography.body-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.medium}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
+| `typography.body-sm-bold` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. |
 | `typography.caption` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.normal}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}","fontStyle":"italic"}` | Caption style: Storm Sans regular italic at 16px (`font-size.sm`) with tight line height. Use it for helper text, annotations and small supporting labels. Used by Field helper and validation text, ValidationText, EyebrowText, Slider value labels and the CodeBlock header file name. |
 | `typography.code` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.normal}","fontSize":"{font-size.lg}","lineHeight":"{line-height.snug}"}` | Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion. |
 | `typography.display-hero` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest display style: Storm Sans semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |

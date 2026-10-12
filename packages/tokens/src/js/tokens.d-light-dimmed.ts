@@ -557,6 +557,8 @@ declare const tokens: {
     "title-xs": DesignToken;
     "body-md": DesignToken;
     "body-sm": DesignToken;
+    "body-md-bold": DesignToken;
+    "body-sm-bold": DesignToken;
     caption: DesignToken;
     eyebrow: DesignToken;
     code: DesignToken;

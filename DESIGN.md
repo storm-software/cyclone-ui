@@ -177,6 +177,16 @@ typography:
     fontSize: "1rem"
     fontWeight: "500"
     lineHeight: "1.125"
+  body-md-bold:
+    fontFamily: "Storm Sans"
+    fontSize: "1.125rem"
+    fontWeight: "700"
+    lineHeight: "1.125"
+  body-sm-bold:
+    fontFamily: "Storm Sans"
+    fontSize: "1rem"
+    fontWeight: "700"
+    lineHeight: "1.125"
   caption:
     fontFamily: "Storm Sans"
     fontSize: "1rem"
@@ -267,7 +277,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 108 color tokens, 16 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 108 color tokens, 18 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -395,6 +405,8 @@ Cyclone UI design tokens — 108 color tokens, 16 typography tokens, 70 spacing 
 - **title-xs:** fontFamily: Storm Sans, fontSize: 0.75rem, fontWeight: 500, lineHeight: 1.125
 - **body-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.125
 - **body-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 500, lineHeight: 1.125
+- **body-md-bold:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 700, lineHeight: 1.125
+- **body-sm-bold:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 700, lineHeight: 1.125
 - **caption:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.125
 - **eyebrow:** fontFamily: Google Sans Code, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.0575
 - **code:** fontFamily: Google Sans Code, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.125

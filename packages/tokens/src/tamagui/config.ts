@@ -361,10 +361,10 @@ const childThemeExtras: {
       inactive: "#030303",
       onAccent: "#FAFAFA",
       onSubtle: "#151518",
-      ring: "0px 0px 0px 3px #1f1f2133",
-      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #1f1f2133",
-      ringSubtle: "0px 0px 0px 1px #1f1f2133",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #1f1f2133",
+      ring: "0px 0px 0px 3px #1f1f211a",
+      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #1f1f211a",
+      ringSubtle: "0px 0px 0px 1px #1f1f211a",
+      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #1f1f211a",
       subtle: tokens.color.neutral5.val,
       subtleActive: "#a9a9aa",
       subtleDisabled: "#727275",
@@ -471,10 +471,10 @@ const childThemeExtras: {
       inactive: "#808080",
       onAccent: "#151518",
       onSubtle: "#FAFAFA",
-      ring: "0px 0px 0px 3px #f1f1f133",
-      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #f1f1f133",
-      ringSubtle: "0px 0px 0px 1px #f1f1f133",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #f1f1f133",
+      ring: "0px 0px 0px 3px #f1f1f11a",
+      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #f1f1f11a",
+      ringSubtle: "0px 0px 0px 1px #f1f1f11a",
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #f1f1f11a",
       subtle: tokens.color.neutral10.val,
       subtleActive: "#535358",
       subtleDisabled: "#444447",
@@ -719,6 +719,27 @@ const bodyMdFont = createFont({
   }
 });
 
+const bodyMdBoldFont = createFont({
+  family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
+  size: {
+    md: 18,
+    true: 18
+  },
+  lineHeight: {
+    md: 20.25,
+    snug: 20.25,
+    true: 20.25
+  },
+  weight: {
+    bold: "700",
+    md: "700",
+    true: "700"
+  },
+  face: {
+    700: { normal: "StormSans-Bold", italic: "StormSans-BoldItalic" }
+  }
+});
+
 const bodySmFont = createFont({
   family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
   size: {
@@ -737,6 +758,27 @@ const bodySmFont = createFont({
   },
   face: {
     500: { normal: "StormSans-Medium", italic: "StormSans-MediumItalic" }
+  }
+});
+
+const bodySmBoldFont = createFont({
+  family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
+  size: {
+    sm: 16,
+    true: 16
+  },
+  lineHeight: {
+    sm: 18,
+    snug: 18,
+    true: 18
+  },
+  weight: {
+    bold: "700",
+    sm: "700",
+    true: "700"
+  },
+  face: {
+    700: { normal: "StormSans-Bold", italic: "StormSans-BoldItalic" }
   }
 });
 
@@ -1146,7 +1188,9 @@ export const config = createTamagui({
   themes,
   fonts: {
      "body-md": bodyMdFont,
+    "body-md-bold": bodyMdBoldFont,
     "body-sm": bodySmFont,
+    "body-sm-bold": bodySmBoldFont,
     caption: captionFont,
     code: codeFont,
     "display-hero": displayHeroFont,

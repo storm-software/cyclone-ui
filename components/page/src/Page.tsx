@@ -428,6 +428,13 @@ export interface PageRootProps {
    * @default false
    */
   sideNavShortcutEnabled?: boolean;
+  /**
+   * Lets hovering `Page.SideNavToggle` open a collapsed side nav as a flyout
+   * on desktop.
+   *
+   * @default true
+   */
+  sideNavFlyoutEnabled?: boolean;
   /** Runs before each shortcut toggle; return `false` to ignore the key press. */
   canToggleSideNavWithShortcut?: () => boolean;
   /** Called when the side nav expands or collapses; persist it to restore `defaultSideNavCollapsed`. */
@@ -488,6 +495,7 @@ const PageRoot = createStyledHOC(
       children,
       defaultSideNavCollapsed = false,
       sideNavShortcutEnabled = false,
+      sideNavFlyoutEnabled = true,
       canToggleSideNavWithShortcut,
       onSideNavExpandedChange,
       panelOpen: panelOpenProp,
@@ -573,13 +581,24 @@ const PageRoot = createStyledHOC(
     const startSideNavPeek = useCallback(() => {
       clearPeekTimer();
 
-      if (isDesktop && !sideNavExpanded.desktop && !sideNavPeeking) {
+      if (
+        sideNavFlyoutEnabled &&
+        isDesktop &&
+        !sideNavExpanded.desktop &&
+        !sideNavPeeking
+      ) {
         peekTimerRef.current = setTimeout(
           () => setSideNavPeeking(true),
           PEEK_OPEN_DELAY
         );
       }
-    }, [clearPeekTimer, isDesktop, sideNavExpanded.desktop, sideNavPeeking]);
+    }, [
+      clearPeekTimer,
+      isDesktop,
+      sideNavExpanded.desktop,
+      sideNavFlyoutEnabled,
+      sideNavPeeking
+    ]);
 
     // Also cancels a flyout that hasn't opened yet.
     const endSideNavPeek = useCallback(() => {

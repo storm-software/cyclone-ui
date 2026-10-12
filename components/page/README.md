@@ -168,6 +168,7 @@ While the side nav is expanded on desktop, `Page.TopNav.Start` lines up with it 
 | ------------------------------ | ---------------------------------------------------------------- | ------- | ----------------------------------------------------------------- |
 | `defaultSideNavCollapsed`      | `boolean`                                                        | `false` | Starts the side nav collapsed on desktop.                          |
 | `sideNavShortcutEnabled`       | `boolean`                                                        | `false` | Lets `Ctrl` + `[` toggle the side nav.                             |
+| `sideNavFlyoutEnabled`         | `boolean`                                                        | `true`  | Lets hovering the toggle open a collapsed side nav as a flyout.    |
 | `canToggleSideNavWithShortcut` | `() => boolean`                                                  |         | Runs before each shortcut toggle; return `false` to ignore it.     |
 | `onSideNavExpandedChange`      | `(expanded: boolean, details: PageSideNavChangeDetails) => void` |         | Called with the screen (`desktop` or `mobile`) and the trigger.    |
 

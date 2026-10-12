@@ -4236,6 +4236,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.body-md-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-md-bold",
+      description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.body-sm-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-sm-bold",
+      description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.caption",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\",\"fontStyle\":\"italic\"}",
@@ -4265,7 +4283,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f1f1f133",
+      value: "0px 0px 0px 3px #f1f1f11a",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -4274,7 +4292,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f1f1f133",
+      value: "0px 0px 0px 1px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -4283,7 +4301,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f11a",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -4292,7 +4310,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
       theme: undefined,
@@ -8702,6 +8720,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.body-md-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-md-bold",
+      description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.body-sm-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-sm-bold",
+      description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.caption",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\",\"fontStyle\":\"italic\"}",
@@ -8731,7 +8767,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f1f1f133",
+      value: "0px 0px 0px 3px #f1f1f11a",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -8740,7 +8776,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f1f1f133",
+      value: "0px 0px 0px 1px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -8749,7 +8785,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f11a",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -8758,7 +8794,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
       theme: undefined,
@@ -13168,6 +13204,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.body-md-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-md-bold",
+      description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.body-sm-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-sm-bold",
+      description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.caption",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\",\"fontStyle\":\"italic\"}",
@@ -13197,7 +13251,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f1f1f133",
+      value: "0px 0px 0px 3px #f1f1f11a",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -13206,7 +13260,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f1f1f133",
+      value: "0px 0px 0px 1px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -13215,7 +13269,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #f1f1f11a",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -13224,7 +13278,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
       theme: undefined,
@@ -17634,6 +17688,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.body-md-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-md-bold",
+      description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.body-sm-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-sm-bold",
+      description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.caption",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\",\"fontStyle\":\"italic\"}",
@@ -17663,7 +17735,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #1f1f2133",
+      value: "0px 0px 0px 3px #1f1f211a",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -17672,7 +17744,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #1f1f2133",
+      value: "0px 0px 0px 1px #1f1f211a",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -17681,7 +17753,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f2133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f211a",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -17690,7 +17762,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f2133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f211a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
       theme: undefined,
@@ -22100,6 +22172,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.body-md-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-md-bold",
+      description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.body-sm-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-sm-bold",
+      description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.caption",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\",\"fontStyle\":\"italic\"}",
@@ -22129,7 +22219,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #1f1f2133",
+      value: "0px 0px 0px 3px #1f1f211a",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -22138,7 +22228,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #1f1f2133",
+      value: "0px 0px 0px 1px #1f1f211a",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -22147,7 +22237,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f2133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f211a",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -22156,7 +22246,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f2133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f211a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
       theme: undefined,
@@ -26566,6 +26656,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "typography.body-md-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-md-bold",
+      description: "Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.body-sm-bold",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-body-sm-bold",
+      description: "Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large.",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.caption",
       type: "typography",
       value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.snug}\",\"fontStyle\":\"italic\"}",
@@ -26595,7 +26703,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #1f1f2133",
+      value: "0px 0px 0px 3px #1f1f211a",
       cssVar: "--cu-ring-base",
       description: "Generated base 3px focus ring with no gap",
       theme: undefined,
@@ -26604,7 +26712,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #1f1f2133",
+      value: "0px 0px 0px 1px #1f1f211a",
       cssVar: "--cu-ring-base-subtle",
       description: "Generated base 1px hairline focus ring with no gap",
       theme: undefined,
@@ -26613,7 +26721,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f2133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #1f1f211a",
       cssVar: "--cu-ring-base-offset",
       description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
@@ -26622,7 +26730,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f2133",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #1f1f211a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 3px gap",
       theme: undefined,

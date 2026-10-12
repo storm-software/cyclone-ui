@@ -223,6 +223,7 @@ catalog:
   "@shell-shock/plugin-skills": ^0.0.23
   "@razorwind/eslint": ^0.0.17
   "@razorwind/stylelint": ^0.0.17
+  '@sourcebook/config': ^0.0.8
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true

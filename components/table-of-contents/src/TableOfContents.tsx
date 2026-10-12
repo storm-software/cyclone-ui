@@ -24,6 +24,7 @@ import { XStack, YStack } from "@tamagui/stacks";
 import type { ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
 import { Platform } from "react-native";
+import { isScrolledToEnd } from "./utilities";
 
 const ITEM_HEIGHT = 48;
 const LEVEL_INDENT = 16;
@@ -37,6 +38,27 @@ const MOTION_EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
 interface BrowserElement {
   getBoundingClientRect: () => { top: number };
 }
+
+interface ScrollMetrics {
+  scrollTop: number;
+  scrollHeight: number;
+  clientHeight: number;
+  contains: (element: BrowserElement) => boolean;
+}
+
+/** The scrolled element, or the document's scroller for a page scroll. */
+const getScrollContainer = (
+  target: unknown,
+  browserDocument: BrowserDocument
+): ScrollMetrics | undefined => {
+  if (target === browserDocument) {
+    return browserDocument.scrollingElement ?? undefined;
+  }
+
+  return target && typeof (target as ScrollMetrics).scrollTop === "number"
+    ? (target as ScrollMetrics)
+    : undefined;
+};
 
 interface BrowserMediaQuery {
   matches: boolean;
@@ -63,6 +85,7 @@ interface BrowserWindow {
 
 interface BrowserDocument {
   getElementById: (id: string) => BrowserElement | null;
+  scrollingElement: ScrollMetrics | null;
 }
 
 interface Point {
@@ -71,6 +94,7 @@ interface Point {
 }
 
 interface RailGeometry {
+  length: number;
   markerDistances: number[];
   path: string;
   points: Point[];
@@ -269,7 +293,7 @@ function getRailGeometry(
   }));
   const first = points[0];
 
-  if (!first) return { markerDistances: [], path: "", points };
+  if (!first) return { length: 0, markerDistances: [], path: "", points };
 
   let path = `M ${first.x} 0 L ${first.x} ${first.y}`;
   let pathLength = first.y;
@@ -311,10 +335,12 @@ function getRailGeometry(
   }
 
   const last = points.at(-1);
+  const height = items.length * ITEM_HEIGHT;
 
   return {
+    length: last ? pathLength + height - last.y : pathLength,
     markerDistances,
-    path: last ? `${path} L ${last.x} ${items.length * ITEM_HEIGHT}` : path,
+    path: last ? `${path} L ${last.x} ${height}` : path,
     points
   };
 }
@@ -353,20 +379,23 @@ function TableOfContentsRail({
   activeIndex,
   activeStartIndex,
   minDepth,
-  prefersReducedMotion
+  prefersReducedMotion,
+  scrolledToEnd
 }: {
   items: readonly TableOfContentsItem[];
   activeIndex: number;
   activeStartIndex: number;
   minDepth: number;
   prefersReducedMotion: boolean;
+  scrolledToEnd: boolean;
 }) {
   const height = items.length * ITEM_HEIGHT;
   const maxDepth = Math.max(...items.map(getItemDepth));
   const width =
     RAIL_LEFT + (Math.max(minDepth, maxDepth) - minDepth) * LEVEL_INDENT + 2;
   const geometry = getRailGeometry(items, minDepth);
-  const activeY = (activeIndex + 0.5) * ITEM_HEIGHT;
+  // At the end of the content the tracker runs to the end of the rail.
+  const activeY = scrolledToEnd ? height : (activeIndex + 0.5) * ITEM_HEIGHT;
   const activeStartY =
     activeStartIndex === 0
       ? 0
@@ -398,7 +427,7 @@ function TableOfContentsRail({
     <TableOfContentsRailLayer
       aria-hidden={true}
       width={width + ACTIVE_MARKER_SIZE}
-      height={height}>
+      height={height + ACTIVE_MARKER_SIZE}>
       <svg
         aria-hidden="true"
         focusable="false"
@@ -451,7 +480,11 @@ function TableOfContentsRail({
           borderRadius: "50%",
           backgroundColor: "var(--accent)",
           offsetPath: `path("${geometry.path}")`,
-          offsetDistance: `${geometry.markerDistances[activeIndex] ?? 0}px`,
+          offsetDistance: `${
+            scrolledToEnd
+              ? geometry.length
+              : (geometry.markerDistances[activeIndex] ?? 0)
+          }px`,
           offsetRotate: "0deg",
           transition: markerTransition
         }}
@@ -471,6 +504,7 @@ export const TableOfContents = createStyledHOC(
     forwardedRef
   ) => {
     const [activeUrl, setActiveUrl] = useState(items[0]?.url ?? "");
+    const [scrolledToEnd, setScrolledToEnd] = useState(false);
     const prefersReducedMotion = usePrefersReducedMotion();
     const activeIndex = Math.max(
       0,
@@ -516,16 +550,25 @@ export const TableOfContents = createStyledHOC(
       if (targets.length === 0) return;
 
       let frame = 0;
+      let scroller: ScrollMetrics | undefined;
       const updateActiveItem = () => {
         frame = 0;
         const activationLine = Math.min(browserWindow.innerHeight * 0.35, 180);
         let next = targets[0];
+        const atEnd = !!scroller && isScrolledToEnd(scroller);
+        setScrolledToEnd(atEnd);
 
-        for (const target of targets) {
-          if (target.element.getBoundingClientRect().top <= activationLine) {
-            next = target;
-          } else {
-            break;
+        // The last headings can't scroll up to the activation line, so the
+        // end of the content selects the last item.
+        if (atEnd) {
+          next = targets.at(-1);
+        } else {
+          for (const target of targets) {
+            if (target.element.getBoundingClientRect().top <= activationLine) {
+              next = target;
+            } else {
+              break;
+            }
           }
         }
 
@@ -533,7 +576,14 @@ export const TableOfContents = createStyledHOC(
           setActiveUrl(current => (current === next.url ? current : next.url));
         }
       };
-      const scheduleUpdate = () => {
+      const scheduleUpdate = (event?: { target?: unknown }) => {
+        const target = getScrollContainer(event?.target, browserDocument);
+
+        // Ignores unrelated scroll areas, such as a side nav.
+        if (targets[0] && target?.contains(targets[0].element)) {
+          scroller = target;
+        }
+
         if (!frame) {
           frame = browserWindow.requestAnimationFrame(updateActiveItem);
         }
@@ -573,6 +623,7 @@ export const TableOfContents = createStyledHOC(
             activeStartIndex={activeStartIndex}
             minDepth={minDepth}
             prefersReducedMotion={prefersReducedMotion}
+            scrolledToEnd={scrolledToEnd}
           />
 
           <TableOfContentsList style={{ listStyle: "none" }}>

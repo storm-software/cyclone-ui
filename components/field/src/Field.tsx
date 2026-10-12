@@ -673,6 +673,8 @@ const LabelXStack = styled(XStack, {
   position: "relative",
   cursor: "pointer",
   alignItems: "center",
+  flexShrink: 1,
+  minWidth: 0,
 
   variants: {
     floating: {
@@ -698,6 +700,7 @@ const FieldLabelContent = styled(XStack, {
   zIndex: 1,
   gap: "sm",
   alignItems: "center",
+  flexShrink: 1,
   minWidth: 0
 });
 
@@ -896,7 +899,7 @@ const FieldLabelTextImpl = createStyledHOC(
           id={getFieldLabelId(name)}
           htmlFor={name}
           marginLeft={`${isFloatingVariant || underlined ? "zero" : "md"}`}>
-          <LabelXStack disabled={disabled} floating={floating} minWidth={0}>
+          <LabelXStack disabled={disabled} floating={floating}>
             <FieldLabelContent ref={labelContentRef}>
               <Theme name={baseTheme}>
                 <FieldLabelText

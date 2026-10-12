@@ -103,6 +103,7 @@
     "@react-native-community/cli-platform-android": "catalog:",
     "@react-native-community/cli-platform-ios": "catalog:",
     "@shell-shock/nx": "catalog:",
+    "@sourcebook/config": "catalog:",
     "@storm-software/cloudflare-tools": "catalog:",
     "@storm-software/config": "catalog:",
     "@storm-software/config-tools": "catalog:",
@@ -180,7 +181,11 @@
       }
     ],
     "ci": {
-      "trackBranches": ["main", "next", "experimental"]
+      "trackBranches": [
+        "main",
+        "next",
+        "experimental"
+      ]
     }
   },
   "licenses": [

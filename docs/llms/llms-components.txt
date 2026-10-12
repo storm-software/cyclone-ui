@@ -157,6 +157,44 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 | `../../components/anchor/node_modules/react/index.js` | `file` |  |
 | `../../components/anchor/src/index.ts` | `file` |  |
 
+## @cyclone-ui/article-page
+
+An ArticlePage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.
+
+- **Name:** `@cyclone-ui/article-page`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/page`: `workspace:*`
+- `@cyclone-ui/table-of-contents`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/breadcrumb`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/divider`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/inline-code-text`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/article-page/dist/index.cjs` | `file` |  |
+| `../../components/article-page/dist/index.mjs` | `file` |  |
+| `../../components/article-page/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react-native/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react/index.js` | `file` |  |
+| `../../components/article-page/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/badge
 
 A Badge that wraps an element and pins a small count or dot to one of its corners. It follows MUI's API: anchorOrigin, max (shows 99+ by default), showZero, invisible, rectangular or circular overlap, standard or dot variants, and palette or theme colors. Use it for notification counts and status indicators.
@@ -3193,6 +3231,44 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 | `../../components/anchor/node_modules/react-native/index.js` | `file` |  |
 | `../../components/anchor/node_modules/react/index.js` | `file` |  |
 | `../../components/anchor/src/index.ts` | `file` |  |
+
+## @cyclone-ui/article-page
+
+An ArticlePage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.
+
+- **Name:** `@cyclone-ui/article-page`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/page`: `workspace:*`
+- `@cyclone-ui/table-of-contents`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/breadcrumb`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/divider`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/inline-code-text`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/article-page/dist/index.cjs` | `file` |  |
+| `../../components/article-page/dist/index.mjs` | `file` |  |
+| `../../components/article-page/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react-native/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react/index.js` | `file` |  |
+| `../../components/article-page/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/badge
 
@@ -6231,6 +6307,44 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 | `../../components/anchor/node_modules/react/index.js` | `file` |  |
 | `../../components/anchor/src/index.ts` | `file` |  |
 
+## @cyclone-ui/article-page
+
+An ArticlePage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.
+
+- **Name:** `@cyclone-ui/article-page`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/page`: `workspace:*`
+- `@cyclone-ui/table-of-contents`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/breadcrumb`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/divider`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/inline-code-text`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/article-page/dist/index.cjs` | `file` |  |
+| `../../components/article-page/dist/index.mjs` | `file` |  |
+| `../../components/article-page/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react-native/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react/index.js` | `file` |  |
+| `../../components/article-page/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/badge
 
 A Badge that wraps an element and pins a small count or dot to one of its corners. It follows MUI's API: anchorOrigin, max (shows 99+ by default), showZero, invisible, rectangular or circular overlap, standard or dot variants, and palette or theme colors. Use it for notification counts and status indicators.
@@ -9267,6 +9381,44 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 | `../../components/anchor/node_modules/react-native/index.js` | `file` |  |
 | `../../components/anchor/node_modules/react/index.js` | `file` |  |
 | `../../components/anchor/src/index.ts` | `file` |  |
+
+## @cyclone-ui/article-page
+
+An ArticlePage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.
+
+- **Name:** `@cyclone-ui/article-page`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/page`: `workspace:*`
+- `@cyclone-ui/table-of-contents`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/breadcrumb`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/divider`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/inline-code-text`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/article-page/dist/index.cjs` | `file` |  |
+| `../../components/article-page/dist/index.mjs` | `file` |  |
+| `../../components/article-page/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react-native/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react/index.js` | `file` |  |
+| `../../components/article-page/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/badge
 
@@ -12305,6 +12457,44 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 | `../../components/anchor/node_modules/react/index.js` | `file` |  |
 | `../../components/anchor/src/index.ts` | `file` |  |
 
+## @cyclone-ui/article-page
+
+An ArticlePage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.
+
+- **Name:** `@cyclone-ui/article-page`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/page`: `workspace:*`
+- `@cyclone-ui/table-of-contents`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/breadcrumb`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/divider`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/inline-code-text`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/article-page/dist/index.cjs` | `file` |  |
+| `../../components/article-page/dist/index.mjs` | `file` |  |
+| `../../components/article-page/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react-native/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react/index.js` | `file` |  |
+| `../../components/article-page/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/badge
 
 A Badge that wraps an element and pins a small count or dot to one of its corners. It follows MUI's API: anchorOrigin, max (shows 99+ by default), showZero, invisible, rectangular or circular overlap, standard or dot variants, and palette or theme colors. Use it for notification counts and status indicators.
@@ -15341,6 +15531,44 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 | `../../components/anchor/node_modules/react-native/index.js` | `file` |  |
 | `../../components/anchor/node_modules/react/index.js` | `file` |  |
 | `../../components/anchor/src/index.ts` | `file` |  |
+
+## @cyclone-ui/article-page
+
+An ArticlePage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.
+
+- **Name:** `@cyclone-ui/article-page`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/page`: `workspace:*`
+- `@cyclone-ui/table-of-contents`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/breadcrumb`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/divider`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/inline-code-text`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/article-page/dist/index.cjs` | `file` |  |
+| `../../components/article-page/dist/index.mjs` | `file` |  |
+| `../../components/article-page/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react-native/index.js` | `file` |  |
+| `../../components/article-page/node_modules/react/index.js` | `file` |  |
+| `../../components/article-page/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/badge
 
