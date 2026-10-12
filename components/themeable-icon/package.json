@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/themeable-icon",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "type": "module",
   "description": "An icon wrapper that applies size and color tokens to its child icon and animates when it enters or exits. It includes ThemedIcon and a getIconByTheme helper that pick a matching status icon (danger, warning, info, discovery, success, positive, negative) or a lock icon when disabled. Use it for status icons that follow the current theme.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/themeable-icon"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -37,7 +39,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

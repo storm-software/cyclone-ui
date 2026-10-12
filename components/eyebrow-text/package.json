@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/eyebrow-text",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "type": "module",
   "description": "An uppercase, muted heading (rendered as h5) that uses the eyebrow font. It has lg and sm variants. Use it as a short overline label above a main heading or section title.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/eyebrow-text"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -29,7 +31,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",

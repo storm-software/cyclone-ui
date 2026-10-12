@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/button",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "type": "module",
   "description": "A pressable button with Button.Text and Button.Icon subcomponents and primary, secondary, tertiary, outlined, ghost, link and cascade hover variants. It supports sizes, circular and rounded shapes, ringed and disabled states, press ripples, and rendering as an anchor with href.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/button"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -40,7 +42,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

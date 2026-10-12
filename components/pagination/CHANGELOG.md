@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Pagination
 
+## [0.8.12](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.12) (10/11/2026)
+
+### Bug Fixes
+
+- **context-menu:** Update `Select` to use shared Context Menu component ([ef0f0b77](https://github.com/storm-software/cyclone-ui/commit/ef0f0b77))
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.12**
+- Updated **icons** to **v0.0.8**
+- Updated **next-button** to **v0.5.12**
+- Updated **previous-button** to **v0.5.12**
+
 ## [0.8.11](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.11) (10/07/2026)
 
 ### Updated Dependencies

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/popover",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "type": "module",
   "description": "A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small touch screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/popover"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -41,7 +43,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

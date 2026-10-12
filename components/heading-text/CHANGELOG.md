@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Heading Text
 
+## [0.5.12](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.12) (10/11/2026)
+
+### Bug Fixes
+
+- **themes:** Update the token structure in the design system ([a226f474](https://github.com/storm-software/cyclone-ui/commit/a226f474))
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+
 ## [0.5.11](https://github.com/storm-software/cyclone-ui/releases/tag/heading-text%400.5.11) (10/07/2026)
 
 ### Bug Fixes

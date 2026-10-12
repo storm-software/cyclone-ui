@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/link",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "type": "module",
   "description": "A themed text link that renders an anchor with href and target on web and opens the URL with Linking on native. Setting external opens it in a new tab and adds an arrow icon that shifts on hover. Supports text sizes.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/link"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -36,7 +38,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",

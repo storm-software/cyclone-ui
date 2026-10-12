@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/progress",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "type": "module",
   "description": "A themed progress bar built on the Tamagui Progress, with an animated indicator. It accepts value, max, size and an indicator color token. Use it to show how far a task or loading process has gone.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/progress"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -29,7 +31,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

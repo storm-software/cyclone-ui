@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.1](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.1) (10/11/2026)
+
+### Features
+
+- **cli:** Added a `create-tokens` command ([0c2dde08](https://github.com/storm-software/cyclone-ui/commit/0c2dde08))
+
 ## [0.3.11](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.11) (10/07/2026)
 
 ### Bug Fixes

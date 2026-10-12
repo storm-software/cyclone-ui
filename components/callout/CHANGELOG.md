@@ -2,6 +2,28 @@
 
 # Changelog for Cyclone UI - Callout
 
+## [0.4.12](https://github.com/storm-software/cyclone-ui/releases/tag/callout%400.4.12) (10/11/2026)
+
+### Bug Fixes
+
+- **themes:** Update the token structure in the design system ([a226f474](https://github.com/storm-software/cyclone-ui/commit/a226f474))
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.12**
+- Updated **container** to **v0.6.12**
+- Updated **eyebrow-text** to **v0.5.12**
+- Updated **heading-text** to **v0.5.12**
+- Updated **icons** to **v0.0.8**
+- Updated **state** to **v0.0.13**
+- Updated **themeable-icon** to **v0.6.12**
+- Updated **vectors** to **v0.5.12**
+
 ## [0.4.11](https://github.com/storm-software/cyclone-ui/releases/tag/callout%400.4.11) (10/07/2026)
 
 ### Updated Dependencies

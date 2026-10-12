@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/stepper",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "type": "module",
   "description": "A multi-step wizard built on Tamagui Tabs with a vertical header list that marks completed and current steps with check icons, plus optional step numbers. Compound parts are Stepper.Header.Item, Stepper.Content.Item, Stepper.NextButton and Stepper.PreviousButton, and it tracks which steps have been visited. Use it for guided, ordered flows.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/stepper"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -46,7 +48,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

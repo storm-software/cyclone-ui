@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Fonts Storm Sans
 
+## [1.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-sans%401.0.5) (10/11/2026)
+
+### Bug Fixes
+
+- **context-menu:** Update `Select` to use shared Context Menu component ([ef0f0b77](https://github.com/storm-software/cyclone-ui/commit/ef0f0b77))
+
 ## [1.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-sans%401.0.4) (10/07/2026)
 
 ### Bug Fixes

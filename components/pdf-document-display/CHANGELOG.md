@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Pdf Document Display
 
+## [0.5.12](https://github.com/storm-software/cyclone-ui/releases/tag/pdf-document-display%400.5.12) (10/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **context-menu:** Added separate `ContextMenu` component to share ([e8ac830e](https://github.com/storm-software/cyclone-ui/commit/e8ac830e))
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+
+### Updated Dependencies
+
+- Updated **spinner** to **v0.5.12**
+- Updated **vectors** to **v0.5.12**
+- Updated **visually-hidden** to **v0.5.12**
+
 ## [0.5.11](https://github.com/storm-software/cyclone-ui/releases/tag/pdf-document-display%400.5.11) (10/07/2026)
 
 ### Updated Dependencies

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/toggle-group",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "A clickable group of toggle components that exists in either an \"on\" or \"off\" state with various styles and sizes.",
   "repository": {
@@ -8,7 +8,9 @@
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/toggle-group"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -24,7 +26,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/toggle": "workspace:*",

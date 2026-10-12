@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/timeline",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "A Timeline that renders a list of events joined by a line, vertically or horizontally. Pass the events as value and render each with content, plus optional opposite (e.g. a date on the other side of the line) and marker render functions. align places the line left, right, top, bottom or alternating; TimelineMarker is the default dot for custom markers. Use it for order tracking, changelogs and activity feeds.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/timeline"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",

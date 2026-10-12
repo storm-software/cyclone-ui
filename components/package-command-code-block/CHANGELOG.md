@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Package Command Code Block
 
+## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/package-command-code-block%400.0.11) (10/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+
+### Updated Dependencies
+
+- Updated **code-block** to **v0.6.12**
+
 ## [0.0.10](https://github.com/storm-software/cyclone-ui/releases/tag/package-command-code-block%400.0.10) (10/07/2026)
 
 ### Updated Dependencies

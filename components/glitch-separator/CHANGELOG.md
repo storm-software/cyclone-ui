@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Glitch Separator
 
+## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.9) (10/11/2026)
+
+### Bug Fixes
+
+- **themes:** Update the token structure in the design system ([a226f474](https://github.com/storm-software/cyclone-ui/commit/a226f474))
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.5) (10/05/2026)
 
 ### Bug Fixes

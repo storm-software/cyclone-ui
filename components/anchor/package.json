@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/anchor",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "type": "module",
   "description": "A heading wrapper that renders its children next to a permalink icon. The icon shows on hover or focus and links to href on web, or opens the URL with Linking on native. Use it to make headings and sections deep-linkable.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/anchor"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -31,7 +33,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",

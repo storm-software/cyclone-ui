@@ -2,6 +2,38 @@
 
 # Changelog for Cyclone UI - File Picker
 
+## [0.5.12](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.12) (10/11/2026)
+
+### Bug Fixes
+
+- **themes:** Update the token structure in the design system ([a226f474](https://github.com/storm-software/cyclone-ui/commit/a226f474))
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **context-menu:** Added separate `ContextMenu` component to share ([e8ac830e](https://github.com/storm-software/cyclone-ui/commit/e8ac830e))
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+- **toggle:** Added the `Toggle` component package ([4c5a03c1](https://github.com/storm-software/cyclone-ui/commit/4c5a03c1))
+
+### Source Code Improvements
+
+- **monorepo:** Update form field usage to reduce overall number of components ([4e5fef79](https://github.com/storm-software/cyclone-ui/commit/4e5fef79))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.12**
+- Updated **button** to **v0.6.12**
+- Updated **bytes-text** to **v0.5.12**
+- Updated **field** to **v0.5.12**
+- Updated **form** to **v0.9.12**
+- Updated **heading-text** to **v0.5.12**
+- Updated **helpers** to **v0.3.12**
+- Updated **icons** to **v0.0.8**
+- Updated **label-text** to **v0.5.12**
+- Updated **link** to **v0.5.12**
+- Updated **pdf-document-display** to **v0.5.12**
+- Updated **state** to **v0.0.13**
+
 ## [0.5.11](https://github.com/storm-software/cyclone-ui/releases/tag/file-picker%400.5.11) (10/07/2026)
 
 ### Updated Dependencies

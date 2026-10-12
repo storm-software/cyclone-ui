@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.13) (10/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **field:** Added the `variant` property to both field and label components ([c1e0c13c](https://github.com/storm-software/cyclone-ui/commit/c1e0c13c))
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+- **like-button:** Added `LikeButton` and `Feedback` components ([9814aa5b](https://github.com/storm-software/cyclone-ui/commit/9814aa5b))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.12**
+
 ## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.12) (10/07/2026)
 
 ### Bug Fixes

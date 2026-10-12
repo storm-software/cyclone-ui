@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/dialog",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "type": "module",
   "description": "A modal Dialog compound component built on Tamagui's dialog, with Trigger, Portal, Overlay, Container, Heading, Body, Close and Action parts. Close and Action are buttons with Text and Icon slots. It has an animated, blurred, theme-tinted overlay that can be turned off, a theme prop, and an animated floating container. Use it for confirmations and focused tasks.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/dialog"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -47,7 +49,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

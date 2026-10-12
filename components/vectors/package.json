@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/vectors",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "type": "module",
   "description": "A set of custom themed SVG graphics for Tamagui, including status circles (alert, check, error, info, discovery), arrows in four directions, check, accordion toggle and binary on/off indicators, background patterns (noise, checkerboard, diagonal), a PDF icon and Storm logos. Several have state props such as isExpanded, isComplete or state.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/vectors"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -34,7 +36,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

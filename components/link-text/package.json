@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/link-text",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "type": "module",
   "description": "A LinkText component that renders styled, interactive link text. It has base, mixed, themed, subtle and subtlest color variants, an inverse mode, underline styles (static, hover, initial, none), sm and md sizes, a cta mode for uppercase button-style text, and a disabled state. Use it for inline and standalone hyperlinks.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/link-text"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -31,7 +33,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",

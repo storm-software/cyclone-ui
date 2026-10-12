@@ -2,6 +2,33 @@
 
 # Changelog for Cyclone UI - Code Block
 
+## [0.6.12](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.12) (10/11/2026)
+
+### Bug Fixes
+
+- **themes:** Update the token structure in the design system ([a226f474](https://github.com/storm-software/cyclone-ui/commit/a226f474))
+- **context-menu:** Update `Select` to use shared Context Menu component ([ef0f0b77](https://github.com/storm-software/cyclone-ui/commit/ef0f0b77))
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+- **like-button:** Added `LikeButton` and `Feedback` components ([9814aa5b](https://github.com/storm-software/cyclone-ui/commit/9814aa5b))
+
+### Source Code Improvements
+
+- **monorepo:** Update form field usage to reduce overall number of components ([4e5fef79](https://github.com/storm-software/cyclone-ui/commit/4e5fef79))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.12**
+- Updated **button** to **v0.6.12**
+- Updated **heading-text** to **v0.5.12**
+- Updated **icons** to **v0.0.8**
+- Updated **scroll-view** to **v0.5.12**
+- Updated **themeable-icon** to **v0.6.12**
+- Updated **vectors** to **v0.5.12**
+
 ## [0.6.11](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.11) (10/07/2026)
 
 ### Bug Fixes

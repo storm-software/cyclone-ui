@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/tag",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "description": "A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary and secondary variants, outlined, rounded, circular and pressable styles, and sizes. A removable tag has a remove button and an animated exit, with onBeforeRemove and onAfterRemove callbacks.",
   "repository": {
@@ -8,7 +8,9 @@
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/tag"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -24,7 +26,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/theme-builder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "A package for building themes within the Cyclone UI project",
   "repository": {

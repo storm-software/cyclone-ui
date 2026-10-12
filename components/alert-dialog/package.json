@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/alert-dialog",
-  "version": "0.4.11",
+  "version": "0.4.12",
   "type": "module",
   "description": "A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-based status icon, and compound Trigger, Container, Icon, Content (Heading, Body), Action and Close parts. Use it to confirm a destructive action or show an important success, warning or error message.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/alert-dialog"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -37,7 +39,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

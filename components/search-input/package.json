@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/search-input",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "type": "module",
   "description": "A headless search text input with a magnifying-glass icon. It shows a popover of case-insensitive suggestions that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/search-input"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -37,7 +39,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

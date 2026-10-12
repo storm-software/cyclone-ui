@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.12](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.12) (10/11/2026)
+
+### Bug Fixes
+
+- **themes:** Update the token structure in the design system ([a226f474](https://github.com/storm-software/cyclone-ui/commit/a226f474))
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **cli:** Added a `create-tokens` command ([0c2dde08](https://github.com/storm-software/cyclone-ui/commit/0c2dde08))
+
+### Source Code Improvements
+
+- **monorepo:** Update form field usage to reduce overall number of components ([4e5fef79](https://github.com/storm-software/cyclone-ui/commit/4e5fef79))
+
 ## [0.3.11](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.11) (10/07/2026)
 
 ### Updated Dependencies

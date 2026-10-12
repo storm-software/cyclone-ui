@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Redacted Animation
 
+## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/redacted-animation%400.0.9) (10/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
+### Features
+
+- **confetti-burst:** Added the Confetti Burst reusable animation ([b395a334](https://github.com/storm-software/cyclone-ui/commit/b395a334))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.12**
+
 ## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/redacted-animation%400.0.8) (10/07/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Registry API
 
+## [0.3.12](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.12) (10/11/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update component descriptions and added design sync with Claude Design ([35ece709](https://github.com/storm-software/cyclone-ui/commit/35ece709))
+
 ## [0.3.8](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.8) (10/05/2026)
 
 ### Bug Fixes
