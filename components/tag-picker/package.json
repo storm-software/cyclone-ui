@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/tag-picker",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "description": "A TagPicker input that turns typed text into removable tags. Enter adds a trimmed, unique tag, Backspace removes the last tag, and each tag has an accessible remove button. It can be controlled or uncontrolled (value, defaultValue, onChange) and supports size, variant, tagVariant and disabled props, plus validation styling. The package also exports tag list helpers. Wrapped in a Field, it connects to the form, taking its tags, name, size, disabled and focus state from the field. Use it for free-form keyword or label entry.",
   "repository": {

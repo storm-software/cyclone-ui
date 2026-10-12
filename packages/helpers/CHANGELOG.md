@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.14](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.14) (10/12/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up component display issues ([aec421b0](https://github.com/storm-software/cyclone-ui/commit/aec421b0))
+
 ## [0.3.12](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.12) (10/11/2026)
 
 ### Bug Fixes

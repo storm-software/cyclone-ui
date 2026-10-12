@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Alert Dialog
 
+## [0.4.14](https://github.com/storm-software/cyclone-ui/releases/tag/alert-dialog%400.4.14) (10/12/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.14**
+- Updated **dialog** to **v0.3.14**
+- Updated **icons** to **v0.0.10**
+- Updated **themeable-icon** to **v0.6.14**
+
 ## [0.4.13](https://github.com/storm-software/cyclone-ui/releases/tag/alert-dialog%400.4.13) (10/11/2026)
 
 ### Updated Dependencies

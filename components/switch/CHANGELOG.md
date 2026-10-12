@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Switch
 
+## [0.5.14](https://github.com/storm-software/cyclone-ui/releases/tag/switch%400.5.14) (10/12/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up component display issues ([aec421b0](https://github.com/storm-software/cyclone-ui/commit/aec421b0))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.14**
+- Updated **form** to **v0.9.14**
+- Updated **helpers** to **v0.3.14**
+- Updated **themeable-icon** to **v0.6.14**
+
 ## [0.5.13](https://github.com/storm-software/cyclone-ui/releases/tag/switch%400.5.13) (10/11/2026)
 
 ### Updated Dependencies

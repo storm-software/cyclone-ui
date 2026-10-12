@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Label Text
 
+## [0.5.14](https://github.com/storm-software/cyclone-ui/releases/tag/label-text%400.5.14) (10/12/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.14**
+- Updated **helpers** to **v0.3.14**
+
 ## [0.5.13](https://github.com/storm-software/cyclone-ui/releases/tag/label-text%400.5.13) (10/11/2026)
 
 ### Updated Dependencies
