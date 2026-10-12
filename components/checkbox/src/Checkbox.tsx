@@ -238,8 +238,8 @@ export const Checkbox = createStyledHOC(
                 y="enter:10px exit:-10px"
                 opacity="enter:0.2 exit:0.5">
                 <MinusIcon
-                  width={getSized(getFormSizeToken(size, "compact")) * 0.42}
-                  height={getSized(getFormSizeToken(size, "compact")) * 10}
+                  width={getSized(getFormSizeToken(size, "compact")) * 0.5}
+                  height={getSized(getFormSizeToken(size, "compact")) * 0.13}
                   backgroundColor={focused ? focusColor : "accent"}
                 />
               </View>

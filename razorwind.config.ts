@@ -283,7 +283,7 @@ export default defineConfig({
             textInverseColor: tokenValue(color["surface-canvas"]),
 
             appBg: tokenValue(color["surface-canvas"]),
-            appContentBg: tokenValue(color["surface-elevated"]),
+            appContentBg: tokenValue(color["surface-canvas"]),
             appPreviewBg: tokenValue(color["surface-canvas"]),
             appBorderColor: tokenValue(color.border),
             appBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
