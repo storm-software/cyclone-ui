@@ -20,9 +20,6 @@
       "path": "../../packages/helpers"
     },
     {
-      "path": "../../packages/themes"
-    },
-    {
       "path": "../icons"
     }
   ],

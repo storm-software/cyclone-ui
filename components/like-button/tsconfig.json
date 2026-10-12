@@ -24,9 +24,6 @@
     },
     {
       "path": "../../packages/helpers"
-    },
-    {
-      "path": "../../packages/themes"
     }
   ],
   "files": [],

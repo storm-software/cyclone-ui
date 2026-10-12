@@ -8,5 +8,5 @@
       "executor": "@storm-software/workspace-tools:npm-publish"
     }
   },
-  "implicitDependencies": ["themes"]
+  "implicitDependencies": ["tokens"]
 }

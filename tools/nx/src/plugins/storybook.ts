@@ -24,7 +24,7 @@ import type {
   TargetConfiguration
 } from "@nx/devkit";
 import { createNodesFromFiles, joinPathFragments } from "@nx/devkit";
-import { existsSync, readdirSync, globSync } from "node:fs";
+import { existsSync, globSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import type { ProjectConfiguration } from "nx/src/config/workspace-json-project-json";
 import { readJsonFile } from "nx/src/utils/fileutils";
@@ -102,7 +102,7 @@ export const createNodesV2: CreateNodes<StorybookPluginOptions> = [
 
           project.implicitDependencies ??= [];
           project.implicitDependencies.push(...getComponentProjectNames());
-          project.implicitDependencies.push("themes");
+          project.implicitDependencies.push("tokens");
 
           const normalizedOptions = normalizeOptions(options);
 
@@ -211,7 +211,7 @@ function prepareTarget(workspaceRoot: string): TargetConfiguration {
     options: {
       cwd: workspaceRoot,
       commands: [
-        { command: "pnpm exec nx run monorepo:generate-tokens" },
+        { command: "pnpm exec nx run monorepo:build-tokens" },
         // `main.ts` aliases component and package imports to source. The theme
         // export is the exception: Storybook loads it while compiling config.
         { command: "pnpm exec nx run themes:build" }

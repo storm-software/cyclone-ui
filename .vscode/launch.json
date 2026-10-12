@@ -9,7 +9,7 @@
       "args": [
         "nx",
         "run",
-        "monorepo:generate-tokens:development",
+        "monorepo:build-tokens:development",
         "--outputStyle=dynamic-legacy",
         "--skipNxCache"
       ],

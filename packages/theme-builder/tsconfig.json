@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/packages/theme-builder/tsconfig.tsbuildinfo",
+    "types": ["node"],
+    "strict": true,
+    "declaration": true,
+    "outDir": "../../dist/out-tsc/packages/theme-builder",
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["src/**/*", "powerlines.config.ts", "powerlines.d.ts"],
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

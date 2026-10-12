@@ -1,0 +1,15 @@
+{
+  "name": "tokens",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/tokens/src",
+  "targets": {
+    "build-base": {
+      "dependsOn": ["monorepo:build-tokens"]
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  },
+  "implicitDependencies": ["fonts-storm-sans", "fonts-storm-serif"]
+}

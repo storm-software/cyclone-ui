@@ -14,9 +14,6 @@
   },
   "references": [
     {
-      "path": "../../packages/themes"
-    },
-    {
       "path": "../link"
     },
     {

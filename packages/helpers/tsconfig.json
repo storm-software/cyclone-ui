@@ -12,7 +12,7 @@
     "outDir": "../../dist/out-tsc/packages/helpers",
     "ignoreDeprecations": "6.0"
   },
-  "references": [{ "path": "../themes" }],
+  "references": [],
   "files": [],
   "include": [
     "src/**/*.ts",

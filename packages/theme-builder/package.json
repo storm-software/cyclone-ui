@@ -1,0 +1,70 @@
+{
+  "name": "@cyclone-ui/theme-builder",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A package for building themes within the Cyclone UI project",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/theme-builder"
+  },
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./generate": {
+      "require": {
+        "types": "./dist/generate.d.cts",
+        "default": "./dist/generate.cjs"
+      },
+      "import": {
+        "types": "./dist/generate.d.mts",
+        "default": "./dist/generate.mjs"
+      },
+      "default": {
+        "types": "./dist/generate.d.mts",
+        "default": "./dist/generate.mjs"
+      }
+    },
+    "./package.json": "./package.json",
+    "./preprocessor": {
+      "require": {
+        "types": "./dist/preprocessor.d.cts",
+        "default": "./dist/preprocessor.cjs"
+      },
+      "import": {
+        "types": "./dist/preprocessor.d.mts",
+        "default": "./dist/preprocessor.mjs"
+      },
+      "default": {
+        "types": "./dist/preprocessor.d.mts",
+        "default": "./dist/preprocessor.mjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@razorwind/core": "catalog:",
+    "@razorwind/style-dictionary": "catalog:",
+    "@razorwind/tamagui": "catalog:",
+    "style-dictionary": "catalog:"
+  },
+  "devDependencies": {
+    "@powerlines/plugin-tsdown": "catalog:",
+    "@types/node": "catalog:",
+    "powerlines": "catalog:"
+  }
+}

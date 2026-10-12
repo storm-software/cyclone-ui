@@ -1,0 +1,63 @@
+{
+  "name": "@cyclone-ui/tokens",
+  "version": "0.3.11",
+  "type": "module",
+  "description": "A package containing various themes for the Cyclone UI.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/tokens"
+  },
+  "private": false,
+  "exports": {
+    "./tamagui": {
+      "require": {
+        "types": "./dist/tamagui/index.d.cts",
+        "default": "./dist/tamagui/index.cjs"
+      },
+      "import": {
+        "types": "./dist/tamagui/index.d.mts",
+        "default": "./dist/tamagui/index.mjs"
+      },
+      "default": {
+        "types": "./dist/tamagui/index.d.mts",
+        "default": "./dist/tamagui/index.mjs"
+      }
+    },
+    "./storybook": {
+      "require": {
+        "types": "./dist/storybook/theme.d.cts",
+        "default": "./dist/storybook/theme.cjs"
+      },
+      "import": {
+        "types": "./dist/storybook/theme.d.mts",
+        "default": "./dist/storybook/theme.mjs"
+      },
+      "default": {
+        "types": "./dist/storybook/theme.d.mts",
+        "default": "./dist/storybook/theme.mjs"
+      }
+    },
+    "./css/*.css": "./dist/css/*.css",
+    "./tokens/primitive/*.json": "./dist/tokens/primitive/*.json",
+    "./tokens/semantic/*.json": "./dist/tokens/semantic/*.json",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@tamagui/config": "catalog:",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/shorthands": "catalog:",
+    "@tamagui/theme-builder": "catalog:"
+  },
+  "devDependencies": {
+    "@powerlines/plugin-tamagui": "catalog:",
+    "@powerlines/plugin-tsdown": "catalog:",
+    "@storybook/addon-docs": "catalog:",
+    "powerlines": "catalog:",
+    "storybook": "catalog:"
+  }
+}

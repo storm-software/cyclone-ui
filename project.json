@@ -23,7 +23,7 @@
         "storage": "tmp/local-registry/storage"
       }
     },
-    "generate-tokens": {
+    "build-tokens": {
       "dependsOn": ["fonts:build"]
     }
   }

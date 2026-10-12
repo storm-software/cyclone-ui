@@ -62,7 +62,7 @@
       "path": "../../packages/helpers"
     },
     {
-      "path": "../../packages/themes"
+      "path": "../../packages/tokens"
     },
     {
       "path": "../../packages/state/tsconfig.lib.json"

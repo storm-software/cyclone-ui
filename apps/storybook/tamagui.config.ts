@@ -16,4 +16,4 @@
 
  ------------------------------------------------------------------- */
 
-export { config } from "@cyclone-ui/themes/tamagui";
+export { config } from "@cyclone-ui/tokens/tamagui";

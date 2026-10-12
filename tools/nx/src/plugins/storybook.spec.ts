@@ -6,7 +6,7 @@ const source = readFileSync(new URL("./storybook.ts", import.meta.url), "utf8");
 describe("Storybook prepare target", () => {
   it("runs its prerequisite Nx targets through the workspace executable", () => {
     expect(source).toContain(
-      'command: "pnpm exec nx run monorepo:generate-tokens"'
+      'command: "pnpm exec nx run monorepo:build-tokens"'
     );
     expect(source).toContain('command: "pnpm exec nx run themes:build"');
   });

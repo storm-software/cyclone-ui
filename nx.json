@@ -32,7 +32,7 @@
     {
       "plugin": "@razorwind/nx/plugin",
       "options": {
-        "targetName": "generate-tokens"
+        "targetName": "build-tokens"
       }
     },
     "./dist/nx-plugins/components.js",

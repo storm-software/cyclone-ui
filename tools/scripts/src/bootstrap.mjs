@@ -25,27 +25,6 @@ try {
 
   await Promise.all([
     build({
-      entryPoints: ["tools/razorwind/src/tokens.ts"],
-      target: "node22",
-      outdir: "dist/razorwind",
-      tsconfig: "tools/razorwind/tsconfig.json",
-      packages: "external",
-      external: ["@razorwind/core"],
-      logLevel: "info",
-      bundle: true,
-      minify: false,
-      format: "esm",
-      platform: "node"
-    }).then(result => {
-      if (result.errors.length > 0) {
-        throw new Error(
-          `An error occurred while building the Razorwind plugins: \n\n${result.errors.join("\n")}\n`
-        );
-      }
-
-      echo`${chalk.green(" ✔ Completed Razorwind plugins build successfully!")}`;
-    }),
-    build({
       entryPoints: [
         "tools/nx/src/plugins/components.ts",
         "tools/nx/src/plugins/fonts.ts",

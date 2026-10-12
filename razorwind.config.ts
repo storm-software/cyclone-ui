@@ -30,50 +30,8 @@ import shiki from "@razorwind/shiki/generate";
 import storybook from "@razorwind/storybook/generate";
 import styleDictionary from "@razorwind/style-dictionary";
 import stylelint from "@razorwind/stylelint";
-import tamagui from "@razorwind/tamagui/generate";
-import tamaguiPreprocessor from "./tools/razorwind/src/tamagui-preprocessor";
-
-const tamaguiPlugin = tamagui({
-  animations: "motion",
-  defaultFont: "body-md",
-  importConfig: "./default-config",
-  outputPath: "packages/themes/src/tamagui/config.ts",
-  target: "v3"
-});
-const generateTamagui = tamaguiPlugin.generate;
-
-const tamaguiWithStaticNativeFaces = {
-  ...tamaguiPlugin,
-  generate: async (
-    ...[spec, config]: Parameters<NonNullable<typeof generateTamagui>>
-  ) => {
-    if (!generateTamagui || !spec.fonts) {
-      return generateTamagui?.(spec, config) ?? {};
-    }
-
-    const fonts = Object.fromEntries(
-      Object.entries(spec.fonts).map(([name, font]) => {
-        if (font.source !== "local" || !font.files) {
-          return [name, font];
-        }
-
-        return [
-          name,
-          {
-            ...font,
-            files: font.files.filter(
-              file =>
-                typeof file.weight !== "string" ||
-                /^\d+(?:\.\d+)?$/u.test(file.weight.trim())
-            )
-          }
-        ];
-      })
-    ) as typeof spec.fonts;
-
-    return generateTamagui({ ...spec, fonts }, config);
-  }
-} satisfies typeof tamaguiPlugin;
+import generate from "./packages/theme-builder/src/generate";
+import preprocessor from "./packages/theme-builder/src/preprocessor";
 
 export default defineConfig({
   name: "cyclone-ui",
@@ -84,15 +42,18 @@ export default defineConfig({
   splitThemes: true,
   fontsPath: ["fonts/storm-sans/dist", "fonts/storm-serif/dist"],
   fontAssetBaseUrl: "https://public.storm-cdn.com/fonts",
-  tokensPath: "packages/themes/src/tokens/**/*.json",
+  tokensPath: "packages/tokens/src/tokens/**/*.json",
   componentsPath: ["components"],
   plugins: [
-    tamaguiPreprocessor(),
+    preprocessor(),
     colorVariants(),
     shadcn({
       configFile: "registry.json"
     }),
-    tamaguiWithStaticNativeFaces,
+    generate({
+      importConfig: "./default-config",
+      outputPath: "packages/tokens/src/tamagui/config.ts"
+    }),
     designMD(),
     eslint({
       eslintPath: "packages/eslint-plugin/src/index.ts",
@@ -274,14 +235,14 @@ export default defineConfig({
       outputPath: "docs/llms"
     }),
     css({
-      outputPath: "packages/themes/src/css/tokens.css",
+      outputPath: "packages/tokens/src/css/tokens.css",
       prefix: "storm"
     }),
     styleDictionary({
       platforms: {
         ts: {
           transformGroup: "js",
-          buildPath: "packages/themes/src/js",
+          buildPath: "packages/tokens/src/js",
           files: [
             {
               format: "javascript/module",

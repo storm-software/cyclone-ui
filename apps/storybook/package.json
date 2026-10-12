@@ -6,7 +6,7 @@
   "dependencies": {
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/state": "workspace:*",
-    "@cyclone-ui/themes": "workspace:*",
+    "@cyclone-ui/tokens": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@react-navigation/native": "catalog:",
     "@react-navigation/stack": "catalog:",

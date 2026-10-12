@@ -13,10 +13,7 @@
       "path": "./tools/nx"
     },
     {
-      "path": "./tools/razorwind"
-    },
-    {
-      "path": "./packages/themes"
+      "path": "./packages/tokens"
     },
     {
       "path": "./packages/state"
@@ -26,6 +23,9 @@
     },
     {
       "path": "./packages/registry-api"
+    },
+    {
+      "path": "./packages/theme-builder"
     },
     {
       "path": "./components/pdf-document-display"
@@ -220,7 +220,7 @@
       "path": "./apps/storybook"
     },
     {
-      "path": "./apps/cli"
+      "path": "./packages/cli"
     },
     {
       "path": "./components/glitch-separator"
