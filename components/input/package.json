@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/input",
-  "version": "0.6.15",
+  "version": "0.6.16",
   "type": "module",
   "description": "A composable text input with Input.TextBox, Input.TextBox.Value, Input.Separator and Input.Trigger (with Icon and Text) subcomponents. It supports default, floating and underline variants, sizes, and disabled and focused states, shows validation colors inside a Field, and runs on web and native.",
   "repository": {

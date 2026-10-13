@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Alert
 
+## [0.4.16](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.16) (10/13/2026)
+
+### Bug Fixes
+
+- **tokens:** Further updates to token structure for improved theme customizations ([c694f50b](https://github.com/storm-software/cyclone-ui/commit/c694f50b))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.16**
+- Updated **button** to **v0.6.16**
+- Updated **container** to **v0.6.16**
+- Updated **heading-text** to **v0.5.16**
+- Updated **helpers** to **v0.3.16**
+- Updated **icons** to **v0.0.12**
+- Updated **themeable-icon** to **v0.6.16**
+
 ## [0.4.15](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.15) (10/12/2026)
 
 ### Bug Fixes

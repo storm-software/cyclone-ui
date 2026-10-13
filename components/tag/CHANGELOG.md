@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.11) (10/13/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up of various components and tokens ([08a494ad](https://github.com/storm-software/cyclone-ui/commit/08a494ad))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.16**
+- Updated **icons** to **v0.0.12**
+
 ## [0.0.10](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.10) (10/12/2026)
 
 ### Bug Fixes

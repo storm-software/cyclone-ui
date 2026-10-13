@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.16](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.16) (10/13/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up of various components and tokens ([08a494ad](https://github.com/storm-software/cyclone-ui/commit/08a494ad))
+- **tokens:** Further updates to token structure for improved theme customizations ([c694f50b](https://github.com/storm-software/cyclone-ui/commit/c694f50b))
+
 ## [0.3.15](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.15) (10/12/2026)
 
 ### Bug Fixes

@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.16](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.16) (10/13/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up of various components and tokens ([08a494ad](https://github.com/storm-software/cyclone-ui/commit/08a494ad))
+- **tokens:** Further updates to token structure for improved theme customizations ([c694f50b](https://github.com/storm-software/cyclone-ui/commit/c694f50b))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.16**
+- Updated **button** to **v0.6.16**
+- Updated **context-menu** to **v0.0.6**
+- Updated **field** to **v0.5.16**
+- Updated **form** to **v0.9.16**
+- Updated **helpers** to **v0.3.16**
+- Updated **icons** to **v0.0.12**
+- Updated **input** to **v0.6.16**
+
 ## [0.6.15](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.15) (10/12/2026)
 
 ### Bug Fixes

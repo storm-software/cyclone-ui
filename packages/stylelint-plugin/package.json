@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/stylelint-plugin",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "description": "Cyclone UI Stylelint plugin package",
   "repository": {
@@ -38,7 +38,7 @@
       }
     },
     "./*": "./*",
-    "./rolldown-runtime-BUUfjzRC": "./dist/rolldown-runtime-BUUfjzRC.mjs",
+    "./rolldown-runtime-CenpyGzJ": "./dist/rolldown-runtime-CenpyGzJ.mjs",
     "./runtime": {
       "require": {
         "types": "./dist/runtime.d.cts",
