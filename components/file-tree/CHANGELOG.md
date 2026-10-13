@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - File Tree
 
+## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/file-tree%400.0.13) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+- **tokens:** Added back the hovered variants ([552ee0e4](https://github.com/storm-software/cyclone-ui/commit/552ee0e4))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.11**
+
 ## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/file-tree%400.0.12) (10/12/2026)
 
 ### Updated Dependencies

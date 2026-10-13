@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Glitch Separator
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.12) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+
 ## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/glitch-separator%400.0.9) (10/11/2026)
 
 ### Bug Fixes

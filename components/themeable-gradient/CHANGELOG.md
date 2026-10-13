@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Themeable Gradient
 
+## [0.0.16](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-gradient%400.0.16) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+
+### Features
+
+- **overlay:** Added the Overlay component for reuse ([ab306982](https://github.com/storm-software/cyclone-ui/commit/ab306982))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.15**
+
 ## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-gradient%400.0.15) (10/12/2026)
 
 ### Updated Dependencies

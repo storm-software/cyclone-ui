@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.10](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.10) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+- **tokens:** Added back the hovered variants ([552ee0e4](https://github.com/storm-software/cyclone-ui/commit/552ee0e4))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.15**
+- Updated **icons** to **v0.0.11**
+
 ## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.9) (10/12/2026)
 
 ### Updated Dependencies

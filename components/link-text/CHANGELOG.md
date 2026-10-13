@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Link Text
 
+## [0.5.15](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.15) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+- **tokens:** Added back the hovered variants ([552ee0e4](https://github.com/storm-software/cyclone-ui/commit/552ee0e4))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.15**
+- Updated **state** to **v0.0.16**
+
 ## [0.5.14](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.14) (10/12/2026)
 
 ### Updated Dependencies

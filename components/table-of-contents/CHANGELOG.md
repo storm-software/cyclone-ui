@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Table of Contents
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.12) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+- **tokens:** Added back the hovered variants ([552ee0e4](https://github.com/storm-software/cyclone-ui/commit/552ee0e4))
+
+### Features
+
+- **article-page:** Added the Article Page layout component ([43ca755e](https://github.com/storm-software/cyclone-ui/commit/43ca755e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.15**
+- Updated **icons** to **v0.0.11**
+
 ## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.11) (10/12/2026)
 
 ### Updated Dependencies

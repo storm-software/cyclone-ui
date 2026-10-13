@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.16](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.16) (10/12/2026)
+
+### Features
+
+- **article-page:** Added the Article Page layout component ([43ca755e](https://github.com/storm-software/cyclone-ui/commit/43ca755e))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.15**
+
 ## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.15) (10/12/2026)
 
 ### Updated Dependencies

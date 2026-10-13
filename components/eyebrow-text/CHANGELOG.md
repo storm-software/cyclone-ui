@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Eyebrow Text
 
+## [0.5.15](https://github.com/storm-software/cyclone-ui/releases/tag/eyebrow-text%400.5.15) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+
 ## [0.5.12](https://github.com/storm-software/cyclone-ui/releases/tag/eyebrow-text%400.5.12) (10/11/2026)
 
 ### Bug Fixes

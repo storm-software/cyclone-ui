@@ -2,6 +2,32 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.15](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.15) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+- **tokens:** Added back the hovered variants ([552ee0e4](https://github.com/storm-software/cyclone-ui/commit/552ee0e4))
+
+### Features
+
+- **article-page:** Added the Article Page layout component ([43ca755e](https://github.com/storm-software/cyclone-ui/commit/43ca755e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.15**
+- Updated **button** to **v0.6.15**
+- Updated **form** to **v0.9.15**
+- Updated **helpers** to **v0.3.15**
+- Updated **icons** to **v0.0.11**
+- Updated **label-text** to **v0.5.15**
+- Updated **link** to **v0.5.15**
+- Updated **spinner** to **v0.5.15**
+- Updated **state** to **v0.0.16**
+- Updated **themeable-icon** to **v0.6.15**
+- Updated **tooltip** to **v0.5.15**
+- Updated **validation-text** to **v0.5.15**
+
 ## [0.5.14](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.14) (10/12/2026)
 
 ### Bug Fixes

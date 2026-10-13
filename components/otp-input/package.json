@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/otp-input",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "type": "module",
   "description": "A one-time passcode input that renders one numeric input per digit (4 by default). Focus moves with typing, Backspace and the arrow keys, pasted codes fill the inputs, and autocomplete uses one-time-code. onComplete fires when every digit is filled. Use it on its own or wrap it in a Field to connect it to a Form.",
   "repository": {

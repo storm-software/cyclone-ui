@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/eslint-plugin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "Cyclone UI ESLint plugin package",
   "repository": {
@@ -38,7 +38,7 @@
       }
     },
     "./*": "./*",
-    "./rolldown-runtime-BUUfjzRC": "./dist/rolldown-runtime-BUUfjzRC.mjs",
+    "./rolldown-runtime-CenpyGzJ": "./dist/rolldown-runtime-CenpyGzJ.mjs",
     "./runtime": {
       "require": {
         "types": "./dist/runtime.d.cts",

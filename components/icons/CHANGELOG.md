@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.11) (10/12/2026)
+
+### Features
+
+- **overlay:** Added the Overlay component for reuse ([ab306982](https://github.com/storm-software/cyclone-ui/commit/ab306982))
+
 ## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.8) (10/11/2026)
 
 ### Bug Fixes

@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Footer
 
+## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.13) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+- **tokens:** Added back the hovered variants ([552ee0e4](https://github.com/storm-software/cyclone-ui/commit/552ee0e4))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.15**
+- Updated **heading-text** to **v0.5.15**
+- Updated **icons** to **v0.0.11**
+- Updated **link** to **v0.5.15**
+- Updated **vectors** to **v0.5.15**
+
 ## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/footer%400.0.12) (10/12/2026)
 
 ### Updated Dependencies

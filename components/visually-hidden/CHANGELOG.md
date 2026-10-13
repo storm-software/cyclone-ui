@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Visually Hidden
 
+## [0.5.15](https://github.com/storm-software/cyclone-ui/releases/tag/visually-hidden%400.5.15) (10/12/2026)
+
+### Features
+
+- **overlay:** Added the Overlay component for reuse ([ab306982](https://github.com/storm-software/cyclone-ui/commit/ab306982))
+
 ## [0.5.12](https://github.com/storm-software/cyclone-ui/releases/tag/visually-hidden%400.5.12) (10/11/2026)
 
 ### Bug Fixes

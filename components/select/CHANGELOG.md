@@ -2,6 +2,28 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.15](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.15) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+- **tokens:** Added back the hovered variants ([552ee0e4](https://github.com/storm-software/cyclone-ui/commit/552ee0e4))
+
+### Features
+
+- **overlay:** Added the Overlay component for reuse ([ab306982](https://github.com/storm-software/cyclone-ui/commit/ab306982))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.15**
+- Updated **button** to **v0.6.15**
+- Updated **context-menu** to **v0.0.5**
+- Updated **field** to **v0.5.15**
+- Updated **form** to **v0.9.15**
+- Updated **helpers** to **v0.3.15**
+- Updated **icons** to **v0.0.11**
+- Updated **input** to **v0.6.15**
+
 ## [0.6.14](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.14) (10/12/2026)
 
 ### Bug Fixes

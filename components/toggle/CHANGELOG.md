@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Toggle
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/toggle%400.0.5) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+- **tokens:** Added back the hovered variants ([552ee0e4](https://github.com/storm-software/cyclone-ui/commit/552ee0e4))
+
+### Features
+
+- **overlay:** Added the Overlay component for reuse ([ab306982](https://github.com/storm-software/cyclone-ui/commit/ab306982))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.15**
+- Updated **icons** to **v0.0.11**
+- Updated **tokens** to **v0.3.4**
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/toggle%400.0.4) (10/12/2026)
 
 ### Updated Dependencies

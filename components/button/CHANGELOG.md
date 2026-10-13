@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.15](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.15) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+- **tokens:** Added back the hovered variants ([552ee0e4](https://github.com/storm-software/cyclone-ui/commit/552ee0e4))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.15**
+- Updated **helpers** to **v0.3.15**
+- Updated **icons** to **v0.0.11**
+- Updated **themeable-icon** to **v0.6.15**
+
 ## [0.6.14](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.14) (10/12/2026)
 
 ### Bug Fixes

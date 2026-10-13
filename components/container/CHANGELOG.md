@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Container
 
+## [0.6.15](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.15) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+
+### Features
+
+- **overlay:** Added the Overlay component for reuse ([ab306982](https://github.com/storm-software/cyclone-ui/commit/ab306982))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.15**
+- Updated **vectors** to **v0.5.15**
+
 ## [0.6.14](https://github.com/storm-software/cyclone-ui/releases/tag/container%400.6.14) (10/12/2026)
 
 ### Updated Dependencies

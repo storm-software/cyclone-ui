@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Dialog
 
+## [0.3.15](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.15) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+
+### Features
+
+- **overlay:** Added the Overlay component for reuse ([ab306982](https://github.com/storm-software/cyclone-ui/commit/ab306982))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.15**
+- Updated **button** to **v0.6.15**
+- Updated **container** to **v0.6.15**
+- Updated **heading-text** to **v0.5.15**
+- Updated **overlay** to **v0.0.2**
+
 ## [0.3.14](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.14) (10/12/2026)
 
 ### Updated Dependencies

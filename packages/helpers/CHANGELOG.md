@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.15](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.15) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+
 ## [0.3.14](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.14) (10/12/2026)
 
 ### Bug Fixes

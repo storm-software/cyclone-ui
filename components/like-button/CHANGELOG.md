@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Like Button
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/like-button%400.0.5) (10/12/2026)
+
+### Bug Fixes
+
+- **tokens:** Updates to background token structure ([913fc3c9](https://github.com/storm-software/cyclone-ui/commit/913fc3c9))
+
+### Features
+
+- **overlay:** Added the Overlay component for reuse ([ab306982](https://github.com/storm-software/cyclone-ui/commit/ab306982))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.15**
+- Updated **icons** to **v0.0.11**
+- Updated **toggle** to **v0.0.5**
+- Updated **tokens** to **v0.3.4**
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/like-button%400.0.4) (10/12/2026)
 
 ### Updated Dependencies
