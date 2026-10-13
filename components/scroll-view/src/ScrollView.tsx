@@ -28,12 +28,12 @@ export const SCROLL_VIEW_STYLES = `
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-track { background: transparent; }
 .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar, .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-track { background: color-mix(in srgb, var(--sunken) 0%, transparent); }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-thumb { background: transparent; border-radius: ${100_000}px }
-.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb { background: var(--primaryActive); }
-.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb { background: var(--subtlest); }
+.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb:hover { background: var(--subtlestHovered); }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-button { display: none; }
 @supports not selector(::-webkit-scrollbar) {
   .${SCROLL_VIEW_CLASS_NAME} { scrollbar-color: transparent transparent; }
-  .${SCROLL_VIEW_CLASS_NAME}:hover { scrollbar-color: var(--primaryActive) transparent; }
+  .${SCROLL_VIEW_CLASS_NAME}:hover { scrollbar-color: var(--subtlestHovered) transparent; }
 }
 `;
 

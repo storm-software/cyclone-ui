@@ -43,45 +43,76 @@ export const Base: Story = {
   }
 };
 
-export const Inverse: Story = {
+export const Emphasis: Story = {
   args: {
     currentName: "Current Page",
-    inverse: true
+    variant: "emphasis"
+  }
+};
+
+export const Ink: Story = {
+  args: {
+    currentName: "Current Page",
+    variant: "ink"
   }
 };
 
 export const Subtle: Story = {
   args: {
     currentName: "Current Page",
-    subtle: true
+    variant: "subtle"
   }
 };
 
 export const Subtlest: Story = {
   args: {
     currentName: "Current Page",
-    subtlest: true
+    variant: "subtlest"
+  }
+};
+
+export const Mixed: Story = {
+  args: {
+    currentName: "Current Page",
+    variant: "emphasis",
+    mixed: true
+  }
+};
+
+export const MixedInverse: Story = {
+  args: {
+    currentName: "Current Page",
+    variant: "emphasis",
+    mixed: true,
+    inverse: true
+  }
+};
+
+export const Themed: Story = {
+  args: {
+    currentName: "Current Page",
+    themed: true
   }
 };
 
 export const Slash: Story = {
   args: {
     currentName: "Current Page",
-    variant: "slash"
+    separator: "slash"
   }
 };
 
 export const Chevron: Story = {
   args: {
     currentName: "Current Page",
-    variant: "chevron"
+    separator: "chevron"
   }
 };
 
 export const DoubleChevron: Story = {
   args: {
     currentName: "Current Page",
-    variant: "double"
+    separator: "double"
   }
 };
 

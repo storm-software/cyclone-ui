@@ -1433,6 +1433,9 @@ importers:
       '@cyclone-ui/link':
         specifier: workspace:*
         version: link:../link
+      '@cyclone-ui/link-text':
+        specifier: workspace:*
+        version: link:../link-text
       '@cyclone-ui/popover':
         specifier: workspace:*
         version: link:../popover
@@ -1970,6 +1973,9 @@ importers:
       '@cyclone-ui/checkbox':
         specifier: workspace:*
         version: link:../checkbox
+      '@cyclone-ui/context-menu':
+        specifier: workspace:*
+        version: link:../context-menu
       '@cyclone-ui/field':
         specifier: workspace:*
         version: link:../field
@@ -3570,6 +3576,9 @@ importers:
       '@cyclone-ui/helpers':
         specifier: workspace:*
         version: link:../../packages/helpers
+      '@cyclone-ui/icons':
+        specifier: workspace:*
+        version: link:../icons
       '@stryke/hooks':
         specifier: 'catalog:'
         version: 0.4.133(react-dom@19.3.0(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)(zod@4.6.5)
@@ -3715,9 +3724,9 @@ importers:
 
   components/search-input:
     dependencies:
-      '@cyclone-ui/body-text':
+      '@cyclone-ui/context-menu':
         specifier: workspace:*
-        version: link:../body-text
+        version: link:../context-menu
       '@cyclone-ui/field':
         specifier: workspace:*
         version: link:../field
@@ -3730,21 +3739,12 @@ importers:
       '@cyclone-ui/input':
         specifier: workspace:*
         version: link:../input
-      '@cyclone-ui/popover':
-        specifier: workspace:*
-        version: link:../popover
-      '@cyclone-ui/select':
-        specifier: workspace:*
-        version: link:../select
       '@tamagui/core':
         specifier: 'catalog:'
         version: 3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
       '@tamagui/create-context':
         specifier: 'catalog:'
         version: 3.0.2(react@19.3.0)
-      '@tamagui/linear-gradient':
-        specifier: 'catalog:'
-        version: 3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)
     devDependencies:
       '@cyclone-ui/form':
         specifier: workspace:*
@@ -4318,6 +4318,12 @@ importers:
       '@cyclone-ui/input':
         specifier: workspace:*
         version: link:../input
+      '@cyclone-ui/scroll-view':
+        specifier: workspace:*
+        version: link:../scroll-view
+      '@tamagui/constants':
+        specifier: 'catalog:'
+        version: 3.0.2(react@19.3.0)
       '@tamagui/core':
         specifier: 'catalog:'
         version: 3.0.2(react-dom@19.3.0(react@19.3.0))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0))(react-native-web@0.19.12(encoding@0.1.13)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@7.0.2))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)

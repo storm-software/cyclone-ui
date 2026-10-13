@@ -26,7 +26,9 @@ const meta: Meta<typeof Accordion> = {
   component: Accordion,
   tags: ["autodocs"],
   args: {
-    variant: "default",
+    variant: "surface",
+    bordered: true,
+    separated: false,
     single: false
   },
   render: (args: any) => (
@@ -170,23 +172,59 @@ export const DirectionUp: Story = {
   }
 };
 
-export const BackgroundColor: Story = {
+export const Sunken: Story = {
   args: {
-    backgroundColor: "canvas",
+    variant: "sunken",
+    children: "Some collapsed content"
+  }
+};
+
+export const Canvas: Story = {
+  args: {
+    variant: "canvas",
+    children: "Some collapsed content"
+  }
+};
+
+export const Surface: Story = {
+  args: {
+    variant: "surface",
+    children: "Some collapsed content"
+  }
+};
+
+export const Elevated: Story = {
+  args: {
+    variant: "elevated",
+    children: "Some collapsed content"
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    variant: "floating",
+    children: "Some collapsed content"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    variant: "outlined",
     children: "Some collapsed content"
   }
 };
 
 export const Separated: Story = {
   args: {
-    variant: "separated",
+    separated: true,
     children: "Some collapsed content"
   }
 };
 
-export const Bordered: Story = {
+export const SeparatedOutlined: Story = {
   args: {
-    variant: "bordered",
+    variant: "outlined",
+    separated: true,
     children: "Some collapsed content"
   }
 };

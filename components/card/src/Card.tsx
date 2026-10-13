@@ -84,7 +84,7 @@ const CardFrame = styled(Container, {
   borderColor:
     "primary hover:primaryHovered press:primaryActive focus-visible:primaryActive",
   cursor: "pointer",
-  backgroundColor: "surface hover:subtle",
+  backgroundColor: "surface hover:surfaceHovered",
   position: "relative"
 });
 

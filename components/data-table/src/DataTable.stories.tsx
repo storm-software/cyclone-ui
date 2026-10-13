@@ -16,11 +16,13 @@
 
  ------------------------------------------------------------------- */
 
+import { CheckCircle, PaperPlaneTilt, XSquare } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Avatar } from "@tamagui/avatar";
 import { Text, View } from "@tamagui/core";
 import { createColumnHelper } from "@tanstack/react-table";
 import type { ComponentType } from "react";
+import { expect, fn, screen, userEvent, waitFor, within } from "storybook/test";
 import type { DataTableOptions, DataTableProps } from "./DataTable";
 import { DataTable, DataTableCell, DataTableHeader } from "./DataTable";
 
@@ -332,5 +334,49 @@ export const Success: Story = {
     options: {
       data: defaultData
     }
+  }
+};
+
+export const RowActions: Story = {
+  args: {
+    options: {
+      data: defaultData
+    },
+    pageSize: 5,
+    rowActions: row => [
+      {
+        value: "approve",
+        label: "Approve",
+        icon: <CheckCircle size="2xl" />,
+        disabled: row.original.status === "Active"
+      },
+      { value: "decline", label: "Decline", icon: <XSquare size="2xl" /> },
+      {
+        value: "message",
+        label: "Send Message",
+        icon: <PaperPlaneTilt size="2xl" />
+      }
+    ],
+    onRowAction: fn()
+  },
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Actions for row 2" })
+    );
+    await userEvent.click(
+      await screen.findByRole("button", { name: "Decline" })
+    );
+
+    await expect(args.onRowAction).toHaveBeenCalledWith(
+      "decline",
+      expect.objectContaining({ index: 1 })
+    );
+    await waitFor(() =>
+      expect(
+        screen.queryByRole("button", { name: "Decline" })
+      ).not.toBeInTheDocument()
+    );
   }
 };

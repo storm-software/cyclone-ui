@@ -173,6 +173,41 @@ export const RemovableGroup: Story = {
   render: () => <AddRemoveTagExample />
 };
 
+const EditableExample = () => {
+  const [text, setText] = useState("Tag Text");
+
+  return (
+    <Tag editable={true} onEdit={setText}>
+      <Tag.Text>{text}</Tag.Text>
+    </Tag>
+  );
+};
+
+export const Editable: Story = {
+  render: () => <EditableExample />,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.dblClick(canvas.getByText("Tag Text"));
+    const input = canvas.getByRole("textbox", { name: "Edit tag" });
+    // The caret starts after the text.
+    await expect(
+      (input as unknown as { selectionStart: number }).selectionStart
+    ).toBe("Tag Text".length);
+    await userEvent.clear(input);
+    await userEvent.type(input, "Edited{Enter}");
+    await expect(canvas.getByText("Edited")).toBeTruthy();
+
+    // Escape cancels the edit.
+    await userEvent.dblClick(canvas.getByText("Edited"));
+    await userEvent.type(
+      canvas.getByRole("textbox", { name: "Edit tag" }),
+      "Discarded{Escape}"
+    );
+    await expect(canvas.getByText("Edited")).toBeTruthy();
+  }
+};
+
 export const Secondary: Story = {
   args: {
     children: "Tag Text",

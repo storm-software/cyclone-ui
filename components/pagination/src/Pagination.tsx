@@ -42,7 +42,7 @@ interface ExtraPaginationProps {
 // `color` is forwarded to the page buttons, so it takes the buttons' value type
 // rather than the flat-clause `XStack` style value.
 export type PaginationProps = Omit<XStackProps, "color"> &
-  Pick<ButtonProps, "color"> &
+  Pick<ButtonProps, "color" | "size"> &
   ExtraPaginationProps;
 
 export const Pagination = createStyledHOC(
@@ -59,6 +59,7 @@ export const Pagination = createStyledHOC(
     onLast,
     onPrevious,
     onNext,
+    size,
     ...props
   }: PaginationProps) => {
     const currentPage = Math.min(pageCount, Math.max(1, pageIndex + 1));
@@ -106,22 +107,23 @@ export const Pagination = createStyledHOC(
 
     return (
       <XStack gap="lg" alignItems="center">
-        <PreviousButton
-          {...props}
-          hideText={hideText}
-          variant="ghost"
-          theme={theme}
-          size="9xl"
-          paddingHorizontal="zero"
-          width={buttonWidth}
-          disabled={currentPage === 1}
-          onClick={onPrevious ?? handlePrevious}
-        />
+        {currentPage > 1 && (
+          <PreviousButton
+            {...props}
+            hideText={hideText}
+            variant="ghost"
+            theme={theme}
+            size={size}
+            paddingHorizontal="zero"
+            width={buttonWidth}
+            onClick={onPrevious ?? handlePrevious}
+          />
+        )}
 
         <Button
           variant={currentPage === 1 ? "outlined" : "ghost"}
           theme={theme}
-          size="9xl"
+          size={size}
           paddingHorizontal="zero"
           {...props}
           width={buttonWidth}
@@ -137,7 +139,7 @@ export const Pagination = createStyledHOC(
           <Button
             variant={currentPage === 2 ? "outlined" : "ghost"}
             theme={theme}
-            size="9xl"
+            size={size}
             paddingHorizontal="zero"
             {...props}
             width={buttonWidth}
@@ -161,7 +163,7 @@ export const Pagination = createStyledHOC(
                 : "ghost"
             }
             theme={theme}
-            size="9xl"
+            size={size}
             paddingHorizontal="zero"
             {...props}
             width={buttonWidth}
@@ -185,7 +187,7 @@ export const Pagination = createStyledHOC(
                 : "ghost"
             }
             theme={theme}
-            size="9xl"
+            size={size}
             paddingHorizontal="zero"
             {...props}
             width={buttonWidth}
@@ -209,24 +211,25 @@ export const Pagination = createStyledHOC(
             variant={currentPage === pageCount ? "outlined" : "ghost"}
             theme={theme}
             {...props}
-            size="9xl"
+            size={size}
             paddingHorizontal="zero"
             width={buttonWidth}
             onClick={onLast ?? handleLast}>
             <Button.Text>{pageCount}</Button.Text>
           </Button>
         )}
-        <NextButton
-          {...props}
-          hideText={hideText}
-          variant="ghost"
-          theme={theme}
-          size="9xl"
-          paddingHorizontal="zero"
-          width={buttonWidth}
-          disabled={currentPage === pageCount}
-          onClick={onNext ?? handleNext}
-        />
+        {currentPage < pageCount && (
+          <NextButton
+            {...props}
+            hideText={hideText}
+            variant="ghost"
+            theme={theme}
+            size={size}
+            paddingHorizontal="zero"
+            width={buttonWidth}
+            onClick={onNext ?? handleNext}
+          />
+        )}
       </XStack>
     );
   },

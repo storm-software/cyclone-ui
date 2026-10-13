@@ -25,15 +25,26 @@ describe("field focus colors", () => {
     expect(source).toContain(
       '(!theme || theme === "base") && !formControl?.hasValidationMessage'
     );
-    expect(source).toMatch(
-      /isNeutral\s*\?\s*focused\s*\?\s*"hairlineActive"\s*:\s*"hairline"/
-    );
+    expect(source).toContain('validated ? "primary" : "outline"');
+    expect(source).toContain('validated ? "primaryActive" : "outlineActive"');
+    expect(source).toMatch(/focused\s*\?\s*focusColor\s*:\s*restColor/);
   });
 
-  it("keeps the primaryActive token for a validation theme", () => {
-    expect(fieldIconColorSource()).toMatch(
-      /:\s*focused\s*\?\s*"primaryActive"\s*:\s*"primary";/
+  it("hovers to the validation or outline hover token, not the brand color", () => {
+    expect(fieldIconColorSource()).toContain(
+      'validated ? "primaryHovered" : "outlineHovered"'
     );
+
+    for (const source of [
+      readComponent("../../input/src/Input.tsx"),
+      readComponent("../../select/src/Select.tsx"),
+      readComponent("../../text-area/src/TextArea.tsx")
+    ]) {
+      expect(source).toMatch(
+        /hasValidationMessage\s*\?\s*"primaryHovered"\s*:\s*"outlineHovered"/
+      );
+      expect(source).not.toMatch(/group-hover\/field:[^`]*: "primaryHovered"/);
+    }
   });
 
   it("uses the validation primary color for non-base separators and icons at rest", () => {
@@ -49,7 +60,7 @@ describe("field focus colors", () => {
       readComponent("../../input/src/Input.tsx"),
       readComponent("../../select/src/Select.tsx")
     ]) {
-      expect(source).toContain('hasValidationMessage ? "primary" : "hairline"');
+      expect(source).toContain('hasValidationMessage ? "primary" : "outline"');
     }
   });
 
@@ -86,7 +97,7 @@ describe("field focus colors", () => {
 
     for (const source of components) {
       expect(source).toMatch(
-        /hasValidationMessage\s*\?\s*"primaryActive"\s*:\s*"hairlineActive"/
+        /hasValidationMessage\s*\?\s*"primaryActive"\s*:\s*"outlineActive"/
       );
     }
   });

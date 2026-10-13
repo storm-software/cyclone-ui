@@ -93,6 +93,13 @@
         "$value": "{color.neutral.7}",
         "$description": "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
         "semantic": true
+      },
+      "link": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(58.8% 0.158 241.966)",
+        "$description": "The color used for hyperlink text.",
+        "semantic": true
       }
     },
     "danger": {

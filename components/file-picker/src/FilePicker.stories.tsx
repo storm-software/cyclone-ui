@@ -23,6 +23,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { GetProps } from "@tamagui/core";
 import { View } from "@tamagui/core";
 import { useState } from "react";
+import { expect, userEvent, within } from "storybook/test";
 import { FilePicker } from "./FilePicker";
 
 interface FilePickerValidation {
@@ -55,8 +56,9 @@ const meta: Meta<FilePickerStoryArgs> = {
           max={props.max}
           width="500px"
           disabled={disabled}>
+          <FilePicker.Files />
           <FilePicker.Trigger>
-            <FilePicker.Trigger.Button />
+            <FilePicker.Trigger.Button>{children}</FilePicker.Trigger.Button>
           </FilePicker.Trigger>
         </FilePicker>
       </Field>
@@ -67,6 +69,30 @@ const meta: Meta<FilePickerStoryArgs> = {
 export default meta;
 
 type Story = StoryObj<FilePickerStoryArgs>;
+
+/**
+ * Attach files as a pick from the file dialog would, returning the input.
+ *
+ * @remarks
+ * Not `userEvent.upload`: it patches the input's `value` setter, which then
+ * throws when react-dropzone resets the input before opening the dialog, so
+ * the story could no longer be clicked afterwards.
+ */
+const attachFiles = (canvasElement: HTMLElement, names: string[]) => {
+  // Story tsconfigs have no DOM lib, so the DOM globals are untyped.
+  const { DataTransfer, Event, File } = globalThis as any;
+  const input = (canvasElement as any).querySelector('input[type="file"]');
+  const transfer = new DataTransfer();
+  for (const name of names) {
+    transfer.items.add(
+      new File([`${name}\n`], name, { type: "application/yaml" })
+    );
+  }
+  input.files = transfer.files;
+  input.dispatchEvent(new Event("change", { bubbles: true }));
+
+  return input;
+};
 
 const validation = (
   type:
@@ -89,7 +115,23 @@ const validation = (
 });
 
 export const Base: Story = {
-  args: {}
+  args: {},
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    const input = attachFiles(canvasElement, ["first.yml"]);
+    await canvas.findByText("first.yml");
+
+    // With the one allowed file attached, clicking the dropzone still opens
+    // the dialog (once) so the file can be replaced.
+    let opened = 0;
+    input.click = () => {
+      opened += 1;
+    };
+    await userEvent.click(
+      canvas.getByText("Click or drop a file to replace it")
+    );
+    await expect(opened).toBe(1);
+  }
 };
 
 export const Simple: Story = {
@@ -142,6 +184,29 @@ export const CustomText: Story = {
 export const Multiple: Story = {
   args: {
     max: 10
+  },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+
+    attachFiles(canvasElement, ["first.yml"]);
+    await canvas.findByText("first.yml");
+
+    // A later pick adds to the files already attached.
+    attachFiles(canvasElement, ["second.yml", "third.yml"]);
+    await canvas.findByText("third.yml");
+    await expect(canvas.getByText("first.yml")).toBeTruthy();
+    await expect(canvas.getByText("second.yml")).toBeTruthy();
+
+    // A file added after a removal gets its own card (ids don't repeat).
+    await userEvent.click(
+      canvas.getByRole("button", { name: "Remove first.yml" })
+    );
+    attachFiles(canvasElement, ["fourth.yml"]);
+    await canvas.findByText("fourth.yml");
+    await expect(canvas.queryByText("first.yml")).toBeNull();
+    await expect(
+      canvas.getAllByRole("button", { name: /^Remove / }).length
+    ).toBe(3);
   }
 };
 
@@ -217,6 +282,12 @@ export const PopulatedSizes: Story = {
 
 const previewFiles: ClientFileResult[] = [
   { ...previewFile, id: 1 },
+  {
+    ...previewFile,
+    id: 4,
+    // Long enough to be cut short with an ellipsis.
+    name: "quarterly-financial-report-final-revision-approved-by-legal-and-finance.svg"
+  },
   {
     id: 2,
     status: "initialized",

@@ -323,7 +323,7 @@ const TabsRovingIndicator = styled(YStack, {
       floating: {
         borderRadius: "trigger",
         borderWidth: 1,
-        borderColor: "hairline",
+        borderColor: "outline",
         alignItems: "center",
         justifyContent: "center"
       },
@@ -449,7 +449,7 @@ const TabsHeaderList = styled(YStack, {
       floating: {
         backgroundColor: "sunken",
         borderRadius: "trigger",
-        borderColor: "hairline",
+        borderColor: "outline",
         borderWidth: 1
       },
       tabbed: {
@@ -641,10 +641,8 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
   const borderWidth = props.bordered === false ? 0 : 1;
 
   return {
-    backgroundColor: props.selected
-      ? "surface"
-      : "canvas hover:subtle",
-    borderColor: "hairline",
+    backgroundColor: props.selected ? "surface" : "canvas hover:canvasHovered",
+    borderColor: "outline",
     borderWidth,
     // Tamagui v3's Tabs.List is a Group that drops the connecting border on
     // every tab but the first; tabbed tabs are spaced apart and keep it.
@@ -654,10 +652,8 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
     borderTopRightRadius: horizontal ? "container" : 0,
     borderBottomLeftRadius: horizontal ? 0 : "container",
     borderBottomRightRadius: 0,
-    borderBottomColor:
-      props.selected && horizontal ? "surface" : undefined,
-    borderRightColor:
-      props.selected && !horizontal ? "surface" : undefined,
+    borderBottomColor: props.selected && horizontal ? "surface" : undefined,
+    borderRightColor: props.selected && !horizontal ? "surface" : undefined,
     marginBottom: horizontal ? -1 : undefined,
     marginRight: horizontal ? undefined : -1,
     zIndex: 2
@@ -748,7 +744,7 @@ const TabsContentList = styled(View, {
 
   return {
     backgroundColor: "surface",
-    borderColor: "hairline",
+    borderColor: "outline",
     borderWidth: props.bordered === false ? 0 : 1,
     borderTopRightRadius: horizontal ? undefined : "container",
     borderBottomLeftRadius: horizontal ? "container" : undefined,

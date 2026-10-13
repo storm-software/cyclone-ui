@@ -181,11 +181,7 @@
       }
     ],
     "ci": {
-      "trackBranches": [
-        "main",
-        "next",
-        "experimental"
-      ]
+      "trackBranches": ["main", "next", "experimental"]
     }
   },
   "licenses": [

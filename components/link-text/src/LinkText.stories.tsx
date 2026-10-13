@@ -69,38 +69,15 @@ export const BaseVariant: Story = {
   }
 };
 
-export const BaseInverseVariant: Story = {
+export const EmphasisVariant: Story = {
   args: {
-    variant: "base",
-    inverse: true
+    variant: "emphasis"
   }
 };
 
-export const MixedVariant: Story = {
+export const InkVariant: Story = {
   args: {
-    variant: "mixed",
-    underline: "static"
-  }
-};
-
-export const MixedInverseVariant: Story = {
-  args: {
-    variant: "mixed",
-    inverse: true,
-    underline: "static"
-  }
-};
-
-export const ThemedVariant: Story = {
-  args: {
-    variant: "themed"
-  }
-};
-
-export const ThemedInverseVariant: Story = {
-  args: {
-    variant: "themed",
-    inverse: true
+    variant: "ink"
   }
 };
 
@@ -113,6 +90,35 @@ export const SubtleVariant: Story = {
 export const SubtlestVariant: Story = {
   args: {
     variant: "subtlest"
+  }
+};
+
+export const Mixed: Story = {
+  args: {
+    variant: "emphasis",
+    mixed: true
+  }
+};
+
+export const MixedInverse: Story = {
+  args: {
+    variant: "emphasis",
+    mixed: true,
+    inverse: true
+  }
+};
+
+export const Themed: Story = {
+  args: {
+    themed: true
+  }
+};
+
+export const ThemedMixed: Story = {
+  args: {
+    variant: "emphasis",
+    mixed: true,
+    themed: true
   }
 };
 

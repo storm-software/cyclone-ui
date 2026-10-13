@@ -31,37 +31,38 @@ export type NextButtonProps = ButtonProps &
     hideText?: boolean;
   };
 
-export const NextButton: TamaguiComponent<
-  NextButtonProps,
-  TamaguiElement
-> = createStyledHOC(Button, 
-  (
-    {
-      children,
-      hideText = false,
-      animateShrink = false,
-      ...props
-    }: NextButtonProps,
-    forwardedRef
-  ) => {
-    const [hoverRef, hovering] = useHover();
-    const ref = useComposedRefs(forwardedRef, hoverRef as Ref<TamaguiElement>);
+export const NextButton: TamaguiComponent<NextButtonProps, TamaguiElement> =
+  createStyledHOC(
+    Button,
+    (
+      {
+        children,
+        hideText = false,
+        animateShrink = false,
+        ...props
+      }: NextButtonProps,
+      forwardedRef
+    ) => {
+      const [hoverRef, hovering] = useHover();
+      const ref = useComposedRefs(
+        forwardedRef,
+        hoverRef as Ref<TamaguiElement>
+      );
 
-    return (
-      <Button ref={ref} aria-label="Next" justifyContent="center" {...props}>
-        <View display="unset">
-          <XStack gap="2xl" alignItems="center">
-            {!hideText && <Button.Text>{children || "Next"}</Button.Text>}
-            <Button.Icon>
-              <RightArrow
-                isComplete={hovering}
-                animateShrink={animateShrink}
-                size="7xl"
-              />
-            </Button.Icon>
-          </XStack>
-        </View>
-      </Button>
-    );
-  }
-);
+      return (
+        <Button ref={ref} aria-label="Next" justifyContent="center" {...props}>
+          <View display="unset">
+            <XStack gap="2xl" alignItems="center">
+              {!hideText && <Button.Text>{children || "Next"}</Button.Text>}
+              <Button.Icon>
+                <RightArrow
+                  isComplete={hovering}
+                  animateShrink={animateShrink}
+                />
+              </Button.Icon>
+            </XStack>
+          </View>
+        </Button>
+      );
+    }
+  );

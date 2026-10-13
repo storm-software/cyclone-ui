@@ -120,26 +120,31 @@ const getWindow = () =>
 const TypeTableItem = ({
   item,
   name,
-  parentId
+  parentId,
+  open,
+  rounded,
+  onOpenChange
 }: {
   item: TypeNode;
   name: string;
   parentId?: string;
+  open: boolean;
+  rounded: boolean;
+  onOpenChange: (name: string, open: boolean) => void;
 }) => {
   const id = getItemId(parentId, name);
-  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const currentWindow = getWindow();
 
     if (id && currentWindow?.location.hash === `#${id}`) {
-      const timeoutId = setTimeout(() => setOpen(true), 0);
+      const timeoutId = setTimeout(() => onOpenChange(name, true), 0);
 
       return () => clearTimeout(timeoutId);
     }
 
     return undefined;
-  }, [id]);
+  }, [id, name, onOpenChange]);
 
   const handleValueChange = useCallback(
     (value: string | string[]) => {
@@ -150,49 +155,80 @@ const TypeTableItem = ({
         currentWindow.history.replaceState(null, "", `#${id}`);
       }
 
-      setOpen(nextOpen);
+      onOpenChange(name, nextOpen);
     },
-    [id]
+    [id, name, onOpenChange]
   );
 
+  // Only the first row and rows directly below an expanded row round their
+  // top corners; bottom corners stay square so stacked rows read as one block.
   return (
-    <Collapsible
-      id={id}
-      bordered={false}
-      value={open}
-      variant="ghost"
-      backgroundColor="elevated"
-      onValueChange={handleValueChange}>
-      <Collapsible.Header
-        paddingHorizontal="3xl"
-        paddingVertical="2xl"
-        backgroundColor="hover:subtle">
-        <TypeTableRow padding={0} flex={1}>
-          <PropertyColumn deprecated={item.deprecated}>
-            {`${name}${item.required ? "" : "?"}`}
-          </PropertyColumn>
-          {item.typeDescriptionLink ? (
-            <TypeLink href={item.typeDescriptionLink}>{item.type}</TypeLink>
-          ) : (
-            <TypeColumn>{item.type}</TypeColumn>
-          )}
-        </TypeTableRow>
-      </Collapsible.Header>
-      <Collapsible.Content padding={0} backgroundColor="surface">
-        <TypeTableItemDetails item={item} />
-      </Collapsible.Content>
-    </Collapsible>
+    <View
+      overflow="hidden"
+      borderTopLeftRadius={rounded ? "container" : 0}
+      borderTopRightRadius={rounded ? "container" : 0}>
+      <Collapsible
+        id={id}
+        borderRadius={0}
+        bordered={false}
+        value={open}
+        variant="ghost"
+        onValueChange={handleValueChange}>
+        <Collapsible.Header
+          paddingHorizontal="3xl"
+          paddingVertical="2xl"
+          backgroundColor="elevated hover:elevatedHovered">
+          <TypeTableRow padding={0} flex={1}>
+            <PropertyColumn deprecated={item.deprecated}>
+              {`${name}${item.required ? "" : "?"}`}
+            </PropertyColumn>
+            {item.typeDescriptionLink ? (
+              <TypeLink href={item.typeDescriptionLink}>{item.type}</TypeLink>
+            ) : (
+              <TypeColumn>{item.type}</TypeColumn>
+            )}
+          </TypeTableRow>
+        </Collapsible.Header>
+        <Collapsible.Content padding={0} backgroundColor="surface">
+          <TypeTableItemDetails item={item} />
+        </Collapsible.Content>
+      </Collapsible>
+    </View>
   );
 };
 
-export const TypeTable = ({ id, type, ...props }: TypeTableProps) => (
-  <TypeTableFrame id={id} noPadding {...props}>
-    <TypeTableRow>
-      <ColumnLabel width="25%">Prop</ColumnLabel>
-      <TypeColumn>Type</TypeColumn>
-    </TypeTableRow>
-    {Object.entries(type).map(([name, item]) => (
-      <TypeTableItem key={name} item={item} name={name} parentId={id} />
-    ))}
-  </TypeTableFrame>
-);
+export const TypeTable = ({ id, type, ...props }: TypeTableProps) => {
+  const [openNames, setOpenNames] = useState<string[]>([]);
+
+  const handleOpenChange = useCallback((name: string, open: boolean) => {
+    setOpenNames(prev =>
+      open
+        ? prev.includes(name)
+          ? prev
+          : [...prev, name]
+        : prev.filter(item => item !== name)
+    );
+  }, []);
+
+  const names = Object.keys(type);
+
+  return (
+    <TypeTableFrame id={id} noPadding {...props}>
+      <TypeTableRow>
+        <ColumnLabel width="25%">Prop</ColumnLabel>
+        <TypeColumn>Type</TypeColumn>
+      </TypeTableRow>
+      {names.map((name, index) => (
+        <TypeTableItem
+          key={name}
+          item={type[name]!}
+          name={name}
+          parentId={id}
+          open={openNames.includes(name)}
+          rounded={index === 0 || openNames.includes(names[index - 1]!)}
+          onOpenChange={handleOpenChange}
+        />
+      ))}
+    </TypeTableFrame>
+  );
+};

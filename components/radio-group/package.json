@@ -31,6 +31,7 @@
     "react-native-svg": "^15.15.5",
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*"
   },
   "devDependencies": {

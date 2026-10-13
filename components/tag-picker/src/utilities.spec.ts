@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { appendTag, normalizeTag, removeTag } from "./utilities";
+import { appendTag, normalizeTag, removeTag, replaceTag } from "./utilities";
 
 describe("normalizeTag", () => {
   it("trims surrounding whitespace", () => {
@@ -42,5 +42,21 @@ describe("removeTag", () => {
     const tags = ["react"];
 
     expect(removeTag(tags, "vite")).toBe(tags);
+  });
+});
+
+describe("replaceTag", () => {
+  it("replaces the tag in place with the trimmed draft", () => {
+    expect(replaceTag(["react", "tamagui", "vite"], "tamagui", " expo ")).toEqual(
+      ["react", "expo", "vite"]
+    );
+  });
+
+  it("returns the same list for a blank draft or a tag already there", () => {
+    const tags = ["react", "tamagui"];
+
+    expect(replaceTag(tags, "react", "  ")).toBe(tags);
+    expect(replaceTag(tags, "react", "tamagui")).toBe(tags);
+    expect(replaceTag(tags, "react", " react ")).toBe(tags);
   });
 });

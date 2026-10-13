@@ -18,10 +18,7 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../select"
-    },
-    {
-      "path": "../popover"
+      "path": "../context-menu"
     },
     {
       "path": "../input"
@@ -31,9 +28,6 @@
     },
     {
       "path": "../icons"
-    },
-    {
-      "path": "../body-text"
     },
     {
       "path": "../field"

@@ -49,7 +49,7 @@ const ToggleFrame = styled(View, {
   width: "fit-content",
   borderWidth: 1,
   borderColor: "outline hover:outlineHovered",
-  backgroundColor: "sunken hover:subtle",
+  backgroundColor: "sunken hover:sunkenHovered",
   borderRadius: "control",
   outlineStyle: "none",
   boxShadow: "none focus-visible:ringOffset",
@@ -142,7 +142,7 @@ const ToggleIndicator = styled(View, {
   variants: {
     active: {
       true: {
-        backgroundColor: "surface group-hover/toggle:subtle",
+        backgroundColor: "surface group-hover/toggle:surfaceHovered",
         boxShadow: "sm",
         borderWidth: 1,
         borderColor: "outline group-hover/toggle:outlineActive"
@@ -234,6 +234,8 @@ export interface ToggleProps extends Omit<
    * to render different content (e.g. "On"/"Off" or icons) per state.
    */
   children?: ReactNode | ((pressed: boolean) => ReactNode);
+  /** The indicator color while pressed and `borderless`. Defaults to `subtle`. */
+  pressedBackgroundColor?: string;
 }
 
 /**
@@ -252,6 +254,7 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
       borderless = false,
       circular = false,
       rounded = false,
+      pressedBackgroundColor = "subtle",
       children,
       ...props
     },
@@ -306,7 +309,7 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
           rounded={rounded}
           {...(borderless &&
             pressed && {
-              backgroundColor: "subtle group-hover/toggle:subtle"
+              backgroundColor: `${pressedBackgroundColor} group-hover/toggle:${pressedBackgroundColor}`
             })}>
           {typeof content === "string" || typeof content === "number" ? (
             <ToggleText textSize={size} active={pressed}>

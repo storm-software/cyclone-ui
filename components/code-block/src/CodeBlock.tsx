@@ -504,7 +504,7 @@ export const CodeBlockTabsTrigger = forwardRef<
     borderTopRightRadius="container"
     borderBottomLeftRadius={0}
     borderBottomRightRadius={0}
-    backgroundColor="canvas hover:subtle"
+    backgroundColor="canvas hover:canvasHovered"
     cursor="pointer"
     className="cyclone-code-block-tabs-trigger">
     <Text

@@ -12,6 +12,6 @@ describe("Collapsible bordered prop", () => {
     // through to `Accordion`, which defaults it to `true`.
     expect(source).toMatch(/Omit<\s*AccordionProps,[^>]*>/);
     expect(source).not.toMatch(/Omit<\s*AccordionProps,[^>]*"bordered"/);
-    expect(source).toMatch(/\{\.\.\.\(props as any\)\}/);
+    expect(source).toMatch(/\{\.\.\.props\}/);
   });
 });

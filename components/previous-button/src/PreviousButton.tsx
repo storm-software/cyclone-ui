@@ -34,7 +34,8 @@ export type PreviousButtonProps = ButtonProps &
 export const PreviousButton: TamaguiComponent<
   PreviousButtonProps,
   TamaguiElement
-> = createStyledHOC(Button, 
+> = createStyledHOC(
+  Button,
   (
     {
       children,
@@ -55,11 +56,7 @@ export const PreviousButton: TamaguiComponent<
         {...props}>
         <XStack gap="2xl" alignItems="center">
           <Button.Icon>
-            <LeftArrow
-              isComplete={hovering}
-              animateShrink={animateShrink}
-              size="7xl"
-            />
+            <LeftArrow isComplete={hovering} animateShrink={animateShrink} />
           </Button.Icon>
           {!hideText && <Button.Text>{children || "Previous"}</Button.Text>}
         </XStack>

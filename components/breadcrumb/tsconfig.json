@@ -23,6 +23,9 @@
       "path": "../button"
     },
     {
+      "path": "../link-text"
+    },
+    {
       "path": "../link"
     },
     {

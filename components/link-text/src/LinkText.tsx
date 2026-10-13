@@ -21,11 +21,32 @@ import type { FontSizeTokens, GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, useThemeName } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
+export type LinkTextVariant =
+  "base" | "emphasis" | "ink" | "subtle" | "subtlest";
+
 export interface LinkTextExtraProps {
   disabled?: boolean;
   underline?: "hover" | "initial" | "static" | "none";
-  variant?: "base" | "mixed" | "themed" | "subtle" | "subtlest";
+  /**
+   * The text color: `base` uses `link`, the rest use their own color tokens.
+   */
+  variant?: LinkTextVariant;
+  /**
+   * Underline in `link` while the text keeps the `variant` color.
+   */
+  mixed?: boolean;
+  /**
+   * Swap the text and underline colors (only visible with `mixed`).
+   */
   inverse?: boolean;
+  /**
+   * Use `primary` everywhere `link` would be used.
+   */
+  themed?: boolean;
+
+  /**
+   * The size of the link text, corresponding to the body text sizes.
+   */
   size?: BodyTextSize;
 }
 
@@ -63,69 +84,6 @@ const LinkTextFrame = styled(SizableText, {
       }
     },
 
-    variant: {
-      base: {
-        color:
-          "emphasis hover:primaryHovered press:primaryActive focus:primaryActive",
-        textDecorationColor:
-          "emphasis hover:primaryHovered press:primaryActive focus:primaryActive"
-      },
-      baseInverse: {
-        color:
-          "primary hover:primaryHovered press:primaryActive focus:primaryActive",
-        textDecorationColor:
-          "primary hover:primaryHovered press:primaryActive focus:primaryActive"
-      },
-
-      mixed: {
-        color:
-          "primary hover:primaryHovered press:primaryActive focus:primaryActive",
-        textDecorationColor:
-          "emphasis hover:primaryHovered press:primaryActive focus:primaryActive"
-      },
-      mixedInverse: {
-        color:
-          "emphasis hover:primaryHovered press:primaryActive focus:primaryActive",
-        textDecorationColor:
-          "primary hover:primaryHovered press:primaryActive focus:primaryActive"
-      },
-
-      themed: {
-        color:
-          "primary hover:primaryHovered press:primaryActive focus:primaryActive",
-        textDecorationColor:
-          "primary hover:primaryHovered press:primaryActive focus:primaryActive"
-      },
-      themedInverse: {
-        color:
-          "primary hover:primaryHovered press:primaryActive focus:primaryActive",
-        textDecorationColor:
-          "primary hover:primaryHovered press:primaryActive focus:primaryActive"
-      },
-
-      // Ink at rest so the link recedes into running copy, then the
-      // theme primary on interaction.
-      subtle: {
-        color: "ink hover:primary press:primaryActive focus:primaryActive",
-        textDecorationColor:
-          "subtle hover:primary press:primaryActive focus:primaryActive"
-      },
-
-      // One step further down the ink scale, with subtle text.
-      subtlest: {
-        color: "subtle hover:primary press:primaryActive focus:primaryActive",
-        textDecorationColor:
-          "subtle hover:primary press:primaryActive focus:primaryActive"
-      }
-    },
-
-    inverse: {
-      true: {
-        color: "hover:primaryHovered",
-        textDecorationColor: "hover:primaryHovered"
-      }
-    },
-
     size: {
       sm: {
         fontFamily: "body-sm"
@@ -137,8 +95,7 @@ const LinkTextFrame = styled(SizableText, {
 
     disabled: {
       true: {
-        cursor: "default",
-        color: "primaryInactive hover:primaryInactive"
+        cursor: "default"
       }
     }
   } as const,
@@ -147,27 +104,34 @@ const LinkTextFrame = styled(SizableText, {
     underline: "static",
     cta: false,
     disabled: false,
-    variant: "base",
     size: "md"
   }
 });
 
 /**
+ * A color token with its interaction states, e.g. `link hover:linkHovered ...`.
+ */
+const getStateColors = (token: string) =>
+  `${token} hover:${token}Hovered press:${token}Active focus:${token}Active`;
+
+/**
  * In v2 an explicit `color` was applied through the inline `style` (via the
  * removed `useStyle` hook), so it won over the variant's base and state colors.
- * In v3 the prop is passed after the variants, where it only replaces the
- * clauses it restates, so restate the variant state clauses for a plain value.
- * Flat clause strings pass through unchanged.
+ * A plain value replaces every state clause; a flat clause string (e.g.
+ * `group-hover/card:primaryHovered`) is appended so it only replaces the
+ * clauses it restates.
  */
-const getColorOverride = <TColor,>(color: TColor): TColor => {
-  if (typeof color !== "string" || !/^[\w#.-]+$/.test(color)) {
+const mergeColor = <TColor,>(base: string, color: TColor): TColor => {
+  if (color === undefined) {
+    return base as TColor;
+  } else if (typeof color !== "string") {
     return color;
+  } else if (/^[\w#.-]+$/.test(color)) {
+    return `${color} hover:${color} press:${color} focus:${color}` as TColor;
   }
 
-  return `${color} hover:${color} press:${color} focus:${color}` as TColor;
+  return `${base} ${color}` as TColor;
 };
-
-type BaseLinkTextVariant = GetProps<typeof LinkTextFrame>["variant"];
 
 export const LinkText = createStyledHOC(
   LinkTextFrame,
@@ -177,38 +141,35 @@ export const LinkText = createStyledHOC(
       underline = "static",
       cta = false,
       disabled = false,
+      variant = "base",
+      mixed = false,
       inverse = false,
+      themed = false,
       color,
+      textDecorationColor,
       style,
       ...props
     }: GetProps<typeof LinkTextFrame> & LinkTextExtraProps,
     forwardedRef
   ) => {
     let theme = useThemeName();
-
-    let variant = props.variant as BaseLinkTextVariant;
     if (
       !theme ||
       theme === "dark" ||
       theme === "light" ||
       theme.endsWith("base")
     ) {
-      // `subtle` and `subtlest` are built on the neutral ink tokens, so they
-      // still apply in the base theme; the other color variants collapse to
-      // `base` there.
-      if (variant !== "subtle" && variant !== "subtlest") {
-        variant = "base";
-      }
       theme = `${theme?.startsWith("dark") ? "dark" : "light"}_base`;
-    } else if (!variant) {
-      variant = "themed";
     }
 
-    // `subtle` and `subtlest` have no inverse form: the `inverse` hover step
-    // (`active`) would dim them in the dark base theme.
-    const subtle = variant === "subtle" || variant === "subtlest";
-    if (inverse && !subtle) {
-      variant = `${variant}Inverse` as BaseLinkTextVariant;
+    const link = themed ? "primary" : "link";
+    let textColor = getStateColors(variant === "base" ? link : variant);
+    let decorationColor = mixed ? getStateColors(link) : textColor;
+    if (mixed && inverse) {
+      [textColor, decorationColor] = [decorationColor, textColor];
+    }
+    if (disabled) {
+      textColor = `${link}Disabled hover:${link}Disabled`;
     }
 
     return (
@@ -219,9 +180,8 @@ export const LinkText = createStyledHOC(
         underline={underline}
         cta={cta}
         disabled={disabled}
-        inverse={inverse && !subtle}
-        variant={variant}
-        {...(color !== undefined && { color: getColorOverride(color) })}
+        color={mergeColor(textColor, color)}
+        textDecorationColor={mergeColor(decorationColor, textDecorationColor)}
         style={[{ textUnderlineOffset: 3 }, style]}>
         {children}
       </LinkTextFrame>

@@ -20,62 +20,18 @@ import type { FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import { RadioGroup } from "./RadioGroup";
 
 // Story args configure the wrapping `Field`, not the `RadioGroup` itself.
 type RadioGroupStoryArgs = Omit<FieldProps<string>, "children" | "name">;
 
-const meta: Meta<RadioGroupStoryArgs> = {
-  title: "Form/RadioGroup",
-  component: RadioGroup,
-  tags: ["autodocs"],
-  render: ({ defaultValue, ...props }: any, { id }: { id: string }) => (
-    <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
-      <Field name="selectName" {...props}>
-        <Field.Label>Label Text</Field.Label>
-        <RadioGroup size={props.size} width="500px">
-          {options.map((option, i) => (
-            <RadioGroup.Item
-              key={option.value}
-              index={i}
-              value={option.value}
-              description={option.description}
-              disabled={false}
-              selected={false}>
-              {option.name}
-            </RadioGroup.Item>
-          ))}
-        </RadioGroup>
-      </Field>
-    </Form>
-  )
-} satisfies Meta<RadioGroupStoryArgs>;
-
-export default meta;
-
-type Story = StoryObj<RadioGroupStoryArgs>;
-
-const validation = (
-  type:
-    | "danger"
-    | "warning"
-    | "info"
-    | "discovery"
-    | "success"
-    | "positive"
-    | "negative"
-) => ({
-  onChange: [
-    () => [
-      {
-        message: "This is an example validation message",
-        type
-      }
-    ]
-  ]
-});
-
-const options = [
+const options: {
+  name: string;
+  value: string;
+  description: string;
+  disabled?: boolean;
+}[] = [
   {
     name: "Apple",
     value: "Apple",
@@ -102,6 +58,59 @@ const options = [
   }
 ];
 
+const renderGroup =
+  (items = options) =>
+  ({ defaultValue, ...props }: any, { id }: { id: string }) => (
+    <Form name={`formName-${id}`} initialValues={{ selectName: defaultValue }}>
+      <Field name="selectName" {...props}>
+        <Field.Label>Label Text</Field.Label>
+        <RadioGroup size={props.size} width="500px">
+          {items.map(option => (
+            <RadioGroup.Item
+              key={option.value}
+              value={option.value}
+              description={option.description}
+              disabled={option.disabled}>
+              {option.name}
+            </RadioGroup.Item>
+          ))}
+        </RadioGroup>
+      </Field>
+    </Form>
+  );
+
+const meta: Meta<RadioGroupStoryArgs> = {
+  title: "Form/RadioGroup",
+  component: RadioGroup,
+  tags: ["autodocs"],
+  render: renderGroup()
+} satisfies Meta<RadioGroupStoryArgs>;
+
+export default meta;
+
+type Story = StoryObj<RadioGroupStoryArgs>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
+
+
 export const Base: Story = {
   args: {}
 };
@@ -121,6 +130,42 @@ export const Disabled: Story = {
 export const DefaultValue: Story = {
   args: {
     defaultValue: "Blackberry"
+  }
+};
+
+export const DisabledItem: Story = {
+  args: {
+    defaultValue: "Apple"
+  },
+  render: renderGroup(
+    options.map(option => ({
+      ...option,
+      disabled: option.value === "Blackberry"
+    }))
+  ),
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    // Story tsconfigs have no DOM lib, so `Element` is not typed here.
+    const radios = () =>
+      canvas.getAllByRole("radio") as unknown as {
+        getAttribute: (name: string) => string | null;
+      }[];
+    const checked = () =>
+      radios()
+        .filter(radio => radio.getAttribute("aria-checked") === "true")
+        .map(radio => radio.getAttribute("value"));
+
+    await waitFor(async () => expect(checked()).toEqual(["Apple"]));
+
+    // Pressing an item's text selects it and only it.
+    await userEvent.click(canvas.getByText("Pear"));
+    await waitFor(async () => expect(checked()).toEqual(["Pear"]));
+
+    // A disabled item can't be selected.
+    await userEvent.click(canvas.getByText("Blackberry"), {
+      pointerEventsCheck: 0
+    });
+    await expect(checked()).toEqual(["Pear"]);
   }
 };
 

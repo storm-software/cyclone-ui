@@ -18,6 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import { Lock } from "@cyclone-ui/icons";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
@@ -39,10 +40,14 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { Label } from "@tamagui/label";
-import { RadioGroup as TamaguiRadioGroup } from "@tamagui/radio-group";
+import {
+  RadioGroup as TamaguiRadioGroup,
+  RadioGroupContext as TamaguiRadioGroupContext
+} from "@tamagui/radio-group";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { FocusEvent } from "react";
-import { useCallback } from "react";
+import { use, useCallback, useId } from "react";
+import type { GestureResponderEvent } from "react-native";
 
 export interface RadioGroupContextProps {
   name?: string;
@@ -50,23 +55,21 @@ export interface RadioGroupContextProps {
   color?: ColorTokens | string;
   disabled: boolean;
   required: boolean;
-  hasValidationMessage: boolean;
 }
 
 export const RadioGroupContext = createStyledContext<
   RadioGroupContextProps,
-  "size" | "disabled" | "required" | "hasValidationMessage"
+  "size" | "disabled" | "required"
 >(
   {
     size: "md",
     disabled: false,
-    required: false,
-    hasValidationMessage: false
+    required: false
   } as RadioGroupContextProps,
   {
     // Only the keys that styled consumers declare as variants; v3 forwards every
     // injected context key that is not a variant to the DOM element.
-    keys: ["size", "disabled", "hasValidationMessage"]
+    keys: ["size", "disabled"]
   }
 );
 
@@ -76,6 +79,8 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   context: RadioGroupContext,
   transition: "200ms",
   borderRadius: 100_000,
+  borderWidth: 1,
+  backgroundColor: "transparent",
   cursor: "pointer",
   height: "5xl",
   width: "5xl",
@@ -95,8 +100,6 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
 
     disabled: {
       true: {
-        borderColor:
-          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled",
         userSelect: "none",
         cursor: "not-allowed"
       }
@@ -108,31 +111,17 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   }
 });
 
+// Tamagui only mounts the indicator while its item is checked.
 const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
-  displayName: "RadioGroupItemValue",
-  context: RadioGroupContext,
+  displayName: "RadioGroupItemIndicator",
   transition: "200ms",
-  cursor: "pointer",
   borderRadius: 100_000,
-  backgroundColor: "primary",
-  height: "65%",
-  width: "65%",
-  scale: "enter:0.4 exit:0.8",
-  opacity: "enter:0 exit:0",
-  variants: {
-    disabled: {
-      true: {
-        placeholderColor: "outlineInactive",
-        backgroundColor:
-          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled",
-        userSelect: "none",
-        cursor: "not-allowed"
-      }
-    }
-  } as const,
-  defaultVariants: {
-    disabled: false
-  }
+  backgroundColor: "primaryActive",
+  height: "55%",
+  width: "55%",
+  // A transform needs a resting value or motion animates it from scale(0).
+  scale: "1 enter:0.4",
+  opacity: "1 enter:0"
 });
 
 const RadioGroupItemContainerFrame = styled(XStack, {
@@ -144,7 +133,6 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   boxShadow: "none press:ringOffset focus:ringOffset focus-visible:ringOffset",
   borderRadius: "control",
   borderWidth: 1,
-  borderColor: "outline",
   paddingHorizontal: "3xl",
   paddingVertical: "2xl",
   alignItems: "center",
@@ -158,16 +146,8 @@ const RadioGroupItemContainerFrame = styled(XStack, {
       }))
     ),
 
-    hasValidationMessage: {
-      true: {
-        borderColor: "primary hover:primaryHovered"
-      }
-    },
-
     disabled: {
       true: {
-        borderColor:
-          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled",
         boxShadow: "none hover:none press:none focus:none",
         userSelect: "none",
         cursor: "not-allowed"
@@ -187,36 +167,141 @@ const withClauses = <T,>(base: T, clauses: string): T | string =>
       ? `${base} ${clauses}`
       : base;
 
+const RadioGroupItemLabel = styled(Label, {
+  displayName: "RadioGroupItemLabel",
+  context: RadioGroupContext,
+  render: "label",
+  transition: "200ms",
+  cursor: "pointer",
+  // v2 `$true`: every configured font defines a literal `true` line height
+  lineHeight: "true",
+  wordWrap: "break-word",
+  verticalAlign: "middle",
+  variants: {
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants(size => ({ fontSize: 18 * getFormFontScale(size) }))
+    ),
+    disabled: {
+      true: {
+        userSelect: "none",
+        cursor: "not-allowed"
+      }
+    }
+  } as const,
+  defaultVariants: {
+    disabled: false
+  }
+});
+
+const RadioGroupItemDetails = styled(BodyText, {
+  displayName: "RadioGroupItemDetails",
+  context: RadioGroupContext,
+  transition: "200ms",
+  cursor: "pointer",
+  fontSize: "md",
+  variants: {
+    size: styled.dynamic<FormControlSize>(
+      formSizeVariants((size, env) => getFormFontSize(size, env, "md"))
+    ),
+    disabled: {
+      true: {
+        userSelect: "none",
+        cursor: "not-allowed"
+      }
+    }
+  } as const,
+  defaultVariants: {
+    disabled: false
+  }
+});
+
+export type RadioGroupItemProps = GetProps<
+  typeof RadioGroupItemContainerFrame
+> &
+  Pick<SelectOption, "value" | "description"> & {
+    disabled?: boolean;
+  };
+
+/**
+ * An option of the radio group: its label (`children`) and optional
+ * `description` beside a radio indicator. Pressing anywhere on it selects it,
+ * and a disabled item shows a lock in place of the indicator.
+ */
 const RadioGroupItemContainer = createStyledHOC(
   RadioGroupItemContainerFrame,
   (
     {
       children,
       value,
-      disabled,
-      selected,
+      description,
+      disabled: disabledProp,
       onPress,
       ...props
-    }: GetProps<typeof RadioGroupItemContainerFrame> &
-      Omit<SelectOption, "name">,
+    }: RadioGroupItemProps,
     forwardedRef
   ) => {
     const { size } = RadioGroupContext.useStyledContext();
+    const group = use(TamaguiRadioGroupContext);
     const hasValidationMessage = useFieldHasValidationMessage();
-    const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
+    const id = useId();
+    const itemValue = String(value);
+    const disabled = Boolean(disabledProp || group.disabled);
+    const selected = group.value === itemValue;
+    // Another item of the group is selected.
+    const inactive = !selected && Boolean(group.value);
+
+    const idleColor = hasValidationMessage ? "primary" : "outline";
+    const borderColor = disabled
+      ? "primaryDisabled"
+      : selected
+        ? "primaryActive"
+        : inactive
+          ? `${idleColor}Inactive`
+          : idleColor;
+    const hoverColor = disabled
+      ? "primaryDisabled"
+      : selected
+        ? "primaryActive"
+        : "primaryHovered";
+    const focusColor = selected
+      ? "primaryActive"
+      : hasValidationMessage
+        ? "primaryActive"
+        : "outlineActive";
+    const textColor = (color: "emphasis" | "ink") =>
+      disabled
+        ? "primaryDisabled group-hover/item:primaryDisabled"
+        : `${inactive ? `${color}Inactive` : color} group-hover/item:${color}`;
+
+    const onChange = group.onChange;
+    const handlePress = useCallback(
+      (event: GestureResponderEvent) => {
+        onPress?.(event);
+        if (!disabled && !selected) {
+          onChange?.(itemValue);
+        }
+      },
+      [onPress, disabled, selected, onChange, itemValue]
+    );
 
     return (
       <RadioGroupItemContainerFrame
-        group={true}
         ref={forwardedRef}
+        // Keep every state's value the same shape: v3 can leave a hover
+        // stuck when a press removes the element's `hover:` clause.
+        backgroundColor={
+          disabled
+            ? "surfaceDisabled hover:surfaceDisabled"
+            : selected
+              ? "surfaceActive hover:surfaceActive"
+              : `${inactive ? "surfaceInactive" : "surface"} hover:surfaceHovered`
+        }
         {...props}
+        group="item"
         size={size}
-        hasValidationMessage={hasValidationMessage}
-        // v2 applied these as separate focus props after `{...props}`, and the
-        // later `hasValidationMessage` / `disabled` variants overrode the
-        // spread base. v3 call-site values replace the spread prop and outrank
-        // variants, so merge the caller's base in only where v2 kept it, and
-        // leave the property to the `disabled` variant while disabled.
+        // v3 call-site values replace the spread prop and outrank variants, so
+        // merge the caller's base in, and leave the property to the `disabled`
+        // variant while disabled.
         boxShadow={
           disabled
             ? undefined
@@ -227,26 +312,42 @@ const RadioGroupItemContainer = createStyledHOC(
                   : "focus:ringOffset focus-visible:ringOffset"
               )
         }
-        borderColor={
-          disabled
-            ? undefined
-            : withClauses(
-                hasValidationMessage ? undefined : props.borderColor,
-                `focus:${focusColor} focus-visible:${focusColor}`
-              )
-        }
-        onPress={onPress}
+        borderColor={`${borderColor} hover:${hoverColor}${disabled ? "" : ` focus:${focusColor} focus-visible:${focusColor}`}`}
+        aria-disabled={disabled || undefined}
+        onPress={handlePress}
         disabled={disabled}>
-        {children}
+        <YStack gap="md" justifyContent="flex-start" flex={1}>
+          <RadioGroupItemLabel htmlFor={id} disabled={disabled}>
+            {/* The heading sets its own color, so the label's can't reach it. */}
+            <HeadingSmallText transition="200ms" color={textColor("emphasis")}>
+              {children}
+            </HeadingSmallText>
+          </RadioGroupItemLabel>
+          {description && (
+            <RadioGroupItemDetails
+              disabled={disabled}
+              display="flex"
+              color={textColor("ink")}>
+              {description}
+            </RadioGroupItemDetails>
+          )}
+        </YStack>
 
         <View alignSelf="center" onPress={e => e.stopPropagation()}>
           <RadioGroupItem
-            id={String(value)}
+            id={id}
             size={size}
-            borderColor={`group-hover:${disabled ? "primaryDisabled" : "primaryHovered"}`}
-            value={String(value)}
+            borderColor={`${borderColor} group-hover/item:${hoverColor}`}
+            value={itemValue}
             disabled={disabled}>
-            {selected && <RadioGroupItemIndicator />}
+            {disabled ? (
+              <Lock
+                size={getSized("5xl") * getFormSizeScale(size) * 0.6}
+                color="primaryDisabled"
+              />
+            ) : (
+              <RadioGroupItemIndicator />
+            )}
           </RadioGroupItem>
         </View>
       </RadioGroupItemContainerFrame>
@@ -254,131 +355,6 @@ const RadioGroupItemContainer = createStyledHOC(
   },
   { displayName: "RadioGroupItem" }
 );
-
-const RadioGroupOptionValue = styled(Label, {
-  displayName: "RadioGroupItemValue",
-  context: RadioGroupContext,
-  render: "label",
-  transition: "200ms",
-  cursor: "pointer",
-  color: "emphasis",
-  fontWeight: "normal",
-  // v2 `$true`: every configured font defines a literal `true` line height
-  lineHeight: "true",
-  wordWrap: "break-word",
-  verticalAlign: "middle",
-  variants: {
-    size: styled.dynamic<FormControlSize>(
-      formSizeVariants(size => ({ fontSize: 18 * getFormFontScale(size) }))
-    ),
-    selected: {
-      true: {
-        fontWeight: 900
-      }
-    },
-
-    disabled: {
-      true: {
-        color:
-          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled",
-        backgroundColor: "surface",
-        userSelect: "none",
-        cursor: "not-allowed"
-      }
-    }
-  } as const,
-  defaultVariants: {
-    selected: false,
-    disabled: false
-  }
-});
-
-const RadioGroupOptionDetails = styled(BodyText, {
-  displayName: "RadioGroupItemDetails",
-  context: RadioGroupContext,
-  transition: "200ms",
-  cursor: "pointer",
-  color: "ink",
-  fontSize: "md",
-  variants: {
-    size: styled.dynamic<FormControlSize>(
-      formSizeVariants((size, env) => getFormFontSize(size, env, "md"))
-    ),
-    disabled: {
-      true: {
-        color:
-          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled",
-        backgroundColor: "transparent",
-        userSelect: "none",
-        cursor: "not-allowed"
-      }
-    }
-  } as const,
-  defaultVariants: {
-    disabled: false
-  }
-});
-
-/**
- * An item rendered for one of the enclosing form control's `items`.
- */
-const RadioGroupOption = ({
-  item,
-  onChange
-}: {
-  item: SelectOption;
-  onChange?: (value: unknown) => void;
-}) => {
-  const { value, selected, disabled, name, description } = item;
-  const hasValidationMessage = useFieldHasValidationMessage();
-  const statusIcon = useFormControl()?.statusIcon;
-
-  const handlePress = useCallback(() => {
-    if (!disabled) {
-      onChange?.(value);
-    }
-  }, [disabled, value, onChange]);
-
-  return (
-    <RadioGroupItemContainer
-      {...item}
-      group={"item"}
-      onPress={handlePress}
-      cursor="pointer"
-      backgroundColor={
-        selected ? "subtle hover:subtle" : "surface hover:subtle"
-      }
-      borderColor={
-        selected
-          ? "primaryActive"
-          : hasValidationMessage
-            ? "primary"
-            : "outline"
-      }
-      borderWidth={1}
-      borderRadius="control">
-      <YStack gap="md" justifyContent="flex-start" flex={1}>
-        <RadioGroupOptionValue
-          htmlFor={String(value)}
-          disabled={disabled}
-          selected={selected}
-          color="group-hover/item:emphasis">
-          <HeadingSmallText>{name}</HeadingSmallText>
-        </RadioGroupOptionValue>
-        {description && (
-          <RadioGroupOptionDetails
-            disabled={disabled}
-            display="flex"
-            color="group-hover/item:emphasis">
-            {description}
-          </RadioGroupOptionDetails>
-        )}
-      </YStack>
-
-      {disabled && statusIcon}
-    </RadioGroupItemContainer>
-  );
-};
 
 const RadioGroupFrame = styled(TamaguiRadioGroup, {
   displayName: "RadioGroup",
@@ -451,6 +427,7 @@ const RadioGroupImpl = createStyledHOC(
       onValueChange = formControl?.onChange,
       ...rest
     } = props;
+    const items = formControl?.items;
 
     return (
       <RadioGroupFrame
@@ -460,9 +437,17 @@ const RadioGroupImpl = createStyledHOC(
         {...rest}
         onFocus={onFocus}
         onBlur={onBlur}
-        onValueChange={onValueChange}
-        value={String(value ?? "")}
-        defaultValue={String(defaultValue ?? "")}
+        // The radios' values are strings, so report the field item's own
+        // value (which may be a number or boolean).
+        onValueChange={next =>
+          onValueChange?.(
+            (items?.find(item => String(item.value) === next)?.value ??
+              next) as string
+          )
+        }
+        // Stay controlled inside a form control, uncontrolled outside of one.
+        value={formControl || value != null ? String(value ?? "") : undefined}
+        defaultValue={defaultValue == null ? undefined : String(defaultValue)}
         required={required}
         disabled={disabled}>
         <YStack
@@ -473,13 +458,15 @@ const RadioGroupImpl = createStyledHOC(
           paddingVertical="max-sm:6xl">
           {/* Without children, the form control's items are rendered. */}
           {children ??
-            formControl?.items?.map((item, i) => (
-              <RadioGroupOption
+            items?.map((item, i) => (
+              <RadioGroupItemContainer
                 // eslint-disable-next-line react/no-array-index-key
                 key={i}
-                item={item}
-                onChange={formControl.onChange}
-              />
+                value={item.value}
+                description={item.description}
+                disabled={item.disabled}>
+                {item.name}
+              </RadioGroupItemContainer>
             ))}
         </YStack>
       </RadioGroupFrame>

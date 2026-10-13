@@ -31,13 +31,13 @@ describe("field affordance color states", () => {
     const fieldIcon = getDeclaration(formControlSource(), "useFieldIconColor");
 
     for (const affordance of [inputSeparator, selectSeparator, fieldIcon]) {
-      expect(affordance).toContain("hairline");
-      expect(affordance).toContain("hairlineActive");
+      expect(affordance).toContain("outline");
+      expect(affordance).toContain("outlineActive");
     }
     for (const separator of [inputSeparator, selectSeparator]) {
-      expect(separator).toContain("hairlineInactive");
+      expect(separator).toContain("outlineInactive");
     }
-    expect(fieldIcon).toContain("hairlineDisabled");
+    expect(fieldIcon).toContain("outlineDisabled");
   });
 
   it("fades every textbox divider in over 200ms on mount", () => {
@@ -71,7 +71,7 @@ describe("field affordance color states", () => {
     );
   });
 
-  it("colors field icons primary when themed or validated, otherwise hairline", () => {
+  it("colors field icons primary when validated, otherwise outline", () => {
     const field = readComponent("./Field.tsx");
     const iconColor = getDeclaration(formControlSource(), "useFieldIconColor");
     const fieldIcon = getDeclaration(field, "FieldIconButtonImpl");
@@ -84,9 +84,13 @@ describe("field affordance color states", () => {
       '(!theme || theme === "base") && !formControl?.hasValidationMessage'
     );
     expect(iconColor).toContain('"primary"');
-    expect(fieldIcon).toContain("color: iconColor");
-    expect(fieldIcon).not.toContain('color: "currentColor"');
-    expect(selectTrigger).toContain("color={iconColor}");
+    // Glyphs inherit a CSS `group-hover/field:` color through `currentColor`
+    // so they transition with the border instead of after a re-render.
+    expect(fieldIcon).toContain('color: "currentColor"');
+    expect(fieldIcon).toContain(
+      "color={`${iconColor} group-hover/field:${hoverIconColor}`}"
+    );
+    expect(selectTrigger).toContain('color="currentColor"');
   });
 
   it("themes the validation tooltip border to match the field icon", () => {
@@ -96,10 +100,10 @@ describe("field affordance color states", () => {
     );
 
     expect(themeIcon).toContain("theme={theme}");
-    expect(themeIcon).toContain('"hairline focus-visible:hairlineActive"');
+    expect(themeIcon).toContain('"outline focus-visible:outlineActive"');
     expect(themeIcon).toContain('"primary focus-visible:primaryActive"');
     expect(themeIcon).toMatch(
-      /arrowBorderColor=\{\s*isNeutral\s*\?\s*"hairline focus-visible:hairlineActive"\s*:\s*"primary focus-visible:primaryActive"\s*\}/
+      /arrowBorderColor=\{\s*isNeutral\s*\?\s*"outline focus-visible:outlineActive"\s*:\s*"primary focus-visible:primaryActive"\s*\}/
     );
   });
 });

@@ -93,7 +93,7 @@ const AlertDialogContainer = createStyledHOC(
           ref={forwardedRef}
           key="content"
           {...props}
-          bordered={false}
+          bordered={true}
           noPadding={true}>
           {children}
         </Dialog.Container>

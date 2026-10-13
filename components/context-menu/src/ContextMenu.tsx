@@ -36,7 +36,7 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import type { JSX } from "react";
-import { createContext, use, useState } from "react";
+import { createContext, use, useLayoutEffect, useState } from "react";
 import { getContextMenuSize } from "./utilities";
 
 // Menus narrower than this center their item text, unless an item shows an
@@ -76,7 +76,8 @@ const ContextMenuContext = createStyledContext<ContextMenuContextValue, "size">(
 // The enclosing item's state, for `ContextMenu.Item.Text`.
 const ContextMenuItemStateContext = createContext({
   selected: false,
-  disabled: false
+  disabled: false,
+  highlighted: false
 });
 
 export interface ContextMenuExtraProps {
@@ -135,7 +136,23 @@ const ContextMenuContent = ({
 }: ContextMenuContentProps): JSX.Element => {
   const { size } = ContextMenuContext.useStyledContext();
   const { contentPadding } = getContextMenuSize(size);
+  const [menu, setMenu] = useState<HTMLElement | null>(null);
   const [narrow, setNarrow] = useState(false);
+
+  // Only the web styles read `narrow`. A `ResizeObserver`, not `onLayout`:
+  // `onLayout` kept its first measurement, taken before the popover is sized.
+  useLayoutEffect(() => {
+    if (!menu || typeof ResizeObserver === "undefined") {
+      return;
+    }
+
+    const resizeObserver = new ResizeObserver(([entry]) =>
+      setNarrow(entry!.contentRect.width < NARROW_MENU_WIDTH)
+    );
+    resizeObserver.observe(menu);
+
+    return () => resizeObserver.disconnect();
+  }, [menu]);
 
   return (
     <Popover.Content maxWidth="90vw" padding={contentPadding} {...props}>
@@ -145,9 +162,7 @@ const ContextMenuContent = ({
         data-context-menu-narrow={narrow ? "" : undefined}
         gap={contentPadding}
         width="100%"
-        onLayout={event =>
-          setNarrow(event.nativeEvent.layout.width < NARROW_MENU_WIDTH)
-        }
+        ref={setMenu as any}
         onKeyDown={(event: any) => {
           const step =
             event.key === "ArrowDown" ? 1 : event.key === "ArrowUp" ? -1 : 0;
@@ -273,6 +288,13 @@ const ContextMenuItemBackground = styled(View, {
       })
     ),
 
+    // Highlighted without focus, such as a combobox's active option.
+    highlighted: {
+      true: {
+        backgroundColor: "floatingActive"
+      }
+    },
+
     disabled: {
       true: {
         backgroundColor:
@@ -282,6 +304,7 @@ const ContextMenuItemBackground = styled(View, {
   } as const,
   defaultVariants: {
     size: "md",
+    highlighted: false,
     disabled: false
   }
 });
@@ -349,11 +372,18 @@ export type ContextMenuItemProps = Omit<
    * shows a check mark, when it equals the menu's `value`.
    */
   value?: string;
+
+  /**
+   * Shows the item as hovered while focus stays elsewhere, for example on a
+   * combobox's `aria-activedescendant` option.
+   */
+  highlighted?: boolean;
 };
 
 const ContextMenuItem = ({
   children,
   value,
+  highlighted = false,
   disabled: disabledProp,
   onPress,
   ...props
@@ -368,7 +398,8 @@ const ContextMenuItem = ({
   const { indicatorWidth, indicatorIconSize } = getContextMenuSize(size);
 
   return (
-    <ContextMenuItemStateContext.Provider value={{ selected, disabled }}>
+    <ContextMenuItemStateContext.Provider
+      value={{ selected, disabled, highlighted }}>
       <ContextMenuItemFrame
         // Not typed on a styled View; keeps the item from submitting a form.
         {...({ type: "button" } as object)}
@@ -390,7 +421,11 @@ const ContextMenuItem = ({
             onValueChange?.(value);
           }
         }}>
-        <ContextMenuItemBackground size={size} disabled={disabled} />
+        <ContextMenuItemBackground
+          size={size}
+          highlighted={highlighted}
+          disabled={disabled}
+        />
         <ContextMenuItemGroup
           size={size}
           disabled={disabled}
@@ -424,7 +459,7 @@ const ContextMenuItem = ({
 
 const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
   const { size } = ContextMenuContext.useStyledContext();
-  const { selected, disabled } = use(ContextMenuItemStateContext);
+  const { selected, disabled, highlighted } = use(ContextMenuItemStateContext);
   const {
     fontSize,
     lineHeight,
@@ -443,7 +478,9 @@ const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
           ? "primaryDisabled"
           : selected
             ? "primaryActive"
-            : "primaryInactive group-hover/item:primary group-focus-visible/item:primary"
+            : highlighted
+              ? "primary"
+              : "primaryInactive group-hover/item:primary group-focus-visible/item:primary"
       }
       fontSize={fontSize}
       lineHeight={`${lineHeight}px`}
@@ -466,6 +503,7 @@ const ContextMenuItemIcon = (props: GetProps<typeof BodyText>): JSX.Element => {
       aria-hidden={true}
       flexShrink={0}
       minWidth="2xl"
+      marginRight="lg"
       fontSize={fontSize}
       lineHeight={`${lineHeight}px`}
       {...props}
@@ -480,6 +518,7 @@ const ContextMenuItemLabel = (
 
 export const ContextMenu = withStaticProperties(ContextMenuFrame, {
   Trigger: Popover.Trigger,
+  Anchor: Popover.Anchor,
   Content: withStaticProperties(ContextMenuContent, {
     ScrollView: ContextMenuScrollView
   }),

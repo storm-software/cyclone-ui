@@ -39,7 +39,6 @@ const ThemeableIconFrame = styled(ThemeableIcon, {
   render: "span",
   display: "inline-flex",
   marginBottom: "md",
-  color: "currentColor",
   cursor: "pointer"
 });
 
@@ -64,7 +63,7 @@ export const Link = createStyledHOC(
   ) => {
     return (
       <LinkFrame
-        group={"link"}
+        group="link"
         ref={forwardedRef}
         size={size}
         {...props}
@@ -91,7 +90,11 @@ export const Link = createStyledHOC(
             style={{ verticalAlign: "middle" }}
             x="group-hover/link:2px"
             y="group-hover/link:-2px">
-            <ArrowUpRight />
+            {/* `color` on the styled frame becomes a CSS class, not an icon
+                prop, so set it on the icon (whose props win in `getIcon`). The
+                SVG then fills with the link's computed text color and follows
+                every variant and hover / press state. */}
+            <ArrowUpRight color="currentColor" />
           </ThemeableIconFrame>
         )}
       </LinkFrame>

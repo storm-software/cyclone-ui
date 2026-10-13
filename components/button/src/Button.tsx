@@ -385,7 +385,7 @@ const ButtonFrame = styled(View, {
 
       outlined: {
         backgroundColor: "transparent hover:transparent press:transparent",
-        borderWidth: 3,
+        borderWidth: 2,
         borderColor: "primary hover:primaryHovered press:primaryActive"
       },
 
@@ -509,6 +509,7 @@ const ButtonTextFrame = styled(Text, {
   displayName: "ButtonText",
   context: ButtonContext,
   render: "span",
+
   transition: "400ms",
   userSelect: "none",
   borderRadius: 0,
@@ -606,36 +607,47 @@ const ButtonTextFrame = styled(Text, {
       "reverse-cascade": {
         color: "onPrimary"
       },
+
       "reverse-double-cascade": {
         color: "onPrimary"
       },
+
       "reverse-cascade-top": {
         color: "onPrimary"
       },
+
       "reverse-cascade-left": {
         color: "onPrimary"
       },
+
       "reverse-cascade-bottom": {
         color: "onPrimary"
       },
+
       "reverse-cascade-right": {
         color: "onPrimary"
       },
+
       "reverse-diagonal-cascade": {
         color: "onPrimary"
       },
+
       "reverse-double-diagonal-cascade": {
         color: "onPrimary"
       },
+
       "reverse-diagonal-cascade-top": {
         color: "onPrimary"
       },
+
       "reverse-diagonal-cascade-left": {
         color: "onPrimary"
       },
+
       "reverse-diagonal-cascade-bottom": {
         color: "onPrimary"
       },
+
       "reverse-diagonal-cascade-right": {
         color: "onPrimary"
       },
@@ -645,9 +657,9 @@ const ButtonTextFrame = styled(Text, {
       },
 
       link: {
-        color: "primary",
+        color: "link",
         textDecorationLine: "underline",
-        textDecorationColor: "primary",
+        textDecorationColor: "link",
         textDecorationStyle: "solid"
       }
     },
@@ -680,6 +692,22 @@ const colorForVariant = (
   ) {
     return (
       disabled ? "primaryDisabled" : (color ?? "onPrimary")
+    ) as ThemeableIconProps["color"];
+  }
+
+  if (variant === "ghost") {
+    return (
+      disabled
+        ? !themeName || themeName?.endsWith("base")
+          ? "subtlest"
+          : "primaryDisabled"
+        : (color ?? "primary")
+    ) as ThemeableIconProps["color"];
+  }
+
+  if (variant === "link") {
+    return (
+      disabled ? "linkDisabled" : (color ?? "link")
     ) as ThemeableIconProps["color"];
   }
 
@@ -721,6 +749,10 @@ const hoverColorForVariant = (
     return "onPrimary";
   }
 
+  if (variant === "link") {
+    return "linkHovered";
+  }
+
   return "primaryHovered";
 };
 
@@ -750,6 +782,10 @@ const pressedColorForVariant = (
     isCascadeVariant(variant)
   ) {
     return "onPrimary";
+  }
+
+  if (variant === "link") {
+    return "linkActive";
   }
 
   return "primaryActive";
@@ -816,7 +852,7 @@ const ButtonIcon = createStyledHOC(
       size: contextSize
     } = ButtonContext.useStyledContext();
     const adjusted = useMemo(
-      () => getSized(resolveSizeToken(size ?? contextSize), { shift: -6 }),
+      () => getSized(resolveSizeToken(size ?? contextSize)!, { shift: -6 }),
       [size, contextSize]
     );
     const groupColor = `group-hover/button:${hoverColorForVariant(
@@ -860,6 +896,7 @@ const ButtonHoverBackground = styled(YStack, {
   position: "absolute",
   borderColor: "primary",
   pointerEvents: "none",
+
   variants: {
     effect: {
       ghost: {
@@ -870,6 +907,7 @@ const ButtonHoverBackground = styled(YStack, {
         opacity: 0,
         backgroundColor: "secondary"
       },
+
       cascade: {
         top: 0,
         bottom: 0,
@@ -878,6 +916,7 @@ const ButtonHoverBackground = styled(YStack, {
         opacity: 1,
         backgroundColor: "primary"
       },
+
       "cascade-left": {
         top: 0,
         bottom: 0,
@@ -886,6 +925,7 @@ const ButtonHoverBackground = styled(YStack, {
         opacity: 1,
         backgroundColor: "primary"
       },
+
       "cascade-top": {
         top: "-100%",
         right: 0,
@@ -894,6 +934,7 @@ const ButtonHoverBackground = styled(YStack, {
         opacity: 1,
         backgroundColor: "primary"
       },
+
       "cascade-bottom": {
         right: 0,
         bottom: "-100%",
@@ -902,6 +943,7 @@ const ButtonHoverBackground = styled(YStack, {
         opacity: 1,
         backgroundColor: "primary"
       },
+
       "cascade-right": {
         top: 0,
         right: "-100%",
@@ -910,6 +952,7 @@ const ButtonHoverBackground = styled(YStack, {
         opacity: 1,
         backgroundColor: "primary"
       },
+
       "diagonal-cascade": {
         top: 0,
         bottom: 0,
@@ -919,6 +962,7 @@ const ButtonHoverBackground = styled(YStack, {
         backgroundColor: "primary",
         clipPath: "polygon(0 0, 80% 0, 100% 100%, 0 100%)"
       },
+
       "diagonal-cascade-left": {
         top: 0,
         bottom: 0,
@@ -928,6 +972,7 @@ const ButtonHoverBackground = styled(YStack, {
         backgroundColor: "primary",
         clipPath: "polygon(0 0, 80% 0, 100% 100%, 0 100%)"
       },
+
       "diagonal-cascade-top": {
         top: "-400%",
         right: 0,
@@ -937,6 +982,7 @@ const ButtonHoverBackground = styled(YStack, {
         backgroundColor: "primary",
         clipPath: "polygon(0 0, 100% 0, 100% 25%, 0 100%)"
       },
+
       "diagonal-cascade-bottom": {
         right: 0,
         bottom: "-400%",
@@ -946,6 +992,7 @@ const ButtonHoverBackground = styled(YStack, {
         backgroundColor: "primary",
         clipPath: "polygon(0 75%, 100% 0, 100% 100%, 0 100%)"
       },
+
       "diagonal-cascade-right": {
         top: 0,
         right: "-125%",
@@ -1168,7 +1215,7 @@ const ButtonContainerImpl = createStyledHOC(
       render,
       href,
       download,
-      ghostOpacity = 0.25,
+      ghostOpacity = 0.5,
       ...props
     }: GetProps<typeof ButtonFrame> & ButtonProps,
     forwardedRef

@@ -16,6 +16,16 @@ export default function handler() {
 
   ${bold(textColors.heading.primary("Changelog for Cyclone UI - CLI"))}
 
+  ${bold(textColors.heading.secondary("0.6.5 (10/12/2026)"))}
+
+  ${bold(textColors.heading.tertiary("Bug Fixes"))}
+
+  ${textColors.body.primary("• tokens: Updates to background token structure (913fc3c9)")}
+
+  ${bold(textColors.heading.tertiary("Updated Dependencies"))}
+
+  ${textColors.body.primary("• Updated registry-api to v0.3.15\n• Updated theme-builder to v0.0.5")}
+
   ${bold(textColors.heading.secondary("0.6.4 (10/12/2026)"))}
 
   ${bold(textColors.heading.tertiary("Updated Dependencies"))}

@@ -53,6 +53,9 @@
       "path": "../checkbox"
     },
     {
+      "path": "../context-menu"
+    },
+    {
       "path": "../button"
     },
     {

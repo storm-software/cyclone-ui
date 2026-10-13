@@ -14,6 +14,8 @@
   ],
   "dependencies": {
     "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
     "@cyclone-ui/helpers": "workspace:*"
   },

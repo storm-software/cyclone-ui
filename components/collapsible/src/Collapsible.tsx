@@ -46,7 +46,7 @@ const CollapsibleFrame = forwardRef<TamaguiElement, CollapsibleProps>(
       <Accordion
         ref={forwardedRef}
         icon="chevron"
-        {...(props as any)}
+        {...props}
         collapsible={true}
         single={true}
         type="single"

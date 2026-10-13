@@ -76,8 +76,6 @@ export interface FormControlState {
   disabled?: boolean;
   required?: boolean;
   focused?: boolean;
-  /** Whether the pointer is over the field (mirrors `group-hover/field`). */
-  hovered?: boolean;
   clearable?: boolean;
   hasValidationMessage: boolean;
 
@@ -100,12 +98,6 @@ export interface FormControlState {
    * box style control to render at its end.
    */
   endAdornment?: ReactNode;
-
-  /**
-   * The field's status icon (validation, disabled), as `Field.ThemeIcon`
-   * renders it, for controls that show it beside an item.
-   */
-  statusIcon?: ReactNode;
 
   variant: FieldVariant;
   labelVariant: FieldLabelVariant | undefined;
@@ -313,8 +305,9 @@ export const useFieldLabelFloated = (
 /**
  * Resolves the color tokens used by field icons (and their dividers): `primary`
  * when the field has a validation message, otherwise `outline`, matching the
- * field border. `iconColor` is a single theme key so it can be passed directly
- * to Tamagui v3 icons, which do not resolve flat `group-hover/` values.
+ * field border. Pair `iconColor` with `group-hover/field:${hoverIconColor}` on
+ * an element whose CSS color the icon inherits through `currentColor`, since
+ * Tamagui v3 icons do not resolve flat `group-hover/` values.
  */
 export const useFieldIconColor = () => {
   const formControl = useFormControl();
@@ -323,26 +316,20 @@ export const useFieldIconColor = () => {
   const theme = formControl?.theme;
   const isNeutral =
     (!theme || theme === "base") && !formControl?.hasValidationMessage;
-  const status = formControl?.hasValidationMessage ? "primary" : "outline";
+  const validated = formControl?.hasValidationMessage;
+  const restColor = validated ? "primary" : "outline";
+  const focusColor = validated ? "primaryActive" : "outlineActive";
+  const hoverColor = validated ? "primaryHovered" : "outlineHovered";
+  const disabledColor = validated ? "primaryDisabled" : "outlineDisabled";
 
-  const iconColor = disabled
-    ? `${status}Disabled`
-    : focused
-      ? `${status}Active`
-      : status;
+  const iconColor = disabled ? disabledColor : focused ? focusColor : restColor;
   const hoverIconColor = disabled
-    ? `${status}Disabled`
+    ? disabledColor
     : focused
-      ? `${status}Active`
-      : `${status}Hovered`;
+      ? focusColor
+      : hoverColor;
 
-  return {
-    // Icons can't resolve `group-hover/field:`, so swap to the hover token
-    // while the field is hovered, in step with the border.
-    iconColor: formControl?.hovered ? hoverIconColor : iconColor,
-    hoverIconColor,
-    isNeutral
-  };
+  return { iconColor, hoverIconColor, isNeutral };
 };
 
 const FieldNotchedOutlineFrame = styled(View, {

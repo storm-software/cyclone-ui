@@ -42,7 +42,6 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 import type { CountryCode } from "libphonenumber-js";
 import {
@@ -155,19 +154,17 @@ const CountryListItem = memo(
         aria-label={`${country.name} (${country.code}) +${country.callingCode}`}
         accessibilityLabel={`${country.name} (${country.code}) +${country.callingCode}`}
         onPress={handlePress}>
-        <YStack gap="2xl">
-          <ContextMenu.Item.Icon>{country.flag}</ContextMenu.Item.Icon>
-          {showCountryName && (
-            <ContextMenu.Item.Label>{country.name}</ContextMenu.Item.Label>
-          )}
-          <ContextMenu.Item.Text
-            flexShrink={0}
-            width="16xl"
-            marginLeft="auto"
-            textAlign="left">
-            {`${country.code}  +${country.callingCode}`}
-          </ContextMenu.Item.Text>
-        </YStack>
+        <ContextMenu.Item.Icon>{country.flag}</ContextMenu.Item.Icon>
+        {showCountryName && (
+          <ContextMenu.Item.Label>{country.name}</ContextMenu.Item.Label>
+        )}
+        <ContextMenu.Item.Text
+          flexShrink={0}
+          width="16xl"
+          marginLeft="auto"
+          textAlign="left">
+          {`${country.code}  +${country.callingCode}`}
+        </ContextMenu.Item.Text>
       </ContextMenu.Item>
     );
   }

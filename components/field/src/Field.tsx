@@ -69,6 +69,7 @@ import {
   createStyledHOC,
   getVariableValue,
   styled,
+  Text,
   Theme,
   useComposedRefs,
   useThemeName,
@@ -314,7 +315,6 @@ const FieldGroupInnerImpl = createStyledHOC(
     const messages = field.messages.get();
     const presentation = useFieldPresentation();
     const [details, setDetails] = useState<ReactNode>(null);
-    const [hovered, setHovered] = useState(false);
 
     const { change, focus, blur, mount } = useFieldActions();
     const onChange = useCallback(
@@ -384,7 +384,6 @@ const FieldGroupInnerImpl = createStyledHOC(
       ),
       [clearable, disabled, formattedValue, handleClear]
     );
-    const statusIcon = useMemo(() => <FieldThemeIcon disabled={true} />, []);
 
     const hasValidationMessage = messages.length > 0;
     const formControl = useMemo<FormControlState>(
@@ -400,7 +399,6 @@ const FieldGroupInnerImpl = createStyledHOC(
         disabled,
         required,
         focused,
-        hovered,
         clearable,
         hasValidationMessage,
         inputRef,
@@ -408,8 +406,7 @@ const FieldGroupInnerImpl = createStyledHOC(
         onFocus,
         onBlur,
         setMessage,
-        endAdornment,
-        statusIcon
+        endAdornment
       }),
       [
         presentation,
@@ -423,7 +420,6 @@ const FieldGroupInnerImpl = createStyledHOC(
         disabled,
         required,
         focused,
-        hovered,
         clearable,
         hasValidationMessage,
         inputRef,
@@ -431,8 +427,7 @@ const FieldGroupInnerImpl = createStyledHOC(
         onFocus,
         onBlur,
         setMessage,
-        endAdornment,
-        statusIcon
+        endAdornment
       ]
     );
 
@@ -441,12 +436,7 @@ const FieldGroupInnerImpl = createStyledHOC(
         <FormControlContext.Provider value={formControl}>
           <FieldDetailsSetterContext.Provider value={setDetails}>
             <FieldDetailsContext.Provider value={details}>
-              <YStack
-                group={"field"}
-                gap="lg"
-                disabled={disabled}
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}>
+              <YStack group={"field"} gap="lg" disabled={disabled}>
                 <FieldGroupFrame
                   ref={forwardedRef}
                   {...rest}
@@ -656,7 +646,7 @@ const FieldOptionalLabelText = styled(FieldLabelText, {
   variants: {
     disabled: {
       true: {
-        color: "subtle hover:subtle",
+        color: "subtle",
         cursor: "not-allowed"
       }
     }
@@ -1214,10 +1204,10 @@ const FieldIconButtonImpl = createStyledHOC(
     }>(children)
       ? // eslint-disable-next-line react/no-clone-element
         cloneElement(children, {
-          // Tamagui v3's icon `themed` only resolves a single theme key, so
-          // `currentColor` or a flat `group-hover/field:` value would fall
-          // back to the inherited text color. Pass the resolved state token.
-          color: iconColor,
+          // Tamagui v3 icons can't resolve flat `group-hover/field:` values,
+          // so the glyph follows the CSS color of the wrapper below. That
+          // keeps its hover transition in step with the border and separators.
+          color: "currentColor",
           size: 24 * getFormSizeScale(size)
         })
       : children;
@@ -1261,13 +1251,14 @@ const FieldIconButtonImpl = createStyledHOC(
             // Keep the compact field button frame while matching the 20px
             // glyph size used by the other input affordance.
             size={frameSize}>
-            <View
-              // View's web color style drove the nested SVG's currentColor in
-              // v2. Tamagui v3 drops `color` on a View, so the icon no longer
-              // follows this hover color; it needs its own color prop.
+            <Text
+              // Tamagui v3 drops `color` on a View, so a Text carries the
+              // hover color the icon's `currentColor` inherits.
+              display="flex"
+              transition="200ms"
               color={`${iconColor} group-hover/field:${hoverIconColor}`}>
               {icon}
-            </View>
+            </Text>
           </Button.Icon>
         </Button>
       </View>

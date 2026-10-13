@@ -59,6 +59,31 @@ export const removeTag = (
   tags.includes(tag) ? tags.filter(current => current !== tag) : tags;
 
 /**
+ * Replace a tag in a tag list with an edited draft.
+ *
+ * @remarks
+ * Tags are unique, so a draft that is blank or already in the list changes
+ * nothing.
+ *
+ * @param tags - The current tags.
+ * @param tag - The tag being edited.
+ * @param draft - The edited text.
+ * @returns A new list with the tag replaced in place, or `tags` itself when
+ * nothing changed.
+ */
+export const replaceTag = (
+  tags: readonly string[],
+  tag: string,
+  draft: string
+): readonly string[] => {
+  const next = normalizeTag(draft);
+
+  return next && !tags.includes(next)
+    ? tags.map(current => (current === tag ? next : current))
+    : tags;
+};
+
+/**
  * Get the default accessible label of a tag's remove button.
  *
  * @param tag - The tag the button removes.

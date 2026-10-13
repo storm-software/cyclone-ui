@@ -135,6 +135,7 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
               aria-label="Dislike"
               borderless={true}
               circular={true}
+              pressedBackgroundColor="elevatedActive"
               size={size}
               disabled={disabled}
               pressed={disliked}
@@ -145,13 +146,13 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
               <ThumbsDown
                 aria-hidden={true}
                 size={Math.round(BASE_ICON_SIZE * getFormSizeScale(size))}
-                weight={disliked ? "fill" : "regular"}
+                weight={disliked ? "fill" : "light"}
                 color={
                   hovered && !disabled
-                    ? "primaryActive"
+                    ? "primaryHovered"
                     : disliked
-                      ? "primary"
-                      : "color"
+                      ? "primaryActive"
+                      : "primary"
                 }
               />
             </Toggle>

@@ -534,12 +534,12 @@ const BACKGROUND_COLOR_STATE_DISABLED: ColorStateVariant = {
 
 const BACKGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
   lowSaturation: [
-    { name: "active", brightness: 1.075 },
+    { name: "active", brightness: 1.15 },
     BACKGROUND_COLOR_STATE_INACTIVE,
     BACKGROUND_COLOR_STATE_DISABLED
   ],
   saturated: [
-    { name: "active", brightness: 1.125 },
+    { name: "active", brightness: 1.25 },
     BACKGROUND_COLOR_STATE_INACTIVE,
     BACKGROUND_COLOR_STATE_DISABLED
   ]
@@ -564,13 +564,40 @@ const THEME_COLOR_KEYS = [
 /** State variants for the tokens inside each theme color group. */
 const THEME_COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
   primary: DEFAULT_COLOR_STATE_VARIANTS,
-  secondary: SUBTLE_COLOR_STATE_VARIANTS
+  secondary: SUBTLE_COLOR_STATE_VARIANTS,
+  link: DEFAULT_COLOR_STATE_VARIANTS
+};
+
+/**
+ * Foreground and background hovered states are a smaller step than active
+ * (e.g. in dark themes, active is lighter than hovered).
+ */
+const FOREGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    { name: "hovered", brightness: 1.3 },
+    ...DEFAULT_COLOR_STATE_VARIANTS.lowSaturation
+  ],
+  saturated: [
+    { name: "hovered", brightness: 1.15 },
+    ...DEFAULT_COLOR_STATE_VARIANTS.saturated
+  ]
+};
+
+const BACKGROUND_COLOR_STATE_HOVERED_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    { name: "hovered", brightness: 1.1 },
+    ...BACKGROUND_COLOR_STATE_VARIANTS.lowSaturation
+  ],
+  saturated: [
+    { name: "hovered", brightness: 1.15 },
+    ...BACKGROUND_COLOR_STATE_VARIANTS.saturated
+  ]
 };
 
 /** Color tokens with these `group`s receive state variants. */
 const COLOR_STATE_TOKEN_GROUPS: Record<string, ColorStateVariants> = {
-  foreground: DEFAULT_COLOR_STATE_VARIANTS,
-  background: BACKGROUND_COLOR_STATE_VARIANTS
+  foreground: FOREGROUND_COLOR_STATE_VARIANTS,
+  background: BACKGROUND_COLOR_STATE_HOVERED_VARIANTS
 };
 
 /** Standalone color tokens that receive state variants. */
@@ -594,7 +621,7 @@ const LOW_SATURATION_CHROMA = 0.02;
 
 const LOW_SATURATION_RING_OPACITY = 0.1;
 const SATURATED_RING_OPACITY = 0.15;
-const MINIMUM_SUBTLE_CONTRAST_RATIO = 7.25;
+const MINIMUM_SUBTLE_CONTRAST_RATIO = 7.5;
 const MINIMUM_INVERSE_CONTRAST_RATIO = 2;
 const SUBTLE_COLOR_LIGHTNESS_STEP = 0.01;
 const MAX_SUBTLE_COLOR_ADJUSTMENTS = 100;
@@ -1268,11 +1295,13 @@ function addColorStateTokens(
       continue;
     }
 
-    // Hovered states are generated from the matching active variant.
-    const tokenVariants = (
-      isLowSaturation(hex) ? variants.lowSaturation : variants.saturated
-    ).flatMap(variant =>
-      variant.name === "active"
+    // Hovered states default to the matching active variant.
+    const baseVariants = isLowSaturation(hex)
+      ? variants.lowSaturation
+      : variants.saturated;
+    const hasHovered = baseVariants.some(variant => variant.name === "hovered");
+    const tokenVariants = baseVariants.flatMap(variant =>
+      variant.name === "active" && !hasHovered
         ? [{ ...variant, name: "hovered" }, variant]
         : [variant]
     );
@@ -1300,8 +1329,8 @@ function addColorStateTokens(
 /**
  * Fill in a theme color group (`color.danger`, …): generate a missing
  * `secondary` low-emphasis background from `primary` and the parent theme,
- * `on-primary` / `on-secondary` text colors, and state variants for
- * `primary` and `secondary`. Every token in the group gets the group name as
+ * a missing `link` color (aliasing `primary`), `on-primary` / `on-secondary`
+ * text colors, and state variants for `primary`, `secondary` and `link`. Every token in the group gets the group name as
  * its `theme` and `group`, so Tamagui places it in that child theme (e.g.
  * `danger.on-primary` → `onPrimary` in the `danger` theme).
  */
@@ -1319,6 +1348,12 @@ function addThemeColorGroupTokens(
   }
 
   let result: Record<string, unknown> = { ...group };
+  result.link ??= {
+    ...token,
+    $type: "color",
+    $value: `{color.${name}.primary}`,
+    $description: `Generated ${name} hyperlink text color (matches primary)`
+  };
   result["on-primary"] ??= {
     ...token,
     $type: "color",
@@ -1470,12 +1505,14 @@ function injectColorStateVariants(
  * status group, a missing `secondary` background and `on-primary` /
  * `on-secondary` text colors are generated, then hovered, active, inactive,
  * and disabled variants are added to the outline, `foreground` and
- * `background` group colors, and each theme color group's `primary` and `secondary`.
+ * `background` group colors, and each theme color group's `primary`, `secondary`
+ * and `link` (which defaults to `primary` when missing).
  * Low-saturation colors derive their states from the parent theme's contrast
  * primitive (backgrounds use a half-strength shift of their own lightness; hovered
  * colors already near that primitive shift toward the middle, while active
  * ones become pure white or black); saturated
- * colors scale their own lightness. Tokens in a theme color group get the
+ * colors scale their own lightness. Foreground and background hovered states
+ * take a smaller step than their active states. Tokens in a theme color group get the
  * group name as `theme` and `group`, unless already set; root state and `on-*`
  * tokens get their main token name as `group` (e.g. `outline-active` →
  * `outline`).

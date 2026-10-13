@@ -182,6 +182,25 @@ export const IgnoresDuplicates: Story = {
   }
 };
 
+export const EditTag: Story = {
+  args: {
+    defaultValue: ["Design", "Engineering", "Research"]
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.dblClick(canvas.getByText("Engineering"));
+    const input = canvas.getByRole("textbox", { name: "Edit Engineering" });
+    await userEvent.clear(input);
+    await userEvent.type(input, "Operations{Enter}");
+
+    await waitFor(async () =>
+      expect(canvas.queryByText("Engineering")).toBeNull()
+    );
+    await expect(canvas.getByText("Operations")).toBeInTheDocument();
+  }
+};
+
 export const FocusWithin: Story = {
   args: {
     defaultValue: ["react"]

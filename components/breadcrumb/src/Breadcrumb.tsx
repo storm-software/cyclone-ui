@@ -20,6 +20,7 @@ import { Button } from "@cyclone-ui/button";
 import { getSpaced } from "@cyclone-ui/helpers";
 import { CaretDoubleRight, CaretRight, DotsThree } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
+import type { LinkTextExtraProps } from "@cyclone-ui/link-text";
 import { Popover } from "@cyclone-ui/popover";
 import type {
   FontSizeTokens,
@@ -33,7 +34,6 @@ import {
   styled,
   Text,
   Theme,
-  useThemeName,
   View
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
@@ -51,22 +51,20 @@ export type BreadcrumbContextProps = TextContextStyles & {
   theme?: ThemeName | null;
 } & {
   size: FontSizeTokens;
-  variant: BreadcrumbVariant;
-  inverse: boolean;
-  subtle: boolean;
-  subtlest: boolean;
-};
+  separator: BreadcrumbVariant;
+} & Pick<LinkTextExtraProps, "variant" | "mixed" | "inverse" | "themed">;
 
 export const BreadcrumbContext = createStyledContext<
   BreadcrumbContextProps,
-  "size" | "variant" | "inverse" | "subtle" | "subtlest"
+  "size" | "separator" | "variant" | "mixed" | "inverse" | "themed"
 >(
   {
     size: true,
-    variant: "slash",
+    separator: "slash",
+    variant: "base",
+    mixed: false,
     inverse: false,
-    subtle: false,
-    subtlest: false
+    themed: false
   } as BreadcrumbContextProps,
   {
     // Only the keys that styled consumers declare as variants; v3 forwards every
@@ -129,9 +127,8 @@ const BreadcrumbFrame = styled(XStack, {
   flexWrap: "nowrap",
   flexShrink: 1,
   gap: "4xl",
+
   variants: {
-    // v2 `"...size"` only matched keys of the size token scale; the `true`
-    // default kept the base gap.
     size: styled.dynamic<SizeTokens>((val, { tokens }) =>
       typeof val === "string" && val in tokens.size
         ? { gap: getSpaced(val) / 2 }
@@ -168,42 +165,29 @@ const BreadcrumbCurrent = styled(Text, {
 });
 
 /**
- * The resting color of `LinkText` for the breadcrumb's variant, so the menu
+ * The resting text color of `LinkText` for the breadcrumb's variant, so the menu
  * button reads as one of the links. Icons take a single SVG color, so there are
  * no hover or press clauses.
  */
-const getBreadcrumbEllipsisColor = (
-  themeName: string | null | undefined,
-  {
-    inverse,
-    subtle,
-    subtlest
-  }: Pick<BreadcrumbContextProps, "inverse" | "subtle" | "subtlest">
-) => {
-  if (subtlest) {
-    return "subtle";
-  } else if (subtle) {
-    return "ink";
-  }
+const getBreadcrumbEllipsisColor = ({
+  variant = "base",
+  mixed,
+  inverse,
+  themed
+}: Pick<BreadcrumbContextProps, "variant" | "mixed" | "inverse" | "themed">) => {
+  const link = themed ? "primary" : "link";
 
-  // `LinkText` collapses its color variants to `base` in the base theme.
-  const isBaseTheme =
-    !themeName ||
-    themeName === "dark" ||
-    themeName === "light" ||
-    themeName.endsWith("base");
-
-  return isBaseTheme && !inverse ? "emphasis" : "primary";
+  return variant === "base" || (mixed && inverse) ? link : variant;
 };
 
 const BreadcrumbSeparator = () => {
-  const { variant } = BreadcrumbContext.useStyledContext();
+  const { separator } = BreadcrumbContext.useStyledContext();
 
-  if (variant === "chevron") {
+  if (separator === "chevron") {
     return <CaretRight color="outline" size="2xl" weight="bold" />;
-  } else if (variant === "double") {
+  } else if (separator === "double") {
     return <CaretDoubleRight color="outline" size="2xl" />;
-  } else if (variant === "slash") {
+  } else if (separator === "slash") {
     return (
       <SizableText
         color="outline"
@@ -232,7 +216,6 @@ const BreadcrumbEllipsis = ({
   expandText
 }: BreadcrumbEllipsisProps) => {
   const context = BreadcrumbContext.useStyledContext();
-  const themeName = useThemeName();
   const [open, setOpen] = useState(false);
   const close = useCallback(() => setOpen(false), []);
 
@@ -248,7 +231,7 @@ const BreadcrumbEllipsis = ({
             aria-label={expandText}>
             <Button.Icon>
               <DotsThree
-                color={getBreadcrumbEllipsisColor(themeName, context)}
+                color={getBreadcrumbEllipsisColor(context)}
                 size="4xl"
                 weight="bold"
               />
@@ -345,14 +328,13 @@ const BreadcrumbMenuLink = styled(Link, {
   borderRadius: "button",
   paddingHorizontal: "3xl",
   paddingVertical: "xl",
-  backgroundColor: "transparent hover:subtle focus-visible:subtle",
   size: "sm"
 });
 
 const BreadcrumbItemImpl = createStyledHOC(
   BreadcrumbLink,
   ({ children, size: sizeProp, ...props }, forwardRef) => {
-    const { size, inverse, subtle, subtlest } =
+    const { size, variant, mixed, inverse, themed } =
       BreadcrumbContext.useStyledContext();
     const closeMenu = use(BreadcrumbMenuContext);
 
@@ -360,20 +342,17 @@ const BreadcrumbItemImpl = createStyledHOC(
     // context default is `true`) leaves SizableText's `body` family, which is
     // not a configured font, so the browser falls back to its default serif.
     const linkSize = (sizeProp ?? size) === "md" ? "md" : "sm";
-    const linkVariant = subtlest
-      ? ("subtlest" as const)
-      : subtle
-        ? ("subtle" as const)
-        : undefined;
 
     if (closeMenu) {
       return (
         <BreadcrumbMenuLink
           ref={forwardRef}
           size={linkSize}
+          variant={variant}
+          mixed={mixed}
           inverse={inverse}
+          themed={themed}
           underline="none"
-          {...(linkVariant && { variant: linkVariant })}
           {...props}
           onPress={(event: any) => {
             (props as { onPress?: (event: any) => void }).onPress?.(event);
@@ -390,8 +369,10 @@ const BreadcrumbItemImpl = createStyledHOC(
           <BreadcrumbLink
             ref={forwardRef}
             size={linkSize}
+            variant={variant}
+            mixed={mixed}
             inverse={inverse}
-            {...(linkVariant && { variant: linkVariant })}
+            themed={themed}
             {...props}>
             {children}
           </BreadcrumbLink>

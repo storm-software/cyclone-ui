@@ -21,9 +21,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { LinkProps } from "./Link";
 import { Link } from "./Link";
 
-// `mixed` is not a Link prop (the mixed style is `variant="mixed"`); it is
-// kept as a story arg only.
-type LinkStoryArgs = LinkProps & { mixed?: boolean };
+type LinkStoryArgs = LinkProps;
 
 const meta: Meta<LinkStoryArgs> = {
   title: "Triggers/Link",
@@ -46,18 +44,20 @@ export const Base: Story = {
   }
 };
 
-export const Inverse: Story = {
-  args: {
-    href: "#",
-    variant: "base",
-    inverse: true
-  }
-};
-
 export const Mixed: Story = {
   args: {
     href: "#",
+    variant: "emphasis",
     mixed: true
+  }
+};
+
+export const MixedInverse: Story = {
+  args: {
+    href: "#",
+    variant: "emphasis",
+    mixed: true,
+    inverse: true
   }
 };
 

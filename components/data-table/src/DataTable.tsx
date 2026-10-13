@@ -19,10 +19,16 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Checkbox } from "@cyclone-ui/checkbox";
+import { ContextMenu } from "@cyclone-ui/context-menu";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
-import { Funnel, SortAscending, SortDescending } from "@cyclone-ui/icons";
+import {
+  DotsThreeVertical,
+  Funnel,
+  SortAscending,
+  SortDescending
+} from "@cyclone-ui/icons";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
@@ -68,7 +74,7 @@ import {
   getSortedRowModel,
   useReactTable
 } from "@tanstack/react-table";
-import type { Dispatch, SetStateAction } from "react";
+import type { Dispatch, ReactNode, SetStateAction } from "react";
 import {
   useCallback,
   useEffect,
@@ -115,13 +121,33 @@ export const DataTableContext = createStyledContext<DataTableContextProps>({
 export type DataTableOptions<TData = any> = Partial<TableOptions<TData>> &
   Omit<TableOptions<TData>, "getCoreRowModel">;
 
+export interface DataTableRowAction {
+  value: string;
+  label: string;
+  icon?: ReactNode;
+  disabled?: boolean;
+}
+
 export interface DataTableProps<TData extends RowData> extends TableProps {
   options: DataTableOptions<TData>;
   pageSize?: number | null | false;
   resizable?: boolean;
+
+  /**
+   * Adds a trailing column whose button opens a menu of these actions, or of
+   * the actions returned for each row.
+   */
+  rowActions?:
+    DataTableRowAction[] | ((row: Row<TData>) => DataTableRowAction[]);
+
+  /**
+   * Called with the selected action's `value` and its row.
+   */
+  onRowAction?: (value: string, row: Row<TData>) => void;
 }
 
 const SELECTION_COLUMN_ID = "__selection";
+const ACTIONS_COLUMN_ID = "__actions";
 
 const DataTableColumnHeading = styled(HeadingSmallText, {
   displayName: "DataTableColumnHeading",
@@ -168,6 +194,84 @@ const getSelectionColumn = <TData extends RowData>(): ColumnDef<TData> => ({
         onCheckedChange={checked => row.toggleSelected(checked === true)}
       />
     </View>
+  )
+});
+
+const DataTableRowActions = <TData extends RowData>({
+  row,
+  actions,
+  onAction
+}: {
+  row: Row<TData>;
+  actions: DataTableRowAction[];
+  onAction?: (value: string, row: Row<TData>) => void;
+}) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <View width="100%" alignItems="flex-end" justifyContent="center">
+      <ContextMenu
+        open={open}
+        onOpenChange={setOpen}
+        placement="bottom-end"
+        onValueChange={value => {
+          setOpen(false);
+          onAction?.(value, row);
+        }}>
+        <ContextMenu.Trigger asChild={true}>
+          <Button
+            theme="base"
+            variant="ghost"
+            ghostOpacity={0.4}
+            circular={true}
+            noPadding={true}
+            color="primary"
+            size="6xl"
+            padding="lg"
+            aria-label={`Actions for row ${row.index + 1}`}>
+            <Button.Icon>
+              <DotsThreeVertical size="2xl" weight="bold" />
+            </Button.Icon>
+          </Button>
+        </ContextMenu.Trigger>
+        <ContextMenu.Content>
+          {actions.map(action => (
+            <ContextMenu.Item
+              key={action.value}
+              aria-label={action.label}
+              value={action.value}
+              disabled={action.disabled}>
+              {action.icon && (
+                // Flex centers an SVG, which would otherwise sit on the baseline.
+                <ContextMenu.Item.Icon display="flex" alignItems="center">
+                  {action.icon}
+                </ContextMenu.Item.Icon>
+              )}
+              <ContextMenu.Item.Label>{action.label}</ContextMenu.Item.Label>
+            </ContextMenu.Item>
+          ))}
+        </ContextMenu.Content>
+      </ContextMenu>
+    </View>
+  );
+};
+
+const getActionsColumn = <TData extends RowData>(
+  rowActions: NonNullable<DataTableProps<TData>["rowActions"]>,
+  onRowAction: DataTableProps<TData>["onRowAction"]
+): ColumnDef<TData> => ({
+  id: ACTIONS_COLUMN_ID,
+  size: 56,
+  enableColumnFilter: false,
+  enableResizing: false,
+  enableSorting: false,
+  header: () => null,
+  cell: ({ row }) => (
+    <DataTableRowActions
+      row={row}
+      actions={typeof rowActions === "function" ? rowActions(row) : rowActions}
+      onAction={onRowAction}
+    />
   )
 });
 
@@ -373,6 +477,8 @@ export function DataTable<TData extends RowData>({
   options,
   pageSize = 100,
   resizable = false,
+  rowActions,
+  onRowAction,
   ...rest
 }: DataTableProps<TData>) {
   const [data] = useState<TData[]>(() => [...options.data]);
@@ -398,9 +504,10 @@ export function DataTable<TData extends RowData>({
       ...options.columns.map(column => ({
         filterFn: defaultFilterFn,
         ...column
-      }))
+      })),
+      ...(rowActions ? [getActionsColumn(rowActions, onRowAction)] : [])
     ],
-    [options.columns, rowSelectionEnabled]
+    [options.columns, rowSelectionEnabled, rowActions, onRowAction]
   );
 
   const handleRowSelectionChange = useCallback<OnChangeFn<RowSelectionState>>(
@@ -1140,6 +1247,7 @@ export function DataTablePagination<TData extends RowData>({
       {pageCount > 1 && (
         <Pagination
           hideText={true}
+          size="sm"
           buttonWidth="9xl"
           pageIndex={pageIndex}
           pageCount={pageCount}

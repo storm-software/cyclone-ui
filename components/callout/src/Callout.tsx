@@ -113,7 +113,8 @@ const CalloutFrameImpl = createStyledHOC(
           // Clip the background layers to the padding box so their corners
           // follow the border's inner radius.
           overflow="hidden"
-          variant="outlined">
+          variant="outlined"
+          backgroundColor="primary">
           <CalloutBackgroundLowGradient
             theme={theme}
             start={[1.0, 1.0]}

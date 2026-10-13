@@ -226,9 +226,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
       onSlideStart,
       onSlideEnd,
       onFocus = formControl?.onFocus,
-      onBlur = formOnBlur
-        ? (handleFormBlur as SliderProps["onBlur"])
-        : undefined,
+      onBlur = formOnBlur ? handleFormBlur : undefined,
       ...props
     } = allProps;
     // A slider always shows a value, so inside a form control it shows the
@@ -278,7 +276,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
         : "marginLeft";
 
     const geometry = SLIDER_GEOMETRY[size] ?? SLIDER_GEOMETRY.md;
-    const fill = disabled ? "hairline" : "primary";
+    const fill = disabled ? "primaryDisabled" : "primary";
     const markList = useMemo(
       () => getSliderMarks(marks, min, max, step),
       [marks, min, max, step]
@@ -341,6 +339,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
       }
     }, [onChangeCommitted, toOutput]);
 
+    // eslint-disable-next-line ts/promise-function-async
     const formatValueLabel = (value: number, index: number) =>
       typeof valueLabelFormat === "function"
         ? valueLabelFormat(value, index)
@@ -490,9 +489,15 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                 <Text
                   fontFamily="caption"
                   fontSize={14}
-                  lineHeight={20}
+                  lineHeight="20px"
                   textAlign="center"
-                  color={active && !disabled ? "emphasis" : "subtle"}>
+                  color={
+                    disabled
+                      ? "emphasisDisabled"
+                      : active
+                        ? "emphasisActive"
+                        : "emphasisInactive"
+                  }>
                   {mark.label}
                 </Text>
               </View>
@@ -561,7 +566,9 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                 position="absolute"
                 inset={0}
                 borderRadius={100_000}
-                backgroundColor={fill}
+                backgroundColor={disabled ? fill : "primaryActive"}
+                borderWidth={1}
+                borderColor="hairline"
                 pointerEvents="none"
                 transition="200ms"
                 boxShadow={
@@ -587,25 +594,31 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                   scale={showValueLabel ? 1 : 0.5}
                   y={showValueLabel ? 0 : 6}>
                   <View
-                    backgroundColor="primary"
+                    backgroundColor="floating"
+                    borderWidth={1}
+                    borderColor="hairline"
                     borderRadius="sm"
                     paddingHorizontal={8}
-                    paddingVertical={4}
-                    zIndex={1}>
+                    paddingVertical={4}>
                     <Text
                       fontFamily="caption"
                       fontSize={12}
-                      lineHeight={16}
+                      lineHeight="16px"
                       fontWeight="500"
-                      color="onPrimary">
+                      color="emphasis">
                       {formatValueLabel(value, index)}
                     </Text>
                   </View>
+                  {/* Only the lower edges are bordered, and the arrow sits over
+                      the bubble so it hides the bubble's border where they meet. */}
                   <View
                     width={8}
                     height={8}
                     marginTop={-5}
-                    backgroundColor="primary"
+                    backgroundColor="floating"
+                    borderColor="hairline"
+                    borderRightWidth={1}
+                    borderBottomWidth={1}
                     rotate="45deg"
                   />
                 </View>

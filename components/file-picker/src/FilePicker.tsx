@@ -30,9 +30,10 @@ import {
   getSized,
   getSpaced,
   useFieldHasValidationMessage,
+  useFieldIconColor,
   useFormControl
 } from "@cyclone-ui/helpers";
-import { Dot, DownloadSimple, Trash, Upload, X } from "@cyclone-ui/icons";
+import { DownloadSimple, Lock, Trash, Upload, X } from "@cyclone-ui/icons";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import type { ClientFileResult } from "@cyclone-ui/state";
@@ -54,7 +55,7 @@ import { LinearGradient } from "@tamagui/linear-gradient";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { DocumentPickerResult } from "expo-document-picker";
 import type { PropsWithChildren } from "react";
-import { useCallback, useEffect, useState } from "react";
+import { Fragment, useCallback, useEffect, useState } from "react";
 import { MediaTypeOptions } from "./file-picker-types";
 import { FilePickerPdfPreview } from "./FilePickerPdfPreview";
 import { useFilePicker } from "./useFilePicker";
@@ -124,8 +125,6 @@ export const FilePickerContext = createStyledContext<
   }
 );
 
-const MAX_DISPLAYABLE_FILE_NAME_LENGTH = 150;
-
 export const FILE_PICKER_NAME = "FilePicker";
 
 const FilePickerGroupFrame = styled(View, {
@@ -143,7 +142,7 @@ const FilePickerGroupFrame = styled(View, {
   borderWidth: 2,
   borderRadius: "container",
   borderColor: "outline hover:outlineHovered",
-  backgroundColor: "surface hover:subtle",
+  backgroundColor: "surface hover:surfaceHovered",
   tabIndex: 0,
   variants: {
     // Styled by the `.resolve` below because the geometry depends on
@@ -161,14 +160,14 @@ const FilePickerGroupFrame = styled(View, {
         paddingVertical: 0,
         borderWidth: 1,
         borderRadius: "control",
-        overflow: "hidden",
-        backgroundColor: "surface"
+        overflow: "hidden"
       }
     },
+
     active: {
       true: {
-        borderColor: "outlineActive hover:outlineHovered",
-        backgroundColor: "subtle hover:subtle"
+        borderColor: "outlineActive hover:outlineActive",
+        backgroundColor: "surfaceActive hover:surfaceActive"
       }
     },
 
@@ -181,7 +180,8 @@ const FilePickerGroupFrame = styled(View, {
     disabled: {
       true: {
         borderColor: "primaryDisabled hover:primaryDisabled",
-        backgroundColor: "surface hover:surface"
+        backgroundColor: "surfaceDisabled hover:surfaceDisabled",
+        cursor: "not-allowed"
       },
       false: {
         opacity: 1
@@ -240,6 +240,13 @@ const FilePickerGroup = createStyledHOC(
     const hasValidationMessage = useFieldHasValidationMessage();
     const handlePick = useCallback(
       async ({ webFiles, nativeFiles }: PickFileProps) => {
+        // Ids continue past the highest one in use: `files.length` repeats an
+        // id still in the list once a file has been removed.
+        const nextId = files.reduce(
+          (id: number, file: ClientFileResult) => Math.max(id, file.id + 1),
+          0
+        );
+
         if (onChange) {
           if (webFiles && webFiles.length > 0) {
             await onChange(
@@ -248,7 +255,7 @@ const FilePickerGroup = createStyledHOC(
                   (ret, file, index) => {
                     ret.push({
                       ...file,
-                      id: files.length + index,
+                      id: nextId + index,
                       status: "initialized" satisfies FileStatus,
                       mimeType: file.type,
                       name: file.name,
@@ -274,7 +281,7 @@ const FilePickerGroup = createStyledHOC(
                       ret.push(
                         ...file.assets.map((asset, i) => ({
                           ...asset,
-                          id: files.length + index + i,
+                          id: nextId + index + i,
                           status: "initialized" as const satisfies FileStatus
                         }))
                       );
@@ -302,12 +309,12 @@ const FilePickerGroup = createStyledHOC(
     const { ref, ...rootProps } = getRootProps();
     const composedRef = useComposedRefs(forwardedRef, ref);
     const handleOpen = useCallback(() => {
-      // The simple variant has no remove action, so picking again replaces
-      // the oldest files (`handlePick` keeps the last `max`).
-      if (!disabled && (variant === "simple" || files.length < max)) {
+      // Once `max` files are attached, picking again replaces the oldest
+      // (`handlePick` keeps the last `max`).
+      if (!disabled) {
         onOpen();
       }
-    }, [disabled, variant, files.length, max, onOpen]);
+    }, [disabled, onOpen]);
 
     return (
       // @ts-ignore reason: getRootProps() which is web specific return some react-native incompatible props, but it's fine
@@ -317,7 +324,7 @@ const FilePickerGroup = createStyledHOC(
         size={size}
         variant={variant}
         ref={composedRef}
-        group={"file-picker"}
+        group="file-picker"
         disabled={disabled}
         active={Boolean(dragStatus?.isDragActive)}
         hasValidationMessage={hasValidationMessage}
@@ -327,7 +334,8 @@ const FilePickerGroup = createStyledHOC(
           rest.style,
           { borderStyle: variant === "simple" ? "solid" : "dashed" }
         ]}
-        onClick={handleOpen}
+        // `onPress` handles web clicks too; adding `onClick` opened the
+        // dialog twice per click.
         onPress={handleOpen}>
         <FilePickerContext.Provider
           size={size}
@@ -356,12 +364,7 @@ const FilePickerGroup = createStyledHOC(
           {children ??
             (formControl && (
               <>
-                <FilePickerFiles>
-                  {files &&
-                    files.map(file => (
-                      <FilePickerFile key={file.id} {...file} />
-                    ))}
-                </FilePickerFiles>
+                <FilePickerFiles />
                 <FilePickerTrigger>
                   <FilePickerTriggerButton />
                 </FilePickerTrigger>
@@ -378,6 +381,7 @@ const FilePickerTrigger = createStyledHOC(
   ({ children, ...props }, forwardedRef) => {
     const { disabled, files, max, size, variant, onChange } =
       FilePickerContext.useStyledContext();
+    const { iconColor, hoverIconColor } = useFieldIconColor();
 
     if (variant === "simple") {
       const clearSize = getSized(getFormSizeToken(size), { shift: -2 });
@@ -397,7 +401,7 @@ const FilePickerTrigger = createStyledHOC(
             alignSelf="center"
             paddingHorizontal={getSpaced(getFormSizeToken(size))}
             numberOfLines={1}
-            color={disabled ? "primaryDisabled" : "ink"}>
+            color={disabled ? "inkDisabled" : "ink"}>
             {files.length === 0
               ? max > 1
                 ? "No files chosen"
@@ -421,7 +425,7 @@ const FilePickerTrigger = createStyledHOC(
                 size={clearSize}
                 aria-label={max > 1 ? "Remove files" : "Remove file"}
                 onPress={() => onChange([])}>
-                <Button.Icon color="ink group-hover/button:primaryHovered">
+                <Button.Icon>
                   <X />
                 </Button.Icon>
               </Button>
@@ -429,10 +433,6 @@ const FilePickerTrigger = createStyledHOC(
           )}
         </XStack>
       );
-    }
-
-    if (files.length >= max) {
-      return null;
     }
 
     return (
@@ -445,15 +445,26 @@ const FilePickerTrigger = createStyledHOC(
         cursor={disabled ? "not-allowed" : "pointer"}
         {...props}>
         {files.length === 0 && (
-          <Upload
-            size={getSized("9xl") * getFormSizeScale(size)}
-            // `themed` icons resolve only a plain theme key; a conditional
-            // value string falls through to the SVG as an invalid (black) fill.
-            color={disabled ? "primaryDisabled" : "outline"}
-            transition="100ms"
+          // Icons only resolve a plain theme key, so the hover color is set
+          // on a wrapper whose CSS color the icon inherits.
+          <Text
+            display="flex"
+            transition="200ms"
+            color={`${iconColor} group-hover/file-picker:${hoverIconColor}`}
             opacity="1 exit:0"
-            scale="1 exit:0.5"
-          />
+            scale="1 exit:0.5">
+            {disabled ? (
+              <Lock
+                size={getSized("9xl") * getFormSizeScale(size) * 0.75}
+                color="currentColor"
+              />
+            ) : (
+              <Upload
+                size={getSized("9xl") * getFormSizeScale(size)}
+                color="currentColor"
+              />
+            )}
+          </Text>
         )}
         {children}
       </YStack>
@@ -475,15 +486,21 @@ const FilePickerTriggerButton = createStyledHOC(
           justifyContent="center"
           paddingHorizontal={getSpaced(getFormSizeToken(size))}
           borderRightWidth={1}
-          borderColor={disabled ? "primaryDisabled" : "outline"}
+          borderColor={
+            disabled
+              ? "outlineDisabled"
+              : "outline group-hover/file-picker:outlineHovered"
+          }
           backgroundColor={
-            disabled ? "elevated" : "elevated group-hover/file-picker:subtle"
+            disabled
+              ? "elevatedDisabled"
+              : "elevated group-hover/file-picker:elevatedHovered"
           }
           transition="200ms">
           <FilePickerMetadataText
             controlSize={size}
             fontWeight="500"
-            color={disabled ? "primaryDisabled" : "emphasis"}>
+            color={disabled ? "emphasisDisabled" : "emphasis"}>
             {children || (max > 1 ? "Choose Files" : "Choose File")}
           </FilePickerMetadataText>
         </View>
@@ -506,16 +523,17 @@ const FilePickerTriggerButton = createStyledHOC(
         display="native:none"
         marginHorizontal="5xl"
         {...props}>
-        <Button.Text
-          fontSize={16 * getFormFontScale(size)}
-          color="emphasis"
-          textDecorationColor="emphasis">
+        <Button.Text fontSize={16 * getFormFontScale(size)}>
           {children ||
-            (max > 1
-              ? files.length === 0
+            (files.length === 0
+              ? max > 1
                 ? "Click or drop files to upload"
-                : "Click or drop files to add more uploads"
-              : "Click or drop a file to upload")}
+                : "Click or drop a file to upload"
+              : files.length < max
+                ? "Click or drop files to add more uploads"
+                : max > 1
+                  ? "Click or drop files to replace the oldest"
+                  : "Click or drop a file to replace it")}
         </Button.Text>
       </Button>
     );
@@ -540,7 +558,9 @@ const FilePickerFiles = createStyledHOC(
             paddingHorizontal="5xl"
             width="100%"
             {...props}>
-            {children}
+            {/* Without children, the picker's own files are listed. */}
+            {children ??
+              files.map(file => <FilePickerFile key={file.id} {...file} />)}
           </YStack>
         )}
       </AnimatePresence>
@@ -593,8 +613,11 @@ const FilePickerViewLink = ({
     return (
       <Link
         fontSize={18 * getFormFontScale(size)}
+        // One centered line, cut short with an ellipsis when it doesn't fit.
+        display="block"
         width="100%"
         textAlign="center"
+        numberOfLines={1}
         {...props}
         href={uri}
         target="_blank">
@@ -604,7 +627,13 @@ const FilePickerViewLink = ({
   }
 
   return (
-    <LabelText color="onPrimary" width="100%" textAlign="center" {...props}>
+    <LabelText
+      color="onPrimary"
+      display="block"
+      width="100%"
+      textAlign="center"
+      numberOfLines={1}
+      {...props}>
       <FilePickerNameText controlSize={size} color="onPrimary">
         {children}
       </FilePickerNameText>
@@ -779,10 +808,10 @@ const FilePickerFile = ({
             {...{ download: name }}
             variant="ghost"
             ghostOpacity={0.75}
-            size={getSized("13xl") * scale}
-            padding="xl"
+            size={getSized("10xl") * scale}
+            noPadding={true}
             circular={true}>
-            <Button.Icon color="group-hover/button:primaryHovered">
+            <Button.Icon>
               <DownloadSimple />
             </Button.Icon>
           </Button>
@@ -802,11 +831,12 @@ const FilePickerFile = ({
             variant="ghost"
             theme="danger"
             ghostOpacity={0.25}
+            aria-label={`Remove ${name || "file"}`}
             onPress={handleRemove}
-            size={getSized("13xl") * scale}
-            padding="xl"
+            size={getSized("10xl") * scale}
+            noPadding={true}
             circular={true}>
-            <Button.Icon color="group-hover/button:primaryHovered">
+            <Button.Icon>
               <Trash />
             </Button.Icon>
           </Button>
@@ -826,34 +856,39 @@ const FilePickerFile = ({
         <YStack width="75%" gap="xl">
           <View zIndex="30" justifyContent="center" alignItems="center">
             <FilePickerViewLink uri={uri}>
-              {name
-                ? name.length > MAX_DISPLAYABLE_FILE_NAME_LENGTH
-                  ? `${name?.slice(0, MAX_DISPLAYABLE_FILE_NAME_LENGTH)}...`
-                  : name
-                : "Unnamed File"}
+              {name || "Unnamed File"}
             </FilePickerViewLink>
           </View>
-          <XStack gap="lg" justifyContent="center" alignItems="center">
-            <FilePickerBytesText controlSize={controlSize} zIndex="30">
-              {size}
-            </FilePickerBytesText>
-
-            {lastModified && <Dot size={getSized("6xl") * scale} color="ink" />}
-
-            {lastModified && (
-              <FilePickerMetadataText controlSize={controlSize} zIndex="30">
-                {formatDate(new Date(lastModified), "MM-DD-YYYY HH:mm:ss")}
-              </FilePickerMetadataText>
-            )}
-
-            {mimeType && <Dot size={getSized("6xl") * scale} color="ink" />}
-
-            {mimeType && (
-              <FilePickerMetadataText controlSize={controlSize} zIndex="30">
-                {mimeType}
-              </FilePickerMetadataText>
-            )}
-          </XStack>
+          {/* One centered line, cut short with an ellipsis when it doesn't
+              fit; as a single run of text the bullets share its baseline. */}
+          <FilePickerMetadataText
+            controlSize={controlSize}
+            zIndex="30"
+            display="block"
+            width="100%"
+            textAlign="center"
+            numberOfLines={1}>
+            {[
+              <FilePickerBytesText
+                key="size"
+                controlSize={controlSize}
+                // Inline in the metadata's paragraph.
+                render="span">
+                {size}
+              </FilePickerBytesText>,
+              lastModified &&
+                formatDate(new Date(lastModified), "MM-DD-YYYY HH:mm:ss"),
+              mimeType
+            ]
+              .filter(Boolean)
+              .map((item, i) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <Fragment key={i}>
+                  {i > 0 && "\u2002•\u2002"}
+                  {item}
+                </Fragment>
+              ))}
+          </FilePickerMetadataText>
         </YStack>
       </View>
 

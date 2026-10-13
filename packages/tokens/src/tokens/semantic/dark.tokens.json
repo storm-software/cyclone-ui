@@ -11,7 +11,7 @@
     "ink": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.6}",
+      "$value": "{color.neutral.7}",
       "$description": "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       "group": "foreground"
     },
@@ -25,7 +25,7 @@
     "subtlest": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.9}",
+      "$value": "{color.neutral.11}",
       "$description": "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       "group": "foreground"
     },
@@ -90,8 +90,15 @@
       "secondary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.8}",
+        "$value": "{color.neutral.10}",
         "$description": "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
+        "semantic": true
+      },
+      "link": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(74.6% 0.16 232.661)",
+        "$description": "The color used for hyperlink text.",
         "semantic": true
       }
     },

@@ -37,7 +37,7 @@ import { getFontSized } from "@tamagui/get-font-sized";
 import { withStaticProperties } from "@tamagui/helpers";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import { SizableText } from "@tamagui/text";
-import { useCallback, useRef, useState } from "react";
+import { createContext, useCallback, useContext, useRef, useState } from "react";
 
 export type TagSize = SizeTokens | number;
 
@@ -154,7 +154,7 @@ const TagFrame = styled(View, {
   flexDirection: "row",
   width: "fit-content",
   boxShadow: "none",
-  borderRadius: "button",
+  borderRadius: "tag",
   paddingHorizontal: "3xl",
   paddingVertical: "lg",
   justifyContent: "center",
@@ -246,22 +246,101 @@ const TagTextFrame = styled(SizableText, {
   }
 });
 
+interface TagEditState {
+  /** The accessible label of the text box. */
+  label: string;
+  /** Ends editing, editing the tag to `value` unless it is `undefined`. */
+  finish: (value?: string) => void;
+}
+
+// A plain React context: a styled context only carries style props. Set while
+// an `editable` tag is being edited.
+const TagEditContext = createContext<TagEditState | null>(null);
+
+// A native `<input>` in `Tag.Text`'s font and color, so the text box lines up
+// with the text it replaces.
+const TagEditInputFrame = styled(TagTextFrame, {
+  render: "input",
+  backgroundColor: "transparent",
+  borderWidth: 0,
+  padding: 0,
+  outlineStyle: "none"
+});
+
+type TagEditInputProps = GetProps<typeof TagTextFrame> & {
+  value: string;
+  edit: TagEditState;
+};
+
+// Uncontrolled: blur is the only commit, and reads the text box's value. Enter
+// commits by blurring, and Escape restores the value first.
+const TagEditInput = ({ value, edit, ...props }: TagEditInputProps) => {
+  const [length, setLength] = useState(value.length);
+
+  return (
+    <TagEditInputFrame
+      {...props}
+      // Input attributes Tamagui's text props do not type.
+      {...({
+        "aria-label": edit.label,
+        autoFocus: true,
+        defaultValue: value,
+        onChange: (event: any) => setLength(event.target.value.length),
+        // Starts the caret after the text.
+        onFocus: (event: any) =>
+          event.target.setSelectionRange(value.length, value.length),
+        onKeyDown: (event: any) => {
+          if (event.key === "Enter") {
+            // Keeps Enter from also submitting a surrounding form.
+            event.preventDefault();
+            event.currentTarget.blur();
+          } else if (event.key === "Escape") {
+            event.currentTarget.value = value;
+            event.currentTarget.blur();
+          }
+        },
+        onBlur: (event: any) =>
+          edit.finish(
+            event.target.value === value ? undefined : event.target.value
+          )
+      } as object)}
+      // One extra character leaves room for the caret.
+      width={`${length + 1}ch`}
+    />
+  );
+};
+
 const TagText = createStyledHOC(
   TagTextFrame,
   ({ children, color, size, ...props }, forwardedRef) => {
     const context = TagContext.useStyledContext();
+    const edit = useContext(TagEditContext);
     const themeColor = getTextColor(
       context.variant as TagVariant | undefined,
       context.outlined
     );
     const baseColor = color ?? themeColor;
     const hoveredColor = getHoveredColor(themeColor);
+    const textSize = (size ?? context.size) as FontSizeTokens | number | true;
+
+    // Only plain text can be edited.
+    if (edit && typeof children === "string") {
+      return (
+        <TagEditInput
+          {...props}
+          size={textSize}
+          color={baseColor}
+          value={children}
+          edit={edit}
+        />
+      );
+    }
 
     return (
       <TagTextFrame
         ref={forwardedRef}
         {...props}
-        size={(size ?? context.size) as FontSizeTokens | number | true}
+        size={textSize}
         color={
           // A caller-authored `hover:` clause wins, like v2's caller `hoverStyle`.
           context.pressable &&
@@ -589,9 +668,34 @@ export interface TagRemovableProps {
   onAfterRemove?: () => void;
 }
 
+export interface TagEditableProps {
+  /**
+   * Should double clicking the tag turn its `Tag.Text` into a text box that
+   * edits the text. Enter or leaving the text box commits the edit, and Escape
+   * cancels it.
+   *
+   * @defaultValue false
+   */
+  editable?: boolean;
+
+  /**
+   * The accessible label of the text box an edit shows
+   *
+   * @defaultValue "Edit tag"
+   */
+  editInputLabel?: string;
+
+  /**
+   * Called with the text box's value when an edit is committed with text that
+   * differs from the tag's text
+   */
+  onEdit?: (value: string) => void;
+}
+
 export type TagProps = Omit<GetProps<typeof TagFrame>, keyof TagContextProps> &
   Partial<TagContextProps> &
-  TagRemovableProps;
+  TagRemovableProps &
+  TagEditableProps;
 
 const TagFrameImpl = createStyledHOC(
   TagFrame,
@@ -599,18 +703,25 @@ const TagFrameImpl = createStyledHOC(
     {
       children,
       outlined = false,
-      pressable = false,
+      pressable: pressableProp = false,
       size = true,
       variant = "primary",
       removable = false,
       removeButtonLabel = "Remove",
       onBeforeRemove,
       onAfterRemove,
+      editable = false,
+      editInputLabel = "Edit tag",
+      onEdit,
       onPress,
+      onDoubleClick,
       ...props
     }: TagProps,
     forwardedRef
   ) => {
+    // An editable tag responds to hover like a pressable one.
+    const pressable = pressableProp || editable;
+
     // The text's color: it stays visible on the `secondaryActive` background a
     // pointer press lands on.
     const ripple = useTagRipples(getTextColor(variant, outlined), onPress);
@@ -619,6 +730,7 @@ const TagFrameImpl = createStyledHOC(
     const [removed, setRemoved] = useState(false);
     const [removeHovered, setRemoveHovered] = useState(false);
     const [removeFocused, setRemoveFocused] = useState(false);
+    const [editing, setEditing] = useState(false);
 
     const handleRemove = useCallback(() => {
       if (!onBeforeRemove || onBeforeRemove()) {
@@ -653,13 +765,35 @@ const TagFrameImpl = createStyledHOC(
               })}
               {...props}
               onPress={pressable ? ripple.onPress : onPress}
+              onDoubleClick={event => {
+                if (editable) {
+                  setEditing(true);
+                }
+
+                onDoubleClick?.(event);
+              }}
               outlined={outlined}
               pressable={pressable}
               size={size}
               variant={variant}>
               {pressable && ripple.ripples}
-              {children}
-              {removable && (
+              <TagEditContext.Provider
+                value={
+                  editing
+                    ? {
+                        label: editInputLabel,
+                        finish: value => {
+                          setEditing(false);
+                          if (value !== undefined) {
+                            onEdit?.(value);
+                          }
+                        }
+                      }
+                    : null
+                }>
+                {children}
+              </TagEditContext.Provider>
+              {removable && !editing && (
                 <TagRemoveButton
                   aria-label={removeButtonLabel}
                   onPress={handleRemove}

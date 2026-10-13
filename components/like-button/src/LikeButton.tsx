@@ -132,6 +132,7 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
       size = "md",
       onMouseEnter,
       onMouseLeave,
+      color,
       ...props
     },
     forwardedRef
@@ -176,6 +177,7 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
         aria-label="Like"
         borderless={true}
         circular={true}
+        pressedBackgroundColor="elevatedActive"
         {...props}
         // Anchors the confetti origin to the button centre.
         position="relative"
@@ -195,13 +197,14 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
         <View ref={thumbRef} aria-hidden={true}>
           <ThumbsUp
             size={iconSize}
-            weight={liked ? "fill" : "regular"}
+            weight={liked ? "fill" : "light"}
             color={
-              hovered && !disabled
-                ? "primaryActive"
+              color ||
+              (hovered && !disabled
+                ? "primaryHovered"
                 : liked
-                  ? "primary"
-                  : "color"
+                  ? "primaryActive"
+                  : "primary")
             }
           />
         </View>

@@ -25,7 +25,6 @@ import {
   getFormSizeToken,
   getSpaced,
   useFieldHasValidationMessage,
-  useFieldIconColor,
   useFieldLabelDefaults,
   useFieldLabelPlacement,
   useFieldVariant,
@@ -231,7 +230,6 @@ const SelectTrigger = createStyledHOC(
   Field.Icon,
   (props: SelectTriggerProps, forwardedRef) => {
     const { focused, size } = SelectContext.useStyledContext();
-    const { iconColor } = useFieldIconColor();
 
     return (
       <Field.Icon
@@ -251,7 +249,8 @@ const SelectTrigger = createStyledHOC(
           justifyContent="center">
           <CaretDown
             size={24 * getFormSizeScale(size)}
-            color={iconColor}
+            // Inherits the field icon's CSS hover color.
+            color="currentColor"
             weight="bold"
           />
         </View>
@@ -287,7 +286,7 @@ const SelectTextBoxImpl = createStyledHOC(
     // the `disabled` variant's press/focus colors that v2 kept.
     // In a field the label overlays the frame without being inside it, so
     // the frame never sees `hover`; follow the field group's hover too.
-    const borderColor = `${focused ? focusColor : idleColor} hover:${focused ? focusColor : "primaryHovered"} group-hover/field:${disabled ? "primaryDisabled" : focused ? focusColor : "primaryHovered"}${disabled ? " press:primaryDisabled focus:primaryDisabled" : ""} focus-visible:${focusColor}`;
+    const borderColor = `${focused ? focusColor : idleColor} hover:${focused ? focusColor : hoverColor} group-hover/field:${disabled ? "primaryDisabled" : focused ? focusColor : hoverColor}${disabled ? " press:primaryDisabled focus:primaryDisabled" : ""} focus-visible:${focusColor}`;
 
     return (
       <SelectGroup

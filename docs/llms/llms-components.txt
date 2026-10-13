@@ -275,6 +275,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/link-text`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
@@ -681,7 +682,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -726,6 +727,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/checkbox`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/form`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
@@ -2103,6 +2105,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@stryke/hooks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/constants`: `catalog:`
@@ -2234,7 +2237,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 ## @cyclone-ui/search-input
 
-A headless search text input with a magnifying-glass icon. It shows a popover of case-insensitive suggestions that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
+A headless search text input with a magnifying-glass icon. It shows a ContextMenu of case-insensitive suggestions (the same menu as Select) that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
@@ -2242,16 +2245,13 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 ### Dependencies
 
-- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
-- `@cyclone-ui/select`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 
 ### Development Dependencies
 
@@ -2715,6 +2715,8 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/scroll-view`: `workspace:*`
+- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -3350,6 +3352,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/link-text`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
@@ -3756,7 +3759,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -3801,6 +3804,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/checkbox`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/form`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
@@ -5178,6 +5182,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@stryke/hooks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/constants`: `catalog:`
@@ -5309,7 +5314,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 ## @cyclone-ui/search-input
 
-A headless search text input with a magnifying-glass icon. It shows a popover of case-insensitive suggestions that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
+A headless search text input with a magnifying-glass icon. It shows a ContextMenu of case-insensitive suggestions (the same menu as Select) that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
@@ -5317,16 +5322,13 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 ### Dependencies
 
-- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
-- `@cyclone-ui/select`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 
 ### Development Dependencies
 
@@ -5790,6 +5792,8 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/scroll-view`: `workspace:*`
+- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -6425,6 +6429,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/link-text`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
@@ -6831,7 +6836,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -6876,6 +6881,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/checkbox`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/form`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
@@ -8253,6 +8259,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@stryke/hooks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/constants`: `catalog:`
@@ -8384,7 +8391,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 ## @cyclone-ui/search-input
 
-A headless search text input with a magnifying-glass icon. It shows a popover of case-insensitive suggestions that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
+A headless search text input with a magnifying-glass icon. It shows a ContextMenu of case-insensitive suggestions (the same menu as Select) that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
@@ -8392,16 +8399,13 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 ### Dependencies
 
-- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
-- `@cyclone-ui/select`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 
 ### Development Dependencies
 
@@ -8865,6 +8869,8 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/scroll-view`: `workspace:*`
+- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -9500,6 +9506,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/link-text`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
@@ -9906,7 +9913,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -9951,6 +9958,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/checkbox`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/form`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
@@ -11328,6 +11336,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@stryke/hooks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/constants`: `catalog:`
@@ -11459,7 +11468,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 ## @cyclone-ui/search-input
 
-A headless search text input with a magnifying-glass icon. It shows a popover of case-insensitive suggestions that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
+A headless search text input with a magnifying-glass icon. It shows a ContextMenu of case-insensitive suggestions (the same menu as Select) that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
@@ -11467,16 +11476,13 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 ### Dependencies
 
-- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
-- `@cyclone-ui/select`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 
 ### Development Dependencies
 
@@ -11940,6 +11946,8 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/scroll-view`: `workspace:*`
+- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -12575,6 +12583,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/link-text`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
@@ -12981,7 +12990,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -13026,6 +13035,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/checkbox`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/form`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
@@ -14403,6 +14413,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@stryke/hooks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/constants`: `catalog:`
@@ -14534,7 +14545,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 ## @cyclone-ui/search-input
 
-A headless search text input with a magnifying-glass icon. It shows a popover of case-insensitive suggestions that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
+A headless search text input with a magnifying-glass icon. It shows a ContextMenu of case-insensitive suggestions (the same menu as Select) that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
@@ -14542,16 +14553,13 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 ### Dependencies
 
-- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
-- `@cyclone-ui/select`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 
 ### Development Dependencies
 
@@ -15015,6 +15023,8 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/scroll-view`: `workspace:*`
+- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -15650,6 +15660,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/label-text`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/link-text`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
@@ -16056,7 +16067,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -16101,6 +16112,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/checkbox`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/form`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
@@ -17478,6 +17490,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
 - `@stryke/hooks`: `catalog:`
 - `@stryke/types`: `catalog:`
 - `@tamagui/constants`: `catalog:`
@@ -17609,7 +17622,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 ## @cyclone-ui/search-input
 
-A headless search text input with a magnifying-glass icon. It shows a popover of case-insensitive suggestions that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
+A headless search text input with a magnifying-glass icon. It shows a ContextMenu of case-insensitive suggestions (the same menu as Select) that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
@@ -17617,16 +17630,13 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 ### Dependencies
 
-- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/context-menu`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
-- `@cyclone-ui/popover`: `workspace:*`
-- `@cyclone-ui/select`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/create-context`: `catalog:`
-- `@tamagui/linear-gradient`: `catalog:`
 
 ### Development Dependencies
 
@@ -18090,6 +18100,8 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/scroll-view`: `workspace:*`
+- `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies

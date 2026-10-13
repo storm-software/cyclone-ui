@@ -138,7 +138,7 @@ export async function exit(options: ExitOptions = {}) {
  */
 async function main(): Promise<any | { error: string | Error }> {
   if (hasFlag(["version", "v"])) {
-    console.log("0.6.4");
+    console.log("0.6.5");
     return;
   }
 
@@ -157,38 +157,33 @@ async function main(): Promise<any | { error: string | Error }> {
       return handleView(args);
     } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
-        "init" ||
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "create"
-    ) {
-      const handleInit = await import("./init").then(m => m.handler);
-      return handleInit(args);
-    } else if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
         "search" ||
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "list"
     ) {
       const handleSearch = await import("./search").then(m => m.handler);
       return handleSearch(args);
     } else if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "docs"
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "init" ||
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "create"
     ) {
-      const handleDocs = await import("./docs").then(m => m.handler);
-      return handleDocs(args);
+      const handleInit = await import("./init").then(m => m.handler);
+      return handleInit(args);
     } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
     ) {
       const handleInfo = await import("./info").then(m => m.handler);
       return handleInfo(args);
     } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "docs"
+    ) {
+      const handleDocs = await import("./docs").then(m => m.handler);
+      return handleDocs(args);
+    } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
     ) {
       const handleDiff = await import("./diff").then(m => m.handler);
       return handleDiff(args);
-    } else if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "build"
-    ) {
-      const handleBuild = await import("./build").then(m => m.handler);
-      return handleBuild(args);
     } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
       "createtokens"
@@ -197,6 +192,11 @@ async function main(): Promise<any | { error: string | Error }> {
         m => m.handler
       );
       return handleCreateTokens(args);
+    } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "build"
+    ) {
+      const handleBuild = await import("./build").then(m => m.handler);
+      return handleBuild(args);
     } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "add"
     ) {
@@ -320,15 +320,15 @@ async function main(): Promise<any | { error: string | Error }> {
     } else if (Boolean(command) && !command.startsWith("-")) {
       const suggestions = findSuggestions(command, [
         "view",
-        "init",
-        "create",
         "search",
         "list",
-        "docs",
+        "init",
+        "create",
         "info",
+        "docs",
         "diff",
-        "build",
         "create-tokens",
+        "build",
         "add",
         "changelog",
         "completions",
@@ -368,22 +368,16 @@ async function main(): Promise<any | { error: string | Error }> {
           icon: "◉"
         },
         {
-          value: ["init"],
-          label: "Initialize",
-          description: `(cyclone-ui init)`,
-          icon: "🌀"
-        },
-        {
           value: ["search"],
           label: "Search Registry",
           description: `(cyclone-ui search)`,
           icon: "⌕"
         },
         {
-          value: ["docs"],
-          label: "Component Documentation",
-          description: `(cyclone-ui docs)`,
-          icon: "🕮"
+          value: ["init"],
+          label: "Initialize",
+          description: `(cyclone-ui init)`,
+          icon: "🌀"
         },
         {
           value: ["info"],
@@ -392,21 +386,27 @@ async function main(): Promise<any | { error: string | Error }> {
           icon: "ⓘ"
         },
         {
+          value: ["docs"],
+          label: "Component Documentation",
+          description: `(cyclone-ui docs)`,
+          icon: "🕮"
+        },
+        {
           value: ["diff"],
           label: "Diff Components",
           description: `(cyclone-ui diff)`,
           icon: "±"
         },
         {
-          value: ["build"],
-          label: "Build Registry",
-          description: `(cyclone-ui build)`,
-          icon: "🏗"
-        },
-        {
           value: ["create-tokens"],
           label: "Create Tokens",
           description: `(cyclone-ui create-tokens)`,
+          icon: "🏗"
+        },
+        {
+          value: ["build"],
+          label: "Build Registry",
+          description: `(cyclone-ui build)`,
           icon: "🏗"
         },
         {
@@ -422,15 +422,15 @@ async function main(): Promise<any | { error: string | Error }> {
           icon: "🗃"
         },
         {
-          value: ["completions", "bash", "config"],
-          label: "Completions - Bash Configuration",
-          description: `(cyclone-ui completions bash config)`,
-          icon: "🖵"
-        },
-        {
           value: ["completions", "bash", "script"],
           label: "Completions - Bash Script",
           description: `(cyclone-ui completions bash script)`,
+          icon: "🖵"
+        },
+        {
+          value: ["completions", "bash", "config"],
+          label: "Completions - Bash Configuration",
+          description: `(cyclone-ui completions bash config)`,
           icon: "🖵"
         },
         {
@@ -599,6 +599,13 @@ async function main(): Promise<any | { error: string | Error }> {
         return handleView(args);
       } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+          "search" ||
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "list"
+      ) {
+        const handleSearch = await import("./search").then(m => m.handler);
+        return handleSearch(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
           "init" ||
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
           "create"
@@ -606,33 +613,20 @@ async function main(): Promise<any | { error: string | Error }> {
         const handleInit = await import("./init").then(m => m.handler);
         return handleInit(args);
       } else if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
-          "search" ||
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "list"
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
       ) {
-        const handleSearch = await import("./search").then(m => m.handler);
-        return handleSearch(args);
+        const handleInfo = await import("./info").then(m => m.handler);
+        return handleInfo(args);
       } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "docs"
       ) {
         const handleDocs = await import("./docs").then(m => m.handler);
         return handleDocs(args);
       } else if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
-      ) {
-        const handleInfo = await import("./info").then(m => m.handler);
-        return handleInfo(args);
-      } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
       ) {
         const handleDiff = await import("./diff").then(m => m.handler);
         return handleDiff(args);
-      } else if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
-        "build"
-      ) {
-        const handleBuild = await import("./build").then(m => m.handler);
-        return handleBuild(args);
       } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
         "createtokens"
@@ -641,6 +635,12 @@ async function main(): Promise<any | { error: string | Error }> {
           m => m.handler
         );
         return handleCreateTokens(args);
+      } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") ===
+        "build"
+      ) {
+        const handleBuild = await import("./build").then(m => m.handler);
+        return handleBuild(args);
       } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "add"
       ) {
@@ -770,15 +770,15 @@ async function main(): Promise<any | { error: string | Error }> {
       } else if (Boolean(command) && !command.startsWith("-")) {
         const suggestions = findSuggestions(command, [
           "view",
-          "init",
-          "create",
           "search",
           "list",
-          "docs",
+          "init",
+          "create",
           "info",
+          "docs",
           "diff",
-          "build",
           "create-tokens",
+          "build",
           "add",
           "changelog",
           "completions",

@@ -127,6 +127,7 @@ declare const tokens: {
     base: {
       primary: DesignToken;
       secondary: DesignToken;
+      link: DesignToken;
       "on-primary": DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
@@ -137,9 +138,14 @@ declare const tokens: {
       "secondary-active": DesignToken;
       "secondary-inactive": DesignToken;
       "secondary-disabled": DesignToken;
+      "link-hovered": DesignToken;
+      "link-active": DesignToken;
+      "link-inactive": DesignToken;
+      "link-disabled": DesignToken;
     };
     danger: {
       primary: DesignToken;
+      link: DesignToken;
       "on-primary": DesignToken;
       secondary: DesignToken;
       "on-secondary": DesignToken;
@@ -151,9 +157,14 @@ declare const tokens: {
       "secondary-active": DesignToken;
       "secondary-inactive": DesignToken;
       "secondary-disabled": DesignToken;
+      "link-hovered": DesignToken;
+      "link-active": DesignToken;
+      "link-inactive": DesignToken;
+      "link-disabled": DesignToken;
     };
     warning: {
       primary: DesignToken;
+      link: DesignToken;
       "on-primary": DesignToken;
       secondary: DesignToken;
       "on-secondary": DesignToken;
@@ -165,10 +176,15 @@ declare const tokens: {
       "secondary-active": DesignToken;
       "secondary-inactive": DesignToken;
       "secondary-disabled": DesignToken;
+      "link-hovered": DesignToken;
+      "link-active": DesignToken;
+      "link-inactive": DesignToken;
+      "link-disabled": DesignToken;
     };
     info: {
       primary: DesignToken;
       secondary: DesignToken;
+      link: DesignToken;
       "on-primary": DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
@@ -179,10 +195,15 @@ declare const tokens: {
       "secondary-active": DesignToken;
       "secondary-inactive": DesignToken;
       "secondary-disabled": DesignToken;
+      "link-hovered": DesignToken;
+      "link-active": DesignToken;
+      "link-inactive": DesignToken;
+      "link-disabled": DesignToken;
     };
     discovery: {
       primary: DesignToken;
       secondary: DesignToken;
+      link: DesignToken;
       "on-primary": DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
@@ -193,9 +214,14 @@ declare const tokens: {
       "secondary-active": DesignToken;
       "secondary-inactive": DesignToken;
       "secondary-disabled": DesignToken;
+      "link-hovered": DesignToken;
+      "link-active": DesignToken;
+      "link-inactive": DesignToken;
+      "link-disabled": DesignToken;
     };
     success: {
       primary: DesignToken;
+      link: DesignToken;
       "on-primary": DesignToken;
       secondary: DesignToken;
       "on-secondary": DesignToken;
@@ -207,6 +233,10 @@ declare const tokens: {
       "secondary-active": DesignToken;
       "secondary-inactive": DesignToken;
       "secondary-disabled": DesignToken;
+      "link-hovered": DesignToken;
+      "link-active": DesignToken;
+      "link-inactive": DesignToken;
+      "link-disabled": DesignToken;
     };
     backdrop: DesignToken;
     shadow: {
@@ -532,6 +562,7 @@ declare const tokens: {
     trigger: DesignToken;
     card: DesignToken;
     button: DesignToken;
+    tag: DesignToken;
     control: DesignToken;
     checkbox: DesignToken;
     dialog: DesignToken;

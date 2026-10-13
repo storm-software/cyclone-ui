@@ -26,6 +26,7 @@ import {
   getSized,
   getSpaced,
   useFieldHasValidationMessage,
+  useFieldLabelDefaults,
   useFieldLabelPlacement,
   useFieldShouldShowPlaceholder,
   useFieldVariant,
@@ -56,13 +57,17 @@ import {
   appendTag,
   getTagRemoveButtonLabel,
   normalizeTag,
-  removeTag
+  removeTag,
+  replaceTag
 } from "./utilities";
 
 const TAG_PICKER_NAME = "TagPicker";
 
 // A stable empty value while the form has no tags for the field.
 const NO_TAGS: string[] = [];
+
+// Like text inputs, a tag picker floats its field label by default.
+const FLOATING_LABEL = { variant: "floating" } as const;
 
 const isFormControlSize = (value: unknown): value is FormControlSize =>
   value === "sm" || value === "md" || value === "lg";
@@ -82,9 +87,9 @@ const getTagPickerGeometry = (size: FormControlSize) => {
     tagHeight,
     padding,
     fontSize: 14 * getFormFontScale(size),
-    tagPaddingLeft: getSpaced("2xl") * scale,
-    // The remove button adds its own space after the text.
-    tagPaddingRight: getSpaced("xl") * scale,
+    // Even on both sides: `Tag`'s remove button already pulls itself toward
+    // the right edge.
+    tagPaddingHorizontal: getSpaced("2xl") * scale,
     // The text box's start inset while it is the only item, so its text (and
     // a floating label) lines up with an `Input`'s.
     inputInset: getSpaced("4xl") * scale - padding,
@@ -219,6 +224,7 @@ interface TagPickerItemProps {
   removeButtonLabel: string;
   geometry: ReturnType<typeof getTagPickerGeometry>;
   onRemove: (tag: string) => void;
+  onEdit: (tag: string, draft: string) => void;
 }
 
 const TagPickerItem = ({
@@ -228,12 +234,16 @@ const TagPickerItem = ({
   tagVariant,
   removeButtonLabel,
   geometry,
-  onRemove
+  onRemove,
+  onEdit
 }: TagPickerItemProps) => (
   <TagPickerItemFrame pop={pop}>
     <Tag
       variant={tagVariant}
       removable={!disabled}
+      editable={!disabled}
+      editInputLabel={`Edit ${tag}`}
+      onEdit={draft => onEdit(tag, draft)}
       removeButtonLabel={removeButtonLabel}
       // The select removes the tag from its value, and the pill's exit
       // animation plays as `AnimatePresence` lets it go. Returning `false`
@@ -245,10 +255,7 @@ const TagPickerItem = ({
       }}
       height={geometry.tagHeight}
       paddingVertical={0}
-      paddingLeft={geometry.tagPaddingLeft}
-      paddingRight={
-        disabled ? geometry.tagPaddingLeft : geometry.tagPaddingRight
-      }
+      paddingHorizontal={geometry.tagPaddingHorizontal}
       opacity={disabled ? 0.6 : undefined}>
       <Tag.Text
         fontSize={geometry.fontSize}
@@ -350,6 +357,7 @@ const TagPickerImpl = createStyledHOC(
     // box (`Input.TextBox.Value`) registers itself with the form.
     const formControl = useFormControl();
     const fieldVariant = useFieldVariant(props.placeholder);
+    useFieldLabelDefaults(FLOATING_LABEL);
     const shouldShowPlaceholder = useFieldShouldShowPlaceholder(
       formControl?.formattedValue
     );
@@ -420,6 +428,29 @@ const TagPickerImpl = createStyledHOC(
       commit(removeTag(tags, tag));
       // The remove button leaves with its pill, so keep focus in the field.
       inputElementRef.current?.focus();
+    });
+
+    // Pill keys that survive an edit: keying by the tag itself would remount
+    // a renamed pill, so the old one would play its exit while the new one
+    // mounts.
+    const tagKeysRef = useRef(new Map<string, number>());
+    const nextTagKeyRef = useRef(0);
+    const getTagKey = (tag: string) => {
+      const keys = tagKeysRef.current;
+      if (!keys.has(tag)) {
+        keys.set(tag, nextTagKeyRef.current++);
+      }
+
+      return keys.get(tag);
+    };
+
+    const handleEdit = useEvent((tag: string, draft: string) => {
+      const next = replaceTag(tags, tag, draft);
+      if (next !== tags) {
+        tagKeysRef.current.set(normalizeTag(draft), getTagKey(tag)!);
+        tagKeysRef.current.delete(tag);
+        commit(next);
+      }
     });
 
     const handleInput = useCallback((event: CustomEvent<string>) => {
@@ -551,14 +582,20 @@ const TagPickerImpl = createStyledHOC(
             // An underlined picker's content starts flush with its left edge.
             paddingLeft={variant === "underlined" ? 0 : geometry.padding}
             // Frames with a floating label are taller (see `getInputSize`),
-            // which leaves room under the floated label.
+            // which leaves room under the floated label. A label floated onto
+            // the border overhangs the first row, so pills drop a little
+            // further to clear it.
             paddingTop={
-              geometry.padding + getFieldLabelInset(labelPlacement, size)
+              geometry.padding +
+              getFieldLabelInset(labelPlacement, size) +
+              (labelPlacement === "border" && tags.length > 0
+                ? 6 * getFormSizeScale(size)
+                : 0)
             }>
             <AnimatePresence>
               {tags.map(tag => (
                 <TagPickerItem
-                  key={tag}
+                  key={getTagKey(tag)}
                   tag={tag}
                   pop={addedTags.has(tag)}
                   disabled={disabled}
@@ -566,6 +603,7 @@ const TagPickerImpl = createStyledHOC(
                   removeButtonLabel={removeButtonLabel(tag)}
                   geometry={geometry}
                   onRemove={handleRemove}
+                  onEdit={handleEdit}
                 />
               ))}
             </AnimatePresence>

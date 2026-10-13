@@ -26,7 +26,9 @@ const meta = {
   component: Collapsible,
   tags: ["autodocs"],
   args: {
-    variant: "default"
+    variant: "surface",
+    bordered: true,
+    separated: false
   },
   render: (args: any) => (
     <Collapsible {...args}>
@@ -101,15 +103,45 @@ export const DirectionUp: Story = {
   }
 };
 
-export const BackgroundColor: Story = {
+export const Sunken: Story = {
   args: {
-    backgroundColor: "canvas"
+    variant: "sunken"
   }
 };
 
-export const Bordered: Story = {
+export const Canvas: Story = {
   args: {
-    variant: "bordered"
+    variant: "canvas"
+  }
+};
+
+export const Surface: Story = {
+  args: {
+    variant: "surface"
+  }
+};
+
+export const Elevated: Story = {
+  args: {
+    variant: "elevated"
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    variant: "floating"
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    variant: "outlined"
+  }
+};
+
+export const Separated: Story = {
+  args: {
+    separated: true
   }
 };
 

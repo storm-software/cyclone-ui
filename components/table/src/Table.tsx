@@ -117,7 +117,7 @@ const TableRowImpl = createStyledHOC(
   ({ children, header = false, ...props }, forwardRef) => {
     const { sizing } = TableContext.useStyledContext();
     const rowChildren = header
-      ? Children.toArray(children).map(async (child, index, childrenArray) => {
+      ? Children.toArray(children).map((child, index, childrenArray) => {
           if (
             !isValidElement<GetProps<typeof TableHeaderCell>>(child) ||
             child.type !== TableHeaderCell

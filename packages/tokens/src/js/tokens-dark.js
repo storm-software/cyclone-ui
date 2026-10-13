@@ -2463,7 +2463,7 @@ module.exports = {
       key: "{color.ink}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#c0c0c1",
+      $value: "#b0b0b1",
       $description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       group: "foreground",
@@ -2473,7 +2473,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.6}",
+        $value: "{color.neutral.7}",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
         group: "foreground",
@@ -2517,7 +2517,7 @@ module.exports = {
       key: "{color.subtlest}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#7b7b7e",
+      $value: "#46464a",
       $description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       group: "foreground",
@@ -2527,7 +2527,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.9}",
+        $value: "{color.neutral.11}",
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
         group: "foreground",
@@ -2767,7 +2767,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#959698",
+        $value: "#555659",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
         semantic: true,
@@ -2779,7 +2779,7 @@ module.exports = {
           group: "base",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.neutral.8}",
+          $value: "{color.neutral.10}",
           $description:
             "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
           semantic: true,
@@ -2792,6 +2792,40 @@ module.exports = {
           item: "secondary",
         },
         path: ["color", "base", "secondary"],
+      },
+      link: {
+        key: "{color.base.link}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#00bcff",
+        $description: "The color used for hyperlink text.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0, 0.7372549019607844, 1],
+            hex: "#00bcff",
+          },
+          $description: "The color used for hyperlink text.",
+          semantic: true,
+          key: "{color.base.link}",
+        },
+        name: "ColorBaseLink",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "link",
+        },
+        path: ["color", "base", "link"],
       },
       "on-primary": {
         key: "{color.base.on-primary}",
@@ -3009,7 +3043,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#afb0b2",
+        $value: "#656669",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
         semantic: true,
@@ -3023,10 +3057,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [
-              0.6862745098039216, 0.6901960784313725, 0.6980392156862745,
-            ],
-            hex: "#afb0b2",
+            components: [0.396078431372549, 0.4, 0.4117647058823529],
+            hex: "#656669",
           },
           $description:
             "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
@@ -3047,7 +3079,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#afb0b2",
+        $value: "#656669",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
         semantic: true,
@@ -3111,7 +3143,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#606063",
+        $value: "#494a4d",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -3126,9 +3158,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3764705882352941, 0.3764705882352941, 0.38823529411764707,
+              0.28627450980392155, 0.2901960784313726, 0.30196078431372547,
             ],
-            hex: "#606063",
+            hex: "#494a4d",
           },
           $description:
             "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -3142,6 +3174,148 @@ module.exports = {
           item: "secondary-disabled",
         },
         path: ["color", "base", "secondary-disabled"],
+      },
+      "link-hovered": {
+        key: "{color.base.link-hovered}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#6bfaff",
+        $description:
+          "The color used for hyperlink text. (hovered, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0.4196078431372549, 0.9803921568627451, 1],
+            hex: "#6bfaff",
+          },
+          $description:
+            "The color used for hyperlink text. (hovered, 25% brighter)",
+          semantic: true,
+          key: "{color.base.link-hovered}",
+        },
+        name: "ColorBaseLinkHovered",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "link-hovered",
+        },
+        path: ["color", "base", "link-hovered"],
+      },
+      "link-active": {
+        key: "{color.base.link-active}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#6bfaff",
+        $description:
+          "The color used for hyperlink text. (active, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.base.link-hovered}",
+          $description:
+            "The color used for hyperlink text. (active, 25% brighter)",
+          semantic: true,
+          key: "{color.base.link-active}",
+        },
+        name: "ColorBaseLinkActive",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "link-active",
+        },
+        path: ["color", "base", "link-active"],
+      },
+      "link-inactive": {
+        key: "{color.base.link-inactive}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#008ccc",
+        $description:
+          "The color used for hyperlink text. (inactive, 20% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0, 0.5490196078431373, 0.8],
+            hex: "#008ccc",
+          },
+          $description:
+            "The color used for hyperlink text. (inactive, 20% darker)",
+          semantic: true,
+          key: "{color.base.link-inactive}",
+        },
+        name: "ColorBaseLinkInactive",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "link-inactive",
+        },
+        path: ["color", "base", "link-inactive"],
+      },
+      "link-disabled": {
+        key: "{color.base.link-disabled}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#436d83",
+        $description:
+          "The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.2627450980392157, 0.42745098039215684, 0.5137254901960784,
+            ],
+            hex: "#436d83",
+          },
+          $description:
+            "The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.base.link-disabled}",
+        },
+        name: "ColorBaseLinkDisabled",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "link-disabled",
+        },
+        path: ["color", "base", "link-disabled"],
       },
     },
     danger: {
@@ -3176,6 +3350,37 @@ module.exports = {
           item: "primary",
         },
         path: ["color", "danger", "primary"],
+      },
+      link: {
+        key: "{color.danger.link}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#cf2d56",
+        $description: "Generated danger hyperlink text color (matches primary)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.danger.primary}",
+          $description:
+            "Generated danger hyperlink text color (matches primary)",
+          semantic: true,
+          key: "{color.danger.link}",
+        },
+        name: "ColorDangerLink",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "link",
+        },
+        path: ["color", "danger", "link"],
       },
       "on-primary": {
         key: "{color.danger.on-primary}",
@@ -3215,7 +3420,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#620020",
+        $value: "#5d001e",
         $description:
           "Generated low-emphasis danger background for the dark theme",
         semantic: true,
@@ -3229,8 +3434,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.3843137254901961, 0, 0.12549019607843137],
-            hex: "#620020",
+            components: [0.36470588235294116, 0, 0.11764705882352941],
+            hex: "#5d001e",
           },
           $description:
             "Generated low-emphasis danger background for the dark theme",
@@ -3429,7 +3634,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#7b1f34",
+        $value: "#751d31",
         $description:
           "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
         semantic: true,
@@ -3444,9 +3649,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.4823529411764706, 0.12156862745098039, 0.20392156862745098,
+              0.4588235294117647, 0.11372549019607843, 0.19215686274509805,
             ],
-            hex: "#7b1f34",
+            hex: "#751d31",
           },
           $description:
             "Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)",
@@ -3467,7 +3672,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#7b1f34",
+        $value: "#751d31",
         $description:
           "Generated low-emphasis danger background for the dark theme (active, 25% brighter)",
         semantic: true,
@@ -3499,7 +3704,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#4e0011",
+        $value: "#4a0010",
         $description:
           "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
         semantic: true,
@@ -3513,8 +3718,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.3058823529411765, 0, 0.06666666666666667],
-            hex: "#4e0011",
+            components: [0.2901960784313726, 0, 0.06274509803921569],
+            hex: "#4a0010",
           },
           $description:
             "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
@@ -3535,7 +3740,7 @@ module.exports = {
         group: "danger",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#4c313a",
+        $value: "#4a3139",
         $description:
           "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -3550,9 +3755,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.2980392156862745, 0.19215686274509805, 0.22745098039215686,
+              0.2901960784313726, 0.19215686274509805, 0.2235294117647059,
             ],
-            hex: "#4c313a",
+            hex: "#4a3139",
           },
           $description:
             "Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -3566,6 +3771,134 @@ module.exports = {
           item: "secondary-disabled",
         },
         path: ["color", "danger", "secondary-disabled"],
+      },
+      "link-hovered": {
+        key: "{color.danger.link-hovered}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#ff607f",
+        $description:
+          "Generated danger hyperlink text color (matches primary) (hovered, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.danger.primary-hovered}",
+          $description:
+            "Generated danger hyperlink text color (matches primary) (hovered, 25% brighter)",
+          semantic: true,
+          key: "{color.danger.link-hovered}",
+        },
+        name: "ColorDangerLinkHovered",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "link-hovered",
+        },
+        path: ["color", "danger", "link-hovered"],
+      },
+      "link-active": {
+        key: "{color.danger.link-active}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#ff607f",
+        $description:
+          "Generated danger hyperlink text color (matches primary) (active, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.danger.primary-hovered}",
+          $description:
+            "Generated danger hyperlink text color (matches primary) (active, 25% brighter)",
+          semantic: true,
+          key: "{color.danger.link-active}",
+        },
+        name: "ColorDangerLinkActive",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "link-active",
+        },
+        path: ["color", "danger", "link-active"],
+      },
+      "link-inactive": {
+        key: "{color.danger.link-inactive}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#a70037",
+        $description:
+          "Generated danger hyperlink text color (matches primary) (inactive, 20% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.danger.primary-inactive}",
+          $description:
+            "Generated danger hyperlink text color (matches primary) (inactive, 20% darker)",
+          semantic: true,
+          key: "{color.danger.link-inactive}",
+        },
+        name: "ColorDangerLinkInactive",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "link-inactive",
+        },
+        path: ["color", "danger", "link-inactive"],
+      },
+      "link-disabled": {
+        key: "{color.danger.link-disabled}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#70424d",
+        $description:
+          "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.danger.primary-disabled}",
+          $description:
+            "Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.danger.link-disabled}",
+        },
+        name: "ColorDangerLinkDisabled",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "link-disabled",
+        },
+        path: ["color", "danger", "link-disabled"],
       },
     },
     warning: {
@@ -3600,6 +3933,38 @@ module.exports = {
           item: "primary",
         },
         path: ["color", "warning", "primary"],
+      },
+      link: {
+        key: "{color.warning.link}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#f7ac23",
+        $description:
+          "Generated warning hyperlink text color (matches primary)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.warning.primary}",
+          $description:
+            "Generated warning hyperlink text color (matches primary)",
+          semantic: true,
+          key: "{color.warning.link}",
+        },
+        name: "ColorWarningLink",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "link",
+        },
+        path: ["color", "warning", "link"],
       },
       "on-primary": {
         key: "{color.warning.on-primary}",
@@ -3639,7 +4004,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#764e00",
+        $value: "#724c00",
         $description:
           "Generated low-emphasis warning background for the dark theme",
         semantic: true,
@@ -3653,8 +4018,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.4627450980392157, 0.3058823529411765, 0],
-            hex: "#764e00",
+            components: [0.4470588235294118, 0.2980392156862745, 0],
+            hex: "#724c00",
           },
           $description:
             "Generated low-emphasis warning background for the dark theme",
@@ -3849,7 +4214,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#996f2f",
+        $value: "#946c2d",
         $description:
           "Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)",
         semantic: true,
@@ -3863,8 +4228,10 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.6, 0.43529411764705883, 0.1843137254901961],
-            hex: "#996f2f",
+            components: [
+              0.5803921568627451, 0.4235294117647059, 0.17647058823529413,
+            ],
+            hex: "#946c2d",
           },
           $description:
             "Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)",
@@ -3885,7 +4252,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#996f2f",
+        $value: "#946c2d",
         $description:
           "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
         semantic: true,
@@ -3917,7 +4284,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#5b3500",
+        $value: "#583400",
         $description:
           "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
         semantic: true,
@@ -3931,8 +4298,8 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.3568627450980392, 0.20784313725490197, 0],
-            hex: "#5b3500",
+            components: [0.34509803921568627, 0.20392156862745098, 0],
+            hex: "#583400",
           },
           $description:
             "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
@@ -3953,7 +4320,7 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#534837",
+        $value: "#524736",
         $description:
           "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -3968,9 +4335,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.3254901960784314, 0.2823529411764706, 0.21568627450980393,
+              0.3215686274509804, 0.2784313725490196, 0.21176470588235294,
             ],
-            hex: "#534837",
+            hex: "#524736",
           },
           $description:
             "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -3984,6 +4351,134 @@ module.exports = {
           item: "secondary-disabled",
         },
         path: ["color", "warning", "secondary-disabled"],
+      },
+      "link-hovered": {
+        key: "{color.warning.link-hovered}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#b56e00",
+        $description:
+          "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.warning.primary-hovered}",
+          $description:
+            "Generated warning hyperlink text color (matches primary) (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.warning.link-hovered}",
+        },
+        name: "ColorWarningLinkHovered",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "link-hovered",
+        },
+        path: ["color", "warning", "link-hovered"],
+      },
+      "link-active": {
+        key: "{color.warning.link-active}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#b56e00",
+        $description:
+          "Generated warning hyperlink text color (matches primary) (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.warning.primary-hovered}",
+          $description:
+            "Generated warning hyperlink text color (matches primary) (active, 25% darker)",
+          semantic: true,
+          key: "{color.warning.link-active}",
+        },
+        name: "ColorWarningLinkActive",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "link-active",
+        },
+        path: ["color", "warning", "link-active"],
+      },
+      "link-inactive": {
+        key: "{color.warning.link-inactive}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#ffe067",
+        $description:
+          "Generated warning hyperlink text color (matches primary) (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.warning.primary-inactive}",
+          $description:
+            "Generated warning hyperlink text color (matches primary) (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.warning.link-inactive}",
+        },
+        name: "ColorWarningLinkInactive",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "link-inactive",
+        },
+        path: ["color", "warning", "link-inactive"],
+      },
+      "link-disabled": {
+        key: "{color.warning.link-disabled}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#7f6948",
+        $description:
+          "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.warning.primary-disabled}",
+          $description:
+            "Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.warning.link-disabled}",
+        },
+        name: "ColorWarningLinkDisabled",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "link-disabled",
+        },
+        path: ["color", "warning", "link-disabled"],
       },
     },
     info: {
@@ -4050,6 +4545,36 @@ module.exports = {
           item: "secondary",
         },
         path: ["color", "info", "secondary"],
+      },
+      link: {
+        key: "{color.info.link}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#4d8eff",
+        $description: "Generated info hyperlink text color (matches primary)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.info.primary}",
+          $description: "Generated info hyperlink text color (matches primary)",
+          semantic: true,
+          key: "{color.info.link}",
+        },
+        name: "ColorInfoLink",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "link",
+        },
+        path: ["color", "info", "link"],
       },
       "on-primary": {
         key: "{color.info.on-primary}",
@@ -4405,6 +4930,134 @@ module.exports = {
         },
         path: ["color", "info", "secondary-disabled"],
       },
+      "link-hovered": {
+        key: "{color.info.link-hovered}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#7fc4ff",
+        $description:
+          "Generated info hyperlink text color (matches primary) (hovered, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.info.primary-hovered}",
+          $description:
+            "Generated info hyperlink text color (matches primary) (hovered, 25% brighter)",
+          semantic: true,
+          key: "{color.info.link-hovered}",
+        },
+        name: "ColorInfoLinkHovered",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "link-hovered",
+        },
+        path: ["color", "info", "link-hovered"],
+      },
+      "link-active": {
+        key: "{color.info.link-active}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#7fc4ff",
+        $description:
+          "Generated info hyperlink text color (matches primary) (active, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.info.primary-hovered}",
+          $description:
+            "Generated info hyperlink text color (matches primary) (active, 25% brighter)",
+          semantic: true,
+          key: "{color.info.link-active}",
+        },
+        name: "ColorInfoLinkActive",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "link-active",
+        },
+        path: ["color", "info", "link-active"],
+      },
+      "link-inactive": {
+        key: "{color.info.link-inactive}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#2564d1",
+        $description:
+          "Generated info hyperlink text color (matches primary) (inactive, 20% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.info.primary-inactive}",
+          $description:
+            "Generated info hyperlink text color (matches primary) (inactive, 20% darker)",
+          semantic: true,
+          key: "{color.info.link-inactive}",
+        },
+        name: "ColorInfoLinkInactive",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "link-inactive",
+        },
+        path: ["color", "info", "link-inactive"],
+      },
+      "link-disabled": {
+        key: "{color.info.link-disabled}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#4b5e81",
+        $description:
+          "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.info.primary-disabled}",
+          $description:
+            "Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.info.link-disabled}",
+        },
+        name: "ColorInfoLinkDisabled",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "link-disabled",
+        },
+        path: ["color", "info", "link-disabled"],
+      },
     },
     discovery: {
       primary: {
@@ -4470,6 +5123,38 @@ module.exports = {
           item: "secondary",
         },
         path: ["color", "discovery", "secondary"],
+      },
+      link: {
+        key: "{color.discovery.link}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#9277da",
+        $description:
+          "Generated discovery hyperlink text color (matches primary)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.discovery.primary}",
+          $description:
+            "Generated discovery hyperlink text color (matches primary)",
+          semantic: true,
+          key: "{color.discovery.link}",
+        },
+        name: "ColorDiscoveryLink",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "link",
+        },
+        path: ["color", "discovery", "link"],
       },
       "on-primary": {
         key: "{color.discovery.on-primary}",
@@ -4825,6 +5510,134 @@ module.exports = {
         },
         path: ["color", "discovery", "secondary-disabled"],
       },
+      "link-hovered": {
+        key: "{color.discovery.link-hovered}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#c3a9ff",
+        $description:
+          "Generated discovery hyperlink text color (matches primary) (hovered, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.discovery.primary-hovered}",
+          $description:
+            "Generated discovery hyperlink text color (matches primary) (hovered, 25% brighter)",
+          semantic: true,
+          key: "{color.discovery.link-hovered}",
+        },
+        name: "ColorDiscoveryLinkHovered",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "link-hovered",
+        },
+        path: ["color", "discovery", "link-hovered"],
+      },
+      "link-active": {
+        key: "{color.discovery.link-active}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#c3a9ff",
+        $description:
+          "Generated discovery hyperlink text color (matches primary) (active, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.discovery.primary-hovered}",
+          $description:
+            "Generated discovery hyperlink text color (matches primary) (active, 25% brighter)",
+          semantic: true,
+          key: "{color.discovery.link-active}",
+        },
+        name: "ColorDiscoveryLinkActive",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "link-active",
+        },
+        path: ["color", "discovery", "link-active"],
+      },
+      "link-inactive": {
+        key: "{color.discovery.link-inactive}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#6d51b0",
+        $description:
+          "Generated discovery hyperlink text color (matches primary) (inactive, 20% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.discovery.primary-inactive}",
+          $description:
+            "Generated discovery hyperlink text color (matches primary) (inactive, 20% darker)",
+          semantic: true,
+          key: "{color.discovery.link-inactive}",
+        },
+        name: "ColorDiscoveryLinkInactive",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "link-inactive",
+        },
+        path: ["color", "discovery", "link-inactive"],
+      },
+      "link-disabled": {
+        key: "{color.discovery.link-disabled}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#5e5776",
+        $description:
+          "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.discovery.primary-disabled}",
+          $description:
+            "Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.discovery.link-disabled}",
+        },
+        name: "ColorDiscoveryLinkDisabled",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "link-disabled",
+        },
+        path: ["color", "discovery", "link-disabled"],
+      },
     },
     success: {
       primary: {
@@ -4858,6 +5671,38 @@ module.exports = {
           item: "primary",
         },
         path: ["color", "success", "primary"],
+      },
+      link: {
+        key: "{color.success.link}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#45c791",
+        $description:
+          "Generated success hyperlink text color (matches primary)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.success.primary}",
+          $description:
+            "Generated success hyperlink text color (matches primary)",
+          semantic: true,
+          key: "{color.success.link}",
+        },
+        name: "ColorSuccessLink",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "link",
+        },
+        path: ["color", "success", "link"],
       },
       "on-primary": {
         key: "{color.success.on-primary}",
@@ -5244,6 +6089,134 @@ module.exports = {
           item: "secondary-disabled",
         },
         path: ["color", "success", "secondary-disabled"],
+      },
+      "link-hovered": {
+        key: "{color.success.link-hovered}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#89ffcc",
+        $description:
+          "Generated success hyperlink text color (matches primary) (hovered, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.success.primary-hovered}",
+          $description:
+            "Generated success hyperlink text color (matches primary) (hovered, 25% brighter)",
+          semantic: true,
+          key: "{color.success.link-hovered}",
+        },
+        name: "ColorSuccessLinkHovered",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "link-hovered",
+        },
+        path: ["color", "success", "link-hovered"],
+      },
+      "link-active": {
+        key: "{color.success.link-active}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#89ffcc",
+        $description:
+          "Generated success hyperlink text color (matches primary) (active, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.success.primary-hovered}",
+          $description:
+            "Generated success hyperlink text color (matches primary) (active, 25% brighter)",
+          semantic: true,
+          key: "{color.success.link-active}",
+        },
+        name: "ColorSuccessLinkActive",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "link-active",
+        },
+        path: ["color", "success", "link-active"],
+      },
+      "link-inactive": {
+        key: "{color.success.link-inactive}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#009865",
+        $description:
+          "Generated success hyperlink text color (matches primary) (inactive, 20% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.success.primary-inactive}",
+          $description:
+            "Generated success hyperlink text color (matches primary) (inactive, 20% darker)",
+          semantic: true,
+          key: "{color.success.link-inactive}",
+        },
+        name: "ColorSuccessLinkInactive",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "link-inactive",
+        },
+        path: ["color", "success", "link-inactive"],
+      },
+      "link-disabled": {
+        key: "{color.success.link-disabled}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#4c7062",
+        $description:
+          "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.success.primary-disabled}",
+          $description:
+            "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.success.link-disabled}",
+        },
+        name: "ColorSuccessLinkDisabled",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "link-disabled",
+        },
+        path: ["color", "success", "link-disabled"],
       },
     },
     backdrop: {
@@ -6168,9 +7141,9 @@ module.exports = {
       key: "{color.emphasis-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#9a9a9a",
+      $value: "#919191",
       $description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)",
+        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 30% darker)",
       group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6181,12 +7154,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.6039215686274509, 0.6039215686274509, 0.6039215686274509,
+            0.5686274509803921, 0.5686274509803921, 0.5686274509803921,
           ],
-          hex: "#9a9a9a",
+          hex: "#919191",
         },
         $description:
-          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)",
+          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 30% darker)",
         group: "foreground",
         key: "{color.emphasis-hovered}",
       },
@@ -6288,9 +7261,9 @@ module.exports = {
       key: "{color.ink-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#747475",
+      $value: "#6c6c6d",
       $description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% darker)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 30% darker)",
       group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6301,12 +7274,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.4549019607843137, 0.4549019607843137, 0.4588235294117647,
+            0.4235294117647059, 0.4235294117647059, 0.42745098039215684,
           ],
-          hex: "#747475",
+          hex: "#6c6c6d",
         },
         $description:
-          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% darker)",
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 30% darker)",
         group: "foreground",
         key: "{color.ink-hovered}",
       },
@@ -6375,7 +7348,7 @@ module.exports = {
       key: "{color.ink-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#6f6f71",
+      $value: "#69696b",
       $description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       group: "foreground",
@@ -6388,9 +7361,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.43529411764705883, 0.43529411764705883, 0.44313725490196076,
+            0.4117647058823529, 0.4117647058823529, 0.4196078431372549,
           ],
-          hex: "#6f6f71",
+          hex: "#69696b",
         },
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -6408,9 +7381,9 @@ module.exports = {
       key: "{color.subtle-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#ffffff",
+      $value: "#d5d6d8",
       $description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, dark contrast primitive)",
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% brighter)",
       group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6418,9 +7391,15 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.white}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.8352941176470589, 0.8392156862745098, 0.8470588235294118,
+          ],
+          hex: "#d5d6d8",
+        },
         $description:
-          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, dark contrast primitive)",
+          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% brighter)",
         group: "foreground",
         key: "{color.subtle-hovered}",
       },
@@ -6499,7 +7478,13 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.base.secondary-disabled}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.3764705882352941, 0.3764705882352941, 0.38823529411764707,
+          ],
+          hex: "#606063",
+        },
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         group: "foreground",
@@ -6516,9 +7501,9 @@ module.exports = {
       key: "{color.subtlest-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#ffffff",
+      $value: "#67676b",
       $description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, dark contrast primitive)",
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% brighter)",
       group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6526,9 +7511,15 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.white}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.403921568627451, 0.403921568627451, 0.4196078431372549,
+          ],
+          hex: "#67676b",
+        },
         $description:
-          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, dark contrast primitive)",
+          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% brighter)",
         group: "foreground",
         key: "{color.subtlest-hovered}",
       },
@@ -6597,7 +7588,7 @@ module.exports = {
       key: "{color.subtlest-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#57575a",
+      $value: "#444447",
       $description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       group: "foreground",
@@ -6610,9 +7601,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.3411764705882353, 0.3411764705882353, 0.35294117647058826,
+            0.26666666666666666, 0.26666666666666666, 0.2784313725490196,
           ],
-          hex: "#57575a",
+          hex: "#444447",
         },
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -6630,9 +7621,9 @@ module.exports = {
       key: "{color.sunken-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#0e0e0f",
+      $value: "#0f0f10",
       $description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 7% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6643,12 +7634,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.054901960784313725, 0.054901960784313725, 0.058823529411764705,
+            0.058823529411764705, 0.058823529411764705, 0.06274509803921569,
           ],
-          hex: "#0e0e0f",
+          hex: "#0f0f10",
         },
         $description:
-          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 7% brighter)",
+          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 10% brighter)",
         group: "background",
         key: "{color.sunken-hovered}",
       },
@@ -6663,9 +7654,9 @@ module.exports = {
       key: "{color.sunken-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#0e0e0f",
+      $value: "#111112",
       $description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 7% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6673,9 +7664,15 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.sunken-hovered}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.06666666666666667, 0.06666666666666667, 0.07058823529411765,
+          ],
+          hex: "#111112",
+        },
         $description:
-          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 7% brighter)",
+          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 15% brighter)",
         group: "background",
         key: "{color.sunken-active}",
       },
@@ -6756,9 +7753,9 @@ module.exports = {
       key: "{color.canvas-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#18181b",
+      $value: "#19191d",
       $description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 7% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6769,12 +7766,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.09411764705882353, 0.09411764705882353, 0.10588235294117647,
+            0.09803921568627451, 0.09803921568627451, 0.11372549019607843,
           ],
-          hex: "#18181b",
+          hex: "#19191d",
         },
         $description:
-          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 7% brighter)",
+          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 10% brighter)",
         group: "background",
         key: "{color.canvas-hovered}",
       },
@@ -6789,9 +7786,9 @@ module.exports = {
       key: "{color.canvas-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#18181b",
+      $value: "#1c1c1f",
       $description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 7% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6799,9 +7796,15 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.canvas-hovered}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.10980392156862745, 0.10980392156862745, 0.12156862745098039,
+          ],
+          hex: "#1c1c1f",
+        },
         $description:
-          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 7% brighter)",
+          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% brighter)",
         group: "background",
         key: "{color.canvas-active}",
       },
@@ -6882,9 +7885,9 @@ module.exports = {
       key: "{color.surface-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#232325",
+      $value: "#252527",
       $description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 7% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6895,12 +7898,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.13725490196078433, 0.13725490196078433, 0.1450980392156863,
+            0.1450980392156863, 0.1450980392156863, 0.15294117647058825,
           ],
-          hex: "#232325",
+          hex: "#252527",
         },
         $description:
-          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 7% brighter)",
+          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 10% brighter)",
         group: "background",
         key: "{color.surface-hovered}",
       },
@@ -6915,9 +7918,9 @@ module.exports = {
       key: "{color.surface-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#232325",
+      $value: "#28282a",
       $description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 7% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6925,9 +7928,15 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.surface-hovered}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.1568627450980392, 0.1568627450980392, 0.16470588235294117,
+          ],
+          hex: "#28282a",
+        },
         $description:
-          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 7% brighter)",
+          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 15% brighter)",
         group: "background",
         key: "{color.surface-active}",
       },
@@ -7008,9 +8017,9 @@ module.exports = {
       key: "{color.elevated-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#292a2d",
+      $value: "#2a2b2f",
       $description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 7% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -7021,12 +8030,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.1607843137254902, 0.16470588235294117, 0.17647058823529413,
+            0.16470588235294117, 0.16862745098039217, 0.1843137254901961,
           ],
-          hex: "#292a2d",
+          hex: "#2a2b2f",
         },
         $description:
-          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 7% brighter)",
+          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 10% brighter)",
         group: "background",
         key: "{color.elevated-hovered}",
       },
@@ -7041,9 +8050,9 @@ module.exports = {
       key: "{color.elevated-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#292a2d",
+      $value: "#2e2f32",
       $description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 7% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -7051,9 +8060,15 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.elevated-hovered}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.1803921568627451, 0.1843137254901961, 0.19607843137254902,
+          ],
+          hex: "#2e2f32",
+        },
         $description:
-          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 7% brighter)",
+          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 15% brighter)",
         group: "background",
         key: "{color.elevated-active}",
       },
@@ -7111,13 +8126,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.1803921568627451, 0.1843137254901961, 0.19607843137254902,
-          ],
-          hex: "#2e2f32",
-        },
+        $value: "{color.elevated-active}",
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
         group: "background",
@@ -7134,9 +8143,9 @@ module.exports = {
       key: "{color.floating-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#2e2f33",
+      $value: "#303135",
       $description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 7% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -7146,11 +8155,13 @@ module.exports = {
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
-          components: [0.1803921568627451, 0.1843137254901961, 0.2],
-          hex: "#2e2f33",
+          components: [
+            0.18823529411764706, 0.19215686274509805, 0.20784313725490197,
+          ],
+          hex: "#303135",
         },
         $description:
-          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 7% brighter)",
+          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 10% brighter)",
         group: "background",
         key: "{color.floating-hovered}",
       },
@@ -7165,9 +8176,9 @@ module.exports = {
       key: "{color.floating-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#2e2f33",
+      $value: "#343539",
       $description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 7% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -7175,9 +8186,15 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.floating-hovered}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.20392156862745098, 0.20784313725490197, 0.2235294117647059,
+          ],
+          hex: "#343539",
+        },
         $description:
-          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 7% brighter)",
+          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 15% brighter)",
         group: "background",
         key: "{color.floating-active}",
       },
@@ -7349,13 +8366,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.28627450980392155, 0.2901960784313726, 0.30196078431372547,
-          ],
-          hex: "#494a4d",
-        },
+        $value: "{color.base.secondary-disabled}",
         $description:
           "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         group: "separator",
@@ -12624,6 +13635,29 @@ module.exports = {
         type: "button",
       },
       path: ["border-radius", "button"],
+    },
+    tag: {
+      key: "{border-radius.tag}",
+      $description:
+        "Corner radius for tags (6px, `border-radius.md`). Used by Tag.",
+      $type: "dimension",
+      $value: "0.25rem",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
+      isSource: true,
+      original: {
+        $description:
+          "Corner radius for tags (6px, `border-radius.md`). Used by Tag.",
+        $type: "dimension",
+        $value: "{border-radius.sm}",
+        key: "{border-radius.tag}",
+      },
+      name: "BorderRadiusTag",
+      attributes: {
+        category: "border-radius",
+        type: "tag",
+      },
+      path: ["border-radius", "tag"],
     },
     control: {
       key: "{border-radius.control}",

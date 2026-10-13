@@ -24,6 +24,9 @@
       "path": "../input"
     },
     {
+      "path": "../scroll-view"
+    },
+    {
       "path": "../form"
     },
     {

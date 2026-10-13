@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/search-input",
   "version": "0.1.15",
   "type": "module",
-  "description": "A headless search text input with a magnifying-glass icon. It shows a popover of case-insensitive suggestions that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.",
+  "description": "A headless search text input with a magnifying-glass icon. It shows a ContextMenu of case-insensitive suggestions (the same menu as Select) that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -20,13 +20,10 @@
   "dependencies": {
     "@tamagui/core": "catalog:",
     "@tamagui/create-context": "catalog:",
-    "@tamagui/linear-gradient": "catalog:",
-    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
-    "@cyclone-ui/popover": "workspace:*",
-    "@cyclone-ui/select": "workspace:*",
+    "@cyclone-ui/context-menu": "workspace:*",
     "@cyclone-ui/field": "workspace:*"
   },
   "devDependencies": {

@@ -5,11 +5,12 @@ const readComponent = () =>
   readFileSync(new URL("./Accordion.tsx", import.meta.url), "utf8");
 
 describe("Accordion backgrounds", () => {
-  it("passes a caller-provided background color to the visible group", () => {
+  it("does not accept custom background colors", () => {
     const source = readComponent();
 
+    expect(source).toMatch(/backgroundColor\?: never;/);
     expect(source).toMatch(
-      /<AccordionGroup\s+variant=\{variant\}\s+bordered=\{bordered\}\s+backgroundColor=\{backgroundColor\}>/
+      /<AccordionGroup\s+variant=\{variant\}\s+bordered=\{bordered\}\s+separated=\{separated\}>/
     );
   });
 

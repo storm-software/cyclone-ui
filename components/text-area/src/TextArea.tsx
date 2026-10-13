@@ -32,6 +32,11 @@ import {
 import type { InputContextProps } from "@cyclone-ui/input";
 import { ControlUnderline } from "@cyclone-ui/input";
 import { InputValue } from "@cyclone-ui/input/InputValue";
+import {
+  SCROLL_VIEW_CLASS_NAME,
+  SCROLL_VIEW_STYLES
+} from "@cyclone-ui/scroll-view";
+import { isWeb } from "@tamagui/constants";
 import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
@@ -196,6 +201,7 @@ export const TextArea = createStyledHOC(
       size = formControl?.size,
       value = formControl?.formattedValue,
       placeholder,
+      className,
       style,
       ...rest
     } = props;
@@ -209,8 +215,11 @@ export const TextArea = createStyledHOC(
     const labelPlacement = useFieldLabelPlacement();
     const idleColor = hasValidationMessage ? "primary" : "outline";
     const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
+    const hoverColor = hasValidationMessage
+      ? "primaryHovered"
+      : "outlineHovered";
     const isFocused = focusedProp ?? focused;
-    const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "primaryDisabled" : isFocused ? focusColor : "primaryHovered"} focus-visible:${focusColor} group-hover/field:${disabled ? "primaryDisabled" : "primaryHovered"}`;
+    const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "primaryDisabled" : isFocused ? focusColor : hoverColor} focus-visible:${focusColor} group-hover/field:${disabled ? "primaryDisabled" : isFocused ? focusColor : hoverColor}`;
     const handleFocus = useCallback(
       (event: TextAreaFocusEvent) => {
         setActive(true);
@@ -233,6 +242,9 @@ export const TextArea = createStyledHOC(
         type="textarea"
         rows={rows}
         {...rest}
+        // The textarea is its own scroll container, so it takes the
+        // `ScrollView` scrollbar styles directly (as `Sheet` does).
+        className={`${SCROLL_VIEW_CLASS_NAME}${className ? ` ${className}` : ""}`}
         name={name}
         size={size}
         value={value}
@@ -268,9 +280,13 @@ export const TextArea = createStyledHOC(
 
     const content =
       variant === "outlined" && labelPlacement !== "border" ? (
-        textArea
+        <>
+          {isWeb ? <style>{SCROLL_VIEW_STYLES}</style> : null}
+          {textArea}
+        </>
       ) : (
         <TextAreaDecorationFrame>
+          {isWeb ? <style>{SCROLL_VIEW_STYLES}</style> : null}
           {textArea}
           {variant === "outlined" ? (
             <FieldNotchedOutline borderColor={borderColor} />
