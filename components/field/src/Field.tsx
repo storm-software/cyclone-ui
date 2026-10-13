@@ -744,6 +744,7 @@ const FieldLabelTextImpl = createStyledHOC(
 
     const [hideOptionalForOverflow, setHideOptionalForOverflow] =
       useState(false);
+    const [truncated, setTruncated] = useState(false);
     const fieldDisabled = field.disabled.get();
     const name = field.name.get();
     const size = field.size.get();
@@ -859,6 +860,23 @@ const FieldLabelTextImpl = createStyledHOC(
       updateOptionalLabelVisibility
     ]);
 
+    // Show the full label in a tooltip only while it is cut off.
+    useLayoutEffect(() => {
+      const labelText = labelTextRef.current;
+      if (!labelText || typeof ResizeObserver === "undefined") {
+        return;
+      }
+
+      const updateTruncated = () =>
+        setTruncated(labelText.scrollWidth > labelText.clientWidth);
+      updateTruncated();
+
+      const resizeObserver = new ResizeObserver(updateTruncated);
+      resizeObserver.observe(labelText);
+
+      return () => resizeObserver.disconnect();
+    }, [children, floating, size]);
+
     const disabled = useMemo(
       () => Boolean(fieldDisabled || props.disabled),
       [fieldDisabled, props.disabled]
@@ -902,33 +920,45 @@ const FieldLabelTextImpl = createStyledHOC(
           <LabelXStack disabled={disabled} floating={floating}>
             <FieldLabelContent ref={labelContentRef}>
               <Theme name={baseTheme}>
-                <FieldLabelText
-                  ref={labelTextRef}
-                  {...props}
-                  flexShrink={1}
-                  minWidth={0}
-                  overflow="hidden"
-                  textOverflow="ellipsis"
-                  whiteSpace="nowrap"
-                  color={`${disabled ? "primaryDisabled" : "primary"}`}
-                  // Web-only ellipsis styles are not part of React Native's
-                  // style types.
-                  style={StyleSheet.flatten([
-                    style as any,
-                    {
-                      flexShrink: 1,
-                      minWidth: 0,
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      whiteSpace: "nowrap"
-                    }
-                  ] as any)}
-                  ellipsis={true}
-                  disabled={disabled}
-                  floating={floating}
-                  controlSize={size}>
-                  {children}
-                </FieldLabelText>
+                <Tooltip groupId="field-label" theme={baseTheme}>
+                  <Tooltip.Trigger asChild={true}>
+                    <FieldLabelText
+                      ref={labelTextRef}
+                      {...props}
+                      flexShrink={1}
+                      minWidth={0}
+                      overflow="hidden"
+                      textOverflow="ellipsis"
+                      whiteSpace="nowrap"
+                      color={`${disabled ? "primaryDisabled" : "primary"}`}
+                      // Web-only ellipsis styles are not part of React Native's
+                      // style types.
+                      style={StyleSheet.flatten([
+                        style as any,
+                        {
+                          flexShrink: 1,
+                          minWidth: 0,
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          whiteSpace: "nowrap"
+                        }
+                      ] as any)}
+                      ellipsis={true}
+                      disabled={disabled}
+                      floating={floating}
+                      controlSize={size}>
+                      {children}
+                    </FieldLabelText>
+                  </Tooltip.Trigger>
+                  {truncated && (
+                    // Portaled outside the label's `Theme`, so apply it here.
+                    <Tooltip.Content theme={baseTheme}>
+                      <View paddingVertical="2xl" paddingHorizontal="3xl">
+                        <BodyText>{children}</BodyText>
+                      </View>
+                    </Tooltip.Content>
+                  )}
+                </Tooltip>
               </Theme>
               {hideRequired !== true && (
                 <>
@@ -1225,7 +1255,6 @@ const FieldIconButtonImpl = createStyledHOC(
           animate={true}
           transition="200ms"
           color={`${iconColor} group-hover/field:${hoverIconColor}`}
-          ghostOpacity={0.25}
           {...props}
           size={adjusted}>
           <Button.Icon
@@ -1288,12 +1317,12 @@ const InnerFieldThemeIcon = createStyledHOC(
           theme={theme}
           borderColor={
             isNeutral
-              ? "hairline focus-visible:hairlineActive"
+              ? "outline focus-visible:outlineActive"
               : "primary focus-visible:primaryActive"
           }
           arrowBorderColor={
             isNeutral
-              ? "hairline focus-visible:hairlineActive"
+              ? "outline focus-visible:outlineActive"
               : "primary focus-visible:primaryActive"
           }>
           <Theme name="base">
@@ -1369,7 +1398,6 @@ const FieldThemeIcon = createStyledHOC(
         {getIconByTheme({
           theme,
           disabled,
-          transition: "200ms",
           color: `${
             disabled ? "primaryDisabled" : focused ? "primaryActive" : "primary"
           } group-hover/field:${disabled ? "primaryDisabled" : "primaryHovered"}`

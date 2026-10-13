@@ -868,7 +868,7 @@ const ButtonHoverBackground = styled(YStack, {
         bottom: 0,
         left: 0,
         opacity: 0,
-        backgroundColor: "secondaryActive"
+        backgroundColor: "secondary"
       },
       cascade: {
         top: 0,
@@ -1168,7 +1168,7 @@ const ButtonContainerImpl = createStyledHOC(
       render,
       href,
       download,
-      ghostOpacity = 0.75,
+      ghostOpacity = 0.25,
       ...props
     }: GetProps<typeof ButtonFrame> & ButtonProps,
     forwardedRef

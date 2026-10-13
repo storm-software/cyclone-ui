@@ -42,7 +42,24 @@ const valueAtReference = (tokens: TokenDocument, reference: string) => {
   ).$value;
 };
 
+const colorValues = (value: unknown): string[] => {
+  if (!value || typeof value !== "object") return [];
+
+  const record = value as Record<string, unknown>;
+  return [
+    ...(typeof record.$value === "string" ? [record.$value] : []),
+    ...Object.values(record).flatMap(colorValues)
+  ];
+};
+
 describe("primitive color tokens", () => {
+  it("uses OKLCH values for every primitive color", () => {
+    const values = colorValues(readTokens("tokens.json").color);
+
+    expect(values).not.toHaveLength(0);
+    expect(values.every(value => value.startsWith("oklch("))).toBe(true);
+  });
+
   it("uses one shared primitive file with twelve-step color palettes", () => {
     const tokens = readTokens("tokens.json");
     const palettes = Object.entries(tokens.color).filter(

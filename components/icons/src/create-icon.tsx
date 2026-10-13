@@ -22,6 +22,8 @@ import type { IconProps as TamaguiIconProps } from "@tamagui/helpers-icon";
 import { themed } from "@tamagui/helpers-icon";
 import type { FC } from "react";
 import { memo } from "react";
+import type { ViewStyle } from "react-native";
+import { StyleSheet } from "react-native";
 import type { NumberProp, SvgProps } from "react-native-svg";
 import { G, Svg } from "react-native-svg";
 import type { IconComponent, IconProps, IconSize, IconWeights } from "./types";
@@ -79,6 +81,13 @@ export function resolveIconSize(
 const BLACK_STROKE_WIDTH = 10;
 
 /**
+ * Web-only CSS transition for the icon color (not part of React Native's style types).
+ */
+const COLOR_TRANSITION = {
+  transition: "fill 200ms, stroke 200ms"
+} as unknown as ViewStyle;
+
+/**
  * Create a themed Tamagui icon component from the SVG contents of each Phosphor weight.
  *
  * @remarks
@@ -99,6 +108,7 @@ export function createIcon(
       weight = "regular",
       mirrored = false,
       strokeWidth: _strokeWidth,
+      style,
       ...otherProps
     } = props;
 
@@ -122,7 +132,10 @@ export function createIcon(
         height={size}
         viewBox="0 0 256 256"
         fill={color}
-        {...otherProps}>
+        {...otherProps}
+        // The color is an SVG attribute, outside Tamagui's transitions; fade
+        // it on web with the 200ms used by the surrounding controls.
+        style={{ ...COLOR_TRANSITION, ...StyleSheet.flatten(style) }}>
         {mirrored ? (
           <G transform="matrix(-1 0 0 1 256 0)">{contents}</G>
         ) : (

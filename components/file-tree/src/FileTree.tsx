@@ -27,14 +27,13 @@ import type { FontSizeTokens, GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
+import type { KeyboardEvent, ReactNode } from "react";
 import {
   cloneElement,
   createContext,
   isValidElement,
   useContext,
-  useState,
-  type KeyboardEvent,
-  type ReactNode
+  useState
 } from "react";
 
 const FileTreeFrame = styled(YStack, {
@@ -167,9 +166,7 @@ export const Folder = ({
         onPress={toggle}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        onKeyDown={event =>
-          onKeyDown(event as unknown as KeyboardEvent<HTMLElement>)
-        }>
+        onKeyDown={event => onKeyDown(event)}>
         <CaretRight
           transition="400ms"
           color={color}

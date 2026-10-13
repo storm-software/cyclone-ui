@@ -169,7 +169,7 @@ export const DatePickerContext = createStyledContext<
 >(
   {
     mode: "single",
-    separator: ".",
+    separator: "/",
     size: "md",
     circular: false,
     disabled: false,
@@ -186,12 +186,12 @@ export const DatePickerContext = createStyledContext<
 
 export const DEFAULT_DATE_FORMAT = "MM.DD.YYYY";
 
-export const getDateFormat = (separator: DateSeparator = ".") =>
+export const getDateFormat = (separator: DateSeparator = "/") =>
   `MM${separator}DD${separator}YYYY`;
 
 export const DATE_RANGE_SEPARATOR = " – ";
 
-export const getDateRangeFormat = (separator: DateSeparator = ".") => {
+export const getDateRangeFormat = (separator: DateSeparator = "/") => {
   const dateFormat = getDateFormat(separator);
 
   return `${dateFormat}${DATE_RANGE_SEPARATOR}${dateFormat}`;
@@ -208,7 +208,7 @@ const toDate = (value: unknown) => {
   return Number.isNaN(date.getTime()) ? null : date;
 };
 
-const parseInputDate = (value: string, separator: DateSeparator = ".") => {
+const parseInputDate = (value: string, separator: DateSeparator = "/") => {
   const match = new RegExp(
     `^(\\d{2})\\${separator}(\\d{2})\\${separator}(\\d{4})$`
   ).exec(value);
@@ -230,7 +230,7 @@ const parseInputDate = (value: string, separator: DateSeparator = ".") => {
 
 const parseInputDateRange = (
   value: unknown,
-  separator: DateSeparator = "."
+  separator: DateSeparator = "/"
 ) => {
   if (typeof value !== "string") {
     return null;
@@ -364,7 +364,7 @@ const createRangeMask = (separator: DateSeparator): MaskitoOptions => {
 export const DATE_RANGE_MASK_DOT = createRangeMask(".");
 export const DATE_RANGE_MASK_SLASH = createRangeMask("/");
 
-export const format = (value: any, separator: DateSeparator = ".") => {
+export const format = (value: any, separator: DateSeparator = "/") => {
   const date = toDate(value);
   if (!date) {
     return "";
@@ -376,7 +376,7 @@ export const format = (value: any, separator: DateSeparator = ".") => {
   );
 };
 
-export const formatRange = (value: any, separator: DateSeparator = ".") => {
+export const formatRange = (value: any, separator: DateSeparator = "/") => {
   if (!Array.isArray(value)) {
     return "";
   }
@@ -388,7 +388,7 @@ export const formatRange = (value: any, separator: DateSeparator = ".") => {
     .join(DATE_RANGE_SEPARATOR);
 };
 
-export const parse = (value: any, separator: DateSeparator = ".") => {
+export const parse = (value: any, separator: DateSeparator = "/") => {
   if (
     typeof value === "string" &&
     new RegExp(`^[\\d\\${separator}]*$`).test(value)
@@ -399,7 +399,7 @@ export const parse = (value: any, separator: DateSeparator = ".") => {
   return toDate(value);
 };
 
-export const parseRange = (value: any, separator: DateSeparator = ".") => {
+export const parseRange = (value: any, separator: DateSeparator = "/") => {
   if (typeof value === "string") {
     return parseInputDateRange(value, separator);
   }
@@ -687,8 +687,6 @@ const DayPicker = () => {
                             ? "primary"
                             : "ghost"
                     }
-                    ghostOpacity={0.75}
-                    borderColor={day.now ? "hairline" : undefined}
                     size={cellSize}
                     width={cellSize}
                     flexGrow={0}
@@ -729,7 +727,6 @@ function YearRangeSlider() {
       justifyContent="space-between">
       <Button
         variant="ghost"
-        ghostOpacity={0.75}
         size={cellSize}
         width={cellSize}
         flexGrow={0}
@@ -759,7 +756,6 @@ function YearRangeSlider() {
       </View>
       <Button
         variant="ghost"
-        ghostOpacity={0.75}
         size={cellSize}
         width={cellSize}
         flexGrow={0}
@@ -795,7 +791,6 @@ function YearSlider() {
       justifyContent="space-between">
       <Button
         variant="ghost"
-        ghostOpacity={0.75}
         size={cellSize}
         width={cellSize}
         flexGrow={0}
@@ -820,7 +815,6 @@ function YearSlider() {
       </View>
       <Button
         variant="ghost"
-        ghostOpacity={0.75}
         size={cellSize}
         width={cellSize}
         flexGrow={0}
@@ -863,7 +857,6 @@ const CalendarHeader = () => {
       justifyContent="space-between">
       <Button
         variant="ghost"
-        ghostOpacity={0.75}
         size={cellSize}
         width={cellSize}
         flexGrow={0}
@@ -898,7 +891,6 @@ const CalendarHeader = () => {
       </YStack>
       <Button
         variant="ghost"
-        ghostOpacity={0.75}
         size={cellSize}
         width={cellSize}
         flexGrow={0}
@@ -936,7 +928,6 @@ const ItemPicker = ({
     <Button
       size={getFormSizeToken(size)}
       variant={active ? "primary" : "ghost"}
-      ghostOpacity={0.75}
       flexGrow={1}
       flexBasis={flexBasis ?? "unset"}
       flexShrink={flexShrink}
@@ -1183,7 +1174,7 @@ const DatePickerProvider = ({
   onFocus,
   focused,
   mode = "single",
-  separator = ".",
+  separator = "/",
   variant = "outlined",
   selectedDate = null,
   selectedDates: controlledSelectedDates = EMPTY_DATES,
@@ -1341,7 +1332,7 @@ const DatePickerControlImpl = createStyledHOC(
       disabled = formControl?.disabled,
       focused = formControl?.focused,
       mode = "single",
-      separator = ".",
+      separator = "/",
       variant = formControl ? fieldVariant : "outlined",
       selectedDate: selectedDateProp,
       selectedDates: selectedDatesProp,
@@ -1534,9 +1525,6 @@ const DatePickerControlImpl = createStyledHOC(
 
     const handleOpenChanged = useCallback(
       (open: boolean, _via?: "hover" | "press") => {
-        // eslint-disable-next-line no-console
-        console.log("[DP] openChange", open, _via, "focused=", focused);
-
         if (open) {
           onFocus?.();
         } else {

@@ -262,6 +262,20 @@ export const FloatingWithEndIconTruncation: Story = {
         icon.getBoundingClientRect().left
       );
     });
+
+    // The truncated label shows its full text in a (portaled) tooltip.
+    await userEvent.hover(labelText);
+    await waitFor(
+      async () => {
+        await expect(
+          within(canvasElement.ownerDocument.body).getAllByText(
+            "An intentionally long field label that must not overlap the icon",
+            { exact: true }
+          )
+        ).toHaveLength(2);
+      },
+      { timeout: 3000 }
+    );
   }
 };
 

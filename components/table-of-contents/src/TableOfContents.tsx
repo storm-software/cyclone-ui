@@ -556,6 +556,7 @@ export const TableOfContents = createStyledHOC(
         const activationLine = Math.min(browserWindow.innerHeight * 0.35, 180);
         let next = targets[0];
         const atEnd = !!scroller && isScrolledToEnd(scroller);
+        // eslint-disable-next-line react/set-state-in-effect
         setScrolledToEnd(atEnd);
 
         // The last headings can't scroll up to the activation line, so the
@@ -573,6 +574,7 @@ export const TableOfContents = createStyledHOC(
         }
 
         if (next) {
+          // eslint-disable-next-line react/set-state-in-effect
           setActiveUrl(current => (current === next.url ? current : next.url));
         }
       };
@@ -632,9 +634,10 @@ export const TableOfContents = createStyledHOC(
               const active = index === activeIndex;
 
               return (
+                // eslint-disable-next-line react/no-array-index-key
                 <TableOfContentsListItem key={`${item.url}-${index}`}>
                   <TableOfContentsLink
-                    group={"tableOfContentsItem" as any}
+                    group="tableOfContentsItem"
                     href={item.url}
                     aria-current={active ? "location" : undefined}
                     paddingLeft={RAIL_LEFT + depth * LEVEL_INDENT + LABEL_GAP}

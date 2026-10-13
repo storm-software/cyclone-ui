@@ -312,8 +312,8 @@ export const useFieldLabelFloated = (
 
 /**
  * Resolves the color tokens used by field icons (and their dividers): `primary`
- * when the field has a non-base theme or a validation message, otherwise
- * `hairline`. `iconColor` is a single theme key so it can be passed directly
+ * when the field has a validation message, otherwise `outline`, matching the
+ * field border. `iconColor` is a single theme key so it can be passed directly
  * to Tamagui v3 icons, which do not resolve flat `group-hover/` values.
  */
 export const useFieldIconColor = () => {
@@ -323,25 +323,18 @@ export const useFieldIconColor = () => {
   const theme = formControl?.theme;
   const isNeutral =
     (!theme || theme === "base") && !formControl?.hasValidationMessage;
+  const status = formControl?.hasValidationMessage ? "primary" : "outline";
 
   const iconColor = disabled
-    ? isNeutral
-      ? "hairlineDisabled"
-      : "primaryDisabled"
-    : isNeutral
-      ? focused
-        ? "hairlineActive"
-        : "hairline"
-      : focused
-        ? "primaryActive"
-        : "primary";
+    ? `${status}Disabled`
+    : focused
+      ? `${status}Active`
+      : status;
   const hoverIconColor = disabled
-    ? isNeutral
-      ? "hairlineDisabled"
-      : "primaryDisabled"
-    : isNeutral
-      ? "hairlineActive"
-      : "primaryActive";
+    ? `${status}Disabled`
+    : focused
+      ? `${status}Active`
+      : `${status}Hovered`;
 
   return {
     // Icons can't resolve `group-hover/field:`, so swap to the hover token

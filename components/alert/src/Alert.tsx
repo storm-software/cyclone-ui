@@ -80,7 +80,6 @@ const AlertCloseImpl = createStyledHOC(
           ref={forwardedRef}
           theme="base"
           variant="ghost"
-          ghostOpacity={0.8}
           circular={true}
           noPadding={true}
           {...props}

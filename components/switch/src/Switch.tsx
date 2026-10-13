@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
   getFormSizeToken,
@@ -23,8 +24,7 @@ import {
   getSpaced,
   useFieldHasValidationMessage,
   useFieldLabelDefaults,
-  useFormControl,
-  type FormControlSize
+  useFormControl
 } from "@cyclone-ui/helpers";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
@@ -86,7 +86,7 @@ const SwitchFrame = styled(View, {
   backgroundColor: "surface",
   borderWidth: 1,
   borderColor:
-    "hairline hover:primaryHovered focus:primaryActive focus-visible:primaryActive",
+    "outline hover:outlineHovered focus:primaryActive focus-visible:primaryActive",
   boxShadow: "none focus:ringOffset focus-visible:ringOffset",
   tabIndex: 0,
   variants: {
@@ -290,10 +290,8 @@ const BaseSwitchImpl = createStyledHOC(
       ...props
     } = allProps;
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "primary" : "hairline";
-    const focusColor = hasValidationMessage
-      ? "primaryActive"
-      : "hairlineActive";
+    const idleColor = hasValidationMessage ? "primary" : "outline";
+    const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
 
     return (
       <SwitchContext.Provider

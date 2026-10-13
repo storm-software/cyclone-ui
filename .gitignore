@@ -16,6 +16,8 @@ __generated__
 graphify-out
 SF-Pro.dmg
 
+packages/tokens/src/css/fonts
+
 # dependencies
 node_modules
 

@@ -262,7 +262,7 @@ const ContextMenuItemBackground = styled(View, {
   // `focus-visible`, not `focus`: opening the menu focuses its first item,
   // which should only look highlighted when navigating by keyboard.
   backgroundColor:
-    "transparent group-hover/item:subtle group-focus-visible/item:subtle",
+    "transparent group-hover/item:floatingActive group-focus-visible/item:floatingActive",
   pointerEvents: "none",
   variants: {
     size: styled.dynamic<FormControlSize>(

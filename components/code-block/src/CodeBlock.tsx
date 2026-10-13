@@ -430,7 +430,7 @@ const CodeBlockImpl = createStyledHOC(
           className={`cyclone-code-block-viewport${
             viewportProps.className ? ` ${viewportProps.className}` : ""
           }`}
-          maxHeight={(viewportProps.style?.maxHeight ?? 600) as any}
+          maxHeight={viewportProps.style?.maxHeight ?? 600}
           style={viewportStyle}>
           {contentChildren}
         </CodeBlockViewport>

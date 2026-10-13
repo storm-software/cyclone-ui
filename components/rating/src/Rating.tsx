@@ -132,7 +132,7 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
       iconWeight = "fill",
       emptyIconWeight = "regular",
       color = "primary",
-      emptyColor = hasValidationMessage ? "primary" : "hairline",
+      emptyColor = hasValidationMessage ? "primary" : "outline",
       highlightSelectedOnly = false,
       getLabelText = defaultGetLabelText,
       onKeyDown,
@@ -238,7 +238,7 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
           Math.min(max, Math.max(0, next)),
           precision
         );
-        setValue(clamped ? clamped : null);
+        setValue(clamped || null);
       },
       [interactive, max, onKeyDown, precision, setValue, value]
     );

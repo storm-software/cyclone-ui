@@ -14,13 +14,13 @@
         "@tamagui/core@^3.0.2",
         "@tamagui/group@^3.0.2",
         "@tamagui/helpers@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/stacks@^3.0.2",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/vectors@0.5.14"
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/vectors@0.5.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -69,16 +69,16 @@
         "@tamagui/group@^3.0.2",
         "@tamagui/helpers@^3.0.2",
         "@tamagui/helpers-tamagui@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
         "@tamagui/web@^3.0.2",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/themeable-icon@0.6.14",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/container@0.6.14",
-        "@cyclone-ui/button@0.6.14"
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/themeable-icon@0.6.15",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/container@0.6.15",
+        "@cyclone-ui/button@0.6.15"
       ],
       "devDependencies": [
         "@tamagui/get-font-sized@^3.0.2",
@@ -109,14 +109,14 @@
           "target": "components/alert/node_modules/react-native/index.js"
         },
         {
-          "path": "components/alert/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/alert/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/alert/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/alert/node_modules/react/index.js"
+        },
+        {
+          "path": "components/alert/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/alert/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -130,15 +130,15 @@
         "@tamagui/group@^3.0.2",
         "@tamagui/helpers@^3.0.2",
         "@tamagui/helpers-tamagui@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
         "@tamagui/web@^3.0.2",
-        "@cyclone-ui/dialog@0.3.14",
-        "@cyclone-ui/themeable-icon@0.6.14"
+        "@cyclone-ui/dialog@0.3.15",
+        "@cyclone-ui/themeable-icon@0.6.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@0.6.14",
+        "@cyclone-ui/button@0.6.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -161,11 +161,6 @@
           "target": "components/alert-dialog/dist/index.cjs"
         },
         {
-          "path": "components/alert-dialog/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/alert-dialog/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/alert-dialog/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/alert-dialog/node_modules/react-dom/index.js"
@@ -174,6 +169,11 @@
           "path": "components/alert-dialog/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/alert-dialog/node_modules/react/index.js"
+        },
+        {
+          "path": "components/alert-dialog/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/alert-dialog/node_modules/react-native/index.js"
         }
       ]
     },
@@ -184,18 +184,23 @@
       "description": "A heading wrapper that renders its children next to a permalink icon. The icon shows on hover or focus and links to href on web, or opens the URL with Linking on native. Use it to make headings and sections deep-linkable.",
       "dependencies": [
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/text@^3.0.2",
         "@tamagui/web@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/heading-text@0.5.14",
+        "@cyclone-ui/heading-text@0.5.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/anchor/src/index.ts",
+          "type": "registry:file",
+          "target": "components/anchor/src/index.ts"
+        },
         {
           "path": "components/anchor/dist/index.mjs",
           "type": "registry:file",
@@ -207,14 +212,9 @@
           "target": "components/anchor/dist/index.cjs"
         },
         {
-          "path": "components/anchor/src/index.ts",
+          "path": "components/anchor/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/anchor/src/index.ts"
-        },
-        {
-          "path": "components/anchor/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/anchor/node_modules/react/index.js"
+          "target": "components/anchor/node_modules/react-native/index.js"
         },
         {
           "path": "components/anchor/node_modules/react-dom/index.js",
@@ -222,9 +222,9 @@
           "target": "components/anchor/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/anchor/node_modules/react-native/index.js",
+          "path": "components/anchor/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/anchor/node_modules/react-native/index.js"
+          "target": "components/anchor/node_modules/react/index.js"
         }
       ]
     },
@@ -234,18 +234,18 @@
       "title": "@cyclone-ui/article-page",
       "description": "An ArticlePage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.",
       "dependencies": [
-        "@cyclone-ui/page@0.0.8",
-        "@cyclone-ui/table-of-contents@0.0.11",
+        "@cyclone-ui/page@0.0.9",
+        "@cyclone-ui/table-of-contents@0.0.12",
         "@tamagui/core@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/breadcrumb@0.4.15",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/divider@0.0.10",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/icons@0.0.10",
-        "@cyclone-ui/inline-code-text@0.5.13",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/breadcrumb@0.4.16",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/divider@0.0.11",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/icons@0.0.11",
+        "@cyclone-ui/inline-code-text@0.5.14",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -273,14 +273,14 @@
           "target": "components/article-page/node_modules/react-native/index.js"
         },
         {
-          "path": "components/article-page/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/article-page/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/article-page/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/article-page/node_modules/react/index.js"
+        },
+        {
+          "path": "components/article-page/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/article-page/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -295,8 +295,8 @@
         "@tamagui/web@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/icons@0.0.11",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -319,9 +319,9 @@
           "target": "components/badge/dist/index.cjs"
         },
         {
-          "path": "components/badge/node_modules/react/index.js",
+          "path": "components/badge/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/badge/node_modules/react/index.js"
+          "target": "components/badge/node_modules/react-native/index.js"
         },
         {
           "path": "components/badge/node_modules/react-dom/index.js",
@@ -329,9 +329,9 @@
           "target": "components/badge/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/badge/node_modules/react-native/index.js",
+          "path": "components/badge/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/badge/node_modules/react-native/index.js"
+          "target": "components/badge/node_modules/react/index.js"
         }
       ]
     },
@@ -344,7 +344,7 @@
         "@tamagui/core@^3.0.2",
         "@tamagui/get-font-sized@^3.0.2",
         "@tamagui/text@^3.0.2",
-        "@cyclone-ui/helpers@0.3.14"
+        "@cyclone-ui/helpers@0.3.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -369,6 +369,11 @@
           "target": "components/body-text/dist/index.cjs"
         },
         {
+          "path": "components/body-text/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/body-text/node_modules/react-dom/index.js"
+        },
+        {
           "path": "components/body-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/body-text/node_modules/react/index.js"
@@ -377,11 +382,6 @@
           "path": "components/body-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/body-text/node_modules/react-native/index.js"
-        },
-        {
-          "path": "components/body-text/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/body-text/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -395,14 +395,14 @@
         "@tamagui/create-context@^3.0.2",
         "@tamagui/group@^3.0.2",
         "@tamagui/helpers@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/label-text@0.5.14",
-        "@cyclone-ui/link@0.5.14",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/popover@0.5.14"
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/label-text@0.5.15",
+        "@cyclone-ui/link@0.5.15",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/popover@0.5.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -432,14 +432,14 @@
           "target": "components/breadcrumb/node_modules/react-native/index.js"
         },
         {
-          "path": "components/breadcrumb/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/breadcrumb/node_modules/react/index.js"
-        },
-        {
           "path": "components/breadcrumb/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/breadcrumb/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/breadcrumb/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/breadcrumb/node_modules/react/index.js"
         }
       ]
     },
@@ -459,13 +459,13 @@
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
         "@tamagui/web@^3.0.2",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/themeable-icon@0.6.14"
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/themeable-icon@0.6.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
@@ -492,14 +492,14 @@
           "target": "components/button/node_modules/react-native/index.js"
         },
         {
-          "path": "components/button/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/button/node_modules/react/index.js"
-        },
-        {
           "path": "components/button/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/button/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/button/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/button/node_modules/react/index.js"
         }
       ]
     },
@@ -511,7 +511,7 @@
       "dependencies": [
         "@stryke/string-format@^0.17.58",
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/body-text@0.5.14"
+        "@cyclone-ui/body-text@0.5.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -562,17 +562,17 @@
         "@tamagui/helpers@^3.0.2",
         "@tamagui/helpers-tamagui@^3.0.2",
         "@tamagui/linear-gradient@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
         "@tamagui/web@^3.0.2",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/container@0.6.14",
-        "@cyclone-ui/eyebrow-text@0.5.14",
-        "@cyclone-ui/heading-text@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/container@0.6.15",
+        "@cyclone-ui/eyebrow-text@0.5.15",
+        "@cyclone-ui/heading-text@0.5.15",
         "@cyclone-ui/state@0.0.15",
-        "@cyclone-ui/themeable-icon@0.6.14",
-        "@cyclone-ui/vectors@0.5.14"
+        "@cyclone-ui/themeable-icon@0.6.15",
+        "@cyclone-ui/vectors@0.5.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -628,14 +628,14 @@
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
         "@tamagui/web@^3.0.2",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/container@0.6.14",
-        "@cyclone-ui/eyebrow-text@0.5.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/link@0.5.14",
-        "@cyclone-ui/themeable-icon@0.6.14",
-        "@cyclone-ui/icons@0.0.10"
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/container@0.6.15",
+        "@cyclone-ui/eyebrow-text@0.5.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/link@0.5.15",
+        "@cyclone-ui/themeable-icon@0.6.15",
+        "@cyclone-ui/icons@0.0.11"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -683,9 +683,9 @@
       "title": "@cyclone-ui/checkbox",
       "description": "A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indicator for the indeterminate state. It supports form control sizes, circular, focused and disabled states, and validation colors. Wrapped in a Field, it connects to the form: it reads its checked state, size, disabled and focused states from the field and reports changes to it.",
       "dependencies": [
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/icons@0.0.10",
-        "@cyclone-ui/vectors@0.5.14",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/icons@0.0.11",
+        "@cyclone-ui/vectors@0.5.15",
         "@tamagui/checkbox@^3.0.2",
         "@tamagui/checkbox-headless@^3.0.2",
         "@tamagui/constants@^3.0.2",
@@ -697,8 +697,8 @@
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -721,9 +721,9 @@
           "target": "components/checkbox/dist/index.cjs"
         },
         {
-          "path": "components/checkbox/node_modules/react-native/index.js",
+          "path": "components/checkbox/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/checkbox/node_modules/react-native/index.js"
+          "target": "components/checkbox/node_modules/react/index.js"
         },
         {
           "path": "components/checkbox/node_modules/react-dom/index.js",
@@ -731,9 +731,9 @@
           "target": "components/checkbox/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/checkbox/node_modules/react/index.js",
+          "path": "components/checkbox/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/checkbox/node_modules/react/index.js"
+          "target": "components/checkbox/node_modules/react-native/index.js"
         }
       ]
     },
@@ -793,12 +793,12 @@
       "title": "@cyclone-ui/code-block",
       "description": "A figure that displays Shiki-highlighted code, with an optional title and icon, a copy-to-clipboard button, line numbers and a scrollable viewport. CodeBlock.Tabs, with List, Trigger and Content parts, switches between several code samples. Use it in documentation and technical content.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/scroll-view@0.5.14",
-        "@cyclone-ui/themeable-icon@0.6.14",
-        "@cyclone-ui/vectors@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/scroll-view@0.5.15",
+        "@cyclone-ui/themeable-icon@0.6.15",
+        "@cyclone-ui/vectors@0.5.15",
         "@tamagui/core@^3.0.2",
         "@tamagui/create-context@^3.0.2",
         "@tamagui/font-size@^3.0.2",
@@ -806,7 +806,7 @@
         "@tamagui/group@^3.0.2",
         "@tamagui/helpers@^3.0.2",
         "@tamagui/helpers-tamagui@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/react-native-types@^3.0.2",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/tabs@^3.0.2",
@@ -837,6 +837,11 @@
           "target": "components/code-block/dist/index.cjs"
         },
         {
+          "path": "components/code-block/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/code-block/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/code-block/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/code-block/node_modules/react-dom/index.js"
@@ -845,11 +850,6 @@
           "path": "components/code-block/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/code-block/node_modules/react/index.js"
-        },
-        {
-          "path": "components/code-block/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/code-block/node_modules/react-native/index.js"
         }
       ]
     },
@@ -859,13 +859,13 @@
       "title": "@cyclone-ui/collapsible",
       "description": "A single disclosure panel built on Accordion, with Collapsible.Header and Collapsible.Content subcomponents and a chevron icon. Open state can be controlled with a boolean value or left uncontrolled with defaultValue. Use it to show and hide one section of content.",
       "dependencies": [
-        "@cyclone-ui/accordion@0.3.14",
+        "@cyclone-ui/accordion@0.3.15",
         "@tamagui/accordion@^3.0.2",
         "@tamagui/core@^3.0.2",
         "@tamagui/helpers@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -893,14 +893,14 @@
           "target": "components/collapsible/node_modules/react-native/index.js"
         },
         {
-          "path": "components/collapsible/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/collapsible/node_modules/react/index.js"
-        },
-        {
           "path": "components/collapsible/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/collapsible/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/collapsible/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/collapsible/node_modules/react/index.js"
         }
       ]
     },
@@ -935,9 +935,9 @@
           "target": "components/confetti-burst/dist/index.cjs"
         },
         {
-          "path": "components/confetti-burst/node_modules/react-dom/index.js",
+          "path": "components/confetti-burst/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/confetti-burst/node_modules/react-dom/index.js"
+          "target": "components/confetti-burst/node_modules/react-native/index.js"
         },
         {
           "path": "components/confetti-burst/node_modules/react/index.js",
@@ -945,9 +945,9 @@
           "target": "components/confetti-burst/node_modules/react/index.js"
         },
         {
-          "path": "components/confetti-burst/node_modules/react-native/index.js",
+          "path": "components/confetti-burst/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/confetti-burst/node_modules/react-native/index.js"
+          "target": "components/confetti-burst/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -960,8 +960,8 @@
         "@tamagui/core@^3.0.2",
         "@tamagui/linear-gradient@^3.0.2",
         "@tamagui/stacks@^3.0.2",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/vectors@0.5.14"
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/vectors@0.5.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -986,11 +986,6 @@
           "target": "components/container/dist/index.cjs"
         },
         {
-          "path": "components/container/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/container/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/container/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/container/node_modules/react/index.js"
@@ -999,6 +994,11 @@
           "path": "components/container/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/container/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/container/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/container/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1008,14 +1008,14 @@
       "title": "@cyclone-ui/context-menu",
       "description": "A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled. Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/icons@0.0.10",
-        "@cyclone-ui/popover@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/icons@0.0.11",
+        "@cyclone-ui/popover@0.5.15",
         "@tamagui/core@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@0.6.14",
+        "@cyclone-ui/button@0.6.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -1038,11 +1038,6 @@
           "target": "components/context-menu/dist/index.cjs"
         },
         {
-          "path": "components/context-menu/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/context-menu/node_modules/react/index.js"
-        },
-        {
           "path": "components/context-menu/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/context-menu/node_modules/react-native/index.js"
@@ -1051,6 +1046,11 @@
           "path": "components/context-menu/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/context-menu/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/context-menu/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/context-menu/node_modules/react/index.js"
         }
       ]
     },
@@ -1060,16 +1060,16 @@
       "title": "@cyclone-ui/data-table",
       "description": "A data grid built on TanStack Table and the Cyclone UI Table that takes table options (columns and data) and adds sorting, faceted column filtering, client-side pagination with a configurable page size, optional row selection checkboxes and resizable columns. Use it to display large, interactive datasets.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/checkbox@0.5.14",
-        "@cyclone-ui/form@0.9.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/label-text@0.5.14",
-        "@cyclone-ui/pagination@0.8.14",
-        "@cyclone-ui/popover@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/checkbox@0.5.15",
+        "@cyclone-ui/form@0.9.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/label-text@0.5.15",
+        "@cyclone-ui/pagination@0.8.15",
+        "@cyclone-ui/popover@0.5.15",
         "@cyclone-ui/state@0.0.15",
-        "@cyclone-ui/table@0.4.14",
+        "@cyclone-ui/table@0.4.15",
         "@stryke/helpers@^0.10.56",
         "@stryke/string-format@^0.17.58",
         "@stryke/type-checks@^0.6.49",
@@ -1078,14 +1078,14 @@
         "@tamagui/animate-presence@^3.0.2",
         "@tamagui/core@^3.0.2",
         "@tamagui/helpers@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
         "@tanstack/react-table@^8.21.3",
         "@tanstack/table-core@^8.21.3",
-        "@cyclone-ui/search-input@0.1.14",
-        "@cyclone-ui/select@0.6.14",
-        "@cyclone-ui/field@0.5.14"
+        "@cyclone-ui/search-input@0.1.15",
+        "@cyclone-ui/select@0.6.15",
+        "@cyclone-ui/field@0.5.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -1151,30 +1151,35 @@
         "@tamagui/helpers@^3.0.2",
         "@tamagui/helpers-tamagui@^3.0.2",
         "@tamagui/label@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/popover@^3.0.2",
         "@tamagui/separator@^3.0.2",
         "@tamagui/sheet@^3.0.2",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
         "@tamagui/web@^3.0.2",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/input@0.6.14",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/popover@0.5.14",
-        "@cyclone-ui/helpers@0.3.14"
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/input@0.6.15",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/popover@0.5.15",
+        "@cyclone-ui/helpers@0.3.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/date-picker/src/index.ts",
+          "type": "registry:file",
+          "target": "components/date-picker/src/index.ts"
+        },
         {
           "path": "components/date-picker/dist/index.mjs",
           "type": "registry:file",
@@ -1186,19 +1191,14 @@
           "target": "components/date-picker/dist/index.cjs"
         },
         {
-          "path": "components/date-picker/src/index.ts",
+          "path": "components/date-picker/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/date-picker/src/index.ts"
+          "target": "components/date-picker/node_modules/react-native/index.js"
         },
         {
           "path": "components/date-picker/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/date-picker/node_modules/react/index.js"
-        },
-        {
-          "path": "components/date-picker/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/date-picker/node_modules/react-native/index.js"
         },
         {
           "path": "components/date-picker/node_modules/react-dom/index.js",
@@ -1213,11 +1213,11 @@
       "title": "@cyclone-ui/dialog",
       "description": "A modal Dialog compound component built on Tamagui's dialog, with Trigger, Portal, Overlay, Container, Heading, Body, Close and Action parts. Close and Action are buttons with Text and Icon slots. It has an animated, blurred, theme-tinted overlay that can be turned off, a theme prop, and an animated floating container. Use it for confirmations and focused tasks.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/container@0.6.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/overlay@0.0.1",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/container@0.6.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/overlay@0.0.2",
         "@tamagui/alert-dialog@^3.0.2",
         "@tamagui/compose-refs@^3.0.2",
         "@tamagui/constants@^3.0.2",
@@ -1258,9 +1258,9 @@
           "target": "components/dialog/dist/index.cjs"
         },
         {
-          "path": "components/dialog/node_modules/react-dom/index.js",
+          "path": "components/dialog/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/dialog/node_modules/react-dom/index.js"
+          "target": "components/dialog/node_modules/react-native/index.js"
         },
         {
           "path": "components/dialog/node_modules/react/index.js",
@@ -1268,9 +1268,9 @@
           "target": "components/dialog/node_modules/react/index.js"
         },
         {
-          "path": "components/dialog/node_modules/react-native/index.js",
+          "path": "components/dialog/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/dialog/node_modules/react-native/index.js"
+          "target": "components/dialog/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1312,14 +1312,14 @@
           "target": "components/divider/node_modules/react/index.js"
         },
         {
-          "path": "components/divider/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/divider/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/divider/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/divider/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/divider/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/divider/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1329,10 +1329,10 @@
       "title": "@cyclone-ui/drawer",
       "description": "A side panel built on the Cyclone UI Sheet that slides in from the right by default and comes in sm, md and lg sizes. It has Frame, Handle, Overlay, ScrollView, Heading, Body and Footer parts. Use it for navigation, filters or secondary content shown beside the main view.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/scroll-view@0.5.14",
-        "@cyclone-ui/sheet@0.0.13",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/scroll-view@0.5.15",
+        "@cyclone-ui/sheet@0.0.14",
         "@tamagui/core@^3.0.2",
         "@tamagui/dialog@^3.0.2",
         "@tamagui/helpers@^3.0.2",
@@ -1340,13 +1340,18 @@
         "@tamagui/stacks@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@0.6.14",
+        "@cyclone-ui/button@0.6.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
+        {
+          "path": "components/drawer/src/index.ts",
+          "type": "registry:file",
+          "target": "components/drawer/src/index.ts"
+        },
         {
           "path": "components/drawer/dist/index.mjs",
           "type": "registry:file",
@@ -1358,24 +1363,19 @@
           "target": "components/drawer/dist/index.cjs"
         },
         {
-          "path": "components/drawer/src/index.ts",
-          "type": "registry:file",
-          "target": "components/drawer/src/index.ts"
-        },
-        {
           "path": "components/drawer/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/drawer/node_modules/react-native/index.js"
         },
         {
-          "path": "components/drawer/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/drawer/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/drawer/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/drawer/node_modules/react/index.js"
+        },
+        {
+          "path": "components/drawer/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/drawer/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1412,14 +1412,14 @@
           "target": "components/eyebrow-text/dist/index.cjs"
         },
         {
-          "path": "components/eyebrow-text/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/eyebrow-text/node_modules/react/index.js"
-        },
-        {
           "path": "components/eyebrow-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/eyebrow-text/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/eyebrow-text/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/eyebrow-text/node_modules/react/index.js"
         },
         {
           "path": "components/eyebrow-text/node_modules/react-native/index.js",
@@ -1434,17 +1434,17 @@
       "title": "@cyclone-ui/feedback",
       "description": "A Feedback control that pairs a like toggle with a dislike toggle. Pressing dislike opens a popover form asking for an optional comment. It can be controlled or uncontrolled (value, defaultValue, onValueChange), and it also has onCommentSubmit, a custom comment label and placeholder, disabled and size props. Use it to collect quick thumbs-up/down feedback on content.",
       "dependencies": [
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/divider@0.0.10",
-        "@cyclone-ui/form@0.9.14",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/icons@0.0.10",
-        "@cyclone-ui/like-button@0.0.4",
-        "@cyclone-ui/popover@0.5.14",
-        "@cyclone-ui/text-area@0.1.14",
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/toggle@0.0.4",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/divider@0.0.11",
+        "@cyclone-ui/form@0.9.15",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/icons@0.0.11",
+        "@cyclone-ui/like-button@0.0.5",
+        "@cyclone-ui/popover@0.5.15",
+        "@cyclone-ui/text-area@0.1.15",
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/toggle@0.0.5",
         "@tamagui/core@^3.0.2"
       ],
       "devDependencies": [
@@ -1475,14 +1475,14 @@
           "target": "components/feedback/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/feedback/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/feedback/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/feedback/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/feedback/node_modules/react/index.js"
+        },
+        {
+          "path": "components/feedback/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/feedback/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1492,36 +1492,31 @@
       "title": "@cyclone-ui/field",
       "description": "A form field wrapper that connects a control to Cyclone UI form state and provides Field.Label, Field.Link, Field.Details, Field.Icon and Field.ThemeIcon parts. It shows validation messages automatically and supports normal, floating and underline label variants. Use it as the base for building labeled form inputs.",
       "dependencies": [
-        "@cyclone-ui/label-text@0.5.14",
-        "@cyclone-ui/link@0.5.14",
+        "@cyclone-ui/label-text@0.5.15",
+        "@cyclone-ui/link@0.5.15",
         "@stryke/types@^0.12.44",
         "@tamagui/core@^3.0.2",
         "@tamagui/get-token@^3.0.2",
         "@tamagui/label@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/stacks@^3.0.2",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/spinner@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/spinner@0.5.15",
         "@cyclone-ui/state@0.0.15",
-        "@cyclone-ui/themeable-icon@0.6.14",
-        "@cyclone-ui/tooltip@0.5.14",
-        "@cyclone-ui/validation-text@0.5.14"
+        "@cyclone-ui/themeable-icon@0.6.15",
+        "@cyclone-ui/tooltip@0.5.15",
+        "@cyclone-ui/validation-text@0.5.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
-        {
-          "path": "components/field/src/index.ts",
-          "type": "registry:file",
-          "target": "components/field/src/index.ts"
-        },
         {
           "path": "components/field/dist/index.mjs",
           "type": "registry:file",
@@ -1531,6 +1526,11 @@
           "path": "components/field/dist/index.cjs",
           "type": "registry:file",
           "target": "components/field/dist/index.cjs"
+        },
+        {
+          "path": "components/field/src/index.ts",
+          "type": "registry:file",
+          "target": "components/field/src/index.ts"
         },
         {
           "path": "components/field/node_modules/react-native/index.js",
@@ -1566,7 +1566,7 @@
         "@tamagui/helpers-tamagui@^3.0.2",
         "@tamagui/image@^3.0.2",
         "@tamagui/linear-gradient@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/separator@^3.0.2",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
@@ -1575,19 +1575,19 @@
         "expo-image-picker@^15.1.0",
         "react-dropzone@^14.4.1",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/bytes-text@0.5.14",
-        "@cyclone-ui/label-text@0.5.14",
-        "@cyclone-ui/link@0.5.14",
-        "@cyclone-ui/pdf-document-display@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/bytes-text@0.5.15",
+        "@cyclone-ui/label-text@0.5.15",
+        "@cyclone-ui/link@0.5.15",
+        "@cyclone-ui/pdf-document-display@0.5.15",
         "@cyclone-ui/state@0.0.15",
-        "@cyclone-ui/helpers@0.3.14"
+        "@cyclone-ui/helpers@0.3.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -1634,7 +1634,7 @@
       "dependencies": [
         "@tamagui/animate-presence@^3.0.2",
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2"
       ],
@@ -1661,6 +1661,11 @@
           "target": "components/file-tree/dist/index.cjs"
         },
         {
+          "path": "components/file-tree/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/file-tree/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/file-tree/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/file-tree/node_modules/react/index.js"
@@ -1669,11 +1674,6 @@
           "path": "components/file-tree/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/file-tree/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/file-tree/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/file-tree/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1683,16 +1683,16 @@
       "title": "@cyclone-ui/footer",
       "description": "A responsive site footer with compound layout parts for an introduction, action, navigation sections, links, a bottom rail with brand, copyright and legal links, and a background logo. It optionally renders an animated terrain backdrop that respects reduced motion and a noise texture overlay. Use it at the bottom of marketing or documentation pages.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/link@0.5.14",
-        "@cyclone-ui/vectors@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/link@0.5.15",
+        "@cyclone-ui/vectors@0.5.15",
         "@tamagui/core@^3.0.2",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
@@ -1714,14 +1714,14 @@
           "target": "components/footer/dist/index.cjs"
         },
         {
-          "path": "components/footer/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/footer/node_modules/react/index.js"
-        },
-        {
           "path": "components/footer/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/footer/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/footer/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/footer/node_modules/react/index.js"
         },
         {
           "path": "components/footer/node_modules/react-native/index.js",
@@ -1763,14 +1763,14 @@
           "target": "components/form/dist/index.cjs"
         },
         {
-          "path": "components/form/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/form/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/form/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/form/node_modules/react/index.js"
+        },
+        {
+          "path": "components/form/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/form/node_modules/react-native/index.js"
         },
         {
           "path": "components/form/node_modules/react-dom/index.js",
@@ -1811,14 +1811,14 @@
           "target": "components/glitch-separator/dist/index.cjs"
         },
         {
-          "path": "components/glitch-separator/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/glitch-separator/node_modules/react/index.js"
-        },
-        {
           "path": "components/glitch-separator/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/glitch-separator/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/glitch-separator/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/glitch-separator/node_modules/react/index.js"
         },
         {
           "path": "components/glitch-separator/node_modules/react-dom/index.js",
@@ -1845,11 +1845,6 @@
       ],
       "files": [
         {
-          "path": "components/heading-text/src/index.ts",
-          "type": "registry:file",
-          "target": "components/heading-text/src/index.ts"
-        },
-        {
           "path": "components/heading-text/dist/index.mjs",
           "type": "registry:file",
           "target": "components/heading-text/dist/index.mjs"
@@ -1860,6 +1855,16 @@
           "target": "components/heading-text/dist/index.cjs"
         },
         {
+          "path": "components/heading-text/src/index.ts",
+          "type": "registry:file",
+          "target": "components/heading-text/src/index.ts"
+        },
+        {
+          "path": "components/heading-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/heading-text/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/heading-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/heading-text/node_modules/react/index.js"
@@ -1868,11 +1873,6 @@
           "path": "components/heading-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/heading-text/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/heading-text/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/heading-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1950,7 +1950,7 @@
         "@tamagui/text@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -1995,8 +1995,8 @@
       "title": "@cyclone-ui/input",
       "description": "A composable text input with Input.TextBox, Input.TextBox.Value, Input.Separator and Input.Trigger (with Icon and Text) subcomponents. It supports default, floating and underline variants, sizes, and disabled and focused states, shows validation colors inside a Field, and runs on web and native.",
       "dependencies": [
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/helpers@0.3.14",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/helpers@0.3.15",
         "@tamagui/constants@^3.0.2",
         "@tamagui/core@^3.0.2",
         "@tamagui/create-context@^3.0.2",
@@ -2008,9 +2008,9 @@
         "@tamagui/web@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/form@0.9.14",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/form@0.9.15",
+        "@cyclone-ui/icons@0.0.11",
         "@storybook/react-vite@^10.6.1",
         "@stryke/types@^0.12.44",
         "react@^19.3.0",
@@ -2057,8 +2057,8 @@
       "description": "A text component that renders a label element using the title typography, built on BodyText. A floating variant switches it to a smaller font with an animated transition. Use it for form control labels and other short label text.",
       "dependencies": [
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/helpers@0.3.14"
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/helpers@0.3.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -2105,9 +2105,9 @@
       "title": "@cyclone-ui/like-button",
       "description": "A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChange) or uncontrolled (defaultLiked), and has sm, md and lg sizes. On the web, liking plays a thumb animation and a confetti burst unless the user prefers reduced motion. It sets aria-pressed for accessibility.",
       "dependencies": [
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/icons@0.0.10",
-        "@cyclone-ui/toggle@0.0.4",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/icons@0.0.11",
+        "@cyclone-ui/toggle@0.0.5",
         "@tamagui/core@^3.0.2"
       ],
       "devDependencies": [
@@ -2157,27 +2157,22 @@
       "dependencies": [
         "@tamagui/constants@^3.0.2",
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/shapes@^3.0.2",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
         "@tamagui/web@^3.0.2",
-        "@cyclone-ui/link-text@0.5.14",
-        "@cyclone-ui/themeable-icon@0.6.14"
+        "@cyclone-ui/link-text@0.5.15",
+        "@cyclone-ui/themeable-icon@0.6.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
-        {
-          "path": "components/link/src/index.ts",
-          "type": "registry:file",
-          "target": "components/link/src/index.ts"
-        },
         {
           "path": "components/link/dist/index.mjs",
           "type": "registry:file",
@@ -2189,6 +2184,16 @@
           "target": "components/link/dist/index.cjs"
         },
         {
+          "path": "components/link/src/index.ts",
+          "type": "registry:file",
+          "target": "components/link/src/index.ts"
+        },
+        {
+          "path": "components/link/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/link/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/link/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/link/node_modules/react/index.js"
@@ -2197,11 +2202,6 @@
           "path": "components/link/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/link/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "components/link/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/link/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2213,7 +2213,7 @@
       "dependencies": [
         "@tamagui/core@^3.0.2",
         "@tamagui/text@^3.0.2",
-        "@cyclone-ui/body-text@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
         "@cyclone-ui/state@0.0.15",
         "@tamagui/get-font-sized@^3.0.2"
       ],
@@ -2240,9 +2240,9 @@
           "target": "components/link-text/dist/index.cjs"
         },
         {
-          "path": "components/link-text/node_modules/react-native/index.js",
+          "path": "components/link-text/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/link-text/node_modules/react-native/index.js"
+          "target": "components/link-text/node_modules/react-dom/index.js"
         },
         {
           "path": "components/link-text/node_modules/react/index.js",
@@ -2250,9 +2250,9 @@
           "target": "components/link-text/node_modules/react/index.js"
         },
         {
-          "path": "components/link-text/node_modules/react-dom/index.js",
+          "path": "components/link-text/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/link-text/node_modules/react-dom/index.js"
+          "target": "components/link-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2267,8 +2267,8 @@
         "@tamagui/text@^3.0.2",
         "@tamagui/toast@^3.0.2",
         "@tamagui/web@^3.0.2",
-        "@cyclone-ui/alert@0.4.14",
-        "@cyclone-ui/button@0.6.14",
+        "@cyclone-ui/alert@0.4.15",
+        "@cyclone-ui/button@0.6.15",
         "@cyclone-ui/state@0.0.15"
       ],
       "devDependencies": [
@@ -2316,14 +2316,14 @@
       "title": "@cyclone-ui/navigation-header",
       "description": "A responsive site header made of Logo, Navigation, Actions and MenuButton slots. Navigation.Item supports Group and Link children, which render as a desktop mega menu and a collapsible mobile panel. Items can be featured, active or external, and the header tracks page scroll.",
       "dependencies": [
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/link@0.5.14",
-        "@cyclone-ui/eyebrow-text@0.5.14",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/link@0.5.15",
+        "@cyclone-ui/eyebrow-text@0.5.15",
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/icons@0.0.10"
+        "@cyclone-ui/icons@0.0.11"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@0.6.14",
+        "@cyclone-ui/button@0.6.15",
         "@storybook/react-vite@^10.6.1",
         "@tamagui/text@^3.0.2",
         "react@^19.3.0",
@@ -2331,11 +2331,6 @@
         "react-native@^0.87.1"
       ],
       "files": [
-        {
-          "path": "components/navigation-header/src/index.ts",
-          "type": "registry:file",
-          "target": "components/navigation-header/src/index.ts"
-        },
         {
           "path": "components/navigation-header/dist/index.mjs",
           "type": "registry:file",
@@ -2347,9 +2342,14 @@
           "target": "components/navigation-header/dist/index.cjs"
         },
         {
-          "path": "components/navigation-header/node_modules/react/index.js",
+          "path": "components/navigation-header/src/index.ts",
           "type": "registry:file",
-          "target": "components/navigation-header/node_modules/react/index.js"
+          "target": "components/navigation-header/src/index.ts"
+        },
+        {
+          "path": "components/navigation-header/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/navigation-header/node_modules/react-dom/index.js"
         },
         {
           "path": "components/navigation-header/node_modules/react-native/index.js",
@@ -2357,9 +2357,9 @@
           "target": "components/navigation-header/node_modules/react-native/index.js"
         },
         {
-          "path": "components/navigation-header/node_modules/react-dom/index.js",
+          "path": "components/navigation-header/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/navigation-header/node_modules/react-dom/index.js"
+          "target": "components/navigation-header/node_modules/react/index.js"
         }
       ]
     },
@@ -2372,8 +2372,8 @@
         "@stryke/hooks@^0.4.133",
         "@tamagui/core@^3.0.2",
         "@tamagui/stacks@^3.0.2",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/vectors@0.5.14"
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/vectors@0.5.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -2398,6 +2398,11 @@
           "target": "components/next-button/dist/index.cjs"
         },
         {
+          "path": "components/next-button/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/next-button/node_modules/react-native/index.js"
+        },
+        {
           "path": "components/next-button/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/next-button/node_modules/react-dom/index.js"
@@ -2406,11 +2411,6 @@
           "path": "components/next-button/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/next-button/node_modules/react/index.js"
-        },
-        {
-          "path": "components/next-button/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/next-button/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2421,13 +2421,13 @@
       "description": "A NumberInput built on Input that renders a type=number text box with decrease (minus) and increase (plus) buttons. The buttons change the value by a configurable increment. It has the same TextBox, TextBox.Value and Trigger parts as Input. Use it on its own or wrap it in a Field to connect it to a Form.",
       "dependencies": [
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
-        "@cyclone-ui/input@0.6.14",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/field@0.5.14"
+        "@cyclone-ui/icons@0.0.11",
+        "@cyclone-ui/input@0.6.15",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/field@0.5.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -2474,7 +2474,7 @@
       "dependencies": [
         "@number-flow/react@^0.4.4",
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/label-text@0.5.14"
+        "@cyclone-ui/label-text@0.5.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -2522,16 +2522,16 @@
       "description": "A one-time passcode input that renders one numeric input per digit (4 by default). Focus moves with typing, Backspace and the arrow keys, pasted codes fill the inputs, and autocomplete uses one-time-code. onComplete fires when every digit is filled. Use it on its own or wrap it in a Field to connect it to a Form.",
       "dependencies": [
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/input@0.6.14"
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/input@0.6.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1",
-        "@cyclone-ui/field@0.5.14"
+        "@cyclone-ui/field@0.5.15"
       ],
       "files": [
         {
@@ -2550,6 +2550,11 @@
           "target": "components/otp-input/dist/index.cjs"
         },
         {
+          "path": "components/otp-input/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/otp-input/node_modules/react-dom/index.js"
+        },
+        {
           "path": "components/otp-input/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/otp-input/node_modules/react/index.js"
@@ -2558,11 +2563,6 @@
           "path": "components/otp-input/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/otp-input/node_modules/react-native/index.js"
-        },
-        {
-          "path": "components/otp-input/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/otp-input/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2585,11 +2585,6 @@
       ],
       "files": [
         {
-          "path": "components/overlay/src/index.ts",
-          "type": "registry:file",
-          "target": "components/overlay/src/index.ts"
-        },
-        {
           "path": "components/overlay/dist/index.mjs",
           "type": "registry:file",
           "target": "components/overlay/dist/index.mjs"
@@ -2600,9 +2595,9 @@
           "target": "components/overlay/dist/index.cjs"
         },
         {
-          "path": "components/overlay/node_modules/react/index.js",
+          "path": "components/overlay/src/index.ts",
           "type": "registry:file",
-          "target": "components/overlay/node_modules/react/index.js"
+          "target": "components/overlay/src/index.ts"
         },
         {
           "path": "components/overlay/node_modules/react-dom/index.js",
@@ -2613,6 +2608,11 @@
           "path": "components/overlay/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/overlay/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/overlay/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/overlay/node_modules/react/index.js"
         }
       ]
     },
@@ -2622,7 +2622,7 @@
       "title": "@cyclone-ui/package-command-code-block",
       "description": "A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command for an ni-style command (install, run, exec, uninstall and others), each with a copy button. The chosen package manager is saved and kept in sync across instances. Use it in docs for install instructions.",
       "dependencies": [
-        "@cyclone-ui/code-block@0.6.14"
+        "@cyclone-ui/code-block@0.6.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -2632,6 +2632,11 @@
         "react-native-svg@^15.15.5"
       ],
       "files": [
+        {
+          "path": "components/package-command-code-block/src/index.ts",
+          "type": "registry:file",
+          "target": "components/package-command-code-block/src/index.ts"
+        },
         {
           "path": "components/package-command-code-block/dist/index.mjs",
           "type": "registry:file",
@@ -2643,16 +2648,6 @@
           "target": "components/package-command-code-block/dist/index.cjs"
         },
         {
-          "path": "components/package-command-code-block/src/index.ts",
-          "type": "registry:file",
-          "target": "components/package-command-code-block/src/index.ts"
-        },
-        {
-          "path": "components/package-command-code-block/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/package-command-code-block/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/package-command-code-block/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/package-command-code-block/node_modules/react/index.js"
@@ -2661,6 +2656,11 @@
           "path": "components/package-command-code-block/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/package-command-code-block/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/package-command-code-block/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/package-command-code-block/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2670,16 +2670,16 @@
       "title": "@cyclone-ui/page",
       "description": "A Page layout compound component with Banner, TopNav (Start, Middle and End slots), SideNav, SideNavToggle, Main and Panel areas. The SideNav can be collapsed and resized; it shows as a hover flyout when collapsed on desktop and as an overlay on mobile. The Panel can also be resized. The page includes skip links and a Ctrl+[ shortcut. Use it as the shell of an application page.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/icons@0.0.10",
-        "@cyclone-ui/scroll-view@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/icons@0.0.11",
+        "@cyclone-ui/scroll-view@0.5.15",
         "@tamagui/animate-presence@^3.0.2",
         "@tamagui/constants@^3.0.2",
         "@tamagui/core@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/heading-text@0.5.14",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/heading-text@0.5.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -2702,11 +2702,6 @@
           "target": "components/page/dist/index.cjs"
         },
         {
-          "path": "components/page/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/page/node_modules/react/index.js"
-        },
-        {
           "path": "components/page/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/page/node_modules/react-dom/index.js"
@@ -2715,6 +2710,11 @@
           "path": "components/page/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/page/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/page/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/page/node_modules/react/index.js"
         }
       ]
     },
@@ -2729,10 +2729,10 @@
         "@tamagui/text@^3.0.2",
         "@tamagui/web@^3.0.2",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/icons@0.0.10",
-        "@cyclone-ui/next-button@0.5.14",
-        "@cyclone-ui/previous-button@0.5.14"
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/icons@0.0.11",
+        "@cyclone-ui/next-button@0.5.15",
+        "@cyclone-ui/previous-button@0.5.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -2757,11 +2757,6 @@
           "target": "components/pagination/dist/index.cjs"
         },
         {
-          "path": "components/pagination/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/pagination/node_modules/react/index.js"
-        },
-        {
           "path": "components/pagination/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/pagination/node_modules/react-native/index.js"
@@ -2770,6 +2765,11 @@
           "path": "components/pagination/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/pagination/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/pagination/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/pagination/node_modules/react/index.js"
         }
       ]
     },
@@ -2779,18 +2779,18 @@
       "title": "@cyclone-ui/password-input",
       "description": "A password input with a show/hide toggle and a caps-lock warning. A strength meter rates the password from very weak to strong, and inside a Field a built-in validator lists the missing criteria. It has the same TextBox, TextBox.Value and Trigger parts as Input. Use it on its own or wrap it in a Field to connect it to a Form.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/visually-hidden@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/visually-hidden@0.5.15",
         "@tamagui/core@^3.0.2",
         "@tamagui/stacks@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
-        "@cyclone-ui/input@0.6.14",
-        "@cyclone-ui/validation-text@0.5.14",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/field@0.5.14"
+        "@cyclone-ui/icons@0.0.11",
+        "@cyclone-ui/input@0.6.15",
+        "@cyclone-ui/validation-text@0.5.15",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/field@0.5.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -2840,9 +2840,9 @@
         "@tamagui/core@^3.0.2",
         "pdfjs-dist@4.8.69",
         "react-pdf@^9.2.1",
-        "@cyclone-ui/spinner@0.5.14",
-        "@cyclone-ui/vectors@0.5.14",
-        "@cyclone-ui/visually-hidden@0.5.14"
+        "@cyclone-ui/spinner@0.5.15",
+        "@cyclone-ui/vectors@0.5.15",
+        "@cyclone-ui/visually-hidden@0.5.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -2867,14 +2867,14 @@
           "target": "components/pdf-document-display/dist/index.cjs"
         },
         {
-          "path": "components/pdf-document-display/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/pdf-document-display/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/pdf-document-display/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/pdf-document-display/node_modules/react/index.js"
+        },
+        {
+          "path": "components/pdf-document-display/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/pdf-document-display/node_modules/react-dom/index.js"
         },
         {
           "path": "components/pdf-document-display/node_modules/react-native/index.js",
@@ -2889,11 +2889,11 @@
       "title": "@cyclone-ui/phone-number-input",
       "description": "A headless phone number input built on Input that adds a searchable country-code picker with flags in a menu. Input is masked and formatted with libphonenumber-js and maskito, and the selected country updates from the initial value. It has a defaultCountry prop and TextBox (with Value) and Trigger parts. Use it on its own or inside a Field to connect it to a form.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/context-menu@0.0.4",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/input@0.6.14",
-        "@cyclone-ui/search-input@0.1.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/context-menu@0.0.5",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/input@0.6.15",
+        "@cyclone-ui/search-input@0.1.15",
         "@maskito/core@^3.11.1",
         "@maskito/phone@3.11.1",
         "@tamagui/core@^3.0.2",
@@ -2902,12 +2902,12 @@
         "libphonenumber-js@1.12.31"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1",
-        "@cyclone-ui/field@0.5.14"
+        "@cyclone-ui/field@0.5.15"
       ],
       "files": [
         {
@@ -2969,12 +2969,12 @@
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
         "@tamagui/floating@^3.0.2",
-        "@cyclone-ui/scroll-view@0.5.14"
+        "@cyclone-ui/scroll-view@0.5.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/heading-text@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/heading-text@0.5.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -2997,11 +2997,6 @@
           "target": "components/popover/dist/index.cjs"
         },
         {
-          "path": "components/popover/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/popover/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/popover/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/popover/node_modules/react/index.js"
@@ -3010,6 +3005,11 @@
           "path": "components/popover/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/popover/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/popover/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/popover/node_modules/react-native/index.js"
         }
       ]
     },
@@ -3022,8 +3022,8 @@
         "@stryke/hooks@^0.4.133",
         "@tamagui/core@^3.0.2",
         "@tamagui/stacks@^3.0.2",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/vectors@0.5.14"
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/vectors@0.5.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -3032,11 +3032,6 @@
         "react-native@^0.87.1"
       ],
       "files": [
-        {
-          "path": "components/previous-button/src/index.ts",
-          "type": "registry:file",
-          "target": "components/previous-button/src/index.ts"
-        },
         {
           "path": "components/previous-button/dist/index.mjs",
           "type": "registry:file",
@@ -3048,14 +3043,19 @@
           "target": "components/previous-button/dist/index.cjs"
         },
         {
-          "path": "components/previous-button/node_modules/react-dom/index.js",
+          "path": "components/previous-button/src/index.ts",
           "type": "registry:file",
-          "target": "components/previous-button/node_modules/react-dom/index.js"
+          "target": "components/previous-button/src/index.ts"
         },
         {
           "path": "components/previous-button/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/previous-button/node_modules/react/index.js"
+        },
+        {
+          "path": "components/previous-button/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/previous-button/node_modules/react-dom/index.js"
         },
         {
           "path": "components/previous-button/node_modules/react-native/index.js",
@@ -3102,14 +3102,14 @@
           "target": "components/progress/node_modules/react-native/index.js"
         },
         {
-          "path": "components/progress/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/progress/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/progress/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/progress/node_modules/react/index.js"
+        },
+        {
+          "path": "components/progress/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/progress/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -3130,13 +3130,13 @@
         "@tamagui/stacks@^3.0.2",
         "@tamagui/web@^3.0.2",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/helpers@0.3.14"
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/helpers@0.3.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3159,14 +3159,14 @@
           "target": "components/radio-group/dist/index.cjs"
         },
         {
-          "path": "components/radio-group/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/radio-group/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/radio-group/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/radio-group/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/radio-group/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/radio-group/node_modules/react-dom/index.js"
         },
         {
           "path": "components/radio-group/node_modules/react/index.js",
@@ -3181,9 +3181,9 @@
       "title": "@cyclone-ui/rating",
       "description": "A row of icons, stars by default, for displaying or selecting a rating. It can be controlled or uncontrolled and supports fractional precision, clearing the value, read-only and disabled states, sm, md and lg sizes, and custom icons, weights and colors. Hover changes are reported through onChangeActive. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field and reports changes to it.",
       "dependencies": [
-        "@cyclone-ui/confetti-burst@0.0.4",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/confetti-burst@0.0.5",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/core@^3.0.2"
       ],
       "devDependencies": [
@@ -3191,15 +3191,10 @@
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1",
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/form@0.9.14"
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/form@0.9.15"
       ],
       "files": [
-        {
-          "path": "components/rating/src/index.ts",
-          "type": "registry:file",
-          "target": "components/rating/src/index.ts"
-        },
         {
           "path": "components/rating/dist/index.mjs",
           "type": "registry:file",
@@ -3209,6 +3204,11 @@
           "path": "components/rating/dist/index.cjs",
           "type": "registry:file",
           "target": "components/rating/dist/index.cjs"
+        },
+        {
+          "path": "components/rating/src/index.ts",
+          "type": "registry:file",
+          "target": "components/rating/src/index.ts"
         },
         {
           "path": "components/rating/node_modules/react-native/index.js",
@@ -3233,7 +3233,7 @@
       "title": "@cyclone-ui/redacted-animation",
       "description": "A RedactedAnimation wrapper that briefly covers its children with an accent-colored mask, then slides the mask away to the left or right to reveal the content. It skips the animation when the user prefers reduced motion. Use it to add a redaction-style reveal effect to text or other inline content.",
       "dependencies": [
-        "@cyclone-ui/heading-text@0.5.14",
+        "@cyclone-ui/heading-text@0.5.15",
         "@tamagui/core@^3.0.2",
         "@tamagui/text@^3.0.2"
       ],
@@ -3260,6 +3260,11 @@
           "target": "components/redacted-animation/dist/index.cjs"
         },
         {
+          "path": "components/redacted-animation/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/redacted-animation/node_modules/react-dom/index.js"
+        },
+        {
           "path": "components/redacted-animation/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/redacted-animation/node_modules/react-native/index.js"
@@ -3268,11 +3273,6 @@
           "path": "components/redacted-animation/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/redacted-animation/node_modules/react/index.js"
-        },
-        {
-          "path": "components/redacted-animation/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/redacted-animation/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -3288,18 +3288,13 @@
         "@tamagui/stacks@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/vectors@0.5.14",
+        "@cyclone-ui/vectors@0.5.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
-        {
-          "path": "components/scroll-view/src/index.ts",
-          "type": "registry:file",
-          "target": "components/scroll-view/src/index.ts"
-        },
         {
           "path": "components/scroll-view/dist/index.mjs",
           "type": "registry:file",
@@ -3311,19 +3306,24 @@
           "target": "components/scroll-view/dist/index.cjs"
         },
         {
+          "path": "components/scroll-view/src/index.ts",
+          "type": "registry:file",
+          "target": "components/scroll-view/src/index.ts"
+        },
+        {
           "path": "components/scroll-view/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/scroll-view/node_modules/react-native/index.js"
         },
         {
-          "path": "components/scroll-view/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/scroll-view/node_modules/react/index.js"
-        },
-        {
           "path": "components/scroll-view/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/scroll-view/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/scroll-view/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/scroll-view/node_modules/react/index.js"
         }
       ]
     },
@@ -3336,16 +3336,16 @@
         "@tamagui/core@^3.0.2",
         "@tamagui/create-context@^3.0.2",
         "@tamagui/linear-gradient@^3.0.2",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/icons@0.0.10",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/input@0.6.14",
-        "@cyclone-ui/popover@0.5.14",
-        "@cyclone-ui/select@0.6.14",
-        "@cyclone-ui/field@0.5.14"
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/icons@0.0.11",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/input@0.6.15",
+        "@cyclone-ui/popover@0.5.15",
+        "@cyclone-ui/select@0.6.15",
+        "@cyclone-ui/field@0.5.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3368,9 +3368,9 @@
           "target": "components/search-input/dist/index.cjs"
         },
         {
-          "path": "components/search-input/node_modules/react-dom/index.js",
+          "path": "components/search-input/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/search-input/node_modules/react-dom/index.js"
+          "target": "components/search-input/node_modules/react-native/index.js"
         },
         {
           "path": "components/search-input/node_modules/react/index.js",
@@ -3378,9 +3378,9 @@
           "target": "components/search-input/node_modules/react/index.js"
         },
         {
-          "path": "components/search-input/node_modules/react-native/index.js",
+          "path": "components/search-input/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/search-input/node_modules/react-native/index.js"
+          "target": "components/search-input/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -3397,20 +3397,20 @@
         "@tamagui/group@^3.0.2",
         "@tamagui/helpers-icon@^3.0.2",
         "@tamagui/list-item@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/separator@^3.0.2",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2",
         "@tamagui/web@^3.0.2",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/button@0.6.14",
-        "@cyclone-ui/context-menu@0.0.4",
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/input@0.6.14"
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/button@0.6.15",
+        "@cyclone-ui/context-menu@0.0.5",
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/input@0.6.15"
       ],
       "devDependencies": [
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3433,14 +3433,14 @@
           "target": "components/select/dist/index.cjs"
         },
         {
-          "path": "components/select/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/select/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/select/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/select/node_modules/react/index.js"
+        },
+        {
+          "path": "components/select/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/select/node_modules/react-dom/index.js"
         },
         {
           "path": "components/select/node_modules/react-native/index.js",
@@ -3455,9 +3455,9 @@
       "title": "@cyclone-ui/sheet",
       "description": "A modal panel that slides in from the top, right, bottom or left edge. It uses a draggable Tamagui Sheet for the bottom direction and a dialog for the other edges, can be dragged to dismiss, and supports sm, md and lg sizes. Parts include Overlay, Handle, ScrollView, Heading, Body and Footer.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/scroll-view@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/scroll-view@0.5.15",
         "@tamagui/constants@^3.0.2",
         "@tamagui/core@^3.0.2",
         "@tamagui/dialog@^3.0.2",
@@ -3466,7 +3466,7 @@
         "@tamagui/stacks@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@0.6.14",
+        "@cyclone-ui/button@0.6.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3494,14 +3494,14 @@
           "target": "components/sheet/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/sheet/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/sheet/node_modules/react/index.js"
-        },
-        {
           "path": "components/sheet/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/sheet/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/sheet/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/sheet/node_modules/react/index.js"
         }
       ]
     },
@@ -3511,18 +3511,18 @@
       "title": "@cyclone-ui/slider",
       "description": "A Material-style slider, built on the Tamagui Slider, for choosing a single value or, when given an array, a range. It can be controlled or uncontrolled and supports step marks with labels, normal or inverted track fill, value labels, sm, md and lg sizes, and accessible label callbacks. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field, labels its thumbs with the field label, and reports changes to it.",
       "dependencies": [
-        "@cyclone-ui/helpers@0.3.14",
+        "@cyclone-ui/helpers@0.3.15",
         "@tamagui/core@^3.0.2",
         "@tamagui/slider@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1",
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/form@0.9.14"
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/form@0.9.15"
       ],
       "files": [
         {
@@ -3541,6 +3541,11 @@
           "target": "components/slider/dist/index.cjs"
         },
         {
+          "path": "components/slider/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/slider/node_modules/react/index.js"
+        },
+        {
           "path": "components/slider/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/slider/node_modules/react-dom/index.js"
@@ -3549,11 +3554,6 @@
           "path": "components/slider/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/slider/node_modules/react-native/index.js"
-        },
-        {
-          "path": "components/slider/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/slider/node_modules/react/index.js"
         }
       ]
     },
@@ -3589,14 +3589,14 @@
           "target": "components/spinner/src/index.ts"
         },
         {
-          "path": "components/spinner/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/spinner/node_modules/react/index.js"
-        },
-        {
           "path": "components/spinner/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/spinner/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/spinner/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/spinner/node_modules/react/index.js"
         },
         {
           "path": "components/spinner/node_modules/react-dom/index.js",
@@ -3611,9 +3611,9 @@
       "title": "@cyclone-ui/stepper",
       "description": "A multi-step wizard built on Tamagui Tabs with a vertical header list that marks completed and current steps with check icons, plus optional step numbers. Compound parts are Stepper.Header.Item, Stepper.Content.Item, Stepper.NextButton and Stepper.PreviousButton, and it tracks which steps have been visited. Use it for guided, ordered flows.",
       "dependencies": [
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/next-button@0.5.14",
-        "@cyclone-ui/previous-button@0.5.14",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/next-button@0.5.15",
+        "@cyclone-ui/previous-button@0.5.15",
         "@tamagui/animate-presence@^3.0.2",
         "@tamagui/button@^3.0.2",
         "@tamagui/core@^3.0.2",
@@ -3622,7 +3622,7 @@
         "@tamagui/helpers@^3.0.2",
         "@tamagui/helpers-tamagui@^3.0.2",
         "@tamagui/linear-gradient@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/react-native-types@^3.0.2",
         "@tamagui/shapes@^3.0.2",
         "@tamagui/stacks@^3.0.2",
@@ -3655,14 +3655,14 @@
           "target": "components/stepper/dist/index.cjs"
         },
         {
-          "path": "components/stepper/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "components/stepper/node_modules/react-dom/index.js"
-        },
-        {
           "path": "components/stepper/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/stepper/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/stepper/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "components/stepper/node_modules/react-dom/index.js"
         },
         {
           "path": "components/stepper/node_modules/react/index.js",
@@ -3685,24 +3685,19 @@
         "@tamagui/stacks@^3.0.2",
         "@tamagui/switch@^3.0.2",
         "@tamagui/switch-headless@^3.0.2",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/themeable-icon@0.6.14",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/themeable-icon@0.6.15",
         "@tamagui/react-native-types@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/form@0.9.14",
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/form@0.9.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1"
       ],
       "files": [
-        {
-          "path": "components/switch/src/index.ts",
-          "type": "registry:file",
-          "target": "components/switch/src/index.ts"
-        },
         {
           "path": "components/switch/dist/index.mjs",
           "type": "registry:file",
@@ -3714,14 +3709,19 @@
           "target": "components/switch/dist/index.cjs"
         },
         {
-          "path": "components/switch/node_modules/react-native/index.js",
+          "path": "components/switch/src/index.ts",
           "type": "registry:file",
-          "target": "components/switch/node_modules/react-native/index.js"
+          "target": "components/switch/src/index.ts"
         },
         {
           "path": "components/switch/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/switch/node_modules/react/index.js"
+        },
+        {
+          "path": "components/switch/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/switch/node_modules/react-native/index.js"
         },
         {
           "path": "components/switch/node_modules/react-dom/index.js",
@@ -3736,7 +3736,7 @@
       "title": "@cyclone-ui/table",
       "description": "A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer parts that render semantic table elements. Table-level props set cell width and height, fixed or content-based sizing, separate alignment for header cells and body cells, and the border color. Use it to show tabular data in rows and columns.",
       "dependencies": [
-        "@cyclone-ui/heading-text@0.5.14",
+        "@cyclone-ui/heading-text@0.5.15",
         "@tamagui/animate-presence@^3.0.2",
         "@tamagui/core@^3.0.2",
         "@tamagui/helpers@^3.0.2",
@@ -3773,14 +3773,14 @@
           "target": "components/table/dist/index.cjs"
         },
         {
-          "path": "components/table/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/table/node_modules/react/index.js"
-        },
-        {
           "path": "components/table/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/table/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/table/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/table/node_modules/react/index.js"
         },
         {
           "path": "components/table/node_modules/react-dom/index.js",
@@ -3795,9 +3795,9 @@
       "title": "@cyclone-ui/table-of-contents",
       "description": "A page navigation list built from an array of heading items, each with a title, a hash URL and a depth. On web it highlights the current section as the user scrolls and draws an indented rail showing the active heading path, and its motion respects reduced motion. Use it beside long documents.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/stacks@^3.0.2",
         "@tamagui/text@^3.0.2"
       ],
@@ -3860,12 +3860,12 @@
         "@tamagui/use-controllable-state@^3.0.2",
         "@tamagui/web@^3.0.2",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/helpers@0.3.14",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/helpers@0.3.15",
         "@tamagui/react-native-types@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -3888,14 +3888,14 @@
           "target": "components/tabs/dist/index.cjs"
         },
         {
-          "path": "components/tabs/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/tabs/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/tabs/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/tabs/node_modules/react/index.js"
+        },
+        {
+          "path": "components/tabs/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/tabs/node_modules/react-native/index.js"
         },
         {
           "path": "components/tabs/node_modules/react-dom/index.js",
@@ -3910,8 +3910,8 @@
       "title": "@cyclone-ui/tag",
       "description": "A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary and secondary variants, outlined, rounded, circular and pressable styles, and sizes. A removable tag has a remove button and an animated exit, with onBeforeRemove and onAfterRemove callbacks.",
       "dependencies": [
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/animate-presence@^3.0.2",
         "@tamagui/core@^3.0.2",
         "@tamagui/font-size@^3.0.2",
@@ -3966,9 +3966,9 @@
       "title": "@cyclone-ui/tag-picker",
       "description": "A TagPicker input that turns typed text into removable tags. Enter adds a trimmed, unique tag, Backspace removes the last tag, and each tag has an accessible remove button. It can be controlled or uncontrolled (value, defaultValue, onChange) and supports size, variant, tagVariant and disabled props, plus validation styling. The package also exports tag list helpers. Wrapped in a Field, it connects to the form, taking its tags, name, size, disabled and focus state from the field. Use it for free-form keyword or label entry.",
       "dependencies": [
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/input@0.6.14",
-        "@cyclone-ui/tag@0.0.9",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/input@0.6.15",
+        "@cyclone-ui/tag@0.0.10",
         "@tamagui/animate-presence@^3.0.2",
         "@tamagui/core@^3.0.2",
         "@tamagui/stacks@^3.0.2"
@@ -3978,8 +3978,8 @@
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1",
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/form@0.9.14"
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/form@0.9.15"
       ],
       "files": [
         {
@@ -4003,14 +4003,14 @@
           "target": "components/tag-picker/node_modules/react-native/index.js"
         },
         {
-          "path": "components/tag-picker/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/tag-picker/node_modules/react/index.js"
-        },
-        {
           "path": "components/tag-picker/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/tag-picker/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/tag-picker/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/tag-picker/node_modules/react/index.js"
         }
       ]
     },
@@ -4020,17 +4020,17 @@
       "title": "@cyclone-ui/text-area",
       "description": "A multiline text input that renders a textarea with 3 rows by default and uses the same tokens as the Cyclone UI Input. It has default, floating and underline variants, sm, md and lg sizes, and focus and disabled states, and its border reflects field validation messages. Wrapped in a Field, it connects to the form: it takes its name, value, size, disabled and focus state from the field and floats the field label by default.",
       "dependencies": [
-        "@cyclone-ui/input@0.6.14",
+        "@cyclone-ui/input@0.6.15",
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/helpers@0.3.14"
+        "@cyclone-ui/helpers@0.3.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
         "react-native@^0.87.1",
-        "@cyclone-ui/field@0.5.14",
-        "@cyclone-ui/form@0.9.14"
+        "@cyclone-ui/field@0.5.15",
+        "@cyclone-ui/form@0.9.15"
       ],
       "files": [
         {
@@ -4049,14 +4049,14 @@
           "target": "components/text-area/dist/index.cjs"
         },
         {
-          "path": "components/text-area/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/text-area/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/text-area/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/text-area/node_modules/react/index.js"
+        },
+        {
+          "path": "components/text-area/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/text-area/node_modules/react-native/index.js"
         },
         {
           "path": "components/text-area/node_modules/react-dom/index.js",
@@ -4074,7 +4074,7 @@
         "@tamagui/core@^3.0.2",
         "@tamagui/helpers-tamagui@^3.0.2",
         "@tamagui/linear-gradient@^3.0.2",
-        "@cyclone-ui/helpers@0.3.14"
+        "@cyclone-ui/helpers@0.3.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -4104,14 +4104,14 @@
           "target": "components/themeable-gradient/node_modules/react/index.js"
         },
         {
-          "path": "components/themeable-gradient/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "components/themeable-gradient/node_modules/react-native/index.js"
-        },
-        {
           "path": "components/themeable-gradient/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/themeable-gradient/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/themeable-gradient/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "components/themeable-gradient/node_modules/react-native/index.js"
         }
       ]
     },
@@ -4127,11 +4127,11 @@
         "@tamagui/helpers@^3.0.2",
         "@tamagui/helpers-icon@^3.0.2",
         "@tamagui/helpers-tamagui@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/web@^3.0.2",
         "react-native-svg@^15.15.5",
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/vectors@0.5.14"
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/vectors@0.5.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -4161,14 +4161,14 @@
           "target": "components/themeable-icon/node_modules/react-native/index.js"
         },
         {
-          "path": "components/themeable-icon/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/themeable-icon/node_modules/react/index.js"
-        },
-        {
           "path": "components/themeable-icon/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/themeable-icon/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/themeable-icon/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/themeable-icon/node_modules/react/index.js"
         }
       ]
     },
@@ -4181,9 +4181,9 @@
         "@tamagui/core@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/icons@0.0.11",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -4206,14 +4206,14 @@
           "target": "components/timeline/dist/index.cjs"
         },
         {
-          "path": "components/timeline/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/timeline/node_modules/react/index.js"
-        },
-        {
           "path": "components/timeline/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/timeline/node_modules/react-native/index.js"
+        },
+        {
+          "path": "components/timeline/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/timeline/node_modules/react/index.js"
         },
         {
           "path": "components/timeline/node_modules/react-dom/index.js",
@@ -4228,11 +4228,11 @@
       "title": "@cyclone-ui/toggle",
       "description": "A clickable toggle component that is exists in either an \"on\" or \"off\" state with various styles and sizes.",
       "dependencies": [
-        "@cyclone-ui/helpers@0.3.14",
+        "@cyclone-ui/helpers@0.3.15",
         "@tamagui/core@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -4255,14 +4255,14 @@
           "target": "components/toggle/dist/index.cjs"
         },
         {
-          "path": "components/toggle/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/toggle/node_modules/react/index.js"
-        },
-        {
           "path": "components/toggle/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/toggle/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/toggle/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/toggle/node_modules/react/index.js"
         },
         {
           "path": "components/toggle/node_modules/react-native/index.js",
@@ -4277,12 +4277,12 @@
       "title": "@cyclone-ui/toggle-group",
       "description": "A clickable group of toggle components that exists in either an \"on\" or \"off\" state with various styles and sizes.",
       "dependencies": [
-        "@cyclone-ui/helpers@0.3.14",
-        "@cyclone-ui/toggle@0.0.4",
+        "@cyclone-ui/helpers@0.3.15",
+        "@cyclone-ui/toggle@0.0.5",
         "@tamagui/core@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -4305,9 +4305,9 @@
           "target": "components/toggle-group/dist/index.cjs"
         },
         {
-          "path": "components/toggle-group/node_modules/react/index.js",
+          "path": "components/toggle-group/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/toggle-group/node_modules/react/index.js"
+          "target": "components/toggle-group/node_modules/react-native/index.js"
         },
         {
           "path": "components/toggle-group/node_modules/react-dom/index.js",
@@ -4315,9 +4315,9 @@
           "target": "components/toggle-group/node_modules/react-dom/index.js"
         },
         {
-          "path": "components/toggle-group/node_modules/react-native/index.js",
+          "path": "components/toggle-group/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "components/toggle-group/node_modules/react-native/index.js"
+          "target": "components/toggle-group/node_modules/react/index.js"
         }
       ]
     },
@@ -4335,8 +4335,8 @@
         "@tamagui/tooltip@^3.0.2"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/button@0.6.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/button@0.6.15",
         "@storybook/react-vite@^10.6.1",
         "react@^19.3.0",
         "react-dom@^19.3.0",
@@ -4381,12 +4381,12 @@
       "title": "@cyclone-ui/type-table",
       "description": "A documentation table that lists properties with their types. Each row expands to show the description, default, parameters and return value, and can link to a type description. Required and deprecated items are marked. Rows can be deep-linked through the URL hash.",
       "dependencies": [
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/collapsible@0.3.10",
-        "@cyclone-ui/container@0.6.14",
-        "@cyclone-ui/heading-text@0.5.14",
-        "@cyclone-ui/inline-code-text@0.5.13",
-        "@cyclone-ui/link@0.5.14",
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/collapsible@0.3.11",
+        "@cyclone-ui/container@0.6.15",
+        "@cyclone-ui/heading-text@0.5.15",
+        "@cyclone-ui/inline-code-text@0.5.14",
+        "@cyclone-ui/link@0.5.15",
         "@tamagui/core@^3.0.2"
       ],
       "devDependencies": [
@@ -4418,14 +4418,14 @@
           "target": "components/type-table/node_modules/react-native/index.js"
         },
         {
-          "path": "components/type-table/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/type-table/node_modules/react/index.js"
-        },
-        {
           "path": "components/type-table/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/type-table/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/type-table/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/type-table/node_modules/react/index.js"
         },
         {
           "path": "components/type-table/node_modules/@vitejs/plugin-react-swc/index.js",
@@ -4447,10 +4447,10 @@
       "dependencies": [
         "@stryke/types@^0.12.44",
         "@tamagui/core@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "@tamagui/stacks@^3.0.2",
-        "@cyclone-ui/body-text@0.5.14",
-        "@cyclone-ui/themeable-icon@0.6.14"
+        "@cyclone-ui/body-text@0.5.15",
+        "@cyclone-ui/themeable-icon@0.6.15"
       ],
       "devDependencies": [
         "@storybook/react-vite@^10.6.1",
@@ -4475,11 +4475,6 @@
           "target": "components/validation-text/dist/index.cjs"
         },
         {
-          "path": "components/validation-text/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "components/validation-text/node_modules/react/index.js"
-        },
-        {
           "path": "components/validation-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/validation-text/node_modules/react-native/index.js"
@@ -4488,6 +4483,11 @@
           "path": "components/validation-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "components/validation-text/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "components/validation-text/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "components/validation-text/node_modules/react/index.js"
         }
       ]
     },
@@ -4497,11 +4497,11 @@
       "title": "@cyclone-ui/vectors",
       "description": "A set of custom themed SVG graphics for Tamagui, including status circles (alert, check, error, info, discovery), arrows in four directions, check, accordion toggle and binary on/off indicators, background patterns (noise, checkerboard, diagonal), a PDF icon and Storm logos. Several have state props such as isExpanded, isComplete or state.",
       "dependencies": [
-        "@cyclone-ui/helpers@0.3.14",
+        "@cyclone-ui/helpers@0.3.15",
         "@tamagui/core@^3.0.2",
         "@tamagui/helpers-icon@^3.0.2",
         "@tamagui/helpers-tamagui@^3.0.2",
-        "@cyclone-ui/icons@0.0.10",
+        "@cyclone-ui/icons@0.0.11",
         "motion@^11.18.2"
       ],
       "devDependencies": [
@@ -4518,16 +4518,6 @@
           "target": "components/vectors/src/index.ts"
         },
         {
-          "path": "components/vectors/dist/index.mjs",
-          "type": "registry:file",
-          "target": "components/vectors/dist/index.mjs"
-        },
-        {
-          "path": "components/vectors/dist/index.cjs",
-          "type": "registry:file",
-          "target": "components/vectors/dist/index.cjs"
-        },
-        {
           "path": "components/vectors/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "components/vectors/node_modules/react-native/index.js"
@@ -4541,6 +4531,16 @@
           "path": "components/vectors/node_modules/react/index.js",
           "type": "registry:file",
           "target": "components/vectors/node_modules/react/index.js"
+        },
+        {
+          "path": "components/vectors/dist/index.mjs",
+          "type": "registry:file",
+          "target": "components/vectors/dist/index.mjs"
+        },
+        {
+          "path": "components/vectors/dist/index.cjs",
+          "type": "registry:file",
+          "target": "components/vectors/dist/index.cjs"
         }
       ]
     },
@@ -4575,9 +4575,9 @@
           "target": "components/visually-hidden/dist/index.cjs"
         },
         {
-          "path": "components/visually-hidden/node_modules/react-native/index.js",
+          "path": "components/visually-hidden/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "components/visually-hidden/node_modules/react-native/index.js"
+          "target": "components/visually-hidden/node_modules/react-dom/index.js"
         },
         {
           "path": "components/visually-hidden/node_modules/react/index.js",
@@ -4585,9 +4585,9 @@
           "target": "components/visually-hidden/node_modules/react/index.js"
         },
         {
-          "path": "components/visually-hidden/node_modules/react-dom/index.js",
+          "path": "components/visually-hidden/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "components/visually-hidden/node_modules/react-dom/index.js"
+          "target": "components/visually-hidden/node_modules/react-native/index.js"
         }
       ]
     }

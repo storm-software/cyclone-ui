@@ -200,13 +200,13 @@ const BreadcrumbSeparator = () => {
   const { variant } = BreadcrumbContext.useStyledContext();
 
   if (variant === "chevron") {
-    return <CaretRight color="subtle" size="2xl" weight="bold" />;
+    return <CaretRight color="outline" size="2xl" weight="bold" />;
   } else if (variant === "double") {
-    return <CaretDoubleRight color="subtle" size="2xl" />;
+    return <CaretDoubleRight color="outline" size="2xl" />;
   } else if (variant === "slash") {
     return (
       <SizableText
-        color="subtle"
+        color="outline"
         fontFamily="body-sm"
         fontSize="sm"
         fontWeight="bold">

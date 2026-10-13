@@ -62,7 +62,7 @@ const TextAreaFrame = styled(InputValue, {
   backgroundColor: "surface",
   color: "primary",
   borderWidth: 1,
-  borderColor: "hairline hover:primaryHovered focus-visible:primaryActive",
+  borderColor: "outline hover:outlineHovered focus-visible:primaryActive",
   borderRadius: "control",
   boxShadow: "none focus-visible:ringOffset",
   outlineWidth: 0,
@@ -101,7 +101,7 @@ const TextAreaFrame = styled(InputValue, {
         backgroundColor: "transparent",
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "hairline hover:primaryHovered focus-visible:primary",
+        borderColor: "outline hover:outlineHovered focus-visible:primary",
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         boxShadow: "none focus-visible:none"
@@ -207,10 +207,8 @@ export const TextArea = createStyledHOC(
     const [focused, setActive] = useState(false);
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
-    const idleColor = hasValidationMessage ? "primary" : "hairline";
-    const focusColor = hasValidationMessage
-      ? "primaryActive"
-      : "hairlineActive";
+    const idleColor = hasValidationMessage ? "primary" : "outline";
+    const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
     const isFocused = focusedProp ?? focused;
     const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "primaryDisabled" : isFocused ? focusColor : "primaryHovered"} focus-visible:${focusColor} group-hover/field:${disabled ? "primaryDisabled" : "primaryHovered"}`;
     const handleFocus = useCallback(
@@ -246,8 +244,7 @@ export const TextArea = createStyledHOC(
           {
             ...(style as object),
             "--placeholderColor":
-              theme[placeholderTextColor as string]?.variable ||
-              placeholderTextColor
+              theme[placeholderTextColor]?.variable || placeholderTextColor
           } as typeof style
         }
         focused={isFocused}

@@ -17,7 +17,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description: "Near-black neutral.",
         primitive: true,
         key: "{color.black}",
@@ -159,7 +159,7 @@ module.exports = {
         key: "{color.neutral.5}",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#ebebed",
+        $value: "#f4f4f6",
         $description: "Pale gray.",
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
@@ -170,9 +170,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.9215686274509803, 0.9215686274509803, 0.9294117647058824,
+              0.9568627450980393, 0.9568627450980393, 0.9647058823529412,
             ],
-            hex: "#ebebed",
+            hex: "#f4f4f6",
           },
           $description: "Pale gray.",
           key: "{color.neutral.5}",
@@ -187,6 +187,36 @@ module.exports = {
       },
       6: {
         key: "{color.neutral.6}",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#dcdce0",
+        $description: "Pale gray.",
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
+        isSource: true,
+        original: {
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.8627450980392157, 0.8627450980392157, 0.8784313725490196,
+            ],
+            hex: "#dcdce0",
+          },
+          $description: "Pale gray.",
+          key: "{color.neutral.6}",
+        },
+        name: "ColorNeutral6",
+        attributes: {
+          category: "color",
+          type: "neutral",
+          item: "6",
+        },
+        path: ["color", "neutral", "6"],
+      },
+      7: {
+        key: "{color.neutral.7}",
         $type: "color",
         colorSpace: "display-p3",
         $value: "#c3c3ca",
@@ -205,18 +235,18 @@ module.exports = {
             hex: "#c3c3ca",
           },
           $description: "Light-medium gray.",
-          key: "{color.neutral.6}",
+          key: "{color.neutral.7}",
         },
-        name: "ColorNeutral6",
+        name: "ColorNeutral7",
         attributes: {
           category: "color",
           type: "neutral",
-          item: "6",
+          item: "7",
         },
-        path: ["color", "neutral", "6"],
+        path: ["color", "neutral", "7"],
       },
-      7: {
-        key: "{color.neutral.7}",
+      8: {
+        key: "{color.neutral.8}",
         $type: "color",
         colorSpace: "display-p3",
         $value: "#9a9fa7",
@@ -235,18 +265,18 @@ module.exports = {
             hex: "#9a9fa7",
           },
           $description: "Medium gray.",
-          key: "{color.neutral.7}",
+          key: "{color.neutral.8}",
         },
-        name: "ColorNeutral7",
+        name: "ColorNeutral8",
         attributes: {
           category: "color",
           type: "neutral",
-          item: "7",
+          item: "8",
         },
-        path: ["color", "neutral", "7"],
+        path: ["color", "neutral", "8"],
       },
-      8: {
-        key: "{color.neutral.8}",
+      9: {
+        key: "{color.neutral.9}",
         $type: "color",
         colorSpace: "display-p3",
         $value: "#737383",
@@ -265,18 +295,18 @@ module.exports = {
             hex: "#737383",
           },
           $description: "Dark medium gray.",
-          key: "{color.neutral.8}",
+          key: "{color.neutral.9}",
         },
-        name: "ColorNeutral8",
+        name: "ColorNeutral9",
         attributes: {
           category: "color",
           type: "neutral",
-          item: "8",
+          item: "9",
         },
-        path: ["color", "neutral", "8"],
+        path: ["color", "neutral", "9"],
       },
-      9: {
-        key: "{color.neutral.9}",
+      10: {
+        key: "{color.neutral.10}",
         $type: "color",
         colorSpace: "display-p3",
         $value: "#3f424a",
@@ -295,18 +325,18 @@ module.exports = {
             hex: "#3f424a",
           },
           $description: "Deep gray.",
-          key: "{color.neutral.9}",
+          key: "{color.neutral.10}",
         },
-        name: "ColorNeutral9",
+        name: "ColorNeutral10",
         attributes: {
           category: "color",
           type: "neutral",
-          item: "9",
+          item: "10",
         },
-        path: ["color", "neutral", "9"],
+        path: ["color", "neutral", "10"],
       },
-      10: {
-        key: "{color.neutral.10}",
+      11: {
+        key: "{color.neutral.11}",
         $type: "color",
         colorSpace: "display-p3",
         $value: "#2b2b33",
@@ -323,36 +353,6 @@ module.exports = {
             hex: "#2b2b33",
           },
           $description: "Charcoal gray.",
-          key: "{color.neutral.10}",
-        },
-        name: "ColorNeutral10",
-        attributes: {
-          category: "color",
-          type: "neutral",
-          item: "10",
-        },
-        path: ["color", "neutral", "10"],
-      },
-      11: {
-        key: "{color.neutral.11}",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#08080a",
-        $description: "Dark charcoal gray.",
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
-        isSource: true,
-        original: {
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [
-              0.03137254901960784, 0.03137254901960784, 0.0392156862745098,
-            ],
-            hex: "#08080a",
-          },
-          $description: "Dark charcoal gray.",
           key: "{color.neutral.11}",
         },
         name: "ColorNeutral11",
@@ -365,6 +365,66 @@ module.exports = {
       },
       12: {
         key: "{color.neutral.12}",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#0b0b0e",
+        $description: "Charcoal gray.",
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
+        isSource: true,
+        original: {
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.043137254901960784, 0.043137254901960784, 0.054901960784313725,
+            ],
+            hex: "#0b0b0e",
+          },
+          $description: "Charcoal gray.",
+          key: "{color.neutral.12}",
+        },
+        name: "ColorNeutral12",
+        attributes: {
+          category: "color",
+          type: "neutral",
+          item: "12",
+        },
+        path: ["color", "neutral", "12"],
+      },
+      13: {
+        key: "{color.neutral.13}",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#050506",
+        $description: "Dark charcoal gray.",
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/primitives/tokens.json",
+        isSource: true,
+        original: {
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.0196078431372549, 0.0196078431372549, 0.023529411764705882,
+            ],
+            hex: "#050506",
+          },
+          $description: "Dark charcoal gray.",
+          key: "{color.neutral.13}",
+        },
+        name: "ColorNeutral13",
+        attributes: {
+          category: "color",
+          type: "neutral",
+          item: "13",
+        },
+        path: ["color", "neutral", "13"],
+      },
+      14: {
+        key: "{color.neutral.14}",
         $type: "color",
         colorSpace: "display-p3",
         $value: "#000000",
@@ -381,18 +441,18 @@ module.exports = {
             hex: "#000000",
           },
           $description: "Deep graphite gray.",
-          key: "{color.neutral.12}",
+          key: "{color.neutral.14}",
         },
-        name: "ColorNeutral12",
+        name: "ColorNeutral14",
         attributes: {
           category: "color",
           type: "neutral",
-          item: "12",
+          item: "14",
         },
-        path: ["color", "neutral", "12"],
+        path: ["color", "neutral", "14"],
       },
-      13: {
-        key: "{color.neutral.13}",
+      15: {
+        key: "{color.neutral.15}",
         $type: "color",
         colorSpace: "display-p3",
         $value: "#000000",
@@ -403,20 +463,20 @@ module.exports = {
         original: {
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.neutral.12}",
+          $value: "{color.neutral.14}",
           $description: "Near-black graphite.",
-          key: "{color.neutral.13}",
+          key: "{color.neutral.15}",
         },
-        name: "ColorNeutral13",
+        name: "ColorNeutral15",
         attributes: {
           category: "color",
           type: "neutral",
-          item: "13",
+          item: "15",
         },
-        path: ["color", "neutral", "13"],
+        path: ["color", "neutral", "15"],
       },
-      14: {
-        key: "{color.neutral.14}",
+      16: {
+        key: "{color.neutral.16}",
         $type: "color",
         colorSpace: "display-p3",
         $value: "#000000",
@@ -427,17 +487,17 @@ module.exports = {
         original: {
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.neutral.12}",
+          $value: "{color.neutral.14}",
           $description: "Almost black gray.",
-          key: "{color.neutral.14}",
+          key: "{color.neutral.16}",
         },
-        name: "ColorNeutral14",
+        name: "ColorNeutral16",
         attributes: {
           category: "color",
           type: "neutral",
-          item: "14",
+          item: "16",
         },
-        path: ["color", "neutral", "14"],
+        path: ["color", "neutral", "16"],
       },
     },
     red: {
@@ -1471,7 +1531,7 @@ module.exports = {
         original: {
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.neutral.12}",
+          $value: "{color.neutral.14}",
           $description: "Dark emerald green.",
           key: "{color.green.9}",
         },
@@ -2282,7 +2342,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.2}",
+        $value: "{color.neutral.3}",
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
         group: "foreground",
@@ -2299,7 +2359,7 @@ module.exports = {
       key: "{color.ink}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#ebebed",
+      $value: "#dcdce0",
       $description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       group: "foreground",
@@ -2309,7 +2369,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.5}",
+        $value: "{color.neutral.6}",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
         group: "foreground",
@@ -2336,7 +2396,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.7}",
+        $value: "{color.neutral.8}",
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
         group: "foreground",
@@ -2353,7 +2413,7 @@ module.exports = {
       key: "{color.subtlest}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#3f424a",
+      $value: "#737383",
       $description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       group: "foreground",
@@ -2376,14 +2436,14 @@ module.exports = {
       },
       path: ["color", "subtlest"],
     },
-    hairline: {
-      key: "{color.hairline}",
+    outline: {
+      key: "{color.outline}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#2b2b33",
+      $value: "#3f424a",
       $description:
-        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      semantic: true,
+        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
+      group: "separator",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
       isSource: true,
@@ -2392,8 +2452,34 @@ module.exports = {
         colorSpace: "display-p3",
         $value: "{color.neutral.10}",
         $description:
-          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-        semantic: true,
+          "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
+        group: "separator",
+        key: "{color.outline}",
+      },
+      name: "ColorOutline",
+      attributes: {
+        category: "color",
+        type: "outline",
+      },
+      path: ["color", "outline"],
+    },
+    hairline: {
+      key: "{color.hairline}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#0b0b0e",
+      $description: "Low-contrast color for borders, dividers and separators.",
+      group: "separator",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.neutral.12}",
+        $description:
+          "Low-contrast color for borders, dividers and separators.",
+        group: "separator",
         key: "{color.hairline}",
       },
       name: "ColorHairline",
@@ -2444,7 +2530,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.14}",
+        $value: "{color.neutral.16}",
         $description:
           "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator.",
         group: "background",
@@ -2471,7 +2557,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.13}",
+        $value: "{color.neutral.15}",
         $description:
           "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree.",
         group: "background",
@@ -2498,7 +2584,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
         group: "background",
@@ -2515,7 +2601,7 @@ module.exports = {
       key: "{color.floating}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#08080a",
+      $value: "#050506",
       $description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
       group: "background",
@@ -2525,7 +2611,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.11}",
+        $value: "{color.neutral.13}",
         $description:
           "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
         group: "background",
@@ -2577,7 +2663,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#737383",
+        $value: "#9a9fa7",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
         semantic: true,
@@ -2621,7 +2707,7 @@ module.exports = {
           group: "base",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.neutral.12}",
+          $value: "{color.neutral.14}",
           $description:
             "Generated text and icon color on base primary backgrounds",
           semantic: true,
@@ -2819,7 +2905,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#9494a2",
+        $value: "#c2c5cb",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
         semantic: true,
@@ -2834,9 +2920,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.5803921568627451, 0.5803921568627451, 0.6352941176470588,
+              0.7607843137254902, 0.7725490196078432, 0.796078431372549,
             ],
-            hex: "#9494a2",
+            hex: "#c2c5cb",
           },
           $description:
             "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 13% brighter)",
@@ -2857,7 +2943,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#9494a2",
+        $value: "#c2c5cb",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter)",
         semantic: true,
@@ -2921,7 +3007,7 @@ module.exports = {
         group: "base",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#42424c",
+        $value: "#4e4e5a",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
@@ -2936,9 +3022,9 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.25882352941176473, 0.25882352941176473, 0.2980392156862745,
+              0.3058823529411765, 0.3058823529411765, 0.35294117647058826,
             ],
-            hex: "#42424c",
+            hex: "#4e4e5a",
           },
           $description:
             "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -3321,7 +3407,7 @@ module.exports = {
           group: "danger",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.neutral.12}",
+          $value: "{color.neutral.14}",
           $description:
             "Generated low-emphasis danger background for the dark theme (inactive, 20% darker)",
           semantic: true,
@@ -3425,7 +3511,7 @@ module.exports = {
           group: "warning",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.neutral.12}",
+          $value: "{color.neutral.14}",
           $description:
             "Generated text and icon color on warning primary backgrounds",
           semantic: true,
@@ -4993,7 +5079,7 @@ module.exports = {
           group: "success",
           $type: "color",
           colorSpace: "display-p3",
-          $value: "{color.neutral.12}",
+          $value: "{color.neutral.14}",
           $description:
             "Generated low-emphasis success background for the dark theme (inactive, 20% darker)",
           semantic: true,
@@ -5966,7 +6052,7 @@ module.exports = {
       key: "{color.emphasis-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#b0b0b0",
+      $value: "#a6a6a6",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)",
       group: "foreground",
@@ -5976,7 +6062,13 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.base.primary-hovered}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.6509803921568628, 0.6509803921568628, 0.6509803921568628,
+          ],
+          hex: "#a6a6a6",
+        },
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)",
         group: "foreground",
@@ -6047,7 +6139,7 @@ module.exports = {
       key: "{color.emphasis-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#7a7a89",
+      $value: "#767685",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
       group: "foreground",
@@ -6057,7 +6149,13 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.base.primary-disabled}",
+        $value: {
+          colorSpace: "srgb",
+          components: [
+            0.4627450980392157, 0.4627450980392157, 0.5215686274509804,
+          ],
+          hex: "#767685",
+        },
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
         group: "foreground",
@@ -6074,7 +6172,7 @@ module.exports = {
       key: "{color.ink-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#767684",
+      $value: "#696976",
       $description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% darker)",
       group: "foreground",
@@ -6087,9 +6185,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.4627450980392157, 0.4627450980392157, 0.5176470588235295,
+            0.4117647058823529, 0.4117647058823529, 0.4627450980392157,
           ],
-          hex: "#767684",
+          hex: "#696976",
         },
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% darker)",
@@ -6161,7 +6259,7 @@ module.exports = {
       key: "{color.ink-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#676776",
+      $value: "#636370",
       $description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       group: "foreground",
@@ -6174,9 +6272,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.403921568627451, 0.403921568627451, 0.4627450980392157,
+            0.38823529411764707, 0.38823529411764707, 0.4392156862745098,
           ],
-          hex: "#676776",
+          hex: "#636370",
         },
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -6285,13 +6383,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.3058823529411765, 0.3058823529411765, 0.35294117647058826,
-          ],
-          hex: "#4e4e5a",
-        },
+        $value: "{color.base.secondary-disabled}",
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         group: "foreground",
@@ -6389,7 +6481,7 @@ module.exports = {
       key: "{color.subtlest-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#2f3138",
+      $value: "#42424c",
       $description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       group: "foreground",
@@ -6402,9 +6494,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.1843137254901961, 0.19215686274509805, 0.2196078431372549,
+            0.25882352941176473, 0.25882352941176473, 0.2980392156862745,
           ],
-          hex: "#2f3138",
+          hex: "#42424c",
         },
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
@@ -6424,7 +6516,7 @@ module.exports = {
       colorSpace: "display-p3",
       $value: "#000000",
       $description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 4% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 7% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6432,9 +6524,9 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
-          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 4% brighter)",
+          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 7% brighter)",
         group: "background",
         key: "{color.sunken-hovered}",
       },
@@ -6451,7 +6543,7 @@ module.exports = {
       colorSpace: "display-p3",
       $value: "#000000",
       $description:
-        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 4% brighter)",
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 7% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6459,9 +6551,9 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
-          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 4% brighter)",
+          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 7% brighter)",
         group: "background",
         key: "{color.sunken-active}",
       },
@@ -6486,7 +6578,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
           "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% darker)",
         group: "background",
@@ -6513,7 +6605,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
           "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
         group: "background",
@@ -6532,7 +6624,7 @@ module.exports = {
       colorSpace: "display-p3",
       $value: "#000000",
       $description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 4% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 7% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6540,9 +6632,9 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
-          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 4% brighter)",
+          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 7% brighter)",
         group: "background",
         key: "{color.canvas-hovered}",
       },
@@ -6559,7 +6651,7 @@ module.exports = {
       colorSpace: "display-p3",
       $value: "#000000",
       $description:
-        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 4% brighter)",
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 7% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6567,9 +6659,9 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
-          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 4% brighter)",
+          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 7% brighter)",
         group: "background",
         key: "{color.canvas-active}",
       },
@@ -6594,7 +6686,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
           "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% darker)",
         group: "background",
@@ -6621,7 +6713,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
           "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
         group: "background",
@@ -6640,7 +6732,7 @@ module.exports = {
       colorSpace: "display-p3",
       $value: "#000000",
       $description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 4% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 7% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6648,9 +6740,9 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
-          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 4% brighter)",
+          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 7% brighter)",
         group: "background",
         key: "{color.surface-hovered}",
       },
@@ -6667,7 +6759,7 @@ module.exports = {
       colorSpace: "display-p3",
       $value: "#000000",
       $description:
-        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 4% brighter)",
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 7% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6675,9 +6767,9 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
-          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 4% brighter)",
+          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 7% brighter)",
         group: "background",
         key: "{color.surface-active}",
       },
@@ -6702,7 +6794,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
           "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% darker)",
         group: "background",
@@ -6752,9 +6844,9 @@ module.exports = {
       key: "{color.elevated-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#010101",
+      $value: "#040506",
       $description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 4% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 7% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6765,12 +6857,12 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.00392156862745098, 0.00392156862745098, 0.00392156862745098,
+            0.01568627450980392, 0.0196078431372549, 0.023529411764705882,
           ],
-          hex: "#010101",
+          hex: "#040506",
         },
         $description:
-          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 4% brighter)",
+          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 7% brighter)",
         group: "background",
         key: "{color.elevated-hovered}",
       },
@@ -6785,9 +6877,9 @@ module.exports = {
       key: "{color.elevated-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#010101",
+      $value: "#040506",
       $description:
-        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 4% brighter)",
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 7% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6797,7 +6889,7 @@ module.exports = {
         colorSpace: "display-p3",
         $value: "{color.elevated-hovered}",
         $description:
-          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 4% brighter)",
+          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 7% brighter)",
         group: "background",
         key: "{color.elevated-active}",
       },
@@ -6822,7 +6914,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% darker)",
         group: "background",
@@ -6874,7 +6966,7 @@ module.exports = {
       colorSpace: "display-p3",
       $value: "#0b0c0e",
       $description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 4% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 7% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6884,7 +6976,7 @@ module.exports = {
         colorSpace: "display-p3",
         $value: "{color.elevated-disabled}",
         $description:
-          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 4% brighter)",
+          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 7% brighter)",
         group: "background",
         key: "{color.floating-hovered}",
       },
@@ -6901,7 +6993,7 @@ module.exports = {
       colorSpace: "display-p3",
       $value: "#0b0c0e",
       $description:
-        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 4% brighter)",
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 7% brighter)",
       group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -6911,7 +7003,7 @@ module.exports = {
         colorSpace: "display-p3",
         $value: "{color.elevated-disabled}",
         $description:
-          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 4% brighter)",
+          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 7% brighter)",
         group: "background",
         key: "{color.floating-active}",
       },
@@ -6936,7 +7028,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.12}",
+        $value: "{color.neutral.14}",
         $description:
           "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% darker)",
         group: "background",
@@ -6953,7 +7045,7 @@ module.exports = {
       key: "{color.floating-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#121215",
+      $value: "#0f1013",
       $description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
       group: "background",
@@ -6966,9 +7058,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.07058823529411765, 0.07058823529411765, 0.08235294117647059,
+            0.058823529411764705, 0.06274509803921569, 0.07450980392156863,
           ],
-          hex: "#121215",
+          hex: "#0f1013",
         },
         $description:
           "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))",
@@ -6982,127 +7074,119 @@ module.exports = {
       },
       path: ["color", "floating-disabled"],
     },
-    "hairline-hovered": {
-      key: "{color.hairline-hovered}",
+    "outline-hovered": {
+      key: "{color.outline-hovered}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#ffffff",
       $description:
-        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
-      semantic: true,
+        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
+      group: "separator",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
       isSource: true,
-      group: "hairline",
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: "{color.neutral.1}",
         $description:
-          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
-        semantic: true,
-        group: "hairline",
-        key: "{color.hairline-hovered}",
+          "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)",
+        group: "separator",
+        key: "{color.outline-hovered}",
       },
-      name: "ColorHairlineHovered",
+      name: "ColorOutlineHovered",
       attributes: {
         category: "color",
-        type: "hairline-hovered",
+        type: "outline-hovered",
       },
-      path: ["color", "hairline-hovered"],
+      path: ["color", "outline-hovered"],
     },
-    "hairline-active": {
-      key: "{color.hairline-active}",
+    "outline-active": {
+      key: "{color.outline-active}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#ffffff",
       $description:
-        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
-      semantic: true,
+        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
+      group: "separator",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
       isSource: true,
-      group: "hairline",
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: "{color.neutral.1}",
         $description:
-          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
-        semantic: true,
-        group: "hairline",
-        key: "{color.hairline-active}",
+          "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)",
+        group: "separator",
+        key: "{color.outline-active}",
       },
-      name: "ColorHairlineActive",
+      name: "ColorOutlineActive",
       attributes: {
         category: "color",
-        type: "hairline-active",
+        type: "outline-active",
       },
-      path: ["color", "hairline-active"],
+      path: ["color", "outline-active"],
     },
-    "hairline-inactive": {
-      key: "{color.hairline-inactive}",
+    "outline-inactive": {
+      key: "{color.outline-inactive}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#808080",
       $description:
-        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
-      semantic: true,
+        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
+      group: "separator",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
       isSource: true,
-      group: "hairline",
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: "{color.base.primary-inactive}",
         $description:
-          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
-        semantic: true,
-        group: "hairline",
-        key: "{color.hairline-inactive}",
+          "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
+        group: "separator",
+        key: "{color.outline-inactive}",
       },
-      name: "ColorHairlineInactive",
+      name: "ColorOutlineInactive",
       attributes: {
         category: "color",
-        type: "hairline-inactive",
+        type: "outline-inactive",
       },
-      path: ["color", "hairline-inactive"],
+      path: ["color", "outline-inactive"],
     },
-    "hairline-disabled": {
-      key: "{color.hairline-disabled}",
+    "outline-disabled": {
+      key: "{color.outline-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#28282f",
+      $value: "#2f3138",
       $description:
-        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
+        "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      group: "separator",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
       isSource: true,
-      group: "hairline",
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
           components: [
-            0.1568627450980392, 0.1568627450980392, 0.1843137254901961,
+            0.1843137254901961, 0.19215686274509805, 0.2196078431372549,
           ],
-          hex: "#28282f",
+          hex: "#2f3138",
         },
         $description:
-          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        group: "hairline",
-        key: "{color.hairline-disabled}",
+          "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        group: "separator",
+        key: "{color.outline-disabled}",
       },
-      name: "ColorHairlineDisabled",
+      name: "ColorOutlineDisabled",
       attributes: {
         category: "color",
-        type: "hairline-disabled",
+        type: "outline-disabled",
       },
-      path: ["color", "hairline-disabled"],
+      path: ["color", "outline-disabled"],
     },
   },
   size: {
@@ -15148,7 +15232,7 @@ module.exports = {
     },
     "base-subtle": {
       key: "{ring.base-subtle}",
-      $description: "Generated base 1px hairline focus ring with no gap",
+      $description: "Generated base 1px outline focus ring with no gap",
       $type: "shadow",
       $value: [
         {
@@ -15173,7 +15257,7 @@ module.exports = {
       ],
       theme: "base",
       original: {
-        $description: "Generated base 1px hairline focus ring with no gap",
+        $description: "Generated base 1px outline focus ring with no gap",
         $type: "shadow",
         $value: [
           {
@@ -15464,7 +15548,7 @@ module.exports = {
     },
     "danger-subtle": {
       key: "{ring.danger-subtle}",
-      $description: "Generated danger 1px hairline focus ring with no gap",
+      $description: "Generated danger 1px outline focus ring with no gap",
       $type: "shadow",
       $value: [
         {
@@ -15489,7 +15573,7 @@ module.exports = {
       ],
       theme: "danger",
       original: {
-        $description: "Generated danger 1px hairline focus ring with no gap",
+        $description: "Generated danger 1px outline focus ring with no gap",
         $type: "shadow",
         $value: [
           {
@@ -15780,7 +15864,7 @@ module.exports = {
     },
     "warning-subtle": {
       key: "{ring.warning-subtle}",
-      $description: "Generated warning 1px hairline focus ring with no gap",
+      $description: "Generated warning 1px outline focus ring with no gap",
       $type: "shadow",
       $value: [
         {
@@ -15805,7 +15889,7 @@ module.exports = {
       ],
       theme: "warning",
       original: {
-        $description: "Generated warning 1px hairline focus ring with no gap",
+        $description: "Generated warning 1px outline focus ring with no gap",
         $type: "shadow",
         $value: [
           {
@@ -16096,7 +16180,7 @@ module.exports = {
     },
     "info-subtle": {
       key: "{ring.info-subtle}",
-      $description: "Generated info 1px hairline focus ring with no gap",
+      $description: "Generated info 1px outline focus ring with no gap",
       $type: "shadow",
       $value: [
         {
@@ -16121,7 +16205,7 @@ module.exports = {
       ],
       theme: "info",
       original: {
-        $description: "Generated info 1px hairline focus ring with no gap",
+        $description: "Generated info 1px outline focus ring with no gap",
         $type: "shadow",
         $value: [
           {
@@ -16412,7 +16496,7 @@ module.exports = {
     },
     "discovery-subtle": {
       key: "{ring.discovery-subtle}",
-      $description: "Generated discovery 1px hairline focus ring with no gap",
+      $description: "Generated discovery 1px outline focus ring with no gap",
       $type: "shadow",
       $value: [
         {
@@ -16437,7 +16521,7 @@ module.exports = {
       ],
       theme: "discovery",
       original: {
-        $description: "Generated discovery 1px hairline focus ring with no gap",
+        $description: "Generated discovery 1px outline focus ring with no gap",
         $type: "shadow",
         $value: [
           {
@@ -16728,7 +16812,7 @@ module.exports = {
     },
     "success-subtle": {
       key: "{ring.success-subtle}",
-      $description: "Generated success 1px hairline focus ring with no gap",
+      $description: "Generated success 1px outline focus ring with no gap",
       $type: "shadow",
       $value: [
         {
@@ -16753,7 +16837,7 @@ module.exports = {
       ],
       theme: "success",
       original: {
-        $description: "Generated success 1px hairline focus ring with no gap",
+        $description: "Generated success 1px outline focus ring with no gap",
         $type: "shadow",
         $value: [
           {

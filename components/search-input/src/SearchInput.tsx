@@ -309,9 +309,7 @@ const SuggestionsScrollButton = ({
         position="absolute"
         inset={0}
         colors={
-          isUp
-            ? ["elevated", "transparent"]
-            : ["transparent", "elevated"]
+          isUp ? ["elevated", "transparent"] : ["transparent", "elevated"]
         }
       />
     </View>
@@ -537,7 +535,7 @@ const SearchInputTextBox = createStyledHOC(
               placeholder={placeholder}
               value={value}
               onInput={handleInput}
-              onKeyDown={handleKeyDown as InputValueProps["onKeyDown"]}
+              onKeyDown={handleKeyDown}
             />
 
             {children}

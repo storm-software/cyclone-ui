@@ -65,6 +65,8 @@ const semanticColors = (prefix: string) => ({
     emphasis: color(`${prefix}-emphasis`),
     ink: color(`${prefix}-ink`),
     subtle: color(`${prefix}-subtle`),
+    subtlest: color(`${prefix}-subtlest`),
+    outline: color(`${prefix}-outline`),
     hairline: color(`${prefix}-hairline`),
     canvas: color(`${prefix}-canvas`),
     sunken: color(`${prefix}-sunken`),

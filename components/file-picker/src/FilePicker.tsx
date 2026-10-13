@@ -142,7 +142,7 @@ const FilePickerGroupFrame = styled(View, {
   borderStyle: "dashed",
   borderWidth: 2,
   borderRadius: "container",
-  borderColor: "hairline hover:primaryHovered",
+  borderColor: "outline hover:outlineHovered",
   backgroundColor: "surface hover:subtle",
   tabIndex: 0,
   variants: {
@@ -167,7 +167,7 @@ const FilePickerGroupFrame = styled(View, {
     },
     active: {
       true: {
-        borderColor: "hairline hover:hairlineHovered",
+        borderColor: "outlineActive hover:outlineHovered",
         backgroundColor: "subtle hover:subtle"
       }
     },
@@ -449,7 +449,7 @@ const FilePickerTrigger = createStyledHOC(
             size={getSized("9xl") * getFormSizeScale(size)}
             // `themed` icons resolve only a plain theme key; a conditional
             // value string falls through to the SVG as an invalid (black) fill.
-            color={disabled ? "primaryDisabled" : "hairline"}
+            color={disabled ? "primaryDisabled" : "outline"}
             transition="100ms"
             opacity="1 exit:0"
             scale="1 exit:0.5"
@@ -475,11 +475,9 @@ const FilePickerTriggerButton = createStyledHOC(
           justifyContent="center"
           paddingHorizontal={getSpaced(getFormSizeToken(size))}
           borderRightWidth={1}
-          borderColor={disabled ? "primaryDisabled" : "hairline"}
+          borderColor={disabled ? "primaryDisabled" : "outline"}
           backgroundColor={
-            disabled
-              ? "elevated"
-              : "elevated group-hover/file-picker:subtle"
+            disabled ? "elevated" : "elevated group-hover/file-picker:subtle"
           }
           transition="200ms">
           <FilePickerMetadataText
@@ -737,7 +735,7 @@ const FilePickerFile = ({
 
   return (
     <View
-      group={"file"}
+      group="file"
       flexDirection="column"
       transition="200ms"
       opacity="1 enter:0 exit:0"
@@ -747,7 +745,7 @@ const FilePickerFile = ({
       overflow="hidden"
       position="relative"
       borderRadius="card"
-      borderColor="hairline hover:hairlineHovered"
+      borderColor="outline hover:outlineHovered"
       borderWidth={1}
       boxShadow="none hover:ringOffset"
       onClick={event => event.stopPropagation()}
@@ -778,7 +776,7 @@ const FilePickerFile = ({
             href={uri}
             // Button types `download` as a boolean; the `<a>` attribute also
             // accepts the suggested file name.
-            {...({ download: name } as object)}
+            {...{ download: name }}
             variant="ghost"
             ghostOpacity={0.75}
             size={getSized("13xl") * scale}

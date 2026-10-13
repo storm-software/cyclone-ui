@@ -101,7 +101,7 @@ const TagPickerFrame = styled(XStack, {
   alignItems: "stretch",
   backgroundColor: "surface",
   borderWidth: 1,
-  borderColor: "hairline",
+  borderColor: "outline",
   outlineWidth: 0,
   outlineColor: "transparent",
   boxShadow: "none",
@@ -512,10 +512,8 @@ const TagPickerImpl = createStyledHOC(
     const active = focused || focusWithin;
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
-    const idleColor = hasValidationMessage ? "primary" : "hairline";
-    const focusColor = hasValidationMessage
-      ? "primaryActive"
-      : "hairlineActive";
+    const idleColor = hasValidationMessage ? "primary" : "outline";
+    const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
     const hoverColor = disabled
       ? "primaryDisabled"
       : active

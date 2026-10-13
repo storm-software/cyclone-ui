@@ -58,7 +58,7 @@ const ContainerFrame = styled(View, {
       primary: {
         backgroundColor: "primary",
         borderWidth: 1,
-        borderColor: "hairline"
+        borderColor: "outline"
       },
 
       secondary: {

@@ -18,6 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
   getFormFontScale,
@@ -26,8 +27,7 @@ import {
   getSized,
   getSpaced,
   useFieldHasValidationMessage,
-  useFormControl,
-  type FormControlSize
+  useFormControl
 } from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
 import type { ColorTokens, GetProps } from "@tamagui/core";
@@ -122,7 +122,7 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   variants: {
     disabled: {
       true: {
-        placeholderColor: "primaryDisabled",
+        placeholderColor: "outlineInactive",
         backgroundColor:
           "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled",
         userSelect: "none",
@@ -144,7 +144,7 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   boxShadow: "none press:ringOffset focus:ringOffset focus-visible:ringOffset",
   borderRadius: "control",
   borderWidth: 1,
-  borderColor: "hairline",
+  borderColor: "outline",
   paddingHorizontal: "3xl",
   paddingVertical: "2xl",
   alignItems: "center",
@@ -203,9 +203,7 @@ const RadioGroupItemContainer = createStyledHOC(
   ) => {
     const { size } = RadioGroupContext.useStyledContext();
     const hasValidationMessage = useFieldHasValidationMessage();
-    const focusColor = hasValidationMessage
-      ? "primaryActive"
-      : "hairlineActive";
+    const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
 
     return (
       <RadioGroupItemContainerFrame
@@ -344,7 +342,7 @@ const RadioGroupOption = ({
   return (
     <RadioGroupItemContainer
       {...item}
-      group={"item" as any}
+      group={"item"}
       onPress={handlePress}
       cursor="pointer"
       backgroundColor={
@@ -355,7 +353,7 @@ const RadioGroupOption = ({
           ? "primaryActive"
           : hasValidationMessage
             ? "primary"
-            : "hairline"
+            : "outline"
       }
       borderWidth={1}
       borderRadius="control">
@@ -449,7 +447,7 @@ const RadioGroupImpl = createStyledHOC(
       defaultValue = formControl?.defaultValue,
       size = formControl?.size ?? contextSize,
       onFocus = formControl?.onFocus,
-      onBlur = formOnBlur ? (handleBlur as typeof props.onBlur) : undefined,
+      onBlur = formOnBlur ? handleBlur : undefined,
       onValueChange = formControl?.onChange,
       ...rest
     } = props;

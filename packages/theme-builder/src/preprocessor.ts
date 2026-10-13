@@ -534,7 +534,7 @@ const BACKGROUND_COLOR_STATE_DISABLED: ColorStateVariant = {
 
 const BACKGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
   lowSaturation: [
-    { name: "active", brightness: 1.0375 },
+    { name: "active", brightness: 1.075 },
     BACKGROUND_COLOR_STATE_INACTIVE,
     BACKGROUND_COLOR_STATE_DISABLED
   ],
@@ -575,7 +575,7 @@ const COLOR_STATE_TOKEN_GROUPS: Record<string, ColorStateVariants> = {
 
 /** Standalone color tokens that receive state variants. */
 const COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
-  hairline: {
+  outline: {
     lowSaturation: [
       INCREASED_LOW_SATURATION_COLOR_STATE_ACTIVE,
       LOW_SATURATION_COLOR_STATE_INACTIVE,
@@ -790,7 +790,7 @@ function addMissingRingTokens(dictionary: unknown): unknown {
     const variants: Record<string, [string, unknown[]]> = {
       [name]: [`${name} 3px focus ring with no gap`, [ringLayer(ringColor, 3)]],
       [`${name}-subtle`]: [
-        `${name} 1px hairline focus ring with no gap`,
+        `${name} 1px outline focus ring with no gap`,
         [ringLayer(ringColor, 1)]
       ],
       [`${name}-offset`]: [
@@ -1365,7 +1365,7 @@ function addThemeColorGroupTokens(
 
 /**
  * Add a `group` (the main token name) to each state and `on-*` color token
- * that does not define one, e.g. `hairline-active` → `hairline`.
+ * that does not define one, e.g. `outline-active` → `outline`.
  */
 function addColorTokenGroups(
   group: Record<string, unknown>
@@ -1465,11 +1465,11 @@ function injectColorStateVariants(
 /**
  * Style Dictionary preprocessor: rewrite color `$value`s (and nested shadow
  * colors) to hex so generators emit `#rrggbb` / `#rrggbbaa` instead of
- * `oklch()`. Root colors (emphasis, ink, subtle, subtlest, hairline, backgrounds)
+ * `oklch()`. Root colors (emphasis, ink, subtle, subtlest, outline, backgrounds)
  * stay in the root light and dark themes without rings. For the `base` group and each
  * status group, a missing `secondary` background and `on-primary` /
  * `on-secondary` text colors are generated, then hovered, active, inactive,
- * and disabled variants are added to the hairline, `foreground` and
+ * and disabled variants are added to the outline, `foreground` and
  * `background` group colors, and each theme color group's `primary` and `secondary`.
  * Low-saturation colors derive their states from the parent theme's contrast
  * primitive (backgrounds use a half-strength shift of their own lightness; hovered
@@ -1477,8 +1477,8 @@ function injectColorStateVariants(
  * ones become pure white or black); saturated
  * colors scale their own lightness. Tokens in a theme color group get the
  * group name as `theme` and `group`, unless already set; root state and `on-*`
- * tokens get their main token name as `group` (e.g. `hairline-active` →
- * `hairline`).
+ * tokens get their main token name as `group` (e.g. `outline-active` →
+ * `outline`).
  * Finally, focus rings are generated for `base` and each status color.
  */
 export function tamaguiPreprocessor(

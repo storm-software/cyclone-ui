@@ -46,7 +46,7 @@ const CheckboxGroupFrame = styled(View, {
   boxShadow: "none focus:ringOffset focus-visible:ringOffset",
   borderWidth: 1,
   borderColor:
-    "hairline hover:primaryHovered focus:primaryActive focus-visible:primaryActive",
+    "outline hover:outlineHovered focus:outlineActive focus-visible:outlineActive",
   outlineStyle: "none",
   // this fixes a flex bug where it overflows container
   minWidth: 0,
@@ -199,10 +199,8 @@ export const Checkbox = createStyledHOC(
       [formOnChange, onCheckedChange]
     );
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "primary" : "hairline";
-    const focusColor = hasValidationMessage
-      ? "primaryActive"
-      : "hairlineActive";
+    const idleColor = hasValidationMessage ? "primary" : "outline";
+    const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
     // The full 3px ring overwhelms the small checkbox, so use the 1px ring.
     const ring = size === "sm" ? "ringSubtleOffset" : "ringOffset";
 

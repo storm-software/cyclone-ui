@@ -8,7 +8,7 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 
 - **Name:** `@cyclone-ui/accordion`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -48,7 +48,7 @@ An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, A
 
 - **Name:** `@cyclone-ui/alert`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -91,7 +91,7 @@ A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-ba
 
 - **Name:** `@cyclone-ui/alert-dialog`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -130,7 +130,7 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 
 - **Name:** `@cyclone-ui/anchor`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -163,7 +163,7 @@ An ArticlePage layout compound component for documentation and long-form reading
 
 - **Name:** `@cyclone-ui/article-page`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -201,7 +201,7 @@ A Badge that wraps an element and pins a small count or dot to one of its corner
 
 - **Name:** `@cyclone-ui/badge`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -234,7 +234,7 @@ A themed paragraph text component built on Tamagui's SizableText that renders a 
 
 - **Name:** `@cyclone-ui/body-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -266,7 +266,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 
 - **Name:** `@cyclone-ui/breadcrumb`
 - **Type:** `component`
-- **Version:** `0.4.15`
+- **Version:** `0.4.16`
 
 ### Dependencies
 
@@ -306,7 +306,7 @@ A pressable button with Button.Text and Button.Icon subcomponents and primary, s
 
 - **Name:** `@cyclone-ui/button`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -348,7 +348,7 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 
 - **Name:** `@cyclone-ui/bytes-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -379,7 +379,7 @@ A highlighted content panel with a theme-colored gradient and diagonal pattern b
 
 - **Name:** `@cyclone-ui/callout`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -422,7 +422,7 @@ A themed card container with a gradient background and an optional accent color.
 
 - **Name:** `@cyclone-ui/card`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -468,7 +468,7 @@ A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indi
 
 - **Name:** `@cyclone-ui/checkbox`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -510,7 +510,7 @@ A circular progress indicator drawn with SVG on top of Tamagui's Progress primit
 
 - **Name:** `@cyclone-ui/circular-progress`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -542,7 +542,7 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 
 - **Name:** `@cyclone-ui/code-block`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -590,7 +590,7 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 
 - **Name:** `@cyclone-ui/collapsible`
 - **Type:** `component`
-- **Version:** `0.3.10`
+- **Version:** `0.3.11`
 
 ### Dependencies
 
@@ -623,7 +623,7 @@ An invisible anchor that bursts a ring of accent-colored confetti squares out of
 
 - **Name:** `@cyclone-ui/confetti-burst`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -652,7 +652,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 - **Name:** `@cyclone-ui/container`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -685,7 +685,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -719,7 +719,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 
 - **Name:** `@cyclone-ui/data-table`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -774,7 +774,7 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - **Name:** `@cyclone-ui/date-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -836,7 +836,7 @@ A modal Dialog compound component built on Tamagui's dialog, with Trigger, Porta
 
 - **Name:** `@cyclone-ui/dialog`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -885,7 +885,7 @@ A simple horizontal or vertical line used to separate content. It supports sm, m
 
 - **Name:** `@cyclone-ui/divider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -916,7 +916,7 @@ A side panel built on the Cyclone UI Sheet that slides in from the right by defa
 
 - **Name:** `@cyclone-ui/drawer`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -954,7 +954,7 @@ An uppercase, muted heading (rendered as h5) that uses the eyebrow font. It has 
 
 - **Name:** `@cyclone-ui/eyebrow-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -985,7 +985,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 
 - **Name:** `@cyclone-ui/feedback`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -1025,7 +1025,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 - **Name:** `@cyclone-ui/field`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -1070,7 +1070,7 @@ A file and image picker with a dashed drop zone that supports drag and drop on t
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -1129,7 +1129,7 @@ A FileTree component that renders a hierarchical file structure using File leave
 
 - **Name:** `@cyclone-ui/file-tree`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -1162,7 +1162,7 @@ A responsive site footer with compound layout parts for an introduction, action,
 
 - **Name:** `@cyclone-ui/footer`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -1197,7 +1197,7 @@ A form root that renders a native form element and provides Cyclone UI form stat
 
 - **Name:** `@cyclone-ui/form`
 - **Type:** `component`
-- **Version:** `0.9.14`
+- **Version:** `0.9.15`
 
 ### Dependencies
 
@@ -1228,7 +1228,7 @@ A decorative section divider that draws a ragged grid of seeded pseudo-random sq
 
 - **Name:** `@cyclone-ui/glitch-separator`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -1258,7 +1258,7 @@ Themed heading text components: HeadingHeroText, HeadingTitleText, HeadingLargeT
 
 - **Name:** `@cyclone-ui/heading-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -1289,7 +1289,7 @@ Tamagui icon components for web and React Native covering every icon in the Phos
 
 - **Name:** `@cyclone-ui/icons`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -1326,7 +1326,7 @@ An inline span styled for short code snippets, using the code font with a subtle
 
 - **Name:** `@cyclone-ui/inline-code-text`
 - **Type:** `component`
-- **Version:** `0.5.13`
+- **Version:** `0.5.14`
 
 ### Dependencies
 
@@ -1358,7 +1358,7 @@ A composable text input with Input.TextBox, Input.TextBox.Value, Input.Separator
 
 - **Name:** `@cyclone-ui/input`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -1401,7 +1401,7 @@ A text component that renders a label element using the title typography, built 
 
 - **Name:** `@cyclone-ui/label-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -1432,7 +1432,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - **Name:** `@cyclone-ui/like-button`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -1464,7 +1464,7 @@ A themed text link that renders an anchor with href and target on web and opens 
 
 - **Name:** `@cyclone-ui/link`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -1502,7 +1502,7 @@ A LinkText component that renders styled, interactive link text. It has base, mi
 
 - **Name:** `@cyclone-ui/link-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -1535,7 +1535,7 @@ A toast notification container built on Tamagui Toast that renders each queued t
 
 - **Name:** `@cyclone-ui/message`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -1571,7 +1571,7 @@ A responsive site header made of Logo, Navigation, Actions and MenuButton slots.
 
 - **Name:** `@cyclone-ui/navigation-header`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -1606,7 +1606,7 @@ A Button preset labeled "Next" by default, with a right-arrow icon that animates
 
 - **Name:** `@cyclone-ui/next-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -1639,7 +1639,7 @@ A NumberInput built on Input that renders a type=number text box with decrease (
 
 - **Name:** `@cyclone-ui/number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -1673,7 +1673,7 @@ A label-styled text component that renders its numeric children with NumberFlow,
 
 - **Name:** `@cyclone-ui/number-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -1704,7 +1704,7 @@ A one-time passcode input that renders one numeric input per digit (4 by default
 
 - **Name:** `@cyclone-ui/otp-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -1737,7 +1737,7 @@ A full-bleed backdrop that partially obscures background content with a blurred,
 
 - **Name:** `@cyclone-ui/overlay`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -1769,7 +1769,7 @@ A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command fo
 
 - **Name:** `@cyclone-ui/package-command-code-block`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -1799,7 +1799,7 @@ A Page layout compound component with Banner, TopNav (Start, Middle and End slot
 
 - **Name:** `@cyclone-ui/page`
 - **Type:** `component`
-- **Version:** `0.0.8`
+- **Version:** `0.0.9`
 
 ### Dependencies
 
@@ -1835,7 +1835,7 @@ A page navigation bar with previous and next buttons, first and last page button
 
 - **Name:** `@cyclone-ui/pagination`
 - **Type:** `component`
-- **Version:** `0.8.14`
+- **Version:** `0.8.15`
 
 ### Dependencies
 
@@ -1872,7 +1872,7 @@ A password input with a show/hide toggle and a caps-lock warning. A strength met
 
 - **Name:** `@cyclone-ui/password-input`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -1910,7 +1910,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 
 - **Name:** `@cyclone-ui/pdf-document-display`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -1946,7 +1946,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 - **Name:** `@cyclone-ui/phone-number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -1989,7 +1989,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -2032,7 +2032,7 @@ A button with an animated left-arrow icon and a default "Previous" label. The la
 
 - **Name:** `@cyclone-ui/previous-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -2065,7 +2065,7 @@ A themed progress bar built on the Tamagui Progress, with an animated indicator.
 
 - **Name:** `@cyclone-ui/progress`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -2096,7 +2096,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 
 - **Name:** `@cyclone-ui/radio-group`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -2140,7 +2140,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 - **Name:** `@cyclone-ui/rating`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -2174,7 +2174,7 @@ A RedactedAnimation wrapper that briefly covers its children with an accent-colo
 
 - **Name:** `@cyclone-ui/redacted-animation`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -2205,7 +2205,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 - **Name:** `@cyclone-ui/scroll-view`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -2238,7 +2238,7 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -2277,7 +2277,7 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -2324,7 +2324,7 @@ A modal panel that slides in from the top, right, bottom or left edge. It uses a
 
 - **Name:** `@cyclone-ui/sheet`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -2362,7 +2362,7 @@ A Material-style slider, built on the Tamagui Slider, for choosing a single valu
 
 - **Name:** `@cyclone-ui/slider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -2396,7 +2396,7 @@ A Spinner component that renders the React Native ActivityIndicator inside a Tam
 
 - **Name:** `@cyclone-ui/spinner`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -2426,7 +2426,7 @@ A multi-step wizard built on Tamagui Tabs with a vertical header list that marks
 
 - **Name:** `@cyclone-ui/stepper`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -2474,7 +2474,7 @@ A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled stat
 
 - **Name:** `@cyclone-ui/switch`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -2515,7 +2515,7 @@ A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer p
 
 - **Name:** `@cyclone-ui/table`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -2556,7 +2556,7 @@ A page navigation list built from an array of heading items, each with a title, 
 
 - **Name:** `@cyclone-ui/table-of-contents`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -2589,7 +2589,7 @@ A tabbed interface with Header.Item triggers and Content.Item panels. It offers 
 
 - **Name:** `@cyclone-ui/tabs`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -2635,7 +2635,7 @@ A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary an
 
 - **Name:** `@cyclone-ui/tag`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -2673,7 +2673,7 @@ A TagPicker input that turns typed text into removable tags. Enter adds a trimme
 
 - **Name:** `@cyclone-ui/tag-picker`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -2709,7 +2709,7 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - **Name:** `@cyclone-ui/text-area`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -2742,7 +2742,7 @@ A ThemeableGradient component that renders a diagonal LinearGradient. Its color 
 
 - **Name:** `@cyclone-ui/themeable-gradient`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -2774,7 +2774,7 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 
 - **Name:** `@cyclone-ui/themeable-icon`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -2813,7 +2813,7 @@ A Timeline that renders a list of events joined by a line, vertically or horizon
 
 - **Name:** `@cyclone-ui/timeline`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -2845,7 +2845,7 @@ A clickable toggle component that is exists in either an "on" or "off" state wit
 
 - **Name:** `@cyclone-ui/toggle`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -2876,7 +2876,7 @@ A clickable group of toggle components that exists in either an "on" or "off" st
 
 - **Name:** `@cyclone-ui/toggle-group`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -2908,7 +2908,7 @@ A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The conte
 
 - **Name:** `@cyclone-ui/tooltip`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -2944,7 +2944,7 @@ A documentation table that lists properties with their types. Each row expands t
 
 - **Name:** `@cyclone-ui/type-table`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -2982,7 +2982,7 @@ A ValidationText component that shows field validation messages in caption text 
 
 - **Name:** `@cyclone-ui/validation-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -3016,7 +3016,7 @@ A set of custom themed SVG graphics for Tamagui, including status circles (alert
 
 - **Name:** `@cyclone-ui/vectors`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -3051,7 +3051,7 @@ A wrapper that hides its content visually but keeps it available to screen reade
 
 - **Name:** `@cyclone-ui/visually-hidden`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -3083,7 +3083,7 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 
 - **Name:** `@cyclone-ui/accordion`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -3123,7 +3123,7 @@ An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, A
 
 - **Name:** `@cyclone-ui/alert`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -3166,7 +3166,7 @@ A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-ba
 
 - **Name:** `@cyclone-ui/alert-dialog`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -3205,7 +3205,7 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 
 - **Name:** `@cyclone-ui/anchor`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -3238,7 +3238,7 @@ An ArticlePage layout compound component for documentation and long-form reading
 
 - **Name:** `@cyclone-ui/article-page`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -3276,7 +3276,7 @@ A Badge that wraps an element and pins a small count or dot to one of its corner
 
 - **Name:** `@cyclone-ui/badge`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -3309,7 +3309,7 @@ A themed paragraph text component built on Tamagui's SizableText that renders a 
 
 - **Name:** `@cyclone-ui/body-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -3341,7 +3341,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 
 - **Name:** `@cyclone-ui/breadcrumb`
 - **Type:** `component`
-- **Version:** `0.4.15`
+- **Version:** `0.4.16`
 
 ### Dependencies
 
@@ -3381,7 +3381,7 @@ A pressable button with Button.Text and Button.Icon subcomponents and primary, s
 
 - **Name:** `@cyclone-ui/button`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -3423,7 +3423,7 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 
 - **Name:** `@cyclone-ui/bytes-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -3454,7 +3454,7 @@ A highlighted content panel with a theme-colored gradient and diagonal pattern b
 
 - **Name:** `@cyclone-ui/callout`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -3497,7 +3497,7 @@ A themed card container with a gradient background and an optional accent color.
 
 - **Name:** `@cyclone-ui/card`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -3543,7 +3543,7 @@ A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indi
 
 - **Name:** `@cyclone-ui/checkbox`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -3585,7 +3585,7 @@ A circular progress indicator drawn with SVG on top of Tamagui's Progress primit
 
 - **Name:** `@cyclone-ui/circular-progress`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -3617,7 +3617,7 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 
 - **Name:** `@cyclone-ui/code-block`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -3665,7 +3665,7 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 
 - **Name:** `@cyclone-ui/collapsible`
 - **Type:** `component`
-- **Version:** `0.3.10`
+- **Version:** `0.3.11`
 
 ### Dependencies
 
@@ -3698,7 +3698,7 @@ An invisible anchor that bursts a ring of accent-colored confetti squares out of
 
 - **Name:** `@cyclone-ui/confetti-burst`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -3727,7 +3727,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 - **Name:** `@cyclone-ui/container`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -3760,7 +3760,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -3794,7 +3794,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 
 - **Name:** `@cyclone-ui/data-table`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -3849,7 +3849,7 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - **Name:** `@cyclone-ui/date-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -3911,7 +3911,7 @@ A modal Dialog compound component built on Tamagui's dialog, with Trigger, Porta
 
 - **Name:** `@cyclone-ui/dialog`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -3960,7 +3960,7 @@ A simple horizontal or vertical line used to separate content. It supports sm, m
 
 - **Name:** `@cyclone-ui/divider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -3991,7 +3991,7 @@ A side panel built on the Cyclone UI Sheet that slides in from the right by defa
 
 - **Name:** `@cyclone-ui/drawer`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -4029,7 +4029,7 @@ An uppercase, muted heading (rendered as h5) that uses the eyebrow font. It has 
 
 - **Name:** `@cyclone-ui/eyebrow-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -4060,7 +4060,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 
 - **Name:** `@cyclone-ui/feedback`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -4100,7 +4100,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 - **Name:** `@cyclone-ui/field`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -4145,7 +4145,7 @@ A file and image picker with a dashed drop zone that supports drag and drop on t
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -4204,7 +4204,7 @@ A FileTree component that renders a hierarchical file structure using File leave
 
 - **Name:** `@cyclone-ui/file-tree`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -4237,7 +4237,7 @@ A responsive site footer with compound layout parts for an introduction, action,
 
 - **Name:** `@cyclone-ui/footer`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -4272,7 +4272,7 @@ A form root that renders a native form element and provides Cyclone UI form stat
 
 - **Name:** `@cyclone-ui/form`
 - **Type:** `component`
-- **Version:** `0.9.14`
+- **Version:** `0.9.15`
 
 ### Dependencies
 
@@ -4303,7 +4303,7 @@ A decorative section divider that draws a ragged grid of seeded pseudo-random sq
 
 - **Name:** `@cyclone-ui/glitch-separator`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -4333,7 +4333,7 @@ Themed heading text components: HeadingHeroText, HeadingTitleText, HeadingLargeT
 
 - **Name:** `@cyclone-ui/heading-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -4364,7 +4364,7 @@ Tamagui icon components for web and React Native covering every icon in the Phos
 
 - **Name:** `@cyclone-ui/icons`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -4401,7 +4401,7 @@ An inline span styled for short code snippets, using the code font with a subtle
 
 - **Name:** `@cyclone-ui/inline-code-text`
 - **Type:** `component`
-- **Version:** `0.5.13`
+- **Version:** `0.5.14`
 
 ### Dependencies
 
@@ -4433,7 +4433,7 @@ A composable text input with Input.TextBox, Input.TextBox.Value, Input.Separator
 
 - **Name:** `@cyclone-ui/input`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -4476,7 +4476,7 @@ A text component that renders a label element using the title typography, built 
 
 - **Name:** `@cyclone-ui/label-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -4507,7 +4507,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - **Name:** `@cyclone-ui/like-button`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -4539,7 +4539,7 @@ A themed text link that renders an anchor with href and target on web and opens 
 
 - **Name:** `@cyclone-ui/link`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -4577,7 +4577,7 @@ A LinkText component that renders styled, interactive link text. It has base, mi
 
 - **Name:** `@cyclone-ui/link-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -4610,7 +4610,7 @@ A toast notification container built on Tamagui Toast that renders each queued t
 
 - **Name:** `@cyclone-ui/message`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -4646,7 +4646,7 @@ A responsive site header made of Logo, Navigation, Actions and MenuButton slots.
 
 - **Name:** `@cyclone-ui/navigation-header`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -4681,7 +4681,7 @@ A Button preset labeled "Next" by default, with a right-arrow icon that animates
 
 - **Name:** `@cyclone-ui/next-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -4714,7 +4714,7 @@ A NumberInput built on Input that renders a type=number text box with decrease (
 
 - **Name:** `@cyclone-ui/number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -4748,7 +4748,7 @@ A label-styled text component that renders its numeric children with NumberFlow,
 
 - **Name:** `@cyclone-ui/number-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -4779,7 +4779,7 @@ A one-time passcode input that renders one numeric input per digit (4 by default
 
 - **Name:** `@cyclone-ui/otp-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -4812,7 +4812,7 @@ A full-bleed backdrop that partially obscures background content with a blurred,
 
 - **Name:** `@cyclone-ui/overlay`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -4844,7 +4844,7 @@ A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command fo
 
 - **Name:** `@cyclone-ui/package-command-code-block`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -4874,7 +4874,7 @@ A Page layout compound component with Banner, TopNav (Start, Middle and End slot
 
 - **Name:** `@cyclone-ui/page`
 - **Type:** `component`
-- **Version:** `0.0.8`
+- **Version:** `0.0.9`
 
 ### Dependencies
 
@@ -4910,7 +4910,7 @@ A page navigation bar with previous and next buttons, first and last page button
 
 - **Name:** `@cyclone-ui/pagination`
 - **Type:** `component`
-- **Version:** `0.8.14`
+- **Version:** `0.8.15`
 
 ### Dependencies
 
@@ -4947,7 +4947,7 @@ A password input with a show/hide toggle and a caps-lock warning. A strength met
 
 - **Name:** `@cyclone-ui/password-input`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -4985,7 +4985,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 
 - **Name:** `@cyclone-ui/pdf-document-display`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -5021,7 +5021,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 - **Name:** `@cyclone-ui/phone-number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -5064,7 +5064,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -5107,7 +5107,7 @@ A button with an animated left-arrow icon and a default "Previous" label. The la
 
 - **Name:** `@cyclone-ui/previous-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -5140,7 +5140,7 @@ A themed progress bar built on the Tamagui Progress, with an animated indicator.
 
 - **Name:** `@cyclone-ui/progress`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -5171,7 +5171,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 
 - **Name:** `@cyclone-ui/radio-group`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -5215,7 +5215,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 - **Name:** `@cyclone-ui/rating`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -5249,7 +5249,7 @@ A RedactedAnimation wrapper that briefly covers its children with an accent-colo
 
 - **Name:** `@cyclone-ui/redacted-animation`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -5280,7 +5280,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 - **Name:** `@cyclone-ui/scroll-view`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -5313,7 +5313,7 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -5352,7 +5352,7 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -5399,7 +5399,7 @@ A modal panel that slides in from the top, right, bottom or left edge. It uses a
 
 - **Name:** `@cyclone-ui/sheet`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -5437,7 +5437,7 @@ A Material-style slider, built on the Tamagui Slider, for choosing a single valu
 
 - **Name:** `@cyclone-ui/slider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -5471,7 +5471,7 @@ A Spinner component that renders the React Native ActivityIndicator inside a Tam
 
 - **Name:** `@cyclone-ui/spinner`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -5501,7 +5501,7 @@ A multi-step wizard built on Tamagui Tabs with a vertical header list that marks
 
 - **Name:** `@cyclone-ui/stepper`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -5549,7 +5549,7 @@ A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled stat
 
 - **Name:** `@cyclone-ui/switch`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -5590,7 +5590,7 @@ A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer p
 
 - **Name:** `@cyclone-ui/table`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -5631,7 +5631,7 @@ A page navigation list built from an array of heading items, each with a title, 
 
 - **Name:** `@cyclone-ui/table-of-contents`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -5664,7 +5664,7 @@ A tabbed interface with Header.Item triggers and Content.Item panels. It offers 
 
 - **Name:** `@cyclone-ui/tabs`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -5710,7 +5710,7 @@ A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary an
 
 - **Name:** `@cyclone-ui/tag`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -5748,7 +5748,7 @@ A TagPicker input that turns typed text into removable tags. Enter adds a trimme
 
 - **Name:** `@cyclone-ui/tag-picker`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -5784,7 +5784,7 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - **Name:** `@cyclone-ui/text-area`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -5817,7 +5817,7 @@ A ThemeableGradient component that renders a diagonal LinearGradient. Its color 
 
 - **Name:** `@cyclone-ui/themeable-gradient`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -5849,7 +5849,7 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 
 - **Name:** `@cyclone-ui/themeable-icon`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -5888,7 +5888,7 @@ A Timeline that renders a list of events joined by a line, vertically or horizon
 
 - **Name:** `@cyclone-ui/timeline`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -5920,7 +5920,7 @@ A clickable toggle component that is exists in either an "on" or "off" state wit
 
 - **Name:** `@cyclone-ui/toggle`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -5951,7 +5951,7 @@ A clickable group of toggle components that exists in either an "on" or "off" st
 
 - **Name:** `@cyclone-ui/toggle-group`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -5983,7 +5983,7 @@ A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The conte
 
 - **Name:** `@cyclone-ui/tooltip`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -6019,7 +6019,7 @@ A documentation table that lists properties with their types. Each row expands t
 
 - **Name:** `@cyclone-ui/type-table`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -6057,7 +6057,7 @@ A ValidationText component that shows field validation messages in caption text 
 
 - **Name:** `@cyclone-ui/validation-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -6091,7 +6091,7 @@ A set of custom themed SVG graphics for Tamagui, including status circles (alert
 
 - **Name:** `@cyclone-ui/vectors`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -6126,7 +6126,7 @@ A wrapper that hides its content visually but keeps it available to screen reade
 
 - **Name:** `@cyclone-ui/visually-hidden`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -6158,7 +6158,7 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 
 - **Name:** `@cyclone-ui/accordion`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -6198,7 +6198,7 @@ An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, A
 
 - **Name:** `@cyclone-ui/alert`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -6241,7 +6241,7 @@ A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-ba
 
 - **Name:** `@cyclone-ui/alert-dialog`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -6280,7 +6280,7 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 
 - **Name:** `@cyclone-ui/anchor`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -6313,7 +6313,7 @@ An ArticlePage layout compound component for documentation and long-form reading
 
 - **Name:** `@cyclone-ui/article-page`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -6351,7 +6351,7 @@ A Badge that wraps an element and pins a small count or dot to one of its corner
 
 - **Name:** `@cyclone-ui/badge`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -6384,7 +6384,7 @@ A themed paragraph text component built on Tamagui's SizableText that renders a 
 
 - **Name:** `@cyclone-ui/body-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -6416,7 +6416,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 
 - **Name:** `@cyclone-ui/breadcrumb`
 - **Type:** `component`
-- **Version:** `0.4.15`
+- **Version:** `0.4.16`
 
 ### Dependencies
 
@@ -6456,7 +6456,7 @@ A pressable button with Button.Text and Button.Icon subcomponents and primary, s
 
 - **Name:** `@cyclone-ui/button`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -6498,7 +6498,7 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 
 - **Name:** `@cyclone-ui/bytes-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -6529,7 +6529,7 @@ A highlighted content panel with a theme-colored gradient and diagonal pattern b
 
 - **Name:** `@cyclone-ui/callout`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -6572,7 +6572,7 @@ A themed card container with a gradient background and an optional accent color.
 
 - **Name:** `@cyclone-ui/card`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -6618,7 +6618,7 @@ A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indi
 
 - **Name:** `@cyclone-ui/checkbox`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -6660,7 +6660,7 @@ A circular progress indicator drawn with SVG on top of Tamagui's Progress primit
 
 - **Name:** `@cyclone-ui/circular-progress`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -6692,7 +6692,7 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 
 - **Name:** `@cyclone-ui/code-block`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -6740,7 +6740,7 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 
 - **Name:** `@cyclone-ui/collapsible`
 - **Type:** `component`
-- **Version:** `0.3.10`
+- **Version:** `0.3.11`
 
 ### Dependencies
 
@@ -6773,7 +6773,7 @@ An invisible anchor that bursts a ring of accent-colored confetti squares out of
 
 - **Name:** `@cyclone-ui/confetti-burst`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -6802,7 +6802,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 - **Name:** `@cyclone-ui/container`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -6835,7 +6835,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -6869,7 +6869,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 
 - **Name:** `@cyclone-ui/data-table`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -6924,7 +6924,7 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - **Name:** `@cyclone-ui/date-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -6986,7 +6986,7 @@ A modal Dialog compound component built on Tamagui's dialog, with Trigger, Porta
 
 - **Name:** `@cyclone-ui/dialog`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -7035,7 +7035,7 @@ A simple horizontal or vertical line used to separate content. It supports sm, m
 
 - **Name:** `@cyclone-ui/divider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -7066,7 +7066,7 @@ A side panel built on the Cyclone UI Sheet that slides in from the right by defa
 
 - **Name:** `@cyclone-ui/drawer`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -7104,7 +7104,7 @@ An uppercase, muted heading (rendered as h5) that uses the eyebrow font. It has 
 
 - **Name:** `@cyclone-ui/eyebrow-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -7135,7 +7135,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 
 - **Name:** `@cyclone-ui/feedback`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -7175,7 +7175,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 - **Name:** `@cyclone-ui/field`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -7220,7 +7220,7 @@ A file and image picker with a dashed drop zone that supports drag and drop on t
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -7279,7 +7279,7 @@ A FileTree component that renders a hierarchical file structure using File leave
 
 - **Name:** `@cyclone-ui/file-tree`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -7312,7 +7312,7 @@ A responsive site footer with compound layout parts for an introduction, action,
 
 - **Name:** `@cyclone-ui/footer`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -7347,7 +7347,7 @@ A form root that renders a native form element and provides Cyclone UI form stat
 
 - **Name:** `@cyclone-ui/form`
 - **Type:** `component`
-- **Version:** `0.9.14`
+- **Version:** `0.9.15`
 
 ### Dependencies
 
@@ -7378,7 +7378,7 @@ A decorative section divider that draws a ragged grid of seeded pseudo-random sq
 
 - **Name:** `@cyclone-ui/glitch-separator`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -7408,7 +7408,7 @@ Themed heading text components: HeadingHeroText, HeadingTitleText, HeadingLargeT
 
 - **Name:** `@cyclone-ui/heading-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -7439,7 +7439,7 @@ Tamagui icon components for web and React Native covering every icon in the Phos
 
 - **Name:** `@cyclone-ui/icons`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -7476,7 +7476,7 @@ An inline span styled for short code snippets, using the code font with a subtle
 
 - **Name:** `@cyclone-ui/inline-code-text`
 - **Type:** `component`
-- **Version:** `0.5.13`
+- **Version:** `0.5.14`
 
 ### Dependencies
 
@@ -7508,7 +7508,7 @@ A composable text input with Input.TextBox, Input.TextBox.Value, Input.Separator
 
 - **Name:** `@cyclone-ui/input`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -7551,7 +7551,7 @@ A text component that renders a label element using the title typography, built 
 
 - **Name:** `@cyclone-ui/label-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -7582,7 +7582,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - **Name:** `@cyclone-ui/like-button`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -7614,7 +7614,7 @@ A themed text link that renders an anchor with href and target on web and opens 
 
 - **Name:** `@cyclone-ui/link`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -7652,7 +7652,7 @@ A LinkText component that renders styled, interactive link text. It has base, mi
 
 - **Name:** `@cyclone-ui/link-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -7685,7 +7685,7 @@ A toast notification container built on Tamagui Toast that renders each queued t
 
 - **Name:** `@cyclone-ui/message`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -7721,7 +7721,7 @@ A responsive site header made of Logo, Navigation, Actions and MenuButton slots.
 
 - **Name:** `@cyclone-ui/navigation-header`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -7756,7 +7756,7 @@ A Button preset labeled "Next" by default, with a right-arrow icon that animates
 
 - **Name:** `@cyclone-ui/next-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -7789,7 +7789,7 @@ A NumberInput built on Input that renders a type=number text box with decrease (
 
 - **Name:** `@cyclone-ui/number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -7823,7 +7823,7 @@ A label-styled text component that renders its numeric children with NumberFlow,
 
 - **Name:** `@cyclone-ui/number-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -7854,7 +7854,7 @@ A one-time passcode input that renders one numeric input per digit (4 by default
 
 - **Name:** `@cyclone-ui/otp-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -7887,7 +7887,7 @@ A full-bleed backdrop that partially obscures background content with a blurred,
 
 - **Name:** `@cyclone-ui/overlay`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -7919,7 +7919,7 @@ A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command fo
 
 - **Name:** `@cyclone-ui/package-command-code-block`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -7949,7 +7949,7 @@ A Page layout compound component with Banner, TopNav (Start, Middle and End slot
 
 - **Name:** `@cyclone-ui/page`
 - **Type:** `component`
-- **Version:** `0.0.8`
+- **Version:** `0.0.9`
 
 ### Dependencies
 
@@ -7985,7 +7985,7 @@ A page navigation bar with previous and next buttons, first and last page button
 
 - **Name:** `@cyclone-ui/pagination`
 - **Type:** `component`
-- **Version:** `0.8.14`
+- **Version:** `0.8.15`
 
 ### Dependencies
 
@@ -8022,7 +8022,7 @@ A password input with a show/hide toggle and a caps-lock warning. A strength met
 
 - **Name:** `@cyclone-ui/password-input`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -8060,7 +8060,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 
 - **Name:** `@cyclone-ui/pdf-document-display`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -8096,7 +8096,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 - **Name:** `@cyclone-ui/phone-number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -8139,7 +8139,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -8182,7 +8182,7 @@ A button with an animated left-arrow icon and a default "Previous" label. The la
 
 - **Name:** `@cyclone-ui/previous-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -8215,7 +8215,7 @@ A themed progress bar built on the Tamagui Progress, with an animated indicator.
 
 - **Name:** `@cyclone-ui/progress`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -8246,7 +8246,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 
 - **Name:** `@cyclone-ui/radio-group`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -8290,7 +8290,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 - **Name:** `@cyclone-ui/rating`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -8324,7 +8324,7 @@ A RedactedAnimation wrapper that briefly covers its children with an accent-colo
 
 - **Name:** `@cyclone-ui/redacted-animation`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -8355,7 +8355,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 - **Name:** `@cyclone-ui/scroll-view`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -8388,7 +8388,7 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -8427,7 +8427,7 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -8474,7 +8474,7 @@ A modal panel that slides in from the top, right, bottom or left edge. It uses a
 
 - **Name:** `@cyclone-ui/sheet`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -8512,7 +8512,7 @@ A Material-style slider, built on the Tamagui Slider, for choosing a single valu
 
 - **Name:** `@cyclone-ui/slider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -8546,7 +8546,7 @@ A Spinner component that renders the React Native ActivityIndicator inside a Tam
 
 - **Name:** `@cyclone-ui/spinner`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -8576,7 +8576,7 @@ A multi-step wizard built on Tamagui Tabs with a vertical header list that marks
 
 - **Name:** `@cyclone-ui/stepper`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -8624,7 +8624,7 @@ A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled stat
 
 - **Name:** `@cyclone-ui/switch`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -8665,7 +8665,7 @@ A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer p
 
 - **Name:** `@cyclone-ui/table`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -8706,7 +8706,7 @@ A page navigation list built from an array of heading items, each with a title, 
 
 - **Name:** `@cyclone-ui/table-of-contents`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -8739,7 +8739,7 @@ A tabbed interface with Header.Item triggers and Content.Item panels. It offers 
 
 - **Name:** `@cyclone-ui/tabs`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -8785,7 +8785,7 @@ A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary an
 
 - **Name:** `@cyclone-ui/tag`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -8823,7 +8823,7 @@ A TagPicker input that turns typed text into removable tags. Enter adds a trimme
 
 - **Name:** `@cyclone-ui/tag-picker`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -8859,7 +8859,7 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - **Name:** `@cyclone-ui/text-area`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -8892,7 +8892,7 @@ A ThemeableGradient component that renders a diagonal LinearGradient. Its color 
 
 - **Name:** `@cyclone-ui/themeable-gradient`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -8924,7 +8924,7 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 
 - **Name:** `@cyclone-ui/themeable-icon`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -8963,7 +8963,7 @@ A Timeline that renders a list of events joined by a line, vertically or horizon
 
 - **Name:** `@cyclone-ui/timeline`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -8995,7 +8995,7 @@ A clickable toggle component that is exists in either an "on" or "off" state wit
 
 - **Name:** `@cyclone-ui/toggle`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -9026,7 +9026,7 @@ A clickable group of toggle components that exists in either an "on" or "off" st
 
 - **Name:** `@cyclone-ui/toggle-group`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -9058,7 +9058,7 @@ A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The conte
 
 - **Name:** `@cyclone-ui/tooltip`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -9094,7 +9094,7 @@ A documentation table that lists properties with their types. Each row expands t
 
 - **Name:** `@cyclone-ui/type-table`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -9132,7 +9132,7 @@ A ValidationText component that shows field validation messages in caption text 
 
 - **Name:** `@cyclone-ui/validation-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -9166,7 +9166,7 @@ A set of custom themed SVG graphics for Tamagui, including status circles (alert
 
 - **Name:** `@cyclone-ui/vectors`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -9201,7 +9201,7 @@ A wrapper that hides its content visually but keeps it available to screen reade
 
 - **Name:** `@cyclone-ui/visually-hidden`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -9233,7 +9233,7 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 
 - **Name:** `@cyclone-ui/accordion`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -9273,7 +9273,7 @@ An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, A
 
 - **Name:** `@cyclone-ui/alert`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -9316,7 +9316,7 @@ A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-ba
 
 - **Name:** `@cyclone-ui/alert-dialog`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -9355,7 +9355,7 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 
 - **Name:** `@cyclone-ui/anchor`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -9388,7 +9388,7 @@ An ArticlePage layout compound component for documentation and long-form reading
 
 - **Name:** `@cyclone-ui/article-page`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -9426,7 +9426,7 @@ A Badge that wraps an element and pins a small count or dot to one of its corner
 
 - **Name:** `@cyclone-ui/badge`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -9459,7 +9459,7 @@ A themed paragraph text component built on Tamagui's SizableText that renders a 
 
 - **Name:** `@cyclone-ui/body-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -9491,7 +9491,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 
 - **Name:** `@cyclone-ui/breadcrumb`
 - **Type:** `component`
-- **Version:** `0.4.15`
+- **Version:** `0.4.16`
 
 ### Dependencies
 
@@ -9531,7 +9531,7 @@ A pressable button with Button.Text and Button.Icon subcomponents and primary, s
 
 - **Name:** `@cyclone-ui/button`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -9573,7 +9573,7 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 
 - **Name:** `@cyclone-ui/bytes-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -9604,7 +9604,7 @@ A highlighted content panel with a theme-colored gradient and diagonal pattern b
 
 - **Name:** `@cyclone-ui/callout`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -9647,7 +9647,7 @@ A themed card container with a gradient background and an optional accent color.
 
 - **Name:** `@cyclone-ui/card`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -9693,7 +9693,7 @@ A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indi
 
 - **Name:** `@cyclone-ui/checkbox`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -9735,7 +9735,7 @@ A circular progress indicator drawn with SVG on top of Tamagui's Progress primit
 
 - **Name:** `@cyclone-ui/circular-progress`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -9767,7 +9767,7 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 
 - **Name:** `@cyclone-ui/code-block`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -9815,7 +9815,7 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 
 - **Name:** `@cyclone-ui/collapsible`
 - **Type:** `component`
-- **Version:** `0.3.10`
+- **Version:** `0.3.11`
 
 ### Dependencies
 
@@ -9848,7 +9848,7 @@ An invisible anchor that bursts a ring of accent-colored confetti squares out of
 
 - **Name:** `@cyclone-ui/confetti-burst`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -9877,7 +9877,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 - **Name:** `@cyclone-ui/container`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -9910,7 +9910,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -9944,7 +9944,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 
 - **Name:** `@cyclone-ui/data-table`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -9999,7 +9999,7 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - **Name:** `@cyclone-ui/date-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -10061,7 +10061,7 @@ A modal Dialog compound component built on Tamagui's dialog, with Trigger, Porta
 
 - **Name:** `@cyclone-ui/dialog`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -10110,7 +10110,7 @@ A simple horizontal or vertical line used to separate content. It supports sm, m
 
 - **Name:** `@cyclone-ui/divider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -10141,7 +10141,7 @@ A side panel built on the Cyclone UI Sheet that slides in from the right by defa
 
 - **Name:** `@cyclone-ui/drawer`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -10179,7 +10179,7 @@ An uppercase, muted heading (rendered as h5) that uses the eyebrow font. It has 
 
 - **Name:** `@cyclone-ui/eyebrow-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -10210,7 +10210,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 
 - **Name:** `@cyclone-ui/feedback`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -10250,7 +10250,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 - **Name:** `@cyclone-ui/field`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -10295,7 +10295,7 @@ A file and image picker with a dashed drop zone that supports drag and drop on t
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -10354,7 +10354,7 @@ A FileTree component that renders a hierarchical file structure using File leave
 
 - **Name:** `@cyclone-ui/file-tree`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -10387,7 +10387,7 @@ A responsive site footer with compound layout parts for an introduction, action,
 
 - **Name:** `@cyclone-ui/footer`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -10422,7 +10422,7 @@ A form root that renders a native form element and provides Cyclone UI form stat
 
 - **Name:** `@cyclone-ui/form`
 - **Type:** `component`
-- **Version:** `0.9.14`
+- **Version:** `0.9.15`
 
 ### Dependencies
 
@@ -10453,7 +10453,7 @@ A decorative section divider that draws a ragged grid of seeded pseudo-random sq
 
 - **Name:** `@cyclone-ui/glitch-separator`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -10483,7 +10483,7 @@ Themed heading text components: HeadingHeroText, HeadingTitleText, HeadingLargeT
 
 - **Name:** `@cyclone-ui/heading-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -10514,7 +10514,7 @@ Tamagui icon components for web and React Native covering every icon in the Phos
 
 - **Name:** `@cyclone-ui/icons`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -10551,7 +10551,7 @@ An inline span styled for short code snippets, using the code font with a subtle
 
 - **Name:** `@cyclone-ui/inline-code-text`
 - **Type:** `component`
-- **Version:** `0.5.13`
+- **Version:** `0.5.14`
 
 ### Dependencies
 
@@ -10583,7 +10583,7 @@ A composable text input with Input.TextBox, Input.TextBox.Value, Input.Separator
 
 - **Name:** `@cyclone-ui/input`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -10626,7 +10626,7 @@ A text component that renders a label element using the title typography, built 
 
 - **Name:** `@cyclone-ui/label-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -10657,7 +10657,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - **Name:** `@cyclone-ui/like-button`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -10689,7 +10689,7 @@ A themed text link that renders an anchor with href and target on web and opens 
 
 - **Name:** `@cyclone-ui/link`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -10727,7 +10727,7 @@ A LinkText component that renders styled, interactive link text. It has base, mi
 
 - **Name:** `@cyclone-ui/link-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -10760,7 +10760,7 @@ A toast notification container built on Tamagui Toast that renders each queued t
 
 - **Name:** `@cyclone-ui/message`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -10796,7 +10796,7 @@ A responsive site header made of Logo, Navigation, Actions and MenuButton slots.
 
 - **Name:** `@cyclone-ui/navigation-header`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -10831,7 +10831,7 @@ A Button preset labeled "Next" by default, with a right-arrow icon that animates
 
 - **Name:** `@cyclone-ui/next-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -10864,7 +10864,7 @@ A NumberInput built on Input that renders a type=number text box with decrease (
 
 - **Name:** `@cyclone-ui/number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -10898,7 +10898,7 @@ A label-styled text component that renders its numeric children with NumberFlow,
 
 - **Name:** `@cyclone-ui/number-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -10929,7 +10929,7 @@ A one-time passcode input that renders one numeric input per digit (4 by default
 
 - **Name:** `@cyclone-ui/otp-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -10962,7 +10962,7 @@ A full-bleed backdrop that partially obscures background content with a blurred,
 
 - **Name:** `@cyclone-ui/overlay`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -10994,7 +10994,7 @@ A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command fo
 
 - **Name:** `@cyclone-ui/package-command-code-block`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -11024,7 +11024,7 @@ A Page layout compound component with Banner, TopNav (Start, Middle and End slot
 
 - **Name:** `@cyclone-ui/page`
 - **Type:** `component`
-- **Version:** `0.0.8`
+- **Version:** `0.0.9`
 
 ### Dependencies
 
@@ -11060,7 +11060,7 @@ A page navigation bar with previous and next buttons, first and last page button
 
 - **Name:** `@cyclone-ui/pagination`
 - **Type:** `component`
-- **Version:** `0.8.14`
+- **Version:** `0.8.15`
 
 ### Dependencies
 
@@ -11097,7 +11097,7 @@ A password input with a show/hide toggle and a caps-lock warning. A strength met
 
 - **Name:** `@cyclone-ui/password-input`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -11135,7 +11135,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 
 - **Name:** `@cyclone-ui/pdf-document-display`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -11171,7 +11171,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 - **Name:** `@cyclone-ui/phone-number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -11214,7 +11214,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -11257,7 +11257,7 @@ A button with an animated left-arrow icon and a default "Previous" label. The la
 
 - **Name:** `@cyclone-ui/previous-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -11290,7 +11290,7 @@ A themed progress bar built on the Tamagui Progress, with an animated indicator.
 
 - **Name:** `@cyclone-ui/progress`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -11321,7 +11321,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 
 - **Name:** `@cyclone-ui/radio-group`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -11365,7 +11365,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 - **Name:** `@cyclone-ui/rating`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -11399,7 +11399,7 @@ A RedactedAnimation wrapper that briefly covers its children with an accent-colo
 
 - **Name:** `@cyclone-ui/redacted-animation`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -11430,7 +11430,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 - **Name:** `@cyclone-ui/scroll-view`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -11463,7 +11463,7 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -11502,7 +11502,7 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -11549,7 +11549,7 @@ A modal panel that slides in from the top, right, bottom or left edge. It uses a
 
 - **Name:** `@cyclone-ui/sheet`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -11587,7 +11587,7 @@ A Material-style slider, built on the Tamagui Slider, for choosing a single valu
 
 - **Name:** `@cyclone-ui/slider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -11621,7 +11621,7 @@ A Spinner component that renders the React Native ActivityIndicator inside a Tam
 
 - **Name:** `@cyclone-ui/spinner`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -11651,7 +11651,7 @@ A multi-step wizard built on Tamagui Tabs with a vertical header list that marks
 
 - **Name:** `@cyclone-ui/stepper`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -11699,7 +11699,7 @@ A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled stat
 
 - **Name:** `@cyclone-ui/switch`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -11740,7 +11740,7 @@ A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer p
 
 - **Name:** `@cyclone-ui/table`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -11781,7 +11781,7 @@ A page navigation list built from an array of heading items, each with a title, 
 
 - **Name:** `@cyclone-ui/table-of-contents`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -11814,7 +11814,7 @@ A tabbed interface with Header.Item triggers and Content.Item panels. It offers 
 
 - **Name:** `@cyclone-ui/tabs`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -11860,7 +11860,7 @@ A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary an
 
 - **Name:** `@cyclone-ui/tag`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -11898,7 +11898,7 @@ A TagPicker input that turns typed text into removable tags. Enter adds a trimme
 
 - **Name:** `@cyclone-ui/tag-picker`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -11934,7 +11934,7 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - **Name:** `@cyclone-ui/text-area`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -11967,7 +11967,7 @@ A ThemeableGradient component that renders a diagonal LinearGradient. Its color 
 
 - **Name:** `@cyclone-ui/themeable-gradient`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -11999,7 +11999,7 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 
 - **Name:** `@cyclone-ui/themeable-icon`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -12038,7 +12038,7 @@ A Timeline that renders a list of events joined by a line, vertically or horizon
 
 - **Name:** `@cyclone-ui/timeline`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -12070,7 +12070,7 @@ A clickable toggle component that is exists in either an "on" or "off" state wit
 
 - **Name:** `@cyclone-ui/toggle`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -12101,7 +12101,7 @@ A clickable group of toggle components that exists in either an "on" or "off" st
 
 - **Name:** `@cyclone-ui/toggle-group`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -12133,7 +12133,7 @@ A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The conte
 
 - **Name:** `@cyclone-ui/tooltip`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -12169,7 +12169,7 @@ A documentation table that lists properties with their types. Each row expands t
 
 - **Name:** `@cyclone-ui/type-table`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -12207,7 +12207,7 @@ A ValidationText component that shows field validation messages in caption text 
 
 - **Name:** `@cyclone-ui/validation-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -12241,7 +12241,7 @@ A set of custom themed SVG graphics for Tamagui, including status circles (alert
 
 - **Name:** `@cyclone-ui/vectors`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -12276,7 +12276,7 @@ A wrapper that hides its content visually but keeps it available to screen reade
 
 - **Name:** `@cyclone-ui/visually-hidden`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -12308,7 +12308,7 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 
 - **Name:** `@cyclone-ui/accordion`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -12348,7 +12348,7 @@ An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, A
 
 - **Name:** `@cyclone-ui/alert`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -12391,7 +12391,7 @@ A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-ba
 
 - **Name:** `@cyclone-ui/alert-dialog`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -12430,7 +12430,7 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 
 - **Name:** `@cyclone-ui/anchor`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -12463,7 +12463,7 @@ An ArticlePage layout compound component for documentation and long-form reading
 
 - **Name:** `@cyclone-ui/article-page`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -12501,7 +12501,7 @@ A Badge that wraps an element and pins a small count or dot to one of its corner
 
 - **Name:** `@cyclone-ui/badge`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -12534,7 +12534,7 @@ A themed paragraph text component built on Tamagui's SizableText that renders a 
 
 - **Name:** `@cyclone-ui/body-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -12566,7 +12566,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 
 - **Name:** `@cyclone-ui/breadcrumb`
 - **Type:** `component`
-- **Version:** `0.4.15`
+- **Version:** `0.4.16`
 
 ### Dependencies
 
@@ -12606,7 +12606,7 @@ A pressable button with Button.Text and Button.Icon subcomponents and primary, s
 
 - **Name:** `@cyclone-ui/button`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -12648,7 +12648,7 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 
 - **Name:** `@cyclone-ui/bytes-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -12679,7 +12679,7 @@ A highlighted content panel with a theme-colored gradient and diagonal pattern b
 
 - **Name:** `@cyclone-ui/callout`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -12722,7 +12722,7 @@ A themed card container with a gradient background and an optional accent color.
 
 - **Name:** `@cyclone-ui/card`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -12768,7 +12768,7 @@ A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indi
 
 - **Name:** `@cyclone-ui/checkbox`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -12810,7 +12810,7 @@ A circular progress indicator drawn with SVG on top of Tamagui's Progress primit
 
 - **Name:** `@cyclone-ui/circular-progress`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -12842,7 +12842,7 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 
 - **Name:** `@cyclone-ui/code-block`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -12890,7 +12890,7 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 
 - **Name:** `@cyclone-ui/collapsible`
 - **Type:** `component`
-- **Version:** `0.3.10`
+- **Version:** `0.3.11`
 
 ### Dependencies
 
@@ -12923,7 +12923,7 @@ An invisible anchor that bursts a ring of accent-colored confetti squares out of
 
 - **Name:** `@cyclone-ui/confetti-burst`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -12952,7 +12952,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 - **Name:** `@cyclone-ui/container`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -12985,7 +12985,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -13019,7 +13019,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 
 - **Name:** `@cyclone-ui/data-table`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -13074,7 +13074,7 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - **Name:** `@cyclone-ui/date-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -13136,7 +13136,7 @@ A modal Dialog compound component built on Tamagui's dialog, with Trigger, Porta
 
 - **Name:** `@cyclone-ui/dialog`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -13185,7 +13185,7 @@ A simple horizontal or vertical line used to separate content. It supports sm, m
 
 - **Name:** `@cyclone-ui/divider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -13216,7 +13216,7 @@ A side panel built on the Cyclone UI Sheet that slides in from the right by defa
 
 - **Name:** `@cyclone-ui/drawer`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -13254,7 +13254,7 @@ An uppercase, muted heading (rendered as h5) that uses the eyebrow font. It has 
 
 - **Name:** `@cyclone-ui/eyebrow-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -13285,7 +13285,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 
 - **Name:** `@cyclone-ui/feedback`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -13325,7 +13325,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 - **Name:** `@cyclone-ui/field`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -13370,7 +13370,7 @@ A file and image picker with a dashed drop zone that supports drag and drop on t
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -13429,7 +13429,7 @@ A FileTree component that renders a hierarchical file structure using File leave
 
 - **Name:** `@cyclone-ui/file-tree`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -13462,7 +13462,7 @@ A responsive site footer with compound layout parts for an introduction, action,
 
 - **Name:** `@cyclone-ui/footer`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -13497,7 +13497,7 @@ A form root that renders a native form element and provides Cyclone UI form stat
 
 - **Name:** `@cyclone-ui/form`
 - **Type:** `component`
-- **Version:** `0.9.14`
+- **Version:** `0.9.15`
 
 ### Dependencies
 
@@ -13528,7 +13528,7 @@ A decorative section divider that draws a ragged grid of seeded pseudo-random sq
 
 - **Name:** `@cyclone-ui/glitch-separator`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -13558,7 +13558,7 @@ Themed heading text components: HeadingHeroText, HeadingTitleText, HeadingLargeT
 
 - **Name:** `@cyclone-ui/heading-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -13589,7 +13589,7 @@ Tamagui icon components for web and React Native covering every icon in the Phos
 
 - **Name:** `@cyclone-ui/icons`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -13626,7 +13626,7 @@ An inline span styled for short code snippets, using the code font with a subtle
 
 - **Name:** `@cyclone-ui/inline-code-text`
 - **Type:** `component`
-- **Version:** `0.5.13`
+- **Version:** `0.5.14`
 
 ### Dependencies
 
@@ -13658,7 +13658,7 @@ A composable text input with Input.TextBox, Input.TextBox.Value, Input.Separator
 
 - **Name:** `@cyclone-ui/input`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -13701,7 +13701,7 @@ A text component that renders a label element using the title typography, built 
 
 - **Name:** `@cyclone-ui/label-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -13732,7 +13732,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - **Name:** `@cyclone-ui/like-button`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -13764,7 +13764,7 @@ A themed text link that renders an anchor with href and target on web and opens 
 
 - **Name:** `@cyclone-ui/link`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -13802,7 +13802,7 @@ A LinkText component that renders styled, interactive link text. It has base, mi
 
 - **Name:** `@cyclone-ui/link-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -13835,7 +13835,7 @@ A toast notification container built on Tamagui Toast that renders each queued t
 
 - **Name:** `@cyclone-ui/message`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -13871,7 +13871,7 @@ A responsive site header made of Logo, Navigation, Actions and MenuButton slots.
 
 - **Name:** `@cyclone-ui/navigation-header`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -13906,7 +13906,7 @@ A Button preset labeled "Next" by default, with a right-arrow icon that animates
 
 - **Name:** `@cyclone-ui/next-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -13939,7 +13939,7 @@ A NumberInput built on Input that renders a type=number text box with decrease (
 
 - **Name:** `@cyclone-ui/number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -13973,7 +13973,7 @@ A label-styled text component that renders its numeric children with NumberFlow,
 
 - **Name:** `@cyclone-ui/number-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -14004,7 +14004,7 @@ A one-time passcode input that renders one numeric input per digit (4 by default
 
 - **Name:** `@cyclone-ui/otp-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -14037,7 +14037,7 @@ A full-bleed backdrop that partially obscures background content with a blurred,
 
 - **Name:** `@cyclone-ui/overlay`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -14069,7 +14069,7 @@ A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command fo
 
 - **Name:** `@cyclone-ui/package-command-code-block`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -14099,7 +14099,7 @@ A Page layout compound component with Banner, TopNav (Start, Middle and End slot
 
 - **Name:** `@cyclone-ui/page`
 - **Type:** `component`
-- **Version:** `0.0.8`
+- **Version:** `0.0.9`
 
 ### Dependencies
 
@@ -14135,7 +14135,7 @@ A page navigation bar with previous and next buttons, first and last page button
 
 - **Name:** `@cyclone-ui/pagination`
 - **Type:** `component`
-- **Version:** `0.8.14`
+- **Version:** `0.8.15`
 
 ### Dependencies
 
@@ -14172,7 +14172,7 @@ A password input with a show/hide toggle and a caps-lock warning. A strength met
 
 - **Name:** `@cyclone-ui/password-input`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -14210,7 +14210,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 
 - **Name:** `@cyclone-ui/pdf-document-display`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -14246,7 +14246,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 - **Name:** `@cyclone-ui/phone-number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -14289,7 +14289,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -14332,7 +14332,7 @@ A button with an animated left-arrow icon and a default "Previous" label. The la
 
 - **Name:** `@cyclone-ui/previous-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -14365,7 +14365,7 @@ A themed progress bar built on the Tamagui Progress, with an animated indicator.
 
 - **Name:** `@cyclone-ui/progress`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -14396,7 +14396,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 
 - **Name:** `@cyclone-ui/radio-group`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -14440,7 +14440,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 - **Name:** `@cyclone-ui/rating`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -14474,7 +14474,7 @@ A RedactedAnimation wrapper that briefly covers its children with an accent-colo
 
 - **Name:** `@cyclone-ui/redacted-animation`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -14505,7 +14505,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 - **Name:** `@cyclone-ui/scroll-view`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -14538,7 +14538,7 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -14577,7 +14577,7 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -14624,7 +14624,7 @@ A modal panel that slides in from the top, right, bottom or left edge. It uses a
 
 - **Name:** `@cyclone-ui/sheet`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -14662,7 +14662,7 @@ A Material-style slider, built on the Tamagui Slider, for choosing a single valu
 
 - **Name:** `@cyclone-ui/slider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -14696,7 +14696,7 @@ A Spinner component that renders the React Native ActivityIndicator inside a Tam
 
 - **Name:** `@cyclone-ui/spinner`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -14726,7 +14726,7 @@ A multi-step wizard built on Tamagui Tabs with a vertical header list that marks
 
 - **Name:** `@cyclone-ui/stepper`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -14774,7 +14774,7 @@ A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled stat
 
 - **Name:** `@cyclone-ui/switch`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -14815,7 +14815,7 @@ A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer p
 
 - **Name:** `@cyclone-ui/table`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -14856,7 +14856,7 @@ A page navigation list built from an array of heading items, each with a title, 
 
 - **Name:** `@cyclone-ui/table-of-contents`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -14889,7 +14889,7 @@ A tabbed interface with Header.Item triggers and Content.Item panels. It offers 
 
 - **Name:** `@cyclone-ui/tabs`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -14935,7 +14935,7 @@ A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary an
 
 - **Name:** `@cyclone-ui/tag`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -14973,7 +14973,7 @@ A TagPicker input that turns typed text into removable tags. Enter adds a trimme
 
 - **Name:** `@cyclone-ui/tag-picker`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -15009,7 +15009,7 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - **Name:** `@cyclone-ui/text-area`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -15042,7 +15042,7 @@ A ThemeableGradient component that renders a diagonal LinearGradient. Its color 
 
 - **Name:** `@cyclone-ui/themeable-gradient`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -15074,7 +15074,7 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 
 - **Name:** `@cyclone-ui/themeable-icon`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -15113,7 +15113,7 @@ A Timeline that renders a list of events joined by a line, vertically or horizon
 
 - **Name:** `@cyclone-ui/timeline`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -15145,7 +15145,7 @@ A clickable toggle component that is exists in either an "on" or "off" state wit
 
 - **Name:** `@cyclone-ui/toggle`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -15176,7 +15176,7 @@ A clickable group of toggle components that exists in either an "on" or "off" st
 
 - **Name:** `@cyclone-ui/toggle-group`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -15208,7 +15208,7 @@ A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The conte
 
 - **Name:** `@cyclone-ui/tooltip`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -15244,7 +15244,7 @@ A documentation table that lists properties with their types. Each row expands t
 
 - **Name:** `@cyclone-ui/type-table`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -15282,7 +15282,7 @@ A ValidationText component that shows field validation messages in caption text 
 
 - **Name:** `@cyclone-ui/validation-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -15316,7 +15316,7 @@ A set of custom themed SVG graphics for Tamagui, including status circles (alert
 
 - **Name:** `@cyclone-ui/vectors`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -15351,7 +15351,7 @@ A wrapper that hides its content visually but keeps it available to screen reade
 
 - **Name:** `@cyclone-ui/visually-hidden`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -15383,7 +15383,7 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 
 - **Name:** `@cyclone-ui/accordion`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -15423,7 +15423,7 @@ An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, A
 
 - **Name:** `@cyclone-ui/alert`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -15466,7 +15466,7 @@ A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-ba
 
 - **Name:** `@cyclone-ui/alert-dialog`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -15505,7 +15505,7 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 
 - **Name:** `@cyclone-ui/anchor`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -15538,7 +15538,7 @@ An ArticlePage layout compound component for documentation and long-form reading
 
 - **Name:** `@cyclone-ui/article-page`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -15576,7 +15576,7 @@ A Badge that wraps an element and pins a small count or dot to one of its corner
 
 - **Name:** `@cyclone-ui/badge`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -15609,7 +15609,7 @@ A themed paragraph text component built on Tamagui's SizableText that renders a 
 
 - **Name:** `@cyclone-ui/body-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -15641,7 +15641,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 
 - **Name:** `@cyclone-ui/breadcrumb`
 - **Type:** `component`
-- **Version:** `0.4.15`
+- **Version:** `0.4.16`
 
 ### Dependencies
 
@@ -15681,7 +15681,7 @@ A pressable button with Button.Text and Button.Icon subcomponents and primary, s
 
 - **Name:** `@cyclone-ui/button`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -15723,7 +15723,7 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 
 - **Name:** `@cyclone-ui/bytes-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -15754,7 +15754,7 @@ A highlighted content panel with a theme-colored gradient and diagonal pattern b
 
 - **Name:** `@cyclone-ui/callout`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -15797,7 +15797,7 @@ A themed card container with a gradient background and an optional accent color.
 
 - **Name:** `@cyclone-ui/card`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -15843,7 +15843,7 @@ A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indi
 
 - **Name:** `@cyclone-ui/checkbox`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -15885,7 +15885,7 @@ A circular progress indicator drawn with SVG on top of Tamagui's Progress primit
 
 - **Name:** `@cyclone-ui/circular-progress`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -15917,7 +15917,7 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 
 - **Name:** `@cyclone-ui/code-block`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -15965,7 +15965,7 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 
 - **Name:** `@cyclone-ui/collapsible`
 - **Type:** `component`
-- **Version:** `0.3.10`
+- **Version:** `0.3.11`
 
 ### Dependencies
 
@@ -15998,7 +15998,7 @@ An invisible anchor that bursts a ring of accent-colored confetti squares out of
 
 - **Name:** `@cyclone-ui/confetti-burst`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -16027,7 +16027,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 - **Name:** `@cyclone-ui/container`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -16060,7 +16060,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -16094,7 +16094,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 
 - **Name:** `@cyclone-ui/data-table`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -16149,7 +16149,7 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - **Name:** `@cyclone-ui/date-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -16211,7 +16211,7 @@ A modal Dialog compound component built on Tamagui's dialog, with Trigger, Porta
 
 - **Name:** `@cyclone-ui/dialog`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -16260,7 +16260,7 @@ A simple horizontal or vertical line used to separate content. It supports sm, m
 
 - **Name:** `@cyclone-ui/divider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -16291,7 +16291,7 @@ A side panel built on the Cyclone UI Sheet that slides in from the right by defa
 
 - **Name:** `@cyclone-ui/drawer`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -16329,7 +16329,7 @@ An uppercase, muted heading (rendered as h5) that uses the eyebrow font. It has 
 
 - **Name:** `@cyclone-ui/eyebrow-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -16360,7 +16360,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 
 - **Name:** `@cyclone-ui/feedback`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -16400,7 +16400,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 - **Name:** `@cyclone-ui/field`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -16445,7 +16445,7 @@ A file and image picker with a dashed drop zone that supports drag and drop on t
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -16504,7 +16504,7 @@ A FileTree component that renders a hierarchical file structure using File leave
 
 - **Name:** `@cyclone-ui/file-tree`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -16537,7 +16537,7 @@ A responsive site footer with compound layout parts for an introduction, action,
 
 - **Name:** `@cyclone-ui/footer`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -16572,7 +16572,7 @@ A form root that renders a native form element and provides Cyclone UI form stat
 
 - **Name:** `@cyclone-ui/form`
 - **Type:** `component`
-- **Version:** `0.9.14`
+- **Version:** `0.9.15`
 
 ### Dependencies
 
@@ -16603,7 +16603,7 @@ A decorative section divider that draws a ragged grid of seeded pseudo-random sq
 
 - **Name:** `@cyclone-ui/glitch-separator`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -16633,7 +16633,7 @@ Themed heading text components: HeadingHeroText, HeadingTitleText, HeadingLargeT
 
 - **Name:** `@cyclone-ui/heading-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -16664,7 +16664,7 @@ Tamagui icon components for web and React Native covering every icon in the Phos
 
 - **Name:** `@cyclone-ui/icons`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -16701,7 +16701,7 @@ An inline span styled for short code snippets, using the code font with a subtle
 
 - **Name:** `@cyclone-ui/inline-code-text`
 - **Type:** `component`
-- **Version:** `0.5.13`
+- **Version:** `0.5.14`
 
 ### Dependencies
 
@@ -16733,7 +16733,7 @@ A composable text input with Input.TextBox, Input.TextBox.Value, Input.Separator
 
 - **Name:** `@cyclone-ui/input`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -16776,7 +16776,7 @@ A text component that renders a label element using the title typography, built 
 
 - **Name:** `@cyclone-ui/label-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -16807,7 +16807,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - **Name:** `@cyclone-ui/like-button`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -16839,7 +16839,7 @@ A themed text link that renders an anchor with href and target on web and opens 
 
 - **Name:** `@cyclone-ui/link`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -16877,7 +16877,7 @@ A LinkText component that renders styled, interactive link text. It has base, mi
 
 - **Name:** `@cyclone-ui/link-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -16910,7 +16910,7 @@ A toast notification container built on Tamagui Toast that renders each queued t
 
 - **Name:** `@cyclone-ui/message`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -16946,7 +16946,7 @@ A responsive site header made of Logo, Navigation, Actions and MenuButton slots.
 
 - **Name:** `@cyclone-ui/navigation-header`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -16981,7 +16981,7 @@ A Button preset labeled "Next" by default, with a right-arrow icon that animates
 
 - **Name:** `@cyclone-ui/next-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -17014,7 +17014,7 @@ A NumberInput built on Input that renders a type=number text box with decrease (
 
 - **Name:** `@cyclone-ui/number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -17048,7 +17048,7 @@ A label-styled text component that renders its numeric children with NumberFlow,
 
 - **Name:** `@cyclone-ui/number-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -17079,7 +17079,7 @@ A one-time passcode input that renders one numeric input per digit (4 by default
 
 - **Name:** `@cyclone-ui/otp-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -17112,7 +17112,7 @@ A full-bleed backdrop that partially obscures background content with a blurred,
 
 - **Name:** `@cyclone-ui/overlay`
 - **Type:** `component`
-- **Version:** `0.0.1`
+- **Version:** `0.0.2`
 
 ### Dependencies
 
@@ -17144,7 +17144,7 @@ A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command fo
 
 - **Name:** `@cyclone-ui/package-command-code-block`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -17174,7 +17174,7 @@ A Page layout compound component with Banner, TopNav (Start, Middle and End slot
 
 - **Name:** `@cyclone-ui/page`
 - **Type:** `component`
-- **Version:** `0.0.8`
+- **Version:** `0.0.9`
 
 ### Dependencies
 
@@ -17210,7 +17210,7 @@ A page navigation bar with previous and next buttons, first and last page button
 
 - **Name:** `@cyclone-ui/pagination`
 - **Type:** `component`
-- **Version:** `0.8.14`
+- **Version:** `0.8.15`
 
 ### Dependencies
 
@@ -17247,7 +17247,7 @@ A password input with a show/hide toggle and a caps-lock warning. A strength met
 
 - **Name:** `@cyclone-ui/password-input`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -17285,7 +17285,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 
 - **Name:** `@cyclone-ui/pdf-document-display`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -17321,7 +17321,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 - **Name:** `@cyclone-ui/phone-number-input`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -17364,7 +17364,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -17407,7 +17407,7 @@ A button with an animated left-arrow icon and a default "Previous" label. The la
 
 - **Name:** `@cyclone-ui/previous-button`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -17440,7 +17440,7 @@ A themed progress bar built on the Tamagui Progress, with an animated indicator.
 
 - **Name:** `@cyclone-ui/progress`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -17471,7 +17471,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 
 - **Name:** `@cyclone-ui/radio-group`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -17515,7 +17515,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 - **Name:** `@cyclone-ui/rating`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -17549,7 +17549,7 @@ A RedactedAnimation wrapper that briefly covers its children with an accent-colo
 
 - **Name:** `@cyclone-ui/redacted-animation`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -17580,7 +17580,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 
 - **Name:** `@cyclone-ui/scroll-view`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -17613,7 +17613,7 @@ A headless search text input with a magnifying-glass icon. It shows a popover of
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -17652,7 +17652,7 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -17699,7 +17699,7 @@ A modal panel that slides in from the top, right, bottom or left edge. It uses a
 
 - **Name:** `@cyclone-ui/sheet`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -17737,7 +17737,7 @@ A Material-style slider, built on the Tamagui Slider, for choosing a single valu
 
 - **Name:** `@cyclone-ui/slider`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -17771,7 +17771,7 @@ A Spinner component that renders the React Native ActivityIndicator inside a Tam
 
 - **Name:** `@cyclone-ui/spinner`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -17801,7 +17801,7 @@ A multi-step wizard built on Tamagui Tabs with a vertical header list that marks
 
 - **Name:** `@cyclone-ui/stepper`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -17849,7 +17849,7 @@ A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled stat
 
 - **Name:** `@cyclone-ui/switch`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -17890,7 +17890,7 @@ A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer p
 
 - **Name:** `@cyclone-ui/table`
 - **Type:** `component`
-- **Version:** `0.4.14`
+- **Version:** `0.4.15`
 
 ### Dependencies
 
@@ -17931,7 +17931,7 @@ A page navigation list built from an array of heading items, each with a title, 
 
 - **Name:** `@cyclone-ui/table-of-contents`
 - **Type:** `component`
-- **Version:** `0.0.11`
+- **Version:** `0.0.12`
 
 ### Dependencies
 
@@ -17964,7 +17964,7 @@ A tabbed interface with Header.Item triggers and Content.Item panels. It offers 
 
 - **Name:** `@cyclone-ui/tabs`
 - **Type:** `component`
-- **Version:** `0.3.14`
+- **Version:** `0.3.15`
 
 ### Dependencies
 
@@ -18010,7 +18010,7 @@ A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary an
 
 - **Name:** `@cyclone-ui/tag`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -18048,7 +18048,7 @@ A TagPicker input that turns typed text into removable tags. Enter adds a trimme
 
 - **Name:** `@cyclone-ui/tag-picker`
 - **Type:** `component`
-- **Version:** `0.0.9`
+- **Version:** `0.0.10`
 
 ### Dependencies
 
@@ -18084,7 +18084,7 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - **Name:** `@cyclone-ui/text-area`
 - **Type:** `component`
-- **Version:** `0.1.14`
+- **Version:** `0.1.15`
 
 ### Dependencies
 
@@ -18117,7 +18117,7 @@ A ThemeableGradient component that renders a diagonal LinearGradient. Its color 
 
 - **Name:** `@cyclone-ui/themeable-gradient`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -18149,7 +18149,7 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 
 - **Name:** `@cyclone-ui/themeable-icon`
 - **Type:** `component`
-- **Version:** `0.6.14`
+- **Version:** `0.6.15`
 
 ### Dependencies
 
@@ -18188,7 +18188,7 @@ A Timeline that renders a list of events joined by a line, vertically or horizon
 
 - **Name:** `@cyclone-ui/timeline`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -18220,7 +18220,7 @@ A clickable toggle component that is exists in either an "on" or "off" state wit
 
 - **Name:** `@cyclone-ui/toggle`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -18251,7 +18251,7 @@ A clickable group of toggle components that exists in either an "on" or "off" st
 
 - **Name:** `@cyclone-ui/toggle-group`
 - **Type:** `component`
-- **Version:** `0.0.4`
+- **Version:** `0.0.5`
 
 ### Dependencies
 
@@ -18283,7 +18283,7 @@ A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The conte
 
 - **Name:** `@cyclone-ui/tooltip`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -18319,7 +18319,7 @@ A documentation table that lists properties with their types. Each row expands t
 
 - **Name:** `@cyclone-ui/type-table`
 - **Type:** `component`
-- **Version:** `0.0.10`
+- **Version:** `0.0.11`
 
 ### Dependencies
 
@@ -18357,7 +18357,7 @@ A ValidationText component that shows field validation messages in caption text 
 
 - **Name:** `@cyclone-ui/validation-text`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -18391,7 +18391,7 @@ A set of custom themed SVG graphics for Tamagui, including status circles (alert
 
 - **Name:** `@cyclone-ui/vectors`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 
@@ -18426,7 +18426,7 @@ A wrapper that hides its content visually but keeps it available to screen reade
 
 - **Name:** `@cyclone-ui/visually-hidden`
 - **Type:** `component`
-- **Version:** `0.5.14`
+- **Version:** `0.5.15`
 
 ### Dependencies
 

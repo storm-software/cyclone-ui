@@ -107,18 +107,18 @@
   ],
   "displayName": "Cyclone Light",
   "type": "light",
-  "fg": "#1f1f21",
+  "fg": "#242528",
   "bg": "#eaeaea",
   "colors": {
     "editor.background": "#eaeaea",
-    "editor.foreground": "#1f1f21",
+    "editor.foreground": "#242528",
     "editorCursor.foreground": "#2055b3",
-    "editor.selectionBackground": "#1f1f21",
+    "editor.selectionBackground": "#242528",
     "editor.selectionForeground": "#eaeaea",
-    "editor.inactiveSelectionBackground": "#e1e1e1",
+    "editor.inactiveSelectionBackground": "#f1f1f1",
     "editorLineNumber.foreground": "#959698",
     "editorLineNumber.activeForeground": "#555659",
-    "editorIndentGuide.background1": "#e1e1e1",
+    "editorIndentGuide.background1": "#d0d0d1",
     "editorIndentGuide.activeBackground1": "#959698",
     "editorWhitespace.foreground": "#959698"
   }

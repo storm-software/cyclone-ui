@@ -33,6 +33,8 @@ declare const tokens: {
       "12": DesignToken;
       "13": DesignToken;
       "14": DesignToken;
+      "15": DesignToken;
+      "16": DesignToken;
     };
     red: {
       "1": DesignToken;
@@ -115,6 +117,7 @@ declare const tokens: {
     ink: DesignToken;
     subtle: DesignToken;
     subtlest: DesignToken;
+    outline: DesignToken;
     hairline: DesignToken;
     sunken: DesignToken;
     canvas: DesignToken;
@@ -290,10 +293,10 @@ declare const tokens: {
     "floating-active": DesignToken;
     "floating-inactive": DesignToken;
     "floating-disabled": DesignToken;
-    "hairline-hovered": DesignToken;
-    "hairline-active": DesignToken;
-    "hairline-inactive": DesignToken;
-    "hairline-disabled": DesignToken;
+    "outline-hovered": DesignToken;
+    "outline-active": DesignToken;
+    "outline-inactive": DesignToken;
+    "outline-disabled": DesignToken;
   };
   size: {
     zero: DesignToken;

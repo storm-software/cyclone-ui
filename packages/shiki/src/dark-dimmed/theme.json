@@ -83,7 +83,7 @@
         "identifier"
       ],
       "settings": {
-        "foreground": "#b4b4b4"
+        "foreground": "#adadad"
       }
     },
     {
@@ -107,18 +107,18 @@
   ],
   "displayName": "Cyclone Light",
   "type": "darkDimmed",
-  "fg": "#cfcfcf",
+  "fg": "#cacaca",
   "bg": "#343438",
   "colors": {
     "editor.background": "#343438",
-    "editor.foreground": "#cfcfcf",
+    "editor.foreground": "#cacaca",
     "editorCursor.foreground": "#638cd2",
-    "editor.selectionBackground": "#cfcfcf",
+    "editor.selectionBackground": "#cacaca",
     "editor.selectionForeground": "#343438",
-    "editor.inactiveSelectionBackground": "#2e2e30",
+    "editor.inactiveSelectionBackground": "#3c3c3e",
     "editorLineNumber.foreground": "#8f8f90",
-    "editorLineNumber.activeForeground": "#b4b4b4",
-    "editorIndentGuide.background1": "#57575a",
+    "editorLineNumber.activeForeground": "#adadad",
+    "editorIndentGuide.background1": "#45464a",
     "editorIndentGuide.activeBackground1": "#8f8f90",
     "editorWhitespace.foreground": "#8f8f90"
   }

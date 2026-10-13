@@ -53,11 +53,8 @@ const meta: Meta<DatePickerStoryArgs> = {
             mode={mode}
             separator={separator}
             variant={variant}
-            size={props.size}>
-            <DatePicker.TextBox>
-              <DatePicker.TextBox.Value />
-            </DatePicker.TextBox>
-          </DatePicker>
+            size={props.size}
+          />
         </Field>
       </Form>
     );

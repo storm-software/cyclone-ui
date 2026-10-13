@@ -146,8 +146,11 @@ export default defineConfig({
             color.canvas,
             theme === "dark" ? "#222222" : "#fafafa"
           );
-          const sunken = tokenValue(color.sunken, page);
-          const selection = tokenValue(color.emphasis, sunken);
+          const surface = tokenValue(color.surface, page);
+          const selection = tokenValue(
+            color.emphasis,
+            color.elevated as string
+          );
           const onSelection = page;
           const border = tokenValue(color.hairline, subtleInk);
 
@@ -165,7 +168,7 @@ export default defineConfig({
               "editorCursor.foreground": info,
               "editor.selectionBackground": selection,
               "editor.selectionForeground": onSelection,
-              "editor.inactiveSelectionBackground": sunken,
+              "editor.inactiveSelectionBackground": surface,
               "editorLineNumber.foreground": subtleInk,
               "editorLineNumber.activeForeground": body,
               "editorIndentGuide.background1": border,
@@ -300,7 +303,7 @@ export default defineConfig({
             buttonBorder: tokenValue(color.hairline),
 
             inputBg: tokenValue(color.elevated),
-            inputBorder: tokenValue(color.hairline),
+            inputBorder: tokenValue(color.outline),
             inputTextColor: tokenValue(color.ink),
             inputBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
 

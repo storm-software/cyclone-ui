@@ -4,21 +4,21 @@
     "emphasis": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.2}",
+      "$value": "{color.neutral.3}",
       "$description": "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       "group": "foreground"
     },
     "ink": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.5}",
+      "$value": "{color.neutral.6}",
       "$description": "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
       "group": "foreground"
     },
     "subtle": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.7}",
+      "$value": "{color.neutral.8}",
       "$description": "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       "group": "foreground"
     },
@@ -29,12 +29,19 @@
       "$description": "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       "group": "foreground"
     },
-    "hairline": {
+    "outline": {
       "$type": "color",
       "colorSpace": "display-p3",
       "$value": "{color.neutral.10}",
-      "$description": "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      "semantic": true
+      "$description": "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
+      "group": "separator"
+    },
+    "hairline": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "{color.neutral.12}",
+      "$description": "Low-contrast color for borders, dividers and separators.",
+      "group": "separator"
     },
     "sunken": {
       "$type": "color",
@@ -46,28 +53,28 @@
     "canvas": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.14}",
+      "$value": "{color.neutral.16}",
       "$description": "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator.",
       "group": "background"
     },
     "surface": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.13}",
+      "$value": "{color.neutral.15}",
       "$description": "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree.",
       "group": "background"
     },
     "elevated": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.12}",
+      "$value": "{color.neutral.14}",
       "$description": "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
       "group": "background"
     },
     "floating": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.11}",
+      "$value": "{color.neutral.13}",
       "$description": "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
       "group": "background"
     },
