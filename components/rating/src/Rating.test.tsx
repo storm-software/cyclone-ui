@@ -6,7 +6,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import type { RatingProps } from "./Rating";
 import { Rating, roundRatingValue } from "./Rating";
 
-import { config } from "../../../packages/themes/src/tamagui/config";
+import { config } from "../../../packages/tokens/src/tamagui/config";
 
 const renderRating = (props: RatingProps = {}) =>
   renderToStaticMarkup(

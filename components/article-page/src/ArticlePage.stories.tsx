@@ -59,11 +59,11 @@ const StoryNavItemFrame = styled(View, {
   paddingHorizontal: "2xl",
   paddingVertical: "xl",
   borderRadius: "lg",
-  backgroundColor: "transparent hover:subtle",
+  backgroundColor: "transparent hover:secondary",
   variants: {
     active: {
       true: {
-        backgroundColor: "subtle"
+        backgroundColor: "secondary"
       }
     }
   } as const
@@ -90,7 +90,7 @@ const StoryNavItem = ({
       render="span"
       size="sm"
       flexGrow={1}
-      color={active ? "accent" : "secondary"}
+      color={active ? "primary" : "ink"}
       fontWeight={active ? "600" : undefined}>
       {children}
     </BodyText>
@@ -101,7 +101,7 @@ const StoryNavItem = ({
 const StoryNavGroupLabel = styled(BodyText, {
   render: "span",
   size: "sm",
-  color: "secondary",
+  color: "ink",
   fontWeight: "600",
   paddingHorizontal: "2xl",
   paddingTop: "7xl",
@@ -112,7 +112,7 @@ const StoryNavFolderItems = styled(View, {
   marginLeft: "4xl",
   paddingLeft: "lg",
   borderLeftWidth: 1,
-  borderLeftColor: "border"
+  borderLeftColor: "hairline"
 });
 
 const StoryBoxButton = styled(View, {
@@ -123,19 +123,19 @@ const StoryBoxButton = styled(View, {
   height: 40,
   paddingHorizontal: "2xl",
   cursor: "pointer",
-  backgroundColor: "surfaceElevated hover:subtle",
+  backgroundColor: "surface hover:secondary",
   borderWidth: 1,
-  borderColor: "border",
+  borderColor: "hairline",
   borderRadius: "xl"
 });
 
 const StoryKey = styled(BodyText, {
   render: "kbd",
   size: "sm",
-  color: "secondary",
+  color: "ink",
   paddingHorizontal: "md",
   borderWidth: 1,
-  borderColor: "border",
+  borderColor: "hairline",
   borderRadius: "sm"
 });
 
@@ -165,25 +165,25 @@ const StorySideNav = () => (
           height={24}
           alignItems="center"
           justifyContent="center"
-          backgroundColor="accent"
+          backgroundColor="primary"
           borderRadius="full">
-          <Lightning size={12} color="onAccent" weight="fill" />
+          <Lightning size={12} color="onPrimary" weight="fill" />
         </View>
-        <BodyText render="span" color="primary" fontWeight="700" flexGrow={1}>
+        <BodyText render="span" color="emphasis" fontWeight="700" flexGrow={1}>
           Cyclone UI
         </BodyText>
         <ArticlePage.SideNavToggle />
       </View>
       <StoryBoxButton aria-label="Switch documentation">
-        <Cube aria-hidden={true} size={16} color="accent" />
-        <BodyText render="span" size="sm" color="primary" flexGrow={1}>
+        <Cube aria-hidden={true} size={16} color="primary" />
+        <BodyText render="span" size="sm" color="emphasis" flexGrow={1}>
           Cyclone Core
         </BodyText>
-        <CaretUpDown aria-hidden={true} size={14} color="secondary" />
+        <CaretUpDown aria-hidden={true} size={14} color="ink" />
       </StoryBoxButton>
       <StoryBoxButton aria-label="Search">
-        <MagnifyingGlass aria-hidden={true} size={16} color="secondary" />
-        <BodyText render="span" size="sm" color="secondary" flexGrow={1}>
+        <MagnifyingGlass aria-hidden={true} size={16} color="ink" />
+        <BodyText render="span" size="sm" color="ink" flexGrow={1}>
           Search
         </BodyText>
         <StoryKey>Ctrl</StoryKey>
@@ -197,7 +197,7 @@ const StorySideNav = () => (
       </StoryNavItem>
       <StoryNavItem
         icon={<MagnifyingGlass aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="secondary" />}>
+        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
         Search
       </StoryNavItem>
       <StoryNavGroupLabel>API References</StoryNavGroupLabel>
@@ -206,22 +206,22 @@ const StorySideNav = () => (
       </StoryNavItem>
       <StoryNavItem
         icon={<Translate aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="secondary" />}>
+        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
         Internationalization
       </StoryNavItem>
       <StoryNavItem
         icon={<PuzzlePiece aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="secondary" />}>
+        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
         Components
       </StoryNavItem>
       <StoryNavItem
         icon={<Wrench aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="secondary" />}>
+        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
         Utilities
       </StoryNavItem>
       <StoryNavItem
         icon={<Code aria-hidden={true} size={16} />}
-        end={<CaretDown aria-hidden={true} size={14} color="secondary" />}>
+        end={<CaretDown aria-hidden={true} size={14} color="ink" />}>
         MDX Plugins
       </StoryNavItem>
       <StoryNavFolderItems>
@@ -332,7 +332,7 @@ const StoryMain = () => (
     <ArticlePage.Content toc={storyToc}>
       <View gap="2xl">
         <HeadingTitleText>Headings</HeadingTitleText>
-        <BodyText color="secondary">Process headings from your document</BodyText>
+        <BodyText color="ink">Process headings from your document</BodyText>
       </View>
       <View flexDirection="row" flexWrap="wrap" gap="xl">
         <Button variant="outlined" size="9xl" flexGrow={0}>
@@ -354,7 +354,9 @@ const StoryMain = () => (
           {section.depth === 2 ? (
             <HeadingLargeText id={section.id}>{section.title}</HeadingLargeText>
           ) : (
-            <HeadingMediumText id={section.id}>{section.title}</HeadingMediumText>
+            <HeadingMediumText id={section.id}>
+              {section.title}
+            </HeadingMediumText>
           )}
           <BodyText>{section.body}</BodyText>
           <BodyText>

@@ -141,6 +141,331 @@ const COLOR_VARIANTS = {
         </ColorPalette>
       </section>
       <section>
+        <h2>{"Background"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.canvas"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
+      colors={{
+            "canvas": "#151518"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-active"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 4% brighter)"}
+      colors={{
+            "canvas-active": "#17171a"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-disabled"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "canvas-disabled": "#242427"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-hovered"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 4% brighter)"}
+      colors={{
+            "canvas-hovered": "#17171a"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-inactive"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% darker)"}
+      colors={{
+            "canvas-inactive": "#111114"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
+      colors={{
+            "elevated": "#242528"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-active"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 4% brighter)"}
+      colors={{
+            "elevated-active": "#26272a"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-disabled"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "elevated-disabled": "#2e2f32"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-hovered"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 4% brighter)"}
+      colors={{
+            "elevated-hovered": "#26272a"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-inactive"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% darker)"}
+      colors={{
+            "elevated-inactive": "#1e1f22"
+      }}
+    />
+          <ColorItem
+      title={"color.floating"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
+      colors={{
+            "floating": "#2b2c30"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-active"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 4% brighter)"}
+      colors={{
+            "floating-active": "#2e2f33"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-disabled"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "floating-disabled": "#333337"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-hovered"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 4% brighter)"}
+      colors={{
+            "floating-hovered": "#2e2f33"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-inactive"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% darker)"}
+      colors={{
+            "floating-inactive": "#242529"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
+      colors={{
+            "sunken": "#0c0c0d"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-active"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 4% brighter)"}
+      colors={{
+            "sunken-active": "#0d0d0e"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-disabled"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "sunken-disabled": "#1e1e20"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-hovered"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 4% brighter)"}
+      colors={{
+            "sunken-hovered": "#0d0d0e"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-inactive"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% darker)"}
+      colors={{
+            "sunken-inactive": "#09090a"
+      }}
+    />
+          <ColorItem
+      title={"color.surface"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
+      colors={{
+            "surface": "#1f1f21"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-active"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 4% brighter)"}
+      colors={{
+            "surface-active": "#212123"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-disabled"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "surface-disabled": "#2b2b2d"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-hovered"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 4% brighter)"}
+      colors={{
+            "surface-hovered": "#212123"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-inactive"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% darker)"}
+      colors={{
+            "surface-inactive": "#19191b"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
+        <h2>{"Foreground"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.emphasis"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      colors={{
+            "emphasis": "#f1f1f1"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-active"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive)"}
+      colors={{
+            "emphasis-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-disabled"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "emphasis-disabled": "#808082"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-hovered"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)"}
+      colors={{
+            "emphasis-hovered": "#a1a1a1"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-inactive"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      colors={{
+            "emphasis-inactive": "#808080"
+      }}
+    />
+          <ColorItem
+      title={"color.ink"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
+      colors={{
+            "ink": "#cacacb"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-active"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, dark contrast primitive)"}
+      colors={{
+            "ink-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-disabled"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "ink-disabled": "#727275"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-hovered"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% darker)"}
+      colors={{
+            "ink-hovered": "#7d7d7e"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-inactive"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      colors={{
+            "ink-inactive": "#808080"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtle": "#959698"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)"}
+      colors={{
+            "subtle-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtle-disabled": "#606063"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, dark contrast primitive)"}
+      colors={{
+            "subtle-hovered": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtle-inactive": "#808080"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtlest": "#555659"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)"}
+      colors={{
+            "subtlest-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtlest-disabled": "#494a4d"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, dark contrast primitive)"}
+      colors={{
+            "subtlest-hovered": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtlest-inactive": "#808080"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
         <h2>Colors</h2>
         <ColorPalette>
           <ColorItem
@@ -170,13 +495,6 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.border"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
-      colors={{
-            "border": "#555659"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
       subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
@@ -199,59 +517,10 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.primary"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      title={"color.hairline"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
-            "primary": "#f1f1f1"
-      }}
-    />
-          <ColorItem
-      title={"color.secondary"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
-      colors={{
-            "secondary": "#cacacb"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-canvas"}
-      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
-      colors={{
-            "surface-canvas": "#151518"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-elevated"}
-      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
-      colors={{
-            "surface-elevated": "#1f1f21"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-floating"}
-      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
-      colors={{
-            "surface-floating": "#242528"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-highest"}
-      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
-      colors={{
-            "surface-highest": "#2b2c30"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-sunken"}
-      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
-      colors={{
-            "surface-sunken": "#0c0c0d"
-      }}
-    />
-          <ColorItem
-      title={"color.tertiary"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-            "tertiary": "#46464a"
+            "hairline": "#46464a"
       }}
     />
         </ColorPalette>
@@ -262,124 +531,18 @@ const COLOR_VARIANTS = {
       title={"color.base"}
       subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
-              "base": "#f1f1f1"
-      }}
-    />
-            <ColorItem
-      title={"color.base-accent"}
-      subtitle={"Alias of base for the base theme"}
-      colors={{
-              "base-accent": "#f1f1f1"
-      }}
-    />
-            <ColorItem
-      title={"color.base-active"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive)"}
-      colors={{
-              "base-active": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.base-disabled"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-disabled": "#808082"
-      }}
-    />
-            <ColorItem
-      title={"color.base-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)"}
-      colors={{
-              "base-hovered": "#a1a1a1"
-      }}
-    />
-            <ColorItem
-      title={"color.base-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
-      colors={{
-              "base-inactive": "#808080"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-              "base-subtle": "#46464a"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-active"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 13% brighter)"}
-      colors={{
-              "base-subtle-active": "#535358"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-disabled"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-subtle-disabled": "#444447"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 13% brighter)"}
-      colors={{
-              "base-subtle-hovered": "#535358"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
-      colors={{
-              "base-subtle-inactive": "#808080"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-accent"}
-      subtitle={"Generated text and icon color on base backgrounds"}
-      colors={{
-              "on-base-accent": "#151518"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-subtle"}
-      subtitle={"Generated text and icon color on base-subtle backgrounds"}
-      colors={{
-              "on-base-subtle": "#FAFAFA"
-      }}
-    />
-          </ColorPalette>
-        </section>
-        <section>
-          <h3>{"Border"}</h3>
-          <ColorPalette>
-            <ColorItem
-      title={"color.border-active"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)"}
-      colors={{
-              "border-active": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.border-disabled"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "border-disabled": "#494a4d"
-      }}
-    />
-            <ColorItem
-      title={"color.border-hovered"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)"}
-      colors={{
-              "border-hovered": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.border-inactive"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
-      colors={{
-              "border-inactive": "#808080"
+              "primary": "#f1f1f1",
+              "secondary": "#7b7b7e",
+              "on-primary": "#151518",
+              "on-secondary": "#FAFAFA",
+              "primary-hovered": "#a1a1a1",
+              "primary-active": "#ffffff",
+              "primary-inactive": "#808080",
+              "primary-disabled": "#808082",
+              "secondary-hovered": "#919194",
+              "secondary-active": "#919194",
+              "secondary-inactive": "#808080",
+              "secondary-disabled": "#57575a"
       }}
     />
           </ColorPalette>
@@ -391,91 +554,18 @@ const COLOR_VARIANTS = {
       title={"color.danger"}
       subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText."}
       colors={{
-              "danger": "#cf2d56"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-accent"}
-      subtitle={"Alias of danger for the danger theme"}
-      colors={{
-              "danger-accent": "#cf2d56"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-active"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter)"}
-      colors={{
-              "danger-active": "#ff607f"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-disabled"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-disabled": "#70424d"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-hovered"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)"}
-      colors={{
-              "danger-hovered": "#ff607f"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-inactive"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)"}
-      colors={{
-              "danger-inactive": "#a70037"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle"}
-      subtitle={"Generated low-emphasis danger background for the dark theme"}
-      colors={{
-              "danger-subtle": "#620020"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-active"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (active, 25% brighter)"}
-      colors={{
-              "danger-subtle-active": "#7b1f34"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-disabled"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-subtle-disabled": "#4c313a"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-hovered"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)"}
-      colors={{
-              "danger-subtle-hovered": "#7b1f34"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-inactive"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (inactive, 20% darker)"}
-      colors={{
-              "danger-subtle-inactive": "#4e0011"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-accent"}
-      subtitle={"Generated text and icon color on danger backgrounds"}
-      colors={{
-              "on-danger-accent": "#FAFAFA"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-subtle"}
-      subtitle={"Generated text and icon color on danger-subtle backgrounds"}
-      colors={{
-              "on-danger-subtle": "#ffa6b0"
+              "primary": "#cf2d56",
+              "secondary": "#620020",
+              "on-primary": "#FAFAFA",
+              "on-secondary": "#ffa6b0",
+              "primary-hovered": "#ff607f",
+              "primary-active": "#ff607f",
+              "primary-inactive": "#a70037",
+              "primary-disabled": "#70424d",
+              "secondary-hovered": "#7b1f34",
+              "secondary-active": "#7b1f34",
+              "secondary-inactive": "#4e0011",
+              "secondary-disabled": "#4c313a"
       }}
     />
           </ColorPalette>
@@ -487,91 +577,51 @@ const COLOR_VARIANTS = {
       title={"color.discovery"}
       subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages."}
       colors={{
-              "discovery": "#9277da"
+              "primary": "#9277da",
+              "secondary": "#362661",
+              "on-primary": "#FAFAFA",
+              "on-secondary": "#FAFAFA",
+              "primary-hovered": "#c3a9ff",
+              "primary-active": "#c3a9ff",
+              "primary-inactive": "#6d51b0",
+              "primary-disabled": "#5e5776",
+              "secondary-hovered": "#4b3c79",
+              "secondary-active": "#4b3c79",
+              "secondary-inactive": "#27144e",
+              "secondary-disabled": "#3e3a4d"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
+          <h3>{"Hairline"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.hairline-active"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)"}
+      colors={{
+              "hairline-active": "#ffffff"
       }}
     />
             <ColorItem
-      title={"color.discovery-accent"}
-      subtitle={"Alias of discovery for the discovery theme"}
+      title={"color.hairline-disabled"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "discovery-accent": "#9277da"
+              "hairline-disabled": "#444447"
       }}
     />
             <ColorItem
-      title={"color.discovery-active"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% brighter)"}
+      title={"color.hairline-hovered"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)"}
       colors={{
-              "discovery-active": "#c3a9ff"
+              "hairline-hovered": "#ffffff"
       }}
     />
             <ColorItem
-      title={"color.discovery-disabled"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      title={"color.hairline-inactive"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
       colors={{
-              "discovery-disabled": "#5e5776"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-hovered"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% brighter)"}
-      colors={{
-              "discovery-hovered": "#c3a9ff"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-inactive"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% darker)"}
-      colors={{
-              "discovery-inactive": "#6d51b0"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme."}
-      colors={{
-              "discovery-subtle": "#362661"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-active"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% brighter)"}
-      colors={{
-              "discovery-subtle-active": "#4b3c79"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-disabled"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "discovery-subtle-disabled": "#3e3a4d"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-hovered"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% brighter)"}
-      colors={{
-              "discovery-subtle-hovered": "#4b3c79"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-inactive"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker)"}
-      colors={{
-              "discovery-subtle-inactive": "#27144e"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-accent"}
-      subtitle={"Generated text and icon color on discovery backgrounds"}
-      colors={{
-              "on-discovery-accent": "#FAFAFA"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-subtle"}
-      subtitle={"Generated text and icon color on discovery-subtle backgrounds"}
-      colors={{
-              "on-discovery-subtle": "#FAFAFA"
+              "hairline-inactive": "#808080"
       }}
     />
           </ColorPalette>
@@ -583,91 +633,18 @@ const COLOR_VARIANTS = {
       title={"color.info"}
       subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText."}
       colors={{
-              "info": "#4d8eff"
-      }}
-    />
-            <ColorItem
-      title={"color.info-accent"}
-      subtitle={"Alias of info for the info theme"}
-      colors={{
-              "info-accent": "#4d8eff"
-      }}
-    />
-            <ColorItem
-      title={"color.info-active"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter)"}
-      colors={{
-              "info-active": "#7fc4ff"
-      }}
-    />
-            <ColorItem
-      title={"color.info-disabled"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-disabled": "#4b5e81"
-      }}
-    />
-            <ColorItem
-      title={"color.info-hovered"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)"}
-      colors={{
-              "info-hovered": "#7fc4ff"
-      }}
-    />
-            <ColorItem
-      title={"color.info-inactive"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker)"}
-      colors={{
-              "info-inactive": "#2564d1"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme."}
-      colors={{
-              "info-subtle": "#19438c"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-active"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% brighter)"}
-      colors={{
-              "info-subtle-active": "#3560ac"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-disabled"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-subtle-disabled": "#37445b"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-hovered"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% brighter)"}
-      colors={{
-              "info-subtle-hovered": "#3560ac"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-inactive"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker)"}
-      colors={{
-              "info-subtle-inactive": "#022c73"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-accent"}
-      subtitle={"Generated text and icon color on info backgrounds"}
-      colors={{
-              "on-info-accent": "#FAFAFA"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-subtle"}
-      subtitle={"Generated text and icon color on info-subtle backgrounds"}
-      colors={{
-              "on-info-subtle": "#FAFAFA"
+              "primary": "#4d8eff",
+              "secondary": "#19438c",
+              "on-primary": "#FAFAFA",
+              "on-secondary": "#FAFAFA",
+              "primary-hovered": "#7fc4ff",
+              "primary-active": "#7fc4ff",
+              "primary-inactive": "#2564d1",
+              "primary-disabled": "#4b5e81",
+              "secondary-hovered": "#3560ac",
+              "secondary-active": "#3560ac",
+              "secondary-inactive": "#022c73",
+              "secondary-disabled": "#37445b"
       }}
     />
           </ColorPalette>
@@ -676,94 +653,21 @@ const COLOR_VARIANTS = {
           <h3>{"Success"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-success-accent"}
-      subtitle={"Generated text and icon color on success backgrounds"}
-      colors={{
-              "on-success-accent": "#FAFAFA"
-      }}
-    />
-            <ColorItem
-      title={"color.on-success-subtle"}
-      subtitle={"Generated text and icon color on success-subtle backgrounds"}
-      colors={{
-              "on-success-subtle": "#ffffff"
-      }}
-    />
-            <ColorItem
       title={"color.success"}
       subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText."}
       colors={{
-              "success": "#45c791"
-      }}
-    />
-            <ColorItem
-      title={"color.success-accent"}
-      subtitle={"Alias of success for the success theme"}
-      colors={{
-              "success-accent": "#45c791"
-      }}
-    />
-            <ColorItem
-      title={"color.success-active"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% brighter)"}
-      colors={{
-              "success-active": "#89ffcc"
-      }}
-    />
-            <ColorItem
-      title={"color.success-disabled"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-disabled": "#4c7062"
-      }}
-    />
-            <ColorItem
-      title={"color.success-hovered"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% brighter)"}
-      colors={{
-              "success-hovered": "#89ffcc"
-      }}
-    />
-            <ColorItem
-      title={"color.success-inactive"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% darker)"}
-      colors={{
-              "success-inactive": "#009865"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle"}
-      subtitle={"Generated low-emphasis success background for the dark theme"}
-      colors={{
-              "success-subtle": "#006140"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-active"}
-      subtitle={"Generated low-emphasis success background for the dark theme (active, 25% brighter)"}
-      colors={{
-              "success-subtle-active": "#31815e"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-disabled"}
-      subtitle={"Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-subtle-disabled": "#354d45"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-hovered"}
-      subtitle={"Generated low-emphasis success background for the dark theme (hovered, 25% brighter)"}
-      colors={{
-              "success-subtle-hovered": "#31815e"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-inactive"}
-      subtitle={"Generated low-emphasis success background for the dark theme (inactive, 20% darker)"}
-      colors={{
-              "success-subtle-inactive": "#004829"
+              "primary": "#45c791",
+              "secondary": "#006140",
+              "on-primary": "#FAFAFA",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#89ffcc",
+              "primary-active": "#89ffcc",
+              "primary-inactive": "#009865",
+              "primary-disabled": "#4c7062",
+              "secondary-hovered": "#31815e",
+              "secondary-active": "#31815e",
+              "secondary-inactive": "#004829",
+              "secondary-disabled": "#354d45"
       }}
     />
           </ColorPalette>
@@ -772,94 +676,21 @@ const COLOR_VARIANTS = {
           <h3>{"Warning"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-warning-accent"}
-      subtitle={"Generated text and icon color on warning backgrounds"}
-      colors={{
-              "on-warning-accent": "#151518"
-      }}
-    />
-            <ColorItem
-      title={"color.on-warning-subtle"}
-      subtitle={"Generated text and icon color on warning-subtle backgrounds"}
-      colors={{
-              "on-warning-subtle": "#ffffff"
-      }}
-    />
-            <ColorItem
       title={"color.warning"}
       subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."}
       colors={{
-              "warning": "#f7ac23"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-accent"}
-      subtitle={"Alias of warning for the warning theme"}
-      colors={{
-              "warning-accent": "#f7ac23"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-active"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "warning-active": "#b56e00"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-disabled"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-disabled": "#7f6948"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-hovered"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "warning-hovered": "#b56e00"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-inactive"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "warning-inactive": "#ffe067"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle"}
-      subtitle={"Generated low-emphasis warning background for the dark theme"}
-      colors={{
-              "warning-subtle": "#764e00"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-active"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (active, 25% brighter)"}
-      colors={{
-              "warning-subtle-active": "#996f2f"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-disabled"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-subtle-disabled": "#534837"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-hovered"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)"}
-      colors={{
-              "warning-subtle-hovered": "#996f2f"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-inactive"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (inactive, 20% darker)"}
-      colors={{
-              "warning-subtle-inactive": "#5b3500"
+              "primary": "#f7ac23",
+              "secondary": "#764e00",
+              "on-primary": "#151518",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#b56e00",
+              "primary-active": "#b56e00",
+              "primary-inactive": "#ffe067",
+              "primary-disabled": "#7f6948",
+              "secondary-hovered": "#996f2f",
+              "secondary-active": "#996f2f",
+              "secondary-inactive": "#5b3500",
+              "secondary-disabled": "#534837"
       }}
     />
           </ColorPalette>
@@ -1000,6 +831,331 @@ const COLOR_VARIANTS = {
         </ColorPalette>
       </section>
       <section>
+        <h2>{"Background"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.canvas"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
+      colors={{
+            "canvas": "#343438"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-active"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 4% brighter)"}
+      colors={{
+            "canvas-active": "#363639"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-disabled"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "canvas-disabled": "#3f3f42"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-hovered"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 4% brighter)"}
+      colors={{
+            "canvas-hovered": "#363639"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-inactive"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% darker)"}
+      colors={{
+            "canvas-inactive": "#313135"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
+      colors={{
+            "elevated": "#3f4043"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-active"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 4% brighter)"}
+      colors={{
+            "elevated-active": "#404144"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-disabled"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "elevated-disabled": "#464749"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-hovered"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 4% brighter)"}
+      colors={{
+            "elevated-hovered": "#404144"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-inactive"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% darker)"}
+      colors={{
+            "elevated-inactive": "#3b3c3f"
+      }}
+    />
+          <ColorItem
+      title={"color.floating"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
+      colors={{
+            "floating": "#444548"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-active"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 4% brighter)"}
+      colors={{
+            "floating-active": "#46474a"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-disabled"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "floating-disabled": "#4a4a4d"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-hovered"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 4% brighter)"}
+      colors={{
+            "floating-hovered": "#46474a"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-inactive"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% darker)"}
+      colors={{
+            "floating-inactive": "#3f4044"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
+      colors={{
+            "sunken": "#2e2e30"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-active"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 4% brighter)"}
+      colors={{
+            "sunken-active": "#2f2f31"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-disabled"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "sunken-disabled": "#3b3b3d"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-hovered"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 4% brighter)"}
+      colors={{
+            "sunken-hovered": "#2f2f31"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-inactive"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% darker)"}
+      colors={{
+            "sunken-inactive": "#2c2c2e"
+      }}
+    />
+          <ColorItem
+      title={"color.surface"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
+      colors={{
+            "surface": "#3c3c3e"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-active"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 4% brighter)"}
+      colors={{
+            "surface-active": "#3d3d3f"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-disabled"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "surface-disabled": "#444446"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-hovered"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 4% brighter)"}
+      colors={{
+            "surface-hovered": "#3d3d3f"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-inactive"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% darker)"}
+      colors={{
+            "surface-inactive": "#37373a"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
+        <h2>{"Foreground"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.emphasis"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      colors={{
+            "emphasis": "#cfcfcf"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-active"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive)"}
+      colors={{
+            "emphasis-active": "#d9d9d9"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-disabled"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "emphasis-disabled": "#808081"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-hovered"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)"}
+      colors={{
+            "emphasis-hovered": "#979797"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-inactive"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      colors={{
+            "emphasis-inactive": "#808080"
+      }}
+    />
+          <ColorItem
+      title={"color.ink"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
+      colors={{
+            "ink": "#b4b4b4"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-active"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, dark contrast primitive)"}
+      colors={{
+            "ink-active": "#d9d9d9"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-disabled"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "ink-disabled": "#767678"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-hovered"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% darker)"}
+      colors={{
+            "ink-hovered": "#7e7e7e"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-inactive"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      colors={{
+            "ink-inactive": "#808080"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtle": "#8f8f90"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)"}
+      colors={{
+            "subtle-active": "#d9d9d9"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtle-disabled": "#6a6a6b"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, dark contrast primitive)"}
+      colors={{
+            "subtle-hovered": "#d9d9d9"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtle-inactive": "#808080"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtlest": "#626364"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)"}
+      colors={{
+            "subtlest-active": "#d9d9d9"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtlest-disabled": "#595a5c"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, dark contrast primitive)"}
+      colors={{
+            "subtlest-hovered": "#d9d9d9"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtlest-inactive": "#808080"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
         <h2>Colors</h2>
         <ColorPalette>
           <ColorItem
@@ -1029,13 +1185,6 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.border"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
-      colors={{
-            "border": "#626364"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
       subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
@@ -1058,59 +1207,10 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.primary"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      title={"color.hairline"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
-            "primary": "#cfcfcf"
-      }}
-    />
-          <ColorItem
-      title={"color.secondary"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
-      colors={{
-            "secondary": "#b4b4b4"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-canvas"}
-      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
-      colors={{
-            "surface-canvas": "#343438"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-elevated"}
-      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
-      colors={{
-            "surface-elevated": "#3c3c3e"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-floating"}
-      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
-      colors={{
-            "surface-floating": "#3f4043"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-highest"}
-      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
-      colors={{
-            "surface-highest": "#444548"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-sunken"}
-      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
-      colors={{
-            "surface-sunken": "#2e2e30"
-      }}
-    />
-          <ColorItem
-      title={"color.tertiary"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-            "tertiary": "#57575a"
+            "hairline": "#57575a"
       }}
     />
         </ColorPalette>
@@ -1121,124 +1221,18 @@ const COLOR_VARIANTS = {
       title={"color.base"}
       subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
-              "base": "#cfcfcf"
-      }}
-    />
-            <ColorItem
-      title={"color.base-accent"}
-      subtitle={"Alias of base for the base theme"}
-      colors={{
-              "base-accent": "#cfcfcf"
-      }}
-    />
-            <ColorItem
-      title={"color.base-active"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive)"}
-      colors={{
-              "base-active": "#d9d9d9"
-      }}
-    />
-            <ColorItem
-      title={"color.base-disabled"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-disabled": "#808081"
-      }}
-    />
-            <ColorItem
-      title={"color.base-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)"}
-      colors={{
-              "base-hovered": "#979797"
-      }}
-    />
-            <ColorItem
-      title={"color.base-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
-      colors={{
-              "base-inactive": "#808080"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-              "base-subtle": "#57575a"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-active"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 13% brighter)"}
-      colors={{
-              "base-subtle-active": "#616164"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-disabled"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-subtle-disabled": "#565658"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 13% brighter)"}
-      colors={{
-              "base-subtle-hovered": "#616164"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
-      colors={{
-              "base-subtle-inactive": "#808080"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-accent"}
-      subtitle={"Generated text and icon color on base backgrounds"}
-      colors={{
-              "on-base-accent": "#343438"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-subtle"}
-      subtitle={"Generated text and icon color on base-subtle backgrounds"}
-      colors={{
-              "on-base-subtle": "#d5d5d5"
-      }}
-    />
-          </ColorPalette>
-        </section>
-        <section>
-          <h3>{"Border"}</h3>
-          <ColorPalette>
-            <ColorItem
-      title={"color.border-active"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)"}
-      colors={{
-              "border-active": "#d9d9d9"
-      }}
-    />
-            <ColorItem
-      title={"color.border-disabled"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "border-disabled": "#595a5c"
-      }}
-    />
-            <ColorItem
-      title={"color.border-hovered"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)"}
-      colors={{
-              "border-hovered": "#d9d9d9"
-      }}
-    />
-            <ColorItem
-      title={"color.border-inactive"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
-      colors={{
-              "border-inactive": "#808080"
+              "primary": "#cfcfcf",
+              "secondary": "#7d7d7e",
+              "on-primary": "#343438",
+              "on-secondary": "#d5d5d5",
+              "primary-hovered": "#979797",
+              "primary-active": "#d9d9d9",
+              "primary-inactive": "#808080",
+              "primary-disabled": "#808081",
+              "secondary-hovered": "#8c8c8e",
+              "secondary-active": "#8c8c8e",
+              "secondary-inactive": "#808080",
+              "secondary-disabled": "#636365"
       }}
     />
           </ColorPalette>
@@ -1250,91 +1244,18 @@ const COLOR_VARIANTS = {
       title={"color.danger"}
       subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText."}
       colors={{
-              "danger": "#ab5268"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-accent"}
-      subtitle={"Alias of danger for the danger theme"}
-      colors={{
-              "danger-accent": "#ab5268"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-active"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter)"}
-      colors={{
-              "danger-active": "#d56d82"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-disabled"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-disabled": "#73565d"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-hovered"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)"}
-      colors={{
-              "danger-hovered": "#d56d82"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-inactive"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)"}
-      colors={{
-              "danger-inactive": "#962c4f"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle"}
-      subtitle={"Generated low-emphasis danger background for the dark theme"}
-      colors={{
-              "danger-subtle": "#70213b"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-active"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (active, 25% brighter)"}
-      colors={{
-              "danger-subtle-active": "#7a3e4c"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-disabled"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-subtle-disabled": "#5c484f"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-hovered"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)"}
-      colors={{
-              "danger-subtle-hovered": "#7a3e4c"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-inactive"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (inactive, 20% darker)"}
-      colors={{
-              "danger-subtle-inactive": "#661d2d"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-accent"}
-      subtitle={"Generated text and icon color on danger backgrounds"}
-      colors={{
-              "on-danger-accent": "#d5d5d5"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-subtle"}
-      subtitle={"Generated text and icon color on danger-subtle backgrounds"}
-      colors={{
-              "on-danger-subtle": "#e0939c"
+              "primary": "#ab5268",
+              "secondary": "#70213b",
+              "on-primary": "#d5d5d5",
+              "on-secondary": "#e0939c",
+              "primary-hovered": "#d56d82",
+              "primary-active": "#d56d82",
+              "primary-inactive": "#962c4f",
+              "primary-disabled": "#73565d",
+              "secondary-hovered": "#7a3e4c",
+              "secondary-active": "#7a3e4c",
+              "secondary-inactive": "#661d2d",
+              "secondary-disabled": "#5c484f"
       }}
     />
           </ColorPalette>
@@ -1346,91 +1267,51 @@ const COLOR_VARIANTS = {
       title={"color.discovery"}
       subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages."}
       colors={{
-              "discovery": "#8e7dbb"
+              "primary": "#8e7dbb",
+              "secondary": "#4c416a",
+              "on-primary": "#d5d5d5",
+              "on-secondary": "#d5d5d5",
+              "primary-hovered": "#ac95e0",
+              "primary-active": "#ac95e0",
+              "primary-inactive": "#75669a",
+              "primary-disabled": "#696577",
+              "secondary-hovered": "#5c5378",
+              "secondary-active": "#5c5378",
+              "secondary-inactive": "#403160",
+              "secondary-disabled": "#524f5c"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
+          <h3>{"Hairline"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.hairline-active"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)"}
+      colors={{
+              "hairline-active": "#d9d9d9"
       }}
     />
             <ColorItem
-      title={"color.discovery-accent"}
-      subtitle={"Alias of discovery for the discovery theme"}
+      title={"color.hairline-disabled"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "discovery-accent": "#8e7dbb"
+              "hairline-disabled": "#565658"
       }}
     />
             <ColorItem
-      title={"color.discovery-active"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% brighter)"}
+      title={"color.hairline-hovered"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)"}
       colors={{
-              "discovery-active": "#ac95e0"
+              "hairline-hovered": "#d9d9d9"
       }}
     />
             <ColorItem
-      title={"color.discovery-disabled"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      title={"color.hairline-inactive"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
       colors={{
-              "discovery-disabled": "#696577"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-hovered"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% brighter)"}
-      colors={{
-              "discovery-hovered": "#ac95e0"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-inactive"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% darker)"}
-      colors={{
-              "discovery-inactive": "#75669a"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme."}
-      colors={{
-              "discovery-subtle": "#4c416a"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-active"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% brighter)"}
-      colors={{
-              "discovery-subtle-active": "#5c5378"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-disabled"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "discovery-subtle-disabled": "#524f5c"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-hovered"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% brighter)"}
-      colors={{
-              "discovery-subtle-hovered": "#5c5378"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-inactive"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker)"}
-      colors={{
-              "discovery-subtle-inactive": "#403160"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-accent"}
-      subtitle={"Generated text and icon color on discovery backgrounds"}
-      colors={{
-              "on-discovery-accent": "#d5d5d5"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-subtle"}
-      subtitle={"Generated text and icon color on discovery-subtle backgrounds"}
-      colors={{
-              "on-discovery-subtle": "#d5d5d5"
+              "hairline-inactive": "#808080"
       }}
     />
           </ColorPalette>
@@ -1442,91 +1323,18 @@ const COLOR_VARIANTS = {
       title={"color.info"}
       subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText."}
       colors={{
-              "info": "#638cd2"
-      }}
-    />
-            <ColorItem
-      title={"color.info-accent"}
-      subtitle={"Alias of info for the info theme"}
-      colors={{
-              "info-accent": "#638cd2"
-      }}
-    />
-            <ColorItem
-      title={"color.info-active"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter)"}
-      colors={{
-              "info-active": "#7eb0da"
-      }}
-    />
-            <ColorItem
-      title={"color.info-disabled"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-disabled": "#5e697e"
-      }}
-    />
-            <ColorItem
-      title={"color.info-hovered"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)"}
-      colors={{
-              "info-hovered": "#7eb0da"
-      }}
-    />
-            <ColorItem
-      title={"color.info-inactive"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker)"}
-      colors={{
-              "info-inactive": "#4d70ac"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme."}
-      colors={{
-              "info-subtle": "#3b5685"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-active"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% brighter)"}
-      colors={{
-              "info-subtle-active": "#536c97"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-disabled"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-subtle-disabled": "#4d5665"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-hovered"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% brighter)"}
-      colors={{
-              "info-subtle-hovered": "#536c97"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-inactive"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker)"}
-      colors={{
-              "info-subtle-inactive": "#254479"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-accent"}
-      subtitle={"Generated text and icon color on info backgrounds"}
-      colors={{
-              "on-info-accent": "#d5d5d5"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-subtle"}
-      subtitle={"Generated text and icon color on info-subtle backgrounds"}
-      colors={{
-              "on-info-subtle": "#d5d5d5"
+              "primary": "#638cd2",
+              "secondary": "#3b5685",
+              "on-primary": "#d5d5d5",
+              "on-secondary": "#d5d5d5",
+              "primary-hovered": "#7eb0da",
+              "primary-active": "#7eb0da",
+              "primary-inactive": "#4d70ac",
+              "primary-disabled": "#5e697e",
+              "secondary-hovered": "#536c97",
+              "secondary-active": "#536c97",
+              "secondary-inactive": "#254479",
+              "secondary-disabled": "#4d5665"
       }}
     />
           </ColorPalette>
@@ -1535,94 +1343,21 @@ const COLOR_VARIANTS = {
           <h3>{"Success"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-success-accent"}
-      subtitle={"Generated text and icon color on success backgrounds"}
-      colors={{
-              "on-success-accent": "#d5d5d5"
-      }}
-    />
-            <ColorItem
-      title={"color.on-success-subtle"}
-      subtitle={"Generated text and icon color on success-subtle backgrounds"}
-      colors={{
-              "on-success-subtle": "#d9d9d9"
-      }}
-    />
-            <ColorItem
       title={"color.success"}
       subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText."}
       colors={{
-              "success": "#60a88a"
-      }}
-    />
-            <ColorItem
-      title={"color.success-accent"}
-      subtitle={"Alias of success for the success theme"}
-      colors={{
-              "success-accent": "#60a88a"
-      }}
-    />
-            <ColorItem
-      title={"color.success-active"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% brighter)"}
-      colors={{
-              "success-active": "#84dbb5"
-      }}
-    />
-            <ColorItem
-      title={"color.success-disabled"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-disabled": "#5d736a"
-      }}
-    />
-            <ColorItem
-      title={"color.success-hovered"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% brighter)"}
-      colors={{
-              "success-hovered": "#84dbb5"
-      }}
-    />
-            <ColorItem
-      title={"color.success-inactive"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% darker)"}
-      colors={{
-              "success-inactive": "#298e6c"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle"}
-      subtitle={"Generated low-emphasis success background for the dark theme"}
-      colors={{
-              "success-subtle": "#207055"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-active"}
-      subtitle={"Generated low-emphasis success background for the dark theme (active, 25% brighter)"}
-      colors={{
-              "success-subtle-active": "#4c7d68"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-disabled"}
-      subtitle={"Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-subtle-disabled": "#4b5c57"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-hovered"}
-      subtitle={"Generated low-emphasis success background for the dark theme (hovered, 25% brighter)"}
-      colors={{
-              "success-subtle-hovered": "#4c7d68"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-inactive"}
-      subtitle={"Generated low-emphasis success background for the dark theme (inactive, 20% darker)"}
-      colors={{
-              "success-subtle-inactive": "#1d6244"
+              "primary": "#60a88a",
+              "secondary": "#207055",
+              "on-primary": "#d5d5d5",
+              "on-secondary": "#d9d9d9",
+              "primary-hovered": "#84dbb5",
+              "primary-active": "#84dbb5",
+              "primary-inactive": "#298e6c",
+              "primary-disabled": "#5d736a",
+              "secondary-hovered": "#4c7d68",
+              "secondary-active": "#4c7d68",
+              "secondary-inactive": "#1d6244",
+              "secondary-disabled": "#4b5c57"
       }}
     />
           </ColorPalette>
@@ -1631,94 +1366,21 @@ const COLOR_VARIANTS = {
           <h3>{"Warning"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-warning-accent"}
-      subtitle={"Generated text and icon color on warning backgrounds"}
-      colors={{
-              "on-warning-accent": "#343438"
-      }}
-    />
-            <ColorItem
-      title={"color.on-warning-subtle"}
-      subtitle={"Generated text and icon color on warning-subtle backgrounds"}
-      colors={{
-              "on-warning-subtle": "#d9d9d9"
-      }}
-    />
-            <ColorItem
       title={"color.warning"}
       subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."}
       colors={{
-              "warning": "#c59b4d"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-accent"}
-      subtitle={"Alias of warning for the warning theme"}
-      colors={{
-              "warning-accent": "#c59b4d"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-active"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "warning-active": "#9d722e"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-disabled"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-disabled": "#7c6f5b"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-hovered"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "warning-hovered": "#9d722e"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-inactive"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "warning-inactive": "#d6c171"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle"}
-      subtitle={"Generated low-emphasis warning background for the dark theme"}
-      colors={{
-              "warning-subtle": "#7b5e24"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-active"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (active, 25% brighter)"}
-      colors={{
-              "warning-subtle-active": "#8c734d"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-disabled"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-subtle-disabled": "#60594d"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-hovered"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)"}
-      colors={{
-              "warning-subtle-hovered": "#8c734d"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-inactive"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (inactive, 20% darker)"}
-      colors={{
-              "warning-subtle-inactive": "#6d4c20"
+              "primary": "#c59b4d",
+              "secondary": "#7b5e24",
+              "on-primary": "#343438",
+              "on-secondary": "#d9d9d9",
+              "primary-hovered": "#9d722e",
+              "primary-active": "#9d722e",
+              "primary-inactive": "#d6c171",
+              "primary-disabled": "#7c6f5b",
+              "secondary-hovered": "#8c734d",
+              "secondary-active": "#8c734d",
+              "secondary-inactive": "#6d4c20",
+              "secondary-disabled": "#60594d"
       }}
     />
           </ColorPalette>
@@ -1859,6 +1521,331 @@ const COLOR_VARIANTS = {
         </ColorPalette>
       </section>
       <section>
+        <h2>{"Background"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.canvas"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
+      colors={{
+            "canvas": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-active"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 4% brighter)"}
+      colors={{
+            "canvas-active": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-disabled"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "canvas-disabled": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-hovered"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 4% brighter)"}
+      colors={{
+            "canvas-hovered": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-inactive"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% darker)"}
+      colors={{
+            "canvas-inactive": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
+      colors={{
+            "elevated": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-active"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 4% brighter)"}
+      colors={{
+            "elevated-active": "#010101"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-disabled"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "elevated-disabled": "#0b0c0e"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-hovered"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 4% brighter)"}
+      colors={{
+            "elevated-hovered": "#010101"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-inactive"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% darker)"}
+      colors={{
+            "elevated-inactive": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.floating"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
+      colors={{
+            "floating": "#08080a"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-active"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 4% brighter)"}
+      colors={{
+            "floating-active": "#0b0c0e"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-disabled"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "floating-disabled": "#121215"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-hovered"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 4% brighter)"}
+      colors={{
+            "floating-hovered": "#0b0c0e"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-inactive"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% darker)"}
+      colors={{
+            "floating-inactive": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
+      colors={{
+            "sunken": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-active"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 4% brighter)"}
+      colors={{
+            "sunken-active": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-disabled"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "sunken-disabled": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-hovered"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 4% brighter)"}
+      colors={{
+            "sunken-hovered": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-inactive"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% darker)"}
+      colors={{
+            "sunken-inactive": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.surface"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
+      colors={{
+            "surface": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-active"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 4% brighter)"}
+      colors={{
+            "surface-active": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-disabled"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "surface-disabled": "#060607"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-hovered"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 4% brighter)"}
+      colors={{
+            "surface-hovered": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-inactive"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% darker)"}
+      colors={{
+            "surface-inactive": "#000000"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
+        <h2>{"Foreground"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.emphasis"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      colors={{
+            "emphasis": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-active"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive)"}
+      colors={{
+            "emphasis-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-disabled"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "emphasis-disabled": "#7a7a89"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-hovered"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)"}
+      colors={{
+            "emphasis-hovered": "#b0b0b0"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-inactive"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      colors={{
+            "emphasis-inactive": "#808080"
+      }}
+    />
+          <ColorItem
+      title={"color.ink"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
+      colors={{
+            "ink": "#ebebed"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-active"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, dark contrast primitive)"}
+      colors={{
+            "ink-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-disabled"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "ink-disabled": "#676776"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-hovered"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% darker)"}
+      colors={{
+            "ink-hovered": "#767684"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-inactive"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      colors={{
+            "ink-inactive": "#808080"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtle": "#9a9fa7"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)"}
+      colors={{
+            "subtle-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtle-disabled": "#4e4e5a"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, dark contrast primitive)"}
+      colors={{
+            "subtle-hovered": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtle-inactive": "#808080"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtlest": "#3f424a"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, dark contrast primitive)"}
+      colors={{
+            "subtlest-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtlest-disabled": "#2f3138"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, dark contrast primitive)"}
+      colors={{
+            "subtlest-hovered": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtlest-inactive": "#808080"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
         <h2>Colors</h2>
         <ColorPalette>
           <ColorItem
@@ -1888,13 +1875,6 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.border"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
-      colors={{
-            "border": "#3f424a"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
       subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
@@ -1917,59 +1897,10 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.primary"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      title={"color.hairline"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
-            "primary": "#ffffff"
-      }}
-    />
-          <ColorItem
-      title={"color.secondary"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
-      colors={{
-            "secondary": "#ebebed"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-canvas"}
-      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
-      colors={{
-            "surface-canvas": "#000000"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-elevated"}
-      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
-      colors={{
-            "surface-elevated": "#000000"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-floating"}
-      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
-      colors={{
-            "surface-floating": "#000000"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-highest"}
-      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
-      colors={{
-            "surface-highest": "#08080a"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-sunken"}
-      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
-      colors={{
-            "surface-sunken": "#000000"
-      }}
-    />
-          <ColorItem
-      title={"color.tertiary"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-            "tertiary": "#2b2b33"
+            "hairline": "#2b2b33"
       }}
     />
         </ColorPalette>
@@ -1980,124 +1911,18 @@ const COLOR_VARIANTS = {
       title={"color.base"}
       subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
-              "base": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.base-accent"}
-      subtitle={"Alias of base for the base theme"}
-      colors={{
-              "base-accent": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.base-active"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, dark contrast primitive)"}
-      colors={{
-              "base-active": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.base-disabled"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-disabled": "#7a7a89"
-      }}
-    />
-            <ColorItem
-      title={"color.base-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% darker)"}
-      colors={{
-              "base-hovered": "#b0b0b0"
-      }}
-    />
-            <ColorItem
-      title={"color.base-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
-      colors={{
-              "base-inactive": "#808080"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-              "base-subtle": "#2b2b33"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-active"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 13% brighter)"}
-      colors={{
-              "base-subtle-active": "#3d3d49"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-disabled"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-subtle-disabled": "#28282f"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 13% brighter)"}
-      colors={{
-              "base-subtle-hovered": "#3d3d49"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
-      colors={{
-              "base-subtle-inactive": "#808080"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-accent"}
-      subtitle={"Generated text and icon color on base backgrounds"}
-      colors={{
-              "on-base-accent": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-subtle"}
-      subtitle={"Generated text and icon color on base-subtle backgrounds"}
-      colors={{
-              "on-base-subtle": "#ffffff"
-      }}
-    />
-          </ColorPalette>
-        </section>
-        <section>
-          <h3>{"Border"}</h3>
-          <ColorPalette>
-            <ColorItem
-      title={"color.border-active"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)"}
-      colors={{
-              "border-active": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.border-disabled"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "border-disabled": "#2f3138"
-      }}
-    />
-            <ColorItem
-      title={"color.border-hovered"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)"}
-      colors={{
-              "border-hovered": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.border-inactive"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
-      colors={{
-              "border-inactive": "#808080"
+              "primary": "#ffffff",
+              "secondary": "#737383",
+              "on-primary": "#000000",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#b0b0b0",
+              "primary-active": "#ffffff",
+              "primary-inactive": "#808080",
+              "primary-disabled": "#7a7a89",
+              "secondary-hovered": "#9494a2",
+              "secondary-active": "#9494a2",
+              "secondary-inactive": "#808080",
+              "secondary-disabled": "#42424c"
       }}
     />
           </ColorPalette>
@@ -2109,91 +1934,18 @@ const COLOR_VARIANTS = {
       title={"color.danger"}
       subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText."}
       colors={{
-              "danger": "#f00a45"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-accent"}
-      subtitle={"Alias of danger for the danger theme"}
-      colors={{
-              "danger-accent": "#f00a45"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-active"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter)"}
-      colors={{
-              "danger-active": "#ff8ba2"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-disabled"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-disabled": "#642b39"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-hovered"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter)"}
-      colors={{
-              "danger-hovered": "#ff8ba2"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-inactive"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% darker)"}
-      colors={{
-              "danger-inactive": "#7f002a"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle"}
-      subtitle={"Generated low-emphasis danger background for the dark theme"}
-      colors={{
-              "danger-subtle": "#1b0009"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-active"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (active, 25% brighter)"}
-      colors={{
-              "danger-subtle-active": "#65081d"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-disabled"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-subtle-disabled": "#2d161d"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-hovered"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (hovered, 25% brighter)"}
-      colors={{
-              "danger-subtle-hovered": "#65081d"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-inactive"}
-      subtitle={"Generated low-emphasis danger background for the dark theme (inactive, 20% darker)"}
-      colors={{
-              "danger-subtle-inactive": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-accent"}
-      subtitle={"Generated text and icon color on danger backgrounds"}
-      colors={{
-              "on-danger-accent": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-subtle"}
-      subtitle={"Generated text and icon color on danger-subtle backgrounds"}
-      colors={{
-              "on-danger-subtle": "#fff1f2"
+              "primary": "#f00a45",
+              "secondary": "#1b0009",
+              "on-primary": "#ffffff",
+              "on-secondary": "#fff1f2",
+              "primary-hovered": "#ff8ba2",
+              "primary-active": "#ff8ba2",
+              "primary-inactive": "#7f002a",
+              "primary-disabled": "#642b39",
+              "secondary-hovered": "#65081d",
+              "secondary-active": "#65081d",
+              "secondary-inactive": "#000000",
+              "secondary-disabled": "#2d161d"
       }}
     />
           </ColorPalette>
@@ -2205,91 +1957,51 @@ const COLOR_VARIANTS = {
       title={"color.discovery"}
       subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages."}
       colors={{
-              "discovery": "#a283f3"
+              "primary": "#a283f3",
+              "secondary": "#1d0f42",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#f8f5ff",
+              "primary-active": "#f8f5ff",
+              "primary-inactive": "#643bc7",
+              "primary-disabled": "#4f4472",
+              "secondary-hovered": "#37256f",
+              "secondary-active": "#37256f",
+              "secondary-inactive": "#0a0219",
+              "secondary-disabled": "#231f32"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
+          <h3>{"Hairline"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.hairline-active"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, dark contrast primitive)"}
+      colors={{
+              "hairline-active": "#ffffff"
       }}
     />
             <ColorItem
-      title={"color.discovery-accent"}
-      subtitle={"Alias of discovery for the discovery theme"}
+      title={"color.hairline-disabled"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "discovery-accent": "#a283f3"
+              "hairline-disabled": "#28282f"
       }}
     />
             <ColorItem
-      title={"color.discovery-active"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% brighter)"}
+      title={"color.hairline-hovered"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, dark contrast primitive)"}
       colors={{
-              "discovery-active": "#f8f5ff"
+              "hairline-hovered": "#ffffff"
       }}
     />
             <ColorItem
-      title={"color.discovery-disabled"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      title={"color.hairline-inactive"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
       colors={{
-              "discovery-disabled": "#4f4472"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-hovered"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% brighter)"}
-      colors={{
-              "discovery-hovered": "#f8f5ff"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-inactive"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% darker)"}
-      colors={{
-              "discovery-inactive": "#643bc7"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme."}
-      colors={{
-              "discovery-subtle": "#1d0f42"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-active"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% brighter)"}
-      colors={{
-              "discovery-subtle-active": "#37256f"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-disabled"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "discovery-subtle-disabled": "#231f32"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-hovered"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% brighter)"}
-      colors={{
-              "discovery-subtle-hovered": "#37256f"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-inactive"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% darker)"}
-      colors={{
-              "discovery-subtle-inactive": "#0a0219"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-accent"}
-      subtitle={"Generated text and icon color on discovery backgrounds"}
-      colors={{
-              "on-discovery-accent": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-subtle"}
-      subtitle={"Generated text and icon color on discovery-subtle backgrounds"}
-      colors={{
-              "on-discovery-subtle": "#ffffff"
+              "hairline-inactive": "#808080"
       }}
     />
           </ColorPalette>
@@ -2301,91 +2013,18 @@ const COLOR_VARIANTS = {
       title={"color.info"}
       subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText."}
       colors={{
-              "info": "#70a4ff"
-      }}
-    />
-            <ColorItem
-      title={"color.info-accent"}
-      subtitle={"Alias of info for the info theme"}
-      colors={{
-              "info-accent": "#70a4ff"
-      }}
-    />
-            <ColorItem
-      title={"color.info-active"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% brighter)"}
-      colors={{
-              "info-active": "#b8deff"
-      }}
-    />
-            <ColorItem
-      title={"color.info-disabled"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-disabled": "#36507f"
-      }}
-    />
-            <ColorItem
-      title={"color.info-hovered"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter)"}
-      colors={{
-              "info-hovered": "#b8deff"
-      }}
-    />
-            <ColorItem
-      title={"color.info-inactive"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker)"}
-      colors={{
-              "info-inactive": "#0159f1"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme."}
-      colors={{
-              "info-subtle": "#012e7c"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-active"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% brighter)"}
-      colors={{
-              "info-subtle-active": "#1953bb"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-disabled"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-subtle-disabled": "#1e2b43"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-hovered"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% brighter)"}
-      colors={{
-              "info-subtle-hovered": "#1953bb"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-inactive"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% darker)"}
-      colors={{
-              "info-subtle-inactive": "#001437"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-accent"}
-      subtitle={"Generated text and icon color on info backgrounds"}
-      colors={{
-              "on-info-accent": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-subtle"}
-      subtitle={"Generated text and icon color on info-subtle backgrounds"}
-      colors={{
-              "on-info-subtle": "#ffffff"
+              "primary": "#70a4ff",
+              "secondary": "#012e7c",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#b8deff",
+              "primary-active": "#b8deff",
+              "primary-inactive": "#0159f1",
+              "primary-disabled": "#36507f",
+              "secondary-hovered": "#1953bb",
+              "secondary-active": "#1953bb",
+              "secondary-inactive": "#001437",
+              "secondary-disabled": "#1e2b43"
       }}
     />
           </ColorPalette>
@@ -2394,94 +2033,21 @@ const COLOR_VARIANTS = {
           <h3>{"Success"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-success-accent"}
-      subtitle={"Generated text and icon color on success backgrounds"}
-      colors={{
-              "on-success-accent": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-success-subtle"}
-      subtitle={"Generated text and icon color on success-subtle backgrounds"}
-      colors={{
-              "on-success-subtle": "#ffffff"
-      }}
-    />
-            <ColorItem
       title={"color.success"}
       subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText."}
       colors={{
-              "success": "#2de498"
-      }}
-    />
-            <ColorItem
-      title={"color.success-accent"}
-      subtitle={"Alias of success for the success theme"}
-      colors={{
-              "success-accent": "#2de498"
-      }}
-    />
-            <ColorItem
-      title={"color.success-active"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% brighter)"}
-      colors={{
-              "success-active": "#c7ffe7"
-      }}
-    />
-            <ColorItem
-      title={"color.success-disabled"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-disabled": "#376754"
-      }}
-    />
-            <ColorItem
-      title={"color.success-hovered"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% brighter)"}
-      colors={{
-              "success-hovered": "#c7ffe7"
-      }}
-    />
-            <ColorItem
-      title={"color.success-inactive"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% darker)"}
-      colors={{
-              "success-inactive": "#006a46"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle"}
-      subtitle={"Generated low-emphasis success background for the dark theme"}
-      colors={{
-              "success-subtle": "#001a11"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-active"}
-      subtitle={"Generated low-emphasis success background for the dark theme (active, 25% brighter)"}
-      colors={{
-              "success-subtle-active": "#19774e"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-disabled"}
-      subtitle={"Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-subtle-disabled": "#1a3029"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-hovered"}
-      subtitle={"Generated low-emphasis success background for the dark theme (hovered, 25% brighter)"}
-      colors={{
-              "success-subtle-hovered": "#19774e"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-inactive"}
-      subtitle={"Generated low-emphasis success background for the dark theme (inactive, 20% darker)"}
-      colors={{
-              "success-subtle-inactive": "#000000"
+              "primary": "#2de498",
+              "secondary": "#001a11",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#c7ffe7",
+              "primary-active": "#c7ffe7",
+              "primary-inactive": "#006a46",
+              "primary-disabled": "#376754",
+              "secondary-hovered": "#19774e",
+              "secondary-active": "#19774e",
+              "secondary-inactive": "#000000",
+              "secondary-disabled": "#1a3029"
       }}
     />
           </ColorPalette>
@@ -2490,94 +2056,21 @@ const COLOR_VARIANTS = {
           <h3>{"Warning"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-warning-accent"}
-      subtitle={"Generated text and icon color on warning backgrounds"}
-      colors={{
-              "on-warning-accent": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.on-warning-subtle"}
-      subtitle={"Generated text and icon color on warning-subtle backgrounds"}
-      colors={{
-              "on-warning-subtle": "#ffffff"
-      }}
-    />
-            <ColorItem
       title={"color.warning"}
       subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."}
       colors={{
-              "warning": "#ffb327"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-accent"}
-      subtitle={"Alias of warning for the warning theme"}
-      colors={{
-              "warning-accent": "#ffb327"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-active"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "warning-active": "#945a00"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-disabled"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-disabled": "#7c5e32"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-hovered"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "warning-hovered": "#945a00"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-inactive"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "warning-inactive": "#ffe995"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle"}
-      subtitle={"Generated low-emphasis warning background for the dark theme"}
-      colors={{
-              "warning-subtle": "#382500"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-active"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (active, 25% brighter)"}
-      colors={{
-              "warning-subtle-active": "#9b6615"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-disabled"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-subtle-disabled": "#382e1d"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-hovered"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)"}
-      colors={{
-              "warning-subtle-hovered": "#9b6615"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-inactive"}
-      subtitle={"Generated low-emphasis warning background for the dark theme (inactive, 20% darker)"}
-      colors={{
-              "warning-subtle-inactive": "#110a00"
+              "primary": "#ffb327",
+              "secondary": "#382500",
+              "on-primary": "#000000",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#945a00",
+              "primary-active": "#945a00",
+              "primary-inactive": "#ffe995",
+              "primary-disabled": "#7c5e32",
+              "secondary-hovered": "#9b6615",
+              "secondary-active": "#9b6615",
+              "secondary-inactive": "#110a00",
+              "secondary-disabled": "#382e1d"
       }}
     />
           </ColorPalette>
@@ -2718,6 +2211,331 @@ const COLOR_VARIANTS = {
         </ColorPalette>
       </section>
       <section>
+        <h2>{"Background"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.canvas"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
+      colors={{
+            "canvas": "#eaeaea"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-active"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 4% darker)"}
+      colors={{
+            "canvas-active": "#dedede"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-disabled"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "canvas-disabled": "#b4b4b5"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-hovered"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 4% darker)"}
+      colors={{
+            "canvas-hovered": "#dedede"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-inactive"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% brighter)"}
+      colors={{
+            "canvas-inactive": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
+      colors={{
+            "elevated": "#fafafa"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-active"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 4% darker)"}
+      colors={{
+            "elevated-active": "#eeeeee"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-disabled"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "elevated-disabled": "#bfbfc0"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-hovered"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 4% darker)"}
+      colors={{
+            "elevated-hovered": "#eeeeee"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-inactive"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% brighter)"}
+      colors={{
+            "elevated-inactive": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.floating"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
+      colors={{
+            "floating": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-active"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 4% darker)"}
+      colors={{
+            "floating-active": "#f2f2f2"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-disabled"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "floating-disabled": "#c2c2c3"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-hovered"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 4% darker)"}
+      colors={{
+            "floating-hovered": "#f2f2f2"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-inactive"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% brighter)"}
+      colors={{
+            "floating-inactive": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
+      colors={{
+            "sunken": "#e1e1e1"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-active"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 4% darker)"}
+      colors={{
+            "sunken-active": "#d6d6d6"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-disabled"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "sunken-disabled": "#aeaeaf"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-hovered"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 4% darker)"}
+      colors={{
+            "sunken-hovered": "#d6d6d6"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-inactive"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% brighter)"}
+      colors={{
+            "sunken-inactive": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.surface"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
+      colors={{
+            "surface": "#f1f1f1"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-active"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 4% darker)"}
+      colors={{
+            "surface-active": "#e5e5e5"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-disabled"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "surface-disabled": "#b8b8b9"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-hovered"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 4% darker)"}
+      colors={{
+            "surface-hovered": "#e5e5e5"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-inactive"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% brighter)"}
+      colors={{
+            "surface-inactive": "#ffffff"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
+        <h2>{"Foreground"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.emphasis"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      colors={{
+            "emphasis": "#1f1f21"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-active"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)"}
+      colors={{
+            "emphasis-active": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-disabled"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "emphasis-disabled": "#363639"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-hovered"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)"}
+      colors={{
+            "emphasis-hovered": "#606062"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-inactive"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      colors={{
+            "emphasis-inactive": "#030303"
+      }}
+    />
+          <ColorItem
+      title={"color.ink"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
+      colors={{
+            "ink": "#555659"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-active"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, light contrast primitive)"}
+      colors={{
+            "ink-active": "#0c0c0d"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-disabled"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "ink-disabled": "#494a4d"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-hovered"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, light contrast primitive)"}
+      colors={{
+            "ink-hovered": "#0c0c0d"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-inactive"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      colors={{
+            "ink-inactive": "#030303"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtle": "#959698"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)"}
+      colors={{
+            "subtle-active": "#0c0c0d"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtle-disabled": "#606063"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, light contrast primitive)"}
+      colors={{
+            "subtle-hovered": "#0c0c0d"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtle-inactive": "#030303"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtlest": "#cacacb"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)"}
+      colors={{
+            "subtlest-active": "#0c0c0d"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtlest-disabled": "#727275"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, light contrast primitive)"}
+      colors={{
+            "subtlest-hovered": "#0c0c0d"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtlest-inactive": "#030303"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
         <h2>Colors</h2>
         <ColorPalette>
           <ColorItem
@@ -2747,13 +2565,6 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.border"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
-      colors={{
-            "border": "#b0b0b1"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
       subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
@@ -2776,59 +2587,10 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.primary"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      title={"color.hairline"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
-            "primary": "#1f1f21"
-      }}
-    />
-          <ColorItem
-      title={"color.secondary"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
-      colors={{
-            "secondary": "#555659"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-canvas"}
-      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
-      colors={{
-            "surface-canvas": "#eaeaea"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-elevated"}
-      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
-      colors={{
-            "surface-elevated": "#f1f1f1"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-floating"}
-      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
-      colors={{
-            "surface-floating": "#fafafa"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-highest"}
-      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
-      colors={{
-            "surface-highest": "#ffffff"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-sunken"}
-      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
-      colors={{
-            "surface-sunken": "#e1e1e1"
-      }}
-    />
-          <ColorItem
-      title={"color.tertiary"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-            "tertiary": "#cacacb"
+            "hairline": "#e1e1e1"
       }}
     />
         </ColorPalette>
@@ -2839,124 +2601,18 @@ const COLOR_VARIANTS = {
       title={"color.base"}
       subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
-              "base": "#1f1f21"
-      }}
-    />
-            <ColorItem
-      title={"color.base-accent"}
-      subtitle={"Alias of base for the base theme"}
-      colors={{
-              "base-accent": "#1f1f21"
-      }}
-    />
-            <ColorItem
-      title={"color.base-active"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)"}
-      colors={{
-              "base-active": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.base-disabled"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-disabled": "#363639"
-      }}
-    />
-            <ColorItem
-      title={"color.base-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)"}
-      colors={{
-              "base-hovered": "#606062"
-      }}
-    />
-            <ColorItem
-      title={"color.base-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
-      colors={{
-              "base-inactive": "#030303"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-              "base-subtle": "#cacacb"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-active"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 12% darker)"}
-      colors={{
-              "base-subtle-active": "#a9a9aa"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-disabled"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-subtle-disabled": "#727275"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 12% darker)"}
-      colors={{
-              "base-subtle-hovered": "#a9a9aa"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
-      colors={{
-              "base-subtle-inactive": "#030303"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-accent"}
-      subtitle={"Generated text and icon color on base backgrounds"}
-      colors={{
-              "on-base-accent": "#FAFAFA"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-subtle"}
-      subtitle={"Generated text and icon color on base-subtle backgrounds"}
-      colors={{
-              "on-base-subtle": "#151518"
-      }}
-    />
-          </ColorPalette>
-        </section>
-        <section>
-          <h3>{"Border"}</h3>
-          <ColorPalette>
-            <ColorItem
-      title={"color.border-active"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)"}
-      colors={{
-              "border-active": "#0c0c0d"
-      }}
-    />
-            <ColorItem
-      title={"color.border-disabled"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "border-disabled": "#69696b"
-      }}
-    />
-            <ColorItem
-      title={"color.border-hovered"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)"}
-      colors={{
-              "border-hovered": "#0c0c0d"
-      }}
-    />
-            <ColorItem
-      title={"color.border-inactive"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
-      colors={{
-              "border-inactive": "#030303"
+              "primary": "#1f1f21",
+              "secondary": "#555659",
+              "on-primary": "#FAFAFA",
+              "on-secondary": "#FAFAFA",
+              "primary-hovered": "#606062",
+              "primary-active": "#000000",
+              "primary-inactive": "#030303",
+              "primary-disabled": "#363639",
+              "secondary-hovered": "#46474a",
+              "secondary-active": "#46474a",
+              "secondary-inactive": "#030303",
+              "secondary-disabled": "#494a4d"
       }}
     />
           </ColorPalette>
@@ -2968,91 +2624,18 @@ const COLOR_VARIANTS = {
       title={"color.danger"}
       subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText."}
       colors={{
-              "danger": "#8e223e"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-accent"}
-      subtitle={"Alias of danger for the danger theme"}
-      colors={{
-              "danger-accent": "#8e223e"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-active"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "danger-active": "#6a0022"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-disabled"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-disabled": "#5a3c44"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-hovered"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "danger-hovered": "#6a0022"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-inactive"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "danger-inactive": "#ab3e56"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle"}
-      subtitle={"Generated low-emphasis danger background for the light theme"}
-      colors={{
-              "danger-subtle": "#ee7a8e"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-active"}
-      subtitle={"Generated low-emphasis danger background for the light theme (active, 25% darker)"}
-      colors={{
-              "danger-subtle-active": "#b0435a"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-disabled"}
-      subtitle={"Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-subtle-disabled": "#7b5960"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-hovered"}
-      subtitle={"Generated low-emphasis danger background for the light theme (hovered, 25% darker)"}
-      colors={{
-              "danger-subtle-hovered": "#b0435a"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-inactive"}
-      subtitle={"Generated low-emphasis danger background for the light theme (inactive, 20% brighter)"}
-      colors={{
-              "danger-subtle-inactive": "#ffa7ba"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-accent"}
-      subtitle={"Generated text and icon color on danger backgrounds"}
-      colors={{
-              "on-danger-accent": "#FAFAFA"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-subtle"}
-      subtitle={"Generated text and icon color on danger-subtle backgrounds"}
-      colors={{
-              "on-danger-subtle": "#200006"
+              "primary": "#8e223e",
+              "secondary": "#ee7a8e",
+              "on-primary": "#FAFAFA",
+              "on-secondary": "#200006",
+              "primary-hovered": "#6a0022",
+              "primary-active": "#6a0022",
+              "primary-inactive": "#ab3e56",
+              "primary-disabled": "#5a3c44",
+              "secondary-hovered": "#b0435a",
+              "secondary-active": "#b0435a",
+              "secondary-inactive": "#ffa7ba",
+              "secondary-disabled": "#7b5960"
       }}
     />
           </ColorPalette>
@@ -3064,91 +2647,51 @@ const COLOR_VARIANTS = {
       title={"color.discovery"}
       subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages."}
       colors={{
-              "discovery": "#594395"
+              "primary": "#594395",
+              "secondary": "#a690e1",
+              "on-primary": "#FAFAFA",
+              "on-secondary": "#FAFAFA",
+              "primary-hovered": "#3c2372",
+              "primary-active": "#3c2372",
+              "primary-inactive": "#725db2",
+              "primary-disabled": "#4a445f",
+              "secondary-hovered": "#725ba7",
+              "secondary-active": "#725ba7",
+              "secondary-inactive": "#d2bcff",
+              "secondary-disabled": "#655f79"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
+          <h3>{"Hairline"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.hairline-active"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)"}
+      colors={{
+              "hairline-active": "#0c0c0d"
       }}
     />
             <ColorItem
-      title={"color.discovery-accent"}
-      subtitle={"Alias of discovery for the discovery theme"}
+      title={"color.hairline-disabled"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "discovery-accent": "#594395"
+              "hairline-disabled": "#7a7a7c"
       }}
     />
             <ColorItem
-      title={"color.discovery-active"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)"}
+      title={"color.hairline-hovered"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)"}
       colors={{
-              "discovery-active": "#3c2372"
+              "hairline-hovered": "#0c0c0d"
       }}
     />
             <ColorItem
-      title={"color.discovery-disabled"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      title={"color.hairline-inactive"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
       colors={{
-              "discovery-disabled": "#4a445f"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-hovered"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)"}
-      colors={{
-              "discovery-hovered": "#3c2372"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-inactive"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)"}
-      colors={{
-              "discovery-inactive": "#725db2"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme."}
-      colors={{
-              "discovery-subtle": "#a690e1"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-active"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% darker)"}
-      colors={{
-              "discovery-subtle-active": "#725ba7"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-disabled"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "discovery-subtle-disabled": "#655f79"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-hovered"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)"}
-      colors={{
-              "discovery-subtle-hovered": "#725ba7"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-inactive"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter)"}
-      colors={{
-              "discovery-subtle-inactive": "#d2bcff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-accent"}
-      subtitle={"Generated text and icon color on discovery backgrounds"}
-      colors={{
-              "on-discovery-accent": "#FAFAFA"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-subtle"}
-      subtitle={"Generated text and icon color on discovery-subtle backgrounds"}
-      colors={{
-              "on-discovery-subtle": "#FAFAFA"
+              "hairline-inactive": "#030303"
       }}
     />
           </ColorPalette>
@@ -3160,91 +2703,18 @@ const COLOR_VARIANTS = {
       title={"color.info"}
       subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText."}
       colors={{
-              "info": "#2055b3"
-      }}
-    />
-            <ColorItem
-      title={"color.info-accent"}
-      subtitle={"Alias of info for the info theme"}
-      colors={{
-              "info-accent": "#2055b3"
-      }}
-    />
-            <ColorItem
-      title={"color.info-active"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "info-active": "#00318d"
-      }}
-    />
-            <ColorItem
-      title={"color.info-disabled"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-disabled": "#3b4a68"
-      }}
-    />
-            <ColorItem
-      title={"color.info-hovered"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "info-hovered": "#00318d"
-      }}
-    />
-            <ColorItem
-      title={"color.info-inactive"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "info-inactive": "#3b72d3"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme."}
-      colors={{
-              "info-subtle": "#6da2ff"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-active"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% darker)"}
-      colors={{
-              "info-subtle-active": "#396ac2"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-disabled"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-subtle-disabled": "#556582"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-hovered"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% darker)"}
-      colors={{
-              "info-subtle-hovered": "#396ac2"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-inactive"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% brighter)"}
-      colors={{
-              "info-subtle-inactive": "#99d1ff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-accent"}
-      subtitle={"Generated text and icon color on info backgrounds"}
-      colors={{
-              "on-info-accent": "#FAFAFA"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-subtle"}
-      subtitle={"Generated text and icon color on info-subtle backgrounds"}
-      colors={{
-              "on-info-subtle": "#FAFAFA"
+              "primary": "#2055b3",
+              "secondary": "#6da2ff",
+              "on-primary": "#FAFAFA",
+              "on-secondary": "#FAFAFA",
+              "primary-hovered": "#00318d",
+              "primary-active": "#00318d",
+              "primary-inactive": "#3b72d3",
+              "primary-disabled": "#3b4a68",
+              "secondary-hovered": "#396ac2",
+              "secondary-active": "#396ac2",
+              "secondary-inactive": "#99d1ff",
+              "secondary-disabled": "#556582"
       }}
     />
           </ColorPalette>
@@ -3253,94 +2723,21 @@ const COLOR_VARIANTS = {
           <h3>{"Success"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-success-accent"}
-      subtitle={"Generated text and icon color on success backgrounds"}
-      colors={{
-              "on-success-accent": "#FAFAFA"
-      }}
-    />
-            <ColorItem
-      title={"color.on-success-subtle"}
-      subtitle={"Generated text and icon color on success-subtle backgrounds"}
-      colors={{
-              "on-success-subtle": "#002217"
-      }}
-    />
-            <ColorItem
       title={"color.success"}
       subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText."}
       colors={{
-              "success": "#216b53"
-      }}
-    />
-            <ColorItem
-      title={"color.success-accent"}
-      subtitle={"Alias of success for the success theme"}
-      colors={{
-              "success-accent": "#216b53"
-      }}
-    />
-            <ColorItem
-      title={"color.success-active"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "success-active": "#004933"
-      }}
-    />
-            <ColorItem
-      title={"color.success-disabled"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-disabled": "#3c504b"
-      }}
-    />
-            <ColorItem
-      title={"color.success-hovered"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "success-hovered": "#004933"
-      }}
-    />
-            <ColorItem
-      title={"color.success-inactive"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "success-inactive": "#40876e"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle"}
-      subtitle={"Generated low-emphasis success background for the light theme"}
-      colors={{
-              "success-subtle": "#74ba9f"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-active"}
-      subtitle={"Generated low-emphasis success background for the light theme (active, 25% darker)"}
-      colors={{
-              "success-subtle-active": "#3b8168"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-disabled"}
-      subtitle={"Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-subtle-disabled": "#586c66"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-hovered"}
-      subtitle={"Generated low-emphasis success background for the light theme (hovered, 25% darker)"}
-      colors={{
-              "success-subtle-hovered": "#3b8168"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-inactive"}
-      subtitle={"Generated low-emphasis success background for the light theme (inactive, 20% brighter)"}
-      colors={{
-              "success-subtle-inactive": "#a3eacd"
+              "primary": "#216b53",
+              "secondary": "#74ba9f",
+              "on-primary": "#FAFAFA",
+              "on-secondary": "#002217",
+              "primary-hovered": "#004933",
+              "primary-active": "#004933",
+              "primary-inactive": "#40876e",
+              "primary-disabled": "#3c504b",
+              "secondary-hovered": "#3b8168",
+              "secondary-active": "#3b8168",
+              "secondary-inactive": "#a3eacd",
+              "secondary-disabled": "#586c66"
       }}
     />
           </ColorPalette>
@@ -3349,94 +2746,21 @@ const COLOR_VARIANTS = {
           <h3>{"Warning"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-warning-accent"}
-      subtitle={"Generated text and icon color on warning backgrounds"}
-      colors={{
-              "on-warning-accent": "#FAFAFA"
-      }}
-    />
-            <ColorItem
-      title={"color.on-warning-subtle"}
-      subtitle={"Generated text and icon color on warning-subtle backgrounds"}
-      colors={{
-              "on-warning-subtle": "#241500"
-      }}
-    />
-            <ColorItem
       title={"color.warning"}
       subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."}
       colors={{
-              "warning": "#765417"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-accent"}
-      subtitle={"Alias of warning for the warning theme"}
-      colors={{
-              "warning-accent": "#765417"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-active"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "warning-active": "#543400"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-disabled"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-disabled": "#53493b"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-hovered"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "warning-hovered": "#543400"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-inactive"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "warning-inactive": "#926f36"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle"}
-      subtitle={"Generated low-emphasis warning background for the light theme"}
-      colors={{
-              "warning-subtle": "#c7a168"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-active"}
-      subtitle={"Generated low-emphasis warning background for the light theme (active, 25% darker)"}
-      colors={{
-              "warning-subtle-active": "#8e6a31"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-disabled"}
-      subtitle={"Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-subtle-disabled": "#6f6456"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-hovered"}
-      subtitle={"Generated low-emphasis warning background for the light theme (hovered, 25% darker)"}
-      colors={{
-              "warning-subtle-hovered": "#8e6a31"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-inactive"}
-      subtitle={"Generated low-emphasis warning background for the light theme (inactive, 20% brighter)"}
-      colors={{
-              "warning-subtle-inactive": "#f7d095"
+              "primary": "#765417",
+              "secondary": "#c7a168",
+              "on-primary": "#FAFAFA",
+              "on-secondary": "#241500",
+              "primary-hovered": "#543400",
+              "primary-active": "#543400",
+              "primary-inactive": "#926f36",
+              "primary-disabled": "#53493b",
+              "secondary-hovered": "#8e6a31",
+              "secondary-active": "#8e6a31",
+              "secondary-inactive": "#f7d095",
+              "secondary-disabled": "#6f6456"
       }}
     />
           </ColorPalette>
@@ -3577,6 +2901,331 @@ const COLOR_VARIANTS = {
         </ColorPalette>
       </section>
       <section>
+        <h2>{"Background"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.canvas"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
+      colors={{
+            "canvas": "#cacaca"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-active"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 4% darker)"}
+      colors={{
+            "canvas-active": "#c2c2c2"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-disabled"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "canvas-disabled": "#a4a4a5"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-hovered"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 4% darker)"}
+      colors={{
+            "canvas-hovered": "#c2c2c2"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-inactive"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% brighter)"}
+      colors={{
+            "canvas-inactive": "#d9d9d9"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
+      colors={{
+            "elevated": "#d5d5d5"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-active"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 4% darker)"}
+      colors={{
+            "elevated-active": "#cdcdcd"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-disabled"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "elevated-disabled": "#acacad"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-hovered"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 4% darker)"}
+      colors={{
+            "elevated-hovered": "#cdcdcd"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-inactive"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% brighter)"}
+      colors={{
+            "elevated-inactive": "#d9d9d9"
+      }}
+    />
+          <ColorItem
+      title={"color.floating"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
+      colors={{
+            "floating": "#d9d9d9"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-active"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 4% darker)"}
+      colors={{
+            "floating-active": "#d0d0d0"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-disabled"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "floating-disabled": "#aeaeaf"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-hovered"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 4% darker)"}
+      colors={{
+            "floating-hovered": "#d0d0d0"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-inactive"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% brighter)"}
+      colors={{
+            "floating-inactive": "#d9d9d9"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
+      colors={{
+            "sunken": "#c4c4c4"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-active"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 4% darker)"}
+      colors={{
+            "sunken-active": "#bcbcbc"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-disabled"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "sunken-disabled": "#a0a0a1"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-hovered"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 4% darker)"}
+      colors={{
+            "sunken-hovered": "#bcbcbc"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-inactive"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% brighter)"}
+      colors={{
+            "sunken-inactive": "#d9d9d9"
+      }}
+    />
+          <ColorItem
+      title={"color.surface"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
+      colors={{
+            "surface": "#cfcfcf"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-active"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 4% darker)"}
+      colors={{
+            "surface-active": "#c7c7c7"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-disabled"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "surface-disabled": "#a7a7a8"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-hovered"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 4% darker)"}
+      colors={{
+            "surface-hovered": "#c7c7c7"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-inactive"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% brighter)"}
+      colors={{
+            "surface-inactive": "#d9d9d9"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
+        <h2>{"Foreground"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.emphasis"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      colors={{
+            "emphasis": "#3c3c3e"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-active"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)"}
+      colors={{
+            "emphasis-active": "#262626"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-disabled"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "emphasis-disabled": "#4c4c4e"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-hovered"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)"}
+      colors={{
+            "emphasis-hovered": "#6a6a6b"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-inactive"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      colors={{
+            "emphasis-inactive": "#282828"
+      }}
+    />
+          <ColorItem
+      title={"color.ink"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
+      colors={{
+            "ink": "#626364"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-active"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, light contrast primitive)"}
+      colors={{
+            "ink-active": "#2e2e30"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-disabled"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "ink-disabled": "#595a5c"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-hovered"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, light contrast primitive)"}
+      colors={{
+            "ink-hovered": "#2e2e30"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-inactive"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      colors={{
+            "ink-inactive": "#282828"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtle": "#8f8f90"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)"}
+      colors={{
+            "subtle-active": "#2e2e30"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtle-disabled": "#6a6a6b"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, light contrast primitive)"}
+      colors={{
+            "subtle-hovered": "#2e2e30"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtle-inactive": "#282828"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtlest": "#b4b4b4"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)"}
+      colors={{
+            "subtlest-active": "#2e2e30"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtlest-disabled": "#767678"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, light contrast primitive)"}
+      colors={{
+            "subtlest-hovered": "#2e2e30"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtlest-inactive": "#282828"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
         <h2>Colors</h2>
         <ColorPalette>
           <ColorItem
@@ -3606,13 +3255,6 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.border"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
-      colors={{
-            "border": "#a1a1a2"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
       subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
@@ -3635,59 +3277,10 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.primary"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      title={"color.hairline"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
-            "primary": "#3c3c3e"
-      }}
-    />
-          <ColorItem
-      title={"color.secondary"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
-      colors={{
-            "secondary": "#626364"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-canvas"}
-      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
-      colors={{
-            "surface-canvas": "#cacaca"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-elevated"}
-      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
-      colors={{
-            "surface-elevated": "#cfcfcf"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-floating"}
-      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
-      colors={{
-            "surface-floating": "#d5d5d5"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-highest"}
-      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
-      colors={{
-            "surface-highest": "#d9d9d9"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-sunken"}
-      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
-      colors={{
-            "surface-sunken": "#c4c4c4"
-      }}
-    />
-          <ColorItem
-      title={"color.tertiary"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-            "tertiary": "#b4b4b4"
+            "hairline": "#c4c4c4"
       }}
     />
         </ColorPalette>
@@ -3698,124 +3291,18 @@ const COLOR_VARIANTS = {
       title={"color.base"}
       subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
-              "base": "#3c3c3e"
-      }}
-    />
-            <ColorItem
-      title={"color.base-accent"}
-      subtitle={"Alias of base for the base theme"}
-      colors={{
-              "base-accent": "#3c3c3e"
-      }}
-    />
-            <ColorItem
-      title={"color.base-active"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)"}
-      colors={{
-              "base-active": "#262626"
-      }}
-    />
-            <ColorItem
-      title={"color.base-disabled"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-disabled": "#4c4c4e"
-      }}
-    />
-            <ColorItem
-      title={"color.base-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)"}
-      colors={{
-              "base-hovered": "#6a6a6b"
-      }}
-    />
-            <ColorItem
-      title={"color.base-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
-      colors={{
-              "base-inactive": "#282828"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-              "base-subtle": "#b4b4b4"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-active"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 12% darker)"}
-      colors={{
-              "base-subtle-active": "#9d9d9d"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-disabled"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-subtle-disabled": "#767678"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 12% darker)"}
-      colors={{
-              "base-subtle-hovered": "#9d9d9d"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
-      colors={{
-              "base-subtle-inactive": "#282828"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-accent"}
-      subtitle={"Generated text and icon color on base backgrounds"}
-      colors={{
-              "on-base-accent": "#d5d5d5"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-subtle"}
-      subtitle={"Generated text and icon color on base-subtle backgrounds"}
-      colors={{
-              "on-base-subtle": "#343438"
-      }}
-    />
-          </ColorPalette>
-        </section>
-        <section>
-          <h3>{"Border"}</h3>
-          <ColorPalette>
-            <ColorItem
-      title={"color.border-active"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)"}
-      colors={{
-              "border-active": "#2e2e30"
-      }}
-    />
-            <ColorItem
-      title={"color.border-disabled"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "border-disabled": "#707071"
-      }}
-    />
-            <ColorItem
-      title={"color.border-hovered"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)"}
-      colors={{
-              "border-hovered": "#2e2e30"
-      }}
-    />
-            <ColorItem
-      title={"color.border-inactive"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
-      colors={{
-              "border-inactive": "#282828"
+              "primary": "#3c3c3e",
+              "secondary": "#626364",
+              "on-primary": "#d5d5d5",
+              "on-secondary": "#d5d5d5",
+              "primary-hovered": "#6a6a6b",
+              "primary-active": "#262626",
+              "primary-inactive": "#282828",
+              "primary-disabled": "#4c4c4e",
+              "secondary-hovered": "#57585a",
+              "secondary-active": "#57585a",
+              "secondary-inactive": "#282828",
+              "secondary-disabled": "#595a5c"
       }}
     />
           </ColorPalette>
@@ -3827,91 +3314,18 @@ const COLOR_VARIANTS = {
       title={"color.danger"}
       subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText."}
       colors={{
-              "danger": "#864254"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-accent"}
-      subtitle={"Alias of danger for the danger theme"}
-      colors={{
-              "danger-accent": "#864254"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-active"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "danger-active": "#75223c"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-disabled"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-disabled": "#655156"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-hovered"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "danger-hovered": "#75223c"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-inactive"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "danger-inactive": "#975967"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle"}
-      subtitle={"Generated low-emphasis danger background for the light theme"}
-      colors={{
-              "danger-subtle": "#cb7e8b"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-active"}
-      subtitle={"Generated low-emphasis danger background for the light theme (active, 25% darker)"}
-      colors={{
-              "danger-subtle-active": "#9a5d6a"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-disabled"}
-      subtitle={"Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-subtle-disabled": "#7a676b"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-hovered"}
-      subtitle={"Generated low-emphasis danger background for the light theme (hovered, 25% darker)"}
-      colors={{
-              "danger-subtle-hovered": "#9a5d6a"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-inactive"}
-      subtitle={"Generated low-emphasis danger background for the light theme (inactive, 20% brighter)"}
-      colors={{
-              "danger-subtle-inactive": "#e094a4"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-accent"}
-      subtitle={"Generated text and icon color on danger backgrounds"}
-      colors={{
-              "on-danger-accent": "#d5d5d5"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-subtle"}
-      subtitle={"Generated text and icon color on danger-subtle backgrounds"}
-      colors={{
-              "on-danger-subtle": "#4d1620"
+              "primary": "#864254",
+              "secondary": "#cb7e8b",
+              "on-primary": "#d5d5d5",
+              "on-secondary": "#4d1620",
+              "primary-hovered": "#75223c",
+              "primary-active": "#75223c",
+              "primary-inactive": "#975967",
+              "primary-disabled": "#655156",
+              "secondary-hovered": "#9a5d6a",
+              "secondary-active": "#9a5d6a",
+              "secondary-inactive": "#e094a4",
+              "secondary-disabled": "#7a676b"
       }}
     />
           </ColorPalette>
@@ -3923,91 +3337,51 @@ const COLOR_VARIANTS = {
       title={"color.discovery"}
       subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages."}
       colors={{
-              "discovery": "#675a8a"
+              "primary": "#675a8a",
+              "secondary": "#9b8cc3",
+              "on-primary": "#d5d5d5",
+              "on-secondary": "#d5d5d5",
+              "primary-hovered": "#514075",
+              "primary-active": "#514075",
+              "primary-inactive": "#796d9d",
+              "primary-disabled": "#5a5768",
+              "secondary-hovered": "#786c96",
+              "secondary-active": "#786c96",
+              "secondary-inactive": "#b69fe3",
+              "secondary-disabled": "#6e6a79"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
+          <h3>{"Hairline"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.hairline-active"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)"}
+      colors={{
+              "hairline-active": "#2e2e30"
       }}
     />
             <ColorItem
-      title={"color.discovery-accent"}
-      subtitle={"Alias of discovery for the discovery theme"}
+      title={"color.hairline-disabled"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "discovery-accent": "#675a8a"
+              "hairline-disabled": "#7c7c7d"
       }}
     />
             <ColorItem
-      title={"color.discovery-active"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)"}
+      title={"color.hairline-hovered"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)"}
       colors={{
-              "discovery-active": "#514075"
+              "hairline-hovered": "#2e2e30"
       }}
     />
             <ColorItem
-      title={"color.discovery-disabled"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      title={"color.hairline-inactive"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
       colors={{
-              "discovery-disabled": "#5a5768"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-hovered"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)"}
-      colors={{
-              "discovery-hovered": "#514075"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-inactive"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)"}
-      colors={{
-              "discovery-inactive": "#796d9d"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme."}
-      colors={{
-              "discovery-subtle": "#9b8cc3"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-active"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% darker)"}
-      colors={{
-              "discovery-subtle-active": "#786c96"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-disabled"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "discovery-subtle-disabled": "#6e6a79"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-hovered"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)"}
-      colors={{
-              "discovery-subtle-hovered": "#786c96"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-inactive"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter)"}
-      colors={{
-              "discovery-subtle-inactive": "#b69fe3"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-accent"}
-      subtitle={"Generated text and icon color on discovery backgrounds"}
-      colors={{
-              "on-discovery-accent": "#d5d5d5"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-subtle"}
-      subtitle={"Generated text and icon color on discovery-subtle backgrounds"}
-      colors={{
-              "on-discovery-subtle": "#d5d5d5"
+              "hairline-inactive": "#282828"
       }}
     />
           </ColorPalette>
@@ -4019,91 +3393,18 @@ const COLOR_VARIANTS = {
       title={"color.info"}
       subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText."}
       colors={{
-              "info": "#45649b"
-      }}
-    />
-            <ColorItem
-      title={"color.info-accent"}
-      subtitle={"Alias of info for the info theme"}
-      colors={{
-              "info-accent": "#45649b"
-      }}
-    />
-            <ColorItem
-      title={"color.info-active"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "info-active": "#274988"
-      }}
-    />
-            <ColorItem
-      title={"color.info-disabled"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-disabled": "#515a6e"
-      }}
-    />
-            <ColorItem
-      title={"color.info-hovered"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "info-hovered": "#274988"
-      }}
-    />
-            <ColorItem
-      title={"color.info-inactive"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "info-inactive": "#5a79af"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme."}
-      colors={{
-              "info-subtle": "#7598d7"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-active"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% darker)"}
-      colors={{
-              "info-subtle-active": "#5873a4"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-disabled"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-subtle-disabled": "#646e7f"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-hovered"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% darker)"}
-      colors={{
-              "info-subtle-hovered": "#5873a4"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-inactive"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% brighter)"}
-      colors={{
-              "info-subtle-inactive": "#8cb9de"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-accent"}
-      subtitle={"Generated text and icon color on info backgrounds"}
-      colors={{
-              "on-info-accent": "#d5d5d5"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-subtle"}
-      subtitle={"Generated text and icon color on info-subtle backgrounds"}
-      colors={{
-              "on-info-subtle": "#d5d5d5"
+              "primary": "#45649b",
+              "secondary": "#7598d7",
+              "on-primary": "#d5d5d5",
+              "on-secondary": "#d5d5d5",
+              "primary-hovered": "#274988",
+              "primary-active": "#274988",
+              "primary-inactive": "#5a79af",
+              "primary-disabled": "#515a6e",
+              "secondary-hovered": "#5873a4",
+              "secondary-active": "#5873a4",
+              "secondary-inactive": "#8cb9de",
+              "secondary-disabled": "#646e7f"
       }}
     />
           </ColorPalette>
@@ -4112,94 +3413,21 @@ const COLOR_VARIANTS = {
           <h3>{"Success"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-success-accent"}
-      subtitle={"Generated text and icon color on success backgrounds"}
-      colors={{
-              "on-success-accent": "#d5d5d5"
-      }}
-    />
-            <ColorItem
-      title={"color.on-success-subtle"}
-      subtitle={"Generated text and icon color on success-subtle backgrounds"}
-      colors={{
-              "on-success-subtle": "#174e3c"
-      }}
-    />
-            <ColorItem
       title={"color.success"}
       subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText."}
       colors={{
-              "success": "#3e7160"
-      }}
-    />
-            <ColorItem
-      title={"color.success-accent"}
-      subtitle={"Alias of success for the success theme"}
-      colors={{
-              "success-accent": "#3e7160"
-      }}
-    />
-            <ColorItem
-      title={"color.success-active"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "success-active": "#1d634e"
-      }}
-    />
-            <ColorItem
-      title={"color.success-disabled"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-disabled": "#505e5b"
-      }}
-    />
-            <ColorItem
-      title={"color.success-hovered"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "success-hovered": "#1d634e"
-      }}
-    />
-            <ColorItem
-      title={"color.success-inactive"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "success-inactive": "#578172"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle"}
-      subtitle={"Generated low-emphasis success background for the light theme"}
-      colors={{
-              "success-subtle": "#7ba595"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-active"}
-      subtitle={"Generated low-emphasis success background for the light theme (active, 25% darker)"}
-      colors={{
-              "success-subtle-active": "#537d6e"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-disabled"}
-      subtitle={"Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-subtle-disabled": "#65716d"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-hovered"}
-      subtitle={"Generated low-emphasis success background for the light theme (hovered, 25% darker)"}
-      colors={{
-              "success-subtle-hovered": "#537d6e"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-inactive"}
-      subtitle={"Generated low-emphasis success background for the light theme (inactive, 20% brighter)"}
-      colors={{
-              "success-subtle-inactive": "#96ccb6"
+              "primary": "#3e7160",
+              "secondary": "#7ba595",
+              "on-primary": "#d5d5d5",
+              "on-secondary": "#174e3c",
+              "primary-hovered": "#1d634e",
+              "primary-active": "#1d634e",
+              "primary-inactive": "#578172",
+              "primary-disabled": "#505e5b",
+              "secondary-hovered": "#537d6e",
+              "secondary-active": "#537d6e",
+              "secondary-inactive": "#96ccb6",
+              "secondary-disabled": "#65716d"
       }}
     />
           </ColorPalette>
@@ -4208,94 +3436,21 @@ const COLOR_VARIANTS = {
           <h3>{"Warning"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-warning-accent"}
-      subtitle={"Generated text and icon color on warning backgrounds"}
-      colors={{
-              "on-warning-accent": "#d5d5d5"
-      }}
-    />
-            <ColorItem
-      title={"color.on-warning-subtle"}
-      subtitle={"Generated text and icon color on warning-subtle backgrounds"}
-      colors={{
-              "on-warning-subtle": "#4f3817"
-      }}
-    />
-            <ColorItem
       title={"color.warning"}
       subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."}
       colors={{
-              "warning": "#786137"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-accent"}
-      subtitle={"Alias of warning for the warning theme"}
-      colors={{
-              "warning-accent": "#786137"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-active"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "warning-active": "#694d1e"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-disabled"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-disabled": "#605950"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-hovered"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "warning-hovered": "#694d1e"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-inactive"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "warning-inactive": "#887351"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle"}
-      subtitle={"Generated low-emphasis warning background for the light theme"}
-      colors={{
-              "warning-subtle": "#ac9674"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-active"}
-      subtitle={"Generated low-emphasis warning background for the light theme (active, 25% darker)"}
-      colors={{
-              "warning-subtle-active": "#856f4d"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-disabled"}
-      subtitle={"Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-subtle-disabled": "#736c64"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-hovered"}
-      subtitle={"Generated low-emphasis warning background for the light theme (hovered, 25% darker)"}
-      colors={{
-              "warning-subtle-hovered": "#856f4d"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-inactive"}
-      subtitle={"Generated low-emphasis warning background for the light theme (inactive, 20% brighter)"}
-      colors={{
-              "warning-subtle-inactive": "#d6b88c"
+              "primary": "#786137",
+              "secondary": "#ac9674",
+              "on-primary": "#d5d5d5",
+              "on-secondary": "#4f3817",
+              "primary-hovered": "#694d1e",
+              "primary-active": "#694d1e",
+              "primary-inactive": "#887351",
+              "primary-disabled": "#605950",
+              "secondary-hovered": "#856f4d",
+              "secondary-active": "#856f4d",
+              "secondary-inactive": "#d6b88c",
+              "secondary-disabled": "#736c64"
       }}
     />
           </ColorPalette>
@@ -4436,6 +3591,331 @@ const COLOR_VARIANTS = {
         </ColorPalette>
       </section>
       <section>
+        <h2>{"Background"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.canvas"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
+      colors={{
+            "canvas": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-active"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 4% darker)"}
+      colors={{
+            "canvas-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-disabled"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "canvas-disabled": "#c9c9cf"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-hovered"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 4% darker)"}
+      colors={{
+            "canvas-hovered": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.canvas-inactive"}
+      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% brighter)"}
+      colors={{
+            "canvas-inactive": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
+      colors={{
+            "elevated": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-active"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 4% darker)"}
+      colors={{
+            "elevated-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-disabled"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "elevated-disabled": "#dadade"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-hovered"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 4% darker)"}
+      colors={{
+            "elevated-hovered": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.elevated-inactive"}
+      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% brighter)"}
+      colors={{
+            "elevated-inactive": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.floating"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
+      colors={{
+            "floating": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-active"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 4% darker)"}
+      colors={{
+            "floating-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-disabled"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "floating-disabled": "#dfdfe3"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-hovered"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 4% darker)"}
+      colors={{
+            "floating-hovered": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.floating-inactive"}
+      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% brighter)"}
+      colors={{
+            "floating-inactive": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
+      colors={{
+            "sunken": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-active"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 4% darker)"}
+      colors={{
+            "sunken-active": "#fdfdfd"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-disabled"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "sunken-disabled": "#c0c0c7"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-hovered"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 4% darker)"}
+      colors={{
+            "sunken-hovered": "#fdfdfd"
+      }}
+    />
+          <ColorItem
+      title={"color.sunken-inactive"}
+      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% brighter)"}
+      colors={{
+            "sunken-inactive": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.surface"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
+      colors={{
+            "surface": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-active"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 4% darker)"}
+      colors={{
+            "surface-active": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-disabled"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "surface-disabled": "#cfcfd5"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-hovered"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 4% darker)"}
+      colors={{
+            "surface-hovered": "#ffffff"
+      }}
+    />
+          <ColorItem
+      title={"color.surface-inactive"}
+      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% brighter)"}
+      colors={{
+            "surface-inactive": "#ffffff"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
+        <h2>{"Foreground"}</h2>
+        <ColorPalette>
+          <ColorItem
+      title={"color.emphasis"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      colors={{
+            "emphasis": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-active"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)"}
+      colors={{
+            "emphasis-active": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-disabled"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "emphasis-disabled": "#151519"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-hovered"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)"}
+      colors={{
+            "emphasis-hovered": "#4e4e59"
+      }}
+    />
+          <ColorItem
+      title={"color.emphasis-inactive"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      colors={{
+            "emphasis-inactive": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.ink"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
+      colors={{
+            "ink": "#3f424a"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-active"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, light contrast primitive)"}
+      colors={{
+            "ink-active": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-disabled"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "ink-disabled": "#2f3138"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-hovered"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, light contrast primitive)"}
+      colors={{
+            "ink-hovered": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.ink-inactive"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      colors={{
+            "ink-inactive": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtle": "#9a9fa7"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)"}
+      colors={{
+            "subtle-active": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtle-disabled": "#4e4e5a"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, light contrast primitive)"}
+      colors={{
+            "subtle-hovered": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.subtle-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtle-inactive": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
+      colors={{
+            "subtlest": "#ebebed"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-active"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)"}
+      colors={{
+            "subtlest-active": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-disabled"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      colors={{
+            "subtlest-disabled": "#676776"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-hovered"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, light contrast primitive)"}
+      colors={{
+            "subtlest-hovered": "#000000"
+      }}
+    />
+          <ColorItem
+      title={"color.subtlest-inactive"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      colors={{
+            "subtlest-inactive": "#000000"
+      }}
+    />
+        </ColorPalette>
+      </section>
+      <section>
         <h2>Colors</h2>
         <ColorPalette>
           <ColorItem
@@ -4465,13 +3945,6 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.border"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
-      colors={{
-            "border": "#c3c3ca"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
       subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
@@ -4494,59 +3967,10 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.primary"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
+      title={"color.hairline"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle."}
       colors={{
-            "primary": "#000000"
-      }}
-    />
-          <ColorItem
-      title={"color.secondary"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper."}
-      colors={{
-            "secondary": "#3f424a"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-canvas"}
-      subtitle={"Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator."}
-      colors={{
-            "surface-canvas": "#ffffff"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-elevated"}
-      subtitle={"Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree."}
-      colors={{
-            "surface-elevated": "#ffffff"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-floating"}
-      subtitle={"Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant."}
-      colors={{
-            "surface-floating": "#ffffff"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-highest"}
-      subtitle={"Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant."}
-      colors={{
-            "surface-highest": "#ffffff"
-      }}
-    />
-          <ColorItem
-      title={"color.surface-sunken"}
-      subtitle={"Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant."}
-      colors={{
-            "surface-sunken": "#ffffff"
-      }}
-    />
-          <ColorItem
-      title={"color.tertiary"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-            "tertiary": "#ebebed"
+            "hairline": "#ffffff"
       }}
     />
         </ColorPalette>
@@ -4557,124 +3981,18 @@ const COLOR_VARIANTS = {
       title={"color.base"}
       subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators."}
       colors={{
-              "base": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.base-accent"}
-      subtitle={"Alias of base for the base theme"}
-      colors={{
-              "base-accent": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.base-active"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)"}
-      colors={{
-              "base-active": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.base-disabled"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-disabled": "#151519"
-      }}
-    />
-            <ColorItem
-      title={"color.base-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)"}
-      colors={{
-              "base-hovered": "#4e4e59"
-      }}
-    />
-            <ColorItem
-      title={"color.base-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
-      colors={{
-              "base-inactive": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows."}
-      colors={{
-              "base-subtle": "#ebebed"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-active"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 12% darker)"}
-      colors={{
-              "base-subtle-active": "#b9b9c0"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-disabled"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "base-subtle-disabled": "#676776"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 12% darker)"}
-      colors={{
-              "base-subtle-hovered": "#b9b9c0"
-      }}
-    />
-            <ColorItem
-      title={"color.base-subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
-      colors={{
-              "base-subtle-inactive": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-accent"}
-      subtitle={"Generated text and icon color on base backgrounds"}
-      colors={{
-              "on-base-accent": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-base-subtle"}
-      subtitle={"Generated text and icon color on base-subtle backgrounds"}
-      colors={{
-              "on-base-subtle": "#000000"
-      }}
-    />
-          </ColorPalette>
-        </section>
-        <section>
-          <h3>{"Border"}</h3>
-          <ColorPalette>
-            <ColorItem
-      title={"color.border-active"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)"}
-      colors={{
-              "border-active": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.border-disabled"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "border-disabled": "#5a5a66"
-      }}
-    />
-            <ColorItem
-      title={"color.border-hovered"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)"}
-      colors={{
-              "border-hovered": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.border-inactive"}
-      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
-      colors={{
-              "border-inactive": "#000000"
+              "primary": "#000000",
+              "secondary": "#3f424a",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#4e4e59",
+              "primary-active": "#000000",
+              "primary-inactive": "#000000",
+              "primary-disabled": "#151519",
+              "secondary-hovered": "#2b2d33",
+              "secondary-active": "#2b2d33",
+              "secondary-inactive": "#000000",
+              "secondary-disabled": "#2f3138"
       }}
     />
           </ColorPalette>
@@ -4686,91 +4004,18 @@ const COLOR_VARIANTS = {
       title={"color.danger"}
       subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText."}
       colors={{
-              "danger": "#840929"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-accent"}
-      subtitle={"Alias of danger for the danger theme"}
-      colors={{
-              "danger-accent": "#840929"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-active"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "danger-active": "#27000c"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-disabled"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-disabled": "#44232c"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-hovered"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "danger-hovered": "#27000c"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-inactive"}
-      subtitle={"Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "danger-inactive": "#bc2445"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle"}
-      subtitle={"Generated low-emphasis danger background for the light theme"}
-      colors={{
-              "danger-subtle": "#ff98aa"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-active"}
-      subtitle={"Generated low-emphasis danger background for the light theme (active, 25% darker)"}
-      colors={{
-              "danger-subtle-active": "#c5294a"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-disabled"}
-      subtitle={"Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "danger-subtle-disabled": "#7a4751"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-hovered"}
-      subtitle={"Generated low-emphasis danger background for the light theme (hovered, 25% darker)"}
-      colors={{
-              "danger-subtle-hovered": "#c5294a"
-      }}
-    />
-            <ColorItem
-      title={"color.danger-subtle-inactive"}
-      subtitle={"Generated low-emphasis danger background for the light theme (inactive, 20% brighter)"}
-      colors={{
-              "danger-subtle-inactive": "#fff2f5"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-accent"}
-      subtitle={"Generated text and icon color on danger backgrounds"}
-      colors={{
-              "on-danger-accent": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-danger-subtle"}
-      subtitle={"Generated text and icon color on danger-subtle backgrounds"}
-      colors={{
-              "on-danger-subtle": "#000000"
+              "primary": "#840929",
+              "secondary": "#ff98aa",
+              "on-primary": "#ffffff",
+              "on-secondary": "#000000",
+              "primary-hovered": "#27000c",
+              "primary-active": "#27000c",
+              "primary-inactive": "#bc2445",
+              "primary-disabled": "#44232c",
+              "secondary-hovered": "#c5294a",
+              "secondary-active": "#c5294a",
+              "secondary-inactive": "#fff2f5",
+              "secondary-disabled": "#7a4751"
       }}
     />
           </ColorPalette>
@@ -4782,91 +4027,51 @@ const COLOR_VARIANTS = {
       title={"color.discovery"}
       subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages."}
       colors={{
-              "discovery": "#492b9b"
+              "primary": "#492b9b",
+              "secondary": "#c1adf7",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#240c59",
+              "primary-active": "#240c59",
+              "primary-inactive": "#6c4ec9",
+              "primary-disabled": "#342c4d",
+              "secondary-hovered": "#6b48bb",
+              "secondary-active": "#6b48bb",
+              "secondary-inactive": "#ffffff",
+              "secondary-disabled": "#584e78"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
+          <h3>{"Hairline"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.hairline-active"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)"}
+      colors={{
+              "hairline-active": "#000000"
       }}
     />
             <ColorItem
-      title={"color.discovery-accent"}
-      subtitle={"Alias of discovery for the discovery theme"}
+      title={"color.hairline-disabled"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 35% over oklch(0.3839 0.0045 286.26))"}
       colors={{
-              "discovery-accent": "#492b9b"
+              "hairline-disabled": "#727280"
       }}
     />
             <ColorItem
-      title={"color.discovery-active"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)"}
+      title={"color.hairline-hovered"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)"}
       colors={{
-              "discovery-active": "#240c59"
+              "hairline-hovered": "#000000"
       }}
     />
             <ColorItem
-      title={"color.discovery-disabled"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
+      title={"color.hairline-inactive"}
+      subtitle={"Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
       colors={{
-              "discovery-disabled": "#342c4d"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-hovered"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)"}
-      colors={{
-              "discovery-hovered": "#240c59"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-inactive"}
-      subtitle={"Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)"}
-      colors={{
-              "discovery-inactive": "#6c4ec9"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme."}
-      colors={{
-              "discovery-subtle": "#c1adf7"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-active"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% darker)"}
-      colors={{
-              "discovery-subtle-active": "#6b48bb"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-disabled"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "discovery-subtle-disabled": "#584e78"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-hovered"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)"}
-      colors={{
-              "discovery-subtle-hovered": "#6b48bb"
-      }}
-    />
-            <ColorItem
-      title={"color.discovery-subtle-inactive"}
-      subtitle={"Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter)"}
-      colors={{
-              "discovery-subtle-inactive": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-accent"}
-      subtitle={"Generated text and icon color on discovery backgrounds"}
-      colors={{
-              "on-discovery-accent": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-discovery-subtle"}
-      subtitle={"Generated text and icon color on discovery-subtle backgrounds"}
-      colors={{
-              "on-discovery-subtle": "#ffffff"
+              "hairline-inactive": "#000000"
       }}
     />
           </ColorPalette>
@@ -4878,91 +4083,18 @@ const COLOR_VARIANTS = {
       title={"color.info"}
       subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText."}
       colors={{
-              "info": "#0145be"
-      }}
-    />
-            <ColorItem
-      title={"color.info-accent"}
-      subtitle={"Alias of info for the info theme"}
-      colors={{
-              "info-accent": "#0145be"
-      }}
-    />
-            <ColorItem
-      title={"color.info-active"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "info-active": "#001f5a"
-      }}
-    />
-            <ColorItem
-      title={"color.info-disabled"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-disabled": "#233457"
-      }}
-    />
-            <ColorItem
-      title={"color.info-hovered"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "info-hovered": "#001f5a"
-      }}
-    />
-            <ColorItem
-      title={"color.info-inactive"}
-      subtitle={"Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "info-inactive": "#216df4"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme."}
-      colors={{
-              "info-subtle": "#9ec1ff"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-active"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% darker)"}
-      colors={{
-              "info-subtle-active": "#1b61df"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-disabled"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "info-subtle-disabled": "#425983"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-hovered"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% darker)"}
-      colors={{
-              "info-subtle-hovered": "#1b61df"
-      }}
-    />
-            <ColorItem
-      title={"color.info-subtle-inactive"}
-      subtitle={"Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% brighter)"}
-      colors={{
-              "info-subtle-inactive": "#def0ff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-accent"}
-      subtitle={"Generated text and icon color on info backgrounds"}
-      colors={{
-              "on-info-accent": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-info-subtle"}
-      subtitle={"Generated text and icon color on info-subtle backgrounds"}
-      colors={{
-              "on-info-subtle": "#ffffff"
+              "primary": "#0145be",
+              "secondary": "#9ec1ff",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#001f5a",
+              "primary-active": "#001f5a",
+              "primary-inactive": "#216df4",
+              "primary-disabled": "#233457",
+              "secondary-hovered": "#1b61df",
+              "secondary-active": "#1b61df",
+              "secondary-inactive": "#def0ff",
+              "secondary-disabled": "#425983"
       }}
     />
           </ColorPalette>
@@ -4971,94 +4103,21 @@ const COLOR_VARIANTS = {
           <h3>{"Success"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-success-accent"}
-      subtitle={"Generated text and icon color on success backgrounds"}
-      colors={{
-              "on-success-accent": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-success-subtle"}
-      subtitle={"Generated text and icon color on success-subtle backgrounds"}
-      colors={{
-              "on-success-subtle": "#000000"
-      }}
-    />
-            <ColorItem
       title={"color.success"}
       subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText."}
       colors={{
-              "success": "#0a4e38"
-      }}
-    />
-            <ColorItem
-      title={"color.success-accent"}
-      subtitle={"Alias of success for the success theme"}
-      colors={{
-              "success-accent": "#0a4e38"
-      }}
-    />
-            <ColorItem
-      title={"color.success-active"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "success-active": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.success-disabled"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-disabled": "#213731"
-      }}
-    />
-            <ColorItem
-      title={"color.success-hovered"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "success-hovered": "#000000"
-      }}
-    />
-            <ColorItem
-      title={"color.success-inactive"}
-      subtitle={"Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "success-inactive": "#298565"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle"}
-      subtitle={"Generated low-emphasis success background for the light theme"}
-      colors={{
-              "success-subtle": "#72d1ac"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-active"}
-      subtitle={"Generated low-emphasis success background for the light theme (active, 25% darker)"}
-      colors={{
-              "success-subtle-active": "#237b5b"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-disabled"}
-      subtitle={"Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "success-subtle-disabled": "#45655b"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-hovered"}
-      subtitle={"Generated low-emphasis success background for the light theme (hovered, 25% darker)"}
-      colors={{
-              "success-subtle-hovered": "#237b5b"
-      }}
-    />
-            <ColorItem
-      title={"color.success-subtle-inactive"}
-      subtitle={"Generated low-emphasis success background for the light theme (inactive, 20% brighter)"}
-      colors={{
-              "success-subtle-inactive": "#d0fdea"
+              "primary": "#0a4e38",
+              "secondary": "#72d1ac",
+              "on-primary": "#ffffff",
+              "on-secondary": "#000000",
+              "primary-hovered": "#000000",
+              "primary-active": "#000000",
+              "primary-inactive": "#298565",
+              "primary-disabled": "#213731",
+              "secondary-hovered": "#237b5b",
+              "secondary-active": "#237b5b",
+              "secondary-inactive": "#d0fdea",
+              "secondary-disabled": "#45655b"
       }}
     />
           </ColorPalette>
@@ -5067,94 +4126,21 @@ const COLOR_VARIANTS = {
           <h3>{"Warning"}</h3>
           <ColorPalette>
             <ColorItem
-      title={"color.on-warning-accent"}
-      subtitle={"Generated text and icon color on warning backgrounds"}
-      colors={{
-              "on-warning-accent": "#ffffff"
-      }}
-    />
-            <ColorItem
-      title={"color.on-warning-subtle"}
-      subtitle={"Generated text and icon color on warning-subtle backgrounds"}
-      colors={{
-              "on-warning-subtle": "#000000"
-      }}
-    />
-            <ColorItem
       title={"color.warning"}
       subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText."}
       colors={{
-              "warning": "#583902"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-accent"}
-      subtitle={"Alias of warning for the warning theme"}
-      colors={{
-              "warning-accent": "#583902"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-active"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)"}
-      colors={{
-              "warning-active": "#070400"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-disabled"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-disabled": "#3a3021"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-hovered"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)"}
-      colors={{
-              "warning-hovered": "#070400"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-inactive"}
-      subtitle={"Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)"}
-      colors={{
-              "warning-inactive": "#92661d"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle"}
-      subtitle={"Generated low-emphasis warning background for the light theme"}
-      colors={{
-              "warning-subtle": "#e0af64"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-active"}
-      subtitle={"Generated low-emphasis warning background for the light theme (active, 25% darker)"}
-      colors={{
-              "warning-subtle-active": "#8a5e18"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-disabled"}
-      subtitle={"Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))"}
-      colors={{
-              "warning-subtle-disabled": "#685843"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-hovered"}
-      subtitle={"Generated low-emphasis warning background for the light theme (hovered, 25% darker)"}
-      colors={{
-              "warning-subtle-hovered": "#8a5e18"
-      }}
-    />
-            <ColorItem
-      title={"color.warning-subtle-inactive"}
-      subtitle={"Generated low-emphasis warning background for the light theme (inactive, 20% brighter)"}
-      colors={{
-              "warning-subtle-inactive": "#ffebcc"
+              "primary": "#583902",
+              "secondary": "#e0af64",
+              "on-primary": "#ffffff",
+              "on-secondary": "#000000",
+              "primary-hovered": "#070400",
+              "primary-active": "#070400",
+              "primary-inactive": "#92661d",
+              "primary-disabled": "#3a3021",
+              "secondary-hovered": "#8a5e18",
+              "secondary-active": "#8a5e18",
+              "secondary-inactive": "#ffebcc",
+              "secondary-disabled": "#685843"
       }}
     />
           </ColorPalette>

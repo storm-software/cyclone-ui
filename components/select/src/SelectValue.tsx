@@ -17,10 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import type {
-  FieldLabelPlacement,
-  FormControlSize
-} from "@cyclone-ui/helpers";
+import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
   getFieldLabelInset,
@@ -46,7 +43,7 @@ const SelectValueFrame = styled(Text, {
   context: SelectContext,
   transition: "200ms",
   cursor: "pointer",
-  color: "accent hover:hovered",
+  color: "primary hover:primaryHovered",
   display: "flex",
   flexGrow: 1,
   alignItems: "center",
@@ -75,7 +72,7 @@ const SelectValueFrame = styled(Text, {
 
     placeholding: {
       true: {
-        color: "disabled"
+        color: "primaryDisabled"
       }
     },
 
@@ -86,7 +83,7 @@ const SelectValueFrame = styled(Text, {
         // v2 also set `placeholderColor`, which is not a text style in v3
         // and had no effect on this text node.
         color:
-          "disabled hover:disabled press:disabled focus:disabled"
+          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled"
       }
     }
   } as const,

@@ -283,7 +283,7 @@ const FieldValidationTextImpl = createStyledHOC(
         {...rest}
         size={size}
         // Track the control's border so the message reads as part of the field.
-        color={`${disabled ? "disabled" : focused ? "active" : "accent"} group-hover/field:${disabled ? "disabled" : focused ? "active" : "hovered"}`}
+        color={`${disabled ? "primaryDisabled" : focused ? "primaryActive" : "primary"} group-hover/field:${disabled ? "primaryDisabled" : focused ? "primaryActive" : "primaryHovered"}`}
         messages={messages}
         disabled={disabled}>
         {children}
@@ -375,7 +375,7 @@ const FieldGroupInnerImpl = createStyledHOC(
           {clearable && Boolean(formattedValue) && (
             <FieldThemeIcon position="end" onClick={handleClear}>
               <X
-                color={`${disabled ? "disabled" : "accent"} group-hover/field:${disabled ? "disabled" : "hovered"}`}
+                color={`${disabled ? "primaryDisabled" : "primary"} group-hover/field:${disabled ? "primaryDisabled" : "primaryHovered"}`}
               />
             </FieldThemeIcon>
           )}
@@ -545,7 +545,7 @@ const FieldGroup = createStyledHOC(
 const FieldDetails = styled(BodyText, {
   displayName: "FieldDetails",
   transition: "200ms",
-  color: "accent",
+  color: "primary",
   fontFamily: "caption",
   fontStyle: "italic",
   opacity: "enter:0 exit:0",
@@ -554,7 +554,7 @@ const FieldDetails = styled(BodyText, {
     controlSize: formSizeDynamic(getFormFontStyle),
     disabled: {
       true: {
-        color: "disabled hover:disabled",
+        color: "primaryDisabled hover:primaryDisabled",
         cursor: "not-allowed"
       }
     }
@@ -591,8 +591,8 @@ const FieldDetailsImpl = createStyledHOC(
         ref={forwardedRef}
         {...rest}
         color={`${
-          disabled ? "disabled" : theme !== "base" ? "accent" : "secondary"
-        } group-hover/field:${disabled ? "disabled" : "hovered"}`}
+          disabled ? "primaryDisabled" : theme !== "base" ? "primary" : "ink"
+        } group-hover/field:${disabled ? "primaryDisabled" : "primaryHovered"}`}
         theme={theme}
         controlSize={size}
         disabled={disabled}>
@@ -617,7 +617,7 @@ const FieldLabelText = styled(LabelText, {
     controlSize: formSizeDynamic(getFormFontStyle),
     disabled: {
       true: {
-        color: "disabled hover:disabled",
+        color: "primaryDisabled hover:primaryDisabled",
         cursor: "not-allowed"
       }
     }
@@ -651,12 +651,12 @@ const FieldLabelPositioner = styled(View, {
 
 const FieldOptionalLabelText = styled(FieldLabelText, {
   transition: "200ms",
-  color: "tertiary",
+  color: "subtle",
   marginLeft: "lg",
   variants: {
     disabled: {
       true: {
-        color: "tertiary hover:tertiary",
+        color: "subtle hover:subtle",
         cursor: "not-allowed"
       }
     }
@@ -910,7 +910,7 @@ const FieldLabelTextImpl = createStyledHOC(
                   overflow="hidden"
                   textOverflow="ellipsis"
                   whiteSpace="nowrap"
-                  color={`${disabled ? "disabled" : "accent"}`}
+                  color={`${disabled ? "primaryDisabled" : "primary"}`}
                   // Web-only ellipsis styles are not part of React Native's
                   // style types.
                   style={StyleSheet.flatten([
@@ -943,7 +943,7 @@ const FieldLabelTextImpl = createStyledHOC(
                           <Theme name="danger">
                             <Asterisk
                               transition="200ms"
-                              color="accent"
+                              color="primary"
                               size={floating ? "sm" : "md"}
                               position="absolute"
                               top={floating ? -2 : -1}
@@ -972,7 +972,7 @@ const FieldLabelTextImpl = createStyledHOC(
                             hideOptionalForOverflow ? "none" : undefined
                           }
                           size={floating ? true : "sm"}
-                          color="tertiary"
+                          color="subtle"
                           disabled={disabled}
                           floating={floating}
                           controlSize={size}>
@@ -1284,29 +1284,31 @@ const InnerFieldThemeIcon = createStyledHOC(
 
         <Tooltip.Content
           // The content is portaled outside the field's `Theme`, so apply the
-          // field theme here or `accent` resolves against the root theme.
+          // field theme here or `primary` resolves against the root theme.
           theme={theme}
           borderColor={
             isNeutral
-              ? "border focus-visible:borderActive"
-              : "accent focus-visible:active"
+              ? "hairline focus-visible:hairlineActive"
+              : "primary focus-visible:primaryActive"
           }
           arrowBorderColor={
             isNeutral
-              ? "border focus-visible:borderActive"
-              : "accent focus-visible:active"
+              ? "hairline focus-visible:hairlineActive"
+              : "primary focus-visible:primaryActive"
           }>
           <Theme name="base">
             <View paddingVertical="2xl" paddingHorizontal="3xl">
               {messages && messages.length > 0 ? (
                 <ValidationText
-                  color="accent"
+                  color="primary"
                   messages={messages}
                   disabled={disabled}
                   theme="base"
                 />
               ) : (
-                details || <ValidationText color="accent" disabled={disabled} />
+                details || (
+                  <ValidationText color="primary" disabled={disabled} />
+                )
               )}
             </View>
           </Theme>
@@ -1369,8 +1371,8 @@ const FieldThemeIcon = createStyledHOC(
           disabled,
           transition: "200ms",
           color: `${
-            disabled ? "disabled" : focused ? "active" : "accent"
-          } group-hover/field:${disabled ? "disabled" : "hovered"}`
+            disabled ? "primaryDisabled" : focused ? "primaryActive" : "primary"
+          } group-hover/field:${disabled ? "primaryDisabled" : "primaryHovered"}`
         })}
       </InnerFieldThemeIcon>
     );

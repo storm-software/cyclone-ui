@@ -1476,20 +1476,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -1528,20 +1528,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -1580,20 +1580,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -1637,20 +1637,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -1689,20 +1689,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -1741,20 +1741,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -1850,20 +1850,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -1902,20 +1902,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -1959,20 +1959,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -2011,20 +2011,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -2063,20 +2063,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -2120,20 +2120,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -2172,20 +2172,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -2224,20 +2224,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -2281,20 +2281,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -2333,20 +2333,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -2385,20 +2385,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -2443,20 +2443,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[106m" : "\x1b[96m",
+            background ? "\x1b[107m" : "\x1b[97m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+            background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+          background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -2495,20 +2495,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[106m" : "\x1b[96m",
+            background ? "\x1b[40m" : "\x1b[30m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+            background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+          background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -2547,20 +2547,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[47m" : "\x1b[37m",
+            background ? "\x1b[40m" : "\x1b[30m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+            background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+          background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -2656,20 +2656,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[47m" : "\x1b[37m",
+            background ? "\x1b[107m" : "\x1b[97m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+            background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+          background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -2708,20 +2708,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[47m" : "\x1b[37m",
+            background ? "\x1b[107m" : "\x1b[97m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+            background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+          background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -2760,20 +2760,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[106m" : "\x1b[96m",
+            background ? "\x1b[107m" : "\x1b[97m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+            background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+          background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -3190,20 +3190,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3242,20 +3242,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3294,20 +3294,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3346,20 +3346,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3398,20 +3398,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3450,20 +3450,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3502,20 +3502,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3565,14 +3565,14 @@ export const textColors = {
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;189m" : "\x1b[38;5;189m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;206;194;238m" : "\x1b[38;2;206;194;238m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3663,20 +3663,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;117m" : "\x1b[38;5;117m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;127;196;255m" : "\x1b[38;2;127;196;255m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3767,20 +3767,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[103m" : "\x1b[93m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;222m" : "\x1b[38;5;222m",
+              background ? "\x1b[48;5;16m" : "\x1b[38;5;16m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;250;205;123m" : "\x1b[38;2;250;205;123m",
+            background ? "\x1b[48;2;21;21;24m" : "\x1b[38;2;21;21;24m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3819,20 +3819,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[101m" : "\x1b[91m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;210m" : "\x1b[38;5;210m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;255;96;127m" : "\x1b[38;2;255;96;127m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3928,20 +3928,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -3980,20 +3980,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -4032,20 +4032,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -4084,20 +4084,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -4136,20 +4136,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -4188,20 +4188,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -4240,20 +4240,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -4298,20 +4298,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[106m" : "\x1b[96m",
+            background ? "\x1b[107m" : "\x1b[97m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+            background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+          background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -4350,20 +4350,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[106m" : "\x1b[96m",
+            background ? "\x1b[40m" : "\x1b[30m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+            background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+          background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -4402,20 +4402,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[47m" : "\x1b[37m",
+            background ? "\x1b[40m" : "\x1b[30m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+            background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+          background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -4454,20 +4454,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[106m" : "\x1b[96m",
+            background ? "\x1b[107m" : "\x1b[97m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;117m" : "\x1b[38;5;117m",
+            background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;127;196;255m" : "\x1b[38;2;127;196;255m",
+          background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -4506,20 +4506,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[103m" : "\x1b[93m",
+            background ? "\x1b[40m" : "\x1b[30m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;222m" : "\x1b[38;5;222m",
+            background ? "\x1b[48;5;16m" : "\x1b[38;5;16m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;250;205;123m" : "\x1b[38;2;250;205;123m",
+          background ? "\x1b[48;2;21;21;24m" : "\x1b[38;2;21;21;24m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -4558,20 +4558,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[47m" : "\x1b[37m",
+            background ? "\x1b[107m" : "\x1b[97m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+            background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+          background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -4619,20 +4619,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -4671,20 +4671,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[103m" : "\x1b[93m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;222m" : "\x1b[38;5;222m",
+              background ? "\x1b[48;5;16m" : "\x1b[38;5;16m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;250;205;123m" : "\x1b[38;2;250;205;123m",
+            background ? "\x1b[48;2;21;21;24m" : "\x1b[38;2;21;21;24m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -4827,20 +4827,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -4879,20 +4879,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -4988,20 +4988,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[103m" : "\x1b[93m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;222m" : "\x1b[38;5;222m",
+              background ? "\x1b[48;5;16m" : "\x1b[38;5;16m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;250;205;123m" : "\x1b[38;2;250;205;123m",
+            background ? "\x1b[48;2;21;21;24m" : "\x1b[38;2;21;21;24m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5144,20 +5144,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5196,20 +5196,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5305,20 +5305,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5357,20 +5357,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[103m" : "\x1b[93m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;222m" : "\x1b[38;5;222m",
+              background ? "\x1b[48;5;16m" : "\x1b[38;5;16m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;250;205;123m" : "\x1b[38;2;250;205;123m",
+            background ? "\x1b[48;2;21;21;24m" : "\x1b[38;2;21;21;24m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5513,20 +5513,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5565,20 +5565,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5617,20 +5617,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5674,20 +5674,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5726,20 +5726,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5778,20 +5778,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[103m" : "\x1b[93m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;222m" : "\x1b[38;5;222m",
+              background ? "\x1b[48;5;16m" : "\x1b[38;5;16m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;250;205;123m" : "\x1b[38;2;250;205;123m",
+            background ? "\x1b[48;2;21;21;24m" : "\x1b[38;2;21;21;24m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5934,20 +5934,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -5986,20 +5986,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -6048,20 +6048,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -6100,20 +6100,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[103m" : "\x1b[93m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;222m" : "\x1b[38;5;222m",
+              background ? "\x1b[48;5;16m" : "\x1b[38;5;16m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;250;205;123m" : "\x1b[38;2;250;205;123m",
+            background ? "\x1b[48;2;21;21;24m" : "\x1b[38;2;21;21;24m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -6256,20 +6256,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;117m" : "\x1b[38;5;117m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;127;196;255m" : "\x1b[38;2;127;196;255m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -6314,14 +6314,14 @@ export const textColors = {
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;189m" : "\x1b[38;5;189m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;206;194;238m" : "\x1b[38;2;206;194;238m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -6417,20 +6417,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[103m" : "\x1b[93m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;222m" : "\x1b[38;5;222m",
+              background ? "\x1b[48;5;16m" : "\x1b[38;5;16m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;250;205;123m" : "\x1b[38;2;250;205;123m",
+            background ? "\x1b[48;2;21;21;24m" : "\x1b[38;2;21;21;24m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -6573,20 +6573,20 @@ export const textColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;117m" : "\x1b[38;5;117m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;127;196;255m" : "\x1b[38;2;127;196;255m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -6631,14 +6631,14 @@ export const textColors = {
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;189m" : "\x1b[38;5;189m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;206;194;238m" : "\x1b[38;2;206;194;238m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -6683,20 +6683,20 @@ export const textColors = {
         if (colorSupportLevels.stdout === 1) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[106m" : "\x1b[96m",
+            background ? "\x1b[107m" : "\x1b[97m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } else if (colorSupportLevels.stdout === 2) {
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+            background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         }
 
         return wrapAnsi(
           String(text),
-          background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+          background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
           background ? "\x1b[49m" : "\x1b[39m"
         );
       } catch {
@@ -6905,20 +6905,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -6957,20 +6957,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7009,20 +7009,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7066,20 +7066,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7118,20 +7118,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;75m" : "\x1b[38;5;75m",
+              background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;63;166;255m" : "\x1b[38;2;63;166;255m",
+            background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7170,20 +7170,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;89m" : "\x1b[38;5;89m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;98;0;32m" : "\x1b[38;2;98;0;32m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7232,20 +7232,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7284,20 +7284,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7336,20 +7336,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7393,20 +7393,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7445,20 +7445,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7497,20 +7497,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7554,20 +7554,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7606,20 +7606,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7658,20 +7658,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[47m" : "\x1b[37m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;145m" : "\x1b[38;5;145m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;139;148;158m" : "\x1b[38;2;139;148;158m",
+            background ? "\x1b[48;2;255;255;255m" : "\x1b[38;2;255;255;255m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7726,14 +7726,14 @@ export const borderColors = {
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;189m" : "\x1b[38;5;189m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;206;194;238m" : "\x1b[38;2;206;194;238m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7824,20 +7824,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;117m" : "\x1b[38;5;117m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;127;196;255m" : "\x1b[38;2;127;196;255m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7928,20 +7928,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[103m" : "\x1b[93m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;222m" : "\x1b[38;5;222m",
+              background ? "\x1b[48;5;16m" : "\x1b[38;5;16m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;250;205;123m" : "\x1b[38;2;250;205;123m",
+            background ? "\x1b[48;2;21;21;24m" : "\x1b[38;2;21;21;24m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -7980,20 +7980,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[101m" : "\x1b[91m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;210m" : "\x1b[38;5;210m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;255;96;127m" : "\x1b[38;2;255;96;127m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -8095,14 +8095,14 @@ export const borderColors = {
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;189m" : "\x1b[38;5;189m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;206;194;238m" : "\x1b[38;2;206;194;238m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -8193,20 +8193,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[106m" : "\x1b[96m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;117m" : "\x1b[38;5;117m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;127;196;255m" : "\x1b[38;2;127;196;255m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -8297,20 +8297,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[103m" : "\x1b[93m",
+              background ? "\x1b[40m" : "\x1b[30m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;222m" : "\x1b[38;5;222m",
+              background ? "\x1b[48;5;16m" : "\x1b[38;5;16m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;250;205;123m" : "\x1b[38;2;250;205;123m",
+            background ? "\x1b[48;2;21;21;24m" : "\x1b[38;2;21;21;24m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {
@@ -8349,20 +8349,20 @@ export const borderColors = {
           if (colorSupportLevels.stdout === 1) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[101m" : "\x1b[91m",
+              background ? "\x1b[107m" : "\x1b[97m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           } else if (colorSupportLevels.stdout === 2) {
             return wrapAnsi(
               String(text),
-              background ? "\x1b[48;5;210m" : "\x1b[38;5;210m",
+              background ? "\x1b[48;5;231m" : "\x1b[38;5;231m",
               background ? "\x1b[49m" : "\x1b[39m"
             );
           }
 
           return wrapAnsi(
             String(text),
-            background ? "\x1b[48;2;255;96;127m" : "\x1b[38;2;255;96;127m",
+            background ? "\x1b[48;2;250;250;250m" : "\x1b[38;2;250;250;250m",
             background ? "\x1b[49m" : "\x1b[39m"
           );
         } catch {

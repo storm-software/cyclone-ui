@@ -289,7 +289,7 @@ export const StepperHeaderItem = createStyledHOC(
           <Circle
             height={75}
             width={3}
-            backgroundColor={index <= currentIndex ? "accent" : "border"}
+            backgroundColor={index <= currentIndex ? "primary" : "hairline"}
             marginLeft="7xl"
           />
         )}
@@ -301,33 +301,33 @@ export const StepperHeaderItem = createStyledHOC(
             padding="3xl"
             borderRadius={1000_000_000}
             borderWidth="md"
-            borderColor={isPastOrCurrent ? "accent" : "border"}
+            borderColor={isPastOrCurrent ? "primary" : "hairline"}
             {...rest}
             value={value}
             onInteraction={handleOnInteraction}>
             {index < currentIndex && (
-              <CheckCircle transition="200ms" color="accent" size="4xl" />
+              <CheckCircle transition="200ms" color="primary" size="4xl" />
             )}
             {index === currentIndex && (
-              <PencilSimpleLine transition="200ms" color="accent" size="4xl" />
+              <PencilSimpleLine transition="200ms" color="primary" size="4xl" />
             )}
             {isVisitedFutureStep && (
-              <CheckCircle transition="200ms" color="border" size="4xl" />
+              <CheckCircle transition="200ms" color="hairline" size="4xl" />
             )}
             {index > currentIndex && !isVisitedFutureStep && (
-              <Lock transition="200ms" color="border" size="4xl" />
+              <Lock transition="200ms" color="hairline" size="4xl" />
             )}
           </TamaguiTabs.Tab>
 
           {numbered && (
-            <SizableText color="secondary" fontFamily="code">
+            <SizableText color="ink" fontFamily="code">
               {String(itemIndex + 1).padStart(2, "0")}
             </SizableText>
           )}
 
           <HeadingText
             transition="200ms"
-            color={state.currentStep === value ? "accent" : "border"}>
+            color={state.currentStep === value ? "primary" : "hairline"}>
             {children}
           </HeadingText>
         </XStack>
@@ -433,24 +433,24 @@ export const Stepper = withStaticProperties(StepperFrame, {
 
 const StepperRovingIndicator = styled(YStack, {
   position: "absolute",
-  backgroundColor: "surfaceElevated",
+  backgroundColor: "surface",
   opacity: "1 enter:0 exit:0",
   transition: "200ms",
   borderRadius: 1000_000_000,
   variants: {
     active: {
       true: {
-        backgroundColor: "accent",
+        backgroundColor: "primary",
         opacity: 1,
-        color: "accent"
+        color: "primary"
       }
     },
 
     intent: {
       true: {
-        backgroundColor: "surfaceElevated",
+        backgroundColor: "surface",
         opacity: 1,
-        color: "secondary"
+        color: "ink"
       }
     }
   },

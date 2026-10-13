@@ -69,9 +69,9 @@ const TooltipFrameImpl = createStyledHOC(
 const TooltipArrow = styled(TamaguiTooltip.Arrow, {
   displayName: "Tooltip",
   context: TooltipContext,
-  backgroundColor: "surfaceFloating",
+  backgroundColor: "elevated",
   borderWidth: 1,
-  borderColor: "accent"
+  borderColor: "primary"
 });
 
 const TooltipContent = styled(
@@ -82,17 +82,17 @@ const TooltipContent = styled(
     transition: "200ms",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "surfaceFloating",
+    backgroundColor: "elevated",
     paddingVertical: "3xl",
     paddingHorizontal: "2xl",
     borderWidth: 1,
-    borderColor: "accent focus-visible:active",
+    borderColor: "primary focus-visible:primaryActive",
     borderRadius: "tooltip",
     x: "enter:0 exit:0",
     y: "enter:-5px exit:-5px",
     opacity: "enter:0 exit:0",
     scale: "enter:0.9 exit:0.9",
-    outlineColor: "focus-visible:active",
+    outlineColor: "focus-visible:primaryActive",
     outlineWidth: "focus-visible:3px",
     outlineOffset: "focus-visible:lg",
     outlineStyle: "focus-visible:solid",
@@ -125,9 +125,9 @@ const TooltipContentImpl = createStyledHOC(
       children,
       hasArrow = true,
       arrowBorderColor,
-      borderColor = "border",
+      borderColor = "hairline",
       // Keep the arrow on the same background as the body
-      backgroundColor = "surfaceFloating",
+      backgroundColor = "elevated",
       ...props
     }: GetProps<typeof TooltipContent> & TooltipContentExtraProps,
     forwardedRef

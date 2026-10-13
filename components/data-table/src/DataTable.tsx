@@ -548,9 +548,9 @@ export function DataTable<TData extends RowData>({
                             borderStyle="dashed"
                             borderRightColor={
                               header.column.getIsResizing()
-                                ? "active"
+                                ? "primaryActive"
                                 : hoveredResizer === header.id
-                                  ? "primary"
+                                  ? "emphasis"
                                   : "transparent"
                             }
                           />
@@ -570,7 +570,7 @@ export function DataTable<TData extends RowData>({
                   aria-selected={row.getIsSelected()}
                   // An explicit `undefined` would wipe the row's hover background.
                   {...(row.getIsSelected()
-                    ? { backgroundColor: "subtleActive" }
+                    ? { backgroundColor: "secondaryActive" }
                     : {})}>
                   {row.getVisibleCells().map(cell => (
                     <Table.Cell
@@ -657,7 +657,7 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   const value = props.value ? props.value : props.renderValue();
 
   return (
-    <BodyText transition="200ms" color="secondary group-hover/row:inkBodyHover">
+    <BodyText transition="200ms" color="ink group-hover/row:inkHovered">
       {value}
     </BodyText>
   );
@@ -725,10 +725,7 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
       </HeadingSmallText>
 
       <YStack gap="4xl">
-        <Field
-          name={SEARCH_FIELD_NAME}
-          size="sm"
-          onChange={handleSearchChange}>
+        <Field name={SEARCH_FIELD_NAME} size="sm" onChange={handleSearchChange}>
           <SearchInput>
             <SearchInput.TextBox placeholder="Filter..." />
           </SearchInput>
@@ -896,27 +893,27 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       <XStack gap="xl" flexShrink={0} cursor="pointer" onPress={handleSorting}>
         <DataTableColumnHeading
           transition="200ms"
-          color="primary group-hover/header:accent">
+          color="emphasis group-hover/header:primary">
           {titleCase(id)}
         </DataTableColumnHeading>
         {isSorted && !desc && (
           <XStack gap="xxs" alignItems="center">
-            <SortAscending size="4xl" color="accent" />
+            <SortAscending size="4xl" color="primary" />
             <DataTableColumnHeading
               transition="200ms"
               fontWeight={600}
-              color="accent">
+              color="primary">
               {sortIndex + 1}
             </DataTableColumnHeading>
           </XStack>
         )}
         {isSorted && desc && (
           <XStack gap="xxs" alignItems="center">
-            <SortDescending size="4xl" color="accent" />
+            <SortDescending size="4xl" color="primary" />
             <DataTableColumnHeading
               transition="200ms"
               fontWeight={600}
-              color="accent">
+              color="primary">
               {sortIndex + 1}
             </DataTableColumnHeading>
           </XStack>
@@ -937,7 +934,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 ghostOpacity={0.4}
                 circular={true}
                 noPadding={true}
-                color="accent"
+                color="primary"
                 size="6xl"
                 padding="lg">
                 <Button.Icon>
@@ -1106,9 +1103,7 @@ export function DataTablePagination<TData extends RowData>({
                   size="sm"
                   onChange={handlePageSizeChange}>
                   <XStack alignItems="center" gap="3xl">
-                    <Field.Label
-                      variant="above"
-                      flexShrink={0}>
+                    <Field.Label variant="above" flexShrink={0}>
                       Per page:
                     </Field.Label>
                     <View width="18xl" flexShrink={0}>

@@ -54,7 +54,7 @@ const AlertDialogIcon = createStyledHOC(
           display="block"
           width="100%"
           height="55%"
-          backgroundColor="accent"
+          backgroundColor="primary"
           zIndex="10"
         />
 
@@ -62,13 +62,13 @@ const AlertDialogIcon = createStyledHOC(
           <Theme name={theme}>
             <View
               padding={padding}
-              backgroundColor="surfaceFloating"
+              backgroundColor="elevated"
               borderRadius={1000_000_000}>
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}
                 theme={theme}
-                color="accent"
+                color="primary"
                 size="14xl">
                 {children || getIconByTheme({ theme }) || <WarningCircle />}
               </ThemeableIcon>
@@ -144,7 +144,7 @@ const AlertDialogBody = createStyledHOC(
   Dialog.Body,
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Dialog.Body ref={forwardedRef} color="secondary" size="14xl" {...props}>
+      <Dialog.Body ref={forwardedRef} color="ink" size="14xl" {...props}>
         {children}
       </Dialog.Body>
     );

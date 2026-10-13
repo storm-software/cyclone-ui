@@ -38,8 +38,10 @@ import { forwardRef, useCallback, useMemo, useRef, useState } from "react";
 export type RatingSize = FormControlSize;
 export type RatingColor = ColorTokens | ThemeTokens | (string & {});
 
-export interface RatingProps
-  extends Omit<ViewProps, "children" | "onChange" | "role"> {
+export interface RatingProps extends Omit<
+  ViewProps,
+  "children" | "onChange" | "role"
+> {
   /** The rating value. Pass `null` for no rating. Makes the rating controlled. */
   value?: number | null;
   /** The initial rating value when uncontrolled. */
@@ -129,8 +131,8 @@ export const Rating = forwardRef<TamaguiElement, RatingProps>(
       emptyIcon: EmptyIcon = Icon,
       iconWeight = "fill",
       emptyIconWeight = "regular",
-      color = "accent",
-      emptyColor = hasValidationMessage ? "accent" : "border",
+      color = "primary",
+      emptyColor = hasValidationMessage ? "primary" : "hairline",
       highlightSelectedOnly = false,
       getLabelText = defaultGetLabelText,
       onKeyDown,

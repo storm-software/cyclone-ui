@@ -130,7 +130,7 @@ export const Pagination = createStyledHOC(
         </Button>
 
         {currentPage > 3 && pageCount > 5 && (
-          <DotsThree color="accent" paddingHorizontal="md" />
+          <DotsThree color="primary" paddingHorizontal="md" />
         )}
 
         {pageCount > 1 && (
@@ -201,7 +201,7 @@ export const Pagination = createStyledHOC(
         )}
 
         {currentPage < pageCount - 2 && pageCount > 5 && (
-          <DotsThree color="accent" paddingHorizontal="md" />
+          <DotsThree color="primary" paddingHorizontal="md" />
         )}
 
         {pageCount > 4 && (

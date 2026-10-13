@@ -71,11 +71,11 @@ const PropertyColumn = styled(InlineCodeText, {
   paddingVertical: 0,
   paddingLeft: 0,
   backgroundColor: "transparent",
-  color: "accent",
+  color: "primary",
   variants: {
     deprecated: {
       true: {
-        color: "tertiary",
+        color: "subtle",
         textDecorationLine: "line-through"
       }
     }
@@ -84,21 +84,21 @@ const PropertyColumn = styled(InlineCodeText, {
 
 const TypeColumn = styled(BodyText, {
   displayName: "TypeTableTypeColumn",
-  color: "tertiary",
+  color: "subtle",
   fontFamily: "title-md",
   display: "max-sm:none"
 });
 
 const TypeLink = styled(Link, {
   displayName: "TypeTableTypeLink",
-  color: "primary",
+  color: "emphasis",
   textDecorationLine: "underline",
   display: "max-sm:none"
 });
 
 const ColumnLabel = styled(BodyText, {
   displayName: "TypeTableColumnLabel",
-  color: "tertiary",
+  color: "subtle",
   fontFamily: "title-md"
 });
 
@@ -161,12 +161,12 @@ const TypeTableItem = ({
       bordered={false}
       value={open}
       variant="ghost"
-      backgroundColor="surfaceFloating"
+      backgroundColor="elevated"
       onValueChange={handleValueChange}>
       <Collapsible.Header
         paddingHorizontal="3xl"
         paddingVertical="2xl"
-        backgroundColor="hover:tertiary">
+        backgroundColor="hover:subtle">
         <TypeTableRow padding={0} flex={1}>
           <PropertyColumn deprecated={item.deprecated}>
             {`${name}${item.required ? "" : "?"}`}
@@ -178,7 +178,7 @@ const TypeTableItem = ({
           )}
         </TypeTableRow>
       </Collapsible.Header>
-      <Collapsible.Content padding={0} backgroundColor="surfaceElevated">
+      <Collapsible.Content padding={0} backgroundColor="surface">
         <TypeTableItemDetails item={item} />
       </Collapsible.Content>
     </Collapsible>

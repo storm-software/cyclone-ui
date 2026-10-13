@@ -117,7 +117,7 @@ const SuggestionBackground = styled(View, {
   left: 0,
   right: 0,
   borderRadius: "button",
-  backgroundColor: "transparent group-hover/item:tertiary",
+  backgroundColor: "transparent group-hover/item:subtle",
   pointerEvents: "none",
   variants: {
     size: styled.dynamic<FormControlSize>(
@@ -131,7 +131,7 @@ const SuggestionBackground = styled(View, {
     // The keyboard-highlighted option, matching a focused `Select` item.
     active: {
       true: {
-        backgroundColor: "tertiary"
+        backgroundColor: "subtle"
       }
     }
   } as const,
@@ -147,7 +147,7 @@ const SuggestionDivider = styled(View, {
   bottom: 0,
   pointerEvents: "none",
   borderBottomWidth: 1,
-  borderBottomColor: "border",
+  borderBottomColor: "hairline",
   variants: {
     size: styled.dynamic<FormControlSize>(
       formSizeVariants((val: FormControlSize) => {
@@ -189,7 +189,7 @@ const SuggestionText = styled(BodyText, {
   displayName: "SearchInput",
   flex: 1,
   cursor: "inherit",
-  // `Select` items inherit their text color rather than using `secondary`.
+  // `Select` items inherit their text color rather than using `ink`.
   color: "currentColor",
   fontWeight: 300,
   variants: {
@@ -294,9 +294,9 @@ const SuggestionsScrollButton = ({
       onMouseLeave={stop}>
       <View zIndex={10}>
         {isUp ? (
-          <CaretUp size={scrollIconSize} color="accent" />
+          <CaretUp size={scrollIconSize} color="primary" />
         ) : (
-          <CaretDown size={scrollIconSize} color="accent" />
+          <CaretDown size={scrollIconSize} color="primary" />
         )}
       </View>
       <LinearGradient
@@ -310,8 +310,8 @@ const SuggestionsScrollButton = ({
         inset={0}
         colors={
           isUp
-            ? ["surfaceFloating", "transparent"]
-            : ["transparent", "surfaceFloating"]
+            ? ["elevated", "transparent"]
+            : ["transparent", "elevated"]
         }
       />
     </View>
@@ -554,7 +554,7 @@ const SearchInputTextBox = createStyledHOC(
             maxHeight={`calc(var(--tamagui-popper-available-height) - ${SUGGESTIONS_VIEWPORT_PADDING}px)`}
             padding={0}
             borderWidth={1}
-            borderColor="border"
+            borderColor="hairline"
             overflow="hidden">
             <style>{SUGGESTIONS_STYLES}</style>
             {canScroll.up && (

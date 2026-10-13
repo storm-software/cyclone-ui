@@ -25,7 +25,7 @@ const meta: Meta<typeof Divider> = {
   component: Divider,
   tags: ["autodocs"],
   args: {
-    color: "border",
+    color: "hairline",
     direction: "horizontal",
     size: "sm"
   },

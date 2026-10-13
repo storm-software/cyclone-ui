@@ -18,7 +18,11 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Field } from "@cyclone-ui/field";
-import { getSpaced, useFieldOptions, useFormControl } from "@cyclone-ui/helpers";
+import {
+  getSpaced,
+  useFieldOptions,
+  useFormControl
+} from "@cyclone-ui/helpers";
 import { Eye, EyeSlash } from "@cyclone-ui/icons";
 import type { InputChangeEventHandler } from "@cyclone-ui/input";
 import { Input, InputContext } from "@cyclone-ui/input";
@@ -97,11 +101,11 @@ const PasswordStrengthSegment = styled(View, {
   height: "sm",
   flex: 1,
   borderRadius: 100_000,
-  backgroundColor: "surfaceElevated"
+  backgroundColor: "surface"
 });
 
 const PasswordStrengthLabel = styled(BodyText, {
-  color: "secondary",
+  color: "ink",
   textAlign: "right",
   marginRight: "md"
 });
@@ -126,7 +130,7 @@ const PasswordInputStrength = ({ value }: { value: string }) => {
           return (
             <Theme key={index} name={active ? activeTheme : "base"}>
               <PasswordStrengthSegment
-                backgroundColor={`${active ? "accent" : "surfaceElevated"}`}
+                backgroundColor={`${active ? "primary" : "surface"}`}
               />
             </Theme>
           );
@@ -179,7 +183,9 @@ const PasswordInputImpl = createStyledHOC(
             {children}
           </Input>
           <PasswordInputStrength
-            value={formControl ? (formControl.formattedValue ?? "") : typedValue}
+            value={
+              formControl ? (formControl.formattedValue ?? "") : typedValue
+            }
           />
         </YStack>
       </PasswordInputContext>

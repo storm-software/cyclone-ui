@@ -3,7 +3,7 @@ import type { ComponentType } from "react";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { config } from "../../../packages/themes/src/tamagui/config";
+import { config } from "../../../packages/tokens/src/tamagui/config";
 
 const renderDetails = async (item: Record<string, unknown>) => {
   const { TypeTableItemDetails } = await import("./TypeTableItemDetails");

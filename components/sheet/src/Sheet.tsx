@@ -99,7 +99,7 @@ const useSheetContext = () => {
 };
 
 const sheetSurfaceStyles = {
-  backgroundColor: "surfaceFloating",
+  backgroundColor: "elevated",
   borderWidth: 0,
   borderColor: "transparent"
 };
@@ -242,7 +242,7 @@ const SheetSheetOverlay = styled(TamaguiSheet.Overlay, {
 
 const SheetSheetHandle = styled(TamaguiSheet.Handle, {
   displayName: "SheetHandle",
-  backgroundColor: "border"
+  backgroundColor: "hairline"
 });
 
 const SheetSheetScrollView = styled(TamaguiSheet.ScrollView, {
@@ -257,7 +257,7 @@ const SheetSheetScrollView = styled(TamaguiSheet.ScrollView, {
 const SheetDialogHandle = styled(XStack, {
   displayName: "SheetDialogHandle",
   position: "absolute",
-  backgroundColor: "border",
+  backgroundColor: "hairline",
   borderRadius: 100,
   cursor: "grab press:grabbing",
   opacity: "0.5 hover:0.7",
@@ -461,17 +461,14 @@ const SheetScrollView: FC<SheetScrollViewProps> = ({
   );
 };
 
-const SheetHeading: typeof HeadingLargeText = styled(
-  HeadingLargeText,
-  {
-    displayName: "SheetHeading",
-    color: "accent"
-  }
-);
+const SheetHeading: typeof HeadingLargeText = styled(HeadingLargeText, {
+  displayName: "SheetHeading",
+  color: "primary"
+});
 
 const SheetBody: typeof BodyText = styled(BodyText, {
   displayName: "SheetBody",
-  color: "secondary",
+  color: "ink",
   flexGrow: 1
 });
 

@@ -66,7 +66,7 @@ const TableContext = createStyledContext<
     sizing: "fixed",
     alignHeaderCells: { x: "start", y: "center" },
     alignCells: { x: "center", y: "center" },
-    borderColor: "border"
+    borderColor: "hairline"
   } as TableContextProps,
   {
     keys: [
@@ -89,7 +89,7 @@ const TableRow = styled(YStack, {
   render: "tr",
   flexDirection: "row",
   borderWidth: 0,
-  borderColor: "border focus-visible:borderActive",
+  borderColor: "hairline focus-visible:hairlineActive",
   borderStyle: "solid",
   justifyContent: "flex-start",
   position: "relative",
@@ -149,7 +149,7 @@ const TableRowImpl = createStyledHOC(
         backgroundColor={
           header || sizing === "fixed"
             ? "transparent"
-            : "transparent hover:surfaceElevated"
+            : "transparent hover:surface"
         }
         {...props}>
         {sizing === "fixed" && (
@@ -159,7 +159,7 @@ const TableRowImpl = createStyledHOC(
             pointerEvents="none"
             transition="200ms"
             opacity={`0 group-hover/row:${header ? 0 : 1}`}
-            backgroundColor="surfaceElevated"
+            backgroundColor="surface"
             style={{
               filter: "blur(1px)"
             }}
@@ -183,7 +183,7 @@ const TableCell = styled(YStack, {
   flexShrink: 1,
   borderWidth: 0,
   borderBottomWidth: 1,
-  borderColor: "border focus-visible:borderActive",
+  borderColor: "hairline focus-visible:hairlineActive",
   justifyContent: "flex-start",
   paddingHorizontal: "xl",
   boxShadow: "none focus-visible:ringOffset",
@@ -230,7 +230,7 @@ const TableHeaderCell = styled(YStack, {
   flexShrink: 1,
   borderWidth: 0,
   borderBottomWidth: 1,
-  borderColor: "border",
+  borderColor: "hairline",
   justifyContent: "flex-start",
   paddingVertical: "xl",
   paddingHorizontal: "sm",

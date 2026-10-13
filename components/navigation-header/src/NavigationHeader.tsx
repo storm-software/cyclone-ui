@@ -116,7 +116,7 @@ const NavigationHeaderFrame = styled(View, {
   right: 0,
   zIndex: "40",
   width: "100%",
-  backgroundColor: "surfaceCanvas"
+  backgroundColor: "canvas"
 });
 
 const NavigationHeaderBar = styled(View, {
@@ -176,8 +176,8 @@ const NavigationHeaderItemFrame = styled(View, {
   variants: {
     active: {
       true: {
-        color: "accent",
-        borderBottomColor: "accent"
+        color: "primary",
+        borderBottomColor: "primary"
       }
     },
     mobile: {
@@ -199,17 +199,17 @@ const NavigationHeaderItemLink = styled(Link, {
   alignItems: "center",
   justifyContent: "center",
   display: "flex",
-  color: "secondary hover:accent focus-visible:accent",
+  color: "ink hover:primary focus-visible:primary",
   fontWeight: 500,
   textDecorationLine: "none hover:none",
-  outlineColor: "focus-visible:accent",
+  outlineColor: "focus-visible:primary",
   outlineOffset: "focus-visible:-4px",
   outlineStyle: "focus-visible:solid",
   outlineWidth: "focus-visible:2px",
   variants: {
     active: {
       true: {
-        color: "accent"
+        color: "primary"
       }
     },
     mobile: {
@@ -231,16 +231,16 @@ const NavigationHeaderDropdown = styled(View, {
   right: 0,
   zIndex: "50",
   overflow: "hidden",
-  backgroundColor: "surfaceCanvas",
+  backgroundColor: "canvas",
   borderBottomWidth: 1,
-  borderBottomColor: "border",
+  borderBottomColor: "hairline",
   display: "max-md:none",
   variants: {
     open: {
       true: {
         pointerEvents: "auto",
         clipPath: "inset(0 0 0 0)",
-        borderBottomColor: "border"
+        borderBottomColor: "hairline"
       },
       false: {
         pointerEvents: "none",
@@ -276,7 +276,7 @@ const NavigationHeaderDropdownGroup = styled(View, {
 const NavigationHeaderDropdownGroupLabel = styled(EyebrowText, {
   displayName: "NavigationHeaderDropdownGroupLabel",
   marginBottom: "xl",
-  color: "tertiary",
+  color: "subtle",
   variant: "sm"
 });
 
@@ -287,7 +287,7 @@ const NavigationHeaderDropdownLink = styled(Link, {
   alignItems: "flex-start",
   justifyContent: "flex-start",
   display: "flex",
-  color: "secondary hover:accent focus-visible:accent",
+  color: "ink hover:primary focus-visible:primary",
   fontWeight: 500,
   textDecorationLine: "none hover:none",
   borderRadius: "md",
@@ -339,7 +339,7 @@ const NavigationHeaderMenuButton = styled(View, {
   alignItems: "center",
   justifyContent: "center",
   cursor: "pointer",
-  backgroundColor: "transparent hover:subtleHovered press:subtleActive",
+  backgroundColor: "transparent hover:secondaryHovered press:secondaryActive",
   borderWidth: 0,
   borderRadius: "full",
   boxShadow: "focus-visible:ringOffset"
@@ -355,9 +355,9 @@ const NavigationHeaderMobilePanel = styled(View, {
   maxHeight: "calc(100vh - 52px)",
   paddingVertical: "2xl",
   overflowY: "auto",
-  backgroundColor: "surfaceCanvas",
+  backgroundColor: "canvas",
   borderBottomWidth: 1,
-  borderBottomColor: "border",
+  borderBottomColor: "hairline",
   boxShadow: "md",
   variants: {
     open: {
@@ -401,7 +401,7 @@ const NavigationHeaderMobileActions = styled(View, {
   flexDirection: "column",
   gap: "2xl",
   borderTopWidth: 1,
-  borderTopColor: "border"
+  borderTopColor: "hairline"
 });
 
 interface NavigationHeaderChildItem {
@@ -703,10 +703,10 @@ const NavigationHeaderRoot = createStyledHOC(
               // clears its hover state on mouse leave.
               const navigationItemColor =
                 hoveredItemIndex === null
-                  ? "accent"
+                  ? "primary"
                   : hoveredItemIndex === index
-                    ? "active"
-                    : "inactive";
+                    ? "primaryActive"
+                    : "primaryInactive";
               const dropdownId = `${mobileNavigationId}-submenu-${index}`;
 
               return (
@@ -828,9 +828,9 @@ const NavigationHeaderRoot = createStyledHOC(
                       const color = hovered
                         ? hoveredDropdownItem.groupIndex === groupIndex &&
                           hoveredDropdownItem.childIndex === childIndex
-                          ? "active"
-                          : "inactive"
-                        : "accent";
+                          ? "primaryActive"
+                          : "primaryInactive"
+                        : "primary";
 
                       return (
                         <NavigationHeaderDropdownLink

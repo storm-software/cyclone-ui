@@ -26,13 +26,13 @@ import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { BadgeColor, BadgeOrigin, BadgeProps } from "./Badge";
 import { Badge } from "./Badge";
 
-const MailIcon = () => <Envelope size={24} color="primary" />;
+const MailIcon = () => <Envelope size={24} color="emphasis" />;
 
 const Shape = ({ circle = false }: { circle?: boolean }) => (
   <View
     width={40}
     height={40}
-    backgroundColor="tertiary"
+    backgroundColor="subtle"
     borderRadius={circle ? 1000_000_000 : 0}
   />
 );
@@ -146,7 +146,7 @@ const expectCenteredOnCorner = async (
 export const Base: Story = {
   args: {
     badgeContent: 4,
-    color: "primary"
+    color: "emphasis"
   },
   play: async ({ canvasElement }) => {
     const badge = getBadge(canvasElement, "4");
@@ -159,8 +159,8 @@ export const Base: Story = {
 
 const COLORS: BadgeColor[] = [
   "default",
-  "primary",
-  "secondary",
+  "emphasis",
+  "ink",
   "error",
   "info",
   "success",
@@ -181,7 +181,7 @@ export const Colors: Story = {
 
 export const Dot: Story = {
   args: {
-    color: "secondary",
+    color: "ink",
     variant: "dot",
     slotProps: { badge: { testID: "dot" } }
   },
@@ -243,7 +243,7 @@ export const ShowZero: Story = {
 export const Invisible: Story = {
   args: {
     badgeContent: 4,
-    color: "secondary",
+    color: "ink",
     invisible: true
   },
   play: async ({ canvasElement }) => {
@@ -369,12 +369,12 @@ export const Customized: Story = {
           top: 13,
           right: -3,
           borderWidth: 2,
-          borderColor: "surfaceCanvas",
+          borderColor: "canvas",
           paddingHorizontal: 4
         }
       }}
       {...args}>
-      <ShoppingCart size={24} color="primary" />
+      <ShoppingCart size={24} color="emphasis" />
     </Badge>
   )
 };

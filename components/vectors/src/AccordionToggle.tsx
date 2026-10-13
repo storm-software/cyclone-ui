@@ -57,7 +57,7 @@ const Icon = ({
   strokeWidth = 1.5,
   ...props
 }: ThemedIconBodyProps<AccordionToggleProps>) => {
-  const color = useCurrentColor((props.color || "accent") as any);
+  const color = useCurrentColor((props.color || "primary") as any);
 
   const compressLengthPosition = useMotionValue(0);
   const compressLengthPlayback = animate(compressLengthPosition, 14, {

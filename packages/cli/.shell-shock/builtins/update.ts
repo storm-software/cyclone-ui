@@ -582,8 +582,8 @@ export async function checkForUpdates(
 ): Promise<CheckForUpdatesResult> {
   if (!options.force && !(await isCheckForUpdatesRequired())) {
     return {
-      latestVersion: "0.6.1",
-      currentVersion: "0.6.1",
+      latestVersion: "0.6.4",
+      currentVersion: "0.6.4",
       isUpToDate: true,
       isError: false
     };
@@ -593,9 +593,9 @@ export async function checkForUpdates(
     const pkg = await fetchNpmPackage("@cyclone-ui/cli");
 
     return {
-      latestVersion: pkg?.version || "0.6.1",
-      currentVersion: "0.6.1",
-      isUpToDate: pkg ? "0.6.1" === pkg.version : true,
+      latestVersion: pkg?.version || "0.6.4",
+      currentVersion: "0.6.4",
+      isUpToDate: pkg ? "0.6.4" === pkg.version : true,
       package: pkg,
       isError: false
     };

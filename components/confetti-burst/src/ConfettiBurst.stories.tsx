@@ -34,9 +34,9 @@ const BurstButton = (args: ConfettiBurstProps) => {
       paddingHorizontal="xl"
       paddingVertical="md"
       borderWidth={1}
-      borderColor="border"
+      borderColor="hairline"
       borderRadius="control"
-      backgroundColor="surfaceSunken"
+      backgroundColor="sunken"
       cursor="pointer"
       onPress={() => confetti.current?.burst()}>
       <Text color="color">Celebrate</Text>

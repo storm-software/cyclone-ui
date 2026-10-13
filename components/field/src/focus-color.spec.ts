@@ -26,17 +26,17 @@ describe("field focus colors", () => {
       '(!theme || theme === "base") && !formControl?.hasValidationMessage'
     );
     expect(source).toMatch(
-      /isNeutral\s*\?\s*focused\s*\?\s*"borderActive"\s*:\s*"border"/
+      /isNeutral\s*\?\s*focused\s*\?\s*"hairlineActive"\s*:\s*"hairline"/
     );
   });
 
-  it("keeps the active accent token for a validation theme", () => {
+  it("keeps the primaryActive token for a validation theme", () => {
     expect(fieldIconColorSource()).toMatch(
-      /:\s*focused\s*\?\s*"active"\s*:\s*"accent";/
+      /:\s*focused\s*\?\s*"primaryActive"\s*:\s*"primary";/
     );
   });
 
-  it("uses the validation accent for non-base separators and icons at rest", () => {
+  it("uses the validation primary color for non-base separators and icons at rest", () => {
     const source = fieldSource();
     const fieldIcon = source.slice(source.indexOf("const FieldIconButtonImpl"));
 
@@ -49,9 +49,7 @@ describe("field focus colors", () => {
       readComponent("../../input/src/Input.tsx"),
       readComponent("../../select/src/Select.tsx")
     ]) {
-      expect(source).toContain(
-        'hasValidationMessage ? "accent" : "border"'
-      );
+      expect(source).toContain('hasValidationMessage ? "primary" : "hairline"');
     }
   });
 
@@ -88,7 +86,7 @@ describe("field focus colors", () => {
 
     for (const source of components) {
       expect(source).toMatch(
-        /hasValidationMessage\s*\?\s*"active"\s*:\s*"borderActive"/
+        /hasValidationMessage\s*\?\s*"primaryActive"\s*:\s*"hairlineActive"/
       );
     }
   });

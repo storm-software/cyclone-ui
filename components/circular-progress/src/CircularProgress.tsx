@@ -59,7 +59,7 @@ export const CircularProgress = createStyledHOC(
   TamaguiProgress,
   (
     {
-      color = "accent",
+      color = "primary",
       size = "sm",
       value = 0,
       max = 100,
@@ -80,7 +80,7 @@ export const CircularProgress = createStyledHOC(
       theme[color as any] ?? color,
       "color"
     );
-    const trackColor = getVariableValue(theme.surfaceSunken, "color");
+    const trackColor = getVariableValue(theme.sunken, "color");
     const progressRatio = getProgressRatio(value, max);
 
     return (

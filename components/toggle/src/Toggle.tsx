@@ -48,8 +48,8 @@ const ToggleFrame = styled(View, {
   // Hug the content without overriding the parent's cross-axis alignment.
   width: "fit-content",
   borderWidth: 1,
-  borderColor: "border hover:borderHovered",
-  backgroundColor: "surfaceSunken hover:tertiary",
+  borderColor: "hairline hover:hairlineHovered",
+  backgroundColor: "sunken hover:subtle",
   borderRadius: "control",
   outlineStyle: "none",
   boxShadow: "none focus-visible:ringOffset",
@@ -80,7 +80,7 @@ const ToggleFrame = styled(View, {
 
     invalid: {
       true: {
-        borderColor: "border hover:borderHovered"
+        borderColor: "hairline hover:hairlineHovered"
       }
     },
 
@@ -142,10 +142,10 @@ const ToggleIndicator = styled(View, {
   variants: {
     active: {
       true: {
-        backgroundColor: "surfaceElevated group-hover/toggle:tertiary",
+        backgroundColor: "surface group-hover/toggle:subtle",
         boxShadow: "sm",
         borderWidth: 1,
-        borderColor: "border group-hover/toggle:borderActive"
+        borderColor: "hairline group-hover/toggle:hairlineActive"
       }
     },
 
@@ -182,7 +182,7 @@ export const ToggleText = styled(Text, {
   transition: "200ms",
   userSelect: "none",
   whiteSpace: "nowrap",
-  color: "tertiary group-hover/toggle:secondary",
+  color: "subtle group-hover/toggle:ink",
 
   variants: {
     textSize: styled.dynamic<FormControlSize>(
@@ -206,7 +206,7 @@ export const ToggleText = styled(Text, {
 
     active: {
       true: {
-        color: "primary"
+        color: "emphasis"
       }
     }
   } as const,
@@ -306,7 +306,7 @@ export const Toggle = forwardRef<TamaguiElement, ToggleProps>(
           rounded={rounded}
           {...(borderless &&
             pressed && {
-              backgroundColor: "tertiary group-hover/toggle:tertiary"
+              backgroundColor: "subtle group-hover/toggle:subtle"
             })}>
           {typeof content === "string" || typeof content === "number" ? (
             <ToggleText textSize={size} active={pressed}>

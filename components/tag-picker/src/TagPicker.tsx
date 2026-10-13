@@ -16,10 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type {
-  FieldLabelPlacement,
-  FormControlSize
-} from "@cyclone-ui/helpers";
+import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
   getFieldLabelInset,
@@ -102,9 +99,9 @@ const TagPickerFrame = styled(XStack, {
   transition: "200ms",
   position: "relative",
   alignItems: "stretch",
-  backgroundColor: "surfaceElevated",
+  backgroundColor: "surface",
   borderWidth: 1,
-  borderColor: "border",
+  borderColor: "hairline",
   outlineWidth: 0,
   outlineColor: "transparent",
   boxShadow: "none",
@@ -515,13 +512,15 @@ const TagPickerImpl = createStyledHOC(
     const active = focused || focusWithin;
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
-    const idleColor = hasValidationMessage ? "accent" : "border";
-    const focusColor = hasValidationMessage ? "active" : "borderActive";
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
+    const focusColor = hasValidationMessage
+      ? "primaryActive"
+      : "hairlineActive";
     const hoverColor = disabled
-      ? "disabled"
+      ? "primaryDisabled"
       : active
         ? focusColor
-        : "hovered";
+        : "primaryHovered";
     const borderColor = `${active ? focusColor : idleColor} hover:${hoverColor} group-hover/field:${hoverColor}`;
 
     return (
@@ -601,7 +600,7 @@ const TagPickerImpl = createStyledHOC(
               bottom={-1}
               focused={active}
               disabled={disabled}
-              backgroundColor={disabled ? "disabled" : focusColor}
+              backgroundColor={disabled ? "primaryDisabled" : focusColor}
             />
           )}
           {labelPlacement === "border" && (

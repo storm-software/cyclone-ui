@@ -85,7 +85,7 @@ const burstConfetti = (
       width: `${CONFETTI_SIZE}px`,
       height: `${CONFETTI_SIZE}px`,
       borderRadius: "1px",
-      backgroundColor: "var(--accent)"
+      backgroundColor: "var(--primary)"
     });
     container.appendChild(piece);
 

@@ -83,10 +83,10 @@ const SwitchFrame = styled(View, {
   context: SwitchContext,
   transition: "200ms",
   borderRadius: 100_000,
-  backgroundColor: "surfaceElevated",
+  backgroundColor: "surface",
   borderWidth: 1,
   borderColor:
-    "border hover:hovered focus:active focus-visible:active",
+    "hairline hover:primaryHovered focus:primaryActive focus-visible:primaryActive",
   boxShadow: "none focus:ringOffset focus-visible:ringOffset",
   tabIndex: 0,
   variants: {
@@ -107,7 +107,7 @@ const SwitchFrame = styled(View, {
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:hovered"
+        borderColor: "primary hover:primaryHovered"
       }
     },
 
@@ -116,7 +116,7 @@ const SwitchFrame = styled(View, {
         userSelect: "none",
         cursor: "not-allowed",
         borderColor:
-          "disabled hover:disabled press:disabled focus:disabled"
+          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled"
       }
     }
   } as const,
@@ -130,7 +130,7 @@ const SwitchThumb = styled(View, {
   displayName: "SwitchThumb",
   theme: "base",
   transition: "200ms",
-  backgroundColor: "subtle",
+  backgroundColor: "secondary",
   borderRadius: 100_000,
   borderWidth: 0,
   justifyContent: "center",
@@ -138,7 +138,7 @@ const SwitchThumb = styled(View, {
   variants: {
     checked: {
       true: {
-        backgroundColor: "subtle"
+        backgroundColor: "secondary"
       }
     },
 
@@ -234,7 +234,7 @@ const SwitchIcon = createStyledHOC(
         alignItems="center"
         flexGrow={0}
         flexShrink={1}
-        borderColor="group-hover/field:borderActive">
+        borderColor="group-hover/field:hairlineActive">
         <ThemeableIcon
           {...props}
           theme="base"
@@ -243,8 +243,8 @@ const SwitchIcon = createStyledHOC(
           color={
             (color ||
               (disabled
-                ? "disabled"
-                : "onAccent")) as ThemeableIconProps["color"]
+                ? "primaryDisabled"
+                : "onPrimary")) as ThemeableIconProps["color"]
           }>
           {children}
         </ThemeableIcon>
@@ -290,8 +290,10 @@ const BaseSwitchImpl = createStyledHOC(
       ...props
     } = allProps;
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "accent" : "border";
-    const focusColor = hasValidationMessage ? "active" : "borderActive";
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
+    const focusColor = hasValidationMessage
+      ? "primaryActive"
+      : "hairlineActive";
 
     return (
       <SwitchContext.Provider
@@ -303,7 +305,7 @@ const BaseSwitchImpl = createStyledHOC(
         <BaseSwitch
           ref={forwardedRef}
           activeStyle={{
-            backgroundColor: "accent"
+            backgroundColor: "primary"
           }}
           {...props}
           id={name}
@@ -325,8 +327,8 @@ const BaseSwitchImpl = createStyledHOC(
                 : idleColor,
             // A call-site base replaces every lower-tier clause in v3, so the
             // v2 frame/variant hover color is restated.
-            `hover:${disabled ? "disabled" : "hovered"}`,
-            `group-hover/field:${disabled ? "disabled" : focused ? focusColor : "hovered"}`,
+            `hover:${disabled ? "primaryDisabled" : "primaryHovered"}`,
+            `group-hover/field:${disabled ? "primaryDisabled" : focused ? focusColor : "primaryHovered"}`,
             disabled ? undefined : `focus:${focusColor}`,
             `focus-visible:${focusColor}`
           ]

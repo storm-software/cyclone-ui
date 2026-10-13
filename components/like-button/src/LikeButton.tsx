@@ -102,7 +102,7 @@ const burstConfetti = (container: BrowserElement, iconSize: number) => {
       width: `${CONFETTI_SIZE}px`,
       height: `${CONFETTI_SIZE}px`,
       borderRadius: "1px",
-      backgroundColor: "var(--accent)"
+      backgroundColor: "var(--primary)"
     });
     container.appendChild(piece);
 
@@ -197,7 +197,11 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
             size={iconSize}
             weight={liked ? "fill" : "regular"}
             color={
-              hovered && !disabled ? "active" : liked ? "accent" : "color"
+              hovered && !disabled
+                ? "primaryActive"
+                : liked
+                  ? "primary"
+                  : "color"
             }
           />
         </View>

@@ -7,7 +7,7 @@
         "punctuation.definition.comment"
       ],
       "settings": {
-        "foreground": "#57575a",
+        "foreground": "#8f8f90",
         "fontStyle": "italic"
       }
     },
@@ -92,7 +92,7 @@
         "meta.brace"
       ],
       "settings": {
-        "foreground": "#57575a"
+        "foreground": "#8f8f90"
       }
     },
     {
@@ -116,10 +116,10 @@
     "editor.selectionBackground": "#cfcfcf",
     "editor.selectionForeground": "#343438",
     "editor.inactiveSelectionBackground": "#2e2e30",
-    "editorLineNumber.foreground": "#57575a",
+    "editorLineNumber.foreground": "#8f8f90",
     "editorLineNumber.activeForeground": "#b4b4b4",
-    "editorIndentGuide.background1": "#626364",
-    "editorIndentGuide.activeBackground1": "#57575a",
-    "editorWhitespace.foreground": "#57575a"
+    "editorIndentGuide.background1": "#57575a",
+    "editorIndentGuide.activeBackground1": "#8f8f90",
+    "editorWhitespace.foreground": "#8f8f90"
   }
 }

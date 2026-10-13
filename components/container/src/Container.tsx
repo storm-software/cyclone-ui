@@ -56,63 +56,63 @@ const ContainerFrame = styled(View, {
   variants: {
     variant: {
       primary: {
-        backgroundColor: "accent",
+        backgroundColor: "primary",
         borderWidth: 1,
-        borderColor: "border"
+        borderColor: "hairline"
       },
 
       secondary: {
-        backgroundColor: "subtle",
+        backgroundColor: "secondary",
         borderWidth: 1,
-        borderColor: "border"
+        borderColor: "hairline"
       },
 
       tertiary: {
-        backgroundColor: "surfaceElevated",
+        backgroundColor: "surface",
         borderWidth: 1,
-        borderColor: "border"
+        borderColor: "hairline"
       },
 
       sunken: {
-        backgroundColor: "surfaceSunken",
+        backgroundColor: "sunken",
         borderWidth: 1,
-        borderColor: "border"
+        borderColor: "hairline"
       },
 
       canvas: {
-        backgroundColor: "surfaceCanvas",
+        backgroundColor: "canvas",
         borderWidth: 1,
-        borderColor: "border"
+        borderColor: "hairline"
       },
 
       elevated: {
-        backgroundColor: "surfaceElevated",
+        backgroundColor: "surface",
         borderWidth: 1,
-        borderColor: "border"
+        borderColor: "hairline"
       },
 
       floating: {
-        backgroundColor: "surfaceFloating",
+        backgroundColor: "elevated",
         borderWidth: 1,
-        borderColor: "border"
+        borderColor: "hairline"
       },
 
       overlay: {
-        backgroundColor: "surfaceHighest",
+        backgroundColor: "floating",
         borderWidth: 1,
-        borderColor: "border"
+        borderColor: "hairline"
       },
 
       outlined: {
         backgroundColor: "transparent",
         borderWidth: 3,
-        borderColor: "accent"
+        borderColor: "primary"
       },
 
       glass: {
         backgroundColor: "transparent",
         borderWidth: 1,
-        borderColor: "border"
+        borderColor: "hairline"
       }
     },
 
@@ -149,7 +149,7 @@ const ContainerFrame = styled(View, {
     // Declared after `variant` so it overrides that variant's border color.
     accentBordered: {
       true: {
-        borderColor: "accent"
+        borderColor: "primary"
       }
     }
   } as const,
@@ -269,7 +269,7 @@ export const Container = createStyledHOC(
             theme="base"
             position="absolute"
             inset={0}
-            colors={["surfaceElevated", "accent"]}
+            colors={["surface", "primary"]}
             start={{ x: 0.1, y: 0.5 }}
             end={{ x: 0.9, y: 0.5 }}
           />

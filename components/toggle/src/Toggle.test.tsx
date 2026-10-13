@@ -4,7 +4,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import type { ToggleProps } from "./Toggle";
 import { Toggle } from "./Toggle";
 
-import { config } from "../../../packages/themes/src/tamagui/config";
+import { config } from "../../../packages/tokens/src/tamagui/config";
 
 const renderToggle = (props: ToggleProps = { children: "Toggle" }) =>
   renderToStaticMarkup(

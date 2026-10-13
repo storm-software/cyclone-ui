@@ -18,7 +18,6 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { DotOutline } from "@cyclone-ui/icons";
-import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import type { ValidationDetail as ValidationDetails } from "@stryke/types/validations";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, useThemeName } from "@tamagui/core";
@@ -48,7 +47,7 @@ export const ValidationText = createStyledHOC(
   ) => {
     // `createStyledHOC` consumes `theme` and wraps this render in that `Theme`,
     // so read the active theme name rather than re-theming the text: forcing a
-    // `base` theme here resolved `accent` against the root theme.
+    // `base` theme here resolved `primary` against the root theme.
     const themeName = useThemeName();
     const theme = themeProp ?? themeName;
 
@@ -86,7 +85,7 @@ export const ValidationText = createStyledHOC(
           .filter(message => message.message)
           .map(message => (
             <XStack key={message.message} gap="md" alignItems="center">
-                <DotOutline weight="fill" color="accent" />
+              <DotOutline weight="fill" color="primary" />
               <ValidationBodyText {...props}>
                 {message.message}
               </ValidationBodyText>

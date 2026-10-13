@@ -64,7 +64,7 @@ const Icon = ({
   pointing = "right",
   ...props
 }: ThemedIconBodyProps<ArrowProps>) => {
-  const color = useCurrentColor((props.color || "onAccent") as any);
+  const color = useCurrentColor((props.color || "onPrimary") as any);
 
   const motionPosition = useMotionValue(1);
   const playback = animate(motionPosition, 24, {

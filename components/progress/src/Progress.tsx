@@ -16,22 +16,29 @@
 
  ------------------------------------------------------------------- */
 
-import { createStyledHOC } from "@tamagui/core";
 import type { ColorTokens, GetProps, ThemeTokens } from "@tamagui/core";
+import { createStyledHOC } from "@tamagui/core";
 import { Progress as TamaguiProgress } from "@tamagui/progress";
 
-export const Progress = createStyledHOC(TamaguiProgress, 
+export const Progress = createStyledHOC(
+  TamaguiProgress,
   (
-    { color = "accent", size = "10xl", value = 0, max = 100, ...props }: GetProps<typeof TamaguiProgress> & {
-  color?: ColorTokens | ThemeTokens;
-},
+    {
+      color = "primary",
+      size = "10xl",
+      value = 0,
+      max = 100,
+      ...props
+    }: GetProps<typeof TamaguiProgress> & {
+      color?: ColorTokens | ThemeTokens;
+    },
     forwardRef
   ) => {
     return (
       <TamaguiProgress
         ref={forwardRef}
         size={size}
-        backgroundColor="surfaceSunken"
+        backgroundColor="sunken"
         {...props}
         value={value}
         max={max}>

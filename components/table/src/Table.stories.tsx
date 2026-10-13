@@ -67,7 +67,7 @@ const meta: Meta<typeof Table> = {
                       : {
                           flexShrink: 3
                         })}>
-                    <HeadingSmallText color="accent">
+                    <HeadingSmallText color="primary">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -116,7 +116,7 @@ const meta: Meta<typeof Table> = {
             {columns.map((_, index) => (
               <Table.Cell key={index}>
                 {index === 0 && (
-                  <HeadingSmallText color="accent">
+                  <HeadingSmallText color="primary">
                     Table footer information is populated here
                   </HeadingSmallText>
                 )}
@@ -259,10 +259,10 @@ const StatusButton = ({ status }: { status: string }) => {
   return (
     <View
       borderRadius={1000_000_000}
-      backgroundColor={`${status?.toLocaleLowerCase() === "active" ? "subtle" : "base9"}`}
+      backgroundColor={`${status?.toLocaleLowerCase() === "active" ? "secondary" : "base9"}`}
       paddingHorizontal="xl">
       <Text
-        color="accent"
+        color="primary"
         fontSize="xs"
         fontWeight="extralight"
         lineHeight="xs"

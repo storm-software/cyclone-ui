@@ -13,7 +13,7 @@ describe("InlineCodeText", () => {
 
     expect(source).toMatch(/render:\s*"span"/);
     expect(source).toMatch(/display:\s*"inline-flex"/);
-    expect(source).toMatch(/backgroundColor:\s*"surfaceHighest"/);
+    expect(source).toMatch(/backgroundColor:\s*"floating"/);
     expect(source).toMatch(/paddingVertical:\s*"sm"/);
   });
 

@@ -4,7 +4,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import type { ToggleGroupProps } from "./ToggleGroup";
 import { getNextSelection, ToggleGroup } from "./ToggleGroup";
 
-import { config } from "../../../packages/themes/src/tamagui/config";
+import { config } from "../../../packages/tokens/src/tamagui/config";
 
 const renderGroup = (props: ToggleGroupProps = {}) =>
   renderToStaticMarkup(

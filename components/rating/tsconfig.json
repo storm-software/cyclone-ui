@@ -17,6 +17,9 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../../packages/tokens"
+    },
+    {
       "path": "../icons"
     },
     {

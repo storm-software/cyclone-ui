@@ -29,10 +29,10 @@ export type StormLogoTextProps = IconProps & {
 
 const ThemedIcon = ({ color: colorProp, ...rest }: IconProps) => {
   const theme = useTheme();
-  const explicitColor = useCurrentColor((colorProp ?? "accent") as any);
+  const explicitColor = useCurrentColor((colorProp ?? "primary") as any);
   const color = colorProp
     ? explicitColor
-    : (theme.accent?.get() ?? theme.color?.get());
+    : (theme.primary?.get() ?? theme.color?.get());
 
   return (
     <Svg

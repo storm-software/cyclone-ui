@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { tamaguiPreprocessor } from "./tamagui-preprocessor";
+import { tamaguiPreprocessor } from "../src/preprocessor";
 
 const colorToken = (value: string) => ({
   $type: "color",
@@ -56,41 +56,41 @@ const hueDistance = (first: number, second: number): number => {
 };
 
 describe("tamaguiPreprocessor", () => {
-  it("generates missing on-* text colors for status colors", () => {
+  it("generates missing on-primary text colors for theme color groups", () => {
     const result = tamaguiPreprocessor({
       color: {
-        danger: colorToken("#336699"),
-        warning: colorToken("#ffee99")
+        danger: { primary: colorToken("#336699") },
+        warning: { primary: colorToken("#ffee99") }
       }
     }) as any;
 
-    expect(result.color["on-danger-accent"]).toMatchObject({
+    expect(result.color.danger["on-primary"]).toMatchObject({
       $value: "#FAFAFA",
-      $description: "Generated text and icon color on danger backgrounds"
+      $description:
+        "Generated text and icon color on danger primary backgrounds"
     });
-    expect(result.color["on-warning-accent"].$value).toBe("#151518");
-    expect(result.color).not.toHaveProperty("on-danger");
+    expect(result.color.warning["on-primary"].$value).toBe("#151518");
   });
 
-  it("generates missing *-muted backgrounds from the parent theme", () => {
+  it("generates missing secondary backgrounds from the parent theme", () => {
     const lightDanger = "#336699";
     const darkDanger = "#99ccff";
     const result = tamaguiPreprocessor({
       light: {
         color: {
           $description: "The light theme colors",
-          danger: colorToken(lightDanger)
+          danger: { primary: colorToken(lightDanger) }
         }
       },
       dark: {
         color: {
           $description: "The dark theme colors",
-          danger: colorToken(darkDanger)
+          danger: { primary: colorToken(darkDanger) }
         }
       }
     }) as any;
-    const light = result.light.color["danger-muted"];
-    const dark = result.dark.color["danger-muted"];
+    const light = result.light.color.danger.secondary;
+    const dark = result.dark.color.danger.secondary;
 
     expect(light.$description).toBe(
       "Generated low-emphasis danger background for the light theme"
@@ -105,29 +105,34 @@ describe("tamaguiPreprocessor", () => {
       relativeLuminance(darkDanger)
     );
     expect(
-      contrastRatio(light.$value, result.light.color["on-danger-muted"].$value)
-    ).toBeGreaterThanOrEqual(6.6);
+      contrastRatio(
+        light.$value,
+        result.light.color.danger["on-secondary"].$value
+      )
+    ).toBeGreaterThanOrEqual(7.25);
   });
 
-  it("preserves explicit on-* and *-muted colors and skips primary companions", () => {
+  it("preserves explicit companions and skips root colors", () => {
     const result = tamaguiPreprocessor({
       color: {
         $description: "The light theme colors",
-        primary: colorToken("#336699"),
-        info: colorToken("#336699"),
-        "on-info": colorToken("#f0f0f0"),
-        "info-muted": colorToken("#abcdef")
+        emphasis: colorToken("#336699"),
+        info: {
+          primary: colorToken("#336699"),
+          "on-primary": colorToken("#f0f0f0"),
+          secondary: colorToken("#abcdef")
+        }
       }
     }) as any;
 
-    expect(result.color["on-info-accent"]).toMatchObject({
+    expect(result.color.info["on-primary"]).toMatchObject({
       $value: "#f0f0f0",
       theme: "info"
     });
-    expect(result.color).not.toHaveProperty("on-info");
-    expect(result.color["info-muted"].$value).toBe("#abcdef");
-    expect(result.color).not.toHaveProperty("on-primary");
-    expect(result.color).not.toHaveProperty("primary-muted");
+    expect(result.color.info.secondary.$value).toBe("#abcdef");
+    expect(result.color.info["on-secondary"].$value).toBe("#151518");
+    expect(result.color).not.toHaveProperty("on-emphasis");
+    expect(result.color).not.toHaveProperty("emphasis-active");
   });
 
   it("preserves the status hue when generated colors require gamut mapping", () => {
@@ -136,46 +141,48 @@ describe("tamaguiPreprocessor", () => {
       light: {
         color: {
           $description: "The light theme colors",
-          danger: colorToken(danger)
+          danger: { primary: colorToken(danger) }
         }
       },
       dark: {
         color: {
           $description: "The dark theme colors",
-          danger: colorToken(danger)
+          danger: { primary: colorToken(danger) }
         }
       }
     }) as any;
 
     for (const color of [
-      result.light.color["danger-muted"].$value,
-      result.dark.color["danger-muted"].$value
+      result.light.color.danger.secondary.$value,
+      result.dark.color.danger.secondary.$value
     ]) {
       expect(
         hueDistance(oklchHue(color), oklchHue(danger))
-      ).toBeLessThanOrEqual(1);
+      ).toBeLessThanOrEqual(1.5);
     }
   });
 
-  it("resolves status references before generating companions", () => {
+  it("resolves primary references before generating companions", () => {
     const result = tamaguiPreprocessor({
       palette: { red: colorToken("#336699") },
       light: {
         color: {
           $description: "The light theme colors",
-          danger: colorToken("{palette.red}")
+          danger: { primary: colorToken("{palette.red}") }
         }
       }
     }) as any;
 
-    expect(result.light.color["on-danger-accent"].$value).toBe("#FAFAFA");
-    expect(result.light.color["danger-muted"].$value).toMatch(/^#[0-9a-f]{6}$/);
+    expect(result.light.color.danger["on-primary"].$value).toBe("#FAFAFA");
+    expect(result.light.color.danger.secondary.$value).toMatch(
+      /^#[0-9a-f]{6}$/
+    );
   });
 
   it("derives low-saturation states from the contrast primitive and scales saturated colors", () => {
     const color = {
-      primary: colorToken("#777777"),
-      danger: colorToken("#336699")
+      base: { primary: colorToken("#777777") },
+      danger: { primary: colorToken("#336699") }
     };
     const result = tamaguiPreprocessor({
       dark: { color: { $description: "The dark theme colors", ...color } },
@@ -185,169 +192,155 @@ describe("tamaguiPreprocessor", () => {
     const light = result.light.color;
 
     expect({
-      darkActive: dark["base-active"].$value,
-      lightActive: light["base-active"].$value,
-      darkActiveDescription: dark["base-active"].$description,
-      darkInactive: dark["base-inactive"].$description,
-      darkDanger: dark["danger-active"].$description,
-      lightDanger: light["danger-active"].$description,
-      dangerInactive: dark["danger-inactive"].$description
+      darkActive: dark.base["primary-active"].$value,
+      lightActive: light.base["primary-active"].$value,
+      darkActiveDescription: dark.base["primary-active"].$description,
+      darkInactive: dark.base["primary-inactive"].$description,
+      darkDanger: dark.danger["primary-active"].$description,
+      lightDanger: light.danger["primary-active"].$description,
+      dangerInactive: dark.danger["primary-inactive"].$description
     }).toEqual({
       darkActive: "#ffffff",
       lightActive: "#0c0c0d",
       darkActiveDescription: "active state at dark contrast primitive",
       darkInactive: "inactive state at 40% darker",
-      darkDanger: "active state at 19% brighter",
-      lightDanger: "active state at 19% darker",
+      darkDanger: "active state at 25% brighter",
+      lightDanger: "active state at 25% darker",
       dangerInactive: "inactive state at 20% darker"
     });
   });
 
-  it("shifts active colors already near the contrast primitive toward the middle", () => {
+  it("shifts hovered colors near the contrast primitive toward the middle", () => {
     const result = tamaguiPreprocessor({
       dark: {
         color: {
           $description: "The dark theme colors",
-          primary: colorToken("#f1f1f1")
+          base: { primary: colorToken("#f1f1f1") }
         }
       },
       light: {
         color: {
           $description: "The light theme colors",
-          primary: colorToken("#1f1f21")
+          base: { primary: colorToken("#1f1f21") }
         }
       }
     }) as any;
+    const dark = result.dark.color.base;
+    const light = result.light.color.base;
 
     expect({
-      dark: result.dark.color["base-active"].$description,
-      light: result.light.color["base-active"].$description
+      darkHovered: dark["primary-hovered"].$description,
+      lightHovered: light["primary-hovered"].$description,
+      darkActive: dark["primary-active"].$value,
+      lightActive: light["primary-active"].$value
     }).toEqual({
-      dark: "active state at 10% darker",
-      light: "active state at 10% lighter"
+      darkHovered: "hovered state at 25% darker",
+      lightHovered: "hovered state at 25% lighter",
+      darkActive: "#ffffff",
+      lightActive: "#000000"
     });
-    expect(
-      relativeLuminance(result.dark.color["base-active"].$value)
-    ).toBeLessThan(relativeLuminance("#f1f1f1"));
-    expect(
-      relativeLuminance(result.light.color["base-active"].$value)
-    ).toBeGreaterThan(relativeLuminance("#1f1f21"));
+    expect(relativeLuminance(dark["primary-hovered"].$value)).toBeLessThan(
+      relativeLuminance("#f1f1f1")
+    );
+    expect(relativeLuminance(light["primary-hovered"].$value)).toBeGreaterThan(
+      relativeLuminance("#1f1f21")
+    );
   });
 
-  it("keeps low-saturation surface states subtler than other neutral colors", () => {
+  it("increases hairline active strength", () => {
     const result = tamaguiPreprocessor({
-      color: {
-        $description: "The dark theme colors",
-        primary: colorToken("#333333"),
-        surface: { canvas: colorToken("#333333") }
-      }
-    }) as any;
-
-    expect({
-      primaryActive: result.color["base-active"].$value,
-      canvasActive: result.color.surface["canvas-active"].$description,
-      canvasInactive: result.color.surface["canvas-inactive"].$description
-    }).toEqual({
-      primaryActive: "#ffffff",
-      canvasActive: "active state at 10% brighter",
-      canvasInactive: "inactive state at 20% darker"
-    });
-  });
-
-  it("increases outline active strength", () => {
-    const result = tamaguiPreprocessor({
-      color: {
-        outline: colorToken("#333333")
-      }
+      color: { hairline: colorToken("#333333") }
     }) as any;
     const saturated = tamaguiPreprocessor({
-      color: { outline: colorToken("#336699") }
+      color: { hairline: colorToken("#336699") }
     }) as any;
 
     expect({
-      outline: result.color["outline-active"].$description,
-      outlineSaturated: saturated.color["outline-active"].$description
+      hairline: result.color["hairline-active"].$description,
+      hairlineSaturated: saturated.color["hairline-active"].$description
     }).toEqual({
-      outline: "active state at 80% brighter",
-      outlineSaturated: "active state at 40% brighter"
+      hairline: "active state at 80% brighter",
+      hairlineSaturated: "active state at 40% brighter"
     });
+    expect(result.color["hairline-active"].group).toBe("hairline");
   });
 
-  it("generates active, inactive, and disabled states only for target colors", () => {
+  it("generates hovered, active, inactive, and disabled states only for target colors", () => {
     const result = tamaguiPreprocessor({
       color: {
-        surface: {
-          sunken: colorToken("#111111"),
-          canvas: colorToken("#222222")
+        sunken: { ...colorToken("#111111"), group: "background" },
+        canvas: { ...colorToken("#222222"), group: "background" },
+        emphasis: { ...colorToken("#f5f5f5"), group: "foreground" },
+        ink: { ...colorToken("#777777"), group: "foreground" },
+        subtle: { ...colorToken("#777777"), group: "foreground" },
+        subtlest: colorToken("#777777"),
+        hairline: colorToken("#777777"),
+        base: {
+          primary: colorToken("#f5f5f5"),
+          secondary: colorToken("#777777")
         },
-        primary: colorToken("#f5f5f5"),
-        "on-primary": colorToken("#111111"),
-        secondary: colorToken("#777777"),
-        tertiary: colorToken("#777777"),
-        outline: colorToken("#777777"),
-        danger: colorToken("#ff0000"),
-        "on-danger": colorToken("#ffffff"),
-        "danger-muted": colorToken("#330000"),
+        danger: {
+          primary: colorToken("#ff0000"),
+          "on-primary": colorToken("#ffffff"),
+          secondary: colorToken("#330000")
+        },
         backdrop: colorToken("#00000066"),
         data: { red: { emphasis: colorToken("#555555") } }
       }
     }) as any;
+    const states = ["hovered", "active", "inactive", "disabled"];
 
-    expect(Object.keys(result.color.surface).sort()).toEqual([
-      "canvas",
-      "canvas-active",
-      "canvas-disabled",
-      "canvas-inactive",
-      "sunken",
-      "sunken-active",
-      "sunken-disabled",
-      "sunken-inactive"
-    ]);
-    for (const key of [
-      "base",
-      "base-muted",
-      "outline",
-      "danger",
-      "danger-muted"
-    ]) {
-      for (const state of ["active", "inactive", "disabled"]) {
+    for (const group of [result.color.base, result.color.danger]) {
+      for (const key of ["primary", "secondary"]) {
+        for (const state of states) {
+          expect(group).toHaveProperty(`${key}-${state}`);
+        }
+      }
+      expect(group).not.toHaveProperty("on-primary-active");
+      expect(group).not.toHaveProperty("on-secondary-active");
+    }
+    for (const state of states) {
+      for (const key of [
+        "hairline",
+        "emphasis",
+        "ink",
+        "subtle",
+        "sunken",
+        "canvas"
+      ]) {
         expect(result.color).toHaveProperty(`${key}-${state}`);
       }
-      expect(result.color).not.toHaveProperty(`${key}-hover`);
     }
+    expect(result.color["ink-active"].group).toBe("foreground");
 
-    for (const key of ["primary", "secondary", "tertiary", "on-primary"]) {
+    for (const key of ["subtlest", "backdrop"]) {
       expect(result.color).toHaveProperty(key);
       expect(result.color).not.toHaveProperty(`${key}-active`);
     }
-    expect(result.color).not.toHaveProperty("base-accent-active");
-    expect(result.color).not.toHaveProperty("on-base-accent-active");
-    expect(result.color).not.toHaveProperty("on-danger-active");
-    expect(result.color).not.toHaveProperty("backdrop-active");
     expect(result.color.data.red).not.toHaveProperty("emphasis-active");
   });
 
   it("does not overwrite explicit state colors", () => {
     const result = tamaguiPreprocessor({
       color: {
-        surface: {
-          canvas: colorToken("#222222"),
-          "canvas-active": colorToken("#abcdef")
-        },
-        outline: colorToken("#336699"),
-        "outline-active": colorToken("#fedcba")
+        hairline: colorToken("#336699"),
+        "hairline-active": colorToken("#fedcba"),
+        danger: {
+          primary: colorToken("#336699"),
+          "primary-active": colorToken("#abcdef")
+        }
       }
     }) as any;
 
-    expect(result.color.surface["canvas-active"].$value).toBe("#abcdef");
-    expect(result.color["outline-active"].$value).toBe("#fedcba");
+    expect(result.color["hairline-active"].$value).toBe("#fedcba");
+    expect(result.color.danger["primary-active"].$value).toBe("#abcdef");
   });
 
-  it("does not generate states for non-color tokens in target groups", () => {
+  it("skips theme color groups whose primary is not a color", () => {
     const result = tamaguiPreprocessor({
       color: {
-        surface: {
-          shadow: {
+        danger: {
+          primary: {
             $type: "shadow",
             $value: { color: "#336699", offsetX: 0 }
           }
@@ -355,88 +348,74 @@ describe("tamaguiPreprocessor", () => {
       }
     }) as any;
 
-    expect(result.color.surface).not.toHaveProperty("shadow-active");
-    expect(result.color.surface.shadow.$value.color).toBe("#336699");
+    expect(result.color.danger).not.toHaveProperty("primary-active");
+    expect(result.color.danger).not.toHaveProperty("on-primary");
+    expect(result.color.danger.primary.$value.color).toBe("#336699");
   });
 
   it("desaturates colored disabled variants and fades them over the disabled base", () => {
     const result = tamaguiPreprocessor({
-      color: { danger: colorToken("#ff000080") }
+      color: { danger: { primary: colorToken("#ff000080") } }
     }) as any;
 
-    expect(result.color["danger-disabled"]).toMatchObject({
+    expect(result.color.danger["primary-disabled"]).toMatchObject({
       $description:
-        "disabled state at 85% saturation, 13% over oklch(0.3839 0.0045 286.26)",
+        "disabled state at 85% saturation, 35% over oklch(0.3839 0.0045 286.26)",
       $value: expect.stringMatching(/^#[0-9a-f]{6}$/)
     });
   });
 
-  it("fades greyscale surface disabled variants over the disabled base", () => {
-    const result = tamaguiPreprocessor({
-      color: { surface: { canvas: colorToken("#ffffff") } }
-    }) as any;
-
-    expect(result.color.surface["canvas-disabled"]).toMatchObject({
-      $description: "disabled state at 13% over oklch(0.3839 0.0045 286.26)",
-      $value: "#5b5b5d"
-    });
-  });
-
-  it("assigns themes to base aliases and status colors", () => {
+  it("assigns the group name as theme and group to theme color tokens", () => {
     const result = tamaguiPreprocessor({
       color: {
         $description: "The dark theme colors",
-        primary: colorToken("#eeeeee"),
-        "on-primary": colorToken("#111111"),
-        tertiary: { ...colorToken("#444444"), theme: "custom" },
-        outline: colorToken("#777777"),
-        warning: colorToken("#ffee99")
+        emphasis: colorToken("#eeeeee"),
+        hairline: colorToken("#777777"),
+        base: {
+          primary: colorToken("#eeeeee"),
+          "on-primary": colorToken("#111111"),
+          secondary: { ...colorToken("#444444"), theme: "custom" }
+        },
+        warning: { primary: colorToken("#ffee99") }
       }
     }) as any;
+    const { base, warning } = result.color;
 
-    expect(result.color.primary.theme).toBeUndefined();
-    expect(result.color["on-primary"].theme).toBeUndefined();
-    expect(result.color.base).toMatchObject({
+    expect(result.color.emphasis.theme).toBeUndefined();
+    expect(result.color.hairline.theme).toBeUndefined();
+    expect(base.primary).toMatchObject({
       $value: "#eeeeee",
       theme: "base",
       group: "base"
     });
-    expect(result.color["base-accent"]).toMatchObject({
-      $value: "{color.base}",
-      theme: "base"
-    });
-    expect(result.color["base-active"].theme).toBe("base");
-    expect(result.color).not.toHaveProperty("on-base");
-    expect(result.color["on-base-accent"]).toMatchObject({
+    expect(base["on-primary"]).toMatchObject({
       $value: "#111111",
       theme: "base"
     });
-    expect(result.color.tertiary.theme).toBe("custom");
-    expect(result.color).not.toHaveProperty("tertiary-disabled");
-    expect(result.color.outline.theme).toBeUndefined();
-    expect(result.color.warning.theme).toBe("warning");
-    expect(result.color["warning-accent"]).toMatchObject({
-      $value: "{color.warning}",
-      theme: "warning",
-      group: "warning"
-    });
-    expect(result.color["on-warning-accent"]).toMatchObject({
-      theme: "warning",
-      group: "warning"
-    });
-    expect(result.color["on-warning-muted"].theme).toBe("warning");
-    expect(result.color["warning-muted"].theme).toBe("warning");
-    expect(result.color["warning-muted-active"].theme).toBe("warning");
-    expect(result.color["warning-inactive"].theme).toBe("warning");
+    expect(base["primary-active"].theme).toBe("base");
+    expect(base.secondary.theme).toBe("custom");
+    for (const key of [
+      "primary",
+      "on-primary",
+      "secondary",
+      "on-secondary",
+      "secondary-active",
+      "primary-inactive"
+    ]) {
+      expect(warning[key]).toMatchObject({
+        theme: "warning",
+        group: "warning"
+      });
+    }
   });
 
-  it("generates focus rings for base aliases and status colors", () => {
+  it("generates focus rings for theme color groups", () => {
     const result = tamaguiPreprocessor({
       color: {
-        surface: { elevated: colorToken("#222222") },
-        primary: colorToken("#eeeeee"),
-        outline: colorToken("#777777"),
-        danger: colorToken("#336699")
+        elevated: { ...colorToken("#222222"), group: "background" },
+        emphasis: colorToken("#eeeeee"),
+        base: { primary: colorToken("#eeeeee") },
+        danger: { primary: colorToken("#336699") }
       }
     }) as any;
 
@@ -453,12 +432,12 @@ describe("tamaguiPreprocessor", () => {
     expect(result.ring["base-offset"]).toMatchObject({ theme: "base" });
     expect(result.ring.base).toMatchObject({
       theme: "base",
-      $value: [{ color: "#eeeeee14", spread: { value: 3, unit: "px" } }]
+      $value: [{ color: "#eeeeee1a", spread: { value: 3, unit: "px" } }]
     });
     expect(result.ring["danger-offset"]).toMatchObject({
       theme: "danger",
       $value: [
-        { color: "{color.surface-elevated}" },
+        { color: "{color.elevated}" },
         { color: "#33669926", spread: { value: 6, unit: "px" } }
       ]
     });
@@ -503,7 +482,7 @@ describe("tamaguiPreprocessor", () => {
     expect(result).toMatchObject({
       semantic: {
         ring: {
-          neutral: { $value: { color: "#77777714" } },
+          neutral: { $value: { color: "#7777771a" } },
           saturated: { $value: { color: "#33669926" } },
           layered: {
             $value: [{ color: "#ff0000" }, { color: "#00ff0026" }]

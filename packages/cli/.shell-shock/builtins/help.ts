@@ -1643,6 +1643,28 @@ export function showHelp() {
   writeLine("");
   writeLine(
     textColors.heading.primary(
+      (isUnicodeSupported ? " 🗃  " : "") +
+        `${underline("Changelog")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.default(inverse(" Utility "))}`
+    )
+  );
+  writeLine("");
+  writeLine(
+    textColors.body.tertiary(
+      splitText(`Display the Cyclone User Interface changelog.`)
+    )
+  );
+  writeLine("");
+  writeLine(bold(textColors.heading.secondary("Usage:")), { padding: 0 });
+  writeLine(
+    textColors.body.secondary(
+      `${textColors.usage.bin(">_ cyclone-ui")} ${textColors.usage.command("changelog")} ${textColors.usage.options("[options]")}`
+    ),
+    { padding: 0 }
+  );
+
+  writeLine("");
+  writeLine(
+    textColors.heading.primary(
       (isUnicodeSupported ? " 🖵  " : "") +
         `${underline("Completions")} - ${textColors.tags.utility ? textColors.tags.utility(inverse(" Utility ")) : textColors.tags.default(inverse(" Utility "))}`
     )

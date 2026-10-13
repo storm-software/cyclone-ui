@@ -81,8 +81,8 @@ export const GlitchSeparator = createStyledHOC(
   View,
   (
     {
-      topColor = "surfaceCanvas",
-      bottomColor = "subtle",
+      topColor = "canvas",
+      bottomColor = "secondary",
       animate,
       animated,
       seed = DEFAULT_SEED,

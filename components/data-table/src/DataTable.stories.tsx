@@ -179,14 +179,14 @@ const StatusButton = ({ status }: { status: string }) => {
   return (
     <View
       borderRadius={1000_000_000}
-      backgroundColor="accent"
+      backgroundColor="primary"
       height="6xl"
       paddingHorizontal="xl"
       alignItems="center"
       justifyContent="center"
       theme={status?.toLocaleLowerCase() === "active" ? "success" : "danger"}
       themeShallow={true}>
-      <Text color="onAccent" paddingVertical="md">
+      <Text color="onPrimary" paddingVertical="md">
         {status}
       </Text>
     </View>

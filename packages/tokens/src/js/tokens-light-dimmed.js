@@ -2388,14 +2388,14 @@ module.exports = {
         path: ["color", "pink", "9"],
       },
     },
-    primary: {
-      key: "{color.primary}",
+    emphasis: {
+      key: "{color.emphasis}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#3c3c3e",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
-      semantic: true,
+      group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
@@ -2405,24 +2405,24 @@ module.exports = {
         $value: "{color.neutral.13}",
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
-        semantic: true,
-        key: "{color.primary}",
+        group: "foreground",
+        key: "{color.emphasis}",
       },
-      name: "ColorPrimary",
+      name: "ColorEmphasis",
       attributes: {
         category: "color",
-        type: "primary",
+        type: "emphasis",
       },
-      path: ["color", "primary"],
+      path: ["color", "emphasis"],
     },
-    secondary: {
-      key: "{color.secondary}",
+    ink: {
+      key: "{color.ink}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#626364",
       $description:
         "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
-      semantic: true,
+      group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
@@ -2432,24 +2432,51 @@ module.exports = {
         $value: "{color.neutral.9}",
         $description:
           "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
-        semantic: true,
-        key: "{color.secondary}",
+        group: "foreground",
+        key: "{color.ink}",
       },
-      name: "ColorSecondary",
+      name: "ColorInk",
       attributes: {
         category: "color",
-        type: "secondary",
+        type: "ink",
       },
-      path: ["color", "secondary"],
+      path: ["color", "ink"],
     },
-    tertiary: {
-      key: "{color.tertiary}",
+    subtle: {
+      key: "{color.subtle}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#8f8f90",
+      $description:
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
+      group: "foreground",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.neutral.7}",
+        $description:
+          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
+        group: "foreground",
+        key: "{color.subtle}",
+      },
+      name: "ColorSubtle",
+      attributes: {
+        category: "color",
+        type: "subtle",
+      },
+      path: ["color", "subtle"],
+    },
+    subtlest: {
+      key: "{color.subtlest}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#b4b4b4",
       $description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      semantic: true,
+      group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
@@ -2459,21 +2486,21 @@ module.exports = {
         $value: "{color.neutral.5}",
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-        semantic: true,
-        key: "{color.tertiary}",
+        group: "foreground",
+        key: "{color.subtlest}",
       },
-      name: "ColorTertiary",
+      name: "ColorSubtlest",
       attributes: {
         category: "color",
-        type: "tertiary",
+        type: "subtlest",
       },
-      path: ["color", "tertiary"],
+      path: ["color", "subtlest"],
     },
-    border: {
-      key: "{color.border}",
+    hairline: {
+      key: "{color.hairline}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#a1a1a2",
+      $value: "#c4c4c4",
       $description:
         "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
       semantic: true,
@@ -2483,234 +2510,27 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.6}",
+        $value: "{color.neutral.4}",
         $description:
           "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
         semantic: true,
-        key: "{color.border}",
+        key: "{color.hairline}",
       },
-      name: "ColorBorder",
+      name: "ColorHairline",
       attributes: {
         category: "color",
-        type: "border",
+        type: "hairline",
       },
-      path: ["color", "border"],
+      path: ["color", "hairline"],
     },
-    danger: {
-      key: "{color.danger}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#864254",
-      $description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "danger",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.red.7}",
-        $description:
-          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
-        semantic: true,
-        theme: "danger",
-        key: "{color.danger}",
-      },
-      name: "ColorDanger",
-      attributes: {
-        category: "color",
-        type: "danger",
-      },
-      path: ["color", "danger"],
-    },
-    warning: {
-      key: "{color.warning}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#786137",
-      $description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "warning",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.yellow.9}",
-        $description:
-          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
-        semantic: true,
-        theme: "warning",
-        key: "{color.warning}",
-      },
-      name: "ColorWarning",
-      attributes: {
-        category: "color",
-        type: "warning",
-      },
-      path: ["color", "warning"],
-    },
-    info: {
-      key: "{color.info}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#45649b",
-      $description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.blue.7}",
-        $description:
-          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
-        semantic: true,
-        theme: "info",
-        key: "{color.info}",
-      },
-      name: "ColorInfo",
-      attributes: {
-        category: "color",
-        type: "info",
-      },
-      path: ["color", "info"],
-    },
-    "info-subtle": {
-      key: "{color.info-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#7598d7",
-      $description:
-        "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.blue.3}",
-        $description:
-          "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme.",
-        semantic: true,
-        theme: "info",
-        group: "info",
-        key: "{color.info-subtle}",
-      },
-      name: "ColorInfoSubtle",
-      attributes: {
-        category: "color",
-        type: "info-subtle",
-      },
-      path: ["color", "info-subtle"],
-    },
-    discovery: {
-      key: "{color.discovery}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#675a8a",
-      $description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.purple.7}",
-        $description:
-          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
-        semantic: true,
-        theme: "discovery",
-        key: "{color.discovery}",
-      },
-      name: "ColorDiscovery",
-      attributes: {
-        category: "color",
-        type: "discovery",
-      },
-      path: ["color", "discovery"],
-    },
-    "discovery-subtle": {
-      key: "{color.discovery-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#9b8cc3",
-      $description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.purple.3}",
-        $description:
-          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
-        semantic: true,
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.discovery-subtle}",
-      },
-      name: "ColorDiscoverySubtle",
-      attributes: {
-        category: "color",
-        type: "discovery-subtle",
-      },
-      path: ["color", "discovery-subtle"],
-    },
-    success: {
-      key: "{color.success}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#3e7160",
-      $description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.green.7}",
-        $description:
-          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
-        semantic: true,
-        theme: "success",
-        key: "{color.success}",
-      },
-      name: "ColorSuccess",
-      attributes: {
-        category: "color",
-        type: "success",
-      },
-      path: ["color", "success"],
-    },
-    "surface-sunken": {
-      key: "{color.surface-sunken}",
+    sunken: {
+      key: "{color.sunken}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#c4c4c4",
       $description:
         "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant.",
-      semantic: true,
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
@@ -2720,24 +2540,24 @@ module.exports = {
         $value: "{color.neutral.4}",
         $description:
           "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant.",
-        semantic: true,
-        key: "{color.surface-sunken}",
+        group: "background",
+        key: "{color.sunken}",
       },
-      name: "ColorSurfaceSunken",
+      name: "ColorSunken",
       attributes: {
         category: "color",
-        type: "surface-sunken",
+        type: "sunken",
       },
-      path: ["color", "surface-sunken"],
+      path: ["color", "sunken"],
     },
-    "surface-canvas": {
-      key: "{color.surface-canvas}",
+    canvas: {
+      key: "{color.canvas}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#cacaca",
       $description:
         "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator.",
-      semantic: true,
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
@@ -2747,24 +2567,24 @@ module.exports = {
         $value: "{color.neutral.3}",
         $description:
           "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator.",
-        semantic: true,
-        key: "{color.surface-canvas}",
+        group: "background",
+        key: "{color.canvas}",
       },
-      name: "ColorSurfaceCanvas",
+      name: "ColorCanvas",
       attributes: {
         category: "color",
-        type: "surface-canvas",
+        type: "canvas",
       },
-      path: ["color", "surface-canvas"],
+      path: ["color", "canvas"],
     },
-    "surface-elevated": {
-      key: "{color.surface-elevated}",
+    surface: {
+      key: "{color.surface}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#cfcfcf",
       $description:
         "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree.",
-      semantic: true,
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
@@ -2774,24 +2594,24 @@ module.exports = {
         $value: "{color.neutral.2}",
         $description:
           "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree.",
-        semantic: true,
-        key: "{color.surface-elevated}",
+        group: "background",
+        key: "{color.surface}",
       },
-      name: "ColorSurfaceElevated",
+      name: "ColorSurface",
       attributes: {
         category: "color",
-        type: "surface-elevated",
+        type: "surface",
       },
-      path: ["color", "surface-elevated"],
+      path: ["color", "surface"],
     },
-    "surface-floating": {
-      key: "{color.surface-floating}",
+    elevated: {
+      key: "{color.elevated}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#d5d5d5",
       $description:
         "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
-      semantic: true,
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
@@ -2801,24 +2621,24 @@ module.exports = {
         $value: "{color.neutral.1}",
         $description:
           "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant.",
-        semantic: true,
-        key: "{color.surface-floating}",
+        group: "background",
+        key: "{color.elevated}",
       },
-      name: "ColorSurfaceFloating",
+      name: "ColorElevated",
       attributes: {
         category: "color",
-        type: "surface-floating",
+        type: "elevated",
       },
-      path: ["color", "surface-floating"],
+      path: ["color", "elevated"],
     },
-    "surface-highest": {
-      key: "{color.surface-highest}",
+    floating: {
+      key: "{color.floating}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#d9d9d9",
       $description:
         "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
-      semantic: true,
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
@@ -2828,15 +2648,2581 @@ module.exports = {
         $value: "{color.white}",
         $description:
           "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant.",
-        semantic: true,
-        key: "{color.surface-highest}",
+        group: "background",
+        key: "{color.floating}",
       },
-      name: "ColorSurfaceHighest",
+      name: "ColorFloating",
       attributes: {
         category: "color",
-        type: "surface-highest",
+        type: "floating",
       },
-      path: ["color", "surface-highest"],
+      path: ["color", "floating"],
+    },
+    base: {
+      primary: {
+        key: "{color.base.primary}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#3c3c3e",
+        $description:
+          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.13}",
+          $description:
+            "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
+          semantic: true,
+          key: "{color.base.primary}",
+        },
+        name: "ColorBasePrimary",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "primary",
+        },
+        path: ["color", "base", "primary"],
+      },
+      secondary: {
+        key: "{color.base.secondary}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#626364",
+        $description:
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.9}",
+          $description:
+            "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper.",
+          semantic: true,
+          key: "{color.base.secondary}",
+        },
+        name: "ColorBaseSecondary",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "secondary",
+        },
+        path: ["color", "base", "secondary"],
+      },
+      "on-primary": {
+        key: "{color.base.on-primary}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#d5d5d5",
+        $description:
+          "Generated text and icon color on base primary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.1}",
+          $description:
+            "Generated text and icon color on base primary backgrounds",
+          semantic: true,
+          key: "{color.base.on-primary}",
+        },
+        name: "ColorBaseOnPrimary",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "on-primary",
+        },
+        path: ["color", "base", "on-primary"],
+      },
+      "on-secondary": {
+        key: "{color.base.on-secondary}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#d5d5d5",
+        $description:
+          "Generated text and icon color on base secondary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.1}",
+          $description:
+            "Generated text and icon color on base secondary backgrounds",
+          semantic: true,
+          key: "{color.base.on-secondary}",
+        },
+        name: "ColorBaseOnSecondary",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "on-secondary",
+        },
+        path: ["color", "base", "on-secondary"],
+      },
+      "primary-hovered": {
+        key: "{color.base.primary-hovered}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#6a6a6b",
+        $description:
+          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.41568627450980394, 0.41568627450980394, 0.4196078431372549,
+            ],
+            hex: "#6a6a6b",
+          },
+          $description:
+            "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
+          semantic: true,
+          key: "{color.base.primary-hovered}",
+        },
+        name: "ColorBasePrimaryHovered",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "primary-hovered",
+        },
+        path: ["color", "base", "primary-hovered"],
+      },
+      "primary-active": {
+        key: "{color.base.primary-active}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#262626",
+        $description:
+          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.14901960784313725, 0.14901960784313725, 0.14901960784313725,
+            ],
+            hex: "#262626",
+          },
+          $description:
+            "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)",
+          semantic: true,
+          key: "{color.base.primary-active}",
+        },
+        name: "ColorBasePrimaryActive",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "primary-active",
+        },
+        path: ["color", "base", "primary-active"],
+      },
+      "primary-inactive": {
+        key: "{color.base.primary-inactive}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#282828",
+        $description:
+          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.1568627450980392, 0.1568627450980392, 0.1568627450980392,
+            ],
+            hex: "#282828",
+          },
+          $description:
+            "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
+          semantic: true,
+          key: "{color.base.primary-inactive}",
+        },
+        name: "ColorBasePrimaryInactive",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "primary-inactive",
+        },
+        path: ["color", "base", "primary-inactive"],
+      },
+      "primary-disabled": {
+        key: "{color.base.primary-disabled}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#4c4c4e",
+        $description:
+          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.2980392156862745, 0.2980392156862745, 0.3058823529411765,
+            ],
+            hex: "#4c4c4e",
+          },
+          $description:
+            "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.base.primary-disabled}",
+        },
+        name: "ColorBasePrimaryDisabled",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "primary-disabled",
+        },
+        path: ["color", "base", "primary-disabled"],
+      },
+      "secondary-hovered": {
+        key: "{color.base.secondary-hovered}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#57585a",
+        $description:
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 12% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.3411764705882353, 0.34509803921568627, 0.35294117647058826,
+            ],
+            hex: "#57585a",
+          },
+          $description:
+            "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 12% darker)",
+          semantic: true,
+          key: "{color.base.secondary-hovered}",
+        },
+        name: "ColorBaseSecondaryHovered",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "secondary-hovered",
+        },
+        path: ["color", "base", "secondary-hovered"],
+      },
+      "secondary-active": {
+        key: "{color.base.secondary-active}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#57585a",
+        $description:
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 12% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.base.secondary-hovered}",
+          $description:
+            "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 12% darker)",
+          semantic: true,
+          key: "{color.base.secondary-active}",
+        },
+        name: "ColorBaseSecondaryActive",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "secondary-active",
+        },
+        path: ["color", "base", "secondary-active"],
+      },
+      "secondary-inactive": {
+        key: "{color.base.secondary-inactive}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#282828",
+        $description:
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.base.primary-inactive}",
+          $description:
+            "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)",
+          semantic: true,
+          key: "{color.base.secondary-inactive}",
+        },
+        name: "ColorBaseSecondaryInactive",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "secondary-inactive",
+        },
+        path: ["color", "base", "secondary-inactive"],
+      },
+      "secondary-disabled": {
+        key: "{color.base.secondary-disabled}",
+        theme: "base",
+        group: "base",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#595a5c",
+        $description:
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "base",
+          group: "base",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.34901960784313724, 0.35294117647058826, 0.3607843137254902,
+            ],
+            hex: "#595a5c",
+          },
+          $description:
+            "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.base.secondary-disabled}",
+        },
+        name: "ColorBaseSecondaryDisabled",
+        attributes: {
+          category: "color",
+          type: "base",
+          item: "secondary-disabled",
+        },
+        path: ["color", "base", "secondary-disabled"],
+      },
+    },
+    danger: {
+      primary: {
+        key: "{color.danger.primary}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#864254",
+        $description:
+          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.red.7}",
+          $description:
+            "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.",
+          semantic: true,
+          key: "{color.danger.primary}",
+        },
+        name: "ColorDangerPrimary",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "primary",
+        },
+        path: ["color", "danger", "primary"],
+      },
+      "on-primary": {
+        key: "{color.danger.on-primary}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#d5d5d5",
+        $description:
+          "Generated text and icon color on danger primary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.1}",
+          $description:
+            "Generated text and icon color on danger primary backgrounds",
+          semantic: true,
+          key: "{color.danger.on-primary}",
+        },
+        name: "ColorDangerOnPrimary",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "on-primary",
+        },
+        path: ["color", "danger", "on-primary"],
+      },
+      secondary: {
+        key: "{color.danger.secondary}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#cb7e8b",
+        $description:
+          "Generated low-emphasis danger background for the light theme",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.796078431372549, 0.49411764705882355, 0.5450980392156862,
+            ],
+            hex: "#cb7e8b",
+          },
+          $description:
+            "Generated low-emphasis danger background for the light theme",
+          semantic: true,
+          key: "{color.danger.secondary}",
+        },
+        name: "ColorDangerSecondary",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "secondary",
+        },
+        path: ["color", "danger", "secondary"],
+      },
+      "on-secondary": {
+        key: "{color.danger.on-secondary}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#4d1620",
+        $description:
+          "Generated text and icon color on danger secondary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.30196078431372547, 0.08627450980392157, 0.12549019607843137,
+            ],
+            hex: "#4d1620",
+          },
+          $description:
+            "Generated text and icon color on danger secondary backgrounds",
+          semantic: true,
+          key: "{color.danger.on-secondary}",
+        },
+        name: "ColorDangerOnSecondary",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "on-secondary",
+        },
+        path: ["color", "danger", "on-secondary"],
+      },
+      "primary-hovered": {
+        key: "{color.danger.primary-hovered}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#75223c",
+        $description:
+          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.4588235294117647, 0.13333333333333333, 0.23529411764705882,
+            ],
+            hex: "#75223c",
+          },
+          $description:
+            "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.danger.primary-hovered}",
+        },
+        name: "ColorDangerPrimaryHovered",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "primary-hovered",
+        },
+        path: ["color", "danger", "primary-hovered"],
+      },
+      "primary-active": {
+        key: "{color.danger.primary-active}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#75223c",
+        $description:
+          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.danger.primary-hovered}",
+          $description:
+            "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)",
+          semantic: true,
+          key: "{color.danger.primary-active}",
+        },
+        name: "ColorDangerPrimaryActive",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "primary-active",
+        },
+        path: ["color", "danger", "primary-active"],
+      },
+      "primary-inactive": {
+        key: "{color.danger.primary-inactive}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#975967",
+        $description:
+          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.592156862745098, 0.34901960784313724, 0.403921568627451,
+            ],
+            hex: "#975967",
+          },
+          $description:
+            "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.danger.primary-inactive}",
+        },
+        name: "ColorDangerPrimaryInactive",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "primary-inactive",
+        },
+        path: ["color", "danger", "primary-inactive"],
+      },
+      "primary-disabled": {
+        key: "{color.danger.primary-disabled}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#655156",
+        $description:
+          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.396078431372549, 0.3176470588235294, 0.33725490196078434,
+            ],
+            hex: "#655156",
+          },
+          $description:
+            "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.danger.primary-disabled}",
+        },
+        name: "ColorDangerPrimaryDisabled",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "primary-disabled",
+        },
+        path: ["color", "danger", "primary-disabled"],
+      },
+      "secondary-hovered": {
+        key: "{color.danger.secondary-hovered}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#9a5d6a",
+        $description:
+          "Generated low-emphasis danger background for the light theme (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.6039215686274509, 0.36470588235294116, 0.41568627450980394,
+            ],
+            hex: "#9a5d6a",
+          },
+          $description:
+            "Generated low-emphasis danger background for the light theme (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.danger.secondary-hovered}",
+        },
+        name: "ColorDangerSecondaryHovered",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "secondary-hovered",
+        },
+        path: ["color", "danger", "secondary-hovered"],
+      },
+      "secondary-active": {
+        key: "{color.danger.secondary-active}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#9a5d6a",
+        $description:
+          "Generated low-emphasis danger background for the light theme (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.danger.secondary-hovered}",
+          $description:
+            "Generated low-emphasis danger background for the light theme (active, 25% darker)",
+          semantic: true,
+          key: "{color.danger.secondary-active}",
+        },
+        name: "ColorDangerSecondaryActive",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "secondary-active",
+        },
+        path: ["color", "danger", "secondary-active"],
+      },
+      "secondary-inactive": {
+        key: "{color.danger.secondary-inactive}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#e094a4",
+        $description:
+          "Generated low-emphasis danger background for the light theme (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.8784313725490196, 0.5803921568627451, 0.6431372549019608,
+            ],
+            hex: "#e094a4",
+          },
+          $description:
+            "Generated low-emphasis danger background for the light theme (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.danger.secondary-inactive}",
+        },
+        name: "ColorDangerSecondaryInactive",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "secondary-inactive",
+        },
+        path: ["color", "danger", "secondary-inactive"],
+      },
+      "secondary-disabled": {
+        key: "{color.danger.secondary-disabled}",
+        theme: "danger",
+        group: "danger",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#7a676b",
+        $description:
+          "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "danger",
+          group: "danger",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.47843137254901963, 0.403921568627451, 0.4196078431372549,
+            ],
+            hex: "#7a676b",
+          },
+          $description:
+            "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.danger.secondary-disabled}",
+        },
+        name: "ColorDangerSecondaryDisabled",
+        attributes: {
+          category: "color",
+          type: "danger",
+          item: "secondary-disabled",
+        },
+        path: ["color", "danger", "secondary-disabled"],
+      },
+    },
+    warning: {
+      primary: {
+        key: "{color.warning.primary}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#786137",
+        $description:
+          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.yellow.9}",
+          $description:
+            "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
+          semantic: true,
+          key: "{color.warning.primary}",
+        },
+        name: "ColorWarningPrimary",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "primary",
+        },
+        path: ["color", "warning", "primary"],
+      },
+      "on-primary": {
+        key: "{color.warning.on-primary}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#d5d5d5",
+        $description:
+          "Generated text and icon color on warning primary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.1}",
+          $description:
+            "Generated text and icon color on warning primary backgrounds",
+          semantic: true,
+          key: "{color.warning.on-primary}",
+        },
+        name: "ColorWarningOnPrimary",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "on-primary",
+        },
+        path: ["color", "warning", "on-primary"],
+      },
+      secondary: {
+        key: "{color.warning.secondary}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#ac9674",
+        $description:
+          "Generated low-emphasis warning background for the light theme",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.6745098039215687, 0.5882352941176471, 0.4549019607843137,
+            ],
+            hex: "#ac9674",
+          },
+          $description:
+            "Generated low-emphasis warning background for the light theme",
+          semantic: true,
+          key: "{color.warning.secondary}",
+        },
+        name: "ColorWarningSecondary",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "secondary",
+        },
+        path: ["color", "warning", "secondary"],
+      },
+      "on-secondary": {
+        key: "{color.warning.on-secondary}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#4f3817",
+        $description:
+          "Generated text and icon color on warning secondary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.30980392156862746, 0.2196078431372549, 0.09019607843137255,
+            ],
+            hex: "#4f3817",
+          },
+          $description:
+            "Generated text and icon color on warning secondary backgrounds",
+          semantic: true,
+          key: "{color.warning.on-secondary}",
+        },
+        name: "ColorWarningOnSecondary",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "on-secondary",
+        },
+        path: ["color", "warning", "on-secondary"],
+      },
+      "primary-hovered": {
+        key: "{color.warning.primary-hovered}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#694d1e",
+        $description:
+          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.4117647058823529, 0.30196078431372547, 0.11764705882352941,
+            ],
+            hex: "#694d1e",
+          },
+          $description:
+            "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.warning.primary-hovered}",
+        },
+        name: "ColorWarningPrimaryHovered",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "primary-hovered",
+        },
+        path: ["color", "warning", "primary-hovered"],
+      },
+      "primary-active": {
+        key: "{color.warning.primary-active}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#694d1e",
+        $description:
+          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.warning.primary-hovered}",
+          $description:
+            "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
+          semantic: true,
+          key: "{color.warning.primary-active}",
+        },
+        name: "ColorWarningPrimaryActive",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "primary-active",
+        },
+        path: ["color", "warning", "primary-active"],
+      },
+      "primary-inactive": {
+        key: "{color.warning.primary-inactive}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#887351",
+        $description:
+          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.5333333333333333, 0.45098039215686275, 0.3176470588235294,
+            ],
+            hex: "#887351",
+          },
+          $description:
+            "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.warning.primary-inactive}",
+        },
+        name: "ColorWarningPrimaryInactive",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "primary-inactive",
+        },
+        path: ["color", "warning", "primary-inactive"],
+      },
+      "primary-disabled": {
+        key: "{color.warning.primary-disabled}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#605950",
+        $description:
+          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.3764705882352941, 0.34901960784313724, 0.3137254901960784,
+            ],
+            hex: "#605950",
+          },
+          $description:
+            "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.warning.primary-disabled}",
+        },
+        name: "ColorWarningPrimaryDisabled",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "primary-disabled",
+        },
+        path: ["color", "warning", "primary-disabled"],
+      },
+      "secondary-hovered": {
+        key: "{color.warning.secondary-hovered}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#856f4d",
+        $description:
+          "Generated low-emphasis warning background for the light theme (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.5215686274509804, 0.43529411764705883, 0.30196078431372547,
+            ],
+            hex: "#856f4d",
+          },
+          $description:
+            "Generated low-emphasis warning background for the light theme (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.warning.secondary-hovered}",
+        },
+        name: "ColorWarningSecondaryHovered",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "secondary-hovered",
+        },
+        path: ["color", "warning", "secondary-hovered"],
+      },
+      "secondary-active": {
+        key: "{color.warning.secondary-active}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#856f4d",
+        $description:
+          "Generated low-emphasis warning background for the light theme (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.warning.secondary-hovered}",
+          $description:
+            "Generated low-emphasis warning background for the light theme (active, 25% darker)",
+          semantic: true,
+          key: "{color.warning.secondary-active}",
+        },
+        name: "ColorWarningSecondaryActive",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "secondary-active",
+        },
+        path: ["color", "warning", "secondary-active"],
+      },
+      "secondary-inactive": {
+        key: "{color.warning.secondary-inactive}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#d6b88c",
+        $description:
+          "Generated low-emphasis warning background for the light theme (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.8392156862745098, 0.7215686274509804, 0.5490196078431373,
+            ],
+            hex: "#d6b88c",
+          },
+          $description:
+            "Generated low-emphasis warning background for the light theme (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.warning.secondary-inactive}",
+        },
+        name: "ColorWarningSecondaryInactive",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "secondary-inactive",
+        },
+        path: ["color", "warning", "secondary-inactive"],
+      },
+      "secondary-disabled": {
+        key: "{color.warning.secondary-disabled}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#736c64",
+        $description:
+          "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.45098039215686275, 0.4235294117647059, 0.39215686274509803,
+            ],
+            hex: "#736c64",
+          },
+          $description:
+            "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.warning.secondary-disabled}",
+        },
+        name: "ColorWarningSecondaryDisabled",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "secondary-disabled",
+        },
+        path: ["color", "warning", "secondary-disabled"],
+      },
+    },
+    info: {
+      primary: {
+        key: "{color.info.primary}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#45649b",
+        $description:
+          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.blue.7}",
+          $description:
+            "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.",
+          semantic: true,
+          key: "{color.info.primary}",
+        },
+        name: "ColorInfoPrimary",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "primary",
+        },
+        path: ["color", "info", "primary"],
+      },
+      secondary: {
+        key: "{color.info.secondary}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#7598d7",
+        $description:
+          "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.blue.3}",
+          $description:
+            "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText.",
+          semantic: true,
+          key: "{color.info.secondary}",
+        },
+        name: "ColorInfoSecondary",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "secondary",
+        },
+        path: ["color", "info", "secondary"],
+      },
+      "on-primary": {
+        key: "{color.info.on-primary}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#d5d5d5",
+        $description:
+          "Generated text and icon color on info primary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.1}",
+          $description:
+            "Generated text and icon color on info primary backgrounds",
+          semantic: true,
+          key: "{color.info.on-primary}",
+        },
+        name: "ColorInfoOnPrimary",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "on-primary",
+        },
+        path: ["color", "info", "on-primary"],
+      },
+      "on-secondary": {
+        key: "{color.info.on-secondary}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#d5d5d5",
+        $description:
+          "Generated text and icon color on info secondary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.1}",
+          $description:
+            "Generated text and icon color on info secondary backgrounds",
+          semantic: true,
+          key: "{color.info.on-secondary}",
+        },
+        name: "ColorInfoOnSecondary",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "on-secondary",
+        },
+        path: ["color", "info", "on-secondary"],
+      },
+      "primary-hovered": {
+        key: "{color.info.primary-hovered}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#274988",
+        $description:
+          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.15294117647058825, 0.28627450980392155, 0.5333333333333333,
+            ],
+            hex: "#274988",
+          },
+          $description:
+            "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.info.primary-hovered}",
+        },
+        name: "ColorInfoPrimaryHovered",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "primary-hovered",
+        },
+        path: ["color", "info", "primary-hovered"],
+      },
+      "primary-active": {
+        key: "{color.info.primary-active}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#274988",
+        $description:
+          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.info.primary-hovered}",
+          $description:
+            "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)",
+          semantic: true,
+          key: "{color.info.primary-active}",
+        },
+        name: "ColorInfoPrimaryActive",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "primary-active",
+        },
+        path: ["color", "info", "primary-active"],
+      },
+      "primary-inactive": {
+        key: "{color.info.primary-inactive}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#5a79af",
+        $description:
+          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.35294117647058826, 0.4745098039215686, 0.6862745098039216,
+            ],
+            hex: "#5a79af",
+          },
+          $description:
+            "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.info.primary-inactive}",
+        },
+        name: "ColorInfoPrimaryInactive",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "primary-inactive",
+        },
+        path: ["color", "info", "primary-inactive"],
+      },
+      "primary-disabled": {
+        key: "{color.info.primary-disabled}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#515a6e",
+        $description:
+          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.3176470588235294, 0.35294117647058826, 0.43137254901960786,
+            ],
+            hex: "#515a6e",
+          },
+          $description:
+            "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.info.primary-disabled}",
+        },
+        name: "ColorInfoPrimaryDisabled",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "primary-disabled",
+        },
+        path: ["color", "info", "primary-disabled"],
+      },
+      "secondary-hovered": {
+        key: "{color.info.secondary-hovered}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#5873a4",
+        $description:
+          "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.34509803921568627, 0.45098039215686275, 0.6431372549019608,
+            ],
+            hex: "#5873a4",
+          },
+          $description:
+            "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.info.secondary-hovered}",
+        },
+        name: "ColorInfoSecondaryHovered",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "secondary-hovered",
+        },
+        path: ["color", "info", "secondary-hovered"],
+      },
+      "secondary-active": {
+        key: "{color.info.secondary-active}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#5873a4",
+        $description:
+          "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.info.secondary-hovered}",
+          $description:
+            "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)",
+          semantic: true,
+          key: "{color.info.secondary-active}",
+        },
+        name: "ColorInfoSecondaryActive",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "secondary-active",
+        },
+        path: ["color", "info", "secondary-active"],
+      },
+      "secondary-inactive": {
+        key: "{color.info.secondary-inactive}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#8cb9de",
+        $description:
+          "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.5490196078431373, 0.7254901960784313, 0.8705882352941177,
+            ],
+            hex: "#8cb9de",
+          },
+          $description:
+            "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.info.secondary-inactive}",
+        },
+        name: "ColorInfoSecondaryInactive",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "secondary-inactive",
+        },
+        path: ["color", "info", "secondary-inactive"],
+      },
+      "secondary-disabled": {
+        key: "{color.info.secondary-disabled}",
+        theme: "info",
+        group: "info",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#646e7f",
+        $description:
+          "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "info",
+          group: "info",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.39215686274509803, 0.43137254901960786, 0.4980392156862745,
+            ],
+            hex: "#646e7f",
+          },
+          $description:
+            "Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.info.secondary-disabled}",
+        },
+        name: "ColorInfoSecondaryDisabled",
+        attributes: {
+          category: "color",
+          type: "info",
+          item: "secondary-disabled",
+        },
+        path: ["color", "info", "secondary-disabled"],
+      },
+    },
+    discovery: {
+      primary: {
+        key: "{color.discovery.primary}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#675a8a",
+        $description:
+          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.purple.7}",
+          $description:
+            "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.",
+          semantic: true,
+          key: "{color.discovery.primary}",
+        },
+        name: "ColorDiscoveryPrimary",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "primary",
+        },
+        path: ["color", "discovery", "primary"],
+      },
+      secondary: {
+        key: "{color.discovery.secondary}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#9b8cc3",
+        $description:
+          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.purple.3}",
+          $description:
+            "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.",
+          semantic: true,
+          key: "{color.discovery.secondary}",
+        },
+        name: "ColorDiscoverySecondary",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "secondary",
+        },
+        path: ["color", "discovery", "secondary"],
+      },
+      "on-primary": {
+        key: "{color.discovery.on-primary}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#d5d5d5",
+        $description:
+          "Generated text and icon color on discovery primary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.1}",
+          $description:
+            "Generated text and icon color on discovery primary backgrounds",
+          semantic: true,
+          key: "{color.discovery.on-primary}",
+        },
+        name: "ColorDiscoveryOnPrimary",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "on-primary",
+        },
+        path: ["color", "discovery", "on-primary"],
+      },
+      "on-secondary": {
+        key: "{color.discovery.on-secondary}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#d5d5d5",
+        $description:
+          "Generated text and icon color on discovery secondary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.1}",
+          $description:
+            "Generated text and icon color on discovery secondary backgrounds",
+          semantic: true,
+          key: "{color.discovery.on-secondary}",
+        },
+        name: "ColorDiscoveryOnSecondary",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "on-secondary",
+        },
+        path: ["color", "discovery", "on-secondary"],
+      },
+      "primary-hovered": {
+        key: "{color.discovery.primary-hovered}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#514075",
+        $description:
+          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.3176470588235294, 0.25098039215686274, 0.4588235294117647,
+            ],
+            hex: "#514075",
+          },
+          $description:
+            "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.discovery.primary-hovered}",
+        },
+        name: "ColorDiscoveryPrimaryHovered",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "primary-hovered",
+        },
+        path: ["color", "discovery", "primary-hovered"],
+      },
+      "primary-active": {
+        key: "{color.discovery.primary-active}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#514075",
+        $description:
+          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.discovery.primary-hovered}",
+          $description:
+            "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)",
+          semantic: true,
+          key: "{color.discovery.primary-active}",
+        },
+        name: "ColorDiscoveryPrimaryActive",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "primary-active",
+        },
+        path: ["color", "discovery", "primary-active"],
+      },
+      "primary-inactive": {
+        key: "{color.discovery.primary-inactive}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#796d9d",
+        $description:
+          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.4745098039215686, 0.42745098039215684, 0.615686274509804,
+            ],
+            hex: "#796d9d",
+          },
+          $description:
+            "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.discovery.primary-inactive}",
+        },
+        name: "ColorDiscoveryPrimaryInactive",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "primary-inactive",
+        },
+        path: ["color", "discovery", "primary-inactive"],
+      },
+      "primary-disabled": {
+        key: "{color.discovery.primary-disabled}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#5a5768",
+        $description:
+          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.35294117647058826, 0.3411764705882353, 0.40784313725490196,
+            ],
+            hex: "#5a5768",
+          },
+          $description:
+            "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.discovery.primary-disabled}",
+        },
+        name: "ColorDiscoveryPrimaryDisabled",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "primary-disabled",
+        },
+        path: ["color", "discovery", "primary-disabled"],
+      },
+      "secondary-hovered": {
+        key: "{color.discovery.secondary-hovered}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#786c96",
+        $description:
+          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.47058823529411764, 0.4235294117647059, 0.5882352941176471,
+            ],
+            hex: "#786c96",
+          },
+          $description:
+            "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.discovery.secondary-hovered}",
+        },
+        name: "ColorDiscoverySecondaryHovered",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "secondary-hovered",
+        },
+        path: ["color", "discovery", "secondary-hovered"],
+      },
+      "secondary-active": {
+        key: "{color.discovery.secondary-active}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#786c96",
+        $description:
+          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.discovery.secondary-hovered}",
+          $description:
+            "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% darker)",
+          semantic: true,
+          key: "{color.discovery.secondary-active}",
+        },
+        name: "ColorDiscoverySecondaryActive",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "secondary-active",
+        },
+        path: ["color", "discovery", "secondary-active"],
+      },
+      "secondary-inactive": {
+        key: "{color.discovery.secondary-inactive}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#b69fe3",
+        $description:
+          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.7137254901960784, 0.6235294117647059, 0.8901960784313725,
+            ],
+            hex: "#b69fe3",
+          },
+          $description:
+            "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.discovery.secondary-inactive}",
+        },
+        name: "ColorDiscoverySecondaryInactive",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "secondary-inactive",
+        },
+        path: ["color", "discovery", "secondary-inactive"],
+      },
+      "secondary-disabled": {
+        key: "{color.discovery.secondary-disabled}",
+        theme: "discovery",
+        group: "discovery",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#6e6a79",
+        $description:
+          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "discovery",
+          group: "discovery",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.43137254901960786, 0.41568627450980394, 0.4745098039215686,
+            ],
+            hex: "#6e6a79",
+          },
+          $description:
+            "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.discovery.secondary-disabled}",
+        },
+        name: "ColorDiscoverySecondaryDisabled",
+        attributes: {
+          category: "color",
+          type: "discovery",
+          item: "secondary-disabled",
+        },
+        path: ["color", "discovery", "secondary-disabled"],
+      },
+    },
+    success: {
+      primary: {
+        key: "{color.success.primary}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#3e7160",
+        $description:
+          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.green.7}",
+          $description:
+            "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
+          semantic: true,
+          key: "{color.success.primary}",
+        },
+        name: "ColorSuccessPrimary",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "primary",
+        },
+        path: ["color", "success", "primary"],
+      },
+      "on-primary": {
+        key: "{color.success.on-primary}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#d5d5d5",
+        $description:
+          "Generated text and icon color on success primary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.1}",
+          $description:
+            "Generated text and icon color on success primary backgrounds",
+          semantic: true,
+          key: "{color.success.on-primary}",
+        },
+        name: "ColorSuccessOnPrimary",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "on-primary",
+        },
+        path: ["color", "success", "on-primary"],
+      },
+      secondary: {
+        key: "{color.success.secondary}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#7ba595",
+        $description:
+          "Generated low-emphasis success background for the light theme",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.4823529411764706, 0.6470588235294118, 0.5843137254901961,
+            ],
+            hex: "#7ba595",
+          },
+          $description:
+            "Generated low-emphasis success background for the light theme",
+          semantic: true,
+          key: "{color.success.secondary}",
+        },
+        name: "ColorSuccessSecondary",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "secondary",
+        },
+        path: ["color", "success", "secondary"],
+      },
+      "on-secondary": {
+        key: "{color.success.on-secondary}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#174e3c",
+        $description:
+          "Generated text and icon color on success secondary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.09019607843137255, 0.3058823529411765, 0.23529411764705882,
+            ],
+            hex: "#174e3c",
+          },
+          $description:
+            "Generated text and icon color on success secondary backgrounds",
+          semantic: true,
+          key: "{color.success.on-secondary}",
+        },
+        name: "ColorSuccessOnSecondary",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "on-secondary",
+        },
+        path: ["color", "success", "on-secondary"],
+      },
+      "primary-hovered": {
+        key: "{color.success.primary-hovered}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#1d634e",
+        $description:
+          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.11372549019607843, 0.38823529411764707, 0.3058823529411765,
+            ],
+            hex: "#1d634e",
+          },
+          $description:
+            "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.success.primary-hovered}",
+        },
+        name: "ColorSuccessPrimaryHovered",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "primary-hovered",
+        },
+        path: ["color", "success", "primary-hovered"],
+      },
+      "primary-active": {
+        key: "{color.success.primary-active}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#1d634e",
+        $description:
+          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.success.primary-hovered}",
+          $description:
+            "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)",
+          semantic: true,
+          key: "{color.success.primary-active}",
+        },
+        name: "ColorSuccessPrimaryActive",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "primary-active",
+        },
+        path: ["color", "success", "primary-active"],
+      },
+      "primary-inactive": {
+        key: "{color.success.primary-inactive}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#578172",
+        $description:
+          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.3411764705882353, 0.5058823529411764, 0.4470588235294118,
+            ],
+            hex: "#578172",
+          },
+          $description:
+            "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.success.primary-inactive}",
+        },
+        name: "ColorSuccessPrimaryInactive",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "primary-inactive",
+        },
+        path: ["color", "success", "primary-inactive"],
+      },
+      "primary-disabled": {
+        key: "{color.success.primary-disabled}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#505e5b",
+        $description:
+          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.3137254901960784, 0.3686274509803922, 0.3568627450980392,
+            ],
+            hex: "#505e5b",
+          },
+          $description:
+            "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.success.primary-disabled}",
+        },
+        name: "ColorSuccessPrimaryDisabled",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "primary-disabled",
+        },
+        path: ["color", "success", "primary-disabled"],
+      },
+      "secondary-hovered": {
+        key: "{color.success.secondary-hovered}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#537d6e",
+        $description:
+          "Generated low-emphasis success background for the light theme (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.3254901960784314, 0.49019607843137253, 0.43137254901960786,
+            ],
+            hex: "#537d6e",
+          },
+          $description:
+            "Generated low-emphasis success background for the light theme (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.success.secondary-hovered}",
+        },
+        name: "ColorSuccessSecondaryHovered",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "secondary-hovered",
+        },
+        path: ["color", "success", "secondary-hovered"],
+      },
+      "secondary-active": {
+        key: "{color.success.secondary-active}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#537d6e",
+        $description:
+          "Generated low-emphasis success background for the light theme (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.success.secondary-hovered}",
+          $description:
+            "Generated low-emphasis success background for the light theme (active, 25% darker)",
+          semantic: true,
+          key: "{color.success.secondary-active}",
+        },
+        name: "ColorSuccessSecondaryActive",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "secondary-active",
+        },
+        path: ["color", "success", "secondary-active"],
+      },
+      "secondary-inactive": {
+        key: "{color.success.secondary-inactive}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#96ccb6",
+        $description:
+          "Generated low-emphasis success background for the light theme (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0.5882352941176471, 0.8, 0.7137254901960784],
+            hex: "#96ccb6",
+          },
+          $description:
+            "Generated low-emphasis success background for the light theme (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.success.secondary-inactive}",
+        },
+        name: "ColorSuccessSecondaryInactive",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "secondary-inactive",
+        },
+        path: ["color", "success", "secondary-inactive"],
+      },
+      "secondary-disabled": {
+        key: "{color.success.secondary-disabled}",
+        theme: "success",
+        group: "success",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#65716d",
+        $description:
+          "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+        isSource: true,
+        original: {
+          theme: "success",
+          group: "success",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.396078431372549, 0.44313725490196076, 0.42745098039215684,
+            ],
+            hex: "#65716d",
+          },
+          $description:
+            "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.success.secondary-disabled}",
+        },
+        name: "ColorSuccessSecondaryDisabled",
+        attributes: {
+          category: "color",
+          type: "success",
+          item: "secondary-disabled",
+        },
+        path: ["color", "success", "secondary-disabled"],
+      },
     },
     backdrop: {
       key: "{color.backdrop}",
@@ -3756,1067 +6142,422 @@ module.exports = {
         },
       },
     },
-    base: {
-      key: "{color.base}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#3c3c3e",
-      $description:
-        "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "base",
-      group: "base",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.13}",
-        $description:
-          "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.base}",
-      },
-      name: "ColorBase",
-      attributes: {
-        category: "color",
-        type: "base",
-      },
-      path: ["color", "base"],
-    },
-    "base-subtle": {
-      key: "{color.base-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#b4b4b4",
-      $description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "base",
-      group: "base",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.5}",
-        $description:
-          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.base-subtle}",
-      },
-      name: "ColorBaseSubtle",
-      attributes: {
-        category: "color",
-        type: "base-subtle",
-      },
-      path: ["color", "base-subtle"],
-    },
-    "on-base-accent": {
-      key: "{color.on-base-accent}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#d5d5d5",
-      $description: "Generated text and icon color on base backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "base",
-      group: "base",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.1}",
-        $description: "Generated text and icon color on base backgrounds",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.on-base-accent}",
-      },
-      name: "ColorOnBaseAccent",
-      attributes: {
-        category: "color",
-        type: "on-base-accent",
-      },
-      path: ["color", "on-base-accent"],
-    },
-    "base-accent": {
-      key: "{color.base-accent}",
-      $type: "color",
-      $value: "#3c3c3e",
-      $description: "Alias of base for the base theme",
-      theme: "base",
-      group: "base",
-      original: {
-        $type: "color",
-        $value: "{color.base}",
-        $description: "Alias of base for the base theme",
-        theme: "base",
-        group: "base",
-        key: "{color.base-accent}",
-      },
-      name: "ColorBaseAccent",
-      attributes: {
-        category: "color",
-        type: "base-accent",
-      },
-      path: ["color", "base-accent"],
-    },
-    "on-base-subtle": {
-      key: "{color.on-base-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#343438",
-      $description: "Generated text and icon color on base-subtle backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "base",
-      group: "base",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.14}",
-        $description:
-          "Generated text and icon color on base-subtle backgrounds",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.on-base-subtle}",
-      },
-      name: "ColorOnBaseSubtle",
-      attributes: {
-        category: "color",
-        type: "on-base-subtle",
-      },
-      path: ["color", "on-base-subtle"],
-    },
-    "on-danger-accent": {
-      key: "{color.on-danger-accent}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#d5d5d5",
-      $description: "Generated text and icon color on danger backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "danger",
-      group: "danger",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.1}",
-        $description: "Generated text and icon color on danger backgrounds",
-        semantic: true,
-        theme: "danger",
-        group: "danger",
-        key: "{color.on-danger-accent}",
-      },
-      name: "ColorOnDangerAccent",
-      attributes: {
-        category: "color",
-        type: "on-danger-accent",
-      },
-      path: ["color", "on-danger-accent"],
-    },
-    "danger-accent": {
-      key: "{color.danger-accent}",
-      $type: "color",
-      $value: "#864254",
-      $description: "Alias of danger for the danger theme",
-      theme: "danger",
-      group: "danger",
-      original: {
-        $type: "color",
-        $value: "{color.danger}",
-        $description: "Alias of danger for the danger theme",
-        theme: "danger",
-        group: "danger",
-        key: "{color.danger-accent}",
-      },
-      name: "ColorDangerAccent",
-      attributes: {
-        category: "color",
-        type: "danger-accent",
-      },
-      path: ["color", "danger-accent"],
-    },
-    "danger-subtle": {
-      key: "{color.danger-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#cb7e8b",
-      $description:
-        "Generated low-emphasis danger background for the light theme",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "danger",
-      group: "danger",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.796078431372549, 0.49411764705882355, 0.5450980392156862,
-          ],
-          hex: "#cb7e8b",
-        },
-        $description:
-          "Generated low-emphasis danger background for the light theme",
-        semantic: true,
-        theme: "danger",
-        group: "danger",
-        key: "{color.danger-subtle}",
-      },
-      name: "ColorDangerSubtle",
-      attributes: {
-        category: "color",
-        type: "danger-subtle",
-      },
-      path: ["color", "danger-subtle"],
-    },
-    "on-danger-subtle": {
-      key: "{color.on-danger-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#4d1620",
-      $description:
-        "Generated text and icon color on danger-subtle backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "danger",
-      group: "danger",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.30196078431372547, 0.08627450980392157, 0.12549019607843137,
-          ],
-          hex: "#4d1620",
-        },
-        $description:
-          "Generated text and icon color on danger-subtle backgrounds",
-        semantic: true,
-        theme: "danger",
-        group: "danger",
-        key: "{color.on-danger-subtle}",
-      },
-      name: "ColorOnDangerSubtle",
-      attributes: {
-        category: "color",
-        type: "on-danger-subtle",
-      },
-      path: ["color", "on-danger-subtle"],
-    },
-    "on-warning-accent": {
-      key: "{color.on-warning-accent}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#d5d5d5",
-      $description: "Generated text and icon color on warning backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "warning",
-      group: "warning",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.1}",
-        $description: "Generated text and icon color on warning backgrounds",
-        semantic: true,
-        theme: "warning",
-        group: "warning",
-        key: "{color.on-warning-accent}",
-      },
-      name: "ColorOnWarningAccent",
-      attributes: {
-        category: "color",
-        type: "on-warning-accent",
-      },
-      path: ["color", "on-warning-accent"],
-    },
-    "warning-accent": {
-      key: "{color.warning-accent}",
-      $type: "color",
-      $value: "#786137",
-      $description: "Alias of warning for the warning theme",
-      theme: "warning",
-      group: "warning",
-      original: {
-        $type: "color",
-        $value: "{color.warning}",
-        $description: "Alias of warning for the warning theme",
-        theme: "warning",
-        group: "warning",
-        key: "{color.warning-accent}",
-      },
-      name: "ColorWarningAccent",
-      attributes: {
-        category: "color",
-        type: "warning-accent",
-      },
-      path: ["color", "warning-accent"],
-    },
-    "warning-subtle": {
-      key: "{color.warning-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#ac9674",
-      $description:
-        "Generated low-emphasis warning background for the light theme",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "warning",
-      group: "warning",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.6745098039215687, 0.5882352941176471, 0.4549019607843137,
-          ],
-          hex: "#ac9674",
-        },
-        $description:
-          "Generated low-emphasis warning background for the light theme",
-        semantic: true,
-        theme: "warning",
-        group: "warning",
-        key: "{color.warning-subtle}",
-      },
-      name: "ColorWarningSubtle",
-      attributes: {
-        category: "color",
-        type: "warning-subtle",
-      },
-      path: ["color", "warning-subtle"],
-    },
-    "on-warning-subtle": {
-      key: "{color.on-warning-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#4f3817",
-      $description:
-        "Generated text and icon color on warning-subtle backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "warning",
-      group: "warning",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.30980392156862746, 0.2196078431372549, 0.09019607843137255,
-          ],
-          hex: "#4f3817",
-        },
-        $description:
-          "Generated text and icon color on warning-subtle backgrounds",
-        semantic: true,
-        theme: "warning",
-        group: "warning",
-        key: "{color.on-warning-subtle}",
-      },
-      name: "ColorOnWarningSubtle",
-      attributes: {
-        category: "color",
-        type: "on-warning-subtle",
-      },
-      path: ["color", "on-warning-subtle"],
-    },
-    "on-info-accent": {
-      key: "{color.on-info-accent}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#d5d5d5",
-      $description: "Generated text and icon color on info backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.1}",
-        $description: "Generated text and icon color on info backgrounds",
-        semantic: true,
-        theme: "info",
-        group: "info",
-        key: "{color.on-info-accent}",
-      },
-      name: "ColorOnInfoAccent",
-      attributes: {
-        category: "color",
-        type: "on-info-accent",
-      },
-      path: ["color", "on-info-accent"],
-    },
-    "info-accent": {
-      key: "{color.info-accent}",
-      $type: "color",
-      $value: "#45649b",
-      $description: "Alias of info for the info theme",
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        $value: "{color.info}",
-        $description: "Alias of info for the info theme",
-        theme: "info",
-        group: "info",
-        key: "{color.info-accent}",
-      },
-      name: "ColorInfoAccent",
-      attributes: {
-        category: "color",
-        type: "info-accent",
-      },
-      path: ["color", "info-accent"],
-    },
-    "on-info-subtle": {
-      key: "{color.on-info-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#d5d5d5",
-      $description: "Generated text and icon color on info-subtle backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.1}",
-        $description:
-          "Generated text and icon color on info-subtle backgrounds",
-        semantic: true,
-        theme: "info",
-        group: "info",
-        key: "{color.on-info-subtle}",
-      },
-      name: "ColorOnInfoSubtle",
-      attributes: {
-        category: "color",
-        type: "on-info-subtle",
-      },
-      path: ["color", "on-info-subtle"],
-    },
-    "on-discovery-accent": {
-      key: "{color.on-discovery-accent}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#d5d5d5",
-      $description: "Generated text and icon color on discovery backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.1}",
-        $description: "Generated text and icon color on discovery backgrounds",
-        semantic: true,
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.on-discovery-accent}",
-      },
-      name: "ColorOnDiscoveryAccent",
-      attributes: {
-        category: "color",
-        type: "on-discovery-accent",
-      },
-      path: ["color", "on-discovery-accent"],
-    },
-    "discovery-accent": {
-      key: "{color.discovery-accent}",
-      $type: "color",
-      $value: "#675a8a",
-      $description: "Alias of discovery for the discovery theme",
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        $value: "{color.discovery}",
-        $description: "Alias of discovery for the discovery theme",
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.discovery-accent}",
-      },
-      name: "ColorDiscoveryAccent",
-      attributes: {
-        category: "color",
-        type: "discovery-accent",
-      },
-      path: ["color", "discovery-accent"],
-    },
-    "on-discovery-subtle": {
-      key: "{color.on-discovery-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#d5d5d5",
-      $description:
-        "Generated text and icon color on discovery-subtle backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.1}",
-        $description:
-          "Generated text and icon color on discovery-subtle backgrounds",
-        semantic: true,
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.on-discovery-subtle}",
-      },
-      name: "ColorOnDiscoverySubtle",
-      attributes: {
-        category: "color",
-        type: "on-discovery-subtle",
-      },
-      path: ["color", "on-discovery-subtle"],
-    },
-    "on-success-accent": {
-      key: "{color.on-success-accent}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#d5d5d5",
-      $description: "Generated text and icon color on success backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.neutral.1}",
-        $description: "Generated text and icon color on success backgrounds",
-        semantic: true,
-        theme: "success",
-        group: "success",
-        key: "{color.on-success-accent}",
-      },
-      name: "ColorOnSuccessAccent",
-      attributes: {
-        category: "color",
-        type: "on-success-accent",
-      },
-      path: ["color", "on-success-accent"],
-    },
-    "success-accent": {
-      key: "{color.success-accent}",
-      $type: "color",
-      $value: "#3e7160",
-      $description: "Alias of success for the success theme",
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        $value: "{color.success}",
-        $description: "Alias of success for the success theme",
-        theme: "success",
-        group: "success",
-        key: "{color.success-accent}",
-      },
-      name: "ColorSuccessAccent",
-      attributes: {
-        category: "color",
-        type: "success-accent",
-      },
-      path: ["color", "success-accent"],
-    },
-    "success-subtle": {
-      key: "{color.success-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#7ba595",
-      $description:
-        "Generated low-emphasis success background for the light theme",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.4823529411764706, 0.6470588235294118, 0.5843137254901961,
-          ],
-          hex: "#7ba595",
-        },
-        $description:
-          "Generated low-emphasis success background for the light theme",
-        semantic: true,
-        theme: "success",
-        group: "success",
-        key: "{color.success-subtle}",
-      },
-      name: "ColorSuccessSubtle",
-      attributes: {
-        category: "color",
-        type: "success-subtle",
-      },
-      path: ["color", "success-subtle"],
-    },
-    "on-success-subtle": {
-      key: "{color.on-success-subtle}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#174e3c",
-      $description:
-        "Generated text and icon color on success-subtle backgrounds",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.09019607843137255, 0.3058823529411765, 0.23529411764705882,
-          ],
-          hex: "#174e3c",
-        },
-        $description:
-          "Generated text and icon color on success-subtle backgrounds",
-        semantic: true,
-        theme: "success",
-        group: "success",
-        key: "{color.on-success-subtle}",
-      },
-      name: "ColorOnSuccessSubtle",
-      attributes: {
-        category: "color",
-        type: "on-success-subtle",
-      },
-      path: ["color", "on-success-subtle"],
-    },
-    "border-hovered": {
-      key: "{color.border-hovered}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#2e2e30",
-      $description:
-        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      group: "border",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.black}",
-        $description:
-          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)",
-        semantic: true,
-        group: "border",
-        key: "{color.border-hovered}",
-      },
-      name: "ColorBorderHovered",
-      attributes: {
-        category: "color",
-        type: "border-hovered",
-      },
-      path: ["color", "border-hovered"],
-    },
-    "border-active": {
-      key: "{color.border-active}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#2e2e30",
-      $description:
-        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      group: "border",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.black}",
-        $description:
-          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)",
-        semantic: true,
-        group: "border",
-        key: "{color.border-active}",
-      },
-      name: "ColorBorderActive",
-      attributes: {
-        category: "color",
-        type: "border-active",
-      },
-      path: ["color", "border-active"],
-    },
-    "border-inactive": {
-      key: "{color.border-inactive}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#282828",
-      $description:
-        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      group: "border",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.1568627450980392, 0.1568627450980392, 0.1568627450980392,
-          ],
-          hex: "#282828",
-        },
-        $description:
-          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
-        semantic: true,
-        group: "border",
-        key: "{color.border-inactive}",
-      },
-      name: "ColorBorderInactive",
-      attributes: {
-        category: "color",
-        type: "border-inactive",
-      },
-      path: ["color", "border-inactive"],
-    },
-    "border-disabled": {
-      key: "{color.border-disabled}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#707071",
-      $description:
-        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      group: "border",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.4392156862745098, 0.4392156862745098, 0.44313725490196076,
-          ],
-          hex: "#707071",
-        },
-        $description:
-          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        group: "border",
-        key: "{color.border-disabled}",
-      },
-      name: "ColorBorderDisabled",
-      attributes: {
-        category: "color",
-        type: "border-disabled",
-      },
-      path: ["color", "border-disabled"],
-    },
-    "base-hovered": {
-      key: "{color.base-hovered}",
+    "emphasis-hovered": {
+      key: "{color.emphasis-hovered}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#6a6a6b",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
-      semantic: true,
+      group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "base",
-      group: "base",
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.41568627450980394, 0.41568627450980394, 0.4196078431372549,
-          ],
-          hex: "#6a6a6b",
-        },
+        $value: "{color.base.primary-hovered}",
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% lighter)",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.base-hovered}",
+        group: "foreground",
+        key: "{color.emphasis-hovered}",
       },
-      name: "ColorBaseHovered",
+      name: "ColorEmphasisHovered",
       attributes: {
         category: "color",
-        type: "base-hovered",
+        type: "emphasis-hovered",
       },
-      path: ["color", "base-hovered"],
+      path: ["color", "emphasis-hovered"],
     },
-    "base-active": {
-      key: "{color.base-active}",
+    "emphasis-active": {
+      key: "{color.emphasis-active}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#262626",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)",
-      semantic: true,
+      group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "base",
-      group: "base",
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.14901960784313725, 0.14901960784313725, 0.14901960784313725,
-          ],
-          hex: "#262626",
-        },
+        $value: "{color.base.primary-active}",
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.base-active}",
+        group: "foreground",
+        key: "{color.emphasis-active}",
       },
-      name: "ColorBaseActive",
+      name: "ColorEmphasisActive",
       attributes: {
         category: "color",
-        type: "base-active",
+        type: "emphasis-active",
       },
-      path: ["color", "base-active"],
+      path: ["color", "emphasis-active"],
     },
-    "base-inactive": {
-      key: "{color.base-inactive}",
+    "emphasis-inactive": {
+      key: "{color.emphasis-inactive}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#282828",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
-      semantic: true,
+      group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "base",
-      group: "base",
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.border-inactive}",
+        $value: "{color.base.primary-inactive}",
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.base-inactive}",
+        group: "foreground",
+        key: "{color.emphasis-inactive}",
       },
-      name: "ColorBaseInactive",
+      name: "ColorEmphasisInactive",
       attributes: {
         category: "color",
-        type: "base-inactive",
+        type: "emphasis-inactive",
       },
-      path: ["color", "base-inactive"],
+      path: ["color", "emphasis-inactive"],
     },
-    "base-disabled": {
-      key: "{color.base-disabled}",
+    "emphasis-disabled": {
+      key: "{color.emphasis-disabled}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#4c4c4e",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
+      group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "base",
-      group: "base",
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.2980392156862745, 0.2980392156862745, 0.3058823529411765,
-          ],
-          hex: "#4c4c4e",
-        },
+        $value: "{color.base.primary-disabled}",
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.base-disabled}",
+        group: "foreground",
+        key: "{color.emphasis-disabled}",
       },
-      name: "ColorBaseDisabled",
+      name: "ColorEmphasisDisabled",
       attributes: {
         category: "color",
-        type: "base-disabled",
+        type: "emphasis-disabled",
       },
-      path: ["color", "base-disabled"],
+      path: ["color", "emphasis-disabled"],
     },
-    "base-subtle-hovered": {
-      key: "{color.base-subtle-hovered}",
+    "ink-hovered": {
+      key: "{color.ink-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#9d9d9d",
+      $value: "#2e2e30",
       $description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 12% darker)",
-      semantic: true,
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, light contrast primitive)",
+      group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "base",
-      group: "base",
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [0.615686274509804, 0.615686274509804, 0.615686274509804],
-          hex: "#9d9d9d",
-        },
+        $value: "{color.black}",
         $description:
-          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 12% darker)",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.base-subtle-hovered}",
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, light contrast primitive)",
+        group: "foreground",
+        key: "{color.ink-hovered}",
       },
-      name: "ColorBaseSubtleHovered",
+      name: "ColorInkHovered",
       attributes: {
         category: "color",
-        type: "base-subtle-hovered",
+        type: "ink-hovered",
       },
-      path: ["color", "base-subtle-hovered"],
+      path: ["color", "ink-hovered"],
     },
-    "base-subtle-active": {
-      key: "{color.base-subtle-active}",
+    "ink-active": {
+      key: "{color.ink-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#9d9d9d",
+      $value: "#2e2e30",
       $description:
-        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 12% darker)",
-      semantic: true,
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, light contrast primitive)",
+      group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "base",
-      group: "base",
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.base-subtle-hovered}",
+        $value: "{color.black}",
         $description:
-          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, 12% darker)",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.base-subtle-active}",
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, light contrast primitive)",
+        group: "foreground",
+        key: "{color.ink-active}",
       },
-      name: "ColorBaseSubtleActive",
+      name: "ColorInkActive",
       attributes: {
         category: "color",
-        type: "base-subtle-active",
+        type: "ink-active",
       },
-      path: ["color", "base-subtle-active"],
+      path: ["color", "ink-active"],
     },
-    "base-subtle-inactive": {
-      key: "{color.base-subtle-inactive}",
+    "ink-inactive": {
+      key: "{color.ink-inactive}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#282828",
+      $description:
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)",
+      group: "foreground",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.base.primary-inactive}",
+        $description:
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)",
+        group: "foreground",
+        key: "{color.ink-inactive}",
+      },
+      name: "ColorInkInactive",
+      attributes: {
+        category: "color",
+        type: "ink-inactive",
+      },
+      path: ["color", "ink-inactive"],
+    },
+    "ink-disabled": {
+      key: "{color.ink-disabled}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#595a5c",
+      $description:
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      group: "foreground",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.base.secondary-disabled}",
+        $description:
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        group: "foreground",
+        key: "{color.ink-disabled}",
+      },
+      name: "ColorInkDisabled",
+      attributes: {
+        category: "color",
+        type: "ink-disabled",
+      },
+      path: ["color", "ink-disabled"],
+    },
+    "subtle-hovered": {
+      key: "{color.subtle-hovered}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#2e2e30",
+      $description:
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, light contrast primitive)",
+      group: "foreground",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.black}",
+        $description:
+          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, light contrast primitive)",
+        group: "foreground",
+        key: "{color.subtle-hovered}",
+      },
+      name: "ColorSubtleHovered",
+      attributes: {
+        category: "color",
+        type: "subtle-hovered",
+      },
+      path: ["color", "subtle-hovered"],
+    },
+    "subtle-active": {
+      key: "{color.subtle-active}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#2e2e30",
+      $description:
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)",
+      group: "foreground",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.black}",
+        $description:
+          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)",
+        group: "foreground",
+        key: "{color.subtle-active}",
+      },
+      name: "ColorSubtleActive",
+      attributes: {
+        category: "color",
+        type: "subtle-active",
+      },
+      path: ["color", "subtle-active"],
+    },
+    "subtle-inactive": {
+      key: "{color.subtle-inactive}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#282828",
       $description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
-      semantic: true,
+      group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "base",
-      group: "base",
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.border-inactive}",
+        $value: "{color.base.primary-inactive}",
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.base-subtle-inactive}",
+        group: "foreground",
+        key: "{color.subtle-inactive}",
       },
-      name: "ColorBaseSubtleInactive",
+      name: "ColorSubtleInactive",
       attributes: {
         category: "color",
-        type: "base-subtle-inactive",
+        type: "subtle-inactive",
       },
-      path: ["color", "base-subtle-inactive"],
+      path: ["color", "subtle-inactive"],
     },
-    "base-subtle-disabled": {
-      key: "{color.base-subtle-disabled}",
+    "subtle-disabled": {
+      key: "{color.subtle-disabled}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#6a6a6b",
+      $description:
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      group: "foreground",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.base.primary-hovered}",
+        $description:
+          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        group: "foreground",
+        key: "{color.subtle-disabled}",
+      },
+      name: "ColorSubtleDisabled",
+      attributes: {
+        category: "color",
+        type: "subtle-disabled",
+      },
+      path: ["color", "subtle-disabled"],
+    },
+    "subtlest-hovered": {
+      key: "{color.subtlest-hovered}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#2e2e30",
+      $description:
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, light contrast primitive)",
+      group: "foreground",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.black}",
+        $description:
+          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, light contrast primitive)",
+        group: "foreground",
+        key: "{color.subtlest-hovered}",
+      },
+      name: "ColorSubtlestHovered",
+      attributes: {
+        category: "color",
+        type: "subtlest-hovered",
+      },
+      path: ["color", "subtlest-hovered"],
+    },
+    "subtlest-active": {
+      key: "{color.subtlest-active}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#2e2e30",
+      $description:
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)",
+      group: "foreground",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.black}",
+        $description:
+          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)",
+        group: "foreground",
+        key: "{color.subtlest-active}",
+      },
+      name: "ColorSubtlestActive",
+      attributes: {
+        category: "color",
+        type: "subtlest-active",
+      },
+      path: ["color", "subtlest-active"],
+    },
+    "subtlest-inactive": {
+      key: "{color.subtlest-inactive}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#282828",
+      $description:
+        "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
+      group: "foreground",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.base.primary-inactive}",
+        $description:
+          "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)",
+        group: "foreground",
+        key: "{color.subtlest-inactive}",
+      },
+      name: "ColorSubtlestInactive",
+      attributes: {
+        category: "color",
+        type: "subtlest-inactive",
+      },
+      path: ["color", "subtlest-inactive"],
+    },
+    "subtlest-disabled": {
+      key: "{color.subtlest-disabled}",
       $type: "color",
       colorSpace: "display-p3",
       $value: "#767678",
       $description:
         "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
+      group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "base",
-      group: "base",
       original: {
         $type: "color",
         colorSpace: "display-p3",
@@ -4829,1435 +6570,735 @@ module.exports = {
         },
         $description:
           "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "base",
-        group: "base",
-        key: "{color.base-subtle-disabled}",
+        group: "foreground",
+        key: "{color.subtlest-disabled}",
       },
-      name: "ColorBaseSubtleDisabled",
+      name: "ColorSubtlestDisabled",
       attributes: {
         category: "color",
-        type: "base-subtle-disabled",
+        type: "subtlest-disabled",
       },
-      path: ["color", "base-subtle-disabled"],
+      path: ["color", "subtlest-disabled"],
     },
-    "danger-hovered": {
-      key: "{color.danger-hovered}",
+    "sunken-hovered": {
+      key: "{color.sunken-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#75223c",
+      $value: "#bcbcbc",
       $description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)",
-      semantic: true,
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 4% darker)",
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "danger",
-      group: "danger",
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
           components: [
-            0.4588235294117647, 0.13333333333333333, 0.23529411764705882,
+            0.7372549019607844, 0.7372549019607844, 0.7372549019607844,
           ],
-          hex: "#75223c",
+          hex: "#bcbcbc",
         },
         $description:
-          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% darker)",
-        semantic: true,
-        theme: "danger",
-        group: "danger",
-        key: "{color.danger-hovered}",
+          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (hovered, 4% darker)",
+        group: "background",
+        key: "{color.sunken-hovered}",
       },
-      name: "ColorDangerHovered",
+      name: "ColorSunkenHovered",
       attributes: {
         category: "color",
-        type: "danger-hovered",
+        type: "sunken-hovered",
       },
-      path: ["color", "danger-hovered"],
+      path: ["color", "sunken-hovered"],
     },
-    "danger-active": {
-      key: "{color.danger-active}",
+    "sunken-active": {
+      key: "{color.sunken-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#75223c",
+      $value: "#bcbcbc",
       $description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)",
-      semantic: true,
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 4% darker)",
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "danger",
-      group: "danger",
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.danger-hovered}",
+        $value: "{color.sunken-hovered}",
         $description:
-          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% darker)",
-        semantic: true,
-        theme: "danger",
-        group: "danger",
-        key: "{color.danger-active}",
+          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (active, 4% darker)",
+        group: "background",
+        key: "{color.sunken-active}",
       },
-      name: "ColorDangerActive",
+      name: "ColorSunkenActive",
       attributes: {
         category: "color",
-        type: "danger-active",
+        type: "sunken-active",
       },
-      path: ["color", "danger-active"],
+      path: ["color", "sunken-active"],
     },
-    "danger-inactive": {
-      key: "{color.danger-inactive}",
+    "sunken-inactive": {
+      key: "{color.sunken-inactive}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#975967",
+      $value: "#d9d9d9",
       $description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
-      semantic: true,
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% brighter)",
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "danger",
-      group: "danger",
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.white}",
+        $description:
+          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (inactive, 10% brighter)",
+        group: "background",
+        key: "{color.sunken-inactive}",
+      },
+      name: "ColorSunkenInactive",
+      attributes: {
+        category: "color",
+        type: "sunken-inactive",
+      },
+      path: ["color", "sunken-inactive"],
+    },
+    "sunken-disabled": {
+      key: "{color.sunken-disabled}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#a0a0a1",
+      $description:
+        "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+      group: "background",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
           components: [
-            0.592156862745098, 0.34901960784313724, 0.403921568627451,
+            0.6274509803921569, 0.6274509803921569, 0.6313725490196078,
           ],
-          hex: "#975967",
+          hex: "#a0a0a1",
         },
         $description:
-          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (inactive, 20% brighter)",
-        semantic: true,
-        theme: "danger",
-        group: "danger",
-        key: "{color.danger-inactive}",
+          "Recessed surface that sits below the page canvas. Use it for tracks, wells and inset areas that hold other content. Used for the Progress and CircularProgress tracks, the Tabs list background, ScrollView scrollbar tracks and the `sunken` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        group: "background",
+        key: "{color.sunken-disabled}",
       },
-      name: "ColorDangerInactive",
+      name: "ColorSunkenDisabled",
       attributes: {
         category: "color",
-        type: "danger-inactive",
+        type: "sunken-disabled",
       },
-      path: ["color", "danger-inactive"],
+      path: ["color", "sunken-disabled"],
     },
-    "danger-disabled": {
-      key: "{color.danger-disabled}",
+    "canvas-hovered": {
+      key: "{color.canvas-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#655156",
+      $value: "#c2c2c2",
       $description:
-        "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 4% darker)",
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "danger",
-      group: "danger",
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
           components: [
-            0.396078431372549, 0.3176470588235294, 0.33725490196078434,
+            0.7607843137254902, 0.7607843137254902, 0.7607843137254902,
           ],
-          hex: "#655156",
+          hex: "#c2c2c2",
         },
         $description:
-          "Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "danger",
-        group: "danger",
-        key: "{color.danger-disabled}",
+          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (hovered, 4% darker)",
+        group: "background",
+        key: "{color.canvas-hovered}",
       },
-      name: "ColorDangerDisabled",
+      name: "ColorCanvasHovered",
       attributes: {
         category: "color",
-        type: "danger-disabled",
+        type: "canvas-hovered",
       },
-      path: ["color", "danger-disabled"],
+      path: ["color", "canvas-hovered"],
     },
-    "danger-subtle-hovered": {
-      key: "{color.danger-subtle-hovered}",
+    "canvas-active": {
+      key: "{color.canvas-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#9a5d6a",
+      $value: "#c2c2c2",
       $description:
-        "Generated low-emphasis danger background for the light theme (hovered, 25% darker)",
-      semantic: true,
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 4% darker)",
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "danger",
-      group: "danger",
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.canvas-hovered}",
+        $description:
+          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 4% darker)",
+        group: "background",
+        key: "{color.canvas-active}",
+      },
+      name: "ColorCanvasActive",
+      attributes: {
+        category: "color",
+        type: "canvas-active",
+      },
+      path: ["color", "canvas-active"],
+    },
+    "canvas-inactive": {
+      key: "{color.canvas-inactive}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#d9d9d9",
+      $description:
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% brighter)",
+      group: "background",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.white}",
+        $description:
+          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (inactive, 10% brighter)",
+        group: "background",
+        key: "{color.canvas-inactive}",
+      },
+      name: "ColorCanvasInactive",
+      attributes: {
+        category: "color",
+        type: "canvas-inactive",
+      },
+      path: ["color", "canvas-inactive"],
+    },
+    "canvas-disabled": {
+      key: "{color.canvas-disabled}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#a4a4a5",
+      $description:
+        "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+      group: "background",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
           components: [
-            0.6039215686274509, 0.36470588235294116, 0.41568627450980394,
+            0.6431372549019608, 0.6431372549019608, 0.6470588235294118,
           ],
-          hex: "#9a5d6a",
+          hex: "#a4a4a5",
         },
         $description:
-          "Generated low-emphasis danger background for the light theme (hovered, 25% darker)",
-        semantic: true,
-        theme: "danger",
-        group: "danger",
-        key: "{color.danger-subtle-hovered}",
+          "Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        group: "background",
+        key: "{color.canvas-disabled}",
       },
-      name: "ColorDangerSubtleHovered",
+      name: "ColorCanvasDisabled",
       attributes: {
         category: "color",
-        type: "danger-subtle-hovered",
+        type: "canvas-disabled",
       },
-      path: ["color", "danger-subtle-hovered"],
+      path: ["color", "canvas-disabled"],
     },
-    "danger-subtle-active": {
-      key: "{color.danger-subtle-active}",
+    "surface-hovered": {
+      key: "{color.surface-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#9a5d6a",
+      $value: "#c7c7c7",
       $description:
-        "Generated low-emphasis danger background for the light theme (active, 25% darker)",
-      semantic: true,
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 4% darker)",
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "danger",
-      group: "danger",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.danger-subtle-hovered}",
-        $description:
-          "Generated low-emphasis danger background for the light theme (active, 25% darker)",
-        semantic: true,
-        theme: "danger",
-        group: "danger",
-        key: "{color.danger-subtle-active}",
-      },
-      name: "ColorDangerSubtleActive",
-      attributes: {
-        category: "color",
-        type: "danger-subtle-active",
-      },
-      path: ["color", "danger-subtle-active"],
-    },
-    "danger-subtle-inactive": {
-      key: "{color.danger-subtle-inactive}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#e094a4",
-      $description:
-        "Generated low-emphasis danger background for the light theme (inactive, 20% brighter)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "danger",
-      group: "danger",
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
           components: [
-            0.8784313725490196, 0.5803921568627451, 0.6431372549019608,
+            0.7803921568627451, 0.7803921568627451, 0.7803921568627451,
           ],
-          hex: "#e094a4",
+          hex: "#c7c7c7",
         },
         $description:
-          "Generated low-emphasis danger background for the light theme (inactive, 20% brighter)",
-        semantic: true,
-        theme: "danger",
-        group: "danger",
-        key: "{color.danger-subtle-inactive}",
+          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (hovered, 4% darker)",
+        group: "background",
+        key: "{color.surface-hovered}",
       },
-      name: "ColorDangerSubtleInactive",
+      name: "ColorSurfaceHovered",
       attributes: {
         category: "color",
-        type: "danger-subtle-inactive",
+        type: "surface-hovered",
       },
-      path: ["color", "danger-subtle-inactive"],
+      path: ["color", "surface-hovered"],
     },
-    "danger-subtle-disabled": {
-      key: "{color.danger-subtle-disabled}",
+    "surface-active": {
+      key: "{color.surface-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#7a676b",
+      $value: "#c7c7c7",
       $description:
-        "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 4% darker)",
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "danger",
-      group: "danger",
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.surface-hovered}",
+        $description:
+          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (active, 4% darker)",
+        group: "background",
+        key: "{color.surface-active}",
+      },
+      name: "ColorSurfaceActive",
+      attributes: {
+        category: "color",
+        type: "surface-active",
+      },
+      path: ["color", "surface-active"],
+    },
+    "surface-inactive": {
+      key: "{color.surface-inactive}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#d9d9d9",
+      $description:
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% brighter)",
+      group: "background",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.white}",
+        $description:
+          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (inactive, 10% brighter)",
+        group: "background",
+        key: "{color.surface-inactive}",
+      },
+      name: "ColorSurfaceInactive",
+      attributes: {
+        category: "color",
+        type: "surface-inactive",
+      },
+      path: ["color", "surface-inactive"],
+    },
+    "surface-disabled": {
+      key: "{color.surface-disabled}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#a7a7a8",
+      $description:
+        "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+      group: "background",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
           components: [
-            0.47843137254901963, 0.403921568627451, 0.4196078431372549,
+            0.6549019607843137, 0.6549019607843137, 0.6588235294117647,
           ],
-          hex: "#7a676b",
+          hex: "#a7a7a8",
         },
         $description:
-          "Generated low-emphasis danger background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "danger",
-        group: "danger",
-        key: "{color.danger-subtle-disabled}",
+          "Raised surface one step above the canvas, for resting cards and controls. This is the default background for interactive elements and the gap color inside offset focus rings. Used by Button (`surface` variant), Input, TextArea, Select, Checkbox, Switch, Card, Accordion, Table, Tabs and FileTree. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        group: "background",
+        key: "{color.surface-disabled}",
       },
-      name: "ColorDangerSubtleDisabled",
+      name: "ColorSurfaceDisabled",
       attributes: {
         category: "color",
-        type: "danger-subtle-disabled",
+        type: "surface-disabled",
       },
-      path: ["color", "danger-subtle-disabled"],
+      path: ["color", "surface-disabled"],
     },
-    "warning-hovered": {
-      key: "{color.warning-hovered}",
+    "elevated-hovered": {
+      key: "{color.elevated-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#694d1e",
+      $value: "#cdcdcd",
       $description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
-      semantic: true,
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 4% darker)",
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "warning",
-      group: "warning",
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: {
+          colorSpace: "srgb",
+          components: [0.803921568627451, 0.803921568627451, 0.803921568627451],
+          hex: "#cdcdcd",
+        },
+        $description:
+          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (hovered, 4% darker)",
+        group: "background",
+        key: "{color.elevated-hovered}",
+      },
+      name: "ColorElevatedHovered",
+      attributes: {
+        category: "color",
+        type: "elevated-hovered",
+      },
+      path: ["color", "elevated-hovered"],
+    },
+    "elevated-active": {
+      key: "{color.elevated-active}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#cdcdcd",
+      $description:
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 4% darker)",
+      group: "background",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.elevated-hovered}",
+        $description:
+          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (active, 4% darker)",
+        group: "background",
+        key: "{color.elevated-active}",
+      },
+      name: "ColorElevatedActive",
+      attributes: {
+        category: "color",
+        type: "elevated-active",
+      },
+      path: ["color", "elevated-active"],
+    },
+    "elevated-inactive": {
+      key: "{color.elevated-inactive}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#d9d9d9",
+      $description:
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% brighter)",
+      group: "background",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.white}",
+        $description:
+          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (inactive, 10% brighter)",
+        group: "background",
+        key: "{color.elevated-inactive}",
+      },
+      name: "ColorElevatedInactive",
+      attributes: {
+        category: "color",
+        type: "elevated-inactive",
+      },
+      path: ["color", "elevated-inactive"],
+    },
+    "elevated-disabled": {
+      key: "{color.elevated-disabled}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#acacad",
+      $description:
+        "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+      group: "background",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
           components: [
-            0.4117647058823529, 0.30196078431372547, 0.11764705882352941,
+            0.6745098039215687, 0.6745098039215687, 0.6784313725490196,
           ],
-          hex: "#694d1e",
+          hex: "#acacad",
         },
         $description:
-          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker)",
-        semantic: true,
-        theme: "warning",
-        group: "warning",
-        key: "{color.warning-hovered}",
+          "Surface for content that floats above the page, such as menus, popovers and dialogs. Used by Popover, Tooltip, the Select dropdown, AlertDialog, Sheet, SearchInput results, active CodeBlock tabs and the `floating` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        group: "background",
+        key: "{color.elevated-disabled}",
       },
-      name: "ColorWarningHovered",
+      name: "ColorElevatedDisabled",
       attributes: {
         category: "color",
-        type: "warning-hovered",
+        type: "elevated-disabled",
       },
-      path: ["color", "warning-hovered"],
+      path: ["color", "elevated-disabled"],
     },
-    "warning-active": {
-      key: "{color.warning-active}",
+    "floating-hovered": {
+      key: "{color.floating-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#694d1e",
+      $value: "#d0d0d0",
       $description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
-      semantic: true,
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 4% darker)",
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "warning",
-      group: "warning",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.warning-hovered}",
-        $description:
-          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker)",
-        semantic: true,
-        theme: "warning",
-        group: "warning",
-        key: "{color.warning-active}",
-      },
-      name: "ColorWarningActive",
-      attributes: {
-        category: "color",
-        type: "warning-active",
-      },
-      path: ["color", "warning-active"],
-    },
-    "warning-inactive": {
-      key: "{color.warning-inactive}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#887351",
-      $description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "warning",
-      group: "warning",
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
           components: [
-            0.5333333333333333, 0.45098039215686275, 0.3176470588235294,
+            0.8156862745098039, 0.8156862745098039, 0.8156862745098039,
           ],
-          hex: "#887351",
+          hex: "#d0d0d0",
         },
         $description:
-          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter)",
-        semantic: true,
-        theme: "warning",
-        group: "warning",
-        key: "{color.warning-inactive}",
+          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (hovered, 4% darker)",
+        group: "background",
+        key: "{color.floating-hovered}",
       },
-      name: "ColorWarningInactive",
+      name: "ColorFloatingHovered",
       attributes: {
         category: "color",
-        type: "warning-inactive",
+        type: "floating-hovered",
       },
-      path: ["color", "warning-inactive"],
+      path: ["color", "floating-hovered"],
     },
-    "warning-disabled": {
-      key: "{color.warning-disabled}",
+    "floating-active": {
+      key: "{color.floating-active}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#605950",
+      $value: "#d0d0d0",
       $description:
-        "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 4% darker)",
+      group: "background",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "warning",
-      group: "warning",
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.floating-hovered}",
+        $description:
+          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (active, 4% darker)",
+        group: "background",
+        key: "{color.floating-active}",
+      },
+      name: "ColorFloatingActive",
+      attributes: {
+        category: "color",
+        type: "floating-active",
+      },
+      path: ["color", "floating-active"],
+    },
+    "floating-inactive": {
+      key: "{color.floating-inactive}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#d9d9d9",
+      $description:
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% brighter)",
+      group: "background",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.white}",
+        $description:
+          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (inactive, 10% brighter)",
+        group: "background",
+        key: "{color.floating-inactive}",
+      },
+      name: "ColorFloatingInactive",
+      attributes: {
+        category: "color",
+        type: "floating-inactive",
+      },
+      path: ["color", "floating-inactive"],
+    },
+    "floating-disabled": {
+      key: "{color.floating-disabled}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#aeaeaf",
+      $description:
+        "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+      group: "background",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
           components: [
-            0.3764705882352941, 0.34901960784313724, 0.3137254901960784,
+            0.6823529411764706, 0.6823529411764706, 0.6862745098039216,
           ],
-          hex: "#605950",
+          hex: "#aeaeaf",
         },
         $description:
-          "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "warning",
-        group: "warning",
-        key: "{color.warning-disabled}",
+          "Topmost surface, for transient content layered over floating surfaces and for small highlighted chips. Used by Alert and its icon background, InlineCodeText, hovered Select items and the `overlay` Container variant. (disabled, 68% over oklch(0.3839 0.0045 286.26))",
+        group: "background",
+        key: "{color.floating-disabled}",
       },
-      name: "ColorWarningDisabled",
+      name: "ColorFloatingDisabled",
       attributes: {
         category: "color",
-        type: "warning-disabled",
+        type: "floating-disabled",
       },
-      path: ["color", "warning-disabled"],
+      path: ["color", "floating-disabled"],
     },
-    "warning-subtle-hovered": {
-      key: "{color.warning-subtle-hovered}",
+    "hairline-hovered": {
+      key: "{color.hairline-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#856f4d",
+      $value: "#2e2e30",
       $description:
-        "Generated low-emphasis warning background for the light theme (hovered, 25% darker)",
+        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)",
       semantic: true,
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
       isSource: true,
-      theme: "warning",
-      group: "warning",
+      group: "hairline",
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.black}",
+        $description:
+          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (hovered, light contrast primitive)",
+        semantic: true,
+        group: "hairline",
+        key: "{color.hairline-hovered}",
+      },
+      name: "ColorHairlineHovered",
+      attributes: {
+        category: "color",
+        type: "hairline-hovered",
+      },
+      path: ["color", "hairline-hovered"],
+    },
+    "hairline-active": {
+      key: "{color.hairline-active}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#2e2e30",
+      $description:
+        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)",
+      semantic: true,
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      group: "hairline",
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.black}",
+        $description:
+          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (active, light contrast primitive)",
+        semantic: true,
+        group: "hairline",
+        key: "{color.hairline-active}",
+      },
+      name: "ColorHairlineActive",
+      attributes: {
+        category: "color",
+        type: "hairline-active",
+      },
+      path: ["color", "hairline-active"],
+    },
+    "hairline-inactive": {
+      key: "{color.hairline-inactive}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#282828",
+      $description:
+        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
+      semantic: true,
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      group: "hairline",
+      original: {
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "{color.base.primary-inactive}",
+        $description:
+          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)",
+        semantic: true,
+        group: "hairline",
+        key: "{color.hairline-inactive}",
+      },
+      name: "ColorHairlineInactive",
+      attributes: {
+        category: "color",
+        type: "hairline-inactive",
+      },
+      path: ["color", "hairline-inactive"],
+    },
+    "hairline-disabled": {
+      key: "{color.hairline-disabled}",
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "#7c7c7d",
+      $description:
+        "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
+      semantic: true,
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
+      isSource: true,
+      group: "hairline",
       original: {
         $type: "color",
         colorSpace: "display-p3",
         $value: {
           colorSpace: "srgb",
           components: [
-            0.5215686274509804, 0.43529411764705883, 0.30196078431372547,
+            0.48627450980392156, 0.48627450980392156, 0.49019607843137253,
           ],
-          hex: "#856f4d",
+          hex: "#7c7c7d",
         },
         $description:
-          "Generated low-emphasis warning background for the light theme (hovered, 25% darker)",
+          "Low-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
-        theme: "warning",
-        group: "warning",
-        key: "{color.warning-subtle-hovered}",
+        group: "hairline",
+        key: "{color.hairline-disabled}",
       },
-      name: "ColorWarningSubtleHovered",
+      name: "ColorHairlineDisabled",
       attributes: {
         category: "color",
-        type: "warning-subtle-hovered",
+        type: "hairline-disabled",
       },
-      path: ["color", "warning-subtle-hovered"],
-    },
-    "warning-subtle-active": {
-      key: "{color.warning-subtle-active}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#856f4d",
-      $description:
-        "Generated low-emphasis warning background for the light theme (active, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "warning",
-      group: "warning",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.warning-subtle-hovered}",
-        $description:
-          "Generated low-emphasis warning background for the light theme (active, 25% darker)",
-        semantic: true,
-        theme: "warning",
-        group: "warning",
-        key: "{color.warning-subtle-active}",
-      },
-      name: "ColorWarningSubtleActive",
-      attributes: {
-        category: "color",
-        type: "warning-subtle-active",
-      },
-      path: ["color", "warning-subtle-active"],
-    },
-    "warning-subtle-inactive": {
-      key: "{color.warning-subtle-inactive}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#d6b88c",
-      $description:
-        "Generated low-emphasis warning background for the light theme (inactive, 20% brighter)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "warning",
-      group: "warning",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.8392156862745098, 0.7215686274509804, 0.5490196078431373,
-          ],
-          hex: "#d6b88c",
-        },
-        $description:
-          "Generated low-emphasis warning background for the light theme (inactive, 20% brighter)",
-        semantic: true,
-        theme: "warning",
-        group: "warning",
-        key: "{color.warning-subtle-inactive}",
-      },
-      name: "ColorWarningSubtleInactive",
-      attributes: {
-        category: "color",
-        type: "warning-subtle-inactive",
-      },
-      path: ["color", "warning-subtle-inactive"],
-    },
-    "warning-subtle-disabled": {
-      key: "{color.warning-subtle-disabled}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#736c64",
-      $description:
-        "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "warning",
-      group: "warning",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.45098039215686275, 0.4235294117647059, 0.39215686274509803,
-          ],
-          hex: "#736c64",
-        },
-        $description:
-          "Generated low-emphasis warning background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "warning",
-        group: "warning",
-        key: "{color.warning-subtle-disabled}",
-      },
-      name: "ColorWarningSubtleDisabled",
-      attributes: {
-        category: "color",
-        type: "warning-subtle-disabled",
-      },
-      path: ["color", "warning-subtle-disabled"],
-    },
-    "info-hovered": {
-      key: "{color.info-hovered}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#274988",
-      $description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.15294117647058825, 0.28627450980392155, 0.5333333333333333,
-          ],
-          hex: "#274988",
-        },
-        $description:
-          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)",
-        semantic: true,
-        theme: "info",
-        group: "info",
-        key: "{color.info-hovered}",
-      },
-      name: "ColorInfoHovered",
-      attributes: {
-        category: "color",
-        type: "info-hovered",
-      },
-      path: ["color", "info-hovered"],
-    },
-    "info-active": {
-      key: "{color.info-active}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#274988",
-      $description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.info-hovered}",
-        $description:
-          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (active, 25% darker)",
-        semantic: true,
-        theme: "info",
-        group: "info",
-        key: "{color.info-active}",
-      },
-      name: "ColorInfoActive",
-      attributes: {
-        category: "color",
-        type: "info-active",
-      },
-      path: ["color", "info-active"],
-    },
-    "info-inactive": {
-      key: "{color.info-inactive}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#5a79af",
-      $description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.35294117647058826, 0.4745098039215686, 0.6862745098039216,
-          ],
-          hex: "#5a79af",
-        },
-        $description:
-          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% brighter)",
-        semantic: true,
-        theme: "info",
-        group: "info",
-        key: "{color.info-inactive}",
-      },
-      name: "ColorInfoInactive",
-      attributes: {
-        category: "color",
-        type: "info-inactive",
-      },
-      path: ["color", "info-inactive"],
-    },
-    "info-disabled": {
-      key: "{color.info-disabled}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#515a6e",
-      $description:
-        "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.3176470588235294, 0.35294117647058826, 0.43137254901960786,
-          ],
-          hex: "#515a6e",
-        },
-        $description:
-          "Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "info",
-        group: "info",
-        key: "{color.info-disabled}",
-      },
-      name: "ColorInfoDisabled",
-      attributes: {
-        category: "color",
-        type: "info-disabled",
-      },
-      path: ["color", "info-disabled"],
-    },
-    "info-subtle-hovered": {
-      key: "{color.info-subtle-hovered}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#5873a4",
-      $description:
-        "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.34509803921568627, 0.45098039215686275, 0.6431372549019608,
-          ],
-          hex: "#5873a4",
-        },
-        $description:
-          "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (hovered, 25% darker)",
-        semantic: true,
-        theme: "info",
-        group: "info",
-        key: "{color.info-subtle-hovered}",
-      },
-      name: "ColorInfoSubtleHovered",
-      attributes: {
-        category: "color",
-        type: "info-subtle-hovered",
-      },
-      path: ["color", "info-subtle-hovered"],
-    },
-    "info-subtle-active": {
-      key: "{color.info-subtle-active}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#5873a4",
-      $description:
-        "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.info-subtle-hovered}",
-        $description:
-          "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (active, 25% darker)",
-        semantic: true,
-        theme: "info",
-        group: "info",
-        key: "{color.info-subtle-active}",
-      },
-      name: "ColorInfoSubtleActive",
-      attributes: {
-        category: "color",
-        type: "info-subtle-active",
-      },
-      path: ["color", "info-subtle-active"],
-    },
-    "info-subtle-inactive": {
-      key: "{color.info-subtle-inactive}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#8cb9de",
-      $description:
-        "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% brighter)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.5490196078431373, 0.7254901960784313, 0.8705882352941177,
-          ],
-          hex: "#8cb9de",
-        },
-        $description:
-          "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (inactive, 20% brighter)",
-        semantic: true,
-        theme: "info",
-        group: "info",
-        key: "{color.info-subtle-inactive}",
-      },
-      name: "ColorInfoSubtleInactive",
-      attributes: {
-        category: "color",
-        type: "info-subtle-inactive",
-      },
-      path: ["color", "info-subtle-inactive"],
-    },
-    "info-subtle-disabled": {
-      key: "{color.info-subtle-disabled}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#646e7f",
-      $description:
-        "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "info",
-      group: "info",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.39215686274509803, 0.43137254901960786, 0.4980392156862745,
-          ],
-          hex: "#646e7f",
-        },
-        $description:
-          "Low-emphasis info color for the `info` theme. Exposed as `muted` inside that theme; use it for soft info-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the info theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "info",
-        group: "info",
-        key: "{color.info-subtle-disabled}",
-      },
-      name: "ColorInfoSubtleDisabled",
-      attributes: {
-        category: "color",
-        type: "info-subtle-disabled",
-      },
-      path: ["color", "info-subtle-disabled"],
-    },
-    "discovery-hovered": {
-      key: "{color.discovery-hovered}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#514075",
-      $description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.3176470588235294, 0.25098039215686274, 0.4588235294117647,
-          ],
-          hex: "#514075",
-        },
-        $description:
-          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)",
-        semantic: true,
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.discovery-hovered}",
-      },
-      name: "ColorDiscoveryHovered",
-      attributes: {
-        category: "color",
-        type: "discovery-hovered",
-      },
-      path: ["color", "discovery-hovered"],
-    },
-    "discovery-active": {
-      key: "{color.discovery-active}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#514075",
-      $description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.discovery-hovered}",
-        $description:
-          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (active, 25% darker)",
-        semantic: true,
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.discovery-active}",
-      },
-      name: "ColorDiscoveryActive",
-      attributes: {
-        category: "color",
-        type: "discovery-active",
-      },
-      path: ["color", "discovery-active"],
-    },
-    "discovery-inactive": {
-      key: "{color.discovery-inactive}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#796d9d",
-      $description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.4745098039215686, 0.42745098039215684, 0.615686274509804,
-          ],
-          hex: "#796d9d",
-        },
-        $description:
-          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (inactive, 20% brighter)",
-        semantic: true,
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.discovery-inactive}",
-      },
-      name: "ColorDiscoveryInactive",
-      attributes: {
-        category: "color",
-        type: "discovery-inactive",
-      },
-      path: ["color", "discovery-inactive"],
-    },
-    "discovery-disabled": {
-      key: "{color.discovery-disabled}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#5a5768",
-      $description:
-        "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.35294117647058826, 0.3411764705882353, 0.40784313725490196,
-          ],
-          hex: "#5a5768",
-        },
-        $description:
-          "Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.discovery-disabled}",
-      },
-      name: "ColorDiscoveryDisabled",
-      attributes: {
-        category: "color",
-        type: "discovery-disabled",
-      },
-      path: ["color", "discovery-disabled"],
-    },
-    "discovery-subtle-hovered": {
-      key: "{color.discovery-subtle-hovered}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#786c96",
-      $description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.47058823529411764, 0.4235294117647059, 0.5882352941176471,
-          ],
-          hex: "#786c96",
-        },
-        $description:
-          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (hovered, 25% darker)",
-        semantic: true,
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.discovery-subtle-hovered}",
-      },
-      name: "ColorDiscoverySubtleHovered",
-      attributes: {
-        category: "color",
-        type: "discovery-subtle-hovered",
-      },
-      path: ["color", "discovery-subtle-hovered"],
-    },
-    "discovery-subtle-active": {
-      key: "{color.discovery-subtle-active}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#786c96",
-      $description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.discovery-subtle-hovered}",
-        $description:
-          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (active, 25% darker)",
-        semantic: true,
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.discovery-subtle-active}",
-      },
-      name: "ColorDiscoverySubtleActive",
-      attributes: {
-        category: "color",
-        type: "discovery-subtle-active",
-      },
-      path: ["color", "discovery-subtle-active"],
-    },
-    "discovery-subtle-inactive": {
-      key: "{color.discovery-subtle-inactive}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#b69fe3",
-      $description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.7137254901960784, 0.6235294117647059, 0.8901960784313725,
-          ],
-          hex: "#b69fe3",
-        },
-        $description:
-          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (inactive, 20% brighter)",
-        semantic: true,
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.discovery-subtle-inactive}",
-      },
-      name: "ColorDiscoverySubtleInactive",
-      attributes: {
-        category: "color",
-        type: "discovery-subtle-inactive",
-      },
-      path: ["color", "discovery-subtle-inactive"],
-    },
-    "discovery-subtle-disabled": {
-      key: "{color.discovery-subtle-disabled}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#6e6a79",
-      $description:
-        "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "discovery",
-      group: "discovery",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.43137254901960786, 0.41568627450980394, 0.4745098039215686,
-          ],
-          hex: "#6e6a79",
-        },
-        $description:
-          "Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "discovery",
-        group: "discovery",
-        key: "{color.discovery-subtle-disabled}",
-      },
-      name: "ColorDiscoverySubtleDisabled",
-      attributes: {
-        category: "color",
-        type: "discovery-subtle-disabled",
-      },
-      path: ["color", "discovery-subtle-disabled"],
-    },
-    "success-hovered": {
-      key: "{color.success-hovered}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#1d634e",
-      $description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.11372549019607843, 0.38823529411764707, 0.3058823529411765,
-          ],
-          hex: "#1d634e",
-        },
-        $description:
-          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (hovered, 25% darker)",
-        semantic: true,
-        theme: "success",
-        group: "success",
-        key: "{color.success-hovered}",
-      },
-      name: "ColorSuccessHovered",
-      attributes: {
-        category: "color",
-        type: "success-hovered",
-      },
-      path: ["color", "success-hovered"],
-    },
-    "success-active": {
-      key: "{color.success-active}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#1d634e",
-      $description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.success-hovered}",
-        $description:
-          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (active, 25% darker)",
-        semantic: true,
-        theme: "success",
-        group: "success",
-        key: "{color.success-active}",
-      },
-      name: "ColorSuccessActive",
-      attributes: {
-        category: "color",
-        type: "success-active",
-      },
-      path: ["color", "success-active"],
-    },
-    "success-inactive": {
-      key: "{color.success-inactive}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#578172",
-      $description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.3411764705882353, 0.5058823529411764, 0.4470588235294118,
-          ],
-          hex: "#578172",
-        },
-        $description:
-          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (inactive, 20% brighter)",
-        semantic: true,
-        theme: "success",
-        group: "success",
-        key: "{color.success-inactive}",
-      },
-      name: "ColorSuccessInactive",
-      attributes: {
-        category: "color",
-        type: "success-inactive",
-      },
-      path: ["color", "success-inactive"],
-    },
-    "success-disabled": {
-      key: "{color.success-disabled}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#505e5b",
-      $description:
-        "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.3137254901960784, 0.3686274509803922, 0.3568627450980392,
-          ],
-          hex: "#505e5b",
-        },
-        $description:
-          "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "success",
-        group: "success",
-        key: "{color.success-disabled}",
-      },
-      name: "ColorSuccessDisabled",
-      attributes: {
-        category: "color",
-        type: "success-disabled",
-      },
-      path: ["color", "success-disabled"],
-    },
-    "success-subtle-hovered": {
-      key: "{color.success-subtle-hovered}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#537d6e",
-      $description:
-        "Generated low-emphasis success background for the light theme (hovered, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.3254901960784314, 0.49019607843137253, 0.43137254901960786,
-          ],
-          hex: "#537d6e",
-        },
-        $description:
-          "Generated low-emphasis success background for the light theme (hovered, 25% darker)",
-        semantic: true,
-        theme: "success",
-        group: "success",
-        key: "{color.success-subtle-hovered}",
-      },
-      name: "ColorSuccessSubtleHovered",
-      attributes: {
-        category: "color",
-        type: "success-subtle-hovered",
-      },
-      path: ["color", "success-subtle-hovered"],
-    },
-    "success-subtle-active": {
-      key: "{color.success-subtle-active}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#537d6e",
-      $description:
-        "Generated low-emphasis success background for the light theme (active, 25% darker)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "{color.success-subtle-hovered}",
-        $description:
-          "Generated low-emphasis success background for the light theme (active, 25% darker)",
-        semantic: true,
-        theme: "success",
-        group: "success",
-        key: "{color.success-subtle-active}",
-      },
-      name: "ColorSuccessSubtleActive",
-      attributes: {
-        category: "color",
-        type: "success-subtle-active",
-      },
-      path: ["color", "success-subtle-active"],
-    },
-    "success-subtle-inactive": {
-      key: "{color.success-subtle-inactive}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#96ccb6",
-      $description:
-        "Generated low-emphasis success background for the light theme (inactive, 20% brighter)",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [0.5882352941176471, 0.8, 0.7137254901960784],
-          hex: "#96ccb6",
-        },
-        $description:
-          "Generated low-emphasis success background for the light theme (inactive, 20% brighter)",
-        semantic: true,
-        theme: "success",
-        group: "success",
-        key: "{color.success-subtle-inactive}",
-      },
-      name: "ColorSuccessSubtleInactive",
-      attributes: {
-        category: "color",
-        type: "success-subtle-inactive",
-      },
-      path: ["color", "success-subtle-inactive"],
-    },
-    "success-subtle-disabled": {
-      key: "{color.success-subtle-disabled}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#65716d",
-      $description:
-        "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/light.tokens.json",
-      isSource: true,
-      theme: "success",
-      group: "success",
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.396078431372549, 0.44313725490196076, 0.42745098039215684,
-          ],
-          hex: "#65716d",
-        },
-        $description:
-          "Generated low-emphasis success background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-        semantic: true,
-        theme: "success",
-        group: "success",
-        key: "{color.success-subtle-disabled}",
-      },
-      name: "ColorSuccessSubtleDisabled",
-      attributes: {
-        category: "color",
-        type: "success-subtle-disabled",
-      },
-      path: ["color", "success-subtle-disabled"],
+      path: ["color", "hairline-disabled"],
     },
   },
   size: {
@@ -14367,7 +15408,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -14411,7 +15452,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",
@@ -14465,7 +15506,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -14509,7 +15550,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",
@@ -14683,7 +15724,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -14727,7 +15768,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",
@@ -14781,7 +15822,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -14825,7 +15866,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",
@@ -14999,7 +16040,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -15043,7 +16084,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",
@@ -15097,7 +16138,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -15141,7 +16182,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",
@@ -15315,7 +16356,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -15359,7 +16400,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",
@@ -15413,7 +16454,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -15457,7 +16498,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",
@@ -15631,7 +16672,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -15675,7 +16716,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",
@@ -15729,7 +16770,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -15773,7 +16814,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",
@@ -15947,7 +16988,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -15991,7 +17032,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",
@@ -16045,7 +17086,7 @@ module.exports = {
       $type: "shadow",
       $value: [
         {
-          color: "#cfcfcf",
+          color: "#d5d5d5",
           offsetX: {
             value: 0,
             unit: "px",
@@ -16089,7 +17130,7 @@ module.exports = {
         $type: "shadow",
         $value: [
           {
-            color: "{color.surface-elevated}",
+            color: "{color.elevated}",
             offsetX: {
               value: 0,
               unit: "px",

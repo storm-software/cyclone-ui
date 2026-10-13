@@ -121,10 +121,10 @@ const getSpaceValue = (val: string, tokens: TagTokens): number =>
 
 // The theme color a variant fills (or, when outlined, draws) the tag with.
 const getVariantColor = (variant: TagVariant | undefined) =>
-  variant === "secondary" ? "subtle" : "accent";
+  variant === "secondary" ? "secondary" : "primary";
 
 // Outlined tags draw the text in the variant color, filled ones in the
-// matching `on*` color (`onAccent` / `onSubtle`).
+// matching `on*` color (`onPrimary` / `onSecondary`).
 const getTextColor = (
   variant: TagVariant | undefined,
   outlined: boolean | undefined
@@ -133,17 +133,17 @@ const getTextColor = (
 
   return outlined
     ? variantColor
-    : variantColor === "subtle"
-      ? "onSubtle"
-      : "onAccent";
+    : variantColor === "secondary"
+      ? "onSecondary"
+      : "onPrimary";
 };
 
 // The hovered counterpart of a variant color; the `on*` text colors have none.
 const getHoveredColor = (color: string) =>
-  color === "accent"
-    ? "hovered"
-    : color === "subtle"
-      ? "subtleHovered"
+  color === "primary"
+    ? "primaryHovered"
+    : color === "secondary"
+      ? "secondaryHovered"
       : undefined;
 
 const TagFrame = styled(View, {
@@ -206,7 +206,7 @@ const TagFrame = styled(View, {
   if (outlined) {
     return {
       backgroundColor: pressable
-        ? "transparent hover:subtleHovered"
+        ? "transparent hover:secondaryHovered"
         : "transparent",
       borderColor: pressable
         ? `${color} hover:${getHoveredColor(color)}`
@@ -216,7 +216,7 @@ const TagFrame = styled(View, {
   }
 
   return {
-    backgroundColor: pressable ? `${color} hover:subtleHovered` : color
+    backgroundColor: pressable ? `${color} hover:secondaryHovered` : color
   };
 });
 
@@ -227,7 +227,7 @@ const TagFrame = styled(View, {
 const TagTextFrame = styled(SizableText, {
   displayName: TAG_NAME,
   render: "span",
-  color: "onAccent",
+  color: "onPrimary",
   fontFamily: "title-sm",
 
   variants: {
@@ -469,10 +469,10 @@ const TagButtonFrame = styled(View, {
   borderRadius: 1000_000_000,
   // No `press:` background color: a press draws a ripple from the press
   // point instead.
-  backgroundColor: "accent hover:subtleHovered focus:surfaceElevated",
+  backgroundColor: "primary hover:secondaryHovered focus:surface",
   justifyContent: "center",
   alignItems: "center",
-  borderColor: "hover:hovered",
+  borderColor: "hover:primaryHovered",
   variants: {
     size: styled.dynamic<TagSize>(),
     // Styled by the `.resolve` below because the offset depends on `size`.
@@ -498,9 +498,9 @@ const TagButtonFrame = styled(View, {
 const TagButton = createStyledHOC(
   TagButtonFrame,
   ({ children, onPress, ...props }, forwardedRef) => {
-    // `accent` shows on both backgrounds a press lands on: `subtleActive` under
-    // a pointer and `surfaceElevated` once the press focuses the button.
-    const ripple = useTagRipples("accent", onPress);
+    // `primary` shows on both backgrounds a press lands on: `secondaryActive` under
+    // a pointer and `surface` once the press focuses the button.
+    const ripple = useTagRipples("primary", onPress);
 
     return (
       <TagButtonFrame ref={forwardedRef} {...props} onPress={ripple.onPress}>
@@ -611,7 +611,7 @@ const TagFrameImpl = createStyledHOC(
     }: TagProps,
     forwardedRef
   ) => {
-    // The text's color: it stays visible on the `subtleActive` background a
+    // The text's color: it stays visible on the `secondaryActive` background a
     // pointer press lands on.
     const ripple = useTagRipples(getTextColor(variant, outlined), onPress);
 

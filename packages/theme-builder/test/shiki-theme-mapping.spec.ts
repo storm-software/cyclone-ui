@@ -62,24 +62,21 @@ const color = ($value: string): Token => ({ $value });
 
 const semanticColors = (prefix: string) => ({
   color: {
-    primary: color(`${prefix}-primary`),
-    secondary: color(`${prefix}-secondary`),
-    tertiary: color(`${prefix}-tertiary`),
-    border: color(`${prefix}-border`),
-    "surface-canvas": color(`${prefix}-surface-canvas`),
-    "surface-sunken": color(`${prefix}-surface-sunken`),
-    danger: color(`${prefix}-danger`),
-    warning: color(`${prefix}-warning`),
-    success: color(`${prefix}-success`),
-    info: color(`${prefix}-info`),
-    discovery: color(`${prefix}-discovery`)
-  }
+    emphasis: color(`${prefix}-emphasis`),
+    ink: color(`${prefix}-ink`),
+    subtle: color(`${prefix}-subtle`),
+    hairline: color(`${prefix}-hairline`),
+    canvas: color(`${prefix}-canvas`),
+    sunken: color(`${prefix}-sunken`),
+    danger: { primary: color(`${prefix}-danger`) },
+    warning: { primary: color(`${prefix}-warning`) },
+    success: { primary: color(`${prefix}-success`) },
+    info: { primary: color(`${prefix}-info`) },
+    discovery: { primary: color(`${prefix}-discovery`) }
+  } as Record<string, unknown>
 });
 
-const setting = (
-  theme: MappedTheme,
-  scope: string
-) =>
+const setting = (theme: MappedTheme, scope: string) =>
   theme.settings.find(candidate => candidate.scope.includes(scope))?.settings
     .foreground;
 
@@ -107,17 +104,17 @@ describe("Shiki theme mapping", () => {
       tokens: semanticColors("light")
     }) as MappedTheme;
 
-    expect(dark.fg).toBe("dark-primary");
+    expect(dark.fg).toBe("dark-emphasis");
     expect(dark.colors).toMatchObject({
-      "editor.background": "dark-surface-canvas",
+      "editor.background": "dark-canvas",
       "editorCursor.foreground": "dark-info",
-      "editor.selectionBackground": "dark-primary",
-      "editor.selectionForeground": "dark-surface-canvas",
-      "editor.inactiveSelectionBackground": "dark-surface-sunken",
-      "editorIndentGuide.background1": "dark-border",
-      "editorIndentGuide.activeBackground1": "dark-tertiary"
+      "editor.selectionBackground": "dark-emphasis",
+      "editor.selectionForeground": "dark-canvas",
+      "editor.inactiveSelectionBackground": "dark-sunken",
+      "editorIndentGuide.background1": "dark-hairline",
+      "editorIndentGuide.activeBackground1": "dark-subtle"
     });
-    expect(setting(dark, "comment")).toBe("dark-tertiary");
+    expect(setting(dark, "comment")).toBe("dark-subtle");
     expect(setting(dark, "string")).toBe("dark-success");
     expect(setting(dark, "constant")).toBe("dark-warning");
     expect(setting(dark, "keyword")).toBe("dark-info");
@@ -126,8 +123,8 @@ describe("Shiki theme mapping", () => {
     expect(setting(dark, "entity.other.attribute-name")).toBe("dark-info");
     expect(setting(dark, "invalid")).toBe("dark-danger");
 
-    expect(light.fg).toBe("light-primary");
-    expect(light.colors["editor.background"]).toBe("light-surface-canvas");
+    expect(light.fg).toBe("light-emphasis");
+    expect(light.colors["editor.background"]).toBe("light-canvas");
     expect(setting(light, "string")).toBe("light-success");
   });
 
@@ -144,7 +141,7 @@ describe("Shiki theme mapping", () => {
     );
     const tokens = semanticColors("light");
 
-    tokens.color.tertiary = color("{color.neutral.7}");
+    tokens.color.subtle = color("{color.neutral.7}");
     Object.assign(tokens.color, {
       neutral: { 7: color("#959698") }
     });

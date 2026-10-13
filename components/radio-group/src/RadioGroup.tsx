@@ -96,7 +96,7 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
     disabled: {
       true: {
         borderColor:
-          "disabled hover:disabled press:disabled focus:disabled",
+          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled",
         userSelect: "none",
         cursor: "not-allowed"
       }
@@ -114,7 +114,7 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   transition: "200ms",
   cursor: "pointer",
   borderRadius: 100_000,
-  backgroundColor: "accent",
+  backgroundColor: "primary",
   height: "65%",
   width: "65%",
   scale: "enter:0.4 exit:0.8",
@@ -122,9 +122,9 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   variants: {
     disabled: {
       true: {
-        placeholderColor: "disabled",
+        placeholderColor: "primaryDisabled",
         backgroundColor:
-          "disabled hover:disabled press:disabled focus:disabled",
+          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled",
         userSelect: "none",
         cursor: "not-allowed"
       }
@@ -144,7 +144,7 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   boxShadow: "none press:ringOffset focus:ringOffset focus-visible:ringOffset",
   borderRadius: "control",
   borderWidth: 1,
-  borderColor: "border",
+  borderColor: "hairline",
   paddingHorizontal: "3xl",
   paddingVertical: "2xl",
   alignItems: "center",
@@ -160,14 +160,14 @@ const RadioGroupItemContainerFrame = styled(XStack, {
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:hovered"
+        borderColor: "primary hover:primaryHovered"
       }
     },
 
     disabled: {
       true: {
         borderColor:
-          "disabled hover:disabled press:disabled focus:disabled",
+          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled",
         boxShadow: "none hover:none press:none focus:none",
         userSelect: "none",
         cursor: "not-allowed"
@@ -203,7 +203,9 @@ const RadioGroupItemContainer = createStyledHOC(
   ) => {
     const { size } = RadioGroupContext.useStyledContext();
     const hasValidationMessage = useFieldHasValidationMessage();
-    const focusColor = hasValidationMessage ? "active" : "borderActive";
+    const focusColor = hasValidationMessage
+      ? "primaryActive"
+      : "hairlineActive";
 
     return (
       <RadioGroupItemContainerFrame
@@ -243,7 +245,7 @@ const RadioGroupItemContainer = createStyledHOC(
           <RadioGroupItem
             id={String(value)}
             size={size}
-            borderColor={`group-hover:${disabled ? "disabled" : "hovered"}`}
+            borderColor={`group-hover:${disabled ? "primaryDisabled" : "primaryHovered"}`}
             value={String(value)}
             disabled={disabled}>
             {selected && <RadioGroupItemIndicator />}
@@ -261,7 +263,7 @@ const RadioGroupOptionValue = styled(Label, {
   render: "label",
   transition: "200ms",
   cursor: "pointer",
-  color: "primary",
+  color: "emphasis",
   fontWeight: "normal",
   // v2 `$true`: every configured font defines a literal `true` line height
   lineHeight: "true",
@@ -280,8 +282,8 @@ const RadioGroupOptionValue = styled(Label, {
     disabled: {
       true: {
         color:
-          "disabled hover:disabled press:disabled focus:disabled",
-        backgroundColor: "surfaceElevated",
+          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled",
+        backgroundColor: "surface",
         userSelect: "none",
         cursor: "not-allowed"
       }
@@ -298,7 +300,7 @@ const RadioGroupOptionDetails = styled(BodyText, {
   context: RadioGroupContext,
   transition: "200ms",
   cursor: "pointer",
-  color: "secondary",
+  color: "ink",
   fontSize: "md",
   variants: {
     size: styled.dynamic<FormControlSize>(
@@ -307,7 +309,7 @@ const RadioGroupOptionDetails = styled(BodyText, {
     disabled: {
       true: {
         color:
-          "disabled hover:disabled press:disabled focus:disabled",
+          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed"
@@ -346,12 +348,14 @@ const RadioGroupOption = ({
       onPress={handlePress}
       cursor="pointer"
       backgroundColor={
-        selected
-          ? "tertiary hover:tertiary"
-          : "surfaceElevated hover:tertiary"
+        selected ? "subtle hover:subtle" : "surface hover:subtle"
       }
       borderColor={
-        selected ? "active" : hasValidationMessage ? "accent" : "border"
+        selected
+          ? "primaryActive"
+          : hasValidationMessage
+            ? "primary"
+            : "hairline"
       }
       borderWidth={1}
       borderRadius="control">
@@ -360,14 +364,14 @@ const RadioGroupOption = ({
           htmlFor={String(value)}
           disabled={disabled}
           selected={selected}
-          color="group-hover/item:primary">
+          color="group-hover/item:emphasis">
           <HeadingSmallText>{name}</HeadingSmallText>
         </RadioGroupOptionValue>
         {description && (
           <RadioGroupOptionDetails
             disabled={disabled}
             display="flex"
-            color="group-hover/item:primary">
+            color="group-hover/item:emphasis">
             {description}
           </RadioGroupOptionDetails>
         )}

@@ -51,7 +51,7 @@ const dividerThickness = {
 /** A themed line that separates adjacent content. */
 export const Divider = forwardRef<TamaguiElement, DividerProps>(
   (
-    { color = "border", direction = "horizontal", size = "md", ...props },
+    { color = "hairline", direction = "horizontal", size = "md", ...props },
     forwardedRef
   ) => {
     const thickness = dividerThickness[size];

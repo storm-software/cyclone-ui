@@ -51,11 +51,11 @@ const StoryNavItemFrame = styled(View, {
   paddingHorizontal: "2xl",
   paddingVertical: "xl",
   borderRadius: "md",
-  backgroundColor: "transparent hover:surfaceCanvas",
+  backgroundColor: "transparent hover:canvas",
   variants: {
     active: {
       true: {
-        backgroundColor: "surfaceCanvas"
+        backgroundColor: "canvas"
       }
     }
   } as const
@@ -79,7 +79,7 @@ const StoryNavItem = ({
     <BodyText
       render="span"
       size="sm"
-      color={active ? "primary" : "secondary"}
+      color={active ? "emphasis" : "ink"}
       fontWeight={active ? "600" : undefined}>
       {children}
     </BodyText>
@@ -89,7 +89,7 @@ const StoryNavItem = ({
 const StoryNavGroupLabel = styled(BodyText, {
   render: "span",
   size: "sm",
-  color: "tertiary",
+  color: "subtle",
   paddingHorizontal: "2xl",
   paddingTop: "4xl",
   paddingBottom: "lg"
@@ -122,11 +122,11 @@ const StoryLogo = () => (
       height={28}
       alignItems="center"
       justifyContent="center"
-      backgroundColor="accent"
+      backgroundColor="primary"
       borderRadius="full">
-      <Lightning size={14} color="onAccent" weight="fill" />
+      <Lightning size={14} color="onPrimary" weight="fill" />
     </View>
-    <BodyText render="span" color="primary" fontWeight="700">
+    <BodyText render="span" color="emphasis" fontWeight="700">
       Storm
     </BodyText>
   </View>
@@ -141,13 +141,13 @@ const StorySearch = () => (
     flexDirection="row"
     gap="xl"
     paddingHorizontal="3xl"
-    backgroundColor="surfaceCanvas"
+    backgroundColor="canvas"
     borderWidth={1}
-    borderColor="border"
+    borderColor="hairline"
     borderRadius={1000}
     display="flex max-md:none">
-    <MagnifyingGlass aria-hidden={true} size={16} color="tertiary" />
-    <BodyText render="span" size="sm" color="tertiary">
+    <MagnifyingGlass aria-hidden={true} size={16} color="subtle" />
+    <BodyText render="span" size="sm" color="subtle">
       Search
     </BodyText>
   </View>
@@ -222,19 +222,15 @@ const StorySideNav = () => (
           height={32}
           alignItems="center"
           justifyContent="center"
-          backgroundColor="subtle"
+          backgroundColor="secondary"
           borderRadius="md">
-          <Kanban aria-hidden={true} size={18} color="accent" />
+          <Kanban aria-hidden={true} size={18} color="primary" />
         </View>
         <View>
-          <BodyText
-            render="span"
-            size="sm"
-            color="primary"
-            fontWeight="600">
+          <BodyText render="span" size="sm" color="emphasis" fontWeight="600">
             Cyclone UI
           </BodyText>
-          <BodyText render="span" size="sm" color="tertiary">
+          <BodyText render="span" size="sm" color="subtle">
             Design system
           </BodyText>
         </View>
@@ -276,9 +272,9 @@ const StorySection = styled(View, {
   flexDirection: "column",
   gap: "2xl",
   padding: "7xl max-md:4xl",
-  backgroundColor: "surfaceElevated",
+  backgroundColor: "surface",
   borderWidth: 1,
-  borderColor: "border",
+  borderColor: "hairline",
   borderRadius: "container"
 });
 
@@ -357,7 +353,7 @@ const StoryPanel = () => {
         </BodyText>
         {storySections.map(section => (
           <View key={section.title} gap="md" paddingTop="4xl">
-            <BodyText size="sm" color="primary" fontWeight="600">
+            <BodyText size="sm" color="emphasis" fontWeight="600">
               {section.title}
             </BodyText>
             <BodyText size="sm">{section.body}</BodyText>
@@ -371,7 +367,7 @@ const StoryPanel = () => {
 
 const StoryBanner = () => (
   <Page.Banner>
-    <BodyText render="span" size="sm" color="onAccent">
+    <BodyText render="span" size="sm" color="onPrimary">
       Scheduled maintenance starts Saturday at 02:00 UTC.
     </BodyText>
   </Page.Banner>

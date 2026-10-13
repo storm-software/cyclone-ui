@@ -80,7 +80,7 @@ const PopoverFrameImpl = createStyledHOC(
                 dismissOnSnapToBottom={true}
                 snapPointsMode="fit">
                 <Sheet.Container padding="5xl">
-                  <Sheet.Background backgroundColor="surfaceFloating" />
+                  <Sheet.Background backgroundColor="elevated" />
                   <Adapt.Contents />
                 </Sheet.Container>
                 <Sheet.Overlay
@@ -101,18 +101,18 @@ const PopoverFrameImpl = createStyledHOC(
 const PopoverArrow = styled(TamaguiPopover.Arrow, {
   displayName: "Popover",
   context: PopoverContext,
-  backgroundColor: "surfaceFloating",
+  backgroundColor: "elevated",
   borderWidth: 1,
-  borderColor: "accent"
+  borderColor: "primary"
 });
 
 const PopoverContent = styled(TamaguiPopover.Content, {
   displayName: "Popover",
   context: PopoverContext,
-  backgroundColor: "surfaceFloating",
+  backgroundColor: "elevated",
   padding: "3xl",
   borderWidth: 1,
-  borderColor: "border focus-visible:active",
+  borderColor: "hairline focus-visible:primaryActive",
   borderRadius: "popover",
   marginHorizontal: "auto",
   y: "enter:-10px exit:-10px",

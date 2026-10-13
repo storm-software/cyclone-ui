@@ -33,7 +33,7 @@ import {
 import type { ThemedIconBodyProps } from "./themed-icon";
 import { themedIcon } from "./themed-icon";
 const Icon = (props: ThemedIconBodyProps<IconProps>) => {
-  const color = useCurrentColor((props.color || "onAccent") as any);
+  const color = useCurrentColor((props.color || "onPrimary") as any);
 
   return (
     <Svg

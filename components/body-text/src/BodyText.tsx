@@ -50,7 +50,7 @@ const getBodyFont = (
 export const BodyText = styled(SizableText, {
   displayName: "BodyText",
   render: "p",
-  color: "secondary",
+  color: "ink",
   fontFamily: "body-md",
   size: "md",
   variants: {

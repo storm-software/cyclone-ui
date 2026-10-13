@@ -232,81 +232,87 @@ export const manifest: DesignSystemManifest = {
       "value": "#1a1c1f66"
     },
     {
-      "path": "color.base",
-      "cssVar": "--storm-color-base",
+      "path": "color.base.on-primary",
+      "cssVar": "--storm-color-base-on-primary",
+      "type": "color",
+      "category": "color",
+      "value": "#FAFAFA"
+    },
+    {
+      "path": "color.base.on-secondary",
+      "cssVar": "--storm-color-base-on-secondary",
+      "type": "color",
+      "category": "color",
+      "value": "#FAFAFA"
+    },
+    {
+      "path": "color.base.primary",
+      "cssVar": "--storm-color-base-primary",
       "type": "color",
       "category": "color",
       "value": "#1f1f21",
       "alias": true
     },
     {
-      "path": "color.base-accent",
-      "cssVar": "--storm-color-base-accent",
-      "type": "color",
-      "category": "color",
-      "value": "#1f1f21",
-      "alias": true
-    },
-    {
-      "path": "color.base-active",
-      "cssVar": "--storm-color-base-active",
+      "path": "color.base.primary-active",
+      "cssVar": "--storm-color-base-primary-active",
       "type": "color",
       "category": "color",
       "value": "#000000"
     },
     {
-      "path": "color.base-disabled",
-      "cssVar": "--storm-color-base-disabled",
+      "path": "color.base.primary-disabled",
+      "cssVar": "--storm-color-base-primary-disabled",
       "type": "color",
       "category": "color",
       "value": "#363639"
     },
     {
-      "path": "color.base-hovered",
-      "cssVar": "--storm-color-base-hovered",
+      "path": "color.base.primary-hovered",
+      "cssVar": "--storm-color-base-primary-hovered",
       "type": "color",
       "category": "color",
       "value": "#606062"
     },
     {
-      "path": "color.base-inactive",
-      "cssVar": "--storm-color-base-inactive",
+      "path": "color.base.primary-inactive",
+      "cssVar": "--storm-color-base-primary-inactive",
       "type": "color",
       "category": "color",
       "value": "#030303"
     },
     {
-      "path": "color.base-subtle",
-      "cssVar": "--storm-color-base-subtle",
+      "path": "color.base.secondary",
+      "cssVar": "--storm-color-base-secondary",
       "type": "color",
       "category": "color",
-      "value": "#cacacb",
+      "value": "#555659",
       "alias": true
     },
     {
-      "path": "color.base-subtle-active",
-      "cssVar": "--storm-color-base-subtle-active",
+      "path": "color.base.secondary-active",
+      "cssVar": "--storm-color-base-secondary-active",
       "type": "color",
       "category": "color",
-      "value": "#a9a9aa"
+      "value": "#46474a"
     },
     {
-      "path": "color.base-subtle-disabled",
-      "cssVar": "--storm-color-base-subtle-disabled",
+      "path": "color.base.secondary-disabled",
+      "cssVar": "--storm-color-base-secondary-disabled",
       "type": "color",
       "category": "color",
-      "value": "#727275"
+      "value": "#494a4d"
     },
     {
-      "path": "color.base-subtle-hovered",
-      "cssVar": "--storm-color-base-subtle-hovered",
+      "path": "color.base.secondary-hovered",
+      "cssVar": "--storm-color-base-secondary-hovered",
       "type": "color",
       "category": "color",
-      "value": "#a9a9aa"
+      "value": "#46474a"
     },
     {
-      "path": "color.base-subtle-inactive",
-      "cssVar": "--storm-color-base-subtle-inactive",
+      "path": "color.base.secondary-inactive",
+      "cssVar": "--storm-color-base-secondary-inactive",
       "type": "color",
       "category": "color",
       "value": "#030303"
@@ -382,116 +388,122 @@ export const manifest: DesignSystemManifest = {
       "value": "#123166"
     },
     {
-      "path": "color.border",
-      "cssVar": "--storm-color-border",
+      "path": "color.canvas",
+      "cssVar": "--storm-color-canvas",
       "type": "color",
       "category": "color",
-      "value": "#b0b0b1",
+      "value": "#eaeaea",
       "alias": true
     },
     {
-      "path": "color.border-active",
-      "cssVar": "--storm-color-border-active",
+      "path": "color.canvas-active",
+      "cssVar": "--storm-color-canvas-active",
       "type": "color",
       "category": "color",
-      "value": "#0c0c0d"
+      "value": "#dedede"
     },
     {
-      "path": "color.border-disabled",
-      "cssVar": "--storm-color-border-disabled",
+      "path": "color.canvas-disabled",
+      "cssVar": "--storm-color-canvas-disabled",
       "type": "color",
       "category": "color",
-      "value": "#69696b"
+      "value": "#b4b4b5"
     },
     {
-      "path": "color.border-hovered",
-      "cssVar": "--storm-color-border-hovered",
+      "path": "color.canvas-hovered",
+      "cssVar": "--storm-color-canvas-hovered",
       "type": "color",
       "category": "color",
-      "value": "#0c0c0d"
+      "value": "#dedede"
     },
     {
-      "path": "color.border-inactive",
-      "cssVar": "--storm-color-border-inactive",
+      "path": "color.canvas-inactive",
+      "cssVar": "--storm-color-canvas-inactive",
       "type": "color",
       "category": "color",
-      "value": "#030303"
+      "value": "#ffffff"
     },
     {
-      "path": "color.danger",
-      "cssVar": "--storm-color-danger",
+      "path": "color.danger.on-primary",
+      "cssVar": "--storm-color-danger-on-primary",
+      "type": "color",
+      "category": "color",
+      "value": "#FAFAFA"
+    },
+    {
+      "path": "color.danger.on-secondary",
+      "cssVar": "--storm-color-danger-on-secondary",
+      "type": "color",
+      "category": "color",
+      "value": "#200006"
+    },
+    {
+      "path": "color.danger.primary",
+      "cssVar": "--storm-color-danger-primary",
       "type": "color",
       "category": "color",
       "value": "#8e223e",
       "alias": true
     },
     {
-      "path": "color.danger-accent",
-      "cssVar": "--storm-color-danger-accent",
-      "type": "color",
-      "category": "color",
-      "value": "#8e223e",
-      "alias": true
-    },
-    {
-      "path": "color.danger-active",
-      "cssVar": "--storm-color-danger-active",
+      "path": "color.danger.primary-active",
+      "cssVar": "--storm-color-danger-primary-active",
       "type": "color",
       "category": "color",
       "value": "#6a0022"
     },
     {
-      "path": "color.danger-disabled",
-      "cssVar": "--storm-color-danger-disabled",
+      "path": "color.danger.primary-disabled",
+      "cssVar": "--storm-color-danger-primary-disabled",
       "type": "color",
       "category": "color",
       "value": "#5a3c44"
     },
     {
-      "path": "color.danger-hovered",
-      "cssVar": "--storm-color-danger-hovered",
+      "path": "color.danger.primary-hovered",
+      "cssVar": "--storm-color-danger-primary-hovered",
       "type": "color",
       "category": "color",
       "value": "#6a0022"
     },
     {
-      "path": "color.danger-inactive",
-      "cssVar": "--storm-color-danger-inactive",
+      "path": "color.danger.primary-inactive",
+      "cssVar": "--storm-color-danger-primary-inactive",
       "type": "color",
       "category": "color",
       "value": "#ab3e56"
     },
     {
-      "path": "color.danger-subtle",
-      "cssVar": "--storm-color-danger-subtle",
+      "path": "color.danger.secondary",
+      "cssVar": "--storm-color-danger-secondary",
       "type": "color",
       "category": "color",
       "value": "#ee7a8e"
     },
     {
-      "path": "color.danger-subtle-active",
-      "cssVar": "--storm-color-danger-subtle-active",
+      "path": "color.danger.secondary-active",
+      "cssVar": "--storm-color-danger-secondary-active",
       "type": "color",
       "category": "color",
       "value": "#b0435a"
     },
     {
-      "path": "color.danger-subtle-disabled",
-      "cssVar": "--storm-color-danger-subtle-disabled",
+      "path": "color.danger.secondary-disabled",
+      "cssVar": "--storm-color-danger-secondary-disabled",
       "type": "color",
       "category": "color",
       "value": "#7b5960"
     },
     {
-      "path": "color.danger-subtle-hovered",
-      "cssVar": "--storm-color-danger-subtle-hovered",
+      "path": "color.danger.secondary-hovered",
+      "cssVar": "--storm-color-danger-secondary-hovered",
       "type": "color",
       "category": "color",
       "value": "#b0435a"
     },
     {
-      "path": "color.danger-subtle-inactive",
-      "cssVar": "--storm-color-danger-subtle-inactive",
+      "path": "color.danger.secondary-inactive",
+      "cssVar": "--storm-color-danger-secondary-inactive",
       "type": "color",
       "category": "color",
       "value": "#ffa7ba"
@@ -625,84 +637,198 @@ export const manifest: DesignSystemManifest = {
       "alias": true
     },
     {
-      "path": "color.discovery",
-      "cssVar": "--storm-color-discovery",
+      "path": "color.discovery.on-primary",
+      "cssVar": "--storm-color-discovery-on-primary",
+      "type": "color",
+      "category": "color",
+      "value": "#FAFAFA"
+    },
+    {
+      "path": "color.discovery.on-secondary",
+      "cssVar": "--storm-color-discovery-on-secondary",
+      "type": "color",
+      "category": "color",
+      "value": "#FAFAFA"
+    },
+    {
+      "path": "color.discovery.primary",
+      "cssVar": "--storm-color-discovery-primary",
       "type": "color",
       "category": "color",
       "value": "#594395",
       "alias": true
     },
     {
-      "path": "color.discovery-accent",
-      "cssVar": "--storm-color-discovery-accent",
-      "type": "color",
-      "category": "color",
-      "value": "#594395",
-      "alias": true
-    },
-    {
-      "path": "color.discovery-active",
-      "cssVar": "--storm-color-discovery-active",
+      "path": "color.discovery.primary-active",
+      "cssVar": "--storm-color-discovery-primary-active",
       "type": "color",
       "category": "color",
       "value": "#3c2372"
     },
     {
-      "path": "color.discovery-disabled",
-      "cssVar": "--storm-color-discovery-disabled",
+      "path": "color.discovery.primary-disabled",
+      "cssVar": "--storm-color-discovery-primary-disabled",
       "type": "color",
       "category": "color",
       "value": "#4a445f"
     },
     {
-      "path": "color.discovery-hovered",
-      "cssVar": "--storm-color-discovery-hovered",
+      "path": "color.discovery.primary-hovered",
+      "cssVar": "--storm-color-discovery-primary-hovered",
       "type": "color",
       "category": "color",
       "value": "#3c2372"
     },
     {
-      "path": "color.discovery-inactive",
-      "cssVar": "--storm-color-discovery-inactive",
+      "path": "color.discovery.primary-inactive",
+      "cssVar": "--storm-color-discovery-primary-inactive",
       "type": "color",
       "category": "color",
       "value": "#725db2"
     },
     {
-      "path": "color.discovery-subtle",
-      "cssVar": "--storm-color-discovery-subtle",
+      "path": "color.discovery.secondary",
+      "cssVar": "--storm-color-discovery-secondary",
       "type": "color",
       "category": "color",
       "value": "#a690e1",
       "alias": true
     },
     {
-      "path": "color.discovery-subtle-active",
-      "cssVar": "--storm-color-discovery-subtle-active",
+      "path": "color.discovery.secondary-active",
+      "cssVar": "--storm-color-discovery-secondary-active",
       "type": "color",
       "category": "color",
       "value": "#725ba7"
     },
     {
-      "path": "color.discovery-subtle-disabled",
-      "cssVar": "--storm-color-discovery-subtle-disabled",
+      "path": "color.discovery.secondary-disabled",
+      "cssVar": "--storm-color-discovery-secondary-disabled",
       "type": "color",
       "category": "color",
       "value": "#655f79"
     },
     {
-      "path": "color.discovery-subtle-hovered",
-      "cssVar": "--storm-color-discovery-subtle-hovered",
+      "path": "color.discovery.secondary-hovered",
+      "cssVar": "--storm-color-discovery-secondary-hovered",
       "type": "color",
       "category": "color",
       "value": "#725ba7"
     },
     {
-      "path": "color.discovery-subtle-inactive",
-      "cssVar": "--storm-color-discovery-subtle-inactive",
+      "path": "color.discovery.secondary-inactive",
+      "cssVar": "--storm-color-discovery-secondary-inactive",
       "type": "color",
       "category": "color",
       "value": "#d2bcff"
+    },
+    {
+      "path": "color.elevated",
+      "cssVar": "--storm-color-elevated",
+      "type": "color",
+      "category": "color",
+      "value": "#fafafa",
+      "alias": true
+    },
+    {
+      "path": "color.elevated-active",
+      "cssVar": "--storm-color-elevated-active",
+      "type": "color",
+      "category": "color",
+      "value": "#eeeeee"
+    },
+    {
+      "path": "color.elevated-disabled",
+      "cssVar": "--storm-color-elevated-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#bfbfc0"
+    },
+    {
+      "path": "color.elevated-hovered",
+      "cssVar": "--storm-color-elevated-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#eeeeee"
+    },
+    {
+      "path": "color.elevated-inactive",
+      "cssVar": "--storm-color-elevated-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#ffffff"
+    },
+    {
+      "path": "color.emphasis",
+      "cssVar": "--storm-color-emphasis",
+      "type": "color",
+      "category": "color",
+      "value": "#1f1f21",
+      "alias": true
+    },
+    {
+      "path": "color.emphasis-active",
+      "cssVar": "--storm-color-emphasis-active",
+      "type": "color",
+      "category": "color",
+      "value": "#000000"
+    },
+    {
+      "path": "color.emphasis-disabled",
+      "cssVar": "--storm-color-emphasis-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#363639"
+    },
+    {
+      "path": "color.emphasis-hovered",
+      "cssVar": "--storm-color-emphasis-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#606062"
+    },
+    {
+      "path": "color.emphasis-inactive",
+      "cssVar": "--storm-color-emphasis-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#030303"
+    },
+    {
+      "path": "color.floating",
+      "cssVar": "--storm-color-floating",
+      "type": "color",
+      "category": "color",
+      "value": "#ffffff",
+      "alias": true
+    },
+    {
+      "path": "color.floating-active",
+      "cssVar": "--storm-color-floating-active",
+      "type": "color",
+      "category": "color",
+      "value": "#f2f2f2"
+    },
+    {
+      "path": "color.floating-disabled",
+      "cssVar": "--storm-color-floating-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#c2c2c3"
+    },
+    {
+      "path": "color.floating-hovered",
+      "cssVar": "--storm-color-floating-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#f2f2f2"
+    },
+    {
+      "path": "color.floating-inactive",
+      "cssVar": "--storm-color-floating-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#ffffff"
     },
     {
       "path": "color.green.1",
@@ -768,84 +894,162 @@ export const manifest: DesignSystemManifest = {
       "value": "#0c2a22"
     },
     {
-      "path": "color.info",
-      "cssVar": "--storm-color-info",
+      "path": "color.hairline",
+      "cssVar": "--storm-color-hairline",
+      "type": "color",
+      "category": "color",
+      "value": "#e1e1e1",
+      "alias": true
+    },
+    {
+      "path": "color.hairline-active",
+      "cssVar": "--storm-color-hairline-active",
+      "type": "color",
+      "category": "color",
+      "value": "#0c0c0d"
+    },
+    {
+      "path": "color.hairline-disabled",
+      "cssVar": "--storm-color-hairline-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#7a7a7c"
+    },
+    {
+      "path": "color.hairline-hovered",
+      "cssVar": "--storm-color-hairline-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#0c0c0d"
+    },
+    {
+      "path": "color.hairline-inactive",
+      "cssVar": "--storm-color-hairline-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#030303"
+    },
+    {
+      "path": "color.info.on-primary",
+      "cssVar": "--storm-color-info-on-primary",
+      "type": "color",
+      "category": "color",
+      "value": "#FAFAFA"
+    },
+    {
+      "path": "color.info.on-secondary",
+      "cssVar": "--storm-color-info-on-secondary",
+      "type": "color",
+      "category": "color",
+      "value": "#FAFAFA"
+    },
+    {
+      "path": "color.info.primary",
+      "cssVar": "--storm-color-info-primary",
       "type": "color",
       "category": "color",
       "value": "#2055b3",
       "alias": true
     },
     {
-      "path": "color.info-accent",
-      "cssVar": "--storm-color-info-accent",
-      "type": "color",
-      "category": "color",
-      "value": "#2055b3",
-      "alias": true
-    },
-    {
-      "path": "color.info-active",
-      "cssVar": "--storm-color-info-active",
+      "path": "color.info.primary-active",
+      "cssVar": "--storm-color-info-primary-active",
       "type": "color",
       "category": "color",
       "value": "#00318d"
     },
     {
-      "path": "color.info-disabled",
-      "cssVar": "--storm-color-info-disabled",
+      "path": "color.info.primary-disabled",
+      "cssVar": "--storm-color-info-primary-disabled",
       "type": "color",
       "category": "color",
       "value": "#3b4a68"
     },
     {
-      "path": "color.info-hovered",
-      "cssVar": "--storm-color-info-hovered",
+      "path": "color.info.primary-hovered",
+      "cssVar": "--storm-color-info-primary-hovered",
       "type": "color",
       "category": "color",
       "value": "#00318d"
     },
     {
-      "path": "color.info-inactive",
-      "cssVar": "--storm-color-info-inactive",
+      "path": "color.info.primary-inactive",
+      "cssVar": "--storm-color-info-primary-inactive",
       "type": "color",
       "category": "color",
       "value": "#3b72d3"
     },
     {
-      "path": "color.info-subtle",
-      "cssVar": "--storm-color-info-subtle",
+      "path": "color.info.secondary",
+      "cssVar": "--storm-color-info-secondary",
       "type": "color",
       "category": "color",
       "value": "#6da2ff",
       "alias": true
     },
     {
-      "path": "color.info-subtle-active",
-      "cssVar": "--storm-color-info-subtle-active",
+      "path": "color.info.secondary-active",
+      "cssVar": "--storm-color-info-secondary-active",
       "type": "color",
       "category": "color",
       "value": "#396ac2"
     },
     {
-      "path": "color.info-subtle-disabled",
-      "cssVar": "--storm-color-info-subtle-disabled",
+      "path": "color.info.secondary-disabled",
+      "cssVar": "--storm-color-info-secondary-disabled",
       "type": "color",
       "category": "color",
       "value": "#556582"
     },
     {
-      "path": "color.info-subtle-hovered",
-      "cssVar": "--storm-color-info-subtle-hovered",
+      "path": "color.info.secondary-hovered",
+      "cssVar": "--storm-color-info-secondary-hovered",
       "type": "color",
       "category": "color",
       "value": "#396ac2"
     },
     {
-      "path": "color.info-subtle-inactive",
-      "cssVar": "--storm-color-info-subtle-inactive",
+      "path": "color.info.secondary-inactive",
+      "cssVar": "--storm-color-info-secondary-inactive",
       "type": "color",
       "category": "color",
       "value": "#99d1ff"
+    },
+    {
+      "path": "color.ink",
+      "cssVar": "--storm-color-ink",
+      "type": "color",
+      "category": "color",
+      "value": "#555659",
+      "alias": true
+    },
+    {
+      "path": "color.ink-active",
+      "cssVar": "--storm-color-ink-active",
+      "type": "color",
+      "category": "color",
+      "value": "#0c0c0d"
+    },
+    {
+      "path": "color.ink-disabled",
+      "cssVar": "--storm-color-ink-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#494a4d"
+    },
+    {
+      "path": "color.ink-hovered",
+      "cssVar": "--storm-color-ink-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#0c0c0d"
+    },
+    {
+      "path": "color.ink-inactive",
+      "cssVar": "--storm-color-ink-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#030303"
     },
     {
       "path": "color.neutral.1",
@@ -944,90 +1148,6 @@ export const manifest: DesignSystemManifest = {
       "type": "color",
       "category": "color",
       "value": "#151518"
-    },
-    {
-      "path": "color.on-base-accent",
-      "cssVar": "--storm-color-on-base-accent",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-base-subtle",
-      "cssVar": "--storm-color-on-base-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#151518"
-    },
-    {
-      "path": "color.on-danger-accent",
-      "cssVar": "--storm-color-on-danger-accent",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-danger-subtle",
-      "cssVar": "--storm-color-on-danger-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#200006"
-    },
-    {
-      "path": "color.on-discovery-accent",
-      "cssVar": "--storm-color-on-discovery-accent",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-discovery-subtle",
-      "cssVar": "--storm-color-on-discovery-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-info-accent",
-      "cssVar": "--storm-color-on-info-accent",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-info-subtle",
-      "cssVar": "--storm-color-on-info-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-success-accent",
-      "cssVar": "--storm-color-on-success-accent",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-success-subtle",
-      "cssVar": "--storm-color-on-success-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#002217"
-    },
-    {
-      "path": "color.on-warning-accent",
-      "cssVar": "--storm-color-on-warning-accent",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
-    },
-    {
-      "path": "color.on-warning-subtle",
-      "cssVar": "--storm-color-on-warning-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#241500"
     },
     {
       "path": "color.orange.1",
@@ -1156,14 +1276,6 @@ export const manifest: DesignSystemManifest = {
       "value": "#482039"
     },
     {
-      "path": "color.primary",
-      "cssVar": "--storm-color-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#1f1f21",
-      "alias": true
-    },
-    {
       "path": "color.purple.1",
       "cssVar": "--storm-color-purple-1",
       "type": "color",
@@ -1290,14 +1402,6 @@ export const manifest: DesignSystemManifest = {
       "value": "#501524"
     },
     {
-      "path": "color.secondary",
-      "cssVar": "--storm-color-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#555659",
-      "alias": true
-    },
-    {
       "path": "color.shadow.floating.large",
       "cssVar": "--storm-color-shadow-floating-large",
       "type": "shadow",
@@ -1362,207 +1466,315 @@ export const manifest: DesignSystemManifest = {
       "alias": true
     },
     {
-      "path": "color.success",
-      "cssVar": "--storm-color-success",
+      "path": "color.subtle",
+      "cssVar": "--storm-color-subtle",
       "type": "color",
       "category": "color",
-      "value": "#216b53",
+      "value": "#959698",
       "alias": true
     },
     {
-      "path": "color.success-accent",
-      "cssVar": "--storm-color-success-accent",
+      "path": "color.subtle-active",
+      "cssVar": "--storm-color-subtle-active",
       "type": "color",
       "category": "color",
-      "value": "#216b53",
-      "alias": true
+      "value": "#0c0c0d"
     },
     {
-      "path": "color.success-active",
-      "cssVar": "--storm-color-success-active",
+      "path": "color.subtle-disabled",
+      "cssVar": "--storm-color-subtle-disabled",
       "type": "color",
       "category": "color",
-      "value": "#004933"
+      "value": "#606063"
     },
     {
-      "path": "color.success-disabled",
-      "cssVar": "--storm-color-success-disabled",
+      "path": "color.subtle-hovered",
+      "cssVar": "--storm-color-subtle-hovered",
       "type": "color",
       "category": "color",
-      "value": "#3c504b"
+      "value": "#0c0c0d"
     },
     {
-      "path": "color.success-hovered",
-      "cssVar": "--storm-color-success-hovered",
+      "path": "color.subtle-inactive",
+      "cssVar": "--storm-color-subtle-inactive",
       "type": "color",
       "category": "color",
-      "value": "#004933"
+      "value": "#030303"
     },
     {
-      "path": "color.success-inactive",
-      "cssVar": "--storm-color-success-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#40876e"
-    },
-    {
-      "path": "color.success-subtle",
-      "cssVar": "--storm-color-success-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#74ba9f"
-    },
-    {
-      "path": "color.success-subtle-active",
-      "cssVar": "--storm-color-success-subtle-active",
-      "type": "color",
-      "category": "color",
-      "value": "#3b8168"
-    },
-    {
-      "path": "color.success-subtle-disabled",
-      "cssVar": "--storm-color-success-subtle-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#586c66"
-    },
-    {
-      "path": "color.success-subtle-hovered",
-      "cssVar": "--storm-color-success-subtle-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#3b8168"
-    },
-    {
-      "path": "color.success-subtle-inactive",
-      "cssVar": "--storm-color-success-subtle-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#a3eacd"
-    },
-    {
-      "path": "color.surface-canvas",
-      "cssVar": "--storm-color-surface-canvas",
-      "type": "color",
-      "category": "color",
-      "value": "#eaeaea",
-      "alias": true
-    },
-    {
-      "path": "color.surface-elevated",
-      "cssVar": "--storm-color-surface-elevated",
-      "type": "color",
-      "category": "color",
-      "value": "#f1f1f1",
-      "alias": true
-    },
-    {
-      "path": "color.surface-floating",
-      "cssVar": "--storm-color-surface-floating",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa",
-      "alias": true
-    },
-    {
-      "path": "color.surface-highest",
-      "cssVar": "--storm-color-surface-highest",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff",
-      "alias": true
-    },
-    {
-      "path": "color.surface-sunken",
-      "cssVar": "--storm-color-surface-sunken",
-      "type": "color",
-      "category": "color",
-      "value": "#e1e1e1",
-      "alias": true
-    },
-    {
-      "path": "color.tertiary",
-      "cssVar": "--storm-color-tertiary",
+      "path": "color.subtlest",
+      "cssVar": "--storm-color-subtlest",
       "type": "color",
       "category": "color",
       "value": "#cacacb",
       "alias": true
     },
     {
-      "path": "color.warning",
-      "cssVar": "--storm-color-warning",
+      "path": "color.subtlest-active",
+      "cssVar": "--storm-color-subtlest-active",
+      "type": "color",
+      "category": "color",
+      "value": "#0c0c0d"
+    },
+    {
+      "path": "color.subtlest-disabled",
+      "cssVar": "--storm-color-subtlest-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#727275"
+    },
+    {
+      "path": "color.subtlest-hovered",
+      "cssVar": "--storm-color-subtlest-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#0c0c0d"
+    },
+    {
+      "path": "color.subtlest-inactive",
+      "cssVar": "--storm-color-subtlest-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#030303"
+    },
+    {
+      "path": "color.success.on-primary",
+      "cssVar": "--storm-color-success-on-primary",
+      "type": "color",
+      "category": "color",
+      "value": "#FAFAFA"
+    },
+    {
+      "path": "color.success.on-secondary",
+      "cssVar": "--storm-color-success-on-secondary",
+      "type": "color",
+      "category": "color",
+      "value": "#002217"
+    },
+    {
+      "path": "color.success.primary",
+      "cssVar": "--storm-color-success-primary",
+      "type": "color",
+      "category": "color",
+      "value": "#216b53",
+      "alias": true
+    },
+    {
+      "path": "color.success.primary-active",
+      "cssVar": "--storm-color-success-primary-active",
+      "type": "color",
+      "category": "color",
+      "value": "#004933"
+    },
+    {
+      "path": "color.success.primary-disabled",
+      "cssVar": "--storm-color-success-primary-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#3c504b"
+    },
+    {
+      "path": "color.success.primary-hovered",
+      "cssVar": "--storm-color-success-primary-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#004933"
+    },
+    {
+      "path": "color.success.primary-inactive",
+      "cssVar": "--storm-color-success-primary-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#40876e"
+    },
+    {
+      "path": "color.success.secondary",
+      "cssVar": "--storm-color-success-secondary",
+      "type": "color",
+      "category": "color",
+      "value": "#74ba9f"
+    },
+    {
+      "path": "color.success.secondary-active",
+      "cssVar": "--storm-color-success-secondary-active",
+      "type": "color",
+      "category": "color",
+      "value": "#3b8168"
+    },
+    {
+      "path": "color.success.secondary-disabled",
+      "cssVar": "--storm-color-success-secondary-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#586c66"
+    },
+    {
+      "path": "color.success.secondary-hovered",
+      "cssVar": "--storm-color-success-secondary-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#3b8168"
+    },
+    {
+      "path": "color.success.secondary-inactive",
+      "cssVar": "--storm-color-success-secondary-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#a3eacd"
+    },
+    {
+      "path": "color.sunken",
+      "cssVar": "--storm-color-sunken",
+      "type": "color",
+      "category": "color",
+      "value": "#e1e1e1",
+      "alias": true
+    },
+    {
+      "path": "color.sunken-active",
+      "cssVar": "--storm-color-sunken-active",
+      "type": "color",
+      "category": "color",
+      "value": "#d6d6d6"
+    },
+    {
+      "path": "color.sunken-disabled",
+      "cssVar": "--storm-color-sunken-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#aeaeaf"
+    },
+    {
+      "path": "color.sunken-hovered",
+      "cssVar": "--storm-color-sunken-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#d6d6d6"
+    },
+    {
+      "path": "color.sunken-inactive",
+      "cssVar": "--storm-color-sunken-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#ffffff"
+    },
+    {
+      "path": "color.surface",
+      "cssVar": "--storm-color-surface",
+      "type": "color",
+      "category": "color",
+      "value": "#f1f1f1",
+      "alias": true
+    },
+    {
+      "path": "color.surface-active",
+      "cssVar": "--storm-color-surface-active",
+      "type": "color",
+      "category": "color",
+      "value": "#e5e5e5"
+    },
+    {
+      "path": "color.surface-disabled",
+      "cssVar": "--storm-color-surface-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#b8b8b9"
+    },
+    {
+      "path": "color.surface-hovered",
+      "cssVar": "--storm-color-surface-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#e5e5e5"
+    },
+    {
+      "path": "color.surface-inactive",
+      "cssVar": "--storm-color-surface-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#ffffff"
+    },
+    {
+      "path": "color.warning.on-primary",
+      "cssVar": "--storm-color-warning-on-primary",
+      "type": "color",
+      "category": "color",
+      "value": "#FAFAFA"
+    },
+    {
+      "path": "color.warning.on-secondary",
+      "cssVar": "--storm-color-warning-on-secondary",
+      "type": "color",
+      "category": "color",
+      "value": "#241500"
+    },
+    {
+      "path": "color.warning.primary",
+      "cssVar": "--storm-color-warning-primary",
       "type": "color",
       "category": "color",
       "value": "#765417",
       "alias": true
     },
     {
-      "path": "color.warning-accent",
-      "cssVar": "--storm-color-warning-accent",
-      "type": "color",
-      "category": "color",
-      "value": "#765417",
-      "alias": true
-    },
-    {
-      "path": "color.warning-active",
-      "cssVar": "--storm-color-warning-active",
+      "path": "color.warning.primary-active",
+      "cssVar": "--storm-color-warning-primary-active",
       "type": "color",
       "category": "color",
       "value": "#543400"
     },
     {
-      "path": "color.warning-disabled",
-      "cssVar": "--storm-color-warning-disabled",
+      "path": "color.warning.primary-disabled",
+      "cssVar": "--storm-color-warning-primary-disabled",
       "type": "color",
       "category": "color",
       "value": "#53493b"
     },
     {
-      "path": "color.warning-hovered",
-      "cssVar": "--storm-color-warning-hovered",
+      "path": "color.warning.primary-hovered",
+      "cssVar": "--storm-color-warning-primary-hovered",
       "type": "color",
       "category": "color",
       "value": "#543400"
     },
     {
-      "path": "color.warning-inactive",
-      "cssVar": "--storm-color-warning-inactive",
+      "path": "color.warning.primary-inactive",
+      "cssVar": "--storm-color-warning-primary-inactive",
       "type": "color",
       "category": "color",
       "value": "#926f36"
     },
     {
-      "path": "color.warning-subtle",
-      "cssVar": "--storm-color-warning-subtle",
+      "path": "color.warning.secondary",
+      "cssVar": "--storm-color-warning-secondary",
       "type": "color",
       "category": "color",
       "value": "#c7a168"
     },
     {
-      "path": "color.warning-subtle-active",
-      "cssVar": "--storm-color-warning-subtle-active",
+      "path": "color.warning.secondary-active",
+      "cssVar": "--storm-color-warning-secondary-active",
       "type": "color",
       "category": "color",
       "value": "#8e6a31"
     },
     {
-      "path": "color.warning-subtle-disabled",
-      "cssVar": "--storm-color-warning-subtle-disabled",
+      "path": "color.warning.secondary-disabled",
+      "cssVar": "--storm-color-warning-secondary-disabled",
       "type": "color",
       "category": "color",
       "value": "#6f6456"
     },
     {
-      "path": "color.warning-subtle-hovered",
-      "cssVar": "--storm-color-warning-subtle-hovered",
+      "path": "color.warning.secondary-hovered",
+      "cssVar": "--storm-color-warning-secondary-hovered",
       "type": "color",
       "category": "color",
       "value": "#8e6a31"
     },
     {
-      "path": "color.warning-subtle-inactive",
-      "cssVar": "--storm-color-warning-subtle-inactive",
+      "path": "color.warning.secondary-inactive",
+      "cssVar": "--storm-color-warning-secondary-inactive",
       "type": "color",
       "category": "color",
       "value": "#f7d095"
@@ -4163,8 +4375,6 @@ export const manifest: DesignSystemManifest = {
     ],
     "tokens": {
       "color": [
-        "accent",
-        "active",
         "backdrop",
         "black",
         "blue1",
@@ -4176,11 +4386,11 @@ export const manifest: DesignSystemManifest = {
         "blue7",
         "blue8",
         "blue9",
-        "border",
-        "borderActive",
-        "borderDisabled",
-        "borderHovered",
-        "borderInactive",
+        "canvas",
+        "canvasActive",
+        "canvasDisabled",
+        "canvasHovered",
+        "canvasInactive",
         "dataBlueEmphasis",
         "dataBlueSubtle",
         "dataGreenEmphasis",
@@ -4197,7 +4407,21 @@ export const manifest: DesignSystemManifest = {
         "dataRedSubtle",
         "dataYellowEmphasis",
         "dataYellowSubtle",
-        "disabled",
+        "elevated",
+        "elevatedActive",
+        "elevatedDisabled",
+        "elevatedHovered",
+        "elevatedInactive",
+        "emphasis",
+        "emphasisActive",
+        "emphasisDisabled",
+        "emphasisHovered",
+        "emphasisInactive",
+        "floating",
+        "floatingActive",
+        "floatingDisabled",
+        "floatingHovered",
+        "floatingInactive",
         "green1",
         "green2",
         "green3",
@@ -4207,8 +4431,16 @@ export const manifest: DesignSystemManifest = {
         "green7",
         "green8",
         "green9",
-        "hovered",
-        "inactive",
+        "hairline",
+        "hairlineActive",
+        "hairlineDisabled",
+        "hairlineHovered",
+        "hairlineInactive",
+        "ink",
+        "inkActive",
+        "inkDisabled",
+        "inkHovered",
+        "inkInactive",
         "neutral1",
         "neutral2",
         "neutral3",
@@ -4223,8 +4455,8 @@ export const manifest: DesignSystemManifest = {
         "neutral12",
         "neutral13",
         "neutral14",
-        "onAccent",
-        "onSubtle",
+        "onPrimary",
+        "onSecondary",
         "orange1",
         "orange2",
         "orange3",
@@ -4244,6 +4476,10 @@ export const manifest: DesignSystemManifest = {
         "pink8",
         "pink9",
         "primary",
+        "primaryActive",
+        "primaryDisabled",
+        "primaryHovered",
+        "primaryInactive",
         "purple1",
         "purple2",
         "purple3",
@@ -4267,17 +4503,30 @@ export const manifest: DesignSystemManifest = {
         "ringSubtle",
         "ringSubtleOffset",
         "secondary",
+        "secondaryActive",
+        "secondaryDisabled",
+        "secondaryHovered",
+        "secondaryInactive",
         "subtle",
         "subtleActive",
         "subtleDisabled",
         "subtleHovered",
         "subtleInactive",
-        "surfaceCanvas",
-        "surfaceElevated",
-        "surfaceFloating",
-        "surfaceHighest",
-        "surfaceSunken",
-        "tertiary",
+        "subtlest",
+        "subtlestActive",
+        "subtlestDisabled",
+        "subtlestHovered",
+        "subtlestInactive",
+        "sunken",
+        "sunkenActive",
+        "sunkenDisabled",
+        "sunkenHovered",
+        "sunkenInactive",
+        "surface",
+        "surfaceActive",
+        "surfaceDisabled",
+        "surfaceHovered",
+        "surfaceInactive",
         "white",
         "yellow1",
         "yellow2",

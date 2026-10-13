@@ -295,7 +295,7 @@ const PageFrame = styled(View, {
   display: "grid",
   gridTemplateColumns: "auto minmax(0, 1fr) auto",
   alignItems: "flex-start",
-  backgroundColor: "surfaceCanvas"
+  backgroundColor: "canvas"
 });
 
 const PageSkipLinksFrame = styled(View, {
@@ -310,9 +310,9 @@ const PageSkipLinksFrame = styled(View, {
     visible: {
       true: {
         padding: "2xl",
-        backgroundColor: "surfaceFloating",
+        backgroundColor: "elevated",
         borderWidth: 1,
-        borderColor: "border",
+        borderColor: "hairline",
         borderRadius: "md",
         boxShadow: "lg"
       },
@@ -334,7 +334,7 @@ const PageSkipLinksFrame = styled(View, {
 const PageSkipLinksLabel = styled(BodyText, {
   displayName: "PageSkipLinksLabel",
   render: "span",
-  color: "tertiary",
+  color: "subtle",
   size: "sm",
   fontWeight: "600"
 });
@@ -345,7 +345,7 @@ const PageSkipLinkItem = styled(View, {
   paddingVertical: "lg",
   paddingHorizontal: "xl",
   borderRadius: "md",
-  backgroundColor: "transparent hover:subtle",
+  backgroundColor: "transparent hover:secondary",
   boxShadow: "none focus-visible:ringOffset",
   outlineWidth: 0
 });
@@ -353,7 +353,7 @@ const PageSkipLinkItem = styled(View, {
 const PageSkipLinkText = styled(BodyText, {
   displayName: "PageSkipLinkText",
   render: "span",
-  color: "primary",
+  color: "emphasis",
   size: "sm",
   textDecorationLine: "underline"
 });
@@ -805,7 +805,7 @@ const PageBannerFrame = styled(View, {
   justifyContent: "center",
   gap: "2xl",
   paddingHorizontal: "4xl max-md:2xl",
-  backgroundColor: "accent",
+  backgroundColor: "primary",
   outlineWidth: 0
 });
 
@@ -873,9 +873,9 @@ const PageTopNavFrame = styled(View, {
   boxSizing: "border-box",
   flexDirection: "row",
   alignItems: "stretch",
-  backgroundColor: "surfaceElevated",
+  backgroundColor: "surface",
   borderBottomWidth: 1,
-  borderBottomColor: "border",
+  borderBottomColor: "hairline",
   outlineWidth: 0
 });
 
@@ -939,7 +939,7 @@ const PageTopNavStartFrame = styled(View, {
   gap: "2xl",
   paddingHorizontal: "4xl max-md:2xl",
   // Matches the side nav, so the strip of top nav border it covers vanishes.
-  backgroundColor: "surfaceElevated",
+  backgroundColor: "surface",
   variants: {
     // Lines up with an expanded inline side nav and covers the top nav's
     // bottom border above it, so the side nav reads as full height.
@@ -947,7 +947,7 @@ const PageTopNavStartFrame = styled(View, {
       true: {
         marginBottom: "0px lg:-1px",
         borderRightWidth: "0px lg:1px",
-        borderRightColor: "border"
+        borderRightColor: "hairline"
       }
     }
   } as const
@@ -1013,7 +1013,7 @@ const PageSideNavToggleFrame = styled(View, {
   alignItems: "center",
   justifyContent: "center",
   cursor: "pointer",
-  backgroundColor: "transparent hover:subtleHovered press:subtleActive",
+  backgroundColor: "transparent hover:secondaryHovered press:secondaryActive",
   borderWidth: 0,
   borderRadius: "full",
   boxShadow: "focus-visible:ringOffset"
@@ -1073,7 +1073,7 @@ const PageSideNavToggle = createStyledHOC(
           onMouseLeave?.(event);
           page.endSideNavPeek();
         }}>
-        <SidebarSimple aria-hidden={true} size={20} color="secondary" />
+        <SidebarSimple aria-hidden={true} size={20} color="ink" />
       </PageSideNavToggleFrame>
     );
   },
@@ -1093,9 +1093,9 @@ const PageSideNavFrame = styled(View, {
   boxSizing: "border-box",
   maxWidth: "90vw",
   flexDirection: "column",
-  backgroundColor: "surfaceElevated",
+  backgroundColor: "surface",
   borderRightWidth: 1,
-  borderRightColor: "border",
+  borderRightColor: "hairline",
   boxShadow: "none max-lg:lg",
   outlineWidth: 0,
   variants: {
@@ -1257,7 +1257,7 @@ const PageSectionFooter = styled(View, {
   gap: "2xl",
   padding: "4xl",
   borderTopWidth: 1,
-  borderTopColor: "border"
+  borderTopColor: "hairline"
 });
 
 const PageSplitterFrame = styled(View, {
@@ -1294,7 +1294,7 @@ const PageSplitterLine = styled(View, {
   variants: {
     active: {
       true: {
-        backgroundColor: "accent"
+        backgroundColor: "primary"
       }
     }
   } as const
@@ -1549,9 +1549,9 @@ const PageMainHeaderFrame = styled(View, {
   gap: "4xl",
   paddingHorizontal: "8xl max-md:4xl",
   paddingVertical: "4xl",
-  backgroundColor: "surfaceCanvas",
+  backgroundColor: "canvas",
   borderBottomWidth: 1,
-  borderBottomColor: "border"
+  borderBottomColor: "hairline"
 });
 
 /** Stays at the top of main while its content scrolls. */
@@ -1602,9 +1602,9 @@ const PagePanelFrame = styled(View, {
   boxSizing: "border-box",
   maxWidth: "90vw",
   flexDirection: "column",
-  backgroundColor: "surfaceElevated",
+  backgroundColor: "surface",
   borderLeftWidth: 1,
-  borderLeftColor: "border",
+  borderLeftColor: "hairline",
   boxShadow: "none max-lg:lg",
   outlineWidth: 0,
   opacity: "1 enter:0 exit:0",

@@ -59,7 +59,7 @@ export async function showBanner(sleepTimeoutMs: number = 500) {
       " " +
       borderColors.banner.outline.primary("━") +
       " " +
-      bold(textColors.banner.header.primary("Cyclone CLI v0.6.1")) +
+      bold(textColors.banner.header.primary("Cyclone CLI v0.6.4")) +
       " " +
       borderColors.banner.outline.primary(
         "━".repeat(Math.max(getTerminalSize().columns - 32, 0))

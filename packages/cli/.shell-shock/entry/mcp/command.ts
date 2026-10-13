@@ -206,6 +206,17 @@ const COMMANDS = [
     ]
   },
   {
+    id: "changelog",
+    name: "changelog",
+    path: "changelog",
+    segments: ["changelog"],
+    title: "Changelog",
+    description: "Display the Cyclone User Interface changelog.",
+    toolName: "changelog",
+    options: [],
+    args: []
+  },
+  {
     id: "completions-bash-config",
     name: "config",
     path: "completions/bash/config",

@@ -3,7 +3,7 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import * as dividerModule from "./Divider";
 
-import { config } from "../../../packages/themes/src/tamagui/config";
+import { config } from "../../../packages/tokens/src/tamagui/config";
 
 type DividerProps = {
   color?: string;
@@ -61,7 +61,7 @@ const getDividerProps = (props: DividerProps = {}) =>
 describe("Divider", () => {
   it("defaults to a two-pixel horizontal hairline", () => {
     expect(getDividerProps()).toMatchObject({
-      backgroundColor: "border",
+      backgroundColor: "hairline",
       height: 2,
       width: "100%"
     });
@@ -86,8 +86,8 @@ describe("Divider", () => {
   );
 
   it("uses a caller-provided color", () => {
-    expect(getDividerProps({ color: "accent" })).toMatchObject({
-      backgroundColor: "accent"
+    expect(getDividerProps({ color: "primary" })).toMatchObject({
+      backgroundColor: "primary"
     });
   });
 });

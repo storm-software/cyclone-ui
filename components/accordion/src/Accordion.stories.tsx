@@ -172,7 +172,7 @@ export const DirectionUp: Story = {
 
 export const BackgroundColor: Story = {
   args: {
-    backgroundColor: "surfaceCanvas",
+    backgroundColor: "canvas",
     children: "Some collapsed content"
   }
 };

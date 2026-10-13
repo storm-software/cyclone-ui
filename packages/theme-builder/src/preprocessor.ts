@@ -459,17 +459,12 @@ const COLOR_STATE_ACTIVE: ColorStateVariant = {
   brightness: 1.25
 };
 
-const SURFACE_LOW_SATURATION_COLOR_STATE_ACTIVE: ColorStateVariant = {
-  name: "active",
-  brightness: 1.075
-};
-
 const SUBTLE_LOW_SATURATION_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
   brightness: 1.125
 };
 
-const BORDER_COLOR_STATE_ACTIVE: ColorStateVariant = {
+const HAIRLINE_COLOR_STATE_ACTIVE: ColorStateVariant = {
   name: "active",
   brightness: 1.4
 };
@@ -523,23 +518,42 @@ const SUBTLE_COLOR_STATE_VARIANTS: ColorStateVariants = {
 };
 
 /**
- * Surfaces shift their own lightness instead of jumping to the contrast
- * primitive, so their states stay subtler than other low-saturation colors.
+ * Backgrounds shift their own lightness instead of jumping to the contrast
+ * primitive, at about half the change of other colors' states.
  */
-const SURFACE_COLOR_STATE_VARIANTS: ColorStateVariants = {
+const BACKGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
+  name: "inactive",
+  brightness: 0.9
+};
+
+const BACKGROUND_COLOR_STATE_DISABLED: ColorStateVariant = {
+  ...COLOR_STATE_DISABLED,
+  opacity: 0.675,
+  saturation: 0.925
+};
+
+const BACKGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
   lowSaturation: [
-    SURFACE_LOW_SATURATION_COLOR_STATE_ACTIVE,
-    COLOR_STATE_INACTIVE,
-    COLOR_STATE_DISABLED
+    { name: "active", brightness: 1.0375 },
+    BACKGROUND_COLOR_STATE_INACTIVE,
+    BACKGROUND_COLOR_STATE_DISABLED
   ],
-  saturated: DEFAULT_COLOR_STATE_VARIANTS.saturated
+  saturated: [
+    { name: "active", brightness: 1.125 },
+    BACKGROUND_COLOR_STATE_INACTIVE,
+    BACKGROUND_COLOR_STATE_DISABLED
+  ]
 };
 
 /**
- * Status colors that receive generated `on-*` (text) and `*-subtle`
- * (low-emphasis background) companions when missing.
+ * Color groups (`color.base`, `color.danger`, …) that get their own Tamagui
+ * child theme. Each defines a `primary` color and optionally a `secondary`
+ * (low-emphasis background); missing `secondary`, `on-primary`, and
+ * `on-secondary` companions are generated, along with state variants and
+ * focus rings.
  */
-const STATUS_COLOR_KEYS = [
+const THEME_COLOR_KEYS = [
+  "base",
   "danger",
   "warning",
   "info",
@@ -547,46 +561,32 @@ const STATUS_COLOR_KEYS = [
   "success"
 ] as const;
 
-/**
- * Primary and tertiary colors are copied into the `base` theme as `base` and
- * `base-subtle`, so it is generated like a status theme (`accent`, `active`,
- * `subtle`, `onAccent`, `ring`, …). Rings and states are generated for these
- * copies, not for primary, secondary, or tertiary.
- */
-const BASE_THEME_COLOR_NAMES: Record<string, string> = {
-  primary: "base",
-  tertiary: "base-subtle"
+/** State variants for the tokens inside each theme color group. */
+const THEME_COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
+  primary: DEFAULT_COLOR_STATE_VARIANTS,
+  secondary: SUBTLE_COLOR_STATE_VARIANTS
 };
 
-/**
- * Colors that get their own Tamagui child theme, with generated companion,
- * state, and focus ring tokens.
- */
-const THEME_COLOR_KEYS = ["base", ...STATUS_COLOR_KEYS] as const;
-
-/** Every token in this group receives state variants. */
-const COLOR_STATE_GROUP_KEY = "surface";
+/** Color tokens with these `group`s receive state variants. */
+const COLOR_STATE_TOKEN_GROUPS: Record<string, ColorStateVariants> = {
+  foreground: DEFAULT_COLOR_STATE_VARIANTS,
+  background: BACKGROUND_COLOR_STATE_VARIANTS
+};
 
 /** Standalone color tokens that receive state variants. */
 const COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
-  border: {
+  hairline: {
     lowSaturation: [
       INCREASED_LOW_SATURATION_COLOR_STATE_ACTIVE,
       LOW_SATURATION_COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ],
     saturated: [
-      BORDER_COLOR_STATE_ACTIVE,
+      HAIRLINE_COLOR_STATE_ACTIVE,
       COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ]
-  },
-  ...Object.fromEntries(
-    THEME_COLOR_KEYS.flatMap(key => [
-      [key, DEFAULT_COLOR_STATE_VARIANTS],
-      [`${key}-subtle`, SUBTLE_COLOR_STATE_VARIANTS]
-    ])
-  )
+  }
 };
 
 /** OKLCH chroma below which a color uses the low-saturation state variants. */
@@ -780,12 +780,13 @@ function addMissingRingTokens(dictionary: unknown): unknown {
   let changed = false;
 
   for (const name of THEME_COLOR_KEYS) {
-    if (!isTokenNode(color[name])) {
+    const group = color[name];
+    if (!isPlainObject(group) || !isTokenNode(group.primary)) {
       continue;
     }
 
-    const ringColor = `{color.${name}}`;
-    const gap = ringLayer("{color.surface-elevated}", 3);
+    const ringColor = `{color.${name}.primary}`;
+    const gap = ringLayer("{color.elevated}", 3);
     const variants: Record<string, [string, unknown[]]> = {
       [name]: [`${name} 3px focus ring with no gap`, [ringLayer(ringColor, 3)]],
       [`${name}-subtle`]: [
@@ -811,7 +812,7 @@ function addMissingRingTokens(dictionary: unknown): unknown {
         $description: `Generated ${description}`,
         $type: "shadow",
         $value: value,
-        theme: colorTokenTheme(name)
+        theme: name
       };
       changed = true;
     }
@@ -977,41 +978,41 @@ function createOnColor(hex: string): "#FAFAFA" | "#151518" {
 function createMutedColor(
   hex: string,
   parentTheme: ParentTheme
-): { subtle: string; onMuted?: string } {
+): { secondary: string; onMuted?: string } {
   const { lightness, chroma, hue, alpha } = hexToOklch(hex);
-  const subtleDirection = parentTheme === "light" ? 1 : -1;
-  const onMutedDirection = -subtleDirection;
-  let subtleLightness = lightness;
+  const secondaryDirection = parentTheme === "light" ? 1 : -1;
+  const onMutedDirection = -secondaryDirection;
+  let secondaryLightness = lightness;
   let onMutedLightness = lightness;
-  let subtle = hex;
+  let secondary = hex;
   let onMuted = hex;
 
   for (let index = 0; index < MAX_SUBTLE_COLOR_ADJUSTMENTS; index += 1) {
-    subtleLightness = clamp01(
-      subtleLightness + subtleDirection * SUBTLE_COLOR_LIGHTNESS_STEP
+    secondaryLightness = clamp01(
+      secondaryLightness + secondaryDirection * SUBTLE_COLOR_LIGHTNESS_STEP
     );
-    subtle = oklchToGamutMappedHex(subtleLightness, chroma, hue, alpha);
-    if (contrastRatio(subtle, onMuted) >= MINIMUM_SUBTLE_CONTRAST_RATIO) {
-      return onMuted === hex ? { subtle } : { subtle, onMuted };
+    secondary = oklchToGamutMappedHex(secondaryLightness, chroma, hue, alpha);
+    if (contrastRatio(secondary, onMuted) >= MINIMUM_SUBTLE_CONTRAST_RATIO) {
+      return onMuted === hex ? { secondary } : { secondary, onMuted };
     }
 
     onMutedLightness = clamp01(
       onMutedLightness + onMutedDirection * SUBTLE_COLOR_LIGHTNESS_STEP
     );
     onMuted = oklchToGamutMappedHex(onMutedLightness, chroma, hue, alpha);
-    if (contrastRatio(subtle, onMuted) >= MINIMUM_SUBTLE_CONTRAST_RATIO) {
-      return { subtle, onMuted };
+    if (contrastRatio(secondary, onMuted) >= MINIMUM_SUBTLE_CONTRAST_RATIO) {
+      return { secondary, onMuted };
     }
 
     if (
-      (subtleLightness === 0 || subtleLightness === 1) &&
+      (secondaryLightness === 0 || secondaryLightness === 1) &&
       (onMutedLightness === 0 || onMutedLightness === 1)
     ) {
       break;
     }
   }
 
-  throw new Error(`Unable to generate an accessible subtle pair for ${hex}`);
+  throw new Error(`Unable to generate an accessible secondary pair for ${hex}`);
 }
 
 function isLightColor(hex: string, parentTheme?: ParentTheme): boolean {
@@ -1297,144 +1298,65 @@ function addColorStateTokens(
 }
 
 /**
- * Add an `on-*-accent` text color (renamed from `on-*` when defined), an
- * `*-accent` alias, a `*-subtle` low-emphasis background, and an `on-*-subtle`
- * text color for each theme color (`base` and the status colors) that does
- * not define them, so state variants can be generated for the subtle
- * backgrounds.
+ * Fill in a theme color group (`color.danger`, …): generate a missing
+ * `secondary` low-emphasis background from `primary` and the parent theme,
+ * `on-primary` / `on-secondary` text colors, and state variants for
+ * `primary` and `secondary`. Every token in the group gets the group name as
+ * its `theme` and `group`, so Tamagui places it in that child theme (e.g.
+ * `danger.on-primary` → `onPrimary` in the `danger` theme).
  */
-function addMissingStatusCompanionTokens(
-  color: Record<string, unknown>,
+function addThemeColorGroupTokens(
+  name: string,
+  group: Record<string, unknown>,
   tree: unknown,
   parentTheme?: ParentTheme
 ): Record<string, unknown> {
-  const result = { ...color };
-  for (const name of THEME_COLOR_KEYS) {
-    const token = color[name];
-    if (!isTokenNode(token)) {
-      continue;
-    }
-
-    const type = resolveType(token);
-    const hex = resolveColorHex(token.$value, tree);
-    if ((type && type !== "color") || !hex) {
-      continue;
-    }
-
-    // Tamagui drops the theme name from child theme keys, so `danger` would be
-    // empty and `on-danger` would be `on`. The `*-accent` names become `accent`
-    // and `onAccent` in the `danger` theme; `on-danger` is renamed rather than
-    // aliased so it does not leak into the root themes.
-    const onToken = color[`on-${name}`];
-    delete result[`on-${name}`];
-    result[`on-${name}-accent`] ??= isTokenNode(onToken)
-      ? { ...onToken, theme: name, group: name }
-      : {
-          ...token,
-          $type: "color",
-          $value: createOnColor(hex),
-          $description: `Generated text and icon color on ${name} backgrounds`,
-          theme: name,
-          group: name
-        };
-
-    result[`${name}-accent`] ??= {
-      $type: "color",
-      $value: `{color.${name}}`,
-      $description: `Alias of ${name} for the ${name} theme`,
-      theme: name,
-      group: name
-    };
-
-    let onMuted: string | undefined;
-    if (parentTheme && !(`${name}-subtle` in color)) {
-      const pair = createMutedColor(hex, parentTheme);
-      result[`${name}-subtle`] = {
-        ...token,
-        $type: "color",
-        $value: pair.subtle,
-        $description: `Generated low-emphasis ${name} background for the ${parentTheme} theme`
-      };
-      onMuted = pair.onMuted ?? hex;
-    } else if (isTokenNode(color[`${name}-subtle`])) {
-      const subtleHex = resolveColorHex(
-        (color[`${name}-subtle`] as Record<string, unknown>).$value,
-        tree
-      );
-      onMuted = subtleHex && createOnColor(subtleHex);
-    }
-
-    if (onMuted && !(`on-${name}-subtle` in color)) {
-      result[`on-${name}-subtle`] = {
-        ...token,
-        $type: "color",
-        $value: onMuted,
-        $description: `Generated text and icon color on ${name}-subtle backgrounds`
-      };
-    }
+  const token = group.primary;
+  const hex = isTokenNode(token) && resolveColorHex(token.$value, tree);
+  const type = isTokenNode(token) && resolveType(token);
+  if (!isTokenNode(token) || !hex || (type && type !== "color")) {
+    return group;
   }
 
-  return result;
-}
+  let result: Record<string, unknown> = { ...group };
+  result["on-primary"] ??= {
+    ...token,
+    $type: "color",
+    $value: createOnColor(hex),
+    $description: `Generated text and icon color on ${name} primary backgrounds`
+  };
 
-/** Strip the `on-` prefix and `-subtle` / state suffixes from a token name. */
-function colorTokenRoot(name: string): string {
-  return name
-    .replace(/^on-/, "")
-    .replace(/-(?:hovered|active|inactive|disabled)$/i, "")
-    .replace(/-subtle$/, "");
-}
-
-/**
- * Resolve the Tamagui theme for a color token name: the theme color name for
- * `base` and status colors (including their `on-*`, `*-subtle`, and state
- * variants). Primary, secondary, and tertiary colors stay in the root light
- * and dark themes so every child theme inherits them.
- */
-function colorTokenTheme(name: string): string | undefined {
-  const root = colorTokenRoot(name);
-
-  return (THEME_COLOR_KEYS as readonly string[]).includes(root)
-    ? root
-    : undefined;
-}
-
-/**
- * Copy each primary and secondary color (and its `on-*` color) into the
- * `base` theme as `base` / `base-subtle`.
- */
-function addBaseThemeAliases(
-  color: Record<string, unknown>
-): Record<string, unknown> {
-  const result = { ...color };
-  for (const [name, token] of Object.entries(color)) {
-    const root = colorTokenRoot(name);
-    const baseName = BASE_THEME_COLOR_NAMES[root];
-    if (!baseName || !isTokenNode(token)) {
-      continue;
-    }
-
-    // Copied rather than referenced so states resolve inside nested
-    // `light` / `dark` color groups.
-    result[name.replace(root, baseName)] ??= {
+  let onSecondary: string | undefined;
+  if (parentTheme && !("secondary" in group)) {
+    const pair = createMutedColor(hex, parentTheme);
+    result.secondary = {
       ...token,
-      theme: "base",
-      group: "base"
+      $type: "color",
+      $value: pair.secondary,
+      $description: `Generated low-emphasis ${name} background for the ${parentTheme} theme`
+    };
+    onSecondary = pair.onMuted ?? hex;
+  } else if (isTokenNode(group.secondary)) {
+    const secondaryHex = resolveColorHex(group.secondary.$value, tree);
+    onSecondary = secondaryHex && createOnColor(secondaryHex);
+  }
+
+  if (onSecondary && !("on-secondary" in group)) {
+    result["on-secondary"] = {
+      ...token,
+      $type: "color",
+      $value: onSecondary,
+      $description: `Generated text and icon color on ${name} secondary backgrounds`
     };
   }
 
-  return result;
-}
+  for (const [key, variants] of Object.entries(THEME_COLOR_STATE_VARIANTS)) {
+    result = addColorStateTokens(result, tree, variants, key, parentTheme);
+  }
 
-/** Add a `theme` to each themed color token that does not define one. */
-function addColorTokenThemes(
-  color: Record<string, unknown>
-): Record<string, unknown> {
-  const result = { ...color };
-  for (const [name, token] of Object.entries(color)) {
-    const theme = colorTokenTheme(name);
-    if (theme && isTokenNode(token) && !("theme" in token)) {
-      result[name] = { ...token, theme };
+  for (const [key, value] of Object.entries(result)) {
+    if (isTokenNode(value)) {
+      result[key] = { theme: name, group: name, ...value };
     }
   }
 
@@ -1442,15 +1364,17 @@ function addColorTokenThemes(
 }
 
 /**
- * Add a `group` (the main token name) to each state, `on-*`, and `*-subtle`
- * color token that does not define one, e.g. `border-active` → `border`.
+ * Add a `group` (the main token name) to each state and `on-*` color token
+ * that does not define one, e.g. `hairline-active` → `hairline`.
  */
 function addColorTokenGroups(
   group: Record<string, unknown>
 ): Record<string, unknown> {
   const result = { ...group };
   for (const [name, token] of Object.entries(group)) {
-    const root = colorTokenRoot(name);
+    const root = name
+      .replace(/^on-/, "")
+      .replace(/-(?:hovered|active|inactive|disabled)$/i, "");
     if (root !== name && isTokenNode(token) && !("group" in token)) {
       result[name] = { ...token, group: root };
     }
@@ -1492,26 +1416,37 @@ function injectColorStateVariants(
     );
   }
 
-  if (key?.startsWith(`${COLOR_STATE_GROUP_KEY}-`)) {
-    return addColorTokenGroups(
-      addColorStateTokens(
-        result,
-        tree,
-        SURFACE_COLOR_STATE_VARIANTS,
-        undefined,
-        parentTheme
-      )
-    );
-  }
-
-  let withStates =
-    key === "color"
-      ? addMissingStatusCompanionTokens(
-          addBaseThemeAliases(result),
+  let withStates = result;
+  if (key === "color") {
+    for (const name of THEME_COLOR_KEYS) {
+      const group = withStates[name];
+      if (isPlainObject(group) && !isTokenNode(group)) {
+        withStates[name] = addThemeColorGroupTokens(
+          name,
+          group,
           tree,
           parentTheme
-        )
-      : result;
+        );
+      }
+    }
+
+    for (const [tokenKey, token] of Object.entries(withStates)) {
+      const variants =
+        isTokenNode(token) && typeof token.group === "string"
+          ? COLOR_STATE_TOKEN_GROUPS[token.group]
+          : undefined;
+      if (variants) {
+        withStates = addColorStateTokens(
+          withStates,
+          tree,
+          variants,
+          tokenKey,
+          parentTheme
+        );
+      }
+    }
+  }
+
   for (const [tokenKey, variants] of Object.entries(COLOR_STATE_VARIANTS)) {
     if (isTokenNode(withStates[tokenKey])) {
       withStates = addColorStateTokens(
@@ -1524,32 +1459,29 @@ function injectColorStateVariants(
     }
   }
 
-  return key === "color"
-    ? addColorTokenGroups(addColorTokenThemes(withStates))
-    : withStates;
+  return key === "color" ? addColorTokenGroups(withStates) : withStates;
 }
 
 /**
  * Style Dictionary preprocessor: rewrite color `$value`s (and nested shadow
  * colors) to hex so generators emit `#rrggbb` / `#rrggbbaa` instead of
- * `oklch()`. Primary and secondary colors are first copied into the `base`
- * theme as `base` / `base-subtle`; primary, secondary, and tertiary themselves
- * stay in the root light and dark themes without rings or states. For `base`
- * and each status color, missing `on-*-accent` text (Tamagui `onAccent`; any
- * `on-*` color is renamed to it), `*-subtle` background, and `on-*-subtle`
- * text colors are generated next, along with a `*-accent` alias (Tamagui
- * `accent`), then hovered, active, inactive, and disabled variants are added to the
- * surface colors, border, and each theme color and its `*-subtle` color.
+ * `oklch()`. Root colors (emphasis, ink, subtle, subtlest, hairline, backgrounds)
+ * stay in the root light and dark themes without rings. For the `base` group and each
+ * status group, a missing `secondary` background and `on-primary` /
+ * `on-secondary` text colors are generated, then hovered, active, inactive,
+ * and disabled variants are added to the hairline, `foreground` and
+ * `background` group colors, and each theme color group's `primary` and `secondary`.
  * Low-saturation colors derive their states from the parent theme's contrast
- * primitive (surfaces use a subtler shift of their own lightness; hovered
+ * primitive (backgrounds use a half-strength shift of their own lightness; hovered
  * colors already near that primitive shift toward the middle, while active
  * ones become pure white or black); saturated
- * colors scale their own lightness. Theme colors get their name as theme,
- * unless one is already set. State, `on-*`, and `*-subtle` color tokens also
- * get their main token name as `group` (e.g. `border-active` → `border`).
+ * colors scale their own lightness. Tokens in a theme color group get the
+ * group name as `theme` and `group`, unless already set; root state and `on-*`
+ * tokens get their main token name as `group` (e.g. `hairline-active` →
+ * `hairline`).
  * Finally, focus rings are generated for `base` and each status color.
  */
-function tamaguiPreprocessor(
+export function tamaguiPreprocessor(
   dictionary: PreprocessedTokens
 ): PreprocessedTokens {
   const converted = walk(dictionary) as PreprocessedTokens;

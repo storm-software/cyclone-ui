@@ -3,7 +3,7 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { ConfettiBurst } from "./ConfettiBurst";
 
-import { config } from "../../../packages/themes/src/tamagui/config";
+import { config } from "../../../packages/tokens/src/tamagui/config";
 
 describe("ConfettiBurst", () => {
   it("renders an empty, hidden anchor", () => {

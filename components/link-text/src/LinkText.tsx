@@ -65,50 +65,64 @@ const LinkTextFrame = styled(SizableText, {
 
     variant: {
       base: {
-        color: "primary hover:hovered press:active focus:active",
-        textDecorationColor: "primary hover:hovered press:active focus:active"
+        color:
+          "emphasis hover:primaryHovered press:primaryActive focus:primaryActive",
+        textDecorationColor:
+          "emphasis hover:primaryHovered press:primaryActive focus:primaryActive"
       },
       baseInverse: {
-        color: "accent hover:hovered press:active focus:active",
-        textDecorationColor: "accent hover:hovered press:active focus:active"
+        color:
+          "primary hover:primaryHovered press:primaryActive focus:primaryActive",
+        textDecorationColor:
+          "primary hover:primaryHovered press:primaryActive focus:primaryActive"
       },
 
       mixed: {
-        color: "accent hover:hovered press:active focus:active",
-        textDecorationColor: "primary hover:hovered press:active focus:active"
+        color:
+          "primary hover:primaryHovered press:primaryActive focus:primaryActive",
+        textDecorationColor:
+          "emphasis hover:primaryHovered press:primaryActive focus:primaryActive"
       },
       mixedInverse: {
-        color: "primary hover:hovered press:active focus:active",
-        textDecorationColor: "accent hover:hovered press:active focus:active"
+        color:
+          "emphasis hover:primaryHovered press:primaryActive focus:primaryActive",
+        textDecorationColor:
+          "primary hover:primaryHovered press:primaryActive focus:primaryActive"
       },
 
       themed: {
-        color: "accent hover:hovered press:active focus:active",
-        textDecorationColor: "accent hover:hovered press:active focus:active"
+        color:
+          "primary hover:primaryHovered press:primaryActive focus:primaryActive",
+        textDecorationColor:
+          "primary hover:primaryHovered press:primaryActive focus:primaryActive"
       },
       themedInverse: {
-        color: "accent hover:hovered press:active focus:active",
-        textDecorationColor: "accent hover:hovered press:active focus:active"
+        color:
+          "primary hover:primaryHovered press:primaryActive focus:primaryActive",
+        textDecorationColor:
+          "primary hover:primaryHovered press:primaryActive focus:primaryActive"
       },
 
-      // Secondary ink at rest so the link recedes into running copy, then the
-      // theme accent on interaction.
+      // Ink at rest so the link recedes into running copy, then the
+      // theme primary on interaction.
       subtle: {
-        color: "secondary hover:accent press:active focus:active",
-        textDecorationColor: "tertiary hover:accent press:active focus:active"
+        color: "ink hover:primary press:primaryActive focus:primaryActive",
+        textDecorationColor:
+          "subtle hover:primary press:primaryActive focus:primaryActive"
       },
 
-      // One step further down the ink scale, with tertiary text.
+      // One step further down the ink scale, with subtle text.
       subtlest: {
-        color: "tertiary hover:accent press:active focus:active",
-        textDecorationColor: "tertiary hover:accent press:active focus:active"
+        color: "subtle hover:primary press:primaryActive focus:primaryActive",
+        textDecorationColor:
+          "subtle hover:primary press:primaryActive focus:primaryActive"
       }
     },
 
     inverse: {
       true: {
-        color: "hover:hovered",
-        textDecorationColor: "hover:hovered"
+        color: "hover:primaryHovered",
+        textDecorationColor: "hover:primaryHovered"
       }
     },
 
@@ -124,7 +138,7 @@ const LinkTextFrame = styled(SizableText, {
     disabled: {
       true: {
         cursor: "default",
-        color: "inactive hover:inactive"
+        color: "primaryInactive hover:primaryInactive"
       }
     }
   } as const,

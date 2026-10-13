@@ -60,7 +60,7 @@ const meta: Meta<typeof ToggleGroup> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const iconColor = (pressed: boolean) => (pressed ? "primary" : "tertiary");
+const iconColor = (pressed: boolean) => (pressed ? "emphasis" : "subtle");
 
 export const Base: Story = {
   args: {

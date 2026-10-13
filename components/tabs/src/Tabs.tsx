@@ -323,7 +323,7 @@ const TabsRovingIndicator = styled(YStack, {
       floating: {
         borderRadius: "trigger",
         borderWidth: 1,
-        borderColor: "border",
+        borderColor: "hairline",
         alignItems: "center",
         justifyContent: "center"
       },
@@ -355,8 +355,8 @@ const TabsRovingIndicator = styled(YStack, {
   return {
     backgroundColor: props.active
       ? (props.variant ?? "underline") === "underline"
-        ? "accent"
-        : "surfaceElevated"
+        ? "primary"
+        : "surface"
       : undefined,
     height: horizontal ? thickness : undefined,
     width: horizontal ? undefined : thickness
@@ -442,14 +442,14 @@ const TabsHeaderList = styled(YStack, {
     variant: {
       underline: {
         borderColor: "transparent",
-        borderBottomColor: "surfaceSunken",
+        borderBottomColor: "sunken",
         borderBottomWidth: "lg",
         borderRadius: 0
       },
       floating: {
-        backgroundColor: "surfaceSunken",
+        backgroundColor: "sunken",
         borderRadius: "trigger",
-        borderColor: "border",
+        borderColor: "hairline",
         borderWidth: 1
       },
       tabbed: {
@@ -571,11 +571,11 @@ const TabsHeaderItemHeading = styled(HeadingSmallText, {
 
     selected: {
       true: {
-        color: "active",
+        color: "primaryActive",
         fontWeight: "bold"
       },
       false: {
-        color: "inactive",
+        color: "primaryInactive",
         fontWeight: "normal"
       }
     }
@@ -642,9 +642,9 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
 
   return {
     backgroundColor: props.selected
-      ? "surfaceElevated"
-      : "surfaceCanvas hover:tertiary",
-    borderColor: "border",
+      ? "surface"
+      : "canvas hover:subtle",
+    borderColor: "hairline",
     borderWidth,
     // Tamagui v3's Tabs.List is a Group that drops the connecting border on
     // every tab but the first; tabbed tabs are spaced apart and keep it.
@@ -655,9 +655,9 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
     borderBottomLeftRadius: horizontal ? 0 : "container",
     borderBottomRightRadius: 0,
     borderBottomColor:
-      props.selected && horizontal ? "surfaceElevated" : undefined,
+      props.selected && horizontal ? "surface" : undefined,
     borderRightColor:
-      props.selected && !horizontal ? "surfaceElevated" : undefined,
+      props.selected && !horizontal ? "surface" : undefined,
     marginBottom: horizontal ? -1 : undefined,
     marginRight: horizontal ? undefined : -1,
     zIndex: 2
@@ -695,7 +695,7 @@ const TabsHeaderItemImpl = createStyledHOC(
         onInteraction={onInteraction}>
         <TabsHeaderItemHeading
           size={size === true ? "true" : size}
-          color="group-hover:accent"
+          color="group-hover:primary"
           selected={currentTab === value}>
           {children}
         </TabsHeaderItemHeading>
@@ -747,8 +747,8 @@ const TabsContentList = styled(View, {
   const horizontal = props.orientation !== "vertical";
 
   return {
-    backgroundColor: "surfaceElevated",
-    borderColor: "border",
+    backgroundColor: "surface",
+    borderColor: "hairline",
     borderWidth: props.bordered === false ? 0 : 1,
     borderTopRightRadius: horizontal ? undefined : "container",
     borderBottomLeftRadius: horizontal ? "container" : undefined,

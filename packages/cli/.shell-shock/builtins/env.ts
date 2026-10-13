@@ -1178,7 +1178,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias APP_VERSION
    * @alias SHELL_SHOCK_APP_VERSION
-   * @defaultValue "0.6.1"
+   * @defaultValue "0.6.4"
    */
   CYCLONE_UI_APP_VERSION?: string;
 
@@ -1187,7 +1187,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_ID
    * @alias SHELL_SHOCK_BUILD_ID
-   * @defaultValue "223fa657-a492-4e22-9a20-936ae8deb71a"
+   * @defaultValue "230581ff-3d51-4cf9-b705-421f4c09447f"
    */
   CYCLONE_UI_BUILD_ID: string;
 
@@ -1196,7 +1196,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_TIMESTAMP
    * @alias SHELL_SHOCK_BUILD_TIMESTAMP
-   * @defaultValue "2026-10-12T00:33:48.287Z"
+   * @defaultValue "2026-10-12T16:29:50.849Z"
    */
   CYCLONE_UI_BUILD_TIMESTAMP: string;
 
@@ -1205,7 +1205,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_CHECKSUM
    * @alias SHELL_SHOCK_BUILD_CHECKSUM
-   * @defaultValue "Z3xRnnXss13NQYvdJtM5wFXJ5iAXZGec"
+   * @defaultValue "BxzBa26jWDciwfw-9tv-7razAOzHq2qX"
    */
   CYCLONE_UI_BUILD_CHECKSUM: string;
 
@@ -1214,7 +1214,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias RELEASE_ID
    * @alias SHELL_SHOCK_RELEASE_ID
-   * @defaultValue "3fa657a4-926e-429a-a093-6ae8deb71abf"
+   * @defaultValue "0581ff3d-511c-4977-8542-1f4c09447f0a"
    */
   CYCLONE_UI_RELEASE_ID: string;
 
@@ -1223,7 +1223,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias RELEASE_TAG
    * @alias SHELL_SHOCK_RELEASE_TAG
-   * @defaultValue "cyclone-ui@0.6.1"
+   * @defaultValue "cyclone-ui@0.6.4"
    */
   CYCLONE_UI_RELEASE_TAG: string;
 
@@ -2312,7 +2312,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias APP_VERSION
    * @alias CYCLONE_UI_APP_VERSION
-   * @defaultValue "0.6.1"
+   * @defaultValue "0.6.4"
    */
   SHELL_SHOCK_APP_VERSION?: string;
 
@@ -2321,7 +2321,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_ID
    * @alias CYCLONE_UI_BUILD_ID
-   * @defaultValue "223fa657-a492-4e22-9a20-936ae8deb71a"
+   * @defaultValue "230581ff-3d51-4cf9-b705-421f4c09447f"
    */
   SHELL_SHOCK_BUILD_ID: string;
 
@@ -2330,7 +2330,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_TIMESTAMP
    * @alias CYCLONE_UI_BUILD_TIMESTAMP
-   * @defaultValue "2026-10-12T00:33:48.287Z"
+   * @defaultValue "2026-10-12T16:29:50.849Z"
    */
   SHELL_SHOCK_BUILD_TIMESTAMP: string;
 
@@ -2339,7 +2339,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_CHECKSUM
    * @alias CYCLONE_UI_BUILD_CHECKSUM
-   * @defaultValue "Z3xRnnXss13NQYvdJtM5wFXJ5iAXZGec"
+   * @defaultValue "BxzBa26jWDciwfw-9tv-7razAOzHq2qX"
    */
   SHELL_SHOCK_BUILD_CHECKSUM: string;
 
@@ -2348,7 +2348,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias RELEASE_ID
    * @alias CYCLONE_UI_RELEASE_ID
-   * @defaultValue "3fa657a4-926e-429a-a093-6ae8deb71abf"
+   * @defaultValue "0581ff3d-511c-4977-8542-1f4c09447f0a"
    */
   SHELL_SHOCK_RELEASE_ID: string;
 
@@ -2357,7 +2357,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias RELEASE_TAG
    * @alias CYCLONE_UI_RELEASE_TAG
-   * @defaultValue "cyclone-ui@0.6.1"
+   * @defaultValue "cyclone-ui@0.6.4"
    */
   SHELL_SHOCK_RELEASE_TAG: string;
 
@@ -3729,7 +3729,7 @@ export function parseSafe(
           envValue["APP_VERSION"];
         const appVersionPath = envPath + ".APP_VERSION";
         if (appVersionValue === undefined || appVersionValue === "") {
-          appVersionProperty = "0.6.1";
+          appVersionProperty = "0.6.4";
         } else {
           if (typeof appVersionValue === "string") {
             appVersionProperty = appVersionValue;
@@ -3748,7 +3748,7 @@ export function parseSafe(
         }
         envSchema["APP_VERSION"] = appVersionProperty;
       } else {
-        envSchema["APP_VERSION"] = "0.6.1";
+        envSchema["APP_VERSION"] = "0.6.4";
       }
       if (
         (envValue["CYCLONE_UI_BUILD_ID"] ||
@@ -3762,7 +3762,7 @@ export function parseSafe(
           envValue["BUILD_ID"];
         const buildIdPath = envPath + ".BUILD_ID";
         if (buildIdValue === undefined || buildIdValue === "") {
-          buildIdProperty = "223fa657-a492-4e22-9a20-936ae8deb71a";
+          buildIdProperty = "230581ff-3d51-4cf9-b705-421f4c09447f";
         } else {
           if (typeof buildIdValue === "string") {
             buildIdProperty = buildIdValue;
@@ -3781,7 +3781,7 @@ export function parseSafe(
         }
         envSchema["BUILD_ID"] = buildIdProperty;
       } else {
-        envSchema["BUILD_ID"] = "223fa657-a492-4e22-9a20-936ae8deb71a";
+        envSchema["BUILD_ID"] = "230581ff-3d51-4cf9-b705-421f4c09447f";
       }
       if (
         (envValue["CYCLONE_UI_BUILD_TIMESTAMP"] ||
@@ -3795,7 +3795,7 @@ export function parseSafe(
           envValue["BUILD_TIMESTAMP"];
         const buildTimestampPath = envPath + ".BUILD_TIMESTAMP";
         if (buildTimestampValue === undefined || buildTimestampValue === "") {
-          buildTimestampProperty = "2026-10-12T00:33:48.287Z";
+          buildTimestampProperty = "2026-10-12T16:29:50.849Z";
         } else {
           if (typeof buildTimestampValue === "string") {
             buildTimestampProperty = buildTimestampValue;
@@ -3814,7 +3814,7 @@ export function parseSafe(
         }
         envSchema["BUILD_TIMESTAMP"] = buildTimestampProperty;
       } else {
-        envSchema["BUILD_TIMESTAMP"] = "2026-10-12T00:33:48.287Z";
+        envSchema["BUILD_TIMESTAMP"] = "2026-10-12T16:29:50.849Z";
       }
       if (
         (envValue["CYCLONE_UI_BUILD_CHECKSUM"] ||
@@ -3828,7 +3828,7 @@ export function parseSafe(
           envValue["BUILD_CHECKSUM"];
         const buildChecksumPath = envPath + ".BUILD_CHECKSUM";
         if (buildChecksumValue === undefined || buildChecksumValue === "") {
-          buildChecksumProperty = "Z3xRnnXss13NQYvdJtM5wFXJ5iAXZGec";
+          buildChecksumProperty = "BxzBa26jWDciwfw-9tv-7razAOzHq2qX";
         } else {
           if (typeof buildChecksumValue === "string") {
             buildChecksumProperty = buildChecksumValue;
@@ -3847,7 +3847,7 @@ export function parseSafe(
         }
         envSchema["BUILD_CHECKSUM"] = buildChecksumProperty;
       } else {
-        envSchema["BUILD_CHECKSUM"] = "Z3xRnnXss13NQYvdJtM5wFXJ5iAXZGec";
+        envSchema["BUILD_CHECKSUM"] = "BxzBa26jWDciwfw-9tv-7razAOzHq2qX";
       }
       if (
         (envValue["CYCLONE_UI_RELEASE_ID"] ||
@@ -3861,7 +3861,7 @@ export function parseSafe(
           envValue["RELEASE_ID"];
         const releaseIdPath = envPath + ".RELEASE_ID";
         if (releaseIdValue === undefined || releaseIdValue === "") {
-          releaseIdProperty = "3fa657a4-926e-429a-a093-6ae8deb71abf";
+          releaseIdProperty = "0581ff3d-511c-4977-8542-1f4c09447f0a";
         } else {
           if (typeof releaseIdValue === "string") {
             releaseIdProperty = releaseIdValue;
@@ -3880,7 +3880,7 @@ export function parseSafe(
         }
         envSchema["RELEASE_ID"] = releaseIdProperty;
       } else {
-        envSchema["RELEASE_ID"] = "3fa657a4-926e-429a-a093-6ae8deb71abf";
+        envSchema["RELEASE_ID"] = "0581ff3d-511c-4977-8542-1f4c09447f0a";
       }
       if (
         (envValue["CYCLONE_UI_RELEASE_TAG"] ||
@@ -3894,7 +3894,7 @@ export function parseSafe(
           envValue["RELEASE_TAG"];
         const releaseTagPath = envPath + ".RELEASE_TAG";
         if (releaseTagValue === undefined || releaseTagValue === "") {
-          releaseTagProperty = "cyclone-ui@0.6.1";
+          releaseTagProperty = "cyclone-ui@0.6.4";
         } else {
           if (typeof releaseTagValue === "string") {
             releaseTagProperty = releaseTagValue;
@@ -3913,7 +3913,7 @@ export function parseSafe(
         }
         envSchema["RELEASE_TAG"] = releaseTagProperty;
       } else {
-        envSchema["RELEASE_TAG"] = "cyclone-ui@0.6.1";
+        envSchema["RELEASE_TAG"] = "cyclone-ui@0.6.4";
       }
       if (
         (envValue["ORG"] ||

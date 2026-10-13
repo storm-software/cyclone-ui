@@ -278,7 +278,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
         : "marginLeft";
 
     const geometry = SLIDER_GEOMETRY[size] ?? SLIDER_GEOMETRY.md;
-    const fill = disabled ? "border" : "accent";
+    const fill = disabled ? "hairline" : "primary";
     const markList = useMemo(
       () => getSliderMarks(marks, min, max, step),
       [marks, min, max, step]
@@ -449,7 +449,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
               width={markSize}
               height={markSize}
               borderRadius={100_000}
-              backgroundColor={active ? "onAccent" : fill}
+              backgroundColor={active ? "onPrimary" : fill}
               opacity={active ? 0.8 : 1}
               pointerEvents="none"
               {...{ [startEdge]: percent, [startMargin]: -markSize / 2 }}
@@ -492,7 +492,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                   fontSize={14}
                   lineHeight={20}
                   textAlign="center"
-                  color={active && !disabled ? "primary" : "tertiary"}>
+                  color={active && !disabled ? "emphasis" : "subtle"}>
                   {mark.label}
                 </Text>
               </View>
@@ -587,7 +587,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                   scale={showValueLabel ? 1 : 0.5}
                   y={showValueLabel ? 0 : 6}>
                   <View
-                    backgroundColor="accent"
+                    backgroundColor="primary"
                     borderRadius="sm"
                     paddingHorizontal={8}
                     paddingVertical={4}
@@ -597,7 +597,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                       fontSize={12}
                       lineHeight={16}
                       fontWeight="500"
-                      color="onAccent">
+                      color="onPrimary">
                       {formatValueLabel(value, index)}
                     </Text>
                   </View>
@@ -605,7 +605,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                     width={8}
                     height={8}
                     marginTop={-5}
-                    backgroundColor="accent"
+                    backgroundColor="primary"
                     rotate="45deg"
                   />
                 </View>

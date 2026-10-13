@@ -4,7 +4,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import type { LikeButtonProps } from "./LikeButton";
 import { LikeButton } from "./LikeButton";
 
-import { config } from "../../../packages/themes/src/tamagui/config";
+import { config } from "../../../packages/tokens/src/tamagui/config";
 
 const renderLikeButton = (props: LikeButtonProps = {}) =>
   renderToStaticMarkup(

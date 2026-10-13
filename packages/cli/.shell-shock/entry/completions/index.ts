@@ -72,15 +72,15 @@ export async function handler(args: string[] = useArgs()) {
       message: "Which command would you like to execute?",
       options: [
         {
-          value: ["completions", "bash", "script"],
-          label: "Completions - Bash Script",
-          description: `(cyclone-ui completions bash script)`,
-          icon: "🖵"
-        },
-        {
           value: ["completions", "bash", "config"],
           label: "Completions - Bash Configuration",
           description: `(cyclone-ui completions bash config)`,
+          icon: "🖵"
+        },
+        {
+          value: ["completions", "bash", "script"],
+          label: "Completions - Bash Script",
+          description: `(cyclone-ui completions bash script)`,
           icon: "🖵"
         },
         {

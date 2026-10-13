@@ -70,11 +70,11 @@ const meta: Meta<TimelineProps<TimelineEvent>> = {
     layout: "vertical",
     content: event => (
       <View gap="xs">
-        <BodyText size="sm" color="tertiary">
+        <BodyText size="sm" color="subtle">
           {event.date}
         </BodyText>
         <HeadingText level="sm">{event.status}</HeadingText>
-        <BodyText color="tertiary">{event.description}</BodyText>
+        <BodyText color="subtle">{event.description}</BodyText>
       </View>
     )
   },
@@ -90,7 +90,7 @@ const meta: Meta<TimelineProps<TimelineEvent>> = {
   },
   decorators: [
     Story => (
-      <View padding="8xl" backgroundColor="surfaceCanvas">
+      <View padding="8xl" backgroundColor="canvas">
         <Story />
       </View>
     )
@@ -101,7 +101,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const dateOpposite: TimelineProps<TimelineEvent>["opposite"] = event => (
-  <BodyText size="sm" color="tertiary">
+  <BodyText size="sm" color="subtle">
     {event.date}
   </BodyText>
 );
@@ -109,7 +109,7 @@ const dateOpposite: TimelineProps<TimelineEvent>["opposite"] = event => (
 const statusContent: TimelineProps<TimelineEvent>["content"] = event => (
   <View gap="xs">
     <HeadingText level="sm">{event.status}</HeadingText>
-    <BodyText color="tertiary">{event.description}</BodyText>
+    <BodyText color="subtle">{event.description}</BodyText>
   </View>
 );
 
@@ -157,8 +157,8 @@ export const CustomMarkers: Story = {
         alignItems="center"
         justifyContent="center"
         borderWidth={0}
-        backgroundColor={index < 3 ? "accent" : "subtle"}>
-        <event.icon size={16} color={index < 3 ? "onAccent" : "onSubtle"} />
+        backgroundColor={index < 3 ? "primary" : "secondary"}>
+        <event.icon size={16} color={index < 3 ? "onPrimary" : "onSecondary"} />
       </TimelineMarker>
     )
   }

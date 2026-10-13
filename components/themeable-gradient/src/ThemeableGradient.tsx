@@ -34,7 +34,7 @@ type BaseThemeableGradientProps = {
 } & Omit<LinearGradientProps, "color" | "theme">;
 
 const ThemeableGradientContent = ({
-  color = "accent",
+  color = "primary",
   variant = ColorScientificPalettes.SURROUNDING,
   ...props
 }: BaseThemeableGradientProps) => {

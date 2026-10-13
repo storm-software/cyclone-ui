@@ -147,7 +147,7 @@ const BreadcrumbCurrent = styled(Text, {
   theme: "base",
   transition: "200ms",
   cursor: "default",
-  color: "accent",
+  color: "primary",
   verticalAlign: "middle",
   fontFamily: "title-sm",
 
@@ -181,9 +181,9 @@ const getBreadcrumbEllipsisColor = (
   }: Pick<BreadcrumbContextProps, "inverse" | "subtle" | "subtlest">
 ) => {
   if (subtlest) {
-    return "tertiary";
+    return "subtle";
   } else if (subtle) {
-    return "secondary";
+    return "ink";
   }
 
   // `LinkText` collapses its color variants to `base` in the base theme.
@@ -193,20 +193,20 @@ const getBreadcrumbEllipsisColor = (
     themeName === "light" ||
     themeName.endsWith("base");
 
-  return isBaseTheme && !inverse ? "primary" : "accent";
+  return isBaseTheme && !inverse ? "emphasis" : "primary";
 };
 
 const BreadcrumbSeparator = () => {
   const { variant } = BreadcrumbContext.useStyledContext();
 
   if (variant === "chevron") {
-    return <CaretRight color="tertiary" size="2xl" weight="bold" />;
+    return <CaretRight color="subtle" size="2xl" weight="bold" />;
   } else if (variant === "double") {
-    return <CaretDoubleRight color="tertiary" size="2xl" />;
+    return <CaretDoubleRight color="subtle" size="2xl" />;
   } else if (variant === "slash") {
     return (
       <SizableText
-        color="tertiary"
+        color="subtle"
         fontFamily="body-sm"
         fontSize="sm"
         fontWeight="bold">
@@ -259,7 +259,7 @@ const BreadcrumbEllipsis = ({
         <Popover.Content
           padding="lg"
           borderWidth={1}
-          borderColor="border"
+          borderColor="hairline"
           maxWidth="90vw"
           maxHeight={`calc(var(--tamagui-popper-available-height) - ${BREADCRUMB_MENU_VIEWPORT_PADDING}px)`}
           overflow="hidden">
@@ -345,7 +345,7 @@ const BreadcrumbMenuLink = styled(Link, {
   borderRadius: "button",
   paddingHorizontal: "3xl",
   paddingVertical: "xl",
-  backgroundColor: "transparent hover:tertiary focus-visible:tertiary",
+  backgroundColor: "transparent hover:subtle focus-visible:subtle",
   size: "sm"
 });
 

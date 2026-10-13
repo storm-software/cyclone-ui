@@ -79,7 +79,7 @@ const Redaction = styled(View, {
   bottom: 0,
   left: -1,
   zIndex: 1,
-  backgroundColor: "accent",
+  backgroundColor: "primary",
   pointerEvents: "none",
   x: 0
 });
@@ -93,39 +93,42 @@ export type RedactedAnimationProps = Omit<
   direction?: RedactedAnimationDirection;
 };
 
-export const RedactedAnimation =
-  createStyledHOC(RedactedAnimationFrame, 
-    ({ children, direction = "left", ...props }: GetProps<typeof RedactedAnimationFrame> & RedactedAnimationProps, forwardedRef) => {
-      const [isRevealed, setIsRevealed] = useState(false);
-      const prefersReducedMotion = usePrefersReducedMotion();
-      const isRedactionRevealed = prefersReducedMotion || isRevealed;
+export const RedactedAnimation = createStyledHOC(
+  RedactedAnimationFrame,
+  (
+    {
+      children,
+      direction = "left",
+      ...props
+    }: GetProps<typeof RedactedAnimationFrame> & RedactedAnimationProps,
+    forwardedRef
+  ) => {
+    const [isRevealed, setIsRevealed] = useState(false);
+    const prefersReducedMotion = usePrefersReducedMotion();
+    const isRedactionRevealed = prefersReducedMotion || isRevealed;
 
-      useEffect(() => {
-        if (prefersReducedMotion) {
-          return;
-        }
+    useEffect(() => {
+      if (prefersReducedMotion) {
+        return;
+      }
 
-        const timeout = setTimeout(() => setIsRevealed(true), REDACTION_DELAY);
+      const timeout = setTimeout(() => setIsRevealed(true), REDACTION_DELAY);
 
-        return () => clearTimeout(timeout);
-      }, [prefersReducedMotion]);
+      return () => clearTimeout(timeout);
+    }, [prefersReducedMotion]);
 
-      return (
-        <RedactedAnimationFrame ref={forwardedRef} {...props}>
-          {children}
-          <Redaction
-            aria-hidden={true}
-            transition={prefersReducedMotion ? undefined : "400ms"}
-            x={
-              isRedactionRevealed
-                ? direction === "left"
-                  ? "-100%"
-                  : "100%"
-                : 0
-            }
-          />
-        </RedactedAnimationFrame>
-      );
-    },
-    { displayName: "RedactedAnimation" }
-  );
+    return (
+      <RedactedAnimationFrame ref={forwardedRef} {...props}>
+        {children}
+        <Redaction
+          aria-hidden={true}
+          transition={prefersReducedMotion ? undefined : "400ms"}
+          x={
+            isRedactionRevealed ? (direction === "left" ? "-100%" : "100%") : 0
+          }
+        />
+      </RedactedAnimationFrame>
+    );
+  },
+  { displayName: "RedactedAnimation" }
+);

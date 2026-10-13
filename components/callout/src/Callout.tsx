@@ -118,17 +118,17 @@ const CalloutFrameImpl = createStyledHOC(
             theme={theme}
             start={[1.0, 1.0]}
             end={[0, 0]}
-            colors={["accent", "transparent"]}
+            colors={["primary", "transparent"]}
           />
           <CalloutBackgroundHighGradient
             theme={theme}
             start={[0, 1.0]}
             end={[0, 1.0]}
-            colors={["transparent", "subtle"]}
+            colors={["transparent", "secondary"]}
           />
           <CalloutBackgroundDiagonal theme={theme}>
             <Diagonal
-              color="accent"
+              color="primary"
               height="100%"
               opacity={0.05}
               width="100%"
@@ -162,7 +162,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
   }
 
   return (
-    <ThemeableIcon theme={theme} {...props} size="13xl" color="subtle">
+    <ThemeableIcon theme={theme} {...props} size="13xl" color="secondary">
       {icon}
     </ThemeableIcon>
   );
@@ -170,7 +170,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
 
 const CalloutHeading = styled(HeadingLargeText, {
   displayName: "CalloutHeading",
-  color: "accent",
+  color: "primary",
   zIndex: "20"
 });
 
@@ -192,7 +192,7 @@ const CalloutHeadingImpl = createStyledHOC(
 
 const CalloutEyebrow = styled(EyebrowText, {
   displayName: "CalloutEyebrow",
-  color: "subtle",
+  color: "secondary",
   zIndex: "20"
 });
 
@@ -212,7 +212,7 @@ const CalloutEyebrowImpl = createStyledHOC(
 
 const CalloutBody = styled(BodyText, {
   displayName: "CalloutBody",
-  color: "secondary",
+  color: "ink",
   zIndex: "20",
   paddingVertical: 0
 });

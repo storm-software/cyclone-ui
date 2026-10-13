@@ -129,24 +129,27 @@ export default defineConfig({
           const color = tokenGroup(tokenGroup(spec.tokens).color);
 
           const base = tokenValue(
-            color.primary,
+            color.emphasis,
             theme === "dark" ? "#222222" : "#fafafa"
           );
-          const body = tokenValue(color.secondary, base);
-          const subtleInk = tokenValue(color.tertiary, body);
-          const info = tokenValue(color.info, body);
-          const danger = tokenValue(color.danger, info);
-          const warning = tokenValue(color.warning, info);
-          const success = tokenValue(color.success, info);
-          const discovery = tokenValue(color.discovery, info);
+          const body = tokenValue(color.ink, base);
+          const subtleInk = tokenValue(color.subtle, body);
+          const info = tokenValue(tokenGroup(color.info).primary, body);
+          const danger = tokenValue(tokenGroup(color.danger).primary, info);
+          const warning = tokenValue(tokenGroup(color.warning).primary, info);
+          const success = tokenValue(tokenGroup(color.success).primary, info);
+          const discovery = tokenValue(
+            tokenGroup(color.discovery).primary,
+            info
+          );
           const page = tokenValue(
-            color["surface-canvas"],
+            color.canvas,
             theme === "dark" ? "#222222" : "#fafafa"
           );
-          const sunken = tokenValue(color["surface-sunken"], page);
-          const selection = tokenValue(color.primary, sunken);
+          const sunken = tokenValue(color.sunken, page);
+          const selection = tokenValue(color.emphasis, sunken);
           const onSelection = page;
-          const border = tokenValue(color.border, subtleInk);
+          const border = tokenValue(color.hairline, subtleInk);
 
           return {
             name: `cyclone-${theme
@@ -276,33 +279,33 @@ export default defineConfig({
 
           return {
             base: theme,
-            colorPrimary: tokenValue(color.primary),
-            colorSecondary: tokenValue(color.tertiary),
+            colorPrimary: tokenValue(color.emphasis),
+            colorSecondary: tokenValue(color.subtlest),
 
-            textColor: tokenValue(color.primary),
-            textInverseColor: tokenValue(color["surface-canvas"]),
+            textColor: tokenValue(color.emphasis),
+            textInverseColor: tokenValue(color.canvas),
 
-            appBg: tokenValue(color["surface-canvas"]),
-            appContentBg: tokenValue(color["surface-canvas"]),
-            appPreviewBg: tokenValue(color["surface-canvas"]),
-            appBorderColor: tokenValue(color.border),
+            appBg: tokenValue(color.canvas),
+            appContentBg: tokenValue(color.canvas),
+            appPreviewBg: tokenValue(color.canvas),
+            appBorderColor: tokenValue(color.hairline),
             appBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
 
-            barTextColor: tokenValue(color.secondary),
-            barSelectedColor: tokenValue(color.primary),
-            barBg: tokenValue(color["surface-floating"]),
-            barHoverColor: tokenValue(color.tertiary),
+            barTextColor: tokenValue(color.ink),
+            barSelectedColor: tokenValue(color.emphasis),
+            barBg: tokenValue(color.floating),
+            barHoverColor: tokenValue(color.subtlest),
 
-            buttonBg: tokenValue(color["surface-elevated"]),
-            buttonBorder: tokenValue(color.border),
+            buttonBg: tokenValue(color.elevated),
+            buttonBorder: tokenValue(color.hairline),
 
-            inputBg: tokenValue(color["surface-elevated"]),
-            inputBorder: tokenValue(color.border),
-            inputTextColor: tokenValue(color.secondary),
+            inputBg: tokenValue(color.elevated),
+            inputBorder: tokenValue(color.hairline),
+            inputTextColor: tokenValue(color.ink),
             inputBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
 
-            booleanBg: tokenValue(color["surface-elevated"]),
-            booleanSelectedBg: tokenValue(color.tertiary),
+            booleanBg: tokenValue(color.elevated),
+            booleanSelectedBg: tokenValue(color.subtlest),
 
             brandImage
           };

@@ -24,7 +24,7 @@ import { Defs, Path, Pattern, Rect, Svg } from "react-native-svg";
 import type { ThemedIconBodyProps } from "./themed-icon";
 import { themedIcon } from "./themed-icon";
 const Icon = (props: ThemedIconBodyProps<IconProps>) => {
-  const color = useCurrentColor((props.color || "onAccent") as any);
+  const color = useCurrentColor((props.color || "onPrimary") as any);
 
   return (
     <Svg x="0" y="0" fill="none" {...(props as SvgProps)}>

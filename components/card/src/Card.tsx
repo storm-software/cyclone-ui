@@ -82,9 +82,9 @@ const CardFrame = styled(Container, {
   overflow: "hidden",
   borderRadius: "card",
   borderColor:
-    "accent hover:hovered press:active focus-visible:active",
+    "primary hover:primaryHovered press:primaryActive focus-visible:primaryActive",
   cursor: "pointer",
-  backgroundColor: "surfaceElevated hover:tertiary",
+  backgroundColor: "surface hover:subtle",
   position: "relative"
 });
 
@@ -164,7 +164,7 @@ const CardFrameImpl = createStyledHOC(
             <CardBackgroundGradient
               start={[0, 0]}
               end={[1.0, 1.0]}
-              colors={["transparent", color ?? "accent"]}
+              colors={["transparent", color ?? "primary"]}
             />
             <CardContent size={size}>{children}</CardContent>
           </CardFrame>
@@ -209,7 +209,7 @@ const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
     <ThemeableIcon
       theme={theme}
       size="13xl"
-      color={dataColor ?? "accent"}
+      color={dataColor ?? "primary"}
       zIndex="20"
       {...props}>
       {icon}
@@ -235,7 +235,7 @@ const CardHeading = styled(HeadingLargeText, {
   context: CardContext,
   zIndex: "20",
   verticalAlign: "middle",
-  color: "accent",
+  color: "primary",
   variants: {
     size: cardTextSizeVariant
   } as const
@@ -248,7 +248,7 @@ const CardHeadingImpl = createStyledHOC(
     const dataColor = useContext(CardDataColorContext);
 
     return (
-      <CardHeading ref={forwardedRef} color={dataColor ?? "accent"} {...rest}>
+      <CardHeading ref={forwardedRef} color={dataColor ?? "primary"} {...rest}>
         {children}
       </CardHeading>
     );
@@ -262,7 +262,7 @@ const CardEyebrow = styled(EyebrowText, {
   displayName: "CardEyebrow",
   context: CardContext,
   zIndex: "20",
-  color: "secondary",
+  color: "ink",
   variants: {
     size: cardTextSizeVariant
   } as const
@@ -324,7 +324,7 @@ const CardLinkArrowRight = styled(ArrowRight, {
   displayName: "CardLink",
   context: CardContext,
   zIndex: "30",
-  color: "accent",
+  color: "primary",
   marginTop: "xs"
 });
 
@@ -342,14 +342,14 @@ const CardLinkImpl = createStyledHOC(
           group={false}
           inverse={inverse}
           zIndex="30"
-          color="group-hover/card:hovered"
-          textDecorationColor="group-hover/card:hovered">
+          color="group-hover/card:primaryHovered"
+          textDecorationColor="group-hover/card:primaryHovered">
           {children}
         </Link>
         <View transition="200ms" x="0 group-hover/card:10px">
           <CardLinkArrowRight
             height="4xl"
-            color="group-hover/card:hovered"
+            color="group-hover/card:primaryHovered"
           />
         </View>
       </XStack>

@@ -66,7 +66,7 @@ export const Anchor = createStyledHOC(
     forwardedRef
   ) => {
     // Themed icons don't accept flat state clauses (e.g.
-    // `group-hover/anchorIcon:accent`), so track the permalink hover here.
+    // `group-hover/anchorIcon:primary`), so track the permalink hover here.
     const [isIconHovered, setIconHovered] = useState(false);
 
     return (
@@ -96,7 +96,7 @@ export const Anchor = createStyledHOC(
           <AnchorIcon
             aria-hidden={true}
             transition="200ms"
-            color={isIconHovered ? "accent" : "neutral7"}
+            color={isIconHovered ? "primary" : "neutral7"}
             height="90%"
             maxHeight="7xl"
             weight="bold"

@@ -59,7 +59,7 @@ const ArticlePageSideNavImpl = ({
 }: ArticlePageSideNavProps) => (
   <Page.SideNav
     defaultWidth={defaultWidth}
-    backgroundColor="surfaceCanvas max-lg:surfaceElevated"
+    backgroundColor="canvas max-lg:surface"
     borderRightWidth="0px max-lg:1px"
     {...props}
   />
@@ -78,9 +78,9 @@ const ArticlePagePanel = styled(View, {
   flexShrink: 1,
   minHeight: 0,
   flexDirection: "column",
-  backgroundColor: "surfaceElevated",
+  backgroundColor: "surface",
   borderWidth: "0px lg:1px",
-  borderColor: "border",
+  borderColor: "hairline",
   borderRadius: "0px lg:2xl",
   boxShadow: "none lg:sm",
   overflow: "visible lg:hidden"
@@ -116,7 +116,7 @@ const ArticlePageHeaderFrame = styled(View, {
   gap: "xl",
   paddingLeft: "7xl max-md:4xl",
   paddingRight: "4xl",
-  backgroundColor: "surfaceElevated"
+  backgroundColor: "surface"
 });
 
 /**

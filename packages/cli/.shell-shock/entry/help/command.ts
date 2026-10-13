@@ -6,6 +6,7 @@ import { showHelp } from "shell-shock:help";
 import { showHelp as showHelpAdd } from "shell-shock:help/add";
 import { showHelp as showHelpAnalyzeA11Y } from "shell-shock:help/analyze-a11y";
 import { showHelp as showHelpBuild } from "shell-shock:help/build";
+import { showHelp as showHelpChangelog } from "shell-shock:help/changelog";
 import { showHelp as showHelpCompletions } from "shell-shock:help/completions";
 import { showHelp as showHelpCompletionsBash } from "shell-shock:help/completions/bash";
 import { showHelp as showHelpCompletionsBashConfig } from "shell-shock:help/completions/bash/config";
@@ -61,6 +62,8 @@ export default async function handler(commands: string[] = []) {
     showHelpAnalyzeA11Y();
   } else if (commands.join("/").toLowerCase() === "build") {
     showHelpBuild();
+  } else if (commands.join("/").toLowerCase() === "changelog") {
+    showHelpChangelog();
   } else if (commands.join("/").toLowerCase() === "completions") {
     showHelpCompletions();
   } else if (commands.join("/").toLowerCase() === "completions/bash") {

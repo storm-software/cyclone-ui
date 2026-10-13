@@ -7,7 +7,7 @@ describe("BodyText font loading", () => {
     const root = resolve(import.meta.dirname, "../../..");
     const tokens = JSON.parse(
       readFileSync(
-        resolve(root, "packages/themes/src/tokens/semantic/tokens.json"),
+        resolve(root, "packages/tokens/src/tokens/semantic/tokens.json"),
         "utf8"
       )
     );

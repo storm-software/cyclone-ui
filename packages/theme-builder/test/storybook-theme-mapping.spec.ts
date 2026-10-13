@@ -54,13 +54,13 @@ const token = ($value: string | number): Token => ({ $value });
 
 const semanticColors = (prefix: string) => ({
   color: {
-    primary: token(`${prefix}-primary`),
-    secondary: token(`${prefix}-secondary`),
-    tertiary: token(`${prefix}-tertiary`),
-    border: token(`${prefix}-border`),
-    "surface-canvas": token(`${prefix}-surface-canvas`),
-    "surface-elevated": token(`${prefix}-surface-elevated`),
-    "surface-floating": token(`${prefix}-surface-floating`)
+    emphasis: token(`${prefix}-emphasis`),
+    ink: token(`${prefix}-ink`),
+    subtlest: token(`${prefix}-subtlest`),
+    hairline: token(`${prefix}-hairline`),
+    canvas: token(`${prefix}-canvas`),
+    elevated: token(`${prefix}-elevated`),
+    floating: token(`${prefix}-floating`),
   },
   radius: { md: token(6) }
 });
@@ -89,30 +89,30 @@ describe("Storybook theme mapping", () => {
 
     expect(themes.dark).toMatchObject({
       base: "dark",
-      colorPrimary: "dark-primary",
-      colorSecondary: "dark-tertiary",
-      textColor: "dark-primary",
-      textInverseColor: "dark-surface-canvas",
-      appBg: "dark-surface-canvas",
-      appContentBg: "dark-surface-elevated",
-      appPreviewBg: "dark-surface-canvas",
-      appBorderColor: "dark-border",
+      colorPrimary: "dark-emphasis",
+      colorSecondary: "dark-subtlest",
+      textColor: "dark-emphasis",
+      textInverseColor: "dark-canvas",
+      appBg: "dark-canvas",
+      appContentBg: "dark-canvas",
+      appPreviewBg: "dark-canvas",
+      appBorderColor: "dark-hairline",
       appBorderRadius: 6,
-      barTextColor: "dark-secondary",
-      barSelectedColor: "dark-primary",
-      barBg: "dark-surface-floating",
-      barHoverColor: "dark-tertiary",
-      buttonBg: "dark-surface-elevated",
-      buttonBorder: "dark-border",
-      inputBg: "dark-surface-elevated",
-      inputBorder: "dark-border",
-      inputTextColor: "dark-secondary",
+      barTextColor: "dark-ink",
+      barSelectedColor: "dark-emphasis",
+      barBg: "dark-floating",
+      barHoverColor: "dark-subtlest",
+      buttonBg: "dark-elevated",
+      buttonBorder: "dark-hairline",
+      inputBg: "dark-elevated",
+      inputBorder: "dark-hairline",
+      inputTextColor: "dark-ink",
       inputBorderRadius: 6,
-      booleanBg: "dark-surface-elevated",
-      booleanSelectedBg: "dark-tertiary"
+      booleanBg: "dark-elevated",
+      booleanSelectedBg: "dark-subtlest"
     });
-    expect(themes.light.colorPrimary).toBe("light-primary");
-    expect(themes.light.textColor).toBe("light-primary");
-    expect(themes.light.appBg).toBe("light-surface-canvas");
+    expect(themes.light.colorPrimary).toBe("light-emphasis");
+    expect(themes.light.textColor).toBe("light-emphasis");
+    expect(themes.light.appBg).toBe("light-canvas");
   });
 });

@@ -140,7 +140,7 @@ const TableOfContentsHeading = styled(XStack, {
 
 const TableOfContentsHeadingText = styled(BodyText, {
   render: "span",
-  color: "tertiary",
+  color: "subtle",
   fontWeight: "md"
 });
 
@@ -203,12 +203,12 @@ const TableOfContentsLink = createStyledHOC(
 const TableOfContentsLinkText = styled(BodyText, {
   render: "span",
   transition: "color 160ms ease-out",
-  color: "inactive group-hover/tableOfContentsItem:hovered",
+  color: "primaryInactive group-hover/tableOfContentsItem:primaryHovered",
   fontWeight: "normal",
   variants: {
     active: {
       true: {
-        color: "accent"
+        color: "primary"
       }
     },
     reducedMotion: {
@@ -418,7 +418,7 @@ function TableOfContentsRail({
         left={RAIL_LEFT}
         width={2}
         height={height}
-        backgroundColor="border"
+        backgroundColor="hairline"
       />
     );
   }
@@ -437,7 +437,7 @@ function TableOfContentsRail({
         <path
           d={geometry.path}
           fill="none"
-          stroke="var(--border)"
+          stroke="var(--hairline)"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
@@ -461,7 +461,7 @@ function TableOfContentsRail({
           <path
             d={geometry.path}
             fill="none"
-            stroke="var(--accent)"
+            stroke="var(--primary)"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
@@ -478,7 +478,7 @@ function TableOfContentsRail({
           width: ACTIVE_MARKER_SIZE,
           height: ACTIVE_MARKER_SIZE,
           borderRadius: "50%",
-          backgroundColor: "var(--accent)",
+          backgroundColor: "var(--primary)",
           offsetPath: `path("${geometry.path}")`,
           offsetDistance: `${
             scrolledToEnd
@@ -612,7 +612,7 @@ export const TableOfContents = createStyledHOC(
         aria-label="Table of contents"
         {...props}>
         <TableOfContentsHeading>
-          <ListBullets aria-hidden={true} color="tertiary" size="5xl" />
+          <ListBullets aria-hidden={true} color="subtle" size="5xl" />
           <TableOfContentsHeadingText>{children}</TableOfContentsHeadingText>
         </TableOfContentsHeading>
 

@@ -41,7 +41,7 @@ const Icon = ({
   style,
   ...props
 }: ThemedIconBodyProps<CheckProps>) => {
-  const color = useCurrentColor((props.color || "onAccent") as any);
+  const color = useCurrentColor((props.color || "onPrimary") as any);
 
   const motionLine1 = useMotionValue(0);
   const playbackLine1 = animate(motionLine1, 6, {

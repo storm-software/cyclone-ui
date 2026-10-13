@@ -38,14 +38,14 @@ const DetailLabel = styled(BodyText, {
   displayName: "TypeTableDetailLabel",
   width: "25%",
   flexShrink: 0,
-  color: "tertiary",
+  color: "subtle",
   fontFamily: "title-md"
 });
 
 const DetailValue = styled(BodyText, {
   displayName: "TypeTableDetailValue",
   flex: 1,
-  color: "secondary"
+  color: "ink"
 });
 
 const hasValue = (value: ReactNode) => value !== undefined && value !== null;

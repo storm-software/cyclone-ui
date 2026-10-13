@@ -6,7 +6,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import type { SliderProps, SliderValue } from "./Slider";
 import { getSliderMarks, Slider, valueToPercent } from "./Slider";
 
-import { config } from "../../../packages/themes/src/tamagui/config";
+import { config } from "../../../packages/tokens/src/tamagui/config";
 
 const renderSlider = (props: SliderProps = {}) =>
   renderToStaticMarkup(

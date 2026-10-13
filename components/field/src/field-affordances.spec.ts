@@ -31,11 +31,13 @@ describe("field affordance color states", () => {
     const fieldIcon = getDeclaration(formControlSource(), "useFieldIconColor");
 
     for (const affordance of [inputSeparator, selectSeparator, fieldIcon]) {
-      expect(affordance).toContain("border");
-      expect(affordance).toContain("borderActive");
-      expect(affordance).toContain("borderActive");
-      expect(affordance).toContain("borderInactive");
+      expect(affordance).toContain("hairline");
+      expect(affordance).toContain("hairlineActive");
     }
+    for (const separator of [inputSeparator, selectSeparator]) {
+      expect(separator).toContain("hairlineInactive");
+    }
+    expect(fieldIcon).toContain("hairlineDisabled");
   });
 
   it("fades every textbox divider in over 200ms on mount", () => {
@@ -69,7 +71,7 @@ describe("field affordance color states", () => {
     );
   });
 
-  it("colors field icons accent when themed or validated, otherwise border", () => {
+  it("colors field icons primary when themed or validated, otherwise hairline", () => {
     const field = readComponent("./Field.tsx");
     const iconColor = getDeclaration(formControlSource(), "useFieldIconColor");
     const fieldIcon = getDeclaration(field, "FieldIconButtonImpl");
@@ -81,7 +83,7 @@ describe("field affordance color states", () => {
     expect(iconColor).toContain(
       '(!theme || theme === "base") && !formControl?.hasValidationMessage'
     );
-    expect(iconColor).toContain('"accent"');
+    expect(iconColor).toContain('"primary"');
     expect(fieldIcon).toContain("color: iconColor");
     expect(fieldIcon).not.toContain('color: "currentColor"');
     expect(selectTrigger).toContain("color={iconColor}");
@@ -94,10 +96,10 @@ describe("field affordance color states", () => {
     );
 
     expect(themeIcon).toContain("theme={theme}");
-    expect(themeIcon).toContain('"border focus-visible:borderActive"');
-    expect(themeIcon).toContain('"accent focus-visible:active"');
+    expect(themeIcon).toContain('"hairline focus-visible:hairlineActive"');
+    expect(themeIcon).toContain('"primary focus-visible:primaryActive"');
     expect(themeIcon).toMatch(
-      /arrowBorderColor=\{\s*isNeutral\s*\?\s*"border focus-visible:borderActive"\s*:\s*"accent focus-visible:active"\s*\}/
+      /arrowBorderColor=\{\s*isNeutral\s*\?\s*"hairline focus-visible:hairlineActive"\s*:\s*"primary focus-visible:primaryActive"\s*\}/
     );
   });
 });
@@ -123,9 +125,7 @@ describe("floating field placeholder visibility", () => {
     expect(formControl).toContain(
       "labelVariant: FieldLabelVariant | undefined"
     );
-    expect(formControl).toContain(
-      "export const useFieldShouldShowPlaceholder"
-    );
+    expect(formControl).toContain("export const useFieldShouldShowPlaceholder");
     expect(formControl).toMatch(
       /formControl\?\.labelVariant !== "floating" \|\|\s*\(!hasFieldValue\(value\) && Boolean\(formControl\.focused\)\)/
     );

@@ -133,7 +133,7 @@ const AlertIconBackground = styled(View, {
   displayName: "Alert",
   theme: "base",
   padding: "xl",
-  backgroundColor: "surfaceHighest",
+  backgroundColor: "floating",
   borderRadius: 1000_000_000
 });
 
@@ -155,18 +155,18 @@ const AlertIcon = createStyledHOC(
           display="block"
           height="100%"
           width="62%"
-          backgroundColor="accent"
+          backgroundColor="primary"
           zIndex="10"
         />
 
         <YStack zIndex="20" justifyContent="center" paddingLeft="3xl">
           <Theme name={type ?? "base"}>
-            <AlertIconBackground backgroundColor="surfaceHighest">
+            <AlertIconBackground backgroundColor="floating">
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}
                 theme={colorTheme}
-                {...(type ? { color: "accent" } : {})}
+                {...(type ? { color: "primary" } : {})}
                 size="10xl">
                 {children || getIconByTheme({ theme: colorTheme }) || (
                   <WarningCircle />
@@ -204,7 +204,7 @@ const AlertContent = createStyledHOC(
 
 const AlertHeading = styled(HeadingMediumText, {
   displayName: "AlertHeading",
-  color: "accent"
+  color: "primary"
 });
 
 const AlertHeadingImpl = createStyledHOC(

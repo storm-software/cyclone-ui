@@ -54,7 +54,9 @@ const meta: Meta<TagPickerStoryArgs> = {
     }: any,
     { id }: { id: string }
   ) => (
-    <Form name={`formName-${id}`} initialValues={{ tagPickerName: defaultValue }}>
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ tagPickerName: defaultValue }}>
       <View width={360}>
         <Field
           name="tagPickerName"
@@ -391,7 +393,7 @@ const ControlledExample = () => {
         value={tags}
         onChange={setTags}
       />
-      <Text color="secondary" fontFamily="body-md">
+      <Text color="ink" fontFamily="body-md">
         {`Value: ${JSON.stringify(tags)}`}
       </Text>
     </View>

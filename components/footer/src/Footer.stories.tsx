@@ -29,7 +29,7 @@ import { Footer } from "./Footer";
 
 const StoryCanvas = styled(View, {
   minHeight: "100vh",
-  backgroundColor: "surfaceCanvas"
+  backgroundColor: "canvas"
 });
 
 const StoryContent = styled(View, {
@@ -46,14 +46,14 @@ const StorySection = styled(View, {
   padding: "7xl",
   justifyContent: "center",
   gap: "xl",
-  backgroundColor: "surfaceCanvas",
+  backgroundColor: "canvas",
   borderRadius: "lg",
   borderWidth: 1,
-  borderColor: "border",
+  borderColor: "hairline",
   variants: {
     light: {
       true: {
-        backgroundColor: "accent"
+        backgroundColor: "primary"
       }
     }
   }
@@ -63,35 +63,37 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
   <StoryCanvas>
     <StoryContent>
       <StorySection>
-        <Text color="accent" fontFamily="display-lg">
+        <Text color="primary" fontFamily="display-lg">
           Build what matters
         </Text>
-        <BodyText color="secondary" maxWidth={640}>
+        <BodyText color="ink" maxWidth={640}>
           Explore ideas, tools, and practical guidance for creating useful
           products with a thoughtful approach.
         </BodyText>
       </StorySection>
       <StorySection>
-        <HeadingHeroText color="accent">Research and discovery</HeadingHeroText>
-        <BodyText color="secondary" maxWidth={640}>
+        <HeadingHeroText color="primary">
+          Research and discovery
+        </HeadingHeroText>
+        <BodyText color="ink" maxWidth={640}>
           Learn from new perspectives and turn early questions into clear
           directions through careful research and experimentation.
         </BodyText>
       </StorySection>
       <StorySection>
-        <HeadingHeroText color="accent">
+        <HeadingHeroText color="primary">
           Products for every team
         </HeadingHeroText>
-        <BodyText color="secondary" maxWidth={640}>
+        <BodyText color="ink" maxWidth={640}>
           Flexible tools help teams move from a first sketch to a finished
           experience while keeping the important details in view.
         </BodyText>
       </StorySection>
       <StorySection>
-        <HeadingHeroText color="accent">
+        <HeadingHeroText color="primary">
           A long-term perspective
         </HeadingHeroText>
-        <BodyText color="secondary" maxWidth={640}>
+        <BodyText color="ink" maxWidth={640}>
           We share what we learn, listen to the people who use our work, and
           keep improving the systems that support them.
         </BodyText>
@@ -126,11 +128,11 @@ const StoryBrand = () => (
       height="8xl"
       alignItems="center"
       justifyContent="center"
-      backgroundColor="subtle"
+      backgroundColor="secondary"
       borderRadius="full">
-      <Lightning aria-hidden={true} size={16} color="accent" weight="fill" />
+      <Lightning aria-hidden={true} size={16} color="primary" weight="fill" />
     </View>
-    <HeadingSmallText color="accent" fontSize="md">
+    <HeadingSmallText color="primary" fontSize="md">
       Cyclone UI
     </HeadingSmallText>
   </View>

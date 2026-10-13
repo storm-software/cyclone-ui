@@ -68,7 +68,7 @@ export const DialogContext = createStyledContext<
 const DialogHeading = styled(HeadingLargeText, {
   displayName: "DialogHeading",
   context: DialogContext,
-  color: "accent"
+  color: "primary"
 });
 
 const DialogHeadingImpl = createStyledHOC(
@@ -89,7 +89,7 @@ const DialogHeadingImpl = createStyledHOC(
 
 const DialogBody = styled(BodyText, {
   displayName: "DialogBody",
-  color: "secondary"
+  color: "ink"
 });
 
 const DialogBodyImpl = createStyledHOC(

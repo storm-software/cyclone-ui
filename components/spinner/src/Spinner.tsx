@@ -31,7 +31,7 @@ export type SpinnerProps = Omit<YStackProps, "children"> & {
 export const Spinner: React.ForwardRefExoticComponent<
   SpinnerProps & React.RefAttributes<any>
 > = createStyledHOC(YStack, (props: SpinnerProps, ref) => {
-  const { size, color: colorProp = "accent", ...stackProps } = props;
+  const { size, color: colorProp = "primary", ...stackProps } = props;
   const theme = useTheme();
   let color = colorProp as string;
   if (color && color[0] === "$") {

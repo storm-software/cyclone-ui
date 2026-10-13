@@ -44,9 +44,9 @@ const FooterFrame = styled(View, {
   position: "relative",
   width: "100%",
   overflow: "hidden",
-  backgroundColor: "subtle",
+  backgroundColor: "secondary",
   borderTopWidth: 1,
-  borderTopColor: "border"
+  borderTopColor: "hairline"
 });
 
 const FooterContainer = styled(View, {
@@ -86,7 +86,7 @@ const FooterStatement = styled(HeadingSmallText, {
   displayName: "FooterStatement",
   render: "h2",
   margin: 0,
-  color: "accent",
+  color: "primary",
   textTransform: "uppercase",
   letterSpacing: 2
 });
@@ -96,7 +96,7 @@ const FooterDescription = styled(BodyText, {
   render: "p",
   maxWidth: 560,
   margin: 0,
-  color: "accent",
+  color: "primary",
   opacity: 0.85
 });
 
@@ -136,7 +136,7 @@ const FooterSectionTitle = styled(HeadingSmallText, {
   displayName: "FooterSectionTitle",
   render: "h3",
   margin: 0,
-  color: "accent",
+  color: "primary",
   textTransform: "uppercase",
   letterSpacing: 2
 });
@@ -150,11 +150,11 @@ const FooterSectionLinks = styled(View, {
 const FooterLink = styled(Link, {
   displayName: "FooterLink",
   width: "fit-content",
-  color: "accent hover:hovered focus-visible:active",
+  color: "primary hover:primaryHovered focus-visible:primaryActive",
   opacity: "0.85 hover:1 focus-visible:1",
   textDecorationLine: "none",
   x: "hover:3px",
-  outlineColor: "focus-visible:accent",
+  outlineColor: "focus-visible:primary",
   outlineOffset: "focus-visible:3px",
   outlineStyle: "focus-visible:solid",
   outlineWidth: "focus-visible:2px"
@@ -182,7 +182,7 @@ const FooterBrand = styled(View, {
 const FooterCopyright = styled(BodyText, {
   displayName: "FooterCopyright",
   render: "span",
-  color: "accent",
+  color: "primary",
   fontSize: "md",
   opacity: 0.85
 });
@@ -267,7 +267,7 @@ const FooterLinkImpl = createStyledHOC(
         underline="none"
         {...props}
         {...(hovered && {
-          color: active ? "active" : "inactive"
+          color: active ? "primaryActive" : "primaryInactive"
         })}
         onMouseEnter={(event: any) => {
           onMouseEnter?.(event);

@@ -104,7 +104,7 @@ const BadgeBadgeFrame = styled(View, {
   justifyContent: "center",
   boxSizing: "border-box",
   borderRadius: 1000_000_000,
-  backgroundColor: "accent",
+  backgroundColor: "primary",
 
   variants: {
     variant: {
@@ -154,7 +154,7 @@ const BadgeBadgeFrame = styled(View, {
 
 const BadgeText = styled(Text, {
   displayName: BADGE_NAME,
-  color: "onAccent",
+  color: "onPrimary",
   fontFamily: "caption",
   fontSize: 12,
   fontWeight: "500",

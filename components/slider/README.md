@@ -45,6 +45,7 @@ A `Slider` component used to select a value, or a range of values, from a contin
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Installing](#installing)
@@ -122,23 +123,23 @@ import { Slider } from "@cyclone-ui/slider";
 </Form>
 ```
 
-| Prop | Default | Description |
-| --- | --- | --- |
-| `value` / `defaultValue` | `min` | A number, or an array of numbers for a range slider. |
-| `min` / `max` / `step` | `0` / `100` / `1` | The interval, and the increment values snap to. |
-| `onChange` | | Called on every change with the value (a number, or an array for a range) and the moved thumb's index. |
-| `onChangeCommitted` | | Called when a drag ends, or a key press changes the value. |
-| `size` | `"md"` | `"sm"`, `"md"`, or `"lg"`. |
-| `marks` | `false` | `true` for a mark at every step, or an array of `{ value, label? }`. |
-| `track` | `"normal"` | `"normal"`, `"inverted"`, or `false`. |
-| `valueLabelDisplay` | `"off"` | `"auto"` (on hover, focus and drag), `"on"`, or `"off"`. |
-| `valueLabelFormat` | | A string, or a function of the value and thumb index. |
-| `orientation` | `"horizontal"` | `"horizontal"` or `"vertical"`. |
-| `minStepsBetweenThumbs` | `0` | The minimum number of steps between range thumbs. |
-| `disabled` | `false` | Prevent changes. |
-| `getAriaLabel` / `getAriaValueText` | | Build each thumb's accessible name and value text. |
+| Prop                                | Default           | Description                                                                                            |
+| ----------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------ |
+| `value` / `defaultValue`            | `min`             | A number, or an array of numbers for a range slider.                                                   |
+| `min` / `max` / `step`              | `0` / `100` / `1` | The interval, and the increment values snap to.                                                        |
+| `onChange`                          |                   | Called on every change with the value (a number, or an array for a range) and the moved thumb's index. |
+| `onChangeCommitted`                 |                   | Called when a drag ends, or a key press changes the value.                                             |
+| `size`                              | `"md"`            | `"sm"`, `"md"`, or `"lg"`.                                                                             |
+| `marks`                             | `false`           | `true` for a mark at every step, or an array of `{ value, label? }`.                                   |
+| `track`                             | `"normal"`        | `"normal"`, `"inverted"`, or `false`.                                                                  |
+| `valueLabelDisplay`                 | `"off"`           | `"auto"` (on hover, focus and drag), `"on"`, or `"off"`.                                               |
+| `valueLabelFormat`                  |                   | A string, or a function of the value and thumb index.                                                  |
+| `orientation`                       | `"horizontal"`    | `"horizontal"` or `"vertical"`.                                                                        |
+| `minStepsBetweenThumbs`             | `0`               | The minimum number of steps between range thumbs.                                                      |
+| `disabled`                          | `false`           | Prevent changes.                                                                                       |
+| `getAriaLabel` / `getAriaValueText` |                   | Build each thumb's accessible name and value text.                                                     |
 
-The slider uses the theme's `accent` color; wrap it in a `Theme` (for example `success`) to change it. Each thumb is focusable and exposed as a `slider`: arrow keys change the value by `step`, `Page Up` / `Page Down` and `Shift` + arrow keys by ten steps, and `Home` / `End` jump to the minimum and maximum.
+The slider uses the theme's `primary` color; wrap it in a `Theme` (for example `success`) to change it. Each thumb is focusable and exposed as a `slider`: arrow keys change the value by `step`, `Page Up` / `Page Down` and `Shift` + arrow keys by ten steps, and `Home` / `End` jump to the minimum and maximum.
 
 ## Reduced Package Size
 

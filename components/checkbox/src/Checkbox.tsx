@@ -41,11 +41,12 @@ const CheckboxGroupFrame = styled(View, {
   transition: "200ms",
   justifyContent: "space-between",
   alignContent: "center",
-  backgroundColor: "surfaceElevated",
+  backgroundColor: "surface",
   // this fixes a flex bug where it overflows container
   boxShadow: "none focus:ringOffset focus-visible:ringOffset",
   borderWidth: 1,
-  borderColor: "border hover:hovered focus:active focus-visible:active",
+  borderColor:
+    "hairline hover:primaryHovered focus:primaryActive focus-visible:primaryActive",
   outlineStyle: "none",
   // this fixes a flex bug where it overflows container
   minWidth: 0,
@@ -80,13 +81,13 @@ const CheckboxGroupFrame = styled(View, {
 
     focused: {
       true: {
-        borderColor: "active"
+        borderColor: "primaryActive"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:hovered"
+        borderColor: "primary hover:primaryHovered"
       }
     },
 
@@ -94,7 +95,8 @@ const CheckboxGroupFrame = styled(View, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "disabled hover:disabled press:disabled focus:disabled"
+        borderColor:
+          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled"
       }
     }
   } as const,
@@ -149,7 +151,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
 
 const CheckboxIcon = styled(Check, {
   displayName: "CheckboxIndicator",
-  color: "accent",
+  color: "primary",
   strokeWidth: 3
 });
 
@@ -157,7 +159,7 @@ const CheckboxIcon = styled(Check, {
 // heavy as the check's stroke.
 const MinusIcon = styled(View, {
   displayName: "CheckboxIndicator",
-  backgroundColor: "accent",
+  backgroundColor: "primary",
   borderRadius: 9999
 });
 
@@ -197,8 +199,10 @@ export const Checkbox = createStyledHOC(
       [formOnChange, onCheckedChange]
     );
     const hasValidationMessage = useFieldHasValidationMessage();
-    const idleColor = hasValidationMessage ? "accent" : "border";
-    const focusColor = hasValidationMessage ? "active" : "borderActive";
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
+    const focusColor = hasValidationMessage
+      ? "primaryActive"
+      : "hairlineActive";
     // The full 3px ring overwhelms the small checkbox, so use the 1px ring.
     const ring = size === "sm" ? "ringSubtleOffset" : "ringOffset";
 
@@ -210,7 +214,7 @@ export const Checkbox = createStyledHOC(
         size={size}
         // A call-site base replaces every lower-tier clause for the property
         // in v3, so restate the v2 frame/variant hover and disabled press here.
-        borderColor={`${focused ? focusColor : idleColor} hover:${disabled ? "disabled" : "hovered"}${disabled ? " press:disabled" : ""} group-hover/field:${focused ? focusColor : "hovered"} focus:${focusColor} focus-visible:${focusColor}`}
+        borderColor={`${focused ? focusColor : idleColor} hover:${disabled ? "primaryDisabled" : "primaryHovered"}${disabled ? " press:primaryDisabled" : ""} group-hover/field:${focused ? focusColor : "primaryHovered"} focus:${focusColor} focus-visible:${focusColor}`}
         boxShadow={`focus:${ring} focus-visible:${ring}`}>
         <BaseCheckbox
           ref={forwardedRef}
@@ -240,14 +244,14 @@ export const Checkbox = createStyledHOC(
                 <MinusIcon
                   width={getSized(getFormSizeToken(size, "compact")) * 0.5}
                   height={getSized(getFormSizeToken(size, "compact")) * 0.13}
-                  backgroundColor={focused ? focusColor : "accent"}
+                  backgroundColor={focused ? focusColor : "primary"}
                 />
               </View>
             ) : (
               <CheckboxIcon
                 width={getSized(getFormSizeToken(size, "compact")) * 0.6}
                 height={getSized(getFormSizeToken(size, "compact")) * 0.6}
-                color={focused ? focusColor : "accent"}
+                color={focused ? focusColor : "primary"}
               />
             )}
           </TamaguiCheckbox.Indicator>

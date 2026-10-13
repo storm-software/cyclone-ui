@@ -31,7 +31,7 @@ const BaseHeadingText = styled(SizableText, {
   // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
   // only define `true` plus their own step, so name the default step explicitly.
   size: "true" as FontSizeTokens,
-  color: "accent",
+  color: "primary",
 
   variants: {
     variant: {
@@ -52,7 +52,7 @@ const BaseHeadingText = styled(SizableText, {
 export const HeadingHeroText = styled(BaseHeadingText, {
   displayName: "HeadingHeroText",
   render: "h1",
-  color: "accent",
+  color: "primary",
 
   variants: {
     variant: {
@@ -73,7 +73,7 @@ export const HeadingHeroText = styled(BaseHeadingText, {
 export const HeadingTitleText = styled(BaseHeadingText, {
   displayName: "HeadingTitleText",
   render: "h1",
-  color: "accent",
+  color: "primary",
 
   variants: {
     variant: {
@@ -94,7 +94,7 @@ export const HeadingTitleText = styled(BaseHeadingText, {
 export const HeadingLargeText = styled(BaseHeadingText, {
   displayName: "HeadingLargeText",
   render: "h2",
-  color: "primary",
+  color: "emphasis",
 
   variants: {
     variant: {
@@ -115,7 +115,7 @@ export const HeadingLargeText = styled(BaseHeadingText, {
 export const HeadingMediumText = styled(BaseHeadingText, {
   displayName: "HeadingMediumText",
   render: "h3",
-  color: "primary",
+  color: "emphasis",
 
   variants: {
     variant: {
@@ -136,7 +136,7 @@ export const HeadingMediumText = styled(BaseHeadingText, {
 export const HeadingSmallText = styled(BaseHeadingText, {
   displayName: "HeadingSmallText",
   render: "h4",
-  color: "primary",
+  color: "emphasis",
 
   variants: {
     variant: {
@@ -157,7 +157,7 @@ export const HeadingSmallText = styled(BaseHeadingText, {
 export const HeadingExtraSmallText = styled(BaseHeadingText, {
   displayName: "HeadingExtraSmallText",
   render: "h5",
-  color: "primary",
+  color: "emphasis",
 
   variants: {
     variant: {

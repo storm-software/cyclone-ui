@@ -33,7 +33,7 @@ const Icon = ({
   size = 24,
   ...props
 }: ThemedIconBodyProps<CheckCircleProps>) => {
-  const color = useCurrentColor((props.color || "onAccent") as any);
+  const color = useCurrentColor((props.color || "onPrimary") as any);
 
   const diameter = 24;
   const strokeWidth = 2;

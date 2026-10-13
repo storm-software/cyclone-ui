@@ -16,10 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type {
-  FieldLabelPlacement,
-  FormControlSize
-} from "@cyclone-ui/helpers";
+import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {
   FieldNotchedOutline,
   getFieldLabelInset,
@@ -62,10 +59,10 @@ const TextAreaFrame = styled(InputValue, {
   height: "auto",
   minHeight: "20xl",
   paddingVertical: "xl",
-  backgroundColor: "surfaceElevated",
-  color: "accent",
+  backgroundColor: "surface",
+  color: "primary",
   borderWidth: 1,
-  borderColor: "border hover:hovered focus-visible:active",
+  borderColor: "hairline hover:primaryHovered focus-visible:primaryActive",
   borderRadius: "control",
   boxShadow: "none focus-visible:ringOffset",
   outlineWidth: 0,
@@ -88,13 +85,13 @@ const TextAreaFrame = styled(InputValue, {
     focused: {
       true: {
         boxShadow: "ringOffset",
-        borderColor: "active"
+        borderColor: "primaryActive"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "accent hover:hovered"
+        borderColor: "primary hover:primaryHovered"
       }
     },
 
@@ -104,7 +101,7 @@ const TextAreaFrame = styled(InputValue, {
         backgroundColor: "transparent",
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "border hover:hovered focus-visible:accent",
+        borderColor: "hairline hover:primaryHovered focus-visible:primary",
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         boxShadow: "none focus-visible:none"
@@ -117,7 +114,8 @@ const TextAreaFrame = styled(InputValue, {
 
     disabled: {
       true: {
-        borderColor: "disabled hover:disabled focus:disabled"
+        borderColor:
+          "primaryDisabled hover:primaryDisabled focus:primaryDisabled"
       }
     }
   } as const,
@@ -180,7 +178,7 @@ export const TextArea = createStyledHOC(
       render: _render,
       focused: focusedProp = formControl?.focused,
       disabled = formControl?.disabled ?? false,
-      placeholderTextColor = "disabled",
+      placeholderTextColor = "primaryDisabled",
       onBlur = formOnBlur
         ? // Focus moving within the text area is not a blur.
           (event: TextAreaFocusEvent) => {
@@ -209,10 +207,12 @@ export const TextArea = createStyledHOC(
     const [focused, setActive] = useState(false);
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
-    const idleColor = hasValidationMessage ? "accent" : "border";
-    const focusColor = hasValidationMessage ? "active" : "borderActive";
+    const idleColor = hasValidationMessage ? "primary" : "hairline";
+    const focusColor = hasValidationMessage
+      ? "primaryActive"
+      : "hairlineActive";
     const isFocused = focusedProp ?? focused;
-    const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "disabled" : isFocused ? focusColor : "hovered"} focus-visible:${focusColor} group-hover/field:${disabled ? "disabled" : "hovered"}`;
+    const borderColor = `${isFocused ? focusColor : idleColor} hover:${disabled ? "primaryDisabled" : isFocused ? focusColor : "primaryHovered"} focus-visible:${focusColor} group-hover/field:${disabled ? "primaryDisabled" : "primaryHovered"}`;
     const handleFocus = useCallback(
       (event: TextAreaFocusEvent) => {
         setActive(true);
@@ -242,12 +242,14 @@ export const TextArea = createStyledHOC(
         placeholder={shouldShowPlaceholder ? placeholder : undefined}
         // The styled layer drops `placeholderTextColor` before it reaches
         // `InputValue`, so set the variable its `::placeholder` rule reads.
-        style={{
-          ...(style as object),
-          "--placeholderColor":
-            theme[placeholderTextColor as string]?.variable ||
-            placeholderTextColor
-        } as typeof style}
+        style={
+          {
+            ...(style as object),
+            "--placeholderColor":
+              theme[placeholderTextColor as string]?.variable ||
+              placeholderTextColor
+          } as typeof style
+        }
         focused={isFocused}
         hasValidationMessage={hasValidationMessage}
         variant={variant}
@@ -279,7 +281,7 @@ export const TextArea = createStyledHOC(
             <ControlUnderline
               focused={isFocused}
               disabled={disabled}
-              backgroundColor={disabled ? "disabled" : focusColor}
+              backgroundColor={disabled ? "primaryDisabled" : focusColor}
             />
           ) : null}
         </TextAreaDecorationFrame>

@@ -354,222 +354,222 @@ const childThemeExtras: {
 } = {
   light: {
     base: {
-      accent: tokens.color.neutral13.val,
-      active: "#000000",
-      disabled: "#363639",
-      hovered: "#606062",
-      inactive: "#030303",
-      onAccent: "#FAFAFA",
-      onSubtle: "#151518",
+      onPrimary: "#FAFAFA",
+      onSecondary: "#FAFAFA",
+      primary: tokens.color.neutral13.val,
+      primaryActive: "#000000",
+      primaryDisabled: "#363639",
+      primaryHovered: "#606062",
+      primaryInactive: "#030303",
       ring: "0px 0px 0px 3px #1f1f211a",
-      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #1f1f211a",
+      ringOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 6px #1f1f211a",
       ringSubtle: "0px 0px 0px 1px #1f1f211a",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #1f1f211a",
-      subtle: tokens.color.neutral5.val,
-      subtleActive: "#a9a9aa",
-      subtleDisabled: "#727275",
-      subtleHovered: "#a9a9aa",
-      subtleInactive: "#030303"
+      ringSubtleOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 4px #1f1f211a",
+      secondary: tokens.color.neutral9.val,
+      secondaryActive: "#46474a",
+      secondaryDisabled: "#494a4d",
+      secondaryHovered: "#46474a",
+      secondaryInactive: "#030303"
     },
     danger: {
-      accent: tokens.color.red7.val,
-      active: "#6a0022",
-      disabled: "#5a3c44",
-      hovered: "#6a0022",
-      inactive: "#ab3e56",
-      onAccent: "#FAFAFA",
-      onSubtle: "#200006",
+      onPrimary: "#FAFAFA",
+      onSecondary: "#200006",
+      primary: tokens.color.red7.val,
+      primaryActive: "#6a0022",
+      primaryDisabled: "#5a3c44",
+      primaryHovered: "#6a0022",
+      primaryInactive: "#ab3e56",
       ring: "0px 0px 0px 3px #8e223e26",
-      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #8e223e26",
+      ringOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 6px #8e223e26",
       ringSubtle: "0px 0px 0px 1px #8e223e26",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #8e223e26",
-      subtle: "#ee7a8e",
-      subtleActive: "#b0435a",
-      subtleDisabled: "#7b5960",
-      subtleHovered: "#b0435a",
-      subtleInactive: "#ffa7ba"
+      ringSubtleOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 4px #8e223e26",
+      secondary: "#ee7a8e",
+      secondaryActive: "#b0435a",
+      secondaryDisabled: "#7b5960",
+      secondaryHovered: "#b0435a",
+      secondaryInactive: "#ffa7ba"
     },
     discovery: {
-      accent: tokens.color.purple7.val,
-      active: "#3c2372",
-      disabled: "#4a445f",
-      hovered: "#3c2372",
-      inactive: "#725db2",
-      onAccent: "#FAFAFA",
-      onSubtle: "#FAFAFA",
+      onPrimary: "#FAFAFA",
+      onSecondary: "#FAFAFA",
+      primary: tokens.color.purple7.val,
+      primaryActive: "#3c2372",
+      primaryDisabled: "#4a445f",
+      primaryHovered: "#3c2372",
+      primaryInactive: "#725db2",
       ring: "0px 0px 0px 3px #59439526",
-      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #59439526",
+      ringOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 6px #59439526",
       ringSubtle: "0px 0px 0px 1px #59439526",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #59439526",
-      subtle: tokens.color.purple3.val,
-      subtleActive: "#725ba7",
-      subtleDisabled: "#655f79",
-      subtleHovered: "#725ba7",
-      subtleInactive: "#d2bcff"
+      ringSubtleOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 4px #59439526",
+      secondary: tokens.color.purple3.val,
+      secondaryActive: "#725ba7",
+      secondaryDisabled: "#655f79",
+      secondaryHovered: "#725ba7",
+      secondaryInactive: "#d2bcff"
     },
     info: {
-      accent: tokens.color.blue7.val,
-      active: "#00318d",
-      disabled: "#3b4a68",
-      hovered: "#00318d",
-      inactive: "#3b72d3",
-      onAccent: "#FAFAFA",
-      onSubtle: "#FAFAFA",
+      onPrimary: "#FAFAFA",
+      onSecondary: "#FAFAFA",
+      primary: tokens.color.blue7.val,
+      primaryActive: "#00318d",
+      primaryDisabled: "#3b4a68",
+      primaryHovered: "#00318d",
+      primaryInactive: "#3b72d3",
       ring: "0px 0px 0px 3px #2055b326",
-      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #2055b326",
+      ringOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 6px #2055b326",
       ringSubtle: "0px 0px 0px 1px #2055b326",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #2055b326",
-      subtle: tokens.color.blue3.val,
-      subtleActive: "#396ac2",
-      subtleDisabled: "#556582",
-      subtleHovered: "#396ac2",
-      subtleInactive: "#99d1ff"
+      ringSubtleOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 4px #2055b326",
+      secondary: tokens.color.blue3.val,
+      secondaryActive: "#396ac2",
+      secondaryDisabled: "#556582",
+      secondaryHovered: "#396ac2",
+      secondaryInactive: "#99d1ff"
     },
     success: {
-      accent: tokens.color.green7.val,
-      active: "#004933",
-      disabled: "#3c504b",
-      hovered: "#004933",
-      inactive: "#40876e",
-      onAccent: "#FAFAFA",
-      onSubtle: "#002217",
+      onPrimary: "#FAFAFA",
+      onSecondary: "#002217",
+      primary: tokens.color.green7.val,
+      primaryActive: "#004933",
+      primaryDisabled: "#3c504b",
+      primaryHovered: "#004933",
+      primaryInactive: "#40876e",
       ring: "0px 0px 0px 3px #216b5326",
-      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #216b5326",
+      ringOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 6px #216b5326",
       ringSubtle: "0px 0px 0px 1px #216b5326",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #216b5326",
-      subtle: "#74ba9f",
-      subtleActive: "#3b8168",
-      subtleDisabled: "#586c66",
-      subtleHovered: "#3b8168",
-      subtleInactive: "#a3eacd"
+      ringSubtleOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 4px #216b5326",
+      secondary: "#74ba9f",
+      secondaryActive: "#3b8168",
+      secondaryDisabled: "#586c66",
+      secondaryHovered: "#3b8168",
+      secondaryInactive: "#a3eacd"
     },
     warning: {
-      accent: tokens.color.yellow9.val,
-      active: "#543400",
-      disabled: "#53493b",
-      hovered: "#543400",
-      inactive: "#926f36",
-      onAccent: "#FAFAFA",
-      onSubtle: "#241500",
+      onPrimary: "#FAFAFA",
+      onSecondary: "#241500",
+      primary: tokens.color.yellow9.val,
+      primaryActive: "#543400",
+      primaryDisabled: "#53493b",
+      primaryHovered: "#543400",
+      primaryInactive: "#926f36",
       ring: "0px 0px 0px 3px #76541726",
-      ringOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 6px #76541726",
+      ringOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 6px #76541726",
       ringSubtle: "0px 0px 0px 1px #76541726",
-      ringSubtleOffset: "0px 0px 0px 3px #f1f1f1, 0px 0px 0px 4px #76541726",
-      subtle: "#c7a168",
-      subtleActive: "#8e6a31",
-      subtleDisabled: "#6f6456",
-      subtleHovered: "#8e6a31",
-      subtleInactive: "#f7d095"
+      ringSubtleOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 4px #76541726",
+      secondary: "#c7a168",
+      secondaryActive: "#8e6a31",
+      secondaryDisabled: "#6f6456",
+      secondaryHovered: "#8e6a31",
+      secondaryInactive: "#f7d095"
     }
   },
   dark: {
     base: {
-      accent: tokens.color.neutral2.val,
-      active: "#ffffff",
-      disabled: "#808082",
-      hovered: "#a1a1a1",
-      inactive: "#808080",
-      onAccent: "#151518",
-      onSubtle: "#FAFAFA",
+      onPrimary: "#151518",
+      onSecondary: "#FAFAFA",
+      primary: tokens.color.neutral2.val,
+      primaryActive: "#ffffff",
+      primaryDisabled: "#808082",
+      primaryHovered: "#a1a1a1",
+      primaryInactive: "#808080",
       ring: "0px 0px 0px 3px #f1f1f11a",
-      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #f1f1f11a",
+      ringOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 6px #f1f1f11a",
       ringSubtle: "0px 0px 0px 1px #f1f1f11a",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #f1f1f11a",
-      subtle: tokens.color.neutral10.val,
-      subtleActive: "#535358",
-      subtleDisabled: "#444447",
-      subtleHovered: "#535358",
-      subtleInactive: "#808080"
+      ringSubtleOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 4px #f1f1f11a",
+      secondary: tokens.color.neutral8.val,
+      secondaryActive: "#919194",
+      secondaryDisabled: "#57575a",
+      secondaryHovered: "#919194",
+      secondaryInactive: "#808080"
     },
     danger: {
-      accent: tokens.color.red5.val,
-      active: "#ff607f",
-      disabled: "#70424d",
-      hovered: "#ff607f",
-      inactive: "#a70037",
-      onAccent: "#FAFAFA",
-      onSubtle: "#ffa6b0",
+      onPrimary: "#FAFAFA",
+      onSecondary: "#ffa6b0",
+      primary: tokens.color.red5.val,
+      primaryActive: "#ff607f",
+      primaryDisabled: "#70424d",
+      primaryHovered: "#ff607f",
+      primaryInactive: "#a70037",
       ring: "0px 0px 0px 3px #cf2d5626",
-      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #cf2d5626",
+      ringOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 6px #cf2d5626",
       ringSubtle: "0px 0px 0px 1px #cf2d5626",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #cf2d5626",
-      subtle: "#620020",
-      subtleActive: "#7b1f34",
-      subtleDisabled: "#4c313a",
-      subtleHovered: "#7b1f34",
-      subtleInactive: "#4e0011"
+      ringSubtleOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 4px #cf2d5626",
+      secondary: "#620020",
+      secondaryActive: "#7b1f34",
+      secondaryDisabled: "#4c313a",
+      secondaryHovered: "#7b1f34",
+      secondaryInactive: "#4e0011"
     },
     discovery: {
-      accent: tokens.color.purple4.val,
-      active: "#c3a9ff",
-      disabled: "#5e5776",
-      hovered: "#c3a9ff",
-      inactive: "#6d51b0",
-      onAccent: "#FAFAFA",
-      onSubtle: "#FAFAFA",
+      onPrimary: "#FAFAFA",
+      onSecondary: "#FAFAFA",
+      primary: tokens.color.purple4.val,
+      primaryActive: "#c3a9ff",
+      primaryDisabled: "#5e5776",
+      primaryHovered: "#c3a9ff",
+      primaryInactive: "#6d51b0",
       ring: "0px 0px 0px 3px #9277da26",
-      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #9277da26",
+      ringOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 6px #9277da26",
       ringSubtle: "0px 0px 0px 1px #9277da26",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #9277da26",
-      subtle: tokens.color.purple9.val,
-      subtleActive: "#4b3c79",
-      subtleDisabled: "#3e3a4d",
-      subtleHovered: "#4b3c79",
-      subtleInactive: "#27144e"
+      ringSubtleOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 4px #9277da26",
+      secondary: tokens.color.purple9.val,
+      secondaryActive: "#4b3c79",
+      secondaryDisabled: "#3e3a4d",
+      secondaryHovered: "#4b3c79",
+      secondaryInactive: "#27144e"
     },
     info: {
-      accent: tokens.color.blue4.val,
-      active: "#7fc4ff",
-      disabled: "#4b5e81",
-      hovered: "#7fc4ff",
-      inactive: "#2564d1",
-      onAccent: "#FAFAFA",
-      onSubtle: "#FAFAFA",
+      onPrimary: "#FAFAFA",
+      onSecondary: "#FAFAFA",
+      primary: tokens.color.blue4.val,
+      primaryActive: "#7fc4ff",
+      primaryDisabled: "#4b5e81",
+      primaryHovered: "#7fc4ff",
+      primaryInactive: "#2564d1",
       ring: "0px 0px 0px 3px #4d8eff26",
-      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #4d8eff26",
+      ringOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 6px #4d8eff26",
       ringSubtle: "0px 0px 0px 1px #4d8eff26",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #4d8eff26",
-      subtle: tokens.color.blue8.val,
-      subtleActive: "#3560ac",
-      subtleDisabled: "#37445b",
-      subtleHovered: "#3560ac",
-      subtleInactive: "#022c73"
+      ringSubtleOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 4px #4d8eff26",
+      secondary: tokens.color.blue8.val,
+      secondaryActive: "#3560ac",
+      secondaryDisabled: "#37445b",
+      secondaryHovered: "#3560ac",
+      secondaryInactive: "#022c73"
     },
     success: {
-      accent: tokens.color.green4.val,
-      active: "#89ffcc",
-      disabled: "#4c7062",
-      hovered: "#89ffcc",
-      inactive: "#009865",
-      onAccent: "#FAFAFA",
-      onSubtle: "#ffffff",
+      onPrimary: "#FAFAFA",
+      onSecondary: "#ffffff",
+      primary: tokens.color.green4.val,
+      primaryActive: "#89ffcc",
+      primaryDisabled: "#4c7062",
+      primaryHovered: "#89ffcc",
+      primaryInactive: "#009865",
       ring: "0px 0px 0px 3px #45c79126",
-      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #45c79126",
+      ringOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 6px #45c79126",
       ringSubtle: "0px 0px 0px 1px #45c79126",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #45c79126",
-      subtle: "#006140",
-      subtleActive: "#31815e",
-      subtleDisabled: "#354d45",
-      subtleHovered: "#31815e",
-      subtleInactive: "#004829"
+      ringSubtleOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 4px #45c79126",
+      secondary: "#006140",
+      secondaryActive: "#31815e",
+      secondaryDisabled: "#354d45",
+      secondaryHovered: "#31815e",
+      secondaryInactive: "#004829"
     },
     warning: {
-      accent: tokens.color.yellow4.val,
-      active: "#b56e00",
-      disabled: "#7f6948",
-      hovered: "#b56e00",
-      inactive: "#ffe067",
-      onAccent: "#151518",
-      onSubtle: "#ffffff",
+      onPrimary: "#151518",
+      onSecondary: "#ffffff",
+      primary: tokens.color.yellow4.val,
+      primaryActive: "#b56e00",
+      primaryDisabled: "#7f6948",
+      primaryHovered: "#b56e00",
+      primaryInactive: "#ffe067",
       ring: "0px 0px 0px 3px #f7ac2326",
-      ringOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 6px #f7ac2326",
+      ringOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 6px #f7ac2326",
       ringSubtle: "0px 0px 0px 1px #f7ac2326",
-      ringSubtleOffset: "0px 0px 0px 3px #1f1f21, 0px 0px 0px 4px #f7ac2326",
-      subtle: "#764e00",
-      subtleActive: "#996f2f",
-      subtleDisabled: "#534837",
-      subtleHovered: "#996f2f",
-      subtleInactive: "#5b3500"
+      ringSubtleOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 4px #f7ac2326",
+      secondary: "#764e00",
+      secondaryActive: "#996f2f",
+      secondaryDisabled: "#534837",
+      secondaryHovered: "#996f2f",
+      secondaryInactive: "#5b3500"
     }
   }
 };
@@ -614,11 +614,11 @@ const themes = createThemes({
     extra: {
       light: {
         backdrop: "#1a1c1f66",
-        border: tokens.color.neutral6.val,
-        borderActive: "#0c0c0d",
-        borderDisabled: "#69696b",
-        borderHovered: "#0c0c0d",
-        borderInactive: "#030303",
+        canvas: tokens.color.neutral3.val,
+        canvasActive: "#dedede",
+        canvasDisabled: "#b4b4b5",
+        canvasHovered: "#dedede",
+        canvasInactive: "#ffffff",
         dataBlueEmphasis: tokens.color.blue7.val,
         dataBlueSubtle: tokens.color.blue3.val,
         dataGreenEmphasis: tokens.color.green7.val,
@@ -635,22 +635,59 @@ const themes = createThemes({
         dataRedSubtle: tokens.color.red2.val,
         dataYellowEmphasis: tokens.color.yellow9.val,
         dataYellowSubtle: tokens.color.yellow3.val,
-        primary: tokens.color.neutral13.val,
-        secondary: tokens.color.neutral9.val,
-        surfaceCanvas: tokens.color.neutral3.val,
-        surfaceElevated: tokens.color.neutral2.val,
-        surfaceFloating: tokens.color.neutral1.val,
-        surfaceHighest: tokens.color.white.val,
-        surfaceSunken: tokens.color.neutral4.val,
-        tertiary: tokens.color.neutral5.val
+        elevated: tokens.color.neutral1.val,
+        elevatedActive: "#eeeeee",
+        elevatedDisabled: "#bfbfc0",
+        elevatedHovered: "#eeeeee",
+        elevatedInactive: "#ffffff",
+        emphasis: tokens.color.neutral13.val,
+        emphasisActive: "#000000",
+        emphasisDisabled: "#363639",
+        emphasisHovered: "#606062",
+        emphasisInactive: "#030303",
+        floating: tokens.color.white.val,
+        floatingActive: "#f2f2f2",
+        floatingDisabled: "#c2c2c3",
+        floatingHovered: "#f2f2f2",
+        floatingInactive: "#ffffff",
+        hairline: tokens.color.neutral4.val,
+        hairlineActive: "#0c0c0d",
+        hairlineDisabled: "#7a7a7c",
+        hairlineHovered: "#0c0c0d",
+        hairlineInactive: "#030303",
+        ink: tokens.color.neutral9.val,
+        inkActive: "#0c0c0d",
+        inkDisabled: "#494a4d",
+        inkHovered: "#0c0c0d",
+        inkInactive: "#030303",
+        subtle: tokens.color.neutral7.val,
+        subtleActive: "#0c0c0d",
+        subtleDisabled: "#606063",
+        subtleHovered: "#0c0c0d",
+        subtleInactive: "#030303",
+        subtlest: tokens.color.neutral5.val,
+        subtlestActive: "#0c0c0d",
+        subtlestDisabled: "#727275",
+        subtlestHovered: "#0c0c0d",
+        subtlestInactive: "#030303",
+        sunken: tokens.color.neutral4.val,
+        sunkenActive: "#d6d6d6",
+        sunkenDisabled: "#aeaeaf",
+        sunkenHovered: "#d6d6d6",
+        sunkenInactive: "#ffffff",
+        surface: tokens.color.neutral2.val,
+        surfaceActive: "#e5e5e5",
+        surfaceDisabled: "#b8b8b9",
+        surfaceHovered: "#e5e5e5",
+        surfaceInactive: "#ffffff"
       },
       dark: {
         backdrop: "#0d0c0766",
-        border: tokens.color.neutral9.val,
-        borderActive: "#ffffff",
-        borderDisabled: "#494a4d",
-        borderHovered: "#ffffff",
-        borderInactive: "#808080",
+        canvas: tokens.color.neutral14.val,
+        canvasActive: "#17171a",
+        canvasDisabled: "#242427",
+        canvasHovered: "#17171a",
+        canvasInactive: "#111114",
         dataBlueEmphasis: tokens.color.blue7.val,
         dataBlueSubtle: tokens.color.blue9.val,
         dataGreenEmphasis: tokens.color.green6.val,
@@ -667,14 +704,51 @@ const themes = createThemes({
         dataRedSubtle: tokens.color.red9.val,
         dataYellowEmphasis: tokens.color.yellow5.val,
         dataYellowSubtle: tokens.color.yellow9.val,
-        primary: tokens.color.neutral2.val,
-        secondary: tokens.color.neutral5.val,
-        surfaceCanvas: tokens.color.neutral14.val,
-        surfaceElevated: tokens.color.neutral13.val,
-        surfaceFloating: tokens.color.neutral12.val,
-        surfaceHighest: tokens.color.neutral11.val,
-        surfaceSunken: tokens.color.black.val,
-        tertiary: tokens.color.neutral10.val
+        elevated: tokens.color.neutral12.val,
+        elevatedActive: "#26272a",
+        elevatedDisabled: "#2e2f32",
+        elevatedHovered: "#26272a",
+        elevatedInactive: "#1e1f22",
+        emphasis: tokens.color.neutral2.val,
+        emphasisActive: "#ffffff",
+        emphasisDisabled: "#808082",
+        emphasisHovered: "#a1a1a1",
+        emphasisInactive: "#808080",
+        floating: tokens.color.neutral11.val,
+        floatingActive: "#2e2f33",
+        floatingDisabled: "#333337",
+        floatingHovered: "#2e2f33",
+        floatingInactive: "#242529",
+        hairline: tokens.color.neutral10.val,
+        hairlineActive: "#ffffff",
+        hairlineDisabled: "#444447",
+        hairlineHovered: "#ffffff",
+        hairlineInactive: "#808080",
+        ink: tokens.color.neutral5.val,
+        inkActive: "#ffffff",
+        inkDisabled: "#727275",
+        inkHovered: "#7d7d7e",
+        inkInactive: "#808080",
+        subtle: tokens.color.neutral7.val,
+        subtleActive: "#ffffff",
+        subtleDisabled: "#606063",
+        subtleHovered: "#ffffff",
+        subtleInactive: "#808080",
+        subtlest: tokens.color.neutral9.val,
+        subtlestActive: "#ffffff",
+        subtlestDisabled: "#494a4d",
+        subtlestHovered: "#ffffff",
+        subtlestInactive: "#808080",
+        sunken: tokens.color.black.val,
+        sunkenActive: "#0d0d0e",
+        sunkenDisabled: "#1e1e20",
+        sunkenHovered: "#0d0d0e",
+        sunkenInactive: "#09090a",
+        surface: tokens.color.neutral13.val,
+        surfaceActive: "#212123",
+        surfaceDisabled: "#2b2b2d",
+        surfaceHovered: "#212123",
+        surfaceInactive: "#19191b"
       }
     }
   },
@@ -1129,14 +1203,12 @@ const titleXsFont = createFont({
  * @see https://tamagui.dev/docs/intro/themes
  */
 export interface AppTheme {
-  accent: string;
-  active: string;
   backdrop: string;
-  border: string;
-  borderActive: string;
-  borderDisabled: string;
-  borderHovered: string;
-  borderInactive: string;
+  canvas: string;
+  canvasActive: string;
+  canvasDisabled: string;
+  canvasHovered: string;
+  canvasInactive: string;
   dataBlueEmphasis: string;
   dataBlueSubtle: string;
   dataGreenEmphasis: string;
@@ -1153,28 +1225,67 @@ export interface AppTheme {
   dataRedSubtle: string;
   dataYellowEmphasis: string;
   dataYellowSubtle: string;
-  disabled: string;
-  hovered: string;
-  inactive: string;
-  onAccent: string;
-  onSubtle: string;
+  elevated: string;
+  elevatedActive: string;
+  elevatedDisabled: string;
+  elevatedHovered: string;
+  elevatedInactive: string;
+  emphasis: string;
+  emphasisActive: string;
+  emphasisDisabled: string;
+  emphasisHovered: string;
+  emphasisInactive: string;
+  floating: string;
+  floatingActive: string;
+  floatingDisabled: string;
+  floatingHovered: string;
+  floatingInactive: string;
+  hairline: string;
+  hairlineActive: string;
+  hairlineDisabled: string;
+  hairlineHovered: string;
+  hairlineInactive: string;
+  ink: string;
+  inkActive: string;
+  inkDisabled: string;
+  inkHovered: string;
+  inkInactive: string;
+  onPrimary: string;
+  onSecondary: string;
   primary: string;
+  primaryActive: string;
+  primaryDisabled: string;
+  primaryHovered: string;
+  primaryInactive: string;
   ring: string;
   ringOffset: string;
   ringSubtle: string;
   ringSubtleOffset: string;
   secondary: string;
+  secondaryActive: string;
+  secondaryDisabled: string;
+  secondaryHovered: string;
+  secondaryInactive: string;
   subtle: string;
   subtleActive: string;
   subtleDisabled: string;
   subtleHovered: string;
   subtleInactive: string;
-  surfaceCanvas: string;
-  surfaceElevated: string;
-  surfaceFloating: string;
-  surfaceHighest: string;
-  surfaceSunken: string;
-  tertiary: string;
+  subtlest: string;
+  subtlestActive: string;
+  subtlestDisabled: string;
+  subtlestHovered: string;
+  subtlestInactive: string;
+  sunken: string;
+  sunkenActive: string;
+  sunkenDisabled: string;
+  sunkenHovered: string;
+  sunkenInactive: string;
+  surface: string;
+  surfaceActive: string;
+  surfaceDisabled: string;
+  surfaceHovered: string;
+  surfaceInactive: string;
 }
 
 /**

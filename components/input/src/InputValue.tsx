@@ -226,7 +226,7 @@ export const InputValue = createStyledHOC(
         ...(selectionColor && {
           "--selectionColor": theme[selectionColor]?.variable || selectionColor
         }),
-        "--autofillBackgroundColor": theme.surfaceElevated?.variable
+        "--autofillBackgroundColor": theme.surface?.variable
       }
     };
 
