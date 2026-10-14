@@ -1060,6 +1060,9 @@ const FieldLabel = createStyledHOC(
           paddingBottom={0}
           hideRequired={true}
           textAlign="center"
+          {...(labelDefaults?.inlineFontFamily
+            ? { fontFamily: labelDefaults.inlineFontFamily }
+            : {})}
           {...props}
           htmlFor={name}
           disabled={disabled}

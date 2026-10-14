@@ -755,6 +755,8 @@ const FilePickerFile = ({
     size: controlSize
   } = FilePickerContext.useStyledContext();
   const scale = getFormSizeScale(controlSize);
+  const buttonSize = getSized("10xl") * scale;
+  const buttonInset = 6 * scale;
   const previewKind = getFilePreviewKind(name, mimeType);
 
   const handleRemove = useCallback(
@@ -795,7 +797,7 @@ const FilePickerFile = ({
         transition="100ms"
         position="absolute"
         zIndex="30"
-        left={16 * scale}
+        left={buttonInset}
         top="50%"
         y="-50%"
         opacity="0 group-hover/file:1">
@@ -808,7 +810,7 @@ const FilePickerFile = ({
             {...{ download: name }}
             variant="ghost"
             ghostOpacity={0.75}
-            size={getSized("10xl") * scale}
+            size={buttonSize}
             noPadding={true}
             circular={true}>
             <Button.Icon>
@@ -823,7 +825,7 @@ const FilePickerFile = ({
           transition="200ms"
           position="absolute"
           zIndex="30"
-          right={16 * scale}
+          right={buttonInset}
           top="50%"
           y="-50%"
           opacity="0 group-hover/file:1">
@@ -833,7 +835,7 @@ const FilePickerFile = ({
             ghostOpacity={0.25}
             aria-label={`Remove ${name || "file"}`}
             onPress={handleRemove}
-            size={getSized("10xl") * scale}
+            size={buttonSize}
             noPadding={true}
             circular={true}>
             <Button.Icon>
@@ -851,9 +853,11 @@ const FilePickerFile = ({
         bottom={0}
         left={0}
         right={0}
+        // Reserve the buttons' footprint so narrow cards never overlap them.
+        paddingHorizontal={buttonInset * 2 + buttonSize}
         alignItems="center"
         justifyContent="center">
-        <YStack width="75%" gap="xl">
+        <YStack width="100%" gap="xl">
           <View zIndex="30" justifyContent="center" alignItems="center">
             <FilePickerViewLink uri={uri}>
               {name || "Unnamed File"}

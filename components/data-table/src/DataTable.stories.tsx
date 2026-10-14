@@ -22,7 +22,15 @@ import { Avatar } from "@tamagui/avatar";
 import { Text, View } from "@tamagui/core";
 import { createColumnHelper } from "@tanstack/react-table";
 import type { ComponentType } from "react";
-import { expect, fn, screen, userEvent, waitFor, within } from "storybook/test";
+import {
+  expect,
+  fireEvent,
+  fn,
+  screen,
+  userEvent,
+  waitFor,
+  within
+} from "storybook/test";
 import type { DataTableOptions, DataTableProps } from "./DataTable";
 import { DataTable, DataTableCell, DataTableHeader } from "./DataTable";
 
@@ -267,6 +275,45 @@ export const Resizable: Story = {
   }
 };
 
+export const Reorderable: Story = {
+  args: {
+    options: {
+      data: defaultData,
+      enableRowSelection: true
+    },
+    pageSize: 5,
+    reorderable: true,
+    resizable: true
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const headers = () =>
+      canvas.getAllByRole("columnheader") as (HTMLElement & {
+        dataset: { columnId?: string };
+      })[];
+    const header = (id: string) =>
+      headers().find(cell => cell.dataset.columnId === id)!;
+    const headerIds = () => headers().map(cell => cell.dataset.columnId);
+
+    // Story tsconfigs have no DOM lib.
+    const dataTransfer = new (globalThis as any).DataTransfer();
+    fireEvent.dragStart(header("role"), { dataTransfer });
+    fireEvent.dragOver(header("user_base"), { dataTransfer });
+    fireEvent.drop(header("user_base"), { dataTransfer });
+    fireEvent.dragEnd(header("role"), { dataTransfer });
+
+    await waitFor(() =>
+      expect(headerIds()).toEqual([
+        "__selection",
+        "role",
+        "user_base",
+        "age",
+        "status"
+      ])
+    );
+  }
+};
+
 export const RowSelection: Story = {
   args: {
     options: {
@@ -274,6 +321,22 @@ export const RowSelection: Story = {
       enableRowSelection: true
     },
     pageSize: 5
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    // Story tsconfigs have no DOM lib.
+    const header = (canvas.getAllByRole("columnheader") as any[]).find(
+      cell => cell.dataset.columnId === "user_base"
+    );
+
+    await userEvent.click(header.querySelector("button"));
+
+    // "@john" is shared by three rows with different full names.
+    await userEvent.click(
+      await screen.findByRole("checkbox", { name: "@john (3)" })
+    );
+
+    await waitFor(() => expect(canvas.getByText("3 rows")).toBeTruthy());
   }
 };
 
@@ -288,6 +351,17 @@ export const Pagination: Story = {
         ...defaultData
       ]
     },
+    pageSize: 5
+  }
+};
+
+export const Card: Story = {
+  args: {
+    options: {
+      data: defaultData,
+      enableRowSelection: true
+    },
+    variant: "card",
     pageSize: 5
   }
 };

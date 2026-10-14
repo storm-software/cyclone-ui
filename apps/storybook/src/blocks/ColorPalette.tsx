@@ -348,16 +348,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 30% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)"}
       colors={{
-            "emphasis-hovered": "#919191"
+            "emphasis-hovered": "#676767"
       }}
     />
           <ColorItem
       title={"color.emphasis-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)"}
       colors={{
-            "emphasis-inactive": "#808080"
+            "emphasis-inactive": "#636363"
       }}
     />
           <ColorItem
@@ -383,16 +383,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink-hovered"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 30% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)"}
       colors={{
-            "ink-hovered": "#6c6c6d"
+            "ink-hovered": "#4c4c4d"
       }}
     />
           <ColorItem
       title={"color.ink-inactive"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker)"}
       colors={{
-            "ink-inactive": "#808080"
+            "ink-inactive": "#636363"
       }}
     />
           <ColorItem
@@ -418,16 +418,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% brighter)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% brighter)"}
       colors={{
-            "subtle-hovered": "#d5d6d8"
+            "subtle-hovered": "#f6f7f9"
       }}
     />
           <ColorItem
       title={"color.subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
-            "subtle-inactive": "#808080"
+            "subtle-inactive": "#636363"
       }}
     />
           <ColorItem
@@ -453,16 +453,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtlest-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% brighter)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% brighter)"}
       colors={{
-            "subtlest-hovered": "#67676b"
+            "subtlest-hovered": "#78787c"
       }}
     />
           <ColorItem
       title={"color.subtlest-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
-            "subtlest-inactive": "#808080"
+            "subtlest-inactive": "#636363"
       }}
     />
         </ColorPalette>
@@ -507,9 +507,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.outline-inactive"}
-      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
+      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"}
       colors={{
-            "outline-inactive": "#808080"
+            "outline-inactive": "#636363"
       }}
     />
         </ColorPalette>
@@ -580,11 +580,11 @@ const COLOR_VARIANTS = {
               "on-secondary": "#FAFAFA",
               "primary-hovered": "#a1a1a1",
               "primary-active": "#ffffff",
-              "primary-inactive": "#808080",
+              "primary-inactive": "#636363",
               "primary-disabled": "#808082",
               "secondary-hovered": "#656669",
               "secondary-active": "#656669",
-              "secondary-inactive": "#808080",
+              "secondary-inactive": "#636363",
               "secondary-disabled": "#494a4d",
               "link-hovered": "#6bfaff",
               "link-active": "#6bfaff",
@@ -1077,16 +1077,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 30% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)"}
       colors={{
-            "emphasis-hovered": "#8c8c8c"
+            "emphasis-hovered": "#6e6e6e"
       }}
     />
           <ColorItem
       title={"color.emphasis-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)"}
       colors={{
-            "emphasis-inactive": "#808080"
+            "emphasis-inactive": "#6c6c6c"
       }}
     />
           <ColorItem
@@ -1112,16 +1112,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink-hovered"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 30% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)"}
       colors={{
-            "ink-hovered": "#727272"
+            "ink-hovered": "#5b5b5c"
       }}
     />
           <ColorItem
       title={"color.ink-inactive"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker)"}
       colors={{
-            "ink-inactive": "#808080"
+            "ink-inactive": "#6c6c6c"
       }}
     />
           <ColorItem
@@ -1147,16 +1147,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% brighter)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% brighter)"}
       colors={{
-            "subtle-hovered": "#bbbcbe"
+            "subtle-hovered": "#cfd2d8"
       }}
     />
           <ColorItem
       title={"color.subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
-            "subtle-inactive": "#808080"
+            "subtle-inactive": "#6c6c6c"
       }}
     />
           <ColorItem
@@ -1182,16 +1182,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtlest-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% brighter)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% brighter)"}
       colors={{
-            "subtlest-hovered": "#6f6f71"
+            "subtlest-hovered": "#7b7b7d"
       }}
     />
           <ColorItem
       title={"color.subtlest-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
-            "subtlest-inactive": "#808080"
+            "subtlest-inactive": "#6c6c6c"
       }}
     />
         </ColorPalette>
@@ -1236,9 +1236,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.outline-inactive"}
-      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
+      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"}
       colors={{
-            "outline-inactive": "#808080"
+            "outline-inactive": "#6c6c6c"
       }}
     />
         </ColorPalette>
@@ -1309,11 +1309,11 @@ const COLOR_VARIANTS = {
               "on-secondary": "#d5d5d5",
               "primary-hovered": "#979797",
               "primary-active": "#d9d9d9",
-              "primary-inactive": "#808080",
+              "primary-inactive": "#6c6c6c",
               "primary-disabled": "#808081",
               "secondary-hovered": "#6d6e70",
               "secondary-active": "#6d6e70",
-              "secondary-inactive": "#808080",
+              "secondary-inactive": "#6c6c6c",
               "secondary-disabled": "#595a5c",
               "link-hovered": "#73d3d6",
               "link-active": "#73d3d6",
@@ -1806,16 +1806,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 30% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)"}
       colors={{
-            "emphasis-hovered": "#999999"
+            "emphasis-hovered": "#5c5c5c"
       }}
     />
           <ColorItem
       title={"color.emphasis-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)"}
       colors={{
-            "emphasis-inactive": "#808080"
+            "emphasis-inactive": "#565656"
       }}
     />
           <ColorItem
@@ -1841,16 +1841,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink-hovered"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 30% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)"}
       colors={{
-            "ink-hovered": "#5e5e6a"
+            "ink-hovered": "#323239"
       }}
     />
           <ColorItem
       title={"color.ink-inactive"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker)"}
       colors={{
-            "ink-inactive": "#808080"
+            "ink-inactive": "#565656"
       }}
     />
           <ColorItem
@@ -1876,16 +1876,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% brighter)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% brighter)"}
       colors={{
-            "subtle-hovered": "#fefefe"
+            "subtle-hovered": "#ffffff"
       }}
     />
           <ColorItem
       title={"color.subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
-            "subtle-inactive": "#808080"
+            "subtle-inactive": "#565656"
       }}
     />
           <ColorItem
@@ -1911,16 +1911,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtlest-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% brighter)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% brighter)"}
       colors={{
-            "subtlest-hovered": "#585866"
+            "subtlest-hovered": "#6f6f80"
       }}
     />
           <ColorItem
       title={"color.subtlest-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
-            "subtlest-inactive": "#808080"
+            "subtlest-inactive": "#565656"
       }}
     />
         </ColorPalette>
@@ -1965,9 +1965,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.outline-inactive"}
-      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
+      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"}
       colors={{
-            "outline-inactive": "#808080"
+            "outline-inactive": "#565656"
       }}
     />
         </ColorPalette>
@@ -2038,11 +2038,11 @@ const COLOR_VARIANTS = {
               "on-secondary": "#ffffff",
               "primary-hovered": "#b0b0b0",
               "primary-active": "#ffffff",
-              "primary-inactive": "#808080",
+              "primary-inactive": "#565656",
               "primary-disabled": "#7a7a89",
               "secondary-hovered": "#555863",
               "secondary-active": "#555863",
-              "secondary-inactive": "#808080",
+              "secondary-inactive": "#565656",
               "secondary-disabled": "#2f3138",
               "link-hovered": "#9bfcff",
               "link-active": "#9bfcff",
@@ -2535,16 +2535,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 30% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)"}
       colors={{
-            "emphasis-hovered": "#121315"
+            "emphasis-hovered": "#090a0d"
       }}
     />
           <ColorItem
       title={"color.emphasis-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)"}
       colors={{
-            "emphasis-inactive": "#030303"
+            "emphasis-inactive": "#020102"
       }}
     />
           <ColorItem
@@ -2570,16 +2570,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink-hovered"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 30% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)"}
       colors={{
-            "ink-hovered": "#313235"
+            "ink-hovered": "#202124"
       }}
     />
           <ColorItem
       title={"color.ink-inactive"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker)"}
       colors={{
-            "ink-inactive": "#030303"
+            "ink-inactive": "#020102"
       }}
     />
           <ColorItem
@@ -2605,16 +2605,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% darker)"}
       colors={{
-            "subtle-hovered": "#5a5b5d"
+            "subtle-hovered": "#3f4041"
       }}
     />
           <ColorItem
       title={"color.subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
-            "subtle-inactive": "#030303"
+            "subtle-inactive": "#020102"
       }}
     />
           <ColorItem
@@ -2640,16 +2640,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtlest-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% darker)"}
       colors={{
-            "subtlest-hovered": "#6c6c6d"
+            "subtlest-hovered": "#4c4c4d"
       }}
     />
           <ColorItem
       title={"color.subtlest-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
-            "subtlest-inactive": "#030303"
+            "subtlest-inactive": "#020102"
       }}
     />
         </ColorPalette>
@@ -2694,9 +2694,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.outline-inactive"}
-      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
+      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"}
       colors={{
-            "outline-inactive": "#030303"
+            "outline-inactive": "#020102"
       }}
     />
         </ColorPalette>
@@ -2767,11 +2767,11 @@ const COLOR_VARIANTS = {
               "on-secondary": "#FAFAFA",
               "primary-hovered": "#606062",
               "primary-active": "#000000",
-              "primary-inactive": "#030303",
+              "primary-inactive": "#020102",
               "primary-disabled": "#363639",
               "secondary-hovered": "#939394",
               "secondary-active": "#939394",
-              "secondary-inactive": "#030303",
+              "secondary-inactive": "#020102",
               "secondary-disabled": "#69696b",
               "link-hovered": "#0057a0",
               "link-active": "#0057a0",
@@ -3264,16 +3264,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 30% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)"}
       colors={{
-            "emphasis-hovered": "#323336"
+            "emphasis-hovered": "#292c33"
       }}
     />
           <ColorItem
       title={"color.emphasis-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)"}
       colors={{
-            "emphasis-inactive": "#282828"
+            "emphasis-inactive": "#2f202f"
       }}
     />
           <ColorItem
@@ -3299,16 +3299,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink-hovered"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 30% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)"}
       colors={{
-            "ink-hovered": "#48494c"
+            "ink-hovered": "#3c3d40"
       }}
     />
           <ColorItem
       title={"color.ink-inactive"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker)"}
       colors={{
-            "ink-inactive": "#282828"
+            "ink-inactive": "#2f202f"
       }}
     />
           <ColorItem
@@ -3334,16 +3334,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% darker)"}
       colors={{
-            "subtle-hovered": "#656667"
+            "subtle-hovered": "#525354"
       }}
     />
           <ColorItem
       title={"color.subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
-            "subtle-inactive": "#282828"
+            "subtle-inactive": "#2f202f"
       }}
     />
           <ColorItem
@@ -3369,16 +3369,16 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtlest-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% darker)"}
       colors={{
-            "subtlest-hovered": "#727272"
+            "subtlest-hovered": "#5b5b5c"
       }}
     />
           <ColorItem
       title={"color.subtlest-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
-            "subtlest-inactive": "#282828"
+            "subtlest-inactive": "#2f202f"
       }}
     />
         </ColorPalette>
@@ -3423,9 +3423,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.outline-inactive"}
-      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
+      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"}
       colors={{
-            "outline-inactive": "#282828"
+            "outline-inactive": "#2f202f"
       }}
     />
         </ColorPalette>
@@ -3496,11 +3496,11 @@ const COLOR_VARIANTS = {
               "on-secondary": "#d5d5d5",
               "primary-hovered": "#6a6a6b",
               "primary-active": "#262626",
-              "primary-inactive": "#282828",
+              "primary-inactive": "#2f202f",
               "primary-disabled": "#4c4c4e",
               "secondary-hovered": "#8d8d8e",
               "secondary-active": "#8d8d8e",
-              "secondary-inactive": "#282828",
+              "secondary-inactive": "#2f202f",
               "secondary-disabled": "#707071",
               "link-hovered": "#2a6392",
               "link-active": "#2a6392",
@@ -3993,14 +3993,14 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 30% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)"}
       colors={{
             "emphasis-hovered": "#000000"
       }}
     />
           <ColorItem
       title={"color.emphasis-inactive"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 40% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)"}
       colors={{
             "emphasis-inactive": "#000000"
       }}
@@ -4028,14 +4028,14 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink-hovered"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 30% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)"}
       colors={{
-            "ink-hovered": "#0f1012"
+            "ink-hovered": "#000000"
       }}
     />
           <ColorItem
       title={"color.ink-inactive"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 40% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker)"}
       colors={{
             "ink-inactive": "#000000"
       }}
@@ -4063,14 +4063,14 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtle-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% darker)"}
       colors={{
-            "subtle-hovered": "#464951"
+            "subtle-hovered": "#212326"
       }}
     />
           <ColorItem
       title={"color.subtle-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
             "subtle-inactive": "#000000"
       }}
@@ -4098,14 +4098,14 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.subtlest-hovered"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 30% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% darker)"}
       colors={{
-            "subtlest-hovered": "#5e5e6a"
+            "subtlest-hovered": "#323239"
       }}
     />
           <ColorItem
       title={"color.subtlest-inactive"}
-      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 40% darker)"}
+      subtitle={"Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)"}
       colors={{
             "subtlest-inactive": "#000000"
       }}
@@ -4152,7 +4152,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.outline-inactive"}
-      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 40% darker)"}
+      subtitle={"High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle. (inactive, 50% darker)"}
       colors={{
             "outline-inactive": "#000000"
       }}

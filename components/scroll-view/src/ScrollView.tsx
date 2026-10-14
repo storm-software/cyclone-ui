@@ -31,6 +31,7 @@ export const SCROLL_VIEW_STYLES = `
 .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb { background: var(--subtlest); }
 .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb:hover { background: var(--subtlestHovered); }
 .${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-button { display: none; }
+.${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-corner { background: transparent; }
 @supports not selector(::-webkit-scrollbar) {
   .${SCROLL_VIEW_CLASS_NAME} { scrollbar-color: transparent transparent; }
   .${SCROLL_VIEW_CLASS_NAME}:hover { scrollbar-color: var(--subtlestHovered) transparent; }

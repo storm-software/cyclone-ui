@@ -320,7 +320,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-base-primary-inactive",
       "type": "color",
       "category": "color",
-      "value": "#030303"
+      "value": "#020102"
     },
     {
       "path": "color.base.secondary",
@@ -356,7 +356,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-base-secondary-inactive",
       "type": "color",
       "category": "color",
-      "value": "#030303"
+      "value": "#020102"
     },
     {
       "path": "color.black",
@@ -898,14 +898,14 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-emphasis-hovered",
       "type": "color",
       "category": "color",
-      "value": "#121315"
+      "value": "#090a0d"
     },
     {
       "path": "color.emphasis-inactive",
       "cssVar": "--storm-color-emphasis-inactive",
       "type": "color",
       "category": "color",
-      "value": "#030303"
+      "value": "#020102"
     },
     {
       "path": "color.floating",
@@ -1163,14 +1163,14 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-ink-hovered",
       "type": "color",
       "category": "color",
-      "value": "#313235"
+      "value": "#202124"
     },
     {
       "path": "color.ink-inactive",
       "cssVar": "--storm-color-ink-inactive",
       "type": "color",
       "category": "color",
-      "value": "#030303"
+      "value": "#020102"
     },
     {
       "path": "color.neutral.1",
@@ -1381,7 +1381,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-outline-inactive",
       "type": "color",
       "category": "color",
-      "value": "#030303"
+      "value": "#020102"
     },
     {
       "path": "color.pink.1",
@@ -1663,14 +1663,14 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-subtle-hovered",
       "type": "color",
       "category": "color",
-      "value": "#5a5b5d"
+      "value": "#3f4041"
     },
     {
       "path": "color.subtle-inactive",
       "cssVar": "--storm-color-subtle-inactive",
       "type": "color",
       "category": "color",
-      "value": "#030303"
+      "value": "#020102"
     },
     {
       "path": "color.subtlest",
@@ -1699,14 +1699,14 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-subtlest-hovered",
       "type": "color",
       "category": "color",
-      "value": "#6c6c6d"
+      "value": "#4c4c4d"
     },
     {
       "path": "color.subtlest-inactive",
       "cssVar": "--storm-color-subtlest-inactive",
       "type": "color",
       "category": "color",
-      "value": "#030303"
+      "value": "#020102"
     },
     {
       "path": "color.success.link",

@@ -37,7 +37,6 @@ import { Select } from "@cyclone-ui/select";
 import type { CallbackContext, FieldAtoms } from "@cyclone-ui/state/form";
 import type { TableProps } from "@cyclone-ui/table";
 import { Table } from "@cyclone-ui/table";
-import { isEqual } from "@stryke/helpers/is-equal";
 import { matchSorter } from "@stryke/helpers/match-sorter";
 import { titleCase } from "@stryke/string-format/title-case";
 import { isNumber } from "@stryke/type-checks/is-number";
@@ -52,8 +51,10 @@ import {
 import { XStack, YStack } from "@tamagui/stacks";
 import type {
   CellContext,
+  Column,
   ColumnDef,
   ColumnFiltersState,
+  ColumnOrderState,
   HeaderContext,
   OnChangeFn,
   PaginationState,
@@ -90,15 +91,17 @@ declare module "@tanstack/react-table" {
   }
 }
 
-const defaultFilterFn = <TData extends RowData>(
-  row: Row<TData>,
-  columnId: string,
-  filterValues: any[] = []
-) => {
-  return !filterValues.some(filterValue =>
-    isEqual(row.getValue(columnId), filterValue)
-  );
-};
+// Filter values are facet keys, so rows whose accessor values differ but
+// share a facet (e.g. same `userName`) are filtered together.
+const getFacetKey = <TData extends RowData>(
+  value: any,
+  facetFn?: (data: TData) => string
+) => String(facetFn?.(value) ?? value);
+
+const getDefaultFilterFn =
+  <TData extends RowData>(facetFn?: (data: TData) => string) =>
+  (row: Row<TData>, columnId: string, filterValues: string[] = []) =>
+    !filterValues.includes(getFacetKey(row.getValue(columnId), facetFn));
 
 export interface DataTableContextProps {
   sorting: SortingState;
@@ -128,10 +131,24 @@ export interface DataTableRowAction {
   disabled?: boolean;
 }
 
+export type DataTableVariant = "standard" | "card";
+
 export interface DataTableProps<TData extends RowData> extends TableProps {
   options: DataTableOptions<TData>;
   pageSize?: number | null | false;
   resizable?: boolean;
+
+  /**
+   * Lets columns be reordered by dragging their header onto another header.
+   * The selection and actions columns stay pinned to the edges.
+   */
+  reorderable?: boolean;
+
+  /**
+   * `standard` divides rows with hairlines; `card` draws the header, each row
+   * and the pagination footer as separate rounded cards.
+   */
+  variant?: DataTableVariant;
 
   /**
    * Adds a trailing column whose button opens a menu of these actions, or of
@@ -154,6 +171,18 @@ const DataTableColumnHeading = styled(HeadingSmallText, {
   fontFamily: "title-md"
 });
 
+// Cards are drawn on the cells: a `tr` can't be rounded.
+const getCardCellProps = (index: number, count: number) => ({
+  backgroundColor: "surface",
+  borderBottomWidth: 0,
+  ...(index === 0
+    ? { borderTopLeftRadius: "card", borderBottomLeftRadius: "card" }
+    : {}),
+  ...(index === count - 1
+    ? { borderTopRightRadius: "card", borderBottomRightRadius: "card" }
+    : {})
+});
+
 const getSelectionColumn = <TData extends RowData>(): ColumnDef<TData> => ({
   id: SELECTION_COLUMN_ID,
   size: 56,
@@ -170,8 +199,7 @@ const getSelectionColumn = <TData extends RowData>(): ColumnDef<TData> => ({
         : false;
 
     return (
-      // Match the body checkbox center after the header's first-column inset.
-      <View width="100%" alignItems="center" justifyContent="center" x="-xs">
+      <View width="100%" alignItems="center" justifyContent="center">
         <Checkbox
           name="data-table-select-all"
           aria-label="Select all rows on this page"
@@ -477,13 +505,21 @@ export function DataTable<TData extends RowData>({
   options,
   pageSize = 100,
   resizable = false,
+  reorderable = false,
+  variant = "standard",
   rowActions,
   onRowAction,
   ...rest
 }: DataTableProps<TData>) {
+  const card = variant === "card";
   const [data] = useState<TData[]>(() => [...options.data]);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnOrder, setColumnOrder] = useState<ColumnOrderState>(
+    () => options.initialState?.columnOrder ?? []
+  );
+  const [draggedColumn, setDraggedColumn] = useState<string | null>(null);
+  const [dropColumn, setDropColumn] = useState<string | null>(null);
   const [hoveredResizer, setHoveredResizer] = useState<string | null>(null);
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [pagination, setPagination] = useState<PaginationState>({
@@ -502,7 +538,7 @@ export function DataTable<TData extends RowData>({
     () => [
       ...(rowSelectionEnabled ? [getSelectionColumn<TData>()] : []),
       ...options.columns.map(column => ({
-        filterFn: defaultFilterFn,
+        filterFn: getDefaultFilterFn<TData>(column.meta?.facetFn),
         ...column
       })),
       ...(rowActions ? [getActionsColumn(rowActions, onRowAction)] : [])
@@ -529,6 +565,7 @@ export function DataTable<TData extends RowData>({
     getFacetedUniqueValues: getFacetedUniqueValues(),
     onColumnFiltersChange: setColumnFilters,
     onSortingChange: setSorting,
+    onColumnOrderChange: setColumnOrder,
     onPaginationChange: setPagination,
     manualPagination: false,
     columnResizeMode: "onChange",
@@ -536,6 +573,7 @@ export function DataTable<TData extends RowData>({
     state: {
       sorting,
       columnFilters,
+      columnOrder,
       pagination,
       rowSelection,
       ...options.state
@@ -550,6 +588,34 @@ export function DataTable<TData extends RowData>({
   });
 
   useInitialContentSizedColumns(tableRef, table, resizable);
+
+  const leafColumnIds = table.getVisibleLeafColumns().map(column => column.id);
+  const isReorderable = (column: Column<TData>) =>
+    reorderable &&
+    column.columns.length === 0 &&
+    column.id !== SELECTION_COLUMN_ID &&
+    column.id !== ACTIONS_COLUMN_ID;
+
+  const handleColumnDragEnd = () => {
+    setDraggedColumn(null);
+    setDropColumn(null);
+  };
+
+  const handleColumnDrop = (targetId: string) => {
+    if (draggedColumn && draggedColumn !== targetId) {
+      table.setColumnOrder(() => {
+        const ids = table.getAllLeafColumns().map(column => column.id);
+        const next = ids.filter(id => id !== draggedColumn);
+        // Taking the target's old index lands the column past it in the
+        // direction it was dragged.
+        next.splice(ids.indexOf(targetId), 0, draggedColumn);
+
+        return next;
+      });
+    }
+
+    handleColumnDragEnd();
+  };
 
   const headerGroups = table.getHeaderGroups();
   const tableRows = table.getRowModel().rows;
@@ -578,7 +644,9 @@ export function DataTable<TData extends RowData>({
               rest.style,
               {
                 borderCollapse: "separate",
-                borderSpacing: 0
+                borderSpacing: card
+                  ? `0 ${getVariableValue(getTokens().space["2xl"])}px`
+                  : 0
               },
               resizable
                 ? {
@@ -605,6 +673,43 @@ export function DataTable<TData extends RowData>({
                               ? "end"
                               : undefined
                       }
+                      {...(card
+                        ? getCardCellProps(index, headerGroup.headers.length)
+                        : {})}
+                      // Match the body cells so the checkboxes line up.
+                      {...(header.column.id === SELECTION_COLUMN_ID
+                        ? { paddingLeft: "xl", paddingRight: "xl" }
+                        : {})}
+                      {...(isReorderable(header.column)
+                        ? ({
+                            cursor: "grab",
+                            ...(draggedColumn === header.column.id
+                              ? { opacity: 0.5 }
+                              : {}),
+                            draggable: true,
+                            onDragStart: (event: any) => {
+                              event.dataTransfer.effectAllowed = "move";
+                              // Firefox won't start a drag without data.
+                              event.dataTransfer.setData(
+                                "text/plain",
+                                header.column.id
+                              );
+                              setDraggedColumn(header.column.id);
+                            },
+                            onDragOver: (event: any) => {
+                              // Ignore drags that didn't start on a header.
+                              if (draggedColumn) {
+                                event.preventDefault();
+                                setDropColumn(header.column.id);
+                              }
+                            },
+                            onDrop: (event: any) => {
+                              event.preventDefault();
+                              handleColumnDrop(header.column.id);
+                            },
+                            onDragEnd: handleColumnDragEnd
+                          } as any)
+                        : {})}
                       style={
                         resizable
                           ? ({ width: header.getSize() } as any)
@@ -616,7 +721,7 @@ export function DataTable<TData extends RowData>({
                           ? { "data-column-id": header.column.id }
                           : {})
                       } as any)}
-                      group={"header" as any}>
+                      group="header">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -642,7 +747,11 @@ export function DataTable<TData extends RowData>({
                           onDoubleClick={() => header.column.resetSize()}
                           onMouseEnter={() => setHoveredResizer(header.id)}
                           onMouseLeave={() => setHoveredResizer(null)}
-                          onMouseDown={header.getResizeHandler()}
+                          onMouseDown={(event: any) => {
+                            // Keeps a draggable header from starting a drag.
+                            event.preventDefault();
+                            header.getResizeHandler()(event);
+                          }}
                           onTouchStart={header.getResizeHandler()}>
                           <View
                             position="absolute"
@@ -651,18 +760,36 @@ export function DataTable<TData extends RowData>({
                             marginLeft={-1}
                             bottom="xl"
                             borderWidth={0}
-                            borderRightWidth={2}
+                            borderRightWidth={1}
                             borderStyle="dashed"
                             borderRightColor={
                               header.column.getIsResizing()
-                                ? "primaryActive"
+                                ? "subtle"
                                 : hoveredResizer === header.id
-                                  ? "emphasis"
+                                  ? "subtle"
                                   : "transparent"
                             }
                           />
                         </View>
                       )}
+                      {draggedColumn &&
+                        dropColumn === header.column.id &&
+                        dropColumn !== draggedColumn && (
+                          <View
+                            position="absolute"
+                            top="xl"
+                            bottom="xl"
+                            {...(leafColumnIds.indexOf(draggedColumn) <
+                            leafColumnIds.indexOf(dropColumn)
+                              ? { right: 0 }
+                              : { left: 0 })}
+                            borderWidth={0}
+                            borderLeftWidth={1}
+                            borderStyle="dashed"
+                            borderLeftColor="subtle"
+                            pointerEvents="none"
+                          />
+                        )}
                     </Table.HeaderCell>
                   ))}
                 </Table.Row>
@@ -671,17 +798,32 @@ export function DataTable<TData extends RowData>({
           </Table.Header>
           <Table.Body>
             {tableRows.map(row => {
+              const cells = row.getVisibleCells();
+
               return (
                 <Table.Row
                   key={row.id}
                   aria-selected={row.getIsSelected()}
                   // An explicit `undefined` would wipe the row's hover background.
-                  {...(row.getIsSelected()
-                    ? { backgroundColor: "secondaryActive" }
-                    : {})}>
-                  {row.getVisibleCells().map(cell => (
+                  // Cards paint the cells instead; a row background would show
+                  // square behind their rounded corners.
+                  {...(card
+                    ? { backgroundColor: "transparent" }
+                    : row.getIsSelected()
+                      ? { backgroundColor: "surfaceActive" }
+                      : {})}>
+                  {cells.map((cell, index) => (
                     <Table.Cell
                       key={cell.id}
+                      {...(card
+                        ? {
+                            ...getCardCellProps(index, cells.length),
+                            transition: "200ms",
+                            backgroundColor: row.getIsSelected()
+                              ? "surfaceActive"
+                              : "surface group-hover/row:surfaceHovered"
+                          }
+                        : {})}
                       style={
                         resizable
                           ? ({ width: cell.column.getSize() } as any)
@@ -700,6 +842,7 @@ export function DataTable<TData extends RowData>({
             {tableRows.length === 0 && (
               <Table.Row>
                 <Table.Cell
+                  {...(card ? getCardCellProps(0, 1) : {})}
                   {...({
                     colSpan: table.getVisibleLeafColumns().length
                   } as any)}>
@@ -720,6 +863,9 @@ export function DataTable<TData extends RowData>({
                 <Table.Cell
                   borderBottomWidth={0}
                   paddingTop="3xl"
+                  {...(card
+                    ? { ...getCardCellProps(0, 1), paddingVertical: "xl" }
+                    : {})}
                   {...({
                     colSpan: table.getVisibleLeafColumns().length
                   } as any)}>
@@ -764,7 +910,7 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   const value = props.value ? props.value : props.renderValue();
 
   return (
-    <BodyText transition="200ms" color="ink group-hover/row:inkHovered">
+    <BodyText transition="200ms" color="ink group-hover/row:inkActive">
       {value}
     </BodyText>
   );
@@ -831,7 +977,7 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
         {intrinsicFilterLabels}
       </HeadingSmallText>
 
-      <YStack gap="4xl">
+      <YStack gap="xl">
         <Field name={SEARCH_FIELD_NAME} size="sm" onChange={handleSearchChange}>
           <SearchInput>
             <SearchInput.TextBox placeholder="Filter..." />
@@ -841,8 +987,9 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
         <Popover.Content.ScrollView size="lg" maxHeight="30xl">
           <YStack gap="xl" width="100%" minWidth="28xl" padding="xl">
             <Field name={SELECT_ALL_FIELD_NAME}>
-              <XStack gap="3xl" alignItems="center" justifyContent="flex-start">
+              <XStack gap="xl" alignItems="center" justifyContent="flex-start">
                 <Checkbox
+                  size="sm"
                   checked={selectAll}
                   onCheckedChange={checked =>
                     handleFilterChange(SELECT_ALL_FIELD_NAME, checked)
@@ -855,15 +1002,12 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
             {searchResults.map(searchResult => (
               <Field key={searchResult} name={searchResult}>
                 <XStack
-                  gap="3xl"
+                  gap="xl"
                   alignItems="center"
                   justifyContent="flex-start">
                   <Checkbox
-                    checked={
-                      !filterValues.some(filterValue =>
-                        isEqual(filterValue, valuesMap.get(searchResult)?.value)
-                      )
-                    }
+                    size="sm"
+                    checked={!filterValues.includes(searchResult)}
                     onCheckedChange={checked =>
                       handleFilterChange(searchResult, checked)
                     }
@@ -915,9 +1059,10 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
     return Array.from(facetedUniqueValues.keys())
       .slice(0, 5000)
       .reduce((ret, value) => {
-        ret.set(String(meta?.facetFn?.(value) ?? value), {
+        const key = getFacetKey(value, meta?.facetFn);
+        ret.set(key, {
           value,
-          count: facetedUniqueValues.get(value)
+          count: (ret.get(key)?.count ?? 0) + facetedUniqueValues.get(value)
         });
 
         return ret;
@@ -934,27 +1079,22 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
   const handleFilterChange = useCallback(
     (name: string, checked: boolean) => {
       if (name === SELECT_ALL_FIELD_NAME) {
-        setFilterValue(
-          checked
-            ? []
-            : Array.from(valuesMap.values()).map(({ value }) => value)
-        );
+        setFilterValue(checked ? [] : Array.from(valuesMap.keys()));
         return;
       }
 
-      const value = valuesMap.get(name)?.value;
-      if (value === undefined) {
+      if (!valuesMap.has(name)) {
         return;
       }
 
       setFilterValue((current: unknown) => {
-        const filterValues = (current ?? []) as any[];
+        const filterValues = (current ?? []) as string[];
 
         return checked
-          ? filterValues.filter(filterValue => !isEqual(filterValue, value))
-          : filterValues.some(filterValue => isEqual(filterValue, value))
+          ? filterValues.filter(filterValue => filterValue !== name)
+          : filterValues.includes(name)
             ? filterValues
-            : [...filterValues, value];
+            : [...filterValues, name];
       });
     },
     [setFilterValue, valuesMap]
@@ -973,9 +1113,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
     return keys.reduce(
       (ret, key) => ({
         ...ret,
-        [key]: !filterValues.some(filterValue =>
-          isEqual(filterValue, valuesMap.get(key)!.value)
-        )
+        [key]: !filterValues.includes(key)
       }),
       {
         [SEARCH_FIELD_NAME]: currentSearch,
@@ -1000,27 +1138,27 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       <XStack gap="xl" flexShrink={0} cursor="pointer" onPress={handleSorting}>
         <DataTableColumnHeading
           transition="200ms"
-          color="emphasis group-hover/header:primary">
+          color="emphasis group-hover/header:emphasisHovered">
           {titleCase(id)}
         </DataTableColumnHeading>
         {isSorted && !desc && (
           <XStack gap="xxs" alignItems="center">
-            <SortAscending size="4xl" color="primary" />
+            <SortAscending size="4xl" color="emphasis" />
             <DataTableColumnHeading
               transition="200ms"
               fontWeight={600}
-              color="primary">
+              color="emphasis">
               {sortIndex + 1}
             </DataTableColumnHeading>
           </XStack>
         )}
         {isSorted && desc && (
           <XStack gap="xxs" alignItems="center">
-            <SortDescending size="4xl" color="primary" />
+            <SortDescending size="4xl" color="emphasis" />
             <DataTableColumnHeading
               transition="200ms"
               fontWeight={600}
-              color="primary">
+              color="emphasis">
               {sortIndex + 1}
             </DataTableColumnHeading>
           </XStack>
@@ -1038,10 +1176,8 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
               <Button
                 theme="base"
                 variant="ghost"
-                ghostOpacity={0.4}
                 circular={true}
                 noPadding={true}
-                color="primary"
                 size="6xl"
                 padding="lg">
                 <Button.Icon>
@@ -1054,7 +1190,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
               width="max-content"
               minWidth="30xl"
               maxWidth="90vw"
-              paddingVertical="3xl">
+              padding="xl">
               <Form name={`${id}_filter`} initialValues={initialValues}>
                 <DataTableHeaderFilterFields
                   valuesMap={valuesMap}
@@ -1190,7 +1326,7 @@ export function DataTablePagination<TData extends RowData>({
 
   return (
     <XStack
-      group={"header"}
+      group="header"
       flexGrow={1}
       justifyContent="space-between"
       alignItems="center"
@@ -1223,12 +1359,9 @@ export function DataTablePagination<TData extends RowData>({
           </View>
 
           <YStack gap="xs" justifyContent="center">
-            <XStack justifyContent="space-between" alignItems="center" gap="xl">
-              <LabelText size="xs">Total:</LabelText>
-              <LabelText size="xs">
-                {`${totalCount} ${totalCount === 1 ? "row" : "rows"}${selectedCount > 0 ? ` (${selectedCount} Selected)` : ""}`}
-              </LabelText>
-            </XStack>
+            <LabelText size="xs">
+              {`${unfilteredCount > 0 ? pageIndex * pageSize + 1 : 0}-${Math.min((pageIndex + 1) * pageSize, unfilteredCount)} of ${unfilteredCount} ${unfilteredCount === 1 ? "row" : "rows"}${selectedCount > 0 ? ` (${selectedCount} Selected)` : ""}`}
+            </LabelText>
             {unfilteredCount !== totalCount && (
               <XStack
                 justifyContent="space-between"

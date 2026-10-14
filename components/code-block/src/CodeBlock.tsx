@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Clipboard } from "@cyclone-ui/icons";
 import { ScrollView } from "@cyclone-ui/scroll-view";
@@ -149,17 +148,17 @@ const CodeBlockHeaderIcon = styled(View, {
   justifyContent: "center"
 });
 
-const CodeBlockHeaderHeading = styled(BodyText, {
+const CodeBlockHeaderHeading = styled(Text, {
   displayName: "CodeBlockHeaderHeading",
   render: "span",
   flex: 1,
   minWidth: 0,
   paddingVertical: 0,
-  color: "ink",
+  color: "emphasis",
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis",
-  fontFamily: "caption"
+  fontFamily: "title-md"
 });
 
 // `ScrollView` is a styled HOC; v3 `styled()` over it swallows `className` and
@@ -171,8 +170,6 @@ const codeBlockViewportDefaults = {
   size: "lg",
   position: "relative",
   paddingVertical: "3xl",
-  overflowX: "auto",
-  overflowY: "auto",
   borderRadius: "container",
   backgroundColor: "elevated",
   borderColor: "hairline",
@@ -346,7 +343,11 @@ const CodeBlockImpl = createStyledHOC(
       ) : undefined
     });
 
+    // The web ScrollView sets an inline `overflowX: hidden` when not
+    // `horizontal`, which only an inline style can override.
     const viewportStyle = {
+      overflowX: "auto",
+      overflowY: "auto",
       counterSet: lineNumbers
         ? `line ${Number(lineNumbersStart) - 1}`
         : undefined,

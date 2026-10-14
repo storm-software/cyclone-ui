@@ -18,7 +18,11 @@
 
 import type { SelectOption } from "@stryke/types/form";
 import type { ValidationDetail } from "@stryke/types/validations";
-import type { GetProps, TamaguiWebElement } from "@tamagui/core";
+import type {
+  FontFamilyTokens,
+  GetProps,
+  TamaguiWebElement
+} from "@tamagui/core";
 import { createStyledHOC, styled, useComposedRefs, View } from "@tamagui/core";
 import type { ReactNode, Ref, RefObject } from "react";
 import { createContext, use, useLayoutEffect, useRef, useState } from "react";
@@ -140,6 +144,9 @@ export interface FieldLabelDefaults {
    * the alignment of the label's row.
    */
   inline?: { alignItems?: "center" } | { alignContent?: "center" };
+
+  /** The font of an `inline` label, such as a smaller one for a small control. */
+  inlineFontFamily?: FontFamilyTokens;
 
   /**
    * Where a floating label rests, for a control with leading content other

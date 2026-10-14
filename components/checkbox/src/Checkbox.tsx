@@ -19,7 +19,6 @@
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,
-  getFormSizeToken,
   getSized,
   getSpaced,
   useFieldHasValidationMessage,
@@ -33,8 +32,15 @@ import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
 import { useCallback } from "react";
 
+// Box size tokens, one step above the shared compact scale.
+const checkboxSizeTokens = { sm: "6xl", md: "7xl", lg: "8xl" } as const;
+
 // A checkbox's field label sits compactly beside it.
 const INLINE_LABEL = { inline: { alignItems: "center" } } as const;
+const INLINE_LABEL_SM = {
+  ...INLINE_LABEL,
+  inlineFontFamily: "title-sm"
+} as const;
 
 const CheckboxGroupFrame = styled(View, {
   displayName: "Checkbox",
@@ -63,7 +69,7 @@ const CheckboxGroupFrame = styled(View, {
           return;
         }
 
-        const size = getSized(getFormSizeToken(val, "compact")) * 0.8;
+        const size = getSized(checkboxSizeTokens[val]) * 0.8;
 
         return {
           height: size,
@@ -126,7 +132,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
           return;
         }
 
-        const space = getSpaced(getFormSizeToken(val, "compact"), {
+        const space = getSpaced(checkboxSizeTokens[val], {
           scale: 0.05
         });
 
@@ -175,7 +181,6 @@ export const Checkbox = createStyledHOC(
     // Inside a form control (such as `Field`), any prop left unset falls back
     // to the control's state, which connects the checkbox to the form.
     const formControl = useFormControl();
-    useFieldLabelDefaults(INLINE_LABEL);
     const {
       focused = formControl?.focused ?? false,
       disabled = formControl?.disabled,
@@ -190,6 +195,7 @@ export const Checkbox = createStyledHOC(
       onBlur = formControl?.onBlur,
       ...rest
     } = props;
+    useFieldLabelDefaults(size === "sm" ? INLINE_LABEL_SM : INLINE_LABEL);
     const formOnChange = formControl?.onChange;
     const handleCheckedChange = useCallback(
       (next: CheckedState) => {
@@ -202,7 +208,7 @@ export const Checkbox = createStyledHOC(
     const idleColor = hasValidationMessage ? "primary" : "outline";
     const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
     // The full 3px ring overwhelms the small checkbox, so use the 1px ring.
-    const ring = size === "sm" ? "ringSubtleOffset" : "ringOffset";
+    const ring = size === "sm" ? "ringSubtle" : "ringOffset";
 
     return (
       <CheckboxGroupFrame
@@ -240,15 +246,15 @@ export const Checkbox = createStyledHOC(
                 y="enter:10px exit:-10px"
                 opacity="enter:0.2 exit:0.5">
                 <MinusIcon
-                  width={getSized(getFormSizeToken(size, "compact")) * 0.5}
-                  height={getSized(getFormSizeToken(size, "compact")) * 0.13}
+                  width={getSized(checkboxSizeTokens[size]) * 0.5}
+                  height={getSized(checkboxSizeTokens[size]) * 0.11}
                   backgroundColor={focused ? focusColor : "primary"}
                 />
               </View>
             ) : (
               <CheckboxIcon
-                width={getSized(getFormSizeToken(size, "compact")) * 0.6}
-                height={getSized(getFormSizeToken(size, "compact")) * 0.6}
+                width={getSized(checkboxSizeTokens[size]) * 0.6}
+                height={getSized(checkboxSizeTokens[size]) * 0.6}
                 color={focused ? focusColor : "primary"}
               />
             )}

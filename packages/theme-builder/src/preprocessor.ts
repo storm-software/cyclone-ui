@@ -482,7 +482,7 @@ const COLOR_STATE_INACTIVE: ColorStateVariant = {
 
 const LOW_SATURATION_COLOR_STATE_INACTIVE: ColorStateVariant = {
   name: "inactive",
-  brightness: 0.6,
+  brightness: 0.5,
   useContrastPrimitive: true
 };
 
@@ -574,7 +574,7 @@ const THEME_COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
  */
 const FOREGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
   lowSaturation: [
-    { name: "hovered", brightness: 1.3 },
+    { name: "hovered", brightness: 1.45 },
     ...DEFAULT_COLOR_STATE_VARIANTS.lowSaturation
   ],
   saturated: [
