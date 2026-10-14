@@ -1,0 +1,53 @@
+{
+  "name": "@cyclone-ui/calendar",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A stand-alone calendar with day, month and year views that selects a single date or a start and end date range.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/calendar"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@rehookify/datepicker": "catalog:",
+    "@tamagui/animate-presence": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Calendar": {
+      "import": "./dist/Calendar.mjs",
+      "require": "./dist/Calendar.cjs"
+    },
+    "./*": "./*"
+  }
+}

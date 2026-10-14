@@ -4064,6 +4064,13 @@ export const manifest: DesignSystemManifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/calendar",
+      "jsx": [
+        "Calendar"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/callout",
       "jsx": [
         "Callout"

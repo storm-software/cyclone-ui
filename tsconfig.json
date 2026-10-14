@@ -103,6 +103,9 @@
       "path": "./components/container"
     },
     {
+      "path": "./components/calendar"
+    },
+    {
       "path": "./components/link-text"
     },
     {

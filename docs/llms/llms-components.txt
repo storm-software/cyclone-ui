@@ -374,6 +374,42 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 | `../../components/bytes-text/node_modules/react/index.js` | `file` |  |
 | `../../components/bytes-text/src/index.ts` | `file` |  |
 
+## @cyclone-ui/calendar
+
+A stand-alone calendar with day, month and year views that selects a single date or a start and end date range.
+
+- **Name:** `@cyclone-ui/calendar`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@rehookify/datepicker`: `catalog:`
+- `@tamagui/animate-presence`: `catalog:`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/calendar/dist/index.cjs` | `file` |  |
+| `../../components/calendar/dist/index.mjs` | `file` |  |
+| `../../components/calendar/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react-native/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react/index.js` | `file` |  |
+| `../../components/calendar/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/callout
 
 A highlighted content panel with a theme-colored gradient and diagonal pattern background. Compound parts are Callout.Header (with Eyebrow, Heading and Icon) and Callout.Body, and the icon is picked from the theme by default. Use it to draw attention to important notes or featured content.
@@ -783,19 +819,17 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/calendar`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
-- `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@maskito/core`: `catalog:`
 - `@maskito/kit`: `^3.11.1`
-- `@rehookify/datepicker`: `catalog:`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
 - `@tamagui/adapt`: `catalog:`
-- `@tamagui/animate-presence`: `catalog:`
 - `@tamagui/compose-refs`: `catalog:`
 - `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
@@ -3452,6 +3486,42 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 | `../../components/bytes-text/node_modules/react/index.js` | `file` |  |
 | `../../components/bytes-text/src/index.ts` | `file` |  |
 
+## @cyclone-ui/calendar
+
+A stand-alone calendar with day, month and year views that selects a single date or a start and end date range.
+
+- **Name:** `@cyclone-ui/calendar`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@rehookify/datepicker`: `catalog:`
+- `@tamagui/animate-presence`: `catalog:`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/calendar/dist/index.cjs` | `file` |  |
+| `../../components/calendar/dist/index.mjs` | `file` |  |
+| `../../components/calendar/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react-native/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react/index.js` | `file` |  |
+| `../../components/calendar/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/callout
 
 A highlighted content panel with a theme-colored gradient and diagonal pattern background. Compound parts are Callout.Header (with Eyebrow, Heading and Icon) and Callout.Body, and the icon is picked from the theme by default. Use it to draw attention to important notes or featured content.
@@ -3861,19 +3931,17 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/calendar`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
-- `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@maskito/core`: `catalog:`
 - `@maskito/kit`: `^3.11.1`
-- `@rehookify/datepicker`: `catalog:`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
 - `@tamagui/adapt`: `catalog:`
-- `@tamagui/animate-presence`: `catalog:`
 - `@tamagui/compose-refs`: `catalog:`
 - `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
@@ -6530,6 +6598,42 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 | `../../components/bytes-text/node_modules/react/index.js` | `file` |  |
 | `../../components/bytes-text/src/index.ts` | `file` |  |
 
+## @cyclone-ui/calendar
+
+A stand-alone calendar with day, month and year views that selects a single date or a start and end date range.
+
+- **Name:** `@cyclone-ui/calendar`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@rehookify/datepicker`: `catalog:`
+- `@tamagui/animate-presence`: `catalog:`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/calendar/dist/index.cjs` | `file` |  |
+| `../../components/calendar/dist/index.mjs` | `file` |  |
+| `../../components/calendar/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react-native/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react/index.js` | `file` |  |
+| `../../components/calendar/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/callout
 
 A highlighted content panel with a theme-colored gradient and diagonal pattern background. Compound parts are Callout.Header (with Eyebrow, Heading and Icon) and Callout.Body, and the icon is picked from the theme by default. Use it to draw attention to important notes or featured content.
@@ -6939,19 +7043,17 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/calendar`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
-- `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@maskito/core`: `catalog:`
 - `@maskito/kit`: `^3.11.1`
-- `@rehookify/datepicker`: `catalog:`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
 - `@tamagui/adapt`: `catalog:`
-- `@tamagui/animate-presence`: `catalog:`
 - `@tamagui/compose-refs`: `catalog:`
 - `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
@@ -9608,6 +9710,42 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 | `../../components/bytes-text/node_modules/react/index.js` | `file` |  |
 | `../../components/bytes-text/src/index.ts` | `file` |  |
 
+## @cyclone-ui/calendar
+
+A stand-alone calendar with day, month and year views that selects a single date or a start and end date range.
+
+- **Name:** `@cyclone-ui/calendar`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@rehookify/datepicker`: `catalog:`
+- `@tamagui/animate-presence`: `catalog:`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/calendar/dist/index.cjs` | `file` |  |
+| `../../components/calendar/dist/index.mjs` | `file` |  |
+| `../../components/calendar/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react-native/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react/index.js` | `file` |  |
+| `../../components/calendar/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/callout
 
 A highlighted content panel with a theme-colored gradient and diagonal pattern background. Compound parts are Callout.Header (with Eyebrow, Heading and Icon) and Callout.Body, and the icon is picked from the theme by default. Use it to draw attention to important notes or featured content.
@@ -10017,19 +10155,17 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/calendar`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
-- `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@maskito/core`: `catalog:`
 - `@maskito/kit`: `^3.11.1`
-- `@rehookify/datepicker`: `catalog:`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
 - `@tamagui/adapt`: `catalog:`
-- `@tamagui/animate-presence`: `catalog:`
 - `@tamagui/compose-refs`: `catalog:`
 - `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
@@ -12686,6 +12822,42 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 | `../../components/bytes-text/node_modules/react/index.js` | `file` |  |
 | `../../components/bytes-text/src/index.ts` | `file` |  |
 
+## @cyclone-ui/calendar
+
+A stand-alone calendar with day, month and year views that selects a single date or a start and end date range.
+
+- **Name:** `@cyclone-ui/calendar`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@rehookify/datepicker`: `catalog:`
+- `@tamagui/animate-presence`: `catalog:`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/calendar/dist/index.cjs` | `file` |  |
+| `../../components/calendar/dist/index.mjs` | `file` |  |
+| `../../components/calendar/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react-native/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react/index.js` | `file` |  |
+| `../../components/calendar/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/callout
 
 A highlighted content panel with a theme-colored gradient and diagonal pattern background. Compound parts are Callout.Header (with Eyebrow, Heading and Icon) and Callout.Body, and the icon is picked from the theme by default. Use it to draw attention to important notes or featured content.
@@ -13095,19 +13267,17 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/calendar`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
-- `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@maskito/core`: `catalog:`
 - `@maskito/kit`: `^3.11.1`
-- `@rehookify/datepicker`: `catalog:`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
 - `@tamagui/adapt`: `catalog:`
-- `@tamagui/animate-presence`: `catalog:`
 - `@tamagui/compose-refs`: `catalog:`
 - `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
@@ -15764,6 +15934,42 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 | `../../components/bytes-text/node_modules/react/index.js` | `file` |  |
 | `../../components/bytes-text/src/index.ts` | `file` |  |
 
+## @cyclone-ui/calendar
+
+A stand-alone calendar with day, month and year views that selects a single date or a start and end date range.
+
+- **Name:** `@cyclone-ui/calendar`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/heading-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@rehookify/datepicker`: `catalog:`
+- `@tamagui/animate-presence`: `catalog:`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/calendar/dist/index.cjs` | `file` |  |
+| `../../components/calendar/dist/index.mjs` | `file` |  |
+| `../../components/calendar/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react-native/index.js` | `file` |  |
+| `../../components/calendar/node_modules/react/index.js` | `file` |  |
+| `../../components/calendar/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/callout
 
 A highlighted content panel with a theme-colored gradient and diagonal pattern background. Compound parts are Callout.Header (with Eyebrow, Heading and Icon) and Callout.Body, and the icon is picked from the theme by default. Use it to draw attention to important notes or featured content.
@@ -16173,19 +16379,17 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/calendar`: `workspace:*`
 - `@cyclone-ui/field`: `workspace:*`
-- `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/input`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
 - `@maskito/core`: `catalog:`
 - `@maskito/kit`: `^3.11.1`
-- `@rehookify/datepicker`: `catalog:`
 - `@stryke/date`: `catalog:`
 - `@stryke/hooks`: `catalog:`
 - `@tamagui/adapt`: `catalog:`
-- `@tamagui/animate-presence`: `catalog:`
 - `@tamagui/compose-refs`: `catalog:`
 - `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
