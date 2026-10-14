@@ -21,6 +21,7 @@ import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
+import type { ComponentType } from "react";
 import {
   createEvent,
   expect,
@@ -35,13 +36,16 @@ import { PasswordInput } from "./PasswordInput";
 type PasswordInputStoryArgs = Partial<FieldProps> & {
   labelVariant?: FieldLabelVariant;
   defaultValue?: string;
+  showStrength?: boolean;
+  validateStrength?: boolean;
 };
 
 // Annotated rather than inferred: the inferred type reaches `MaskitoOptions`
 // through the Field props, which is not portable from this package.
 const meta: Meta<PasswordInputStoryArgs> = {
   title: "Form/PasswordInput",
-  component: PasswordInput,
+  // Field props drive the story; the render passes the strength flags through.
+  component: PasswordInput as unknown as ComponentType<PasswordInputStoryArgs>,
   tags: ["autodocs"],
   args: {
     name: "inputFieldName"
@@ -57,7 +61,13 @@ const meta: Meta<PasswordInputStoryArgs> = {
     )
   ],
   render: (
-    { defaultValue = "", labelVariant, ...props }: any,
+    {
+      defaultValue = "",
+      labelVariant,
+      showStrength = true,
+      validateStrength = true,
+      ...props
+    }: any,
     { id }: { id: string }
   ) => (
     <Form
@@ -65,7 +75,9 @@ const meta: Meta<PasswordInputStoryArgs> = {
       initialValues={{ inputFieldName: defaultValue }}>
       <Field name="inputFieldName" {...props}>
         <Field.Label variant={labelVariant}>New Password</Field.Label>
-        <PasswordInput>
+        <PasswordInput
+          showStrength={showStrength}
+          validateStrength={validateStrength}>
           <PasswordInput.TextBox>
             <PasswordInput.TextBox.Value autoComplete="new-password" />
           </PasswordInput.TextBox>
@@ -121,7 +133,7 @@ export const Base: Story = {
       const labelBounds = label.getBoundingClientRect();
       const inputBounds = input.getBoundingClientRect();
 
-      expect(labelBounds.top + labelBounds.height / 2).toBeCloseTo(
+      void expect(labelBounds.top + labelBounds.height / 2).toBeCloseTo(
         inputBounds.top,
         1
       );
@@ -181,6 +193,25 @@ export const MissingCriteria: Story = {
         canvas.queryByText("Include a number or special character")
       ).not.toBeInTheDocument();
     });
+  }
+};
+
+export const WithoutStrength: Story = {
+  args: {
+    showStrength: false,
+    validateStrength: false
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByLabelText("New Password");
+
+    await expect(canvas.queryByRole("meter")).not.toBeInTheDocument();
+
+    await userEvent.type(input, "pass!");
+    await userEvent.tab();
+    await expect(
+      canvas.queryByText("Use at least 8 characters")
+    ).not.toBeInTheDocument();
   }
 };
 

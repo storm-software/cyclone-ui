@@ -383,9 +383,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink-hovered"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% brighter)"}
       colors={{
-            "ink-hovered": "#4c4c4d"
+            "ink-hovered": "#ffffff"
       }}
     />
           <ColorItem
@@ -1112,9 +1112,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink-hovered"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% brighter)"}
       colors={{
-            "ink-hovered": "#5b5b5c"
+            "ink-hovered": "#d9d9d9"
       }}
     />
           <ColorItem
@@ -1841,9 +1841,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.ink-hovered"}
-      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)"}
+      subtitle={"Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% brighter)"}
       colors={{
-            "ink-hovered": "#323239"
+            "ink-hovered": "#ffffff"
       }}
     />
           <ColorItem
@@ -2521,9 +2521,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-active"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light contrast primitive)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)"}
       colors={{
-            "emphasis-active": "#0c0c0d"
+            "emphasis-active": "#000000"
       }}
     />
           <ColorItem
@@ -2535,9 +2535,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% brighter)"}
       colors={{
-            "emphasis-hovered": "#090a0d"
+            "emphasis-hovered": "#424346"
       }}
     />
           <ColorItem
@@ -3250,9 +3250,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-active"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light contrast primitive)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)"}
       colors={{
-            "emphasis-active": "#2e2e30"
+            "emphasis-active": "#262626"
       }}
     />
           <ColorItem
@@ -3264,9 +3264,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% brighter)"}
       colors={{
-            "emphasis-hovered": "#292c33"
+            "emphasis-hovered": "#545557"
       }}
     />
           <ColorItem
@@ -3979,7 +3979,7 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-active"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light contrast primitive)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)"}
       colors={{
             "emphasis-active": "#000000"
       }}
@@ -3993,9 +3993,9 @@ const COLOR_VARIANTS = {
     />
           <ColorItem
       title={"color.emphasis-hovered"}
-      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)"}
+      subtitle={"Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% brighter)"}
       colors={{
-            "emphasis-hovered": "#000000"
+            "emphasis-hovered": "#26272d"
       }}
     />
           <ColorItem

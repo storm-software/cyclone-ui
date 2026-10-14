@@ -7259,9 +7259,9 @@ module.exports = {
       key: "{color.ink-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#4c4c4d",
+      $value: "#ffffff",
       $description:
-        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)",
+        "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% brighter)",
       group: "foreground",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -7269,15 +7269,9 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.2980392156862745, 0.2980392156862745, 0.30196078431372547,
-          ],
-          hex: "#4c4c4d",
-        },
+        $value: "{color.white}",
         $description:
-          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)",
+          "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% brighter)",
         group: "foreground",
         key: "{color.ink-hovered}",
       },
@@ -13547,7 +13541,7 @@ module.exports = {
       $description:
         "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       $type: "dimension",
-      $value: "0.75rem",
+      $value: "1rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -13555,7 +13549,7 @@ module.exports = {
         $description:
           "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
         $type: "dimension",
-        $value: "{border-radius.xl}",
+        $value: "{border-radius.2xl}",
         key: "{border-radius.container}",
       },
       name: "BorderRadiusContainer",
@@ -13570,7 +13564,7 @@ module.exports = {
       $description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       $type: "dimension",
-      $value: "0.5rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -13578,7 +13572,7 @@ module.exports = {
         $description:
           "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
         $type: "dimension",
-        $value: "{border-radius.lg}",
+        $value: "{border-radius.md}",
         key: "{border-radius.trigger}",
       },
       name: "BorderRadiusTrigger",
@@ -13593,7 +13587,7 @@ module.exports = {
       $description:
         "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       $type: "dimension",
-      $value: "0.75rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -13601,7 +13595,7 @@ module.exports = {
         $description:
           "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
         $type: "dimension",
-        $value: "{border-radius.xl}",
+        $value: "{border-radius.md}",
         key: "{border-radius.card}",
       },
       name: "BorderRadiusCard",
@@ -13616,7 +13610,7 @@ module.exports = {
       $description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       $type: "dimension",
-      $value: "0.75rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -13624,7 +13618,7 @@ module.exports = {
         $description:
           "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
         $type: "dimension",
-        $value: "{border-radius.xl}",
+        $value: "{border-radius.md}",
         key: "{border-radius.button}",
       },
       name: "BorderRadiusButton",
@@ -13662,7 +13656,7 @@ module.exports = {
       $description:
         "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       $type: "dimension",
-      $value: "0.5rem",
+      $value: "0.25rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -13670,7 +13664,7 @@ module.exports = {
         $description:
           "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
         $type: "dimension",
-        $value: "{border-radius.lg}",
+        $value: "{border-radius.sm}",
         key: "{border-radius.control}",
       },
       name: "BorderRadiusControl",
@@ -13708,7 +13702,7 @@ module.exports = {
       $description:
         "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       $type: "dimension",
-      $value: "1rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -13716,7 +13710,7 @@ module.exports = {
         $description:
           "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
         $type: "dimension",
-        $value: "{border-radius.2xl}",
+        $value: "{border-radius.md}",
         key: "{border-radius.dialog}",
       },
       name: "BorderRadiusDialog",
@@ -13754,7 +13748,7 @@ module.exports = {
       $description:
         "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
       $type: "dimension",
-      $value: "2rem",
+      $value: "1rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -13762,7 +13756,7 @@ module.exports = {
         $description:
           "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
         $type: "dimension",
-        $value: "{border-radius.4xl}",
+        $value: "{border-radius.2xl}",
         key: "{border-radius.drawer}",
       },
       name: "BorderRadiusDrawer",
@@ -13777,7 +13771,7 @@ module.exports = {
       $description:
         "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       $type: "dimension",
-      $value: "0.5rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -13785,7 +13779,7 @@ module.exports = {
         $description:
           "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
         $type: "dimension",
-        $value: "{border-radius.lg}",
+        $value: "{border-radius.md}",
         key: "{border-radius.popover}",
       },
       name: "BorderRadiusPopover",
@@ -13800,7 +13794,7 @@ module.exports = {
       $description:
         "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       $type: "dimension",
-      $value: "0.5rem",
+      $value: "0.375rem",
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
       isSource: true,
@@ -13808,7 +13802,7 @@ module.exports = {
         $description:
           "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
         $type: "dimension",
-        $value: "{border-radius.lg}",
+        $value: "{border-radius.md}",
         key: "{border-radius.tooltip}",
       },
       name: "BorderRadiusTooltip",
@@ -16504,7 +16498,7 @@ module.exports = {
     },
     "base-offset": {
       key: "{ring.base-offset}",
-      $description: "Generated base 3px focus ring with a 3px gap",
+      $description: "Generated base 3px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -16522,7 +16516,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -16541,14 +16535,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 6,
+            value: 5,
             unit: "px",
           },
         },
       ],
       theme: "base",
       original: {
-        $description: "Generated base 3px focus ring with a 3px gap",
+        $description: "Generated base 3px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -16566,7 +16560,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -16585,7 +16579,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 6,
+              value: 5,
               unit: "px",
             },
           },
@@ -16602,7 +16596,7 @@ module.exports = {
     },
     "base-subtle-offset": {
       key: "{ring.base-subtle-offset}",
-      $description: "Generated base 1px focus ring with a 3px gap",
+      $description: "Generated base 1px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -16620,7 +16614,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -16639,14 +16633,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 4,
+            value: 3,
             unit: "px",
           },
         },
       ],
       theme: "base",
       original: {
-        $description: "Generated base 1px focus ring with a 3px gap",
+        $description: "Generated base 1px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -16664,7 +16658,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -16683,7 +16677,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 4,
+              value: 3,
               unit: "px",
             },
           },
@@ -16820,7 +16814,7 @@ module.exports = {
     },
     "danger-offset": {
       key: "{ring.danger-offset}",
-      $description: "Generated danger 3px focus ring with a 3px gap",
+      $description: "Generated danger 3px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -16838,7 +16832,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -16857,14 +16851,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 6,
+            value: 5,
             unit: "px",
           },
         },
       ],
       theme: "danger",
       original: {
-        $description: "Generated danger 3px focus ring with a 3px gap",
+        $description: "Generated danger 3px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -16882,7 +16876,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -16901,7 +16895,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 6,
+              value: 5,
               unit: "px",
             },
           },
@@ -16918,7 +16912,7 @@ module.exports = {
     },
     "danger-subtle-offset": {
       key: "{ring.danger-subtle-offset}",
-      $description: "Generated danger 1px focus ring with a 3px gap",
+      $description: "Generated danger 1px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -16936,7 +16930,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -16955,14 +16949,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 4,
+            value: 3,
             unit: "px",
           },
         },
       ],
       theme: "danger",
       original: {
-        $description: "Generated danger 1px focus ring with a 3px gap",
+        $description: "Generated danger 1px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -16980,7 +16974,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -16999,7 +16993,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 4,
+              value: 3,
               unit: "px",
             },
           },
@@ -17136,7 +17130,7 @@ module.exports = {
     },
     "warning-offset": {
       key: "{ring.warning-offset}",
-      $description: "Generated warning 3px focus ring with a 3px gap",
+      $description: "Generated warning 3px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -17154,7 +17148,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -17173,14 +17167,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 6,
+            value: 5,
             unit: "px",
           },
         },
       ],
       theme: "warning",
       original: {
-        $description: "Generated warning 3px focus ring with a 3px gap",
+        $description: "Generated warning 3px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -17198,7 +17192,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -17217,7 +17211,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 6,
+              value: 5,
               unit: "px",
             },
           },
@@ -17234,7 +17228,7 @@ module.exports = {
     },
     "warning-subtle-offset": {
       key: "{ring.warning-subtle-offset}",
-      $description: "Generated warning 1px focus ring with a 3px gap",
+      $description: "Generated warning 1px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -17252,7 +17246,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -17271,14 +17265,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 4,
+            value: 3,
             unit: "px",
           },
         },
       ],
       theme: "warning",
       original: {
-        $description: "Generated warning 1px focus ring with a 3px gap",
+        $description: "Generated warning 1px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -17296,7 +17290,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -17315,7 +17309,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 4,
+              value: 3,
               unit: "px",
             },
           },
@@ -17452,7 +17446,7 @@ module.exports = {
     },
     "info-offset": {
       key: "{ring.info-offset}",
-      $description: "Generated info 3px focus ring with a 3px gap",
+      $description: "Generated info 3px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -17470,7 +17464,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -17489,14 +17483,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 6,
+            value: 5,
             unit: "px",
           },
         },
       ],
       theme: "info",
       original: {
-        $description: "Generated info 3px focus ring with a 3px gap",
+        $description: "Generated info 3px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -17514,7 +17508,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -17533,7 +17527,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 6,
+              value: 5,
               unit: "px",
             },
           },
@@ -17550,7 +17544,7 @@ module.exports = {
     },
     "info-subtle-offset": {
       key: "{ring.info-subtle-offset}",
-      $description: "Generated info 1px focus ring with a 3px gap",
+      $description: "Generated info 1px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -17568,7 +17562,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -17587,14 +17581,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 4,
+            value: 3,
             unit: "px",
           },
         },
       ],
       theme: "info",
       original: {
-        $description: "Generated info 1px focus ring with a 3px gap",
+        $description: "Generated info 1px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -17612,7 +17606,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -17631,7 +17625,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 4,
+              value: 3,
               unit: "px",
             },
           },
@@ -17768,7 +17762,7 @@ module.exports = {
     },
     "discovery-offset": {
       key: "{ring.discovery-offset}",
-      $description: "Generated discovery 3px focus ring with a 3px gap",
+      $description: "Generated discovery 3px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -17786,7 +17780,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -17805,14 +17799,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 6,
+            value: 5,
             unit: "px",
           },
         },
       ],
       theme: "discovery",
       original: {
-        $description: "Generated discovery 3px focus ring with a 3px gap",
+        $description: "Generated discovery 3px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -17830,7 +17824,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -17849,7 +17843,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 6,
+              value: 5,
               unit: "px",
             },
           },
@@ -17866,7 +17860,7 @@ module.exports = {
     },
     "discovery-subtle-offset": {
       key: "{ring.discovery-subtle-offset}",
-      $description: "Generated discovery 1px focus ring with a 3px gap",
+      $description: "Generated discovery 1px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -17884,7 +17878,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -17903,14 +17897,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 4,
+            value: 3,
             unit: "px",
           },
         },
       ],
       theme: "discovery",
       original: {
-        $description: "Generated discovery 1px focus ring with a 3px gap",
+        $description: "Generated discovery 1px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -17928,7 +17922,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -17947,7 +17941,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 4,
+              value: 3,
               unit: "px",
             },
           },
@@ -18084,7 +18078,7 @@ module.exports = {
     },
     "success-offset": {
       key: "{ring.success-offset}",
-      $description: "Generated success 3px focus ring with a 3px gap",
+      $description: "Generated success 3px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -18102,7 +18096,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -18121,14 +18115,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 6,
+            value: 5,
             unit: "px",
           },
         },
       ],
       theme: "success",
       original: {
-        $description: "Generated success 3px focus ring with a 3px gap",
+        $description: "Generated success 3px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -18146,7 +18140,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -18165,7 +18159,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 6,
+              value: 5,
               unit: "px",
             },
           },
@@ -18182,7 +18176,7 @@ module.exports = {
     },
     "success-subtle-offset": {
       key: "{ring.success-subtle-offset}",
-      $description: "Generated success 1px focus ring with a 3px gap",
+      $description: "Generated success 1px focus ring with a 2px gap",
       $type: "shadow",
       $value: [
         {
@@ -18200,7 +18194,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 3,
+            value: 2,
             unit: "px",
           },
         },
@@ -18219,14 +18213,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 4,
+            value: 3,
             unit: "px",
           },
         },
       ],
       theme: "success",
       original: {
-        $description: "Generated success 1px focus ring with a 3px gap",
+        $description: "Generated success 1px focus ring with a 2px gap",
         $type: "shadow",
         $value: [
           {
@@ -18244,7 +18238,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 3,
+              value: 2,
               unit: "px",
             },
           },
@@ -18263,7 +18257,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 4,
+              value: 3,
               unit: "px",
             },
           },

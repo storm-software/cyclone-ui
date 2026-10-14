@@ -133,8 +133,8 @@ colors:
   data-purple-subtle: "#a690e1"
   data-pink-emphasis: "#904272"
   data-pink-subtle: "#eb89c5"
-  emphasis-hovered: "#090a0d"
-  emphasis-active: "#0c0c0d"
+  emphasis-hovered: "#424346"
+  emphasis-active: "#000000"
   emphasis-inactive: "#020102"
   emphasis-disabled: "#38393c"
   ink-hovered: "#202124"
@@ -473,8 +473,8 @@ Cyclone UI design tokens — 170 color tokens, 18 typography tokens, 70 spacing 
 - **Data Purple Subtle (#a690e1):** Low-emphasis purple data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `purple.emphasis` series.
 - **Data Pink Emphasis (#904272):** High-emphasis pink data color. Use it for the primary mark of a pink series, such as lines, bars, points and legend swatches.
 - **Data Pink Subtle (#eb89c5):** Low-emphasis pink data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `pink.emphasis` series.
-- **Emphasis Hovered (#090a0d):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)
-- **Emphasis Active (#0c0c0d):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light contrast primitive)
+- **Emphasis Hovered (#424346):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% brighter)
+- **Emphasis Active (#000000):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)
 - **Emphasis Inactive (#020102):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)
 - **Emphasis Disabled (#38393c):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Ink Hovered (#202124):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)

@@ -780,14 +780,14 @@ function applyRingOpacity(
   return result;
 }
 
-function ringLayer(color: string, spread: number): Record<string, unknown> {
-  const zero = { value: 0, unit: "px" };
+const ZERO = { value: 0, unit: "px" };
 
+function ringLayer(color: string, spread: number): Record<string, unknown> {
   return {
     color,
-    offsetX: zero,
-    offsetY: zero,
-    blur: zero,
+    offsetX: ZERO,
+    offsetY: ZERO,
+    blur: ZERO,
     spread: { value: spread, unit: "px" }
   };
 }
@@ -813,7 +813,7 @@ function addMissingRingTokens(dictionary: unknown): unknown {
     }
 
     const ringColor = `{color.${name}.primary}`;
-    const gap = ringLayer("{color.elevated}", 3);
+    const gap = (spread: number) => ringLayer("{color.elevated}", spread);
     const variants: Record<string, [string, unknown[]]> = {
       [name]: [`${name} 3px focus ring with no gap`, [ringLayer(ringColor, 3)]],
       [`${name}-subtle`]: [
@@ -821,12 +821,12 @@ function addMissingRingTokens(dictionary: unknown): unknown {
         [ringLayer(ringColor, 1)]
       ],
       [`${name}-offset`]: [
-        `${name} 3px focus ring with a 3px gap`,
-        [gap, ringLayer(ringColor, 6)]
+        `${name} 3px focus ring with a 2px gap`,
+        [gap(2), ringLayer(ringColor, 5)]
       ],
       [`${name}-subtle-offset`]: [
-        `${name} 1px focus ring with a 3px gap`,
-        [gap, ringLayer(ringColor, 4)]
+        `${name} 1px focus ring with a 2px gap`,
+        [gap(2), ringLayer(ringColor, 3)]
       ]
     };
 
@@ -1058,12 +1058,22 @@ function isDarkColor(hex: string, parentTheme?: ParentTheme): boolean {
   return !isLightColor(hex, parentTheme);
 }
 
+/** Low-saturation colors only count as white / black past ≈ #dddddd / #262626. */
+const LOW_SATURATION_WHITE_LIGHTNESS = hexToOklch("#dddddd").lightness;
+const LOW_SATURATION_BLACK_LIGHTNESS = hexToOklch("#262626").lightness;
+
 function isWhiteColor(hex: string): boolean {
-  return hexToOklch(hex).lightness >= 0.75;
+  return (
+    hexToOklch(hex).lightness >=
+    (isLowSaturation(hex) ? LOW_SATURATION_WHITE_LIGHTNESS : 0.75)
+  );
 }
 
 function isBlackColor(hex: string): boolean {
-  return hexToOklch(hex).lightness <= 0.25;
+  return (
+    hexToOklch(hex).lightness <=
+    (isLowSaturation(hex) ? LOW_SATURATION_BLACK_LIGHTNESS : 0.25)
+  );
 }
 
 /** Hovered and active states share the contrast primitive behavior. */

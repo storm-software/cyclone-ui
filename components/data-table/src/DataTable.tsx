@@ -75,6 +75,7 @@ import {
   getSortedRowModel,
   useReactTable
 } from "@tanstack/react-table";
+import { useVirtualizer } from "@tanstack/react-virtual";
 import type { Dispatch, ReactNode, SetStateAction } from "react";
 import {
   useCallback,
@@ -919,6 +920,9 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
 const SEARCH_FIELD_NAME = "__search";
 const SELECT_ALL_FIELD_NAME = "__selectAll";
 
+// Rows are measured once mounted; this only sizes the scrollbar beforehand.
+const FILTER_ROW_ESTIMATED_HEIGHT = 20;
+
 const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
   valuesMap = new Map(),
   onSearchChange,
@@ -942,6 +946,30 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
         .join("\n"),
     [valuesMap]
   );
+
+  // A column can have thousands of values, so only the visible rows mount.
+  const scrollRef = useRef<
+    | (HTMLElement & {
+        scrollTo: (options: { y: number; animated: boolean }) => void;
+      })
+    | null
+  >(null);
+  const virtualizer = useVirtualizer({
+    count: searchResults.length,
+    getScrollElement: () => scrollRef.current,
+    // Tamagui's web ScrollView replaces the element's `scrollTo` with React
+    // Native's `{ x, y, animated }` one, which read the default `{ top }` as a
+    // smooth scroll to 0 on every measurement correction.
+    scrollToFn: (offset, { adjustments = 0, behavior }) =>
+      scrollRef.current?.scrollTo({
+        y: offset + adjustments,
+        animated: behavior === "smooth"
+      }),
+    getItemKey: index => searchResults[index]!,
+    estimateSize: () => FILTER_ROW_ESTIMATED_HEIGHT,
+    gap: getVariableValue(getTokens().space.xl),
+    overscan: 10
+  });
 
   const handleSearchChange = useCallback(
     (context: CallbackContext<FieldAtoms<string>>) => {
@@ -984,7 +1012,10 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
           </SearchInput>
         </Field>
 
-        <Popover.Content.ScrollView size="lg" maxHeight="30xl">
+        <Popover.Content.ScrollView
+          ref={scrollRef as any}
+          size="lg"
+          maxHeight="30xl">
           <YStack gap="xl" width="100%" minWidth="28xl" padding="xl">
             <Field name={SELECT_ALL_FIELD_NAME}>
               <XStack gap="xl" alignItems="center" justifyContent="flex-start">
@@ -999,23 +1030,43 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
               </XStack>
             </Field>
 
-            {searchResults.map(searchResult => (
-              <Field key={searchResult} name={searchResult}>
-                <XStack
-                  gap="xl"
-                  alignItems="center"
-                  justifyContent="flex-start">
-                  <Checkbox
-                    size="sm"
-                    checked={!filterValues.includes(searchResult)}
-                    onCheckedChange={checked =>
-                      handleFilterChange(searchResult, checked)
-                    }
-                  />
-                  <Field.Label>{`${searchResult} (${valuesMap.get(searchResult)?.count ?? 0})`}</Field.Label>
-                </XStack>
-              </Field>
-            ))}
+            {searchResults.length > 0 && (
+              <View
+                position="relative"
+                width="100%"
+                height={virtualizer.getTotalSize()}>
+                {virtualizer.getVirtualItems().map(virtualItem => {
+                  const searchResult = searchResults[virtualItem.index]!;
+
+                  return (
+                    <View
+                      key={virtualItem.key}
+                      ref={virtualizer.measureElement as any}
+                      {...({ "data-index": virtualItem.index } as any)}
+                      position="absolute"
+                      top={virtualItem.start}
+                      left={0}
+                      width="100%">
+                      <Field name={searchResult}>
+                        <XStack
+                          gap="xl"
+                          alignItems="center"
+                          justifyContent="flex-start">
+                          <Checkbox
+                            size="sm"
+                            checked={!filterValues.includes(searchResult)}
+                            onCheckedChange={checked =>
+                              handleFilterChange(searchResult, checked)
+                            }
+                          />
+                          <Field.Label>{`${searchResult} (${valuesMap.get(searchResult)?.count ?? 0})`}</Field.Label>
+                        </XStack>
+                      </Field>
+                    </View>
+                  );
+                })}
+              </View>
+            )}
           </YStack>
         </Popover.Content.ScrollView>
       </YStack>

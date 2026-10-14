@@ -90,7 +90,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-border-radius-button",
       "type": "dimension",
       "category": "radius",
-      "value": "0.75rem",
+      "value": "0.375rem",
       "alias": true
     },
     {
@@ -98,7 +98,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-border-radius-card",
       "type": "dimension",
       "category": "radius",
-      "value": "0.75rem",
+      "value": "0.375rem",
       "alias": true
     },
     {
@@ -114,7 +114,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-border-radius-container",
       "type": "dimension",
       "category": "radius",
-      "value": "0.75rem",
+      "value": "1rem",
       "alias": true
     },
     {
@@ -122,7 +122,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-border-radius-control",
       "type": "dimension",
       "category": "radius",
-      "value": "0.5rem",
+      "value": "0.25rem",
       "alias": true
     },
     {
@@ -130,7 +130,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-border-radius-dialog",
       "type": "dimension",
       "category": "radius",
-      "value": "1rem",
+      "value": "0.375rem",
       "alias": true
     },
     {
@@ -138,7 +138,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-border-radius-drawer",
       "type": "dimension",
       "category": "radius",
-      "value": "2rem",
+      "value": "1rem",
       "alias": true
     },
     {
@@ -167,7 +167,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-border-radius-popover",
       "type": "dimension",
       "category": "radius",
-      "value": "0.5rem",
+      "value": "0.375rem",
       "alias": true
     },
     {
@@ -198,7 +198,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-border-radius-tooltip",
       "type": "dimension",
       "category": "radius",
-      "value": "0.5rem",
+      "value": "0.375rem",
       "alias": true
     },
     {
@@ -206,7 +206,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-border-radius-trigger",
       "type": "dimension",
       "category": "radius",
-      "value": "0.5rem",
+      "value": "0.375rem",
       "alias": true
     },
     {
@@ -884,7 +884,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-emphasis-active",
       "type": "color",
       "category": "color",
-      "value": "#0c0c0d"
+      "value": "#000000"
     },
     {
       "path": "color.emphasis-disabled",
@@ -898,7 +898,7 @@ export const manifest: DesignSystemManifest = {
       "cssVar": "--storm-color-emphasis-hovered",
       "type": "color",
       "category": "color",
-      "value": "#090a0d"
+      "value": "#424346"
     },
     {
       "path": "color.emphasis-inactive",

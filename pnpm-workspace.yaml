@@ -224,6 +224,7 @@ catalog:
   "@razorwind/eslint": ^0.0.17
   "@razorwind/stylelint": ^0.0.17
   "@sourcebook/config": ^0.0.8
+  '@tanstack/react-virtual': ^3.14.19
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true

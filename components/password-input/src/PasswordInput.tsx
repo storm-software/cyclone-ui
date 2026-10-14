@@ -26,6 +26,7 @@ import {
 import { Eye, EyeSlash } from "@cyclone-ui/icons";
 import type { InputChangeEventHandler } from "@cyclone-ui/input";
 import { Input, InputContext } from "@cyclone-ui/input";
+import type { GetProps } from "@tamagui/core";
 import {
   createStyledHOC,
   styled,
@@ -79,6 +80,27 @@ const PASSWORD_FIELD_OPTIONS = {
   defaults: { validate: { onChange: [passwordStrengthValidator] } }
 };
 
+const NO_FIELD_OPTIONS = {};
+
+export interface PasswordInputExtraProps {
+  /**
+   * Show the password strength meter below the input.
+   *
+   * @defaultValue false
+   */
+  showStrength?: boolean;
+
+  /**
+   * Inside a `Field`, validate the password's strength (listing each missing criterion) when the field sets no `validate` of its own.
+   *
+   * @defaultValue false
+   */
+  validateStrength?: boolean;
+}
+
+export type PasswordInputProps = GetProps<typeof Input> &
+  PasswordInputExtraProps;
+
 const strengthLabels = [
   "Password strength",
   "Very weak",
@@ -130,7 +152,7 @@ const PasswordInputStrength = ({ value }: { value: string }) => {
           return (
             <Theme key={index} name={active ? activeTheme : "base"}>
               <PasswordStrengthSegment
-                backgroundColor={`${active ? "primary" : "surface"}`}
+                backgroundColor={`${active ? "primary" : "sunken"}`}
               />
             </Theme>
           );
@@ -143,9 +165,20 @@ const PasswordInputStrength = ({ value }: { value: string }) => {
 
 const PasswordInputImpl = createStyledHOC(
   Input,
-  ({ children, onInput, ...props }, forwardedRef) => {
+  (
+    {
+      children,
+      onInput,
+      showStrength = false,
+      validateStrength = false,
+      ...props
+    }: PasswordInputProps,
+    forwardedRef
+  ) => {
     const formControl = useFormControl();
-    useFieldOptions(PASSWORD_FIELD_OPTIONS);
+    useFieldOptions(
+      validateStrength ? PASSWORD_FIELD_OPTIONS : NO_FIELD_OPTIONS
+    );
     const [passwordVisible, setPasswordVisible] = useState(false);
     // Outside a `Field`, the strength meter follows what the user types.
     const [typedValue, setTypedValue] = useState("");
@@ -182,11 +215,13 @@ const PasswordInputImpl = createStyledHOC(
           <Input ref={forwardedRef} {...props} onInput={handleInput}>
             {children}
           </Input>
-          <PasswordInputStrength
-            value={
-              formControl ? (formControl.formattedValue ?? "") : typedValue
-            }
-          />
+          {showStrength && (
+            <PasswordInputStrength
+              value={
+                formControl ? (formControl.formattedValue ?? "") : typedValue
+              }
+            />
+          )}
         </YStack>
       </PasswordInputContext>
     );
@@ -219,14 +254,14 @@ const PasswordInputTextBoxValue = createStyledHOC(
     const handleKeyDown = useCallback(
       (event: any) => {
         handleKeyEvent(event);
-        props.onKeyDown?.(event as any);
+        props.onKeyDown?.(event);
       },
       [handleKeyEvent, props]
     );
     const handleKeyUp = useCallback(
       (event: any) => {
         handleKeyEvent(event);
-        props.onKeyUp?.(event as any);
+        props.onKeyUp?.(event);
       },
       [handleKeyEvent, props]
     );
@@ -293,7 +328,8 @@ const PasswordInputTrigger = createStyledHOC(
 /**
  * A password text input with a show/hide toggle, a strength meter, and a caps
  * lock warning. Wrap it in a `Field` to connect it to a form, which also
- * validates the password's strength.
+ * validates the password's strength. Turn the meter and the validation off
+ * with `showStrength={false}` and `validateStrength={false}`.
  */
 export const PasswordInput = withStaticProperties(PasswordInputImpl, {
   TextBox: withStaticProperties(Input.TextBox, {

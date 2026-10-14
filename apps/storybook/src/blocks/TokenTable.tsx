@@ -2024,9 +2024,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink-hovered",
       type: "color",
-      value: "#4c4c4d",
+      value: "#ffffff",
       cssVar: "--cu-color-ink-hovered",
-      description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)",
+      description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% brighter)",
       theme: undefined,
       typography: false
     },
@@ -4283,7 +4283,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -4292,7 +4292,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -4301,7 +4301,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -4310,7 +4310,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
@@ -4328,7 +4328,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
@@ -4346,7 +4346,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -4364,7 +4364,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-4xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-drawer",
       description: "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
       theme: undefined,
@@ -4373,7 +4373,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -4382,7 +4382,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,
@@ -4886,18 +4886,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f1f1f11a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 3px gap",
+      description: "Generated base 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #f1f1f11a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle-offset",
-      description: "Generated base 1px focus ring with a 3px gap",
+      description: "Generated base 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -4922,18 +4922,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #cf2d5626",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 3px gap",
+      description: "Generated danger 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #cf2d5626",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626",
       cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Generated danger 1px focus ring with a 3px gap",
+      description: "Generated danger 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -4958,18 +4958,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f7ac2326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f7ac2326",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 3px gap",
+      description: "Generated warning 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #f7ac2326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f7ac2326",
       cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Generated warning 1px focus ring with a 3px gap",
+      description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -4994,18 +4994,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #4d8eff26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #4d8eff26",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 3px gap",
+      description: "Generated info 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #4d8eff26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #4d8eff26",
       cssVar: "--cu-ring-info-subtle-offset",
-      description: "Generated info 1px focus ring with a 3px gap",
+      description: "Generated info 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -5030,18 +5030,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #9277da26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #9277da26",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 3px gap",
+      description: "Generated discovery 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #9277da26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #9277da26",
       cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Generated discovery 1px focus ring with a 3px gap",
+      description: "Generated discovery 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -5066,18 +5066,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #45c79126",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #45c79126",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
+      description: "Generated success 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #45c79126",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #45c79126",
       cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
+      description: "Generated success 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     }
@@ -7093,9 +7093,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink-hovered",
       type: "color",
-      value: "#5b5b5c",
+      value: "#d9d9d9",
       cssVar: "--cu-color-ink-hovered",
-      description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)",
+      description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9352,7 +9352,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -9361,7 +9361,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -9370,7 +9370,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -9379,7 +9379,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
@@ -9397,7 +9397,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
@@ -9415,7 +9415,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -9433,7 +9433,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-4xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-drawer",
       description: "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
       theme: undefined,
@@ -9442,7 +9442,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -9451,7 +9451,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,
@@ -9955,18 +9955,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f1f1f11a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 3px gap",
+      description: "Generated base 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #f1f1f11a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle-offset",
-      description: "Generated base 1px focus ring with a 3px gap",
+      description: "Generated base 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -9991,18 +9991,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #cf2d5626",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 3px gap",
+      description: "Generated danger 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #cf2d5626",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626",
       cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Generated danger 1px focus ring with a 3px gap",
+      description: "Generated danger 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -10027,18 +10027,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f7ac2326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f7ac2326",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 3px gap",
+      description: "Generated warning 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #f7ac2326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f7ac2326",
       cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Generated warning 1px focus ring with a 3px gap",
+      description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -10063,18 +10063,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #4d8eff26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #4d8eff26",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 3px gap",
+      description: "Generated info 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #4d8eff26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #4d8eff26",
       cssVar: "--cu-ring-info-subtle-offset",
-      description: "Generated info 1px focus ring with a 3px gap",
+      description: "Generated info 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -10099,18 +10099,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #9277da26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #9277da26",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 3px gap",
+      description: "Generated discovery 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #9277da26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #9277da26",
       cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Generated discovery 1px focus ring with a 3px gap",
+      description: "Generated discovery 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -10135,18 +10135,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #45c79126",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #45c79126",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
+      description: "Generated success 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #45c79126",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #45c79126",
       cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
+      description: "Generated success 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     }
@@ -12162,9 +12162,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink-hovered",
       type: "color",
-      value: "#323239",
+      value: "#ffffff",
       cssVar: "--cu-color-ink-hovered",
-      description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)",
+      description: "Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14421,7 +14421,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -14430,7 +14430,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -14439,7 +14439,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -14448,7 +14448,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
@@ -14466,7 +14466,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
@@ -14484,7 +14484,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -14502,7 +14502,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-4xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-drawer",
       description: "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
       theme: undefined,
@@ -14511,7 +14511,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -14520,7 +14520,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,
@@ -15024,18 +15024,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f1f1f11a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 3px gap",
+      description: "Generated base 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #f1f1f11a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle-offset",
-      description: "Generated base 1px focus ring with a 3px gap",
+      description: "Generated base 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -15060,18 +15060,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #cf2d5626",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 3px gap",
+      description: "Generated danger 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #cf2d5626",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626",
       cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Generated danger 1px focus ring with a 3px gap",
+      description: "Generated danger 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -15096,18 +15096,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f7ac2326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f7ac2326",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 3px gap",
+      description: "Generated warning 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #f7ac2326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f7ac2326",
       cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Generated warning 1px focus ring with a 3px gap",
+      description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -15132,18 +15132,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #4d8eff26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #4d8eff26",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 3px gap",
+      description: "Generated info 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #4d8eff26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #4d8eff26",
       cssVar: "--cu-ring-info-subtle-offset",
-      description: "Generated info 1px focus ring with a 3px gap",
+      description: "Generated info 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -15168,18 +15168,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #9277da26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #9277da26",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 3px gap",
+      description: "Generated discovery 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #9277da26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #9277da26",
       cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Generated discovery 1px focus ring with a 3px gap",
+      description: "Generated discovery 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -15204,18 +15204,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #45c79126",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #45c79126",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
+      description: "Generated success 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #45c79126",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #45c79126",
       cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
+      description: "Generated success 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     }
@@ -17195,18 +17195,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-hovered",
       type: "color",
-      value: "#090a0d",
+      value: "#424346",
       cssVar: "--cu-color-emphasis-hovered",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.emphasis-active",
       type: "color",
-      value: "#0c0c0d",
+      value: "#000000",
       cssVar: "--cu-color-emphasis-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light contrast primitive)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)",
       theme: undefined,
       typography: false
     },
@@ -19490,7 +19490,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -19499,7 +19499,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -19508,7 +19508,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -19517,7 +19517,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
@@ -19535,7 +19535,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
@@ -19553,7 +19553,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -19571,7 +19571,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-4xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-drawer",
       description: "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
       theme: undefined,
@@ -19580,7 +19580,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -19589,7 +19589,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,
@@ -20093,18 +20093,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #1f1f211a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 3px gap",
+      description: "Generated base 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #1f1f211a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a",
       cssVar: "--cu-ring-base-subtle-offset",
-      description: "Generated base 1px focus ring with a 3px gap",
+      description: "Generated base 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -20129,18 +20129,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #8e223e26",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 3px gap",
+      description: "Generated danger 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #8e223e26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #8e223e26",
       cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Generated danger 1px focus ring with a 3px gap",
+      description: "Generated danger 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -20165,18 +20165,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #76541726",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #76541726",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 3px gap",
+      description: "Generated warning 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #76541726",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #76541726",
       cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Generated warning 1px focus ring with a 3px gap",
+      description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -20201,18 +20201,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #2055b326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #2055b326",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 3px gap",
+      description: "Generated info 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #2055b326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #2055b326",
       cssVar: "--cu-ring-info-subtle-offset",
-      description: "Generated info 1px focus ring with a 3px gap",
+      description: "Generated info 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -20237,18 +20237,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #59439526",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #59439526",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 3px gap",
+      description: "Generated discovery 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #59439526",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #59439526",
       cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Generated discovery 1px focus ring with a 3px gap",
+      description: "Generated discovery 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -20273,18 +20273,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #216b5326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #216b5326",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
+      description: "Generated success 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #216b5326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #216b5326",
       cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
+      description: "Generated success 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     }
@@ -22264,18 +22264,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-hovered",
       type: "color",
-      value: "#292c33",
+      value: "#545557",
       cssVar: "--cu-color-emphasis-hovered",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.emphasis-active",
       type: "color",
-      value: "#2e2e30",
+      value: "#262626",
       cssVar: "--cu-color-emphasis-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light contrast primitive)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)",
       theme: undefined,
       typography: false
     },
@@ -24559,7 +24559,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -24568,7 +24568,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -24577,7 +24577,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -24586,7 +24586,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
@@ -24604,7 +24604,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
@@ -24622,7 +24622,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -24640,7 +24640,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-4xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-drawer",
       description: "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
       theme: undefined,
@@ -24649,7 +24649,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -24658,7 +24658,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,
@@ -25162,18 +25162,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #1f1f211a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 3px gap",
+      description: "Generated base 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #1f1f211a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a",
       cssVar: "--cu-ring-base-subtle-offset",
-      description: "Generated base 1px focus ring with a 3px gap",
+      description: "Generated base 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -25198,18 +25198,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #8e223e26",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 3px gap",
+      description: "Generated danger 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #8e223e26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #8e223e26",
       cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Generated danger 1px focus ring with a 3px gap",
+      description: "Generated danger 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -25234,18 +25234,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #76541726",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #76541726",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 3px gap",
+      description: "Generated warning 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #76541726",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #76541726",
       cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Generated warning 1px focus ring with a 3px gap",
+      description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -25270,18 +25270,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #2055b326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #2055b326",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 3px gap",
+      description: "Generated info 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #2055b326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #2055b326",
       cssVar: "--cu-ring-info-subtle-offset",
-      description: "Generated info 1px focus ring with a 3px gap",
+      description: "Generated info 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -25306,18 +25306,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #59439526",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #59439526",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 3px gap",
+      description: "Generated discovery 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #59439526",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #59439526",
       cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Generated discovery 1px focus ring with a 3px gap",
+      description: "Generated discovery 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -25342,18 +25342,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #216b5326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #216b5326",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
+      description: "Generated success 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #216b5326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #216b5326",
       cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
+      description: "Generated success 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     }
@@ -27333,9 +27333,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.emphasis-hovered",
       type: "color",
-      value: "#000000",
+      value: "#26272d",
       cssVar: "--cu-color-emphasis-hovered",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% brighter)",
       theme: undefined,
       typography: false
     },
@@ -27344,7 +27344,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--cu-color-emphasis-active",
-      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, light contrast primitive)",
+      description: "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)",
       theme: undefined,
       typography: false
     },
@@ -29628,7 +29628,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-container",
       description: "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
       theme: undefined,
@@ -29637,7 +29637,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-trigger",
       description: "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
       theme: undefined,
@@ -29646,7 +29646,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.card",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-card",
       description: "Corner radius for cards and card-like tiles (6px, `border-radius.md`). Slightly tighter than `container` so cards nested inside a container still read as inset. Used by Card and FilePicker.",
       theme: undefined,
@@ -29655,7 +29655,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-button",
       description: "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
       theme: undefined,
@@ -29673,7 +29673,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.control",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-control",
       description: "Corner radius for form controls that accept input (8px, `border-radius.lg`). Matches `button` so inputs and buttons line up when placed side by side. Used by Input, TextArea, Select, Field, RadioGroup and Rating.",
       theme: undefined,
@@ -29691,7 +29691,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-dialog",
       description: "Corner radius for modal dialogs (12px, `border-radius.xl`). Larger than other surfaces to set modal content apart from the page beneath it. Used by Dialog.",
       theme: undefined,
@@ -29709,7 +29709,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-4xl)",
+      value: "var(--border-radius-2xl)",
       cssVar: "--cu-border-radius-drawer",
       description: "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
       theme: undefined,
@@ -29718,7 +29718,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.popover",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-popover",
       description: "Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list.",
       theme: undefined,
@@ -29727,7 +29727,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.tooltip",
       type: "dimension",
-      value: "var(--border-radius-lg)",
+      value: "var(--border-radius-md)",
       cssVar: "--cu-border-radius-tooltip",
       description: "Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip.",
       theme: undefined,
@@ -30231,18 +30231,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #1f1f211a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 3px gap",
+      description: "Generated base 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #1f1f211a",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a",
       cssVar: "--cu-ring-base-subtle-offset",
-      description: "Generated base 1px focus ring with a 3px gap",
+      description: "Generated base 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -30267,18 +30267,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #8e223e26",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 3px gap",
+      description: "Generated danger 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #8e223e26",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #8e223e26",
       cssVar: "--cu-ring-danger-subtle-offset",
-      description: "Generated danger 1px focus ring with a 3px gap",
+      description: "Generated danger 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -30303,18 +30303,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #76541726",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #76541726",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 3px gap",
+      description: "Generated warning 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #76541726",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #76541726",
       cssVar: "--cu-ring-warning-subtle-offset",
-      description: "Generated warning 1px focus ring with a 3px gap",
+      description: "Generated warning 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -30339,18 +30339,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #2055b326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #2055b326",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 3px gap",
+      description: "Generated info 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #2055b326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #2055b326",
       cssVar: "--cu-ring-info-subtle-offset",
-      description: "Generated info 1px focus ring with a 3px gap",
+      description: "Generated info 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -30375,18 +30375,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #59439526",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #59439526",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 3px gap",
+      description: "Generated discovery 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #59439526",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #59439526",
       cssVar: "--cu-ring-discovery-subtle-offset",
-      description: "Generated discovery 1px focus ring with a 3px gap",
+      description: "Generated discovery 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -30411,18 +30411,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #216b5326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #216b5326",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 3px gap",
+      description: "Generated success 3px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 4px #216b5326",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #216b5326",
       cssVar: "--cu-ring-success-subtle-offset",
-      description: "Generated success 1px focus ring with a 3px gap",
+      description: "Generated success 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     }

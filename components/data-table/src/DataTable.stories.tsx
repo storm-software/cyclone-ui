@@ -454,3 +454,52 @@ export const RowActions: Story = {
     );
   }
 };
+
+const manyUsersData: Person[] = Array.from({ length: 3000 }, (_, index) => ({
+  ...defaultData[index % defaultData.length]!,
+  userName: `@user${index}`
+}));
+
+export const ManyFilterValues: Story = {
+  args: {
+    options: {
+      data: manyUsersData
+    },
+    pageSize: 5
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const header = canvas
+      .getAllByRole("columnheader")
+      .find(
+        cell =>
+          (cell as HTMLElement & { dataset: { columnId?: string } }).dataset
+            .columnId === "user_base"
+      )!;
+
+    await userEvent.click(within(header).getByRole("button"));
+
+    // Only the rows in view (plus overscan) mount, not all 3000.
+    const first = await screen.findByText("@user0 (1)");
+    const checkboxCount = screen.getAllByRole("checkbox").length;
+    await expect(checkboxCount).toBeGreaterThan(1);
+    await expect(checkboxCount).toBeLessThan(100);
+    await expect(screen.queryByText("@user2999 (1)")).not.toBeInTheDocument();
+
+    // Story tsconfigs have no DOM lib.
+    const scrollElement = (first as any).closest(".cyclone-scroll-view");
+
+    // The position holds, give or take measurement corrections, once the
+    // rows in view have mounted.
+    const middle = Math.round(scrollElement.scrollHeight / 2);
+    scrollElement.scrollTop = middle;
+    fireEvent.scroll(scrollElement);
+    await new Promise(resolve => setTimeout(resolve, 500));
+    await expect(Math.abs(scrollElement.scrollTop - middle)).toBeLessThan(100);
+
+    scrollElement.scrollTop = scrollElement.scrollHeight;
+    fireEvent.scroll(scrollElement);
+
+    await expect(await screen.findByText("@user2999 (1)")).toBeVisible();
+  }
+};

@@ -750,6 +750,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tanstack/react-table`: `^8.21.3`
+- `@tanstack/react-virtual`: `catalog:`
 - `@tanstack/table-core`: `^8.21.3`
 
 ### Development Dependencies
@@ -3827,6 +3828,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tanstack/react-table`: `^8.21.3`
+- `@tanstack/react-virtual`: `catalog:`
 - `@tanstack/table-core`: `^8.21.3`
 
 ### Development Dependencies
@@ -6904,6 +6906,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tanstack/react-table`: `^8.21.3`
+- `@tanstack/react-virtual`: `catalog:`
 - `@tanstack/table-core`: `^8.21.3`
 
 ### Development Dependencies
@@ -9981,6 +9984,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tanstack/react-table`: `^8.21.3`
+- `@tanstack/react-virtual`: `catalog:`
 - `@tanstack/table-core`: `^8.21.3`
 
 ### Development Dependencies
@@ -13058,6 +13062,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tanstack/react-table`: `^8.21.3`
+- `@tanstack/react-virtual`: `catalog:`
 - `@tanstack/table-core`: `^8.21.3`
 
 ### Development Dependencies
@@ -16135,6 +16140,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `@tanstack/react-table`: `^8.21.3`
+- `@tanstack/react-virtual`: `catalog:`
 - `@tanstack/table-core`: `^8.21.3`
 
 ### Development Dependencies
