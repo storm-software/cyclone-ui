@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.7) (10/14/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up components display styling ([1866f60c](https://github.com/storm-software/cyclone-ui/commit/1866f60c))
+
+### Features
+
+- **time-picker:** Added the Time Picker form field component ([8add53ce](https://github.com/storm-software/cyclone-ui/commit/8add53ce))
+- **calendar:** Added separate Calendar component to promote reuse elsewhere ([8f039bfe](https://github.com/storm-software/cyclone-ui/commit/8f039bfe))
+- **data-table:** Added `card` theme to Data Table component ([74202899](https://github.com/storm-software/cyclone-ui/commit/74202899))
+
 ## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.6) (10/13/2026)
 
 ### Bug Fixes

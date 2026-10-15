@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/calendar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "A stand-alone calendar with day, month and year views that selects a single date or a start and end date range.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/calendar"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -34,7 +36,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

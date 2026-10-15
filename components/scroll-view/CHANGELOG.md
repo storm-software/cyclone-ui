@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Scroll View
 
+## [0.5.17](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.17) (10/14/2026)
+
+### Features
+
+- **data-table:** Added `card` theme to Data Table component ([74202899](https://github.com/storm-software/cyclone-ui/commit/74202899))
+
+### Updated Dependencies
+
+- Updated **vectors** to **v0.5.17**
+
 ## [0.5.16](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.16) (10/13/2026)
 
 ### Bug Fixes

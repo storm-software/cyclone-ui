@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Code Block
 
+## [0.6.17](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.17) (10/14/2026)
+
+### Features
+
+- **data-table:** Added `card` theme to Data Table component ([74202899](https://github.com/storm-software/cyclone-ui/commit/74202899))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.17**
+- Updated **button** to **v0.6.17**
+- Updated **heading-text** to **v0.5.17**
+- Updated **icons** to **v0.0.13**
+- Updated **scroll-view** to **v0.5.17**
+- Updated **themeable-icon** to **v0.6.17**
+- Updated **vectors** to **v0.5.17**
+
 ## [0.6.16](https://github.com/storm-software/cyclone-ui/releases/tag/code-block%400.6.16) (10/13/2026)
 
 ### Bug Fixes

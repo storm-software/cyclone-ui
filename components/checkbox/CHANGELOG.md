@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Checkbox
 
+## [0.5.17](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.17) (10/14/2026)
+
+### Features
+
+- **data-table:** Added `card` theme to Data Table component ([74202899](https://github.com/storm-software/cyclone-ui/commit/74202899))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.17**
+- Updated **form** to **v0.9.17**
+- Updated **helpers** to **v0.3.17**
+- Updated **icons** to **v0.0.13**
+- Updated **vectors** to **v0.5.17**
+
 ## [0.5.16](https://github.com/storm-software/cyclone-ui/releases/tag/checkbox%400.5.16) (10/13/2026)
 
 ### Bug Fixes
