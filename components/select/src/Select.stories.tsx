@@ -127,8 +127,11 @@ export const Base: Story = {
     await userEvent.click(
       await document.findByRole("option", { name: "Pear" })
     );
-    await waitFor(async () =>
-      expect(document.queryByRole("listbox")).not.toBeInTheDocument()
+    // On small screens the menu unmounts after the sheet slides out.
+    await waitFor(
+      async () =>
+        expect(document.queryByRole("listbox")).not.toBeInTheDocument(),
+      { timeout: 3000 }
     );
     await expect(trigger).toHaveTextContent("Pear");
 

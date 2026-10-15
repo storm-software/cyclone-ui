@@ -718,7 +718,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -730,6 +730,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/tooltip`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -2022,7 +2023,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 ## @cyclone-ui/popover
 
-A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small touch screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
+A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
@@ -2031,6 +2032,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 ### Dependencies
 
 - `@cyclone-ui/scroll-view`: `workspace:*`
+- `@cyclone-ui/sheet`: `workspace:*`
 - `@floating-ui/react`: `0.26.28`
 - `@tamagui/adapt`: `catalog:`
 - `@tamagui/animate-presence`: `catalog:`
@@ -2039,7 +2041,6 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 - `@tamagui/floating`: `catalog:`
 - `@tamagui/popover`: `catalog:`
 - `@tamagui/popper`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 
@@ -2308,7 +2309,7 @@ A headless search text input with a magnifying-glass icon. It shows a ContextMen
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
@@ -3868,7 +3869,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -3880,6 +3881,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/tooltip`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -5172,7 +5174,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 ## @cyclone-ui/popover
 
-A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small touch screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
+A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
@@ -5181,6 +5183,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 ### Dependencies
 
 - `@cyclone-ui/scroll-view`: `workspace:*`
+- `@cyclone-ui/sheet`: `workspace:*`
 - `@floating-ui/react`: `0.26.28`
 - `@tamagui/adapt`: `catalog:`
 - `@tamagui/animate-presence`: `catalog:`
@@ -5189,7 +5192,6 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 - `@tamagui/floating`: `catalog:`
 - `@tamagui/popover`: `catalog:`
 - `@tamagui/popper`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 
@@ -5458,7 +5460,7 @@ A headless search text input with a magnifying-glass icon. It shows a ContextMen
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
@@ -7018,7 +7020,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -7030,6 +7032,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/tooltip`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -8322,7 +8325,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 ## @cyclone-ui/popover
 
-A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small touch screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
+A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
@@ -8331,6 +8334,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 ### Dependencies
 
 - `@cyclone-ui/scroll-view`: `workspace:*`
+- `@cyclone-ui/sheet`: `workspace:*`
 - `@floating-ui/react`: `0.26.28`
 - `@tamagui/adapt`: `catalog:`
 - `@tamagui/animate-presence`: `catalog:`
@@ -8339,7 +8343,6 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 - `@tamagui/floating`: `catalog:`
 - `@tamagui/popover`: `catalog:`
 - `@tamagui/popper`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 
@@ -8608,7 +8611,7 @@ A headless search text input with a magnifying-glass icon. It shows a ContextMen
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
@@ -10168,7 +10171,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -10180,6 +10183,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/tooltip`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -11472,7 +11476,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 ## @cyclone-ui/popover
 
-A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small touch screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
+A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
@@ -11481,6 +11485,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 ### Dependencies
 
 - `@cyclone-ui/scroll-view`: `workspace:*`
+- `@cyclone-ui/sheet`: `workspace:*`
 - `@floating-ui/react`: `0.26.28`
 - `@tamagui/adapt`: `catalog:`
 - `@tamagui/animate-presence`: `catalog:`
@@ -11489,7 +11494,6 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 - `@tamagui/floating`: `catalog:`
 - `@tamagui/popover`: `catalog:`
 - `@tamagui/popper`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 
@@ -11758,7 +11762,7 @@ A headless search text input with a magnifying-glass icon. It shows a ContextMen
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
@@ -13318,7 +13322,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -13330,6 +13334,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/tooltip`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -14622,7 +14627,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 ## @cyclone-ui/popover
 
-A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small touch screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
+A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
@@ -14631,6 +14636,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 ### Dependencies
 
 - `@cyclone-ui/scroll-view`: `workspace:*`
+- `@cyclone-ui/sheet`: `workspace:*`
 - `@floating-ui/react`: `0.26.28`
 - `@tamagui/adapt`: `catalog:`
 - `@tamagui/animate-presence`: `catalog:`
@@ -14639,7 +14645,6 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 - `@tamagui/floating`: `catalog:`
 - `@tamagui/popover`: `catalog:`
 - `@tamagui/popper`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 
@@ -14908,7 +14913,7 @@ A headless search text input with a magnifying-glass icon. It shows a ContextMen
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
@@ -16468,7 +16473,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 ## @cyclone-ui/context-menu
 
-A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small touch screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
+A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
@@ -16480,6 +16485,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 - `@cyclone-ui/helpers`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/tooltip`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
@@ -17772,7 +17778,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 ## @cyclone-ui/popover
 
-A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small touch screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
+A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
@@ -17781,6 +17787,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 ### Dependencies
 
 - `@cyclone-ui/scroll-view`: `workspace:*`
+- `@cyclone-ui/sheet`: `workspace:*`
 - `@floating-ui/react`: `0.26.28`
 - `@tamagui/adapt`: `catalog:`
 - `@tamagui/animate-presence`: `catalog:`
@@ -17789,7 +17796,6 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 - `@tamagui/floating`: `catalog:`
 - `@tamagui/popover`: `catalog:`
 - `@tamagui/popper`: `catalog:`
-- `@tamagui/sheet`: `catalog:`
 - `@tamagui/stacks`: `catalog:`
 - `@tamagui/text`: `catalog:`
 
@@ -18058,7 +18064,7 @@ A headless search text input with a magnifying-glass icon. It shows a ContextMen
 
 ## @cyclone-ui/select
 
-A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small touch screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
+A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items subcomponents. The items open in a ContextMenu: a popover on large screens and a bottom Sheet on small screens, with a check mark beside the selected item and a lock beside disabled ones. It supports default, floating and underline variants, sizes, disabled state, and validation colors. Wrapped in a Field, it connects to the form: it takes its name, value, items, size, disabled and focus state from the field, floats the field label by default, and renders the field's items with a placeholder when given no children.
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`

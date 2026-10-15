@@ -48,13 +48,19 @@ const meta: Meta<FilePickerStoryArgs> = {
     <Form
       name={`formName-${id}`}
       initialValues={{ filePickerName: defaultValue }}>
-      <Field name="filePickerName" {...props} disabled={disabled} width="500px">
+      <Field
+        name="filePickerName"
+        {...props}
+        disabled={disabled}
+        width="500px"
+        maxWidth="100%">
         <Field.Label>Label Text</Field.Label>
         <FilePicker
           size={props.size}
           variant={props.variant}
           max={props.max}
           width="500px"
+          maxWidth="100%"
           disabled={disabled}>
           <FilePicker.Files />
           <FilePicker.Trigger>
@@ -345,7 +351,8 @@ export const SimplePopulated: Story = {
               files={files}
               // `onChange` intersects the DOM change handler with the files callback.
               onChange={setFiles as never}
-              width={500}>
+              width={500}
+              maxWidth="100%">
               <FilePicker.Trigger>
                 <FilePicker.Trigger.Button />
               </FilePicker.Trigger>

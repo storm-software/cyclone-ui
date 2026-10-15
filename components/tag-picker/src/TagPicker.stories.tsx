@@ -57,7 +57,7 @@ const meta: Meta<TagPickerStoryArgs> = {
     <Form
       name={`formName-${id}`}
       initialValues={{ tagPickerName: defaultValue }}>
-      <View width={360}>
+      <View width="100%" maxWidth={360}>
         <Field
           name="tagPickerName"
           disabled={disabled}
@@ -405,7 +405,7 @@ const ControlledExample = () => {
   const [tags, setTags] = useState(["Design", "Engineering"]);
 
   return (
-    <View width={360} gap="xl">
+    <View width="100%" maxWidth={360} gap="xl">
       <TagPicker
         name="controlled-tags"
         placeholder="Add a tag"

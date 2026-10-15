@@ -30,6 +30,9 @@
       "path": "../icons"
     },
     {
+      "path": "../tooltip"
+    },
+    {
       "path": "../../packages/helpers"
     }
   ],

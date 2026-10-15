@@ -152,7 +152,7 @@ const PasswordInputStrength = ({ value }: { value: string }) => {
           return (
             <Theme key={index} name={active ? activeTheme : "base"}>
               <PasswordStrengthSegment
-                backgroundColor={`${active ? "primary" : "sunken"}`}
+                backgroundColor={`${active ? "primary" : "surface"}`}
               />
             </Theme>
           );

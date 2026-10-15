@@ -515,7 +515,7 @@ const FilePickerTriggerButton = createStyledHOC(
       <Button
         ref={forwardedRef}
         size={getFormSizeToken(size)}
-        group={"link"}
+        group="link"
         width="100%"
         variant="link"
         disabled={disabled}
@@ -525,15 +525,27 @@ const FilePickerTriggerButton = createStyledHOC(
         {...props}>
         <Button.Text fontSize={16 * getFormFontScale(size)}>
           {children ||
-            (files.length === 0
-              ? max > 1
-                ? "Click or drop files to upload"
-                : "Click or drop a file to upload"
-              : files.length < max
-                ? "Click or drop files to add more uploads"
-                : max > 1
-                  ? "Click or drop files to replace the oldest"
-                  : "Click or drop a file to replace it")}
+            (files.length === 0 ? (
+              max > 1 ? (
+                "Click or drop files to upload"
+              ) : (
+                "Click or drop a file to upload"
+              )
+            ) : files.length < max ? (
+              // The short label fits on one line on small screens. Plain
+              // `Text` spans: the animated `Button.Text` resolves media in JS
+              // and drops the `max-md:` clause.
+              <>
+                <Text display="inline max-md:none">
+                  Click or drop files to add more uploads
+                </Text>
+                <Text display="none max-md:inline">Click to add uploads</Text>
+              </>
+            ) : max > 1 ? (
+              "Click or drop files to replace the oldest"
+            ) : (
+              "Click or drop a file to replace it"
+            ))}
         </Button.Text>
       </Button>
     );
@@ -599,9 +611,27 @@ const FilePickerNameText = styled(HeadingSmallText, {
 const FilePickerMetadataText = styled(BodyText, {
   variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
+const FilePickerMetadataSeparator = styled(FilePickerMetadataText, {
+  render: "span",
+  display: "inline max-md:none",
+  "aria-hidden": true
+});
+const FILE_METADATA_SEPARATOR = "\u2002\u2022\u2002";
 const FilePickerBytesText = styled(BytesText, {
   variants: { controlSize: formSizeVariants(getFormFontStyle) }
 });
+
+/**
+ * One line cut short with an ellipsis when it doesn't fit, except on small
+ * screens, where the text wraps (breaking inside long names) so none of it is
+ * hidden.
+ */
+const fileTextOverflowStyle = {
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  whiteSpace: "nowrap max-md:normal",
+  overflowWrap: "anywhere"
+} as const;
 
 const FilePickerViewLink = ({
   uri,
@@ -613,11 +643,10 @@ const FilePickerViewLink = ({
     return (
       <Link
         fontSize={18 * getFormFontScale(size)}
-        // One centered line, cut short with an ellipsis when it doesn't fit.
         display="block"
         width="100%"
         textAlign="center"
-        numberOfLines={1}
+        {...fileTextOverflowStyle}
         {...props}
         href={uri}
         target="_blank">
@@ -632,7 +661,7 @@ const FilePickerViewLink = ({
       display="block"
       width="100%"
       textAlign="center"
-      numberOfLines={1}
+      {...fileTextOverflowStyle}
       {...props}>
       <FilePickerNameText controlSize={size} color="onPrimary">
         {children}
@@ -771,7 +800,7 @@ const FilePickerFile = ({
       transition="200ms"
       opacity="1 enter:0 exit:0"
       scale="1 enter:0.3 exit:0.5"
-      height={100 * scale}
+      minHeight={100 * scale}
       width="100%"
       overflow="hidden"
       position="relative"
@@ -800,7 +829,7 @@ const FilePickerFile = ({
         left={buttonInset}
         top="50%"
         y="-50%"
-        opacity="0 group-hover/file:1">
+        opacity="0 group-hover/file:1 touchable:1">
         {uri && (
           <Button
             render="a"
@@ -828,7 +857,7 @@ const FilePickerFile = ({
           right={buttonInset}
           top="50%"
           y="-50%"
-          opacity="0 group-hover/file:1">
+          opacity="0 group-hover/file:1 touchable:1">
           <Button
             variant="ghost"
             theme="danger"
@@ -845,14 +874,14 @@ const FilePickerFile = ({
         </View>
       )}
 
+      {/* In the flow (unlike the layers around it), so the card grows when
+          the text wraps on small screens. */}
       <View
         transition="200ms"
-        position="absolute"
+        position="relative"
         zIndex="20"
-        top={0}
-        bottom={0}
-        left={0}
-        right={0}
+        flexGrow={1}
+        paddingVertical="2xl"
         // Reserve the buttons' footprint so narrow cards never overlap them.
         paddingHorizontal={buttonInset * 2 + buttonSize}
         alignItems="center"
@@ -863,35 +892,72 @@ const FilePickerFile = ({
               {name || "Unnamed File"}
             </FilePickerViewLink>
           </View>
-          {/* One centered line, cut short with an ellipsis when it doesn't
-              fit; as a single run of text the bullets share its baseline. */}
+          {/* On wider screens one line: the size and modified time are cut
+              short with an ellipsis, and the MIME type wraps onto the clipped
+              second line (hidden) when it doesn't fit. On small screens each
+              item takes its own line and the separators are hidden. */}
           <FilePickerMetadataText
             controlSize={controlSize}
             zIndex="30"
-            display="block"
+            display="flex max-md:block"
+            flexWrap="wrap"
+            justifyContent="center"
+            alignItems="baseline"
+            maxHeight="1lh max-md:none"
+            overflow="hidden"
             width="100%"
-            textAlign="center"
-            numberOfLines={1}>
-            {[
-              <FilePickerBytesText
-                key="size"
-                controlSize={controlSize}
-                // Inline in the metadata's paragraph.
-                render="span">
-                {size}
-              </FilePickerBytesText>,
-              lastModified &&
-                formatDate(new Date(lastModified), "MM-DD-YYYY HH:mm:ss"),
-              mimeType
-            ]
-              .filter(Boolean)
-              .map((item, i) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <Fragment key={i}>
-                  {i > 0 && "\u2002•\u2002"}
-                  {item}
+            textAlign="center">
+            <FilePickerMetadataText
+              controlSize={controlSize}
+              render="span"
+              flexShrink={1}
+              minWidth={0}
+              {...fileTextOverflowStyle}>
+              {[
+                {
+                  key: "size",
+                  value: (
+                    <FilePickerBytesText
+                      controlSize={controlSize}
+                      render="span">
+                      {size}
+                    </FilePickerBytesText>
+                  )
+                },
+                ...(lastModified
+                  ? formatDate(new Date(lastModified), "MM-DD-YYYY HH:mm:ss")
+                      .split(" ")
+                      .map((value, i) => ({ key: i ? "time" : "date", value }))
+                  : [])
+              ].map(({ key, value }, i) => (
+                <Fragment key={key}>
+                  {i > 0 && (
+                    <FilePickerMetadataSeparator controlSize={controlSize}>
+                      {key === "time" ? " " : FILE_METADATA_SEPARATOR}
+                    </FilePickerMetadataSeparator>
+                  )}
+                  <FilePickerMetadataText
+                    controlSize={controlSize}
+                    render="span"
+                    display="inline max-md:block">
+                    {value}
+                  </FilePickerMetadataText>
                 </Fragment>
               ))}
+            </FilePickerMetadataText>
+            {mimeType && (
+              <FilePickerMetadataText
+                controlSize={controlSize}
+                render="span"
+                whiteSpace="nowrap max-md:normal"
+                overflowWrap="anywhere"
+                display="inline max-md:block">
+                <FilePickerMetadataSeparator controlSize={controlSize}>
+                  {FILE_METADATA_SEPARATOR}
+                </FilePickerMetadataSeparator>
+                {mimeType}
+              </FilePickerMetadataText>
+            )}
           </FilePickerMetadataText>
         </YStack>
       </View>
@@ -917,8 +983,10 @@ const FilePickerFile = ({
         left={0}
         right={0}
         zIndex="0"
-        scale="1 group-hover/file:1.2"
-        backdropFilter="blur(10px) group-hover/file:blur(30px)">
+        // No `backdropFilter` here: it only blurred the plain card behind the
+        // preview, and with GPU compositing it let the preview paint square
+        // over the card's rounded corners.
+        scale="1 group-hover/file:1.2">
         <FilePickerFilePreview
           key={id}
           kind={previewKind}

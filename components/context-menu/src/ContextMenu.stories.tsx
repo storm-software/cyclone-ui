@@ -22,7 +22,16 @@ import { useState } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { ContextMenu } from "./ContextMenu";
 
-const ACTIONS = ["Copy", "Duplicate", "Rename", "Archive", "Delete"];
+const LONG_ACTION = "Move to another workspace and notify every collaborator";
+
+const ACTIONS = [
+  "Copy",
+  "Duplicate",
+  "Rename",
+  "Archive",
+  LONG_ACTION,
+  "Delete"
+];
 
 const meta: Meta<typeof ContextMenu> = {
   title: "Containers/ContextMenu",
@@ -84,10 +93,13 @@ export const Base: Story = {
     await userEvent.click(
       await document.findByRole("button", { name: "Rename" })
     );
-    await waitFor(async () =>
-      expect(
-        document.queryByRole("button", { name: "Archive" })
-      ).not.toBeInTheDocument()
+    // On small screens the menu unmounts after the sheet slides out.
+    await waitFor(
+      async () =>
+        expect(
+          document.queryByRole("button", { name: "Archive" })
+        ).not.toBeInTheDocument(),
+      { timeout: 3000 }
     );
     await expect(canvas.getByRole("button", { name: "Rename" })).toBeVisible();
 
@@ -106,6 +118,17 @@ export const Base: Story = {
     await userEvent.click(remove!);
     await expect(await menuItem("Archive")).toBeInTheDocument();
     await expect(canvas.getByRole("button", { name: "Rename" })).toBeVisible();
+
+    // Text that doesn't fit ends in an ellipsis, and hovering it shows the
+    // full text in a tooltip.
+    const [longText] = await document.findAllByText(LONG_ACTION);
+    await waitFor(async () =>
+      expect(longText!.scrollWidth).toBeGreaterThan(longText!.clientWidth)
+    );
+    await userEvent.hover(longText!);
+    await waitFor(async () =>
+      expect(document.getAllByText(LONG_ACTION)).toHaveLength(2)
+    );
   }
 };
 

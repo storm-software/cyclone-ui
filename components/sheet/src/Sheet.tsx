@@ -240,9 +240,25 @@ const SheetSheetOverlay = styled(TamaguiSheet.Overlay, {
   transition: "200ms"
 });
 
+// v3's `Sheet.Handle` ships unstyled (no size), so both handles share this skin.
+const sheetHandleStyles = {
+  position: "absolute" as const,
+  backgroundColor: "subtlest",
+  borderRadius: 100,
+  cursor: "grab press:grabbing",
+  opacity: "0.5 hover:0.7",
+  zIndex: 10
+};
+
 const SheetSheetHandle = styled(TamaguiSheet.Handle, {
   displayName: "SheetHandle",
-  backgroundColor: "hairline"
+
+  ...sheetHandleStyles,
+  top: 5,
+  right: "35%",
+  left: "35%",
+  height: 8,
+  marginBottom: 10
 });
 
 const SheetSheetScrollView = styled(TamaguiSheet.ScrollView, {
@@ -256,12 +272,8 @@ const SheetSheetScrollView = styled(TamaguiSheet.ScrollView, {
 
 const SheetDialogHandle = styled(XStack, {
   displayName: "SheetDialogHandle",
-  position: "absolute",
-  backgroundColor: "hairline",
-  borderRadius: 100,
-  cursor: "grab press:grabbing",
-  opacity: "0.5 hover:0.7",
-  zIndex: 10,
+
+  ...sheetHandleStyles,
   // Web-only CSS property that is not a Tamagui style prop.
   style: { touchAction: "none" } as any
 });
@@ -272,21 +284,24 @@ const sheetHandleDirectionStyles: Record<
 > = {
   top: {
     right: "35%",
-    bottom: 10,
+    bottom: 5,
     left: "35%",
-    height: 10
+    height: 8,
+    marginTop: 10
   },
   right: {
     top: "35%",
     bottom: "35%",
-    left: 10,
-    width: 10
+    left: 5,
+    width: 8,
+    marginLeft: 10
   },
   left: {
     top: "35%",
-    right: 10,
+    right: 5,
     bottom: "35%",
-    width: 10
+    width: 8,
+    marginRight: 10
   }
 };
 
@@ -294,10 +309,10 @@ const sheetFrameHandleInsetStyles: Record<
   SheetDirection,
   Record<string, unknown>
 > = {
-  top: { paddingBottom: "5xl" },
-  right: { paddingLeft: "5xl" },
-  bottom: { paddingTop: "5xl" },
-  left: { paddingRight: "5xl" }
+  top: { paddingBottom: "3xl" },
+  right: { paddingLeft: "3xl" },
+  bottom: { paddingTop: "3xl" },
+  left: { paddingRight: "3xl" }
 };
 
 export type SheetContainerProps = GetProps<typeof TamaguiSheet.Container>;
@@ -338,7 +353,7 @@ const SheetDialogContainer: FC<SheetContainerProps> = ({
       ]}
       {...(size ? sheetSizeStyles[direction][size] : {})}
       {...sheetFrameHandleInsetStyles[direction]}
-      {...(frameProps as any)}
+      {...frameProps}
       x={isVertical ? 0 : draggedOffset}
       y={isVertical ? draggedOffset : 0}
       transition={dragging ? "0ms" : transition}
@@ -375,7 +390,7 @@ const SheetBackground: FC<SheetBackgroundProps> = props => {
   return direction === "bottom" ? (
     <SheetSheetBackground {...props} />
   ) : (
-    <SheetDialogBackground {...(props as any)} />
+    <SheetDialogBackground {...props} />
   );
 };
 
@@ -394,8 +409,8 @@ const SheetFrame: FC<SheetFrameProps> = ({ children, ...props }) => {
   const { container, background } = splitSheetFrameProps(props);
 
   return (
-    <SheetContainer {...(container as SheetContainerProps)}>
-      <SheetBackground {...(background as SheetBackgroundProps)} />
+    <SheetContainer {...container}>
+      <SheetBackground {...background} />
       {children}
     </SheetContainer>
   );
@@ -413,10 +428,17 @@ const SheetOverlay: FC<SheetOverlayProps> = props => {
       backgroundColor="backdrop"
       opacity="0.6 enter:0 exit:0"
       transition="200ms"
-      {...(props as any)}
+      {...props}
     />
   );
 };
+
+// Tamagui's bottom sheet only renders children whose `staticConfig` chain
+// carries its (private) overlay marker in the overlay layer, and renders any
+// other `Sheet.Overlay` as null, so this wrapper inherits the styled overlay's.
+Object.assign(SheetOverlay, {
+  staticConfig: { parentStaticConfig: SheetSheetOverlay.staticConfig }
+});
 
 const SheetHandle: FC<SheetHandleProps> = props => {
   const { direction, disableDrag, panHandlers, pointerHandlers } =
@@ -431,10 +453,7 @@ const SheetHandle: FC<SheetHandleProps> = props => {
       {...sheetHandleDirectionStyles[direction]}
       pointerEvents={disableDrag ? "none" : "auto"}
       {...(!disableDrag &&
-        ((Platform.OS === "web" ? pointerHandlers : panHandlers) as Record<
-          string,
-          unknown
-        >))}
+        (Platform.OS === "web" ? pointerHandlers : panHandlers))}
       {...props}
     />
   );
@@ -455,7 +474,7 @@ const SheetScrollView: FC<SheetScrollViewProps> = ({
       {children}
     </SheetSheetScrollView>
   ) : (
-    <ScrollView flex={1} size="lg" className={className} {...(props as any)}>
+    <ScrollView flex={1} size="lg" className={className} {...props}>
       {children}
     </ScrollView>
   );
@@ -476,10 +495,10 @@ const sheetFooterDirectionStyles: Record<
   SheetDirection,
   Record<string, unknown>
 > = {
-  top: { paddingBottom: "4xl" },
-  right: { paddingLeft: "4xl" },
-  bottom: { paddingTop: "4xl" },
-  left: { paddingRight: "4xl" }
+  top: { paddingBottom: "2xl" },
+  right: { paddingLeft: "2xl" },
+  bottom: { paddingTop: "2xl" },
+  left: { paddingRight: "2xl" }
 };
 
 const sheetFooterStyles = {
@@ -511,6 +530,16 @@ export type SheetProps = Omit<GetProps<typeof TamaguiSheet>, "size"> & {
 };
 
 const SNAP_POINTS = [80];
+
+// The animation drivers' default spring (stiffness 100, damping 10) overshoots
+// a bottom sheet by about 16% of its travel. The same stiffness with more
+// damping keeps the pace and only settles with a slight spring.
+const SHEET_SPRING = {
+  type: "spring",
+  stiffness: 100,
+  damping: 16,
+  mass: 1
+} as const;
 
 const SheetFrameImpl: FC<SheetProps> = ({
   children,
@@ -732,6 +761,7 @@ const SheetFrameImpl: FC<SheetProps> = ({
         }
         snapPointsMode={usesSizedBottomFrame ? "fit" : snapPointsMode}
         transition={transition}
+        transitionConfig={transition === undefined ? SHEET_SPRING : undefined}
         open={open}
         onOpenChange={onOpenChange}
         {...props}>

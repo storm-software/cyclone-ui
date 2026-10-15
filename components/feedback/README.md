@@ -41,7 +41,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Feedback
 
-A `Feedback` control that pairs a `LikeButton` with a thumbs-down toggle. Disliking opens a popover (a bottom sheet on small touch screens) where the user can optionally explain what could be improved.
+A `Feedback` control that pairs a `LikeButton` with a thumbs-down toggle. Disliking opens a popover (a bottom sheet on small screens) where the user can optionally explain what could be improved.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->

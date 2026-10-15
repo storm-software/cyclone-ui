@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/popover",
   "version": "0.5.17",
   "type": "module",
-  "description": "A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small touch screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.",
+  "description": "A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -25,11 +25,11 @@
     "@tamagui/create-context": "catalog:",
     "@tamagui/popover": "catalog:",
     "@tamagui/popper": "catalog:",
-    "@tamagui/sheet": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@tamagui/floating": "catalog:",
-    "@cyclone-ui/scroll-view": "workspace:*"
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@cyclone-ui/sheet": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/body-text": "workspace:*",

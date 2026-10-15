@@ -18,6 +18,9 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../sheet"
+    },
+    {
       "path": "../scroll-view"
     },
     {

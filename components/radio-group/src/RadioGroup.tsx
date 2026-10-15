@@ -316,7 +316,7 @@ const RadioGroupItemContainer = createStyledHOC(
         aria-disabled={disabled || undefined}
         onPress={handlePress}
         disabled={disabled}>
-        <YStack gap="md" justifyContent="flex-start" flex={1}>
+        <YStack gap="md" justifyContent="flex-start" flex={1} minWidth={0}>
           <RadioGroupItemLabel htmlFor={id} disabled={disabled}>
             {/* The heading sets its own color, so the label's can't reach it. */}
             <HeadingSmallText transition="200ms" color={textColor("emphasis")}>
@@ -368,6 +368,8 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
   alignItems: "flex-start",
   borderColor: "transparent",
   width: "100%",
+  // Never wider than the container, even with a fixed `width`.
+  maxWidth: "100%",
 
   variants: {
     size: styled.dynamic<FormControlSize>(

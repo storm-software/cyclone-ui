@@ -56,6 +56,7 @@ import {
   useRef,
   useState
 } from "react";
+import { useWindowDimensions } from "react-native";
 
 export type TimePickerChangeEventHandler = (event: CustomEvent<string>) => any;
 
@@ -253,9 +254,14 @@ const TimePickerClock = ({
   const innerCellSize = getFormSizeToken(size, "compact");
   const innerCell = getSized(innerCellSize);
   const fontSize = 16 * getFormFontScale(size);
-  // As wide as the calendar: seven day cells plus the six gaps between them.
-  const diameter = cell * 7 + getSpaced("md") * 6;
-  // Leaves room for the minute ticks around the edge.
+  const { width: viewportWidth } = useWindowDimensions();
+  // As wide as the calendar: seven day cells plus the six gaps between them,
+  // narrowed to fit inside the popover's bottom sheet padding on small screens.
+  const diameter = Math.min(
+    cell * 7 + getSpaced("md") * 6,
+    viewportWidth - getSpaced("5xl") * 2
+  );
+  // Leaves room for the ticks around the edge.
   const radius = diameter / 2 - cell / 2 - getSpaced("2xl");
   const innerRadius = radius - cell / 2 - innerCell / 2 - getSpaced("md");
   // Absolute children are placed inside the face's 1px border.
@@ -388,8 +394,12 @@ const TimePickerClock = ({
 
   return (
     <Theme name="base">
-      <YStack width={diameter} alignItems="center" gap="2xl">
-        <XStack width="100%" alignItems="center" justifyContent="space-between">
+      <YStack width={diameter} alignSelf="center" alignItems="center" gap="6xl">
+        <XStack
+          width="100%"
+          alignItems="center"
+          justifyContent="space-between"
+          gap="2xl">
           <XStack alignItems="center" gap="xl">
             <Button
               variant={view === "hours" ? "primary" : "tertiary"}
@@ -472,9 +482,23 @@ const TimePickerClock = ({
             dragRef.current = null;
           }}
           onPointerLeave={() => setHoveredIndex(-1)}>
-          {view === "minutes" &&
-            Array.from({ length: 60 }, (_, minute) => {
+          {/* Keyed by view, so the face fades in when switching views. */}
+          <View
+            key={view}
+            position="absolute"
+            left={0}
+            top={0}
+            width={diameter - 2}
+            height={diameter - 2}
+            transition="200ms"
+            opacity="enter:0">
+            {Array.from({ length: 60 }, (_, minute) => {
               const major = minute % 5 === 0;
+              // The hours view only has the hour ticks.
+              if (view === "hours" && !major) {
+                return null;
+              }
+
               const width = major ? 2 : 1;
               const length = (major ? 6 : 3) * getFormSizeScale(size);
               const tickAngle = (minute * Math.PI) / 30;
@@ -494,79 +518,80 @@ const TimePickerClock = ({
                 />
               );
             })}
-          {time && (
-            <>
-              {/* Centered on its midpoint, so it rotates without a transform origin. */}
-              <View
-                position="absolute"
-                width={handRadius}
-                height={2}
-                left={
-                  center + (handRadius / 2) * Math.sin(angle) - handRadius / 2
-                }
-                top={center - (handRadius / 2) * Math.cos(angle) - 1}
-                rotate={`${position * 30 - 90}deg`}
-                backgroundColor="primary"
-              />
-              {!onLabel && (
+            {time && (
+              <>
+                {/* Centered on its midpoint, so it rotates without a transform origin. */}
                 <View
                   position="absolute"
-                  width={8}
-                  height={8}
-                  borderRadius={4}
-                  left={center + handRadius * Math.sin(angle) - 4}
-                  top={center - handRadius * Math.cos(angle) - 4}
+                  width={handRadius}
+                  height={2}
+                  left={
+                    center + (handRadius / 2) * Math.sin(angle) - handRadius / 2
+                  }
+                  top={center - (handRadius / 2) * Math.cos(angle) - 1}
+                  rotate={`${position * 30 - 90}deg`}
                   backgroundColor="primary"
                 />
-              )}
-            </>
-          )}
-          <View
-            position="absolute"
-            width={6}
-            height={6}
-            borderRadius={3}
-            left={center - 3}
-            top={center - 3}
-            backgroundColor="primary"
-          />
-          {items.map((item, index) => {
-            const selected =
-              time !== null &&
-              item.value === (view === "hours" ? time.hours : time.minutes);
+                {!onLabel && (
+                  <View
+                    position="absolute"
+                    width={8}
+                    height={8}
+                    borderRadius={4}
+                    left={center + handRadius * Math.sin(angle) - 4}
+                    top={center - handRadius * Math.cos(angle) - 4}
+                    backgroundColor="primary"
+                  />
+                )}
+              </>
+            )}
+            <View
+              position="absolute"
+              width={6}
+              height={6}
+              borderRadius={3}
+              left={center - 3}
+              top={center - 3}
+              backgroundColor="primary"
+            />
+            {items.map((item, index) => {
+              const selected =
+                time !== null &&
+                item.value === (view === "hours" ? time.hours : time.minutes);
 
-            return (
-              <Button
-                // Keyed by view too, so labels never animate across the face.
-                key={`${view}-${item.label}`}
-                position="absolute"
-                left={center + item.x - item.cell / 2}
-                top={center + item.y - item.cell / 2}
-                variant={selected ? "primary" : "ghost"}
-                // The buttons take no pointer input, so their own `hover:`
-                // colors never apply. Only passed while hovered: even an
-                // `undefined` value replaces the variant's background.
-                {...(index === hoveredIndex && {
-                  backgroundColor: selected
-                    ? "primaryHovered"
-                    : "elevatedHovered"
-                })}
-                size={item.inner ? innerCellSize : cellSize}
-                width={item.inner ? innerCellSize : cellSize}
-                circular={true}
-                noPadding={true}
-                // The face handles pointer input (so the hand can be dragged);
-                // the buttons stay for keyboard users.
-                pointerEvents="none"
-                aria-pressed={selected}
-                onPress={() => onChange(withValue(item.value), view, true)}>
-                <Button.Text
-                  fontSize={item.inner ? fontSize * 0.875 : fontSize}>
-                  {item.label}
-                </Button.Text>
-              </Button>
-            );
-          })}
+              return (
+                <Button
+                  // Keyed by view too, so labels never animate across the face.
+                  key={`${view}-${item.label}`}
+                  position="absolute"
+                  left={center + item.x - item.cell / 2}
+                  top={center + item.y - item.cell / 2}
+                  variant={selected ? "primary" : "ghost"}
+                  // The buttons take no pointer input, so their own `hover:`
+                  // colors never apply. Only passed while hovered: even an
+                  // `undefined` value replaces the variant's background.
+                  {...(index === hoveredIndex && {
+                    backgroundColor: selected
+                      ? "primaryHovered"
+                      : "elevatedHovered"
+                  })}
+                  size={item.inner ? innerCellSize : cellSize}
+                  width={item.inner ? innerCellSize : cellSize}
+                  circular={true}
+                  noPadding={true}
+                  // The face handles pointer input (so the hand can be dragged);
+                  // the buttons stay for keyboard users.
+                  pointerEvents="none"
+                  aria-pressed={selected}
+                  onPress={() => onChange(withValue(item.value), view, true)}>
+                  <Button.Text
+                    fontSize={item.inner ? fontSize * 0.875 : fontSize}>
+                    {item.label}
+                  </Button.Text>
+                </Button>
+              );
+            })}
+          </View>
         </View>
       </YStack>
     </Theme>

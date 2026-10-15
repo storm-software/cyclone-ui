@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { ScrollView } from "@cyclone-ui/scroll-view";
+import { Sheet } from "@cyclone-ui/sheet";
 import type { AdaptWhen } from "@tamagui/adapt";
 import { Adapt } from "@tamagui/adapt";
 import type { GetProps, SizeTokens } from "@tamagui/core";
@@ -27,7 +28,6 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { Popover as TamaguiPopover } from "@tamagui/popover";
-import { Sheet } from "@tamagui/sheet";
 
 export interface PopoverContextProps {
   size: SizeTokens;
@@ -70,24 +70,18 @@ const PopoverFrameImpl = createStyledHOC(
           {children}
 
           {shouldAdapt && (
-            <Adapt
-              // The app's media keys are declared by the app config, which
-              // this package's typecheck doesn't load.
-              when={"max-sm" as unknown as AdaptWhen}
-              platform="touch">
-              <Sheet
-                modal={true}
-                dismissOnSnapToBottom={true}
-                snapPointsMode="fit">
+            // Viewport-only (no `platform`), so every small screen gets the
+            // bottom sheet, not just touch devices. The app's media keys are
+            // declared by the app config, which this package's typecheck
+            // doesn't load.
+            <Adapt when={"max-sm" as unknown as AdaptWhen}>
+              <Sheet snapPoints={["fit"]} snapPointsMode="fit">
+                <Sheet.Overlay />
                 <Sheet.Container padding="5xl">
-                  <Sheet.Background backgroundColor="elevated" />
+                  <Sheet.Background />
+                  <Sheet.Handle />
                   <Adapt.Contents />
                 </Sheet.Container>
-                <Sheet.Overlay
-                  backgroundColor="backdrop"
-                  transition="500ms"
-                  opacity="enter:0 exit:0"
-                />
               </Sheet>
             </Adapt>
           )}

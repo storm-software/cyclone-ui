@@ -26,6 +26,7 @@ import {
 } from "@cyclone-ui/helpers";
 import { Check, Lock } from "@cyclone-ui/icons";
 import { Popover } from "@cyclone-ui/popover";
+import { Tooltip } from "@cyclone-ui/tooltip";
 import type { GetProps, LayoutEvent } from "@tamagui/core";
 import {
   createStyledContext,
@@ -96,7 +97,7 @@ export interface ContextMenuExtraProps {
 
 /**
  * A menu of actions that opens as a popover on large screens and as a bottom
- * sheet on small touch screens.
+ * sheet on small screens.
  */
 const ContextMenuFrame = createStyledHOC(
   Popover,
@@ -236,8 +237,7 @@ const ContextMenuItemFrame = styled(View, {
   position: "relative",
   flexDirection: "row",
   justifyContent: "center",
-  width: "max-content",
-  minWidth: "100%",
+  width: "100%",
   borderWidth: 0,
   borderRadius: "button",
   outlineStyle: "focus-visible:none",
@@ -337,8 +337,8 @@ const ContextMenuItemGroup = styled(View, {
   cursor: "inherit",
   flexDirection: "row",
   alignItems: "center",
-  minWidth: "100%",
-  width: "max-content",
+  flex: 1,
+  minWidth: 0,
   variants: {
     size: styled.dynamic<FormControlSize>(
       formSizeVariants((val: FormControlSize) => {
@@ -466,9 +466,26 @@ const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
     itemTextPaddingVertical,
     itemTextPaddingHorizontal
   } = getContextMenuSize(size);
+  const [text, setText] = useState<HTMLElement | null>(null);
+  const [truncated, setTruncated] = useState(false);
 
-  return (
+  // Show the full text in a tooltip only while it is cut off.
+  useLayoutEffect(() => {
+    if (!text || typeof ResizeObserver === "undefined") {
+      return;
+    }
+
+    const resizeObserver = new ResizeObserver(() =>
+      setTruncated(text.scrollWidth > text.clientWidth)
+    );
+    resizeObserver.observe(text);
+
+    return () => resizeObserver.disconnect();
+  }, [text, props.children]);
+
+  const content = (
     <BodyText
+      ref={setText as any}
       render="span"
       transition="200ms"
       cursor="inherit"
@@ -487,8 +504,27 @@ const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
       fontWeight={selected ? "bold" : "normal"}
       paddingVertical={itemTextPaddingVertical}
       paddingHorizontal={itemTextPaddingHorizontal}
+      // One line, cut short with an ellipsis when it doesn't fit.
+      numberOfLines={1}
+      flexShrink={1}
+      minWidth={0}
       {...props}
     />
+  );
+
+  // Only wrapped while truncated: a long list (the country selector) would
+  // otherwise mount a tooltip per item.
+  return truncated ? (
+    <Tooltip groupId="context-menu-item">
+      <Tooltip.Trigger asChild={true}>{content}</Tooltip.Trigger>
+      <Tooltip.Content maxWidth="30xl">
+        <View paddingVertical="2xl" paddingHorizontal="3xl">
+          <BodyText>{props.children}</BodyText>
+        </View>
+      </Tooltip.Content>
+    </Tooltip>
+  ) : (
+    content
   );
 };
 
