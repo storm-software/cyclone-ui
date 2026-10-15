@@ -4463,6 +4463,13 @@ export const manifest: DesignSystemManifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/skeleton",
+      "jsx": [
+        "Skeleton"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/slider",
       "jsx": [
         "Slider"

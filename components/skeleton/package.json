@@ -1,0 +1,49 @@
+{
+  "name": "@cyclone-ui/skeleton",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A skeleton component for loading states.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/skeleton"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Skeleton": {
+      "import": "./dist/Skeleton.mjs",
+      "require": "./dist/Skeleton.cjs"
+    },
+    "./*": "./*"
+  }
+}

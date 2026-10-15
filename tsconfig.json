@@ -301,6 +301,9 @@
       "path": "./components/otp-input"
     },
     {
+      "path": "./components/skeleton"
+    },
+    {
       "path": "./components/color-compositions"
     }
   ],

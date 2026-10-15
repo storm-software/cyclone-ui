@@ -166,6 +166,34 @@ const BadgeText = styled(Text, {
 const BADGE_SHOW_TRANSITION = { duration: "225ms", easing: "ease-in-out" };
 const BADGE_HIDE_TRANSITION = { duration: "195ms", easing: "ease-in-out" };
 
+// The ring copies the badge's color and shape, and sits behind its content
+// (the badge's `zIndex` makes it a stacking context).
+const BADGE_PULSE_CSS = `
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes cyclone-badge-pulse {
+    from {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+
+    to {
+      transform: scale(2.4);
+      opacity: 0;
+    }
+  }
+
+  .cyclone-badge-pulse {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: inherit;
+    pointer-events: none;
+    animation: cyclone-badge-pulse 1.5s ease-out infinite;
+  }
+}
+`;
+
 const isShallowEqual = <T extends object>(a: T, b: T) =>
   (Object.keys(a) as (keyof T)[]).every(key => Object.is(a[key], b[key]));
 
@@ -240,6 +268,14 @@ export interface BadgeOwnProps {
   overlap?: BadgeOverlap;
 
   /**
+   * Should the badge pulse, drawing attention with a ring that repeatedly
+   * expands out of it and fades (web only, skipped for reduced motion)
+   *
+   * @defaultValue false
+   */
+  pulse?: boolean;
+
+  /**
    * Should the badge show when `badgeContent` is zero
    *
    * @defaultValue false
@@ -284,6 +320,7 @@ export const Badge = createStyledHOC(
       invisible: invisibleProp = false,
       max = 99,
       overlap = "rectangular",
+      pulse = false,
       showZero = false,
       variant = "standard",
       slots,
@@ -331,6 +368,13 @@ export const Badge = createStyledHOC(
           invisible={invisible}
           transition={invisible ? BADGE_HIDE_TRANSITION : BADGE_SHOW_TRANSITION}
           {...slotProps?.badge}>
+          {/* ponytail: the pulse is CSS-only, so native renders a static badge. */}
+          {pulse && process.env.TAMAGUI_TARGET === "web" && (
+            <>
+              <style>{BADGE_PULSE_CSS}</style>
+              <span className="cyclone-badge-pulse" />
+            </>
+          )}
           {typeof content === "string" || typeof content === "number" ? (
             <BadgeText>{content}</BadgeText>
           ) : (

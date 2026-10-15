@@ -18,7 +18,7 @@
 
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import type { StorybookConfig } from "@storybook/react-vite";
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, realpathSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import reactNativeWeb from "vite-plugin-react-native-web";
@@ -307,6 +307,17 @@ const config: StorybookConfig = {
           {
             find: "@tamagui/proxy-worm",
             replacement: resolvePackageFile("@tamagui/proxy-worm")
+          },
+          {
+            // pnpm installs several peer-variant copies of `@tamagui/adapt`
+            // (e.g. `@tamagui/popover` and `@tamagui/sheet` get different
+            // ones), and an adapted `Sheet` only opens when it reads the same
+            // Adapt context its `Popover`/`Dialog` provides. `dedupe` can't
+            // help: Storybook itself doesn't depend on the package.
+            find: /^@tamagui\/adapt$/,
+            replacement: realpathSync(
+              join(workspaceRoot, "components/popover/node_modules/@tamagui/adapt")
+            )
           },
           {
             find: "react-native-svg",

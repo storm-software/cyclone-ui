@@ -80,6 +80,7 @@ const getStyles = (element: StoryElement) =>
       getComputedStyle: (element: StoryElement) => {
         display: string;
         transform: string;
+        animationName: string;
       };
     }
   ).getComputedStyle(element);
@@ -193,6 +194,34 @@ export const Dot: Story = {
     await expect(badge.textContent).toBe("");
     await expect(getScale(badge)).toBe(1);
     await expect(badge.getBoundingClientRect().width).toBe(8);
+  }
+};
+
+export const Pulse: Story = {
+  render: (args: BadgeProps) => (
+    <Row>
+      <Badge color="error" variant="dot" pulse {...args}>
+        <MailIcon />
+      </Badge>
+      <Badge color="success" overlap="circular" variant="dot" pulse {...args}>
+        <Shape circle />
+      </Badge>
+      <Badge color="secondary" badgeContent={4} pulse {...args}>
+        <MailIcon />
+      </Badge>
+    </Row>
+  ),
+  play: async ({ canvasElement }) => {
+    const ring = (
+      canvasElement as unknown as {
+        querySelector: (selector: string) => StoryElement | null;
+      }
+    ).querySelector(".cyclone-badge-pulse");
+    if (!ring) {
+      throw new Error("The badge has no pulse ring");
+    }
+
+    await expect(getStyles(ring).animationName).toBe("cyclone-badge-pulse");
   }
 };
 
