@@ -299,6 +299,9 @@
     },
     {
       "path": "./components/otp-input"
+    },
+    {
+      "path": "./components/color-compositions"
     }
   ],
   "files": []

@@ -654,6 +654,33 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/color-compositions
+
+An animated display component reproducing Ellsworth Kelly's "Colors for a Large Wall" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.
+
+- **Name:** `@cyclone-ui/color-compositions`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-compositions/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
+| `../../components/color-compositions/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/confetti-burst
 
 An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.
@@ -3804,6 +3831,33 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react-native/index.js` | `file` |  |
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-compositions
+
+An animated display component reproducing Ellsworth Kelly's "Colors for a Large Wall" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.
+
+- **Name:** `@cyclone-ui/color-compositions`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-compositions/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
+| `../../components/color-compositions/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/confetti-burst
 
@@ -6956,6 +7010,33 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/color-compositions
+
+An animated display component reproducing Ellsworth Kelly's "Colors for a Large Wall" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.
+
+- **Name:** `@cyclone-ui/color-compositions`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-compositions/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
+| `../../components/color-compositions/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/confetti-burst
 
 An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.
@@ -10106,6 +10187,33 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react-native/index.js` | `file` |  |
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-compositions
+
+An animated display component reproducing Ellsworth Kelly's "Colors for a Large Wall" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.
+
+- **Name:** `@cyclone-ui/color-compositions`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-compositions/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
+| `../../components/color-compositions/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/confetti-burst
 
@@ -13258,6 +13366,33 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/color-compositions
+
+An animated display component reproducing Ellsworth Kelly's "Colors for a Large Wall" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.
+
+- **Name:** `@cyclone-ui/color-compositions`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-compositions/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
+| `../../components/color-compositions/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/confetti-burst
 
 An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.
@@ -16408,6 +16543,33 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react-native/index.js` | `file` |  |
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-compositions
+
+An animated display component reproducing Ellsworth Kelly's "Colors for a Large Wall" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.
+
+- **Name:** `@cyclone-ui/color-compositions`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-compositions/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
+| `../../components/color-compositions/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/confetti-burst
 

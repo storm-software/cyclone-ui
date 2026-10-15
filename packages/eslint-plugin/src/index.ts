@@ -4119,6 +4119,13 @@ export const manifest: DesignSystemManifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/color-compositions",
+      "jsx": [
+        "ColorCompositions"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/confetti-burst",
       "jsx": [
         "ConfettiBurst"
