@@ -34,4 +34,7 @@ export type MessageProviderProps = PropsWithChildren;
  *   <App />
  * </MessageProvider>
  */
+// React 19's ReactNode includes Promise, so the rule wants this async, but an
+// async component throws on the client.
+// eslint-disable-next-line ts/promise-function-async
 export const MessageProvider = ({ children }: MessageProviderProps) => children;

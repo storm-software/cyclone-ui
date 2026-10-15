@@ -23,6 +23,7 @@ catalog:
   "@react-native-community/cli-platform-ios": 18.0.1
   "@react-navigation/native": ~6.1.18
   "@react-navigation/stack": ^6.4.1
+  "@react-stately/color": ^3.10.1
   "@rehookify/datepicker": ^6.6.8
   "@shell-shock/core": ^0.17.32
   "@shell-shock/eslint-plugin": ^0.0.96

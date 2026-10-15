@@ -308,6 +308,9 @@
     },
     {
       "path": "./components/address-input"
+    },
+    {
+      "path": "./components/color-area"
     }
   ],
   "files": []

@@ -4126,6 +4126,13 @@ export const manifest: DesignSystemManifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/color-area",
+      "jsx": [
+        "ColorArea"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/color-compositions",
       "jsx": [
         "ColorCompositions"

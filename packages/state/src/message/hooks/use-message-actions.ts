@@ -53,12 +53,13 @@ export const useMessageActions = (): UseMessageActionsResult => {
     };
 
     switch (type) {
-      case "error":
+      case "danger":
         toast.error(title, data);
         break;
       case "warning":
         toast.warning(title, data);
         break;
+      case "discovery":
       case "info":
         toast.info(title, data);
         break;

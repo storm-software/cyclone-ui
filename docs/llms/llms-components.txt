@@ -688,6 +688,34 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/color-area
+
+A 2D color picker, built on the React Stately color model, for selecting two channels of a color from a gradient area by dragging a thumb or using the keyboard.
+
+- **Name:** `@cyclone-ui/color-area`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react/index.js` | `file` |  |
+| `../../components/color-area/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/color-compositions
 
 An animated display component reproducing Ellsworth Kelly's "Colors for a Large Wall" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.
@@ -3926,6 +3954,34 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react-native/index.js` | `file` |  |
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-area
+
+A 2D color picker, built on the React Stately color model, for selecting two channels of a color from a gradient area by dragging a thumb or using the keyboard.
+
+- **Name:** `@cyclone-ui/color-area`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react/index.js` | `file` |  |
+| `../../components/color-area/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/color-compositions
 
@@ -7166,6 +7222,34 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/color-area
+
+A 2D color picker, built on the React Stately color model, for selecting two channels of a color from a gradient area by dragging a thumb or using the keyboard.
+
+- **Name:** `@cyclone-ui/color-area`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react/index.js` | `file` |  |
+| `../../components/color-area/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/color-compositions
 
 An animated display component reproducing Ellsworth Kelly's "Colors for a Large Wall" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.
@@ -10404,6 +10488,34 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react-native/index.js` | `file` |  |
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-area
+
+A 2D color picker, built on the React Stately color model, for selecting two channels of a color from a gradient area by dragging a thumb or using the keyboard.
+
+- **Name:** `@cyclone-ui/color-area`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react/index.js` | `file` |  |
+| `../../components/color-area/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/color-compositions
 
@@ -13644,6 +13756,34 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
 
+## @cyclone-ui/color-area
+
+A 2D color picker, built on the React Stately color model, for selecting two channels of a color from a gradient area by dragging a thumb or using the keyboard.
+
+- **Name:** `@cyclone-ui/color-area`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react/index.js` | `file` |  |
+| `../../components/color-area/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/color-compositions
 
 An animated display component reproducing Ellsworth Kelly's "Colors for a Large Wall" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.
@@ -16882,6 +17022,34 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 | `../../components/collapsible/node_modules/react-native/index.js` | `file` |  |
 | `../../components/collapsible/node_modules/react/index.js` | `file` |  |
 | `../../components/collapsible/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-area
+
+A 2D color picker, built on the React Stately color model, for selecting two channels of a color from a gradient area by dragging a thumb or using the keyboard.
+
+- **Name:** `@cyclone-ui/color-area`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-area/node_modules/react/index.js` | `file` |  |
+| `../../components/color-area/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/color-compositions
 

@@ -20,7 +20,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Calendar } from "./Calendar";
 
 const meta = {
-  title: "Form/Calendar",
+  title: "Display/Calendar",
   component: Calendar,
   tags: ["autodocs"],
   args: {
