@@ -27,8 +27,8 @@ const DEFAULT_CONTROL_SIZE = 42;
 
 // Space tokens for the menu's chrome; small menus tighten them, larger ones
 // keep the medium spacing.
-const contentPadding = { sm: "xl", md: "3xl", lg: "3xl" } as const;
-const itemTextPaddingVertical = { sm: "md", md: "lg", lg: "lg" } as const;
+const contentPadding = { sm: "md", md: "lg", lg: "xl" } as const;
+const itemTextPaddingVertical = { sm: "sm", md: "md", lg: "lg" } as const;
 
 const scaleMetric = (value: number, scale: number, minimum = 1): number =>
   Math.max(minimum, Math.round(value * scale));
@@ -53,7 +53,7 @@ export const getContextMenuSize = (val: FormControlSize = "md") => {
     contentPadding: contentPadding[val],
     itemTextPaddingVertical: itemTextPaddingVertical[val],
     itemTextPaddingHorizontal: 0.8 * scale,
-    itemPaddingHorizontal: scaleMetric(5, scale, 2),
+    itemPaddingHorizontal: scaleMetric(3, scale, 2),
     dividerInset: scaleMetric(10, scale, 4),
     indicatorWidth: scaleMetric(20, scale, 14),
     indicatorIconSize: 16 * getFormFontScale(val),

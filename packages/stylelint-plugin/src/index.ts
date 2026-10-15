@@ -3997,6 +3997,13 @@ export const manifest: DesignSystemManifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/address-input",
+      "jsx": [
+        "AddressInput"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/alert",
       "jsx": [
         "Alert"

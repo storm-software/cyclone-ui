@@ -37,7 +37,7 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import type { JSX } from "react";
-import { createContext, use, useLayoutEffect, useState } from "react";
+import { createContext, use, useLayoutEffect, useMemo, useState } from "react";
 import { getContextMenuSize } from "./utilities";
 
 // Menus narrower than this center their item text, unless an item shows an
@@ -397,9 +397,13 @@ const ContextMenuItem = ({
   const selected = value !== undefined && value === selectedValue;
   const { indicatorWidth, indicatorIconSize } = getContextMenuSize(size);
 
+  const itemState = useMemo(
+    () => ({ selected, disabled, highlighted }),
+    [selected, disabled, highlighted]
+  );
+
   return (
-    <ContextMenuItemStateContext.Provider
-      value={{ selected, disabled, highlighted }}>
+    <ContextMenuItemStateContext.Provider value={itemState}>
       <ContextMenuItemFrame
         // Not typed on a styled View; keeps the item from submitting a form.
         {...({ type: "button" } as object)}

@@ -27,7 +27,7 @@ import type {
 import { Input, InputContext } from "@cyclone-ui/input";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, Theme, withStaticProperties } from "@tamagui/core";
-import type { KeyboardEvent, MouseEvent } from "react";
+import type { KeyboardEvent, MouseEvent, ReactNode } from "react";
 import {
   createContext,
   use,
@@ -43,11 +43,13 @@ const CLEARABLE_BY_DEFAULT = { defaults: { clearable: true } };
 
 interface SearchInputContextValue {
   suggestions: readonly string[];
+  filterSuggestions: boolean;
   value: string;
 }
 
 const SearchInputContext = createContext<SearchInputContextValue>({
   suggestions: EMPTY_SUGGESTIONS,
+  filterSuggestions: true,
   value: ""
 });
 
@@ -58,6 +60,14 @@ const preventFocusLoss = (event: MouseEvent<HTMLElement>) =>
 export interface SearchInputExtraProps {
   /** Values offered while the user types. Matching is case-insensitive. */
   suggestions?: readonly string[];
+
+  /**
+   * Only offer suggestions that contain the typed text. Turn it off when the
+   * suggestions are already matched elsewhere, such as by a search API.
+   *
+   * @defaultValue true
+   */
+  filterSuggestions?: boolean;
 
   /** The controlled value. Inside a `Field`, the field's value is used. */
   value?: string;
@@ -78,6 +88,7 @@ const SearchInputGroup = createStyledHOC(
     {
       children,
       suggestions = EMPTY_SUGGESTIONS,
+      filterSuggestions = true,
       value: valueProp,
       defaultValue,
       onChange: onChangeProp,
@@ -107,8 +118,8 @@ const SearchInputGroup = createStyledHOC(
     );
 
     const contextValue = useMemo(
-      () => ({ suggestions, value }),
-      [suggestions, value]
+      () => ({ suggestions, filterSuggestions, value }),
+      [suggestions, filterSuggestions, value]
     );
 
     return (
@@ -123,7 +134,14 @@ const SearchInputGroup = createStyledHOC(
 );
 
 type SearchInputTextBoxProps = GetProps<typeof Input.TextBox> &
-  Partial<Pick<InputValueProps, "aria-label" | "placeholder">>;
+  Partial<Pick<InputValueProps, "aria-label" | "placeholder">> & {
+    /**
+     * The icon shown at the start of the text box. Pass `null` to hide it.
+     *
+     * @defaultValue `<MagnifyingGlass />`
+     */
+    icon?: ReactNode;
+  };
 
 const SearchInputTextBox = createStyledHOC(
   Input.TextBox,
@@ -132,12 +150,13 @@ const SearchInputTextBox = createStyledHOC(
       children,
       "aria-label": ariaLabel,
       placeholder = "Search...",
+      icon = <MagnifyingGlass />,
       ...props
     }: SearchInputTextBoxProps,
     forwardedRef
   ) => {
     const { disabled, size, onChange } = InputContext.useStyledContext();
-    const { suggestions, value } = use(SearchInputContext);
+    const { suggestions, filterSuggestions, value } = use(SearchInputContext);
 
     const listBoxId = `${useId()}-suggestions`;
     const [open, setOpen] = useState(false);
@@ -151,12 +170,13 @@ const SearchInputTextBox = createStyledHOC(
               const normalizedSuggestion = suggestion.toLocaleLowerCase();
 
               return (
-                normalizedSuggestion.includes(normalizedValue) &&
+                (!filterSuggestions ||
+                  normalizedSuggestion.includes(normalizedValue)) &&
                 normalizedSuggestion !== normalizedValue
               );
             })
           : EMPTY_SUGGESTIONS,
-      [normalizedValue, suggestions]
+      [filterSuggestions, normalizedValue, suggestions]
     );
     const isOpen = open && !disabled && filteredSuggestions.length > 0;
     const activeSuggestion = filteredSuggestions[activeIndex];
@@ -231,9 +251,11 @@ const SearchInputTextBox = createStyledHOC(
         shouldAdapt={false}>
         <ContextMenu.Anchor asChild={true}>
           <Input.TextBox ref={forwardedRef} {...props}>
-            <Field.Icon position="start" controlSize={size}>
-              <MagnifyingGlass />
-            </Field.Icon>
+            {icon != null && (
+              <Field.Icon position="start" controlSize={size}>
+                {icon}
+              </Field.Icon>
+            )}
 
             <Input.TextBox.Value
               role="combobox"
@@ -288,7 +310,8 @@ const SearchInputTextBox = createStyledHOC(
 );
 
 /**
- * A search text input with a magnifying-glass icon and a popover of
+ * A search text input with an icon (a magnifying glass unless `icon` is set
+ * on `SearchInput.TextBox`) and a popover of
  * suggestions (arrow keys to highlight, Enter to choose, Escape to dismiss).
  *
  * @remarks

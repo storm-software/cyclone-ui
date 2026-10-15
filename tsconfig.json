@@ -305,6 +305,9 @@
     },
     {
       "path": "./components/color-compositions"
+    },
+    {
+      "path": "./components/address-input"
     }
   ],
   "files": []

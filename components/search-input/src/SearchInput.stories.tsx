@@ -19,7 +19,9 @@
 import type { FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
+import { Funnel } from "@cyclone-ui/icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ReactNode } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import type { SearchInputProps } from "./SearchInput";
 import { SearchInput } from "./SearchInput";
@@ -34,6 +36,7 @@ type SearchInputStoryArgs = Pick<
 > &
   Pick<SearchInputProps, "suggestions"> & {
     defaultValue?: string;
+    icon?: ReactNode;
   };
 
 const meta: Meta<SearchInputStoryArgs> = {
@@ -41,7 +44,7 @@ const meta: Meta<SearchInputStoryArgs> = {
   component: SearchInput,
   tags: ["autodocs"],
   render: (
-    { defaultValue = "", suggestions, ...props }: SearchInputStoryArgs,
+    { defaultValue = "", suggestions, icon, ...props }: SearchInputStoryArgs,
     { id }: { id: string }
   ) => (
     <Form
@@ -50,7 +53,7 @@ const meta: Meta<SearchInputStoryArgs> = {
       <Field name="searchInputFieldName" {...props}>
         <Field.Label>Label Text</Field.Label>
         <SearchInput suggestions={suggestions}>
-          <SearchInput.TextBox />
+          <SearchInput.TextBox icon={icon} />
         </SearchInput>
       </Field>
     </Form>
@@ -83,6 +86,18 @@ const validation = (
 
 export const Base: Story = {
   args: {}
+};
+
+export const CustomIcon: Story = {
+  args: {
+    icon: <Funnel />
+  }
+};
+
+export const NoIcon: Story = {
+  args: {
+    icon: null
+  }
 };
 
 export const Required: Story = {

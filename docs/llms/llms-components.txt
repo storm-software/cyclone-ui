@@ -42,6 +42,40 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 | `../../components/accordion/node_modules/react/index.js` | `file` |  |
 | `../../components/accordion/src/index.ts` | `file` |  |
 
+## @cyclone-ui/address-input
+
+An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. It provides Map, Search and TextBox parts; the map sits outside the Field so a floating label still lines up.
+
+- **Name:** `@cyclone-ui/address-input`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/search-input`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/image`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/address-input/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react-native/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react/index.js` | `file` |  |
+| `../../components/address-input/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/alert
 
 An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, Alert.Content.Body, Alert.Close). Its type prop (base, brand, danger, warning, info, success, discovery, positive, negative) sets the color theme and default icon. Use it to show status or feedback messages in the page.
@@ -3246,6 +3280,40 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 | `../../components/accordion/node_modules/react-native/index.js` | `file` |  |
 | `../../components/accordion/node_modules/react/index.js` | `file` |  |
 | `../../components/accordion/src/index.ts` | `file` |  |
+
+## @cyclone-ui/address-input
+
+An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. It provides Map, Search and TextBox parts; the map sits outside the Field so a floating label still lines up.
+
+- **Name:** `@cyclone-ui/address-input`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/search-input`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/image`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/address-input/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react-native/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react/index.js` | `file` |  |
+| `../../components/address-input/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/alert
 
@@ -6452,6 +6520,40 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 | `../../components/accordion/node_modules/react/index.js` | `file` |  |
 | `../../components/accordion/src/index.ts` | `file` |  |
 
+## @cyclone-ui/address-input
+
+An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. It provides Map, Search and TextBox parts; the map sits outside the Field so a floating label still lines up.
+
+- **Name:** `@cyclone-ui/address-input`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/search-input`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/image`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/address-input/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react-native/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react/index.js` | `file` |  |
+| `../../components/address-input/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/alert
 
 An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, Alert.Content.Body, Alert.Close). Its type prop (base, brand, danger, warning, info, success, discovery, positive, negative) sets the color theme and default icon. Use it to show status or feedback messages in the page.
@@ -9656,6 +9758,40 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 | `../../components/accordion/node_modules/react-native/index.js` | `file` |  |
 | `../../components/accordion/node_modules/react/index.js` | `file` |  |
 | `../../components/accordion/src/index.ts` | `file` |  |
+
+## @cyclone-ui/address-input
+
+An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. It provides Map, Search and TextBox parts; the map sits outside the Field so a floating label still lines up.
+
+- **Name:** `@cyclone-ui/address-input`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/search-input`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/image`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/address-input/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react-native/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react/index.js` | `file` |  |
+| `../../components/address-input/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/alert
 
@@ -12862,6 +12998,40 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 | `../../components/accordion/node_modules/react/index.js` | `file` |  |
 | `../../components/accordion/src/index.ts` | `file` |  |
 
+## @cyclone-ui/address-input
+
+An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. It provides Map, Search and TextBox parts; the map sits outside the Field so a floating label still lines up.
+
+- **Name:** `@cyclone-ui/address-input`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/search-input`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/image`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/address-input/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react-native/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react/index.js` | `file` |  |
+| `../../components/address-input/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/alert
 
 An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, Alert.Content.Body, Alert.Close). Its type prop (base, brand, danger, warning, info, success, discovery, positive, negative) sets the color theme and default icon. Use it to show status or feedback messages in the page.
@@ -16066,6 +16236,40 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 | `../../components/accordion/node_modules/react-native/index.js` | `file` |  |
 | `../../components/accordion/node_modules/react/index.js` | `file` |  |
 | `../../components/accordion/src/index.ts` | `file` |  |
+
+## @cyclone-ui/address-input
+
+An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. It provides Map, Search and TextBox parts; the map sits outside the Field so a floating label still lines up.
+
+- **Name:** `@cyclone-ui/address-input`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/search-input`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/image`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/address-input/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react-native/index.js` | `file` |  |
+| `../../components/address-input/node_modules/react/index.js` | `file` |  |
+| `../../components/address-input/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/alert
 
