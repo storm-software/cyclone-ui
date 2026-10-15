@@ -34,6 +34,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `border-radius.popover` | `dimension` | `var(--border-radius-md)` | Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list. |
 | `border-radius.sheet` | `dimension` | `var(--border-radius-zero)` | Corner radius for sheets (0px, `border-radius.zero`). Sheets slide in flush against a viewport edge, so their corners stay square. Applied by Sheet to its exposed corners. |
 | `border-radius.sm` | `dimension` | `0.25rem` | Small radius (0.25rem) |
+| `border-radius.tab` | `dimension` | `var(--border-radius-sm)` | Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers. |
+| `border-radius.tabheader` | `dimension` | `var(--border-radius-md)` | Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers. |
 | `border-radius.tag` | `dimension` | `var(--border-radius-sm)` | Corner radius for tags (6px, `border-radius.md`). Used by Tag. |
 | `border-radius.tooltip` | `dimension` | `var(--border-radius-md)` | Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip. |
 | `border-radius.trigger` | `dimension` | `var(--border-radius-md)` | Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators). |
@@ -690,6 +692,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `border-radius.popover` | `dimension` | `var(--border-radius-md)` | Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list. |
 | `border-radius.sheet` | `dimension` | `var(--border-radius-zero)` | Corner radius for sheets (0px, `border-radius.zero`). Sheets slide in flush against a viewport edge, so their corners stay square. Applied by Sheet to its exposed corners. |
 | `border-radius.sm` | `dimension` | `0.25rem` | Small radius (0.25rem) |
+| `border-radius.tab` | `dimension` | `var(--border-radius-sm)` | Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers. |
+| `border-radius.tabheader` | `dimension` | `var(--border-radius-md)` | Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers. |
 | `border-radius.tag` | `dimension` | `var(--border-radius-sm)` | Corner radius for tags (6px, `border-radius.md`). Used by Tag. |
 | `border-radius.tooltip` | `dimension` | `var(--border-radius-md)` | Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip. |
 | `border-radius.trigger` | `dimension` | `var(--border-radius-md)` | Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators). |
@@ -1346,6 +1350,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `border-radius.popover` | `dimension` | `var(--border-radius-md)` | Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list. |
 | `border-radius.sheet` | `dimension` | `var(--border-radius-zero)` | Corner radius for sheets (0px, `border-radius.zero`). Sheets slide in flush against a viewport edge, so their corners stay square. Applied by Sheet to its exposed corners. |
 | `border-radius.sm` | `dimension` | `0.25rem` | Small radius (0.25rem) |
+| `border-radius.tab` | `dimension` | `var(--border-radius-sm)` | Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers. |
+| `border-radius.tabheader` | `dimension` | `var(--border-radius-md)` | Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers. |
 | `border-radius.tag` | `dimension` | `var(--border-radius-sm)` | Corner radius for tags (6px, `border-radius.md`). Used by Tag. |
 | `border-radius.tooltip` | `dimension` | `var(--border-radius-md)` | Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip. |
 | `border-radius.trigger` | `dimension` | `var(--border-radius-md)` | Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators). |
@@ -2002,6 +2008,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `border-radius.popover` | `dimension` | `var(--border-radius-md)` | Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list. |
 | `border-radius.sheet` | `dimension` | `var(--border-radius-zero)` | Corner radius for sheets (0px, `border-radius.zero`). Sheets slide in flush against a viewport edge, so their corners stay square. Applied by Sheet to its exposed corners. |
 | `border-radius.sm` | `dimension` | `0.25rem` | Small radius (0.25rem) |
+| `border-radius.tab` | `dimension` | `var(--border-radius-sm)` | Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers. |
+| `border-radius.tabheader` | `dimension` | `var(--border-radius-md)` | Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers. |
 | `border-radius.tag` | `dimension` | `var(--border-radius-sm)` | Corner radius for tags (6px, `border-radius.md`). Used by Tag. |
 | `border-radius.tooltip` | `dimension` | `var(--border-radius-md)` | Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip. |
 | `border-radius.trigger` | `dimension` | `var(--border-radius-md)` | Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators). |
@@ -2658,6 +2666,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `border-radius.popover` | `dimension` | `var(--border-radius-md)` | Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list. |
 | `border-radius.sheet` | `dimension` | `var(--border-radius-zero)` | Corner radius for sheets (0px, `border-radius.zero`). Sheets slide in flush against a viewport edge, so their corners stay square. Applied by Sheet to its exposed corners. |
 | `border-radius.sm` | `dimension` | `0.25rem` | Small radius (0.25rem) |
+| `border-radius.tab` | `dimension` | `var(--border-radius-sm)` | Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers. |
+| `border-radius.tabheader` | `dimension` | `var(--border-radius-md)` | Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers. |
 | `border-radius.tag` | `dimension` | `var(--border-radius-sm)` | Corner radius for tags (6px, `border-radius.md`). Used by Tag. |
 | `border-radius.tooltip` | `dimension` | `var(--border-radius-md)` | Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip. |
 | `border-radius.trigger` | `dimension` | `var(--border-radius-md)` | Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators). |
@@ -3314,6 +3324,8 @@ Use these documented design-token names and values as the source of truth; do no
 | `border-radius.popover` | `dimension` | `var(--border-radius-md)` | Corner radius for popovers and dropdown menus (6px, `border-radius.md`). Used by Popover and the Select dropdown list. |
 | `border-radius.sheet` | `dimension` | `var(--border-radius-zero)` | Corner radius for sheets (0px, `border-radius.zero`). Sheets slide in flush against a viewport edge, so their corners stay square. Applied by Sheet to its exposed corners. |
 | `border-radius.sm` | `dimension` | `0.25rem` | Small radius (0.25rem) |
+| `border-radius.tab` | `dimension` | `var(--border-radius-sm)` | Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers. |
+| `border-radius.tabheader` | `dimension` | `var(--border-radius-md)` | Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers. |
 | `border-radius.tag` | `dimension` | `var(--border-radius-sm)` | Corner radius for tags (6px, `border-radius.md`). Used by Tag. |
 | `border-radius.tooltip` | `dimension` | `var(--border-radius-md)` | Corner radius for tooltips (6px, `border-radius.md`). Used by Tooltip. |
 | `border-radius.trigger` | `dimension` | `var(--border-radius-md)` | Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators). |

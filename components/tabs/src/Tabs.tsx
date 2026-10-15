@@ -163,7 +163,7 @@ const TabsFrame = styled(TamaguiTabs, {
   displayName: "Tabs",
   context: TabsContext,
   activationMode: "manual",
-  borderRadius: "container",
+  borderRadius: "tab",
   position: "relative",
   height: "100%",
   width: "100%",
@@ -321,9 +321,9 @@ const TabsRovingIndicator = styled(YStack, {
         borderColor: "transparent"
       },
       floating: {
-        borderRadius: "trigger",
+        borderRadius: "tab",
         borderWidth: 1,
-        borderColor: "outline",
+        borderColor: "hairline",
         alignItems: "center",
         justifyContent: "center"
       },
@@ -448,8 +448,8 @@ const TabsHeaderList = styled(YStack, {
       },
       floating: {
         backgroundColor: "sunken",
-        borderRadius: "trigger",
-        borderColor: "outline",
+        borderRadius: "tab",
+        borderColor: "hairline",
         borderWidth: 1
       },
       tabbed: {
@@ -495,7 +495,7 @@ const TabsHeaderListImpl = createStyledHOC(
 
     return (
       <TabsHeaderList
-        group={"tabs"}
+        group="tabs"
         ref={forwardedRef}
         orientation={orientation}
         variant={variant}
@@ -642,15 +642,15 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
 
   return {
     backgroundColor: props.selected ? "surface" : "canvas hover:canvasHovered",
-    borderColor: "outline",
+    borderColor: "hairline",
     borderWidth,
     // Tamagui v3's Tabs.List is a Group that drops the connecting border on
     // every tab but the first; tabbed tabs are spaced apart and keep it.
     borderLeftWidth: horizontal ? borderWidth : undefined,
     borderTopWidth: horizontal ? undefined : borderWidth,
-    borderTopLeftRadius: "container",
-    borderTopRightRadius: horizontal ? "container" : 0,
-    borderBottomLeftRadius: horizontal ? 0 : "container",
+    borderTopLeftRadius: "tab",
+    borderTopRightRadius: horizontal ? "tab" : 0,
+    borderBottomLeftRadius: horizontal ? 0 : "tab",
     borderBottomRightRadius: 0,
     borderBottomColor: props.selected && horizontal ? "surface" : undefined,
     borderRightColor: props.selected && !horizontal ? "surface" : undefined,
@@ -744,11 +744,11 @@ const TabsContentList = styled(View, {
 
   return {
     backgroundColor: "surface",
-    borderColor: "outline",
+    borderColor: "hairline",
     borderWidth: props.bordered === false ? 0 : 1,
-    borderTopRightRadius: horizontal ? undefined : "container",
-    borderBottomLeftRadius: horizontal ? "container" : undefined,
-    borderBottomRightRadius: "container"
+    borderTopRightRadius: horizontal ? undefined : "tab",
+    borderBottomLeftRadius: horizontal ? "tab" : undefined,
+    borderBottomRightRadius: "tab"
   };
 });
 

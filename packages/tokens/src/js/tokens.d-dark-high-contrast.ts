@@ -565,6 +565,8 @@ declare const tokens: {
     tag: DesignToken;
     control: DesignToken;
     checkbox: DesignToken;
+    tab: DesignToken;
+    tabheader: DesignToken;
     dialog: DesignToken;
     sheet: DesignToken;
     drawer: DesignToken;

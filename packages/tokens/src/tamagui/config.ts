@@ -259,6 +259,8 @@ const tokens = createTokens({
     popover: 6,
     sheet: 0,
     sm: 4,
+    tab: 4,
+    tabheader: 6,
     tag: 4,
     tooltip: 6,
     trigger: 6,

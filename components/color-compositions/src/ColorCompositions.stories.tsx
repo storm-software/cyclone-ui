@@ -40,6 +40,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {};
 
+export const OriginalPalette: Story = {
+  args: { interval: 150, palette: "original" }
+};
+
+export const VibrantPalette: Story = {
+  args: { interval: 150, palette: "vibrant" }
+};
+
 export const Fast: Story = {
   args: { interval: 150 }
 };
@@ -49,7 +57,7 @@ export const Still: Story = {
 };
 
 export const Banner: Story = {
-  args: { maxWidth: undefined, height: 200 }
+  args: { maxWidth: undefined, height: 230 }
 };
 
 export const SmallPanels: Story = {

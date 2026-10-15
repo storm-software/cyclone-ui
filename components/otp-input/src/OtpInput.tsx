@@ -52,12 +52,18 @@ export interface OtpInputProps {
    */
   name?: string;
 
+  /**
+   * The size of the input fields.
+   */
   size?: FormControlSize;
+
+  /**
+   * Whether the input is disabled. When `true`, the user cannot interact with the input.
+   */
   disabled?: boolean;
 
   /**
-   * The code, for a controlled input. Inside a `Field`, the field holds the
-   * value instead.
+   * The code, for a controlled input. Inside a `Field`, the field holds the value instead.
    */
   value?: string;
 
@@ -100,8 +106,8 @@ export const OtpInput = createStyledHOC(
     forwardedRef
   ) => {
     const formControl = useFormControl();
-    const generatedName = useId();
-    const name = nameProp ?? formControl?.name ?? generatedName;
+    const id = useId();
+    const name = nameProp ?? formControl?.name ?? id;
     const size = sizeProp ?? formControl?.size;
     const disabled = disabledProp ?? formControl?.disabled ?? false;
     const focused = formControl?.focused ?? false;
@@ -358,4 +364,3 @@ export const OtpInput = createStyledHOC(
   },
   { displayName: "OtpInput" }
 );
-

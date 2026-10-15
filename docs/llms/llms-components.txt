@@ -711,6 +711,8 @@ A 2D color picker, built on the React Stately color model, for selecting two cha
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
+| `../../components/color-area/dist/index.cjs` | `file` |  |
+| `../../components/color-area/dist/index.mjs` | `file` |  |
 | `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react/index.js` | `file` |  |
@@ -742,6 +744,41 @@ An animated display component reproducing Ellsworth Kelly's "Colors for a Large 
 | `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
 | `../../components/color-compositions/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-picker
+
+A color input with a swatch trigger that opens a popover to pick the color from an area, sliders, channel fields and preset swatches.
+
+- **Name:** `@cyclone-ui/color-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/color-area`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/toggle-group`: `workspace:*`
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/color-picker/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/confetti-burst
 
@@ -3978,6 +4015,8 @@ A 2D color picker, built on the React Stately color model, for selecting two cha
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
+| `../../components/color-area/dist/index.cjs` | `file` |  |
+| `../../components/color-area/dist/index.mjs` | `file` |  |
 | `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react/index.js` | `file` |  |
@@ -4009,6 +4048,41 @@ An animated display component reproducing Ellsworth Kelly's "Colors for a Large 
 | `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
 | `../../components/color-compositions/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-picker
+
+A color input with a swatch trigger that opens a popover to pick the color from an area, sliders, channel fields and preset swatches.
+
+- **Name:** `@cyclone-ui/color-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/color-area`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/toggle-group`: `workspace:*`
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/color-picker/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/confetti-burst
 
@@ -7245,6 +7319,8 @@ A 2D color picker, built on the React Stately color model, for selecting two cha
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
+| `../../components/color-area/dist/index.cjs` | `file` |  |
+| `../../components/color-area/dist/index.mjs` | `file` |  |
 | `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react/index.js` | `file` |  |
@@ -7276,6 +7352,41 @@ An animated display component reproducing Ellsworth Kelly's "Colors for a Large 
 | `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
 | `../../components/color-compositions/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-picker
+
+A color input with a swatch trigger that opens a popover to pick the color from an area, sliders, channel fields and preset swatches.
+
+- **Name:** `@cyclone-ui/color-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/color-area`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/toggle-group`: `workspace:*`
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/color-picker/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/confetti-burst
 
@@ -10512,6 +10623,8 @@ A 2D color picker, built on the React Stately color model, for selecting two cha
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
+| `../../components/color-area/dist/index.cjs` | `file` |  |
+| `../../components/color-area/dist/index.mjs` | `file` |  |
 | `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react/index.js` | `file` |  |
@@ -10543,6 +10656,41 @@ An animated display component reproducing Ellsworth Kelly's "Colors for a Large 
 | `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
 | `../../components/color-compositions/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-picker
+
+A color input with a swatch trigger that opens a popover to pick the color from an area, sliders, channel fields and preset swatches.
+
+- **Name:** `@cyclone-ui/color-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/color-area`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/toggle-group`: `workspace:*`
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/color-picker/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/confetti-burst
 
@@ -13779,6 +13927,8 @@ A 2D color picker, built on the React Stately color model, for selecting two cha
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
+| `../../components/color-area/dist/index.cjs` | `file` |  |
+| `../../components/color-area/dist/index.mjs` | `file` |  |
 | `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react/index.js` | `file` |  |
@@ -13810,6 +13960,41 @@ An animated display component reproducing Ellsworth Kelly's "Colors for a Large 
 | `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
 | `../../components/color-compositions/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-picker
+
+A color input with a swatch trigger that opens a popover to pick the color from an area, sliders, channel fields and preset swatches.
+
+- **Name:** `@cyclone-ui/color-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/color-area`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/toggle-group`: `workspace:*`
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/color-picker/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/confetti-burst
 
@@ -17046,6 +17231,8 @@ A 2D color picker, built on the React Stately color model, for selecting two cha
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
+| `../../components/color-area/dist/index.cjs` | `file` |  |
+| `../../components/color-area/dist/index.mjs` | `file` |  |
 | `../../components/color-area/node_modules/react-dom/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-area/node_modules/react/index.js` | `file` |  |
@@ -17077,6 +17264,41 @@ An animated display component reproducing Ellsworth Kelly's "Colors for a Large 
 | `../../components/color-compositions/node_modules/react-native/index.js` | `file` |  |
 | `../../components/color-compositions/node_modules/react/index.js` | `file` |  |
 | `../../components/color-compositions/src/index.ts` | `file` |  |
+
+## @cyclone-ui/color-picker
+
+A color input with a swatch trigger that opens a popover to pick the color from an area, sliders, channel fields and preset swatches.
+
+- **Name:** `@cyclone-ui/color-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/color-area`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@cyclone-ui/toggle-group`: `workspace:*`
+- `@react-stately/color`: `catalog:`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/color-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/color-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/color-picker/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/confetti-burst
 

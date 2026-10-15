@@ -55,14 +55,7 @@ export default meta;
 type Story = StoryObj<OtpInputStoryArgs>;
 
 const validation = (
-  type:
-    | "danger"
-    | "warning"
-    | "info"
-    | "discovery"
-    | "success"
-    | "positive"
-    | "negative"
+  type: "danger" | "warning" | "info" | "discovery" | "success"
 ) => ({
   onChange: [
     () => [

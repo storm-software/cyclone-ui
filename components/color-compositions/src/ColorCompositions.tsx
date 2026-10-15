@@ -18,15 +18,15 @@
 
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, View } from "@tamagui/core";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 /** Panel colors, sampled from Ellsworth Kelly's "Colors for a Large Wall" (1951). */
-const PALETTE = {
+const ORIGINAL_PALETTE = {
   white: "#ebe9e2",
   black: "#1c1c21",
   umber: "#2e2424",
   forest: "#1f302a",
-  teal: "#1a2a2a",
+  teal: "#008b8b",
   plum: "#33223a",
   navy: "#1f2664",
   violet: "#7f5392",
@@ -39,18 +39,36 @@ const PALETTE = {
   green: "#739d53"
 } as const;
 
-export type ColorCompositionsPanel = keyof typeof PALETTE;
+const VIBRANT_PALETTE = {
+  white: "#fbfaf5",
+  black: "#0d0d14",
+  umber: "#7a2e12",
+  forest: "#00703c",
+  teal: "#008b8b",
+  plum: "#8e1a8f",
+  navy: "#1a2bd9",
+  violet: "#a63dff",
+  orange: "#ff5a00",
+  blue: "#0077ff",
+  yellow: "#ffe600",
+  pink: "#ff2e7e",
+  red: "#ff1a1a",
+  leaf: "#7cff3a",
+  green: "#00c853"
+} as const;
+
+export type ColorCompositionsPanel = keyof typeof ORIGINAL_PALETTE;
 
 const COLUMNS = 8;
 
 // prettier-ignore
 const PAINTING: ColorCompositionsPanel[] = [
-  "umber", "white", "violet", "white", "black", "orange", "white", "blue",
+  "umber", "black", "violet", "teal", "black", "orange", "white", "blue",
   "white", "forest", "black", "white", "yellow", "white", "pink", "black",
-  "black", "white", "white", "navy", "white", "white", "white", "orange",
-  "red", "white", "blue", "white", "leaf", "black", "plum", "white",
+  "black", "white", "white", "navy", "white", "black", "white", "orange",
+  "red", "white", "blue", "violet", "leaf", "black", "plum", "teal",
   "white", "plum", "black", "white", "white", "red", "white", "navy",
-  "teal", "white", "white", "blue", "white", "white", "teal", "black",
+  "teal", "white", "violet", "blue", "white", "white", "pink", "black",
   "white", "pink", "green", "white", "black", "violet", "white", "white"
 ];
 
@@ -115,6 +133,9 @@ export type ColorCompositionsProps = Omit<
    * panels as its dimensions allow, stretching them slightly to fill.
    */
   panelSize?: number;
+
+  /** The color palette to use for the panels. */
+  palette?: typeof ORIGINAL_PALETTE | "original" | "vibrant";
 };
 
 /** An animated reproduction of Ellsworth Kelly's "Colors for a Large Wall". */
@@ -136,6 +157,18 @@ export const ColorCompositions = createStyledHOC(
       layout.width > 0 ? Math.max(1, Math.round(layout.width / size)) : COLUMNS;
     const rows =
       layout.height > 0 ? Math.max(1, Math.round(layout.height / size)) : ROWS;
+
+    const palette = useMemo(() => {
+      if (typeof props.palette === "object") {
+        return props.palette;
+      }
+
+      if (props.palette === "vibrant") {
+        return VIBRANT_PALETTE;
+      }
+
+      return ORIGINAL_PALETTE;
+    }, [props.palette]);
 
     // Start from the painting so server and client markup match.
     const [grid, setGrid] = useState({
@@ -194,7 +227,7 @@ export const ColorCompositions = createStyledHOC(
                   key={column}
                   flex={1}
                   transition="500ms"
-                  backgroundColor={PALETTE[panel]}
+                  backgroundColor={palette[panel]}
                 />
               ))}
           </View>

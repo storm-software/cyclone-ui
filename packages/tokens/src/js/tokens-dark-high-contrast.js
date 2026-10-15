@@ -13505,6 +13505,52 @@ module.exports = {
       },
       path: ["border-radius", "checkbox"],
     },
+    tab: {
+      key: "{border-radius.tab}",
+      $description:
+        "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+      $type: "dimension",
+      $value: "0.25rem",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
+      isSource: true,
+      original: {
+        $description:
+          "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+        $type: "dimension",
+        $value: "{border-radius.sm}",
+        key: "{border-radius.tab}",
+      },
+      name: "BorderRadiusTab",
+      attributes: {
+        category: "border-radius",
+        type: "tab",
+      },
+      path: ["border-radius", "tab"],
+    },
+    tabheader: {
+      key: "{border-radius.tabheader}",
+      $description:
+        "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+      $type: "dimension",
+      $value: "0.375rem",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
+      isSource: true,
+      original: {
+        $description:
+          "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+        $type: "dimension",
+        $value: "{border-radius.md}",
+        key: "{border-radius.tabheader}",
+      },
+      name: "BorderRadiusTabheader",
+      attributes: {
+        category: "border-radius",
+        type: "tabheader",
+      },
+      path: ["border-radius", "tabheader"],
+    },
     dialog: {
       key: "{border-radius.dialog}",
       $description:

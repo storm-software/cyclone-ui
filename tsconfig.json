@@ -311,6 +311,9 @@
     },
     {
       "path": "./components/color-area"
+    },
+    {
+      "path": "./components/color-picker"
     }
   ],
   "files": []

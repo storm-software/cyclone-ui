@@ -188,6 +188,22 @@ export const manifest: DesignSystemManifest = {
       "value": "0.25rem"
     },
     {
+      "path": "border-radius.tab",
+      "cssVar": "--storm-border-radius-tab",
+      "type": "dimension",
+      "category": "radius",
+      "value": "0.25rem",
+      "alias": true
+    },
+    {
+      "path": "border-radius.tabheader",
+      "cssVar": "--storm-border-radius-tabheader",
+      "type": "dimension",
+      "category": "radius",
+      "value": "0.375rem",
+      "alias": true
+    },
+    {
       "path": "border-radius.tag",
       "cssVar": "--storm-border-radius-tag",
       "type": "dimension",
@@ -4140,6 +4156,13 @@ export const manifest: DesignSystemManifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/color-picker",
+      "jsx": [
+        "ColorPicker"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/confetti-burst",
       "jsx": [
         "ConfettiBurst"
@@ -4994,6 +5017,8 @@ export const manifest: DesignSystemManifest = {
         "popover",
         "sheet",
         "sm",
+        "tab",
+        "tabheader",
         "tag",
         "tooltip",
         "trigger",

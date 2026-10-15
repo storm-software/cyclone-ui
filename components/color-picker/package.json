@@ -1,0 +1,53 @@
+{
+  "name": "@cyclone-ui/color-picker",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A color input with a swatch trigger that opens a popover to pick the color from an area, sliders, channel fields and preset swatches.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/color-picker"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/color-area": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/toggle-group": "workspace:*",
+    "@react-stately/color": "catalog:",
+    "@tamagui/core": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./ColorPicker": {
+      "import": "./dist/ColorPicker.mjs",
+      "require": "./dist/ColorPicker.cjs"
+    },
+    "./*": "./*"
+  }
+}

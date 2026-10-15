@@ -4344,6 +4344,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "border-radius.tab",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--cu-border-radius-tab",
+      description: "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "border-radius.tabheader",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--cu-border-radius-tabheader",
+      description: "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "border-radius.dialog",
       type: "dimension",
       value: "var(--border-radius-md)",
@@ -9409,6 +9427,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "border-radius.tab",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--cu-border-radius-tab",
+      description: "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "border-radius.tabheader",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--cu-border-radius-tabheader",
+      description: "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
       theme: undefined,
       typography: false
     },
@@ -14482,6 +14518,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "border-radius.tab",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--cu-border-radius-tab",
+      description: "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "border-radius.tabheader",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--cu-border-radius-tabheader",
+      description: "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "border-radius.dialog",
       type: "dimension",
       value: "var(--border-radius-md)",
@@ -19547,6 +19601,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "border-radius.tab",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--cu-border-radius-tab",
+      description: "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "border-radius.tabheader",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--cu-border-radius-tabheader",
+      description: "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
       theme: undefined,
       typography: false
     },
@@ -24620,6 +24692,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "border-radius.tab",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--cu-border-radius-tab",
+      description: "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "border-radius.tabheader",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--cu-border-radius-tabheader",
+      description: "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "border-radius.dialog",
       type: "dimension",
       value: "var(--border-radius-md)",
@@ -29685,6 +29775,24 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-checkbox",
       description: "Corner radius for the checkbox box (6px, `border-radius.md`). Kept smaller than `control` so the small box still reads as a square rather than a pill. Used by Checkbox.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "border-radius.tab",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--cu-border-radius-tab",
+      description: "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "border-radius.tabheader",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--cu-border-radius-tabheader",
+      description: "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
       theme: undefined,
       typography: false
     },
