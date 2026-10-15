@@ -821,8 +821,8 @@ function addMissingRingTokens(dictionary: unknown): unknown {
         [ringLayer(ringColor, 1)]
       ],
       [`${name}-offset`]: [
-        `${name} 3px focus ring with a 2px gap`,
-        [gap(2), ringLayer(ringColor, 5)]
+        `${name} 3px focus ring with a 3px gap`,
+        [gap(3), ringLayer(ringColor, 6)]
       ],
       [`${name}-subtle-offset`]: [
         `${name} 1px focus ring with a 2px gap`,

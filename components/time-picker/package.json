@@ -1,0 +1,57 @@
+{
+  "name": "@cyclone-ui/time-picker",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A time input with a masked text box and a clock popover whose hand can be pressed or dragged to pick the hour and minutes. It shows a 12-hour clock with AM/PM or a 24-hour clock (`hourCycle`). Arrow keys step the part under the caret, and space, up or down swap AM/PM. When wrapped in a Field it connects to the form, formatting, parsing and masking the field's 24-hour HH:mm value.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/time-picker"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@maskito/core": "catalog:",
+    "@maskito/kit": "^3.11.1",
+    "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*"
+  },
+  "devDependencies": {
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./TimePicker": {
+      "import": "./dist/TimePicker.mjs",
+      "require": "./dist/TimePicker.cjs"
+    },
+    "./*": "./*"
+  }
+}

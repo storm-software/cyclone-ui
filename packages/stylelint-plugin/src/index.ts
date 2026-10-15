@@ -4542,6 +4542,13 @@ export const manifest: DesignSystemManifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/time-picker",
+      "jsx": [
+        "TimePicker"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/timeline",
       "jsx": [
         "Timeline"

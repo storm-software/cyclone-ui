@@ -16550,7 +16550,7 @@ module.exports = {
     },
     "base-offset": {
       key: "{ring.base-offset}",
-      $description: "Generated base 3px focus ring with a 2px gap",
+      $description: "Generated base 3px focus ring with a 3px gap",
       $type: "shadow",
       $value: [
         {
@@ -16568,7 +16568,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 2,
+            value: 3,
             unit: "px",
           },
         },
@@ -16587,14 +16587,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 5,
+            value: 6,
             unit: "px",
           },
         },
       ],
       theme: "base",
       original: {
-        $description: "Generated base 3px focus ring with a 2px gap",
+        $description: "Generated base 3px focus ring with a 3px gap",
         $type: "shadow",
         $value: [
           {
@@ -16612,7 +16612,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 2,
+              value: 3,
               unit: "px",
             },
           },
@@ -16631,7 +16631,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 5,
+              value: 6,
               unit: "px",
             },
           },
@@ -16866,7 +16866,7 @@ module.exports = {
     },
     "danger-offset": {
       key: "{ring.danger-offset}",
-      $description: "Generated danger 3px focus ring with a 2px gap",
+      $description: "Generated danger 3px focus ring with a 3px gap",
       $type: "shadow",
       $value: [
         {
@@ -16884,7 +16884,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 2,
+            value: 3,
             unit: "px",
           },
         },
@@ -16903,14 +16903,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 5,
+            value: 6,
             unit: "px",
           },
         },
       ],
       theme: "danger",
       original: {
-        $description: "Generated danger 3px focus ring with a 2px gap",
+        $description: "Generated danger 3px focus ring with a 3px gap",
         $type: "shadow",
         $value: [
           {
@@ -16928,7 +16928,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 2,
+              value: 3,
               unit: "px",
             },
           },
@@ -16947,7 +16947,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 5,
+              value: 6,
               unit: "px",
             },
           },
@@ -17182,7 +17182,7 @@ module.exports = {
     },
     "warning-offset": {
       key: "{ring.warning-offset}",
-      $description: "Generated warning 3px focus ring with a 2px gap",
+      $description: "Generated warning 3px focus ring with a 3px gap",
       $type: "shadow",
       $value: [
         {
@@ -17200,7 +17200,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 2,
+            value: 3,
             unit: "px",
           },
         },
@@ -17219,14 +17219,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 5,
+            value: 6,
             unit: "px",
           },
         },
       ],
       theme: "warning",
       original: {
-        $description: "Generated warning 3px focus ring with a 2px gap",
+        $description: "Generated warning 3px focus ring with a 3px gap",
         $type: "shadow",
         $value: [
           {
@@ -17244,7 +17244,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 2,
+              value: 3,
               unit: "px",
             },
           },
@@ -17263,7 +17263,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 5,
+              value: 6,
               unit: "px",
             },
           },
@@ -17498,7 +17498,7 @@ module.exports = {
     },
     "info-offset": {
       key: "{ring.info-offset}",
-      $description: "Generated info 3px focus ring with a 2px gap",
+      $description: "Generated info 3px focus ring with a 3px gap",
       $type: "shadow",
       $value: [
         {
@@ -17516,7 +17516,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 2,
+            value: 3,
             unit: "px",
           },
         },
@@ -17535,14 +17535,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 5,
+            value: 6,
             unit: "px",
           },
         },
       ],
       theme: "info",
       original: {
-        $description: "Generated info 3px focus ring with a 2px gap",
+        $description: "Generated info 3px focus ring with a 3px gap",
         $type: "shadow",
         $value: [
           {
@@ -17560,7 +17560,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 2,
+              value: 3,
               unit: "px",
             },
           },
@@ -17579,7 +17579,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 5,
+              value: 6,
               unit: "px",
             },
           },
@@ -17814,7 +17814,7 @@ module.exports = {
     },
     "discovery-offset": {
       key: "{ring.discovery-offset}",
-      $description: "Generated discovery 3px focus ring with a 2px gap",
+      $description: "Generated discovery 3px focus ring with a 3px gap",
       $type: "shadow",
       $value: [
         {
@@ -17832,7 +17832,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 2,
+            value: 3,
             unit: "px",
           },
         },
@@ -17851,14 +17851,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 5,
+            value: 6,
             unit: "px",
           },
         },
       ],
       theme: "discovery",
       original: {
-        $description: "Generated discovery 3px focus ring with a 2px gap",
+        $description: "Generated discovery 3px focus ring with a 3px gap",
         $type: "shadow",
         $value: [
           {
@@ -17876,7 +17876,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 2,
+              value: 3,
               unit: "px",
             },
           },
@@ -17895,7 +17895,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 5,
+              value: 6,
               unit: "px",
             },
           },
@@ -18130,7 +18130,7 @@ module.exports = {
     },
     "success-offset": {
       key: "{ring.success-offset}",
-      $description: "Generated success 3px focus ring with a 2px gap",
+      $description: "Generated success 3px focus ring with a 3px gap",
       $type: "shadow",
       $value: [
         {
@@ -18148,7 +18148,7 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 2,
+            value: 3,
             unit: "px",
           },
         },
@@ -18167,14 +18167,14 @@ module.exports = {
             unit: "px",
           },
           spread: {
-            value: 5,
+            value: 6,
             unit: "px",
           },
         },
       ],
       theme: "success",
       original: {
-        $description: "Generated success 3px focus ring with a 2px gap",
+        $description: "Generated success 3px focus ring with a 3px gap",
         $type: "shadow",
         $value: [
           {
@@ -18192,7 +18192,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 2,
+              value: 3,
               unit: "px",
             },
           },
@@ -18211,7 +18211,7 @@ module.exports = {
               unit: "px",
             },
             spread: {
-              value: 5,
+              value: 6,
               unit: "px",
             },
           },

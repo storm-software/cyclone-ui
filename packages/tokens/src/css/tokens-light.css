@@ -1066,16 +1066,16 @@
   --storm-color-info-link: var(--storm-color-info-primary); /** Generated info hyperlink text color (matches primary) */
   --storm-color-discovery-link: var(--storm-color-discovery-primary); /** Generated discovery hyperlink text color (matches primary) */
   --storm-color-success-link: var(--storm-color-success-primary); /** Generated success hyperlink text color (matches primary) */
-  --storm-ring-base-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 5px #1f1f211a; /** Generated base 3px focus ring with a 2px gap */
+  --storm-ring-base-offset: 0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 6px #1f1f211a; /** Generated base 3px focus ring with a 3px gap */
   --storm-ring-base-subtle-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #1f1f211a; /** Generated base 1px focus ring with a 2px gap */
-  --storm-ring-danger-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 5px #8e223e26; /** Generated danger 3px focus ring with a 2px gap */
+  --storm-ring-danger-offset: 0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 6px #8e223e26; /** Generated danger 3px focus ring with a 3px gap */
   --storm-ring-danger-subtle-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #8e223e26; /** Generated danger 1px focus ring with a 2px gap */
-  --storm-ring-warning-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 5px #76541726; /** Generated warning 3px focus ring with a 2px gap */
+  --storm-ring-warning-offset: 0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 6px #76541726; /** Generated warning 3px focus ring with a 3px gap */
   --storm-ring-warning-subtle-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #76541726; /** Generated warning 1px focus ring with a 2px gap */
-  --storm-ring-info-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 5px #2055b326; /** Generated info 3px focus ring with a 2px gap */
+  --storm-ring-info-offset: 0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 6px #2055b326; /** Generated info 3px focus ring with a 3px gap */
   --storm-ring-info-subtle-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #2055b326; /** Generated info 1px focus ring with a 2px gap */
-  --storm-ring-discovery-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 5px #59439526; /** Generated discovery 3px focus ring with a 2px gap */
+  --storm-ring-discovery-offset: 0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 6px #59439526; /** Generated discovery 3px focus ring with a 3px gap */
   --storm-ring-discovery-subtle-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #59439526; /** Generated discovery 1px focus ring with a 2px gap */
-  --storm-ring-success-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 5px #216b5326; /** Generated success 3px focus ring with a 2px gap */
+  --storm-ring-success-offset: 0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 6px #216b5326; /** Generated success 3px focus ring with a 3px gap */
   --storm-ring-success-subtle-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #216b5326; /** Generated success 1px focus ring with a 2px gap */
 }

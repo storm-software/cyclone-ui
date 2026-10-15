@@ -4886,9 +4886,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f1f1f11a",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 2px gap",
+      description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -4922,9 +4922,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #cf2d5626",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 2px gap",
+      description: "Generated danger 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -4958,9 +4958,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f7ac2326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f7ac2326",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 2px gap",
+      description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -4994,9 +4994,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #4d8eff26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #4d8eff26",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 2px gap",
+      description: "Generated info 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -5030,9 +5030,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #9277da26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #9277da26",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 2px gap",
+      description: "Generated discovery 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -5066,9 +5066,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #45c79126",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #45c79126",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 2px gap",
+      description: "Generated success 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -9955,9 +9955,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f1f1f11a",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 2px gap",
+      description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -9991,9 +9991,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #cf2d5626",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 2px gap",
+      description: "Generated danger 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -10027,9 +10027,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f7ac2326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f7ac2326",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 2px gap",
+      description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -10063,9 +10063,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #4d8eff26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #4d8eff26",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 2px gap",
+      description: "Generated info 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -10099,9 +10099,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #9277da26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #9277da26",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 2px gap",
+      description: "Generated discovery 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -10135,9 +10135,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #45c79126",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #45c79126",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 2px gap",
+      description: "Generated success 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -15024,9 +15024,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f1f1f11a",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 2px gap",
+      description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -15060,9 +15060,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #cf2d5626",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 2px gap",
+      description: "Generated danger 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -15096,9 +15096,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f7ac2326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f7ac2326",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 2px gap",
+      description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -15132,9 +15132,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #4d8eff26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #4d8eff26",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 2px gap",
+      description: "Generated info 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -15168,9 +15168,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #9277da26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #9277da26",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 2px gap",
+      description: "Generated discovery 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -15204,9 +15204,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #45c79126",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #45c79126",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 2px gap",
+      description: "Generated success 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -20093,9 +20093,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #1f1f211a",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 2px gap",
+      description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -20129,9 +20129,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #8e223e26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 2px gap",
+      description: "Generated danger 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -20165,9 +20165,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #76541726",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #76541726",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 2px gap",
+      description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -20201,9 +20201,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #2055b326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #2055b326",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 2px gap",
+      description: "Generated info 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -20237,9 +20237,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #59439526",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #59439526",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 2px gap",
+      description: "Generated discovery 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -20273,9 +20273,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #216b5326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #216b5326",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 2px gap",
+      description: "Generated success 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -25162,9 +25162,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #1f1f211a",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 2px gap",
+      description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -25198,9 +25198,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #8e223e26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 2px gap",
+      description: "Generated danger 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -25234,9 +25234,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #76541726",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #76541726",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 2px gap",
+      description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -25270,9 +25270,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #2055b326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #2055b326",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 2px gap",
+      description: "Generated info 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -25306,9 +25306,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #59439526",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #59439526",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 2px gap",
+      description: "Generated discovery 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -25342,9 +25342,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #216b5326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #216b5326",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 2px gap",
+      description: "Generated success 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -30231,9 +30231,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #1f1f211a",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a",
       cssVar: "--cu-ring-base-offset",
-      description: "Generated base 3px focus ring with a 2px gap",
+      description: "Generated base 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -30267,9 +30267,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #8e223e26",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26",
       cssVar: "--cu-ring-danger-offset",
-      description: "Generated danger 3px focus ring with a 2px gap",
+      description: "Generated danger 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -30303,9 +30303,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #76541726",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #76541726",
       cssVar: "--cu-ring-warning-offset",
-      description: "Generated warning 3px focus ring with a 2px gap",
+      description: "Generated warning 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -30339,9 +30339,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #2055b326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #2055b326",
       cssVar: "--cu-ring-info-offset",
-      description: "Generated info 3px focus ring with a 2px gap",
+      description: "Generated info 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -30375,9 +30375,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #59439526",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #59439526",
       cssVar: "--cu-ring-discovery-offset",
-      description: "Generated discovery 3px focus ring with a 2px gap",
+      description: "Generated discovery 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },
@@ -30411,9 +30411,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #216b5326",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #216b5326",
       cssVar: "--cu-ring-success-offset",
-      description: "Generated success 3px focus ring with a 2px gap",
+      description: "Generated success 3px focus ring with a 3px gap",
       theme: undefined,
       typography: false
     },

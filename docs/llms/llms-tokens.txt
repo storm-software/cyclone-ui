@@ -421,27 +421,27 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `ring.base` | `shadow` | `0px 0px 0px 3px #1f1f211a` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #1f1f211a` | Generated base 3px focus ring with a 2px gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f211a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a` | Generated base 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e26` | Generated danger 3px focus ring with no gap |
-| `ring.danger-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #8e223e26` | Generated danger 3px focus ring with a 2px gap |
+| `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e26` | Generated danger 1px outline focus ring with no gap |
 | `ring.danger-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #8e223e26` | Generated danger 1px focus ring with a 2px gap |
 | `ring.discovery` | `shadow` | `0px 0px 0px 3px #59439526` | Generated discovery 3px focus ring with no gap |
-| `ring.discovery-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #59439526` | Generated discovery 3px focus ring with a 2px gap |
+| `ring.discovery-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #59439526` | Generated discovery 3px focus ring with a 3px gap |
 | `ring.discovery-subtle` | `shadow` | `0px 0px 0px 1px #59439526` | Generated discovery 1px outline focus ring with no gap |
 | `ring.discovery-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #59439526` | Generated discovery 1px focus ring with a 2px gap |
 | `ring.info` | `shadow` | `0px 0px 0px 3px #2055b326` | Generated info 3px focus ring with no gap |
-| `ring.info-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #2055b326` | Generated info 3px focus ring with a 2px gap |
+| `ring.info-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #2055b326` | Generated info 3px focus ring with a 3px gap |
 | `ring.info-subtle` | `shadow` | `0px 0px 0px 1px #2055b326` | Generated info 1px outline focus ring with no gap |
 | `ring.info-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #2055b326` | Generated info 1px focus ring with a 2px gap |
 | `ring.success` | `shadow` | `0px 0px 0px 3px #216b5326` | Generated success 3px focus ring with no gap |
-| `ring.success-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #216b5326` | Generated success 3px focus ring with a 2px gap |
+| `ring.success-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #216b5326` | Generated success 3px focus ring with a 3px gap |
 | `ring.success-subtle` | `shadow` | `0px 0px 0px 1px #216b5326` | Generated success 1px outline focus ring with no gap |
 | `ring.success-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #216b5326` | Generated success 1px focus ring with a 2px gap |
 | `ring.warning` | `shadow` | `0px 0px 0px 3px #76541726` | Generated warning 3px focus ring with no gap |
-| `ring.warning-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #76541726` | Generated warning 3px focus ring with a 2px gap |
+| `ring.warning-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #76541726` | Generated warning 3px focus ring with a 3px gap |
 | `ring.warning-subtle` | `shadow` | `0px 0px 0px 1px #76541726` | Generated warning 1px outline focus ring with no gap |
 | `ring.warning-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #76541726` | Generated warning 1px focus ring with a 2px gap |
 
@@ -1077,27 +1077,27 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `ring.base` | `shadow` | `0px 0px 0px 3px #1f1f211a` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #1f1f211a` | Generated base 3px focus ring with a 2px gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f211a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a` | Generated base 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e26` | Generated danger 3px focus ring with no gap |
-| `ring.danger-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #8e223e26` | Generated danger 3px focus ring with a 2px gap |
+| `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e26` | Generated danger 1px outline focus ring with no gap |
 | `ring.danger-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #8e223e26` | Generated danger 1px focus ring with a 2px gap |
 | `ring.discovery` | `shadow` | `0px 0px 0px 3px #59439526` | Generated discovery 3px focus ring with no gap |
-| `ring.discovery-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #59439526` | Generated discovery 3px focus ring with a 2px gap |
+| `ring.discovery-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #59439526` | Generated discovery 3px focus ring with a 3px gap |
 | `ring.discovery-subtle` | `shadow` | `0px 0px 0px 1px #59439526` | Generated discovery 1px outline focus ring with no gap |
 | `ring.discovery-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #59439526` | Generated discovery 1px focus ring with a 2px gap |
 | `ring.info` | `shadow` | `0px 0px 0px 3px #2055b326` | Generated info 3px focus ring with no gap |
-| `ring.info-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #2055b326` | Generated info 3px focus ring with a 2px gap |
+| `ring.info-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #2055b326` | Generated info 3px focus ring with a 3px gap |
 | `ring.info-subtle` | `shadow` | `0px 0px 0px 1px #2055b326` | Generated info 1px outline focus ring with no gap |
 | `ring.info-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #2055b326` | Generated info 1px focus ring with a 2px gap |
 | `ring.success` | `shadow` | `0px 0px 0px 3px #216b5326` | Generated success 3px focus ring with no gap |
-| `ring.success-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #216b5326` | Generated success 3px focus ring with a 2px gap |
+| `ring.success-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #216b5326` | Generated success 3px focus ring with a 3px gap |
 | `ring.success-subtle` | `shadow` | `0px 0px 0px 1px #216b5326` | Generated success 1px outline focus ring with no gap |
 | `ring.success-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #216b5326` | Generated success 1px focus ring with a 2px gap |
 | `ring.warning` | `shadow` | `0px 0px 0px 3px #76541726` | Generated warning 3px focus ring with no gap |
-| `ring.warning-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #76541726` | Generated warning 3px focus ring with a 2px gap |
+| `ring.warning-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #76541726` | Generated warning 3px focus ring with a 3px gap |
 | `ring.warning-subtle` | `shadow` | `0px 0px 0px 1px #76541726` | Generated warning 1px outline focus ring with no gap |
 | `ring.warning-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #76541726` | Generated warning 1px focus ring with a 2px gap |
 
@@ -1733,27 +1733,27 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `ring.base` | `shadow` | `0px 0px 0px 3px #1f1f211a` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #1f1f211a` | Generated base 3px focus ring with a 2px gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f211a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a` | Generated base 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e26` | Generated danger 3px focus ring with no gap |
-| `ring.danger-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #8e223e26` | Generated danger 3px focus ring with a 2px gap |
+| `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e26` | Generated danger 1px outline focus ring with no gap |
 | `ring.danger-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #8e223e26` | Generated danger 1px focus ring with a 2px gap |
 | `ring.discovery` | `shadow` | `0px 0px 0px 3px #59439526` | Generated discovery 3px focus ring with no gap |
-| `ring.discovery-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #59439526` | Generated discovery 3px focus ring with a 2px gap |
+| `ring.discovery-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #59439526` | Generated discovery 3px focus ring with a 3px gap |
 | `ring.discovery-subtle` | `shadow` | `0px 0px 0px 1px #59439526` | Generated discovery 1px outline focus ring with no gap |
 | `ring.discovery-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #59439526` | Generated discovery 1px focus ring with a 2px gap |
 | `ring.info` | `shadow` | `0px 0px 0px 3px #2055b326` | Generated info 3px focus ring with no gap |
-| `ring.info-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #2055b326` | Generated info 3px focus ring with a 2px gap |
+| `ring.info-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #2055b326` | Generated info 3px focus ring with a 3px gap |
 | `ring.info-subtle` | `shadow` | `0px 0px 0px 1px #2055b326` | Generated info 1px outline focus ring with no gap |
 | `ring.info-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #2055b326` | Generated info 1px focus ring with a 2px gap |
 | `ring.success` | `shadow` | `0px 0px 0px 3px #216b5326` | Generated success 3px focus ring with no gap |
-| `ring.success-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #216b5326` | Generated success 3px focus ring with a 2px gap |
+| `ring.success-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #216b5326` | Generated success 3px focus ring with a 3px gap |
 | `ring.success-subtle` | `shadow` | `0px 0px 0px 1px #216b5326` | Generated success 1px outline focus ring with no gap |
 | `ring.success-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #216b5326` | Generated success 1px focus ring with a 2px gap |
 | `ring.warning` | `shadow` | `0px 0px 0px 3px #76541726` | Generated warning 3px focus ring with no gap |
-| `ring.warning-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #76541726` | Generated warning 3px focus ring with a 2px gap |
+| `ring.warning-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #76541726` | Generated warning 3px focus ring with a 3px gap |
 | `ring.warning-subtle` | `shadow` | `0px 0px 0px 1px #76541726` | Generated warning 1px outline focus ring with no gap |
 | `ring.warning-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #76541726` | Generated warning 1px focus ring with a 2px gap |
 
@@ -2389,27 +2389,27 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `ring.base` | `shadow` | `0px 0px 0px 3px #f1f1f11a` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f1f1f11a` | Generated base 3px focus ring with a 2px gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f11a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a` | Generated base 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #cf2d5626` | Generated danger 3px focus ring with no gap |
-| `ring.danger-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #cf2d5626` | Generated danger 3px focus ring with a 2px gap |
+| `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #cf2d5626` | Generated danger 1px outline focus ring with no gap |
 | `ring.danger-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626` | Generated danger 1px focus ring with a 2px gap |
 | `ring.discovery` | `shadow` | `0px 0px 0px 3px #9277da26` | Generated discovery 3px focus ring with no gap |
-| `ring.discovery-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #9277da26` | Generated discovery 3px focus ring with a 2px gap |
+| `ring.discovery-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #9277da26` | Generated discovery 3px focus ring with a 3px gap |
 | `ring.discovery-subtle` | `shadow` | `0px 0px 0px 1px #9277da26` | Generated discovery 1px outline focus ring with no gap |
 | `ring.discovery-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #9277da26` | Generated discovery 1px focus ring with a 2px gap |
 | `ring.info` | `shadow` | `0px 0px 0px 3px #4d8eff26` | Generated info 3px focus ring with no gap |
-| `ring.info-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #4d8eff26` | Generated info 3px focus ring with a 2px gap |
+| `ring.info-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #4d8eff26` | Generated info 3px focus ring with a 3px gap |
 | `ring.info-subtle` | `shadow` | `0px 0px 0px 1px #4d8eff26` | Generated info 1px outline focus ring with no gap |
 | `ring.info-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #4d8eff26` | Generated info 1px focus ring with a 2px gap |
 | `ring.success` | `shadow` | `0px 0px 0px 3px #45c79126` | Generated success 3px focus ring with no gap |
-| `ring.success-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #45c79126` | Generated success 3px focus ring with a 2px gap |
+| `ring.success-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #45c79126` | Generated success 3px focus ring with a 3px gap |
 | `ring.success-subtle` | `shadow` | `0px 0px 0px 1px #45c79126` | Generated success 1px outline focus ring with no gap |
 | `ring.success-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #45c79126` | Generated success 1px focus ring with a 2px gap |
 | `ring.warning` | `shadow` | `0px 0px 0px 3px #f7ac2326` | Generated warning 3px focus ring with no gap |
-| `ring.warning-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f7ac2326` | Generated warning 3px focus ring with a 2px gap |
+| `ring.warning-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f7ac2326` | Generated warning 3px focus ring with a 3px gap |
 | `ring.warning-subtle` | `shadow` | `0px 0px 0px 1px #f7ac2326` | Generated warning 1px outline focus ring with no gap |
 | `ring.warning-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f7ac2326` | Generated warning 1px focus ring with a 2px gap |
 
@@ -3045,27 +3045,27 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `ring.base` | `shadow` | `0px 0px 0px 3px #f1f1f11a` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f1f1f11a` | Generated base 3px focus ring with a 2px gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f11a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a` | Generated base 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #cf2d5626` | Generated danger 3px focus ring with no gap |
-| `ring.danger-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #cf2d5626` | Generated danger 3px focus ring with a 2px gap |
+| `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #cf2d5626` | Generated danger 1px outline focus ring with no gap |
 | `ring.danger-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626` | Generated danger 1px focus ring with a 2px gap |
 | `ring.discovery` | `shadow` | `0px 0px 0px 3px #9277da26` | Generated discovery 3px focus ring with no gap |
-| `ring.discovery-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #9277da26` | Generated discovery 3px focus ring with a 2px gap |
+| `ring.discovery-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #9277da26` | Generated discovery 3px focus ring with a 3px gap |
 | `ring.discovery-subtle` | `shadow` | `0px 0px 0px 1px #9277da26` | Generated discovery 1px outline focus ring with no gap |
 | `ring.discovery-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #9277da26` | Generated discovery 1px focus ring with a 2px gap |
 | `ring.info` | `shadow` | `0px 0px 0px 3px #4d8eff26` | Generated info 3px focus ring with no gap |
-| `ring.info-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #4d8eff26` | Generated info 3px focus ring with a 2px gap |
+| `ring.info-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #4d8eff26` | Generated info 3px focus ring with a 3px gap |
 | `ring.info-subtle` | `shadow` | `0px 0px 0px 1px #4d8eff26` | Generated info 1px outline focus ring with no gap |
 | `ring.info-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #4d8eff26` | Generated info 1px focus ring with a 2px gap |
 | `ring.success` | `shadow` | `0px 0px 0px 3px #45c79126` | Generated success 3px focus ring with no gap |
-| `ring.success-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #45c79126` | Generated success 3px focus ring with a 2px gap |
+| `ring.success-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #45c79126` | Generated success 3px focus ring with a 3px gap |
 | `ring.success-subtle` | `shadow` | `0px 0px 0px 1px #45c79126` | Generated success 1px outline focus ring with no gap |
 | `ring.success-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #45c79126` | Generated success 1px focus ring with a 2px gap |
 | `ring.warning` | `shadow` | `0px 0px 0px 3px #f7ac2326` | Generated warning 3px focus ring with no gap |
-| `ring.warning-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f7ac2326` | Generated warning 3px focus ring with a 2px gap |
+| `ring.warning-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f7ac2326` | Generated warning 3px focus ring with a 3px gap |
 | `ring.warning-subtle` | `shadow` | `0px 0px 0px 1px #f7ac2326` | Generated warning 1px outline focus ring with no gap |
 | `ring.warning-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f7ac2326` | Generated warning 1px focus ring with a 2px gap |
 
@@ -3701,27 +3701,27 @@ Use these documented design-token names and values as the source of truth; do no
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
 | `ring.base` | `shadow` | `0px 0px 0px 3px #f1f1f11a` | Generated base 3px focus ring with no gap |
-| `ring.base-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f1f1f11a` | Generated base 3px focus ring with a 2px gap |
+| `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f11a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a` | Generated base 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #cf2d5626` | Generated danger 3px focus ring with no gap |
-| `ring.danger-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #cf2d5626` | Generated danger 3px focus ring with a 2px gap |
+| `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #cf2d5626` | Generated danger 1px outline focus ring with no gap |
 | `ring.danger-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #cf2d5626` | Generated danger 1px focus ring with a 2px gap |
 | `ring.discovery` | `shadow` | `0px 0px 0px 3px #9277da26` | Generated discovery 3px focus ring with no gap |
-| `ring.discovery-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #9277da26` | Generated discovery 3px focus ring with a 2px gap |
+| `ring.discovery-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #9277da26` | Generated discovery 3px focus ring with a 3px gap |
 | `ring.discovery-subtle` | `shadow` | `0px 0px 0px 1px #9277da26` | Generated discovery 1px outline focus ring with no gap |
 | `ring.discovery-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #9277da26` | Generated discovery 1px focus ring with a 2px gap |
 | `ring.info` | `shadow` | `0px 0px 0px 3px #4d8eff26` | Generated info 3px focus ring with no gap |
-| `ring.info-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #4d8eff26` | Generated info 3px focus ring with a 2px gap |
+| `ring.info-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #4d8eff26` | Generated info 3px focus ring with a 3px gap |
 | `ring.info-subtle` | `shadow` | `0px 0px 0px 1px #4d8eff26` | Generated info 1px outline focus ring with no gap |
 | `ring.info-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #4d8eff26` | Generated info 1px focus ring with a 2px gap |
 | `ring.success` | `shadow` | `0px 0px 0px 3px #45c79126` | Generated success 3px focus ring with no gap |
-| `ring.success-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #45c79126` | Generated success 3px focus ring with a 2px gap |
+| `ring.success-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #45c79126` | Generated success 3px focus ring with a 3px gap |
 | `ring.success-subtle` | `shadow` | `0px 0px 0px 1px #45c79126` | Generated success 1px outline focus ring with no gap |
 | `ring.success-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #45c79126` | Generated success 1px focus ring with a 2px gap |
 | `ring.warning` | `shadow` | `0px 0px 0px 3px #f7ac2326` | Generated warning 3px focus ring with no gap |
-| `ring.warning-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 5px #f7ac2326` | Generated warning 3px focus ring with a 2px gap |
+| `ring.warning-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f7ac2326` | Generated warning 3px focus ring with a 3px gap |
 | `ring.warning-subtle` | `shadow` | `0px 0px 0px 1px #f7ac2326` | Generated warning 1px outline focus ring with no gap |
 | `ring.warning-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f7ac2326` | Generated warning 1px focus ring with a 2px gap |
 

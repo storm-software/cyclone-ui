@@ -2844,6 +2844,44 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 | `../../components/themeable-icon/node_modules/react/index.js` | `file` |  |
 | `../../components/themeable-icon/src/index.ts` | `file` |  |
 
+## @cyclone-ui/time-picker
+
+A time input with a masked text box and a clock popover whose hand can be pressed or dragged to pick the hour and minutes. It shows a 12-hour clock with AM/PM or a 24-hour clock (`hourCycle`). Arrow keys step the part under the caret, and space, up or down swap AM/PM. When wrapped in a Field it connects to the form, formatting, parsing and masking the field's 24-hour HH:mm value.
+
+- **Name:** `@cyclone-ui/time-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@maskito/core`: `catalog:`
+- `@maskito/kit`: `^3.11.1`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/time-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/time-picker/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/timeline
 
 A Timeline that renders a list of events joined by a line, vertically or horizontally. Pass the events as value and render each with content, plus optional opposite (e.g. a date on the other side of the line) and marker render functions. align places the line left, right, top, bottom or alternating; TimelineMarker is the default dot for custom markers. Use it for order tracking, changelogs and activity feeds.
@@ -5955,6 +5993,44 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 | `../../components/themeable-icon/node_modules/react-native/index.js` | `file` |  |
 | `../../components/themeable-icon/node_modules/react/index.js` | `file` |  |
 | `../../components/themeable-icon/src/index.ts` | `file` |  |
+
+## @cyclone-ui/time-picker
+
+A time input with a masked text box and a clock popover whose hand can be pressed or dragged to pick the hour and minutes. It shows a 12-hour clock with AM/PM or a 24-hour clock (`hourCycle`). Arrow keys step the part under the caret, and space, up or down swap AM/PM. When wrapped in a Field it connects to the form, formatting, parsing and masking the field's 24-hour HH:mm value.
+
+- **Name:** `@cyclone-ui/time-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@maskito/core`: `catalog:`
+- `@maskito/kit`: `^3.11.1`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/time-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/time-picker/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/timeline
 
@@ -9068,6 +9144,44 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 | `../../components/themeable-icon/node_modules/react/index.js` | `file` |  |
 | `../../components/themeable-icon/src/index.ts` | `file` |  |
 
+## @cyclone-ui/time-picker
+
+A time input with a masked text box and a clock popover whose hand can be pressed or dragged to pick the hour and minutes. It shows a 12-hour clock with AM/PM or a 24-hour clock (`hourCycle`). Arrow keys step the part under the caret, and space, up or down swap AM/PM. When wrapped in a Field it connects to the form, formatting, parsing and masking the field's 24-hour HH:mm value.
+
+- **Name:** `@cyclone-ui/time-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@maskito/core`: `catalog:`
+- `@maskito/kit`: `^3.11.1`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/time-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/time-picker/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/timeline
 
 A Timeline that renders a list of events joined by a line, vertically or horizontally. Pass the events as value and render each with content, plus optional opposite (e.g. a date on the other side of the line) and marker render functions. align places the line left, right, top, bottom or alternating; TimelineMarker is the default dot for custom markers. Use it for order tracking, changelogs and activity feeds.
@@ -12179,6 +12293,44 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 | `../../components/themeable-icon/node_modules/react-native/index.js` | `file` |  |
 | `../../components/themeable-icon/node_modules/react/index.js` | `file` |  |
 | `../../components/themeable-icon/src/index.ts` | `file` |  |
+
+## @cyclone-ui/time-picker
+
+A time input with a masked text box and a clock popover whose hand can be pressed or dragged to pick the hour and minutes. It shows a 12-hour clock with AM/PM or a 24-hour clock (`hourCycle`). Arrow keys step the part under the caret, and space, up or down swap AM/PM. When wrapped in a Field it connects to the form, formatting, parsing and masking the field's 24-hour HH:mm value.
+
+- **Name:** `@cyclone-ui/time-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@maskito/core`: `catalog:`
+- `@maskito/kit`: `^3.11.1`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/time-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/time-picker/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/timeline
 
@@ -15292,6 +15444,44 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 | `../../components/themeable-icon/node_modules/react/index.js` | `file` |  |
 | `../../components/themeable-icon/src/index.ts` | `file` |  |
 
+## @cyclone-ui/time-picker
+
+A time input with a masked text box and a clock popover whose hand can be pressed or dragged to pick the hour and minutes. It shows a 12-hour clock with AM/PM or a 24-hour clock (`hourCycle`). Arrow keys step the part under the caret, and space, up or down swap AM/PM. When wrapped in a Field it connects to the form, formatting, parsing and masking the field's 24-hour HH:mm value.
+
+- **Name:** `@cyclone-ui/time-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@maskito/core`: `catalog:`
+- `@maskito/kit`: `^3.11.1`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/time-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/time-picker/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/timeline
 
 A Timeline that renders a list of events joined by a line, vertically or horizontally. Pass the events as value and render each with content, plus optional opposite (e.g. a date on the other side of the line) and marker render functions. align places the line left, right, top, bottom or alternating; TimelineMarker is the default dot for custom markers. Use it for order tracking, changelogs and activity feeds.
@@ -18403,6 +18593,44 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 | `../../components/themeable-icon/node_modules/react-native/index.js` | `file` |  |
 | `../../components/themeable-icon/node_modules/react/index.js` | `file` |  |
 | `../../components/themeable-icon/src/index.ts` | `file` |  |
+
+## @cyclone-ui/time-picker
+
+A time input with a masked text box and a clock popover whose hand can be pressed or dragged to pick the hour and minutes. It shows a 12-hour clock with AM/PM or a 24-hour clock (`hourCycle`). Arrow keys step the part under the caret, and space, up or down swap AM/PM. When wrapped in a Field it connects to the form, formatting, parsing and masking the field's 24-hour HH:mm value.
+
+- **Name:** `@cyclone-ui/time-picker`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/field`: `workspace:*`
+- `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/popover`: `workspace:*`
+- `@maskito/core`: `catalog:`
+- `@maskito/kit`: `^3.11.1`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+
+### Development Dependencies
+
+- `@cyclone-ui/form`: `workspace:*`
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/time-picker/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react-native/index.js` | `file` |  |
+| `../../components/time-picker/node_modules/react/index.js` | `file` |  |
+| `../../components/time-picker/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/timeline
 

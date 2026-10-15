@@ -58,6 +58,9 @@
       "path": "./components/date-picker"
     },
     {
+      "path": "./components/time-picker"
+    },
+    {
       "path": "./components/file-picker"
     },
     {
