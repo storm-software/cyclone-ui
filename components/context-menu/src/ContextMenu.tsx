@@ -449,7 +449,7 @@ const ContextMenuItem = ({
                 <Check
                   size={indicatorIconSize}
                   color="primaryActive"
-                  weight="black"
+                  weight="bold"
                 />
               )}
             </View>

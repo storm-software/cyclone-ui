@@ -48,6 +48,7 @@ const meta: Meta<TagPickerStoryArgs> = {
       size,
       tagVariant,
       theme,
+      showErrorsBeforeBlur,
       validate,
       variant,
       ...control
@@ -64,6 +65,7 @@ const meta: Meta<TagPickerStoryArgs> = {
           required={required}
           size={size}
           theme={theme}
+          showErrorsBeforeBlur={showErrorsBeforeBlur}
           validate={validate}
           variant={variant}>
           <Field.Label variant={labelVariant}>Topics</Field.Label>
@@ -359,6 +361,7 @@ export const InlinedAbove: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger"),
     defaultValue: ["Design"]
   },
@@ -374,6 +377,7 @@ export const Error: Story = {
 
 export const ErrorFloating: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger"),
     labelVariant: "floating",
     defaultValue: ["Design"]

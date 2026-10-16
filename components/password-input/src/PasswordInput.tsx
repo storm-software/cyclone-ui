@@ -31,12 +31,21 @@ import {
   createStyledHOC,
   styled,
   Theme,
+  useComposedRefs,
   View,
   withStaticProperties
 } from "@tamagui/core";
 import { YStack } from "@tamagui/stacks";
-import type { KeyboardEvent } from "react";
-import { createContext, use, useCallback, useMemo, useState } from "react";
+import type { KeyboardEvent, RefObject } from "react";
+import {
+  createContext,
+  use,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState
+} from "react";
 import {
   getMissingPasswordCriteria,
   getPasswordStrength,
@@ -44,6 +53,7 @@ import {
 } from "./password-strength";
 
 interface PasswordInputContextValue {
+  delay?: number;
   passwordVisible: boolean;
   togglePasswordVisibility: () => void;
 }
@@ -83,6 +93,12 @@ const PASSWORD_FIELD_OPTIONS = {
 const NO_FIELD_OPTIONS = {};
 
 export interface PasswordInputExtraProps {
+  /**
+   * Milliseconds to show the last typed character before masking it, as
+   * mobile keyboards do. Masks every character immediately when unset.
+   */
+  delay?: number;
+
   /**
    * Show the password strength meter below the input.
    *
@@ -168,6 +184,7 @@ const PasswordInputImpl = createStyledHOC(
   (
     {
       children,
+      delay,
       onInput,
       showStrength = false,
       validateStrength = false,
@@ -188,10 +205,11 @@ const PasswordInputImpl = createStyledHOC(
     }, []);
     const context = useMemo(
       () => ({
+        delay,
         passwordVisible,
         togglePasswordVisibility
       }),
-      [passwordVisible, togglePasswordVisibility]
+      [delay, passwordVisible, togglePasswordVisibility]
     );
     const handleInput = useCallback<InputChangeEventHandler>(
       event => {
@@ -229,11 +247,107 @@ const PasswordInputImpl = createStyledHOC(
   { displayName: "PasswordInput" }
 );
 
+const masked = (length: number) => {
+  const span = document.createElement("span");
+  // Literal bullets, drawn like the native mask where supported, so the
+  // overlay never contains the password itself.
+  span.textContent = "\u2022".repeat(length);
+  span.style.setProperty("-webkit-text-security", "disc");
+
+  return span;
+};
+
+/**
+ * On web, briefly overlays the masked text with the character just typed in
+ * plain text. The input stays `type="password"` (password managers and screen
+ * readers are unaffected); only its glyphs and caret hide during the reveal.
+ */
+const useRevealLastCharacter = (
+  inputRef: RefObject<HTMLInputElement | null>,
+  delay?: number
+) => {
+  useEffect(() => {
+    const input = inputRef.current;
+    const parent = input?.parentElement;
+    if (!delay || !input || !parent) {
+      return;
+    }
+
+    const overlay = document.createElement("span");
+    overlay.setAttribute("aria-hidden", "true");
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+
+    const hide = () => {
+      clearTimeout(timeout);
+      overlay.remove();
+      input.style.removeProperty("-webkit-text-fill-color");
+      input.style.removeProperty("caret-color");
+    };
+    const handleInput = (event: Event) => {
+      const { data, inputType } = event as InputEvent;
+      // Pastes, deletions and IME compositions mask straight away.
+      if (inputType !== "insertText" || data?.length !== 1) {
+        hide();
+
+        return;
+      }
+
+      clearTimeout(timeout);
+      const style = getComputedStyle(input);
+      Object.assign(overlay.style, {
+        position: "absolute",
+        inset: "0",
+        display: "flex",
+        alignItems: "center",
+        overflow: "hidden",
+        pointerEvents: "none",
+        whiteSpace: "pre",
+        boxSizing: style.boxSizing,
+        paddingTop: style.paddingTop,
+        paddingRight: style.paddingRight,
+        paddingBottom: style.paddingBottom,
+        paddingLeft: style.paddingLeft,
+        color: style.color,
+        fontFamily: style.fontFamily,
+        fontSize: style.fontSize,
+        fontStyle: style.fontStyle,
+        fontWeight: style.fontWeight,
+        letterSpacing: style.letterSpacing
+      });
+
+      const end = input.selectionEnd ?? input.value.length;
+      const text = document.createElement("span");
+      // Follow the input's horizontal scroll once the text overflows it.
+      text.style.transform = `translateX(${-input.scrollLeft}px)`;
+      text.append(masked(end - 1), data, masked(input.value.length - end));
+      overlay.replaceChildren(text);
+      parent.append(overlay);
+      input.style.setProperty("-webkit-text-fill-color", "transparent");
+      input.style.setProperty("caret-color", "transparent");
+      timeout = setTimeout(hide, delay);
+    };
+
+    input.addEventListener("input", handleInput);
+    input.addEventListener("blur", hide);
+
+    return () => {
+      input.removeEventListener("input", handleInput);
+      input.removeEventListener("blur", hide);
+      hide();
+    };
+  }, [delay, inputRef]);
+};
+
 const PasswordInputTextBoxValue = createStyledHOC(
   Input.TextBox.Value,
   (props, forwardedRef) => {
     const setMessage = useFormControl()?.setMessage;
-    const { passwordVisible } = use(PasswordInputContext);
+    const contextOnBlur = InputContext.useStyledContext().onBlur;
+    const { delay, passwordVisible } = use(PasswordInputContext);
+    const inputRef = useRef<HTMLInputElement>(null);
+    const ref = useComposedRefs(forwardedRef, inputRef);
+
+    useRevealLastCharacter(inputRef, passwordVisible ? undefined : delay);
     const setCapsLock = useCallback(
       (capsLock: boolean) => {
         setMessage?.(
@@ -268,14 +382,15 @@ const PasswordInputTextBoxValue = createStyledHOC(
     const handleBlur = useCallback(
       (event: any) => {
         setCapsLock(false);
-        props.onBlur?.(event);
+        // Overriding `onBlur` would otherwise drop the field's blur handler.
+        (props.onBlur ?? contextOnBlur)?.(event);
       },
-      [props, setCapsLock]
+      [contextOnBlur, props, setCapsLock]
     );
 
     return (
       <Input.TextBox.Value
-        ref={forwardedRef}
+        ref={ref}
         {...props}
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}

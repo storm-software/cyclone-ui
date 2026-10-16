@@ -417,7 +417,7 @@ function YearRangeSlider() {
         noPadding={true}
         {...swapOnClick(previousYearsButton())}>
         <Button.Icon>
-          <CaretLeft weight="black" />
+          <CaretLeft weight="bold" />
         </Button.Icon>
       </Button>
       <View
@@ -446,7 +446,7 @@ function YearRangeSlider() {
         noPadding={true}
         {...swapOnClick(nextYearsButton())}>
         <Button.Icon>
-          <CaretRight weight="black" />
+          <CaretRight weight="bold" />
         </Button.Icon>
       </Button>
     </View>
@@ -481,7 +481,7 @@ function YearSlider() {
         noPadding={true}
         {...swapOnClick(subtractOffset({ months: 12 }))}>
         <Button.Icon>
-          <CaretLeft />
+          <CaretLeft weight="bold" />
         </Button.Icon>
       </Button>
       <View flexGrow={1} flexShrink={1} flexBasis={0} minWidth={0}>
@@ -505,7 +505,7 @@ function YearSlider() {
         noPadding={true}
         {...swapOnClick(subtractOffset({ months: -12 }))}>
         <Button.Icon>
-          <CaretRight />
+          <CaretRight weight="bold" />
         </Button.Icon>
       </Button>
     </View>
@@ -547,7 +547,7 @@ const CalendarHeader = () => {
         noPadding={true}
         {...swapOnClick(subtractOffset({ months: 1 }))}>
         <Button.Icon>
-          <CaretLeft />
+          <CaretLeft weight="bold" />
         </Button.Icon>
       </Button>
       <YStack alignItems="center" minWidth={0}>
@@ -581,7 +581,7 @@ const CalendarHeader = () => {
         noPadding={true}
         {...swapOnClick(subtractOffset({ months: -1 }))}>
         <Button.Icon>
-          <CaretRight />
+          <CaretRight weight="bold" />
         </Button.Icon>
       </Button>
     </XStack>

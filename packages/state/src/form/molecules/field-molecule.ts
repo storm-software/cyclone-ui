@@ -171,9 +171,21 @@ export const FieldApi = createMoleculeApi(
       return options.isEqual(get(valueAtom), get(initialValueAtom));
     });
 
-    const errorsAtom = atomWithFieldsMessageTypes(
+    // Errors stay hidden until the user leaves the field (or submits), so
+    // they are not flagged while still typing.
+    const showErrorsAtom = atom(
+      get =>
+        Boolean(get(optionsAtom).showErrorsBeforeBlur) ||
+        Boolean(get(blurredAtom)) ||
+        get(form.submitAttempts) > 0
+    );
+
+    const allErrorsAtom = atomWithFieldsMessageTypes(
       validationResultsAtom,
       "danger"
+    );
+    const errorsAtom = atom(get =>
+      get(showErrorsAtom) ? get(allErrorsAtom) : []
     );
     const warningsAtom = atomWithFieldsMessageTypes(
       validationResultsAtom,
@@ -197,9 +209,12 @@ export const FieldApi = createMoleculeApi(
       "negative"
     );
 
-    const errorMessagesAtom = atomWithFieldsMessageList(
+    const allErrorMessagesAtom = atomWithFieldsMessageList(
       validationResultsAtom,
       "danger"
+    );
+    const errorMessagesAtom = atom(get =>
+      get(showErrorsAtom) ? get(allErrorMessagesAtom) : []
     );
     const warningMessagesAtom = atomWithFieldsMessageList(
       validationResultsAtom,

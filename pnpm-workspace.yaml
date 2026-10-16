@@ -226,6 +226,7 @@ catalog:
   "@razorwind/stylelint": ^0.0.17
   "@sourcebook/config": ^0.0.8
   '@tanstack/react-virtual': ^3.14.19
+  react-native-svg: ^15.15.5
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true

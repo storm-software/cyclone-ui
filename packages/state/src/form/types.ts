@@ -153,7 +153,10 @@ export interface FormOptions<
    * The validations to run on the form when certain events occur.
    */
   validate?: Partial<
-    Record<`on${Capitalize<ValidationCause>}`, Validator<FormValuesState<TFormValues>>[] | undefined>
+    Record<
+      `on${Capitalize<ValidationCause>}`,
+      Validator<FormValuesState<TFormValues>>[] | undefined
+    >
   >;
 
   /**
@@ -503,8 +506,18 @@ export interface FieldOptions<TFieldValue> {
    * The validations to run on the field when certain events occur.
    */
   validate?: Partial<
-    Record<`on${Capitalize<ValidationCause>}`, Validator<TFieldValue>[] | undefined>
+    Record<
+      `on${Capitalize<ValidationCause>}`,
+      Validator<TFieldValue>[] | undefined
+    >
   >;
+
+  /**
+   * Show error messages while the user is still editing the field. By default they stay hidden until the field is blurred or the form is submitted.
+   *
+   * @defaultValue false
+   */
+  showErrorsBeforeBlur?: boolean;
 
   /**
    * How long to debounce the `onChange` event and validation calls in milliseconds.

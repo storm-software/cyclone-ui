@@ -78,7 +78,7 @@ export function resolveIconSize(
  * @remarks
  * Phosphor `bold` lines are 24 units wide on the 256x256 grid. Stroking the outline by 10 units (5 on each side) makes them 34 units wide, 41.67% thicker.
  */
-const BLACK_STROKE_WIDTH = 10;
+// const BLACK_STROKE_WIDTH = 10;
 
 /**
  * Web-only CSS transition for the icon color (not part of React Native's style types).
@@ -113,18 +113,14 @@ export function createIcon(
     } = props;
 
     // ponytail: fill and stroke overlap, so a translucent `color` shows a darker band inside the edges of `black` icons; generate offset paths if that matters
-    const contents =
-      weight === "black" ? (
-        <G
-          stroke={color}
-          strokeWidth={BLACK_STROKE_WIDTH}
-          strokeLinejoin="round"
-          strokeLinecap="round">
-          {weights.bold}
-        </G>
-      ) : (
-        (weights[weight] ?? weights.regular)
-      );
+    const contents = weights[weight] ?? weights.regular;
+    // weight === "black" ? (
+    //   <G stroke={color} strokeLinejoin="round" strokeLinecap="round">
+    //     {weights.bold}
+    //   </G>
+    // ) : (
+    //   (weights[weight] ?? weights.regular)
+    // );
 
     return (
       <Svg
@@ -144,6 +140,7 @@ export function createIcon(
       </Svg>
     );
   });
+
   Icon.displayName = displayName;
 
   const ThemedIcon = themed(Icon as unknown as FC<TamaguiIconProps>);

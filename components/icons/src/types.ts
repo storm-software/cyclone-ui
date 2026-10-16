@@ -30,7 +30,6 @@ export const ICON_WEIGHTS = [
   "light",
   "regular",
   "bold",
-  "black",
   "fill",
   "duotone"
 ] as const;
@@ -78,4 +77,4 @@ export type IconComponent = ((props: IconProps) => JSX.Element) & {
  * @remarks
  * The `black` weight is derived from `bold` by `createIcon`, so it is not included.
  */
-export type IconWeights = Record<Exclude<IconWeight, "black">, ReactElement>;
+export type IconWeights = Record<IconWeight, ReactElement>;

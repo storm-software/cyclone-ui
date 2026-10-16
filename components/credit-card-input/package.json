@@ -1,0 +1,54 @@
+{
+  "name": "@cyclone-ui/credit-card-input",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Credit card fields (card number, expiry date, security code and name on card) built on Input, with a card preview that follows what is entered. The number is masked and grouped for its detected brand (Visa, Mastercard, Amex, ...) and Luhn-checked, the expiry date is checked against today, and each field shows a success icon once valid. It provides Card, Number, Expiry, SecurityCode and Name parts; wrap each field part in a Field to connect it to a form.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/credit-card-input"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@maskito/core": "catalog:",
+    "@maskito/react": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/helpers-icon": "catalog:",
+    "react-native-svg": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./CreditCardInput": {
+      "import": "./dist/CreditCardInput.mjs",
+      "require": "./dist/CreditCardInput.cjs"
+    },
+    "./*": "./*"
+  }
+}

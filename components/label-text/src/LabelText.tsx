@@ -30,13 +30,14 @@ export const LabelText = styled(BodyText, {
   variants: {
     floating: {
       true: {
-        fontFamily: "title-xs"
+        fontFamily: "title-xxs"
       },
       false: {
         fontFamily: "title-md"
       }
     }
   } as const,
+
   defaultVariants: {
     floating: false
   }

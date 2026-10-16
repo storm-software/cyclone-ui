@@ -813,6 +813,7 @@ import { ImageBroken } from "./icons/ImageBroken";
 import { ImageSquare } from "./icons/ImageSquare";
 import { Images } from "./icons/Images";
 import { ImagesSquare } from "./icons/ImagesSquare";
+// eslint-disable-next-line no-shadow-restricted-names
 import { Infinity } from "./icons/Infinity";
 import { Info } from "./icons/Info";
 import { InstagramLogo } from "./icons/InstagramLogo";

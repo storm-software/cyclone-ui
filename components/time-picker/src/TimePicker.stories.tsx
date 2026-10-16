@@ -36,6 +36,7 @@ type TimePickerStoryArgs = GetProps<typeof TimePicker> & {
   labelVariant?: FieldLabelVariant;
   required?: boolean;
   validate?: TimePickerValidation;
+  showErrorsBeforeBlur?: boolean;
 };
 
 const meta: Meta<TimePickerStoryArgs> = {
@@ -294,6 +295,7 @@ export const Discovery: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   }
 };

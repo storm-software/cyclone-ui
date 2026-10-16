@@ -141,6 +141,7 @@ export const SixDigits: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   }
 };

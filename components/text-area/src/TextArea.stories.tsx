@@ -50,7 +50,9 @@ const meta: Meta<TextAreaStoryArgs> = {
     }: any,
     { id }: { id: string }
   ) => (
-    <Form name={`formName-${id}`} initialValues={{ textAreaName: defaultValue }}>
+    <Form
+      name={`formName-${id}`}
+      initialValues={{ textAreaName: defaultValue }}>
       <Field
         name="textAreaName"
         {...props}
@@ -130,9 +132,9 @@ export const Base: Story = {
       )
     ).toBeLessThan(2);
     await expect(getBrowserStyle(textArea).color).not.toBe("rgba(0, 0, 0, 0)");
-    await expect(
-      getBrowserStyle(textArea, "::placeholder").color
-    ).not.toBe("rgba(0, 0, 0, 0)");
+    await expect(getBrowserStyle(textArea, "::placeholder").color).not.toBe(
+      "rgba(0, 0, 0, 0)"
+    );
     await expect(getBrowserStyle(textArea).boxShadow).toBe("none");
     await userEvent.click(textArea);
     await new Promise(resolve => setTimeout(resolve, 250));
@@ -228,6 +230,7 @@ export const Discovery: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   }
 };

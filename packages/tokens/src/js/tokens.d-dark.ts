@@ -634,6 +634,7 @@ declare const tokens: {
     "title-md": DesignToken;
     "title-sm": DesignToken;
     "title-xs": DesignToken;
+    "title-xxs": DesignToken;
     "body-md": DesignToken;
     "body-sm": DesignToken;
     "body-md-bold": DesignToken;

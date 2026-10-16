@@ -16158,7 +16158,40 @@ module.exports = {
       key: "{typography.title-xs}",
       $type: "typography",
       $description:
-        "Extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+        "Extra small title style: Storm Sans medium at 10px (`font-size.xs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      $value: {
+        fontFamily: "Storm Sans",
+        fontWeight: 500,
+        fontSize: "0.875rem",
+        lineHeight: 1.125,
+      },
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
+      isSource: true,
+      original: {
+        $type: "typography",
+        $description:
+          "Extra small title style: Storm Sans medium at 10px (`font-size.xs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+        $value: {
+          fontFamily: "Storm Sans",
+          fontWeight: "{font-weight.medium}",
+          fontSize: "{font-size.xs}",
+          lineHeight: "{line-height.snug}",
+        },
+        key: "{typography.title-xs}",
+      },
+      name: "TypographyTitleXs",
+      attributes: {
+        category: "typography",
+        type: "title-xs",
+      },
+      path: ["typography", "title-xs"],
+    },
+    "title-xxs": {
+      key: "{typography.title-xxs}",
+      $type: "typography",
+      $description:
+        "Extra extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
       $value: {
         fontFamily: "Storm Sans",
         fontWeight: 500,
@@ -16171,21 +16204,21 @@ module.exports = {
       original: {
         $type: "typography",
         $description:
-          "Extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+          "Extra extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
         $value: {
           fontFamily: "Storm Sans",
           fontWeight: "{font-weight.medium}",
           fontSize: "{font-size.xxs}",
           lineHeight: "{line-height.snug}",
         },
-        key: "{typography.title-xs}",
+        key: "{typography.title-xxs}",
       },
-      name: "TypographyTitleXs",
+      name: "TypographyTitleXxs",
       attributes: {
         category: "typography",
-        type: "title-xs",
+        type: "title-xxs",
       },
-      path: ["typography", "title-xs"],
+      path: ["typography", "title-xxs"],
     },
     "body-md": {
       key: "{typography.body-md}",

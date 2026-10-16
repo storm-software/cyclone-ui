@@ -3934,6 +3934,12 @@ export const manifest: DesignSystemManifest = {
       "category": "typography"
     },
     {
+      "path": "typography.title-xxs",
+      "cssVar": "--storm-typography-title-xxs",
+      "type": "typography",
+      "category": "typography"
+    },
+    {
       "path": "z-index.0",
       "cssVar": "--storm-z-index-0",
       "type": "number",
@@ -4178,6 +4184,13 @@ export const manifest: DesignSystemManifest = {
       "name": "@cyclone-ui/context-menu",
       "jsx": [
         "ContextMenu"
+      ],
+      "roles": []
+    },
+    {
+      "name": "@cyclone-ui/credit-card-input",
+      "jsx": [
+        "CreditCardInput"
       ],
       "roles": []
     },

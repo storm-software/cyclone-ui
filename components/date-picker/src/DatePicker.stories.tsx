@@ -35,6 +35,7 @@ type DatePickerStoryArgs = GetProps<typeof DatePicker> & {
   labelVariant?: FieldLabelVariant;
   required?: boolean;
   validate?: DatePickerValidation;
+  showErrorsBeforeBlur?: boolean;
 };
 
 const meta: Meta<DatePickerStoryArgs> = {
@@ -211,6 +212,7 @@ export const Discovery: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   }
 };

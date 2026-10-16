@@ -28,7 +28,10 @@ import type { SliderMark, SliderProps, SliderValue } from "./Slider";
 import { Slider } from "./Slider";
 
 type SliderStoryArgs = SliderProps &
-  Pick<FieldProps<SliderValue>, "required" | "theme" | "validate">;
+  Pick<
+    FieldProps<SliderValue>,
+    "required" | "theme" | "validate" | "showErrorsBeforeBlur"
+  >;
 
 const meta: Meta<SliderStoryArgs> = {
   title: "Form/Slider",
@@ -78,6 +81,7 @@ const meta: Meta<SliderStoryArgs> = {
       required,
       size,
       theme,
+      showErrorsBeforeBlur,
       validate,
       ...control
     }: SliderStoryArgs,
@@ -90,6 +94,7 @@ const meta: Meta<SliderStoryArgs> = {
         required={required}
         size={size}
         theme={theme}
+        showErrorsBeforeBlur={showErrorsBeforeBlur}
         validate={validate}>
         <Field.Label>Label Text</Field.Label>
         <Slider {...control} />
@@ -385,6 +390,7 @@ export const Discovery: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   }
 };

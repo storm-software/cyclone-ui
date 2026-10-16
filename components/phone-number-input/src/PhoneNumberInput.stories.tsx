@@ -30,7 +30,12 @@ import { PhoneNumberInput } from "./PhoneNumberInput";
  */
 type PhoneNumberInputStoryArgs = Pick<
   FieldProps,
-  "theme" | "size" | "disabled" | "required" | "validate"
+  | "theme"
+  | "size"
+  | "disabled"
+  | "required"
+  | "validate"
+  | "showErrorsBeforeBlur"
 > &
   Pick<PhoneNumberInputProps, "defaultCountry"> & {
     defaultValue?: string;
@@ -178,6 +183,7 @@ export const Discovery: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   },
   play: async ({ canvasElement }) => {

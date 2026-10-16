@@ -4814,9 +4814,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-title-xs",
-      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.title-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-title-xxs",
+      description: "Extra extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
       theme: undefined,
       typography: true
     },
@@ -9901,9 +9910,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-title-xs",
-      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.title-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-title-xxs",
+      description: "Extra extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
       theme: undefined,
       typography: true
     },
@@ -14988,9 +15006,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-title-xs",
-      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.title-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-title-xxs",
+      description: "Extra extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
       theme: undefined,
       typography: true
     },
@@ -20075,9 +20102,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-title-xs",
-      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.title-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-title-xxs",
+      description: "Extra extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
       theme: undefined,
       typography: true
     },
@@ -25162,9 +25198,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-title-xs",
-      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.title-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-title-xxs",
+      description: "Extra extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
       theme: undefined,
       typography: true
     },
@@ -30249,9 +30294,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.title-xs",
       type: "typography",
-      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xs}\",\"lineHeight\":\"{line-height.snug}\"}",
       cssVar: "--cu-typography-title-xs",
-      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      description: "Extra small title style: Storm Sans medium at 10px (`font-size.xs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.title-xxs",
+      type: "typography",
+      value: "{\"fontFamily\":\"Storm Sans\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.xxs}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--cu-typography-title-xxs",
+      description: "Extra extra small title style: Storm Sans medium at 10px (`font-size.xxs`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border.",
       theme: undefined,
       typography: true
     },

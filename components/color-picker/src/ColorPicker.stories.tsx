@@ -37,6 +37,7 @@ type ColorPickerStoryArgs = GetProps<typeof ColorPicker> & {
   labelVariant?: FieldLabelVariant;
   required?: boolean;
   validate?: ColorPickerValidation;
+  showErrorsBeforeBlur?: boolean;
 };
 
 const CUSTOM_SWATCHES = [
@@ -231,7 +232,7 @@ export const Disabled: Story = {
 };
 
 export const Error: Story = {
-  args: { validate: validation("danger") }
+  args: { showErrorsBeforeBlur: true, validate: validation("danger") }
 };
 
 export const Warning: Story = {

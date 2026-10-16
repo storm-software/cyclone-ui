@@ -314,6 +314,9 @@
     },
     {
       "path": "./components/color-picker"
+    },
+    {
+      "path": "./components/credit-card-input"
     }
   ],
   "files": []

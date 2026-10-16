@@ -36,6 +36,7 @@ import { PasswordInput } from "./PasswordInput";
 type PasswordInputStoryArgs = Partial<FieldProps> & {
   labelVariant?: FieldLabelVariant;
   defaultValue?: string;
+  delay?: number;
   showStrength?: boolean;
   validateStrength?: boolean;
 };
@@ -63,6 +64,7 @@ const meta: Meta<PasswordInputStoryArgs> = {
   render: (
     {
       defaultValue = "",
+      delay,
       labelVariant,
       showStrength = true,
       validateStrength = true,
@@ -76,6 +78,7 @@ const meta: Meta<PasswordInputStoryArgs> = {
       <Field name="inputFieldName" {...props}>
         <Field.Label variant={labelVariant}>New Password</Field.Label>
         <PasswordInput
+          delay={delay}
           showStrength={showStrength}
           validateStrength={validateStrength}>
           <PasswordInput.TextBox>
@@ -179,6 +182,9 @@ export const MissingCriteria: Story = {
     const input = canvas.getByLabelText("New Password");
 
     await userEvent.type(input, "pass!");
+    // Past the show-password button, which is still inside the field.
+    await userEvent.tab();
+    await userEvent.tab();
     await waitFor(async () => {
       await expect(
         canvas.getByText("Use at least 8 characters")
@@ -212,6 +218,25 @@ export const WithoutStrength: Story = {
     await expect(
       canvas.queryByText("Use at least 8 characters")
     ).not.toBeInTheDocument();
+  }
+};
+
+export const RevealLastCharacter: Story = {
+  args: {
+    delay: 1000
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByLabelText("New Password");
+    const overlay = () => input.parentElement?.querySelector("[aria-hidden]");
+
+    await userEvent.type(input, "abc");
+    await expect(input).toHaveAttribute("type", "password");
+    await expect(overlay()).toHaveTextContent("\u2022\u2022c");
+
+    await waitFor(async () => expect(overlay()).toBeNull(), {
+      timeout: 2000
+    });
   }
 };
 
@@ -327,6 +352,7 @@ export const Discovery: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   }
 };

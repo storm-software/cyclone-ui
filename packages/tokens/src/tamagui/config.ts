@@ -1245,6 +1245,27 @@ const titleXlFont = createFont({
 const titleXsFont = createFont({
   family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
   size: {
+    true: 14,
+    xs: 14
+  },
+  lineHeight: {
+    snug: 15.75,
+    true: 15.75,
+    xs: 15.75
+  },
+  weight: {
+    medium: "500",
+    true: "500",
+    xs: "500"
+  },
+  face: {
+    500: { normal: "StormSans-Medium", italic: "StormSans-MediumItalic" }
+  }
+});
+
+const titleXxsFont = createFont({
+  family: isWeb ? "\"Storm Sans\"" : "Storm Sans",
+  size: {
     true: 12,
     xxs: 12
   },
@@ -1394,7 +1415,8 @@ export const config = createTamagui({
     "title-md": titleMdFont,
     "title-sm": titleSmFont,
     "title-xl": titleXlFont,
-    "title-xs": titleXsFont
+    "title-xs": titleXsFont,
+    "title-xxs": titleXxsFont
    },
   defaultFont: "body-md",
   settings: { styleValueSyntax: "string", legacyConditionObjects: false }

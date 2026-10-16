@@ -28,7 +28,10 @@ import type { RatingProps } from "./Rating";
 import { Rating } from "./Rating";
 
 type RatingStoryArgs = RatingProps &
-  Pick<FieldProps<number>, "required" | "theme" | "validate">;
+  Pick<
+    FieldProps<number>,
+    "required" | "theme" | "validate" | "showErrorsBeforeBlur"
+  >;
 
 const meta: Meta<RatingStoryArgs> = {
   title: "Form/Rating",
@@ -60,6 +63,7 @@ const meta: Meta<RatingStoryArgs> = {
       required,
       size,
       theme,
+      showErrorsBeforeBlur,
       validate,
       ...control
     }: RatingStoryArgs,
@@ -72,6 +76,7 @@ const meta: Meta<RatingStoryArgs> = {
         required={required}
         size={size}
         theme={theme}
+        showErrorsBeforeBlur={showErrorsBeforeBlur}
         validate={validate}>
         <Field.Label>Label Text</Field.Label>
         <Rating {...control} />
@@ -151,9 +156,10 @@ export const DefaultValue: Story = {
     defaultValue: 3
   },
   play: async ({ canvasElement }) => {
-    await expect(
-      within(canvasElement).getByRole("slider")
-    ).toHaveAttribute("aria-valuenow", "3");
+    await expect(within(canvasElement).getByRole("slider")).toHaveAttribute(
+      "aria-valuenow",
+      "3"
+    );
   }
 };
 
@@ -273,9 +279,13 @@ export const MinimumRating: Story = {
     await userEvent.tab();
     await userEvent.keyboard("{ArrowLeft}{ArrowLeft}");
     await waitFor(() => expect(rating).toHaveAttribute("aria-valuenow", "2"));
-    await expect(
-      await canvas.findByText("Please select at least 3 stars")
-    ).toBeVisible();
+    await expect(canvas.queryByText("Please select at least 3 stars")).toBe(
+      null
+    );
+    await userEvent.tab();
+    await waitFor(async () =>
+      expect(canvas.getByText("Please select at least 3 stars")).toBeVisible()
+    );
   }
 };
 
@@ -302,6 +312,7 @@ export const Discovery: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   }
 };

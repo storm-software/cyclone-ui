@@ -37,7 +37,13 @@ import { getFontSized } from "@tamagui/get-font-sized";
 import { withStaticProperties } from "@tamagui/helpers";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import { SizableText } from "@tamagui/text";
-import { createContext, useCallback, useContext, useRef, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useRef,
+  useState
+} from "react";
 
 export type TagSize = SizeTokens | number;
 
@@ -631,7 +637,7 @@ const TagRemoveButton = createStyledHOC(
         }}>
         <TagIcon
           color={getTextColor(variant as TagVariant | undefined, outlined)}>
-          <X weight="black" />
+          <X weight="bold" />
         </TagIcon>
       </TagRemoveButtonFrame>
     );

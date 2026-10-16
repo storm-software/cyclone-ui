@@ -32,7 +32,13 @@ import { Input } from "./Input";
  */
 type InputStoryArgs = Pick<
   FieldProps,
-  "theme" | "size" | "disabled" | "required" | "validate" | "clearable"
+  | "theme"
+  | "size"
+  | "disabled"
+  | "required"
+  | "validate"
+  | "showErrorsBeforeBlur"
+  | "clearable"
 > & {
   variant?: InputProps["variant"];
   labelVariant?: FieldLabelVariant;
@@ -400,6 +406,7 @@ export const DiscoveryUnderlined: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   },
   play: async ({ canvasElement }) => {
@@ -427,6 +434,7 @@ export const Error: Story = {
 
 export const ErrorFloating: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger"),
     labelVariant: "floating"
   }
@@ -434,6 +442,7 @@ export const ErrorFloating: Story = {
 
 export const ErrorUnderlined: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger"),
     variant: "underlined"
   }

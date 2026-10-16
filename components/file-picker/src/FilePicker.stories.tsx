@@ -35,6 +35,7 @@ type FilePickerStoryArgs = GetProps<typeof FilePicker> & {
   defaultValue?: unknown;
   required?: boolean;
   validate?: FilePickerValidation;
+  showErrorsBeforeBlur?: boolean;
 };
 
 const meta: Meta<FilePickerStoryArgs> = {
@@ -163,6 +164,7 @@ export const SimpleDisabled: Story = {
 export const SimpleError: Story = {
   args: {
     variant: "simple",
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   }
 };
@@ -230,6 +232,7 @@ export const Discovery: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   }
 };

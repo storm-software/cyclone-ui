@@ -223,7 +223,9 @@ export const useFieldActions = <TFieldValue = any>() => {
         ref: Ref<HTMLInputElement>,
         tabIndex?: number
       ) => {
-        set(field.ref, ref);
+        // A callback ref is a function, which `set` would call as an updater
+        // (with the previous value), unmounting the field's Maskito mask.
+        set(field.ref, () => ref);
         set(field.tabIndex, tabIndex ?? 0);
 
         if (!get(field.initialValue)) {

@@ -32,7 +32,13 @@ import { SearchInput } from "./SearchInput";
  */
 type SearchInputStoryArgs = Pick<
   FieldProps,
-  "theme" | "size" | "disabled" | "required" | "validate" | "clearable"
+  | "theme"
+  | "size"
+  | "disabled"
+  | "required"
+  | "validate"
+  | "showErrorsBeforeBlur"
+  | "clearable"
 > &
   Pick<SearchInputProps, "suggestions"> & {
     defaultValue?: string;
@@ -187,6 +193,7 @@ export const Discovery: Story = {
 
 export const Error: Story = {
   args: {
+    showErrorsBeforeBlur: true,
     validate: validation("danger")
   }
 };
