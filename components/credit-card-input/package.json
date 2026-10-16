@@ -21,6 +21,7 @@
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/password-input": "workspace:*",
     "@maskito/core": "catalog:",
     "@maskito/react": "catalog:",
     "@tamagui/core": "catalog:",

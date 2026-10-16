@@ -17,6 +17,8 @@
  ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
+import { ContextMenu, getContextMenuSize } from "@cyclone-ui/context-menu";
+import type { FormControlSize } from "@cyclone-ui/helpers";
 import { useFormControl } from "@cyclone-ui/helpers";
 import { MapPin, MapTrifold } from "@cyclone-ui/icons";
 import type { SearchInputProps } from "@cyclone-ui/search-input";
@@ -45,6 +47,32 @@ export interface AddressOption {
   latitude: number;
   longitude: number;
 }
+
+// The street on the first line, the rest of the address under it in
+// smaller text.
+const renderAddressSuggestion = (label: string, size: FormControlSize) => {
+  const comma = label.indexOf(", ");
+  if (comma === -1) {
+    return <ContextMenu.Item.Label>{label}</ContextMenu.Item.Label>;
+  }
+
+  const { fontSize, lineHeight } = getContextMenuSize(size);
+
+  return (
+    <View flex={1} minWidth={0}>
+      <ContextMenu.Item.Text paddingBottom={0}>
+        {label.slice(0, comma)}
+      </ContextMenu.Item.Text>
+      <ContextMenu.Item.Text
+        color="subtle"
+        fontSize={fontSize * 0.875}
+        lineHeight={`${lineHeight * 0.875}px`}
+        paddingTop={0}>
+        {label.slice(comma + 2)}
+      </ContextMenu.Item.Text>
+    </View>
+  );
+};
 
 const isAddressOption = (value: any): value is AddressOption =>
   typeof value?.label === "string" &&
@@ -150,6 +178,11 @@ const AddressInputSearch = createStyledHOC(
 
     // Same resolution as `SearchInput`, which needs the text to look it up.
     const formControl = useFormControl();
+    const size = props.size ?? formControl?.size ?? "md";
+    const renderSuggestion = useCallback(
+      (label: string) => renderAddressSuggestion(label, size),
+      [size]
+    );
     const setMessage = formControl?.setMessage;
     const [localValue, setLocalValue] = useState(
       defaultValue ?? address?.label ?? ""
@@ -228,7 +261,8 @@ const AddressInputSearch = createStyledHOC(
         onChange={onChange}
         suggestions={suggestions}
         // The endpoint already matched them to the text.
-        filterSuggestions={false}>
+        filterSuggestions={false}
+        renderSuggestion={renderSuggestion}>
         {children}
       </SearchInput>
     );

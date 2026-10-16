@@ -21,6 +21,7 @@
     "@tamagui/core": "catalog:",
     "@tamagui/image": "catalog:",
     "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/context-menu": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/search-input": "workspace:*"

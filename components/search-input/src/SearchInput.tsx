@@ -38,18 +38,23 @@ import {
   useState
 } from "react";
 const EMPTY_SUGGESTIONS: readonly string[] = [];
+const renderSuggestionText = (suggestion: string) => (
+  <ContextMenu.Item.Text whiteSpace="nowrap">{suggestion}</ContextMenu.Item.Text>
+);
 // Inside a `Field`, a search input is clearable unless the field says otherwise.
 const CLEARABLE_BY_DEFAULT = { defaults: { clearable: true } };
 
 interface SearchInputContextValue {
   suggestions: readonly string[];
   filterSuggestions: boolean;
+  renderSuggestion: (suggestion: string) => ReactNode;
   value: string;
 }
 
 const SearchInputContext = createContext<SearchInputContextValue>({
   suggestions: EMPTY_SUGGESTIONS,
   filterSuggestions: true,
+  renderSuggestion: renderSuggestionText,
   value: ""
 });
 
@@ -68,6 +73,13 @@ export interface SearchInputExtraProps {
    * @defaultValue true
    */
   filterSuggestions?: boolean;
+
+  /**
+   * Draws a suggestion's row in the popover, such as a title over details.
+   *
+   * @defaultValue the suggestion on one line
+   */
+  renderSuggestion?: (suggestion: string) => ReactNode;
 
   /** The controlled value. Inside a `Field`, the field's value is used. */
   value?: string;
@@ -89,6 +101,7 @@ const SearchInputGroup = createStyledHOC(
       children,
       suggestions = EMPTY_SUGGESTIONS,
       filterSuggestions = true,
+      renderSuggestion = renderSuggestionText,
       value: valueProp,
       defaultValue,
       onChange: onChangeProp,
@@ -118,8 +131,8 @@ const SearchInputGroup = createStyledHOC(
     );
 
     const contextValue = useMemo(
-      () => ({ suggestions, filterSuggestions, value }),
-      [suggestions, filterSuggestions, value]
+      () => ({ suggestions, filterSuggestions, renderSuggestion, value }),
+      [suggestions, filterSuggestions, renderSuggestion, value]
     );
 
     return (
@@ -156,7 +169,8 @@ const SearchInputTextBox = createStyledHOC(
     forwardedRef
   ) => {
     const { disabled, size, onChange } = InputContext.useStyledContext();
-    const { suggestions, filterSuggestions, value } = use(SearchInputContext);
+    const { suggestions, filterSuggestions, renderSuggestion, value } =
+      use(SearchInputContext);
 
     const listBoxId = `${useId()}-suggestions`;
     const [open, setOpen] = useState(false);
@@ -295,9 +309,7 @@ const SearchInputTextBox = createStyledHOC(
                   value={suggestion}
                   highlighted={index === activeIndex}
                   onMouseDown={preventFocusLoss}>
-                  <ContextMenu.Item.Text whiteSpace="nowrap">
-                    {suggestion}
-                  </ContextMenu.Item.Text>
+                  {renderSuggestion(suggestion)}
                 </ContextMenu.Item>
               ))}
             </ContextMenu.Content.ScrollView>

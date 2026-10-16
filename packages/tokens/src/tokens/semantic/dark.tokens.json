@@ -4,7 +4,7 @@
     "emphasis": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.3}",
+      "$value": "{color.neutral.2}",
       "$description": "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
       "group": "foreground"
     },
