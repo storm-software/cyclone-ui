@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/page",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "type": "module",
   "description": "A Page layout compound component with Banner, TopNav (Start, Middle and End slots), SideNav, SideNavToggle, Main and Panel areas. The SideNav can be collapsed and resized; it shows as a hover flyout when collapsed on desktop and as an overlay on mobile. The Panel can also be resized. The page includes skip links and a Ctrl+[ shortcut. Use it as the shell of an application page.",
   "repository": {

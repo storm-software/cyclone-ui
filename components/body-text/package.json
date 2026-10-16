@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/body-text",
-  "version": "0.5.20",
+  "version": "0.5.21",
   "type": "module",
   "description": "A themed paragraph text component built on Tamagui's SizableText that renders a p element using the body typography tokens. It has md and sm sizes and an optional bold weight. Use it for standard body copy and as a base for other text components.",
   "repository": {

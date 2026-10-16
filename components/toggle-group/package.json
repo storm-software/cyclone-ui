@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/toggle-group",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": false,
   "description": "A clickable group of toggle components that exists in either an \"on\" or \"off\" state with various styles and sizes.",
   "repository": {

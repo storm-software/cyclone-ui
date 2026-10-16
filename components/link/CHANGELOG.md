@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Link
 
+## [0.5.21](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.21) (10/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.21**
+- Updated **icons** to **v0.0.17**
+- Updated **link-text** to **v0.5.21**
+- Updated **themeable-icon** to **v0.6.21**
+
 ## [0.5.20](https://github.com/storm-software/cyclone-ui/releases/tag/link%400.5.20) (10/16/2026)
 
 ### Updated Dependencies
