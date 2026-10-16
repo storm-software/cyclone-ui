@@ -18,6 +18,7 @@
 
 import type { StyleSpecification } from "@maplibre/maplibre-gl-style-spec";
 import { validateStyleMin } from "@maplibre/maplibre-gl-style-spec";
+import { titleCase } from "@stryke/string-format/title-case";
 import type { CycloneTheme } from "./create-flavor";
 import { createFlavor } from "./create-flavor";
 import { layers } from "./index";
@@ -55,7 +56,7 @@ export function createStyle({
 
   const style: StyleSpecification = {
     version: 8,
-    name: `Cyclone ${theme}`,
+    name: `Cyclone - ${titleCase(theme)}`,
     sources: {
       stormsoftware: {
         type: "vector",

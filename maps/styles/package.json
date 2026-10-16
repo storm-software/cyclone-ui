@@ -2,21 +2,29 @@
   "name": "@cyclone-ui/maps",
   "version": "0.0.1",
   "type": "module",
-  "bin": {
-    "maps": "./dist/bin/cli.mjs"
-  },
-  "devDependencies": {
-    "@maplibre/maplibre-gl-style-spec": "^24.3.1",
-    "@powerlines/plugin-tsdown": "catalog:",
-    "@types/node": "^22.15.19",
-    "tsdown": "catalog:",
-    "tsx": "catalog:"
+  "private": false,
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "maps/styles"
   },
   "exports": {
     ".": "./dist/index.mjs",
     "./*": "./*",
-    "./bin/cli": "./dist/bin/cli.mjs",
-    "./rolldown-runtime-BhWHdk3m": "./dist/rolldown-runtime-BhWHdk3m.mjs",
-    "./src-BXtmWVG6": "./dist/src-BXtmWVG6.mjs"
+    "./styles/*": "./styles/*",
+    "./bin/cli": "./dist/bin/cli.mjs"
+  },
+  "bin": {
+    "maps": "./dist/bin/cli.mjs"
+  },
+  "dependencies": {
+    "@maplibre/maplibre-gl-style-spec": "catalog:",
+    "@stryke/string-format": "catalog:"
+  },
+  "devDependencies": {
+    "@powerlines/plugin-tsdown": "catalog:",
+    "@types/node": "^22.15.19",
+    "tsdown": "catalog:",
+    "tsx": "catalog:"
   }
 }

@@ -19,6 +19,7 @@
 /* eslint-disable unused-imports/no-unused-vars, test/no-import-node-test */
 
 import assert from "node:assert/strict";
+import { execFile } from "node:child_process";
 import {
   mkdir,
   mkdtemp,
@@ -30,7 +31,10 @@ import {
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
-import { organizeFontOutputs } from "./build-output.mjs";
+import { promisify } from "node:util";
+import { generateWebfonts, organizeFontOutputs } from "./build-output.mjs";
+
+const execFileAsync = promisify(execFile);
 
 test("compiled font files are grouped by format with family-free names", async () => {
   const root = await mkdtemp(join(tmpdir(), "font-output-"));
@@ -64,6 +68,63 @@ test("compiled font files are grouped by format with family-free names", async (
       "glyphs"
     );
     assert.deepEqual(await readdir(compiled), []);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("TTF outputs are converted to a clean webfonts directory", async () => {
+  const root = await mkdtemp(join(tmpdir(), "font-webfonts-"));
+  const ttf = join(root, "ttf");
+  const webfonts = join(root, "webfonts");
+  const fixtureScript = join(root, "create-font.py");
+
+  try {
+    await mkdir(ttf);
+    await mkdir(webfonts);
+    await writeFile(join(webfonts, "Stale.woff2"), "stale");
+    await writeFile(
+      fixtureScript,
+      `from fontTools.fontBuilder import FontBuilder
+from fontTools.pens.ttGlyphPen import TTGlyphPen
+import sys
+
+font = FontBuilder(1000, isTTF=True)
+font.setupGlyphOrder([".notdef"])
+pen = TTGlyphPen(None)
+font.setupGlyf({".notdef": pen.glyph()})
+font.setupHorizontalMetrics({".notdef": (500, 0)})
+font.setupHorizontalHeader(ascent=800, descent=-200)
+font.setupCharacterMap({})
+font.setupOS2(
+    sTypoAscender=800,
+    sTypoDescender=-200,
+    usWinAscent=800,
+    usWinDescent=200,
+)
+font.setupNameTable({
+    "familyName": "Fixture",
+    "styleName": "Regular",
+    "uniqueFontIdentifier": "Fixture Regular",
+    "fullName": "Fixture Regular",
+    "psName": "Fixture-Regular",
+})
+font.setupPost()
+font.setupMaxp()
+font.save(sys.argv[1])
+`
+    );
+    await execFileAsync("python", [fixtureScript, join(ttf, "Regular.ttf")]);
+
+    await generateWebfonts(ttf, webfonts);
+
+    assert.deepEqual(await readdir(webfonts), ["Regular.woff2"]);
+    assert.equal(
+      (await readFile(join(webfonts, "Regular.woff2")))
+        .subarray(0, 4)
+        .toString(),
+      "wOF2"
+    );
   } finally {
     await rm(root, { recursive: true, force: true });
   }

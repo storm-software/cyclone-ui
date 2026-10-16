@@ -22,12 +22,16 @@
 import { mkdtemp, rm } from "node:fs/promises";
 import { join } from "node:path";
 import { $, chalk, echo } from "zx";
-import { organizeFontOutputs } from "../../tools/scripts/src/fonts/build-output.mjs";
+import {
+  generateWebfonts,
+  organizeFontOutputs
+} from "../../tools/scripts/src/fonts/build-output.mjs";
 import { generateGlyphs } from "../../tools/scripts/src/fonts/generate-glyphs.mjs";
 
-// Compiles the Storm Sans designspaces into `./dist/{otf,ttf}`, then builds
-// glyph ranges in `./dist/pbf`. Requires `fontmake`, `ttfautohint`, and
-// `font-maker` on the PATH (provided by `devenv shell`).
+// Compiles the Storm Sans designspaces into `./dist/{otf,ttf}`, generates
+// WOFF2 files in `./dist/webfonts`, then builds glyph ranges in `./dist/pbf`.
+// Requires `fontmake`, `fonttools`, `ttfautohint`, and `font-maker` on the PATH
+// (provided by `devenv shell`).
 //
 // fontmake's `-o` flag does NOT append: `-o variable -o otf -o ttf` parses as
 // `-o ttf` only, so all formats are passed to a single `-o`. `variable` is
@@ -53,6 +57,10 @@ try {
     compiled,
     join(import.meta.dirname, "dist"),
     "StormSans"
+  );
+  await generateWebfonts(
+    join(import.meta.dirname, "dist/ttf"),
+    join(import.meta.dirname, "dist/webfonts")
   );
   await generateGlyphs({ projectDir: import.meta.dirname });
 

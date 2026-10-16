@@ -14,7 +14,7 @@ Applied direction:
 
 Masters: Thin (100), Regular (400), Bold (700). The designspace retains the original IBM Plex weight mapping and normal-width instances only.
 
-This folder is its own Nx project, `fonts-storm-sans`. Its build script (`build.mjs`) compiles the designspaces with fontmake and writes static faces to `dist/otf/<Style>.otf` and `dist/ttf/<Style>.ttf`, variable faces to `dist/ttf/{Variable,Italic-Variable}.ttf`, and map glyphs to `dist/pbf/<Style>/<range>.pbf`. The Nx target also copies the output to `dist/fonts/storm-sans`:
+This folder is its own Nx project, `fonts-storm-sans`. Its build script (`build.mjs`) compiles the designspaces with fontmake and writes static faces to `dist/otf/<Style>.otf` and `dist/ttf/<Style>.ttf`, variable faces to `dist/ttf/{Variable,Italic-Variable}.ttf`, WOFF2 versions of every TTF to `dist/webfonts/<Style>.woff2`, and map glyphs to `dist/pbf/<Style>/<range>.pbf`. The Nx target also copies the output to `dist/fonts/storm-sans`:
 
 ```bash
 devenv shell -- pnpm nx run fonts-storm-sans:build

@@ -18,8 +18,39 @@
 
 /* eslint-disable unused-imports/no-unused-vars */
 
-import { mkdir, readdir, rename, rm } from "node:fs/promises";
-import { join } from "node:path";
+import { execFile } from "node:child_process";
+import { mkdir, mkdtemp, readdir, rename, rm } from "node:fs/promises";
+import { basename, dirname, extname, join } from "node:path";
+import { promisify } from "node:util";
+
+const execFileAsync = promisify(execFile);
+
+export async function generateWebfonts(ttfDir, outputDir) {
+  const files = (await readdir(ttfDir))
+    .filter(file => extname(file) === ".ttf")
+    .sort();
+  const staging = await mkdtemp(join(dirname(outputDir), ".webfonts-"));
+
+  try {
+    await Promise.all(
+      files.map(file =>
+        execFileAsync("fonttools", [
+          "ttLib.woff2",
+          "compress",
+          join(ttfDir, file),
+          "-o",
+          join(staging, `${basename(file, ".ttf")}.woff2`)
+        ])
+      )
+    );
+
+    await rm(outputDir, { recursive: true, force: true });
+    await rename(staging, outputDir);
+  } catch (error) {
+    await rm(staging, { recursive: true, force: true });
+    throw error;
+  }
+}
 
 export async function organizeFontOutputs(compiledDir, distDir, family) {
   const files = await readdir(compiledDir);

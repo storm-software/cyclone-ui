@@ -23,7 +23,18 @@ import { defineConfig } from "powerlines/config";
 const config: UserConfig = defineConfig({
   input: ["src/index.ts", "bin/cli.ts"],
   output: {
-    format: ["esm"]
+    format: ["esm"],
+    dts: true,
+    copy: {
+      path: "dist/maps/styles",
+      assets: [
+        {
+          input: "maps/styles/__generated__",
+          glob: "*.json",
+          output: "styles"
+        }
+      ]
+    }
   },
   resolve: {
     skipNodeModulesBundle: true
@@ -33,9 +44,7 @@ const config: UserConfig = defineConfig({
       outputOptions: {
         keepNames: true
       },
-      exports: {
-        all: true
-      }
+      exports: false
     })
   ]
 });

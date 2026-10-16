@@ -25,7 +25,7 @@ import { createStyle, REMOTE_GLYPHS_URL } from "../src/create-style";
 const archiveUrl =
   process.argv[2] ||
   "pmtiles://https://public.storm-cdn.com/basemaps/tiles/data/monaco.pmtiles";
-const outputDir = resolve(process.argv[3] || "generated");
+const outputDir = resolve(process.argv[3] || "__generated__");
 const glyphsUrl =
   process.argv[4] || process.env.CYCLONE_GLYPHS_URL || REMOTE_GLYPHS_URL;
 
@@ -43,7 +43,7 @@ await mkdir(outputDir, { recursive: true });
 
 for (const theme of ["light", "dark"] as CycloneTheme[]) {
   await writeFile(
-    resolve(outputDir, `cyclone-${theme}.json`),
+    resolve(outputDir, `${theme}.json`),
     `${JSON.stringify(
       createStyle({ theme, archiveUrl, glyphsUrl }),
       null,
