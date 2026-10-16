@@ -7,9 +7,11 @@ This directory contains a local copy of [Protomaps Basemaps](https://github.com/
 The tile builder requires Java 21+, Maven, several gigabytes of free disk space for shared source datasets, and network access. From the repository root:
 
 ```sh
-devenv -O packages:pkgs 'maven jdk21' shell -- sh -c 'cd maps/tiles && mvn clean package'
-devenv -O packages:pkgs 'maven jdk21' shell -- sh -c 'cd maps/tiles && java -jar target/*-with-deps.jar --download --force --area=monaco --output=data/monaco.pmtiles'
+devenv shell -- pnpm nx run maps-tiles:mvn-package
+devenv shell -- sh -c 'cd maps/tiles && java -jar target/*-with-deps.jar --download --force --area=monaco --output=data/monaco.pmtiles'
 ```
+
+Nx discovers the Maven build through the workspace root `pom.xml`. It also exposes `maps-tiles:mvn-compile`, `maps-tiles:mvn-test`, and `maps-tiles:mvn-verify`. Use `devenv shell -- pnpm nx show project maps-tiles` to inspect all inferred targets.
 
 The output is `maps/tiles/data/monaco.pmtiles`. Replace `monaco` with a [Geofabrik area](https://download.geofabrik.de/) or supply an OSM extract and bounds using the upstream builder options. The copied `tiles/Makefile` includes more area examples. Tile source downloads and generated archives are ignored by Git.
 

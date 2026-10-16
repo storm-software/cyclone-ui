@@ -37,8 +37,8 @@ catalogs:
       specifier: 23.1.1
       version: 23.1.1
     '@nx/maven':
-      specifier: ^23.3.0
-      version: 23.3.0
+      specifier: 23.1.1
+      version: 23.1.1
     '@nx/plugin':
       specifier: 23.1.1
       version: 23.1.1
@@ -697,7 +697,7 @@ importers:
         version: 23.1.1(@babel/traverse@7.29.10)(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23))(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))(verdaccio@6.7.2(encoding@0.1.13)(typanion@3.14.0))
       '@nx/maven':
         specifier: 'catalog:'
-        version: 23.3.0(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))
+        version: 23.1.1(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))
       '@nx/plugin':
         specifier: 'catalog:'
         version: 23.1.1(@babel/traverse@7.29.10)(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23))(@types/node@25.9.9)(@zkochan/js-yaml@0.0.7)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.17.19))(eslint@10.12.0(jiti@2.7.0))(jest@30.0.5(@types/node@25.9.9)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.17.19)))(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))(typescript@6.0.3)(verdaccio@6.7.2(encoding@0.1.13)(typanion@3.14.0))
@@ -9165,8 +9165,8 @@ packages:
       verdaccio:
         optional: true
 
-  '@nx/maven@23.3.0':
-    resolution: {integrity: sha512-nmb/EJW31vkGdhNfCsaPUA+dqkBmgywk9dMZpznejdhY8QpoGmwmQdZcdZG3ASQ8sDPt5iqytp8tGrKVXeftEQ==}
+  '@nx/maven@23.1.1':
+    resolution: {integrity: sha512-8LeSJ6gGc1XLboVTo8Z2FxLMcoJVUtxpW43Q+0J9vx5jiLm7KORQ6jFsMXpN36YIcvNOQHh17Bc7ndeWEd07Ng==}
 
   '@nx/module-federation@23.1.1':
     resolution: {integrity: sha512-FHfSDIskZIV35kzb+kqEJfRRDJhev6b0ncg5SCEp9PVyA7npd7qOWxHcFs4F5bJJRZp5VMWGDHnIdwRWasCJCg==}
@@ -31694,10 +31694,11 @@ snapshots:
       - nx
       - supports-color
 
-  '@nx/maven@23.3.0(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))':
+  '@nx/maven@23.1.1(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))':
     dependencies:
-      '@nx/devkit': 23.3.0(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))
+      '@nx/devkit': 23.1.1(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))
       '@xmldom/xmldom': 0.8.15
+      tree-kill: 1.2.2
       tslib: 2.8.1
     transitivePeerDependencies:
       - nx

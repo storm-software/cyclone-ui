@@ -23,7 +23,12 @@
         "verboseOutput": false
       }
     },
-    "@nx/maven",
+    {
+      "plugin": "@nx/maven",
+      "options": {
+        "targetNamePrefix": "mvn-"
+      }
+    },
     "@nx/vitest",
     "@storm-software/workspace-tools/plugins/typescript",
     "@storm-software/workspace-tools/plugins/typescript/untyped",
