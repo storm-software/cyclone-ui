@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Sheet
 
+## [0.0.17](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.17) (10/16/2026)
+
+### Bug Fixes
+
+- **monorepo:** Improve responsiveness of form fields ([de4fbdd3](https://github.com/storm-software/cyclone-ui/commit/de4fbdd3))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.18**
+- Updated **button** to **v0.6.18**
+- Updated **heading-text** to **v0.5.18**
+- Updated **scroll-view** to **v0.5.18**
+
 ## [0.0.16](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.16) (10/14/2026)
 
 ### Updated Dependencies

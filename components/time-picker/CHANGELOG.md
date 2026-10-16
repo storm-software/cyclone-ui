@@ -2,6 +2,27 @@
 
 # Changelog for Cyclone UI - Time Picker
 
+## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/time-picker%400.0.3) (10/16/2026)
+
+### Bug Fixes
+
+- **monorepo:** Improve responsiveness of form fields ([de4fbdd3](https://github.com/storm-software/cyclone-ui/commit/de4fbdd3))
+
+### Features
+
+- **credit-card-input:** Added the Credit Card Input component package ([e05d5392](https://github.com/storm-software/cyclone-ui/commit/e05d5392))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.18**
+- Updated **button** to **v0.6.18**
+- Updated **field** to **v0.5.18**
+- Updated **form** to **v0.9.18**
+- Updated **helpers** to **v0.3.18**
+- Updated **icons** to **v0.0.14**
+- Updated **input** to **v0.6.18**
+- Updated **popover** to **v0.5.18**
+
 ## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/time-picker%400.0.2) (10/14/2026)
 
 ### Features

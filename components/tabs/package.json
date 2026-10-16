@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/tabs",
-  "version": "0.3.17",
+  "version": "0.3.18",
   "type": "module",
   "description": "A tabbed interface with Header.Item triggers and Content.Item panels. It offers underline, floating and tabbed variants in horizontal or vertical orientation, optional borders and sizes, and an animated active indicator. onValueChange reports the selected tab.",
   "repository": {

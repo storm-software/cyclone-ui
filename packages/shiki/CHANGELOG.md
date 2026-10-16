@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Shiki
 
+## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.8) (10/16/2026)
+
+### Bug Fixes
+
+- **credit-card-input:** Added texture to credit card display and improved logos ([0d6c7817](https://github.com/storm-software/cyclone-ui/commit/0d6c7817))
+
 ## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.6) (10/13/2026)
 
 ### Bug Fixes

@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Search Input
 
+## [0.1.18](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.18) (10/16/2026)
+
+### Features
+
+- **credit-card-input:** Added the Credit Card Input component package ([e05d5392](https://github.com/storm-software/cyclone-ui/commit/e05d5392))
+- **address-input:** Added the Address Input field component package ([d884a855](https://github.com/storm-software/cyclone-ui/commit/d884a855))
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.8**
+- Updated **field** to **v0.5.18**
+- Updated **form** to **v0.9.18**
+- Updated **helpers** to **v0.3.18**
+- Updated **icons** to **v0.0.14**
+- Updated **input** to **v0.6.18**
+
 ## [0.1.17](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.17) (10/14/2026)
 
 ### Updated Dependencies

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/phone-number-input",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "type": "module",
   "description": "A headless phone number input built on Input that adds a searchable country-code picker with flags in a menu. Input is masked and formatted with libphonenumber-js and maskito, and the selected country updates from the initial value. It has a defaultCountry prop and TextBox (with Value) and Trigger parts. Use it on its own or inside a Field to connect it to a form.",
   "repository": {

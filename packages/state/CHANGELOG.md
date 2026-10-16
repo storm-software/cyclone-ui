@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.19) (10/16/2026)
+
+### Features
+
+- **credit-card-input:** Added the Credit Card Input component package ([e05d5392](https://github.com/storm-software/cyclone-ui/commit/e05d5392))
+- **color-area:** Added the Color Area component package ([868f08d7](https://github.com/storm-software/cyclone-ui/commit/868f08d7))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.18**
+
 ## [0.0.18](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.18) (10/14/2026)
 
 ### Updated Dependencies

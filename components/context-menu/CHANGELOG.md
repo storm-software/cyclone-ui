@@ -2,6 +2,26 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.8) (10/16/2026)
+
+### Bug Fixes
+
+- **monorepo:** Improve responsiveness of form fields ([de4fbdd3](https://github.com/storm-software/cyclone-ui/commit/de4fbdd3))
+
+### Features
+
+- **credit-card-input:** Added the Credit Card Input component package ([e05d5392](https://github.com/storm-software/cyclone-ui/commit/e05d5392))
+- **address-input:** Added the Address Input field component package ([d884a855](https://github.com/storm-software/cyclone-ui/commit/d884a855))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.18**
+- Updated **button** to **v0.6.18**
+- Updated **helpers** to **v0.3.18**
+- Updated **icons** to **v0.0.14**
+- Updated **popover** to **v0.5.18**
+- Updated **tooltip** to **v0.5.18**
+
 ## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.7) (10/14/2026)
 
 ### Updated Dependencies

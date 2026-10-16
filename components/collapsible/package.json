@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/collapsible",
-  "version": "0.3.13",
+  "version": "0.3.14",
   "type": "module",
   "description": "A single disclosure panel built on Accordion, with Collapsible.Header and Collapsible.Content subcomponents and a chevron icon. Open state can be controlled with a boolean value or left uncontrolled with defaultValue. Use it to show and hide one section of content.",
   "repository": {

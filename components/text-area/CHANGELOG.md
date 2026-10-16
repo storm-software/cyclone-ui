@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Text Area
 
+## [0.1.18](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.18) (10/16/2026)
+
+### Features
+
+- **credit-card-input:** Added the Credit Card Input component package ([e05d5392](https://github.com/storm-software/cyclone-ui/commit/e05d5392))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.18**
+- Updated **form** to **v0.9.18**
+- Updated **helpers** to **v0.3.18**
+- Updated **input** to **v0.6.18**
+- Updated **scroll-view** to **v0.5.18**
+
 ## [0.1.17](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.17) (10/14/2026)
 
 ### Updated Dependencies

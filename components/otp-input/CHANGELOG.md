@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - OTP Input
 
+## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input%400.0.19) (10/16/2026)
+
+### Features
+
+- **credit-card-input:** Added the Credit Card Input component package ([e05d5392](https://github.com/storm-software/cyclone-ui/commit/e05d5392))
+- **color-picker:** Added the Color Picker input component package ([8bd864de](https://github.com/storm-software/cyclone-ui/commit/8bd864de))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.18**
+- Updated **form** to **v0.9.18**
+- Updated **helpers** to **v0.3.18**
+- Updated **input** to **v0.6.18**
+
 ## [0.0.18](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input%400.0.18) (10/14/2026)
 
 ### Updated Dependencies

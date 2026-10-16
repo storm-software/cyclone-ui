@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Badge
 
+## [0.3.18](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.18) (10/16/2026)
+
+### Features
+
+- **skeleton:** Added the Skeleton loading component package ([ff4c87f8](https://github.com/storm-software/cyclone-ui/commit/ff4c87f8))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.18**
+- Updated **icons** to **v0.0.14**
+- Updated **state** to **v0.0.19**
+
 ## [0.3.17](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.17) (10/14/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Rating
 
+## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.14) (10/16/2026)
+
+### Features
+
+- **credit-card-input:** Added the Credit Card Input component package ([e05d5392](https://github.com/storm-software/cyclone-ui/commit/e05d5392))
+
+### Updated Dependencies
+
+- Updated **confetti-burst** to **v0.0.8**
+- Updated **field** to **v0.5.18**
+- Updated **form** to **v0.9.18**
+- Updated **helpers** to **v0.3.18**
+- Updated **icons** to **v0.0.14**
+- Updated **tokens** to **v0.3.7**
+
 ## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.13) (10/14/2026)
 
 ### Updated Dependencies

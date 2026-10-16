@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/password-input",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "type": "module",
   "description": "A password input with a show/hide toggle and a caps-lock warning. A strength meter rates the password from very weak to strong, and inside a Field a built-in validator lists the missing criteria. It has the same TextBox, TextBox.Value and Trigger parts as Input. Use it on its own or wrap it in a Field to connect it to a Form.",
   "repository": {

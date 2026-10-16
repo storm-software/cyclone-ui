@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.8) (10/16/2026)
+
+### Features
+
+- **credit-card-input:** Added the Credit Card Input component package ([e05d5392](https://github.com/storm-software/cyclone-ui/commit/e05d5392))
+- **color-picker:** Added the Color Picker input component package ([8bd864de](https://github.com/storm-software/cyclone-ui/commit/8bd864de))
+- **color-area:** Added the Color Area component package ([868f08d7](https://github.com/storm-software/cyclone-ui/commit/868f08d7))
+- **address-input:** Added the Address Input field component package ([d884a855](https://github.com/storm-software/cyclone-ui/commit/d884a855))
+- **skeleton:** Added the Skeleton loading component package ([ff4c87f8](https://github.com/storm-software/cyclone-ui/commit/ff4c87f8))
+- **color-compositions:** Added Color Compositions display component package ([106af933](https://github.com/storm-software/cyclone-ui/commit/106af933))
+
 ## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.7) (10/14/2026)
 
 ### Bug Fixes

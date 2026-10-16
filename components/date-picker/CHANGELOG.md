@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Date Picker
 
+## [0.5.18](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.18) (10/16/2026)
+
+### Features
+
+- **credit-card-input:** Added the Credit Card Input component package ([e05d5392](https://github.com/storm-software/cyclone-ui/commit/e05d5392))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.18**
+- Updated **button** to **v0.6.18**
+- Updated **calendar** to **v0.0.3**
+- Updated **field** to **v0.5.18**
+- Updated **form** to **v0.9.18**
+- Updated **helpers** to **v0.3.18**
+- Updated **icons** to **v0.0.14**
+- Updated **input** to **v0.6.18**
+- Updated **popover** to **v0.5.18**
+
 ## [0.5.17](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.17) (10/14/2026)
 
 ### Features
