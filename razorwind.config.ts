@@ -40,7 +40,12 @@ export default defineConfig({
   logo: "https://public.storm-cdn.com/cyclone-ui/assets/dark-logo.svg",
   verbose: true,
   splitThemes: true,
-  fontsPath: ["fonts/storm-sans/dist", "fonts/storm-serif/dist"],
+  fontsPath: [
+    "fonts/storm-sans/dist/otf",
+    "fonts/storm-sans/dist/ttf",
+    "fonts/storm-serif/dist/otf",
+    "fonts/storm-serif/dist/ttf"
+  ],
   fontAssetBaseUrl: "https://public.storm-cdn.com/fonts",
   tokensPath: "packages/tokens/src/tokens/**/*.json",
   componentsPath: ["components"],

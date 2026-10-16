@@ -317,6 +317,9 @@
     },
     {
       "path": "./components/credit-card-input"
+    },
+    {
+      "path": "./maps/styles"
     }
   ],
   "files": []

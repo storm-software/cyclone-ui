@@ -17,11 +17,17 @@
 
  ------------------------------------------------------------------- */
 
-import { $, chalk, echo } from "zx";
+/* eslint-disable unused-imports/no-unused-vars */
 
-// Compiles the Storm Serif designspaces into `./dist` (relative to this file):
-// `StormSerif[-Italic]-VF.ttf` and `StormSerif-<Style>.{otf,ttf}`. Requires
-// `fontmake` and `ttfautohint` on the PATH (both provided by `devenv shell`).
+import { mkdtemp, rm } from "node:fs/promises";
+import { join } from "node:path";
+import { $, chalk, echo } from "zx";
+import { organizeFontOutputs } from "../../tools/scripts/src/fonts/build-output.mjs";
+import { generateGlyphs } from "../../tools/scripts/src/fonts/generate-glyphs.mjs";
+
+// Compiles the Storm Serif designspaces into `./dist/{otf,ttf}`, then builds
+// glyph ranges in `./dist/pbf`. Requires `fontmake`, `ttfautohint`, and
+// `font-maker` on the PATH (provided by `devenv shell`).
 //
 // fontmake's `-o` flag does NOT append: `-o variable -o otf -o ttf` parses as
 // `-o ttf` only, so all formats are passed to a single `-o`. `variable` is
@@ -34,20 +40,30 @@ const designspaces = [
 ];
 
 const $$ = $({ cwd: import.meta.dirname, verbose: true });
+const compiled = await mkdtemp(join(import.meta.dirname, ".font-compiled-"));
 
 try {
   echo`${chalk.whiteBright(" 🔨  Building the Storm Serif font...")}`;
 
   await Promise.all(
     designspaces.flatMap(designspace => [
-      $$`fontmake -m ${designspace} -o variable --output-dir dist`,
-      $$`fontmake -m ${designspace} -o otf ttf -i -a --output-dir dist`
+      $$`fontmake -m ${designspace} -o variable --output-dir ${compiled}`,
+      $$`fontmake -m ${designspace} -o otf ttf -i -a --output-dir ${compiled}`
     ])
   );
+
+  await organizeFontOutputs(
+    compiled,
+    join(import.meta.dirname, "dist"),
+    "StormSerif"
+  );
+  await generateGlyphs({ projectDir: import.meta.dirname });
 
   echo`${chalk.green(" ✔ Successfully built the Storm Serif font!")}`;
 } catch (error) {
   echo`${chalk.red(error?.message ? error.message : "A failure occurred while building the Storm Serif font")}`;
 
-  process.exit(1);
+  process.exitCode = 1;
+} finally {
+  await rm(compiled, { recursive: true, force: true });
 }

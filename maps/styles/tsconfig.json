@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    "tsBuildInfoFile": "../../dist/out-tsc/maps/styles/tsconfig.tsbuildinfo",
+    "types": ["node"],
+    "outDir": "../../dist/out-tsc/maps/styles"
+  },
+  "include": [
+    "bin/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.json",
+    "scripts/**/*.ts",
+    "powerlines.config.ts",
+    "powerlines.d.ts"
+  ]
+}

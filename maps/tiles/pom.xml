@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <planetiler.version>0.10.2</planetiler.version>
+    <junit.version>5.10.0</junit.version>
+    <mainClass>com.stormsoftware.basemap.Basemap</mainClass>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.organization>stormsoftware</sonar.organization>
+    <sonar.projectKey>stormsoftware_basemaps</sonar.projectKey>
+    <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
+  </properties>
+
+  <groupId>com.stormsoftware.basemap</groupId>
+  <artifactId>stormsoftware-basemap</artifactId>
+  <version>HEAD</version>
+
+  <name>Storm Software - Basemap</name>
+
+  <repositories>
+    <!-- Planetiler depends on geotools for shapefile processing, which is not in maven central. Add here: -->
+    <repository>
+      <id>osgeo</id>
+      <name>OSGeo Release Repository</name>
+      <url>https://repo.osgeo.org/repository/release/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>nexus-snapshots</id>
+      <name>Nexus SNAPSHOT Repository</name>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.onthegomap.planetiler</groupId>
+      <artifactId>planetiler-core</artifactId>
+      <version>${planetiler.version}</version>
+    </dependency>
+
+    <!-- To use test utilities: -->
+    <dependency>
+      <groupId>com.onthegomap.planetiler</groupId>
+      <artifactId>planetiler-core</artifactId>
+      <version>${planetiler.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M8</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>3.0.0-M8</version>
+      </plugin>
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>3.10.2</version>
+        <configuration>
+          <java>
+            <importOrder/>
+            <removeUnusedImports/>
+            <eclipse>
+              <version>4.27.0</version>
+              <!--suppress UnresolvedMavenProperty -->
+              <file>${project.basedir}/eclipse-formatter.xml</file>
+            </eclipse>
+          </java>
+          <markdown>
+            <includes>
+              <include>**/*.md</include>
+            </includes>
+            <excludes>
+              <exclude>**/target/**</exclude>
+            </excludes>
+            <flexmark/>
+          </markdown>
+        </configuration>
+        <!-- bind to "mvn verify" -->
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- give an easier to read error message when trying to build with jdk <21 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.4.1</version>
+        <executions>
+          <execution>
+            <id>enforce-java</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireJavaVersion>
+                  <version>21</version>
+                </requireJavaVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Create an executable jar from "mvn package" goal -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.8.0</version>
+        <dependencies>
+          <dependency>
+            <groupId>com.onthegomap.planetiler</groupId>
+            <artifactId>planetiler-core</artifactId>
+            <version>${planetiler.version}</version>
+          </dependency>
+        </dependencies>
+
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Multi-Release>true</Multi-Release>
+            </manifestEntries>
+            <manifest>
+              <mainClass>${mainClass}</mainClass>
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>with-deps</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>coverage</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>prepare-agent</id>
+                <goals>
+                  <goal>prepare-agent</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>report</id>
+                <goals>
+                  <goal>report</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

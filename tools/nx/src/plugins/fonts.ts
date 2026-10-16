@@ -65,7 +65,17 @@ export const createNodes: CreateNodes<CycloneUIFontPluginOptions> = [
                 clean: project.targets?.clean ?? {},
                 build: project.targets?.build ?? {
                   cache: true,
-                  inputs: ["{projectRoot}/**/*"],
+                  inputs: [
+                    "{projectRoot}/**/*",
+                    "{workspaceRoot}/tools/scripts/src/fonts/**/*",
+                    "{workspaceRoot}/devenv.lock",
+                    "{workspaceRoot}/pyproject.toml",
+                    "{workspaceRoot}/uv.lock",
+                    {
+                      runtime:
+                        "node tools/scripts/src/fonts/generate-glyphs.mjs --generator-identity"
+                    }
+                  ],
                   outputs: [
                     "{projectRoot}/dist",
                     "{workspaceRoot}/dist/{projectRoot}"

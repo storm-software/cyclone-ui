@@ -2,6 +2,7 @@ packages:
   - tools/**
   - packages/**
   - components/**
+  - maps/**
   - apps/**
   - docs/**
   - "!**/out-tsc/**"
@@ -225,8 +226,10 @@ catalog:
   "@razorwind/eslint": ^0.0.17
   "@razorwind/stylelint": ^0.0.17
   "@sourcebook/config": ^0.0.8
-  '@tanstack/react-virtual': ^3.14.19
+  "@tanstack/react-virtual": ^3.14.19
   react-native-svg: ^15.15.5
+  "@nx/maven": ^23.3.0
+  tsx: ^4.23.15
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true

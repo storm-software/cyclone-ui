@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Bold.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -8,15 +8,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-BoldItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/BoldItalic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -24,7 +16,127 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-BoldItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/ExtraLightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/SemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/Text.otf") format("opentype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/TextItalic.otf") format("opentype");
+  font-weight: 450;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/ThinItalic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Sans";
+  src: url("https://public.storm-cdn.com/fonts/BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -32,7 +144,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-ExtraLight.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -40,15 +152,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -56,15 +160,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-ExtraLightItalic.ttf") format("truetype");
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Italic-VF.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/Italic-VF.ttf") format("truetype");
   font-weight: 100 700;
   font-style: italic;
   font-display: swap;
@@ -72,7 +168,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Italic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -80,15 +176,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Light.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -96,15 +184,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-LightItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/LightItalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -112,15 +192,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Medium.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -128,15 +200,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-MediumItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -144,15 +208,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-MediumItalic.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Regular.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -160,15 +216,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-SemiBold.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -176,15 +224,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/SemiBoldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -192,15 +232,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-SemiBoldItalic.ttf") format("truetype");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Text.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Text.ttf") format("truetype");
   font-weight: 450;
   font-style: normal;
   font-display: swap;
@@ -208,15 +240,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Text.ttf") format("truetype");
-  font-weight: 450;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-TextItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/TextItalic.ttf") format("truetype");
   font-weight: 450;
   font-style: italic;
   font-display: swap;
@@ -224,15 +248,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-TextItalic.ttf") format("truetype");
-  font-weight: 450;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Thin.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -240,15 +256,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-ThinItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/ThinItalic.ttf") format("truetype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -256,15 +264,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-ThinItalic.ttf") format("truetype");
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/StormSans-VF.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/VF.ttf") format("truetype");
   font-weight: 100 700;
   font-style: normal;
   font-display: swap;
@@ -272,7 +272,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-Bold.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -280,15 +280,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/BoldItalic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -296,7 +288,111 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-BoldItalic.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/ExtraBoldItalic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/ExtraLightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/SemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Storm Serif";
+  src: url("https://public.storm-cdn.com/fonts/BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -304,7 +400,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -312,15 +408,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/ExtraBoldItalic.ttf") format("truetype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -328,15 +416,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraBoldItalic.ttf") format("truetype");
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -344,15 +424,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -360,15 +432,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-ExtraLightItalic.ttf") format("truetype");
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-Italic-VF.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/Italic-VF.ttf") format("truetype");
   font-weight: 200 800;
   font-style: italic;
   font-display: swap;
@@ -376,7 +440,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-Italic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -384,15 +448,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-Light.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -400,15 +456,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-LightItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/LightItalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -416,15 +464,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-Medium.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -432,15 +472,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -448,15 +480,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-MediumItalic.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-Regular.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -464,15 +488,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-SemiBold.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -480,15 +496,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.otf") format("opentype");
+  src: url("https://public.storm-cdn.com/fonts/SemiBoldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -496,15 +504,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-SemiBoldItalic.ttf") format("truetype");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/StormSerif-VF.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/VF.ttf") format("truetype");
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;

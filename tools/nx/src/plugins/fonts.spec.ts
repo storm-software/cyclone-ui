@@ -73,7 +73,17 @@ describe("Cyclone UI fonts plugin", () => {
                   cache: true,
                   dependsOn: ["clean"],
                   executor: "nx:run-commands",
-                  inputs: ["{projectRoot}/**/*"],
+                  inputs: [
+                    "{projectRoot}/**/*",
+                    "{workspaceRoot}/tools/scripts/src/fonts/**/*",
+                    "{workspaceRoot}/devenv.lock",
+                    "{workspaceRoot}/pyproject.toml",
+                    "{workspaceRoot}/uv.lock",
+                    {
+                      runtime:
+                        "node tools/scripts/src/fonts/generate-glyphs.mjs --generator-identity"
+                    }
+                  ],
                   options: {
                     commands: [
                       "pnpm exec zx {projectRoot}/build.mjs",

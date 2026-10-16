@@ -23,6 +23,7 @@
         "verboseOutput": false
       }
     },
+    "@nx/maven",
     "@nx/vitest",
     "@storm-software/workspace-tools/plugins/typescript",
     "@storm-software/workspace-tools/plugins/typescript/untyped",

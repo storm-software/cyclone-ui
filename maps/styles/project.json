@@ -1,0 +1,19 @@
+{
+  "name": "maps-styles",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "maps/styles/src",
+  "targets": {
+    "build-base": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["tsx scripts/generate.ts"],
+        "cwd": "maps/styles",
+        "parallel": false
+      }
+    },
+    "build": {
+      "dependsOn": ["build-base"]
+    }
+  }
+}

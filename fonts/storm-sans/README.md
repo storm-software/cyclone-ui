@@ -14,10 +14,19 @@ Applied direction:
 
 Masters: Thin (100), Regular (400), Bold (700). The designspace retains the original IBM Plex weight mapping and normal-width instances only.
 
-This folder is its own Nx project, `fonts-storm-sans`. Its build script (`build.mjs`) compiles the designspaces with fontmake and outputs `StormSans-<Style>.{otf,ttf}` and `StormSans[-Italic]-VF.ttf` to `fonts/storm-sans/dist`. The Nx target also copies the output to `dist/fonts/storm-sans`:
+This folder is its own Nx project, `fonts-storm-sans`. Its build script (`build.mjs`) compiles the designspaces with fontmake and writes static faces to `dist/otf/<Style>.otf` and `dist/ttf/<Style>.ttf`, variable faces to `dist/ttf/{Variable,Italic-Variable}.ttf`, and map glyphs to `dist/pbf/<Style>/<range>.pbf`. The Nx target also copies the output to `dist/fonts/storm-sans`:
 
 ```bash
-nx run fonts-storm-sans:build
+devenv shell -- pnpm nx run fonts-storm-sans:build
 ```
 
 Review note: the source intentionally favors interpolation safety and clean outlines over literal copying of proprietary HashiCorp Sans glyphs.
+
+## MapLibre SDF glyphs
+
+The build also generates map-label glyphs from the Regular, Medium, Bold, and Italic static TTFs.
+
+The PBF output in `dist/pbf/` includes validated metrics, a coverage/hash manifest, and
+[OFL notices](OFL.txt). It does not publish assets. See the
+[map glyph guide](../../maps/fonts/README.md) for previewing, hosting, and
+coverage limitations.

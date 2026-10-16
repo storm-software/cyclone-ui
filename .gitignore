@@ -14,6 +14,7 @@ __generated__
 .pnpm-store
 .worktrees
 graphify-out
+.font-compiled-*
 SF-Pro.dmg
 
 packages/tokens/src/css/fonts

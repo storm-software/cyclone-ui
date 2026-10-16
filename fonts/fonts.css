@@ -14,8 +14,8 @@
  *   nx run-many --target=build --projects=fonts-storm-sans,fonts-storm-serif
  *
  * URLs are relative to this file, so it works both from the source projects
- * (`fonts/fonts.css` -> `fonts/storm-sans/dist/*`) and from the build output
- * (`dist/fonts/fonts.css` -> `dist/fonts/storm-sans/dist/*`).
+ * (`fonts/fonts.css` -> `fonts/storm-sans/dist/ttf/*`) and from the build
+ * output (`dist/fonts/fonts.css` -> `dist/fonts/storm-sans/dist/ttf/*`).
  *
  * Bundled apps (Vite, webpack, Next.js) can import it directly:
  *
@@ -37,9 +37,9 @@
 @font-face {
   font-family: "Storm Sans";
   src:
-    url("./storm-sans/dist/StormSans-VF.ttf") format("truetype")
+    url("./storm-sans/dist/ttf/Variable.ttf") format("truetype")
       tech(variations),
-    url("./storm-sans/dist/StormSans-VF.ttf") format("truetype-variations");
+    url("./storm-sans/dist/ttf/Variable.ttf") format("truetype-variations");
   font-weight: 100 700;
   font-style: normal;
   font-display: swap;
@@ -48,9 +48,9 @@
 @font-face {
   font-family: "Storm Sans";
   src:
-    url("./storm-sans/dist/StormSans-Italic-VF.ttf") format("truetype")
+    url("./storm-sans/dist/ttf/Italic-Variable.ttf") format("truetype")
       tech(variations),
-    url("./storm-sans/dist/StormSans-Italic-VF.ttf")
+    url("./storm-sans/dist/ttf/Italic-Variable.ttf")
       format("truetype-variations");
   font-weight: 100 700;
   font-style: italic;
@@ -60,9 +60,9 @@
 @font-face {
   font-family: "Storm Serif";
   src:
-    url("./storm-serif/dist/StormSerif-VF.ttf") format("truetype")
+    url("./storm-serif/dist/ttf/Variable.ttf") format("truetype")
       tech(variations),
-    url("./storm-serif/dist/StormSerif-VF.ttf") format("truetype-variations");
+    url("./storm-serif/dist/ttf/Variable.ttf") format("truetype-variations");
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;
@@ -71,9 +71,9 @@
 @font-face {
   font-family: "Storm Serif";
   src:
-    url("./storm-serif/dist/StormSerif-Italic-VF.ttf") format("truetype")
+    url("./storm-serif/dist/ttf/Italic-Variable.ttf") format("truetype")
       tech(variations),
-    url("./storm-serif/dist/StormSerif-Italic-VF.ttf")
+    url("./storm-serif/dist/ttf/Italic-Variable.ttf")
       format("truetype-variations");
   font-weight: 200 800;
   font-style: italic;

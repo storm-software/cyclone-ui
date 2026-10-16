@@ -83,7 +83,7 @@ export default async function runExecutor(
       {
         ...options,
         bucketId: "storm-public",
-        bucketPath: "fonts",
+        bucketPath: `fonts/${projectRoot.replace(/.*fonts\//, "")}`,
         clean: false,
         path: outputPath,
         writeMetaJson: false

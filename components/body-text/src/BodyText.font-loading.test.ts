@@ -20,7 +20,7 @@ describe("BodyText font loading", () => {
 
     expect(preview).toContain('import "@fonts/fonts.css"');
     expect(fontCss).toContain(`font-family: "${bodyFontFamily}"`);
-    expect(fontCss).toContain('url("./storm-sans/dist/StormSans-VF.ttf")');
+    expect(fontCss).toContain('url("./storm-sans/dist/ttf/Variable.ttf")');
     expect(fontCss).toContain("font-style: normal");
   });
 });

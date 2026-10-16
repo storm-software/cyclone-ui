@@ -51,9 +51,6 @@
   },
   "files.exclude": {
     "**/common/temp/**": true,
-    "**/obj/**": true,
-    "**/bin/**": true,
-    "**/.git": true,
     "**/.DS_Store": true
   },
   "rust-analyzer.procMacro.ignored": {
@@ -251,5 +248,6 @@
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "chat.mcp.gallery.enabled": true,
   "typescript.native-preview.tsdk": "./node_modules/@typescript/native-preview",
-  "python-envs.defaultEnvManager": "ms-python.python:system"
+  "python-envs.defaultEnvManager": "ms-python.python:system",
+  "java.configuration.updateBuildConfiguration": "interactive"
 }

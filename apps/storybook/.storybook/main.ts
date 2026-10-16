@@ -316,7 +316,10 @@ const config: StorybookConfig = {
             // help: Storybook itself doesn't depend on the package.
             find: /^@tamagui\/adapt$/,
             replacement: realpathSync(
-              join(workspaceRoot, "components/popover/node_modules/@tamagui/adapt")
+              join(
+                workspaceRoot,
+                "components/popover/node_modules/@tamagui/adapt"
+              )
             )
           },
           {

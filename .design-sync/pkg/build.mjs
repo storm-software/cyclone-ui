@@ -93,13 +93,17 @@ await build({
 // URLs rebased to dist/, plus the `body` font rule from preview-body.html,
 // which react-native-web <input>s inherit (else Times New Roman).
 // The converter only resolves url()s inside the package dir, so the variable
-// fonts are copied next to the stylesheet.
+// fonts are copied into family-specific directories next to the stylesheet.
 const fontsCss = readFileSync(join(root, "fonts/fonts.css"), "utf8").replace(
-  /url\("\.\/storm-(sans|serif)\/dist\/([^"]+)"\)/g,
+  /url\("\.\/storm-(sans|serif)\/dist\/ttf\/([^"]+)"\)/g,
   (_, family, file) => {
-    mkdirSync(join(here, "dist/fonts"), { recursive: true });
-    copyFileSync(join(root, `fonts/storm-${family}/dist`, file), join(here, "dist/fonts", file));
-    return `url("./fonts/${file}")`;
+    const directory = `storm-${family}`;
+    mkdirSync(join(here, "dist/fonts", directory), { recursive: true });
+    copyFileSync(
+      join(root, "fonts", directory, "dist/ttf", file),
+      join(here, "dist/fonts", directory, file)
+    );
+    return `url("./fonts/${directory}/${file}")`;
   }
 );
 const bodyRule = /body\s*\{[^}]*font-family[^}]*\}/.exec(readFileSync(join(sb, ".storybook/preview-body.html"), "utf8"))?.[0];

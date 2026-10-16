@@ -3,8 +3,8 @@
   "compilerOptions": {
     "ignoreDeprecations": "6.0",
     "tsBuildInfoFile": "../../dist/out-tsc/packages/eslint-plugin/tsconfig.tsbuildinfo",
-    "outDir": "../../dist/out-tsc/packages/eslint-plugin",
-    "types": ["node"]
+    "types": ["node"],
+    "outDir": "../../dist/out-tsc/packages/eslint-plugin"
   },
   "include": [
     "src/**/*.ts",
