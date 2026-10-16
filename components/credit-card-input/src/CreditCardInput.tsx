@@ -53,6 +53,7 @@ import {
   Stop,
   Svg
 } from "react-native-svg";
+import { CreditCardTexture } from "./CreditCardTexture";
 
 export interface CreditCardBrand {
   /**
@@ -464,9 +465,17 @@ const UnionPayIcon = (props: IconProps) => {
 
 // Crops a brand logo to its own bounds, aligned to the end of its box.
 const createCardLogo =
-  (viewBox: string, Logo: React.ComponentType<GProps>) =>
+  (
+    viewBox: string,
+    Logo: React.ComponentType<GProps>,
+    overrideProps: SvgProps = {}
+  ) =>
   ({ color, ...props }: SvgProps) => (
-    <Svg viewBox={viewBox} preserveAspectRatio="xMaxYMid meet" {...props}>
+    <Svg
+      viewBox={viewBox}
+      preserveAspectRatio="xMaxYMid meet"
+      {...props}
+      {...overrideProps}>
       <Logo color={color} />
     </Svg>
   );
@@ -480,7 +489,10 @@ const CREDIT_CARD_BRANDS: CreditCardBrand[] = [
     lengths: [15],
     securityCodeLength: 4,
     icon: AmexIcon,
-    logo: createCardLogo("-0.7 9.8 58.6 19.2", AmexLogo)
+    logo: createCardLogo("-0.7 9.8 62 19.2", AmexLogo, {
+      width: 140,
+      height: 75
+    })
   },
   {
     name: "Diners Club",
@@ -507,7 +519,10 @@ const CREDIT_CARD_BRANDS: CreditCardBrand[] = [
     lengths: [16, 13, 19],
     securityCodeLength: 3,
     icon: VisaIcon,
-    logo: createCardLogo("60 148 660 206", VisaLogo)
+    logo: createCardLogo("60 148 700 250", VisaLogo, {
+      width: 120,
+      height: 60
+    })
   },
   {
     name: "Mastercard",
@@ -516,7 +531,10 @@ const CREDIT_CARD_BRANDS: CreditCardBrand[] = [
     lengths: [16],
     securityCodeLength: 3,
     icon: MasterCardIcon,
-    logo: createCardLogo("90 70 600 360", MasterCardLogo)
+    logo: createCardLogo("90 70 650 360", MasterCardLogo, {
+      width: 180,
+      height: 90
+    })
   },
   {
     name: "Discover",
@@ -525,7 +543,10 @@ const CREDIT_CARD_BRANDS: CreditCardBrand[] = [
     lengths: [16, 19],
     securityCodeLength: 3,
     icon: DiscoverIcon,
-    logo: createCardLogo("64 151 633 103", DiscoverLogo)
+    logo: createCardLogo("64 151 680 120", DiscoverLogo, {
+      width: 180,
+      height: 100
+    })
   },
   {
     name: "UnionPay",
@@ -866,7 +887,9 @@ const CreditCardInputCardFrame = styled(View, {
   borderWidth: 1,
   borderColor: "hairline",
   backgroundColor: "sunkenActive",
-  justifyContent: "space-between"
+  justifyContent: "space-between",
+  position: "relative",
+  overflow: "hidden"
 });
 
 const CreditCardInputCardText = styled(Text, {
@@ -917,12 +940,32 @@ const CreditCardInputCard = createStyledHOC(
           ref={forwardedRef}
           aria-hidden={true}
           {...props}>
-          <CreditCardInputCardRow alignItems="center">
+          <CreditCardTexture
+            style={{ position: "absolute", top: 0, left: 0 }}
+            width="100%"
+            height="100%"
+            color={getVariableValue(theme.emphasis, "color")}
+            fill="currentColor"
+            opacity={0.08}
+          />
+          {/* Fixed height with the logo out of flow, so an oversized brand
+              logo can't push the rest of the card around. */}
+          <CreditCardInputCardRow
+            alignItems="center"
+            height={48}
+            position="relative">
             <CreditCardInputCardText fontFamily="title-md">
               {bankName}
             </CreditCardInputCardText>
             {brand.logo && (
-              <CreditCardBrandIcon key={brand.name} paddingHorizontal={0}>
+              <CreditCardBrandIcon
+                key={brand.name}
+                paddingHorizontal={0}
+                position="absolute"
+                top={0}
+                bottom={0}
+                right={0}
+                alignItems="flex-end">
                 <brand.logo
                   width={75}
                   height={48}

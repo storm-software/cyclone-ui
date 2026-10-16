@@ -34,8 +34,8 @@ type CreditCardInputStoryArgs = Pick<FieldProps, "size" | "disabled"> & {
     expiry?: string;
     securityCode?: string;
     nameOnCard?: string;
-    bankName?: string;
   };
+  bankName?: string;
 };
 
 const meta = {
@@ -202,9 +202,9 @@ export const CustomBankName: Story = {
       cardNumber: "5555555555554444",
       expiry: "08/34",
       securityCode: "123",
-      nameOnCard: "John Doe",
-      bankName: "Orbit Bank"
-    }
+      nameOnCard: "John Doe"
+    },
+    bankName: "Storm Bank"
   }
 };
 

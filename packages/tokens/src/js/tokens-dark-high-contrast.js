@@ -2342,7 +2342,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: "{color.neutral.3}",
+        $value: "{color.neutral.2}",
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
         group: "foreground",
@@ -7027,7 +7027,7 @@ module.exports = {
       key: "{color.emphasis-hovered}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#5c5c5c",
+      $value: "#626262",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)",
       group: "foreground",
@@ -7040,9 +7040,9 @@ module.exports = {
         $value: {
           colorSpace: "srgb",
           components: [
-            0.3607843137254902, 0.3607843137254902, 0.3607843137254902,
+            0.3843137254901961, 0.3843137254901961, 0.3843137254901961,
           ],
-          hex: "#5c5c5c",
+          hex: "#626262",
         },
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker)",
@@ -7114,7 +7114,7 @@ module.exports = {
       key: "{color.emphasis-disabled}",
       $type: "color",
       colorSpace: "display-p3",
-      $value: "#767685",
+      $value: "#7a7a89",
       $description:
         "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
       group: "foreground",
@@ -7124,13 +7124,7 @@ module.exports = {
       original: {
         $type: "color",
         colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [
-            0.4627450980392157, 0.4627450980392157, 0.5215686274509804,
-          ],
-          hex: "#767685",
-        },
+        $value: "{color.base.primary-disabled}",
         $description:
           "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 35% over oklch(0.3839 0.0045 286.26))",
         group: "foreground",
