@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Popover
 
+## [0.5.19](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.19) (10/16/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.19**
+- Updated **button** to **v0.6.19**
+- Updated **heading-text** to **v0.5.19**
+- Updated **scroll-view** to **v0.5.19**
+- Updated **sheet** to **v0.0.18**
+
 ## [0.5.18](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.18) (10/16/2026)
 
 ### Bug Fixes

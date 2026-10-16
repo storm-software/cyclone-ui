@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.9) (10/16/2026)
+
+### Bug Fixes
+
+- **credit-card-input:** Clean up display around form input ([01c7beb8](https://github.com/storm-software/cyclone-ui/commit/01c7beb8))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.19**
+- Updated **button** to **v0.6.19**
+- Updated **helpers** to **v0.3.19**
+- Updated **icons** to **v0.0.15**
+- Updated **popover** to **v0.5.19**
+- Updated **tooltip** to **v0.5.19**
+
 ## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.8) (10/16/2026)
 
 ### Bug Fixes

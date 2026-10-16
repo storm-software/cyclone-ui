@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Search Input
 
+## [0.1.19](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.19) (10/16/2026)
+
+### Bug Fixes
+
+- **credit-card-input:** Clean up display around form input ([01c7beb8](https://github.com/storm-software/cyclone-ui/commit/01c7beb8))
+
+### Updated Dependencies
+
+- Updated **context-menu** to **v0.0.9**
+- Updated **field** to **v0.5.19**
+- Updated **form** to **v0.9.19**
+- Updated **helpers** to **v0.3.19**
+- Updated **icons** to **v0.0.15**
+- Updated **input** to **v0.6.19**
+
 ## [0.1.18](https://github.com/storm-software/cyclone-ui/releases/tag/search-input%400.1.18) (10/16/2026)
 
 ### Features

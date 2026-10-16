@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/alert",
-  "version": "0.4.18",
+  "version": "0.4.19",
   "type": "module",
   "description": "An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, Alert.Content.Body, Alert.Close). Its type prop (base, brand, danger, warning, info, success, discovery, positive, negative) sets the color theme and default icon. Use it to show status or feedback messages in the page.",
   "repository": {

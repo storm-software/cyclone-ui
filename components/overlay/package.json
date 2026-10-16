@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/overlay",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "description": "A full-bleed backdrop that partially obscures background content with a blurred, theme-tinted gradient that fades in and out on enter/exit. Place it inside a positioned parent or a presence wrapper (for example a dialog or sheet overlay).",
   "repository": {

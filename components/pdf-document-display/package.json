@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/pdf-document-display",
-  "version": "0.5.18",
+  "version": "0.5.19",
   "type": "module",
   "description": "Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinner and PDF icon placeholder while loading or after an error. It exposes load progress, success and error callbacks, a pageNumber prop, and an option to disable the context menu.",
   "repository": {

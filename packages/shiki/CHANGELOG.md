@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Shiki
 
+## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.9) (10/16/2026)
+
+### Bug Fixes
+
+- **credit-card-input:** Clean up display around form input ([01c7beb8](https://github.com/storm-software/cyclone-ui/commit/01c7beb8))
+
+### Features
+
+- **maps-styles:** Initial check-in of the maps projects ([229ec4ad](https://github.com/storm-software/cyclone-ui/commit/229ec4ad))
+
 ## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.8) (10/16/2026)
 
 ### Bug Fixes

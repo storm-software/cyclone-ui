@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Fonts Storm Serif
 
+## [1.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-serif%401.0.11) (10/16/2026)
+
+### Features
+
+- **maps-styles:** Initial check-in of the maps projects ([229ec4ad](https://github.com/storm-software/cyclone-ui/commit/229ec4ad))
+
 ## [1.0.1](https://github.com/storm-software/cyclone-ui/releases/tag/fonts-storm-serif%401.0.1) (10/05/2026)
 
 ### Bug Fixes

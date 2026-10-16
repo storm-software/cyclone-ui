@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Label Text
 
+## [0.5.19](https://github.com/storm-software/cyclone-ui/releases/tag/label-text%400.5.19) (10/16/2026)
+
+### Bug Fixes
+
+- **credit-card-input:** Clean up display around form input ([01c7beb8](https://github.com/storm-software/cyclone-ui/commit/01c7beb8))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.19**
+- Updated **helpers** to **v0.3.19**
+
 ## [0.5.18](https://github.com/storm-software/cyclone-ui/releases/tag/label-text%400.5.18) (10/16/2026)
 
 ### Features
