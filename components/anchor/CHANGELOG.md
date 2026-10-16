@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Anchor
 
+## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.19) (10/16/2026)
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.20**
+- Updated **icons** to **v0.0.16**
+
 ## [0.0.18](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.18) (10/16/2026)
 
 ### Updated Dependencies

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/previous-button",
-  "version": "0.5.19",
+  "version": "0.5.20",
   "type": "module",
   "description": "A button with an animated left-arrow icon and a default \"Previous\" label. The label can be hidden with hideText, and the arrow can shrink when animateShrink is set. Use it for back navigation in wizards, steppers and paginated flows.",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/radio-group",
-  "version": "0.5.19",
+  "version": "0.5.20",
   "type": "module",
   "description": "A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group. Each item shows a label and an optional description next to its radio indicator. It supports form control sizes, disabled and required states, validation-aware styling, and controlled or default values. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field, renders the field items as options when given no children, and reports changes to it.",
   "repository": {
