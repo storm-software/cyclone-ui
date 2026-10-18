@@ -97,17 +97,17 @@ catalog:
   "@tamagui/vite-plugin": ^3.0.2
   "@tamagui/web": ^3.0.2
   "@taplo/cli": ^0.7.0
-  "@nx/devkit": 23.1.1
-  "@nx/eslint-plugin": 23.1.1
-  "@nx/expo": 23.1.1
-  "@nx/js": 23.1.1
-  "@nx/plugin": 23.1.1
-  "@nx/react": 23.1.1
-  "@nx/workspace": 23.1.1
-  "@nx/react-native": 23.1.1
-  "@nx/storybook": 23.1.1
-  "@nx/vite": 23.1.1
-  "@nx/vitest": 23.1.1
+  "@nx/devkit": 23.3.0
+  "@nx/eslint-plugin": 23.3.0
+  "@nx/expo": 23.3.0
+  "@nx/js": 23.3.0
+  "@nx/plugin": 23.3.0
+  "@nx/react": 23.3.0
+  "@nx/workspace": 23.3.0
+  "@nx/react-native": 23.3.0
+  "@nx/storybook": 23.3.0
+  "@nx/vite": 23.3.0
+  "@nx/vitest": 23.3.0
   "@razorwind/core": ^0.0.91
   "@razorwind/css": ^0.0.74
   "@razorwind/design-md": ^0.0.88
@@ -177,7 +177,7 @@ catalog:
   lefthook: ^1.13.6
   log4brains: ^1.1.0
   maska: ^3.2.2
-  nx: 23.1.1
+  nx: 23.3.0
   optics-ts: ^2.4.1
   powerlines: ^0.47.214
   prettier: ^3.9.10
@@ -229,8 +229,9 @@ catalog:
   "@sourcebook/config": ^0.0.8
   "@tanstack/react-virtual": ^3.14.19
   react-native-svg: ^15.15.5
-  "@nx/maven": 23.1.1
+  "@nx/maven": 23.3.0
   tsx: ^4.23.15
+  "@nx/docker": ^23.3.0
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true

@@ -10,6 +10,19 @@
         "projects": ["fonts/*"],
         "projectsRelationship": "independent",
         "skipFormatting": true
+      },
+      "tiles": {
+        "projects": ["maps-tiles"],
+        "projectsRelationship": "independent",
+        "docker": {
+          "groupPreVersionCommand": "pnpm nx run maps-tiles:docker:build",
+          "skipVersionActions": true,
+          "versionSchemes": {
+            "production": "{currentDate|YYMM.DD}.{shortCommitSha}"
+          },
+          "repositoryName": "storm-software/cyclone-ui-tiles",
+          "registryUrl": "ghcr.io"
+        }
       }
     }
   },
@@ -27,6 +40,13 @@
       "plugin": "@nx/maven",
       "options": {
         "targetNamePrefix": "mvn-"
+      }
+    },
+    {
+      "plugin": "@nx/docker",
+      "options": {
+        "buildTarget": "docker:build",
+        "runTarget": "docker:run"
       }
     },
     "@nx/vitest",

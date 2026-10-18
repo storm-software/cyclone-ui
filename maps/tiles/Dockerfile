@@ -1,5 +1,5 @@
 # Stage 1: Build
-FROM maven:3-eclipse-temurin-22-alpine AS build
+FROM maven:3-eclipse-temurin-25-alpine AS build
 WORKDIR /tiles
 
 # Copy pom.xml and download dependencies separately to create a cached layer
@@ -11,7 +11,7 @@ COPY src src
 RUN mvn clean package
 
 # Stage 2: Runtime
-FROM eclipse-temurin:22-jre-alpine
+FROM eclipse-temurin:25-jre-alpine
 WORKDIR /tiles
 
 # Copy only the built jar from the build stage

@@ -72,6 +72,7 @@
   "devDependencies": {
     "@expo/cli": "catalog:",
     "@nx/devkit": "catalog:",
+    "@nx/docker": "catalog:",
     "@nx/eslint-plugin": "catalog:",
     "@nx/expo": "catalog:",
     "@nx/js": "catalog:",

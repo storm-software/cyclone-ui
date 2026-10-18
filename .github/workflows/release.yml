@@ -59,6 +59,7 @@ jobs:
     permissions:
       contents: write
       id-token: write
+      packages: write
     needs:
       - start
     steps:
@@ -69,6 +70,13 @@ jobs:
           gpg-private-key: ${{ secrets.STORM_BOT_GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.STORM_BOT_GPG_PASSPHRASE }}
           storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release repository updates
         uses: storm-software/action-release@main
