@@ -10,6 +10,7 @@ tsconfig.tsbuildinfo
 __generated__
 
 .venv
+.shell-shock
 .playwright-mcp
 .pnpm-store
 .worktrees
