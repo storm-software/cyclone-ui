@@ -143,6 +143,25 @@ declare const tokens: {
       "link-inactive": DesignToken;
       "link-disabled": DesignToken;
     };
+    brand: {
+      primary: DesignToken;
+      link: DesignToken;
+      "on-primary": DesignToken;
+      secondary: DesignToken;
+      "on-secondary": DesignToken;
+      "primary-hovered": DesignToken;
+      "primary-active": DesignToken;
+      "primary-inactive": DesignToken;
+      "primary-disabled": DesignToken;
+      "secondary-hovered": DesignToken;
+      "secondary-active": DesignToken;
+      "secondary-inactive": DesignToken;
+      "secondary-disabled": DesignToken;
+      "link-hovered": DesignToken;
+      "link-active": DesignToken;
+      "link-inactive": DesignToken;
+      "link-disabled": DesignToken;
+    };
     danger: {
       primary: DesignToken;
       link: DesignToken;
@@ -238,7 +257,6 @@ declare const tokens: {
       "link-inactive": DesignToken;
       "link-disabled": DesignToken;
     };
-    backdrop: DesignToken;
     shadow: {
       resting: {
         xsmall: DesignToken;
@@ -648,6 +666,10 @@ declare const tokens: {
     "base-subtle": DesignToken;
     "base-offset": DesignToken;
     "base-subtle-offset": DesignToken;
+    brand: DesignToken;
+    "brand-subtle": DesignToken;
+    "brand-offset": DesignToken;
+    "brand-subtle-offset": DesignToken;
     danger: DesignToken;
     "danger-subtle": DesignToken;
     "danger-offset": DesignToken;

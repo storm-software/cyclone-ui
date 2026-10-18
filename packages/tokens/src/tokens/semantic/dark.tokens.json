@@ -102,6 +102,16 @@
         "semantic": true
       }
     },
+    "brand": {
+      "$description": "A theme representing the core brand colors.",
+      "primary": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.8258 0.1448 173.56)",
+        "$description": "The Storm Teal color is used as the primary brand color for Storm Software.",
+        "semantic": true
+      }
+    },
     "danger": {
       "$description": "Danger theme colors used for destructive actions and error states.",
       "primary": {
@@ -165,13 +175,6 @@
         "$description": "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
         "semantic": true
       }
-    },
-    "backdrop": {
-      "$type": "color",
-      "colorSpace": "display-p3",
-      "$value": "#0D0C0766",
-      "$description": "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
-      "semantic": true
     },
     "shadow": {
       "$description": "Box-shadow presets for elevation. Resting shadows lift elements slightly off their surface; floating shadows separate content that sits above the page.",

@@ -18,21 +18,18 @@
 
 import type { IconProps } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
-import {
-  animate,
-  delay,
-  useMotionValue,
-  useMotionValueEvent
-} from "motion/react";
+import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
-import type { SvgProps } from "react-native-svg";
 import { Path, Svg } from "react-native-svg";
 import type { ThemedIconBodyProps } from "./themed-icon";
 import { themedIcon } from "./themed-icon";
 export type CheckProps = IconProps & {
   isComplete?: boolean;
 };
+
+const LINE1_LENGTH = 6 * Math.SQRT2;
+const LINE2_LENGTH = Math.hypot(8, 12);
 
 const Icon = ({
   isComplete = true,
@@ -43,78 +40,36 @@ const Icon = ({
 }: ThemedIconBodyProps<CheckProps>) => {
   const color = useCurrentColor((props.color || "onPrimary") as any);
 
-  const motionLine1 = useMotionValue(0);
-  const playbackLine1 = animate(motionLine1, 6, {
-    type: "spring",
-    duration: 0.3,
-    bounce: 0
-  });
-
-  const [line1, setLine1] = useState(0);
-  useMotionValueEvent(motionLine1, "change", latest => {
-    setLine1(latest);
-  });
-
-  const [startLine2, setStartLine2] = useState(false);
-
-  if (!isComplete && startLine2) {
-    setStartLine2(false);
-  }
-
-  const motionLine2x = useMotionValue(7);
-  const playbackLine2x = animate(motionLine2x, 15, {
-    type: "spring",
-    duration: 0.8,
-    bounce: 0
-  });
-
-  const [line2x, setLine2x] = useState(7);
-  useMotionValueEvent(motionLine2x, "change", latest => {
-    setLine2x(latest);
-  });
-
-  const motionLine2y = useMotionValue(15);
-  const playbackLine2y = animate(motionLine2y, 3, {
-    type: "spring",
-    duration: 0.8,
-    bounce: 0
-  });
-
-  const [line2y, setLine2y] = useState(15);
-  useMotionValueEvent(motionLine2y, "change", latest => {
-    setLine2y(latest);
-  });
+  // A single progress value drives both strokes, so the check is drawn at a
+  // constant speed along its full length (no hand-off timing between lines).
+  const progress = useMotionValue(0);
+  const [t, setT] = useState(0);
+  useMotionValueEvent(progress, "change", setT);
 
   useEffect(() => {
-    if (isComplete) {
-      playbackLine1.play();
-
-      delay(() => {
-        setStartLine2(true);
-
-        playbackLine2x.play();
-        playbackLine2y.play();
-      }, 315);
-    } else {
-      playbackLine1.stop();
-      motionLine1.set(0);
-
-      playbackLine2x.stop();
-      motionLine2x.set(7);
-
-      playbackLine2y.stop();
-      motionLine2y.set(15);
+    if (!isComplete) {
+      progress.set(0);
+      return;
     }
-  }, [
-    playbackLine1,
-    playbackLine2x,
-    playbackLine2y,
-    motionLine1,
-    motionLine2x,
-    motionLine2y,
-    setStartLine2,
-    isComplete
-  ]);
+
+    const controls = animate(progress, 1, {
+      duration: 0.45,
+      ease: "easeInOut"
+    });
+
+    return () => controls.stop();
+  }, [isComplete, progress]);
+
+  // Stroke 1: (1,9) → (7,15); stroke 2: (7,15) → (15,3)
+  const distance = t * (LINE1_LENGTH + LINE2_LENGTH);
+  let d: string;
+  if (distance <= LINE1_LENGTH) {
+    const offset = distance / Math.SQRT2;
+    d = `M1 9 l${offset} ${offset}`;
+  } else {
+    const f = (distance - LINE1_LENGTH) / LINE2_LENGTH;
+    d = `M1 9 L7 15 L${7 + 8 * f} ${15 - 12 * f}`;
+  }
 
   return (
     <Svg
@@ -125,17 +80,10 @@ const Icon = ({
       stroke={color}
       strokeLinecap="round"
       strokeLinejoin="round"
-      {...(props as SvgProps)}
+      {...props}
       style={StyleSheet.flatten([{ overflow: "visible" }, style])}
       strokeWidth={strokeWidth}>
-      {isComplete && (
-        <>
-          <Path d={`m1 9 ${line1} ${line1}`} stroke={color} />
-          {startLine2 && (
-            <Path d={`M7 15 ${line2x} ${line2y}`} stroke={color} />
-          )}
-        </>
-      )}
+      {isComplete && t > 0 && <Path d={d} stroke={color} />}
     </Svg>
   );
 };

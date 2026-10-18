@@ -545,21 +545,20 @@ const BACKGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
   ]
 };
 
-/**
- * Color groups (`color.base`, `color.danger`, …) that get their own Tamagui
- * child theme. Each defines a `primary` color and optionally a `secondary`
- * (low-emphasis background); missing `secondary`, `on-primary`, and
- * `on-secondary` companions are generated, along with state variants and
- * focus rings.
- */
-const THEME_COLOR_KEYS = [
-  "base",
-  "danger",
-  "warning",
-  "info",
-  "discovery",
-  "success"
-] as const;
+const NONE_THEME_COLOR_KEYS = ["shadows"] as const;
+
+/** Color groups with a primary token become child themes unless excluded. */
+function themeColorGroups(
+  color: Record<string, unknown>
+): [string, Record<string, unknown>][] {
+  return Object.entries(color).filter(
+    (entry): entry is [string, Record<string, unknown>] =>
+      !NONE_THEME_COLOR_KEYS.some(name => name === entry[0]) &&
+      isPlainObject(entry[1]) &&
+      !isTokenNode(entry[1]) &&
+      isTokenNode(entry[1].primary)
+  );
+}
 
 /** State variants for the tokens inside each theme color group. */
 const THEME_COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
@@ -806,12 +805,7 @@ function addMissingRingTokens(dictionary: unknown): unknown {
   const ring = isPlainObject(dictionary.ring) ? { ...dictionary.ring } : {};
   let changed = false;
 
-  for (const name of THEME_COLOR_KEYS) {
-    const group = color[name];
-    if (!isPlainObject(group) || !isTokenNode(group.primary)) {
-      continue;
-    }
-
+  for (const [name] of themeColorGroups(color)) {
     const ringColor = `{color.${name}.primary}`;
     const gap = (spread: number) => ringLayer("{color.elevated}", spread);
     const variants: Record<string, [string, unknown[]]> = {
@@ -1463,16 +1457,13 @@ function injectColorStateVariants(
 
   let withStates = result;
   if (key === "color") {
-    for (const name of THEME_COLOR_KEYS) {
-      const group = withStates[name];
-      if (isPlainObject(group) && !isTokenNode(group)) {
-        withStates[name] = addThemeColorGroupTokens(
-          name,
-          group,
-          tree,
-          parentTheme
-        );
-      }
+    for (const [name, group] of themeColorGroups(withStates)) {
+      withStates[name] = addThemeColorGroupTokens(
+        name,
+        group,
+        tree,
+        parentTheme
+      );
     }
 
     for (const [tokenKey, token] of Object.entries(withStates)) {
@@ -1511,8 +1502,8 @@ function injectColorStateVariants(
  * Style Dictionary preprocessor: rewrite color `$value`s (and nested shadow
  * colors) to hex so generators emit `#rrggbb` / `#rrggbbaa` instead of
  * `oklch()`. Root colors (emphasis, ink, subtle, subtlest, outline, backgrounds)
- * stay in the root light and dark themes without rings. For the `base` group and each
- * status group, a missing `secondary` background and `on-primary` /
+ * stay in the root light and dark themes without rings. For each color group
+ * with a `primary` token (except excluded groups), a missing `secondary` background and `on-primary` /
  * `on-secondary` text colors are generated, then hovered, active, inactive,
  * and disabled variants are added to the outline, `foreground` and
  * `background` group colors, and each theme color group's `primary`, `secondary`
@@ -1526,7 +1517,7 @@ function injectColorStateVariants(
  * group name as `theme` and `group`, unless already set; root state and `on-*`
  * tokens get their main token name as `group` (e.g. `outline-active` →
  * `outline`).
- * Finally, focus rings are generated for `base` and each status color.
+ * Finally, focus rings are generated for each theme color group.
  */
 export function tamaguiPreprocessor(
   dictionary: PreprocessedTokens

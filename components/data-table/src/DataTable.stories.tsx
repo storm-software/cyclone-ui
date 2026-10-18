@@ -266,6 +266,15 @@ export const Base: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    theme: "brand",
+    options: {
+      data: defaultData
+    }
+  }
+};
+
 export const Resizable: Story = {
   args: {
     options: {

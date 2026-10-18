@@ -537,13 +537,6 @@ const COLOR_VARIANTS = {
         <h2>Semantic colors</h2>
         <ColorPalette>
           <ColorItem
-      title={"color.backdrop"}
-      subtitle={"Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container."}
-      colors={{
-            "backdrop": "#0d0c0766"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
       subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
@@ -590,6 +583,34 @@ const COLOR_VARIANTS = {
               "link-active": "#6bfaff",
               "link-inactive": "#008ccc",
               "link-disabled": "#436d83"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
+          <h3>{"Brand"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Teal color is used as the primary brand color for Storm Software."}
+      colors={{
+              "primary": "#3be4be",
+              "secondary": "#00604d",
+              "link": "#3be4be",
+              "on-primary": "#151518",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#00a17e",
+              "primary-active": "#00a17e",
+              "primary-inactive": "#81fff4",
+              "primary-disabled": "#4e7a70",
+              "secondary-hovered": "#31806b",
+              "secondary-active": "#31806b",
+              "secondary-inactive": "#004836",
+              "secondary-disabled": "#354c49",
+              "link-hovered": "#00a17e",
+              "link-active": "#00a17e",
+              "link-inactive": "#81fff4",
+              "link-disabled": "#4e7a70"
       }}
     />
           </ColorPalette>
@@ -1266,13 +1287,6 @@ const COLOR_VARIANTS = {
         <h2>Semantic colors</h2>
         <ColorPalette>
           <ColorItem
-      title={"color.backdrop"}
-      subtitle={"Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container."}
-      colors={{
-            "backdrop": "#35322666"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
       subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
@@ -1319,6 +1333,34 @@ const COLOR_VARIANTS = {
               "link-active": "#73d3d6",
               "link-inactive": "#3184aa",
               "link-disabled": "#58727f"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
+          <h3>{"Brand"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Teal color is used as the primary brand color for Storm Software."}
+      colors={{
+              "primary": "#5abba5",
+              "secondary": "#206f60",
+              "link": "#5abba5",
+              "on-primary": "#343438",
+              "on-secondary": "#d9d9d9",
+              "primary-hovered": "#2b937c",
+              "primary-active": "#2b937c",
+              "primary-inactive": "#7fdad2",
+              "primary-disabled": "#5f7973",
+              "secondary-hovered": "#4c7d70",
+              "secondary-active": "#4c7d70",
+              "secondary-inactive": "#1d6251",
+              "secondary-disabled": "#4b5c59",
+              "link-hovered": "#2b937c",
+              "link-active": "#2b937c",
+              "link-inactive": "#7fdad2",
+              "link-disabled": "#5f7973"
       }}
     />
           </ColorPalette>
@@ -1995,13 +2037,6 @@ const COLOR_VARIANTS = {
         <h2>Semantic colors</h2>
         <ColorPalette>
           <ColorItem
-      title={"color.backdrop"}
-      subtitle={"Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container."}
-      colors={{
-            "backdrop": "#00000066"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
       subtitle={"High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data."}
       colors={{
@@ -2048,6 +2083,34 @@ const COLOR_VARIANTS = {
               "link-active": "#9bfcff",
               "link-inactive": "#007cb5",
               "link-disabled": "#2c6380"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
+          <h3>{"Brand"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Teal color is used as the primary brand color for Storm Software."}
+      colors={{
+              "primary": "#2effd0",
+              "secondary": "#001814",
+              "link": "#2effd0",
+              "on-primary": "#000000",
+              "on-secondary": "#ffffff",
+              "primary-hovered": "#00775d",
+              "primary-active": "#00775d",
+              "primary-inactive": "#bbfff9",
+              "primary-disabled": "#397668",
+              "secondary-hovered": "#19755d",
+              "secondary-active": "#19755d",
+              "secondary-inactive": "#000000",
+              "secondary-disabled": "#1a2f2c",
+              "link-hovered": "#00775d",
+              "link-active": "#00775d",
+              "link-inactive": "#bbfff9",
+              "link-disabled": "#397668"
       }}
     />
           </ColorPalette>
@@ -2782,6 +2845,34 @@ const COLOR_VARIANTS = {
           </ColorPalette>
         </section>
         <section>
+          <h3>{"Brand"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Teal color is used as the primary brand color for Storm Software."}
+      colors={{
+              "primary": "#1fb2a6",
+              "secondary": "#d6fff9",
+              "link": "#1fb2a6",
+              "on-primary": "#FAFAFA",
+              "on-secondary": "#005a53",
+              "primary-hovered": "#007c72",
+              "primary-active": "#007c72",
+              "primary-inactive": "#5ddfd2",
+              "primary-disabled": "#436967",
+              "secondary-hovered": "#89b0ab",
+              "secondary-active": "#89b0ab",
+              "secondary-inactive": "#e0ffff",
+              "secondary-disabled": "#788484",
+              "link-hovered": "#007c72",
+              "link-active": "#007c72",
+              "link-inactive": "#5ddfd2",
+              "link-disabled": "#436967"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
           <h3>{"Danger"}</h3>
           <ColorPalette>
             <ColorItem
@@ -3511,6 +3602,34 @@ const COLOR_VARIANTS = {
           </ColorPalette>
         </section>
         <section>
+          <h3>{"Brand"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Teal color is used as the primary brand color for Storm Software."}
+      colors={{
+              "primary": "#449a93",
+              "secondary": "#ade7df",
+              "link": "#449a93",
+              "on-primary": "#d5d5d5",
+              "on-secondary": "#1f6c66",
+              "primary-hovered": "#257f77",
+              "primary-active": "#257f77",
+              "primary-inactive": "#6ebcb4",
+              "primary-disabled": "#566e6d",
+              "secondary-hovered": "#889f9c",
+              "secondary-active": "#889f9c",
+              "secondary-inactive": "#b3e9e9",
+              "secondary-disabled": "#7b8282",
+              "link-hovered": "#257f77",
+              "link-active": "#257f77",
+              "link-inactive": "#6ebcb4",
+              "link-disabled": "#566e6d"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
           <h3>{"Danger"}</h3>
           <ColorPalette>
             <ColorItem
@@ -4235,6 +4354,34 @@ const COLOR_VARIANTS = {
               "link-active": "#004075",
               "link-inactive": "#54b6ff",
               "link-disabled": "#254865"
+      }}
+    />
+          </ColorPalette>
+        </section>
+        <section>
+          <h3>{"Brand"}</h3>
+          <ColorPalette>
+            <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Teal color is used as the primary brand color for Storm Software."}
+      colors={{
+              "primary": "#00bcad",
+              "secondary": "#ffffff",
+              "link": "#00bcad",
+              "on-primary": "#ffffff",
+              "on-secondary": "#00100f",
+              "primary-hovered": "#00413c",
+              "primary-active": "#00413c",
+              "primary-inactive": "#5cfbeb",
+              "primary-disabled": "#2c5b58",
+              "secondary-hovered": "#8ec5be",
+              "secondary-active": "#8ec5be",
+              "secondary-inactive": "#ffffff",
+              "secondary-disabled": "#6f8c8c",
+              "link-hovered": "#00413c",
+              "link-active": "#00413c",
+              "link-inactive": "#5cfbeb",
+              "link-disabled": "#2c5b58"
       }}
     />
           </ColorPalette>

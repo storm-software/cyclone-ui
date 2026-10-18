@@ -31,6 +31,23 @@ colors:
   base-link-active: "#0057a0"
   base-link-inactive: "#40aaf9"
   base-link-disabled: "#3c5a72"
+  brand-primary: "#1fb2a6"
+  brand-link: "#1fb2a6"
+  brand-on-primary: "#FAFAFA"
+  brand-secondary: "#d6fff9"
+  brand-on-secondary: "#005a53"
+  brand-primary-hovered: "#007c72"
+  brand-primary-active: "#007c72"
+  brand-primary-inactive: "#5ddfd2"
+  brand-primary-disabled: "#436967"
+  brand-secondary-hovered: "#89b0ab"
+  brand-secondary-active: "#89b0ab"
+  brand-secondary-inactive: "#e0ffff"
+  brand-secondary-disabled: "#788484"
+  brand-link-hovered: "#007c72"
+  brand-link-active: "#007c72"
+  brand-link-inactive: "#5ddfd2"
+  brand-link-disabled: "#436967"
   danger-primary: "#8e223e"
   danger-link: "#8e223e"
   danger-on-primary: "#FAFAFA"
@@ -262,8 +279,8 @@ typography:
   eyebrow:
     fontFamily: "Google Sans Code"
     fontSize: "1.125rem"
-    fontWeight: "800"
-    lineHeight: "1.0575"
+    fontWeight: "700"
+    lineHeight: "0.765"
   code:
     fontFamily: "Google Sans Code"
     fontSize: "1.25rem"
@@ -344,7 +361,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 170 color tokens, 19 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 187 color tokens, 19 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -376,6 +393,23 @@ Cyclone UI design tokens — 170 color tokens, 19 typography tokens, 70 spacing 
 - **Base Link Active (#0057a0):** The color used for hyperlink text. (active, 25% darker)
 - **Base Link Inactive (#40aaf9):** The color used for hyperlink text. (inactive, 20% brighter)
 - **Base Link Disabled (#3c5a72):** The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Brand Primary (#1fb2a6):** The Storm Teal color is used as the primary brand color for Storm Software.
+- **Brand Link (#1fb2a6):** Generated brand hyperlink text color (matches primary)
+- **Brand On Primary (#FAFAFA):** Generated text and icon color on brand primary backgrounds
+- **Brand Secondary (#d6fff9):** Generated low-emphasis brand background for the light theme
+- **Brand On Secondary (#005a53):** Generated text and icon color on brand secondary backgrounds
+- **Brand Primary Hovered (#007c72):** The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)
+- **Brand Primary Active (#007c72):** The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker)
+- **Brand Primary Inactive (#5ddfd2):** The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter)
+- **Brand Primary Disabled (#436967):** The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Brand Secondary Hovered (#89b0ab):** Generated low-emphasis brand background for the light theme (hovered, 25% darker)
+- **Brand Secondary Active (#89b0ab):** Generated low-emphasis brand background for the light theme (active, 25% darker)
+- **Brand Secondary Inactive (#e0ffff):** Generated low-emphasis brand background for the light theme (inactive, 20% brighter)
+- **Brand Secondary Disabled (#788484):** Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Brand Link Hovered (#007c72):** Generated brand hyperlink text color (matches primary) (hovered, 25% darker)
+- **Brand Link Active (#007c72):** Generated brand hyperlink text color (matches primary) (active, 25% darker)
+- **Brand Link Inactive (#5ddfd2):** Generated brand hyperlink text color (matches primary) (inactive, 20% brighter)
+- **Brand Link Disabled (#436967):** Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Danger Primary (#8e223e):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.
 - **Danger Link (#8e223e):** Generated danger hyperlink text color (matches primary)
 - **Danger On Primary (#FAFAFA):** Generated text and icon color on danger primary backgrounds
@@ -538,7 +572,7 @@ Cyclone UI design tokens — 170 color tokens, 19 typography tokens, 70 spacing 
 - **body-md-bold:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 700, lineHeight: 1.125
 - **body-sm-bold:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 700, lineHeight: 1.125
 - **caption:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.125
-- **eyebrow:** fontFamily: Google Sans Code, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.0575
+- **eyebrow:** fontFamily: Google Sans Code, fontSize: 1.125rem, fontWeight: 700, lineHeight: 0.765
 - **code:** fontFamily: Google Sans Code, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.125
 
 ## Layout

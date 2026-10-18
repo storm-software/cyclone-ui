@@ -249,5 +249,6 @@
   "chat.mcp.gallery.enabled": true,
   "typescript.native-preview.tsdk": "./node_modules/@typescript/native-preview",
   "python-envs.defaultEnvManager": "ms-python.python:system",
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.compile.nullAnalysis.mode": "automatic"
 }

@@ -18,6 +18,15 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/eyebrow-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/themeable-icon": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:^",
     "@tamagui/core": "catalog:",
     "@tamagui/font-size": "catalog:",
     "@tamagui/get-font-sized": "catalog:",
@@ -26,15 +35,7 @@
     "@tamagui/linear-gradient": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
-    "@tamagui/web": "catalog:",
-    "@cyclone-ui/body-text": "workspace:*",
-    "@cyclone-ui/container": "workspace:*",
-    "@cyclone-ui/eyebrow-text": "workspace:*",
-    "@cyclone-ui/heading-text": "workspace:*",
-    "@cyclone-ui/helpers": "workspace:*",
-    "@cyclone-ui/link": "workspace:*",
-    "@cyclone-ui/themeable-icon": "workspace:*",
-    "@cyclone-ui/icons": "workspace:*"
+    "@tamagui/web": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

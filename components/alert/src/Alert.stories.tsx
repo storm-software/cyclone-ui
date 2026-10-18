@@ -54,6 +54,13 @@ export const Base: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    children: bodyText,
+    type: "brand"
+  }
+};
+
 export const CustomIcon: Story = {
   args: {
     children: bodyText,

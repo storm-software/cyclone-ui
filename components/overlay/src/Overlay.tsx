@@ -41,7 +41,7 @@ const OverlayFrame = styled(YStack, {
   opacity: "0.6 enter:0 exit:0",
   backdropFilter: "blur(35px)",
   filter: "blur(35px)",
-  backgroundColor: "backdrop",
+  backgroundColor: "#0D0C0766",
   position: "absolute",
   inset: 0
 });

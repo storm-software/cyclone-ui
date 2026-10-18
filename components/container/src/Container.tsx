@@ -40,6 +40,18 @@ export type ContainerVariant =
   | "outlined"
   | "glass";
 
+// The hovered shade of each variant's background; transparent variants have none.
+const HOVERED_BACKGROUND: Partial<Record<ContainerVariant, string>> = {
+  primary: "primaryHovered",
+  secondary: "secondaryHovered",
+  tertiary: "surfaceHovered",
+  sunken: "sunkenHovered",
+  canvas: "canvasHovered",
+  elevated: "surfaceHovered",
+  floating: "elevatedHovered",
+  overlay: "floatingHovered"
+};
+
 const ContainerFrame = styled(View, {
   displayName: "Container",
   tabIndex: -1,
@@ -128,7 +140,7 @@ const ContainerFrame = styled(View, {
 
     shadowed: {
       true: {
-        boxShadow: "0px 4px 30px backdrop"
+        boxShadow: "0px 4px 30px #0D0C0766"
       }
     },
 
@@ -248,6 +260,7 @@ export const Container = createStyledHOC(
       bordered = true,
       noPadding = false,
       noise = false,
+      hovered = false,
       borderRadius = "container",
       // The `variant` and `bordered` variants own these, so they are dropped
       // rather than forwarded over the variant styles.
@@ -256,7 +269,11 @@ export const Container = createStyledHOC(
       borderWidth: _borderWidth,
       children,
       ...props
-    }: ContainerFrameProps & { noise?: boolean },
+    }: ContainerFrameProps & {
+      noise?: boolean;
+      /** Show the variant's hovered background, e.g. while a parent is hovered. */
+      hovered?: boolean;
+    },
     forwardedRef
   ) => {
     return (
@@ -284,7 +301,11 @@ export const Container = createStyledHOC(
           bordered={bordered}
           noPadding={noPadding}
           noise={noise}
-          borderRadius={borderRadius}>
+          borderRadius={borderRadius}
+          {...(hovered &&
+            HOVERED_BACKGROUND[variant as ContainerVariant] && {
+              backgroundColor: HOVERED_BACKGROUND[variant as ContainerVariant]
+            })}>
           {children}
         </ContainerSurface>
       </ContainerGroup>

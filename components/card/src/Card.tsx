@@ -21,10 +21,10 @@ import { Container } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import { getSpaced } from "@cyclone-ui/helpers";
-import { ArrowRight } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
+import { RightArrow } from "@cyclone-ui/vectors";
 import type {
   ColorTokens,
   FontSizeTokens,
@@ -36,6 +36,7 @@ import {
   createStyledHOC,
   getVariableValue,
   styled,
+  Text,
   Theme,
   useTheme,
   useThemeName,
@@ -43,10 +44,10 @@ import {
 } from "@tamagui/core";
 import { getFontSized } from "@tamagui/get-font-sized";
 import { withStaticProperties } from "@tamagui/helpers";
-import { LinearGradient } from "@tamagui/linear-gradient";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps, SizeTokens } from "@tamagui/web";
-import { createContext, use, useContext } from "react";
+import type { PointerEvent } from "react";
+import { createContext, use, useContext, useRef, useState } from "react";
 
 export interface CardContextProps {
   size: SizeTokens;
@@ -58,8 +59,8 @@ export const CardContext = createStyledContext<
   "size" | "theme"
 >(
   {
-    size: true as SizeTokens,
-    theme: "base"
+    size: true,
+    theme: undefined
   } as CardContextProps,
   {
     keys: ["size", "theme"]
@@ -75,16 +76,19 @@ const CardDataColorContext = createContext<
   ColorTokens | ThemeTokens | undefined
 >(undefined);
 
+// Plain React state: the footer arrow animates its path length in JS, which a
+// `group-hover` style value can't drive.
+const CardHoverContext = createContext(false);
+
 const CardFrame = styled(Container, {
   displayName: "Card",
   context: CardContext,
   transition: "200ms",
   overflow: "hidden",
   borderRadius: "card",
-  borderColor:
-    "primary hover:primaryHovered press:primaryActive focus-visible:primaryActive",
+  borderColor: "hairline",
   cursor: "pointer",
-  backgroundColor: "surface hover:surfaceHovered",
+  backgroundColor: "elevated hover:elevatedHovered",
   position: "relative"
 });
 
@@ -101,18 +105,35 @@ const CardDataBorder = styled(View, {
   zIndex: "30"
 });
 
-// `LinearGradient` is not a plain styled view; v3 `styled()` only keeps style
-// defaults for it, so the gradient geometry is passed as props at the call site.
-const CardBackgroundGradient = styled(LinearGradient, {
+// Theme-colored strip across the top edge; the frame's `overflow: hidden`
+// clips it to the rounded corners.
+const CardAccentBar = styled(View, {
   displayName: "Card",
   transition: "200ms",
-  flexDirection: "row",
-  overflow: "hidden",
-  pointerEvents: "none",
-  opacity: "0 group-hover/card:0.1",
-  zIndex: 5,
   position: "absolute",
-  inset: 0
+  top: 0,
+  right: 0,
+  left: 0,
+  height: 6,
+  backgroundColor: "primary group-hover/card:primaryHovered",
+  pointerEvents: "none",
+  zIndex: "30"
+});
+
+// Soft radial spotlight that follows the pointer; `left` / `top` are written
+// straight to the DOM node on pointer move so tracking never re-renders.
+const CardSpotlight = styled(View, {
+  displayName: "Card",
+  transition: "opacity 200ms",
+  position: "absolute",
+  width: 400,
+  height: 400,
+  borderRadius: 1000_000_000,
+  x: "-50%",
+  y: "-50%",
+  pointerEvents: "none",
+  opacity: "0 group-hover/card:0.15",
+  zIndex: 5
 });
 
 const CardContent = styled(YStack, {
@@ -145,30 +166,72 @@ type CardFrameImplProps = Omit<GetProps<typeof CardFrame>, "size"> & {
 const CardFrameImpl = createStyledHOC(
   CardFrame,
   (props: CardFrameImplProps, forwardedRef) => {
-    const { children, color, theme, size = true, ...rest } = props;
+    const {
+      children,
+      color,
+      theme,
+      size = true,
+      onPointerMove,
+      onPointerEnter,
+      onPointerLeave,
+      ...rest
+    } = props;
+    const [hovered, setHovered] = useState(false);
     const activeTheme = useTheme();
     const dataColor = color
       ? getVariableValue(activeTheme[color as any] ?? color, "color")
       : undefined;
+    // The theme var resolves inside the themed frame; `useTheme` here still
+    // sees the outer theme.
+    const spotlightColor = dataColor ?? "var(--primary)";
+
+    const spotlightRef = useRef<HTMLElement>(null);
+    const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+      const spotlight = spotlightRef.current;
+      if (spotlight) {
+        const rect = event.currentTarget.getBoundingClientRect();
+        spotlight.style.left = `${event.clientX - rect.left}px`;
+        spotlight.style.top = `${event.clientY - rect.top}px`;
+      }
+
+      onPointerMove?.(event);
+    };
 
     return (
       <CardDataColorContext.Provider value={color}>
-        <CardContext.Provider theme={theme} size={size}>
-          <CardFrame
-            ref={forwardedRef}
-            group={"card" as any}
-            {...rest}
-            theme={theme}
-            size={size}>
-            {dataColor && <CardDataBorder style={{ borderColor: dataColor }} />}
-            <CardBackgroundGradient
-              start={[0, 0]}
-              end={[1.0, 1.0]}
-              colors={["transparent", color ?? "primary"]}
-            />
-            <CardContent size={size}>{children}</CardContent>
-          </CardFrame>
-        </CardContext.Provider>
+        <CardHoverContext.Provider value={hovered}>
+          <CardContext.Provider theme={theme} size={size}>
+            <CardFrame
+              ref={forwardedRef}
+              group={"card"}
+              {...rest}
+              onPointerMove={handlePointerMove}
+              onPointerEnter={event => {
+                setHovered(true);
+                onPointerEnter?.(event);
+              }}
+              onPointerLeave={event => {
+                setHovered(false);
+                onPointerLeave?.(event);
+              }}
+              theme={theme}
+              size={size}>
+              {dataColor && (
+                <CardDataBorder style={{ borderColor: dataColor }} />
+              )}
+              <CardAccentBar
+                {...(dataColor && { style: { backgroundColor: dataColor } })}
+              />
+              <CardSpotlight
+                ref={spotlightRef as any}
+                style={{
+                  backgroundImage: `radial-gradient(circle closest-side, ${spotlightColor}, transparent)`
+                }}
+              />
+              <CardContent size={size}>{children}</CardContent>
+            </CardFrame>
+          </CardContext.Provider>
+        </CardHoverContext.Provider>
       </CardDataColorContext.Provider>
     );
   },
@@ -320,38 +383,35 @@ const CardFooter = styled(YStack, {
   zIndex: "20"
 });
 
-const CardLinkArrowRight = styled(ArrowRight, {
-  displayName: "CardLink",
-  context: CardContext,
-  zIndex: "30",
-  color: "primary",
-  marginTop: "xs"
-});
-
 const CardLinkImpl = createStyledHOC(
   Link,
   (props, forwardedRef) => {
     const { children, ...rest } = props;
     const theme = useThemeName();
     const inverse = theme?.endsWith("base");
+    const hovered = use(CardHoverContext);
 
     return (
-      <XStack ref={forwardedRef} gap="lg" alignItems="center">
+      <XStack ref={forwardedRef} group="cardLink" gap="lg" alignItems="center" alignSelf="flex-start">
         <Link
           {...rest}
           group={false}
           inverse={inverse}
           zIndex="30"
-          color="group-hover/card:primaryHovered"
-          textDecorationColor="group-hover/card:primaryHovered">
+          color="group-hover/card:linkHovered"
+          textDecorationColor="group-hover/card:linkHovered">
           {children}
         </Link>
-        <View transition="200ms" x="0 group-hover/card:10px">
-          <CardLinkArrowRight
-            height="4xl"
-            color="group-hover/card:primaryHovered"
-          />
-        </View>
+        {/* `RightArrow` is a plain component, so flat values / style props
+            would reach the <svg> unresolved; drive its color from CSS instead. */}
+        <Text
+          display="flex"
+          transition="200ms"
+          marginTop="xs"
+          zIndex="30"
+          color="link group-hover/cardLink:linkHovered">
+          <RightArrow color="currentColor" size="4xl" isComplete={hovered} />
+        </Text>
       </XStack>
     );
   },

@@ -31,7 +31,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `100 700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -44,7 +44,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/TextItalic.ttf` | `truetype` | `450` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Thin.ttf` | `truetype` | `100` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `100 700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `100 700` | `normal` |  |
 
 ## Storm Serif
 
@@ -75,7 +75,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `200 800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -84,7 +84,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/Regular.ttf` | `truetype` | `400` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBold.ttf` | `truetype` | `600` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `200 800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `200 800` | `normal` |  |
 # Cyclone UI (Light Dimmed) Fonts
 
 Use only documented font families and roles when selecting typography.
@@ -118,7 +118,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `100 700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -131,7 +131,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/TextItalic.ttf` | `truetype` | `450` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Thin.ttf` | `truetype` | `100` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `100 700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `100 700` | `normal` |  |
 
 ## Storm Serif
 
@@ -162,7 +162,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `200 800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -171,7 +171,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/Regular.ttf` | `truetype` | `400` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBold.ttf` | `truetype` | `600` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `200 800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `200 800` | `normal` |  |
 # Cyclone UI (Light) Fonts
 
 Use only documented font families and roles when selecting typography.
@@ -205,7 +205,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `100 700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -218,7 +218,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/TextItalic.ttf` | `truetype` | `450` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Thin.ttf` | `truetype` | `100` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `100 700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `100 700` | `normal` |  |
 
 ## Storm Serif
 
@@ -249,7 +249,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `200 800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -258,7 +258,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/Regular.ttf` | `truetype` | `400` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBold.ttf` | `truetype` | `600` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `200 800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `200 800` | `normal` |  |
 # Cyclone UI (Dark High Contrast) Fonts
 
 Use only documented font families and roles when selecting typography.
@@ -292,7 +292,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `100 700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -305,7 +305,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/TextItalic.ttf` | `truetype` | `450` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Thin.ttf` | `truetype` | `100` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `100 700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `100 700` | `normal` |  |
 
 ## Storm Serif
 
@@ -336,7 +336,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `200 800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -345,7 +345,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/Regular.ttf` | `truetype` | `400` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBold.ttf` | `truetype` | `600` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `200 800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `200 800` | `normal` |  |
 # Cyclone UI (Dark Dimmed) Fonts
 
 Use only documented font families and roles when selecting typography.
@@ -379,7 +379,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `100 700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -392,7 +392,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/TextItalic.ttf` | `truetype` | `450` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Thin.ttf` | `truetype` | `100` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `100 700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `100 700` | `normal` |  |
 
 ## Storm Serif
 
@@ -423,7 +423,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `200 800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -432,7 +432,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/Regular.ttf` | `truetype` | `400` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBold.ttf` | `truetype` | `600` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `200 800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `200 800` | `normal` |  |
 # Cyclone UI (Dark) Fonts
 
 Use only documented font families and roles when selecting typography.
@@ -466,7 +466,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/BoldItalic.ttf` | `truetype` | `700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `100 700` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `100 700` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -479,7 +479,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/TextItalic.ttf` | `truetype` | `450` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Thin.ttf` | `truetype` | `100` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ThinItalic.ttf` | `truetype` | `100` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `100 700` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `100 700` | `normal` |  |
 
 ## Storm Serif
 
@@ -510,7 +510,7 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/ExtraBoldItalic.ttf` | `truetype` | `800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLight.ttf` | `truetype` | `200` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/ExtraLightItalic.ttf` | `truetype` | `200` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/Italic-VF.ttf` | `truetype` | `200 800` | `italic` |  |
+| `https://public.storm-cdn.com/fonts/Italic-Variable.ttf` | `truetype` | `200 800` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Italic.ttf` | `truetype` | `400` | `italic` |  |
 | `https://public.storm-cdn.com/fonts/Light.ttf` | `truetype` | `300` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/LightItalic.ttf` | `truetype` | `300` | `italic` |  |
@@ -519,4 +519,4 @@ Use only documented font families and roles when selecting typography.
 | `https://public.storm-cdn.com/fonts/Regular.ttf` | `truetype` | `400` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBold.ttf` | `truetype` | `600` | `normal` |  |
 | `https://public.storm-cdn.com/fonts/SemiBoldItalic.ttf` | `truetype` | `600` | `italic` |  |
-| `https://public.storm-cdn.com/fonts/VF.ttf` | `truetype` | `200 800` | `normal` |  |
+| `https://public.storm-cdn.com/fonts/Variable.ttf` | `truetype` | `200 800` | `normal` |  |

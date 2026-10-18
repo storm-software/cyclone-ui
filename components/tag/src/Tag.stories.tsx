@@ -44,6 +44,13 @@ export const Base: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    children: "Tag Text",
+    theme: "brand"
+  }
+};
+
 export const Rounded: Story = {
   args: {
     children: "Tag Text",

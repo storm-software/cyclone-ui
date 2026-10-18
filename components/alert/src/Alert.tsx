@@ -48,11 +48,13 @@ export type AlertType =
 
 export interface AlertContextProps {
   type?: AlertType;
+  hovered?: boolean;
 }
 
 export const AlertContext = createStyledContext<AlertContextProps, "type">(
   {
-    type: undefined
+    type: undefined,
+    hovered: false
   } as AlertContextProps,
   {
     keys: ["type"]
@@ -107,12 +109,14 @@ const AlertFrameImpl = ({
   children,
   theme,
   type,
+  hovered = false,
   ...props
 }: AlertFrameProps) => {
   return (
-    <AlertContext.Provider type={type}>
+    <AlertContext.Provider type={type} hovered={hovered}>
       <Container
         {...props}
+        hovered={hovered}
         variant="overlay"
         themeShallow={true}
         bordered={false}
@@ -140,7 +144,7 @@ const AlertIcon = createStyledHOC(
   ThemeableIcon,
   ({ children, ...props }, forwardedRef) => {
     const theme = useThemeName();
-    const { type } = AlertContext.useStyledContext();
+    const { type, hovered } = AlertContext.useStyledContext();
     const colorTheme = type || theme;
 
     return (
@@ -160,7 +164,9 @@ const AlertIcon = createStyledHOC(
 
         <YStack zIndex="20" justifyContent="center" paddingLeft="3xl">
           <Theme name={type ?? "base"}>
-            <AlertIconBackground backgroundColor="floating">
+            {/* Matches the frame's `floating` surface, including its hovered shade. */}
+            <AlertIconBackground
+              backgroundColor={hovered ? "floatingHovered" : "floating"}>
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}

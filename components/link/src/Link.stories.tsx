@@ -44,6 +44,13 @@ export const Base: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    href: "#",
+    theme: "brand"
+  }
+};
+
 export const Mixed: Story = {
   args: {
     href: "#",

@@ -996,6 +996,159 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.brand.primary",
+      type: "color",
+      value: "#3be4be",
+      cssVar: "--cu-color-brand-primary",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link",
+      type: "color",
+      value: "#3be4be",
+      cssVar: "--cu-color-brand-link",
+      description: "Generated brand hyperlink text color (matches primary)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-primary",
+      type: "color",
+      value: "#151518",
+      cssVar: "--cu-color-brand-on-primary",
+      description: "Generated text and icon color on brand primary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary",
+      type: "color",
+      value: "#00604d",
+      cssVar: "--cu-color-brand-secondary",
+      description: "Generated low-emphasis brand background for the dark theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-secondary",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-brand-on-secondary",
+      description: "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-hovered",
+      type: "color",
+      value: "#00a17e",
+      cssVar: "--cu-color-brand-primary-hovered",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-active",
+      type: "color",
+      value: "#00a17e",
+      cssVar: "--cu-color-brand-primary-active",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-inactive",
+      type: "color",
+      value: "#81fff4",
+      cssVar: "--cu-color-brand-primary-inactive",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-disabled",
+      type: "color",
+      value: "#4e7a70",
+      cssVar: "--cu-color-brand-primary-disabled",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-hovered",
+      type: "color",
+      value: "#31806b",
+      cssVar: "--cu-color-brand-secondary-hovered",
+      description: "Generated low-emphasis brand background for the dark theme (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-active",
+      type: "color",
+      value: "#31806b",
+      cssVar: "--cu-color-brand-secondary-active",
+      description: "Generated low-emphasis brand background for the dark theme (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-inactive",
+      type: "color",
+      value: "#004836",
+      cssVar: "--cu-color-brand-secondary-inactive",
+      description: "Generated low-emphasis brand background for the dark theme (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-disabled",
+      type: "color",
+      value: "#354c49",
+      cssVar: "--cu-color-brand-secondary-disabled",
+      description: "Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-hovered",
+      type: "color",
+      value: "#00a17e",
+      cssVar: "--cu-color-brand-link-hovered",
+      description: "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-active",
+      type: "color",
+      value: "#00a17e",
+      cssVar: "--cu-color-brand-link-active",
+      description: "Generated brand hyperlink text color (matches primary) (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-inactive",
+      type: "color",
+      value: "#81fff4",
+      cssVar: "--cu-color-brand-link-inactive",
+      description: "Generated brand hyperlink text color (matches primary) (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-disabled",
+      type: "color",
+      value: "#4e7a70",
+      cssVar: "--cu-color-brand-link-disabled",
+      description: "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.danger.primary",
       type: "color",
       value: "#cf2d56",
@@ -1757,15 +1910,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#4c7062",
       cssVar: "--cu-color-success-link-disabled",
       description: "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.backdrop",
-      type: "color",
-      value: "#0d0c0766",
-      cssVar: "--cu-color-backdrop",
-      description: "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
       theme: undefined,
       typography: false
     },
@@ -4877,9 +5021,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.none}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },
@@ -4925,6 +5069,42 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 2px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #3be4be26",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px outline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #3be4be26",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -6092,6 +6272,159 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.brand.primary",
+      type: "color",
+      value: "#5abba5",
+      cssVar: "--cu-color-brand-primary",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link",
+      type: "color",
+      value: "#5abba5",
+      cssVar: "--cu-color-brand-link",
+      description: "Generated brand hyperlink text color (matches primary)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-primary",
+      type: "color",
+      value: "#343438",
+      cssVar: "--cu-color-brand-on-primary",
+      description: "Generated text and icon color on brand primary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary",
+      type: "color",
+      value: "#206f60",
+      cssVar: "--cu-color-brand-secondary",
+      description: "Generated low-emphasis brand background for the dark theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-secondary",
+      type: "color",
+      value: "#d9d9d9",
+      cssVar: "--cu-color-brand-on-secondary",
+      description: "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-hovered",
+      type: "color",
+      value: "#2b937c",
+      cssVar: "--cu-color-brand-primary-hovered",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-active",
+      type: "color",
+      value: "#2b937c",
+      cssVar: "--cu-color-brand-primary-active",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-inactive",
+      type: "color",
+      value: "#7fdad2",
+      cssVar: "--cu-color-brand-primary-inactive",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-disabled",
+      type: "color",
+      value: "#5f7973",
+      cssVar: "--cu-color-brand-primary-disabled",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-hovered",
+      type: "color",
+      value: "#4c7d70",
+      cssVar: "--cu-color-brand-secondary-hovered",
+      description: "Generated low-emphasis brand background for the dark theme (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-active",
+      type: "color",
+      value: "#4c7d70",
+      cssVar: "--cu-color-brand-secondary-active",
+      description: "Generated low-emphasis brand background for the dark theme (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-inactive",
+      type: "color",
+      value: "#1d6251",
+      cssVar: "--cu-color-brand-secondary-inactive",
+      description: "Generated low-emphasis brand background for the dark theme (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-disabled",
+      type: "color",
+      value: "#4b5c59",
+      cssVar: "--cu-color-brand-secondary-disabled",
+      description: "Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-hovered",
+      type: "color",
+      value: "#2b937c",
+      cssVar: "--cu-color-brand-link-hovered",
+      description: "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-active",
+      type: "color",
+      value: "#2b937c",
+      cssVar: "--cu-color-brand-link-active",
+      description: "Generated brand hyperlink text color (matches primary) (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-inactive",
+      type: "color",
+      value: "#7fdad2",
+      cssVar: "--cu-color-brand-link-inactive",
+      description: "Generated brand hyperlink text color (matches primary) (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-disabled",
+      type: "color",
+      value: "#5f7973",
+      cssVar: "--cu-color-brand-link-disabled",
+      description: "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.danger.primary",
       type: "color",
       value: "#ab5268",
@@ -6853,15 +7186,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#5d736a",
       cssVar: "--cu-color-success-link-disabled",
       description: "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.backdrop",
-      type: "color",
-      value: "#35322666",
-      cssVar: "--cu-color-backdrop",
-      description: "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
       theme: undefined,
       typography: false
     },
@@ -9973,9 +10297,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.none}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },
@@ -10021,6 +10345,42 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 2px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #3be4be26",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px outline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #3be4be26",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -11188,6 +11548,159 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.brand.primary",
+      type: "color",
+      value: "#2effd0",
+      cssVar: "--cu-color-brand-primary",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link",
+      type: "color",
+      value: "#2effd0",
+      cssVar: "--cu-color-brand-link",
+      description: "Generated brand hyperlink text color (matches primary)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-primary",
+      type: "color",
+      value: "#000000",
+      cssVar: "--cu-color-brand-on-primary",
+      description: "Generated text and icon color on brand primary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary",
+      type: "color",
+      value: "#001814",
+      cssVar: "--cu-color-brand-secondary",
+      description: "Generated low-emphasis brand background for the dark theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-secondary",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-brand-on-secondary",
+      description: "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-hovered",
+      type: "color",
+      value: "#00775d",
+      cssVar: "--cu-color-brand-primary-hovered",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-active",
+      type: "color",
+      value: "#00775d",
+      cssVar: "--cu-color-brand-primary-active",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-inactive",
+      type: "color",
+      value: "#bbfff9",
+      cssVar: "--cu-color-brand-primary-inactive",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-disabled",
+      type: "color",
+      value: "#397668",
+      cssVar: "--cu-color-brand-primary-disabled",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-hovered",
+      type: "color",
+      value: "#19755d",
+      cssVar: "--cu-color-brand-secondary-hovered",
+      description: "Generated low-emphasis brand background for the dark theme (hovered, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-active",
+      type: "color",
+      value: "#19755d",
+      cssVar: "--cu-color-brand-secondary-active",
+      description: "Generated low-emphasis brand background for the dark theme (active, 25% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-inactive",
+      type: "color",
+      value: "#000000",
+      cssVar: "--cu-color-brand-secondary-inactive",
+      description: "Generated low-emphasis brand background for the dark theme (inactive, 20% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-disabled",
+      type: "color",
+      value: "#1a2f2c",
+      cssVar: "--cu-color-brand-secondary-disabled",
+      description: "Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-hovered",
+      type: "color",
+      value: "#00775d",
+      cssVar: "--cu-color-brand-link-hovered",
+      description: "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-active",
+      type: "color",
+      value: "#00775d",
+      cssVar: "--cu-color-brand-link-active",
+      description: "Generated brand hyperlink text color (matches primary) (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-inactive",
+      type: "color",
+      value: "#bbfff9",
+      cssVar: "--cu-color-brand-link-inactive",
+      description: "Generated brand hyperlink text color (matches primary) (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-disabled",
+      type: "color",
+      value: "#397668",
+      cssVar: "--cu-color-brand-link-disabled",
+      description: "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.danger.primary",
       type: "color",
       value: "#f00a45",
@@ -11949,15 +12462,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#376754",
       cssVar: "--cu-color-success-link-disabled",
       description: "Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.backdrop",
-      type: "color",
-      value: "#00000066",
-      cssVar: "--cu-color-backdrop",
-      description: "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
       theme: undefined,
       typography: false
     },
@@ -15069,9 +15573,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.none}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },
@@ -15117,6 +15621,42 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 2px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #3be4be26",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px outline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #3be4be26",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #3be4be26",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -16280,6 +16820,159 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#3c5a72",
       cssVar: "--cu-color-base-link-disabled",
       description: "The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary",
+      type: "color",
+      value: "#1fb2a6",
+      cssVar: "--cu-color-brand-primary",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link",
+      type: "color",
+      value: "#1fb2a6",
+      cssVar: "--cu-color-brand-link",
+      description: "Generated brand hyperlink text color (matches primary)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-primary",
+      type: "color",
+      value: "#FAFAFA",
+      cssVar: "--cu-color-brand-on-primary",
+      description: "Generated text and icon color on brand primary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary",
+      type: "color",
+      value: "#d6fff9",
+      cssVar: "--cu-color-brand-secondary",
+      description: "Generated low-emphasis brand background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-secondary",
+      type: "color",
+      value: "#005a53",
+      cssVar: "--cu-color-brand-on-secondary",
+      description: "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-hovered",
+      type: "color",
+      value: "#007c72",
+      cssVar: "--cu-color-brand-primary-hovered",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-active",
+      type: "color",
+      value: "#007c72",
+      cssVar: "--cu-color-brand-primary-active",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-inactive",
+      type: "color",
+      value: "#5ddfd2",
+      cssVar: "--cu-color-brand-primary-inactive",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-disabled",
+      type: "color",
+      value: "#436967",
+      cssVar: "--cu-color-brand-primary-disabled",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-hovered",
+      type: "color",
+      value: "#89b0ab",
+      cssVar: "--cu-color-brand-secondary-hovered",
+      description: "Generated low-emphasis brand background for the light theme (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-active",
+      type: "color",
+      value: "#89b0ab",
+      cssVar: "--cu-color-brand-secondary-active",
+      description: "Generated low-emphasis brand background for the light theme (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-inactive",
+      type: "color",
+      value: "#e0ffff",
+      cssVar: "--cu-color-brand-secondary-inactive",
+      description: "Generated low-emphasis brand background for the light theme (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-disabled",
+      type: "color",
+      value: "#788484",
+      cssVar: "--cu-color-brand-secondary-disabled",
+      description: "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-hovered",
+      type: "color",
+      value: "#007c72",
+      cssVar: "--cu-color-brand-link-hovered",
+      description: "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-active",
+      type: "color",
+      value: "#007c72",
+      cssVar: "--cu-color-brand-link-active",
+      description: "Generated brand hyperlink text color (matches primary) (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-inactive",
+      type: "color",
+      value: "#5ddfd2",
+      cssVar: "--cu-color-brand-link-inactive",
+      description: "Generated brand hyperlink text color (matches primary) (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-disabled",
+      type: "color",
+      value: "#436967",
+      cssVar: "--cu-color-brand-link-disabled",
+      description: "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -20165,9 +20858,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.none}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },
@@ -20213,6 +20906,42 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 2px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #1fb2a626",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px outline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1fb2a626",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -21376,6 +22105,159 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#526574",
       cssVar: "--cu-color-base-link-disabled",
       description: "The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary",
+      type: "color",
+      value: "#449a93",
+      cssVar: "--cu-color-brand-primary",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link",
+      type: "color",
+      value: "#449a93",
+      cssVar: "--cu-color-brand-link",
+      description: "Generated brand hyperlink text color (matches primary)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-primary",
+      type: "color",
+      value: "#d5d5d5",
+      cssVar: "--cu-color-brand-on-primary",
+      description: "Generated text and icon color on brand primary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary",
+      type: "color",
+      value: "#ade7df",
+      cssVar: "--cu-color-brand-secondary",
+      description: "Generated low-emphasis brand background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-secondary",
+      type: "color",
+      value: "#1f6c66",
+      cssVar: "--cu-color-brand-on-secondary",
+      description: "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-hovered",
+      type: "color",
+      value: "#257f77",
+      cssVar: "--cu-color-brand-primary-hovered",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-active",
+      type: "color",
+      value: "#257f77",
+      cssVar: "--cu-color-brand-primary-active",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-inactive",
+      type: "color",
+      value: "#6ebcb4",
+      cssVar: "--cu-color-brand-primary-inactive",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-disabled",
+      type: "color",
+      value: "#566e6d",
+      cssVar: "--cu-color-brand-primary-disabled",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-hovered",
+      type: "color",
+      value: "#889f9c",
+      cssVar: "--cu-color-brand-secondary-hovered",
+      description: "Generated low-emphasis brand background for the light theme (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-active",
+      type: "color",
+      value: "#889f9c",
+      cssVar: "--cu-color-brand-secondary-active",
+      description: "Generated low-emphasis brand background for the light theme (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-inactive",
+      type: "color",
+      value: "#b3e9e9",
+      cssVar: "--cu-color-brand-secondary-inactive",
+      description: "Generated low-emphasis brand background for the light theme (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-disabled",
+      type: "color",
+      value: "#7b8282",
+      cssVar: "--cu-color-brand-secondary-disabled",
+      description: "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-hovered",
+      type: "color",
+      value: "#257f77",
+      cssVar: "--cu-color-brand-link-hovered",
+      description: "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-active",
+      type: "color",
+      value: "#257f77",
+      cssVar: "--cu-color-brand-link-active",
+      description: "Generated brand hyperlink text color (matches primary) (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-inactive",
+      type: "color",
+      value: "#6ebcb4",
+      cssVar: "--cu-color-brand-link-inactive",
+      description: "Generated brand hyperlink text color (matches primary) (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-disabled",
+      type: "color",
+      value: "#566e6d",
+      cssVar: "--cu-color-brand-link-disabled",
+      description: "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -25261,9 +26143,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.none}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },
@@ -25309,6 +26191,42 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 2px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #1fb2a626",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px outline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1fb2a626",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },
@@ -26472,6 +27390,159 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#254865",
       cssVar: "--cu-color-base-link-disabled",
       description: "The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary",
+      type: "color",
+      value: "#00bcad",
+      cssVar: "--cu-color-brand-primary",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software.",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link",
+      type: "color",
+      value: "#00bcad",
+      cssVar: "--cu-color-brand-link",
+      description: "Generated brand hyperlink text color (matches primary)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-primary",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-brand-on-primary",
+      description: "Generated text and icon color on brand primary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-brand-secondary",
+      description: "Generated low-emphasis brand background for the light theme",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.on-secondary",
+      type: "color",
+      value: "#00100f",
+      cssVar: "--cu-color-brand-on-secondary",
+      description: "Generated text and icon color on brand secondary backgrounds",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-hovered",
+      type: "color",
+      value: "#00413c",
+      cssVar: "--cu-color-brand-primary-hovered",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-active",
+      type: "color",
+      value: "#00413c",
+      cssVar: "--cu-color-brand-primary-active",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-inactive",
+      type: "color",
+      value: "#5cfbeb",
+      cssVar: "--cu-color-brand-primary-inactive",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.primary-disabled",
+      type: "color",
+      value: "#2c5b58",
+      cssVar: "--cu-color-brand-primary-disabled",
+      description: "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-hovered",
+      type: "color",
+      value: "#8ec5be",
+      cssVar: "--cu-color-brand-secondary-hovered",
+      description: "Generated low-emphasis brand background for the light theme (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-active",
+      type: "color",
+      value: "#8ec5be",
+      cssVar: "--cu-color-brand-secondary-active",
+      description: "Generated low-emphasis brand background for the light theme (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-inactive",
+      type: "color",
+      value: "#ffffff",
+      cssVar: "--cu-color-brand-secondary-inactive",
+      description: "Generated low-emphasis brand background for the light theme (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.secondary-disabled",
+      type: "color",
+      value: "#6f8c8c",
+      cssVar: "--cu-color-brand-secondary-disabled",
+      description: "Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-hovered",
+      type: "color",
+      value: "#00413c",
+      cssVar: "--cu-color-brand-link-hovered",
+      description: "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-active",
+      type: "color",
+      value: "#00413c",
+      cssVar: "--cu-color-brand-link-active",
+      description: "Generated brand hyperlink text color (matches primary) (active, 25% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-inactive",
+      type: "color",
+      value: "#5cfbeb",
+      cssVar: "--cu-color-brand-link-inactive",
+      description: "Generated brand hyperlink text color (matches primary) (inactive, 20% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.brand.link-disabled",
+      type: "color",
+      value: "#2c5b58",
+      cssVar: "--cu-color-brand-link-disabled",
+      description: "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -30357,9 +31428,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.tight}\"}",
+      value: "{\"fontFamily\":\"Google Sans Code\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.none}\"}",
       cssVar: "--cu-typography-eyebrow",
-      description: "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+      description: "Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       theme: undefined,
       typography: true
     },
@@ -30405,6 +31476,42 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a",
       cssVar: "--cu-ring-base-subtle-offset",
       description: "Generated base 1px focus ring with a 2px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand",
+      type: "shadow",
+      value: "0px 0px 0px 3px #1fb2a626",
+      cssVar: "--cu-ring-brand",
+      description: "Generated brand 3px focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle",
+      type: "shadow",
+      value: "0px 0px 0px 1px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle",
+      description: "Generated brand 1px outline focus ring with no gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-offset",
+      type: "shadow",
+      value: "0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1fb2a626",
+      cssVar: "--cu-ring-brand-offset",
+      description: "Generated brand 3px focus ring with a 3px gap",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "ring.brand-subtle-offset",
+      type: "shadow",
+      value: "0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1fb2a626",
+      cssVar: "--cu-ring-brand-subtle-offset",
+      description: "Generated brand 1px focus ring with a 2px gap",
       theme: undefined,
       typography: false
     },

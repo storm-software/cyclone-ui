@@ -22,10 +22,10 @@ import type { IconProps } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
-import type { SvgProps } from "react-native-svg";
 import { Path, Svg } from "react-native-svg";
 import type { ThemedIconBodyProps } from "./themed-icon";
 import { themedIcon } from "./themed-icon";
+
 const ArrowContainer = styled(View, {
   displayName: "Arrow",
 
@@ -66,41 +66,25 @@ const Icon = ({
 }: ThemedIconBodyProps<ArrowProps>) => {
   const color = useCurrentColor((props.color || "onPrimary") as any);
 
+  // A single length value extends towards 24 when complete and compresses
+  // back to 1 otherwise, so a reversal mid-animation starts from where it is.
   const motionPosition = useMotionValue(1);
-  const playback = animate(motionPosition, 24, {
-    ease: "linear",
-    duration: 0.25
-  });
-
   const [position, setPosition] = useState(1);
-  useMotionValueEvent(motionPosition, "change", latest => {
-    setPosition(latest);
-  });
-
-  const motionReverse = useMotionValue(24);
-  const playbackReverse = animate(motionReverse, 1, {
-    ease: "linear",
-    duration: 0.25
-  });
-
-  const [reverse, setReverse] = useState(24);
-  useMotionValueEvent(motionReverse, "change", latest => {
-    setReverse(latest);
-  });
+  useMotionValueEvent(motionPosition, "change", setPosition);
 
   useEffect(() => {
-    if (isComplete) {
-      playback.play();
-
-      playbackReverse.stop();
-      motionReverse.set(24);
-    } else {
-      playbackReverse.play();
-
-      playback.stop();
+    if (!isComplete && !animateShrink) {
       motionPosition.set(1);
+      return;
     }
-  }, [playback, isComplete, playbackReverse, motionPosition, motionReverse]);
+
+    const controls = animate(motionPosition, isComplete ? 24 : 1, {
+      ease: "linear",
+      duration: 0.25
+    });
+
+    return () => controls.stop();
+  }, [isComplete, animateShrink, motionPosition]);
 
   return (
     <ArrowContainer pointing={pointing} maxWidth={size} maxHeight={size * 0.6}>
@@ -112,19 +96,9 @@ const Icon = ({
         stroke={color}
         strokeLinecap="round"
         strokeLinejoin="round"
-        {...(props as SvgProps)}>
-        {(isComplete || !animateShrink) && (
-          <>
-            <Path d={`M7 8h${position}`} stroke={color} strokeWidth="3" />
-            <Path stroke={color} d={`m${position} 1 7 7-7 7`} strokeWidth="3" />
-          </>
-        )}
-        {!isComplete && animateShrink && (
-          <>
-            <Path d={`M7 8h${reverse}`} stroke={color} strokeWidth="3" />
-            <Path stroke={color} d={`m${reverse} 1 7 7-7 7`} strokeWidth="3" />
-          </>
-        )}
+        {...props}>
+        <Path d={`M7 8h${position}`} stroke={color} strokeWidth="3" />
+        <Path stroke={color} d={`m${position} 1 7 7-7 7`} strokeWidth="3" />
       </Svg>
     </ArrowContainer>
   );

@@ -160,7 +160,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/Italic-VF.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/Italic-Variable.ttf") format("truetype");
   font-weight: 100 700;
   font-style: italic;
   font-display: swap;
@@ -264,7 +264,7 @@
 
 @font-face {
   font-family: "Storm Sans";
-  src: url("https://public.storm-cdn.com/fonts/VF.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/Variable.ttf") format("truetype");
   font-weight: 100 700;
   font-style: normal;
   font-display: swap;
@@ -432,7 +432,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/Italic-VF.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/Italic-Variable.ttf") format("truetype");
   font-weight: 200 800;
   font-style: italic;
   font-display: swap;
@@ -504,7 +504,7 @@
 
 @font-face {
   font-family: "Storm Serif";
-  src: url("https://public.storm-cdn.com/fonts/VF.ttf") format("truetype");
+  src: url("https://public.storm-cdn.com/fonts/Variable.ttf") format("truetype");
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;
@@ -605,6 +605,14 @@
   --storm-color-base-link-hovered: #6bfaff; /** The color used for hyperlink text. (hovered, 25% brighter) */
   --storm-color-base-link-inactive: #008ccc; /** The color used for hyperlink text. (inactive, 20% darker) */
   --storm-color-base-link-disabled: #436d83; /** The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-brand-primary: #3be4be; /** The Storm Teal color is used as the primary brand color for Storm Software. */
+  --storm-color-brand-secondary: #00604d; /** Generated low-emphasis brand background for the dark theme */
+  --storm-color-brand-primary-hovered: #00a17e; /** The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker) */
+  --storm-color-brand-primary-inactive: #81fff4; /** The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter) */
+  --storm-color-brand-primary-disabled: #4e7a70; /** The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-brand-secondary-hovered: #31806b; /** Generated low-emphasis brand background for the dark theme (hovered, 25% brighter) */
+  --storm-color-brand-secondary-inactive: #004836; /** Generated low-emphasis brand background for the dark theme (inactive, 20% darker) */
+  --storm-color-brand-secondary-disabled: #354c49; /** Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-danger-secondary: #5d001e; /** Generated low-emphasis danger background for the dark theme */
   --storm-color-danger-on-secondary: #ffa6b0; /** Generated text and icon color on danger secondary backgrounds */
   --storm-color-danger-primary-hovered: #ff607f; /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (hovered, 25% brighter) */
@@ -639,7 +647,6 @@
   --storm-color-success-secondary-hovered: #31815e; /** Generated low-emphasis success background for the dark theme (hovered, 25% brighter) */
   --storm-color-success-secondary-inactive: #004829; /** Generated low-emphasis success background for the dark theme (inactive, 20% darker) */
   --storm-color-success-secondary-disabled: #354d45; /** Generated low-emphasis success background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-backdrop: rgba(13, 12, 7, 0.4); /** Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container. */
   --storm-color-emphasis-hovered: #6b6b6b; /** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% darker) */
   --storm-color-ink-disabled: #69696b; /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-subtle-hovered: #f6f7f9; /** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% brighter) */
@@ -917,6 +924,8 @@
   --storm-blur-3xl: 64px; /** 3X large blur (64px) */
   --storm-ring-base: 0px 0px 0px 3px #f1f1f11a; /** Generated base 3px focus ring with no gap */
   --storm-ring-base-subtle: 0px 0px 0px 1px #f1f1f11a; /** Generated base 1px outline focus ring with no gap */
+  --storm-ring-brand: 0px 0px 0px 3px #3be4be26; /** Generated brand 3px focus ring with no gap */
+  --storm-ring-brand-subtle: 0px 0px 0px 1px #3be4be26; /** Generated brand 1px outline focus ring with no gap */
   --storm-ring-danger: 0px 0px 0px 3px #cf2d5626; /** Generated danger 3px focus ring with no gap */
   --storm-ring-danger-subtle: 0px 0px 0px 1px #cf2d5626; /** Generated danger 1px outline focus ring with no gap */
   --storm-ring-warning: 0px 0px 0px 3px #f7ac2326; /** Generated warning 3px focus ring with no gap */
@@ -946,6 +955,15 @@
   --storm-color-base-secondary-active: var(--storm-color-base-secondary-hovered); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, 13% brighter) */
   --storm-color-base-secondary-inactive: var(--storm-color-base-primary-inactive); /** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker) */
   --storm-color-base-link-active: var(--storm-color-base-link-hovered); /** The color used for hyperlink text. (active, 25% brighter) */
+  --storm-color-brand-link: var(--storm-color-brand-primary); /** Generated brand hyperlink text color (matches primary) */
+  --storm-color-brand-on-primary: var(--storm-color-neutral-16); /** Generated text and icon color on brand primary backgrounds */
+  --storm-color-brand-on-secondary: var(--storm-color-white); /** Generated text and icon color on brand secondary backgrounds */
+  --storm-color-brand-primary-active: var(--storm-color-brand-primary-hovered); /** The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker) */
+  --storm-color-brand-secondary-active: var(--storm-color-brand-secondary-hovered); /** Generated low-emphasis brand background for the dark theme (active, 25% brighter) */
+  --storm-color-brand-link-hovered: var(--storm-color-brand-primary-hovered); /** Generated brand hyperlink text color (matches primary) (hovered, 25% darker) */
+  --storm-color-brand-link-active: var(--storm-color-brand-primary-hovered); /** Generated brand hyperlink text color (matches primary) (active, 25% darker) */
+  --storm-color-brand-link-inactive: var(--storm-color-brand-primary-inactive); /** Generated brand hyperlink text color (matches primary) (inactive, 20% brighter) */
+  --storm-color-brand-link-disabled: var(--storm-color-brand-primary-disabled); /** Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-danger-primary: var(--storm-color-red-5); /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. */
   --storm-color-danger-on-primary: var(--storm-color-neutral-1); /** Generated text and icon color on danger primary backgrounds */
   --storm-color-danger-primary-active: var(--storm-color-danger-primary-hovered); /** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText. (active, 25% brighter) */
@@ -1062,7 +1080,7 @@
   --storm-typography-body-md-bold: var(--storm-font-weight-bold) var(--storm-font-size-md)/var(--storm-line-height-snug) 'Storm Sans'; /** Default body text style: Storm Sans regular at 18px (`font-size.md`) with normal line height. Use it for paragraphs, descriptions and most running copy. BodyText uses it by default, as do the components built on BodyText. */
   --storm-typography-body-sm-bold: var(--storm-font-weight-bold) var(--storm-font-size-sm)/var(--storm-line-height-snug) 'Storm Sans'; /** Smaller body text style: Storm Sans medium at 16px (`font-size.sm`) with normal line height. Use it for secondary copy in dense layouts, such as table rows, sidebars and card metadata, where `body-md` would feel too large. */
   --storm-typography-caption: italic var(--storm-font-weight-normal) var(--storm-font-size-sm)/var(--storm-line-height-snug) 'Storm Sans'; /** Caption style: Storm Sans regular italic at 16px (`font-size.sm`) with tight line height. Use it for helper text, annotations and small supporting labels. Used by Field helper and validation text, ValidationText, EyebrowText, Slider value labels and the CodeBlock header file name. */
-  --storm-typography-eyebrow: var(--storm-font-weight-extrabold) var(--storm-font-size-md)/var(--storm-line-height-tight) 'Google Sans Code'; /** Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. */
+  --storm-typography-eyebrow: var(--storm-font-weight-bold) var(--storm-font-size-md)/var(--storm-line-height-none) 'Google Sans Code'; /** Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. */
   --storm-typography-code: var(--storm-font-weight-normal) var(--storm-font-size-lg)/var(--storm-line-height-snug) 'Google Sans Code'; /** Monospace code style: Google Sans Code regular at 20px (`font-size.lg`) with snug line height. Use it for source code, file paths, identifiers and other literal values. Used by CodeBlock, InlineCodeText, FileTree, Stepper and code content inside Accordion. */
   --storm-color-danger-link: var(--storm-color-danger-primary); /** Generated danger hyperlink text color (matches primary) */
   --storm-color-warning-link: var(--storm-color-warning-primary); /** Generated warning hyperlink text color (matches primary) */
@@ -1071,6 +1089,8 @@
   --storm-color-success-link: var(--storm-color-success-primary); /** Generated success hyperlink text color (matches primary) */
   --storm-ring-base-offset: 0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 6px #f1f1f11a; /** Generated base 3px focus ring with a 3px gap */
   --storm-ring-base-subtle-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #f1f1f11a; /** Generated base 1px focus ring with a 2px gap */
+  --storm-ring-brand-offset: 0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 6px #3be4be26; /** Generated brand 3px focus ring with a 3px gap */
+  --storm-ring-brand-subtle-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #3be4be26; /** Generated brand 1px focus ring with a 2px gap */
   --storm-ring-danger-offset: 0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 6px #cf2d5626; /** Generated danger 3px focus ring with a 3px gap */
   --storm-ring-danger-subtle-offset: 0px 0px 0px 2px var(--storm-color-elevated), 0px 0px 0px 3px #cf2d5626; /** Generated danger 1px focus ring with a 2px gap */
   --storm-ring-warning-offset: 0px 0px 0px 3px var(--storm-color-elevated), 0px 0px 0px 6px #f7ac2326; /** Generated warning 3px focus ring with a 3px gap */

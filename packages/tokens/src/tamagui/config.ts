@@ -381,6 +381,29 @@ const childThemeExtras: {
       secondaryHovered: "#939394",
       secondaryInactive: "#020102"
     },
+    brand: {
+      link: "#1fb2a6",
+      linkActive: "#007c72",
+      linkDisabled: "#436967",
+      linkHovered: "#007c72",
+      linkInactive: "#5ddfd2",
+      onPrimary: "#FAFAFA",
+      onSecondary: "#005a53",
+      primary: "#1fb2a6",
+      primaryActive: "#007c72",
+      primaryDisabled: "#436967",
+      primaryHovered: "#007c72",
+      primaryInactive: "#5ddfd2",
+      ring: "0px 0px 0px 3px #1fb2a626",
+      ringOffset: "0px 0px 0px 3px #fafafa, 0px 0px 0px 6px #1fb2a626",
+      ringSubtle: "0px 0px 0px 1px #1fb2a626",
+      ringSubtleOffset: "0px 0px 0px 2px #fafafa, 0px 0px 0px 3px #1fb2a626",
+      secondary: "#d6fff9",
+      secondaryActive: "#89b0ab",
+      secondaryDisabled: "#788484",
+      secondaryHovered: "#89b0ab",
+      secondaryInactive: "#e0ffff"
+    },
     danger: {
       link: tokens.color.red7.val,
       linkActive: "#6a0022",
@@ -520,6 +543,29 @@ const childThemeExtras: {
       secondaryDisabled: "#494a4d",
       secondaryHovered: "#656669",
       secondaryInactive: "#636363"
+    },
+    brand: {
+      link: "#3be4be",
+      linkActive: "#00a17e",
+      linkDisabled: "#4e7a70",
+      linkHovered: "#00a17e",
+      linkInactive: "#81fff4",
+      onPrimary: "#151518",
+      onSecondary: "#ffffff",
+      primary: "#3be4be",
+      primaryActive: "#00a17e",
+      primaryDisabled: "#4e7a70",
+      primaryHovered: "#00a17e",
+      primaryInactive: "#81fff4",
+      ring: "0px 0px 0px 3px #3be4be26",
+      ringOffset: "0px 0px 0px 3px #242528, 0px 0px 0px 6px #3be4be26",
+      ringSubtle: "0px 0px 0px 1px #3be4be26",
+      ringSubtleOffset: "0px 0px 0px 2px #242528, 0px 0px 0px 3px #3be4be26",
+      secondary: "#00604d",
+      secondaryActive: "#31806b",
+      secondaryDisabled: "#354c49",
+      secondaryHovered: "#31806b",
+      secondaryInactive: "#004836"
     },
     danger: {
       link: tokens.color.red5.val,
@@ -752,7 +798,6 @@ const themes = createThemes({
         surfaceInactive: "#ffffff"
       },
       dark: {
-        backdrop: "#0d0c0766",
         canvas: tokens.color.neutral16.val,
         canvasActive: "#1c1c1f",
         canvasDisabled: "#242427",
@@ -825,6 +870,7 @@ const themes = createThemes({
   },
   childrenThemes: {
     base: {},
+    brand: {},
     danger: {},
     discovery: {},
     info: {},
@@ -1099,14 +1145,14 @@ const eyebrowFont = createFont({
     true: 18
   },
   lineHeight: {
-    md: 19.035,
-    tight: 19.035,
-    true: 19.035
+    md: 13.77,
+    none: 13.77,
+    true: 13.77
   },
   weight: {
-    extrabold: "800",
-    md: "800",
-    true: "800"
+    bold: "700",
+    md: "700",
+    true: "700"
   }
 });
 

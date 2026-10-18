@@ -47,6 +47,16 @@ export const Default: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+
+    disabled: false,
+    animate: false
+  }
+};
+
 export const Animated: Story = {
   args: {
     children: "Button Text",

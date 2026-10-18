@@ -120,7 +120,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   variants: {
     elevated: {
       true: {
-        boxShadow: "0px 4px 30px backdrop"
+        boxShadow: "0px 4px 30px #0D0C0766"
       }
     }
   } as const,

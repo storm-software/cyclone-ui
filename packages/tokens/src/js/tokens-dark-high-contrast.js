@@ -3216,6 +3216,585 @@ module.exports = {
         path: ["color", "base", "link-disabled"],
       },
     },
+    brand: {
+      primary: {
+        key: "{color.brand.primary}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#2effd0",
+        $description:
+          "The Storm Teal color is used as the primary brand color for Storm Software.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0.1803921568627451, 1, 0.8156862745098039],
+            hex: "#2effd0",
+          },
+          $description:
+            "The Storm Teal color is used as the primary brand color for Storm Software.",
+          semantic: true,
+          key: "{color.brand.primary}",
+        },
+        name: "ColorBrandPrimary",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "primary",
+        },
+        path: ["color", "brand", "primary"],
+      },
+      link: {
+        key: "{color.brand.link}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#2effd0",
+        $description: "Generated brand hyperlink text color (matches primary)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.brand.primary}",
+          $description:
+            "Generated brand hyperlink text color (matches primary)",
+          semantic: true,
+          key: "{color.brand.link}",
+        },
+        name: "ColorBrandLink",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "link",
+        },
+        path: ["color", "brand", "link"],
+      },
+      "on-primary": {
+        key: "{color.brand.on-primary}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#000000",
+        $description:
+          "Generated text and icon color on brand primary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.14}",
+          $description:
+            "Generated text and icon color on brand primary backgrounds",
+          semantic: true,
+          key: "{color.brand.on-primary}",
+        },
+        name: "ColorBrandOnPrimary",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "on-primary",
+        },
+        path: ["color", "brand", "on-primary"],
+      },
+      secondary: {
+        key: "{color.brand.secondary}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#001814",
+        $description:
+          "Generated low-emphasis brand background for the dark theme",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0, 0.09411764705882353, 0.0784313725490196],
+            hex: "#001814",
+          },
+          $description:
+            "Generated low-emphasis brand background for the dark theme",
+          semantic: true,
+          key: "{color.brand.secondary}",
+        },
+        name: "ColorBrandSecondary",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "secondary",
+        },
+        path: ["color", "brand", "secondary"],
+      },
+      "on-secondary": {
+        key: "{color.brand.on-secondary}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#ffffff",
+        $description:
+          "Generated text and icon color on brand secondary backgrounds",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.1}",
+          $description:
+            "Generated text and icon color on brand secondary backgrounds",
+          semantic: true,
+          key: "{color.brand.on-secondary}",
+        },
+        name: "ColorBrandOnSecondary",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "on-secondary",
+        },
+        path: ["color", "brand", "on-secondary"],
+      },
+      "primary-hovered": {
+        key: "{color.brand.primary-hovered}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#00775d",
+        $description:
+          "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0, 0.4666666666666667, 0.36470588235294116],
+            hex: "#00775d",
+          },
+          $description:
+            "The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.brand.primary-hovered}",
+        },
+        name: "ColorBrandPrimaryHovered",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "primary-hovered",
+        },
+        path: ["color", "brand", "primary-hovered"],
+      },
+      "primary-active": {
+        key: "{color.brand.primary-active}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#00775d",
+        $description:
+          "The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.brand.primary-hovered}",
+          $description:
+            "The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker)",
+          semantic: true,
+          key: "{color.brand.primary-active}",
+        },
+        name: "ColorBrandPrimaryActive",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "primary-active",
+        },
+        path: ["color", "brand", "primary-active"],
+      },
+      "primary-inactive": {
+        key: "{color.brand.primary-inactive}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#bbfff9",
+        $description:
+          "The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [0.7333333333333333, 1, 0.9764705882352941],
+            hex: "#bbfff9",
+          },
+          $description:
+            "The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.brand.primary-inactive}",
+        },
+        name: "ColorBrandPrimaryInactive",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "primary-inactive",
+        },
+        path: ["color", "brand", "primary-inactive"],
+      },
+      "primary-disabled": {
+        key: "{color.brand.primary-disabled}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#397668",
+        $description:
+          "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.2235294117647059, 0.4627450980392157, 0.40784313725490196,
+            ],
+            hex: "#397668",
+          },
+          $description:
+            "The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.brand.primary-disabled}",
+        },
+        name: "ColorBrandPrimaryDisabled",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "primary-disabled",
+        },
+        path: ["color", "brand", "primary-disabled"],
+      },
+      "secondary-hovered": {
+        key: "{color.brand.secondary-hovered}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#19755d",
+        $description:
+          "Generated low-emphasis brand background for the dark theme (hovered, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.09803921568627451, 0.4588235294117647, 0.36470588235294116,
+            ],
+            hex: "#19755d",
+          },
+          $description:
+            "Generated low-emphasis brand background for the dark theme (hovered, 25% brighter)",
+          semantic: true,
+          key: "{color.brand.secondary-hovered}",
+        },
+        name: "ColorBrandSecondaryHovered",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "secondary-hovered",
+        },
+        path: ["color", "brand", "secondary-hovered"],
+      },
+      "secondary-active": {
+        key: "{color.brand.secondary-active}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#19755d",
+        $description:
+          "Generated low-emphasis brand background for the dark theme (active, 25% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.brand.secondary-hovered}",
+          $description:
+            "Generated low-emphasis brand background for the dark theme (active, 25% brighter)",
+          semantic: true,
+          key: "{color.brand.secondary-active}",
+        },
+        name: "ColorBrandSecondaryActive",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "secondary-active",
+        },
+        path: ["color", "brand", "secondary-active"],
+      },
+      "secondary-inactive": {
+        key: "{color.brand.secondary-inactive}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#000000",
+        $description:
+          "Generated low-emphasis brand background for the dark theme (inactive, 20% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.neutral.14}",
+          $description:
+            "Generated low-emphasis brand background for the dark theme (inactive, 20% darker)",
+          semantic: true,
+          key: "{color.brand.secondary-inactive}",
+        },
+        name: "ColorBrandSecondaryInactive",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "secondary-inactive",
+        },
+        path: ["color", "brand", "secondary-inactive"],
+      },
+      "secondary-disabled": {
+        key: "{color.brand.secondary-disabled}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#1a2f2c",
+        $description:
+          "Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: {
+            colorSpace: "srgb",
+            components: [
+              0.10196078431372549, 0.1843137254901961, 0.17254901960784313,
+            ],
+            hex: "#1a2f2c",
+          },
+          $description:
+            "Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.brand.secondary-disabled}",
+        },
+        name: "ColorBrandSecondaryDisabled",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "secondary-disabled",
+        },
+        path: ["color", "brand", "secondary-disabled"],
+      },
+      "link-hovered": {
+        key: "{color.brand.link-hovered}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#00775d",
+        $description:
+          "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.brand.primary-hovered}",
+          $description:
+            "Generated brand hyperlink text color (matches primary) (hovered, 25% darker)",
+          semantic: true,
+          key: "{color.brand.link-hovered}",
+        },
+        name: "ColorBrandLinkHovered",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "link-hovered",
+        },
+        path: ["color", "brand", "link-hovered"],
+      },
+      "link-active": {
+        key: "{color.brand.link-active}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#00775d",
+        $description:
+          "Generated brand hyperlink text color (matches primary) (active, 25% darker)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.brand.primary-hovered}",
+          $description:
+            "Generated brand hyperlink text color (matches primary) (active, 25% darker)",
+          semantic: true,
+          key: "{color.brand.link-active}",
+        },
+        name: "ColorBrandLinkActive",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "link-active",
+        },
+        path: ["color", "brand", "link-active"],
+      },
+      "link-inactive": {
+        key: "{color.brand.link-inactive}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#bbfff9",
+        $description:
+          "Generated brand hyperlink text color (matches primary) (inactive, 20% brighter)",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.brand.primary-inactive}",
+          $description:
+            "Generated brand hyperlink text color (matches primary) (inactive, 20% brighter)",
+          semantic: true,
+          key: "{color.brand.link-inactive}",
+        },
+        name: "ColorBrandLinkInactive",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "link-inactive",
+        },
+        path: ["color", "brand", "link-inactive"],
+      },
+      "link-disabled": {
+        key: "{color.brand.link-disabled}",
+        theme: "brand",
+        group: "brand",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#397668",
+        $description:
+          "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "brand",
+          group: "brand",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.brand.primary-disabled}",
+          $description:
+            "Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          semantic: true,
+          key: "{color.brand.link-disabled}",
+        },
+        name: "ColorBrandLinkDisabled",
+        attributes: {
+          category: "color",
+          type: "brand",
+          item: "link-disabled",
+        },
+        path: ["color", "brand", "link-disabled"],
+      },
+    },
     danger: {
       primary: {
         key: "{color.danger.primary}",
@@ -6106,38 +6685,6 @@ module.exports = {
         },
         path: ["color", "success", "link-disabled"],
       },
-    },
-    backdrop: {
-      key: "{color.backdrop}",
-      $type: "color",
-      colorSpace: "display-p3",
-      $value: "#00000066",
-      $description:
-        "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
-      semantic: true,
-      filePath:
-        "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-      isSource: true,
-      original: {
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: {
-          colorSpace: "srgb",
-          components: [0, 0, 0],
-          alpha: 0.4,
-          hex: "#000000",
-        },
-        $description:
-          "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
-        semantic: true,
-        key: "{color.backdrop}",
-      },
-      name: "ColorBackdrop",
-      attributes: {
-        category: "color",
-        type: "backdrop",
-      },
-      path: ["color", "backdrop"],
     },
     shadow: {
       resting: {
@@ -16193,12 +16740,12 @@ module.exports = {
       key: "{typography.eyebrow}",
       $type: "typography",
       $description:
-        "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+        "Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
       $value: {
         fontFamily: "Google Sans Code",
-        fontWeight: 800,
+        fontWeight: 700,
         fontSize: "1.125rem",
-        lineHeight: 1.0575,
+        lineHeight: 0.765,
       },
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
@@ -16206,12 +16753,12 @@ module.exports = {
       original: {
         $type: "typography",
         $description:
-          "Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
+          "Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText.",
         $value: {
           fontFamily: "Google Sans Code",
-          fontWeight: "{font-weight.extrabold}",
+          fontWeight: "{font-weight.bold}",
           fontSize: "{font-size.md}",
-          lineHeight: "{line-height.tight}",
+          lineHeight: "{line-height.none}",
         },
         key: "{typography.eyebrow}",
       },
@@ -16572,6 +17119,322 @@ module.exports = {
         type: "base-subtle-offset",
       },
       path: ["ring", "base-subtle-offset"],
+    },
+    brand: {
+      key: "{ring.brand}",
+      $description: "Generated brand 3px focus ring with no gap",
+      $type: "shadow",
+      $value: [
+        {
+          color: "#3be4be26",
+          offsetX: {
+            value: 0,
+            unit: "px",
+          },
+          offsetY: {
+            value: 0,
+            unit: "px",
+          },
+          blur: {
+            value: 0,
+            unit: "px",
+          },
+          spread: {
+            value: 3,
+            unit: "px",
+          },
+        },
+      ],
+      theme: "brand",
+      original: {
+        $description: "Generated brand 3px focus ring with no gap",
+        $type: "shadow",
+        $value: [
+          {
+            color: "#3be4be26",
+            offsetX: {
+              value: 0,
+              unit: "px",
+            },
+            offsetY: {
+              value: 0,
+              unit: "px",
+            },
+            blur: {
+              value: 0,
+              unit: "px",
+            },
+            spread: {
+              value: 3,
+              unit: "px",
+            },
+          },
+        ],
+        theme: "brand",
+        key: "{ring.brand}",
+      },
+      name: "RingBrand",
+      attributes: {
+        category: "ring",
+        type: "brand",
+      },
+      path: ["ring", "brand"],
+    },
+    "brand-subtle": {
+      key: "{ring.brand-subtle}",
+      $description: "Generated brand 1px outline focus ring with no gap",
+      $type: "shadow",
+      $value: [
+        {
+          color: "#3be4be26",
+          offsetX: {
+            value: 0,
+            unit: "px",
+          },
+          offsetY: {
+            value: 0,
+            unit: "px",
+          },
+          blur: {
+            value: 0,
+            unit: "px",
+          },
+          spread: {
+            value: 1,
+            unit: "px",
+          },
+        },
+      ],
+      theme: "brand",
+      original: {
+        $description: "Generated brand 1px outline focus ring with no gap",
+        $type: "shadow",
+        $value: [
+          {
+            color: "#3be4be26",
+            offsetX: {
+              value: 0,
+              unit: "px",
+            },
+            offsetY: {
+              value: 0,
+              unit: "px",
+            },
+            blur: {
+              value: 0,
+              unit: "px",
+            },
+            spread: {
+              value: 1,
+              unit: "px",
+            },
+          },
+        ],
+        theme: "brand",
+        key: "{ring.brand-subtle}",
+      },
+      name: "RingBrandSubtle",
+      attributes: {
+        category: "ring",
+        type: "brand-subtle",
+      },
+      path: ["ring", "brand-subtle"],
+    },
+    "brand-offset": {
+      key: "{ring.brand-offset}",
+      $description: "Generated brand 3px focus ring with a 3px gap",
+      $type: "shadow",
+      $value: [
+        {
+          color: "#000000",
+          offsetX: {
+            value: 0,
+            unit: "px",
+          },
+          offsetY: {
+            value: 0,
+            unit: "px",
+          },
+          blur: {
+            value: 0,
+            unit: "px",
+          },
+          spread: {
+            value: 3,
+            unit: "px",
+          },
+        },
+        {
+          color: "#3be4be26",
+          offsetX: {
+            value: 0,
+            unit: "px",
+          },
+          offsetY: {
+            value: 0,
+            unit: "px",
+          },
+          blur: {
+            value: 0,
+            unit: "px",
+          },
+          spread: {
+            value: 6,
+            unit: "px",
+          },
+        },
+      ],
+      theme: "brand",
+      original: {
+        $description: "Generated brand 3px focus ring with a 3px gap",
+        $type: "shadow",
+        $value: [
+          {
+            color: "{color.elevated}",
+            offsetX: {
+              value: 0,
+              unit: "px",
+            },
+            offsetY: {
+              value: 0,
+              unit: "px",
+            },
+            blur: {
+              value: 0,
+              unit: "px",
+            },
+            spread: {
+              value: 3,
+              unit: "px",
+            },
+          },
+          {
+            color: "#3be4be26",
+            offsetX: {
+              value: 0,
+              unit: "px",
+            },
+            offsetY: {
+              value: 0,
+              unit: "px",
+            },
+            blur: {
+              value: 0,
+              unit: "px",
+            },
+            spread: {
+              value: 6,
+              unit: "px",
+            },
+          },
+        ],
+        theme: "brand",
+        key: "{ring.brand-offset}",
+      },
+      name: "RingBrandOffset",
+      attributes: {
+        category: "ring",
+        type: "brand-offset",
+      },
+      path: ["ring", "brand-offset"],
+    },
+    "brand-subtle-offset": {
+      key: "{ring.brand-subtle-offset}",
+      $description: "Generated brand 1px focus ring with a 2px gap",
+      $type: "shadow",
+      $value: [
+        {
+          color: "#000000",
+          offsetX: {
+            value: 0,
+            unit: "px",
+          },
+          offsetY: {
+            value: 0,
+            unit: "px",
+          },
+          blur: {
+            value: 0,
+            unit: "px",
+          },
+          spread: {
+            value: 2,
+            unit: "px",
+          },
+        },
+        {
+          color: "#3be4be26",
+          offsetX: {
+            value: 0,
+            unit: "px",
+          },
+          offsetY: {
+            value: 0,
+            unit: "px",
+          },
+          blur: {
+            value: 0,
+            unit: "px",
+          },
+          spread: {
+            value: 3,
+            unit: "px",
+          },
+        },
+      ],
+      theme: "brand",
+      original: {
+        $description: "Generated brand 1px focus ring with a 2px gap",
+        $type: "shadow",
+        $value: [
+          {
+            color: "{color.elevated}",
+            offsetX: {
+              value: 0,
+              unit: "px",
+            },
+            offsetY: {
+              value: 0,
+              unit: "px",
+            },
+            blur: {
+              value: 0,
+              unit: "px",
+            },
+            spread: {
+              value: 2,
+              unit: "px",
+            },
+          },
+          {
+            color: "#3be4be26",
+            offsetX: {
+              value: 0,
+              unit: "px",
+            },
+            offsetY: {
+              value: 0,
+              unit: "px",
+            },
+            blur: {
+              value: 0,
+              unit: "px",
+            },
+            spread: {
+              value: 3,
+              unit: "px",
+            },
+          },
+        ],
+        theme: "brand",
+        key: "{ring.brand-subtle-offset}",
+      },
+      name: "RingBrandSubtleOffset",
+      attributes: {
+        category: "ring",
+        type: "brand-subtle-offset",
+      },
+      path: ["ring", "brand-subtle-offset"],
     },
     danger: {
       key: "{ring.danger}",

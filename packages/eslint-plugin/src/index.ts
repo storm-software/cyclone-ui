@@ -447,6 +447,126 @@ export const manifest: DesignSystemManifest = {
       "value": "#123166"
     },
     {
+      "path": "color.brand.link",
+      "cssVar": "--storm-color-brand-link",
+      "type": "color",
+      "category": "color",
+      "value": "#1fb2a6",
+      "alias": true
+    },
+    {
+      "path": "color.brand.link-active",
+      "cssVar": "--storm-color-brand-link-active",
+      "type": "color",
+      "category": "color",
+      "value": "#007c72"
+    },
+    {
+      "path": "color.brand.link-disabled",
+      "cssVar": "--storm-color-brand-link-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#436967"
+    },
+    {
+      "path": "color.brand.link-hovered",
+      "cssVar": "--storm-color-brand-link-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#007c72"
+    },
+    {
+      "path": "color.brand.link-inactive",
+      "cssVar": "--storm-color-brand-link-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#5ddfd2"
+    },
+    {
+      "path": "color.brand.on-primary",
+      "cssVar": "--storm-color-brand-on-primary",
+      "type": "color",
+      "category": "color",
+      "value": "#FAFAFA"
+    },
+    {
+      "path": "color.brand.on-secondary",
+      "cssVar": "--storm-color-brand-on-secondary",
+      "type": "color",
+      "category": "color",
+      "value": "#005a53"
+    },
+    {
+      "path": "color.brand.primary",
+      "cssVar": "--storm-color-brand-primary",
+      "type": "color",
+      "category": "color",
+      "value": "#1fb2a6"
+    },
+    {
+      "path": "color.brand.primary-active",
+      "cssVar": "--storm-color-brand-primary-active",
+      "type": "color",
+      "category": "color",
+      "value": "#007c72"
+    },
+    {
+      "path": "color.brand.primary-disabled",
+      "cssVar": "--storm-color-brand-primary-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#436967"
+    },
+    {
+      "path": "color.brand.primary-hovered",
+      "cssVar": "--storm-color-brand-primary-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#007c72"
+    },
+    {
+      "path": "color.brand.primary-inactive",
+      "cssVar": "--storm-color-brand-primary-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#5ddfd2"
+    },
+    {
+      "path": "color.brand.secondary",
+      "cssVar": "--storm-color-brand-secondary",
+      "type": "color",
+      "category": "color",
+      "value": "#d6fff9"
+    },
+    {
+      "path": "color.brand.secondary-active",
+      "cssVar": "--storm-color-brand-secondary-active",
+      "type": "color",
+      "category": "color",
+      "value": "#89b0ab"
+    },
+    {
+      "path": "color.brand.secondary-disabled",
+      "cssVar": "--storm-color-brand-secondary-disabled",
+      "type": "color",
+      "category": "color",
+      "value": "#788484"
+    },
+    {
+      "path": "color.brand.secondary-hovered",
+      "cssVar": "--storm-color-brand-secondary-hovered",
+      "type": "color",
+      "category": "color",
+      "value": "#89b0ab"
+    },
+    {
+      "path": "color.brand.secondary-inactive",
+      "cssVar": "--storm-color-brand-secondary-inactive",
+      "type": "color",
+      "category": "color",
+      "value": "#e0ffff"
+    },
+    {
       "path": "color.canvas",
       "cssVar": "--storm-color-canvas",
       "type": "color",
@@ -2634,6 +2754,32 @@ export const manifest: DesignSystemManifest = {
       "category": "shadow"
     },
     {
+      "path": "ring.brand",
+      "cssVar": "--storm-ring-brand",
+      "type": "shadow",
+      "category": "shadow",
+      "value": "0px 0px 0px 3px #1fb2a626"
+    },
+    {
+      "path": "ring.brand-offset",
+      "cssVar": "--storm-ring-brand-offset",
+      "type": "shadow",
+      "category": "shadow"
+    },
+    {
+      "path": "ring.brand-subtle",
+      "cssVar": "--storm-ring-brand-subtle",
+      "type": "shadow",
+      "category": "shadow",
+      "value": "0px 0px 0px 1px #1fb2a626"
+    },
+    {
+      "path": "ring.brand-subtle-offset",
+      "cssVar": "--storm-ring-brand-subtle-offset",
+      "type": "shadow",
+      "category": "shadow"
+    },
+    {
       "path": "ring.danger",
       "cssVar": "--storm-ring-danger",
       "type": "shadow",
@@ -4690,6 +4836,7 @@ export const manifest: DesignSystemManifest = {
       "light",
       "dark",
       "base",
+      "brand",
       "danger",
       "discovery",
       "info",
@@ -5116,6 +5263,7 @@ export const manifest: DesignSystemManifest = {
         "5xl",
         "lg",
         "md",
+        "none",
         "sm",
         "snug",
         "tight",

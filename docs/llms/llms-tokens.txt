@@ -75,6 +75,23 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.blue.7` | `color` | `#0145be` | Deep azure blue. |
 | `color.blue.8` | `color` | `#012e7c` | Vivid cerulean blue. |
 | `color.blue.9` | `color` | `#00163b` | Rich cerulean blue. |
+| `color.brand.link` | `color` | `var(--color-brand-primary)` | Generated brand hyperlink text color (matches primary) |
+| `color.brand.link-active` | `color` | `#00413c` | Generated brand hyperlink text color (matches primary) (active, 25% darker) |
+| `color.brand.link-disabled` | `color` | `#2c5b58` | Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.link-hovered` | `color` | `#00413c` | Generated brand hyperlink text color (matches primary) (hovered, 25% darker) |
+| `color.brand.link-inactive` | `color` | `#5cfbeb` | Generated brand hyperlink text color (matches primary) (inactive, 20% brighter) |
+| `color.brand.on-primary` | `color` | `#ffffff` | Generated text and icon color on brand primary backgrounds |
+| `color.brand.on-secondary` | `color` | `#00100f` | Generated text and icon color on brand secondary backgrounds |
+| `color.brand.primary` | `color` | `#00bcad` | The Storm Teal color is used as the primary brand color for Storm Software. |
+| `color.brand.primary-active` | `color` | `#00413c` | The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker) |
+| `color.brand.primary-disabled` | `color` | `#2c5b58` | The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.primary-hovered` | `color` | `#00413c` | The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker) |
+| `color.brand.primary-inactive` | `color` | `#5cfbeb` | The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter) |
+| `color.brand.secondary` | `color` | `#ffffff` | Generated low-emphasis brand background for the light theme |
+| `color.brand.secondary-active` | `color` | `#8ec5be` | Generated low-emphasis brand background for the light theme (active, 25% darker) |
+| `color.brand.secondary-disabled` | `color` | `#6f8c8c` | Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.secondary-hovered` | `color` | `#8ec5be` | Generated low-emphasis brand background for the light theme (hovered, 25% darker) |
+| `color.brand.secondary-inactive` | `color` | `#ffffff` | Generated low-emphasis brand background for the light theme (inactive, 20% brighter) |
 | `color.canvas` | `color` | `var(--color-neutral-3)` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. |
 | `color.canvas-active` | `color` | `#d7d7d7` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker) |
 | `color.canvas-disabled` | `color` | `#c9c9cf` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26)) |
@@ -426,6 +443,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f211a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a` | Generated base 1px focus ring with a 2px gap |
+| `ring.brand` | `shadow` | `0px 0px 0px 3px #1fb2a626` | Generated brand 3px focus ring with no gap |
+| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1fb2a626` | Generated brand 3px focus ring with a 3px gap |
+| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #1fb2a626` | Generated brand 1px outline focus ring with no gap |
+| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1fb2a626` | Generated brand 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e26` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e26` | Generated danger 1px outline focus ring with no gap |
@@ -635,7 +656,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.editorial-hero` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest editorial display style: Storm Serif semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |
 | `typography.editorial-lg` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.3xl}","lineHeight":"{line-height.snug}"}` | Large editorial display style: Storm Serif semibold at 36px (`font-size.3xl`) with snug line height. Use it for page titles and top-level section headings. HeadingText applies it for levels `1`/`title` (h1) and `2`/`lg` (h2). |
 | `typography.editorial-md` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | Medium editorial display style: Storm Serif bold at 24px (`font-size.xl`) with snug line height. Use it for section and card headings. HeadingText applies it for level `3`/`md` (h3) and as its default font. |
-| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
+| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.none}"}` | Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
 | `typography.title-lg` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Small title style: Storm Sans bold at 12px (`font-size.sm`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border. |
@@ -734,6 +755,23 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.blue.7` | `color` | `#45649b` | Deep azure blue. |
 | `color.blue.8` | `color` | `#3b5685` | Vivid cerulean blue. |
 | `color.blue.9` | `color` | `#31486f` | Rich cerulean blue. |
+| `color.brand.link` | `color` | `var(--color-brand-primary)` | Generated brand hyperlink text color (matches primary) |
+| `color.brand.link-active` | `color` | `#257f77` | Generated brand hyperlink text color (matches primary) (active, 25% darker) |
+| `color.brand.link-disabled` | `color` | `#566e6d` | Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.link-hovered` | `color` | `#257f77` | Generated brand hyperlink text color (matches primary) (hovered, 25% darker) |
+| `color.brand.link-inactive` | `color` | `#6ebcb4` | Generated brand hyperlink text color (matches primary) (inactive, 20% brighter) |
+| `color.brand.on-primary` | `color` | `#d5d5d5` | Generated text and icon color on brand primary backgrounds |
+| `color.brand.on-secondary` | `color` | `#1f6c66` | Generated text and icon color on brand secondary backgrounds |
+| `color.brand.primary` | `color` | `#449a93` | The Storm Teal color is used as the primary brand color for Storm Software. |
+| `color.brand.primary-active` | `color` | `#257f77` | The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker) |
+| `color.brand.primary-disabled` | `color` | `#566e6d` | The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.primary-hovered` | `color` | `#257f77` | The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker) |
+| `color.brand.primary-inactive` | `color` | `#6ebcb4` | The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter) |
+| `color.brand.secondary` | `color` | `#ade7df` | Generated low-emphasis brand background for the light theme |
+| `color.brand.secondary-active` | `color` | `#889f9c` | Generated low-emphasis brand background for the light theme (active, 25% darker) |
+| `color.brand.secondary-disabled` | `color` | `#7b8282` | Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.secondary-hovered` | `color` | `#889f9c` | Generated low-emphasis brand background for the light theme (hovered, 25% darker) |
+| `color.brand.secondary-inactive` | `color` | `#b3e9e9` | Generated low-emphasis brand background for the light theme (inactive, 20% brighter) |
 | `color.canvas` | `color` | `var(--color-neutral-3)` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. |
 | `color.canvas-active` | `color` | `#aaaaaa` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker) |
 | `color.canvas-disabled` | `color` | `#a4a4a5` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26)) |
@@ -1085,6 +1123,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f211a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a` | Generated base 1px focus ring with a 2px gap |
+| `ring.brand` | `shadow` | `0px 0px 0px 3px #1fb2a626` | Generated brand 3px focus ring with no gap |
+| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1fb2a626` | Generated brand 3px focus ring with a 3px gap |
+| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #1fb2a626` | Generated brand 1px outline focus ring with no gap |
+| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1fb2a626` | Generated brand 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e26` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e26` | Generated danger 1px outline focus ring with no gap |
@@ -1294,7 +1336,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.editorial-hero` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest editorial display style: Storm Serif semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |
 | `typography.editorial-lg` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.3xl}","lineHeight":"{line-height.snug}"}` | Large editorial display style: Storm Serif semibold at 36px (`font-size.3xl`) with snug line height. Use it for page titles and top-level section headings. HeadingText applies it for levels `1`/`title` (h1) and `2`/`lg` (h2). |
 | `typography.editorial-md` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | Medium editorial display style: Storm Serif bold at 24px (`font-size.xl`) with snug line height. Use it for section and card headings. HeadingText applies it for level `3`/`md` (h3) and as its default font. |
-| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
+| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.none}"}` | Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
 | `typography.title-lg` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Small title style: Storm Sans bold at 12px (`font-size.sm`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border. |
@@ -1393,6 +1435,23 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.blue.7` | `color` | `#2055b3` | Deep azure blue. |
 | `color.blue.8` | `color` | `#19438c` | Vivid cerulean blue. |
 | `color.blue.9` | `color` | `#123166` | Rich cerulean blue. |
+| `color.brand.link` | `color` | `var(--color-brand-primary)` | Generated brand hyperlink text color (matches primary) |
+| `color.brand.link-active` | `color` | `#007c72` | Generated brand hyperlink text color (matches primary) (active, 25% darker) |
+| `color.brand.link-disabled` | `color` | `#436967` | Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.link-hovered` | `color` | `#007c72` | Generated brand hyperlink text color (matches primary) (hovered, 25% darker) |
+| `color.brand.link-inactive` | `color` | `#5ddfd2` | Generated brand hyperlink text color (matches primary) (inactive, 20% brighter) |
+| `color.brand.on-primary` | `color` | `#FAFAFA` | Generated text and icon color on brand primary backgrounds |
+| `color.brand.on-secondary` | `color` | `#005a53` | Generated text and icon color on brand secondary backgrounds |
+| `color.brand.primary` | `color` | `#1fb2a6` | The Storm Teal color is used as the primary brand color for Storm Software. |
+| `color.brand.primary-active` | `color` | `#007c72` | The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker) |
+| `color.brand.primary-disabled` | `color` | `#436967` | The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.primary-hovered` | `color` | `#007c72` | The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker) |
+| `color.brand.primary-inactive` | `color` | `#5ddfd2` | The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter) |
+| `color.brand.secondary` | `color` | `#d6fff9` | Generated low-emphasis brand background for the light theme |
+| `color.brand.secondary-active` | `color` | `#89b0ab` | Generated low-emphasis brand background for the light theme (active, 25% darker) |
+| `color.brand.secondary-disabled` | `color` | `#788484` | Generated low-emphasis brand background for the light theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.secondary-hovered` | `color` | `#89b0ab` | Generated low-emphasis brand background for the light theme (hovered, 25% darker) |
+| `color.brand.secondary-inactive` | `color` | `#e0ffff` | Generated low-emphasis brand background for the light theme (inactive, 20% brighter) |
 | `color.canvas` | `color` | `var(--color-neutral-3)` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. |
 | `color.canvas-active` | `color` | `#bcbcbc` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% darker) |
 | `color.canvas-disabled` | `color` | `#b4b4b5` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 68% over oklch(0.3839 0.0045 286.26)) |
@@ -1744,6 +1803,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1f1f211a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #1f1f211a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1f1f211a` | Generated base 1px focus ring with a 2px gap |
+| `ring.brand` | `shadow` | `0px 0px 0px 3px #1fb2a626` | Generated brand 3px focus ring with no gap |
+| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #1fb2a626` | Generated brand 3px focus ring with a 3px gap |
+| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #1fb2a626` | Generated brand 1px outline focus ring with no gap |
+| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #1fb2a626` | Generated brand 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #8e223e26` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #8e223e26` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #8e223e26` | Generated danger 1px outline focus ring with no gap |
@@ -1953,7 +2016,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.editorial-hero` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest editorial display style: Storm Serif semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |
 | `typography.editorial-lg` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.3xl}","lineHeight":"{line-height.snug}"}` | Large editorial display style: Storm Serif semibold at 36px (`font-size.3xl`) with snug line height. Use it for page titles and top-level section headings. HeadingText applies it for levels `1`/`title` (h1) and `2`/`lg` (h2). |
 | `typography.editorial-md` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | Medium editorial display style: Storm Serif bold at 24px (`font-size.xl`) with snug line height. Use it for section and card headings. HeadingText applies it for level `3`/`md` (h3) and as its default font. |
-| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
+| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.none}"}` | Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
 | `typography.title-lg` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Small title style: Storm Sans bold at 12px (`font-size.sm`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border. |
@@ -2024,7 +2087,6 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `color.backdrop` | `color` | `#00000066` | Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container. |
 | `color.base.link` | `color` | `#00bcff` | The color used for hyperlink text. |
 | `color.base.link-active` | `color` | `#9bfcff` | The color used for hyperlink text. (active, 25% brighter) |
 | `color.base.link-disabled` | `color` | `#2c6380` | The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
@@ -2052,6 +2114,23 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.blue.7` | `color` | `#0145be` | Deep azure blue. |
 | `color.blue.8` | `color` | `#012e7c` | Vivid cerulean blue. |
 | `color.blue.9` | `color` | `#00163b` | Rich cerulean blue. |
+| `color.brand.link` | `color` | `var(--color-brand-primary)` | Generated brand hyperlink text color (matches primary) |
+| `color.brand.link-active` | `color` | `#00775d` | Generated brand hyperlink text color (matches primary) (active, 25% darker) |
+| `color.brand.link-disabled` | `color` | `#397668` | Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.link-hovered` | `color` | `#00775d` | Generated brand hyperlink text color (matches primary) (hovered, 25% darker) |
+| `color.brand.link-inactive` | `color` | `#bbfff9` | Generated brand hyperlink text color (matches primary) (inactive, 20% brighter) |
+| `color.brand.on-primary` | `color` | `#000000` | Generated text and icon color on brand primary backgrounds |
+| `color.brand.on-secondary` | `color` | `#ffffff` | Generated text and icon color on brand secondary backgrounds |
+| `color.brand.primary` | `color` | `#2effd0` | The Storm Teal color is used as the primary brand color for Storm Software. |
+| `color.brand.primary-active` | `color` | `#00775d` | The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker) |
+| `color.brand.primary-disabled` | `color` | `#397668` | The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.primary-hovered` | `color` | `#00775d` | The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker) |
+| `color.brand.primary-inactive` | `color` | `#bbfff9` | The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter) |
+| `color.brand.secondary` | `color` | `#001814` | Generated low-emphasis brand background for the dark theme |
+| `color.brand.secondary-active` | `color` | `#19755d` | Generated low-emphasis brand background for the dark theme (active, 25% brighter) |
+| `color.brand.secondary-disabled` | `color` | `#1a2f2c` | Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.secondary-hovered` | `color` | `#19755d` | Generated low-emphasis brand background for the dark theme (hovered, 25% brighter) |
+| `color.brand.secondary-inactive` | `color` | `#000000` | Generated low-emphasis brand background for the dark theme (inactive, 20% darker) |
 | `color.canvas` | `color` | `var(--color-neutral-16)` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. |
 | `color.canvas-active` | `color` | `#000000` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% brighter) |
 | `color.canvas-disabled` | `color` | `#000000` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26)) |
@@ -2403,6 +2482,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f11a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a` | Generated base 1px focus ring with a 2px gap |
+| `ring.brand` | `shadow` | `0px 0px 0px 3px #3be4be26` | Generated brand 3px focus ring with no gap |
+| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #3be4be26` | Generated brand 3px focus ring with a 3px gap |
+| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #3be4be26` | Generated brand 1px outline focus ring with no gap |
+| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #3be4be26` | Generated brand 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #cf2d5626` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #cf2d5626` | Generated danger 1px outline focus ring with no gap |
@@ -2612,7 +2695,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.editorial-hero` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest editorial display style: Storm Serif semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |
 | `typography.editorial-lg` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.3xl}","lineHeight":"{line-height.snug}"}` | Large editorial display style: Storm Serif semibold at 36px (`font-size.3xl`) with snug line height. Use it for page titles and top-level section headings. HeadingText applies it for levels `1`/`title` (h1) and `2`/`lg` (h2). |
 | `typography.editorial-md` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | Medium editorial display style: Storm Serif bold at 24px (`font-size.xl`) with snug line height. Use it for section and card headings. HeadingText applies it for level `3`/`md` (h3) and as its default font. |
-| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
+| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.none}"}` | Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
 | `typography.title-lg` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Small title style: Storm Sans bold at 12px (`font-size.sm`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border. |
@@ -2683,7 +2766,6 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `color.backdrop` | `color` | `#35322666` | Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container. |
 | `color.base.link` | `color` | `#39a1c6` | The color used for hyperlink text. |
 | `color.base.link-active` | `color` | `#73d3d6` | The color used for hyperlink text. (active, 25% brighter) |
 | `color.base.link-disabled` | `color` | `#58727f` | The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
@@ -2711,6 +2793,23 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.blue.7` | `color` | `#45649b` | Deep azure blue. |
 | `color.blue.8` | `color` | `#3b5685` | Vivid cerulean blue. |
 | `color.blue.9` | `color` | `#31486f` | Rich cerulean blue. |
+| `color.brand.link` | `color` | `var(--color-brand-primary)` | Generated brand hyperlink text color (matches primary) |
+| `color.brand.link-active` | `color` | `#2b937c` | Generated brand hyperlink text color (matches primary) (active, 25% darker) |
+| `color.brand.link-disabled` | `color` | `#5f7973` | Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.link-hovered` | `color` | `#2b937c` | Generated brand hyperlink text color (matches primary) (hovered, 25% darker) |
+| `color.brand.link-inactive` | `color` | `#7fdad2` | Generated brand hyperlink text color (matches primary) (inactive, 20% brighter) |
+| `color.brand.on-primary` | `color` | `#343438` | Generated text and icon color on brand primary backgrounds |
+| `color.brand.on-secondary` | `color` | `#d9d9d9` | Generated text and icon color on brand secondary backgrounds |
+| `color.brand.primary` | `color` | `#5abba5` | The Storm Teal color is used as the primary brand color for Storm Software. |
+| `color.brand.primary-active` | `color` | `#2b937c` | The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker) |
+| `color.brand.primary-disabled` | `color` | `#5f7973` | The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.primary-hovered` | `color` | `#2b937c` | The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker) |
+| `color.brand.primary-inactive` | `color` | `#7fdad2` | The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter) |
+| `color.brand.secondary` | `color` | `#206f60` | Generated low-emphasis brand background for the dark theme |
+| `color.brand.secondary-active` | `color` | `#4c7d70` | Generated low-emphasis brand background for the dark theme (active, 25% brighter) |
+| `color.brand.secondary-disabled` | `color` | `#4b5c59` | Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.secondary-hovered` | `color` | `#4c7d70` | Generated low-emphasis brand background for the dark theme (hovered, 25% brighter) |
+| `color.brand.secondary-inactive` | `color` | `#1d6251` | Generated low-emphasis brand background for the dark theme (inactive, 20% darker) |
 | `color.canvas` | `color` | `var(--color-neutral-16)` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. |
 | `color.canvas-active` | `color` | `#39393d` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% brighter) |
 | `color.canvas-disabled` | `color` | `#3f3f42` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26)) |
@@ -3062,6 +3161,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f11a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a` | Generated base 1px focus ring with a 2px gap |
+| `ring.brand` | `shadow` | `0px 0px 0px 3px #3be4be26` | Generated brand 3px focus ring with no gap |
+| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #3be4be26` | Generated brand 3px focus ring with a 3px gap |
+| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #3be4be26` | Generated brand 1px outline focus ring with no gap |
+| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #3be4be26` | Generated brand 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #cf2d5626` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #cf2d5626` | Generated danger 1px outline focus ring with no gap |
@@ -3271,7 +3374,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.editorial-hero` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest editorial display style: Storm Serif semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |
 | `typography.editorial-lg` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.3xl}","lineHeight":"{line-height.snug}"}` | Large editorial display style: Storm Serif semibold at 36px (`font-size.3xl`) with snug line height. Use it for page titles and top-level section headings. HeadingText applies it for levels `1`/`title` (h1) and `2`/`lg` (h2). |
 | `typography.editorial-md` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | Medium editorial display style: Storm Serif bold at 24px (`font-size.xl`) with snug line height. Use it for section and card headings. HeadingText applies it for level `3`/`md` (h3) and as its default font. |
-| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
+| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.none}"}` | Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
 | `typography.title-lg` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Small title style: Storm Sans bold at 12px (`font-size.sm`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border. |
@@ -3342,7 +3445,6 @@ Use these documented design-token names and values as the source of truth; do no
 
 | Token | Type | Value | Description |
 | --- | --- | --- | --- |
-| `color.backdrop` | `color` | `#0d0c0766` | Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container. |
 | `color.base.link` | `color` | `#00bcff` | The color used for hyperlink text. |
 | `color.base.link-active` | `color` | `#6bfaff` | The color used for hyperlink text. (active, 25% brighter) |
 | `color.base.link-disabled` | `color` | `#436d83` | The color used for hyperlink text. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
@@ -3370,6 +3472,23 @@ Use these documented design-token names and values as the source of truth; do no
 | `color.blue.7` | `color` | `#2055b3` | Deep azure blue. |
 | `color.blue.8` | `color` | `#19438c` | Vivid cerulean blue. |
 | `color.blue.9` | `color` | `#123166` | Rich cerulean blue. |
+| `color.brand.link` | `color` | `var(--color-brand-primary)` | Generated brand hyperlink text color (matches primary) |
+| `color.brand.link-active` | `color` | `#00a17e` | Generated brand hyperlink text color (matches primary) (active, 25% darker) |
+| `color.brand.link-disabled` | `color` | `#4e7a70` | Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.link-hovered` | `color` | `#00a17e` | Generated brand hyperlink text color (matches primary) (hovered, 25% darker) |
+| `color.brand.link-inactive` | `color` | `#81fff4` | Generated brand hyperlink text color (matches primary) (inactive, 20% brighter) |
+| `color.brand.on-primary` | `color` | `#151518` | Generated text and icon color on brand primary backgrounds |
+| `color.brand.on-secondary` | `color` | `#ffffff` | Generated text and icon color on brand secondary backgrounds |
+| `color.brand.primary` | `color` | `#3be4be` | The Storm Teal color is used as the primary brand color for Storm Software. |
+| `color.brand.primary-active` | `color` | `#00a17e` | The Storm Teal color is used as the primary brand color for Storm Software. (active, 25% darker) |
+| `color.brand.primary-disabled` | `color` | `#4e7a70` | The Storm Teal color is used as the primary brand color for Storm Software. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.primary-hovered` | `color` | `#00a17e` | The Storm Teal color is used as the primary brand color for Storm Software. (hovered, 25% darker) |
+| `color.brand.primary-inactive` | `color` | `#81fff4` | The Storm Teal color is used as the primary brand color for Storm Software. (inactive, 20% brighter) |
+| `color.brand.secondary` | `color` | `#00604d` | Generated low-emphasis brand background for the dark theme |
+| `color.brand.secondary-active` | `color` | `#31806b` | Generated low-emphasis brand background for the dark theme (active, 25% brighter) |
+| `color.brand.secondary-disabled` | `color` | `#354c49` | Generated low-emphasis brand background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) |
+| `color.brand.secondary-hovered` | `color` | `#31806b` | Generated low-emphasis brand background for the dark theme (hovered, 25% brighter) |
+| `color.brand.secondary-inactive` | `color` | `#004836` | Generated low-emphasis brand background for the dark theme (inactive, 20% darker) |
 | `color.canvas` | `color` | `var(--color-neutral-16)` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. |
 | `color.canvas-active` | `color` | `#1c1c1f` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (active, 15% brighter) |
 | `color.canvas-disabled` | `color` | `#242427` | Base page background that everything else sits on. Use it for full-page backgrounds and large flush regions. Used by NavigationHeader, the `canvas` Container variant, Tabs panels, CodeBlock bodies, Table row hover and GlitchSeparator. (disabled, 93% saturation, 68% over oklch(0.3839 0.0045 286.26)) |
@@ -3721,6 +3840,10 @@ Use these documented design-token names and values as the source of truth; do no
 | `ring.base-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #f1f1f11a` | Generated base 3px focus ring with a 3px gap |
 | `ring.base-subtle` | `shadow` | `0px 0px 0px 1px #f1f1f11a` | Generated base 1px outline focus ring with no gap |
 | `ring.base-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #f1f1f11a` | Generated base 1px focus ring with a 2px gap |
+| `ring.brand` | `shadow` | `0px 0px 0px 3px #3be4be26` | Generated brand 3px focus ring with no gap |
+| `ring.brand-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #3be4be26` | Generated brand 3px focus ring with a 3px gap |
+| `ring.brand-subtle` | `shadow` | `0px 0px 0px 1px #3be4be26` | Generated brand 1px outline focus ring with no gap |
+| `ring.brand-subtle-offset` | `shadow` | `0px 0px 0px 2px var(--color-elevated), 0px 0px 0px 3px #3be4be26` | Generated brand 1px focus ring with a 2px gap |
 | `ring.danger` | `shadow` | `0px 0px 0px 3px #cf2d5626` | Generated danger 3px focus ring with no gap |
 | `ring.danger-offset` | `shadow` | `0px 0px 0px 3px var(--color-elevated), 0px 0px 0px 6px #cf2d5626` | Generated danger 3px focus ring with a 3px gap |
 | `ring.danger-subtle` | `shadow` | `0px 0px 0px 1px #cf2d5626` | Generated danger 1px outline focus ring with no gap |
@@ -3930,7 +4053,7 @@ Use these documented design-token names and values as the source of truth; do no
 | `typography.editorial-hero` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.5xl}","lineHeight":"{line-height.snug}"}` | Largest editorial display style: Storm Serif semibold at 60px (`font-size.5xl`) with snug line height. Reserve it for a single hero headline per page, such as a landing or marketing banner. HeadingText applies it for `level="hero"` (rendered as an h1). |
 | `typography.editorial-lg` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.3xl}","lineHeight":"{line-height.snug}"}` | Large editorial display style: Storm Serif semibold at 36px (`font-size.3xl`) with snug line height. Use it for page titles and top-level section headings. HeadingText applies it for levels `1`/`title` (h1) and `2`/`lg` (h2). |
 | `typography.editorial-md` | `typography` | `{"fontFamily":"Storm Serif","fontWeight":"{font-weight.bold}","fontSize":"{font-size.xl}","lineHeight":"{line-height.snug}"}` | Medium editorial display style: Storm Serif bold at 24px (`font-size.xl`) with snug line height. Use it for section and card headings. HeadingText applies it for level `3`/`md` (h3) and as its default font. |
-| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Eyebrow style: Google Sans Code semibold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
+| `typography.eyebrow` | `typography` | `{"fontFamily":"Google Sans Code","fontWeight":"{font-weight.bold}","fontSize":"{font-size.md}","lineHeight":"{line-height.none}"}` | Eyebrow style: Storm Serif bold at 18px (`font-size.md`) with tight line height. Use it for the short kicker or category label that sits directly above a heading. Used by EyebrowText. |
 | `typography.title-lg` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.extrabold}","fontSize":"{font-size.md}","lineHeight":"{line-height.tight}"}` | Medium title style: Storm Sans bold at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-md` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.semibold}","fontSize":"{font-size.md}","lineHeight":"{line-height.snug}"}` | Medium title style: Storm Sans medium at 16px (`font-size.md`) with snug line height. Use it for form labels, column headers and other short labels that sit above content. Used by LabelText (resting label), DataTable column headings and TypeTable column labels. |
 | `typography.title-sm` | `typography` | `{"fontFamily":"Storm Sans","fontWeight":"{font-weight.bold}","fontSize":"{font-size.sm}","lineHeight":"{line-height.snug}"}` | Small title style: Storm Sans bold at 12px (`font-size.sm`) with snug line height. Use it for compact labels that must stay out of the way of their content. LabelText switches to it when `floating` is set, such as a field label that has floated up into the input border. |

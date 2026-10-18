@@ -56,6 +56,26 @@ const hueDistance = (first: number, second: number): number => {
 };
 
 describe("tamaguiPreprocessor", () => {
+  it("treats any color group with a primary token as a theme unless excluded", () => {
+    const result = tamaguiPreprocessor({
+      color: {
+        custom: { primary: colorToken("#336699") },
+        shadows: { primary: colorToken("#336699") },
+        unthemed: { secondary: colorToken("#336699") }
+      }
+    }) as any;
+
+    expect(result.color.custom.primary.theme).toBe("custom");
+    expect(result.color.custom["on-primary"].$value).toBe("#FAFAFA");
+    expect(result.color.custom["primary-active"]).toBeDefined();
+    expect(result.ring.custom.theme).toBe("custom");
+    expect(result.color.shadows).not.toHaveProperty("on-primary");
+    expect(result.color.shadows).not.toHaveProperty("primary-active");
+    expect(result.ring).not.toHaveProperty("shadows");
+    expect(result.color.unthemed).not.toHaveProperty("on-primary");
+    expect(result.ring).not.toHaveProperty("unthemed");
+  });
+
   it("generates missing on-primary text colors for theme color groups", () => {
     const result = tamaguiPreprocessor({
       color: {

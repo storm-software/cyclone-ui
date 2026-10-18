@@ -44,6 +44,12 @@ export const Base: Story = {
   args: {}
 };
 
+export const Brand: Story = {
+  args: {
+    theme: "brand"
+  }
+};
+
 export const DataColor: Story = {
   args: {
     color: "dataPinkEmphasis"

@@ -21,6 +21,7 @@ import type { InputChangeEventHandler } from "@cyclone-ui/input";
 import { Input } from "@cyclone-ui/input";
 import { PasswordInput } from "@cyclone-ui/password-input";
 import type { MaskitoOptions } from "@maskito/core";
+import { maskitoDateOptionsGenerator } from "@maskito/kit";
 import { useMaskito } from "@maskito/react";
 import type { GetProps } from "@tamagui/core";
 import {
@@ -634,9 +635,12 @@ const CARD_NUMBER_MASK: MaskitoOptions = {
   }
 };
 
-const EXPIRY_MASK: MaskitoOptions = {
-  mask: [/\d/, /\d/, "/", /\d/, /\d/]
-};
+// Maskito's card recipe: the kit date mask keeps the month within 01-12 and
+// pads a leading "2"-"9" to "02"-"09".
+const EXPIRY_MASK = maskitoDateOptionsGenerator({
+  mode: "mm/yy",
+  separator: "/"
+});
 
 export type CreditCardPart = "number" | "expiry" | "securityCode" | "name";
 
@@ -893,7 +897,7 @@ const CreditCardInputSecurityCode = createCreditCardPart(
   "securityCode",
   {
     mask: brand => ({
-      mask: new RegExp(`^\\d{0,${brand.securityCodeLength}}$`)
+      mask: Array.from({ length: brand.securityCodeLength }, () => /\d/)
     }),
     isComplete: (value, brand) => value.length >= brand.securityCodeLength,
     getError: (value, brand) =>

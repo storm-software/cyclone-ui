@@ -99,8 +99,9 @@ export const Base: Story = {
 
     await userEvent.type(number, "4242424242424242");
     await expect(number).toHaveValue("4242 4242 4242 4242");
-    await userEvent.type(canvas.getByLabelText(/Expiry date/), "1299");
-    await expect(canvas.getByLabelText(/Expiry date/)).toHaveValue("12/99");
+    // A month can't start with 2-9, so "9" is padded to "09".
+    await userEvent.type(canvas.getByLabelText(/Expiry date/), "999");
+    await expect(canvas.getByLabelText(/Expiry date/)).toHaveValue("09/99");
     await userEvent.type(canvas.getByLabelText(/Security code/), "12345");
     await expect(canvas.getByLabelText(/Security code/)).toHaveValue("123");
     await userEvent.type(canvas.getByLabelText(/Name on card/), "Jane Doe");
@@ -109,7 +110,7 @@ export const Base: Story = {
     await waitFor(async () =>
       expect(canvas.getByText("4242 4242 4242 4242")).toBeInTheDocument()
     );
-    await expect(canvas.getByText("12/99")).toBeInTheDocument();
+    await expect(canvas.getByText("09/99")).toBeInTheDocument();
     await expect(canvas.getByText("Jane Doe")).toBeInTheDocument();
     await expect(canvas.getAllByText("Visa")).toHaveLength(2);
     await expect(canvas.queryByText(/invalid|incomplete|expired/)).toBeNull();

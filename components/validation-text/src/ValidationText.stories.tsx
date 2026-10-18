@@ -46,6 +46,12 @@ export const Base: Story = {
   args: {}
 };
 
+export const Brand: Story = {
+  args: {
+    theme: "brand"
+  }
+};
+
 export const DisabledBase: Story = {
   args: {
     disabled: true

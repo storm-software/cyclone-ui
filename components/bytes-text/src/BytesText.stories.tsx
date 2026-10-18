@@ -39,6 +39,13 @@ export const Base: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    theme: "brand",
+    children: "1337"
+  }
+};
+
 export const NoChildren: Story = {
   args: {}
 };

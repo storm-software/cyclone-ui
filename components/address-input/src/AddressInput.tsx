@@ -60,11 +60,13 @@ const renderAddressSuggestion = (label: string, size: FormControlSize) => {
 
   return (
     <View flex={1} minWidth={0}>
-      <ContextMenu.Item.Text paddingBottom={0}>
+      <ContextMenu.Item.Text
+        paddingBottom={0}
+        color="emphasis group-hover:emphasisHovered">
         {label.slice(0, comma)}
       </ContextMenu.Item.Text>
       <ContextMenu.Item.Text
-        color="subtle"
+        color="subtle group-hover:subtleHovered"
         fontSize={fontSize * 0.875}
         lineHeight={`${lineHeight * 0.875}px`}
         paddingTop={0}>
@@ -80,7 +82,7 @@ const isAddressOption = (value: any): value is AddressOption =>
   Number.isFinite(value.longitude);
 
 // Wait for a pause in typing before asking the endpoint.
-const LOOKUP_DELAY = 300;
+const LOOKUP_DELAY = 600;
 
 const LOOKUP_MESSAGE = {
   code: "address-input.lookup",
@@ -342,7 +344,6 @@ const AddressInputMap = createStyledHOC(
     forwardedRef
   ) => {
     const { address } = use(AddressInputContext);
-
     if (!address) {
       return (
         <AddressInputMapFrame ref={forwardedRef} {...props}>

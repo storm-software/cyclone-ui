@@ -23,6 +23,7 @@
     "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/password-input": "workspace:*",
     "@maskito/core": "catalog:",
+    "@maskito/kit": "^3.11.1",
     "@maskito/react": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/helpers-icon": "catalog:",

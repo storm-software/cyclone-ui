@@ -3,6 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
+    "lib": ["ESnext", "DOM"],
     "rootDir": ".",
     "types": [
       "node",
@@ -15,6 +16,12 @@
   "references": [
     {
       "path": "../../tools/config"
+    },
+    {
+      "path": "../vectors"
+    },
+    {
+      "path": "../icons"
     },
     {
       "path": "../themeable-icon"
@@ -36,9 +43,6 @@
     },
     {
       "path": "../body-text"
-    },
-    {
-      "path": "../icons"
     }
   ],
   "files": [],

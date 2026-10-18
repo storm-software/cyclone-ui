@@ -102,6 +102,16 @@
         "semantic": true
       }
     },
+    "brand": {
+      "$description": "A theme representing the core brand colors.",
+      "primary": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.6897 0.1156 186.1)",
+        "$description": "The Storm Teal color is used as the primary brand color for Storm Software.",
+        "semantic": true
+      }
+    },
     "danger": {
       "$description": "Danger theme colors used for destructive actions and error states.",
       "primary": {
