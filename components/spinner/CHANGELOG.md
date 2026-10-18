@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Spinner
 
+## [0.5.22](https://github.com/storm-software/cyclone-ui/releases/tag/spinner%400.5.22) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
 ## [0.5.15](https://github.com/storm-software/cyclone-ui/releases/tag/spinner%400.5.15) (10/12/2026)
 
 ### Bug Fixes

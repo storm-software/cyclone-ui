@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Tag
 
+## [0.0.17](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.17) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.22**
+- Updated **icons** to **v0.0.18**
+
 ## [0.0.16](https://github.com/storm-software/cyclone-ui/releases/tag/tag%400.0.16) (10/16/2026)
 
 ### Updated Dependencies

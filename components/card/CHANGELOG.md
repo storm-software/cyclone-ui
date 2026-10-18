@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Card
 
+## [0.6.22](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.22) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.22**
+- Updated **container** to **v0.6.22**
+- Updated **eyebrow-text** to **v0.5.22**
+- Updated **heading-text** to **v0.5.22**
+- Updated **helpers** to **v0.3.22**
+- Updated **icons** to **v0.0.18**
+- Updated **link** to **v0.5.22**
+- Updated **themeable-icon** to **v0.6.22**
+- Updated **vectors** to **v0.5.22**
+
 ## [0.6.21](https://github.com/storm-software/cyclone-ui/releases/tag/card%400.6.21) (10/16/2026)
 
 ### Updated Dependencies

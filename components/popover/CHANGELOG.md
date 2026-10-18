@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Popover
 
+## [0.5.22](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.22) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.22**
+- Updated **button** to **v0.6.22**
+- Updated **heading-text** to **v0.5.22**
+- Updated **scroll-view** to **v0.5.22**
+- Updated **sheet** to **v0.0.21**
+
 ## [0.5.21](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.21) (10/16/2026)
 
 ### Updated Dependencies

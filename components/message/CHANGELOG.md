@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Message
 
+## [0.6.22](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.22) (10/18/2026)
+
+### Features
+
+- **preview-link:** Added the Preview Link trigger component package ([10c01c5e](https://github.com/storm-software/cyclone-ui/commit/10c01c5e))
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
+### Updated Dependencies
+
+- Updated **alert** to **v0.4.22**
+- Updated **button** to **v0.6.22**
+- Updated **state** to **v0.0.23**
+
 ## [0.6.21](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.21) (10/16/2026)
 
 ### Updated Dependencies

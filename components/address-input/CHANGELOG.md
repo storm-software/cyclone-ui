@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Address Input
 
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/address-input%400.0.6) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.22**
+- Updated **context-menu** to **v0.0.12**
+- Updated **field** to **v0.5.22**
+- Updated **form** to **v0.9.22**
+- Updated **helpers** to **v0.3.22**
+- Updated **icons** to **v0.0.18**
+- Updated **search-input** to **v0.1.22**
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/address-input%400.0.5) (10/16/2026)
 
 ### Updated Dependencies

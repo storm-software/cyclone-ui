@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Circular Progress
 
+## [0.0.20](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.20) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
 ## [0.0.13](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.13) (10/12/2026)
 
 ### Bug Fixes

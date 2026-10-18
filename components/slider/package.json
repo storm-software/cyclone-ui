@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/slider",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "type": "module",
   "description": "A Material-style slider, built on the Tamagui Slider, for choosing a single value or, when given an array, a range. It can be controlled or uncontrolled and supports step marks with labels, normal or inverted track fill, value labels, sm, md and lg sizes, and accessible label callbacks. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field, labels its thumbs with the field label, and reports changes to it.",
   "repository": {

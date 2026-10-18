@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Overlay
 
+## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/overlay%400.0.9) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
 ## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/overlay%400.0.2) (10/12/2026)
 
 ### Bug Fixes

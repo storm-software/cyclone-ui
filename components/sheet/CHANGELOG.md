@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Sheet
 
+## [0.0.21](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.21) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.22**
+- Updated **button** to **v0.6.22**
+- Updated **heading-text** to **v0.5.22**
+- Updated **scroll-view** to **v0.5.22**
+
 ## [0.0.20](https://github.com/storm-software/cyclone-ui/releases/tag/sheet%400.0.20) (10/16/2026)
 
 ### Updated Dependencies

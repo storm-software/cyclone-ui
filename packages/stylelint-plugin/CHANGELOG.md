@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.12) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
 ## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.8) (10/16/2026)
 
 ### Features

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - ESLint Plugin
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.12) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
 ## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/eslint-plugin%400.0.9) (10/16/2026)
 
 ### Features

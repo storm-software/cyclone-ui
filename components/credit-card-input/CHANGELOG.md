@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Credit Card Input
 
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/credit-card-input%400.0.6) (10/18/2026)
+
+### Features
+
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.22**
+- Updated **form** to **v0.9.22**
+- Updated **helpers** to **v0.3.22**
+- Updated **icons** to **v0.0.18**
+- Updated **input** to **v0.6.22**
+- Updated **password-input** to **v0.0.21**
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/credit-card-input%400.0.5) (10/16/2026)
 
 ### Updated Dependencies

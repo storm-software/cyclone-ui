@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/preview-link",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "A Link with a dotted underline that shows a Tooltip with more details when hovered or focused.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/preview-link"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -30,7 +32,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",

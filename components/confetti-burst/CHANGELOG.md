@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Confetti Burst
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/confetti-burst%400.0.12) (10/18/2026)
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.11**
+
 ## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/confetti-burst%400.0.11) (10/16/2026)
 
 ### Updated Dependencies

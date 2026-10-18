@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Theme Builder
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.12) (10/18/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove generated shell-shock files ([094fb32d](https://github.com/storm-software/cyclone-ui/commit/094fb32d))
+
+### Features
+
+- **preview-link:** Added the Preview Link trigger component package ([10c01c5e](https://github.com/storm-software/cyclone-ui/commit/10c01c5e))
+- **tokens:** Added `brand` color theme to workspace ([735efe8a](https://github.com/storm-software/cyclone-ui/commit/735efe8a))
+
 ## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.7) (10/14/2026)
 
 ### Bug Fixes
