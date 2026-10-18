@@ -17,6 +17,9 @@
         "version": {
           "versionActions": "@nx/js/src/release/version-actions"
         },
+        "releaseTag": {
+          "pattern": "{projectName}@{version}"
+        },
         "docker": {
           "groupPreVersionCommand": "pnpm nx run maps-tiles:docker:build",
           "skipVersionActions": true,
