@@ -125,7 +125,7 @@ const TooltipContentImpl = createStyledHOC(
       children,
       hasArrow = true,
       arrowBorderColor,
-      borderColor = "hairline",
+      borderColor = "outline",
       // Keep the arrow on the same background as the body
       backgroundColor = "elevated",
       ...props

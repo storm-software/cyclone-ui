@@ -23,6 +23,7 @@
     };
     java = {
       enable = true;
+      jdk.package = pkgs.jdk25;
       lsp.enable = true;
       maven.enable = true;
     };

@@ -320,6 +320,9 @@
     },
     {
       "path": "./maps/styles"
+    },
+    {
+      "path": "./components/preview-link"
     }
   ],
   "files": []

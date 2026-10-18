@@ -475,8 +475,15 @@ const FilePickerTrigger = createStyledHOC(
 const FilePickerTriggerButton = createStyledHOC(
   Button,
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, files, max, onOpen, size, variant } =
-      FilePickerContext.useStyledContext();
+    const {
+      disabled,
+      files,
+      max,
+      onOpen,
+      size,
+      variant,
+      hasValidationMessage
+    } = FilePickerContext.useStyledContext();
 
     if (variant === "simple") {
       // The frame opens the picker on press, so this segment is presentational.
@@ -489,7 +496,9 @@ const FilePickerTriggerButton = createStyledHOC(
           borderColor={
             disabled
               ? "outlineDisabled"
-              : "outline group-hover/file-picker:outlineHovered"
+              : hasValidationMessage
+                ? "primary group-hover/file-picker:primaryHovered"
+                : "outline group-hover/file-picker:outlineHovered"
           }
           backgroundColor={
             disabled

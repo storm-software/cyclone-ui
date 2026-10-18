@@ -7,8 +7,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.source>25</maven.compiler.source>
+    <maven.compiler.target>25</maven.compiler.target>
     <planetiler.version>0.10.2</planetiler.version>
     <junit.version>5.10.0</junit.version>
     <mainClass>com.stormsoftware.basemap.Basemap</mainClass>
@@ -128,7 +128,7 @@
         </executions>
       </plugin>
 
-      <!-- give an easier to read error message when trying to build with jdk <21 -->
+      <!-- give an easier to read error message when trying to build with jdk <25 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -142,7 +142,7 @@
             <configuration>
               <rules>
                 <requireJavaVersion>
-                  <version>21</version>
+                  <version>25</version>
                 </requireJavaVersion>
               </rules>
             </configuration>

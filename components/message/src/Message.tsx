@@ -57,7 +57,7 @@ const MessageTimer = ({
   paused: boolean;
   onComplete: () => void;
 }) => {
-  const remaining = useRef(duration);
+  const remainingRef = useRef(duration);
   const [progress, setProgress] = useState(1);
   const complete = useEvent(onComplete);
 
@@ -66,11 +66,11 @@ const MessageTimer = ({
       return undefined;
     }
 
-    const end = Date.now() + remaining.current;
+    const end = Date.now() + remainingRef.current;
     let frame = requestAnimationFrame(function tick() {
-      remaining.current = Math.max(0, end - Date.now());
-      setProgress(remaining.current / duration);
-      if (remaining.current === 0) {
+      remainingRef.current = Math.max(0, end - Date.now());
+      setProgress(remainingRef.current / duration);
+      if (remainingRef.current === 0) {
         complete();
       } else {
         frame = requestAnimationFrame(tick);
@@ -140,7 +140,7 @@ const MessageItem = ({
           <Alert.Content.Heading>
             {typeof toast.title === "function" ? toast.title() : toast.title}
           </Alert.Content.Heading>
-          {toast.description && (
+          {!!toast.description && (
             <Alert.Content.Body>
               {typeof toast.description === "function"
                 ? toast.description()

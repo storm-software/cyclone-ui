@@ -1422,6 +1422,32 @@ function addColorTokenGroups(
   return result;
 }
 
+/**
+ * Brand themes without their own color tokens inherit the base theme colors.
+ * Keep brand metadata (such as its description) so it remains the owning
+ * theme once its copied tokens are processed below.
+ */
+function populateEmptyBrandTheme(
+  color: Record<string, unknown>
+): Record<string, unknown> {
+  const base = color.base;
+  const brand = color.brand;
+  if (
+    !isPlainObject(base) ||
+    isTokenNode(base) ||
+    !isPlainObject(brand) ||
+    isTokenNode(brand) ||
+    Object.entries(brand).some(
+      ([key, value]) =>
+        !RESERVED_KEYS.has(key) && !key.startsWith("$") && isTokenNode(value)
+    )
+  ) {
+    return color;
+  }
+
+  return { ...color, brand: { ...base, ...brand } };
+}
+
 function injectColorStateVariants(
   node: unknown,
   tree: unknown,
@@ -1457,6 +1483,8 @@ function injectColorStateVariants(
 
   let withStates = result;
   if (key === "color") {
+    withStates = populateEmptyBrandTheme(withStates);
+
     for (const [name, group] of themeColorGroups(withStates)) {
       withStates[name] = addThemeColorGroupTokens(
         name,

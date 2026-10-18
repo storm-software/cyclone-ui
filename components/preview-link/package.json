@@ -1,0 +1,48 @@
+{
+  "name": "@cyclone-ui/preview-link",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A Link with a dotted underline that shows a Tooltip with more details when hovered or focused.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/preview-link"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/tooltip": "workspace:*",
+    "@tamagui/tooltip": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./PreviewLink": {
+      "import": "./dist/PreviewLink.mjs",
+      "require": "./dist/PreviewLink.cjs"
+    },
+    "./*": "./*"
+  }
+}

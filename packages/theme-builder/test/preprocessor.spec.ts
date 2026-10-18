@@ -56,6 +56,34 @@ const hueDistance = (first: number, second: number): number => {
 };
 
 describe("tamaguiPreprocessor", () => {
+  it("populates an empty brand theme from base color tokens", () => {
+    const result = tamaguiPreprocessor({
+      color: {
+        base: {
+          primary: colorToken("#336699"),
+          secondary: colorToken("#abcdef")
+        },
+        brand: {
+          $description: "The brand theme colors"
+        }
+      }
+    }) as any;
+
+    expect(result.color.brand).toMatchObject({
+      $description: "The brand theme colors",
+      primary: { $value: "#336699", theme: "brand", group: "brand" },
+      secondary: { $value: "#abcdef", theme: "brand", group: "brand" }
+    });
+  });
+
+  it("does not create a brand theme when it is absent", () => {
+    const result = tamaguiPreprocessor({
+      color: { base: { primary: colorToken("#336699") } }
+    }) as any;
+
+    expect(result.color).not.toHaveProperty("brand");
+  });
+
   it("treats any color group with a primary token as a theme unless excluded", () => {
     const result = tamaguiPreprocessor({
       color: {
