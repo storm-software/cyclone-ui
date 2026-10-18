@@ -553,7 +553,7 @@ function themeColorGroups(
 ): [string, Record<string, unknown>][] {
   return Object.entries(color).filter(
     (entry): entry is [string, Record<string, unknown>] =>
-      !NONE_THEME_COLOR_KEYS.some(name => name === entry[0]) &&
+      !NONE_THEME_COLOR_KEYS.includes(entry[0]) &&
       isPlainObject(entry[1]) &&
       !isTokenNode(entry[1]) &&
       isTokenNode(entry[1].primary)
@@ -1445,7 +1445,13 @@ function populateEmptyBrandTheme(
     return color;
   }
 
-  return { ...color, brand: { ...base, ...brand } };
+  return {
+    ...color,
+    brand: {
+      ...(base as Record<string, unknown>),
+      ...(brand as Record<string, unknown>)
+    }
+  };
 }
 
 function injectColorStateVariants(

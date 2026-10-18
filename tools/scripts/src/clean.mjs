@@ -47,7 +47,7 @@ try {
   }
 
   proc =
-    $`rm -rf ./{packages,components}/*/dist ./{packages,components}/*/.cyclone-ui ./{packages,components}/*/.shell-shock`.timeout(
+    $`rm -rf ./{packages,tools,maps,components}/*/dist ./maps/*/target ./packages/*/.shell-shock`.timeout(
       `${5 * 60}s`
     );
   proc.stdout.on("data", data => {
