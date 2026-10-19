@@ -4590,6 +4590,13 @@ export const manifest: DesignSystemManifest = {
       "roles": []
     },
     {
+      "name": "@cyclone-ui/preview-link",
+      "jsx": [
+        "PreviewLink"
+      ],
+      "roles": []
+    },
+    {
       "name": "@cyclone-ui/previous-button",
       "jsx": [
         "PreviousButton"

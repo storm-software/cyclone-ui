@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import themes from "@cyclone-ui/tokens/storybook";
+import themes from "../src/theme";
 
 export const storybookThemes = themes;
 

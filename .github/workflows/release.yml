@@ -81,6 +81,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Version tiles image with Nx
+        run: |
+          devenv shell -- pnpm nx release version --groups=tiles --dockerVersionScheme=production --git-commit=false --git-tag=false --stage-changes=false
+          test -s tmp/maps/tiles/.docker-version
+
       - name: Release repository updates
         uses: storm-software/action-release@main
         with:
