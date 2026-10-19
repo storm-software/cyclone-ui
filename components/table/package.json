@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/table",
-  "version": "0.4.23",
+  "version": "0.4.24",
   "type": "module",
   "description": "A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer parts that render semantic table elements. Table-level props set cell width and height, fixed or content-based sizing, separate alignment for header cells and body cells, and the border color. Use it to show tabular data in rows and columns.",
   "repository": {

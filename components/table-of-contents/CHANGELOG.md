@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Table of Contents
 
+## [0.0.21](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.21) (10/19/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.24**
+- Updated **icons** to **v0.0.20**
+
 ## [0.0.20](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.20) (10/19/2026)
 
 ### Updated Dependencies

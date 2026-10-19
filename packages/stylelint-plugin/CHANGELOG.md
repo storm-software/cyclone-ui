@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.14) (10/19/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve maps tile build issue and storybook theme reference ([cac26891](https://github.com/storm-software/cyclone-ui/commit/cac26891))
+
 ## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.12) (10/18/2026)
 
 ### Features

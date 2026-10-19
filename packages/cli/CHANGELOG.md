@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.14](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.14) (10/19/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve maps tile build issue and storybook theme reference ([cac26891](https://github.com/storm-software/cyclone-ui/commit/cac26891))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.24**
+- Updated **theme-builder** to **v0.0.14**
+
 ## [0.6.13](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.13) (10/19/2026)
 
 ### Updated Dependencies

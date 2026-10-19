@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/cli",
-  "version": "0.6.13",
+  "version": "0.6.14",
   "type": "module",
   "description": "🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.",
   "repository": {
@@ -38,8 +38,15 @@
   },
   "license": "Apache-2.0",
   "private": false,
-  "files": ["dist"],
-  "keywords": ["cli", "cyclone-ui", "storm-software", "shell-shock"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "cyclone-ui",
+    "storm-software",
+    "shell-shock"
+  ],
   "dependencies": {
     "@cyclone-ui/registry-api": "workspace:*",
     "@cyclone-ui/theme-builder": "workspace:*",
@@ -58,9 +65,13 @@
     "@shell-shock/plugin-skills": "catalog:",
     "@types/node": "catalog:"
   },
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "types": "./dist/index.d.cts",
-  "bin": { "cyclone-ui": "./dist/bin.mjs" },
+  "bin": {
+    "cyclone-ui": "./dist/bin.mjs"
+  },
   "exports": {
     "./add": "./dist/add.mjs",
     "./analyze-a11y": "./dist/analyze-a11y.mjs",
