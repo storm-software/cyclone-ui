@@ -71,6 +71,9 @@ jobs:
           gpg-passphrase: ${{ secrets.STORM_BOT_GPG_PASSPHRASE }}
           storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
+      - name: Fetch tile test fixtures
+        run: devenv shell -- git lfs pull --include='maps/tiles/src/test/resources/*' --exclude=''
+
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
