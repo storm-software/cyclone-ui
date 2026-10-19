@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/divider",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "type": "module",
   "description": "A simple horizontal or vertical line used to separate content. It supports sm, md and lg thickness (1, 2 or 3px) and any color token, defaulting to the theme's hairline color. Use it between sections, list items or toolbar groups.",
   "repository": {

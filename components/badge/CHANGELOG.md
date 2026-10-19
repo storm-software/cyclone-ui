@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Badge
 
+## [0.3.23](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.23) (10/19/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.23**
+- Updated **icons** to **v0.0.19**
+- Updated **state** to **v0.0.24**
+
 ## [0.3.22](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.22) (10/18/2026)
 
 ### Updated Dependencies

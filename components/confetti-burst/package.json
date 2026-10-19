@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/confetti-burst",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "description": "An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/feedback",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "description": "A Feedback control that pairs a like toggle with a dislike toggle. Pressing dislike opens a popover form asking for an optional comment. It can be controlled or uncontrolled (value, defaultValue, onValueChange), and it also has onCommentSubmit, a custom comment label and placeholder, disabled and size props. Use it to collect quick thumbs-up/down feedback on content.",
   "repository": {

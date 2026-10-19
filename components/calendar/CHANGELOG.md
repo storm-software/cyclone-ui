@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Calendar
 
+## [0.0.8](https://github.com/storm-software/cyclone-ui/releases/tag/calendar%400.0.8) (10/19/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.23**
+- Updated **heading-text** to **v0.5.23**
+- Updated **helpers** to **v0.3.23**
+- Updated **icons** to **v0.0.19**
+
 ## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/calendar%400.0.7) (10/18/2026)
 
 ### Updated Dependencies
