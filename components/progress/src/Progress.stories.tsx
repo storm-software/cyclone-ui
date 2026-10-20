@@ -52,7 +52,7 @@ export const Brand: Story = {
 
 export const DataColor: Story = {
   args: {
-    color: "dataPinkEmphasis"
+    color: "data-pink-emphasis"
   }
 };
 

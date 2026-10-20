@@ -9,9 +9,7 @@
     "directory": "components/code-block"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -21,6 +19,7 @@
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/scroll-view": "workspace:*",
     "@cyclone-ui/themeable-icon": "workspace:*",
     "@cyclone-ui/vectors": "workspace:*",
@@ -31,7 +30,6 @@
     "@tamagui/group": "catalog:",
     "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
-    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/react-native-types": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/tabs": "catalog:",
@@ -43,7 +41,7 @@
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "catalog:"
   },
   "publishConfig": {
     "access": "public"

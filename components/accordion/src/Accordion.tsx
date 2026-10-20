@@ -83,12 +83,12 @@ const ITEM_BACKGROUNDS = {
 } as const;
 
 const HEADER_BACKGROUNDS = {
-  sunken: "sunken hover:sunkenHovered",
-  canvas: "canvas hover:canvasHovered",
-  surface: "surface hover:surfaceHovered",
-  elevated: "elevated hover:elevatedHovered",
-  floating: "floating hover:floatingHovered",
-  outlined: "transparent hover:surfaceHovered",
+  sunken: "sunken hover:sunken-hovered",
+  canvas: "canvas hover:canvas-hovered",
+  surface: "surface hover:surface-hovered",
+  elevated: "elevated hover:elevated-hovered",
+  floating: "floating hover:floating-hovered",
+  outlined: "transparent hover:surface-hovered",
   ghost: "transparent"
 } as const;
 
@@ -412,7 +412,7 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
   borderStyle: "solid",
   borderWidth: 0,
   borderColor: "outline",
-  boxShadow: "none focus-visible:ringOffset",
+  boxShadow: "none focus-visible:ring-offset",
   cursor: "hover:pointer",
   outlineStyle: "focus-visible:none",
   outlineWidth: "focus-visible:0px",
@@ -459,7 +459,7 @@ const AccordionItemHeaderImpl = createStyledHOC(
     // The header icons are `themed` SVG icons, which resolve a single color
     // value and cannot take a `group-hover/accordion:` clause.
     const [hovered, setHovered] = useState(false);
-    const iconColor = hovered ? "primaryActive" : "primary";
+    const iconColor = hovered ? "primary-active" : "primary";
 
     return (
       <AccordionItemHeader
@@ -531,7 +531,7 @@ const AccordionItemHeaderHeading = createStyledHOC(
       <HeadingSmallText
         ref={forwardedRef}
         transition="250ms"
-        color="primary group-hover/accordion:primaryHovered"
+        color="primary group-hover/accordion:primary-hovered"
         cursor="group-hover/accordion:pointer"
         {...props}>
         {children}

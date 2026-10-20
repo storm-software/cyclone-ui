@@ -80,6 +80,7 @@
     },
     "base": {
       "$description": "Base theme colors used as the default throughout the project.",
+      "group": "accent",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -104,6 +105,7 @@
     },
     "brand": {
       "$description": "A theme representing the core brand colors.",
+      "group": "accent",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -114,6 +116,7 @@
     },
     "danger": {
       "$description": "Danger theme colors used for destructive actions and error states.",
+      "group": "status",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -124,6 +127,7 @@
     },
     "warning": {
       "$description": "Warning theme colors used for cautionary states that need attention but do not block the user.",
+      "group": "status",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -134,6 +138,7 @@
     },
     "info": {
       "$description": "Info theme colors used for neutral guidance, tips and system notices.",
+      "group": "status",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -151,6 +156,7 @@
     },
     "discovery": {
       "$description": "Discovery theme colors used for highlighting new features, onboarding, and help content.",
+      "group": "status",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -168,6 +174,7 @@
     },
     "success": {
       "$description": "Success theme colors used for confirming actions and valid states.",
+      "group": "status",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -175,13 +182,6 @@
         "$description": "Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.",
         "semantic": true
       }
-    },
-    "backdrop": {
-      "$type": "color",
-      "colorSpace": "display-p3",
-      "$value": "#1A1C1F66",
-      "$description": "Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.",
-      "semantic": true
     },
     "shadow": {
       "$description": "Box-shadow presets for elevation. Resting shadows lift elements slightly off their surface; floating shadows separate content that sits above the page.",

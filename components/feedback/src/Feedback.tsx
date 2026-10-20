@@ -135,7 +135,7 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
               aria-label="Dislike"
               borderless={true}
               circular={true}
-              pressedBackgroundColor="elevatedActive"
+              pressedBackgroundColor="elevated-active"
               size={size}
               disabled={disabled}
               pressed={disliked}
@@ -149,9 +149,9 @@ export const Feedback = forwardRef<TamaguiElement, FeedbackProps>(
                 weight={disliked ? "fill" : "light"}
                 color={
                   hovered && !disabled
-                    ? "primaryHovered"
+                    ? "primary-hovered"
                     : disliked
-                      ? "primaryActive"
+                      ? "primary-active"
                       : "primary"
                 }
               />

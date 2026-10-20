@@ -18,6 +18,9 @@
       "path": "../../tools/config"
     },
     {
+      "path": "../body-text"
+    },
+    {
       "path": "../validation-text"
     },
     {
@@ -27,13 +30,13 @@
       "path": "../themeable-icon"
     },
     {
+      "path": "../../packages/state"
+    },
+    {
       "path": "../spinner"
     },
     {
       "path": "../link"
-    },
-    {
-      "path": "../label-text"
     },
     {
       "path": "../icons"
@@ -45,13 +48,7 @@
       "path": "../button"
     },
     {
-      "path": "../../packages/state"
-    },
-    {
       "path": "../form"
-    },
-    {
-      "path": "../body-text"
     }
   ],
   "files": [],

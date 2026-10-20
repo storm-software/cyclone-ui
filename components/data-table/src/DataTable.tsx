@@ -22,14 +22,13 @@ import { Checkbox } from "@cyclone-ui/checkbox";
 import { ContextMenu } from "@cyclone-ui/context-menu";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import { HeadingExtraSmallText, HeadingSmallText, HeadingText } from "@cyclone-ui/heading-text";
 import {
   DotsThreeVertical,
   Funnel,
   SortAscending,
   SortDescending
 } from "@cyclone-ui/icons";
-import { LabelText } from "@cyclone-ui/label-text";
 import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
 import { SearchInput } from "@cyclone-ui/search-input";
@@ -167,9 +166,9 @@ export interface DataTableProps<TData extends RowData> extends TableProps {
 const SELECTION_COLUMN_ID = "__selection";
 const ACTIONS_COLUMN_ID = "__actions";
 
-const DataTableColumnHeading = styled(HeadingSmallText, {
+const DataTableColumnHeading = styled(HeadingExtraSmallText, {
   displayName: "DataTableColumnHeading",
-  fontFamily: "title-md"
+  fontWeight: "600"
 });
 
 // Cards are drawn on the cells: a `tr` can't be rounded.
@@ -811,7 +810,7 @@ export function DataTable<TData extends RowData>({
                   {...(card
                     ? { backgroundColor: "transparent" }
                     : row.getIsSelected()
-                      ? { backgroundColor: "surfaceActive" }
+                      ? { backgroundColor: "surface-active" }
                       : {})}>
                   {cells.map((cell, index) => (
                     <Table.Cell
@@ -821,8 +820,8 @@ export function DataTable<TData extends RowData>({
                             ...getCardCellProps(index, cells.length),
                             transition: "200ms",
                             backgroundColor: row.getIsSelected()
-                              ? "surfaceActive"
-                              : "surface group-hover/row:surfaceHovered"
+                              ? "surface-active"
+                              : "surface group-hover/row:surface-hovered"
                           }
                         : {})}
                       style={
@@ -852,7 +851,7 @@ export function DataTable<TData extends RowData>({
                     justifyContent="center"
                     alignItems="center"
                     padding="7xl">
-                    <LabelText size="6xl">No data to display</LabelText>
+                    <HeadingSmallText size={4}>No data to display</HeadingSmallText>
                   </View>
                 </Table.Cell>
               </Table.Row>
@@ -911,7 +910,7 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   const value = props.value ? props.value : props.renderValue();
 
   return (
-    <BodyText transition="200ms" color="ink group-hover/row:inkActive">
+    <BodyText transition="200ms" color="ink group-hover/row:ink-active">
       {value}
     </BodyText>
   );
@@ -993,7 +992,7 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
 
   return (
     <View width="max-content" minWidth="100%" maxWidth="100%">
-      <HeadingSmallText
+      <HeadingExtraSmallText
         aria-hidden={true}
         height={0}
         overflow="hidden"
@@ -1003,7 +1002,7 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
         maxWidth="100%"
         whiteSpace="pre">
         {intrinsicFilterLabels}
-      </HeadingSmallText>
+      </HeadingExtraSmallText>
 
       <YStack gap="xl">
         <Field name={SEARCH_FIELD_NAME} size="sm" onChange={handleSearchChange}>
@@ -1189,7 +1188,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       <XStack gap="xl" flexShrink={0} cursor="pointer" onPress={handleSorting}>
         <DataTableColumnHeading
           transition="200ms"
-          color="emphasis group-hover/header:emphasisHovered">
+          color="emphasis group-hover/header:emphasis-hovered">
           {titleCase(id)}
         </DataTableColumnHeading>
         {isSorted && !desc && (
@@ -1410,18 +1409,18 @@ export function DataTablePagination<TData extends RowData>({
           </View>
 
           <YStack gap="xs" justifyContent="center">
-            <LabelText size="xs">
+            <HeadingExtraSmallText>
               {`${unfilteredCount > 0 ? pageIndex * pageSize + 1 : 0}-${Math.min((pageIndex + 1) * pageSize, unfilteredCount)} of ${unfilteredCount} ${unfilteredCount === 1 ? "row" : "rows"}${selectedCount > 0 ? ` (${selectedCount} Selected)` : ""}`}
-            </LabelText>
+            </HeadingExtraSmallText>
             {unfilteredCount !== totalCount && (
               <XStack
                 justifyContent="space-between"
                 alignItems="center"
                 gap="xl">
-                <LabelText size="xs">Filtering:</LabelText>
-                <LabelText size="xs">
+                <HeadingExtraSmallText>Filtering:</HeadingExtraSmallText>
+                <HeadingExtraSmallText >
                   {`${totalCount - unfilteredCount} ${totalCount - unfilteredCount === 1 ? "row" : "rows"}`}
-                </LabelText>
+                </HeadingExtraSmallText>
               </XStack>
             )}
           </YStack>

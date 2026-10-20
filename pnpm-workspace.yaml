@@ -18,7 +18,7 @@ catalog:
   "@powerlines/plugin-tsdown": ^0.1.615
   "@powerlines/plugin-tamagui": ^0.1.666
   "@powerlines/plugin-env": ^0.16.423
-  "@razorwind/color-variants": ^0.0.69
+  "@razorwind/color-variants": ^0.0.80
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
   "@react-native-community/cli-platform-ios": 18.0.1
@@ -30,72 +30,73 @@ catalog:
   "@shell-shock/eslint-plugin": ^0.0.96
   "@shell-shock/nx": ^0.0.105
   "@shell-shock/preset-cli": ^0.9.44
-  "@storm-software/eslint-plugin-pnpm": ^0.0.112
-  "@storybook/addon-docs": ^10.6.1
-  "@storybook/addon-vitest": ^10.6.1
-  "@storybook/react": ^10.6.1
-  "@storybook/react-vite": ^10.6.1
+  "@storm-software/eslint-plugin-pnpm": ^0.0.114
+  "@storybook/addon-docs": ^10.6.2
+  "@storybook/addon-vitest": ^10.6.2
+  "@storybook/react": ^10.6.2
+  "@storybook/react-vite": ^10.6.2
   "@stryke/date": ^0.0.28
-  "@tamagui/accordion": ^3.0.2
-  "@tamagui/adapt": ^3.0.2
-  "@tamagui/alert-dialog": ^3.0.2
-  "@tamagui/animate-presence": ^3.0.2
-  "@tamagui/animations-css": ^3.0.2
-  "@tamagui/animations-motion": ^3.0.2
-  "@tamagui/avatar": ^3.0.2
-  "@tamagui/button": ^3.0.2
-  "@tamagui/checkbox": ^3.0.2
-  "@tamagui/checkbox-headless": ^3.0.2
-  "@tamagui/cli": ^3.0.2
-  "@tamagui/codemod-flat-values": ^3.0.2
-  "@tamagui/collapsible": ^3.0.2
-  "@tamagui/compose-refs": ^3.0.2
-  "@tamagui/config": ^3.0.2
-  "@tamagui/constants": ^3.0.2
-  "@tamagui/core": ^3.0.2
-  "@tamagui/create-context": ^3.0.2
-  "@tamagui/dialog": ^3.0.2
-  "@tamagui/eslint-plugin": ^3.0.2
-  "@tamagui/focusable": ^3.0.2
-  "@tamagui/font-size": ^3.0.2
-  "@tamagui/floating": ^3.0.2
-  "@tamagui/get-font-sized": ^3.0.2
-  "@tamagui/get-token": ^3.0.2
-  "@tamagui/group": ^3.0.2
-  "@tamagui/helpers": ^3.0.2
-  "@tamagui/helpers-icon": ^3.0.2
-  "@tamagui/helpers-tamagui": ^3.0.2
-  "@tamagui/image": ^3.0.2
-  "@tamagui/label": ^3.0.2
-  "@tamagui/language-service": ^3.0.2
-  "@tamagui/linear-gradient": ^3.0.2
-  "@tamagui/list-item": ^3.0.2
-  "@tamagui/popover": ^3.0.2
-  "@tamagui/popper": ^3.0.2
-  "@tamagui/portal": ^3.0.2
-  "@tamagui/progress": ^3.0.2
-  "@tamagui/proxy-worm": ^3.0.2
-  "@tamagui/radio-group": ^3.0.2
-  "@tamagui/react-native-svg": ^3.0.2
-  "@tamagui/react-native-types": ^3.0.2
-  "@tamagui/scroll-view": ^3.0.2
-  "@tamagui/separator": ^3.0.2
-  "@tamagui/shapes": ^3.0.2
-  "@tamagui/sheet": ^3.0.2
-  "@tamagui/shorthands": ^3.0.2
-  "@tamagui/stacks": ^3.0.2
-  "@tamagui/static": ^3.0.2
-  "@tamagui/slider": ^3.0.2
-  "@tamagui/switch": ^3.0.2
-  "@tamagui/switch-headless": ^3.0.2
-  "@tamagui/tabs": ^3.0.2
-  "@tamagui/text": ^3.0.2
-  "@tamagui/toast": ^3.0.2
-  "@tamagui/tooltip": ^3.0.2
-  "@tamagui/use-controllable-state": ^3.0.2
-  "@tamagui/use-presence": ^3.0.2
-  "@tamagui/vite-plugin": ^3.0.2
-  "@tamagui/web": ^3.0.2
+  "@tamagui/accordion": 3.0.13
+  "@tamagui/adapt": 3.0.13
+  "@tamagui/alert-dialog": 3.0.13
+  "@tamagui/animate-presence": 3.0.13
+  "@tamagui/animations-css": 3.0.13
+  "@tamagui/animations-motion": 3.0.13
+  "@tamagui/avatar": 3.0.13
+  "@tamagui/button": 3.0.13
+  "@tamagui/checkbox": 3.0.13
+  "@tamagui/checkbox-headless": 3.0.13
+  "@tamagui/cli": 3.0.13
+  "@tamagui/codemod-flat-values": 3.0.13
+  "@tamagui/collapsible": 3.0.13
+  "@tamagui/compose-refs": 3.0.13
+  "@tamagui/config": 3.0.13
+  "@tamagui/constants": 3.0.13
+  "@tamagui/core": 3.0.13
+  "@tamagui/create-context": 3.0.13
+  "@tamagui/dialog": 3.0.13
+  "@tamagui/eslint-plugin": 3.0.13
+  "@tamagui/focusable": 3.0.13
+  "@tamagui/font-size": 3.0.13
+  "@tamagui/floating": 3.0.13
+  "@tamagui/get-font-sized": 3.0.13
+  "@tamagui/get-token": 3.0.13
+  "@tamagui/group": 3.0.13
+  "@tamagui/helpers": 3.0.13
+  "@tamagui/helpers-icon": 3.0.13
+  "@tamagui/helpers-tamagui": 3.0.13
+  "@tamagui/image": 3.0.13
+  "@tamagui/label": 3.0.13
+  "@tamagui/language-service": 3.0.13
+  "@tamagui/linear-gradient": 3.0.13
+  "@tamagui/list-item": 3.0.13
+  "@tamagui/popover": 3.0.13
+  "@tamagui/popper": 3.0.13
+  "@tamagui/portal": 3.0.13
+  "@tamagui/progress": 3.0.13
+  "@tamagui/proxy-worm": 3.0.13
+  "@tamagui/radio-group": 3.0.13
+  "@tamagui/react-native-svg": 3.0.13
+  "@tamagui/react-native-types": 3.0.13
+  "@tamagui/scroll-view": 3.0.13
+  "@tamagui/separator": 3.0.13
+  "@tamagui/shapes": 3.0.13
+  "@tamagui/sheet": 3.0.13
+  "@tamagui/shorthands": 3.0.13
+  "@tamagui/stacks": 3.0.13
+  "@tamagui/static": 3.0.13
+  "@tamagui/slider": 3.0.13
+  "@tamagui/switch": 3.0.13
+  "@tamagui/switch-headless": 3.0.13
+  "@tamagui/tabs": 3.0.13
+  "@tamagui/text": 3.0.13
+  "@tamagui/toast": 3.0.13
+  "@tamagui/tooltip": 3.0.13
+  "@tamagui/use-controllable-state": 3.0.13
+  "@tamagui/use-presence": 3.0.13
+  "@tamagui/vite-plugin": 3.0.13
+  "@tamagui/web": 3.0.13
+  "@tamagui/dismissable": 3.0.13
   "@taplo/cli": ^0.7.0
   "@nx/devkit": 23.3.0
   "@nx/eslint-plugin": 23.3.0
@@ -108,29 +109,29 @@ catalog:
   "@nx/storybook": 23.3.0
   "@nx/vite": 23.3.0
   "@nx/vitest": 23.3.0
-  "@razorwind/core": ^0.0.91
-  "@razorwind/css": ^0.0.74
-  "@razorwind/design-md": ^0.0.88
-  "@razorwind/nx": ^0.0.87
-  "@razorwind/storybook": ^0.0.91
-  "@razorwind/style-dictionary": ^0.0.77
-  "@razorwind/shadcn": ^0.0.87
-  "@razorwind/shell-shock": ^0.0.11
-  "@razorwind/tamagui": ^0.0.94
-  "@storm-software/cloudflare-tools": ^0.71.297
-  "@storm-software/config": ^1.138.85
-  "@storm-software/config-tools": ^1.190.149
-  "@storm-software/cspell": ^0.46.216
-  "@storm-software/eslint-config-react": ^0.0.106
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.112
-  "@storm-software/git-tools": ^2.132.6
-  "@storm-software/linting-tools": ^1.134.79
-  "@storm-software/markdownlint": ^0.30.304
-  "@storm-software/pnpm-tools": ^0.7.163
-  "@storm-software/prettier": ^0.59.202
-  "@storm-software/tsconfig": ^0.48.215
-  "@storm-software/untyped": ^0.24.291
-  "@storm-software/workspace-tools": ^1.297.18
+  "@razorwind/core": ^0.0.102
+  "@razorwind/css": ^0.0.85
+  "@razorwind/design-md": ^0.0.99
+  "@razorwind/nx": ^0.0.98
+  "@razorwind/storybook": ^0.0.102
+  "@razorwind/style-dictionary": ^0.0.88
+  "@razorwind/shadcn": ^0.0.98
+  "@razorwind/shell-shock": ^0.0.23
+  "@razorwind/tamagui": ^0.0.107
+  "@storm-software/cloudflare-tools": ^0.71.300
+  "@storm-software/config": ^1.138.87
+  "@storm-software/config-tools": ^1.190.151
+  "@storm-software/cspell": ^0.46.218
+  "@storm-software/eslint-config-react": ^0.0.108
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.114
+  "@storm-software/git-tools": ^2.132.8
+  "@storm-software/linting-tools": ^1.134.81
+  "@storm-software/markdownlint": ^0.30.306
+  "@storm-software/pnpm-tools": ^0.7.165
+  "@storm-software/prettier": ^0.59.204
+  "@storm-software/tsconfig": ^0.48.217
+  "@storm-software/untyped": ^0.24.293
+  "@storm-software/workspace-tools": ^1.297.21
   "@stryke/async": ^0.1.44
   "@stryke/env": ^0.20.135
   "@stryke/helpers": ^0.10.56
@@ -151,16 +152,16 @@ catalog:
   "@types/react-dom": ^19.3.0
   "@types/node": ^25.9.9
   "@typescript/native-preview": 7.0.0-dev.20260611.2
-  "@maplibre/maplibre-gl-style-spec": ^24.3.1
+  "@maplibre/maplibre-gl-style-spec": ^24.10.0
   "@vitejs/plugin-react-swc": ^3.11.0
-  "@vitest/coverage-v8": ~4.1.11
-  "@vitest/browser": ~4.1.11
-  "@vitest/browser-playwright": ~4.1.11
+  "@vitest/coverage-v8": ~4.1.12
+  "@vitest/browser": ~4.1.12
+  "@vitest/browser-playwright": ~4.1.12
   bundlewatch: ^0.4.2
   bunshi: ^2.2.0
   chroma-js: ^2.6.0
   esbuild: ^0.24.2
-  eslint: ^10.12.0
+  eslint: ^10.13.0
   eslint-flat-config-utils: ^2.1.4
   expo: 54.0.35
   expo-av: ^13.10.6
@@ -183,16 +184,17 @@ catalog:
   prettier: ^3.9.10
   jsonc-eslint-parser: ^2.4.2
   raf: ^3.4.1
-  react: ^19.3.0
-  react-dom: ^19.3.0
+  react: ^19.3.1
+  react-dom: ^19.3.1
   react-native: ^0.87.1
   react-native-reanimated: ^3.19.5
   react-native-safe-area-context: ^4.14.1
+  react-native-svg: ^15.16.0
   react-native-web: 0.19.12
   react-refresh: ^0.10.0
   sherif: ^1.13.0
   solito: ^4.4.1
-  storybook: ^10.6.1
+  storybook: ^10.6.2
   tslib: ^2.8.1
   tsdown: ^0.22.14
   copyfiles: ^2.4.1
@@ -201,34 +203,33 @@ catalog:
   verdaccio: 6.7.2
   vite: ^8.3.4
   vite-plugin-react-native-web: ^1.2.0
-  vitest: ~4.1.11
+  vitest: ~4.1.12
   untyped: ^2.0.0
   defu: ^6.1.7
   wrangler: ^3.114.17
   zod: ^3.25.76
   zx: ^8.8.5
-  "@storm-software/tsdoc": ^0.13.301
+  "@storm-software/tsdoc": ^0.13.303
   sembear: ^0.7.0
   parse-github-url: ^1.0.4
-  playwright: ^1.64.0
+  playwright: ^1.64.1
   "@tamagui/theme-builder": ^2.7.7
-  style-dictionary: ^5.6.1
-  "@tamagui/dismissable": ^3.0.2
+  style-dictionary: ^5.7.0
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
-  "@razorwind/shiki": ^0.0.65
-  "@razorwind/llms": ^0.0.26
-  "@razorwind/docgen": ^0.0.89
+  "@razorwind/shiki": ^0.0.76
+  "@razorwind/llms": ^0.0.37
+  "@razorwind/maplibre": ^0.0.2
+  "@razorwind/docgen": ^0.0.100
   ui-ux-pro-max-cli: ^2.15.0
-  "@power-plant/core": ^0.0.94
+  "@power-plant/core": ^0.0.98
   "@phosphor-icons/core": ^2.1.1
   "@shell-shock/plugin-mcp": ^0.1.10
   "@shell-shock/plugin-skills": ^0.0.23
-  "@razorwind/eslint": ^0.0.17
-  "@razorwind/stylelint": ^0.0.17
-  "@sourcebook/config": ^0.0.8
-  "@tanstack/react-virtual": ^3.14.19
-  react-native-svg: ^15.15.5
+  "@razorwind/eslint": ^0.0.30
+  "@razorwind/stylelint": ^0.0.30
+  "@sourcebook/config": ^0.0.11
+  "@tanstack/react-virtual": ^3.14.21
   "@nx/maven": 23.3.0
   tsx: ^4.23.15
   "@nx/docker": ^23.3.0
@@ -242,9 +243,10 @@ minimumReleaseAgeExclude:
   - "@stryke/*"
   - "@power-plant/*"
   - "@powerlines/*"
+  - "@razorwind/*"
   - "@shell-shock/*"
   - "@tamagui/*"
-  - conventional-changelog-storm-software@0.3.308 || 0.3.310
+  - conventional-changelog-storm-software
   - powerlines
   - tamagui
 nodeVersion: 26.3.0

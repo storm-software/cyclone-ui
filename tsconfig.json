@@ -85,9 +85,6 @@
       "path": "./components/data-table"
     },
     {
-      "path": "./components/label-text"
-    },
-    {
       "path": "./components/pagination"
     },
     {

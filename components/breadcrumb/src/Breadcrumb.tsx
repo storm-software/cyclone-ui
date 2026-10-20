@@ -146,15 +146,19 @@ const BreadcrumbCurrent = styled(Text, {
   cursor: "default",
   color: "primary",
   verticalAlign: "middle",
-  fontFamily: "title-sm",
+  fontFamily: "display",
 
   variants: {
     size: {
       sm: {
-        fontFamily: "title-sm"
+        fontSize: "xs",
+        lineHeight: "xs",
+        fontWeight: "700"
       },
       md: {
-        fontSize: "title-md"
+        fontSize: "sm",
+        lineHeight: "sm",
+        fontWeight: "600"
       }
     }
   } as const,
@@ -174,7 +178,10 @@ const getBreadcrumbEllipsisColor = ({
   mixed,
   inverse,
   themed
-}: Pick<BreadcrumbContextProps, "variant" | "mixed" | "inverse" | "themed">) => {
+}: Pick<
+  BreadcrumbContextProps,
+  "variant" | "mixed" | "inverse" | "themed"
+>) => {
   const link = themed ? "primary" : "link";
 
   return variant === "base" || (mixed && inverse) ? link : variant;
@@ -191,8 +198,9 @@ const BreadcrumbSeparator = () => {
     return (
       <SizableText
         color="outline"
-        fontFamily="body-sm"
+        fontFamily="body"
         fontSize="sm"
+        lineHeight="sm"
         fontWeight="bold">
         /
       </SizableText>

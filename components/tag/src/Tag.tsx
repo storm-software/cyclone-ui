@@ -130,7 +130,7 @@ const getVariantColor = (variant: TagVariant | undefined) =>
   variant === "secondary" ? "secondary" : "primary";
 
 // Outlined tags draw the text in the variant color, filled ones in the
-// matching `on*` color (`onPrimary` / `onSecondary`).
+// matching `on*` color (`on-primary` / `on-secondary`).
 const getTextColor = (
   variant: TagVariant | undefined,
   outlined: boolean | undefined
@@ -140,16 +140,16 @@ const getTextColor = (
   return outlined
     ? variantColor
     : variantColor === "secondary"
-      ? "onSecondary"
-      : "onPrimary";
+      ? "on-secondary"
+      : "on-primary";
 };
 
 // The hovered counterpart of a variant color; the `on*` text colors have none.
 const getHoveredColor = (color: string) =>
   color === "primary"
-    ? "primaryHovered"
+    ? "primary-hovered"
     : color === "secondary"
-      ? "secondaryHovered"
+      ? "secondary-hovered"
       : undefined;
 
 const TagFrame = styled(View, {
@@ -191,7 +191,7 @@ const TagFrame = styled(View, {
       true: {
         tabIndex: 0,
         role: "button",
-        boxShadow: "focus-visible:ringOffset",
+        boxShadow: "focus-visible:ring-offset",
         // Clips the press ripple to the tag's shape.
         position: "relative",
         overflow: "hidden"
@@ -212,7 +212,7 @@ const TagFrame = styled(View, {
   if (outlined) {
     return {
       backgroundColor: pressable
-        ? "transparent hover:secondaryHovered"
+        ? "transparent hover:secondary-hovered"
         : "transparent",
       borderColor: pressable
         ? `${color} hover:${getHoveredColor(color)}`
@@ -222,7 +222,7 @@ const TagFrame = styled(View, {
   }
 
   return {
-    backgroundColor: pressable ? `${color} hover:secondaryHovered` : color
+    backgroundColor: pressable ? `${color} hover:secondary-hovered` : color
   };
 });
 
@@ -233,23 +233,21 @@ const TagFrame = styled(View, {
 const TagTextFrame = styled(SizableText, {
   displayName: TAG_NAME,
   render: "span",
-  color: "onPrimary",
-  fontFamily: "title-sm",
+  color: "on-primary",
+  fontFamily: "display",
+  fontSize: "xs",
+  lineHeight: "xs",
+  fontWeight: "700",
 
   variants: {
-    // v2 `"...fontSize"`: only font size keys (including the `true` default,
-    // which the font scale carries as its own `true` key) restyle the text.
+    // v2 `"...fontSize"`: only font size keys restyle the text; `true` keeps
+    // the size above.
     size: styled.dynamic<FontSizeTokens | number>((val, env) =>
-      val === true ||
-      (typeof val === "string" && !!env.font && val in env.font.size)
-        ? getFontSized(val === true ? ("true" as FontSizeTokens) : val, env)
+      typeof val === "string" && !!env.font && val in env.font.size
+        ? getFontSized(val, env)
         : undefined
     )
-  } as const,
-
-  defaultVariants: {
-    size: "md"
-  }
+  } as const
 });
 
 interface TagEditState {
@@ -554,10 +552,10 @@ const TagButtonFrame = styled(View, {
   borderRadius: 1000_000_000,
   // No `press:` background color: a press draws a ripple from the press
   // point instead.
-  backgroundColor: "primary hover:secondaryHovered focus:surface",
+  backgroundColor: "primary hover:secondary-hovered focus:surface",
   justifyContent: "center",
   alignItems: "center",
-  borderColor: "hover:primaryHovered",
+  borderColor: "hover:primary-hovered",
   variants: {
     size: styled.dynamic<TagSize>(),
     // Styled by the `.resolve` below because the offset depends on `size`.
@@ -583,7 +581,7 @@ const TagButtonFrame = styled(View, {
 const TagButton = createStyledHOC(
   TagButtonFrame,
   ({ children, onPress, ...props }, forwardedRef) => {
-    // `primary` shows on both backgrounds a press lands on: `secondaryActive` under
+    // `primary` shows on both backgrounds a press lands on: `secondary-active` under
     // a pointer and `surface` once the press focuses the button.
     const ripple = useTagRipples("primary", onPress);
 
@@ -617,7 +615,7 @@ const TagRemoveButtonFrame = styled(View, {
   borderRadius: 1000_000_000,
   justifyContent: "center",
   alignItems: "center",
-  boxShadow: "focus-visible:ringOffset"
+  boxShadow: "focus-visible:ring-offset"
 });
 
 /** The remove button `Tag` renders after its children when `removable`. */
@@ -728,7 +726,7 @@ const TagFrameImpl = createStyledHOC(
     // An editable tag responds to hover like a pressable one.
     const pressable = pressableProp || editable;
 
-    // The text's color: it stays visible on the `secondaryActive` background a
+    // The text's color: it stays visible on the `secondary-active` background a
     // pointer press lands on.
     const ripple = useTagRipples(getTextColor(variant, outlined), onPress);
 

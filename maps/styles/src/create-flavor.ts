@@ -16,34 +16,30 @@
 
  ------------------------------------------------------------------- */
 
-import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
 import type { Flavor } from "./flavors";
 import { DARK, LIGHT } from "./flavors";
 
 export type CycloneTheme = "light" | "dark";
 
-/** Use Razorwind's generated sRGB values; MapLibre styles do not accept OKLCH. */
-export function createFlavor(theme: CycloneTheme): Flavor {
-  const cssPath = fileURLToPath(
-    new URL(
-      `../../../packages/tokens/src/css/tokens-${theme}.css`,
-      import.meta.url
-    )
-  );
-  const css = readFileSync(cssPath, "utf8");
-  const color = (name: string): string => {
-    const match = css.match(
-      new RegExp(`--storm-color-${name}:\\s*(#[0-9a-fA-F]{6})\\s*;`)
-    );
+/** Looks up a `#rrggbb` color by CSS-style token name, e.g. `neutral-16`. */
+export type ColorLookup = (name: string) => string;
 
-    if (!match) {
+/** Read colors from a Razorwind token set; MapLibre styles do not accept OKLCH. */
+export function tokenColors(tokens: Record<string, any>): ColorLookup {
+  return name => {
+    const value = name
+      .split("-")
+      .reduce((group, key) => group?.[key], tokens.color)?.$value;
+
+    if (typeof value !== "string" || !/^#[0-9a-f]{6}$/i.test(value)) {
       throw new Error(`Missing Cyclone color token: ${name}`);
     }
 
-    return match[1]!;
+    return value;
   };
+}
 
+export function createFlavor(theme: CycloneTheme, color: ColorLookup): Flavor {
   const dark = theme === "dark";
   const base = dark ? DARK : LIGHT;
   const canvas = color(dark ? "neutral-16" : "neutral-3");

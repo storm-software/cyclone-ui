@@ -238,7 +238,7 @@ const DialogContainer = createStyledHOC(
         y="enter:-20px exit:10px"
         opacity="enter:0 exit:0"
         scale="enter:0.9 exit:0.95"
-        boxShadow="focus-visible:ringOffset">
+        boxShadow="focus-visible:ring-offset">
         <Container
           ref={forwardedRef}
           overflow="hidden"

@@ -62,11 +62,11 @@ const renderAddressSuggestion = (label: string, size: FormControlSize) => {
     <View flex={1} minWidth={0}>
       <ContextMenu.Item.Text
         paddingBottom={0}
-        color="emphasis group-hover:emphasisHovered">
+        color="emphasis group-hover:emphasis-hovered">
         {label.slice(0, comma)}
       </ContextMenu.Item.Text>
       <ContextMenu.Item.Text
-        color="subtle group-hover:subtleHovered"
+        color="subtle group-hover:subtle-hovered"
         fontSize={fontSize * 0.875}
         lineHeight={`${lineHeight * 0.875}px`}
         paddingTop={0}>
@@ -418,7 +418,7 @@ const AddressInputMap = createStyledHOC(
             height={32}
             borderRadius="full"
             backgroundColor="primary">
-            <MapPin color="onPrimary" size="2xl" weight="fill" />
+            <MapPin color="on-primary" size="2xl" weight="fill" />
           </View>
         </View>
 

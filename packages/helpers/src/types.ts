@@ -63,3 +63,6 @@ export type ColorScientificPaletteRecord = Record<
 >;
 
 export type ColorStylePaletteRecord = Record<ColorScientificPalette, string[]>;
+
+export type DefaultStatusColorTheme =
+  "danger" | "warning" | "info" | "help" | "success" | "discovery";

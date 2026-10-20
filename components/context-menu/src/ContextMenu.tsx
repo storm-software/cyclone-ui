@@ -277,7 +277,7 @@ const ContextMenuItemBackground = styled(View, {
   // `focus-visible`, not `focus`: opening the menu focuses its first item,
   // which should only look highlighted when navigating by keyboard.
   backgroundColor:
-    "transparent group-hover/item:floatingActive group-focus-visible/item:floatingActive",
+    "transparent group-hover/item:floating-active group-focus-visible/item:floating-active",
   pointerEvents: "none",
   variants: {
     size: styled.dynamic<FormControlSize>(
@@ -291,7 +291,7 @@ const ContextMenuItemBackground = styled(View, {
     // Highlighted without focus, such as a combobox's active option.
     highlighted: {
       true: {
-        backgroundColor: "floatingActive"
+        backgroundColor: "floating-active"
       }
     },
 
@@ -444,11 +444,11 @@ const ContextMenuItem = ({
               alignItems="flex-end"
               justifyContent="center">
               {disabled ? (
-                <Lock size={indicatorIconSize} color="primaryDisabled" />
+                <Lock size={indicatorIconSize} color="primary-disabled" />
               ) : (
                 <Check
                   size={indicatorIconSize}
-                  color="primaryActive"
+                  color="primary-active"
                   weight="bold"
                 />
               )}
@@ -496,12 +496,12 @@ const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
       // On the text: a View frame doesn't emit `color` for it to inherit.
       color={
         disabled
-          ? "primaryDisabled"
+          ? "primary-disabled"
           : selected
-            ? "primaryActive"
+            ? "primary-active"
             : highlighted
               ? "primary"
-              : "primaryInactive group-hover/item:primary group-focus-visible/item:primary"
+              : "primary-inactive group-hover/item:primary group-focus-visible/item:primary"
       }
       fontSize={fontSize}
       lineHeight={`${lineHeight}px`}

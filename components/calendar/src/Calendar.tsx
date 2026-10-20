@@ -126,8 +126,12 @@ const MONTH_NAMES = [
  * Tamagui v3 reads a unitless `lineHeight` as a ratio, so the scaled pixel
  * leading `getFormFontSize` returns for `sm`/`lg` is pinned in `px`.
  */
-const getFormFontStyle = (size: FormControlSize, env: StyleEnv) => {
-  const style = getFormFontSize(size, env);
+const getFormFontStyle = (
+  size: FormControlSize,
+  env: StyleEnv,
+  token: string
+) => {
+  const style = getFormFontSize(size, env, token);
 
   return {
     fontFamily: style.fontFamily,
@@ -146,19 +150,39 @@ const getFormFontStyle = (size: FormControlSize, env: StyleEnv) => {
 
 // Calendar headings scale their font with the calendar's form control size.
 const CalendarHeading = styled(HeadingLargeText, {
-  variants: { controlSize: formSizeVariants(getFormFontStyle) }
+  // The month name sits in a compact control, so it's smaller than a page's
+  // large heading.
+  fontSize: "xl",
+  lineHeight: "xl",
+  variants: {
+    controlSize: formSizeVariants((size, env) =>
+      getFormFontStyle(size, env, "xl")
+    )
+  }
 });
 
 const CalendarHeadingSmallText = styled(HeadingSmallText, {
-  variants: { controlSize: formSizeVariants(getFormFontStyle) }
+  variants: {
+    controlSize: formSizeVariants((size, env) =>
+      getFormFontStyle(size, env, "sm")
+    )
+  }
 });
 
 const CalendarExtraSmallHeading = styled(HeadingExtraSmallText, {
-  variants: { controlSize: formSizeVariants(getFormFontStyle) }
+  variants: {
+    controlSize: formSizeVariants((size, env) =>
+      getFormFontStyle(size, env, "xs")
+    )
+  }
 });
 
 const CalendarRangeHeading = styled(HeadingMediumText, {
-  variants: { controlSize: formSizeVariants(getFormFontStyle) }
+  variants: {
+    controlSize: formSizeVariants((size, env) =>
+      getFormFontStyle(size, env, "xl")
+    )
+  }
 });
 
 const EMPTY_DATES: Date[] = [];
@@ -491,7 +515,7 @@ function YearSlider() {
           userSelect="text"
           textAlign="center"
           cursor="pointer"
-          color="primary hover:primaryHovered"
+          color="primary hover:primary-hovered"
           tabIndex={0}>
           {year}
         </CalendarHeadingSmallText>
@@ -556,7 +580,7 @@ const CalendarHeader = () => {
           transition="200ms"
           userSelect="auto"
           cursor="pointer"
-          color="primary hover:primaryHovered"
+          color="primary hover:primary-hovered"
           onPress={() => setHeader("year")}
           tabIndex={0}>
           {year}
@@ -566,7 +590,7 @@ const CalendarHeader = () => {
           transition="200ms"
           userSelect="auto"
           cursor="pointer"
-          color="primary hover:primaryHovered"
+          color="primary hover:primary-hovered"
           onPress={() => setHeader("month")}
           tabIndex={0}>
           {month}

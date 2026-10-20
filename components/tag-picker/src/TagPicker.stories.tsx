@@ -416,7 +416,7 @@ const ControlledExample = () => {
         value={tags}
         onChange={setTags}
       />
-      <Text color="ink" fontFamily="body-md">
+      <Text color="ink" fontFamily="body">
         {`Value: ${JSON.stringify(tags)}`}
       </Text>
     </View>

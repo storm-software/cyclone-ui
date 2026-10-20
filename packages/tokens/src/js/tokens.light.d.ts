@@ -257,6 +257,7 @@ declare const tokens: {
       "link-inactive": DesignToken;
       "link-disabled": DesignToken;
     };
+    backdrop: DesignToken;
     shadow: {
       resting: {
         xsmall: DesignToken;
@@ -641,22 +642,9 @@ declare const tokens: {
     "3xl": DesignToken;
   };
   typography: {
-    "display-hero": DesignToken;
-    "display-lg": DesignToken;
-    "display-md": DesignToken;
-    "editorial-hero": DesignToken;
-    "editorial-lg": DesignToken;
-    "editorial-md": DesignToken;
-    "title-xl": DesignToken;
-    "title-lg": DesignToken;
-    "title-md": DesignToken;
-    "title-sm": DesignToken;
-    "title-xs": DesignToken;
-    "title-xxs": DesignToken;
-    "body-md": DesignToken;
-    "body-sm": DesignToken;
-    "body-md-bold": DesignToken;
-    "body-sm-bold": DesignToken;
+    display: DesignToken;
+    editorial: DesignToken;
+    body: DesignToken;
     caption: DesignToken;
     eyebrow: DesignToken;
     code: DesignToken;

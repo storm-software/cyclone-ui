@@ -9,15 +9,22 @@
     "directory": "components/file-picker"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/bytes-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/pdf-document-display": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
     "@stryke/date": "catalog:",
     "@stryke/hooks": "catalog:",
     "@stryke/types": "catalog:",
@@ -29,7 +36,6 @@
     "@tamagui/helpers-tamagui": "catalog:",
     "@tamagui/image": "catalog:",
     "@tamagui/linear-gradient": "catalog:",
-    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/separator": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
@@ -37,16 +43,7 @@
     "expo-document-picker": "catalog:",
     "expo-image-picker": "^15.1.0",
     "react-dropzone": "^14.4.1",
-    "react-native-svg": "^15.15.5",
-    "@cyclone-ui/body-text": "workspace:*",
-    "@cyclone-ui/heading-text": "workspace:*",
-    "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/bytes-text": "workspace:*",
-    "@cyclone-ui/label-text": "workspace:*",
-    "@cyclone-ui/link": "workspace:*",
-    "@cyclone-ui/pdf-document-display": "workspace:*",
-    "@cyclone-ui/state": "workspace:*",
-    "@cyclone-ui/helpers": "workspace:*"
+    "react-native-svg": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",
@@ -59,9 +56,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

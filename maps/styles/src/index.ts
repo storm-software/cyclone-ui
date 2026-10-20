@@ -18,7 +18,7 @@
 
 import type { LayerSpecification } from "@maplibre/maplibre-gl-style-spec";
 import { labelsLayers, noLabelsLayers } from "./base-layers";
-import { createFlavor } from "./create-flavor";
+import { createFlavor, tokenColors } from "./create-flavor";
 import { createStyle } from "./create-style";
 import type { Flavor, Pois } from "./flavors";
 import { BLACK, DARK, GRAYSCALE, LIGHT, WHITE } from "./flavors";
@@ -38,6 +38,7 @@ export {
   GRAYSCALE,
   languageScriptPairs,
   LIGHT,
+  tokenColors,
   WHITE
 };
 

@@ -154,7 +154,7 @@ const BadgeBadgeFrame = styled(View, {
 
 const BadgeText = styled(Text, {
   displayName: BADGE_NAME,
-  color: "onPrimary",
+  color: "on-primary",
   fontFamily: "caption",
   fontSize: 12,
   fontWeight: "500",

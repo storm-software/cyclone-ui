@@ -38,7 +38,6 @@
       }
     },
     "./*": "./*",
-    "./rolldown-runtime-CenpyGzJ": "./dist/rolldown-runtime-CenpyGzJ.mjs",
     "./runtime": {
       "require": {
         "types": "./dist/runtime.d.cts",

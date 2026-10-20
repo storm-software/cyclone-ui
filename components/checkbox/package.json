@@ -36,7 +36,7 @@
     "@tamagui/get-token": "catalog:",
     "@tamagui/group": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",

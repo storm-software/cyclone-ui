@@ -16,12 +16,12 @@ const FONT_FAMILIES: Record<
   { family: string; title: string; weights: number[] }
 > = {
   "storm-sans": {
-    family: "\"Storm Sans\"",
+    family: '"Storm Sans"',
     title: "Storm Sans",
     weights: [100, 200, 300, 400, 450, 500, 600, 700]
   },
   "storm-serif": {
-    family: "\"Storm Serif\"",
+    family: '"Storm Serif"',
     title: "Storm Serif",
     weights: [200, 300, 400, 500, 600, 700, 800]
   }
@@ -83,7 +83,8 @@ export function FontSpecimenBlock({
           lineHeight: 1.25,
           margin: "0 0 0.5em"
         }}>
-        Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789
+        Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx
+        Yy Zz 0123456789
       </div>
       {sizes.map(size => (
         <div

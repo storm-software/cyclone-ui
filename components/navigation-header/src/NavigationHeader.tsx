@@ -133,7 +133,6 @@ const NavigationHeaderBar = styled(View, {
 
 const NavigationHeaderEdge = styled(View, {
   displayName: "NavigationHeaderEdge",
-
   minWidth: 0,
   flexBasis: 0,
   flexGrow: 1,
@@ -149,7 +148,6 @@ const NavigationHeaderLogo = styled(NavigationHeaderEdge, {
 
 const NavigationHeaderLogoContent = styled(View, {
   displayName: "NavigationHeaderLogoContent",
-
   flexShrink: 0,
   transformOrigin: "left center"
 });
@@ -173,11 +171,12 @@ const NavigationHeaderItemFrame = styled(View, {
   flexShrink: 0,
   borderBottomWidth: 2,
   borderBottomColor: "transparent",
+
   variants: {
     active: {
       true: {
-        color: "primary",
-        borderBottomColor: "primary"
+        color: "emphasis",
+        borderBottomColor: "emphasis"
       }
     },
     mobile: {
@@ -192,6 +191,7 @@ const NavigationHeaderItemFrame = styled(View, {
 
 const NavigationHeaderItemLink = styled(Link, {
   displayName: "NavigationHeaderItemLink",
+  variant: "emphasis",
   width: "100%",
   minWidth: "fit-content",
   paddingVertical: "2xl",
@@ -199,17 +199,18 @@ const NavigationHeaderItemLink = styled(Link, {
   alignItems: "center",
   justifyContent: "center",
   display: "flex",
-  color: "ink hover:primary focus-visible:primary",
+  color: "emphasis hover:emphasis-active focus-visible:emphasis-active",
   fontWeight: 500,
   textDecorationLine: "none hover:none",
   outlineColor: "focus-visible:primary",
   outlineOffset: "focus-visible:-4px",
   outlineStyle: "focus-visible:solid",
   outlineWidth: "focus-visible:2px",
+
   variants: {
     active: {
       true: {
-        color: "primary"
+        color: "emphasis"
       }
     },
     mobile: {
@@ -217,7 +218,10 @@ const NavigationHeaderItemLink = styled(Link, {
         minHeight: "11xl",
         paddingHorizontal: "5xl",
         paddingTop: 0,
-        justifyContent: "flex-start"
+        paddingBottom: 0,
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        fontSize: "lg"
       }
     }
   } as const
@@ -235,6 +239,7 @@ const NavigationHeaderDropdown = styled(View, {
   borderBottomWidth: 1,
   borderBottomColor: "hairline",
   display: "max-md:none",
+
   variants: {
     open: {
       true: {
@@ -287,10 +292,11 @@ const NavigationHeaderDropdownLink = styled(Link, {
   alignItems: "flex-start",
   justifyContent: "flex-start",
   display: "flex",
-  color: "ink hover:primary focus-visible:primary",
+  color: "emphasis hover:emphasis-active focus-visible:emphasis-active",
   fontWeight: 500,
   textDecorationLine: "none hover:none",
   borderRadius: "md",
+
   variants: {
     featured: {
       true: {
@@ -305,13 +311,18 @@ const NavigationHeaderDropdownLink = styled(Link, {
   } as const
 });
 
+const NavigationHeaderDropdownEntrance = styled(View, {
+  displayName: "NavigationHeaderDropdownEntrance",
+  width: "100%"
+});
+
 const NavigationHeaderMobileGroupLabel = styled(
   NavigationHeaderDropdownGroupLabel,
   {
     displayName: "NavigationHeaderMobileGroupLabel",
     marginTop: "2xl",
-    marginBottom: "md",
-    paddingHorizontal: "5xl"
+    marginBottom: "lg",
+    paddingHorizontal: "4xl"
   }
 );
 
@@ -339,10 +350,10 @@ const NavigationHeaderMenuButton = styled(View, {
   alignItems: "center",
   justifyContent: "center",
   cursor: "pointer",
-  backgroundColor: "transparent hover:secondaryHovered press:secondaryActive",
+  backgroundColor: "transparent hover:secondary-hovered press:secondary-active",
   borderWidth: 0,
   borderRadius: "full",
-  boxShadow: "focus-visible:ringOffset"
+  boxShadow: "focus-visible:ring-offset"
 });
 
 const NavigationHeaderMobilePanel = styled(View, {
@@ -352,7 +363,8 @@ const NavigationHeaderMobilePanel = styled(View, {
   top: "100%",
   left: 0,
   right: 0,
-  maxHeight: "calc(100vh - 52px)",
+  // `dvh` keeps the last links reachable behind mobile browser toolbars.
+  maxHeight: "calc(100dvh - 52px)",
   paddingVertical: "2xl",
   overflowY: "auto",
   backgroundColor: "canvas",
@@ -378,16 +390,20 @@ const NavigationHeaderMobileNavigation = styled(View, {
 
 const NavigationHeaderMobileChildren = styled(View, {
   displayName: "NavigationHeaderMobileChildren",
-  width: "100%",
-  paddingLeft: "5xl",
-  paddingBottom: "2xl",
-  flexDirection: "column"
+  marginLeft: "5xl",
+  marginBottom: "2xl",
+  flexDirection: "column",
+  borderLeftWidth: 1,
+  borderLeftColor: "hairline"
 });
 
 const NavigationHeaderMobileChildLink = styled(NavigationHeaderDropdownLink, {
   displayName: "NavigationHeaderMobileChildLink",
   minHeight: "10xl",
-  paddingHorizontal: "5xl",
+  paddingHorizontal: "4xl",
+  flexDirection: "row",
+  alignItems: "center",
+  whiteSpace: "normal",
   backgroundColor: "transparent"
 });
 
@@ -397,8 +413,9 @@ const NavigationHeaderMobileActions = styled(View, {
   paddingTop: "5xl",
   paddingHorizontal: "5xl",
   paddingBottom: "3xl",
-  alignItems: "stretch",
-  flexDirection: "column",
+  alignItems: "center",
+  flexDirection: "row",
+  flexWrap: "wrap",
   gap: "2xl",
   borderTopWidth: 1,
   borderTopColor: "hairline"
@@ -436,6 +453,23 @@ interface NavigationHeaderDropdownHover {
 
 const dropdownTransition = "200ms";
 const scaleTransition = "300ms";
+const entranceStagger = 50;
+
+// Slides and fades each dropdown entry in, `index` steps after the first.
+const getEntranceProps = (index: number) => {
+  const transition = {
+    duration: "250ms",
+    easing: "ease-out",
+    delay: index * entranceStagger
+  };
+
+  return {
+    opacity: "1 enter:0",
+    y: "0 enter:-8px",
+    // Naming `enter` makes Tamagui animate the mount instead of snapping.
+    transition: { ...transition, enter: transition }
+  };
+};
 
 const useNavigationHeaderDropdownHeight = (
   open: boolean,
@@ -643,6 +677,7 @@ const NavigationHeaderRoot = createStyledHOC(
       children,
       NavigationHeaderMenuButtonSlotComponent
     );
+
     const items = getNavigationHeaderItems(navigation?.props.children);
     const navigationLabel = navigation?.props.label ?? "Primary navigation";
     const menuLabel = menuButton?.props.label ?? "Navigation menu";
@@ -650,6 +685,26 @@ const NavigationHeaderRoot = createStyledHOC(
     const submenuOpen = Boolean(openItem?.children?.length);
     const { contentRef: dropdownContentRef, height: dropdownHeight } =
       useNavigationHeaderDropdownHeight(submenuOpen, openItemIndex);
+
+    // Stagger entries only when the dropdown opens from closed, not when the
+    // pointer moves between items while it is already open.
+    const [entrance, setEntrance] = useState({
+      open: submenuOpen,
+      index: openItemIndex,
+      stagger: false
+    });
+    if (entrance.open !== submenuOpen || entrance.index !== openItemIndex) {
+      setEntrance({
+        open: submenuOpen,
+        index: openItemIndex,
+        stagger: submenuOpen && !entrance.open
+      });
+    }
+
+    const staggerEntrance = entrance.stagger && !prefersReducedMotion;
+    let entranceIndex = 0;
+    const entranceProps = () =>
+      staggerEntrance ? getEntranceProps(entranceIndex++) : {};
     // Tamagui's motion driver only animates its own transform props; a
     // transition set through `style` is dropped.
     const scaleProps = {
@@ -703,10 +758,10 @@ const NavigationHeaderRoot = createStyledHOC(
               // clears its hover state on mouse leave.
               const navigationItemColor =
                 hoveredItemIndex === null
-                  ? "primary"
+                  ? "emphasis"
                   : hoveredItemIndex === index
-                    ? "primaryActive"
-                    : "primaryInactive";
+                    ? "emphasis-active"
+                    : "emphasis-inactive";
               const dropdownId = `${mobileNavigationId}-submenu-${index}`;
 
               return (
@@ -725,7 +780,8 @@ const NavigationHeaderRoot = createStyledHOC(
                     <>
                       <NavigationHeaderItemLink
                         group={false}
-                        color={navigationItemColor}
+                        variant="emphasis"
+                        style={{ color: `var(--${navigationItemColor})` }}
                         gap="lg"
                         inverse={true}
                         underline="none"
@@ -756,13 +812,14 @@ const NavigationHeaderRoot = createStyledHOC(
                   ) : (
                     <NavigationHeaderItemLink
                       group={false}
+                      variant="emphasis"
                       inverse={true}
                       underline="none"
                       href={item.href}
                       target={item.target}
                       external={item.external}
                       active={item.active}
-                      color={navigationItemColor}
+                      style={{ color: `var(--${navigationItemColor})` }}
                       aria-current={item.active ? "page" : undefined}
                       onMouseEnter={() => setOpenItemIndex(null)}
                       onPress={item.onPress}>
@@ -813,9 +870,11 @@ const NavigationHeaderRoot = createStyledHOC(
                   <NavigationHeaderDropdownGroup
                     key={`${group.label ?? "navigation-group"}-${groupIndex}`}>
                     {group.label ? (
-                      <NavigationHeaderDropdownGroupLabel>
-                        {group.label}
-                      </NavigationHeaderDropdownGroupLabel>
+                      <NavigationHeaderDropdownEntrance {...entranceProps()}>
+                        <NavigationHeaderDropdownGroupLabel>
+                          {group.label}
+                        </NavigationHeaderDropdownGroupLabel>
+                      </NavigationHeaderDropdownEntrance>
                     ) : null}
 
                     {group.items.map((child, childIndex) => {
@@ -828,39 +887,43 @@ const NavigationHeaderRoot = createStyledHOC(
                       const color = hovered
                         ? hoveredDropdownItem.groupIndex === groupIndex &&
                           hoveredDropdownItem.childIndex === childIndex
-                          ? "primaryActive"
-                          : "primaryInactive"
-                        : "primary";
+                          ? "emphasis-active"
+                          : "emphasis-inactive"
+                        : "emphasis";
 
                       return (
-                        <NavigationHeaderDropdownLink
+                        <NavigationHeaderDropdownEntrance
                           key={`${child.href ?? "navigation-child"}-${childIndex}`}
-                          group={false}
-                          inverse={true}
-                          underline="none"
-                          featured={child.featured}
-                          href={child.href}
-                          target={child.target}
-                          external={child.external}
-                          color={color}
-                          aria-current={child.active ? "page" : undefined}
-                          onMouseEnter={() =>
-                            setHoveredDropdownItem({
-                              scope,
-                              groupIndex,
-                              childIndex
-                            })
-                          }
-                          onPress={(event: NavigationHeaderPressEvent) => {
-                            child.onPress?.(event);
-                            setOpenItemIndex(null);
-                          }}>
-                          {child.featured ? (
-                            <HeadingLargeText>{child.label}</HeadingLargeText>
-                          ) : (
-                            child.label
-                          )}
-                        </NavigationHeaderDropdownLink>
+                          {...entranceProps()}>
+                          <NavigationHeaderDropdownLink
+                            group={false}
+                            variant="emphasis"
+                            inverse={true}
+                            underline="none"
+                            featured={child.featured}
+                            href={child.href}
+                            target={child.target}
+                            external={child.external}
+                            style={{ color: `var(--${color})` }}
+                            aria-current={child.active ? "page" : undefined}
+                            onMouseEnter={() =>
+                              setHoveredDropdownItem({
+                                scope,
+                                groupIndex,
+                                childIndex
+                              })
+                            }
+                            onPress={(event: NavigationHeaderPressEvent) => {
+                              child.onPress?.(event);
+                              setOpenItemIndex(null);
+                            }}>
+                            {child.featured ? (
+                              <HeadingLargeText>{child.label}</HeadingLargeText>
+                            ) : (
+                              child.label
+                            )}
+                          </NavigationHeaderDropdownLink>
+                        </NavigationHeaderDropdownEntrance>
                       );
                     })}
                   </NavigationHeaderDropdownGroup>
@@ -875,7 +938,9 @@ const NavigationHeaderRoot = createStyledHOC(
             {items.map((item, index) => (
               <View
                 key={`${item.href ?? "mobile-navigation-item"}-${index}`}
-                width="100%">
+                width="100%"
+                borderTopWidth={index ? 1 : 0}
+                borderTopColor="hairline">
                 <NavigationHeaderItemFrame
                   active={
                     item.active ?? item.children?.some(child => child.active)
@@ -883,6 +948,7 @@ const NavigationHeaderRoot = createStyledHOC(
                   mobile={true}>
                   <NavigationHeaderItemLink
                     group={false}
+                    variant="emphasis"
                     inverse={true}
                     underline="none"
                     href={item.href}
@@ -916,6 +982,7 @@ const NavigationHeaderRoot = createStyledHOC(
                             <NavigationHeaderMobileChildLink
                               key={`${child.href ?? "mobile-navigation-child"}-${childIndex}`}
                               group={false}
+                              variant="emphasis"
                               inverse={true}
                               underline="none"
                               href={child.href}

@@ -123,7 +123,7 @@ export const ThemeableIcon = createStyledHOC(
     const getThemedIcon = useGetThemedIcon({
       // The `true` default keeps the icon's intrinsic size (24px), as in v2.
       size: isDefaultSize(size) ? undefined : getSized(size),
-      color: disabled ? "primaryDisabled" : (getBaseColor(color) as ColorProp)
+      color: disabled ? "primary-disabled" : (getBaseColor(color) as ColorProp)
     });
 
     return (

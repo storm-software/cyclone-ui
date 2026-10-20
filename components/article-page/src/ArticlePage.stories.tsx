@@ -167,7 +167,7 @@ const StorySideNav = () => (
           justifyContent="center"
           backgroundColor="primary"
           borderRadius="full">
-          <Lightning size={12} color="onPrimary" weight="fill" />
+          <Lightning size={12} color="on-primary" weight="fill" />
         </View>
         <BodyText render="span" color="emphasis" fontWeight="700" flexGrow={1}>
           Cyclone UI

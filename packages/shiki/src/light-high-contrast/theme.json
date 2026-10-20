@@ -2,49 +2,32 @@
   "name": "cyclone-light-high-contrast",
   "settings": [
     {
-      "scope": [
-        "comment",
-        "punctuation.definition.comment"
-      ],
+      "scope": ["comment", "punctuation.definition.comment"],
       "settings": {
         "foreground": "#9a9fa7",
         "fontStyle": "italic"
       }
     },
     {
-      "scope": [
-        "string",
-        "constant.other.symbol"
-      ],
+      "scope": ["string", "constant.other.symbol"],
       "settings": {
         "foreground": "#0a4e38"
       }
     },
     {
-      "scope": [
-        "constant",
-        "constant.numeric",
-        "constant.language"
-      ],
+      "scope": ["constant", "constant.numeric", "constant.language"],
       "settings": {
         "foreground": "#583902"
       }
     },
     {
-      "scope": [
-        "keyword",
-        "storage",
-        "storage.type"
-      ],
+      "scope": ["keyword", "storage", "storage.type"],
       "settings": {
         "foreground": "#0145be"
       }
     },
     {
-      "scope": [
-        "entity.name.function",
-        "support.function"
-      ],
+      "scope": ["entity.name.function", "support.function"],
       "settings": {
         "foreground": "#0145be"
       }
@@ -60,46 +43,31 @@
       }
     },
     {
-      "scope": [
-        "entity.name.tag",
-        "meta.tag"
-      ],
+      "scope": ["entity.name.tag", "meta.tag"],
       "settings": {
         "foreground": "#0145be"
       }
     },
     {
-      "scope": [
-        "entity.other.attribute-name",
-        "support.constant"
-      ],
+      "scope": ["entity.other.attribute-name", "support.constant"],
       "settings": {
         "foreground": "#0145be"
       }
     },
     {
-      "scope": [
-        "variable",
-        "identifier"
-      ],
+      "scope": ["variable", "identifier"],
       "settings": {
         "foreground": "#3f424a"
       }
     },
     {
-      "scope": [
-        "punctuation",
-        "meta.brace"
-      ],
+      "scope": ["punctuation", "meta.brace"],
       "settings": {
         "foreground": "#9a9fa7"
       }
     },
     {
-      "scope": [
-        "invalid",
-        "invalid.illegal"
-      ],
+      "scope": ["invalid", "invalid.illegal"],
       "settings": {
         "foreground": "#840929"
       }
@@ -118,7 +86,7 @@
     "editor.inactiveSelectionBackground": "#ffffff",
     "editorLineNumber.foreground": "#9a9fa7",
     "editorLineNumber.activeForeground": "#3f424a",
-    "editorIndentGuide.background1": "#f4f4f6",
+    "editorIndentGuide.background1": "#dcdce0",
     "editorIndentGuide.activeBackground1": "#9a9fa7",
     "editorWhitespace.foreground": "#9a9fa7"
   }

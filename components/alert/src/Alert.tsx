@@ -166,7 +166,7 @@ const AlertIcon = createStyledHOC(
           <Theme name={type ?? "base"}>
             {/* Matches the frame's `floating` surface, including its hovered shade. */}
             <AlertIconBackground
-              backgroundColor={hovered ? "floatingHovered" : "floating"}>
+              backgroundColor={hovered ? "floating-hovered" : "floating"}>
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}

@@ -42,14 +42,14 @@ export type ContainerVariant =
 
 // The hovered shade of each variant's background; transparent variants have none.
 const HOVERED_BACKGROUND: Partial<Record<ContainerVariant, string>> = {
-  primary: "primaryHovered",
-  secondary: "secondaryHovered",
-  tertiary: "surfaceHovered",
-  sunken: "sunkenHovered",
-  canvas: "canvasHovered",
-  elevated: "surfaceHovered",
-  floating: "elevatedHovered",
-  overlay: "floatingHovered"
+  primary: "primary-hovered",
+  secondary: "secondary-hovered",
+  tertiary: "surface-hovered",
+  sunken: "sunken-hovered",
+  canvas: "canvas-hovered",
+  elevated: "surface-hovered",
+  floating: "elevated-hovered",
+  overlay: "floating-hovered"
 };
 
 const ContainerFrame = styled(View, {

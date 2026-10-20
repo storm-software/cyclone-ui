@@ -276,7 +276,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
         : "marginLeft";
 
     const geometry = SLIDER_GEOMETRY[size] ?? SLIDER_GEOMETRY.md;
-    const fill = disabled ? "primaryDisabled" : "primary";
+    const fill = disabled ? "primary-disabled" : "primary";
     const markList = useMemo(
       () => getSliderMarks(marks, min, max, step),
       [marks, min, max, step]
@@ -448,7 +448,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
               width={markSize}
               height={markSize}
               borderRadius={100_000}
-              backgroundColor={active ? "onPrimary" : fill}
+              backgroundColor={active ? "on-primary" : fill}
               opacity={active ? 0.8 : 1}
               pointerEvents="none"
               {...{ [startEdge]: percent, [startMargin]: -markSize / 2 }}
@@ -493,10 +493,10 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                   textAlign="center"
                   color={
                     disabled
-                      ? "emphasisDisabled"
+                      ? "emphasis-disabled"
                       : active
-                        ? "emphasisActive"
-                        : "emphasisInactive"
+                        ? "emphasis-active"
+                        : "emphasis-inactive"
                   }>
                   {mark.label}
                 </Text>
@@ -566,7 +566,7 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                 position="absolute"
                 inset={0}
                 borderRadius={100_000}
-                backgroundColor={disabled ? fill : "primaryActive"}
+                backgroundColor={disabled ? fill : "primary-active"}
                 borderWidth={1}
                 borderColor="hairline"
                 pointerEvents="none"
@@ -574,8 +574,8 @@ export const Slider = forwardRef<TamaguiElement, SliderProps>(
                 boxShadow={
                   showRing
                     ? size === "sm"
-                      ? "ringSubtleOffset"
-                      : "ringOffset"
+                      ? "ring-subtle-offset"
+                      : "ring-offset"
                     : "none"
                 }
               />

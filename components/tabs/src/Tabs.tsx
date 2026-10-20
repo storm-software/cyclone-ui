@@ -551,7 +551,7 @@ const TabsHeaderListImpl = createStyledHOC(
 
 // No `context: TabsContext` here: its `variant` key (underline / floating /
 // tabbed) would override `HeadingSmallText`'s own `variant` (base /
-// editorial) and drop the `display-sm` font. `TabsHeaderItemImpl` passes
+// editorial) and drop the `display` font. `TabsHeaderItemImpl` passes
 // `size` and `selected` explicitly instead.
 const TabsHeaderItemHeading = styled(HeadingSmallText, {
   displayName: "TabsHeading",
@@ -559,23 +559,20 @@ const TabsHeaderItemHeading = styled(HeadingSmallText, {
   textAlign: "center",
   paddingVertical: "xl",
   variants: {
-    // `size: true` maps in Tamagui v3 to the `sm` / `4` font key the
-    // typography fonts do not define; resolve it (and any font size key)
-    // against the font's own `true` step.
+    // Only font size keys restyle the text; `true` keeps the heading's size.
     size: styled.dynamic<FontSizeTokens | SizeTokens | number>((val, env) =>
-      val === true ||
-      (typeof val === "string" && !!env.font && val in env.font.size)
-        ? getFontSized(val === true ? ("true" as FontSizeTokens) : val, env)
+      typeof val === "string" && !!env.font && val in env.font.size
+        ? getFontSized(val, env)
         : undefined
     ),
 
     selected: {
       true: {
-        color: "primaryActive",
+        color: "primary-active",
         fontWeight: "bold"
       },
       false: {
-        color: "primaryInactive",
+        color: "primary-inactive",
         fontWeight: "normal"
       }
     }
@@ -641,7 +638,7 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
   const borderWidth = props.bordered === false ? 0 : 1;
 
   return {
-    backgroundColor: props.selected ? "surface" : "canvas hover:canvasHovered",
+    backgroundColor: props.selected ? "surface" : "canvas hover:canvas-hovered",
     borderColor: "hairline",
     borderWidth,
     // Tamagui v3's Tabs.List is a Group that drops the connecting border on
@@ -690,7 +687,7 @@ const TabsHeaderItemImpl = createStyledHOC(
         value={value}
         onInteraction={onInteraction}>
         <TabsHeaderItemHeading
-          size={size === true ? "true" : size}
+          size={size}
           color="group-hover:primary"
           selected={currentTab === value}>
           {children}

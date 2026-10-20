@@ -19,13 +19,13 @@
 import type { SelectOption } from "@stryke/types/form";
 import type { ValidationDetail } from "@stryke/types/validations";
 import type {
-  FontFamilyTokens,
+  FontSizeTokens,
   GetProps,
   TamaguiWebElement
 } from "@tamagui/core";
 import { createStyledHOC, styled, useComposedRefs, View } from "@tamagui/core";
 import type { ReactNode, Ref, RefObject } from "react";
-import { createContext, use, useLayoutEffect, useRef, useState } from "react";
+import { createContext, use, useLayoutEffect, useRef } from "react";
 import type { FormControlSize } from "./form-size";
 import { getFormSizeScale } from "./form-size";
 import { getSpaced } from "./get-sized";
@@ -145,8 +145,8 @@ export interface FieldLabelDefaults {
    */
   inline?: { alignItems?: "center" } | { alignContent?: "center" };
 
-  /** The font of an `inline` label, such as a smaller one for a small control. */
-  inlineFontFamily?: FontFamilyTokens;
+  /** The font size of an `inline` label, such as a smaller one for a small control. */
+  inlineFontSize?: FontSizeTokens;
 
   /**
    * Where a floating label rests, for a control with leading content other
@@ -325,9 +325,9 @@ export const useFieldIconColor = () => {
     (!theme || theme === "base") && !formControl?.hasValidationMessage;
   const validated = formControl?.hasValidationMessage;
   const restColor = validated ? "primary" : "outline";
-  const focusColor = validated ? "primaryActive" : "outlineActive";
-  const hoverColor = validated ? "primaryHovered" : "outlineHovered";
-  const disabledColor = validated ? "primaryDisabled" : "outlineDisabled";
+  const focusColor = validated ? "primary-active" : "outline-active";
+  const hoverColor = validated ? "primary-hovered" : "outline-hovered";
+  const disabledColor = validated ? "primary-disabled" : "outline-disabled";
 
   const iconColor = disabled ? disabledColor : focused ? focusColor : restColor;
   const hoverIconColor = disabled
@@ -360,7 +360,7 @@ const FieldNotchedOutlineFrame = styled(View, {
 const FieldNotchedOutlineLegend = styled(View, {
   displayName: "FieldNotchedOutline",
   render: "legend",
-  transition: "100ms",
+  width: 0,
   height: 0,
   padding: 0,
   overflow: "hidden"
@@ -383,34 +383,45 @@ export const FieldNotchedOutline = createStyledHOC(
     const labelContentRef = formControl?.labelContentRef;
     const labelVariant = formControl?.labelVariant;
     const size = formControl?.size;
-    const floating = useFieldLabelFloated(labelVariant);
     const outlineRef = useRef<TamaguiWebElement>(null);
+    const legendRef = useRef<TamaguiWebElement>(null);
     const composedRef = useComposedRefs(forwardedRef, outlineRef);
-    const [notch, setNotch] = useState<{ left: number; width: number }>();
+    // Leave a little room on either side of the floated label's text.
+    const gap = getSpaced("sm") * getFormSizeScale(size);
 
     useLayoutEffect(() => {
       const outline = outlineRef.current as HTMLElement | null;
+      const legend = legendRef.current as HTMLElement | null;
       const label = labelContentRef?.current as HTMLElement | null;
-      if (!outline || !label) {
+      if (!outline || !legend || !label || labelVariant !== "floating") {
         return;
       }
 
       // The label is a sibling of the control, so measure where it falls
-      // along the outline. It shrinks as it floats, which re-measures.
+      // along the outline. Its size animates as it floats, which re-measures
+      // every frame; writing the legend's style here (not state plus its own
+      // transition) keeps the notch on the label's frame. The notch opens as
+      // the label crosses the border, fully a little past it.
       const update = () => {
-        const left =
-          label.getBoundingClientRect().left -
-          outline.getBoundingClientRect().left;
-        const width = label.getBoundingClientRect().width;
+        const outlineRect = outline.getBoundingClientRect();
+        const labelRect = label.getBoundingClientRect();
+        const open =
+          labelRect.height > 0
+            ? Math.min(
+                1,
+                Math.max(
+                  0,
+                  (outlineRect.top - labelRect.top) / (labelRect.height * 0.2)
+                )
+              )
+            : 0;
 
-        setNotch(current =>
-          current?.left === left && current.width === width
-            ? current
-            : { left, width }
-        );
+        legend.style.marginLeft = `${Math.max(0, labelRect.left - outlineRect.left - gap)}px`;
+        legend.style.width = `${(labelRect.width + gap * 2) * open}px`;
       };
 
       update();
+
       if (typeof ResizeObserver === "undefined") {
         return;
       }
@@ -420,17 +431,11 @@ export const FieldNotchedOutline = createStyledHOC(
       resizeObserver.observe(label);
 
       return () => resizeObserver.disconnect();
-    }, [labelContentRef, labelVariant]);
-
-    // Leave a little room on either side of the floated label's text.
-    const gap = getSpaced("sm") * getFormSizeScale(size);
+    }, [gap, labelContentRef, labelVariant]);
 
     return (
       <FieldNotchedOutlineFrame ref={composedRef} aria-hidden {...props}>
-        <FieldNotchedOutlineLegend
-          marginLeft={Math.max(0, (notch?.left ?? 0) - gap)}
-          width={floating && notch ? notch.width + gap * 2 : 0}
-        />
+        <FieldNotchedOutlineLegend ref={legendRef} />
       </FieldNotchedOutlineFrame>
     );
   },

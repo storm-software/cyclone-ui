@@ -10,11 +10,11 @@
 import { createDesignSystemPlugin, type DesignSystemManifest } from "./runtime";
 
 export const manifest: DesignSystemManifest = {
-  "name": "cyclone-ui",
-  "version": "0.0.0",
-  "prefix": "cyclone-ui",
-  "cssVarPrefix": "storm",
-  "themes": [
+  name: "cyclone-ui",
+  version: "0.0.0",
+  prefix: "cyclone-ui",
+  cssVarPrefix: "storm",
+  themes: [
     "base",
     "dark",
     "darkDimmed",
@@ -23,4823 +23,4710 @@ export const manifest: DesignSystemManifest = {
     "lightDimmed",
     "lightHighContrast"
   ],
-  "tokens": [
+  tokens: [
     {
-      "path": "blur.2xl",
-      "cssVar": "--storm-blur-2xl",
-      "type": "dimension",
-      "value": "40px"
+      path: "blur.2xl",
+      cssVar: "--storm-blur-2xl",
+      type: "dimension",
+      value: "40px"
     },
     {
-      "path": "blur.3xl",
-      "cssVar": "--storm-blur-3xl",
-      "type": "dimension",
-      "value": "64px"
+      path: "blur.3xl",
+      cssVar: "--storm-blur-3xl",
+      type: "dimension",
+      value: "64px"
     },
     {
-      "path": "blur.lg",
-      "cssVar": "--storm-blur-lg",
-      "type": "dimension",
-      "value": "16px"
+      path: "blur.lg",
+      cssVar: "--storm-blur-lg",
+      type: "dimension",
+      value: "16px"
     },
     {
-      "path": "blur.md",
-      "cssVar": "--storm-blur-md",
-      "type": "dimension",
-      "value": "12px"
+      path: "blur.md",
+      cssVar: "--storm-blur-md",
+      type: "dimension",
+      value: "12px"
     },
     {
-      "path": "blur.sm",
-      "cssVar": "--storm-blur-sm",
-      "type": "dimension",
-      "value": "8px"
+      path: "blur.sm",
+      cssVar: "--storm-blur-sm",
+      type: "dimension",
+      value: "8px"
     },
     {
-      "path": "blur.xl",
-      "cssVar": "--storm-blur-xl",
-      "type": "dimension",
-      "value": "24px"
+      path: "blur.xl",
+      cssVar: "--storm-blur-xl",
+      type: "dimension",
+      value: "24px"
     },
     {
-      "path": "blur.xs",
-      "cssVar": "--storm-blur-xs",
-      "type": "dimension",
-      "value": "4px"
+      path: "blur.xs",
+      cssVar: "--storm-blur-xs",
+      type: "dimension",
+      value: "4px"
     },
     {
-      "path": "border-radius.2xl",
-      "cssVar": "--storm-border-radius-2xl",
-      "type": "dimension",
-      "category": "radius",
-      "value": "1rem"
+      path: "border-radius.2xl",
+      cssVar: "--storm-border-radius-2xl",
+      type: "dimension",
+      category: "radius",
+      value: "1rem"
     },
     {
-      "path": "border-radius.3xl",
-      "cssVar": "--storm-border-radius-3xl",
-      "type": "dimension",
-      "category": "radius",
-      "value": "1.5rem"
+      path: "border-radius.3xl",
+      cssVar: "--storm-border-radius-3xl",
+      type: "dimension",
+      category: "radius",
+      value: "1.5rem"
     },
     {
-      "path": "border-radius.4xl",
-      "cssVar": "--storm-border-radius-4xl",
-      "type": "dimension",
-      "category": "radius",
-      "value": "2rem"
+      path: "border-radius.4xl",
+      cssVar: "--storm-border-radius-4xl",
+      type: "dimension",
+      category: "radius",
+      value: "2rem"
     },
     {
-      "path": "border-radius.button",
-      "cssVar": "--storm-border-radius-button",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.375rem",
-      "alias": true
+      path: "border-radius.button",
+      cssVar: "--storm-border-radius-button",
+      type: "dimension",
+      category: "radius",
+      value: "0.375rem",
+      alias: true
     },
     {
-      "path": "border-radius.card",
-      "cssVar": "--storm-border-radius-card",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.375rem",
-      "alias": true
+      path: "border-radius.card",
+      cssVar: "--storm-border-radius-card",
+      type: "dimension",
+      category: "radius",
+      value: "0.375rem",
+      alias: true
     },
     {
-      "path": "border-radius.checkbox",
-      "cssVar": "--storm-border-radius-checkbox",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.25rem",
-      "alias": true
+      path: "border-radius.checkbox",
+      cssVar: "--storm-border-radius-checkbox",
+      type: "dimension",
+      category: "radius",
+      value: "0.25rem",
+      alias: true
     },
     {
-      "path": "border-radius.container",
-      "cssVar": "--storm-border-radius-container",
-      "type": "dimension",
-      "category": "radius",
-      "value": "1rem",
-      "alias": true
+      path: "border-radius.container",
+      cssVar: "--storm-border-radius-container",
+      type: "dimension",
+      category: "radius",
+      value: "1rem",
+      alias: true
     },
     {
-      "path": "border-radius.control",
-      "cssVar": "--storm-border-radius-control",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.25rem",
-      "alias": true
+      path: "border-radius.control",
+      cssVar: "--storm-border-radius-control",
+      type: "dimension",
+      category: "radius",
+      value: "0.25rem",
+      alias: true
     },
     {
-      "path": "border-radius.dialog",
-      "cssVar": "--storm-border-radius-dialog",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.375rem",
-      "alias": true
+      path: "border-radius.dialog",
+      cssVar: "--storm-border-radius-dialog",
+      type: "dimension",
+      category: "radius",
+      value: "0.375rem",
+      alias: true
     },
     {
-      "path": "border-radius.drawer",
-      "cssVar": "--storm-border-radius-drawer",
-      "type": "dimension",
-      "category": "radius",
-      "value": "1rem",
-      "alias": true
+      path: "border-radius.drawer",
+      cssVar: "--storm-border-radius-drawer",
+      type: "dimension",
+      category: "radius",
+      value: "1rem",
+      alias: true
     },
     {
-      "path": "border-radius.full",
-      "cssVar": "--storm-border-radius-full",
-      "type": "dimension",
-      "category": "radius",
-      "value": "100%"
+      path: "border-radius.full",
+      cssVar: "--storm-border-radius-full",
+      type: "dimension",
+      category: "radius",
+      value: "100%"
     },
     {
-      "path": "border-radius.lg",
-      "cssVar": "--storm-border-radius-lg",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.5rem"
+      path: "border-radius.lg",
+      cssVar: "--storm-border-radius-lg",
+      type: "dimension",
+      category: "radius",
+      value: "0.5rem"
     },
     {
-      "path": "border-radius.md",
-      "cssVar": "--storm-border-radius-md",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.375rem"
+      path: "border-radius.md",
+      cssVar: "--storm-border-radius-md",
+      type: "dimension",
+      category: "radius",
+      value: "0.375rem"
     },
     {
-      "path": "border-radius.popover",
-      "cssVar": "--storm-border-radius-popover",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.375rem",
-      "alias": true
+      path: "border-radius.popover",
+      cssVar: "--storm-border-radius-popover",
+      type: "dimension",
+      category: "radius",
+      value: "0.375rem",
+      alias: true
     },
     {
-      "path": "border-radius.sheet",
-      "cssVar": "--storm-border-radius-sheet",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0rem",
-      "alias": true
+      path: "border-radius.sheet",
+      cssVar: "--storm-border-radius-sheet",
+      type: "dimension",
+      category: "radius",
+      value: "0rem",
+      alias: true
     },
     {
-      "path": "border-radius.sm",
-      "cssVar": "--storm-border-radius-sm",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.25rem"
+      path: "border-radius.sm",
+      cssVar: "--storm-border-radius-sm",
+      type: "dimension",
+      category: "radius",
+      value: "0.25rem"
     },
     {
-      "path": "border-radius.tab",
-      "cssVar": "--storm-border-radius-tab",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.25rem",
-      "alias": true
+      path: "border-radius.tab",
+      cssVar: "--storm-border-radius-tab",
+      type: "dimension",
+      category: "radius",
+      value: "0.25rem",
+      alias: true
     },
     {
-      "path": "border-radius.tabheader",
-      "cssVar": "--storm-border-radius-tabheader",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.375rem",
-      "alias": true
+      path: "border-radius.tabheader",
+      cssVar: "--storm-border-radius-tabheader",
+      type: "dimension",
+      category: "radius",
+      value: "0.375rem",
+      alias: true
     },
     {
-      "path": "border-radius.tag",
-      "cssVar": "--storm-border-radius-tag",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.25rem",
-      "alias": true
+      path: "border-radius.tag",
+      cssVar: "--storm-border-radius-tag",
+      type: "dimension",
+      category: "radius",
+      value: "0.25rem",
+      alias: true
     },
     {
-      "path": "border-radius.tooltip",
-      "cssVar": "--storm-border-radius-tooltip",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.375rem",
-      "alias": true
+      path: "border-radius.tooltip",
+      cssVar: "--storm-border-radius-tooltip",
+      type: "dimension",
+      category: "radius",
+      value: "0.375rem",
+      alias: true
     },
     {
-      "path": "border-radius.trigger",
-      "cssVar": "--storm-border-radius-trigger",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.375rem",
-      "alias": true
+      path: "border-radius.trigger",
+      cssVar: "--storm-border-radius-trigger",
+      type: "dimension",
+      category: "radius",
+      value: "0.375rem",
+      alias: true
     },
     {
-      "path": "border-radius.xl",
-      "cssVar": "--storm-border-radius-xl",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.75rem"
+      path: "border-radius.xl",
+      cssVar: "--storm-border-radius-xl",
+      type: "dimension",
+      category: "radius",
+      value: "0.75rem"
     },
     {
-      "path": "border-radius.xs",
-      "cssVar": "--storm-border-radius-xs",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0.125rem"
+      path: "border-radius.xs",
+      cssVar: "--storm-border-radius-xs",
+      type: "dimension",
+      category: "radius",
+      value: "0.125rem"
     },
     {
-      "path": "border-radius.zero",
-      "cssVar": "--storm-border-radius-zero",
-      "type": "dimension",
-      "category": "radius",
-      "value": "0rem"
+      path: "border-radius.zero",
+      cssVar: "--storm-border-radius-zero",
+      type: "dimension",
+      category: "radius",
+      value: "0rem"
     },
     {
-      "path": "color.backdrop",
-      "cssVar": "--storm-color-backdrop",
-      "type": "color",
-      "category": "color",
-      "value": "#1a1c1f66"
+      path: "color.base.link",
+      cssVar: "--storm-color-base-link",
+      type: "color",
+      category: "color",
+      value: "#0084d1"
     },
     {
-      "path": "color.base.link",
-      "cssVar": "--storm-color-base-link",
-      "type": "color",
-      "category": "color",
-      "value": "#0084d1"
+      path: "color.base.link-active",
+      cssVar: "--storm-color-base-link-active",
+      type: "color",
+      category: "color",
+      value: "#0057a0"
     },
     {
-      "path": "color.base.link-active",
-      "cssVar": "--storm-color-base-link-active",
-      "type": "color",
-      "category": "color",
-      "value": "#0057a0"
+      path: "color.base.link-disabled",
+      cssVar: "--storm-color-base-link-disabled",
+      type: "color",
+      category: "color",
+      value: "#3c5a72"
     },
     {
-      "path": "color.base.link-disabled",
-      "cssVar": "--storm-color-base-link-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#3c5a72"
+      path: "color.base.link-hovered",
+      cssVar: "--storm-color-base-link-hovered",
+      type: "color",
+      category: "color",
+      value: "#0057a0"
     },
     {
-      "path": "color.base.link-hovered",
-      "cssVar": "--storm-color-base-link-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#0057a0"
+      path: "color.base.link-inactive",
+      cssVar: "--storm-color-base-link-inactive",
+      type: "color",
+      category: "color",
+      value: "#40aaf9"
     },
     {
-      "path": "color.base.link-inactive",
-      "cssVar": "--storm-color-base-link-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#40aaf9"
+      path: "color.base.on-primary",
+      cssVar: "--storm-color-base-on-primary",
+      type: "color",
+      category: "color",
+      value: "#FAFAFA"
     },
     {
-      "path": "color.base.on-primary",
-      "cssVar": "--storm-color-base-on-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
+      path: "color.base.on-secondary",
+      cssVar: "--storm-color-base-on-secondary",
+      type: "color",
+      category: "color",
+      value: "#FAFAFA"
     },
     {
-      "path": "color.base.on-secondary",
-      "cssVar": "--storm-color-base-on-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
+      path: "color.base.primary",
+      cssVar: "--storm-color-base-primary",
+      type: "color",
+      category: "color",
+      value: "#1f1f21",
+      alias: true
     },
     {
-      "path": "color.base.primary",
-      "cssVar": "--storm-color-base-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#1f1f21",
-      "alias": true
+      path: "color.base.primary-active",
+      cssVar: "--storm-color-base-primary-active",
+      type: "color",
+      category: "color",
+      value: "#000000"
     },
     {
-      "path": "color.base.primary-active",
-      "cssVar": "--storm-color-base-primary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#000000"
+      path: "color.base.primary-disabled",
+      cssVar: "--storm-color-base-primary-disabled",
+      type: "color",
+      category: "color",
+      value: "#363639"
     },
     {
-      "path": "color.base.primary-disabled",
-      "cssVar": "--storm-color-base-primary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#363639"
+      path: "color.base.primary-hovered",
+      cssVar: "--storm-color-base-primary-hovered",
+      type: "color",
+      category: "color",
+      value: "#606062"
     },
     {
-      "path": "color.base.primary-hovered",
-      "cssVar": "--storm-color-base-primary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#606062"
+      path: "color.base.primary-inactive",
+      cssVar: "--storm-color-base-primary-inactive",
+      type: "color",
+      category: "color",
+      value: "#020102"
     },
     {
-      "path": "color.base.primary-inactive",
-      "cssVar": "--storm-color-base-primary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#020102"
+      path: "color.base.secondary",
+      cssVar: "--storm-color-base-secondary",
+      type: "color",
+      category: "color",
+      value: "#b0b0b1",
+      alias: true
     },
     {
-      "path": "color.base.secondary",
-      "cssVar": "--storm-color-base-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#b0b0b1",
-      "alias": true
+      path: "color.base.secondary-active",
+      cssVar: "--storm-color-base-secondary-active",
+      type: "color",
+      category: "color",
+      value: "#939394"
     },
     {
-      "path": "color.base.secondary-active",
-      "cssVar": "--storm-color-base-secondary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#939394"
+      path: "color.base.secondary-disabled",
+      cssVar: "--storm-color-base-secondary-disabled",
+      type: "color",
+      category: "color",
+      value: "#69696b"
     },
     {
-      "path": "color.base.secondary-disabled",
-      "cssVar": "--storm-color-base-secondary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#69696b"
+      path: "color.base.secondary-hovered",
+      cssVar: "--storm-color-base-secondary-hovered",
+      type: "color",
+      category: "color",
+      value: "#939394"
     },
     {
-      "path": "color.base.secondary-hovered",
-      "cssVar": "--storm-color-base-secondary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#939394"
+      path: "color.base.secondary-inactive",
+      cssVar: "--storm-color-base-secondary-inactive",
+      type: "color",
+      category: "color",
+      value: "#020102"
     },
     {
-      "path": "color.base.secondary-inactive",
-      "cssVar": "--storm-color-base-secondary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#020102"
+      path: "color.black",
+      cssVar: "--storm-color-black",
+      type: "color",
+      category: "color",
+      value: "#0c0c0d"
     },
     {
-      "path": "color.black",
-      "cssVar": "--storm-color-black",
-      "type": "color",
-      "category": "color",
-      "value": "#0c0c0d"
+      path: "color.blue.1",
+      cssVar: "--storm-color-blue-1",
+      type: "color",
+      category: "color",
+      value: "#abcaff"
     },
     {
-      "path": "color.blue.1",
-      "cssVar": "--storm-color-blue-1",
-      "type": "color",
-      "category": "color",
-      "value": "#abcaff"
+      path: "color.blue.2",
+      cssVar: "--storm-color-blue-2",
+      type: "color",
+      category: "color",
+      value: "#8cb6ff"
     },
     {
-      "path": "color.blue.2",
-      "cssVar": "--storm-color-blue-2",
-      "type": "color",
-      "category": "color",
-      "value": "#8cb6ff"
+      path: "color.blue.3",
+      cssVar: "--storm-color-blue-3",
+      type: "color",
+      category: "color",
+      value: "#6da2ff"
     },
     {
-      "path": "color.blue.3",
-      "cssVar": "--storm-color-blue-3",
-      "type": "color",
-      "category": "color",
-      "value": "#6da2ff"
+      path: "color.blue.4",
+      cssVar: "--storm-color-blue-4",
+      type: "color",
+      category: "color",
+      value: "#4d8eff"
     },
     {
-      "path": "color.blue.4",
-      "cssVar": "--storm-color-blue-4",
-      "type": "color",
-      "category": "color",
-      "value": "#4d8eff"
+      path: "color.blue.5",
+      cssVar: "--storm-color-blue-5",
+      type: "color",
+      category: "color",
+      value: "#2e7aff"
     },
     {
-      "path": "color.blue.5",
-      "cssVar": "--storm-color-blue-5",
-      "type": "color",
-      "category": "color",
-      "value": "#2e7aff"
+      path: "color.blue.6",
+      cssVar: "--storm-color-blue-6",
+      type: "color",
+      category: "color",
+      value: "#2768d9"
     },
     {
-      "path": "color.blue.6",
-      "cssVar": "--storm-color-blue-6",
-      "type": "color",
-      "category": "color",
-      "value": "#2768d9"
+      path: "color.blue.7",
+      cssVar: "--storm-color-blue-7",
+      type: "color",
+      category: "color",
+      value: "#2055b3"
     },
     {
-      "path": "color.blue.7",
-      "cssVar": "--storm-color-blue-7",
-      "type": "color",
-      "category": "color",
-      "value": "#2055b3"
+      path: "color.blue.8",
+      cssVar: "--storm-color-blue-8",
+      type: "color",
+      category: "color",
+      value: "#19438c"
     },
     {
-      "path": "color.blue.8",
-      "cssVar": "--storm-color-blue-8",
-      "type": "color",
-      "category": "color",
-      "value": "#19438c"
+      path: "color.blue.9",
+      cssVar: "--storm-color-blue-9",
+      type: "color",
+      category: "color",
+      value: "#123166"
     },
     {
-      "path": "color.blue.9",
-      "cssVar": "--storm-color-blue-9",
-      "type": "color",
-      "category": "color",
-      "value": "#123166"
+      path: "color.brand.link",
+      cssVar: "--storm-color-brand-link",
+      type: "color",
+      category: "color",
+      value: "#1fb2a6",
+      alias: true
     },
     {
-      "path": "color.brand.link",
-      "cssVar": "--storm-color-brand-link",
-      "type": "color",
-      "category": "color",
-      "value": "#1fb2a6",
-      "alias": true
+      path: "color.brand.link-active",
+      cssVar: "--storm-color-brand-link-active",
+      type: "color",
+      category: "color",
+      value: "#007c72"
     },
     {
-      "path": "color.brand.link-active",
-      "cssVar": "--storm-color-brand-link-active",
-      "type": "color",
-      "category": "color",
-      "value": "#007c72"
+      path: "color.brand.link-disabled",
+      cssVar: "--storm-color-brand-link-disabled",
+      type: "color",
+      category: "color",
+      value: "#436967"
     },
     {
-      "path": "color.brand.link-disabled",
-      "cssVar": "--storm-color-brand-link-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#436967"
+      path: "color.brand.link-hovered",
+      cssVar: "--storm-color-brand-link-hovered",
+      type: "color",
+      category: "color",
+      value: "#007c72"
     },
     {
-      "path": "color.brand.link-hovered",
-      "cssVar": "--storm-color-brand-link-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#007c72"
+      path: "color.brand.link-inactive",
+      cssVar: "--storm-color-brand-link-inactive",
+      type: "color",
+      category: "color",
+      value: "#5ddfd2"
     },
     {
-      "path": "color.brand.link-inactive",
-      "cssVar": "--storm-color-brand-link-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#5ddfd2"
+      path: "color.brand.on-primary",
+      cssVar: "--storm-color-brand-on-primary",
+      type: "color",
+      category: "color",
+      value: "#FAFAFA"
     },
     {
-      "path": "color.brand.on-primary",
-      "cssVar": "--storm-color-brand-on-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
+      path: "color.brand.on-secondary",
+      cssVar: "--storm-color-brand-on-secondary",
+      type: "color",
+      category: "color",
+      value: "#005a53"
     },
     {
-      "path": "color.brand.on-secondary",
-      "cssVar": "--storm-color-brand-on-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#005a53"
+      path: "color.brand.primary",
+      cssVar: "--storm-color-brand-primary",
+      type: "color",
+      category: "color",
+      value: "#1fb2a6"
     },
     {
-      "path": "color.brand.primary",
-      "cssVar": "--storm-color-brand-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#1fb2a6"
+      path: "color.brand.primary-active",
+      cssVar: "--storm-color-brand-primary-active",
+      type: "color",
+      category: "color",
+      value: "#007c72"
     },
     {
-      "path": "color.brand.primary-active",
-      "cssVar": "--storm-color-brand-primary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#007c72"
+      path: "color.brand.primary-disabled",
+      cssVar: "--storm-color-brand-primary-disabled",
+      type: "color",
+      category: "color",
+      value: "#436967"
     },
     {
-      "path": "color.brand.primary-disabled",
-      "cssVar": "--storm-color-brand-primary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#436967"
+      path: "color.brand.primary-hovered",
+      cssVar: "--storm-color-brand-primary-hovered",
+      type: "color",
+      category: "color",
+      value: "#007c72"
     },
     {
-      "path": "color.brand.primary-hovered",
-      "cssVar": "--storm-color-brand-primary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#007c72"
+      path: "color.brand.primary-inactive",
+      cssVar: "--storm-color-brand-primary-inactive",
+      type: "color",
+      category: "color",
+      value: "#5ddfd2"
     },
     {
-      "path": "color.brand.primary-inactive",
-      "cssVar": "--storm-color-brand-primary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#5ddfd2"
+      path: "color.brand.secondary",
+      cssVar: "--storm-color-brand-secondary",
+      type: "color",
+      category: "color",
+      value: "#d6fff9"
     },
     {
-      "path": "color.brand.secondary",
-      "cssVar": "--storm-color-brand-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#d6fff9"
+      path: "color.brand.secondary-active",
+      cssVar: "--storm-color-brand-secondary-active",
+      type: "color",
+      category: "color",
+      value: "#89b0ab"
     },
     {
-      "path": "color.brand.secondary-active",
-      "cssVar": "--storm-color-brand-secondary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#89b0ab"
+      path: "color.brand.secondary-disabled",
+      cssVar: "--storm-color-brand-secondary-disabled",
+      type: "color",
+      category: "color",
+      value: "#788484"
     },
     {
-      "path": "color.brand.secondary-disabled",
-      "cssVar": "--storm-color-brand-secondary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#788484"
+      path: "color.brand.secondary-hovered",
+      cssVar: "--storm-color-brand-secondary-hovered",
+      type: "color",
+      category: "color",
+      value: "#89b0ab"
     },
     {
-      "path": "color.brand.secondary-hovered",
-      "cssVar": "--storm-color-brand-secondary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#89b0ab"
+      path: "color.brand.secondary-inactive",
+      cssVar: "--storm-color-brand-secondary-inactive",
+      type: "color",
+      category: "color",
+      value: "#e0ffff"
     },
     {
-      "path": "color.brand.secondary-inactive",
-      "cssVar": "--storm-color-brand-secondary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#e0ffff"
+      path: "color.canvas",
+      cssVar: "--storm-color-canvas",
+      type: "color",
+      category: "color",
+      value: "#eaeaea",
+      alias: true
     },
     {
-      "path": "color.canvas",
-      "cssVar": "--storm-color-canvas",
-      "type": "color",
-      "category": "color",
-      "value": "#eaeaea",
-      "alias": true
+      path: "color.canvas-active",
+      cssVar: "--storm-color-canvas-active",
+      type: "color",
+      category: "color",
+      value: "#bcbcbc"
     },
     {
-      "path": "color.canvas-active",
-      "cssVar": "--storm-color-canvas-active",
-      "type": "color",
-      "category": "color",
-      "value": "#bcbcbc"
+      path: "color.canvas-disabled",
+      cssVar: "--storm-color-canvas-disabled",
+      type: "color",
+      category: "color",
+      value: "#b4b4b5"
     },
     {
-      "path": "color.canvas-disabled",
-      "cssVar": "--storm-color-canvas-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#b4b4b5"
+      path: "color.canvas-hovered",
+      cssVar: "--storm-color-canvas-hovered",
+      type: "color",
+      category: "color",
+      value: "#cbcbcb"
     },
     {
-      "path": "color.canvas-hovered",
-      "cssVar": "--storm-color-canvas-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#cbcbcb"
+      path: "color.canvas-inactive",
+      cssVar: "--storm-color-canvas-inactive",
+      type: "color",
+      category: "color",
+      value: "#ffffff"
     },
     {
-      "path": "color.canvas-inactive",
-      "cssVar": "--storm-color-canvas-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
+      path: "color.danger.link",
+      cssVar: "--storm-color-danger-link",
+      type: "color",
+      category: "color",
+      value: "#8e223e",
+      alias: true
     },
     {
-      "path": "color.danger.link",
-      "cssVar": "--storm-color-danger-link",
-      "type": "color",
-      "category": "color",
-      "value": "#8e223e",
-      "alias": true
+      path: "color.danger.link-active",
+      cssVar: "--storm-color-danger-link-active",
+      type: "color",
+      category: "color",
+      value: "#6a0022"
     },
     {
-      "path": "color.danger.link-active",
-      "cssVar": "--storm-color-danger-link-active",
-      "type": "color",
-      "category": "color",
-      "value": "#6a0022"
+      path: "color.danger.link-disabled",
+      cssVar: "--storm-color-danger-link-disabled",
+      type: "color",
+      category: "color",
+      value: "#5a3c44"
     },
     {
-      "path": "color.danger.link-disabled",
-      "cssVar": "--storm-color-danger-link-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#5a3c44"
+      path: "color.danger.link-hovered",
+      cssVar: "--storm-color-danger-link-hovered",
+      type: "color",
+      category: "color",
+      value: "#6a0022"
     },
     {
-      "path": "color.danger.link-hovered",
-      "cssVar": "--storm-color-danger-link-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#6a0022"
+      path: "color.danger.link-inactive",
+      cssVar: "--storm-color-danger-link-inactive",
+      type: "color",
+      category: "color",
+      value: "#ab3e56"
     },
     {
-      "path": "color.danger.link-inactive",
-      "cssVar": "--storm-color-danger-link-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ab3e56"
+      path: "color.danger.on-primary",
+      cssVar: "--storm-color-danger-on-primary",
+      type: "color",
+      category: "color",
+      value: "#FAFAFA"
     },
     {
-      "path": "color.danger.on-primary",
-      "cssVar": "--storm-color-danger-on-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
+      path: "color.danger.on-secondary",
+      cssVar: "--storm-color-danger-on-secondary",
+      type: "color",
+      category: "color",
+      value: "#200006"
     },
     {
-      "path": "color.danger.on-secondary",
-      "cssVar": "--storm-color-danger-on-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#200006"
+      path: "color.danger.outline",
+      cssVar: "--storm-color-danger-outline",
+      type: "color",
+      category: "color",
+      value: "#8e223e",
+      alias: true
     },
     {
-      "path": "color.danger.primary",
-      "cssVar": "--storm-color-danger-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#8e223e",
-      "alias": true
+      path: "color.danger.outline-active",
+      cssVar: "--storm-color-danger-outline-active",
+      type: "color",
+      category: "color",
+      value: "#550013"
     },
     {
-      "path": "color.danger.primary-active",
-      "cssVar": "--storm-color-danger-primary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#6a0022"
+      path: "color.danger.outline-disabled",
+      cssVar: "--storm-color-danger-outline-disabled",
+      type: "color",
+      category: "color",
+      value: "#5a3c44"
     },
     {
-      "path": "color.danger.primary-disabled",
-      "cssVar": "--storm-color-danger-primary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#5a3c44"
+      path: "color.danger.outline-hovered",
+      cssVar: "--storm-color-danger-outline-hovered",
+      type: "color",
+      category: "color",
+      value: "#550013"
     },
     {
-      "path": "color.danger.primary-hovered",
-      "cssVar": "--storm-color-danger-primary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#6a0022"
+      path: "color.danger.outline-inactive",
+      cssVar: "--storm-color-danger-outline-inactive",
+      type: "color",
+      category: "color",
+      value: "#ab3e56"
     },
     {
-      "path": "color.danger.primary-inactive",
-      "cssVar": "--storm-color-danger-primary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ab3e56"
+      path: "color.danger.primary",
+      cssVar: "--storm-color-danger-primary",
+      type: "color",
+      category: "color",
+      value: "#8e223e",
+      alias: true
     },
     {
-      "path": "color.danger.secondary",
-      "cssVar": "--storm-color-danger-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#f17d91"
+      path: "color.danger.primary-active",
+      cssVar: "--storm-color-danger-primary-active",
+      type: "color",
+      category: "color",
+      value: "#6a0022"
     },
     {
-      "path": "color.danger.secondary-active",
-      "cssVar": "--storm-color-danger-secondary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#b2455c"
+      path: "color.danger.primary-disabled",
+      cssVar: "--storm-color-danger-primary-disabled",
+      type: "color",
+      category: "color",
+      value: "#5a3c44"
     },
     {
-      "path": "color.danger.secondary-disabled",
-      "cssVar": "--storm-color-danger-secondary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#7c5a61"
+      path: "color.danger.primary-hovered",
+      cssVar: "--storm-color-danger-primary-hovered",
+      type: "color",
+      category: "color",
+      value: "#6a0022"
     },
     {
-      "path": "color.danger.secondary-hovered",
-      "cssVar": "--storm-color-danger-secondary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#b2455c"
+      path: "color.danger.primary-inactive",
+      cssVar: "--storm-color-danger-primary-inactive",
+      type: "color",
+      category: "color",
+      value: "#ab3e56"
     },
     {
-      "path": "color.danger.secondary-inactive",
-      "cssVar": "--storm-color-danger-secondary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffabbe"
+      path: "color.danger.secondary",
+      cssVar: "--storm-color-danger-secondary",
+      type: "color",
+      category: "color",
+      value: "#f17d91"
     },
     {
-      "path": "color.data.blue.emphasis",
-      "cssVar": "--storm-color-data-blue-emphasis",
-      "type": "color",
-      "category": "color",
-      "value": "#2055b3",
-      "alias": true
+      path: "color.danger.secondary-active",
+      cssVar: "--storm-color-danger-secondary-active",
+      type: "color",
+      category: "color",
+      value: "#b2455c"
     },
     {
-      "path": "color.data.blue.subtle",
-      "cssVar": "--storm-color-data-blue-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#6da2ff",
-      "alias": true
+      path: "color.danger.secondary-disabled",
+      cssVar: "--storm-color-danger-secondary-disabled",
+      type: "color",
+      category: "color",
+      value: "#7c5a61"
     },
     {
-      "path": "color.data.green.emphasis",
-      "cssVar": "--storm-color-data-green-emphasis",
-      "type": "color",
-      "category": "color",
-      "value": "#216b53",
-      "alias": true
+      path: "color.danger.secondary-hovered",
+      cssVar: "--storm-color-danger-secondary-hovered",
+      type: "color",
+      category: "color",
+      value: "#b2455c"
     },
     {
-      "path": "color.data.green.subtle",
-      "cssVar": "--storm-color-data-green-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#74d59f",
-      "alias": true
+      path: "color.danger.secondary-inactive",
+      cssVar: "--storm-color-danger-secondary-inactive",
+      type: "color",
+      category: "color",
+      value: "#ffabbe"
     },
     {
-      "path": "color.data.neutral.emphasis",
-      "cssVar": "--storm-color-data-neutral-emphasis",
-      "type": "color",
-      "category": "color",
-      "value": "#555659",
-      "alias": true
+      path: "color.data.blue.emphasis",
+      cssVar: "--storm-color-data-blue-emphasis",
+      type: "color",
+      category: "color",
+      value: "#2055b3",
+      alias: true
     },
     {
-      "path": "color.data.neutral.subtle",
-      "cssVar": "--storm-color-data-neutral-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#eaeaea",
-      "alias": true
+      path: "color.data.blue.subtle",
+      cssVar: "--storm-color-data-blue-subtle",
+      type: "color",
+      category: "color",
+      value: "#6da2ff",
+      alias: true
     },
     {
-      "path": "color.data.orange.emphasis",
-      "cssVar": "--storm-color-data-orange-emphasis",
-      "type": "color",
-      "category": "color",
-      "value": "#9f4000",
-      "alias": true
+      path: "color.data.green.emphasis",
+      cssVar: "--storm-color-data-green-emphasis",
+      type: "color",
+      category: "color",
+      value: "#216b53",
+      alias: true
     },
     {
-      "path": "color.data.orange.subtle",
-      "cssVar": "--storm-color-data-orange-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#f19f71",
-      "alias": true
+      path: "color.data.green.subtle",
+      cssVar: "--storm-color-data-green-subtle",
+      type: "color",
+      category: "color",
+      value: "#74d59f",
+      alias: true
     },
     {
-      "path": "color.data.pink.emphasis",
-      "cssVar": "--storm-color-data-pink-emphasis",
-      "type": "color",
-      "category": "color",
-      "value": "#904272",
-      "alias": true
+      path: "color.data.neutral.emphasis",
+      cssVar: "--storm-color-data-neutral-emphasis",
+      type: "color",
+      category: "color",
+      value: "#555659",
+      alias: true
     },
     {
-      "path": "color.data.pink.subtle",
-      "cssVar": "--storm-color-data-pink-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#eb89c5",
-      "alias": true
+      path: "color.data.neutral.subtle",
+      cssVar: "--storm-color-data-neutral-subtle",
+      type: "color",
+      category: "color",
+      value: "#eaeaea",
+      alias: true
     },
     {
-      "path": "color.data.purple.emphasis",
-      "cssVar": "--storm-color-data-purple-emphasis",
-      "type": "color",
-      "category": "color",
-      "value": "#594395",
-      "alias": true
+      path: "color.data.orange.emphasis",
+      cssVar: "--storm-color-data-orange-emphasis",
+      type: "color",
+      category: "color",
+      value: "#9f4000",
+      alias: true
     },
     {
-      "path": "color.data.purple.subtle",
-      "cssVar": "--storm-color-data-purple-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#a690e1",
-      "alias": true
+      path: "color.data.orange.subtle",
+      cssVar: "--storm-color-data-orange-subtle",
+      type: "color",
+      category: "color",
+      value: "#f19f71",
+      alias: true
     },
     {
-      "path": "color.data.red.emphasis",
-      "cssVar": "--storm-color-data-red-emphasis",
-      "type": "color",
-      "category": "color",
-      "value": "#8e223e",
-      "alias": true
+      path: "color.data.pink.emphasis",
+      cssVar: "--storm-color-data-pink-emphasis",
+      type: "color",
+      category: "color",
+      value: "#904272",
+      alias: true
     },
     {
-      "path": "color.data.red.subtle",
-      "cssVar": "--storm-color-data-red-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#dd6c89",
-      "alias": true
+      path: "color.data.pink.subtle",
+      cssVar: "--storm-color-data-pink-subtle",
+      type: "color",
+      category: "color",
+      value: "#eb89c5",
+      alias: true
     },
     {
-      "path": "color.data.yellow.emphasis",
-      "cssVar": "--storm-color-data-yellow-emphasis",
-      "type": "color",
-      "category": "color",
-      "value": "#765417",
-      "alias": true
+      path: "color.data.purple.emphasis",
+      cssVar: "--storm-color-data-purple-emphasis",
+      type: "color",
+      category: "color",
+      value: "#594395",
+      alias: true
     },
     {
-      "path": "color.data.yellow.subtle",
-      "cssVar": "--storm-color-data-yellow-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#f8b740",
-      "alias": true
+      path: "color.data.purple.subtle",
+      cssVar: "--storm-color-data-purple-subtle",
+      type: "color",
+      category: "color",
+      value: "#a690e1",
+      alias: true
     },
     {
-      "path": "color.discovery.link",
-      "cssVar": "--storm-color-discovery-link",
-      "type": "color",
-      "category": "color",
-      "value": "#594395",
-      "alias": true
+      path: "color.data.red.emphasis",
+      cssVar: "--storm-color-data-red-emphasis",
+      type: "color",
+      category: "color",
+      value: "#8e223e",
+      alias: true
     },
     {
-      "path": "color.discovery.link-active",
-      "cssVar": "--storm-color-discovery-link-active",
-      "type": "color",
-      "category": "color",
-      "value": "#3c2372"
+      path: "color.data.red.subtle",
+      cssVar: "--storm-color-data-red-subtle",
+      type: "color",
+      category: "color",
+      value: "#dd6c89",
+      alias: true
     },
     {
-      "path": "color.discovery.link-disabled",
-      "cssVar": "--storm-color-discovery-link-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#4a445f"
+      path: "color.data.yellow.emphasis",
+      cssVar: "--storm-color-data-yellow-emphasis",
+      type: "color",
+      category: "color",
+      value: "#765417",
+      alias: true
     },
     {
-      "path": "color.discovery.link-hovered",
-      "cssVar": "--storm-color-discovery-link-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#3c2372"
+      path: "color.data.yellow.subtle",
+      cssVar: "--storm-color-data-yellow-subtle",
+      type: "color",
+      category: "color",
+      value: "#f8b740",
+      alias: true
     },
     {
-      "path": "color.discovery.link-inactive",
-      "cssVar": "--storm-color-discovery-link-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#725db2"
+      path: "color.discovery.link",
+      cssVar: "--storm-color-discovery-link",
+      type: "color",
+      category: "color",
+      value: "#594395",
+      alias: true
     },
     {
-      "path": "color.discovery.on-primary",
-      "cssVar": "--storm-color-discovery-on-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
+      path: "color.discovery.link-active",
+      cssVar: "--storm-color-discovery-link-active",
+      type: "color",
+      category: "color",
+      value: "#3c2372"
     },
     {
-      "path": "color.discovery.on-secondary",
-      "cssVar": "--storm-color-discovery-on-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
+      path: "color.discovery.link-disabled",
+      cssVar: "--storm-color-discovery-link-disabled",
+      type: "color",
+      category: "color",
+      value: "#4a445f"
     },
     {
-      "path": "color.discovery.primary",
-      "cssVar": "--storm-color-discovery-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#594395",
-      "alias": true
+      path: "color.discovery.link-hovered",
+      cssVar: "--storm-color-discovery-link-hovered",
+      type: "color",
+      category: "color",
+      value: "#3c2372"
     },
     {
-      "path": "color.discovery.primary-active",
-      "cssVar": "--storm-color-discovery-primary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#3c2372"
+      path: "color.discovery.link-inactive",
+      cssVar: "--storm-color-discovery-link-inactive",
+      type: "color",
+      category: "color",
+      value: "#725db2"
     },
     {
-      "path": "color.discovery.primary-disabled",
-      "cssVar": "--storm-color-discovery-primary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#4a445f"
+      path: "color.discovery.on-primary",
+      cssVar: "--storm-color-discovery-on-primary",
+      type: "color",
+      category: "color",
+      value: "#FAFAFA"
     },
     {
-      "path": "color.discovery.primary-hovered",
-      "cssVar": "--storm-color-discovery-primary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#3c2372"
+      path: "color.discovery.on-secondary",
+      cssVar: "--storm-color-discovery-on-secondary",
+      type: "color",
+      category: "color",
+      value: "#FAFAFA"
     },
     {
-      "path": "color.discovery.primary-inactive",
-      "cssVar": "--storm-color-discovery-primary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#725db2"
+      path: "color.discovery.outline",
+      cssVar: "--storm-color-discovery-outline",
+      type: "color",
+      category: "color",
+      value: "#594395",
+      alias: true
     },
     {
-      "path": "color.discovery.secondary",
-      "cssVar": "--storm-color-discovery-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#a690e1",
-      "alias": true
+      path: "color.discovery.outline-active",
+      cssVar: "--storm-color-discovery-outline-active",
+      type: "color",
+      category: "color",
+      value: "#2c0d5e"
     },
     {
-      "path": "color.discovery.secondary-active",
-      "cssVar": "--storm-color-discovery-secondary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#725ba7"
+      path: "color.discovery.outline-disabled",
+      cssVar: "--storm-color-discovery-outline-disabled",
+      type: "color",
+      category: "color",
+      value: "#4a445f"
     },
     {
-      "path": "color.discovery.secondary-disabled",
-      "cssVar": "--storm-color-discovery-secondary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#655f79"
+      path: "color.discovery.outline-hovered",
+      cssVar: "--storm-color-discovery-outline-hovered",
+      type: "color",
+      category: "color",
+      value: "#2c0d5e"
     },
     {
-      "path": "color.discovery.secondary-hovered",
-      "cssVar": "--storm-color-discovery-secondary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#725ba7"
+      path: "color.discovery.outline-inactive",
+      cssVar: "--storm-color-discovery-outline-inactive",
+      type: "color",
+      category: "color",
+      value: "#725db2"
     },
     {
-      "path": "color.discovery.secondary-inactive",
-      "cssVar": "--storm-color-discovery-secondary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#d2bcff"
+      path: "color.discovery.primary",
+      cssVar: "--storm-color-discovery-primary",
+      type: "color",
+      category: "color",
+      value: "#594395",
+      alias: true
     },
     {
-      "path": "color.elevated",
-      "cssVar": "--storm-color-elevated",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa",
-      "alias": true
+      path: "color.discovery.primary-active",
+      cssVar: "--storm-color-discovery-primary-active",
+      type: "color",
+      category: "color",
+      value: "#3c2372"
     },
     {
-      "path": "color.elevated-active",
-      "cssVar": "--storm-color-elevated-active",
-      "type": "color",
-      "category": "color",
-      "value": "#c9c9c9"
+      path: "color.discovery.primary-disabled",
+      cssVar: "--storm-color-discovery-primary-disabled",
+      type: "color",
+      category: "color",
+      value: "#4a445f"
     },
     {
-      "path": "color.elevated-disabled",
-      "cssVar": "--storm-color-elevated-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#bfbfc0"
+      path: "color.discovery.primary-hovered",
+      cssVar: "--storm-color-discovery-primary-hovered",
+      type: "color",
+      category: "color",
+      value: "#3c2372"
     },
     {
-      "path": "color.elevated-hovered",
-      "cssVar": "--storm-color-elevated-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#d9d9d9"
+      path: "color.discovery.primary-inactive",
+      cssVar: "--storm-color-discovery-primary-inactive",
+      type: "color",
+      category: "color",
+      value: "#725db2"
     },
     {
-      "path": "color.elevated-inactive",
-      "cssVar": "--storm-color-elevated-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
+      path: "color.discovery.secondary",
+      cssVar: "--storm-color-discovery-secondary",
+      type: "color",
+      category: "color",
+      value: "#a690e1",
+      alias: true
     },
     {
-      "path": "color.emphasis",
-      "cssVar": "--storm-color-emphasis",
-      "type": "color",
-      "category": "color",
-      "value": "#242528",
-      "alias": true
+      path: "color.discovery.secondary-active",
+      cssVar: "--storm-color-discovery-secondary-active",
+      type: "color",
+      category: "color",
+      value: "#725ba7"
     },
     {
-      "path": "color.emphasis-active",
-      "cssVar": "--storm-color-emphasis-active",
-      "type": "color",
-      "category": "color",
-      "value": "#000000"
+      path: "color.discovery.secondary-disabled",
+      cssVar: "--storm-color-discovery-secondary-disabled",
+      type: "color",
+      category: "color",
+      value: "#655f79"
     },
     {
-      "path": "color.emphasis-disabled",
-      "cssVar": "--storm-color-emphasis-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#38393c"
+      path: "color.discovery.secondary-hovered",
+      cssVar: "--storm-color-discovery-secondary-hovered",
+      type: "color",
+      category: "color",
+      value: "#725ba7"
     },
     {
-      "path": "color.emphasis-hovered",
-      "cssVar": "--storm-color-emphasis-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#424346"
+      path: "color.discovery.secondary-inactive",
+      cssVar: "--storm-color-discovery-secondary-inactive",
+      type: "color",
+      category: "color",
+      value: "#d2bcff"
     },
     {
-      "path": "color.emphasis-inactive",
-      "cssVar": "--storm-color-emphasis-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#020102"
+      path: "color.elevated",
+      cssVar: "--storm-color-elevated",
+      type: "color",
+      category: "color",
+      value: "#fafafa",
+      alias: true
     },
     {
-      "path": "color.floating",
-      "cssVar": "--storm-color-floating",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff",
-      "alias": true
+      path: "color.elevated-active",
+      cssVar: "--storm-color-elevated-active",
+      type: "color",
+      category: "color",
+      value: "#c9c9c9"
     },
     {
-      "path": "color.floating-active",
-      "cssVar": "--storm-color-floating-active",
-      "type": "color",
-      "category": "color",
-      "value": "#cecece"
+      path: "color.elevated-disabled",
+      cssVar: "--storm-color-elevated-disabled",
+      type: "color",
+      category: "color",
+      value: "#bfbfc0"
     },
     {
-      "path": "color.floating-disabled",
-      "cssVar": "--storm-color-floating-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#c2c2c3"
+      path: "color.elevated-hovered",
+      cssVar: "--storm-color-elevated-hovered",
+      type: "color",
+      category: "color",
+      value: "#d9d9d9"
     },
     {
-      "path": "color.floating-hovered",
-      "cssVar": "--storm-color-floating-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#dedede"
+      path: "color.elevated-inactive",
+      cssVar: "--storm-color-elevated-inactive",
+      type: "color",
+      category: "color",
+      value: "#ffffff"
     },
     {
-      "path": "color.floating-inactive",
-      "cssVar": "--storm-color-floating-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
+      path: "color.emphasis",
+      cssVar: "--storm-color-emphasis",
+      type: "color",
+      category: "color",
+      value: "#242528",
+      alias: true
     },
     {
-      "path": "color.green.1",
-      "cssVar": "--storm-color-green-1",
-      "type": "color",
-      "category": "color",
-      "value": "#d1f1d6"
+      path: "color.emphasis-active",
+      cssVar: "--storm-color-emphasis-active",
+      type: "color",
+      category: "color",
+      value: "#000000"
     },
     {
-      "path": "color.green.2",
-      "cssVar": "--storm-color-green-2",
-      "type": "color",
-      "category": "color",
-      "value": "#a2e3b6"
+      path: "color.emphasis-disabled",
+      cssVar: "--storm-color-emphasis-disabled",
+      type: "color",
+      category: "color",
+      value: "#38393c"
     },
     {
-      "path": "color.green.3",
-      "cssVar": "--storm-color-green-3",
-      "type": "color",
-      "category": "color",
-      "value": "#74d59f"
+      path: "color.emphasis-hovered",
+      cssVar: "--storm-color-emphasis-hovered",
+      type: "color",
+      category: "color",
+      value: "#343539"
     },
     {
-      "path": "color.green.4",
-      "cssVar": "--storm-color-green-4",
-      "type": "color",
-      "category": "color",
-      "value": "#45c791"
+      path: "color.emphasis-inactive",
+      cssVar: "--storm-color-emphasis-inactive",
+      type: "color",
+      category: "color",
+      value: "#020102"
     },
     {
-      "path": "color.green.5",
-      "cssVar": "--storm-color-green-5",
-      "type": "color",
-      "category": "color",
-      "value": "#38a97e"
+      path: "color.floating",
+      cssVar: "--storm-color-floating",
+      type: "color",
+      category: "color",
+      value: "#ffffff",
+      alias: true
     },
     {
-      "path": "color.green.6",
-      "cssVar": "--storm-color-green-6",
-      "type": "color",
-      "category": "color",
-      "value": "#2c8a69"
+      path: "color.floating-active",
+      cssVar: "--storm-color-floating-active",
+      type: "color",
+      category: "color",
+      value: "#cecece"
     },
     {
-      "path": "color.green.7",
-      "cssVar": "--storm-color-green-7",
-      "type": "color",
-      "category": "color",
-      "value": "#216b53"
+      path: "color.floating-disabled",
+      cssVar: "--storm-color-floating-disabled",
+      type: "color",
+      category: "color",
+      value: "#c2c2c3"
     },
     {
-      "path": "color.green.8",
-      "cssVar": "--storm-color-green-8",
-      "type": "color",
-      "category": "color",
-      "value": "#164a3c"
+      path: "color.floating-hovered",
+      cssVar: "--storm-color-floating-hovered",
+      type: "color",
+      category: "color",
+      value: "#dedede"
     },
     {
-      "path": "color.green.9",
-      "cssVar": "--storm-color-green-9",
-      "type": "color",
-      "category": "color",
-      "value": "#0c2a22"
+      path: "color.floating-inactive",
+      cssVar: "--storm-color-floating-inactive",
+      type: "color",
+      category: "color",
+      value: "#ffffff"
     },
     {
-      "path": "color.hairline",
-      "cssVar": "--storm-color-hairline",
-      "type": "color",
-      "category": "color",
-      "value": "#d0d0d1",
-      "alias": true
+      path: "color.green.1",
+      cssVar: "--storm-color-green-1",
+      type: "color",
+      category: "color",
+      value: "#d1f1d6"
     },
     {
-      "path": "color.info.link",
-      "cssVar": "--storm-color-info-link",
-      "type": "color",
-      "category": "color",
-      "value": "#2055b3",
-      "alias": true
+      path: "color.green.2",
+      cssVar: "--storm-color-green-2",
+      type: "color",
+      category: "color",
+      value: "#a2e3b6"
     },
     {
-      "path": "color.info.link-active",
-      "cssVar": "--storm-color-info-link-active",
-      "type": "color",
-      "category": "color",
-      "value": "#00318d"
+      path: "color.green.3",
+      cssVar: "--storm-color-green-3",
+      type: "color",
+      category: "color",
+      value: "#74d59f"
     },
     {
-      "path": "color.info.link-disabled",
-      "cssVar": "--storm-color-info-link-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#3b4a68"
+      path: "color.green.4",
+      cssVar: "--storm-color-green-4",
+      type: "color",
+      category: "color",
+      value: "#45c791"
     },
     {
-      "path": "color.info.link-hovered",
-      "cssVar": "--storm-color-info-link-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#00318d"
+      path: "color.green.5",
+      cssVar: "--storm-color-green-5",
+      type: "color",
+      category: "color",
+      value: "#38a97e"
     },
     {
-      "path": "color.info.link-inactive",
-      "cssVar": "--storm-color-info-link-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#3b72d3"
+      path: "color.green.6",
+      cssVar: "--storm-color-green-6",
+      type: "color",
+      category: "color",
+      value: "#2c8a69"
     },
     {
-      "path": "color.info.on-primary",
-      "cssVar": "--storm-color-info-on-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
+      path: "color.green.7",
+      cssVar: "--storm-color-green-7",
+      type: "color",
+      category: "color",
+      value: "#216b53"
     },
     {
-      "path": "color.info.on-secondary",
-      "cssVar": "--storm-color-info-on-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
+      path: "color.green.8",
+      cssVar: "--storm-color-green-8",
+      type: "color",
+      category: "color",
+      value: "#164a3c"
     },
     {
-      "path": "color.info.primary",
-      "cssVar": "--storm-color-info-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#2055b3",
-      "alias": true
+      path: "color.green.9",
+      cssVar: "--storm-color-green-9",
+      type: "color",
+      category: "color",
+      value: "#0c2a22"
     },
     {
-      "path": "color.info.primary-active",
-      "cssVar": "--storm-color-info-primary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#00318d"
+      path: "color.hairline",
+      cssVar: "--storm-color-hairline",
+      type: "color",
+      category: "color",
+      value: "#d0d0d1",
+      alias: true
     },
     {
-      "path": "color.info.primary-disabled",
-      "cssVar": "--storm-color-info-primary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#3b4a68"
+      path: "color.info.link",
+      cssVar: "--storm-color-info-link",
+      type: "color",
+      category: "color",
+      value: "#2055b3",
+      alias: true
     },
     {
-      "path": "color.info.primary-hovered",
-      "cssVar": "--storm-color-info-primary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#00318d"
+      path: "color.info.link-active",
+      cssVar: "--storm-color-info-link-active",
+      type: "color",
+      category: "color",
+      value: "#00318d"
     },
     {
-      "path": "color.info.primary-inactive",
-      "cssVar": "--storm-color-info-primary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#3b72d3"
+      path: "color.info.link-disabled",
+      cssVar: "--storm-color-info-link-disabled",
+      type: "color",
+      category: "color",
+      value: "#3b4a68"
     },
     {
-      "path": "color.info.secondary",
-      "cssVar": "--storm-color-info-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#6da2ff",
-      "alias": true
+      path: "color.info.link-hovered",
+      cssVar: "--storm-color-info-link-hovered",
+      type: "color",
+      category: "color",
+      value: "#00318d"
     },
     {
-      "path": "color.info.secondary-active",
-      "cssVar": "--storm-color-info-secondary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#396ac2"
+      path: "color.info.link-inactive",
+      cssVar: "--storm-color-info-link-inactive",
+      type: "color",
+      category: "color",
+      value: "#3b72d3"
     },
     {
-      "path": "color.info.secondary-disabled",
-      "cssVar": "--storm-color-info-secondary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#556582"
+      path: "color.info.on-primary",
+      cssVar: "--storm-color-info-on-primary",
+      type: "color",
+      category: "color",
+      value: "#FAFAFA"
     },
     {
-      "path": "color.info.secondary-hovered",
-      "cssVar": "--storm-color-info-secondary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#396ac2"
+      path: "color.info.on-secondary",
+      cssVar: "--storm-color-info-on-secondary",
+      type: "color",
+      category: "color",
+      value: "#FAFAFA"
     },
     {
-      "path": "color.info.secondary-inactive",
-      "cssVar": "--storm-color-info-secondary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#99d1ff"
+      path: "color.info.outline",
+      cssVar: "--storm-color-info-outline",
+      type: "color",
+      category: "color",
+      value: "#2055b3",
+      alias: true
     },
     {
-      "path": "color.ink",
-      "cssVar": "--storm-color-ink",
-      "type": "color",
-      "category": "color",
-      "value": "#555659",
-      "alias": true
+      path: "color.info.outline-active",
+      cssVar: "--storm-color-info-outline-active",
+      type: "color",
+      category: "color",
+      value: "#001a76"
     },
     {
-      "path": "color.ink-active",
-      "cssVar": "--storm-color-ink-active",
-      "type": "color",
-      "category": "color",
-      "value": "#0c0c0d"
+      path: "color.info.outline-disabled",
+      cssVar: "--storm-color-info-outline-disabled",
+      type: "color",
+      category: "color",
+      value: "#3b4a68"
     },
     {
-      "path": "color.ink-disabled",
-      "cssVar": "--storm-color-ink-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#494a4d"
+      path: "color.info.outline-hovered",
+      cssVar: "--storm-color-info-outline-hovered",
+      type: "color",
+      category: "color",
+      value: "#001a76"
     },
     {
-      "path": "color.ink-hovered",
-      "cssVar": "--storm-color-ink-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#202124"
+      path: "color.info.outline-inactive",
+      cssVar: "--storm-color-info-outline-inactive",
+      type: "color",
+      category: "color",
+      value: "#3b72d3"
     },
     {
-      "path": "color.ink-inactive",
-      "cssVar": "--storm-color-ink-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#020102"
+      path: "color.info.primary",
+      cssVar: "--storm-color-info-primary",
+      type: "color",
+      category: "color",
+      value: "#2055b3",
+      alias: true
     },
     {
-      "path": "color.neutral.1",
-      "cssVar": "--storm-color-neutral-1",
-      "type": "color",
-      "category": "color",
-      "value": "#fafafa"
+      path: "color.info.primary-active",
+      cssVar: "--storm-color-info-primary-active",
+      type: "color",
+      category: "color",
+      value: "#00318d"
     },
     {
-      "path": "color.neutral.2",
-      "cssVar": "--storm-color-neutral-2",
-      "type": "color",
-      "category": "color",
-      "value": "#f1f1f1"
+      path: "color.info.primary-disabled",
+      cssVar: "--storm-color-info-primary-disabled",
+      type: "color",
+      category: "color",
+      value: "#3b4a68"
     },
     {
-      "path": "color.neutral.3",
-      "cssVar": "--storm-color-neutral-3",
-      "type": "color",
-      "category": "color",
-      "value": "#eaeaea"
+      path: "color.info.primary-hovered",
+      cssVar: "--storm-color-info-primary-hovered",
+      type: "color",
+      category: "color",
+      value: "#00318d"
     },
     {
-      "path": "color.neutral.4",
-      "cssVar": "--storm-color-neutral-4",
-      "type": "color",
-      "category": "color",
-      "value": "#e1e1e1"
+      path: "color.info.primary-inactive",
+      cssVar: "--storm-color-info-primary-inactive",
+      type: "color",
+      category: "color",
+      value: "#3b72d3"
     },
     {
-      "path": "color.neutral.5",
-      "cssVar": "--storm-color-neutral-5",
-      "type": "color",
-      "category": "color",
-      "value": "#d0d0d1"
+      path: "color.info.secondary",
+      cssVar: "--storm-color-info-secondary",
+      type: "color",
+      category: "color",
+      value: "#6da2ff",
+      alias: true
     },
     {
-      "path": "color.neutral.6",
-      "cssVar": "--storm-color-neutral-6",
-      "type": "color",
-      "category": "color",
-      "value": "#c0c0c1"
+      path: "color.info.secondary-active",
+      cssVar: "--storm-color-info-secondary-active",
+      type: "color",
+      category: "color",
+      value: "#396ac2"
     },
     {
-      "path": "color.neutral.7",
-      "cssVar": "--storm-color-neutral-7",
-      "type": "color",
-      "category": "color",
-      "value": "#b0b0b1"
+      path: "color.info.secondary-disabled",
+      cssVar: "--storm-color-info-secondary-disabled",
+      type: "color",
+      category: "color",
+      value: "#556582"
     },
     {
-      "path": "color.neutral.8",
-      "cssVar": "--storm-color-neutral-8",
-      "type": "color",
-      "category": "color",
-      "value": "#959698"
+      path: "color.info.secondary-hovered",
+      cssVar: "--storm-color-info-secondary-hovered",
+      type: "color",
+      category: "color",
+      value: "#396ac2"
     },
     {
-      "path": "color.neutral.9",
-      "cssVar": "--storm-color-neutral-9",
-      "type": "color",
-      "category": "color",
-      "value": "#7b7b7e"
+      path: "color.info.secondary-inactive",
+      cssVar: "--storm-color-info-secondary-inactive",
+      type: "color",
+      category: "color",
+      value: "#99d1ff"
     },
     {
-      "path": "color.neutral.10",
-      "cssVar": "--storm-color-neutral-10",
-      "type": "color",
-      "category": "color",
-      "value": "#555659"
+      path: "color.ink",
+      cssVar: "--storm-color-ink",
+      type: "color",
+      category: "color",
+      value: "#555659",
+      alias: true
     },
     {
-      "path": "color.neutral.11",
-      "cssVar": "--storm-color-neutral-11",
-      "type": "color",
-      "category": "color",
-      "value": "#46464a"
+      path: "color.ink-active",
+      cssVar: "--storm-color-ink-active",
+      type: "color",
+      category: "color",
+      value: "#0c0c0d"
     },
     {
-      "path": "color.neutral.12",
-      "cssVar": "--storm-color-neutral-12",
-      "type": "color",
-      "category": "color",
-      "value": "#2d2e33"
+      path: "color.ink-disabled",
+      cssVar: "--storm-color-ink-disabled",
+      type: "color",
+      category: "color",
+      value: "#494a4d"
     },
     {
-      "path": "color.neutral.13",
-      "cssVar": "--storm-color-neutral-13",
-      "type": "color",
-      "category": "color",
-      "value": "#292a2e"
+      path: "color.ink-hovered",
+      cssVar: "--storm-color-ink-hovered",
+      type: "color",
+      category: "color",
+      value: "#37383b"
     },
     {
-      "path": "color.neutral.14",
-      "cssVar": "--storm-color-neutral-14",
-      "type": "color",
-      "category": "color",
-      "value": "#242528"
+      path: "color.ink-inactive",
+      cssVar: "--storm-color-ink-inactive",
+      type: "color",
+      category: "color",
+      value: "#020102"
     },
     {
-      "path": "color.neutral.15",
-      "cssVar": "--storm-color-neutral-15",
-      "type": "color",
-      "category": "color",
-      "value": "#1f1f21"
+      path: "color.neutral.1",
+      cssVar: "--storm-color-neutral-1",
+      type: "color",
+      category: "color",
+      value: "#fafafa"
     },
     {
-      "path": "color.neutral.16",
-      "cssVar": "--storm-color-neutral-16",
-      "type": "color",
-      "category": "color",
-      "value": "#151518"
+      path: "color.neutral.2",
+      cssVar: "--storm-color-neutral-2",
+      type: "color",
+      category: "color",
+      value: "#f1f1f1"
     },
     {
-      "path": "color.orange.1",
-      "cssVar": "--storm-color-orange-1",
-      "type": "color",
-      "category": "color",
-      "value": "#f6c3a7"
+      path: "color.neutral.3",
+      cssVar: "--storm-color-neutral-3",
+      type: "color",
+      category: "color",
+      value: "#eaeaea"
     },
     {
-      "path": "color.orange.2",
-      "cssVar": "--storm-color-orange-2",
-      "type": "color",
-      "category": "color",
-      "value": "#f4b18c"
+      path: "color.neutral.4",
+      cssVar: "--storm-color-neutral-4",
+      type: "color",
+      category: "color",
+      value: "#e1e1e1"
     },
     {
-      "path": "color.orange.3",
-      "cssVar": "--storm-color-orange-3",
-      "type": "color",
-      "category": "color",
-      "value": "#f19f71"
+      path: "color.neutral.5",
+      cssVar: "--storm-color-neutral-5",
+      type: "color",
+      category: "color",
+      value: "#d0d0d1"
     },
     {
-      "path": "color.orange.4",
-      "cssVar": "--storm-color-orange-4",
-      "type": "color",
-      "category": "color",
-      "value": "#ef8c56"
+      path: "color.neutral.6",
+      cssVar: "--storm-color-neutral-6",
+      type: "color",
+      category: "color",
+      value: "#c0c0c1"
     },
     {
-      "path": "color.orange.5",
-      "cssVar": "--storm-color-orange-5",
-      "type": "color",
-      "category": "color",
-      "value": "#ec7a3b"
+      path: "color.neutral.7",
+      cssVar: "--storm-color-neutral-7",
+      type: "color",
+      category: "color",
+      value: "#b0b0b1"
     },
     {
-      "path": "color.orange.6",
-      "cssVar": "--storm-color-orange-6",
-      "type": "color",
-      "category": "color",
-      "value": "#df6520"
+      path: "color.neutral.8",
+      cssVar: "--storm-color-neutral-8",
+      type: "color",
+      category: "color",
+      value: "#959698"
     },
     {
-      "path": "color.orange.7",
-      "cssVar": "--storm-color-orange-7",
-      "type": "color",
-      "category": "color",
-      "value": "#bf520b"
+      path: "color.neutral.9",
+      cssVar: "--storm-color-neutral-9",
+      type: "color",
+      category: "color",
+      value: "#7b7b7e"
     },
     {
-      "path": "color.orange.8",
-      "cssVar": "--storm-color-orange-8",
-      "type": "color",
-      "category": "color",
-      "value": "#9f4000"
+      path: "color.neutral.10",
+      cssVar: "--storm-color-neutral-10",
+      type: "color",
+      category: "color",
+      value: "#555659"
     },
     {
-      "path": "color.orange.9",
-      "cssVar": "--storm-color-orange-9",
-      "type": "color",
-      "category": "color",
-      "value": "#803000"
+      path: "color.neutral.11",
+      cssVar: "--storm-color-neutral-11",
+      type: "color",
+      category: "color",
+      value: "#46464a"
     },
     {
-      "path": "color.outline",
-      "cssVar": "--storm-color-outline",
-      "type": "color",
-      "category": "color",
-      "value": "#c0c0c1",
-      "alias": true
+      path: "color.neutral.12",
+      cssVar: "--storm-color-neutral-12",
+      type: "color",
+      category: "color",
+      value: "#2d2e33"
     },
     {
-      "path": "color.outline-active",
-      "cssVar": "--storm-color-outline-active",
-      "type": "color",
-      "category": "color",
-      "value": "#0c0c0d"
+      path: "color.neutral.13",
+      cssVar: "--storm-color-neutral-13",
+      type: "color",
+      category: "color",
+      value: "#292a2e"
     },
     {
-      "path": "color.outline-disabled",
-      "cssVar": "--storm-color-outline-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#6f6f71"
+      path: "color.neutral.14",
+      cssVar: "--storm-color-neutral-14",
+      type: "color",
+      category: "color",
+      value: "#242528"
     },
     {
-      "path": "color.outline-hovered",
-      "cssVar": "--storm-color-outline-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#0c0c0d"
+      path: "color.neutral.15",
+      cssVar: "--storm-color-neutral-15",
+      type: "color",
+      category: "color",
+      value: "#1f1f21"
     },
     {
-      "path": "color.outline-inactive",
-      "cssVar": "--storm-color-outline-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#020102"
+      path: "color.neutral.16",
+      cssVar: "--storm-color-neutral-16",
+      type: "color",
+      category: "color",
+      value: "#151518"
     },
     {
-      "path": "color.pink.1",
-      "cssVar": "--storm-color-pink-1",
-      "type": "color",
-      "category": "color",
-      "value": "#f5c7e4"
+      path: "color.orange.1",
+      cssVar: "--storm-color-orange-1",
+      type: "color",
+      category: "color",
+      value: "#f6c3a7"
     },
     {
-      "path": "color.pink.2",
-      "cssVar": "--storm-color-pink-2",
-      "type": "color",
-      "category": "color",
-      "value": "#f49ed1"
+      path: "color.orange.2",
+      cssVar: "--storm-color-orange-2",
+      type: "color",
+      category: "color",
+      value: "#f4b18c"
     },
     {
-      "path": "color.pink.3",
-      "cssVar": "--storm-color-pink-3",
-      "type": "color",
-      "category": "color",
-      "value": "#eb89c5"
+      path: "color.orange.3",
+      cssVar: "--storm-color-orange-3",
+      type: "color",
+      category: "color",
+      value: "#f19f71"
     },
     {
-      "path": "color.pink.4",
-      "cssVar": "--storm-color-pink-4",
-      "type": "color",
-      "category": "color",
-      "value": "#e774bb"
+      path: "color.orange.4",
+      cssVar: "--storm-color-orange-4",
+      type: "color",
+      category: "color",
+      value: "#ef8c56"
     },
     {
-      "path": "color.pink.5",
-      "cssVar": "--storm-color-pink-5",
-      "type": "color",
-      "category": "color",
-      "value": "#e171b7"
+      path: "color.orange.5",
+      cssVar: "--storm-color-orange-5",
+      type: "color",
+      category: "color",
+      value: "#ec7a3b"
     },
     {
-      "path": "color.pink.6",
-      "cssVar": "--storm-color-pink-6",
-      "type": "color",
-      "category": "color",
-      "value": "#df6db3"
+      path: "color.orange.6",
+      cssVar: "--storm-color-orange-6",
+      type: "color",
+      category: "color",
+      value: "#df6520"
     },
     {
-      "path": "color.pink.7",
-      "cssVar": "--storm-color-pink-7",
-      "type": "color",
-      "category": "color",
-      "value": "#c25c9b"
+      path: "color.orange.7",
+      cssVar: "--storm-color-orange-7",
+      type: "color",
+      category: "color",
+      value: "#bf520b"
     },
     {
-      "path": "color.pink.8",
-      "cssVar": "--storm-color-pink-8",
-      "type": "color",
-      "category": "color",
-      "value": "#904272"
+      path: "color.orange.8",
+      cssVar: "--storm-color-orange-8",
+      type: "color",
+      category: "color",
+      value: "#9f4000"
     },
     {
-      "path": "color.pink.9",
-      "cssVar": "--storm-color-pink-9",
-      "type": "color",
-      "category": "color",
-      "value": "#482039"
+      path: "color.orange.9",
+      cssVar: "--storm-color-orange-9",
+      type: "color",
+      category: "color",
+      value: "#803000"
     },
     {
-      "path": "color.purple.1",
-      "cssVar": "--storm-color-purple-1",
-      "type": "color",
-      "category": "color",
-      "value": "#cec2ee"
+      path: "color.outline",
+      cssVar: "--storm-color-outline",
+      type: "color",
+      category: "color",
+      value: "#c0c0c1",
+      alias: true
     },
     {
-      "path": "color.purple.2",
-      "cssVar": "--storm-color-purple-2",
-      "type": "color",
-      "category": "color",
-      "value": "#baa9e8"
+      path: "color.outline-active",
+      cssVar: "--storm-color-outline-active",
+      type: "color",
+      category: "color",
+      value: "#0c0c0d"
     },
     {
-      "path": "color.purple.3",
-      "cssVar": "--storm-color-purple-3",
-      "type": "color",
-      "category": "color",
-      "value": "#a690e1"
+      path: "color.outline-disabled",
+      cssVar: "--storm-color-outline-disabled",
+      type: "color",
+      category: "color",
+      value: "#6f6f71"
     },
     {
-      "path": "color.purple.4",
-      "cssVar": "--storm-color-purple-4",
-      "type": "color",
-      "category": "color",
-      "value": "#9277da"
+      path: "color.outline-hovered",
+      cssVar: "--storm-color-outline-hovered",
+      type: "color",
+      category: "color",
+      value: "#0c0c0d"
     },
     {
-      "path": "color.purple.5",
-      "cssVar": "--storm-color-purple-5",
-      "type": "color",
-      "category": "color",
-      "value": "#7f64c4"
+      path: "color.outline-inactive",
+      cssVar: "--storm-color-outline-inactive",
+      type: "color",
+      category: "color",
+      value: "#020102"
     },
     {
-      "path": "color.purple.6",
-      "cssVar": "--storm-color-purple-6",
-      "type": "color",
-      "category": "color",
-      "value": "#6c53ad"
+      path: "color.pink.1",
+      cssVar: "--storm-color-pink-1",
+      type: "color",
+      category: "color",
+      value: "#f5c7e4"
     },
     {
-      "path": "color.purple.7",
-      "cssVar": "--storm-color-purple-7",
-      "type": "color",
-      "category": "color",
-      "value": "#594395"
+      path: "color.pink.2",
+      cssVar: "--storm-color-pink-2",
+      type: "color",
+      category: "color",
+      value: "#f49ed1"
     },
     {
-      "path": "color.purple.8",
-      "cssVar": "--storm-color-purple-8",
-      "type": "color",
-      "category": "color",
-      "value": "#47347c"
+      path: "color.pink.3",
+      cssVar: "--storm-color-pink-3",
+      type: "color",
+      category: "color",
+      value: "#eb89c5"
     },
     {
-      "path": "color.purple.9",
-      "cssVar": "--storm-color-purple-9",
-      "type": "color",
-      "category": "color",
-      "value": "#362661"
+      path: "color.pink.4",
+      cssVar: "--storm-color-pink-4",
+      type: "color",
+      category: "color",
+      value: "#e774bb"
     },
     {
-      "path": "color.red.1",
-      "cssVar": "--storm-color-red-1",
-      "type": "color",
-      "category": "color",
-      "value": "#e2819a"
+      path: "color.pink.5",
+      cssVar: "--storm-color-pink-5",
+      type: "color",
+      category: "color",
+      value: "#e171b7"
     },
     {
-      "path": "color.red.2",
-      "cssVar": "--storm-color-red-2",
-      "type": "color",
-      "category": "color",
-      "value": "#dd6c89"
+      path: "color.pink.6",
+      cssVar: "--storm-color-pink-6",
+      type: "color",
+      category: "color",
+      value: "#df6db3"
     },
     {
-      "path": "color.red.3",
-      "cssVar": "--storm-color-red-3",
-      "type": "color",
-      "category": "color",
-      "value": "#d95778"
+      path: "color.pink.7",
+      cssVar: "--storm-color-pink-7",
+      type: "color",
+      category: "color",
+      value: "#c25c9b"
     },
     {
-      "path": "color.red.4",
-      "cssVar": "--storm-color-red-4",
-      "type": "color",
-      "category": "color",
-      "value": "#d44267"
+      path: "color.pink.8",
+      cssVar: "--storm-color-pink-8",
+      type: "color",
+      category: "color",
+      value: "#904272"
     },
     {
-      "path": "color.red.5",
-      "cssVar": "--storm-color-red-5",
-      "type": "color",
-      "category": "color",
-      "value": "#cf2d56"
+      path: "color.pink.9",
+      cssVar: "--storm-color-pink-9",
+      type: "color",
+      category: "color",
+      value: "#482039"
     },
     {
-      "path": "color.red.6",
-      "cssVar": "--storm-color-red-6",
-      "type": "color",
-      "category": "color",
-      "value": "#ae284a"
+      path: "color.purple.1",
+      cssVar: "--storm-color-purple-1",
+      type: "color",
+      category: "color",
+      value: "#cec2ee"
     },
     {
-      "path": "color.red.7",
-      "cssVar": "--storm-color-red-7",
-      "type": "color",
-      "category": "color",
-      "value": "#8e223e"
+      path: "color.purple.2",
+      cssVar: "--storm-color-purple-2",
+      type: "color",
+      category: "color",
+      value: "#baa9e8"
     },
     {
-      "path": "color.red.8",
-      "cssVar": "--storm-color-red-8",
-      "type": "color",
-      "category": "color",
-      "value": "#6f1c31"
+      path: "color.purple.3",
+      cssVar: "--storm-color-purple-3",
+      type: "color",
+      category: "color",
+      value: "#a690e1"
     },
     {
-      "path": "color.red.9",
-      "cssVar": "--storm-color-red-9",
-      "type": "color",
-      "category": "color",
-      "value": "#501524"
+      path: "color.purple.4",
+      cssVar: "--storm-color-purple-4",
+      type: "color",
+      category: "color",
+      value: "#9277da"
     },
     {
-      "path": "color.shadow.floating.large",
-      "cssVar": "--storm-color-shadow-floating-large",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a",
-      "alias": true
+      path: "color.purple.5",
+      cssVar: "--storm-color-purple-5",
+      type: "color",
+      category: "color",
+      value: "#7f64c4"
     },
     {
-      "path": "color.shadow.floating.medium",
-      "cssVar": "--storm-color-shadow-floating-medium",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a",
-      "alias": true
+      path: "color.purple.6",
+      cssVar: "--storm-color-purple-6",
+      type: "color",
+      category: "color",
+      value: "#6c53ad"
     },
     {
-      "path": "color.shadow.floating.small",
-      "cssVar": "--storm-color-shadow-floating-small",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a",
-      "alias": true
+      path: "color.purple.7",
+      cssVar: "--storm-color-purple-7",
+      type: "color",
+      category: "color",
+      value: "#594395"
     },
     {
-      "path": "color.shadow.floating.xlarge",
-      "cssVar": "--storm-color-shadow-floating-xlarge",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 25px 50px -12px #00000040",
-      "alias": true
+      path: "color.purple.8",
+      cssVar: "--storm-color-purple-8",
+      type: "color",
+      category: "color",
+      value: "#47347c"
     },
     {
-      "path": "color.shadow.inset",
-      "cssVar": "--storm-color-shadow-inset",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "inset 0px 1px 1px 0px #0000000d",
-      "alias": true
+      path: "color.purple.9",
+      cssVar: "--storm-color-purple-9",
+      type: "color",
+      category: "color",
+      value: "#362661"
     },
     {
-      "path": "color.shadow.resting.medium",
-      "cssVar": "--storm-color-shadow-resting-medium",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a",
-      "alias": true
+      path: "color.red.1",
+      cssVar: "--storm-color-red-1",
+      type: "color",
+      category: "color",
+      value: "#e2819a"
     },
     {
-      "path": "color.shadow.resting.small",
-      "cssVar": "--storm-color-shadow-resting-small",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 2px 0px #0000000d",
-      "alias": true
+      path: "color.red.2",
+      cssVar: "--storm-color-red-2",
+      type: "color",
+      category: "color",
+      value: "#dd6c89"
     },
     {
-      "path": "color.shadow.resting.xsmall",
-      "cssVar": "--storm-color-shadow-resting-xsmall",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 0px 0px #0000000d",
-      "alias": true
+      path: "color.red.3",
+      cssVar: "--storm-color-red-3",
+      type: "color",
+      category: "color",
+      value: "#d95778"
     },
     {
-      "path": "color.subtle",
-      "cssVar": "--storm-color-subtle",
-      "type": "color",
-      "category": "color",
-      "value": "#959698",
-      "alias": true
+      path: "color.red.4",
+      cssVar: "--storm-color-red-4",
+      type: "color",
+      category: "color",
+      value: "#d44267"
     },
     {
-      "path": "color.subtle-active",
-      "cssVar": "--storm-color-subtle-active",
-      "type": "color",
-      "category": "color",
-      "value": "#0c0c0d"
+      path: "color.red.5",
+      cssVar: "--storm-color-red-5",
+      type: "color",
+      category: "color",
+      value: "#cf2d56"
     },
     {
-      "path": "color.subtle-disabled",
-      "cssVar": "--storm-color-subtle-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#606063"
+      path: "color.red.6",
+      cssVar: "--storm-color-red-6",
+      type: "color",
+      category: "color",
+      value: "#ae284a"
     },
     {
-      "path": "color.subtle-hovered",
-      "cssVar": "--storm-color-subtle-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#3f4041"
+      path: "color.red.7",
+      cssVar: "--storm-color-red-7",
+      type: "color",
+      category: "color",
+      value: "#8e223e"
     },
     {
-      "path": "color.subtle-inactive",
-      "cssVar": "--storm-color-subtle-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#020102"
+      path: "color.red.8",
+      cssVar: "--storm-color-red-8",
+      type: "color",
+      category: "color",
+      value: "#6f1c31"
     },
     {
-      "path": "color.subtlest",
-      "cssVar": "--storm-color-subtlest",
-      "type": "color",
-      "category": "color",
-      "value": "#b0b0b1",
-      "alias": true
+      path: "color.red.9",
+      cssVar: "--storm-color-red-9",
+      type: "color",
+      category: "color",
+      value: "#501524"
     },
     {
-      "path": "color.subtlest-active",
-      "cssVar": "--storm-color-subtlest-active",
-      "type": "color",
-      "category": "color",
-      "value": "#0c0c0d"
+      path: "color.shadow.floating.large",
+      cssVar: "--storm-color-shadow-floating-large",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a",
+      alias: true
     },
     {
-      "path": "color.subtlest-disabled",
-      "cssVar": "--storm-color-subtlest-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#69696b"
+      path: "color.shadow.floating.medium",
+      cssVar: "--storm-color-shadow-floating-medium",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a",
+      alias: true
     },
     {
-      "path": "color.subtlest-hovered",
-      "cssVar": "--storm-color-subtlest-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#4c4c4d"
+      path: "color.shadow.floating.small",
+      cssVar: "--storm-color-shadow-floating-small",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a",
+      alias: true
     },
     {
-      "path": "color.subtlest-inactive",
-      "cssVar": "--storm-color-subtlest-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#020102"
+      path: "color.shadow.floating.xlarge",
+      cssVar: "--storm-color-shadow-floating-xlarge",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 25px 50px -12px #00000040",
+      alias: true
     },
     {
-      "path": "color.success.link",
-      "cssVar": "--storm-color-success-link",
-      "type": "color",
-      "category": "color",
-      "value": "#216b53",
-      "alias": true
+      path: "color.shadow.inset",
+      cssVar: "--storm-color-shadow-inset",
+      type: "shadow",
+      category: "shadow",
+      value: "inset 0px 1px 1px 0px #0000000d",
+      alias: true
     },
     {
-      "path": "color.success.link-active",
-      "cssVar": "--storm-color-success-link-active",
-      "type": "color",
-      "category": "color",
-      "value": "#004933"
+      path: "color.shadow.resting.medium",
+      cssVar: "--storm-color-shadow-resting-medium",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a",
+      alias: true
     },
     {
-      "path": "color.success.link-disabled",
-      "cssVar": "--storm-color-success-link-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#3c504b"
+      path: "color.shadow.resting.small",
+      cssVar: "--storm-color-shadow-resting-small",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 1px 2px 0px #0000000d",
+      alias: true
     },
     {
-      "path": "color.success.link-hovered",
-      "cssVar": "--storm-color-success-link-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#004933"
+      path: "color.shadow.resting.xsmall",
+      cssVar: "--storm-color-shadow-resting-xsmall",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 1px 0px 0px #0000000d",
+      alias: true
     },
     {
-      "path": "color.success.link-inactive",
-      "cssVar": "--storm-color-success-link-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#40876e"
+      path: "color.subtle",
+      cssVar: "--storm-color-subtle",
+      type: "color",
+      category: "color",
+      value: "#959698",
+      alias: true
     },
     {
-      "path": "color.success.on-primary",
-      "cssVar": "--storm-color-success-on-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
+      path: "color.subtle-active",
+      cssVar: "--storm-color-subtle-active",
+      type: "color",
+      category: "color",
+      value: "#0c0c0d"
     },
     {
-      "path": "color.success.on-secondary",
-      "cssVar": "--storm-color-success-on-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#002015"
+      path: "color.subtle-disabled",
+      cssVar: "--storm-color-subtle-disabled",
+      type: "color",
+      category: "color",
+      value: "#606063"
     },
     {
-      "path": "color.success.primary",
-      "cssVar": "--storm-color-success-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#216b53",
-      "alias": true
+      path: "color.subtle-hovered",
+      cssVar: "--storm-color-subtle-hovered",
+      type: "color",
+      category: "color",
+      value: "#646466"
     },
     {
-      "path": "color.success.primary-active",
-      "cssVar": "--storm-color-success-primary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#004933"
+      path: "color.subtle-inactive",
+      cssVar: "--storm-color-subtle-inactive",
+      type: "color",
+      category: "color",
+      value: "#020102"
     },
     {
-      "path": "color.success.primary-disabled",
-      "cssVar": "--storm-color-success-primary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#3c504b"
+      path: "color.subtlest",
+      cssVar: "--storm-color-subtlest",
+      type: "color",
+      category: "color",
+      value: "#b0b0b1",
+      alias: true
     },
     {
-      "path": "color.success.primary-hovered",
-      "cssVar": "--storm-color-success-primary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#004933"
+      path: "color.subtlest-active",
+      cssVar: "--storm-color-subtlest-active",
+      type: "color",
+      category: "color",
+      value: "#0c0c0d"
     },
     {
-      "path": "color.success.primary-inactive",
-      "cssVar": "--storm-color-success-primary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#40876e"
+      path: "color.subtlest-disabled",
+      cssVar: "--storm-color-subtlest-disabled",
+      type: "color",
+      category: "color",
+      value: "#69696b"
     },
     {
-      "path": "color.success.secondary",
-      "cssVar": "--storm-color-success-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#74ba9f"
+      path: "color.subtlest-hovered",
+      cssVar: "--storm-color-subtlest-hovered",
+      type: "color",
+      category: "color",
+      value: "#777778"
     },
     {
-      "path": "color.success.secondary-active",
-      "cssVar": "--storm-color-success-secondary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#3b8168"
+      path: "color.subtlest-inactive",
+      cssVar: "--storm-color-subtlest-inactive",
+      type: "color",
+      category: "color",
+      value: "#020102"
     },
     {
-      "path": "color.success.secondary-disabled",
-      "cssVar": "--storm-color-success-secondary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#586c66"
+      path: "color.success.link",
+      cssVar: "--storm-color-success-link",
+      type: "color",
+      category: "color",
+      value: "#216b53",
+      alias: true
     },
     {
-      "path": "color.success.secondary-hovered",
-      "cssVar": "--storm-color-success-secondary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#3b8168"
+      path: "color.success.link-active",
+      cssVar: "--storm-color-success-link-active",
+      type: "color",
+      category: "color",
+      value: "#004933"
     },
     {
-      "path": "color.success.secondary-inactive",
-      "cssVar": "--storm-color-success-secondary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#a3eacd"
+      path: "color.success.link-disabled",
+      cssVar: "--storm-color-success-link-disabled",
+      type: "color",
+      category: "color",
+      value: "#3c504b"
     },
     {
-      "path": "color.sunken",
-      "cssVar": "--storm-color-sunken",
-      "type": "color",
-      "category": "color",
-      "value": "#e1e1e1",
-      "alias": true
+      path: "color.success.link-hovered",
+      cssVar: "--storm-color-success-link-hovered",
+      type: "color",
+      category: "color",
+      value: "#004933"
     },
     {
-      "path": "color.sunken-active",
-      "cssVar": "--storm-color-sunken-active",
-      "type": "color",
-      "category": "color",
-      "value": "#b5b5b5"
+      path: "color.success.link-inactive",
+      cssVar: "--storm-color-success-link-inactive",
+      type: "color",
+      category: "color",
+      value: "#40876e"
     },
     {
-      "path": "color.sunken-disabled",
-      "cssVar": "--storm-color-sunken-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#aeaeaf"
+      path: "color.success.on-primary",
+      cssVar: "--storm-color-success-on-primary",
+      type: "color",
+      category: "color",
+      value: "#FAFAFA"
     },
     {
-      "path": "color.sunken-hovered",
-      "cssVar": "--storm-color-sunken-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#c4c4c4"
+      path: "color.success.on-secondary",
+      cssVar: "--storm-color-success-on-secondary",
+      type: "color",
+      category: "color",
+      value: "#002015"
     },
     {
-      "path": "color.sunken-inactive",
-      "cssVar": "--storm-color-sunken-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
+      path: "color.success.outline",
+      cssVar: "--storm-color-success-outline",
+      type: "color",
+      category: "color",
+      value: "#216b53",
+      alias: true
     },
     {
-      "path": "color.surface",
-      "cssVar": "--storm-color-surface",
-      "type": "color",
-      "category": "color",
-      "value": "#f1f1f1",
-      "alias": true
+      path: "color.success.outline-active",
+      cssVar: "--storm-color-success-outline-active",
+      type: "color",
+      category: "color",
+      value: "#003622"
     },
     {
-      "path": "color.surface-active",
-      "cssVar": "--storm-color-surface-active",
-      "type": "color",
-      "category": "color",
-      "value": "#c2c2c2"
+      path: "color.success.outline-disabled",
+      cssVar: "--storm-color-success-outline-disabled",
+      type: "color",
+      category: "color",
+      value: "#3c504b"
     },
     {
-      "path": "color.surface-disabled",
-      "cssVar": "--storm-color-surface-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#b8b8b9"
+      path: "color.success.outline-hovered",
+      cssVar: "--storm-color-success-outline-hovered",
+      type: "color",
+      category: "color",
+      value: "#003622"
     },
     {
-      "path": "color.surface-hovered",
-      "cssVar": "--storm-color-surface-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#d2d2d2"
+      path: "color.success.outline-inactive",
+      cssVar: "--storm-color-success-outline-inactive",
+      type: "color",
+      category: "color",
+      value: "#40876e"
     },
     {
-      "path": "color.surface-inactive",
-      "cssVar": "--storm-color-surface-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
+      path: "color.success.primary",
+      cssVar: "--storm-color-success-primary",
+      type: "color",
+      category: "color",
+      value: "#216b53",
+      alias: true
     },
     {
-      "path": "color.warning.link",
-      "cssVar": "--storm-color-warning-link",
-      "type": "color",
-      "category": "color",
-      "value": "#765417",
-      "alias": true
+      path: "color.success.primary-active",
+      cssVar: "--storm-color-success-primary-active",
+      type: "color",
+      category: "color",
+      value: "#004933"
     },
     {
-      "path": "color.warning.link-active",
-      "cssVar": "--storm-color-warning-link-active",
-      "type": "color",
-      "category": "color",
-      "value": "#543400"
+      path: "color.success.primary-disabled",
+      cssVar: "--storm-color-success-primary-disabled",
+      type: "color",
+      category: "color",
+      value: "#3c504b"
     },
     {
-      "path": "color.warning.link-disabled",
-      "cssVar": "--storm-color-warning-link-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#53493b"
+      path: "color.success.primary-hovered",
+      cssVar: "--storm-color-success-primary-hovered",
+      type: "color",
+      category: "color",
+      value: "#004933"
     },
     {
-      "path": "color.warning.link-hovered",
-      "cssVar": "--storm-color-warning-link-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#543400"
+      path: "color.success.primary-inactive",
+      cssVar: "--storm-color-success-primary-inactive",
+      type: "color",
+      category: "color",
+      value: "#40876e"
     },
     {
-      "path": "color.warning.link-inactive",
-      "cssVar": "--storm-color-warning-link-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#926f36"
+      path: "color.success.secondary",
+      cssVar: "--storm-color-success-secondary",
+      type: "color",
+      category: "color",
+      value: "#74ba9f"
     },
     {
-      "path": "color.warning.on-primary",
-      "cssVar": "--storm-color-warning-on-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#FAFAFA"
+      path: "color.success.secondary-active",
+      cssVar: "--storm-color-success-secondary-active",
+      type: "color",
+      category: "color",
+      value: "#3b8168"
     },
     {
-      "path": "color.warning.on-secondary",
-      "cssVar": "--storm-color-warning-on-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#241500"
+      path: "color.success.secondary-disabled",
+      cssVar: "--storm-color-success-secondary-disabled",
+      type: "color",
+      category: "color",
+      value: "#586c66"
     },
     {
-      "path": "color.warning.primary",
-      "cssVar": "--storm-color-warning-primary",
-      "type": "color",
-      "category": "color",
-      "value": "#765417",
-      "alias": true
+      path: "color.success.secondary-hovered",
+      cssVar: "--storm-color-success-secondary-hovered",
+      type: "color",
+      category: "color",
+      value: "#3b8168"
     },
     {
-      "path": "color.warning.primary-active",
-      "cssVar": "--storm-color-warning-primary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#543400"
+      path: "color.success.secondary-inactive",
+      cssVar: "--storm-color-success-secondary-inactive",
+      type: "color",
+      category: "color",
+      value: "#a3eacd"
     },
     {
-      "path": "color.warning.primary-disabled",
-      "cssVar": "--storm-color-warning-primary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#53493b"
+      path: "color.sunken",
+      cssVar: "--storm-color-sunken",
+      type: "color",
+      category: "color",
+      value: "#e1e1e1",
+      alias: true
     },
     {
-      "path": "color.warning.primary-hovered",
-      "cssVar": "--storm-color-warning-primary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#543400"
+      path: "color.sunken-active",
+      cssVar: "--storm-color-sunken-active",
+      type: "color",
+      category: "color",
+      value: "#b5b5b5"
     },
     {
-      "path": "color.warning.primary-inactive",
-      "cssVar": "--storm-color-warning-primary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#926f36"
+      path: "color.sunken-disabled",
+      cssVar: "--storm-color-sunken-disabled",
+      type: "color",
+      category: "color",
+      value: "#aeaeaf"
     },
     {
-      "path": "color.warning.secondary",
-      "cssVar": "--storm-color-warning-secondary",
-      "type": "color",
-      "category": "color",
-      "value": "#caa46b"
+      path: "color.sunken-hovered",
+      cssVar: "--storm-color-sunken-hovered",
+      type: "color",
+      category: "color",
+      value: "#c4c4c4"
     },
     {
-      "path": "color.warning.secondary-active",
-      "cssVar": "--storm-color-warning-secondary-active",
-      "type": "color",
-      "category": "color",
-      "value": "#906c33"
+      path: "color.sunken-inactive",
+      cssVar: "--storm-color-sunken-inactive",
+      type: "color",
+      category: "color",
+      value: "#ffffff"
     },
     {
-      "path": "color.warning.secondary-disabled",
-      "cssVar": "--storm-color-warning-secondary-disabled",
-      "type": "color",
-      "category": "color",
-      "value": "#716557"
+      path: "color.surface",
+      cssVar: "--storm-color-surface",
+      type: "color",
+      category: "color",
+      value: "#f1f1f1",
+      alias: true
     },
     {
-      "path": "color.warning.secondary-hovered",
-      "cssVar": "--storm-color-warning-secondary-hovered",
-      "type": "color",
-      "category": "color",
-      "value": "#906c33"
+      path: "color.surface-active",
+      cssVar: "--storm-color-surface-active",
+      type: "color",
+      category: "color",
+      value: "#c2c2c2"
     },
     {
-      "path": "color.warning.secondary-inactive",
-      "cssVar": "--storm-color-warning-secondary-inactive",
-      "type": "color",
-      "category": "color",
-      "value": "#fbd399"
+      path: "color.surface-disabled",
+      cssVar: "--storm-color-surface-disabled",
+      type: "color",
+      category: "color",
+      value: "#b8b8b9"
     },
     {
-      "path": "color.white",
-      "cssVar": "--storm-color-white",
-      "type": "color",
-      "category": "color",
-      "value": "#ffffff"
+      path: "color.surface-hovered",
+      cssVar: "--storm-color-surface-hovered",
+      type: "color",
+      category: "color",
+      value: "#d2d2d2"
     },
     {
-      "path": "color.yellow.1",
-      "cssVar": "--storm-color-yellow-1",
-      "type": "color",
-      "category": "color",
-      "value": "#facd7b"
+      path: "color.surface-inactive",
+      cssVar: "--storm-color-surface-inactive",
+      type: "color",
+      category: "color",
+      value: "#ffffff"
     },
     {
-      "path": "color.yellow.2",
-      "cssVar": "--storm-color-yellow-2",
-      "type": "color",
-      "category": "color",
-      "value": "#f9c25e"
+      path: "color.warning.link",
+      cssVar: "--storm-color-warning-link",
+      type: "color",
+      category: "color",
+      value: "#765417",
+      alias: true
     },
     {
-      "path": "color.yellow.3",
-      "cssVar": "--storm-color-yellow-3",
-      "type": "color",
-      "category": "color",
-      "value": "#f8b740"
+      path: "color.warning.link-active",
+      cssVar: "--storm-color-warning-link-active",
+      type: "color",
+      category: "color",
+      value: "#543400"
     },
     {
-      "path": "color.yellow.4",
-      "cssVar": "--storm-color-yellow-4",
-      "type": "color",
-      "category": "color",
-      "value": "#f7ac23"
+      path: "color.warning.link-disabled",
+      cssVar: "--storm-color-warning-link-disabled",
+      type: "color",
+      category: "color",
+      value: "#53493b"
     },
     {
-      "path": "color.yellow.5",
-      "cssVar": "--storm-color-yellow-5",
-      "type": "color",
-      "category": "color",
-      "value": "#f0a824"
+      path: "color.warning.link-hovered",
+      cssVar: "--storm-color-warning-link-hovered",
+      type: "color",
+      category: "color",
+      value: "#543400"
     },
     {
-      "path": "color.yellow.6",
-      "cssVar": "--storm-color-yellow-6",
-      "type": "color",
-      "category": "color",
-      "value": "#df9d24"
+      path: "color.warning.link-inactive",
+      cssVar: "--storm-color-warning-link-inactive",
+      type: "color",
+      category: "color",
+      value: "#926f36"
     },
     {
-      "path": "color.yellow.7",
-      "cssVar": "--storm-color-yellow-7",
-      "type": "color",
-      "category": "color",
-      "value": "#c58c22"
+      path: "color.warning.on-primary",
+      cssVar: "--storm-color-warning-on-primary",
+      type: "color",
+      category: "color",
+      value: "#FAFAFA"
     },
     {
-      "path": "color.yellow.8",
-      "cssVar": "--storm-color-yellow-8",
-      "type": "color",
-      "category": "color",
-      "value": "#a2731e"
+      path: "color.warning.on-secondary",
+      cssVar: "--storm-color-warning-on-secondary",
+      type: "color",
+      category: "color",
+      value: "#241500"
     },
     {
-      "path": "color.yellow.9",
-      "cssVar": "--storm-color-yellow-9",
-      "type": "color",
-      "category": "color",
-      "value": "#765417"
+      path: "color.warning.outline",
+      cssVar: "--storm-color-warning-outline",
+      type: "color",
+      category: "color",
+      value: "#765417",
+      alias: true
     },
     {
-      "path": "drop-shadow.2xl",
-      "cssVar": "--storm-drop-shadow-2xl",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 25px 25px 0px #00000026"
+      path: "color.warning.outline-active",
+      cssVar: "--storm-color-warning-outline-active",
+      type: "color",
+      category: "color",
+      value: "#402100"
     },
     {
-      "path": "drop-shadow.lg",
-      "cssVar": "--storm-drop-shadow-lg",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 4px 4px 0px #00000026"
+      path: "color.warning.outline-disabled",
+      cssVar: "--storm-color-warning-outline-disabled",
+      type: "color",
+      category: "color",
+      value: "#53493b"
     },
     {
-      "path": "drop-shadow.md",
-      "cssVar": "--storm-drop-shadow-md",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 3px 3px 0px #0000001f"
+      path: "color.warning.outline-hovered",
+      cssVar: "--storm-color-warning-outline-hovered",
+      type: "color",
+      category: "color",
+      value: "#402100"
     },
     {
-      "path": "drop-shadow.sm",
-      "cssVar": "--storm-drop-shadow-sm",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 2px 0px #00000026"
+      path: "color.warning.outline-inactive",
+      cssVar: "--storm-color-warning-outline-inactive",
+      type: "color",
+      category: "color",
+      value: "#926f36"
     },
     {
-      "path": "drop-shadow.xl",
-      "cssVar": "--storm-drop-shadow-xl",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 9px 7px 0px #0000001a"
+      path: "color.warning.primary",
+      cssVar: "--storm-color-warning-primary",
+      type: "color",
+      category: "color",
+      value: "#765417",
+      alias: true
     },
     {
-      "path": "drop-shadow.xs",
-      "cssVar": "--storm-drop-shadow-xs",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 1px 0px #0000000d"
+      path: "color.warning.primary-active",
+      cssVar: "--storm-color-warning-primary-active",
+      type: "color",
+      category: "color",
+      value: "#543400"
     },
     {
-      "path": "durations.instant",
-      "cssVar": "--storm-durations-instant",
-      "type": "duration",
-      "category": "duration",
-      "value": "0ms"
+      path: "color.warning.primary-disabled",
+      cssVar: "--storm-color-warning-primary-disabled",
+      type: "color",
+      category: "color",
+      value: "#53493b"
     },
     {
-      "path": "durations.long",
-      "cssVar": "--storm-durations-long",
-      "type": "duration",
-      "category": "duration",
-      "value": "600ms"
+      path: "color.warning.primary-hovered",
+      cssVar: "--storm-color-warning-primary-hovered",
+      type: "color",
+      category: "color",
+      value: "#543400"
     },
     {
-      "path": "durations.medium",
-      "cssVar": "--storm-durations-medium",
-      "type": "duration",
-      "category": "duration",
-      "value": "300ms"
+      path: "color.warning.primary-inactive",
+      cssVar: "--storm-color-warning-primary-inactive",
+      type: "color",
+      category: "color",
+      value: "#926f36"
     },
     {
-      "path": "durations.short",
-      "cssVar": "--storm-durations-short",
-      "type": "duration",
-      "category": "duration",
-      "value": "100ms"
+      path: "color.warning.secondary",
+      cssVar: "--storm-color-warning-secondary",
+      type: "color",
+      category: "color",
+      value: "#caa46b"
     },
     {
-      "path": "ease.in",
-      "cssVar": "--storm-ease-in",
-      "type": "cubicBezier",
-      "category": "easing",
-      "value": "cubic-bezier(0.4, 0, 1, 1)"
+      path: "color.warning.secondary-active",
+      cssVar: "--storm-color-warning-secondary-active",
+      type: "color",
+      category: "color",
+      value: "#906c33"
     },
     {
-      "path": "ease.in-out",
-      "cssVar": "--storm-ease-in-out",
-      "type": "cubicBezier",
-      "category": "easing",
-      "value": "cubic-bezier(0.4, 0, 0.2, 1)"
+      path: "color.warning.secondary-disabled",
+      cssVar: "--storm-color-warning-secondary-disabled",
+      type: "color",
+      category: "color",
+      value: "#716557"
     },
     {
-      "path": "ease.out",
-      "cssVar": "--storm-ease-out",
-      "type": "cubicBezier",
-      "category": "easing",
-      "value": "cubic-bezier(0, 0, 0.2, 1)"
+      path: "color.warning.secondary-hovered",
+      cssVar: "--storm-color-warning-secondary-hovered",
+      type: "color",
+      category: "color",
+      value: "#906c33"
     },
     {
-      "path": "font-size.2xl",
-      "cssVar": "--storm-font-size-2xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "1.875rem"
+      path: "color.warning.secondary-inactive",
+      cssVar: "--storm-color-warning-secondary-inactive",
+      type: "color",
+      category: "color",
+      value: "#fbd399"
     },
     {
-      "path": "font-size.3xl",
-      "cssVar": "--storm-font-size-3xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "2.25rem"
+      path: "color.white",
+      cssVar: "--storm-color-white",
+      type: "color",
+      category: "color",
+      value: "#ffffff"
     },
     {
-      "path": "font-size.4xl",
-      "cssVar": "--storm-font-size-4xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "3rem"
+      path: "color.yellow.1",
+      cssVar: "--storm-color-yellow-1",
+      type: "color",
+      category: "color",
+      value: "#facd7b"
     },
     {
-      "path": "font-size.5xl",
-      "cssVar": "--storm-font-size-5xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "3.75rem"
+      path: "color.yellow.2",
+      cssVar: "--storm-color-yellow-2",
+      type: "color",
+      category: "color",
+      value: "#f9c25e"
     },
     {
-      "path": "font-size.6xl",
-      "cssVar": "--storm-font-size-6xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "4.5rem"
+      path: "color.yellow.3",
+      cssVar: "--storm-color-yellow-3",
+      type: "color",
+      category: "color",
+      value: "#f8b740"
     },
     {
-      "path": "font-size.7xl",
-      "cssVar": "--storm-font-size-7xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "6rem"
+      path: "color.yellow.4",
+      cssVar: "--storm-color-yellow-4",
+      type: "color",
+      category: "color",
+      value: "#f7ac23"
     },
     {
-      "path": "font-size.8xl",
-      "cssVar": "--storm-font-size-8xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "8rem"
+      path: "color.yellow.5",
+      cssVar: "--storm-color-yellow-5",
+      type: "color",
+      category: "color",
+      value: "#f0a824"
     },
     {
-      "path": "font-size.9xl",
-      "cssVar": "--storm-font-size-9xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "10rem"
+      path: "color.yellow.6",
+      cssVar: "--storm-color-yellow-6",
+      type: "color",
+      category: "color",
+      value: "#df9d24"
     },
     {
-      "path": "font-size.10xl",
-      "cssVar": "--storm-font-size-10xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "12rem"
+      path: "color.yellow.7",
+      cssVar: "--storm-color-yellow-7",
+      type: "color",
+      category: "color",
+      value: "#c58c22"
     },
     {
-      "path": "font-size.11xl",
-      "cssVar": "--storm-font-size-11xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "14rem"
+      path: "color.yellow.8",
+      cssVar: "--storm-color-yellow-8",
+      type: "color",
+      category: "color",
+      value: "#a2731e"
     },
     {
-      "path": "font-size.12xl",
-      "cssVar": "--storm-font-size-12xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "16rem"
+      path: "color.yellow.9",
+      cssVar: "--storm-color-yellow-9",
+      type: "color",
+      category: "color",
+      value: "#765417"
     },
     {
-      "path": "font-size.13xl",
-      "cssVar": "--storm-font-size-13xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "18rem"
+      path: "drop-shadow.2xl",
+      cssVar: "--storm-drop-shadow-2xl",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 25px 25px 0px #00000026"
     },
     {
-      "path": "font-size.14xl",
-      "cssVar": "--storm-font-size-14xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "20rem"
+      path: "drop-shadow.lg",
+      cssVar: "--storm-drop-shadow-lg",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 4px 4px 0px #00000026"
     },
     {
-      "path": "font-size.15xl",
-      "cssVar": "--storm-font-size-15xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "24rem"
+      path: "drop-shadow.md",
+      cssVar: "--storm-drop-shadow-md",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 3px 3px 0px #0000001f"
     },
     {
-      "path": "font-size.lg",
-      "cssVar": "--storm-font-size-lg",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "1.25rem"
+      path: "drop-shadow.sm",
+      cssVar: "--storm-drop-shadow-sm",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 1px 2px 0px #00000026"
     },
     {
-      "path": "font-size.md",
-      "cssVar": "--storm-font-size-md",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "1.125rem"
+      path: "drop-shadow.xl",
+      cssVar: "--storm-drop-shadow-xl",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 9px 7px 0px #0000001a"
     },
     {
-      "path": "font-size.sm",
-      "cssVar": "--storm-font-size-sm",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "1rem"
+      path: "drop-shadow.xs",
+      cssVar: "--storm-drop-shadow-xs",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 1px 1px 0px #0000000d"
     },
     {
-      "path": "font-size.xl",
-      "cssVar": "--storm-font-size-xl",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "1.5rem"
+      path: "durations.instant",
+      cssVar: "--storm-durations-instant",
+      type: "duration",
+      category: "duration",
+      value: "0ms"
     },
     {
-      "path": "font-size.xs",
-      "cssVar": "--storm-font-size-xs",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "0.875rem"
+      path: "durations.long",
+      cssVar: "--storm-durations-long",
+      type: "duration",
+      category: "duration",
+      value: "600ms"
     },
     {
-      "path": "font-size.xxs",
-      "cssVar": "--storm-font-size-xxs",
-      "type": "dimension",
-      "category": "fontSize",
-      "value": "0.75rem"
+      path: "durations.medium",
+      cssVar: "--storm-durations-medium",
+      type: "duration",
+      category: "duration",
+      value: "300ms"
     },
     {
-      "path": "font-weight.black",
-      "cssVar": "--storm-font-weight-black",
-      "type": "fontWeight",
-      "category": "fontWeight",
-      "value": "900"
+      path: "durations.short",
+      cssVar: "--storm-durations-short",
+      type: "duration",
+      category: "duration",
+      value: "100ms"
     },
     {
-      "path": "font-weight.bold",
-      "cssVar": "--storm-font-weight-bold",
-      "type": "fontWeight",
-      "category": "fontWeight",
-      "value": "700"
+      path: "ease.in",
+      cssVar: "--storm-ease-in",
+      type: "cubicBezier",
+      category: "easing",
+      value: "cubic-bezier(0.4, 0, 1, 1)"
     },
     {
-      "path": "font-weight.extrabold",
-      "cssVar": "--storm-font-weight-extrabold",
-      "type": "fontWeight",
-      "category": "fontWeight",
-      "value": "800"
+      path: "ease.in-out",
+      cssVar: "--storm-ease-in-out",
+      type: "cubicBezier",
+      category: "easing",
+      value: "cubic-bezier(0.4, 0, 0.2, 1)"
     },
     {
-      "path": "font-weight.extralight",
-      "cssVar": "--storm-font-weight-extralight",
-      "type": "fontWeight",
-      "category": "fontWeight",
-      "value": "200"
+      path: "ease.out",
+      cssVar: "--storm-ease-out",
+      type: "cubicBezier",
+      category: "easing",
+      value: "cubic-bezier(0, 0, 0.2, 1)"
     },
     {
-      "path": "font-weight.light",
-      "cssVar": "--storm-font-weight-light",
-      "type": "fontWeight",
-      "category": "fontWeight",
-      "value": "300"
+      path: "font-size.2xl",
+      cssVar: "--storm-font-size-2xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "1.875rem"
     },
     {
-      "path": "font-weight.medium",
-      "cssVar": "--storm-font-weight-medium",
-      "type": "fontWeight",
-      "category": "fontWeight",
-      "value": "500"
+      path: "font-size.3xl",
+      cssVar: "--storm-font-size-3xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "2.25rem"
     },
     {
-      "path": "font-weight.normal",
-      "cssVar": "--storm-font-weight-normal",
-      "type": "fontWeight",
-      "category": "fontWeight",
-      "value": "400"
+      path: "font-size.4xl",
+      cssVar: "--storm-font-size-4xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "3rem"
     },
     {
-      "path": "font-weight.semibold",
-      "cssVar": "--storm-font-weight-semibold",
-      "type": "fontWeight",
-      "category": "fontWeight",
-      "value": "600"
+      path: "font-size.5xl",
+      cssVar: "--storm-font-size-5xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "3.75rem"
     },
     {
-      "path": "font-weight.thin",
-      "cssVar": "--storm-font-weight-thin",
-      "type": "fontWeight",
-      "category": "fontWeight",
-      "value": "100"
+      path: "font-size.6xl",
+      cssVar: "--storm-font-size-6xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "4.5rem"
     },
     {
-      "path": "inset-shadow.2xs",
-      "cssVar": "--storm-inset-shadow-2xs",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "inset 0px 1px 0px 0px #0000000d"
+      path: "font-size.7xl",
+      cssVar: "--storm-font-size-7xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "6rem"
     },
     {
-      "path": "inset-shadow.sm",
-      "cssVar": "--storm-inset-shadow-sm",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "inset 0px 2px 4px 0px #0000000d"
+      path: "font-size.8xl",
+      cssVar: "--storm-font-size-8xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "8rem"
     },
     {
-      "path": "inset-shadow.xs",
-      "cssVar": "--storm-inset-shadow-xs",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "inset 0px 1px 1px 0px #0000000d"
+      path: "font-size.9xl",
+      cssVar: "--storm-font-size-9xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "10rem"
     },
     {
-      "path": "letter-spacing.normal",
-      "cssVar": "--storm-letter-spacing-normal",
-      "type": "dimension",
-      "category": "letterSpacing",
-      "value": "0rem"
+      path: "font-size.10xl",
+      cssVar: "--storm-font-size-10xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "12rem"
     },
     {
-      "path": "letter-spacing.tight",
-      "cssVar": "--storm-letter-spacing-tight",
-      "type": "dimension",
-      "category": "letterSpacing",
-      "value": "-0.025rem"
+      path: "font-size.11xl",
+      cssVar: "--storm-font-size-11xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "14rem"
     },
     {
-      "path": "letter-spacing.tighter",
-      "cssVar": "--storm-letter-spacing-tighter",
-      "type": "dimension",
-      "category": "letterSpacing",
-      "value": "-0.05rem"
+      path: "font-size.12xl",
+      cssVar: "--storm-font-size-12xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "16rem"
     },
     {
-      "path": "letter-spacing.wide",
-      "cssVar": "--storm-letter-spacing-wide",
-      "type": "dimension",
-      "category": "letterSpacing",
-      "value": "0.025rem"
+      path: "font-size.13xl",
+      cssVar: "--storm-font-size-13xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "18rem"
     },
     {
-      "path": "letter-spacing.wider",
-      "cssVar": "--storm-letter-spacing-wider",
-      "type": "dimension",
-      "category": "letterSpacing",
-      "value": "0.05rem"
+      path: "font-size.14xl",
+      cssVar: "--storm-font-size-14xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "20rem"
     },
     {
-      "path": "letter-spacing.widest",
-      "cssVar": "--storm-letter-spacing-widest",
-      "type": "dimension",
-      "category": "letterSpacing",
-      "value": "0.1rem"
+      path: "font-size.15xl",
+      cssVar: "--storm-font-size-15xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "24rem"
     },
     {
-      "path": "line-height.2xl",
-      "cssVar": "--storm-line-height-2xl",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.2"
+      path: "font-size.lg",
+      cssVar: "--storm-font-size-lg",
+      type: "dimension",
+      category: "fontSize",
+      value: "1.25rem"
     },
     {
-      "path": "line-height.3xl",
-      "cssVar": "--storm-line-height-3xl",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.08"
+      path: "font-size.md",
+      cssVar: "--storm-font-size-md",
+      type: "dimension",
+      category: "fontSize",
+      value: "1.125rem"
     },
     {
-      "path": "line-height.4xl",
-      "cssVar": "--storm-line-height-4xl",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1"
+      path: "font-size.sm",
+      cssVar: "--storm-font-size-sm",
+      type: "dimension",
+      category: "fontSize",
+      value: "1rem"
     },
     {
-      "path": "line-height.5xl",
-      "cssVar": "--storm-line-height-5xl",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "0.9"
+      path: "font-size.xl",
+      cssVar: "--storm-font-size-xl",
+      type: "dimension",
+      category: "fontSize",
+      value: "1.5rem"
     },
     {
-      "path": "line-height.6xl",
-      "cssVar": "--storm-line-height-6xl",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "0.9"
+      path: "font-size.xs",
+      cssVar: "--storm-font-size-xs",
+      type: "dimension",
+      category: "fontSize",
+      value: "0.875rem"
     },
     {
-      "path": "line-height.7xl",
-      "cssVar": "--storm-line-height-7xl",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "0.9"
+      path: "font-size.xxs",
+      cssVar: "--storm-font-size-xxs",
+      type: "dimension",
+      category: "fontSize",
+      value: "0.75rem"
     },
     {
-      "path": "line-height.8xl",
-      "cssVar": "--storm-line-height-8xl",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "0.9"
+      path: "font-weight.black",
+      cssVar: "--storm-font-weight-black",
+      type: "fontWeight",
+      category: "fontWeight",
+      value: "900"
     },
     {
-      "path": "line-height.9xl",
-      "cssVar": "--storm-line-height-9xl",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "0.9"
+      path: "font-weight.bold",
+      cssVar: "--storm-font-weight-bold",
+      type: "fontWeight",
+      category: "fontWeight",
+      value: "700"
     },
     {
-      "path": "line-height.10xl",
-      "cssVar": "--storm-line-height-10xl",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "0.9"
+      path: "font-weight.extrabold",
+      cssVar: "--storm-font-weight-extrabold",
+      type: "fontWeight",
+      category: "fontWeight",
+      value: "800"
     },
     {
-      "path": "line-height.lg",
-      "cssVar": "--storm-line-height-lg",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.4"
+      path: "font-weight.extralight",
+      cssVar: "--storm-font-weight-extralight",
+      type: "fontWeight",
+      category: "fontWeight",
+      value: "200"
     },
     {
-      "path": "line-height.loose",
-      "cssVar": "--storm-line-height-loose",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.665"
+      path: "font-weight.light",
+      cssVar: "--storm-font-weight-light",
+      type: "fontWeight",
+      category: "fontWeight",
+      value: "300"
     },
     {
-      "path": "line-height.md",
-      "cssVar": "--storm-line-height-md",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.35"
+      path: "font-weight.medium",
+      cssVar: "--storm-font-weight-medium",
+      type: "fontWeight",
+      category: "fontWeight",
+      value: "500"
     },
     {
-      "path": "line-height.none",
-      "cssVar": "--storm-line-height-none",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "0.765"
+      path: "font-weight.normal",
+      cssVar: "--storm-font-weight-normal",
+      type: "fontWeight",
+      category: "fontWeight",
+      value: "400"
     },
     {
-      "path": "line-height.normal",
-      "cssVar": "--storm-line-height-normal",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.2375"
+      path: "font-weight.semibold",
+      cssVar: "--storm-font-weight-semibold",
+      type: "fontWeight",
+      category: "fontWeight",
+      value: "600"
     },
     {
-      "path": "line-height.relaxed",
-      "cssVar": "--storm-line-height-relaxed",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.35"
+      path: "font-weight.thin",
+      cssVar: "--storm-font-weight-thin",
+      type: "fontWeight",
+      category: "fontWeight",
+      value: "100"
     },
     {
-      "path": "line-height.sm",
-      "cssVar": "--storm-line-height-sm",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.285714"
+      path: "inset-shadow.2xs",
+      cssVar: "--storm-inset-shadow-2xs",
+      type: "shadow",
+      category: "shadow",
+      value: "inset 0px 1px 0px 0px #0000000d"
     },
     {
-      "path": "line-height.snug",
-      "cssVar": "--storm-line-height-snug",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.125"
+      path: "inset-shadow.sm",
+      cssVar: "--storm-inset-shadow-sm",
+      type: "shadow",
+      category: "shadow",
+      value: "inset 0px 2px 4px 0px #0000000d"
     },
     {
-      "path": "line-height.tight",
-      "cssVar": "--storm-line-height-tight",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.0575"
+      path: "inset-shadow.xs",
+      cssVar: "--storm-inset-shadow-xs",
+      type: "shadow",
+      category: "shadow",
+      value: "inset 0px 1px 1px 0px #0000000d"
     },
     {
-      "path": "line-height.xl",
-      "cssVar": "--storm-line-height-xl",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.26"
+      path: "letter-spacing.normal",
+      cssVar: "--storm-letter-spacing-normal",
+      type: "dimension",
+      category: "letterSpacing",
+      value: "0rem"
     },
     {
-      "path": "line-height.xs",
-      "cssVar": "--storm-line-height-xs",
-      "type": "number",
-      "category": "lineHeight",
-      "value": "1.2"
+      path: "letter-spacing.tight",
+      cssVar: "--storm-letter-spacing-tight",
+      type: "dimension",
+      category: "letterSpacing",
+      value: "-0.025rem"
     },
     {
-      "path": "ring.base",
-      "cssVar": "--storm-ring-base",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 3px #1f1f211a"
+      path: "letter-spacing.tighter",
+      cssVar: "--storm-letter-spacing-tighter",
+      type: "dimension",
+      category: "letterSpacing",
+      value: "-0.05rem"
     },
     {
-      "path": "ring.base-offset",
-      "cssVar": "--storm-ring-base-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "letter-spacing.wide",
+      cssVar: "--storm-letter-spacing-wide",
+      type: "dimension",
+      category: "letterSpacing",
+      value: "0.025rem"
     },
     {
-      "path": "ring.base-subtle",
-      "cssVar": "--storm-ring-base-subtle",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 1px #1f1f211a"
+      path: "letter-spacing.wider",
+      cssVar: "--storm-letter-spacing-wider",
+      type: "dimension",
+      category: "letterSpacing",
+      value: "0.05rem"
     },
     {
-      "path": "ring.base-subtle-offset",
-      "cssVar": "--storm-ring-base-subtle-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "letter-spacing.widest",
+      cssVar: "--storm-letter-spacing-widest",
+      type: "dimension",
+      category: "letterSpacing",
+      value: "0.1rem"
     },
     {
-      "path": "ring.brand",
-      "cssVar": "--storm-ring-brand",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 3px #1fb2a626"
+      path: "line-height.2xl",
+      cssVar: "--storm-line-height-2xl",
+      type: "number",
+      category: "lineHeight",
+      value: "1.2"
     },
     {
-      "path": "ring.brand-offset",
-      "cssVar": "--storm-ring-brand-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "line-height.3xl",
+      cssVar: "--storm-line-height-3xl",
+      type: "number",
+      category: "lineHeight",
+      value: "1.08"
     },
     {
-      "path": "ring.brand-subtle",
-      "cssVar": "--storm-ring-brand-subtle",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 1px #1fb2a626"
+      path: "line-height.4xl",
+      cssVar: "--storm-line-height-4xl",
+      type: "number",
+      category: "lineHeight",
+      value: "1"
     },
     {
-      "path": "ring.brand-subtle-offset",
-      "cssVar": "--storm-ring-brand-subtle-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "line-height.5xl",
+      cssVar: "--storm-line-height-5xl",
+      type: "number",
+      category: "lineHeight",
+      value: "0.9"
     },
     {
-      "path": "ring.danger",
-      "cssVar": "--storm-ring-danger",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 3px #8e223e26"
+      path: "line-height.6xl",
+      cssVar: "--storm-line-height-6xl",
+      type: "number",
+      category: "lineHeight",
+      value: "0.9"
     },
     {
-      "path": "ring.danger-offset",
-      "cssVar": "--storm-ring-danger-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "line-height.7xl",
+      cssVar: "--storm-line-height-7xl",
+      type: "number",
+      category: "lineHeight",
+      value: "0.9"
     },
     {
-      "path": "ring.danger-subtle",
-      "cssVar": "--storm-ring-danger-subtle",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 1px #8e223e26"
+      path: "line-height.8xl",
+      cssVar: "--storm-line-height-8xl",
+      type: "number",
+      category: "lineHeight",
+      value: "0.9"
     },
     {
-      "path": "ring.danger-subtle-offset",
-      "cssVar": "--storm-ring-danger-subtle-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "line-height.9xl",
+      cssVar: "--storm-line-height-9xl",
+      type: "number",
+      category: "lineHeight",
+      value: "0.9"
     },
     {
-      "path": "ring.discovery",
-      "cssVar": "--storm-ring-discovery",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 3px #59439526"
+      path: "line-height.10xl",
+      cssVar: "--storm-line-height-10xl",
+      type: "number",
+      category: "lineHeight",
+      value: "0.9"
     },
     {
-      "path": "ring.discovery-offset",
-      "cssVar": "--storm-ring-discovery-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "line-height.lg",
+      cssVar: "--storm-line-height-lg",
+      type: "number",
+      category: "lineHeight",
+      value: "1.4"
     },
     {
-      "path": "ring.discovery-subtle",
-      "cssVar": "--storm-ring-discovery-subtle",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 1px #59439526"
+      path: "line-height.loose",
+      cssVar: "--storm-line-height-loose",
+      type: "number",
+      category: "lineHeight",
+      value: "1.665"
     },
     {
-      "path": "ring.discovery-subtle-offset",
-      "cssVar": "--storm-ring-discovery-subtle-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "line-height.md",
+      cssVar: "--storm-line-height-md",
+      type: "number",
+      category: "lineHeight",
+      value: "1.35"
     },
     {
-      "path": "ring.info",
-      "cssVar": "--storm-ring-info",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 3px #2055b326"
+      path: "line-height.none",
+      cssVar: "--storm-line-height-none",
+      type: "number",
+      category: "lineHeight",
+      value: "0.765"
     },
     {
-      "path": "ring.info-offset",
-      "cssVar": "--storm-ring-info-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "line-height.normal",
+      cssVar: "--storm-line-height-normal",
+      type: "number",
+      category: "lineHeight",
+      value: "1.2375"
     },
     {
-      "path": "ring.info-subtle",
-      "cssVar": "--storm-ring-info-subtle",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 1px #2055b326"
+      path: "line-height.relaxed",
+      cssVar: "--storm-line-height-relaxed",
+      type: "number",
+      category: "lineHeight",
+      value: "1.35"
     },
     {
-      "path": "ring.info-subtle-offset",
-      "cssVar": "--storm-ring-info-subtle-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "line-height.sm",
+      cssVar: "--storm-line-height-sm",
+      type: "number",
+      category: "lineHeight",
+      value: "1.285714"
     },
     {
-      "path": "ring.success",
-      "cssVar": "--storm-ring-success",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 3px #216b5326"
+      path: "line-height.snug",
+      cssVar: "--storm-line-height-snug",
+      type: "number",
+      category: "lineHeight",
+      value: "1.125"
     },
     {
-      "path": "ring.success-offset",
-      "cssVar": "--storm-ring-success-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "line-height.tight",
+      cssVar: "--storm-line-height-tight",
+      type: "number",
+      category: "lineHeight",
+      value: "1.0575"
     },
     {
-      "path": "ring.success-subtle",
-      "cssVar": "--storm-ring-success-subtle",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 1px #216b5326"
+      path: "line-height.xl",
+      cssVar: "--storm-line-height-xl",
+      type: "number",
+      category: "lineHeight",
+      value: "1.26"
     },
     {
-      "path": "ring.success-subtle-offset",
-      "cssVar": "--storm-ring-success-subtle-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "line-height.xs",
+      cssVar: "--storm-line-height-xs",
+      type: "number",
+      category: "lineHeight",
+      value: "1.2"
     },
     {
-      "path": "ring.warning",
-      "cssVar": "--storm-ring-warning",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 3px #76541726"
+      path: "ring.base",
+      cssVar: "--storm-ring-base",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 3px #1f1f211a"
     },
     {
-      "path": "ring.warning-offset",
-      "cssVar": "--storm-ring-warning-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "ring.base-offset",
+      cssVar: "--storm-ring-base-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "ring.warning-subtle",
-      "cssVar": "--storm-ring-warning-subtle",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 0px 0px 1px #76541726"
+      path: "ring.base-subtle",
+      cssVar: "--storm-ring-base-subtle",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 1px #1f1f211a"
     },
     {
-      "path": "ring.warning-subtle-offset",
-      "cssVar": "--storm-ring-warning-subtle-offset",
-      "type": "shadow",
-      "category": "shadow"
+      path: "ring.base-subtle-offset",
+      cssVar: "--storm-ring-base-subtle-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "shadow.2xl",
-      "cssVar": "--storm-shadow-2xl",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 25px 50px -12px #00000040"
+      path: "ring.brand",
+      cssVar: "--storm-ring-brand",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 3px #1fb2a626"
     },
     {
-      "path": "shadow.2xs",
-      "cssVar": "--storm-shadow-2xs",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 0px 0px #0000000d"
+      path: "ring.brand-offset",
+      cssVar: "--storm-ring-brand-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "shadow.lg",
-      "cssVar": "--storm-shadow-lg",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a"
+      path: "ring.brand-subtle",
+      cssVar: "--storm-ring-brand-subtle",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 1px #1fb2a626"
     },
     {
-      "path": "shadow.md",
-      "cssVar": "--storm-shadow-md",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a"
+      path: "ring.brand-subtle-offset",
+      cssVar: "--storm-ring-brand-subtle-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "shadow.sm",
-      "cssVar": "--storm-shadow-sm",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a"
+      path: "ring.danger",
+      cssVar: "--storm-ring-danger",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 3px #8e223e26"
     },
     {
-      "path": "shadow.xl",
-      "cssVar": "--storm-shadow-xl",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a"
+      path: "ring.danger-offset",
+      cssVar: "--storm-ring-danger-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "shadow.xs",
-      "cssVar": "--storm-shadow-xs",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 2px 0px #0000000d"
+      path: "ring.danger-subtle",
+      cssVar: "--storm-ring-danger-subtle",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 1px #8e223e26"
     },
     {
-      "path": "size.2xl",
-      "cssVar": "--storm-size-2xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "16px"
+      path: "ring.danger-subtle-offset",
+      cssVar: "--storm-ring-danger-subtle-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "size.3xl",
-      "cssVar": "--storm-size-3xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "18px"
+      path: "ring.discovery",
+      cssVar: "--storm-ring-discovery",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 3px #59439526"
     },
     {
-      "path": "size.4xl",
-      "cssVar": "--storm-size-4xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "20px"
+      path: "ring.discovery-offset",
+      cssVar: "--storm-ring-discovery-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "size.5xl",
-      "cssVar": "--storm-size-5xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "22px"
+      path: "ring.discovery-subtle",
+      cssVar: "--storm-ring-discovery-subtle",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 1px #59439526"
     },
     {
-      "path": "size.6xl",
-      "cssVar": "--storm-size-6xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "24px"
+      path: "ring.discovery-subtle-offset",
+      cssVar: "--storm-ring-discovery-subtle-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "size.7xl",
-      "cssVar": "--storm-size-7xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "26px"
+      path: "ring.info",
+      cssVar: "--storm-ring-info",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 3px #2055b326"
     },
     {
-      "path": "size.8xl",
-      "cssVar": "--storm-size-8xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "32px"
+      path: "ring.info-offset",
+      cssVar: "--storm-ring-info-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "size.9xl",
-      "cssVar": "--storm-size-9xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "37px"
+      path: "ring.info-subtle",
+      cssVar: "--storm-ring-info-subtle",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 1px #2055b326"
     },
     {
-      "path": "size.10xl",
-      "cssVar": "--storm-size-10xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "42px"
+      path: "ring.info-subtle-offset",
+      cssVar: "--storm-ring-info-subtle-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "size.11xl",
-      "cssVar": "--storm-size-11xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "47px"
+      path: "ring.success",
+      cssVar: "--storm-ring-success",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 3px #216b5326"
     },
     {
-      "path": "size.12xl",
-      "cssVar": "--storm-size-12xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "52px"
+      path: "ring.success-offset",
+      cssVar: "--storm-ring-success-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "size.13xl",
-      "cssVar": "--storm-size-13xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "62px"
+      path: "ring.success-subtle",
+      cssVar: "--storm-ring-success-subtle",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 1px #216b5326"
     },
     {
-      "path": "size.14xl",
-      "cssVar": "--storm-size-14xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "72px"
+      path: "ring.success-subtle-offset",
+      cssVar: "--storm-ring-success-subtle-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "size.15xl",
-      "cssVar": "--storm-size-15xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "82px"
+      path: "ring.warning",
+      cssVar: "--storm-ring-warning",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 3px #76541726"
     },
     {
-      "path": "size.16xl",
-      "cssVar": "--storm-size-16xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "92px"
+      path: "ring.warning-offset",
+      cssVar: "--storm-ring-warning-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "size.17xl",
-      "cssVar": "--storm-size-17xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "102px"
+      path: "ring.warning-subtle",
+      cssVar: "--storm-ring-warning-subtle",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 0px 0px 1px #76541726"
     },
     {
-      "path": "size.18xl",
-      "cssVar": "--storm-size-18xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "112px"
+      path: "ring.warning-subtle-offset",
+      cssVar: "--storm-ring-warning-subtle-offset",
+      type: "shadow",
+      category: "shadow"
     },
     {
-      "path": "size.19xl",
-      "cssVar": "--storm-size-19xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "122px"
+      path: "shadow.2xl",
+      cssVar: "--storm-shadow-2xl",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 25px 50px -12px #00000040"
     },
     {
-      "path": "size.20xl",
-      "cssVar": "--storm-size-20xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "132px"
+      path: "shadow.2xs",
+      cssVar: "--storm-shadow-2xs",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 1px 0px 0px #0000000d"
     },
     {
-      "path": "size.21xl",
-      "cssVar": "--storm-size-21xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "142px"
+      path: "shadow.lg",
+      cssVar: "--storm-shadow-lg",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a"
     },
     {
-      "path": "size.22xl",
-      "cssVar": "--storm-size-22xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "152px"
+      path: "shadow.md",
+      cssVar: "--storm-shadow-md",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a"
     },
     {
-      "path": "size.23xl",
-      "cssVar": "--storm-size-23xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "162px"
+      path: "shadow.sm",
+      cssVar: "--storm-shadow-sm",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a"
     },
     {
-      "path": "size.24xl",
-      "cssVar": "--storm-size-24xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "172px"
+      path: "shadow.xl",
+      cssVar: "--storm-shadow-xl",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a"
     },
     {
-      "path": "size.25xl",
-      "cssVar": "--storm-size-25xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "182px"
+      path: "shadow.xs",
+      cssVar: "--storm-shadow-xs",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 1px 2px 0px #0000000d"
     },
     {
-      "path": "size.26xl",
-      "cssVar": "--storm-size-26xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "192px"
+      path: "size.2xl",
+      cssVar: "--storm-size-2xl",
+      type: "dimension",
+      category: "size",
+      value: "16px"
     },
     {
-      "path": "size.27xl",
-      "cssVar": "--storm-size-27xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "202px"
+      path: "size.3xl",
+      cssVar: "--storm-size-3xl",
+      type: "dimension",
+      category: "size",
+      value: "18px"
     },
     {
-      "path": "size.28xl",
-      "cssVar": "--storm-size-28xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "212px"
+      path: "size.4xl",
+      cssVar: "--storm-size-4xl",
+      type: "dimension",
+      category: "size",
+      value: "20px"
     },
     {
-      "path": "size.29xl",
-      "cssVar": "--storm-size-29xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "222px"
+      path: "size.5xl",
+      cssVar: "--storm-size-5xl",
+      type: "dimension",
+      category: "size",
+      value: "22px"
     },
     {
-      "path": "size.30xl",
-      "cssVar": "--storm-size-30xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "232px"
+      path: "size.6xl",
+      cssVar: "--storm-size-6xl",
+      type: "dimension",
+      category: "size",
+      value: "24px"
     },
     {
-      "path": "size.31xl",
-      "cssVar": "--storm-size-31xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "242px"
+      path: "size.7xl",
+      cssVar: "--storm-size-7xl",
+      type: "dimension",
+      category: "size",
+      value: "26px"
     },
     {
-      "path": "size.32xl",
-      "cssVar": "--storm-size-32xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "252px"
+      path: "size.8xl",
+      cssVar: "--storm-size-8xl",
+      type: "dimension",
+      category: "size",
+      value: "32px"
     },
     {
-      "path": "size.33xl",
-      "cssVar": "--storm-size-33xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "262px"
+      path: "size.9xl",
+      cssVar: "--storm-size-9xl",
+      type: "dimension",
+      category: "size",
+      value: "37px"
     },
     {
-      "path": "size.34xl",
-      "cssVar": "--storm-size-34xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "272px"
+      path: "size.10xl",
+      cssVar: "--storm-size-10xl",
+      type: "dimension",
+      category: "size",
+      value: "42px"
     },
     {
-      "path": "size.35xl",
-      "cssVar": "--storm-size-35xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "282px"
+      path: "size.11xl",
+      cssVar: "--storm-size-11xl",
+      type: "dimension",
+      category: "size",
+      value: "47px"
     },
     {
-      "path": "size.36xl",
-      "cssVar": "--storm-size-36xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "292px"
+      path: "size.12xl",
+      cssVar: "--storm-size-12xl",
+      type: "dimension",
+      category: "size",
+      value: "52px"
     },
     {
-      "path": "size.37xl",
-      "cssVar": "--storm-size-37xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "302px"
+      path: "size.13xl",
+      cssVar: "--storm-size-13xl",
+      type: "dimension",
+      category: "size",
+      value: "62px"
     },
     {
-      "path": "size.38xl",
-      "cssVar": "--storm-size-38xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "312px"
+      path: "size.14xl",
+      cssVar: "--storm-size-14xl",
+      type: "dimension",
+      category: "size",
+      value: "72px"
     },
     {
-      "path": "size.39xl",
-      "cssVar": "--storm-size-39xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "322px"
+      path: "size.15xl",
+      cssVar: "--storm-size-15xl",
+      type: "dimension",
+      category: "size",
+      value: "82px"
     },
     {
-      "path": "size.40xl",
-      "cssVar": "--storm-size-40xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "332px"
+      path: "size.16xl",
+      cssVar: "--storm-size-16xl",
+      type: "dimension",
+      category: "size",
+      value: "92px"
     },
     {
-      "path": "size.41xl",
-      "cssVar": "--storm-size-41xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "342px"
+      path: "size.17xl",
+      cssVar: "--storm-size-17xl",
+      type: "dimension",
+      category: "size",
+      value: "102px"
     },
     {
-      "path": "size.42xl",
-      "cssVar": "--storm-size-42xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "352px"
+      path: "size.18xl",
+      cssVar: "--storm-size-18xl",
+      type: "dimension",
+      category: "size",
+      value: "112px"
     },
     {
-      "path": "size.43xl",
-      "cssVar": "--storm-size-43xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "362px"
+      path: "size.19xl",
+      cssVar: "--storm-size-19xl",
+      type: "dimension",
+      category: "size",
+      value: "122px"
     },
     {
-      "path": "size.44xl",
-      "cssVar": "--storm-size-44xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "372px"
+      path: "size.20xl",
+      cssVar: "--storm-size-20xl",
+      type: "dimension",
+      category: "size",
+      value: "132px"
     },
     {
-      "path": "size.45xl",
-      "cssVar": "--storm-size-45xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "382px"
+      path: "size.21xl",
+      cssVar: "--storm-size-21xl",
+      type: "dimension",
+      category: "size",
+      value: "142px"
     },
     {
-      "path": "size.46xl",
-      "cssVar": "--storm-size-46xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "392px"
+      path: "size.22xl",
+      cssVar: "--storm-size-22xl",
+      type: "dimension",
+      category: "size",
+      value: "152px"
     },
     {
-      "path": "size.47xl",
-      "cssVar": "--storm-size-47xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "402px"
+      path: "size.23xl",
+      cssVar: "--storm-size-23xl",
+      type: "dimension",
+      category: "size",
+      value: "162px"
     },
     {
-      "path": "size.48xl",
-      "cssVar": "--storm-size-48xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "412px"
+      path: "size.24xl",
+      cssVar: "--storm-size-24xl",
+      type: "dimension",
+      category: "size",
+      value: "172px"
     },
     {
-      "path": "size.49xl",
-      "cssVar": "--storm-size-49xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "422px"
+      path: "size.25xl",
+      cssVar: "--storm-size-25xl",
+      type: "dimension",
+      category: "size",
+      value: "182px"
     },
     {
-      "path": "size.50xl",
-      "cssVar": "--storm-size-50xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "432px"
+      path: "size.26xl",
+      cssVar: "--storm-size-26xl",
+      type: "dimension",
+      category: "size",
+      value: "192px"
     },
     {
-      "path": "size.51xl",
-      "cssVar": "--storm-size-51xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "442px"
+      path: "size.27xl",
+      cssVar: "--storm-size-27xl",
+      type: "dimension",
+      category: "size",
+      value: "202px"
     },
     {
-      "path": "size.52xl",
-      "cssVar": "--storm-size-52xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "452px"
+      path: "size.28xl",
+      cssVar: "--storm-size-28xl",
+      type: "dimension",
+      category: "size",
+      value: "212px"
     },
     {
-      "path": "size.53xl",
-      "cssVar": "--storm-size-53xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "462px"
+      path: "size.29xl",
+      cssVar: "--storm-size-29xl",
+      type: "dimension",
+      category: "size",
+      value: "222px"
     },
     {
-      "path": "size.54xl",
-      "cssVar": "--storm-size-54xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "472px"
+      path: "size.30xl",
+      cssVar: "--storm-size-30xl",
+      type: "dimension",
+      category: "size",
+      value: "232px"
     },
     {
-      "path": "size.55xl",
-      "cssVar": "--storm-size-55xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "482px"
+      path: "size.31xl",
+      cssVar: "--storm-size-31xl",
+      type: "dimension",
+      category: "size",
+      value: "242px"
     },
     {
-      "path": "size.56xl",
-      "cssVar": "--storm-size-56xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "492px"
+      path: "size.32xl",
+      cssVar: "--storm-size-32xl",
+      type: "dimension",
+      category: "size",
+      value: "252px"
     },
     {
-      "path": "size.57xl",
-      "cssVar": "--storm-size-57xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "502px"
+      path: "size.33xl",
+      cssVar: "--storm-size-33xl",
+      type: "dimension",
+      category: "size",
+      value: "262px"
     },
     {
-      "path": "size.58xl",
-      "cssVar": "--storm-size-58xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "512px"
+      path: "size.34xl",
+      cssVar: "--storm-size-34xl",
+      type: "dimension",
+      category: "size",
+      value: "272px"
     },
     {
-      "path": "size.59xl",
-      "cssVar": "--storm-size-59xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "522px"
+      path: "size.35xl",
+      cssVar: "--storm-size-35xl",
+      type: "dimension",
+      category: "size",
+      value: "282px"
     },
     {
-      "path": "size.60xl",
-      "cssVar": "--storm-size-60xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "532px"
+      path: "size.36xl",
+      cssVar: "--storm-size-36xl",
+      type: "dimension",
+      category: "size",
+      value: "292px"
     },
     {
-      "path": "size.61xl",
-      "cssVar": "--storm-size-61xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "542px"
+      path: "size.37xl",
+      cssVar: "--storm-size-37xl",
+      type: "dimension",
+      category: "size",
+      value: "302px"
     },
     {
-      "path": "size.62xl",
-      "cssVar": "--storm-size-62xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "552px"
+      path: "size.38xl",
+      cssVar: "--storm-size-38xl",
+      type: "dimension",
+      category: "size",
+      value: "312px"
     },
     {
-      "path": "size.63xl",
-      "cssVar": "--storm-size-63xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "562px"
+      path: "size.39xl",
+      cssVar: "--storm-size-39xl",
+      type: "dimension",
+      category: "size",
+      value: "322px"
     },
     {
-      "path": "size.64xl",
-      "cssVar": "--storm-size-64xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "572px"
+      path: "size.40xl",
+      cssVar: "--storm-size-40xl",
+      type: "dimension",
+      category: "size",
+      value: "332px"
     },
     {
-      "path": "size.lg",
-      "cssVar": "--storm-size-lg",
-      "type": "dimension",
-      "category": "size",
-      "value": "12px"
+      path: "size.41xl",
+      cssVar: "--storm-size-41xl",
+      type: "dimension",
+      category: "size",
+      value: "342px"
     },
     {
-      "path": "size.md",
-      "cssVar": "--storm-size-md",
-      "type": "dimension",
-      "category": "size",
-      "value": "10px"
+      path: "size.42xl",
+      cssVar: "--storm-size-42xl",
+      type: "dimension",
+      category: "size",
+      value: "352px"
     },
     {
-      "path": "size.sm",
-      "cssVar": "--storm-size-sm",
-      "type": "dimension",
-      "category": "size",
-      "value": "8px"
+      path: "size.43xl",
+      cssVar: "--storm-size-43xl",
+      type: "dimension",
+      category: "size",
+      value: "362px"
     },
     {
-      "path": "size.xl",
-      "cssVar": "--storm-size-xl",
-      "type": "dimension",
-      "category": "size",
-      "value": "14px"
+      path: "size.44xl",
+      cssVar: "--storm-size-44xl",
+      type: "dimension",
+      category: "size",
+      value: "372px"
     },
     {
-      "path": "size.xs",
-      "cssVar": "--storm-size-xs",
-      "type": "dimension",
-      "category": "size",
-      "value": "4px"
+      path: "size.45xl",
+      cssVar: "--storm-size-45xl",
+      type: "dimension",
+      category: "size",
+      value: "382px"
     },
     {
-      "path": "size.xxs",
-      "cssVar": "--storm-size-xxs",
-      "type": "dimension",
-      "category": "size",
-      "value": "2px"
+      path: "size.46xl",
+      cssVar: "--storm-size-46xl",
+      type: "dimension",
+      category: "size",
+      value: "392px"
     },
     {
-      "path": "size.zero",
-      "cssVar": "--storm-size-zero",
-      "type": "dimension",
-      "category": "size",
-      "value": "0px"
+      path: "size.47xl",
+      cssVar: "--storm-size-47xl",
+      type: "dimension",
+      category: "size",
+      value: "402px"
     },
     {
-      "path": "spacing.2xl",
-      "cssVar": "--storm-spacing-2xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "10px"
+      path: "size.48xl",
+      cssVar: "--storm-size-48xl",
+      type: "dimension",
+      category: "size",
+      value: "412px"
     },
     {
-      "path": "spacing.3xl",
-      "cssVar": "--storm-spacing-3xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "13px"
+      path: "size.49xl",
+      cssVar: "--storm-size-49xl",
+      type: "dimension",
+      category: "size",
+      value: "422px"
     },
     {
-      "path": "spacing.4xl",
-      "cssVar": "--storm-spacing-4xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "16px"
+      path: "size.50xl",
+      cssVar: "--storm-size-50xl",
+      type: "dimension",
+      category: "size",
+      value: "432px"
     },
     {
-      "path": "spacing.5xl",
-      "cssVar": "--storm-spacing-5xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "18px"
+      path: "size.51xl",
+      cssVar: "--storm-size-51xl",
+      type: "dimension",
+      category: "size",
+      value: "442px"
     },
     {
-      "path": "spacing.6xl",
-      "cssVar": "--storm-spacing-6xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "21px"
+      path: "size.52xl",
+      cssVar: "--storm-size-52xl",
+      type: "dimension",
+      category: "size",
+      value: "452px"
     },
     {
-      "path": "spacing.7xl",
-      "cssVar": "--storm-spacing-7xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "24px"
+      path: "size.53xl",
+      cssVar: "--storm-size-53xl",
+      type: "dimension",
+      category: "size",
+      value: "462px"
     },
     {
-      "path": "spacing.8xl",
-      "cssVar": "--storm-spacing-8xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "32px"
+      path: "size.54xl",
+      cssVar: "--storm-size-54xl",
+      type: "dimension",
+      category: "size",
+      value: "472px"
     },
     {
-      "path": "spacing.9xl",
-      "cssVar": "--storm-spacing-9xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "39px"
+      path: "size.55xl",
+      cssVar: "--storm-size-55xl",
+      type: "dimension",
+      category: "size",
+      value: "482px"
     },
     {
-      "path": "spacing.10xl",
-      "cssVar": "--storm-spacing-10xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "46px"
+      path: "size.56xl",
+      cssVar: "--storm-size-56xl",
+      type: "dimension",
+      category: "size",
+      value: "492px"
     },
     {
-      "path": "spacing.11xl",
-      "cssVar": "--storm-spacing-11xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "53px"
+      path: "size.57xl",
+      cssVar: "--storm-size-57xl",
+      type: "dimension",
+      category: "size",
+      value: "502px"
     },
     {
-      "path": "spacing.12xl",
-      "cssVar": "--storm-spacing-12xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "60px"
+      path: "size.58xl",
+      cssVar: "--storm-size-58xl",
+      type: "dimension",
+      category: "size",
+      value: "512px"
     },
     {
-      "path": "spacing.13xl",
-      "cssVar": "--storm-spacing-13xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "74px"
+      path: "size.59xl",
+      cssVar: "--storm-size-59xl",
+      type: "dimension",
+      category: "size",
+      value: "522px"
     },
     {
-      "path": "spacing.14xl",
-      "cssVar": "--storm-spacing-14xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "88px"
+      path: "size.60xl",
+      cssVar: "--storm-size-60xl",
+      type: "dimension",
+      category: "size",
+      value: "532px"
     },
     {
-      "path": "spacing.15xl",
-      "cssVar": "--storm-spacing-15xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "102px"
+      path: "size.61xl",
+      cssVar: "--storm-size-61xl",
+      type: "dimension",
+      category: "size",
+      value: "542px"
     },
     {
-      "path": "spacing.16xl",
-      "cssVar": "--storm-spacing-16xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "116px"
+      path: "size.62xl",
+      cssVar: "--storm-size-62xl",
+      type: "dimension",
+      category: "size",
+      value: "552px"
     },
     {
-      "path": "spacing.17xl",
-      "cssVar": "--storm-spacing-17xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "130px"
+      path: "size.63xl",
+      cssVar: "--storm-size-63xl",
+      type: "dimension",
+      category: "size",
+      value: "562px"
     },
     {
-      "path": "spacing.18xl",
-      "cssVar": "--storm-spacing-18xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "144px"
+      path: "size.64xl",
+      cssVar: "--storm-size-64xl",
+      type: "dimension",
+      category: "size",
+      value: "572px"
     },
     {
-      "path": "spacing.19xl",
-      "cssVar": "--storm-spacing-19xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "158px"
+      path: "size.lg",
+      cssVar: "--storm-size-lg",
+      type: "dimension",
+      category: "size",
+      value: "12px"
     },
     {
-      "path": "spacing.20xl",
-      "cssVar": "--storm-spacing-20xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "172px"
+      path: "size.md",
+      cssVar: "--storm-size-md",
+      type: "dimension",
+      category: "size",
+      value: "10px"
     },
     {
-      "path": "spacing.21xl",
-      "cssVar": "--storm-spacing-21xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "186px"
+      path: "size.sm",
+      cssVar: "--storm-size-sm",
+      type: "dimension",
+      category: "size",
+      value: "8px"
     },
     {
-      "path": "spacing.22xl",
-      "cssVar": "--storm-spacing-22xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "200px"
+      path: "size.xl",
+      cssVar: "--storm-size-xl",
+      type: "dimension",
+      category: "size",
+      value: "14px"
     },
     {
-      "path": "spacing.23xl",
-      "cssVar": "--storm-spacing-23xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "214px"
+      path: "size.xs",
+      cssVar: "--storm-size-xs",
+      type: "dimension",
+      category: "size",
+      value: "4px"
     },
     {
-      "path": "spacing.24xl",
-      "cssVar": "--storm-spacing-24xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "228px"
+      path: "size.xxs",
+      cssVar: "--storm-size-xxs",
+      type: "dimension",
+      category: "size",
+      value: "2px"
     },
     {
-      "path": "spacing.25xl",
-      "cssVar": "--storm-spacing-25xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "242px"
+      path: "size.zero",
+      cssVar: "--storm-size-zero",
+      type: "dimension",
+      category: "size",
+      value: "0px"
     },
     {
-      "path": "spacing.26xl",
-      "cssVar": "--storm-spacing-26xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "256px"
+      path: "spacing.2xl",
+      cssVar: "--storm-spacing-2xl",
+      type: "dimension",
+      category: "space",
+      value: "10px"
     },
     {
-      "path": "spacing.27xl",
-      "cssVar": "--storm-spacing-27xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "270px"
+      path: "spacing.3xl",
+      cssVar: "--storm-spacing-3xl",
+      type: "dimension",
+      category: "space",
+      value: "13px"
     },
     {
-      "path": "spacing.28xl",
-      "cssVar": "--storm-spacing-28xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "284px"
+      path: "spacing.4xl",
+      cssVar: "--storm-spacing-4xl",
+      type: "dimension",
+      category: "space",
+      value: "16px"
     },
     {
-      "path": "spacing.29xl",
-      "cssVar": "--storm-spacing-29xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "298px"
+      path: "spacing.5xl",
+      cssVar: "--storm-spacing-5xl",
+      type: "dimension",
+      category: "space",
+      value: "18px"
     },
     {
-      "path": "spacing.30xl",
-      "cssVar": "--storm-spacing-30xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "312px"
+      path: "spacing.6xl",
+      cssVar: "--storm-spacing-6xl",
+      type: "dimension",
+      category: "space",
+      value: "21px"
     },
     {
-      "path": "spacing.31xl",
-      "cssVar": "--storm-spacing-31xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "326px"
+      path: "spacing.7xl",
+      cssVar: "--storm-spacing-7xl",
+      type: "dimension",
+      category: "space",
+      value: "24px"
     },
     {
-      "path": "spacing.32xl",
-      "cssVar": "--storm-spacing-32xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "340px"
+      path: "spacing.8xl",
+      cssVar: "--storm-spacing-8xl",
+      type: "dimension",
+      category: "space",
+      value: "32px"
     },
     {
-      "path": "spacing.33xl",
-      "cssVar": "--storm-spacing-33xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "354px"
+      path: "spacing.9xl",
+      cssVar: "--storm-spacing-9xl",
+      type: "dimension",
+      category: "space",
+      value: "39px"
     },
     {
-      "path": "spacing.34xl",
-      "cssVar": "--storm-spacing-34xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "368px"
+      path: "spacing.10xl",
+      cssVar: "--storm-spacing-10xl",
+      type: "dimension",
+      category: "space",
+      value: "46px"
     },
     {
-      "path": "spacing.35xl",
-      "cssVar": "--storm-spacing-35xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "382px"
+      path: "spacing.11xl",
+      cssVar: "--storm-spacing-11xl",
+      type: "dimension",
+      category: "space",
+      value: "53px"
     },
     {
-      "path": "spacing.36xl",
-      "cssVar": "--storm-spacing-36xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "396px"
+      path: "spacing.12xl",
+      cssVar: "--storm-spacing-12xl",
+      type: "dimension",
+      category: "space",
+      value: "60px"
     },
     {
-      "path": "spacing.37xl",
-      "cssVar": "--storm-spacing-37xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "410px"
+      path: "spacing.13xl",
+      cssVar: "--storm-spacing-13xl",
+      type: "dimension",
+      category: "space",
+      value: "74px"
     },
     {
-      "path": "spacing.38xl",
-      "cssVar": "--storm-spacing-38xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "424px"
+      path: "spacing.14xl",
+      cssVar: "--storm-spacing-14xl",
+      type: "dimension",
+      category: "space",
+      value: "88px"
     },
     {
-      "path": "spacing.39xl",
-      "cssVar": "--storm-spacing-39xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "438px"
+      path: "spacing.15xl",
+      cssVar: "--storm-spacing-15xl",
+      type: "dimension",
+      category: "space",
+      value: "102px"
     },
     {
-      "path": "spacing.40xl",
-      "cssVar": "--storm-spacing-40xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "452px"
+      path: "spacing.16xl",
+      cssVar: "--storm-spacing-16xl",
+      type: "dimension",
+      category: "space",
+      value: "116px"
     },
     {
-      "path": "spacing.41xl",
-      "cssVar": "--storm-spacing-41xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "466px"
+      path: "spacing.17xl",
+      cssVar: "--storm-spacing-17xl",
+      type: "dimension",
+      category: "space",
+      value: "130px"
     },
     {
-      "path": "spacing.42xl",
-      "cssVar": "--storm-spacing-42xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "480px"
+      path: "spacing.18xl",
+      cssVar: "--storm-spacing-18xl",
+      type: "dimension",
+      category: "space",
+      value: "144px"
     },
     {
-      "path": "spacing.43xl",
-      "cssVar": "--storm-spacing-43xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "494px"
+      path: "spacing.19xl",
+      cssVar: "--storm-spacing-19xl",
+      type: "dimension",
+      category: "space",
+      value: "158px"
     },
     {
-      "path": "spacing.44xl",
-      "cssVar": "--storm-spacing-44xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "508px"
+      path: "spacing.20xl",
+      cssVar: "--storm-spacing-20xl",
+      type: "dimension",
+      category: "space",
+      value: "172px"
     },
     {
-      "path": "spacing.45xl",
-      "cssVar": "--storm-spacing-45xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "522px"
+      path: "spacing.21xl",
+      cssVar: "--storm-spacing-21xl",
+      type: "dimension",
+      category: "space",
+      value: "186px"
     },
     {
-      "path": "spacing.46xl",
-      "cssVar": "--storm-spacing-46xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "536px"
+      path: "spacing.22xl",
+      cssVar: "--storm-spacing-22xl",
+      type: "dimension",
+      category: "space",
+      value: "200px"
     },
     {
-      "path": "spacing.47xl",
-      "cssVar": "--storm-spacing-47xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "550px"
+      path: "spacing.23xl",
+      cssVar: "--storm-spacing-23xl",
+      type: "dimension",
+      category: "space",
+      value: "214px"
     },
     {
-      "path": "spacing.48xl",
-      "cssVar": "--storm-spacing-48xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "564px"
+      path: "spacing.24xl",
+      cssVar: "--storm-spacing-24xl",
+      type: "dimension",
+      category: "space",
+      value: "228px"
     },
     {
-      "path": "spacing.49xl",
-      "cssVar": "--storm-spacing-49xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "578px"
+      path: "spacing.25xl",
+      cssVar: "--storm-spacing-25xl",
+      type: "dimension",
+      category: "space",
+      value: "242px"
     },
     {
-      "path": "spacing.50xl",
-      "cssVar": "--storm-spacing-50xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "592px"
+      path: "spacing.26xl",
+      cssVar: "--storm-spacing-26xl",
+      type: "dimension",
+      category: "space",
+      value: "256px"
     },
     {
-      "path": "spacing.51xl",
-      "cssVar": "--storm-spacing-51xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "606px"
+      path: "spacing.27xl",
+      cssVar: "--storm-spacing-27xl",
+      type: "dimension",
+      category: "space",
+      value: "270px"
     },
     {
-      "path": "spacing.52xl",
-      "cssVar": "--storm-spacing-52xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "620px"
+      path: "spacing.28xl",
+      cssVar: "--storm-spacing-28xl",
+      type: "dimension",
+      category: "space",
+      value: "284px"
     },
     {
-      "path": "spacing.53xl",
-      "cssVar": "--storm-spacing-53xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "634px"
+      path: "spacing.29xl",
+      cssVar: "--storm-spacing-29xl",
+      type: "dimension",
+      category: "space",
+      value: "298px"
     },
     {
-      "path": "spacing.54xl",
-      "cssVar": "--storm-spacing-54xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "648px"
+      path: "spacing.30xl",
+      cssVar: "--storm-spacing-30xl",
+      type: "dimension",
+      category: "space",
+      value: "312px"
     },
     {
-      "path": "spacing.55xl",
-      "cssVar": "--storm-spacing-55xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "662px"
+      path: "spacing.31xl",
+      cssVar: "--storm-spacing-31xl",
+      type: "dimension",
+      category: "space",
+      value: "326px"
     },
     {
-      "path": "spacing.56xl",
-      "cssVar": "--storm-spacing-56xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "676px"
+      path: "spacing.32xl",
+      cssVar: "--storm-spacing-32xl",
+      type: "dimension",
+      category: "space",
+      value: "340px"
     },
     {
-      "path": "spacing.57xl",
-      "cssVar": "--storm-spacing-57xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "690px"
+      path: "spacing.33xl",
+      cssVar: "--storm-spacing-33xl",
+      type: "dimension",
+      category: "space",
+      value: "354px"
     },
     {
-      "path": "spacing.58xl",
-      "cssVar": "--storm-spacing-58xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "704px"
+      path: "spacing.34xl",
+      cssVar: "--storm-spacing-34xl",
+      type: "dimension",
+      category: "space",
+      value: "368px"
     },
     {
-      "path": "spacing.59xl",
-      "cssVar": "--storm-spacing-59xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "718px"
+      path: "spacing.35xl",
+      cssVar: "--storm-spacing-35xl",
+      type: "dimension",
+      category: "space",
+      value: "382px"
     },
     {
-      "path": "spacing.60xl",
-      "cssVar": "--storm-spacing-60xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "732px"
+      path: "spacing.36xl",
+      cssVar: "--storm-spacing-36xl",
+      type: "dimension",
+      category: "space",
+      value: "396px"
     },
     {
-      "path": "spacing.61xl",
-      "cssVar": "--storm-spacing-61xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "746px"
+      path: "spacing.37xl",
+      cssVar: "--storm-spacing-37xl",
+      type: "dimension",
+      category: "space",
+      value: "410px"
     },
     {
-      "path": "spacing.62xl",
-      "cssVar": "--storm-spacing-62xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "760px"
+      path: "spacing.38xl",
+      cssVar: "--storm-spacing-38xl",
+      type: "dimension",
+      category: "space",
+      value: "424px"
     },
     {
-      "path": "spacing.63xl",
-      "cssVar": "--storm-spacing-63xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "774px"
+      path: "spacing.39xl",
+      cssVar: "--storm-spacing-39xl",
+      type: "dimension",
+      category: "space",
+      value: "438px"
     },
     {
-      "path": "spacing.64xl",
-      "cssVar": "--storm-spacing-64xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "788px"
+      path: "spacing.40xl",
+      cssVar: "--storm-spacing-40xl",
+      type: "dimension",
+      category: "space",
+      value: "452px"
     },
     {
-      "path": "spacing.lg",
-      "cssVar": "--storm-spacing-lg",
-      "type": "dimension",
-      "category": "space",
-      "value": "4px"
+      path: "spacing.41xl",
+      cssVar: "--storm-spacing-41xl",
+      type: "dimension",
+      category: "space",
+      value: "466px"
     },
     {
-      "path": "spacing.md",
-      "cssVar": "--storm-spacing-md",
-      "type": "dimension",
-      "category": "space",
-      "value": "2px"
+      path: "spacing.42xl",
+      cssVar: "--storm-spacing-42xl",
+      type: "dimension",
+      category: "space",
+      value: "480px"
     },
     {
-      "path": "spacing.sm",
-      "cssVar": "--storm-spacing-sm",
-      "type": "dimension",
-      "category": "space",
-      "value": "1.5px"
+      path: "spacing.43xl",
+      cssVar: "--storm-spacing-43xl",
+      type: "dimension",
+      category: "space",
+      value: "494px"
     },
     {
-      "path": "spacing.xl",
-      "cssVar": "--storm-spacing-xl",
-      "type": "dimension",
-      "category": "space",
-      "value": "7px"
+      path: "spacing.44xl",
+      cssVar: "--storm-spacing-44xl",
+      type: "dimension",
+      category: "space",
+      value: "508px"
     },
     {
-      "path": "spacing.xs",
-      "cssVar": "--storm-spacing-xs",
-      "type": "dimension",
-      "category": "space",
-      "value": "1px"
+      path: "spacing.45xl",
+      cssVar: "--storm-spacing-45xl",
+      type: "dimension",
+      category: "space",
+      value: "522px"
     },
     {
-      "path": "spacing.xxs",
-      "cssVar": "--storm-spacing-xxs",
-      "type": "dimension",
-      "category": "space",
-      "value": "0.5px"
+      path: "spacing.46xl",
+      cssVar: "--storm-spacing-46xl",
+      type: "dimension",
+      category: "space",
+      value: "536px"
     },
     {
-      "path": "spacing.zero",
-      "cssVar": "--storm-spacing-zero",
-      "type": "dimension",
-      "category": "space",
-      "value": "0px"
+      path: "spacing.47xl",
+      cssVar: "--storm-spacing-47xl",
+      type: "dimension",
+      category: "space",
+      value: "550px"
     },
     {
-      "path": "text-shadow.2xs",
-      "cssVar": "--storm-text-shadow-2xs",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 0px 0px #00000026"
+      path: "spacing.48xl",
+      cssVar: "--storm-spacing-48xl",
+      type: "dimension",
+      category: "space",
+      value: "564px"
     },
     {
-      "path": "text-shadow.lg",
-      "cssVar": "--storm-text-shadow-lg",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 2px 0px #0000001a, 0px 3px 2px 0px #0000001a, 0px 4px 8px 0px #0000001a"
+      path: "spacing.49xl",
+      cssVar: "--storm-spacing-49xl",
+      type: "dimension",
+      category: "space",
+      value: "578px"
     },
     {
-      "path": "text-shadow.md",
-      "cssVar": "--storm-text-shadow-md",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 1px 0px #0000001a, 0px 1px 2px 0px #0000001a, 0px 2px 4px 0px #0000001a"
+      path: "spacing.50xl",
+      cssVar: "--storm-spacing-50xl",
+      type: "dimension",
+      category: "space",
+      value: "592px"
     },
     {
-      "path": "text-shadow.sm",
-      "cssVar": "--storm-text-shadow-sm",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 0px 0px #00000013, 0px 1px 1px 0px #00000013, 0px 2px 2px 0px #00000013"
+      path: "spacing.51xl",
+      cssVar: "--storm-spacing-51xl",
+      type: "dimension",
+      category: "space",
+      value: "606px"
     },
     {
-      "path": "text-shadow.xs",
-      "cssVar": "--storm-text-shadow-xs",
-      "type": "shadow",
-      "category": "shadow",
-      "value": "0px 1px 1px 0px #00000033"
+      path: "spacing.52xl",
+      cssVar: "--storm-spacing-52xl",
+      type: "dimension",
+      category: "space",
+      value: "620px"
     },
     {
-      "path": "typography.body-md",
-      "cssVar": "--storm-typography-body-md",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.53xl",
+      cssVar: "--storm-spacing-53xl",
+      type: "dimension",
+      category: "space",
+      value: "634px"
     },
     {
-      "path": "typography.body-md-bold",
-      "cssVar": "--storm-typography-body-md-bold",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.54xl",
+      cssVar: "--storm-spacing-54xl",
+      type: "dimension",
+      category: "space",
+      value: "648px"
     },
     {
-      "path": "typography.body-sm",
-      "cssVar": "--storm-typography-body-sm",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.55xl",
+      cssVar: "--storm-spacing-55xl",
+      type: "dimension",
+      category: "space",
+      value: "662px"
     },
     {
-      "path": "typography.body-sm-bold",
-      "cssVar": "--storm-typography-body-sm-bold",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.56xl",
+      cssVar: "--storm-spacing-56xl",
+      type: "dimension",
+      category: "space",
+      value: "676px"
     },
     {
-      "path": "typography.caption",
-      "cssVar": "--storm-typography-caption",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.57xl",
+      cssVar: "--storm-spacing-57xl",
+      type: "dimension",
+      category: "space",
+      value: "690px"
     },
     {
-      "path": "typography.code",
-      "cssVar": "--storm-typography-code",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.58xl",
+      cssVar: "--storm-spacing-58xl",
+      type: "dimension",
+      category: "space",
+      value: "704px"
     },
     {
-      "path": "typography.display-hero",
-      "cssVar": "--storm-typography-display-hero",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.59xl",
+      cssVar: "--storm-spacing-59xl",
+      type: "dimension",
+      category: "space",
+      value: "718px"
     },
     {
-      "path": "typography.display-lg",
-      "cssVar": "--storm-typography-display-lg",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.60xl",
+      cssVar: "--storm-spacing-60xl",
+      type: "dimension",
+      category: "space",
+      value: "732px"
     },
     {
-      "path": "typography.display-md",
-      "cssVar": "--storm-typography-display-md",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.61xl",
+      cssVar: "--storm-spacing-61xl",
+      type: "dimension",
+      category: "space",
+      value: "746px"
     },
     {
-      "path": "typography.editorial-hero",
-      "cssVar": "--storm-typography-editorial-hero",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.62xl",
+      cssVar: "--storm-spacing-62xl",
+      type: "dimension",
+      category: "space",
+      value: "760px"
     },
     {
-      "path": "typography.editorial-lg",
-      "cssVar": "--storm-typography-editorial-lg",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.63xl",
+      cssVar: "--storm-spacing-63xl",
+      type: "dimension",
+      category: "space",
+      value: "774px"
     },
     {
-      "path": "typography.editorial-md",
-      "cssVar": "--storm-typography-editorial-md",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.64xl",
+      cssVar: "--storm-spacing-64xl",
+      type: "dimension",
+      category: "space",
+      value: "788px"
     },
     {
-      "path": "typography.eyebrow",
-      "cssVar": "--storm-typography-eyebrow",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.lg",
+      cssVar: "--storm-spacing-lg",
+      type: "dimension",
+      category: "space",
+      value: "4px"
     },
     {
-      "path": "typography.title-lg",
-      "cssVar": "--storm-typography-title-lg",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.md",
+      cssVar: "--storm-spacing-md",
+      type: "dimension",
+      category: "space",
+      value: "2px"
     },
     {
-      "path": "typography.title-md",
-      "cssVar": "--storm-typography-title-md",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.sm",
+      cssVar: "--storm-spacing-sm",
+      type: "dimension",
+      category: "space",
+      value: "1.5px"
     },
     {
-      "path": "typography.title-sm",
-      "cssVar": "--storm-typography-title-sm",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.xl",
+      cssVar: "--storm-spacing-xl",
+      type: "dimension",
+      category: "space",
+      value: "7px"
     },
     {
-      "path": "typography.title-xl",
-      "cssVar": "--storm-typography-title-xl",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.xs",
+      cssVar: "--storm-spacing-xs",
+      type: "dimension",
+      category: "space",
+      value: "1px"
     },
     {
-      "path": "typography.title-xs",
-      "cssVar": "--storm-typography-title-xs",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.xxs",
+      cssVar: "--storm-spacing-xxs",
+      type: "dimension",
+      category: "space",
+      value: "0.5px"
     },
     {
-      "path": "typography.title-xxs",
-      "cssVar": "--storm-typography-title-xxs",
-      "type": "typography",
-      "category": "typography"
+      path: "spacing.zero",
+      cssVar: "--storm-spacing-zero",
+      type: "dimension",
+      category: "space",
+      value: "0px"
     },
     {
-      "path": "z-index.0",
-      "cssVar": "--storm-z-index-0",
-      "type": "number",
-      "category": "zIndex",
-      "value": "0"
+      path: "text-shadow.2xs",
+      cssVar: "--storm-text-shadow-2xs",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 1px 0px 0px #00000026"
     },
     {
-      "path": "z-index.10",
-      "cssVar": "--storm-z-index-10",
-      "type": "number",
-      "category": "zIndex",
-      "value": "100"
+      path: "text-shadow.lg",
+      cssVar: "--storm-text-shadow-lg",
+      type: "shadow",
+      category: "shadow",
+      value:
+        "0px 1px 2px 0px #0000001a, 0px 3px 2px 0px #0000001a, 0px 4px 8px 0px #0000001a"
     },
     {
-      "path": "z-index.20",
-      "cssVar": "--storm-z-index-20",
-      "type": "number",
-      "category": "zIndex",
-      "value": "200"
+      path: "text-shadow.md",
+      cssVar: "--storm-text-shadow-md",
+      type: "shadow",
+      category: "shadow",
+      value:
+        "0px 1px 1px 0px #0000001a, 0px 1px 2px 0px #0000001a, 0px 2px 4px 0px #0000001a"
     },
     {
-      "path": "z-index.30",
-      "cssVar": "--storm-z-index-30",
-      "type": "number",
-      "category": "zIndex",
-      "value": "300"
+      path: "text-shadow.sm",
+      cssVar: "--storm-text-shadow-sm",
+      type: "shadow",
+      category: "shadow",
+      value:
+        "0px 1px 0px 0px #00000013, 0px 1px 1px 0px #00000013, 0px 2px 2px 0px #00000013"
     },
     {
-      "path": "z-index.40",
-      "cssVar": "--storm-z-index-40",
-      "type": "number",
-      "category": "zIndex",
-      "value": "400"
+      path: "text-shadow.xs",
+      cssVar: "--storm-text-shadow-xs",
+      type: "shadow",
+      category: "shadow",
+      value: "0px 1px 1px 0px #00000033"
     },
     {
-      "path": "z-index.50",
-      "cssVar": "--storm-z-index-50",
-      "type": "number",
-      "category": "zIndex",
-      "value": "500"
+      path: "typography.body",
+      cssVar: "--storm-typography-body",
+      type: "typography",
+      category: "typography"
     },
     {
-      "path": "z-index.60",
-      "cssVar": "--storm-z-index-60",
-      "type": "number",
-      "category": "zIndex",
-      "value": "600"
+      path: "typography.caption",
+      cssVar: "--storm-typography-caption",
+      type: "typography",
+      category: "typography"
     },
     {
-      "path": "z-index.70",
-      "cssVar": "--storm-z-index-70",
-      "type": "number",
-      "category": "zIndex",
-      "value": "700"
+      path: "typography.code",
+      cssVar: "--storm-typography-code",
+      type: "typography",
+      category: "typography"
     },
     {
-      "path": "z-index.80",
-      "cssVar": "--storm-z-index-80",
-      "type": "number",
-      "category": "zIndex",
-      "value": "800"
+      path: "typography.display",
+      cssVar: "--storm-typography-display",
+      type: "typography",
+      category: "typography"
     },
     {
-      "path": "z-index.90",
-      "cssVar": "--storm-z-index-90",
-      "type": "number",
-      "category": "zIndex",
-      "value": "900"
+      path: "typography.editorial",
+      cssVar: "--storm-typography-editorial",
+      type: "typography",
+      category: "typography"
+    },
+    {
+      path: "typography.eyebrow",
+      cssVar: "--storm-typography-eyebrow",
+      type: "typography",
+      category: "typography"
+    },
+    {
+      path: "z-index.0",
+      cssVar: "--storm-z-index-0",
+      type: "number",
+      category: "zIndex",
+      value: "0"
+    },
+    {
+      path: "z-index.10",
+      cssVar: "--storm-z-index-10",
+      type: "number",
+      category: "zIndex",
+      value: "100"
+    },
+    {
+      path: "z-index.20",
+      cssVar: "--storm-z-index-20",
+      type: "number",
+      category: "zIndex",
+      value: "200"
+    },
+    {
+      path: "z-index.30",
+      cssVar: "--storm-z-index-30",
+      type: "number",
+      category: "zIndex",
+      value: "300"
+    },
+    {
+      path: "z-index.40",
+      cssVar: "--storm-z-index-40",
+      type: "number",
+      category: "zIndex",
+      value: "400"
+    },
+    {
+      path: "z-index.50",
+      cssVar: "--storm-z-index-50",
+      type: "number",
+      category: "zIndex",
+      value: "500"
+    },
+    {
+      path: "z-index.60",
+      cssVar: "--storm-z-index-60",
+      type: "number",
+      category: "zIndex",
+      value: "600"
+    },
+    {
+      path: "z-index.70",
+      cssVar: "--storm-z-index-70",
+      type: "number",
+      category: "zIndex",
+      value: "700"
+    },
+    {
+      path: "z-index.80",
+      cssVar: "--storm-z-index-80",
+      type: "number",
+      category: "zIndex",
+      value: "800"
+    },
+    {
+      path: "z-index.90",
+      cssVar: "--storm-z-index-90",
+      type: "number",
+      category: "zIndex",
+      value: "900"
     }
   ],
-  "components": [
+  components: [
     {
-      "name": "@cyclone-ui/accordion",
-      "jsx": [
-        "Accordion"
-      ],
-      "roles": []
+      name: "@cyclone-ui/accordion",
+      jsx: ["Accordion"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/address-input",
-      "jsx": [
-        "AddressInput"
-      ],
-      "roles": []
+      name: "@cyclone-ui/address-input",
+      jsx: ["AddressInput"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/alert",
-      "jsx": [
-        "Alert"
-      ],
-      "roles": []
+      name: "@cyclone-ui/alert",
+      jsx: ["Alert"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/alert-dialog",
-      "jsx": [
-        "AlertDialog"
-      ],
-      "roles": []
+      name: "@cyclone-ui/alert-dialog",
+      jsx: ["AlertDialog"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/anchor",
-      "jsx": [
-        "Anchor"
-      ],
-      "roles": [
-        "link"
-      ]
+      name: "@cyclone-ui/anchor",
+      jsx: ["Anchor"],
+      roles: ["link"]
     },
     {
-      "name": "@cyclone-ui/article-page",
-      "jsx": [
-        "ArticlePage"
-      ],
-      "roles": []
+      name: "@cyclone-ui/article-page",
+      jsx: ["ArticlePage"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/badge",
-      "jsx": [
-        "Badge"
-      ],
-      "roles": []
+      name: "@cyclone-ui/badge",
+      jsx: ["Badge"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/body-text",
-      "jsx": [
-        "BodyText"
-      ],
-      "roles": []
+      name: "@cyclone-ui/body-text",
+      jsx: ["BodyText"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/breadcrumb",
-      "jsx": [
-        "Breadcrumb"
-      ],
-      "roles": []
+      name: "@cyclone-ui/breadcrumb",
+      jsx: ["Breadcrumb"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/button",
-      "jsx": [
-        "Button"
-      ],
-      "roles": [
-        "button"
-      ]
+      name: "@cyclone-ui/button",
+      jsx: ["Button"],
+      roles: ["button"]
     },
     {
-      "name": "@cyclone-ui/bytes-text",
-      "jsx": [
-        "BytesText"
-      ],
-      "roles": []
+      name: "@cyclone-ui/bytes-text",
+      jsx: ["BytesText"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/calendar",
-      "jsx": [
-        "Calendar"
-      ],
-      "roles": []
+      name: "@cyclone-ui/calendar",
+      jsx: ["Calendar"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/callout",
-      "jsx": [
-        "Callout"
-      ],
-      "roles": []
+      name: "@cyclone-ui/callout",
+      jsx: ["Callout"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/card",
-      "jsx": [
-        "Card"
-      ],
-      "roles": []
+      name: "@cyclone-ui/card",
+      jsx: ["Card"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/checkbox",
-      "jsx": [
-        "Checkbox"
-      ],
-      "roles": [
-        "checkbox"
-      ]
+      name: "@cyclone-ui/checkbox",
+      jsx: ["Checkbox"],
+      roles: ["checkbox"]
     },
     {
-      "name": "@cyclone-ui/circular-progress",
-      "jsx": [
-        "CircularProgress"
-      ],
-      "roles": []
+      name: "@cyclone-ui/circular-progress",
+      jsx: ["CircularProgress"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/code-block",
-      "jsx": [
-        "CodeBlock"
-      ],
-      "roles": [
-        "code"
-      ]
+      name: "@cyclone-ui/code-block",
+      jsx: ["CodeBlock"],
+      roles: ["code"]
     },
     {
-      "name": "@cyclone-ui/collapsible",
-      "jsx": [
-        "Collapsible"
-      ],
-      "roles": []
+      name: "@cyclone-ui/collapsible",
+      jsx: ["Collapsible"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/color-area",
-      "jsx": [
-        "ColorArea"
-      ],
-      "roles": []
+      name: "@cyclone-ui/color-area",
+      jsx: ["ColorArea"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/color-compositions",
-      "jsx": [
-        "ColorCompositions"
-      ],
-      "roles": []
+      name: "@cyclone-ui/color-compositions",
+      jsx: ["ColorCompositions"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/color-picker",
-      "jsx": [
-        "ColorPicker"
-      ],
-      "roles": []
+      name: "@cyclone-ui/color-picker",
+      jsx: ["ColorPicker"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/confetti-burst",
-      "jsx": [
-        "ConfettiBurst"
-      ],
-      "roles": []
+      name: "@cyclone-ui/confetti-burst",
+      jsx: ["ConfettiBurst"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/container",
-      "jsx": [
-        "Container"
-      ],
-      "roles": []
+      name: "@cyclone-ui/container",
+      jsx: ["Container"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/context-menu",
-      "jsx": [
-        "ContextMenu"
-      ],
-      "roles": []
+      name: "@cyclone-ui/context-menu",
+      jsx: ["ContextMenu"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/credit-card-input",
-      "jsx": [
-        "CreditCardInput"
-      ],
-      "roles": []
+      name: "@cyclone-ui/credit-card-input",
+      jsx: ["CreditCardInput"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/data-table",
-      "jsx": [
-        "DataTable"
-      ],
-      "roles": []
+      name: "@cyclone-ui/data-table",
+      jsx: ["DataTable"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/date-picker",
-      "jsx": [
-        "DatePicker"
-      ],
-      "roles": []
+      name: "@cyclone-ui/date-picker",
+      jsx: ["DatePicker"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/dialog",
-      "jsx": [
-        "Dialog"
-      ],
-      "roles": []
+      name: "@cyclone-ui/dialog",
+      jsx: ["Dialog"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/divider",
-      "jsx": [
-        "Divider"
-      ],
-      "roles": []
+      name: "@cyclone-ui/divider",
+      jsx: ["Divider"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/drawer",
-      "jsx": [
-        "Drawer"
-      ],
-      "roles": []
+      name: "@cyclone-ui/drawer",
+      jsx: ["Drawer"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/eyebrow-text",
-      "jsx": [
-        "EyebrowText"
-      ],
-      "roles": []
+      name: "@cyclone-ui/eyebrow-text",
+      jsx: ["EyebrowText"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/feedback",
-      "jsx": [
-        "Feedback"
-      ],
-      "roles": []
+      name: "@cyclone-ui/feedback",
+      jsx: ["Feedback"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/field",
-      "jsx": [
-        "Field"
-      ],
-      "roles": []
+      name: "@cyclone-ui/field",
+      jsx: ["Field"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/file-picker",
-      "jsx": [
-        "FilePicker"
-      ],
-      "roles": []
+      name: "@cyclone-ui/file-picker",
+      jsx: ["FilePicker"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/file-tree",
-      "jsx": [
-        "FileTree"
-      ],
-      "roles": []
+      name: "@cyclone-ui/file-tree",
+      jsx: ["FileTree"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/footer",
-      "jsx": [
-        "Footer"
-      ],
-      "roles": []
+      name: "@cyclone-ui/footer",
+      jsx: ["Footer"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/form",
-      "jsx": [
-        "Form"
-      ],
-      "roles": []
+      name: "@cyclone-ui/form",
+      jsx: ["Form"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/glitch-separator",
-      "jsx": [
-        "GlitchSeparator"
-      ],
-      "roles": []
+      name: "@cyclone-ui/glitch-separator",
+      jsx: ["GlitchSeparator"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/heading-text",
-      "jsx": [
-        "HeadingText"
-      ],
-      "roles": []
+      name: "@cyclone-ui/heading-text",
+      jsx: ["HeadingText"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/icons",
-      "jsx": [
-        "Icons"
-      ],
-      "roles": []
+      name: "@cyclone-ui/icons",
+      jsx: ["Icons"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/inline-code-text",
-      "jsx": [
-        "InlineCodeText"
-      ],
-      "roles": []
+      name: "@cyclone-ui/inline-code-text",
+      jsx: ["InlineCodeText"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/input",
-      "jsx": [
-        "Input"
-      ],
-      "roles": [
-        "text-input"
-      ]
+      name: "@cyclone-ui/input",
+      jsx: ["Input"],
+      roles: ["text-input"]
     },
     {
-      "name": "@cyclone-ui/label-text",
-      "jsx": [
-        "LabelText"
-      ],
-      "roles": []
+      name: "@cyclone-ui/like-button",
+      jsx: ["LikeButton"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/like-button",
-      "jsx": [
-        "LikeButton"
-      ],
-      "roles": []
+      name: "@cyclone-ui/link",
+      jsx: ["Link"],
+      roles: ["link"]
     },
     {
-      "name": "@cyclone-ui/link",
-      "jsx": [
-        "Link"
-      ],
-      "roles": [
-        "link"
-      ]
+      name: "@cyclone-ui/link-text",
+      jsx: ["LinkText"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/link-text",
-      "jsx": [
-        "LinkText"
-      ],
-      "roles": []
+      name: "@cyclone-ui/message",
+      jsx: ["Message"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/message",
-      "jsx": [
-        "Message"
-      ],
-      "roles": []
+      name: "@cyclone-ui/navigation-header",
+      jsx: ["NavigationHeader"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/navigation-header",
-      "jsx": [
-        "NavigationHeader"
-      ],
-      "roles": []
+      name: "@cyclone-ui/next-button",
+      jsx: ["NextButton"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/next-button",
-      "jsx": [
-        "NextButton"
-      ],
-      "roles": []
+      name: "@cyclone-ui/number-input",
+      jsx: ["NumberInput"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/number-input",
-      "jsx": [
-        "NumberInput"
-      ],
-      "roles": []
+      name: "@cyclone-ui/number-text",
+      jsx: ["NumberText"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/number-text",
-      "jsx": [
-        "NumberText"
-      ],
-      "roles": []
+      name: "@cyclone-ui/otp-input",
+      jsx: ["OtpInput"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/otp-input",
-      "jsx": [
-        "OtpInput"
-      ],
-      "roles": []
+      name: "@cyclone-ui/overlay",
+      jsx: ["Overlay"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/overlay",
-      "jsx": [
-        "Overlay"
-      ],
-      "roles": []
+      name: "@cyclone-ui/package-command-code-block",
+      jsx: ["PackageCommandCodeBlock"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/package-command-code-block",
-      "jsx": [
-        "PackageCommandCodeBlock"
-      ],
-      "roles": []
+      name: "@cyclone-ui/page",
+      jsx: ["Page"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/page",
-      "jsx": [
-        "Page"
-      ],
-      "roles": []
+      name: "@cyclone-ui/pagination",
+      jsx: ["Pagination"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/pagination",
-      "jsx": [
-        "Pagination"
-      ],
-      "roles": []
+      name: "@cyclone-ui/password-input",
+      jsx: ["PasswordInput"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/password-input",
-      "jsx": [
-        "PasswordInput"
-      ],
-      "roles": []
+      name: "@cyclone-ui/pdf-document-display",
+      jsx: ["PdfDocumentDisplay"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/pdf-document-display",
-      "jsx": [
-        "PdfDocumentDisplay"
-      ],
-      "roles": []
+      name: "@cyclone-ui/phone-number-input",
+      jsx: ["PhoneNumberInput"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/phone-number-input",
-      "jsx": [
-        "PhoneNumberInput"
-      ],
-      "roles": []
+      name: "@cyclone-ui/popover",
+      jsx: ["Popover"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/popover",
-      "jsx": [
-        "Popover"
-      ],
-      "roles": []
+      name: "@cyclone-ui/preview-link",
+      jsx: ["PreviewLink"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/preview-link",
-      "jsx": [
-        "PreviewLink"
-      ],
-      "roles": []
+      name: "@cyclone-ui/previous-button",
+      jsx: ["PreviousButton"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/previous-button",
-      "jsx": [
-        "PreviousButton"
-      ],
-      "roles": []
+      name: "@cyclone-ui/progress",
+      jsx: ["Progress"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/progress",
-      "jsx": [
-        "Progress"
-      ],
-      "roles": []
+      name: "@cyclone-ui/radio-group",
+      jsx: ["RadioGroup"],
+      roles: ["radio"]
     },
     {
-      "name": "@cyclone-ui/radio-group",
-      "jsx": [
-        "RadioGroup"
-      ],
-      "roles": [
-        "radio"
-      ]
+      name: "@cyclone-ui/rating",
+      jsx: ["Rating"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/rating",
-      "jsx": [
-        "Rating"
-      ],
-      "roles": []
+      name: "@cyclone-ui/redacted-animation",
+      jsx: ["RedactedAnimation"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/redacted-animation",
-      "jsx": [
-        "RedactedAnimation"
-      ],
-      "roles": []
+      name: "@cyclone-ui/scroll-view",
+      jsx: ["ScrollView"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/scroll-view",
-      "jsx": [
-        "ScrollView"
-      ],
-      "roles": []
+      name: "@cyclone-ui/search-input",
+      jsx: ["SearchInput"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/search-input",
-      "jsx": [
-        "SearchInput"
-      ],
-      "roles": []
+      name: "@cyclone-ui/select",
+      jsx: ["Select"],
+      roles: ["select"]
     },
     {
-      "name": "@cyclone-ui/select",
-      "jsx": [
-        "Select"
-      ],
-      "roles": [
-        "select"
-      ]
+      name: "@cyclone-ui/sheet",
+      jsx: ["Sheet"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/sheet",
-      "jsx": [
-        "Sheet"
-      ],
-      "roles": []
+      name: "@cyclone-ui/skeleton",
+      jsx: ["Skeleton"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/skeleton",
-      "jsx": [
-        "Skeleton"
-      ],
-      "roles": []
+      name: "@cyclone-ui/slider",
+      jsx: ["Slider"],
+      roles: ["range"]
     },
     {
-      "name": "@cyclone-ui/slider",
-      "jsx": [
-        "Slider"
-      ],
-      "roles": [
-        "range"
-      ]
+      name: "@cyclone-ui/spinner",
+      jsx: ["Spinner"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/spinner",
-      "jsx": [
-        "Spinner"
-      ],
-      "roles": []
+      name: "@cyclone-ui/stepper",
+      jsx: ["Stepper"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/stepper",
-      "jsx": [
-        "Stepper"
-      ],
-      "roles": []
+      name: "@cyclone-ui/switch",
+      jsx: ["Switch"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/switch",
-      "jsx": [
-        "Switch"
-      ],
-      "roles": []
+      name: "@cyclone-ui/table",
+      jsx: ["Table"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/table",
-      "jsx": [
-        "Table"
-      ],
-      "roles": []
+      name: "@cyclone-ui/table-of-contents",
+      jsx: ["TableOfContents"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/table-of-contents",
-      "jsx": [
-        "TableOfContents"
-      ],
-      "roles": []
+      name: "@cyclone-ui/tabs",
+      jsx: ["Tabs"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/tabs",
-      "jsx": [
-        "Tabs"
-      ],
-      "roles": []
+      name: "@cyclone-ui/tag",
+      jsx: ["Tag"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/tag",
-      "jsx": [
-        "Tag"
-      ],
-      "roles": []
+      name: "@cyclone-ui/tag-picker",
+      jsx: ["TagPicker"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/tag-picker",
-      "jsx": [
-        "TagPicker"
-      ],
-      "roles": []
+      name: "@cyclone-ui/text-area",
+      jsx: ["TextArea"],
+      roles: ["textarea"]
     },
     {
-      "name": "@cyclone-ui/text-area",
-      "jsx": [
-        "TextArea"
-      ],
-      "roles": [
-        "textarea"
-      ]
+      name: "@cyclone-ui/themeable-gradient",
+      jsx: ["ThemeableGradient"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/themeable-gradient",
-      "jsx": [
-        "ThemeableGradient"
-      ],
-      "roles": []
+      name: "@cyclone-ui/themeable-icon",
+      jsx: ["ThemeableIcon"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/themeable-icon",
-      "jsx": [
-        "ThemeableIcon"
-      ],
-      "roles": []
+      name: "@cyclone-ui/time-picker",
+      jsx: ["TimePicker"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/time-picker",
-      "jsx": [
-        "TimePicker"
-      ],
-      "roles": []
+      name: "@cyclone-ui/timeline",
+      jsx: ["Timeline"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/timeline",
-      "jsx": [
-        "Timeline"
-      ],
-      "roles": []
+      name: "@cyclone-ui/toggle",
+      jsx: ["Toggle"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/toggle",
-      "jsx": [
-        "Toggle"
-      ],
-      "roles": []
+      name: "@cyclone-ui/toggle-group",
+      jsx: ["ToggleGroup"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/toggle-group",
-      "jsx": [
-        "ToggleGroup"
-      ],
-      "roles": []
+      name: "@cyclone-ui/tooltip",
+      jsx: ["Tooltip"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/tooltip",
-      "jsx": [
-        "Tooltip"
-      ],
-      "roles": []
+      name: "@cyclone-ui/type-table",
+      jsx: ["TypeTable"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/type-table",
-      "jsx": [
-        "TypeTable"
-      ],
-      "roles": []
+      name: "@cyclone-ui/validation-text",
+      jsx: ["ValidationText"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/validation-text",
-      "jsx": [
-        "ValidationText"
-      ],
-      "roles": []
+      name: "@cyclone-ui/vectors",
+      jsx: ["Vectors"],
+      roles: []
     },
     {
-      "name": "@cyclone-ui/vectors",
-      "jsx": [
-        "Vectors"
-      ],
-      "roles": []
-    },
-    {
-      "name": "@cyclone-ui/visually-hidden",
-      "jsx": [
-        "VisuallyHidden"
-      ],
-      "roles": [
-        "visually-hidden"
-      ]
+      name: "@cyclone-ui/visually-hidden",
+      jsx: ["VisuallyHidden"],
+      roles: ["visually-hidden"]
     }
   ],
-  "icons": [],
-  "fonts": [
+  icons: [],
+  fonts: [
     {
-      "family": "Storm Sans"
+      family: "Storm Sans"
     },
     {
-      "family": "Storm Serif"
+      family: "Storm Serif"
     }
   ],
-  "tamagui": {
-    "name": "cyclone-ui",
-    "version": "0.0.0",
-    "prefix": "cyclone-ui",
-    "themes": [
+  tamagui: {
+    name: "cyclone-ui",
+    version: "0.0.0",
+    prefix: "cyclone-ui",
+    themes: [
       "light",
       "dark",
       "base",
@@ -4850,9 +4737,8 @@ export const manifest: DesignSystemManifest = {
       "success",
       "warning"
     ],
-    "tokens": {
-      "color": [
-        "backdrop",
+    tokens: {
+      color: [
         "black",
         "blue1",
         "blue2",
@@ -4864,41 +4750,41 @@ export const manifest: DesignSystemManifest = {
         "blue8",
         "blue9",
         "canvas",
-        "canvasActive",
-        "canvasDisabled",
-        "canvasHovered",
-        "canvasInactive",
-        "dataBlueEmphasis",
-        "dataBlueSubtle",
-        "dataGreenEmphasis",
-        "dataGreenSubtle",
-        "dataNeutralEmphasis",
-        "dataNeutralSubtle",
-        "dataOrangeEmphasis",
-        "dataOrangeSubtle",
-        "dataPinkEmphasis",
-        "dataPinkSubtle",
-        "dataPurpleEmphasis",
-        "dataPurpleSubtle",
-        "dataRedEmphasis",
-        "dataRedSubtle",
-        "dataYellowEmphasis",
-        "dataYellowSubtle",
+        "canvas-active",
+        "canvas-disabled",
+        "canvas-hovered",
+        "canvas-inactive",
+        "data-blue-emphasis",
+        "data-blue-subtle",
+        "data-green-emphasis",
+        "data-green-subtle",
+        "data-neutral-emphasis",
+        "data-neutral-subtle",
+        "data-orange-emphasis",
+        "data-orange-subtle",
+        "data-pink-emphasis",
+        "data-pink-subtle",
+        "data-purple-emphasis",
+        "data-purple-subtle",
+        "data-red-emphasis",
+        "data-red-subtle",
+        "data-yellow-emphasis",
+        "data-yellow-subtle",
         "elevated",
-        "elevatedActive",
-        "elevatedDisabled",
-        "elevatedHovered",
-        "elevatedInactive",
+        "elevated-active",
+        "elevated-disabled",
+        "elevated-hovered",
+        "elevated-inactive",
         "emphasis",
-        "emphasisActive",
-        "emphasisDisabled",
-        "emphasisHovered",
-        "emphasisInactive",
+        "emphasis-active",
+        "emphasis-disabled",
+        "emphasis-hovered",
+        "emphasis-inactive",
         "floating",
-        "floatingActive",
-        "floatingDisabled",
-        "floatingHovered",
-        "floatingInactive",
+        "floating-active",
+        "floating-disabled",
+        "floating-hovered",
+        "floating-inactive",
         "green1",
         "green2",
         "green3",
@@ -4910,15 +4796,15 @@ export const manifest: DesignSystemManifest = {
         "green9",
         "hairline",
         "ink",
-        "inkActive",
-        "inkDisabled",
-        "inkHovered",
-        "inkInactive",
+        "ink-active",
+        "ink-disabled",
+        "ink-hovered",
+        "ink-inactive",
         "link",
-        "linkActive",
-        "linkDisabled",
-        "linkHovered",
-        "linkInactive",
+        "link-active",
+        "link-disabled",
+        "link-hovered",
+        "link-inactive",
         "neutral1",
         "neutral2",
         "neutral3",
@@ -4935,8 +4821,8 @@ export const manifest: DesignSystemManifest = {
         "neutral14",
         "neutral15",
         "neutral16",
-        "onPrimary",
-        "onSecondary",
+        "on-primary",
+        "on-secondary",
         "orange1",
         "orange2",
         "orange3",
@@ -4947,10 +4833,10 @@ export const manifest: DesignSystemManifest = {
         "orange8",
         "orange9",
         "outline",
-        "outlineActive",
-        "outlineDisabled",
-        "outlineHovered",
-        "outlineInactive",
+        "outline-active",
+        "outline-disabled",
+        "outline-hovered",
+        "outline-inactive",
         "pink1",
         "pink2",
         "pink3",
@@ -4961,10 +4847,10 @@ export const manifest: DesignSystemManifest = {
         "pink8",
         "pink9",
         "primary",
-        "primaryActive",
-        "primaryDisabled",
-        "primaryHovered",
-        "primaryInactive",
+        "primary-active",
+        "primary-disabled",
+        "primary-hovered",
+        "primary-inactive",
         "purple1",
         "purple2",
         "purple3",
@@ -4984,34 +4870,34 @@ export const manifest: DesignSystemManifest = {
         "red8",
         "red9",
         "ring",
-        "ringOffset",
-        "ringSubtle",
-        "ringSubtleOffset",
+        "ring-offset",
+        "ring-subtle",
+        "ring-subtle-offset",
         "secondary",
-        "secondaryActive",
-        "secondaryDisabled",
-        "secondaryHovered",
-        "secondaryInactive",
+        "secondary-active",
+        "secondary-disabled",
+        "secondary-hovered",
+        "secondary-inactive",
         "subtle",
-        "subtleActive",
-        "subtleDisabled",
-        "subtleHovered",
-        "subtleInactive",
+        "subtle-active",
+        "subtle-disabled",
+        "subtle-hovered",
+        "subtle-inactive",
         "subtlest",
-        "subtlestActive",
-        "subtlestDisabled",
-        "subtlestHovered",
-        "subtlestInactive",
+        "subtlest-active",
+        "subtlest-disabled",
+        "subtlest-hovered",
+        "subtlest-inactive",
         "sunken",
-        "sunkenActive",
-        "sunkenDisabled",
-        "sunkenHovered",
-        "sunkenInactive",
+        "sunken-active",
+        "sunken-disabled",
+        "sunken-hovered",
+        "sunken-inactive",
         "surface",
-        "surfaceActive",
-        "surfaceDisabled",
-        "surfaceHovered",
-        "surfaceInactive",
+        "surface-active",
+        "surface-disabled",
+        "surface-hovered",
+        "surface-inactive",
         "white",
         "yellow1",
         "yellow2",
@@ -5023,7 +4909,7 @@ export const manifest: DesignSystemManifest = {
         "yellow8",
         "yellow9"
       ],
-      "space": [
+      space: [
         "2xl",
         "3xl",
         "4xl",
@@ -5095,7 +4981,7 @@ export const manifest: DesignSystemManifest = {
         "xxs",
         "zero"
       ],
-      "size": [
+      size: [
         "2xl",
         "3xl",
         "4xl",
@@ -5167,7 +5053,7 @@ export const manifest: DesignSystemManifest = {
         "xxs",
         "zero"
       ],
-      "radius": [
+      radius: [
         "2xl",
         "3xl",
         "4xl",
@@ -5193,93 +5079,74 @@ export const manifest: DesignSystemManifest = {
         "xs",
         "zero"
       ],
-      "zIndex": [
-        "0",
-        "10",
-        "20",
-        "30",
-        "40",
-        "50",
-        "60",
-        "70",
-        "80",
-        "90"
-      ],
-      "fontFamily": [
-        "body-md",
-        "body-md-bold",
-        "body-sm",
-        "body-sm-bold",
+      zIndex: ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90"],
+      fontFamily: [
+        "body",
         "caption",
         "code",
-        "display-hero",
-        "display-lg",
-        "display-md",
-        "editorial-hero",
-        "editorial-lg",
-        "editorial-md",
-        "eyebrow",
-        "storm-sans",
-        "storm-serif",
-        "title-lg",
-        "title-md",
-        "title-sm",
-        "title-xl",
-        "title-xs",
-        "title-xxs"
+        "display",
+        "editorial",
+        "eyebrow"
       ],
-      "fontSize": [
-        "1",
-        "2",
-        "3",
+      fontSize: [
+        "2xl",
         "3xl",
-        "4",
-        "5",
+        "4xl",
         "5xl",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
+        "6xl",
+        "7xl",
+        "8xl",
+        "9xl",
+        "10xl",
+        "11xl",
+        "12xl",
+        "13xl",
+        "14xl",
+        "15xl",
         "lg",
         "md",
         "sm",
-        "true",
         "xl",
         "xs",
         "xxs"
       ],
-      "fontWeight": [
-        "3xl",
-        "5xl",
+      fontWeight: [
+        "black",
         "bold",
         "extrabold",
-        "lg",
-        "md",
+        "extralight",
+        "light",
         "medium",
         "normal",
         "semibold",
-        "sm",
-        "true",
-        "xl",
-        "xs",
-        "xxs"
+        "thin"
       ],
-      "lineHeight": [
+      lineHeight: [
+        "2xl",
         "3xl",
+        "4xl",
         "5xl",
+        "6xl",
+        "7xl",
+        "8xl",
+        "9xl",
+        "10xl",
+        "11xl",
+        "12xl",
+        "13xl",
+        "14xl",
+        "15xl",
         "lg",
         "md",
         "none",
         "sm",
         "snug",
-        "tight",
         "true",
         "xl",
         "xs",
         "xxs"
       ],
-      "shadow": [
+      shadow: [
         "dropShadow.2xl",
         "dropShadow.lg",
         "dropShadow.md",
@@ -5303,40 +5170,40 @@ export const manifest: DesignSystemManifest = {
         "textShadow.xs"
       ]
     },
-    "shorthands": {
-      "text": "textAlign",
-      "b": "bottom",
-      "bg": "backgroundColor",
-      "content": "alignContent",
-      "grow": "flexGrow",
-      "items": "alignItems",
-      "justify": "justifyContent",
-      "l": "left",
-      "m": "margin",
-      "maxH": "maxHeight",
-      "maxW": "maxWidth",
-      "mb": "marginBottom",
-      "minH": "minHeight",
-      "minW": "minWidth",
-      "ml": "marginLeft",
-      "mr": "marginRight",
-      "mt": "marginTop",
-      "mx": "marginHorizontal",
-      "my": "marginVertical",
-      "p": "padding",
-      "pb": "paddingBottom",
-      "pl": "paddingLeft",
-      "pr": "paddingRight",
-      "pt": "paddingTop",
-      "px": "paddingHorizontal",
-      "py": "paddingVertical",
-      "r": "right",
-      "rounded": "borderRadius",
-      "select": "userSelect",
-      "self": "alignSelf",
-      "shrink": "flexShrink",
-      "t": "top",
-      "z": "zIndex"
+    shorthands: {
+      text: "textAlign",
+      b: "bottom",
+      bg: "backgroundColor",
+      content: "alignContent",
+      grow: "flexGrow",
+      items: "alignItems",
+      justify: "justifyContent",
+      l: "left",
+      m: "margin",
+      maxH: "maxHeight",
+      maxW: "maxWidth",
+      mb: "marginBottom",
+      minH: "minHeight",
+      minW: "minWidth",
+      ml: "marginLeft",
+      mr: "marginRight",
+      mt: "marginTop",
+      mx: "marginHorizontal",
+      my: "marginVertical",
+      p: "padding",
+      pb: "paddingBottom",
+      pl: "paddingLeft",
+      pr: "paddingRight",
+      pt: "paddingTop",
+      px: "paddingHorizontal",
+      py: "paddingVertical",
+      r: "right",
+      rounded: "borderRadius",
+      select: "userSelect",
+      self: "alignSelf",
+      shrink: "flexShrink",
+      t: "top",
+      z: "zIndex"
     }
   }
 };

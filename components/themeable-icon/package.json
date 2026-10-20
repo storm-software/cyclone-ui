@@ -9,26 +9,24 @@
     "directory": "components/themeable-icon"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/font-size": "catalog:",
     "@tamagui/get-token": "catalog:",
     "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-icon": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
-    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/web": "catalog:",
-    "react-native-svg": "^15.15.5",
-    "@cyclone-ui/helpers": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*"
+    "react-native-svg": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
@@ -39,9 +37,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

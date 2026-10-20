@@ -70,10 +70,11 @@ export const baseInputStyle: BaseInputStyle = [
     cursor: "pointer",
     height: "100%",
     flex: 1,
-    color: "primary hover:primaryHovered",
-    placeholderTextColor: "primaryDisabled",
+    color: "primary hover:primary-hovered",
+    placeholderTextColor: "primary-disabled",
     selectionColor: "color6",
-    fontFamily: "body-md",
+    fontFamily: "body",
+    fontWeight: "400",
     alignItems: "center",
     margin: 0,
     padding: 0,
@@ -88,8 +89,8 @@ export const baseInputStyle: BaseInputStyle = [
       disabled: {
         true: {
           cursor: "not-allowed",
-          color: "primaryDisabled hover:primaryDisabled",
-          placeholderTextColor: "primaryDisabled"
+          color: "primary-disabled hover:primary-disabled",
+          placeholderTextColor: "primary-disabled"
         }
       },
 

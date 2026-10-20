@@ -228,7 +228,7 @@ const ColorPickerSlider = ({
           <Text
             fontFamily="caption"
             fontSize={14}
-            color="emphasisInactive"
+            color="emphasis-inactive"
             fontVariant={["tabular-nums"]}>
             {valueLabel}
           </Text>
@@ -242,7 +242,7 @@ const ColorPickerSlider = ({
         userSelect="none"
         touchAction="none"
         {...(disabled
-          ? { backgroundColor: "primaryDisabled" }
+          ? { backgroundColor: "primary-disabled" }
           : getSwatchBackground(
               getColorSliderBackground(displayColor, channel, THUMB / 2)
             ))}
@@ -287,9 +287,9 @@ const ColorPickerSlider = ({
             borderWidth={3}
             borderColor="white"
             backgroundColor={
-              disabled ? "primaryDisabled" : displayColor.toString("css")
+              disabled ? "primary-disabled" : displayColor.toString("css")
             }
-            boxShadow={focusVisible ? "ringOffset" : THUMB_SHADOW}
+            boxShadow={focusVisible ? "ring-offset" : THUMB_SHADOW}
             outlineStyle="none"
             {...({
               role: "slider",
@@ -429,7 +429,7 @@ const ColorPickerSwatches = ({
             borderWidth={2}
             borderColor={pressed ? css : "transparent"}
             padding={pressed ? 2 : 0}
-            boxShadow="none focus-visible:ringOffset"
+            boxShadow="none focus-visible:ring-offset"
             outlineStyle="none"
             cursor={disabled ? "not-allowed" : "pointer"}
             opacity={disabled ? 0.5 : 1}

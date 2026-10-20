@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { BodyTextSize } from "@cyclone-ui/body-text";
-import type { FontSizeTokens, GetProps } from "@tamagui/core";
+import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, useThemeName } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
@@ -55,9 +55,6 @@ const LinkTextFrame = styled(SizableText, {
   transition: "200ms",
   cursor: "pointer",
 
-  // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
-  // only define `true` plus their own step, so name the default step explicitly.
-  size: "true" as FontSizeTokens,
   whiteSpace: "nowrap",
   textDecorationStyle: "solid",
   variants: {
@@ -78,18 +75,26 @@ const LinkTextFrame = styled(SizableText, {
 
     cta: {
       true: {
-        fontFamily: "title-md",
-        fontWeight: "true",
+        fontFamily: "display",
+        fontSize: "sm",
+        lineHeight: "sm",
+        fontWeight: "600",
         textTransform: "uppercase"
       }
     },
 
     size: {
       sm: {
-        fontFamily: "body-sm"
+        fontFamily: "body",
+        fontSize: "sm",
+        lineHeight: "sm",
+        fontWeight: "500"
       },
       md: {
-        fontFamily: "body-md"
+        fontFamily: "body",
+        fontSize: "md",
+        lineHeight: "md",
+        fontWeight: "400"
       }
     },
 
@@ -109,7 +114,7 @@ const LinkTextFrame = styled(SizableText, {
 });
 
 /**
- * A color token with its interaction states, e.g. `link hover:linkHovered ...`.
+ * A color token with its interaction states, e.g. `link hover:link-hovered ...`.
  */
 const getStateColors = (token: string) =>
   `${token} hover:${token}Hovered press:${token}Active focus:${token}Active`;
@@ -118,7 +123,7 @@ const getStateColors = (token: string) =>
  * In v2 an explicit `color` was applied through the inline `style` (via the
  * removed `useStyle` hook), so it won over the variant's base and state colors.
  * A plain value replaces every state clause; a flat clause string (e.g.
- * `group-hover/card:primaryHovered`) is appended so it only replaces the
+ * `group-hover/card:primary-hovered`) is appended so it only replaces the
  * clauses it restates.
  */
 const mergeColor = <TColor,>(base: string, color: TColor): TColor => {

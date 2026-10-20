@@ -77,7 +77,7 @@ test("accepts a versioned production glyph template and rejects malformed URLs",
     archiveUrl: "pmtiles://https://example.com/map.pmtiles"
   };
   const glyphsUrl =
-    "https://example.com/glyphs/storm-sans/1.0.9/{fontstack}/{range}.pbf";
+    "https://example.com/fonts/storm-sans/pbf/1.0.9/{fontstack}/{range}.pbf";
   assert.equal(createCycloneStyle({ ...options, glyphsUrl }).glyphs, glyphsUrl);
   for (const glyphsUrl of [
     "/fonts/{fontstack}/{range}.pbf",

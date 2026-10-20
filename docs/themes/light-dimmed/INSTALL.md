@@ -18,7 +18,7 @@ Example for Storybook:
 // .storybook/main.ts
 export default {
   stories: ["../docs/themes/**/*.mdx"]
-};
+}
 ```
 
 2. Open `docs/themes/index.mdx` as the **Cyclone UI (Light Dimmed)** entry point.

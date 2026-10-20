@@ -25,23 +25,23 @@
     "subtlest": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.11}",
+      "$value": "{color.neutral.10}",
       "$description": "Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows.",
       "group": "foreground"
     },
     "outline": {
       "$type": "color",
       "colorSpace": "display-p3",
-      "$value": "{color.neutral.10}",
+      "$value": "{color.neutral.11}",
       "$description": "High-contrast color for borders, dividers and separators. Use it to outline controls and split content without adding visual weight. Default color of Divider, and the border color for Input, TextArea, Select, Checkbox, RadioGroup, Switch, Accordion, Table, Tabs and Footer, and the Sheet drag handle.",
-      "group": "separator"
+      "group": "border"
     },
     "hairline": {
       "$type": "color",
       "colorSpace": "display-p3",
       "$value": "{color.neutral.12}",
       "$description": "Low-contrast color for borders, dividers and separators.",
-      "group": "separator"
+      "group": "border"
     },
     "sunken": {
       "$type": "color",
@@ -80,10 +80,11 @@
     },
     "base": {
       "$description": "Base theme colors used as the default throughout the project.",
+      "group": "accent",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.neutral.2}",
+        "$value": "{color.white}",
         "$description": "Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators.",
         "semantic": true
       },
@@ -104,6 +105,7 @@
     },
     "brand": {
       "$description": "A theme representing the core brand colors.",
+      "group": "accent",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -114,6 +116,7 @@
     },
     "danger": {
       "$description": "Danger theme colors used for destructive actions and error states.",
+      "group": "status",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -124,6 +127,7 @@
     },
     "warning": {
       "$description": "Warning theme colors used for cautionary states that need attention but do not block the user.",
+      "group": "status",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -134,6 +138,7 @@
     },
     "info": {
       "$description": "Info theme colors used for neutral guidance, tips and system notices.",
+      "group": "status",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -151,6 +156,7 @@
     },
     "discovery": {
       "$description": "Discovery theme colors used for highlighting new features, onboarding, and help content.",
+      "group": "status",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -168,6 +174,7 @@
     },
     "success": {
       "$description": "Success theme colors used for confirming actions and valid states.",
+      "group": "status",
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",

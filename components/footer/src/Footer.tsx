@@ -150,7 +150,7 @@ const FooterSectionLinks = styled(View, {
 const FooterLink = styled(Link, {
   displayName: "FooterLink",
   width: "fit-content",
-  color: "primary hover:primaryHovered focus-visible:primaryActive",
+  color: "primary hover:primary-hovered focus-visible:primary-active",
   opacity: "0.85 hover:1 focus-visible:1",
   textDecorationLine: "none",
   x: "hover:3px",
@@ -267,7 +267,7 @@ const FooterLinkImpl = createStyledHOC(
         underline="none"
         {...props}
         {...(hovered && {
-          color: active ? "primaryActive" : "primaryInactive"
+          color: active ? "primary-active" : "primary-inactive"
         })}
         onMouseEnter={(event: any) => {
           onMouseEnter?.(event);

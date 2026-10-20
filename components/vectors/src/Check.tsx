@@ -38,7 +38,7 @@ const Icon = ({
   style,
   ...props
 }: ThemedIconBodyProps<CheckProps>) => {
-  const color = useCurrentColor((props.color || "onPrimary") as any);
+  const color = useCurrentColor((props.color || "on-primary") as any);
 
   // A single progress value drives both strokes, so the check is drawn at a
   // constant speed along its full length (no hand-off timing between lines).

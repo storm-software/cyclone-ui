@@ -28,13 +28,13 @@ const config: UserConfig = defineConfig({
   output: {
     storage: "fs"
   },
-  logLevel: {
-    general: "debug",
-    config: "trace"
-  },
   docs: "https://docs.cyclone-ui.com/reference/cli/{command}",
   plugins: [
-    preset(),
+    preset({
+      banner: {
+        text: "Cyclone CLI",
+      }
+    }),
     razorwind({
       root: "../..",
       themeId: "dark",

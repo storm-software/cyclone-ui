@@ -26,7 +26,7 @@ import { parseColor, useColorAreaState } from "@react-stately/color";
 import type { TamaguiElement, ViewProps } from "@tamagui/core";
 import { View, withStaticProperties } from "@tamagui/core";
 import type { ReactNode, PointerEvent as ReactPointerEvent } from "react";
-import { createContext, forwardRef, useContext, useRef, useState } from "react";
+import { createContext, forwardRef, use, useRef, useState } from "react";
 
 export type { ColorFormat, ColorSpace } from "@react-stately/color";
 export { parseColor };
@@ -163,7 +163,7 @@ export type ColorAreaThumbProps = ViewProps;
 /** The draggable, focusable thumb marking the selected color. */
 export const ColorAreaThumb = forwardRef<TamaguiElement, ColorAreaThumbProps>(
   (props, forwardedRef) => {
-    const context = useContext(ColorAreaContext);
+    const context = use(ColorAreaContext);
     if (!context) {
       throw new Error("`ColorArea.Thumb` must be rendered inside `ColorArea`.");
     }
@@ -193,9 +193,11 @@ export const ColorAreaThumb = forwardRef<TamaguiElement, ColorAreaThumbProps>(
         borderWidth={3}
         borderColor="white"
         backgroundColor={
-          disabled ? "primaryDisabled" : state.getDisplayColor().toString("css")
+          disabled
+            ? "primary-disabled"
+            : state.getDisplayColor().toString("css")
         }
-        boxShadow={focusVisible ? "ringOffset" : THUMB_SHADOW}
+        boxShadow={focusVisible ? "ring-offset" : THUMB_SHADOW}
         outlineStyle="none"
         // Only the size animates, so the thumb never lags the pointer.
         transition="width 150ms ease-out, height 150ms ease-out, margin 150ms ease-out"
@@ -336,7 +338,7 @@ const ColorAreaFrame = forwardRef<TamaguiElement, ColorAreaProps>(
     } as ViewProps;
 
     const layers = disabled
-      ? [{ backgroundColor: "primaryDisabled" }]
+      ? [{ backgroundColor: "primary-disabled" }]
       : getColorAreaLayers(color, state.channels);
 
     return (

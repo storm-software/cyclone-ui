@@ -16,38 +16,42 @@
 
  ------------------------------------------------------------------- */
 
+import type { DefaultStatusColorTheme } from "@cyclone-ui/helpers";
 import type { MessageType } from "@stryke/types/messages";
-import type { ColorThemeName } from "../../theme/types";
 
-export const getEyebrowByType = (type?: MessageType): string => {
+export const getDefaultEyebrowByType = (type?: MessageType): string => {
   switch (type) {
-    case "error":
-      return "Error";
+    case "danger":
+      return "Danger";
     case "warning":
       return "Warning";
     case "info":
       return "Information";
     case "success":
       return "Success";
-    case "help":
+    case "discovery":
+      return "Useful Tip";
     case undefined:
+    default:
       return "Attention";
   }
 };
 
-export const getThemeByType = (type?: MessageType): ColorThemeName => {
+export const getThemeByType = (type?: string): DefaultStatusColorTheme => {
   switch (type) {
     case "error":
+    case "danger":
       return "danger";
     case "warning":
       return "warning";
-    case "info":
-      return "info";
     case "help":
+    case "discovery":
       return "discovery";
     case "success":
       return "success";
+    case "info":
     case undefined:
-      return "brand";
+    default:
+      return "info";
   }
 };

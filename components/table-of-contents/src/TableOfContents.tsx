@@ -176,7 +176,7 @@ const TableOfContentsLinkFrame = styled(View, {
   borderRadius: "xs",
   cursor: "pointer",
   outlineWidth: "focus:0px",
-  boxShadow: "focus:ringSubtle"
+  boxShadow: "focus:ring-subtle"
 });
 
 const TableOfContentsLink = createStyledHOC(
@@ -203,7 +203,7 @@ const TableOfContentsLink = createStyledHOC(
 const TableOfContentsLinkText = styled(BodyText, {
   render: "span",
   transition: "color 160ms ease-out",
-  color: "primaryInactive group-hover/tableOfContentsItem:primaryHovered",
+  color: "primary-inactive group-hover/tableOfContentsItem:primary-hovered",
   fontWeight: "normal",
   variants: {
     active: {

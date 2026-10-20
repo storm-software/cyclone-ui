@@ -9,15 +9,15 @@
     "directory": "components/tabs"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
     "@tamagui/animate-presence": "catalog:",
     "@tamagui/button": "catalog:",
     "@tamagui/core": "catalog:",
@@ -26,15 +26,13 @@
     "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
     "@tamagui/linear-gradient": "catalog:",
+    "@tamagui/react-native-types": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/tabs": "catalog:",
     "@tamagui/text": "catalog:",
     "@tamagui/use-controllable-state": "catalog:",
     "@tamagui/web": "catalog:",
-    "react-native-svg": "^15.15.5",
-    "@cyclone-ui/heading-text": "workspace:*",
-    "@cyclone-ui/helpers": "workspace:*",
-    "@tamagui/react-native-types": "catalog:"
+    "react-native-svg": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/body-text": "workspace:*",
@@ -46,9 +44,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

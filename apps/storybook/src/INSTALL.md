@@ -17,11 +17,11 @@ Generated theme module:
 Wire into `.storybook/preview.ts`:
 
 ```ts
-import themes from "../theme.ts";
+import themes from "../theme.ts"
 
 export const parameters = {
   docs: { theme: themes["dark"] }
-};
+}
 ```
 
 ## Token-doc variants
@@ -37,16 +37,14 @@ Pass `theme` directly to a block to override that selection.
 ```ts
 // .storybook/main.ts
 export default {
-  stories: [
-    "../apps/storybook/src/**/*.mdx"
-  ]
-};
+  stories: ["../apps/storybook/src/**/*.mdx"]
+}
 ```
 
 2. Import doc blocks in MDX as needed:
 
 ```mdx
-import { ColorPaletteBlock } from "./blocks";
+import { ColorPaletteBlock } from "./blocks"
 ```
 
 3. Start Storybook and open **Cyclone UI** in the sidebar.

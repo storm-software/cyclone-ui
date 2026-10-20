@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { FontSizeTokens, GetProps } from "@tamagui/core";
+import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled } from "@tamagui/core";
 // Lets TypeScript name `GetFontSizedInput` (SizableText's `size` type) in
 // this package's declarations.
@@ -28,18 +28,21 @@ const BaseHeadingText = styled(SizableText, {
   render: "span",
   role: "heading",
 
-  // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
-  // only define `true` plus their own step, so name the default step explicitly.
-  size: "true" as FontSizeTokens,
+  // The typography tokens only carry the family and leading, so each level
+  // sets its own size and weight. Static (not `size`) so a `size: true` passed
+  // through a styled context keeps the level's size.
+  fontSize: "xl",
+  lineHeight: "xl",
+  fontWeight: "semibold",
   color: "primary",
 
   variants: {
     variant: {
       base: {
-        fontFamily: "display-md"
+        fontFamily: "display"
       },
       editorial: {
-        fontFamily: "editorial-md"
+        fontFamily: "editorial"
       }
     }
   } as const,
@@ -53,126 +56,59 @@ export const HeadingHeroText = styled(BaseHeadingText, {
   displayName: "HeadingHeroText",
   render: "h1",
   color: "primary",
-
-  variants: {
-    variant: {
-      base: {
-        fontFamily: "display-hero"
-      },
-      editorial: {
-        fontFamily: "editorial-hero"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    variant: "base"
-  }
+  fontSize: "5xl",
+  lineHeight: "5xl",
+  fontWeight: "semibold",
 });
 
 export const HeadingTitleText = styled(BaseHeadingText, {
   displayName: "HeadingTitleText",
   render: "h1",
   color: "primary",
+  fontSize: "3xl",
+  lineHeight: "3xl",
+  fontWeight: "semibold",
 
-  variants: {
-    variant: {
-      base: {
-        fontFamily: "display-lg"
-      },
-      editorial: {
-        fontFamily: "editorial-lg"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    variant: "base"
-  }
 });
 
 export const HeadingLargeText = styled(BaseHeadingText, {
   displayName: "HeadingLargeText",
   render: "h2",
   color: "emphasis",
+  fontSize: "3xl",
+  lineHeight: "3xl",
+  fontWeight: "semibold",
 
-  variants: {
-    variant: {
-      base: {
-        fontFamily: "display-lg"
-      },
-      editorial: {
-        fontFamily: "editorial-lg"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    variant: "base"
-  }
 });
 
 export const HeadingMediumText = styled(BaseHeadingText, {
   displayName: "HeadingMediumText",
   render: "h3",
   color: "emphasis",
+  fontSize: "xl",
+  lineHeight: "xl",
+  fontWeight: "bold",
 
-  variants: {
-    variant: {
-      base: {
-        fontFamily: "display-md"
-      },
-      editorial: {
-        fontFamily: "editorial-md"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    variant: "base"
-  }
 });
 
 export const HeadingSmallText = styled(BaseHeadingText, {
   displayName: "HeadingSmallText",
   render: "h4",
   color: "emphasis",
+  fontSize: "lg",
+  lineHeight: "sm",
+  fontWeight: "semibold",
 
-  variants: {
-    variant: {
-      base: {
-        fontFamily: "title-lg"
-      },
-      editorial: {
-        fontFamily: "title-lg"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    variant: "base"
-  }
 });
 
 export const HeadingExtraSmallText = styled(BaseHeadingText, {
   displayName: "HeadingExtraSmallText",
   render: "h5",
   color: "emphasis",
+  fontSize: "md",
+  lineHeight: "xs",
+  fontWeight: "semibold",
 
-  variants: {
-    variant: {
-      base: {
-        fontFamily: "title-md"
-      },
-      editorial: {
-        fontFamily: "title-md"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    variant: "base"
-  }
 });
 
 export type HeadingTextProps = GetProps<typeof BaseHeadingText>;

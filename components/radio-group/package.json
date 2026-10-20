@@ -9,15 +9,17 @@
     "directory": "components/radio-group"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@stryke/hooks": "catalog:",
     "@stryke/types": "catalog:",
     "@tamagui/constants": "catalog:",
@@ -28,11 +30,7 @@
     "@tamagui/radio-group": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/web": "catalog:",
-    "react-native-svg": "^15.15.5",
-    "@cyclone-ui/body-text": "workspace:*",
-    "@cyclone-ui/heading-text": "workspace:*",
-    "@cyclone-ui/icons": "workspace:*",
-    "@cyclone-ui/helpers": "workspace:*"
+    "react-native-svg": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",
@@ -45,9 +43,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

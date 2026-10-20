@@ -9,9 +9,7 @@
     "directory": "components/overlay"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -21,7 +19,7 @@
     "@tamagui/core": "catalog:",
     "@tamagui/linear-gradient": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
@@ -32,9 +30,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

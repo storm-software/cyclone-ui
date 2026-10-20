@@ -35,7 +35,7 @@ const Icon = ({
   strokeWidth = 1,
   ...props
 }: ThemedIconBodyProps<BinaryProps>) => {
-  const color = useCurrentColor((props.color || "onPrimary") as any);
+  const color = useCurrentColor((props.color || "on-primary") as any);
 
   // Line
 

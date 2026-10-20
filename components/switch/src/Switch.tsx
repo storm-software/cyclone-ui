@@ -86,8 +86,8 @@ const SwitchFrame = styled(View, {
   backgroundColor: "surface",
   borderWidth: 1,
   borderColor:
-    "outline hover:outlineHovered focus:primaryActive focus-visible:primaryActive",
-  boxShadow: "none focus:ringOffset focus-visible:ringOffset",
+    "outline hover:outline-hovered focus:primary-active focus-visible:primary-active",
+  boxShadow: "none focus:ring-offset focus-visible:ring-offset",
   tabIndex: 0,
   variants: {
     // `styled.dynamic` re-brands the helper's carrier with this package's
@@ -107,7 +107,7 @@ const SwitchFrame = styled(View, {
 
     hasValidationMessage: {
       true: {
-        borderColor: "primary hover:primaryHovered"
+        borderColor: "primary hover:primary-hovered"
       }
     },
 
@@ -116,7 +116,7 @@ const SwitchFrame = styled(View, {
         userSelect: "none",
         cursor: "not-allowed",
         borderColor:
-          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled"
+          "primary-disabled hover:primary-disabled press:primary-disabled focus:primary-disabled"
       }
     }
   } as const,
@@ -243,8 +243,8 @@ const SwitchIcon = createStyledHOC(
           color={
             (color ||
               (disabled
-                ? "primaryDisabled"
-                : "onPrimary")) as ThemeableIconProps["color"]
+                ? "primary-disabled"
+                : "on-primary")) as ThemeableIconProps["color"]
           }>
           {children}
         </ThemeableIcon>
@@ -291,7 +291,7 @@ const BaseSwitchImpl = createStyledHOC(
     } = allProps;
     const hasValidationMessage = useFieldHasValidationMessage();
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
+    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
 
     return (
       <SwitchContext.Provider
@@ -325,8 +325,8 @@ const BaseSwitchImpl = createStyledHOC(
                 : idleColor,
             // A call-site base replaces every lower-tier clause in v3, so the
             // v2 frame/variant hover color is restated.
-            `hover:${disabled ? "primaryDisabled" : "primaryHovered"}`,
-            `group-hover/field:${disabled ? "primaryDisabled" : focused ? focusColor : "primaryHovered"}`,
+            `hover:${disabled ? "primary-disabled" : "primary-hovered"}`,
+            `group-hover/field:${disabled ? "primary-disabled" : focused ? focusColor : "primary-hovered"}`,
             disabled ? undefined : `focus:${focusColor}`,
             `focus-visible:${focusColor}`
           ]
@@ -334,8 +334,8 @@ const BaseSwitchImpl = createStyledHOC(
             .join(" ")}
           boxShadow={
             size === "sm"
-              ? "focus:ringSubtleOffset focus-visible:ringSubtleOffset"
-              : "focus:ringOffset focus-visible:ringOffset"
+              ? "focus:ring-subtle-offset focus-visible:ring-subtle-offset"
+              : "focus:ring-offset focus-visible:ring-offset"
           }
           // `createSwitch` types its result with the default frame's props, but
           // this `SwitchFrame` variant still reaches the frame at runtime.

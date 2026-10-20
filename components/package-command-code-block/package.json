@@ -9,9 +9,7 @@
     "directory": "components/package-command-code-block"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -25,7 +23,7 @@
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "catalog:"
   },
   "publishConfig": {
     "access": "public"

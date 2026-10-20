@@ -346,7 +346,7 @@ const PageSkipLinkItem = styled(View, {
   paddingHorizontal: "xl",
   borderRadius: "md",
   backgroundColor: "transparent hover:secondary",
-  boxShadow: "none focus-visible:ringOffset",
+  boxShadow: "none focus-visible:ring-offset",
   outlineWidth: 0
 });
 
@@ -1013,10 +1013,10 @@ const PageSideNavToggleFrame = styled(View, {
   alignItems: "center",
   justifyContent: "center",
   cursor: "pointer",
-  backgroundColor: "transparent hover:secondaryHovered press:secondaryActive",
+  backgroundColor: "transparent hover:secondary-hovered press:secondary-active",
   borderWidth: 0,
   borderRadius: "full",
-  boxShadow: "focus-visible:ringOffset"
+  boxShadow: "focus-visible:ring-offset"
 });
 
 export interface PageSideNavToggleExtraProps {

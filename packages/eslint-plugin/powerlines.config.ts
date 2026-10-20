@@ -26,7 +26,10 @@ const config: UserConfig = defineConfig({
   plugins: [
     tsdown({
       exports: {
-        all: true
+        all: true,
+        // Skip hashed shared chunks (e.g. `runtime-CgdW8D6U`) - the declaration-only
+        // ones produce `undefined` export values that crash Powerlines' `customExports`
+        exclude: [/-[\w-]{8}$/]
       }
     })
   ]

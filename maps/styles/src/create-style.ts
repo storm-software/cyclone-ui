@@ -17,9 +17,8 @@
  ------------------------------------------------------------------- */
 
 import type { StyleSpecification } from "@maplibre/maplibre-gl-style-spec";
-import { validateStyleMin } from "@maplibre/maplibre-gl-style-spec";
 import { titleCase } from "@stryke/string-format/title-case";
-import type { CycloneTheme } from "./create-flavor";
+import type { ColorLookup, CycloneTheme } from "./create-flavor";
 import { createFlavor } from "./create-flavor";
 import { layers } from "./index";
 
@@ -32,12 +31,14 @@ export const REMOTE_GLYPHS_URL =
 export function createStyle({
   theme,
   archiveUrl,
-  glyphsUrl = REMOTE_GLYPHS_URL
+  glyphsUrl = REMOTE_GLYPHS_URL,
+  color
 }: {
   theme: CycloneTheme;
   archiveUrl: string;
   glyphsUrl?: string;
-}): StyleSpecification {
+  color: ColorLookup;
+}): StyleSpecification & { name: string } {
   if (!/^pmtiles:\/\/https?:\/\//.test(archiveUrl)) {
     throw new Error(
       "The archive URL must start with pmtiles://http:// or pmtiles://https://"
@@ -54,7 +55,7 @@ export function createStyle({
     );
   }
 
-  const style: StyleSpecification = {
+  return {
     version: 8,
     name: `Cyclone - ${titleCase(theme)}`,
     sources: {
@@ -65,13 +66,6 @@ export function createStyle({
     },
     glyphs: glyphsUrl,
     sprite: `https://public.storm-cdn.com/basemaps/assets/sprites/v4/${theme}`,
-    layers: layers("stormsoftware", createFlavor(theme), { lang: "en" })
+    layers: layers("stormsoftware", createFlavor(theme, color), { lang: "en" })
   };
-
-  const errors = validateStyleMin(style);
-  if (errors.length)
-    throw new Error(
-      `${theme} style is invalid:\n${errors.map(String).join("\n")}`
-    );
-  return style;
 }

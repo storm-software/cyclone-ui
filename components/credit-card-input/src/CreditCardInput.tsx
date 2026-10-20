@@ -930,7 +930,7 @@ const CreditCardInputCardFrame = styled(View, {
   borderRadius: "container",
   borderWidth: 1,
   borderColor: "hairline",
-  backgroundColor: "sunkenActive",
+  backgroundColor: "sunken-active",
   justifyContent: "space-between",
   position: "relative",
   overflow: "hidden"
@@ -938,14 +938,19 @@ const CreditCardInputCardFrame = styled(View, {
 
 const CreditCardInputCardText = styled(Text, {
   displayName: "CreditCardInputCard",
-  fontFamily: "title-sm",
+  fontFamily: "display",
+  fontSize: "xs",
+  lineHeight: "xs",
+  fontWeight: "700",
   color: "emphasis"
 });
 
 const CreditCardInputCardCaption = styled(Text, {
   displayName: "CreditCardInputCard",
-  fontFamily: "title-xxs",
+  fontFamily: "display",
   fontSize: "xxs",
+  lineHeight: "xxs",
+  fontWeight: "500",
   color: "subtle",
   opacity: 0.75,
   textTransform: "uppercase"
@@ -998,7 +1003,10 @@ const CreditCardInputCard = createStyledHOC(
             alignItems="center"
             height={48}
             position="relative">
-            <CreditCardInputCardText fontFamily="title-md">
+            <CreditCardInputCardText
+              fontSize="sm"
+              lineHeight="sm"
+              fontWeight="600">
               {bankName}
             </CreditCardInputCardText>
             {brand.logo && (
@@ -1134,7 +1142,8 @@ const CreditCardInputCard = createStyledHOC(
 
           <CreditCardInputCardText
             fontFamily="code"
-            fontSize={20}
+            fontSize="lg"
+            lineHeight="lg"
             letterSpacing={2}>
             {groupDigits(values.number.padEnd(numberLength, "•"), brand.groups)}
           </CreditCardInputCardText>

@@ -196,7 +196,7 @@ const StatusButton = ({ status }: { status: string }) => {
       justifyContent="center"
       theme={status?.toLocaleLowerCase() === "active" ? "success" : "danger"}
       themeShallow={true}>
-      <Text color="onPrimary" paddingVertical="md">
+      <Text color="on-primary" paddingVertical="md">
         {status}
       </Text>
     </View>

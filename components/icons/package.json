@@ -9,9 +9,7 @@
     "directory": "components/icons"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "generate": "node ./scripts/generate.ts"
   },
@@ -23,7 +21,7 @@
   "dependencies": {
     "@tamagui/core": "catalog:",
     "@tamagui/helpers-icon": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "catalog:"
   },
   "devDependencies": {
     "@phosphor-icons/core": "catalog:",

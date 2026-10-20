@@ -572,8 +572,8 @@ const TimePickerClock = ({
                   // `undefined` value replaces the variant's background.
                   {...(index === hoveredIndex && {
                     backgroundColor: selected
-                      ? "primaryHovered"
-                      : "elevatedHovered"
+                      ? "primary-hovered"
+                      : "elevated-hovered"
                   })}
                   size={item.inner ? innerCellSize : cellSize}
                   width={item.inner ? innerCellSize : cellSize}

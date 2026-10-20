@@ -124,7 +124,7 @@ const StoryLogo = () => (
       justifyContent="center"
       backgroundColor="primary"
       borderRadius="full">
-      <Lightning size={14} color="onPrimary" weight="fill" />
+      <Lightning size={14} color="on-primary" weight="fill" />
     </View>
     <BodyText render="span" color="emphasis" fontWeight="700">
       Storm
@@ -367,7 +367,7 @@ const StoryPanel = () => {
 
 const StoryBanner = () => (
   <Page.Banner>
-    <BodyText render="span" size="sm" color="onPrimary">
+    <BodyText render="span" size="sm" color="on-primary">
       Scheduled maintenance starts Saturday at 02:00 UTC.
     </BodyText>
   </Page.Banner>

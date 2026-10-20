@@ -158,7 +158,7 @@ export const CustomMarkers: Story = {
         justifyContent="center"
         borderWidth={0}
         backgroundColor={index < 3 ? "primary" : "secondary"}>
-        <event.icon size={16} color={index < 3 ? "onPrimary" : "onSecondary"} />
+        <event.icon size={16} color={index < 3 ? "on-primary" : "on-secondary"} />
       </TimelineMarker>
     )
   }

@@ -89,13 +89,13 @@ const TableRow = styled(YStack, {
   render: "tr",
   flexDirection: "row",
   borderWidth: 0,
-  borderColor: "hairline focus-visible:outlineActive",
+  borderColor: "hairline focus-visible:outline-active",
   borderStyle: "solid",
   justifyContent: "flex-start",
   position: "relative",
   backgroundColor: "transparent hover:transparent",
   paddingHorizontal: "xl",
-  boxShadow: "none focus-visible:ringOffset",
+  boxShadow: "none focus-visible:ring-offset",
   variants: {
     header: {
       false: {}
@@ -183,10 +183,10 @@ const TableCell = styled(YStack, {
   flexShrink: 1,
   borderWidth: 0,
   borderBottomWidth: 1,
-  borderColor: "hairline focus-visible:outlineActive",
+  borderColor: "hairline focus-visible:outline-active",
   justifyContent: "flex-start",
   paddingHorizontal: "xl",
-  boxShadow: "none focus-visible:ringOffset",
+  boxShadow: "none focus-visible:ring-offset",
   variants: {
     cellWidth: styled.dynamic<SizeTokens | number>((name, { tokens }) => {
       return {

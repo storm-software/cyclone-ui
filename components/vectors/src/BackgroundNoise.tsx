@@ -33,7 +33,7 @@ const FeDistantLight =
   (ReactNativeSvg as any).FeDistantLight ?? "feDistantLight";
 
 const Icon = (props: ThemedIconBodyProps<IconProps>) => {
-  const color = useCurrentColor((props.color || "onPrimary") as any);
+  const color = useCurrentColor((props.color || "on-primary") as any);
 
   return (
     <Svg

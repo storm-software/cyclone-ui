@@ -9,9 +9,7 @@
     "directory": "components/stepper"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -19,6 +17,7 @@
   },
   "dependencies": {
     "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/next-button": "workspace:*",
     "@cyclone-ui/previous-button": "workspace:*",
     "@tamagui/animate-presence": "catalog:",
@@ -29,7 +28,6 @@
     "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
     "@tamagui/linear-gradient": "catalog:",
-    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/react-native-types": "catalog:",
     "@tamagui/shapes": "catalog:",
     "@tamagui/stacks": "catalog:",
@@ -37,7 +35,7 @@
     "@tamagui/text": "catalog:",
     "@tamagui/use-controllable-state": "catalog:",
     "@tamagui/web": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
@@ -48,9 +46,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

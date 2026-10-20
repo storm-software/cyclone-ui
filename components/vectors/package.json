@@ -9,9 +9,7 @@
     "directory": "components/vectors"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -20,10 +18,10 @@
   },
   "dependencies": {
     "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/helpers-icon": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
-    "@cyclone-ui/icons": "workspace:*",
     "motion": "^11.18.2"
   },
   "devDependencies": {
@@ -31,14 +29,12 @@
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "catalog:"
   },
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

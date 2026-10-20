@@ -34,7 +34,6 @@ import {
   useFormControl
 } from "@cyclone-ui/helpers";
 import { DownloadSimple, Lock, Trash, Upload, X } from "@cyclone-ui/icons";
-import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import type { ClientFileResult } from "@cyclone-ui/state";
 import { formatDate } from "@stryke/date/format";
@@ -53,6 +52,7 @@ import {
 import { Image } from "@tamagui/image";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { XStack, YStack } from "@tamagui/stacks";
+import { SizableText } from "@tamagui/text";
 import type { DocumentPickerResult } from "expo-document-picker";
 import type { PropsWithChildren } from "react";
 import { Fragment, useCallback, useEffect, useState } from "react";
@@ -141,8 +141,8 @@ const FilePickerGroupFrame = styled(View, {
   borderStyle: "dashed",
   borderWidth: 2,
   borderRadius: "container",
-  borderColor: "outline hover:outlineHovered",
-  backgroundColor: "surface hover:surfaceHovered",
+  borderColor: "outline hover:outline-hovered",
+  backgroundColor: "surface hover:surface-hovered",
   tabIndex: 0,
   variants: {
     // Styled by the `.resolve` below because the geometry depends on
@@ -166,21 +166,21 @@ const FilePickerGroupFrame = styled(View, {
 
     active: {
       true: {
-        borderColor: "outlineActive hover:outlineActive",
-        backgroundColor: "surfaceActive hover:surfaceActive"
+        borderColor: "outline-active hover:outline-active",
+        backgroundColor: "surface-active hover:surface-active"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "primary hover:primaryHovered"
+        borderColor: "primary hover:primary-hovered"
       }
     },
 
     disabled: {
       true: {
-        borderColor: "primaryDisabled hover:primaryDisabled",
-        backgroundColor: "surfaceDisabled hover:surfaceDisabled",
+        borderColor: "primary-disabled hover:primary-disabled",
+        backgroundColor: "surface-disabled hover:surface-disabled",
         cursor: "not-allowed"
       },
       false: {
@@ -401,7 +401,7 @@ const FilePickerTrigger = createStyledHOC(
             alignSelf="center"
             paddingHorizontal={getSpaced(getFormSizeToken(size))}
             numberOfLines={1}
-            color={disabled ? "inkDisabled" : "ink"}>
+            color={disabled ? "ink-disabled" : "ink"}>
             {files.length === 0
               ? max > 1
                 ? "No files chosen"
@@ -495,21 +495,21 @@ const FilePickerTriggerButton = createStyledHOC(
           borderRightWidth={1}
           borderColor={
             disabled
-              ? "outlineDisabled"
+              ? "outline-disabled"
               : hasValidationMessage
-                ? "primary group-hover/file-picker:primaryHovered"
-                : "outline group-hover/file-picker:outlineHovered"
+                ? "primary group-hover/file-picker:primary-hovered"
+                : "outline group-hover/file-picker:outline-hovered"
           }
           backgroundColor={
             disabled
-              ? "elevatedDisabled"
-              : "elevated group-hover/file-picker:elevatedHovered"
+              ? "elevated-disabled"
+              : "elevated group-hover/file-picker:elevated-hovered"
           }
           transition="200ms">
           <FilePickerMetadataText
             controlSize={size}
             fontWeight="500"
-            color={disabled ? "emphasisDisabled" : "emphasis"}>
+            color={disabled ? "emphasis-disabled" : "emphasis"}>
             {children || (max > 1 ? "Choose Files" : "Choose File")}
           </FilePickerMetadataText>
         </View>
@@ -596,8 +596,12 @@ const FilePickerFiles = createStyledHOC(
  * Tamagui v3 reads a unitless `lineHeight` as a ratio, so the scaled pixel
  * leading `getFormFontSize` returns for `sm`/`lg` is pinned in `px`.
  */
-const getFormFontStyle = (size: FormControlSize, env: StyleEnv) => {
-  const style = getFormFontSize(size, env);
+const getFormFontStyle = (
+  size: FormControlSize,
+  env: StyleEnv,
+  token: string
+) => {
+  const style = getFormFontSize(size, env, token);
 
   return {
     fontFamily: style.fontFamily,
@@ -615,10 +619,18 @@ const getFormFontStyle = (size: FormControlSize, env: StyleEnv) => {
 };
 
 const FilePickerNameText = styled(HeadingSmallText, {
-  variants: { controlSize: formSizeVariants(getFormFontStyle) }
+  variants: {
+    controlSize: formSizeVariants((size, env) =>
+      getFormFontStyle(size, env, "sm")
+    )
+  }
 });
 const FilePickerMetadataText = styled(BodyText, {
-  variants: { controlSize: formSizeVariants(getFormFontStyle) }
+  variants: {
+    controlSize: formSizeVariants((size, env) =>
+      getFormFontStyle(size, env, "md")
+    )
+  }
 });
 const FilePickerMetadataSeparator = styled(FilePickerMetadataText, {
   render: "span",
@@ -627,7 +639,11 @@ const FilePickerMetadataSeparator = styled(FilePickerMetadataText, {
 });
 const FILE_METADATA_SEPARATOR = "\u2002\u2022\u2002";
 const FilePickerBytesText = styled(BytesText, {
-  variants: { controlSize: formSizeVariants(getFormFontStyle) }
+  variants: {
+    controlSize: formSizeVariants((size, env) =>
+      getFormFontStyle(size, env, "md")
+    )
+  }
 });
 
 /**
@@ -665,17 +681,19 @@ const FilePickerViewLink = ({
   }
 
   return (
-    <LabelText
-      color="onPrimary"
+    <SizableText
+      color="on-primary"
       display="block"
       width="100%"
       textAlign="center"
+      fontFamily="body"
+      fontWeight="medium"
       {...fileTextOverflowStyle}
       {...props}>
-      <FilePickerNameText controlSize={size} color="onPrimary">
+      <FilePickerNameText controlSize={size} color="on-primary">
         {children}
       </FilePickerNameText>
-    </LabelText>
+    </SizableText>
   );
 };
 
@@ -814,9 +832,9 @@ const FilePickerFile = ({
       overflow="hidden"
       position="relative"
       borderRadius="card"
-      borderColor="outline hover:outlineHovered"
+      borderColor="outline hover:outline-hovered"
       borderWidth={1}
-      boxShadow="none hover:ringOffset"
+      boxShadow="none hover:ring-offset"
       onClick={event => event.stopPropagation()}
       onPress={event => event.stopPropagation()}>
       <View

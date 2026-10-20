@@ -164,8 +164,8 @@ const TagPickerFrame = styled(XStack, {
     boxShadow:
       props.focused && (variant === "outlined" || variant === "inlined")
         ? props.frameSize === "sm"
-          ? "ringSubtleOffset"
-          : "ringOffset"
+          ? "ring-subtle-offset"
+          : "ring-offset"
         : undefined,
     minHeight: sized?.minHeight,
     borderWidth: notched ? 0 : undefined,
@@ -544,12 +544,12 @@ const TagPickerImpl = createStyledHOC(
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
+    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
     const hoverColor = disabled
-      ? "primaryDisabled"
+      ? "primary-disabled"
       : active
         ? focusColor
-        : "primaryHovered";
+        : "primary-hovered";
     const borderColor = `${active ? focusColor : idleColor} hover:${hoverColor} group-hover/field:${hoverColor}`;
 
     return (
@@ -636,7 +636,7 @@ const TagPickerImpl = createStyledHOC(
               bottom={-1}
               focused={active}
               disabled={disabled}
-              backgroundColor={disabled ? "primaryDisabled" : focusColor}
+              backgroundColor={disabled ? "primary-disabled" : focusColor}
             />
           )}
           {labelPlacement === "border" && (

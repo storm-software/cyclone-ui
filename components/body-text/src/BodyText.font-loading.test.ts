@@ -16,7 +16,7 @@ describe("BodyText font loading", () => {
       "utf8"
     );
     const fontCss = readFileSync(resolve(root, "fonts/fonts.css"), "utf8");
-    const bodyFontFamily = tokens.typography["body-md"].$value.fontFamily;
+    const bodyFontFamily = tokens.typography.body.$value.fontFamily;
 
     expect(preview).toContain('import "@fonts/fonts.css"');
     expect(fontCss).toContain(`font-family: "${bodyFontFamily}"`);

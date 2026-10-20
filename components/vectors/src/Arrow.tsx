@@ -64,7 +64,7 @@ const Icon = ({
   pointing = "right",
   ...props
 }: ThemedIconBodyProps<ArrowProps>) => {
-  const color = useCurrentColor((props.color || "onPrimary") as any);
+  const color = useCurrentColor((props.color || "on-primary") as any);
 
   // A single length value extends towards 24 when complete and compresses
   // back to 1 otherwise, so a reversal mid-animation starts from where it is.

@@ -26,9 +26,7 @@
     "./*": "./*"
   },
   "types": "./dist/index.d.cts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -43,7 +41,6 @@
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@cyclone-ui/helpers": "workspace:*",
-    "@cyclone-ui/label-text": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
     "@cyclone-ui/link-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
@@ -58,9 +55,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs"
 }

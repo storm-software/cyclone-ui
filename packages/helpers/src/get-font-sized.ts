@@ -16,14 +16,86 @@
 
  ------------------------------------------------------------------- */
 
+import { isSetString } from "@stryke/type-checks";
 import { isNumber } from "@stryke/type-checks/is-number";
 import type { Mutable } from "@stryke/types/base";
-import type { FontSizeTokens, GenericFont, TextStyle } from "@tamagui/core";
-import { getTokens } from "@tamagui/core";
+import type {
+  FlatStyleValue,
+  FontSizeTokens,
+  GenericFont,
+  GetThemeValueForKey,
+  TextStyle
+} from "@tamagui/core";
+import { getTokens, getVariableValue } from "@tamagui/core";
 import { getNearestToken } from "./get-nearest-token";
 import type { TokenInput } from "./token-value";
-import type { StyleEnv } from "./types";
 import { normalizeTokenValue } from "./token-value";
+import type { StyleEnv } from "./types";
+
+export interface GetFontWeightFromSizeOptions extends StyleEnv {
+  /**
+   * The scale factor to apply when calculating the font weight from the pixel size.
+   *
+   * @defaultValue 1
+   */
+  scale?: number;
+}
+
+export type GetFontWeightFromSizeReturn = FlatStyleValue<
+  | "unset"
+  | GetThemeValueForKey<"fontWeight">
+  | 100
+  | 200
+  | 300
+  | 400
+  | 500
+  | 600
+  | 700
+  | 800
+  | 900
+  | undefined
+>;
+
+export const getFontWeightFromSize = (
+  sizeTokenIn: FontSizeTokens | TokenInput = "true",
+  { font, scale }: GetFontWeightFromSizeOptions = {}
+): GetFontWeightFromSizeReturn => {
+  const tokenValue = isSetString(sizeTokenIn)
+    ? normalizeTokenValue(sizeTokenIn)
+    : sizeTokenIn;
+  if (isNumber(tokenValue)) {
+    return getFontWeightFromPixels(tokenValue) as GetFontWeightFromSizeReturn;
+  }
+
+  if (!font) {
+    return undefined;
+  }
+
+  const sizeToken = String(
+    (tokenValue === "true" ? getDefaultSizeToken(font) : tokenValue) ?? "true"
+  );
+
+  const weight = font.weight?.[sizeToken];
+  if (weight !== undefined && Number.isFinite(Number.parseInt(weight))) {
+    return Number(weight) as GetFontWeightFromSizeReturn;
+  }
+
+  const pixels = Number(getVariableValue(font.size?.[sizeToken]));
+
+  return Number.isFinite(pixels)
+    ? (getFontWeightFromPixels(pixels, scale) as GetFontWeightFromSizeReturn)
+    : undefined;
+};
+
+/**
+ * Scale a font weight from a pixel font size: body text (16px) sits at 400,
+ * gaining 100 per 8px, clamped to 300-700 and snapped to the nearest 100.
+ */
+const getFontWeightFromPixels = (pixels: number, scale = 1): number =>
+  Math.min(
+    700,
+    Math.max(300, Math.round((400 + (pixels - 16) * 12.5 * scale) / 100) * 100)
+  );
 
 /**
  * Get the font size related styles
@@ -38,8 +110,9 @@ import { normalizeTokenValue } from "./token-value";
  */
 export const getFontSized = (
   sizeTokenIn: FontSizeTokens | TokenInput = "true",
-  { font, fontFamily }: StyleEnv = {}
+  env: GetFontWeightFromSizeOptions = {}
 ): Mutable<TextStyle> => {
+  const { font, fontFamily } = env;
   const tokenValue = normalizeTokenValue(sizeTokenIn);
 
   if (!font) {
@@ -60,14 +133,12 @@ export const getFontSized = (
   );
 
   const style: Mutable<TextStyle> = {};
-  const fontValue = (
-    group: Partial<Record<string, any>> | undefined
-  ): any => group?.[sizeToken];
+  const fontValue = (group: Partial<Record<string, any>> | undefined): any =>
+    group?.[sizeToken];
 
   // size related, treat them as overrides
   const fontSize = fontValue(font.size);
   const lineHeight = fontValue(font.lineHeight);
-  const fontWeight = fontValue(font.weight);
   const letterSpacing = fontValue(font.letterSpacing);
   const textTransform = fontValue(font.transform);
   const fontStyle = fontValue(font.style);
@@ -82,13 +153,12 @@ export const getFontSized = (
   if (fontFamily) {
     style.fontFamily = fontFamily;
   }
-  if (fontWeight) {
-    style.fontWeight = fontWeight;
-  }
+
   if (letterSpacing) {
     style.letterSpacing = letterSpacing;
   }
   if (fontSize) {
+    style.fontWeight = getFontWeightFromSize(fontSize, env);
     style.fontSize = fontSize;
   }
   if (lineHeight) {
@@ -97,6 +167,8 @@ export const getFontSized = (
   if (color) {
     style.color = color;
   }
+
+  style.fontWeight ??= 500;
 
   return style;
 };
@@ -140,16 +212,17 @@ function getDefaultSizeToken(font: GenericFont): FontSizeTokens {
   const sizeDefault = sizeTokens.true;
   const sizeDefaultSpecific = sizeDefault
     ? Object.keys(sizeTokens).find(
-        x =>
-          x !== "true" &&
-          (sizeTokens[x] as any).val === (sizeDefault as any).val
+        x => x !== "true" && sizeTokens[x].val === sizeDefault.val
       )
     : null;
 
   if (!sizeDefault || !sizeDefaultSpecific) {
-    return Object.keys(font.size)[3] as FontSizeTokens;
+    // Same fallback as Tamagui's own `size: true`.
+    return (
+      "sm" in font.size ? "sm" : Object.keys(font.size)[3]
+    ) as FontSizeTokens;
   }
 
-  cache.set(font, sizeDefaultSpecific as FontSizeTokens);
-  return sizeDefaultSpecific as FontSizeTokens;
+  cache.set(font, sizeDefaultSpecific);
+  return sizeDefaultSpecific;
 }

@@ -77,7 +77,7 @@ export const DataColor: Story = {
   args: {
     children:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    color: "dataPinkEmphasis",
+    color: "data-pink-emphasis",
     icon: <Question />
   }
 };

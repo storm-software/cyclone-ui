@@ -40,17 +40,17 @@ export const getFormFontScale = (size: FormControlSize = "md") =>
   ({ sm: 0.875, md: 1, lg: 1.125 })[size];
 
 /**
- * Retain each typography role's medium font, weight and line height.
+ * Scale a font size step of the current typography role to the control size.
  *
  * @param size - The form control size.
  * @param env - The `styled.dynamic` environment.
- * @param token - The font size token to use.
+ * @param token - The font size token used at the `md` control size.
  * @returns The computed font size style object.
  */
 export const getFormFontSize = (
   size: FormControlSize,
   env: StyleEnv,
-  token = "true"
+  token = "md"
 ): ReturnType<typeof getFontSized> => {
   const style = getFontSized(token, env) ?? {};
   if (size === "md") return style;
@@ -63,7 +63,9 @@ export const getFormFontSize = (
       : {}),
     // Tamagui v3 reads a numeric `lineHeight` as a ratio; keep the pixel value.
     ...(style.lineHeight !== undefined
-      ? { lineHeight: `${Number(getVariableValue(style.lineHeight)) * scale}px` }
+      ? {
+          lineHeight: `${Number(getVariableValue(style.lineHeight)) * scale}px`
+        }
       : {})
   };
 };
@@ -78,5 +80,7 @@ export const formSizeVariants = <T extends object>(
   style: (size: FormControlSize, env: StyleEnv) => T | null | undefined
 ): FormSizeVariant =>
   styled.dynamic<FormControlSize>((size, env) =>
-    size === "sm" || size === "md" || size === "lg" ? style(size, env) : undefined
+    size === "sm" || size === "md" || size === "lg"
+      ? style(size, env)
+      : undefined
   );

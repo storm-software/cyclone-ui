@@ -88,7 +88,7 @@ const CardFrame = styled(Container, {
   borderRadius: "card",
   borderColor: "hairline",
   cursor: "pointer",
-  backgroundColor: "elevated hover:elevatedHovered",
+  backgroundColor: "elevated hover:elevated-hovered",
   position: "relative"
 });
 
@@ -115,7 +115,7 @@ const CardAccentBar = styled(View, {
   right: 0,
   left: 0,
   height: 6,
-  backgroundColor: "primary group-hover/card:primaryHovered",
+  backgroundColor: "primary group-hover/card:primary-hovered",
   pointerEvents: "none",
   zIndex: "30"
 });
@@ -281,15 +281,13 @@ const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
 };
 
 /**
- * `CardContext` passes `size: true` to the text parts. Tamagui v3 maps `true`
- * to the `sm` / `4` font key, which the typography fonts do not define, so
- * resolve it (and any font size key) against the font's own `true` step.
+ * `CardContext` passes `size: true` to the text parts, which keeps each part's
+ * own size; only font size keys restyle the text.
  */
 const cardTextSizeVariant = styled.dynamic<FontSizeTokens | number>(
   (val, env) =>
-    val === true ||
-    (typeof val === "string" && !!env.font && val in env.font.size)
-      ? getFontSized(val === true ? ("true" as FontSizeTokens) : val, env)
+    typeof val === "string" && !!env.font && val in env.font.size
+      ? getFontSized(val, env)
       : undefined
 );
 
@@ -392,14 +390,19 @@ const CardLinkImpl = createStyledHOC(
     const hovered = use(CardHoverContext);
 
     return (
-      <XStack ref={forwardedRef} group="cardLink" gap="lg" alignItems="center" alignSelf="flex-start">
+      <XStack
+        ref={forwardedRef}
+        group="cardLink"
+        gap="lg"
+        alignItems="center"
+        alignSelf="flex-start">
         <Link
           {...rest}
           group={false}
           inverse={inverse}
           zIndex="30"
-          color="group-hover/card:linkHovered"
-          textDecorationColor="group-hover/card:linkHovered">
+          color="group-hover/card:link-hovered"
+          textDecorationColor="group-hover/card:link-hovered">
           {children}
         </Link>
         {/* `RightArrow` is a plain component, so flat values / style props
@@ -409,7 +412,7 @@ const CardLinkImpl = createStyledHOC(
           transition="200ms"
           marginTop="xs"
           zIndex="30"
-          color="link group-hover/cardLink:linkHovered">
+          color="link group-hover/cardLink:link-hovered">
           <RightArrow color="currentColor" size="4xl" isComplete={hovered} />
         </Text>
       </XStack>

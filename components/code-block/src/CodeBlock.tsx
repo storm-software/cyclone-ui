@@ -158,7 +158,10 @@ const CodeBlockHeaderHeading = styled(Text, {
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis",
-  fontFamily: "title-md"
+  fontFamily: "display",
+  fontSize: "sm",
+  lineHeight: "sm",
+  fontWeight: "600"
 });
 
 // `ScrollView` is a styled HOC; v3 `styled()` over it swallows `className` and
@@ -505,12 +508,15 @@ export const CodeBlockTabsTrigger = forwardRef<
     borderTopRightRadius="container"
     borderBottomLeftRadius={0}
     borderBottomRightRadius={0}
-    backgroundColor="canvas hover:canvasHovered"
+    backgroundColor="canvas hover:canvas-hovered"
     cursor="pointer"
     className="cyclone-code-block-tabs-trigger">
     <Text
       color="ink"
-      fontFamily="title-sm"
+      fontFamily="display"
+      fontSize="xs"
+      lineHeight="xs"
+      fontWeight="700"
       textAlign="center"
       whiteSpace="nowrap"
       marginVertical="xl">

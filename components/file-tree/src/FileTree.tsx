@@ -23,7 +23,7 @@ import {
   FolderOpen as FolderOpenIcon
 } from "@cyclone-ui/icons";
 import { AnimatePresence } from "@tamagui/animate-presence";
-import type { FontSizeTokens, GetProps } from "@tamagui/core";
+import type { GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
@@ -32,6 +32,7 @@ import {
   cloneElement,
   createContext,
   isValidElement,
+  use,
   useContext,
   useState
 } from "react";
@@ -56,8 +57,8 @@ const TreeNode = styled(XStack, {
   paddingHorizontal: "lg",
   paddingVertical: "xs",
   borderRadius: "sm",
-  backgroundColor: "hover:secondaryHovered",
-  outlineColor: "focus-visible:primaryActive",
+  backgroundColor: "hover:secondary-hovered",
+  outlineColor: "focus-visible:primary-active",
   outlineWidth: "focus-visible:2px",
   outlineStyle: "focus-visible:solid"
 });
@@ -65,9 +66,7 @@ const TreeNode = styled(XStack, {
 const TreeLabel = styled(SizableText, {
   displayName: "FileTreeLabel",
   fontFamily: "code",
-  // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
-  // only define `true` plus their own step, so name the default step explicitly.
-  size: "true" as FontSizeTokens
+  size: "lg"
 });
 
 const TreeChildren = styled(YStack, {
@@ -90,7 +89,8 @@ const defaultFolderOpenIcon = <FolderOpenIcon aria-hidden size="2xl" />;
 
 const getTreeIcon = (icon: ReactNode, color: string): ReactNode =>
   isValidElement<{ color?: string }>(icon)
-    ? cloneElement(icon, { color })
+    ? // eslint-disable-next-line react/no-clone-element
+      cloneElement(icon, { color })
     : icon;
 
 export type FileTreeProps = GetProps<typeof FileTreeFrame>;
@@ -107,7 +107,7 @@ export interface FileProps {
 
 /** Leaf in FileTree. */
 export const File = ({ name, icon = defaultFileIcon }: FileProps) => {
-  const parentOpen = useContext(FileTreeOpenContext);
+  const parentOpen = use(FileTreeOpenContext);
   const [hovered, setHovered] = useState(false);
   const color = hovered || parentOpen ? "primary" : "subtle";
 

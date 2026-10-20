@@ -177,7 +177,7 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
         aria-label="Like"
         borderless={true}
         circular={true}
-        pressedBackgroundColor="elevatedActive"
+        pressedBackgroundColor="elevated-active"
         {...props}
         // Anchors the confetti origin to the button centre.
         position="relative"
@@ -201,9 +201,9 @@ export const LikeButton = forwardRef<TamaguiElement, LikeButtonProps>(
             color={
               color ||
               (hovered && !disabled
-                ? "primaryHovered"
+                ? "primary-hovered"
                 : liked
-                  ? "primaryActive"
+                  ? "primary-active"
                   : "primary")
             }
           />

@@ -1,49 +1,78 @@
 import { Typeset } from "@storybook/addon-docs/blocks";
 import { resolveThemeVariant } from "./ThemeVariant";
 
-
 /**
  * Typography tokens rendered with Storybook's Typeset doc block.
  *
  * @see https://storybook.js.org/docs/api/doc-blocks/doc-block-typeset
  */
 const TYPESET_VARIANTS = {
-  "dark": (<Typeset
+  dark: (
+    <Typeset
       fontFamily={"system-ui, sans-serif"}
-      fontSizes={[0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10, 12, 14, 16, 18, 20, 24]}
+      fontSizes={[
+        0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10,
+        12, 14, 16, 18, 20, 24
+      ]}
       fontWeight={100}
       sampleText={"The quick brown fox jumps over the lazy dog"}
-    />),
-  "darkDimmed": (<Typeset
+    />
+  ),
+  darkDimmed: (
+    <Typeset
       fontFamily={"system-ui, sans-serif"}
-      fontSizes={[0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10, 12, 14, 16, 18, 20, 24]}
+      fontSizes={[
+        0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10,
+        12, 14, 16, 18, 20, 24
+      ]}
       fontWeight={100}
       sampleText={"The quick brown fox jumps over the lazy dog"}
-    />),
-  "darkHighContrast": (<Typeset
+    />
+  ),
+  darkHighContrast: (
+    <Typeset
       fontFamily={"system-ui, sans-serif"}
-      fontSizes={[0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10, 12, 14, 16, 18, 20, 24]}
+      fontSizes={[
+        0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10,
+        12, 14, 16, 18, 20, 24
+      ]}
       fontWeight={100}
       sampleText={"The quick brown fox jumps over the lazy dog"}
-    />),
-  "light": (<Typeset
+    />
+  ),
+  light: (
+    <Typeset
       fontFamily={"system-ui, sans-serif"}
-      fontSizes={[0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10, 12, 14, 16, 18, 20, 24]}
+      fontSizes={[
+        0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10,
+        12, 14, 16, 18, 20, 24
+      ]}
       fontWeight={100}
       sampleText={"The quick brown fox jumps over the lazy dog"}
-    />),
-  "lightDimmed": (<Typeset
+    />
+  ),
+  lightDimmed: (
+    <Typeset
       fontFamily={"system-ui, sans-serif"}
-      fontSizes={[0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10, 12, 14, 16, 18, 20, 24]}
+      fontSizes={[
+        0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10,
+        12, 14, 16, 18, 20, 24
+      ]}
       fontWeight={100}
       sampleText={"The quick brown fox jumps over the lazy dog"}
-    />),
-  "lightHighContrast": (<Typeset
+    />
+  ),
+  lightHighContrast: (
+    <Typeset
       fontFamily={"system-ui, sans-serif"}
-      fontSizes={[0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10, 12, 14, 16, 18, 20, 24]}
+      fontSizes={[
+        0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.875, 2.25, 3, 3.75, 4.5, 6, 8, 10,
+        12, 14, 16, 18, 20, 24
+      ]}
       fontWeight={100}
       sampleText={"The quick brown fox jumps over the lazy dog"}
-    />)
+    />
+  )
 };
 
 export interface TypesetBlockProps {

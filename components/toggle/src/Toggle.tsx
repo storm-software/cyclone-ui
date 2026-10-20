@@ -48,11 +48,11 @@ const ToggleFrame = styled(View, {
   // Hug the content without overriding the parent's cross-axis alignment.
   width: "fit-content",
   borderWidth: 1,
-  borderColor: "outline hover:outlineHovered",
-  backgroundColor: "sunken hover:sunkenHovered",
+  borderColor: "outline hover:outline-hovered",
+  backgroundColor: "sunken hover:sunken-hovered",
   borderRadius: "control",
   outlineStyle: "none",
-  boxShadow: "none focus-visible:ringOffset",
+  boxShadow: "none focus-visible:ring-offset",
   cursor: "pointer",
 
   variants: {
@@ -80,7 +80,7 @@ const ToggleFrame = styled(View, {
 
     invalid: {
       true: {
-        borderColor: "outline hover:outlineHovered"
+        borderColor: "outline hover:outline-hovered"
       }
     },
 
@@ -142,10 +142,10 @@ const ToggleIndicator = styled(View, {
   variants: {
     active: {
       true: {
-        backgroundColor: "surface group-hover/toggle:surfaceHovered",
+        backgroundColor: "surface group-hover/toggle:surface-hovered",
         boxShadow: "sm",
         borderWidth: 1,
-        borderColor: "outline group-hover/toggle:outlineActive"
+        borderColor: "outline group-hover/toggle:outline-active"
       }
     },
 
@@ -187,12 +187,11 @@ export const ToggleText = styled(Text, {
   variants: {
     textSize: styled.dynamic<FormControlSize>(
       formSizeVariants((size: FormControlSize, env: StyleEnv) => {
-        const style = getFormFontSize(size, env);
+        const style = getFormFontSize(size, env, "sm");
 
         return {
-          // The resolved `body` family isn't configured, so pin the button font.
-          fontFamily: "title-md",
-          fontWeight: style.fontWeight,
+          fontFamily: "display",
+          fontWeight: "600",
           letterSpacing: style.letterSpacing,
           fontSize: style.fontSize,
           // Tamagui v3 reads a unitless `lineHeight` as a multiplier.

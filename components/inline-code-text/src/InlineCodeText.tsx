@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { FontSizeTokens, GetProps } from "@tamagui/core";
+import type { GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
@@ -29,9 +29,7 @@ export const InlineCodeText = styled(SizableText, {
   fontFamily: "code",
   paddingVertical: "sm",
   paddingHorizontal: "xl",
-  // Tamagui v3 maps `size: true` to the `sm` / `4` font key; the generated fonts
-  // only define `true` plus their own step, so name the default step explicitly.
-  size: "true" as FontSizeTokens,
+  size: "lg",
   borderRadius: "container"
 });
 

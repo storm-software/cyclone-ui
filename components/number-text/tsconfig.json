@@ -15,9 +15,6 @@
   "references": [
     {
       "path": "../../tools/config"
-    },
-    {
-      "path": "../label-text"
     }
   ],
   "files": [],

@@ -406,6 +406,8 @@ const config: StorybookConfig = {
       },
 
       server: {
+        // Browsers and editor previews often open the dev server by IP.
+        allowedHosts: ["127.0.0.1"],
         fs: {
           allow: [workspaceRoot]
         }

@@ -50,6 +50,7 @@ colors:
   brand-link-disabled: "#436967"
   danger-primary: "#8e223e"
   danger-link: "#8e223e"
+  danger-outline: "#8e223e"
   danger-on-primary: "#FAFAFA"
   danger-secondary: "#f17d91"
   danger-on-secondary: "#200006"
@@ -65,8 +66,13 @@ colors:
   danger-link-active: "#6a0022"
   danger-link-inactive: "#ab3e56"
   danger-link-disabled: "#5a3c44"
+  danger-outline-hovered: "#550013"
+  danger-outline-active: "#550013"
+  danger-outline-inactive: "#ab3e56"
+  danger-outline-disabled: "#5a3c44"
   warning-primary: "#765417"
   warning-link: "#765417"
+  warning-outline: "#765417"
   warning-on-primary: "#FAFAFA"
   warning-secondary: "#caa46b"
   warning-on-secondary: "#241500"
@@ -82,9 +88,14 @@ colors:
   warning-link-active: "#543400"
   warning-link-inactive: "#926f36"
   warning-link-disabled: "#53493b"
+  warning-outline-hovered: "#402100"
+  warning-outline-active: "#402100"
+  warning-outline-inactive: "#926f36"
+  warning-outline-disabled: "#53493b"
   info-primary: "#2055b3"
   info-secondary: "#6da2ff"
   info-link: "#2055b3"
+  info-outline: "#2055b3"
   info-on-primary: "#FAFAFA"
   info-on-secondary: "#FAFAFA"
   info-primary-hovered: "#00318d"
@@ -99,9 +110,14 @@ colors:
   info-link-active: "#00318d"
   info-link-inactive: "#3b72d3"
   info-link-disabled: "#3b4a68"
+  info-outline-hovered: "#001a76"
+  info-outline-active: "#001a76"
+  info-outline-inactive: "#3b72d3"
+  info-outline-disabled: "#3b4a68"
   discovery-primary: "#594395"
   discovery-secondary: "#a690e1"
   discovery-link: "#594395"
+  discovery-outline: "#594395"
   discovery-on-primary: "#FAFAFA"
   discovery-on-secondary: "#FAFAFA"
   discovery-primary-hovered: "#3c2372"
@@ -116,8 +132,13 @@ colors:
   discovery-link-active: "#3c2372"
   discovery-link-inactive: "#725db2"
   discovery-link-disabled: "#4a445f"
+  discovery-outline-hovered: "#2c0d5e"
+  discovery-outline-active: "#2c0d5e"
+  discovery-outline-inactive: "#725db2"
+  discovery-outline-disabled: "#4a445f"
   success-primary: "#216b53"
   success-link: "#216b53"
+  success-outline: "#216b53"
   success-on-primary: "#FAFAFA"
   success-secondary: "#74ba9f"
   success-on-secondary: "#002015"
@@ -133,7 +154,10 @@ colors:
   success-link-active: "#004933"
   success-link-inactive: "#40876e"
   success-link-disabled: "#3c504b"
-  backdrop: "#1a1c1f66"
+  success-outline-hovered: "#003622"
+  success-outline-active: "#003622"
+  success-outline-inactive: "#40876e"
+  success-outline-disabled: "#3c504b"
   data-neutral-emphasis: "#555659"
   data-neutral-subtle: "#eaeaea"
   data-red-emphasis: "#8e223e"
@@ -150,19 +174,19 @@ colors:
   data-purple-subtle: "#a690e1"
   data-pink-emphasis: "#904272"
   data-pink-subtle: "#eb89c5"
-  emphasis-hovered: "#424346"
+  emphasis-hovered: "#343539"
   emphasis-active: "#000000"
   emphasis-inactive: "#020102"
   emphasis-disabled: "#38393c"
-  ink-hovered: "#202124"
+  ink-hovered: "#37383b"
   ink-active: "#0c0c0d"
   ink-inactive: "#020102"
   ink-disabled: "#494a4d"
-  subtle-hovered: "#3f4041"
+  subtle-hovered: "#646466"
   subtle-active: "#0c0c0d"
   subtle-inactive: "#020102"
   subtle-disabled: "#606063"
-  subtlest-hovered: "#4c4c4d"
+  subtlest-hovered: "#777778"
   subtlest-active: "#0c0c0d"
   subtlest-inactive: "#020102"
   subtlest-disabled: "#69696b"
@@ -191,100 +215,23 @@ colors:
   outline-inactive: "#020102"
   outline-disabled: "#6f6f71"
 typography:
-  display-hero:
+  display:
     fontFamily: "Storm Sans"
-    fontSize: "3.75rem"
-    fontWeight: "600"
     lineHeight: "1.125"
-  display-lg:
-    fontFamily: "Storm Sans"
-    fontSize: "2.25rem"
-    fontWeight: "600"
-    lineHeight: "1.125"
-  display-md:
-    fontFamily: "Storm Sans"
-    fontSize: "1.5rem"
-    fontWeight: "700"
-    lineHeight: "1.125"
-  editorial-hero:
+  editorial:
     fontFamily: "Storm Serif"
-    fontSize: "3.75rem"
-    fontWeight: "600"
     lineHeight: "1.125"
-  editorial-lg:
-    fontFamily: "Storm Serif"
-    fontSize: "2.25rem"
-    fontWeight: "600"
-    lineHeight: "1.125"
-  editorial-md:
-    fontFamily: "Storm Serif"
-    fontSize: "1.5rem"
-    fontWeight: "700"
-    lineHeight: "1.125"
-  title-xl:
+  body:
     fontFamily: "Storm Sans"
-    fontSize: "1.25rem"
-    fontWeight: "600"
-    lineHeight: "1.0575"
-  title-lg:
-    fontFamily: "Storm Sans"
-    fontSize: "1.125rem"
-    fontWeight: "800"
-    lineHeight: "1.0575"
-  title-md:
-    fontFamily: "Storm Sans"
-    fontSize: "1.125rem"
-    fontWeight: "600"
-    lineHeight: "1.125"
-  title-sm:
-    fontFamily: "Storm Sans"
-    fontSize: "1rem"
-    fontWeight: "700"
-    lineHeight: "1.125"
-  title-xs:
-    fontFamily: "Storm Sans"
-    fontSize: "0.875rem"
-    fontWeight: "500"
-    lineHeight: "1.125"
-  title-xxs:
-    fontFamily: "Storm Sans"
-    fontSize: "0.75rem"
-    fontWeight: "500"
-    lineHeight: "1.125"
-  body-md:
-    fontFamily: "Storm Sans"
-    fontSize: "1.125rem"
-    fontWeight: "400"
-    lineHeight: "1.125"
-  body-sm:
-    fontFamily: "Storm Sans"
-    fontSize: "1rem"
-    fontWeight: "500"
-    lineHeight: "1.125"
-  body-md-bold:
-    fontFamily: "Storm Sans"
-    fontSize: "1.125rem"
-    fontWeight: "700"
-    lineHeight: "1.125"
-  body-sm-bold:
-    fontFamily: "Storm Sans"
-    fontSize: "1rem"
-    fontWeight: "700"
     lineHeight: "1.125"
   caption:
     fontFamily: "Storm Sans"
-    fontSize: "1rem"
-    fontWeight: "400"
     lineHeight: "1.125"
   eyebrow:
     fontFamily: "Google Sans Code"
-    fontSize: "1.125rem"
-    fontWeight: "700"
     lineHeight: "0.765"
   code:
     fontFamily: "Google Sans Code"
-    fontSize: "1.25rem"
-    fontWeight: "400"
     lineHeight: "1.125"
 spacing:
   zero: "0px"
@@ -361,7 +308,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 187 color tokens, 19 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 211 color tokens, 6 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -412,6 +359,7 @@ Cyclone UI design tokens — 187 color tokens, 19 typography tokens, 70 spacing 
 - **Brand Link Disabled (#436967):** Generated brand hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Danger Primary (#8e223e):** Danger accent used by the `danger` theme. Use it for destructive actions, such as delete buttons, and for error states. Applied by Alert `danger` and `error` Messages and ValidationText.
 - **Danger Link (#8e223e):** Generated danger hyperlink text color (matches primary)
+- **Danger Outline (#8e223e):** Generated danger border and divider color (matches primary)
 - **Danger On Primary (#FAFAFA):** Generated text and icon color on danger primary backgrounds
 - **Danger Secondary (#f17d91):** Generated low-emphasis danger background for the light theme
 - **Danger On Secondary (#200006):** Generated text and icon color on danger secondary backgrounds
@@ -427,8 +375,13 @@ Cyclone UI design tokens — 187 color tokens, 19 typography tokens, 70 spacing 
 - **Danger Link Active (#6a0022):** Generated danger hyperlink text color (matches primary) (active, 25% darker)
 - **Danger Link Inactive (#ab3e56):** Generated danger hyperlink text color (matches primary) (inactive, 20% brighter)
 - **Danger Link Disabled (#5a3c44):** Generated danger hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Danger Outline Hovered (#550013):** Generated danger border and divider color (matches primary) (hovered, 40% darker)
+- **Danger Outline Active (#550013):** Generated danger border and divider color (matches primary) (active, 40% darker)
+- **Danger Outline Inactive (#ab3e56):** Generated danger border and divider color (matches primary) (inactive, 20% brighter)
+- **Danger Outline Disabled (#5a3c44):** Generated danger border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Warning Primary (#765417):** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.
 - **Warning Link (#765417):** Generated warning hyperlink text color (matches primary)
+- **Warning Outline (#765417):** Generated warning border and divider color (matches primary)
 - **Warning On Primary (#FAFAFA):** Generated text and icon color on warning primary backgrounds
 - **Warning Secondary (#caa46b):** Generated low-emphasis warning background for the light theme
 - **Warning On Secondary (#241500):** Generated text and icon color on warning secondary backgrounds
@@ -444,9 +397,14 @@ Cyclone UI design tokens — 187 color tokens, 19 typography tokens, 70 spacing 
 - **Warning Link Active (#543400):** Generated warning hyperlink text color (matches primary) (active, 25% darker)
 - **Warning Link Inactive (#926f36):** Generated warning hyperlink text color (matches primary) (inactive, 20% brighter)
 - **Warning Link Disabled (#53493b):** Generated warning hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Warning Outline Hovered (#402100):** Generated warning border and divider color (matches primary) (hovered, 40% darker)
+- **Warning Outline Active (#402100):** Generated warning border and divider color (matches primary) (active, 40% darker)
+- **Warning Outline Inactive (#926f36):** Generated warning border and divider color (matches primary) (inactive, 20% brighter)
+- **Warning Outline Disabled (#53493b):** Generated warning border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Info Primary (#2055b3):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText.
 - **Info Secondary (#6da2ff):** Secondary info color used by the `info` theme. Use it for less prominent info elements. Applied by Alert `info` and `info` Messages and ValidationText.
 - **Info Link (#2055b3):** Generated info hyperlink text color (matches primary)
+- **Info Outline (#2055b3):** Generated info border and divider color (matches primary)
 - **Info On Primary (#FAFAFA):** Generated text and icon color on info primary backgrounds
 - **Info On Secondary (#FAFAFA):** Generated text and icon color on info secondary backgrounds
 - **Info Primary Hovered (#00318d):** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% darker)
@@ -461,9 +419,14 @@ Cyclone UI design tokens — 187 color tokens, 19 typography tokens, 70 spacing 
 - **Info Link Active (#00318d):** Generated info hyperlink text color (matches primary) (active, 25% darker)
 - **Info Link Inactive (#3b72d3):** Generated info hyperlink text color (matches primary) (inactive, 20% brighter)
 - **Info Link Disabled (#3b4a68):** Generated info hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Info Outline Hovered (#001a76):** Generated info border and divider color (matches primary) (hovered, 40% darker)
+- **Info Outline Active (#001a76):** Generated info border and divider color (matches primary) (active, 40% darker)
+- **Info Outline Inactive (#3b72d3):** Generated info border and divider color (matches primary) (inactive, 20% brighter)
+- **Info Outline Disabled (#3b4a68):** Generated info border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Discovery Primary (#594395):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages.
 - **Discovery Secondary (#a690e1):** Low-emphasis discovery color for the `discovery` theme. Exposed as `muted` inside that theme; use it for soft discovery-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the discovery theme.
 - **Discovery Link (#594395):** Generated discovery hyperlink text color (matches primary)
+- **Discovery Outline (#594395):** Generated discovery border and divider color (matches primary)
 - **Discovery On Primary (#FAFAFA):** Generated text and icon color on discovery primary backgrounds
 - **Discovery On Secondary (#FAFAFA):** Generated text and icon color on discovery secondary backgrounds
 - **Discovery Primary Hovered (#3c2372):** Discovery accent used by the `discovery` theme. Use it to highlight new features, onboarding and help content. Applied by `help` Messages. (hovered, 25% darker)
@@ -478,8 +441,13 @@ Cyclone UI design tokens — 187 color tokens, 19 typography tokens, 70 spacing 
 - **Discovery Link Active (#3c2372):** Generated discovery hyperlink text color (matches primary) (active, 25% darker)
 - **Discovery Link Inactive (#725db2):** Generated discovery hyperlink text color (matches primary) (inactive, 20% brighter)
 - **Discovery Link Disabled (#4a445f):** Generated discovery hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
+- **Discovery Outline Hovered (#2c0d5e):** Generated discovery border and divider color (matches primary) (hovered, 40% darker)
+- **Discovery Outline Active (#2c0d5e):** Generated discovery border and divider color (matches primary) (active, 40% darker)
+- **Discovery Outline Inactive (#725db2):** Generated discovery border and divider color (matches primary) (inactive, 20% brighter)
+- **Discovery Outline Disabled (#4a445f):** Generated discovery border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Success Primary (#216b53):** Success accent used by the `success` theme. Use it to confirm that an action completed or a value is valid. Applied by Alert `success` and `success` Messages and ValidationText.
 - **Success Link (#216b53):** Generated success hyperlink text color (matches primary)
+- **Success Outline (#216b53):** Generated success border and divider color (matches primary)
 - **Success On Primary (#FAFAFA):** Generated text and icon color on success primary backgrounds
 - **Success Secondary (#74ba9f):** Generated low-emphasis success background for the light theme
 - **Success On Secondary (#002015):** Generated text and icon color on success secondary backgrounds
@@ -495,7 +463,10 @@ Cyclone UI design tokens — 187 color tokens, 19 typography tokens, 70 spacing 
 - **Success Link Active (#004933):** Generated success hyperlink text color (matches primary) (active, 25% darker)
 - **Success Link Inactive (#40876e):** Generated success hyperlink text color (matches primary) (inactive, 20% brighter)
 - **Success Link Disabled (#3c504b):** Generated success hyperlink text color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
-- **Backdrop (#1a1c1f66):** Semi-transparent color that dims the page behind modal content and softens floating shadows. Used as the backdrop of Dialog and Sheet, and as the shadow color for Popover, Tooltip, the Select dropdown and the `floating` Container.
+- **Success Outline Hovered (#003622):** Generated success border and divider color (matches primary) (hovered, 40% darker)
+- **Success Outline Active (#003622):** Generated success border and divider color (matches primary) (active, 40% darker)
+- **Success Outline Inactive (#40876e):** Generated success border and divider color (matches primary) (inactive, 20% brighter)
+- **Success Outline Disabled (#3c504b):** Generated success border and divider color (matches primary) (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
 - **Data Neutral Emphasis (#555659):** High-emphasis neutral (gray) data color. Use it for the primary mark of a neutral series, such as lines, bars, points and legend swatches. Suits baselines, totals and comparison series that should not compete with colored data.
 - **Data Neutral Subtle (#eaeaea):** Low-emphasis neutral (gray) data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `neutral.emphasis` series.
 - **Data Red Emphasis (#8e223e):** High-emphasis red data color. Use it for the primary mark of a red series, such as lines, bars, points and legend swatches.
@@ -512,19 +483,19 @@ Cyclone UI design tokens — 187 color tokens, 19 typography tokens, 70 spacing 
 - **Data Purple Subtle (#a690e1):** Low-emphasis purple data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `purple.emphasis` series.
 - **Data Pink Emphasis (#904272):** High-emphasis pink data color. Use it for the primary mark of a pink series, such as lines, bars, points and legend swatches.
 - **Data Pink Subtle (#eb89c5):** Low-emphasis pink data color. Use it for area fills, ranges, bar backgrounds and hover highlights behind the `pink.emphasis` series.
-- **Emphasis Hovered (#424346):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 45% brighter)
+- **Emphasis Hovered (#343539):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (hovered, 25% brighter)
 - **Emphasis Active (#000000):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (active, pure black)
 - **Emphasis Inactive (#020102):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (inactive, 50% darker)
 - **Emphasis Disabled (#38393c):** Neutral, high-contrast accent used by the default `base` theme. Use it for primary controls and emphasized content that should not carry a brand or status color. Most components read it as `accent`, for example Button fills, the Switch thumb, Checkbox marks, LabelText, Spinner and Progress indicators. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
-- **Ink Hovered (#202124):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 45% darker)
+- **Ink Hovered (#37383b):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (hovered, 25% darker)
 - **Ink Active (#0c0c0d):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (active, light contrast primitive)
 - **Ink Inactive (#020102):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (inactive, 50% darker)
 - **Ink Disabled (#494a4d):** Default text and icon color for running copy and standard content. Used by BodyText and body content in Card, Dialog, AlertDialog, Sheet, Accordion, CodeBlock, DataTable, TypeTable and Stepper. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
-- **Subtle Hovered (#3f4041):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% darker)
+- **Subtle Hovered (#646466):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% darker)
 - **Subtle Active (#0c0c0d):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)
 - **Subtle Inactive (#020102):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)
 - **Subtle Disabled (#606063):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
-- **Subtlest Hovered (#4c4c4d):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 45% darker)
+- **Subtlest Hovered (#777778):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (hovered, 25% darker)
 - **Subtlest Active (#0c0c0d):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (active, light contrast primitive)
 - **Subtlest Inactive (#020102):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (inactive, 50% darker)
 - **Subtlest Disabled (#69696b):** Low-emphasis neutral color for the `base` theme, a softer alternative to the full accent. Exposed as `muted`; used for `subtle` Button fills, Badge hover, Switch tracks, Footer and `secondary` Container backgrounds, FileTree row hover and selected DataTable rows. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))
@@ -555,29 +526,17 @@ Cyclone UI design tokens — 187 color tokens, 19 typography tokens, 70 spacing 
 
 ## Typography
 
-- **display-hero:** fontFamily: Storm Sans, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.125
-- **display-lg:** fontFamily: Storm Sans, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.125
-- **display-md:** fontFamily: Storm Sans, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.125
-- **editorial-hero:** fontFamily: Storm Serif, fontSize: 3.75rem, fontWeight: 600, lineHeight: 1.125
-- **editorial-lg:** fontFamily: Storm Serif, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.125
-- **editorial-md:** fontFamily: Storm Serif, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.125
-- **title-xl:** fontFamily: Storm Sans, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.0575
-- **title-lg:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.0575
-- **title-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.125
-- **title-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 700, lineHeight: 1.125
-- **title-xs:** fontFamily: Storm Sans, fontSize: 0.875rem, fontWeight: 500, lineHeight: 1.125
-- **title-xxs:** fontFamily: Storm Sans, fontSize: 0.75rem, fontWeight: 500, lineHeight: 1.125
-- **body-md:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.125
-- **body-sm:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 500, lineHeight: 1.125
-- **body-md-bold:** fontFamily: Storm Sans, fontSize: 1.125rem, fontWeight: 700, lineHeight: 1.125
-- **body-sm-bold:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 700, lineHeight: 1.125
-- **caption:** fontFamily: Storm Sans, fontSize: 1rem, fontWeight: 400, lineHeight: 1.125
-- **eyebrow:** fontFamily: Google Sans Code, fontSize: 1.125rem, fontWeight: 700, lineHeight: 0.765
-- **code:** fontFamily: Google Sans Code, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.125
+- **display:** fontFamily: Storm Sans, lineHeight: 1.125
+- **editorial:** fontFamily: Storm Serif, lineHeight: 1.125
+- **body:** fontFamily: Storm Sans, lineHeight: 1.125
+- **caption:** fontFamily: Storm Sans, lineHeight: 1.125
+- **eyebrow:** fontFamily: Google Sans Code, lineHeight: 0.765
+- **code:** fontFamily: Google Sans Code, lineHeight: 1.125
 
 ## Layout
 
 Spacing scale:
+
 - **zero:** 0px
 - **xxs:** 0.5px
 - **xs:** 1px

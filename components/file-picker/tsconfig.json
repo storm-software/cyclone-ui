@@ -17,9 +17,6 @@
       "path": "../../tools/config"
     },
     {
-      "path": "../../packages/helpers"
-    },
-    {
       "path": "../../packages/state"
     },
     {
@@ -29,7 +26,13 @@
       "path": "../link"
     },
     {
-      "path": "../label-text"
+      "path": "../icons"
+    },
+    {
+      "path": "../../packages/helpers"
+    },
+    {
+      "path": "../heading-text"
     },
     {
       "path": "../bytes-text"
@@ -38,13 +41,7 @@
       "path": "../button"
     },
     {
-      "path": "../heading-text"
-    },
-    {
       "path": "../body-text"
-    },
-    {
-      "path": "../icons"
     },
     {
       "path": "../form"

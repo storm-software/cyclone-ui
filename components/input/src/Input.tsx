@@ -65,7 +65,7 @@ export const ControlUnderline = styled(View, {
   bottom: 0,
   width: 0,
   height: "xxs",
-  backgroundColor: "primaryActive",
+  backgroundColor: "primary-active",
   pointerEvents: "none",
   variants: {
     focused: {
@@ -79,7 +79,7 @@ export const ControlUnderline = styled(View, {
       true: {
         left: "50%",
         width: 0,
-        backgroundColor: "primaryDisabled"
+        backgroundColor: "primary-disabled"
       }
     }
   } as const,
@@ -116,13 +116,13 @@ const InputGroup = styled(XStack, {
     // `variant`.
     focused: {
       true: {
-        borderColor: "primaryActive"
+        borderColor: "primary-active"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "primary hover:primaryHovered"
+        borderColor: "primary hover:primary-hovered"
       }
     },
 
@@ -151,7 +151,7 @@ const InputGroup = styled(XStack, {
         userSelect: "none",
         cursor: "not-allowed",
         borderColor:
-          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled"
+          "primary-disabled hover:primary-disabled press:primary-disabled focus:primary-disabled"
       }
     },
 
@@ -186,8 +186,8 @@ const InputGroup = styled(XStack, {
     boxShadow:
       props.focused && (variant === "outlined" || variant === "inlined")
         ? frameSize === "sm"
-          ? "ringSubtleOffset"
-          : "ringOffset"
+          ? "ring-subtle-offset"
+          : "ring-offset"
         : undefined,
     paddingHorizontal: sized ? (notched ? 1 : 0) : undefined,
     paddingVertical: notched ? 1 : undefined,
@@ -304,11 +304,11 @@ const InputGroupImpl = createStyledHOC(
     const hasValidationMessage = useFieldHasValidationMessage();
     const labelPlacement = useFieldLabelPlacement();
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
+    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
     const hoverColor = hasValidationMessage
-      ? "primaryHovered"
-      : "outlineHovered";
-    const borderColor = `${active ? focusColor : idleColor} group-hover/field:${disabled ? "primaryDisabled" : active ? focusColor : hoverColor}`;
+      ? "primary-hovered"
+      : "outline-hovered";
+    const borderColor = `${active ? focusColor : idleColor} group-hover/field:${disabled ? "primary-disabled" : active ? focusColor : hoverColor}`;
 
     return (
       <InputContext.Provider
@@ -348,7 +348,7 @@ const InputGroupImpl = createStyledHOC(
                 bottom={-1}
                 focused={active}
                 disabled={disabled}
-                backgroundColor={disabled ? "primaryDisabled" : focusColor}
+                backgroundColor={disabled ? "primary-disabled" : focusColor}
               />
             )}
             {labelPlacement === "border" && (
@@ -376,7 +376,7 @@ const InputSeparator = styled(View, {
   opacity: "enter:0",
   // Drawn as a underlined 1px bar rather than a left border: `XGroup.Item` zeroes
   // `borderLeftWidth` on every non-first item, which hid the line.
-  backgroundColor: "outline hover:outlineHovered",
+  backgroundColor: "outline hover:outline-hovered",
   width: 1,
   flexShrink: 0,
   height: "60%",
@@ -384,7 +384,7 @@ const InputSeparator = styled(View, {
   variants: {
     focused: {
       true: {
-        backgroundColor: "outlineActive"
+        backgroundColor: "outline-active"
       }
     },
 
@@ -405,7 +405,7 @@ const InputSeparator = styled(View, {
     disabled: {
       true: {
         backgroundColor:
-          "outlineInactive hover:outlineInactive press:outlineInactive focus:outlineInactive"
+          "outline-inactive hover:outline-inactive press:outline-inactive focus:outline-inactive"
       }
     }
   } as const,
@@ -422,16 +422,16 @@ const InputSeparatorImpl = createStyledHOC(
     const { disabled, focused, hasValidationMessage } =
       InputContext.useStyledContext();
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
+    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
     const hoverColor = hasValidationMessage
-      ? "primaryHovered"
-      : "outlineHovered";
+      ? "primary-hovered"
+      : "outline-hovered";
 
     return (
       <XGroup.Item>
         <InputSeparator
           ref={forwardedRef}
-          backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "outlineInactive" : focused ? focusColor : hoverColor}`}
+          backgroundColor={`${focused ? focusColor : idleColor} group-hover/field:${disabled ? "outline-inactive" : focused ? focusColor : hoverColor}`}
           hasValidationMessage={hasValidationMessage}
           {...props}
         />
@@ -488,7 +488,7 @@ const InputValueImpl = createStyledHOC(
           ref={ref}
           {...props}
           placeholder={shouldShowPlaceholder ? props.placeholder : undefined}
-          placeholderTextColor="primaryDisabled"
+          placeholderTextColor="primary-disabled"
           onChange={props.onChange ?? contextOnChange}
           onInput={props.onInput ?? contextOnInput}
           value={value}
@@ -548,7 +548,7 @@ const InputTrigger = createStyledHOC(
             variant="link"
             borderRadius={circular ? 100_000 : "button"}
             noPadding={true}
-            color="onPrimary"
+            color="on-primary"
             disabled={disabled}
             {...props}
             width={props.width ?? adjustedTrigger}

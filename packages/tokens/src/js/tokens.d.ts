@@ -165,6 +165,7 @@ declare const tokens: {
     danger: {
       primary: DesignToken;
       link: DesignToken;
+      outline: DesignToken;
       "on-primary": DesignToken;
       secondary: DesignToken;
       "on-secondary": DesignToken;
@@ -180,10 +181,15 @@ declare const tokens: {
       "link-active": DesignToken;
       "link-inactive": DesignToken;
       "link-disabled": DesignToken;
+      "outline-hovered": DesignToken;
+      "outline-active": DesignToken;
+      "outline-inactive": DesignToken;
+      "outline-disabled": DesignToken;
     };
     warning: {
       primary: DesignToken;
       link: DesignToken;
+      outline: DesignToken;
       "on-primary": DesignToken;
       secondary: DesignToken;
       "on-secondary": DesignToken;
@@ -199,11 +205,16 @@ declare const tokens: {
       "link-active": DesignToken;
       "link-inactive": DesignToken;
       "link-disabled": DesignToken;
+      "outline-hovered": DesignToken;
+      "outline-active": DesignToken;
+      "outline-inactive": DesignToken;
+      "outline-disabled": DesignToken;
     };
     info: {
       primary: DesignToken;
       secondary: DesignToken;
       link: DesignToken;
+      outline: DesignToken;
       "on-primary": DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
@@ -218,11 +229,16 @@ declare const tokens: {
       "link-active": DesignToken;
       "link-inactive": DesignToken;
       "link-disabled": DesignToken;
+      "outline-hovered": DesignToken;
+      "outline-active": DesignToken;
+      "outline-inactive": DesignToken;
+      "outline-disabled": DesignToken;
     };
     discovery: {
       primary: DesignToken;
       secondary: DesignToken;
       link: DesignToken;
+      outline: DesignToken;
       "on-primary": DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
@@ -237,10 +253,15 @@ declare const tokens: {
       "link-active": DesignToken;
       "link-inactive": DesignToken;
       "link-disabled": DesignToken;
+      "outline-hovered": DesignToken;
+      "outline-active": DesignToken;
+      "outline-inactive": DesignToken;
+      "outline-disabled": DesignToken;
     };
     success: {
       primary: DesignToken;
       link: DesignToken;
+      outline: DesignToken;
       "on-primary": DesignToken;
       secondary: DesignToken;
       "on-secondary": DesignToken;
@@ -256,6 +277,10 @@ declare const tokens: {
       "link-active": DesignToken;
       "link-inactive": DesignToken;
       "link-disabled": DesignToken;
+      "outline-hovered": DesignToken;
+      "outline-active": DesignToken;
+      "outline-inactive": DesignToken;
+      "outline-disabled": DesignToken;
     };
     shadow: {
       resting: {
@@ -641,22 +666,9 @@ declare const tokens: {
     "3xl": DesignToken;
   };
   typography: {
-    "display-hero": DesignToken;
-    "display-lg": DesignToken;
-    "display-md": DesignToken;
-    "editorial-hero": DesignToken;
-    "editorial-lg": DesignToken;
-    "editorial-md": DesignToken;
-    "title-xl": DesignToken;
-    "title-lg": DesignToken;
-    "title-md": DesignToken;
-    "title-sm": DesignToken;
-    "title-xs": DesignToken;
-    "title-xxs": DesignToken;
-    "body-md": DesignToken;
-    "body-sm": DesignToken;
-    "body-md-bold": DesignToken;
-    "body-sm-bold": DesignToken;
+    display: DesignToken;
+    editorial: DesignToken;
+    body: DesignToken;
     caption: DesignToken;
     eyebrow: DesignToken;
     code: DesignToken;

@@ -50,7 +50,6 @@ export interface TypeTableProps extends ViewProps {
 
 const TypeTableFrame = styled(Container, {
   displayName: "TypeTable",
-
   width: "100%",
   overflow: "hidden"
 });
@@ -85,7 +84,10 @@ const PropertyColumn = styled(InlineCodeText, {
 const TypeColumn = styled(BodyText, {
   displayName: "TypeTableTypeColumn",
   color: "subtle",
-  fontFamily: "title-md",
+  fontFamily: "display",
+  fontSize: "sm",
+  lineHeight: "sm",
+  fontWeight: "600",
   display: "max-sm:none"
 });
 
@@ -99,7 +101,10 @@ const TypeLink = styled(Link, {
 const ColumnLabel = styled(BodyText, {
   displayName: "TypeTableColumnLabel",
   color: "subtle",
-  fontFamily: "title-md"
+  fontFamily: "display",
+  fontSize: "sm",
+  lineHeight: "sm",
+  fontWeight: "600"
 });
 
 const getItemId = (parentId: string | undefined, name: string) =>
@@ -177,7 +182,7 @@ const TypeTableItem = ({
         <Collapsible.Header
           paddingHorizontal="3xl"
           paddingVertical="2xl"
-          backgroundColor="elevated hover:elevatedHovered">
+          backgroundColor="elevated hover:elevated-hovered">
           <TypeTableRow padding={0} flex={1}>
             <PropertyColumn deprecated={item.deprecated}>
               {`${name}${item.required ? "" : "?"}`}

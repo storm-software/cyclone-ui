@@ -44,13 +44,27 @@ export const shorthands = {
   minw: "minWidth"
 } as const;
 
-const selectionStyles = (theme: any) => ({
-  backgroundColor: theme.selectionBackground,
-  color: theme.selectionForeground
-});
+const selectionStyles = (theme: any) => {
+  const backgroundColor = theme["selection-background"] || theme.primary;
+  const color = theme["selection-foreground"] || theme["on-primary"];
+
+  return backgroundColor && color
+    ? {
+        backgroundColor,
+        color
+      }
+    : null;
+};
 
 export default {
   media,
   shorthands,
-  selectionStyles
+  settings: {
+    selectionStyles,
+    fastSchemeChange: true,
+    shouldAddPrefersColorThemes: true,
+    allowedStyleValues: "somewhat-strict-web",
+    addThemeClassName: "html",
+    styleCompat: "web"
+  }
 };

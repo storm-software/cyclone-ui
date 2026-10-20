@@ -3,28 +3,3 @@
 Use documented icon names and aliases; do not invent unavailable assets.
 
 No documented icons were found.
-# Cyclone UI (Light Dimmed) Icons
-
-Use documented icon names and aliases; do not invent unavailable assets.
-
-No documented icons were found.
-# Cyclone UI (Light) Icons
-
-Use documented icon names and aliases; do not invent unavailable assets.
-
-No documented icons were found.
-# Cyclone UI (Dark High Contrast) Icons
-
-Use documented icon names and aliases; do not invent unavailable assets.
-
-No documented icons were found.
-# Cyclone UI (Dark Dimmed) Icons
-
-Use documented icon names and aliases; do not invent unavailable assets.
-
-No documented icons were found.
-# Cyclone UI (Dark) Icons
-
-Use documented icon names and aliases; do not invent unavailable assets.
-
-No documented icons were found.

@@ -32,12 +32,12 @@ describe("field affordance color states", () => {
 
     for (const affordance of [inputSeparator, selectSeparator, fieldIcon]) {
       expect(affordance).toContain("outline");
-      expect(affordance).toContain("outlineActive");
+      expect(affordance).toContain("outline-active");
     }
     for (const separator of [inputSeparator, selectSeparator]) {
-      expect(separator).toContain("outlineInactive");
+      expect(separator).toContain("outline-inactive");
     }
-    expect(fieldIcon).toContain("outlineDisabled");
+    expect(fieldIcon).toContain("outline-disabled");
   });
 
   it("fades every textbox divider in over 200ms on mount", () => {
@@ -100,10 +100,10 @@ describe("field affordance color states", () => {
     );
 
     expect(themeIcon).toContain("theme={theme}");
-    expect(themeIcon).toContain('"outline focus-visible:outlineActive"');
-    expect(themeIcon).toContain('"primary focus-visible:primaryActive"');
+    expect(themeIcon).toContain('"outline focus-visible:outline-active"');
+    expect(themeIcon).toContain('"primary focus-visible:primary-active"');
     expect(themeIcon).toMatch(
-      /arrowBorderColor=\{\s*isNeutral\s*\?\s*"outline focus-visible:outlineActive"\s*:\s*"primary focus-visible:primaryActive"\s*\}/
+      /arrowBorderColor=\{\s*isNeutral\s*\?\s*"outline focus-visible:outline-active"\s*:\s*"primary focus-visible:primary-active"\s*\}/
     );
   });
 });

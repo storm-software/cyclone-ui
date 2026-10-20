@@ -56,8 +56,6 @@
   "devDependencies": {
     "@powerlines/plugin-tamagui": "catalog:",
     "@powerlines/plugin-tsdown": "catalog:",
-    "@storybook/addon-docs": "catalog:",
-    "powerlines": "catalog:",
-    "storybook": "catalog:"
+    "powerlines": "catalog:"
   }
 }

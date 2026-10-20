@@ -39,7 +39,7 @@ const checkboxSizeTokens = { sm: "6xl", md: "7xl", lg: "8xl" } as const;
 const INLINE_LABEL = { inline: { alignItems: "center" } } as const;
 const INLINE_LABEL_SM = {
   ...INLINE_LABEL,
-  inlineFontFamily: "title-sm"
+  inlineFontSize: "xs"
 } as const;
 
 const CheckboxGroupFrame = styled(View, {
@@ -49,10 +49,10 @@ const CheckboxGroupFrame = styled(View, {
   alignContent: "center",
   backgroundColor: "surface",
   // this fixes a flex bug where it overflows container
-  boxShadow: "none focus:ringOffset focus-visible:ringOffset",
+  boxShadow: "none focus:ring-offset focus-visible:ring-offset",
   borderWidth: 1,
   borderColor:
-    "outline hover:outlineHovered focus:outlineActive focus-visible:outlineActive",
+    "outline hover:outline-hovered focus:outline-active focus-visible:outline-active",
   outlineStyle: "none",
   // this fixes a flex bug where it overflows container
   minWidth: 0,
@@ -87,13 +87,13 @@ const CheckboxGroupFrame = styled(View, {
 
     focused: {
       true: {
-        borderColor: "primaryActive"
+        borderColor: "primary-active"
       }
     },
 
     hasValidationMessage: {
       true: {
-        borderColor: "primary hover:primaryHovered"
+        borderColor: "primary hover:primary-hovered"
       }
     },
 
@@ -102,7 +102,7 @@ const CheckboxGroupFrame = styled(View, {
         userSelect: "none",
         cursor: "not-allowed",
         borderColor:
-          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled"
+          "primary-disabled hover:primary-disabled press:primary-disabled focus:primary-disabled"
       }
     }
   } as const,
@@ -155,17 +155,10 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   }
 });
 
-const CheckboxIcon = styled(Check, {
-  displayName: "CheckboxIndicator",
-  color: "primary",
-  strokeWidth: 3
-});
-
 // A plain bar rather than an icon so its thickness can be tuned to read as
 // heavy as the check's stroke.
 const MinusIcon = styled(View, {
   displayName: "CheckboxIndicator",
-  backgroundColor: "primary",
   borderRadius: 9999
 });
 
@@ -206,9 +199,9 @@ export const Checkbox = createStyledHOC(
     );
     const hasValidationMessage = useFieldHasValidationMessage();
     const idleColor = hasValidationMessage ? "primary" : "outline";
-    const focusColor = hasValidationMessage ? "primaryActive" : "outlineActive";
+    const focusColor = hasValidationMessage ? "primary-active" : "outline-active";
     // The full 3px ring overwhelms the small checkbox, so use the 1px ring.
-    const ring = size === "sm" ? "ringSubtle" : "ringOffset";
+    const ring = size === "sm" ? "ring-subtle" : "ring-offset";
 
     return (
       <CheckboxGroupFrame
@@ -218,7 +211,7 @@ export const Checkbox = createStyledHOC(
         size={size}
         // A call-site base replaces every lower-tier clause for the property
         // in v3, so restate the v2 frame/variant hover and disabled press here.
-        borderColor={`${focused ? focusColor : idleColor} hover:${disabled ? "primaryDisabled" : "primaryHovered"}${disabled ? " press:primaryDisabled" : ""} group-hover/field:${focused ? focusColor : "primaryHovered"} focus:${focusColor} focus-visible:${focusColor}`}
+        borderColor={`${focused ? focusColor : idleColor} hover:${disabled ? "primary-disabled" : "primary-hovered"}${disabled ? " press:primary-disabled" : ""} group-hover/field:${focused ? focusColor : "primary-hovered"} focus:${focusColor} focus-visible:${focusColor}`}
         boxShadow={`focus:${ring} focus-visible:${ring}`}>
         <BaseCheckbox
           ref={forwardedRef}
@@ -247,15 +240,19 @@ export const Checkbox = createStyledHOC(
                 opacity="enter:0.2 exit:0.5">
                 <MinusIcon
                   width={getSized(checkboxSizeTokens[size]) * 0.5}
-                  height={getSized(checkboxSizeTokens[size]) * 0.11}
-                  backgroundColor={focused ? focusColor : "primary"}
+                  height={getSized(checkboxSizeTokens[size]) * 0.13}
+                  backgroundColor={focused ? focusColor : "emphasis"}
                 />
               </View>
             ) : (
-              <CheckboxIcon
+              // Not `styled(Check)`: a styled wrapper turns `color` into a class
+              // instead of passing it to the icon, which then falls back to
+              // `on-primary` (dark in the dark theme).
+              <Check
+                strokeWidth={4}
                 width={getSized(checkboxSizeTokens[size]) * 0.6}
-                height={getSized(checkboxSizeTokens[size]) * 0.6}
-                color={focused ? focusColor : "primary"}
+                height={getSized(checkboxSizeTokens[size]) * 0.75}
+                color={focused ? focusColor : "emphasis"}
               />
             )}
           </TamaguiCheckbox.Indicator>

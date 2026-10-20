@@ -116,7 +116,7 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   displayName: "RadioGroupItemIndicator",
   transition: "200ms",
   borderRadius: 100_000,
-  backgroundColor: "primaryActive",
+  backgroundColor: "primary-active",
   height: "55%",
   width: "55%",
   // A transform needs a resting value or motion animates it from scale(0).
@@ -130,7 +130,7 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   transition: "200ms",
   cursor: "pointer",
   gap: "3xl",
-  boxShadow: "none press:ringOffset focus:ringOffset focus-visible:ringOffset",
+  boxShadow: "none press:ring-offset focus:ring-offset focus-visible:ring-offset",
   borderRadius: "control",
   borderWidth: 1,
   paddingHorizontal: "3xl",
@@ -252,25 +252,25 @@ const RadioGroupItemContainer = createStyledHOC(
 
     const idleColor = hasValidationMessage ? "primary" : "outline";
     const borderColor = disabled
-      ? "primaryDisabled"
+      ? "primary-disabled"
       : selected
-        ? "primaryActive"
+        ? "primary-active"
         : inactive
           ? `${idleColor}Inactive`
           : idleColor;
     const hoverColor = disabled
-      ? "primaryDisabled"
+      ? "primary-disabled"
       : selected
-        ? "primaryActive"
-        : "primaryHovered";
+        ? "primary-active"
+        : "primary-hovered";
     const focusColor = selected
-      ? "primaryActive"
+      ? "primary-active"
       : hasValidationMessage
-        ? "primaryActive"
-        : "outlineActive";
+        ? "primary-active"
+        : "outline-active";
     const textColor = (color: "emphasis" | "ink") =>
       disabled
-        ? "primaryDisabled group-hover/item:primaryDisabled"
+        ? "primary-disabled group-hover/item:primary-disabled"
         : `${inactive ? `${color}Inactive` : color} group-hover/item:${color}`;
 
     const onChange = group.onChange;
@@ -291,10 +291,10 @@ const RadioGroupItemContainer = createStyledHOC(
         // stuck when a press removes the element's `hover:` clause.
         backgroundColor={
           disabled
-            ? "surfaceDisabled hover:surfaceDisabled"
+            ? "surface-disabled hover:surface-disabled"
             : selected
-              ? "surfaceActive hover:surfaceActive"
-              : `${inactive ? "surfaceInactive" : "surface"} hover:surfaceHovered`
+              ? "surface-active hover:surface-active"
+              : `${inactive ? "surface-inactive" : "surface"} hover:surface-hovered`
         }
         {...props}
         group="item"
@@ -308,8 +308,8 @@ const RadioGroupItemContainer = createStyledHOC(
             : withClauses(
                 props.boxShadow,
                 size === "sm"
-                  ? "press:ringSubtleOffset focus:ringSubtleOffset focus-visible:ringSubtleOffset"
-                  : "focus:ringOffset focus-visible:ringOffset"
+                  ? "press:ring-subtle-offset focus:ring-subtle-offset focus-visible:ring-subtle-offset"
+                  : "focus:ring-offset focus-visible:ring-offset"
               )
         }
         borderColor={`${borderColor} hover:${hoverColor}${disabled ? "" : ` focus:${focusColor} focus-visible:${focusColor}`}`}
@@ -343,7 +343,7 @@ const RadioGroupItemContainer = createStyledHOC(
             {disabled ? (
               <Lock
                 size={getSized("5xl") * getFormSizeScale(size) * 0.6}
-                color="primaryDisabled"
+                color="primary-disabled"
               />
             ) : (
               <RadioGroupItemIndicator />
@@ -408,7 +408,13 @@ const RadioGroupImpl = createStyledHOC(
     const handleBlur = useCallback(
       (event: FocusEvent<HTMLElement>) => {
         // Moving focus between the items stays in the field.
-        if (event.currentTarget.contains(event.relatedTarget)) {
+        const currentTarget = event.currentTarget as unknown as Node;
+
+        if (
+          currentTarget.contains(
+            event.relatedTarget as Parameters<typeof currentTarget.contains>[0]
+          )
+        ) {
           return;
         }
 

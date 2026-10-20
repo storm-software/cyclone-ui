@@ -94,6 +94,7 @@
     "@razorwind/docgen": "catalog:",
     "@razorwind/eslint": "catalog:",
     "@razorwind/llms": "catalog:",
+    "@razorwind/maplibre": "catalog:",
     "@razorwind/nx": "catalog:",
     "@razorwind/shadcn": "catalog:",
     "@razorwind/shell-shock": "catalog:",

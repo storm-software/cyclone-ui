@@ -86,16 +86,17 @@ const TooltipContent = styled(
     paddingVertical: "3xl",
     paddingHorizontal: "2xl",
     borderWidth: 1,
-    borderColor: "primary focus-visible:primaryActive",
+    borderColor: "primary focus-visible:primary-active",
     borderRadius: "tooltip",
     x: "enter:0 exit:0",
     y: "enter:-5px exit:-5px",
     opacity: "enter:0 exit:0",
     scale: "enter:0.9 exit:0.9",
-    outlineColor: "focus-visible:primaryActive",
+    outlineColor: "focus-visible:primary-active",
     outlineWidth: "focus-visible:3px",
     outlineOffset: "focus-visible:lg",
     outlineStyle: "focus-visible:solid",
+
     variants: {
       elevated: {
         true: {
@@ -103,6 +104,7 @@ const TooltipContent = styled(
         }
       }
     } as const,
+
     defaultVariants: {
       elevated: true
     }

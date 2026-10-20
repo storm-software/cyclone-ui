@@ -132,13 +132,13 @@ const isDoubleCascadeVariant = (
 const cascadeFrameStyle = {
   backgroundColor: "transparent hover:transparent press:transparent",
   borderWidth: "3px hover:1px press:1px",
-  borderColor: "primary hover:primary press:primaryActive"
+  borderColor: "primary hover:primary press:primary-active"
 } as const;
 
 const reverseCascadeFrameStyle = {
   backgroundColor: "primary hover:transparent press:transparent",
   borderWidth: "1px hover:3px press:3px",
-  borderColor: "primary hover:primary press:primaryActive"
+  borderColor: "primary hover:primary press:primary-active"
 } as const;
 
 type BorderRadiusSizeTokens =
@@ -313,13 +313,13 @@ export const ButtonContext = createStyledContext<
 
 const getDisabledFrameStyle = (variant: ButtonVariant | undefined) => {
   if (variant === "tertiary") {
-    return disabledFrameStyle("surface", "primaryDisabled");
+    return disabledFrameStyle("surface", "primary-disabled");
   } else if (variant === "secondary") {
-    return disabledFrameStyle("secondaryDisabled", "hairlineInactive");
+    return disabledFrameStyle("secondary-disabled", "hairlineInactive");
   } else if (variant === "primary" || isReverseCascadeVariant(variant)) {
-    return disabledFrameStyle("secondaryDisabled", "primaryDisabled");
+    return disabledFrameStyle("secondary-disabled", "primary-disabled");
   } else if (variant === "outlined" || isCascadeVariant(variant)) {
-    return disabledFrameStyle("transparent", "primaryDisabled");
+    return disabledFrameStyle("transparent", "primary-disabled");
   } else if (variant === "ghost" || variant === "link") {
     return disabledFrameStyle("transparent", "transparent");
   }
@@ -360,33 +360,33 @@ const ButtonFrame = styled(View, {
   // below supplies the default "button" radius instead.
   minWidth: "fit-content",
   paddingHorizontal: "2xl",
-  boxShadow: "focus-visible:ringOffset",
+  boxShadow: "focus-visible:ring-offset",
   // No `press:` background colors: a press draws a `ButtonRipple` from the
   // press point instead.
   variants: {
     variant: {
       tertiary: {
         borderWidth: 1,
-        borderColor: "primary hover:primaryHovered press:primaryActive",
-        backgroundColor: "surface hover:surfaceHovered"
+        borderColor: "primary hover:primary-hovered press:primary-active",
+        backgroundColor: "surface hover:surface-hovered"
       },
 
       secondary: {
         borderWidth: 0,
         borderColor: "transparent hover:transparent press:transparent",
-        backgroundColor: "secondary hover:secondaryHovered"
+        backgroundColor: "secondary hover:secondary-hovered"
       },
 
       primary: {
         borderWidth: 0,
         borderColor: "transparent hover:transparent press:transparent",
-        backgroundColor: "primary hover:primaryHovered"
+        backgroundColor: "primary hover:primary-hovered"
       },
 
       outlined: {
         backgroundColor: "transparent hover:transparent press:transparent",
         borderWidth: 2,
-        borderColor: "primary hover:primaryHovered press:primaryActive"
+        borderColor: "primary hover:primary-hovered press:primary-active"
       },
 
       cascade: cascadeFrameStyle,
@@ -437,7 +437,7 @@ const ButtonFrame = styled(View, {
 
     ringed: {
       true: {
-        boxShadow: "hover:ringOffset press:ringOffset"
+        boxShadow: "hover:ring-offset press:ring-offset"
       }
     },
 
@@ -517,10 +517,11 @@ const ButtonTextFrame = styled(Text, {
   textAlign: "center",
   textTransform: "capitalize",
   whiteSpace: "nowrap",
-  fontFamily: "title-md",
-  // v3 font classes no longer apply the font's default weight and leading.
-  fontWeight: "true",
-  lineHeight: "true",
+  fontFamily: "display",
+  // The typography tokens only carry the family and leading.
+  fontSize: "sm",
+  fontWeight: "600",
+  lineHeight: "sm",
   color: "hover:primary",
   flexGrow: 0,
   flexShrink: 0,
@@ -534,7 +535,7 @@ const ButtonTextFrame = styled(Text, {
         return undefined;
       }
 
-      const { fontSize, lineHeight } = getFormFontSize(size, env);
+      const { fontSize, lineHeight } = getFormFontSize(size, env, "sm");
 
       return { fontSize, lineHeight };
     }),
@@ -545,11 +546,11 @@ const ButtonTextFrame = styled(Text, {
       },
 
       secondary: {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       primary: {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       outlined: {
@@ -605,51 +606,51 @@ const ButtonTextFrame = styled(Text, {
       },
 
       "reverse-cascade": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       "reverse-double-cascade": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       "reverse-cascade-top": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       "reverse-cascade-left": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       "reverse-cascade-bottom": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       "reverse-cascade-right": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       "reverse-diagonal-cascade": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       "reverse-double-diagonal-cascade": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       "reverse-diagonal-cascade-top": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       "reverse-diagonal-cascade-left": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       "reverse-diagonal-cascade-bottom": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       "reverse-diagonal-cascade-right": {
-        color: "onPrimary"
+        color: "on-primary"
       },
 
       ghost: {
@@ -668,7 +669,7 @@ const ButtonTextFrame = styled(Text, {
       true: {
         cursor: "not-allowed",
         pointerEvents: "none",
-        color: "primaryDisabled hover:primaryDisabled press:primaryDisabled",
+        color: "primary-disabled hover:primary-disabled press:primary-disabled",
         textDecoration: "none hover:none press:none"
       }
     }
@@ -691,7 +692,7 @@ const colorForVariant = (
     (variant === "secondary" && !themeName?.endsWith("base"))
   ) {
     return (
-      disabled ? "primaryDisabled" : (color ?? "onPrimary")
+      disabled ? "primary-disabled" : (color ?? "on-primary")
     ) as ThemeableIconProps["color"];
   }
 
@@ -700,19 +701,19 @@ const colorForVariant = (
       disabled
         ? !themeName || themeName?.endsWith("base")
           ? "subtlest"
-          : "primaryDisabled"
+          : "primary-disabled"
         : (color ?? "primary")
     ) as ThemeableIconProps["color"];
   }
 
   if (variant === "link") {
     return (
-      disabled ? "linkDisabled" : (color ?? "link")
+      disabled ? "link-disabled" : (color ?? "link")
     ) as ThemeableIconProps["color"];
   }
 
   return (
-    disabled ? "primaryDisabled" : (color ?? "primary")
+    disabled ? "primary-disabled" : (color ?? "primary")
   ) as ThemeableIconProps["color"];
 };
 
@@ -726,10 +727,10 @@ const hoverColorForVariant = (
       variant === "primary" ||
       (variant === "secondary" && !themeName?.endsWith("base"))
     ) {
-      return "primaryDisabled";
+      return "primary-disabled";
     }
 
-    return "primaryDisabled";
+    return "primary-disabled";
   }
 
   if (
@@ -746,14 +747,14 @@ const hoverColorForVariant = (
     variant === "secondary" ||
     isCascadeVariant(variant)
   ) {
-    return "onPrimary";
+    return "on-primary";
   }
 
   if (variant === "link") {
-    return "linkHovered";
+    return "link-hovered";
   }
 
-  return "primaryHovered";
+  return "primary-hovered";
 };
 
 const pressedColorForVariant = (
@@ -766,14 +767,14 @@ const pressedColorForVariant = (
       variant === "primary" ||
       (variant === "secondary" && !themeName?.endsWith("base"))
     ) {
-      return "primaryDisabled";
+      return "primary-disabled";
     }
 
-    return "primaryDisabled";
+    return "primary-disabled";
   }
 
   if (isReverseCascadeVariant(variant)) {
-    return "primaryActive";
+    return "primary-active";
   }
 
   if (
@@ -781,14 +782,14 @@ const pressedColorForVariant = (
     variant === "secondary" ||
     isCascadeVariant(variant)
   ) {
-    return "onPrimary";
+    return "on-primary";
   }
 
   if (variant === "link") {
-    return "linkActive";
+    return "link-active";
   }
 
-  return "primaryActive";
+  return "primary-active";
 };
 
 /** Join flat style values; later clauses win over earlier ones. */

@@ -63,7 +63,11 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
   <StoryCanvas>
     <StoryContent>
       <StorySection>
-        <Text color="primary" fontFamily="display-lg">
+        <Text
+          color="primary"
+          fontFamily="display"
+          fontSize="3xl"
+          fontWeight="600">
           Build what matters
         </Text>
         <BodyText color="ink" maxWidth={640}>

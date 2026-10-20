@@ -34,6 +34,8 @@ const RESERVED_KEYS = new Set([
   "$value",
   "$ref",
   "theme",
+  "group",
+  "semantic",
   "palette",
   "primitive"
 ]);
@@ -553,18 +555,34 @@ function themeColorGroups(
 ): [string, Record<string, unknown>][] {
   return Object.entries(color).filter(
     (entry): entry is [string, Record<string, unknown>] =>
-      !NONE_THEME_COLOR_KEYS.includes(entry[0]) &&
+      !NONE_THEME_COLOR_KEYS.includes(
+        entry[0] as (typeof NONE_THEME_COLOR_KEYS)[number]
+      ) &&
       isPlainObject(entry[1]) &&
       !isTokenNode(entry[1]) &&
-      isTokenNode(entry[1].primary)
+      isTokenNode((entry[1] as { primary?: unknown }).primary)
   );
 }
+
+const OUTLINE_COLOR_STATE_VARIANTS: ColorStateVariants = {
+  lowSaturation: [
+    INCREASED_LOW_SATURATION_COLOR_STATE_ACTIVE,
+    LOW_SATURATION_COLOR_STATE_INACTIVE,
+    COLOR_STATE_DISABLED
+  ],
+  saturated: [
+    HAIRLINE_COLOR_STATE_ACTIVE,
+    COLOR_STATE_INACTIVE,
+    COLOR_STATE_DISABLED
+  ]
+};
 
 /** State variants for the tokens inside each theme color group. */
 const THEME_COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
   primary: DEFAULT_COLOR_STATE_VARIANTS,
   secondary: SUBTLE_COLOR_STATE_VARIANTS,
-  link: DEFAULT_COLOR_STATE_VARIANTS
+  link: DEFAULT_COLOR_STATE_VARIANTS,
+  outline: OUTLINE_COLOR_STATE_VARIANTS
 };
 
 /**
@@ -573,7 +591,7 @@ const THEME_COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
  */
 const FOREGROUND_COLOR_STATE_VARIANTS: ColorStateVariants = {
   lowSaturation: [
-    { name: "hovered", brightness: 1.45 },
+    { name: "hovered", brightness: 1.25 },
     ...DEFAULT_COLOR_STATE_VARIANTS.lowSaturation
   ],
   saturated: [
@@ -601,18 +619,7 @@ const COLOR_STATE_TOKEN_GROUPS: Record<string, ColorStateVariants> = {
 
 /** Standalone color tokens that receive state variants. */
 const COLOR_STATE_VARIANTS: Record<string, ColorStateVariants> = {
-  outline: {
-    lowSaturation: [
-      INCREASED_LOW_SATURATION_COLOR_STATE_ACTIVE,
-      LOW_SATURATION_COLOR_STATE_INACTIVE,
-      COLOR_STATE_DISABLED
-    ],
-    saturated: [
-      HAIRLINE_COLOR_STATE_ACTIVE,
-      COLOR_STATE_INACTIVE,
-      COLOR_STATE_DISABLED
-    ]
-  }
+  outline: OUTLINE_COLOR_STATE_VARIANTS
 };
 
 /** OKLCH chroma below which a color uses the low-saturation state variants. */
@@ -816,7 +823,7 @@ function addMissingRingTokens(dictionary: unknown): unknown {
       ],
       [`${name}-offset`]: [
         `${name} 3px focus ring with a 3px gap`,
-        [gap(3), ringLayer(ringColor, 6)]
+        [gap(3), ringLayer(ringColor, 7)]
       ],
       [`${name}-subtle-offset`]: [
         `${name} 1px focus ring with a 2px gap`,
@@ -1053,7 +1060,7 @@ function isDarkColor(hex: string, parentTheme?: ParentTheme): boolean {
 }
 
 /** Low-saturation colors only count as white / black past ≈ #dddddd / #262626. */
-const LOW_SATURATION_WHITE_LIGHTNESS = hexToOklch("#dddddd").lightness;
+const LOW_SATURATION_WHITE_LIGHTNESS = hexToOklch("#fefefe").lightness;
 const LOW_SATURATION_BLACK_LIGHTNESS = hexToOklch("#262626").lightness;
 
 function isWhiteColor(hex: string): boolean {
@@ -1333,8 +1340,10 @@ function addColorStateTokens(
 /**
  * Fill in a theme color group (`color.danger`, …): generate a missing
  * `secondary` low-emphasis background from `primary` and the parent theme,
- * a missing `link` color (aliasing `primary`), `on-primary` / `on-secondary`
- * text colors, and state variants for `primary`, `secondary` and `link`. Every token in the group gets the group name as
+ * missing `link` color and, for `status` groups, `outline` color (both
+ * aliasing `primary`), `on-primary` /
+ * `on-secondary` text colors, and state variants for `primary`, `secondary`,
+ * `link` and `outline`. Every token in the group gets the group name as
  * its `theme` and `group`, so Tamagui places it in that child theme (e.g.
  * `danger.on-primary` → `onPrimary` in the `danger` theme).
  */
@@ -1358,6 +1367,14 @@ function addThemeColorGroupTokens(
     $value: `{color.${name}.primary}`,
     $description: `Generated ${name} hyperlink text color (matches primary)`
   };
+  if (group.group === "status") {
+    result.outline ??= {
+      ...token,
+      $type: "color",
+      $value: `{color.${name}.primary}`,
+      $description: `Generated ${name} border and divider color (matches primary)`
+    };
+  }
   result["on-primary"] ??= {
     ...token,
     $type: "color",
@@ -1541,7 +1558,8 @@ function injectColorStateVariants(
  * `on-secondary` text colors are generated, then hovered, active, inactive,
  * and disabled variants are added to the outline, `foreground` and
  * `background` group colors, and each theme color group's `primary`, `secondary`
- * and `link` (which defaults to `primary` when missing).
+ * `link` and `outline` (`link`, and `outline` in `status` groups, default to
+ * `primary` when missing).
  * Low-saturation colors derive their states from the parent theme's contrast
  * primitive (backgrounds use a half-strength shift of their own lightness; hovered
  * colors already near that primitive shift toward the middle, while active

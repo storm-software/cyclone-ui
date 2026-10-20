@@ -16,11 +16,13 @@
 
  ------------------------------------------------------------------- */
 
-import { createStyledHOC } from "@tamagui/core";
-import { LabelText } from "@cyclone-ui/label-text";
 import NumberFlow from "@number-flow/react";
 import type { GetProps } from "@tamagui/core";
-export const NumberText = createStyledHOC(LabelText, 
+import { createStyledHOC } from "@tamagui/core";
+import { SizableText } from "@tamagui/text";
+
+export const NumberText = createStyledHOC(
+  SizableText,
   ({ children, ...props }, forwardedRef) => {
     let value = Number(children);
     if (Number.isNaN(value)) {
@@ -28,9 +30,9 @@ export const NumberText = createStyledHOC(LabelText,
     }
 
     return (
-      <LabelText ref={forwardedRef} {...props}>
+      <SizableText ref={forwardedRef} {...props}>
         <NumberFlow value={value} />
-      </LabelText>
+      </SizableText>
     );
   }
 );

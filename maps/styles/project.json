@@ -4,17 +4,6 @@
   "projectType": "library",
   "sourceRoot": "maps/styles/src",
   "targets": {
-    "build-base": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": ["tsx scripts/generate.ts"],
-        "cwd": "maps/styles",
-        "parallel": false
-      }
-    },
-    "build": {
-      "dependsOn": ["build-base"]
-    },
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }

@@ -61,7 +61,7 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
     {children}
     <StoryContent>
       <StorySection id="hero">
-        <SizableText color="primary" fontSize="10xl" fontWeight="bold">
+        <SizableText color="primary" fontSize="4xl" fontWeight="bold">
           Build what matters
         </SizableText>
         <SizableText color="ink" fontSize="lg" maxWidth={640}>
@@ -70,7 +70,7 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
         </SizableText>
       </StorySection>
       <StorySection id="research" light={true}>
-        <SizableText color="primary" fontSize="7xl" fontWeight="bold">
+        <SizableText color="primary" fontSize="4xl" fontWeight="bold">
           Research and discovery
         </SizableText>
         <SizableText color="ink" fontSize="md" maxWidth={640}>
@@ -79,7 +79,7 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
         </SizableText>
       </StorySection>
       <StorySection id="products">
-        <SizableText color="primary" fontSize="7xl" fontWeight="bold">
+        <SizableText color="primary" fontSize="4xl" fontWeight="bold">
           Products for every team
         </SizableText>
         <SizableText color="ink" fontSize="md" maxWidth={640}>
@@ -88,7 +88,7 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
         </SizableText>
       </StorySection>
       <StorySection id="company">
-        <SizableText color="primary" fontSize="7xl" fontWeight="bold">
+        <SizableText color="primary" fontSize="4xl" fontWeight="bold">
           A long-term perspective
         </SizableText>
         <SizableText color="ink" fontSize="md" maxWidth={640}>
@@ -128,7 +128,7 @@ const storyActions = (
       <Button.Text>Log in</Button.Text>
     </Button>
     <Button
-      variant="reverse-diagonal-cascade"
+      variant="primary"
       rounded={true}
       flexGrow={0}
       width={128}

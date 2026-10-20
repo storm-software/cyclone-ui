@@ -9,9 +9,7 @@
     "directory": "components/number-text"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -19,8 +17,8 @@
   },
   "dependencies": {
     "@number-flow/react": "^0.4.4",
-    "@tamagui/core": "catalog:",
-    "@cyclone-ui/label-text": "workspace:*"
+    "@tamagui/text": "catalog:",
+    "@tamagui/core": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
@@ -31,9 +29,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -14,7 +14,7 @@ The following instructions will guide you through configuring your application t
 CSS example:
 
 ```ts
-import "./packages/tokens/src/js/tokens.d.ts";
+import "./packages/tokens/src/js/tokens.d.ts"
 ```
 
 SCSS example:

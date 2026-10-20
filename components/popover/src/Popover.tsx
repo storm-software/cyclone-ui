@@ -106,7 +106,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   backgroundColor: "elevated",
   padding: "3xl",
   borderWidth: 1,
-  borderColor: "hairline focus-visible:primaryActive",
+  borderColor: "hairline focus-visible:primary-active",
   borderRadius: "popover",
   marginHorizontal: "auto",
   y: "enter:-10px exit:-10px",

@@ -13,7 +13,7 @@ The following instructions will guide you through configuring your application t
 CSS example:
 
 ```ts
-import "./packages/tokens/src/css/tokens.css";
+import "./packages/tokens/src/css/tokens.css"
 ```
 
 SCSS example:

@@ -9,24 +9,22 @@
     "directory": "components/pagination"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/next-button": "workspace:*",
+    "@cyclone-ui/previous-button": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@tamagui/web": "catalog:",
-    "react-native-svg": "^15.15.5",
-    "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/icons": "workspace:*",
-    "@cyclone-ui/next-button": "workspace:*",
-    "@cyclone-ui/previous-button": "workspace:*"
+    "react-native-svg": "catalog:"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
@@ -37,9 +35,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

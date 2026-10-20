@@ -24,12 +24,15 @@ import designMD from "@razorwind/design-md/generate";
 import docgen from "@razorwind/docgen/generate";
 import eslint from "@razorwind/eslint";
 import llms from "@razorwind/llms/generate";
+import maplibre from "@razorwind/maplibre";
 import shadcn from "@razorwind/shadcn/generate";
 import type { ShikiTheme } from "@razorwind/shiki/generate";
 import shiki from "@razorwind/shiki/generate";
 import storybook from "@razorwind/storybook/generate";
 import styleDictionary from "@razorwind/style-dictionary";
 import stylelint from "@razorwind/stylelint";
+import { tokenColors } from "./maps/styles/src/create-flavor";
+import { createStyle } from "./maps/styles/src/create-style";
 import generate from "./packages/theme-builder/src/generate";
 import preprocessor from "./packages/theme-builder/src/preprocessor";
 
@@ -46,7 +49,7 @@ export default defineConfig({
     "fonts/storm-serif/dist/otf",
     "fonts/storm-serif/dist/ttf"
   ],
-  fontAssetBaseUrl: "https://public.storm-cdn.com/fonts",
+  fontAssetsUrl: "https://public.storm-cdn.com/fonts",
   tokensPath: "packages/tokens/src/tokens/**/*.json",
   componentsPath: ["components"],
   plugins: [
@@ -157,7 +160,7 @@ export default defineConfig({
             color.elevated as string
           );
           const onSelection = page;
-          const border = tokenValue(color.hairline, subtleInk);
+          const border = tokenValue(color.outline, subtleInk);
 
           return {
             name: `cyclone-${theme
@@ -245,6 +248,43 @@ export default defineConfig({
     llms({
       outputPath: "docs/llms"
     }),
+    maplibre({
+      outputPath: "maps/styles/__generated__",
+      mapTheme: (tokens: any) => {
+        const style = (
+          theme: "dark" | "light",
+          color: ReturnType<typeof tokenColors>
+        ) => ({
+          ...createStyle({
+            theme,
+            archiveUrl:
+              "pmtiles://https://public.storm-cdn.com/basemaps/tiles/data/monaco.pmtiles",
+            color
+          }),
+          name: "Cyclone"
+        });
+
+        // Unsplit token sets keep primitives in `base`
+        if (tokens.base) {
+          return (["light", "dark"] as const).map(theme =>
+            style(theme, tokenColors(tokens.base))
+          );
+        }
+
+        // Split themes each get one token set; a dark canvas picks the dark flavor
+        const color = tokenColors(tokens);
+        const canvas = color(
+          String(tokens.color.canvas.$value)
+            .replace(/^\{color\.|\}$/g, "")
+            .replaceAll(".", "-")
+        );
+
+        return style(
+          Number.parseInt(canvas.slice(1, 3), 16) < 128 ? "dark" : "light",
+          color
+        );
+      }
+    }),
     css({
       outputPath: "packages/tokens/src/css/tokens.css",
       prefix: "storm"
@@ -296,7 +336,7 @@ export default defineConfig({
             appBg: tokenValue(color.canvas),
             appContentBg: tokenValue(color.canvas),
             appPreviewBg: tokenValue(color.canvas),
-            appBorderColor: tokenValue(color.hairline),
+            appBorderColor: tokenValue(color.outline),
             appBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
 
             barTextColor: tokenValue(color.ink),
@@ -316,7 +356,7 @@ export default defineConfig({
             booleanSelectedBg: tokenValue(color.subtlest),
 
             brandImage
-          };
+          } as Record<string, unknown>;
         };
 
         return {

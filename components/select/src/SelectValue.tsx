@@ -43,7 +43,7 @@ const SelectValueFrame = styled(Text, {
   context: SelectContext,
   transition: "200ms",
   cursor: "pointer",
-  color: "primary hover:primaryHovered",
+  color: "primary hover:primary-hovered",
   display: "flex",
   flexGrow: 1,
   alignItems: "center",
@@ -72,7 +72,7 @@ const SelectValueFrame = styled(Text, {
 
     placeholding: {
       true: {
-        color: "primaryDisabled"
+        color: "primary-disabled"
       }
     },
 
@@ -83,7 +83,7 @@ const SelectValueFrame = styled(Text, {
         // v2 also set `placeholderColor`, which is not a text style in v3
         // and had no effect on this text node.
         color:
-          "primaryDisabled hover:primaryDisabled press:primaryDisabled focus:primaryDisabled"
+          "primary-disabled hover:primary-disabled press:primary-disabled focus:primary-disabled"
       }
     }
   } as const,

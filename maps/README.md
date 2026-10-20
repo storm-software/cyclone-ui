@@ -1,6 +1,6 @@
 # Cyclone maps
 
-This directory contains a local copy of [Protomaps Basemaps](https://github.com/protomaps/basemaps) `tiles/` and `styles/` at commit `42ffaaa4a85a41bfcb23e43cc0f5b492a5eca123` (October 2026). `tiles/` builds vector PMTiles from OpenStreetMap and other sources. `styles/` controls how those tiles look when displayed; colors are not stored in the PMTiles archive. The Cyclone additions include `styles/src/cyclone-flavor.ts` and `styles/scripts/generate.ts`.
+This directory contains a local copy of [Protomaps Basemaps](https://github.com/protomaps/basemaps) `tiles/` and `styles/` at commit `42ffaaa4a85a41bfcb23e43cc0f5b492a5eca123` (October 2026). `tiles/` builds vector PMTiles from OpenStreetMap and other sources. `styles/` controls how those tiles look when displayed; colors are not stored in the PMTiles archive. The Cyclone additions include `styles/src/create-flavor.ts` and `styles/src/create-style.ts`, which the [`@razorwind/maplibre`](https://github.com/storm-software/razorwind/tree/main/packages/maplibre) plugin in `razorwind.config.ts` uses to generate the styles.
 
 ## Generate a PMTiles archive
 
@@ -24,16 +24,13 @@ docker run --rm -v "$PWD/maps/tiles/data:/tiles/data" stormsoftware-basemaps --d
 
 ## Generate Cyclone map styles
 
-With workspace dependencies installed, generate the Storm Sans glyphs and give the style generator the URL where a PMTiles archive will be served:
+The styles are generated with the rest of the design-token outputs by the `@razorwind/maplibre` plugin in `razorwind.config.ts`:
 
 ```sh
-devenv shell -- pnpm nx run fonts-storm-sans:build
-devenv shell -- pnpm --dir maps/styles exec tsx scripts/generate.ts \
-  pmtiles://http://localhost:8000/tiles/data/monaco.pmtiles generated \
-  'http://127.0.0.1:8000/fonts/storm-sans/dist/pbf/{fontstack}/{range}.pbf'
+devenv shell -- pnpm nx run monorepo:build-tokens
 ```
 
-This writes `maps/styles/generated/cyclone-light.json` and `cyclone-dark.json`. The source colors come from `packages/tokens/src/css/tokens-light.css` and `tokens-dark.css`, which Razorwind generates from this repository's design tokens. After changing source tokens, run `devenv shell -- pnpm nx run monorepo:generate-themes` before regenerating the map styles. The style generator validates both JSON documents with MapLibre's style specification.
+This writes one style per Razorwind theme to `maps/styles/__generated__/`: `cyclone-light.json`, `cyclone-dark.json`, and the `-dimmed` and `-high-contrast` variants. Colors are read from the theme's design tokens; a theme with a dark canvas uses the dark map flavor. The styles point at the CDN-hosted PMTiles archive, sprites, and Storm Sans glyphs; change `archiveUrl` or `glyphsUrl` in the `maplibre` plugin options to target other hosts. The plugin validates every style with MapLibre's style specification.
 
 For local development, run `devenv shell -- node maps/serve.mjs`. This serves `./maps` on port 8000 with the HTTP range support PMTiles requires. In a MapLibre client, register the [PMTiles protocol](https://github.com/protomaps/PMTiles/tree/main/js) before loading either style:
 
@@ -43,9 +40,9 @@ import { Protocol } from "pmtiles"
 maplibregl.addProtocol("pmtiles", new Protocol().tile)
 ```
 
-MapLibre then loads the style JSON at `http://localhost:8000/styles/generated/cyclone-light.json` or `http://localhost:8000/styles/generated/cyclone-dark.json`. Both styles request local Storm Sans glyphs at `http://127.0.0.1:8000/fonts/storm-sans/dist/pbf/{fontstack}/{range}.pbf`. The tile-free preview at `http://127.0.0.1:8000/fonts/preview.html` renders all four generated faces. See the [glyph guide](fonts/README.md) for character coverage, fallback limitations, licenses, and versioned hosting.
+MapLibre then loads the style JSON at `http://localhost:8000/styles/__generated__/cyclone-light.json` or `http://localhost:8000/styles/__generated__/cyclone-dark.json`. With `LOCAL_GLYPHS_URL`, the styles request local Storm Sans glyphs at `http://127.0.0.1:8000/fonts/storm-sans/dist/pbf/{fontstack}/{range}.pbf`. The tile-free preview at `http://127.0.0.1:8000/fonts/preview.html` renders all four generated faces. See the [glyph guide](fonts/README.md) for character coverage, fallback limitations, licenses, and versioned hosting.
 
-For production, host the `.pmtiles` archive at a range-request-capable URL and pass the deployed glyph URL template as the style generator's final argument (or set `CYCLONE_GLYPHS_URL`). Sprites are still referenced from `storm-cdn.com`; host them separately if the complete map must work offline. The glyph preview loads MapLibre itself from unpkg.
+For production, host the `.pmtiles` archive at a range-request-capable URL and set `archiveUrl` and `glyphsUrl` in the `maplibre` plugin options to the deployed URLs. Sprites are still referenced from `storm-cdn.com`; host them separately if the complete map must work offline. The glyph preview loads MapLibre itself from unpkg.
 
 ## Storm Sans map glyphs
 
@@ -86,14 +83,9 @@ styles, character coverage, omitted supplementary codepoints, and font notices.
 
 ### Use in Cyclone styles
 
-```sh
-devenv shell -- pnpm --dir maps/styles exec tsx scripts/generate.ts \
-  pmtiles://http://localhost:8000/tiles/data/monaco.pmtiles generated \
-  'http://127.0.0.1:8000/fonts/storm-sans/dist/pbf/{fontstack}/{range}.pbf'
-devenv shell -- node maps/serve.mjs
-```
+Pass `glyphsUrl` to `createStyle` in the `maplibre` plugin options of `razorwind.config.ts` (for local development, `LOCAL_GLYPHS_URL` from `maps/styles/src/create-style.ts`), regenerate, and serve with `devenv shell -- node maps/serve.mjs`.
 
-The local glyph URL in that command is
+The local glyph URL is
 `http://127.0.0.1:8000/fonts/storm-sans/dist/pbf/{fontstack}/{range}.pbf`. The styles select
 `Regular`, `Medium`, and `Italic`; Medium
 preserves the existing map's stronger-label weight role. Bold is generated for
@@ -123,23 +115,14 @@ Additional glyph coverage also does not supply complex-script shaping.
 ### Hosting
 
 Upload the **contents** of `fonts/storm-sans/dist/pbf/`, including `manifest.json` and `OFL.txt`, under
-a versioned prefix such as `glyphs/storm-sans/1.0.9/`. Preserve font-name
+a versioned prefix such as `fonts/storm-sans/pbf/1.0.9/`. Preserve font-name
 directories, and serve raw `.pbf` files as `application/x-protobuf` with CORS
 allowing the map application. If the server compresses responses, its
 `Content-Encoding` header must match the actual bytes. Versioned objects may use
 `Cache-Control: public, max-age=31536000, immutable`; use a new prefix when assets
 change, even if the font version is unchanged.
 
-Supply the deployed glyph URL as the final style-generator argument:
-
-```sh
-devenv shell -- pnpm --dir maps/styles exec tsx scripts/generate.ts \
-  pmtiles://https://example.com/map.pmtiles generated \
-  'https://example.com/glyphs/storm-sans/1.0.9/{fontstack}/{range}.pbf'
-```
-
-`CYCLONE_GLYPHS_URL` is an alternative to the final argument. The explicit
-argument takes precedence. Publishing is separate from generation; no CDN assets
+Set the deployed glyph URL (for example `https://example.com/fonts/storm-sans/pbf/1.0.9/{fontstack}/{range}.pbf`) as `glyphsUrl` in the `maplibre` plugin options. Publishing is separate from generation; no CDN assets
 are deployed by the build. The complete
 map also needs its PMTiles and sprite assets hosted separately.
 

@@ -44,7 +44,6 @@ import {
   useFormControl
 } from "@cyclone-ui/helpers";
 import { Asterisk, X } from "@cyclone-ui/icons";
-import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import type { SpinnerProps } from "@cyclone-ui/spinner";
 import { Spinner } from "@cyclone-ui/spinner";
@@ -78,6 +77,10 @@ import {
 } from "@tamagui/core";
 import { Label as TamaguiLabel } from "@tamagui/label";
 import { XStack, YStack } from "@tamagui/stacks";
+// Lets TypeScript name `GetFontSizedInput` (SizableText's `size` type) in
+// this package's declarations.
+import type {} from "@tamagui/get-font-sized";
+import { SizableText } from "@tamagui/text";
 import type { ReactNode } from "react";
 import {
   cloneElement,
@@ -140,6 +143,7 @@ const FieldGroupFrame = styled(YStack, {
   display: "flex",
   position: "relative",
   borderRadius: "control",
+
   variants: {
     orientation: {
       vertical: {
@@ -167,6 +171,7 @@ const FieldGroupFrame = styled(YStack, {
       inlined: {}
     }
   } as const,
+
   defaultVariants: {
     orientation: "vertical",
     disabled: false,
@@ -196,8 +201,6 @@ const getFieldDetailsFontSize = (env: StyleEnv) => {
     return;
   }
 
-  // Tamagui v3 has no `$true` font key; resolve the default size step of the
-  // `caption` typography token.
   const font = getFontSized(true, env);
   const fontSize = Number(getVariableValue(font.fontSize) ?? 1);
   const lineHeight = Number(getVariableValue(font.lineHeight) ?? 1);
@@ -205,7 +208,6 @@ const getFieldDetailsFontSize = (env: StyleEnv) => {
   return {
     fontSize,
     lineHeight,
-    fontWeight: font.fontWeight,
     letterSpacing: font.letterSpacing,
     textTransform: font.textTransform,
     fontStyle: font.fontStyle
@@ -213,15 +215,18 @@ const getFieldDetailsFontSize = (env: StyleEnv) => {
 };
 
 /**
- * Tamagui v3 reads a unitless `lineHeight` as a multiplier, so pin the form
- * font's pixel leading explicitly.
+ * The form font for a control size, scaled from the `token` step. Tamagui v3
+ * reads a unitless `lineHeight` as a multiplier, so pin the pixel leading.
  */
-const getFormFontStyle = (size: FormControlSize, env: StyleEnv) => {
-  const style = getFormFontSize(size, env);
+const getFormFontStyle = (
+  size: FormControlSize,
+  env: StyleEnv,
+  token = "sm"
+) => {
+  const style = getFormFontSize(size, env, token);
 
   return {
     fontFamily: style.fontFamily,
-    fontWeight: style.fontWeight,
     fontStyle: style.fontStyle,
     letterSpacing: style.letterSpacing,
     textTransform: style.textTransform,
@@ -238,14 +243,15 @@ const FieldValidationText = styled(ValidationText, {
   displayName: "FieldDetails",
   fontStyle: "italic",
   fontFamily: "caption",
-  marginTop: "md",
+  fontWeight: "medium",
+  marginTop: "lg",
+
   variants: {
     size: formSizeDynamic((size, env) => {
       const style = getFieldDetailsFontSize(env);
       const scale = getFormFontScale(size);
 
       return {
-        fontWeight: style?.fontWeight,
         letterSpacing: style?.letterSpacing,
         textTransform: style?.textTransform,
         fontStyle: style?.fontStyle,
@@ -261,6 +267,7 @@ const FieldValidationText = styled(ValidationText, {
       }
     }
   } as const,
+
   defaultVariants: {
     size: "md",
     disabled: false
@@ -284,7 +291,7 @@ const FieldValidationTextImpl = createStyledHOC(
         {...rest}
         size={size}
         // Track the control's border so the message reads as part of the field.
-        color={`${disabled ? "primaryDisabled" : focused ? "primaryActive" : "primary"} group-hover/field:${disabled ? "primaryDisabled" : focused ? "primaryActive" : "primaryHovered"}`}
+        color={`${disabled ? "primary-disabled" : focused ? "primary-active" : "primary"} group-hover/field:${disabled ? "primary-disabled" : focused ? "primary-active" : "primary-hovered"}`}
         messages={messages}
         disabled={disabled}>
         {children}
@@ -375,7 +382,7 @@ const FieldGroupInnerImpl = createStyledHOC(
           {clearable && Boolean(formattedValue) && (
             <FieldThemeIcon position="end" onClick={handleClear}>
               <X
-                color={`${disabled ? "primaryDisabled" : "primary"} group-hover/field:${disabled ? "primaryDisabled" : "primaryHovered"}`}
+                color={`${disabled ? "primary-disabled" : "primary"} group-hover/field:${disabled ? "primary-disabled" : "primary-hovered"}`}
               />
             </FieldThemeIcon>
           )}
@@ -532,19 +539,22 @@ const FieldGroup = createStyledHOC(
   { displayName: "Field" }
 );
 
-const FieldDetails = styled(BodyText, {
+const FieldDetails = styled(SizableText, {
   displayName: "FieldDetails",
   transition: "200ms",
   color: "primary",
   fontFamily: "caption",
   fontStyle: "italic",
+  fontWeight: "normal",
   opacity: "enter:0 exit:0",
   x: "enter:10px exit:10px",
+
   variants: {
     controlSize: formSizeDynamic(getFormFontStyle),
+
     disabled: {
       true: {
-        color: "primaryDisabled hover:primaryDisabled",
+        color: "primary-disabled hover:primary-disabled",
         cursor: "not-allowed"
       }
     }
@@ -581,8 +591,8 @@ const FieldDetailsImpl = createStyledHOC(
         ref={forwardedRef}
         {...rest}
         color={`${
-          disabled ? "primaryDisabled" : theme !== "base" ? "primary" : "ink"
-        } group-hover/field:${disabled ? "primaryDisabled" : "primaryHovered"}`}
+          disabled ? "primary-disabled" : theme !== "base" ? "primary" : "ink"
+        } group-hover/field:${disabled ? "primary-disabled" : "primary-hovered"}`}
         theme={theme}
         controlSize={size}
         disabled={disabled}>
@@ -593,10 +603,15 @@ const FieldDetailsImpl = createStyledHOC(
   { displayName: "FieldDetails" }
 );
 
-const FieldLabelText = styled(LabelText, {
+const FieldLabelText = styled(SizableText, {
   displayName: "FieldLabel",
+  render: "label",
 
-  transition: "200ms",
+  // Matches `FieldLabelPositioner`, so the label's size and position (which
+  // centers on its height) settle together as it floats.
+  transition: "250ms",
+  color: "emphasis",
+  fontFamily: "display",
   cursor: "pointer",
   wordWrap: "normal",
   flexShrink: 1,
@@ -604,24 +619,46 @@ const FieldLabelText = styled(LabelText, {
   ellipsis: true,
 
   variants: {
-    controlSize: formSizeDynamic(getFormFontStyle),
+    // Styled by the `.resolve` below because the size depends on `floating`.
+    controlSize: styled.dynamic<FormControlSize>(),
+
+    floating: {
+      true: {
+        lineHeight: "xxs",
+        fontWeight: "medium"
+      },
+      false: {
+        lineHeight: "sm",
+        fontWeight: "semibold"
+      }
+    },
+
     disabled: {
       true: {
-        color: "primaryDisabled hover:primaryDisabled",
+        color: "primary-disabled hover:primary-disabled",
         cursor: "not-allowed"
       }
     }
   } as const,
 
   defaultVariants: {
-    disabled: false
+    disabled: false,
+    floating: false
   }
-});
+}).resolve((props, env) =>
+  props.controlSize
+    ? getFormFontStyle(
+        props.controlSize as FormControlSize,
+        env,
+        props.floating ? "xxs" : "lg"
+      )
+    : undefined
+);
 
 const FieldLabelPositioner = styled(View, {
   displayName: "FieldLabel",
 
-  transition: "200ms",
+  transition: "250ms",
 
   variants: {
     labelVariant: {
@@ -640,9 +677,10 @@ const FieldLabelPositioner = styled(View, {
 });
 
 const FieldOptionalLabelText = styled(FieldLabelText, {
-  transition: "200ms",
+  transition: "250ms",
   color: "subtle",
   marginLeft: "lg",
+
   variants: {
     disabled: {
       true: {
@@ -651,6 +689,7 @@ const FieldOptionalLabelText = styled(FieldLabelText, {
       }
     }
   } as const,
+
   defaultVariants: {
     disabled: false
   }
@@ -920,7 +959,7 @@ const FieldLabelTextImpl = createStyledHOC(
                       overflow="hidden"
                       textOverflow="ellipsis"
                       whiteSpace="nowrap"
-                      color={`${disabled ? "primaryDisabled" : "primary"}`}
+                      color={`${disabled ? "primary-disabled" : "primary"}`}
                       // Web-only ellipsis styles are not part of React Native's
                       // style types.
                       style={StyleSheet.flatten([
@@ -956,13 +995,13 @@ const FieldLabelTextImpl = createStyledHOC(
                     <>
                       {hideAsterisk !== true && (
                         <View
-                          transition="200ms"
+                          transition="250ms"
                           position="relative"
                           alignSelf="stretch"
                           width={`${floating ? "sm" : "md"}`}>
                           <Theme name="danger">
                             <Asterisk
-                              transition="200ms"
+                              transition="250ms"
                               color="primary"
                               size={floating ? "sm" : "md"}
                               position="absolute"
@@ -1060,8 +1099,8 @@ const FieldLabel = createStyledHOC(
           paddingBottom={0}
           hideRequired={true}
           textAlign="center"
-          {...(labelDefaults?.inlineFontFamily
-            ? { fontFamily: labelDefaults.inlineFontFamily }
+          {...(labelDefaults?.inlineFontSize
+            ? { fontSize: labelDefaults.inlineFontSize }
             : {})}
           {...props}
           htmlFor={name}
@@ -1311,13 +1350,13 @@ const InnerFieldThemeIcon = createStyledHOC(
           theme={theme}
           borderColor={
             isNeutral
-              ? "outline focus-visible:outlineActive"
-              : "primary focus-visible:primaryActive"
+              ? "outline focus-visible:outline-active"
+              : "primary focus-visible:primary-active"
           }
           arrowBorderColor={
             isNeutral
-              ? "outline focus-visible:outlineActive"
-              : "primary focus-visible:primaryActive"
+              ? "outline focus-visible:outline-active"
+              : "primary focus-visible:primary-active"
           }>
           <Theme name="base">
             <View paddingVertical="2xl" paddingHorizontal="3xl">
@@ -1393,8 +1432,12 @@ const FieldThemeIcon = createStyledHOC(
           theme,
           disabled,
           color: `${
-            disabled ? "primaryDisabled" : focused ? "primaryActive" : "primary"
-          } group-hover/field:${disabled ? "primaryDisabled" : "primaryHovered"}`
+            disabled
+              ? "primary-disabled"
+              : focused
+                ? "primary-active"
+                : "primary"
+          } group-hover/field:${disabled ? "primary-disabled" : "primary-hovered"}`
         })}
       </InnerFieldThemeIcon>
     );
