@@ -256,7 +256,7 @@ const RadioGroupItemContainer = createStyledHOC(
       : selected
         ? "primary-active"
         : inactive
-          ? `${idleColor}Inactive`
+          ? `${idleColor}-inactive`
           : idleColor;
     const hoverColor = disabled
       ? "primary-disabled"
@@ -271,7 +271,7 @@ const RadioGroupItemContainer = createStyledHOC(
     const textColor = (color: "emphasis" | "ink") =>
       disabled
         ? "primary-disabled group-hover/item:primary-disabled"
-        : `${inactive ? `${color}Inactive` : color} group-hover/item:${color}`;
+        : `${inactive ? `${color}-inactive` : color} group-hover/item:${color}`;
 
     const onChange = group.onChange;
     const handlePress = useCallback(

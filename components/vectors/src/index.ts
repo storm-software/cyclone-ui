@@ -28,6 +28,8 @@ export * from "./Diagonal";
 export * from "./DiscoveryCircle";
 export * from "./ErrorCircle";
 export * from "./InfoCircle";
+export * from "./MenuToggle";
 export * from "./PdfIcon";
+export * from "./SearchTrigger";
 export * from "./StormLogoIcon";
 export * from "./StormLogoText";

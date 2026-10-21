@@ -62,7 +62,7 @@ export function themedIcon<P extends IconProps>(
   const Themed = themed(Component as unknown as FC<IconProps>);
 
   const Wrapped = ({ size, ...props }: P) => (
-    <Themed {...(props as IconProps)} size={resolveIconSize(size)} />
+    <Themed {...props} size={resolveIconSize(size)} />
   );
 
   // keep the `themed` HOC marker so `styled()` treats the icon the same way

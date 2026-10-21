@@ -163,7 +163,7 @@ const TabsFrame = styled(TamaguiTabs, {
   displayName: "Tabs",
   context: TabsContext,
   activationMode: "manual",
-  borderRadius: "tab",
+  borderRadius: "tabs",
   position: "relative",
   height: "100%",
   width: "100%",
@@ -448,7 +448,7 @@ const TabsHeaderList = styled(YStack, {
       },
       floating: {
         backgroundColor: "sunken",
-        borderRadius: "tab",
+        borderRadius: "tabs",
         borderColor: "hairline",
         borderWidth: 1
       },
@@ -558,6 +558,7 @@ const TabsHeaderItemHeading = styled(HeadingSmallText, {
   transition: "200ms",
   textAlign: "center",
   paddingVertical: "xl",
+
   variants: {
     // Only font size keys restyle the text; `true` keeps the heading's size.
     size: styled.dynamic<FontSizeTokens | SizeTokens | number>((val, env) =>
@@ -569,11 +570,11 @@ const TabsHeaderItemHeading = styled(HeadingSmallText, {
     selected: {
       true: {
         color: "primary-active",
-        fontWeight: "bold"
+        fontWeight: "semibold"
       },
       false: {
         color: "primary-inactive",
-        fontWeight: "normal"
+        fontWeight: "medium"
       }
     }
   } as const,

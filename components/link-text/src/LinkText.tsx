@@ -117,7 +117,7 @@ const LinkTextFrame = styled(SizableText, {
  * A color token with its interaction states, e.g. `link hover:link-hovered ...`.
  */
 const getStateColors = (token: string) =>
-  `${token} hover:${token}Hovered press:${token}Active focus:${token}Active`;
+  `${token} hover:${token}-hovered press:${token}-active focus:${token}-active`;
 
 /**
  * In v2 an explicit `color` was applied through the inline `style` (via the
@@ -174,7 +174,7 @@ export const LinkText = createStyledHOC(
       [textColor, decorationColor] = [decorationColor, textColor];
     }
     if (disabled) {
-      textColor = `${link}Disabled hover:${link}Disabled`;
+      textColor = `${link}-disabled hover:${link}-disabled`;
     }
 
     return (

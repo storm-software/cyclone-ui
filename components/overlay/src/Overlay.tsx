@@ -23,22 +23,35 @@ import { YStack } from "@tamagui/stacks";
 
 // `LinearGradient` is not a plain styled view; v3 `styled()` only keeps style
 // defaults for it, so the gradient geometry is passed as props at the call site.
-const OverlayGradient = styled(LinearGradient, {
+const OverlayGradientTop = styled(LinearGradient, {
   displayName: "OverlayGradient",
-  transition: "200ms",
+  transition: "400ms",
   pointerEvents: "auto",
-  opacity: "0.6 enter:0 exit:0",
+  opacity: "0.1 enter:0 exit:0",
   backdropFilter: "blur(2px)",
   filter: "blur(2px)",
   position: "absolute",
-  inset: 0
+  inset: 0,
+  zIndex: "20"
+});
+
+const OverlayGradientBottom = styled(LinearGradient, {
+  displayName: "OverlayGradientBottom",
+  transition: "500ms",
+  pointerEvents: "auto",
+  opacity: "0.4 enter:0 exit:0",
+  backdropFilter: "blur(2px)",
+  filter: "blur(2px)",
+  position: "absolute",
+  inset: 0,
+  zIndex: "10"
 });
 
 const OverlayFrame = styled(YStack, {
   displayName: "Overlay",
   transition: "200ms",
   pointerEvents: "auto",
-  opacity: "0.6 enter:0 exit:0",
+  opacity: "0.75 enter:0 exit:0",
   backdropFilter: "blur(35px)",
   filter: "blur(35px)",
   backgroundColor: "#0D0C0766",
@@ -51,7 +64,13 @@ export const Overlay = createStyledHOC(
   ({ children, ...props }, forwardedRef) => {
     return (
       <OverlayFrame ref={forwardedRef} {...props}>
-        <OverlayGradient
+        <OverlayGradientBottom
+          start={[1, 0]}
+          end={[0, 1]}
+          colors={["primary", "transparent"]}
+          locations={[1.0, 0.0]}
+        />
+        <OverlayGradientTop
           start={[0, 0]}
           end={[1, 1]}
           colors={["primary", "transparent"]}

@@ -320,6 +320,9 @@
     },
     {
       "path": "./components/preview-link"
+    },
+    {
+      "path": "./components/search-dialog"
     }
   ],
   "files": []

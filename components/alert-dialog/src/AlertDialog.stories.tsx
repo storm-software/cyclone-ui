@@ -50,7 +50,7 @@ const meta: Meta<AlertDialogStoryArgs> = {
             {children}
           </AlertDialog.Container.Content.Body>
 
-          <XStack gap="3xl" marginTop="3xl" width="100%">
+          <XStack gap="3xl" marginTop="3xl" width="100%" flexWrap="wrap">
             <AlertDialog.Container.Close>
               <AlertDialog.Container.Close.Text>
                 Close

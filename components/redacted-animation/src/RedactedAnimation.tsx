@@ -70,6 +70,46 @@ const RedactedAnimationFrame = styled(View, {
   overflow: "hidden"
 });
 
+// Offsets are px (tuned on a single heading line) capped by a % of the mask, so the
+// stroke keeps the same shape on tall images and shrinks with small text.
+const near = (px: number, pct: number) => `min(${px}px, ${pct}%)`;
+const far = (px: number, pct: number) => `calc(100% - ${near(px, pct)})`;
+
+const markerStroke = `polygon(${(
+  [
+    [0, near(6, 16)],
+    [near(10, 4), near(2, 5)],
+    ["8%", near(1, 4)],
+    ["18%", near(1.6, 4)],
+    ["30%", near(0.4, 2)],
+    ["42%", near(1.4, 4)],
+    ["55%", near(0.2, 1)],
+    ["67%", near(1.2, 3)],
+    ["79%", near(0.4, 2)],
+    ["90%", near(1.4, 4)],
+    [far(13, 4), near(0.8, 2)],
+    ["100%", near(5, 12)],
+    [far(6, 2), near(13, 32)],
+    ["100%", near(22, 54)],
+    [far(10, 3), far(10, 26)],
+    ["100%", far(5, 12)],
+    [far(16, 5), far(0.4, 1)],
+    ["86%", far(1, 3)],
+    ["74%", far(0.2, 1)],
+    ["61%", far(1.2, 3)],
+    ["48%", far(0.2, 1)],
+    ["35%", far(1.2, 3)],
+    ["22%", far(0.4, 1)],
+    ["10%", far(1, 3)],
+    [near(16, 5), far(0.4, 1)],
+    [near(3, 1), far(6, 15)],
+    [near(10, 3), far(15, 38)],
+    [0, near(16, 40)]
+  ] as const
+)
+  .map(([x, y]) => `${x} ${y}`)
+  .join(", ")})`;
+
 const Redaction = styled(View, {
   displayName: "RedactedAnimationRedaction",
   position: "absolute",
@@ -80,6 +120,8 @@ const Redaction = styled(View, {
   left: -1,
   zIndex: 1,
   backgroundColor: "primary",
+  // Wobbly edges and ragged ends so the mask reads as a marker stroke rather than a box (web only).
+  clipPath: markerStroke,
   pointerEvents: "none",
   x: 0
 });
@@ -91,6 +133,8 @@ export type RedactedAnimationProps = Omit<
   "direction"
 > & {
   direction?: RedactedAnimationDirection;
+  /** Milliseconds to wait before revealing the content. */
+  delay?: number;
 };
 
 export const RedactedAnimation = createStyledHOC(
@@ -99,6 +143,7 @@ export const RedactedAnimation = createStyledHOC(
     {
       children,
       direction = "left",
+      delay = REDACTION_DELAY,
       ...props
     }: GetProps<typeof RedactedAnimationFrame> & RedactedAnimationProps,
     forwardedRef
@@ -112,10 +157,10 @@ export const RedactedAnimation = createStyledHOC(
         return;
       }
 
-      const timeout = setTimeout(() => setIsRevealed(true), REDACTION_DELAY);
+      const timeout = setTimeout(() => setIsRevealed(true), delay);
 
       return () => clearTimeout(timeout);
-    }, [prefersReducedMotion]);
+    }, [delay, prefersReducedMotion]);
 
     return (
       <RedactedAnimationFrame ref={forwardedRef} {...props}>

@@ -97,7 +97,7 @@ const DialogBodyImpl = createStyledHOC(
   ({ children, ...props }, forwardedRef) => {
     return (
       <TamaguiDialogDescription render="span">
-        <DialogBody ref={forwardedRef} size="13xl" {...props}>
+        <DialogBody ref={forwardedRef} {...props}>
           {children}
         </DialogBody>
       </TamaguiDialogDescription>
@@ -217,6 +217,7 @@ const DialogContainer = createStyledHOC(
       children,
       bordered = true,
       variant = "floating",
+      maxWidth,
       ...props
     }: GetProps<typeof Container> & TamaguiDialogContentProps,
     forwardedRef
@@ -226,6 +227,9 @@ const DialogContainer = createStyledHOC(
         backgroundColor="transparent"
         borderWidth={0}
         width="95%"
+        // On this frame: capping only the container would leave the rest of
+        // the 95% as a transparent strip that swallows clicks meant to close.
+        maxWidth={maxWidth}
         flexDirection="row"
         padding={0}
         margin="7xl"

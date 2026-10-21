@@ -194,8 +194,8 @@ export const manifest: DesignSystemManifest = {
       alias: true
     },
     {
-      path: "border-radius.tabheader",
-      cssVar: "--storm-border-radius-tabheader",
+      path: "border-radius.tabs",
+      cssVar: "--storm-border-radius-tabs",
       type: "dimension",
       category: "radius",
       value: "0.375rem",
@@ -4583,6 +4583,11 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/scroll-view",
       jsx: ["ScrollView"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/search-dialog",
+      jsx: ["SearchDialog"],
       roles: []
     },
     {

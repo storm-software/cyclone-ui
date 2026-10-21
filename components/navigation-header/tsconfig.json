@@ -29,7 +29,16 @@
       "path": "../icons"
     },
     {
+      "path": "../redacted-animation"
+    },
+    {
+      "path": "../search-dialog"
+    },
+    {
       "path": "../button"
+    },
+    {
+      "path": "../vectors"
     }
   ],
   "files": [],

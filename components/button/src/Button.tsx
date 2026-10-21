@@ -1259,6 +1259,9 @@ const ButtonContainerImpl = createStyledHOC(
         // rendered `<a>` element when `render="a"`.
         {...({ href } as object)}
         download={download}
+        // Before `{...props}`: Tamagui applies props in order, so the variant's
+        // `padding: 0` would otherwise override explicit padding props.
+        noPadding={noPadding}
         {...props}
         onPress={handlePress}
         frameSize={resolveSizeToken(size)}
@@ -1266,7 +1269,6 @@ const ButtonContainerImpl = createStyledHOC(
         rounded={rounded}
         variant={variant}
         disabled={disabled}
-        noPadding={noPadding}
         ringed={ringed}
         animate={animate}
         width={circular ? undefined : props.width}>

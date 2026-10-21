@@ -77,6 +77,13 @@ export const Base: Story = {
     await expect(left).toHaveAttribute("aria-pressed", "false");
     await userEvent.click(center);
     await expect(center).toHaveAttribute("aria-pressed", "false");
+
+    const group = canvas.getByRole("group");
+    await expect(
+      Number.parseFloat(getComputedStyle(group).borderTopLeftRadius)
+    ).toBeGreaterThan(
+      Number.parseFloat(getComputedStyle(left).borderTopLeftRadius)
+    );
   }
 };
 

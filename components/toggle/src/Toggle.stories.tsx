@@ -69,6 +69,16 @@ export const Base: Story = {
     await expect(toggle).toHaveAttribute("aria-pressed", "true");
     await userEvent.keyboard(" ");
     await expect(toggle).toHaveAttribute("aria-pressed", "false");
+
+    const indicator = toggle.firstElementChild;
+    await expect(indicator).not.toBeNull();
+    await expect(
+      Number.parseFloat(getComputedStyle(toggle).borderTopLeftRadius)
+    ).toBeGreaterThan(
+      Number.parseFloat(
+        getComputedStyle(indicator as Element).borderTopLeftRadius
+      )
+    );
   }
 };
 

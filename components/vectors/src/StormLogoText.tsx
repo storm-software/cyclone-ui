@@ -35,12 +35,7 @@ const ThemedIcon = ({ color: colorProp, ...rest }: IconProps) => {
     : (theme.primary?.get() ?? theme.color?.get());
 
   return (
-    <Svg
-      width="1621.8"
-      height="292.8"
-      viewBox="123 203 1802 244"
-      role="img"
-      {...(rest as SvgProps)}>
+    <Svg viewBox="123 203 1802 244" role="img" {...(rest as SvgProps)}>
       <G fill={color}>
         <Path
           d="

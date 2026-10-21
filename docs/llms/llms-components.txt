@@ -1754,15 +1754,18 @@ A responsive site header made of Logo, Navigation, Actions and MenuButton slots.
 
 ### Dependencies
 
+- `@cyclone-ui/button`: `workspace:*`
 - `@cyclone-ui/eyebrow-text`: `workspace:*`
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
 - `@cyclone-ui/link`: `workspace:*`
+- `@cyclone-ui/redacted-animation`: `workspace:*`
+- `@cyclone-ui/search-dialog`: `workspace:*`
+- `@cyclone-ui/vectors`: `workspace:*`
 - `@tamagui/core`: `catalog:`
 
 ### Development Dependencies
 
-- `@cyclone-ui/button`: `workspace:*`
 - `@storybook/react-vite`: `catalog:`
 - `@tamagui/text`: `catalog:`
 - `react`: `catalog:`
@@ -2443,6 +2446,43 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 | `../../components/scroll-view/node_modules/react-native/index.js` | `file` |  |
 | `../../components/scroll-view/node_modules/react/index.js` | `file` |  |
 | `../../components/scroll-view/src/index.ts` | `file` |  |
+
+## @cyclone-ui/search-dialog
+
+A search icon Button that opens a Dialog for searching the application, like the fumadocs search dialog. It also opens with ⌘K / Ctrl+K. A debounced `search` function (static index or API) returns page, heading and text results with breadcrumbs and highlighted query words, narrowed by optional filter toggles. The arrow keys move through the results and Enter opens one. The last results chosen are saved in localStorage and listed as "Recent" when it opens, where they can be removed one by one or cleared.
+
+- **Name:** `@cyclone-ui/search-dialog`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/button`: `workspace:*`
+- `@cyclone-ui/dialog`: `workspace:*`
+- `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/input`: `workspace:*`
+- `@cyclone-ui/toggle-group`: `workspace:*`
+- `@cyclone-ui/vectors`: `workspace:*`
+- `@cyclone-ui/visually-hidden`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/search-dialog/dist/index.cjs` | `file` |  |
+| `../../components/search-dialog/dist/index.mjs` | `file` |  |
+| `../../components/search-dialog/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/search-dialog/node_modules/react-native/index.js` | `file` |  |
+| `../../components/search-dialog/node_modules/react/index.js` | `file` |  |
+| `../../components/search-dialog/src/index.ts` | `file` |  |
 
 ## @cyclone-ui/search-input
 

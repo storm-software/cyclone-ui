@@ -15078,7 +15078,7 @@ module.exports = {
     tab: {
       key: "{border-radius.tab}",
       $description:
-        "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
       $type: "dimension",
       $value: "0.25rem",
       filePath:
@@ -15086,7 +15086,7 @@ module.exports = {
       isSource: true,
       original: {
         $description:
-          "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+          "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
         $type: "dimension",
         $value: "{border-radius.sm}",
         key: "{border-radius.tab}"
@@ -15098,10 +15098,10 @@ module.exports = {
       },
       path: ["border-radius", "tab"]
     },
-    tabheader: {
-      key: "{border-radius.tabheader}",
+    tabs: {
+      key: "{border-radius.tabs}",
       $description:
-        "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
       $type: "dimension",
       $value: "0.375rem",
       filePath:
@@ -15109,17 +15109,17 @@ module.exports = {
       isSource: true,
       original: {
         $description:
-          "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+          "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
         $type: "dimension",
         $value: "{border-radius.md}",
-        key: "{border-radius.tabheader}"
+        key: "{border-radius.tabs}"
       },
-      name: "BorderRadiusTabheader",
+      name: "BorderRadiusTabs",
       attributes: {
         category: "border-radius",
-        type: "tabheader"
+        type: "tabs"
       },
-      path: ["border-radius", "tabheader"]
+      path: ["border-radius", "tabs"]
     },
     dialog: {
       key: "{border-radius.dialog}",
@@ -17206,10 +17206,10 @@ module.exports = {
       key: "{typography.display}",
       $type: "typography",
       $description:
-        "Default UI display face: Storm Sans with snug leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
+        "Default UI display face: Storm Sans with normal leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
       $value: {
         fontFamily: "Storm Sans",
-        lineHeight: 1.125
+        lineHeight: 1.2375
       },
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
@@ -17217,10 +17217,10 @@ module.exports = {
       original: {
         $type: "typography",
         $description:
-          "Default UI display face: Storm Sans with snug leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
+          "Default UI display face: Storm Sans with normal leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
         $value: {
           fontFamily: "Storm Sans",
-          lineHeight: "{line-height.snug}"
+          lineHeight: "{line-height.normal}"
         },
         key: "{typography.display}"
       },
@@ -17235,10 +17235,10 @@ module.exports = {
       key: "{typography.editorial}",
       $type: "typography",
       $description:
-        "Editorial display face: Storm Serif with snug leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
+        "Editorial display face: Storm Serif with normal leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
       $value: {
         fontFamily: "Storm Serif",
-        lineHeight: 1.125
+        lineHeight: 1.2375
       },
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
@@ -17246,10 +17246,10 @@ module.exports = {
       original: {
         $type: "typography",
         $description:
-          "Editorial display face: Storm Serif with snug leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
+          "Editorial display face: Storm Serif with normal leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
         $value: {
           fontFamily: "Storm Serif",
-          lineHeight: "{line-height.snug}"
+          lineHeight: "{line-height.normal}"
         },
         key: "{typography.editorial}"
       },

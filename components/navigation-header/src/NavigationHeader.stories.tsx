@@ -17,7 +17,8 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { Lightning, User } from "@cyclone-ui/icons";
+import { DiscordLogo, GithubLogo, User } from "@cyclone-ui/icons";
+import { StormLogoIcon, StormLogoText } from "@cyclone-ui/vectors";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { styled, View } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
@@ -101,27 +102,18 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
 );
 
 const StoryLogo = () => (
-  <View alignItems="center" flexDirection="row" gap="2xl">
-    <View
-      width="8xl"
-      height="8xl"
-      alignItems="center"
-      justifyContent="center"
-      backgroundColor="primary"
-      borderRadius="full">
-      <Lightning size={16} color="secondary" weight="fill" />
-    </View>
-    <SizableText color="primary" fontWeight="bold" fontSize="xl">
-      Storm
-    </SizableText>
+  <View alignItems="center" flexDirection="row" gap="xl">
+    {/* Heights follow each SVG's viewBox aspect ratio (≈0.845 and ≈7.385). */}
+    <StormLogoIcon width={34} height={30} />
+    <StormLogoText width={140} />
   </View>
 );
 
 const storyActions = (
   <>
     <Button
-      variant="ghost"
-      ghostOpacity={0.6}
+      variant="outlined"
+      rounded={true}
       flexGrow={0}
       width={96}
       size="10xl">
@@ -131,7 +123,7 @@ const storyActions = (
       variant="primary"
       rounded={true}
       flexGrow={0}
-      width={128}
+      width={100}
       size="10xl">
       <Button.Text>Get started</Button.Text>
     </Button>
@@ -219,6 +211,44 @@ const storyNavigation = (
   </NavigationHeader.Navigation>
 );
 
+const storySocial = (
+  <NavigationHeader.Social>
+    <NavigationHeader.Social.Link
+      href="https://github.com/storm-software"
+      label="GitHub"
+      icon={GithubLogo}
+    />
+    <NavigationHeader.Social.Link
+      href="https://discord.gg/MQ6YVzakM5"
+      label="Discord"
+      icon={DiscordLogo}
+    />
+  </NavigationHeader.Social>
+);
+
+const storySections = [
+  { id: "hero", content: "Build what matters" },
+  { id: "research", content: "Research and discovery" },
+  { id: "products", content: "Products for every team" },
+  { id: "company", content: "A long-term perspective" }
+];
+
+const storySearch = (
+  <NavigationHeader.Search
+    search={(query: string) =>
+      storySections
+        .filter(section =>
+          section.content.toLocaleLowerCase().includes(query.toLowerCase())
+        )
+        .map(section => ({ ...section, url: `#${section.id}` }))
+    }
+    defaultResults={storySections.map(section => ({
+      ...section,
+      url: `#${section.id}`
+    }))}
+  />
+);
+
 const meta = {
   title: "Blocks/NavigationHeader",
   component: NavigationHeader,
@@ -236,7 +266,9 @@ const meta = {
           <StoryLogo />
         </NavigationHeader.Logo>
         {storyNavigation}
+        {storySearch}
         <NavigationHeader.Actions>{storyActions}</NavigationHeader.Actions>
+        {storySocial}
       </NavigationHeader>
     </StoryPage>
   )

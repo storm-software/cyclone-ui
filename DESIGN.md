@@ -217,10 +217,10 @@ colors:
 typography:
   display:
     fontFamily: "Storm Sans"
-    lineHeight: "1.125"
+    lineHeight: "1.2375"
   editorial:
     fontFamily: "Storm Serif"
-    lineHeight: "1.125"
+    lineHeight: "1.2375"
   body:
     fontFamily: "Storm Sans"
     lineHeight: "1.125"
@@ -526,8 +526,8 @@ Cyclone UI design tokens — 211 color tokens, 6 typography tokens, 70 spacing t
 
 ## Typography
 
-- **display:** fontFamily: Storm Sans, lineHeight: 1.125
-- **editorial:** fontFamily: Storm Serif, lineHeight: 1.125
+- **display:** fontFamily: Storm Sans, lineHeight: 1.2375
+- **editorial:** fontFamily: Storm Serif, lineHeight: 1.2375
 - **body:** fontFamily: Storm Sans, lineHeight: 1.125
 - **caption:** fontFamily: Storm Sans, lineHeight: 1.125
 - **eyebrow:** fontFamily: Google Sans Code, lineHeight: 0.765

@@ -4927,17 +4927,17 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-tab",
       description:
-        "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
       theme: undefined,
       typography: false
     },
     {
-      path: "border-radius.tabheader",
+      path: "border-radius.tabs",
       type: "dimension",
       value: "var(--border-radius-md)",
-      cssVar: "--cu-border-radius-tabheader",
+      cssVar: "--cu-border-radius-tabs",
       description:
-        "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
       theme: undefined,
       typography: false
     },
@@ -5312,20 +5312,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display",
       type: "typography",
-      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-display",
       description:
-        "Default UI display face: Storm Sans with snug leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
+        "Default UI display face: Storm Sans with normal leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.editorial",
       type: "typography",
-      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-editorial",
       description:
-        "Editorial display face: Storm Serif with snug leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
+        "Editorial display face: Storm Serif with normal leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
       theme: undefined,
       typography: true
     },
@@ -10540,17 +10540,17 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-tab",
       description:
-        "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
       theme: undefined,
       typography: false
     },
     {
-      path: "border-radius.tabheader",
+      path: "border-radius.tabs",
       type: "dimension",
       value: "var(--border-radius-md)",
-      cssVar: "--cu-border-radius-tabheader",
+      cssVar: "--cu-border-radius-tabs",
       description:
-        "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
       theme: undefined,
       typography: false
     },
@@ -10925,20 +10925,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display",
       type: "typography",
-      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-display",
       description:
-        "Default UI display face: Storm Sans with snug leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
+        "Default UI display face: Storm Sans with normal leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.editorial",
       type: "typography",
-      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-editorial",
       description:
-        "Editorial display face: Storm Serif with snug leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
+        "Editorial display face: Storm Serif with normal leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
       theme: undefined,
       typography: true
     },
@@ -16153,17 +16153,17 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-tab",
       description:
-        "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
       theme: undefined,
       typography: false
     },
     {
-      path: "border-radius.tabheader",
+      path: "border-radius.tabs",
       type: "dimension",
       value: "var(--border-radius-md)",
-      cssVar: "--cu-border-radius-tabheader",
+      cssVar: "--cu-border-radius-tabs",
       description:
-        "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
       theme: undefined,
       typography: false
     },
@@ -16538,20 +16538,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display",
       type: "typography",
-      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-display",
       description:
-        "Default UI display face: Storm Sans with snug leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
+        "Default UI display face: Storm Sans with normal leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.editorial",
       type: "typography",
-      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-editorial",
       description:
-        "Editorial display face: Storm Serif with snug leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
+        "Editorial display face: Storm Serif with normal leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
       theme: undefined,
       typography: true
     },
@@ -21768,17 +21768,17 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-tab",
       description:
-        "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
       theme: undefined,
       typography: false
     },
     {
-      path: "border-radius.tabheader",
+      path: "border-radius.tabs",
       type: "dimension",
       value: "var(--border-radius-md)",
-      cssVar: "--cu-border-radius-tabheader",
+      cssVar: "--cu-border-radius-tabs",
       description:
-        "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
       theme: undefined,
       typography: false
     },
@@ -22153,20 +22153,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display",
       type: "typography",
-      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-display",
       description:
-        "Default UI display face: Storm Sans with snug leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
+        "Default UI display face: Storm Sans with normal leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.editorial",
       type: "typography",
-      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-editorial",
       description:
-        "Editorial display face: Storm Serif with snug leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
+        "Editorial display face: Storm Serif with normal leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
       theme: undefined,
       typography: true
     },
@@ -27383,17 +27383,17 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-tab",
       description:
-        "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
       theme: undefined,
       typography: false
     },
     {
-      path: "border-radius.tabheader",
+      path: "border-radius.tabs",
       type: "dimension",
       value: "var(--border-radius-md)",
-      cssVar: "--cu-border-radius-tabheader",
+      cssVar: "--cu-border-radius-tabs",
       description:
-        "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
       theme: undefined,
       typography: false
     },
@@ -27768,20 +27768,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display",
       type: "typography",
-      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-display",
       description:
-        "Default UI display face: Storm Sans with snug leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
+        "Default UI display face: Storm Sans with normal leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.editorial",
       type: "typography",
-      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-editorial",
       description:
-        "Editorial display face: Storm Serif with snug leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
+        "Editorial display face: Storm Serif with normal leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
       theme: undefined,
       typography: true
     },
@@ -32998,17 +32998,17 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-tab",
       description:
-        "Corner radius for tabs (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for inset tabs and toggle indicators (4px, `border-radius.sm`). Used by Tabs, Toggle and ToggleGroup items.",
       theme: undefined,
       typography: false
     },
     {
-      path: "border-radius.tabheader",
+      path: "border-radius.tabs",
       type: "dimension",
       value: "var(--border-radius-md)",
-      cssVar: "--cu-border-radius-tabheader",
+      cssVar: "--cu-border-radius-tabs",
       description:
-        "Corner radius for tabs' headers (6px, `border-radius.md`). Used by Tabs triggers.",
+        "Corner radius for frames that contain inset tab-like controls (6px, `border-radius.md`). Used by Tabs headers, Toggle and ToggleGroup.",
       theme: undefined,
       typography: false
     },
@@ -33383,20 +33383,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display",
       type: "typography",
-      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Sans","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-display",
       description:
-        "Default UI display face: Storm Sans with snug leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
+        "Default UI display face: Storm Sans with normal leading. Size and weight come from the component. Use it for headings, labels and other short, prominent UI text such as titles, buttons, tags and toggles. Used by HeadingText (`base` variant, all levels), LabelText, Button, LinkText, Tag, Toggle, Breadcrumb, TypeTable and CodeBlock/CreditCardInput chrome.",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.editorial",
       type: "typography",
-      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.snug}"}',
+      value: '{"fontFamily":"Storm Serif","lineHeight":"{line-height.normal}"}',
       cssVar: "--cu-typography-editorial",
       description:
-        "Editorial display face: Storm Serif with snug leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
+        "Editorial display face: Storm Serif with normal leading. Size and weight come from the component. Use it for long-form, content-led headings such as article, blog and marketing page titles, where a warmer, bookish tone fits better than `display`. Used by HeadingText's `editorial` variant for the larger levels; the smallest levels fall back to `display` for legibility.",
       theme: undefined,
       typography: true
     },

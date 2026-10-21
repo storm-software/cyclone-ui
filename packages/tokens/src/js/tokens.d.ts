@@ -609,7 +609,7 @@ declare const tokens: {
     control: DesignToken;
     checkbox: DesignToken;
     tab: DesignToken;
-    tabheader: DesignToken;
+    tabs: DesignToken;
     dialog: DesignToken;
     sheet: DesignToken;
     drawer: DesignToken;

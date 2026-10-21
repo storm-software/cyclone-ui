@@ -144,7 +144,7 @@ const AlertDialogBody = createStyledHOC(
   Dialog.Body,
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Dialog.Body ref={forwardedRef} color="ink" size="14xl" {...props}>
+      <Dialog.Body ref={forwardedRef} color="ink" {...props}>
         {children}
       </Dialog.Body>
     );

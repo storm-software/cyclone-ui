@@ -85,6 +85,14 @@ export const Circular: Story = {
   }
 };
 
+export const NoPadding: Story = {
+  args: {
+    icon: <X />,
+    noPadding: true,
+    paddingHorizontal: "2xl"
+  }
+};
+
 export const Sizes: Story = {
   render: () => (
     <>

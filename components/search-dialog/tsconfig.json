@@ -1,0 +1,48 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/search-dialog/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "lib": ["ESnext", "DOM"],
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/search-dialog"
+  },
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../body-text"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../dialog"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../input"
+    },
+    {
+      "path": "../toggle-group"
+    },
+    {
+      "path": "../vectors"
+    },
+    {
+      "path": "../visually-hidden"
+    }
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

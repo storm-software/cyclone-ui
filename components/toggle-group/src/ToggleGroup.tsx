@@ -38,7 +38,7 @@ const ToggleGroupFrame = styled(View, {
   borderWidth: 1,
   borderColor: "hairline",
   backgroundColor: "sunken",
-  borderRadius: "control",
+  borderRadius: "tabs",
   gap: "lg",
 
   variants: {
@@ -241,7 +241,7 @@ const ToggleGroupItem = forwardRef<TamaguiElement, ToggleGroupItemProps>(
         rounded={group.rounded}
         borderWidth={0}
         padding={0}
-        {...(!group.rounded && { borderRadius: "trigger" })}
+        {...(!group.rounded && { borderRadius: "tab" })}
         height={height}
         minHeight={height}
         backgroundColor="transparent"

@@ -16,14 +16,20 @@
 
  ------------------------------------------------------------------- */
 
+import { Button } from "@cyclone-ui/button";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { HeadingLargeText } from "@cyclone-ui/heading-text";
-import { CaretDown, List, X } from "@cyclone-ui/icons";
+import type { IconComponent } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
+import { RedactedAnimation } from "@cyclone-ui/redacted-animation";
+import type { SearchDialogProps } from "@cyclone-ui/search-dialog";
+import { SearchDialog } from "@cyclone-ui/search-dialog";
+import { MenuToggle } from "@cyclone-ui/vectors";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
 import {
   createStyledHOC,
   styled,
+  useMedia,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -94,6 +100,35 @@ const subscribeToReducedMotion = (onStoreChange: () => void) => {
   return () => mediaQuery.removeEventListener("change", onStoreChange);
 };
 
+// Locks page scroll behind the compact menu so only the panel scrolls.
+const useLockPageScroll = (locked: boolean) => {
+  useEffect(() => {
+    const root = (
+      globalThis as typeof globalThis & {
+        document?: {
+          documentElement: {
+            style: {
+              overflow: string;
+              setProperty: (property: string, value: string) => void;
+            };
+          };
+        };
+      }
+    ).document?.documentElement;
+
+    if (!locked || !root) {
+      return;
+    }
+
+    const { overflow } = root.style;
+    root.style.setProperty("overflow", "hidden");
+
+    return () => {
+      root.style.setProperty("overflow", overflow);
+    };
+  }, [locked]);
+};
+
 const getPrefersReducedMotion = () =>
   getBrowserWindow()?.matchMedia?.(reducedMotionMediaQuery).matches ?? false;
 
@@ -125,10 +160,12 @@ const NavigationHeaderBar = styled(View, {
   maxWidth: 1440,
   boxSizing: "border-box",
   marginHorizontal: "auto",
-  paddingHorizontal: "4xl max-md:2xl",
+  paddingHorizontal: "8xl max-md:4xl",
+  paddingVertical: "xl max-md:lg",
   alignItems: "center",
   flexDirection: "row",
-  gap: "5xl"
+  // Tight on compact screens so logo, search and menu fit in 320px.
+  gap: "5xl max-md:lg"
 });
 
 const NavigationHeaderEdge = styled(View, {
@@ -152,6 +189,19 @@ const NavigationHeaderLogoContent = styled(View, {
   transformOrigin: "left center"
 });
 
+// Scales the navigation and search together, so the larger navigation at the
+// top of the page never overlaps the search button.
+const NavigationHeaderCenter = styled(View, {
+  displayName: "NavigationHeaderCenter",
+  height: "100%",
+  alignItems: "center",
+  flexDirection: "row",
+  // Navigation's `6xl` gap minus the search button's inner padding, so the
+  // search glyph sits as far from the last item as the items do apart.
+  gap: "3xl",
+  transformOrigin: "center"
+});
+
 const NavigationHeaderNavigation = styled(View, {
   displayName: "NavigationHeaderNavigation",
   render: "nav",
@@ -160,7 +210,6 @@ const NavigationHeaderNavigation = styled(View, {
   justifyContent: "center",
   flexDirection: "row",
   gap: "6xl",
-  transformOrigin: "center",
   display: "max-md:none"
 });
 
@@ -169,7 +218,7 @@ const NavigationHeaderItemFrame = styled(View, {
   display: "block",
   width: "fit-content",
   flexShrink: 0,
-  borderBottomWidth: 2,
+  borderBottomWidth: 3,
   borderBottomColor: "transparent",
 
   variants: {
@@ -199,8 +248,8 @@ const NavigationHeaderItemLink = styled(Link, {
   alignItems: "center",
   justifyContent: "center",
   display: "flex",
-  color: "emphasis hover:emphasis-active focus-visible:emphasis-active",
-  fontWeight: 500,
+  color: "emphasis hover:emphasis-hovered focus-visible:emphasis-active",
+  fontWeight: "bold",
   textDecorationLine: "none hover:none",
   outlineColor: "focus-visible:primary",
   outlineOffset: "focus-visible:-4px",
@@ -210,7 +259,7 @@ const NavigationHeaderItemLink = styled(Link, {
   variants: {
     active: {
       true: {
-        color: "emphasis"
+        color: "emphasis-active"
       }
     },
     mobile: {
@@ -280,9 +329,8 @@ const NavigationHeaderDropdownGroup = styled(View, {
 
 const NavigationHeaderDropdownGroupLabel = styled(EyebrowText, {
   displayName: "NavigationHeaderDropdownGroupLabel",
-  marginBottom: "xl",
-  color: "subtle",
-  variant: "sm"
+  marginBottom: "3xl",
+  color: "subtle"
 });
 
 const NavigationHeaderDropdownLink = styled(Link, {
@@ -316,16 +364,6 @@ const NavigationHeaderDropdownEntrance = styled(View, {
   width: "100%"
 });
 
-const NavigationHeaderMobileGroupLabel = styled(
-  NavigationHeaderDropdownGroupLabel,
-  {
-    displayName: "NavigationHeaderMobileGroupLabel",
-    marginTop: "2xl",
-    marginBottom: "lg",
-    paddingHorizontal: "4xl"
-  }
-);
-
 const NavigationHeaderActions = styled(NavigationHeaderEdge, {
   displayName: "NavigationHeaderActions",
   paddingVertical: "2xl",
@@ -340,78 +378,49 @@ const NavigationHeaderMenuButtonSlot = styled(View, {
   marginLeft: "auto"
 });
 
-const NavigationHeaderMenuButton = styled(View, {
-  displayName: "NavigationHeaderMenuButton",
-  render: "button",
-  role: "button",
-  width: "11xl",
-  height: "11xl",
-  padding: 0,
-  alignItems: "center",
-  justifyContent: "center",
-  cursor: "pointer",
-  backgroundColor: "transparent hover:secondary-hovered press:secondary-active",
-  borderWidth: 0,
-  borderRadius: "full",
-  boxShadow: "focus-visible:ring-offset"
-});
-
-const NavigationHeaderMobilePanel = styled(View, {
-  displayName: "NavigationHeaderMobilePanel",
-  display: "none",
+// Kept separate from the animated panel: the motion driver writes styles
+// inline, which would pin a `max-md:` display clause.
+const NavigationHeaderMobileLayer = styled(View, {
+  displayName: "NavigationHeaderMobileLayer",
+  display: "none max-md:flex",
   position: "absolute",
   top: "100%",
   left: 0,
   right: 0,
-  // `dvh` keeps the last links reachable behind mobile browser toolbars.
-  maxHeight: "calc(100dvh - 52px)",
-  paddingVertical: "2xl",
+  height: "calc(100dvh - 100%)",
+  // Clips the panel's slide-in so it never overlaps the header bar.
+  overflow: "hidden"
+});
+
+const NavigationHeaderMobilePanel = styled(View, {
+  displayName: "NavigationHeaderMobilePanel",
+  flexGrow: 1,
+  flexShrink: 1,
+  minHeight: 0,
   overflowY: "auto",
-  backgroundColor: "canvas",
-  borderBottomWidth: 1,
-  borderBottomColor: "hairline",
-  boxShadow: "md",
-  variants: {
-    open: {
-      true: {
-        display: "max-md:flex"
-      }
-    }
-  } as const
+  backgroundColor: "canvas"
+});
+
+const NavigationHeaderMobileContent = styled(View, {
+  displayName: "NavigationHeaderMobileContent",
+  // Fills the panel so the social footer can sit at its bottom.
+  flexGrow: 1,
+  paddingTop: "4xl",
+  paddingBottom: "2xl"
 });
 
 const NavigationHeaderMobileNavigation = styled(View, {
   displayName: "NavigationHeaderMobileNavigation",
   render: "nav",
-
   width: "100%",
   flexDirection: "column"
-});
-
-const NavigationHeaderMobileChildren = styled(View, {
-  displayName: "NavigationHeaderMobileChildren",
-  marginLeft: "5xl",
-  marginBottom: "2xl",
-  flexDirection: "column",
-  borderLeftWidth: 1,
-  borderLeftColor: "hairline"
-});
-
-const NavigationHeaderMobileChildLink = styled(NavigationHeaderDropdownLink, {
-  displayName: "NavigationHeaderMobileChildLink",
-  minHeight: "10xl",
-  paddingHorizontal: "4xl",
-  flexDirection: "row",
-  alignItems: "center",
-  whiteSpace: "normal",
-  backgroundColor: "transparent"
 });
 
 const NavigationHeaderMobileActions = styled(View, {
   displayName: "NavigationHeaderMobileActions",
   marginTop: "2xl",
   paddingTop: "5xl",
-  paddingHorizontal: "5xl",
+  paddingHorizontal: "2xl",
   paddingBottom: "3xl",
   alignItems: "center",
   flexDirection: "row",
@@ -419,6 +428,34 @@ const NavigationHeaderMobileActions = styled(View, {
   gap: "2xl",
   borderTopWidth: 1,
   borderTopColor: "hairline"
+});
+
+const NavigationHeaderMobileSocial = styled(View, {
+  displayName: "NavigationHeaderMobileSocial",
+  render: "nav",
+  marginTop: "auto",
+  paddingTop: "3xl",
+  paddingHorizontal: "2xl",
+  alignItems: "center",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  gap: "md",
+  borderTopWidth: 1,
+  borderTopColor: "hairline"
+});
+
+const NavigationHeaderSocialLink = styled(Link, {
+  displayName: "NavigationHeaderSocialLink",
+  width: "10xl",
+  height: "10xl",
+  alignItems: "center",
+  justifyContent: "center",
+  display: "flex",
+  textDecorationLine: "none hover:none",
+  borderRadius: "md",
+  outlineColor: "focus-visible:primary",
+  outlineStyle: "focus-visible:solid",
+  outlineWidth: "focus-visible:2px"
 });
 
 interface NavigationHeaderChildItem {
@@ -549,6 +586,14 @@ export interface NavigationHeaderNavigationProps {
 const NavigationHeaderNavigationSlot = (_: NavigationHeaderNavigationProps) =>
   null;
 
+export type NavigationHeaderSearchProps = SearchDialogProps;
+
+/**
+ * A search button and dialog, shown after the navigation on wide screens and
+ * before the menu button on compact ones.
+ */
+const NavigationHeaderSearchSlot = (_: NavigationHeaderSearchProps) => null;
+
 export interface NavigationHeaderMenuButtonProps {
   /** Accessible name for the compact navigation trigger. */
   label?: string;
@@ -590,6 +635,26 @@ export interface NavigationHeaderLinkProps extends Omit<
 /** A destination within a mega-menu group. */
 const NavigationHeaderLinkSlot = (_: NavigationHeaderLinkProps) => null;
 
+export interface NavigationHeaderSocialProps {
+  children: ReactNode;
+  /** Accessible name for the social links landmark. */
+  label?: string;
+}
+
+/** Social links shown in the footer of the compact menu. */
+const NavigationHeaderSocialSlot = (_: NavigationHeaderSocialProps) => null;
+
+export interface NavigationHeaderSocialLinkProps {
+  href: string;
+  /** Accessible name, since the link shows only its icon. */
+  label: string;
+  icon: IconComponent;
+}
+
+/** An icon link to a social profile, opened in a new tab. */
+const NavigationHeaderSocialLinkSlot = (_: NavigationHeaderSocialLinkProps) =>
+  null;
+
 const getSlots = <Props,>(children: ReactNode, slot: unknown) =>
   Children.toArray(children).filter(
     (child): child is ReactElement<Props> =>
@@ -600,6 +665,7 @@ const getSlot = <Props,>(children: ReactNode, slot: unknown) =>
   getSlots<Props>(children, slot).at(0);
 
 const getItemLabel = (children: ReactNode) =>
+  // eslint-disable-next-line react/no-children-to-array
   Children.toArray(children).filter(
     child => !isValidElement(child) || child.type !== NavigationHeaderGroupSlot
   );
@@ -652,15 +718,21 @@ const NavigationHeaderRoot = createStyledHOC(
     forwardedRef
   ) => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [menuButtonHovered, setMenuButtonHovered] = useState(false);
     const [openItemIndex, setOpenItemIndex] = useState<number | null>(null);
     const [hoveredItemIndex, setHoveredItemIndex] = useState<number | null>(
       null
     );
     const [hoveredDropdownItem, setHoveredDropdownItem] =
       useState<NavigationHeaderDropdownHover | null>(null);
+
     const isAtTop = useIsAtTop();
     const prefersReducedMotion = usePrefersReducedMotion();
     const mobileNavigationId = useId();
+    const compact = useMedia()["max-md"];
+
+    // The menu stays open in state above `md`, where it is hidden.
+    useLockPageScroll(menuOpen && Boolean(compact));
     const logo = getSlot<NavigationHeaderLogoProps>(
       children,
       NavigationHeaderLogoSlot
@@ -673,9 +745,22 @@ const NavigationHeaderRoot = createStyledHOC(
       children,
       NavigationHeaderNavigationSlot
     );
+    const search = getSlot<NavigationHeaderSearchProps>(
+      children,
+      NavigationHeaderSearchSlot
+    );
     const menuButton = getSlot<NavigationHeaderMenuButtonProps>(
       children,
       NavigationHeaderMenuButtonSlotComponent
+    );
+
+    const social = getSlot<NavigationHeaderSocialProps>(
+      children,
+      NavigationHeaderSocialSlot
+    );
+    const socialLinks = getSlots<NavigationHeaderSocialLinkProps>(
+      social?.props.children,
+      NavigationHeaderSocialLinkSlot
     );
 
     const items = getNavigationHeaderItems(navigation?.props.children);
@@ -705,15 +790,14 @@ const NavigationHeaderRoot = createStyledHOC(
     let entranceIndex = 0;
     const entranceProps = () =>
       staggerEntrance ? getEntranceProps(entranceIndex++) : {};
+
     // Tamagui's motion driver only animates its own transform props; a
     // transition set through `style` is dropped.
+    // Compact headers have no room to grow, so they stay at full size.
     const scaleProps = {
-      scale: isAtTop ? 1.25 : 1,
+      scale: isAtTop && !compact ? 1.25 : 1,
       transition: prefersReducedMotion ? "none" : scaleTransition
     };
-    // Keep each item's border-bottom in the same transformed navigation row.
-    // Tamagui translates before scaling, so scale the offset with the row.
-    const navigationY = isAtTop ? "-18.75%" : "-15%";
 
     return (
       <NavigationHeaderFrame
@@ -746,109 +830,123 @@ const NavigationHeaderRoot = createStyledHOC(
             </NavigationHeaderLogoContent>
           </NavigationHeaderLogo>
 
-          <NavigationHeaderNavigation
-            aria-label={navigationLabel}
-            y={navigationY}
-            {...scaleProps}>
-            {items.map((item, index) => {
-              const hasChildren = Boolean(item.children?.length);
-              const active =
-                item.active ?? item.children?.some(child => child.active);
-              // Always a plain color, like the dropdown links below, so Tamagui
-              // clears its hover state on mouse leave.
-              const navigationItemColor =
-                hoveredItemIndex === null
-                  ? "emphasis"
-                  : hoveredItemIndex === index
-                    ? "emphasis-active"
-                    : "emphasis-inactive";
-              const dropdownId = `${mobileNavigationId}-submenu-${index}`;
+          <NavigationHeaderCenter {...scaleProps}>
+            <NavigationHeaderNavigation aria-label={navigationLabel}>
+              {items.map((item, index) => {
+                const hasChildren = Boolean(item.children?.length);
+                const active =
+                  item.active ?? item.children?.some(child => child.active);
 
-              return (
-                <NavigationHeaderItemFrame
-                  key={`${item.href ?? "navigation-item"}-${index}`}
-                  active={active}
-                  borderBottomColor={
-                    active ? navigationItemColor : "transparent"
-                  }
-                  position="relative"
-                  onMouseEnter={() => {
-                    setHoveredItemIndex(index);
-                    setHoveredDropdownItem(null);
-                  }}>
-                  {hasChildren ? (
-                    <>
+                // Always a plain color, like the dropdown links below, so Tamagui
+                // clears its hover state on mouse leave.
+                const navigationItemColor =
+                  hoveredItemIndex === null
+                    ? "emphasis"
+                    : hoveredItemIndex === index
+                      ? "emphasis-active"
+                      : "emphasis-inactive";
+                const dropdownId = `${mobileNavigationId}-submenu-${index}`;
+
+                return (
+                  <NavigationHeaderItemFrame
+                    key={`${item.href ?? "navigation-item"}-${index}`}
+                    active={active}
+                    borderBottomColor={
+                      active ? navigationItemColor : "transparent"
+                    }
+                    position="relative"
+                    onMouseEnter={() => {
+                      setHoveredItemIndex(index);
+                      setHoveredDropdownItem(null);
+                    }}>
+                    {hasChildren ? (
+                      <>
+                        <NavigationHeaderItemLink
+                          group={false}
+                          variant="emphasis"
+                          style={{ color: `var(--${navigationItemColor})` }}
+                          gap="lg"
+                          inverse={true}
+                          underline="none"
+                          render="button"
+                          role="button"
+                          aria-controls={dropdownId}
+                          aria-expanded={openItemIndex === index}
+                          aria-haspopup="true"
+                          active={active}
+                          onMouseEnter={() => setOpenItemIndex(index)}
+                          onFocus={() => setOpenItemIndex(index)}
+                          onKeyDown={(
+                            event: KeyboardEvent<HTMLButtonElement>
+                          ) => {
+                            if (event.key === "Escape") {
+                              setOpenItemIndex(null);
+                            }
+                          }}
+                          onPress={() => setOpenItemIndex(index)}>
+                          {item.label}
+                        </NavigationHeaderItemLink>
+                      </>
+                    ) : (
                       <NavigationHeaderItemLink
                         group={false}
                         variant="emphasis"
-                        style={{ color: `var(--${navigationItemColor})` }}
-                        gap="lg"
                         inverse={true}
                         underline="none"
-                        render="button"
-                        role="button"
-                        aria-controls={dropdownId}
-                        aria-expanded={openItemIndex === index}
-                        aria-haspopup="true"
-                        active={active}
-                        onMouseEnter={() => setOpenItemIndex(index)}
-                        onFocus={() => setOpenItemIndex(index)}
-                        onKeyDown={(
-                          event: KeyboardEvent<HTMLButtonElement>
-                        ) => {
-                          if (event.key === "Escape") {
-                            setOpenItemIndex(null);
-                          }
-                        }}
-                        onPress={() => setOpenItemIndex(index)}>
+                        href={item.href}
+                        target={item.target}
+                        external={item.external}
+                        active={item.active}
+                        style={{ color: `var(--${navigationItemColor})` }}
+                        aria-current={item.active ? "page" : undefined}
+                        onMouseEnter={() => setOpenItemIndex(null)}
+                        onPress={item.onPress}>
                         {item.label}
-                        <CaretDown
-                          aria-hidden={true}
-                          color="currentColor"
-                          size={16}
-                        />
                       </NavigationHeaderItemLink>
-                    </>
-                  ) : (
-                    <NavigationHeaderItemLink
-                      group={false}
-                      variant="emphasis"
-                      inverse={true}
-                      underline="none"
-                      href={item.href}
-                      target={item.target}
-                      external={item.external}
-                      active={item.active}
-                      style={{ color: `var(--${navigationItemColor})` }}
-                      aria-current={item.active ? "page" : undefined}
-                      onMouseEnter={() => setOpenItemIndex(null)}
-                      onPress={item.onPress}>
-                      {item.label}
-                    </NavigationHeaderItemLink>
-                  )}
-                </NavigationHeaderItemFrame>
-              );
-            })}
-          </NavigationHeaderNavigation>
+                    )}
+                  </NavigationHeaderItemFrame>
+                );
+              })}
+            </NavigationHeaderNavigation>
+
+            {/* Nudged onto the labels' x-height center, which sits below their
+                cap-height center; compact headers center it with the menu. */}
+            {search && (
+              <SearchDialog
+                {...search.props}
+                y={compact ? 0 : 2}
+                noPadding={true}
+              />
+            )}
+          </NavigationHeaderCenter>
 
           {actions ? (
             <NavigationHeaderActions>{actions}</NavigationHeaderActions>
           ) : (
-            <NavigationHeaderEdge />
+            // Hidden like the actions, so the search sits by the menu button.
+            <NavigationHeaderEdge display="max-md:none" />
           )}
 
           <NavigationHeaderMenuButtonSlot>
-            <NavigationHeaderMenuButton
+            <Button
+              variant="ghost"
+              noPadding={true}
+              circular={true}
+              flexGrow={0}
               aria-controls={mobileNavigationId}
               aria-expanded={menuOpen}
               aria-label={menuOpen ? `Close ${menuLabel}` : `Open ${menuLabel}`}
+              onMouseEnter={() => setMenuButtonHovered(true)}
+              onMouseLeave={() => setMenuButtonHovered(false)}
               onPress={() => setMenuOpen(open => !open)}>
-              {menuOpen ? (
-                <X aria-hidden={true} />
-              ) : (
-                <List aria-hidden={true} />
-              )}
-            </NavigationHeaderMenuButton>
+              <Button.Icon>
+                <MenuToggle
+                  aria-hidden={true}
+                  isOpen={menuOpen}
+                  isHovered={menuButtonHovered}
+                />
+              </Button.Icon>
+            </Button>
           </NavigationHeaderMenuButtonSlot>
         </NavigationHeaderBar>
 
@@ -880,6 +978,7 @@ const NavigationHeaderRoot = createStyledHOC(
                     {group.items.map((child, childIndex) => {
                       const scope = group.featured ? "featured" : "standard";
                       const hovered = hoveredDropdownItem?.scope === scope;
+
                       // Always pass a plain color: switching between the link's
                       // own `hover:` styles and an override mid-hover makes
                       // Tamagui skip clearing its hover state on mouse leave,
@@ -933,84 +1032,91 @@ const NavigationHeaderRoot = createStyledHOC(
           ) : null}
         </NavigationHeaderDropdown>
 
-        <NavigationHeaderMobilePanel id={mobileNavigationId} open={menuOpen}>
-          <NavigationHeaderMobileNavigation aria-label={navigationLabel}>
-            {items.map((item, index) => (
-              <View
-                key={`${item.href ?? "mobile-navigation-item"}-${index}`}
-                width="100%"
-                borderTopWidth={index ? 1 : 0}
-                borderTopColor="hairline">
-                <NavigationHeaderItemFrame
-                  active={
-                    item.active ?? item.children?.some(child => child.active)
-                  }
-                  mobile={true}>
-                  <NavigationHeaderItemLink
-                    group={false}
-                    variant="emphasis"
-                    inverse={true}
-                    underline="none"
-                    href={item.href}
-                    target={item.target}
-                    external={item.external}
-                    active={item.active}
-                    mobile={true}
-                    aria-current={item.active ? "page" : undefined}
-                    onPress={(event: NavigationHeaderPressEvent) => {
-                      item.onPress?.(event);
-                      setMenuOpen(false);
-                    }}>
-                    {item.label}
-                  </NavigationHeaderItemLink>
-                </NavigationHeaderItemFrame>
+        <NavigationHeaderMobileLayer
+          id={mobileNavigationId}
+          // Stays mounted so it can fade out; `inert` (untyped in Tamagui)
+          // drops the hidden links from focus and the accessibility tree.
+          {...{ inert: !menuOpen }}
+          pointerEvents={menuOpen ? "auto" : "none"}>
+          <NavigationHeaderMobilePanel
+            opacity={menuOpen ? 1 : 0}
+            y={menuOpen ? 0 : -12}
+            transition={
+              prefersReducedMotion
+                ? "none"
+                : { duration: "300ms", easing: "ease-out" }
+            }
+            style={{ scrollbarWidth: "none" }}>
+            <NavigationHeaderMobileContent>
+              <NavigationHeaderMobileNavigation aria-label={navigationLabel}>
+                {items.map((item, index) => (
+                  <NavigationHeaderItemFrame
+                    key={`${item.href ?? "mobile-navigation-item"}-${index}`}
+                    active={
+                      item.active ?? item.children?.some(child => child.active)
+                    }
+                    mobile={true}>
+                    <NavigationHeaderItemLink
+                      group={false}
+                      variant="emphasis"
+                      inverse={true}
+                      underline="none"
+                      href={item.href}
+                      target={item.target}
+                      external={item.external}
+                      active={item.active}
+                      mobile={true}
+                      aria-current={item.active ? "page" : undefined}
+                      onPress={(event: NavigationHeaderPressEvent) => {
+                        item.onPress?.(event);
+                        setMenuOpen(false);
+                      }}>
+                      {/* Mounts on open so the reveal replays each time. */}
+                      {menuOpen ? (
+                        <RedactedAnimation
+                          delay={200 + index * entranceStagger}>
+                          {item.label}
+                        </RedactedAnimation>
+                      ) : (
+                        item.label
+                      )}
+                    </NavigationHeaderItemLink>
+                  </NavigationHeaderItemFrame>
+                ))}
+              </NavigationHeaderMobileNavigation>
 
-                {item.children?.length ? (
-                  <NavigationHeaderMobileChildren>
-                    {groupNavigationHeaderChildren(item.children).map(
-                      (group, groupIndex) => (
-                        <View
-                          key={`${group.label ?? "mobile-navigation-group"}-${groupIndex}`}
-                          width="100%">
-                          {group.label ? (
-                            <NavigationHeaderMobileGroupLabel>
-                              {group.label}
-                            </NavigationHeaderMobileGroupLabel>
-                          ) : null}
+              {actions && (
+                <NavigationHeaderMobileActions>
+                  {actions}
+                </NavigationHeaderMobileActions>
+              )}
 
-                          {group.items.map((child, childIndex) => (
-                            <NavigationHeaderMobileChildLink
-                              key={`${child.href ?? "mobile-navigation-child"}-${childIndex}`}
-                              group={false}
-                              variant="emphasis"
-                              inverse={true}
-                              underline="none"
-                              href={child.href}
-                              target={child.target}
-                              external={child.external}
-                              aria-current={child.active ? "page" : undefined}
-                              onPress={(event: NavigationHeaderPressEvent) => {
-                                child.onPress?.(event);
-                                setMenuOpen(false);
-                              }}>
-                              {child.label}
-                            </NavigationHeaderMobileChildLink>
-                          ))}
-                        </View>
-                      )
-                    )}
-                  </NavigationHeaderMobileChildren>
-                ) : null}
-              </View>
-            ))}
-          </NavigationHeaderMobileNavigation>
-
-          {actions && (
-            <NavigationHeaderMobileActions>
-              {actions}
-            </NavigationHeaderMobileActions>
-          )}
-        </NavigationHeaderMobilePanel>
+              {socialLinks.length > 0 && (
+                <NavigationHeaderMobileSocial
+                  aria-label={social?.props.label ?? "Social links"}>
+                  {socialLinks.map(({ props: link }) => (
+                    <NavigationHeaderSocialLink
+                      key={link.href}
+                      group={false}
+                      variant="subtle"
+                      underline="none"
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.label}>
+                      {/* `currentColor` follows the link's hover color. */}
+                      <link.icon
+                        aria-hidden={true}
+                        color="currentColor"
+                        size="6xl"
+                      />
+                    </NavigationHeaderSocialLink>
+                  ))}
+                </NavigationHeaderMobileSocial>
+              )}
+            </NavigationHeaderMobileContent>
+          </NavigationHeaderMobilePanel>
+        </NavigationHeaderMobileLayer>
       </NavigationHeaderFrame>
     );
   },
@@ -1025,6 +1131,10 @@ export const NavigationHeader = withStaticProperties(NavigationHeaderRoot, {
       Link: NavigationHeaderLinkSlot
     })
   }),
+  Search: NavigationHeaderSearchSlot,
   Actions: NavigationHeaderActionsSlot,
+  Social: withStaticProperties(NavigationHeaderSocialSlot, {
+    Link: NavigationHeaderSocialLinkSlot
+  }),
   MenuButton: NavigationHeaderMenuButtonSlotComponent
 });

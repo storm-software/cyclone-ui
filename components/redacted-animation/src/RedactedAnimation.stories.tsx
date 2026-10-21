@@ -16,7 +16,10 @@
 
  ------------------------------------------------------------------- */
 
-import { HeadingLargeText } from "@cyclone-ui/heading-text";
+import {
+  HeadingExtraSmallText,
+  HeadingLargeText
+} from "@cyclone-ui/heading-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { View } from "@tamagui/core";
 import { Image } from "react-native";
@@ -71,6 +74,16 @@ export const ImageContent: Story = {
         source={imageSource}
         style={{ width: 288, height: 192 }}
       />
+    )
+  }
+};
+
+export const SmallText: Story = {
+  args: {
+    children: (
+      <HeadingExtraSmallText color="primary">
+        Presence-aware identity management
+      </HeadingExtraSmallText>
     )
   }
 };

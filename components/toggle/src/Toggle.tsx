@@ -48,9 +48,9 @@ const ToggleFrame = styled(View, {
   // Hug the content without overriding the parent's cross-axis alignment.
   width: "fit-content",
   borderWidth: 1,
-  borderColor: "outline hover:outline-hovered",
+  borderColor: "hairline",
   backgroundColor: "sunken hover:sunken-hovered",
-  borderRadius: "control",
+  borderRadius: "tabs",
   outlineStyle: "none",
   boxShadow: "none focus-visible:ring-offset",
   cursor: "pointer",
@@ -80,7 +80,7 @@ const ToggleFrame = styled(View, {
 
     invalid: {
       true: {
-        borderColor: "outline hover:outline-hovered"
+        borderColor: "hairline"
       }
     },
 
@@ -133,7 +133,7 @@ const ToggleIndicator = styled(View, {
   justifyContent: "center",
   gap: "lg",
   paddingHorizontal: "2xl",
-  borderRadius: "trigger",
+  borderRadius: "tab",
   borderWidth: 1,
   borderColor: "transparent",
   backgroundColor: "transparent",
@@ -145,7 +145,7 @@ const ToggleIndicator = styled(View, {
         backgroundColor: "surface group-hover/toggle:surface-hovered",
         boxShadow: "sm",
         borderWidth: 1,
-        borderColor: "outline group-hover/toggle:outline-active"
+        borderColor: "hairline"
       }
     },
 

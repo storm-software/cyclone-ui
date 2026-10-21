@@ -18,6 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, within } from "storybook/test";
 import { Tabs } from "./Tabs";
 
 const meta: Meta<typeof Tabs> = {
@@ -79,6 +80,21 @@ export const Brand: Story = {
 export const Floating: Story = {
   args: {
     variant: "floating"
+  },
+  play: async ({ canvasElement }) => {
+    const tabList = within(canvasElement).getByRole("tablist");
+    const frame = tabList.parentElement;
+    const indicator = frame?.firstElementChild;
+
+    await expect(frame).not.toBeNull();
+    await expect(indicator).not.toBeNull();
+    await expect(
+      Number.parseFloat(getComputedStyle(frame as Element).borderTopLeftRadius)
+    ).toBeGreaterThan(
+      Number.parseFloat(
+        getComputedStyle(indicator as Element).borderTopLeftRadius
+      )
+    );
   }
 };
 

@@ -94,9 +94,9 @@ const Icon = ({
         viewBox="-1 0 34 16"
         fill="none"
         stroke={color}
+        {...props}
         strokeLinecap="round"
-        strokeLinejoin="round"
-        {...props}>
+        strokeLinejoin="round">
         <Path d={`M7 8h${position}`} stroke={color} strokeWidth="3" />
         <Path stroke={color} d={`m${position} 1 7 7-7 7`} strokeWidth="3" />
       </Svg>

@@ -21,7 +21,7 @@ import type { GetProps } from "@tamagui/core";
 import { createStyledHOC } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
-export const NumberText = createStyledHOC(
+export const NumberText: typeof SizableText = createStyledHOC(
   SizableText,
   ({ children, ...props }, forwardedRef) => {
     let value = Number(children);

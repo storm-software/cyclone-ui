@@ -196,8 +196,8 @@ export const manifest: DesignSystemManifest = {
       alias: true
     },
     {
-      path: "border-radius.tabheader",
-      cssVar: "--storm-border-radius-tabheader",
+      path: "border-radius.tabs",
+      cssVar: "--storm-border-radius-tabs",
       type: "dimension",
       category: "radius",
       value: "0.375rem",
@@ -4588,6 +4588,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/search-dialog",
+      jsx: ["SearchDialog"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/search-input",
       jsx: ["SearchInput"],
       roles: []
@@ -5071,7 +5076,7 @@ export const manifest: DesignSystemManifest = {
         "sheet",
         "sm",
         "tab",
-        "tabheader",
+        "tabs",
         "tag",
         "tooltip",
         "trigger",
@@ -5139,6 +5144,7 @@ export const manifest: DesignSystemManifest = {
         "lg",
         "md",
         "none",
+        "normal",
         "sm",
         "snug",
         "true",
