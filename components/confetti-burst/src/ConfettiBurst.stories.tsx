@@ -39,7 +39,7 @@ const BurstButton = (args: ConfettiBurstProps) => {
       backgroundColor="sunken"
       cursor="pointer"
       onPress={() => confetti.current?.burst()}>
-      <Text color="color">Celebrate</Text>
+      <Text color="primary">Celebrate</Text>
       <ConfettiBurst testID="confetti" {...args} ref={confetti} />
     </View>
   );

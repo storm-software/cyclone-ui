@@ -24,6 +24,8 @@ import {
   getFormSizeToken,
   getSized
 } from "@cyclone-ui/helpers";
+import type { RippleAnimationHandle } from "@cyclone-ui/ripple-animation";
+import { RippleAnimation } from "@cyclone-ui/ripple-animation";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import type {
@@ -46,7 +48,8 @@ import {
 import { withStaticProperties } from "@tamagui/helpers";
 import { YStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
-import { useCallback, useMemo, useRef, useState } from "react";
+import type { Ref } from "react";
+import { useCallback, useMemo, useRef } from "react";
 
 type ButtonCascadeEffect =
   | "cascade"
@@ -1069,130 +1072,24 @@ const getCascadePositionStyle = (
   return style as Record<keyof CascadePosition, string>;
 };
 
-/** Removes a ripple just after its 600ms `transition` has finished. */
-const RIPPLE_LIFETIME_MS = 650;
-
-interface ButtonRippleCircle {
-  /** The circle's diameter before it scales: the frame's longer side. */
-  size: number;
-  /** The circle's top-left corner, placing its center on the press point. */
-  x: number;
-  y: number;
-}
-
-const ButtonRippleFrame = styled(View, {
-  displayName: "ButtonRipple",
-  position: "absolute",
-  pointerEvents: "none",
-  borderRadius: 1000_000_000,
-  // Above the ghost and cascade layers ("10" = 100), below the label and
-  // icon ("20" = 200).
-  zIndex: 150,
-  // Mounts as a dot on the press point and grows to 2.6x the frame's longer
-  // side while it fades out. Naming `enter`, as `InputSeparator` does, keeps
-  // `createComponent` off its `avoidReRenders` path for the mount animation.
-  transition: {
-    duration: "600ms",
-    easing: "ease-out",
-    enter: "600ms ease-out"
-  },
-  // Not `enter:0`: the motion driver animates the transform string with WAAPI,
-  // and a `scale(0)` matrix is singular, so the browser flips it to 2.6 halfway
-  // through instead of interpolating.
-  scale: "2.6 enter:0.001",
-  opacity: "0 enter:0.3"
-});
-
-const ButtonRipple = createStyledHOC(
-  ButtonRippleFrame,
-  (props, forwardedRef) => {
-    const { variant, disabled } = ButtonContext.useStyledContext();
-    const theme = useThemeName();
-
-    return (
-      <ButtonRippleFrame
-        ref={forwardedRef}
-        // The label's hover color: a pointer press lands on the hovered
-        // button, so this stays visible on hover backgrounds and cascade fills.
-        backgroundColor={hoverColorForVariant(variant, disabled, theme)}
-        {...props}
-      />
-    );
-  },
-  {
-    displayName: "ButtonRipple"
-  }
-);
-
-/** The parts of a web `click` event a ripple is placed from. */
-interface ButtonRippleClick {
-  currentTarget: {
-    offsetWidth: number;
-    offsetHeight: number;
-    getBoundingClientRect?: () => {
-      left: number;
-      top: number;
-      width: number;
-      height: number;
-    };
-  } | null;
-  clientX: number;
-  clientY: number;
-  detail: number;
-}
-
 /**
- * The ripple circle for a press, in the frame's own coordinates. Needs the
- * pressed DOM element (web): other press events add no ripple.
+ * The press ripple, in the label's hover color: a pointer press lands on the
+ * hovered button, so it stays visible on hover backgrounds and cascade fills.
+ * Reads the theme inside the frame, which a `theme` prop can change.
  */
-const getRippleCircle = (
-  event: ButtonPressEvent
-): ButtonRippleCircle | undefined => {
-  const { currentTarget, clientX, clientY, detail } =
-    event as unknown as ButtonRippleClick;
-  if (!currentTarget?.getBoundingClientRect) {
-    return undefined;
-  }
+const ButtonRipple = ({ ref }: { ref: Ref<RippleAnimationHandle> }) => {
+  const { variant, disabled } = ButtonContext.useStyledContext();
+  const theme = useThemeName();
 
-  const rect = currentTarget.getBoundingClientRect();
-  const { offsetWidth: width, offsetHeight: height } = currentTarget;
-  const size = Math.max(width, height);
-  // A keyboard click (`detail` 0) has no pointer position, so its ripple
-  // starts from the center. The client rect includes the press `scale`
-  // transform, so the pointer offset is mapped back to the unscaled frame.
-  const pointer = detail > 0;
-  const centerX = pointer
-    ? ((clientX - rect.left) * width) / rect.width
-    : width / 2;
-  const centerY = pointer
-    ? ((clientY - rect.top) * height) / rect.height
-    : height / 2;
-
-  return { size, x: centerX - size / 2, y: centerY - size / 2 };
-};
-
-/** Press ripples that each remove themselves once their animation ends. */
-const useButtonRipples = () => {
-  const [ripples, setRipples] = useState<
-    (ButtonRippleCircle & { id: number })[]
-  >([]);
-  const nextIdRef = useRef(0);
-
-  const addRipple = useCallback((event: ButtonPressEvent) => {
-    const circle = getRippleCircle(event);
-    if (!circle) {
-      return;
-    }
-
-    const id = nextIdRef.current++;
-    setRipples(prev => [...prev, { ...circle, id }]);
-    setTimeout(
-      () => setRipples(prev => prev.filter(ripple => ripple.id !== id)),
-      RIPPLE_LIFETIME_MS
-    );
-  }, []);
-
-  return [ripples, addRipple] as const;
+  return (
+    <RippleAnimation
+      ref={ref}
+      // Above the ghost and cascade layers ("10" = 100), below the label and
+      // icon ("20" = 200).
+      zIndex={150}
+      color={hoverColorForVariant(variant, disabled, theme)}
+    />
+  );
 };
 
 export type ButtonProps = ButtonExtraProps &
@@ -1221,7 +1118,7 @@ const ButtonContainerImpl = createStyledHOC(
     }: GetProps<typeof ButtonFrame> & ButtonProps,
     forwardedRef
   ) => {
-    const [ripples, addRipple] = useButtonRipples();
+    const rippleRef = useRef<RippleAnimationHandle>(null);
 
     const handlePress = useCallback(
       (event: ButtonPressEvent) => {
@@ -1231,7 +1128,7 @@ const ButtonContainerImpl = createStyledHOC(
         event.stopPropagation();
 
         if (!disabled) {
-          addRipple(event);
+          rippleRef.current?.ripple(event);
           if (onPress) {
             onPress?.(event);
           }
@@ -1240,7 +1137,7 @@ const ButtonContainerImpl = createStyledHOC(
           }
         }
       },
-      [disabled, onPress, onClick, render, addRipple]
+      [disabled, onPress, onClick, render]
     );
 
     const cascadeState = isCascadeVariant(variant)
@@ -1329,16 +1226,7 @@ const ButtonContainerImpl = createStyledHOC(
             />
           </>
         )}
-        {variant !== "link" &&
-          ripples.map(({ id, size, x, y }) => (
-            <ButtonRipple
-              key={id}
-              width={size}
-              height={size}
-              left={x}
-              top={y}
-            />
-          ))}
+        {variant !== "link" && <ButtonRipple ref={rippleRef} />}
         {children}
       </ButtonFrame>
     );

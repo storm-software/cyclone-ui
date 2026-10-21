@@ -4583,6 +4583,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/ripple-animation",
+      jsx: ["RippleAnimation"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/scroll-view",
       jsx: ["ScrollView"],
       roles: []

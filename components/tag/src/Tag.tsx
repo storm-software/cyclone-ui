@@ -17,6 +17,8 @@
  ------------------------------------------------------------------- */
 
 import { X } from "@cyclone-ui/icons";
+import type { RippleAnimationHandle } from "@cyclone-ui/ripple-animation";
+import { RippleAnimation } from "@cyclone-ui/ripple-animation";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import type {
   ColorTokens,
@@ -417,128 +419,30 @@ type TagPressEvent = Parameters<
   NonNullable<GetProps<typeof View>["onPress"]>
 >[0];
 
-/** Removes a ripple just after its 600ms `transition` has finished. */
-const RIPPLE_LIFETIME_MS = 650;
-
-interface TagRippleCircle {
-  /** The circle's diameter before it scales: the frame's longer side. */
-  size: number;
-  /** The circle's top-left corner, placing its center on the press point. */
-  x: number;
-  y: number;
-}
-
-// Rendered before the tag's children: positioned children such as
-// `Tag.Button` stay above it, and over the text it is the text's own color.
-const TagRippleFrame = styled(View, {
-  displayName: TAG_NAME,
-  position: "absolute",
-  pointerEvents: "none",
-  borderRadius: 1000_000_000,
-  // Mounts as a dot on the press point and grows to 2.6x the frame's longer
-  // side while it fades out. Naming `enter`, as `InputSeparator` does, keeps
-  // `createComponent` off its `avoidReRenders` path for the mount animation.
-  transition: {
-    duration: "600ms",
-    easing: "ease-out",
-    enter: "600ms ease-out"
-  },
-  // Not `enter:0`: the motion driver animates the transform string with WAAPI,
-  // and a `scale(0)` matrix is singular, so the browser flips it to 2.6 halfway
-  // through instead of interpolating.
-  scale: "2.6 enter:0.001",
-  opacity: "0 enter:0.3"
-});
-
-/** The parts of a web `click` event a ripple is placed from. */
-interface TagRippleClick {
-  currentTarget: {
-    offsetWidth: number;
-    offsetHeight: number;
-    getBoundingClientRect?: () => {
-      left: number;
-      top: number;
-      width: number;
-      height: number;
-    };
-  } | null;
-  clientX: number;
-  clientY: number;
-  detail: number;
-}
-
 /**
- * The ripple circle for a press, in the frame's own coordinates. Needs the
- * pressed DOM element (web): other press events add no ripple.
- */
-const getRippleCircle = (event: TagPressEvent): TagRippleCircle | undefined => {
-  const { currentTarget, clientX, clientY, detail } =
-    event as unknown as TagRippleClick;
-  if (!currentTarget?.getBoundingClientRect) {
-    return undefined;
-  }
-
-  const rect = currentTarget.getBoundingClientRect();
-  const { offsetWidth: width, offsetHeight: height } = currentTarget;
-  const size = Math.max(width, height);
-  // A keyboard click (`detail` 0) has no pointer position, so its ripple
-  // starts from the center. The client rect includes any transform (such as
-  // `Tag.Button`'s `x` offset), so the pointer offset is mapped back to the
-  // untransformed frame.
-  const pointer = detail > 0;
-  const centerX = pointer
-    ? ((clientX - rect.left) * width) / rect.width
-    : width / 2;
-  const centerY = pointer
-    ? ((clientY - rect.top) * height) / rect.height
-    : height / 2;
-
-  return { size, x: centerX - size / 2, y: centerY - size / 2 };
-};
-
-/**
- * Press ripples that each remove themselves once their animation ends.
- * `ripples` renders them in `color`; `onPress` adds one, then calls the
- * caller's `onPress`.
+ * A press ripple in `color`: `ripples` renders its layer, and `onPress` draws
+ * one, then calls the caller's `onPress`. Rendered before the tag's children:
+ * positioned children such as `Tag.Button` stay above it, and over the text it
+ * is the text's own color.
  */
 const useTagRipples = (
   color: ColorTokens,
   onPress: ((event: TagPressEvent) => void) | null | undefined
 ) => {
-  const [circles, setCircles] = useState<(TagRippleCircle & { id: number })[]>(
-    []
-  );
-  const nextIdRef = useRef(0);
+  const rippleRef = useRef<RippleAnimationHandle>(null);
 
   const handlePress = useCallback(
     (event: TagPressEvent) => {
-      const circle = getRippleCircle(event);
-      if (circle) {
-        const id = nextIdRef.current++;
-        setCircles(prev => [...prev, { ...circle, id }]);
-        setTimeout(
-          () => setCircles(prev => prev.filter(ripple => ripple.id !== id)),
-          RIPPLE_LIFETIME_MS
-        );
-      }
-
+      rippleRef.current?.ripple(event);
       onPress?.(event);
     },
     [onPress]
   );
 
-  const ripples = circles.map(({ id, size, x, y }) => (
-    <TagRippleFrame
-      key={id}
-      width={size}
-      height={size}
-      left={x}
-      top={y}
-      backgroundColor={color}
-    />
-  ));
-
-  return { ripples, onPress: handlePress };
+  return {
+    ripples: <RippleAnimation ref={rippleRef} color={color} />,
+    onPress: handlePress
+  };
 };
 
 const TagButtonFrame = styled(View, {

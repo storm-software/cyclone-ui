@@ -30,6 +30,7 @@
     "@tamagui/web": "catalog:",
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/ripple-animation": "workspace:*",
     "@cyclone-ui/themeable-icon": "workspace:*"
   },
   "devDependencies": {

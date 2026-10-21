@@ -32,6 +32,7 @@
   "dependencies": {
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/ripple-animation": "workspace:*",
     "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/font-size": "catalog:",

@@ -21,6 +21,9 @@
     },
     {
       "path": "../heading-text"
+    },
+    {
+      "path": "../ripple-animation"
     }
   ],
   "files": [],

@@ -23,6 +23,9 @@
       "path": "../body-text"
     },
     {
+      "path": "../ripple-animation"
+    },
+    {
       "path": "../icons"
     }
   ],

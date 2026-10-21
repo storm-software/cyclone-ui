@@ -349,6 +349,7 @@ A pressable button with Button.Text and Button.Icon subcomponents and primary, s
 
 - `@cyclone-ui/body-text`: `workspace:*`
 - `@cyclone-ui/helpers`: `workspace:*`
+- `@cyclone-ui/ripple-animation`: `workspace:*`
 - `@cyclone-ui/themeable-icon`: `workspace:*`
 - `@tamagui/constants`: `catalog:`
 - `@tamagui/core`: `catalog:`
@@ -2414,6 +2415,35 @@ A RedactedAnimation wrapper that briefly covers its children with an accent-colo
 | `../../components/redacted-animation/node_modules/react/index.js` | `file` |  |
 | `../../components/redacted-animation/src/index.ts` | `file` |  |
 
+## @cyclone-ui/ripple-animation
+
+A RippleAnimation layer that fills its positioned parent and, when its ripple() handle is called with a press event, grows a fading circle out of the press point (or the center, for a keyboard press). The ripple is drawn through a fine pixel grid for a slight pixelated look. Web only; it does nothing on native.
+
+- **Name:** `@cyclone-ui/ripple-animation`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@tamagui/core`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/ripple-animation/dist/index.cjs` | `file` |  |
+| `../../components/ripple-animation/dist/index.mjs` | `file` |  |
+| `../../components/ripple-animation/node_modules/react-dom/index.js` | `file` |  |
+| `../../components/ripple-animation/node_modules/react-native/index.js` | `file` |  |
+| `../../components/ripple-animation/node_modules/react/index.js` | `file` |  |
+| `../../components/ripple-animation/src/index.ts` | `file` |  |
+
 ## @cyclone-ui/scroll-view
 
 A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar on web that is highlighted on hover. It has sm and lg width sizes and a fullscreen variant that fills its parent. Use it for any scrollable area that should match the theme.
@@ -2919,6 +2949,7 @@ A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary an
 
 - `@cyclone-ui/heading-text`: `workspace:*`
 - `@cyclone-ui/icons`: `workspace:*`
+- `@cyclone-ui/ripple-animation`: `workspace:*`
 - `@tamagui/animate-presence`: `catalog:`
 - `@tamagui/core`: `catalog:`
 - `@tamagui/font-size`: `catalog:`

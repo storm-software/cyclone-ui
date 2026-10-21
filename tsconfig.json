@@ -323,6 +323,9 @@
     },
     {
       "path": "./components/search-dialog"
+    },
+    {
+      "path": "./components/ripple-animation"
     }
   ],
   "files": []
