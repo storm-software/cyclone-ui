@@ -4571,6 +4571,38 @@ module.exports = {
         },
         path: ["color", "warning", "primary"]
       },
+      secondary: {
+        key: "{color.warning.secondary}",
+        theme: "warning",
+        group: "warning",
+        $type: "color",
+        colorSpace: "display-p3",
+        $value: "#dc8f00",
+        $description:
+          "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
+        semantic: true,
+        filePath:
+          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
+        isSource: true,
+        original: {
+          theme: "warning",
+          group: "warning",
+          $type: "color",
+          colorSpace: "display-p3",
+          $value: "{color.yellow.7}",
+          $description:
+            "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
+          semantic: true,
+          key: "{color.warning.secondary}"
+        },
+        name: "ColorWarningSecondary",
+        attributes: {
+          category: "color",
+          type: "warning",
+          item: "secondary"
+        },
+        path: ["color", "warning", "secondary"]
+      },
       link: {
         key: "{color.warning.link}",
         theme: "warning",
@@ -4666,42 +4698,6 @@ module.exports = {
           item: "on-primary"
         },
         path: ["color", "warning", "on-primary"]
-      },
-      secondary: {
-        key: "{color.warning.secondary}",
-        theme: "warning",
-        group: "warning",
-        $type: "color",
-        colorSpace: "display-p3",
-        $value: "#332200",
-        $description:
-          "Generated low-emphasis warning background for the dark theme",
-        semantic: true,
-        filePath:
-          "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
-        isSource: true,
-        original: {
-          theme: "warning",
-          group: "warning",
-          $type: "color",
-          colorSpace: "display-p3",
-          $value: {
-            colorSpace: "srgb",
-            components: [0.2, 0.13333333333333333, 0],
-            hex: "#332200"
-          },
-          $description:
-            "Generated low-emphasis warning background for the dark theme",
-          semantic: true,
-          key: "{color.warning.secondary}"
-        },
-        name: "ColorWarningSecondary",
-        attributes: {
-          category: "color",
-          type: "warning",
-          item: "secondary"
-        },
-        path: ["color", "warning", "secondary"]
       },
       "on-secondary": {
         key: "{color.warning.on-secondary}",
@@ -4883,9 +4879,9 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#926113",
+        $value: "#ffd38d",
         $description:
-          "Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)",
+          "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -4897,13 +4893,11 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [
-              0.5725490196078431, 0.3803921568627451, 0.07450980392156863
-            ],
-            hex: "#926113"
+            components: [1, 0.8274509803921568, 0.5529411764705883],
+            hex: "#ffd38d"
           },
           $description:
-            "Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)",
+            "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
           semantic: true,
           key: "{color.warning.secondary-hovered}"
         },
@@ -4921,9 +4915,9 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#926113",
+        $value: "#ffd38d",
         $description:
-          "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
+          "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -4935,7 +4929,7 @@ module.exports = {
           colorSpace: "display-p3",
           $value: "{color.warning.secondary-hovered}",
           $description:
-            "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
+            "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
           semantic: true,
           key: "{color.warning.secondary-active}"
         },
@@ -4953,9 +4947,9 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#0d0800",
+        $value: "#6d4600",
         $description:
-          "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
+          "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -4967,11 +4961,11 @@ module.exports = {
           colorSpace: "display-p3",
           $value: {
             colorSpace: "srgb",
-            components: [0.050980392156862744, 0.03137254901960784, 0],
-            hex: "#0d0800"
+            components: [0.42745098039215684, 0.27450980392156865, 0],
+            hex: "#6d4600"
           },
           $description:
-            "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
+            "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
           semantic: true,
           key: "{color.warning.secondary-inactive}"
         },
@@ -4989,9 +4983,9 @@ module.exports = {
         group: "warning",
         $type: "color",
         colorSpace: "display-p3",
-        $value: "#372c1c",
+        $value: "#624e2d",
         $description:
-          "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+          "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
         semantic: true,
         filePath:
           "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/dark.tokens.json",
@@ -5004,12 +4998,12 @@ module.exports = {
           $value: {
             colorSpace: "srgb",
             components: [
-              0.21568627450980393, 0.17254901960784313, 0.10980392156862745
+              0.3843137254901961, 0.3058823529411765, 0.17647058823529413
             ],
-            hex: "#372c1c"
+            hex: "#624e2d"
           },
           $description:
-            "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+            "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
           semantic: true,
           key: "{color.warning.secondary-disabled}"
         },

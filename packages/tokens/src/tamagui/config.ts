@@ -592,7 +592,7 @@ const themes = {
     "link-hovered": "oklch(0.602147 0.133464 66.596)",
     "link-inactive": "oklch(0.909784 0.14319 95.018)",
     "on-primary": tokens.color.neutral16,
-    "on-secondary": tokens.color.white,
+    "on-secondary": tokens.color.neutral1,
     outline: tokens.color.yellow4,
     "outline-active": "oklch(0.483082 0.116571 57.25)",
     "outline-disabled": "oklch(0.533787 0.055195 77.258)",
@@ -607,11 +607,11 @@ const themes = {
     "ring-offset": "0px 0px 0px 3px #242528, 0px 0px 0px 7px #f7ac2326",
     "ring-subtle": "0px 0px 0px 1px #f7ac2326",
     "ring-subtle-offset": "0px 0px 0px 2px #242528, 0px 0px 0px 3px #f7ac2326",
-    secondary: "oklch(0.447665 0.094054 75.948)",
-    "secondary-active": "oklch(0.55967 0.094269 75.842)",
-    "secondary-disabled": "oklch(0.404098 0.030828 78.486)",
-    "secondary-hovered": "oklch(0.55967 0.094269 75.842)",
-    "secondary-inactive": "oklch(0.360982 0.079148 68.132)"
+    secondary: tokens.color.yellow7,
+    "secondary-active": "oklch(0.850218 0.131974 77.087)",
+    "secondary-disabled": "oklch(0.490522 0.043983 79.523)",
+    "secondary-hovered": "oklch(0.850218 0.131974 77.087)",
+    "secondary-inactive": "oklch(0.546315 0.117191 71.676)"
   },
   light: {
     canvas: tokens.color.neutral3,

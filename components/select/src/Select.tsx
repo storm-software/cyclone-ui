@@ -382,12 +382,18 @@ const SelectGroupImpl = createStyledHOC(
   (
     props: Omit<GetProps<typeof ContextMenu>, "value" | "onValueChange"> &
       Partial<SelectContextProps> & {
+        /**
+         * The current value of the select. This should be used when the select is controlled.
+         */
         value?: string;
+
+        /**
+         * The initial value of the select when it is uncontrolled. This value will be used as the starting value for the select before any user interaction.
+         */
         defaultValue?: string;
 
         /**
-         * Shown while nothing is selected, by the value a `Select` renders
-         * inside a `Field` when it is given no children.
+         * Shown while nothing is selected, by the value a `Select` renders inside a `Field` when it is given no children.
          */
         placeholder?: string;
       },

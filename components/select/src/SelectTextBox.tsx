@@ -72,12 +72,7 @@ const SelectTextBoxImpl = createStyledHOC(
     return (
       <ContextMenu.Trigger asChild={true}>
         <BaseSelectTextBox
-          // Not typed on a styled View; keeps the trigger from submitting a
-          // form.
           {...({ type: "button" } as object)}
-          // The field label's `htmlFor` target: a resting floating label
-          // covers the text box, and only a labelable element (this button)
-          // receives the label's clicks.
           id={name}
           data-select-trigger
           disabled={disabled}

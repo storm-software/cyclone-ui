@@ -265,6 +265,8 @@ export const LongValue: Story = {
 
 export const Discovery: Story = {
   args: {
+    defaultValue: "Blueberry",
+    showErrorsBeforeBlur: true,
     validate: validation("discovery")
   }
 };

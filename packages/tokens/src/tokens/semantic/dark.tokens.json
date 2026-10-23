@@ -134,6 +134,13 @@
         "$value": "{color.yellow.4}",
         "$description": "Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText.",
         "semantic": true
+      },
+      "secondary": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.yellow.7}",
+        "$description": "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
+        "semantic": true
       }
     },
     "info": {

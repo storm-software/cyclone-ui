@@ -34,6 +34,7 @@ import {
   createStyledHOC,
   styled,
   Text,
+  Theme,
   useComposedRefs,
   View
 } from "@tamagui/core";
@@ -50,6 +51,7 @@ const SelectValueFrame = styled(Text, {
   flexGrow: 1,
   alignItems: "center",
   backgroundColor: "hover:transparent focus:transparent",
+
   variants: {
     // `styled.dynamic` re-brands the helper's carrier with this package's
     // `@tamagui/web` symbol type (runtime no-op; helpers resolves another copy).
@@ -82,8 +84,6 @@ const SelectValueFrame = styled(Text, {
       true: {
         cursor: "not-allowed",
         userSelect: "none",
-        // v2 also set `placeholderColor`, which is not a text style in v3
-        // and had no effect on this text node.
         color:
           "primary-disabled hover:primary-disabled press:primary-disabled focus:primary-disabled"
       }
@@ -143,33 +143,36 @@ export const SelectValue = createStyledHOC(
     const placeholding = !!placeholder && content === placeholder && !disabled;
 
     return (
-      <View flex={1} minWidth={0}>
-        <SelectValueFrame
-          pointerEvents="none"
-          ref={ref}
-          {...props}
-          size={size}
-          variant={variant}
-          labelPlacement={labelPlacement}
-          disabled={disabled}
-          placeholding={placeholding}>
-          <BodyText
-            // Remounts when the placeholder appears (e.g. as a floating label
-            // lifts), so it fades in with the field's 200ms entrance instead of
-            // popping in; see `InputSeparator` for why `transition` names
-            // `enter`.
-            key={placeholding ? "placeholder" : "value"}
-            {...(placeholding && {
-              opacity: "enter:0",
-              transition: { duration: "200ms", enter: "200ms" }
-            })}
-            render="span"
-            fontSize={getSelectContentSize(size).fontSize}
-            lineHeight={`${getSelectContentSize(size).lineHeight}px`}>
-            {content}
-          </BodyText>
-        </SelectValueFrame>
-      </View>
+      <Theme name="base">
+        <View flex={1} minWidth={0}>
+          <SelectValueFrame
+            pointerEvents="none"
+            ref={ref}
+            {...props}
+            size={size}
+            variant={variant}
+            labelPlacement={labelPlacement}
+            disabled={disabled}
+            placeholding={placeholding}>
+            <BodyText
+              // Remounts when the placeholder appears (e.g. as a floating label
+              // lifts), so it fades in with the field's 200ms entrance instead of
+              // popping in; see `InputSeparator` for why `transition` names
+              // `enter`.
+              key={placeholding ? "placeholder" : "value"}
+              {...(placeholding && {
+                opacity: "enter:0",
+                transition: { duration: "200ms", enter: "200ms" }
+              })}
+              render="span"
+              color="inherit"
+              fontSize={getSelectContentSize(size).fontSize}
+              lineHeight={`${getSelectContentSize(size).lineHeight}px`}>
+              {content}
+            </BodyText>
+          </SelectValueFrame>
+        </View>
+      </Theme>
     );
   },
   {

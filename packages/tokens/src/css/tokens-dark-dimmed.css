@@ -656,13 +656,12 @@
   --storm-color-danger-secondary-inactive: #631d2c; /** Generated low-emphasis danger background for the dark theme (inactive, 20% darker) */
   --storm-color-danger-secondary-disabled: #5a484e; /** Generated low-emphasis danger background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-danger-outline-hovered: #d97d91; /** Generated danger border and divider color (matches primary) (hovered, 40% brighter) */
-  --storm-color-warning-secondary: #795c23; /** Generated low-emphasis warning background for the dark theme */
   --storm-color-warning-primary-hovered: #9d722e; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (hovered, 25% darker) */
   --storm-color-warning-primary-inactive: #d6c171; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (inactive, 20% brighter) */
   --storm-color-warning-primary-disabled: #7c6f5b; /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
-  --storm-color-warning-secondary-hovered: #89714b; /** Generated low-emphasis warning background for the dark theme (hovered, 25% brighter) */
-  --storm-color-warning-secondary-inactive: #6b4c1f; /** Generated low-emphasis warning background for the dark theme (inactive, 20% darker) */
-  --storm-color-warning-secondary-disabled: #60584c; /** Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
+  --storm-color-warning-secondary-hovered: #d4ad6f; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter) */
+  --storm-color-warning-secondary-inactive: #8f6b29; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker) */
+  --storm-color-warning-secondary-disabled: #726858; /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26)) */
   --storm-color-warning-outline-hovered: #885a28; /** Generated warning border and divider color (matches primary) (hovered, 40% darker) */
   --storm-color-info-primary-hovered: #7eb0da; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (hovered, 25% brighter) */
   --storm-color-info-primary-inactive: #4d70ac; /** Info accent used by the `info` theme. Use it for neutral guidance, tips and system notices. Applied by Alert `info` and `info` Messages and ValidationText. (inactive, 20% darker) */
@@ -1111,18 +1110,21 @@
   --storm-color-warning-primary: var(
     --storm-color-yellow-4
   ); /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. */
+  --storm-color-warning-secondary: var(
+    --storm-color-yellow-7
+  ); /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. */
   --storm-color-warning-on-primary: var(
     --storm-color-neutral-16
   ); /** Generated text and icon color on warning primary backgrounds */
   --storm-color-warning-on-secondary: var(
-    --storm-color-white
+    --storm-color-neutral-1
   ); /** Generated text and icon color on warning secondary backgrounds */
   --storm-color-warning-primary-active: var(
     --storm-color-warning-primary-hovered
   ); /** Warning accent used by the `warning` theme. Use it for cautionary states that need attention but do not block the user. Applied by Alert `warning` and `warning` Messages and ValidationText. (active, 25% darker) */
   --storm-color-warning-secondary-active: var(
     --storm-color-warning-secondary-hovered
-  ); /** Generated low-emphasis warning background for the dark theme (active, 25% brighter) */
+  ); /** Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter) */
   --storm-color-warning-link-hovered: var(
     --storm-color-warning-primary-hovered
   ); /** Generated warning hyperlink text color (matches primary) (hovered, 25% darker) */

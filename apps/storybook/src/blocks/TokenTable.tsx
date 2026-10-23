@@ -1413,6 +1413,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning.secondary",
+      type: "color",
+      value: "#c58c22",
+      cssVar: "--cu-color-warning-secondary",
+      description:
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning.link",
       type: "color",
       value: "#f7ac23",
@@ -1442,19 +1452,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.warning.secondary",
-      type: "color",
-      value: "#724c00",
-      cssVar: "--cu-color-warning-secondary",
-      description:
-        "Generated low-emphasis warning background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.warning.on-secondary",
       type: "color",
-      value: "#ffffff",
+      value: "#FAFAFA",
       cssVar: "--cu-color-warning-on-secondary",
       description:
         "Generated text and icon color on warning secondary backgrounds",
@@ -1504,40 +1504,40 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#946c2d",
+      value: "#fec262",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
-        "Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-active",
       type: "color",
-      value: "#946c2d",
+      value: "#fec262",
       cssVar: "--cu-color-warning-secondary-active",
       description:
-        "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-inactive",
       type: "color",
-      value: "#583400",
+      value: "#9a6300",
       cssVar: "--cu-color-warning-secondary-inactive",
       description:
-        "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#524736",
+      value: "#6e5e44",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
-        "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -7026,6 +7026,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning.secondary",
+      type: "color",
+      value: "#a58549",
+      cssVar: "--cu-color-warning-secondary",
+      description:
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning.link",
       type: "color",
       value: "#c59b4d",
@@ -7055,19 +7065,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.warning.secondary",
-      type: "color",
-      value: "#795c23",
-      cssVar: "--cu-color-warning-secondary",
-      description:
-        "Generated low-emphasis warning background for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.warning.on-secondary",
       type: "color",
-      value: "#d9d9d9",
+      value: "#d5d5d5",
       cssVar: "--cu-color-warning-on-secondary",
       description:
         "Generated text and icon color on warning secondary backgrounds",
@@ -7117,40 +7117,40 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#89714b",
+      value: "#d4ad6f",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
-        "Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-active",
       type: "color",
-      value: "#89714b",
+      value: "#d4ad6f",
       cssVar: "--cu-color-warning-secondary-active",
       description:
-        "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-inactive",
       type: "color",
-      value: "#6b4c1f",
+      value: "#8f6b29",
       cssVar: "--cu-color-warning-secondary-inactive",
       description:
-        "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#60584c",
+      value: "#726858",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
-        "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },
@@ -12639,6 +12639,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.warning.secondary",
+      type: "color",
+      value: "#dc8f00",
+      cssVar: "--cu-color-warning-secondary",
+      description:
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme.",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.warning.link",
       type: "color",
       value: "#ffb327",
@@ -12664,16 +12674,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       cssVar: "--cu-color-warning-on-primary",
       description:
         "Generated text and icon color on warning primary backgrounds",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.warning.secondary",
-      type: "color",
-      value: "#332200",
-      cssVar: "--cu-color-warning-secondary",
-      description:
-        "Generated low-emphasis warning background for the dark theme",
       theme: undefined,
       typography: false
     },
@@ -12730,40 +12730,40 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.warning.secondary-hovered",
       type: "color",
-      value: "#926113",
+      value: "#ffd38d",
       cssVar: "--cu-color-warning-secondary-hovered",
       description:
-        "Generated low-emphasis warning background for the dark theme (hovered, 25% brighter)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (hovered, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-active",
       type: "color",
-      value: "#926113",
+      value: "#ffd38d",
       cssVar: "--cu-color-warning-secondary-active",
       description:
-        "Generated low-emphasis warning background for the dark theme (active, 25% brighter)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (active, 25% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-inactive",
       type: "color",
-      value: "#0d0800",
+      value: "#6d4600",
       cssVar: "--cu-color-warning-secondary-inactive",
       description:
-        "Generated low-emphasis warning background for the dark theme (inactive, 20% darker)",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.warning.secondary-disabled",
       type: "color",
-      value: "#372c1c",
+      value: "#624e2d",
       cssVar: "--cu-color-warning-secondary-disabled",
       description:
-        "Generated low-emphasis warning background for the dark theme (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
+        "Low-emphasis warning color for the `warning` theme. Exposed as `muted` inside that theme; use it for soft warning-tinted fills, such as a `subtle` Button or the decorative Callout icon and gradient in the warning theme. (disabled, 85% saturation, 35% over oklch(0.3839 0.0045 286.26))",
       theme: undefined,
       typography: false
     },

@@ -244,6 +244,7 @@ const ContextMenuItemFrame = styled(View, {
   borderRadius: "button",
   outlineStyle: "focus-visible:none",
   outlineWidth: "focus-visible:0px",
+
   variants: {
     size: styled.dynamic<FormControlSize>(
       formSizeVariants((val: FormControlSize) => {
@@ -263,6 +264,7 @@ const ContextMenuItemFrame = styled(View, {
       }
     }
   } as const,
+
   defaultVariants: {
     size: "md",
     disabled: false
@@ -281,6 +283,7 @@ const ContextMenuItemBackground = styled(View, {
   backgroundColor:
     "transparent group-hover/item:floating-active group-focus-visible/item:floating-active",
   pointerEvents: "none",
+
   variants: {
     size: styled.dynamic<FormControlSize>(
       formSizeVariants((val: FormControlSize) => {
@@ -318,6 +321,7 @@ const ContextMenuItemDivider = styled(View, {
   borderBottomWidth: 1,
   borderBottomColor: "hairline",
   pointerEvents: "none",
+
   variants: {
     size: styled.dynamic<FormControlSize>(
       formSizeVariants((val: FormControlSize) => {
@@ -327,6 +331,7 @@ const ContextMenuItemDivider = styled(View, {
       })
     )
   } as const,
+
   defaultVariants: {
     size: "md"
   }
@@ -341,6 +346,7 @@ const ContextMenuItemGroup = styled(View, {
   alignItems: "center",
   flex: 1,
   minWidth: 0,
+
   variants: {
     size: styled.dynamic<FormControlSize>(
       formSizeVariants((val: FormControlSize) => {
@@ -359,6 +365,7 @@ const ContextMenuItemGroup = styled(View, {
       }
     }
   } as const,
+
   defaultVariants: {
     size: "md",
     disabled: false
@@ -507,7 +514,7 @@ const ContextMenuItemText = (props: GetProps<typeof BodyText>): JSX.Element => {
       }
       fontSize={fontSize}
       lineHeight={`${lineHeight}px`}
-      fontWeight={selected ? "bold" : "normal"}
+      fontWeight={selected ? "semibold" : "normal"}
       paddingVertical={itemTextPaddingVertical}
       paddingHorizontal={itemTextPaddingHorizontal}
       // One line, cut short with an ellipsis when it doesn't fit.

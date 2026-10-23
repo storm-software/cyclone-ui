@@ -77,7 +77,6 @@ const SelectItemsGroup = ({
         {...props}>
         <ContextMenu.Content.ScrollView role="listbox">
           {children ??
-            // Without children, the enclosing field's items.
             items?.map((item, index) => (
               <SelectItem key={index} {...item} value={String(item.value)}>
                 {item.name}

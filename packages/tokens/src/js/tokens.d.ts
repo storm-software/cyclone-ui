@@ -188,10 +188,10 @@ declare const tokens: {
     };
     warning: {
       primary: DesignToken;
+      secondary: DesignToken;
       link: DesignToken;
       outline: DesignToken;
       "on-primary": DesignToken;
-      secondary: DesignToken;
       "on-secondary": DesignToken;
       "primary-hovered": DesignToken;
       "primary-active": DesignToken;
