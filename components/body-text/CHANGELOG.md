@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Body Text
 
+## [0.5.25](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.25) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.25**
+
 ## [0.5.24](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.24) (10/19/2026)
 
 ### Updated Dependencies

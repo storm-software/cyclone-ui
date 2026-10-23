@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Skeleton
 
+## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/skeleton%400.0.9) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+
 ## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/skeleton%400.0.2) (10/16/2026)
 
 ### Features

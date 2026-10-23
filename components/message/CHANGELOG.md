@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Message
 
+## [0.6.25](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.25) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+
+### Updated Dependencies
+
+- Updated **alert** to **v0.4.25**
+- Updated **button** to **v0.6.25**
+- Updated **state** to **v0.0.26**
+
 ## [0.6.24](https://github.com/storm-software/cyclone-ui/releases/tag/message%400.6.24) (10/19/2026)
 
 ### Updated Dependencies

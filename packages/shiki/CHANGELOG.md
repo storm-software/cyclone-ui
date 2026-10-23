@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Shiki
 
+## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.15) (10/22/2026)
+
+### Bug Fixes
+
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
 ## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/shiki%400.0.9) (10/16/2026)
 
 ### Bug Fixes

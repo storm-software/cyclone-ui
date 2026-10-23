@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Divider
 
+## [0.0.21](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.21) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.14**
+
 ## [0.0.20](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.20) (10/19/2026)
 
 ### Updated Dependencies

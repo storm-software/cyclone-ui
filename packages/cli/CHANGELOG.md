@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.15](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.15) (10/22/2026)
+
+### Bug Fixes
+
+- **tokens:** Upgrade razorwind and generate config files ([2d174005](https://github.com/storm-software/cyclone-ui/commit/2d174005))
+- **cli:** Resolve issue with commands ([c893de68](https://github.com/storm-software/cyclone-ui/commit/c893de68))
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.25**
+- Updated **theme-builder** to **v0.0.15**
+
 ## [0.6.14](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.14) (10/19/2026)
 
 ### Bug Fixes

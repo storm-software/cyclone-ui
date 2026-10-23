@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/number-text",
-  "version": "0.5.24",
+  "version": "0.5.25",
   "type": "module",
   "description": "A label-styled text component that renders its numeric children with NumberFlow, so changes in value are animated. Values that are not numbers fall back to 0. Use it for counters, statistics and other numbers that update in place.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/number-text"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -29,7 +31,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/pagination",
-  "version": "0.8.24",
+  "version": "0.8.25",
   "type": "module",
   "description": "A page navigation bar with previous and next buttons, first and last page buttons, and a sliding window of page numbers with ellipses. It is controlled through the pageCount, pageIndex and setPageIndex props, with optional callbacks and a hideText option. Use it to move between pages of paged content.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/pagination"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -35,7 +37,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

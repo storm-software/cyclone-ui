@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Inline Code Text
 
+## [0.5.24](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.24) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.25**
+
 ## [0.5.23](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.23) (10/19/2026)
 
 ### Updated Dependencies

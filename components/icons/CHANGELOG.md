@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.21](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.21) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
 ## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.14) (10/16/2026)
 
 ### Features

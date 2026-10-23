@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/footer",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "type": "module",
   "description": "A responsive site footer with compound layout parts for an introduction, action, navigation sections, links, a bottom rail with brand, copyright and legal links, and a background logo. It optionally renders an animated terrain backdrop that respects reduced motion and a noise texture overlay. Use it at the bottom of marketing or documentation pages.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/footer"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -33,7 +35,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",

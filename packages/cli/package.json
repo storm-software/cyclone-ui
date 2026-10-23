@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/cli",
-  "version": "0.6.14",
+  "version": "0.6.15",
   "type": "module",
   "description": "🌀 A repository containing Tamagui based design components used by Storm Software. Like shadcn/ui, the components are copied into other repositories via the Cyclone CLI.",
   "repository": {
@@ -38,8 +38,15 @@
   },
   "license": "Apache-2.0",
   "private": false,
-  "files": ["dist"],
-  "keywords": ["cli", "cyclone-ui", "storm-software", "shell-shock"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "cyclone-ui",
+    "storm-software",
+    "shell-shock"
+  ],
   "dependencies": {
     "@cyclone-ui/registry-api": "workspace:*",
     "@cyclone-ui/theme-builder": "workspace:*",
@@ -60,14 +67,19 @@
     "@shell-shock/plugin-skills": "catalog:",
     "@types/node": "catalog:"
   },
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "types": "./dist/index.d.cts",
-  "bin": { "cyclone-ui": "./dist/bin.mjs" },
+  "bin": {
+    "cyclone-ui": "./dist/bin.mjs"
+  },
   "exports": {
     "./add": "./dist/add.mjs",
     "./analyze-a11y": "./dist/analyze-a11y.mjs",
     "./bin": "./dist/bin.mjs",
     "./build": "./dist/build.mjs",
+    "./build-tokens": "./dist/build-tokens.mjs",
     "./changelog": "./dist/changelog.mjs",
     "./completions-bash-config": "./dist/completions-bash-config.mjs",
     "./completions-bash-script": "./dist/completions-bash-script.mjs",
@@ -77,7 +89,6 @@
     "./completions-powershell-script": "./dist/completions-powershell-script.mjs",
     "./completions-zsh-config": "./dist/completions-zsh-config.mjs",
     "./completions-zsh-script": "./dist/completions-zsh-script.mjs",
-    "./build-tokens": "./dist/build-tokens.mjs",
     "./diff": "./dist/diff.mjs",
     "./docs": "./dist/docs.mjs",
     "./guidelines": "./dist/guidelines.mjs",

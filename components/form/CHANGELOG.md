@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Form
 
+## [0.9.25](https://github.com/storm-software/cyclone-ui/releases/tag/form%400.9.25) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+
+### Updated Dependencies
+
+- Updated **state** to **v0.0.26**
+
 ## [0.9.24](https://github.com/storm-software/cyclone-ui/releases/tag/form%400.9.24) (10/19/2026)
 
 ### Updated Dependencies

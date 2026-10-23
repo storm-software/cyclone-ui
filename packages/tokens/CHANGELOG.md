@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.14](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.14) (10/22/2026)
+
+### Bug Fixes
+
+- **tokens:** Upgrade razorwind and generate config files ([2d174005](https://github.com/storm-software/cyclone-ui/commit/2d174005))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Features
+
+- **search-dialog:** Added the SearchDialog component to support website searches ([6de49d52](https://github.com/storm-software/cyclone-ui/commit/6de49d52))
+
 ## [0.3.1](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.1) (10/11/2026)
 
 ### Features

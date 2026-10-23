@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Overlay
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/overlay%400.0.12) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Features
+
+- **search-dialog:** Added the SearchDialog component to support website searches ([6de49d52](https://github.com/storm-software/cyclone-ui/commit/6de49d52))
+
 ## [0.0.9](https://github.com/storm-software/cyclone-ui/releases/tag/overlay%400.0.9) (10/18/2026)
 
 ### Features

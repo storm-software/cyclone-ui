@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Article Page
 
+## [0.0.12](https://github.com/storm-software/cyclone-ui/releases/tag/article-page%400.0.12) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.25**
+- Updated **breadcrumb** to **v0.4.26**
+- Updated **button** to **v0.6.25**
+- Updated **divider** to **v0.0.21**
+- Updated **heading-text** to **v0.5.25**
+- Updated **icons** to **v0.0.21**
+- Updated **inline-code-text** to **v0.5.24**
+- Updated **page** to **v0.0.19**
+- Updated **table-of-contents** to **v0.0.22**
+
 ## [0.0.11](https://github.com/storm-software/cyclone-ui/releases/tag/article-page%400.0.11) (10/19/2026)
 
 ### Updated Dependencies

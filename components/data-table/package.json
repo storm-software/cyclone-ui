@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/data-table",
-  "version": "0.6.24",
+  "version": "0.6.25",
   "private": false,
   "description": "A data grid built on TanStack Table and the Cyclone UI Table that takes table options (columns and data) and adds sorting, faceted column filtering, client-side pagination with a configurable page size, optional row selection checkboxes and resizable columns. Use it to display large, interactive datasets.",
   "repository": {
@@ -8,7 +8,9 @@
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/data-table"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -24,7 +26,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",

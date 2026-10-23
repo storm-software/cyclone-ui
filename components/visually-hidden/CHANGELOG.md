@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Visually Hidden
 
+## [0.5.25](https://github.com/storm-software/cyclone-ui/releases/tag/visually-hidden%400.5.25) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+
 ## [0.5.15](https://github.com/storm-software/cyclone-ui/releases/tag/visually-hidden%400.5.15) (10/12/2026)
 
 ### Features

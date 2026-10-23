@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Dialog
 
+## [0.3.25](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.25) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Features
+
+- **search-dialog:** Added the SearchDialog component to support website searches ([6de49d52](https://github.com/storm-software/cyclone-ui/commit/6de49d52))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.25**
+- Updated **button** to **v0.6.25**
+- Updated **container** to **v0.6.25**
+- Updated **heading-text** to **v0.5.25**
+- Updated **overlay** to **v0.0.12**
+
 ## [0.3.24](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.24) (10/19/2026)
 
 ### Updated Dependencies

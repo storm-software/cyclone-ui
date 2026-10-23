@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.26](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.26) (10/22/2026)
+
+### Bug Fixes
+
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.25**
+
 ## [0.0.25](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.25) (10/19/2026)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/package-command-code-block",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "type": "module",
   "description": "A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command for an ni-style command (install, run, exec, uninstall and others), each with a copy button. The chosen package manager is saved and kept in sync across instances. Use it in docs for install instructions.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/package-command-code-block"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",

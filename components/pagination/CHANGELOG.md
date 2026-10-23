@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Pagination
 
+## [0.8.25](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.25) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.25**
+- Updated **icons** to **v0.0.21**
+- Updated **next-button** to **v0.5.25**
+- Updated **previous-button** to **v0.5.25**
+
 ## [0.8.24](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.24) (10/19/2026)
 
 ### Updated Dependencies

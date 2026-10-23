@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Alert Dialog
 
+## [0.4.25](https://github.com/storm-software/cyclone-ui/releases/tag/alert-dialog%400.4.25) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+
+### Features
+
+- **search-dialog:** Added the SearchDialog component to support website searches ([6de49d52](https://github.com/storm-software/cyclone-ui/commit/6de49d52))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.25**
+- Updated **dialog** to **v0.3.25**
+- Updated **icons** to **v0.0.21**
+- Updated **themeable-icon** to **v0.6.25**
+
 ## [0.4.24](https://github.com/storm-software/cyclone-ui/releases/tag/alert-dialog%400.4.24) (10/19/2026)
 
 ### Updated Dependencies

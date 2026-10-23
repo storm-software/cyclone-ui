@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Circular Progress
 
+## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.23) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
 ## [0.0.20](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.20) (10/18/2026)
 
 ### Features

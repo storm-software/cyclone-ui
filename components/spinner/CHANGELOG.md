@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Spinner
 
+## [0.5.25](https://github.com/storm-software/cyclone-ui/releases/tag/spinner%400.5.25) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+
 ## [0.5.22](https://github.com/storm-software/cyclone-ui/releases/tag/spinner%400.5.22) (10/18/2026)
 
 ### Features

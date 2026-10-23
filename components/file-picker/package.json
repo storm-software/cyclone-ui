@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/file-picker",
-  "version": "0.5.24",
+  "version": "0.5.25",
   "type": "module",
   "description": "A file and image picker with a dashed drop zone that supports drag and drop on the web and the native document picker on mobile. It has a configurable media type and maximum file count, a Trigger.Button, and a Files list that shows each file's name, size, date and MIME type over an image, text or PDF preview. When wrapped in a Field it connects to the form, storing the picked files as the field's value.",
   "repository": {
@@ -9,7 +9,9 @@
     "directory": "components/file-picker"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -56,7 +58,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

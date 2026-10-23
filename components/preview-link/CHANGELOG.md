@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Preview Link
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/preview-link%400.0.5) (10/22/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update components to use `use client` directives as needed ([5bc81ef8](https://github.com/storm-software/cyclone-ui/commit/5bc81ef8))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.25**
+- Updated **link** to **v0.5.25**
+- Updated **tooltip** to **v0.5.25**
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/preview-link%400.0.4) (10/19/2026)
 
 ### Updated Dependencies

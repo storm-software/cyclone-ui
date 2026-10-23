@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.15) (10/22/2026)
+
+### Bug Fixes
+
+- **tokens:** Update token structure to better allow customizations ([7f23eb61](https://github.com/storm-software/cyclone-ui/commit/7f23eb61))
+
+### Features
+
+- **ripple-animation:** Added the Ripple animation component package ([af5707ab](https://github.com/storm-software/cyclone-ui/commit/af5707ab))
+- **search-dialog:** Added the SearchDialog component to support website searches ([6de49d52](https://github.com/storm-software/cyclone-ui/commit/6de49d52))
+
 ## [0.0.14](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.14) (10/19/2026)
 
 ### Bug Fixes
