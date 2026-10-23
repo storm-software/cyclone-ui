@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Table
 
+## [0.4.26](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.26) (10/23/2026)
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.26**
+
 ## [0.4.25](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.25) (10/22/2026)
 
 ### Bug Fixes

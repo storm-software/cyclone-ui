@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/eslint-plugin",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "type": "module",
   "description": "Cyclone UI ESLint plugin package",
   "repository": {

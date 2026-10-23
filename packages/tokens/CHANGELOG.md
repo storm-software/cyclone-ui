@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.15](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.15) (10/23/2026)
+
+### Bug Fixes
+
+- **select:** Clean up select option styling ([f7638208](https://github.com/storm-software/cyclone-ui/commit/f7638208))
+
 ## [0.3.14](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.14) (10/22/2026)
 
 ### Bug Fixes

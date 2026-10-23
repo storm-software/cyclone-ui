@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Context Menu
 
+## [0.0.16](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.16) (10/23/2026)
+
+### Bug Fixes
+
+- **select:** Clean up select option styling ([f7638208](https://github.com/storm-software/cyclone-ui/commit/f7638208))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.26**
+- Updated **button** to **v0.6.26**
+- Updated **helpers** to **v0.3.26**
+- Updated **icons** to **v0.0.22**
+- Updated **popover** to **v0.5.26**
+- Updated **tooltip** to **v0.5.26**
+
 ## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/context-menu%400.0.15) (10/22/2026)
 
 ### Bug Fixes

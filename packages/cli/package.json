@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/cli",
-  "version": "0.6.15",
+  "version": "0.6.16",
   "type": "module",
   "description": "🌀 A repository containing Tamagui based design components used by Storm Software. Like shadcn/ui, the components are copied into other repositories via the Cyclone CLI.",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/preview-link",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "description": "A Link with a dotted underline that shows a Tooltip with more details when hovered or focused.",
   "repository": {
