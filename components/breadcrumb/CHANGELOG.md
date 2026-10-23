@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Breadcrumb
 
+## [0.4.28](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.28) (10/23/2026)
+
+### Features
+
+- **article-page:** Added the `ArticlePage` component package ([3818b7a1](https://github.com/storm-software/cyclone-ui/commit/3818b7a1))
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.27**
+- Updated **helpers** to **v0.3.27**
+- Updated **icons** to **v0.0.23**
+- Updated **link** to **v0.5.27**
+- Updated **link-text** to **v0.5.27**
+- Updated **popover** to **v0.5.27**
+
 ## [0.4.27](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.27) (10/23/2026)
 
 ### Updated Dependencies

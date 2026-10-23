@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/glitch-separator",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "type": "module",
   "description": "A decorative section divider that draws a ragged grid of seeded pseudo-random squares in SVG between a top and bottom color. On web it can animate never, always or on scroll, and it respects reduced-motion settings. Native renders a still edge.",
   "repository": {

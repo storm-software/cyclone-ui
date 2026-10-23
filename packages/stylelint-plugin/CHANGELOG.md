@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.17](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.17) (10/23/2026)
+
+### Features
+
+- **article-page:** Added the `ArticlePage` component package ([3818b7a1](https://github.com/storm-software/cyclone-ui/commit/3818b7a1))
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
 ## [0.0.15](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.15) (10/22/2026)
 
 ### Bug Fixes

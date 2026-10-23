@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Anchor
 
+## [0.0.26](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.26) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.27**
+- Updated **icons** to **v0.0.23**
+
 ## [0.0.25](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.25) (10/23/2026)
 
 ### Updated Dependencies

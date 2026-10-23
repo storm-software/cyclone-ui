@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Ripple Animation
 
+## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/ripple-animation%400.0.4) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
 ## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/ripple-animation%400.0.2) (10/22/2026)
 
 ### Bug Fixes

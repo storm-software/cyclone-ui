@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - File Tree
 
+## [0.0.25](https://github.com/storm-software/cyclone-ui/releases/tag/file-tree%400.0.25) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+### Updated Dependencies
+
+- Updated **icons** to **v0.0.23**
+
 ## [0.0.24](https://github.com/storm-software/cyclone-ui/releases/tag/file-tree%400.0.24) (10/23/2026)
 
 ### Updated Dependencies

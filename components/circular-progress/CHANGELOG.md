@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Circular Progress
 
+## [0.0.25](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.25) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
 ## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/circular-progress%400.0.23) (10/22/2026)
 
 ### Bug Fixes

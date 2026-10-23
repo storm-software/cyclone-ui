@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Progress
 
+## [0.5.27](https://github.com/storm-software/cyclone-ui/releases/tag/progress%400.5.27) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
 ## [0.5.25](https://github.com/storm-software/cyclone-ui/releases/tag/progress%400.5.25) (10/22/2026)
 
 ### Bug Fixes

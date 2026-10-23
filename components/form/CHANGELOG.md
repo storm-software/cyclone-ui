@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Form
 
+## [0.9.27](https://github.com/storm-software/cyclone-ui/releases/tag/form%400.9.27) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+### Updated Dependencies
+
+- Updated **state** to **v0.0.28**
+
 ## [0.9.26](https://github.com/storm-software/cyclone-ui/releases/tag/form%400.9.26) (10/23/2026)
 
 ### Updated Dependencies

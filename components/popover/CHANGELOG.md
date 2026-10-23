@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Popover
 
+## [0.5.27](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.27) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.27**
+- Updated **button** to **v0.6.27**
+- Updated **heading-text** to **v0.5.27**
+- Updated **scroll-view** to **v0.5.27**
+- Updated **sheet** to **v0.0.26**
+
 ## [0.5.26](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.26) (10/23/2026)
 
 ### Updated Dependencies

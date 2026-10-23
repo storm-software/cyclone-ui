@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Table of Contents
 
+## [0.0.24](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.24) (10/23/2026)
+
+### Features
+
+- **article-page:** Added the `ArticlePage` component package ([3818b7a1](https://github.com/storm-software/cyclone-ui/commit/3818b7a1))
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.27**
+- Updated **icons** to **v0.0.23**
+
 ## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/table-of-contents%400.0.23) (10/23/2026)
 
 ### Updated Dependencies

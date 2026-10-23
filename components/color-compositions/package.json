@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/color-compositions",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "type": "module",
   "description": "An animated display component reproducing Ellsworth Kelly's \"Colors for a Large Wall\" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.",
   "repository": {

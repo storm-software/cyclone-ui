@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Rating
 
+## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.23) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+### Updated Dependencies
+
+- Updated **confetti-burst** to **v0.0.17**
+- Updated **field** to **v0.5.27**
+- Updated **form** to **v0.9.27**
+- Updated **helpers** to **v0.3.27**
+- Updated **icons** to **v0.0.23**
+- Updated **tokens** to **v0.3.16**
+
 ## [0.0.22](https://github.com/storm-software/cyclone-ui/releases/tag/rating%400.0.22) (10/23/2026)
 
 ### Updated Dependencies

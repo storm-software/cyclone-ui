@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Registry API
 
+## [0.3.27](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.27) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
 ## [0.3.12](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.12) (10/11/2026)
 
 ### Bug Fixes

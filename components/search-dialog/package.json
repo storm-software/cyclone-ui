@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/search-dialog",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "A search icon Button that opens a Dialog for searching the application, like the fumadocs search dialog. It also opens with ⌘K / Ctrl+K. A debounced `search` function (static index or API) returns page, heading and text results with breadcrumbs and highlighted query words, narrowed by optional filter toggles. The arrow keys move through the results and Enter opens one. The last results chosen are saved in localStorage and listed as \"Recent\" when it opens, where they can be removed one by one or cleared.",
   "repository": {

@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Inline Code Text
 
+## [0.5.26](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.26) (10/23/2026)
+
+### Features
+
+- **article-page:** Added the `ArticlePage` component package ([3818b7a1](https://github.com/storm-software/cyclone-ui/commit/3818b7a1))
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.27**
+
 ## [0.5.25](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.25) (10/23/2026)
 
 ### Updated Dependencies

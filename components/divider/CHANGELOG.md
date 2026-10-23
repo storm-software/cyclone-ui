@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Divider
 
+## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.23) (10/23/2026)
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
+### Updated Dependencies
+
+- Updated **tokens** to **v0.3.16**
+
 ## [0.0.22](https://github.com/storm-software/cyclone-ui/releases/tag/divider%400.0.22) (10/23/2026)
 
 ### Updated Dependencies

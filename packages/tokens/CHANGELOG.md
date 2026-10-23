@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.16](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.16) (10/23/2026)
+
+### Features
+
+- **article-page:** Added the `ArticlePage` component package ([3818b7a1](https://github.com/storm-software/cyclone-ui/commit/3818b7a1))
+
+### Documentation
+
+- **monorepo:** Added `sourcebook` skills and partially generated docs for design system ([0dbff145](https://github.com/storm-software/cyclone-ui/commit/0dbff145))
+
 ## [0.3.15](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.15) (10/23/2026)
 
 ### Bug Fixes
