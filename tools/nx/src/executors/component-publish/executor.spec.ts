@@ -63,7 +63,7 @@ async function workspace() {
     await writeFile(
       join(root, `components/${name}/src/nested/${name}.tsx`),
       name === "button"
-        ? '"use client";\nexport { Label } from "@cyclone-ui/label";\nexport { helper } from "@cyclone-ui/helpers";'
+        ? '/* -------------------------------------------------------------------\n\n Component source banner\n\n ------------------------------------------------------------------- */\n\n"use client";\n// This comment is part of the component source.\nexport { Label } from "@cyclone-ui/label";\nexport { helper } from "@cyclone-ui/helpers";'
         : 'export const Label = "label";'
     );
     await writeFile(
@@ -204,6 +204,32 @@ describe("public component publishing", () => {
     });
     for (const path of stagingPaths)
       await expect(readFile(join(path, "registry.json"))).rejects.toThrow();
+  });
+
+  it("removes leading comment banners from component files before uploading", async () => {
+    const { context } = await workspace();
+    let content: string | undefined;
+    mocks.upload.mockImplementation(async options => {
+      if (mocks.upload.mock.calls.length === 1) {
+        const item = JSON.parse(
+          await readFile(
+            join(options.path, "components/button/1.2.3.json"),
+            "utf8"
+          )
+        ) as { files: { path: string; content: string }[] };
+        content = item.files.find(
+          file => file.path === "nested/button.tsx"
+        )?.content;
+      }
+      return { success: true };
+    });
+
+    expect(await runExecutor({ dryRun: true }, context)).toEqual({
+      success: true
+    });
+    expect(content).toBe(
+      '"use client";\n// This comment is part of the component source.\nexport { Label } from "@cyclone-ui/label";\nexport { helper } from "@cyclone-ui/helpers";'
+    );
   });
 
   it("does not update discovery after an upload failure", async () => {

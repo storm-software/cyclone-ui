@@ -30,6 +30,13 @@ import { dirname, join } from "node:path";
 import { buildComponentRegistry, registrySegment } from "./registry";
 import type { ComponentPublishExecutorSchema } from "./schema";
 
+const commentBannerPattern =
+  /^\/\* -{3,}\r?\n[\s\S]*?\r?\n -{3,} \*\/(?:\r?\n)*/;
+
+function removeCommentBanner(content: string): string {
+  return content.replace(commentBannerPattern, "");
+}
+
 export default async function runExecutor(
   options: ComponentPublishExecutorSchema,
   context: ExecutorContext
@@ -40,7 +47,9 @@ export default async function runExecutor(
     const tag = registrySegment(options.tag ?? "latest");
     const { name, version, item, catalog, componentProjects } =
       await buildComponentRegistry(context, tag);
+
     staging = await mkdtemp(join(tmpdir(), "cyclone-registry-"));
+
     const itemRoot = join(staging, "items");
     const catalogRoot = join(staging, "catalog");
     const channel = tag === "latest" ? "" : `tags/${tag}/`;
@@ -49,6 +58,7 @@ export default async function runExecutor(
       await mkdir(dirname(file), { recursive: true });
       await writeFile(file, `${JSON.stringify(value, null, 2)}\n`, "utf8");
     };
+
     const items = options.all
       ? await Promise.all(
           componentProjects.map(async projectName =>
@@ -56,18 +66,28 @@ export default async function runExecutor(
           )
         )
       : [{ name, version, item }];
+
     for (const component of items) {
+      const publishedItem = {
+        ...component.item,
+        files: component.item.files.map(file => ({
+          ...file,
+          content: removeCommentBanner(file.content)
+        }))
+      };
+
       await write(
         itemRoot,
         `components/${component.name}/${component.version}.json`,
-        component.item
+        publishedItem
       );
       await write(
         itemRoot,
         `${channel}components/${component.name}.json`,
-        component.item
+        publishedItem
       );
     }
+
     await write(catalogRoot, `${channel}registry.json`, catalog);
     const upload = async (path: string) =>
       executor(
@@ -82,25 +102,35 @@ export default async function runExecutor(
         },
         context
       );
+
     writeInfo(
       `Publishing ${name}@${version} to the public Cyclone registry`,
       config
     );
+
     const result = await upload(itemRoot);
-    if (!result.success) return result;
+    if (!result.success) {
+      return result;
+    }
+
     const discovery = await upload(catalogRoot);
-    if (discovery.success)
+    if (discovery.success) {
       writeSuccess(
         `Published ${name}@${version} to the public Cyclone registry`,
         config
       );
+    }
+
     return discovery;
   } catch (error) {
     writeFatal(
       `An error occurred while publishing the component registry.\n${error instanceof Error ? error.message : String(error)}`
     );
+
     return { success: false };
   } finally {
-    if (staging) await rm(staging, { recursive: true, force: true });
+    if (staging) {
+      await rm(staging, { recursive: true, force: true });
+    }
   }
 }
