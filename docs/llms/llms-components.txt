@@ -35,7 +35,7 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/accordion/src/index.ts` | `file` |  |
+| `../../components/accordion/src/Accordion.tsx` | `component` |  |
 
 ## @cyclone-ui/address-input
 
@@ -67,7 +67,7 @@ An address search field: a SearchInput whose suggestions come from an address se
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/address-input/src/index.ts` | `file` |  |
+| `../../components/address-input/src/AddressInput.tsx` | `component` |  |
 
 ## @cyclone-ui/alert
 
@@ -105,7 +105,7 @@ An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, A
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/alert/src/index.ts` | `file` |  |
+| `../../components/alert/src/Alert.tsx` | `component` |  |
 
 ## @cyclone-ui/alert-dialog
 
@@ -139,7 +139,7 @@ A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-ba
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/alert-dialog/src/index.ts` | `file` |  |
+| `../../components/alert-dialog/src/AlertDialog.tsx` | `component` |  |
 
 ## @cyclone-ui/anchor
 
@@ -167,7 +167,7 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/anchor/src/index.ts` | `file` |  |
+| `../../components/anchor/src/Anchor.tsx` | `component` |  |
 
 ## @cyclone-ui/article-page
 
@@ -200,7 +200,7 @@ An ArticlePage layout compound component for documentation and long-form reading
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/article-page/src/index.ts` | `file` |  |
+| `../../components/article-page/src/ArticlePage.tsx` | `component` |  |
 
 ## @cyclone-ui/badge
 
@@ -228,7 +228,7 @@ A Badge that wraps an element and pins a small count or dot to one of its corner
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/badge/src/index.ts` | `file` |  |
+| `../../components/badge/src/Badge.tsx` | `component` |  |
 
 ## @cyclone-ui/body-text
 
@@ -255,7 +255,7 @@ A themed paragraph text component built on Tamagui's SizableText that renders a 
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/body-text/src/index.ts` | `file` |  |
+| `../../components/body-text/src/BodyText.tsx` | `component` |  |
 
 ## @cyclone-ui/breadcrumb
 
@@ -290,7 +290,8 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/breadcrumb/src/index.ts` | `file` |  |
+| `../../components/breadcrumb/src/Breadcrumb.tsx` | `component` |  |
+| `../../components/breadcrumb/src/utilities.ts` | `file` |  |
 
 ## @cyclone-ui/button
 
@@ -328,7 +329,7 @@ A pressable button with Button.Text and Button.Icon subcomponents and primary, s
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/button/src/index.ts` | `file` |  |
+| `../../components/button/src/Button.tsx` | `component` |  |
 
 ## @cyclone-ui/bytes-text
 
@@ -354,7 +355,7 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/bytes-text/src/index.ts` | `file` |  |
+| `../../components/bytes-text/src/BytesText.tsx` | `component` |  |
 
 ## @cyclone-ui/calendar
 
@@ -385,7 +386,7 @@ A stand-alone calendar with day, month and year views that selects a single date
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/calendar/src/index.ts` | `file` |  |
+| `../../components/calendar/src/Calendar.tsx` | `component` |  |
 
 ## @cyclone-ui/callout
 
@@ -423,7 +424,7 @@ A highlighted content panel with a theme-colored gradient and diagonal pattern b
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/callout/src/index.ts` | `file` |  |
+| `../../components/callout/src/Callout.tsx` | `component` |  |
 
 ## @cyclone-ui/card
 
@@ -465,7 +466,7 @@ A themed card container with a gradient background and an optional accent color.
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/card/src/index.ts` | `file` |  |
+| `../../components/card/src/Card.tsx` | `component` |  |
 
 ## @cyclone-ui/checkbox
 
@@ -502,7 +503,7 @@ A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indi
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/checkbox/src/index.ts` | `file` |  |
+| `../../components/checkbox/src/Checkbox.tsx` | `component` |  |
 
 ## @cyclone-ui/circular-progress
 
@@ -529,7 +530,7 @@ A circular progress indicator drawn with SVG on top of Tamagui's Progress primit
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/circular-progress/src/index.ts` | `file` |  |
+| `../../components/circular-progress/src/CircularProgress.tsx` | `component` |  |
 
 ## @cyclone-ui/code-block
 
@@ -572,7 +573,7 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/code-block/src/index.ts` | `file` |  |
+| `../../components/code-block/src/CodeBlock.tsx` | `component` |  |
 
 ## @cyclone-ui/collapsible
 
@@ -600,7 +601,8 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/collapsible/src/index.ts` | `file` |  |
+| `../../components/collapsible/src/Collapsible.tsx` | `component` |  |
+| `../../components/collapsible/src/get-collapsible-value.ts` | `file` |  |
 
 ## @cyclone-ui/color-area
 
@@ -625,7 +627,7 @@ A 2D color picker, built on the React Stately color model, for selecting two cha
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/color-area/src/index.ts` | `file` |  |
+| `../../components/color-area/src/ColorArea.tsx` | `component` |  |
 
 ## @cyclone-ui/color-compositions
 
@@ -649,7 +651,7 @@ An animated display component reproducing Ellsworth Kelly's "Colors for a Large 
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/color-compositions/src/index.ts` | `file` |  |
+| `../../components/color-compositions/src/ColorCompositions.tsx` | `component` |  |
 
 ## @cyclone-ui/color-picker
 
@@ -681,7 +683,8 @@ A color input with a swatch trigger that opens a popover to pick the color from 
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/color-picker/src/index.ts` | `file` |  |
+| `../../components/color-picker/src/ColorPicker.tsx` | `component` |  |
+| `../../components/color-picker/src/utilities.ts` | `file` |  |
 
 ## @cyclone-ui/confetti-burst
 
@@ -705,7 +708,7 @@ An invisible anchor that bursts a ring of accent-colored confetti squares out of
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/confetti-burst/src/index.ts` | `file` |  |
+| `../../components/confetti-burst/src/ConfettiBurst.tsx` | `component` |  |
 
 ## @cyclone-ui/container
 
@@ -733,7 +736,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/container/src/index.ts` | `file` |  |
+| `../../components/container/src/Container.tsx` | `component` |  |
 
 ## @cyclone-ui/context-menu
 
@@ -763,7 +766,8 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/context-menu/src/index.ts` | `file` |  |
+| `../../components/context-menu/src/ContextMenu.tsx` | `component` |  |
+| `../../components/context-menu/src/utilities.ts` | `file` |  |
 
 ## @cyclone-ui/credit-card-input
 
@@ -798,7 +802,7 @@ Credit card fields (card number, expiry date, security code and name on card) bu
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/credit-card-input/src/index.ts` | `file` |  |
+| `../../components/credit-card-input/src/CreditCardInput.tsx` | `component` |  |
 
 ## @cyclone-ui/data-table
 
@@ -849,7 +853,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/data-table/src/index.ts` | `file` |  |
+| `../../components/data-table/src/DataTable.tsx` | `component` |  |
 
 ## @cyclone-ui/date-picker
 
@@ -904,7 +908,7 @@ A date input with a masked text box and a calendar popover that has day, month a
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/date-picker/src/index.ts` | `file` |  |
+| `../../components/date-picker/src/DatePicker.tsx` | `component` |  |
 
 ## @cyclone-ui/dialog
 
@@ -948,7 +952,7 @@ A modal Dialog compound component built on Tamagui's dialog, with Trigger, Porta
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/dialog/src/index.ts` | `file` |  |
+| `../../components/dialog/src/Dialog.tsx` | `component` |  |
 
 ## @cyclone-ui/divider
 
@@ -974,7 +978,7 @@ A simple horizontal or vertical line used to separate content. It supports sm, m
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/divider/src/index.ts` | `file` |  |
+| `../../components/divider/src/Divider.tsx` | `component` |  |
 
 ## @cyclone-ui/drawer
 
@@ -1007,7 +1011,7 @@ A side panel built on the Cyclone UI Sheet that slides in from the right by defa
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/drawer/src/index.ts` | `file` |  |
+| `../../components/drawer/src/Drawer.tsx` | `component` |  |
 
 ## @cyclone-ui/eyebrow-text
 
@@ -1033,7 +1037,7 @@ An uppercase, muted heading (rendered as h5) that uses the eyebrow font. It has 
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/eyebrow-text/src/index.ts` | `file` |  |
+| `../../components/eyebrow-text/src/EyebrowText.tsx` | `component` |  |
 
 ## @cyclone-ui/feedback
 
@@ -1068,7 +1072,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/feedback/src/index.ts` | `file` |  |
+| `../../components/feedback/src/Feedback.tsx` | `component` |  |
 
 ## @cyclone-ui/field
 
@@ -1109,7 +1113,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/field/src/index.ts` | `file` |  |
+| `../../components/field/src/Field.tsx` | `component` |  |
 
 ## @cyclone-ui/file-picker
 
@@ -1162,7 +1166,11 @@ A file and image picker with a dashed drop zone that supports drag and drop on t
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/file-picker/src/index.ts` | `file` |  |
+| `../../components/file-picker/src/file-picker-types.ts` | `file` |  |
+| `../../components/file-picker/src/FilePicker.tsx` | `component` |  |
+| `../../components/file-picker/src/FilePickerPdfPreview.tsx` | `component` |  |
+| `../../components/file-picker/src/useDropZone.ts` | `file` |  |
+| `../../components/file-picker/src/useFilePicker.ts` | `file` |  |
 
 ## @cyclone-ui/file-tree
 
@@ -1190,7 +1198,7 @@ A FileTree component that renders a hierarchical file structure using File leave
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/file-tree/src/index.ts` | `file` |  |
+| `../../components/file-tree/src/FileTree.tsx` | `component` |  |
 
 ## @cyclone-ui/footer
 
@@ -1220,7 +1228,8 @@ A responsive site footer with compound layout parts for an introduction, action,
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/footer/src/index.ts` | `file` |  |
+| `../../components/footer/src/Footer.tsx` | `component` |  |
+| `../../components/footer/src/FooterTerrain.tsx` | `component` |  |
 
 ## @cyclone-ui/form
 
@@ -1246,7 +1255,7 @@ A form root that renders a native form element and provides Cyclone UI form stat
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/form/src/index.ts` | `file` |  |
+| `../../components/form/src/Form.tsx` | `component` |  |
 
 ## @cyclone-ui/glitch-separator
 
@@ -1271,7 +1280,7 @@ A decorative section divider that draws a ragged grid of seeded pseudo-random sq
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/glitch-separator/src/index.ts` | `file` |  |
+| `../../components/glitch-separator/src/GlitchSeparator.tsx` | `component` |  |
 
 ## @cyclone-ui/heading-text
 
@@ -1297,7 +1306,7 @@ Themed heading text components: HeadingHeroText, HeadingTitleText, HeadingLargeT
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/heading-text/src/index.ts` | `file` |  |
+| `../../components/heading-text/src/HeadingText.tsx` | `component` |  |
 
 ## @cyclone-ui/icons
 
@@ -1327,7 +1336,1521 @@ Tamagui icon components for web and React Native covering every icon in the Phos
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/icons/src/index.ts` | `file` |  |
+| `../../components/icons/src/all.ts` | `file` |  |
+| `../../components/icons/src/create-icon.tsx` | `component` |  |
+| `../../components/icons/src/icons/Acorn.tsx` | `component` |  |
+| `../../components/icons/src/icons/AddressBook.tsx` | `component` |  |
+| `../../components/icons/src/icons/AddressBookTabs.tsx` | `component` |  |
+| `../../components/icons/src/icons/Airplane.tsx` | `component` |  |
+| `../../components/icons/src/icons/AirplaneInFlight.tsx` | `component` |  |
+| `../../components/icons/src/icons/AirplaneLanding.tsx` | `component` |  |
+| `../../components/icons/src/icons/AirplaneTakeoff.tsx` | `component` |  |
+| `../../components/icons/src/icons/AirplaneTaxiing.tsx` | `component` |  |
+| `../../components/icons/src/icons/AirplaneTilt.tsx` | `component` |  |
+| `../../components/icons/src/icons/Airplay.tsx` | `component` |  |
+| `../../components/icons/src/icons/AirTrafficControl.tsx` | `component` |  |
+| `../../components/icons/src/icons/Alarm.tsx` | `component` |  |
+| `../../components/icons/src/icons/Alien.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignBottom.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignBottomSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignCenterHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignCenterHorizontalSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignCenterVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignCenterVerticalSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignLeftSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignRightSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignTop.tsx` | `component` |  |
+| `../../components/icons/src/icons/AlignTopSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/AmazonLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Ambulance.tsx` | `component` |  |
+| `../../components/icons/src/icons/Anchor.tsx` | `component` |  |
+| `../../components/icons/src/icons/AnchorSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/AndroidLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Angle.tsx` | `component` |  |
+| `../../components/icons/src/icons/AngularLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Aperture.tsx` | `component` |  |
+| `../../components/icons/src/icons/AppleLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/ApplePodcastsLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/ApproximateEquals.tsx` | `component` |  |
+| `../../components/icons/src/icons/AppStoreLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/AppWindow.tsx` | `component` |  |
+| `../../components/icons/src/icons/Archive.tsx` | `component` |  |
+| `../../components/icons/src/icons/Armchair.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowArcLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowArcRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowBendDoubleUpLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowBendDoubleUpRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowBendDownLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowBendDownRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowBendLeftDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowBendLeftUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowBendRightDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowBendRightUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowBendUpLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowBendUpRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowCircleDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowCircleDownLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowCircleDownRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowCircleLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowCircleRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowCircleUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowCircleUpLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowCircleUpRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowClockwise.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowCounterClockwise.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowDownLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowDownRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowElbowDownLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowElbowDownRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowElbowLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowElbowLeftDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowElbowLeftUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowElbowRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowElbowRightDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowElbowRightUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowElbowUpLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowElbowUpRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatLineDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatLineLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatLineRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatLinesDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatLinesLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatLinesRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatLinesUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatLineUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowFatUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowLineDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowLineDownLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowLineDownRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowLineLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowLineRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowLineUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowLineUpLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowLineUpRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsClockwise.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsCounterClockwise.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsDownUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsIn.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsInCardinal.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsInLineHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsInLineVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsInSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsLeftRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsMerge.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsOut.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsOutCardinal.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsOutLineHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsOutLineVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsOutSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowSquareDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowSquareDownLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowSquareDownRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowSquareIn.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowSquareLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowSquareOut.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowSquareRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowSquareUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowSquareUpLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowSquareUpRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsSplit.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowsVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowUDownLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowUDownRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowULeftDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowULeftUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowUpLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowUpRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowURightDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowURightUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowUUpLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArrowUUpRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/Article.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArticleMedium.tsx` | `component` |  |
+| `../../components/icons/src/icons/ArticleNyTimes.tsx` | `component` |  |
+| `../../components/icons/src/icons/Asclepius.tsx` | `component` |  |
+| `../../components/icons/src/icons/Asterisk.tsx` | `component` |  |
+| `../../components/icons/src/icons/AsteriskSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/At.tsx` | `component` |  |
+| `../../components/icons/src/icons/Atom.tsx` | `component` |  |
+| `../../components/icons/src/icons/Avocado.tsx` | `component` |  |
+| `../../components/icons/src/icons/Axe.tsx` | `component` |  |
+| `../../components/icons/src/icons/Baby.tsx` | `component` |  |
+| `../../components/icons/src/icons/BabyCarriage.tsx` | `component` |  |
+| `../../components/icons/src/icons/Backpack.tsx` | `component` |  |
+| `../../components/icons/src/icons/Backspace.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bag.tsx` | `component` |  |
+| `../../components/icons/src/icons/BagSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Balloon.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bandaids.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bank.tsx` | `component` |  |
+| `../../components/icons/src/icons/Barbell.tsx` | `component` |  |
+| `../../components/icons/src/icons/Barcode.tsx` | `component` |  |
+| `../../components/icons/src/icons/Barn.tsx` | `component` |  |
+| `../../components/icons/src/icons/Barricade.tsx` | `component` |  |
+| `../../components/icons/src/icons/Baseball.tsx` | `component` |  |
+| `../../components/icons/src/icons/BaseballCap.tsx` | `component` |  |
+| `../../components/icons/src/icons/BaseballHelmet.tsx` | `component` |  |
+| `../../components/icons/src/icons/Basket.tsx` | `component` |  |
+| `../../components/icons/src/icons/Basketball.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bathtub.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryCharging.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryChargingVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryEmpty.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryFull.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryHigh.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryLow.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryMedium.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryPlusVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryVerticalEmpty.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryVerticalFull.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryVerticalHigh.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryVerticalLow.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryVerticalMedium.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryWarning.tsx` | `component` |  |
+| `../../components/icons/src/icons/BatteryWarningVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/BeachBall.tsx` | `component` |  |
+| `../../components/icons/src/icons/Beanie.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bed.tsx` | `component` |  |
+| `../../components/icons/src/icons/BeerBottle.tsx` | `component` |  |
+| `../../components/icons/src/icons/BeerStein.tsx` | `component` |  |
+| `../../components/icons/src/icons/BehanceLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bell.tsx` | `component` |  |
+| `../../components/icons/src/icons/BellRinging.tsx` | `component` |  |
+| `../../components/icons/src/icons/BellSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/BellSimpleRinging.tsx` | `component` |  |
+| `../../components/icons/src/icons/BellSimpleSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/BellSimpleZ.tsx` | `component` |  |
+| `../../components/icons/src/icons/BellSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/BellZ.tsx` | `component` |  |
+| `../../components/icons/src/icons/Belt.tsx` | `component` |  |
+| `../../components/icons/src/icons/BezierCurve.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bicycle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Binary.tsx` | `component` |  |
+| `../../components/icons/src/icons/Binoculars.tsx` | `component` |  |
+| `../../components/icons/src/icons/Biohazard.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bird.tsx` | `component` |  |
+| `../../components/icons/src/icons/Blueprint.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bluetooth.tsx` | `component` |  |
+| `../../components/icons/src/icons/BluetoothConnected.tsx` | `component` |  |
+| `../../components/icons/src/icons/BluetoothSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/BluetoothX.tsx` | `component` |  |
+| `../../components/icons/src/icons/Boat.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bomb.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bone.tsx` | `component` |  |
+| `../../components/icons/src/icons/Book.tsx` | `component` |  |
+| `../../components/icons/src/icons/BookBookmark.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bookmark.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bookmarks.tsx` | `component` |  |
+| `../../components/icons/src/icons/BookmarkSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/BookmarksSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/BookOpen.tsx` | `component` |  |
+| `../../components/icons/src/icons/BookOpenText.tsx` | `component` |  |
+| `../../components/icons/src/icons/BookOpenUser.tsx` | `component` |  |
+| `../../components/icons/src/icons/Books.tsx` | `component` |  |
+| `../../components/icons/src/icons/Boot.tsx` | `component` |  |
+| `../../components/icons/src/icons/Boules.tsx` | `component` |  |
+| `../../components/icons/src/icons/BoundingBox.tsx` | `component` |  |
+| `../../components/icons/src/icons/BowlFood.tsx` | `component` |  |
+| `../../components/icons/src/icons/BowlingBall.tsx` | `component` |  |
+| `../../components/icons/src/icons/BowlSteam.tsx` | `component` |  |
+| `../../components/icons/src/icons/BoxArrowDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/BoxArrowUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/BoxingGlove.tsx` | `component` |  |
+| `../../components/icons/src/icons/BracketsAngle.tsx` | `component` |  |
+| `../../components/icons/src/icons/BracketsCurly.tsx` | `component` |  |
+| `../../components/icons/src/icons/BracketsRound.tsx` | `component` |  |
+| `../../components/icons/src/icons/BracketsSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/Brain.tsx` | `component` |  |
+| `../../components/icons/src/icons/Brandy.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bread.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bridge.tsx` | `component` |  |
+| `../../components/icons/src/icons/Briefcase.tsx` | `component` |  |
+| `../../components/icons/src/icons/BriefcaseMetal.tsx` | `component` |  |
+| `../../components/icons/src/icons/Broadcast.tsx` | `component` |  |
+| `../../components/icons/src/icons/Broom.tsx` | `component` |  |
+| `../../components/icons/src/icons/Browser.tsx` | `component` |  |
+| `../../components/icons/src/icons/Browsers.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bug.tsx` | `component` |  |
+| `../../components/icons/src/icons/BugBeetle.tsx` | `component` |  |
+| `../../components/icons/src/icons/BugDroid.tsx` | `component` |  |
+| `../../components/icons/src/icons/Building.tsx` | `component` |  |
+| `../../components/icons/src/icons/BuildingApartment.tsx` | `component` |  |
+| `../../components/icons/src/icons/BuildingOffice.tsx` | `component` |  |
+| `../../components/icons/src/icons/Buildings.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bulldozer.tsx` | `component` |  |
+| `../../components/icons/src/icons/Bus.tsx` | `component` |  |
+| `../../components/icons/src/icons/Butterfly.tsx` | `component` |  |
+| `../../components/icons/src/icons/CableCar.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cactus.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cake.tsx` | `component` |  |
+| `../../components/icons/src/icons/Calculator.tsx` | `component` |  |
+| `../../components/icons/src/icons/Calendar.tsx` | `component` |  |
+| `../../components/icons/src/icons/CalendarBlank.tsx` | `component` |  |
+| `../../components/icons/src/icons/CalendarCheck.tsx` | `component` |  |
+| `../../components/icons/src/icons/CalendarDot.tsx` | `component` |  |
+| `../../components/icons/src/icons/CalendarDots.tsx` | `component` |  |
+| `../../components/icons/src/icons/CalendarHeart.tsx` | `component` |  |
+| `../../components/icons/src/icons/CalendarMinus.tsx` | `component` |  |
+| `../../components/icons/src/icons/CalendarPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/CalendarSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/CalendarStar.tsx` | `component` |  |
+| `../../components/icons/src/icons/CalendarX.tsx` | `component` |  |
+| `../../components/icons/src/icons/CallBell.tsx` | `component` |  |
+| `../../components/icons/src/icons/Camera.tsx` | `component` |  |
+| `../../components/icons/src/icons/CameraPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/CameraRotate.tsx` | `component` |  |
+| `../../components/icons/src/icons/CameraSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/Campfire.tsx` | `component` |  |
+| `../../components/icons/src/icons/Car.tsx` | `component` |  |
+| `../../components/icons/src/icons/CarBattery.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cardholder.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cards.tsx` | `component` |  |
+| `../../components/icons/src/icons/CardsThree.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretCircleDoubleDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretCircleDoubleLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretCircleDoubleRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretCircleDoubleUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretCircleDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretCircleLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretCircleRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretCircleUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretCircleUpDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretDoubleDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretDoubleLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretDoubleRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretDoubleUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretLineDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretLineLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretLineRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretLineUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/CaretUpDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/CarProfile.tsx` | `component` |  |
+| `../../components/icons/src/icons/Carrot.tsx` | `component` |  |
+| `../../components/icons/src/icons/CarSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/CashRegister.tsx` | `component` |  |
+| `../../components/icons/src/icons/CassetteTape.tsx` | `component` |  |
+| `../../components/icons/src/icons/CastleTurret.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cat.tsx` | `component` |  |
+| `../../components/icons/src/icons/CellSignalFull.tsx` | `component` |  |
+| `../../components/icons/src/icons/CellSignalHigh.tsx` | `component` |  |
+| `../../components/icons/src/icons/CellSignalLow.tsx` | `component` |  |
+| `../../components/icons/src/icons/CellSignalMedium.tsx` | `component` |  |
+| `../../components/icons/src/icons/CellSignalNone.tsx` | `component` |  |
+| `../../components/icons/src/icons/CellSignalSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/CellSignalX.tsx` | `component` |  |
+| `../../components/icons/src/icons/CellTower.tsx` | `component` |  |
+| `../../components/icons/src/icons/Certificate.tsx` | `component` |  |
+| `../../components/icons/src/icons/Chair.tsx` | `component` |  |
+| `../../components/icons/src/icons/Chalkboard.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChalkboardSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChalkboardTeacher.tsx` | `component` |  |
+| `../../components/icons/src/icons/Champagne.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChargingStation.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChartBar.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChartBarHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChartDonut.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChartLine.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChartLineDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChartLineUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChartPie.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChartPieSlice.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChartPolar.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChartScatter.tsx` | `component` |  |
+| `../../components/icons/src/icons/Chat.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatCentered.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatCenteredDots.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatCenteredSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatCenteredText.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatCircleDots.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatCircleSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatCircleText.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatDots.tsx` | `component` |  |
+| `../../components/icons/src/icons/Chats.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatsCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatsTeardrop.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatTeardrop.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatTeardropDots.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatTeardropSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatTeardropText.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChatText.tsx` | `component` |  |
+| `../../components/icons/src/icons/Check.tsx` | `component` |  |
+| `../../components/icons/src/icons/CheckCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Checkerboard.tsx` | `component` |  |
+| `../../components/icons/src/icons/CheckFat.tsx` | `component` |  |
+| `../../components/icons/src/icons/Checks.tsx` | `component` |  |
+| `../../components/icons/src/icons/CheckSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/CheckSquareOffset.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cheers.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cheese.tsx` | `component` |  |
+| `../../components/icons/src/icons/ChefHat.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cherries.tsx` | `component` |  |
+| `../../components/icons/src/icons/Church.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cigarette.tsx` | `component` |  |
+| `../../components/icons/src/icons/CigaretteSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/Circle.tsx` | `component` |  |
+| `../../components/icons/src/icons/CircleDashed.tsx` | `component` |  |
+| `../../components/icons/src/icons/CircleHalf.tsx` | `component` |  |
+| `../../components/icons/src/icons/CircleHalfTilt.tsx` | `component` |  |
+| `../../components/icons/src/icons/CircleNotch.tsx` | `component` |  |
+| `../../components/icons/src/icons/CirclesFour.tsx` | `component` |  |
+| `../../components/icons/src/icons/CirclesThree.tsx` | `component` |  |
+| `../../components/icons/src/icons/CirclesThreePlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/Circuitry.tsx` | `component` |  |
+| `../../components/icons/src/icons/City.tsx` | `component` |  |
+| `../../components/icons/src/icons/Clipboard.tsx` | `component` |  |
+| `../../components/icons/src/icons/ClipboardText.tsx` | `component` |  |
+| `../../components/icons/src/icons/Clock.tsx` | `component` |  |
+| `../../components/icons/src/icons/ClockAfternoon.tsx` | `component` |  |
+| `../../components/icons/src/icons/ClockClockwise.tsx` | `component` |  |
+| `../../components/icons/src/icons/ClockCountdown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ClockCounterClockwise.tsx` | `component` |  |
+| `../../components/icons/src/icons/ClockUser.tsx` | `component` |  |
+| `../../components/icons/src/icons/ClosedCaptioning.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cloud.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudArrowDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudArrowUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudCheck.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudFog.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudLightning.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudMoon.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudRain.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudSnow.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudSun.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudWarning.tsx` | `component` |  |
+| `../../components/icons/src/icons/CloudX.tsx` | `component` |  |
+| `../../components/icons/src/icons/Clover.tsx` | `component` |  |
+| `../../components/icons/src/icons/Club.tsx` | `component` |  |
+| `../../components/icons/src/icons/CoatHanger.tsx` | `component` |  |
+| `../../components/icons/src/icons/CodaLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Code.tsx` | `component` |  |
+| `../../components/icons/src/icons/CodeBlock.tsx` | `component` |  |
+| `../../components/icons/src/icons/CodepenLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/CodesandboxLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/CodeSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Coffee.tsx` | `component` |  |
+| `../../components/icons/src/icons/CoffeeBean.tsx` | `component` |  |
+| `../../components/icons/src/icons/Coin.tsx` | `component` |  |
+| `../../components/icons/src/icons/Coins.tsx` | `component` |  |
+| `../../components/icons/src/icons/CoinVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/Columns.tsx` | `component` |  |
+| `../../components/icons/src/icons/ColumnsPlusLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ColumnsPlusRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/Command.tsx` | `component` |  |
+| `../../components/icons/src/icons/Compass.tsx` | `component` |  |
+| `../../components/icons/src/icons/CompassRose.tsx` | `component` |  |
+| `../../components/icons/src/icons/CompassTool.tsx` | `component` |  |
+| `../../components/icons/src/icons/ComputerTower.tsx` | `component` |  |
+| `../../components/icons/src/icons/Confetti.tsx` | `component` |  |
+| `../../components/icons/src/icons/ContactlessPayment.tsx` | `component` |  |
+| `../../components/icons/src/icons/Control.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cookie.tsx` | `component` |  |
+| `../../components/icons/src/icons/CookingPot.tsx` | `component` |  |
+| `../../components/icons/src/icons/Copy.tsx` | `component` |  |
+| `../../components/icons/src/icons/Copyleft.tsx` | `component` |  |
+| `../../components/icons/src/icons/Copyright.tsx` | `component` |  |
+| `../../components/icons/src/icons/CopySimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/CornersIn.tsx` | `component` |  |
+| `../../components/icons/src/icons/CornersOut.tsx` | `component` |  |
+| `../../components/icons/src/icons/Couch.tsx` | `component` |  |
+| `../../components/icons/src/icons/CourtBasketball.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cow.tsx` | `component` |  |
+| `../../components/icons/src/icons/CowboyHat.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cpu.tsx` | `component` |  |
+| `../../components/icons/src/icons/Crane.tsx` | `component` |  |
+| `../../components/icons/src/icons/CraneTower.tsx` | `component` |  |
+| `../../components/icons/src/icons/CreditCard.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cricket.tsx` | `component` |  |
+| `../../components/icons/src/icons/Crop.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cross.tsx` | `component` |  |
+| `../../components/icons/src/icons/Crosshair.tsx` | `component` |  |
+| `../../components/icons/src/icons/CrosshairSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Crown.tsx` | `component` |  |
+| `../../components/icons/src/icons/CrownCross.tsx` | `component` |  |
+| `../../components/icons/src/icons/CrownSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cube.tsx` | `component` |  |
+| `../../components/icons/src/icons/CubeFocus.tsx` | `component` |  |
+| `../../components/icons/src/icons/CubeTransparent.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyBtc.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyCircleDollar.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyCny.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyDollar.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyDollarSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyEth.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyEur.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyGbp.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyInr.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyJpy.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyKrw.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyKzt.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyNgn.tsx` | `component` |  |
+| `../../components/icons/src/icons/CurrencyRub.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cursor.tsx` | `component` |  |
+| `../../components/icons/src/icons/CursorClick.tsx` | `component` |  |
+| `../../components/icons/src/icons/CursorText.tsx` | `component` |  |
+| `../../components/icons/src/icons/Cylinder.tsx` | `component` |  |
+| `../../components/icons/src/icons/Database.tsx` | `component` |  |
+| `../../components/icons/src/icons/Desk.tsx` | `component` |  |
+| `../../components/icons/src/icons/Desktop.tsx` | `component` |  |
+| `../../components/icons/src/icons/DesktopTower.tsx` | `component` |  |
+| `../../components/icons/src/icons/Detective.tsx` | `component` |  |
+| `../../components/icons/src/icons/DeviceMobile.tsx` | `component` |  |
+| `../../components/icons/src/icons/DeviceMobileCamera.tsx` | `component` |  |
+| `../../components/icons/src/icons/DeviceMobileSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/DeviceMobileSpeaker.tsx` | `component` |  |
+| `../../components/icons/src/icons/DeviceRotate.tsx` | `component` |  |
+| `../../components/icons/src/icons/Devices.tsx` | `component` |  |
+| `../../components/icons/src/icons/DeviceTablet.tsx` | `component` |  |
+| `../../components/icons/src/icons/DeviceTabletCamera.tsx` | `component` |  |
+| `../../components/icons/src/icons/DeviceTabletSpeaker.tsx` | `component` |  |
+| `../../components/icons/src/icons/DevToLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Diamond.tsx` | `component` |  |
+| `../../components/icons/src/icons/DiamondsFour.tsx` | `component` |  |
+| `../../components/icons/src/icons/DiceFive.tsx` | `component` |  |
+| `../../components/icons/src/icons/DiceFour.tsx` | `component` |  |
+| `../../components/icons/src/icons/DiceOne.tsx` | `component` |  |
+| `../../components/icons/src/icons/DiceSix.tsx` | `component` |  |
+| `../../components/icons/src/icons/DiceThree.tsx` | `component` |  |
+| `../../components/icons/src/icons/DiceTwo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Disc.tsx` | `component` |  |
+| `../../components/icons/src/icons/DiscoBall.tsx` | `component` |  |
+| `../../components/icons/src/icons/DiscordLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Divide.tsx` | `component` |  |
+| `../../components/icons/src/icons/Dna.tsx` | `component` |  |
+| `../../components/icons/src/icons/Dog.tsx` | `component` |  |
+| `../../components/icons/src/icons/Door.tsx` | `component` |  |
+| `../../components/icons/src/icons/DoorOpen.tsx` | `component` |  |
+| `../../components/icons/src/icons/Dot.tsx` | `component` |  |
+| `../../components/icons/src/icons/DotOutline.tsx` | `component` |  |
+| `../../components/icons/src/icons/DotsNine.tsx` | `component` |  |
+| `../../components/icons/src/icons/DotsSix.tsx` | `component` |  |
+| `../../components/icons/src/icons/DotsSixVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/DotsThree.tsx` | `component` |  |
+| `../../components/icons/src/icons/DotsThreeCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/DotsThreeCircleVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/DotsThreeOutline.tsx` | `component` |  |
+| `../../components/icons/src/icons/DotsThreeOutlineVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/DotsThreeVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/Download.tsx` | `component` |  |
+| `../../components/icons/src/icons/DownloadSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Dress.tsx` | `component` |  |
+| `../../components/icons/src/icons/Dresser.tsx` | `component` |  |
+| `../../components/icons/src/icons/DribbbleLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Drone.tsx` | `component` |  |
+| `../../components/icons/src/icons/Drop.tsx` | `component` |  |
+| `../../components/icons/src/icons/DropboxLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/DropHalf.tsx` | `component` |  |
+| `../../components/icons/src/icons/DropHalfBottom.tsx` | `component` |  |
+| `../../components/icons/src/icons/DropSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/DropSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/Ear.tsx` | `component` |  |
+| `../../components/icons/src/icons/EarSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/Egg.tsx` | `component` |  |
+| `../../components/icons/src/icons/EggCrack.tsx` | `component` |  |
+| `../../components/icons/src/icons/Eject.tsx` | `component` |  |
+| `../../components/icons/src/icons/EjectSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Elevator.tsx` | `component` |  |
+| `../../components/icons/src/icons/Empty.tsx` | `component` |  |
+| `../../components/icons/src/icons/Engine.tsx` | `component` |  |
+| `../../components/icons/src/icons/Envelope.tsx` | `component` |  |
+| `../../components/icons/src/icons/EnvelopeOpen.tsx` | `component` |  |
+| `../../components/icons/src/icons/EnvelopeSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/EnvelopeSimpleOpen.tsx` | `component` |  |
+| `../../components/icons/src/icons/Equalizer.tsx` | `component` |  |
+| `../../components/icons/src/icons/Equals.tsx` | `component` |  |
+| `../../components/icons/src/icons/Eraser.tsx` | `component` |  |
+| `../../components/icons/src/icons/EscalatorDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/EscalatorUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/Exam.tsx` | `component` |  |
+| `../../components/icons/src/icons/ExclamationMark.tsx` | `component` |  |
+| `../../components/icons/src/icons/Exclude.tsx` | `component` |  |
+| `../../components/icons/src/icons/ExcludeSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/Export.tsx` | `component` |  |
+| `../../components/icons/src/icons/Eye.tsx` | `component` |  |
+| `../../components/icons/src/icons/EyeClosed.tsx` | `component` |  |
+| `../../components/icons/src/icons/Eyedropper.tsx` | `component` |  |
+| `../../components/icons/src/icons/EyedropperSample.tsx` | `component` |  |
+| `../../components/icons/src/icons/Eyeglasses.tsx` | `component` |  |
+| `../../components/icons/src/icons/Eyes.tsx` | `component` |  |
+| `../../components/icons/src/icons/EyeSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/FacebookLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/FaceMask.tsx` | `component` |  |
+| `../../components/icons/src/icons/Factory.tsx` | `component` |  |
+| `../../components/icons/src/icons/Faders.tsx` | `component` |  |
+| `../../components/icons/src/icons/FadersHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/FalloutShelter.tsx` | `component` |  |
+| `../../components/icons/src/icons/Fan.tsx` | `component` |  |
+| `../../components/icons/src/icons/Farm.tsx` | `component` |  |
+| `../../components/icons/src/icons/FastForward.tsx` | `component` |  |
+| `../../components/icons/src/icons/FastForwardCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Feather.tsx` | `component` |  |
+| `../../components/icons/src/icons/FediverseLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/FigmaLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/File.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileArchive.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileArrowDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileArrowUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileAudio.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileC.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileCloud.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileCode.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileCpp.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileCSharp.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileCss.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileCsv.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileDashed.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileDoc.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileHtml.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileImage.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileIni.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileJpg.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileJs.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileJsx.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileLock.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileMagnifyingGlass.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileMd.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileMinus.tsx` | `component` |  |
+| `../../components/icons/src/icons/FilePdf.tsx` | `component` |  |
+| `../../components/icons/src/icons/FilePlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/FilePng.tsx` | `component` |  |
+| `../../components/icons/src/icons/FilePpt.tsx` | `component` |  |
+| `../../components/icons/src/icons/FilePy.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileRs.tsx` | `component` |  |
+| `../../components/icons/src/icons/Files.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileSql.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileSvg.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileText.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileTs.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileTsx.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileTxt.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileVideo.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileVue.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileX.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileXls.tsx` | `component` |  |
+| `../../components/icons/src/icons/FileZip.tsx` | `component` |  |
+| `../../components/icons/src/icons/FilmReel.tsx` | `component` |  |
+| `../../components/icons/src/icons/FilmScript.tsx` | `component` |  |
+| `../../components/icons/src/icons/FilmSlate.tsx` | `component` |  |
+| `../../components/icons/src/icons/FilmStrip.tsx` | `component` |  |
+| `../../components/icons/src/icons/Fingerprint.tsx` | `component` |  |
+| `../../components/icons/src/icons/FingerprintSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/FinnTheHuman.tsx` | `component` |  |
+| `../../components/icons/src/icons/Fire.tsx` | `component` |  |
+| `../../components/icons/src/icons/FireExtinguisher.tsx` | `component` |  |
+| `../../components/icons/src/icons/FireSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/FireTruck.tsx` | `component` |  |
+| `../../components/icons/src/icons/FirstAid.tsx` | `component` |  |
+| `../../components/icons/src/icons/FirstAidKit.tsx` | `component` |  |
+| `../../components/icons/src/icons/Fish.tsx` | `component` |  |
+| `../../components/icons/src/icons/FishSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Flag.tsx` | `component` |  |
+| `../../components/icons/src/icons/FlagBanner.tsx` | `component` |  |
+| `../../components/icons/src/icons/FlagBannerFold.tsx` | `component` |  |
+| `../../components/icons/src/icons/FlagCheckered.tsx` | `component` |  |
+| `../../components/icons/src/icons/FlagPennant.tsx` | `component` |  |
+| `../../components/icons/src/icons/Flame.tsx` | `component` |  |
+| `../../components/icons/src/icons/Flashlight.tsx` | `component` |  |
+| `../../components/icons/src/icons/Flask.tsx` | `component` |  |
+| `../../components/icons/src/icons/FlipHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/FlipVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/FloppyDisk.tsx` | `component` |  |
+| `../../components/icons/src/icons/FloppyDiskBack.tsx` | `component` |  |
+| `../../components/icons/src/icons/FlowArrow.tsx` | `component` |  |
+| `../../components/icons/src/icons/Flower.tsx` | `component` |  |
+| `../../components/icons/src/icons/FlowerLotus.tsx` | `component` |  |
+| `../../components/icons/src/icons/FlowerTulip.tsx` | `component` |  |
+| `../../components/icons/src/icons/FlyingSaucer.tsx` | `component` |  |
+| `../../components/icons/src/icons/Folder.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderDashed.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderLock.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderMinus.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderOpen.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/Folders.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderSimpleDashed.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderSimpleLock.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderSimpleMinus.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderSimplePlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderSimpleStar.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderSimpleUser.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderStar.tsx` | `component` |  |
+| `../../components/icons/src/icons/FolderUser.tsx` | `component` |  |
+| `../../components/icons/src/icons/Football.tsx` | `component` |  |
+| `../../components/icons/src/icons/FootballHelmet.tsx` | `component` |  |
+| `../../components/icons/src/icons/Footprints.tsx` | `component` |  |
+| `../../components/icons/src/icons/ForkKnife.tsx` | `component` |  |
+| `../../components/icons/src/icons/FourK.tsx` | `component` |  |
+| `../../components/icons/src/icons/FrameCorners.tsx` | `component` |  |
+| `../../components/icons/src/icons/FramerLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Function.tsx` | `component` |  |
+| `../../components/icons/src/icons/Funnel.tsx` | `component` |  |
+| `../../components/icons/src/icons/FunnelSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/FunnelSimpleX.tsx` | `component` |  |
+| `../../components/icons/src/icons/FunnelX.tsx` | `component` |  |
+| `../../components/icons/src/icons/GameController.tsx` | `component` |  |
+| `../../components/icons/src/icons/Garage.tsx` | `component` |  |
+| `../../components/icons/src/icons/GasCan.tsx` | `component` |  |
+| `../../components/icons/src/icons/GasPump.tsx` | `component` |  |
+| `../../components/icons/src/icons/Gauge.tsx` | `component` |  |
+| `../../components/icons/src/icons/Gavel.tsx` | `component` |  |
+| `../../components/icons/src/icons/Gear.tsx` | `component` |  |
+| `../../components/icons/src/icons/GearFine.tsx` | `component` |  |
+| `../../components/icons/src/icons/GearSix.tsx` | `component` |  |
+| `../../components/icons/src/icons/GenderFemale.tsx` | `component` |  |
+| `../../components/icons/src/icons/GenderIntersex.tsx` | `component` |  |
+| `../../components/icons/src/icons/GenderMale.tsx` | `component` |  |
+| `../../components/icons/src/icons/GenderNeuter.tsx` | `component` |  |
+| `../../components/icons/src/icons/GenderNonbinary.tsx` | `component` |  |
+| `../../components/icons/src/icons/GenderTransgender.tsx` | `component` |  |
+| `../../components/icons/src/icons/Ghost.tsx` | `component` |  |
+| `../../components/icons/src/icons/Gif.tsx` | `component` |  |
+| `../../components/icons/src/icons/Gift.tsx` | `component` |  |
+| `../../components/icons/src/icons/GitBranch.tsx` | `component` |  |
+| `../../components/icons/src/icons/GitCommit.tsx` | `component` |  |
+| `../../components/icons/src/icons/GitDiff.tsx` | `component` |  |
+| `../../components/icons/src/icons/GitFork.tsx` | `component` |  |
+| `../../components/icons/src/icons/GithubLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/GitlabLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/GitlabLogoSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/GitMerge.tsx` | `component` |  |
+| `../../components/icons/src/icons/GitPullRequest.tsx` | `component` |  |
+| `../../components/icons/src/icons/Globe.tsx` | `component` |  |
+| `../../components/icons/src/icons/GlobeHemisphereEast.tsx` | `component` |  |
+| `../../components/icons/src/icons/GlobeHemisphereWest.tsx` | `component` |  |
+| `../../components/icons/src/icons/GlobeSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/GlobeSimpleX.tsx` | `component` |  |
+| `../../components/icons/src/icons/GlobeStand.tsx` | `component` |  |
+| `../../components/icons/src/icons/GlobeX.tsx` | `component` |  |
+| `../../components/icons/src/icons/Goggles.tsx` | `component` |  |
+| `../../components/icons/src/icons/Golf.tsx` | `component` |  |
+| `../../components/icons/src/icons/GoodreadsLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/GoogleCardboardLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/GoogleChromeLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/GoogleDriveLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/GoogleLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/GooglePhotosLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/GooglePlayLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/GooglePodcastsLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Gps.tsx` | `component` |  |
+| `../../components/icons/src/icons/GpsFix.tsx` | `component` |  |
+| `../../components/icons/src/icons/GpsSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/Gradient.tsx` | `component` |  |
+| `../../components/icons/src/icons/GraduationCap.tsx` | `component` |  |
+| `../../components/icons/src/icons/Grains.tsx` | `component` |  |
+| `../../components/icons/src/icons/GrainsSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/Graph.tsx` | `component` |  |
+| `../../components/icons/src/icons/GraphicsCard.tsx` | `component` |  |
+| `../../components/icons/src/icons/GreaterThan.tsx` | `component` |  |
+| `../../components/icons/src/icons/GreaterThanOrEqual.tsx` | `component` |  |
+| `../../components/icons/src/icons/GridFour.tsx` | `component` |  |
+| `../../components/icons/src/icons/GridNine.tsx` | `component` |  |
+| `../../components/icons/src/icons/Guitar.tsx` | `component` |  |
+| `../../components/icons/src/icons/HairDryer.tsx` | `component` |  |
+| `../../components/icons/src/icons/Hamburger.tsx` | `component` |  |
+| `../../components/icons/src/icons/Hammer.tsx` | `component` |  |
+| `../../components/icons/src/icons/Hand.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandArrowDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandArrowUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/Handbag.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandbagSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandCoins.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandDeposit.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandEye.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandFist.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandGrabbing.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandHeart.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandPalm.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandPeace.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandPointing.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandsClapping.tsx` | `component` |  |
+| `../../components/icons/src/icons/Handshake.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandSoap.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandsPraying.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandSwipeLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandSwipeRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandTap.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandWaving.tsx` | `component` |  |
+| `../../components/icons/src/icons/HandWithdraw.tsx` | `component` |  |
+| `../../components/icons/src/icons/HardDrive.tsx` | `component` |  |
+| `../../components/icons/src/icons/HardDrives.tsx` | `component` |  |
+| `../../components/icons/src/icons/HardHat.tsx` | `component` |  |
+| `../../components/icons/src/icons/Hash.tsx` | `component` |  |
+| `../../components/icons/src/icons/HashStraight.tsx` | `component` |  |
+| `../../components/icons/src/icons/HeadCircuit.tsx` | `component` |  |
+| `../../components/icons/src/icons/Headlights.tsx` | `component` |  |
+| `../../components/icons/src/icons/Headphones.tsx` | `component` |  |
+| `../../components/icons/src/icons/Headset.tsx` | `component` |  |
+| `../../components/icons/src/icons/Heart.tsx` | `component` |  |
+| `../../components/icons/src/icons/Heartbeat.tsx` | `component` |  |
+| `../../components/icons/src/icons/HeartBreak.tsx` | `component` |  |
+| `../../components/icons/src/icons/HeartHalf.tsx` | `component` |  |
+| `../../components/icons/src/icons/HeartStraight.tsx` | `component` |  |
+| `../../components/icons/src/icons/HeartStraightBreak.tsx` | `component` |  |
+| `../../components/icons/src/icons/Hexagon.tsx` | `component` |  |
+| `../../components/icons/src/icons/HighDefinition.tsx` | `component` |  |
+| `../../components/icons/src/icons/HighHeel.tsx` | `component` |  |
+| `../../components/icons/src/icons/Highlighter.tsx` | `component` |  |
+| `../../components/icons/src/icons/HighlighterCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Hockey.tsx` | `component` |  |
+| `../../components/icons/src/icons/Hoodie.tsx` | `component` |  |
+| `../../components/icons/src/icons/Horse.tsx` | `component` |  |
+| `../../components/icons/src/icons/Hospital.tsx` | `component` |  |
+| `../../components/icons/src/icons/Hourglass.tsx` | `component` |  |
+| `../../components/icons/src/icons/HourglassHigh.tsx` | `component` |  |
+| `../../components/icons/src/icons/HourglassLow.tsx` | `component` |  |
+| `../../components/icons/src/icons/HourglassMedium.tsx` | `component` |  |
+| `../../components/icons/src/icons/HourglassSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/HourglassSimpleHigh.tsx` | `component` |  |
+| `../../components/icons/src/icons/HourglassSimpleLow.tsx` | `component` |  |
+| `../../components/icons/src/icons/HourglassSimpleMedium.tsx` | `component` |  |
+| `../../components/icons/src/icons/House.tsx` | `component` |  |
+| `../../components/icons/src/icons/HouseLine.tsx` | `component` |  |
+| `../../components/icons/src/icons/HouseSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Hurricane.tsx` | `component` |  |
+| `../../components/icons/src/icons/IceCream.tsx` | `component` |  |
+| `../../components/icons/src/icons/IdentificationBadge.tsx` | `component` |  |
+| `../../components/icons/src/icons/IdentificationCard.tsx` | `component` |  |
+| `../../components/icons/src/icons/Image.tsx` | `component` |  |
+| `../../components/icons/src/icons/ImageBroken.tsx` | `component` |  |
+| `../../components/icons/src/icons/Images.tsx` | `component` |  |
+| `../../components/icons/src/icons/ImageSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/ImagesSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/Infinity.tsx` | `component` |  |
+| `../../components/icons/src/icons/Info.tsx` | `component` |  |
+| `../../components/icons/src/icons/InstagramLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Intersect.tsx` | `component` |  |
+| `../../components/icons/src/icons/Intersection.tsx` | `component` |  |
+| `../../components/icons/src/icons/IntersectSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/IntersectThree.tsx` | `component` |  |
+| `../../components/icons/src/icons/Invoice.tsx` | `component` |  |
+| `../../components/icons/src/icons/Island.tsx` | `component` |  |
+| `../../components/icons/src/icons/Jar.tsx` | `component` |  |
+| `../../components/icons/src/icons/JarLabel.tsx` | `component` |  |
+| `../../components/icons/src/icons/Jeep.tsx` | `component` |  |
+| `../../components/icons/src/icons/Joystick.tsx` | `component` |  |
+| `../../components/icons/src/icons/Kanban.tsx` | `component` |  |
+| `../../components/icons/src/icons/Key.tsx` | `component` |  |
+| `../../components/icons/src/icons/Keyboard.tsx` | `component` |  |
+| `../../components/icons/src/icons/Keyhole.tsx` | `component` |  |
+| `../../components/icons/src/icons/KeyReturn.tsx` | `component` |  |
+| `../../components/icons/src/icons/Knife.tsx` | `component` |  |
+| `../../components/icons/src/icons/Ladder.tsx` | `component` |  |
+| `../../components/icons/src/icons/LadderSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Lamp.tsx` | `component` |  |
+| `../../components/icons/src/icons/LampPendant.tsx` | `component` |  |
+| `../../components/icons/src/icons/Laptop.tsx` | `component` |  |
+| `../../components/icons/src/icons/Lasso.tsx` | `component` |  |
+| `../../components/icons/src/icons/LastfmLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Layout.tsx` | `component` |  |
+| `../../components/icons/src/icons/Leaf.tsx` | `component` |  |
+| `../../components/icons/src/icons/Lectern.tsx` | `component` |  |
+| `../../components/icons/src/icons/Lego.tsx` | `component` |  |
+| `../../components/icons/src/icons/LegoSmiley.tsx` | `component` |  |
+| `../../components/icons/src/icons/LessThan.tsx` | `component` |  |
+| `../../components/icons/src/icons/LessThanOrEqual.tsx` | `component` |  |
+| `../../components/icons/src/icons/LetterCircleH.tsx` | `component` |  |
+| `../../components/icons/src/icons/LetterCircleP.tsx` | `component` |  |
+| `../../components/icons/src/icons/LetterCircleV.tsx` | `component` |  |
+| `../../components/icons/src/icons/Lifebuoy.tsx` | `component` |  |
+| `../../components/icons/src/icons/Lightbulb.tsx` | `component` |  |
+| `../../components/icons/src/icons/LightbulbFilament.tsx` | `component` |  |
+| `../../components/icons/src/icons/Lighthouse.tsx` | `component` |  |
+| `../../components/icons/src/icons/Lightning.tsx` | `component` |  |
+| `../../components/icons/src/icons/LightningA.tsx` | `component` |  |
+| `../../components/icons/src/icons/LightningSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/LineSegment.tsx` | `component` |  |
+| `../../components/icons/src/icons/LineSegments.tsx` | `component` |  |
+| `../../components/icons/src/icons/LineVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/Link.tsx` | `component` |  |
+| `../../components/icons/src/icons/LinkBreak.tsx` | `component` |  |
+| `../../components/icons/src/icons/LinkedinLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/LinkSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/LinkSimpleBreak.tsx` | `component` |  |
+| `../../components/icons/src/icons/LinkSimpleHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/LinkSimpleHorizontalBreak.tsx` | `component` |  |
+| `../../components/icons/src/icons/LinktreeLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/LinuxLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/List.tsx` | `component` |  |
+| `../../components/icons/src/icons/ListBullets.tsx` | `component` |  |
+| `../../components/icons/src/icons/ListChecks.tsx` | `component` |  |
+| `../../components/icons/src/icons/ListDashes.tsx` | `component` |  |
+| `../../components/icons/src/icons/ListHeart.tsx` | `component` |  |
+| `../../components/icons/src/icons/ListMagnifyingGlass.tsx` | `component` |  |
+| `../../components/icons/src/icons/ListNumbers.tsx` | `component` |  |
+| `../../components/icons/src/icons/ListPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/ListStar.tsx` | `component` |  |
+| `../../components/icons/src/icons/Lock.tsx` | `component` |  |
+| `../../components/icons/src/icons/Lockers.tsx` | `component` |  |
+| `../../components/icons/src/icons/LockKey.tsx` | `component` |  |
+| `../../components/icons/src/icons/LockKeyOpen.tsx` | `component` |  |
+| `../../components/icons/src/icons/LockLaminated.tsx` | `component` |  |
+| `../../components/icons/src/icons/LockLaminatedOpen.tsx` | `component` |  |
+| `../../components/icons/src/icons/LockOpen.tsx` | `component` |  |
+| `../../components/icons/src/icons/LockSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/LockSimpleOpen.tsx` | `component` |  |
+| `../../components/icons/src/icons/Log.tsx` | `component` |  |
+| `../../components/icons/src/icons/MagicWand.tsx` | `component` |  |
+| `../../components/icons/src/icons/Magnet.tsx` | `component` |  |
+| `../../components/icons/src/icons/MagnetStraight.tsx` | `component` |  |
+| `../../components/icons/src/icons/MagnifyingGlass.tsx` | `component` |  |
+| `../../components/icons/src/icons/MagnifyingGlassMinus.tsx` | `component` |  |
+| `../../components/icons/src/icons/MagnifyingGlassPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/Mailbox.tsx` | `component` |  |
+| `../../components/icons/src/icons/MapPin.tsx` | `component` |  |
+| `../../components/icons/src/icons/MapPinArea.tsx` | `component` |  |
+| `../../components/icons/src/icons/MapPinLine.tsx` | `component` |  |
+| `../../components/icons/src/icons/MapPinPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/MapPinSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/MapPinSimpleArea.tsx` | `component` |  |
+| `../../components/icons/src/icons/MapPinSimpleLine.tsx` | `component` |  |
+| `../../components/icons/src/icons/MapTrifold.tsx` | `component` |  |
+| `../../components/icons/src/icons/MarkdownLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/MarkerCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Martini.tsx` | `component` |  |
+| `../../components/icons/src/icons/MaskHappy.tsx` | `component` |  |
+| `../../components/icons/src/icons/MaskSad.tsx` | `component` |  |
+| `../../components/icons/src/icons/MastodonLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/MathOperations.tsx` | `component` |  |
+| `../../components/icons/src/icons/MatrixLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Medal.tsx` | `component` |  |
+| `../../components/icons/src/icons/MedalMilitary.tsx` | `component` |  |
+| `../../components/icons/src/icons/MediumLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Megaphone.tsx` | `component` |  |
+| `../../components/icons/src/icons/MegaphoneSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/MemberOf.tsx` | `component` |  |
+| `../../components/icons/src/icons/Memory.tsx` | `component` |  |
+| `../../components/icons/src/icons/MessengerLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/MetaLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Meteor.tsx` | `component` |  |
+| `../../components/icons/src/icons/Metronome.tsx` | `component` |  |
+| `../../components/icons/src/icons/Microphone.tsx` | `component` |  |
+| `../../components/icons/src/icons/MicrophoneSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/MicrophoneStage.tsx` | `component` |  |
+| `../../components/icons/src/icons/Microscope.tsx` | `component` |  |
+| `../../components/icons/src/icons/MicrosoftExcelLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/MicrosoftOutlookLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/MicrosoftPowerpointLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/MicrosoftTeamsLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/MicrosoftWordLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Minus.tsx` | `component` |  |
+| `../../components/icons/src/icons/MinusCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/MinusSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/Money.tsx` | `component` |  |
+| `../../components/icons/src/icons/MoneyWavy.tsx` | `component` |  |
+| `../../components/icons/src/icons/Monitor.tsx` | `component` |  |
+| `../../components/icons/src/icons/MonitorArrowUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/MonitorPlay.tsx` | `component` |  |
+| `../../components/icons/src/icons/Moon.tsx` | `component` |  |
+| `../../components/icons/src/icons/MoonStars.tsx` | `component` |  |
+| `../../components/icons/src/icons/Moped.tsx` | `component` |  |
+| `../../components/icons/src/icons/MopedFront.tsx` | `component` |  |
+| `../../components/icons/src/icons/Mosque.tsx` | `component` |  |
+| `../../components/icons/src/icons/Motorcycle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Mountains.tsx` | `component` |  |
+| `../../components/icons/src/icons/Mouse.tsx` | `component` |  |
+| `../../components/icons/src/icons/MouseLeftClick.tsx` | `component` |  |
+| `../../components/icons/src/icons/MouseMiddleClick.tsx` | `component` |  |
+| `../../components/icons/src/icons/MouseRightClick.tsx` | `component` |  |
+| `../../components/icons/src/icons/MouseScroll.tsx` | `component` |  |
+| `../../components/icons/src/icons/MouseSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/MusicNote.tsx` | `component` |  |
+| `../../components/icons/src/icons/MusicNotes.tsx` | `component` |  |
+| `../../components/icons/src/icons/MusicNoteSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/MusicNotesMinus.tsx` | `component` |  |
+| `../../components/icons/src/icons/MusicNotesPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/MusicNotesSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/NavigationArrow.tsx` | `component` |  |
+| `../../components/icons/src/icons/Needle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Network.tsx` | `component` |  |
+| `../../components/icons/src/icons/NetworkSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/NetworkX.tsx` | `component` |  |
+| `../../components/icons/src/icons/Newspaper.tsx` | `component` |  |
+| `../../components/icons/src/icons/NewspaperClipping.tsx` | `component` |  |
+| `../../components/icons/src/icons/Notches.tsx` | `component` |  |
+| `../../components/icons/src/icons/Note.tsx` | `component` |  |
+| `../../components/icons/src/icons/NoteBlank.tsx` | `component` |  |
+| `../../components/icons/src/icons/Notebook.tsx` | `component` |  |
+| `../../components/icons/src/icons/Notepad.tsx` | `component` |  |
+| `../../components/icons/src/icons/NotePencil.tsx` | `component` |  |
+| `../../components/icons/src/icons/NotEquals.tsx` | `component` |  |
+| `../../components/icons/src/icons/Notification.tsx` | `component` |  |
+| `../../components/icons/src/icons/NotionLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/NotMemberOf.tsx` | `component` |  |
+| `../../components/icons/src/icons/NotSubsetOf.tsx` | `component` |  |
+| `../../components/icons/src/icons/NotSupersetOf.tsx` | `component` |  |
+| `../../components/icons/src/icons/NuclearPlant.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberCircleEight.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberCircleFive.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberCircleFour.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberCircleNine.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberCircleOne.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberCircleSeven.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberCircleSix.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberCircleThree.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberCircleTwo.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberCircleZero.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberEight.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberFive.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberFour.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberNine.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberOne.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSeven.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSix.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSquareEight.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSquareFive.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSquareFour.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSquareNine.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSquareOne.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSquareSeven.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSquareSix.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSquareThree.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSquareTwo.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberSquareZero.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberThree.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberTwo.tsx` | `component` |  |
+| `../../components/icons/src/icons/NumberZero.tsx` | `component` |  |
+| `../../components/icons/src/icons/Numpad.tsx` | `component` |  |
+| `../../components/icons/src/icons/Nut.tsx` | `component` |  |
+| `../../components/icons/src/icons/NyTimesLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Octagon.tsx` | `component` |  |
+| `../../components/icons/src/icons/OfficeChair.tsx` | `component` |  |
+| `../../components/icons/src/icons/Onigiri.tsx` | `component` |  |
+| `../../components/icons/src/icons/OpenAiLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Option.tsx` | `component` |  |
+| `../../components/icons/src/icons/Orange.tsx` | `component` |  |
+| `../../components/icons/src/icons/OrangeSlice.tsx` | `component` |  |
+| `../../components/icons/src/icons/Oven.tsx` | `component` |  |
+| `../../components/icons/src/icons/Package.tsx` | `component` |  |
+| `../../components/icons/src/icons/PaintBrush.tsx` | `component` |  |
+| `../../components/icons/src/icons/PaintBrushBroad.tsx` | `component` |  |
+| `../../components/icons/src/icons/PaintBrushHousehold.tsx` | `component` |  |
+| `../../components/icons/src/icons/PaintBucket.tsx` | `component` |  |
+| `../../components/icons/src/icons/PaintRoller.tsx` | `component` |  |
+| `../../components/icons/src/icons/Palette.tsx` | `component` |  |
+| `../../components/icons/src/icons/Panorama.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pants.tsx` | `component` |  |
+| `../../components/icons/src/icons/Paperclip.tsx` | `component` |  |
+| `../../components/icons/src/icons/PaperclipHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/PaperPlane.tsx` | `component` |  |
+| `../../components/icons/src/icons/PaperPlaneRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/PaperPlaneTilt.tsx` | `component` |  |
+| `../../components/icons/src/icons/Parachute.tsx` | `component` |  |
+| `../../components/icons/src/icons/Paragraph.tsx` | `component` |  |
+| `../../components/icons/src/icons/Parallelogram.tsx` | `component` |  |
+| `../../components/icons/src/icons/Park.tsx` | `component` |  |
+| `../../components/icons/src/icons/Password.tsx` | `component` |  |
+| `../../components/icons/src/icons/Path.tsx` | `component` |  |
+| `../../components/icons/src/icons/PatreonLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pause.tsx` | `component` |  |
+| `../../components/icons/src/icons/PauseCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/PawPrint.tsx` | `component` |  |
+| `../../components/icons/src/icons/PaypalLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Peace.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pen.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pencil.tsx` | `component` |  |
+| `../../components/icons/src/icons/PencilCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/PencilLine.tsx` | `component` |  |
+| `../../components/icons/src/icons/PencilRuler.tsx` | `component` |  |
+| `../../components/icons/src/icons/PencilSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/PencilSimpleLine.tsx` | `component` |  |
+| `../../components/icons/src/icons/PencilSimpleSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/PencilSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/PenNib.tsx` | `component` |  |
+| `../../components/icons/src/icons/PenNibStraight.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pentagon.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pentagram.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pepper.tsx` | `component` |  |
+| `../../components/icons/src/icons/Percent.tsx` | `component` |  |
+| `../../components/icons/src/icons/Person.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonArmsSpread.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonSimpleBike.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonSimpleCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonSimpleHike.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonSimpleRun.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonSimpleSki.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonSimpleSnowboard.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonSimpleSwim.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonSimpleTaiChi.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonSimpleThrow.tsx` | `component` |  |
+| `../../components/icons/src/icons/PersonSimpleWalk.tsx` | `component` |  |
+| `../../components/icons/src/icons/Perspective.tsx` | `component` |  |
+| `../../components/icons/src/icons/Phone.tsx` | `component` |  |
+| `../../components/icons/src/icons/PhoneCall.tsx` | `component` |  |
+| `../../components/icons/src/icons/PhoneDisconnect.tsx` | `component` |  |
+| `../../components/icons/src/icons/PhoneIncoming.tsx` | `component` |  |
+| `../../components/icons/src/icons/PhoneList.tsx` | `component` |  |
+| `../../components/icons/src/icons/PhoneOutgoing.tsx` | `component` |  |
+| `../../components/icons/src/icons/PhonePause.tsx` | `component` |  |
+| `../../components/icons/src/icons/PhonePlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/PhoneSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/PhoneTransfer.tsx` | `component` |  |
+| `../../components/icons/src/icons/PhoneX.tsx` | `component` |  |
+| `../../components/icons/src/icons/PhosphorLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pi.tsx` | `component` |  |
+| `../../components/icons/src/icons/PianoKeys.tsx` | `component` |  |
+| `../../components/icons/src/icons/PicnicTable.tsx` | `component` |  |
+| `../../components/icons/src/icons/PictureInPicture.tsx` | `component` |  |
+| `../../components/icons/src/icons/PiggyBank.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pill.tsx` | `component` |  |
+| `../../components/icons/src/icons/PingPong.tsx` | `component` |  |
+| `../../components/icons/src/icons/PinterestLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/PintGlass.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pinwheel.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pipe.tsx` | `component` |  |
+| `../../components/icons/src/icons/PipeWrench.tsx` | `component` |  |
+| `../../components/icons/src/icons/PixLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pizza.tsx` | `component` |  |
+| `../../components/icons/src/icons/Placeholder.tsx` | `component` |  |
+| `../../components/icons/src/icons/Planet.tsx` | `component` |  |
+| `../../components/icons/src/icons/Plant.tsx` | `component` |  |
+| `../../components/icons/src/icons/Play.tsx` | `component` |  |
+| `../../components/icons/src/icons/PlayCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Playlist.tsx` | `component` |  |
+| `../../components/icons/src/icons/PlayPause.tsx` | `component` |  |
+| `../../components/icons/src/icons/Plug.tsx` | `component` |  |
+| `../../components/icons/src/icons/PlugCharging.tsx` | `component` |  |
+| `../../components/icons/src/icons/Plugs.tsx` | `component` |  |
+| `../../components/icons/src/icons/PlugsConnected.tsx` | `component` |  |
+| `../../components/icons/src/icons/Plus.tsx` | `component` |  |
+| `../../components/icons/src/icons/PlusCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/PlusMinus.tsx` | `component` |  |
+| `../../components/icons/src/icons/PlusSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/PokerChip.tsx` | `component` |  |
+| `../../components/icons/src/icons/PoliceCar.tsx` | `component` |  |
+| `../../components/icons/src/icons/Polygon.tsx` | `component` |  |
+| `../../components/icons/src/icons/Popcorn.tsx` | `component` |  |
+| `../../components/icons/src/icons/Popsicle.tsx` | `component` |  |
+| `../../components/icons/src/icons/PottedPlant.tsx` | `component` |  |
+| `../../components/icons/src/icons/Power.tsx` | `component` |  |
+| `../../components/icons/src/icons/Prescription.tsx` | `component` |  |
+| `../../components/icons/src/icons/Presentation.tsx` | `component` |  |
+| `../../components/icons/src/icons/PresentationChart.tsx` | `component` |  |
+| `../../components/icons/src/icons/Printer.tsx` | `component` |  |
+| `../../components/icons/src/icons/Prohibit.tsx` | `component` |  |
+| `../../components/icons/src/icons/ProhibitInset.tsx` | `component` |  |
+| `../../components/icons/src/icons/ProjectorScreen.tsx` | `component` |  |
+| `../../components/icons/src/icons/ProjectorScreenChart.tsx` | `component` |  |
+| `../../components/icons/src/icons/Pulse.tsx` | `component` |  |
+| `../../components/icons/src/icons/PushPin.tsx` | `component` |  |
+| `../../components/icons/src/icons/PushPinSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/PushPinSimpleSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/PushPinSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/PuzzlePiece.tsx` | `component` |  |
+| `../../components/icons/src/icons/QrCode.tsx` | `component` |  |
+| `../../components/icons/src/icons/Question.tsx` | `component` |  |
+| `../../components/icons/src/icons/QuestionMark.tsx` | `component` |  |
+| `../../components/icons/src/icons/Queue.tsx` | `component` |  |
+| `../../components/icons/src/icons/Quotes.tsx` | `component` |  |
+| `../../components/icons/src/icons/Rabbit.tsx` | `component` |  |
+| `../../components/icons/src/icons/Racquet.tsx` | `component` |  |
+| `../../components/icons/src/icons/Radical.tsx` | `component` |  |
+| `../../components/icons/src/icons/Radio.tsx` | `component` |  |
+| `../../components/icons/src/icons/Radioactive.tsx` | `component` |  |
+| `../../components/icons/src/icons/RadioButton.tsx` | `component` |  |
+| `../../components/icons/src/icons/Rainbow.tsx` | `component` |  |
+| `../../components/icons/src/icons/RainbowCloud.tsx` | `component` |  |
+| `../../components/icons/src/icons/Ranking.tsx` | `component` |  |
+| `../../components/icons/src/icons/ReadCvLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Receipt.tsx` | `component` |  |
+| `../../components/icons/src/icons/ReceiptX.tsx` | `component` |  |
+| `../../components/icons/src/icons/Record.tsx` | `component` |  |
+| `../../components/icons/src/icons/Rectangle.tsx` | `component` |  |
+| `../../components/icons/src/icons/RectangleDashed.tsx` | `component` |  |
+| `../../components/icons/src/icons/Recycle.tsx` | `component` |  |
+| `../../components/icons/src/icons/RedditLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Repeat.tsx` | `component` |  |
+| `../../components/icons/src/icons/RepeatOnce.tsx` | `component` |  |
+| `../../components/icons/src/icons/ReplitLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Resize.tsx` | `component` |  |
+| `../../components/icons/src/icons/Rewind.tsx` | `component` |  |
+| `../../components/icons/src/icons/RewindCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/RoadHorizon.tsx` | `component` |  |
+| `../../components/icons/src/icons/Robot.tsx` | `component` |  |
+| `../../components/icons/src/icons/Rocket.tsx` | `component` |  |
+| `../../components/icons/src/icons/RocketLaunch.tsx` | `component` |  |
+| `../../components/icons/src/icons/Rows.tsx` | `component` |  |
+| `../../components/icons/src/icons/RowsPlusBottom.tsx` | `component` |  |
+| `../../components/icons/src/icons/RowsPlusTop.tsx` | `component` |  |
+| `../../components/icons/src/icons/Rss.tsx` | `component` |  |
+| `../../components/icons/src/icons/RssSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Rug.tsx` | `component` |  |
+| `../../components/icons/src/icons/Ruler.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sailboat.tsx` | `component` |  |
+| `../../components/icons/src/icons/Scales.tsx` | `component` |  |
+| `../../components/icons/src/icons/Scan.tsx` | `component` |  |
+| `../../components/icons/src/icons/ScanSmiley.tsx` | `component` |  |
+| `../../components/icons/src/icons/Scissors.tsx` | `component` |  |
+| `../../components/icons/src/icons/Scooter.tsx` | `component` |  |
+| `../../components/icons/src/icons/Screencast.tsx` | `component` |  |
+| `../../components/icons/src/icons/Screwdriver.tsx` | `component` |  |
+| `../../components/icons/src/icons/Scribble.tsx` | `component` |  |
+| `../../components/icons/src/icons/ScribbleLoop.tsx` | `component` |  |
+| `../../components/icons/src/icons/Scroll.tsx` | `component` |  |
+| `../../components/icons/src/icons/Seal.tsx` | `component` |  |
+| `../../components/icons/src/icons/SealCheck.tsx` | `component` |  |
+| `../../components/icons/src/icons/SealPercent.tsx` | `component` |  |
+| `../../components/icons/src/icons/SealQuestion.tsx` | `component` |  |
+| `../../components/icons/src/icons/SealWarning.tsx` | `component` |  |
+| `../../components/icons/src/icons/Seat.tsx` | `component` |  |
+| `../../components/icons/src/icons/Seatbelt.tsx` | `component` |  |
+| `../../components/icons/src/icons/SecurityCamera.tsx` | `component` |  |
+| `../../components/icons/src/icons/Selection.tsx` | `component` |  |
+| `../../components/icons/src/icons/SelectionAll.tsx` | `component` |  |
+| `../../components/icons/src/icons/SelectionBackground.tsx` | `component` |  |
+| `../../components/icons/src/icons/SelectionForeground.tsx` | `component` |  |
+| `../../components/icons/src/icons/SelectionInverse.tsx` | `component` |  |
+| `../../components/icons/src/icons/SelectionPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/SelectionSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/Shapes.tsx` | `component` |  |
+| `../../components/icons/src/icons/Share.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShareFat.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShareNetwork.tsx` | `component` |  |
+| `../../components/icons/src/icons/Shield.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShieldCheck.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShieldCheckered.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShieldChevron.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShieldPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShieldSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShieldStar.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShieldWarning.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShippingContainer.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShirtFolded.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShootingStar.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShoppingBag.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShoppingBagOpen.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShoppingCart.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShoppingCartSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Shovel.tsx` | `component` |  |
+| `../../components/icons/src/icons/Shower.tsx` | `component` |  |
+| `../../components/icons/src/icons/Shrimp.tsx` | `component` |  |
+| `../../components/icons/src/icons/Shuffle.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShuffleAngular.tsx` | `component` |  |
+| `../../components/icons/src/icons/ShuffleSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sidebar.tsx` | `component` |  |
+| `../../components/icons/src/icons/SidebarSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sigma.tsx` | `component` |  |
+| `../../components/icons/src/icons/Signature.tsx` | `component` |  |
+| `../../components/icons/src/icons/SignIn.tsx` | `component` |  |
+| `../../components/icons/src/icons/SignOut.tsx` | `component` |  |
+| `../../components/icons/src/icons/Signpost.tsx` | `component` |  |
+| `../../components/icons/src/icons/SimCard.tsx` | `component` |  |
+| `../../components/icons/src/icons/Siren.tsx` | `component` |  |
+| `../../components/icons/src/icons/SketchLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/SkipBack.tsx` | `component` |  |
+| `../../components/icons/src/icons/SkipBackCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/SkipForward.tsx` | `component` |  |
+| `../../components/icons/src/icons/SkipForwardCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Skull.tsx` | `component` |  |
+| `../../components/icons/src/icons/SkypeLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/SlackLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sliders.tsx` | `component` |  |
+| `../../components/icons/src/icons/SlidersHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/Slideshow.tsx` | `component` |  |
+| `../../components/icons/src/icons/Smiley.tsx` | `component` |  |
+| `../../components/icons/src/icons/SmileyAngry.tsx` | `component` |  |
+| `../../components/icons/src/icons/SmileyBlank.tsx` | `component` |  |
+| `../../components/icons/src/icons/SmileyMeh.tsx` | `component` |  |
+| `../../components/icons/src/icons/SmileyMelting.tsx` | `component` |  |
+| `../../components/icons/src/icons/SmileyNervous.tsx` | `component` |  |
+| `../../components/icons/src/icons/SmileySad.tsx` | `component` |  |
+| `../../components/icons/src/icons/SmileySticker.tsx` | `component` |  |
+| `../../components/icons/src/icons/SmileyWink.tsx` | `component` |  |
+| `../../components/icons/src/icons/SmileyXEyes.tsx` | `component` |  |
+| `../../components/icons/src/icons/SnapchatLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sneaker.tsx` | `component` |  |
+| `../../components/icons/src/icons/SneakerMove.tsx` | `component` |  |
+| `../../components/icons/src/icons/Snowflake.tsx` | `component` |  |
+| `../../components/icons/src/icons/SoccerBall.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sock.tsx` | `component` |  |
+| `../../components/icons/src/icons/SolarPanel.tsx` | `component` |  |
+| `../../components/icons/src/icons/SolarRoof.tsx` | `component` |  |
+| `../../components/icons/src/icons/SortAscending.tsx` | `component` |  |
+| `../../components/icons/src/icons/SortDescending.tsx` | `component` |  |
+| `../../components/icons/src/icons/SoundcloudLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Spade.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sparkle.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpeakerHifi.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpeakerHigh.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpeakerLow.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpeakerNone.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpeakerSimpleHigh.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpeakerSimpleLow.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpeakerSimpleNone.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpeakerSimpleSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpeakerSimpleX.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpeakerSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpeakerX.tsx` | `component` |  |
+| `../../components/icons/src/icons/Speedometer.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sphere.tsx` | `component` |  |
+| `../../components/icons/src/icons/Spinner.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpinnerBall.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpinnerGap.tsx` | `component` |  |
+| `../../components/icons/src/icons/Spiral.tsx` | `component` |  |
+| `../../components/icons/src/icons/SplitHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/SplitVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/SpotifyLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/SprayBottle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Square.tsx` | `component` |  |
+| `../../components/icons/src/icons/SquareHalf.tsx` | `component` |  |
+| `../../components/icons/src/icons/SquareHalfBottom.tsx` | `component` |  |
+| `../../components/icons/src/icons/SquareLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/SquaresFour.tsx` | `component` |  |
+| `../../components/icons/src/icons/SquareSplitHorizontal.tsx` | `component` |  |
+| `../../components/icons/src/icons/SquareSplitVertical.tsx` | `component` |  |
+| `../../components/icons/src/icons/Stack.tsx` | `component` |  |
+| `../../components/icons/src/icons/StackMinus.tsx` | `component` |  |
+| `../../components/icons/src/icons/StackOverflowLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/StackPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/StackSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Stairs.tsx` | `component` |  |
+| `../../components/icons/src/icons/Stamp.tsx` | `component` |  |
+| `../../components/icons/src/icons/StandardDefinition.tsx` | `component` |  |
+| `../../components/icons/src/icons/Star.tsx` | `component` |  |
+| `../../components/icons/src/icons/StarAndCrescent.tsx` | `component` |  |
+| `../../components/icons/src/icons/StarFour.tsx` | `component` |  |
+| `../../components/icons/src/icons/StarHalf.tsx` | `component` |  |
+| `../../components/icons/src/icons/StarOfDavid.tsx` | `component` |  |
+| `../../components/icons/src/icons/SteamLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/SteeringWheel.tsx` | `component` |  |
+| `../../components/icons/src/icons/Steps.tsx` | `component` |  |
+| `../../components/icons/src/icons/Stethoscope.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sticker.tsx` | `component` |  |
+| `../../components/icons/src/icons/Stool.tsx` | `component` |  |
+| `../../components/icons/src/icons/Stop.tsx` | `component` |  |
+| `../../components/icons/src/icons/StopCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Storefront.tsx` | `component` |  |
+| `../../components/icons/src/icons/Strategy.tsx` | `component` |  |
+| `../../components/icons/src/icons/StripeLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Student.tsx` | `component` |  |
+| `../../components/icons/src/icons/SubsetOf.tsx` | `component` |  |
+| `../../components/icons/src/icons/SubsetProperOf.tsx` | `component` |  |
+| `../../components/icons/src/icons/Subtitles.tsx` | `component` |  |
+| `../../components/icons/src/icons/SubtitlesSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/Subtract.tsx` | `component` |  |
+| `../../components/icons/src/icons/SubtractSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/Subway.tsx` | `component` |  |
+| `../../components/icons/src/icons/Suitcase.tsx` | `component` |  |
+| `../../components/icons/src/icons/SuitcaseRolling.tsx` | `component` |  |
+| `../../components/icons/src/icons/SuitcaseSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sun.tsx` | `component` |  |
+| `../../components/icons/src/icons/SunDim.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sunglasses.tsx` | `component` |  |
+| `../../components/icons/src/icons/SunHorizon.tsx` | `component` |  |
+| `../../components/icons/src/icons/SupersetOf.tsx` | `component` |  |
+| `../../components/icons/src/icons/SupersetProperOf.tsx` | `component` |  |
+| `../../components/icons/src/icons/Swap.tsx` | `component` |  |
+| `../../components/icons/src/icons/Swatches.tsx` | `component` |  |
+| `../../components/icons/src/icons/SwimmingPool.tsx` | `component` |  |
+| `../../components/icons/src/icons/Sword.tsx` | `component` |  |
+| `../../components/icons/src/icons/Synagogue.tsx` | `component` |  |
+| `../../components/icons/src/icons/Syringe.tsx` | `component` |  |
+| `../../components/icons/src/icons/Table.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tabs.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tag.tsx` | `component` |  |
+| `../../components/icons/src/icons/TagChevron.tsx` | `component` |  |
+| `../../components/icons/src/icons/TagSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Target.tsx` | `component` |  |
+| `../../components/icons/src/icons/Taxi.tsx` | `component` |  |
+| `../../components/icons/src/icons/TeaBag.tsx` | `component` |  |
+| `../../components/icons/src/icons/TelegramLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Television.tsx` | `component` |  |
+| `../../components/icons/src/icons/TelevisionSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/TennisBall.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tent.tsx` | `component` |  |
+| `../../components/icons/src/icons/Terminal.tsx` | `component` |  |
+| `../../components/icons/src/icons/TerminalWindow.tsx` | `component` |  |
+| `../../components/icons/src/icons/TestTube.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextAa.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextAlignCenter.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextAlignJustify.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextAlignLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextAlignRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextAUnderline.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextB.tsx` | `component` |  |
+| `../../components/icons/src/icons/Textbox.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextColumns.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextH.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextHFive.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextHFour.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextHOne.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextHSix.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextHThree.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextHTwo.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextIndent.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextItalic.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextOutdent.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextStrikethrough.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextSubscript.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextSuperscript.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextT.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextTSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/TextUnderline.tsx` | `component` |  |
+| `../../components/icons/src/icons/Thermometer.tsx` | `component` |  |
+| `../../components/icons/src/icons/ThermometerCold.tsx` | `component` |  |
+| `../../components/icons/src/icons/ThermometerHot.tsx` | `component` |  |
+| `../../components/icons/src/icons/ThermometerSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/ThreadsLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/ThreeD.tsx` | `component` |  |
+| `../../components/icons/src/icons/ThumbsDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/ThumbsUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/Ticket.tsx` | `component` |  |
+| `../../components/icons/src/icons/TidalLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/TiktokLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tilde.tsx` | `component` |  |
+| `../../components/icons/src/icons/Timer.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tipi.tsx` | `component` |  |
+| `../../components/icons/src/icons/TipJar.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tire.tsx` | `component` |  |
+| `../../components/icons/src/icons/ToggleLeft.tsx` | `component` |  |
+| `../../components/icons/src/icons/ToggleRight.tsx` | `component` |  |
+| `../../components/icons/src/icons/Toilet.tsx` | `component` |  |
+| `../../components/icons/src/icons/ToiletPaper.tsx` | `component` |  |
+| `../../components/icons/src/icons/Toolbox.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tooth.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tornado.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tote.tsx` | `component` |  |
+| `../../components/icons/src/icons/ToteSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Towel.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tractor.tsx` | `component` |  |
+| `../../components/icons/src/icons/Trademark.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrademarkRegistered.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrafficCone.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrafficSign.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrafficSignal.tsx` | `component` |  |
+| `../../components/icons/src/icons/Train.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrainRegional.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrainSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tram.tsx` | `component` |  |
+| `../../components/icons/src/icons/Translate.tsx` | `component` |  |
+| `../../components/icons/src/icons/Trash.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrashSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tray.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrayArrowDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrayArrowUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/TreasureChest.tsx` | `component` |  |
+| `../../components/icons/src/icons/Tree.tsx` | `component` |  |
+| `../../components/icons/src/icons/TreeEvergreen.tsx` | `component` |  |
+| `../../components/icons/src/icons/TreePalm.tsx` | `component` |  |
+| `../../components/icons/src/icons/TreeStructure.tsx` | `component` |  |
+| `../../components/icons/src/icons/TreeView.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrendDown.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrendUp.tsx` | `component` |  |
+| `../../components/icons/src/icons/Triangle.tsx` | `component` |  |
+| `../../components/icons/src/icons/TriangleDashed.tsx` | `component` |  |
+| `../../components/icons/src/icons/Trolley.tsx` | `component` |  |
+| `../../components/icons/src/icons/TrolleySuitcase.tsx` | `component` |  |
+| `../../components/icons/src/icons/Trophy.tsx` | `component` |  |
+| `../../components/icons/src/icons/Truck.tsx` | `component` |  |
+| `../../components/icons/src/icons/TruckTrailer.tsx` | `component` |  |
+| `../../components/icons/src/icons/TShirt.tsx` | `component` |  |
+| `../../components/icons/src/icons/TumblrLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/TwitchLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/TwitterLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Umbrella.tsx` | `component` |  |
+| `../../components/icons/src/icons/UmbrellaSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Union.tsx` | `component` |  |
+| `../../components/icons/src/icons/Unite.tsx` | `component` |  |
+| `../../components/icons/src/icons/UniteSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/Upload.tsx` | `component` |  |
+| `../../components/icons/src/icons/UploadSimple.tsx` | `component` |  |
+| `../../components/icons/src/icons/Usb.tsx` | `component` |  |
+| `../../components/icons/src/icons/User.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserCheck.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserCircleCheck.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserCircleDashed.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserCircleGear.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserCircleMinus.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserCirclePlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserFocus.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserGear.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserList.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserMinus.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserPlus.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserRectangle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Users.tsx` | `component` |  |
+| `../../components/icons/src/icons/UsersFour.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserSound.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/UsersThree.tsx` | `component` |  |
+| `../../components/icons/src/icons/UserSwitch.tsx` | `component` |  |
+| `../../components/icons/src/icons/Van.tsx` | `component` |  |
+| `../../components/icons/src/icons/Vault.tsx` | `component` |  |
+| `../../components/icons/src/icons/VectorThree.tsx` | `component` |  |
+| `../../components/icons/src/icons/VectorTwo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Vibrate.tsx` | `component` |  |
+| `../../components/icons/src/icons/Video.tsx` | `component` |  |
+| `../../components/icons/src/icons/VideoCamera.tsx` | `component` |  |
+| `../../components/icons/src/icons/VideoCameraSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/VideoConference.tsx` | `component` |  |
+| `../../components/icons/src/icons/Vignette.tsx` | `component` |  |
+| `../../components/icons/src/icons/VinylRecord.tsx` | `component` |  |
+| `../../components/icons/src/icons/VirtualReality.tsx` | `component` |  |
+| `../../components/icons/src/icons/Virus.tsx` | `component` |  |
+| `../../components/icons/src/icons/Visor.tsx` | `component` |  |
+| `../../components/icons/src/icons/Voicemail.tsx` | `component` |  |
+| `../../components/icons/src/icons/Volleyball.tsx` | `component` |  |
+| `../../components/icons/src/icons/Wall.tsx` | `component` |  |
+| `../../components/icons/src/icons/Wallet.tsx` | `component` |  |
+| `../../components/icons/src/icons/Warehouse.tsx` | `component` |  |
+| `../../components/icons/src/icons/Warning.tsx` | `component` |  |
+| `../../components/icons/src/icons/WarningCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/WarningDiamond.tsx` | `component` |  |
+| `../../components/icons/src/icons/WarningOctagon.tsx` | `component` |  |
+| `../../components/icons/src/icons/WashingMachine.tsx` | `component` |  |
+| `../../components/icons/src/icons/Watch.tsx` | `component` |  |
+| `../../components/icons/src/icons/Waveform.tsx` | `component` |  |
+| `../../components/icons/src/icons/WaveformSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/Waves.tsx` | `component` |  |
+| `../../components/icons/src/icons/WaveSawtooth.tsx` | `component` |  |
+| `../../components/icons/src/icons/WaveSine.tsx` | `component` |  |
+| `../../components/icons/src/icons/WaveSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/WaveTriangle.tsx` | `component` |  |
+| `../../components/icons/src/icons/Webcam.tsx` | `component` |  |
+| `../../components/icons/src/icons/WebcamSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/WebhooksLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/WechatLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/WhatsappLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Wheelchair.tsx` | `component` |  |
+| `../../components/icons/src/icons/WheelchairMotion.tsx` | `component` |  |
+| `../../components/icons/src/icons/WifiHigh.tsx` | `component` |  |
+| `../../components/icons/src/icons/WifiLow.tsx` | `component` |  |
+| `../../components/icons/src/icons/WifiMedium.tsx` | `component` |  |
+| `../../components/icons/src/icons/WifiNone.tsx` | `component` |  |
+| `../../components/icons/src/icons/WifiSlash.tsx` | `component` |  |
+| `../../components/icons/src/icons/WifiX.tsx` | `component` |  |
+| `../../components/icons/src/icons/Wind.tsx` | `component` |  |
+| `../../components/icons/src/icons/Windmill.tsx` | `component` |  |
+| `../../components/icons/src/icons/WindowsLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/Wine.tsx` | `component` |  |
+| `../../components/icons/src/icons/Wrench.tsx` | `component` |  |
+| `../../components/icons/src/icons/X.tsx` | `component` |  |
+| `../../components/icons/src/icons/XCircle.tsx` | `component` |  |
+| `../../components/icons/src/icons/XLogo.tsx` | `component` |  |
+| `../../components/icons/src/icons/XSquare.tsx` | `component` |  |
+| `../../components/icons/src/icons/Yarn.tsx` | `component` |  |
+| `../../components/icons/src/icons/YinYang.tsx` | `component` |  |
+| `../../components/icons/src/icons/YoutubeLogo.tsx` | `component` |  |
+| `../../components/icons/src/types.ts` | `file` |  |
 
 ## @cyclone-ui/inline-code-text
 
@@ -1354,7 +2877,7 @@ An inline span styled for short code snippets, using the code font with a subtle
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/inline-code-text/src/index.ts` | `file` |  |
+| `../../components/inline-code-text/src/InlineCodeText.tsx` | `component` |  |
 
 ## @cyclone-ui/input
 
@@ -1392,7 +2915,10 @@ A composable text input with Input.TextBox, Input.TextBox.Value, Input.Separator
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/input/src/index.ts` | `file` |  |
+| `../../components/input/src/Input.tsx` | `component` |  |
+| `../../components/input/src/InputValue.tsx` | `component` |  |
+| `../../components/input/src/types.ts` | `file` |  |
+| `../../components/input/src/utilities.ts` | `file` |  |
 
 ## @cyclone-ui/like-button
 
@@ -1419,7 +2945,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/like-button/src/index.ts` | `file` |  |
+| `../../components/like-button/src/LikeButton.tsx` | `component` |  |
 
 ## @cyclone-ui/link
 
@@ -1452,7 +2978,7 @@ A themed text link that renders an anchor with href and target on web and opens 
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/link/src/index.ts` | `file` |  |
+| `../../components/link/src/Link.tsx` | `component` |  |
 
 ## @cyclone-ui/link-text
 
@@ -1480,7 +3006,7 @@ A LinkText component that renders styled, interactive link text. It has base, mi
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/link-text/src/index.ts` | `file` |  |
+| `../../components/link-text/src/LinkText.tsx` | `component` |  |
 
 ## @cyclone-ui/message
 
@@ -1511,7 +3037,7 @@ A toast notification container built on Tamagui Toast that renders each queued t
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/message/src/index.ts` | `file` |  |
+| `../../components/message/src/Message.tsx` | `component` |  |
 
 ## @cyclone-ui/navigation-header
 
@@ -1544,7 +3070,7 @@ A responsive site header made of Logo, Navigation, Actions and MenuButton slots.
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/navigation-header/src/index.ts` | `file` |  |
+| `../../components/navigation-header/src/NavigationHeader.tsx` | `component` |  |
 
 ## @cyclone-ui/next-button
 
@@ -1572,7 +3098,7 @@ A Button preset labeled "Next" by default, with a right-arrow icon that animates
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/next-button/src/index.ts` | `file` |  |
+| `../../components/next-button/src/NextButton.tsx` | `component` |  |
 
 ## @cyclone-ui/number-input
 
@@ -1601,7 +3127,7 @@ A NumberInput built on Input that renders a type=number text box with decrease (
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/number-input/src/index.ts` | `file` |  |
+| `../../components/number-input/src/NumberInput.tsx` | `component` |  |
 
 ## @cyclone-ui/number-text
 
@@ -1627,7 +3153,7 @@ A label-styled text component that renders its numeric children with NumberFlow,
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/number-text/src/index.ts` | `file` |  |
+| `../../components/number-text/src/NumberText.tsx` | `component` |  |
 
 ## @cyclone-ui/otp-input
 
@@ -1655,7 +3181,7 @@ A one-time passcode input that renders one numeric input per digit (4 by default
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/otp-input/src/index.ts` | `file` |  |
+| `../../components/otp-input/src/OtpInput.tsx` | `component` |  |
 
 ## @cyclone-ui/overlay
 
@@ -1682,7 +3208,7 @@ A full-bleed backdrop that partially obscures background content with a blurred,
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/overlay/src/index.ts` | `file` |  |
+| `../../components/overlay/src/Overlay.tsx` | `component` |  |
 
 ## @cyclone-ui/package-command-code-block
 
@@ -1707,7 +3233,7 @@ A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command fo
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/package-command-code-block/src/index.ts` | `file` |  |
+| `../../components/package-command-code-block/src/PackageCommandCodeBlock.tsx` | `component` |  |
 
 ## @cyclone-ui/page
 
@@ -1738,7 +3264,8 @@ A Page layout compound component with Banner, TopNav (Start, Middle and End slot
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/page/src/index.ts` | `file` |  |
+| `../../components/page/src/Page.tsx` | `component` |  |
+| `../../components/page/src/utilities.ts` | `file` |  |
 
 ## @cyclone-ui/pagination
 
@@ -1770,7 +3297,7 @@ A page navigation bar with previous and next buttons, first and last page button
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/pagination/src/index.ts` | `file` |  |
+| `../../components/pagination/src/Pagination.tsx` | `component` |  |
 
 ## @cyclone-ui/password-input
 
@@ -1803,7 +3330,8 @@ A password input with a show/hide toggle and a caps-lock warning. A strength met
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/password-input/src/index.ts` | `file` |  |
+| `../../components/password-input/src/password-strength.ts` | `file` |  |
+| `../../components/password-input/src/PasswordInput.tsx` | `component` |  |
 
 ## @cyclone-ui/pdf-document-display
 
@@ -1834,7 +3362,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/pdf-document-display/src/index.ts` | `file` |  |
+| `../../components/pdf-document-display/src/PdfDocumentDisplay.tsx` | `component` |  |
 
 ## @cyclone-ui/phone-number-input
 
@@ -1870,7 +3398,7 @@ A headless phone number input built on Input that adds a searchable country-code
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/phone-number-input/src/index.ts` | `file` |  |
+| `../../components/phone-number-input/src/PhoneNumberInput.tsx` | `component` |  |
 
 ## @cyclone-ui/popover
 
@@ -1908,7 +3436,7 @@ A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Ancho
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/popover/src/index.ts` | `file` |  |
+| `../../components/popover/src/Popover.tsx` | `component` |  |
 
 ## @cyclone-ui/preview-link
 
@@ -1935,7 +3463,7 @@ A Link with a dotted underline that shows a Tooltip with more details when hover
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/preview-link/src/index.ts` | `file` |  |
+| `../../components/preview-link/src/PreviewLink.tsx` | `component` |  |
 
 ## @cyclone-ui/previous-button
 
@@ -1963,7 +3491,7 @@ A button with an animated left-arrow icon and a default "Previous" label. The la
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/previous-button/src/index.ts` | `file` |  |
+| `../../components/previous-button/src/PreviousButton.tsx` | `component` |  |
 
 ## @cyclone-ui/progress
 
@@ -1989,7 +3517,7 @@ A themed progress bar built on the Tamagui Progress, with an animated indicator.
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/progress/src/index.ts` | `file` |  |
+| `../../components/progress/src/Progress.tsx` | `component` |  |
 
 ## @cyclone-ui/radio-group
 
@@ -2029,7 +3557,7 @@ A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/radio-group/src/index.ts` | `file` |  |
+| `../../components/radio-group/src/RadioGroup.tsx` | `component` |  |
 
 ## @cyclone-ui/rating
 
@@ -2058,7 +3586,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/rating/src/index.ts` | `file` |  |
+| `../../components/rating/src/Rating.tsx` | `component` |  |
 
 ## @cyclone-ui/redacted-animation
 
@@ -2084,7 +3612,7 @@ A RedactedAnimation wrapper that briefly covers its children with an accent-colo
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/redacted-animation/src/index.ts` | `file` |  |
+| `../../components/redacted-animation/src/RedactedAnimation.tsx` | `component` |  |
 
 ## @cyclone-ui/ripple-animation
 
@@ -2108,7 +3636,7 @@ A RippleAnimation layer that fills its positioned parent and, when its ripple() 
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/ripple-animation/src/index.ts` | `file` |  |
+| `../../components/ripple-animation/src/RippleAnimation.tsx` | `component` |  |
 
 ## @cyclone-ui/scroll-view
 
@@ -2136,7 +3664,7 @@ A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar o
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/scroll-view/src/index.ts` | `file` |  |
+| `../../components/scroll-view/src/ScrollView.tsx` | `component` |  |
 
 ## @cyclone-ui/search-dialog
 
@@ -2168,7 +3696,7 @@ A search icon Button that opens a Dialog for searching the application, like the
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/search-dialog/src/index.ts` | `file` |  |
+| `../../components/search-dialog/src/SearchDialog.tsx` | `component` |  |
 
 ## @cyclone-ui/search-input
 
@@ -2199,7 +3727,7 @@ A headless search text input with a magnifying-glass icon. It shows a ContextMen
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/search-input/src/index.ts` | `file` |  |
+| `../../components/search-input/src/SearchInput.tsx` | `component` |  |
 
 ## @cyclone-ui/select
 
@@ -2241,7 +3769,12 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/select/src/index.ts` | `file` |  |
+| `../../components/select/src/Select.tsx` | `component` |  |
+| `../../components/select/src/SelectItems.tsx` | `component` |  |
+| `../../components/select/src/SelectTextBox.tsx` | `component` |  |
+| `../../components/select/src/SelectValue.tsx` | `component` |  |
+| `../../components/select/src/types.ts` | `file` |  |
+| `../../components/select/src/utilities.ts` | `file` |  |
 
 ## @cyclone-ui/sheet
 
@@ -2274,7 +3807,7 @@ A modal panel that slides in from the top, right, bottom or left edge. It uses a
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/sheet/src/index.ts` | `file` |  |
+| `../../components/sheet/src/Sheet.tsx` | `component` |  |
 
 ## @cyclone-ui/skeleton
 
@@ -2298,7 +3831,7 @@ A skeleton component for loading states.
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/skeleton/src/index.ts` | `file` |  |
+| `../../components/skeleton/src/Skeleton.tsx` | `component` |  |
 
 ## @cyclone-ui/slider
 
@@ -2327,7 +3860,7 @@ A Material-style slider, built on the Tamagui Slider, for choosing a single valu
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/slider/src/index.ts` | `file` |  |
+| `../../components/slider/src/Slider.tsx` | `component` |  |
 
 ## @cyclone-ui/spinner
 
@@ -2352,7 +3885,7 @@ A Spinner component that renders the React Native ActivityIndicator inside a Tam
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/spinner/src/index.ts` | `file` |  |
+| `../../components/spinner/src/Spinner.tsx` | `component` |  |
 
 ## @cyclone-ui/stepper
 
@@ -2395,7 +3928,7 @@ A multi-step wizard built on Tamagui Tabs with a vertical header list that marks
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/stepper/src/index.ts` | `file` |  |
+| `../../components/stepper/src/Stepper.tsx` | `component` |  |
 
 ## @cyclone-ui/switch
 
@@ -2431,7 +3964,7 @@ A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled stat
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/switch/src/index.ts` | `file` |  |
+| `../../components/switch/src/Switch.tsx` | `component` |  |
 
 ## @cyclone-ui/table
 
@@ -2467,7 +4000,7 @@ A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer p
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/table/src/index.ts` | `file` |  |
+| `../../components/table/src/Table.tsx` | `component` |  |
 
 ## @cyclone-ui/table-of-contents
 
@@ -2495,7 +4028,8 @@ A page navigation list built from an array of heading items, each with a title, 
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/table-of-contents/src/index.ts` | `file` |  |
+| `../../components/table-of-contents/src/TableOfContents.tsx` | `component` |  |
+| `../../components/table-of-contents/src/utilities.ts` | `file` |  |
 
 ## @cyclone-ui/tabs
 
@@ -2536,7 +4070,7 @@ A tabbed interface with Header.Item triggers and Content.Item panels. It offers 
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/tabs/src/index.ts` | `file` |  |
+| `../../components/tabs/src/Tabs.tsx` | `component` |  |
 
 ## @cyclone-ui/tag
 
@@ -2570,7 +4104,7 @@ A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary an
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/tag/src/index.ts` | `file` |  |
+| `../../components/tag/src/Tag.tsx` | `component` |  |
 
 ## @cyclone-ui/tag-picker
 
@@ -2601,7 +4135,8 @@ A TagPicker input that turns typed text into removable tags. Enter adds a trimme
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/tag-picker/src/index.ts` | `file` |  |
+| `../../components/tag-picker/src/TagPicker.tsx` | `component` |  |
+| `../../components/tag-picker/src/utilities.ts` | `file` |  |
 
 ## @cyclone-ui/text-area
 
@@ -2631,7 +4166,7 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/text-area/src/index.ts` | `file` |  |
+| `../../components/text-area/src/TextArea.tsx` | `component` |  |
 
 ## @cyclone-ui/themeable-gradient
 
@@ -2658,7 +4193,7 @@ A ThemeableGradient component that renders a diagonal LinearGradient. Its color 
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/themeable-gradient/src/index.ts` | `file` |  |
+| `../../components/themeable-gradient/src/ThemeableGradient.tsx` | `component` |  |
 
 ## @cyclone-ui/themeable-icon
 
@@ -2692,7 +4227,7 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/themeable-icon/src/index.ts` | `file` |  |
+| `../../components/themeable-icon/src/ThemeableIcon.tsx` | `component` |  |
 
 ## @cyclone-ui/time-picker
 
@@ -2727,7 +4262,7 @@ A time input with a masked text box and a clock popover whose hand can be presse
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/time-picker/src/index.ts` | `file` |  |
+| `../../components/time-picker/src/TimePicker.tsx` | `component` |  |
 
 ## @cyclone-ui/timeline
 
@@ -2754,7 +4289,7 @@ A Timeline that renders a list of events joined by a line, vertically or horizon
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/timeline/src/index.ts` | `file` |  |
+| `../../components/timeline/src/Timeline.tsx` | `component` |  |
 
 ## @cyclone-ui/toggle
 
@@ -2780,7 +4315,7 @@ A clickable toggle component that is exists in either an "on" or "off" state wit
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/toggle/src/index.ts` | `file` |  |
+| `../../components/toggle/src/Toggle.tsx` | `component` |  |
 
 ## @cyclone-ui/toggle-group
 
@@ -2807,7 +4342,7 @@ A clickable group of toggle components that exists in either an "on" or "off" st
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/toggle-group/src/index.ts` | `file` |  |
+| `../../components/toggle-group/src/ToggleGroup.tsx` | `component` |  |
 
 ## @cyclone-ui/tooltip
 
@@ -2838,7 +4373,7 @@ A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The conte
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/tooltip/src/index.ts` | `file` |  |
+| `../../components/tooltip/src/Tooltip.tsx` | `component` |  |
 
 ## @cyclone-ui/type-table
 
@@ -2869,7 +4404,8 @@ A documentation table that lists properties with their types. Each row expands t
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/type-table/src/index.ts` | `file` |  |
+| `../../components/type-table/src/TypeTable.tsx` | `component` |  |
+| `../../components/type-table/src/TypeTableItemDetails.tsx` | `component` |  |
 
 ## @cyclone-ui/validation-text
 
@@ -2898,7 +4434,7 @@ A ValidationText component that shows field validation messages in caption text 
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/validation-text/src/index.ts` | `file` |  |
+| `../../components/validation-text/src/ValidationText.tsx` | `component` |  |
 
 ## @cyclone-ui/vectors
 
@@ -2928,7 +4464,24 @@ A set of custom themed SVG graphics for Tamagui, including status circles (alert
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/vectors/src/index.ts` | `file` |  |
+| `../../components/vectors/src/AccordionToggle.tsx` | `component` |  |
+| `../../components/vectors/src/AlertCircle.tsx` | `component` |  |
+| `../../components/vectors/src/Arrow.tsx` | `component` |  |
+| `../../components/vectors/src/BackgroundNoise.tsx` | `component` |  |
+| `../../components/vectors/src/Binary.tsx` | `component` |  |
+| `../../components/vectors/src/Check.tsx` | `component` |  |
+| `../../components/vectors/src/CheckCircle.tsx` | `component` |  |
+| `../../components/vectors/src/CheckerBoard.tsx` | `component` |  |
+| `../../components/vectors/src/Diagonal.tsx` | `component` |  |
+| `../../components/vectors/src/DiscoveryCircle.tsx` | `component` |  |
+| `../../components/vectors/src/ErrorCircle.tsx` | `component` |  |
+| `../../components/vectors/src/InfoCircle.tsx` | `component` |  |
+| `../../components/vectors/src/MenuToggle.tsx` | `component` |  |
+| `../../components/vectors/src/PdfIcon.tsx` | `component` |  |
+| `../../components/vectors/src/SearchTrigger.tsx` | `component` |  |
+| `../../components/vectors/src/StormLogoIcon.tsx` | `component` |  |
+| `../../components/vectors/src/StormLogoText.tsx` | `component` |  |
+| `../../components/vectors/src/themed-icon.tsx` | `component` |  |
 
 ## @cyclone-ui/visually-hidden
 
@@ -2952,4 +4505,4 @@ A wrapper that hides its content visually but keeps it available to screen reade
 ### Files
 | Path | Type | Target |
 | --- | --- | --- |
-| `../../components/visually-hidden/src/index.ts` | `file` |  |
+| `../../components/visually-hidden/src/VisuallyHidden.tsx` | `component` |  |

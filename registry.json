@@ -39,10 +39,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/address-input",
       "description": "An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. It provides Map, Search and TextBox parts; the map sits outside the Field so a floating label still lines up.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/image@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/image@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -146,9 +143,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/icons"
-      ],
+      "registryDependencies": ["@cyclone-ui/icons"],
       "files": [
         {
           "path": "components/anchor/src/Anchor.tsx",
@@ -161,9 +156,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/article-page",
       "description": "An ArticlePage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -186,10 +179,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/badge",
       "description": "A Badge that wraps an element and pins a small count or dot to one of its corners. It follows MUI's API: anchorOrigin, max (shows 99+ by default), showZero, invisible, rectangular or circular overlap, standard or dot variants, and palette or theme colors. Use it for notification counts and status indicators.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/web@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/web@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -314,9 +304,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/body-text"
-      ],
+      "registryDependencies": ["@cyclone-ui/body-text"],
       "files": [
         {
           "path": "components/bytes-text/src/BytesText.tsx",
@@ -451,10 +439,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/icons",
-        "@cyclone-ui/vectors"
-      ],
+      "registryDependencies": ["@cyclone-ui/icons", "@cyclone-ui/vectors"],
       "files": [
         {
           "path": "components/checkbox/src/Checkbox.tsx",
@@ -544,9 +529,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/accordion"
-      ],
+      "registryDependencies": ["@cyclone-ui/accordion"],
       "files": [
         {
           "path": "components/collapsible/src/Collapsible.tsx",
@@ -564,10 +547,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/color-area",
       "description": "A 2D color picker, built on the React Stately color model, for selecting two channels of a color from a gradient area by dragging a thumb or using the keyboard.",
-      "dependencies": [
-        "@react-stately/color@^3.10.1",
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@react-stately/color@^3.10.1", "@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -586,9 +566,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/color-compositions",
       "description": "An animated display component reproducing Ellsworth Kelly's \"Colors for a Large Wall\" as a grid of colored panels. The grid fits as many `panelSize` panels as the component's dimensions allow, tiling the painting when larger. Pairs of differently colored panels swap places on an `interval` (in milliseconds) with a short color fade; `0` or a reduced-motion preference holds the panels still.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -607,10 +585,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/color-picker",
       "description": "A color input with a swatch trigger that opens a popover to pick the color from an area, sliders, channel fields and preset swatches.",
-      "dependencies": [
-        "@react-stately/color@^3.10.1",
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@react-stately/color@^3.10.1", "@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -640,9 +615,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/confetti-burst",
       "description": "An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -672,9 +645,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/vectors"
-      ],
+      "registryDependencies": ["@cyclone-ui/vectors"],
       "files": [
         {
           "path": "components/container/src/Container.tsx",
@@ -687,9 +658,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/context-menu",
       "description": "A ContextMenu that shows a list of actions in a popover on large screens and a bottom sheet on small screens. It has Trigger, Anchor, Content, Content.ScrollView, Item and Item.Text parts, and a sm, md or lg size. Items show a check mark when their value matches the menu's value and a lock when disabled; an Item can also be shown as highlighted while focus stays elsewhere (a combobox's active option). Use it for dropdown menus and pickers such as the country selector in PhoneNumberInputField.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -970,9 +939,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/feedback",
       "description": "A Feedback control that pairs a like toggle with a dislike toggle. Pressing dislike opens a popover form asking for an optional comment. It can be controlled or uncontrolled (value, defaultValue, onValueChange), and it also has onCommentSubmit, a custom comment label and placeholder, disabled and size props. Use it to collect quick thumbs-up/down feedback on content.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -1119,9 +1086,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/icons"
-      ],
+      "registryDependencies": ["@cyclone-ui/icons"],
       "files": [
         {
           "path": "components/file-tree/src/FileTree.tsx",
@@ -1134,10 +1099,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/footer",
       "description": "A responsive site footer with compound layout parts for an introduction, action, navigation sections, links, a bottom rail with brand, copyright and legal links, and a background logo. It optionally renders an animated terrain backdrop that respects reduced motion and a noise texture overlay. Use it at the bottom of marketing or documentation pages.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "react-native-svg@^15.16.0"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "react-native-svg@^15.16.0"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -1166,10 +1128,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/form",
       "description": "A form root that renders a native form element and provides Cyclone UI form state through FormProvider. Form.Submit and Form.Reset buttons call the form's submit and reset actions and are disabled when the form cannot be submitted. Use it to wrap Cyclone UI field components.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/helpers@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/helpers@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -1188,10 +1147,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/glitch-separator",
       "description": "A decorative section divider that draws a ragged grid of seeded pseudo-random squares in SVG between a top and bottom color. On web it can animate never, always or on scroll, and it respects reduced-motion settings. Native renders a still edge.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "react-native-svg@^15.16.0"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "react-native-svg@^15.16.0"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -7359,9 +7315,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/button"
-      ],
+      "registryDependencies": ["@cyclone-ui/button"],
       "files": [
         {
           "path": "components/input/src/Input.tsx",
@@ -7388,19 +7342,14 @@
       "type": "registry:component",
       "title": "@cyclone-ui/like-button",
       "description": "A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChange) or uncontrolled (defaultLiked), and has sm, md and lg sizes. On the web, liking plays a thumb animation and a confetti burst unless the user prefers reduced motion. It sets aria-pressed for accessibility.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/icons",
-        "@cyclone-ui/toggle"
-      ],
+      "registryDependencies": ["@cyclone-ui/icons", "@cyclone-ui/toggle"],
       "files": [
         {
           "path": "components/like-button/src/LikeButton.tsx",
@@ -7455,9 +7404,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/body-text"
-      ],
+      "registryDependencies": ["@cyclone-ui/body-text"],
       "files": [
         {
           "path": "components/link-text/src/LinkText.tsx",
@@ -7483,10 +7430,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/alert",
-        "@cyclone-ui/button"
-      ],
+      "registryDependencies": ["@cyclone-ui/alert", "@cyclone-ui/button"],
       "files": [
         {
           "path": "components/message/src/Message.tsx",
@@ -7499,9 +7443,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/navigation-header",
       "description": "A responsive site header made of Logo, Navigation, Actions and MenuButton slots. Navigation.Item supports Group and Link children, which render as a desktop mega menu and a collapsible mobile panel. Items can be featured, active or external, and the header tracks page scroll.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "@tamagui/text@3.0.13",
@@ -7542,10 +7484,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/button",
-        "@cyclone-ui/vectors"
-      ],
+      "registryDependencies": ["@cyclone-ui/button", "@cyclone-ui/vectors"],
       "files": [
         {
           "path": "components/next-button/src/NextButton.tsx",
@@ -7558,9 +7497,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/number-input",
       "description": "A NumberInput built on Input that renders a type=number text box with decrease (minus) and increase (plus) buttons. The buttons change the value by a configurable increment. It has the same TextBox, TextBox.Value and Trigger parts as Input. Use it on its own or wrap it in a Field to connect it to a Form.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -7607,18 +7544,14 @@
       "type": "registry:component",
       "title": "@cyclone-ui/otp-input",
       "description": "A one-time passcode input that renders one numeric input per digit (4 by default). Focus moves with typing, Backspace and the arrow keys, pasted codes fill the inputs, and autocomplete uses one-time-code. onComplete fires when every digit is filled. Use it on its own or wrap it in a Field to connect it to a Form.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/input"
-      ],
+      "registryDependencies": ["@cyclone-ui/input"],
       "files": [
         {
           "path": "components/otp-input/src/OtpInput.tsx",
@@ -7662,9 +7595,7 @@
         "react-native@^0.87.1",
         "react-native-svg@^15.16.0"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/code-block"
-      ],
+      "registryDependencies": ["@cyclone-ui/code-block"],
       "files": [
         {
           "path": "components/package-command-code-block/src/PackageCommandCodeBlock.tsx",
@@ -7741,10 +7672,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/password-input",
       "description": "A password input with a show/hide toggle and a caps-lock warning. A strength meter rates the password from very weak to strong, and inside a Field a built-in validator lists the missing criteria. It has the same TextBox, TextBox.Value and Trigger parts as Input. Use it on its own or wrap it in a Field to connect it to a Form.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/stacks@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/stacks@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -7856,10 +7784,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/scroll-view",
-        "@cyclone-ui/sheet"
-      ],
+      "registryDependencies": ["@cyclone-ui/scroll-view", "@cyclone-ui/sheet"],
       "files": [
         {
           "path": "components/popover/src/Popover.tsx",
@@ -7872,9 +7797,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/preview-link",
       "description": "A Link with a dotted underline that shows a Tooltip with more details when hovered or focused.",
-      "dependencies": [
-        "@tamagui/tooltip@3.0.13"
-      ],
+      "dependencies": ["@tamagui/tooltip@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -7909,10 +7832,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/button",
-        "@cyclone-ui/vectors"
-      ],
+      "registryDependencies": ["@cyclone-ui/button", "@cyclone-ui/vectors"],
       "files": [
         {
           "path": "components/previous-button/src/PreviousButton.tsx",
@@ -7984,9 +7904,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/rating",
       "description": "A row of icons, stars by default, for displaying or selecting a rating. It can be controlled or uncontrolled and supports fractional precision, clearing the value, read-only and disabled states, sm, md and lg sizes, and custom icons, weights and colors. Hover changes are reported through onChangeActive. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field and reports changes to it.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -8009,19 +7927,14 @@
       "type": "registry:component",
       "title": "@cyclone-ui/redacted-animation",
       "description": "A RedactedAnimation wrapper that briefly covers its children with an accent-colored mask, then slides the mask away to the left or right to reveal the content. It skips the animation when the user prefers reduced motion. Use it to add a redaction-style reveal effect to text or other inline content.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/text@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/text@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/heading-text"
-      ],
+      "registryDependencies": ["@cyclone-ui/heading-text"],
       "files": [
         {
           "path": "components/redacted-animation/src/RedactedAnimation.tsx",
@@ -8034,9 +7947,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/ripple-animation",
       "description": "A RippleAnimation layer that fills its positioned parent and, when its ripple() handle is called with a press event, grows a fading circle out of the press point (or the center, for a keyboard press). The ripple is drawn through a fine pixel grid for a slight pixelated look. Web only; it does nothing on native.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -8079,9 +7990,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/search-dialog",
       "description": "A search icon Button that opens a Dialog for searching the application, like the fumadocs search dialog. It also opens with ⌘K / Ctrl+K. A debounced `search` function (static index or API) returns page, heading and text results with breadcrumbs and highlighted query words, narrowed by optional filter toggles. The arrow keys move through the results and Enter opens one. The last results chosen are saved in localStorage and listed as \"Recent\" when it opens, where they can be removed one by one or cleared.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -8230,9 +8139,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/skeleton",
       "description": "A skeleton component for loading states.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -8251,10 +8158,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/slider",
       "description": "A Material-style slider, built on the Tamagui Slider, for choosing a single value or, when given an array, a range. It can be controlled or uncontrolled and supports step marks with labels, normal or inverted track fill, value labels, sm, md and lg sizes, and accessible label callbacks. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field, labels its thumbs with the field label, and reports changes to it.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/slider@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/slider@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -8273,10 +8177,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/spinner",
       "description": "A Spinner component that renders the React Native ActivityIndicator inside a Tamagui YStack. It takes a small or large size and a color, which can be a theme token or a raw value and defaults to the accent color. Use it to show that content or an action is loading.",
-      "dependencies": [
-        "@tamagui/core@3.0.13",
-        "@tamagui/stacks@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13", "@tamagui/stacks@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -8354,9 +8255,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/themeable-icon"
-      ],
+      "registryDependencies": ["@cyclone-ui/themeable-icon"],
       "files": [
         {
           "path": "components/switch/src/Switch.tsx",
@@ -8389,9 +8288,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/heading-text"
-      ],
+      "registryDependencies": ["@cyclone-ui/heading-text"],
       "files": [
         {
           "path": "components/table/src/Table.tsx",
@@ -8415,10 +8312,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/body-text",
-        "@cyclone-ui/icons"
-      ],
+      "registryDependencies": ["@cyclone-ui/body-text", "@cyclone-ui/icons"],
       "files": [
         {
           "path": "components/table-of-contents/src/TableOfContents.tsx",
@@ -8459,9 +8353,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/heading-text"
-      ],
+      "registryDependencies": ["@cyclone-ui/heading-text"],
       "files": [
         {
           "path": "components/tabs/src/Tabs.tsx",
@@ -8518,10 +8410,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/input",
-        "@cyclone-ui/tag"
-      ],
+      "registryDependencies": ["@cyclone-ui/input", "@cyclone-ui/tag"],
       "files": [
         {
           "path": "components/tag-picker/src/TagPicker.tsx",
@@ -8539,20 +8428,14 @@
       "type": "registry:component",
       "title": "@cyclone-ui/text-area",
       "description": "A multiline text input that renders a textarea with 3 rows by default and uses the same tokens as the Cyclone UI Input. It has default, floating and underline variants, sm, md and lg sizes, and focus and disabled states, and its border reflects field validation messages. Wrapped in a Field, it connects to the form: it takes its name, value, size, disabled and focus state from the field and floats the field label by default.",
-      "dependencies": [
-        "@tamagui/constants@3.0.13",
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/constants@3.0.13", "@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/input",
-        "@cyclone-ui/scroll-view"
-      ],
+      "registryDependencies": ["@cyclone-ui/input", "@cyclone-ui/scroll-view"],
       "files": [
         {
           "path": "components/text-area/src/TextArea.tsx",
@@ -8604,10 +8487,7 @@
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/icons",
-        "@cyclone-ui/vectors"
-      ],
+      "registryDependencies": ["@cyclone-ui/icons", "@cyclone-ui/vectors"],
       "files": [
         {
           "path": "components/themeable-icon/src/ThemeableIcon.tsx",
@@ -8652,9 +8532,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/timeline",
       "description": "A Timeline that renders a list of events joined by a line, vertically or horizontally. Pass the events as value and render each with content, plus optional opposite (e.g. a date on the other side of the line) and marker render functions. align places the line left, right, top, bottom or alternating; TimelineMarker is the default dot for custom markers. Use it for order tracking, changelogs and activity feeds.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -8673,9 +8551,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/toggle",
       "description": "A clickable toggle component that is exists in either an \"on\" or \"off\" state with various styles and sizes.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
@@ -8694,18 +8570,14 @@
       "type": "registry:component",
       "title": "@cyclone-ui/toggle-group",
       "description": "A clickable group of toggle components that exists in either an \"on\" or \"off\" state with various styles and sizes.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",
         "react-dom@^19.3.1",
         "react-native@^0.87.1"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/toggle"
-      ],
+      "registryDependencies": ["@cyclone-ui/toggle"],
       "files": [
         {
           "path": "components/toggle-group/src/ToggleGroup.tsx",
@@ -8744,9 +8616,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/type-table",
       "description": "A documentation table that lists properties with their types. Each row expands to show the description, default, parameters and return value, and can link to a type description. Required and deprecated items are marked. Rows can be deep-linked through the URL hash.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "@vitejs/plugin-react-swc@^3.11.0",
@@ -8819,9 +8689,7 @@
         "react-native@^0.87.1",
         "react-native-svg@^15.16.0"
       ],
-      "registryDependencies": [
-        "@cyclone-ui/icons"
-      ],
+      "registryDependencies": ["@cyclone-ui/icons"],
       "files": [
         {
           "path": "components/vectors/src/AccordionToggle.tsx",
@@ -8902,9 +8770,7 @@
       "type": "registry:component",
       "title": "@cyclone-ui/visually-hidden",
       "description": "A wrapper that hides its content visually but keeps it available to screen readers. The visible, preserveDimensions and animate variants can reveal the content or keep its size. Use it for accessible labels and text that only assistive technology should announce.",
-      "dependencies": [
-        "@tamagui/core@3.0.13"
-      ],
+      "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
         "react@^19.3.1",

@@ -1377,7 +1377,7 @@ export interface AppTheme {
  *
  * @see https://tamagui.dev/docs/core/configuration
  */
-export const config = createTamagui({
+export const config: ReturnType<typeof createTamagui> = createTamagui({
   animations,
   tokens,
   themes,
@@ -1390,11 +1390,17 @@ export const config = createTamagui({
     eyebrow: eyebrowFont
   },
   defaultFont: "body",
-  settings: { styleValueSyntax: "string", ...(userConfig.settings ?? {}) },
-  ...userConfig
+  ...userConfig,
+  settings: {
+    styleValueSyntax: "string",
+    ...(userConfig.settings ?? {})
+  } as Parameters<typeof createTamagui>[0]["settings"]
 });
 
-export type AppConfig = typeof config;
+export type AppConfig = typeof config & {
+  tokens: typeof tokens;
+  themes: typeof themes;
+};
 
 declare module "@tamagui/core" {
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
