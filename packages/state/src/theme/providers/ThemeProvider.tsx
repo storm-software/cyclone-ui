@@ -16,8 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-/* eslint-disable ts/no-unsafe-call -- window.matchMedia is unresolved without DOM lib */
-
 import type {
   CreateTamaguiProps,
   InferTamaguiConfig,

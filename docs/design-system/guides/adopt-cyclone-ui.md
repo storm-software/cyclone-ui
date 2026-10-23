@@ -114,7 +114,7 @@ pnpm add @cyclone-ui/tokens @cyclone-ui/state
 The [Storybook decorator](../../../apps/storybook/.storybook/preview-decorators.tsx) is the reference setup. This is a reduced version of it:
 
 ```tsx
-import { ThemeProvider } from "@cyclone-ui/state/client";
+import { ThemeProvider } from "@cyclone-ui/state/theme";
 import { config } from "@cyclone-ui/tokens/tamagui";
 import { Theme } from "@tamagui/core";
 import type { PropsWithChildren } from "react";

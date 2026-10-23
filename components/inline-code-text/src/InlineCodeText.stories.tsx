@@ -39,6 +39,18 @@ export const Base: Story = {
   args: {}
 };
 
+export const Wrapping: Story = {
+  render: (args: any) => (
+    <BodyText maxWidth={320}>
+      Run{" "}
+      <InlineCodeText {...args}>
+        pnpm nx run monorepo:generate-themes
+      </InlineCodeText>{" "}
+      after editing a token, and commit the generated files with it.
+    </BodyText>
+  )
+};
+
 export const Brand: Story = {
   args: {
     theme: "brand"

@@ -23,7 +23,6 @@ import { defineConfig } from "powerlines/config";
 const config: UserConfig = defineConfig({
   input: [
     "src/*.{ts,tsx}",
-    "src/client/index.ts",
     "src/form/index.ts",
     "src/message/index.ts",
     "src/theme/index.ts"

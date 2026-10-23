@@ -16,8 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { ThemeProvider, useThemeActions } from "@cyclone-ui/state/client";
 import { MessageProvider } from "@cyclone-ui/state/message";
+import { ThemeProvider, useThemeActions } from "@cyclone-ui/state/theme";
 import { config } from "@cyclone-ui/tokens/tamagui";
 import { DocsContainer } from "@storybook/addon-docs/blocks";
 import type { Decorator } from "@storybook/react-vite";

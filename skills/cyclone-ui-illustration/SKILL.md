@@ -1,5 +1,5 @@
 ---
-name: illustration
+name: cyclone-ui-illustration
 description: Build an interactive isometric line-art "figure" (Fig N style) of an object in a single HTML/SVG file - monochrome technical-illustration look, parts you can press that produce real output, live state readout. Use for hero illustrations, interactive diagrams, product figures, and playable desk objects (computer, synth, calculator).
 ---
 
