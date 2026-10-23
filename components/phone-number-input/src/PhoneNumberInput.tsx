@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { ContextMenu } from "@cyclone-ui/context-menu";
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {

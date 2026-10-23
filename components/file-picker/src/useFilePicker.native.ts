@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import * as DocumentPicker from "expo-document-picker";
 import * as ImagePicker from "expo-image-picker";
 import { useCallback } from "react";

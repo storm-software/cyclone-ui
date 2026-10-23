@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled } from "@tamagui/core";
 // Lets TypeScript name `GetFontSizedInput` (SizableText's `size` type) in

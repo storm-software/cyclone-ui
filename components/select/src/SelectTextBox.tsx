@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { ContextMenu } from "@cyclone-ui/context-menu";
 import type { ViewProps } from "@tamagui/core";
 import {

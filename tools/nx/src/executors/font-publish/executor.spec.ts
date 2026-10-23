@@ -95,8 +95,8 @@ describe("font publish executor", () => {
     expect(mocks.upload).toHaveBeenCalledOnce();
     expect(mocks.upload).toHaveBeenCalledWith(
       {
-        bucketId: "storm-cdn-cyclone-ui",
-        bucketPath: "fonts",
+        bucketId: "storm-public",
+        bucketPath: "fonts/storm-sans",
         clean: false,
         dryRun: true,
         path: join(root, "fonts/storm-sans/dist"),

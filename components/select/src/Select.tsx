@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { ContextMenu } from "@cyclone-ui/context-menu";
 import { Field } from "@cyclone-ui/field";
 import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";

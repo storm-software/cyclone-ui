@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { Button } from "@cyclone-ui/button";
 import { Divider } from "@cyclone-ui/divider";
 import { Field } from "@cyclone-ui/field";

@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import { BackgroundNoise } from "@cyclone-ui/vectors";
 import type { GetProps, SizeTokens, TamaguiElement } from "@tamagui/core";

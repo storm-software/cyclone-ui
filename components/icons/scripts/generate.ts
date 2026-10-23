@@ -202,6 +202,8 @@ const renderPaths = (paths: IconPath[]) => {
 const renderIcon = (icon: IconSpec, version: string) => `${HEADER}
 ${GENERATED_NOTICE(version)}
 
+"use client";
+
 import { Path as SvgPath } from "react-native-svg";
 import { createIcon } from "../create-icon";
 

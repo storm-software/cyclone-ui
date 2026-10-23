@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { BodyText } from "@cyclone-ui/body-text";
 import { SidebarSimple } from "@cyclone-ui/icons";
 import type { ScrollViewProps } from "@cyclone-ui/scroll-view";

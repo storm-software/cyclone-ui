@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { View } from "@tamagui/core";
 import { Image } from "@tamagui/image";
 import { lazy, Suspense, useRef, useState } from "react";

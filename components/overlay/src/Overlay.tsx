@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";

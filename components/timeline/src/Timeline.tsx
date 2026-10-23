@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { TamaguiElement, ViewProps } from "@tamagui/core";
 import { styled, View } from "@tamagui/core";
 import type { ReactElement, ReactNode, Ref } from "react";

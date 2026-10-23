@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { isWeb } from "@tamagui/constants";
 import type { GetFinalProps, GetProps, TamaguiComponent } from "@tamagui/core";
 import { createStyledHOC, styled } from "@tamagui/core";

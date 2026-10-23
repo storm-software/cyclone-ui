@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { useFieldOptions, useFormControl } from "@cyclone-ui/helpers";
 import type { InputChangeEventHandler } from "@cyclone-ui/input";
 import { Input } from "@cyclone-ui/input";

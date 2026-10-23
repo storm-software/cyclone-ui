@@ -19,12 +19,12 @@ import { relative, resolve } from "node:path";
 import { success, writeLine } from "shell-shock:console";
 
 export const metadata = {
-  title: "Create Tokens",
+  title: "Build Tokens",
   description: "Generate a Tamagui config file from design tokens.",
   icon: "🏗"
 } satisfies CommandMetadata;
 
-export interface CreateTokensOptions {
+export interface BuildTokensOptions {
   /** The working directory. */
   cwd?: string;
   /** Path to the Razorwind configuration file. */
@@ -35,7 +35,7 @@ export interface CreateTokensOptions {
   output?: string;
 }
 
-async function handler(options: CreateTokensOptions) {
+async function handler(options: BuildTokensOptions) {
   const root = resolve(options.cwd ?? process.cwd());
   const config = await resolveConfig(root, {
     configFile: options.config,

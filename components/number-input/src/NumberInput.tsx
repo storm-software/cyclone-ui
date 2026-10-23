@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { Field } from "@cyclone-ui/field";
 import { useFormControl } from "@cyclone-ui/helpers";
 import { Minus, Plus } from "@cyclone-ui/icons";

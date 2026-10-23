@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { TamaguiElement, ViewProps } from "@tamagui/core";
 import { View } from "@tamagui/core";
 import { forwardRef, useImperativeHandle, useRef } from "react";

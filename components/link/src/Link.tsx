@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { ArrowUpRight } from "@cyclone-ui/icons";
 import { LinkText } from "@cyclone-ui/link-text";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";

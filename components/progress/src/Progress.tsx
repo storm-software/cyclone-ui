@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { ColorTokens, GetProps, ThemeTokens } from "@tamagui/core";
 import { createStyledHOC } from "@tamagui/core";
 import { Progress as TamaguiProgress } from "@tamagui/progress";

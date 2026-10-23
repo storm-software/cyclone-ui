@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import type { ContainerProps } from "@cyclone-ui/container";
@@ -36,15 +38,7 @@ import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
 
 export type AlertType =
-  | "base"
-  | "brand"
-  | "danger"
-  | "warning"
-  | "info"
-  | "success"
-  | "discovery"
-  | "positive"
-  | "negative";
+  "base" | "brand" | "danger" | "warning" | "info" | "success" | "discovery";
 
 export interface AlertContextProps {
   type?: AlertType;

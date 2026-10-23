@@ -12,9 +12,18 @@ export interface ComponentPublishExecutorSchema {
   tag?: string;
 
   /**
+   * All Components
+   *
+   * Bootstrap the public registry or tag channel by publishing every component before its catalog
+   *
+   * @default false
+   */
+  all?: boolean;
+
+  /**
    * Write Meta JSON
    *
-   * Write a `meta.json` file to the upload bucket
+   * Deprecated and ignored; registry items contain embedded metadata
    *
    * @default false
    */
@@ -23,7 +32,7 @@ export interface ComponentPublishExecutorSchema {
   /**
    * Clean
    *
-   * Clean the bucket before uploading files
+   * Deprecated and ignored; component publishing always preserves shared bucket objects
    *
    * @default false
    */

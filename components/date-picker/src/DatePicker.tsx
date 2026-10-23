@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { Button } from "@cyclone-ui/button";
 import { Calendar } from "@cyclone-ui/calendar";
 import { Field } from "@cyclone-ui/field";

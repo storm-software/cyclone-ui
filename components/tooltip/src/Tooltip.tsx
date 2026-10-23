@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { GetProps, SizeTokens } from "@tamagui/core";
 import {
   createStyledContext,

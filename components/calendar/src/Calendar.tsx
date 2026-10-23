@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { Button } from "@cyclone-ui/button";
 import {
   HeadingExtraSmallText,

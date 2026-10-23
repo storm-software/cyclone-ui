@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { FieldLabelPlacement } from "@cyclone-ui/field";
 import { getFieldLabelInset } from "@cyclone-ui/field";
 import {

@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { BodyText } from "@cyclone-ui/body-text";
 import { styled, View } from "@tamagui/core";
 import type { ReactNode } from "react";

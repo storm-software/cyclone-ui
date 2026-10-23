@@ -11,17 +11,24 @@
       "id": "#tag",
       "default": "latest"
     },
+    "all": {
+      "title": "All Components",
+      "type": "boolean",
+      "description": "Bootstrap the public registry or tag channel by publishing every component before its catalog",
+      "id": "#all",
+      "default": false
+    },
     "writeMetaJson": {
       "title": "Write Meta JSON",
       "type": "boolean",
-      "description": "Write a `meta.json` file to the upload bucket",
+      "description": "Deprecated and ignored; registry items contain embedded metadata",
       "id": "#writeMetaJson",
       "default": false
     },
     "clean": {
       "title": "Clean",
       "type": "boolean",
-      "description": "Clean the bucket before uploading files",
+      "description": "Deprecated and ignored; component publishing always preserves shared bucket objects",
       "id": "#clean",
       "default": false
     },
@@ -43,6 +50,7 @@
   "type": "object",
   "default": {
     "tag": "latest",
+    "all": false,
     "writeMetaJson": false,
     "clean": false,
     "verbose": false,

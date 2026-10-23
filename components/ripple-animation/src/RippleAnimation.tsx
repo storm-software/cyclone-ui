@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { ColorTokens, TamaguiElement, ViewProps } from "@tamagui/core";
 import { styled, View } from "@tamagui/core";
 import { forwardRef, useImperativeHandle, useRef, useState } from "react";

@@ -22,7 +22,7 @@ export const metadata = {
 export interface DiffOptions {
   /** The working directory. */
   cwd?: string;
-  /** Registry API URL. */
+  /** Registry URL. */
   registry?: string;
 }
 

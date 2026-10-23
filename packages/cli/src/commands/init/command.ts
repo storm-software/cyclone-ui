@@ -9,6 +9,7 @@
 import type { CommandMetadata } from "@shell-shock/core";
 import { mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
+import { success } from "shell-shock:console";
 import {
   applyInstallPlan,
   createInstallPlan
@@ -21,7 +22,6 @@ import {
   writeConfig
 } from "../../utilities/config";
 import { registryClient } from "../../utilities/registry";
-import { success } from "shell-shock:console";
 
 export const metadata = {
   title: "Initialize",
@@ -35,8 +35,10 @@ export interface InitOptions {
   cwd?: string;
   /** Component output path, relative to the working directory. */
   path?: string;
-  /** Registry API URL. */
+  /** Registry URL. */
   registry?: string;
+  /** Enable React Server Component support in components.json. */
+  rsc?: boolean;
   /** Overwrite an existing Cyclone configuration. */
   force?: boolean;
   /** Mute non-essential output. */
@@ -58,7 +60,8 @@ async function handler(
 
   const config = createConfig({
     registry: options.registry,
-    path: options.path
+    path: options.path,
+    rsc: options.rsc
   });
   await mkdir(resolveInside(root, config.path), { recursive: true });
 

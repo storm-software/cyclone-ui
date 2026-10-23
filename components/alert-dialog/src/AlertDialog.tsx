@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { DialogProps } from "@cyclone-ui/dialog";
 import { Dialog, DialogContext } from "@cyclone-ui/dialog";
 import { WarningCircle } from "@cyclone-ui/icons";

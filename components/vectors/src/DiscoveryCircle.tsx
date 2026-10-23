@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { getSized } from "@cyclone-ui/helpers";
 import { Lightbulb } from "@cyclone-ui/icons";
 import type { IconProps } from "@tamagui/helpers-icon";

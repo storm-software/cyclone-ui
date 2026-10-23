@@ -33,11 +33,21 @@ export default defineUntypedSchema({
     },
     $default: "latest"
   },
+  all: {
+    $schema: {
+      title: "All Components",
+      type: "boolean",
+      description:
+        "Bootstrap the public registry or tag channel by publishing every component before its catalog"
+    },
+    $default: false
+  },
   writeMetaJson: {
     $schema: {
       title: "Write Meta JSON",
       type: "boolean",
-      description: "Write a `meta.json` file to the upload bucket"
+      description:
+        "Deprecated and ignored; registry items contain embedded metadata"
     },
     $default: false
   },
@@ -45,7 +55,8 @@ export default defineUntypedSchema({
     $schema: {
       title: "Clean",
       type: "boolean",
-      description: "Clean the bucket before uploading files"
+      description:
+        "Deprecated and ignored; component publishing always preserves shared bucket objects"
     },
     $default: false
   },

@@ -10,6 +10,8 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, relative, resolve } from "node:path";
 import type { CycloneConfig } from "./config";
 import { pathExists, resolveInside, writeConfig } from "./config";
+import { transformDirectives } from "./directives";
+import { transformComponentImports } from "./imports";
 import type { CycloneRegistryClient } from "./registry";
 import { normalizeComponentName } from "./registry";
 
@@ -22,6 +24,7 @@ export interface InstallOptions {
   path?: string;
   overwrite?: boolean;
   dryRun?: boolean;
+  rsc?: boolean;
 }
 
 export interface FileChange {
@@ -75,6 +78,9 @@ export async function createInstallPlan(
 ): Promise<InstallPlan> {
   const components = await resolveComponents(client, names);
   const targetRoot = resolveInside(options.root, options.path ?? config.path);
+  const componentNames = new Set(
+    components.map(component => normalizeComponentName(component.name))
+  );
   const files: FileChange[] = [];
 
   for (const component of components) {
@@ -86,13 +92,25 @@ export async function createInstallPlan(
     for (const file of component.files) {
       const componentRoot = resolveInside(targetRoot, componentName);
       const filePath = resolveInside(componentRoot, file.name);
+      const directedContent = await transformDirectives(
+        file.name,
+        file.content,
+        options.rsc ?? config.rsc
+      );
+      const content = await transformComponentImports(
+        file.name,
+        directedContent,
+        filePath,
+        targetRoot,
+        componentNames
+      );
       const previousContent = (await pathExists(filePath))
         ? await readFile(filePath, "utf8")
         : null;
       const status =
         previousContent === null
           ? "create"
-          : previousContent === file.content
+          : previousContent === content
             ? "unchanged"
             : "overwrite";
 
@@ -105,7 +123,7 @@ export async function createInstallPlan(
       files.push({
         component: componentName,
         path: filePath,
-        content: file.content,
+        content,
         previousContent,
         status
       });
@@ -154,7 +172,10 @@ async function updatePackageJson(
     devDependencies?: Record<string, string>;
   };
   const internalDependencies = new Set(
-    components.map(component => component.name)
+    components.flatMap(component => [
+      component.name,
+      `@cyclone-ui/${normalizeComponentName(component.name)}`
+    ])
   );
   const dependencies = Object.assign(
     {},
@@ -168,12 +189,20 @@ async function updatePackageJson(
   packageJson.dependencies ??= {};
   packageJson.devDependencies ??= {};
   for (const [name, version] of Object.entries(dependencies)) {
-    if (!internalDependencies.has(name) && !name.startsWith("@cyclone-ui/")) {
+    if (
+      !internalDependencies.has(name) &&
+      !packageJson.dependencies[name] &&
+      !packageJson.devDependencies[name]
+    ) {
       packageJson.dependencies[name] = normalizePublishedVersion(version);
     }
   }
   for (const [name, version] of Object.entries(devDependencies)) {
-    if (!internalDependencies.has(name) && !name.startsWith("@cyclone-ui/")) {
+    if (
+      !internalDependencies.has(name) &&
+      !packageJson.dependencies[name] &&
+      !packageJson.devDependencies[name]
+    ) {
       packageJson.devDependencies[name] = normalizePublishedVersion(version);
     }
   }

@@ -7,44 +7,41 @@
  ------------------------------------------------------------------- */
 
 import type { CommandMetadata } from "@shell-shock/core";
-import { mkdir, writeFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
-import {
-  buildRegistry,
-  readRegistryManifest
-} from "../../utilities/local-registry";
+import { resolve } from "node:path";
 import { success } from "shell-shock:console";
+import type { BuildTokensOptions } from "../build-tokens/command";
+import buildTokens from "../build-tokens/command";
 
 export const metadata = {
-  title: "Build Registry",
-  description: "Build registry item JSON files for distribution.",
+  title: "Build",
+  description: "Generate design tokens and build the resulting Tamagui config.",
   icon: "🏗"
 } satisfies CommandMetadata;
 
-export interface BuildOptions {
-  /** The working directory. */
-  cwd?: string;
-  /** Output directory. */
-  output?: string;
-}
+export interface BuildOptions extends BuildTokensOptions {}
 
-async function handler(
-  options: BuildOptions,
-  /** Registry manifest path. */
-  registry: string = "registry.json"
-) {
+async function handler(options: BuildOptions) {
   const root = resolve(options.cwd ?? process.cwd());
-  const manifest = await readRegistryManifest(resolve(root, registry));
-  const files = await buildRegistry(
-    root,
-    manifest,
-    options.output ?? "public/r"
+  const output = options.output ?? "tamagui.config.ts";
+  await buildTokens({ ...options, cwd: root, output });
+
+  // Use the same compiler as `tamagui generate`, without requiring its CLI.
+  const { loadTamagui } = await import("@tamagui/static/loadTamagui");
+  const result = await loadTamagui(
+    {
+      root,
+      config: resolve(root, output),
+      outputCSS: resolve(root, "tamagui.generated.css"),
+      components: ["@tamagui/core"],
+      platform: "web"
+    },
+    true
   );
-  for (const file of files) {
-    await mkdir(dirname(file.path), { recursive: true });
-    await writeFile(file.path, file.content, "utf8");
+  if (!result?.tamaguiConfig) {
+    throw new Error(`Unable to build Tamagui config: ${resolve(root, output)}`);
   }
-  success(`Built ${files.length} registry items.`);
+
+  success("Built Tamagui config and CSS.");
 }
 
 export default handler;

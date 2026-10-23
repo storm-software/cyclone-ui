@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { GetProps } from "@tamagui/core";
 import type { Mutable } from "@stryke/types/base";
 import { createStyledHOC, styled, useComposedRefs } from "@tamagui/core";

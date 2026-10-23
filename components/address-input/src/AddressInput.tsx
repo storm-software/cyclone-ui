@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { BodyText } from "@cyclone-ui/body-text";
 import { ContextMenu, getContextMenuSize } from "@cyclone-ui/context-menu";
 import type { FormControlSize } from "@cyclone-ui/helpers";

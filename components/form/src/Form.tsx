@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { FormProviderOptions } from "@cyclone-ui/state/form";
 import { FormApi, FormProvider, useFormActions } from "@cyclone-ui/state/form";
 import type { GetProps, ViewProps } from "@tamagui/core";

@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import { getFormSizeToken, getSized } from "@cyclone-ui/helpers";
 import type { ToggleProps } from "@cyclone-ui/toggle";

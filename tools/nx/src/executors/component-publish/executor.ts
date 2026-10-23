@@ -17,7 +17,6 @@
  ------------------------------------------------------------------- */
 
 import type { ExecutorContext } from "@nx/devkit";
-import { joinPathFragments, readJsonFile } from "@nx/devkit";
 import executor from "@storm-software/cloudflare-tools/executors/r2-upload-publish/executor";
 import { getWorkspaceConfig } from "@storm-software/config-tools/get-config";
 import {
@@ -25,144 +24,83 @@ import {
   writeInfo,
   writeSuccess
 } from "@storm-software/config-tools/logger/console";
-import { existsSync } from "node:fs";
+import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { dirname, join } from "node:path";
+import { buildComponentRegistry, registrySegment } from "./registry";
 import type { ComponentPublishExecutorSchema } from "./schema";
 
 export default async function runExecutor(
   options: ComponentPublishExecutorSchema,
   context: ExecutorContext
 ) {
+  let staging: string | undefined;
   try {
     const config = await getWorkspaceConfig();
-    if (
-      !context.projectName ||
-      !context.projectsConfigurations?.projects ||
-      !context.projectsConfigurations.projects[context.projectName] ||
-      !context.projectsConfigurations.projects[context.projectName]?.root
-    ) {
-      throw new Error("The executor requires projectsConfigurations.");
-    }
-
-    const packageRoot = joinPathFragments(
-      context.root,
-      context.projectsConfigurations.projects[context.projectName]
-        ?.root as string
-    );
-
-    const sourceRoot = context.projectsConfigurations.projects[
-      context.projectName
-    ]?.sourceRoot as string;
-    if (!sourceRoot) {
-      throw new Error(
-        `The project ${context.projectName} does not have a sourceRoot defined in its configuration.`
+    const tag = registrySegment(options.tag ?? "latest");
+    const { name, version, item, catalog, componentProjects } =
+      await buildComponentRegistry(context, tag);
+    staging = await mkdtemp(join(tmpdir(), "cyclone-registry-"));
+    const itemRoot = join(staging, "items");
+    const catalogRoot = join(staging, "catalog");
+    const channel = tag === "latest" ? "" : `tags/${tag}/`;
+    const write = async (root: string, path: string, value: unknown) => {
+      const file = join(root, path);
+      await mkdir(dirname(file), { recursive: true });
+      await writeFile(file, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+    };
+    const items = options.all
+      ? await Promise.all(
+          componentProjects.map(async projectName =>
+            buildComponentRegistry({ ...context, projectName }, tag)
+          )
+        )
+      : [{ name, version, item }];
+    for (const component of items) {
+      await write(
+        itemRoot,
+        `components/${component.name}/${component.version}.json`,
+        component.item
+      );
+      await write(
+        itemRoot,
+        `${channel}components/${component.name}.json`,
+        component.item
       );
     }
-
-    const projectName =
-      context.projectsConfigurations.projects[context.projectName]?.name ??
-      context.projectName;
-    if (!projectName) {
-      throw new Error(
-        `The project ${context.projectName} does not have a name defined in its configuration.`
+    await write(catalogRoot, `${channel}registry.json`, catalog);
+    const upload = async (path: string) =>
+      executor(
+        {
+          ...options,
+          tag,
+          bucketId: "storm-public",
+          bucketPath: "cyclone-ui/registry",
+          path,
+          clean: false,
+          writeMetaJson: false
+        },
+        context
       );
-    }
-
-    if (!existsSync(joinPathFragments(packageRoot, "package.json"))) {
-      throw new Error(
-        `The project ${context.projectName} does not have a package.json file in its root.`
-      );
-    }
-
-    const packageJson = readJsonFile(
-      joinPathFragments(packageRoot, "package.json")
-    );
-
     writeInfo(
-      `🚀  Running Cyclone Component Registry executor on the ${
-        projectName
-      } package`,
+      `Publishing ${name}@${version} to the public Cyclone registry`,
       config
     );
-
-    const result = await executor(
-      {
-        ...options,
-        writeMetaJson: true,
-        bucketId: "storm-public",
-        bucketPath: `cyclone-ui/registry/components/${projectName}/${packageJson.version}`,
-        path: joinPathFragments(context.root, sourceRoot)
-      },
-      context
-    );
-    if (result.success) {
+    const result = await upload(itemRoot);
+    if (!result.success) return result;
+    const discovery = await upload(catalogRoot);
+    if (discovery.success)
       writeSuccess(
-        `Successfully uploaded the ${projectName} component to the Cyclone Registry`,
+        `Published ${name}@${version} to the public Cyclone registry`,
         config
       );
-    }
-
-    return result;
+    return discovery;
   } catch (error) {
     writeFatal(
-      `An error occurred while running the component registry publish executor. \n${
-        error instanceof Error ? error.message : String(error)
-      }`
+      `An error occurred while publishing the component registry.\n${error instanceof Error ? error.message : String(error)}`
     );
-
-    return {
-      success: false
-    };
+    return { success: false };
+  } finally {
+    if (staging) await rm(staging, { recursive: true, force: true });
   }
 }
-
-// const uploadFile = async (
-//   client: S3Client,
-//   projectPath: string,
-//   fileName: string,
-//   version: string,
-//   fileContent: string,
-//   contentType = "text/plain",
-//   isDryRun = false
-// ) => {
-//   const { writeDebug, writeWarning } =
-//     await import("@storm-software/config-tools");
-
-//   const checksum = createHash("sha256").update(fileContent).digest("base64");
-//   const fileKey = `${projectPath}/${fileName.startsWith("/") ? fileName.slice(1) : fileName}`;
-//   writeDebug(`Uploading file: ${fileKey}`);
-
-//   if (isDryRun) {
-//     writeWarning("Dry run: skipping upload to the Cyclone Registry.");
-//   } else {
-//     await client.send(
-//       new PutObjectCommand({
-//         Bucket: "storm-cdn-cyclone-ui",
-//         Key: fileKey,
-//         Body: fileContent.replaceAll(' from "@cyclone-ui/', ' from "../'),
-//         ContentType: contentType,
-//         Metadata: {
-//           version,
-//           checksum
-//         }
-//       })
-//     );
-//   }
-// };
-
-// const getInternalDependencies = (
-//   projectName: string,
-//   graph: ProjectGraph
-// ): ProjectGraphProjectNode[] => {
-//   const allDeps = graph.dependencies[projectName] ?? [];
-
-//   return [
-//     ...allDeps.reduce(
-//       (acc: ProjectGraphProjectNode[], node: ProjectGraphDependency) => {
-//         const found = graph.nodes[node.target];
-//         if (found) acc.push(found);
-//         return acc;
-//       },
-//       []
-//     )
-//   ];
-// };

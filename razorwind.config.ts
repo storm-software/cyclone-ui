@@ -56,7 +56,8 @@ export default defineConfig({
     preprocessor(),
     colorVariants(),
     shadcn({
-      configFile: "registry.json"
+      configFile: "registry.json",
+      localDependencyScopes: ["@cyclone-ui"]
     }),
     generate({
       importConfig: "./default-config",

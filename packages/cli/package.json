@@ -50,6 +50,8 @@
     "@shell-shock/core": "catalog:",
     "@shell-shock/plugin-theme": "^0.4.45",
     "@shell-shock/preset-cli": "catalog:",
+    "@tamagui/static": "catalog:",
+    "typescript": "^6.0.3",
     "zod": "^4.6.7"
   },
   "devDependencies": {
@@ -75,7 +77,7 @@
     "./completions-powershell-script": "./dist/completions-powershell-script.mjs",
     "./completions-zsh-config": "./dist/completions-zsh-config.mjs",
     "./completions-zsh-script": "./dist/completions-zsh-script.mjs",
-    "./create-tokens": "./dist/create-tokens.mjs",
+    "./build-tokens": "./dist/build-tokens.mjs",
     "./diff": "./dist/diff.mjs",
     "./docs": "./dist/docs.mjs",
     "./guidelines": "./dist/guidelines.mjs",

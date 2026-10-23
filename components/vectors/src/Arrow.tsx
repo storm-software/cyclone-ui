@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { GetProps } from "@tamagui/core";
 import { styled, View } from "@tamagui/core";
 import type { IconProps } from "@tamagui/helpers-icon";

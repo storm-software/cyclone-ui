@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import NumberFlow from "@number-flow/react";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC } from "@tamagui/core";

@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { ColorThemeName } from "@cyclone-ui/state/theme";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, Text, View } from "@tamagui/core";

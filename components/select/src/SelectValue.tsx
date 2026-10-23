@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { BodyText } from "@cyclone-ui/body-text";
 import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {

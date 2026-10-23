@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { ConfettiBurstHandle } from "@cyclone-ui/confetti-burst";
 import { ConfettiBurst } from "@cyclone-ui/confetti-burst";
 import type { FormControlSize } from "@cyclone-ui/helpers";

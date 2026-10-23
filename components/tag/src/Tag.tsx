@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { X } from "@cyclone-ui/icons";
 import type { RippleAnimationHandle } from "@cyclone-ui/ripple-animation";
 import { RippleAnimation } from "@cyclone-ui/ripple-animation";

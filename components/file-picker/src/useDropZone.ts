@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import * as DropZone from "react-dropzone";
 import type {
   DropZoneOptionsCustom,

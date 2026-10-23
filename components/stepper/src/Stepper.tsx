@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { HeadingText } from "@cyclone-ui/heading-text";
 import { CheckCircle, Lock, PencilSimpleLine } from "@cyclone-ui/icons";
 import type { NextButtonProps } from "@cyclone-ui/next-button";

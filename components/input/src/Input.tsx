@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { Button } from "@cyclone-ui/button";
 import type { FieldLabelPlacement, FormControlSize } from "@cyclone-ui/helpers";
 import {

@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { IconProps } from "@tamagui/helpers-icon";
 import { memo } from "react";
 import type { SvgProps } from "react-native-svg";

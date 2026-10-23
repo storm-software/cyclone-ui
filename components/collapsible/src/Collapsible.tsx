@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type {
   AccordionItemContentProps,
   AccordionItemHeaderProps,

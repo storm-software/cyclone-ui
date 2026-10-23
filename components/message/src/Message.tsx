@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { AlertType } from "@cyclone-ui/alert";
 import { Alert } from "@cyclone-ui/alert";
 import { useEvent, View } from "@tamagui/core";

@@ -40,7 +40,8 @@
     "defu": "catalog:",
     "glob": "catalog:",
     "nx": "catalog:",
-    "untyped": "catalog:"
+    "untyped": "catalog:",
+    "yaml": "catalog:"
   },
   "devDependencies": {
     "@nx/workspace": "catalog:",

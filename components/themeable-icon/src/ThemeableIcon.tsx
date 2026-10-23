@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { getSized } from "@cyclone-ui/helpers";
 import { Lock, MinusCircle, PlusCircle } from "@cyclone-ui/icons";
 import {

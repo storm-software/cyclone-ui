@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { ColorAreaProps } from "@cyclone-ui/color-area";
 import { ColorArea } from "@cyclone-ui/color-area";
 import {

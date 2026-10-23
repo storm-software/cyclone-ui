@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { ScrollView } from "@cyclone-ui/scroll-view";
 import { Sheet } from "@cyclone-ui/sheet";
 import type { AdaptWhen } from "@tamagui/adapt";

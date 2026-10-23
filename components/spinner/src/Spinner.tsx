@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { ColorTokens, ThemeTokens } from "@tamagui/core";
 import { createStyledHOC, getVariableValue, useTheme } from "@tamagui/core";
 import type { YStackProps } from "@tamagui/stacks";

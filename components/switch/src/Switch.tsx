@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,

@@ -6,12 +6,11 @@
 
  ------------------------------------------------------------------- */
 
-import { DEFAULT_REGISTRY_URL } from "@cyclone-ui/registry-api/client";
 import type { CommandMetadata } from "@shell-shock/core";
 import { resolve } from "node:path";
-import { readConfig } from "../../utilities/config";
-import { registryClient } from "../../utilities/registry";
 import { write } from "shell-shock:console";
+import { readConfig } from "../../utilities/config";
+import { DEFAULT_REGISTRY_URL, registryClient } from "../../utilities/registry";
 
 export const metadata = {
   title: "View Registry Components",
@@ -22,7 +21,7 @@ export const metadata = {
 export interface ViewOptions {
   /** The working directory. */
   cwd?: string;
-  /** Registry API URL. */
+  /** Registry URL. */
   registry?: string;
 }
 

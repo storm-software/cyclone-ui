@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { BodyText } from "@cyclone-ui/body-text";
 import { ListBullets } from "@cyclone-ui/icons";
 import type { GetProps } from "@tamagui/core";

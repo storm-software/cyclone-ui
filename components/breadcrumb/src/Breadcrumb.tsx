@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { Button } from "@cyclone-ui/button";
 import { getSpaced } from "@cyclone-ui/helpers";
 import { CaretDoubleRight, CaretRight, DotsThree } from "@cyclone-ui/icons";

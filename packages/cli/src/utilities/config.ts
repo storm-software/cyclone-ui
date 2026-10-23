@@ -6,9 +6,9 @@
 
  ------------------------------------------------------------------- */
 
-import { DEFAULT_REGISTRY_URL } from "@cyclone-ui/registry-api/client";
 import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, isAbsolute, relative, resolve } from "node:path";
+import { DEFAULT_REGISTRY_URL } from "./registry";
 
 export const CONFIG_FILE = "components.json";
 
@@ -20,15 +20,18 @@ export interface InstalledComponent {
 export interface CycloneConfig {
   registry: string;
   path: string;
+  /** Preserve registry directives when true; remove client directives when false. */
+  rsc?: boolean;
   components: Record<string, InstalledComponent>;
 }
 
 export function createConfig(
-  overrides: Partial<Pick<CycloneConfig, "registry" | "path">> = {}
+  overrides: Partial<Pick<CycloneConfig, "registry" | "path" | "rsc">> = {}
 ): CycloneConfig {
   return {
     registry: overrides.registry ?? DEFAULT_REGISTRY_URL,
     path: overrides.path ?? "components",
+    ...(overrides.rsc === undefined ? {} : { rsc: overrides.rsc }),
     components: {}
   };
 }
@@ -56,6 +59,7 @@ export async function readConfig(root: string): Promise<CycloneConfig | null> {
     typeof value.registry !== "string" ||
     !("path" in value) ||
     typeof value.path !== "string" ||
+    ("rsc" in value && typeof value.rsc !== "boolean") ||
     !("components" in value) ||
     !value.components ||
     typeof value.components !== "object" ||

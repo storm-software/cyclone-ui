@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { BodyTextSize } from "@cyclone-ui/body-text";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, useThemeName } from "@tamagui/core";

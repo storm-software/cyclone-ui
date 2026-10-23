@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { getVariableValue, styled, useTheme, View } from "@tamagui/core";
 import { useEffect, useState } from "react";
 import { AccessibilityInfo } from "react-native";

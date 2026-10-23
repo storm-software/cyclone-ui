@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { createStyledHOC } from "@tamagui/core";
 import { BodyText } from "@cyclone-ui/body-text";
 import type { Options } from "@stryke/string-format/pretty-bytes";

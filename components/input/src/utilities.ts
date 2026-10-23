@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { FieldLabelPlacement } from "@cyclone-ui/helpers";
 import {
   formSizeVariants,

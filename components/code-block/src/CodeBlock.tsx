@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { Button } from "@cyclone-ui/button";
 import { Clipboard } from "@cyclone-ui/icons";
 import { ScrollView } from "@cyclone-ui/scroll-view";

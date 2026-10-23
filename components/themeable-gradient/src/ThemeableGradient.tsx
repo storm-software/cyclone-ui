@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { ColorScientificPalette } from "@cyclone-ui/helpers";
 import {
   ColorScientificPalette as ColorScientificPalettes,

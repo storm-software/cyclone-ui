@@ -18,7 +18,7 @@ catalog:
   "@powerlines/plugin-tsdown": ^0.1.615
   "@powerlines/plugin-tamagui": ^0.1.666
   "@powerlines/plugin-env": ^0.16.423
-  "@razorwind/color-variants": ^0.0.80
+  "@razorwind/color-variants": ^0.0.82
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
   "@react-native-community/cli-platform-ios": 18.0.1
@@ -31,10 +31,10 @@ catalog:
   "@shell-shock/nx": ^0.0.105
   "@shell-shock/preset-cli": ^0.9.44
   "@storm-software/eslint-plugin-pnpm": ^0.0.114
-  "@storybook/addon-docs": ^10.6.2
-  "@storybook/addon-vitest": ^10.6.2
-  "@storybook/react": ^10.6.2
-  "@storybook/react-vite": ^10.6.2
+  "@storybook/addon-docs": ^10.6.3
+  "@storybook/addon-vitest": ^10.6.3
+  "@storybook/react": ^10.6.3
+  "@storybook/react-vite": ^10.6.3
   "@stryke/date": ^0.0.28
   "@tamagui/accordion": 3.0.13
   "@tamagui/adapt": 3.0.13
@@ -109,15 +109,15 @@ catalog:
   "@nx/storybook": 23.3.0
   "@nx/vite": 23.3.0
   "@nx/vitest": 23.3.0
-  "@razorwind/core": ^0.0.102
-  "@razorwind/css": ^0.0.85
-  "@razorwind/design-md": ^0.0.99
-  "@razorwind/nx": ^0.0.98
-  "@razorwind/storybook": ^0.0.102
-  "@razorwind/style-dictionary": ^0.0.88
-  "@razorwind/shadcn": ^0.0.98
-  "@razorwind/shell-shock": ^0.0.23
-  "@razorwind/tamagui": ^0.0.107
+  "@razorwind/core": ^0.0.105
+  "@razorwind/css": ^0.0.87
+  "@razorwind/design-md": ^0.0.101
+  "@razorwind/nx": ^0.0.100
+  "@razorwind/storybook": ^0.0.105
+  "@razorwind/style-dictionary": ^0.0.90
+  "@razorwind/shadcn": ^0.0.100
+  "@razorwind/shell-shock": ^0.0.26
+  "@razorwind/tamagui": ^0.0.110
   "@storm-software/cloudflare-tools": ^0.71.300
   "@storm-software/config": ^1.138.87
   "@storm-software/config-tools": ^1.190.151
@@ -194,7 +194,7 @@ catalog:
   react-refresh: ^0.10.0
   sherif: ^1.13.0
   solito: ^4.4.1
-  storybook: ^10.6.2
+  storybook: ^10.6.3
   tslib: ^2.8.1
   tsdown: ^0.22.14
   copyfiles: ^2.4.1
@@ -217,22 +217,23 @@ catalog:
   style-dictionary: ^5.7.0
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
-  "@razorwind/shiki": ^0.0.76
-  "@razorwind/llms": ^0.0.37
-  "@razorwind/maplibre": ^0.0.2
-  "@razorwind/docgen": ^0.0.100
+  "@razorwind/shiki": ^0.0.78
+  "@razorwind/llms": ^0.0.39
+  "@razorwind/maplibre": ^0.0.4
+  "@razorwind/docgen": ^0.0.103
   ui-ux-pro-max-cli: ^2.15.0
   "@power-plant/core": ^0.0.98
   "@phosphor-icons/core": ^2.1.1
   "@shell-shock/plugin-mcp": ^0.1.10
   "@shell-shock/plugin-skills": ^0.0.23
-  "@razorwind/eslint": ^0.0.30
-  "@razorwind/stylelint": ^0.0.30
-  "@sourcebook/config": ^0.0.11
+  "@razorwind/eslint": ^0.0.32
+  "@razorwind/stylelint": ^0.0.32
+  "@sourcebook/config": ^0.0.12
   "@tanstack/react-virtual": ^3.14.21
   "@nx/maven": 23.3.0
   tsx: ^4.23.15
   "@nx/docker": ^23.3.0
+  yaml: ^2.9.1
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true
@@ -249,6 +250,7 @@ minimumReleaseAgeExclude:
   - conventional-changelog-storm-software
   - powerlines
   - tamagui
+  - "@sourcebook/config@0.0.12"
 nodeVersion: 26.3.0
 allowBuilds:
   "@parcel/watcher": true

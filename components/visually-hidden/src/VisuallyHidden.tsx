@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { styled, View } from "@tamagui/core";
 
 export const VisuallyHidden = styled(View, {

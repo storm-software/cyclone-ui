@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { BodyText } from "@cyclone-ui/body-text";
 import { Collapsible } from "@cyclone-ui/collapsible";
 import { Container } from "@cyclone-ui/container";

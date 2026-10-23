@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { BodyText } from "@cyclone-ui/body-text";
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { Link } from "@cyclone-ui/link";

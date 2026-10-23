@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { BodyText } from "@cyclone-ui/body-text";
 import { DotOutline } from "@cyclone-ui/icons";
 import type { ValidationDetail as ValidationDetails } from "@stryke/types/validations";

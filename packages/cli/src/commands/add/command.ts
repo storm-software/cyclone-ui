@@ -18,6 +18,7 @@
 
 import type { CommandMetadata } from "@shell-shock/core";
 import { resolve } from "node:path";
+import { write } from "shell-shock:console";
 import {
   applyInstallPlan,
   createInstallPlan,
@@ -26,7 +27,6 @@ import {
 } from "../../utilities/components";
 import { requireConfig } from "../../utilities/config";
 import { registryClient } from "../../utilities/registry";
-import { write } from "shell-shock:console";
 
 export const metadata = {
   title: "Add",
@@ -51,8 +51,10 @@ export interface AddOptions {
   view?: boolean;
   /** Mute non-essential output. */
   silent?: boolean;
-  /** Override the configured registry API URL. */
+  /** Override the configured registry URL. */
   registry?: string;
+  /** Override React Server Component support for this installation. */
+  rsc?: boolean;
 }
 
 async function handler(
@@ -76,6 +78,7 @@ async function handler(
     root,
     path: options.path,
     overwrite: options.overwrite,
+    rsc: options.rsc,
     dryRun
   });
 

@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { FormControlSize, FormControlState } from "@cyclone-ui/helpers";
 import {
   FormControlContext,

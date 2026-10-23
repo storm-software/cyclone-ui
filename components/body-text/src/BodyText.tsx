@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";

@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 /* eslint-disable react/no-children-to-array */
 
 import { HeadingSmallText } from "@cyclone-ui/heading-text";

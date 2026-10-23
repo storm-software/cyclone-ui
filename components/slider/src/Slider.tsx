@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import type { FormControlSize } from "@cyclone-ui/helpers";
 import { useFormControl } from "@cyclone-ui/helpers";
 import type { TamaguiElement } from "@tamagui/core";

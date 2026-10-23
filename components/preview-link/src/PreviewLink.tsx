@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+"use client";
+
 import { BodyText } from "@cyclone-ui/body-text";
 import type { LinkProps } from "@cyclone-ui/link";
 import { Link } from "@cyclone-ui/link";
