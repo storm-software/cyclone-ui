@@ -47,7 +47,9 @@ A `Divider` component used to render a horizontal or vertical divider line. It i
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,14 @@ A `Divider` component used to render a horizontal or vertical divider line. It i
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Horizontal and vertical directions.
+- Three thicknesses: `sm` (1px), `md` (2px), and `lg` (3px).
+- Any color token, with a theme `hairline` or `outline` color by default.
+- Accepts other Tamagui view props, such as margins.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -91,13 +100,25 @@ yarn add -D @cyclone-ui/divider
 
 </details>
 
+## Usage
+
+```tsx
+import { Divider } from "@cyclone-ui/divider";
+
+export function Example() {
+  return <Divider direction="horizontal" size="sm" />;
+}
+```
+
+See the [Divider documentation](../../docs/design-system/components/divider.md) for all props.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
 
 ## Development
 
-This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development. To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

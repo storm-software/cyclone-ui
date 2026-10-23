@@ -41,15 +41,15 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Storm Button Component
 
-A package containing various utilities to support custom workspace configurations
-
-Below is a list of the available configuration values that can be set through environment variables:
+A `Button` component used to trigger actions. It supports many variants (including cascade hover effects), sizes and themes.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -67,7 +67,16 @@ Below is a list of the available configuration values that can be set through en
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Compound API: `Button`, `Button.Text` and `Button.Icon`.
+- Variants: `primary`, `secondary`, `tertiary`, `outlined`, `ghost`, `link`, and cascade hover effects (`cascade`, `double-cascade`, diagonal and reverse forms).
+- Sizes `sm`, `md` and `lg`, or any size token.
+- Shape options: `circular`, `rounded`, `ringed` and `noPadding`.
+- Color themes (for example `brand`, `danger`, `warning`, `success`, `info`).
+- Press ripple and scale animation, and a `disabled` state.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -92,6 +101,20 @@ yarn add -D @cyclone-ui/button
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Button } from "@cyclone-ui/button";
+
+export const Example = () => (
+  <Button variant="primary" theme="brand" onPress={() => console.log("saved")}>
+    <Button.Text>Save</Button.Text>
+  </Button>
+);
+```
+
+See the [component reference](../../docs/design-system/components/button.md) for all props and variants.
 
 ## Reduced Package Size
 

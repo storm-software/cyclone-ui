@@ -35,6 +35,11 @@ export default defineConfig({
       type: "library",
       outputPath: "docs/packages",
       packages: "packages"
+    },
+    {
+      type: "application",
+      variant: "cli",
+      src: "packages/cli"
     }
   ]
 });

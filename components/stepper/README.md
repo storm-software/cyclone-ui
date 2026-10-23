@@ -49,7 +49,9 @@ A package containing the Stepper component used by Storm Software
 
 - [stepper](#stepper)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,6 +68,13 @@ A package containing the Stepper component used by Storm Software
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Multi-step wizard built on Tamagui `Tabs`.
+- Vertical header list with check, pencil, and lock icons for each step state.
+- Optional step numbers (`numbered`).
+- `Stepper.NextButton` and `Stepper.PreviousButton` helpers.
 
 ## Installing
 
@@ -92,6 +101,32 @@ yarn add -D @cyclone-ui/stepper
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Stepper } from "@cyclone-ui/stepper";
+
+export function Example() {
+  return (
+    <Stepper numbered>
+      <Stepper.Header>
+        <Stepper.Header.Item value="one">Step One</Stepper.Header.Item>
+        <Stepper.Header.Item value="two">Step Two</Stepper.Header.Item>
+      </Stepper.Header>
+      <Stepper.Content>
+        <Stepper.Content.Item value="one">First step</Stepper.Content.Item>
+        <Stepper.Content.Item value="two">Second step</Stepper.Content.Item>
+      </Stepper.Content>
+      <Stepper.PreviousButton />
+      <Stepper.NextButton />
+    </Stepper>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/stepper.md)
+for all parts and props.
 
 ## Reduced Package Size
 

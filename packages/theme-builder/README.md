@@ -50,7 +50,9 @@ A package containing the theme building utilities and shared code used by the Cy
 
 - [Cyclone UI - Theme Builder](#cyclone-ui---theme-builder)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -67,6 +69,14 @@ A package containing the theme building utilities and shared code used by the Cy
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- A Razorwind preprocessor that converts token colors to hex and generates
+  secondary, `on-*`, state, and focus ring colors for each color group
+- A Razorwind generator that wraps the Tamagui generator with Cyclone UI
+  defaults and output fixes
+- Used by the Cyclone CLI `build` and `build-tokens` commands
 
 ## Installing
 
@@ -94,9 +104,33 @@ yarn add -D @cyclone-ui/theme-builder
 
 </details>
 
+## Usage
+
+Add both plugins to the `plugins` list in `razorwind.config.ts`:
+
+```ts
+import { defineConfig } from "@razorwind/core";
+import { generate, preprocessor } from "@cyclone-ui/theme-builder";
+
+export default defineConfig({
+  name: "cyclone-ui",
+  tokensPath: "packages/tokens/src/tokens/**/*.json",
+  plugins: [
+    preprocessor(),
+    generate({
+      importConfig: "./default-config",
+      outputPath: "packages/tokens/src/tamagui/config.ts"
+    })
+  ]
+});
+```
+
+See the [package documentation](../../docs/packages/theme-builder.md) for the
+details of each plugin.
+
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code
+This project uses [tsdown](https://tsdown.dev/) to package the source code
 due to its ability to remove unused code and ship smaller javascript files
 thanks to code splitting. This helps to greatly reduce the size of the package
 and to make it easier to use in other projects.
@@ -105,6 +139,9 @@ and to make it easier to use in other projects.
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
+
+To set up a checkout, clone the repository and run `pnpm install` in the
+repository root.
 
 ### Building
 

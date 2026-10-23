@@ -49,7 +49,9 @@ A ScrollView component meant to be shared in many other components
 
 - [ScrollView](#scrollview)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -65,6 +67,13 @@ A ScrollView component meant to be shared in many other components
   - [Contributors](#contributors)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Scroll container built on the Tamagui `ScrollView`.
+- Thin themed scrollbar on web that is highlighted on hover.
+- `sm` (`84%`) and `lg` (`100%`) width sizes.
+- `fullscreen` variant that fills its parent.
 
 ## Installing
 
@@ -91,6 +100,23 @@ yarn add -D @cyclone-ui/scroll-view
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { ScrollView } from "@cyclone-ui/scroll-view";
+
+export function Example() {
+  return (
+    <ScrollView size="lg" maxHeight={240}>
+      {/* long content */}
+    </ScrollView>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/scroll-view.md)
+for all props.
 
 ## Reduced Package Size
 

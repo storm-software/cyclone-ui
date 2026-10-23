@@ -65,6 +65,12 @@ Themeable Gradient component for Cyclone UI
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Diagonal `LinearGradient` whose color stops come from a theme color (`primary` by default)
+- `variant` selects the palette: `surrounding` (default), `analogous`, `triadic`, `tetradic`, `complementary`, or `splitComplementary`
+- Optional `theme` prop applies a specific theme to the gradient
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -90,6 +96,16 @@ yarn add -D @cyclone-ui/input
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { ThemeableGradient } from "@cyclone-ui/themeable-gradient";
+
+<ThemeableGradient theme="brand" variant="analogous" height="14xl" width="100%" />;
+```
+
+The component has no default size, so set `height` and `width`. See the [Themeable gradient documentation](../../docs/design-system/components/themeable-gradient.md) for all props.
 
 ## Reduced Package Size
 

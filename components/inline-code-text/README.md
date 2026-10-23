@@ -49,7 +49,9 @@ An `InlineCodeText` component used to render the Inline Code text of a page. It 
 
 - [Inline Code Text](#inline-code-text)
   - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
+  - [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -67,7 +69,12 @@ An `InlineCodeText` component used to render the Inline Code text of a page. It 
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Inline `span` in the `code` font with a `floating` background, padding, and rounded corners.
+- Accepts `SizableText` props and the `theme` prop.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -93,13 +100,29 @@ yarn add -D @cyclone-ui/inline-code-text
 
 </details>
 
+## Usage
+
+```tsx
+import { InlineCodeText } from "@cyclone-ui/inline-code-text";
+
+export function Example() {
+  return (
+    <p>
+      Run <InlineCodeText>pnpm install</InlineCodeText> first.
+    </p>
+  );
+}
+```
+
+See the [Inline Code Text documentation](../../docs/design-system/components/inline-code-text.md) for details.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
 
 ## Development
 
-This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development. To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

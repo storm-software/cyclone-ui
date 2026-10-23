@@ -47,7 +47,9 @@ A `LinkText` component used to render the body text of a page. It is a simple co
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,14 @@ A `LinkText` component used to render the body text of a page. It is a simple co
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Five color variants: `base`, `emphasis`, `ink`, `subtle`, and `subtlest`.
+- Four underline modes: `static`, `hover`, `initial`, and `none`.
+- `sm` and `md` sizes, a `cta` style for uppercase button-like text, and a `disabled` state.
+- `mixed`, `inverse`, and `themed` options to control text and underline colors.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -91,13 +100,29 @@ yarn add -D @cyclone-ui/link-text
 
 </details>
 
+## Usage
+
+```tsx
+import { LinkText } from "@cyclone-ui/link-text";
+
+export function Example() {
+  return (
+    <LinkText variant="emphasis" mixed underline="hover">
+      Read more
+    </LinkText>
+  );
+}
+```
+
+`LinkText` styles text only. Use [`Link`](../link) when you need an `href`. See the [Link Text documentation](../../docs/design-system/components/link-text.md) for all props.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
 
 ## Development
 
-This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development. To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

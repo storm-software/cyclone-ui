@@ -47,7 +47,9 @@ A link component used to render anchor elements to reference other pages
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,14 @@ A link component used to render anchor elements to reference other pages
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Wraps any children and adds a permalink icon after them.
+- The icon fades in on hover or focus.
+- Supports `href`, `target`, `rel` and `download` on web, and opens the URL with `Linking` on native.
+- Accessible name for the permalink through `permalinkLabel`.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +99,20 @@ yarn add -D @cyclone-ui/link
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Anchor } from "@cyclone-ui/anchor";
+
+export const Example = () => (
+  <Anchor href="#install" permalinkLabel="Link to Install">
+    <h2>Install</h2>
+  </Anchor>
+);
+```
+
+See the [component reference](../../docs/design-system/components/anchor.md) for all props.
 
 ## Reduced Package Size
 

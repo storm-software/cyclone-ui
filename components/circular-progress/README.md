@@ -49,7 +49,9 @@ A Progress component meant to be shared in many other components
 
 - [Progress](#progress)
   - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
+  - [Quick Features](#quick-features)
+  - [Installation](#installation)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -67,7 +69,14 @@ A Progress component meant to be shared in many other components
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Circular progress ring drawn with SVG on the Tamagui `Progress` primitive.
+- `value` and `max` props.
+- Sizes `sm`, `md`, `lg` and `xl`, or any size token.
+- Arc color through `color` or the `theme` prop.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -92,6 +101,16 @@ yarn add -D @cyclone-ui/circular-progress
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { CircularProgress } from "@cyclone-ui/circular-progress";
+
+export const Example = () => <CircularProgress value={40} size="md" />;
+```
+
+See the [component reference](../../docs/design-system/components/circular-progress.md) for all props.
 
 ## Reduced Package Size
 

@@ -47,7 +47,9 @@ A Next Button component meant to be shared in many other components
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -64,6 +66,13 @@ A Next Button component meant to be shared in many other components
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Wraps the React Native `ActivityIndicator` in a Tamagui `YStack`.
+- `small` and `large` sizes.
+- `color` accepts a theme token or a raw value (default `primary`).
+- Follows the `theme` prop.
 
 ## Installing
 
@@ -90,6 +99,19 @@ yarn add -D @cyclone-ui/spinner
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Spinner } from "@cyclone-ui/spinner";
+
+export function Example() {
+  return <Spinner size="large" theme="brand" />;
+}
+```
+
+See the [component documentation](../../docs/design-system/components/spinner.md)
+for all props.
 
 ## Reduced Package Size
 

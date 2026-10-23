@@ -47,7 +47,9 @@ A component to support page navigation, next and previous links.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -64,6 +66,13 @@ A component to support page navigation, next and previous links.
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Previous and next buttons, plus first and last page buttons.
+- A sliding window of page numbers with ellipses.
+- Controlled with `pageCount`, `pageIndex` (zero-based), and `setPageIndex`.
+- Optional `onFirst`, `onLast`, `onPrevious`, and `onNext` overrides.
 
 ## Installing
 
@@ -90,6 +99,28 @@ yarn add -D @cyclone-ui/pagination
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { useState } from "react";
+import { Pagination } from "@cyclone-ui/pagination";
+
+export function Example() {
+  const [pageIndex, setPageIndex] = useState(0);
+
+  return (
+    <Pagination
+      pageCount={10}
+      pageIndex={pageIndex}
+      setPageIndex={setPageIndex}
+    />
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/pagination.md)
+for all props.
 
 ## Reduced Package Size
 

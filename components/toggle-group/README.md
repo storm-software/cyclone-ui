@@ -67,6 +67,13 @@ A package containing the `ToggleGroup` component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Row of `ToggleGroup.Item` buttons in one shared frame
+- Single selection by default, or several with `multiple`
+- Controlled (`value`) or uncontrolled (`defaultValue`), with `onValueChange` and `allowEmpty`
+- `sm`, `md`, and `lg` sizes, with `fluid`, `borderless`, `rounded`, `invalid`, and `disabled` options
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -92,6 +99,20 @@ yarn add -D @cyclone-ui/toggle-group
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { ToggleGroup } from "@cyclone-ui/toggle-group";
+
+<ToggleGroup defaultValue="week" onValueChange={value => console.log(value)}>
+  <ToggleGroup.Item value="day">Day</ToggleGroup.Item>
+  <ToggleGroup.Item value="week">Week</ToggleGroup.Item>
+  <ToggleGroup.Item value="month">Month</ToggleGroup.Item>
+</ToggleGroup>;
+```
+
+See the [Toggle group documentation](../../docs/design-system/components/toggle-group.md) for all props.
 
 ## Reduced Package Size
 

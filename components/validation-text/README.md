@@ -41,7 +41,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # ValidationText
 
-A Next Button component meant to be shared in many other components
+A `ValidationText` component that shows the validation messages of a form field in caption text.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -64,6 +64,12 @@ A Next Button component meant to be shared in many other components
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Shows field validation messages in caption text with an enter and exit animation
+- One message shows as plain text. Several messages show as a bulleted list under a heading that depends on the theme (errors, warnings, or success)
+- Shows a default notice when the field is disabled
 
 ## Installing
 
@@ -90,6 +96,22 @@ yarn add -D @cyclone-ui/validation-text
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { ValidationText } from "@cyclone-ui/validation-text";
+
+<ValidationText
+  theme="danger"
+  messages={[
+    { type: "error", message: "The name is required" },
+    { type: "error", message: "The name must be unique" }
+  ]}
+/>;
+```
+
+See the [Validation text documentation](../../docs/design-system/components/validation-text.md) for all props.
 
 ## Reduced Package Size
 

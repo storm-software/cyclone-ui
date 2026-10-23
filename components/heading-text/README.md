@@ -47,7 +47,9 @@ A `HeadingText` component used to render the body text of a page. It is a simple
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,13 @@ A `HeadingText` component used to render the body text of a page. It is a simple
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Six level components, from `HeadingHeroText` to `HeadingExtraSmallText`, that render `h1` to `h5` elements.
+- `HeadingText` picks a level from the `level` prop (`1` to `5`, or `hero`, `title`, `lg`, `md`, `sm`, `xs`).
+- `base` (display) and `editorial` font variants.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -91,13 +99,29 @@ yarn add -D @cyclone-ui/heading-text
 
 </details>
 
+## Usage
+
+```tsx
+import { HeadingText } from "@cyclone-ui/heading-text";
+
+export function Example() {
+  return (
+    <HeadingText level="title" variant="editorial">
+      Section title
+    </HeadingText>
+  );
+}
+```
+
+See the [Heading Text documentation](../../docs/design-system/components/heading-text.md) for the level table.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
 
 ## Development
 
-This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development. To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

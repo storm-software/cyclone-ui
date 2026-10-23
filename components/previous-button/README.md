@@ -47,7 +47,9 @@ A Previous Button component meant to be shared in many other components
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -64,6 +66,13 @@ A Previous Button component meant to be shared in many other components
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- A button with an animated left-arrow icon and a default "Previous" label.
+- Hide the label with `hideText`, or replace it with custom children.
+- Shrink the arrow with `animateShrink`.
+- Accepts all `Button` props.
 
 ## Installing
 
@@ -90,6 +99,24 @@ yarn add -D @cyclone-ui/previous-button
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { PreviousButton } from "@cyclone-ui/previous-button";
+
+export function Example() {
+  return (
+    <>
+      <PreviousButton onClick={() => history.back()} />
+      <PreviousButton hideText />
+    </>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/previous-button.md)
+for all props.
 
 ## Reduced Package Size
 

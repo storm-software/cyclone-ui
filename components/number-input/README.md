@@ -49,7 +49,9 @@ Number Input form control component for Cyclone UI. Use it on its own, or wrap i
 
 - [number-input](#number-input)
   - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
+  - [Quick Features](#quick-features)
+  - [Installation](#installation)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -67,7 +69,14 @@ Number Input form control component for Cyclone UI. Use it on its own, or wrap i
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- A `type="number"` `Input` with decrease and increase buttons.
+- `increment` sets how much each button press changes the value. The default is `1`.
+- Controlled (`value`) and uncontrolled (`defaultValue`) modes outside a `Field`.
+- Inherits the variants, sizes, and validation states of `Input` and `Field`.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -93,6 +102,31 @@ yarn add -D @cyclone-ui/number-input
 
 </details>
 
+## Usage
+
+```tsx
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
+import { NumberInput } from "@cyclone-ui/number-input";
+
+export function Example() {
+  return (
+    <Form name="order" initialValues={{ quantity: "" }}>
+      <Field name="quantity">
+        <Field.Label>Quantity</Field.Label>
+        <NumberInput increment={5}>
+          <NumberInput.TextBox>
+            <NumberInput.TextBox.Value placeholder="0" />
+          </NumberInput.TextBox>
+        </NumberInput>
+      </Field>
+    </Form>
+  );
+}
+```
+
+See the [Number Input documentation](../../docs/design-system/components/number-input.md) for all props.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
@@ -100,6 +134,8 @@ This project uses [tsup](https://tsup.egoist.dev/) to package the source code du
 ## Development
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+
+To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

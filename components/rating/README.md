@@ -47,6 +47,7 @@ A `Rating` component used to display and select a rating, such as a number of st
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
 - [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
@@ -65,6 +66,15 @@ A `Rating` component used to display and select a rating, such as a number of st
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- A row of icons (stars by default) to display or select a rating.
+- Controlled or uncontrolled, with fractional `precision` and clearing the value.
+- Read-only and disabled states.
+- Keyboard support: arrow keys, `Home`, and `End`.
+- Custom icons, weights, colors, and sizes.
+- Connects to forms through `Field`.
 
 ## Installing
 
@@ -131,7 +141,7 @@ import { Rating } from "@cyclone-ui/rating";
 | `size` | `"md"` | `"sm"`, `"md"`, or `"lg"`. |
 | `icon` / `emptyIcon` | `Star` | Any `@cyclone-ui/icons` component. |
 | `iconWeight` / `emptyIconWeight` | `"fill"` / `"regular"` | The icon weights. |
-| `color` / `emptyColor` | `"accent"` / `"border"` | The icon colors. Wrap in a `Theme` (for example `warning`) to change the accent. |
+| `color` / `emptyColor` | `"primary"` / `"outline"` | The icon colors. Wrap in a `Theme` (for example `warning`) to change the accent. |
 | `highlightSelectedOnly` | `false` | Only fill the selected icon. |
 | `getLabelText` | `"N Stars"` | Builds the accessible value text. |
 

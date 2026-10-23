@@ -47,7 +47,9 @@ A package containing the AlertDialog component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,13 @@ A package containing the AlertDialog component used by Storm Software
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Modal dialog built on the Cyclone UI `Dialog`, with an overlay.
+- Large status icon that follows the `theme` (`base`, `brand`, `discovery`, `danger`, `warning`, `info`, `success`), or a custom icon.
+- Compound parts: `Trigger`, `Container`, `Icon`, `Content` (`Heading`, `Body`), `Action` and `Close`.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +98,30 @@ yarn add -D @cyclone-ui/alert-dialog
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { AlertDialog } from "@cyclone-ui/alert-dialog";
+
+export const Example = () => (
+  <AlertDialog theme="danger">
+    <AlertDialog.Trigger asChild={true}>{/* your trigger */}</AlertDialog.Trigger>
+    <AlertDialog.Container>
+      <AlertDialog.Container.Icon />
+      <AlertDialog.Container.Content>
+        <AlertDialog.Container.Content.Heading>Heading</AlertDialog.Container.Content.Heading>
+        <AlertDialog.Container.Content.Body>Message</AlertDialog.Container.Content.Body>
+        <AlertDialog.Container.Close>
+          <AlertDialog.Container.Close.Text>Close</AlertDialog.Container.Close.Text>
+        </AlertDialog.Container.Close>
+      </AlertDialog.Container.Content>
+    </AlertDialog.Container>
+  </AlertDialog>
+);
+```
+
+See the [component reference](../../docs/design-system/components/alert-dialog.md) for all parts.
 
 ## Reduced Package Size
 

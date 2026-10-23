@@ -49,7 +49,9 @@ A component that partially obscures the background content.
 
 - [Cyclone UI - Overlay](#cyclone-ui---overlay)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,6 +68,13 @@ A component that partially obscures the background content.
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Full-bleed backdrop with a blurred, theme-tinted gradient.
+- Fades in and out on enter and exit inside a presence wrapper.
+- Follows the `theme` prop (for example `brand`, `danger`, or `success`).
+- Accepts the props of a Tamagui `YStack`.
 
 ## Installing
 
@@ -92,6 +101,29 @@ yarn add -D @cyclone-ui/overlay
 ```
 
 </details>
+
+## Usage
+
+Place `Overlay` inside a positioned parent, or inside a presence wrapper such as
+a dialog or sheet overlay. It fills the parent.
+
+```tsx
+import { Text } from "@tamagui/core";
+import { YStack } from "@tamagui/stacks";
+import { Overlay } from "@cyclone-ui/overlay";
+
+export function Example() {
+  return (
+    <YStack position="relative" height="90vh" width="100%">
+      <Text>Content partially obscured by the overlay.</Text>
+      <Overlay theme="brand" />
+    </YStack>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/overlay.md)
+for details.
 
 ## Reduced Package Size
 

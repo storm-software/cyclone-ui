@@ -47,7 +47,9 @@ A package containing the Breadcrumb component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,15 @@ A package containing the Breadcrumb component used by Storm Software
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Trail of `Breadcrumb.Item` links that ends with the current page name.
+- Three separators: `slash`, `chevron` and `double`.
+- Link styles from `LinkText` (`variant`, `mixed`, `inverse`, `themed`).
+- Long trails collapse into a popover menu (`maxItems`, `itemsBeforeCollapse`, `itemsAfterCollapse`).
+- Accessible label for the menu button (`expandText`).
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +100,21 @@ yarn add -D @cyclone-ui/breadcrumb
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Breadcrumb } from "@cyclone-ui/breadcrumb";
+
+export const Example = () => (
+  <Breadcrumb currentName="Headings" separator="chevron">
+    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+    <Breadcrumb.Item href="/docs">Docs</Breadcrumb.Item>
+  </Breadcrumb>
+);
+```
+
+See the [component reference](../../docs/design-system/components/breadcrumb.md) for all props.
 
 ## Reduced Package Size
 

@@ -47,7 +47,9 @@ Headless search input (suggestions popover, magnifier icon, clearable inside a `
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -64,6 +66,13 @@ Headless search input (suggestions popover, magnifier icon, clearable inside a `
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Search text input with a magnifying-glass icon (replace it with `icon`, or hide it with `null`).
+- Popover of case-insensitive suggestions with arrow-key, Enter, and Escape support.
+- `renderSuggestion` and `filterSuggestions` for custom or remote matching.
+- Clearable by default inside a `Field`.
 
 ## Installing
 
@@ -90,6 +99,23 @@ yarn add -D @cyclone-ui/search-input
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { SearchInput } from "@cyclone-ui/search-input";
+
+export function Example() {
+  return (
+    <SearchInput suggestions={["Apple", "Pear", "Peach"]}>
+      <SearchInput.TextBox placeholder="Search" />
+    </SearchInput>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/search-input.md)
+for all props.
 
 ## Reduced Package Size
 

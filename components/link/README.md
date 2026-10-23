@@ -47,7 +47,9 @@ A link component used to render anchor elements to reference other pages
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,13 @@ A link component used to render anchor elements to reference other pages
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Renders an `a` element with `href` and `target` on web, and opens the URL with `Linking` on native.
+- Set `external` to open the link in a new tab and add an arrow icon that shifts on hover.
+- Inherits the color variants, underline modes, and sizes of [`LinkText`](../link-text).
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -91,13 +99,29 @@ yarn add -D @cyclone-ui/link
 
 </details>
 
+## Usage
+
+```tsx
+import { Link } from "@cyclone-ui/link";
+
+export function Example() {
+  return (
+    <Link href="https://stormsoftware.com" external>
+      Storm Software
+    </Link>
+  );
+}
+```
+
+See the [Link documentation](../../docs/design-system/components/link.md) for all props and variants.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
 
 ## Development
 
-This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development. To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

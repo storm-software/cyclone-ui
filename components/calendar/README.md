@@ -49,7 +49,9 @@ A `Calendar` component used to display the days in a month. It is a simple compo
 
 - [Calendar](#calendar)
   - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
+  - [Quick Features](#quick-features)
+  - [Installation](#installation)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -67,7 +69,15 @@ A `Calendar` component used to display the days in a month. It is a simple compo
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Day, month and year views.
+- `single` mode (one date) and `range` mode (start and end dates).
+- Three sizes: `sm`, `md` and `lg`.
+- Highlights today, the selected dates and the dates inside a range.
+- Built on `@rehookify/datepicker`.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -92,6 +102,18 @@ yarn add -D @cyclone-ui/calendar
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Calendar } from "@cyclone-ui/calendar";
+
+export const Example = () => (
+  <Calendar mode="single" onChange={event => console.log(event.detail)} />
+);
+```
+
+See the [component reference](../../docs/design-system/components/calendar.md) for all props.
 
 ## Reduced Package Size
 

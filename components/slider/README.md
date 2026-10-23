@@ -48,6 +48,7 @@ A `Slider` component used to select a value, or a range of values, from a contin
 
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
 - [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
@@ -66,6 +67,15 @@ A `Slider` component used to select a value, or a range of values, from a contin
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- A Material-style slider built on the Tamagui `Slider`.
+- A single value, or a range when you pass an array.
+- Controlled or uncontrolled, horizontal or vertical.
+- Step marks, custom labeled marks, and a value label.
+- `sm`, `md`, and `lg` sizes.
+- Connects to forms through `Field`.
 
 ## Installing
 

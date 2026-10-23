@@ -47,7 +47,9 @@ A package containing the Checkbox component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,14 @@ A package containing the Checkbox component used by Storm Software
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Checked, unchecked and indeterminate states.
+- Three sizes: `sm`, `md` and `lg`.
+- Connects to the surrounding form control (such as `Field`): name, value, size, disabled and focus state.
+- Highlights validation messages and disabled state.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +99,22 @@ yarn add -D @cyclone-ui/checkbox
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Checkbox } from "@cyclone-ui/checkbox";
+
+export const Example = () => (
+  <Form name="settings" initialValues={{ news: true }}>
+    <Field name="news">
+      <Checkbox size="md" />
+    </Field>
+  </Form>
+);
+```
+
+`Form` and `Field` come from `@cyclone-ui/form` and `@cyclone-ui/field`. See the [component reference](../../docs/design-system/components/checkbox.md) for all props.
 
 ## Reduced Package Size
 

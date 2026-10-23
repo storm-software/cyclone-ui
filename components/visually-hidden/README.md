@@ -41,7 +41,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Visually Hidden
 
-A Next Button component meant to be shared in many other components
+A `VisuallyHidden` component that hides its content visually but keeps it available to screen readers.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -64,6 +64,11 @@ A Next Button component meant to be shared in many other components
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Hides content visually but keeps it available to screen readers
+- `visible`, `preserveDimensions`, and `animate` variants reveal the content or keep its size
 
 ## Installing
 
@@ -90,6 +95,16 @@ yarn add -D @cyclone-ui/visually-hidden
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
+
+<VisuallyHidden>Close dialog</VisuallyHidden>;
+```
+
+See the [Visually hidden documentation](../../docs/design-system/components/visually-hidden.md) for all variants.
 
 ## Reduced Package Size
 

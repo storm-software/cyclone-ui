@@ -49,7 +49,9 @@ A `PreviewLink` component renders a `Link` with a dotted underline that shows a 
 
 - [Preview Link](#preview-link)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,6 +68,13 @@ A `PreviewLink` component renders a `Link` with a dotted underline that shows a 
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- A `Link` with a dotted underline.
+- Shows a tooltip with more details on hover or focus.
+- `preview` accepts a string (wrapped in `BodyText`) or any React node.
+- Configurable tooltip `placement` (default `top`).
 
 ## Installing
 
@@ -92,6 +101,23 @@ yarn add -D @cyclone-ui/preview-link
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { PreviewLink } from "@cyclone-ui/preview-link";
+
+export function Example() {
+  return (
+    <PreviewLink href="/docs" preview="A short description of the linked page.">
+      Read the docs
+    </PreviewLink>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/preview-link.md)
+for all props.
 
 ## Reduced Package Size
 

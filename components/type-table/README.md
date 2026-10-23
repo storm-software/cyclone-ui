@@ -41,7 +41,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Type Table
 
-A `Type Table` component used to render a horizontal or vertical type-table line. It is a simple component that helps separate content visually within a page.
+A `TypeTable` component that documents properties and their types. Each row expands to show details.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -68,6 +68,13 @@ A `Type Table` component used to render a horizontal or vertical type-table line
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Lists properties with their types in an expandable table
+- Each row shows the description, default, parameters, and return value
+- Marks optional (`?`) and deprecated properties, and can link a type to its description
+- Rows can be deep-linked through the URL hash
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -93,6 +100,25 @@ yarn add -D @cyclone-ui/type-table
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { TypeTable } from "@cyclone-ui/type-table";
+
+<TypeTable
+  id="button-props"
+  type={{
+    variant: {
+      type: '"primary" | "secondary"',
+      description: "The visual style.",
+      default: '"primary"'
+    }
+  }}
+/>;
+```
+
+See the [Type table documentation](../../docs/design-system/components/type-table.md) for all `TypeNode` fields.
 
 ## Reduced Package Size
 

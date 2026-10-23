@@ -47,7 +47,9 @@ A package containing the Radio Group component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -64,6 +66,14 @@ A package containing the Radio Group component used by Storm Software
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- `RadioGroup` with `RadioGroup.Item` parts built on the Tamagui radio group.
+- Each item has a label and an optional description.
+- `sm`, `md`, and `lg` sizes.
+- Connects to forms: inside a `Field`, it reads its value, size, and disabled state.
+- Disabled items show a lock in place of the radio indicator.
 
 ## Installing
 
@@ -90,6 +100,26 @@ yarn add -D @cyclone-ui/radio-group
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { RadioGroup } from "@cyclone-ui/radio-group";
+
+export function Example() {
+  return (
+    <RadioGroup defaultValue="Pear">
+      <RadioGroup.Item value="Apple" description="A crisp, sweet fruit.">
+        Apple
+      </RadioGroup.Item>
+      <RadioGroup.Item value="Pear">Pear</RadioGroup.Item>
+    </RadioGroup>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/radio-group.md)
+for all props.
 
 ## Reduced Package Size
 

@@ -67,6 +67,13 @@ A `Timeline` component used to display events over time. It is a simple componen
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Renders a list of events joined by a line, vertically or horizontally
+- `content`, `opposite`, and `marker` render functions for each event
+- `align` places the line left, right, top, bottom, or alternating
+- `TimelineMarker` is the default dot for custom markers
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -92,6 +99,27 @@ yarn add -D @cyclone-ui/timeline
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Text } from "@tamagui/core";
+import { Timeline } from "@cyclone-ui/timeline";
+
+const events = [
+  { date: "Mar 1", title: "Order placed" },
+  { date: "Mar 2", title: "Shipped" }
+];
+
+<Timeline
+  value={events}
+  align="alternate"
+  opposite={event => <Text>{event.date}</Text>}
+  content={event => <Text>{event.title}</Text>}
+/>;
+```
+
+See the [Timeline documentation](../../docs/design-system/components/timeline.md) for all props.
 
 ## Reduced Package Size
 

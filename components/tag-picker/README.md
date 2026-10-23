@@ -66,6 +66,14 @@ A `TagPicker` form control for entering a list of free-form tags. Typing a value
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Enter adds a trimmed, unique tag. Backspace in an empty text box removes the last tag
+- Each tag has an accessible remove button. Double-click a tag to edit it
+- Controlled (`value`, `onChange`) or uncontrolled (`defaultValue`)
+- `sm`, `md`, and `lg` sizes, `outlined`, `underlined`, and `inlined` variants, and validation styling
+- Exports tag list helpers: `appendTag`, `removeTag`, `replaceTag`, `normalizeTag`, and `getTagRemoveButtonLabel`
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -131,7 +139,7 @@ Pass `value` and `onChange` together for a controlled tag select. Tags are trimm
 | `name`              | `string`                              |                    | The text box's name, also used as its `id` so a label can target it.     |
 | `placeholder`       | `string`                              |                    | The text box's placeholder, shown while there are no tags.               |
 | `size`              | `"sm" \| "md" \| "lg"`                | `"md"`             | The form control size.                                                   |
-| `variant`           | `"default" \| "floating" \| "underline"` | `"default"`     | The frame's presentation variant.                                        |
+| `variant`           | `"outlined" \| "underlined" \| "inlined"` | `"outlined"`   | The frame's presentation variant.                                        |
 | `disabled`          | `boolean`                             | `false`            | Disables the text box and hides the remove buttons.                      |
 | `focused`           | `boolean`                             | `false`            | Shows the focus highlight even while focus is outside the frame.         |
 | `tagVariant`        | `"primary" \| "secondary"`            | `"secondary"`      | The [`Tag`](../tag) variant the pills use.                               |

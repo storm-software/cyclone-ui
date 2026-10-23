@@ -66,6 +66,13 @@ A package containing the Switch component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- On/off switch with an animated thumb and `sm`, `md`, and `lg` sizes
+- Disabled state and a border that reflects field validation messages
+- `Switch.Icon` places an icon on the left or right of the track
+- Reads its checked state, size, and disabled state from a wrapping `Field`
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -91,6 +98,23 @@ yarn add -D @cyclone-ui/switch
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
+import { Switch } from "@cyclone-ui/switch";
+
+<Form name="settings" initialValues={{ notifications: false }}>
+  <Field name="notifications">
+    <Switch size="md" />
+    <Field.Label>Enable notifications</Field.Label>
+  </Field>
+</Form>;
+```
+
+Outside a `Field`, set `checked` or `defaultChecked` and handle `onCheckedChange`. See the [Switch documentation](../../docs/design-system/components/switch.md) for all props.
 
 ## Reduced Package Size
 

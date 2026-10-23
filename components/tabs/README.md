@@ -65,6 +65,13 @@ A package containing the Tabs component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- `Tabs.Header.Item` triggers and `Tabs.Content.Item` panels
+- `underline`, `floating`, and `tabbed` variants
+- Horizontal or vertical orientation, with optional borders
+- Animated active indicator and an `onValueChange` callback
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -90,6 +97,25 @@ yarn add -D @cyclone-ui/tabs
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Tabs } from "@cyclone-ui/tabs";
+
+<Tabs variant="floating" onValueChange={value => console.log(value)}>
+  <Tabs.Header>
+    <Tabs.Header.Item value="tab1">Overview</Tabs.Header.Item>
+    <Tabs.Header.Item value="tab2">Details</Tabs.Header.Item>
+  </Tabs.Header>
+  <Tabs.Content>
+    <Tabs.Content.Item value="tab1">First panel</Tabs.Content.Item>
+    <Tabs.Content.Item value="tab2">Second panel</Tabs.Content.Item>
+  </Tabs.Content>
+</Tabs>;
+```
+
+See the [Tabs documentation](../../docs/design-system/components/tabs.md) for all props.
 
 ## Reduced Package Size
 

@@ -41,13 +41,15 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Callout
 
-A package containing the Alert component used by Storm Software
+A `Callout` component used to highlight a key message with an icon, a heading and body text.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,13 @@ A package containing the Alert component used by Storm Software
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Compound API: `Callout`, `Callout.Header` (`Icon`, `Eyebrow`, `Heading`) and `Callout.Body`.
+- Color themes: `brand`, `discovery`, `danger`, `warning`, `info` and `success`.
+- Gradient background and a status icon that follows the theme, or a custom icon.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +98,24 @@ yarn add -D @cyclone-ui/callout
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Callout } from "@cyclone-ui/callout";
+
+export const Example = () => (
+  <Callout theme="info">
+    <Callout.Header>
+      <Callout.Header.Icon />
+      <Callout.Header.Heading>Heading</Callout.Header.Heading>
+    </Callout.Header>
+    <Callout.Body>Message</Callout.Body>
+  </Callout>
+);
+```
+
+See the [component reference](../../docs/design-system/components/callout.md) for all parts.
 
 ## Reduced Package Size
 

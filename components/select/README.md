@@ -47,7 +47,9 @@ A package containing the `Select` component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -64,6 +66,14 @@ A package containing the `Select` component used by Storm Software
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Dropdown select with `Select.TextBox`, `Select.TextBox.Value`, and `Select.Items` parts.
+- Items open in a popover on large screens and a bottom sheet on small screens.
+- Controlled (`value`) or uncontrolled (`defaultValue`), with a `placeholder`.
+- `sm`, `md`, and `lg` sizes.
+- Connects to forms: inside a `Field`, it renders the field's items when you pass no children.
 
 ## Installing
 
@@ -90,6 +100,29 @@ yarn add -D @cyclone-ui/Select
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Select } from "@cyclone-ui/select";
+
+export function Example() {
+  return (
+    <Select defaultValue="Pear">
+      <Select.TextBox>
+        <Select.TextBox.Value placeholder="Choose a fruit" />
+      </Select.TextBox>
+      <Select.Items>
+        <Select.Items.Item value="Apple">Apple</Select.Items.Item>
+        <Select.Items.Item value="Pear">Pear</Select.Items.Item>
+      </Select.Items>
+    </Select>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/select.md)
+for all parts and props.
 
 ## Reduced Package Size
 

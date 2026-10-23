@@ -39,17 +39,19 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# Eyebrow Text
+# File Tree
 
-A `EyebrowText` component used to render the Eyebrow text of a page. It is a simple component that renders the text in a way that is easy to read and understand.
+A `FileTree` component that renders a hierarchical file structure with `File` leaves and expandable `Folder` branches.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Eyebrow Text](#eyebrow-text)
+- [File Tree](#file-tree)
   - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
+  - [Quick Features](#quick-features)
+  - [Installation](#installation)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -67,7 +69,13 @@ A `EyebrowText` component used to render the Eyebrow text of a page. It is a sim
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- `File` leaves and expandable `Folder` branches that animate open and closed.
+- `defaultOpen` starts a folder open. `icon` and `openIcon` replace the default icons.
+- Uses the ARIA `tree` and `treeitem` roles. Folders toggle with Enter or Space.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -93,6 +101,26 @@ yarn add -D @cyclone-ui/file-tree
 
 </details>
 
+## Usage
+
+```tsx
+import { File, FileTree, Folder } from "@cyclone-ui/file-tree";
+
+export function Example() {
+  return (
+    <FileTree>
+      <Folder name="app" defaultOpen>
+        <File name="layout.tsx" />
+        <File name="page.tsx" />
+      </Folder>
+      <File name="package.json" />
+    </FileTree>
+  );
+}
+```
+
+See the [File Tree documentation](../../docs/design-system/components/file-tree.md) for all props.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
@@ -100,6 +128,8 @@ This project uses [tsup](https://tsup.egoist.dev/) to package the source code du
 ## Development
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+
+To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

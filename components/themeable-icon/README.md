@@ -39,9 +39,9 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# input
+# Themeable Icon
 
-Input component for Cyclone UI
+An icon wrapper that applies size and color tokens to its child icon, plus a `ThemedIcon` that picks a status icon from the theme.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -64,6 +64,12 @@ Input component for Cyclone UI
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- `ThemeableIcon` applies size and color tokens to its child icon and animates on enter and exit
+- `ThemedIcon` picks a status icon from the theme name
+- `getIconByTheme` returns the matching status icon, or a lock icon when disabled
 
 ## Installing
 
@@ -90,6 +96,21 @@ yarn add -D @cyclone-ui/input
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Check } from "@cyclone-ui/icons";
+import { ThemeableIcon, ThemedIcon } from "@cyclone-ui/themeable-icon";
+
+<ThemeableIcon size="3xl" color="primary">
+  <Check />
+</ThemeableIcon>;
+
+<ThemedIcon theme="danger" />;
+```
+
+See the [Themeable icon documentation](../../docs/design-system/components/themeable-icon.md) for all props.
 
 ## Reduced Package Size
 

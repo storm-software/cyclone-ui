@@ -49,7 +49,9 @@ A `Skeleton` component used to render loading states for various UI elements. It
 
 - [Skeleton](#skeleton)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,6 +68,13 @@ A `Skeleton` component used to render loading states for various UI elements. It
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Loading placeholder with `rectangle` and `circle` shapes.
+- Optional shimmer (`wave`) animation on web, or `none`.
+- `size` sets width and height together.
+- Hidden from screen readers (`aria-hidden`).
 
 ## Installing
 
@@ -92,6 +101,24 @@ yarn add -D @cyclone-ui/skeleton
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Skeleton } from "@cyclone-ui/skeleton";
+
+export function Example() {
+  return (
+    <>
+      <Skeleton shape="circle" size={48} />
+      <Skeleton width="40%" />
+    </>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/skeleton.md)
+for all props.
 
 ## Reduced Package Size
 

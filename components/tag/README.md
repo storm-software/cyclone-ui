@@ -41,7 +41,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # tag
 
-A package containing the Badge component used by Storm Software
+A package containing the Tag component (a compact label chip) used by Storm Software
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -66,6 +66,13 @@ A package containing the Badge component used by Storm Software
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Compact label chip with `Tag.Text`, `Tag.Icon`, and `Tag.Button` parts
+- `primary` and `secondary` variants, with outlined, circular, and pressable styles
+- Removable tags with a remove button, an animated exit, and `onBeforeRemove` and `onAfterRemove` callbacks
+- Editable tags: double-click to edit the text
 
 ## Installing
 
@@ -92,6 +99,18 @@ yarn add -D @cyclone-ui/tag
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Tag } from "@cyclone-ui/tag";
+
+<Tag variant="secondary" outlined removable removeButtonLabel="Remove design">
+  <Tag.Text>Design</Tag.Text>
+</Tag>;
+```
+
+See the [Tag documentation](../../docs/design-system/components/tag.md) for all props.
 
 ## Reduced Package Size
 

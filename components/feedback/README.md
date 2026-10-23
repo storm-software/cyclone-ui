@@ -47,7 +47,8 @@ A `Feedback` control that pairs a `LikeButton` with a thumbs-down toggle. Dislik
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
@@ -66,7 +67,14 @@ A `Feedback` control that pairs a `LikeButton` with a thumbs-down toggle. Dislik
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Pairs a `LikeButton` with a dislike toggle.
+- Pressing dislike opens a popover form that asks for an optional comment.
+- Controlled (`value`, `onValueChange`) and uncontrolled (`defaultValue`) modes, plus `onCommentSubmit`.
+- Custom comment label and placeholder, a `disabled` state, and `sm`, `md`, and `lg` sizes.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -94,6 +102,21 @@ yarn add -D @cyclone-ui/feedback
 
 ## Usage
 
+```tsx
+import { Feedback } from "@cyclone-ui/feedback";
+
+export function Example() {
+  return (
+    <Feedback
+      onValueChange={value => console.log(value)}
+      onCommentSubmit={comment => console.log(comment)}
+    />
+  );
+}
+```
+
+See the [Feedback documentation](../../docs/design-system/components/feedback.md) for all props.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
@@ -101,6 +124,8 @@ This project uses [tsup](https://tsup.egoist.dev/) to package the source code du
 ## Development
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+
+To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

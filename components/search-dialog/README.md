@@ -49,7 +49,9 @@ A `SearchDialog` component: a search icon button that opens a dialog for searchi
 
 - [Search Dialog](#search-dialog)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,6 +68,13 @@ A `SearchDialog` component: a search icon button that opens a dialog for searchi
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- A search icon button that opens a search dialog.
+- Opens with `Cmd+K` or `Ctrl+K`.
+- Debounced `search` function (static index or remote API) with optional filters.
+- Keyboard navigation and a saved "Recent" history of chosen results.
 
 ## Installing
 
@@ -92,6 +101,26 @@ yarn add -D @cyclone-ui/search-dialog
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { SearchDialog } from "@cyclone-ui/search-dialog";
+
+export function Example() {
+  return (
+    <SearchDialog
+      search={query => [
+        { id: "install", url: "/docs/install", content: `Install ${query}` }
+      ]}
+      onSelect={result => window.location.assign(result.url)}
+    />
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/search-dialog.md)
+for all props.
 
 ## Reduced Package Size
 

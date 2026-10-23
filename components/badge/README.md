@@ -47,7 +47,9 @@ A package containing the Badge component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,16 @@ A package containing the Badge component used by Storm Software
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Attaches a count, label or dot to any element.
+- `standard` and `dot` variants.
+- Anchors to any corner (`anchorOrigin`) and adjusts for `circular` children (`overlap`).
+- Maps Material UI color names (`primary`, `secondary`, `error`, ...) and any Cyclone UI color theme.
+- Caps counts with `max` (for example `99+`), and hides zero unless `showZero` is set.
+- Optional `pulse` ring (web only, skipped for reduced motion).
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +101,20 @@ yarn add -D @cyclone-ui/badge
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Badge } from "@cyclone-ui/badge";
+
+export const Example = () => (
+  <Badge badgeContent={4} color="error" aria-label="4 unread messages">
+    <MailIcon />
+  </Badge>
+);
+```
+
+See the [component reference](../../docs/design-system/components/badge.md) for all props.
 
 ## Reduced Package Size
 

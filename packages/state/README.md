@@ -47,7 +47,9 @@ A state management package containing various Jotai atoms used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -64,6 +66,15 @@ A state management package containing various Jotai atoms used by Storm Software
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- A theme provider and hooks that store the light or dark mode
+- Toast messages through `useMessageActions` and `MessageViewport`
+- Form and field providers with validation, debouncing, and input masks
+- Jotai atom helpers, such as `atomWithDebounce`, `atomWithBroadcast`, and
+  `atomWithWebStorage`
+- Molecule utilities for scoped atom state
 
 ## Installing
 
@@ -91,9 +102,32 @@ yarn add -D @cyclone-ui/state
 
 </details>
 
+## Usage
+
+The package needs the `jotai`, `react`, `react-dom`, and `react-native` peer
+dependencies. Wrap your app in the theme provider, then read or change the mode
+with hooks:
+
+```tsx
+import { ThemeProvider, useThemeActions } from "@cyclone-ui/state/theme";
+import config from "./tamagui.config";
+
+export const Root = ({ children }: { children: React.ReactNode }) => (
+  <ThemeProvider config={config}>{children}</ThemeProvider>
+);
+
+export const ModeButton = () => {
+  const { toggleMode } = useThemeActions();
+  return <button onClick={() => toggleMode()}>Toggle theme</button>;
+};
+```
+
+See the [package documentation](../../docs/packages/state.md) for messages,
+forms, and atom helpers.
+
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code
+This project uses [tsdown](https://tsdown.dev/) to package the source code
 due to its ability to remove unused code and ship smaller javascript files
 thanks to code splitting. This helps to greatly reduce the size of the package
 and to make it easier to use in other projects.
@@ -102,6 +136,9 @@ and to make it easier to use in other projects.
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
+
+To set up a checkout, clone the repository and run `pnpm install` in the
+repository root.
 
 ### Building
 

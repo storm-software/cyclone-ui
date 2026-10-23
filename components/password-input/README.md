@@ -49,7 +49,9 @@ Password Input form control component for Cyclone UI. Use it on its own, or wrap
 
 - [password-input](#password-input)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,6 +68,14 @@ Password Input form control component for Cyclone UI. Use it on its own, or wrap
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Show/hide toggle for the password.
+- Caps-lock warning.
+- Optional strength meter (`showStrength`) from very weak to strong.
+- Inside a `Field`, `validateStrength` lists each missing criterion.
+- `delay` shows the last typed character briefly, like mobile keyboards.
 
 ## Installing
 
@@ -92,6 +102,33 @@ yarn add -D @cyclone-ui/password-input
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
+import { PasswordInput } from "@cyclone-ui/password-input";
+
+export function Example() {
+  return (
+    <Form name="signUp" initialValues={{ password: "" }}>
+      <Field name="password">
+        <Field.Label>New Password</Field.Label>
+        <PasswordInput showStrength validateStrength>
+          <PasswordInput.TextBox>
+            <PasswordInput.TextBox.Value autoComplete="new-password" />
+          </PasswordInput.TextBox>
+          <PasswordInput.Trigger />
+        </PasswordInput>
+      </Field>
+    </Form>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/password-input.md)
+for all props.
 
 ## Reduced Package Size
 

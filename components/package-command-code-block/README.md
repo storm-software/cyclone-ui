@@ -49,7 +49,9 @@ A package containing the PackageCommandCodeBlock component used by Storm Softwar
 
 - [package-command-code-block](#package-command-code-block)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,6 +68,13 @@ A package containing the PackageCommandCodeBlock component used by Storm Softwar
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Shows npm, pnpm, yarn, and bun tabs for one ni-style command.
+- Supports the `ni`, `nr`, `nlx`, `nup`, `nun`, `nci`, `nd`, and `na` commands.
+- Each tab has a copy button.
+- Saves the chosen package manager and keeps all instances in sync.
 
 ## Installing
 
@@ -92,6 +101,24 @@ yarn add -D @cyclone-ui/package-command-code-block
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { PackageCommandCodeBlock } from "@cyclone-ui/package-command-code-block";
+
+export function Example() {
+  return (
+    <>
+      <PackageCommandCodeBlock packageName="@cyclone-ui/button" dev />
+      <PackageCommandCodeBlock command="nr" args={["dev", "--port=3000"]} />
+    </>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/package-command-code-block.md)
+for the props and commands.
 
 ## Reduced Package Size
 

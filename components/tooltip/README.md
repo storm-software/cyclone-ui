@@ -65,6 +65,12 @@ A package containing the Tooltip component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Built on the Tamagui Tooltip with `Tooltip.Trigger` and `Tooltip.Content` parts
+- Elevated content that animates in and out
+- Arrow shown by default. Arrow and border colors can be customized
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -90,6 +96,27 @@ yarn add -D @cyclone-ui/tooltip
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { BodyText } from "@cyclone-ui/body-text";
+import { Button } from "@cyclone-ui/button";
+import { Tooltip } from "@cyclone-ui/tooltip";
+
+<Tooltip>
+  <Tooltip.Trigger asChild>
+    <Button>
+      <Button.Text>Open Tooltip</Button.Text>
+    </Button>
+  </Tooltip.Trigger>
+  <Tooltip.Content>
+    <BodyText>Lorem ipsum dolor</BodyText>
+  </Tooltip.Content>
+</Tooltip>;
+```
+
+See the [Tooltip documentation](../../docs/design-system/components/tooltip.md) for all props.
 
 ## Reduced Package Size
 

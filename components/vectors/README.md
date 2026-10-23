@@ -66,6 +66,14 @@ A package containing shared Scalable Vector Graphic (SVG) components used in man
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Status circles: `AlertCircle`, `CheckCircle`, `ErrorCircle`, `InfoCircle`, and `DiscoveryCircle`
+- Marks and arrows: `Check`, `Arrow`, `RightArrow`, `LeftArrow`, `UpArrow`, and `DownArrow`
+- State indicators: `AccordionToggle`, `MenuToggle`, `SearchTrigger`, and `Binary`
+- Background patterns: `BackgroundNoise`, `CheckerBoard`, and `Diagonal`
+- `PdfIcon`, `StormLogoIcon`, and `StormLogoText`
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -91,6 +99,18 @@ yarn add -D @cyclone-ui/vectors
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { AccordionToggle, CheckCircle } from "@cyclone-ui/vectors";
+
+<CheckCircle size={32} color="primary" isComplete />;
+
+<AccordionToggle isExpanded={open} />;
+```
+
+See the [Vectors documentation](../../docs/design-system/components/vectors.md) for the props of each vector.
 
 ## Reduced Package Size
 

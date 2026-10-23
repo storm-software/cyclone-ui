@@ -47,7 +47,9 @@ A package containing the Alert component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,14 @@ A package containing the Alert component used by Storm Software
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Compound API: `Alert`, `Alert.Icon`, `Alert.Content` (`Heading`, `Body`) and `Alert.Close`.
+- Seven types: `base`, `brand`, `danger`, `warning`, `info`, `success` and `discovery`.
+- A status icon that follows the type, or a custom icon.
+- A circular close button.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +99,25 @@ yarn add -D @cyclone-ui/alert
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Alert } from "@cyclone-ui/alert";
+
+export const Example = () => (
+  <Alert type="warning">
+    <Alert.Icon />
+    <Alert.Content>
+      <Alert.Content.Heading>Heading</Alert.Content.Heading>
+      <Alert.Content.Body>Message</Alert.Content.Body>
+    </Alert.Content>
+    <Alert.Close />
+  </Alert>
+);
+```
+
+See the [component reference](../../docs/design-system/components/alert.md) for all props.
 
 ## Reduced Package Size
 

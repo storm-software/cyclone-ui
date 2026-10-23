@@ -47,7 +47,9 @@ A Next Button component meant to be shared in many other components
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -64,6 +66,13 @@ A Next Button component meant to be shared in many other components
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Renders one page of a PDF from a URL or a `FileResult` with `react-pdf`.
+- Spinner and PDF icon placeholder while loading or after an error.
+- `onLoadProgress`, `onLoadSuccess`, and `onLoadError` callbacks.
+- Optional `hideContextMenu`.
 
 ## Installing
 
@@ -90,6 +99,26 @@ yarn add -D @cyclone-ui/pdf-document-display
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { PdfDocumentDisplay } from "@cyclone-ui/pdf-document-display";
+
+export function Example() {
+  return (
+    <PdfDocumentDisplay
+      src="https://example.com/document.pdf"
+      pageNumber={1}
+      height="375px"
+      width="200px"
+    />
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/pdf-document-display.md)
+for all props.
 
 ## Reduced Package Size
 

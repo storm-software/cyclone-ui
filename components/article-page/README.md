@@ -49,7 +49,8 @@ An `ArticlePage` compound component that provides a spacious layout for document
 
 - [Article Page](#article-page)
   - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
+  - [Quick Features](#quick-features)
+  - [Installation](#installation)
   - [Usage](#usage)
     - [Layout areas](#layout-areas)
     - [Side nav](#side-nav)
@@ -69,7 +70,15 @@ An `ArticlePage` compound component that provides a spacious layout for document
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Layout for documentation and long-form articles, built on `Page`.
+- Collapsible side nav on the page canvas that opens as an overlay on smaller screens.
+- Inset, rounded panel with a header (and an `End` slot), and a scrolling content area.
+- Article column (at most 760px wide) with a sticky table of contents from 1280px.
+- Keyboard shortcut (`Ctrl` + `[`) and skip links, as in `Page`.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 

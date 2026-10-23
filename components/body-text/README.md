@@ -47,7 +47,9 @@ A `BodyText` component used to render the body text of a page. It is a simple co
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,14 @@ A `BodyText` component used to render the body text of a page. It is a simple co
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Paragraph (`p`) text that uses the `body` font family and the `ink` color.
+- Default size `md`, with `size="sm"` and `bold` options used in the stories.
+- Color themes through the `theme` prop.
+- Base for other text components, such as `BytesText`.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +99,20 @@ yarn add -D @cyclone-ui/body-text
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { BodyText } from "@cyclone-ui/body-text";
+
+export const Example = () => (
+  <BodyText size="sm" bold={true}>
+    Some text
+  </BodyText>
+);
+```
+
+See the [component reference](../../docs/design-system/components/body-text.md) for details.
 
 ## Reduced Package Size
 

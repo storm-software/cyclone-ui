@@ -41,13 +41,15 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Bytes Text
 
-A `BytesText` component used to render the body text of a page. It is a simple component that renders the text in a way that is easy to read and understand.
+A `BytesText` component used to render a number of bytes as readable text, such as kilobytes or gigabytes. It is a simple component built on `BodyText`.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,13 @@ A `BytesText` component used to render the body text of a page. It is a simple c
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Shows a number of bytes as readable text, using `prettyBytes` from `@stryke/string-format`.
+- Treats a value that is not a number as `0`.
+- Built on `BodyText`, so it accepts the same props and themes.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +98,16 @@ yarn add -D @cyclone-ui/bytes-text
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { BytesText } from "@cyclone-ui/bytes-text";
+
+export const Example = () => <BytesText>1337</BytesText>;
+```
+
+See the [component reference](../../docs/design-system/components/bytes-text.md) for details.
 
 ## Reduced Package Size
 

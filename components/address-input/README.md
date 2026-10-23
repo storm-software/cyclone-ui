@@ -65,7 +65,9 @@ While the user types, the endpoint is sent `GET <endpoint>?q=<text>` and answers
 
 - [Address Input](#address-input)
   - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
+  - [Quick Features](#quick-features)
+  - [Installation](#installation)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -83,7 +85,16 @@ While the user types, the endpoint is sent `GET <endpoint>?q=<text>` and answers
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Search field whose suggestions come from your own address search endpoint.
+- Waits 600 ms after typing stops, and cancels outdated requests.
+- Optional `AddressInput.Map` that shows static map tiles for the chosen address.
+- Reports the chosen address, with its coordinates, through `onAddressChange`.
+- Starts with a saved address through `defaultAddress`.
+- Shows a warning message when the lookup fails.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -108,6 +119,17 @@ yarn add -D @cyclone-ui/address-input
 ```
 
 </details>
+
+## Usage
+
+Import the component, then follow the example at the top of this page.
+
+```tsx
+import { AddressInput } from "@cyclone-ui/address-input";
+import type { AddressOption } from "@cyclone-ui/address-input";
+```
+
+See the [component reference](../../docs/design-system/components/address-input.md) for all props.
 
 ## Reduced Package Size
 

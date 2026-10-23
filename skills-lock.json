@@ -67,17 +67,53 @@
       "skillPath": "skills/shell-shock-best-practices/SKILL.md",
       "computedHash": "6147e59888c6c11ffc83c096e20c307bab941d3adc617604463652d8438d25a2"
     },
+    "sourcebook": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook/SKILL.md",
+      "computedHash": "22da568392e6eac6f13698c728f1a2d8b9d4a459882cd6192b50102ef51a2535"
+    },
     "sourcebook-adr": {
       "source": "storm-software/sourcebook",
       "sourceType": "github",
       "skillPath": "skills/sourcebook-adr/SKILL.md",
-      "computedHash": "2f34fc6a69381d44f9e91865fd707f3dbd8425ea9bdbdc6a37a9978e6ad625ce"
+      "computedHash": "d8a819a1b49726cbd1d801cc5e21eef33b59938713994679fd1739f12b57d133"
+    },
+    "sourcebook-blog": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-blog/SKILL.md",
+      "computedHash": "18d08a6856a7292357ce02c32515ff867796c3fa83e01c188009354c3b5de65d"
+    },
+    "sourcebook-docs": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-docs/SKILL.md",
+      "computedHash": "fd92e56bc6cfb837cc4a5cdb5b2afaa5e2f0e433ad79edd127ca0d7c2d646e9a"
     },
     "sourcebook-editor": {
       "source": "storm-software/sourcebook",
       "sourceType": "github",
       "skillPath": "skills/sourcebook-editor/SKILL.md",
-      "computedHash": "a3d4a29e1183dfb420c4902de6cde205b32b6ae63d0cbc166e969949a3435673"
+      "computedHash": "4a97d4e839d761b98b02fdd9860c1e85f1b82b5d9f2329fab536c0441e0cb346"
+    },
+    "sourcebook-guide": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-guide/SKILL.md",
+      "computedHash": "2bb5a16a5cf0a8e4ccb2ccae23e3116c25674f619012e507ab359a1b29e7c7c2"
+    },
+    "sourcebook-openapi": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-openapi/SKILL.md",
+      "computedHash": "b78c6952529b22b15ab7606b8cbf964b673afa0f3d59777d92917c06e4791be5"
+    },
+    "sourcebook-readme": {
+      "source": "storm-software/sourcebook",
+      "sourceType": "github",
+      "skillPath": "skills/sourcebook-readme/SKILL.md",
+      "computedHash": "354b0c33dc35efb92f89bfc16975ca238be16ee89362efa66f921df05158dece"
     },
     "storybook": {
       "source": "dalestudy/skills",

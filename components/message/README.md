@@ -47,7 +47,9 @@ A package containing the `Message` component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,14 @@ A package containing the `Message` component used by Storm Software
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- A toast host built on Tamagui `Toast` that shows each queued toast as a dismissible `Alert` in the bottom-right corner.
+- Maps message types, including `error` and `help`, to alert themes.
+- A countdown bar that pauses on hover and focus. The default duration is 30 seconds.
+- Swipe a toast sideways to dismiss it.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -91,6 +100,32 @@ yarn add -D @cyclone-ui/message
 
 </details>
 
+## Usage
+
+Render `Message` once, then show messages with the `useMessageActions` hook.
+
+```tsx
+import { Message } from "@cyclone-ui/message";
+import { useMessageActions } from "@cyclone-ui/state/message";
+
+export function App() {
+  return (
+    <>
+      <Message />
+      <SaveButton />
+    </>
+  );
+}
+
+function SaveButton() {
+  const { showSuccess } = useMessageActions();
+
+  return <button onClick={() => showSuccess("Saved")}>Save</button>;
+}
+```
+
+See the [Message documentation](../../docs/design-system/components/message.md) for details.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
@@ -98,6 +133,8 @@ This project uses [tsup](https://tsup.egoist.dev/) to package the source code du
 ## Development
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+
+To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

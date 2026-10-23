@@ -47,7 +47,9 @@ A package containing the Accordion component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,16 @@ A package containing the Accordion component used by Storm Software
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Compound API: `Accordion`, `Accordion.Item`, `Accordion.Item.Header`, `Accordion.Item.Header.Heading` and `Accordion.Item.Content`.
+- Opens one item (`single`) or many items (default).
+- Seven variants: `sunken`, `canvas`, `surface`, `elevated`, `floating`, `outlined` and `ghost`.
+- Options for `bordered`, `separated` and `numbered` items.
+- A `toggle` or `chevron` icon, on the `left` or `right` side.
+- Content that opens `up` or `down`.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +101,28 @@ yarn add -D @cyclone-ui/accordion
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Accordion } from "@cyclone-ui/accordion";
+import { BodyText } from "@cyclone-ui/body-text";
+
+export const Faq = () => (
+  <Accordion variant="surface" defaultValue={["item1"]}>
+    <Accordion.Item value="item1">
+      <Accordion.Item.Header>
+        <Accordion.Item.Header.Heading>Heading</Accordion.Item.Header.Heading>
+      </Accordion.Item.Header>
+      <Accordion.Item.Content>
+        <BodyText>Content</BodyText>
+      </Accordion.Item.Content>
+    </Accordion.Item>
+  </Accordion>
+);
+```
+
+See the [component reference](../../docs/design-system/components/accordion.md) for all props and variants.
 
 ## Reduced Package Size
 

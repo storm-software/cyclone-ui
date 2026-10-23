@@ -47,7 +47,9 @@ A Next Button component meant to be shared in many other components
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,13 @@ A Next Button component meant to be shared in many other components
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- A `Button` preset labeled "Next" by default, with a custom label through `children`.
+- An animated right arrow that completes while the pointer hovers over the button.
+- `hideText` shows only the arrow. `animateShrink` is passed to the arrow.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -91,6 +99,18 @@ yarn add -D @cyclone-ui/next-button
 
 </details>
 
+## Usage
+
+```tsx
+import { NextButton } from "@cyclone-ui/next-button";
+
+export function Example() {
+  return <NextButton onPress={() => console.log("next")}>Continue</NextButton>;
+}
+```
+
+`NextButton` accepts all `Button` props. See the [Next Button documentation](../../docs/design-system/components/next-button.md) for details.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code
@@ -102,6 +122,8 @@ and to make it easier to use in other projects.
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
+
+To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

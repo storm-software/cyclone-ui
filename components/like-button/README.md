@@ -47,7 +47,8 @@ A `LikeButton` toggle for liking content. It renders a thumbs-up icon that fills
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
@@ -66,7 +67,15 @@ A `LikeButton` toggle for liking content. It renders a thumbs-up icon that fills
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Thumbs-up toggle that fills when liked.
+- Controlled (`liked`, `onLikedChange`) and uncontrolled (`defaultLiked`) modes.
+- `sm`, `md`, and `lg` sizes and a `disabled` state.
+- Thumb animation and confetti burst on web, skipped when the user prefers reduced motion.
+- Sets `aria-label="Like"` and `aria-pressed`.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -94,6 +103,19 @@ yarn add -D @cyclone-ui/like-button
 
 ## Usage
 
+```tsx
+import { LikeButton } from "@cyclone-ui/like-button";
+import { useState } from "react";
+
+export function Example() {
+  const [liked, setLiked] = useState(false);
+
+  return <LikeButton liked={liked} onLikedChange={setLiked} size="lg" />;
+}
+```
+
+See the [Like Button documentation](../../docs/design-system/components/like-button.md) for all props.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
@@ -101,6 +123,8 @@ This project uses [tsup](https://tsup.egoist.dev/) to package the source code du
 ## Development
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+
+To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

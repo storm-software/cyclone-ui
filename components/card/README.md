@@ -47,7 +47,9 @@ A package containing the Card component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,14 @@ A package containing the Card component used by Storm Software
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Compound API: `Card`, `Card.Header` (`Icon`, `Eyebrow`, `Heading`), `Card.Body` and `Card.Footer` (`Link`).
+- Color themes, plus a `color` prop for a data color.
+- Accent bar on the top edge and a spotlight that follows the pointer on hover.
+- Footer link with an arrow that completes when the card is hovered.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -90,6 +99,26 @@ yarn add -D @cyclone-ui/card
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Card } from "@cyclone-ui/card";
+
+export const Example = () => (
+  <Card theme="brand" width="500px">
+    <Card.Header>
+      <Card.Header.Heading>Heading</Card.Header.Heading>
+    </Card.Header>
+    <Card.Body>Some content.</Card.Body>
+    <Card.Footer>
+      <Card.Footer.Link href="#">Read more</Card.Footer.Link>
+    </Card.Footer>
+  </Card>
+);
+```
+
+See the [component reference](../../docs/design-system/components/card.md) for all parts.
 
 ## Reduced Package Size
 

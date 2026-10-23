@@ -67,6 +67,14 @@ A package containing the Toggle component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Button that switches between pressed and not pressed
+- Controlled (`pressed`) or uncontrolled (`defaultPressed`), with `onPressedChange`
+- `sm`, `md`, and `lg` sizes, with `fluid`, `borderless`, `rounded`, and `circular` styles
+- `invalid` and `disabled` states
+- Children can be a function that receives the pressed state
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -92,6 +100,20 @@ yarn add -D @cyclone-ui/toggle
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Toggle } from "@cyclone-ui/toggle";
+
+<Toggle defaultPressed onPressedChange={pressed => console.log(pressed)}>
+  Bold
+</Toggle>;
+
+<Toggle>{pressed => (pressed ? "On" : "Off")}</Toggle>;
+```
+
+See the [Toggle documentation](../../docs/design-system/components/toggle.md) for all props.
 
 ## Reduced Package Size
 

@@ -47,7 +47,9 @@ A `EyebrowText` component used to render the Eyebrow text of a page. It is a sim
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,12 @@ A `EyebrowText` component used to render the Eyebrow text of a page. It is a sim
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Uppercase, muted label in the `eyebrow` font that renders as an `h5`.
+- Accepts `SizableText` props and the `theme` prop (for example `brand` or `danger`).
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -91,13 +98,25 @@ yarn add -D @cyclone-ui/eyebrow-text
 
 </details>
 
+## Usage
+
+```tsx
+import { EyebrowText } from "@cyclone-ui/eyebrow-text";
+
+export function Example() {
+  return <EyebrowText theme="brand">Release notes</EyebrowText>;
+}
+```
+
+See the [Eyebrow Text documentation](../../docs/design-system/components/eyebrow-text.md) for details.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
 
 ## Development
 
-This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development. To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

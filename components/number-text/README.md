@@ -49,7 +49,9 @@ A NumberText component meant to be shared in many other components
 
 - [NumberText](#numbertext)
   - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
+  - [Quick Features](#quick-features)
+  - [Installation](#installation)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,7 +68,13 @@ A NumberText component meant to be shared in many other components
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Shows a number with `NumberFlow`, so digits animate when the value changes.
+- Accepts `SizableText` props and the `theme` prop.
+- Shows `0` when the value is not a number.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -92,6 +100,18 @@ yarn add -D @cyclone-ui/number-text
 
 </details>
 
+## Usage
+
+```tsx
+import { NumberText } from "@cyclone-ui/number-text";
+
+export function Example({ count }: { count: number }) {
+  return <NumberText theme="brand">{count}</NumberText>;
+}
+```
+
+See the [Number Text documentation](../../docs/design-system/components/number-text.md) for details.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code
@@ -103,6 +123,8 @@ and to make it easier to use in other projects.
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
+
+To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

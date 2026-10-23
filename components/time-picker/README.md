@@ -67,6 +67,13 @@ A `TimePicker` component used to select hours and minutes. It is a simple compon
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Masked time text box with a clock popover. Press or drag the clock hand to pick the hour and minutes
+- 12-hour clock with AM/PM, or a 24-hour clock with `hourCycle`
+- Arrow keys step the part under the caret. Space, up, or down swap AM/PM
+- Inside a `Field`, it formats, parses, and masks the field's 24-hour `HH:mm` value
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -92,6 +99,23 @@ yarn add -D @cyclone-ui/time-picker
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
+import { TimePicker } from "@cyclone-ui/time-picker";
+
+<Form name="meeting" initialValues={{ start: "14:30" }}>
+  <Field name="start">
+    <Field.Label>Start time</Field.Label>
+    <TimePicker hourCycle={12} />
+  </Field>
+</Form>;
+```
+
+See the [Time picker documentation](../../docs/design-system/components/time-picker.md) for standalone use and all props.
 
 ## Reduced Package Size
 

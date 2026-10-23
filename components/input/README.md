@@ -47,7 +47,9 @@ Input component for Cyclone UI
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,14 @@ Input component for Cyclone UI
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Composable parts: `Input.TextBox`, `Input.TextBox.Value`, `Input.Separator`, and `Input.Trigger` (with `Icon` and `Text`).
+- `outlined`, `underlined`, and `inlined` variants, and `sm`, `md`, and `lg` sizes.
+- Disabled and focused states, and validation colors inside a `Field`.
+- Works on web and native.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -91,6 +100,31 @@ yarn add -D @cyclone-ui/input
 
 </details>
 
+## Usage
+
+```tsx
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
+import { Input } from "@cyclone-ui/input";
+
+export function Example() {
+  return (
+    <Form name="account" initialValues={{ email: "" }}>
+      <Field name="email">
+        <Field.Label>Email</Field.Label>
+        <Input>
+          <Input.TextBox>
+            <Input.TextBox.Value placeholder="email@example.com" />
+          </Input.TextBox>
+        </Input>
+      </Field>
+    </Form>
+  );
+}
+```
+
+See the [Input documentation](../../docs/design-system/components/input.md) for all parts and props.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
@@ -98,6 +132,8 @@ This project uses [tsup](https://tsup.egoist.dev/) to package the source code du
 ## Development
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+
+To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

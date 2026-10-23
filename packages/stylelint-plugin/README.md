@@ -49,7 +49,9 @@ A package containing an [Stylelint plugin](https://stylelint.io/user-guide/plugi
 
 - [Cyclone UI - Stylelint Plugin](#cyclone-ui---stylelint-plugin)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,6 +68,13 @@ A package containing an [Stylelint plugin](https://stylelint.io/user-guide/plugi
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Stylelint rules generated from the Cyclone UI design system
+- Rules that flag hard-coded colors, shadows, spacing, typography, and motion
+  values where a design token exists
+- `stylelint --fix` replaces a literal that matches exactly one token
 
 ## Installing
 
@@ -93,9 +102,30 @@ yarn add -D @cyclone-ui/stylelint-plugin
 
 </details>
 
+## Usage
+
+Call the default export in `stylelint.config.mjs`:
+
+```js
+import designSystem from "@cyclone-ui/stylelint-plugin";
+
+const { plugins, rules } = designSystem({
+  tokenUsage: { color: true, spacing: true },
+  fallbackUsage: "optional"
+});
+
+export default {
+  plugins: [...plugins],
+  rules: { ...rules }
+};
+```
+
+See the [package documentation](../../docs/packages/stylelint-plugin.md) for the
+rules and options.
+
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code
+This project uses [tsdown](https://tsdown.dev/) to package the source code
 due to its ability to remove unused code and ship smaller javascript files
 thanks to code splitting. This helps to greatly reduce the size of the package
 and to make it easier to use in other projects.
@@ -104,6 +134,10 @@ and to make it easier to use in other projects.
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
+
+To set up a checkout, clone the repository and run `pnpm install` in the
+repository root. Razorwind generates `src/index.ts`. Do not edit it by hand.
+Run `pnpm nx run monorepo:generate-themes` to regenerate it.
 
 ### Building
 

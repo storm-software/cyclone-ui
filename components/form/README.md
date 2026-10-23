@@ -41,13 +41,15 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Form
 
-A Next Button component meant to be shared in many other components
+A form root that renders a native `form` element and provides Cyclone UI form state to the fields inside it.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -65,7 +67,14 @@ A Next Button component meant to be shared in many other components
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Renders a native `form` element and provides form state through `FormProvider`.
+- `Form.Submit` and `Form.Reset` buttons call the form's submit and reset actions.
+- Both buttons are disabled when the form cannot be submitted.
+- Form options such as `initialValues`, `validate`, `debounceMs`, `disabled`, and `onSubmit`.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -91,6 +100,37 @@ yarn add -D @cyclone-ui/form
 
 </details>
 
+## Usage
+
+```tsx
+import { Button } from "@cyclone-ui/button";
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
+
+export function Example() {
+  return (
+    <Form
+      name="profile"
+      initialValues={{ email: "" }}
+      onSubmit={({ get, atoms }) => console.log(get(atoms.values))}>
+      <Field name="email">{/* a Cyclone UI control */}</Field>
+      <Form.Submit asChild>
+        <Button>
+          <Button.Text>Save</Button.Text>
+        </Button>
+      </Form.Submit>
+      <Form.Reset asChild>
+        <Button variant="outlined">
+          <Button.Text>Reset</Button.Text>
+        </Button>
+      </Form.Reset>
+    </Form>
+  );
+}
+```
+
+See the [Form documentation](../../docs/design-system/components/form.md) for all options.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code
@@ -102,6 +142,8 @@ and to make it easier to use in other projects.
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
+
+To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

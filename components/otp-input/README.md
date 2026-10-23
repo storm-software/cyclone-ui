@@ -50,7 +50,9 @@ One-Time Password (OTP) Input form control component for Cyclone UI. Use it on i
 
 - [otp-input](#otp-input)
   - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
+  - [Quick Features](#quick-features)
+  - [Installation](#installation)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -68,7 +70,14 @@ One-Time Password (OTP) Input form control component for Cyclone UI. Use it on i
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- One numeric text box per digit. The default length is 4.
+- Typing moves focus to the next box. Paste fills several boxes. Backspace and the arrow keys move between boxes.
+- `onComplete` runs when every digit is filled.
+- Controlled (`value`, `onChange`) and uncontrolled (`defaultValue`) modes, and `sm`, `md`, and `lg` sizes.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -94,6 +103,27 @@ yarn add -D @cyclone-ui/otp-input
 
 </details>
 
+## Usage
+
+```tsx
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
+import { OtpInput } from "@cyclone-ui/otp-input";
+
+export function Example() {
+  return (
+    <Form name="verify" initialValues={{ code: "" }}>
+      <Field name="code">
+        <Field.Label>Code</Field.Label>
+        <OtpInput length={6} onComplete={code => console.log(code)} />
+      </Field>
+    </Form>
+  );
+}
+```
+
+See the [OTP Input documentation](../../docs/design-system/components/otp-input.md) for all props.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
@@ -101,6 +131,8 @@ This project uses [tsup](https://tsup.egoist.dev/) to package the source code du
 ## Development
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+
+To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

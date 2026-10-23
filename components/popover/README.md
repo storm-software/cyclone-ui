@@ -47,7 +47,9 @@ A package containing the Popover component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -64,6 +66,13 @@ A package containing the Popover component used by Storm Software
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Compound parts: `Popover.Trigger`, `Popover.Anchor`, and `Popover.Content`.
+- `Popover.Content` supports an optional arrow (`hasArrow`) and is elevated by default.
+- `Popover.Content.ScrollView` and `Popover.Content.Close` helper parts.
+- Turns into a bottom `Sheet` on small screens (disable with `shouldAdapt={false}`).
 
 ## Installing
 
@@ -90,6 +99,29 @@ yarn add -D @cyclone-ui/popover
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Button } from "@cyclone-ui/button";
+import { Popover } from "@cyclone-ui/popover";
+
+export function Example() {
+  return (
+    <Popover>
+      <Popover.Trigger asChild={true}>
+        <Button>
+          <Button.Text>Open Popover</Button.Text>
+        </Button>
+      </Popover.Trigger>
+      <Popover.Content hasArrow>Popover content</Popover.Content>
+    </Popover>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/popover.md)
+for all parts and props.
 
 ## Reduced Package Size
 

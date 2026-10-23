@@ -48,6 +48,7 @@ A `RippleAnimation` layer that fills its positioned parent and draws a press rip
 
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
 - [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
@@ -66,6 +67,13 @@ A `RippleAnimation` layer that fills its positioned parent and draws a press rip
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- A layer that fills its positioned parent and draws a pixelated press ripple.
+- Ripples start from the pointer position (or the center for keyboard presses).
+- `color` prop (default `primary`).
+- Each ripple removes itself when its animation ends. Web only.
 
 ## Installing
 

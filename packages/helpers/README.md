@@ -47,7 +47,9 @@ A package containing various helper utilities used in Storm Software application
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -64,6 +66,17 @@ A package containing various helper utilities used in Storm Software application
   - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Size, space, and radius helpers that read Tamagui tokens (`getSized`,
+  `getSpaced`, `getRadius`)
+- Token value normalization, including Tailwind-style arbitrary values such as
+  `[12px]`
+- Font size and font weight helpers for `styled.dynamic` variants
+- Form control sizes (`sm`, `md`, `lg`) and the shared form-control context
+  with hooks for fields
+- Color palette generators based on the OKLCH color space
 
 ## Installing
 
@@ -91,9 +104,34 @@ yarn add -D @cyclone-ui/helpers
 
 </details>
 
+## Usage
+
+Build a size variant for a Tamagui styled component:
+
+```tsx
+import { styled, View } from "@tamagui/core";
+import {
+  formSizeVariants,
+  getFormFontSize,
+  getFormSizeToken
+} from "@cyclone-ui/helpers";
+
+export const Box = styled(View, {
+  variants: {
+    size: formSizeVariants((size, env) => ({
+      height: getFormSizeToken(size),
+      ...getFormFontSize(size, env)
+    }))
+  }
+});
+```
+
+See the [package documentation](../../docs/packages/helpers.md) for every
+export.
+
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code
+This project uses [tsdown](https://tsdown.dev/) to package the source code
 due to its ability to remove unused code and ship smaller javascript files
 thanks to code splitting. This helps to greatly reduce the size of the package
 and to make it easier to use in other projects.
@@ -102,6 +140,9 @@ and to make it easier to use in other projects.
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
+
+To set up a checkout, clone the repository and run `pnpm install` in the
+repository root.
 
 ### Building
 

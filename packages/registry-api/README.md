@@ -48,7 +48,9 @@ A package containing the shared TRPC router code used by the Cyclone Registry
 
 ## Table of Contents
 
+- [Quick Features](#quick-features)
 - [Installing](#installing)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -66,7 +68,30 @@ A package containing the shared TRPC router code used by the Cyclone Registry
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- A tRPC router with `components.list` and `components.get` procedures
+- Reads component metadata and files from an R2 storage bucket and returns the
+  newest version of each component
+- A typed client, `createRegistryClient`, with a default URL of
+  `https://registry.cyclone-ui.com/api`
+- Shared registry types for component summaries, metadata, and files
+
 ## Installing
+
+This package is private (`"private": true`). It is not published to npm. Use it
+inside this workspace by adding it as a workspace dependency:
+
+```json
+{
+  "dependencies": {
+    "@cyclone-ui/registry-api": "workspace:*"
+  }
+}
+```
+
+The `pnpm add`, `npm install`, and `yarn add` commands below do not work for a
+private package.
 
 Using [pnpm](http://pnpm.io):
 
@@ -92,9 +117,26 @@ yarn add -D @cyclone-ui/registry-api
 
 </details>
 
+## Usage
+
+Query the registry with the typed client:
+
+```ts
+import { createRegistryClient } from "@cyclone-ui/registry-api/client";
+
+const client = createRegistryClient();
+const components = await client.components.list.query();
+const button = await client.components.get.query("button");
+```
+
+To serve the router, pass it to the tRPC fetch adapter. The
+[registry worker](../../apps/registry-worker/README.md) does this. See the
+[package documentation](../../docs/packages/registry-api.md) for details. This
+API uses tRPC. The repository has no OpenAPI or Swagger specification for it.
+
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code
+This project uses [tsdown](https://tsdown.dev/) to package the source code
 due to its ability to remove unused code and ship smaller javascript files
 thanks to code splitting. This helps to greatly reduce the size of the package
 and to make it easier to use in other projects.
@@ -103,6 +145,9 @@ and to make it easier to use in other projects.
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
+
+To set up a checkout, clone the repository and run `pnpm install` in the
+repository root.
 
 ### Building
 

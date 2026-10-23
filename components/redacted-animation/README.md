@@ -51,7 +51,9 @@ rectangle, then slides the rectangle left or right to reveal the content.
 
 - [Redacted Animation](#redacted-animation)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -68,6 +70,13 @@ rectangle, then slides the rectangle left or right to reveal the content.
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Covers content with an accent-colored mask, then slides the mask away.
+- Reveal direction: `left` (default) or `right`.
+- Configurable `delay` before the reveal (default `200` ms).
+- Skips the animation when the user prefers reduced motion.
 
 ## Installing
 
@@ -94,6 +103,23 @@ yarn add -D @cyclone-ui/redacted-animation
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { RedactedAnimation } from "@cyclone-ui/redacted-animation";
+
+export function Example() {
+  return (
+    <RedactedAnimation direction="right" delay={400}>
+      <h1>Presence-aware identity management</h1>
+    </RedactedAnimation>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/redacted-animation.md)
+for all props.
 
 ## Reduced Package Size
 

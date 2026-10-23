@@ -41,14 +41,16 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Field
 
-A Next Button component meant to be shared in many other components
+A form field wrapper that connects a control to Cyclone UI form state and provides label, link, details, and icon parts.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 ## Table of Contents
 
-- [Installing](#installing)
+- [Quick Features](#quick-features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Reduced Package Size](#reduced-package-size)
 - [Development](#development)
   - [Building](#building)
@@ -66,7 +68,15 @@ A Next Button component meant to be shared in many other components
 
 <!-- END doctoc -->
 
-## Installing
+## Quick Features
+
+- Connects a control to the surrounding `Form` state.
+- Parts: `Field.Label`, `Field.Link`, `Field.Details`, `Field.Icon`, and `Field.ThemeIcon`.
+- Shows validation messages and status icons automatically.
+- `outlined`, `underlined`, and `inlined` variants, with `floating` or `above` labels.
+- `sm`, `md`, and `lg` sizes.
+
+## Installation
 
 Using [pnpm](http://pnpm.io):
 
@@ -92,6 +102,31 @@ yarn add -D @cyclone-ui/field
 
 </details>
 
+## Usage
+
+```tsx
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
+import { Input } from "@cyclone-ui/input";
+
+export function Example() {
+  return (
+    <Form name="account" initialValues={{ email: "" }}>
+      <Field name="email" required>
+        <Field.Label>Email</Field.Label>
+        <Input>
+          <Input.TextBox>
+            <Input.TextBox.Value />
+          </Input.TextBox>
+        </Input>
+      </Field>
+    </Form>
+  );
+}
+```
+
+See the [Field documentation](../../docs/design-system/components/field.md) for all props and parts.
+
 ## Reduced Package Size
 
 This project uses [tsup](https://tsup.egoist.dev/) to package the source code
@@ -103,6 +138,8 @@ and to make it easier to use in other projects.
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
+
+To work on the package from a checkout of the monorepo, run `pnpm install` at the repository root first. Run `pnpm build-storybook` at the root to check the stories for errors.
 
 ### Building
 

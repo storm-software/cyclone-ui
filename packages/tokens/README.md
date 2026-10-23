@@ -49,7 +49,9 @@ A package containing the Cyclone UI default design tokens
 
 - [Cyclone UI - Design Tokens](#cyclone-ui---design-tokens)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,6 +68,13 @@ A package containing the Cyclone UI default design tokens
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- The generated Tamagui configuration (`light`, `dark`, and nested semantic
+  themes)
+- CSS theme files for light, dark, dimmed, and high-contrast themes
+- The primitive and semantic design token JSON sources
 
 ## Installing
 
@@ -93,9 +102,22 @@ yarn add -D @cyclone-ui/tokens
 
 </details>
 
+## Usage
+
+Re-export the generated Tamagui config from your own `tamagui.config.ts`:
+
+```ts
+export { config } from "@cyclone-ui/tokens/tamagui";
+```
+
+Razorwind generates most files in this package. Do not edit them by hand. Change
+the token JSON files in `src/tokens`, then run
+`pnpm nx run monorepo:generate-themes`. See the
+[package documentation](../../docs/packages/tokens.md) for details.
+
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code
+This project uses [tsdown](https://tsdown.dev/) to package the source code
 due to its ability to remove unused code and ship smaller javascript files
 thanks to code splitting. This helps to greatly reduce the size of the package
 and to make it easier to use in other projects.
@@ -104,6 +126,9 @@ and to make it easier to use in other projects.
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
+
+To set up a checkout, clone the repository and run `pnpm install` in the
+repository root.
 
 ### Building
 

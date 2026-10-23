@@ -49,7 +49,9 @@ A package containing various [shiki](https://github.com/shikijs/shiki) themes fo
 
 - [Shiki Themes](#shiki-themes)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,6 +68,13 @@ A package containing various [shiki](https://github.com/shikijs/shiki) themes fo
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Six Shiki themes: light, light dimmed, light high contrast, dark, dark
+  dimmed, and dark high contrast
+- Theme colors generated from the Cyclone UI design tokens
+- Plain JSON files with no runtime code
 
 ## Installing
 
@@ -93,17 +102,44 @@ yarn add -D @cyclone-ui/shiki
 
 </details>
 
+## Usage
+
+Register a theme when you create a highlighter, then pass the theme id:
+
+```ts
+import { createHighlighter } from "shiki";
+import theme from "@cyclone-ui/shiki/dark/theme.json" with { type: "json" };
+
+const highlighter = await createHighlighter({
+  themes: [theme],
+  langs: ["javascript"]
+});
+
+const html = highlighter.codeToHtml("const x = 1", {
+  lang: "javascript",
+  theme: "cyclone-dark"
+});
+```
+
+The theme ids are `cyclone-light`, `cyclone-light-dimmed`,
+`cyclone-light-high-contrast`, `cyclone-dark`, `cyclone-dark-dimmed`, and
+`cyclone-dark-high-contrast`. See the
+[package documentation](../../docs/packages/shiki.md) for details.
+
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code
-due to its ability to remove unused code and ship smaller javascript files
-thanks to code splitting. This helps to greatly reduce the size of the package
-and to make it easier to use in other projects.
+This project has no bundling step. The build copies the `src` folder, which
+holds the generated theme JSON files, to `dist`.
 
 ## Development
 
 This project is built using [Nx](https://nx.dev). As a result, many of the usual
 commands are available to assist in development.
+
+To set up a checkout, clone the repository and run `pnpm install` in the
+repository root. Razorwind generates the theme files. Do not edit them by hand.
+Change the token JSON files in `packages/tokens/src/tokens`, then run
+`pnpm nx run monorepo:generate-themes`.
 
 ### Building
 

@@ -39,9 +39,9 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# Eyebrow Text
+# Table of Contents
 
-A `EyebrowText` component used to render the Eyebrow text of a page. It is a simple component that renders the text in a way that is easy to read and understand.
+A `TableOfContents` component that renders a page navigation list from an array of heading items. On web, it highlights the current section as the reader scrolls.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -66,6 +66,13 @@ A `EyebrowText` component used to render the Eyebrow text of a page. It is a sim
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Navigation list built from an array of heading items (`title`, `url`, `depth`)
+- On web, highlights the current section while the reader scrolls
+- Indented rail that shows the active heading path
+- Respects the reduced motion preference
 
 ## Installing
 
@@ -92,6 +99,21 @@ yarn add -D @cyclone-ui/table-of-contents
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { TableOfContents } from "@cyclone-ui/table-of-contents";
+
+const items = [
+  { title: "Overview", url: "#overview", depth: 2 },
+  { title: "Hot Keys", url: "#hot-keys", depth: 3 }
+];
+
+<TableOfContents items={items}>On this page</TableOfContents>;
+```
+
+See the [Table of contents documentation](../../docs/design-system/components/table-of-contents.md) for all props.
 
 ## Reduced Package Size
 

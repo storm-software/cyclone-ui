@@ -65,6 +65,13 @@ A package containing the Table component used by Storm Software
 
 <!-- END doctoc -->
 
+## Quick Features
+
+- Compound `Table` with `Header`, `Body`, `Row`, `Cell`, `HeaderCell`, and `Footer` parts
+- Renders semantic `table`, `thead`, `tbody`, `tfoot`, `tr`, `th`, and `td` elements
+- Table-level cell width, cell height, alignment, and border color
+- `fixed` or `content` sizing
+
 ## Installing
 
 Using [pnpm](http://pnpm.io):
@@ -90,6 +97,29 @@ yarn add -D @cyclone-ui/table
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Table } from "@cyclone-ui/table";
+
+<Table cellWidth="20xl" cellHeight="9xl" sizing="content">
+  <Table.Header>
+    <Table.Row header>
+      <Table.HeaderCell>Name</Table.HeaderCell>
+      <Table.HeaderCell>Role</Table.HeaderCell>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>Ada</Table.Cell>
+      <Table.Cell>Engineer</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>;
+```
+
+See the [Table documentation](../../docs/design-system/components/table.md) for all props.
 
 ## Reduced Package Size
 

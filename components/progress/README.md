@@ -49,7 +49,9 @@ A Progress component meant to be shared in many other components
 
 - [Progress](#progress)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -65,6 +67,13 @@ A Progress component meant to be shared in many other components
   - [Contributors](#contributors)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Themed progress bar with an animated (`bouncy`) indicator.
+- `value` and `max` props (defaults `0` and `100`).
+- Indicator `color` accepts a color or theme token (default `primary`).
+- Follows the `theme` prop.
 
 ## Installing
 
@@ -91,6 +100,19 @@ yarn add -D @cyclone-ui/progress
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Progress } from "@cyclone-ui/progress";
+
+export function Example() {
+  return <Progress value={40} theme="success" />;
+}
+```
+
+See the [component documentation](../../docs/design-system/components/progress.md)
+for all props.
 
 ## Reduced Package Size
 

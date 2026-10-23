@@ -36,6 +36,10 @@ Skip it for bug fixes, refactors that keep behavior and structure, patch/minor v
 5. **Supersede, don't rewrite.** ADRs are immutable history; only an existing ADR's `Status` line may change. When the new decision replaces an old one, set the old ADR's status to `superseded by [Title](YYYYMMDD-new-slug.md)` and add a `Links` entry in the new ADR such as `Supersedes [Old title](YYYYMMDD-old-slug.md)`. For a decision that narrows or extends an earlier one without replacing it, use `Refines` links and leave both accepted.
 6. **Report** the ADR path and a one-line summary to the user. If the ADR was written proactively, mention it in passing rather than asking permission — the user can edit or delete it. Do not commit unless the user's workflow already commits the related change.
 
+## Required page fields
+
+`@sourcebook/core` compiles this file as an ADR. Keep the level-1 title, a `- Status:` line (`proposed`, `accepted`, `rejected`, `deprecated`, or `superseded by` a link), a `- Date:` line (`YYYY-MM-DD`), and the sections Context and Problem Statement, Considered Options, and Decision Outcome. Do not move those fields into YAML front matter; log4brains reads the list and the headings. `Tags` stays optional. Do not invent tags.
+
 ## Template
 
 Optional sections may be removed when they would be empty or padding; keep the required ones (title, Context and Problem Statement, Considered Options, Decision Outcome).

@@ -49,6 +49,7 @@ A `Page` compound component that provides the base layout of an application page
 
 - [Page](#page)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
   - [Usage](#usage)
     - [Layout areas](#layout-areas)
@@ -71,6 +72,13 @@ A `Page` compound component that provides the base layout of an application page
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Layout areas: `Banner`, `TopNav` (`Start`, `Middle`, `End`), `SideNav`, `Main`, and `Panel`.
+- Collapsible, resizable side nav: inline on desktop, an overlay on mobile, and a hover flyout when collapsed.
+- Resizable panel with `usePagePanel()` control.
+- Skip links and an optional `Ctrl` + `[` side nav shortcut.
 
 ## Installing
 

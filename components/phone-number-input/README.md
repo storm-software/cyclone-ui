@@ -49,7 +49,9 @@ Phone Number Input Form Field component for Cyclone UI
 
 - [phone-number-input](#phone-number-input)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
+  - [Usage](#usage)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -66,6 +68,13 @@ Phone Number Input Form Field component for Cyclone UI
     - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+- Searchable country-code picker with flags.
+- Input masked and formatted per country with `libphonenumber-js` and `maskito`.
+- Controlled (`value`), uncontrolled (`defaultValue`), or inside a `Field`.
+- `defaultCountry` prop (default `US`).
 
 ## Installing
 
@@ -92,6 +101,32 @@ yarn add -D @cyclone-ui/phone-number-input
 ```
 
 </details>
+
+## Usage
+
+```tsx
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
+import { PhoneNumberInput } from "@cyclone-ui/phone-number-input";
+
+export function Example() {
+  return (
+    <Form name="contact" initialValues={{ phone: "" }}>
+      <Field name="phone">
+        <Field.Label>Phone</Field.Label>
+        <PhoneNumberInput defaultCountry="US">
+          <PhoneNumberInput.TextBox>
+            <PhoneNumberInput.TextBox.Value placeholder="Phone number" />
+          </PhoneNumberInput.TextBox>
+        </PhoneNumberInput>
+      </Field>
+    </Form>
+  );
+}
+```
+
+See the [component documentation](../../docs/design-system/components/phone-number-input.md)
+for all props.
 
 ## Reduced Package Size
 
