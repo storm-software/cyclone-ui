@@ -17345,7 +17345,7 @@ module.exports = {
         "Monospace face: Google Sans Code with snug leading. Size and weight come from the component. Use it for anything that must keep fixed-width alignment or reads as a literal value, such as source code, file paths, identifiers, keyboard input, card numbers and step counters. Used by CodeBlock, InlineCodeText, FileTree, FilePicker, Stepper, CreditCardInput and code content inside Accordion.",
       $value: {
         fontFamily: "Google Sans Code",
-        lineHeight: 1.125
+        lineHeight: 0.765
       },
       filePath:
         "/home/development/repos/cyclone-ui/packages/tokens/src/tokens/semantic/tokens.json",
@@ -17356,7 +17356,7 @@ module.exports = {
           "Monospace face: Google Sans Code with snug leading. Size and weight come from the component. Use it for anything that must keep fixed-width alignment or reads as a literal value, such as source code, file paths, identifiers, keyboard input, card numbers and step counters. Used by CodeBlock, InlineCodeText, FileTree, FilePicker, Stepper, CreditCardInput and code content inside Accordion.",
         $value: {
           fontFamily: "Google Sans Code",
-          lineHeight: "{line-height.snug}"
+          lineHeight: "{line-height.none}"
         },
         key: "{typography.code}"
       },

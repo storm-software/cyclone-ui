@@ -5365,7 +5365,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       path: "typography.code",
       type: "typography",
       value:
-        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.snug}"}',
+        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.none}"}',
       cssVar: "--cu-typography-code",
       description:
         "Monospace face: Google Sans Code with snug leading. Size and weight come from the component. Use it for anything that must keep fixed-width alignment or reads as a literal value, such as source code, file paths, identifiers, keyboard input, card numbers and step counters. Used by CodeBlock, InlineCodeText, FileTree, FilePicker, Stepper, CreditCardInput and code content inside Accordion.",
@@ -10978,7 +10978,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       path: "typography.code",
       type: "typography",
       value:
-        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.snug}"}',
+        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.none}"}',
       cssVar: "--cu-typography-code",
       description:
         "Monospace face: Google Sans Code with snug leading. Size and weight come from the component. Use it for anything that must keep fixed-width alignment or reads as a literal value, such as source code, file paths, identifiers, keyboard input, card numbers and step counters. Used by CodeBlock, InlineCodeText, FileTree, FilePicker, Stepper, CreditCardInput and code content inside Accordion.",
@@ -16591,7 +16591,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       path: "typography.code",
       type: "typography",
       value:
-        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.snug}"}',
+        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.none}"}',
       cssVar: "--cu-typography-code",
       description:
         "Monospace face: Google Sans Code with snug leading. Size and weight come from the component. Use it for anything that must keep fixed-width alignment or reads as a literal value, such as source code, file paths, identifiers, keyboard input, card numbers and step counters. Used by CodeBlock, InlineCodeText, FileTree, FilePicker, Stepper, CreditCardInput and code content inside Accordion.",
@@ -22206,7 +22206,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       path: "typography.code",
       type: "typography",
       value:
-        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.snug}"}',
+        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.none}"}',
       cssVar: "--cu-typography-code",
       description:
         "Monospace face: Google Sans Code with snug leading. Size and weight come from the component. Use it for anything that must keep fixed-width alignment or reads as a literal value, such as source code, file paths, identifiers, keyboard input, card numbers and step counters. Used by CodeBlock, InlineCodeText, FileTree, FilePicker, Stepper, CreditCardInput and code content inside Accordion.",
@@ -27821,7 +27821,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       path: "typography.code",
       type: "typography",
       value:
-        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.snug}"}',
+        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.none}"}',
       cssVar: "--cu-typography-code",
       description:
         "Monospace face: Google Sans Code with snug leading. Size and weight come from the component. Use it for anything that must keep fixed-width alignment or reads as a literal value, such as source code, file paths, identifiers, keyboard input, card numbers and step counters. Used by CodeBlock, InlineCodeText, FileTree, FilePicker, Stepper, CreditCardInput and code content inside Accordion.",
@@ -33436,7 +33436,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       path: "typography.code",
       type: "typography",
       value:
-        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.snug}"}',
+        '{"fontFamily":"Google Sans Code","lineHeight":"{line-height.none}"}',
       cssVar: "--cu-typography-code",
       description:
         "Monospace face: Google Sans Code with snug leading. Size and weight come from the component. Use it for anything that must keep fixed-width alignment or reads as a literal value, such as source code, file paths, identifiers, keyboard input, card numbers and step counters. Used by CodeBlock, InlineCodeText, FileTree, FilePicker, Stepper, CreditCardInput and code content inside Accordion.",

@@ -25,14 +25,20 @@ import { SizableText } from "@tamagui/text";
 export const InlineCodeText = styled(SizableText, {
   displayName: "InlineCodeText",
   render: "span",
-  backgroundColor: "floating",
+  backgroundColor: "floating-active",
   color: "emphasis",
   display: "inline-flex",
   fontFamily: "code",
-  paddingVertical: "sm",
+  lineHeight: "none",
+  paddingTop: "lg",
+  paddingBottom: "xl",
   paddingHorizontal: "xl",
-  size: "lg",
-  borderRadius: "container"
+  size: "md",
+  // after `size`: its variant writes the font's size-keyed weight (`md` → 900)
+  fontWeight: "normal",
+  borderRadius: "sm",
+  borderWidth: 1,
+  borderColor: "hairline"
 });
 
 export type InlineCodeTextProps = GetProps<typeof InlineCodeText>;

@@ -18,7 +18,6 @@
 
 "use client";
 
-import type { BodyTextSize } from "@cyclone-ui/body-text";
 import type { GetProps } from "@tamagui/core";
 import { createStyledHOC, styled, useThemeName } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
@@ -49,7 +48,7 @@ export interface LinkTextExtraProps {
   /**
    * The size of the link text, corresponding to the body text sizes.
    */
-  size?: BodyTextSize;
+  size?: "sm" | "md" | "lg";
 }
 
 const LinkTextFrame = styled(SizableText, {
@@ -90,13 +89,19 @@ const LinkTextFrame = styled(SizableText, {
         fontFamily: "body",
         fontSize: "sm",
         lineHeight: "sm",
-        fontWeight: "500"
+        fontWeight: "medium"
       },
       md: {
         fontFamily: "body",
         fontSize: "md",
         lineHeight: "md",
-        fontWeight: "400"
+        fontWeight: "medium"
+      },
+      lg: {
+        fontFamily: "body",
+        fontSize: "lg",
+        lineHeight: "lg",
+        fontWeight: "medium"
       }
     },
 

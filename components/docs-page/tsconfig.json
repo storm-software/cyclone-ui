@@ -1,0 +1,47 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/docs-page/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ],
+    "outDir": "../../dist/out-tsc/components/docs-page"
+  },
+  "references": [
+    {
+      "path": "../table-of-contents"
+    },
+    {
+      "path": "../page"
+    },
+    {
+      "path": "../inline-code-text"
+    },
+    {
+      "path": "../icons"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
+      "path": "../divider"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../breadcrumb"
+    },
+    {
+      "path": "../body-text"
+    }
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
+}

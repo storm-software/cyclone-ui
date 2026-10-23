@@ -155,7 +155,7 @@
       "name": "@cyclone-ui/article-page",
       "type": "registry:component",
       "title": "@cyclone-ui/article-page",
-      "description": "An ArticlePage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.",
+      "description": "An ArticlePage layout compound component for blog posts and documentation articles. A Header on its own background holds the breadcrumb, title, summary, cover Media and a Details row with the byline, Share links and tags; it stays in place while the Main sheet scrolls up over it. Main holds the article Content, beside a sticky table of contents and share links on wide screens, and Sections for feedback and recommendations, followed by the page footer.",
       "dependencies": ["@tamagui/core@3.0.13"],
       "devDependencies": [
         "@storybook/react-vite@^10.6.3",
@@ -164,7 +164,9 @@
         "react-native@^0.87.1"
       ],
       "registryDependencies": [
-        "@cyclone-ui/page",
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/button",
+        "@cyclone-ui/icons",
         "@cyclone-ui/table-of-contents"
       ],
       "files": [
@@ -876,6 +878,29 @@
       "files": [
         {
           "path": "components/divider/src/Divider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/docs-page",
+      "type": "registry:component",
+      "title": "@cyclone-ui/docs-page",
+      "description": "A DocsPage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.",
+      "dependencies": ["@tamagui/core@3.0.13"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.3",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/page",
+        "@cyclone-ui/table-of-contents"
+      ],
+      "files": [
+        {
+          "path": "components/docs-page/src/DocsPage.tsx",
           "type": "registry:component"
         }
       ]

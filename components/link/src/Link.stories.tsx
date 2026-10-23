@@ -44,6 +44,20 @@ export const Base: Story = {
   }
 };
 
+export const Small: Story = {
+  args: {
+    href: "#",
+    size: "sm"
+  }
+};
+
+export const Large: Story = {
+  args: {
+    href: "#",
+    size: "lg"
+  }
+};
+
 export const Brand: Story = {
   args: {
     href: "#",

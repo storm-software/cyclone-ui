@@ -43,6 +43,20 @@ export const Base: Story = {
   }
 };
 
+export const Small: Story = {
+  args: {
+    currentName: "Current Page",
+    size: "sm"
+  }
+};
+
+export const Large: Story = {
+  args: {
+    currentName: "Current Page",
+    size: "lg"
+  }
+};
+
 export const Emphasis: Story = {
   args: {
     currentName: "Current Page",

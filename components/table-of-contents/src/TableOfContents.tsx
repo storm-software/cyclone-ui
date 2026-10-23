@@ -143,7 +143,7 @@ const TableOfContentsHeading = styled(XStack, {
 const TableOfContentsHeadingText = styled(BodyText, {
   render: "span",
   color: "subtle",
-  fontWeight: "md"
+  fontWeight: "medium"
 });
 
 const TableOfContentsItems = styled(View, {
@@ -207,10 +207,12 @@ const TableOfContentsLinkText = styled(BodyText, {
   transition: "color 160ms ease-out",
   color: "primary-inactive group-hover/tableOfContentsItem:primary-hovered",
   fontWeight: "normal",
+
   variants: {
     active: {
       true: {
-        color: "primary"
+        color: "primary",
+        fontWeight: "medium",
       }
     },
     reducedMotion: {
@@ -379,14 +381,12 @@ function usePrefersReducedMotion() {
 function TableOfContentsRail({
   items,
   activeIndex,
-  activeStartIndex,
   minDepth,
   prefersReducedMotion,
   scrolledToEnd
 }: {
   items: readonly TableOfContentsItem[];
   activeIndex: number;
-  activeStartIndex: number;
   minDepth: number;
   prefersReducedMotion: boolean;
   scrolledToEnd: boolean;
@@ -398,14 +398,6 @@ function TableOfContentsRail({
   const geometry = getRailGeometry(items, minDepth);
   // At the end of the content the tracker runs to the end of the rail.
   const activeY = scrolledToEnd ? height : (activeIndex + 0.5) * ITEM_HEIGHT;
-  const activeStartY =
-    activeStartIndex === 0
-      ? 0
-      : activeStartIndex * ITEM_HEIGHT +
-        (geometry.points[activeStartIndex - 1]?.x ===
-        geometry.points[activeStartIndex]?.x
-          ? 0
-          : RAIL_CURVE_RADIUS);
   const railTransition = prefersReducedMotion
     ? "none"
     : `clip-path ${MOTION_DURATION}ms ${MOTION_EASING}`;
@@ -451,7 +443,7 @@ function TableOfContentsRail({
         width={width}
         height={height}
         style={{
-          clipPath: `polygon(0 ${activeStartY}px, 100% ${activeStartY}px, 100% ${activeY}px, 0 ${activeY}px)`,
+          clipPath: `polygon(0 0, 100% 0, 100% ${activeY}px, 0 ${activeY}px)`,
           transition: railTransition
         }}>
         <svg
@@ -528,7 +520,6 @@ export const TableOfContents = createStyledHOC(
 
       return result;
     }, [activeIndex, items, minDepth]);
-    const activeStartIndex = Math.min(...activePathIndexes);
 
     useEffect(() => {
       const { window: browserWindow, document: browserDocument } =
@@ -624,7 +615,6 @@ export const TableOfContents = createStyledHOC(
           <TableOfContentsRail
             items={items}
             activeIndex={activeIndex}
-            activeStartIndex={activeStartIndex}
             minDepth={minDepth}
             prefersReducedMotion={prefersReducedMotion}
             scrolledToEnd={scrolledToEnd}

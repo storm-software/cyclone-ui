@@ -18,153 +18,248 @@
 
 "use client";
 
-import type {
-  PageMainProps,
-  PageProps,
-  PageSideNavProps
-} from "@cyclone-ui/page";
-import { Page, PAGE_TOP_NAV_HEIGHT, usePageSideNav } from "@cyclone-ui/page";
+import { BodyText } from "@cyclone-ui/body-text";
+import { Button } from "@cyclone-ui/button";
+import {
+  FacebookLogo,
+  LinkedinLogo,
+  ShareNetwork,
+  XLogo
+} from "@cyclone-ui/icons";
 import type { TableOfContentsItem } from "@cyclone-ui/table-of-contents";
 import { TableOfContents } from "@cyclone-ui/table-of-contents";
-import type { GetProps } from "@tamagui/core";
+import type { GetProps, TamaguiElement } from "@tamagui/core";
 import {
   createStyledHOC,
   styled,
+  useComposedRefs,
   View,
   withStaticProperties
 } from "@tamagui/core";
+import { useEffect, useRef } from "react";
 
-export const ARTICLE_PAGE_SIDE_NAV_WIDTH = 268;
+/** Widest the header, sections and recommendations grow. */
+export const ARTICLE_PAGE_MAX_WIDTH = 1120;
 
 /** Widest the article column grows, for a comfortable line length. */
-export const ARTICLE_PAGE_ARTICLE_MAX_WIDTH = 760;
+export const ARTICLE_PAGE_CONTENT_MAX_WIDTH = 760;
 
-export const ARTICLE_PAGE_TOC_WIDTH = 240;
+export const ARTICLE_PAGE_ASIDE_WIDTH = 240;
 
-export type ArticlePageProps = PageProps;
+interface ArticlePageBrowserElement {
+  offsetHeight: number;
+  style: { setProperty: (property: string, value: string) => void };
+}
 
-// The header's toggle sits on the left edge, so a hover flyout would open
-// whenever the pointer drifts there; the side nav only opens on click.
-const ArticlePageRoot = ({
-  sideNavFlyoutEnabled = false,
-  ...props
-}: ArticlePageProps) => (
-  <Page sideNavFlyoutEnabled={sideNavFlyoutEnabled} {...props} />
-);
+interface ArticlePageResizeObserver {
+  observe: (element: ArticlePageBrowserElement) => void;
+  disconnect: () => void;
+}
 
-export type ArticlePageSideNavProps = PageSideNavProps;
-
-/** Sits on the page canvas; it only takes its own surface as an overlay. */
-const ArticlePageSideNavImpl = ({
-  defaultWidth = ARTICLE_PAGE_SIDE_NAV_WIDTH,
-  ...props
-}: ArticlePageSideNavProps) => (
-  <Page.SideNav
-    defaultWidth={defaultWidth}
-    backgroundColor="canvas max-lg:surface"
-    borderRightWidth="0px max-lg:1px"
-    {...props}
-  />
-);
-
-const ArticlePageSideNav = withStaticProperties(ArticlePageSideNavImpl, {
-  Header: Page.SideNav.Header,
-  Body: Page.SideNav.Body,
-  Footer: Page.SideNav.Footer
-});
-
-// Grows and shrinks into main's height on desktop, so only `Content` scrolls.
-const ArticlePagePanel = styled(View, {
-  displayName: "ArticlePagePanel",
-  flexGrow: 1,
-  flexShrink: 1,
-  minHeight: 0,
+const ArticlePageFrame = styled(View, {
+  displayName: "ArticlePage",
+  position: "relative",
+  width: "100%",
+  minHeight: "100dvh",
   flexDirection: "column",
-  backgroundColor: "surface",
-  borderWidth: "0px lg:1px",
-  borderColor: "hairline",
-  borderRadius: "0px lg:2xl",
-  boxShadow: "none lg:sm",
-  overflow: "visible lg:hidden"
+  backgroundColor: "surface"
 });
 
-export type ArticlePageMainProps = Omit<PageMainProps, "fixed">;
-
-/**
- * An inset, rounded panel beside the side nav. On desktop only its
- * `Content` scrolls; smaller screens scroll the document.
- */
-const ArticlePageMain = ({ children, ...props }: ArticlePageMainProps) => (
-  <Page.Main
-    fixed={true}
-    boxSizing="border-box"
-    padding="0px lg:2xl"
-    {...props}>
-    <ArticlePagePanel>{children}</ArticlePagePanel>
-  </Page.Main>
-);
+export type ArticlePageProps = GetProps<typeof ArticlePageFrame>;
 
 const ArticlePageHeaderFrame = styled(View, {
   displayName: "ArticlePageHeader",
   render: "header",
-  // Only sticks on smaller screens, where the document scrolls.
+  // Stays put while the content below scrolls up over it.
   position: "sticky",
   top: 0,
-  zIndex: "10",
-  flexShrink: 0,
-  height: PAGE_TOP_NAV_HEIGHT,
-  flexDirection: "row",
+  zIndex: "0",
+  width: "100%",
+  boxSizing: "border-box",
   alignItems: "center",
-  gap: "xl",
-  paddingLeft: "7xl max-md:4xl",
-  paddingRight: "4xl",
-  backgroundColor: "surface"
+  paddingHorizontal: "7xl max-md:4xl",
+  paddingTop: "9xl max-md:7xl",
+  paddingBottom: "20xl max-md:14xl",
+  backgroundColor: "sunken"
 });
 
+const ArticlePageHeaderContent = styled(View, {
+  displayName: "ArticlePageHeaderContent",
+  width: "100%",
+  maxWidth: ARTICLE_PAGE_MAX_WIDTH,
+  flexDirection: "column",
+  gap: "10xl max-md:8xl"
+});
+
+export type ArticlePageHeaderProps = GetProps<typeof ArticlePageHeaderFrame>;
+
 /**
- * The top row of the panel, for breadcrumbs and page actions. It shows a side
- * nav toggle whenever the side nav isn't inline beside it.
+ * The article's metadata, on its own background. It stays in place while the
+ * content scrolls up over it.
  */
-const ArticlePageHeaderImpl = createStyledHOC(
+const ArticlePageHeader = createStyledHOC(
   ArticlePageHeaderFrame,
-  ({ children, ...props }, forwardedRef) => {
-    const { expanded } = usePageSideNav();
+  ({ children, ...props }: ArticlePageHeaderProps, forwardedRef) => {
+    const headerRef = useRef<TamaguiElement | null>(null);
+    const ref = useComposedRefs(forwardedRef, headerRef);
+
+    useEffect(() => {
+      const header = headerRef.current as unknown as ArticlePageBrowserElement;
+      const ResizeObserverImpl = (
+        globalThis as typeof globalThis & {
+          ResizeObserver?: new (
+            callback: () => void
+          ) => ArticlePageResizeObserver;
+        }
+      ).ResizeObserver;
+
+      if (!header || !ResizeObserverImpl) {
+        return;
+      }
+
+      // A header taller than the viewport sticks once its bottom reaches the
+      // viewport's, so all of it can be read before the content covers it.
+      const observer = new ResizeObserverImpl(() => {
+        header.style.setProperty(
+          "top",
+          `min(0px, calc(100dvh - ${header.offsetHeight}px))`
+        );
+      });
+      observer.observe(header);
+
+      return () => observer.disconnect();
+    }, []);
 
     return (
-      <ArticlePageHeaderFrame ref={forwardedRef} {...props}>
-        <Page.SideNavToggle display={expanded ? "none max-lg:flex" : "flex"} />
-        {children}
+      <ArticlePageHeaderFrame ref={ref} {...props}>
+        <ArticlePageHeaderContent>{children}</ArticlePageHeaderContent>
       </ArticlePageHeaderFrame>
     );
   },
   { displayName: "ArticlePageHeader" }
 );
 
-const ArticlePageHeaderEnd = styled(View, {
-  displayName: "ArticlePageHeaderEnd",
-  flexShrink: 0,
-  marginLeft: "auto",
+const ArticlePageMedia = styled(View, {
+  displayName: "ArticlePageMedia",
+  render: "figure",
+  margin: 0,
+  width: "100%",
+  aspectRatio: "16 / 9",
+  overflow: "hidden",
+
+  backgroundColor: "surface"
+});
+
+const ArticlePageDetails = styled(View, {
+  displayName: "ArticlePageDetails",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  alignItems: "center",
+  justifyContent: "space-between",
+  columnGap: "5xl",
+  rowGap: "4xl"
+});
+
+const ArticlePageShareFrame = styled(View, {
+  displayName: "ArticlePageShare",
+  role: "group",
   flexDirection: "row",
   alignItems: "center",
   gap: "md"
 });
 
-const ArticlePageHeader = withStaticProperties(ArticlePageHeaderImpl, {
-  End: ArticlePageHeaderEnd
+export interface ArticlePageShareExtraProps {
+  /** The article's address, shared as is. */
+  url: string;
+  /** Prefills the post on networks that accept text. */
+  title?: string;
+}
+
+export type ArticlePageShareProps = GetProps<typeof ArticlePageShareFrame> &
+  ArticlePageShareExtraProps;
+
+const getShareLinks = (url: string, title: string) => {
+  const encodedUrl = encodeURIComponent(url);
+
+  return [
+    {
+      network: "X",
+      icon: XLogo,
+      href: `https://x.com/intent/tweet?url=${encodedUrl}&text=${encodeURIComponent(title)}`
+    },
+    {
+      network: "LinkedIn",
+      icon: LinkedinLogo,
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`
+    },
+    {
+      network: "Facebook",
+      icon: FacebookLogo,
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`
+    }
+  ];
+};
+
+/**
+ * Links that share the article on X, LinkedIn and Facebook in a new tab.
+ * Children, such as a "Share" label, come before the links.
+ */
+const ArticlePageShare = createStyledHOC(
+  ArticlePageShareFrame,
+  (
+    { url, title = "", children, ...props }: ArticlePageShareProps,
+    forwardedRef
+  ) => (
+    <ArticlePageShareFrame ref={forwardedRef} aria-label="Share" {...props}>
+      {children}
+      {getShareLinks(url, title).map(({ network, icon: Icon, href }) => (
+        <Button
+          key={network}
+          render="a"
+          // `Button` defaults to the button role, even as an anchor.
+          role="link"
+          href={href}
+          {...{ target: "_blank", rel: "noopener noreferrer" }}
+          aria-label={`Share on ${network}`}
+          variant="ghost"
+          circular={true}
+          flexGrow={0}
+          size="9xl">
+          <Button.Icon>
+            <Icon aria-hidden={true} />
+          </Button.Icon>
+        </Button>
+      ))}
+    </ArticlePageShareFrame>
+  ),
+  { displayName: "ArticlePageShare" }
+);
+
+const ArticlePageMain = styled(View, {
+  displayName: "ArticlePageMain",
+  render: "main",
+  // Above the sticky header, so it scrolls up over it.
+  position: "relative",
+  zIndex: "10",
+  width: "100%",
+  boxSizing: "border-box",
+  flexDirection: "column",
+  alignItems: "center",
+  paddingHorizontal: "7xl max-md:4xl",
+  backgroundColor: "surface",
+  boxShadow: "lg"
 });
 
 const ArticlePageContentFrame = styled(View, {
   displayName: "ArticlePageContent",
-  flexGrow: 1,
-  flexShrink: 1,
-  minHeight: 0,
-  overflowY: "visible lg:auto",
-  // Centers the article and table of contents as a pair.
+  width: "100%",
+  maxWidth: ARTICLE_PAGE_MAX_WIDTH,
+  // Centers the article and its aside as a pair.
   flexDirection: "row",
   justifyContent: "center",
   alignItems: "flex-start",
-  gap: "9xl",
-  paddingHorizontal: "7xl max-md:4xl"
+  gap: "10xl",
+  paddingVertical: "14xl max-md:10xl"
 });
 
 const ArticlePageArticle = styled(View, {
@@ -173,64 +268,107 @@ const ArticlePageArticle = styled(View, {
   flexGrow: 1,
   flexShrink: 1,
   minWidth: 0,
-  maxWidth: ARTICLE_PAGE_ARTICLE_MAX_WIDTH,
+  maxWidth: ARTICLE_PAGE_CONTENT_MAX_WIDTH,
   flexDirection: "column",
-  gap: "4xl",
-  paddingTop: "7xl",
-  paddingBottom: "8xl"
+  gap: "10xl max-md:8xl"
 });
 
-const ArticlePageToc = styled(View, {
-  displayName: "ArticlePageToc",
+const ArticlePageAside = styled(View, {
+  displayName: "ArticlePageAside",
+  render: "aside",
+  // Follows the reader down the article.
   position: "sticky",
-  top: 0,
+  top: "14xl",
   flexShrink: 0,
-  width: ARTICLE_PAGE_TOC_WIDTH,
-  paddingTop: "8xl",
-  display: "none xl:flex"
+  width: ARTICLE_PAGE_ASIDE_WIDTH,
+  flexDirection: "column",
+  gap: "8xl",
+  display: "none lg:flex"
+});
+
+// Matches the table of contents' own heading.
+const ArticlePageAsideHeading = styled(View, {
+  displayName: "ArticlePageAsideHeading",
+  flexDirection: "row",
+  alignItems: "center",
+  gap: "3xl",
+  minHeight: "7xl"
 });
 
 export interface ArticlePageContentExtraProps {
-  /** Headings listed beside the article on screens 1280px and wider. */
+  /** Headings listed beside the article on screens 1024px and wider. */
   toc?: readonly TableOfContentsItem[];
+  /** Shares the article from below the table of contents. */
+  share?: ArticlePageShareExtraProps;
 }
 
 export type ArticlePageContentProps = GetProps<typeof ArticlePageContentFrame> &
   ArticlePageContentExtraProps;
 
-/** The scroll container that holds the article and its table of contents. */
+/**
+ * The article, beside a sticky aside with its table of contents and share
+ * links on screens 1024px and wider.
+ */
 const ArticlePageContent = createStyledHOC(
   ArticlePageContentFrame,
-  ({ children, toc = [], ...props }: ArticlePageContentProps, forwardedRef) => (
+  (
+    { children, toc = [], share, ...props }: ArticlePageContentProps,
+    forwardedRef
+  ) => (
     <ArticlePageContentFrame ref={forwardedRef} {...props}>
       <ArticlePageArticle>{children}</ArticlePageArticle>
-      {toc.length > 0 ? (
-        <ArticlePageToc>
-          <TableOfContents items={toc} />
-        </ArticlePageToc>
+      {toc.length > 0 || share ? (
+        <ArticlePageAside>
+          {toc.length > 0 ? <TableOfContents items={toc} /> : null}
+          {share ? (
+            <View gap="md">
+              <ArticlePageAsideHeading>
+                <ShareNetwork aria-hidden={true} color="subtle" size="5xl" />
+                <BodyText render="span" color="subtle" fontWeight="medium">
+                  Share
+                </BodyText>
+              </ArticlePageAsideHeading>
+              <ArticlePageShare {...share} />
+            </View>
+          ) : null}
+        </ArticlePageAside>
       ) : null}
     </ArticlePageContentFrame>
   ),
   { displayName: "ArticlePageContent" }
 );
 
+const ArticlePageSection = styled(View, {
+  displayName: "ArticlePageSection",
+  render: "section",
+  width: "100%",
+  maxWidth: ARTICLE_PAGE_MAX_WIDTH,
+  flexDirection: "column",
+  gap: "5xl",
+  paddingVertical: "12xl max-md:10xl",
+  borderTopWidth: 2,
+  borderTopColor: "hairline"
+});
+
 /**
- * A spacious layout for documentation and long-form articles, built on
- * `Page`. Compose its areas as direct children:
+ * A blog or documentation article. Compose its areas as direct children:
  *
- * - `ArticlePage.SideNav`: sits on the page canvas on desktop and opens as an
- *   overlay on smaller screens, with `Header`, `Body` (scrolls) and `Footer`.
- *   Place an `ArticlePage.SideNavToggle` in its header to collapse it.
- * - `ArticlePage.Main`: an inset panel holding a `Header` (with an `End` slot)
- *   and the `Content`, which centers the article beside its table of contents.
+ * - `ArticlePage.Header`: the article's metadata on its own background. It
+ *   stays in place while `Main` scrolls up over it. Holds a `Media` frame for
+ *   the cover image and a `Details` row for the byline, `Share` links and
+ *   tags.
+ * - `ArticlePage.Main`: the sheet that covers the header, holding the article
+ *   `Content` (with a sticky table of contents and share links beside it) and
+ *   any `Section`s after it, such as feedback and recommendations.
  *
- * Collapse state, the `Ctrl` + `[` shortcut and skip links
- * work as they do in `Page`, and `usePageSideNav` controls the side nav.
+ * Place the page footer after `Main`.
  */
-export const ArticlePage = withStaticProperties(ArticlePageRoot, {
-  SideNav: ArticlePageSideNav,
-  SideNavToggle: Page.SideNavToggle,
-  Main: ArticlePageMain,
+export const ArticlePage = withStaticProperties(ArticlePageFrame, {
   Header: ArticlePageHeader,
-  Content: ArticlePageContent
+  Media: ArticlePageMedia,
+  Details: ArticlePageDetails,
+  Share: ArticlePageShare,
+  Main: ArticlePageMain,
+  Content: ArticlePageContent,
+  Section: ArticlePageSection
 });

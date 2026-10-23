@@ -31,7 +31,31 @@ const LinkFrame = styled(LinkText, {
   render: "a",
   role: "link",
 
-  cursor: "pointer"
+  cursor: "pointer",
+
+  variants: {
+    size: {
+      sm: {
+        fontSize: "sm",
+        lineHeight: "sm",
+        fontWeight: "medium"
+      },
+      md: {
+        fontSize: "md",
+        lineHeight: "md",
+        fontWeight: "medium"
+      },
+      lg: {
+        fontSize: "lg",
+        lineHeight: "lg",
+        fontWeight: "medium"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "md"
+  }
 });
 
 // `ThemeableIcon` is a styled HOC; v3 `styled()` only forwards style defaults to

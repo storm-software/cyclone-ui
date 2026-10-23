@@ -4403,6 +4403,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/docs-page",
+      jsx: ["DocsPage"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/drawer",
       jsx: ["Drawer"],
       roles: []

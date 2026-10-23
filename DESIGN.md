@@ -232,7 +232,7 @@ typography:
     lineHeight: "0.765"
   code:
     fontFamily: "Google Sans Code"
-    lineHeight: "1.125"
+    lineHeight: "0.765"
 spacing:
   zero: "0px"
   xxs: "0.5px"
@@ -531,7 +531,7 @@ Cyclone UI design tokens — 211 color tokens, 6 typography tokens, 70 spacing t
 - **body:** fontFamily: Storm Sans, lineHeight: 1.125
 - **caption:** fontFamily: Storm Sans, lineHeight: 1.125
 - **eyebrow:** fontFamily: Google Sans Code, lineHeight: 0.765
-- **code:** fontFamily: Google Sans Code, lineHeight: 1.125
+- **code:** fontFamily: Google Sans Code, lineHeight: 0.765
 
 ## Layout
 

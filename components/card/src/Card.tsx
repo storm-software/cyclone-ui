@@ -143,6 +143,8 @@ const CardContent = styled(YStack, {
   context: CardContext,
   transition: "200ms",
   zIndex: "20",
+  // Fill a stretched frame so `CardFooter` can pin itself to the bottom.
+  flexGrow: 1,
   gap: "2xl",
   padding: "2xl",
   variants: {
@@ -380,6 +382,7 @@ const CardBodyImpl = createStyledHOC(
 const CardFooter = styled(YStack, {
   displayName: "CardFooter",
   context: CardContext,
+  marginTop: "auto",
   zIndex: "20"
 });
 

@@ -271,6 +271,9 @@
       "path": "./components/article-page"
     },
     {
+      "path": "./components/docs-page"
+    },
+    {
       "path": "./packages/shiki"
     },
     {

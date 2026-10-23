@@ -19,7 +19,6 @@
 "use client";
 
 import { Button } from "@cyclone-ui/button";
-import { getSpaced } from "@cyclone-ui/helpers";
 import { CaretDoubleRight, CaretRight, DotsThree } from "@cyclone-ui/icons";
 import { Link } from "@cyclone-ui/link";
 import type { LinkTextExtraProps } from "@cyclone-ui/link-text";
@@ -27,7 +26,6 @@ import { Popover } from "@cyclone-ui/popover";
 import type {
   FontSizeTokens,
   GetProps,
-  SizeTokens,
   ThemeName
 } from "@tamagui/core";
 import {
@@ -131,12 +129,12 @@ const BreadcrumbFrame = styled(XStack, {
   gap: "4xl",
 
   variants: {
-    size: styled.dynamic<SizeTokens>((val, { tokens }) =>
-      typeof val === "string" && val in tokens.size
-        ? { gap: getSpaced(val) / 2 }
-        : undefined
-    )
-  }
+    size: {
+      sm: { gap: "3xl" },
+      md: { gap: "4xl" },
+      lg: { gap: "7xl" }
+    }
+  } as const
 });
 
 const BreadcrumbCurrent = styled(Text, {
@@ -153,14 +151,19 @@ const BreadcrumbCurrent = styled(Text, {
   variants: {
     size: {
       sm: {
-        fontSize: "xs",
-        lineHeight: "xs",
-        fontWeight: "700"
-      },
-      md: {
         fontSize: "sm",
         lineHeight: "sm",
-        fontWeight: "600"
+        fontWeight: "medium"
+      },
+      md: {
+        fontSize: "md",
+        lineHeight: "md",
+        fontWeight: "medium"
+      },
+      lg: {
+        fontSize: "lg",
+        lineHeight: "md",
+        fontWeight: "semibold"
       }
     }
   } as const,
@@ -190,7 +193,7 @@ const getBreadcrumbEllipsisColor = ({
 };
 
 const BreadcrumbSeparator = () => {
-  const { separator } = BreadcrumbContext.useStyledContext();
+  const { separator, size } = BreadcrumbContext.useStyledContext();
 
   if (separator === "chevron") {
     return <CaretRight color="outline" size="2xl" weight="bold" />;
@@ -201,9 +204,9 @@ const BreadcrumbSeparator = () => {
       <SizableText
         color="outline"
         fontFamily="body"
-        fontSize="sm"
+        fontSize={size === "lg" ? "md" : "sm"}
         lineHeight="sm"
-        fontWeight="bold">
+        fontWeight={size === "sm" ? "medium" : size === "lg" ? "black" : "bold"}>
         /
       </SizableText>
     );
@@ -279,6 +282,7 @@ const BreadcrumbImpl = createStyledHOC(
       itemsBeforeCollapse = 1,
       itemsAfterCollapse = 1,
       expandText = "Show path",
+      size = "md",
       ...props
     }: GetProps<typeof BreadcrumbFrame> &
       Partial<BreadcrumbContextProps> &
@@ -305,10 +309,14 @@ const BreadcrumbImpl = createStyledHOC(
 
     return (
       <Theme name={theme}>
-        <BreadcrumbFrame ref={forwardRef} theme={theme} {...props}>
+        <BreadcrumbFrame
+          ref={forwardRef}
+          theme={theme}
+          size={size}
+          {...props}>
           <XGroup display="contents">
             {trail}
-            <BreadcrumbCurrent size="sm">
+            <BreadcrumbCurrent size={size}>
               {currentName || "Current"}
             </BreadcrumbCurrent>
           </XGroup>
@@ -325,8 +333,7 @@ const BreadcrumbLink = styled(Link, {
   displayName: "BreadcrumbItem",
   context: BreadcrumbContext,
 
-  transition: "200ms",
-  size: "sm"
+  transition: "200ms"
 });
 
 // A block, so the row fills the menu width and long names end in an ellipsis.
@@ -337,8 +344,7 @@ const BreadcrumbMenuLink = styled(Link, {
   textOverflow: "ellipsis",
   borderRadius: "button",
   paddingHorizontal: "3xl",
-  paddingVertical: "xl",
-  size: "sm"
+  paddingVertical: "xl"
 });
 
 const BreadcrumbItemImpl = createStyledHOC(
@@ -351,7 +357,9 @@ const BreadcrumbItemImpl = createStyledHOC(
     // LinkText only sets its font family for `sm` / `md`; any other size (the
     // context default is `true`) leaves SizableText's `body` family, which is
     // not a configured font, so the browser falls back to its default serif.
-    const linkSize = (sizeProp ?? size) === "md" ? "md" : "sm";
+    const resolvedSize = sizeProp ?? size;
+    const linkSize =
+      resolvedSize === "lg" || resolvedSize === "md" ? resolvedSize : "sm";
 
     if (closeMenu) {
       return (

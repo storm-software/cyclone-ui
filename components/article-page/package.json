@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/article-page",
   "version": "0.0.13",
   "type": "module",
-  "description": "An ArticlePage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.",
+  "description": "An ArticlePage layout compound component for blog posts and documentation articles. A Header on its own background holds the breadcrumb, title, summary, cover Media and a Details row with the byline, Share links and tags; it stays in place while the Main sheet scrolls up over it. Main holds the article Content, beside a sticky table of contents and share links on wide screens, and Sections for feedback and recommendations, followed by the page footer.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
@@ -18,18 +18,21 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@cyclone-ui/page": "workspace:*",
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/table-of-contents": "workspace:*",
     "@tamagui/core": "catalog:"
   },
   "devDependencies": {
-    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/breadcrumb": "workspace:*",
-    "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/divider": "workspace:*",
+    "@cyclone-ui/card": "workspace:*",
+    "@cyclone-ui/feedback": "workspace:*",
+    "@cyclone-ui/footer": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
-    "@cyclone-ui/icons": "workspace:*",
     "@cyclone-ui/inline-code-text": "workspace:*",
+    "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/tag": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

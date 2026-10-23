@@ -18,357 +18,312 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Breadcrumb } from "@cyclone-ui/breadcrumb";
-import { Button } from "@cyclone-ui/button";
-import { Divider } from "@cyclone-ui/divider";
+import { Card } from "@cyclone-ui/card";
+import { Feedback } from "@cyclone-ui/feedback";
+import { Footer } from "@cyclone-ui/footer";
 import {
+  HeadingHeroText,
   HeadingLargeText,
-  HeadingMediumText,
-  HeadingTitleText
+  HeadingMediumText
 } from "@cyclone-ui/heading-text";
-import {
-  BookOpen,
-  CaretDown,
-  CaretRight,
-  CaretUpDown,
-  ChatCircle,
-  Code,
-  Copy,
-  Cube,
-  DotsThree,
-  GithubLogo,
-  Lightning,
-  MagnifyingGlass,
-  Package,
-  PuzzlePiece,
-  Translate,
-  TreeStructure,
-  Wrench
-} from "@cyclone-ui/icons";
+import { CalendarBlank, Clock } from "@cyclone-ui/icons";
 import { InlineCodeText } from "@cyclone-ui/inline-code-text";
+import { Link } from "@cyclone-ui/link";
+import { Tag } from "@cyclone-ui/tag";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { styled, View } from "@tamagui/core";
+import { View } from "@tamagui/core";
 import type { ReactNode } from "react";
-import { expect, userEvent, waitFor, within } from "storybook/test";
+import { expect, waitFor, within } from "storybook/test";
 import { ArticlePage } from "./ArticlePage";
 
-const StoryNavItemFrame = styled(View, {
-  render: "a",
-  flexDirection: "row",
-  alignItems: "center",
-  gap: "2xl",
-  paddingHorizontal: "2xl",
-  paddingVertical: "xl",
-  borderRadius: "lg",
-  backgroundColor: "transparent hover:secondary",
-  variants: {
-    active: {
-      true: {
-        backgroundColor: "secondary"
-      }
-    }
-  } as const
-});
-
-const StoryNavItem = ({
-  icon,
-  end,
-  active,
-  children
-}: {
-  icon?: ReactNode;
-  end?: ReactNode;
-  active?: boolean;
-  children: string;
-}) => (
-  <StoryNavItemFrame
-    {...{ href: `#${children.toLowerCase().replace(/\s+/g, "-")}` }}
-    style={{ textDecorationLine: "none" }}
-    active={active}
-    aria-current={active ? "page" : undefined}>
-    {icon}
-    <BodyText
-      render="span"
-      size="sm"
-      flexGrow={1}
-      color={active ? "primary" : "ink"}
-      fontWeight={active ? "600" : undefined}>
-      {children}
-    </BodyText>
-    {end}
-  </StoryNavItemFrame>
-);
-
-const StoryNavGroupLabel = styled(BodyText, {
-  render: "span",
-  size: "sm",
-  color: "ink",
-  fontWeight: "600",
-  paddingHorizontal: "2xl",
-  paddingTop: "7xl",
-  paddingBottom: "md"
-});
-
-const StoryNavFolderItems = styled(View, {
-  marginLeft: "4xl",
-  paddingLeft: "lg",
-  borderLeftWidth: 1,
-  borderLeftColor: "hairline"
-});
-
-const StoryBoxButton = styled(View, {
-  render: "button",
-  flexDirection: "row",
-  alignItems: "center",
-  gap: "2xl",
-  height: 40,
-  paddingHorizontal: "2xl",
-  cursor: "pointer",
-  backgroundColor: "surface hover:secondary",
-  borderWidth: 1,
-  borderColor: "hairline",
-  borderRadius: "xl"
-});
-
-const StoryKey = styled(BodyText, {
-  render: "kbd",
-  size: "sm",
-  color: "ink",
-  paddingHorizontal: "md",
-  borderWidth: 1,
-  borderColor: "hairline",
-  borderRadius: "sm"
-});
-
-const StoryIconButton = ({
-  label,
-  children
-}: {
-  label: string;
-  children: ReactNode;
-}) => (
-  <Button
-    aria-label={label}
-    variant="ghost"
-    circular={true}
-    flexGrow={0}
-    size="9xl">
-    <Button.Icon>{children}</Button.Icon>
-  </Button>
-);
-
-const StorySideNav = () => (
-  <ArticlePage.SideNav>
-    <ArticlePage.SideNav.Header>
-      <View alignItems="center" flexDirection="row" gap="xl">
-        <View
-          width={24}
-          height={24}
-          alignItems="center"
-          justifyContent="center"
-          backgroundColor="primary"
-          borderRadius="full">
-          <Lightning size={12} color="on-primary" weight="fill" />
-        </View>
-        <BodyText render="span" color="emphasis" fontWeight="700" flexGrow={1}>
-          Cyclone UI
-        </BodyText>
-        <ArticlePage.SideNavToggle />
-      </View>
-      <StoryBoxButton aria-label="Switch documentation">
-        <Cube aria-hidden={true} size={16} color="primary" />
-        <BodyText render="span" size="sm" color="emphasis" flexGrow={1}>
-          Cyclone Core
-        </BodyText>
-        <CaretUpDown aria-hidden={true} size={14} color="ink" />
-      </StoryBoxButton>
-      <StoryBoxButton aria-label="Search">
-        <MagnifyingGlass aria-hidden={true} size={16} color="ink" />
-        <BodyText render="span" size="sm" color="ink" flexGrow={1}>
-          Search
-        </BodyText>
-        <StoryKey>Ctrl</StoryKey>
-        <StoryKey>K</StoryKey>
-      </StoryBoxButton>
-    </ArticlePage.SideNav.Header>
-    <ArticlePage.SideNav.Body>
-      <StoryNavGroupLabel paddingTop="md">Guide</StoryNavGroupLabel>
-      <StoryNavItem icon={<BookOpen aria-hidden={true} size={16} />}>
-        Introduction
-      </StoryNavItem>
-      <StoryNavItem
-        icon={<MagnifyingGlass aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
-        Search
-      </StoryNavItem>
-      <StoryNavGroupLabel>API References</StoryNavGroupLabel>
-      <StoryNavItem icon={<TreeStructure aria-hidden={true} size={16} />}>
-        Page Tree
-      </StoryNavItem>
-      <StoryNavItem
-        icon={<Translate aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
-        Internationalization
-      </StoryNavItem>
-      <StoryNavItem
-        icon={<PuzzlePiece aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
-        Components
-      </StoryNavItem>
-      <StoryNavItem
-        icon={<Wrench aria-hidden={true} size={16} />}
-        end={<CaretRight aria-hidden={true} size={14} color="ink" />}>
-        Utilities
-      </StoryNavItem>
-      <StoryNavItem
-        icon={<Code aria-hidden={true} size={16} />}
-        end={<CaretDown aria-hidden={true} size={14} color="ink" />}>
-        MDX Plugins
-      </StoryNavItem>
-      <StoryNavFolderItems>
-        <StoryNavItem active={true}>Headings</StoryNavItem>
-        {storyPlugins.map(plugin => (
-          <StoryNavItem key={plugin}>{plugin}</StoryNavItem>
-        ))}
-      </StoryNavFolderItems>
-      <StoryNavGroupLabel>Packages</StoryNavGroupLabel>
-      <StoryNavItem icon={<Package aria-hidden={true} size={16} />}>
-        Installation
-      </StoryNavItem>
-    </ArticlePage.SideNav.Body>
-  </ArticlePage.SideNav>
-);
-
-const storyPlugins = [
-  "Package Install",
-  "Rehype Code",
-  "Remark Admonition",
-  "Remark Image",
-  "Remark LLMs",
-  "Remark Files",
-  "Remark NPM",
-  "Remark Steps",
-  "Remark TS to JS"
-];
+const storyArticle = {
+  title: "Shipping design tokens to every platform at once",
+  url: "https://stormsoftware.com/blog/shipping-design-tokens",
+  summary:
+    "We moved every color, space and type token in Cyclone UI to a single source. Here's how one build now feeds the web, native apps and the docs without anyone copying a value by hand.",
+  author: "Morgan Reyes",
+  published: "October 21, 2026",
+  readingTime: 8,
+  tags: ["Design systems", "Tokens", "Theming", "Engineering"]
+};
 
 const storySections = [
   {
-    id: "remark-heading",
-    title: "Remark Heading",
-    depth: 2,
-    body: "Applies ids to headings, so every section of the document can be linked to directly. The plugin is included by default."
+    id: "where-we-started",
+    title: "Where we started",
+    body: [
+      "Two years ago, a color lived in four places: a Figma library, a CSS file, a TypeScript theme and a hand-written table in the docs. Every change meant four pull requests, and every audit found a value that had drifted.",
+      "We didn't need more process. We needed one file that every platform could read, and a build that turned it into whatever each platform expected."
+    ]
   },
   {
-    id: "extract-toc",
-    title: "Extract TOC",
-    depth: 3,
-    body: "By default, it extracts the headings of a document to the table of contents. Disable it when the page builds its own list of headings, or when the document is too short to need one."
+    id: "one-source",
+    title: "One source for every token",
+    body: [
+      "Tokens now live as JSON in the tokens package, split into primitives and semantic roles. Primitives name raw values; semantic tokens name what a value is for, such as a page canvas or a hairline border.",
+      "Components only ever read semantic tokens. That rule is what lets a dark theme, or a whole new brand, ship without touching a single component."
+    ]
   },
   {
-    id: "custom-ids",
-    title: "Custom Ids",
-    depth: 3,
-    body: "Add an explicit id after a heading to keep its link stable when the heading text changes. Custom ids take priority over the generated ones and must be unique within the page."
+    id: "the-build",
+    title: "The build",
+    body: [
+      "A single generate step reads the JSON and writes the Tamagui config, CSS variables and the documentation tables. The outputs are checked in, so a review shows exactly which values changed.",
+      "When a token is renamed, the build fails on the first component that still uses the old name, long before a user could see a missing color."
+    ]
   },
   {
-    id: "output",
-    title: "Output",
-    depth: 3,
-    body: "Each heading is rendered with its id, and the extracted items include the title, the hash URL and the depth of every heading, ready to pass to the table of contents."
-  },
-  {
-    id: "rehype-toc",
-    title: "Rehype TOC",
-    depth: 2,
-    body: "Exports the table of contents from the compiled document, so the page can render it without parsing the source a second time."
-  },
-  {
-    id: "usage",
-    title: "Usage",
-    depth: 3,
-    body: "Add the plugin after the heading plugin, so the ids it reads are already applied. It runs on the compiled output and doesn't change how headings render."
-  },
-  {
-    id: "rehype-output",
-    title: "Output",
-    depth: 3,
-    body: "The document exports a list of headings with their titles, URLs and depths. Pass it to the toc prop of ArticlePage.Content to show it beside the article on wide screens."
+    id: "what-comes-next",
+    title: "What comes next",
+    body: [
+      "Next we're moving motion and elevation into the same pipeline, so durations and shadows get the same review as colors. If you build on Cyclone UI, nothing changes for you: your components keep reading the same semantic names."
+    ]
   }
 ];
 
-const storyToc = storySections.map(({ id, title, depth }) => ({
+const storyToc = storySections.map(({ id, title }) => ({
   title,
   url: `#${id}`,
-  depth
+  depth: 2
 }));
+
+const storyRecommendations = [
+  {
+    category: "Engineering",
+    title: "How we test every story in a real browser",
+    summary:
+      "Play functions run against a production build of Storybook on every pull request, so interaction bugs never reach a release."
+  },
+  {
+    category: "Design systems",
+    title: "Building a typeface for small screens",
+    summary:
+      "Why we drew our own sans, and the six masters it took to keep it readable at 12 pixels."
+  },
+  {
+    category: "Accessibility",
+    title: "Focus that follows the reader",
+    summary:
+      "Skip links, focus rings and the keyboard paths we check before a layout ships."
+  }
+];
+
+/** A stand-in cover illustration: stacked tiles on a soft gradient. */
+const StoryIllustration = () => (
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    width="100%"
+    height="100%"
+    viewBox="0 0 1600 900"
+    preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="article-page-sky" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="oklch(0.93 0.05 190)" />
+        <stop offset="1" stopColor="oklch(0.78 0.11 186)" />
+      </linearGradient>
+    </defs>
+    <rect width="1600" height="900" fill="url(#article-page-sky)" />
+    {[
+      // Back to front, so nearer tiles paint over farther ones.
+      { x: 800, y: 380, top: "oklch(0.86 0.09 186)", tone: 0.52 },
+      { x: 520, y: 520, top: "oklch(0.97 0.02 190)", tone: 0.62 },
+      { x: 1080, y: 520, top: "oklch(0.7 0.12 186)", tone: 0.44 },
+      { x: 800, y: 660, top: "oklch(0.6 0.12 200)", tone: 0.38 }
+    ].map(({ x, y, top, tone }) => (
+      <g key={`${x}-${y}`}>
+        <path d={`M${x} ${y - 140}l240 140-240 140-240-140z`} fill={top} />
+        <path
+          d={`M${x - 240} ${y}l240 140v160l-240-140z`}
+          fill={`oklch(${tone + 0.1} 0.1 190)`}
+        />
+        <path
+          d={`M${x + 240} ${y}l-240 140v160l240-140z`}
+          fill={`oklch(${tone} 0.1 195)`}
+        />
+      </g>
+    ))}
+  </svg>
+);
+
+const StoryMeta = ({
+  icon,
+  children
+}: {
+  icon: ReactNode;
+  children: string;
+}) => (
+  <View flexDirection="row" alignItems="center" gap="md">
+    {icon}
+    <BodyText render="span" size="sm" color="ink">
+      {children}
+    </BodyText>
+  </View>
+);
+
+const StoryHeader = () => (
+  <ArticlePage.Header>
+    <Breadcrumb currentName="Design systems" size="lg">
+      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+      <Breadcrumb.Item href="#">Engineering</Breadcrumb.Item>
+    </Breadcrumb>
+    <View gap="4xl">
+      <HeadingHeroText
+        maxWidth={880}
+        fontSize="5xl max-md:3xl"
+        lineHeight="5xl max-md:3xl">
+        {storyArticle.title}
+      </HeadingHeroText>
+      <BodyText size="lg" color="subtle">
+        {storyArticle.summary}
+      </BodyText>
+    </View>
+    <ArticlePage.Media>
+      <StoryIllustration />
+    </ArticlePage.Media>
+    <ArticlePage.Details>
+      <View gap="md">
+        <BodyText render="span" color="emphasis" fontWeight="600">
+          {storyArticle.author}
+        </BodyText>
+        <View flexDirection="row" flexWrap="wrap" columnGap="4xl" rowGap="md">
+          <StoryMeta
+            icon={<CalendarBlank aria-hidden={true} size={16} color="ink" />}>
+            {storyArticle.published}
+          </StoryMeta>
+          <StoryMeta icon={<Clock aria-hidden={true} size={16} color="ink" />}>
+            {`${storyArticle.readingTime} min read`}
+          </StoryMeta>
+        </View>
+      </View>
+      <ArticlePage.Share url={storyArticle.url} title={storyArticle.title}>
+        <BodyText render="span" size="sm" color="ink" marginRight="md">
+          Share
+        </BodyText>
+      </ArticlePage.Share>
+      <View
+        render="ul"
+        aria-label="Tags"
+        flexBasis="100%"
+        flexDirection="row"
+        flexWrap="wrap"
+        gap="xl"
+        margin={0}
+        padding={0}>
+        {storyArticle.tags.map(tag => (
+          <View key={tag} render="li" style={{ listStyle: "none" }}>
+            <Tag variant="secondary">
+              <Tag.Text>{tag}</Tag.Text>
+            </Tag>
+          </View>
+        ))}
+      </View>
+    </ArticlePage.Details>
+  </ArticlePage.Header>
+);
 
 const StoryMain = () => (
   <ArticlePage.Main>
-    <ArticlePage.Header>
-      <Breadcrumb currentName="Headings">
-        <Breadcrumb.Item href="#">MDX Plugins</Breadcrumb.Item>
-      </Breadcrumb>
-      <ArticlePage.Header.End>
-        <View display="flex max-md:none">
-          <Button variant="ghost" size="9xl" flexGrow={0}>
-            <Button.Icon>
-              <ChatCircle aria-hidden={true} />
-            </Button.Icon>
-            <Button.Text>Ask AI</Button.Text>
-          </Button>
-        </View>
-        <View display="none max-md:flex">
-          <StoryIconButton label="Ask AI">
-            <ChatCircle aria-hidden={true} />
-          </StoryIconButton>
-        </View>
-        <StoryIconButton label="GitHub">
-          <GithubLogo aria-hidden={true} />
-        </StoryIconButton>
-        <StoryIconButton label="More options">
-          <DotsThree aria-hidden={true} />
-        </StoryIconButton>
-      </ArticlePage.Header.End>
-    </ArticlePage.Header>
-    <ArticlePage.Content toc={storyToc}>
-      <View gap="2xl">
-        <HeadingTitleText>Headings</HeadingTitleText>
-        <BodyText color="ink">Process headings from your document</BodyText>
-      </View>
-      <View flexDirection="row" flexWrap="wrap" gap="xl">
-        <Button variant="outlined" size="9xl" flexGrow={0}>
-          <Button.Icon>
-            <Copy aria-hidden={true} />
-          </Button.Icon>
-          <Button.Text>Copy Markdown</Button.Text>
-        </Button>
-        <Button variant="outlined" size="9xl" flexGrow={0}>
-          <Button.Text>Open</Button.Text>
-          <Button.Icon>
-            <CaretDown aria-hidden={true} />
-          </Button.Icon>
-        </Button>
-      </View>
-      <Divider />
+    <ArticlePage.Content
+      toc={storyToc}
+      share={{ url: storyArticle.url, title: storyArticle.title }}>
       {storySections.map(section => (
-        <View key={section.id} gap="2xl" paddingTop="4xl">
-          {section.depth === 2 ? (
-            <HeadingLargeText id={section.id}>{section.title}</HeadingLargeText>
-          ) : (
-            <HeadingMediumText id={section.id}>
-              {section.title}
-            </HeadingMediumText>
-          )}
-          <BodyText>{section.body}</BodyText>
-          <BodyText>
-            The extracted headings are written to{" "}
-            <InlineCodeText>vfile.data.toc</InlineCodeText>, where the page
-            reads them at build time. Every heading keeps the order it has in
-            the document, and nested headings keep their depth.
-          </BodyText>
+        <View key={section.id} gap="4xl">
+          <HeadingLargeText id={section.id}>{section.title}</HeadingLargeText>
+          {section.body.map(paragraph => (
+            <BodyText key={paragraph}>{paragraph}</BodyText>
+          ))}
+          {section.id === "the-build" ? (
+            <BodyText>
+              Run{" "}
+              <InlineCodeText>
+                pnpm nx run monorepo:generate-themes
+              </InlineCodeText>{" "}
+              after editing a token, and commit the generated files with it.
+            </BodyText>
+          ) : null}
         </View>
       ))}
     </ArticlePage.Content>
+
+    <ArticlePage.Section
+      aria-labelledby="article-feedback"
+      maxWidth={900}
+      alignItems="center">
+      <HeadingMediumText id="article-feedback" textAlign="center">
+        Was this article helpful?
+      </HeadingMediumText>
+      <Feedback alignSelf="center" />
+    </ArticlePage.Section>
+
+    <ArticlePage.Section aria-labelledby="article-recommendations">
+      <HeadingLargeText id="article-recommendations">
+        Keep reading
+      </HeadingLargeText>
+      <View flexDirection="row" flexWrap="wrap" gap="4xl">
+        {storyRecommendations.map(article => (
+          // `Card` fills its parent's width, so a wrapper sizes each column.
+          <View key={article.title} flexBasis={300} flexGrow={1} minWidth={0}>
+            <Card height="100%">
+              <Card.Header>
+                <View gap="md" flexShrink={1} minWidth={0}>
+                  <Card.Header.Eyebrow>{article.category}</Card.Header.Eyebrow>
+                  <Card.Header.Heading size="xl">
+                    {article.title}
+                  </Card.Header.Heading>
+                </View>
+              </Card.Header>
+              <Card.Body>{article.summary}</Card.Body>
+              <Card.Footer>
+                <Card.Footer.Link href="#">Read article</Card.Footer.Link>
+              </Card.Footer>
+            </Card>
+          </View>
+        ))}
+      </View>
+    </ArticlePage.Section>
   </ArticlePage.Main>
+);
+
+const StoryFooter = () => (
+  <Footer>
+    <Footer.Container>
+      <Footer.Main>
+        <Footer.Introduction>
+          <Footer.Statement>The Storm blog</Footer.Statement>
+          <Footer.Description>
+            Notes from the people building Cyclone UI.
+          </Footer.Description>
+        </Footer.Introduction>
+        <Footer.Navigation aria-label="Footer navigation">
+          <Footer.Section render="section">
+            <Footer.Section.Title>Explore</Footer.Section.Title>
+            <Footer.Section.Links>
+              <Link group={false} href="#components">
+                Components
+              </Link>
+              <Link group={false} href="#documentation">
+                Documentation
+              </Link>
+            </Footer.Section.Links>
+          </Footer.Section>
+        </Footer.Navigation>
+      </Footer.Main>
+      <Footer.Rail>
+        <Footer.Brand>
+          <Footer.Copyright>© 2026 Storm Software</Footer.Copyright>
+        </Footer.Brand>
+        <Footer.LegalNavigation aria-label="Legal">
+          <Link group={false} href="#privacy">
+            Privacy
+          </Link>
+          <Link group={false} href="#terms">
+            Terms
+          </Link>
+        </Footer.LegalNavigation>
+      </Footer.Rail>
+    </Footer.Container>
+  </Footer>
 );
 
 const meta = {
@@ -377,7 +332,8 @@ const meta = {
   tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
-    // The layout fills the viewport, so each docs example needs its own frame.
+    // The header sticks to the viewport, so each docs example needs its own
+    // frame to scroll.
     docs: {
       story: {
         inline: false,
@@ -385,13 +341,11 @@ const meta = {
       }
     }
   },
-  args: {
-    children: null
-  },
   render: args => (
     <ArticlePage {...args}>
-      <StorySideNav />
+      <StoryHeader />
       <StoryMain />
+      <StoryFooter />
     </ArticlePage>
   )
 } satisfies Meta<typeof ArticlePage>;
@@ -400,66 +354,47 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const matchesMedia = (query: string) =>
+const browserWindow = globalThis as unknown as {
+  scrollY: number;
+  scrollTo: (x: number, y: number) => void;
+  matchMedia: (query: string) => { matches: boolean };
+};
+
+const getTop = (element: unknown) =>
   (
-    globalThis as unknown as {
-      matchMedia: (query: string) => { matches: boolean };
-    }
-  ).matchMedia(query).matches;
+    element as { getBoundingClientRect: () => { top: number } }
+  ).getBoundingClientRect().top;
 
 /**
- * On desktop, the side nav's toggle collapses it and the panel header's
- * toggle brings it back. Wide screens show the table of contents.
+ * The content scrolls up over the header. On screens 1024px and wider, the
+ * table of contents and share links stay beside the article as it scrolls.
  */
 export const Default: Story = {
   play: async ({ canvasElement }) => {
-    if (!matchesMedia("(min-width: 1024px)")) {
+    const canvas = within(canvasElement);
+
+    await expect(
+      canvas.getAllByRole("link", { name: "Share on X" })[0]
+    ).toHaveAttribute(
+      "href",
+      `https://x.com/intent/tweet?url=${encodeURIComponent(storyArticle.url)}&text=${encodeURIComponent(storyArticle.title)}`
+    );
+
+    if (!browserWindow.matchMedia("(min-width: 1024px)").matches) {
       return;
     }
 
-    const canvas = within(canvasElement);
-    const main = canvas.getByRole("main") as unknown as {
-      scrollHeight: number;
-      clientHeight: number;
-    };
+    const toc = canvas.getByRole("navigation", { name: "Table of contents" });
+    const heading = canvas.getByRole("heading", {
+      name: "One source for every token"
+    });
 
-    // Only the content scrolls, so the header and table of contents stay put.
-    await expect(main.scrollHeight).toBe(main.clientHeight);
-
-    if (matchesMedia("(min-width: 1280px)")) {
-      await expect(
-        canvas.getByRole("navigation", { name: "Table of contents" })
-      ).toBeVisible();
-    }
-
-    // `useMedia` reports mobile on the first render, so wait for the
-    // desktop state to settle.
-    await userEvent.click(
-      await canvas.findByRole("button", { name: "Collapse sidebar" })
-    );
-    await waitFor(async () =>
-      expect(
-        canvas.queryByRole("navigation", { name: "Sidebar" })
-      ).not.toBeInTheDocument()
-    );
-
-    await userEvent.click(
-      await canvas.findByRole("button", { name: "Expand sidebar" })
-    );
+    // The top of the article has scrolled away, but not its end, which takes
+    // the aside with it.
+    browserWindow.scrollTo(0, browserWindow.scrollY + getTop(heading) - 100);
+    await waitFor(async () => expect(getTop(toc)).toBeGreaterThanOrEqual(0));
     await expect(
-      await canvas.findByRole("navigation", { name: "Sidebar" })
-    ).toBeVisible();
-    await waitFor(async () =>
-      expect(
-        canvas.queryByRole("button", { name: "Expand sidebar" })
-      ).not.toBeInTheDocument()
-    );
-  }
-};
-
-/** Hovering the panel header's toggle doesn't open the side nav; click it. */
-export const CollapsedSideNav: Story = {
-  args: {
-    defaultSideNavCollapsed: true
+      canvas.getAllByRole("link", { name: "Share on X" })
+    ).toHaveLength(2);
   }
 };

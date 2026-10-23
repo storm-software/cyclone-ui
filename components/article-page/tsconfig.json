@@ -14,10 +14,13 @@
   },
   "references": [
     {
+      "path": "../tag"
+    },
+    {
       "path": "../table-of-contents"
     },
     {
-      "path": "../page"
+      "path": "../link"
     },
     {
       "path": "../inline-code-text"
@@ -29,7 +32,13 @@
       "path": "../heading-text"
     },
     {
-      "path": "../divider"
+      "path": "../footer"
+    },
+    {
+      "path": "../feedback"
+    },
+    {
+      "path": "../card"
     },
     {
       "path": "../button"

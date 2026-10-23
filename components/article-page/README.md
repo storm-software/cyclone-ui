@@ -41,10 +41,11 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 # Article Page
 
-An `ArticlePage` compound component that provides a spacious layout for documentation and long-form articles. A collapsible side nav sits on the page canvas beside an inset, rounded panel that holds the page header, the article and a sticky table of contents. It is built on [`Page`](../page/README.md), so it shares Page's side nav behavior, keyboard shortcut and skip links.
+An `ArticlePage` compound component for blog posts and documentation articles. A header on its own background holds the article's metadata and stays in place while the content scrolls up over it, like a fixed background. On wide screens, a sticky table of contents and share links follow the reader beside the article.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Article Page](#article-page)
@@ -53,7 +54,6 @@ An `ArticlePage` compound component that provides a spacious layout for document
   - [Installation](#installation)
   - [Usage](#usage)
     - [Layout areas](#layout-areas)
-    - [Side nav](#side-nav)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
     - [Building](#building)
@@ -72,11 +72,11 @@ An `ArticlePage` compound component that provides a spacious layout for document
 
 ## Quick Features
 
-- Layout for documentation and long-form articles, built on `Page`.
-- Collapsible side nav on the page canvas that opens as an overlay on smaller screens.
-- Inset, rounded panel with a header (and an `End` slot), and a scrolling content area.
-- Article column (at most 760px wide) with a sticky table of contents from 1280px.
-- Keyboard shortcut (`Ctrl` + `[`) and skip links, as in `Page`.
+- Header on its own background for the breadcrumb, title, summary, cover image and details row.
+- The header stays in place while the content scrolls up over it; a header taller than the screen sticks once all of it has been seen.
+- Sticky table of contents with share links below it, beside the article on screens 1024px and wider.
+- `Share` links for X, LinkedIn and Facebook.
+- Article column (at most 760px wide), then full-width sections for feedback and recommendations.
 
 ## Installation
 
@@ -109,45 +109,46 @@ yarn add -D @cyclone-ui/article-page
 ```tsx
 import { ArticlePage } from "@cyclone-ui/article-page";
 
-<ArticlePage sideNavShortcutEnabled={true}>
-  <ArticlePage.SideNav>
-    <ArticlePage.SideNav.Header>
-      <Logo />
-      <ArticlePage.SideNavToggle />
-    </ArticlePage.SideNav.Header>
-    <ArticlePage.SideNav.Body>
-      <NavigationLinks />
-    </ArticlePage.SideNav.Body>
-  </ArticlePage.SideNav>
+<ArticlePage>
+  <ArticlePage.Header>
+    <Breadcrumb currentName="Design systems" />
+    <HeadingHeroText>{title}</HeadingHeroText>
+    <BodyText>{summary}</BodyText>
+    <ArticlePage.Media>
+      <CoverImage />
+    </ArticlePage.Media>
+    <ArticlePage.Details>
+      <Byline />
+      <ArticlePage.Share url={url} title={title} />
+      <Tags />
+    </ArticlePage.Details>
+  </ArticlePage.Header>
   <ArticlePage.Main>
-    <ArticlePage.Header>
-      <Breadcrumb currentName="Headings" />
-      <ArticlePage.Header.End>
-        <PageActions />
-      </ArticlePage.Header.End>
-    </ArticlePage.Header>
-    <ArticlePage.Content toc={headings}>
-      <HeadingTitleText>Headings</HeadingTitleText>
+    <ArticlePage.Content toc={headings} share={{ url, title }}>
       {children}
     </ArticlePage.Content>
+    <ArticlePage.Section>
+      <Feedback />
+    </ArticlePage.Section>
+    <ArticlePage.Section>
+      <Recommendations />
+    </ArticlePage.Section>
   </ArticlePage.Main>
+  <Footer />
 </ArticlePage>;
 ```
 
 ### Layout areas
 
-`ArticlePage` takes the same props as `Page`. Render each area as a direct child.
-
-| Area                   | Description                                                                                                                                                         |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ArticlePage.SideNav`  | Sits on the page canvas on screens 1024px and wider (268px by default) and opens as an overlay below that. `Header`, `Body` (the scroll container) and `Footer` stack inside it. |
-| `ArticlePage.Main`     | An inset, rounded panel beside the side nav. On desktop only its content scrolls; smaller screens scroll the document.                                              |
-| `ArticlePage.Header`   | The top row of the panel for breadcrumbs, with an `End` slot for page actions. It sticks to the top of the screen on smaller screens.                             |
-| `ArticlePage.Content`  | Centers the article (at most 760px wide) beside a sticky `TableOfContents` built from its `toc` items. The table of contents shows on screens 1280px and wider.    |
-
-### Side nav
-
-Place `ArticlePage.SideNavToggle` in the side nav's header to collapse it. While the side nav is collapsed, or on smaller screens, `ArticlePage.Header` shows its own toggle. Hovering it does not open the side nav (pass `sideNavFlyoutEnabled` to bring back Page's hover flyout). The `defaultSideNavCollapsed`, `sideNavShortcutEnabled` and `onSideNavExpandedChange` props, `usePageSideNav()` and the skip links all work as they do in [`Page`](../page/README.md).
+| Area                  | Description                                                                                                                                                  |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ArticlePage.Header`  | The article's metadata on the `sunken` background, at most 1120px wide. It stays in place while `Main` scrolls up over it.                                   |
+| `ArticlePage.Media`   | A 16:9 frame for the cover image or illustration.                                                                                                            |
+| `ArticlePage.Details` | A wrapping row for the byline, `Share` links and tags.                                                                                                       |
+| `ArticlePage.Share`   | Links that share `url` (and `title`, on X) in a new tab. Children, such as a label, come before the links.                                                   |
+| `ArticlePage.Main`    | The sheet that scrolls over the header. Place the page footer after it.                                                                                      |
+| `ArticlePage.Content` | The article column (at most 760px wide). On screens 1024px and wider, a sticky aside beside it lists the `toc` headings and shares the article with `share`. |
+| `ArticlePage.Section` | A full-width section after the article, at most 1120px wide, for feedback, recommendations and similar blocks.                                               |
 
 ## Reduced Package Size
 
