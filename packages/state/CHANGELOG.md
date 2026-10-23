@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.29](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.29) (10/23/2026)
+
+### Features
+
+- **monorepo:** Added the `cyclone-ui-setup` skill to the workspace ([a5e5cdda](https://github.com/storm-software/cyclone-ui/commit/a5e5cdda))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.28**
+
 ## [0.0.28](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.28) (10/23/2026)
 
 ### Documentation

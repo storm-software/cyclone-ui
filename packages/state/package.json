@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/state",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "type": "module",
   "description": "A state management package used to handle state in Storm Software applications.",
   "repository": {
@@ -25,20 +25,6 @@
       "default": {
         "types": "./dist/index.d.mts",
         "default": "./dist/index.mjs"
-      }
-    },
-    "./client": {
-      "require": {
-        "types": "./dist/client/index.d.cts",
-        "default": "./dist/client/index.cjs"
-      },
-      "import": {
-        "types": "./dist/client/index.d.mts",
-        "default": "./dist/client/index.mjs"
-      },
-      "default": {
-        "types": "./dist/client/index.d.mts",
-        "default": "./dist/client/index.mjs"
       }
     },
     "./form": {

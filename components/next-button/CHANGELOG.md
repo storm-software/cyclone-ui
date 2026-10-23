@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Next Button
 
+## [0.5.28](https://github.com/storm-software/cyclone-ui/releases/tag/next-button%400.5.28) (10/23/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.28**
+- Updated **vectors** to **v0.5.28**
+
 ## [0.5.27](https://github.com/storm-software/cyclone-ui/releases/tag/next-button%400.5.27) (10/23/2026)
 
 ### Documentation

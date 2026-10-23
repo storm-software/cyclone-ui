@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Inline Code Text
 
+## [0.5.27](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.27) (10/23/2026)
+
+### Features
+
+- **monorepo:** Added the `cyclone-ui-setup` skill to the workspace ([a5e5cdda](https://github.com/storm-software/cyclone-ui/commit/a5e5cdda))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.28**
+
 ## [0.5.26](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.26) (10/23/2026)
 
 ### Features

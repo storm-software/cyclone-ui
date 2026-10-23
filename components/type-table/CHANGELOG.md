@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Type Table
 
+## [0.0.24](https://github.com/storm-software/cyclone-ui/releases/tag/type-table%400.0.24) (10/23/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.28**
+- Updated **collapsible** to **v0.3.24**
+- Updated **container** to **v0.6.28**
+- Updated **heading-text** to **v0.5.28**
+- Updated **inline-code-text** to **v0.5.27**
+- Updated **link** to **v0.5.28**
+- Updated **tokens** to **v0.3.17**
+
 ## [0.0.23](https://github.com/storm-software/cyclone-ui/releases/tag/type-table%400.0.23) (10/23/2026)
 
 ### Documentation
