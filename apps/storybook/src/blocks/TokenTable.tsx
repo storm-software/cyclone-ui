@@ -4854,7 +4854,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-container",
       description:
         "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
@@ -4864,7 +4864,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -4884,7 +4884,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -4964,7 +4964,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-drawer",
       description:
         "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
@@ -10467,7 +10467,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-container",
       description:
         "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
@@ -10477,7 +10477,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -10497,7 +10497,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -10577,7 +10577,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-drawer",
       description:
         "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
@@ -16080,7 +16080,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-container",
       description:
         "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
@@ -16090,7 +16090,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -16110,7 +16110,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -16190,7 +16190,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-drawer",
       description:
         "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
@@ -21695,7 +21695,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-container",
       description:
         "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
@@ -21705,7 +21705,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -21725,7 +21725,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -21805,7 +21805,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-drawer",
       description:
         "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
@@ -27310,7 +27310,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-container",
       description:
         "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
@@ -27320,7 +27320,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -27340,7 +27340,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -27420,7 +27420,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-drawer",
       description:
         "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",
@@ -32925,7 +32925,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.container",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-container",
       description:
         "Corner radius for large framed regions that group other content (8px, `border-radius.lg`). Used by Container, Accordion, Callout, CodeBlock, FileTree, FilePicker, Table, Stepper and InlineCodeText.",
@@ -32935,7 +32935,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.trigger",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-trigger",
       description:
         "Corner radius for triggers interfaces (6px, `border-radius.sm`). Used by Tabs (indicators).",
@@ -32955,7 +32955,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.button",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-sm)",
       cssVar: "--cu-border-radius-button",
       description:
         "Corner radius for triggers and other pressable elements (8px, `border-radius.lg`). Used by Button, Badge, DatePicker triggers, SearchInput results, Select items, Tabs triggers and CodeBlock header controls. Circular and rounded Button variants override it.",
@@ -33035,7 +33035,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "border-radius.drawer",
       type: "dimension",
-      value: "var(--border-radius-2xl)",
+      value: "var(--border-radius-lg)",
       cssVar: "--cu-border-radius-drawer",
       description:
         "Corner radius for drawers (32px, `border-radius.4xl`). The large rounding marks a panel that slides over the page from an edge. Used as the default `borderRadius` of Drawer.",

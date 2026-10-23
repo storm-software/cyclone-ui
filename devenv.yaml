@@ -10,3 +10,4 @@ imports:
   - storm-ops/devenv-modules/python
   - storm-ops/devenv-modules/graphify
   - storm-ops/devenv-modules/agents
+  - storm-ops/devenv-modules/sourcebook

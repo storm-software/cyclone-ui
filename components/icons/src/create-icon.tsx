@@ -73,12 +73,16 @@ export function resolveIconSize(
 }
 
 /**
- * The stroke added around the `bold` paths to draw the `black` weight.
+ * Outline weights whose paths carry an extra `strokeWidth` from `scripts/generate.ts`.
  *
- * @remarks
- * Phosphor `bold` lines are 24 units wide on the 256x256 grid. Stroking the outline by 10 units (5 on each side) makes them 34 units wide, 41.67% thicker.
+ * Fill and duotone are solid shapes and must not inherit that stroke.
  */
-// const BLACK_STROKE_WIDTH = 10;
+const OUTLINE_WEIGHTS = new Set<IconProps["weight"]>([
+  "thin",
+  "light",
+  "regular",
+  "bold"
+]);
 
 /**
  * Web-only CSS transition for the icon color (not part of React Native's style types).
@@ -91,7 +95,7 @@ const COLOR_TRANSITION = {
  * Create a themed Tamagui icon component from the SVG contents of each Phosphor weight.
  *
  * @remarks
- * Phosphor icons are drawn with fills (not strokes) on a 256x256 grid, so the resolved `color` is applied as the SVG `fill`. The `strokeWidth` prop supplied by `themed` is ignored. The `black` weight renders the `bold` paths with an added stroke of the same color.
+ * Phosphor icons are drawn with fills on a 256×256 grid, so the resolved `color` is applied as the SVG `fill`. Outline weights also carry a `strokeWidth` (12.5% of the designed stroke) which is painted with the same color. Fill and duotone are left unstroked. The `strokeWidth` prop supplied by `themed` is ignored.
  *
  * @param displayName - The display name of the icon component.
  * @param weights - The SVG contents of the icon for each weight.
@@ -112,15 +116,16 @@ export function createIcon(
       ...otherProps
     } = props;
 
-    // ponytail: fill and stroke overlap, so a translucent `color` shows a darker band inside the edges of `black` icons; generate offset paths if that matters
-    const contents = weights[weight] ?? weights.regular;
-    // weight === "black" ? (
-    //   <G stroke={color} strokeLinejoin="round" strokeLinecap="round">
-    //     {weights.bold}
-    //   </G>
-    // ) : (
-    //   (weights[weight] ?? weights.regular)
-    // );
+    const resolvedWeight = weights[weight] ? weight : "regular";
+    const contents = weights[resolvedWeight];
+    // Stroke is centered on the filled outline, so this width is the amount added to the designed stroke.
+    const painted = OUTLINE_WEIGHTS.has(resolvedWeight) ? (
+      <G stroke={color} strokeLinecap="round" strokeLinejoin="round">
+        {contents}
+      </G>
+    ) : (
+      contents
+    );
 
     return (
       <Svg
@@ -129,13 +134,11 @@ export function createIcon(
         viewBox="0 0 256 256"
         fill={color}
         {...otherProps}
-        // The color is an SVG attribute, outside Tamagui's transitions; fade
-        // it on web with the 200ms used by the surrounding controls.
-        style={{ ...COLOR_TRANSITION, ...StyleSheet.flatten(style) }}>
+        style={{ ...COLOR_TRANSITION, overflow: "visible", ...StyleSheet.flatten(style) }}>
         {mirrored ? (
-          <G transform="matrix(-1 0 0 1 256 0)">{contents}</G>
+          <G transform="matrix(-1 0 0 1 256 0)">{painted}</G>
         ) : (
-          contents
+          painted
         )}
       </Svg>
     );

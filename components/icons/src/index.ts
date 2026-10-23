@@ -20,8 +20,9 @@
 
 export * from "./all";
 export * from "./create-icon";
-export { Acorn } from "./icons/Acorn";
+export * from "./types";
 
+export { Acorn } from "./icons/Acorn";
 export { AddressBook } from "./icons/AddressBook";
 export { AddressBookTabs } from "./icons/AddressBookTabs";
 export { Airplane } from "./icons/Airplane";
@@ -1533,4 +1534,3 @@ export { XSquare } from "./icons/XSquare";
 export { Yarn } from "./icons/Yarn";
 export { YinYang } from "./icons/YinYang";
 export { YoutubeLogo } from "./icons/YoutubeLogo";
-export * from "./types";

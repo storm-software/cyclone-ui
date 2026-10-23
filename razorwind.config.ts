@@ -39,16 +39,13 @@ import preprocessor from "./packages/theme-builder/src/preprocessor";
 export default defineConfig({
   name: "cyclone-ui",
   title: "Cyclone UI",
+  description:
+    "A modern and minimal style over an intuitive, well-structured design system. Cyclone UI was built with a deep focus on color theory, cross-platform design, and user experience.",
   homepage: "https://cyclone-ui.com",
   logo: "https://public.storm-cdn.com/cyclone-ui/assets/dark-logo.svg",
   verbose: true,
   splitThemes: true,
-  fontsPath: [
-    "fonts/storm-sans/dist/otf",
-    "fonts/storm-sans/dist/ttf",
-    "fonts/storm-serif/dist/otf",
-    "fonts/storm-serif/dist/ttf"
-  ],
+  fontsPath: ["fonts/storm-sans/dist/otf", "fonts/storm-sans/dist/ttf",   "fonts/storm-serif/dist/otf", "fonts/storm-serif/dist/ttf"],
   fontAssetsUrl: "https://public.storm-cdn.com/fonts",
   tokensPath: "packages/tokens/src/tokens/**/*.json",
   componentsPath: ["components"],

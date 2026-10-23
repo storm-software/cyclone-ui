@@ -17,6 +17,9 @@ shiki
 uncentered
 pmtiles
 ttfautohint
+graphify
+lxml
+repacker
 
 # Shorthands
 maxh

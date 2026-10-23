@@ -1,6 +1,6 @@
 # Cyclone UI (Light High Contrast)
 
-> 🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.
+> A modern and minimal style over an intuitive, well-structured design system. Cyclone UI was built with a deep focus on color theory, cross-platform design, and user experience.
 
 ## Design System Reference
 

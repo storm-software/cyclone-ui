@@ -42,6 +42,33 @@ const WEIGHTS = [
 
 type IconWeight = (typeof WEIGHTS)[number];
 
+/**
+ * Designed stroke width of each outline weight, in units of the 256×256 grid.
+ *
+ * Phosphor draws thin, light, regular, and bold as filled outlines of these widths. Fill and duotone are solid shapes and are not thickened.
+ */
+const DESIGNED_STROKE_WIDTH = {
+  thin: 8,
+  light: 12,
+  regular: 16,
+  bold: 24
+} as const;
+
+type StrokedWeight = keyof typeof DESIGNED_STROKE_WIDTH;
+
+/**
+ * Extra thickness applied to the outline weights.
+ *
+ * A centered stroke of this fraction of the designed width adds that fraction to the visible stroke. `1 / 8` is 12.5%, inside the requested 10–15% increase.
+ */
+const STROKE_THICKNESS = 1 / 8;
+
+const isStrokedWeight = (weight: IconWeight): weight is StrokedWeight =>
+  Object.hasOwn(DESIGNED_STROKE_WIDTH, weight);
+
+const extraStrokeWidth = (weight: StrokedWeight) =>
+  DESIGNED_STROKE_WIDTH[weight] * STROKE_THICKNESS;
+
 interface IconPath {
   d: string;
   opacity?: number;
@@ -188,10 +215,14 @@ function parseSvg(svg: string, file: string): IconPath[] {
   });
 }
 
-const renderPaths = (paths: IconPath[]) => {
+const renderPaths = (paths: IconPath[], weight: IconWeight) => {
+  // The centered stroke is painted by `createIcon` in the icon color. Fill and duotone stay unstroked.
+  const stroke = isStrokedWeight(weight)
+    ? ` strokeWidth={${extraStrokeWidth(weight)}}`
+    : "";
   const elements = paths.map(
     ({ d, opacity }) =>
-      `<SvgPath d="${d}"${opacity === undefined ? "" : ` opacity={${opacity}}`} />`
+      `<SvgPath d="${d}"${opacity === undefined ? "" : ` opacity={${opacity}}`}${stroke} />`
   );
 
   return elements.length === 1
@@ -214,7 +245,7 @@ import { createIcon } from "../create-icon";
  */
 export const ${icon.component} = createIcon("${icon.component}", {
 ${WEIGHTS.map(
-  weight => `  ${weight}: (\n${renderPaths(icon.weights[weight])}\n  )`
+  weight => `  ${weight}: (\n${renderPaths(icon.weights[weight], weight)}\n  )`
 ).join(",\n")}
 });
 `;
@@ -235,7 +266,11 @@ const renderAll = (spec: IconsSpec) => `${HEADER}
 ${GENERATED_NOTICE(spec.version)}
 
 ${spec.icons
-  .map(icon => `import { ${icon.component} } from "./icons/${icon.component}";`)
+  .map(icon =>
+    icon.component === "Infinity"
+      ? `// eslint-disable-next-line no-shadow-restricted-names\nimport { ${icon.component} } from "./icons/${icon.component}";`
+      : `import { ${icon.component} } from "./icons/${icon.component}";`
+  )
   .join("\n")}
 import type { IconComponent } from "./types";
 

@@ -30,6 +30,9 @@ export default defineConfig(
     },
     tsdoc: {
       configFile: "@powerlines/tsdoc/recommended.json"
+    },
+    tamagui: {
+      configPath: "packages/tokens/src/tamagui/config.ts"
     }
   },
   {

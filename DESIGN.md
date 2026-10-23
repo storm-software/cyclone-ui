@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: "Cyclone UI"
-description: "🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI."
+description: "A modern and minimal style over an intuitive, well-structured design system. Cyclone UI was built with a deep focus on color theory, cross-platform design, and user experience."
 colors:
   emphasis: "#242528"
   ink: "#555659"
@@ -306,6 +306,8 @@ spacing:
   64xl: "788px"
 ---
 
+<!-- razorwind configuration start -->
+
 ## Overview
 
 Cyclone UI design tokens — 211 color tokens, 6 typography tokens, 70 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
@@ -607,3 +609,5 @@ Spacing scale:
 - **62xl:** 760px
 - **63xl:** 774px
 - **64xl:** 788px
+
+<!-- razorwind configuration end -->

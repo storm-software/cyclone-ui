@@ -733,7 +733,7 @@
         "@tamagui/stacks@3.0.13",
         "@tamagui/text@3.0.13",
         "@tanstack/react-table@^8.21.3",
-        "@tanstack/react-virtual@^3.14.21",
+        "@tanstack/react-virtual@^3.14.22",
         "@tanstack/table-core@^8.21.3"
       ],
       "devDependencies": [

@@ -36,7 +36,8 @@ const meta: Meta<GalleryArgs> = {
   args: {
     weight: "regular",
     size: 32,
-    mirrored: false
+    mirrored: false,
+    color: "primary"
   },
   argTypes: {
     weight: {

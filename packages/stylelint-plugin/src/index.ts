@@ -90,7 +90,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-button",
       type: "dimension",
       category: "radius",
-      value: "0.375rem",
+      value: "0.25rem",
       alias: true
     },
     {
@@ -114,7 +114,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-container",
       type: "dimension",
       category: "radius",
-      value: "1rem",
+      value: "0.5rem",
       alias: true
     },
     {
@@ -138,7 +138,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-drawer",
       type: "dimension",
       category: "radius",
-      value: "1rem",
+      value: "0.5rem",
       alias: true
     },
     {
@@ -222,7 +222,7 @@ export const manifest: DesignSystemManifest = {
       cssVar: "--storm-border-radius-trigger",
       type: "dimension",
       category: "radius",
-      value: "0.375rem",
+      value: "0.25rem",
       alias: true
     },
     {

@@ -29,10 +29,27 @@ import { createIcon } from "../create-icon";
  * @see https://phosphoricons.com/?q=line-vertical
  */
 export const LineVertical = createIcon("LineVertical", {
-  thin: <SvgPath d="M132,24V232a4,4,0,0,1-8,0V24a4,4,0,0,1,8,0Z" />,
-  light: <SvgPath d="M134,24V232a6,6,0,0,1-12,0V24a6,6,0,0,1,12,0Z" />,
-  regular: <SvgPath d="M136,24V232a8,8,0,0,1-16,0V24a8,8,0,0,1,16,0Z" />,
-  bold: <SvgPath d="M140,24V232a12,12,0,0,1-24,0V24a12,12,0,0,1,24,0Z" />,
+  thin: (
+    <SvgPath d="M132,24V232a4,4,0,0,1-8,0V24a4,4,0,0,1,8,0Z" strokeWidth={1} />
+  ),
+  light: (
+    <SvgPath
+      d="M134,24V232a6,6,0,0,1-12,0V24a6,6,0,0,1,12,0Z"
+      strokeWidth={1.5}
+    />
+  ),
+  regular: (
+    <SvgPath
+      d="M136,24V232a8,8,0,0,1-16,0V24a8,8,0,0,1,16,0Z"
+      strokeWidth={2}
+    />
+  ),
+  bold: (
+    <SvgPath
+      d="M140,24V232a12,12,0,0,1-24,0V24a12,12,0,0,1,24,0Z"
+      strokeWidth={3}
+    />
+  ),
   fill: (
     <SvgPath d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM136,192a8,8,0,0,1-16,0V64a8,8,0,0,1,16,0Z" />
   ),

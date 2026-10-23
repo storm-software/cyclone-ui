@@ -29,10 +29,27 @@ import { createIcon } from "../create-icon";
  * @see https://phosphoricons.com/?q=dot
  */
 export const Dot = createIcon("Dot", {
-  thin: <SvgPath d="M136,128a8,8,0,1,1-8-8A8,8,0,0,1,136,128Z" />,
-  light: <SvgPath d="M138,128a10,10,0,1,1-10-10A10,10,0,0,1,138,128Z" />,
-  regular: <SvgPath d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z" />,
-  bold: <SvgPath d="M144,128a16,16,0,1,1-16-16A16,16,0,0,1,144,128Z" />,
+  thin: (
+    <SvgPath d="M136,128a8,8,0,1,1-8-8A8,8,0,0,1,136,128Z" strokeWidth={1} />
+  ),
+  light: (
+    <SvgPath
+      d="M138,128a10,10,0,1,1-10-10A10,10,0,0,1,138,128Z"
+      strokeWidth={1.5}
+    />
+  ),
+  regular: (
+    <SvgPath
+      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
+      strokeWidth={2}
+    />
+  ),
+  bold: (
+    <SvgPath
+      d="M144,128a16,16,0,1,1-16-16A16,16,0,0,1,144,128Z"
+      strokeWidth={3}
+    />
+  ),
   fill: (
     <SvgPath d="M128,80a48,48,0,1,0,48,48A48,48,0,0,0,128,80Zm0,60a12,12,0,1,1,12-12A12,12,0,0,1,128,140Z" />
   ),

@@ -29,10 +29,24 @@ import { createIcon } from "../create-icon";
  * @see https://phosphoricons.com/?q=cell-signal-none
  */
 export const CellSignalNone = createIcon("CellSignalNone", {
-  thin: <SvgPath d="M44,192v8a4,4,0,0,1-8,0v-8a4,4,0,0,1,8,0Z" />,
-  light: <SvgPath d="M46,192v8a6,6,0,0,1-12,0v-8a6,6,0,0,1,12,0Z" />,
-  regular: <SvgPath d="M48,192v8a8,8,0,0,1-16,0v-8a8,8,0,0,1,16,0Z" />,
-  bold: <SvgPath d="M52,192v8a12,12,0,0,1-24,0v-8a12,12,0,0,1,24,0Z" />,
+  thin: (
+    <SvgPath d="M44,192v8a4,4,0,0,1-8,0v-8a4,4,0,0,1,8,0Z" strokeWidth={1} />
+  ),
+  light: (
+    <SvgPath
+      d="M46,192v8a6,6,0,0,1-12,0v-8a6,6,0,0,1,12,0Z"
+      strokeWidth={1.5}
+    />
+  ),
+  regular: (
+    <SvgPath d="M48,192v8a8,8,0,0,1-16,0v-8a8,8,0,0,1,16,0Z" strokeWidth={2} />
+  ),
+  bold: (
+    <SvgPath
+      d="M52,192v8a12,12,0,0,1-24,0v-8a12,12,0,0,1,24,0Z"
+      strokeWidth={3}
+    />
+  ),
   fill: (
     <SvgPath d="M198.12,25.23a16,16,0,0,0-17.44,3.46l-160,160A16,16,0,0,0,32,216H192a16,16,0,0,0,16-16V40A15.94,15.94,0,0,0,198.12,25.23ZM192,200H32L192,40Z" />
   ),
