@@ -26,7 +26,7 @@ import {
 } from "@storm-software/config-tools/logger/console";
 import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { dirname, join } from "node:path";
+import { dirname, join, posix } from "node:path";
 import { buildComponentRegistry, registrySegment } from "./registry";
 import type { ComponentPublishExecutorSchema } from "./schema";
 
@@ -35,6 +35,63 @@ const commentBannerPattern =
 
 function removeCommentBanner(content: string): string {
   return content.replace(commentBannerPattern, "");
+}
+
+async function transformComponentImports(
+  filename: string,
+  content: string,
+  componentName: string,
+  dependencies: string[]
+): Promise<string> {
+  if (!/\.[cm]?[jt]sx?$/.test(filename)) return content;
+
+  const componentNames = new Set(
+    dependencies.map(dependency => dependency.replace(/^@cyclone-ui\//, ""))
+  );
+
+  const { default: ts } = await import("typescript");
+  const source = ts.createSourceFile(filename, content, ts.ScriptTarget.Latest);
+  const edits: { start: number; end: number; value: string }[] = [];
+
+  const rewrite = (node: import("typescript").Node) => {
+    if (!ts.isStringLiteralLike(node)) return;
+
+    const match = /^@cyclone-ui\/([^/]+)(\/.*)?$/.exec(node.text);
+    if (!match || !componentNames.has(match[1]!)) return;
+
+    const installedPath = posix.resolve("/", componentName, filename);
+    const target = posix.resolve("/", match[1]!, `.${match[2] ?? ""}`);
+
+    let specifier = posix.relative(posix.dirname(installedPath), target);
+    if (!specifier.startsWith(".")) specifier = `./${specifier}`;
+    edits.push({
+      start: node.getStart(source) + 1,
+      end: node.getEnd() - 1,
+      value: specifier
+    });
+  };
+
+  const visit = (node: import("typescript").Node) => {
+    if (ts.isImportDeclaration(node) || ts.isExportDeclaration(node)) {
+      if (node.moduleSpecifier) rewrite(node.moduleSpecifier);
+    } else if (
+      ts.isCallExpression(node) &&
+      (node.expression.kind === ts.SyntaxKind.ImportKeyword ||
+        (ts.isIdentifier(node.expression) &&
+          node.expression.text === "require"))
+    ) {
+      if (node.arguments.length === 1) rewrite(node.arguments[0]!);
+    } else if (ts.isImportTypeNode(node) && ts.isLiteralTypeNode(node.argument))
+      rewrite(node.argument.literal);
+
+    ts.forEachChild(node, visit);
+  };
+  visit(source);
+
+  for (const edit of edits.sort((a, b) => b.start - a.start))
+    content =
+      content.slice(0, edit.start) + edit.value + content.slice(edit.end);
+  return content;
 }
 
 export default async function runExecutor(
@@ -70,10 +127,17 @@ export default async function runExecutor(
     for (const component of items) {
       const publishedItem = {
         ...component.item,
-        files: component.item.files.map(file => ({
-          ...file,
-          content: removeCommentBanner(file.content)
-        }))
+        files: await Promise.all(
+          component.item.files.map(async file => ({
+            ...file,
+            content: await transformComponentImports(
+              file.path,
+              removeCommentBanner(file.content),
+              component.name,
+              component.item.registryDependencies
+            )
+          }))
+        )
       };
 
       await write(

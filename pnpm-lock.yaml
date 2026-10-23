@@ -5403,6 +5403,9 @@ importers:
       nx:
         specifier: 'catalog:'
         version: 23.3.0(@swc-node/register@1.11.1(@swc/core@1.16.18(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.18(@swc/helpers@0.5.23))
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
       untyped:
         specifier: 'catalog:'
         version: 2.0.0

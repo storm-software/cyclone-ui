@@ -63,7 +63,7 @@ async function workspace() {
     await writeFile(
       join(root, `components/${name}/src/nested/${name}.tsx`),
       name === "button"
-        ? '/* -------------------------------------------------------------------\n\n Component source banner\n\n ------------------------------------------------------------------- */\n\n"use client";\n// This comment is part of the component source.\nexport { Label } from "@cyclone-ui/label";\nexport { helper } from "@cyclone-ui/helpers";'
+        ? '/* -------------------------------------------------------------------\n\n Component source banner\n\n ------------------------------------------------------------------- */\n\n"use client";\n// This comment is part of the component source.\nimport { Label } from "@cyclone-ui/label";\nexport { Label };\nexport { helper } from "@cyclone-ui/helpers";'
         : 'export const Label = "label";'
     );
     await writeFile(
@@ -206,7 +206,7 @@ describe("public component publishing", () => {
       await expect(readFile(join(path, "registry.json"))).rejects.toThrow();
   });
 
-  it("removes leading comment banners from component files before uploading", async () => {
+  it("prepares component files for local installation before uploading", async () => {
     const { context } = await workspace();
     let content: string | undefined;
     mocks.upload.mockImplementation(async options => {
@@ -228,7 +228,7 @@ describe("public component publishing", () => {
       success: true
     });
     expect(content).toBe(
-      '"use client";\n// This comment is part of the component source.\nexport { Label } from "@cyclone-ui/label";\nexport { helper } from "@cyclone-ui/helpers";'
+      '"use client";\n// This comment is part of the component source.\nimport { Label } from "../../label";\nexport { Label };\nexport { helper } from "@cyclone-ui/helpers";'
     );
   });
 
