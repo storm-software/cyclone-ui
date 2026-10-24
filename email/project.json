@@ -16,22 +16,13 @@
     "export": {
       "executor": "nx:run-commands",
       "cache": true,
-      "inputs": ["{projectRoot}/src/**/*"],
+      "inputs": [
+        "{projectRoot}/src/**/*",
+        "{workspaceRoot}/packages/tokens/src/tailwindcss/*.css"
+      ],
       "outputs": ["{workspaceRoot}/dist/email"],
       "options": {
         "command": "email export --dir src/templates --outDir ../dist/email",
-        "cwd": "email"
-      }
-    },
-    "test": {
-      "executor": "nx:run-commands",
-      "cache": true,
-      "inputs": [
-        "{projectRoot}/src/**/*",
-        "{workspaceRoot}/packages/tokens/src/js/tokens-*.js"
-      ],
-      "options": {
-        "command": "node --test src/theme.test.ts",
         "cwd": "email"
       }
     }

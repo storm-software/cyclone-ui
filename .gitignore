@@ -19,6 +19,7 @@ graphify-out
 SF-Pro.dmg
 
 packages/tokens/src/css/fonts
+packages/tokens/src/tailwindcss/fonts
 
 # dependencies
 node_modules

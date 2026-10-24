@@ -29,7 +29,7 @@ import {
   Tailwind
 } from "react-email";
 import type { EmailMode } from "../theme";
-import { getTailwindConfig } from "../theme";
+import { tailwindConfig, themes } from "../theme";
 import type { FooterProps } from "./Footer";
 import { Footer } from "./Footer";
 
@@ -65,7 +65,7 @@ export const EmailLayout = ({
   children
 }: EmailLayoutProps) => (
   <Html lang="en">
-    <Tailwind config={getTailwindConfig(mode)}>
+    <Tailwind config={tailwindConfig} theme={themes[mode]}>
       <Head>
         {/* Each `Font` also sets `* { font-family }`, so Storm Sans goes last */}
         <Font

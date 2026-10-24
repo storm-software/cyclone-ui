@@ -30,10 +30,7 @@ const config: UserConfig = defineConfig({
   platform: "browser",
   plugins: [
     tsdown({
-      unbundle: true,
-      // The output keeps its JSX; minifying renames components to lowercase
-      // identifiers, which JSX then treats as HTML tags (`<v>`).
-      minify: false
+      unbundle: true
     })
   ]
 });

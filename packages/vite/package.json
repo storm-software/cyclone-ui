@@ -1,0 +1,35 @@
+{
+  "name": "@cyclone-ui/vite",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A Vite plugin that sets up Tamagui and Cyclone UI components in Vite applications.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/vite"
+  },
+  "private": false,
+  "keywords": ["cyclone-ui", "tamagui", "vite", "vite-plugin"],
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.mts",
+  "dependencies": {
+    "@tamagui/vite-plugin": "catalog:"
+  },
+  "peerDependencies": {
+    "@cyclone-ui/tokens": "workspace:^",
+    "react-native-web": "catalog:",
+    "vite": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/tokens": "workspace:*",
+    "@powerlines/plugin-tsdown": "catalog:",
+    "powerlines": "catalog:",
+    "vite": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

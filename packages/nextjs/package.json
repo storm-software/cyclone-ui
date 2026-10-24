@@ -1,0 +1,87 @@
+{
+  "name": "@cyclone-ui/nextjs",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A Next.js config wrapper and root provider that set up Tamagui and Cyclone UI components in Next.js applications.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/nextjs"
+  },
+  "private": false,
+  "keywords": ["cyclone-ui", "tamagui", "nextjs", "next-plugin"],
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./package.json": "./package.json",
+    "./provider": {
+      "require": {
+        "types": "./dist/provider.d.cts",
+        "default": "./dist/provider.cjs"
+      },
+      "import": {
+        "types": "./dist/provider.d.mts",
+        "default": "./dist/provider.mjs"
+      },
+      "default": {
+        "types": "./dist/provider.d.mts",
+        "default": "./dist/provider.mjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@tamagui/next-theme": "catalog:"
+  },
+  "peerDependencies": {
+    "@cyclone-ui/state": "workspace:^",
+    "@cyclone-ui/tokens": "workspace:^",
+    "@tamagui/core": "catalog:",
+    "@tamagui/next-plugin": "catalog:",
+    "@tamagui/react-native-svg": "catalog:",
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-native": "catalog:",
+    "react-native-web": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "@tamagui/next-plugin": {
+      "optional": true
+    },
+    "@tamagui/react-native-svg": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@cyclone-ui/state": "workspace:*",
+    "@cyclone-ui/tokens": "workspace:*",
+    "@powerlines/plugin-tsdown": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/next-plugin": "catalog:",
+    "@types/react": "catalog:",
+    "next": "catalog:",
+    "powerlines": "catalog:",
+    "react": "catalog:",
+    "react-native-web": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

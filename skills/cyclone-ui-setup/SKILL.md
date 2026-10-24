@@ -54,6 +54,8 @@ export function Providers({ children }: PropsWithChildren) {
 }
 ```
 
+In a Next.js or Vite app, don't hand-write this provider: follow the **cyclone-ui-nextjs** skill (`@cyclone-ui/nextjs`: `withCycloneUI` + `CycloneUIProvider`) or the **cyclone-ui-vite** skill (`@cyclone-ui/vite`: `cycloneUI()` + `ThemeProvider` with `disableInjectCSS={false}`). They cover the bundler config, theme switching, and framework-specific pitfalls.
+
 Put the provider in a client boundary when the framework requires one. Use a matching `light_base` theme for light mode. Add component-specific providers only when the chosen components need them. The token package already supplies the generated Tamagui config; a custom `razorwind.config.ts` and `cyclone-ui build` are for a requested custom-token workflow, not baseline component installation.
 
 ## Verify the consumer workspace

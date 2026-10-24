@@ -140,6 +140,97 @@ describe("static public registry", () => {
     ).toEqual([]);
   });
 
+  it("installs every email component and its theme stylesheets from the one published item", async () => {
+    const source = await mkdtemp(join(tmpdir(), "cyclone-producer-"));
+    const root = await mkdtemp(join(tmpdir(), "cyclone-consumer-"));
+    roots.push(source, root);
+    await writeFile(
+      join(source, "pnpm-workspace.yaml"),
+      'catalog:\n  react-email: "^6.0.0"\n'
+    );
+    await mkdir(join(source, "email/src/components"), { recursive: true });
+    await mkdir(join(source, "packages/tokens/src/tailwindcss"), {
+      recursive: true
+    });
+    await writeFile(
+      join(source, "email/package.json"),
+      JSON.stringify({
+        name: "@cyclone-ui/email",
+        version: "0.1.0",
+        private: true,
+        dependencies: { "react-email": "catalog:" }
+      })
+    );
+    await writeFile(
+      join(source, "email/src/components/Button.tsx"),
+      'export { themes as Button } from "../theme";'
+    );
+    await writeFile(
+      join(source, "email/src/theme.ts"),
+      'import light from "../../packages/tokens/src/tailwindcss/tokens-light.css?raw";\nexport const themes = { light };'
+    );
+    await writeFile(
+      join(source, "email/src/css.d.ts"),
+      'declare module "*.css?raw" {\n  const css: string;\n  export default css;\n}'
+    );
+    await writeFile(
+      join(source, "packages/tokens/src/tailwindcss/tokens-light.css"),
+      "@theme {}"
+    );
+    const { item } = await buildComponentRegistry({
+      root: source,
+      projectName: "email",
+      projectsConfigurations: {
+        version: 2,
+        projects: {
+          email: { name: "email", root: "email", sourceRoot: "email/src" }
+        }
+      }
+    } as unknown as ExecutorContext);
+    serve({ "components/email.json": item });
+    await writeFile(join(root, "package.json"), '{"name":"consumer"}');
+    const config = createConfig({
+      registry: "https://example.com/custom/registry"
+    });
+
+    const plan = await createInstallPlan(
+      registryClient(config.registry),
+      config,
+      ["email"],
+      { root }
+    );
+    await applyInstallPlan(config, plan, { root });
+
+    expect(
+      await readFile(
+        join(root, "components/email/tailwindcss/tokens-light.css"),
+        "utf8"
+      )
+    ).toBe("@theme {}");
+    expect(
+      JSON.parse(await readFile(join(root, "package.json"), "utf8"))
+        .dependencies
+    ).toEqual({ "react-email": "^6.0.0" });
+    expect((await readConfig(root))?.components.email?.files).toHaveLength(4);
+    const { default: ts } = await import("typescript");
+    const program = ts.createProgram(
+      plan.files.map(file => file.path).filter(path => /\.tsx?$/.test(path)),
+      {
+        noEmit: true,
+        types: [],
+        module: ts.ModuleKind.ESNext,
+        moduleResolution: ts.ModuleResolutionKind.Bundler
+      }
+    );
+    expect(
+      ts
+        .getPreEmitDiagnostics(program)
+        .map(diagnostic =>
+          ts.flattenDiagnosticMessageText(diagnostic.messageText, "\n")
+        )
+    ).toEqual([]);
+  });
+
   it("downloads components into a separate repository with local imports and real package dependencies", async () => {
     const root = await mkdtemp(join(tmpdir(), "cyclone-consumer-"));
     roots.push(root);

@@ -1,0 +1,17 @@
+{
+  "skill_name": "cyclone-ui-vite",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Set up Cyclone UI in my Vite + React + TS app (pnpm, src/main.tsx, @vitejs/plugin-react-swc). It should follow the OS light/dark preference.",
+      "expected_output": "Installs @cyclone-ui/vite and runtime deps, adds cycloneUI() after react(), wraps the app in ThemeProvider with disableInjectCSS={false} and a mode-following _base Theme.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Vite app, package.json has no \"type\" field and vite.config.js already registers tamaguiPlugin({ config: './src/tamagui.config.ts' }) from @tamagui/vite-plugin. Switch it to the Cyclone vite plugin but keep our custom tamagui config.",
+      "expected_output": "Replaces tamaguiPlugin with cycloneUI({ config: './src/tamagui.config.ts' }), handles ESM-only by renaming to vite.config.mts, and passes the same config to ThemeProvider.",
+      "files": []
+    }
+  ]
+}

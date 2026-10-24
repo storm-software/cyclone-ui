@@ -31,6 +31,7 @@ import shiki from "@razorwind/shiki/generate";
 import storybook from "@razorwind/storybook/generate";
 import styleDictionary from "@razorwind/style-dictionary";
 import stylelint from "@razorwind/stylelint";
+import tailwindcss from "@razorwind/tailwindcss/generate";
 import { tokenColors } from "./maps/styles/src/create-flavor";
 import { createStyle } from "./maps/styles/src/create-style";
 import generate from "./packages/theme-builder/src/generate";
@@ -45,7 +46,12 @@ export default defineConfig({
   logo: "https://public.storm-cdn.com/cyclone-ui/assets/dark-logo.svg",
   verbose: true,
   splitThemes: true,
-  fontsPath: ["fonts/storm-sans/dist/otf", "fonts/storm-sans/dist/ttf",   "fonts/storm-serif/dist/otf", "fonts/storm-serif/dist/ttf"],
+  fontsPath: [
+    "fonts/storm-sans/dist/otf",
+    "fonts/storm-sans/dist/ttf",
+    "fonts/storm-serif/dist/otf",
+    "fonts/storm-serif/dist/ttf"
+  ],
   fontAssetsUrl: "https://public.storm-cdn.com/fonts",
   tokensPath: "packages/tokens/src/tokens/**/*.json",
   componentsPath: ["components"],
@@ -286,6 +292,11 @@ export default defineConfig({
     css({
       outputPath: "packages/tokens/src/css/tokens.css",
       prefix: "storm"
+    }),
+    // Theme-only `@theme` blocks, so React Email's `<Tailwind theme>` can load them
+    tailwindcss({
+      cssPath: "packages/tokens/src/tailwindcss/tokens.css",
+      includeImport: false
     }),
     styleDictionary({
       platforms: {

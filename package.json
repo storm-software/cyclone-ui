@@ -102,6 +102,7 @@
     "@razorwind/storybook": "catalog:",
     "@razorwind/style-dictionary": "catalog:",
     "@razorwind/stylelint": "catalog:",
+    "@razorwind/tailwindcss": "catalog:",
     "@razorwind/tamagui": "catalog:",
     "@react-native-community/cli": "catalog:",
     "@react-native-community/cli-platform-android": "catalog:",

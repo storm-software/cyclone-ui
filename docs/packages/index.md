@@ -18,6 +18,8 @@ For the design system itself (components, tokens, fonts, and icons), see the [de
 | [`@cyclone-ui/cli`](./cli.md) | Yes | The `cyclone-ui` command. Copies components, compares them with the registry, and builds a Tamagui config. |
 | [`@cyclone-ui/helpers`](./helpers.md) | Yes | Helpers that turn Tamagui tokens into sizes and font styles. Also the form-control context. |
 | [`@cyclone-ui/state`](./state.md) | Yes | Theme mode, toast messages, form and field state, and Jotai atom helpers. |
+| [`@cyclone-ui/nextjs`](./nextjs.md) | Yes | A Next.js config wrapper and root provider for Tamagui and Cyclone UI. |
+| [`@cyclone-ui/vite`](./vite.md) | Yes | A Vite plugin that sets up Tamagui and Cyclone UI. |
 | [`@cyclone-ui/tokens`](./tokens.md) | Yes | The generated Tamagui config, CSS themes, and token source files. |
 | [`@cyclone-ui/theme-builder`](./theme-builder.md) | Yes | Razorwind plugins that preprocess tokens and generate the Tamagui config. |
 | [`@cyclone-ui/shiki`](./shiki.md) | Yes | Six Shiki themes for syntax highlighting. |
@@ -40,6 +42,9 @@ flowchart LR
   end
   subgraph Runtime
     ST[state] --> HE[helpers]
+    NX[nextjs] --> ST
+    NX --> TOK
+    VT[vite] --> TOK
   end
   subgraph Registry
     CLI[cli] --> RA[registry-api]
@@ -52,6 +57,7 @@ flowchart LR
 
 - `razorwind.config.ts` uses the `theme-builder` plugins. Razorwind generates files in `tokens`, `shiki`, `eslint-plugin`, and `stylelint-plugin` from the token JSON files.
 - `state` depends on `helpers`.
+- `nextjs` depends on `state` and `tokens`. `vite` depends on `tokens`.
 - `cli` depends on `registry-api` and `theme-builder`.
 - The [registry worker](../../apps/registry-worker/README.md) app serves `registry-api`. The [Storybook](../../apps/storybook/README.md) app uses `helpers`, `state`, and `tokens`.
 

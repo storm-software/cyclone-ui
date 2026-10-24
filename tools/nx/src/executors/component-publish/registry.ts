@@ -20,8 +20,11 @@ import type { ExecutorContext, ProjectConfiguration } from "@nx/devkit";
 import { readJsonFile } from "@nx/devkit";
 import { existsSync, readFileSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
-import { join, relative, resolve } from "node:path";
+import { basename, dirname, join, posix, relative, resolve } from "node:path";
 import { parse } from "yaml";
+
+/** The React Email package, published as a single `email` registry item. */
+export const EMAIL_PROJECT_ROOT = "email";
 
 interface PackageManifest {
   name: string;
@@ -78,6 +81,48 @@ async function sourceFiles(
   return files;
 }
 
+// The email item holds the components, the theme they share, and its `?raw`
+// import declarations; the templates are previews and stay behind.
+async function emailSourceFiles(root: string) {
+  const files = [
+    ...(await sourceFiles(root, join(root, "components"))),
+    ...(await Promise.all(
+      ["css.d.ts", "theme.ts"].map(async path => ({
+        path,
+        type: "registry:lib",
+        content: await readFile(join(root, path), "utf8")
+      }))
+    ))
+  ];
+
+  // The theme imports the generated token CSS from outside the source root,
+  // so those stylesheets ship in the item and the imports point at them.
+  const stylesheets = new Map<string, string>();
+  for (const file of files) {
+    file.content = file.content.replace(
+      /(["'])(\.{1,2}\/[^"']+\.css)(\?(?:inline|raw))\1/g,
+      (match, quote: string, specifier: string, query: string) => {
+        const source = resolve(root, dirname(file.path), specifier);
+        if (!relative(root, source).startsWith("..")) return match;
+
+        const path = `tailwindcss/${basename(source)}`;
+        stylesheets.set(path, source);
+        let target = posix.relative(posix.dirname(file.path), path);
+        if (!target.startsWith(".")) target = `./${target}`;
+        return `${quote}${target}${query}${quote}`;
+      }
+    );
+  }
+  for (const [path, source] of stylesheets)
+    files.push({
+      path,
+      type: "registry:file",
+      content: await readFile(source, "utf8")
+    });
+
+  return files;
+}
+
 export async function buildComponentRegistry(
   context: ExecutorContext,
   tag = "latest"
@@ -101,7 +146,8 @@ export async function buildComponentRegistry(
   const current = [...projects.values()].find(
     value => value.project === project
   );
-  if (!current?.component || !current.project.sourceRoot)
+  const email = current?.project.root === EMAIL_PROJECT_ROOT;
+  if (!(current?.component || email) || !current.project.sourceRoot)
     throw new Error(
       "Publishing requires a public component project with a sourceRoot."
     );
@@ -141,9 +187,10 @@ export async function buildComponentRegistry(
     }
     return version;
   };
-  const files = await sourceFiles(
-    resolve(context.root, current.project.sourceRoot)
-  );
+  const sourceRoot = resolve(context.root, current.project.sourceRoot);
+  const files = email
+    ? await emailSourceFiles(sourceRoot)
+    : await sourceFiles(sourceRoot);
   if (!files.length) throw new Error(`No source files found for ${name}.`);
   const source = files.map(file => file.content).join("\n");
   const runtime = { ...manifest.peerDependencies, ...manifest.dependencies };
@@ -169,7 +216,7 @@ export async function buildComponentRegistry(
   const item = {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
     name,
-    type: "registry:component",
+    type: email ? "registry:block" : "registry:component",
     version: manifest.version,
     release: tag,
     title: name,

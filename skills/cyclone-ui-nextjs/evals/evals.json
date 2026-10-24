@@ -1,0 +1,17 @@
+{
+  "skill_name": "cyclone-ui-nextjs",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have a fresh Next.js 16 App Router app (create-next-app, Turbopack, pnpm, src/app). Wire up Cyclone UI so I can use its components, with a light/dark toggle that remembers my choice.",
+      "expected_output": "Installs @cyclone-ui/nextjs and peers, wraps next.config.ts with withCycloneUI, renders CycloneUIProvider in src/app/layout.tsx with suppressHydrationWarning, and builds a client toggle with useThemeSetting.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our next app uses the pages router and builds with `next build --webpack`. next.config.mjs already has withBundleAnalyzer. add cyclone ui without breaking that, and we want the tamagui css extracted to a file in prod",
+      "expected_output": "Composes withBundleAnalyzer(withCycloneUI(...)), installs @tamagui/next-plugin, passes outputCSS, imports it and sets disableInjectCSS, uses skipNextHead={false} in _app, and adds _document style collection.",
+      "files": []
+    }
+  ]
+}

@@ -359,6 +359,12 @@
     },
     {
       "path": "./email"
+    },
+    {
+      "path": "./packages/nextjs"
+    },
+    {
+      "path": "./packages/vite"
     }
   ],
   "files": []

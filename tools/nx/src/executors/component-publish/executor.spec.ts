@@ -232,6 +232,81 @@ describe("public component publishing", () => {
     );
   });
 
+  it("publishes the email components as one item with their theme stylesheets", async () => {
+    const { root, context } = await workspace();
+    await mkdir(join(root, "email/src/components"), { recursive: true });
+    await mkdir(join(root, "email/src/templates"), { recursive: true });
+    await mkdir(join(root, "packages/tokens/src/tailwindcss"), {
+      recursive: true
+    });
+    await writeFile(
+      join(root, "email/package.json"),
+      JSON.stringify({
+        name: "@cyclone-ui/email",
+        version: "0.1.0",
+        private: true,
+        dependencies: { react: "catalog:" }
+      })
+    );
+    await writeFile(
+      join(root, "email/src/components/Button.tsx"),
+      'import { cx } from "../theme";'
+    );
+    await writeFile(
+      join(root, "email/src/theme.ts"),
+      'import light from "../../packages/tokens/src/tailwindcss/tokens-light.css?raw";'
+    );
+    await writeFile(join(root, "email/src/css.d.ts"), "declare module;");
+    await writeFile(join(root, "email/src/templates/welcome.tsx"), "");
+    await writeFile(
+      join(root, "packages/tokens/src/tailwindcss/tokens-light.css"),
+      "@theme {}"
+    );
+    context.projectName = "email";
+    context.projectsConfigurations!.projects.email = {
+      name: "email",
+      root: "email",
+      sourceRoot: "email/src"
+    };
+
+    let item: { files: { path: string; content: string }[] } | undefined;
+    mocks.upload.mockImplementation(async options => {
+      if (!item) {
+        item = JSON.parse(
+          await readFile(join(options.path, "components/email.json"), "utf8")
+        );
+        expect(
+          JSON.parse(
+            await readFile(
+              join(options.path, "components/email/0.1.0.json"),
+              "utf8"
+            )
+          )
+        ).toEqual(item);
+      }
+      return { success: true };
+    });
+
+    expect(await runExecutor({ dryRun: true }, context)).toEqual({
+      success: true
+    });
+    expect(item).toMatchObject({
+      name: "email",
+      type: "registry:block",
+      version: "0.1.0",
+      dependencies: ["react@^19.0.0"],
+      registryDependencies: []
+    });
+    expect(
+      Object.fromEntries(item!.files.map(f => [f.path, f.content]))
+    ).toEqual({
+      "components/Button.tsx": 'import { cx } from "../theme";',
+      "css.d.ts": "declare module;",
+      "theme.ts": 'import light from "./tailwindcss/tokens-light.css?raw";',
+      "tailwindcss/tokens-light.css": "@theme {}"
+    });
+  });
+
   it("does not update discovery after an upload failure", async () => {
     const { context } = await workspace();
     mocks.upload.mockResolvedValue({ success: false });

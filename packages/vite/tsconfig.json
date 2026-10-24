@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/packages/vite/tsconfig.tsbuildinfo",
+    "lib": ["esnext"],
+    "types": ["node"],
+    "outDir": "../../dist/out-tsc/packages/vite"
+  },
+  "references": [{ "path": "../tokens" }],
+  "files": [],
+  "include": ["src/**/*.ts", "powerlines.config.ts", "powerlines.d.ts"]
+}

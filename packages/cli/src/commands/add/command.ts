@@ -59,7 +59,7 @@ export interface AddOptions {
 
 async function handler(
   options: AddOptions,
-  /** Component names to add. */
+  /** Component names to add; `email` adds every React Email component. */
   components: string[] = []
 ) {
   const root = resolve(options.cwd ?? process.cwd());

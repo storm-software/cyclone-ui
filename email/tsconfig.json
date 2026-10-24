@@ -10,5 +10,10 @@
   },
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["src/**/*.test.ts"]
+  "exclude": ["src/**/*.test.tsx"],
+  "references": [
+    {
+      "path": "../packages/tokens"
+    }
+  ]
 }

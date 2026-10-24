@@ -44,7 +44,7 @@ try {
   //   }
 
   // 3) Ensure workspace:* links are up to date
-  proc = $`pnpm update --recursive --workspace`.timeout(`${8 * 60}s`);
+  proc = $`pnpm update --recursive --workspace`.timeout(`${15 * 60}s`);
   proc.stdout.on("data", data => echo`${data}`);
   result = await proc;
   if (result.exitCode !== 0) {
