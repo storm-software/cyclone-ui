@@ -157,23 +157,23 @@ catalogs:
       specifier: ^6.6.8
       version: 6.6.8
     '@shell-shock/core':
-      specifier: ^0.17.32
-      version: 0.17.32
+      specifier: ^0.17.33
+      version: 0.17.33
     '@shell-shock/eslint-plugin':
-      specifier: ^0.0.96
-      version: 0.0.96
+      specifier: ^0.0.97
+      version: 0.0.97
     '@shell-shock/nx':
-      specifier: ^0.0.105
-      version: 0.0.105
+      specifier: ^0.0.106
+      version: 0.0.106
     '@shell-shock/plugin-mcp':
-      specifier: ^0.1.10
-      version: 0.1.10
+      specifier: ^0.1.11
+      version: 0.1.11
     '@shell-shock/plugin-skills':
-      specifier: ^0.0.23
-      version: 0.0.23
+      specifier: ^0.0.24
+      version: 0.0.24
     '@shell-shock/preset-cli':
-      specifier: ^0.9.44
-      version: 0.9.44
+      specifier: ^0.9.45
+      version: 0.9.45
     '@sourcebook/config':
       specifier: ^0.0.12
       version: 0.0.12
@@ -799,7 +799,7 @@ importers:
         version: 18.0.1
       '@shell-shock/nx':
         specifier: 'catalog:'
-        version: 0.0.105(8459e5ee2558f748f52398c16eeb84cb)
+        version: 0.0.106(8459e5ee2558f748f52398c16eeb84cb)
       '@sourcebook/config':
         specifier: 'catalog:'
         version: 0.0.12
@@ -5177,13 +5177,13 @@ importers:
         version: 0.0.28(b333effaab28c18476925cc6041d2658)
       '@shell-shock/core':
         specifier: 'catalog:'
-        version: 0.17.32(07706a331cadcdce0d121dd226cad90f)
+        version: 0.17.33(07706a331cadcdce0d121dd226cad90f)
       '@shell-shock/plugin-theme':
-        specifier: ^0.4.45
-        version: 0.4.45(55239742aa458e12421c71981d118242)
+        specifier: ^0.4.46
+        version: 0.4.46(55239742aa458e12421c71981d118242)
       '@shell-shock/preset-cli':
         specifier: 'catalog:'
-        version: 0.9.44(55239742aa458e12421c71981d118242)
+        version: 0.9.45(55239742aa458e12421c71981d118242)
       '@tamagui/static':
         specifier: 'catalog:'
         version: 3.0.13(@babel/core@8.0.7)(@react-native/babel-preset@0.81.5(@babel/core@8.0.7))(encoding@0.1.13)(react-dom@19.3.1(react@19.3.1))(react-native-gesture-handler@2.21.2(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1)(supports-color@7.2.0))(react@19.3.1))(react-native-safe-area-context@4.14.1(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1)(supports-color@7.2.0))(react@19.3.1))(react-native@0.87.1(@babel/core@8.0.7)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
@@ -5196,13 +5196,13 @@ importers:
     devDependencies:
       '@shell-shock/eslint-plugin':
         specifier: 'catalog:'
-        version: 0.0.96(2bdd5c7c404731502f7407b33d386477)
+        version: 0.0.97(2bdd5c7c404731502f7407b33d386477)
       '@shell-shock/plugin-mcp':
         specifier: 'catalog:'
-        version: 0.1.10(b333effaab28c18476925cc6041d2658)
+        version: 0.1.11(b333effaab28c18476925cc6041d2658)
       '@shell-shock/plugin-skills':
         specifier: 'catalog:'
-        version: 0.0.23(55239742aa458e12421c71981d118242)
+        version: 0.0.24(55239742aa458e12421c71981d118242)
       '@types/node':
         specifier: 'catalog:'
         version: 25.9.9
@@ -10375,11 +10375,6 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
-  '@power-plant/alloy-js@0.0.90':
-    resolution: {integrity: sha512-TNXs82G0sEJEAOt6OzKADFp9OuO0piCqFJ9wP3XzQ6QH8gwKREBEFrWAr/MHpyPYQ+3laIDcbQjDxVgIhVq7Aw==}
-    peerDependencies:
-      '@alloy-js/babel-preset': '>=0.3.0'
-
   '@power-plant/alloy-js@0.0.95':
     resolution: {integrity: sha512-STWpXEqEUMK00AVY3+F/Skz70/cQ4O4ezlbBSuPweo2qS6b6t3vYK0ExDoJ3e/UUlAyHX5+yHEYgRYar51zbhw==}
     peerDependencies:
@@ -10388,17 +10383,11 @@ packages:
   '@power-plant/core@0.0.16':
     resolution: {integrity: sha512-7CEBJE4VsB4dVBmclpIxkQzs6YMjPwEvK9gkjO2u2Afa3JavlsKzAgVHBoo5gFKzuhhd1rRWo46uLVt7Z3l+0g==}
 
-  '@power-plant/core@0.0.93':
-    resolution: {integrity: sha512-RJBLowe2T9BkJFI45mAKGZGNQpKLnRCI+Vbv53lh7uWiO2KFkWXghXyIks3XQrgS+p6wkxWkUFf5mdAHny2euw==}
-
   '@power-plant/core@0.0.98':
     resolution: {integrity: sha512-no0S9zfYuy/LZUVi3677iWK4iMCzUc6rmVelphn/1Aeukthha0BL9hOFVd8n0z09f2H9F3BpWAPOpIu7GFcpYA==}
 
   '@power-plant/dtcg-schema@0.0.1':
     resolution: {integrity: sha512-VkM7yuIbOi/vTPLmleXYxD4mlccCVefYhlgWcb3nafI1ogYYTa7yRb5GMSn0NYefVOCGZGxF1bQ/WSjIqU54/w==}
-
-  '@power-plant/noop-output@0.0.72':
-    resolution: {integrity: sha512-d6q6OTFLOfzXSqAy7pqdmnEgTTWrhM0VvAWNc35uqiv15HTGmwf7X25kDMdfsrLY4sTX/7YWIiHpSSnguW8mow==}
 
   '@power-plant/noop-output@0.0.77':
     resolution: {integrity: sha512-HrfQU1xrtjetxy5NYk0x2AvCKTBiyogIlIc69W9eW8hDXrH3yb/X3ppJlq9URMFGz+/b0DNnQsGZ+W+DDNruzg==}
@@ -10410,17 +10399,6 @@ packages:
 
   '@power-plant/schema@0.0.16':
     resolution: {integrity: sha512-ph+mBwquF++p+nlfQ+FNRhx0UvY8gafQC2HZS0VY8ka0qu/iv+XU7ANDXkfXhmFJPA2Cga9B1fU+1VVExvJ7cA==}
-    peerDependencies:
-      valibot: ^1.4.0 || ^1.5.0
-      zod: ^3.25.0 || ^4.0.0
-    peerDependenciesMeta:
-      valibot:
-        optional: true
-      zod:
-        optional: true
-
-  '@power-plant/schema@0.0.91':
-    resolution: {integrity: sha512-OQ5nWFECMDMd0/IrpQkW9Y8EyTVCLIGJkqFLU/DUs48hcp/Y2SibBXDYykRJWSceDuyFnbvBRck3Jdre5EGekg==}
     peerDependencies:
       valibot: ^1.4.0 || ^1.5.0
       zod: ^3.25.0 || ^4.0.0
@@ -10522,54 +10500,6 @@ packages:
     resolution: {integrity: sha512-cBc0ahVR17LtWBC5Fl1loI2uXOMsDz/DUZn8b7QIlKTVMOrpqMkZbGa4rgJnfWVFzBFBXTuKRpYNL5ADNaxQUg==}
     peerDependencies:
       '@storm-software/tsdoc': '>=0.13.146'
-
-  '@powerlines/unplugin@0.0.181':
-    resolution: {integrity: sha512-ZYOWvFD3GbHKsxtHjPFEuhazWgOiRAOeAY0r2t2GEzBwcQKlfVpyjR+Ema6kQEJoCRbv1g0N1yZb0vExj//w6g==}
-    peerDependencies:
-      '@farmfe/cli': '>=1.0.5'
-      '@farmfe/core': '>=1.7.11'
-      '@nuxt/kit': '>=4.1.1'
-      '@nuxt/schema': '>=4.1.1'
-      astro: '>=7.0.6'
-      esbuild: '>=0.28.1'
-      next: '>=16.2.10'
-      rolldown: '>=1.0.1'
-      rollup: '>=4.46.4'
-      rspack: '>=0.2.1'
-      tsdown: '>=0.21.9'
-      tsup: '>=6.0.0'
-      unloader: '>=0.9.0'
-      vite: '>=8.1.0'
-      webpack: '>=5.107.2'
-    peerDependenciesMeta:
-      '@farmfe/core':
-        optional: true
-      '@nuxt/kit':
-        optional: true
-      '@nuxt/schema':
-        optional: true
-      astro:
-        optional: true
-      esbuild:
-        optional: true
-      next:
-        optional: true
-      rolldown:
-        optional: true
-      rollup:
-        optional: true
-      rspack:
-        optional: true
-      tsdown:
-        optional: true
-      tsup:
-        optional: true
-      unloader:
-        optional: true
-      vite:
-        optional: true
-      webpack:
-        optional: true
 
   '@powerlines/unplugin@0.0.184':
     resolution: {integrity: sha512-Ga+fXSpByZJEIJOO47O0WZ9UgDZdFcxLTI6C47MtHaMou5U6QTtoHm/hFp6q9cnIIpodIIZvz1LkZKOMToZ9Yw==}
@@ -11459,63 +11389,63 @@ packages:
     resolution: {integrity: sha512-m3TeqU/+av2kgOLfESHkWzsmhuQuY4NXZd5Y1Rd4lzy4IX3JJ5+k2mYfkq6OT8oMuk2W4GQPAkO7+CC7KlpSbw==}
     engines: {node: '>=20.18.1'}
 
-  '@shell-shock/core@0.17.32':
-    resolution: {integrity: sha512-neLWiyF7V6p+vu/gJZOqs25XK68C/E5lG1IdNLnguj799g4C6oH6XrhXp4Bcu/xllgex1UFKEhm6e/J6bQv19g==}
+  '@shell-shock/core@0.17.33':
+    resolution: {integrity: sha512-/VGTg+BukoZPaqfchfm0eQwlCrtWlpgGD80lw4GiISYgpCseKPaQbG1sNFcSmGEtL+kUl0oQQeNC84W1Qg85tQ==}
 
-  '@shell-shock/eslint-plugin@0.0.96':
-    resolution: {integrity: sha512-UxW9ZO67lb95zBDWnEx06NMtT9214kgYpCnzN80LATFmjXzcJB3MX3D00CgB/yEgDERwE42nOPaSOJvHmT5hBw==}
+  '@shell-shock/eslint-plugin@0.0.97':
+    resolution: {integrity: sha512-33cVDXkzPSmVhpYrcB3ALfOlB8+sxmfMc+Vw+RdFwuhj+199fUY6+CXwKLJWuLaAlO0CTsVQXFbHxF4LrvElyA==}
     peerDependencies:
       eslint: '>=9.39.3'
 
-  '@shell-shock/nx@0.0.105':
-    resolution: {integrity: sha512-slAMnxtsOfA1VqBYyOSlzHSfQqh/hKF98NdCpcg7MSRvODVgmQ/FSHxONuMviY4bqsxOMBz04nXYvwsjmfiZiA==}
+  '@shell-shock/nx@0.0.106':
+    resolution: {integrity: sha512-6fCsEraTK6FsQQ12GXx9qhOSQsMD+1aSuFwzlnaiuBdORt2pcf2xWAAr4U9mPeqTYqtOgE+rfWRgJ5+U0fT90g==}
     peerDependencies:
       nx: '>=22.7.0'
 
-  '@shell-shock/plugin-banner@0.1.59':
-    resolution: {integrity: sha512-D2w8Qgc0lL2RnET2ANJrTjDY1QBpZvS1xZeRysrOfDjakVdDcjxjp79I/5gOlsxD+93mIHPyYU/qj8WnWAyJ6Q==}
+  '@shell-shock/plugin-banner@0.1.60':
+    resolution: {integrity: sha512-LxwIWWDO4MWIRswd5vgbtw1UgWaXbibnMw+Kj+c2UXyQltyNmLzFHA9KGYlMJSRb5goqLZiEhcvRom9GxGVSvg==}
 
-  '@shell-shock/plugin-changelog@0.1.35':
-    resolution: {integrity: sha512-k5WcWYbRJBBamulLNmj9xZ4ilRh7kXuDLt8sTIicXTQz+lOLHoSw//TKXQRSrATYwN/fvkbxl5jw739nvgY7QQ==}
+  '@shell-shock/plugin-changelog@0.1.36':
+    resolution: {integrity: sha512-etenxAtTMJ04eejT1uTH/vHtvc5zKFgADIj4zJq2rwS4z7jgttI94p6PWLg+APqKIQP/mr4CkpQxzfeAY0aGiQ==}
 
-  '@shell-shock/plugin-completions@0.4.40':
-    resolution: {integrity: sha512-qGr9MebPwInH1s3OPqsX5sWezVqhc6BMQBsTDnppclzswi3zRzER09LKbmFeb7HZthNWuvM0LseCGmfOqFb0cw==}
+  '@shell-shock/plugin-completions@0.4.41':
+    resolution: {integrity: sha512-Hy9qHwoG9diol1YiQ7SsjIFVZ+qZAdgCl/wGr7mEJspmgIiPH6oOTEzh8dBDmkjs2dBp75GHTW47c78fqpuMkw==}
 
-  '@shell-shock/plugin-console@0.2.36':
-    resolution: {integrity: sha512-w+T/Oigd4bmC5zmqwjBeCpMowPneIkHI3toeXjxFlI292v86yGRu4XpWl8OvB589pmq9XebmsoDA6ak4dt+sDw==}
+  '@shell-shock/plugin-console@0.2.37':
+    resolution: {integrity: sha512-wOuhl28yN21xyMT+C3csbr2yu+Tt9plHx2mzmXfkSPaKvOQI2qndLkRPJYeFcMD1dqnrV2iIOytZD0t3Lk8kZw==}
 
-  '@shell-shock/plugin-help@0.2.50':
-    resolution: {integrity: sha512-oJYkErx+6+KZbg9kBaOtxyp1dOQcumrP/3k6NwRvPzlNYfz7Qk3Lzve4j61zk9QTWH+wVYzL1l+gxcn1si85Bg==}
+  '@shell-shock/plugin-help@0.2.51':
+    resolution: {integrity: sha512-sT1tx3SUBuNASbt9SdyV6+rvEDjOgc6vWeUb860OdtWPoJ84njbiseuaoxObzwwVcXonGw59rBrym9+9WfxEuQ==}
 
-  '@shell-shock/plugin-mcp@0.1.10':
-    resolution: {integrity: sha512-5cvuMQMpe7bvJVpzYjikkmFsZEcaxH1d+K+sstgsv5Tgw0oyfxVoxtzUEwUDv7Si8SN1D9B7Ot4uU6hk+n7jiw==}
+  '@shell-shock/plugin-mcp@0.1.11':
+    resolution: {integrity: sha512-XRkIKKBZFeNJBG6QocEs8gMlNKCjUTzgfq8XaQw4RLEyPc4rMhxaeq4qoBWVrLD3WdDjmwoL3eBD+mbhVhrekA==}
     peerDependencies:
       '@modelcontextprotocol/server': ^2.3.0
       zod: ^4.6.5
 
-  '@shell-shock/plugin-prompts@0.3.73':
-    resolution: {integrity: sha512-oX/4Ko8km//M3czCTckxOQofigzlum49N+wwuHfRo6Nc1bahl7cwN07P0KH9cwIWk+T9sea7Ry6ZlGVvnXKA1A==}
+  '@shell-shock/plugin-prompts@0.3.74':
+    resolution: {integrity: sha512-Ij00fvYUToDzugGG997stl3DUHDUfWf/hBye+0Amt9GOmA/Uizhwy5oau6vo4f0NWqhcZIQpEArQwY47fHnOJQ==}
 
-  '@shell-shock/plugin-skills@0.0.23':
-    resolution: {integrity: sha512-3w+vriESMnFB2PTQQ+yBM56xHMNFdey4qQo2bm4Z2xI+ytr1izHuQE2rNd4DLGoBOFlH4UoylFvYMdNVwma0EQ==}
+  '@shell-shock/plugin-skills@0.0.24':
+    resolution: {integrity: sha512-/qqUlkA/TZkQiL6etBmqoV9XJEfWloLJKLtlDEkPDKvyNbNr6G2ke9XfRJAuqQHHIIRhWDkmdD3y08iiGg2GKQ==}
 
-  '@shell-shock/plugin-theme@0.4.45':
-    resolution: {integrity: sha512-X5lTgf78DfIDxpgnq54kB2X8fLOYSIbUFIhK+TFz/ImLEK/+9OrbnWoBFJ0s+G4xhtvpcJjQjzIwg1pOZuZJBA==}
+  '@shell-shock/plugin-theme@0.4.46':
+    resolution: {integrity: sha512-KiQXmm2v256xooY4+YTMc1M4Po07ziEtVoNSXTuC7IEoxVWI87E96LOQuWDKIpxmEW45un/XlpM+GHm/SDExGg==}
 
-  '@shell-shock/plugin-update@0.1.77':
-    resolution: {integrity: sha512-qq4ZBVFdwX0JNGNNNbIt+FWHP+cSGfF1CwWDCzinxrgJewyAVuRZHUnGsh5N3KxcKvBI0m/JgNxWOY27jPKbtA==}
+  '@shell-shock/plugin-update@0.1.78':
+    resolution: {integrity: sha512-+y5ErUY8M/p+ccOxZEhTmg2WrVupk6yw6CTETn4K08TRSviGYqGkbjxak1MTjtzHRldd6VEndNK/m1KdAb1uAw==}
 
-  '@shell-shock/preset-cli@0.9.44':
-    resolution: {integrity: sha512-K7nc7RiCqDcp9coeuidMUMpb4lIVgCQj3NmVHk6GHHPRvEgKsBiMA6HDUMgEmad4lGBny31Nc9jbFW0tyL/KQw==}
+  '@shell-shock/preset-cli@0.9.45':
+    resolution: {integrity: sha512-7WsjibABRF9d0nsy9/KKr8vJChy8kHYh60x00AC+5fknNOVN8FEebt7d8Ibm6WC32X5zaduDpk/3QZ+Ao25a7Q==}
 
-  '@shell-shock/preset-script@0.6.87':
-    resolution: {integrity: sha512-veqJQ1hyiQfjXR0TSxcCWr0OaFaRCSwnUFhKEbr0HTrYPXsSiFSkFw2yxrEqwvKedoh3Q+0D89l5ll2p6BgOhA==}
+  '@shell-shock/preset-script@0.6.88':
+    resolution: {integrity: sha512-okI3RzRhIEF/LGk5SvFh3ziddDuua8ne6YrysWmlZrMYafk2z3c5BE6iIe1SeYubjEKOqByXwuRSJBnKtm3n/Q==}
 
-  '@shell-shock/schema@0.0.11':
-    resolution: {integrity: sha512-LNQpv4Z6rk2LAjHTgBbRXLyQh0R9GPoK89uUoubI5sVhly5EdoXo2V1HXJF9VmVVfamAwcsVclcLR9JYOLjRow==}
+  '@shell-shock/schema@0.0.12':
+    resolution: {integrity: sha512-AIwB0JECdQF/iX7m6c3jHK1wNn/INYlHRxaChMcTVnKlr9K6y77/7pRBOOMqppZb7eW9qs6Jy3LoOc1Qmz0RRw==}
 
-  '@shell-shock/unified@0.2.30':
-    resolution: {integrity: sha512-In5v2SvE4ZsN6aJfT+6w7NNCS2jg34zeZOsGEaS0Bz6XNhHtMxnoBupIm7hikTbUHfkASD7vy6tXMzoeK9VEzg==}
+  '@shell-shock/unified@0.2.31':
+    resolution: {integrity: sha512-QpOFgn5A/pFMlaV5FcqH8YjJixtMvVDGI4fu2TQzP6w2nUV3jItOPJeowG0mMKvWAyz41TsbURLerbLCV/xenQ==}
 
   '@sideway/address@4.1.5':
     resolution: {integrity: sha512-IqO/DUQHUkPeixNQ8n0JA6102hT9CmaljNTPmQ1u8MEhBo/R4Q8eKLN/vGZxuebwOroDB4cbpjheD4+/sKFK4Q==}
@@ -11952,9 +11882,6 @@ packages:
   '@stryke/convert@0.7.47':
     resolution: {integrity: sha512-Uj2uHUetWlojYIZ3jyg+00qBhYmLKyTG4m6tLfhQfQYUquDpF6B/w4bP76PJujpTM5zqzD8X0FKZKI99af1GCQ==}
 
-  '@stryke/date@0.0.26':
-    resolution: {integrity: sha512-R/hrhq6wYxdOtJR1whPGU6M0H/he8zpgdcU3VYjLVI2WbEUlyDoLI3ltU2R3qJa7l5q7UMMlmT6jTB8PhOppHg==}
-
   '@stryke/date@0.0.28':
     resolution: {integrity: sha512-81GIU+XMKis8OLvN7CQtcrN/prVgfOJACMKDCoC25bsitLqVR0l9N06a9jnx93DVEI0Pi9NpGOv7NwUkLPVssw==}
 
@@ -11996,9 +11923,6 @@ packages:
 
   '@stryke/resolve@0.0.11':
     resolution: {integrity: sha512-zc4AzjyEIaD+GQxE+GLnDIX09c3uQOCT0uZ4pxiCL+aYG03RD4lwn3BURMsTgzvvbswOUGM2JZENFEd1yUvX4Q==}
-
-  '@stryke/resolve@0.0.31':
-    resolution: {integrity: sha512-NVSYkoSM1v1S4cFS7tcTEpZvi9rxLjuyMhAnlyTTfAojK3GMwDoL0i0Y5Pv92X9hpcxsycfAELX0r30Quxh+xg==}
 
   '@stryke/resolve@0.0.33':
     resolution: {integrity: sha512-WCsbqIJHilt/evTlbLs2X2kanAOz0lJEEUzxaFMuGSVKasZ15IuQXJHW8XwGhuCx8Bs5Dx4+fnO0yuLDIAyJ7w==}
@@ -33671,51 +33595,6 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@power-plant/alloy-js@0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)':
-    dependencies:
-      '@alloy-js/babel-preset': 0.3.0(@babel/core@8.0.7)
-      '@alloy-js/core': 0.24.1
-      '@alloy-js/json': 0.24.0
-      '@alloy-js/markdown': 0.24.0
-      '@alloy-js/typescript': 0.24.0
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/noop-output': 0.0.72(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/schema': 0.0.91(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@stryke/convert': 0.7.47
-      '@stryke/helpers': 0.10.56
-      '@stryke/path': 0.29.43
-      '@stryke/string-format': 0.17.58
-      '@stryke/type-checks': 0.6.49
-      '@stryke/types': 0.12.44
-      '@stryke/unique-id': 0.3.129(magicast@0.5.5)(zod@4.6.7)
-      defu: 6.1.7
-    transitivePeerDependencies:
-      - '@azure/app-configuration'
-      - '@azure/cosmos'
-      - '@azure/data-tables'
-      - '@azure/identity'
-      - '@azure/keyvault-secrets'
-      - '@azure/storage-blob'
-      - '@capacitor/preferences'
-      - '@deno/kv'
-      - '@netlify/blobs'
-      - '@planetscale/database'
-      - '@upstash/redis'
-      - '@vercel/blob'
-      - '@vercel/functions'
-      - '@vercel/kv'
-      - aws4fetch
-      - bufferutil
-      - db0
-      - idb-keyval
-      - ioredis
-      - magicast
-      - supports-color
-      - uploadthing
-      - utf-8-validate
-      - valibot
-      - zod
-
   '@power-plant/alloy-js@0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)':
     dependencies:
       '@alloy-js/babel-preset': 0.3.0(@babel/core@8.0.7)
@@ -33768,50 +33647,6 @@ snapshots:
       '@stryke/type-checks': 0.6.49
       '@stryke/types': 0.12.44
       defu: 6.1.7
-      unstorage: 1.17.6
-    transitivePeerDependencies:
-      - '@azure/app-configuration'
-      - '@azure/cosmos'
-      - '@azure/data-tables'
-      - '@azure/identity'
-      - '@azure/keyvault-secrets'
-      - '@azure/storage-blob'
-      - '@capacitor/preferences'
-      - '@deno/kv'
-      - '@netlify/blobs'
-      - '@planetscale/database'
-      - '@upstash/redis'
-      - '@vercel/blob'
-      - '@vercel/functions'
-      - '@vercel/kv'
-      - aws4fetch
-      - db0
-      - idb-keyval
-      - ioredis
-      - magicast
-      - supports-color
-      - uploadthing
-      - valibot
-      - zod
-
-  '@power-plant/core@0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)':
-    dependencies:
-      '@power-plant/schema': 0.0.91(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@stryke/convert': 0.7.47
-      '@stryke/date': 0.0.26
-      '@stryke/env': 0.20.135(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/fs': 0.33.118(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/helpers': 0.10.56
-      '@stryke/json': 0.15.40
-      '@stryke/path': 0.29.43
-      '@stryke/resolve': 0.0.31(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/string-format': 0.17.58
-      '@stryke/type-checks': 0.6.49
-      '@stryke/types': 0.12.44
-      '@stryke/unique-id': 0.3.129(magicast@0.5.5)(zod@4.6.7)
-      c12: 3.3.4(magicast@0.5.5)
-      defu: 6.1.7
-      jiti: 2.7.0
       unstorage: 1.17.6
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -33955,34 +33790,6 @@ snapshots:
       - uploadthing
       - valibot
 
-  '@power-plant/noop-output@0.0.72(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)':
-    dependencies:
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-    transitivePeerDependencies:
-      - '@azure/app-configuration'
-      - '@azure/cosmos'
-      - '@azure/data-tables'
-      - '@azure/identity'
-      - '@azure/keyvault-secrets'
-      - '@azure/storage-blob'
-      - '@capacitor/preferences'
-      - '@deno/kv'
-      - '@netlify/blobs'
-      - '@planetscale/database'
-      - '@upstash/redis'
-      - '@vercel/blob'
-      - '@vercel/functions'
-      - '@vercel/kv'
-      - aws4fetch
-      - db0
-      - idb-keyval
-      - ioredis
-      - magicast
-      - supports-color
-      - uploadthing
-      - valibot
-      - zod
-
   '@power-plant/noop-output@0.0.77(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)':
     dependencies:
       '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
@@ -34072,68 +33879,6 @@ snapshots:
       '@valibot/to-json-schema': 1.8.0(valibot@1.5.0(typescript@6.0.3))
       defu: 6.1.7
       ts-json-schema-generator: 2.9.0
-      typescript: 6.0.3
-      unstorage: 1.17.6
-      untyped: 1.5.2
-    optionalDependencies:
-      valibot: 1.5.0(typescript@6.0.3)
-      zod: 4.6.7
-    transitivePeerDependencies:
-      - '@azure/app-configuration'
-      - '@azure/cosmos'
-      - '@azure/data-tables'
-      - '@azure/identity'
-      - '@azure/keyvault-secrets'
-      - '@azure/storage-blob'
-      - '@capacitor/preferences'
-      - '@deno/kv'
-      - '@netlify/blobs'
-      - '@planetscale/database'
-      - '@upstash/redis'
-      - '@vercel/blob'
-      - '@vercel/functions'
-      - '@vercel/kv'
-      - aws4fetch
-      - db0
-      - idb-keyval
-      - ioredis
-      - magicast
-      - supports-color
-      - uploadthing
-
-  '@power-plant/schema@0.0.91(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)':
-    dependencies:
-      '@deepkit/core': 1.0.19
-      '@deepkit/type': 1.0.19(@deepkit/core@1.0.19)
-      '@deepkit/type-spec': 1.0.19
-      '@marcj/ts-clone-node': 2.2.0(typescript@6.0.3)
-      '@standard-schema/spec': 1.1.0
-      '@stryke/convert': 0.7.47
-      '@stryke/date': 0.0.26
-      '@stryke/fs': 0.33.118(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/hash': 0.13.71(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/helpers': 0.10.56
-      '@stryke/json': 0.15.40
-      '@stryke/path': 0.29.43
-      '@stryke/resolve': 0.0.31(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/string-format': 0.17.58
-      '@stryke/type-checks': 0.6.49
-      '@stryke/types': 0.12.44
-      '@stryke/unique-id': 0.3.129(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/url': 0.4.68(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/zod': 0.3.62(zod@4.6.7)
-      '@typescript/vfs': 1.6.5(typescript@6.0.3)
-      '@valibot/to-json-schema': 1.8.0(valibot@1.5.0(typescript@6.0.3))
-      braces: 3.0.3
-      compatfactory: 4.0.4(typescript@6.0.3)
-      defu: 6.1.7
-      esbuild: 0.28.2
-      fill-range: 7.1.1
-      is-number: 7.0.0
-      jiti: 2.7.0
-      micromatch: 4.0.8
-      picomatch: 4.0.7
-      to-regex-range: 5.0.1
       typescript: 6.0.3
       unstorage: 1.17.6
       untyped: 1.5.2
@@ -38000,189 +37745,6 @@ snapshots:
     dependencies:
       '@storm-software/tsdoc': 0.13.306(@microsoft/api-extractor@7.59.4(@types/node@25.9.9))
 
-  '@powerlines/unplugin@0.0.181(065498bd558d69cd951ce5558ebe3913)':
-    dependencies:
-      '@farmfe/cli': 1.0.5
-      '@powerlines/core': 0.48.136(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(@modelcontextprotocol/sdk@1.32.1(zod@4.6.7))(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.17.19)(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(rolldown@1.2.15)(rollup@4.65.0)(typescript@6.0.3)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.17.19)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(zod@4.6.7)
-      '@rollup/plugin-alias': 6.0.1(rollup@4.65.0)
-      '@rollup/plugin-inject': 5.0.5(rollup@4.65.0)
-      '@rollup/plugin-node-resolve': 16.0.3(rollup@4.65.0)
-      '@rollup/plugin-replace': 6.0.3(rollup@4.65.0)
-      '@storm-software/build-tools': 0.158.314(@nx/devkit@23.1.0(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@7.2.0)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23))))(@nx/js@23.3.0(@babel/traverse@7.29.10)(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@7.2.0)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23))(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@7.2.0)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))(supports-color@7.2.0)(verdaccio@6.7.2(encoding@0.1.13)(supports-color@7.2.0)(typanion@3.14.0)))(@swc/helpers@0.5.23)(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@7.2.0)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))(typescript@6.0.3)(zod@4.6.7)
-      '@stryke/convert': 0.7.47
-      '@stryke/env': 0.20.135(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/fs': 0.33.118(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/helpers': 0.10.56
-      '@stryke/json': 0.15.40
-      '@stryke/path': 0.29.43
-      '@stryke/string-format': 0.17.58
-      '@stryke/type-checks': 0.6.49
-      '@stryke/types': 0.12.44
-      '@stryke/unique-id': 0.3.129(magicast@0.5.5)(zod@4.6.7)
-      defu: 6.1.7
-      glob: 13.0.6
-      jiti: 2.7.0
-      rolldown-plugin-dts: 0.25.2(@typescript/native-preview@7.0.0-dev.20260611.2)(oxc-resolver@11.24.2)(rolldown@1.2.15)(typescript@6.0.3)
-      rollup-plugin-typescript2: 0.36.0(rollup@4.65.0)(typescript@6.0.3)
-      unplugin: 3.4.0(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.17.19)(rolldown@1.2.15)(rollup@4.65.0)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.17.19)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
-    optionalDependencies:
-      esbuild: 0.17.19
-      rolldown: 1.2.15
-      rollup: 4.65.0
-      tsdown: 0.22.14(@typescript/native-preview@7.0.0-dev.20260611.2)(oxc-resolver@11.24.2)(tsx@4.23.15)(typescript@6.0.3)
-      vite: 8.3.5(@types/node@25.9.9)(esbuild@0.17.19)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
-    transitivePeerDependencies:
-      - '@emnapi/core'
-      - '@emnapi/runtime'
-      - '@modelcontextprotocol/sdk'
-      - '@nx/devkit'
-      - '@nx/js'
-      - '@rsbuild/core'
-      - '@rspack/core'
-      - '@swc/helpers'
-      - '@ts-macro/tsc'
-      - '@typescript/native-preview'
-      - bufferutil
-      - bun-types-no-globals
-      - magicast
-      - nx
-      - oxc-resolver
-      - prettier-plugin-astro
-      - prettier-plugin-jsdoc
-      - prettier-plugin-organize-imports
-      - prettier-plugin-packagejson
-      - prettier-plugin-prisma
-      - prettier-plugin-sh
-      - prettier-plugin-solidity
-      - prettier-plugin-tailwindcss
-      - prettier-plugin-toml
-      - typescript
-      - utf-8-validate
-      - vue-tsc
-      - zod
-
-  '@powerlines/unplugin@0.0.181(165e822d7eae582e5ca1629f18aa4c65)':
-    dependencies:
-      '@farmfe/cli': 1.0.5
-      '@powerlines/core': 0.48.136(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(@modelcontextprotocol/sdk@1.32.1(zod@4.6.7))(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.17.19)(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(rolldown@1.2.15)(rollup@4.65.0)(typescript@6.0.3)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.17.19)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(zod@4.6.7)
-      '@rollup/plugin-alias': 6.0.1(rollup@4.65.0)
-      '@rollup/plugin-inject': 5.0.5(rollup@4.65.0)
-      '@rollup/plugin-node-resolve': 16.0.3(rollup@4.65.0)
-      '@rollup/plugin-replace': 6.0.3(rollup@4.65.0)
-      '@storm-software/build-tools': 0.158.314(@nx/devkit@23.3.0(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@7.2.0)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23))))(@nx/js@23.3.0(@babel/traverse@7.29.10)(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@7.2.0)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23))(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@7.2.0)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))(supports-color@7.2.0)(verdaccio@6.7.2(encoding@0.1.13)(supports-color@7.2.0)(typanion@3.14.0)))(@swc/helpers@0.5.23)(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@7.2.0)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))(typescript@6.0.3)(zod@4.6.7)
-      '@stryke/convert': 0.7.47
-      '@stryke/env': 0.20.135(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/fs': 0.33.118(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/helpers': 0.10.56
-      '@stryke/json': 0.15.40
-      '@stryke/path': 0.29.43
-      '@stryke/string-format': 0.17.58
-      '@stryke/type-checks': 0.6.49
-      '@stryke/types': 0.12.44
-      '@stryke/unique-id': 0.3.129(magicast@0.5.5)(zod@4.6.7)
-      defu: 6.1.7
-      glob: 13.0.6
-      jiti: 2.7.0
-      rolldown-plugin-dts: 0.25.2(@typescript/native-preview@7.0.0-dev.20260611.2)(oxc-resolver@11.24.2)(rolldown@1.2.15)(typescript@6.0.3)
-      rollup-plugin-typescript2: 0.36.0(rollup@4.65.0)(typescript@6.0.3)
-      unplugin: 3.4.0(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.17.19)(rolldown@1.2.15)(rollup@4.65.0)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.17.19)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
-    optionalDependencies:
-      esbuild: 0.17.19
-      rolldown: 1.2.15
-      rollup: 4.65.0
-      tsdown: 0.22.14(@typescript/native-preview@7.0.0-dev.20260611.2)(oxc-resolver@11.24.2)(tsx@4.23.15)(typescript@6.0.3)
-      vite: 8.3.5(@types/node@25.9.9)(esbuild@0.17.19)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
-    transitivePeerDependencies:
-      - '@emnapi/core'
-      - '@emnapi/runtime'
-      - '@modelcontextprotocol/sdk'
-      - '@nx/devkit'
-      - '@nx/js'
-      - '@rsbuild/core'
-      - '@rspack/core'
-      - '@swc/helpers'
-      - '@ts-macro/tsc'
-      - '@typescript/native-preview'
-      - bufferutil
-      - bun-types-no-globals
-      - magicast
-      - nx
-      - oxc-resolver
-      - prettier-plugin-astro
-      - prettier-plugin-jsdoc
-      - prettier-plugin-organize-imports
-      - prettier-plugin-packagejson
-      - prettier-plugin-prisma
-      - prettier-plugin-sh
-      - prettier-plugin-solidity
-      - prettier-plugin-tailwindcss
-      - prettier-plugin-toml
-      - typescript
-      - utf-8-validate
-      - vue-tsc
-      - zod
-
-  '@powerlines/unplugin@0.0.181(ab728b23b5f957c3709768f03a41d227)':
-    dependencies:
-      '@farmfe/cli': 1.0.5
-      '@powerlines/core': 0.48.136(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(@modelcontextprotocol/sdk@1.32.1(zod@4.6.7))(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.28.2)(magicast@0.5.5)(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(rolldown@1.2.15)(rollup@4.65.0)(typescript@6.0.3)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(zod@4.6.7)
-      '@rollup/plugin-alias': 6.0.1(rollup@4.65.0)
-      '@rollup/plugin-inject': 5.0.5(rollup@4.65.0)
-      '@rollup/plugin-node-resolve': 16.0.3(rollup@4.65.0)
-      '@rollup/plugin-replace': 6.0.3(rollup@4.65.0)
-      '@storm-software/build-tools': 0.158.314(@nx/devkit@23.3.0(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.16.20(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.20(@swc/helpers@0.5.23))))(@nx/js@23.3.0(@babel/traverse@7.29.10)(@swc-node/register@1.11.1(@swc/core@1.16.20(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.20(@swc/helpers@0.5.23))(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.16.20(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.20(@swc/helpers@0.5.23)))(verdaccio@6.7.2(encoding@0.1.13)(typanion@3.14.0)))(@swc/helpers@0.5.23)(magicast@0.5.5)(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.16.20(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.20(@swc/helpers@0.5.23)))(typescript@6.0.3)(zod@4.6.7)
-      '@stryke/convert': 0.7.47
-      '@stryke/env': 0.20.135(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/fs': 0.33.118(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/helpers': 0.10.56
-      '@stryke/json': 0.15.40
-      '@stryke/path': 0.29.43
-      '@stryke/string-format': 0.17.58
-      '@stryke/type-checks': 0.6.49
-      '@stryke/types': 0.12.44
-      '@stryke/unique-id': 0.3.129(magicast@0.5.5)(zod@4.6.7)
-      defu: 6.1.7
-      glob: 13.0.6
-      jiti: 2.7.0
-      rolldown-plugin-dts: 0.25.2(@typescript/native-preview@7.0.0-dev.20260611.2)(oxc-resolver@11.24.2)(rolldown@1.2.15)(typescript@6.0.3)
-      rollup-plugin-typescript2: 0.36.0(rollup@4.65.0)(typescript@6.0.3)
-      unplugin: 3.4.0(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.28.2)(rolldown@1.2.15)(rollup@4.65.0)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
-    optionalDependencies:
-      esbuild: 0.28.2
-      rolldown: 1.2.15
-      rollup: 4.65.0
-      tsdown: 0.22.14(@typescript/native-preview@7.0.0-dev.20260611.2)(oxc-resolver@11.24.2)(tsx@4.23.15)(typescript@6.0.3)
-      vite: 8.3.5(@types/node@25.9.9)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
-    transitivePeerDependencies:
-      - '@emnapi/core'
-      - '@emnapi/runtime'
-      - '@modelcontextprotocol/sdk'
-      - '@nx/devkit'
-      - '@nx/js'
-      - '@rsbuild/core'
-      - '@rspack/core'
-      - '@swc/helpers'
-      - '@ts-macro/tsc'
-      - '@typescript/native-preview'
-      - bufferutil
-      - bun-types-no-globals
-      - magicast
-      - nx
-      - oxc-resolver
-      - prettier-plugin-astro
-      - prettier-plugin-jsdoc
-      - prettier-plugin-organize-imports
-      - prettier-plugin-packagejson
-      - prettier-plugin-prisma
-      - prettier-plugin-sh
-      - prettier-plugin-solidity
-      - prettier-plugin-tailwindcss
-      - prettier-plugin-toml
-      - typescript
-      - utf-8-validate
-      - vue-tsc
-      - zod
-
   '@powerlines/unplugin@0.0.184(065498bd558d69cd951ce5558ebe3913)':
     dependencies:
       '@farmfe/cli': 1.0.5
@@ -39259,9 +38821,9 @@ snapshots:
       '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@power-plant/dtcg-schema': 0.0.1(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))
       '@razorwind/core': 0.0.107(magicast@0.5.5)(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(valibot@1.5.0(typescript@6.0.3))
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
-      '@shell-shock/plugin-mcp': 0.1.10(b333effaab28c18476925cc6041d2658)
-      '@shell-shock/plugin-theme': 0.4.45(55239742aa458e12421c71981d118242)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/plugin-mcp': 0.1.11(b333effaab28c18476925cc6041d2658)
+      '@shell-shock/plugin-theme': 0.4.46(55239742aa458e12421c71981d118242)
       '@stryke/path': 0.29.43
       '@stryke/type-checks': 0.6.49
       defu: 6.1.7
@@ -39352,9 +38914,9 @@ snapshots:
       '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@power-plant/dtcg-schema': 0.0.1(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))
       '@razorwind/core': 0.0.107(magicast@0.5.5)(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(valibot@1.5.0(typescript@6.0.3))
-      '@shell-shock/core': 0.17.32(eaccaf4683181a7b036a61c1cbd991a7)
-      '@shell-shock/plugin-mcp': 0.1.10(de0c81fb4e0cfc3bb3925d0635bdcb34)
-      '@shell-shock/plugin-theme': 0.4.45(956f44fd1bef2df47f24a5e44879c959)
+      '@shell-shock/core': 0.17.33(eaccaf4683181a7b036a61c1cbd991a7)
+      '@shell-shock/plugin-mcp': 0.1.11(de0c81fb4e0cfc3bb3925d0635bdcb34)
+      '@shell-shock/plugin-theme': 0.4.46(956f44fd1bef2df47f24a5e44879c959)
       '@stryke/path': 0.29.43
       '@stryke/type-checks': 0.6.49
       defu: 6.1.7
@@ -40819,14 +40381,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@shell-shock/core@0.17.32(07706a331cadcdce0d121dd226cad90f)':
+  '@shell-shock/core@0.17.33(07706a331cadcdce0d121dd226cad90f)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/markdown': 0.24.0
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/schema': 0.0.91(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/schema': 0.0.96(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/core': 0.48.136(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(@modelcontextprotocol/sdk@1.32.1(zod@4.6.7))(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.28.2)(magicast@0.5.5)(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(rolldown@1.2.15)(rollup@4.65.0)(typescript@6.0.3)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(zod@4.6.7)
       '@powerlines/engine': 0.49.138(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(@modelcontextprotocol/sdk@1.32.1(zod@4.6.7))(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.28.2)(magicast@0.5.5)(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(rolldown@1.2.15)(rollup@4.65.0)(typescript@6.0.3)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
@@ -40835,8 +40397,8 @@ snapshots:
       '@powerlines/plugin-nodejs': 0.1.627(9b58d829c4262b57821079bfa7b9c751)
       '@powerlines/plugin-power-plant': 0.1.74(ae29ec2b288034a523adc6e604f7daf7)
       '@powerlines/plugin-tsdown': 0.1.618(f2eed8bca330d2aa26b8ae0613282235)
-      '@powerlines/unplugin': 0.0.181(ab728b23b5f957c3709768f03a41d227)
-      '@shell-shock/schema': 0.0.11(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))
+      '@powerlines/unplugin': 0.0.184(ab728b23b5f957c3709768f03a41d227)
+      '@shell-shock/schema': 0.0.12(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))
       '@stryke/cli': 0.13.90(magicast@0.5.5)(zod@4.6.7)
       '@stryke/convert': 0.7.47
       '@stryke/fs': 0.33.118(magicast@0.5.5)(zod@4.6.7)
@@ -40932,14 +40494,14 @@ snapshots:
       - vue-tsc
       - webpack
 
-  '@shell-shock/core@0.17.32(2238a2bdc560fa75ef0c3580d73fe198)':
+  '@shell-shock/core@0.17.33(2238a2bdc560fa75ef0c3580d73fe198)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/markdown': 0.24.0
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/schema': 0.0.91(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/schema': 0.0.96(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/core': 0.48.136(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(@modelcontextprotocol/sdk@1.32.1(zod@4.6.7))(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.17.19)(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(rolldown@1.2.15)(rollup@4.65.0)(typescript@6.0.3)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.17.19)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(zod@4.6.7)
       '@powerlines/engine': 0.49.138(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(@modelcontextprotocol/sdk@1.32.1(zod@4.6.7))(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.17.19)(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(rolldown@1.2.15)(rollup@4.65.0)(typescript@6.0.3)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.17.19)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(e99327e5f64f8b5c1ea2a22432ed8d8e)
@@ -40948,8 +40510,8 @@ snapshots:
       '@powerlines/plugin-nodejs': 0.1.627(e99327e5f64f8b5c1ea2a22432ed8d8e)
       '@powerlines/plugin-power-plant': 0.1.74(a4332b0ec9f9a30000c26212070e59b2)
       '@powerlines/plugin-tsdown': 0.1.618(a4332b0ec9f9a30000c26212070e59b2)
-      '@powerlines/unplugin': 0.0.181(065498bd558d69cd951ce5558ebe3913)
-      '@shell-shock/schema': 0.0.11(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))
+      '@powerlines/unplugin': 0.0.184(065498bd558d69cd951ce5558ebe3913)
+      '@shell-shock/schema': 0.0.12(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))
       '@stryke/cli': 0.13.90(magicast@0.5.5)(zod@4.6.7)
       '@stryke/convert': 0.7.47
       '@stryke/fs': 0.33.118(magicast@0.5.5)(zod@4.6.7)
@@ -41045,14 +40607,14 @@ snapshots:
       - vue-tsc
       - webpack
 
-  '@shell-shock/core@0.17.32(eaccaf4683181a7b036a61c1cbd991a7)':
+  '@shell-shock/core@0.17.33(eaccaf4683181a7b036a61c1cbd991a7)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/markdown': 0.24.0
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/schema': 0.0.91(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/schema': 0.0.96(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/core': 0.48.136(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(@modelcontextprotocol/sdk@1.32.1(zod@4.6.7))(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.17.19)(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(rolldown@1.2.15)(rollup@4.65.0)(typescript@6.0.3)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.17.19)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(zod@4.6.7)
       '@powerlines/engine': 0.49.138(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(@modelcontextprotocol/sdk@1.32.1(zod@4.6.7))(@rspack/core@2.2.8(@swc/helpers@0.5.23))(esbuild@0.17.19)(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(rolldown@1.2.15)(rollup@4.65.0)(typescript@6.0.3)(vite@8.3.5(@types/node@25.9.9)(esbuild@0.17.19)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.105.1)(sass@1.105.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(537af42710016edff80ca873e1518054)
@@ -41061,8 +40623,8 @@ snapshots:
       '@powerlines/plugin-nodejs': 0.1.627(537af42710016edff80ca873e1518054)
       '@powerlines/plugin-power-plant': 0.1.74(6418f66931b8d620368dcc8695b5553c)
       '@powerlines/plugin-tsdown': 0.1.618(6418f66931b8d620368dcc8695b5553c)
-      '@powerlines/unplugin': 0.0.181(165e822d7eae582e5ca1629f18aa4c65)
-      '@shell-shock/schema': 0.0.11(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))
+      '@powerlines/unplugin': 0.0.184(165e822d7eae582e5ca1629f18aa4c65)
+      '@shell-shock/schema': 0.0.12(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))
       '@stryke/cli': 0.13.90(magicast@0.5.5)(zod@4.6.7)
       '@stryke/convert': 0.7.47
       '@stryke/fs': 0.33.118(magicast@0.5.5)(zod@4.6.7)
@@ -41158,7 +40720,7 @@ snapshots:
       - vue-tsc
       - webpack
 
-  '@shell-shock/eslint-plugin@0.0.96(2bdd5c7c404731502f7407b33d386477)':
+  '@shell-shock/eslint-plugin@0.0.97(2bdd5c7c404731502f7407b33d386477)':
     dependencies:
       '@storm-software/testing-tools': 1.119.306(@nx/jest@23.1.1(@babel/traverse@7.29.10)(@swc-node/register@1.11.1(@swc/core@1.16.20(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.20(@swc/helpers@0.5.23))(@types/node@25.9.9)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2))(jest@30.0.5(@types/node@25.9.9)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2)))(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.16.20(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.20(@swc/helpers@0.5.23)))(typescript@6.0.3)(verdaccio@6.7.2(encoding@0.1.13)(typanion@3.14.0)))(jest@30.0.5(@types/node@25.9.9)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2)))
       '@stryke/fs': 0.33.118(magicast@0.5.5)(zod@4.6.7)
@@ -41234,11 +40796,11 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/nx@0.0.105(8459e5ee2558f748f52398c16eeb84cb)':
+  '@shell-shock/nx@0.0.106(8459e5ee2558f748f52398c16eeb84cb)':
     dependencies:
       '@nx/devkit': 23.1.0(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@7.2.0)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))
       '@powerlines/nx': 0.13.257(9589602e2c96a9cf95f5a43ca897b264)
-      '@shell-shock/core': 0.17.32(2238a2bdc560fa75ef0c3580d73fe198)
+      '@shell-shock/core': 0.17.33(2238a2bdc560fa75ef0c3580d73fe198)
       '@storm-software/config': 1.138.90(zod@4.6.7)
       '@storm-software/config-tools': 1.190.154(magicast@0.5.5)(zod@4.6.7)
       '@storm-software/workspace-tools': 1.297.24(@babel/traverse@7.29.10)(@storm-software/pnpm-tools@0.7.168(zod@4.6.7))(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@7.2.0)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23))(@types/node@25.9.9)(nx@23.3.0(@swc-node/register@1.11.1(@swc/core@1.15.41(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@7.2.0)(typescript@6.0.3))(@swc/core@1.15.41(@swc/helpers@0.5.23)))(prettier-plugin-astro@0.14.1)(prettier-plugin-jsdoc@1.8.1(prettier@3.9.10))(prettier-plugin-organize-imports@4.3.0(prettier@3.9.10)(typescript@6.0.3))(prettier-plugin-packagejson@3.0.2(prettier@3.9.10))(prettier-plugin-sh@0.15.0(prettier@3.9.10))(prettier-plugin-toml@2.0.6(prettier@3.9.10))(typescript@6.0.3)(verdaccio@6.7.2(encoding@0.1.13)(supports-color@7.2.0)(typanion@3.14.0))
@@ -41341,16 +40903,16 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/plugin-banner@0.1.59(55239742aa458e12421c71981d118242)':
+  '@shell-shock/plugin-banner@0.1.60(55239742aa458e12421c71981d118242)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
       '@powerlines/plugin-plugin': 0.12.630(f2eed8bca330d2aa26b8ae0613282235)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
-      '@shell-shock/plugin-console': 0.2.36(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-theme': 0.4.45(55239742aa458e12421c71981d118242)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/plugin-console': 0.2.37(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-theme': 0.4.46(55239742aa458e12421c71981d118242)
       '@stryke/path': 0.29.43
       '@stryke/type-checks': 0.6.49
       defu: 6.1.7
@@ -41435,15 +40997,15 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/plugin-changelog@0.1.35(55239742aa458e12421c71981d118242)':
+  '@shell-shock/plugin-changelog@0.1.36(55239742aa458e12421c71981d118242)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
-      '@shell-shock/unified': 0.2.30(55239742aa458e12421c71981d118242)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/unified': 0.2.31(55239742aa458e12421c71981d118242)
       '@stryke/path': 0.29.43
       '@stryke/type-checks': 0.6.49
       '@stryke/types': 0.12.44
@@ -41529,14 +41091,14 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/plugin-completions@0.4.40(55239742aa458e12421c71981d118242)':
+  '@shell-shock/plugin-completions@0.4.41(55239742aa458e12421c71981d118242)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
       '@powerlines/plugin-plugin': 0.12.630(f2eed8bca330d2aa26b8ae0613282235)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
       '@stryke/path': 0.29.43
       '@stryke/string-format': 0.17.58
       powerlines: 0.47.217(4253a1eac6839e236f52a33ed469fc27)
@@ -41620,16 +41182,16 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/plugin-console@0.2.36(55239742aa458e12421c71981d118242)':
+  '@shell-shock/plugin-console@0.2.37(55239742aa458e12421c71981d118242)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
       '@powerlines/plugin-plugin': 0.12.630(f2eed8bca330d2aa26b8ae0613282235)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
-      '@shell-shock/plugin-theme': 0.4.45(55239742aa458e12421c71981d118242)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/plugin-theme': 0.4.46(55239742aa458e12421c71981d118242)
       '@stryke/string-format': 0.17.58
       '@stryke/type-checks': 0.6.49
       defu: 6.1.7
@@ -41714,16 +41276,16 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/plugin-help@0.2.50(55239742aa458e12421c71981d118242)':
+  '@shell-shock/plugin-help@0.2.51(55239742aa458e12421c71981d118242)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
       '@powerlines/plugin-plugin': 0.12.630(f2eed8bca330d2aa26b8ae0613282235)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
-      '@shell-shock/plugin-console': 0.2.36(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-theme': 0.4.45(55239742aa458e12421c71981d118242)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/plugin-console': 0.2.37(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-theme': 0.4.46(55239742aa458e12421c71981d118242)
       '@stryke/helpers': 0.10.56
       '@stryke/path': 0.29.43
       '@stryke/string-format': 0.17.58
@@ -41811,16 +41373,16 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/plugin-mcp@0.1.10(b333effaab28c18476925cc6041d2658)':
+  '@shell-shock/plugin-mcp@0.1.11(b333effaab28c18476925cc6041d2658)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
       '@modelcontextprotocol/server': 2.3.1
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
       '@powerlines/plugin-plugin': 0.12.630(f2eed8bca330d2aa26b8ae0613282235)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
       '@stryke/path': 0.29.43
       '@stryke/type-checks': 0.6.49
       defu: 6.1.7
@@ -41905,16 +41467,16 @@ snapshots:
       - vue-tsc
       - webpack
 
-  '@shell-shock/plugin-mcp@0.1.10(de0c81fb4e0cfc3bb3925d0635bdcb34)':
+  '@shell-shock/plugin-mcp@0.1.11(de0c81fb4e0cfc3bb3925d0635bdcb34)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
       '@modelcontextprotocol/server': 2.3.1
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(537af42710016edff80ca873e1518054)
       '@powerlines/plugin-plugin': 0.12.630(6418f66931b8d620368dcc8695b5553c)
-      '@shell-shock/core': 0.17.32(eaccaf4683181a7b036a61c1cbd991a7)
+      '@shell-shock/core': 0.17.33(eaccaf4683181a7b036a61c1cbd991a7)
       '@stryke/path': 0.29.43
       '@stryke/type-checks': 0.6.49
       defu: 6.1.7
@@ -41999,15 +41561,15 @@ snapshots:
       - vue-tsc
       - webpack
 
-  '@shell-shock/plugin-prompts@0.3.73(55239742aa458e12421c71981d118242)':
+  '@shell-shock/plugin-prompts@0.3.74(55239742aa458e12421c71981d118242)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
       '@powerlines/plugin-plugin': 0.12.630(f2eed8bca330d2aa26b8ae0613282235)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
-      '@shell-shock/plugin-theme': 0.4.45(55239742aa458e12421c71981d118242)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/plugin-theme': 0.4.46(55239742aa458e12421c71981d118242)
       defu: 6.1.7
       powerlines: 0.47.217(4253a1eac6839e236f52a33ed469fc27)
     transitivePeerDependencies:
@@ -42090,14 +41652,14 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/plugin-skills@0.0.23(55239742aa458e12421c71981d118242)':
+  '@shell-shock/plugin-skills@0.0.24(55239742aa458e12421c71981d118242)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
       '@stryke/path': 0.29.43
       '@stryke/type-checks': 0.6.49
       '@stryke/types': 0.12.44
@@ -42183,14 +41745,14 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/plugin-theme@0.4.45(55239742aa458e12421c71981d118242)':
+  '@shell-shock/plugin-theme@0.4.46(55239742aa458e12421c71981d118242)':
     dependencies:
       '@alloy-js/core': 0.24.1
-      '@power-plant/noop-output': 0.0.72(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/noop-output': 0.0.77(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
       '@powerlines/plugin-plugin': 0.12.630(f2eed8bca330d2aa26b8ae0613282235)
       '@powerlines/plugin-style-dictionary': 0.3.587(ae29ec2b288034a523adc6e604f7daf7)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
       '@stryke/helpers': 0.10.56
       '@stryke/json': 0.15.40
       '@stryke/string-format': 0.17.58
@@ -42279,14 +41841,14 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/plugin-theme@0.4.45(956f44fd1bef2df47f24a5e44879c959)':
+  '@shell-shock/plugin-theme@0.4.46(956f44fd1bef2df47f24a5e44879c959)':
     dependencies:
       '@alloy-js/core': 0.24.1
-      '@power-plant/noop-output': 0.0.72(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/noop-output': 0.0.77(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(537af42710016edff80ca873e1518054)
       '@powerlines/plugin-plugin': 0.12.630(6418f66931b8d620368dcc8695b5553c)
       '@powerlines/plugin-style-dictionary': 0.3.587(6418f66931b8d620368dcc8695b5553c)
-      '@shell-shock/core': 0.17.32(eaccaf4683181a7b036a61c1cbd991a7)
+      '@shell-shock/core': 0.17.33(eaccaf4683181a7b036a61c1cbd991a7)
       '@stryke/helpers': 0.10.56
       '@stryke/json': 0.15.40
       '@stryke/string-format': 0.17.58
@@ -42375,15 +41937,15 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/plugin-update@0.1.77(8d82a394649d3059e19701b0497d6ce5)':
+  '@shell-shock/plugin-update@0.1.78(8d82a394649d3059e19701b0497d6ce5)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
       '@powerlines/plugin-plugin': 0.12.630(f2eed8bca330d2aa26b8ae0613282235)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
       '@stryke/path': 0.29.43
       '@stryke/type-checks': 0.6.49
       '@stryke/types': 0.12.44
@@ -42469,24 +42031,24 @@ snapshots:
       - vue-tsc
       - webpack
 
-  '@shell-shock/preset-cli@0.9.44(55239742aa458e12421c71981d118242)':
+  '@shell-shock/preset-cli@0.9.45(55239742aa458e12421c71981d118242)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
       '@powerlines/plugin-plugin': 0.12.630(f2eed8bca330d2aa26b8ae0613282235)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
-      '@shell-shock/plugin-banner': 0.1.59(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-changelog': 0.1.35(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-completions': 0.4.40(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-console': 0.2.36(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-help': 0.2.50(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-prompts': 0.3.73(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-skills': 0.0.23(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-theme': 0.4.45(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-update': 0.1.77(8d82a394649d3059e19701b0497d6ce5)
-      '@shell-shock/preset-script': 0.6.87(55239742aa458e12421c71981d118242)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/plugin-banner': 0.1.60(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-changelog': 0.1.36(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-completions': 0.4.41(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-console': 0.2.37(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-help': 0.2.51(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-prompts': 0.3.74(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-skills': 0.0.24(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-theme': 0.4.46(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-update': 0.1.78(8d82a394649d3059e19701b0497d6ce5)
+      '@shell-shock/preset-script': 0.6.88(55239742aa458e12421c71981d118242)
       '@stryke/path': 0.29.43
       '@stryke/string-format': 0.17.58
       '@stryke/type-checks': 0.6.49
@@ -42575,18 +42137,18 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/preset-script@0.6.87(55239742aa458e12421c71981d118242)':
+  '@shell-shock/preset-script@0.6.88(55239742aa458e12421c71981d118242)':
     dependencies:
       '@alloy-js/core': 0.24.1
       '@alloy-js/typescript': 0.24.0
-      '@power-plant/alloy-js': 0.0.90(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/alloy-js': 0.0.95(@alloy-js/babel-preset@0.3.0(@babel/core@8.0.7))(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       '@powerlines/plugin-alloy': 0.26.315(9b58d829c4262b57821079bfa7b9c751)
       '@powerlines/plugin-plugin': 0.12.630(f2eed8bca330d2aa26b8ae0613282235)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
-      '@shell-shock/plugin-banner': 0.1.59(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-console': 0.2.36(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-help': 0.2.50(55239742aa458e12421c71981d118242)
-      '@shell-shock/plugin-theme': 0.4.45(55239742aa458e12421c71981d118242)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/plugin-banner': 0.1.60(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-console': 0.2.37(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-help': 0.2.51(55239742aa458e12421c71981d118242)
+      '@shell-shock/plugin-theme': 0.4.46(55239742aa458e12421c71981d118242)
       '@stryke/helpers': 0.10.56
       '@stryke/path': 0.29.43
       '@stryke/string-format': 0.17.58
@@ -42672,10 +42234,10 @@ snapshots:
       - webpack
       - zod
 
-  '@shell-shock/schema@0.0.11(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))':
+  '@shell-shock/schema@0.0.12(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))':
     dependencies:
-      '@power-plant/core': 0.0.93(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
-      '@power-plant/schema': 0.0.91(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/core': 0.0.98(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+      '@power-plant/schema': 0.0.96(magicast@0.5.5)(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       zod: 4.6.7
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -42701,11 +42263,11 @@ snapshots:
       - uploadthing
       - valibot
 
-  '@shell-shock/unified@0.2.30(55239742aa458e12421c71981d118242)':
+  '@shell-shock/unified@0.2.31(55239742aa458e12421c71981d118242)':
     dependencies:
       '@mdit/plugin-alert': 0.23.2(markdown-it@14.3.3)
-      '@shell-shock/core': 0.17.32(07706a331cadcdce0d121dd226cad90f)
-      '@shell-shock/plugin-theme': 0.4.45(55239742aa458e12421c71981d118242)
+      '@shell-shock/core': 0.17.33(07706a331cadcdce0d121dd226cad90f)
+      '@shell-shock/plugin-theme': 0.4.46(55239742aa458e12421c71981d118242)
       '@stryke/path': 0.29.43
       '@stryke/string-format': 0.17.58
       '@stryke/type-checks': 0.6.49
@@ -43843,8 +43405,6 @@ snapshots:
       '@stryke/type-checks': 0.6.49
       '@stryke/types': 0.12.44
 
-  '@stryke/date@0.0.26': {}
-
   '@stryke/date@0.0.28': {}
 
   '@stryke/date@0.0.7': {}
@@ -44025,26 +43585,6 @@ snapshots:
   '@stryke/resolve@0.0.11(magicast@0.5.5)(zod@4.6.7)':
     dependencies:
       '@stryke/fs': 0.33.118(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/http': 0.12.108(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/path': 0.29.43
-      '@stryke/type-checks': 0.6.49
-      '@stryke/types': 0.12.44
-      '@stryke/url': 0.4.68(magicast@0.5.5)(zod@4.6.7)
-      defu: 6.1.7
-      esbuild: 0.28.2
-      jiti: 2.7.0
-      smol-toml: 1.9.1
-      typescript: 6.0.3
-      yaml: 2.9.1
-    transitivePeerDependencies:
-      - magicast
-      - zod
-
-  '@stryke/resolve@0.0.31(magicast@0.5.5)(zod@4.6.7)':
-    dependencies:
-      '@stryke/convert': 0.7.47
-      '@stryke/fs': 0.33.118(magicast@0.5.5)(zod@4.6.7)
-      '@stryke/helpers': 0.10.56
       '@stryke/http': 0.12.108(magicast@0.5.5)(zod@4.6.7)
       '@stryke/path': 0.29.43
       '@stryke/type-checks': 0.6.49

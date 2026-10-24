@@ -26,10 +26,10 @@ catalog:
   "@react-navigation/stack": ^6.4.1
   "@react-stately/color": ^3.10.1
   "@rehookify/datepicker": ^6.6.8
-  "@shell-shock/core": ^0.17.32
-  "@shell-shock/eslint-plugin": ^0.0.96
-  "@shell-shock/nx": ^0.0.105
-  "@shell-shock/preset-cli": ^0.9.44
+  "@shell-shock/core": ^0.17.33
+  "@shell-shock/eslint-plugin": ^0.0.97
+  "@shell-shock/nx": ^0.0.106
+  "@shell-shock/preset-cli": ^0.9.45
   "@storm-software/eslint-plugin-pnpm": ^0.0.117
   "@storybook/addon-docs": ^10.6.3
   "@storybook/addon-vitest": ^10.6.3
@@ -224,8 +224,8 @@ catalog:
   ui-ux-pro-max-cli: ^2.15.0
   "@power-plant/core": ^0.0.98
   "@phosphor-icons/core": ^2.1.1
-  "@shell-shock/plugin-mcp": ^0.1.10
-  "@shell-shock/plugin-skills": ^0.0.23
+  "@shell-shock/plugin-mcp": ^0.1.11
+  "@shell-shock/plugin-skills": ^0.0.24
   "@razorwind/eslint": ^0.0.36
   "@razorwind/stylelint": ^0.0.36
   "@sourcebook/config": ^0.0.12
