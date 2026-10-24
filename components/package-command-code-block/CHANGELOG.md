@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Package Command Code Block
 
+## [0.0.29](https://github.com/storm-software/cyclone-ui/releases/tag/package-command-code-block%400.0.29) (10/24/2026)
+
+### Updated Dependencies
+
+- Updated **code-block** to **v0.6.30**
+
 ## [0.0.28](https://github.com/storm-software/cyclone-ui/releases/tag/package-command-code-block%400.0.28) (10/23/2026)
 
 ### Updated Dependencies

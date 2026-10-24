@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Number Text
 
+## [0.5.30](https://github.com/storm-software/cyclone-ui/releases/tag/number-text%400.5.30) (10/24/2026)
+
+### Features
+
+- **chart:** Added various chat components based on Evilchart styles ([35032af4](https://github.com/storm-software/cyclone-ui/commit/35032af4))
+
 ## [0.5.27](https://github.com/storm-software/cyclone-ui/releases/tag/number-text%400.5.27) (10/23/2026)
 
 ### Documentation

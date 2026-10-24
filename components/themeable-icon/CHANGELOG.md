@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Themeable Icon
 
+## [0.6.30](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-icon%400.6.30) (10/24/2026)
+
+### Features
+
+- **chart:** Added various chat components based on Evilchart styles ([35032af4](https://github.com/storm-software/cyclone-ui/commit/35032af4))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.30**
+- Updated **icons** to **v0.0.26**
+- Updated **vectors** to **v0.5.30**
+
 ## [0.6.29](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-icon%400.6.29) (10/23/2026)
 
 ### Updated Dependencies

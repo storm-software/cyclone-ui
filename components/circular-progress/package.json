@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/circular-progress",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "type": "module",
   "description": "A circular progress indicator drawn with SVG on top of Tamagui's Progress primitive. It takes value and max props, a sm, md, lg or xl size (or any size token), and a theme color for the indicator arc. Use it to show determinate progress in a compact space.",
   "repository": {

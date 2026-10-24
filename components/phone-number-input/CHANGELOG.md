@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Phone Number Input
 
+## [0.0.31](https://github.com/storm-software/cyclone-ui/releases/tag/phone-number-input%400.0.31) (10/24/2026)
+
+### Features
+
+- **chart:** Added various chat components based on Evilchart styles ([35032af4](https://github.com/storm-software/cyclone-ui/commit/35032af4))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.30**
+- Updated **context-menu** to **v0.0.20**
+- Updated **field** to **v0.5.30**
+- Updated **form** to **v0.9.30**
+- Updated **helpers** to **v0.3.30**
+- Updated **input** to **v0.6.30**
+- Updated **search-input** to **v0.1.30**
+
 ## [0.0.30](https://github.com/storm-software/cyclone-ui/releases/tag/phone-number-input%400.0.30) (10/23/2026)
 
 ### Updated Dependencies

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/validation-text",
-  "version": "0.5.29",
+  "version": "0.5.30",
   "type": "module",
   "description": "A ValidationText component that shows field validation messages in caption text with an enter/exit animation. A single message is shown as plain text. Multiple messages are shown as a bulleted list under a heading that depends on the theme (errors, warnings or success), and a default notice is shown when the field is disabled. Use it below form fields.",
   "repository": {

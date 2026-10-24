@@ -2,6 +2,23 @@
 
 # Changelog for Cyclone UI - Navigation Header
 
+## [0.0.28](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.28) (10/24/2026)
+
+### Features
+
+- **email:** Add a package containing reusable React Email components ([12ab3f8c](https://github.com/storm-software/cyclone-ui/commit/12ab3f8c))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.30**
+- Updated **eyebrow-text** to **v0.5.30**
+- Updated **heading-text** to **v0.5.30**
+- Updated **icons** to **v0.0.26**
+- Updated **link** to **v0.5.30**
+- Updated **redacted-animation** to **v0.0.27**
+- Updated **search-dialog** to **v0.0.7**
+- Updated **vectors** to **v0.5.30**
+
 ## [0.0.27](https://github.com/storm-software/cyclone-ui/releases/tag/navigation-header%400.0.27) (10/23/2026)
 
 ### Updated Dependencies

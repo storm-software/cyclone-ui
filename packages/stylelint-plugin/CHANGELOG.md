@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.20](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.20) (10/24/2026)
+
+### Features
+
+- **chart:** Added various chat components based on Evilchart styles ([35032af4](https://github.com/storm-software/cyclone-ui/commit/35032af4))
+
 ## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.19) (10/23/2026)
 
 ### Bug Fixes

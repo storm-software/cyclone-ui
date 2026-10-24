@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Inline Code Text
 
+## [0.5.29](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.29) (10/24/2026)
+
+### Features
+
+- **email:** Add a package containing reusable React Email components ([12ab3f8c](https://github.com/storm-software/cyclone-ui/commit/12ab3f8c))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.30**
+
 ## [0.5.28](https://github.com/storm-software/cyclone-ui/releases/tag/inline-code-text%400.5.28) (10/23/2026)
 
 ### Updated Dependencies

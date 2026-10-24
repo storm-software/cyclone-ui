@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/search-input",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "type": "module",
   "description": "A headless search text input with a magnifying-glass icon. It shows a ContextMenu of case-insensitive suggestions (the same menu as Select) that can be navigated with the arrow keys and chosen with Enter or dismissed with Escape. Use it on its own (value/defaultValue/onChange) or inside a Field, where it connects to form state and is clearable by default. It provides TextBox and Trigger parts.",
   "repository": {
