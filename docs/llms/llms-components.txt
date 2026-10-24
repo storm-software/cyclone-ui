@@ -8,7 +8,7 @@ A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.
 
 - **Name:** `@cyclone-ui/accordion`
 - **Type:** `component`
-- **Version:** `0.3.28`
+- **Version:** `0.3.29`
 
 ### Dependencies
 
@@ -43,7 +43,7 @@ An address search field: a SearchInput whose suggestions come from an address se
 
 - **Name:** `@cyclone-ui/address-input`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -75,7 +75,7 @@ An inline alert banner with compound parts (Alert.Icon, Alert.Content.Heading, A
 
 - **Name:** `@cyclone-ui/alert`
 - **Type:** `component`
-- **Version:** `0.4.28`
+- **Version:** `0.4.29`
 
 ### Dependencies
 
@@ -113,7 +113,7 @@ A modal alert dialog built on the Cyclone UI Dialog, with an overlay, a theme-ba
 
 - **Name:** `@cyclone-ui/alert-dialog`
 - **Type:** `component`
-- **Version:** `0.4.28`
+- **Version:** `0.4.29`
 
 ### Dependencies
 
@@ -147,7 +147,7 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 
 - **Name:** `@cyclone-ui/anchor`
 - **Type:** `component`
-- **Version:** `0.0.27`
+- **Version:** `0.0.28`
 
 ### Dependencies
 
@@ -169,13 +169,40 @@ A heading wrapper that renders its children next to a permalink icon. The icon s
 | --- | --- | --- |
 | `../../components/anchor/src/Anchor.tsx` | `component` |  |
 
+## @cyclone-ui/area-chart
+
+A composable area chart built on Recharts and the shared Cyclone chart parts. Areas can overlap, stack or expand to 100%, use gradient, solid, dotted, lines or hatched fills, and take dashed or animated strokes, point markers and a reveal animation. It also supports a zoom brush, legend selection and a loading skeleton. Use it to show how values change over time and how series add up.
+
+- **Name:** `@cyclone-ui/area-chart`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/chart`: `workspace:*`
+- `motion`: `catalog:`
+- `recharts`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/area-chart/src/AreaChart.tsx` | `component` |  |
+
 ## @cyclone-ui/article-page
 
 An ArticlePage layout compound component for blog posts and documentation articles. A Header on its own background holds the breadcrumb, title, summary, cover Media and a Details row with the byline, Share links and tags; it stays in place while the Main sheet scrolls up over it. Main holds the article Content, beside a sticky table of contents and share links on wide screens, and Sections for feedback and recommendations, followed by the page footer.
 
 - **Name:** `@cyclone-ui/article-page`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -211,7 +238,7 @@ A Badge that wraps an element and pins a small count or dot to one of its corner
 
 - **Name:** `@cyclone-ui/badge`
 - **Type:** `component`
-- **Version:** `0.3.28`
+- **Version:** `0.3.29`
 
 ### Dependencies
 
@@ -233,13 +260,40 @@ A Badge that wraps an element and pins a small count or dot to one of its corner
 | --- | --- | --- |
 | `../../components/badge/src/Badge.tsx` | `component` |  |
 
+## @cyclone-ui/bar-chart
+
+A composable bar chart built on Recharts and the shared Cyclone chart parts. Bars can be grouped, stacked or shown as percentages, run vertically or horizontally, and use default, gradient, hatched, duotone or striped fills with glow and hover highlighting. It also supports a zoom brush, legend selection and a loading skeleton. Use it to compare values across categories.
+
+- **Name:** `@cyclone-ui/bar-chart`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/chart`: `workspace:*`
+- `motion`: `catalog:`
+- `recharts`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/bar-chart/src/BarChart.tsx` | `component` |  |
+
 ## @cyclone-ui/body-text
 
 A themed paragraph text component built on Tamagui's SizableText that renders a p element using the body typography tokens. It has md and sm sizes and an optional bold weight. Use it for standard body copy and as a base for other text components.
 
 - **Name:** `@cyclone-ui/body-text`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -266,7 +320,7 @@ A breadcrumb trail of Breadcrumb.Item links followed by the current page name. I
 
 - **Name:** `@cyclone-ui/breadcrumb`
 - **Type:** `component`
-- **Version:** `0.4.29`
+- **Version:** `0.4.30`
 
 ### Dependencies
 
@@ -302,7 +356,7 @@ A pressable button with Button.Text and Button.Icon subcomponents and primary, s
 
 - **Name:** `@cyclone-ui/button`
 - **Type:** `component`
-- **Version:** `0.6.28`
+- **Version:** `0.6.29`
 
 ### Dependencies
 
@@ -340,7 +394,7 @@ A BodyText-based text component that renders a numeric byte count as a human-rea
 
 - **Name:** `@cyclone-ui/bytes-text`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -366,7 +420,7 @@ A stand-alone calendar with day, month and year views that selects a single date
 
 - **Name:** `@cyclone-ui/calendar`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -397,7 +451,7 @@ A highlighted content panel with a theme-colored gradient and diagonal pattern b
 
 - **Name:** `@cyclone-ui/callout`
 - **Type:** `component`
-- **Version:** `0.4.28`
+- **Version:** `0.4.29`
 
 ### Dependencies
 
@@ -435,7 +489,7 @@ A themed card container with a gradient background and an optional accent color.
 
 - **Name:** `@cyclone-ui/card`
 - **Type:** `component`
-- **Version:** `0.6.28`
+- **Version:** `0.6.29`
 
 ### Dependencies
 
@@ -471,13 +525,49 @@ A themed card container with a gradient background and an optional accent color.
 | --- | --- | --- |
 | `../../components/card/src/Card.tsx` | `component` |  |
 
+## @cyclone-ui/chart
+
+Shared building blocks for the Cyclone UI chart packages, built on Recharts. It provides the chart container, which maps each series to theme data colors, and the tooltip, legend, point markers, zoom brush, background patterns, reveal animation and loading skeleton that the charts reuse. Use it to build a custom Recharts chart that looks like the other Cyclone charts.
+
+- **Name:** `@cyclone-ui/chart`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/body-text`: `workspace:*`
+- `@cyclone-ui/number-text`: `workspace:*`
+- `@cyclone-ui/spinner`: `workspace:*`
+- `@tamagui/core`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+- `motion`: `catalog:`
+- `recharts`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/chart/src/Chart.tsx` | `component` |  |
+| `../../components/chart/src/ChartBackground.tsx` | `component` |  |
+| `../../components/chart/src/ChartBrush.tsx` | `component` |  |
+| `../../components/chart/src/ChartDot.tsx` | `component` |  |
+| `../../components/chart/src/ChartLegend.tsx` | `component` |  |
+| `../../components/chart/src/ChartTooltip.tsx` | `component` |  |
+| `../../components/chart/src/utilities.ts` | `file` |  |
+
 ## @cyclone-ui/checkbox
 
 A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indicator for the indeterminate state. It supports form control sizes, circular, focused and disabled states, and validation colors. Wrapped in a Field, it connects to the form: it reads its checked state, size, disabled and focused states from the field and reports changes to it.
 
 - **Name:** `@cyclone-ui/checkbox`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -514,7 +604,7 @@ A circular progress indicator drawn with SVG on top of Tamagui's Progress primit
 
 - **Name:** `@cyclone-ui/circular-progress`
 - **Type:** `component`
-- **Version:** `0.0.26`
+- **Version:** `0.0.27`
 
 ### Dependencies
 
@@ -541,7 +631,7 @@ A figure that displays Shiki-highlighted code, with an optional title and icon, 
 
 - **Name:** `@cyclone-ui/code-block`
 - **Type:** `component`
-- **Version:** `0.6.28`
+- **Version:** `0.6.29`
 
 ### Dependencies
 
@@ -584,7 +674,7 @@ A single disclosure panel built on Accordion, with Collapsible.Header and Collap
 
 - **Name:** `@cyclone-ui/collapsible`
 - **Type:** `component`
-- **Version:** `0.3.24`
+- **Version:** `0.3.25`
 
 ### Dependencies
 
@@ -613,7 +703,7 @@ A 2D color picker, built on the React Stately color model, for selecting two cha
 
 - **Name:** `@cyclone-ui/color-area`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -638,7 +728,7 @@ An animated display component reproducing Ellsworth Kelly's "Colors for a Large 
 
 - **Name:** `@cyclone-ui/color-compositions`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -662,7 +752,7 @@ A color input with a swatch trigger that opens a popover to pick the color from 
 
 - **Name:** `@cyclone-ui/color-picker`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -689,13 +779,40 @@ A color input with a swatch trigger that opens a popover to pick the color from 
 | `../../components/color-picker/src/ColorPicker.tsx` | `component` |  |
 | `../../components/color-picker/src/utilities.ts` | `file` |  |
 
+## @cyclone-ui/composed-chart
+
+A composable chart that draws bars and lines on the same axes, built on Recharts and the shared Cyclone chart parts. Bars and lines keep the fill, stroke, glow and point marker styles of the bar and line charts. It also supports a zoom brush, legend selection and a loading skeleton. Use it to show a value next to a related trend, such as revenue bars with a growth line.
+
+- **Name:** `@cyclone-ui/composed-chart`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/chart`: `workspace:*`
+- `motion`: `catalog:`
+- `recharts`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/composed-chart/src/ComposedChart.tsx` | `component` |  |
+
 ## @cyclone-ui/confetti-burst
 
 An invisible anchor that bursts a ring of accent-colored confetti squares out of its position when its burst() handle is called. Size the spread and piece count with props. Web only (Web Animations API); it does nothing on native or when the user prefers reduced motion.
 
 - **Name:** `@cyclone-ui/confetti-burst`
 - **Type:** `component`
-- **Version:** `0.0.18`
+- **Version:** `0.0.19`
 
 ### Dependencies
 
@@ -719,7 +836,7 @@ A themed surface Container that wraps content in a padded, rounded box. Variants
 
 - **Name:** `@cyclone-ui/container`
 - **Type:** `component`
-- **Version:** `0.6.28`
+- **Version:** `0.6.29`
 
 ### Dependencies
 
@@ -747,7 +864,7 @@ A ContextMenu that shows a list of actions in a popover on large screens and a b
 
 - **Name:** `@cyclone-ui/context-menu`
 - **Type:** `component`
-- **Version:** `0.0.18`
+- **Version:** `0.0.19`
 
 ### Dependencies
 
@@ -778,7 +895,7 @@ Credit card fields (card number, expiry date, security code and name on card) bu
 
 - **Name:** `@cyclone-ui/credit-card-input`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -813,7 +930,7 @@ A data grid built on TanStack Table and the Cyclone UI Table that takes table op
 
 - **Name:** `@cyclone-ui/data-table`
 - **Type:** `component`
-- **Version:** `0.6.28`
+- **Version:** `0.6.29`
 
 ### Dependencies
 
@@ -864,7 +981,7 @@ A date input with a masked text box and a calendar popover that has day, month a
 
 - **Name:** `@cyclone-ui/date-picker`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -919,7 +1036,7 @@ A modal Dialog compound component built on Tamagui's dialog, with Trigger, Porta
 
 - **Name:** `@cyclone-ui/dialog`
 - **Type:** `component`
-- **Version:** `0.3.28`
+- **Version:** `0.3.29`
 
 ### Dependencies
 
@@ -963,7 +1080,7 @@ A simple horizontal or vertical line used to separate content. It supports sm, m
 
 - **Name:** `@cyclone-ui/divider`
 - **Type:** `component`
-- **Version:** `0.0.24`
+- **Version:** `0.0.25`
 
 ### Dependencies
 
@@ -989,7 +1106,7 @@ A DocsPage layout compound component for documentation and long-form reading, bu
 
 - **Name:** `@cyclone-ui/docs-page`
 - **Type:** `component`
-- **Version:** `0.0.3`
+- **Version:** `0.0.4`
 
 ### Dependencies
 
@@ -1022,7 +1139,7 @@ A side panel built on the Cyclone UI Sheet that slides in from the right by defa
 
 - **Name:** `@cyclone-ui/drawer`
 - **Type:** `component`
-- **Version:** `0.1.28`
+- **Version:** `0.1.29`
 
 ### Dependencies
 
@@ -1055,7 +1172,7 @@ An uppercase, muted heading (rendered as h5) that uses the eyebrow font. It has 
 
 - **Name:** `@cyclone-ui/eyebrow-text`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -1081,7 +1198,7 @@ A Feedback control that pairs a like toggle with a dislike toggle. Pressing disl
 
 - **Name:** `@cyclone-ui/feedback`
 - **Type:** `component`
-- **Version:** `0.0.18`
+- **Version:** `0.0.19`
 
 ### Dependencies
 
@@ -1116,7 +1233,7 @@ A form field wrapper that connects a control to Cyclone UI form state and provid
 
 - **Name:** `@cyclone-ui/field`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -1157,7 +1274,7 @@ A file and image picker with a dashed drop zone that supports drag and drop on t
 
 - **Name:** `@cyclone-ui/file-picker`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -1214,7 +1331,7 @@ A FileTree component that renders a hierarchical file structure using File leave
 
 - **Name:** `@cyclone-ui/file-tree`
 - **Type:** `component`
-- **Version:** `0.0.26`
+- **Version:** `0.0.27`
 
 ### Dependencies
 
@@ -1242,7 +1359,7 @@ A responsive site footer with compound layout parts for an introduction, action,
 
 - **Name:** `@cyclone-ui/footer`
 - **Type:** `component`
-- **Version:** `0.0.26`
+- **Version:** `0.0.27`
 
 ### Dependencies
 
@@ -1273,7 +1390,7 @@ A form root that renders a native form element and provides Cyclone UI form stat
 
 - **Name:** `@cyclone-ui/form`
 - **Type:** `component`
-- **Version:** `0.9.28`
+- **Version:** `0.9.29`
 
 ### Dependencies
 
@@ -1299,7 +1416,7 @@ A decorative section divider that draws a ragged grid of seeded pseudo-random sq
 
 - **Name:** `@cyclone-ui/glitch-separator`
 - **Type:** `component`
-- **Version:** `0.0.25`
+- **Version:** `0.0.26`
 
 ### Dependencies
 
@@ -1324,7 +1441,7 @@ Themed heading text components: HeadingHeroText, HeadingTitleText, HeadingLargeT
 
 - **Name:** `@cyclone-ui/heading-text`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -1350,7 +1467,7 @@ Tamagui icon components for web and React Native covering every icon in the Phos
 
 - **Name:** `@cyclone-ui/icons`
 - **Type:** `component`
-- **Version:** `0.0.24`
+- **Version:** `0.0.25`
 
 ### Dependencies
 
@@ -2894,7 +3011,7 @@ An inline span styled for short code snippets, using the code font with a subtle
 
 - **Name:** `@cyclone-ui/inline-code-text`
 - **Type:** `component`
-- **Version:** `0.5.27`
+- **Version:** `0.5.28`
 
 ### Dependencies
 
@@ -2921,7 +3038,7 @@ A composable text input with Input.TextBox, Input.TextBox.Value, Input.Separator
 
 - **Name:** `@cyclone-ui/input`
 - **Type:** `component`
-- **Version:** `0.6.28`
+- **Version:** `0.6.29`
 
 ### Dependencies
 
@@ -2962,7 +3079,7 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 
 - **Name:** `@cyclone-ui/like-button`
 - **Type:** `component`
-- **Version:** `0.0.18`
+- **Version:** `0.0.19`
 
 ### Dependencies
 
@@ -2983,13 +3100,40 @@ A toggle button with a thumbs-up icon that can be controlled (liked, onLikedChan
 | --- | --- | --- |
 | `../../components/like-button/src/LikeButton.tsx` | `component` |  |
 
+## @cyclone-ui/line-chart
+
+A composable line chart built on Recharts and the shared Cyclone chart parts. Lines take solid, dashed or animated strokes, curve types, glow, point markers, a dashed buffer segment and a reveal animation. It also supports a zoom brush, legend selection and a loading skeleton. Use it to compare how several series trend over time.
+
+- **Name:** `@cyclone-ui/line-chart`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/chart`: `workspace:*`
+- `motion`: `catalog:`
+- `recharts`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/line-chart/src/LineChart.tsx` | `component` |  |
+
 ## @cyclone-ui/link
 
 A themed text link that renders an anchor with href and target on web and opens the URL with Linking on native. Setting external opens it in a new tab and adds an arrow icon that shifts on hover. Supports text sizes.
 
 - **Name:** `@cyclone-ui/link`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -3022,7 +3166,7 @@ A LinkText component that renders styled, interactive link text. It has base, mi
 
 - **Name:** `@cyclone-ui/link-text`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -3050,7 +3194,7 @@ A toast notification container built on Tamagui Toast that renders each queued t
 
 - **Name:** `@cyclone-ui/message`
 - **Type:** `component`
-- **Version:** `0.6.28`
+- **Version:** `0.6.29`
 
 ### Dependencies
 
@@ -3081,7 +3225,7 @@ A responsive site header made of Logo, Navigation, Actions and MenuButton slots.
 
 - **Name:** `@cyclone-ui/navigation-header`
 - **Type:** `component`
-- **Version:** `0.0.26`
+- **Version:** `0.0.27`
 
 ### Dependencies
 
@@ -3114,7 +3258,7 @@ A Button preset labeled "Next" by default, with a right-arrow icon that animates
 
 - **Name:** `@cyclone-ui/next-button`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -3142,7 +3286,7 @@ A NumberInput built on Input that renders a type=number text box with decrease (
 
 - **Name:** `@cyclone-ui/number-input`
 - **Type:** `component`
-- **Version:** `0.0.29`
+- **Version:** `0.0.30`
 
 ### Dependencies
 
@@ -3171,7 +3315,7 @@ A label-styled text component that renders its numeric children with NumberFlow,
 
 - **Name:** `@cyclone-ui/number-text`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -3197,7 +3341,7 @@ A one-time passcode input that renders one numeric input per digit (4 by default
 
 - **Name:** `@cyclone-ui/otp-input`
 - **Type:** `component`
-- **Version:** `0.0.29`
+- **Version:** `0.0.30`
 
 ### Dependencies
 
@@ -3225,7 +3369,7 @@ A full-bleed backdrop that partially obscures background content with a blurred,
 
 - **Name:** `@cyclone-ui/overlay`
 - **Type:** `component`
-- **Version:** `0.0.15`
+- **Version:** `0.0.16`
 
 ### Dependencies
 
@@ -3252,7 +3396,7 @@ A tabbed code block that shows the equivalent npm, pnpm, yarn and bun command fo
 
 - **Name:** `@cyclone-ui/package-command-code-block`
 - **Type:** `component`
-- **Version:** `0.0.27`
+- **Version:** `0.0.28`
 
 ### Dependencies
 
@@ -3277,7 +3421,7 @@ A Page layout compound component with Banner, TopNav (Start, Middle and End slot
 
 - **Name:** `@cyclone-ui/page`
 - **Type:** `component`
-- **Version:** `0.0.22`
+- **Version:** `0.0.23`
 
 ### Dependencies
 
@@ -3309,7 +3453,7 @@ A page navigation bar with previous and next buttons, first and last page button
 
 - **Name:** `@cyclone-ui/pagination`
 - **Type:** `component`
-- **Version:** `0.8.28`
+- **Version:** `0.8.29`
 
 ### Dependencies
 
@@ -3341,7 +3485,7 @@ A password input with a show/hide toggle and a caps-lock warning. A strength met
 
 - **Name:** `@cyclone-ui/password-input`
 - **Type:** `component`
-- **Version:** `0.0.27`
+- **Version:** `0.0.28`
 
 ### Dependencies
 
@@ -3375,7 +3519,7 @@ Renders one page of a PDF from a URL or FileResult using react-pdf, with a spinn
 
 - **Name:** `@cyclone-ui/pdf-document-display`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -3406,7 +3550,7 @@ A headless phone number input built on Input that adds a searchable country-code
 
 - **Name:** `@cyclone-ui/phone-number-input`
 - **Type:** `component`
-- **Version:** `0.0.29`
+- **Version:** `0.0.30`
 
 ### Dependencies
 
@@ -3436,13 +3580,40 @@ A headless phone number input built on Input that adds a searchable country-code
 | --- | --- | --- |
 | `../../components/phone-number-input/src/PhoneNumberInput.tsx` | `component` |  |
 
+## @cyclone-ui/pie-chart
+
+A composable pie and donut chart built on Recharts and the shared Cyclone chart parts. Sectors take gradient colors from the theme and can be padded, overlapped, labeled, rounded or made to glow. It also supports legend selection, background patterns and a loading skeleton. Use it to show how a whole splits into a few parts.
+
+- **Name:** `@cyclone-ui/pie-chart`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/chart`: `workspace:*`
+- `motion`: `catalog:`
+- `recharts`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/pie-chart/src/PieChart.tsx` | `component` |  |
+
 ## @cyclone-ui/popover
 
 A floating popover built on Tamagui Popover, with Popover.Trigger, Popover.Anchor, Popover.Content (with an optional arrow, a ScrollView and Close) parts. Content is elevated by default and animates in, and on small screens it turns into a bottom sheet unless shouldAdapt is false. Use it for contextual menus, filters or extra details.
 
 - **Name:** `@cyclone-ui/popover`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -3480,7 +3651,7 @@ A Link with a dotted underline that shows a Tooltip with more details when hover
 
 - **Name:** `@cyclone-ui/preview-link`
 - **Type:** `component`
-- **Version:** `0.0.8`
+- **Version:** `0.0.9`
 
 ### Dependencies
 
@@ -3507,7 +3678,7 @@ A button with an animated left-arrow icon and a default "Previous" label. The la
 
 - **Name:** `@cyclone-ui/previous-button`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -3535,7 +3706,7 @@ A themed progress bar built on the Tamagui Progress, with an animated indicator.
 
 - **Name:** `@cyclone-ui/progress`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -3555,13 +3726,67 @@ A themed progress bar built on the Tamagui Progress, with an animated indicator.
 | --- | --- | --- |
 | `../../components/progress/src/Progress.tsx` | `component` |  |
 
+## @cyclone-ui/radar-chart
+
+A composable radar chart built on Recharts and the shared Cyclone chart parts. Series can be filled or drawn as lines over a polygon or circle grid, with glow and point markers. It also supports legend selection and a loading skeleton. Use it to compare several series across the same set of attributes.
+
+- **Name:** `@cyclone-ui/radar-chart`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/chart`: `workspace:*`
+- `motion`: `catalog:`
+- `recharts`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/radar-chart/src/RadarChart.tsx` | `component` |  |
+
+## @cyclone-ui/radial-chart
+
+A composable radial bar chart built on Recharts and the shared Cyclone chart parts. Each category is drawn as a ring, as a full circle or a semicircle, with gradient colors from the theme. It also supports legend selection and a loading skeleton. Use it to compare a few values as progress around a circle.
+
+- **Name:** `@cyclone-ui/radial-chart`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/chart`: `workspace:*`
+- `motion`: `catalog:`
+- `recharts`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/radial-chart/src/RadialChart.tsx` | `component` |  |
+
 ## @cyclone-ui/radio-group
 
 A RadioGroup compound component (RadioGroup.Item) built on Tamagui's radio group. Each item shows a label and an optional description next to its radio indicator. It supports form control sizes, disabled and required states, validation-aware styling, and controlled or default values. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field, renders the field items as options when given no children, and reports changes to it.
 
 - **Name:** `@cyclone-ui/radio-group`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -3601,7 +3826,7 @@ A row of icons, stars by default, for displaying or selecting a rating. It can b
 
 - **Name:** `@cyclone-ui/rating`
 - **Type:** `component`
-- **Version:** `0.0.24`
+- **Version:** `0.0.25`
 
 ### Dependencies
 
@@ -3630,7 +3855,7 @@ A RedactedAnimation wrapper that briefly covers its children with an accent-colo
 
 - **Name:** `@cyclone-ui/redacted-animation`
 - **Type:** `component`
-- **Version:** `0.0.25`
+- **Version:** `0.0.26`
 
 ### Dependencies
 
@@ -3656,7 +3881,7 @@ A RippleAnimation layer that fills its positioned parent and, when its ripple() 
 
 - **Name:** `@cyclone-ui/ripple-animation`
 - **Type:** `component`
-- **Version:** `0.0.5`
+- **Version:** `0.0.6`
 
 ### Dependencies
 
@@ -3674,13 +3899,40 @@ A RippleAnimation layer that fills its positioned parent and, when its ripple() 
 | --- | --- | --- |
 | `../../components/ripple-animation/src/RippleAnimation.tsx` | `component` |  |
 
+## @cyclone-ui/sankey-chart
+
+A composable Sankey diagram built on Recharts and the shared Cyclone chart parts. Links between nodes can use gradient, solid, source-colored or target-colored fills, and nodes can carry inside or outside labels. It also supports a loading skeleton. Use it to show how a quantity flows from sources to destinations.
+
+- **Name:** `@cyclone-ui/sankey-chart`
+- **Type:** `component`
+- **Version:** `0.0.1`
+
+### Dependencies
+
+- `@cyclone-ui/chart`: `workspace:*`
+- `motion`: `catalog:`
+- `recharts`: `catalog:`
+
+### Development Dependencies
+
+- `@storybook/react-vite`: `catalog:`
+- `@tamagui/stacks`: `catalog:`
+- `react`: `catalog:`
+- `react-dom`: `catalog:`
+- `react-native`: `catalog:`
+
+### Files
+| Path | Type | Target |
+| --- | --- | --- |
+| `../../components/sankey-chart/src/SankeyChart.tsx` | `component` |  |
+
 ## @cyclone-ui/scroll-view
 
 A scroll container built on Tamagui's ScrollView, with a thin themed scrollbar on web that is highlighted on hover. It has sm and lg width sizes and a fullscreen variant that fills its parent. Use it for any scrollable area that should match the theme.
 
 - **Name:** `@cyclone-ui/scroll-view`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -3708,7 +3960,7 @@ A search icon Button that opens a Dialog for searching the application, like the
 
 - **Name:** `@cyclone-ui/search-dialog`
 - **Type:** `component`
-- **Version:** `0.0.5`
+- **Version:** `0.0.6`
 
 ### Dependencies
 
@@ -3740,7 +3992,7 @@ A headless search text input with a magnifying-glass icon. It shows a ContextMen
 
 - **Name:** `@cyclone-ui/search-input`
 - **Type:** `component`
-- **Version:** `0.1.28`
+- **Version:** `0.1.29`
 
 ### Dependencies
 
@@ -3771,7 +4023,7 @@ A dropdown select with Select.TextBox, Select.TextBox.Value and Select.Items sub
 
 - **Name:** `@cyclone-ui/select`
 - **Type:** `component`
-- **Version:** `0.6.28`
+- **Version:** `0.6.29`
 
 ### Dependencies
 
@@ -3818,7 +4070,7 @@ A modal panel that slides in from the top, right, bottom or left edge. It uses a
 
 - **Name:** `@cyclone-ui/sheet`
 - **Type:** `component`
-- **Version:** `0.0.27`
+- **Version:** `0.0.28`
 
 ### Dependencies
 
@@ -3851,7 +4103,7 @@ A skeleton component for loading states.
 
 - **Name:** `@cyclone-ui/skeleton`
 - **Type:** `component`
-- **Version:** `0.0.12`
+- **Version:** `0.0.13`
 
 ### Dependencies
 
@@ -3875,7 +4127,7 @@ A Material-style slider, built on the Tamagui Slider, for choosing a single valu
 
 - **Name:** `@cyclone-ui/slider`
 - **Type:** `component`
-- **Version:** `0.0.24`
+- **Version:** `0.0.25`
 
 ### Dependencies
 
@@ -3904,7 +4156,7 @@ A Spinner component that renders the React Native ActivityIndicator inside a Tam
 
 - **Name:** `@cyclone-ui/spinner`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -3929,7 +4181,7 @@ A multi-step wizard built on Tamagui Tabs with a vertical header list that marks
 
 - **Name:** `@cyclone-ui/stepper`
 - **Type:** `component`
-- **Version:** `0.3.28`
+- **Version:** `0.3.29`
 
 ### Dependencies
 
@@ -3972,7 +4224,7 @@ A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled stat
 
 - **Name:** `@cyclone-ui/switch`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -4008,7 +4260,7 @@ A Table compound component with Header, Body, Row, Cell, HeaderCell and Footer p
 
 - **Name:** `@cyclone-ui/table`
 - **Type:** `component`
-- **Version:** `0.4.28`
+- **Version:** `0.4.29`
 
 ### Dependencies
 
@@ -4044,7 +4296,7 @@ A page navigation list built from an array of heading items, each with a title, 
 
 - **Name:** `@cyclone-ui/table-of-contents`
 - **Type:** `component`
-- **Version:** `0.0.25`
+- **Version:** `0.0.26`
 
 ### Dependencies
 
@@ -4073,7 +4325,7 @@ A tabbed interface with Header.Item triggers and Content.Item panels. It offers 
 
 - **Name:** `@cyclone-ui/tabs`
 - **Type:** `component`
-- **Version:** `0.3.28`
+- **Version:** `0.3.29`
 
 ### Dependencies
 
@@ -4114,7 +4366,7 @@ A compact label chip with Tag.Text and Tag.Icon subcomponents. It has primary an
 
 - **Name:** `@cyclone-ui/tag`
 - **Type:** `component`
-- **Version:** `0.0.23`
+- **Version:** `0.0.24`
 
 ### Dependencies
 
@@ -4148,7 +4400,7 @@ A TagPicker input that turns typed text into removable tags. Enter adds a trimme
 
 - **Name:** `@cyclone-ui/tag-picker`
 - **Type:** `component`
-- **Version:** `0.0.23`
+- **Version:** `0.0.24`
 
 ### Dependencies
 
@@ -4180,7 +4432,7 @@ A multiline text input that renders a textarea with 3 rows by default and uses t
 
 - **Name:** `@cyclone-ui/text-area`
 - **Type:** `component`
-- **Version:** `0.1.28`
+- **Version:** `0.1.29`
 
 ### Dependencies
 
@@ -4210,7 +4462,7 @@ A ThemeableGradient component that renders a diagonal LinearGradient. Its color 
 
 - **Name:** `@cyclone-ui/themeable-gradient`
 - **Type:** `component`
-- **Version:** `0.0.29`
+- **Version:** `0.0.30`
 
 ### Dependencies
 
@@ -4237,7 +4489,7 @@ An icon wrapper that applies size and color tokens to its child icon and animate
 
 - **Name:** `@cyclone-ui/themeable-icon`
 - **Type:** `component`
-- **Version:** `0.6.28`
+- **Version:** `0.6.29`
 
 ### Dependencies
 
@@ -4271,7 +4523,7 @@ A time input with a masked text box and a clock popover whose hand can be presse
 
 - **Name:** `@cyclone-ui/time-picker`
 - **Type:** `component`
-- **Version:** `0.0.13`
+- **Version:** `0.0.14`
 
 ### Dependencies
 
@@ -4306,7 +4558,7 @@ A Timeline that renders a list of events joined by a line, vertically or horizon
 
 - **Name:** `@cyclone-ui/timeline`
 - **Type:** `component`
-- **Version:** `0.0.18`
+- **Version:** `0.0.19`
 
 ### Dependencies
 
@@ -4333,7 +4585,7 @@ A clickable toggle component that is exists in either an "on" or "off" state wit
 
 - **Name:** `@cyclone-ui/toggle`
 - **Type:** `component`
-- **Version:** `0.0.18`
+- **Version:** `0.0.19`
 
 ### Dependencies
 
@@ -4359,7 +4611,7 @@ A clickable group of toggle components that exists in either an "on" or "off" st
 
 - **Name:** `@cyclone-ui/toggle-group`
 - **Type:** `component`
-- **Version:** `0.0.18`
+- **Version:** `0.0.19`
 
 ### Dependencies
 
@@ -4386,7 +4638,7 @@ A tooltip built on the Tamagui Tooltip with Trigger and Content parts. The conte
 
 - **Name:** `@cyclone-ui/tooltip`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -4417,7 +4669,7 @@ A documentation table that lists properties with their types. Each row expands t
 
 - **Name:** `@cyclone-ui/type-table`
 - **Type:** `component`
-- **Version:** `0.0.24`
+- **Version:** `0.0.25`
 
 ### Dependencies
 
@@ -4449,7 +4701,7 @@ A ValidationText component that shows field validation messages in caption text 
 
 - **Name:** `@cyclone-ui/validation-text`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -4478,7 +4730,7 @@ A set of custom themed SVG graphics for Tamagui, including status circles (alert
 
 - **Name:** `@cyclone-ui/vectors`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 
@@ -4525,7 +4777,7 @@ A wrapper that hides its content visually but keeps it available to screen reade
 
 - **Name:** `@cyclone-ui/visually-hidden`
 - **Type:** `component`
-- **Version:** `0.5.28`
+- **Version:** `0.5.29`
 
 ### Dependencies
 

@@ -59,7 +59,7 @@ export const getIconByTheme = ({
   ...props
 }: BaseThemeIconProps) => {
   if (disabled) {
-    return <Lock {...props} />;
+    return <Lock {...props} size={props.size } />;
   } else if (theme?.includes("danger")) {
     return <ErrorCircle {...props} />;
   } else if (theme?.includes("warning")) {
@@ -70,10 +70,6 @@ export const getIconByTheme = ({
     return <DiscoveryCircle {...props} />;
   } else if (theme?.includes("success")) {
     return <CheckCircle {...props} />;
-  } else if (theme?.includes("positive")) {
-    return <PlusCircle {...props} />;
-  } else if (theme?.includes("negative")) {
-    return <MinusCircle {...props} />;
   }
 
   return null;

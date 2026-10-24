@@ -20,11 +20,18 @@
 
 import NumberFlow from "@number-flow/react";
 import type { GetProps } from "@tamagui/core";
-import { createStyledHOC } from "@tamagui/core";
+import { createStyledHOC, styled } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
+// SizableText defaults `color` to the "color" theme key, which the Cyclone
+// themes don't define; match BodyText instead.
+const NumberTextFrame: typeof SizableText = styled(SizableText, {
+  displayName: "NumberText",
+  color: "ink"
+});
+
 export const NumberText: typeof SizableText = createStyledHOC(
-  SizableText,
+  NumberTextFrame,
   ({ children, ...props }, forwardedRef) => {
     let value = Number(children);
     if (Number.isNaN(value)) {
@@ -32,9 +39,9 @@ export const NumberText: typeof SizableText = createStyledHOC(
     }
 
     return (
-      <SizableText ref={forwardedRef} {...props}>
+      <NumberTextFrame ref={forwardedRef} {...props}>
         <NumberFlow value={value} />
-      </SizableText>
+      </NumberTextFrame>
     );
   }
 );

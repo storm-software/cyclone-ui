@@ -329,6 +329,33 @@
     },
     {
       "path": "./components/ripple-animation"
+    },
+    {
+      "path": "./components/composed-chart"
+    },
+    {
+      "path": "./components/radial-chart"
+    },
+    {
+      "path": "./components/sankey-chart"
+    },
+    {
+      "path": "./components/radar-chart"
+    },
+    {
+      "path": "./components/area-chart"
+    },
+    {
+      "path": "./components/line-chart"
+    },
+    {
+      "path": "./components/bar-chart"
+    },
+    {
+      "path": "./components/pie-chart"
+    },
+    {
+      "path": "./components/chart"
     }
   ],
   "files": []

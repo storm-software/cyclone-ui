@@ -4283,6 +4283,11 @@ export const manifest: DesignSystemManifest = {
       roles: ["link"]
     },
     {
+      name: "@cyclone-ui/area-chart",
+      jsx: ["AreaChart"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/article-page",
       jsx: ["ArticlePage"],
       roles: []
@@ -4290,6 +4295,11 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/badge",
       jsx: ["Badge"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/bar-chart",
+      jsx: ["BarChart"],
       roles: []
     },
     {
@@ -4328,6 +4338,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/chart",
+      jsx: ["Chart"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/checkbox",
       jsx: ["Checkbox"],
       roles: ["checkbox"]
@@ -4360,6 +4375,11 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/color-picker",
       jsx: ["ColorPicker"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/composed-chart",
+      jsx: ["ComposedChart"],
       roles: []
     },
     {
@@ -4478,6 +4498,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/line-chart",
+      jsx: ["LineChart"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/link",
       jsx: ["Link"],
       roles: ["link"]
@@ -4553,6 +4578,11 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/pie-chart",
+      jsx: ["PieChart"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/popover",
       jsx: ["Popover"],
       roles: []
@@ -4573,6 +4603,16 @@ export const manifest: DesignSystemManifest = {
       roles: []
     },
     {
+      name: "@cyclone-ui/radar-chart",
+      jsx: ["RadarChart"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/radial-chart",
+      jsx: ["RadialChart"],
+      roles: []
+    },
+    {
       name: "@cyclone-ui/radio-group",
       jsx: ["RadioGroup"],
       roles: ["radio"]
@@ -4590,6 +4630,11 @@ export const manifest: DesignSystemManifest = {
     {
       name: "@cyclone-ui/ripple-animation",
       jsx: ["RippleAnimation"],
+      roles: []
+    },
+    {
+      name: "@cyclone-ui/sankey-chart",
+      jsx: ["SankeyChart"],
       roles: []
     },
     {

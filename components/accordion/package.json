@@ -1,47 +1,14 @@
 {
   "name": "@cyclone-ui/accordion",
   "version": "0.3.29",
-  "type": "module",
+  "private": false,
   "description": "A collapsible Accordion compound component (Accordion.Item, Item.Header, Header.Heading, Item.Content) built on Tamagui's accordion. It supports single or multiple open items, default, separated, bordered and ghost variants, numbered headers, toggle or chevron icons with a configurable side, and an up or down direction. Use it for FAQs or grouped sections that users expand.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/accordion"
   },
-  "private": false,
-  "peerDependencies": {
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-native": "catalog:"
-  },
-  "dependencies": {
-    "@stryke/type-checks": "catalog:",
-    "@stryke/types": "catalog:",
-    "@tamagui/accordion": "catalog:",
-    "@tamagui/collapsible": "catalog:",
-    "@tamagui/core": "catalog:",
-    "@tamagui/group": "catalog:",
-    "@tamagui/helpers": "catalog:",
-    "@cyclone-ui/icons": "workspace:*",
-    "@tamagui/stacks": "catalog:",
-    "@cyclone-ui/heading-text": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*"
-  },
-  "devDependencies": {
-    "@cyclone-ui/body-text": "workspace:*",
-    "@storybook/react-vite": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-native": "catalog:"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "module:jsx": "dist/jsx",
-  "source": "src/index.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -52,5 +19,38 @@
       "require": "./dist/Accordion.cjs"
     },
     "./*": "./*"
-  }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "source": "src/index.ts",
+  "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/icons": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*",
+    "@stryke/type-checks": "catalog:",
+    "@stryke/types": "catalog:",
+    "@tamagui/accordion": "catalog:",
+    "@tamagui/collapsible": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/group": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/stacks": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "module:jsx": "dist/jsx"
 }

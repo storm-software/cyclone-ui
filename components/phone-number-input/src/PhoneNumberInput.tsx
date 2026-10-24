@@ -98,15 +98,24 @@ const COUNTRY_OPTIONS: CountryOption[] = getCountries().map(
 );
 
 interface PhoneNumberContextValue {
+  /**
+   * The currently selected country code.
+   */
   countryCode: CountryCode;
 
-  /** Switch country, clearing the entered number. */
+  /**
+   * Switch country, clearing the entered number.
+   */
   selectCountry: (countryCode: CountryCode) => void;
 
-  /** The displayed value. */
+  /**
+   * The displayed value.
+   */
   value: string | undefined;
 
-  /** The mask to apply to the input directly (outside a `Field`). */
+  /**
+   * The mask to apply to the input directly (outside a `Field`).
+   */
   mask: MaskitoOptions | undefined;
 }
 

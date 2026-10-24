@@ -1,0 +1,53 @@
+{
+  "name": "@cyclone-ui/pie-chart",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A composable pie and donut chart built on Recharts and the shared Cyclone chart parts. Sectors take gradient colors from the theme and can be padded, overlapped, labeled, rounded or made to glow. It also supports legend selection, background patterns and a loading skeleton. Use it to show how a whole splits into a few parts.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/pie-chart"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/chart": "workspace:*",
+    "motion": "catalog:",
+    "recharts": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./PieChart": {
+      "import": "./dist/PieChart.mjs",
+      "require": "./dist/PieChart.cjs"
+    },
+    "./*": "./*"
+  }
+}

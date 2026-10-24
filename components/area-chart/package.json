@@ -1,0 +1,53 @@
+{
+  "name": "@cyclone-ui/area-chart",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A composable area chart built on Recharts and the shared Cyclone chart parts. Areas can overlap, stack or expand to 100%, use gradient, solid, dotted, lines or hatched fills, and take dashed or animated strokes, point markers and a reveal animation. It also supports a zoom brush, legend selection and a loading skeleton. Use it to show how values change over time and how series add up.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/area-chart"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/chart": "workspace:*",
+    "motion": "catalog:",
+    "recharts": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./AreaChart": {
+      "import": "./dist/AreaChart.mjs",
+      "require": "./dist/AreaChart.cjs"
+    },
+    "./*": "./*"
+  }
+}

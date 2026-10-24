@@ -23,8 +23,8 @@
         "react-native@^0.87.1"
       ],
       "registryDependencies": [
-        "@cyclone-ui/icons",
         "@cyclone-ui/heading-text",
+        "@cyclone-ui/icons",
         "@cyclone-ui/vectors"
       ],
       "files": [
@@ -152,6 +152,27 @@
       ]
     },
     {
+      "name": "@cyclone-ui/area-chart",
+      "type": "registry:component",
+      "title": "@cyclone-ui/area-chart",
+      "description": "A composable area chart built on Recharts and the shared Cyclone chart parts. Areas can overlap, stack or expand to 100%, use gradient, solid, dotted, lines or hatched fills, and take dashed or animated strokes, point markers and a reveal animation. It also supports a zoom brush, legend selection and a loading skeleton. Use it to show how values change over time and how series add up.",
+      "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.3",
+        "@tamagui/stacks@3.0.13",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/chart"],
+      "files": [
+        {
+          "path": "components/area-chart/src/AreaChart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/article-page",
       "type": "registry:component",
       "title": "@cyclone-ui/article-page",
@@ -191,6 +212,27 @@
       "files": [
         {
           "path": "components/badge/src/Badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/bar-chart",
+      "type": "registry:component",
+      "title": "@cyclone-ui/bar-chart",
+      "description": "A composable bar chart built on Recharts and the shared Cyclone chart parts. Bars can be grouped, stacked or shown as percentages, run vertically or horizontally, and use default, gradient, hatched, duotone or striped fills with glow and hover highlighting. It also supports a zoom brush, legend selection and a loading skeleton. Use it to compare values across categories.",
+      "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.3",
+        "@tamagui/stacks@3.0.13",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/chart"],
+      "files": [
+        {
+          "path": "components/bar-chart/src/BarChart.tsx",
           "type": "registry:component"
         }
       ]
@@ -420,6 +462,60 @@
       ]
     },
     {
+      "name": "@cyclone-ui/chart",
+      "type": "registry:component",
+      "title": "@cyclone-ui/chart",
+      "description": "Shared building blocks for the Cyclone UI chart packages, built on Recharts. It provides the chart container, which maps each series to theme data colors, and the tooltip, legend, point markers, zoom brush, background patterns, reveal animation and loading skeleton that the charts reuse. Use it to build a custom Recharts chart that looks like the other Cyclone charts.",
+      "dependencies": [
+        "@tamagui/core@3.0.13",
+        "@tamagui/stacks@3.0.13",
+        "motion@^11.18.2",
+        "recharts@3.8.0"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.3",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": [
+        "@cyclone-ui/body-text",
+        "@cyclone-ui/number-text",
+        "@cyclone-ui/spinner"
+      ],
+      "files": [
+        {
+          "path": "components/chart/src/Chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/chart/src/ChartBackground.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/chart/src/ChartBrush.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/chart/src/ChartDot.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/chart/src/ChartLegend.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/chart/src/ChartTooltip.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/chart/src/utilities.ts",
+          "type": "registry:file",
+          "target": "components/chart/src/utilities.ts"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/checkbox",
       "type": "registry:component",
       "title": "@cyclone-ui/checkbox",
@@ -609,6 +705,27 @@
           "path": "components/color-picker/src/utilities.ts",
           "type": "registry:file",
           "target": "components/color-picker/src/utilities.ts"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/composed-chart",
+      "type": "registry:component",
+      "title": "@cyclone-ui/composed-chart",
+      "description": "A composable chart that draws bars and lines on the same axes, built on Recharts and the shared Cyclone chart parts. Bars and lines keep the fill, stroke, glow and point marker styles of the bar and line charts. It also supports a zoom brush, legend selection and a loading skeleton. Use it to show a value next to a related trend, such as revenue bars with a growth line.",
+      "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.3",
+        "@tamagui/stacks@3.0.13",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/chart"],
+      "files": [
+        {
+          "path": "components/composed-chart/src/ComposedChart.tsx",
+          "type": "registry:component"
         }
       ]
     },
@@ -7383,6 +7500,27 @@
       ]
     },
     {
+      "name": "@cyclone-ui/line-chart",
+      "type": "registry:component",
+      "title": "@cyclone-ui/line-chart",
+      "description": "A composable line chart built on Recharts and the shared Cyclone chart parts. Lines take solid, dashed or animated strokes, curve types, glow, point markers, a dashed buffer segment and a reveal animation. It also supports a zoom brush, legend selection and a loading skeleton. Use it to compare how several series trend over time.",
+      "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.3",
+        "@tamagui/stacks@3.0.13",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/chart"],
+      "files": [
+        {
+          "path": "components/line-chart/src/LineChart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/link",
       "type": "registry:component",
       "title": "@cyclone-ui/link",
@@ -7787,6 +7925,27 @@
       ]
     },
     {
+      "name": "@cyclone-ui/pie-chart",
+      "type": "registry:component",
+      "title": "@cyclone-ui/pie-chart",
+      "description": "A composable pie and donut chart built on Recharts and the shared Cyclone chart parts. Sectors take gradient colors from the theme and can be padded, overlapped, labeled, rounded or made to glow. It also supports legend selection, background patterns and a loading skeleton. Use it to show how a whole splits into a few parts.",
+      "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.3",
+        "@tamagui/stacks@3.0.13",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/chart"],
+      "files": [
+        {
+          "path": "components/pie-chart/src/PieChart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/popover",
       "type": "registry:component",
       "title": "@cyclone-ui/popover",
@@ -7889,6 +8048,48 @@
       ]
     },
     {
+      "name": "@cyclone-ui/radar-chart",
+      "type": "registry:component",
+      "title": "@cyclone-ui/radar-chart",
+      "description": "A composable radar chart built on Recharts and the shared Cyclone chart parts. Series can be filled or drawn as lines over a polygon or circle grid, with glow and point markers. It also supports legend selection and a loading skeleton. Use it to compare several series across the same set of attributes.",
+      "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.3",
+        "@tamagui/stacks@3.0.13",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/chart"],
+      "files": [
+        {
+          "path": "components/radar-chart/src/RadarChart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/radial-chart",
+      "type": "registry:component",
+      "title": "@cyclone-ui/radial-chart",
+      "description": "A composable radial bar chart built on Recharts and the shared Cyclone chart parts. Each category is drawn as a ring, as a full circle or a semicircle, with gradient colors from the theme. It also supports legend selection and a loading skeleton. Use it to compare a few values as progress around a circle.",
+      "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.3",
+        "@tamagui/stacks@3.0.13",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/chart"],
+      "files": [
+        {
+          "path": "components/radial-chart/src/RadialChart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/radio-group",
       "type": "registry:component",
       "title": "@cyclone-ui/radio-group",
@@ -7982,6 +8183,27 @@
       "files": [
         {
           "path": "components/ripple-animation/src/RippleAnimation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "@cyclone-ui/sankey-chart",
+      "type": "registry:component",
+      "title": "@cyclone-ui/sankey-chart",
+      "description": "A composable Sankey diagram built on Recharts and the shared Cyclone chart parts. Links between nodes can use gradient, solid, source-colored or target-colored fills, and nodes can carry inside or outside labels. It also supports a loading skeleton. Use it to show how a quantity flows from sources to destinations.",
+      "dependencies": ["motion@^11.18.2", "recharts@3.8.0"],
+      "devDependencies": [
+        "@storybook/react-vite@^10.6.3",
+        "@tamagui/stacks@3.0.13",
+        "react@^19.3.1",
+        "react-dom@^19.3.1",
+        "react-native@^0.87.1"
+      ],
+      "registryDependencies": ["@cyclone-ui/chart"],
+      "files": [
+        {
+          "path": "components/sankey-chart/src/SankeyChart.tsx",
           "type": "registry:component"
         }
       ]

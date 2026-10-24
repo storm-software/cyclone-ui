@@ -192,6 +192,8 @@ catalog:
   react-native-svg: ^15.16.0
   react-native-web: 0.19.12
   react-refresh: ^0.10.0
+  recharts: 3.8.0
+  motion: ^11.18.2
   sherif: ^1.13.0
   solito: ^4.4.1
   storybook: ^10.6.3

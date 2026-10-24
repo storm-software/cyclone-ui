@@ -17,8 +17,29 @@
  ------------------------------------------------------------------- */
 
 import { defineConfig } from "@storm-software/eslint-config-react";
+import { registerHooks } from "node:module";
 
 Error.stackTraceLimit = Number.POSITIVE_INFINITY;
+
+// The preset loads the Tamagui config with a native `import()`, and the
+// generated config imports `./default-config` without an extension, which
+// Node cannot resolve. Retry failed relative imports with `.ts`.
+registerHooks({
+  resolve(specifier, context, nextResolve) {
+    try {
+      return nextResolve(specifier, context);
+    } catch (error) {
+      if (
+        error?.code !== "ERR_MODULE_NOT_FOUND" ||
+        !specifier.startsWith(".")
+      ) {
+        throw error;
+      }
+
+      return nextResolve(`${specifier}.ts`, context);
+    }
+  }
+});
 
 /** @type {import('eslint').Linter.Config[]} */
 export default defineConfig(

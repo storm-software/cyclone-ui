@@ -1,0 +1,53 @@
+{
+  "name": "@cyclone-ui/line-chart",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A composable line chart built on Recharts and the shared Cyclone chart parts. Lines take solid, dashed or animated strokes, curve types, glow, point markers, a dashed buffer segment and a reveal animation. It also supports a zoom brush, legend selection and a loading skeleton. Use it to compare how several series trend over time.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/line-chart"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./LineChart": {
+      "import": "./dist/LineChart.mjs",
+      "require": "./dist/LineChart.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@cyclone-ui/chart": "workspace:*",
+    "motion": "catalog:",
+    "recharts": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "module:jsx": "dist/jsx"
+}

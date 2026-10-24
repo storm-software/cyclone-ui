@@ -1,0 +1,53 @@
+{
+  "name": "@cyclone-ui/sankey-chart",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A composable Sankey diagram built on Recharts and the shared Cyclone chart parts. Links between nodes can use gradient, solid, source-colored or target-colored fills, and nodes can carry inside or outside labels. It also supports a loading skeleton. Use it to show how a quantity flows from sources to destinations.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/sankey-chart"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/chart": "workspace:*",
+    "motion": "catalog:",
+    "recharts": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./SankeyChart": {
+      "import": "./dist/SankeyChart.mjs",
+      "require": "./dist/SankeyChart.cjs"
+    },
+    "./*": "./*"
+  }
+}
