@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Icons
 
+## [0.0.25](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.25) (10/23/2026)
+
+### Bug Fixes
+
+- **icons:** Update weight of icons to better align with other components ([d6b95296](https://github.com/storm-software/cyclone-ui/commit/d6b95296))
+
 ## [0.0.21](https://github.com/storm-software/cyclone-ui/releases/tag/icons%400.0.21) (10/22/2026)
 
 ### Bug Fixes

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Stylelint Plugin
 
+## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.19) (10/23/2026)
+
+### Bug Fixes
+
+- **icons:** Update weight of icons to better align with other components ([d6b95296](https://github.com/storm-software/cyclone-ui/commit/d6b95296))
+
 ## [0.0.17](https://github.com/storm-software/cyclone-ui/releases/tag/stylelint-plugin%400.0.17) (10/23/2026)
 
 ### Features

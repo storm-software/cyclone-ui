@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/redacted-animation",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "type": "module",
   "description": "A RedactedAnimation wrapper that briefly covers its children with an accent-colored mask, then slides the mask away to the left or right to reveal the content. It skips the animation when the user prefers reduced motion. Use it to add a redaction-style reveal effect to text or other inline content.",
   "repository": {

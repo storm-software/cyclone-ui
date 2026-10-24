@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/credit-card-input",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "description": "Credit card fields (card number, expiry date, security code and name on card) built on Input, with a card preview that follows what is entered. The number is masked and grouped for its detected brand (Visa, Mastercard, Amex, ...) and Luhn-checked, the expiry date is checked against today, and each field shows a success icon once valid. It provides Card, Number, Expiry, SecurityCode and Name parts; wrap each field part in a Field to connect it to a form.",
   "repository": {

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.18](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.18) (10/23/2026)
+
+### Bug Fixes
+
+- **icons:** Update weight of icons to better align with other components ([d6b95296](https://github.com/storm-software/cyclone-ui/commit/d6b95296))
+
 ## [0.3.16](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.16) (10/23/2026)
 
 ### Features

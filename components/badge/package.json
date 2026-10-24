@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/badge",
-  "version": "0.3.28",
+  "version": "0.3.29",
   "private": false,
   "description": "A Badge that wraps an element and pins a small count or dot to one of its corners. It follows MUI's API: anchorOrigin, max (shows 99+ by default), showZero, invisible, rectangular or circular overlap, standard or dot variants, and palette or theme colors. Use it for notification counts and status indicators.",
   "repository": {

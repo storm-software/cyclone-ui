@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/address-input",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "description": "An address search field: a SearchInput whose suggestions come from an address search API endpoint (GET <endpoint>?q=<text> returning label/latitude/longitude options), with a map of the chosen address. It provides Map, Search and TextBox parts; the map sits outside the Field so a floating label still lines up.",
   "repository": {

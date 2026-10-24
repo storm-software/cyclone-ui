@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/bytes-text",
-  "version": "0.5.28",
+  "version": "0.5.29",
   "type": "module",
   "description": "A BodyText-based text component that renders a numeric byte count as a human-readable size (such as 1.5 kB) using pretty-bytes. Children that are not numbers are shown as 0. Use it to display file sizes, upload sizes or storage usage.",
   "repository": {

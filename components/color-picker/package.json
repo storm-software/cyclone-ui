@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/color-picker",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "description": "A color input with a swatch trigger that opens a popover to pick the color from an area, sliders, channel fields and preset swatches.",
   "repository": {
