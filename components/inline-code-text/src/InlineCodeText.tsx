@@ -32,8 +32,8 @@ export const InlineCodeText = styled(SizableText, {
   display: "inline",
   boxDecorationBreak: "clone",
   fontFamily: "code",
-  paddingTop: "lg",
-  paddingBottom: "xl",
+  paddingTop: "md",
+  paddingBottom: "lg",
   paddingHorizontal: "xl",
   size: "md",
   // after `size`: its variant writes the font's size-keyed weight (`md` → 900)

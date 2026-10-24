@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../dist/out-tsc/email/tsconfig.tsbuildinfo",
+    "jsx": "react-jsx",
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
+    "types": ["node"],
+    "outDir": "../dist/out-tsc/email"
+  },
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.test.ts"]
+}

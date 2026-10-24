@@ -1,0 +1,23 @@
+{
+  "name": "@cyclone-ui/email",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "React Email components and templates styled with the Cyclone UI design tokens.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "email"
+  },
+  "private": true,
+  "dependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-email": "catalog:"
+  },
+  "devDependencies": {
+    "@opentelemetry/api": "catalog:",
+    "@react-email/ui": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:"
+  }
+}

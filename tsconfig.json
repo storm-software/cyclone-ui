@@ -356,6 +356,9 @@
     },
     {
       "path": "./components/chart"
+    },
+    {
+      "path": "./email"
     }
   ],
   "files": []

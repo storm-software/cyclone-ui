@@ -1,0 +1,39 @@
+{
+  "name": "email",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "email/src",
+  "tags": [],
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "continuous": true,
+      "options": {
+        "command": "email dev --dir src/templates",
+        "cwd": "email"
+      }
+    },
+    "export": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "inputs": ["{projectRoot}/src/**/*"],
+      "outputs": ["{workspaceRoot}/dist/email"],
+      "options": {
+        "command": "email export --dir src/templates --outDir ../dist/email",
+        "cwd": "email"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/src/**/*",
+        "{workspaceRoot}/packages/tokens/src/js/tokens-*.js"
+      ],
+      "options": {
+        "command": "node --test src/theme.test.ts",
+        "cwd": "email"
+      }
+    }
+  }
+}

@@ -377,7 +377,10 @@ const NavigationHeaderActions = styled(NavigationHeaderEdge, {
 const NavigationHeaderMenuButtonSlot = styled(View, {
   displayName: "NavigationHeaderMenuButtonSlot",
   display: "none max-md:flex",
-  marginLeft: "auto"
+  // Overlaps the buttons' transparent padding, so the menu glyph sits near the
+  // search glyph and aligns with the bar's right padding.
+  marginLeft: -8,
+  marginRight: -11
 });
 
 // Kept separate from the animated panel: the motion driver writes styles
