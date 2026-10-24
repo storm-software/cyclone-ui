@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/composed-chart",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "A composable chart that draws bars and lines on the same axes, built on Recharts and the shared Cyclone chart parts. Bars and lines keep the fill, stroke, glow and point marker styles of the bar and line charts. It also supports a zoom brush, legend selection and a loading skeleton. Use it to show a value next to a related trend, such as revenue bars with a growth line.",
   "repository": {

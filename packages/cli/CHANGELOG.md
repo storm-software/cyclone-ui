@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.21](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.21) (10/24/2026)
+
+### Features
+
+- **nextjs:** Added NextJS and Vite build packages, setup skills, and documentation updates ([2759b41c](https://github.com/storm-software/cyclone-ui/commit/2759b41c))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.31**
+- Updated **theme-builder** to **v0.0.21**
+
 ## [0.6.20](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.20) (10/24/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.20](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.20) (10/24/2026)
+
+### Features
+
+- **nextjs:** Added NextJS and Vite build packages, setup skills, and documentation updates ([2759b41c](https://github.com/storm-software/cyclone-ui/commit/2759b41c))
+
 ## [0.3.18](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.18) (10/23/2026)
 
 ### Bug Fixes

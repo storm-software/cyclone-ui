@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.32](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.32) (10/24/2026)
+
+### Features
+
+- **nextjs:** Added NextJS and Vite build packages, setup skills, and documentation updates ([2759b41c](https://github.com/storm-software/cyclone-ui/commit/2759b41c))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.31**
+
 ## [0.0.31](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.31) (10/24/2026)
 
 ### Updated Dependencies

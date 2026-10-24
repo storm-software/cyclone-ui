@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/checkbox",
-  "version": "0.5.30",
+  "version": "0.5.31",
   "private": false,
   "description": "A themed checkbox built on the Tamagui Checkbox, showing a check or a minus indicator for the indeterminate state. It supports form control sizes, circular, focused and disabled states, and validation colors. Wrapped in a Field, it connects to the form: it reads its checked state, size, disabled and focused states from the field and reports changes to it.",
   "repository": {

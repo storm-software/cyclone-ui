@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/inline-code-text",
-  "version": "0.5.29",
+  "version": "0.5.30",
   "type": "module",
   "description": "An inline span styled for short code snippets, using the code font with a subtle background, padding and rounded corners. Use it to mark up commands, identifiers or values inside running text.",
   "repository": {
