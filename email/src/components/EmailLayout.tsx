@@ -97,7 +97,7 @@ export const EmailLayout = ({
         <Container className="mx-auto w-full max-w-[640px] bg-surface">
           <Section className="px-6 py-6">
             <Img
-              src={`${assetsUrl}/static/logo.png`}
+              src={`${assetsUrl}/static/logo.webp`}
               alt={companyName}
               width="32"
               height="32"

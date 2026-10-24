@@ -45,7 +45,7 @@ export const previewProps = {
     ],
     address: "123 Market Street, Floor 1, Tech City, CA 94102"
   },
-  heroImageUrl: `${assetsUrl}/static/hero.png`,
+  heroImageUrl: `${assetsUrl}/static/hero.webp`,
   helpUrl: "https://stormsoftware.com/support",
   url: "https://stormsoftware.com"
 } satisfies BaseEmailProps & Record<string, unknown>;
