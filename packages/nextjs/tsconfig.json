@@ -7,7 +7,11 @@
     "types": ["node"],
     "outDir": "../../dist/out-tsc/packages/nextjs"
   },
-  "references": [{ "path": "../tokens" }, { "path": "../state" }],
+  "references": [
+    { "path": "../theme-builder" },
+    { "path": "../tokens" },
+    { "path": "../state" }
+  ],
   "files": [],
   "include": [
     "src/**/*.ts",

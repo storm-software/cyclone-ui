@@ -20,65 +20,28 @@ import { definePlugin } from "@razorwind/core/plugin";
 import type { TamaguiPluginOptions } from "@razorwind/tamagui";
 import tamagui from "@razorwind/tamagui/generate";
 
-// ponytail: shims for @razorwind/tamagui <= 0.0.101, which ignores
-// `tamaguiModule` and emits a typography token's unitless line height as-is
-// (Tamagui renders it in px, collapsing the text). Both are fixed upstream;
-// delete these once a release with the fixes is installed. Each is a no-op on
-// the fixed output.
-
-const renderScale = (scale: Record<string, number>) =>
-  Object.entries(scale)
-    .toSorted(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
-    .map(
-      ([key, value]) => `    ${/^\d/.test(key) ? `"${key}"` : key}: ${value}`
-    )
-    .join(",\n");
-
-const parseScale = (body: string): Record<string, number> =>
-  Object.fromEntries(
-    [...body.matchAll(/^\s*"?([\w-]+)"?: ([\d.]+),?$/gmu)].map(
-      ([, key, value]) => [key, Number(value)]
-    )
-  );
-
-/** Scales a ratio line height (e.g. `1.125`) to px for every font size step. */
-const scaleRatioLineHeights = (content: string) =>
-  content.replaceAll(
-    /(\n {2}size: \{\n)([^}]*)(\n {2}\},\n {2}lineHeight: \{\n)([^}]*)(\n {2}\})/gu,
-    (match, open, sizeBody, middle, lineHeightBody, close) => {
-      const sizes = parseScale(sizeBody);
-      const lineHeights = parseScale(lineHeightBody);
-      const ratio = lineHeights.true ?? Object.values(lineHeights)[0];
-      if (ratio == null || ratio <= 0 || ratio > 4) {
-        return match;
+// Tamagui v3 resolves `styled()` base and variant values against the first
+// theme (`light`), but the root `light` / `dark` themes only carry the keys
+// every child theme shares, so keys the `base` child adds (`accent`, `ring*`,
+// …) don't resolve and the declaration is dropped. Mirror them onto each root
+// theme so they resolve to CSS variables the active child theme supplies.
+const MIRROR_BASE_THEMES = `
+for (const scheme of ["light", "dark"]) {
+  const all = config.themes as Record<string, Record<string, unknown>>;
+  const root = all[scheme];
+  const base = all[\`\${scheme}_base\`];
+  if (root && base) {
+    for (const key of Object.keys(base)) {
+      if (!(key in root)) {
+        root[key] = base[key];
       }
-
-      const round = (value: number) => Math.round(value * 1000) / 1000;
-      const scale = Object.fromEntries(
-        Object.entries(sizes).map(([key, size]) => [key, round(ratio * size)])
-      );
-      const base = scale.sm ?? Object.values(scale)[0] ?? ratio;
-
-      return `${open}${sizeBody}${middle}${renderScale({
-        ...Object.fromEntries(Object.keys(lineHeights).map(key => [key, base])),
-        ...scale
-      })}${close}`;
     }
-  );
+  }
+}
+`;
 
-const replaceTamaguiModule = (content: string, tamaguiModule: string) =>
-  content
-    .replaceAll('from "tamagui";', `from "${tamaguiModule}";`)
-    .replaceAll(
-      'declare module "tamagui"',
-      `declare module "${tamaguiModule}"`
-    );
-
-// `tamaguiModule` is newer than the installed @razorwind/tamagui types.
-type GenerateOptions = TamaguiPluginOptions & { tamaguiModule?: string };
-
-export default definePlugin((options: GenerateOptions = {}) => {
-  const resolvedOptions: GenerateOptions = {
+export default definePlugin((options: TamaguiPluginOptions = {}) => {
+  const resolvedOptions: TamaguiPluginOptions = {
     animations: "motion",
     defaultFont: "body",
     target: "v3",
@@ -88,9 +51,8 @@ export default definePlugin((options: GenerateOptions = {}) => {
   };
   const tamaguiPlugin = tamagui(resolvedOptions);
   const generateTamagui = tamaguiPlugin.generate;
-  const tamaguiModule = resolvedOptions.tamaguiModule ?? "tamagui";
 
-  const shimConfig = (
+  const mirrorBaseThemes = (
     documents: Awaited<ReturnType<NonNullable<typeof generateTamagui>>>
   ) => {
     for (const document of Object.values(documents ?? {})) {
@@ -99,10 +61,7 @@ export default definePlugin((options: GenerateOptions = {}) => {
           typeof chunk.content === "string" &&
           chunk.content.includes("createTamagui(")
         ) {
-          chunk.content = replaceTamaguiModule(
-            scaleRatioLineHeights(chunk.content),
-            tamaguiModule
-          );
+          chunk.content += MIRROR_BASE_THEMES;
         }
       }
     }
@@ -117,7 +76,7 @@ export default definePlugin((options: GenerateOptions = {}) => {
       ...[spec, config]: Parameters<NonNullable<typeof generateTamagui>>
     ) => {
       if (!generateTamagui || !spec.fonts) {
-        return shimConfig((await generateTamagui?.(spec, config)) ?? {});
+        return mirrorBaseThemes((await generateTamagui?.(spec, config)) ?? {});
       }
 
       const fonts = Object.fromEntries(
@@ -140,7 +99,9 @@ export default definePlugin((options: GenerateOptions = {}) => {
         })
       ) as typeof spec.fonts;
 
-      return shimConfig(await generateTamagui({ ...spec, fonts }, config));
+      return mirrorBaseThemes(
+        await generateTamagui({ ...spec, fonts }, config)
+      );
     }
   };
 });

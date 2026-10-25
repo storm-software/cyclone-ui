@@ -26,6 +26,20 @@
         "default": "./dist/index.mjs"
       }
     },
+    "./build": {
+      "require": {
+        "types": "./dist/build.d.cts",
+        "default": "./dist/build.cjs"
+      },
+      "import": {
+        "types": "./dist/build.d.mts",
+        "default": "./dist/build.mjs"
+      },
+      "default": {
+        "types": "./dist/build.d.mts",
+        "default": "./dist/build.mjs"
+      }
+    },
     "./generate": {
       "require": {
         "types": "./dist/generate.d.cts",

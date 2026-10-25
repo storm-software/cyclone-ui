@@ -19,7 +19,7 @@ catalog:
   "@powerlines/plugin-tsdown": ^0.1.618
   "@powerlines/plugin-tamagui": ^0.1.669
   "@powerlines/plugin-env": ^0.16.426
-  "@razorwind/color-variants": ^0.0.87
+  "@razorwind/color-variants": ^0.0.88
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
   "@react-native-community/cli-platform-ios": 18.0.1
@@ -112,16 +112,16 @@ catalog:
   "@nx/storybook": 23.3.0
   "@nx/vite": 23.3.0
   "@nx/vitest": 23.3.0
-  "@razorwind/core": ^0.0.109
-  "@razorwind/css": ^0.0.92
-  "@razorwind/design-md": ^0.0.107
-  "@razorwind/nx": ^0.0.105
-  "@razorwind/storybook": ^0.0.109
-  "@razorwind/style-dictionary": ^0.0.95
-  "@razorwind/shadcn": ^0.0.105
-  "@razorwind/shell-shock": ^0.0.30
-  "@razorwind/tailwindcss": ^0.0.107
-  "@razorwind/tamagui": ^0.0.115
+  "@razorwind/core": ^0.0.110
+  "@razorwind/css": ^0.0.93
+  "@razorwind/design-md": ^0.0.108
+  "@razorwind/nx": ^0.0.106
+  "@razorwind/storybook": ^0.0.110
+  "@razorwind/style-dictionary": ^0.0.96
+  "@razorwind/shadcn": ^0.0.106
+  "@razorwind/shell-shock": ^0.0.31
+  "@razorwind/tailwindcss": ^0.0.108
+  "@razorwind/tamagui": ^0.0.116
   "@storm-software/cloudflare-tools": ^0.71.303
   "@storm-software/config": ^1.138.90
   "@storm-software/config-tools": ^1.190.154
@@ -201,7 +201,7 @@ catalog:
   "@react-email/ui": ^6.11.3
   "@opentelemetry/api": ^1.10.0
   motion: ^11.18.2
-  next: ^16.4.2
+  next: ^16.4.3
   sherif: ^1.13.0
   solito: ^4.4.1
   storybook: ^10.6.3
@@ -227,22 +227,22 @@ catalog:
   style-dictionary: ^5.7.0
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
-  "@razorwind/shiki": ^0.0.83
-  "@razorwind/llms": ^0.0.45
-  "@razorwind/maplibre": ^0.0.9
-  "@razorwind/docgen": ^0.0.107
+  "@razorwind/shiki": ^0.0.84
+  "@razorwind/llms": ^0.0.46
+  "@razorwind/maplibre": ^0.0.10
+  "@razorwind/docgen": ^0.0.108
   ui-ux-pro-max-cli: ^2.15.0
   "@power-plant/core": ^0.0.98
   "@phosphor-icons/core": ^2.1.1
   "@shell-shock/plugin-mcp": ^0.1.11
   "@shell-shock/plugin-skills": ^0.0.24
-  "@razorwind/eslint": ^0.0.38
-  "@razorwind/stylelint": ^0.0.38
+  "@razorwind/eslint": ^0.0.39
+  "@razorwind/stylelint": ^0.0.39
   "@sourcebook/config": ^0.0.12
   "@tanstack/react-virtual": ^3.14.22
   "@nx/maven": 23.3.0
   tsx: ^4.23.15
-  "@nx/docker": ^23.3.0
+  "@nx/docker": ^23.3.1
   yaml: ^2.9.1
 cleanupUnusedCatalogs: true
 catalogMode: strict

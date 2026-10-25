@@ -102,7 +102,23 @@ Webpack defaults passed to `withTamagui`:
 | `components` | `["@tamagui/core"]` |
 | `appDir` | `true` |
 
-`options` is `Partial<WithTamaguiProps>` from `@tamagui/next-plugin`. It is forwarded after those defaults, so your values win. A `tamagui.build.ts` file in the project root overrides the plugin options.
+`options` is `Partial<WithTamaguiProps>` from `@tamagui/next-plugin`, plus `tokens`. It is forwarded after those defaults, so your values win. A `tamagui.build.ts` file in the project root overrides the plugin options.
+
+### Custom design tokens
+
+`tokens` builds the Tamagui config from the app's own design tokens: a DTCG token object, or token file paths or globs relative to the working directory.
+
+```ts
+export default withCycloneUI(nextConfig, { tokens: "tokens/**/*.json" });
+```
+
+- With `tokens`, `withCycloneUI` returns a `Promise<NextConfig>`, which Next.js accepts as the config export. Other config wrappers can't wrap that promise, so apply them to `nextConfig` first: `withCycloneUI(withBundleAnalyzer(nextConfig), { tokens })`.
+- Files with a theme name (`light.tokens.json`, `dark.tokens.json`, …) become the `light` and `dark` themes.
+- The tokens go through the same Cyclone preprocessor and generator as `@cyclone-ui/tokens`. A `razorwind.config.ts` in the project still applies (fonts, extract plugins), but its generators don't run.
+- The config is written to `.cyclone-ui/tamagui.config.ts` when Next.js loads `next.config`. Add `.cyclone-ui` to `.gitignore`.
+- `@cyclone-ui/tokens/tamagui` is aliased to the generated file for Turbopack and Webpack, and Webpack's Tamagui compiler loads it, so `CycloneUIProvider` uses the custom config without a `config` prop.
+- With pnpm, Webpack builds also need `@tamagui/web` and `motion` as direct app dependencies. The Tamagui compiler bundles the generated config into `.tamagui/` and resolves those imports from the project root.
+- The generated config takes its media, shorthands, settings, and animations from `@cyclone-ui/tokens/tamagui-defaults`.
 
 ```ts
 export default withCycloneUI(nextConfig, {

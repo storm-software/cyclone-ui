@@ -6,7 +6,7 @@
     "types": ["node"],
     "outDir": "../../dist/out-tsc/packages/vite"
   },
-  "references": [{ "path": "../tokens" }],
+  "references": [{ "path": "../theme-builder" }, { "path": "../tokens" }],
   "files": [],
   "include": ["src/**/*.ts", "powerlines.config.ts", "powerlines.d.ts"]
 }

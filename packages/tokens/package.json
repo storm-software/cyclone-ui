@@ -24,6 +24,20 @@
         "default": "./dist/tamagui/index.mjs"
       }
     },
+    "./tamagui-defaults": {
+      "require": {
+        "types": "./dist/tamagui/defaults.d.cts",
+        "default": "./dist/tamagui/defaults.cjs"
+      },
+      "import": {
+        "types": "./dist/tamagui/defaults.d.mts",
+        "default": "./dist/tamagui/defaults.mjs"
+      },
+      "default": {
+        "types": "./dist/tamagui/defaults.d.mts",
+        "default": "./dist/tamagui/defaults.mjs"
+      }
+    },
     "./storybook": {
       "require": {
         "types": "./dist/storybook/theme.d.cts",

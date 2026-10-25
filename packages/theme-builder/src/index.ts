@@ -19,4 +19,5 @@
 import generate from "./generate";
 import preprocessor from "./preprocessor";
 
+export * from "./build";
 export { generate, preprocessor };

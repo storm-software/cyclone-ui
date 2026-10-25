@@ -50,7 +50,7 @@
   "dependencies": {
     "@cyclone-ui/registry-api": "workspace:*",
     "@cyclone-ui/theme-builder": "workspace:*",
-    "@modelcontextprotocol/server": "^2.3.1",
+    "@modelcontextprotocol/server": "^2.4.0",
     "@powerlines/plugin-env": "catalog:",
     "@razorwind/core": "catalog:",
     "@razorwind/shell-shock": "catalog:",

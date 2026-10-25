@@ -7,7 +7,7 @@ description: Set up Cyclone UI and Tamagui in a Next.js app with @cyclone-ui/nex
 
 `@cyclone-ui/nextjs` replaces the hand-written Tamagui setup. It has two entry points:
 
-- `@cyclone-ui/nextjs`: `withCycloneUI(nextConfig, webpackOptions?)` for `next.config.*`
+- `@cyclone-ui/nextjs`: `withCycloneUI(nextConfig, options?)` (`tokens` plus Webpack options) for `next.config.*`
 - `@cyclone-ui/nextjs/provider`: `CycloneUIProvider` (a `"use client"` root provider), plus `useThemeSetting` and `useRootTheme`
 
 To copy Cyclone components into the app (`cyclone-ui init`/`add`), use the **cyclone-ui-setup** skill. In an App Router app, run `init --rsc` so the components keep their `"use client"` directives. This skill covers only the framework wiring.
@@ -117,7 +117,13 @@ Turbopack doesn't run the Tamagui compiler. Builds still work, with styles resol
 
 ## Custom tokens
 
-The default config is the published Cyclone theme. If the app has its own Razorwind token build, pass that Tamagui config both to the provider's `config` prop and, for Webpack, to the `config` option.
+The default config is the published Cyclone theme. If the app has its own design tokens, pass them as `tokens`: a DTCG token object, or token file paths or globs (theme-named files such as `light.tokens.json` / `dark.tokens.json` become the light and dark themes).
+
+```ts
+export default withCycloneUI(nextConfig, { tokens: "tokens/**/*.json" });
+```
+
+`withCycloneUI` then builds the Tamagui config into `.cyclone-ui/tamagui.config.ts` (add `.cyclone-ui` to `.gitignore`) and aliases `@cyclone-ui/tokens/tamagui` to it, so the provider and the Webpack compiler need no `config`. It returns a promise in this case, so apply other wrappers to `nextConfig` inside the call instead of around it.
 
 ## Verify
 

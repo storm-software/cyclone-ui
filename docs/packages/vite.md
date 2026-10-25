@@ -65,9 +65,24 @@ Defaults passed to `tamaguiPlugin`:
 | `config` | `"@cyclone-ui/tokens/tamagui"` |
 | `components` | `["@tamagui/core"]` |
 
-`options` is `TamaguiVitePluginOptions`. It is spread after the defaults, so your values win. Pass your own `config` when the app builds tokens with Razorwind. Pass `disableExtraction: true` to keep styles at runtime.
+`options` is `TamaguiVitePluginOptions` plus `tokens`. It is spread after the defaults, so your values win. Pass `disableExtraction: true` to keep styles at runtime.
 
 A `tamagui.build.ts` file in the project root still takes precedence over these options.
+
+## Custom design tokens
+
+`tokens` builds the Tamagui config from the app's own design tokens: a DTCG token object, or token file paths or globs relative to the Vite root.
+
+```ts
+cycloneUI({ tokens: "tokens/**/*.json" });
+```
+
+- Files with a theme name (`light.tokens.json`, `dark.tokens.json`, …) become the `light` and `dark` themes.
+- The tokens go through the same Cyclone preprocessor and generator as `@cyclone-ui/tokens`. A `razorwind.config.ts` in the project still applies (fonts, extract plugins), but its generators don't run.
+- The `cyclone-ui` plugin writes the config to `.cyclone-ui/tamagui.config.ts` in its `config` hook. Add `.cyclone-ui` to `.gitignore`.
+- `@cyclone-ui/tokens/tamagui` is aliased to the generated file, and the Tamagui compiler loads it, so app code importing `config` from `@cyclone-ui/tokens/tamagui` gets the custom config.
+- The generated config takes its media, shorthands, settings, and animations from `@cyclone-ui/tokens/tamagui-defaults`.
+- Token changes need a Vite restart.
 
 ## Build
 

@@ -51,7 +51,7 @@ Keep the existing plugins and add `cycloneUI()` after the React plugin. It retur
 
 `cycloneUI()` accepts every [`@tamagui/vite-plugin` option](https://tamagui.dev/docs/guides/vite). The defaults are `config: "@cyclone-ui/tokens/tamagui"` and `components: ["@tamagui/core"]`. Common overrides:
 
-- `config`: the path to the app's own Tamagui config when it uses a custom Razorwind token build
+- `tokens`: the app's own design tokens (a DTCG token object, or token file paths or globs; theme-named files such as `light.tokens.json` / `dark.tokens.json` become the light and dark themes). The plugin builds the Tamagui config into `.cyclone-ui/tamagui.config.ts` (add `.cyclone-ui` to `.gitignore`) and aliases `@cyclone-ui/tokens/tamagui` to it, so the provider code below stays the same
 - `disableExtraction: true`: keep styles at runtime, for example while debugging a compiler issue
 
 ## Wrap the app in the theme provider
@@ -83,7 +83,7 @@ createRoot(document.getElementById("root")!).render(
 - Pass `disableInjectCSS={false}`. `ThemeProvider` defaults to `true`, which expects compiler-generated CSS to be imported. Without that CSS and without this prop, components render unstyled.
 - Cyclone components are designed against the `light_base` and `dark_base` themes. The small `BaseTheme` wrapper follows the active mode, unlike a hard-coded `<Theme name="dark_base">`.
 - `ThemeProvider` starts from the OS `prefers-color-scheme` and falls back to `defaultMode` (default `"dark"`). Change the mode with `useThemeActions().changeMode("light" | "dark")`. The provider doesn't save the choice, so if the user wants it persisted, store it (for example in `localStorage`) and pass it back as `defaultMode`.
-- Use the same `config` here as in the plugin's `config` option. A custom token build has to be passed to both.
+- Keep importing `config` from `@cyclone-ui/tokens/tamagui`, even with the `tokens` option: the plugin points that import at the generated config. Only a hand-written `config` option has to be passed to both.
 
 ## Verify
 

@@ -15,6 +15,7 @@ using `@tamagui/next-plugin` and `@tamagui/next-theme`.
 - Turbopack aliases for `react-native` → `react-native-web` and
   `react-native-svg` → `@tamagui/react-native-svg`
 - The Tamagui compiler for Webpack builds through `@tamagui/next-plugin`
+- Builds the Tamagui config from your own design tokens (`tokens` option)
 - Defines `process.env.TAMAGUI_TARGET`, which Cyclone components read to render
   web-only styles
 - Stores the light, dark or system setting and applies it before hydration
@@ -79,6 +80,41 @@ export function ThemeToggle() {
 `useThemeMode` from `@cyclone-ui/state/theme` also returns the active mode.
 Change the theme through `useThemeSetting`: `useThemeActions` changes the
 Cyclone state only, so the choice isn't saved.
+
+### Custom design tokens
+
+Pass `tokens` to build the Tamagui config from your own design tokens instead
+of the Cyclone UI defaults. Use a DTCG token object, or token file paths or
+globs relative to the working directory:
+
+```ts
+// next.config.ts
+import { withCycloneUI } from "@cyclone-ui/nextjs";
+
+export default withCycloneUI(
+  { reactStrictMode: true },
+  {
+    tokens: [
+      "tokens/primitives.json",
+      "tokens/light.tokens.json",
+      "tokens/dark.tokens.json"
+    ]
+  }
+);
+```
+
+Files with a theme name (`light.tokens.json`, `dark.tokens.json`, …) become
+the `light` and `dark` themes. The tokens go through the same preprocessor and
+generator as `@cyclone-ui/tokens`, and a `razorwind.config.ts` in the project
+still applies (for example its fonts).
+
+With `tokens`, `withCycloneUI` returns a promise, which Next.js accepts as the
+config export. The config is written to `.cyclone-ui/tamagui.config.ts`
+(add `.cyclone-ui` to `.gitignore`) and replaces `@cyclone-ui/tokens/tamagui`
+everywhere, so `CycloneUIProvider` and the Webpack compiler use it. With
+pnpm, Webpack builds also need `@tamagui/web` and `motion` installed in the
+app, because the Tamagui compiler evaluates the generated config from the
+project root.
 
 ### Provider props
 
