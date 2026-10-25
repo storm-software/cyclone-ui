@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/docs-page",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "description": "A DocsPage layout compound component for documentation and long-form reading, built on Page. A collapsible SideNav sits on the page canvas beside an inset, rounded Main panel that scrolls on its own, with a Header for breadcrumbs and page actions and a Content area that centers the article beside a sticky table of contents. On smaller screens the SideNav opens as an overlay and the document scrolls. Use it as the shell of a docs or article page.",
   "repository": {

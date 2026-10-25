@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Tokens
 
+## [0.3.21](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.21) (10/25/2026)
+
+### Bug Fixes
+
+- **nextjs:** Add support for providing tokens as build config ([09ca705a1](https://github.com/storm-software/cyclone-ui/commit/09ca705a1))
+
 ## [0.3.20](https://github.com/storm-software/cyclone-ui/releases/tag/tokens%400.3.20) (10/24/2026)
 
 ### Features

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/article-page",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "type": "module",
   "description": "An ArticlePage layout compound component for blog posts and documentation articles. A Header on its own background holds the breadcrumb, title, summary, cover Media and a Details row with the byline, Share links and tags; it stays in place while the Main sheet scrolls up over it. Main holds the article Content, beside a sticky table of contents and share links on wide screens, and Sections for feedback and recommendations, followed by the page footer.",
   "repository": {

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Theme Builder
 
+## [0.0.22](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.22) (10/25/2026)
+
+### Bug Fixes
+
+- **nextjs:** Add support for providing tokens as build config ([09ca705a1](https://github.com/storm-software/cyclone-ui/commit/09ca705a1))
+
 ## [0.0.17](https://github.com/storm-software/cyclone-ui/releases/tag/theme-builder%400.0.17) (10/23/2026)
 
 ### Documentation

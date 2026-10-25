@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.22](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.22) (10/25/2026)
+
+### Bug Fixes
+
+- **nextjs:** Add support for providing tokens as build config ([09ca705a1](https://github.com/storm-software/cyclone-ui/commit/09ca705a1))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.32**
+- Updated **theme-builder** to **v0.0.22**
+
 ## [0.6.21](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.21) (10/24/2026)
 
 ### Features

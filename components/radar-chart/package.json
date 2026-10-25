@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/radar-chart",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "A composable radar chart built on Recharts and the shared Cyclone chart parts. Series can be filled or drawn as lines over a polygon or circle grid, with glow and point markers. It also supports legend selection and a loading skeleton. Use it to compare several series across the same set of attributes.",
   "repository": {

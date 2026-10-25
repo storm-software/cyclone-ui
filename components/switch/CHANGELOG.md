@@ -2,6 +2,15 @@
 
 # Changelog for Cyclone UI - Switch
 
+## [0.5.32](https://github.com/storm-software/cyclone-ui/releases/tag/switch%400.5.32) (10/25/2026)
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.32**
+- Updated **form** to **v0.9.32**
+- Updated **helpers** to **v0.3.32**
+- Updated **themeable-icon** to **v0.6.32**
+
 ## [0.5.31](https://github.com/storm-software/cyclone-ui/releases/tag/switch%400.5.31) (10/24/2026)
 
 ### Updated Dependencies

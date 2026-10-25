@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/vite",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "A Vite plugin that sets up Tamagui and Cyclone UI components in Vite applications.",
   "repository": {
@@ -9,7 +9,12 @@
     "directory": "packages/vite"
   },
   "private": false,
-  "keywords": ["cyclone-ui", "tamagui", "vite", "vite-plugin"],
+  "keywords": [
+    "cyclone-ui",
+    "tamagui",
+    "vite",
+    "vite-plugin"
+  ],
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"

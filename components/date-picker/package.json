@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/date-picker",
-  "version": "0.5.31",
+  "version": "0.5.32",
   "type": "module",
   "description": "A date input with a masked text box and a calendar popover that has day, month and year views. It supports single-date or start/end range selection, a configurable separator, and onChange, onDatesChange and onInput callbacks. When wrapped in a Field it connects to the form, formatting, parsing and masking the field's value for its mode and separator.",
   "repository": {

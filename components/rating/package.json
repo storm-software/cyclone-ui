@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/rating",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "type": "module",
   "description": "A row of icons, stars by default, for displaying or selecting a rating. It can be controlled or uncontrolled and supports fractional precision, clearing the value, read-only and disabled states, sm, md and lg sizes, and custom icons, weights and colors. Hover changes are reported through onChangeActive. Wrapped in a Field, it connects to the form: it reads its value, size and disabled state from the field and reports changes to it.",
   "repository": {
