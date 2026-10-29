@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.24](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.24) (10/29/2026)
+
+### Bug Fixes
+
+- **cli:** Update Shell Shock package dependencies ([7bd512320](https://github.com/storm-software/cyclone-ui/commit/7bd512320))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.34**
+- Updated **theme-builder** to **v0.0.24**
+
 ## [0.6.23](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.23) (10/29/2026)
 
 ### Updated Dependencies

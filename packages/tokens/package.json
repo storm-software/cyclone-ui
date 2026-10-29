@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/tokens",
-  "version": "0.3.22",
+  "version": "0.3.23",
   "type": "module",
   "description": "A package containing various themes for the Cyclone UI.",
   "repository": {

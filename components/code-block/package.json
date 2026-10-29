@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/code-block",
-  "version": "0.6.33",
+  "version": "0.6.34",
   "type": "module",
   "description": "A figure that displays Shiki-highlighted code, with an optional title and icon, a copy-to-clipboard button, line numbers and a scrollable viewport. CodeBlock.Tabs, with List, Trigger and Content parts, switches between several code samples. Use it in documentation and technical content.",
   "repository": {

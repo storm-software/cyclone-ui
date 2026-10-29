@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Vite
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/vite%400.0.5) (10/29/2026)
+
+### Updated Dependencies
+
+- Updated **theme-builder** to **v0.0.24**
+- Updated **tokens** to **v0.3.23**
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/vite%400.0.4) (10/29/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,14 @@
 
 # Changelog for Cyclone UI - Chart
 
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/chart%400.0.6) (10/29/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.34**
+- Updated **number-text** to **v0.5.34**
+- Updated **spinner** to **v0.5.34**
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/chart%400.0.5) (10/29/2026)
 
 ### Updated Dependencies
