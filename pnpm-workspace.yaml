@@ -32,10 +32,10 @@ catalog:
   "@shell-shock/nx": ^0.0.106
   "@shell-shock/preset-cli": ^0.9.45
   "@storm-software/eslint-plugin-pnpm": ^0.0.117
-  "@storybook/addon-docs": ^10.6.3
-  "@storybook/addon-vitest": ^10.6.3
-  "@storybook/react": ^10.6.3
-  "@storybook/react-vite": ^10.6.3
+  "@storybook/addon-docs": ^10.6.5
+  "@storybook/addon-vitest": ^10.6.5
+  "@storybook/react": ^10.6.5
+  "@storybook/react-vite": ^10.6.5
   "@stryke/date": ^0.0.28
   "@tamagui/accordion": 3.0.13
   "@tamagui/adapt": 3.0.13
@@ -197,14 +197,14 @@ catalog:
   react-native-web: 0.19.12
   react-refresh: ^0.10.0
   recharts: 3.8.0
-  react-email: ^6.11.3
-  "@react-email/ui": ^6.11.3
+  react-email: ^6.11.4
+  "@react-email/ui": ^6.11.4
   "@opentelemetry/api": ^1.10.0
   motion: ^11.18.2
   next: ^16.4.3
   sherif: ^1.13.0
   solito: ^4.4.1
-  storybook: ^10.6.3
+  storybook: ^10.6.5
   tslib: ^2.8.1
   tsdown: ^0.22.14
   copyfiles: ^2.4.1
@@ -224,7 +224,7 @@ catalog:
   parse-github-url: ^1.0.4
   playwright: ^1.64.1
   "@tamagui/theme-builder": ^2.7.7
-  style-dictionary: ^5.7.0
+  style-dictionary: ^5.7.1
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
   "@razorwind/shiki": ^0.0.84
@@ -239,7 +239,7 @@ catalog:
   "@razorwind/eslint": ^0.0.39
   "@razorwind/stylelint": ^0.0.39
   "@sourcebook/config": ^0.0.12
-  "@tanstack/react-virtual": ^3.14.22
+  "@tanstack/react-virtual": ^3.14.23
   "@nx/maven": 23.3.0
   tsx: ^4.23.15
   "@nx/docker": ^23.3.1

@@ -7,16 +7,27 @@
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "packages/registry-api"
   },
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "@cloudflare/workers-types": "catalog:",
     "@trpc/client": "catalog:",
     "@trpc/server": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "catalog:",
     "@powerlines/plugin-tsdown": "catalog:",
     "powerlines": "catalog:"
+  },
+  "peerDependencies": {
+    "@cloudflare/workers-types": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "@cloudflare/workers-types": {
+      "optional": true
+    }
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
