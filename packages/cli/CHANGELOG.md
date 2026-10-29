@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.25](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.25) (10/29/2026)
+
+### Bug Fixes
+
+- **cli:** Clean up display of CLI console ([ef6206fb3](https://github.com/storm-software/cyclone-ui/commit/ef6206fb3))
+
 ## [0.6.24](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.24) (10/29/2026)
 
 ### Bug Fixes
