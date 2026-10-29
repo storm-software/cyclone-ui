@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/area-chart",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "A composable area chart built on Recharts and the shared Cyclone chart parts. Areas can overlap, stack or expand to 100%, use gradient, solid, dotted, lines or hatched fills, and take dashed or animated strokes, point markers and a reveal animation. It also supports a zoom brush, legend selection and a loading skeleton. Use it to show how values change over time and how series add up.",
   "repository": {

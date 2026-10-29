@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/switch",
-  "version": "0.5.32",
+  "version": "0.5.33",
   "type": "module",
   "description": "A toggle switch with an animated thumb, sm, md and lg sizes, and a disabled state. Its border reflects field validation messages, and Switch.Icon places an icon on the left or right of the track. Use it for on/off settings on its own, or wrap it in a Field to connect it to a form: it then reads its checked state, size and disabled state from the field and reports changes to it.",
   "repository": {

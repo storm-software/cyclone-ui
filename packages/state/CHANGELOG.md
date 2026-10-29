@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.34](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.34) (10/29/2026)
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.33**
+
 ## [0.0.33](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.33) (10/25/2026)
 
 ### Updated Dependencies

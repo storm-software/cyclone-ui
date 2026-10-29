@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Registry API
 
+## [0.3.33](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.33) (10/29/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update workspace packages' dependencies and release `registry-api` package ([8b016c26b](https://github.com/storm-software/cyclone-ui/commit/8b016c26b))
+
 ## [0.3.27](https://github.com/storm-software/cyclone-ui/releases/tag/registry-api%400.3.27) (10/23/2026)
 
 ### Documentation
