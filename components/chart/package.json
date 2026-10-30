@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/chart",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "description": "Shared building blocks for the Cyclone UI chart packages, built on Recharts. It provides the chart container, which maps each series to theme data colors, and the tooltip, legend, point markers, zoom brush, background patterns, reveal animation and loading skeleton that the charts reuse. Use it to build a custom Recharts chart that looks like the other Cyclone charts.",
   "repository": {

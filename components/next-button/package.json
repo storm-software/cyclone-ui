@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/next-button",
-  "version": "0.5.34",
+  "version": "0.5.35",
   "type": "module",
   "description": "A Button preset labeled \"Next\" by default, with a right-arrow icon that animates on hover. It accepts all Button props plus hideText to show only the icon and animateShrink for the arrow. Use it for forward navigation in steps or flows.",
   "repository": {

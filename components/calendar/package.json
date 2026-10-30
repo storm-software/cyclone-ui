@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/calendar",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "type": "module",
   "description": "A stand-alone calendar with day, month and year views that selects a single date or a start and end date range.",
   "repository": {

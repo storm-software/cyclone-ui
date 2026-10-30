@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/visually-hidden",
-  "version": "0.5.34",
+  "version": "0.5.35",
   "type": "module",
   "description": "A wrapper that hides its content visually but keeps it available to screen readers. The visible, preserveDimensions and animate variants can reveal the content or keep its size. Use it for accessible labels and text that only assistive technology should announce.",
   "repository": {

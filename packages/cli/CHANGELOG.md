@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - CLI
 
+## [0.6.26](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.26) (10/29/2026)
+
+### Bug Fixes
+
+- **nextjs:** Resolve issue with nextjs provider theme ([389671bcc](https://github.com/storm-software/cyclone-ui/commit/389671bcc))
+
+### Updated Dependencies
+
+- Updated **registry-api** to **v0.3.35**
+- Updated **theme-builder** to **v0.0.25**
+
 ## [0.6.25](https://github.com/storm-software/cyclone-ui/releases/tag/cli%400.6.25) (10/29/2026)
 
 ### Bug Fixes
