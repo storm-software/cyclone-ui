@@ -24,7 +24,7 @@ import { Checkbox } from "@cyclone-ui/checkbox";
 import { ContextMenu } from "@cyclone-ui/context-menu";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import { HeadingExtraSmallText, HeadingSmallText, HeadingText } from "@cyclone-ui/heading-text";
+import { HeadingExtraSmallText, HeadingSmallText } from "@cyclone-ui/heading-text";
 import {
   DotsThreeVertical,
   Funnel,
@@ -88,7 +88,8 @@ import {
 } from "react";
 
 declare module "@tanstack/react-table" {
-  interface ColumnMeta<TData extends RowData> {
+  // Type parameters must match `@tanstack/table-core`'s declaration exactly.
+  interface ColumnMeta<TData extends RowData, TValue> {
     facetFn?: (data: TData) => string;
   }
 }

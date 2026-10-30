@@ -24,10 +24,10 @@ import { config as cycloneConfig } from "@cyclone-ui/tokens/tamagui";
 import type { TamaguiProviderProps } from "@tamagui/core";
 import { TamaguiProvider, Theme } from "@tamagui/core";
 import type { ThemeProviderProps } from "@tamagui/next-theme";
-import { NextThemeProvider, useRootTheme } from "@tamagui/next-theme";
+import { NextThemeProvider } from "@tamagui/next-theme";
 import { useServerInsertedHTML } from "next/navigation";
 import type { PropsWithChildren } from "react";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 
 export { useRootTheme, useThemeSetting } from "@tamagui/next-theme";
@@ -104,7 +104,16 @@ export function CycloneUIProvider({
   onChangeTheme,
   ...props
 }: CycloneUIProviderProps) {
-  const [mode, setMode] = useRootTheme();
+  // Hydrate with the server's mode so nested `t_<mode>_*` classNames match, then
+  // switch to the mode the theme script put on `<html>` before the first paint.
+  // `useRootTheme` reads `<html>` during hydration, which breaks a dark start.
+  const [mode, setMode] = useState<ColorThemeMode>("light");
+
+  useLayoutEffect(() => {
+    if (document.documentElement.classList.contains("t_dark")) {
+      setMode("dark");
+    }
+  }, []);
 
   useServerInsertedHTML(() => {
     // `getSheet` is react-native-web only.

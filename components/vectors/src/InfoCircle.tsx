@@ -21,6 +21,7 @@
 import type { IconProps } from "@tamagui/helpers-icon";
 import { memo } from "react";
 import { StyleSheet } from "react-native";
+import type { AlertCircleProps } from "./AlertCircle";
 import { AlertCircle } from "./AlertCircle";
 import type { ThemedIconBodyProps } from "./themed-icon";
 import { themedIcon } from "./themed-icon";
@@ -38,7 +39,9 @@ const Icon = ({ style, ...props }: ThemedIconBodyProps<InfoCircleProps>) => {
         { transform: [{ rotateX: "180deg" }] },
         style
       ])}
-      {...props}
+      // Already-resolved SVG values, which `AlertCircle`'s `themed` passes
+      // through unchanged; only the typing differs (Tamagui vs SVG values).
+      {...(props as AlertCircleProps)}
     />
   );
 };

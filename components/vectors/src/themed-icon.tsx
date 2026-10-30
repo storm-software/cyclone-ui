@@ -20,19 +20,24 @@ import { getTokens } from "@tamagui/core";
 import type { IconProps } from "@tamagui/helpers-icon";
 import { themed } from "@tamagui/helpers-icon";
 import type { FC } from "react";
+import type { SvgProps } from "react-native-svg";
 
 /**
  * The props an icon body receives after {@link themedIcon} and Tamagui's
- * `themed` resolved them: `size` is a pixel number and `strokeWidth` is a
- * number (or `themed`'s numeric-string default).
+ * `themed` resolved them: `size` is a pixel number, `strokeWidth` is a
+ * number (or `themed`'s numeric-string default), `color` is a resolved color,
+ * and the remaining props are plain `react-native-svg` props rather than
+ * Tamagui style values.
  */
 export type ThemedIconBodyProps<P extends IconProps> = Omit<
   P,
-  "size" | "strokeWidth"
-> & {
-  size?: number;
-  strokeWidth?: number | string;
-};
+  keyof IconProps
+> &
+  Omit<SvgProps, "color" | "strokeWidth"> & {
+    size?: number;
+    strokeWidth?: number | string;
+    color?: string;
+  };
 
 /**
  * Tamagui v3's `themed` resolves a string icon `size` through the font size

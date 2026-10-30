@@ -19,7 +19,7 @@
 "use client";
 
 import { getSized } from "@cyclone-ui/helpers";
-import { Lock, MinusCircle, PlusCircle } from "@cyclone-ui/icons";
+import { Lock } from "@cyclone-ui/icons";
 import {
   AlertCircle,
   CheckCircle,
@@ -28,6 +28,7 @@ import {
   InfoCircle
 } from "@cyclone-ui/vectors";
 import type {
+  FontSizeTokens,
   GetProps,
   SizeTokens,
   UnionableNumber,
@@ -51,7 +52,10 @@ const ThemeableIconFrame = styled(View, {
 type BaseThemeIconProps = {
   theme?: string | null;
   disabled?: boolean;
-} & IconProps;
+  // `IconProps["size"]` is a flat style value (e.g. "hover:$sm"), which the
+  // Cyclone `Lock` icon does not accept; this is the unflattened icon size.
+  size?: number | FontSizeTokens;
+} & Omit<IconProps, "size">;
 
 export const getIconByTheme = ({
   theme,
@@ -59,7 +63,7 @@ export const getIconByTheme = ({
   ...props
 }: BaseThemeIconProps) => {
   if (disabled) {
-    return <Lock {...props} size={props.size } />;
+    return <Lock {...props} />;
   } else if (theme?.includes("danger")) {
     return <ErrorCircle {...props} />;
   } else if (theme?.includes("warning")) {

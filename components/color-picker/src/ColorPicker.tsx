@@ -529,8 +529,8 @@ export interface ColorPickerExtraProps {
    * a `Field`, the field instead receives the color as a hex string.
    */
   onChange?: (color: Color | null) => void;
-  /** Preset colors shown in the default popover content. */
-  swatches?: string[];
+  /** Preset colors shown in the default popover content, or `false` for none. */
+  swatches?: string[] | false;
   /** The text box's placeholder. */
   placeholder?: string;
   /** The popover's content, replacing the default. */

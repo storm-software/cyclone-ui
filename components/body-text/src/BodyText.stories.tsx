@@ -59,14 +59,14 @@ export const Small: Story = {
 
 export const Bold: Story = {
   args: {
-    bold: true
+    fontWeight: "bold"
   }
 };
 
 export const SmallBold: Story = {
   args: {
     size: "sm",
-    bold: true
+    fontWeight: "bold"
   }
 };
 

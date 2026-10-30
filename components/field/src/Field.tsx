@@ -935,14 +935,10 @@ const FieldLabelTextImpl = createStyledHOC(
         right={isFloatingVariant ? floatingLabelRight : undefined}
         left={
           isFloatingVariant
-            ? underlined
-              ? 0
-              : getSpaced("4xl") * getFormSizeScale(size)
+            ? (resolvedFloatingLabelLeft ??
+              (underlined ? 0 : getSpaced("4xl") * getFormSizeScale(size)))
             : undefined
-        }
-        {...(isFloatingVariant && resolvedFloatingLabelLeft !== undefined
-          ? { left: resolvedFloatingLabelLeft }
-          : {})}>
+        }>
         <TamaguiLabel
           ref={forwardedRef}
           id={getFieldLabelId(name)}

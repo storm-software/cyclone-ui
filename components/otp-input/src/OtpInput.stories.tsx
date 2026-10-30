@@ -20,6 +20,7 @@ import type { FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ComponentType } from "react";
 import { expect, fn, userEvent, within } from "storybook/test";
 import type { OtpInputProps } from "./OtpInput";
 import { OtpInput } from "./OtpInput";
@@ -30,7 +31,7 @@ type OtpInputStoryArgs = Partial<FieldProps> &
 
 const meta: Meta<OtpInputStoryArgs> = {
   title: "Form/OtpInput",
-  component: OtpInput,
+  component: OtpInput as unknown as ComponentType<OtpInputStoryArgs>,
   tags: ["autodocs"],
   args: {
     name: "code",

@@ -21,13 +21,17 @@ import { Button } from "@cyclone-ui/button";
 import { HeadingText } from "@cyclone-ui/heading-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { YStack } from "@tamagui/stacks";
+import type { ComponentProps } from "react";
 import { Popover } from "./Popover";
 
-const meta: Meta<typeof Popover> = {
+// `hasArrow` belongs to `Popover.Content`; the render below forwards it there.
+type PopoverStoryArgs = ComponentProps<typeof Popover> & { hasArrow?: boolean };
+
+const meta: Meta<PopoverStoryArgs> = {
   title: "Containers/Popover",
   component: Popover,
   tags: ["autodocs"],
-  render: (props: any) => {
+  render: ({ hasArrow, ...props }) => {
     return (
       <Popover {...props}>
         <Popover.Trigger asChild={true}>
@@ -36,7 +40,7 @@ const meta: Meta<typeof Popover> = {
           </Button>
         </Popover.Trigger>
 
-        <Popover.Content>
+        <Popover.Content hasArrow={hasArrow}>
           <YStack gap="3xl">
             <HeadingText>Heading Text</HeadingText>
             <BodyText>
@@ -56,11 +60,11 @@ const meta: Meta<typeof Popover> = {
       </Popover>
     );
   }
-} satisfies Meta<typeof Popover>;
+} satisfies Meta<PopoverStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Popover>;
+type Story = StoryObj<PopoverStoryArgs>;
 
 export const Base: Story = {
   args: {}

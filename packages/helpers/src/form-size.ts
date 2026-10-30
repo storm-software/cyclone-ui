@@ -75,9 +75,16 @@ export type FormSizeVariant = ReturnType<
   typeof styled.dynamic<FormControlSize>
 >;
 
-/** A typed dynamic variant keeps arbitrary Tamagui tokens out of the public API. */
-export const formSizeVariants = <T extends object>(
-  style: (size: FormControlSize, env: StyleEnv) => T | null | undefined
+/**
+ * A typed dynamic variant keeps arbitrary Tamagui tokens out of the public API.
+ *
+ * @remarks
+ * Deliberately not generic: a generic call inside a `styled()` config defers
+ * TypeScript's inference of the whole `variants` object, which collapses
+ * every variant (and `defaultVariants`) to `undefined`.
+ */
+export const formSizeVariants = (
+  style: (size: FormControlSize, env: StyleEnv) => object | null | undefined
 ): FormSizeVariant =>
   styled.dynamic<FormControlSize>((size, env) =>
     size === "sm" || size === "md" || size === "lg"

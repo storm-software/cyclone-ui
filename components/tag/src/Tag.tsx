@@ -97,7 +97,7 @@ export interface TagContextProps {
   pressable: boolean;
 }
 
-const TagContext = createStyledContext(
+const TagContext = createStyledContext<TagContextProps, keyof TagContextProps>(
   {
     size: true,
     outlined: false,
@@ -191,10 +191,9 @@ const TagFrame = styled(View, {
       };
     }),
 
+    // `tabIndex` / `role` are not styles, so the frame sets them when pressable.
     pressable: {
       true: {
-        tabIndex: 0,
-        role: "button",
         boxShadow: "focus-visible:ring-offset",
         // Clips the press ripple to the tag's shape.
         position: "relative",
@@ -673,6 +672,7 @@ const TagFrameImpl = createStyledHOC(
                 opacity: "1 exit:0",
                 scale: "1 exit:0.8"
               })}
+              {...(pressable && { tabIndex: 0, role: "button" as const })}
               {...props}
               onPress={pressable ? ripple.onPress : onPress}
               onDoubleClick={event => {

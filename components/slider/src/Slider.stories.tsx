@@ -299,8 +299,8 @@ export const MaximumValue: Story = {
     defaultValue: 80,
     validate: {
       onChange: [
-        (value: number) =>
-          value > 80
+        (value: SliderValue) =>
+          [value].flat().some(thumb => thumb > 80)
             ? [{ message: "Values above 80 may be unstable", type: "warning" }]
             : []
       ]

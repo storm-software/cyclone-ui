@@ -24,10 +24,7 @@ import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { CaretDown } from "@cyclone-ui/icons";
 import { AccordionToggle } from "@cyclone-ui/vectors";
 import { isString } from "@stryke/type-checks/is-string";
-import type {
-  AccordionMultipleProps,
-  AccordionSingleProps
-} from "@tamagui/accordion";
+import type { AccordionSingleProps } from "@tamagui/accordion";
 import { Accordion as TamaguiAccordion } from "@tamagui/accordion";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
 import {
@@ -50,10 +47,17 @@ import {
   useState
 } from "react";
 
+// Flattened rather than `Omit<A | B>`, which keeps only the keys common to
+// both modes and so dropped the single-only `collapsible`. The mode is chosen
+// by `type`/`single`, and values are normalized for it before Tamagui sees them.
 type BaseAccordionProps = Omit<
-  Partial<AccordionSingleProps | AccordionMultipleProps>,
-  "direction"
+  Partial<AccordionSingleProps>,
+  "direction" | "type" | "value" | "defaultValue" | "onValueChange"
 > & {
+  type?: "single" | "multiple";
+  value?: string | string[];
+  defaultValue?: string | string[];
+  onValueChange?: (value: string | string[]) => void;
   /** The `variant` owns the background; custom colors are not supported. */
   backgroundColor?: never;
 };
@@ -96,6 +100,9 @@ const HEADER_BACKGROUNDS = {
 
 const getOpenValues = (value?: string | string[]) =>
   isString(value) ? [value] : (value ?? []);
+
+const getSingleValue = (value?: string | string[]) =>
+  isString(value) ? value : value?.[0];
 
 export interface AccordionContextProps {
   open: string[];
@@ -252,9 +259,7 @@ const AccordionFrameImpl = forwardRef<
           setOpen(next ?? []);
         }
 
-        (onValueChange as ((value: string | string[]) => void) | undefined)?.(
-          next
-        );
+        onValueChange?.(next);
       },
       [isSingle, onValueChange]
     );
@@ -273,13 +278,24 @@ const AccordionFrameImpl = forwardRef<
         direction={direction}>
         <TamaguiAccordion
           ref={forwardedRef}
-          type={isSingle ? "single" : "multiple"}
           theme="base"
           {...props}
+          {...(isSingle
+            ? {
+                type: "single" as const,
+                value: getSingleValue(value),
+                defaultValue: getSingleValue(defaultValue)
+              }
+            : {
+                type: "multiple" as const,
+                value: value === undefined ? undefined : getOpenValues(value),
+                defaultValue:
+                  defaultValue === undefined
+                    ? undefined
+                    : getOpenValues(defaultValue)
+              })}
           borderRadius={borderRadius}
           width="100%"
-          defaultValue={defaultValue}
-          value={value}
           onValueChange={handleValueChange}>
           <AccordionGroup
             borderRadius={borderRadius}

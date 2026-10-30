@@ -43,8 +43,12 @@ interface ExtraPaginationProps {
 
 // `color` is forwarded to the page buttons, so it takes the buttons' value type
 // rather than the flat-clause `XStack` style value.
-export type PaginationProps = Omit<XStackProps, "color"> &
-  Pick<ButtonProps, "color" | "size"> &
+// The rest props are spread onto each page button, so props both define take
+// the button's type (e.g. `fontWeight` is limited to the 100-900 scale).
+type SharedProps = Extract<keyof XStackProps, keyof ButtonProps>;
+
+export type PaginationProps = Omit<XStackProps, SharedProps> &
+  Pick<ButtonProps, SharedProps | "color" | "size"> &
   ExtraPaginationProps;
 
 export const Pagination = createStyledHOC(

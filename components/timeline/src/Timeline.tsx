@@ -32,7 +32,11 @@ export type TimelineLayout = "vertical" | "horizontal";
  */
 export type TimelineAlign = "left" | "right" | "top" | "bottom" | "alternate";
 
-export interface TimelineProps<T> extends Omit<ViewProps, "children"> {
+// `content` / `marker` are render props here, not the CSS styles of that name.
+export interface TimelineProps<T> extends Omit<
+  ViewProps,
+  "children" | "content" | "marker"
+> {
   /** The events to display, in order. */
   value: readonly T[];
   /** Renders an event's main content. */

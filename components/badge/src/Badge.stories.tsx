@@ -147,7 +147,7 @@ const expectCenteredOnCorner = async (
 export const Base: Story = {
   args: {
     badgeContent: 4,
-    color: "emphasis"
+    color: "primary"
   },
   play: async ({ canvasElement }) => {
     const badge = getBadge(canvasElement, "4");
@@ -160,8 +160,8 @@ export const Base: Story = {
 
 const COLORS: BadgeColor[] = [
   "default",
-  "emphasis",
-  "ink",
+  "primary",
+  "secondary",
   "error",
   "info",
   "success",
@@ -182,7 +182,7 @@ export const Colors: Story = {
 
 export const Dot: Story = {
   args: {
-    color: "ink",
+    color: "secondary",
     variant: "dot",
     slotProps: { badge: { testID: "dot" } }
   },
@@ -272,7 +272,7 @@ export const ShowZero: Story = {
 export const Invisible: Story = {
   args: {
     badgeContent: 4,
-    color: "ink",
+    color: "secondary",
     invisible: true
   },
   play: async ({ canvasElement }) => {

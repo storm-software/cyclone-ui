@@ -20,6 +20,7 @@ import type { FieldProps } from "@cyclone-ui/field";
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ComponentType } from "react";
 import { expect, userEvent, within } from "storybook/test";
 import type { NumberInputProps } from "./NumberInput";
 import { NumberInput } from "./NumberInput";
@@ -32,7 +33,7 @@ type NumberInputStoryArgs = Partial<FieldProps> &
 // through the Field props, which is not portable from this package.
 const meta: Meta<NumberInputStoryArgs> = {
   title: "Form/NumberInput",
-  component: NumberInput,
+  component: NumberInput as unknown as ComponentType<NumberInputStoryArgs>,
   tags: ["autodocs"],
   render: (
     { defaultValue = "", increment, ...props }: any,

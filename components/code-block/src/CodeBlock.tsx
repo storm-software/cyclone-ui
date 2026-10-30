@@ -290,7 +290,7 @@ export const CodeBlockCopyButton = ({
 
   const onPress = useCallback(() => {
     void handleCopy();
-  });
+  }, [handleCopy]);
 
   return (
     <Button
