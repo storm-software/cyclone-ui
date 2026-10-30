@@ -9,12 +9,7 @@
     "directory": "packages/nextjs"
   },
   "private": false,
-  "keywords": [
-    "cyclone-ui",
-    "tamagui",
-    "nextjs",
-    "next-plugin"
-  ],
+  "keywords": ["cyclone-ui", "tamagui", "nextjs", "next-plugin"],
   "exports": {
     ".": {
       "require": {

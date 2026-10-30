@@ -76,7 +76,7 @@ const SyncColorMode = ({ mode }: { mode: ColorThemeMode }) => {
  * @remarks
  * Renders `NextThemeProvider` from `@tamagui/next-theme`, which stores the
  * light/dark/system setting and applies it before hydration, around a
- * `TamaguiProvider` and the matching `<mode>_base` theme. It also collects
+ * `TamaguiProvider` and the `base` sub-theme of the active mode. It also collects
  * react-native-web styles during server rendering. Read or change the theme
  * with `useThemeSetting`.
  *
@@ -117,6 +117,7 @@ export function CycloneUIProvider({
     return (
       <style
         id={sheet.id}
+        // eslint-disable-next-line react-dom/no-dangerously-set-innerhtml
         dangerouslySetInnerHTML={{ __html: sheet.textContent }}
       />
     );
@@ -136,7 +137,10 @@ export function CycloneUIProvider({
           config={config}
           defaultTheme={mode}
           disableInjectCSS={disableInjectCSS}>
-          <Theme name={`${mode}_base`}>{children}</Theme>
+          {/* A relative name keeps the className (`t_base`) the same for every
+              mode, so hydration matches when the client starts dark; CSS picks
+              the scheme from `<html>`'s `t_<mode>` class. */}
+          <Theme name="base">{children}</Theme>
         </TamaguiProvider>
       </ThemeApi.Provider>
     </NextThemeProvider>
