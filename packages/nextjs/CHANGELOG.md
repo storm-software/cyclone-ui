@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Nextjs
 
+## [0.0.7](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.7) (10/30/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typing issues with Cyclone UI components ([5dfa68e1e](https://github.com/storm-software/cyclone-ui/commit/5dfa68e1e))
+
+### Updated Dependencies
+
+- Updated **state** to **v0.0.37**
+- Updated **theme-builder** to **v0.0.26**
+- Updated **tokens** to **v0.3.25**
+
 ## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/nextjs%400.0.6) (10/29/2026)
 
 ### Bug Fixes

@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Badge
 
+## [0.3.36](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.36) (10/30/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typing issues with Cyclone UI components ([5dfa68e1e](https://github.com/storm-software/cyclone-ui/commit/5dfa68e1e))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.36**
+- Updated **icons** to **v0.0.32**
+- Updated **state** to **v0.0.37**
+
 ## [0.3.35](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.35) (10/29/2026)
 
 ### Updated Dependencies

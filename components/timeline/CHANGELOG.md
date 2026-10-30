@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Timeline
 
+## [0.0.26](https://github.com/storm-software/cyclone-ui/releases/tag/timeline%400.0.26) (10/30/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typing issues with Cyclone UI components ([5dfa68e1e](https://github.com/storm-software/cyclone-ui/commit/5dfa68e1e))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.36**
+- Updated **heading-text** to **v0.5.36**
+- Updated **icons** to **v0.0.32**
+
 ## [0.0.25](https://github.com/storm-software/cyclone-ui/releases/tag/timeline%400.0.25) (10/29/2026)
 
 ### Updated Dependencies

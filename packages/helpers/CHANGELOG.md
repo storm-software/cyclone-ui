@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.36](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.36) (10/30/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typing issues with Cyclone UI components ([5dfa68e1e](https://github.com/storm-software/cyclone-ui/commit/5dfa68e1e))
+
 ## [0.3.27](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.27) (10/23/2026)
 
 ### Documentation

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/radial-chart",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "description": "A composable radial bar chart built on Recharts and the shared Cyclone chart parts. Each category is drawn as a ring, as a full circle or a semicircle, with gradient colors from the theme. It also supports legend selection and a loading skeleton. Use it to compare a few values as progress around a circle.",
   "repository": {

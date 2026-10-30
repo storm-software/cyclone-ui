@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/navigation-header",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "type": "module",
   "description": "A responsive site header made of Logo, Navigation, Actions and MenuButton slots. Navigation.Item supports Group and Link children, which render as a desktop mega menu and a collapsible mobile panel. Items can be featured, active or external, and the header tracks page scroll.",
   "repository": {

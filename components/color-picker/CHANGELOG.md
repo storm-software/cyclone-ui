@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Color Picker
 
+## [0.0.20](https://github.com/storm-software/cyclone-ui/releases/tag/color-picker%400.0.20) (10/30/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve typing issues with Cyclone UI components ([5dfa68e1e](https://github.com/storm-software/cyclone-ui/commit/5dfa68e1e))
+
+### Updated Dependencies
+
+- Updated **color-area** to **v0.0.20**
+- Updated **field** to **v0.5.36**
+- Updated **form** to **v0.9.36**
+- Updated **helpers** to **v0.3.36**
+- Updated **input** to **v0.6.36**
+- Updated **popover** to **v0.5.36**
+- Updated **toggle-group** to **v0.0.26**
+
 ## [0.0.19](https://github.com/storm-software/cyclone-ui/releases/tag/color-picker%400.0.19) (10/29/2026)
 
 ### Updated Dependencies

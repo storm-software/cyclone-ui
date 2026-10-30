@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/eyebrow-text",
-  "version": "0.5.35",
+  "version": "0.5.36",
   "type": "module",
   "description": "An uppercase, muted heading (rendered as h5) that uses the eyebrow font. It has lg and sm variants. Use it as a short overline label above a main heading or section title.",
   "repository": {

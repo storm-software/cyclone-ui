@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/spinner",
-  "version": "0.5.35",
+  "version": "0.5.36",
   "type": "module",
   "description": "A Spinner component that renders the React Native ActivityIndicator inside a Tamagui YStack. It takes a small or large size and a color, which can be a theme token or a raw value and defaults to the accent color. Use it to show that content or an action is loading.",
   "repository": {
